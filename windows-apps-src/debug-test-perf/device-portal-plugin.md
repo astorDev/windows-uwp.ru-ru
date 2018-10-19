@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, портала устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bf511a910a266877d54a014f087c1748ff25838
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4949279"
+ms.locfileid: "5131511"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Написание пользовательского подключаемого модуля для портала устройств
 

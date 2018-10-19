@@ -11,11 +11,11 @@ keywords: Windows 10, UWP, API отправки в Microsoft Store, выпуск
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f78bacbb4f283215e8675f949b26e5e084e2aa0
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4951336"
+ms.locfileid: "5130759"
 ---
 # <a name="finalize-the-rollout-for-an-app-submission"></a>Завершение выпуска для отправки приложения
 

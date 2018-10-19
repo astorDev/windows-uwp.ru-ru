@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, трассировка стека, ошибка, классическое приложение
 ms.localizationpriority: medium
 ms.openlocfilehash: 60f4ed7251fa934190a96e8c7d6f0edd21520980
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4963182"
+ms.locfileid: "5131269"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>Получение трассировки стека при возникновении ошибки в классическом приложении
 

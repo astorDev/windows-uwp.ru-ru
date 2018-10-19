@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: be4338c7b7e7b3861c206a6d7d63e9e417e6cd0d
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4953424"
+ms.locfileid: "5157876"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Расширение классических приложений с помощью современных компонентов UWP
 
@@ -41,6 +41,12 @@ ms.locfileid: "4953424"
 ![Расширение начального проекта](images/desktop-to-uwp/extend-start-project.png)
 
 Если ваше решение не содержит проект упаковки, см. в разделе [пакета приложения для настольных компьютеров с помощью Visual Studio](desktop-to-uwp-packaging-dot-net.md).
+
+### <a name="configure-the-desktop-application"></a>Настройка классического приложения
+
+Убедитесь, что приложения для настольных компьютеров имеет ссылки на файлы, которые необходимо вызывать API среды выполнения Windows.
+
+Чтобы это сделать, см. в разделе [сначала настройте свой проект](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project) раздела [расширение классического приложения для Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project).
 
 ### <a name="add-a-uwp-project"></a>Добавление проекта UWP
 
@@ -71,6 +77,12 @@ ms.locfileid: "4953424"
 Затем в проекте UWP добавьте ссылку на компонент среды выполнения. Решение будет выглядеть следующим образом.
 
 ![Ссылка на компонент среды выполнения](images/desktop-to-uwp/runtime-component-reference.png)
+
+### <a name="build-your-solution"></a>Построение решения
+
+Построение решения, чтобы убедиться, что ошибки не отображаются. Если возникнут ошибки, откройте **Диспетчер конфигураций** и убедитесь, что проекты предназначены для платформы.
+
+![Диспетчер конфигурации](images/desktop-to-uwp/config-manager.png)
 
 Рассмотрим некоторые действия, которые можно выполнять с проектами UWP и компонентами среды выполнения.
 
@@ -211,7 +223,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-Переопределите метод ``OnNavigatedTo`` для использования параметров, переданных на страницу. В этом случае мы будем использовать широту и долготу, переданные на эту страницу, чтобы показать местоположение на карте.
+В коде программной части XAML-страницы, переопределите ``OnNavigatedTo`` метод для использования параметров, переданных на страницу. В этом случае мы будем использовать широту и долготу, переданные на эту страницу, чтобы показать местоположение на карте.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -238,156 +250,15 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
  }
 ```
 
-### <a name="similar-samples"></a>Аналогичные примеры
-
-[Добавление пользовательского интерфейса UWP XAML в приложение VB6](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/VB6withXaml)
-
-[Пример Northwind: полный пример для пользовательского интерфейса UWA и устаревшего кода Win32](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/NorthwindSample)
-
-[Пример Northwind: приложение UWP подключается к SQL Server](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SQLServer)
-
-## <a name="provide-services-to-other-apps"></a>Предоставление служб другим приложениям
-
-Вы добавляете службу, которую могут использовать другие приложения. Например, можно добавить службу, которая предоставляет другим приложениям управляемый доступ к базе данных вашего приложения. Путем реализации фоновой задачи, приложения могут связаться со службой, даже если ваше классическое приложение не выполняется.
-
-Вот пример, в котором это демонстрируется.
-
-![адаптивный макет](images/desktop-to-uwp/winforms-app-service.png)
-
-### <a name="have-a-closer-look-at-this-app"></a>Рассмотрим это приложение подробнее
-
-:heavy_check_mark: [Получить приложение](https://www.microsoft.com/en-us/store/p/winforms-appservice/9p7d9b6nk5tn)
-
-:heavy_check_mark: [Просмотреть код](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinformsAppService)
-
-### <a name="the-design-pattern"></a>Шаблон проектирования
-
-Для предоставления службы выполните следующие действия.
-
-:one: [Реализуйте службу приложения](#appservice)
-
-:two: [Добавьте расширение службы приложения](#extension)
-
-:three: [Протестируйте службу приложения](#test)
-
-<a id="appservice" />
-
-### <a name="implement-the-app-service"></a>Реализация службы приложения
-
-Здесь вы будете проверять и обрабатывать запросы из других приложений. Добавьте этот код в компонент среды выполнения Windows в вашем решении.
-
-```csharp
-public sealed class AppServiceTask : IBackgroundTask
-{
-    private BackgroundTaskDeferral backgroundTaskDeferral;
- 
-    public void Run(IBackgroundTaskInstance taskInstance)
-    {
-        this.backgroundTaskDeferral = taskInstance.GetDeferral();
-        taskInstance.Canceled += OnTaskCanceled;
-        var details = taskInstance.TriggerDetails as AppServiceTriggerDetails;
-        details.AppServiceConnection.RequestReceived += OnRequestReceived;
-    }
- 
-    private async void OnRequestReceived(AppServiceConnection sender,
-                                         AppServiceRequestReceivedEventArgs args)
-    {
-        var messageDeferral = args.GetDeferral();
-        ValueSet message = args.Request.Message;
-        string id = message["ID"] as string;
-        ValueSet returnData = DataBase.GetData(id);
-        await args.Request.SendResponseAsync(returnData);
-        messageDeferral.Complete();
-    }
- 
- 
-    private void OnTaskCanceled(IBackgroundTaskInstance sender,
-                                BackgroundTaskCancellationReason reason)
-    {
-        if (this.backgroundTaskDeferral != null)
-        {
-            this.backgroundTaskDeferral.Complete();
-        }
-    }
-}
-```
-
-<a id="extension" />
-
-### <a name="add-an-app-service-extension-to-the-packaging-project"></a>Добавление расширения службы приложений в проект упаковки
-
-Откройте файл **package.appxmanifest** проекта упаковки и добавьте расширение службы приложения для ``<Application>`` элемента.
-
-```xml
-<Extensions>
-      <uap:Extension
-          Category="windows.appService"
-          EntryPoint="AppServiceComponent.AppServiceTask">
-        <uap:AppService Name="com.microsoft.samples.winforms" />
-      </uap:Extension>
-    </Extensions>    
-```
-Задайте службе приложения имя и укажите имя класса точки входа. Это класс, в котором вы реализовали эту службу.
-
-<a id="test" />
-
-### <a name="test-the-app-service"></a>Тестирование службы приложения
-
-Протестируйте службу путем вызова из другого приложения. Этот код может представлять классическое приложение, например приложение Windows forms или другое приложение UWP.
-
-> [!NOTE]
-> Этот код работает, только если правильно задать свойство ``PackageFamilyName`` класса ``AppServiceConnection``. Это имя можно получить, вызвав метод ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` в контексте проекта UWP. См. раздел [Создание и использование службы приложения](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service).
-
-```csharp
-private async void button_Click(object sender, RoutedEventArgs e)
-{
-    AppServiceConnection dataService = new AppServiceConnection();
-    dataService.AppServiceName = "com.microsoft.samples.winforms";
-    dataService.PackageFamilyName = "Microsoft.SDKSamples.WinformWithAppService";
- 
-    var status = await dataService.OpenAsync();
-    if (status == AppServiceConnectionStatus.Success)
-    {
-        string id = int.Parse(textBox.Text);
-        var message = new ValueSet();
-        message.Add("ID", id);
-        AppServiceResponse response = await dataService.SendMessageAsync(message);
- 
-        if (response.Status == AppServiceResponseStatus.Success)
-        {
-            if (response.Message["Status"] as string == "OK")
-            {
-                DisplayResult(response.Message["Result"]);
-            }
-        }
-    }
-}
-```
-
-Дополнительные сведения о службах приложения можно найти здесь: [Создание и использование службы приложения](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service).
-
-### <a name="similar-samples"></a>Аналогичные примеры
-
-[Пример моста службы приложения](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/AppServiceBridgeSample)
-
-[Пример моста службы приложения с приложением для win32 на C++](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/AppServiceBridgeSample_C%2B%2B)
-
-[Приложение MFC, которое получает push-уведомления](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/MFCwithPush)
-
-
 ## <a name="making-your-desktop-application-a-share-target"></a>Присвоение классическому приложению роли получателя данных
 
 Вы можете сделать свое классическое приложение получателем данных, чтобы пользователи могли легко передавать ему данные из других приложений, поддерживающих общий доступ, например изображения.
 
 Например пользователи могут выбрать приложения, чтобы передать ему изображения из Microsoft Edge, приложение "фотографии". Вот пример приложения WPF, поддерживающего такую возможность.
 
-![получатель данных](images/desktop-to-uwp/share-target.png)
+![получатель данных](images/desktop-to-uwp/share-target.png).
 
-### <a name="have-a-closer-look-at-this-app"></a>Рассмотрим это приложение подробнее
-
-:heavy_check_mark: [Получить приложение](https://www.microsoft.com/en-us/store/p/wpf-app-as-sharetarget/9pjcjljlck37)
-
-:heavy_check_mark: [Просмотреть код](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WPFasShareTarget)
+Полный пример см. в разделе [ниже](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/ShareTarget)
 
 ### <a name="the-design-pattern"></a>Шаблон проектирования
 
@@ -395,20 +266,28 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 :one: [Добавьте расширение получателя данных](#share-extension)
 
-:two: [Переопределение обработчика событий OnNavigatedTo](#override)
+: two: [Переопределение обработчика событий OnShareTargetActivated](#override)
+
+: three: [Добавление расширений рабочего стола в проект UWP](#desktop-extensions)
+
+: four: [Добавление расширения процесса полного доверия](#full-trust)
+
+: five: [Изменение классического приложения для получения общего файла](#modify-desktop)
 
 <a id="share-extension" />
 
+Следующие действия  
+
 ### <a name="add-a-share-target-extension"></a>Добавление расширения получателя данных
 
-В **Обозревателе решений**откройте файл **package.appxmanifest** проекта упаковки в вашем решении и добавьте расширение.
+В **Обозревателе решений**откройте файл **package.appxmanifest** проекта упаковки в вашем решении и добавьте расширения получателя данных.
 
 ```xml
 <Extensions>
       <uap:Extension
           Category="windows.shareTarget"
           Executable="ShareTarget.exe"
-          EntryPoint="ShareTarget.App">
+          EntryPoint="App">
         <uap:ShareTarget>
           <uap:SupportedFileTypes>
             <uap:SupportsAnyFileType />
@@ -419,31 +298,99 @@ private async void button_Click(object sender, RoutedEventArgs e)
 </Extensions>  
 ```
 
-Укажите имя исполняемого файла, созданного проектом UWP, и имя класса точки входа. Также необходимо указать типы файлов, которые могут быть переданы вашему приложению.
+Укажите имя исполняемого файла, созданного проектом UWP, и имя класса точки входа. Эта разметка предполагается, что имя исполняемого файла для вашего приложения UWP `ShareTarget.exe`.
+
+Также необходимо указать типы файлов, которые могут быть переданы вашему приложению. В этом примере мы предоставим классического приложения [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) получателя для точечных изображений, мы указываем `Bitmap` для поддерживаемого типа файлов.
 
 <a id="override" />
 
-### <a name="override-the-onnavigatedto-event-handler"></a>Переопределение обработчика событий OnNavigatedTo
+### <a name="override-the-onsharetargetactivated-event-handler"></a>Переопределение обработчика событий OnShareTargetActivated
 
-В классе **App** своего проекта UWP переопределите обработчик событий **OnNavigatedTo**.
+Переопределение обработчика событий **OnShareTargetActivated** в классе **приложения** проекта UWP.
 
 Этот обработчик событий вызывается, когда пользователи выбирают ваше приложение в качестве получателя файлов.
 
 ```csharp
-protected override async void OnNavigatedTo(NavigationEventArgs e)
+
+protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
 {
-  this.shareOperation = (ShareOperation)e.Parameter;
-  if (this.shareOperation.Data.Contains(StandardDataFormats.StorageItems))
-  {
-      this.sharedStorageItems =
-        await this.shareOperation.Data.GetStorageItemsAsync();
-       
-      foreach (StorageFile item in this.sharedStorageItems)
-      {
-          ProcessSharedFile(item);
-      }
-  }
+    shareWithDesktopApplication(args.ShareOperation);
 }
+
+private async void shareWithDesktopApplication(ShareOperation shareOperation)
+{
+    if (shareOperation.Data.Contains(StandardDataFormats.StorageItems))
+    {
+        var items = await shareOperation.Data.GetStorageItemsAsync();
+        StorageFile file = items[0] as StorageFile;
+        IRandomAccessStreamWithContentType stream = await file.OpenReadAsync();
+
+        await file.CopyAsync(ApplicationData.Current.LocalFolder);
+            shareOperation.ReportCompleted();
+
+        await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+    }
+}
+```
+В этом фрагменте кода мы сохранить изображение, которое используется совместно с пользователя в локальной папке приложения. Позже мы изменим классического приложения для извлечения изображения из этой же папки. Классическое приложение можно сделать, так как он включен в тот же пакет, что и приложение UWP.
+
+<a id="desktop-extensions" />
+
+### <a name="add-desktop-extensions-to-the-uwp-project"></a>Добавление расширений рабочего стола в проект UWP
+
+Добавление расширения **Windows Desktop Extensions для UWP** в проект приложения UWP.
+
+![расширения рабочего стола](images/desktop-to-uwp/desktop-extensions.png)
+
+<a id="full-trust" />
+
+### <a name="add-the-full-trust-process-extension"></a>Добавление расширения процесса полного доверия
+
+В **Обозревателе решений**откройте файл **package.appxmanifest** проекта упаковки в вашем решении и добавьте расширение процесс полного доверия рядом с расширения получателя данных добавить этот файл ранее.
+
+```xml
+<Extensions>
+  ...
+      <desktop:Extension Category="windows.fullTrustProcess" Executable="PhotoStoreDemo\PhotoStoreDemo.exe" />
+  ...
+</Extensions>  
+```
+
+Это расширение приведет к включению приложения UWP для запуска классического приложения, к которому вы хотите общей файла. В примере мы будем говорить в исполняемый файл классического приложения [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) .
+
+<a id="modify-desktop" />
+
+### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>Изменение классического приложения для получения общего файла
+
+Измените классического приложения для поиска и обработки общих файлов. В этом примере приложения UWP хранить общий файл в папку данных локального приложения. Таким образом мы бы изменять [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) классического приложения для извлечения фотографии из этой папки.
+
+```csharp
+Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
+```
+Для экземпляров классического приложения, которые уже открыть пользователем, мы также может обрабатывать событие [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2) и передайте путь к расположению файла. Таким образом все открытые экземпляры классического приложения будет отображаться общего фотографий.
+
+```csharp
+...
+
+   FileSystemWatcher watcher = new FileSystemWatcher(Photos.Path);
+
+...
+
+private void Watcher_Created(object sender, FileSystemEventArgs e)
+{
+    // new file got created, adding it to the list
+    Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(() =>
+    {
+        if (File.Exists(e.FullPath))
+        {
+            ImageFile item = new ImageFile(e.FullPath);
+            Photos.Insert(0, item);
+            PhotoListBox.SelectedIndex = 0;
+            CurrentPhoto.Source = (BitmapSource)item.Image;
+        }
+    }));
+}
+
 ```
 
 ## <a name="create-a-background-task"></a>Создание фоновой задачи
@@ -456,9 +403,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 
 Эта задача создает запрос http и измеряет время, необходимое, чтобы запрос вернул отклик. Ваши задачи наверняка будут более интересными, но это отличный пример для изучения базового механизма фоновой задачи.
 
-### <a name="have-a-closer-look-at-this-app"></a>Рассмотрим это приложение подробнее
-
-:heavy_check_mark: [Просмотреть код](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)
+Полный пример см. в разделе [ниже](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask).
 
 ### <a name="the-design-pattern"></a>Шаблон проектирования
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, первое приложение, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: e8e2272ab761e1fa0bc9514f226a73a66a10662b
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4949962"
+ms.locfileid: "5132407"
 ---
 # <a name="create-your-first-app"></a>Создание первого приложения
 

@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: Windows 10, uwp, windows forms, wpf, win32
 ms.localizationpriority: medium
 ms.openlocfilehash: 59072374e19da1c5c7e6e6a5e6a7b8c172d74052
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4958995"
+ms.locfileid: "5133048"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>С помощью XAML UWP, API размещения в приложении рабочего стола
 
@@ -202,11 +202,11 @@ XAML UWP, API размещения предоставляет несколько
 
 Когда пользователь изменяет размер родительского элемента пользовательского интерфейса, необходимо обрабатывать все изменения необходимые макета, убедитесь, что элементы управления UWP отображения должным образом. Ниже приводятся некоторые важные сценарии, которые необходимо учитывать.
 
-1. Когда родительский элемент пользовательского интерфейса необходимо получить размер прямоугольную область, в соответствии с **Windows.UI.Xaml.UIElement** , находящихся на **DesktopWindowXamlSource**, вызовите метод [**мер**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) **Windows.UI.Xaml.UIElement **. Пример.
+1. Когда родительский элемент пользовательского интерфейса необходимо получить размер прямоугольную область, в соответствии с **Windows.UI.Xaml.UIElement** , находящихся на **DesktopWindowXamlSource**, вызовите метод [**мер**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) **Windows.UI.Xaml.UIElement **. Пример
     * В приложениях WPF может это делается из метода [**MeasureOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) , на котором размещается **DesktopWindowXamlSource**.
     * В приложение Windows Forms можно выполнить это из метода [**GetPreferredSize**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize) элемента [**управления**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) , на котором размещается **DesktopWindowXamlSource**.
 
-2. Если размер родительского изменения элемента пользовательского интерфейса, вызовите метод [**Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) **Windows.UI.Xaml.UIElement** корневого элемента, размещении на **DesktopWindowXamlSource**. Пример.
+2. Если размер родительского изменения элемента пользовательского интерфейса, вызовите метод [**Arrange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) **Windows.UI.Xaml.UIElement** корневого элемента, размещении на **DesktopWindowXamlSource**. Пример
     * В приложениях WPF может это делается из метода [**ArrangeOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride) [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) объекта, на котором размещается **DesktopWindowXamlSource**.
     * В приложение Windows Forms можно выполнить это в обработчике событий [**SizeChanged**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged) элемента [**управления**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) , на котором размещается **DesktopWindowXamlSource**.
 

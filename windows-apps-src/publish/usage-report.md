@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, использование, пользовательское событие, отчет, телеметрия, пользовательские сеансы
 ms.localizationpriority: medium
 ms.openlocfilehash: 96d36ebbaa2b7f1a650e2b0f794a1976c1f525a6
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4956515"
+ms.locfileid: "5133673"
 ---
 # <a name="usage-report"></a>Отчет об использовании
 
