@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, вопросы и ответы, вопросы и ответы
 ms.localizationpriority: medium
-ms.openlocfilehash: e00f387c3dd78353158d93d3b4749345936396f5
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: 5fe355c4ee4ee2dcc9d2e48130773e5632eb4a90
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4963169"
+ms.locfileid: "5127425"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на вопросы, которые вы, скорее всего имеют о разработке и использовании API среды выполнения Windows с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -28,7 +28,7 @@ ms.locfileid: "4963169"
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Почему не будет скомпилирован, создать новый проект? Я использую Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет SDK версии 17134
 
-Если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет Windows SDK версии 10.0.17134.0 (Windows 10 версии 1803), выберите только что созданный C + +/ WinRT проект может к ошибке при компиляции с ошибкой «ошибка*C3861: «from_abi»: идентификатор не найти*» и другие ошибки, которые происходят *base.h*. Решением является более поздней версии (Дополнительные совместимые) либо целевой версии пакета SDK для Windows, или задать свойство проекта **C/C++** > **язык** > **режим совместимости: нет** (Кроме того, если **/ permissive-** отображается в свойство проекта ** C/C++** > **язык** > **командной строки** в столбце **Дополнительные параметры**, удалите его).
+Если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет Windows SDK версии 10.0.17134.0 (Windows 10 версии 1803), выберите только что созданный C + +/ WinRT проект может к ошибке при компиляции с ошибкой «ошибка*C3861: «from_abi»: идентификатор не найти*» и другие ошибки, которые происходят *base.h*. Решением является более поздней версии (Дополнительные совместимые) либо целевой версии пакета SDK для Windows, или задать свойство проекта **C/C++** > **язык** > **режим совместимости: нет** (Кроме того, если **/ permissive-** отображается в свойство проекта ** C/C++** > **командной строки** в столбце **Дополнительные параметры**, удалите его).
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>Каковы требования для [расширения Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix)?
 [VSIX](https://aka.ms/cppwinrt/vsix) требует минимальную целевую версию пакета Windows SDK 10.0.17134.0 (Windows 10, версия 1803). Вам также потребуется Visual Studio 2017 (по крайней мере версия 15.6; рекомендуется версия не младше 15.7). Проект, использующий VSIX, можно определить по наличию `<CppWinRTEnabled>true</CppWinRTEnabled>`в `<PropertyGroup Label="Globals">` в файле `.vcxproj`. Дополнительные сведения см. в разделе [поддержка Visual Studio для C++/WinRT и VSIX ](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).

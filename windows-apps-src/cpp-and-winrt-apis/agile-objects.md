@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, гибкий, объект, гибкость, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 9af1fb0a9d23727924ae3c165bc8977fb9cc7774
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4961563"
+ms.locfileid: "5128648"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Гибкие объекты в C++/WinRT
 В большинстве случаев к экземплярам класса среды выполнения Windows &mdash; как к стандартным объектам C++ &mdash; можно получить доступ из любого потока. Такие классы являются *гибкими*. Лишь небольшое число классов среды выполнения Windows, которые поставляются с Windows, не являются гибкими, но при их использовании следует принимать во внимание их потоковой модели и маршалинг (маршалинг — это передача данных через границы потока или процесса). Это хороший по умолчанию для каждого объекта среды выполнения Windows, были гибкими, поэтому собственные [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) типов являются гибкими по умолчанию.

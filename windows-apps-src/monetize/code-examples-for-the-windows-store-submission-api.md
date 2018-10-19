@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, API отправки Microsoft Store, примеры кода
 ms.localizationpriority: medium
 ms.openlocfilehash: f728a17d98d53cf1783452ddfd543c1062156200
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "4967630"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "5127258"
 ---
 # <a name="code-examples-for-the-submission-api"></a>Примеры кода для API отправки
 
