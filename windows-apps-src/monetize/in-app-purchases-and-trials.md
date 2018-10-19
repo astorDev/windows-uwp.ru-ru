@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, покупки из приложения, IAP, надстройки, пробные версии, потребляемые, длительного пользования, подписка
 ms.localizationpriority: medium
-ms.openlocfilehash: d35e2469fa303a40967cf4c15800786eb2d17aca
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.openlocfilehash: b116e4794f024ecc5cf44d73e22c09ab8ee33ff4
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4750196"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4953172"
 ---
 # <a name="in-app-purchases-and-trials"></a>Покупки из приложения и пробные версии
 
@@ -162,7 +162,7 @@ ms.locfileid: "4750196"
 
 Если ваше приложение использует API-интерфейсы в пространстве имен **Windows.Services.Store** для реализации покупок из приложения и пробного периода, вам необходимо опубликовать приложение в Microsoft Store и скачать его на свое устройство разработки, чтобы использовать его лицензию для тестирования. Выполните следующие действия, чтобы протестировать код.
 
-1. Если ваше приложение еще не опубликовано и не доступно в Microsoft Store, убедитесь, что оно соответствует минимальным требованиям [комплекта сертификации приложений для Windows](https://developer.microsoft.com/windows/develop/app-certification-kit), [отправьте свое приложение](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) на информационную панель Центра разработки для Windows и убедитесь, что ваше приложение прошло сертификацию. При необходимости можно [настроить приложение, чтобы его нельзя было найти в Магазине](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability), пока вы его тестируете.
+1. Если ваше приложение еще не опубликовано и не доступно в Microsoft Store, убедитесь, что оно соответствует минимальным требованиям [комплекта сертификации приложений для Windows](https://developer.microsoft.com/windows/develop/app-certification-kit), [отправьте свое приложение](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) на информационную панель Центра разработки для Windows и убедитесь, что ваше приложение прошло сертификацию. При необходимости можно [настроить приложение, чтобы его нельзя было найти в Магазине](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability), пока вы его тестируете. Обратите внимание, правильная настройка [тестовых пакетов](../publish/package-flights.md). Неправильно настроенные пакета, который может быть тестовых пакетов не смогут загрузить.
 
 2. Затем убедитесь, что вы выполнили следующие действия:
 
@@ -289,6 +289,6 @@ ms.locfileid: "4750196"
 * [Поддержка покупок приложений и надстроек внутри приложения](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [Поддержка покупок потребляемых надстроек внутри приложения](enable-consumable-add-on-purchases.md)
 * [Включение надстроек с подпиской для приложения](enable-subscription-add-ons-for-your-app.md)
-* [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md)
+* [Внедрение пробной версии приложения](implement-a-trial-version-of-your-app.md)
 * [Коды ошибок для операций Microsoft Store](error-codes-for-store-operations.md)
 * [Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)

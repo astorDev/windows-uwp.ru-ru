@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, API рекламных акций Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
 ms.openlocfilehash: 838329101695c21abfb7ac89dd9c83330b7bd26b
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4752485"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4951087"
 ---
 # <a name="manage-creatives"></a>Управление рекламными материалами
 
