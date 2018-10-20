@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 731d449d779806fbd4104787b692d3b7d0408036
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4949020"
+ms.locfileid: "5161474"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>Известные проблемы с упакованных классических приложений
 
@@ -149,13 +149,13 @@ certutil -dump <cert_file.pfx>
 set APPXSIP_LOG=1
 ```
 
-Затем из **командной строки**, подпишите приложение еще раз. Пример.
+Затем из **командной строки**, подпишите приложение еще раз. Пример
 
 ```
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
 ```
 
-Сведения о том, файлы, содержащие поврежденных PE сертификат будет отображаться в **Окне консоли**. Пример.
+Сведения о том, файлы, содержащие поврежденных PE сертификат будет отображаться в **Окне консоли**. Пример
 
 ```
 ...

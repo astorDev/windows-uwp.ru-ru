@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10 uwp, всплывающее уведомление, настраиваемый звук, уведомление, аудио, звук
 ms.localizationpriority: medium
 ms.openlocfilehash: 24be148340366163fcab00ec75f7f26fac6c2d80
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4959129"
+ms.locfileid: "5164891"
 ---
 # <a name="custom-audio-on-toasts"></a>Настраиваемый звук всплывающих уведомлениях
 
