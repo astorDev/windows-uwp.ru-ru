@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, API отправки Microsoft Store, отправка тестируемой возможности, обновление
 ms.localizationpriority: medium
 ms.openlocfilehash: 467dae77a7815dba03ce558c7e29e3eea0036d09
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5128687"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5171073"
 ---
 # <a name="update-a-package-flight-submission"></a>Обновление отправки тестового пакета
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, рекламные объявления, реклама, пошаговые руководства
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c1974618c65dd057c4c8152d9c4c9556869a3ef
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "4953207"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5171021"
 ---
 # <a name="best-practices-for-ads-in-apps"></a>Рекомендации для объявлений в приложениях
 
