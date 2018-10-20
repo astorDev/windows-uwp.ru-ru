@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, рекламные объявления, реклама, обработка ошибок, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: e4387ccb8ef7eb02cb0043530a4e683f7917f421
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5128965"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5171883"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>Пошаговое руководство по обработке ошибок XAML/C#
 
