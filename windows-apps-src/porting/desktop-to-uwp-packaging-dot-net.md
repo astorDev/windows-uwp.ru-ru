@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: 091782d926949b87db9b29c08ec8cf98f485f0df
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "4967566"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5169093"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Упаковки классического приложения с помощью Visual Studio
 
@@ -62,7 +62,9 @@ Visual Studio можно использовать для создания пак
 
    ![Задание точки входа](images/desktop-to-uwp/entry-point-set.png)
 
-6. Соберите проект упаковки, чтобы убедиться, что ошибок нет.
+6. Соберите проект упаковки, чтобы убедиться, что ошибок нет.  Если возникнут ошибки, откройте **Диспетчер конфигураций** и убедитесь, что проекты предназначены для платформы.
+
+   ![Диспетчер конфигурации](images/desktop-to-uwp/config-manager.png)
 
 7. Используйте мастер [Создание пакетов приложений](../packaging/packaging-uwp-apps.md), чтобы создать файл appxupload.
 

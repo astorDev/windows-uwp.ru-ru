@@ -4,18 +4,18 @@ Description: Enhance your desktop application for Windows 10 users by using Univ
 Search.Product: eADQiWindows 10XVcnh
 title: Улучшение классического приложения для Windows 10
 ms.author: normesta
-ms.date: 08/12/2017
+ms.date: 10/15/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 392f8166e16c028a57bc9e27039a9884f1d9714a
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: ffe3f2a93642911da57d3dd94c09206dc7f5dc94
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4948723"
+ms.locfileid: "5160685"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Улучшите свое классическое приложение для Windows 10
 
@@ -58,10 +58,10 @@ API-интерфейсы UWP можно использовать для доба
 
 Откройте диалоговое окно **Дополнительные каталоги #using** и добавьте эти каталоги.
 
-* %VSInstallDir%\Common7\IDE\VC\vcpackages
-* C:\Program Files (x86)\Windows Kits\10\UnionMetadata
-* C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\<*последняя версия*>
-* C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\<*последняя версия*>
+* Common7\IDE\VC\vcpackages долларов США (VSInstallDir)
+* C:\Program файлы (x86) \Windows Kits\10\UnionMetadata\ <*версия SDK*> \Facade
+* C:\Program файлы (x86) \Windows Kits\10\References\ <*Версия SDK*> \Windows.Foundation.UniversalApiContract\ <*Последняя версия*>
+* C:\Program файлы (x86) \Windows Kits\10\References\ <*Версия SDK*> \Windows.Foundation.FoundationContract\ <*Последняя версия*>
 
 Откройте диалоговое окно **Дополнительные каталоги включаемых файлов** и добавьте этот каталог: C:\Program Files (x86) \Windows Kits\10\Include\<*последняя версия*>\um
 
