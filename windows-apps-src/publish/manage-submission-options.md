@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, удержание публикации, дата публикации, отправка отправки для публикации, утверждение ограниченных возможностей
 ms.localizationpriority: medium
 ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5166571"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5401939"
 ---
 # <a name="manage-submission-options"></a>Параметры управления отправкой
 

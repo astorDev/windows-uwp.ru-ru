@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live
 ms.localizationpriority: medium
 ms.openlocfilehash: 68bc3389276acc910272d57e9cc859a7e8ffd6c7
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5168027"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5400445"
 ---
 # <a name="get-xbox-live-analytics-data"></a>Получение аналитических данных Xbox Live
 

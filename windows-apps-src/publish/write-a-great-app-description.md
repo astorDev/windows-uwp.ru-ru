@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, описание, описание в Store, маркетинг
 ms.localizationpriority: medium
 ms.openlocfilehash: 54877e43ced6044e0866f951a653f2b32d040d9d
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5161328"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5411032"
 ---
 # <a name="write-a-great-app-description"></a>Создание эффективного описания приложения
 

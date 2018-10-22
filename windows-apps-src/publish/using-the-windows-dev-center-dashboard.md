@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, информационная панель, центр разработки
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5357b038091b72681915e46875f92077bb3c9e
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5160368"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5398884"
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>Использование информационной панели Центра разработки для Windows
 

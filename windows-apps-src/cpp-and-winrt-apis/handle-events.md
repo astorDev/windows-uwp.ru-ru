@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, маркер, событие, делегат
 ms.localizationpriority: medium
-ms.openlocfilehash: c64b4a23e3b63c939d192e828e890a9ceb92e5ab
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.openlocfilehash: 96655c14f9c21f804ef5ebfdfe73cee0b04edfe3
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5162996"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5400062"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Обработка событий с помощью делегатов в C++/WinRT
 
@@ -142,7 +142,7 @@ struct Example : ExampleT<Example>
     }
 
 private:
-    winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> m_event_revoker;
+    winrt::Windows::UI::Xaml::Controls::Button::Click_revoker m_event_revoker;
 };
 ```
 
@@ -156,11 +156,13 @@ winrt::event_token Click(winrt::Windows::UI::Xaml::RoutedEventHandler const& han
 void Click(winrt::event_token const& token) const;
 
 // Revoke with event_revoker
-winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click(winrt::auto_revoke_t,
+Button::Click_revoker Click(winrt::auto_revoke_t,
     winrt::Windows::UI::Xaml::RoutedEventHandler const& handler) const;
 ```
 
-Аналогичный шаблон применяется ко всем событиям C++/WinRT.
+> [!NOTE]
+> В примере выше `Button::Click_revoker` — это псевдоним для `winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`. Аналогичный шаблон применяется ко всем событиям C++/WinRT. Каждое событие среды выполнения Windows имеет перегрузки функции revoke, возвращающий отзыва событий и тип отзыва входит в источнике событий. Таким образом выполнить еще один пример, событие [**CoreWindow::SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged) имеет перегрузку функции регистрации, которая возвращает значение типа **CoreWindow::SizeChanged_revoker**.
+
 
 Вы можете рассмотреть вариант отзыва обработчиков в сценарии навигации по страницам. Если вы многократно переходите на страницу, а затем обратно, можно отменять все обработчики при переходе со страницы. Кроме того, если вы повторно используете один и тот же экземпляр страницы, проверьте значение маркера и регистрируйте, только если он еще не был установлен (`if (!m_token){ ... }`). Третий вариант — хранение отзыва событий на странице в качестве элемента данных. Четвертый вариант, как описано далее в этом разделе, состоит в записи строгой или слабой ссылки на объект *this* в вашей лямбда-функции.
 

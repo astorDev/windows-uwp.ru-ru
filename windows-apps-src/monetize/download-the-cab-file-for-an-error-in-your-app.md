@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, API аналитики для Microsoft Store, скачать CAB-файл
 ms.localizationpriority: medium
 ms.openlocfilehash: 671c5c1b187ac48c12988a00d66acb366cae72f1
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5161411"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5399027"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>Скачивание CAB-файла для ошибки в приложении
 

@@ -3,24 +3,25 @@ author: stevewhims
 description: В этом разделе показаны способы, которыми можно создавать и использовать асинхронные объекты среды выполнения Windows с помощью C++/WinRT.
 title: Параллельная обработка и асинхронные операции с помощью C++/WinRT
 ms.author: stwhi
-ms.date: 10/03/2018
+ms.date: 10/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, параллелизм, async, асинхронный, асинхронность
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f29828a800795aba70c17bcab19b56b85d56382
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.openlocfilehash: 0767f8c1ca0fb80ff8c7b033832ffccd61aeabfc
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5160778"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5400370"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Параллельная обработка и асинхронные операции с помощью C++/WinRT
 
 В этом разделе показаны способы, с помощью которых можно выполнить оба Создание и использование асинхронного объектов среды выполнения Windows с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 ## <a name="asynchronous-operations-and-windows-runtime-async-functions"></a>Асинхронные операции и функции "Async" среды выполнения Windows
+
 Любой API-интерфейс среды выполнения Windows, завершение которого может занять более 50 миллисекунд, реализуется как асинхронная функция (с именем, оканчивающимся на "Async"). Реализация асинхронной функции инициирует работу в другом потоке и немедленно возвращает объект, представляющий асинхронную операцию. После завершения асинхронной операции возвращаемый объект, содержит любое значение, которое является результатом работы. Пространство имен среды выполнения Windows **Windows::Foundation** содержит четыре типа объектов асинхронной операции.
 
 - [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction),
@@ -30,9 +31,10 @@ ms.locfileid: "5160778"
 
 Каждый из этих типов асинхронной операции проецируется в соответствующий тип в пространстве имен C++/WinRT **winrt::Windows::Foundation**. C++/WinRT также содержит внутреннюю структуру адаптера await. Она не используется напрямую, но благодаря этой структуре, можно написать `co_await` инструкцию, чтобы совместно ожидать результата любой функции, которая возвращает один из этих типов асинхронной операции. И вы можете создавать свои собственные сопрограммы, возвращающие эти типы.
 
-Пример асинхронной функции Windows — [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), который возвращает объект асинхронной операции типа [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_). Рассмотрим некоторые блокирующие и не блокирующие способы использования C++/WinRT для вызова подобного API.
+Пример асинхронной функции Windows — [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), который возвращает объект асинхронной операции типа [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_). Давайте рассмотрим некоторые способы&mdash;первый блокировка, а затем без-&mdash;с помощью C + +/ WinRT для вызова подобного API.
 
 ## <a name="block-the-calling-thread"></a>Блокировка вызывающего потока
+
 Приведенный ниже пример кода получает объект асинхронной операцию от **RetrieveFeedAsync** и вызывает **get** для этого объекта, чтобы заблокировать вызывающий поток до тех пор, пока не будут доступны результаты выполнения асинхронной операции.
 
 ```cppwinrt
@@ -50,7 +52,7 @@ void ProcessFeed()
 {
     Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
     SyndicationClient syndicationClient;
-    SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
+    SyndicationFeed syndicationFeed{ syndicationClient.RetrieveFeedAsync(rssFeedUri).get() };
     // use syndicationFeed.
 }
 
@@ -64,6 +66,7 @@ int main()
 Вызов **get** обеспечивает удобство написания кода, и он идеально подходит для консольных приложений и фоновых потоков, в которых по какой-либо причине вам не хочется использовать сопрограмму. Однако он не является ни одновременным, ни асинхронным, поэтому не подходит для потока пользовательского интерфейса (и в неоптимизированных сборках при попытке его использования будет появляться уведомление об этом). Чтобы потоки операционной системы могли выполнять другую полезную работу, требуется иной способ.
 
 ## <a name="write-a-coroutine"></a>Написание сопрограммы
+
 C++/WinRT интегрирует сопрограммы C++ в модель программирования для обеспечения естественного способа совместно ожидать результата. Вы можете создать свою собственную асинхронную операцию среды выполнения Windows путем написания сопрограммы. В следующем примере кода **ProcessFeedAsync** является сопрограммой.
 
 > [!NOTE]
@@ -101,7 +104,7 @@ int main()
 {
     winrt::init_apartment();
 
-    auto processOp = ProcessFeedAsync();
+    auto processOp{ ProcessFeedAsync() };
     // do other work while the feed is being printed.
     processOp.get(); // no more work to do; call get() so that we see the printout before the application exits.
 }
@@ -114,6 +117,7 @@ int main()
 Также можно обрабатывать завершенные и (или) текущие события из асинхронных действий и операций с помощью делегатов. Подробные сведения и примеры кода см. в разделе [Типы делегатов для асинхронных действий и операций](handle-events.md#delegate-types-for-asynchronous-actions-and-operations).
 
 ## <a name="asychronously-return-a-windows-runtime-type"></a>Асинхронное возвращение типа среды выполнения Windows
+
 В следующем примере мы создаем оболочку вызова **RetrieveFeedAsync** для определенного URI, чтобы получить функцию **RetrieveBlogFeedAsync**, которая асинхронно возвращает [**SyndicationFeed **](/uwp/api/windows.web.syndication.syndicationfeed).
 
 ```cppwinrt
@@ -147,7 +151,7 @@ int main()
 {
     winrt::init_apartment();
 
-    auto feedOp = RetrieveBlogFeedAsync();
+    auto feedOp{ RetrieveBlogFeedAsync() };
     // do other work.
     PrintFeed(feedOp.get());
 }
@@ -173,6 +177,7 @@ IAsyncOperation<winrt::hstring> ReadAsync()
 ``` 
 
 ## <a name="asychronously-return-a-non-windows-runtime-type"></a>Асинхронное возвращение типа, не являющегося типом среды выполнения Windows
+
 Если вы асинхронно возвращаете тип, который *не* является типом среды выполнения Windows, то вам необходимо возвращать шаблон [**concurrency::task**](/cpp/parallel/concrt/reference/task-class) из библиотеки параллельных шаблонов (PPL). Мы рекомендуем **concurrency::task**, поскольку он обеспечивает более высокую производительность (и в дальнейшем улучшенную совместимость), чем **std::future**.
 
 > [!TIP]
@@ -197,7 +202,7 @@ concurrency::task<std::wstring> RetrieveFirstTitleAsync()
     {
         Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
         SyndicationClient syndicationClient;
-        SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
+        SyndicationFeed syndicationFeed{ syndicationClient.RetrieveFeedAsync(rssFeedUri).get() };
         return std::wstring{ syndicationFeed.Items().GetAt(0).Title().Text() };
     });
 }
@@ -206,13 +211,14 @@ int main()
 {
     winrt::init_apartment();
 
-    auto firstTitleOp = RetrieveFirstTitleAsync();
+    auto firstTitleOp{ RetrieveFirstTitleAsync() };
     // Do other work here.
     std::wcout << firstTitleOp.get() << std::endl;
 }
 ```
 
 ## <a name="parameter-passing"></a>Передача параметров
+
 Для синхронных функций следует использовать параметры по умолчанию `const&`. Это позволит избежать чрезмерной нагрузки, связанной с копиями (которая включает подсчет ссылок, а это означает блокировку операций увеличения и уменьшения).
 
 ```cppwinrt
@@ -251,7 +257,8 @@ IASyncAction DoWorkAsync(Param const value);
 См. также раздел [Стандартные массивы и векторы](std-cpp-data-types.md#standard-arrays-and-vectors), в котором описываются методы передачи стандартного вектора в асинхронный вызываемый элемент.
 
 ## <a name="offloading-work-onto-the-windows-thread-pool"></a>Передача работы в пул потоков Windows
-Перед передачей работы на вычисления в сопрограмме необходимо вернуть выполнение вызывающей стороне, чтобы не заблокировать вызывающую сторону (другими словами, создать риск приостановки). Если вы еще не делаете этого путем применения `co-await` к какой-либо другой операции, то можете применить `co-await` к функции **winrt::resume_background**. Это возвращает управление вызывающей стороне и затем сразу же возобновляет выполнение в потоке пула потоков.
+
+Перед передачей работы на вычисления в сопрограмме необходимо вернуть выполнение вызывающей стороне, чтобы не заблокировать вызывающую сторону (другими словами, создать риск приостановки). Если вы еще не делаете этого `co-await`- применения другой операции, то можете `co-await` функцию [**winrt::resume_background**](/uwp/cpp-ref-for-winrt/resume-background) . Это возвращает управление вызывающей стороне и затем сразу же возобновляет выполнение в потоке пула потоков.
 
 Пул потоков, используемый в реализации, является низкоуровневым [пулом потоков Windows](https://msdn.microsoft.com/library/windows/desktop/ms686766), поэтому он наиболее эффективен.
 
@@ -271,6 +278,7 @@ IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
 ```
 
 ## <a name="programming-with-thread-affinity-in-mind"></a>Программирование с учетом сходства потоков
+
 Этот сценарий основан на предыдущем. Вы передаете работу в пул потоков, но затем необходимо отображать ход выполнения в пользовательском интерфейсе (UI).
 
 ```cppwinrt
@@ -283,7 +291,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 }
 ```
 
-Приведенный выше код выдает исключение [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/hresult-wrong-thread), поскольку **TextBlock** должен обновляться из создавшего его потока, а это поток пользовательского интерфейса. Одним из решений является захват контекста потока, в котором изначально была вызвана наша сопрограмма. Создайте экземпляр объекта **winrt::apartment_context**, а затем примените к нему `co_await`.
+Приведенный выше код выдает исключение [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/hresult-wrong-thread), поскольку **TextBlock** должен обновляться из создавшего его потока, а это поток пользовательского интерфейса. Одним из решений является захват контекста потока, в котором изначально была вызвана наша сопрограмма. Для этого создайте экземпляр объекта [**winrt::apartment_context**](/uwp/cpp-ref-for-winrt/apartment-context) , выполнения фоновой задачи, а затем `co_await` **apartment_context** переключение обратно на контекст вызова.
 
 ```cppwinrt
 IAsyncAction DoWorkAsync(TextBlock textblock)
@@ -301,7 +309,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 
 Если приведенная выше сопрограмма вызывается из потока пользовательского интерфейса, создавшего **TextBlock**, этот метод работает. В вашем приложении будет множество ситуаций, где вы будете уверены в этом.
 
-Для получения более универсального решения для обновления пользовательского интерфейса, в котором рассматриваются случаи, где у вас нет уверенности по поводу вызывающего потока, можно `co-await` функцию **winrt::resume_foreground** переключиться на определенный поток переднего плана. В следующем примере кода мы указываем поток переднего плана, передавая объект-диспетчер, связанный с **TextBlock** (обращаясь к его свойству [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher)). Реализация **winrt::resume_foreground** вызывает [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) на этом объекте-диспетчере для выполнения работы, поступающей далее в сопрограмме.
+Для получения более универсального решения для обновления пользовательского интерфейса, в котором рассматриваются случаи, где у вас нет уверенности по поводу вызывающего потока, можно `co-await` функцию [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) переключиться на определенный поток переднего плана. В следующем примере кода мы указываем поток переднего плана, передавая объект-диспетчер, связанный с **TextBlock** (обращаясь к его свойству [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher)). Реализация **winrt::resume_foreground** вызывает [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) на этом объекте-диспетчере для выполнения работы, поступающей далее в сопрограмме.
 
 ```cppwinrt
 IAsyncAction DoWorkAsync(TextBlock textblock)
@@ -385,6 +393,7 @@ IAsyncAction MainCoroutineAsync()
 Ожидание **winrt::get_cancellation_token** извлекает токен отмены изучения **IAsyncAction** , которая выдает сопрограммы от вашего имени. Можно использовать оператор вызова функции на этот маркер запрашивать состояние отмены&mdash;по сути опрос для отмены. При выполнении определенных операций передачей или итерацию большой коллекции, то это разумный метод.
 
 ### <a name="register-a-cancellation-callback"></a>Зарегистрировать обратный вызов отмены
+
 Отмена среды выполнения Windows не затрагивают автоматически другие асинхронные объекты. Но&mdash;появились в Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809)&mdash;вы можете зарегистрировать обратный вызов отмены. Это вытеснением заинтересовать клиента, который может распространяться отмены и делает возможным для интеграции с существующей библиотеки параллельная обработка.
 
 В следующем примере кода выполняющий **NestedCoroutineAsync** , но он имеет не логики специальные отмены в нем. **CancellationPropagatorAsync** является по сути оболочкой на вложенных сопрограммы; оболочка pre-emptively пересылает отмены.
