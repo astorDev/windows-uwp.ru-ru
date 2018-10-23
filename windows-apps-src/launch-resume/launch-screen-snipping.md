@@ -1,7 +1,7 @@
 ---
 author: QuinnRadich
 title: Запуск функции "Фрагмент экрана"
-description: В этом разделе описываются схемы URI ms-screenclip и ms-screensketch. Ваше приложение может использовать эти схемы URI для запуска приложения фрагмент & эскиза или открытие нового фрагмент.
+description: В этом разделе описываются схемы URI ms-screenclip и ms-screensketch. Ваше приложение может использовать эти схемы URI для запуска приложения фрагмент & эскиза или, чтобы открыть новый фрагмент.
 ms.author: quradic
 ms.date: 8/1/2017
 ms.topic: article
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, uri, фрагмент, эскиза
 ms.localizationpriority: medium
 ms.openlocfilehash: e18662125ef72051a289b3f1d0f3dc09b452d256
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396776"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5430635"
 ---
 # <a name="launch-screen-snipping"></a>Запуск функции "Фрагмент экрана"
 
@@ -22,7 +22,7 @@ ms.locfileid: "5396776"
 
 ## <a name="open-a-new-snip-from-your-app"></a>Откройте новый фрагмент из вашего приложения
 
-**Ms-screenclip:** URI позволяет вашему приложению, чтобы автоматически открывать и начать новый фрагмент. Полученный фрагмент копируется в буфер обмена пользователя, но не передается автоматически возвращается открывающего приложения.
+**Ms-screenclip:** URI позволяет вашему приложению, чтобы автоматически открывать и начать новый фрагмент. Итоговый фрагмент копируется в буфер обмена пользователя, но не передаются автоматически обратно в открывающего приложения.
 
 **ms-screenclip:** принимает следующие параметры:
 
@@ -39,7 +39,7 @@ ms.locfileid: "5396776"
 
 | Параметр | Тип | Обязательный | Описание |
 | --- | --- | --- | --- |
-| sharedAccessToken | string | нет | Маркер, определяющий файл, чтобы открыть в приложении фрагмент и эскиз. Полученный [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Если этот параметр задан, приложение будет запущено без открыть файл. |
+| sharedAccessToken | string | нет | Маркер, определяющий файл, чтобы открыть в приложении фрагмент & эскиза. Полученный [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Если этот параметр задан, приложение будет запущено без открыть файл. |
 | источник | string | нет | Свободный строка для указания источника, который запустил URI. |
 | isTemporary | bool | нет | Если задано значение True, наброска экрана пытается удалить файл после его открытия. |
 

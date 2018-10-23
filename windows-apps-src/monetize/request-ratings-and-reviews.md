@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, оценки, отзывы
 ms.localizationpriority: medium
 ms.openlocfilehash: cc3dce673b434673f0e8a72158c2d3a593f02c52
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397986"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5431413"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Запрос оценок и отзывов для вашего приложения
 
@@ -25,7 +25,7 @@ ms.locfileid: "5397986"
 Когда вы будете готовы проанализировать данные оценок и отзывов, можете просмотреть эти данные на информационной панели центра разработки для Windows или использовать API аналитики Microsoft Store для программного получения этих данных.
 
 > [!IMPORTANT]
-> При добавлении функции оценки в вашем приложении, все отзывы необходимо отправить пользователю механизмов оценку магазина, независимо от выбранного по звездам. Если сбора отзывов или комментариев от пользователей, он должен быть очистить, что оно не относится к приложения оценки или отзывы в магазине, но отправляется непосредственно в разработчик приложения. См. в разделе, разработчика поведения Дополнительные сведения, связанные с [Fraudulent или хакеры действий](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
+> При добавлении функции оценки в вашем приложении, все отзывы необходимо отправить пользователю механизмы оценку магазина, независимо от выбранного по звездам. Если сбора отзывов или комментариев от пользователей, он должен быть очистить, что оно не связаны с оценки приложения или отзывы в магазине, но отправляется непосредственно в разработчик приложения. См. в разделе, разработчика поведения Дополнительные сведения, связанные с [Fraudulent или хакеры действия](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>Показ диалогового окна оценки и отзыва в приложении
 
