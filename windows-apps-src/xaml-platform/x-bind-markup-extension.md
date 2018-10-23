@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: Расширение разметки xBind является вариантом высокая производительность для привязки. xBind - появившиеся в Windows 10 — работает быстрее и меньше памяти, чем Binding и поддерживает более отладки.
+description: Расширение разметки xBind является вариантом высокая производительность для привязки. xBind - появившиеся в Windows 10 — работает быстрее и меньше памяти, чем Binding и поддерживает более высокую отладки.
 title: Расширение разметки xBind
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5158078"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410672"
 ---
 # <a name="xbind-markup-extension"></a>Расширение разметки {x:Bind}
 
@@ -115,7 +115,7 @@ _Примечание. Синтаксис приведения в стиле C# 
 
 ## <a name="functions-in-binding-paths"></a>Функции в путях привязки
 
-Начиная с Windows 10 версии 1607 **{x: Bind}** поддерживает использование функции на конечном этапе шаге пути привязки. Это полезная функция для привязки данных, позволяющий нескольких сценариев в разметке. См. в разделе [привязки функций](../data-binding/function-bindings.md) подробные сведения.
+Начиная с Windows 10 версии 1607 **{x: Bind}** поддерживает использование функции на конечном этапе шаге пути привязки. Это полезная функция для привязки данных, позволяющий нескольких сценариев в разметке. См. в разделе [привязок функции](../data-binding/function-bindings.md) подробные сведения.
 
 ## <a name="event-binding"></a>Привязка события
 

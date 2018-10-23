@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, win32, настольный компьютер, всплывающие уведомления, отправка уведомления, отправка локального уведомления, мост для классических приложений, C#, c sharp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bda3e85fd89ef7a8b819fcd809acea4fd9a276b
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5159082"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408456"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Отправка локального всплывающего уведомлений из классических приложений C#
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5169967"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408423"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Тестирование с помощью эмулятора устройства с Windows 10 Mobile (Майкрософт)
 
@@ -49,7 +49,7 @@ ms.locfileid: "5169967"
 
 Чтобы получить сведения о требованиях к ОЗУ и операционной системе, на панели управления щелкните **Система и безопасность** и выберите **Система**.
 
-Эмулятор Microsoft для Windows 10 Mobile требуется Visual Studio 2015 или более поздней версии; Это не совместимы с более ранних версиях Visual Studio.
+Эмулятор Microsoft для Windows 10 Mobile требуется Visual Studio 2015 или более поздней версии; Это не обратную совместимость с более ранними версиями Visual Studio.
 
 Эмулятор устройства с Windows 10 Mobile (Майкрософт) не может загружать приложения, предназначенные для версии ОС Windows Phone, предшествующей Windows Phone 7.1.
 

@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 3dprinting, трехмерной печати
 ms.localizationpriority: medium
 ms.openlocfilehash: acf0c9856328e26f8c39adf3f062a3516e7189e2
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5171413"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406159"
 ---
 # <a name="3d-printing"></a>3D Printing
 
 
 В этом разделе описывается использование пространства [имен Windows.Graphics.Printing3D](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) , чтобы добавить функцию трехмерной печати в универсальное приложение для Windows.  
 
-Дополнительные сведения о трехмерной печати в Windows 10, включая ресурсы для партнеров оборудования, форумы обсуждений и общие сведения о возможностях трехмерной печати см. в разделе узла [трехмерной печати в Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10) в центре разработки оборудования.
+Дополнительные сведения о трехмерной печати в Windows 10, включая ресурсы для партнеров оборудования, форумы обсуждений и общие сведения о возможностях трехмерной печати см. на сайте [трехмерной печати в Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10) в центре разработчиков оборудования.
 
 | Статья | Описание |
 |-------|-------------|

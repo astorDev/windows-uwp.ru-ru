@@ -15,17 +15,17 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 518ce49ddb631e3e914a6c7662b4e74de247c29c
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5158796"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5404240"
 ---
 # <a name="combo-box"></a>Поле со списком
 
 Используйте поле со списком (также известной как раскрывающегося списка) для представления списка элементов, которые пользователь может выбрать нужный элемент. Поле со списком начинается в компактном состоянии и разворачивается для отображения списка предлагаемых.
 
-Когда закрывается в поле со списком, он отображает текущий выбор либо будет пустым, если выбранного элемента нет. При развертывании в поле со списком, отображается список доступных для выбора элементов.
+При закрытии в поле со списком, он отображает текущий выбор либо будет пустым, если выбранного элемента нет. При развертывании в поле со списком, отображается список доступных для выбора элементов.
 
 > **Важные API -интерфейсы**: [класс ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable свойство](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [свойство Text](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted событий](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
@@ -70,9 +70,9 @@ ms.locfileid: "5158796"
 
 ## <a name="create-a-combo-box"></a>Создание поля со списком
 
-В поле со списком заполнения, добавляя объекты непосредственно к коллекции [элементов](/uwp/api/windows.ui.xaml.controls.itemscontrol.items) или путем привязки свойства [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) с источником данных. Элементы, добавленные в поле со списком упаковываются в [ComboBoxItem](/uwp/api/windows.ui.xaml.controls.comboboxitem) контейнеров.
+В поле со списком заполнения, добавляя объекты непосредственно к коллекции [элементов](/uwp/api/windows.ui.xaml.controls.itemscontrol.items) или путем привязки свойства [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) с источником данных. Элементы, добавленные в поле со списком упаковываются в [ComboBoxItem](/uwp/api/windows.ui.xaml.controls.comboboxitem) контейнеры.
 
-Вот простой списком с элементами, добавленных в XAML.
+Вот простой списком с элементы, добавленные в XAML.
 
 ```xaml
 <ComboBox Header="Colors" PlaceholderText="Pick a color" Width="200">
@@ -111,7 +111,7 @@ public MainPage()
 Чтобы получить значение конкретного свойства на выбранный элемент данных, можно использовать свойство [SelectedValue](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvalue) . В этом случае задайте [SelectedValuePath](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvaluepath) для задания свойства выбранного элемента, чтобы получить значение.
 
 > [!TIP]
-> Если задано SelectedItem или SelectedIndex, чтобы указать значение по умолчанию, если свойство имеет значение, прежде чем заполнено в коллекцию Items поле со списком, возникает исключение. Если вы определяете своих элементов в XAML, лучше обрабатывать события Loaded поле со списком и настроить SelectedItem или SelectedIndex в обработчике события Loaded.
+> Если задано SelectedItem или SelectedIndex, чтобы указать значение по умолчанию, если свойство имеет значение, прежде чем заполнено в коллекцию Items поле со списком, возникает исключение. Если вы определяете своих элементов в XAML, лучше обрабатывать события Loaded поле со списком и задать SelectedItem или SelectedIndex в обработчике события Loaded.
 
 Можно выполнить привязку к эти свойства в XAML или обработать событие [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) , чтобы реагировать на изменения.
 
@@ -200,9 +200,9 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 Поле со списком редактируется, задайте свойство [IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable) значение **true**. Затем обработайте событие [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) для работы со значением, введенные пользователем.
 
-По умолчанию значение SelectedItem обновляется, когда пользователь подтверждает пользовательский текст. Можно переопределить это поведение, задав **Handled** значение **true** в аргументов события TextSubmitted. Когда событие помечается как обработанное, в поле со списком будет дальнейших действий не после события и будет оставаться в состоянии редактирования. SelectedItem не будут обновляться.
+По умолчанию значение SelectedItem обновляется, когда пользователь подтверждает пользовательский текст. Можно переопределить это поведение, задав **Handled** значение **true** в аргументов события TextSubmitted. Когда событие помечается как обработанное, в поле со списком будет не выполнять никаких дальнейших действий после события и будет оставаться в состоянии редактирования. SelectedItem не будут обновляться.
 
-В этом примере показан простой редактируемое поле со списком. Список содержит простые строки и любое значение, введенные пользователем используется как при вводе.
+В этом примере показан простой редактируемое поле со списком. Список содержит простых строк и любое значение, введенные пользователем используется как при вводе.
 
 Элемента выбора «недавно использовавшихся имена» дает пользователю возможность ввести пользовательских строк. В списке «RecentlyUsedNames» содержит несколько значений, которые пользователь может выбрать из, но пользователь может также добавить новые, пользовательские значение. Свойство «CurrentName» представляет в настоящее время введенное имя.
 
@@ -212,7 +212,7 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
           SelectedItem="{x:Bind CurrentName, Mode=TwoWay}"/>
 ```
 
-### <a name="text-submitted"></a>Текст отправки
+### <a name="text-submitted"></a>Отправленные текста
 
 Вы можете обработать событие [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) для работы со значением, введенные пользователем. В случае обработчик, вы обычно проверит правильность введенных пользователем значение, затем используйте значение в вашем приложении. В зависимости от ситуации можно также добавить значение в поле со списком список параметров для использования в будущем.
 
@@ -230,7 +230,7 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 Когда пользователь добавляет значение, которое не находится в списке, обновления размер шрифта, но значение не добавляется в список размеры шрифтов.
 
-Если недавно введенное значение не является допустимым, используйте SelectedValue вернуться к последнему свойство Text известное хорошо значение.
+Если недавно введенное значение не является допустимым, используйте SelectedValue вернуться к последнему свойство Text известных разумным.
 
 ```xaml
 <ComboBox x:Name="fontSizeComboBox"

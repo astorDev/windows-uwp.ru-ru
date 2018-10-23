@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 556a787eb1e92e4c8adb7457235afb45c02df2dc
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5156876"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408881"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Задание условий выполнения фоновой задачи
 
@@ -64,7 +64,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 Чтобы добавить условие, вызовите метод [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) применительно к объекту [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) и передайте его объекту [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834).
 
-Следующий код использует **taskBuilder** добавить условие **InternetAvailable** .
+В следующем коде используется **taskBuilder** добавить условие **InternetAvailable** .
 
 ```csharp
 taskBuilder.AddCondition(internetCondition);
@@ -182,7 +182,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>Комментарии
 
 > [!NOTE]
-> Выберите условия для фоновой задачи, чтобы запускается только при необходим и не выполнялась, когда он не следует. Обзор различных условий выполнения фоновых задач см. в разделе [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+> Выберите такие условия для фоновая задача запускается только при необходим и не выполнялась, когда он не следует. Обзор различных условий выполнения фоновых задач см. в разделе [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
 ## <a name="related-topics"></a>Еще по теме
 

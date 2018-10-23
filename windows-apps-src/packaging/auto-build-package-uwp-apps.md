@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5164826"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5405278"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 
@@ -316,7 +316,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 Если вы хотите распространять приложение без публикации в Store, вы можете отправлять его непосредственно на устройства, если они доверяют сертификату, который использовался для подписи пакета приложения. 
 
-Используйте сценарий PowerShell `Add-AppDevPackage.ps1` для установки приложений. Этот сценарий будет добавить сертификат в разделе доверенного корневого центра сертификации локального компьютера и затем будет установите или обновите файл пакета приложения.
+Используйте сценарий PowerShell `Add-AppDevPackage.ps1` для установки приложений. Этот сценарий добавить сертификат в разделе доверенного корневого центра сертификации локального компьютера и на ней затем установите или обновите файл пакета приложения.
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Загрузка неопубликованного приложения в юбилейном обновлении Windows 10
 В юбилейном обновлении Windows 10 можно дважды щелкните файл пакета приложения и установить приложение, нажав кнопку "установить" в диалоговом окне. 

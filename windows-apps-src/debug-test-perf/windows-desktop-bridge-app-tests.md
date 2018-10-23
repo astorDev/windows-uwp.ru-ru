@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Тесты приложений моста для классических приложений
-description: Используйте встроенный тесты мост для оптимизации классического приложения для ее преобразования в приложение UWP.
+description: Используйте встроенный тесты Desktop Bridge для оптимизации классического приложения для ее преобразования в приложение UWP.
 ms.author: pafarley
 ms.date: 12/18/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, сертификации приложений
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5159496"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5404875"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Тесты приложений моста для классических приложений
 

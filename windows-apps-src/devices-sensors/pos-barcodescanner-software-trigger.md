@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: ddd8ec979cb6d5a72b48b9b8b6a60adb73c35657
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5169136"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408036"
 ---
 # <a name="use-a-software-trigger"></a>Использование программного триггера
 
@@ -33,7 +33,7 @@ ms.locfileid: "5169136"
 > [!Important]
 > Убедитесь, что сканер штрихкодов поддерживает использование программного триггера, проверив сначала свойство [IsSoftwareTriggerSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannercapabilities.issoftwaretriggersupported#Windows_Devices_PointOfService_BarcodeScannerCapabilities_IsSoftwareTriggerSupported).
 
-Приведенный ниже показано, как для запуска сканирования с помощью триггера программное обеспечение, которое остановит проверку после его сканирует один штрихкод.
+Приведенный ниже показано, как инициировать сканирование с помощью триггера программное обеспечение, которое остановит сканирования после проверки один штрихкод.
 
 ```cs
 private void SoftwareTrigger(BarcodeScanner barcodeScanner, ClaimedBarcodeScanner claimedBarcodeScanner) 

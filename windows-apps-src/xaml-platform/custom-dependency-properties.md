@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5165581"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410487"
 ---
 # <a name="custom-dependency-properties"></a>Пользовательские свойства зависимостей
 
@@ -170,7 +170,7 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> Для C + +/ CX код, причину, почему у вас есть закрытое поле и открытое свойство только для чтения, которое поверхности [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) является таким образом, чтобы другие вызывающие стороны, которые используют ваше свойство зависимостей можно также использовать служебные API системы свойств, требуют открытый идентификатор. Если оставить идентификатор закрытым, то другие пользователи не смогут использовать служебные API. Примеры таких API и сценариев включают [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) или [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (по выбору), [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) и [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Для этого невозможно использовать открытое поле, поскольку правила метаданных среды выполнения Windows не допускают открытые поля.
+> Для C + +/ CX кода, причину, почему у вас есть закрытое поле и открытое свойство только для чтения, которое поверхности [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) является таким образом, чтобы другие вызывающие стороны, которые используют ваше свойство зависимостей можно также использовать служебные API системы свойств, требуют открытый идентификатор. Если оставить идентификатор закрытым, то другие пользователи не смогут использовать служебные API. Примеры таких API и сценариев включают [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) или [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (по выбору), [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) и [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Для этого невозможно использовать открытое поле, поскольку правила метаданных среды выполнения Windows не допускают открытые поля.
 
 ## <a name="dependency-property-name-conventions"></a>Соглашения об именовании свойств зависимостей
 

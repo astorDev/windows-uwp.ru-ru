@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, требования к пакету, пакеты, формат пакета, поддерживаемая версия, отправить
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e294fdf5a9b2d98f09d839fa62499b556de3a5
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5157363"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407035"
 ---
 # <a name="app-package-requirements"></a>Требования к пакетам приложения
 
@@ -61,7 +61,7 @@ ms.locfileid: "5157363"
 > Значения в манифесте вводятся с учетом регистра. Пробелы и знаки препинания тоже должны совпадать. Правильно введите значения и внимательно проверьте их.
 
 
-(.Msixbundle или .appxbundle) в наборе приложений используется другой манифест. Подробнее о манифестах пакетов приложений и требованиях к ним см. в разделе о [манифесте пакета приложений](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Обратите внимание, что в .msixbundle или .appxbundle, манифест каждого включенного пакета необходимо использовать одинаковые элементы и атрибуты, за исключением атрибут **ProcessorArchitecture** [идентификатора](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) элемента.
+(.Msixbundle или .appxbundle) в наборе приложений используется другой манифест. Подробнее о манифестах пакетов приложений и требованиях к ним см. в разделе о [манифесте пакета приложений](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Обратите внимание, что в .msixbundle или .appxbundle, манифест каждого включенного пакета необходимо использовать одинаковые элементы и атрибуты, за исключением атрибута **ProcessorArchitecture** [идентификатора](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) элемента.
 
 > [!TIP]
 > Перед отправкой протестируйте пакеты с помощью [комплекта сертификации приложений для Windows](../debug-test-perf/windows-app-certification-kit.md). Это поможет вам выявить в манифесте проблемы, способные привести к сбою сертификации или отправки.

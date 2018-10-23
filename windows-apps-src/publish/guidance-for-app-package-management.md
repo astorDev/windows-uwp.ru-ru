@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a43f3b4c5684d93ea6986c4d1f1e4dae46c1a959
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5160339"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407304"
 ---
 # <a name="guidance-for-app-package-management"></a>Руководство по управлению пакетами приложения
 
@@ -110,11 +110,11 @@ ms.locfileid: "5160339"
 
 ## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>Добавление пакетов для Windows 10 в ранее опубликованное приложение
 
-Если у вас есть приложение в магазине, включены только пакеты для Windows 8.x и/или Windows Phone 8.x и вы хотите обновить приложение для Windows 10, создайте новую отправку и добавьте пакеты .msixupload или .appxupload UWP на этапе [пакетов](upload-app-packages.md) . После ваше приложение должно пройти сертификацию, пакет UWP также будет доступен для новых приобретений пользователями, использующими Windows 10.
+Если у вас есть приложение магазина, которое включено только пакеты для Windows 8.x и/или Windows Phone 8.x и вы хотите обновить приложение для Windows 10, создайте новую отправку и добавьте пакеты .msixupload или .appxupload UWP на этапе [пакетов](upload-app-packages.md) . После ваше приложение должно пройти сертификацию, пакет UWP также будет доступен для новых приобретений пользователями, использующими Windows 10.
 
 > [!NOTE]
 > Как только клиент, использующий ОС Windows10, получит ваш пакет UWP, вы не можете вернуть данного клиента к использованию пакета для предыдущей версии ОС. 
 
-Обратите внимание, что номер версии пакетов Windows 10 должен быть больше, чем для пакетов Windows 8, Windows 8.1 и Windows Phone 8.1, которую вы использовали. Дополнительные сведения см. в разделе [Нумерация версий пакета](package-version-numbering.md).
+Обратите внимание, что номер версии пакетов Windows 10 должен быть больше, чем для пакетов Windows 8, Windows 8.1 и Windows Phone 8.1, которые использовались. Дополнительные сведения см. в разделе [Нумерация версий пакета](package-version-numbering.md).
 
 Дополнительные сведения о создании пакетов приложений UWP для Магазина см. в разделе [Создание пакетов приложений](../packaging/index.md).

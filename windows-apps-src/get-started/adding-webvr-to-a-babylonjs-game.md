@@ -10,17 +10,17 @@ ms.technology: uwp
 keywords: webvr, edge, веб-разработки, babylon, babylonjs, babylon.js, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 97ef659a178a4c3f40d464fd958e5493454afef7
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5168993"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5405761"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>Добавление поддержки WebVR в трехмерную игру Babylon.js
 
 Если вы создали трехмерная игра с Babylon.js и думал, что он может отлично выглядят в виртуальной реальности (VR), выполните простых действий в этом руководстве, чтобы убедиться, что реальностью.
 
-Мы добавим поддержку WebVR в игру, показано ниже. Подключите контроллера Xbox, чтобы опробовать его и перейти к!
+Мы добавим поддержку WebVR в игру, показано ниже. Подключите контроллером Xbox оценить работу и перейти к!
 
 
 <iframe height='300' scrolling='no' title='Игру Babylon.js динозавр, с помощью Babylon.GUI' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/wrOvoj/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. в разделе пера <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/wrOvoj/'>игру Babylon.js динозавр, с помощью Babylon.GUI</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
@@ -37,7 +37,7 @@ ms.locfileid: "5168993"
 - Контроллером Xbox, подключенный к компьютеру
 - Windows 10 Creators Update
 - Компьютер с [минимальным требуется спецификации для запуска Windows Mixed Reality](https://developer.microsoft.com/en-us/windows/mixed-reality/immersive_headset_setup)
-- Устройство смешанной реальности (необязательно) 
+- Устройство смешанной реальности Windows (необязательно) 
 
 
 
@@ -53,7 +53,7 @@ ms.locfileid: "5168993"
 До и после папках содержатся следующие файлы:
 -   **текстур или** — папку, содержащую всех изображений, используемых в игре.
 -   **css /** — папку, содержащую CSS для игры.
--   **js /** — папку, содержащую файлы JavaScript. Файл main.js — наша игра, а остальные файлы — использовать библиотеки.
+-   **js /** — папку, содержащую файлы JavaScript. Файл main.js — наша игра, а остальные файлы — использованы библиотеки.
 -   **модели /** — папка С трехмерными моделями. В данной игре у нас есть только одна модель для динозавра.
 -   **index.html** — веб-страницы, на котором размещен обработчик игры. Открыв эту страницу в Microsoft Edge запуска игры.
 
@@ -67,7 +67,7 @@ ms.locfileid: "5168993"
 
 ![Смешанной реальности портала поиска](images/mixed-reality-portal.png)
 
-Если выполнены все требования, можно включить функции разработчика и имитировать гарнитуры смешанной реальности, питание от сети на компьютере. Если вы являетесь повезло достаточно фактического гарнитуры соседние, подключите его и запустите программу установки.
+Если выполнены все требования, можно включить функции разработчика и имитировать гарнитуры смешанной реальности, питание от сети на компьютере. Если вы повезло достаточно фактического гарнитуры соседние, подключите его и запустите программу установки.
 
 > [!IMPORTANT]
 > Портала смешанной реальности должен быть открыт в любое время с помощью этого учебника.
@@ -79,7 +79,7 @@ ms.locfileid: "5168993"
 >[!NOTE]
 > Привлекайте папке [**Прежде чем**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before) получить образце начальные.
 
-[Babylon.GUI](https://doc.babylonjs.com/how_to/gui) — это библиотека, поддержкой VR, позволяя создавать простые, интерактивных пользовательских интерфейсов, хорошо подходят для VR и отображает без VR.
+[Babylon.GUI](https://doc.babylonjs.com/how_to/gui) — это библиотека поддержкой VR, позволяя создавать простые, интерактивных пользовательских интерфейсов, хорошо подходят для VR и отображает без VR.
 Является расширением Babylon.js `GUI` библиотека — используемых throuhout пример для создания двухмерной элементов.
 
 
@@ -117,7 +117,7 @@ startUI.isVisible = false;
 
 ## <a name="detecting-headsets"></a>Обнаружение гарнитур
 
-Рекомендуется для приложений VR иметь два вида камеры, таким образом, может поддерживать несколько сценариев. Для этой игры мы будем поддерживает один камеру, которая требует гарнитура рабочий подключать и еще один, использующий не гарнитуры. Чтобы определить, какой из них игра будет использовать, нам потребуется установить флажок для см. в разделе ли гарнитура была обнаружена. Для этого мы будем использовать [`navigator.getVRDisplays()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getVRDisplays).
+Рекомендуется для приложений VR иметь два вида камеры, таким образом, может поддерживать несколько сценариев. Для этой игры мы будем поддерживать один камеру, которая требует гарнитура подключать работе и еще один, использующий не гарнитуры. Чтобы определить, какой из них игра будет использовать, нам потребуется установить флажок для см. в разделе ли гарнитура была обнаружена. Для этого мы будем использовать [`navigator.getVRDisplays()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getVRDisplays).
 
 
 Добавьте этот код выше `window.addEventListener('DOMContentLoaded')` в **файле main.js**.
@@ -139,7 +139,7 @@ navigator.getVRDisplays().then(function (displays) {
 С помощью Babylon.js, WebVR можно добавить быстро с помощью [`WebVRFreeCamera`](http://doc.babylonjs.com/classes/3.1/webvrfreecamera). Этой камеры может занять ввода с клавиатуры и позволяет использовать гарнитура VR для управления вращением ваше «head».
 
 
-### <a name="step-1-checking-for-headsets"></a>Шаг 1: Проверка гарнитур
+### <a name="step-1-checking-for-headsets"></a>Шаг 1: Проверка для гарнитур
 
 Для наших резервный камеры, мы будем использовать [`UniversalCamera`](https://doc.babylonjs.com/classes/3.1/universalcamera) , в настоящее время используется в исходном игры.
 
@@ -163,7 +163,7 @@ navigator.getVRDisplays().then(function (displays) {
 Мы будем подключить этой функции зависит от щелчка мышью.
 
 
-Вставьте код в пределах `createScene()` работать после `camera.applyGravity = true;` .
+Вставьте код в пределах `createScene()` функционировать после `camera.applyGravity = true;` .
 ```javascript
         scene.onPointerDown = function () {
             scene.onPointerDown = undefined
@@ -191,7 +191,7 @@ navigator.getVRDisplays().then(function (displays) {
 
 ### <a name="step-3-adding-gamepad-support"></a>Шаг 3: Добавление поддержки геймпада
 
-Так как `WebVRFreeCamera` не поддерживает изначально геймпадов, мы будем сопоставить наших кнопки геймпада клавиш со стрелками. Это необходимо сделать, углубиться в `inputs` свойства камеры. Добавляя соответствующие коды левый аналоговый джойстик вверх, вниз, влево и вправо в соответствии с с помощью клавиш со стрелками, наши игрового контроллера — обратно в действии.
+Так как `WebVRFreeCamera` не поддерживает изначально геймпадов, мы будем сопоставить наших кнопки геймпада клавиш со стрелками. Это необходимо сделать, углубиться в `inputs` свойства камеры. Добавляя соответствующие коды для левый аналоговый джойстик вверх, вниз, влево и вправо в соответствии с с помощью клавиш со стрелками, наши игрового контроллера — обратно в действии.
 
 
 Добавьте следующий код ниже `scene.onPointerDown = function() {...}` вызова.

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
 ms.openlocfilehash: 2476161954c1d4d49fcf9f8f74cd1b7cf9180c0a
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5169945"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406583"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание API-интерфейсов с помощью C++/WinRT
 
@@ -285,9 +285,9 @@ iclosable.Close();
 В случае, когда у вас есть объект интерфейса, и повлияет на том, что интерфейс от вашей реализации затем вы можете получить обратно с помощью шаблона функции [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) реализации. Опять же, это метод, который позволяет избежать вызовов виртуальных функций и перейти непосредственно к реализации.
 
 > [!NOTE]
-> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, необходимо вызвать [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) вместо [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
+> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, затем необходимо вызвать [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) вместо [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
 
-Вот пример. Существует еще один пример в [реализации класс пользовательского элемента управления **BgLabelControl** ](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
+Вот пример. Существует еще один пример в [Реализуйте класс пользовательского элемента управления **BgLabelControl** ](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)

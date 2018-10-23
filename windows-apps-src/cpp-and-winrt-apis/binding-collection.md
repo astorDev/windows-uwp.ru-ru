@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, коллекция
 ms.localizationpriority: medium
 ms.openlocfilehash: 22594c1cfc503b28163d9fca1f46a6861a4f59ad
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5169687"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5409411"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>Элементы управления XAML; привязка к коллекции C++/WinRT
 
@@ -52,7 +52,7 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!IMPORTANT]
-> Описания MIDL 3.0 выше, обратите внимание, что тип свойства **BookSkus** [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). В следующем разделе этой статьи мы будем привязка источника элементов [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) **BookSkus**. Поле со списком — это элемент управления, и правильно задать свойство [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) , необходимо задать его значение с типом **IObservableVector** (или **IVector**) **IInspectable**, или типа взаимодействия, например [** IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
+> В приведенном выше описании MIDL 3.0, обратите внимание, что тип свойства **BookSkus** [**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). В следующем разделе этой статьи мы будем привязка источника элементов [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) **BookSkus**. Поле со списком — это элемент управления, и правильно задать свойство [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) , необходимо задать его значение с типом **IObservableVector** (или **IVector**) из **IInspectable**или типа взаимодействия, например [** IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
 
 Сохраните и выполните сборку. Скопируйте заглушки доступа из `BookstoreViewModel.h` и `BookstoreViewModel.cpp` в папку `Generated Files` и реализуйте их.
 

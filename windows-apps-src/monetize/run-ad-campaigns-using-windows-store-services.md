@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, API рекламных акций Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a1f08dbd70904284179c90fa00d2abd9acf4b97
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5160665"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410762"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Проведение рекламных кампаний с помощью служб Магазина
 

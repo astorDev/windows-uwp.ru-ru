@@ -15,11 +15,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 6001f955b3ab6a60446eb84296dc3bc52ad3a99e
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167748"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406510"
 ---
 # <a name="bringing-it-together"></a>Реализация
 
@@ -110,7 +110,7 @@ ms.locfileid: "5167748"
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-В этом примере показано, как использовать свойства Opacity и перехода, чтобы увеличить размер кнопки затемняются, когда включен элемент управления и исчезать, когда она отключена.
+В этом примере показано, как использовать свойства Opacity и перехода, чтобы увеличить размер кнопки появления при включении элемента управления или Исчезание, когда она отключена.
 
 ```xaml
 <Button x:Name="SubmitButton"

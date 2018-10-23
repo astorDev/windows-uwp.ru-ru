@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: Windows 10, uwp, windows forms, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: b9757466502283c673c7b2106b4a7775be412faf
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167934"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5405014"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>Элементы управления UWP в классических приложениях
 
@@ -27,10 +27,10 @@ Windows 10 теперь позволяет использовать элемен
 
 ## <a name="wrapped-controls"></a>Перенос элементов управления
 
-WPF и Windows Forms можно использовать ряд оболочку элементы управления UWP в наборе [Средств сообщества Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Упоминаться эти элементы управления как *элементы управления в оболочку* из-за их перенос интерфейс и функциональные возможности элементов управления UWP. Можно добавить эти элементы управления в область проектирования вашего проекта WPF или Windows Forms и затем использовать их как любой другой WPF и Windows Forms элемент управления в конструкторе.
+WPF и Windows Forms можно использовать ряд оболочку элементы управления UWP в наборе [Средств сообщества Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Упоминаться эти элементы управления как *элементы управления в оболочку* из-за них упакованы интерфейс и функциональные возможности конкретного элемента управления UWP. Можно добавить эти элементы управления в область проектирования вашего проекта WPF или Windows Forms и затем использовать их как любой другой WPF и Windows Forms элемент управления в конструкторе.
 
 > [!NOTE]
-> Перенос элементов управления недоступны для классических приложений C++ Win32. Приложения такого типа необходимо использовать [XAML UWP, API размещения](#uwp-xaml-hosting-api).
+> Оболочку элементы управления доступны не для классических приложений C++ Win32. Приложения такого типа необходимо использовать [XAML UWP, API размещения](#uwp-xaml-hosting-api).
 
 Следующие элементы управления оболочку UWP в настоящее время доступны для приложений WPF и Windows Forms. Дополнительные элементы управления UWP в оболочку планируются для будущих выпусках набора средств сообщества Windows.
 
@@ -39,7 +39,7 @@ WPF и Windows Forms можно использовать ряд оболочку
 | [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows10 версии1803 | Использует механизм визуализации Microsoft Edge для отображения содержимого веб-страницы. |
 | [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows7 | Предоставляет версию **WebView** , совместимый с несколько версий ОС. Этот элемент управления использует механизм визуализации Microsoft Edge для отображения веб-содержимого в Windows 10 версии 1803 и более поздней версии и модуля отрисовки Internet Explorer для отображения веб-содержимого в более ранних версиях Windows 10, Windows 8.x и Windows 7. |
 | [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 Insider Preview SDK сборки 17709 | Предоставить surface и связанное с панели инструментов для взаимодействия с пользователем на основе Windows Ink в свое классическое приложение Windows Forms или WPF. |
-| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 Insider Preview SDK сборки 17709 | Внедряет представление, что потоки, а также мультимедийного содержимого, например видео в свое классическое приложение Windows Forms или WPF. |
+| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 Insider Preview SDK сборки 17709 | Внедряет представление, которое создает поток и отрисовывает мультимедийного содержимого, например видео в свое классическое приложение Windows Forms или WPF. |
 
 ## <a name="host-controls"></a>Стандартные элементы управления
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, игры, элементы управления, ввод
 ms.localizationpriority: medium
 ms.openlocfilehash: 563ca17864f95cfa98313608f5a5c32e64f44a16
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5169477"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406719"
 ---
 # <a name="add-controls"></a>Добавление элементов управления
 
@@ -99,7 +99,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 В состояние **WaitForInput** игра переходит в случае приостановки. Это случается, если игрок перемещает указатель за пределы главного окна игры или нажимает кнопку "Пауза" (клавиша P или кнопка **Пуск** на геймпаде). **MoveLookController** регистрирует нажатие и сообщает об этом игровому циклу, вызывая метод [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127). Если **IsPauseRequested** возвращает значение **true**, игровой цикл вызывает метод **WaitForPress** экземпляра **MoveLookController**, чтобы перевести контроллер в состояние **WaitForInput**. 
 
 
-После перехода в состояние **WaitForInput** игра прекращает обработку практических всех событий ввода игрового процесса, пока не вернется в состояние **Active**. Исключением является кнопка "Пауза", при нажатии которой игра возвращается в активное состояние. Кроме "Пауза" в порядке для игры, чтобы вернуться в **активное** состояние игрок может выбрать пункт меню. 
+После перехода в состояние **WaitForInput** игра прекращает обработку практических всех событий ввода игрового процесса, пока не вернется в состояние **Active**. Исключением является кнопка "Пауза", при нажатии которой игра возвращается в активное состояние. Кроме "Пауза" в порядке для возврата в **активное** состояние игры игрок может выбрать пункт меню. 
 
 
 

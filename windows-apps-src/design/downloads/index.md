@@ -11,16 +11,16 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: e829883ec33b5e221d0947b6f39cf6ac091a0b4a
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5158140"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408143"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Наборы инструментов для проектирования и образцы приложений UWP
  
 
-Проектирование и связанных с Пользовательским интерфейсом загрузки для Fluent оформление и приложений UWP. Дополнительные инструменты, такие как Visual Studio, можно найти <a href="https://developer.microsoft.com/downloads">на главной странице загружаемых файлов</a>. 
+Проектирование и загрузки, связанные с пользовательского интерфейса для приложений Fluent проектирования и UWP. Дополнительные инструменты, такие как Visual Studio, можно найти <a href="https://developer.microsoft.com/downloads">на главной странице загружаемых файлов</a>. 
 
 
 ## <a name="design-toolkits"></a>Наборы инструментов для проектирования
@@ -109,7 +109,7 @@ ms.locfileid: "5158140"
 
 ![Изображение VanArsdel](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-Пример приложения UWP начала до конца Van Arsdel, Ltd. был создан для демонстрации следующего поколения Microsoft системы проектирования Fluent Design. В случае всесторонней широко используются улучшенные плотность и новые элементы управления в <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Библиотеку пользовательского интерфейса Windows</a> , а также важных базовых возможностей взаимодействия с пользователем платформы и композиции. В примере показано, как создавать широкий эффективной работы взаимодействие с для приобретения устройства IoT (в данном случае лампы) и управления ими.<br>
+Пример приложения UWP начала до конца Van Arsdel, Ltd. был создан для демонстрации следующего поколения Microsoft системы проектирования Fluent Design. В случае всесторонней широко используются улучшенные плотность и новые элементы управления в <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Библиотеке пользовательского интерфейса Windows</a> , а также важных базовых возможностей взаимодействия с пользователем платформы и композиции. В примере показано, как вы можете создать широкий эффективной работы взаимодействие с для приобретения устройства IoT (в данном случае лампы) и управления ими.<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Скачать пример VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">Посмотреть пример VanArsdel на GitHub</a>
 
 ![создать образ приведите](images/buildcast.png)

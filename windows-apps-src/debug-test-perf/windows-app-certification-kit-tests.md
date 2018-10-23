@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, сертификации приложений
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167924"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408701"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Тесты комплекта сертификации приложений для Windows
 
@@ -321,7 +321,7 @@ The AppContainerCheck проверяет, установлен ли бит **app
 
 > **Примечание**  Отладочная сборка приложения не пройдет этот тест, даже если приложение использует только [API-интерфейсы для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-Просмотрите сообщения об ошибках для идентификации API использует приложения, которые не [API для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+Просмотрите сообщения об ошибках для идентификации API использует приложения, которые не является [API для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
 > **Примечание**  Приложения на C++, которые встроены в конфигурации отладки не пройдет этот тест, даже если в конфигурации используются только API из пакета Windows SDK для приложений UWP. См. в разделе, [альтернативы API Windows в приложениях UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) подробнее.
 
