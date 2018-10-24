@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430730"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469315"
 ---
 # <a name="product-declarations"></a>Объявления продукта
 
@@ -44,7 +44,7 @@ ms.locfileid: "5430730"
 Дополнительные сведения см. в разделе [Специальные возможности](../design/accessibility/accessibility.md), [Тестирование специальных возможностей](../design/accessibility/accessibility-testing.md)и [Специальные возможности в магазине](../design/accessibility/accessibility-in-the-store.md).
 
 > [!IMPORTANT]
-> Не список специальные возможности приложения, пока вы специально разработано и протестировано для этой цели. Если для вашего приложения объявлены специальные возможности, но на самом деле они не поддерживаются, вы рискуете получить негативные отзывы от сообщества.
+> Не список специальные возможности приложения, пока вы специально разработано и протестировано для этой цели. Если для вашего приложения объявлены специальные возможности, но на самом деле они не поддерживаются, вы рискуете получить негативные отзывы от сообщества.
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>Пользователи могут установить это приложение на диски или съемный носитель.
 
@@ -68,11 +68,11 @@ ms.locfileid: "5430730"
 
 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API покупок Microsoft Store, предоставление продуктов
 ms.localizationpriority: medium
 ms.openlocfilehash: 432d5976cb018148ba0f53aae6446a046f0a3b2f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441767"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474890"
 ---
 # <a name="grant-free-products"></a>Предоставление бесплатных продуктов
 
@@ -229,7 +229,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 | 401  | Unauthorized | InconsistentClientId       | Утверждение *clientId* в ключе идентификатора Microsoft Store в теле запроса и утверждение *appid* в маркере доступа Azure AD в заголовке авторизации не совпадают.       |
 | 400  | BadRequest   | InvalidParameter           | Подробности содержат информацию о теле запроса и полях с недопустимым значением.           |
 
-<span/> 
+<span/> 
 
 ## <a name="related-topics"></a>Статьи по теме
 

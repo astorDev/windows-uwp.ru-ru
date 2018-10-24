@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432055"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479722"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store, маркетинг руководство по приложениям
 
@@ -41,7 +41,7 @@ ms.locfileid: "5432055"
 
 Для повышения уровня вашего приложения вам, возможно, потребуется показать, как оно выглядит на устройстве Windows. Мы предлагаем широкий выбор различных изображений шасси устройств, включая телефоны, планшеты, ноутбуки и компьютеры. Рекомендации и технические характеристики по использованию этих изображений можно найти в [По продвижению приложений магазина Майкрософт](http://go.microsoft.com/fwlink/p/?LinkId=529769).
 
-[![Кнопка скачивания](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Изображения устройств c Windows**
+[ ![Кнопку загрузки](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Изображения устройств с Windows**
 
 ## <a name="license-to-microsoft-marks"></a>Лицензия на маркировку Майкрософт
 
@@ -57,9 +57,9 @@ ms.locfileid: "5432055"
 
 Майкрософт является единственным владельцем маркировки Майкрософт и связанных с ней нематериальных активов, а также единственным бенефициаром нематериальных активов, связанных с использованием вами маркировки Майкрософт. Майкрософт вправе отозвать эту лицензию в любое время по своему усмотрению.
 
- 
+ 
 
- 
+ 
 
 
 

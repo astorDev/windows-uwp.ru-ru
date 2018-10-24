@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, службы магазина, API, использование аналитики Microsoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443969"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469740"
 ---
 # <a name="get-daily-app-usage"></a>Получение сведений о ежедневном использовании приложения
 
@@ -79,7 +79,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | string | При наличии дополнительных страниц данных эта строка содержит URI-адрес, который можно использовать для запроса следующей страницы данных. Например, это значение возвращается в том случае, если параметр **top** запроса имеет значение 10 000, но для данного запроса имеется больше 10 000 строк с информацией об отзывах.                 |
 | TotalCount | int    | Общее количество строк в результирующих данных для запроса.                                                                          |
 
- 
+ 
 ### <a name="usage-values"></a>Использование значения
 
 Элементы в массиве *Value* содержат следующие значения.

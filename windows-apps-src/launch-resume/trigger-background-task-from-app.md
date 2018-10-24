@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: триггер фоновой задачи, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ccd171f53795ef71830ffb022d0468facb3ac4f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431785"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469864"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Запуск фоновой задачи в приложении
 
@@ -145,7 +145,7 @@ var result = await _AppTrigger.RequestAsync();
 
 ## <a name="remarks"></a>Комментарии
 
-Начиная с Windows 10, он больше не пользователю возможность добавлять приложения на экран блокировки, чтобы использовать фоновые задачи.
+Начиная с Windows10, он больше не пользователю возможность добавлять приложения на экран блокировки, чтобы использовать фоновые задачи.
 
 Фоновая задача запускается только с помощью **ApplicationTrigger** , если вы вызвали [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) сначала.
 

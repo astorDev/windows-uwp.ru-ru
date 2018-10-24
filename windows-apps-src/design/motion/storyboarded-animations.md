@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c03d99781114c4fefff04cc25930748ec16182f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434505"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470402"
 ---
 # <a name="storyboarded-animations"></a>Раскадрованные анимации
 
@@ -153,7 +153,7 @@ ms.locfileid: "5434505"
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By определять необязательно
 
-Ранее мы говорили, что можно пропустить **From**, **To** или **By** и использовать текущие неанимированные значения в качестве замены отсутствующего значения. Угадать тип свойств **From**, **To** и **By** анимации непросто. Например, свойство [**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) не относится к типу [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Зато [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) относится к **Double**. А его значение по умолчанию равно **null**, а не 0. С помощью этого значения **null** система анимации определяет, что вы не задали значение для свойства **From**, **To** или **By**. Расширения (C++/CX) компонента VisualC++ не имеют типа **Nullable**, поэтому взамен используется [**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864).
+Ранее мы говорили, что можно пропустить **From**, **To** или **By** и использовать текущие неанимированные значения в качестве замены отсутствующего значения. Угадать тип свойств **From**, **To** и **By** анимации непросто. Например, свойство [**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) не относится к типу [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Зато [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) относится к **Double**. А его значение по умолчанию равно **null**, а не 0. С помощью этого значения **null** система анимации определяет, что вы не задали значение для свойства **From**, **To** или **By**. Расширения компонентов VisualC ++ (C + +/ CX) не имеет тип **Nullable** , поэтому оно использует [**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864) .
 
 ### <a name="other-properties-of-an-animation"></a>Другие свойства анимации
 
@@ -314,7 +314,7 @@ myStoryBoard.Begin()
 > [!TIP]
 > Всякий раз, когда вы пишете код для сценария приложения, в котором анимация запускается из кода приложения, рекомендуется дополнительно проверить, нет ли в библиотеке анимаций для вашего сценария пользовательского интерфейса готовой анимации или перехода. Анимации из библиотеки проще в использовании и обеспечивают более согласованное взаимодействие с пользовательским интерфейсом во всех приложениях среды выполнения Windows.
 
- 
+ 
 
 ### <a name="animations-for-visual-states"></a>Анимации для визуальных состояний
 
@@ -341,9 +341,9 @@ myStoryBoard.Begin()
 * [Шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/Mt210948)
 * [**Раскадровка**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
- 
+ 
 
- 
+ 
 
 
 

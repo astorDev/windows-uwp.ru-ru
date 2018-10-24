@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 25e3c76ae09ed6835f89f0d98c308f11c7a99624
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433513"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469262"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>Запуск фоновой задачи по таймеру
 
@@ -37,7 +37,7 @@ ms.locfileid: "5433513"
 
 > [!NOTE]
 > Если *FreshnessTime* задано значение меньше 15 минут, — это исключение при попытке зарегистрировать фоновую задачу.
- 
+ 
 Например этот триггер приведет к фоновой задачи для выполнения один раз в час.
 
 ```cs
@@ -128,7 +128,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 ## <a name="remarks"></a>Комментарии
 
-Начиная с Windows 10, он больше не пользователю возможность добавлять приложения на экран блокировки, чтобы использовать фоновые задачи.
+Начиная с Windows10, он больше не пользователю возможность добавлять приложения на экран блокировки, чтобы использовать фоновые задачи.
 
 Фоновая задача запускается только с помощью **TimeTrigger** , если вы вызвали [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) сначала.
 

@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4693c4ed6c02db9e4fe3f5f7fee6fe569c0e79
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435991"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468797"
 ---
 # <a name="keyboard-accelerators"></a>Ускорители клавиатуры
 
@@ -39,7 +39,7 @@ ms.locfileid: "5435991"
 > [!NOTE]
 > Элементы управления платформы UWP оснащены встроенными ускорителями клавиатуры. Например, ListView поддерживает сочетание клавиш CTRL+A для выбора всех элементов в списке, а RichEditBox поддерживает сочетание клавиш CTRL+TAB для вставки табуляции в текстовое поле. Эти встроенные ускорители клавиатуры называются **ускорителями элементов управления** и выполняются только в том случае, если фокус находится на элементе или одном из его дочерних элементов. Описываемые здесь ускорители, определенные пользователем с помощью API-интерфейсов ускорителей клавиатуры, называются **ускорителями приложений**.
 
-Ускорители клавиатуры доступны не для всех действий, но часто связаны с командами в меню (и должны указываться в содержимом пункта меню). Также ускорители могут быть связаны с действиями, у которых нет эквивалентных пунктов меню. Тем не менее, пользователи находят и изучают доступный набор команд с помощью меню приложения, поэтому следует максимально упростить процесс обнаружения ускорителей (например, с помощью меток или проверенных шаблонов).
+Ускорители клавиатуры доступны не для всех действий, но часто связаны с командами в меню (и должны указываться в содержимом пункта меню).Также ускорители могут быть связаны с действиями, у которых нет эквивалентных пунктов меню. Тем не менее, пользователи находят и изучают доступный набор команд с помощью меню приложения, поэтому следует максимально упростить процесс обнаружения ускорителей (например, с помощью меток или проверенных шаблонов).
 
 ![Описание ускорителей клавиатуры в метке пункта меню](images/accelerators/accelerators_menuitemlabel.png)  
 *Описание ускорителей клавиатуры в метке пункта меню*
@@ -48,11 +48,11 @@ ms.locfileid: "5435991"
 
 Рекомендуется указывать ускорители клавиатуры всегда, когда это уместно в пользовательском интерфейсе, и предусматривать поддержку ускорителей во всех пользовательских элементах управления.
 
-- За счет ускорителей клавиатуры улучшаются специальные возможности приложений для пользователей с нарушениями двигательных функций, в том числе таких пользователей, которые могут нажимать только одну клавишу за один раз или испытывают трудности при работе с мышью**.
+- Ускорители клавиатуры делают приложение более accessiblefor пользователей с нарушениями двигательных функций, в том числе таких пользователей, которые могут нажимать только одну клавишу за один раз или испытывают трудности при работе с за *
 
   Правильно разработанный пользовательский интерфейс клавиатуры является важным аспектом доступности программы. Он позволяет людям с ослабленным зрением или с определенными нарушениями двигательных способностей осуществлять переходы в приложении и взаимодействовать с его компонентами. Такие пользователи могут не иметь возможности использовать мышь. Вместо этого они могут рассчитывать на различные специальные возможности, такие как средства расширения функций клавиатуры, экранные клавиатуры, экранные лупы, средства чтения с экрана и средства голосового управления. Для этих пользователей крайне важно иметь доступ ко всем командам.
 
-- Ускорители клавиатуры делают приложение более удобным для опытных пользователей, предпочитающих взаимодействовать с помощью клавиатуры.
+- Ускорители клавиатуры делают приложение более usablefor опытных пользователей, предпочитающих взаимодействовать с помощью клавиатуры.
 
   Опытные пользователи часто применяют клавиатуру, так как с ее помощью можно быстрее вводить команды, при этом не требуется убирать руки с клавиатуры. Для таких пользователей эффективность и согласованность критически важна. Полнота важна только для наиболее часто используемых команд.
 
@@ -206,7 +206,7 @@ ms.locfileid: "5435991"
 ``` xaml 
 <Button Content="Save" Click="OnSave">
   <Button.KeyboardAccelerators>
-    <KeyboardAccelerator Key="S" Modifiers="Control" />
+    <KeyboardAccelerator Key="S" Modifiers="Control" />
   </Button.KeyboardAccelerators>
 </Button>
 ```
@@ -215,7 +215,7 @@ ms.locfileid: "5435991"
 1.  Вызов (Кнопка)
 2.  Переключение (Флажок)
 3.  Выбор (ListView)
-4.  Свертывание и развертывание (ComboBox) 
+4.  Свертывание и развертывание (ComboBox) 
 
 Если соответствий не обнаружено, ускоритель считается недействительным и отображается сообщение отладки ("Шаблоны автоматизации для этого компонента не найдены. Реализуйте все необходимое поведение в событии Invoked. Если присвоить свойству Handled значение true в обработчике событий, это сообщение будет отключено".)
 
@@ -230,10 +230,10 @@ ms.locfileid: "5435991"
 ``` xaml
 <ListView x:Name="MyListView">
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
-    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
+    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
+    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
-</ListView>   
+</ListView>   
 ```
 
 ``` csharp
@@ -261,7 +261,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 ``` xaml
 <ListView >
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" 
+    <KeyboardAccelerator Key="A" 
       Modifiers="Control"
       Invoked="CustomListViewSelecAllInvoked" />
   </ListView.KeyboardAccelerators>
@@ -269,10 +269,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
   <TextBox>
     <TextBox.KeyboardAccelerators>
       <KeyboardAccelerator 
-        Key="A" 
-        Modifiers="Control" 
-        Invoked="CustomTextSelecAllInvoked" 
-        IsEnabled="False" />
+        Key="A" 
+        Modifiers="Control" 
+        Invoked="CustomTextSelecAllInvoked" 
+        IsEnabled="False" />
     </TextBox.KeyboardAccelerators>
   </TextBox>
 
@@ -292,18 +292,18 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
   <ListView.KeyboardAccelerators>
 
     <KeyboardAccelerator 
-      Key="A" 
-      Modifiers="Control,Shift" 
-      Invoked="CustomSelectAllInvoked" />
+      Key="A" 
+      Modifiers="Control,Shift" 
+      Invoked="CustomSelectAllInvoked" />
       
     <KeyboardAccelerator 
-      Key="F5" 
-      Modifiers="None" 
-      Invoked="RefreshInvoked" />
+      Key="F5" 
+      Modifiers="None" 
+      Invoked="RefreshInvoked" />
 
   </ListView.KeyboardAccelerators>
 
-</ListView>   
+</ListView>   
 ```
 
 > [!NOTE] 
@@ -342,14 +342,14 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 | **Другие действия** | |
 | ------------- | ----------------------------------- |
-| Добавить избранное | CTRL+D | 
-| Обновить | F5 или CTRL+R | 
-| Увеличить | CTRL++ | 
-| Уменьшить | CTRL+- | 
-| Масштаб по умолчанию | CTRL+0 | 
-| Сохранить | CTRL+S | 
-| Закрыть | CTRL+W | 
-| Печать | CTRL+P | 
+| Добавить избранное | CTRL+D | 
+| Обновить | F5 или CTRL+R | 
+| Увеличить | CTRL++ | 
+| Уменьшить | CTRL+- | 
+| Масштаб по умолчанию | CTRL+0 | 
+| Сохранить | CTRL+S | 
+| Закрыть | CTRL+W | 
+| Печать | CTRL+P | 
 
 Обратите внимание, что некоторые сочетания недопустимы для локализованных версий Windows. Например, в версии Windows на испанском языке для выделения полужирным шрифтом вместо CTRL+B используется сочетание CTRL+N. Если приложение локализовано, мы рекомендуем предоставить локализованные ускорители клавиатуры.
 
@@ -626,5 +626,5 @@ public class MyListView : ListView
 * [Галереи элементов управления XAML (то есть XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 
- 
+ 
 

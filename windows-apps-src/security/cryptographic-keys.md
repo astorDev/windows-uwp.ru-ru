@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 24f41ac858e73041e5afb4db596ce52b7d9bf4d8
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436773"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471899"
 ---
 # <a name="cryptographic-keys"></a>Криптографические ключи
 
@@ -79,4 +79,4 @@ ms.locfileid: "5436773"
 | [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | Создает объект KeyDerivationParameters для использования в режиме счетчика функцией формирования ключа при помощи хэш-кода проверки подлинности сообщения (HMAC). |
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | Создает объект KeyDerivationParameters, который используется функцией формирования ключа при помощи SP800-56A.                                                 |
 
- 
+ 

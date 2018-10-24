@@ -18,11 +18,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 7df91069615b77ab54745690accc8f9353ff0163
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443375"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472675"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Реализация навигации между двумя страницами
 
@@ -91,7 +91,7 @@ ms.locfileid: "5443375"
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   Добавьте элемент [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) в качестве дочернего элемента корневого элемента [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) и после элемента `pageTitle`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) элемента в качестве дочернего элемента корневого элемента [**сетки**](https://msdn.microsoft.com/library/windows/apps/br242704) и после `pageTitle`элемент [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) .
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -128,7 +128,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   Добавьте элемент [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) в качестве дочернего элемента корневого элемента [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) и после элемента `pageTitle`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) элемента в качестве дочернего элемента корневого элемента [**сетки**](https://msdn.microsoft.com/library/windows/apps/br242704) и после `pageTitle`элемент [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) .
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -309,7 +309,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 Прежде чем расширить функциональные возможности приложения, посмотрим, как добавленные нами страницы обеспечивают поддержку навигации в приложении.
 
 Сначала для приложения создается [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) под названием(`rootFrame`) в методе `App.OnLaunched` файла кода программной части App.xaml. Класс **Frame** поддерживает различные методы навигации, например [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694), [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) и [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), а также свойства, такие как [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543), [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) и [**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995).
- 
+ 
 Метод [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) используется для отображения содержимого в этом **Frame**. По умолчанию этот метод загружает MainPage.xaml. В нашем примере `Page1`передается методу **Navigate**, поэтому метод загружает `Page1` в **Frame**. 
 
 `Page1` является подклассом класса [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503). Класс **Page** имеет нередактируемое свойство **Frame**, которое получает **Frame**, содержащий **Page**. Когда обработчик событий **Click** элемента **HyperlinkButton** в `Page1` вызывает `this.Frame.Navigate(typeof(Page2))`, элемент **Frame** отображает содержимое Page2.xaml.
@@ -334,7 +334,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 </StackPanel>
 ```
 
-В обработчике событий `HyperlinkButton_Click` для файла кода программной части Page1.xaml добавьте параметр, ссылающийся на свойство `Text` для `name` **TextBox**, в метод `Navigate`.
+В `HyperlinkButton_Click` обработчик событий в файле кода программной части Page1.xaml добавьте параметр, ссылающийся на `Text` свойства `name` **TextBox** , чтобы `Navigate` метод.
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)

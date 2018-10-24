@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, рекламные объявления, реклама, элемент управления рекламой, межстраничные
 ms.localizationpriority: medium
 ms.openlocfilehash: 547a582064262d18467df4868df17a08e73b279c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436852"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477714"
 ---
 # <a name="interstitial-ads"></a>Межстраничные объявления
 
@@ -163,7 +163,7 @@ ms.locfileid: "5436852"
 ### <a name="c-directx-interop"></a>C++ (межпрограммное взаимодействие DirectX)
 
 В этом примере предполагается, что вы уже создали проект **приложения DirectX и XAML (универсальное приложение для Windows)** на C++ в Visual Studio и для определенной архитектуры ЦП.
- 
+ 
 1. Откройте проект в Visual Studio.
 
 3. Добавьте ссылку на Microsoft Advertising SDK в свой проект.

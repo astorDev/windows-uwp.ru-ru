@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, API аналитики для Microsoft Store, скачать CAB-файл
 ms.localizationpriority: medium
 ms.openlocfilehash: 671c5c1b187ac48c12988a00d66acb366cae72f1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438414"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470349"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>Скачивание CAB-файла для ошибки в приложении
 
@@ -56,7 +56,7 @@ ms.locfileid: "5438414"
 | applicationId | Строка | Код продукта в Магазине для приложения, по которому требуется скачать CAB-файл. Код продукта в Магазине доступен на [странице "Удостоверение приложения"](../publish/view-app-identity-details.md) информационной панели Центра разработки. Пример кода продукта в Магазине: 9WZDNCRFJ3Q8 |  Да  |
 | cabId | string | Уникальный идентификатор CAB-файла, который необходимо скачать. Для получения этого идентификатора используйте метод [получения подробных сведений об ошибке в приложении](get-details-for-an-error-in-your-app.md), чтобы получить подробные сведения об определенной ошибке в приложении, и значение **cabId** в тексте ответа этого метода. |  Да  |
 
- 
+ 
 ### <a name="request-example"></a>Пример запроса
 
 В следующем примере показано, как с помощью этого метода скачать CAB-файл. Замените параметры *applicationId* и *cabId* соответствующими значениями для вашего приложения.

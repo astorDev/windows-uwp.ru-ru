@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432365"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470296"
 ---
 # <a name="functions-in-xbind"></a>Функции в x:Bind
 
-**Примечание.**  Общие сведения об использовании привязки данных в приложении с **{x:Bind}** (и комплексное сравнение между **{x:Bind}** и **{Binding}**) см. в разделе [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Примечание**Общие сведения об использовании данных привязки в вашем приложении с **{x: Bind}** (и комплексное сравнение между **{x: Bind}** и **{Binding}**), см. в разделе [подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 Начиная с Windows 10 версии 1607 **{x: Bind}** поддерживает использование функции на конечном этапе шаге пути привязки. Это позволяет:
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eebb967a7bf11163dc2e0ba502b40495901b39b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432992"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476454"
 ---
 # <a name="optimize-animations-media-and-images"></a>Оптимизация анимаций, мультимедиа и изображений
 
@@ -58,7 +58,7 @@ ms.locfileid: "5432992"
 
 Анимирование [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) — тоже не очень хорошая идея. Это может отрицательно повлиять на производительность, а также привести к появлению разрывов или других артефактов в воспроизводимом видео.
 
-> **Примечание.**   Рекомендации в этой статье для **MediaPlayerElement** также применимы к [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). **MediaPlayerElement** доступен только в Windows10 версии 1607, поэтому при создании приложения для более ранней версии Windows следует использовать **MediaElement**.
+> **Примечание**  рекомендаций в этой статье по **MediaPlayerElement** также применимы к [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). **MediaPlayerElement** доступен только в Windows10 версии 1607, поэтому при создании приложения для более ранней версии Windows следует использовать **MediaElement**.
 
 ### <a name="use-infinite-animations-sparingly"></a>Используйте бесконечно повторяемые анимации как можно реже
 
@@ -70,7 +70,7 @@ ms.locfileid: "5432992"
 
 Пространство имен [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) содержит библиотеку высокопроизводительных плавных анимаций, которые имеют внешний вид, согласованный с другими анимациями Windows. В именах соответствующих классов присутствует слово "Theme". Они описаны в статье [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/Mt187350). Эта библиотека поддерживает многие распространенные сценарии анимации (например, анимацию первого представления приложения, а также создание переходов состояний и содержимого). Мы рекомендуем использовать эту библиотеку анимации везде, где это возможно, чтобы повысить производительность и согласованность для пользовательского интерфейса UWP.
 
-> **Примечание.**   Не все свойства можно анимировать с помощью библиотеки анимации. Сценарии XAML, в которых библиотека анимации не применяется, см. в статье [Раскадрованные анимации](https://msdn.microsoft.com/library/windows/apps/Mt187354).
+> **Примечание**  библиотека анимации не все свойства можно анимировать. Сценарии XAML, в которых библиотека анимации не применяется, см. в статье [Раскадрованные анимации](https://msdn.microsoft.com/library/windows/apps/Mt187354).
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>Независимая анимация свойств CompositeTransform3D

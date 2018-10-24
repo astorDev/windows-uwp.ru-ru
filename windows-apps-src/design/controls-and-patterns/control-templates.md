@@ -16,11 +16,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ae344e9f10c5d1dbfd530950851e402da4bc2a0d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433503"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478080"
 ---
 # <a name="control-templates"></a>Шаблоны элементов управления
 
@@ -112,7 +112,7 @@ ms.locfileid: "5433503"
 | **false**           | `Unchecked`        | Пусто.                  |
 | **null**            | `Indeterminate`    | Содержит кружок.      |
 
- 
+ 
 
 Для указания представления элемента управления, когда он находится в определенном состоянии, используйте объекты [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007). Объект **VisualState** содержит класс [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) или [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053), меняющий представление элементов в классе [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). Когда элемент управления переходит в состояние, указанное в свойстве [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031), применяются изменения свойств в **Setter** или [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490). Когда элемент управления выходит из этого состояния, изменения удаляются. Мы добавляем объекты **VisualState** к объектам [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014). Мы добавляем объекты **VisualStateGroup** к подключенному свойству [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505), установленному на корневом элементе [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) шаблона **ControlTemplate**.
 
@@ -188,7 +188,7 @@ ms.locfileid: "5433503"
 | С `Checked` на `Indeterminate`.   | Применяется значение [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) `Indeterminate`[**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), поэтому [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)`IndeterminateGlyph` равно 1. Значение **Setter** `Checked` **VisualState** удаляется, поэтому [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) `CheckGlyph`равно 0. | Отображается круг.                            |
 | С `Indeterminate` на `Unchecked`. | Значение [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) удаляется, поэтому [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) `IndeterminateGlyph` равно 0.                                                                                                                                           | Не отображается ничего.                             |
 
- 
+ 
 Подробнее о том, как создавать визуальные состояния элементов управления, в частности о том, как использовать класс [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) и типы анимации см. в разделе [Раскадрованные анимации для визуальных состояний](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808).
 
 ## <a name="use-tools-to-work-with-themes-easily"></a>Используйте средства для упрощения работы с темами
@@ -211,11 +211,11 @@ ms.locfileid: "5433503"
 
 В некоторых атрибутах в примерах кода XAML вы могли заметить ссылки на ресурсы, которые используют [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md). Данная технология позволяет одному шаблону элемента управления использовать разнообразные ресурсы в зависимости от того, какая из тем активна на текущий момент. Это особенно важно для кистей и цветов, поскольку основная цель тем — предоставить пользователям возможность выбора темной или светлой темы либо темы "Высокая контрастность" в применении к системе в целом. Приложения, которые используют систему на базе ресурсов XAML, могут использовать набор ресурсов, соответствующий определенной теме. Выбор темы в пользовательском интерфейсе приложения будет отражать выбор пользователем темы для всей системы в целом.
 
- ## <a name="get-the-sample-code"></a>Получить пример кода
+ ## Получить пример кода
 * [Пример основных элементов пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [Пример пользовательского элемента управления для редактирования текста](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
 
- 
+ 
 
 
 

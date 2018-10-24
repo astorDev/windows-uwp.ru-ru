@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 02eb6442b4769e92bec2b41ed9ab0e91a6a98a7f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443522"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475962"
 ---
 # <a name="generate-a-3mf-package"></a>Создание пакета 3MF
 
@@ -32,7 +32,7 @@ ms.locfileid: "5443522"
 
 Формат создания 3D — это набор соглашений об использовании XML для описания вида и структуры трехмерных моделей для производства (трехмерной печати). Он определяет набор компонентов (обязательных и необязательных) и их связи для предоставления всех необходимых сведений устройству для трехмерной печати. Набор данных, соответствующий формату создания 3D, можно сохранять как файл с расширением .3mf.
 
-В Windows 10 класс [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) в пространстве имен **Windows.Graphics.Printing3D** аналогичен одному 3MF-файлу, а другие классы соответствуют определенным элементам XML в файле. В этом руководстве описывается, как создать и настроить основные части документа 3MF программными средствами, как использовать расширение 3MF Materials и как преобразовать объект **Printing3D3MFPackage** и сохранить его в виде 3MF-файла. Подробнее о стандартах 3MF и расширении 3MF Materials см. в разделе [3MF Specification](http://3mf.io/what-is-3mf/3mf-specification/).
+В Windows10 [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) классов в пространстве имен **Windows.Graphics.Printing3D** аналогичен одному 3mf-файлу и другие классы соответствуют определенным элементам XML в файл. В этом руководстве описывается, как создать и настроить основные части документа 3MF программными средствами, как использовать расширение 3MF Materials и как преобразовать объект **Printing3D3MFPackage** и сохранить его в виде 3MF-файла. Подробнее о стандартах 3MF и расширении 3MF Materials см. в разделе [3MF Specification](http://3mf.io/what-is-3mf/3mf-specification/).
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -87,7 +87,7 @@ ms.locfileid: "5443522"
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
 > [!NOTE]
-> Устройство трехмерной печати определит, какие доступные физические материалы соответствуют виртуальным материалам в 3MF. Сопоставление материалов не должно быть однозначным: если в трехмерном принтере используется только один материал, он напечатает всю модель из этого материала независимо от того, какие объекты или грани были назначены различным материалам.
+> Устройство трехмерной печати определит, какие доступные физические материалы соответствуют виртуальным материалам в 3MF. Сопоставление материалов не должно быть однозначным: если в трехмерном принтере используется только один материал, он напечатает всю модель из этого материала независимо от того, какие объекты или грани были назначены различным материалам.
 
 ### <a name="color-materials"></a>Цветные материалы
 
@@ -145,8 +145,8 @@ ms.locfileid: "5443522"
 
 [Трехмерная печать из приложения](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
 [Пример трехмерной печати UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
- 
+ 
 
- 
+ 
 
- 
+ 

@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, win32, настольный компьютер, всплывающие уведомления, отправка уведомления, отправка локального уведомления, мост для классических приложений, C#, c sharp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bda3e85fd89ef7a8b819fcd809acea4fd9a276b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433915"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472513"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Отправка локального всплывающего уведомлений из классических приложений C#
 
@@ -209,21 +209,21 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 // Construct the visuals of the toast (using Notifications library)
 ToastContent toastContent = new ToastContent()
 {
-    // Arguments when the user taps body of toast
-    Launch = "action=viewConversation&conversationId=5",
+    // Arguments when the user taps body of toast
+    Launch = "action=viewConversation&conversationId=5",
 
     Visual = new ToastVisual()
     {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Hello world!"
-                }
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Hello world!"
+                }
             }
-        }
+        }
     }
 };
 

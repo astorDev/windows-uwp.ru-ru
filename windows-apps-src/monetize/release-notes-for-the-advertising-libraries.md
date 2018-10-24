@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP, рекламные объявления, реклама, заметки о выпуске
 ms.localizationpriority: medium
 ms.openlocfilehash: 37a5cafcc5f768e90d4ee3997f92a62a9903fc9a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435630"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480563"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Заметки о выпуске библиотек Microsoft Advertising
 
 
 
 
-Этот раздел содержит заметки о текущем выпуске библиотек Microsoft Advertising. Библиотеки поддерживают приложения XAML и JavaScript/HTML для Windows 10, Windows 8.1, Windows Phone 8.1 и Windows Phone 8.
+Этот раздел содержит заметки о текущем выпуске библиотек Microsoft Advertising. Эти библиотеки поддерживают приложения XAML и JavaScript/HTML для Windows10, Windows8.1, Windows Phone 8.1 и WindowsPhone8.
 
 ## <a name="installation"></a>Установка
 
@@ -50,6 +50,6 @@ ms.locfileid: "5435630"
 Класс **AdControl** более не имеет свойств **Latitude** и **Longitude** для приложений UWP. Вместо этого код, встроенный в элемент управления рекламным объявлением, обнаруживает и отправляет эти значения на серверы рекламы от имени приложения.
 
 
- 
+ 
 
- 
+ 

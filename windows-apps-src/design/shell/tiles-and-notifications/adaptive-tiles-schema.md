@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 30a0e3056f8b7be2ed9d033e2da57795aec6946f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435042"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472288"
 ---
 # <a name="adaptive-tile-templates-schema-and-guidance"></a>Шаблоны адаптивных плиток — схема и руководство
 
@@ -146,9 +146,9 @@ ms.locfileid: "5435042"
 
 
 * [Создание адаптивных плиток](create-adaptive-tiles.md)
- 
+ 
 
- 
+ 
 
 
 

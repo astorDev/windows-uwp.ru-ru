@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 18d9fb3ba5b0fbd1e964450a75d8e0e417265e7f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444332"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470598"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Исключение или ограничение функций в пробной версии
 
@@ -123,6 +123,6 @@ ms.locfileid: "5444332"
 * [Настройки цен и доступности приложений](https://msdn.microsoft.com/library/windows/apps/mt148548)
 * [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765)
 * [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766)
- 
+ 
 
- 
+ 

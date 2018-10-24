@@ -2,7 +2,7 @@
 author: QuinnRadich
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Подготовка
-description: Подготовка на самом деле проще, чем может показаться. Ознакомьтесь с этими инструкциями и приступите к созданию приложений универсальной платформы Windows (UWP) для Windows10.
+description: Подготовка на самом деле проще, чем может показаться. Следуйте этим инструкциям и начните создание приложений универсальной платформы Windows (UWP) для Windows10.
 ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: Windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 378544282981c62d7a57f9abc3f666e8964b7117
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445621"
+ms.locfileid: "5474763"
 ---
 # <a name="get-set-up"></a>Подготовка
 
 ![Подготовьтесь к работе с Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-На самом деле начать проще, чем может показаться. Ознакомьтесь с этими инструкциями и приступите к созданию приложений универсальной платформы Windows (UWP) для Windows10.
+На самом деле начать проще, чем может показаться. Следуйте этим инструкциям и начните создание приложений универсальной платформы Windows (UWP) для Windows10.
 
 ## <a name="1-download-or-update-visual-studio"></a>1. Скачайте или обновите Visual Studio
 
-Microsoft Visual Studio2017 помогает в проектировании, программировании, тестировании и отладке приложений.
+Microsoft Visual Studio2017 помогает проектировать, код, тестирование и отладка приложений.
 
-Если у вас еще нет Visual Studio2017, вы можете установить бесплатную среду Microsoft Visual Studio Community2017. В этот загружаемый пакет входят симуляторы устройств для тестирования приложений:
+Если у вас еще нет Visual Studio2017, можно установить бесплатную Microsoft Visual Studio Community2017. В этот загружаемый пакет входят симуляторы устройств для тестирования приложений:
 
 -   [Загрузить средства разработчика Windows10](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 

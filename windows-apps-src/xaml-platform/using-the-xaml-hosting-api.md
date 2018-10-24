@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: Windows 10, uwp, windows forms, wpf, win32
 ms.localizationpriority: medium
-ms.openlocfilehash: 59072374e19da1c5c7e6e6a5e6a7b8c172d74052
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 5803646c3b613a5a57992a9791215138cf996966
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435477"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474028"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>С помощью XAML UWP, API размещения в приложении рабочего стола
 
@@ -89,7 +89,7 @@ XAML UWP, API размещения включает в себя [**DesktopWindow
 
     * Если ваше приложение создает объект **DesktopWindowXamlSource** перед созданием любого объекта **Windows.UI.Xaml.UIElement** , эту платформу, чтобы инициализировать для вас при создании экземпляра объекта **DesktopWindowXamlSource** . В этом случае не нужно добавлять никакой код своей собственной для инициализации платформы.
 
-    * Тем не менее если ваше приложение создает объекты **Windows.UI.Xaml.UIElement** , прежде чем он создает объект **DesktopWindowXamlSource** , где будут размещены их, ваше приложение должно вызвать статический [** WindowsXamlManager.InitializeForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) метод, чтобы явным образом инициализировать платформа UWP XAML, перед созданием экземпляра **Windows.UI.Xaml.UIElement** объектов. Приложение должно обычно следует вызывать этот метод при создании экземпляра родительского элемента пользовательского интерфейса, на котором размещается **DesktopWindowXamlSource** .
+    * Тем не менее если ваше приложение создает объекты **Windows.UI.Xaml.UIElement** , прежде чем он создает объект **DesktopWindowXamlSource** , где будут размещены их, ваше приложение должно вызвать статический [** WindowsXamlManager.InitializeForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) метод, чтобы явным образом инициализировать платформа UWP XAML, перед созданием экземпляра **Windows.UI.Xaml.UIElement** объектов. Приложения обычно необходимо вызывать этот метод при создании экземпляра родительского элемента пользовательского интерфейса, на котором размещается **DesktopWindowXamlSource** .
 
     ```cppwinrt
     Windows::UI::Xaml::Hosting::WindowsXamlManager windowsXamlManager =

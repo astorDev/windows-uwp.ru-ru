@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, directx, объект приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: fcbe68516e3ad8b2643faf68900e3305f18e8bbf
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444300"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475058"
 ---
 # <a name="the-app-object-and-directx"></a>Объект приложения и DirectX
 
@@ -36,9 +36,9 @@ ms.locfileid: "5444300"
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **Примечание.** Если вы не разрабатываете приложение UWP, используйте компоненты пользовательского интерфейса, предоставленные в библиотеках и пространствах имен JavaScript или XAML, а не типы, предоставленные в этих пространствах имен.
+> **Примечание**  Если вы не разрабатываете приложение UWP, используйте компоненты пользовательского интерфейса, предоставленные в библиотеках конкретных JavaScript или XAML и пространств имен, а не типы, предоставленные в этих пространствах имен.
 
- 
+ 
 
 ## <a name="the-windows-runtime-app-object"></a>Объект приложения среды выполнения Windows
 
@@ -114,7 +114,7 @@ ms.locfileid: "5444300"
 | [**CoreProcessEventsOption.ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217)        | Ожидает новые события и отправляет все доступные события. Продолжает это поведение до тех пор, пока не будет закрыто окно или приложением не будет вызван метод [**Close**](https://msdn.microsoft.com/library/windows/apps/br208260) в экземпляре [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). |
 | [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | Отправляет все доступные в настоящее время события в очереди. Если ожидающие события отсутствуют, немедленно возвращается.                                                                                                                                          |
 
- 
+ 
 
 В приложениях UWP, использующих DirectX, следует использовать параметр [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217), чтобы предотвратить срабатывание правил блокировки, которая может прервать обновление графики.
 
@@ -155,9 +155,9 @@ int main(Platform::Array<Platform::String^>^)
 
 В общем, при разработке приложения UWP используйте объект [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) для объектов [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) и [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) приложения, чтобы обработать все потоки пользовательского интерфейса, а не пытайтесь самостоятельно создавать потоки многопотокового подразделения и управлять ими. Если вам нужен отдельный поток, которым вы не можете управлять с помощью объекта **CoreDispatcher**, используйте асинхронные шаблоны и следуйте указаниям, приведенным ранее, чтобы избежать проблем с повторным вхождением.
 
- 
+ 
 
- 
+ 
 
 
 

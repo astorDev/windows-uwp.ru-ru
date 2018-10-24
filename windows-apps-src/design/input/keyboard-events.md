@@ -17,11 +17,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 78448081b81e7e28c4b97fcfdd7aa71ae32aeb0c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445402"
+ms.locfileid: "5473839"
 ---
 # <a name="keyboard-events"></a>События клавиатуры
 
@@ -116,7 +116,7 @@ void MyProject::MainPage::Grid_KeyUp(
 > [!NOTE]
 > Клавиша ALT представлена значением **VirtualKey.Menu**.
 
- 
+ 
 
 ### <a name="shortcut-keys-example"></a>Пример использования сочетаний клавиш
 
@@ -283,7 +283,7 @@ End Sub
 >
 > Параметр **AutomationProperties.AcceleratorKey** или **AutomationProperties.AccessKey** не имеет собственных действий. Но вам все равно нужно подключить обработчики для событий [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) или [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942), чтобы фактически реализовать применение сочетания клавиш в вашем приложении. Подчеркивание клавиши доступа не предоставляется автоматически. Вы должны явным образом подчеркнуть текст, относящийся к определенной назначенной клавише в качестве встроенного форматирования [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982), если вы хотите, чтобы подчеркнутый текст отображался в пользовательском интерфейсе.
 
- 
+ 
 
 ## <a name="keyboard-routed-events"></a>Перенаправленные события клавиатуры
 
@@ -405,6 +405,6 @@ public class CustomGridView : GridView
 * [Ввод: пример сенсорной клавиатуры](http://go.microsoft.com/fwlink/p/?linkid=246019)
 * [Пример реакции на появление экранной клавиатуры](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [Пример редактирования текста XAML](http://go.microsoft.com/fwlink/p/?LinkID=251417)
- 
+ 
 
- 
+ 

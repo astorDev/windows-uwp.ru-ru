@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, печать 3dprinting трехмерной печати
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c4ada5d58743bf19ed27dfbdd2676f2a267129f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445661"
+ms.locfileid: "5473816"
 ---
 # <a name="printing-and-scanning"></a>Печать и сканирование
 
@@ -34,5 +34,5 @@ ms.locfileid: "5445661"
 * [Руководство по проектированию печати](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Видео c конференции Build 2015: разработка приложений для печати в Windows10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [Пример печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
- 
+ 
 

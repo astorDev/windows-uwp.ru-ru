@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, устранение неполадок, HRESULT, ошибка
 ms.localizationpriority: medium
 ms.openlocfilehash: 05542a42e362f024e92547d9eb496b936b85236c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434073"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472412"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>Устранение неполадок C++/WinRT
 
@@ -45,7 +45,7 @@ ms.locfileid: "5434073"
 | Тесты комплекта сертификации приложений для Windows создают ошибку о том, что один из ваших классов среды выполнения "*не является производным от базового класса Windows. Все составные классы должны наследоваться от типа в пространстве имен Windows*".|Любой класс среды выполнения, (которые были объявлены в приложении), который является производным от базового класса, называется *составные* класса. Первичный базовый класс составные класс должен являться типом из пространства имен Windows.*; Например, [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject). См. в разделе [элементы управления XAML; привязка к C + +/ WinRT свойства](binding-property.md) для получения дополнительных сведений.|
 | Компилятор C++ создает ошибку "*must be WinRT type*" для специализации делегата EventHandler или TypedEventHandler.|Рассмотрите возможность использования **winrt::delegate&lt;...T&gt;**. См. раздел [Создание событий в C++/WinRT](author-events.md).|
 | Компилятор C++ создает ошибку "*must be WinRT type*" для специализации асинхронной операции среды выполнения Windows.|Рассмотрите возможность возврата шаблона [**task**](https://msdn.microsoft.com/library/hh750113) библиотеки параллельных шаблонов (PPL). См. раздел [Параллельная обработка и асинхронные операции](concurrency.md).|
-| Компилятор C++ создает ошибку "*error C2220: warning treated as error - no 'object' file generated*".|Исправьте предупреждение или установите параметру **C/C++** > **Общие** > **Обрабатывать предупреждения как ошибки** значение **Нет (/WX-)**.|
+| Компилятор C++ создает ошибку "*error C2220: warning treated as error - no 'object' file generated*".|Исправьте предупреждение или установите **C/C++**>**Общие**>**Обрабатывать предупреждения как ошибки** **Нет (/ WX-)**.|
 | В приложении возникает сбой, так как обработчик событий в объекте C++/WinRT вызывается после удаления объекта.|См. в разделе, [безопасный доступ к *этой* указателя с помощью делегата обработки события](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).|
 | Компилятор C++ создает ошибку "*error C2338: This is only for weak ref support*".|Запрашивается слабая ссылка для типа, который передал структуру маркера **winrt::no_weak_ref** как аргумент шаблона базовому классу. См. в разделе, [отказ от поддержки слабых ссылок](weak-references.md#opting-out-of-weak-reference-support).|
 | Компоновщик C++ создает ошибку "*error LNK2019: неразрешенный внешний символ*»|См. в разделе [Почему компоновщик мы получаем мне «LNK2019: неразрешенный внешний символ «ошибка?](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).|

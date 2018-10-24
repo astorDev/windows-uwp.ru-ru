@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436211"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475710"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 Дополнительные сведения о преимуществах локализации приложений см. в разделе [Глобализация и локализация](../design/globalizing/globalizing-portal.md).
@@ -32,12 +32,12 @@ ms.locfileid: "5436211"
 1. Установите язык по умолчанию для приложения.
     1. Открыв решение в Visual Studio, откройте файл `Package.appxmanifest`.
     2. На вкладке «Приложения» убедитесь, что язык по умолчанию задан соответствующим образом (например, en или en-US). На дальнейших этапах предполагается, что вы задали язык по умолчанию en-US.
-    <br>**Примечание**. Как минимум, необходимо предоставить строковые ресурсы, локализованные для данного языка по умолчанию. Это и есть ресурсы, которые будут загружены в том случае, если не будет найдено более подходящих для выбранного пользователем языка или языка отображения ресурсов.
+    <br>**Примечание**как минимум, необходимо предоставить строковые ресурсы, локализованные для этого языка по умолчанию. Это и есть ресурсы, которые будут загружены в том случае, если не будет найдено более подходящих для выбранного пользователем языка или языка отображения ресурсов.
 2. Создайте файл ресурсов (.resw) для языка по умолчанию.
     1. В узле проекта создайте новую папку и назовите ее Strings.
     2. В разделе `Strings` создайте новую вложенную папку и назовите ее en-US.
     3. В разделе `en-US` создайте новый файл ресурсов (.resw) и убедитесь, что он называется Resources.resw.
-    <br>**Примечание**. При наличии файлов ресурсов .NET (.resx), которые требуется перенести, см. раздел [Перенос XAML и пользовательского интерфейса](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
+    <br>**Примечание**при наличии файлов ресурсов .NET (.resx), которые требуется перенести, см. в разделе [Перенос XAML и пользовательского интерфейса](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
 3.  Откройте `Resources.resw` и добавьте эти строковые ресурсы.
 
     `Strings/en-US/Resources.resw`
@@ -63,7 +63,7 @@ ms.locfileid: "5436211"
 
 Вместо определения значения **Width** из файла ресурсов, возможно, логично будет разрешить динамическую адаптацию размера элементов управления по содержимому.
 
-**Примечание**. Для [присоединенных свойств](../xaml-platform/attached-properties-overview.md) требуется особый синтаксис в столбце Name в файле .resw. Например, вот что надо ввести в столбце Name, чтобы задать значение для присоединенного свойства [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) для идентификатора Greeting.
+**Примечание**для [присоединенных свойств](../xaml-platform/attached-properties-overview.md), требуется особый синтаксис в столбце Name в файле .resw. Например, вот что надо ввести в столбце Name, чтобы задать значение для присоединенного свойства [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) для идентификатора Greeting.
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -120,7 +120,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ## <a name="localize-the-string-resources"></a>Локализация строковых ресурсов
 1. Создайте копию файла ресурсов (.resw) для другого языка.
     1. В разделе Strings создайте новую вложенную папку и назовите ее de-DE для немецкого языка (Германия).
-   <br>**Примечание**. В имени папки можно использовать любой [языковой тег BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Дополнительные сведения о языковых квалификаторах и список распространенных языковых тегов приводятся в разделе [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md).
+   <br>**Примечание**в имени папки можно использовать любой [тег языка BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Дополнительные сведения о языковых квалификаторах и список распространенных языковых тегов приводятся в разделе [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md).
    2. Создайте копию `Strings/en-US/Resources.resw` в папке `Strings/de-DE`.
 2. Переведите строки.
     1. Откройте `Strings/de-DE/Resources.resw` и переведите значения в столбце Value. Комментарии переводить не нужно.
@@ -281,7 +281,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>Загрузка строк из других пакетов
-Управляемые и доступ к которому осуществляется через пакета ресурсов для пакета приложения есть верхнего уровня [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) , доступной с текущей [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). В каждом пакете различные компоненты могут иметь собственные поддеревья ResourceMap, доступ к которым можно получить через [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
+Управляемые и доступ к которому осуществляется через пакета ресурсов для пакета приложения есть верхнего уровня[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) , доступной с текущей[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). В каждом пакете различные компоненты могут иметь их ownResourceMapsubtrees, к которому можно получить через [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
 
 Платформенный пакет может обращаться к собственным ресурсам с использованием абсолютного идентификатора ресурса (URI). См. также раздел [Схемы URI](uri-schemes.md).
 

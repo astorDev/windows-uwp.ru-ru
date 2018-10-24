@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: d354f0babec3ec2346c6e76fcae8666f40f3f6be
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443054"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473442"
 ---
 # <a name="web-authentication-broker"></a>Брокер веб-проверки подлинности
 
@@ -27,7 +27,7 @@ ms.locfileid: "5443054"
 >[!NOTE]
 >Чтобы получить полный рабочий примера кода, клонируйте [репозиторий WebAuthenticationBroker на GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).
 
- 
+ 
 
 ## <a name="register-your-app-with-your-online-provider"></a>Регистрация приложения у поставщика
 
@@ -91,7 +91,7 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->Помимо [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) пространство имен [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) включает метод [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425). Не вызывайте этот метод. Он разработан для приложений, предназначенных для Windows Phone 8.1, и, начиная с Windows 10, считается устаревшим.
+>Помимо [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) пространство имен [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) включает метод [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425). Не вызывайте этот метод. Он разработан для приложений, предназначенных для Windows Phone 8.1 и устаревшими начиная с Windows10.
 
 ## <a name="connecting-with-single-sign-on-sso"></a>Подключение с единым входом
 

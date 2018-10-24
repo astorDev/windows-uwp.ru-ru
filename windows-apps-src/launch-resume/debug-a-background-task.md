@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431932"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476925"
 ---
 # <a name="debug-a-background-task"></a>Отладка фоновой задачи
 
@@ -117,6 +117,6 @@ ms.locfileid: "5431932"
 * [Активация приостановки, возобновления и фоновых событий в приложениях UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [Анализ качества кода приложений UWP с помощью средства анализа кода Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
- 
+ 
 
- 
+ 

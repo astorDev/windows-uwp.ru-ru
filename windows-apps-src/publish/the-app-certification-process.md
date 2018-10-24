@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, публикация, предварительная обработка, сертификация, выпуск, Ожидание, отправка, публикация, состояние, время
 ms.localizationpriority: medium
 ms.openlocfilehash: 8372f316786d83d72dff8ef7a0a8fd53e5390743
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442570"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475009"
 ---
 # <a name="the-app-certification-process"></a>Процесс сертификации приложения
 
@@ -60,11 +60,11 @@ ms.locfileid: "5442570"
 > [!NOTE]
 > Примечание. Мы также проводим выборочную проверку приложений после их публикации, что позволяет выявлять возможные проблемы и удостоверяться в выполнении [Политик Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies). Если мы обнаружим какие-либо неполадки, то уведомим вас о них и порекомендуем, как их исправить, а также, если применимо, сообщим о необходимости удаления приложения из Магазина.
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

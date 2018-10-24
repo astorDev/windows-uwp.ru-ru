@@ -16,11 +16,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 312e351a39bf291e1fcd21921230a73ed10cfd17
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435507"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477469"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Перечисление и запрос файлов и папок
 
@@ -29,7 +29,7 @@ ms.locfileid: "5435507"
 Рекомендации по сохранению данных приложения универсальной платформы Windows см. в классе [ApplicationData](/uwp/api/windows.storage.applicationdata).
 
 > [!NOTE]
-> См. также раздел [Пример перечисления папок](http://go.microsoft.com/fwlink/p/?linkid=619993).
+> См. также раздел [Пример перечисления папок](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
 ## <a name="prerequisites"></a>Предварительные условия
 
@@ -44,7 +44,7 @@ ms.locfileid: "5435507"
 ## <a name="enumerate-files-and-folders-in-a-location"></a>Перечисление файлов и папок в расположении
 
 > [!NOTE]
-> Обязательно объявите возможность **picturesLibrary**.
+> Обязательно объявите возможность **picturesLibrary**.
 
 В этом примере мы сначала используем метод [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) для получения всех файлов в корневой папке [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (не во вложенных папках) и перечислить имена всех файлов. Затем мы используем метод [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) для получения всех вложенных папок в **PicturesLibrary** и перечислить имена каждой из вложенных папок.
 

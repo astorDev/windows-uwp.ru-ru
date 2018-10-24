@@ -14,11 +14,11 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 906fb2d0d5d466f4fd691afd35ed96198929225c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444258"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469670"
 ---
 # <a name="data-binding-in-depth"></a>Подробно о привязке данных
 
@@ -40,7 +40,7 @@ ms.locfileid: "5444258"
 -   С помощью одностороннем режиме можете привязать [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) к коллекции актуальных новостных статей, сгруппированных по разделу газеты.
 -   Двухсторонний режим можно использовать для привязки к имени пользователя в форме [**текстового поля**](https://msdn.microsoft.com/library/windows/apps/BR209683) .
 
-Независимо от режима, существует два типа привязки, и они обе обычно объявляются в разметке пользовательского интерфейса. Вы можете использовать [расширение разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) или [расширение разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Кроме того, можно одновременно использовать оба типа привязки в одном приложении и даже в одном элементе пользовательского интерфейса. Расширение разметки {x:Bind}, которое впервые появилось в ОС Windows10, отличается улучшенной производительностью. Все сведения, описанные в этом разделе, касаются обоих типов привязки, если явно не указано иное.
+Независимо от режима, существует два типа привязки, и они обе обычно объявляются в разметке пользовательского интерфейса. Вы можете использовать [расширение разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) или [расширение разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Кроме того, можно одновременно использовать оба типа привязки в одном приложении и даже в одном элементе пользовательского интерфейса. {x: Bind} возможности для Windows10 и обеспечивает более высокую производительность. Все сведения, описанные в этом разделе, касаются обоих типов привязки, если явно не указано иное.
 
 **Примеры приложений с расширением разметки {x:Bind}**
 
@@ -256,7 +256,7 @@ public class HostViewModel : BindableBase
 <Button Content="{Binding ...}" ... />
 ```
 
-Если вы используете C + +/ расширения компонентов WinRT или Visual C++ (C + +/ CX), то вам потребуется добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) для любого класса среды выполнения, который вы хотите использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) с.
+При использовании C + +/ WinRT или VisualC ++ расширения компонентов (C + +/ CX), а затем вам потребуется добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) для любого класса среды выполнения, который вы хотите использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) с.
 
 > [!IMPORTANT]
 > Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), а затем атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) доступен, если вы установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии. Без этого атрибута необходимо реализовывать интерфейсы [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) и [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) , чтобы иметь возможность использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) .
@@ -381,7 +381,7 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 
 ### <a name="binding-object-declared-using-binding"></a>Объект привязки, объявленный с использованием расширения разметки {Binding}
 
-Если вы используете C + +/ WinRT или Visual C++ расширения компонентов (C + +/ CX) нажмите, чтобы использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , вам потребуется добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) для любого класса среды выполнения, которое вы хотите выполнить привязку к. Чтобы использовать [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), этот атрибут не нужен.
+Если вы используете C + +/ WinRT или VisualC ++ расширения компонентов (C + +/ CX) нажмите, чтобы использовать расширение разметки [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , вам потребуется добавить атрибут [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) для любого класса среды выполнения, которое вы хотите выполнить привязку к. Чтобы использовать [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), этот атрибут не нужен.
 
 ```cppwinrt
 // HostViewModel.idl
@@ -746,7 +746,7 @@ public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
 
 ## <a name="creating-bindings-in-code"></a>Создание привязок в коде
 
-**Примечание.** Этот раздел относится только к [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), потому что невозможно создать привязки [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) в коде. Однако некоторые из преимуществ {x:Bind} можно получить с помощью метода [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx), что позволяет зарегистрироваться для получения уведомлений об изменениях любого свойства зависимости.
+**Примечание**этот раздел применим только в [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), потому что невозможно создать привязки [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) в коде. Однако некоторые из преимуществ {x:Bind} можно получить с помощью метода [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx), что позволяет зарегистрироваться для получения уведомлений об изменениях любого свойства зависимости.
 
 Вы также можете связывать элементы пользовательского интерфейса в процедурах в коде вместо использования XAML. Для этого создайте новый объект [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820), задайте соответствующие свойства, а затем вызовите [**FrameworkElement.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257.aspx) или [**BindingOperations.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244376.aspx). Создание привязок программными средствами полезно, когда требуется выбирать значения свойств привязки во время выполнения или совместно использовать одну привязку в нескольких элементах управления. Однако отметим, что невозможно использовать значения свойств привязки после вызова **SetBinding**.
 

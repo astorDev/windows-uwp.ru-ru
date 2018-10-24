@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 283856ad163d2e67078c61559f6f8ec667e92b87
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435587"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475071"
 ---
 # <a name="avoid-common-certification-failures"></a>Недопущение распространенных ошибок при сертификации
 
@@ -46,9 +46,9 @@ ms.locfileid: "5435587"
 -   Если в приложении используются коммерческие API Магазина Windows из пространства имен [**Windows.ApplicationModel.Store**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store), обязательно протестируйте приложение и удостоверьтесь в том, что обрабатываются типичные исключения. Кроме того, убедитесь, что в приложении используется класс [**CurrentApp**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp), а не класс [**CurrentAppSimulator**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator), который предназначен только для тестирования. (Обратите внимание, что если ваше приложение предназначено для Windows 10 версии 1607 или более поздней, для управления покупками из приложения рекомендуется использовать элементы, входящие в пространство имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store), а не Windows.ApplicationModel.Store.)
 
 
- 
+ 
 
- 
+ 
 
 
 

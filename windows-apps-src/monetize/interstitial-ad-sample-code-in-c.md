@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, реклама, рекламные объявления, промежуточная, c#, пример кода
 ms.localizationpriority: medium
 ms.openlocfilehash: 195f13d3a51925925d320b87cd0142d14d449226
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438727"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475809"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>Пример кода промежуточной рекламы на C\# #  
 
@@ -40,8 +40,8 @@ ms.locfileid: "5438727"
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#CompleteSample)]
 
- 
+ 
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Примеры рекламы на GitHub](http://aka.ms/githubads)
- 
+ 

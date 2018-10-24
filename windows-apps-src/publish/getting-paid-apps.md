@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, платежи, продажа приложений, доход от приложения, выплата, плата store, удержание платежей, процент
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c128bedd1c889f4c2dcf0565c7c10575eb75013
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438198"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478705"
 ---
 # <a name="getting-paid"></a>Получение платежей
 Ниже приводятся некоторые важные сведения, которые потребуются для получения платежей за ваши приложения и прибыли от рекламы.
@@ -70,9 +70,9 @@ ms.locfileid: "5438198"
 > Выбранное **Состояние удержания выплат** применяется ко **всем** источникам выручки, которые оплачиваются через Центр разработки для Windows (Microsoft Store, реклама, AzureMarketplace и т.д.). Невозможно выбрать различные состояния удержания для всех источников выручки.
 
 
- 
+ 
 
- 
+ 
 
 
 

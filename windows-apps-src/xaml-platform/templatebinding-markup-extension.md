@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437687"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475319"
 ---
 # <a name="templatebinding-markup-extension"></a>Расширение разметки {TemplateBinding}
 
@@ -57,7 +57,7 @@ ms.locfileid: "5437687"
 
 **TemplateBinding** является расширением разметки. Расширения разметки обычно реализуются, если необходимо, чтобы значения атрибутов являлись буквенными значениями или именами обработчиков, и это требование является более глобальным, чем простая настройка преобразователей типов для определенных типов или свойств. Для всех расширений разметки в XAML в синтаксисе атрибутов используются символы "{" и "}". Это соответствует соглашению, по которому процессор XAML распознает, что расширение разметки должно обработать атрибут.
 
-**Примечание**. В реализации процессора XAML в среде выполнения Windows отсутствует представление класса резервирования для функций **TemplateBinding**. Расширение **TemplateBinding** предназначено исключительно для использования в разметке XAML. Не существует простого способа для воспроизведения этого поведения в коде.
+**Примечание**реализации процессора в XAML среды выполнения Windows нет отсутствует представление класса резервирования для **TemplateBinding**. Расширение **TemplateBinding** предназначено исключительно для использования в разметке XAML. Не существует простого способа для воспроизведения этого поведения в коде.
 
 ### <a name="xbind-in-controltemplate"></a>x: Bind в ControlTemplate
 
@@ -84,5 +84,5 @@ ms.locfileid: "5437687"
 * [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
 * [Обзор языка XAML](xaml-overview.md)
 * [Общие сведения о свойствах зависимостей](dependency-properties-overview.md)
- 
+ 
 

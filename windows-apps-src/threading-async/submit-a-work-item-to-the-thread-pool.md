@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, потоки, пул потоков
 ms.localizationpriority: medium
 ms.openlocfilehash: 29d7fc361e446207c8e14f83ca3f663bd5072e6e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435302"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478152"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Отправка рабочего элемента в пул потоков
 
@@ -354,11 +354,11 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 
-Для получения дополнительной информации скачайте код из этого краткого руководства в [примере создания рабочего элемента ThreadPool](http://go.microsoft.com/fwlink/p/?LinkID=328569), созданного для Windows 8.1, и повторно используйте исходный код в приложении Windows 10 win\_unap.
+Дополнительные сведения, загрузив код из этого краткого руководства в [создании ThreadPool работать образец элемента](http://go.microsoft.com/fwlink/p/?LinkID=328569) для Windows8.1 и повторном использовании исходного кода в Windows10 win\_unap.
 
 ## <a name="related-topics"></a>Еще по теме
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)
 * [Отправка рабочего элемента по таймеру](use-a-timer-to-submit-a-work-item.md)
- 
+ 

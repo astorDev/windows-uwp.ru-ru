@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, трассировка стека, ошибка
 ms.localizationpriority: medium
 ms.openlocfilehash: 54c39d157bc2fcab6a67bd273f5d00eedd80be54
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430865"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470435"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>Получение трассировки стека при возникновении ошибки в приложении
 
@@ -56,7 +56,7 @@ ms.locfileid: "5430865"
 | applicationId | строка | Код продукта в Магазине для приложения, по которому требуется получить трассировку стека. Код продукта в Магазине доступен на [странице удостоверения приложения](../publish/view-app-identity-details.md) информационной панели Центра разработки. Пример кода продукта в Магазине: 9WZDNCRFJ3Q8 |  Да  |
 | cabId | строка | Уникальный идентификатор CAB-файла, связанного с ошибкой, для которой требуется получить трассировку стека. Для получения этого идентификатора используйте метод [получения подробных сведений об ошибке в приложении](get-details-for-an-error-in-your-app.md), чтобы получить подробные сведения об определенной ошибке в приложении, и значение **cabId** в тексте ответа этого метода. |  Да  |
 
- 
+ 
 ### <a name="request-example"></a>Пример запроса
 
 В следующем примере показано, как получить трассировку стека с помощью этого метода. Замените значение *applicationId* кодом продукта в Магазине для вашего приложения.

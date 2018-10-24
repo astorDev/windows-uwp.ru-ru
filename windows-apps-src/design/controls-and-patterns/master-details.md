@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f1236c2ade0423f6e092024e786741f3f3bf6d11
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443189"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470092"
 ---
 # <a name="masterdetails-pattern"></a>Шаблон основных и подробных данных
 
@@ -46,7 +46,7 @@ ms.locfileid: "5443189"
 | 320–640 epx        | Стопкой           |
 | 641 epx или шире       | Рядом      |
 
- 
+ 
 ## <a name="stacked-style"></a>Стиль стопкой
 
 При использовании расположения стопкой отображается только одна панель: главная или область сведений.

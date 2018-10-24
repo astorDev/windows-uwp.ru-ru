@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, службы Store, API целевых предложений Microsoft Store, получение целевых предложений
 ms.localizationpriority: medium
 ms.openlocfilehash: 1032831492443460bd63671012a09edfceca2690
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436004"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479080"
 ---
 # <a name="get-targeted-offers"></a>Получение целевых предложений
 
@@ -83,6 +83,6 @@ Authorization: Bearer <Microsoft Account token>
 
 * [Управление целевыми предложениями с помощью служб Store](manage-targeted-offers-using-windows-store-services.md)
 
- 
+ 
 
- 
+ 

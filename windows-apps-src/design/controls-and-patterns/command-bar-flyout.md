@@ -15,20 +15,23 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d965d14c4f10f904a4d94a18ce83721c49491c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 9650a60dd7e653ee7021603328a3cf6de0c13926
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445482"
+ms.locfileid: "5469720"
 ---
 # <a name="command-bar-flyout"></a>Всплывающее меню панели команд
 
 Всплывающий элемент панели команд позволяет предоставляют пользователям удобный доступ к распространенным задачам, отображая команды в плавающей панели инструментов, связанные с элементом на холст пользовательского интерфейса.
 
-![Всплывающий элемент панели команд развернутого текста](images/command-bar-flyout-text-full.png)
+![Всплывающий элемент панели команд развернутого текста](images/command-bar-flyout-header.png)
 
-> Связанные сведения см. в разделе [всплывающие элементы](../controls-and-patterns/dialogs-and-flyouts/flyouts.md) [меню и контекстные меню](menus.md)и [панели команд](app-bars.md).
+> CommandBarFlyout требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии или [Библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+
+> - **API -интерфейсы платформы**: [класс CommandBarFlyout](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout класс](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [класс AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), [класс AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [класс AppBarSeparator](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>- **API -интерфейсы библиотеки пользовательского интерфейса Windows**: [класс CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [класс TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 
 Например, [CommandBar](app-bars.md)CommandBarFlyout имеет **свойствам PrimaryCommands** и **SecondaryCommands** свойства, которые можно использовать для добавления команд. Можно поместить команды в коллекцию, либо оба. Когда и как основные и дополнительные команды отображаются зависит от режима отображения.
 
@@ -36,14 +39,6 @@ ms.locfileid: "5445482"
 
 - В свернутом режиме отображаются только основные команды. Если ваш всплывающий элемент панели команд содержит основные и дополнительные команды, кнопка «Дополнительно», представленное многоточие \ [•••\], отображается. Это позволяет пользователю получить доступ ко второстепенным командам, переходит в развернутом режиме.
 - В развернутом режиме отображаются основные и дополнительные команды. (Если элемент управления имеет только вспомогательные элементы, они отображаются в аналогично тому, как элемент MenuFlyout.)
-
-| **Получить библиотеку пользовательского интерфейса Windows** |
-| - |
-| Этот элемент управления не включен в библиотеке пользовательского интерфейса Windows, пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке см. в разделе [Общие сведения о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
-
-| **API-интерфейсы платформы** | **API библиотеки пользовательского интерфейса Windows** |
-| - | - |
-| [Класс CommandBarFlyout](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout класс](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [класс AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton), [класс AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [класс AppBarSeparator](/uwp/api/windows.ui.xaml.controls.appbarseparator) | [Класс CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout) [TextCommandBarFlyout класса](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout) |
 
 ## <a name="is-this-the-right-control"></a>Выбор подходящего элемента управления
 
@@ -56,6 +51,8 @@ TextCommandBarFlyout отображает команды текста в эле�
 ### <a name="commandbarflyout-vs-menuflyout"></a>CommandBarFlyout vs MenuFlyout
 
 Для отображения команд в контекстном меню, можно использовать CommandBarFlyout или MenuFlyout. Мы рекомендуем CommandBarFlyout, так как он предоставляет дополнительные функции по сравнению с MenuFlyout. Поведение и вид MenuFlyout или используйте всплывающий элемент панели команд полный вместе с главных и вспомогательных команд можно использовать CommandBarFlyout с только вспомогательные команды.
+
+> Связанные сведения см. в разделе [всплывающие элементы](../controls-and-patterns/dialogs-and-flyouts/flyouts.md) [меню и контекстные меню](menus.md)и [панели команд](app-bars.md).
 
 ## <a name="examples"></a>Примеры.
 
@@ -85,20 +82,15 @@ TextCommandBarFlyout отображает команды текста в эле�
 
 ## <a name="create-a-command-bar-flyout"></a>Создание всплывающий элемент панели команд
 
-> **Предварительный просмотр**: CommandBarFlyout требуется [последние сборки Windows 10 Insider Preview и пакет SDK](https://insider.windows.com/for-developers/) или [Библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
-
 В этом примере показано, как создать всплывающий элемент панели команд и использовать его как заблаговременно, так и устраняйте. При касании изображения, всплывающий элемент отображается в свернутом режиме. При отображении как контекстного меню, всплывающий элемент отображается в развернутом режиме. В любом случае пользователь может развернуть или свернуть всплывающий элемент после открытия.
 
-:::row:::
-    :::column:::
-        A collapsed command bar flyout<br/>
-        ![Example of a collapsed command bar flyout](images/command-bar-flyout-img-collapsed.png)
-    :::column-end:::
-    :::column:::
-        An expanded command bar flyout<br/>
-        ![Example of an expanded command bar flyout](images/command-bar-flyout-img-expanded.png)
-    :::column-end:::
-:::row-end:::
+![Пример всплывающий элемент панели свернуто команд](images/command-bar-flyout-img-collapsed.png)
+
+> _Всплывающий элемент панели свернуто команд_
+
+![Пример всплывающий элемент панели развернутого команд](images/command-bar-flyout-img-expanded.png)
+
+> _Всплывающий элемент панели развернутого команд_
 
 ```xaml
 <Grid>
@@ -108,13 +100,13 @@ TextCommandBarFlyout отображает команды текста в эле�
             <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
             <AppBarButton Icon="Share" ToolTipService.ToolTip="Share"/>
             <CommandBarFlyout.SecondaryCommands>
-                <AppBarButton Label="Rotate" Icon="Rotate"/>
+                <AppBarButton Label="Select all"/>
                 <AppBarButton Label="Delete" Icon="Delete"/>
             </CommandBarFlyout.SecondaryCommands>
         </CommandBarFlyout>
     </Grid.Resources>
 
-    <Image Source="Assets/licorice.png" Width="300"
+    <Image Source="Assets/image1.png" Width="300"
            Tapped="Image_Tapped" FlyoutBase.AttachedFlyout="{x:Bind ImageCommandsFlyout}"
            ContextFlyout="{x:Bind ImageCommandsFlyout}"/>
 </Grid>
@@ -178,79 +170,118 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 Всплывающий элемент панели команд можно добавить другие элементы управления, обтекания в AppBarElementContainer. Это позволяет добавлять элементы управления, такие как [DropDownButton]() или [SplitButton]()или добавить контейнеры, такие как [StackPanel]() для создания более сложных пользовательских Интерфейсов.
 
-> [!NOTE]
-> Чтобы добавить к коллекции основной или вспомогательной команду всплывающий элемент панели команд, элемент должен реализовывать интерфейс [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement) . AppBarElementContainer является оболочкой, реализующий этот интерфейс, поэтому можно добавить элемент на панели команд, даже если он не реализовано самого интерфейса.
+Чтобы добавить к коллекции основной или вспомогательной команду всплывающий элемент панели команд, элемент должен реализовывать интерфейс [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement) . AppBarElementContainer является оболочкой, реализующий этот интерфейс, поэтому можно добавить элемент на панели команд, даже если он не реализовано самого интерфейса.
 
 Здесь AppBarElementContainer используется для добавления дополнительных элементов всплывающий элемент панели команд. SplitButton добавляется к основным командам, чтобы разрешить выбор цвета. StackPanel добавляется ко второстепенным командам, чтобы разрешить более сложные макета для элементов управления масштабированием.
+
+> [!TIP]
+> По умолчанию элементы, разработанный для на холсте приложения может выглядеть неправильно на панели команд. При добавлении элемента с помощью AppBarElementContainer, существует несколько действий, которые необходимо выполнить, чтобы сделать элемент сопоставить другие элементы панели команд.
+>
+> - Переопределите кисти по умолчанию с помощью [Облегченное определение стиля](/design/controls-and-patterns/xaml-styles#lightweight-styling) фона элемента и border соответствуют кнопок панели приложения.
+> - Измените размер и положение элемента.
+> - Заключите значки в Viewbox с ширину и высоту 16px.
 
 > [!NOTE]
 > В этом примере показано только всплывающий элемент панели команд пользовательского интерфейса, не реализует все команды, которые отображаются. Дополнительные сведения о реализации команд см. в разделе [кнопок](buttons.md) и [основы проектирования команд](../basics/commanding-basics.md).
 
-:::row:::
-    :::column:::
-        A collapsed command bar flyout with an open SplitButton<br/>
-        ![A command bar flyout with a split button](images/command-bar-flyout-split-button.png)
-    :::column-end:::
-    :::column:::
-        An expanded command bar flyout with custom zoom UI in the menu<br/>
-        ![A command bar flyout with complex UI](images/command-bar-flyout-complex-ui.png)
-    :::column-end:::
-:::row-end:::
+![Всплывающий элемент панели команд с кнопкой "комбинированный режим"](images/command-bar-flyout-split-button.png)
+
+> _Всплывающий элемент панели свернуто команд с открытым SplitButton_
+
+![Всплывающий элемент панели команд с помощью сложного пользовательского интерфейса](images/command-bar-flyout-custom-ui.png)
+
+> _Всплывающий элемент панели команд развернутого с пользовательской масштабирования пользовательского интерфейса в меню_
+
 
 ```xaml
 <CommandBarFlyout>
     <AppBarButton Icon="Cut" ToolTipService.ToolTip="Cut"/>
     <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
     <AppBarButton Icon="Paste" ToolTipService.ToolTip="Paste"/>
-    <!-- Color controls -->
+    <!-- Alignment controls -->
     <AppBarElementContainer>
-        <SplitButton Height="Auto" Margin="0,4,0,0"
-                     ToolTipService.ToolTip="Colors"
-                     Background="{ThemeResource AppBarItemBackgroundThemeBrush}">
+        <SplitButton ToolTipService.ToolTip="Alignment">
+            <SplitButton.Resources>
+                <!-- Override default brushes to make the SplitButton 
+                     match other command bar elements. -->
+                <Style TargetType="SplitButton">
+                    <Setter Property="Height" Value="38"/>
+                </Style>
+                <SolidColorBrush x:Key="SplitButtonBackground"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="SplitButtonBackgroundPressed"
+                                 Color="{ThemeResource SystemListMediumColor}"/>
+                <SolidColorBrush x:Key="SplitButtonBackgroundPointerOver"
+                                 Color="{ThemeResource SystemListLowColor}"/>
+                <SolidColorBrush x:Key="SplitButtonBorderBrush" Color="Transparent"/>
+                <SolidColorBrush x:Key="SplitButtonBorderBrushPointerOver"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="SplitButtonBorderBrushChecked"
+                                 Color="Transparent"/>
+            </SplitButton.Resources>
             <SplitButton.Content>
-                <Rectangle Width="20" Height="20">
-                    <Rectangle.Fill>
-                        <SolidColorBrush Color="Red"/>
-                    </Rectangle.Fill>
-                </Rectangle>
+                <Viewbox Width="16" Height="16" Margin="0,2,0,0">
+                    <SymbolIcon Symbol="AlignLeft"/>
+                </Viewbox>
             </SplitButton.Content>
             <SplitButton.Flyout>
                 <MenuFlyout>
-                    <MenuFlyoutItem Text="Red"/>
-                    <MenuFlyoutItem Text="Yellow"/>
-                    <MenuFlyoutItem Text="Green"/>
-                    <MenuFlyoutItem Text="Blue"/>
+                    <MenuFlyoutItem Icon="AlignLeft" Text="Align left"/>
+                    <MenuFlyoutItem Icon="AlignCenter" Text="Center"/>
+                    <MenuFlyoutItem Icon="AlignRight" Text="Align right"/>
                 </MenuFlyout>
             </SplitButton.Flyout>
         </SplitButton>
     </AppBarElementContainer>
-    <!-- end Color controls -->
+    <!-- end Alignment controls -->
     <CommandBarFlyout.SecondaryCommands>
         <!-- Zoom controls -->
         <AppBarElementContainer>
             <AppBarElementContainer.Resources>
-                <Style TargetType="Button">
-                    <Setter Property="Background"
-                            Value="{ThemeResource AppBarItemBackgroundThemeBrush}"/>
-                </Style>
+                <!-- Override default brushes to make the Buttons 
+                     match other command bar elements. -->
+                <SolidColorBrush x:Key="ButtonBackground"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="ButtonBackgroundPressed"
+                                 Color="{ThemeResource SystemListMediumColor}"/>
+                <SolidColorBrush x:Key="ButtonBackgroundPointerOver"
+                                 Color="{ThemeResource SystemListLowColor}"/>
+                <SolidColorBrush x:Key="ButtonBorderBrush"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="ButtonBorderBrushPointerOver"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="ButtonBorderBrushChecked"
+                                 Color="Transparent"/>
                 <Style TargetType="TextBlock">
                     <Setter Property="VerticalAlignment" Value="Center"/>
                 </Style>
+                <Style TargetType="Button">
+                    <Setter Property="Height" Value="40"/>
+                    <Setter Property="Width" Value="40"/>
+                </Style>
             </AppBarElementContainer.Resources>
-            <Grid Margin="12,0">
+            <Grid Margin="12,-4">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="86"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="76"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Zoom"/>
-                <StackPanel Orientation="Horizontal" Grid.Column="1">
-                    <Button>
-                        <SymbolIcon Symbol="Remove"/>
+                <Viewbox Width="16" Height="16" Margin="0,2,0,0">
+                    <SymbolIcon Symbol="Zoom"/>
+                </Viewbox>
+                <TextBlock Text="Zoom" Margin="10,0,0,0" Grid.Column="1"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                    <Button ToolTipService.ToolTip="Zoom out">
+                        <Viewbox Width="16" Height="16">
+                            <SymbolIcon Symbol="ZoomOut"/>
+                        </Viewbox>
                     </Button>
                     <TextBlock Text="50%" Width="40"
                                HorizontalTextAlignment="Center"/>
-                    <Button>
-                        <SymbolIcon Symbol="Add"/>
+                    <Button ToolTipService.ToolTip="Zoom in">
+                        <Viewbox Width="16" Height="16">
+                            <SymbolIcon Symbol="ZoomIn"/>
+                        </Viewbox>
                     </Button>
                 </StackPanel>
             </Grid>
@@ -259,7 +290,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
         <AppBarSeparator/>
         <AppBarButton Label="Undo" Icon="Undo"/>
         <AppBarButton Label="Redo" Icon="Redo"/>
-        <AppBarButton Label="Select all"/>
+        <AppBarButton Label="Select all" Icon="SelectAll"/>
     </CommandBarFlyout.SecondaryCommands>
 </CommandBarFlyout>
 ```
@@ -270,58 +301,87 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 ![Всплывающий элемент панели команд с помощью только вспомогательные команды](images/command-bar-flyout-context-menu.png)
 
+> _Всплывающий элемент панели команд как контекстного меню_
+
 ```xaml
 <Grid>
     <Grid.Resources>
         <!-- A command bar flyout with only secondary commands. -->
         <CommandBarFlyout x:Name="ContextMenu">
             <CommandBarFlyout.SecondaryCommands>
-                <AppBarButton Label="Pin" Icon="Pin"/>
-                <AppBarButton Label="Unpin" Icon="UnPin"/>
                 <AppBarButton Label="Copy" Icon="Copy"/>
+                <AppBarButton Label="Save" Icon="Save"/>
+                <AppBarButton Label="Print" Icon="Print"/>
                 <AppBarSeparator />
                 <AppBarButton Label="Properties"/>
             </CommandBarFlyout.SecondaryCommands>
         </CommandBarFlyout>
     </Grid.Resources>
 
-    <Image Source="Assets/licorice.png" Width="300"
+    <Image Source="Assets/image1.png" Width="300"
            ContextFlyout="{x:Bind ContextMenu}"/>
 </Grid>
 ```
 
 Можно также использовать CommandBarFlyout с DropDownButton для создания стандартного меню.
 
-![Всплывающий элемент панели команд в виде элементов раскрывающегося меню кнопки](images/command-bar-flyout-button-menu.png)
+![Всплывающий элемент панели команд в виде элементов раскрывающегося меню кнопки](images/command-bar-flyout-dropdown.png)
+
+> _Раскрывающееся меню кнопки в всплывающий элемент панели команд_
 
 ```xaml
-<DropDownButton Content="Mail">
-    <DropDownButton.Flyout>
-        <CommandBarFlyout Placement="BottomEdgeAlignedLeft">
-            <CommandBarFlyout.SecondaryCommands>
-                <AppBarButton Icon="MailForward" Label="Forward"/>
-                <AppBarButton Icon="MailReply" Label="Reply"/>
-                <AppBarButton Icon="MailReplyAll" Label="Reply all"/>
-            </CommandBarFlyout.SecondaryCommands>
-        </CommandBarFlyout>
-    </DropDownButton.Flyout>
-</DropDownButton>
+<CommandBarFlyout>
+    <AppBarButton Icon="Placeholder"/>
+    <AppBarElementContainer>
+        <DropDownButton Content="Mail">
+            <DropDownButton.Resources>
+                <!-- Override default brushes to make the DropDownButton 
+                     match other command bar elements. -->
+                <Style TargetType="DropDownButton">
+                    <Setter Property="Height" Value="38"/>
+                </Style>
+                <SolidColorBrush x:Key="ButtonBackground"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="ButtonBackgroundPressed"
+                                 Color="{ThemeResource SystemListMediumColor}"/>
+                <SolidColorBrush x:Key="ButtonBackgroundPointerOver"
+                                 Color="{ThemeResource SystemListLowColor}"/>
+
+                <SolidColorBrush x:Key="ButtonBorderBrush"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="ButtonBorderBrushPointerOver"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="ButtonBorderBrushChecked"
+                                 Color="Transparent"/>
+            </DropDownButton.Resources>
+            <DropDownButton.Flyout>
+                <CommandBarFlyout Placement="BottomEdgeAlignedLeft">
+                    <CommandBarFlyout.SecondaryCommands>
+                        <AppBarButton Icon="MailReply" Label="Reply"/>
+                        <AppBarButton Icon="MailReplyAll" Label="Reply all"/>
+                        <AppBarButton Icon="MailForward" Label="Forward"/>
+                    </CommandBarFlyout.SecondaryCommands>
+                </CommandBarFlyout>
+            </DropDownButton.Flyout>
+        </DropDownButton>
+    </AppBarElementContainer>
+    <AppBarButton Icon="Placeholder"/>
+    <AppBarButton Icon="Placeholder"/>
+</CommandBarFlyout>
 ```
 
 ## <a name="command-bar-flyouts-for-text-controls"></a>Всплывающие элементы панели команд для элементов управления текстом
 
 [TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout) — это всплывающий элемент панели специализированных команд, содержащий команды для редактирования текста. Каждый текстовый элемент управления автоматически отображается TextCommandBarFlyout как контекстного меню (щелкните правой кнопкой мыши), или при выделении текста. Всплывающий элемент панели команд текста адаптируется к выделению текста, чтобы отображались только соответствующие команды.
 
-:::row:::
-    :::column:::
-        A text command bar flyout on text selection<br/>
-        ![A collapsed text command bar flyout](images/command-bar-flyout-text-selection.png)
-    :::column-end:::
-    :::column:::
-        An expanded text command bar flyout<br/>
-        ![An expanded text command bar flyout](images/command-bar-flyout-text-full.png)
-    :::column-end:::
-:::row-end:::
+![Всплывающий элемент панели команд свернутого текста](images/command-bar-flyout-text-selection.png)
+
+> _Всплывающий элемент панели текст команд на выделение текста_
+
+![Всплывающий элемент панели команд развернутого текста](images/command-bar-flyout-text-full.png)
+
+> _Всплывающий элемент панели команд развернутого текста_
+
 
 ### <a name="available-commands"></a>Доступные команды
 

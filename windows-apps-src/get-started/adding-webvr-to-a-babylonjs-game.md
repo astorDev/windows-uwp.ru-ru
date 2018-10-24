@@ -1,6 +1,6 @@
 ---
 title: Добавление поддержки WebVR в трехмерную игру Babylon.js
-description: Узнайте, как добавить поддержку WebVR в существующих трехмерную игру Babylon.js.
+description: Узнайте, как добавить поддержку WebVR в существующей трехмерной игры Babylon.js.
 author: abbycar
 ms.author: abigailc
 ms.date: 11/29/2017
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: webvr, edge, веб-разработки, babylon, babylonjs, babylon.js, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 97ef659a178a4c3f40d464fd958e5493454afef7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444895"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473982"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>Добавление поддержки WebVR в трехмерную игру Babylon.js
 
@@ -27,7 +27,7 @@ ms.locfileid: "5444895"
 </iframe>
 
 Это трехмерной игры, которая подходит и для плоский экран, но о в VR?
-В этом руководстве мы ознакомитесь шагах он занимает для получения этого, работающие с помощью WebVR. Мы будем использовать гарнитуры [Смешанной реальности](https://developer.microsoft.com/en-us/windows/mixed-reality) , которые могут проникать в добавлена поддержка WebVR в Microsoft Edge. После применения этих изменений в игру, вы можете ожидать, также будет работать в сочетаний браузера и гарнитуры, поддерживающих WebVR.
+В этом учебнике мы ознакомитесь несколько шагов он занимает для получения этого, работающие с помощью WebVR. Мы будем использовать гарнитуры [Смешанной реальности](https://developer.microsoft.com/en-us/windows/mixed-reality) , которые могут проникать в добавлена поддержка WebVR в Microsoft Edge. После применения этих изменений в игру, вы можете ожидать, также будет работать в сочетаний браузера и гарнитуры, поддерживающих WebVR.
 
 
 
@@ -48,7 +48,7 @@ ms.locfileid: "5444895"
 ![Кнопка "Клонировать или скачать"](images/3dclone.png)
 
 Если вы не хотите клонировать проект, его можно скачать в виде ZIP-файла.
-Затем вы получите две папки, [до](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before) и [после](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/after). Папка «до» является нашей игры до любого VR возможности добавляются, и папка «после» завершения игры с поддержкой VR.
+Затем вы получите две папки, [до](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before) и [после](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/after). Папка «до» является нашей игры до любого VR возможности добавляются, и папка «после» завершении игры с поддержкой VR.
 
 До и после папках содержатся следующие файлы:
 -   **текстур или** — папку, содержащую всех изображений, используемых в игре.
@@ -80,7 +80,7 @@ ms.locfileid: "5444895"
 > Привлекайте папке [**Прежде чем**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before) получить образце начальные.
 
 [Babylon.GUI](https://doc.babylonjs.com/how_to/gui) — это библиотека поддержкой VR, позволяя создавать простые, интерактивных пользовательских интерфейсов, хорошо подходят для VR и отображает без VR.
-Является расширением Babylon.js `GUI` библиотека — используемых throuhout пример для создания двухмерной элементов.
+Стандартному расширение Babylon.js `GUI` библиотека — используемых throuhout пример для создания двухмерной элементов.
 
 
 Двухмерная текст `GUI` элемент можно создать с помощью нескольких строк в зависимости от количества атрибутов, вы хотите изменить.
