@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f017dbb30586d3ec3c2da54d0f262c4b159328cc
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398111"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5436300"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Что нового в документации для разработчиков Windows в сентябре 2018 г.
 
@@ -26,7 +26,7 @@ ms.locfileid: "5398111"
 
 ### <a name="windows-machine-learning"></a>Машинное обучение Windows
 
-[Документы машинного обучения Windows](https://docs.microsoft.com/windows/ai/) теперь находятся на свой узел и обновляются при последнюю версию SDK программы предварительной оценки Windows. Существует рабочего стола и учебники по UWP на C++ и C# помогут вам приступить к Добавление WinML к вашему приложению.
+[Документы машинное обучение Windows](https://docs.microsoft.com/windows/ai/) теперь находятся на свой узел и обновляются при последнюю версию SDK программы предварительной оценки Windows. Существует рабочего стола и учебники по UWP на C++ и C# помогут вам начать добавление WinML ваше приложение.
 
 [Справочник по API Windows.AI.MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning) был обновлен для последней версии SDK программы предварительной оценки Windows.
 
@@ -44,7 +44,7 @@ ms.locfileid: "5398111"
 
 ### <a name="how-blur-effects-work"></a>Как размытие рабочих эффектов
 
-Один из наших записи esteemed Джекобс Михаил, начал серия статей о размытия, от концепции для фотографирования для разработки приложений и игр на носителе. Если вы хотите подробнее узнать об этом распространенная визуальный эффект, ознакомьтесь с [первой статьи на концепции и фотографии](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) и [второй сглаживание в графике.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+Один из наших записи esteemed Джекобс Михаил, начнет серия статей о размытия с ослабленным для фотографирования для разработки приложений и игр на носителе. Если вы хотите узнать больше о это распространенная визуальный эффект, ознакомьтесь с [первой статьи на концепции и определять ориентацию](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) и [второй раз на сглаживания в графике.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
 ![Размытие в действии](images/blur-example.jpg)
 
@@ -60,7 +60,7 @@ ms.locfileid: "5398111"
 
 Аарон Gustafson:
 
-* [6 видео на прогрессивные веб-приложения](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
+* [6 видеоролики с инструкциями по прогрессивные веб-приложения](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
 
 Крис Heilmann
 

@@ -15,11 +15,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397694"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5441169"
 ---
 # <a name="pivot"></a>Сводка
 
@@ -43,7 +43,7 @@ ms.locfileid: "5397694"
 </tr>
 </table>
 
-Элемент управления "Сводка", так же, как [NavigationView](navigationview.md), подчеркивает выбранный элемент.
+Элемент управления "Сводка", так же, как [NavigationView](navigationview.md)подчеркивает выбранный элемент.
 
 ![Фокус по умолчанию подчеркивает выбранный заголовок](images/pivot_focus_selectedHeader.png)
 
@@ -56,7 +56,7 @@ ms.locfileid: "5397694"
 Основные различия между элементами управления NavigationView и "Сводка" — это поведение по умолчанию переполнения и навигации API:
 
 - Сводки переполнения обойм, которые элементов, когда NavigationView использует раскрывающееся меню переполнения, чтобы пользователи могли видеть все элементы.
-- "Сводка" обрабатывает навигацию между разделы содержимого, когда NavigationView обеспечивает больше контроля над поведение навигации с помощью.
+- "Сводка" обрабатывает навигацию между разделы содержимого, когда NavigationView позволяет больше контроля над поведение навигации с помощью.
 
 ## <a name="use-navigationview-instead-of-pivot"></a>Использовать NavigationView вместо "Сводка"
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: b33c1d33fe88a09de36e8f80a3034b915d338861
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404407"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5431693"
 ---
 # <a name="configure-a-barcode-scanner"></a>Настройка сканера штрихкодов
 
@@ -30,7 +30,7 @@ ms.locfileid: "5404407"
 ## <a name="bluetooth-barcode-scanner"></a>Сканер штрихкодов, подключаемый по Bluetooth
 Сканер штрихкодов, подключаемый по Bluetooth, для работы с API-интерфейсами для сканеров штрихкодов в UWP должен быть настроен в режиме **Протокол последовательного порта - простой последовательный интерфейс (SPP-SSI)**.  Чтобы узнать, как включить сканер штрихкодов в режиме **SPP-SSI**, обратитесь к документации сканера или свяжитесь с производителем сканера.
 
-Прежде чем использовать сканер штрихкодов Bluetooth, необходимо связать его с помощью **Параметры > устройства > Bluetooth & другие устройства > Добавить Bluetooth или другого устройства**.
+Прежде чем использовать сканер штрихкодов Bluetooth, необходимо связать его с помощью **Параметры > устройства > Bluetooth & другие устройства > Добавить Bluetooth или другое устройство**.
 
 Можно инициировать и контролировать процесс связывания с помощью пространства имен [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) .  Подробнее: [Связывание устройств](https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices).
 

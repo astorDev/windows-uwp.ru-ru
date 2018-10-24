@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398742"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5432483"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Настройка счета для выплат и налоговых форм
 
@@ -27,7 +27,7 @@ ms.locfileid: "5398742"
 > [!NOTE]
 > На [некоторых рынках](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) разработчики могут отправлять только бесплатные приложения. Если ваша учетная запись зарегистрирована на одном из таких рынков, у вас не будет возможности настроить учетную запись для выплат.
 
-После [настройки учетной записи разработчика](opening-a-developer-account.md), существует два аспекта, вам нужно сделать, прежде чем вы можете продавать приложения (или надстройки) в Microsoft Store.
+После [настройки учетной записи разработчика](opening-a-developer-account.md), существует два аспекта, что нужно сделать, прежде чем вы можете продавать приложения (или надстройки) в Microsoft Store.
 
 -   [Настроить счет для выплат](#payout-account)
 -   [Заполнить налоговые формы](#tax-forms)

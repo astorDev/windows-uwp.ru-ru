@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: be4338c7b7e7b3861c206a6d7d63e9e417e6cd0d
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397413"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5438885"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Расширение классических приложений с помощью современных компонентов UWP
 
@@ -46,7 +46,7 @@ ms.locfileid: "5397413"
 
 Убедитесь, что приложения для настольных компьютеров имеет ссылки на файлы, которые необходимо вызывать API среды выполнения Windows.
 
-Чтобы это сделать, см. в разделе [сначала настройте свой проект](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project) раздела [расширение классического приложения для Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project).
+Чтобы это сделать, см. раздел [сначала настройте свой проект](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project) разделе [расширение классического приложения для Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project).
 
 ### <a name="add-a-uwp-project"></a>Добавление проекта UWP
 
@@ -97,7 +97,7 @@ ms.locfileid: "5397413"
 ![адаптивный макет](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->В этом примере показан пользовательский Интерфейс на XAML, добавив в решение проект UWP. Это стабильность способ отображения элементов пользовательского интерфейса XAML в приложении рабочего стола. Вместо этого подхода можно добавлять элементы управления UWP XAML непосредственно к классического приложения с помощью XAML остров. О-ва XAML в настоящее время доступны как ознакомительная версия для разработчиков. Несмотря на то, что мы рекомендуем вам оценить их в коде прототипа сейчас, не рекомендуется использовать их в рабочем коде в данный момент. Эти API-интерфейсы и элементы управления будет продолжать улучшаться и стабилизация в будущих выпусках Windows. Дополнительные сведения о XAML, о-ва, см. в разделе [элементы управления UWP в классических приложениях](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+>В этом примере показан пользовательский Интерфейс на XAML, добавив в решение проект UWP. Это стабильность способ отображения элементов пользовательского интерфейса XAML в приложении для настольных систем. Вместо этого подхода можно добавлять элементы управления UWP XAML непосредственно к классического приложения с помощью XAML остров. О-ва XAML в настоящее время доступны как ознакомительная версия для разработчиков. Несмотря на то, что мы рекомендуем вам оценить их в коде прототипа сейчас, не рекомендуется использовать их в рабочем коде в данный момент. Эти API-интерфейсы и элементы управления будет продолжать улучшаться и стабилизация в будущих выпусках Windows. Дополнительные сведения о XAML, о-ва, см. в разделе [элементы управления UWP в классических приложениях](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>Шаблон проектирования
 
@@ -300,7 +300,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Укажите имя исполняемого файла, созданного проектом UWP, и имя класса точки входа. Эта разметка предполагается, что имя исполняемого файла для вашего приложения UWP `ShareTarget.exe`.
 
-Также необходимо указать типы файлов, которые могут быть переданы вашему приложению. В этом примере мы предоставим классического приложения [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) получателя для точечных изображений, мы указываем `Bitmap` для поддерживаемого типа файлов.
+Также необходимо указать типы файлов, которые могут быть переданы вашему приложению. В этом примере мы изменяем классического приложения [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) получателя для точечных образов, поэтому мы указываем `Bitmap` для поддерживаемого типа файлов.
 
 <a id="override" />
 
@@ -356,13 +356,13 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 </Extensions>  
 ```
 
-Это расширение приведет к включению приложения UWP для запуска классического приложения, к которому вы хотите общей файла. В примере мы будем говорить в исполняемый файл классического приложения [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) .
+Это расширение приведет к включению приложение UWP для запуска классического приложения, к которому вы хотите общей файла. В примере мы будем говорить в исполняемый файл классического приложения [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) .
 
 <a id="modify-desktop" />
 
 ### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>Изменение классического приложения для получения общего файла
 
-Измените классического приложения для поиска и обработки общих файлов. В этом примере приложения UWP хранить общий файл в папку данных локального приложения. Таким образом мы бы изменять [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) классического приложения для извлечения фотографии из этой папки.
+Измените классического приложения для поиска и обработки общего файла. В этом примере приложения UWP хранить общий файл в папку данных локального приложения. Таким образом мы бы изменять [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) Классические приложения для извлечения фотографии из этой папки.
 
 ```csharp
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
@@ -397,7 +397,7 @@ private void Watcher_Created(object sender, FileSystemEventArgs e)
 
 Добавьте фоновую задачу для выполнения кода, даже если приложение приостановлено. Фоновые задачи отлично подходят для небольших задач, не требующих участия пользователя. Например, ваша задача может скачивать почту, показывать всплывающее уведомление о входящем сообщении в чате или реагировать на изменение системного условия.
 
-Вот пример приложения WPF, регистрирует фоновую задачу.
+Вот пример приложения WPF, которое регистрирует фоновую задачу.
 
 ![фоновая задача](images/desktop-to-uwp/sample-background-task.png)
 

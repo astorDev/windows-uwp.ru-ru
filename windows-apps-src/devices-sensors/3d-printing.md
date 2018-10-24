@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 3dprinting, трехмерной печати
 ms.localizationpriority: medium
 ms.openlocfilehash: acf0c9856328e26f8c39adf3f062a3516e7189e2
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5406159"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5440035"
 ---
 # <a name="3d-printing"></a>3D Printing
 
@@ -27,7 +27,7 @@ ms.locfileid: "5406159"
 | Статья | Описание |
 |-------|-------------|
 | [Трехмерная печать из приложения](3d-print-from-app.md) | Узнайте, как добавить функцию трехмерной печати в приложение UWP. Эта статья содержит сведения о том, как вызвать диалоговое окно трехмерной печати, убедившись в том, что трехмерная модель пригодна для печати и представлена в нужном формате. |
-| [Создание пакета 3MF](generate-3mf.md) | Описание структуры типа файлов формате создания 3D и его можно будет создан и обработки с помощью Windows.Graphics.Printing3D API. |
+| [Создание пакета 3MF](generate-3mf.md) | Описание структуры типа файлов формате создания 3D и его может быть создан и обработки с помощью Windows.Graphics.Printing3D API. |
 
 ## <a name="related-topics"></a>Связанные статьи
 

@@ -15,15 +15,15 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 518ce49ddb631e3e914a6c7662b4e74de247c29c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404240"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439789"
 ---
 # <a name="combo-box"></a>Поле со списком
 
-Используйте поле со списком (также известной как раскрывающегося списка) для представления списка элементов, которые пользователь может выбрать нужный элемент. Поле со списком начинается в компактном состоянии и разворачивается для отображения списка предлагаемых.
+Используйте поле со списком (также известной как раскрывающегося списка) для представления списка элементов, которые пользователь может выбрать нужный элемент. Поле со списком запускается в компактном состоянии и разворачивается для отображения списка предлагаемых.
 
 При закрытии в поле со списком, он отображает текущий выбор либо будет пустым, если выбранного элемента нет. При развертывании в поле со списком, отображается список доступных для выбора элементов.
 
@@ -104,18 +104,18 @@ public MainPage()
 
 ### <a name="item-selection"></a>Выбор элементов
 
-Как ListView и GridView ComboBox является производным от [выбора](/uwp/api/windows.ui.xaml.controls.primitives.selector), чтобы вы смогли Выбор пользователя так же standard.
+Как ListView и GridView ComboBox является производным от [средство выбора](/uwp/api/windows.ui.xaml.controls.primitives.selector), чтобы вы смогли Выбор пользователя так же standard.
 
-Можно получить или установите в поле со списком выбранных элементов с помощью свойства [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) и получить или указать индекс выбранного элемента с помощью свойства [SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) .
+Можно получить или установите в поле со списком выбранных элементов с помощью свойства [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) получить или указать индекс выбранного элемента с помощью свойства [SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) .
 
 Чтобы получить значение конкретного свойства на выбранный элемент данных, можно использовать свойство [SelectedValue](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvalue) . В этом случае задайте [SelectedValuePath](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvaluepath) для задания свойства выбранного элемента, чтобы получить значение.
 
 > [!TIP]
-> Если задано SelectedItem или SelectedIndex, чтобы указать значение по умолчанию, если свойство имеет значение, прежде чем заполнено в коллекцию Items поле со списком, возникает исключение. Если вы определяете своих элементов в XAML, лучше обрабатывать события Loaded поле со списком и задать SelectedItem или SelectedIndex в обработчике события Loaded.
+> Если задать SelectedItem или SelectedIndex для обозначения выделения по умолчанию, если свойство имеет значение, прежде чем заполнено в коллекцию Items поле со списком, возникает исключение. Если вы определяете своих элементов в XAML, лучше обрабатывать события Loaded поле со списком и задать SelectedItem или SelectedIndex в обработчике события Loaded.
 
 Можно выполнить привязку к эти свойства в XAML или обработать событие [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) , чтобы реагировать на изменения.
 
-В случае код обработчика, вы можете получить выбранный элемент из свойства [SelectionChangedEventArgs.AddedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.addeditems) . Ранее выбранный элемент (если применимо) можно получить из свойства [SelectionChangedEventArgs.RemovedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.removeditems) . Каждый из коллекции AddedItems и RemovedItems содержат только 1 элемента, так как поле со списком не поддерживает выбор нескольких элементов.
+В том случае, если код обработчика, вы можете получить выбранный элемент из свойства [SelectionChangedEventArgs.AddedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.addeditems) . Ранее выбранный элемент (если применимо) можно получить из свойства [SelectionChangedEventArgs.RemovedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.removeditems) . Каждый из коллекции AddedItems и RemovedItems содержат только 1 элемента, так как поле со списком не поддерживает выбор нескольких элементов.
 
 В этом примере показано, как обрабатывать событие SelectionChanged, а также как привязать к выбранному элементу.
 
@@ -165,9 +165,9 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 #### <a name="selectionchanged-and-keyboard-navigation"></a>Навигация по SelectionChanged и клавиатуры
 
-По умолчанию событие SelectionChanged происходит, когда пользователь нажимает кнопку, касается или нажимает клавишу ВВОД на элемент в списке, чтобы принять их выбор и закрывает в поле со списком. Выбор не меняется при переходе пользователя открыть со списком с помощью клавиш со стрелками.
+По умолчанию событие SelectionChanged происходит, когда пользователь нажимает кнопку, касается или нажимает клавишу ВВОД на элемент в списке, чтобы принять их выбор и закрывает в поле со списком. Выбор не изменяется, когда пользователь переходит по списку поле раскрытым списком с помощью клавиш со стрелками.
 
-Чтобы сделать поле с раскрытым списком, «» во время переход списка открыть с помощью клавиш со стрелками (например, шрифт выбора раскрывающийся список), задайте для [параметра SelectionChangedTrigger](/uwp/api/windows.ui.xaml.controls.combobox.selectionchangedtrigger) значение [всегда](/uwp/api/windows.ui.xaml.controls.comboboxselectionchangedtrigger). Это вызывает событие SelectionChanged возникает при изменении фокуса на другой элемент в списке открыть.
+Чтобы сделать поле с раскрытым списком, «» во время переход списка открыть с помощью клавиш со стрелками (например, шрифт выбора раскрывающийся список), задайте для [параметра SelectionChangedTrigger](/uwp/api/windows.ui.xaml.controls.combobox.selectionchangedtrigger) значение [всегда](/uwp/api/windows.ui.xaml.controls.comboboxselectionchangedtrigger). В результате событие SelectionChanged возникает при изменении фокуса на другой элемент в списке открытой.
 
 #### <a name="selected-item-behavior-change"></a>Изменение поведения выбранного элемента
 
@@ -187,7 +187,7 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 ### <a name="text-search"></a>Поиск по тексту
 
-Поля со списком автоматически поддерживают поиск в их коллекциях. По мере того, как пользователь вводит символы на физической клавиатуре, выбрав открытое или закрытое поле со списком, отображаются варианты, подходящие под строку пользователя. Эта функция особенно полезна при навигации по длинному списку. Например при взаимодействии с раскрывающимся содержащим список штатов, пользователей можно нажать клавишу «w» чтобы отобразить «Washington» для быстрого выбора. Поиск текста не учитывается.
+Поля со списком автоматически поддерживают поиск в их коллекциях. По мере того, как пользователь вводит символы на физической клавиатуре, выбрав открытое или закрытое поле со списком, отображаются варианты, подходящие под строку пользователя. Эта функция особенно полезна при навигации по длинному списку. Например при взаимодействии с раскрывающимся содержащим список штатов пользователей можно нажать клавишу «w» чтобы отобразить «Washington» для быстрого выбора. Поиск текста выполняется без учета регистра.
 
 Свойства [IsTextSearchEnabled](/uwp/api/windows.ui.xaml.controls.combobox.istextsearchenabled) значение **false,** отключить эту функцию.
 
@@ -214,9 +214,9 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 ### <a name="text-submitted"></a>Отправленные текста
 
-Вы можете обработать событие [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) для работы со значением, введенные пользователем. В случае обработчик, вы обычно проверит правильность введенных пользователем значение, затем используйте значение в вашем приложении. В зависимости от ситуации можно также добавить значение в поле со списком список параметров для использования в будущем.
+Вы можете обработать событие [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) для работы со значением, введенные пользователем. В случае обработчик, вы обычно проверит правильность введенных пользователем значение, затем используйте значение в вашем приложении. В зависимости от ситуации может также добавить значение в поле со списком список параметров для использования в будущем.
 
-Событие TextSubmitted возникает при выполнении следующих условий:
+Событие TextSubmitted возникает при следующих условиях:
 
 - Свойство IsEditable имеет **значение true**
 - Пользователь вводит текст, который не соответствует существующей записи в раскрывающемся списке

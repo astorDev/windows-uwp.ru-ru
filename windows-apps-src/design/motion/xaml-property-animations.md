@@ -12,47 +12,47 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.openlocfilehash: a03ffc8d5ea78ee6cbdf78feaae7ba1cd1448f37
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398567"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5434541"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>Анимация элементов XAML с анимациями композиции
 
-В этой статье рассматриваются новые свойства, которые позволяют анимировать UIElement для XAML удобства свойства XAML и производительность анимации композиции.
+В этой статье рассматриваются новые свойства, которые позволяют анимировать UIElement для XAML удобства задание свойств XAML и производительность анимации композиции.
 
 До выхода Windows 10, версия 1809, было 2 варианты для создания анимации в приложениях UWP.
 
 - Использование конструкции XAML как [Раскадрованные анимации](storyboarded-animations.md)или _* текст ThemeTransition_ и _* текст ThemeAnimation_ классы в пространстве имен [Windows.UI.Xaml.Media.Animation](/uwp/api/windows.ui.xaml.media.animation) .
 - Используйте анимации композиции, как описано в [с использованием визуального уровня с помощью XAML](../../composition/using-the-visual-layer-with-xaml.md).
 
-Использование визуального уровня обеспечивает более высокую производительность, чем с помощью XAML выполняет построение. Однако с помощью [ElementCompositionPreview](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) , чтобы получить базовый объект [визуального](/uwp/api/windows.ui.composition.visual) элемента композиции, а затем анимация Visual с анимациями композиции, является более сложным для использования.
+Использование визуальный уровень обеспечивает более высокую производительность, чем с помощью XAML выполняет построение. Однако с помощью [ElementCompositionPreview](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) для получения базового объекта [визуального](/uwp/api/windows.ui.composition.visual) элемента композиции и затем анимация Visual с анимациями композиции, является более сложным для использования.
 
-Начиная с Windows 10, версия 1809, вы можете анимировать свойства в элементе UIElement, непосредственно с помощью анимаций композиции без необходимости для получения базовых композиции Visual.
+Начиная с Windows 10, версия 1809, можно анимировать свойства в элементе UIElement, непосредственно с помощью анимаций композиции без необходимости для получения базовой композиции Visual.
 
 > [!NOTE]
 > Чтобы использовать эти свойства на элемент UIElement, своей целевой версии проекта UWP необходимо 1809 или более поздней версии. Дополнительные сведения о настройке версия вашего проекта см. в разделе [адаптивные к версии приложения](../../debug-test-perf/version-adaptive-apps.md).
 
 ## <a name="new-rendering-properties-replace-old-rendering-properties"></a>Новые свойства отрисовки Замените старый свойства отрисовки
 
-В этой таблице показаны свойства, которые можно использовать для изменения отрисовки элемента UIElement, который также можно анимировать с помощью [CompositionAnimation](/uwp/api/windows.ui.composition.compositionanimation).
+В этой таблице показаны свойства, которые можно использовать для изменения отрисовки UIElement, который также можно анимировать с помощью [CompositionAnimation](/uwp/api/windows.ui.composition.compositionanimation).
 
 | Свойство | Тип | Описание |
 | -- | -- | -- |
 | [Opacity (Прозрачность)](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | Степень непрозрачности объекта |
-| [Translation (Преобразование)](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 (Вектор 3) | Положение X и Y и Z элемента |
+| [Translation (Преобразование)](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 (Вектор 3) | Смещается положение X, Y и Z элемента |
 | [TransformMatrix](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | Матрица преобразования для применения к элементу |
-| [Scale (Масштаб)](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 (Вектор 3) | Масштабирование элемента, по центру CenterPoint |
+| [Scale (Масштаб)](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 (Вектор 3) | Масштабирования элемента, по центру CenterPoint |
 | [Поворот](/uwp/api/windows.ui.xaml.uielement.rotation) | Плавающий | Поворот элемента вокруг RotationAxis и CenterPoint |
-| [RotationAxis (Ось поворота)](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 (Вектор 3) | А именно оси вращения |
+| [RotationAxis (Ось поворота)](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 (Вектор 3) | Ось вращения |
 | [CenterPoint (Центральная точка)](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 (Вектор 3) | Центральная точка масштабирования и поворота |
 
 Значение свойства TransformMatrix используется в сочетании со свойствами масштабирования, вращения и сдвига в следующем порядке: TransformMatrix, масштабирования, поворота, перевода.
 
 Эти свойства не влияют на макет элемента, поэтому изменение этих свойств не приведет к новой [мер](/uwp/api/windows.ui.xaml.uielement.measure)/[упорядочения](/uwp/api/windows.ui.xaml.uielement.arrange) .
 
-Эти свойства имеют то же цель и поведение как свойства с именем как в композиции класса [Visual](/uwp/api/windows.ui.composition.visual) (за исключением трансляции, который не на Visual).
+Эти свойства имеют то же цель и поведение как свойства с именем как на композиции класса [Visual](/uwp/api/windows.ui.composition.visual) (за исключением трансляции, который не на Visual).
 
 ### <a name="example-setting-the-scale-property"></a>Пример: Задание свойства масштабирования
 
@@ -80,7 +80,7 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 - [Projection](/uwp/api/windows.ui.xaml.uielement.projection)
 - [Transform3D](/uwp/api/windows.ui.xaml.uielement.transform3d)
 
-При установке (либо анимировать) какие-либо новые свойства, нельзя использовать старые свойства. И наоборот Если задать (или анимировать) старого свойства, невозможно использовать новые свойства.
+При установке (либо анимировать) какие-либо новые свойства, нельзя использовать старые свойства. И наоборот Если задать (или анимировать) любого из старого свойств, нельзя использовать новые свойства.
 
 Новые свойства также нельзя использовать, если вы используете ElementCompositionPreview и визуальный самостоятельно с помощью следующих методов:
 
@@ -90,17 +90,17 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 > [!IMPORTANT]
 > Попытка смешивать использование двух наборов свойств вызовет сбой и создают сообщения об ошибке вызова API.
 
-Существует возможность переход с один набор свойств, сняв их, но для простоты не рекомендуется. Если свойство соответствует DependencyProperty (например, UIElement.Projection соответствует UIElement.ProjectionProperty), затем вызовите метод ClearValue позволяет восстановить его в состоянии «неиспользуемые». В противном случае (например, свойство масштаб), задайте свойство к значению по умолчанию.
+Существует возможность перехода с один набор свойств, сняв их, хотя для простоты не рекомендуется. Если свойство соответствует DependencyProperty (например, UIElement.Projection соответствует UIElement.ProjectionProperty), затем вызовите метод ClearValue позволяет восстановить его в состоянии «неиспользуемые». В противном случае (например, свойства масштаб), задайте свойство к значению по умолчанию.
 
 ## <a name="animating-uielement-properties-with-compositionanimation"></a>Анимирование свойства UIElement с CompositionAnimation
 
 Вы можете анимировать свойства отрисовки, перечисленные в таблице с CompositionAnimation. Эти свойства также будут ссылаться анимацию [ExpressionAnimation](/uwp/api/windows.ui.composition.expressionanimation).
 
-Используйте методы [StartAnimation](/uwp/api/windows.ui.xaml.uielement.startanimation) и [StopAnimation](/uwp/api/windows.ui.xaml.uielement.stopanimation) UIElement для анимирования свойств UIElement.
+Используйте методы [StartAnimation](/uwp/api/windows.ui.xaml.uielement.startanimation) и [StopAnimation](/uwp/api/windows.ui.xaml.uielement.stopanimation) UIElement анимировать свойства UIElement.
 
 ### <a name="example-animating-the-scale-property-with-a-vector3keyframeanimation"></a>Пример: Анимация свойства масштаб с Vector3KeyFrameAnimation
 
-В этом примере показано, как анимировать масштаб кнопки.
+В этом примере показано, как анимировать масштаба кнопки.
 
 ```csharp
 var compositor = Window.Current.Compositor;

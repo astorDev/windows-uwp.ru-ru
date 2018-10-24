@@ -16,11 +16,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cd5f7e7022f246fce3d08286fe77c74503ddc5d
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5401040"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444028"
 ---
 # <a name="text-controls"></a>Текстовые элементы управления
 
@@ -127,7 +127,7 @@ ms.locfileid: "5401040"
 
 ![Текстовое поле разворачивается при касании пером](images/handwritingview/handwritingview2.gif)
 
-Дополнительные сведения см. в разделе [Ввод текста с помощью представления для рукописного ввода](text-handwriting-view.md).
+Дополнительные сведения см. в разделе [Ввод текста с представлением рукописного ввода](text-handwriting-view.md).
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>Выбор подходящей клавиатуры для элемента управления текстом
 

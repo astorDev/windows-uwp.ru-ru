@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, данные, типы
 ms.localizationpriority: medium
 ms.openlocfilehash: f9763e7f69b143dffe8fea611f25ae75284929cb
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400455"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5436991"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>Стандартные типы данных C++ и C++/WinRT
 
-С помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), можно вызывать API среды выполнения Windows, используя стандартные типы данных C++, включая некоторые типы данных стандартной библиотеки C++. Стандартные строки можно передать в API-интерфейсы (см. в разделе [Обработка строк в C + +/ WinRT](strings.md)), и можно передать инициализатора списки и стандартных контейнеров API, которые ожидают семантически эквивалентные коллекции.
+С помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), можно вызывать API среды выполнения Windows, используя стандартные типы данных C++, включая некоторые типы данных стандартной библиотеки C++. Стандартные строки можно передавать для API-интерфейсы (см. в разделе [Обработка строк в C + +/ WinRT](strings.md)), и можно передать инициализатора списки и стандартных контейнеров API, которые ожидают семантически эквивалентные коллекции.
 
 ## <a name="standard-initializer-lists"></a>Стандартные списки инициализатора
 Список инициализатора (**std::initializer_list**) — это конструкция стандартной библиотеки C++. Списки инициализатора можно использовать при вызове определенных конструкторов и методов среды выполнения Windows. Например, с помощью одного из них можно вызвать [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes).
@@ -102,7 +102,7 @@ IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vecto
 }
 ```
 
-При этом нельзя передавать **std::vector&lt;std::wstring&gt;** там, где требуется коллекция среды выполнения Windows. Это связано с тем, что после преобразования в соответствующую коллекцию среды выполнения Windows **std::wstring** язык C++ не преобразует параметры типов этой коллекции. Следовательно, не будет скомпилирован, в следующем примере кода (и решения для передачи **std::vector&lt;winrt::hstring&gt; ** вместо этого, как показано выше).
+При этом нельзя передавать **std::vector&lt;std::wstring&gt;** там, где требуется коллекция среды выполнения Windows. Это связано с тем, что после преобразования в соответствующую коллекцию среды выполнения Windows **std::wstring** язык C++ не преобразует параметры типов этой коллекции. Следовательно, не будет скомпилирован в следующем примере кода (и решением является передать **std::vector&lt;winrt::hstring&gt; ** вместо этого, как показано выше).
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)

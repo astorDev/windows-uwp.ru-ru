@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, объявления, реклама, размеры, баннеры
 ms.localizationpriority: medium
 ms.openlocfilehash: a438f6df66b064004ad9664ce46280475dad83c6
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399966"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5440603"
 ---
 # <a name="supported-banner-ad-sizes"></a>Поддерживаемые размеры рекламных баннеров
 
-Следующий размеров рекламных баннеров, поддерживаются для приложений универсальной платформы Windows (UWP). После создания экземпляра объекта **AdControl** в вашем приложении, убедитесь, что значение свойства высоты и ширины в соответствии с одним из этих поддерживаемых размеров.
+Следующие размеры рекламных баннеров, поддерживаются для приложений универсальной платформы Windows (UWP). После создания экземпляра объекта **AdControl** в вашем приложении, убедитесь, что значение свойства высоты и ширины в соответствии с одним из этих поддерживаемых размеров.
 
 * 160x600
 * 300x50
