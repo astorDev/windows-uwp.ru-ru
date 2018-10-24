@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, имена приложений, измените имя приложения, обновление приложения имя, игры, имя продукта
 ms.localizationpriority: medium
 ms.openlocfilehash: 878b105541691834dbbe35b5210f33045afdc47b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438212"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468632"
 ---
 # <a name="manage-app-names"></a>Управление именами приложений
 
@@ -64,9 +64,9 @@ ms.locfileid: "5438212"
 > [!TIP]
 > Каждое приложение отображается на панели мониторинга, используя имя, которое зарезервировано для него. Если следовали инструкциям выше переименовать приложение, и хотели бы оно должно отображаться на панели мониторинга, используя новое имя, необходимо удалить исходное имя (например, щелкнув **Удалить** на странице " **Управление именами приложений** "). 
 
- 
+ 
 
- 
+ 
 
 
 

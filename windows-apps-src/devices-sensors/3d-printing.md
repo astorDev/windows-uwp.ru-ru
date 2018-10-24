@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 3dprinting, трехмерной печати
 ms.localizationpriority: medium
 ms.openlocfilehash: acf0c9856328e26f8c39adf3f062a3516e7189e2
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440035"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468747"
 ---
 # <a name="3d-printing"></a>3D Printing
 
@@ -36,4 +36,4 @@ ms.locfileid: "5440035"
 * [Пример трехмерной печати](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
 * [Трехмерная печать из примера Unity](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
 
- 
+ 

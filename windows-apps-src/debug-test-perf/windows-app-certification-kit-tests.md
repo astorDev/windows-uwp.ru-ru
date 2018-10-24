@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, сертификации приложений
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434697"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483884"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Тесты комплекта сертификации приложений для Windows
 
@@ -319,11 +319,11 @@ The AppContainerCheck проверяет, установлен ли бит **app
 
 Убедитесь, что приложение скомпилировано в виде сборки выпуска, а не отладочной сборки.
 
-> **Примечание**  Отладочная сборка приложения не пройдет этот тест, даже если приложение использует только [API-интерфейсы для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+> **Примечание**отладочная сборка приложения не пройдет этот тест, даже если приложение использует только [API-интерфейсы для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
 Просмотрите сообщения об ошибках для идентификации API использует приложения, которые не является [API для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-> **Примечание**  Приложения на C++, которые встроены в конфигурации отладки не пройдет этот тест, даже если в конфигурации используются только API из пакета Windows SDK для приложений UWP. См. в разделе, [альтернативы API Windows в приложениях UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) подробнее.
+> **Примечание**приложений на C++, которые встроены в конфигурации отладки не пройдет этот тест, даже если в конфигурации используются только API из пакета Windows SDK для приложений UWP. См. в разделе, [альтернативы API Windows в приложениях UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) подробнее.
 
 ## <a name="performance-tests"></a>Тесты производительности
 
@@ -481,7 +481,7 @@ The AppContainerCheck проверяет, установлен ли бит **app
 
 
 
- 
+ 
 
 ### <a name="branding-validation"></a>Проверка фирменной символики
 
@@ -551,7 +551,7 @@ Microsoft Store требует всех приложений, использую
 
 ### <a name="direct3d-trim-after-suspend"></a>Вызов API Trim Direct3D после приостановки
 
-> **Примечание**  Этот тест применяется только к приложениям UWP, разработанных для Windows 8.1 и более поздних версиях.
+> **Примечание**этот тест применяется только к приложениям UWP, разработанным для Windows8.1 и более поздних версиях.
 
 ### <a name="background"></a>Общие сведения
 
@@ -673,4 +673,4 @@ Microsoft Store требует всех приложений, использую
 
 * [Тесты приложений моста для классических приложений](windows-desktop-bridge-app-tests.md)
 * [Политики Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)
- 
+ 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, StartScreenManager, закрепление основной плитки, api основной плитки, проверка закрепления плитки, живая плитка
 ms.localizationpriority: medium
 ms.openlocfilehash: 42b4c014dfd49c42497b8846e37e37af53cc3885
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445144"
+ms.locfileid: "5468354"
 ---
 # <a name="primary-tile-apis"></a>API для работы с основными плитками
  
@@ -88,7 +88,7 @@ bool isPinned = await StartScreenManager.GetDefault().ContainsAppListEntryAsync(
 Если основная плитка не закреплена, и ваша плитка поддерживается меню "Пуск", вы можете показать совет пользователям относительно закрепления основной плитки.
 
 > [!NOTE]
-> Необходимо вызвать этот API из потока пользовательского интерфейса, пока приложение находится на переднем плане, и этот API следует вызывать только после намеренного запроса на закрепление пользователем основной плитки (например, после нажатия кнопки "Да" в вашем совете о закреплении плитки).
+> Необходимо вызвать этот API из потока пользовательского интерфейса, пока приложение находится на переднем плане, и следует вызывать только этот APIafterthe намеренного запроса пользователем bepinned основной плитки (например, после того как пользователь нажал кнопку Да в вашем совете о закреплении плитки).
 
 Если пользователь нажимает кнопку, чтобы закрепить основную плитку, вы вызываете метод [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) для запроса относительно закрепления плитки на начальном экране. Отобразится диалоговое окно подтверждения, чтобы пользователь подтвердил, что он хочет закрепить плитку на начальном экране.
 

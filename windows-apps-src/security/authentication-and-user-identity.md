@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f446299dcf1a0bcf93d483d13c926c6e4cd230f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432717"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468318"
 ---
 # <a name="authentication-and-user-identity"></a>Проверка подлинности и удостоверение пользователя
 
@@ -25,7 +25,7 @@ ms.locfileid: "5432717"
 
 Для подключения обычных приложений к службам поставщиков сетевых удостоверений сторонних разработчиков (например, Facebook, Twitter, Flickr и т. д.) используйте [Брокер веб-проверки подлинности](web-authentication-broker.md). Для дополнительного удобства используйте [Хранилище учетных данных](credential-locker.md) для сохранения и перемещения учетных данных пользователя.
 
-Предприятиям, использующим Windows10, настоятельно рекомендуется использовать [Microsoft Passport и Windows Hello](microsoft-passport.md), которые обеспечивают двухфакторную проверку подлинности с высоким уровнем безопасности. Если использование Microsoft Passport невозможно, [смарт-карты](smart-cards.md) и [биометрия отпечатков пальцев](fingerprint-biometrics.md) могут добавить дополнительный уровень безопасности.
+Предприятиям, использующим Windows10, настоятельно рекомендуется использовать [Microsoft Passport и Windows Hello](microsoft-passport.md), что позволяет надежно защищенные двухфакторную проверку подлинности. Если использование Microsoft Passport невозможно, [смарт-карты](smart-cards.md) и [биометрия отпечатков пальцев](fingerprint-biometrics.md) могут добавить дополнительный уровень безопасности.
 
 <table>
 <tr><th>Тема</th><th>Описание</th></tr>
