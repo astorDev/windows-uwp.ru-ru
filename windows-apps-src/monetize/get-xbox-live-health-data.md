@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live, работоспособность, ошибки пользователя
 ms.localizationpriority: medium
 ms.openlocfilehash: e7802db965ee4d1515090270125430871544d9f1
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5407245"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5440828"
 ---
 # <a name="get-xbox-live-health-data"></a>Получение данных работоспособности в Xbox Live
 

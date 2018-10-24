@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dd4e0ced4de2419858424a88f5fa5ce66f5b4286
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400691"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444181"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>Создание универсального приложения для Windows с несколькими экземплярами
 
@@ -25,7 +25,7 @@ ms.locfileid: "5400691"
 > [!IMPORTANT]
 > Создание нескольких экземпляров поддерживается для приложений JavaScript, но не является перенаправления нескольких экземпляров. Поскольку перенаправления нескольких экземпляров для приложений JavaScript не поддерживается, класс [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance) не полезен для таких приложений.
 
-## <a name="opt-in-to-multi-instance-behavior"></a>Принять участие в поведения с несколькими экземплярами
+## <a name="opt-in-to-multi-instance-behavior"></a>Согласие на использование поведения с несколькими экземплярами
 
 При создании нового приложения с несколькими экземплярами можно установить шаблоны **Multi-Instance App Project Templates.VSIX**, доступные в [Visual Studio Marketplace](https://aka.ms/E2nzbv). После установки шаблонов они будут доступны в диалоговом окне **Новый проект** в разделе **Visual C# > Windows Universal** (или **Другие языки > Visual C++ > Visual C# > Windows Universal**).
 
@@ -62,7 +62,7 @@ ms.locfileid: "5400691"
 
 Шаблон **Приложения UWP с несколькими экземплярами и перенаправлением** добавляет `SupportsMultipleInstances` в файл package.appxmanifest, как показано выше, а также добавляет **Program.cs** (или **Program.cpp**, если вы используете версию шаблона для C++) в ваш проект, содержащий функцию `Main()`. Логика перенаправления с активацией выполняется в функции `Main`. Ниже показан шаблон для **Program.cs** .
 
-Свойство [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) показатель оболочки предусмотренной предпочтительный для данного запроса активации, если таковой имеется (или `null` Если нет). Если оболочке предоставляет предпочтения, затем можно можно перенаправить активации этого экземпляра, или вы можете проигнорировать ее, если вы решили.
+Свойство [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) показатель оболочки предусмотренной предпочтительный для данного запроса активации, если таковой имеется (или `null` Если не существует один). Если оболочке предоставляет предпочтения, затем можно можно перенаправить активации этого экземпляра, или вы можете проигнорировать ее, если вы решили.
 
 ``` csharp
 public static class Program

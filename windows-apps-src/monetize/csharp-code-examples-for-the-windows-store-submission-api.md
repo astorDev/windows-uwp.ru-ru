@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, UWP, API отправки в Microsoft Store, примеры кода, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: f5e508bd89c06841009576a0a69cb960a20faa83
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5407055"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444386"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>Пример на языке C\#: отправки для приложений, надстроек и тестовых пакетов
 
