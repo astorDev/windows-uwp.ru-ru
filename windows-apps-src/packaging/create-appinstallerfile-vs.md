@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованного приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 6158b804e1d4ece3c76099a3f8d33d5fa562078d
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396657"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444064"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Создание файла установщика приложений в Visual Studio
 

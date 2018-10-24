@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ac0b2094b17120af8a0c85505cd03af389f1f4
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5401126"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445442"
 ---
 # <a name="segoe-mdl2-icons"></a>Значки Segoe MDL2
 
@@ -59,7 +59,7 @@ ms.locfileid: "5401126"
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-Вы также можете использовать статический ресурс `SymbolThemeFontFamily` для доступа к **Segoe MDL2 Assets**, вместо указания шрифта по имени:
+Вы также можете использовать статический ресурс `SymbolThemeFontFamily` для доступа к **Segoe MDL2 Assets**, вместо указания шрифт по имени:
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```

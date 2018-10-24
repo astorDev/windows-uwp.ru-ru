@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, службы Store, аналитика API аналитики для Microsoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 30b9303fc44f557210c9ba80a2a135f77909dc10
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403897"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445811"
 ---
 # <a name="get-insights-data"></a>Получение аналитических данных
 
-Используйте этот метод в API аналитики Microsoft Store для получения аналитических данных, связанных с приобретения, работоспособности и показатели использования приложения во время диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [аналитический отчет](../publish/insights-report.md) в информационной панели центра разработки для Windows.
+Используйте этот метод в API аналитики Microsoft Store для получения аналитических данных, связанных с приобретения, работоспособности и использования метрик для приложения, заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [аналитический отчет](../publish/insights-report.md) в информационной панели центра разработки для Windows.
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -89,11 +89,11 @@ Authorization: Bearer <your access token>
 
 | Значение               | Тип   | Описание                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | string | Одно из следующих значений, указывающее, что показатель, описывающий текущее представление или текущего измерения, на основе **типа данных** значения.<ul><li>О **работоспособности**это значение всегда равно **числа попаданий**.</li><li>Для **приобретения**это значение всегда равно **AcquisitionQuantity**.</li><li>Для **использования**это значение может быть одна из следующих строк:<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
+| FactName           | string | Одно из следующих значений, указывающее показатель, который описывает текущее представление или текущего измерения, на основе **типа данных** значения.<ul><li>О **работоспособности**это значение всегда равно **числа попаданий**.</li><li>Для **приобретения**это значение всегда равно **AcquisitionQuantity**.</li><li>Для **использования**это значение может быть одна из следующих строк:<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
 | SubDimensions         | array |  Один или несколько объектов, которые описывают один метрики за аналитические сведения.   |
-| PercentChange            | string |  Процент измененного метрики по всей клиентской базы.  |
+| PercentChange            | string |  Процент метрику измененный по всей клиентской базы.  |
 | Имя измерения           | string |  Имя метрики, описанные в текущее измерение. Примеры включают **EventType**, **рынка**, **DeviceType**, **PackageVersion**, **AcquisitionType**, **AgeGroup** и **Пол**.   |
-| DimensionValue              | string | Значение показателя, описанного в текущей измерения. Например если **имя измерения** **EventType**, **DimensionValue** может быть **Сбой** или **зависание**.   |
+| DimensionValue              | string | Значение метрики, описанное в текущем измерения. Например если **имя измерения** **EventType**, **DimensionValue** может быть **Сбой** или **зависание**.   |
 | FactValue     | string | Абсолютное значение метрики на выбранную дату аналитические была обнаружена.  |
 | Direction | string |  Направление изменений (**положительное** или **отрицательное**).   |
 | Дата              | строка |  Дата, на котором мы определили изменения, связанные с текущей аналитические или текущего измерения.   |

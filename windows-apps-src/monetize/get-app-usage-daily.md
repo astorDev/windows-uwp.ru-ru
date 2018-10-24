@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, службы магазина, API, использование аналитики Microsoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398151"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443969"
 ---
 # <a name="get-daily-app-usage"></a>Получение сведений о ежедневном использовании приложения
 
-Используйте этот метод в API аналитики для Microsoft Store, чтобы получить сводные данные (не включая многопользовательской игры Xbox) в формате JSON об использовании приложения во время в заданном диапазоне дат (за последние 90 дней только) и других дополнительных фильтров. Эта информация также доступна в [отчете об использовании](../publish/usage-report.md) на информационной панели центра разработки для Windows.
+Используйте этот метод в API аналитики для Microsoft Store для получения данных сводную информацию об использовании (не включая многопользовательской игры Xbox) в формате JSON для приложения во время в заданном диапазоне дат (за последние 90 дней только) и других дополнительных фильтров. Эта информация также доступна в [отчете об использовании](../publish/usage-report.md) на информационной панели центра разработки для Windows.
 
 ## <a name="prerequisites"></a>Необходимые условия
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403074"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445260"
 ---
 # <a name="support-your-app-with-background-tasks"></a>Поддержка приложения с помощью фоновых задач
 
@@ -171,7 +171,7 @@ ms.locfileid: "5403074"
 [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)  
 [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
 
-Проверка регистрации фоновых задач во время запуска приложения. Для обеспечения приложения без группировки фоновых задач в BackgroundTaskBuilder.AllTasks. Повторно зарегистрируйте те, которые не отображаются. Отмените регистрацию все задачи, которые больше не требуется. Это гарантирует, что все регистрации фоновой задачи актуальны при каждом запуске приложения.
+Проверьте ваше регистрации фоновой задачи во время запуска приложения. Убедитесь, что ваше приложение без группировки фоновых задач в ней присутствуют в BackgroundTaskBuilder.AllTasks. Повторно зарегистрируйте те, которые не отображаются. Отмените регистрацию все задачи, которые больше не требуется. Это гарантирует, что все регистрации фоновой задачи актуальны при каждом запуске приложения.
 
 ## <a name="related-topics"></a>Ссылки по теме
 

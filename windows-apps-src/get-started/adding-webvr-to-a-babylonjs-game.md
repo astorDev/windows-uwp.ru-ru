@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: webvr, edge, веб-разработки, babylon, babylonjs, babylon.js, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 97ef659a178a4c3f40d464fd958e5493454afef7
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405761"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444895"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>Добавление поддержки WebVR в трехмерную игру Babylon.js
 
@@ -36,7 +36,7 @@ ms.locfileid: "5405761"
 - Текстовом редакторе (например, [Visual Studio Code](https://code.visualstudio.com/download))
 - Контроллером Xbox, подключенный к компьютеру
 - Windows 10 Creators Update
-- Компьютер с [минимальным требуется спецификации для запуска Windows Mixed Reality](https://developer.microsoft.com/en-us/windows/mixed-reality/immersive_headset_setup)
+- Компьютер с [минимальным обязательным спецификации для запуска Windows Mixed Reality](https://developer.microsoft.com/en-us/windows/mixed-reality/immersive_headset_setup)
 - Устройство смешанной реальности Windows (необязательно) 
 
 
@@ -85,7 +85,7 @@ ms.locfileid: "5405761"
 
 Двухмерная текст `GUI` элемент можно создать с помощью нескольких строк в зависимости от количества атрибутов, вы хотите изменить.
 В следующем фрагменте кода уже находится в нашем примере [**перед**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before) , однако давайте Пошаговое руководство, что происходит.
-Сначала мы делаем [`AdvancedDynamicTexture`](https://doc.babylonjs.com/how_to/gui#advanceddynamictexture) объекта, чтобы установить графического интерфейса пользователя, которые будут рассмотрены. Пример задает это `CreateFullScreenUI()`, то есть пользовательском Интерфейсе будут рассмотрены весь экран. С помощью `AdvancedDynamicTexture` создан, затем внесения 2D текстовое поле, которое отображается при запуске игры с помощью `GUI.Rectanlge()` и `GUI.TextBlock()`.
+Сначала мы делаем [`AdvancedDynamicTexture`](https://doc.babylonjs.com/how_to/gui#advanceddynamictexture) объекта, чтобы установить графического интерфейса пользователя, которые будут рассмотрены. Пример задает это `CreateFullScreenUI()`, то есть пользовательском Интерфейсе будут рассмотрены весь экран. С помощью `AdvancedDynamicTexture` создан, затем внесения двухмерных текстовое поле, которое отображается при запуске игры с помощью `GUI.Rectanlge()` и `GUI.TextBlock()`.
 
 
 Этот код добавляется в [**файле main.js**](https://github.com/Microsoft/Windows-tutorials-web/blob/master/BabylonJS-game-with-WebVR/before/js/main.js#L157-L168).
@@ -131,7 +131,7 @@ navigator.getVRDisplays().then(function (displays) {
 });
 ```
 
-С помощью данные, хранящиеся в `headset` переменной, мы теперь сможете выбрать камеры, которая подходит для пользователя.
+С информацией, хранящиеся в `headset` переменной, мы теперь сможете выбрать камеры, которая подходит для пользователя.
 
 
 ## <a name="creating-and-selecting-the-initial-camera"></a>Создание и выбрав начальной камеры
@@ -141,7 +141,7 @@ navigator.getVRDisplays().then(function (displays) {
 
 ### <a name="step-1-checking-for-headsets"></a>Шаг 1: Проверка для гарнитур
 
-Для наших резервный камеры, мы будем использовать [`UniversalCamera`](https://doc.babylonjs.com/classes/3.1/universalcamera) , в настоящее время используется в исходном игры.
+Для наших резервный камеры, мы будем использовать [`UniversalCamera`](https://doc.babylonjs.com/classes/3.1/universalcamera) , используемого в настоящее время в исходном игры.
 
 Мы проверяем наши `headset` переменную, чтобы определить, является ли мы можем использовать `WebVRFreeCamera` камеры.
 
@@ -191,7 +191,7 @@ navigator.getVRDisplays().then(function (displays) {
 
 ### <a name="step-3-adding-gamepad-support"></a>Шаг 3: Добавление поддержки геймпада
 
-Так как `WebVRFreeCamera` не поддерживает изначально геймпадов, мы будем сопоставить наших кнопки геймпада клавиш со стрелками. Это необходимо сделать, углубиться в `inputs` свойства камеры. Добавляя соответствующие коды для левый аналоговый джойстик вверх, вниз, влево и вправо в соответствии с с помощью клавиш со стрелками, наши игрового контроллера — обратно в действии.
+Так как `WebVRFreeCamera` не поддерживает изначально геймпадов, мы будем сопоставить наших кнопки геймпада клавиши со стрелками. Это необходимо сделать, углубиться в `inputs` свойства камеры. Добавляя соответствующие коды для левый аналоговый джойстик вверх, вниз, влево и вправо в соответствии с с помощью клавиш со стрелками, наши игрового контроллера — обратно в действии.
 
 
 Добавьте следующий код ниже `scene.onPointerDown = function() {...}` вызова.

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ead9efdd0a1d37a051f24e94b40a7c61212f6b19
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5408959"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444810"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>Обнаружение и выбор возможностей камеры с помощью профилей камеры
 
