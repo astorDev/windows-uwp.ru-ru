@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e616f5a04e50b400c4bd7a700981396570a6c1d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 8ddac5d69ce0c562129255832adfc49380946510
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044663"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572383"
 ---
 # <a name="choosing-a-resource"></a>Выбор ресурса
 
@@ -40,7 +38,7 @@ ms.locfileid: "1044663"
 | Средство слияния выхода   | Из    | Представление целевого объекта отрисовки     | Буфер, Texture1D, Texture2D, Texture3D |
 | Средство слияния выхода   | Из    | Представления глубины/трафарета     | Texture1D, Texture2D                    |
 
- 
+ 
 
 ## <a name="span-ididentifyusagespanspan-ididentifyusagespanspan-ididentifyusagespanidentify-how-each-resource-will-be-used"></a><span id="Identify_Usage"></span><span id="identify_usage"></span><span id="IDENTIFY_USAGE"></span>Определение способа использования каждого ресурса
 
@@ -56,7 +54,7 @@ ms.locfileid: "1044663"
 | Промежуточное        | Графический процессор                                  | Неприменимо                 |
 | Постоянное      | ЦП (только во время создания ресурсов) | Неприменимо                 |
 
- 
+ 
 
 Использование по умолчанию следует использовать для ресурса, который, как ожидается, будет обновляться ЦП достаточно редко (реже, чем раз в кадр). В идеале ЦП никогда не будет выполнять прямую запись в ресурс с использованием по умолчанию, чтобы избежать возможного снижения производительности.
 
@@ -75,7 +73,7 @@ ms.locfileid: "1044663"
 | Отрисовка в текстуру                     | По умолчанию              |
 | Доступ ЦП к данным графического процессора                | Промежуточное              |
 
- 
+ 
 
 Если вы не уверены, какое использование выбрать, начните с использования по умолчанию, поскольку это самый распространенный сценарий. Буфер констант шейдера — это тип ресурса, который должен всегда иметь использование по умолчанию.
 
@@ -95,9 +93,9 @@ ms.locfileid: "1044663"
 
 [Ресурсы](resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

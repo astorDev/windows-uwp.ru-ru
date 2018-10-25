@@ -8,18 +8,16 @@ keywords: клавиатура, ускоритель, клавиша вызов�
 ms.author: kbridge
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b4693c4ed6c02db9e4fe3f5f7fee6fe569c0e79
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: dcbb27a87b48a124fe4463578bc32d908f399ccb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468797"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572693"
 ---
 # <a name="keyboard-accelerators"></a>Ускорители клавиатуры
 

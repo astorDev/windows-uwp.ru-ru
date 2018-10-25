@@ -6,18 +6,17 @@ title: Переменная последовательность фотогра�
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4c6a6ef37af9f860e4ff1c77fd8e5e5151bb271e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 91a7d69d945b2ba2452d5bc477b6c17bf1dc6845
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223901"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572313"
 ---
 # <a name="variable-photo-sequence"></a>Переменная последовательность фотографий
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В данной статье рассказывается, как захватить переменную последовательность фотографий (то есть несколько снимков, быстро идущих один за другим) и настроить для каждого снимка различные параметры фокусировки, вспышки, ISO, экспозиции и коррекции экспозиции. Эта функция позволяет использовать такие сценарии, как создание изображений с помощью технологии High Dynamic Range (HDR).
@@ -94,13 +93,13 @@ ms.locfileid: "223901"
 
 [!code-cs[CleanUpVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVPS)]
 
-## <a name="related-topics"></a>Связанные статьи
+## <a name="related-topics"></a>Еще по теме
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
+ 
 
- 
+ 
 
 
 

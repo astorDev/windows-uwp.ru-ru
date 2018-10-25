@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 26705e9481a96d54eff70d04c004bf62fe049091
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 56ce3520248a0fca25230d7ee2a822d827d842a3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044873"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572213"
 ---
 # <a name="triangle-interpolation"></a>Интерполяция треугольников
 
@@ -30,7 +28,7 @@ ms.locfileid: "1044873"
 | Плоское затенение         | В режиме плоского затенения интерполируется только коэффициент затуманивания. Для всех остальных интерполированных значений цвет первой вершины в треугольнике применяется ко всей поверхности. |
 | Затенение по методу Гуро      | Линейная интерполяция выполняется между всеми тремя вершинами.                                                                                                               |
 
- 
+ 
 
 Рассеянный цвет и отражающий цвет обрабатываются по-разному в зависимости от цветовой модели. В цветовой модели RGB система использует при интерполяции компоненты красного, зеленого и синего цветов.
 
@@ -41,9 +39,9 @@ ms.locfileid: "1044873"
 
 [Системы координат и геометрия](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

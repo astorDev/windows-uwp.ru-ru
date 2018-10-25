@@ -5,17 +5,15 @@ title: Остановка выпуска тестируемой возможно
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, API отправки в Microsoft Store, выпуск пакета, отправка тестового пакета, остановка
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ms.localizationpriority: medium
-ms.openlocfilehash: 983cd2f2f849c28a4f3f3cae25efb0b93bec3f41
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: a10b6f75d944a4a0f2935568928ce3b0782a479a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483874"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542334"
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>Остановка выпуска тестируемой возможности
 
