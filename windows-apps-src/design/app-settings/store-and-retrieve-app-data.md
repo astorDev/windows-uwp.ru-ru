@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 47383cd8f89e5da104ac73878b0613c364240459
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: f73a99ea4dc58880f1de517853a05aa0b0d6dd6b
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817302"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5512906"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Хранение и извлечение параметров и прочих данных приложения
 

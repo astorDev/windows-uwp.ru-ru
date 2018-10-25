@@ -6,19 +6,17 @@ description: Универсальная платформа Windows (UWP) вкл�
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, C#, Visual Basic, асинхронный
-ms.openlocfilehash: ad5d3432595761470a679bac690fe14711f9fdba
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 2d9bd5265d72a7a478de8c094cd900072e46a143
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665718"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542225"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>Вызов асинхронных API в C# и VisualBasic
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Универсальная платформа Windows (UWP) включает много асинхронных API, позволяющих вашему приложению сохранить способность отвечать, когда выполняется работа, требующая много времени. В этом разделе описывается применение асинхронных методов UWP при программировании на языках C# или Microsoft Visual Basic.
@@ -37,7 +35,8 @@ ms.locfileid: "665718"
 Здесь дан пример кода для получения из блога списка его записей с помощью вызова асинхронного метода [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) и ожидания получения результата.
 
 > [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)] [!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
+[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
+[!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
 
 Есть несколько важных замечаний о приведенном выше примере. Во-первых, в строке `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` используется оператор **await** вместе с вызовом асинхронного метода [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460). Можно представить себе, что оператор **await** сообщает компилятору о том, что вы вызываете асинхронный метод, в результате чего компилятор выполняет дополнительную работу за вас. Во-вторых, объявление обработчика событий включает ключевое слово **async**. Это ключевое слово необходимо включить в объявление любого метода, в котором используется оператор **await**.
 
@@ -71,7 +70,7 @@ ms.locfileid: "665718"
 | [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx)                                                                   | **void**                                          |
 | [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120), пользовательский класс результатов, который реализует **IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
 
- 
+ 
 
 Асинхронные методы, определенные в [**.NET for UWP apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx), имеют тип возврата [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) или [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx). Методы, возвращающие **Task**, аналогичны асинхронным методам UWP, которые возвращают [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx). В каждом случае результат асинхронного метода — **void**. Тип возврата **Task&lt;TResult&gt;** подобен [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598), так как у результата асинхронного метода при выполнении задачи тот же тип, что и у параметра типа `TResult`. Дополнительную информацию об использовании **.NET for UWP apps** и задач см. в статье [Общая информация о .NET для приложений среды выполнения Windows](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx).
 
@@ -82,7 +81,7 @@ ms.locfileid: "665718"
 
 Когда асинхронные методы вызывают другие асинхронные методы, любой асинхронный метод, приводящий к вызову исключения, распространяется на внешние методы. Это означает, что в самый внешний метод можно поместить блок **try/catch**, чтобы перехватывать ошибки для вложенных асинхронных методов. Это аналогично перехвату исключений для синхронных методов. Однако вы не можете использовать **await** в блоке **catch**.
 
-**Совет.**  Возможность использования оператора **await** в блоке **catch** в С# доступна начиная с Microsoft Visual Studio 2005 и выше.
+**Совет**начиная с C# в Microsoft Visual Studio2005, можно использовать **await** в блоке **catch** .
 
 ## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 

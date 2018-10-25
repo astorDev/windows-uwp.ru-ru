@@ -1,6 +1,6 @@
 ---
 title: Устройства
-description: Устройство Direct3D является выполняющим отрисовку графики Direct3D компонентом. Устройство инкапсулирует и сохраняет состояние отрисовки, выполняет операции преобразования и освещения и растеризует изображения на поверхности.
+description: Устройство Direct3D— это компонент Direct3D, выполняющий отрисовку графики. Устройство инкапсулирует и сохраняет состояние отрисовки, выполняет операции преобразования и освещения и растеризует изображения на поверхности.
 ms.assetid: BC903462-A32A-46BA-8411-FB294F5D2CD9
 keywords:
 - Устройства
@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2676c59251a4aadb0f97a1180238ec076bf45229
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d1c35af3dd1f8826fbd61268c5c47cef9d77146a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652893"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542441"
 ---
 # <a name="devices"></a>Устройства
 
@@ -52,7 +50,7 @@ Direct3D поддерживает два основных типа устрой�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Раздел</th>
+<th align="left">Статья</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
@@ -80,16 +78,16 @@ Direct3D поддерживает два основных типа устрой�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
 
 
 [Обучающее руководство по графике Direct3D](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

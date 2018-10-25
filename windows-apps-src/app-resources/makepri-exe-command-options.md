@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 04/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a3892348baff56bbef8d40dd9aade4e612c50d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: c6c71cf98d9720cc5bfea219f565529b3308c49c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468777"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542431"
 ---
 # <a name="makepriexe-command-line-options"></a>Параметры командной строки MakePRI.exe
 
@@ -417,6 +415,19 @@ MakePri может включать сведения, относящиеся к 
 ```
 
 **FILEPATH** является токеном, указывающим расположение входного PRI-файла или файла схемы PRI.
+
+## <a name="47indexoptionsio-option"></a>& #47;IndexOptions(io) параметр
+
+При использовании параметра параметры индекса (/ операций ввода-вывода) с `new`, `resourcepack`, и `versioned` указать параметры, которые предоставляют подробные контроль над поведением индексаторы для ресурса. По умолчанию отключены параметры индекса.
+
+```
+/IndexOptions(io) <OPTIONS>
+```
+
+**Параметры** — это разделенный запятыми список, состоящий из следующих вариантов.
+
+- Положительным HiddenFiles(hf). Индекс (+) или игнорировать (-) скрытые файлы и папки.
+- Положительным LinkedFiles(lf). Индекс (+) или игнорировать (-) связанные файлы и папки.
 
 ## <a name="47mappingfilemf-option"></a>&#47;MappingFile(mf) параметр
 

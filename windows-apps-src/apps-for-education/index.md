@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, для образовательных учрежде�
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
 ms.openlocfilehash: da03a3c478ca45cc2d2b518988738e510a6c5ea9
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471830"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5514548"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Разработка образовательных универсальных приложений для Windows
 ![Снимок экрана приложения тестирование](images/take-a-test-screen-small.png)

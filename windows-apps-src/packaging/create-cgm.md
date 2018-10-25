@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, сопоставление группы содержимого, потоковая установка, потоковая установка приложений uwp, исходный файл сопоставления группы содержимого
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ce32958d5a99dc9f3f772d6272450a4f2b0f81b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468866"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5519024"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>Создание и преобразование исходного файла сопоставления группы содержимого
 

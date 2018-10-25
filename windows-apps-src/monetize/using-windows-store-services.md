@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, службы Магазина
 ms.localizationpriority: medium
 ms.openlocfilehash: d53fa39d0c6359e6f081c62a415cbf1874549b8f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483231"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5521247"
 ---
 # <a name="microsoft-store-services"></a>Службы Microsoft Store
 

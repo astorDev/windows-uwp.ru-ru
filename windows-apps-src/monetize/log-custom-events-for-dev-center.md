@@ -11,11 +11,11 @@ keywords: windows 10, uwp, Microsoft Store Services SDK, журналы собы
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: 06cf3be8755fc375eb0604e188e34d6a5afee9c1
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469504"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5515864"
 ---
 # <a name="log-custom-events-for-dev-center"></a>Регистрация пользовательских событий в журнале для Центра разработки
 

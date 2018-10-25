@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 73a2a619c32e7d6a7f2fff768c9cec5b7986c3c1
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: eef41642d371f3a8be451c2687eee007608c3b2e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044714"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542298"
 ---
 # <a name="textures-with-alpha-channels"></a>Текстуры с альфа-каналами
 
@@ -30,7 +28,7 @@ ms.locfileid: "1044714"
 | 3:0          | Блок прозрачности                |
 | 7:4          | Вышеописанный 64-разрядный блок |
 
- 
+ 
 
 ## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>Явное кодирование текстур
 
@@ -41,9 +39,9 @@ ms.locfileid: "1044714"
 
 ![Диаграмма 64-разрядного блока прозрачности](images/colors4.png)
 
-**Примечание.**   Метод сжатия Direct3D использует четыре наиболее важных бита.
+**Примечание**  метод сжатия Direct3D использует четыре наиболее важных бита.
 
- 
+ 
 
 В следующих таблицах показано, как размещены в памяти данные альфа-канала для каждого 16-разрядного слова.
 
@@ -56,7 +54,7 @@ ms.locfileid: "1044714"
 | 11:8          | \[0\]\[2\] |
 | 15:12 (MSB\*) | \[0\]\[3\] |
 
- 
+ 
 
 \*младший разряд, старший разряд (MSB)
 
@@ -69,7 +67,7 @@ ms.locfileid: "1044714"
 | 11:8        | \[1\]\[2\] |
 | 15:12 (MSB) | \[1\]\[3\] |
 
- 
+ 
 
 Структура для слова 2:
 
@@ -80,7 +78,7 @@ ms.locfileid: "1044714"
 | 11:8        | \[2\]\[2\] |
 | 15:12 (MSB) | \[2\]\[3\] |
 
- 
+ 
 
 Структура для слова 3:
 
@@ -91,7 +89,7 @@ ms.locfileid: "1044714"
 | 11:8        | \[3\]\[2\] |
 | 15:12 (MSB) | \[3\]\[3\] |
 
- 
+ 
 
 Сравнение цвета, используемое в BC1 для определения прозрачности текселя, в данном формате не используется. Предполагается, что без сравнения цвета цветовые данные всегда обрабатываются в четырехцветном режиме.
 
@@ -139,7 +137,7 @@ else {
 | 6    | \[3\]\[1\] (1 старший разряд), \[3\]\[0\], \[2\]\[3\], \[2\]\[2\] (1 младший разряд) |
 | 7    | \[3\]\[3\], \[3\]\[2\], \[3\]\[1\] (2 младших разряда)                    |
 
- 
+ 
 
 Сравнение цвета, используемое в BC1 для определения прозрачности текселя, в данных форматах не используется. Предполагается, что без сравнения цвета цветовые данные всегда обрабатываются в четырехцветном режиме.
 
@@ -148,9 +146,9 @@ else {
 
 [Ресурсы сжатых текстур](compressed-texture-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

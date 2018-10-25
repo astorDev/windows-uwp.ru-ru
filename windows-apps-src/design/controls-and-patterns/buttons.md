@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: badaefc406daa5f4500c76262d916f47d82e7a52
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b3afb0cba92e5f3c08de19c926bd5fb949185379
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469948"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5517415"
 ---
 # <a name="buttons"></a>Кнопки
 
@@ -36,9 +36,9 @@ ms.locfileid: "5469948"
 [Кнопка](/uwp/api/windows.ui.xaml.controls.button) | Запускает немедленное действие. Можно использовать событие Click или привязка команды.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Кнопка, которая порождает событие Click непрерывно нажатой кнопке.
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A кнопку, которая стилизованная как гиперссылка, используемыми для навигации. Подробнее см. на странице [Гиперссылки](hyperlinks.md).
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | (Ознакомительная версия) Кнопка с шеврона для открытия присоединенного всплывающем элементе.
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | (Ознакомительная версия) Кнопка с двух сторон. Одной стороны указывает на действие, и другой стороне откроется меню.
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | (Ознакомительная версия) Кнопки переключения с двух сторон. Одной стороны переключает Вкл. / выкл., а другая сторона открывается меню.
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Кнопка с шеврона для открытия присоединенного всплывающем элементе.
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | Кнопка с двух сторон. Одной стороны указывает на действие, и другой стороне откроется меню.
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | Кнопки переключения с двух сторон. Одной стороны переключает Вкл. / выкл., а другая сторона открывается меню.
 
 | **Получить библиотеку пользовательского интерфейса Windows** |
 | - |
@@ -210,7 +210,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-drop-down-button"></a>Создание раскрывающегося списка кнопки
 
-> **Предварительный просмотр**: DropDownButton требуется [последние сборки Windows 10 Insider Preview и пакет SDK](https://insider.windows.com/for-developers/) или [Библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> DropDownButton требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии или [Библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) — это кнопка, которая отображается шеврона визуальный индикатор было присоединенного всплывающем элементе, который содержит дополнительные параметры. Он имеет такое же поведение, как стандартные кнопки всплывающего элемента; только внешний отличается.
 
@@ -269,7 +269,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-split-button"></a>Создание кнопки комбинированный режим
 
-> **Предварительный просмотр**: SplitButton требуется [последние сборки Windows 10 Insider Preview и пакет SDK](https://insider.windows.com/for-developers/) или [Библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> SplitButton требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии или [Библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) состоит из двух частей, которые могут быть вызваны отдельно. Одна из частей ведет себя как стандартной кнопки и вызывает немедленное действие. Другие части вызывает всплывающий элемент, который содержит дополнительные параметры, которые пользователь может выбрать из.
 
@@ -376,7 +376,7 @@ public sealed partial class MainPage : Page
 
 ## <a name="create-a-toggle-split-button"></a>Создание кнопки-переключателя комбинированный режим
 
-> **Предварительный просмотр**: ToggleSplitButton требуется [последние сборки Windows 10 Insider Preview и пакет SDK](https://insider.windows.com/for-developers/) или [Библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> ToggleSplitButton требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии или [Библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) состоит из двух частей, которые могут быть вызваны отдельно. Одна из частей ведет себя как переключатель, можно включить или отключить. Другие части вызывает всплывающий элемент, который содержит дополнительные параметры, которые пользователь может выбрать из.
 
