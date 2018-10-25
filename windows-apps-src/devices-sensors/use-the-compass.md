@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f2bddb9ae3adf8ef6cfdf1b6c078db5eb026c93d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443277"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479709"
 ---
 # <a name="use-the-compass"></a>Использование компаса
 
@@ -35,7 +35,7 @@ ms.locfileid: "5443277"
 
 ## <a name="prerequisites"></a>Необходимые условия
 
-Вы должны быть знакомы с языком XAML, Microsoft Visual C# и событиями.
+Вы должны быть знакомы с разметки языка XAML (Extensible Application), Microsoft VisualC # и событиями.
 
 Используемые вами устройство или эмулятор должны поддерживать компас.
 
@@ -177,6 +177,6 @@ CompassReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/>
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
- 
+ 
 
- 
+ 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 25be2cfab15378f14aed61dcaae1e7e85159f36e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445631"
+ms.locfileid: "5479503"
 ---
 # <a name="use-the-gyrometer"></a>Использование гирометра
 
@@ -35,7 +35,7 @@ ms.locfileid: "5445631"
 
 ## <a name="prerequisites"></a>Необходимые условия
 
-Вы должны быть знакомы с языком XAML, Microsoft Visual C# и событиями.
+Вы должны быть знакомы с разметки языка XAML (Extensible Application), Microsoft VisualC # и событиями.
 
 Используемые вами устройство или эмулятор должны поддерживать гирометр.
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, конверсии приложения, канал
 ms.localizationpriority: medium
 ms.openlocfilehash: 720b4a20d6fa46df0118cecb0c65dcef533e1659
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442896"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482728"
 ---
 # <a name="get-app-conversions-by-channel"></a>Получение конверсий приложения по каналу
 

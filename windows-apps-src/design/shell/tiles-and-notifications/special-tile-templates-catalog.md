@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e408509f4cebbc89587237c6e0dc67bc88b1558
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430940"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481337"
 ---
 # <a name="special-tile-templates"></a>Специальные шаблоны плиток
  
@@ -26,7 +26,7 @@ ms.locfileid: "5430940"
 ## <a name="iconic-tile-template"></a>Пиктографический шаблон плитки
 
 
-C помощью пиктографического шаблона (также известного как шаблон «IconWithBadge») можно отображать небольшое изображение в центре плитки. Windows 10 поддерживает этот шаблон на телефонах, планшетах и настольных компьютерах.
+C помощью пиктографического шаблона (также известного как шаблон «IconWithBadge») можно отображать небольшое изображение в центре плитки. Windows10 поддерживает этот шаблон на телефонах, планшетах и настольных компьютерах.
 
 ![Маленькие и средние плитки программы для работы с электронной почтой](images/iconic-template-mail-2sizes.png)
 
@@ -188,7 +188,7 @@ TileContent content = new TileContent()
 ## <a name="people-tile-template"></a>Шаблон плитки People (Люди)
 
 
-В приложении «Люди» для Windows 10 используется специальный шаблон плитки, который отображает коллекцию изображений по кругу, перемещающихся по горизонтали или по вертикали на плитке. Этот шаблон доступен, начиная со сборки10572 для Windows 10, и использовать его в своих приложениях могут все.
+В приложении «Люди» для Windows 10 используется специальный шаблон плитки, который отображает коллекцию изображений по кругу, перемещающихся по горизонтали или по вертикали на плитке. Этот шаблон появившийся Windows10 сборки 10572, а для использования в своих приложениях.
 
 Шаблон плитки People работает с плитками следующих размеров:
 
@@ -196,19 +196,19 @@ TileContent content = new TileContent()
 
 ![Средняя плитка People](images/people-tile-medium.png)
 
- 
+ 
 
 **Широкая плитка** (TileWide)
 
 ![Широкая плитка People](images/people-tile-wide.png)
 
- 
+ 
 
 **Большая плитка (только для настольного компьютера)** (TileLarge)
 
 ![Большая плитка People](images/people-tile-large.png)
 
- 
+ 
 
 Если вы используете [Библиотеку уведомлений](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) и хотите начать работать с шаблоном плитки People, необходимо всего лишь создать новый объект *TileBindingContentPeople* для вашего содержимого *TileBinding*. У класса *TileBindingContentPeople* есть свойство Images, в которое добавляются изображения.
 
@@ -281,9 +281,9 @@ TileContent content = new TileContent()
 * [Плитки, индикаторы событий и уведомления](index.md)
 * [Создание адаптивных плиток](create-adaptive-tiles.md)
 * [Схема содержимого плитки](../tiles-and-notifications/tile-schema.md)
- 
+ 
 
- 
+ 
 
 
 

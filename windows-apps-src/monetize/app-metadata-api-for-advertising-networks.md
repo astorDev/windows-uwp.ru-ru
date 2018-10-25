@@ -11,11 +11,11 @@ keywords: windows 10, uwp, рекламная сеть, метаданные п�
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
 ms.openlocfilehash: 16603bfe8c3fe0bfeaef1e19018798d0c6477b85
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440045"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480513"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>API метаданных приложения для рекламных сетей
 
@@ -67,7 +67,7 @@ ms.locfileid: "5440045"
 | GET   | ```https://admetadata.azure-api.net/v1/app/{app_id}``` |
 
 <span/>
- 
+ 
 
 ### <a name="request-header"></a>Заголовок запроса
 
@@ -153,6 +153,6 @@ Ocp-Apim-Subscription-Key: <subscription key>
 
 
 
- 
+ 
 
- 
+ 

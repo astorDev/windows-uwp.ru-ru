@@ -2,7 +2,7 @@
 author: QuinnRadich
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Создание первого приложения
-description: Создайте приложение универсальной платформы Windows (UWP) для Windows 10 с помощью языка программирования по вашему выбору.
+description: Создание приложения универсальной платформы Windows (UWP) для Windows10, на своем любимом языке программирования.
 ms.author: quradic
 ms.date: 1/25/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, первое приложение, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: e8e2272ab761e1fa0bc9514f226a73a66a10662b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445831"
+ms.locfileid: "5483143"
 ---
 # <a name="create-your-first-app"></a>Создание первого приложения
 
@@ -42,9 +42,9 @@ ms.locfileid: "5445831"
 * [Простая двухмерная игра UWP для Microsoft Store, написанная на C# и MonoGame](get-started-tutorial-game-mg2d.md)
 
 
-## <a name="visual-c-component-extensions-ccx-and-xaml"></a>Расширения компонентов Visual C++ (C++/CX) и XAML
+## <a name="visualc-component-extensions-ccx-and-xaml"></a>Расширения компонентов VisualC ++ (C + +/ CX) и XAML
 
-Воспользуйтесь своим опытом программирования на С++ и создайте приложения с помощью расширений компонентов VisualC++ (C++/CX) в XAML.
+Воспользоваться преимуществами опытом программирования на C++ для создания приложений с помощью расширений компонентов VisualC ++ (C + +/ CX) с помощью XAML.
 
 * [Создание приложения "Hello, world" на XAML и C++/CX](create-a-basic-windows-10-app-in-cpp.md)
 

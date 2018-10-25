@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованных приложений, связанный набор, дополнительные пакеты
 ms.localizationpriority: medium
 ms.openlocfilehash: f5660649b6f82135cdb45a8678a3f871a0f5e61d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445565"
+ms.locfileid: "5482346"
 ---
 # <a name="optional-packages-with-executable-code"></a>Дополнительные пакеты с исполняемым кодом
  

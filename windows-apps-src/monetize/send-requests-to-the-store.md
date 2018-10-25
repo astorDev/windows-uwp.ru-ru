@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
 ms.openlocfilehash: 6463f6eee6d3f5ec82122cef532db8d0e9a26dc6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435424"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480407"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Отправка запросов в Microsoft Store
 
@@ -38,7 +38,7 @@ public async Task<bool> AddUserToFlightGroup()
 {
     StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
         StoreContext.GetDefault(), 8,
-        "{ \"type\": \"AddToFlightGroup\", \"parameters\": \"{ \"flightGroupId\": \"your group ID\" }\" }");
+        "{ \"type\": \"AddToFlightGroup\", \"parameters\": \"{ \"flightGroupId\": \"your group ID\" }\" }");
 
     if (result.ExtendedError == null)
     {
@@ -84,9 +84,9 @@ public async Task<bool> AddUserToFlightGroup()
 В следующем примере показан формат данных JSON для передачи в *parametersAsJson*. Поле *type* должно быть назначено строке *GetRemoteVariables*. Назначьте поле *projectId* идентификатору проекта, в котором вы определили удаленные переменные на информационной панели Центра разработки для Windows.
 
 ```json
-{ 
-    "type": "GetRemoteVariables", 
-    "parameters": "{ \"projectId\": \"your project ID\" }" 
+{ 
+    "type": "GetRemoteVariables", 
+    "parameters": "{ \"projectId\": \"your project ID\" }" 
 }
 ```
 
@@ -101,8 +101,8 @@ public async Task<bool> AddUserToFlightGroup()
 В следующем примере показано возвращаемое значение для этого запроса.
 
 ```json
-{ 
-  "anonymous": false, 
+{ 
+  "anonymous": false, 
   "name": "Insider Slow",
   "settings":
   {
@@ -127,9 +127,9 @@ public async Task<bool> AddUserToFlightGroup()
 В следующем примере показан формат данных JSON для передачи в *parametersAsJson*. Поле *type* должно быть назначено строке *AddToFlightGroup*. Назначьте поле *flightGroupId* идентификатору группы тестируемой возможности, к которому вы хотите добавить устройство или пользователя.
 
 ```json
-{ 
-    "type": "AddToFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "AddToFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 
@@ -150,9 +150,9 @@ public async Task<bool> AddUserToFlightGroup()
 В следующем примере показан формат данных JSON для передачи в *parametersAsJson*. Поле *type* должно быть назначено строке *RemoveFromFlightGroup*. Назначьте поле *flightGroupId* идентификатору группы тестируемой возможности, из которой вы хотите удалить устройство или пользователя.
 
 ```json
-{ 
-    "type": "RemoveFromFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "RemoveFromFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 

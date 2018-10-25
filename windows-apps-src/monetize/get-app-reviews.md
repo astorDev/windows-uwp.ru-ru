@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, отзывы
 ms.localizationpriority: medium
 ms.openlocfilehash: c14b2ce6dd9fa7058ef3dbcd8e7e7a17a05fe78e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433399"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480939"
 ---
 # <a name="get-app-reviews"></a>Получение отзывов о приложении
 
@@ -115,7 +115,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | string | При наличии дополнительных страниц данных эта строка содержит URI-адрес, который можно использовать для запроса следующей страницы данных. Например, это значение возвращается в том случае, если параметр **top** запроса имеет значение 10 000, но для данного запроса имеется больше 10 000 строк с информацией об отзывах. |
 | TotalCount | int    | Общее количество строк в результирующих данных для запроса.  |
 
- 
+ 
 ### <a name="review-values"></a>Значения отзывов
 
 Элементы в массиве *Value* содержат следующие значения.

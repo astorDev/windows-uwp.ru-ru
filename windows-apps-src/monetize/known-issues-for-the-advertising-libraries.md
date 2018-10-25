@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, реклама, рекламные объявления, известные проблемы, устранение неполадок
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ca7949b3092b03500f25249ce1af3832a9e61ba
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443407"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481308"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Сведения об известных проблемах и устранении неполадок рекламы в приложениях
 
@@ -97,6 +97,6 @@ ms.locfileid: "5443407"
 
 Дополнительные сведения об актуальных известных ошибках и публикации вопросов, связанных с Microsoft Advertising SDK, см. на [форуме](http://go.microsoft.com/fwlink/p/?LinkId=401266).
 
- 
+ 
 
- 
+ 

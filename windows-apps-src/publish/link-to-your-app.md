@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ссылка, протокола Магазина Windows, привязка к приложению, ссылка на приложение
 ms.localizationpriority: medium
 ms.openlocfilehash: 0025321aa73a66cc0a976bd347e613de3c3c4765
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445671"
+ms.locfileid: "5482553"
 ---
 # <a name="link-to-your-app"></a>Ссылка на ваше приложение
 
@@ -51,9 +51,9 @@ ms.locfileid: "5445671"
 
 Дополнительные сведения об использовании протокола магазина Майкрософт см. в разделе [Запуск приложения Microsoft](../launch-resume/launch-store-app.md).
 
- 
+ 
 
- 
+ 
 
 
 

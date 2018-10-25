@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, вопросы и ответы, вопросы и ответы
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fe355c4ee4ee2dcc9d2e48130773e5632eb4a90
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445552"
+ms.locfileid: "5481386"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на вопросы, которые вы, скорее всего имеют о разработке и использовании API среды выполнения Windows с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
