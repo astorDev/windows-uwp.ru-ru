@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, рекламные объявления, баннер, управление рекламой, межстраничная
 ms.localizationpriority: medium
 ms.openlocfilehash: c0dde67e3f7ab43734ffb0bf2a5826cc54691e17
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445701"
+ms.locfileid: "5483506"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Показ рекламы в приложении с помощью Microsoft Advertising SDK
 

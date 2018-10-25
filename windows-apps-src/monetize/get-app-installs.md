@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, службы Магазина, API аналитики для Microsoft Store, установки приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a5a947d58ecec7ca52a355ef44f8a880864df5d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436747"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483554"
 ---
 # <a name="get-app-installs"></a>Получение сведений об установках приложения
 
@@ -61,7 +61,7 @@ ms.locfileid: "5436747"
 | orderby | string | Выражение, которое определяет порядок полученных значений данных для каждой установки. Используется следующий синтаксис: <em>orderby=field [order],field [order],...</em>, где параметр <em>field</em> может принимать одно из следующих значений полей из тела ответа:<p/><ul><li><strong>applicationName,</strong></li><li><strong>date,</strong><li><strong>deviceType,</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion,</strong></li><li><strong>successfulInstallCount.</strong></li></ul><p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p><p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p> |  Нет  |
 | groupby | строка | Выражение, которое применяет агрегирование данных только к указанным полям. Вы можете указать следующие поля из тела ответа:<p/><ul><li><strong>applicationName</strong></li><li><strong>date,</strong><li><strong>deviceType,</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion.</strong></li></ul><p>Возвращенные строки данных будут содержать поля, указанные в параметре <em>groupby</em>, а также:</p><ul><li><strong>date</strong></li><li><strong>applicationId,</strong></li><li><strong>successfulInstallCount.</strong></li></ul><p>Параметр <em>groupby</em> можно использовать вместе с параметром <em>aggregationLevel</em>. Например: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  Нет  |
 
- 
+ 
 ### <a name="request-example"></a>Пример запроса
 
 В следующем примере демонстрируются несколько запросов на получение информации об установках приложения. Замените значение *applicationId* кодом продукта в Магазине для вашего приложения.

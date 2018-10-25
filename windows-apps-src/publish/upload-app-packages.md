@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, пакеты, отправка, отправки пакета
 ms.localizationpriority: medium
 ms.openlocfilehash: d966688110870b669bdd296ec14e145a5d77b74e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431571"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483290"
 ---
 # <a name="upload-app-packages"></a>Отправка пакетов приложений
 
@@ -28,7 +28,7 @@ ms.locfileid: "5431571"
 Чтобы отправить пакеты, перетащите их в поле отправки или щелкните для просмотра файлов. Страница " **пакеты** " позволяют отправить файлы .msix, .msixupload, .msixbundle, AppX, appxupload, .appxbundle и .xap.
 
 > [!IMPORTANT]
-> Windows 10 мы рекомендуем здесь .msixupload или .appxupload файл, а не .msix, .appx, .msixbundle или .appxbundle.  Дополнительные сведения о создании пакетов приложений UWP для Магазина см. в разделе [Упаковка приложения UWP с помощью Visual Studio](../packaging/packaging-uwp-apps.md).
+> Windows10 мы рекомендуем здесь файла .msixupload или .appxupload, а не .msix, .appx, .msixbundle или .appxbundle.  Дополнительные сведения о создании пакетов приложений UWP для Магазина см. в разделе [Упаковка приложения UWP с помощью Visual Studio](../packaging/packaging-uwp-apps.md).
 
 Если вы создали какой-либо [тестовый пакет](package-flights.md) для вашего приложения, вы увидите раскрывающийся список с возможностью копировать пакеты из одного из тестовых пакетов. Выберите тестовый пакет, содержащий пакеты, которые вы хотите включить. Вы можете выбрать лишь некоторые или все пакеты для включения в эту отправку.
 
@@ -69,7 +69,7 @@ ms.locfileid: "5431571"
 
 Дополнительные сведения см. в разделе [Скачивание и установка обновлений пакетов для приложения](../packaging/self-install-package-updates.md).
 
- 
+ 
 
 
 

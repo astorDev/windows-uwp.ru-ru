@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dff7b641cad99407ce22e7a4d4b58c10e0ae94d1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435597"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480212"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Запуск приложения по умолчанию для URI
 
@@ -123,7 +123,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 Исходные приложения, вызывающие [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476), могут запрашивать разрешение остаться на экране после запуска URI. По умолчанию Windows пытается поровну поделить все доступное пространство между исходным приложением и конечным приложением, обрабатывающим URI. Исходные приложения могут использовать свойство [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), чтобы сообщить операционной системе, что для окна приложения требуется больше или меньше доступного пространства. При помощи **DesiredRemainingView** также можно указать, что исходному приложению не нужно оставаться на экране после запуска URI и что его пространство можно полностью занять конечным приложением. Это свойство указывает только предпочтительный размер окна для вызывающего приложения. Оно не задает условия для других приложений, которые могут находиться на экране в это же время.
 
-**Примечание.** Windows учитывает множество различных факторов при определении окончательного размера окна исходного приложения, например настройки исходного приложения, количество приложений на экране, ориентацию экрана ит.д. Задав [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), вы не гарантируете конкретного поведения окон для исходного приложения.
+**Примечание**Windows учитывает множество различных факторов при определении исходного приложения окончательного размера окна, например, таких как параметры исходного приложения, количество приложений на экране, ориентация экрана и т. д. Задав [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), вы не гарантируете конкретного поведения окон для исходного приложения.
 
 ```cs
 // Set the desired remaining view.

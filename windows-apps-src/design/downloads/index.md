@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
-ms.openlocfilehash: e829883ec33b5e221d0947b6f39cf6ac091a0b4a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 21ce284af550a8a8d930af0ba9a6fca512f97f04
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432113"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482718"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Наборы инструментов для проектирования и образцы приложений UWP
  
@@ -106,6 +106,11 @@ ms.locfileid: "5432113"
 
     
 ## <a name="samples"></a>Примеры
+
+![Fluent изображение редактора темы XAML](images/XamlThemeEditor_screenshot.png)
+**Fluent темы редактора XAML**<br>
+Fluent редактора темы XAML — это средство, которое помогает демонстрируют возможности системы проектирования Fluent Design, а также поддерживает процесс разработки приложения, создающего разметку XAML для нашей инфраструктуры ResourceDictionary, используемые в приложениях универсальной платформы Windows (Многократно).
+<a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">Скачать пример средства</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">Ознакомьтесь с помощью средства на GitHub</a>
 
 ![Изображение VanArsdel](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>

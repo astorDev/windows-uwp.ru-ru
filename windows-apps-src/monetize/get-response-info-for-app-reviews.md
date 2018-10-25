@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, службы Store, API отзывов для Microsoft Store, сведения об ответах
 ms.localizationpriority: medium
 ms.openlocfilehash: 0212d7457ab85749fd66397876144acecd5dfcf1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437842"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483280"
 ---
 # <a name="get-response-info-for-reviews"></a>Получение сведений об ответах на отзывы
 
@@ -74,7 +74,7 @@ Authorization: Bearer <your access token>
 | CanRespond      | Логическое  | Значение **true** указывает, что вы можете ответить на указанный отзыв или что у вас есть разрешение на ответ на любой отзыв об указанном приложении. В противном случае значением будет **false**.       |
 | DefaultSupportEmail  | строка |  [Адрес электронной почты службы поддержки](../publish/enter-app-properties.md#support-contact-info) вашего приложения, указанный в описании вашего приложения в Магазине. Если вы не указали адрес электронной почты службы поддержки, это поле будет пустым.    |
 
- 
+ 
 ### <a name="response-example"></a>Пример ответа
 
 В следующем примере демонстрируется пример тела ответа JSON на данный запрос.

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, API отправки в Microsoft Store, надстройки, продукты внутри приложения, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: c711e2443de4607d2266dcddf513a48ff11522a7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5445250"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483674"
 ---
 # <a name="get-all-add-ons"></a>Получение всех надстроек
 

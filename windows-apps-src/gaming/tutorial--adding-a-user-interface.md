@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, игры, пользовательский интерфейс, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a82958f01530b84276823ea8d025d292bd664ac
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442800"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483544"
 ---
 # <a name="add-a-user-interface"></a>Добавление пользовательского интерфейса
 
@@ -225,7 +225,7 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
 
  Получение размера окна игры является надлежащая Подготовка программирования пользовательского интерфейса. Размер окна устанавливается в единицах под названием (аппаратно-независимые пиксели), где DIP определяется как 1/96 дюйма. Direct2D масштабирует единицы в реальные пиксели при возникновении отрисовки, это позволит с помощью Windows параметр точек на дюйм (точек на ДЮЙМ). Аналогичным образом при рисовании текста в [**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038), укажите DIPs, а не точек для размера шрифта. Значения DIP выражаются числами с плавающей запятой.
 
- 
+ 
 
 ### <a name="displaying-game-state-info"></a>Отображение сведений о состоянии игры
 
@@ -479,7 +479,7 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 
 
 
- 
+ 
 
 
 

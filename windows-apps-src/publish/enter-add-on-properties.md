@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, надстройки, свойства, период подписки, срок действия продукта, тип содержимого, iap, покупки из приложения, внутренний продукт приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a494ea1899f3a764a668ae61c1235808eff1a7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438521"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483531"
 ---
 # <a name="enter-add-on-properties"></a>Ввод свойств надстройки
 
@@ -102,10 +102,10 @@ ms.locfileid: "5438521"
 Для запроса этого поля используйте свойство [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) в [пространстве имен Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store). (Либо, если вы используете [пространство имен Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store), используйте свойство [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag).)
 
 > [!NOTE]
-> Поле **Пользовательские данные, определенные разработчиком** недоступно для использования в пакетах для Windows 8 и Windows 8.1.
+> **Пользовательские данные разработчика** поле недоступно для использования в пакетах для Windows8 и Windows8.1.
 
- 
+ 
 
- 
+ 
 
- 
+ 

@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 45f6e10bc355e3a2dc054d54fef35fbeb1095dc7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438440"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481544"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>Реагирование на системные события с помощью фоновых задач
 
@@ -89,7 +89,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 > [!NOTE]
 > Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации оказываются недопустимыми, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
- 
+ 
 ## <a name="remarks"></a>Комментарии
 
 Чтобы увидеть регистрацию фоновой задачи в действии, скачайте [образец фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666).

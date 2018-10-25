@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: uwp, покупки из приложения, IAP, надстройки, пробные версии, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: bb2c242ea4b7e3881751874c096165279854aa5e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444409"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483734"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store
 
