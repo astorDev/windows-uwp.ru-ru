@@ -1,42 +1,44 @@
 ---
-author: mithom
+author: eliotcowley
 title: Аркадный джойстик
 description: Для обнаружения аркадных джойстиков и чтения их данных используйте API аркадных джойстиков Windows.Gaming.Input.
 ms.assetid: 2E52232F-3014-4C8C-B39D-FAC478BA3E01
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, аркадный джойстик, ввод
-ms.openlocfilehash: b0411dcf1fd75ec7dc31d29a39e95f5c26073953
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 13bc03559fb32156f5ff8bb29ed96f8a1e4ac84f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223932"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550521"
 ---
 # <a name="arcade-stick"></a>Аркадный джойстик
 
 На этой странице приведены основные принципы программирования для аркадных джойстиков Xbox One с помощью [Windows.Gaming.Input.ArcadeStick][аркадный джойстик] и связанных API-интерфейсов для универсальной платформы Windows (UWP).
 
 Изучив информацию на этой странице, вы узнаете:
+
 * как составить список подключенных аркадных джойстиков и их пользователей;
 * как определить, что аркадный джойстик был добавлен или удален;
 * как считывать входные данные с одного или нескольких аркадных джойстиков;
-* как аркадные джойстики функционируют в качестве устройства для навигации.
-
+* как аркадные джойстики функционируют в качестве устройств навигации по Пользовательскому интерфейсу
 
 ## <a name="arcade-stick-overview"></a>Обзор аркадного джойстика
 
 Аркадные джойстики— это устройства ввода, позволяющие передать ощущение игры на стационарном игровом автомате и обладающие высокоточными цифровыми элементами управления. Аркадные джойстикиявляются идеальным устройством ввода для файтингов и других аркадных игр, а также подходят для любой игры, в которой используются полностью цифровые элементы управления. Поддержка аркадных джойстиков в приложениях UWP для Windows 10 и Xbox One реализована с помощью пространства имен [Windows.Gaming.Input][].
 
-Аркадные джойстики Xbox One оснащены цифровым джойстиком, способным двигаться в 8 направлениях, шестью кнопками **действий** и двумя **специальными** кнопками; они являются полностью цифровыми устройствами ввода и не поддерживают аналоговые элементы управления и вибрацию. Аркадные джойстики Xbox One также оснащены кнопками **просмотра** и **меню**, используемыми для навигации по пользовательскому интерфейсу, они не предназначены для поддержки игровых команд и располагаются не так удобно, как кнопки джойстика.
+Аркадные джойстики Xbox One оснащаются 8-цифровым джойстиком, шесть **Действие** (представляемые A1 A6 на рисунке ниже), а также два **специальных** кнопок (представляемые S1 и S2); они полностью цифровые устройства ввода, которые не поддерживают аналоговые элементы управления и вибрацию. Аркадные джойстики Xbox One также оснащены **просмотра** и **меню** кнопками, используемыми для навигации по Пользовательскому интерфейсу, но они не предназначены для поддержки игровых команд и не может быть непосредственно доступны как кнопки джойстика.
+
+![Аркадный джойстик с 4-направления джойстика, 6 действие (A1 A6), а также 2 специальных кнопок (S1 и S2)](images/arcade-stick-1.png)
 
 ### <a name="ui-navigation"></a>Навигация по пользовательскому интерфейсу
 
 Чтобы облегчить задачу обеспечения поддержки множества разных устройств ввода для навигации по пользовательскому интерфейсу и сохранить единообразие используемых для этого элементов управления в разных играх и на разных устройствах, большинство _физических_ устройств ввода параллельно выполняют функцию отдельного _логического_ устройства ввода под названием [контроллер навигации по пользовательскому интерфейсу](ui-navigation-controller.md). Контроллер навигации по пользовательскому интерфейсу предоставляет стандартный набор элементов управления для команд навигации по пользовательскому интерфейсу на разных устройствах ввода.
 
-Для использования аркадных джойстиков в качестве контроллера навигации по пользовательскому интерфейсу в них реализован [необходимый набор](ui-navigation-controller.md#required-set) команд навигации, заданных для джойстика и кнопок **просмотра**, **меню**, **действия 1** и **действия 2**.
+Контроллер навигации в пользовательском Интерфейсе аркадные джойстики сопоставлять [необходимый набор](ui-navigation-controller.md#required-set) команд навигации для джойстика и кнопок **представления**, **меню**, **действия 1**и **2 действия** .
 
 | Команда навигации | Действие аркадного джойстика  |
 | ------------------:| ------------------- |
@@ -51,40 +53,58 @@ ms.locfileid: "223932"
 
 Аркадные джойстикине поддерживают какие-либо [дополнительные наборы](ui-navigation-controller.md#optional-set) команд навигации.
 
-
 ## <a name="detect-and-track-arcade-sticks"></a>Обнаружение и отслеживание аркадных джойстиков
 
-Аркадными джойстиками управляет система, поэтому их не требуется создавать или инициализировать. Система предоставляет список подключенных аркадных джойстиков и событий для уведомления о добавлении или удалении аркадного джойстика.
+Обнаружение и отслеживание аркадных джойстиков работает точно так же, как в случае геймпадов, за исключением с классом [ArcadeStick][] вместо класса [игрового контроллера](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) . Подробнее см. в статье [Геймпад и вибрация](gamepad-and-vibration.md).
 
-### <a name="the-arcade-sticks-list"></a>Список аркадных джойстиков
+<!-- Arcade sticks are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected arcades sticks and events to notify you when an arcade stick is added or removed.
 
-Класс [ArcadeStick][] предоставляет статическое свойство [ArcadeSticks][] — список подключенных аркадных джойстиков, доступный только для чтения. Так как вы можете быть заинтересованы в работе только с некоторыми подключенными аркадными джойстиками, рекомендуется создать собственную коллекцию джойстиков, а не осуществлять доступ к ним через свойство `ArcadeSticks`.
+### The arcade sticks list
 
-В следующем примере кода выполняется копирование всех подключенных аркадных джойстиков в новую коллекцию.
+The [ArcadeStick][] class provides a static property, [ArcadeSticks][], which is a read-only list of arcade sticks that are currently connected. Because you might only be interested in some of the connected arcade sticks, it's recommended that you maintain your own collection instead of accessing them through the `ArcadeSticks` property.
+
+The following example copies all connected arcade sticks into a new collection. Note that because other threads in the background will be accessing this collection (in the [ArcadeStickAdded][] and [ArcadeStickRemoved][] events), you need to place a lock around any code that reads or updates the collection.
+
 ```cpp
 auto myArcadeSticks = ref new Vector<ArcadeStick^>();
+critical_section myLock{};
 
-for (auto arcadestick : ArcadeStick::ArcadeSticks)
+for (auto arcadeStick : ArcadeStick::ArcadeSticks)
 {
-    // This code assumes that you're interested in all arcade sticks.
-    myArcadeSticks->Append(arcadestick);
+    // Check if the arcade stick is already in myArcadeSticks; if it isn't, add
+    // it.
+    critical_section::scoped_lock lock{ myLock };
+    auto it = std::find(begin(myArcadeSticks), end(myArcadeSticks), arcadeStick);
+
+    if (it == end(myArcadeSticks))
+    {
+        // This code assumes that you're interested in all arcade sticks.
+        myArcadeSticks->Append(arcadeStick);
+    }
 }
 ```
 
-### <a name="adding-and-removing-arcade-sticks"></a>Добавление и удаление аркадных джойстиков
+### Adding and removing arcade sticks
 
-При добавлении или удалении аркадного джойстика возникают события [ArcadeStickAdded][] и [ArcadeStickRemoved][]. Вы можете зарегистрировать обработчики для этих событий, чтобы отслеживать подключенные в данный момент аркадные джойстики.
+When an arcade stick is added or removed the [ArcadeStickAdded][] and [ArcadeStickRemoved][] events are raised. You can register handlers for these events to keep track of the arcade sticks that are currently connected.
 
-В следующем примере кода выполняется запуск отслеживания добавленного аркадного джойстика.
+The following example starts tracking an arcade stick that's been added.
+
 ```cpp
 ArcadeStick::ArcadeStickAdded += ref new EventHandler<ArcadeStick^>(Platform::Object^, ArcadeStick^ args)
 {
+    // Check if the just-added arcade stick is already in myArcadeSticks; if it
+    // isn't, add it.
+    critical_section::scoped_lock lock{ myLock };
+    auto it = std::find(begin(myGamepads), end(myGamepads), args);
+
     // This code assumes that you're interested in all new arcade sticks.
     myArcadeSticks->Append(args);
 }
 ```
 
-Следующий пример кода останавливает отслеживание удаленного аркадного джойстика.
+The following example stops tracking an arcade stick that's been removed.
+
 ```cpp
 ArcadeStick::ArcadeStickRemoved += ref new EventHandler<ArcadeStick^>(Platform::Object^, ArcadeStick^ args)
 {
@@ -97,10 +117,9 @@ ArcadeStick::ArcadeStickRemoved += ref new EventHandler<ArcadeStick^>(Platform::
 }
 ```
 
-### <a name="users-and-headsets"></a>Пользователи и гарнитуры
+### Users and headsets
 
-Каждый аркадный джойстик можно связать с учетной записью пользователя, чтобы соотнести его личность с игровым процессом. Также к аркадному джойстику можно подключить гарнитуру для реализации голосового чата или других внутриигровых возможностей. Дополнительные сведения о работе с пользователями и гарнитурами см. в разделах [Отслеживание пользователей и их устройств](input-practices-for-games.md#tracking-users-and-their-devices) и [Гарнитура](headset.md).
-
+Each arcade stick can be associated with a user account to link their identity to their gameplay, and can have a headset attached to facilitate voice chat or in-game features. To learn more about working with users and headsets, see [Tracking users and their devices](input-practices-for-games.md#tracking-users-and-their-devices) and [Headset](headset.md). -->
 
 ## <a name="reading-the-arcade-stick"></a>Чтение аркадных джойстиков
 
@@ -108,11 +127,12 @@ ArcadeStick::ArcadeStickRemoved += ref new EventHandler<ArcadeStick^>(Platform::
 
 ### <a name="polling-the-arcade-stick"></a>Опрос аркадного джойстика
 
-В ходе опроса сохраняется моментальный снимок аркадного джойстика в конкретный момент времени. Этот подход к сбору данных ввода подходит для большинства игр, так как их логика, как правило, выполняется в рамках детерминированного цикла и не привязана к событиям. Также обычно проще интерпретировать игровые команды на основании данных ввода, собранных сразу, а не на основании большого количества единичных событий ввода данных, собранных с течением времени.
+В ходе опроса сохраняется моментальный снимок аркадного джойстика в конкретный момент времени. Такой подход к сбору входных данных отлично подходит для большинства игр, потому что их логика, как правило, выполняется в детерминированном цикле и не зависит от событий; кроме того, проще интерпретировать игровые команды из входных данных, собранных в один момент, чем из многочисленных единичных входных данных, собранных за определенный период.
 
 Опрос аркадного джойстика выполняется путем вызова функции [GetCurrentReading][], которая возвращает структуру [ArcadeStickReading][], содержащую состояние аркадного джойстика.
 
 В следующем примере кода выполняется опрос аркадного джойстика на предмет его текущего состояния.
+
 ```cpp
 auto arcadestick = myArcadeSticks[0];
 
@@ -123,13 +143,15 @@ ArcadeStickReading reading = arcadestick->GetCurrentReading();
 
 ### <a name="reading-the-buttons"></a>Считывание данных с кнопок
 
-Все элементы управления аркадного джойстика— четыре направления джойстика, шесть кнопок **действий** и две **специальные** кнопки — предоставляют цифровые данные, указывающие на то, нажаты ли они (вниз) или отпущены (вверх). В целях обеспечения эффективности эти показания кнопок не указываются в виде отдельных логических значений. Вместо этого все они упаковываются в одно битовое поле, представляемое перечислением [ArcadeStickButtons][].
+Все кнопки аркадного джойстика&mdash;— четыре направления джойстика, шесть кнопок **действий** и две **специальные** кнопки&mdash;предоставляет цифровые данные, имеет ли он нажата (вниз) или отпущена (вверх). Для повышения эффективности показания кнопок не указываются в виде отдельных логических значений; Вместо этого все они упаковываются в одно битовое поле, представляемое перечислением [ArcadeStickButtons][] .
 
-> **Примечание.**    Аркадные джойстики оснащаются дополнительными кнопками, используемыми для навигации по пользовательскому интерфейсу, такими как кнопки **просмотра** и **меню**. Эти кнопки не являются частью перечисления `ArcadeStickButtons`, и данные с них можно считать только при доступе к аркадному джойстику как к устройству навигации по пользовательскому интерфейсу. Дополнительные сведения см. в разделе [Устройство навигации по пользовательскому интерфейсу](ui-navigation-controller.md).
+> [!NOTE]
+> Аркадные джойстики оснащаются дополнительными кнопками, используемыми для навигации по Пользовательскому интерфейсу например кнопки **представления** и **меню** . Эти кнопки не являются частью перечисления `ArcadeStickButtons`, и данные с них можно считать только при доступе к аркадному джойстику как к устройству навигации по пользовательскому интерфейсу. Дополнительные сведения см. в разделе [Устройство навигации по пользовательскому интерфейсу](ui-navigation-controller.md).
 
-Значения кнопок считываются из свойства `Buttons` структуры [ArcadeStickReading][]. Так как это свойство представляет собой битовое поле, для изоляции значения кнопки, сведения о которой вам интересны, используется побитовая маскировка. Кнопка нажата (вниз), когда соответствующий бит установлен; в противном случае кнопка отпущена (вверх).
+Значения кнопок считываются из свойства `Buttons` структуры [ArcadeStickReading][]. Так как это свойство представляет собой битовое поле, для изоляции значения кнопки, сведения о которой вам интересны, используется побитовая маскировка. Кнопка нажата (вниз), когда установлен соответствующий бит; в противном случае кнопка отпущена (вверх).
 
-Следующий пример кода определяет, нажата ли кнопка действия 1.
+В следующем примере определяется, нажата ли кнопка **действия 1** .
+
 ```cpp
 if (ArcadeStickButtons::Action1 == (reading.Buttons & ArcadeStickButtons::Action1))
 {
@@ -137,7 +159,8 @@ if (ArcadeStickButtons::Action1 == (reading.Buttons & ArcadeStickButtons::Action
 }
 ```
 
-Следующий пример кода определяет, отпущена ли кнопка действия 1.
+В следующем примере определяется, отпущена ли кнопка **действия 1** .
+
 ```cpp
 if (ArcadeStickButtons::None == (reading.Buttons & ArcadeStickButtons::Action1))
 {
@@ -145,16 +168,17 @@ if (ArcadeStickButtons::None == (reading.Buttons & ArcadeStickButtons::Action1))
 }
 ```
 
-Иногда может потребоваться определить, когда кнопка переходит из нажатого состояния в отпущенное или наоборот, нажаты ли или отпущены кнопки (несколько) либо узнать особое расположение ряда кнопок (когда некоторые кнопки нажаты, а некоторые отпущены). Сведения о том, как определить эти условия, см. в разделах [Определение положений кнопки](input-practices-for-games.md#detecting-button-transitions) и [Определение сложных схем положений кнопок](input-practices-for-games.md#detecting-complex-button-arrangements).
+Иногда нужно определить, когда кнопка переходит из нажатого состояния в отпущенное или наоборот, узнать состояние сразу нескольких кнопок (нажаты или отпущены) либо определить особую схему расположения кнопок в наборе — некоторые кнопки могут быть нажаты, а другие отпущены. Сведения о том, как определить эти условия, см. в разделах [Определение положений кнопки](input-practices-for-games.md#detecting-button-transitions) и [Определение сложных схем положений кнопок](input-practices-for-games.md#detecting-complex-button-arrangements).
 
 ## <a name="run-the-inputinterfacing-sample"></a>Запуск примера кода InputInterfacing
 
 В примере кода [InputInterfacingUWP _(в центре GitHub)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) показано, как использовать аркадные джойстики и различные типы устройств ввода вместе, а также представлено, как эти устройства ввода работают в качестве контроллеров навигации по пользовательскому интерфейсу.
 
-
 ## <a name="see-also"></a>См. также
-[Windows.Gaming.Input.UINavigationController][]
-[Windows.Gaming.Input.IGameController][]
+
+* [Windows.Gaming.Input.UINavigationController][]
+* [Windows.Gaming.Input.IGameController][]
+* [Рекомендации по использованию устройств ввода для игр](input-practices-for-games.md)
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.IGameController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx

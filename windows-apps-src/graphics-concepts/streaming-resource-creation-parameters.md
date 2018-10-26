@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f2a17f69ae0353bb7682a1dbfa48d5909f48d4aa
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 0129b44b6f1c6c8b18555e3e0e0b350a695cabe1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652993"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548934"
 ---
 # <a name="streaming-resource-creation-parameters"></a>Параметры создания потоковых ресурсов
 
@@ -26,22 +24,22 @@ ms.locfileid: "1652993"
 <span id="Supported-Resource-Type"></span><span id="supported-resource-type"></span><span id="SUPPORTED-RESOURCE-TYPE"></span>**Поддерживаемый тип ресурсов**  
 Texture2D\ [Array\] (включая TextureCube\ [Array\], который является вариантом Texture2D\[Array\]) или Buffer.
 
-**НЕ поддерживается: **Texture1D\ [Array\].
+**Не поддерживается:** Texture1D\ [Array\].
 
 <span id="Supported-Resource-Usage"></span><span id="supported-resource-usage"></span><span id="SUPPORTED-RESOURCE-USAGE"></span>**Поддерживаемый вариант использования ресурсов**  
 Использование по умолчанию.
 
-**НЕ поддерживается: **динамический, промежуточной или постоянный.
+**Не поддерживается:** Динамический, промежуточной или постоянный.
 
 <span id="Supported-Resource-Misc-Flags"></span><span id="supported-resource-misc-flags"></span><span id="SUPPORTED-RESOURCE-MISC-FLAGS"></span>**Различные флаги поддерживаемых ресурсов**  
 Разбитые на плитки; то есть с потоковой передачей (по определению), текстурный куб, аргументы непрямой прорисовки, буфер разрешает необработанные представления, структурированный буфер, фиксация ресурса, формирование MIP-карт.
 
-**НЕ поддерживается: **общий, общий с ключом мьютекс, GDI-совместимый, общих дескриптор NT, ограниченное содержимое, ограниченный общий ресурс, ограничить драйвер общего ресурса, защищенный, пул плиток.
+**Не поддерживается:** общий, общий с ключом мьютекс, GDI-совместимый, общих дескриптор NT, ограниченное содержимое, ограниченный общий ресурс, ограничить драйвер общего ресурса, защищенный или пул плиток.
 
 <span id="Supported-Bind-Flags"></span><span id="supported-bind-flags"></span><span id="SUPPORTED-BIND-FLAGS"></span>**Поддерживаемые флаги привязки**  
 Привязать как ресурс шейдера, цель прорисовки, буфер глубины или неупорядоченный доступ.
 
-**НЕ поддерживается: **привязка как буфер констант, буфер вершин (привязка разбитого на плитки Buffer как SRV/UAV/RTV поддерживается), буфер индексов, вывод потока, декодера или кодировщика видео.
+**Не поддерживается:** Привязка как буфер констант, буфер вершин (привязка разбитого буфера, как SRV/UAV/RTV поддерживается), указатель буфера, вывод потока, декодера или кодировщика видео.
 
 <span id="Supported-Formats"></span><span id="supported-formats"></span><span id="SUPPORTED-FORMATS"></span>**Поддерживаемые форматы**  
 Все форматы, которые будут доступны для определенной конфигурации независимо от разбиения на плитки с некоторыми исключениями.
@@ -64,7 +62,7 @@ Texture2D\ [Array\] (включая TextureCube\ [Array\], который явл
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Раздел</th>
+<th align="left">Статья</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
@@ -76,16 +74,16 @@ Texture2D\ [Array\] (включая TextureCube\ [Array\], который явл
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
 
 
 [Создание потоковых ресурсов](creating-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

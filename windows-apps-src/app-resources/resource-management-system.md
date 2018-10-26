@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 10/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 5616a78cdc7822bc924924f2335ad1b27ee747ec
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: b80eda57ff700d732ba2402582ed6402acca4fc6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1706899"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549234"
 ---
 # <a name="resource-management-system"></a>Система управления ресурсами
 Система управления ресурсами имеет функции, работающие во время сборки и во время выполнения. Во время построения система создает индекс всех различных вариантов ресурсов, которые упакованы с вашим приложением. Этот индекс называется индексом ресурсов пакета или PRI и также включается в пакет вашего приложения. Во время выполнения система определяет текущие параметры пользователя и компьютера, проверяет информацию в PRI и автоматически загружает ресурсы, которые лучше всего подходят для этих параметров.

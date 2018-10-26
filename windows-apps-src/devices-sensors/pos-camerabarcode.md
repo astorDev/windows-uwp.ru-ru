@@ -5,22 +5,20 @@ description: В этой статье перечисляются функции 
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: dff05e8909c2afd2bac055eead87f4b66892109b
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: c647846aaaf8f7a5cef96e267ad979dc68ee004a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833317"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549538"
 ---
 # <a name="camera-barcode-scanner"></a>Сканер штрихкодов на базе камеры
 Сканер штрихкодов на базе камеры создается динамически, когда Windows связывает камеру или камеры, подключенные к компьютеру, с программным декодером.  Каждая пара "камера-декодер" представляет собой полнофункциональный сканер штрихкодов.   
 
 ## <a name="in-this-section"></a>В этом разделе
-|Раздел |Описание |
+|Статья |Описание |
 |------|------------|
 | [Системные требования](pos-camerabarcode-system-requirements.md)  | Список выпусков Windows, которые поддерживают сканеры штрихкодов на базе камеры, а также требования к камере для успешного считывания штрихкодов. |
 | [Начало работы](pos-camerabarcode-get-started.md)              | Пошаговое руководство по началу использования камеры в качестве сканера штрихкодов. |

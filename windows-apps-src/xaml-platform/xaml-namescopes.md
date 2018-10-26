@@ -6,16 +6,14 @@ ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd7a7de4c8986bb53acd4fe18c6255086e366ca8
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 8fcbc1566d2b2b5ffc6889a57dd7656a3466d2a9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673611"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548088"
 ---
 # <a name="xaml-namescopes"></a>Пространства имен XAML
 
@@ -34,7 +32,7 @@ ms.locfileid: "1673611"
 
 С технической точки зрения происходит следующее: XAML проходит через компилятор разметки одновременно с компилированием XAML и разделяемого класса, который он определяет для программной части кода. Каждый элемент объекта с **Name** или [атрибутом x:Name](x-name-attribute.md), определенным в разметке, создает внутреннее поле с именем, которое соответствует имени XAML. Изначально это поле пустое. Затем класс создает метод **InitializeComponent**, который вызывается только после загрузки всего XAML. В логике **InitializeComponent** каждое внутреннее поле затем заполняется возвращаемым значением [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) для эквивалентной строки имени. Вы можете наблюдать эту инфраструктуру на примере файлов .g (generated), которые после компиляции создаются для каждой страницы XAML во вложенной папке /obj проекта приложения среды выполнения Windows. Кроме того, вы можете увидеть эти поля и метод **InitializeComponent** в результирующих сборках, если приглядитесь к ним или как-то иначе изучите содержимое, соответствующее их языку интерфейса.
 
-**Примечание.** Для приложений с расширениями компонентов Visual C++ (C++/CX) резервное поле для ссылки **x:Name** на корневой элемент XAML-файла не создается. Если возникает необходимость создать ссылку на корневой объект в коде программной части C++/CX, используйте другие API или просмотр дерева. Например, можно вызвать [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) для дочернего элемента с известным именем, а затем вызвать [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
+**Примечание**специально для расширения компонентов VisualC ++ (C + +/ CX) резервное поле для ссылки на **Атрибут x: Name** приложения, не создаются для корневого элемента XAML-файла. Если возникает необходимость создать ссылку на корневой объект в коде программной части C++/CX, используйте другие API или просмотр дерева. Например, можно вызвать [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) для дочернего элемента с известным именем, а затем вызвать [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
 
 ## <a name="creating-objects-at-run-time-with-xamlreaderload"></a>Создание объектов во время выполнения с использованием XamlReader.Load
 
@@ -89,5 +87,5 @@ XAML можно также использовать для ввода строк
 * [Краткое руководство: шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)
- 
+ 
 

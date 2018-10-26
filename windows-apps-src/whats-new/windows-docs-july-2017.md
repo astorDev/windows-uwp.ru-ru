@@ -6,15 +6,13 @@ keywords: новые возможности, обновления, компон�
 ms.author: quradic
 ms.date: 07/05/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e439c0b1c20f03c9519d29a24979e5008f3de94e
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 62afbef1cc1f47bbc88c45a166572deca28d47a4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691843"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546590"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Что нового в документации для разработчиков Windows в июле 2017г.
 
@@ -110,7 +108,7 @@ ms.locfileid: "1691843"
 
 ### <a name="scoped-search"></a>Поиск по ограниченным областям
 
-Область UWP была добавлена в документацию о [концепции UWP](../get-started/universal-application-platform-guide.md) и [справочные материалы по API](https://docs.microsoft.com/en-us/uwp/api/) на сайте docs.microsoft.com. Если не деактивировать эту область, поисковые запросы, отправляемые из этих областей, будут возвращать только документы UWP.
+Область UWP была добавлена в документацию [Концептуальные аспекты UWP](../get-started/universal-application-platform-guide.md) и [Справочник по API](https://docs.microsoft.com/en-us/uwp/api/) на сайте docs.microsoft.com. Если эта область не отключена, поиск в этих областях будет возвращать только документы UWP.
 
 ![Поиск по ограниченным областям](images/scoped-search.png)
 

@@ -6,23 +6,21 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f90821fdadea0939dbad316ad9be4424b31a926
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
-ms.translationtype: HT
+ms.openlocfilehash: 69d316ad48645d8995e602b270a5615322c8b43f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "1573051"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549181"
 ---
 # <a name="binding-markup-extension"></a>Расширение разметки {Binding}
 
 
-**Примечание**. Новый механизм привязки доступен для Windows 10. Он оптимизирован для повышения быстродействия и производительности и разработчика. См. раздел [Расширение разметки: {x:Bind}](x-bind-markup-extension.md).
+**Примечание**новый механизм привязки доступен для Windows10, который оптимизирован для повышения быстродействия и производительности и разработчика. См. раздел [Расширение разметки: {x:Bind}](x-bind-markup-extension.md).
 
-**Примечание**. Общие сведения об использовании привязки данных в приложении с **{Binding}** (и комплексное сравнение между **{x:Bind}** и **{Binding}**) см. в разделе [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Примечание**Общие сведения об использовании данных привязки в вашем приложении с **{Binding}** (и комплексное сравнение между **{x: Bind}** и **{Binding}**) см. в разделе [подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 Расширение разметки **{Binding}** используются для привязки свойств в элементах управления к значениям от источника данных, например кода. Расширение разметки **{Binding}** преобразовывается во время загрузки XAML в экземпляр класса [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Этот объект привязки получает значение из свойства в источнике данных и передает его в свойство в элементе управления. Объект привязки можно дополнительно настроить таким образом, чтобы он регистрировал изменения значений свойства источника данных и сам обновлялся на основании этих данных. Кроме того, его можно настроить, чтобы он отправлял изменения значения элемента управления назад к свойству источника. Свойство, являющееся целью привязки данных, должно быть свойством зависимостей. Подробнее см. в разделе [Общие сведения о свойствах зависимостей](dependency-properties-overview.md).
 
@@ -83,7 +81,7 @@ ms.locfileid: "1573051"
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | Задает значение, которое отображается, когда значение источника разрешается, но оно явно равно **null**. |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | Задает время обновления источника привязки. Если значение не задано, по умолчанию используется **Default**. |
 
-**Примечание**. Если вы преобразуете разметку **{x:Bind}** d **{Binding}**, то следует учитывать различия между значениями по умолчанию для свойства **Mode**.
+**Примечание**при преобразовании разметки **{x: Bind}** для **{Binding}**, то следует учитывать различия в основной значения для свойства **режим** .
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) и **ConverterLanguage** связаны сценарием преобразования значения или типа из источника привязки в тип или значение, совместимые со свойством целевого объекта привязки. Более подробную информацию и примеры см. в разделе "Преобразования данных" статьи [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
@@ -92,7 +90,7 @@ ms.locfileid: "1573051"
 
 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832), [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) и [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) указывают источник привязки, поэтому они являются взаимоисключающими.
 
-**Совет**. Если для значения необходимо указать одни фигурные скобки, как, например, в [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) или [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), затем поставьте перед ними обратную косую черту: `\{`. Также можно включить всю строку, содержащую скобки, которые нужно преобразовать, в дополнительный набор кавычек, например: `ConverterParameter='{Mix}'`.
+**Совет**Если вам необходимо указать одну фигурную скобку значения, например [**путь**](https://msdn.microsoft.com/library/windows/apps/br209830) или [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), затем поставьте обратную косую черту: `\{`. Также можно включить всю строку, содержащую скобки, которые нужно преобразовать, в дополнительный набор кавычек, например: `ConverterParameter='{Mix}'`.
 
 ## <a name="examples"></a>Примеры.
 
@@ -129,4 +127,4 @@ ms.locfileid: "1573051"
 
 Компонент Microsoft IntelliSense в Microsoft Visual Studio отображает свойства контекста данных при создании **{Binding}** в редакторе разметки XAML. Как только вы введете "{Binding", в раскрывающемся списке отобразятся свойства контекста данных, соответствующие [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830). IntelliSense также помогает с другими свойствами [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Для того, чтобы это работало, необходимо иметь или контекст данных, или контекст данных времени разработки, установленные на странице разметки. Команда **Перейти к определению** (клавиша F12) также работает с **{Binding}**. Кроме того, вы можете использовать диалоговое окно привязки данных.
 
- 
+ 

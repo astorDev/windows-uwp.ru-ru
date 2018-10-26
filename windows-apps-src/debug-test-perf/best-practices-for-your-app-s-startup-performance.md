@@ -6,19 +6,17 @@ description: Создавайте приложения универсально�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: e36103953ad3fb04ee5beef7e263fc326f817c0b
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 25ddcc6c9ceaecd858733a0222c22c18682041b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894768"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545251"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>Рекомендации по повышению производительности запуска приложения
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Создавайте приложения универсальной платформы Windows (UWP) с оптимальными временем запуска, улучшив управление им, а также активацией.
 

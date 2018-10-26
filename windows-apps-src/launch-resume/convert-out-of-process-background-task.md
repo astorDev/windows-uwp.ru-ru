@@ -5,17 +5,15 @@ description: Перенос вне процесса фоновую задачу 
 ms.author: twhitney
 ms.date: 09/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, фоновая задача, службы приложений
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
-ms.openlocfilehash: b9010f82b0460bd46757bc1e0d58c01dec459104
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 47008fd7ba0b7724aa8fbdc2dd6cbd55288faea0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512122"
+ms.locfileid: "5549499"
 ---
 # <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>Перенос фоновой задачи, выполняемой вне процесса, в фоновую задачу внутри процесса
 

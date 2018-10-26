@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: ad1ba185e70a34a4e7bfed0609412ac7bbca2d4a
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: fdaa8cd73bb2f1199e7214206ec2b0b52628a906
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653693"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550925"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Элементы управления и шаблоны для приложений UWP
  
@@ -32,20 +30,19 @@ ms.locfileid: "1653693"
 
 Общие инструкции и примеры кода для добавления и настройки стиля элементов управления на языках XAML и C#.
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-   <p><b><a href="controls-and-events-intro.md">Добавление элементов управления и обработка событий</a></b> <br/>
-Есть три основных этапа добавления элементов управления в приложение: добавление элемента управления в пользовательский интерфейс приложения, установка свойств элемента управления и добавление кода в обработчики событий элемента управления, чтобы он начал функционировать.</li>
-</ul> 
-</p>
-  </div>
-  <div class="side-by-side-content-right">
-   <p><b><a href="xaml-styles.md">Настройка стиля элементов управления</a></b> <br/>
-Платформа XAML предоставляет множество способов настройки внешнего вида приложений. С помощью стилей вы можете настраивать свойства элементов управления и многократно использовать эти параметры, чтобы придать единообразный внешний вид нескольким элементам управления.</p>
-  </div>
-</div>
-</div>
+:::row:::
+    :::column:::
+      <p><b><a href="controls-and-events-intro.md">Добавление элементов управления и обработка событий</a></b> <br/>
+Есть три основных этапа добавления элементов управления в приложение: добавление элемента управления в пользовательский интерфейс приложения, установка свойств элемента управления и добавление кода в обработчики событий элемента управления, чтобы он начал функционировать.</p>
+    :::column-end:::
+    :::column:::
+      <p><b><a href="xaml-styles.md">Настройка стиля элементов управления</a></b> <br/>
+Платформа XAML предоставляет множество способов настройки внешнего вида приложений. С помощью стилей можно настраивать свойства элементов управления и многократно использовать эти параметры, чтобы придать единообразный внешний вид нескольким элементам управления.</p>
+    :::column-end:::
+:::row-end:::
+
+## <a name="get-the-windows-ui-library"></a>Получить библиотеку пользовательского интерфейса Windows
+Некоторые элементы управления доступны только в библиотеке пользовательского интерфейса Windows. Чтобы получить его, см. в разделе [Библиотека пользовательского интерфейса Windows Общие сведения и инструкции по установке](/uwp/toolkits/winui/).
 
 ## <a name="alphabetical-index"></a>Алфавитный указатель 
 
@@ -67,7 +64,7 @@ ms.locfileid: "1653693"
 
 <li style="list-style-type: none;"><a href="date-and-time.md">Элементы управления датой и временем</a></li>
 
-<li style="list-style-type: none;"><a href="dialogs.md">Диалоговые окна и всплывающие элементы</a></li>
+<li style="list-style-type: none;"><a href="dialogs-and-flyouts/index.md">Диалоговые окна и всплывающие элементы</a></li>
 
 <li style="list-style-type: none;"><a href="flipview.md">Представление пролистывания</a></li>
 
@@ -95,6 +92,8 @@ ms.locfileid: "1653693"
 
 <li style="list-style-type: none;"><a href="person-picture.md">Изображение пользователя</a></li>
 
+<li style="list-style-type: none;"><a href="pivot.md">Сводка</a></li>
+
 <li style="list-style-type: none;"><a href="progress-controls.md">Элементы управления "Ход выполнения"</a></li>
 
 <li style="list-style-type: none;"><a href="radio-button.md">Переключатель</a></li>
@@ -112,8 +111,6 @@ ms.locfileid: "1653693"
 <li style="list-style-type: none;"><a href="slider.md">Ползунок</a></li>
 
 <li style="list-style-type: none;"><a href="split-view.md">Комбинированный режим</a></li>
-
-<li style="list-style-type: none;"><a href="tabs-pivot.md">Вкладки и сводки</a></li>
 
 <li style="list-style-type: none;"><a href="text-controls.md">Элементы управления текстом</a></li>
 

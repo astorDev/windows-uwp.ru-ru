@@ -5,15 +5,14 @@ description: Узнайте больше о том, какие типы архи
 ms.author: lahugh
 ms.date: 7/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, пакет, архитектура, конфигурация пакета
-ms.openlocfilehash: 70188734e7fc26f66b68d0c31921071c47e8b7a8
-ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.localizationpriority: medium
+ms.openlocfilehash: 3e265df32a8c4168cddced905e7b0712e4601264
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2017
-ms.locfileid: "884053"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548712"
 ---
 # <a name="app-package-architectures"></a>Типы архитектуры пакетов приложений
 
@@ -27,11 +26,11 @@ ms.locfileid: "884053"
 ## <a name="windows-10-devices-and-architectures"></a>Типы архитектуры и устройства Windows 10
 
 > [!div class="mx-tableFixed"]
-| Архитектура UWP | Классическая (x86)      | Классическая (x64)      | Классическая (ARM)      | Мобильная             | HoloLens           | Xbox               | IoT Core (зависит от устройства) | 
-|------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|
-| x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          |
-| x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          |
-| ARM              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          |
+| Архитектура UWP | Классическая (x86)      | Классическая (x64)      | Классическая (ARM)      | Мобильная             | HoloLens           | Xbox               | IoT Core (зависит от устройства) | SurfaceHub        |
+|------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|--------------------|
+| x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          | :heavy_check_mark: |
+| x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          | :heavy_check_mark: |
+| ARM              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          | :x:                |
  
 
 Рассмотрим эти типы архитектуры более подробно. 

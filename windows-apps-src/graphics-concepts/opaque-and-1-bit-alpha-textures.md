@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b882c70701d2ea2f8abef14a7d3319616696ea4
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 672d7b2ddc913ea3a966fbd0a095367521a27d7c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044733"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550196"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>Непрозрачные и 1-разрядные альфа-текстуры
 
@@ -70,7 +68,7 @@ else
 | 2            | Bitmap Word\_0 |
 | 3            | Bitmap Word\_1 |
 
- 
+ 
 
 Color\_0 и Color\_1, цвета на двух краях, приведены следующим образом.
 
@@ -80,7 +78,7 @@ Color\_0 и Color\_1, цвета на двух краях, приведены с
 | 10:5        | Компонент зеленого цвета |
 | 15:11       | Компонент красного цвета   |
 
- 
+ 
 
 \*наименее значимый бит
 
@@ -97,7 +95,7 @@ Color\_0 и Color\_1, цвета на двух краях, приведены с
 | 13:12         | Texel\[1\]\[2\] |
 | 15:14 (MSB\*) | Texel\[1\]\[3\] |
 
- 
+ 
 
 \*наиболее значимый бит (MSB)
 
@@ -114,7 +112,7 @@ Color\_0 и Color\_1, цвета на двух краях, приведены с
 | 13:12       | Texel\[3\]\[2\] |
 | 15:14 (MSB) | Texel\[3\]\[3\] |
 
- 
+ 
 
 ## <a name="span-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanexample-of-opaque-color-encoding"></a><span id="Example_of_Opaque_Color_Encoding"></span><span id="example_of_opaque_color_encoding"></span><span id="EXAMPLE_OF_OPAQUE_COLOR_ENCODING"></span>Пример кодирования непрозрачного цвета
 
@@ -134,9 +132,9 @@ Color\_0 и Color\_1, цвета на двух краях, приведены с
 
 Это выглядит как следующий набор цветов на иллюстрации.
 
-**Примечание**. В изображении пиксель (0,0) отображается в верхнем левом углу.
+**Примечание**  в изображении пиксель (0,0) отображается в верхнем левом углу.
 
- 
+ 
 
 ![иллюстрация непрозрачного закодированного градиента](images/redsquares.png)
 
@@ -169,9 +167,9 @@ Color\_0 и Color\_1, цвета на двух краях, приведены с
 
 [Ресурсы сжатых текстур](compressed-texture-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

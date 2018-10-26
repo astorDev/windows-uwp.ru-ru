@@ -6,16 +6,14 @@ description: Узнайте, как печатать документы из у�
 ms.author: pafarley
 ms.date: 01/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, печать
 ms.localizationpriority: medium
-ms.openlocfilehash: cff96c0b8daf9f3ef32815437b510a5b94641527
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b35d11e9dcf1e79296e0eeaff85c975c24d65920
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468833"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552206"
 ---
 # <a name="print-from-your-app"></a>Печать из приложения
 

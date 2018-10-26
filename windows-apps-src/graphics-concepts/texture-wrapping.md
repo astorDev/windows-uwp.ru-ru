@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd24fc0ad14657e503feeab2a89ec7e6d4eb7ee0
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 28dcb134b87ac136b341d5b1f349ac9d656ef642
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044443"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552156"
 ---
 # <a name="texture-wrapping"></a>Обтекание текстур
 
@@ -57,9 +55,9 @@ ms.locfileid: "1044443"
 
 [Текстуры](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

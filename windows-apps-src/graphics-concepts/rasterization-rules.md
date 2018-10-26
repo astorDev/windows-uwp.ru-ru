@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3781c5c907ad90cc3f587e26cdece9d1646db53e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 72be66c3bf7b0e58092ae3a7e1baf82c9e686f0c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044933"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549151"
 ---
 # <a name="rasterization-rules"></a>Правила растеризации
 
@@ -136,9 +134,9 @@ API сообщает о поддержке оборудования для мн�
 
 [Этап средства программной прорисовки (RS)](rasterizer-stage--rs-.md)
 
- 
+ 
 
- 
+ 
 
 
 

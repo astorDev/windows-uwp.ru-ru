@@ -6,20 +6,18 @@ description: В этом разделе показано, как привяза�
 ms.author: stwhi
 ms.date: 10/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cppcx
-ms.openlocfilehash: 8375cc54e75df71b28cfd3f550f47914b4b65519
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 581c2bc4204a7eab002ef2680e335a4109716d74
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471869"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548008"
 ---
 # <a name="data-binding-overview"></a>Общие сведения о привязке данных
 

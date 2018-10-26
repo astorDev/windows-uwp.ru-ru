@@ -6,23 +6,19 @@ keywords: макет приложения uwp, универсальная пла
 ms.author: mijacobs
 ms.date: 3/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d092a3fe1120dc5763b5c30ed834c1902a1f8752
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 22ab5ad60ed397092e61f2c43cde4eb2e0c86c4f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842381"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550468"
 ---
 # <a name="design-basics-for-uwp-apps"></a>Основы проектирования в приложениях UWP
 
 ![главное изображение](images/header-design-basics.svg)
 
 Руководство по проектированию для универсальной платформы Windows (UWP) — это ресурс, который поможет проектировать и разрабатывать прекрасные, тщательно проработанные приложения. Это не список нормативных правил — это постоянно обновляемый документ, изменения в который вносятся по мере развития нашей системы проектирования Fluent Design и с учетом меняющихся потребностей нашего сообщества разработчиков приложений. 
-
-<!-- This introduction provides an overview of the Fluent Design System, UWP app design basics, and the XAML platform, helping you build user interfaces (UI) that scale beautifully across a range of devices. -->
 
 ## <a name="overview"></a>Обзор
 
