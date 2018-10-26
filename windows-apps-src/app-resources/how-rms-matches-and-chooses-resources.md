@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: d31c9fd3a6f8f57f3e78d88d3ad754d4848a9cad
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5551696"
+ms.locfileid: "5694150"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>Как система управления ресурсами сопоставляет и выбирает ресурсы
 В момент запроса ресурса текущему контексту ресурса может в той или иной степени соответствовать несколько кандидатов. Система управления ресурсами анализирует все кандидаты и выбирает из них лучший, который будет возвращен. Для ранжирования всех кандидатов учитываются все квалификаторы.

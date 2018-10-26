@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx, шаблоны
 ms.localizationpriority: medium
 ms.openlocfilehash: d27e4bb0d643b859958f887133a128572ca31225
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5555396"
+ms.locfileid: "5684296"
 ---
 # <a name="directx-game-project-templates"></a>Шаблоны проектов игр DirectX
 

@@ -10,11 +10,11 @@ keywords: Windows 10, uwp, публикация, публиковать, про�
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ms.openlocfilehash: 98e47934f936b6995ab37623b610869219254b85
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5621913"
+ms.locfileid: "5684064"
 ---
 # <a name="publish-windows-apps-and-games"></a>Публикация приложений и игр для Windows  
  

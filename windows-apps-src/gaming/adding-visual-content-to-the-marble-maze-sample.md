@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, пример, directx, графика
 ms.localizationpriority: medium
 ms.openlocfilehash: 5171578b844829ec590b654194639ed6c8ebbfe1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5561623"
+ms.locfileid: "5642495"
 ---
 # <a name="adding-visual-content-to-the-marble-maze-sample"></a>Добавление визуального содержимого в пример Marble Maze
 
