@@ -12,11 +12,11 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 9d990c206892872711626fb98f386f7b28f43543
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5543312"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5638829"
 ---
 # <a name="data-binding-in-depth"></a>Подробно о привязке данных
 

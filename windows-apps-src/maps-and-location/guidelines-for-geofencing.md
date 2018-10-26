@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, карта, расположение, геозоны
 ms.localizationpriority: medium
 ms.openlocfilehash: 86104f00ed0189290fd0cd718042573d9d592cc3
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5593624"
+ms.locfileid: "5639312"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>Руководство по приложениям, использующим функцию геозон
 
