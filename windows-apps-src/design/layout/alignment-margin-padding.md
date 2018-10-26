@@ -5,16 +5,14 @@ title: Выравнивание, поля и заполнение в макет�
 ms.author: quradic
 ms.date: 03/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a45e89c63ec12cb7b77997eac741ebedc415c54
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 4ce80e0ce4eb51876a0a0ecf632a7c47e8894aac
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483714"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543395"
 ---
 # <a name="alignment-margin-padding"></a>Выравнивание, поле и заполнение
 

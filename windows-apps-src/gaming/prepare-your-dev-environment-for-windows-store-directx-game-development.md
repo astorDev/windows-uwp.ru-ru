@@ -6,16 +6,14 @@ ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, шаблоны, инструменты, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: f03c2cb7e6755bf3f6a5b96ded4437da359504fd
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: ac33b242e2351c21ea22aa9bbb6bf74693e8d4ef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652733"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545909"
 ---
 # <a name="project-templates-and-tools-for-games"></a>Шаблоны проектов и средства для игр
 
@@ -29,7 +27,7 @@ ms.locfileid: "1652733"
 ## <a name="get-visual-studio"></a>Получение Visual Studio
 
 
-[Скачайте и установите Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
+[Скачайте и установите Microsoft Visual Studio2015](https://www.visualstudio.com/vs-2015-product-editions).
 
 <table>
 <colgroup>
@@ -38,7 +36,7 @@ ms.locfileid: "1652733"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Раздел</th>
+<th align="left">Статья</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
@@ -58,7 +56,7 @@ ms.locfileid: "1652733"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -73,11 +71,11 @@ ms.locfileid: "1652733"
 -   [Создание простой игры UWP c использованием DirectX](tutorial--create-your-first-uwp-directx-game.md)
 -   [Разработка Marble Maze— игры универсальной платформы Windows— на C++ и DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

@@ -8,17 +8,15 @@ title: Пользовательские видеоэффекты
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a1f53bb1165561865124a960940fab3f4325061
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 08d861355a235c9217f51ce6f925224a27a562ef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843324"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544760"
 ---
 # <a name="custom-video-effects"></a>Пользовательские видеоэффекты
 
@@ -99,7 +97,7 @@ ms.locfileid: "1843324"
 > [!NOTE] 
 > Если вы вернете пустой список объектов [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) при вызове **SupportedEncodingProperties**, система по умолчанию перейдет на кодирование ARGB32.
 
- 
+ 
 
 ### <a name="supportedmemorytypes-property"></a>Свойство SupportedMemoryTypes
 
@@ -111,7 +109,7 @@ ms.locfileid: "1843324"
 > [!NOTE]
 > Если вы укажете [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), система будет использовать память либо GPU, либо системы, в зависимости от того, какой вариант будет эффективнее для конвейера. При использовании этого значения необходимо провести проверку в методе [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794), чтобы узнать, содержит ли передаваемый методу объект [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) или [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) какие-либо данные, и затем соответствующим образом обработать кадр.
 
- 
+ 
 
 ### <a name="timeindependent-property"></a>Свойство TimeIndependent
 
@@ -154,7 +152,7 @@ ms.locfileid: "1843324"
 > 2.  Выберите вкладку **Сборка**.
 > 3.  Установите флажок **Разрешить небезопасный код**.
 
- 
+ 
 
 Теперь вы можете добавить реализацию метода **ProcessFrame**. Сначала этот метод получает объект [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) от программных растровых изображений и ввода, и вывода. Обратите внимание, что кадр вывода открывается для записи, а кадр ввода — для чтения. Далее выполняется получение [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671) для каждого буфера путем вызова [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046). Затем производится получение фактических данных буфера путем преобразования объектов **IMemoryBufferReference** в описанный выше интерфейс COM-взаимодействия **IMemoryByteAccess** и последующего вызова **GetBuffer**.
 

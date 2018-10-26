@@ -5,16 +5,14 @@ title: Настройка точного расписания выпуска
 ms.author: wdg-dev-content
 ms.date: 05/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, расписание, дата выпуска, даты, запуск
 ms.localizationpriority: medium
-ms.openlocfilehash: 84466f907bad7e38506e1bf81b89eb631675093c
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 910f0aea10e763316bedab7b96b21705c537282c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470908"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545486"
 ---
 # <a name="configure-precise-release-scheduling"></a>Настройка точного расписания выпуска
 

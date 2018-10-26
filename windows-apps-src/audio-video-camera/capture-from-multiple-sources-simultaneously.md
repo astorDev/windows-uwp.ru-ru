@@ -6,16 +6,14 @@ title: Фиксация из нескольких источников с исп
 ms.author: drewbat
 ms.date: 09/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, фиксация, видео
 ms.localizationpriority: medium
-ms.openlocfilehash: 40c496dcda6d4876aaadc590070bacab243fb253
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: ae52026d5fb1ab3c140edfdcd1f92f7d3d0fd143
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832692"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545277"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>Фиксация из нескольких источников с использованием класса MediaFrameSourceGroup
 
@@ -79,9 +77,9 @@ ms.locfileid: "1832692"
 * [Элементы мультимедиа, списки воспроизведения и звуковые дорожки](media-playback-with-mediasource.md)
 
 
- 
+ 
 
- 
+ 
 
 
 

@@ -1,30 +1,28 @@
 ---
 author: v-angraf
 ms.assetid: 4c03e06b-c12c-f64f-c53f-b38716101822
-title: Xbox Live страницы (Домашняя страница для разработчиков)
-description: Предоставляет сведения о странице Xbox Live дома разработки приложения для одного Xbox.
+title: Xbox Live страницы (главную страницу)
+description: Предоставляет сведения о странице Xbox Live главную страницу приложения для Xbox One.
 ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-live.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af78e5ecb30dc879bd12f52bfeadde70af18a39
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 96f22cb971f5c8266653a6b3c3f4bcc7dd61546d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1015262"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546686"
 ---
-# <a name="xbox-live-page-dev-home"></a>Xbox Live страницы (Домашняя страница для разработчиков)
+# <a name="xbox-live-page-dev-home"></a>Xbox Live страницы (главную страницу)
    
   
-Страница **Xbox Live** дома Dev собирает многопользовательской сведения и отображает текущее состояние службы Xbox Live.   
- ![Xbox Live Dev домашней страницы](images/devhome_live.png)   
+Страница **Xbox Live** главную страницу захватывает многопользовательских сведения и отображает текущее состояние службы Xbox Live.   
+ ![Xbox Live главную страницу](images/devhome_live.png)   
   
-Страница **Xbox Live** состоит из следующих областей:   
+Страница **Xbox Live** содержит следующие области:   
  
    *  [XBTrace (advancedmp)](#ID4EPB)  
    *  [Статус Xbox Live](#ID4E3B)  
@@ -37,7 +35,7 @@ ms.locfileid: "1015262"
 ## <a name="xbtrace-advancedmp"></a>XBTrace (advancedmp)  
    
   
-На странице **XBTrace (advancedmp)** запускает или останавливает захвата многопользовательской трассировки. Его можно также получения моментального снимка текущего состояния многопользовательской.   
+На странице **XBTrace (advancedmp)** запускается или останавливается захвата многопользовательских трассировки. Также можно записывать моментальный снимок текущего состояния многопользовательской игры.   
   
 <a id="ID4E3B"></a>
 
@@ -46,13 +44,13 @@ ms.locfileid: "1015262"
 ## <a name="xbox-live-status"></a>Статус Xbox Live  
    
   
-В области **Xbox Live состояние** отображается состояние, веб-канал со страницы Xbox Live о проблемах службы или недоступности сети.   
+**Статус Xbox Live** панель отображает состояние канал с Xbox Live о службе или сбоях.   
   
 <a id="ID4EPC"></a>
 
    
 
-## <a name="see-also"></a>Статьи по теме  
- [Домашняя страница разработчиков в консоли (Домашняя страница для разработчиков)](dev-home.md)
+## <a name="see-also"></a>См. также  
+ [Главная страница разработчика на консоли (Dev Home)](dev-home.md)
 
   

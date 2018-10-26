@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c9feb6460512a7266dfd5d2979b89084f6487f5
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 3af31535dcdb1cb5eb8beebbbb91312adafe353a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653453"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546956"
 ---
 # <a name="guidelines-for-targeting"></a>Руководство по определению цели касания
 
@@ -104,7 +102,7 @@ ms.locfileid: "1653453"
 </tbody>
 </table>
 
- 
+ 
 
 Эти рекомендации по размеру цели можно скорректировать для конкретного сценария. При разработке рекомендаций учитывались следующие соображения.
 
@@ -168,9 +166,9 @@ Windows поддерживает вспомогательные средства
 * [Ввод: пример жестов в Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [Ввод: пример управления и жестов (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [Пример сенсорного ввода в DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

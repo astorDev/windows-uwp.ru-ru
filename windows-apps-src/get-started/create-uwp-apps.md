@@ -1,20 +1,18 @@
 ---
 author: QuinnRadich
 title: Создание приложений с использованием универсальной платформы Windows
-description: Создать приложение для Windows10 на базе универсальной платформы Windows (UWP) проще, чем кажется.
+description: Проще, чем может показаться создать приложение универсальной платформы Windows (UWP) для Windows10.
 ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, начало работы
 ms.localizationpriority: medium
-ms.openlocfilehash: c31a659b7584bec5a8f71307c40a220e17d62b53
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: dde635624101fdcf0803770bc69e7922f56f704e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843537"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542811"
 ---
 # <a name="start-coding"></a>Начало разработки
 

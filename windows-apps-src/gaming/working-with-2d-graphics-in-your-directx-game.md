@@ -6,19 +6,18 @@ ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, directx, двумерная, графика
-ms.openlocfilehash: 702b47d4002e9a2d0d62cc67e71432bb630e21d4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8628588cdc20179e9505e45694d43788eb1d7cb6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223871"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543159"
 ---
 # <a name="2d-graphics-for-directx-games"></a>Двумерная графика для игр DirectX
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе обсуждаются двумерная растровая графика и эффекты, а также способы их использования в вашей игре.
 
@@ -62,16 +61,3 @@ ms.locfileid: "223871"
 -   [Общие сведения о Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987)
 -   [Краткое руководство для работы в Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd535473)
 -   [Общие сведения о взаимодействии Direct2D и Direct3D](https://msdn.microsoft.com/library/windows/desktop/dd370966)
-
-> **Примечание.**  
-Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). В случае разработки приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
- 
-
- 
-
-
-
-

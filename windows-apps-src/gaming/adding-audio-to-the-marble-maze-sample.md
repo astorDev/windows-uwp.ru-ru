@@ -6,16 +6,14 @@ ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ms.author: elcowle
 ms.date: 10/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, звук, игры, пример
 ms.localizationpriority: medium
-ms.openlocfilehash: 4534675395f415ccd742dff646bc6c498aa7faa6
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 89612e3fbc4ef2ccb855f7709820f9445d0fd77c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700910"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546864"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>Добавление звука в пример Marble Maze
 
@@ -352,7 +350,7 @@ CoTaskMemFree(waveFormat);
 > [!IMPORTANT]
 > Метод [MFCreateWaveFormatExFromMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms702177) использует **CoTaskMemAlloc** для выделения памяти для объекта [WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799). Поэтому нужно обязательно вызвать функцию **CoTaskMemFree** по завершении использования объекта.
 
- 
+ 
 
 Метод **MediaStreamer::Initialize** завершает работу расчетом длины потока — **m\_maxStreamLengthInBytes** — в байтах. Для этого он вызывает метод [IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662), чтобы получить продолжительность звукового потока в единицах, равных 100наносекундам, преобразовывает ее в секунды и умножает на среднюю скорость передачи данных в байтах в секунду. Затем Marble Maze использует это значение, чтобы выделить память под буфер, содержащий все звуки игрового процесса.
 
@@ -402,7 +400,7 @@ enum SoundEvent
 | MenuChangeEvent   | MenuChange.wav | Воспроизводится, когда пользователь изменяет текущий пункт меню. |
 | MenuSelectedEvent | MenuSelect.wav | Воспроизводится, когда пользователь выбирает пункт меню.           |
 
- 
+ 
 
 В следующем примере показано, как метод **Audio::CreateResources** создает исходный тембр для фоновой музыки. Структура [XAUDIO2\_SEND\_DESCRIPTOR](https://msdn.microsoft.com/library/windows/desktop/ee419244) определяет целевой тембр назначения из другого тембра и указывает, следует ли использовать фильтр. Marble Maze вызывает метод **Audio::SetSoundEffectFilter**, чтобы использовать фильтры для изменения звука катящегося шарика. Структура [XAUDIO2\_VOICE\_SENDS](https://msdn.microsoft.com/library/windows/desktop/ee419246) определяет набор тембров, которые будут получать данные из одного тембра вывода. Marble Maze отправляет данные из исходного тембра на тембр мастеринга (для "сухой", или оставшейся неизменной, части воспроизводимого звука) и на два тембра субмикширования, которые реализуют "влажную", или реверберирующую, часть воспроизводимого звука.
 

@@ -6,16 +6,14 @@ description: У каждого устройства есть связанные 
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c8fe51fd98f70e6f920a7421a9932e69bba11377
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 2ad87bdfa468c98a2e10d57f81b8e8d187bfbcef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959250"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543371"
 ---
 # <a name="device-information-properties"></a>Свойства сведений об устройствах
 
@@ -35,10 +33,10 @@ ms.locfileid: "959250"
 
 У объекта [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) есть некоторые базовые свойства, такие как [**Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) и [**Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx), но большинство свойств хранится в разделе [**Properties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx) контейнера свойств. Поэтому контейнер свойств содержит свойства, которые используются для получения из него исходных свойств. Например, используйте [System.ItemNameDisplay](https://msdn.microsoft.com/library/windows/desktop/Bb760770) в качестве источника свойства [**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name). Это известное свойство с понятным именем. Windows предоставляет несколько таких понятных имен, чтобы упростить запрос свойств.
 
-При запросе свойств вы не ограничены только общими свойствами с понятными именами. Вы можете использовать GUID и PID для запроса любого доступного свойства, в том числе настраиваемого свойства, предусмотренного конкретным устройством или драйвером. Формат указания настраиваемого свойства: «`{GUID} PID`». Например: "`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`«. 
+При запросе свойств вы не ограничены только общими свойствами с понятными именами. Вы можете использовать GUID и PID для запроса любого доступного свойства, в том числе настраиваемого свойства, предусмотренного конкретным устройством или драйвером. Формат указания настраиваемого свойства: «`{GUID} PID`». Например: «`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`». 
 
 > [!Note]
-> Список свойств идентификаторов GUID можно найти в файл ключа заголовка свойства устройства драйвера устройства.
+> Список свойств GUID можно найти в файле заголовка ключа свойств устройства драйвера устройства.
 
 Некоторые свойства используются во многих объектах [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind), но большинство из них уникальны и предназначены только для определенного вида. В следующих разделах перечислены некоторые распространенные свойства, отсортированные по **DeviceInformationKind**. Подробнее о том, как разные виды связаны друг с другом, см. в статье **DeviceInformationKind**.
 
@@ -57,7 +55,7 @@ ms.locfileid: "959250"
 | **System.Devices.Icon**               | Строка  | Путь значка.                                                                                                                                                                                                                                                                                                                                                                                                |
 | **System.ItemNameDisplay**            | Строка  | Наилучшее отображаемое имя для объекта устройства.                                                                                                                                                                                                                                                                                                                                                              |
 
- 
+ 
 
 ## <a name="device-properties"></a>Свойства устройства
 
@@ -75,7 +73,7 @@ ms.locfileid: "959250"
 | **System.Devices.Present**            | Boolean    | Показывает, подключено ли в данный момент устройство и доступно ли оно.                                                                                                                                                                                                                         |
 | **System.ItemNameDisplay**            | Строка     | Наилучшее отображаемое имя для объекта устройства. В данном случае это необязательно лучшее имя для пользователей. Более вероятный кандидат для понятного имени можно найти, указав ссылку на **System.ItemNameDisplay** связанного объекта **DeviceContainer** или **DeviceInterface**. |
 
- 
+ 
 
 ## <a name="devicecontainer-properties"></a>Свойства DeviceContainer
 
@@ -95,7 +93,7 @@ ms.locfileid: "959250"
 | **System.Devices.Paired**         | Boolean    | Показывает, являются ли какие-либо из дочерних объектов **DeviceInformationKind.Device** беспроводными или сетевыми устройствами, связанными в настоящий момент с системой.             |
 | **System.ItemNameDisplay**        | Строка     | Наилучшее отображаемое имя для этого устройства.                                                                                                                             |
 
- 
+ 
 
 ## <a name="deviceinterfaceclass-properties"></a>Свойства DeviceInterfaceClass
 
@@ -103,7 +101,7 @@ ms.locfileid: "959250"
 |----------------------------|--------|----------------------------------------|
 | **System.ItemNameDisplay** | Строка | Наилучшее отображаемое имя для этого устройства. |
 
- 
+ 
 
 ## <a name="associationendpoint-properties"></a>Свойства AssociationEndpoint
 
@@ -124,7 +122,7 @@ ms.locfileid: "959250"
 | **System.Devices.Aep.SignalStrength** | Int32      | Уровень сигнала устройства. Это свойство применимо только к некоторым протоколам.                                                                                                                                                                                                                                                                                                                                                                                                |
 | **System.ItemNameDisplay**            | Строка     | Наилучшее отображаемое имя устройства.                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
- 
+ 
 
 ## <a name="associationendpointcontainer-properties"></a>Свойства AssociationEndpointContainer
 
@@ -146,7 +144,7 @@ ms.locfileid: "959250"
 | **System.Devices.AepContainer.SupportsVideo**       | Boolean    | Показывает, поддерживает ли это устройство трансляцию видео.                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **System.ItemNameDisplay**                          | Строка     | Наилучшее отображаемое имя устройства.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
- 
+ 
 
 ## <a name="associationendpointservice-properties"></a>Свойства AssociationEndpointService
 
@@ -160,8 +158,8 @@ ms.locfileid: "959250"
 | **System.Devices.AeoService.ServiceId**         | Строка  | Удостоверение этой службы. Это также значение [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id). |
 | **System.ItemNameDisplay**                      | Строка  | Наилучшее отображаемое имя для службы.                                                                           |
 
- 
+ 
 
- 
+ 
 
- 
+ 

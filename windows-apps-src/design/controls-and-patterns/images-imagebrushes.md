@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ee3948fc4c7ab83657e8bca127306bb037d491a8
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 7c0fcd158dac77b3b3322167b82131e51f62390f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494141"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544250"
 ---
 # <a name="images-and-image-brushes"></a>Изображения и кисти изображений
 
@@ -60,7 +58,7 @@ ms.locfileid: "1494141"
 
 ![Пример элемента Image](images/Image_Licorice.jpg)
 
-В этом примере свойство [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) определяет расположение изображения, которое следует отобразить. В свойстве Source можно указать абсолютный URL-адрес (например, http://contoso.com/myPicture.jpg) или URL-адрес, который соответствует составу и структуре упаковки вашего приложения. В нашем примере мы помещаем файл изображения "licorice.jpg" в корневую папку проекта и объявляем параметры проекта, которые содержат этот файл.
+В этом примере свойство [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) определяет расположение изображения, которое следует отобразить. Вы можете задать источник абсолютный URL-адрес (например, http://contoso.com/myPicture.jpg) или URL-адрес, который является относительным структуре упаковки вашего приложения. В нашем примере мы помещаем файл изображения "licorice.jpg" в корневую папку проекта и объявляем параметры проекта, которые содержат этот файл.
 
 ### <a name="imagebrush"></a>ImageBrush
 

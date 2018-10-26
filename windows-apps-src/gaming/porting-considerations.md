@@ -6,16 +6,14 @@ ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, directx 9, directx 11, перенос
 ms.localizationpriority: medium
-ms.openlocfilehash: 6429fac3aaa58c200776358a1875b78f8699c75d
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 4e867129b5f684c7e77aebefcbe9a3f68b47b031
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652093"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549712"
 ---
 # <a name="moving-from-directx-9-to-directx-11-and-universal-windows-platform-uwp"></a>Переход с DirectX 9 на DirectX 11 и универсальную платформу Windows (UWP)
 
@@ -50,11 +48,11 @@ ms.locfileid: "1652093"
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

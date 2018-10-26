@@ -6,19 +6,18 @@ ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, directx, графика
-ms.openlocfilehash: 1fe28d17aa8c943de9a2bcf6c2230237e0c931d0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 0050b854b6c8c02cd6eda5e4903fe07ee25d521d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223894"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544985"
 ---
 # <a name="draw-to-the-screen"></a>Отрисовка на экране
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -218,9 +217,9 @@ void RenderObject::Render()
 * [Перенос GLSL](port-the-glsl.md)
 * [Рисование на экране](draw-to-the-screen.md)
 
- 
+ 
 
- 
+ 
 
 
 

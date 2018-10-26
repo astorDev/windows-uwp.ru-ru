@@ -6,21 +6,19 @@ description: Улучшите производительность и время
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: eab90ebf2bcb1912292af6503f833e3bfa334d8b
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 92b81c79eb1be9e21aa7c306ef31b0b3bb62e7d1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894708"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547296"
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>Виртуализация данных ListView и GridView
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Примечание.** Для получения дополнительных сведений см. мероприятие //build/ [Резкое повышение производительности при взаимодействии пользователей с большим объемом данных в GridView и ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
+**Примечание**Дополнительные сведения см. в статье сеансов //build/ [Резкое повышение производительности при взаимодействии пользователей с большим объемом данных, в GridView и ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
 
 Улучшите производительность и время запуска [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) с помощью виртуализации данных. Подробнее о виртуализации пользовательского интерфейса, сокращении элементов и прогрессивном обновлении элементов см. в разделе [Оптимизация пользовательского интерфейса ListView и GridView](optimize-gridview-and-listview.md).
 
@@ -31,7 +29,7 @@ ms.locfileid: "894708"
 -   источника набора данных (расположение на локальном диске, в сети или облаке);
 -   общего потребления памяти вашим приложением.
 
-**Примечание.** Функция включена по умолчанию для ListView и GridView и отображает визуальные элементы временных заполнителей при быстром сдвиге или прокрутке. После загрузки данных эти визуальные элементы-заполнители заменяются вашим шаблоном элементов. Функцию можно отключить, установив для параметра [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) значение «false», но в таком случае рекомендуется использовать атрибут x:Phase для постепенной обработки элементов в вашем шаблоне элементов. См. раздел [Прогрессивное обновление элементов ListView и GridView](optimize-gridview-and-listview.md#update-items-incrementally).
+**Примечание**Имейте в виду, что функция включена по умолчанию для ListView и GridView и отображает визуальные элементы временных заполнителей при быстром сдвига и прокрутки быстро. После загрузки данных эти визуальные элементы-заполнители заменяются вашим шаблоном элементов. Функцию можно отключить, установив для параметра [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) значение «false», но в таком случае рекомендуется использовать атрибут x:Phase для постепенной обработки элементов в вашем шаблоне элементов. См. раздел [Прогрессивное обновление элементов ListView и GridView](optimize-gridview-and-listview.md#update-items-incrementally).
 
 Ниже приведены подробные сведения о методах добавочной виртуализации данных и виртуализации данных прямого доступа.
 
@@ -45,7 +43,7 @@ ms.locfileid: "894708"
 
 Подобный источник данных — это хранящийся в памяти список, который можно постоянно расширять. Элемент управления элементами запрашивает элементы, используя стандартный индексатор [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) и свойства подсчета. Подсчет должен представлять число элементов локально, а не фактический размер набора данных.
 
-Когда элемент управления элементами подходит к концу существующих данных, он вызывает [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems). Если возвратить **true**, он вызовет [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync), передавая рекомендованное число элементов для загрузки. В зависимости от того, откуда загружаются данные (из локального диска, сети или облака), можно указать другое число элементов для загрузки, отличающееся от рекомендованного. Например, если ваша служба поддерживает пакеты из 50 элементов, но элемент управления элементами запрашивает только 10, то вы можете загрузить 50. Загрузите данные из серверной части, добавьте их в список и вызовите уведомление об изменениях с помощью [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) или [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052), чтобы элемент управления элементами получил сведения о новых элементах. Следует также возвратить число фактически загруженных элементов. Если вы загружаете меньше элементов, чем рекомендовано, или элемент управления элементами прокручивается дальше на промежуточных этапах, то источник данных вызывается снова для большего числа элементов и цикл продолжается. Дополнительные сведения можно получить, скачав [образец привязки данных в XAML](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) для Windows8.1, а затем повторно использовав исходный код в приложениидля Windows 10.
+Когда элемент управления элементами подходит к концу существующих данных, он вызывает [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems). Если возвратить **true**, он вызовет [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync), передавая рекомендованное число элементов для загрузки. В зависимости от того, откуда загружаются данные (из локального диска, сети или облака), можно указать другое число элементов для загрузки, отличающееся от рекомендованного. Например, если ваша служба поддерживает пакеты из 50 элементов, но элемент управления элементами запрашивает только 10, то вы можете загрузить 50. Загрузите данные из серверной части, добавьте их в список и вызовите уведомление об изменениях с помощью [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) или [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052), чтобы элемент управления элементами получил сведения о новых элементах. Следует также возвратить число фактически загруженных элементов. Если вы загружаете меньше элементов, чем рекомендовано, или элемент управления элементами прокручивается дальше на промежуточных этапах, то источник данных вызывается снова для большего числа элементов и цикл продолжается. Вы можете больше узнать, загрузив [Образец привязки данных XAML](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) для Windows8.1 и использовав исходный код из него в приложении Windows10.
 
 ## <a name="random-access-data-virtualization"></a>Виртуализация данных прямого доступа
 

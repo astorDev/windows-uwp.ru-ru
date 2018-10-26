@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 07/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, плитка, уведомление на плитке, содержимое плитки, схема, полезные данные плитки
 ms.localizationpriority: medium
-ms.openlocfilehash: d2baa2e2d7b8d68505159eb480ea3be78750f507
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 3cdcf8b609b76283ba680ec9ca4d2502624e2024
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515995"
+ms.locfileid: "5543853"
 ---
 # <a name="tile-content-schema"></a>Схема содержимого плитки
 

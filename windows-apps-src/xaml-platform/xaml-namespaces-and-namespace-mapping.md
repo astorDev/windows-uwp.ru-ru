@@ -6,16 +6,14 @@ ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a4303075bb9fc8133ab40a0fb48b3742c1f2637
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a1aebe3d9aac460d444a5dffcd63142300c022b7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656179"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546527"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>Пространства имен XAML и их сопоставление
 
@@ -65,7 +63,7 @@ ms.locfileid: "1656179"
 
 -   **Атрибуты d:DesignHeight и d:DesignWidth** Эти атрибуты иногда применяются к корню XAML-файла, который создает для вас Visual Studio или другая поверхность конструктора XAML. Например, эти атрибуты задаются в корне [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) XAML, создаваемого при добавлении нового **UserControl** в проект приложения. Эти атрибуты упрощают разработку композиции содержимого XAML, и вы можете предвидеть ограничения разметки, которые могут существовать, если это содержимое XAML используется для экземпляра элемента управления или другой части более крупной страницы пользовательского интерфейса.
 
-   **Примечание.** При миграции XAML из Microsoft Silverlight эти атрибуты могут находиться в корневых элементах, представляющих всю страницу пользовательского интерфейса. Возможно, в этом случае атрибуты потребуется удалить. Другие функции конструкторов XAML, такие как имитатор, возможно, более полезны для разработки макетов страниц, которые обрабатывают состояния масштабирования и просмотра лучше, чем макет страницы фиксированного размера, использующий **d:DesignHeight** и **d:DesignWidth**.
+   **Примечание**при миграции XAML из Microsoft Silverlight эти атрибуты могут находиться в корневых элементах, представляющих всю страницу пользовательского интерфейса. Возможно, в этом случае атрибуты потребуется удалить. Другие функции конструкторов XAML, такие как имитатор, возможно, более полезны для разработки макетов страниц, которые обрабатывают состояния масштабирования и просмотра лучше, чем макет страницы фиксированного размера, использующий **d:DesignHeight** и **d:DesignWidth**.
 
 -   **Атрибут d:DataContext** Этот атрибут можно задать в корне страницы или элементе управления для переопределения любого явного или унаследованного [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713), в противном случае находящегося в объекте.
 -   **Атрибут d:DesignSource** Указывает источник данных времени разработки для [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833), переопределяя [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835).
@@ -118,5 +116,5 @@ mc: обозначает и поддерживает режим совмести
 * [Создание компонентов среды выполнения Windows на языках C# и Visual Basic](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [Шаблоны проектов на C#, VB и C++ для приложений среды выполнения Windows](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [Перенос кода XAML для Silverlight или WPF в приложение среды выполнения Windows](https://msdn.microsoft.com/library/windows/apps/br229571)
- 
+ 
 

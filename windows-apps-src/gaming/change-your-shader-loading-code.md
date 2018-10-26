@@ -6,19 +6,18 @@ ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, opengl, direct3d, конвейер шейдеров
-ms.openlocfilehash: 20d02d9b9724c0cfd8120d4d38fa476b9efa3bb3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: f8e3671b5d3490cf565db34ec891c203ee1f7c7a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225500"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547125"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>Сравнение конвейера шейдеров OpenGL ES2.0 с Direct3D
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Важные API**
@@ -59,7 +58,7 @@ ms.locfileid: "225500"
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | glCreateShader | Вызовите [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) и [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) после успешной загрузки компилированного объекта шейдера (CSO), передавая их в этот объект CSO как буфер. |
 
- 
+ 
 
 ## <a name="compiling-a-shader"></a>Компиляция шейдера
 
@@ -71,7 +70,7 @@ ms.locfileid: "225500"
 | glCompileShader                        | Н/д. Компилируйте шейдеры в CSO-файлы в Visual Studio и включайте их в пакет.                                                                                     |
 | Использование glGetShaderiv для получения состояния компиляции | Н/д. Проверяйте по выходным результатам компилятора Visual StudioFX (FXC), имели ли место ошибки при компиляции. Если компиляция прошла успешна, создается соответствующий CSO-файл. |
 
- 
+ 
 
 ## <a name="loading-a-shader"></a>Загрузка шейдера
 
@@ -82,7 +81,7 @@ ms.locfileid: "225500"
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ShaderSource  | Вызовите [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) и [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) после успешной загрузки компилированного объекта шейдера. |
 
- 
+ 
 
 ## <a name="setting-up-the-pipeline"></a>Настройка конвейера
 
@@ -96,7 +95,7 @@ ms.locfileid: "225500"
 | glUseProgram    | Н/д. Direct3D11 не использует абстракцию объекта программы-шейдера.                          |
 | glGetProgramiv  | Используйте созданную вами ссылку на [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). |
 
- 
+ 
 
 Создайте экземпляр [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) и [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/dn280493) с помощью статического метода [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082).
 
@@ -113,7 +112,7 @@ D3D11CreateDevice(
   creationFlags, // Set set debug and Direct2D compatibility flags.
   featureLevels, // List of feature levels this app can support.
   ARRAYSIZE(featureLevels),
-  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for Windows Store apps.
+  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for UWP apps.
   &device, // Returns the Direct3D device created.
   &m_featureLevel, // Returns feature level of device created.
   &m_d3dContext // Returns the device's immediate context.
@@ -141,7 +140,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
 
- 
+ 
 
 ## <a name="configuring-the-vertex-shaders"></a>Настройка вершинных шейдеров
 
@@ -154,7 +153,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 | glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476489)                       |
 | glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::VSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446793). |
 
- 
+ 
 
 ## <a name="configuring-the-pixel-shaders"></a>Настройка построителей текстуры
 
@@ -167,7 +166,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 | glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
 | glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645). |
 
- 
+ 
 
 ## <a name="generating-the-final-results"></a>Генерация окончательных результатов
 
@@ -179,7 +178,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 | glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407), [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (или другие методы Draw\* в [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385)). |
 | eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797)                                                                                                                                                                              |
 
- 
+ 
 
 ## <a name="porting-glsl-to-hlsl"></a>Перенос GLSL в HLSL
 
@@ -191,7 +190,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 | Direct3D11 HLSL          | ~4.30.                                                                                                                                                                                                                    | SM5.0                |
 | GLSL ES для OpenGL ES2.0 | 1.40. Другие (более старые) реализации GLSL ES для OpenGL ES2.0 могут использовать версии от 1.10 до1.30. Чтобы выяснить это, проверьте ваш исходный код с помощью glGetString(GL\_SHADING\_LANGUAGE\_VERSION) или glGetString(SHADING\_LANGUAGE\_VERSION). | ~SM2.0               |
 
- 
+ 
 
 Подробно о различиях двух языков шейдера, а также об общем сопоставлении синтаксиса см. в [справочнике по сопоставлению GLSL с HLSL](glsl-to-hlsl-reference.md).
 
@@ -214,7 +213,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 | gl\_FragColor       | COLOR(n) для данных цветов RGBA, которые предоставляются шейдеру. Отметим, что они обрабатываются аналогично данным координат. Семантика просто помогает понять, что они являются данными цветов. |
 | gl\_FragData\[n\]   | SV\_Target\[n\] для записи из построителя текстуры в целевую текстуру или в другой буфер пикселей.                                                                               |
 
- 
+ 
 
 Метод, с помощью которого вы кодируете семантику, не совпадает с методом, используемым компонентами OpenGL ES2.0. В OpenGL вы можете получить доступ ко многим внутренним элементам без настройки или объявления. В Direct3D для использования конкретной семантики необходимо объявить поле в определенном буфере констант. Можно также объявить возвращаемое значение метода **main()** шейдера.
 
@@ -251,9 +250,9 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 Подробнее об использовании семантики с Direct3D: [Семантики HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509647).
 
- 
+ 
 
- 
+ 
 
 
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d51d20ddaeca5aa0689104b3dd71e36b1a5d4132
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 17970d509fa2bf6b80431e1c07b5d135c7dcb112
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043993"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544359"
 ---
 # <a name="texture3d-subresource-tiling"></a>Размещение на плитках вложенных ресурсов Texture3D
 
@@ -25,9 +23,9 @@ ms.locfileid: "1043993"
 
 В этой таблице берется размещение на плитках [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525), размеры по осям X и Y делятся на 4 каждое, и добавляется 16 уровней глубины. Все плитки для первой плоскости (двухмерной плоскости плиток, определяющих первые 16 слоев глубины) отображаются перед последующими плоскостями.
 
-**Примечание.**  Поддержка [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) в потоковых ресурсах не предоставляется в начальной реализации потоковых ресурсов, но необходимые формы плиток перечислены здесь ввиду возможного появления поддержки в будущих выпусках.
+**Примечание** Поддержка [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) в потоковых ресурсах не предоставляется в начальной реализации потоковых ресурсов, но необходимые формы плиток перечислены здесь ввиду возможности поддержки в будущих выпусках.
 
- 
+ 
 
 | Бит/пкс (1 семпл/пкс) | Размеры плиток (пиксели, ШxВxГ) |
 |-----------------------------|---------------------------------|
@@ -39,7 +37,7 @@ ms.locfileid: "1043993"
 | BC1,4                       | 128x64x16                       |
 | BC2,3,5,6,7                 | 64x64x16                        |
 
- 
+ 
 
 Для потоковых ресурсов не поддерживаются форматы 96 бит/пкс, видеоформаты, DXGI\_FORMAT\_R1\_UNORM, DXGI\_FORMAT\_R8G8\_B8G8\_UNORM и DXGI\_FORMAT\_R8R8\_G8B8\_UNORM.
 
@@ -48,9 +46,9 @@ ms.locfileid: "1043993"
 
 [Размещение плиток в области потокового ресурса](how-a-streaming-resource-s-area-is-tiled.md)
 
- 
+ 
 
- 
+ 
 
 
 

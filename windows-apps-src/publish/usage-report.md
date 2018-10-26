@@ -6,16 +6,14 @@ ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.author: wdg-dev-content
 ms.date: 10/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, использование, пользовательское событие, отчет, телеметрия, пользовательские сеансы
 ms.localizationpriority: medium
-ms.openlocfilehash: c5ef2136eaf17fc902dcfc7840ff6dbdac56ef0d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 3998e8c5b207d8484a621db16d2e72a136f22c80
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5480190"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546385"
 ---
 # <a name="usage-report"></a>Отчет об использовании
 

@@ -5,16 +5,14 @@ title: Получение конверсий надстройки по кана�
 ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, конверсии надстройки, канал
 ms.localizationpriority: medium
-ms.openlocfilehash: af29c790df5508a22c545cdc5a2ca2faac15e134
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: d64af06acb730160f7f9f7f0e9eda96074b3eac7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521637"
+ms.locfileid: "5543059"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>Получение конверсий надстройки по каналу
 

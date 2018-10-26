@@ -7,16 +7,14 @@ title: Справка о таблицах стилей карты
 ms.author: normesta
 ms.date: 03/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, карты, таблица стилей карты
 ms.localizationpriority: medium
-ms.openlocfilehash: f0a657ada755b77abe8ffef6a38bfa1f9ece8fcd
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: eace82801b2e3d1423eeec9e9da7cf56db043666
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521743"
+ms.locfileid: "5543997"
 ---
 # <a name="map-style-sheet-reference"></a>Справка о таблицах стилей карты
 

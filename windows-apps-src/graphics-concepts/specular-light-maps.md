@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6da5292396a334e50c61fb4638334aae27581d7d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 6bd9db0afa914ef7a56dbd55c938129b86a43743
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043113"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545857"
 ---
 # <a name="specular-light-maps"></a>Карты отраженного света
 
@@ -28,11 +26,11 @@ ms.locfileid: "1043113"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
 
 
-[Сопоставление света с помощью текстур](light-mapping-with-textures.md)
+[Сопоставление света с текстурами](light-mapping-with-textures.md)
 
- 
+ 
 
- 
+ 
 
 
 
