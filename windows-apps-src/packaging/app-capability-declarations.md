@@ -6,16 +6,14 @@ description: Возможности должны быть заявлены в м
 ms.author: misatran
 ms.date: 09/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d6cce2a38624339016acbad51693de1ade50678
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 1c17c802e77d13e6e980ed5046c19bfc106d5cff
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514317"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563275"
 ---
 # <a name="app-capability-declarations"></a>Объявления возможностей приложения
 

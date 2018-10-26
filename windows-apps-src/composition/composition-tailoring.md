@@ -5,16 +5,14 @@ description: Используйте API композиции адаптиров�
 ms.author: jimwalk
 ms.date: 07/16/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 66384c4df3195ae0fff35ae5dd7e1b1983204068
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 2efea81f3520e6fb1a797394656587d2a29201aa
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521273"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562707"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>Скорректировать эффектов и взаимодействия с помощью интерфейса Windows
 

@@ -9,15 +9,13 @@ keywords: речь, голос, распознавание речи, естес�
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bdbe841e486a5024c594b1458e3beb57e228e1d
-ms.sourcegitcommit: db09dcb08da5995c46c2729896e56be3774ee5ba
-ms.translationtype: HT
+ms.openlocfilehash: 4006cdedffdbc601b498ce64caddfdefcbf4877a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "1554250"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564190"
 ---
 # <a name="speech-interactions"></a>Взаимодействие с помощью голосовых функций
 
@@ -222,12 +220,12 @@ ms.locfileid: "1554250"
 * [Взаимодействие с помощью голосовых функций](https://msdn.microsoft.com/library/windows/apps/mt185614)
 * [Взаимодействие с Кортаной](https://msdn.microsoft.com/library/windows/apps/mt185598)
 
- **Примеры**
+ **Примеры**
 
 * [Пример распознавания и синтеза речи](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

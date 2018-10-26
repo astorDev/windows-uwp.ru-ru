@@ -6,16 +6,14 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c89793dd92a458c47a33aac4f7d4c728088cf1dc
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 5bb9d241569afdbbc9df95fa11cd2261e78c077a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674361"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562730"
 ---
 # <a name="relativesource-markup-extension"></a>Расширение разметки {RelativeSource}
 
@@ -43,7 +41,7 @@ ms.locfileid: "1674361"
 | Термин | Описание |
 |------|-------------|
 | {RelativeSource Self} | Создает значение [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) для <strong>Self</strong>. В качестве источника этой привязки следует использовать целевой элемент. Это полезно для привязки одного из свойств элемента к другому свойству того же элемента. |
-| {RelativeSource TemplatedParent} | Создает элемент [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391), который служит источником этой привязки. Это полезно для применения информации времени выполнения к привязкам на уровне шаблонов. | 
+| {RelativeSource TemplatedParent} | Создает элемент [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391), который служит источником этой привязки. Это полезно для применения информации времени выполнения к привязкам на уровне шаблонов. | 
 
 ## <a name="remarks"></a>Комментарии
 
@@ -64,7 +62,7 @@ ms.locfileid: "1674361"
 
 Также `RelativeSource={RelativeSource Self}` можно использовать, чтобы задать для свойства [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) объекта самого себя.  Например, это можно увидеть в некоторых примерах SDK, где класс [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) дополнен настраиваемым свойством, которое уже предоставляет готовую модель представления для собственной привязки данных, например: `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**Примечание.** Использование XAML для **RelativeSource** показывает только изначально предполагаемый способ использования: задание значения [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) в XAML как части выражения привязки. Теоретически возможны и другие способы задания свойства, значением которого является [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
+**Примечание**использование XAML для **RelativeSource** показано только использование, для которого он предназначен: задать значение для [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) в XAML как часть выражения привязки. Теоретически возможны и другие способы задания свойства, значением которого является [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
 
 ## <a name="related-topics"></a>Еще по теме
 

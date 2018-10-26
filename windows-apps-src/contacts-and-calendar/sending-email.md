@@ -5,21 +5,17 @@ title: Отправка сообщения электронной почты
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: контакты, электронное письмо, отправка
 ms.author: normesta
-ms.date: 02/08/2017
+ms.date: 10/11/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-ms.openlocfilehash: bfeec341b0b4e63b4fe37118c1f7daac67929018
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 0a28809210f71bf523e3cc5f9c8da1db9fbcc90c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665388"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560936"
 ---
 # <a name="send-email"></a>Отправка сообщения электронной почты
-
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 В данной статье рассказывается, как запустить диалоговое окно составления электронного письма, с помощью которого пользователь может отправить электронное письмо. Перед отображением диалогового окна вы можете заполнить поля сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки.
 
@@ -35,34 +31,25 @@ ms.locfileid: "665388"
 
 ``` cs
 private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,
-    string messageBody,
-    StorageFile attachmentFile)
+    string subject, string messageBody)
 {
     var emailMessage = new Windows.ApplicationModel.Email.EmailMessage();
     emailMessage.Body = messageBody;
-
-    if (attachmentFile != null)
-    {
-        var stream = Windows.Storage.Streams.RandomAccessStreamReference.CreateFromFile(attachmentFile);
-
-        var attachment = new Windows.ApplicationModel.Email.EmailAttachment(
-            attachmentFile.Name,
-            stream);
-
-        emailMessage.Attachments.Add(attachment);
-    }
 
     var email = recipient.Emails.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactEmail>();
     if (email != null)
     {
         var emailRecipient = new Windows.ApplicationModel.Email.EmailRecipient(email.Address);
         emailMessage.To.Add(emailRecipient);
+        emailMessage.Subject = subject;
     }
 
     await Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync(emailMessage);
-
 }
 ```
+
+>[!NOTE]
+> Вложения, добавляемых в сообщение электронной почты с помощью класса [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) будет отображаться только в приложение "Почта". Если пользователи имеют другие программы Почта, настроенный в качестве своей программы почты по умолчанию, то составления появится окно без вложения. Это известная проблема.
 
 ## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 
@@ -72,6 +59,6 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 * [Выбор контактов](selecting-contacts.md)
 * [Как продолжить работу приложения для Windows Phone после вызова средства выбора файлов](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
- 
+ 
 
- 
+ 

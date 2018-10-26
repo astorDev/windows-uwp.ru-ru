@@ -6,16 +6,14 @@ description: Службы конечной точки связи (AEP) пред�
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e204da16edd438b045fb753dca538e7fdeaa5a5f
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 5f103ee3c281ca95abcaee76cdc6f88b74a49eb1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690280"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563229"
 ---
 # <a name="aep-service-class-ids"></a>Идентификаторы класса службы AEP
 
@@ -74,7 +72,7 @@ ms.locfileid: "1690280"
 | GATT — User data (Данные пользователя)                     | **181C0000-0000-1000-8000-00805F9B34FB** |
 | GATT — Weight scale (Шкала масс)                  | **181D0000-0000-1000-8000-00805F9B34FB** |
 
- 
+ 
 
 Более полный список доступных служб Bluetooth см. на страницах о протоколе и службах Bluetooth [здесь](http://go.microsoft.com/fwlink/p/?LinkID=619586) и [здесь](http://go.microsoft.com/fwlink/p/?LinkID=619587). Вы также можете использовать API [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571), чтобы получить доступ к некоторым распространенным службам GATT.
 
@@ -105,7 +103,7 @@ ms.locfileid: "1690280"
 | Content directory (каталог содержимого)                  | **89e701dd-0597-5279-a31c-235991d0db1c**  |
 | DIAL                               | **085dfa4a-3948-53c7-a0d7-16d8ec26b29b**  |
 
- 
+ 
 
 ## <a name="wsd-services"></a>WSD services (службы WSD)
 
@@ -118,7 +116,7 @@ ms.locfileid: "1690280"
 | Printer (принтер)      | **65dca7bd-2611-583e-9a12-ad90f47749cf** |
 | Scanner (сканер)      | **56ec8b9e-0237-5cae-aa3f-d322dd2e6c1e** |
 
- 
+ 
 
 ## <a name="aqs-sample"></a>Пример AQS
 
@@ -129,6 +127,6 @@ System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" A
 System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D7-16D8EC26B29B}"
 ```
 
- 
+ 
 
- 
+ 

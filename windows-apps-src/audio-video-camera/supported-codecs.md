@@ -6,16 +6,14 @@ title: Поддерживаемые кодеки
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d520437f9be9d2e2bc6fe8243c3d34b17ef2d9
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 57a604b1b3996019bcf6e39bc88c9a59a74cb51c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "303678"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562839"
 ---
 # <a name="supported-codecs"></a>Поддерживаемые кодеки
 
@@ -30,7 +28,7 @@ ms.locfileid: "303678"
 > [!NOTE] 
 > Если указана поддержка AMR-NB, этот кодек не поддерживается в SKU сервера.
 
- 
+ 
 
 ### <a name="desktop"></a>Настольные ПК
 
@@ -341,7 +339,7 @@ ms.locfileid: "303678"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="mobile"></a>Мобильные устройства
 
@@ -652,7 +650,7 @@ ms.locfileid: "303678"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-x86"></a>IoT Core (x86)
 
@@ -963,7 +961,7 @@ ms.locfileid: "303678"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-arm"></a>IoT Core (ARM)
 
@@ -1274,7 +1272,7 @@ ms.locfileid: "303678"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xbox"></a>XBox
 
@@ -1585,7 +1583,7 @@ ms.locfileid: "303678"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="video-codec--format-support"></a>Поддержка видеокодеков и форматов
 
@@ -1595,7 +1593,7 @@ ms.locfileid: "303678"
 > Если указана поддержка H.265, она не обязательно обеспечивается всеми устройствами в данном семействе.
 > Если указана поддержка MPEG-2/MPEG-1, она обеспечивается только при установке дополнительного универсального приложения для Windows для DVD-дисков от Microsoft.
 
- 
+ 
 
 ### <a name="desktop"></a>Настольные ПК
 
@@ -1814,7 +1812,7 @@ ms.locfileid: "303678"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="mobile"></a>Мобильные устройства
 
@@ -2033,7 +2031,7 @@ ms.locfileid: "303678"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-x86"></a>IoT Core (x86)
 
@@ -2252,7 +2250,7 @@ ms.locfileid: "303678"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-arm"></a>IoT (ARM)
 
@@ -2471,7 +2469,7 @@ ms.locfileid: "303678"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xbox"></a>XBox
 
@@ -2690,7 +2688,7 @@ ms.locfileid: "303678"
 </tbody>
 </table>
 
-## <a name="image-codec--format-support"></a>Поддержка кодеков и форматов изображений 
+## <a name="image-codec--format-support"></a>Поддержка кодеков и форматов изображений 
 
 <table>
 <colgroup>

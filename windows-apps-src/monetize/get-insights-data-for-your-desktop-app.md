@@ -5,16 +5,14 @@ title: Получение аналитических данных о класс�
 ms.author: mhopkins
 ms.date: 07/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, службы Store, аналитика API аналитики для Microsoft Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4390fba26922372a74de76d09844a7243bce73
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 5e1ecdf192f54c0158ce503a58aafb65108b8fdc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483644"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561610"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>Получение аналитических данных о классическом приложении
 

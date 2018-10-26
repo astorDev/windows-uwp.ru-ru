@@ -6,16 +6,14 @@ ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2939150e1ca15dfc910d92ea669e794026ef8685
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674681"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560248"
 ---
 # <a name="property-path-syntax"></a>Синтаксис PropertyPath
 
@@ -58,7 +56,7 @@ ms.locfileid: "1674681"
 
 Например, рассмотрим бизнес-объект, в котором имеется список Teams (упорядоченный список), у каждого элемента которого имеется словарь Players, в котором каждый игрок определен по фамилии. Пример пути к свойству для определенного игрока во второй команде: "Teams\[1\].Players\[Smith\]". (Для указания второго элемента в Teams используется значение1, поскольку список индексирован с нуля.)
 
-**Примечание.** Поддержка индексации для источников данных на C++ ограничена. См. [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Примечание**Поддержка индексации для источников данных на C++ ограничена; см. в разделе [подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 ### <a name="attached-properties"></a>Присоединенные свойства
 
@@ -96,7 +94,7 @@ ms.locfileid: "1674681"
 
 Это не частый сценарий, но присоединенное свойство можно анимировать, при условии, что оно имеет значение свойства, которое соответствует типу анимации. Поскольку определяющее имя присоединенного свойства уже включает точку, любое имя присоединенного свойства необходимо заключить в круглые скобки, чтобы точка не рассматривалась как этап "объект-свойство". Например, чтобы указать, что требуется анимировать присоединенное свойство [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) в объекте, используйте путь к свойству (Grid.Row).
 
-**Примечание.** В этом примере значением [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) является тип свойства **Int32**. Его невозможно анимировать с помощью анимации **Double**. Вместо этого необходимо определить [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) с компонентами [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132), где для [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) задано целое число, например 0 или 1.
+**Примечание**в этом примере значение [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) является типом свойства **Int32** . Его невозможно анимировать с помощью анимации **Double**. Вместо этого необходимо определить [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) с компонентами [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132), где для [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) задано целое число, например 0 или 1.
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>Правила для свойств в пути к свойству нацеливания на анимацию
 

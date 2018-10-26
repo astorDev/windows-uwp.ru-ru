@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: abff26c7f2e874d4a5e8e964fe716fcf2f1592cb
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: be88f06cd5893f2f67697a54754826440bdf7d18
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045097"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563869"
 ---
 # <a name="bc6h-format"></a>Формат BC6H
 
@@ -34,15 +32,15 @@ ms.locfileid: "1045097"
 -   **DXGI\_FORMAT\_BC6H\_UF16**. В этом формате BC6H не используется знаковый бит в 16-разрядных значениях канала цвета с плавающей запятой.
 -   **DXGI\_FORMAT\_BC6H\_SF16**. В этом формате BC6H используется знаковый бит в 16-разрядных значениях канала цвета с плавающей запятой.
 
-**Примечание**. 16-разрядный формат для каналов цвета с плавающей запятой часто называют "полуформатом" с плавающей запятой. Формат имеет следующее расположение битов:
+**Примечание**  16-разрядный формат с плавающей запятой для каналов цвета — это часто называют «полуформатом» с плавающей запятой. Формат имеет следующее расположение битов:
 |                       |                                                 |
 |-----------------------|-------------------------------------------------|
 | UF16 (без знака с плавающей запятой) | 5 разрядов экспоненты + 11 разрядов мантиссы              |
 | SF16 (со знаком с плавающей запятой)   | 1 разряд знака + 5 разрядов экспоненты + 10 разрядов мантиссы |
 
- 
+ 
 
- 
+ 
 
 Формат BC6H можно использовать для ресурсов текстуры [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277) (включая массивы), Texture3D или TextureCube (включая массивы). Аналогичным образом этот формат применяется к любым поверхностям MIP-карты, связанным с этими ресурсами.
 
@@ -114,7 +112,7 @@ decompress_bc6h(x, y, block)
 | 13   | 63 бита           | 0 битов    | 60 битов (12,8, 12,8, 12,8)       | 5 битов (01011) |
 | 14   | 63 бита           | 0 битов    | 60 битов (16,4, 16,4, 16,4)       | 5 битов (01111) |
 
- 
+ 
 
 Каждый формат в этой таблице можно уникально идентифицировать битами режима. Первые десять режимов используются для плиток с двумя регионами, а поле бита режима может иметь длину два бита или пять битов. Эти блоки также имеют поля для конечных точек сжатого цвета (72 или 75 битов), раздела (5 битов) и индексов раздела (46 битов).
 
@@ -160,7 +158,7 @@ decompress_bc6h(x, y, block)
 | by    | endpt\[1\].A\[2\] |
 | bz    | endpt\[1\].B\[2\] |
 
- 
+ 
 
 Endpt\[i\], где i— это 0 или 1, относится к нулевому или первому набору конечных точек соответственно.
 ## <a name="span-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspansign-extension-for-endpoint-values"></a><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>Расширение знака для значений конечных точек
@@ -329,9 +327,9 @@ unsigned short finish_unquantize(int comp)
 
 [Сжатие блоков текстур](texture-block-compression.md)
 
- 
+ 
 
- 
+ 
 
 
 

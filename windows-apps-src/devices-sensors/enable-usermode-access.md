@@ -5,17 +5,15 @@ description: В этом руководстве описано, как пред�
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: acpi
 keywords: Windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: b6a8877d2991f953853339ac8fea3efad6d735c6
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.openlocfilehash: 09957c19414f586a49a1a2cb9186aa027dc1de07
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2018
-ms.locfileid: "1618429"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560573"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Предоставление доступа в пользовательском режиме к GPIO, I2C и SPI
 
@@ -740,7 +738,7 @@ devcon status *msft8000
 
 Теперь, если rhproxy запущен, он должен был создать интерфейсы устройств, доступ к которым может осуществляться из пользовательского режима. Мы используем несколько средств командной строки для перечисления устройств и проверим, присутствуют ли они.
 
-Клонируйте репозиторий [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) и выполните сборку примеров `GpioTestTool`, `I2cTestTool`, `SpiTestTool` и `Mincomm`. Скопируйте средства на свое устройство в тестовую папку и используйте следующие команды для перечисления устройств.
+Клонирование [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) репозитория и сборки `GpioTestTool`, `I2cTestTool`, `SpiTestTool`, и `Mincomm` примеры. Скопируйте средства на свое устройство в тестовую папку и используйте следующие команды для перечисления устройств.
 ```
 I2cTestTool.exe -list
 SpiTestTool.exe -list
@@ -847,7 +845,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 ### <a name="appendix-a---raspberry-pi-asl-listing"></a>Приложение А. Списки ASL в Raspberry Pi
 
-Вывод заголовка: https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
+Схема контактов:https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1009,7 +1007,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### <a name="appendix-b---minnowboardmax-asl-listing"></a>Приложение B. Списки ASL в MinnowBoardMax
 
-Вывод заголовка: https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
+Схема контактов:https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)

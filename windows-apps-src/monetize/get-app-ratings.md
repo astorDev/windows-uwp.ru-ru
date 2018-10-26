@@ -6,16 +6,14 @@ title: Получение сведений об оценках приложен�
 ms.author: mhopkins
 ms.date: 11/29/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, оценки
 ms.localizationpriority: medium
-ms.openlocfilehash: 0671015ead96b57515b4b451a06ff3c9cf1a94cb
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 892e3ae8ffcc8277f09afe8d1aef41e9905c2f85
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469325"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564068"
 ---
 # <a name="get-app-ratings"></a>Получение сведений об оценках приложения
 

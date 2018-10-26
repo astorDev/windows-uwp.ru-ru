@@ -6,23 +6,21 @@ ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, отрисовка
 ms.localizationpriority: medium
-ms.openlocfilehash: 450f95e68c85a325e43127df90ffeddbaa850afa
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 7e8df200e8e989015834608d38cb8dfb0d36917b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488868"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560487"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>Платформа отрисовки I: введение в отрисовку
 
-В предыдущих статьях мы рассмотрели, как структурировать игру универсальной платформы Windows (UWP) для работы в среде выполнения Windows, а также как определить конечный автомат для обработки потока игры. Теперь пора поговорить о построении платформы отрисовки. Давайте рассмотрим, как игра-пример отрисовывает игровую сцену с использованием технологии Direct3D 11 (которую обычно называют DirectX 11).
+В предыдущих статьях мы рассмотрели, как структурировать игру универсальной платформы Windows (UWP) для работы в среде выполнения Windows, а также как определить конечный автомат для обработки потока игры. Теперь пора поговорить о построении платформы отрисовки. Давайте рассмотрим, как игра-пример отрисовывает игровую сцену с помощью Direct3D11 (которую обычно называют DirectX 11).
 
 >[!Note]
->Если вы еще не скачали последний код для игры из этого примера, перейдите в статью [Пример игры Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Этот пример является частью большой коллекции примеров функций UWP. Инструкции по скачиванию этого примера приводятся в статье [Получение примеров UWP из GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
+>Если вы еще не скачали последний код для игры из этого примера, перейдите в раздел [Пример игры Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Этот пример является частью большой коллекции примеров функций UWP. Инструкции по скачиванию этого примера приводятся в статье [Получение примеров UWP из GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
 Direct3D 11 содержит набор API, которые обеспечивают доступ к возможностям высокопроизводительного графического оборудования. Эти возможности можно использовать для создания трехмерной графики для приложений с интенсивным использованием графики, таких как игры.
 
@@ -620,7 +618,7 @@ Direct3D 11 реализует два типа контекста устройс
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX Graphics Infrastructure (DXGI)— это новая подсистема, впервые появившаяся в Windows Vista, которая инкапсулирует некоторые задачи низкого уровня, необходимые Direct3D 10 10.1, 11 и 11.1. В многопоточных приложениях использовать DXGI необходимо с особой осторожностью во избежание возникновения взаимоблокировок. Подробнее: [DirectX Graphics Infrastructure (DXGI): рекомендации, связанные с многопоточностью](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
+Microsoft DirectX Graphics Infrastructure (DXGI) — это новая подсистема, впервые появившаяся в WindowsVista, которая инкапсулирует некоторые задачи низкого уровня, необходимые Direct3D 10 10.1, 11 и 11.1. В многопоточных приложениях использовать DXGI необходимо с особой осторожностью во избежание возникновения взаимоблокировок. Подробнее: [DirectX Graphics Infrastructure (DXGI): рекомендации, связанные с многопоточностью](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
 
 ### <a name="feature-level"></a>Уровень компонентов
 
@@ -630,7 +628,7 @@ Microsoft DirectX Graphics Infrastructure (DXGI)— это новая подси
 
 Используя уровень компонентов, при создании устройства вы можете попытаться создать устройство для уровня компонентов, который вы хотите запросить. Если создать устройство удалось, этот уровень компонентов существует; если нет, оборудование не поддерживает этот уровень компонентов. Можно либо попробовать заново создать устройство на более низком уровне компонентов, либо закрыть приложение. Например, уровень компонентов 12\_0 требует Direct3D 11.3 или Direct3D 12 и Shader Model 5.1. Подробнее: [Уровни компонентов Direct3D: обзор каждого уровня компонентов](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview).
 
-Используя уровни компонентов, можно разработать приложение для Direct3D 9, Microsoft Direct3D 10 или Direct3D 11, а затем запустить его на оборудовании 9, 10 или 11 (за некоторыми исключениями). Подробнее: [Уровни компонентов Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx).
+Используя уровни компонентов, можно разработать приложение для Direct3D9, Microsoft Direct3D10 или Direct3D11 и затем запустить его на оборудовании 9, 10 или 11 (за некоторыми исключениями). Подробнее: [Уровни компонентов Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx).
 
 ### <a name="stereo-rendering"></a>Стереоскопическая отрисовка
 

@@ -5,16 +5,14 @@ title: С помощью XAML UWP, API размещения в приложен�
 ms.author: mcleans
 ms.date: 09/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp, windows forms, wpf
 keywords: Windows 10, uwp, windows forms, wpf, win32
 ms.localizationpriority: medium
-ms.openlocfilehash: 5803646c3b613a5a57992a9791215138cf996966
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 2ba64e32a25feaee9245bbfe2b598c756b29df98
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474028"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562245"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>С помощью XAML UWP, API размещения в приложении рабочего стола
 
@@ -61,7 +59,7 @@ XAML UWP, API размещения этих условий.
 
     * **C++ Win32:** Мы рекомендуем настроить проект, чтобы использовать [C + +/ WinRT](../cpp-and-winrt-apis/index.md). Скачайте и установите [C + +/ расширение Visual Studio WinRT (VSIX)](https://aka.ms/cppwinrt/vsix) из Visual Studio Marketplace, а затем добавьте ```<CppWinRTEnabled>true</CppWinRTEnabled>``` свойства VCXPROJ-файл как описано [ниже](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
-    * **Windows Forms и WPF:** Выполните [следующие действия](../porting/desktop-to-uwp-enhance.md#modify-a-net-project-to-use-uwp-apis).
+    * **Windows Forms и WPF:** Выполните [следующие действия](../porting/desktop-to-uwp-enhance.md).
 
 ## <a name="architecture-of-xaml-islands"></a>Архитектура XAML острова
 

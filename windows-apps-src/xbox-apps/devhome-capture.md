@@ -1,48 +1,46 @@
 ---
 author: v-angraf
 ms.assetid: 67934477-337a-5235-b0de-8ac038177267
-title: Мультимедиа запись страницы (Домашняя страница для разработчиков)
-description: Сведения о странице захвата мультимедиа дома разработки приложения для одного Xbox.
+title: Страница (Dev Home) записи мультимедиа
+description: Предоставляет сведения о странице захвата мультимедиа главную страницу приложения для Xbox One.
 ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-capture.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 21fe8eeb4ce3b5062aca625537061209e74c503f
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 1866c4f94c5ef681080ae2a5658c6edba11ec44b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1015252"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562927"
 ---
-# <a name="media-capture-page-dev-home"></a>Мультимедиа запись страницы (Домашняя страница для разработчиков)
+# <a name="media-capture-page-dev-home"></a>Страница (Dev Home) записи мультимедиа
    
   
-Страница **захвата мультимедиа** из дома разработки захватывает видео заголовок, в настоящее время работает на консоли.   
- ![Получение страницы домашней разработчиков](images/devhome_capture.png)   
+Страницу **захвата мультимедиа** главную страницу захват видео заголовок, который в настоящее время запущено на консоли.   
+ ![Страница главную страницу записи](images/devhome_capture.png)   
   
 Страница **захвата мультимедиа** содержит следующие области:   
  
-   *  [Видеозаписи](#ID4EHB)  
+   *  [Видеозахват](#ID4EHB)  
 
  
 <a id="ID4EHB"></a>
 
    
 
-## <a name="video-capture"></a>Видеозаписи  
+## <a name="video-capture"></a>Видеозахват  
    
   
-Область **записи видео** содержит средства, запишите видеопоток от консоли для разработчиков. Также вы можете захватить видео последние несколько секунд с помощью консоли.   
+Область **захвата видео** содержит средства, которые выполняют запись видеопотока с консоли разработчика. Также можно записать видео последние несколько секунд из консоли.   
   
 <a id="ID4ERB"></a>
 
    
 
-## <a name="see-also"></a>Статьи по теме  
- [Домашняя страница разработчиков в консоли (Домашняя страница для разработчиков)](dev-home.md)
+## <a name="see-also"></a>См. также  
+ [Главная страница разработчика на консоли (Dev Home)](dev-home.md)
 
   

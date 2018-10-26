@@ -6,16 +6,14 @@ title: Создание, планирование мультимедийных �
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b8d25047435ece1c55a982e69be45fa0e6efb74
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 0feb7f6771254bf500e4b64fd0e632daad9817e4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843667"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560027"
 ---
 # <a name="create-schedule-and-manage-media-breaks"></a>Создание, планирование и управление мультимедийными вставками
 
@@ -88,10 +86,6 @@ ms.locfileid: "1843667"
 
 [!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
 
-## <a name="get-information-about-the-current-media-break"></a>Получение информации о текущей мультимедийной вставке
-Как упоминалось ранее в этой статье, свойство [**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) можно использовать для определения текущего воспроизводимого элемента мультимедиа из мультимедийной вставки. Можно периодически проверять текущий воспроизводимый элемент для обновления пользовательского интерфейса. Обязательно сначала проверяйте, не имеет ли свойство [**CurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.CurrentBreak) значение NULL. Если свойство имеет значение NULL, в настоящее время никакая мультимедийная вставка не воспроизводится.
-
-[!code-cs[GetCurrentBreakItemIndex](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetGetCurrentBreakItemIndex)]
 
 ## <a name="access-the-current-playback-session"></a>Доступ к текущему сеансу воспроизведения
 Объект [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) использует класс **MediaPlayer** для предоставления данных и событий, связанных с текущим воспроизводимым мультимедийным содержимым. [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) также имеет объект **MediaPlaybackSession**, к которому можно обращаться для получения данных и событий, связанных с конкретным воспроизводимым содержимым мультимедийной вставки. Сведения, которые можно получить из сеанса воспроизведения, включают в себя текущее состояние воспроизведения (воспроизводится или приостановлено) и текущее положение воспроизведения в рамках содержимого. Свойства [**NaturalVideoWidth**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoWidth) и [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoHeight), а также [**NaturalVideoSizeChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoSizeChanged) можно использовать для настройки пользовательского интерфейса видео, если мультимедийная вставка и основное содержимое имеют разное соотношение сторон. Можно также получать такие события, как [**BufferingStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingStarted), [**BufferingEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingEnded) и [**DownloadProgressChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.DownloadProgressChanged), которые предоставляют ценную телеметрии о производительности приложения.
@@ -107,9 +101,9 @@ ms.locfileid: "1843667"
 * [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Ручное управление системными элементами управления воспроизведением мультимедиа](system-media-transport-controls.md)
 
- 
+ 
 
- 
+ 
 
 
 

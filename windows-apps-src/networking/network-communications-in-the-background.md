@@ -4,31 +4,31 @@ description: Чтобы продолжить сетевое взаимодейс
 title: Передача данных по сети в фоновом режиме
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 ms.author: stwhi
-ms.date: 3/23/2018
+ms.date: 06/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 442e2f37ab5c7c83f06ecb444e6ae79f9c2a74dd
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691183"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561193"
 ---
 # <a name="network-communications-in-the-background"></a>Передача данных по сети в фоновом режиме
-Чтобы продолжить сетевое взаимодействие, пока оно не в фоновом режиме, приложение может использовать фоновые задачи и посредник сокетов или триггеры канала управления. Приложения, использующие сокеты для продолжительных соединений, могут делегировать право собственности системному брокеру сокетов, когда они покидают передний план. Затем брокер активирует приложение, когда трафик поступает в сокет, передает право собственности приложению, и приложение обрабатывает входящий трафик.
+Чтобы продолжить сетевое взаимодействие, когда оно не находится на переднем плане, ваше приложение может использовать фоновые задачи и один из этих двух вариантов.
+- Брокер сокетов. Если ваше приложение использует сокеты для продолжительных соединений затем, когда они покидают передний план, он может делегировать право собственности системному брокеру сокетов. Затем брокер: активирует приложение, когда трафик поступает в сокет; передает право собственности вашего приложения; и ваше приложение обрабатывает входящий трафик.
+- Триггеры канала управления. 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>Выполнение сетевых операций в фоновых задачах
-- Используйте [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) для активации фоновой задачи при получении пакета и возникновении необходимости выполнить кратковременную задачу. После выполнения задачи фоновая задача должна завершить работу для экономии электроэнергии.
-Используйте [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) для активации фоновой задачи при получении пакета и возникновении необходимости выполнить долговременную задачу.
+- Используйте [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) для активации фоновой задачи при получении пакета и возникновении необходимости выполнить кратковременную задачу. После выполнения задачи фоновая задача должна завершить работу для экономии энергии.
+- Используйте [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) для активации фоновой задачи при получении пакета и возникновении необходимости выполнить долговременную задачу.
 
-**Условия и флаги, связанные с сетью**
+**Сетевые условия и флаги**
 
 - Добавьте условие **InternetAvailable** в фоновую задачу [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) для задержки активации фоновой задачи, пока не заработает сетевой стек. Это условие экономит энергию, так как фоновая задача не будет выполняться, пока нет сети. Это условие не поддерживает активацию в режиме реального времени.
 
-Независимо от того, какой используется триггер, задайте условие [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) для фоновой задачи, чтобы обеспечить сохранность подключения к сети, пока выполняется фоновая задача. Это указывает инфраструктуре фоновых задач на необходимость поддержания соединения во время выполнения задачи, даже если устройство переходит в режим ожидания с подключением. Если ваша фоновая задача не использует **IsNetworkRequested** согласно приведенным здесь указаниям, эта фоновая задача не сможет получить доступ к сети в режиме ожидания с подключением (например, при выключении экрана телефона).
+Независимо от того, какой используется триггер, задайте условие [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) для фоновой задачи, чтобы обеспечить сохранность подключения к сети, пока выполняется фоновая задача. Это указывает инфраструктуре фоновых задач на необходимость поддержания соединения во время выполнения задачи, даже если устройство переходит в режим ожидания с подключением. Если фоновая задача не использует **IsNetworkRequested**, затем фоновая задача не сможет получить доступ к сети в режиме ожидания с подключением (например, при выключении экрана телефона).
 
 ## <a name="socket-broker-and-the-socketactivitytrigger"></a>Брокер сокетов и SocketActivityTrigger
 Если ваше приложение использует соединения [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) или [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906), необходимо использовать [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) и брокер сокетов, чтобы получить уведомление при поступлении трафика для вашего приложения, когда оно не находится на переднем плане.
@@ -157,9 +157,9 @@ case SocketActivityTriggerReason.SocketClosed:
 Возможно, вы заметите, что пример вызывает элемент **TransferOwnership**, как только создает новый или получает существующий сокет, вместо использования с этой целью обработчика событий **OnSuspending**, как описано в данном разделе. Это связано с тем, что в примере акцент сделан на демонстрации [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009), а не использовании сокета для любых других действий, когда он запущен. Вероятно, ваше приложение будет более сложным и в нем необходимо будет использовать **OnSuspending** для определения того, когда вызывать **TransferOwnership**.
 
 ## <a name="control-channel-triggers"></a>Триггеры канала управления
-Сначала убедитесь, что триггеры канала управления (CCT) используются соответствующим образом. Если вы используете соединения [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) или [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906), мы рекомендуем использовать [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). Вы можете использовать CCT для **StreamSocket**, но они используют больше ресурсов и могут не работать в режиме ожидания с подключением.
+Сначала убедитесь, что триггеры канала управления (CCT) используются соответствующим образом. Если вы используете [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)или [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) подключения, затем мы рекомендуем использовать [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). Вы можете использовать CCT для **StreamSocket**, но они используют больше ресурсов и могут не работать в режиме ожидания с подключением.
 
-Если вы используете WebSockets, [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) или **Windows.Web.Http.HttpClient**, вы должны использовать [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+Если вы используете WebSockets, [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)или [**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient), необходимо использовать [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
 ## <a name="controlchanneltrigger-with-websockets"></a>ControlChannelTrigger с WebSockets
 При использовании [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) или [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) действуют особые условия. Существует ряд специфичных для транспорта шаблонов использования и рекомендаций, которыми следует руководствоваться при использовании **MessageWebSocket** или **StreamWebSocket** с **ControlChannelTrigger**. Кроме того, эти аспекты влияют на способ, которым обрабатываются запросы на получение пакетов в **StreamWebSocket**. Запросы на получение пакетов в **MessageWebSocket** остаются без изменений.
@@ -432,8 +432,8 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 ## <a name="controlchanneltrigger-with-httpclient"></a>ControlChannelTrigger с HttpClient
 При использовании [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) действуют особые условия. Существует ряд специфичных для транспорта шаблонов использования и рекомендаций, которыми следует руководствоваться при использовании [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) с **ControlChannelTrigger**. Кроме того, эти аспекты влияют на способ, которым обрабатываются запросы на получение пакетов в [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637).
 
-**Примечание.** Класс [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637), использующий SSL, в настоящее время не поддерживается с помощью функции сетевых триггеров и [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
- 
+**Примечание** [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) с использованием SSL в настоящее время не поддерживается с помощью функции сетевых триггеров и [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+ 
 Ниже приведены шаблоны использования и рекомендации, которыми следует руководствоваться при использовании [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) с [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
 -   Возможно, до отправки запроса на конкретный универсальный код ресурса (URI) приложению потребуется настроить различные свойства и заголовки для объекта [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) или [HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638) в пространстве имен [System.Net.Http](http://go.microsoft.com/fwlink/p/?linkid=227894).

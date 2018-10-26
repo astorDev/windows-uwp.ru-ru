@@ -6,19 +6,17 @@ description: Создавайте приложения универсально�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: f9e045c381fc6c51a769be31403114ad15cf06bd
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 4cbaa56f9c25c0e4ea1f10c79b4f7d1100748532
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894688"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562026"
 ---
 # <a name="optimize-suspendresume"></a>Оптимизация времени приостановки и возобновления работы
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Создавайте приложения универсальной платформы Windows (UWP), которые упростят использование системы жизненных циклов процессов для эффективного восстановления после приостановки или завершения.
 
@@ -90,9 +88,9 @@ ms.locfileid: "894688"
 ## <a name="related-topics"></a>Ссылки по теме
 
 * [Руководство по приостановке и возобновлению работы приложения](https://msdn.microsoft.com/library/windows/apps/Hh465088)
- 
+ 
 
- 
+ 
 
 
 

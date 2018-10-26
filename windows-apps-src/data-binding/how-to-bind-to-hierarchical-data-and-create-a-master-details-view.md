@@ -2,25 +2,24 @@
 author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
 title: Привязка к иерархическим данным и создание представления основных и подробных данных
-description: Создать многоуровневое представление основных и подробных иерархических данных (также известное как &quot;список/подробности&quot;) можно с помощью привязки элементов управления к экземплярам CollectionViewSource, связанным друг с другом в цепочку.
+description: Создать многоуровневое представление основных и подробных иерархических данных (также известное как "список/подробности") можно с помощью привязки элементов управления к экземплярам CollectionViewSource, связанным друг с другом в цепочку.
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 9f297cdb3fdc90ab7c024bce3aa93db69465c5d3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 60d283f41c495f9612311e4b9b9da3df1a44d498
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223733"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564028"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>Привязка к иерархическим данным и создание представления основных и подробных данных
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-> **Примечание.** См. также [Пример основных и подробных данных](http://go.microsoft.com/fwlink/p/?linkid=619991).
+> **Примечание**также см. [Пример подробных данных](http://go.microsoft.com/fwlink/p/?linkid=619991).
 
 Вы можете создать многоуровневое представление основных и подробных иерархических данных (также известное как "список/подробности") с помощью привязки элементов управления к экземплярам [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), связанным друг с другом в цепочку. В этом разделе мы используем [расширение разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) где возможно, и более гибкое (но менее производительное) [расширение разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) там, где необходимо.
 
@@ -225,7 +224,7 @@ namespace MasterDetailsBinding
 
 Обратите внимание, что при привязке представления подробностей непосредственно к [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) подразумевается, что вы хотите выполнить привязку к текущему элементу в привязках, если невозможно найти путь в самой коллекции. Нет необходимости указывать свойство **CurrentItem** в качестве пути для привязки, хотя это можно сделать, если присутствует некая неоднозначность. Например, элемент [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365), отображающий представление команды, обладает свойством [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content), привязанным к `Teams`**CollectionViewSource**. Однако элементы управления в [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) привязаны к свойствам класса `Team`, так как при необходимости **CollectionViewSource** автоматически отображает выбранную на данный момент команду из списка.
 
- 
+ 
 
- 
+ 
 

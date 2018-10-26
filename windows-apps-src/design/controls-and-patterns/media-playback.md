@@ -9,16 +9,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d680ddfb1dd121d2b9763c1d8af646db6de4797
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 113acbe1f4e9bb3814b2f9b61beb79488995d3e3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494041"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563348"
 ---
 # <a name="media-player"></a>Проигрыватель мультимедиа
 
@@ -101,9 +99,9 @@ ms.locfileid: "1494041"
 ### <a name="set-the-media-source"></a>Задание источника мультимедиа
 Для воспроизведения файлов, находящихся в сети или входящих в состав приложения, достаточно указать в свойстве [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) значение [MediaSource](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) с путем к файлу.
 
-**Подсказка.** Для открытия файлов в Интернете необходимо объявить возможность **Internet (Client)** в манифесте приложения (Package.appxmanifest). Подробнее об объявлении возможностей см. в разделе [Объявления возможностей приложения](https://msdn.microsoft.com/library/windows/apps/mt270968).
+**Совет**открывать файлы из Интернета, необходимо объявить возможность **Интернет (клиент)** в манифесте приложения (Package.appxmanifest). Подробнее об объявлении возможностей см. в разделе [Объявления возможностей приложения](https://msdn.microsoft.com/library/windows/apps/mt270968).
 
- 
+ 
 
 Этот код пытается установить в свойстве [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) объекта [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx), определенного в XAML, путь к файлу, введенный в поле [TextBox](https://msdn.microsoft.com/library/windows/apps/br209683).
 

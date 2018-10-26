@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a99cb28818cd8fc3fd9057b3df72a678c2d1aca
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9f187495568892f5b489f6e109669811f4c45ab1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044893"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561530"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>Использование системных значений
 
@@ -68,7 +66,7 @@ IA будет добавлять идентификатор вершины к к
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
- 
+ 
 
 Экземпляр полосы треугольников U имеет 3 примитива-треугольника, со следующими созданными системой значениями:
 
@@ -77,7 +75,7 @@ IA будет добавлять идентификатор вершины к к
 | **PrimitiveID** | 0   | 1   | 2   |
 | **InstanceID**  | 0   | 0   | 0   |
 
- 
+ 
 
 В следующих таблицах показаны созданные системой значения для экземпляра V.
 
@@ -86,7 +84,7 @@ IA будет добавлять идентификатор вершины к к
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
- 
+ 
 
 Экземпляр полосы треугольников V имеет 3 примитива-треугольника, со следующими созданными системой значениями:
 
@@ -95,7 +93,7 @@ IA будет добавлять идентификатор вершины к к
 | **PrimitiveID** | 0   | 1   | 2   |
 | **InstanceID**  | 1   | 1   | 1   |
 
- 
+ 
 
 [Этап сборщика входных данных (IA)](input-assembler-stage--ia-.md) создает идентификаторы (вершин, примитивов и экземпляров); также обратите внимание, что каждому экземпляру присваивается уникальный идентификатор экземпляра. Данные заканчиваются вырезанием полосы, которое разделяет экземпляры полосы треугольников.
 
@@ -104,9 +102,9 @@ IA будет добавлять идентификатор вершины к к
 
 [Этап сборщика входных данных (IA)](input-assembler-stage--ia-.md)
 
- 
+ 
 
- 
+ 
 
 
 

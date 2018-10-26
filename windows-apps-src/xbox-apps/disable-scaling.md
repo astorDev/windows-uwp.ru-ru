@@ -5,15 +5,15 @@ description: Инструкции по отключению коэффициен
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6e68c1fc-a407-4c0b-b0f4-e445ccb72ff3
-ms.openlocfilehash: 4361437c8b6d67431bf879f9eb1cfbf3c03e592e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 82b42b25d3894a82e92af9a520ee5f951a5ba344
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225119"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563523"
 ---
 # <a name="how-to-turn-off-scaling"></a>Отключение масштабирования   
 По умолчанию XAML-приложения масштабируются до 200%, а HTML-приложения — до 150%. Коэффициент масштабирования по умолчанию можно отключить. В результате приложение будет использовать фактические размеры устройства в пикселях (1910 x 1080 пикселей).   
