@@ -2,24 +2,22 @@
 author: GrantMeStrength
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: Создание приложения Hello, world (JS)
-description: В этом учебнике описано, как с помощью JavaScript и HTML создать простое приложение &\#0034;Hello, world&\#0034;, предназначенное для универсальной платформы Windows (UWP) в Windows 10.
+description: В этом учебнике описано, как с помощью JavaScript и HTML создать простое приложение & \#0034; Hello, world & \#0034; приложение, которое предназначено для универсальной платформы Windows (UWP) в Windows10.
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b541f2388fd4980af4b405a89ee6a04b700a3e84
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 4d8fb1dc486c039007c3ea0d4ee36d72c0c511f9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692745"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556858"
 ---
 # <a name="create-a-hello-world-app-js"></a>Создание приложения "Hello, world" (JS)
 
-В этом учебнике описано, как с помощью JavaScript и HTML создать простое приложение «Hello, world», предназначенное для универсальной платформы Windows (UWP) в Windows10. С помощью единственного проекта в Microsoft Visual Studio вы можете создать приложение, работающее на любом устройстве с Windows10.
+В этом руководстве описано, как с помощью JavaScript и HTML создать простое «Hello, world» приложения, которое предназначено для универсальной платформы Windows (UWP) в Windows10. С помощью одного проекта в Microsoft Visual Studio можно создать приложение, которое работает на любом устройстве Windows10.
 
 > [!NOTE]
 > В этом учебнике используется Visual Studio Community 2017. Если вы используете другую версию Visual Studio, она может выглядеть иначе.
@@ -27,14 +25,14 @@ ms.locfileid: "1692745"
 
 В этом разделе вы научитесь выполнять следующие действия.
 
--   Создавать новый проект **Visual Studio 2017**, предназначенный для **Windows10** и платформы **UWP**.
+-   Создание нового проекта **Visual Studio 2017** , предназначенное **Windows10** и **UWP**.
 -   Добавлять содержимое HTML и JavaScript
 -   Запускать проект на локальном компьютере в Visual Studio
 
 ## <a name="before-you-start"></a>Перед началом работы...
 
 -   [Что такое приложение UWP?](universal-application-platform-guide.md)
--   Для работы с этим учебником вам потребуются Windows10 и Visual Studio 2017. [Подготовка](get-set-up.md).
+-   Для работы с этим учебником вам потребуются Windows10 и Visual Studio2017. [Подготовка](get-set-up.md).
 -   Мы также предполагаем, что в Visual Studio используется компоновка окна по умолчанию. Если макет по умолчанию изменен, его можно сбросить в меню **Окно** с помощью команды **Сбросить макет окна**.
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>Шаг 1. Создание нового проекта в Visual Studio.
@@ -159,7 +157,7 @@ function sayHello() {
 ## <a name="summary"></a>Сводка
 
 
-Поздравляем! Вы создали свое первое приложение на JavaScript для Windows10 и UWP! Это простейший пример, но теперь вы можете добавлять свои избранные библиотеки и платформы JavaScript для создания собственного приложения. А так как это приложение UWP, вы можете опубликовать его в Магазине. Примеры того, как добавить сторонние платформы, см. в следующих проектах:
+Поздравляем, вы создали приложение на JavaScript для Windows10 и UWP. Это простейший пример, но теперь вы можете добавлять свои избранные библиотеки и платформы JavaScript для создания собственного приложения. А так как это приложение UWP, вы можете опубликовать его в Магазине. Примеры того, как добавить сторонние платформы, см. в следующих проектах:
 
 * [Простая двухмерная игра UWP для Microsoft Store, написанная на языках JavaScript и CreateJS](get-started-tutorial-game-js2d.md)
 * [Трехмерная игра UWP для Microsoft Store, написанная на JavaScript и threeJS](get-started-tutorial-game-js3d.md)

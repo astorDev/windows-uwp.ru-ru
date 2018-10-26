@@ -6,19 +6,17 @@ description: Узнайте, как создать периодически по
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, периодический рабочий элемент, потоки, таймеры
-ms.openlocfilehash: 59dd19692143b155c33f8fdd7f3197f724ebb0ac
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665278"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558885"
 ---
 # <a name="create-a-periodic-work-item"></a>Создание периодического рабочего элемента
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -33,9 +31,9 @@ ms.locfileid: "665278"
 
 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) возвращает объект [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Храните этот объект на случай, если таймер придется отменить.
 
-> **Примечание.**  Не задавайте интервалу нулевое значение (или значения меньше одной миллисекунды). Это приведет к тому, что периодический таймер будет вести себя как одиночный.
+> **Примечание**избежать, указав нулевое значение (или значения меньше одной миллисекунды) в течение интервала. Это приведет к тому, что периодический таймер будет вести себя как одиночный.
 
-> **Примечание.**  Для доступа к пользовательскому интерфейсу и отображения хода выполнения из рабочего элемента можно использовать [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317).
+> **Примечание** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) можно использовать для доступа к пользовательского интерфейса и отображения хода выполнения из рабочего элемента.
 
 В следующем фрагменте кода создается рабочий элемент, который запускается каждые 60 секунд.
 
@@ -209,4 +207,4 @@ ms.locfileid: "665278"
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)
 * [Отправка рабочего элемента по таймеру](use-a-timer-to-submit-a-work-item.md)
- 
+ 

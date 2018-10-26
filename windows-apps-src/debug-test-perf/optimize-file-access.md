@@ -6,19 +6,17 @@ description: Создайте приложения универсальной п
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 00ad06179ed4a77cb3e5144df12d5490f79a5df2
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 1b0b1a45bc967dd69d38f2e85609a5e13ffd61b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894618"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558789"
 ---
 # <a name="optimize-file-access"></a>Оптимизация доступа к файлам
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Создайте приложения универсальной платформы Windows (UWP), получающие эффективный доступ к файловой системе, избегая проблем с производительностью, связанных с задержкой диска и тактами запоминания данных в памяти и центральном процессоре.
 
@@ -137,7 +135,7 @@ ms.locfileid: "894618"
 
 ### <a name="buffering-between-uwp-and-net-streams"></a>Буферизация между потоками UWP и .NET
 
-Существует много сценариев, когда вам может понадобиться преобразовать поток UWP (например, [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) или [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) в поток .NET ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). Например, это может пригодиться, когда вы пишете приложение UWP и хотите использовать уже существующий код .NET, который работает в потоках с файловой системой UWP. Чтобы это осуществить, API .NET для приложений Магазина Windows предоставляют методы расширения, которые позволяют вам преобразовывать потоки типа .NET в потоки типа UWP и наоборот. Подробнее см. в разделе [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
+Существует много сценариев, когда вам может понадобиться преобразовать поток UWP (например, [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) или [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) в поток .NET ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). Например, это может пригодиться, когда вы пишете приложение UWP и хотите использовать уже существующий код .NET, который работает в потоках с файловой системой UWP. Чтобы это, API-интерфейсы .NET для приложений UWP предоставляют методы расширения, которые позволяют вам преобразовывать потоки типа потоки типа .NET и UWP. Подробнее см. в разделе [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
 
 Во время преобразования потока UWP в поток .NET вы создаете адаптер для основного потока UWP. При некоторых условиях требуются затраты времени, связанные с применением методов на потоках UWP. Это может повлиять на скорость вашего приложения, особенно в сценариях, где необходимо выполнять много маленьких и частых операций чтения или записи.
 
@@ -200,7 +198,7 @@ ms.locfileid: "894618"
 
 При чтении или записи больших наборов данных вы можете увеличить пропускную способность чтения или записи, предоставив буфер большого размера для методов расширения [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx), [**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) и [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx). Это обеспечит адаптеру потоков внутренний буфер большего размера. Например, при передаче потока из большого файла в синтаксический анализатор XML анализатор может последовательно выполнить много маленьких операций чтения из потока. Большой буфер может снизить количество обращений к основному потоку UWP и повысить производительность.
 
-> **Примечание.** Нужно быть осторожными при установке размера буфера выше приблизительно 80КБ, т.к. это может привести к фрагментации кучи сборщика мусора (см. раздел [Повышение производительности сборки мусора](improve-garbage-collection-performance.md)). В следующем примере кода создается управляемый адаптер потоков с буфером размером 81 920 байт.
+> **Примечание**  нужно быть осторожными при установке размера буфера выше приблизительно 80 КБ, так как это может привести к фрагментации кучи сборщика мусора (см. в разделе [Повышение производительности сборки мусора](improve-garbage-collection-performance.md)). В следующем примере кода создается управляемый адаптер потоков с буфером размером 81 920 байт.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

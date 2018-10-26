@@ -6,16 +6,14 @@ title: Получение информации о лицензии для при
 ms.author: mhopkins
 ms.date: 12/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, лицензии, приложения, надстройки, покупки из приложения, IAP, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 83889dce2959a3d373081808864a6b7913fb142b
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 032f2419f39e50c023e2c301b70778f421f447f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515952"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558514"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>Получение информации о лицензии для приложений и надстроек
 

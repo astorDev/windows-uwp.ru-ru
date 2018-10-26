@@ -6,16 +6,14 @@ ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 82d01ab6fc70397824b4bd6b267dd5e7cdeac0ee
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 309dd2aedb2195362652da93c13648d07e5ea9f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975806"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559696"
 ---
 # <a name="rssatom-feeds"></a>Каналы RSS и Atom
 
@@ -48,7 +46,7 @@ ms.locfileid: "975806"
 
 Сетевая изоляция влияет на все элементы класса в пространствах имен [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) и [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609), которые пытаются получить доступ к сети. Сетевая изоляция активно используется в Windows. Вызов элемента класса в пространстве имен **Windows.Web.Syndication** или **Windows.Web.AtomPub**, обеспечивающем доступ к сети, может быть не выполнен из-за сетевой изоляции, если соответствующая возможность работы с сетью не была включена.
 
-Возможности сети для приложения настраиваются в его манифесте при сборке. Они обычно добавляются с помощью Microsoft Visual Studio 2015 в ходе разработки приложения. Возможности сети можно также задать вручную в файле манифеста приложения, используя текстовый редактор.
+Возможности сети для приложения настраиваются в его манифесте при сборке. Они обычно добавляются с помощью Microsoft Visual Studio2015 при разработке приложения. Возможности сети можно также задать вручную в файле манифеста приложения, используя текстовый редактор.
 
 Дополнительные сведения о сетевой изоляции и сетевых возможностях см. в разделе "Возможности" темы [Основы работы с сетями](networking-basics.md).
 

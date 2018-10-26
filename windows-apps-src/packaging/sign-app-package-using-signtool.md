@@ -5,17 +5,15 @@ description: Используйте SignTool для ручного подпис�
 ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: c238855f4f018e8e3142509842221c6b9d97fae3
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: adb94257f6a978ba0b5ea56facf3894e2cfae32b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518188"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558567"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>Подписание пакета приложения с помощью SignTool
 

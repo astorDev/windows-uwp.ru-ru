@@ -1,69 +1,142 @@
 ---
-author: mtoepke
+author: joannaleecy
 title: Добавление звука
-description: На этом этапе мы познакомимся с тем, как в образце игры-шутера создается объект для воспроизведения звука с помощью API XAudio2.
+description: Разработка простой звуковые подсистемы с помощью API XAudio2 для воспроизведения музыки в игре и звуковые эффекты.
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
-ms.author: mtoepke
-ms.date: 02/08/2017
+ms.author: joanlee
+ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, звуки
-ms.openlocfilehash: 11553a22274a36094a3e839e8fda648f78cfaaf8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 3d1c95fe883cf2517855a3b6f1c4dfc6c9b6dd9a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223982"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557305"
 ---
 # <a name="add-sound"></a>Добавление звука
 
+В этом разделе мы создадим простое звуковой подсистемы с помощью [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API-интерфейсы. Если вы не знакомы с __XAudio2__, которые мы включили Краткое введение в [концепции звука](#audio-concepts).
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-На этом этапе мы познакомимся с тем, как в образце игры-шутера создается объект для воспроизведения звука с помощью API [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813).
+>[!Note]
+>Если вы еще не скачали последний код для игры из этого примера, перейдите в раздел [Пример игры Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Этот пример является частью большой коллекции примеров функций UWP. Указания по скачиванию этого примера приводятся в разделе [Получение примеров UWP из GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
 ## <a name="objective"></a>Цель
 
+Добавьте звуки в примере игры, с помощью [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813).
 
--   Добавить вывод звука с помощью [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813).
+## <a name="define-the-audio-engine"></a>Определение обработчика звука
 
 В образце игры объекты аудио и расширения их функциональности определены в трех файлах:
 
--   **Audio.h/.cpp**. Данный файл кода определяет объект **Audio**, содержащий ресурсы XAudio2 для воспроизведения звука. Он также определяет метод приостановки и возобновления воспроизведения звука в случаях приостановки или деактивации игры.
--   **MediaReader.h/.cpp**. Данный код определяет методы чтения звуковых файлов в формате WAV из локального хранилища.
--   **SoundEffect.h/.cpp**. Данный код определяет объект для воспроизведения внутриигрового звука.
+* __[Audio.h](#audioh)/.cpp__: Определяет объект __воспроизведения звука__ , который содержит ресурсы __XAudio2__ для воспроизведения звука. Он также определяет метод приостановки и возобновления воспроизведения звука в случаях приостановки или деактивации игры.
+* __ [MediaReader.h](#mediareaderh)/.cpp__: Определяет методы чтения звуковых WAV-файлов из локального хранилища.
+* __ [SoundEffect.h](#soundeffecth)/.cpp__: Определяет объект для воспроизведения звука в игре.
 
-## <a name="defining-the-audio-engine"></a>Определение обработчика звука
+## <a name="overview"></a>Обзор
 
+Существует три основных частей в Подготовка для воспроизведения звука в игре.
 
-Когда запускается образец игры, создается объект **Audio**, выделяющий звуковые ресурсы для игры. Данный код объявляет, что этот объект выглядит следующим образом:
+1. [Создание и инициализация звуковых ресурсов](#create-and-initialize-the-audio-resources)
+2. [Загрузка звукового файла](#load-audio-file)
+3. [Связывание звук объект](#associate-sound-to-object)
+
+Все они определены в методе [Simple3DGame::Initialize](#simple3dgameinitialize-method) . Поэтому давайте сначала рассмотрим этот метод и затем углубиться в подробности в каждом из разделов.
+
+После настройки, мы Узнайте, как активировать звуковые эффекты для воспроизведения. Дополнительные сведения перейдите к [воспроизведения звука](#play-the-sound).
+
+### <a name="simple3dgameinitialize-method"></a>Метод Simple3DGame::Initialize
+
+В __Simple3DGame::Initialize__, где __m\_controller__ и __m\_renderer__ также инициализируются, мы Настройка звука и подготовьтесь к звуки.
+
+ * Создайте __m\_audioController__, которое является экземпляром класса [звука](#audioh) .
+ * Создание звуковых ресурсов, необходимых, используя метод [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method) . В данном случае — двух объектов __XAudio2__ &mdash; были созданы объекте обработчика музыки и объект звуковая подсистема и управляющее аудиоустройство для каждого из них. Для воспроизведения фоновой музыки в игре используется объекте обработчика музыки. Звуковая подсистема может использоваться для воспроизведения звуковых эффектов в игру. Дополнительные сведения см. в разделе [Создание и инициализация звуковых ресурсов](#create-and-initialize-the-audio-resources).
+ * Создайте __mediaReader__, которое является экземпляром класса [MediaReader](#mediareaderh) . [MediaReader](#mediareaderh), который является вспомогательный класс для класса [SoundEffect](#soundeffecth) , синхронно считывает небольшое звуковые файлы из расположения и возвращает звуковых данных как массив байтов.
+ * Используйте [MediaReader::LoadMedia](#mediareaderloadmedia-method) для загрузки звуковых файлов из места расположения и создайте переменную __targetHitSound__ для хранения загруженного формате WAV звуковых данных. Дополнительные сведения см. в разделе [Загрузка звукового файла](#load-audio). 
+
+Звуковые эффекты связаны с игровой объект. Поэтому в случае конфликта с помощью этого объекта игры активирует звуковой эффект, который будет воспроизводиться. В этом примере игры у нас есть звуковые эффекты для сферы, (что мы используем для прокрутить целевых объектов с), а также для целевого объекта. 
+    
+* В классе __GameObject__ существует свойство __HitSound__ , используемом для связывания звуковой эффект к объекту.
+* Создайте новый экземпляр класса [SoundEffect](#soundeffecth) и инициализировать его. Во время инициализации создается исходный тембр звукового эффекта. 
+* Этот класс воспроизводится звук с помощью управляющей речи, предоставляемый по класс [Audio](#audioh) . Звуковые данные считывается из расположения с помощью класса [MediaReader](#mediareaderh) . Дополнительные сведения см. в разделе [связать звук для объекта](#associate-sound-to-object).
+
+>[!Note]
+>Фактическое триггер для воспроизведения звука, определяется движения и столкновения этих игровых объектов. Следовательно вызов фактически эти звуки определены в методе [Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method) . Дополнительные сведения перейдите к [воспроизведения звука](#play-the-sound).
 
 ```cpp
-public:
-    Audio();
+void Simple3DGame::Initialize(
+    _In_ MoveLookController^ controller,
+    _In_ GameRenderer^ renderer
+    )
+{
+    // ...
+    // Create a new Audio class object.
+    m_audioController = ref new Audio;
 
-    void Initialize();
-    void CreateDeviceIndependentResources();
-    IXAudio2* MusicEngine();
-    IXAudio2* SoundEffectEngine();
-    void SuspendAudio();
-    void ResumeAudio();
+    // Create the audio resources needed.
+    // Two XAudio2 objects are created - one for music engine,
+    // the other for sound engine. A mastering voice is also
+    // created for each of the objects.
+    m_audioController->CreateDeviceIndependentResources();
 
-protected:
-    bool                                m_audioAvailable;
-    Microsoft::WRL::ComPtr<IXAudio2>    m_musicEngine;
-    Microsoft::WRL::ComPtr<IXAudio2>    m_soundEffectEngine;
-    IXAudio2MasteringVoice*             m_musicMasteringVoice;
-    IXAudio2MasteringVoice*             m_soundEffectMasteringVoice;
-};
+    m_ammo = std::vector<Sphere^>(GameConstants::MaxAmmo);
+
+    // ..
+    // Create a media reader which is used to read audio files from its file location.
+    MediaReader^ mediaReader = ref new MediaReader;
+    auto targetHitSound = mediaReader->LoadMedia("Assets\\hit.wav");
+
+    // Instantiate the targets for use in the game.
+    // Each target has a different initial position, size, and orientation.
+    // But share a common set of material properties.
+    for (int a = 1; a < GameConstants::MaxTargets; a++)
+    {
+        // ...
+        // Create a new sound effect object and associate it
+        // with the game object's (target) HitSound property.
+        target->HitSound(ref new SoundEffect());
+
+        // Initialize the sound effect object with
+        // the sound effect engine, format of the audio wave, and audio data
+        // During initialization, source voice of this sound effect is also created.
+        target->HitSound()->Initialize(
+            m_audioController->SoundEffectEngine(),
+            mediaReader->GetOutputWaveFormatEx(),
+            targetHitSound
+            );
+        // ...
+    }
+
+    // Instantiate a set of spheres to be used as ammunition for the game
+    // and set the material properties of the spheres.
+    auto ammoHitSound = mediaReader->LoadMedia("Assets\\bounce.wav");
+
+    for (int a = 0; a < GameConstants::MaxAmmo; a++)
+    {
+        m_ammo[a] = ref new Sphere;
+        m_ammo[a]->Radius(GameConstants::AmmoRadius);
+        m_ammo[a]->HitSound(ref new SoundEffect());
+        m_ammo[a]->HitSound()->Initialize(
+            m_audioController->SoundEffectEngine(),
+            mediaReader->GetOutputWaveFormatEx(),
+            ammoHitSound
+            );
+        m_ammo[a]->Active(false);
+        m_renderObjects.push_back(m_ammo[a]);
+    }
+    // ...
+}
 ```
 
-Методы **Audio::MusicEngine** и **Audio::SoundEffectEngine** возвращают ссылки объектам [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908), определяющим управляющее аудиоустройство (mastering voice) для каждого типа звукового файла. Управляющее аудиоустройство — это аудиоустройство, используемое для воспроизведения. Буферы звуковых данных не могут быть отправлены непосредственно на управляющие аудиоустройства, однако данные, отправленные к другим типам устройств речи, должны быть перенаправлены к управляющему аудиоустройству, чтобы быть услышанными.
+## <a name="create-and-initialize-the-audio-resources"></a>Создание и инициализация звуковых ресурсов
 
-## <a name="initializing-the-audio-resources"></a>Инициализация звуковых ресурсов
+* Используйте [XAudio2Create](https://msdn.microsoft.com/library/windows/desktop/ee419212), XAudio2 API, для создания двух объектов XAudio2, которые определяют подсистемы музыки и звуковых эффектов. Этот метод возвращает указатель на интерфейс [IXAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415908) объекта, который управляет все состояния звука, звук, обработки потока, на графике голосовой связи и многое другое.
+* После модули были созданы, используйте [IXAudio2::CreateMasteringVoice](https://msdn.microsoft.com/library/windows/desktop/hh405048) , чтобы создать тембр мастеринга для каждого из объектов звуковая подсистема.
 
+Дополнительные сведения см. в [как: инициализация XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx).
 
-В данном образце инициализируются объекты [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) для обработчиков музыки и звуковых эффектов с вызовами [**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212). После инициализации обработчиков для каждого из них создается управляющее аудиоустройство с вызовами [**IXAudio2::CreateMasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/hh405048), как показано ниже:
+### <a name="audiocreatedeviceindependentresources-method"></a>Метод Audio::CreateDeviceIndependentResources
 
 ```cpp
 
@@ -95,20 +168,44 @@ void Audio::CreateDeviceIndependentResources()
 }
 ```
 
-После того как файл с музыкой или звуковыми эффектами загружен, метод вызывает [**IXAudio2::CreateSourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee418607) на управляющем аудиоустройстве, которая создает экземпляр исходной речи для воспроизведения. Для этого мы просмотрим код после изучения того, как в образце игры загружаются звуковые файлы.
+## <a name="load-audio-file"></a>Загрузка звукового файла
 
-## <a name="reading-an-audio-file"></a>Чтение звукового файла
+В образце игры код для чтения файлов в формате аудио определяется в [MediaReader.h](#mediareaderh)/cpp__.  Считывать закодированный WAV-файл, вызовите метод [MediaReader::LoadMedia](#mediareaderloadmedia-method), передав filename формате WAV как входного параметра.
 
+### <a name="mediareaderloadmedia-method"></a>Метод MediaReader::LoadMedia
 
-В образце игры код для чтения файлов в формате аудио определяется в **MediaReader.cpp**. Особый метод, позволяющий считывать закодированный WAV-файл, **MediaReader::LoadMedia**, выглядит следующим образом:
+Данный метод использует API [Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) для считывания звукового файла в формате WAV в виде буфера импульсно-кодовой модуляции (ИКМ).
+
+#### <a name="set-up-the-source-reader"></a>Настройка устройства чтения источника
+
+1. Используйте [MFCreateSourceReaderFromURL](https://msdn.microsoft.com/library/windows/desktop/dd388110) для создания носителя для устройства чтения источника ([IMFSourceReader](https://msdn.microsoft.com/library/windows/desktop/dd374655)).
+2. Используйте [MFCreateMediaType](https://msdn.microsoft.com/library/windows/desktop/ms693861) для создания объекта ([IMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms704850)) тип мультимедиа (_mediaType_). Он представляет описание формата мультимедиа. 
+3. Укажите, что _тип носителя_декодированный вывод звуковой файл PCM, представляющий собой тип звукового, который может использовать __XAudio2__ .
+4. Наборы тип декодированного выходящего мультимедиа для устройства чтения источника путем вызова [IMFSourceReader::SetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374667.aspx).
+
+Дополнительные сведения о почему мы используем устройства чтения источника перейдите к [Устройства чтения источника](https://msdn.microsoft.com/library/windows/desktop/dd940436.aspx).
+
+#### <a name="describe-the-data-format-of-the-audio-stream"></a>Описать формат звукового потока данных
+
+1. Используйте [IMFSourceReader::GetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374660) , чтобы получить текущий тип носителя для потока.
+2. Используйте [IMFMediaType::MFCreateWaveFormatExFromMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms702177) для преобразования звуковых носитель в буфер [WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799) , используя результаты предыдущих операции в качестве входных данных. Эта структура задает формат данных первыми звукового потока, используемый после загрузки звука. 
+
+Формат __WAVEFORMATEX__ может использоваться для описания буфера PCM. По сравнению с структуры [WAVEFORMATEXTENSIBLE](https://msdn.microsoft.com/library/windows/hardware/ff538802) она может использоваться только для описания подмножество форматов звуковой волны. Дополнительные сведения о различиях между __WAVEFORMATEX__ и __WAVEFORMATEXTENSIBLE__см. в разделе [Расширяемый формат звукозаписи дескрипторов](https://docs.microsoft.com/windows-hardware/drivers/audio/extensible-wave-format-descriptors).
+
+#### <a name="read-the-audio-stream"></a>Чтение звукового потока
+
+1.  Получите продолжительность в секундах, звукового потока, вызвав метод [IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) , а затем преобразует продолжительность в байтах.
+2.  Чтение звукового файла в виде потока, вызвав метод [IMFSourceReader::ReadSample](https://msdn.microsoft.com/library/windows/desktop/dd374665). Следующий пример считывает __ReadSample__ из источника мультимедиа.
+3.  Используйте [IMFSample::ConvertToContiguousBuffer](https://msdn.microsoft.com/library/windows/desktop/ms698917.aspx) , чтобы скопировать содержимое буфера аудиоданные (_Пример_) в массив (_mediaBuffer_).
 
 ```cpp
-Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
+Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
 {
     DX::ThrowIfFailed(
         MFStartup(MF_VERSION)
         );
 
+    // Creates a media source reader.
     ComPtr<IMFSourceReader> reader;
     DX::ThrowIfFailed(
         MFCreateSourceReaderFromURL(
@@ -118,7 +215,7 @@ Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
             )
         );
 
-    // Set the decoded output format as PCM
+    // Set the decoded output format as PCM.
     // XAudio2 on Windows can process PCM and ADPCM-encoded buffers.
     // When using MediaFoundation, this sample always decodes into PCM.
     Microsoft::WRL::ComPtr<IMFMediaType> mediaType;
@@ -126,46 +223,60 @@ Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
         MFCreateMediaType(&mediaType)
         );
 
+    // Define the major category of the media as audio. For more info about major media types,
+    // go to: https://msdn.microsoft.com/library/windows/desktop/aa367377.aspx
     DX::ThrowIfFailed(
         mediaType->SetGUID(MF_MT_MAJOR_TYPE, MFMediaType_Audio)
         );
 
+    // Define the sub-type of the media as uncompressed PCM audio. For more info about audio sub-types,
+    // go to: https://msdn.microsoft.com/library/windows/desktop/aa372553.aspx
     DX::ThrowIfFailed(
         mediaType->SetGUID(MF_MT_SUBTYPE, MFAudioFormat_PCM)
         );
-
+    
+    // Sets the media type for a stream. This media type defines that format that the Source Reader 
+    // produces as output. It can differ from the native format provided by the media source.
+    // For more info, go to https://msdn.microsoft.com/library/windows/desktop/dd374667.aspx
     DX::ThrowIfFailed(
-        reader->SetCurrentMediaType(MF_SOURCE_READER_FIRST_AUDIO_STREAM, 0, mediaType.Get())
+        reader->SetCurrentMediaType(static_cast<uint32>(MF_SOURCE_READER_FIRST_AUDIO_STREAM), 0, mediaType.Get())
         );
 
-    // Get the complete WAVEFORMAT from the Media Type.
-    Microsoft::WRL::ComPtr<IMFMediaType> outputMediaType;
+    // Get the current media type for the stream.
+    // For more info, go to:
+    // https://msdn.microsoft.com/library/windows/desktop/dd374660.aspx
+        Microsoft::WRL::ComPtr<IMFMediaType> outputMediaType;
     DX::ThrowIfFailed(
-        reader->GetCurrentMediaType(MF_SOURCE_READER_FIRST_AUDIO_STREAM, &outputMediaType)
+        reader->GetCurrentMediaType(static_cast<uint32>(MF_SOURCE_READER_FIRST_AUDIO_STREAM), &outputMediaType)
         );
 
+    // Converts the current media type into the WaveFormatEx buffer structure.
     UINT32 size = 0;
     WAVEFORMATEX* waveFormat;
     DX::ThrowIfFailed(
         MFCreateWaveFormatExFromMFMediaType(outputMediaType.Get(), &waveFormat, &size)
         );
 
+    // Copies the waveFormat's block of memory to the starting address of the m_waveFormat variable in MediaReader.
+    // Then free the waveFormat memory block.
+    // For more info, go to https://msdn.microsoft.com/library/windows/desktop/aa366535.aspx and
+    // https://msdn.microsoft.com/library/windows/desktop/ms680722.aspx
     CopyMemory(&m_waveFormat, waveFormat, sizeof(m_waveFormat));
     CoTaskMemFree(waveFormat);
 
-    // Get the total length of the stream in bytes.
     PROPVARIANT propVariant;
     DX::ThrowIfFailed(
-        reader->GetPresentationAttribute(MF_SOURCE_READER_MEDIASOURCE, MF_PD_DURATION, &propVariant)
+        reader->GetPresentationAttribute(static_cast<uint32>(MF_SOURCE_READER_MEDIASOURCE), MF_PD_DURATION, &propVariant)
         );
+
+    // 'duration' is in 100ns units; convert to seconds, and round up
+    // to the nearest whole byte.
     LONGLONG duration = propVariant.uhVal.QuadPart;
-    unsigned int maxStreamLengthInBytes;
-
-    double durationInSeconds = (duration / static_cast<double>(10000 * 1000));
-    maxStreamLengthInBytes = static_cast<unsigned int>(durationInSeconds * m_waveFormat.nAvgBytesPerSec);
-
-    // Make the length a multiple of 4 bytes.
-    maxStreamLengthInBytes = (maxStreamLengthInBytes + 3) / 4 * 4;
+    unsigned int maxStreamLengthInBytes =
+        static_cast<unsigned int>(
+            ((duration * static_cast<ULONGLONG>(m_waveFormat.nAvgBytesPerSec)) + 10000000) /
+            10000000
+            );
 
     Platform::Array<byte>^ fileData = ref new Platform::Array<byte>(maxStreamLengthInBytes);
 
@@ -177,53 +288,24 @@ Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
     bool done = false;
     while (!done)
     {
-        DX::ThrowIfFailed(
-            reader->ReadSample(MF_SOURCE_READER_FIRST_AUDIO_STREAM, 0, nullptr, &flags, nullptr, &sample)
-            );
-
-        if (sample != nullptr)
-        {
-            DX::ThrowIfFailed(
-                sample->ConvertToContiguousBuffer(&mediaBuffer)
-                );
-
-            BYTE *audioData = nullptr;
-            DWORD sampleBufferLength = 0;
-            DX::ThrowIfFailed(
-                mediaBuffer->Lock(&audioData, nullptr, &sampleBufferLength)
-                );
-
-            for (DWORD i = 0; i < sampleBufferLength; i++)
-            {
-                fileData[positionInData++] = audioData[i];
-            }
-        }
-        if (flags & MF_SOURCE_READERF_ENDOFSTREAM)
-        {
-            done = true;
-        }
+        //...
+        // Read audio data.
     }
 
-    // Fix up the array size on match the actual length.
-    Platform::Array<byte>^ realfileData = ref new Platform::Array<byte>((positionInData + 3) / 4 * 4);
-    memcpy(realfileData->Data, fileData->Data, positionInData);
-    return realfileData;
+    return fileData;
 }
 ```
+## <a name="associate-sound-to-object"></a>Связывание звук объект
 
-Данный метод использует API [Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) для считывания звукового файла в формате WAV в виде буфера импульсно-кодовой модуляции (ИКМ).
+Связывание звуков, чтобы объект имеет место при инициализации игры в методе [Simple3DGame::Initialize](#simple3dgameinitialize-method) .
 
-1.  Создает объект устройства чтения источника мультимедиа ([**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655)), вызывая [**MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110).
-2.  Создает тип мультимедиа ([**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850)) для декодирования звукового файла, вызывая [**MFCreateMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms693861). Данный метод определяет декодированный вывод как звуковой файл PCM, представляющий собой тип звукового файла, который может использовать XAudio2.
-3.  Задает тип декодированного выходящего мультимедиа для устройства чтения, направляя вызов [**IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432).
-4.  Создает буфер [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) и копирует результаты вызова [**IMFMediaType::MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) объекта [**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850). В результате буфер, в котором хранится звуковой файл после загрузки, форматируется.
-5.  Получает продолжительность (в секундах) звукового потока, вызывая [**IMFSourceReader::GetPresentationAttribute**](https://msdn.microsoft.com/library/windows/desktop/dd374662), а затем преобразует в продолжительность в байтах.
-6.  Считывает звуковой файл в виде потока, направляя вызов [**IMFSourceReader::ReadSample**](https://msdn.microsoft.com/library/windows/desktop/dd374665).
-7.  Копирует содержимое буфера образцов звуков в массив, возвращенный данным методом.
+Краткий обзор:
+* В классе __GameObject__ существует свойство __HitSound__ , используемом для связывания звуковой эффект к объекту.
+* Создайте новый экземпляр объекта класса [SoundEffect](#soundeffecth) и связать его с игровой объект. Этот класс воспроизводится звук с помощью __XAudio2__ API-интерфейсы.  Он использует аудиоустройстве, предоставленных классом [звука](#audioh) . Звуковые данные могут считываться из расположения с помощью класса [MediaReader](#mediareaderh) .
 
-Самое важное в **SoundEffect::Initialize** — создание исходного речевого объекта, **m\_sourceVoice**, из управляющего аудиоустройства. Исходная речь используется для воспроизведения буфера звуковых данных, полученных из **MediaReader::LoadMedia**.
+[SoundEffect::Initialize](#soundeffectinitialize-method) используется для инициализации экземпляра __SoundEffect__ со следующими параметрами ввода: указатель на объекте обработчика звука (IXAudio2 объекты, созданные в методе [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method) ), указатель для форматирования из формате WAV файл с помощью __MediaReader::GetOutputWaveFormatEx__и звуковые данные загружаются с помощью метода [MediaReader::LoadMedia](#mediareaderloadmedia-method) . Во время инициализации также создается исходный тембр для звукового эффекта.
 
-В образце игры вызывается данный метод при инициализации объекта **SoundEffect** следующим образом.
+### <a name="soundeffectinitialize-method"></a>Метод SoundEffect::Initialize
 
 ```cpp
 void SoundEffect::Initialize(
@@ -235,12 +317,12 @@ void SoundEffect::Initialize(
 
     if (masteringEngine == nullptr)
     {
-        // Audio is not available, so return.
+        // Audio is not available so just return.
         m_audioAvailable = false;
         return;
     }
 
-    // Create and reuse a single source voice for the single sound effect in this sample.
+    // Create a source voice for this sound effect.
     DX::ThrowIfFailed(
         masteringEngine->CreateSourceVoice(
             &m_sourceVoice,
@@ -251,27 +333,19 @@ void SoundEffect::Initialize(
 }
 ```
 
-Данный метод передает результаты вызовов **Audio::SoundEffectEngine** (или **Audio::MusicEngine**), **MediaReader::GetOutputWaveFormatEx**, а буфер возвращается вызовом **MediaReader::LoadMedia**, как представлено ниже.
+## <a name="play-the-sound"></a>Воспроизведение звука
 
-```cpp
-MediaReader^ mediaReader = ref new MediaReader;
-auto targetHitSound = mediaReader->LoadMedia("hit.wav");
-```
+Триггеров для воспроизведения звуковых эффектов определяются в метод [Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method) , поскольку именно здесь обновляются перемещения объектов и определяется столкновений между объектами.
 
-```cpp
-myTarget->HitSound(ref new SoundEffect());
-myTarget->HitSound()->Initialize(
-                m_audioController->SoundEffectEngine(),
-                mediaReader->GetOutputWaveFormatEx(),
-                targetHitSound);
-```
+Так как взаимодействие между объектами существенно отличается в зависимости от игры, мы не будем обсудим dynamics здесь игровых объектов. Если вы хотите понять его реализации, перейдите к [Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method) метод.
 
-**SoundEffect::Initialize** вызывается из метода **Simple3DGame:Initialize**, который инициализирует главный объект игры.
+В принципе когда происходит, он инициирует звуковой эффект для воспроизведения, вызвав метод [SoundEffect::PlaySound]((soundeffectplaysound-method). Этот метод останавливает все звуковые эффекты, которые очереди буфер в памяти с помощью нужный звуковые данные и воспроизводится в данный момент. Он использует исходный тембр громкость, отправке звуковых данных и воспроизведения.
 
-Теперь, когда в памяти примера игры находится звуковой файл, можно посмотреть, как он воспроизводится во время игры.
+### <a name="soundeffectplaysound-method"></a>Метод SoundEffect::PlaySound
 
-## <a name="playing-back-an-audio-file"></a>Воспроизведение звукового файла
-
+* Использует объект исходный тембр **m\_sourceVoice** для воспроизведения буфера звуковых данных **m\_soundData**
+* Создает [XAUDIO2\_BUFFER](https://msdn.microsoft.com/library/windows/desktop/ee419228), в котором оно предоставляет ссылку на буфер звуковых данных, а затем отправляет ее вызова [IXAudio2SourceVoice::SubmitSourceBuffer](https://msdn.microsoft.com/library/windows/desktop/ee418473). 
+* После добавления в очередь звуковых данных **SoundEffect::PlaySound** начинает воспроизведение, направляя вызов [IXAudio2SourceVoice::Start](https://msdn.microsoft.com/library/windows/desktop/ee418471).
 
 ```cpp
 void SoundEffect::PlaySound(_In_ float volume)
@@ -308,34 +382,118 @@ void SoundEffect::PlaySound(_In_ float volume)
 }
 ```
 
-Чтобы воспроизвести звук, данный метод использует объект исходной речи **m\_sourceVoice** для воспроизведения буфера звуковых данных **m\_soundData**. Он создает [**XAUDIO2\_BUFFER**](https://msdn.microsoft.com/library/windows/desktop/ee419228), для которого обеспечивает ссылку на буфер звуковых данных, а затем отправляет ее в вызове [**IXAudio2SourceVoice::SubmitSourceBuffer**](https://msdn.microsoft.com/library/windows/desktop/ee418473). После добавления в очередь звуковых данных **SoundEffect::PlaySound** начинает воспроизведение, направляя вызов [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471).
+### <a name="simple3dgameupdatedynamics-method"></a>Метод Simple3DGame::UpdateDynamics
 
-Когда происходит контакт между снарядом и мишенью, вызов **SoundEffect::PlaySound** воспроизводит шум.
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-
-На этом заканчивается краткое руководство по разработке игры UWP на базе DirectX. Теперь вы знаете все необходимое, чтобы сделать вашу игру для Windows8 потрясающей. Помните, что в вашу игру будут играть на различных устройствах с Windows8 и различных платформах, поэтому необходимо разработать все компоненты— графику, элементы управления, пользовательский интерфейс и звук— для максимально широкого набора конфигураций.
-
-Дополнительные сведения о способах изменения примера игры, представленного в данном руководстве, см. в разделе [Расширение примера игры](tutorial-resources.md).
-
-## <a name="complete-sample-code-for-this-section"></a>Полный пример кода для этого раздела
-
-
-Audio.h
+Метод __Simple3DGame::UpdateDynamics__ берет на себя взаимодействие и столкновений между игровым объектам. Когда объекты сталкиваться (или пересекаются), активирует связанные звуковой эффект для воспроизведения.
 
 ```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-ref class Audio
+void Simple3DGame::UpdateDynamics()
 {
+    // ...
+    // Check for collisions between ammo.
+#pragma region inter-ammo collision detection
+    if (m_ammoCount > 1)
+    {
+       // ...
+       // Check collision between instances One and Two.
+       // ...
+       if (distanceSquared < (GameConstants::AmmoSize * GameConstants::AmmoSize))
+       {
+           // The two ammo are intersecting.
+           // ...
+           // Start playing the sounds for the impact between the two balls.
+              m_ammo[one]->PlaySound(impact, m_player->Position());
+              m_ammo[two]->PlaySound(impact, m_player->Position());
+
+       }
+    }
+#pragma endregion
+
+#pragma region Ammo-Object intersections
+    // Check for intersections between the ammo and the other objects in the scene.
+    // ...
+    // Ball is in contact with Object.
+    // ...
+
+    // Make sure that the ball is actually headed towards the object. At grazing angles there
+    // could appear to be an impact when the ball is actually already hit and moving away.
+    if (impact > 0.0f)
+    {
+        // ...
+        // Play the sound associated with the Ammo hitting something.
+           m_ammo[one]->PlaySound(impact, m_player->Position());
+
+        if (m_objects[i]->Target() && !m_objects[i]->Hit())
+        {
+            // The object is a target and isn't currently hit, so mark it as hit and
+            // play the sound associated with the impact.
+             m_objects[i]->Hit(true);
+             m_objects[i]->HitTime(timeTotal);
+             m_totalHits++;
+
+             m_objects[i]->PlaySound(impact, m_player->Position());
+        }
+        // ...
+    }
+#pragma endregion
+
+#pragma region Apply Gravity and world intersection
+    // Apply gravity and check for collision against enclosing volume.
+    // ...
+    if (position.z < limit)
+    {
+        // The ammo instance hit the a wall in the min Z direction.
+        // Align the ammo instance to the wall, invert the Z component of the velocity and
+        // play the impact sound.
+           position.z = limit;
+           m_ammo[i]->PlaySound(-velocity.z, m_player->Position());
+           velocity.z = -velocity.z * GameConstants::Physics::GroundRestitution;
+    }
+    // ...
+#pragma endregion
+}
+```
+## <a name="next-steps"></a>Дальнейшие действия
+
+Мы рассмотрели UWP framework, графики, элементы управления, пользовательский интерфейс и звук игры для Windows 10. В следующей части этого учебника, [образец расширения игры](tutorial-resources.md), объясняется другие параметры, которые можно использовать при разработке игр.
+
+## <a name="audio-concepts"></a>Понятий аудио
+
+Разработка игр для Windows 10 используйте XAudio2 версия 2.9. Эта версия поставляется вместе с Windows 10. Дополнительные сведения перейдите к [Версиям XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415802.aspx).
+
+__AudioX2__ — это низкоуровневый API, который обеспечивает обработку сигналов и Микширование звука. Дополнительные сведения см. в разделе [Ключевые концепции XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415764.aspx).
+
+### <a name="xaudio2-voices"></a>Речь в XAudio2
+
+Существует три типа голосовых объектов XAudio2: исходные, комбинированные и обработанные. Голоса являются объекты XAudio2, использующие для обработки, для управления и для воспроизведения звуковых данных. 
+* Исходные голосовые объекты берутся из звуковых данных, предоставленных клиентом. 
+* Данные исходных и комбинированных голосов используются для получения одного или более комбинированных или обработанных голосов. 
+* Комбинированные и обработанные голоса смешивают звуковые сигналы из всех голосов, чьи данные они получают, и работают с итоговым звуком. 
+* Обработанные голоса получать данные из исходного тембра и тембра субмикширования и отправляет эти данные звуковому оборудованию.
+
+Дополнительные сведения перейдите к [речь в XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415824.aspx).
+
+### <a name="audio-graph"></a>Граф звука
+
+Граф звука — это коллекция [речь в XAudio2](#xaudio2-voice-objects). Звук начинается с одной стороны звукового графа в соответствующих исходных тембрах, при необходимости проходит через один или более тембров субмикширования и заканчивается в управляющей речи. Граф звука будет содержать исходный тембр для каждого воспроизведение звука, ноль или более тембров субмикширования и один тембр мастеринга. Простой граф звука и по меньшей мере, необходимые для принятия шум в XAudio2, — это один исходный тембр выводить непосредственно к управляющему аудиоустройству. Дополнительные сведения перейдите к [Звуковые графы](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx).
+
+### <a name="additional-reading"></a>Дополнительные данные
+
+* [Руководство: инициализация XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)
+* [Руководство: загрузка файлов звуковых данных в XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
+* [Руководство: воспроизведение звука при помощи XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415787.aspx)
+
+## <a name="key-audio-h-files"></a>H ключа аудио-файлы
+
+### <a name="audioh"></a>Audio.h
+
+```cpp
+// Audio:
+// This class uses XAudio2 to provide sound output.  It creates two
+// engines - one for music and the other for sound effects - each as
+// a separate mastering voice.
+// The SuspendAudio and ResumeAudio methods can be used to stop
+// and start all audio playback.
 public:
     Audio();
 
@@ -347,125 +505,42 @@ public:
     void ResumeAudio();
 
 protected:
-    bool                                m_audioAvailable;
-    Microsoft::WRL::ComPtr<IXAudio2>    m_musicEngine;
-    Microsoft::WRL::ComPtr<IXAudio2>    m_soundEffectEngine;
-    IXAudio2MasteringVoice*             m_musicMasteringVoice;
-    IXAudio2MasteringVoice*             m_soundEffectMasteringVoice;
+    // ...
 };
 ```
-
-Audio.cpp
+### <a name="mediareaderh"></a>MediaReader.h
 
 ```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
+// MediaReader:
+// This is a helper class for the SoundEffect class.  It reads small audio files
+// synchronously from the package installed folder and returns sound data as a
+// byte array.
 
-#include "pch.h"
-#include "Audio.h"
-#include "DirectXSample.h"
-
-using namespace Microsoft::WRL;
-using namespace Windows::Foundation;
-using namespace Windows::UI::Core;
-using namespace Windows::Graphics::Display;
-
-Audio::Audio():
-    m_audioAvailable(false)
+ref class MediaReader
 {
-}
+internal:
+    MediaReader();
 
-void Audio::Initialize()
-{
-}
+    Platform::Array<byte>^          LoadMedia(_In_ Platform::String^ filename);
+    WAVEFORMATEX*                   GetOutputWaveFormatEx();
 
-void Audio::CreateDeviceIndependentResources()
-{
-    UINT32 flags = 0;
-
-    DX::ThrowIfFailed(
-        XAudio2Create(&m_musicEngine, flags)
-        );
-
-#if defined(_DEBUG)
-    XAUDIO2_DEBUG_CONFIGURATION debugConfiguration = {0};
-    debugConfiguration.BreakMask = XAUDIO2_LOG_ERRORS;
-    debugConfiguration.TraceMask = XAUDIO2_LOG_ERRORS;
-    m_musicEngine->SetDebugConfiguration(&debugConfiguration);
-#endif
-
-
-    HRESULT hr = m_musicEngine->CreateMasteringVoice(&m_musicMasteringVoice);
-    if (FAILED(hr))
-    {
-        // Unable to create an audio device
-        m_audioAvailable = false;
-        return;
-    }
-
-    DX::ThrowIfFailed(
-        XAudio2Create(&m_soundEffectEngine, flags)
-        );
-
-#if defined(_DEBUG)
-    m_soundEffectEngine->SetDebugConfiguration(&debugConfiguration);
-#endif
-
-    DX::ThrowIfFailed(
-        m_soundEffectEngine->CreateMasteringVoice(&m_soundEffectMasteringVoice)
-        );
-
-    m_audioAvailable = true;
-}
-
-IXAudio2* Audio::MusicEngine()
-{
-    return m_musicEngine.Get();
-}
-
-IXAudio2* Audio::SoundEffectEngine()
-{
-    return m_soundEffectEngine.Get();
-}
-
-void Audio::SuspendAudio()
-{
-    if (m_audioAvailable)
-    {
-        m_musicEngine->StopEngine();
-        m_soundEffectEngine->StopEngine();
-    }
-}
-
-void Audio::ResumeAudio()
-{
-    if (m_audioAvailable)
-    {
-        DX::ThrowIfFailed(m_musicEngine->StartEngine());
-        DX::ThrowIfFailed(m_soundEffectEngine->StartEngine());
-    }
-}
+protected private:
+    Windows::Storage::StorageFolder^ m_installedLocation;
+    Platform::String^               m_installedLocationPath;
+    WAVEFORMATEX                    m_waveFormat;
+};
 ```
-
-SoundEffect.h
+### <a name="soundeffecth"></a>SoundEffect.h
 
 ```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
+// SoundEffect:
+// This class plays a sound using XAudio2.  It uses a mastering voice provided
+// from the Audio class.  The sound data can be read from disk using the MediaReader
+// class.
 
 ref class SoundEffect
 {
-public:
+internal:
     SoundEffect();
 
     void Initialize(
@@ -476,94 +551,10 @@ public:
 
     void PlaySound(_In_ float volume);
 
-protected:
-    bool                    m_audioAvailable;
-    IXAudio2SourceVoice*    m_sourceVoice;
-    Platform::Array<byte>^  m_soundData;
+protected private:
+    //...
+
 };
 ```
-
-SoundEffect.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "SoundEffect.h"
-#include "DirectXSample.h"
-
-SoundEffect::SoundEffect():
-    m_audioAvailable(false)
-{
-}
-//----------------------------------------------------------------------
-void SoundEffect::Initialize(
-    _In_ IXAudio2 *masteringEngine,
-    _In_ WAVEFORMATEX *sourceFormat,
-    _In_ Platform::Array<byte>^ soundData)
-{
-    m_soundData = soundData;
-
-    if (masteringEngine == nullptr)
-    {
-        // Audio is not available, so return.
-        m_audioAvailable = false;
-        return;
-    }
-
-    // Create and reuse a single source voice for the single sound effect in this sample.
-    DX::ThrowIfFailed(
-        masteringEngine->CreateSourceVoice(
-            &m_sourceVoice,
-            sourceFormat
-            )
-        );
-    m_audioAvailable = true;
-}
-//----------------------------------------------------------------------
-void SoundEffect::PlaySound(_In_ float volume)
-{
-    XAUDIO2_BUFFER buffer = {0};
-    XAUDIO2_VOICE_STATE state = {0};
-
-    if (!m_audioAvailable)
-    {
-        // Audio is not available, so just return.
-        return;
-    }
-
-    // Interrupt sound effect if currently playing.
-    DX::ThrowIfFailed(
-        m_sourceVoice->Stop()
-        );
-    DX::ThrowIfFailed(
-        m_sourceVoice->FlushSourceBuffers()
-        );
-
-    // Queue in-memory buffer for playback and start the voice.
-    buffer.AudioBytes = m_soundData->Length;
-    buffer.pAudioData = m_soundData->Data;
-    buffer.Flags = XAUDIO2_END_OF_STREAM;
-
-    m_sourceVoice->SetVolume(volume);
-    DX::ThrowIfFailed(
-        m_sourceVoice->SubmitSourceBuffer(&buffer)
-        );
-    DX::ThrowIfFailed(
-        m_sourceVoice->Start()
-        );
-}
-```
-
- 
-
- 
-
-
 
 

@@ -6,21 +6,20 @@ ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, directx, перенос
-ms.openlocfilehash: e255bceae44ace0722a2df0c53d60ec0f8fa35fe
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: dea6455b4e9aaef2a4239ef70d0919a4b8841bc5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223833"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559541"
 ---
 # <a name="plan-your-directx-port"></a>Планирование переноса DirectX
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Резюме**
+**Краткий обзор**
 
 -   Планирование переноса приложений на DirectX
 -   [Важные изменения в Direct3D11 по сравнению с Direct3D9](understand-direct3d-11-1-concepts.md)
@@ -38,9 +37,9 @@ ms.locfileid: "223833"
 
 Вспомогательные библиотеки D3DX и DXUT необходимо заменить на собственные вспомогательные библиотеки или средства от сообщества. Подробнее см. в разделе [о сопоставлении компонентов](feature-mapping.md).
 
-> **Примечание.** Для замены некоторых функций, ранее предоставляемых D3DX и DXUT, можно использовать [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) или [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926).
+> **Примечание**  [Набор инструментов DirectX](http://go.microsoft.com/fwlink/p/?LinkID=248929) или [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) можно использовать для замены некоторых функций, ранее предоставляемых D3DX и DXUT.
 
- 
+ 
 
 Шейдеры, написанные на языке ассемблера, следует обновить до HLSL с использованием модели шейдеров 4, обладающей функциональными возможностями уровня 9\_1 или 9\_3, а шейдеры, написанные для библиотеки Effects, необходимо обновить до последней версии синтаксиса HLSL. Подробнее см. в разделе [о сопоставлении компонентов](feature-mapping.md).
 
@@ -64,9 +63,9 @@ ms.locfileid: "223833"
 -   Управляемые ссылки ([**оператор ^**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)) и [**управляемые классы**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (классы ссылок) являются фундаментальной частью среды выполнения Windows. Классы управляемых ссылок будет необходимо использовать для взаимодействия с компонентами среды выполнения Windows, например [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (подробнее см. в пошаговом руководстве).
 -   При работе с интерфейсами COM Direct3D 11 используйте тип шаблона [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx), чтобы упростить применение указателей СОМ.
 
- 
+ 
 
- 
+ 
 
 
 

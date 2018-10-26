@@ -6,16 +6,14 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eb2b292688d05e9886851016f2d3526a1926e418
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 024e48380941c0d79eef65780396ec9b89edc3c7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675101"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557663"
 ---
 # <a name="themeresource-markup-extension"></a>Расширение разметки {ThemeResource}
 
@@ -71,7 +69,7 @@ ms.locfileid: "1675101"
 
 Использование **ThemeResource** можно представить как последовательность зависимых значений. Например, значение [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723), используемое параметром [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962), который также является ресурсом, доступным по ключу, может использовать ссылку **ThemeResource**. Но все свойства пользовательского интерфейса, использующие ресурс **SolidColorBrush** с ключом, будут использовать также ссылку **ThemeResource**, поэтому динамическое изменение значения при смене темы обеспечивается каждым свойством типа [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush).
 
-**Примечание.**  `{ThemeResource}` и разрешение ресурсов во время выполнения при смене темы поддерживается XAML в Windows 8.1, но не поддерживается XAML для приложений, предназначенных для Windows 8.
+**Примечание** `{ThemeResource}` и разрешение ресурсов во время выполнения при смене темы поддерживается в Windows8.1 XAML, но не поддерживается в XAML для приложений, предназначенных для Windows8.
 
 ### <a name="system-resources"></a>Системные ресурсы
 
@@ -140,13 +138,13 @@ ms.locfileid: "1675101"
 
 Здесь значением [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) является другая ссылка **ThemeResource** на системный ресурс. Если ссылка на системный ресурс должна изменяться в ответ на изменение темы, то также надо использовать **ThemeResource**.
 
-## <a name="windows-8-behavior"></a>Работа в Windows 8
+## <a name="windows8-behavior"></a>Поведение Windows8
 
-В Windows8 не поддерживалось расширение разметки **ThemeResource**. Оно становится доступным начиная с Windows 8.1. Кроме того, в Windows 8 не поддерживалось динамическое переключение ресурсов темы для приложения среды выполнения Windows. Чтобы обработать изменение темы для шаблонов и стилей XAML, приложение необходимо было перезапускать. Это неоптимально с точки зрения взаимодействия с пользователем, поэтому настоятельно рекомендуется перекомпилировать приложения для Windows 8.1, чтобы они могли использовать стили с помощью **ThemeResource** и динамически переключать темы по выбору пользователя. Приложения, которые скомпилированы для Windows 8, но выполняются в Windows 8.1, продолжают использовать правила, действующие в Windows 8.
+Windows8 не поддерживалось расширение разметки **ThemeResource** , он доступен, начиная с Windows8.1. Кроме того Windows8 не поддерживалось динамическое переключение ресурсов темы для приложения среды выполнения Windows. Чтобы обработать изменение темы для шаблонов и стилей XAML, приложение необходимо было перезапускать. Это не хорошее взаимодействие, поэтому настоятельно рекомендуется перекомпиляции и целевой объект Windows8.1 приложения, чтобы они могли использовать стили с использованием **ThemeResource** и динамически переключать темы по выбору пользователя. Приложения, которые скомпилированы для Windows8, но выполняются в Windows8.1 продолжают использовать Windows8.
 
 ## <a name="design-time-tools-support-for-the-themeresource-markup-extension"></a>Поддержка расширения разметки **{ThemeResource}** средствами "Время разработки"
 
-Пакет Microsoft Visual Studio2013 может содержать возможные значения ключей в раскрывающихся меню Microsoft IntelliSense при использовании расширения разметки **{ThemeResource}** на XAML-странице. Например, при вводе "{ThemeResource", отображаются ключи ресурсов из [ресурсов тем XAML](https://msdn.microsoft.com/library/windows/apps/mt187274).
+Microsoft Visual Studio2013 может содержать возможные значения ключей в раскрывающихся списков Microsoft IntelliSense при использовании расширения разметки **{ThemeResource}** в XAML-страницы. Например, при вводе "{ThemeResource", отображаются ключи ресурсов из [ресурсов тем XAML](https://msdn.microsoft.com/library/windows/apps/mt187274).
 
 Если ключ ресурса существует при использовании **{ThemeResource}**, функция **Перейти к определению** (F12) может обрабатывать этот ресурс и отображать generic.xaml для времени разработки, в котором определен ресурс темы. Ресурсы тем определяются неоднократно (для каждой темы), поэтому команда **Перейти к определению** осуществляет переход к первому определению, найденному в файле, которое является определением для **Default**. Если требуются другие определения, можно выполнить в файле поиск по имени ключа и найти определения других тем.
 
@@ -156,5 +154,5 @@ ms.locfileid: "1675101"
 * [Ресурсы темы XAML](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [Атрибут x:Key](x-key-attribute.md)
- 
+ 
 

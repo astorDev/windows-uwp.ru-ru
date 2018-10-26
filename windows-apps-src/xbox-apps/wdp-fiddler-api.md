@@ -5,26 +5,24 @@ description: Узнайте о том, как программно включи�
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: 819f039f04d1e0a7fd035b10e3cbe408645e8f4d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 8e0faf3a0b6a4f13c0fce24aa093cf94a1e7ee7e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "409944"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558660"
 ---
 # <a name="fiddler-settings-api-reference"></a>Справочник по API параметров Fiddler   
 В комплекте средств разработки можно включать и отключать трассировку сети Fiddler с помощью API REST.
 
-## <a name="determine-if-fiddler-tracing-is-enabled"></a>Определить, включена ли трассировка Fiddler
+## <a name="determine-if-fiddler-tracing-is-enabled"></a>Определить, включены ли трассировки Fiddler
 
 **Запрос**
 
-Можно проверить, включен ли Fiddler трассировки на устройстве, с помощью следующих запроса.
+Можно проверить, включена ли трассировка Fiddler на устройстве, с помощью следующего запроса.
 
 Метод      | URI запроса
 :------     | :-----
@@ -44,7 +42,7 @@ GET | /ext/fiddler
 
 **Ответ**   
 
-- Свойство bool JSON IsProxyEnabled какие спецификаторы включена ли прокси-сервер.
+- Свойство bool JSON IsProxyEnabled какие описателей включена ли прокси-сервер.
 
 **Код состояния**
 

@@ -6,16 +6,14 @@ description: Некоторые устройства необходимо свя
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 86cac8248db896f56757dae7678d6e146835884c
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 64f4756df37cbfaf041e432b7e4a890123f52d2f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674001"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554974"
 ---
 # <a name="pair-devices"></a>Связывание устройств
 
@@ -31,9 +29,9 @@ ms.locfileid: "1674001"
 -   Базовое связывание
 -   Пользовательское связывание
 
-**Подсказка.** Некоторые устройства можно использовать без связывания. Такие случаи описаны в разделе об автоматическом связывании.
+**Совет**некоторые устройства не нужно будет использовать связывания. Такие случаи описаны в разделе об автоматическом связывании.
 
- 
+ 
 
 ## <a name="automatic-pairing"></a>Автоматическое связывание
 
@@ -74,6 +72,6 @@ ms.locfileid: "1674001"
 
 Чтобы скачать пример использования API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), перейдите [по этой ссылке](http://go.microsoft.com/fwlink/?LinkID=620536).
 
- 
+ 
 
- 
+ 

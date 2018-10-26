@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2717a482e0ea1ad80f0f13dc09bb6789863ef7e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9ce2082479261cd96fb1c5bafd5f2df06bf6f239
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044273"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558690"
 ---
 # <a name="emissive-lighting"></a>Излучаемое освещение
 
@@ -33,7 +31,7 @@ ms.locfileid: "1044273"
 |-----------|---------------|----------------------------------------------------------------------|-----------------|
 | Cₑ        | (0,0,0,0)     | Красный, зеленый, синий и альфа-прозрачность (все это— значение с плавающей точкой) | Излучаемый цвет. |
 
- 
+ 
 
 Значением Cₑ может быть цвет 1 или цвет 2. Если цвет вершин не указан, используется излучаемый цвет материала.
 
@@ -57,9 +55,9 @@ ms.locfileid: "1044273"
 
 [Математические аспекты освещения](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

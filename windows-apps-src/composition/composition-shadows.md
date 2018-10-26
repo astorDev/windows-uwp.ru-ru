@@ -5,16 +5,14 @@ description: Тени API-интерфейсы позволяют добавля
 ms.author: jimwalk
 ms.date: 07/16/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 84e12d6c3e25a18902aaa55011949dd5b5ff97ca
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 2c2f42235e6a74747059723841d3082037b558c7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473302"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558975"
 ---
 # <a name="shadows-in-windows-ui"></a>Тени в окнах пользовательского интерфейса
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bed0364efc2e32d8130aa50743dcdf03efcda34
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: e842a6720725552885f83e1b019eebb5c33ba407
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043843"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559184"
 ---
 # <a name="compute-shader-cs-stage"></a>Этап шейдера вычислений (CS)
 
@@ -34,9 +32,9 @@ ms.locfileid: "1043843"
 
 [Графический конвейер](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

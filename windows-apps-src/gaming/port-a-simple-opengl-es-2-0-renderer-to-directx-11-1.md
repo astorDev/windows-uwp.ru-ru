@@ -6,16 +6,14 @@ ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, opengl, direct3d 11, перенос
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a0baee79873203f9f52fd1e9acae03c7647240
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e7541a8f54f64197c17acea5f1737e36b0e6f670
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652813"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556868"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>Перенос простого отрисовщика OpenGL ES 2.0 в Direct3D 11
 
@@ -84,9 +82,9 @@ typedef struct
 
 У этой структуры имеется один экземпляр, и он содержит все необходимые компоненты для прорисовки очень простой сетки с затенением по вершинам.
 
-> **Примечание.**  Весь код OpenGL ES 2.0 в этой теме основан на реализации API Windows, предоставленной Khronos Group, и использует синтаксис программирования Windows C.
+> **Примечание**код любого OpenGL ES 2.0 в этой теме основан на реализации Windows API, предоставленной Khronos Group и использует синтаксис программирования Windows c..
 
- 
+ 
 
 ## <a name="what-you-need-to-know"></a>Что необходимо знать
 
@@ -134,7 +132,7 @@ typedef struct
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>Дополнительные ресурсы
 
@@ -143,9 +141,9 @@ typedef struct
 -   [Создание нового проекта DirectX11 для UWP](user-interface.md)
 -   [Сопоставьте концепции и инфраструктуру OpenGL ES 2.0 и Direct3D 11](map-concepts-and-infrastructure.md)
 
- 
+ 
 
- 
+ 
 
 
 

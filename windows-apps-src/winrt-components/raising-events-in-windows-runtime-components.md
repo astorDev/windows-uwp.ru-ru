@@ -6,16 +6,14 @@ description: Как вызвать событие типа делегата, о�
 ms.author: misatran
 ms.date: 07/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 89c021bb2c094aafc9b534acef9b009817669461
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 2dddd170f5f056de18c4729b6b6b5b4b6cbcea7b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472336"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557607"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>Создание событий в компонентах среды выполнения Windows
 > [!NOTE]

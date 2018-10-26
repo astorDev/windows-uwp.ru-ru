@@ -6,19 +6,18 @@ ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, программирование
-ms.openlocfilehash: 736f5f5864edc9c7a976e8e0f062779ddd1f86c5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: d201caefedca0d810f78d893ea779bd6b814f007
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223972"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559456"
 ---
 # <a name="game-programming-resources"></a>Ресурсы по программированию игр
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Следующие ресурсы содержат дополнительную информацию о программировании игр для Windows.
@@ -32,7 +31,7 @@ ms.locfileid: "223972"
 ## <a name="game-design-guidance"></a>Руководства по проектированию игр
 
 
--   [Указатель рекомендаций по взаимодействию с пользователем для приложений Магазина Windows](https://msdn.microsoft.com/library/windows/apps/hh465424)
+-   [Рекомендации по индекс по взаимодействию с Пользователем для приложений UWP](https://msdn.microsoft.com/library/windows/apps/hh465424)
 
 ## <a name="blogs"></a>Блоги
 
@@ -48,9 +47,9 @@ ms.locfileid: "223972"
 -   [Библиотеки обработки текстур DirectXTex](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   [Диагностика графики](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx) в MicrosoftVisualStudio
 -   [Win2D](https://github.com/Microsoft/Win2D) — простой в использовании API среды выполнения Windows для отрисовки двумерной графики в непосредственном режиме с ускорением GPU.
--   [ANGLE для Магазина Windows](http://go.microsoft.com/fwlink/p/?linkid=618387) — запуск содержимого OpenGL ES в Windows путем преобразования вызовов API OpenGL ES в вызовы API DirectX 11.
+-   [ANGLE для Microsoft Store](http://go.microsoft.com/fwlink/p/?linkid=618387) - содержимое выполняется OpenGL ES в Windows путем преобразования вызовов OpenGL ES API в вызовы DirectX 11 API.
 
-## <a name="gdc-2015-game-dev-session-videos"></a>Видеоролики о разработке игр GDC 2015
+## <a name="gdc-2015-game-dev-session-videos"></a>Видеоролики о разработке игр с конференции GDC2015
 
 
 -   [Будущее игр в экосистеме Майкрософт](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) — Фил Спенсер (Phil Spencer)
@@ -81,9 +80,9 @@ ms.locfileid: "223972"
 -   [CodePlex](http://go.microsoft.com/fwlink/p/?LinkID=76627)
 -   [GameDev.net](http://go.microsoft.com/fwlink/p/?LinkID=288870)
 
- 
+ 
 
- 
+ 
 
 
 

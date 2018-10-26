@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 887600366fdf1bf3951091df27d10f54516c2bf0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 3e1a015d5d51ad0c15f20755afcb0d324acd1f36
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674551"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556054"
 ---
 # <a name="raw-notification-overview"></a>Общие сведения о необработанных уведомлениях
 
@@ -28,7 +26,7 @@ ms.locfileid: "1674551"
 > [!IMPORTANT]
 > Чтобы понять, что представляют собой необработанные уведомления, лучше всего узнать понятия, описанные в разделе с [обзором служб push-уведомлений Windows (WNS)](windows-push-notification-services--wns--overview.md).
 
- 
+ 
 
 Как и всплывающие уведомления, а также уведомления на плитках или push-уведомления через индикатор событий, необработанное уведомление отправляется из облачной службы приложения по универсальному коду ресурса (URI) назначенного канала в WNS. Службы WNS, в свою очередь, передают его устройству и учетной записи пользователя, связанным с этим каналом. В отличие от других push-уведомлений, необработанные уведомления не имеют установленного формата. Содержимое полезной нагрузки полностью определяется приложением.
 
@@ -97,7 +95,7 @@ ms.locfileid: "1674551"
 > [!IMPORTANT]
 > Прежде чем использовать фоновые задачи необработанного уведомления, приложению необходимо предоставить фоновый доступ посредством [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_).
 
- 
+ 
 
 Фоновая задача должна быть зарегистрирована с [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger). Если эта регистрация отсутствует, при получении необработанного уведомления задача не будет выполняться.
 
@@ -117,7 +115,7 @@ ms.locfileid: "1674551"
 ## <a name="other-resources"></a>Другие ресурсы
 
 
-Для получения подробной информации скачайте  [Пример необработанных уведомлений](http://go.microsoft.com/fwlink/p/?linkid=241553) для Windows8.1 и [Пример push-уведомлений и регулярных уведомлений](http://go.microsoft.com/fwlink/p/?LinkId=231476) для Windows 8.1 и используйте их исходный код в приложениидля Windows 10.
+Дополнительные сведения, загрузив [Пример необработанных уведомлений](http://go.microsoft.com/fwlink/p/?linkid=241553) для Windows8.1 и [Push-уведомлений и периодических уведомлений пример](http://go.microsoft.com/fwlink/p/?LinkId=231476) для Windows8.1 и используйте их исходный код в вашем приложении Windows10.
 
 ## <a name="related-topics"></a>Ссылки по теме
 
@@ -126,9 +124,9 @@ ms.locfileid: "1674551"
 * [Краткое руководство: перехват push-уведомлений для работающих приложений](https://msdn.microsoft.com/library/windows/apps/jj709908)
 * [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
- 
+ 
 
- 
+ 
 
 
 
