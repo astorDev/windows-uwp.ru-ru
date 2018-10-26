@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 11/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, всплывающие уведомления, интерактивные всплывающие уведомления, адаптивные всплывающие уведомления, содержимое всплывающего уведомления, полезные данных во всплывающем уведомлении
 ms.localizationpriority: medium
-ms.openlocfilehash: de999528d07e6bd7d243e53708e9afc465004af7
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 791b1dcede799de4ecf8480d994a5c0f1ddb58af
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521296"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571271"
 ---
 # <a name="toast-content"></a>Содержимое всплывающего уведомления
 

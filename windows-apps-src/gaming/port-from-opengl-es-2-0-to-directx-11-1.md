@@ -6,16 +6,14 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, opengl, direct3d 11, перенос, графика
 ms.localizationpriority: medium
-ms.openlocfilehash: 61ed6c1d419fccd953b7950c3ee0081d7a317774
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 6421f5a5a71828d5234a11bab9e442a5accecda5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652293"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570522"
 ---
 # <a name="port-from-opengl-es-20-to-direct3d-11"></a>Перенос из OpenGL ES 2.0 в Direct3D 11
 
@@ -23,9 +21,9 @@ ms.locfileid: "1652293"
 
 Включает статьи, обзоры и пошаговые руководства по переносу графического конвейера из OpenGL ES 2.0 в Direct3D 11 и среду выполнения Windows.
 
-> **Примечание.** В качестве промежуточного шага при переносе проекта OpenGLES2.0 можно использовать ANGLE для Microsoft Store. ANGLE позволяет запускать содержимое OpenGLES в Windows путем преобразования вызовов API OpenGLES в вызовы API DirectX11. Дополнительные сведения об ANGLE см. в [вики об ANGLE для Microsoft Store](http://go.microsoft.com/fwlink/p/?linkid=618387).
+> **Примечание**  — промежуточного шага при переносе проекта OpenGL ES 2.0 можно использовать ANGLE для Microsoft Store. ANGLE позволяет запускать содержимое OpenGLES в Windows путем преобразования вызовов API OpenGLES в вызовы API DirectX11. Дополнительные сведения об ANGLE см. в [вики об ANGLE для Microsoft Store](http://go.microsoft.com/fwlink/p/?linkid=618387).
 
- 
+ 
 
 <table>
 <colgroup>
@@ -54,11 +52,11 @@ ms.locfileid: "1652293"
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ description: Определите доступность файла MicrosoftOne
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c5de157d320b401fdc0e542eb0f1bdc241e2f21
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 87eb93fbc100d143ab9fe75d34bb9c4d2caaf01d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "459761"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569715"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>Определение доступности файлов Microsoft OneDrive
 
@@ -51,7 +49,7 @@ ms.locfileid: "459761"
 | Файл OneDrive с отметкой "только в сети"       | True   | На основании настройки пользователя | False   |
 | Сетевой файл                              | True   | На основании настройки пользователя | False   |
 
- 
+ 
 
 Далее описан порядок действий при определении того, является ли файл доступным в настоящий момент.
 

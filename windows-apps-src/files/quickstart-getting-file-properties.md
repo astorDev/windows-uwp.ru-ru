@@ -6,16 +6,14 @@ description: Получите свойства&\#8212;верхнего уров�
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3edb012f04026251d151da99f34accb9e1848c3
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 8fc44300376efb5b56f390457e516f35a3ec4202
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662734"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565464"
 ---
 # <a name="get-file-properties"></a>Получение свойств файла
 
@@ -32,7 +30,7 @@ ms.locfileid: "1662734"
 > [!NOTE]
 > [См. также [Пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).]
 
- 
+ 
 
 
 ## <a name="prerequisites"></a>Необходимые условия
@@ -49,9 +47,9 @@ ms.locfileid: "1662734"
 
 Доступ ко многим свойствам файла верхнего уровня можно получить как к членам класса [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). К таким свойствам относятся атрибуты файлов, тип содержимого, дата создания, отображаемое имя, тип файла и т. д.
 
-**Примечание.** Не забудьте объявить возможность **picturesLibrary**.
+**Примечание**не забудьте объявить возможность **picturesLibrary** .
 
- 
+ 
 
 Этот пример перечисляет все файлы библиотеки «Изображения», предоставляя доступ к некоторым свойствам верхнего уровня каждого из файлов.
 
@@ -142,6 +140,6 @@ foreach (Windows.Storage.StorageFile file in files)
 }
 ```
 
- 
+ 
 
- 
+ 

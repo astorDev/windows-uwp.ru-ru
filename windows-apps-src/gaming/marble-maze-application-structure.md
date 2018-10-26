@@ -6,16 +6,14 @@ ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
 ms.author: elcowle
 ms.date: 09/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, пример, directx, структура
 ms.localizationpriority: medium
-ms.openlocfilehash: c26b547d5cc94f3277d0c898804e65d75e6d17e2
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 1272200bf128443c82807aec9df5559f207819e1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700880"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569120"
 ---
 # <a name="marble-maze-application-structure"></a>Структура приложения Marble Maze
 
@@ -27,7 +25,7 @@ ms.locfileid: "1700880"
 > [!NOTE]
 > Пример кода, соответствующего этому документу, см. в [примере игры DirectX Marble Maze](http://go.microsoft.com/fwlink/?LinkId=624011).
 
- 
+ 
 ## 
 В этом документе рассматриваются следующие основные моменты создания структуры программного кода игры.
 
@@ -65,7 +63,7 @@ ms.locfileid: "1700880"
 | StepTimer.h               | Определяют класс **StepTimer**, который позволяет легко получать значения общего и затраченного времени.
 | UserInterface.h, UserInterface.cpp         | Определяют функции пользовательского интерфейса (системы меню, таблицы результатов и т.п.).                                                                        |
 
- 
+ 
 
 ##  <a name="design-time-versus-run-time-resource-formats"></a>Форматы ресурсов времени разработки и времени выполнения
 
@@ -114,7 +112,7 @@ ms.locfileid: "1700880"
 > [!NOTE]
 > Вы также можете показать главное меню, когда оно будет готово, а загрузку остальных ресурсов продолжать в фоновом режиме. Если пользователь выбирает из меню какой-либо пункт, когда загружены еще не все ресурсы, вы можете показать, что ресурсы сцены еще загружаются (например, отобразить индикатор выполнения).
 
- 
+ 
 
 Даже если ваша игра содержит относительно мало ресурсов, рекомендуется загружать их асинхронно по двум причинам. Во-первых, сложно гарантировать, что все ресурсы будут быстро загружаться на всех устройствах во всех конфигурациях. Во-вторых, реализация асинхронной загрузки на ранних этапах разработки обеспечит возможность масштабирования кода по мере добавления функций.
 
@@ -134,7 +132,7 @@ ms.locfileid: "1700880"
 > [!TIP]
 > Если вы создаете игровой код, входящий в библиотеку среды выполнения Windows C++ (то есть библиотеку DLL), ознакомьтесь со статьей [Создание асинхронных операций на C++ для приложений UWP](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps), чтобы узнать, как создавать асинхронные операции, которые могут обрабатываться приложениями и другими библиотеками.
 
- 
+ 
 
 ## <a name="the-game-loop"></a>Игровой цикл
 
@@ -431,9 +429,9 @@ void MarbleMazeMain::LoadState()
 * [Основные характеристики примера Marble Maze](marble-maze-sample-fundamentals.md)
 * [Разработка Marble Maze — игры UWP — на C++ и DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
- 
+ 
 
- 
+ 
 
 
 

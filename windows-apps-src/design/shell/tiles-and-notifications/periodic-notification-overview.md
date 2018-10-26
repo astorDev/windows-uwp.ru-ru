@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4525cf151d53790a44995bd8a8dd77a88332cdd0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: d02bfb8b8bd112a969895d4f2bd5d324fce9d6b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673451"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567646"
 ---
 # <a name="periodic-notification-overview"></a>Обзор периодических уведомлений
  
@@ -29,9 +27,9 @@ ms.locfileid: "1673451"
 
 Периодические уведомления позволяют приложению обновлять живые плитки с минимальным участием облачной службы и клиента. Периодические уведомления удобно использовать для распространения одного и того же содержимого среди широкой аудитории.
 
-**Примечание.** Дополнительные сведения можно получить, загрузив [Пример push-уведомлений и периодических уведомлений](http://go.microsoft.com/fwlink/p/?linkid=231476) для Windows 8.1 и повторно использовав исходный код в приложении для Windows 10.
+**Примечание**  Дополнительные сведения, загрузив [Push-уведомлений и периодических уведомлений пример](http://go.microsoft.com/fwlink/p/?linkid=231476) для Windows8.1 и использовав исходный код из него в приложении Windows10.
 
- 
+ 
 
 ## <a name="how-it-works"></a>Принцип работы
 
@@ -110,4 +108,4 @@ ms.locfileid: "1673451"
 * [Руководство по периодическим уведомлениям](https://msdn.microsoft.com/library/windows/apps/hh761461)
 * [Настройка периодических уведомлений для индикаторов событий](https://msdn.microsoft.com/library/windows/apps/hh761476)
 * [Настройка периодических уведомлений для плиток](https://msdn.microsoft.com/library/windows/apps/hh761476)
- 
+ 

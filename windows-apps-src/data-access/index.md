@@ -4,27 +4,26 @@ ms.assetid: 76776b0f-3163-48c9-835b-3f4213968079
 title: Доступ к данным
 description: В этом разделе описывается хранение данных на устройстве в частной базе данных и использование объектно-реляционного отображения в приложениях универсальной платформы Windows (UWP).
 ms.author: normesta
-ms.date: 02/08/2017
+ms.date: 11/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, данные, база данных, реляционная, таблицы, sqlite
-ms.openlocfilehash: 19690b6877fb4304b7740e6098711ca0b097d567
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: beca20d358430ecd82cd1bc57459a6f6af36be77
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665318"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569866"
 ---
 # <a name="data-access"></a>Доступ к данным
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+Вы можете сохранить данные на устройстве пользователя с помощью базы данных SQLite. Ваше приложение можно также подключаться напрямую к базе данных SQL Server без использования каких-либо уровень служб.
 
-В этом разделе описывается хранение данных на устройстве в частной базе данных и использование объектно-реляционного отображения в приложениях универсальной платформы Windows (UWP).
-
-База данных SQLite входит в состав пакета SDK UWP. Entity Framework Core работает с SQLite в приложениях UWP. Используйте эти технологии при разработке приложений для сценариев с прерывистым подключением или его отсутствием, а также для сохранения данных между сеансами приложений.
-
-| Topic | Описание|
+| Статья | Описание|
 |-------|------------|
-| [Entity framework Core с SQLite для приложений на C#](entity-framework-7-with-sqlite-for-csharp-apps.md) | EntityFramework (EF)— это объектно-реляционный модуль сопоставления, позволяющий разработчикам работать с реляционными данными с помощью объектов, специализированных для доменов. В этой статье объясняется, как использовать EntityFrameworkCore с базой данных SQLite в универсальном приложении для Windows. |
-| [Базы данных SQLite](sqlite-databases.md) | SQLite–это бессерверное встраиваемое ядро СУБД. В этой статье описано, как использовать библиотеку SQLite, входящую в состав пакета SDK, а также как упаковывать собственную библиотеку SQLite в универсальном приложении для Windows или выполнять ее сборку из источника. |
+| [Использование базы данных SQLite в приложении UWP](sqlite-databases.md) | Показано, как использовать SQLite для хранения и извлечения данных из облегченной базы данных на устройстве пользователя. SQLite–это бессерверное встраиваемое ядро СУБД. |
+| [Использование базы данных SQL server в приложении UWP](sql-server-databases.md) | Показано, как подключаться напрямую к базе данных SQL Server и затем хранить и извлекать данные с помощью классов в пространстве имен [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) . Уровень служб не требуется. |
+
+## <a name="related-topics"></a>Еще по теме
+
+* [Пример базы данных заказов клиентов](https://github.com/Microsoft/Windows-appsample-customers-orders-database)

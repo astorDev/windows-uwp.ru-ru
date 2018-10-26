@@ -6,19 +6,18 @@ ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, отрисовка, карта теней, буфер глубины, direct3d
-ms.openlocfilehash: 27b7c9a5fb69a19eed5941bf06068d5237ec101e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a73754fef6d87505751460ec134d853c6bca0530
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223755"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570479"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>Прорисовка карты теней в буфере глубины
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Выполняя прорисовку с точки зрения освещения, вы можете создать двумерную карту глубин, представляющую объемную тень. Карта глубин маскирует пространство, которое будет прорисовано с затенением. [Пошаговое руководство. Реализация теневых объемов с помощью буферов глубины в Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md), часть 2.
@@ -153,9 +152,9 @@ PixelShaderInput main(VertexShaderInput input)
 
 В следующей части этого пошагового руководства вы научитесь добавлять тени при помощи [прорисовки с проверкой глубины](render-the-scene-with-depth-testing.md).
 
- 
+ 
 
- 
+ 
 
 
 

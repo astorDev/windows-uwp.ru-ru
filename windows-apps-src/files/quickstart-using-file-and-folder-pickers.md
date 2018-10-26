@@ -6,16 +6,14 @@ description: Получите доступ к файлам и папкам, ра
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f025504d8024a23810a7d5dd2b0b28414fe5a62
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: b79bfa9ecdf76d2d59e3c0991240d88599dbe6dd
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662594"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569405"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>Открытие файлов и папок с помощью средства выбора
 
@@ -28,7 +26,7 @@ ms.locfileid: "1662594"
 Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Для получения доступа к файлам можно использовать классы [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) и [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), а для получения доступа к папкам— класс [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881).
 
 > [!NOTE]
-> Полный пример см. в статье [Пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994).
+> Полный пример см. в статье [Пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
 ## <a name="prerequisites"></a>Необходимые условия
 

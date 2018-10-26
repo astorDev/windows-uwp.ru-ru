@@ -6,16 +6,14 @@ description: Узнайте, как использовать датчики по
 ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a9270ba675b0797344d3370aec433de90d80d5
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 49199a91f6713b3f18928eaafb6875a49deaf451
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958889"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570678"
 ---
 # <a name="use-the-orientation-sensor"></a>Использование датчика положения в пространстве
 
@@ -48,7 +46,7 @@ API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR20
 
 ## <a name="prerequisites"></a>Необходимые условия
 
-Вы должны быть знакомы с языком XAML, Microsoft Visual C# и событиями.
+Вы должны быть знакомы с разметки языка XAML (Extensible Application), Microsoft VisualC # и событиями.
 
 Используемые вами устройство или эмулятор должны поддерживать датчик положения в пространстве.
 

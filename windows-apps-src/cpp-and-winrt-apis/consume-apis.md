@@ -5,16 +5,14 @@ title: Использование API-интерфейсов с помощью C
 ms.author: stwhi
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, стандартная c++, cpp, winrt, проецируемый, проекция, реализация, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: dbd657c966cac2310a1078c889ff31b8147c3a59
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: cffda0c15e8234f57486995308c335842ce058c8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514499"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570986"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Использование API-интерфейсов с помощью C++/WinRT
 

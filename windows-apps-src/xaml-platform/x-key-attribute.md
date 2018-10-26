@@ -6,18 +6,17 @@ ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4b76c16d276af295a1b2eed292ebeffc56b2e604
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8d48ccb93a411e92b57059192de38366f27353a3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225224"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569180"
 ---
 # <a name="xkey-attribute"></a>Атрибут x:Key
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Присваивает уникальный идентификатор элементам, которые были созданы и отмечены как ресурсы и которые существуют в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
 
@@ -42,7 +41,7 @@ ms.locfileid: "225224"
 | Термин | Описание |
 |------|-------------|
 | object | Любой объект, к которому можно открыть общий доступ. См. раздел [Ссылки на ресурсы ResourceDictionary и XAML](https://msdn.microsoft.com/library/windows/apps/mt187273). |
-| stringKeyValue | Строка true используется в качестве ключа, который должен соответствовать грамматике _XamlName_. См. раздел "Грамматика XamlName" ниже. | 
+| stringKeyValue | Строка true используется в качестве ключа, который должен соответствовать грамматике _XamlName_. См. раздел "Грамматика XamlName" ниже. | 
 
 ##  <a name="xamlname-grammar"></a>Грамматика XamlName
 

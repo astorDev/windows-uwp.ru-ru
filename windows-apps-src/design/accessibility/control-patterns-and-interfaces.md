@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cd6f279505a960be0b9e1e2e5918a769ff56930
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e48045e27e8ee7796f5dda2afb691a9f6e5371b2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655063"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565342"
 ---
 # <a name="control-patterns-and-interfaces"></a>Шаблоны и интерфейсы элементов управления  
 
@@ -63,7 +61,7 @@ ms.locfileid: "1655063"
 | **Transform** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | Используется для элементов управления, которые можно переместить, повернуть или размер которых можно изменить. Обычно используется для шаблона элемента управления "Преобразование" в конструкторах, формах, графических редакторах и приложениях для рисования. |
 | **Value** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | Позволяет клиенту получить или установить значение элемента управления, который не поддерживает диапазон значений. |
 | **VirtualizedItem** | [**IVirtualizedItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242668) | Предоставляет элементы внутри контейнеров, которые были виртуализированы и должны быть полностью доступны в качестве элементов UI Automation. |
-| **Window** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | Предоставляет информацию, касающуюся окон, основной концепции операционной системы Microsoft Windows. В качестве примеров элементов управления, которые являются окнами, можно привести дочерние окна и диалоговые окна. |
+| **Window** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | Предоставляет сведения, относящиеся к windows, основные концепции MicrosoftWindows операционной системы. В качестве примеров элементов управления, которые являются окнами, можно привести дочерние окна и диалоговые окна. |
 
 > [!NOTE]
 > Не факт, что вы найдете реализации всех этих шаблонов в существующих элементах управления XAML. Некоторые шаблоны имеют интерфейсы только для поддержки соответствия общему определению шаблонов в инфраструктуре автоматизации пользовательского интерфейса и для поддержки сценариев одноранговых классов автоматизации, в которых для поддержки этого шаблона требуется исключительно пользовательская реализация.

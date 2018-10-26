@@ -5,16 +5,14 @@ title: Получение аналитических данных
 ms.author: mhopkins
 ms.date: 07/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, службы Store, аналитика API аналитики для Microsoft Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 30b9303fc44f557210c9ba80a2a135f77909dc10
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: ff70f38ff636b0b1d885981fb9e353ac9afe69c2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478800"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569977"
 ---
 # <a name="get-insights-data"></a>Получение аналитических данных
 

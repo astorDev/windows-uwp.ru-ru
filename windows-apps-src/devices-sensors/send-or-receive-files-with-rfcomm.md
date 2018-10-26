@@ -6,20 +6,18 @@ description: В этой статье приводится обзор прото
 ms.author: misatran
 ms.date: 07/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 27002fed78356c9a93289d1ccabbada04ea5ed30
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: c1159f1e30c6956bf2ae029de8d1e283085517c8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521456"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571702"
 ---
 # <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 

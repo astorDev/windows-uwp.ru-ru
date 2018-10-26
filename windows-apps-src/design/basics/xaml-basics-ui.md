@@ -6,15 +6,13 @@ keywords: XAML, UWP, начало работы
 ms.author: jimwalk
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ddf4bacbc07eb6d7faccc1a4de2638f7219b562
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: 5d54df07cd5f2ccc32098b17fd7c656900cba978
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1639144"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570943"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Руководство: создание пользовательского интерфейса
 
@@ -43,7 +41,7 @@ ms.locfileid: "1639144"
 
 В этом руководстве мы начнем с упрощенной версии примера PhotoLab. 
 
-1. Перейдите по адресу [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). Вы перейдете на страницу GitHub с примером кода. 
+1. Последовательно выберите пункты [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). Вы перейдете на страницу GitHub с примером кода. 
 2. Далее необходимо клонировать или скачать пример. Нажмите кнопку **Клонировать или скачать**. Откроется подменю.
     <figure>
         <img src="images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">

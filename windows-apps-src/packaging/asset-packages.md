@@ -5,16 +5,14 @@ description: Пакеты активов— это тип пакета, функ
 ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, упаковка, макет пакета, пакет активов
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aafac1c1217ce082cd9d6176c530967f32e4cdd
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 98980e67d24eb96aa55af7fefe10b5e4c2cdfa67
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516091"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564901"
 ---
 # <a name="introduction-to-asset-packages"></a>Вводные сведения о пакетах активов
 

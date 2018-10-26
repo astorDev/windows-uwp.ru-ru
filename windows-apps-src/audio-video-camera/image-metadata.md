@@ -6,18 +6,17 @@ title: Метаданные изображения
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: e69508ae558d93281e0170913fa0ccdc5891cc64
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a3e2f10174412b49ce60f3da6a4bb73b2efc4411
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223854"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569490"
 ---
 # <a name="image-metadata"></a>Метаданные изображения
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В этой статье описано, как считывать и записывать свойства метаданных изображения, а также как добавить геотег к файлам с помощью служебного класса [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683).
@@ -88,9 +87,9 @@ GeotagHelper— это служебный класс, который помог�
 ## <a name="related-topics"></a>Еще по теме
 
 * [Обработка изображений](imaging.md)
- 
+ 
 
- 
+ 
 
 
 

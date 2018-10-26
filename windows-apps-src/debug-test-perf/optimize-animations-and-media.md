@@ -6,16 +6,14 @@ description: Создавайте приложения универсально�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eebb967a7bf11163dc2e0ba502b40495901b39b
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 66704daaca67dae2ba4f5a3882f5885ff333d2ce
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515660"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566245"
 ---
 # <a name="optimize-animations-media-and-images"></a>Оптимизация анимаций, мультимедиа и изображений
 

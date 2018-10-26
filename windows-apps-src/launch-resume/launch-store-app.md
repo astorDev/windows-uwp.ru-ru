@@ -1,29 +1,27 @@
 ---
 author: TylerMSFT
 title: Запуск приложения Microsoft Store
-description: В этом разделе описывается схема URI ms-windows-store. Приложения можно использовать этот схема URI для запуска приложения Microsoft хранилища для определенных страниц в хранилище.
+description: В этом разделе описывается схема URI ms-windows-store. Ваше приложение может использовать эту схему URI для запуска приложения Microsoft Store на определенных страницах в магазине.
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b97e4da92a7cd4066ca555189f052e3e82006fe
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 42dfecd7d1bc2c298a70fec2bdebfc4c4f9dd66c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975656"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571945"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Запуск приложения Microsoft Store
 
 
 
-В этом разделе описывается схема URI **ms-windows-store:**. Приложения можно использовать этот схема URI для запуска приложения Microsoft хранилища для определенных страниц в хранилище с помощью метода [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) .
+В этом разделе описывается схема URI **ms-windows-store:**. Ваше приложение может использовать эту схему URI для запуска приложения Microsoft Store на определенных страницах в магазине с помощью метода [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) .
 
-В этом примере показано, как открыть хранилище на страницу игры:
+В этом примере показано, как открыть страницу игр в магазине.
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));
@@ -139,6 +137,6 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 </table>
 
- 
+ 
 
- 
+ 

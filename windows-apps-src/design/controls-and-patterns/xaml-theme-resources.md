@@ -11,16 +11,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f7e92f1652b4c67ef63ca3cf3b536126e3c995
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: e576814617204749a37963ac5f2724f290520349
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832712"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567656"
 ---
 # <a name="xaml-theme-resources"></a>Ресурсы темы XAML
 
@@ -96,7 +94,8 @@ ms.locfileid: "1832712"
 | SystemListLowColor              | ListLow                | \#19000000 | \#19FFFFFF |
 | SystemListMediumColor           | ListMedium             | \#33000000 | \#33FFFFFF |
 
-:::row::: :::column:::
+:::row:::
+    :::column:::
         #### Light theme
     :::column-end:::
     :::column:::
@@ -104,21 +103,49 @@ ms.locfileid: "1832712"
     :::column-end:::
 :::row-end:::
 
-#### <a name="base"></a>Базовая
+#### <a name="base"></a>Base
 
-:::row::: :::column::: ![Базовая светлая тема](images/themes/light-base.png) :::column-end::: :::column::: ![Базовая темная тема](images/themes/dark-base.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![The base light theme](images/themes/light-base.png)
+    :::column-end:::
+    :::column:::
+        ![The base dark theme](images/themes/dark-base.png)
+    :::column-end:::
+:::row-end:::
 
 #### <a name="alt"></a>Альтернативная
 
-:::row::: :::column::: ![Альтернативная светлая тема](images/themes/light-alt.png) :::column-end::: :::column::: ![Альтернативная темная тема](images/themes/dark-alt.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![The alt light theme](images/themes/light-alt.png)
+    :::column-end:::
+    :::column:::
+        ![The alt dark theme](images/themes/dark-alt.png)
+    :::column-end:::
+:::row-end:::
 
 #### <a name="list"></a>Список
 
-:::row::: :::column::: ![Светлая тема списков](images/themes/light-list.png) :::column-end::: :::column::: ![Темная тема списков](images/themes/dark-list.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![The list light theme](images/themes/light-list.png)
+    :::column-end:::
+    :::column:::
+        ![The list dark theme](images/themes/dark-list.png)
+    :::column-end:::
+:::row-end:::
 
 #### <a name="chrome"></a>Хром
 
-:::row::: :::column::: ![Светлая тема хрома](images/themes/light-chrome.png) :::column-end::: :::column::: ![Темная тема хрома](images/themes/dark-chrome.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![The chrome light theme](images/themes/light-chrome.png)
+    :::column-end:::
+    :::column:::
+        ![The chrome dark theme](images/themes/dark-chrome.png)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="windows-system-high-contrast-colors"></a>Высококонтрастные цвета системы Windows
 
@@ -350,7 +377,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 </Style>
 ```
 
-**Примечание**. Стили [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) не содержат всех стилей таблицы шрифтов, которые содержит стиль [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652), главным образом потому, что блочная объектная модель документа для **RichTextBlock** упрощает настройку атрибутов в отдельных элементах текста. Кроме того, параметр [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676), использующий свойство XAML-содержимого, описывает ситуацию, где отсутствуют элементы текста, к которым нужно применить стиль, поэтому стиль необходимо применить к контейнеру. Это не является проблемой для **RichTextBlock**, так как его текстовое содержимое всегда должно находиться в определенных элементах текста, таких как [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503). Именно в них вы можете применить стили XAML для заголовка страницы, подзаголовка страницы и аналогичных определений из таблицы шрифтов.
+**Примечание**: стили [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) не у всех стилей таблицы шрифтов текста [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) , не главным образом потому, что документ Блочная объектная модель для **RichTextBlock** упрощает настройку атрибутов в отдельных текст элементы. Кроме того, параметр [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676), использующий свойство XAML-содержимого, описывает ситуацию, где отсутствуют элементы текста, к которым нужно применить стиль, поэтому стиль необходимо применить к контейнеру. Это не является проблемой для **RichTextBlock**, так как его текстовое содержимое всегда должно находиться в определенных элементах текста, таких как [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503). Именно в них вы можете применить стили XAML для заголовка страницы, подзаголовка страницы и аналогичных определений из таблицы шрифтов.
 
 ## <a name="miscellaneous-named-styles"></a>Различные именованные стили
 

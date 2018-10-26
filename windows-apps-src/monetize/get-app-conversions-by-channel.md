@@ -5,16 +5,14 @@ title: Получение конверсий приложения по кана�
 ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, конверсии приложения, канал
 ms.localizationpriority: medium
-ms.openlocfilehash: 720b4a20d6fa46df0118cecb0c65dcef533e1659
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 60e166b70c6a2aacf20673b30461002f3aa61305
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5519447"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569685"
 ---
 # <a name="get-app-conversions-by-channel"></a>Получение конверсий приложения по каналу
 

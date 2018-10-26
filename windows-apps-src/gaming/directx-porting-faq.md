@@ -6,19 +6,18 @@ ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, directx 11
-ms.openlocfilehash: 7dda21925e31785e0ce7c3dfc72ba173b8686743
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 06a4c9b434afedabc17a48e9929da8dc4460fe03
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223951"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567206"
 ---
 # <a name="directx-11-porting-faq"></a>Вопросы и ответы по переносу на DirectX11
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Ответы на часто встречающиеся вопросы о переносе игр на универсальную платформу Windows (UWP).
@@ -47,10 +46,10 @@ Direct3D11 значительно обновлен по сравнению с Di
 
 Сообщество [DirectX Tool Kit (DirectXTK)](http://go.microsoft.com/fwlink/p/?LinkID=248929) предлагает вспомогательные классы для использования с Direct3D11.
 
-##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-windows-store"></a>Как сохранить пути кода для рабочего стола и Магазина Windows?
+##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>Как сохранить пути кода для рабочего стола и магазина Майкрософт?
 
 
-В серии статей Чака Вэлборна (Chuck Walbourn) [Методы написания кода двойного назначения для игр](http://go.microsoft.com/fwlink/p/?LinkID=286210) вы найдете руководство по совместному использованию кода для путей кода рабочего стола и Магазина Windows.
+Chuck Walbourn серии [Методы написания кода использовании для игр](http://go.microsoft.com/fwlink/p/?LinkID=286210) представлены рекомендации совместное использование кода между рабочего стола и пути кода Microsoft Store.
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>Как загружать ресурсы изображений в приложение UWP с DirectX?
 
@@ -136,9 +135,9 @@ Microsoft Visual Studio2015 включает средства диагности
 
 См. [сопоставление форматов поверхности](feature-mapping.md#surface-format-mapping) в разделе «Сопоставление компонентов DirectX9 и API DirectX11».
 
- 
+ 
 
- 
+ 
 
 
 

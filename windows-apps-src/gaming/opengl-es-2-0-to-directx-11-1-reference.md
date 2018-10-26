@@ -6,16 +6,14 @@ ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, opengl, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b7642e9bca40c94bf11eac89600500881798069
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 14259fb6949eaa100d51fbdbda6f96bd07a4fa80
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1651953"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570741"
 ---
 # <a name="opengl-es-20-to-direct3d-11-reference"></a>Справочник по переходу с OpenGL ES 2.0 на Direct3D 11
 
@@ -42,11 +40,11 @@ ms.locfileid: "1651953"
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

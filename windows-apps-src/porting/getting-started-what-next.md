@@ -6,16 +6,14 @@ description: С помощью этих базовых сведений тепе
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 37473c362514b2ca24dd6e02cf247a8e37f108f7
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 5f8a6165df7bf839154ede4db3fda8a5e1662880
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "224647"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568762"
 ---
 # <a name="getting-started-what-next"></a>Начало работы: что дальше?
 
@@ -33,7 +31,7 @@ ms.locfileid: "224647"
 
 Кроме того, ознакомьтесь с [ресурсами сообщества](https://developer.microsoft.com/en-us/windows/support), чтобы узнать, как получить справку и дополнительные сведения с помощью форумов и блогов, а также как принять участие в семинарах разработчиков и мероприятиях Майкрософт.
 
-Мы надеемся, что Windows10 откроет для вас новые возможности разработки приложений. С нетерпением ждем воплощения ваших замыслов!
+Мы надеемся, что Windows10 откроет новый приложений за вас. С нетерпением ждем воплощения ваших замыслов!
 
 ## <a name="related-topics"></a>Еще по теме
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d30af696fe92576dee79c4203fb0ec2c959dd346
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 02eb9179cbc4a5fed5d1f6dc37622491859a7552
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043193"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565841"
 ---
 # <a name="tier-3"></a>Уровень 3
 
@@ -28,9 +26,9 @@ ms.locfileid: "1043193"
 
 [Уровни функций для потоковых ресурсов](streaming-resources-features-tiers.md)
 
- 
+ 
 
- 
+ 
 
 
 

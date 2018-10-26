@@ -6,19 +6,18 @@ ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, игры, directx, ресурсы, изображения
-ms.openlocfilehash: 1aeb4ef581254ae914efae4bc38853611dbde488
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 24fd038bdd447491da43e5d5803445d00147ba2d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223993"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567709"
 ---
 # <a name="set-up-directx-resources-and-display-an-image"></a>Настройка ресурсов DirectX и отображение изображения
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе мы покажем, как создать устройство Direct3D, цепочку буферов и представление целевого объекта обработки, а также как представить обработанное изображение для отображения.
 
@@ -233,7 +232,7 @@ ms.locfileid: "223993"
 Так как мы ранее определили максимальное значение задержки кадра как 1, Windows обычно замедляет цикл обработки до частоты обновления экрана, как правило, около 60 Гц. Windows замедляет цикл отрисовки, переводя приложение в спящий режим при вызове метода [**Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576). Windows переводит приложение в спящий режим до обновления экрана.
 
 ```cpp
-        // Enter the render loop.  Note that Windows Store apps should never exit.
+        // Enter the render loop.  Note that UWP apps should never exit.
         while (true)
         {
             // Process events incoming to the window.
@@ -288,9 +287,9 @@ ms.locfileid: "223993"
 
 [Создание шейдеров и рисование примитивов](creating-shaders-and-drawing-primitives.md)
 
- 
+ 
 
- 
+ 
 
 
 

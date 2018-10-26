@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 43c90d3d32876bdfd6b91f597ad94eba33907e90
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 6b39211c4b21a68fc0e563f73805805dcf1f4641
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675201"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570370"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>Код, генерируемый мастером push-уведомлений
  
@@ -211,9 +209,9 @@ function sendNotifications(request) {
 
 Функция sendNotifications отправляет единичное уведомление в виде всплывающего уведомления. Можно также использовать другие типы push-уведомлений.
 
-**Совет.**  Сведения о получении справки по редактированию сценариев см. в разделе [Активация IntelliSense для серверного JavaScript](http://go.microsoft.com/fwlink/p/?LinkId=309275).
+**Совет**сведения о том, как для получения справки по редактированию сценариев см. [Активация IntelliSense для серверного JavaScript](http://go.microsoft.com/fwlink/p/?LinkId=309275).
 
- 
+ 
 
 ## <a name="push-notification-types"></a>Типы push-уведомлений
 
@@ -237,9 +235,9 @@ Push-уведомления следует использовать соглас
 
 Можно также отправлять push-уведомления с помощью плановой задачи в мобильной службе. См. раздел [Планирование повторяющихся заданий в мобильных службах](http://go.microsoft.com/fwlink/p/?linkid=301694).
 
-**Внимание!**  После запуска мастера push-уведомлений не запускайте его вторично для добавления кода регистрации для другой мобильной службы. Если запустить мастер в одном проекте несколько раз, то в созданном коде появятся перекрывающиеся вызовы метода [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync), что вызовет исключение во время выполнения. Чтобы зарегистрироваться для получения push-уведомлений в нескольких мобильных службах, запустите мастер один раз, а затем перепишите код регистрации, чтобы гарантировать, что вызовы **CreatePushNotificationChannelForApplicationAsync** не будут совершаться одновременно. Например, для этого можно переместить код, созданный мастером в файле push.register.\* (в том числе вызов **CreatePushNotificationChannelForApplicationAsync**), за пределы события OnLaunched, но конкретная реализация зависит от архитектуры приложения.
+**Предупреждение**после запуска мастера Push-уведомлений один раз, не запускайте его вторично для добавления кода регистрации для другой мобильной службы. Если запустить мастер в одном проекте несколько раз, то в созданном коде появятся перекрывающиеся вызовы метода [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync), что вызовет исключение во время выполнения. Чтобы зарегистрироваться для получения push-уведомлений в нескольких мобильных службах, запустите мастер один раз, а затем перепишите код регистрации, чтобы гарантировать, что вызовы **CreatePushNotificationChannelForApplicationAsync** не будут совершаться одновременно. Например, для этого можно переместить код, созданный мастером в файле push.register.\* (в том числе вызов **CreatePushNotificationChannelForApplicationAsync**), за пределы события OnLaunched, но конкретная реализация зависит от архитектуры приложения.
 
- 
+ 
 
 ## <a name="related-topics"></a>Ссылки по теме
 
@@ -249,9 +247,9 @@ Push-уведомления следует использовать соглас
 * [Подключение к мобильным службам Windows Azure (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
 * [Подключение к мобильным службам Windows Azure (C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
 * [Краткое руководство: добавление push-уведомлений в мобильную службу (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)
- 
+ 
 
- 
+ 
 
 
 

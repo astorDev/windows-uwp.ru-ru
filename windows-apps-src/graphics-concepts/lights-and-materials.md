@@ -8,24 +8,22 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e2750de79dbdb01081aa099ff955fcef2999dcbf
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 6f690e08d211692b05f0a80722aa4a3e3a06b39f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652501"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569200"
 ---
 # <a name="lighting"></a>Освещение
 
 
 Для освещения объектов в сцене используются источники света. Цвет каждой вершины объекта основан на текущей карте текстур, цветах вершин и источниках света.
 
-**Примечание**. Этот раздел предназначен только для конвейера фиксированной функции. Программируемые шейдеры выполняют все функции освещения явным образом.
+**Примечание**  этот раздел предназначен только для конвейера фиксированной функции. Программируемые шейдеры выполняют все функции освещения явным образом.
 
- 
+ 
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>В этом разделе
 
@@ -37,7 +35,7 @@ ms.locfileid: "1652501"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Раздел</th>
+<th align="left">Статья</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
@@ -61,16 +59,16 @@ ms.locfileid: "1652501"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
 
 
 [Обучающее руководство по графике Direct3D](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

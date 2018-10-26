@@ -6,16 +6,14 @@ description: Потоки и асинхронное программирован
 ms.author: twhitney
 ms.date: 05/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, асинхронные, потоки, использование потоков
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bdbc9e73d2ffe25ac848a1ed1b88a649214b9f5
-ms.sourcegitcommit: e4627686138ec8c885696c4c511f2f05195cf8ff
-ms.translationtype: HT
+ms.openlocfilehash: f01142695b676ebadea2f227cf5f8beb65ba6f9c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1893496"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570403"
 ---
 # <a name="threading-and-async-programming"></a>Потоки и асинхронное программирование
 Потоки и асинхронное программирование позволяют приложению выполнять задачи асинхронно параллельными потоками.
@@ -34,7 +32,7 @@ ms.locfileid: "1893496"
 
 | Topic                                                                                                          | Description                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
-| [Асинхронное программирование (приложения UWP)](asynchronous-programming-universal-windows-platform-apps.md)              | В этом разделе описывается асинхронное программирование в универсальной платформе для Windows (UWP), а также его представление в C#, Microsoft Visual Basic.NET, расширениях компонентов Visual C++ (C++/CX) и JavaScript. |
+| [Асинхронное программирование (приложения UWP)](asynchronous-programming-universal-windows-platform-apps.md)              | В этом разделе описывается асинхронное программирование на универсальной платформы Windows (UWP), а также его представление в C#, Microsoft Visual Basic.NET, VisualC ++ расширениях компонентов (C + +/ CX) и JavaScript. |
 | [Асинхронное программирование на C++/CX (приложения UWP)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| В статье описываются рекомендации по использованию асинхронных методов в C++/CX с помощью класса <code>task</code><code>concurrency</code>, определенного в пространстве имен  файла ppltasks.h. |
 | [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)                         | Этот раздел содержит рекомендации по работе с пулом потоков. |
 | [Вызов асинхронных API в C# и VisualBasic](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | Универсальная платформа Windows (UWP) включает много асинхронных API, позволяющих вашему приложению сохранить способность отвечать, когда выполняется работа, требующая много времени. В этом разделе описывается применение асинхронных методов UWP при программировании на языках C# или MicrosoftVisualBasic. |

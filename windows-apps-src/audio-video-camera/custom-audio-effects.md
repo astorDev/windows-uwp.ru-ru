@@ -5,17 +5,15 @@ title: Пользовательские звуковые эффекты
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: 576277ab4bf3d2ea3bfe679da4039da194aabb70
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: a9c62dac489be07a08acc4ad17ecb79bcc54f57a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843264"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565112"
 ---
 # <a name="custom-audio-effects"></a>Пользовательские звуковые эффекты
 
@@ -85,7 +83,7 @@ ms.locfileid: "1843264"
 > 2.  Выберите вкладку **Сборка**.
 > 3.  Установите флажок **Разрешить небезопасный код**.
 
- 
+ 
 
 Теперь вы можете добавить реализацию метода **ProcessFrame** в свой эффект. Сначала этот метод получает объект [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioBuffer) от аудиокадров и ввода, и вывода. Обратите внимание, что кадр вывода открывается для записи, а кадр ввода — для чтения. Далее выполняется получение [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671) для каждого буфера путем вызова [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046). Затем производится получение фактических данных буфера путем преобразования объектов **IMemoryBufferReference** в описанный выше интерфейс COM-взаимодействия **IMemoryByteAccess** и последующего вызова **GetBuffer**.
 
@@ -154,7 +152,7 @@ ms.locfileid: "1843264"
 * [Документация по Win2D](http://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Воспроизведение мультимедиа](media-playback.md)
 
- 
+ 
 
 
 

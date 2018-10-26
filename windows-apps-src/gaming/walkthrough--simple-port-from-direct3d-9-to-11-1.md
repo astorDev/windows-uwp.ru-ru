@@ -6,16 +6,14 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, directx, перенос, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 97cb8341497ad72ab6b4b4f50a7cfbd7bdb4afb7
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: bd0a8c07be58d670e60aa3a23504d3f5119e6b50
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653103"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569140"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>Пошаговое руководство: перенос простого приложения Direct3D 9 в DirectX 11 и UWP
 
@@ -50,7 +48,7 @@ ms.locfileid: "1653103"
 </tbody>
 </table>
 
- 
+ 
 
 В этой статье подробно разобраны две ветви кода, выполняющие одну и ту же базовую задачу обработки графики: отображение вращающегося куба с затененными вершинами. В обоих случаях код включает следующий процесс.
 
@@ -72,7 +70,7 @@ ms.locfileid: "1653103"
 ## <a name="prerequisites"></a>Необходимые условия
 
 
-Вам нужно [подготовить среду для разработки игр UWP с использованием DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Шаблон пока не нужен, но потребуется Microsoft Visual Studio 2015, чтобы загрузить примеры кода для этого руководства.
+Вам нужно [подготовить среду для разработки игр UWP с использованием DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Шаблон пока не нужен, но потребуется Microsoft Visual Studio2015, чтобы загрузить примеры кода для этого пошагового руководства.
 
 Чтобы лучше понять принципы программирования для DirectX11 и UWP, которые демонстрируются в этом руководстве, ознакомьтесь с разделом [Принципы и аспекты переноса](porting-considerations.md).
 

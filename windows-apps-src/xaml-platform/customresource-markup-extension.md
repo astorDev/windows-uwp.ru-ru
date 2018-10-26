@@ -6,18 +6,17 @@ ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: a14ae2e327805c5d123cc3b6232bfa18863f9da9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 6fb88fc3a764a89dfe7ac8a9c399149b6b98eca5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225243"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567325"
 ---
 # <a name="customresource-markup-extension"></a>Расширение разметки {CustomResource}
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Предоставляет значение для любого атрибута языка XAML с помощью анализа ссылки на ресурс, которая берется из пользовательской реализации поиска ресурсов. Поиск ресурсов выполняется посредством реализации класса [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327).
 

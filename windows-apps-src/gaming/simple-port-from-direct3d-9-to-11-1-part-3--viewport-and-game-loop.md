@@ -6,16 +6,14 @@ ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, портирование, игровой цикл, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: baf230559ebeb285d5faa3e2de8e38b355638070
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 4db2ed74144ead22643ece17a7496b6267f7e6b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488848"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569424"
 ---
 # <a name="port-the-game-loop"></a>Портирование игрового цикла
 
@@ -37,9 +35,9 @@ ms.locfileid: "1488848"
 
 В приложениях UWP все гораздо проще. Вместо того чтобы создавать традиционное окно, в игре Microsoft Store на базе DirectX реализуется интерфейс [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). Этот интерфейс предназначен для того, чтобы выполнять игры и приложения на базе DirectX непосредственно в объекте [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) внутри контейнера приложения.
 
-> **Примечание.** Windows предоставляет управляемые указатели на ресурсы, такие как объект приложения-источника и [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). См. [**Оператор дескриптора объекта (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
+> **Примечание**  Windows предоставляет управляемые указатели на ресурсы, такие как объект приложения-источника и [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). См. в разделе [**оператор дескриптора объекта (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
 
- 
+ 
 
 Ваш класс main должен наследовать от [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) и реализовывать пять методов интерфейса **IFrameworkView**: [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) и [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523). Помимо создания интерфейса **IFrameworkView**, внутри которого будет существовать ваша игра, вам необходимо реализовать фабрику классов, которая создает экземпляр вашего **IFrameworkView**. У вашей игры по-прежнему будет исполняемый файл с методом под названием **main()**, но все, что этот метод будет делать,–создавать экземпляр **IFrameworkView** с помощью фабрики.
 
@@ -141,9 +139,9 @@ while (true)
 -   [Звук для игр](working-with-audio-in-your-directx-game.md)
 -   [Элементы управления перемещением и обзором для игр](tutorial--adding-move-look-controls-to-your-directx-game.md)
 
- 
+ 
 
- 
+ 
 
 
 

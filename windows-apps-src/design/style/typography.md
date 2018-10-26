@@ -5,16 +5,14 @@ title: Шрифтовое оформление текста в приложен�
 ms.author: mijacobs
 ms.date: 04/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 505167775b61908be7f47068dbf3221c293f6112
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 62f5aa7d1089b38131c742c588ae741e88197533
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843374"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565014"
 ---
 # <a name="typography"></a>Шрифтовое оформление
 
@@ -30,9 +28,16 @@ ms.locfileid: "1843374"
 
 Сведения об отображения текста на языках, отличных от английского, или выборе другого шрифта для приложения см. в разделах [Языки](#Languages) и [Шрифты](#Fonts), в которых описываются шрифты, рекомендованные для приложений UWP.
 
-:::row::: :::column::: ![do](images/do.svg) Выберите один шрифт пользовательского интерфейса.
-:::column-end::: :::column::: ![don't](images/dont.svg) Не смешивайте несколько шрифтов.
-:::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Pick one font for your UI.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Don't mix multiple fonts.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="size-and-scaling"></a>Размер и масштабирование
 
@@ -42,14 +47,27 @@ ms.locfileid: "1843374"
 
 Из-за того, как работает система масштабирования, вы работаете с эффективными пикселями, а не физическими пикселями, и вам не следует изменять размер шрифта для различных размеров и разрешений экрана.
 
-:::row::: :::column::: ![do](images/do.svg) Соблюдайте размеры [набора шрифтов](#type-ramp) UWP.
-:::column-end::: :::column::: ![don't](images/dont.svg) Используйте размер шрифта меньше, чем 12 пикселей.
-:::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Follow the UWP [type ramp](#type-ramp) sizing.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Use a font size smaller than 12 px.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="hierarchy"></a>Иерархия
 
-:::row::: :::column::: Пользователи полагаются на визуальную иерархию при просмотре страницы: заголовки— это сводка содержимого, а основной текст содержит более подробные сведения. Чтобы создать четкую визуальную иерархию в приложении, соблюдайте набор шрифтов UWP.
-:::column-end::: :::column::: ![text block styles](images/type/type-hierarchy.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the UWP type ramp.
+    :::column-end:::
+    :::column:::
+        ![text block styles](images/type/type-hierarchy.svg)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="type-ramp"></a>Набор шрифтов
 
@@ -59,8 +77,14 @@ ms.locfileid: "1843374"
 
 ### <a name="using-the-type-ramp"></a>Использование набора шрифтов
 
-:::row::: :::column::: Вы можете получить доступы к уровням набора шрифтов как к [статическим ресурсам](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp) XAML. К стилям применяется соглашение об именовании `*TextBlockStyle`.
-:::column-end::: :::column::: ![text block styles](images/type/text-block-type-ramp.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
+    :::column-end:::
+    :::column:::
+        ![text block styles](images/type/text-block-type-ramp.svg)
+    :::column-end:::
+:::row-end:::
 
 ```XAML
 <TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
@@ -72,7 +96,10 @@ ms.locfileid: "1843374"
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
 
-:::row::: :::column::: ![do](images/do.svg) Используйте "Body" для большинства текстов.
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Use "Body" for most text.
 
         Use "Base" for titles when space is constrained.
     :::column-end:::
@@ -96,9 +123,16 @@ ms.locfileid: "1843374"
 
 ## <a name="character-count"></a>Количество символов
 
-:::row::: :::column::: ![do](images/do.svg) Для упрощения чтения в строке должно быть 50–60 символов.
-:::column-end::: :::column::: ![don't](images/dont.svg) Если символов меньше 20 или больше 60, строку трудно читать.
-:::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Keep to 50–60 letters per line for ease of reading.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Less than 20 characters or more than 60 characters per line is difficult to read.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="clipping-and-ellipses"></a>Обрезка и многоточия
 
@@ -110,9 +144,16 @@ ms.locfileid: "1843374"
 <TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>
 ```
 
-:::row::: :::column::: ![do](images/do.svg) Обрезка текста и его перенос, если включено несколько строк.
-:::column-end::: :::column::: ![don't](images/dont.svg) Используйте многоточия, чтобы избежать визуальных помех.
-:::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Clip text, and wrap if multiple lines are enabled.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Use ellipses to avoid visual clutter.
+    :::column-end:::
+:::row-end:::
 
 **Примечание**. Если контейнеры не определены точно (например, не указан отличающий цвет фона) или существует ссылка для просмотра всего текста, используйте многоточия.
 

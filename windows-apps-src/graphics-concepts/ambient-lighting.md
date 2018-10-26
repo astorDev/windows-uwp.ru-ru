@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08b44ae8348e7b9d1d8dff0b98e5f1c553ec79b2
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 87b5c72ef99e3802a348ddfd28951bc2865891e5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044133"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565227"
 ---
 # <a name="ambient-lighting"></a>Внешнее освещение
 
@@ -40,7 +38,7 @@ ms.locfileid: "1044133"
 | sum               | Н/Д           | Н/Д           | Сумма внешнего освещения                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | Внешний цвет света i                                                                              |
 
- 
+ 
 
 Значение Cₐ равно одному из следующих:
 
@@ -48,9 +46,9 @@ ms.locfileid: "1044133"
 -   color2 вершины, если AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2 и второй цвет вершины предоставляется в объявлении вершины.
 -   внешний цвет материала.
 
-**Примечание**. Если используется любой параметр AMBIENTMATERIALSOURCE и цвет вершины не предоставляется, используется внешний цвет материала.
+**Примечание**  Если используется любой параметр AMBIENTMATERIALSOURCE и цвет вершины не предоставляется, то используется внешний цвет материала.
 
- 
+ 
 
 Чтобы использовать внешний цвет материала, используйте свойство SetMaterial, как показано в примере кода ниже.
 
@@ -89,9 +87,9 @@ Ambient.a = 0.0f;
 
 [Математические аспекты освещения](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

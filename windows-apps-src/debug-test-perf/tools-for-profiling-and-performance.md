@@ -6,28 +6,26 @@ description: Майкрософт предоставляет несколько 
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c8d0e72e0175f715d6ae5637981523b8bd183ce
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 21b51e50415e85f8cb1ddca6c358c8d27aa5f0fe
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975676"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569349"
 ---
 # <a name="tools-for-profiling-and-performance"></a>Инструменты для профилирования и производительности
 
 
 Майкрософт предоставляет несколько средств, с помощью которых можно повысить производительность приложения универсальной платформы Windows (UWP). Чтобы узнать об использовании этих средств, перейдите по указанным ниже ссылкам.
 
-**Средство XAML скорости отклика пользовательского интерфейса в Visual Studio**. Одно из наиболее средств для измерения влияет на производительность в вашем приложении — средство отклика пользовательского интерфейса XAML. Были [обновлены](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx) для поддержки еще больше сценариев.
+**Средство отклика пользовательского интерфейса XAML в Visual Studio**. Одно из лучших средств для измерения влияния производительности в приложении — это средство отклика пользовательского интерфейса XAML. Это был [обновлен](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx) , чтобы поддерживать дополнительные сценарии.
 
 См. также:
 
 |           |             |
 |-----------|-------------|
-| [Анализ эффективности UWP приложений с помощью набора средств Visual Studio диагностики](https://msdn.microsoft.com/library/windows/apps/xaml/hh696636.aspx) | Показывая, где находится код приложения во время выполнения программы, профилировщики Visual Studio помогут вам найти узкие места производительности в приложениях, функциях и алгоритмах. |
+| [Анализ производительности приложений UWP с помощью средств диагностики Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh696636.aspx) | Показывая, где находится код приложения во время выполнения программы, профилировщики Visual Studio помогут вам найти узкие места производительности в приложениях, функциях и алгоритмах. |
 | [Производительность XAML: методы расширения возможностей универсальных приложений для Windows с помощью XAML](https://channel9.msdn.com/Events/Build/2015/3-698) | В этой конференции Microsoft Build вы узнаете о новых компонентах платформы, новых инструментах и методах для существенного увеличения производительности универсальных приложений для Windows, основанных на XAML. |
 | [Новые средства XAML в Visual Studio](https://channel9.msdn.com/Events/Build/2015/2-697) | В этой конференции Microsoft Build вы узнаете о некоторых новых возможностях Visual Studio 2015, включая усовершенствованные функции Blend, средства отладки пользовательского интерфейса и улучшенный редактор XAML. Эти средства также доступны в Visual Studio 2017 |

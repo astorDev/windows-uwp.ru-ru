@@ -6,20 +6,18 @@ ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ключ проверки подлинности карт, элемент управления картой
-ms.openlocfilehash: 7b964c19933db460b8f6b0cc7791165ad86adb6c
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665598"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571029"
 ---
 # <a name="request-a-maps-authentication-key"></a>Запрос ключа проверки подлинности карт
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи, касающиеся Windows8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Ваше [приложение Universal Windows](https://msdn.microsoft.com/library/windows/apps/dn894631) должно пройти проверку подлинности, прежде чем оно сможет использовать [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) и службы карт в пространстве имен [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979). Для проверки подлинности приложения необходимо указать ключ проверки подлинности карт. В этом разделе описано, как запросить ключ проверки подлинности карт из [центра разработки Карт Bing](https://www.bingmapsportal.com/) и добавить его в приложение.
@@ -35,7 +33,7 @@ ms.locfileid: "665598"
 
 Вот как создать новый ключ
 
-1.  В браузере перейдите в центр разработки Карт Bing ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
+1.  В браузере перейдите в центр разработки карт Bing ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
 
 2.  Если появится запрос на вход, введите свою учетную запись Майкрософт и щелкните **Войти**.
 

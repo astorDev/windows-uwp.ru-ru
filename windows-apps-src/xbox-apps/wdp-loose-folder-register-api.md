@@ -5,15 +5,15 @@ description: Узнайте, как получить доступ к API-инт�
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
-ms.openlocfilehash: 59ecdb1994ffe1fe80da9301cea5d91c7e4e3a8d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: cb80e2dbd7ebdfbb05bd642b9875a9cd7cc356f3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225198"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568867"
 ---
 # <a name="register-an-app-in-a-loose-folder"></a>Регистрация приложения в свободной папке  
 

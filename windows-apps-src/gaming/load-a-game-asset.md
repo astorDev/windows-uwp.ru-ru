@@ -6,16 +6,14 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, directx, загрузка ресурсов
 ms.localizationpriority: medium
-ms.openlocfilehash: 12dd2fd39ff0b39e747488952779cfeb180f06fa
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 1bea3f515ba8ff810fc6dfd6281f0488c4f3e235
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983557"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565332"
 ---
 # <a name="load-resources-in-your-directx-game"></a>Загрузка ресурсов в игре DirectX
 
@@ -73,7 +71,7 @@ ms.locfileid: "1983557"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="instructions"></a>Инструкции
 
@@ -216,7 +214,7 @@ Mesh-объекты представляют собой набор данных 
 -   Все последующие биты (numVertices \* sizeof(**BasicVertex**)) содержат данные вершин.
 -   Заключительные (numIndices \* 16) биты данных содержат информацию об индексе, которая представлена в виде последовательности значений uint16.
 
-Резюме: необходимо знать структуру данных загружаемого mesh-объекта на битовом уровне. Кроме того, необходимо согласовать адресацию объекта. На всех платформах Windows8 используется адресация с прямым порядком байтов.
+Резюме: необходимо знать структуру данных загружаемого mesh-объекта на битовом уровне. Кроме того, необходимо согласовать адресацию объекта. Все Windows8 платформах с прямым порядком байтов.
 
 В следующем примере мы вызываем метод CreateMesh из метода **LoadMeshAsync** для выполнения описанной интерпретации на битовом уровне.
 
@@ -707,9 +705,9 @@ task<void> BasicLoader::LoadShaderAsync(
 * [Полный код модуля BasicReaderWriter](complete-code-for-basicreaderwriter.md)
 * [Полный код модуля DDSTextureLoader](complete-code-for-ddstextureloader.md)
 
- 
+ 
 
- 
+ 
 
 
 

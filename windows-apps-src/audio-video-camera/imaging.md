@@ -6,16 +6,14 @@ title: Создание, редактирование и сохранение т
 ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e9e1b50b1ade8b2bd11306d4ec8460af7d67db9
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: dc7d3d70291d29102af614f29fd4531523a961e1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690070"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564349"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Создание, редактирование и сохранение точечных рисунков
 
@@ -129,9 +127,9 @@ ms.locfileid: "1690070"
 
 * [Справочник по параметрам BitmapEncoder](bitmapencoder-options-reference.md)
 * [Метаданные изображения](image-metadata.md)
- 
+ 
 
- 
+ 
 
 
 

@@ -9,15 +9,13 @@ keywords: визуальная обратная связь, обратная с�
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4653e07d6d81f884ee6519206e75350aa47945f8
-ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
-ms.translationtype: HT
+ms.openlocfilehash: baf23062595d5d81fc59a2d757dcbada685c0f97
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2018
-ms.locfileid: "1917589"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565989"
 ---
 # <a name="guidelines-for-visual-feedback"></a>Руководство по визуальной обратной связи
 
@@ -133,6 +131,6 @@ ms.locfileid: "1917589"
 * [Ввод: пример жестов в Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [Ввод: пример управления и жестов (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [Пример сенсорного ввода в DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 

@@ -6,15 +6,13 @@ keywords: XAML, UWP, начало работы
 ms.author: mijacobs
 ms.date: 08/31/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 45510b8129a69641fdb64c13939ccb9b4376a654
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 11f279de206a84e61144789ba43a268f2b896fee
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674951"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570192"
 ---
 # <a name="tutorial-create-custom-styles"></a>Учебник: создание собственных пользовательских стилей
 
@@ -64,8 +62,7 @@ ms.locfileid: "1674951"
 
     В [пространстве имен Windows.XAML.Ui.Shapes](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) доступно на выбор семь фигур. Среди фигур есть эллипс, прямоугольник и элемент "Путь", с помощью которого можно создать любую фигуру— даже единорога! 
     
-    <!-- TODO reduce size -->
-    ![Единорог](../basics/images/xaml-basics/unicorn.png)
+    <!-- TODO reduce size --> ![Единорог](../basics/images/xaml-basics/unicorn.png)
     
     > **Прочтите об этом.** В статье [Рисование фигур](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) содержится вся необходимая информация о фигурах XAML. 
     

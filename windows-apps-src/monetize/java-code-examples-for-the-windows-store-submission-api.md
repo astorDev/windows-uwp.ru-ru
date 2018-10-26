@@ -6,16 +6,14 @@ title: Пример на языке Java — отправки для прило�
 ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, UWP, API отправки в Microsoft Store, примеры кода, java
 ms.localizationpriority: medium
-ms.openlocfilehash: e058e456b16b5415984e6cf8de0a0fdb68159f07
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 5a3280b6b9c0f012f36588d6eb0297b415e07f78
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5480120"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567153"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Пример на языке Java: отправки для приложений, надстроек и тестовых пакетов
 

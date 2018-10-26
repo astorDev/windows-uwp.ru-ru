@@ -2,18 +2,18 @@
 author: Mtoepke
 title: Вводные сведения о многопользовательских приложениях
 description: Простые вводные сведения общего характера о многопользовательской модели Xbox.
-ms.author: mtoepke
+ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
-ms.openlocfilehash: b150b50c1072a96ae0017bae848eeff94bb07ce0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 7534b6764bc98c415b557d100d869df186453626
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225151"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568113"
 ---
 # <a name="introduction-to-multi-user-applications"></a>Введение в многопользовательские приложения
 
@@ -53,4 +53,4 @@ ms.locfileid: "225151"
 Все приложения UWP и большинство однопользовательских игр можно написать в формате SUA. Рекомендуется рассматривать применение многопользовательской модели Xbox One только при разработке коллективных многопользовательских игр.
 
 ## <a name="see-also"></a>См. также
-- [Приложения UWP для Xbox One](index.md)
+- [UWP на Xbox One](index.md)

@@ -5,16 +5,14 @@ title: Получение данных воронки приобретений �
 ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, приобретение, воронка
 ms.localizationpriority: medium
-ms.openlocfilehash: 362bcc956fa5945f9685aac7d6351b9fda7690de
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 20c07425542c207c2289c6b512102e10f64bab66
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512446"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567355"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>Получение данных воронки приобретений приложения
 

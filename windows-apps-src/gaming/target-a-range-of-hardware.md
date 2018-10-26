@@ -6,19 +6,18 @@ ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, карты теней, directx
-ms.openlocfilehash: e4cffcf1e9655d5bc5dacbfc17cb64b5671d7551
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a9c53578fc67c13aafa1c8e39ad1d2910981081d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223979"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568798"
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>Поддержка карт теней на различном оборудовании
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Более высокое качество отображения теней на быстрых устройствах и быстрое отображение на менее мощных устройствах. [Пошаговое руководство. Реализация теневых объемов с помощью буферов глубины в Direct3D11](implementing-depth-buffers-for-shadow-mapping.md), часть4.
@@ -175,9 +174,9 @@ return float4(input.color * (light + shadow), 1.f);
 </FxCompile>
 ```
 
- 
+ 
 
- 
+ 
 
 
 

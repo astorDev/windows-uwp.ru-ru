@@ -6,16 +6,14 @@ description: Датчики позволяют приложению получи
 ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bf1d905874fc420dc0a39c1082e213e4ea4c327
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 0e05c18bd2c8fa2ddd7d6a9bc8e474d02f27a93e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959179"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567375"
 ---
 # <a name="sensors"></a>Датчики
 
@@ -25,7 +23,7 @@ ms.locfileid: "959179"
 
 Как правило, сначала необходимо решить, будет ли приложение строиться исключительно на использовании датчиков или датчики будут выполнять только функции вспомогательного механизма управления. Например, в симуляторе вождения, в котором устройство используется в качестве виртуального рулевого колеса, игрой можно было бы также управлять с помощью экранного графического интерфейса— в этом случае приложение работает независимо от наличия датчиков в системе. С другой стороны, наклонный лабиринт можно создать только для систем, имеющих соответствующие датчики. Вам нужно принять стратегическое решение, то есть определить, будет ли приложение полностью зависеть от датчиков. Учтите, что схема управления при помощи мыши или касаний обеспечивает лучший контроль, но не дает ощущения полной погруженности в игру.
 
-| Раздел                                                       | Описание  |
+| Статья                                                       | Описание  |
 |-------------------------------------------------------------|--------------|
 | [Калибровка датчиков](calibrate-sensors.md)                   | Датчикам устройства, которые работают на основе магнитометра (компас, датчик наклона и датчик ориентации), может потребоваться калибровка из-за воздействия на них факторов окружающей среды. Перечисление [<strong>MagnetometerAccuracy</strong>](https://msdn.microsoft.com/library/windows/apps/Dn297552) может помочь определить необходимые действия, когда устройство требует калибровки. |
 | [Положение датчиков в пространстве](sensor-orientation.md)                 | Данные датчиков классов [<strong>OrientationSensor</strong>](https://msdn.microsoft.com/library/windows/apps/BR206371) определяются их опорными осями. Эти оси определяются альбомной ориентацией устройства и поворачиваются вместе с ним. |
@@ -112,7 +110,7 @@ ms.locfileid: "959179"
 
 Датчики инклинометров могут использоваться приложениями, которые изменяют свое представление в зависимости от ориентации устройства. Приложение, отображающее на экране устройства самолет, вид которого меняется в соответствии с поворотом устройства по трем осям, будет также использовать показания инклинометра.
 
-Пример реализации, см inclinometer [https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
+См. Пример внедрения в примере инклинометра [https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
 
 ## <a name="light-sensor"></a>Датчик света
 

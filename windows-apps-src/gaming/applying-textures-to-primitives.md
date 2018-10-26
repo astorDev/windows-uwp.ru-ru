@@ -6,19 +6,18 @@ ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, текстуры, directx
-ms.openlocfilehash: cc25d7bcc5809dd10b43418ccd42f78c10d1336e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 252613bbea7f4cdb720758d3435cf0920dd93efa
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "224027"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567335"
 ---
 # <a name="apply-textures-to-primitives"></a>Применение текстур к примитивам
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Здесь мы загрузим необработанные данные текстур и применим эти данные к трехмерному примитиву с помощью куба, который нами создан в разделе [Применение глубины и эффектов к примитивам](using-depth-and-effects-on-primitives.md). Кроме того, введем простую освещенную модель скалярного произведения, где поверхности куба светлее или темнее в зависимости от расстояния и угла относительно источника света.
 
@@ -523,9 +522,9 @@ private:
 
 Мы загрузили необработанные данные текстуры и применили эти данные к трехмерному примитиву.
 
- 
+ 
 
- 
+ 
 
 
 

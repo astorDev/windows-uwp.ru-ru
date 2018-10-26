@@ -6,19 +6,17 @@ description: Узнайте, как создать рабочий элемент
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, таймер, потоки
-ms.openlocfilehash: 214a3ad9d84ffb8bc26a4aa02d79d0b1c06f2bfe
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: d65faebfc2be0e9ed254185d00932da9a57f718b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665348"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564981"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>Отправка рабочего элемента по таймеру
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Важные API **
 
@@ -31,7 +29,7 @@ ms.locfileid: "665348"
 
 Чтобы создать таймер для рабочего элемента, используйте метод [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921). Определите лямбда-выражение, соответствующее заданию, и используйте параметр *delay*, чтобы указать, как долго пулу потоков нужно ждать, прежде чем назначить рабочий элемент доступному потоку. Задержка определена с использованием структуры [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996).
 
-> **Примечание.**  Для доступа к пользовательскому интерфейсу и отображения хода выполнения из рабочего элемента можно использовать [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317).
+> **Примечание** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) можно использовать для доступа к пользовательского интерфейса и отображения хода выполнения из рабочего элемента.
 
 В следующем примере создается рабочий элемент, который запускается через три минуты:
 
@@ -225,7 +223,7 @@ ms.locfileid: "665348"
 
 Приложения универсальной платформы Windows (UWP) не могут использовать **Thread.Sleep**, поскольку это может привести к блокированию потока пользовательского интерфейса. Вместо этого для создания рабочего элемента вы можете использовать метод [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587); в результате задача, выполняемая рабочим элементом, будет отложена без блокировки потока пользовательского интерфейса.
 
-Полный образец кода, демонстрирующего рабочие элементы, рабочие элементы таймеров и периодические рабочие элементы, см. на странице [образца пула потоков](http://go.microsoft.com/fwlink/p/?linkid=255387). Пример кода изначально написан для Windows 8.1, но код можно использовать и в Windows10.
+Полный образец кода, демонстрирующего рабочие элементы, рабочие элементы таймеров и периодические рабочие элементы, см. на странице [образца пула потоков](http://go.microsoft.com/fwlink/p/?linkid=255387). Пример кода изначально написан для Windows8.1, но код можно использовать и в Windows10.
 
 Дополнительные сведения о повторяющихся таймерах см. в разделе [Создание периодического рабочего элемента](create-a-periodic-work-item.md).
 
@@ -234,6 +232,6 @@ ms.locfileid: "665348"
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)
 * [Отправка рабочего элемента по таймеру](use-a-timer-to-submit-a-work-item.md)
- 
+ 
 
- 
+ 

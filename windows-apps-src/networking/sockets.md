@@ -6,16 +6,14 @@ ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.author: stwhi
 ms.date: 06/03/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 31d05f57c674b7b882cf3494e8fb29611963f83c
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 9e0e73f4224b1577a5219d239f8c11bf5ecc0b73
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983485"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565675"
 ---
 # <a name="sockets"></a>Сокеты
 Сокеты — это технология передачи данных низкого уровня, на основе которой реализованы многие сетевые протоколы. UWP предоставляет классы сокетов TCP и UDP для клиент-серверных или одноранговых приложений, если устанавливаются долгосрочные подключения или установленное подключение не требуется.
@@ -1206,7 +1204,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-Следующий пример подходит для любого языка UWP, не только C#. В его основе— поведение потоков [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) и [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream), объединяющих отправки. Эта техника вызывает метод [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) в потоке вывода, который начиная с Windows 10 гарантированно возвращается только после того, как все операции потока вывода завершены.
+Следующий пример подходит для любого языка UWP, не только C#. В его основе— поведение потоков [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) и [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream), объединяющих отправки. Метод вызывает [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) в потоке вывода, который начиная с Windows10, гарантированно возвращается только после завершения всех операций выходного потока.
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.

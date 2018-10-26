@@ -6,19 +6,18 @@ ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, приостановка, directx
-ms.openlocfilehash: 028350f3e4bf6bda5a72663c009e8117c9311b3e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 204d61430f59c820e9ef9ef36832cd1c24ee7f9c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223830"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569655"
 ---
 # <a name="how-to-suspend-an-app-directx-and-c"></a>Приостановка работы приложения (DirectX и C++)
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи, касающиеся Windows 8.x, см. в разделе [Архив](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 В этом разделе показано, как сохранять важное состояние системы и данные приложения, когда система приостанавливает работу приложения универсальной платформы Windows (UWP), использующего DirectX.
 
@@ -100,7 +99,7 @@ void App::Run()
 ## <a name="call-trim"></a>Вызов Trim()
 
 
-Начиная с Windows8.1, все приложения Магазина Windows, использующие DirectX, должны вызывать метод [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) при приостановке. Такой вызов сообщает графическому драйверу, что можно освободить все временные буферы, выделенные приложению. Это снижает вероятность завершения приложения для высвобождения памяти в приостановленном состоянии. Это требование необходимо для сертификации Windows8.1.
+Начиная с версии Windows8.1, все приложения UWP на DirectX необходимо вызвать метод [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) при приостановке. Такой вызов сообщает графическому драйверу, что можно освободить все временные буферы, выделенные приложению. Это снижает вероятность завершения приложения для высвобождения памяти в приостановленном состоянии. Это требуется для сертификации для Windows8.1.
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -151,9 +150,9 @@ void DX::DeviceResources::Trim()
 * [Возобновление работы приложения (DirectX и C++)](how-to-resume-an-app-directx-and-cpp.md)
 * [Активация приложения (DirectX и C++)](how-to-activate-an-app-directx-and-cpp.md)
 
- 
+ 
 
- 
+ 
 
 
 

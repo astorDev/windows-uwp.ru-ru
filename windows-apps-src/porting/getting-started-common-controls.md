@@ -1,23 +1,22 @@
 ---
-author: mcleblanc
+author: stevewhims
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
 description: Приступая к работе с общими элементами управления
 title: Начало работы с общими элементами управления
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 4df9785b0d8ccea0561a780fa2b807201332cda8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: bbb07da7fa28aed6e45c97d128f9bd04ca986fe7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "224551"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572034"
 ---
 # <a name="getting-started-common-controls"></a>Начало работы: общие элементы управления
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="common-controls-list"></a>Список общих элементов управления
 
@@ -25,7 +24,7 @@ ms.locfileid: "224551"
 
 Довольно продуманной функцией элементов управления UWP является то, что они могут распознавать тип устройств, на которых они запущены, и менять свой внешний вид и функции соответствующим образом. Например, если в проекте используется элемент управления [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681), он достаточно продуман, чтобы самостоятельно оптимизировать внешний вид и вести себя на настольном компьютере иначе, чем на телефоне. Ничего делать не нужно: элементы управления настраиваются самостоятельно во время работы.
 
-| Элемент управления iOS (класс и протокол) | Эквивалентный элемент управления приложения Магазина Windows |
+| Элемент управления iOS (класс и протокол) | Эквивалентный элемент управления UWP |
 |------------------------------|--------------------------------------|
 | Индикатор действий (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> См. также [Краткое руководство. Добавление элементов управления ходом выполнения](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
 | Представление баннера (**ADBannerView**) и делегат представления баннера (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> См. также [Показ рекламы в приложении](../monetize/display-ads-in-your-app.md) |
@@ -33,7 +32,7 @@ ms.locfileid: "224551"
 | Управляющий элемент выбора даты (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | Представление изображения (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> См. также статью [Image и ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | Подпись (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> См. также [Краткое руководство: отображение текста](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392). |
-| Представление карты (MKMapView) и делегат представления карты (MKMapViewDelegate) | См. также [Карты Bing для приложений Магазина Windows](http://go.microsoft.com/fwlink/p/?LinkId=263496). |
+| Представление карты (MKMapView) и делегат представления карты (MKMapViewDelegate) | См. в разделе ["карты Bing" для приложений UWP](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
 | Контроллер навигации (UINavigationController) и делегат контроллера навигации (UINavigationControllerDelegate) | [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> См. также раздел [Навигация](https://msdn.microsoft.com/library/windows/apps/mt187344). |
 | Элемент управления страницей (UIPageControl) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> См. также раздел [Навигация](https://msdn.microsoft.com/library/windows/apps/mt187344). |
 | Представление выбора (UIPickerView) и делегат представления выбора (UIPickerViewDelegate) | [ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> См. также [Добавление полей со списком и списков](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616). |
@@ -54,7 +53,7 @@ ms.locfileid: "224551"
 
 Сведения о других элементах управления: [Список элементов управления](https://msdn.microsoft.com/library/windows/apps/mt185406).
 
-**Примечание.** Список элементов управления для приложений Магазина Windows на JavaScript и HTML см. в статье [Список элементов управления](https://msdn.microsoft.com/library/windows/apps/hh465453).
+**Примечание**список элементов управления для приложений UWP на JavaScript и HTML, см. в разделе [список элементов управления](https://msdn.microsoft.com/library/windows/apps/hh465453).
 
 ### <a name="next-step"></a>Следующие шаги
 

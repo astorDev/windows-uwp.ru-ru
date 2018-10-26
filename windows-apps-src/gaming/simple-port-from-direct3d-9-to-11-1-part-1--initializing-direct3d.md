@@ -6,21 +6,20 @@ ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, direct3d 11, инициализация, портирование, direct3d 9
-ms.openlocfilehash: d4c4c905ad7d7452251ad13d95cbdc53b137c6c8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 5f6aa5bca3ecc242e90b42081a0111358afdfa9b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223851"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571925"
 ---
 # <a name="initialize-direct3d-11"></a>Инициализация Direct3D 11
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Резюме**
+**Краткий обзор**
 
 -   Часть 1. Инициализация Direct3D 11
 -   [Часть 2. Преобразование инфраструктуры отрисовки](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
@@ -76,9 +75,9 @@ m_pD3D->CreateDevice(
 
 Создав устройство Direct3D 11 и его контекст, мы можем воспользоваться функциональностью COM-указателей для получения последней версии интерфейсов, которые содержат дополнительные возможности–это всегда рекомендуется.
 
-> **Примечание.** D3D\_FEATURE\_LEVEL\_9\_1 (что соответствует модели шейдеров 2.0)–это наименьший уровень, который должно поддерживать ваше игровое приложение Магазина Windows. (ARM-пакеты вашего приложения не пройдут сертификацию, если оно не поддерживает уровень 9\_1.) Если ваша игра также содержит путь отрисовки с использованием функциональности шейдеров модели 3, то в массив необходимо включить D3D\_FEATURE\_LEVEL\_9\_3.
+> **Примечание**  D3D\_FEATURE\_LEVEL\_9\_1 (что соответствует модели шейдеров 2.0) – это наименьший уровень игры Microsoft Store для поддержки. (ARM-пакеты вашего приложения не пройдут сертификацию, если оно не поддерживает уровень 9\_1.) Если ваша игра также содержит путь отрисовки с использованием функциональности шейдеров модели 3, то в массив необходимо включить D3D\_FEATURE\_LEVEL\_9\_3.
 
- 
+ 
 
 Direct3D11
 
@@ -109,7 +108,7 @@ D3D11CreateDevice(
     creationFlags,
     featureLevels,
     ARRAYSIZE(featureLevels),
-    D3D11_SDK_VERSION, // Windows Store apps must set this to D3D11_SDK_VERSION.
+    D3D11_SDK_VERSION, // UWP apps must set this to D3D11_SDK_VERSION.
     &device, // Returns the Direct3D device created.
     nullptr,
     &context // Returns the device immediate context.
@@ -128,9 +127,9 @@ context.As(&m_d3dContext);
 
 Устройство Direct3D реализует COM-интерфейс для DXGI. Первым делом нам нужно получить этот интерфейс и с его помощью запросить адаптер DXGI, в котором содержится устройство. Затем мы воспользуемся адаптером DXGI для создания фабрики DXGI.
 
-> **Примечание.** Это COM-интерфейсы, поэтому не исключено, что вашим первым побуждением будет прибегнуть к методу [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Но вместо него следует использовать интеллектуальные указатели [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx). После этого просто вызовите метод [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx), передав ему пустой COM-указатель на надлежащий тип интерфейса.
+> **Примечание**  это COM-интерфейсы, поэтому ваше первым побуждением будет использовать [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Но вместо него следует использовать интеллектуальные указатели [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx). После этого просто вызовите метод [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx), передав ему пустой COM-указатель на надлежащий тип интерфейса.
 
- 
+ 
 
 **Direct3D 11**
 
@@ -152,9 +151,9 @@ dxgiAdapter->GetParent(
 
 Теперь, когда у нас есть фабрика DXGI, мы можем с ее помощью создать цепочку буферов. Определимся с параметрами цепочки буферов. В качестве формата поверхности мы выберем [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059), потому что этот формат совместим с Direct2D. Масштабирование дисплея, множественную дискретизацию и стереоскопическую отрисовку мы отключим, так как они не используются в этом примере. Поскольку работа идет непосредственно в CoreWindow, мы можем оставить ширину и высоту равными 0 и получить полноэкранные значения автоматически.
 
-> **Примечание**. Всегда задавайте для параметра *SDKVersion* значение D3D11\_SDK\_VERSION для приложений UWP.
+> **Примечание**  всегда присвоить параметру *SDKVersion* значение D3D11\_SDK\_VERSION для приложений UWP.
 
- 
+ 
 
 **Direct3D11**
 
@@ -172,9 +171,9 @@ swapChain.As(&m_swapChain);
 
 Чтобы не делать отрисовку чаще, чем позволяют возможности экрана, мы устанавливаем задержку кадра равной 1 и используем [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077). Тем самым экономится энергия, а кроме того это требуется для сертификации. Подробнее о представлении на экране вы узнаете из части 2 этой пошаговой инструкции.
 
-> **Примечание.** Пока поток отрисовки заблокирован, вы можете продолжать другую работу, используя многопоточность (например, рабочие элементы [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642)).
+> **Примечание**  можно использовать многопоточность (например, рабочие элементы [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) ) продолжать другую работу, пока поток отрисовки заблокирован.
 
- 
+ 
 
 **Direct3D 11**
 
@@ -227,9 +226,9 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 Теперь, когда у нас есть дескриптор устройства и полноэкранный буфер отрисовки, все готово к загрузке и рисованию геометрического содержимого. Перейдите к разделу [части 2 об отрисовке](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md).
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ description: Узнайте, как получить подробные свед
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c191a9f2da29f0ad10d0ba61507873b4fd652ddc
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: c745b99104495b4d0b3c60202c378285dbfdd7b6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959079"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565355"
 ---
 # <a name="get-battery-information"></a>Получение сведений об аккумуляторе
 
@@ -32,7 +30,7 @@ ms.locfileid: "959079"
 
 В некоторых устройствах используется несколько батарей. При этом не всегда очевидно, какой вклад делает каждая из них в общую энергоемкость устройства. Поэтому следует использовать класс [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011). *Система батарей* содержит все контроллеры батарей, подключенные к устройству. Она предоставляет один общий объект [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005).
 
-**Примечание.** Класс [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) фактически соответствует контроллеру батареи. В зависимости от устройства контроллер может быть подключен как к физической батарее, так и к корпусу устройства. Таким образом, можно создать объект батареи даже при отсутствии батарей. В других случаях объект батареи может иметь значение **null**.
+**Примечание** [**батареи**](https://msdn.microsoft.com/library/windows/apps/Dn895004) фактически соответствует контроллеру батареи. В зависимости от устройства контроллер может быть подключен как к физической батарее, так и к корпусу устройства. Таким образом, можно создать объект батареи даже при отсутствии батарей. В других случаях объект батареи может иметь значение **null**.
 
 Если у вас есть объект системы батарей, то вызвав метод [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport), можно получить соответствующий класс [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005).
 
@@ -340,7 +338,7 @@ namespace App1
 
 И наконец для запуска основного приложения батареи сделайте следующее: в меню **Отладка** выберите пункт **Начать отладку**, чтобы протестировать решение.
 
-**Совет.** Чтобы получить числовые значения из объекта [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005), выполните отладку своего приложения на **локальном компьютере** или на внешнем **устройстве** (например, на Windows Phone). При отладке в эмуляторе устройства для свойств емкости и уровня заряда объект **BatteryReport** возвращает значение **null**.
+**Совет**Чтобы получить числовые значения из объекта [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) , выполнить отладку приложения на **Локальном компьютере** или внешнее **устройство** (например, Windows Phone). При отладке в эмуляторе устройства для свойств емкости и уровня заряда объект **BatteryReport** возвращает значение **null**.
 
- 
+ 
 

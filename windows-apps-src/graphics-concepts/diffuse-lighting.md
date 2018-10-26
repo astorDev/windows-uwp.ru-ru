@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 84036edd2071d9545b3a492ea5cf0b397d9e722e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 5846edda167823b7ae161d332fbde450ccf20d72
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044433"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572170"
 ---
 # <a name="diffuse-lighting"></a>Рассеянное освещение
 
@@ -41,7 +39,7 @@ ms.locfileid: "1044433"
 | Atten           | Н/Д           | FLOAT         | Затухание света. См. [Коэффициент затухания и узкой направленности света](attenuation-and-spotlight-factor.md). |
 | Spot            | Н/Д           | FLOAT         | Коэффициент узкой направленности света. См. [Коэффициент затухания и узкой направленности света](attenuation-and-spotlight-factor.md).  |
 
- 
+ 
 
 Инструкции по вычислению характеристик затухания (Atten) или узкой направленности света (Spot) см. в разделе [Коэффициент затухания и узкой направленности света](attenuation-and-spotlight-factor.md).
 
@@ -73,9 +71,9 @@ ms.locfileid: "1044433"
 
 [Математические аспекты освещения](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 
