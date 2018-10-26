@@ -1,27 +1,25 @@
 ---
-title: Концепции графики Direct3D
-description: Рассматриваются концепции графики, лежащие в основе Microsoft Direct3D.
+title: Глоссарий графики Direct3D
+description: Определяет условия графики, используемые Microsoft Direct3D.
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
-- Обучающее руководство по графике Direct3D
+- Глоссарий графики Direct3D
 author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e1fed9eaf3003bc67a86a5282fccbb923019a36
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 0e325494cefeab4cf3ed40939f5b24de5e921b68
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653023"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555580"
 ---
-# <a name="direct3d-graphics-concepts"></a>Концепции графики Direct3D
+# <a name="direct3d-graphics-glossary"></a>Глоссарий графики Direct3D
 
 
-Рассматриваются концепции графики Microsoft Direct3D. В этом руководстве рассматриваются общие концепции трехмерной компьютерной графики, используемые в разработке игр и приложений Direct3D.
+Определение терминов графики Microsoft Direct3D. Определяет этот словарь терминов, в условий высокого уровня, общие трехмерной компьютерной графики, которые используются в разработке игр и приложений Direct3D.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>В этом разделе
 
@@ -33,7 +31,7 @@ ms.locfileid: "1653023"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Раздел</th>
+<th align="left">Статья</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
@@ -89,8 +87,8 @@ ms.locfileid: "1653023"
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 

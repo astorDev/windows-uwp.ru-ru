@@ -6,19 +6,18 @@ ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, directx, запуск, возобновление
-ms.openlocfilehash: c3557a11f8f18262f0b5e0c6ad6cac88d5274f73
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: ebcec430c4fc916e77ebdf25ee53deb23b02185d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223713"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556881"
 ---
 # <a name="launching-and-resuming-apps-directx-and-c"></a>Запуск и возобновление работы приложений (DirectX и C++)
 
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Узнайте о запуске, приостановке и возобновлении работы приложений универсальной платформы Windows (UWP), использующих DirectX.
 
@@ -27,11 +26,11 @@ ms.locfileid: "223713"
 | [Активация приложения](how-to-activate-an-app-directx-and-cpp.md) | В этом разделе показано, как определить процесс активации для приложения универсальной платформы Windows (UWP), использующего DirectX. |
 | [Приостановка работы приложения](how-to-suspend-an-app-directx-and-cpp.md) | В этом разделе показано, как сохранять важное состояние системы и данные приложения, когда система приостанавливает работу приложения универсальной платформы Windows (UWP), использующего DirectX. |
 | [Возобновление работы приложения](how-to-resume-an-app-directx-and-cpp.md) | В этом разделе показано, как восстановить важные данные приложения, когда система возобновляет работу приложения универсальной платформы Windows (UWP), использующего DirectX. |
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

@@ -5,16 +5,14 @@ description: Оптимизация приложения для Xbox.
 ms.author: wdg-dev-content
 ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1794e4b7ddf97b0b5c41ff29295892e512453a07
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 604e6dc5381a36d4dbda70e3435e5cd6fa44cc04
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "927259"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551898"
 ---
 # <a name="xbox-best-practices"></a>Рекомендации для Xbox
 
@@ -26,7 +24,7 @@ ms.locfileid: "927259"
 
 ### <a name="do-turn-off-mouse-mode"></a>*Рекомендуется:* отключение режима мыши
 
-Пользователи Xbox привлекательности их контроллеры. Для оптимизации ввода с помощью контроллера [отключите режим мыши](how-to-disable-mouse-mode.md) и включите направленную навигацию (также называемую [фокус по оси X и Y](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)). Особое внимание фокус извещения и недоступный пользовательского интерфейса.
+Пользователям Xbox нравится их контроллерами. Для оптимизации ввода с помощью контроллера [отключите режим мыши](how-to-disable-mouse-mode.md) и включите направленную навигацию (также называемую [фокус по оси X и Y](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)). Обращайте внимание на ловушки фокус и недоступный пользовательский Интерфейс.
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*Рекомендуется:* оптимизация прямоугольника фокуса для просмотра на большом расстоянии
 
@@ -47,7 +45,7 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 ### <a name="consider-use-tv-safe-colors"></a>*Рассмотрите:* применение безопасных цветов для использования на телевизионных экранах
 
-Телевизоры обрабатывают предельно интенсивные цвета не так хорошо, как компьютерные мониторы. Избегайте использования в приложении цветов с высокой интенсивностью, чтобы избежать появления странного эффекта чередования цветов или их размытия. Кроме того, необходимо помнить, что все телевизоры разные, и цвета, которые отлично выглядят на *вашем* телевизоре, могут смотреться совершенно иначе на телевизорах пользователей. Чтение [цветов](../design/devices/designing-for-tv.md#colors) понять, как сделать свои приложения удобна всем пользователям.
+Телевизоры обрабатывают предельно интенсивные цвета не так хорошо, как компьютерные мониторы. Избегайте использования в приложении цветов с высокой интенсивностью, чтобы избежать появления странного эффекта чередования цветов или их размытия. Кроме того, необходимо помнить, что все телевизоры разные, и цвета, которые отлично выглядят на *вашем* телевизоре, могут смотреться совершенно иначе на телевизорах пользователей. Чтение [цветов](../design/devices/designing-for-tv.md#colors) , чтобы понять, как сделать приложение более привлекательным для!
 
 ### <a name="remember-you-can-disable-scaling"></a>*Помните:* масштабирование можно отключить
 
@@ -67,14 +65,14 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 - [Разработка для UWP 1: создание адаптивного пользовательского интерфейса](https://channel9.msdn.com/Events/Build/2016/L724-R1)
 - [Веб-приложения не только для браузеров: различные платформы и устройства](https://channel9.msdn.com/Events/Build/2016/B888)
 
-## <a name="app-dev-on-xbox"></a>Центра разработчиков приложений на Xbox
+## <a name="app-dev-on-xbox"></a>Разработка приложений на Xbox
 
-Событие **Центра разработчиков приложений на Xbox** — это отличный отправной точки для разработчиков, впервые появившихся в создавать приложения на Xbox.
+**Разработка приложений на Xbox** событие — превосходная отправная точка для разработчиков, не знакомы с созданием приложений на консоли Xbox.
 
-* [Просмотрите записанных сеансов](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
-* [Чтение записи блога](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
+* [Посмотрите записи сеансов](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
+* [Чтение в блогах](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
 - [UWP на Xbox One](index.md)
 - [Проектирование для Xbox и телевизора](../design/devices/designing-for-tv.md)

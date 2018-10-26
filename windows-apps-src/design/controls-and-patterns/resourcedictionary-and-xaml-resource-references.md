@@ -11,16 +11,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 399963b0d0c9ef4d3860daf1b090af28c9cf97d0
-ms.sourcegitcommit: 67cb03db41556cf0d58993073654cd0706aede84
-ms.translationtype: HT
+ms.openlocfilehash: 8b5d2a55610b6cec2f9026a5834b00ad7015a9c6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2018
-ms.locfileid: "1480630"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555161"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>Ссылки на ресурсы ResourceDictionary и XAML
 
@@ -99,11 +97,13 @@ ms.locfileid: "1480630"
 
     <Page.Resources>
         <Style TargetType="Button">
-              <Setter Property="Background" Value="red"/>
+            <Setter Property="Background" Value="Red"/>
         </Style>
-    </Page.Resources> 
+    </Page.Resources>
+    <Grid>
        <!-- This button will have a red background. -->
        <Button Content="Button" Height="100" VerticalAlignment="Center" Width="100"/>
+    </Grid>
 </Page>
 ```
 
@@ -113,9 +113,10 @@ ms.locfileid: "1480630"
 
 Вы получаете доступ к участникам словаря ресурсов, как к любому другому словарю.
 
-> **Внимание!**&nbsp;&nbsp;При выполнении поиска ресурсов в коде рассматриваются только ресурсы в словаре `Page.Resources`. В отличие от [расширения разметки StaticResource](../../xaml-platform/staticresource-markup-extension.md), данный код не возвращается в словарь `Application.Resources`, если ресурсы не найдены в первом словаре.
+> [!WARNING]
+> При выполнении поиска ресурсов в коде, только ресурсы в `Page.Resources` рассматриваются словарь. В отличие от [расширения разметки StaticResource](../../xaml-platform/staticresource-markup-extension.md), данный код не возвращается в словарь `Application.Resources`, если ресурсы не найдены в первом словаре.
 
- 
+ 
 
 В этом примере показано, как извлечь ресурс `redButtonStyle` из словаря ресурсов страницы:
 
@@ -203,29 +204,7 @@ sealed partial class App : Application
 
 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) — это базовый класс, от которого наследуют элементы управления, имеющий свойство [Resources](https://msdn.microsoft.com/library/windows/apps/br208740). Таким образом, вы можете добавить локальный словарь ресурсов в любой **FrameworkElement**.
 
-Здесь словарь ресурсов добавлен в элемент страницы.
-
-```XAML
-<Page
-    x:Class="MSDNSample.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-    <Page.Resources>
-        <x:String x:Key="greeting">Hello world</x:String>
-    </Page.Resources>
-
-    <Border>
-        <Border.Resources>
-            <x:String x:Key="greeting">Hola mundo</x:String>
-        </Border.Resources>
-        <TextBlock Text="{StaticResource greeting}" Foreground="Gray" VerticalAlignment="Center"/>
-    </Border>
-</Page>
-
-```
-
-Здесь [Page](https://msdn.microsoft.com/library/windows/apps/br227503) и [Border](https://msdn.microsoft.com/library/windows/apps/br209250) имеют словари ресурсов, а также содержат ресурс с именем greeting. [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) находится внутри **Border**, поэтому его поиск ресурсов сначала просматривает ресурсы **Border**, затем ресурсы **Page**, а затем ресурсы [Application](https://msdn.microsoft.com/library/windows/apps/br242324). В **TextBlock** будет отображаться значение Hola mundo.
+Здесь [Page](https://msdn.microsoft.com/library/windows/apps/br227503) и [Border](https://msdn.microsoft.com/library/windows/apps/br209250) имеют словари ресурсов, а также содержат ресурс с именем greeting. [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) с именем «textBlock2» является внутри **границ**, поэтому его поиск ресурсов сначала **Border**ресурсы **страницы**ресурсов и ресурсы [приложения](https://msdn.microsoft.com/library/windows/apps/br242324) . В **TextBlock** будет отображаться значение Hola mundo.
 
 Чтобы обратиться к ресурсам этого элемента из кода, используйте свойство [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) этого элемента. Доступ к ресурсам [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) в коде, а не XAML, обеспечит поиск только в этом словаре, но не в словарях родительского элемента.
 
@@ -234,16 +213,25 @@ sealed partial class App : Application
     x:Class="MSDNSample.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
     <Page.Resources>
         <x:String x:Key="greeting">Hello world</x:String>
     </Page.Resources>
+    
+    <StackPanel>
+        <!-- Displays "Hello world" -->
+        <TextBlock x:Name="textBlock1" Text="{StaticResource greeting}"/>
 
-    <Border x:Name="border">
-        <Border.Resources>
-            <x:String x:Key="greeting">Hola mundo</x:String>
-        </Border.Resources>
-    </Border>
+        <Border x:Name="border">
+            <Border.Resources>
+                <x:String x:Key="greeting">Hola mundo</x:String>
+            </Border.Resources>
+            <!-- Displays "Hola mundo" -->
+            <TextBlock x:Name="textBlock2" Text="{StaticResource greeting}"/>
+        </Border>
+
+        <!-- Displays "Hola mundo", set in code. -->
+        <TextBlock x:Name="textBlock3"/>
+    </StackPanel>
 </Page>
 
 ```
@@ -254,7 +242,7 @@ sealed partial class App : Application
         public MainPage()
         {
             this.InitializeComponent();
-            string str = (string)border.Resources["greeting"];
+            textBlock3.Text = (string)border.Resources["greeting"];
         }
     }
 ```
@@ -359,7 +347,7 @@ sealed partial class App : Application
 
 </ResourceDictionary>
 
-<!—Dictionary2.xaml -->
+<!-- Dictionary2.xaml -->
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -407,7 +395,7 @@ sealed partial class App : Application
 
 > **Подсказка.**&nbsp;&nbsp;Обычно все непосредственные ресурсы определяют на корневом уровне страницы для извлечения преимущества из этого поведения при поиске ресурсов и для соблюдения стиля разметки XAML.
 
- 
+ 
 
 Если запрошенный ресурс не найден среди непосредственных ресурсов, следующим шагом поиска будет проверка свойства [Application.Resources](https://msdn.microsoft.com/library/windows/apps/br242338). **Application.Resources** — лучшее место для расположения специфических для приложения ресурсов, ссылки на которые присутствуют на нескольких страницах в структуре навигации вашего приложения.
 
@@ -463,7 +451,7 @@ sealed partial class App : Application
 
 Большинство сценариев для [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) обрабатывается исключительно в XAML. Контейнер **ResourceDictionary** и ресурсы объявляются как XAML-файл или набор узлов XAML в файле определения пользовательского интерфейса. Затем с помощью ссылок на ресурсы XAML отправляется запрос на эти ресурсы из других частей XAML. По-прежнему существуют некоторые сценарии, где приложению может потребоваться изменить содержимое **ResourceDictionary** с помощью кода, выполняемого во время работы приложения, или по крайней мере запросить содержимое **ResourceDictionary**, чтобы выяснить, определен ли ресурс. Вызовы этого кода осуществляются в экземпляре **ResourceDictionary**, поэтому сначала необходимо получить либо один непосредственный **ResourceDictionary** где-либо в дереве объектов, получив [FrameworkElement.Resources](https://msdn.microsoft.com/library/windows/apps/br208740) либо `Application.Current.Resources`.
 
-В коде на C\# или Microsoft Visual Basic можно сослаться на ресурс в данном [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) с помощью индексатора ([Item](https://msdn.microsoft.com/library/windows/apps/jj603134)). Элемент **ResourceDictionary** представляет собой словарь со строковыми ключами, поэтому индексатор использует такие ключи вместо целочисленного индекса. В коде, использующем расширения компонентов VisualC++ (C++/CX), применяйте [Lookup](https://msdn.microsoft.com/library/windows/apps/br208800).
+В коде на C\# или Microsoft Visual Basic можно сослаться на ресурс в данном [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) с помощью индексатора ([Item](https://msdn.microsoft.com/library/windows/apps/jj603134)). Элемент **ResourceDictionary** представляет собой словарь со строковыми ключами, поэтому индексатор использует такие ключи вместо целочисленного индекса. В расширениях компонентов VisualC ++ (C + +/ CX) кода, используйте [поиска](https://msdn.microsoft.com/library/windows/apps/br208800).
 
 Во время использования кода для проверки или изменения [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) такие API, как [Lookup](https://msdn.microsoft.com/library/windows/apps/br208800) или [Item](https://msdn.microsoft.com/library/windows/apps/jj603134), не переходят от непосредственных ресурсов к ресурсам приложения. Это поведение анализатора XAML, которое вызывается только при загрузке страниц XAML. Во время выполнения область ключей самодостаточна в экземпляре **ResourceDictionary**, используемом в это время. Однако эта область не распространяется на [MergedDictionaries](https://msdn.microsoft.com/library/windows/apps/br208801).
 
@@ -484,7 +472,7 @@ sealed partial class App : Application
 
 В сложных сценариях можно реализовать класс, поведение которого будет отличаться от поведения поиска ссылок на ресурсы XAML, описанного в этой теме. Для этого реализуется класс [CustomXamlResourceLoader](https://msdn.microsoft.com/library/windows/apps/br243327), после чего можно пользоваться этим поведением, применяя для ссылок на ресурсы [расширение разметки CustomResource](https://msdn.microsoft.com/library/windows/apps/mt185580) вместо [StaticResource](../../xaml-platform/staticresource-markup-extension.md) или [ThemeResource](../../xaml-platform/themeresource-markup-extension.md). В большинстве приложений не будет сценариев, которым требуется такое поведение. Более подробную информацию см. в статье [CustomXamlResourceLoader](https://msdn.microsoft.com/library/windows/apps/br243327).
 
- 
+ 
 ## <a name="related-topics"></a>Еще по теме
 
 * [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794)
@@ -495,9 +483,9 @@ sealed partial class App : Application
 * [Настройка стиля элементов управления](xaml-styles.md)
 * [Атрибут x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787)
 
- 
+ 
 
- 
+ 
 
 
 

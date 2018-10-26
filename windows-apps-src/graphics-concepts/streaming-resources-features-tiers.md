@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 35fcedcdfa6470a4c17c964cd0ae341e1ccf3b3a
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: bc7d04a826bd8be0947e8d84ab8dbff6f67e8027
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652873"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555141"
 ---
 # <a name="streaming-resources-features-tiers"></a>Уровни функций для потоковых ресурсов
 
@@ -41,7 +39,7 @@ Direct3D поддерживает три уровня возможностей, 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Раздел</th>
+<th align="left">Статья</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
@@ -61,16 +59,16 @@ Direct3D поддерживает три уровня возможностей, 
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
 
 
 [Потоковые ресурсы](streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -5,16 +5,14 @@ description: Используйте API InteractionTracker для создани
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, анимация
 ms.localizationpriority: medium
-ms.openlocfilehash: 49c9e034219b22dd17b03e2b9e8396a5edc38667
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 0a991d692b4ba4c7a221932218a7d25e48fe16ca
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393203"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553659"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a>Пользовательские взаимодействия с манипуляциями, выполняемые с помощью InteractionTracker
 
@@ -63,11 +61,11 @@ InteractionTracker был впервые представлен в простр�
 
 ### <a name="interactiontracker-state-machine"></a>Конечный автомат InteractionTracker
 
-Как упоминалось ранее, InteractionTracker представляет собой конечный автомат с 4 состояниями, каждое из которых может переходить в любые другие. (Дополнительные сведения о смене состояний InteractionTracker см. в документации по классу [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker).)
+Как упоминалось ранее, InteractionTracker представляет собой конечный автомат с 4 состояниями, каждое из которых может переходить в любые другие fourstates. (Дополнительные сведения о смене состояний InteractionTracker см. в документации по классу [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker).)
 
 | Состояние | Описание |
 |-------|-------------|
-| Покой | Нет активности, вводы или анимации не определяются |
+| Покой | Нет активности, вводы или анимации не определяются |
 | Взаимодействие | Обнаружен активный пользовательский ввод |
 | Инерция | Активное движение в результате активного ввода или программной скорости |
 | CustomAnimation | Активное движение в результате пользовательской анимации |
@@ -100,10 +98,10 @@ VisualInteractionSource также отвечает за управление с
 ```csharp
 private void root_PointerPressed(object sender, PointerRoutedEventArgs e)
 {
-    if (e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Touch)
-    {
-        _source.TryRedirectForManipulation(e.GetCurrentPoint(root));
-    }
+    if (e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Touch)
+    {
+        _source.TryRedirectForManipulation(e.GetCurrentPoint(root));
+    }
 }
 ```
 
@@ -147,25 +145,25 @@ var opacityExp = -_tracker.GetReference().Position;
 
 ```csharp
 private void InteractionTrackerSetup(Compositor compositor, Visual hitTestRoot)
-{ 
-    // #1 Create InteractionTracker object
-    var tracker = InteractionTracker.Create(compositor);
+{ 
+    // #1 Create InteractionTracker object
+    var tracker = InteractionTracker.Create(compositor);
 
-    // #2 Set Min and Max positions
-    tracker.MinPosition = new Vector3(-1000f);
-    tracker.MaxPosition = new Vector3(1000f);
+    // #2 Set Min and Max positions
+    tracker.MinPosition = new Vector3(-1000f);
+    tracker.MaxPosition = new Vector3(1000f);
 
-    // #3 Setup the VisualInteractionSourc
-    var source = VisualInteractionSource.Create(hitTestRoot);
+    // #3 Setup the VisualInteractionSourc
+    var source = VisualInteractionSource.Create(hitTestRoot);
 
-    // #4 Set the properties for the VisualInteractionSource
-    source.ManipulationRedirectionMode =
+    // #4 Set the properties for the VisualInteractionSource
+    source.ManipulationRedirectionMode =
         VisualInteractionSourceRedirectionMode.CapableTouchpadOnly;
-    source.PositionXSourceMode = InteractionSourceMode.EnabledWithInertia;
-    source.PositionYSourceMode = InteractionSourceMode.EnabledWithInertia;
+    source.PositionXSourceMode = InteractionSourceMode.EnabledWithInertia;
+    source.PositionYSourceMode = InteractionSourceMode.EnabledWithInertia;
 
-    // #5 Add the VisualInteractionSource to InteractionTracker
-    tracker.InteractionSources.Add(source);
+    // #5 Add the VisualInteractionSource to InteractionTracker
+    tracker.InteractionSources.Add(source);
 }
 ```
 

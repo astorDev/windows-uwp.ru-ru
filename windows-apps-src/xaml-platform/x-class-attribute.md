@@ -6,18 +6,17 @@ ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: d3105e8ac345e1eb6f0d974f8ea29e741dae9f58
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 6746969b1b717183894d6b941be41c9aca452960
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225190"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552870"
 ---
 # <a name="xclass-attribute"></a>Атрибут x:Class
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Настраивает компиляцию XAML для объединения разделяемых классов разметки и кода программной части. Разделяемый класс кода определяется в отдельном файле кода, а разделяемый класс разметки создается при формировании кода во время компиляции XAML.
 
@@ -35,7 +34,7 @@ ms.locfileid: "225190"
 | Термин | Описание |
 |------|-------------|
 | namespace | Необязательное. Указывает пространство имен, которое содержит разделяемый класс, определяемый _classname_. Если _namespace_ указано, то _namespace_ и _classname_ должны быть разделены точкой ("."). Если _namespace_ пропущено, то _classname_ может не иметь пространства имен. |
-| classname | Обязательное. Указывает имя разделяемого класса, который объединяет загруженный код XAML и ваш код программной части для этого XAML. | 
+| classname | Обязательное. Указывает имя разделяемого класса, который объединяет загруженный код XAML и ваш код программной части для этого XAML. | 
 
 ## <a name="remarks"></a>Комментарии
 

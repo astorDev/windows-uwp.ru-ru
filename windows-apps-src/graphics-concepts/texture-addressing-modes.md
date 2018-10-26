@@ -12,15 +12,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 75aa946f3a0f1259adf1207e9568ca6da783883e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 0e817dcc92741ca2e738784f387cfe49399a108c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044753"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552810"
 ---
 # <a name="texture-addressing-modes"></a>Режимы адресации текстур
 
@@ -43,7 +41,7 @@ Direct3D позволяет приложениям выполнять обтек
 | Закрепление (Clamp)                   | Фиксирует координаты текстуры в пределах диапазона от 0.0 до 1.0. Режим закрепления применяет текстуру один раз, а затем размывает цвет граничных пикселей. |
 | Цвет рамки (Border color)            | Использует произвольный *цвет рамки* для любых координат текстуры вне диапазона от 0.0 до 1.0 включительно.                         |
 
- 
+ 
 
 ## <a name="span-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanwrap-texture-address-mode"></a><span id="Wrap_texture_address_mode"></span><span id="wrap_texture_address_mode"></span><span id="WRAP_TEXTURE_ADDRESS_MODE"></span>Режим адресации текстур Wrap (обертывание)
 
@@ -101,9 +99,9 @@ Direct3D позволяет приложениям выполнять обтек
 
 [Текстуры](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

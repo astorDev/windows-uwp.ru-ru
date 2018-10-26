@@ -1,45 +1,44 @@
 ---
-author: mcleblanc
+author: stevewhims
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: В этом разделе представлен практический пример переноса очень простого приложенияWindows Phone Silverlight в приложение UWP для Windows10.
-title: Пример переноса с Windows Phone Silverlight на UWP, Bookstore1
-ms.author: markl
+description: В этом разделе представлен практический пример переноса очень простого приложения WindowsPhone Silverlight в приложение универсальной платформы Windows (UWP) Windows10.
+title: Silverlight и WindowsPhone практический пример UWP, Bookstore1
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 0cd284b2cb0ed4170d587cb3b412bc1954496c93
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: c335f607eb1897f79035850cd6a5af9e7a7a56dc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225221"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557766"
 ---
-# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>Пример переноса с Windows Phone Silverlight на UWP: Bookstore1
+# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>WindowsPhone Silverlight в UWP практический пример: Bookstore1
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-В этом разделе представлен практический пример переноса очень простого приложенияWindows Phone Silverlight в приложение UWP для Windows10. В Windows10 можно создать единый пакет приложения, который покупатели могут установить на широкий спектр устройств. Именно этим мы и займемся в этом примере. См. раздел [Руководство по приложениям UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
+В этом разделе представлен практический пример переноса очень простого приложения WindowsPhone Silverlight в приложение Windows10Universal платформы Windows (UWP). С помощью Windows10, можно создать один пакет приложения, покупатели могут установить на широкий спектр устройств, и именно то, что мы выполним займемся в этом. См. раздел [Руководство по приложениям UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
 Приложение, которое мы будем портировать, состоит из элемента **ListBox**, привязанного к модели представления. Модель представления содержит список книг, в котором отображается заголовок, имя автора и обложка книги. У изображений обложки книги **Действие при сборке** установлено на **Содержимое**, а **Копировать в выходной каталог** установлено на **Не копировать**.
 
 Предыдущая тема в этом разделе описывает различия между платформами. Это описание содержит подробные сведения и руководство по переносу различных элементов приложения из разметки XAML через привязку к модели представления и далее к доступу к данным. Цель этого практического примера — дополнить это руководство, показывая его в действии на реальном примере. Предполагается, что вы ознакомились с этим руководством, которое в данных примерах не повторяется.
 
-**Примечание.** Если при открытии Bookstore1Universal\_10 в Visual Studio отображается сообщение "Требуется обновление Visual Studio", следуйте инструкциям по выбору целевой версии платформы из раздела [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md).
+**Примечание**  при открытии Bookstore1Universal\_10 в Visual Studio, если вы видите сообщение «Требуется обновление Visual Studio», следуйте инструкциям по выбору целевой версии платформы в [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md).
 
 ## <a name="downloads"></a>Загрузки
 
-[Скачать приложение Bookstore1WPSL8 для Windows Phone Silverlight](http://go.microsoft.com/fwlink/?linkid=517053).
+[Скачать Bookstore1WPSL8 WindowsPhone Silverlight приложение](http://go.microsoft.com/fwlink/?linkid=517053).
 
 [Скачать приложение Bookstore1Universal\_10 для Windows10](http://go.microsoft.com/fwlink/?linkid=532950).
 
-## <a name="the-windows-phone-silverlight-app"></a>Приложение WindowsPhone Silverlight
+## <a name="the-windowsphone-silverlight-app"></a>Приложение WindowsPhone Silverlight
 
 Вот как Bookstore1WPSL8, приложение, которое мы собираемся переносить, выглядит. Это просто список книг с вертикальной прокруткой под заголовком имени и названия страницы приложения.
 
 ![как выглядит bookstore1wpsl8](images/wpsl-to-uwp-case-studies/c01-01-wpsl-how-the-app-looks.png)
 
-## <a name="porting-to-a-windows-10-project"></a>Перенос в проект Windows 10
+## <a name="porting-to-a-windows10-project"></a>Перенос в проект Windows10
 
 Создание нового проекта в Visual Studio, копирование в него файлов Bookstore1WPSL8 и подключение скопированных файлов к новому проекту не займут много времени. Начните с создания нового проекта пустого приложения (Windows Universal). Назовите его Bookstore1Universal\_10. Эти файлы следует скопировать из Bookstore1WPSL8 в Bookstore1Universal\_10.
 
@@ -47,7 +46,7 @@ ms.locfileid: "225221"
 -   Скопируйте папку, содержащую исходный файл модели представления (папка \\ViewModel).
 -   Скопируйте файл MainPage.xaml и замените на него файл в конечной папке.
 
-Мы можем сохранить App.xaml и App.xaml.cs, которые Visual Studio создает для нас в проекте Window10.
+Мы можем сохранить App.xaml и App.xaml.cs, которые Visual Studio создает для нас в проекте Windows10.
 
 Отредактируйте исходный код и файлы разметки, которые вы только что скопировали, и измените все ссылки на пространство имен Bookstore1WPSL8 на Bookstore1Universal\_10. Эту операцию можно быстро выполнить при помощи функции **Заменить в файлах**. В императивном коде в исходном файле модели представления необходимо сделать следующие изменения для переноса.
 
@@ -79,9 +78,9 @@ ms.locfileid: "225221"
 
 ## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>Выплачивание долгов и некоторый начальный стиль
 
-По умолчанию все ориентации поддерживаются. ПриложениеWindows Phone Silverlight явно ограничивает себя только книжной ориентацией, поэтому элементы \#1 и \#2 вносятся в манифест пакета приложения в новом проекте, а затем выбирается **Книжная** ориентация в разделе **Поддерживаемые ориентации**.
+По умолчанию все ориентации поддерживаются. Приложение WindowsPhone Silverlight явно ограничивает себя только книжной ориентацией, тем не менее, поэтому элементы \#1 и \#2 оплачиваются, перейдя в манифесте пакета приложения в новом проекте и проверив **Книжная** в разделе **Supported ориентации**.
 
-Для этого приложения элемент \#3 не является долгом, так как строка состояния (ранее называемая панелью задач) отображается по умолчанию. Для элементов \#4 и \#5 необходимо найти четыре стиля UWP **TextBlock**, которые соответствуют стилямWindows Phone Silverlight, которые мы использовали. Можно запустить приложение Windows Phone Silverlight в эмуляторе и сравнить его непосредственно с иллюстрацией в разделе [Текст](wpsl-to-uwp-porting-xaml-and-ui.md). По результатам этого обзора и просмотра свойств системных стилей Windows Phone Silverlight мы сможем сделать эту таблицу.
+Для этого приложения элемент \#3 не является долгом, так как строка состояния (ранее называемая панелью задач) отображается по умолчанию. Для элементов \#4 и \#5 необходимо найти четыре стиля универсальной платформы Windows (UWP) **TextBlock** , которые соответствуют стилям WindowsPhone Silverlight, которые мы использовали. Можно запустить приложение WindowsPhone Silverlight в эмуляторе и сравнить его рядом с иллюстрацией в разделе " [текст](wpsl-to-uwp-porting-xaml-and-ui.md) ". Из этого, и просмотра свойств системных стилей WindowsPhone Silverlight мы сможем сделать эту таблицу.
 
 | Ключ стиля WindowsPhone Silverlight | Ключ стилей UWP          |
 |-------------------------------------|------------------------|
@@ -89,7 +88,7 @@ ms.locfileid: "225221"
 | PhoneTextSubtleStyle                | SubtitleTextBlockStyle |
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
- 
+ 
 Чтобы установить эти стили, можно просто ввести их в редактор разметки или использовать средства XAML в Visual Studio и установить их не введя ни единого знака. Для этого щелкните правой кнопкой мыши **TextBlock**, затем щелкните **Изменить стиль** &gt; **Применить ресурс**. Чтобы сделать это с **TextBlock** в шаблоне элементов, щелкните правой кнопкой мыши **ListBox** и выберите **Изменить дополнительные шаблоны** &gt; **Изменить созданные элементы (ItemTemplate)**.
 
 За элементами присутствует на 80% непрозрачный белый фон, так как стиль по умолчанию элемента управления **ListBox** устанавливает фон для системного ресурса `ListBoxBackgroundThemeBrush`. Установите для параметра `Background="Transparent"` значение **ListBox**, чтобы очистить этот фон. Чтобы выровнять **TextBlock** по левому краю в шаблоне элементов, отредактируйте его еще раз выше описанным способом и установите для **Margin** значение `"9.6,0"` на обоих **TextBlock**.
@@ -128,7 +127,7 @@ ms.locfileid: "225221"
 
 ![перенесенное приложение для windows10](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
 
-Перенесенное приложение для Windows 10, запущенное на мобильном устройстве
+Перенесенное приложение Windows10, запущенное на мобильном устройстве
 
 ## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>Дополнительная настройка списка для мобильных устройств
 

@@ -6,18 +6,17 @@ title: Создание и редактирование мультимедийн
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 66d14ae9335edcc5535d0dcc37cca2273874f61d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: f32d63bf03a469d8282262c358153140587d9033
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225505"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557355"
 ---
 # <a name="media-compositions-and-editing"></a>Создание и редактирование мультимедийных композиций
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows 8.x, см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 В данной статье описывается, как использовать API-интерфейсы в пространстве имен [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) для быстрой разработки приложений, которые дают пользователям возможность создавать композиции мультимедиа из исходных аудио- и видеофайлов. Компоненты платформы включают возможность программного соединения нескольких видеоклипов, добавление фото- и видеоналожений, добавление фоновых аудиодорожек и применение звуковых и видеоэффектов. Созданные композиции мультимедиа можно преобразовать в неструктурируемый файл мультимедиа для воспроизведения или совместного использования. Кроме того, их можно сериализовать на диск или десериализовать с него, что позволяет пользователю загружать и изменять ранее созданные композиции. Все эти функции предоставляются в интерфейсе среды выполнения Windows, который прост в использовании, а также снижает объем и сложность кода, требуемого для выполнения этих задач, по сравнению с низкоуровневым API-интерфейсом [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) .
@@ -26,7 +25,7 @@ ms.locfileid: "225505"
 
 Класс [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) — это контейнер для всех клипов мультимедиа, входящих в композицию, который отвечает за окончательную композицию, загрузку с диска и сохранение на диск и предоставляет возможность выполнения предварительной потоковой передачи композиции для ее просмотра в пользовательском интерфейсе. Чтобы использовать **MediaComposition** в своем приложении, добавьте пространство имен [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565), а также [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962), предоставляющее связанные API-интерфейсы, которые могут вам понадобиться.
 
-[!code-cs[Пространство имен 1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
+[!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
 
 
 Получить доступ к объекту **MediaComposition** можно из нескольких точек вашего кода, поэтому вы будете объявлять переменную-член, где он хранится.
@@ -87,7 +86,7 @@ ms.locfileid: "225505"
 
 Чтобы преобразовать композицию мультимедиа в неструктурированный видеофайл, которым можно поделиться и который можно просматривать на других устройствах, необходимо использовать API-интерфейсы из пространства имен [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105). Чтобы обновить интерфейс пользователя в ходе выполнения асинхронной операции, вам понадобятся API-интерфейсы из пространства имен [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383).
 
-[!code-cs[Пространство имен 2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
+[!code-cs[Namespace2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
 
 После того как пользователь выбрал выходной файл с помощью [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), преобразуйте композицию в этот файл, вызвав для объекта **MediaComposition** метод [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690). Остальная часть кода в следующем примере просто следует шаблону обработки [**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807).
 
@@ -152,9 +151,9 @@ ms.locfileid: "225505"
 
 -   Если файл мультимедиа из композиции находится в таком месте, к которому у вашего приложения нет доступа, и он не указан в свойстве [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) класса [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) для вашего приложения, при загрузке композиции произойдет ошибка.
 
- 
+ 
 
- 
+ 
 
 
 

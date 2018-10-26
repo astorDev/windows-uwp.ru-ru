@@ -5,16 +5,14 @@ author: muhsinking
 ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 00cea51c673f64725c6ada4f1cfb403e2949ed12
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 7084c4dde7bdf2d59842a04fe9fd52bc029c264a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958567"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554012"
 ---
 # <a name="my-people-sharing"></a>Публикации близких людей
 
@@ -107,7 +105,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-"appId"— это имя семейства пакетов, за которым следует символ "!" и идентификатор активируемого класса. Чтобы найти имя семейства пакета, откройте **Package.appxmanifest** с помощью редактора по умолчанию и просмотрите вкладки «Упаковки». Здесь «Приложения» — активируемым класса, соответствующий представление целевой совместный доступ.
+"appId"— это имя семейства пакетов, за которым следует символ "!" и идентификатор активируемого класса. Чтобы найти имя семейства пакета, откройте **Package.appxmanifest** , с помощью редактора по умолчанию и перейдите на вкладку «Упаковка». Здесь «Приложение» является активируемый класс, соответствующий представлению цели.
 
 ## <a name="running-as-a-my-people-share-target"></a>Запуск приложения в качестве цели общего доступа функции "Близкие люди"
 

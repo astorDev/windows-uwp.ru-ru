@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c7f68984274cbdb3adec0a88a0c99f7a7342380
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a6ceb1e779f8622d3e358bc131b21f6ec66ac2f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045117"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556417"
 ---
 # <a name="data-type-conversion"></a>Преобразование типов данных
 
@@ -37,7 +35,7 @@ ms.locfileid: "1045117"
 | FLOAT | Значение с плавающей точкой в любом из представлений, определенных Direct3D.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | SRGB  | Аналог UNORM в том смысле, что для n-разрядного числа все нули означают 0,0f, а все единицы— 1,0f. Но в случае с SRGB, в отличие от UNORM, последовательность целочисленных кодировок без знака в диапазоне между всеми нулями и всеми единицами представляет нелинейную последовательность в интерпретации чисел с плавающей точкой в диапазоне от 0,0f до 1,0f. Грубо говоря, если нелинейная последовательность SRGB отображается как последовательность цветов, для "среднего" наблюдателя при "средних" условиях просмотра на "среднем" дисплее она будет выглядеть, как линейный набор уровней яркости. Полные сведения см. в цветовом стандарте SRGB IEC 61996-2-1 на сайте Международной электротехнической комиссии (IEC).                |
 
- 
+ 
 
 Указанные выше термины часто используются как "модификаторы имени формата" для описания того, как данные размещены в памяти и какое преобразование следует выполнить на пути транспортировки (возможно, включая фильтрацию) между памятью и блоком конвейера, например шейдером.
 
@@ -189,7 +187,7 @@ ms.locfileid: "1045117"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanfixed-point-integer-conversion"></a><span id="Fixed_Point_Integer_Conversion"></span><span id="fixed_point_integer_conversion"></span><span id="FIXED_POINT_INTEGER_CONVERSION"></span>Преобразование целого числа с фиксированной точкой
 
@@ -238,22 +236,22 @@ ms.locfileid: "1045117"
 <td align="left">Целое число с фиксированной точкой</td>
 <td align="left">FLOAT</td>
 <td align="left"><p>Предположим, что определенное представление с фиксированной точкой, преобразуемое в число с плавающей точкой, содержит не более 24 бит информации, из которых не более 23 бит относятся к дробному компоненту. Предположим, что данное число с фиксированной точкой, fxp, имеет форму i.f (i целочисленных бит, f дробных бит). Преобразование в число с плавающей точкой похоже на следующий псевдокод.</p>
-<p>float result = (число с плавающей запятой) (fxp &gt; &gt; f) + / / extract целое число</p>
-((число с плавающей запятой) (fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>)); Извлеките дроби</td>
+<p>float результат = (float) (fxp &gt; &gt; f) + / / извлечь целое число</p>
+((float) (fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>)); извлечь дробь</td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
 
 
 [Приложения](appendix.md)
 
- 
+ 
 
- 
+ 
 
 
 

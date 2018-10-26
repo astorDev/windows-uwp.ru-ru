@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2bdcf77a9c150195a7a4c27a064d26c525472a
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 1d57c60e8cba9be75e936c55800bac93f8df3e30
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044823"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556618"
 ---
 # <a name="tessellator-ts-stage"></a>Этап тесселятора (TS)
 
@@ -72,7 +70,7 @@ ms.locfileid: "1044823"
     | Integer              | Диапазон TessFactor: \[1..64\] |
     | Pow2                 | Диапазон TessFactor: \[1..64\] |
 
-     
+     
 
 Тесселяция реализуется с помощью двух этапов программируемых шейдеров: [шейдера поверхности](hull-shader-stage--hs-.md) и [шейдера доменов](domain-shader-stage--ds-.md). Эти этапы шейдеров программируются с помощью кода HLSL, определенного в 5 модели шейдеров. Целевые объекты шейдеров,: hs\_5\_0 и ds\_5\_0. Заголовок создает шейдер, затем код для оборудования извлекается из скомпилированных шейдеров, переданных в среду исполнения при направлении шейдеров в конвейер.
 
@@ -97,9 +95,9 @@ ms.locfileid: "1044823"
 
 [Графический конвейер](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

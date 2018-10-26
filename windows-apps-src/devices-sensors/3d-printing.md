@@ -6,16 +6,14 @@ description: В этом разделе описано использовани�
 ms.author: pafarley
 ms.date: 10/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 3dprinting, трехмерной печати
 ms.localizationpriority: medium
-ms.openlocfilehash: acf0c9856328e26f8c39adf3f062a3516e7189e2
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: d09ed242b2c5f0186b05279706943c9a65ee7c8a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512876"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556254"
 ---
 # <a name="3d-printing"></a>3D Printing
 

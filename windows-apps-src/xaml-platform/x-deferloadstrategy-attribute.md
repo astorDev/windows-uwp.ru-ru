@@ -1,21 +1,19 @@
 ---
 author: jwmsft
 title: Атрибут xDeferLoadStrategy
-description: xDeferLoadStrategy задерживает создание элемента и его дочерних объектов, сокращая тем самым время запуска и немного увеличивая объем использования памяти. Каждый задействованный элемент прибавляет около 600 байт к объему использования памяти.
+description: xDeferLoadStrategy задерживает создание элемента и его дочерних объектов, сокращая тем самым время запуска и немного увеличивая объем использования памяти.Каждый задействованный элемент прибавляет около 600 байт к объему использования памяти.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff89fea215ea4af58ab9b51a40baeb81ecb39bcc
-ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
-ms.translationtype: HT
+ms.openlocfilehash: cd958ba5f9025430be2736329c5a909233461039
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "1881105"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555256"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>Атрибут x:DeferLoadStrategy
 
@@ -36,7 +34,7 @@ ms.locfileid: "1881105"
 
 Предусмотрены следующие ограничения по использованию **x:DeferLoadStrategy**:
 
-- Необходимо определить класс [x:Name](x-name-attribute.md), поскольку должна быть возможность найти этот элемент позднее.
+- Необходимо определить [Атрибут x: Name](x-name-attribute.md)для элемента, поскольку должна быть возможность найти этот элемент позднее.
 - Вы можете отложить только те типы, которые наследованы от классов [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) или [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
 - Вы не можете отложить корневые элементы в [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), [**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) и [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
 - Вы не можете отложить элементы в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
@@ -59,9 +57,9 @@ ms.locfileid: "1881105"
 - Анализируются все привязки элемента.
 - Если вы зарегистрировались для получения уведомлений об изменении свойств, содержащих отложенные элементы, создается уведомление.
 
-Вы можете вложить отложенные элементы, но они должны быть реализованы из крайнего элемента.  При попытке реализовать дочерний элемент перед реализацией родительского, будет инициализировано исключение.
+Вы можете вложить отложенные элементы, но они должны быть реализованы из крайнего элемента. При попытке реализовать дочерний элемент перед реализацией родительского, будет инициализировано исключение.
 
-Обычно мы рекомендуем откладывать элементы, которые не отображаются в первом кадре. Для того чтобы найти кандидатов для откладывания, лучше всего искать элементы, создаваемые со свернутым свойством [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992). Кроме того, элементы для откладывания можно найти в пользовательском интерфейсе, который активируется в результате взаимодействия с пользователем.
+Обычно мы рекомендуем откладывать элементы, которые не отображаются в первом кадре.Для того чтобы найти кандидатов для откладывания, лучше всего искать элементы, создаваемые со свернутым свойством [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992). Кроме того, элементы для откладывания можно найти в пользовательском интерфейсе, который активируется в результате взаимодействия с пользователем.
 
 С осторожностью откладывайте элементы в классе [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878): это уменьшает время запуска, но может также сократить производительность сдвига в зависимости от того, что создается в данный момент. Если вам необходимо увеличить производительность сдвига, см. документацию о [расширении разметки {x:Bind}](x-bind-markup-extension.md) и [атрибуте x:Phase](x-phase-attribute.md).
 
@@ -73,19 +71,19 @@ ms.locfileid: "1881105"
 
 ```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
-    <Grid.RowDefinitions>
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto" />
-        <ColumnDefinition Width="Auto" />
-    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
 
-    <Rectangle Height="100" Width="100" Fill="#F65314" Margin="0,0,4,4" />
-    <Rectangle Height="100" Width="100" Fill="#7CBB00" Grid.Column="1" Margin="4,0,0,4" />
-    <Rectangle Height="100" Width="100" Fill="#00A1F1" Grid.Row="1" Margin="0,4,4,0" />
-    <Rectangle Height="100" Width="100" Fill="#FFBB00" Grid.Row="1" Grid.Column="1" Margin="4,4,0,0" />
+    <Rectangle Height="100" Width="100" Fill="#F65314" Margin="0,0,4,4" />
+    <Rectangle Height="100" Width="100" Fill="#7CBB00" Grid.Column="1" Margin="4,0,0,4" />
+    <Rectangle Height="100" Width="100" Fill="#00A1F1" Grid.Row="1" Margin="0,4,4,0" />
+    <Rectangle Height="100" Width="100" Fill="#FFBB00" Grid.Row="1" Grid.Column="1" Margin="4,4,0,0" />
 </Grid>
 <Button x:Name="RealizeElements" Content="Realize Elements" Click="RealizeElements_Click"/>
 ```
@@ -94,6 +92,6 @@ ms.locfileid: "1881105"
 private void RealizeElements_Click(object sender, RoutedEventArgs e)
 {
     // This will realize the deferred grid.
-    this.FindName("DeferredGrid");
+    this.FindName("DeferredGrid");
 }
 ```

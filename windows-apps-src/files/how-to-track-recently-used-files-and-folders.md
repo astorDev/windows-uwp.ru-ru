@@ -6,16 +6,14 @@ description: Отслеживайте файлы, к которым часто �
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6437176ed5dce4fbcd2a7686cf7083a8b0af2557
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 12b8a6462f6cc39ba85cddfaa7a92212955a79f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662794"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559350"
 ---
 # <a name="track-recently-used-files-and-folders"></a>Отслеживание недавно использовавшихся файлов и папок
 
@@ -29,9 +27,9 @@ ms.locfileid: "1662794"
 Список MRU вашего приложения представлен классом [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475), полученным из статического свойства [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458). Элементы MRU хранятся в виде объектов [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129). Поэтому в список можно добавлять и объекты [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (то есть файлы), и объекты [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) (то есть папки).
 
 > [!NOTE]
-> См. также [пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994) и [пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> См. также [пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994) и [пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
- 
+ 
 
 ## <a name="prerequisites"></a>Необходимые условия
 

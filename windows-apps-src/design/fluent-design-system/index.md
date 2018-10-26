@@ -1,118 +1,205 @@
 ---
 description: Изучите систему проектирования Fluent и способы ее интеграции в приложения.
-title: Система проектирования Fluent для приложений UWP
+title: Система проектирования Fluent для Windows
 author: mijacobs
 keywords: структура приложения uwp, универсальная платформа windows, проектирование приложений, интерфейс, система проектирования fluent
 ms.author: mijacobs
 ms.date: 3/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-ms.localizationpriority: high
-ms.openlocfilehash: 5b57dc2ddae4c6e260df663097db5649866b96aa
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 2ab8e8c18a0b1db0991bf470f194f8774f2357b4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638792"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554032"
 ---
-# <a name="the-fluent-design-system-for-uwp-apps"></a>Система проектирования Fluent для приложений UWP
+# <a name="the-fluent-design-system-for-windows-app-creators"></a>Приложение creators Fluent проектирования системы для Windows
+
+![Fluent заголовок проектирования](images/fluentdesign-app-header.jpg)
 
 ## <a name="introduction"></a>Введение
 
-<img src="images/fluentdesign-app-header.jpg" alt=" " />
+Система проектирования Fluent Design — это наша система для создания адаптивных, отзывчивых и красивых пользовательских интерфейсов.
 
-Пользовательские интерфейсы развиваются. В нем появляются новые измерения и способы взаимодействия — от двухмерных к трехмерным и далее, от клавиатуры и мыши до взгляда, пера и сенсорного ввода.  
-
-Система проектирования Fluent Design — это набор инновационных функций UWP и рекомендаций по созданию приложений, которые прекрасно смотрятся на всех типах устройств под управлением Windows.
-
-Это наша система для создания адаптивных, отзывчивых и красивых пользовательских интерфейсов. 
+## <a name="principles"></a>Принципы
 
 **Адаптивность: взаимодействия типа Fluent естественны на любом устройстве**
 
-Взаимодействия типа Fluent адаптируются к среде. Взаимодействия типа Fluent удобны как на планшете, так и на ПК и Xbox и прекрасно подходят даже для гарнитуры смешанной реальности. А при добавлении нового оборудования, такого как дополнительный монитор для вашего компьютера взаимодействие Fluent использует и его. 
+Взаимодействия типа Fluent адаптируются к среде. Взаимодействия типа Fluent удобны как на планшете, настольные ПК и Xbox — прекрасно подходят даже для гарнитуры смешанной реальности. А при добавлении нового оборудования, такого как дополнительный монитор для вашего компьютера взаимодействие Fluent использует и его.
 
 **Отзывчивость: взаимодействия типа Fluent интуитивно понятны и эффективны**
 
-Взаимодействия типа Fluent адаптируются к поведению и намерениям пользователя &mdash; они понимают и заранее предугадывают то, что от них требуется. Они объединяют людей и идеи, которые находятся в противоположных уголках земного шара или сосем рядом друг с другом. 
+Взаимодействия типа Fluent адаптируются к поведению и намерениям пользователя &mdash; они понимают и заранее предугадывают то, что от них требуется. Они объединяют людей и идеи, которые находятся в противоположных уголках земного шара или сосем рядом друг с другом.
 
-Проявление отзывчивости означает выполнение нужных действий в нужное время. 
+**Красота: взаимодействия типа Fluent привлекательны и иммерсивны**
 
-Взаимодействия типа Fluent используют элементы управления и шаблоны согласованно, чтобы они работали так, как ожидает пользователь. Взаимодействия типа Fluent доступным для людей с широким диапазоном физических возможности и включают функции глобализации, чтобы их могли использовать люди по всему миру. 
+Включая элементы реального мира, взаимодействия типа Fluent устанавливают связь с фундаментальными аспектами. Они используют свет, тень, движение, глубину и текстуру для организации информации интуитивно и инстинктивно понятным образом.
 
-**Красота: взаимодействия типа Fluent привлекательны и иммерсивны** 
 
-Включая элементы реального мира, взаимодействия типа Fluent устанавливают связь с фундаментальными аспектами. Они используют свет, тень, движение, глубину и текстуру для организации информации интуитивно и инстинктивно понятным образом. 
+## <a name="applying-fluent-design-to-your-app-with-uwp"></a>Применение Fluent Design для вашего приложения с помощью UWP
 
-Fluent Design не использует яркие эффекты. Он использует физические эффекты, которые действительно улучшают взаимодействие с пользователем, так как эмулируют взаимодействие, которое наш мозг запрограммирован обрабатывать эффективно. 
+![Логотип проектирования Fluent](images/fluentdesign_header.png)
 
-## <a name="applying-fluent-design-to-your-app"></a>Применение Fluent Design для вашего приложения
+Наши рекомендации по проектированию объясняется, как применить принципов проектирования Fluent для приложений. Какой тип приложения? Хотя многие из наших рекомендациях могут применяться на любую платформу, мы создали UWP (универсальной платформы Windows) для поддержки проектирования Fluent Design.
 
-Функции Fluent Design встроены в UWP. Некоторые из этих функций, такие как эффективные пиксели и универсальная система ввода, являются автоматическими. Для их использования не нужно создавать дополнительный код. Другие функции, например акриловые элементы, являются дополнительными; они добавляются в приложение путем создания соответствующего кода. 
+Функции Fluent Design встроены в UWP. Некоторые из этих функций, такие как эффективные пиксели и универсальная система ввода, являются автоматическими. Для их использования не нужно создавать дополнительный код. Другие функции, например акриловые элементы, являются дополнительными; они добавляются в приложение путем создания соответствующего кода.
 
-> Чтобы узнать больше о базовых функциях, которые автоматически включаются в каждое приложение UWP, обратитесь к статье [Вводные сведения о проектировании приложения UWP](../basics/design-and-ui-intro.md). Если вы совсем не знакомы с разработкой приложений для UWP, рекомендуем сначала ознакомиться со страницей [Начало работы с UWP](https://developer.microsoft.com/windows/apps/getstarted). 
+> Теперь элементы управления UWP доступны для использования на компьютере, чтобы вы могли улучшить внешний вид и функциональные возможности своих WPF- или Windows-приложений с помощью функций системы проектирования Fluent Design. Дополнительные сведения см. в разделе [элементы управления UWP узла в приложениях WPF и Windows Forms](/windows/uwp/xaml-platform/xaml-host-controls).
 
-Чтобы узнать больше о новых функциях, которые позволяют интегрировать систему проектирования Fluent Design в ваше приложение, продолжайте читать этот раздел.
+<!-- To apply Fluent Design to your app, follow our guidelines and use UWP (Universal Windows Platform) you can use UWP UI features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. -->
+
+В дополнение к проектированию наши статьи проектирования Fluent также показано, как написать код, который ваших проектах произойдет. Платформа UWP использует XAML, на основе разметки языка, который облегчает для создания пользовательских интерфейсов. Вот пример.
+
+```xaml
+<Grid BorderBrush="Blue" BorderThickness="4">
+    <TextBox Text="Design with XAML" Margin="20" Padding="24,16"/>
+</Grid>
+```
+
+![](images/xaml-example.png)
+
+
+> Если вы новичок в разработке для UWP, ознакомьтесь с нашей [Начало работы с UWP страницы](https://developer.microsoft.com/windows/apps/getstarted).
 
 ## <a name="find-a-natural-fit"></a>Найдите естественный подход
 
-Как сделать приложение предельно удобным на различных устройствах? Необходимо создать ощущение, что оно было разработано с учетом каждого из них. Макет пользовательского интерфейса, адаптированный для различных размеров экрана таким образом, чтобы отсутствовало неиспользуемое пространство (а интерфейс при этом не был перегружен), делает взаимодействие естественным, как будто интерфейс был разработан для конкретного устройства. 
+Как сделать приложение предельно удобным на различных устройствах? Необходимо создать ощущение, что оно было разработано с учетом каждого из них. Макет пользовательского интерфейса, адаптированный для различных размеров экрана таким образом, чтобы отсутствовало неиспользуемое пространство (а интерфейс при этом не был перегружен), делает взаимодействие естественным, как будто интерфейс был разработан для конкретного устройства.
 
-*  **Проектируйте для правильных точек прерывания**
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-size-classes.jpg)
+    :::column-end:::
+    :::column span="2":::
+        **Design for the right breakpoints**
 
-    Вместо проектирования для каждого размера экрана в отдельности, сосредоточьтесь на нескольких ключевых значениях ширины (также называемых «точки прерывания»), чтобы значительно упростить код и дизайн и все равно обеспечить отличный вид приложения на экранах всех размеров.
+        Instead of designing for every individual screen size, focusing on a few key widths (also called "breakpoints") can greatly simplify your designs and code while still making your app look great on small to large screens.
 
-    [Сведения о размерах экрана и точках прерывания](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+        [Learn about screen sizes and breakpoints](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+    :::column-end:::
+:::row-end:::
 
-*  **Создавайте динамические макеты**
+:::row:::
+    :::column:::
+        ![fpo image](images/rspd-resize.gif)
+    :::column-end:::
+    :::column span="2":::
+        **Create a responsive layout**
 
-    Чтобы интерфейс приложения выглядел естественно, он должен заполнять доступное место на экране, не создавая ощущения перегруженности. UWP предоставляет панели для упорядочивания содержимого в сетки, стеки и потоки, которые могут быть вложены друг в друга.
+        For an app to feel natural, it should adapt its layout to different screen sizes and devices. You can use automatic sizing, layout panels, visual states, and even separate UI definitions in XAML to create a responsive UI.
 
-    [Сведения о панелях макета UWP](/windows/uwp/design/layout/layout-panels)
+        [Learn about responsive design](/windows/uwp/design/layout/responsive-design)
+    :::column-end:::
+:::row-end:::
 
-* **Проектируйте для спектра различных устройств**
+:::row:::
+    :::column:::
+        ![fpo image](images/devices.jpg)
+    :::column-end:::
+    :::column span="2":::
+        **Design for a spectrum of devices**
 
-    Приложения UWP могут работать на разнообразных устройствах под управлением Windows. Рекомендуется изучить список доступных устройств, для чего они предназначены, и как пользователи взаимодействуют с ними.
+        UWP apps can run on a wide variety of Windows-powered devices. It's helpful to understand which devices are available, what they're made for, and how users interact with them.
 
-    [Подробнее об устройствах UWP](/windows/uwp/design/devices/)
+        [Learn about UWP devices](/windows/uwp/design/devices/)
+:::row-end:::
 
-* **Оптимизируйте для необходимого типа ввода**
+:::row:::
+    :::column:::
+        ![fpo image](images/keyboard-shortcuts.jpg)
+    :::column-end:::
+    :::column span="2":::
+        **Optimize for the right input**
 
-    Приложения UWP автоматически поддерживают распространенные типы взаимодействия с помощью мыши, клавиатуры, пера и сенсорного ввода &mdash; никаких дополнительных действий не требуется. Однако можно улучшить приложение путем оптимизации поддержки определенных типов ввода, таких как перо и Surface Dial.
+        UWP apps automatically support common mouse, keyboard, pen, and touch interactions&mdash;there's nothing extra you have to do. But you can enhance your app with optimized support for specific inputs, like pen and the Surface Dial.
 
-    [Сведения о типах ввода и взаимодействия](/windows/uwp/design/input/input-primer)
+        [Learn about inputs and interactions](/windows/uwp/design/input/input-primer)
+:::row-end:::
 
+## <a name="make-it-intuitive"></a>Сделать интуитивно
 
-## <a name="make-it-intuitive-and-powerful"></a>Обеспечьте интуитивность и эффективность
+Взаимодействие является интуитивным, когда оно соответствует тому, которое ожидает пользователь. Используя заданные элементы управления и шаблоны, а также поддержку платформой специальных возможностей и глобализации, можно создавать не требующие усилий взаимодействия, которые помогают пользователям эффективнее выполнять задачи.
 
-Взаимодействие является интуитивным, когда оно соответствует тому, что ожидает пользователь. Используя заданные элементы управления и шаблоны, а также поддержку платформой специальных возможностей и глобализации, можно создавать не требующие усилий взаимодействия, которые помогают пользователям эффективнее выполнять задачи. 
+Проявление отзывчивости означает выполнение нужных действий в нужное время.
 
-* **Используйте правильные элементы управления для текущей задачи**
+Взаимодействия типа Fluent используют элементы управления и шаблоны согласованно, чтобы они работали так, как ожидает пользователь. Взаимодействия типа Fluent доступным для людей с широким диапазоном физических возможности и включают функции глобализации, чтобы их могли использовать люди по всему миру.
 
-    Элементы управления — это основа пользовательского интерфейса; с помощью подходящих элементов управления можно создать пользовательский интерфейс, поведение которого соответствует ожиданиям пользователя.  UWP предоставляет более 45 элементов управления, начиная с простых кнопок, и заканчивая элементами управления данными с широкими возможностями. 
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-navview.png)
+    :::column-end:::
+    :::column span="2":::
+        **Provide the right navigation**
 
-    [Сведения об элементах управления UWP](/windows/uwp/design/controls-and-patterns/)
+        Create an effortless experience by using the right app structure and navigation components.
 
-* **Обеспечьте инклюзивность** 
+        [Learn about navigation](/windows/uwp/design/basics/navigation-basics/)
+:::row-end:::
 
-    Хорошо спроектированные приложения обеспечивают доступность для людей с ограниченными возможностями. С помощью некоторого дополнительного кодирования можно сделать приложение доступным людям по всему миру.
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-commanding.png)
+    :::column-end:::
+    :::column span="2":::
+        **Be interactive**
 
-    [Сведения об удобстве использования](/windows/uwp/design/usability/)
+        Buttons, command bars, keyboard shortcuts, and context menus enable users to interact with your app; they're the tools that change a static experience into something dynamic.
 
+        [Learn about commanding](/windows/uwp/design/basics/commanding-basics/)
+:::row-end:::
 
-## <a name="be-engaging-and-immersive"></a>Обеспечьте привлекательность и иммерсивность 
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-controls-2.jpg)
+    :::column-end:::
+    :::column span="2":::
+        **Use the right control for the job**
 
-Сделайте ваше приложение привлекательным, включив в него физические элементы, такие как свет и движение. 
+        Controls are the building blocks of the user interface; using the right control helps you create a user interface that behaves the way users expect it to.  UWP provides more than 45 controls,ranging from simple buttons to powerful data controls.
+
+        [Learn about UWP controls](/windows/uwp/design/controls-and-patterns/)
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![inclusive image](images/thumbnail-inclusive.png)
+    :::column-end:::
+    :::column span="2":::
+        **Be inclusive**
+        A well-design app is accessible to people with disabilities. With some extra coding, you can share your app with people around the world.
+
+        [Learn about Usability](/windows/uwp/design/usability/)
+:::row-end:::
+
+## <a name="be-engaging-and-immersive"></a>Обеспечьте привлекательность и иммерсивность
+
+Fluent Design не использует яркие эффекты. Он использует физические эффекты, которые действительно улучшают взаимодействие с пользователем, так как эмулируют взаимодействие, которое наш мозг запрограммирован обрабатывать эффективно.
 
 ## <a name="use-light"></a>Используйте свет
 
 Свет всегда привлекает внимание. Он создает определенную атмосферу и ощущение места, это практический инструмент для подсветки важной информации.
-        
-Добавьте свет в свое приложение UWP:
-        
-* [Эффект отображения](../style/reveal.md) использует свет для выделения интерактивных элементов. Свет освещает элементы, с которыми может взаимодействовать пользователь, обнажая скрытые границы. Этот эффект автоматически включается для некоторых элементов управления, таких как представление списка и представление сетки. Его можно включить для другие элементов управления с помощью предопределенных стилей эффекта отображения. 
 
-* [Фокус отображения](../style/reveal-focus.md) использует свет для привлечения внимания к элементу, на котором в данный момент находится фокус ввода.  
+Добавьте свет в свое приложение UWP:
+
+:::row:::
+    :::column:::
+        ![fpo image](../style/images/Nav_Reveal_Animation.gif)
+    :::column-end:::
+    :::column span="2":::
+        **Reveal highlight**
+
+        [Reveal highlight](../style/reveal.md) uses light to make interactive elements stand out. Light illuminates the elements the user can interact with, revealing hidden borders. Reveal is automatically enabled on some controls, such as list view and grid view. You can enable it on other controls by applying our predefined Reveal highlight styles.
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![fpo image](../style/images/traveling-focus-fullscreen-light-rf.gif)
+    :::column-end:::
+    :::column span="2":::
+        **Reveal focus**
+
+        [Reveal focus](../style/reveal-focus.md) uses light to call attention to the element that currently has input focus.
+:::row-end:::
 
 ## <a name="create-a-sense-of-depth"></a>Создайте эффект глубины
 
@@ -120,9 +207,15 @@ Fluent Design не использует яркие эффекты. Он испо
 
 Добавьте глубину в свое приложение UWP:
 
-* [Акрил](../style/acrylic.md)— это полупрозрачный материал, с помощью которого пользователь может просматривать слои содержимого, формируя иерархию элементов пользовательского интерфейса.
+:::row:::
+    :::column:::
+        ![fpo image](../motion/images/_parallax_v2.gif)
+    :::column-end:::
+    :::column span="2":::
+        **Parallax**
 
-* [Параллакс](../motion/parallax.md) создает иллюзию глубины, благодаря чему кажется, что элементы на переднем плане движутся быстрее, чем на заднем плане.
+        [Parallax](../motion/parallax.md) creates the illusion of depth by making items in the foreground appear to move more quickly than items in the background.
+:::row-end:::
 
 ## <a name="incorporate-motion"></a>Включите движение
 
@@ -130,23 +223,46 @@ Fluent Design не использует яркие эффекты. Он испо
 
 Добавьте движение в свое приложение UWP:
 
-* [Подключенные анимации](../motion/connected-animation.md) помогают пользователю сохранять контекст, создавая плавные переходы между сценами. 
+:::row:::
+    :::column:::
+        ![continuity gif](images/continuityXbox.gif)
+    :::column-end:::
+    :::column span="2":::
+        **Connected animations**
+
+        [Connected animations](../motion/connected-animation.md) help the user maintain context by creating a seamless transition between scenes.
+:::row-end:::
 
 ## <a name="build-it-with-the-right-material"></a>Используйте подходящие материалы
 
 В реальном мире нас окружают доступные чувственному восприятию, полные жизни вещи. Они гнутся, тянутся, пружинят, разбиваются и скользят. Эти качества материалов можно перенести и в цифровую среду, чтобы пользователям захотелось прикоснуться к тому, что они видят на экранах.
 
-Добавьте материалы в свое приложение UWP: 
-        
-* [Акрил](../style/acrylic.md)— это полупрозрачный материал, с помощью которого пользователь может просматривать слои содержимого, формируя иерархию элементов пользовательского интерфейса. 
+Добавьте материалы в свое приложение UWP:
+
+:::row:::
+    :::column:::
+        ![fpo image](../style/images/acrylic_lighttheme_base.png)
+    :::column-end:::
+    :::column span="2":::
+        **Acrylic**
+
+        [Acrylic](../style/acrylic.md) is a translucent material that lets the user see layers of content, establishing a hierarchy of UI elements.
+:::row-end:::
 
 ## <a name="design-toolkits-and-code-samples"></a>Наборы инструментов для проектирования и примеры кода
 
 Хотите приступить к созданию собственных приложений с помощью системы проектирования Fluent Design? Наши наборы инструментов для Adobe XD, Adobe Illustrator, Adobe Photoshop, Framer и Sketchим помогут быстро приступить к работе над проектом, а образцы — быстрее перейти к кодированию.
 
-* Посетите нашу [страницу с наборами инструментов для проектирования и образцами](/windows/uwp/design/downloads/)
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-toolkits.jpg)
+    :::column-end:::
+    :::column span="2":::
+        **Design toolkits and samples page**
 
-<img src="images/fluentdesign_header.png" alt=" " />
+        Check out our [Design toolkits and samples page](/windows/uwp/design/downloads/)
+:::row-end:::
+
 
 
 

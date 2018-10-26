@@ -5,16 +5,14 @@ title: Запрос оценок и отзывов для вашего прил�
 ms.author: mhopkins
 ms.date: 06/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, оценки, отзывы
 ms.localizationpriority: medium
-ms.openlocfilehash: cc3dce673b434673f0e8a72158c2d3a593f02c52
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: d736fa47251c85491a29b324a3ed59181a5060c8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483694"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551305"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Запрос оценок и отзывов для вашего приложения
 

@@ -6,15 +6,14 @@ ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ms.author: mtoepke
 ms.date: 06/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, directx
-ms.openlocfilehash: 2f98c038c745615d16227334d7e87426394d5c79
-ms.sourcegitcommit: a61e9fc06f74dc54c36abf7acb85eeb606e475b8
+ms.localizationpriority: medium
+ms.openlocfilehash: 1642251ac7019d8bdf0216487eb7085d616863cf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2017
-ms.locfileid: "678223"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553056"
 ---
 # <a name="game-programming"></a>Программирование игр
 
@@ -29,11 +28,6 @@ ms.locfileid: "678223"
 
 Дополнительные сведения о разработке игр UWP с использованием DirectX см. в разделе [Программирование в DirectX](directx-programming.md).
 
-> **Примечание**  
-Эта статья адресована разработчикам приложений для Windows10 на базе универсальной платформы Windows (UWP). При разработке приложений для Windows 8.x или Windows Phone 8.x см. раздел [архивной документации](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
 Для максимально эффективного изучения обзоров и учебников по разработке игр ознакомьтесь с перечисленными ниже темами.
 
 -   Microsoft C++ с расширениями компонентов (C++/CX). Это обновление Microsoft C++, в которое входит автоматический подсчет ссылок, является языком разработки игр UWP с помощью DirectX11.1 или более поздних версий.
@@ -41,9 +35,9 @@ ms.locfileid: "678223"
 -   Базовое знание программирования в Windows.
 -   Базовые знания API Direct3D9 или 11.
 
- 
+ 
 
- 
+ 
 
 
 

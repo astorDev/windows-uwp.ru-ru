@@ -6,18 +6,17 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: ff1b373e2038824c6349961b3b878f5570babceb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 4d7b08138ab22d4cf2cbf4fb5273759f000a7c94
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225258"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552461"
 ---
 # <a name="template-settings-classes"></a>Классы параметров шаблона
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -57,7 +56,7 @@ ms.locfileid: "225258"
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-Полный код XAML для шаблона [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) состоит из сотен строк, так что это всего лишь крошечный отрывок. Этот код XAML определяет часть элемента управления, одну из 6 элементов [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343), которая изображает анимацию вращения для неопределенного хода выполнения. Вам как разработчику могут не нравится круги, и вы можете использовать другой графический примитив или другую базовую фигуру для выполнения анимации. Например, вы можете создать компонент **ProgressRing**, который вместо этого использует набор элементов [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), размещенных в квадрате. В этом случае каждый отдельный компонент **Rectangle** нового шаблона может выглядеть следующим образом:
+Полный код XAML для шаблона [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) состоит из сотен строк, так что это всего лишь крошечный отрывок. Этот код XAML определяет часть элемента управления, одну из 6 элементов [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse), которая изображает анимацию вращения для неопределенного хода выполнения. Вам как разработчику могут не нравится круги, и вы можете использовать другой графический примитив или другую базовую фигуру для выполнения анимации. Например, вы можете создать компонент **ProgressRing**, который вместо этого использует набор элементов [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), размещенных в квадрате. В этом случае каждый отдельный компонент **Rectangle** нового шаблона может выглядеть следующим образом:
 
 ```xml
 <Rectangle
@@ -98,8 +97,7 @@ ms.locfileid: "225258"
 
 Опять же в шаблоне много кодов XAML, поэтому показан только отрывок. И это только одно из нескольких состояний и анимаций тем, в которых используются одинаковые свойства [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752). Для [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) использование значений **ComboBoxTemplateSettings** через привязки обеспечивает то, что соответствующие анимации в шаблоне будут остановлены и запущены в позициях, основой которых являются общие значения, результатом чего будет плавный переход.
 
-**Примечание.**  
-При использовании значений **TemplateSettings** как части шаблона элемента управления убедитесь, что задаете свойства, которые соответствуют типу значения. В противном случае вам придется создать преобразователь значений для привязки, чтобы тип целевого объекта привязки можно было преобразовать из другого исходного типа значения **TemplateSettings**. Дополнительные сведения см. в разделе [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
+**Примечание**  при использовании значения **TemplateSettings** в составе шаблона элемента управления, убедитесь, что задаете свойства, которые соответствуют типу значения. В противном случае вам придется создать преобразователь значений для привязки, чтобы тип целевого объекта привязки можно было преобразовать из другого исходного типа значения **TemplateSettings**. Дополнительные сведения см. в разделе [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
 
 ## <a name="related-topics"></a>Ссылки по теме
 

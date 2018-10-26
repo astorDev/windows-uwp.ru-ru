@@ -6,16 +6,14 @@ ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 ms.author: joanlee
 ms.date: 03/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, облачные службы
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a0ffc3779f604b68c699e30068e07f3461f568d
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 5d15d3e6b6beb773a8d606db7a5d8a17544270be
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700830"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552186"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Использование облачных служб при разработке игр UWP
 
@@ -203,7 +201,7 @@ ms.locfileid: "1700830"
 ## <a name="learning-resources"></a>Ресурсы для обучения
 
 * //build 2016: [CodeLabs. Использование службы приложений Microsoft Azure и внутреннего сервера Microsoft SQL Azure для хранения игровых очков в Unity](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* //build 2017: [Предоставление игровых возможностей мирового уровня с помощью Microsoft Azure. Опыт, полученный от таких игр, как Halo, Hitman и Walking Dead (видеоролик)](https://channel9.msdn.com/Events/Build/2017/P4062)
+* Build 2017 г.: [Предоставление игровых возможностей мирового уровня с помощью Microsoft Azure: уроки как Halo, Hitman и WalkingDead (видео)](https://channel9.msdn.com/Events/Build/2017/P4062)
 * Многократно используемый набор стандартных блоков, проектов, услуг и рекомендаций, предназначенных для поддержки типичных игровых рабочих нагрузок с использованием Azure на GitHub: [стандартные блоки для игр на Azure](https://github.com/MicrosoftDX/nether)
 * [Игровые службы на Azure (видеоролики)](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
 
@@ -232,6 +230,6 @@ ms.locfileid: "1700830"
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
 
- 
+ 
 
- 
+ 

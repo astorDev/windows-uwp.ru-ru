@@ -6,16 +6,14 @@ ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, glsl, hlsl, opengl, directx, шейдеры
 ms.localizationpriority: medium
-ms.openlocfilehash: 601cdd696290a1b22d7ed38d968a32db53b78ea1
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 30c925f9ebb07d578147dfba373fdeb3baa364fe
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691413"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557133"
 ---
 # <a name="glsl-to-hlsl-reference"></a>Справочные материалы по переносу с GLSL на HLSL
 
@@ -45,7 +43,7 @@ ms.locfileid: "1691413"
 | Предоставляет модули более высокого уровня через сторонние библиотеки (например, SDL) | Модули более высокого уровня, такие как Direct2D, основаны на модулях более низкого уровня, чтобы упростить разработку приложений для Windows             |
 | Поставщики оборудования различаются с помощью расширений                                                         | Майкрософт добавляет к API универсальные дополнительные компоненты, чтобы они не были специфическими ни для одного конкретного поставщика |
 
- 
+ 
 
 GLSL и HLSL отличаются в следующем.
 
@@ -69,10 +67,10 @@ GLSL и HLSL отличаются в следующем.
 <td align="left">Компиляция шейдера интегрирована в графический API</td>
 <td align="left">Компилятор HLSL <a href="https://msdn.microsoft.com/library/windows/desktop/bb509633">компилирует шейдер</a> в промежуточное двоичное представление, прежде чем Direct3D передает его драйверу.
 <div class="alert">
-<strong>Примечание.</strong> Это двоичное представление не зависит от оборудования. Оно обычно компилируется во время сборки приложения, а не во время его выполнения.
+<strong>Примечание</strong>это двоичное представление не зависит от оборудования. Оно обычно компилируется во время сборки приложения, а не во время его выполнения.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -98,10 +96,10 @@ GLSL и HLSL отличаются в следующем.
 <td align="left">Развернутые по строкам матрицы (по умолчанию)</td>
 <td align="left">Развернутые по столбцам матрицы (по умолчанию)
 <div class="alert">
-<strong>Примечание.</strong> Используйте модификатор типа <strong>row_major</strong>, чтобы изменить макет для одной переменной. Подробнее см. <a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">Синтаксис переменной</a>. Вы также можете указать флажок компилятора или псевдокомментарий, чтобы изменить глобальное значение по умолчанию.
+<strong>Примечание</strong>  используйте модификатор типа <strong>row_major</strong> изменить макет для одной переменной. Подробнее см. <a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">Синтаксис переменной</a>. Вы также можете указать флажок компилятора или псевдокомментарий, чтобы изменить глобальное значение по умолчанию.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
@@ -111,11 +109,11 @@ GLSL и HLSL отличаются в следующем.
 </tbody>
 </table>
 
- 
+ 
 
-> **Примечание.** В HLSL текстуры и дискретизаторы являются двумя отдельными объектами. В GLSL, как в Direct3D9, привязка текстуры является частью состояния дискретизатора.
+> **Примечание**имеет HLSL текстуры и дискретизаторы являются двумя отдельными объектами. В GLSL, как в Direct3D9, привязка текстуры является частью состояния дискретизатора.
 
- 
+ 
 
 В GLSL вы представляете значительную часть состояния OpenGL в виде предопределенных глобальных переменных. Например, в GLSL вы используете переменную **gl\_Position**, чтобы указать расположение вершины, и переменную **gl\_FragColor**, чтобы указать цвет фрагмента. В HLSL вы явно передаете состояние Direct3D из кода приложения в шейдер. Например, при использовании Direct3D и HLSL данные, введенные в вершинный шейдер, должны соответствовать формату данных в буфере вершины, а структура буфера констант в коде приложения должна соответствовать структуре буфера констант ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) в коде шейдера.
 
@@ -162,7 +160,7 @@ GLSL и HLSL отличаются в следующем.
 </tbody>
 </table>
 
- 
+ 
 
 В GLSL переменные без модификаторов являются лишь простыми глобальными переменными, частными для каждого шейдера.
 
@@ -274,7 +272,7 @@ GLSL и HLSL отличаются в следующем.
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="porting-glsl-pre-defined-global-variables-to-hlsl"></a>Перенос предварительно определенных глобальных переменных GLSL в HLSL
 
@@ -382,7 +380,7 @@ GLSL и HLSL отличаются в следующем.
 </tbody>
 </table>
 
- 
+ 
 
 Вы используете семантику, чтобы указать положение, цвет и прочие сведения для входных данных вершинного шейдера и построителя текстуры. Значения семантики в макете входных данных должны соответствовать входным данным вершинного шейдера. Например, см. раздел [Примеры переноса переменных GLSL в HLSL](#examples-of-porting-glsl-variables-to-hlsl). Подробнее о семантике HLSL: [Семантика](https://msdn.microsoft.com/library/windows/desktop/bb509647).
 
@@ -503,14 +501,14 @@ PixelShaderInput main(VertexShaderInput input)
 // The COLOR semantic must match the semantic in the vertex shader code.
 struct PixelShaderInput
 {
-    float4 pos : SV_Position;
-    float4 color : COLOR; // Color for the pixel
+    float4 pos : SV_Position;
+    float4 color : COLOR; // Color for the pixel
 };
 
-// Set the pixel color value for the renter target. 
+// Set the pixel color value for the renter target. 
 float4 main(PixelShaderInput input) : SV_Target
 {
-    return input.color;
+    return input.color;
 }
 ```
 
@@ -525,7 +523,7 @@ float4 main(PixelShaderInput input) : SV_Target
 // Bind shaders to the pipeline. 
 // Both vertex shader and fragment shader are in a program.
 glUseProgram(m_shader->getProgram());
- 
+ 
 // Input asssembly 
 // Get the position and color attributes of the vertex.
 
@@ -534,13 +532,13 @@ glEnableVertexAttribArray(m_positionLocation);
 
 m_colorLocation = glGetAttribColor(m_shader->getProgram(), "color");
 glEnableVertexAttribArray(m_colorLocation);
- 
+ 
 // Bind the vertex buffer object to the input assembler.
 glBindBuffer(GL_ARRAY_BUFFER, m_geometryBuffer);
 glVertexAttribPointer(m_positionLocation, 4, GL_FLOAT, GL_FALSE, 0, NULL);
 glBindBuffer(GL_ARRAY_BUFFER, m_colorBuffer);
 glVertexAttribPointer(m_colorLocation, 3, GL_FLOAT, GL_FALSE, 0, NULL);
- 
+ 
 // Draw a triangle with 3 vertices.
 glDrawArray(GL_TRIANGLES, 0, 3);
 ```
@@ -551,7 +549,7 @@ glDrawArray(GL_TRIANGLES, 0, 3);
 // Bind the vertex shader and pixel shader to the pipeline.
 m_d3dDeviceContext->VSSetShader(vertexShader.Get(),nullptr,0);
 m_d3dDeviceContext->PSSetShader(pixelShader.Get(),nullptr,0);
- 
+ 
 // Declare the inputs that the shaders expect.
 m_d3dDeviceContext->IASetInputLayout(inputLayout.Get());
 m_d3dDeviceContext->IASetVertexBuffers(0, 1, vertexBuffer.GetAddressOf(), &stride, &offset);
@@ -568,9 +566,9 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 * [Перенос из OpenGL ES2.0 в Direct3D11](port-from-opengl-es-2-0-to-directx-11-1.md)
 
- 
+ 
 
- 
+ 
 
 
 

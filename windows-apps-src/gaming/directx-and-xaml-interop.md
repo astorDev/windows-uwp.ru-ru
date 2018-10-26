@@ -6,16 +6,14 @@ ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, directx, взаимодействие с xaml
 ms.localizationpriority: medium
-ms.openlocfilehash: 107501bb06af62035e78ef1ac65291b2bdec5c62
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 7f3a70be3dd31b0a5e4214621ab9fb4efa72cc54
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674991"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555184"
 ---
 # <a name="directx-and-xaml-interop"></a>Взаимодействие DirectX и XAML
 
@@ -25,9 +23,9 @@ ms.locfileid: "1674991"
 
 Если в вашем приложении в основном используется двухмерная отрисовка, возможно, вам стоит применять библиотеку [Win2D](https://github.com/microsoft/win2d) среды выполнения Windows. Эта библиотека, поддерживаемая корпорацией Microsoft, создана на основе базовых технологий Direct2D. Она значительно упрощает использование двумерной графики и включает удобные абстракции для некоторых методов, описанных в данном документе. Для получения дополнительных сведений см. страницу проекта. В этом документе приводится руководство для разработчиков приложений, которые *не* используют Win2D.
 
-> **Примечание.** API DirectX не определены как типы среды выполнения Windows, поэтому для разработки компонентов приложений UWP на XAML, взаимодействующих с DirectX, обычно используются расширения компонентов VisualC++ (C++/CX). Кроме того, вы можете создавать приложения UWP, использующие DirectX, на C# и XAML, если инкорпорируете вызовы DirectX в отдельный файл метаданных среды выполнения Windows.
+> **Примечание**API DirectX не определены как типы среды выполнения Windows, поэтому обычно вы используете расширения компонентов VisualC ++ (C + +/ CX) для разработки XAML UWP компоненты, которые взаимодействуют с использованием DirectX. Кроме того, вы можете создавать приложения UWP, использующие DirectX, на C# и XAML, если инкорпорируете вызовы DirectX в отдельный файл метаданных среды выполнения Windows.
 
- 
+ 
 
 ## <a name="xaml-and-directx"></a>XAML и DirectX
 
@@ -388,7 +386,7 @@ DirectX предоставляет две мощные библиотеки дл
 > **Примечание.** В целом ваши приложения DirectX должны создавать цепочки буферов в альбомной ориентации, а их размер должен быть равен размеру окна отображения (как правило, он определяется собственным разрешением экрана в большинстве игр Microsoft Store). Таким образом гарантируется, что ваше приложение использует оптимальную реализацию цепочки буферов при отсутствии видимого наложения XAML. Если ориентация приложения меняется на книжную, ваше приложение должно вызывать [IDXGISwapChain1::SetRotation](https://msdn.microsoft.com/library/windows/desktop/hh446801) в существующей цепочке буферов, при необходимости применить к содержимому преобразование, а затем вызывать метод [SetSwapChain](https://msdn.microsoft.com/library/windows/desktop/dn302144) еще раз в той же цепочке буферов. Схожим образом ваше приложение должно снова вызывать **SetSwapChain** в той же цепочке буферов, когда размер этой цепочки изменяется посредством вызова [IDXGISwapChain::ResizeBuffers](https://msdn.microsoft.com/library/windows/desktop/bb174577).
 
 
- 
+ 
 
 Здесь описывается простой процесс создания и обновления объекта [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) в коде программной части.
 
@@ -473,9 +471,9 @@ DirectX предоставляет две мощные библиотеки дл
 * [ISwapChainPanelNative](https://msdn.microsoft.com/library/windows/desktop/dn302143)
 * [Руководство по программированию для Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345)
 
- 
+ 
 
- 
+ 
 
 
 

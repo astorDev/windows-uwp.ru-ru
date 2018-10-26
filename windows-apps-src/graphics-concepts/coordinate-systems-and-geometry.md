@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cea4368ce995ce50726499b6c1c6875f83b72e7b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: ce3b1ebfc2f18a06ff4fa960c91749f61f5011d9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652333"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556488"
 ---
 # <a name="coordinate-systems-and-geometry"></a>Системы координат и геометрия
 
@@ -33,7 +31,7 @@ ms.locfileid: "1652333"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Раздел</th>
+<th align="left">Статья</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
@@ -64,7 +62,7 @@ ms.locfileid: "1652333"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="transforms.md">Преобразования</a></p></td>
-<td align="left"><p>Компонент Direct3D, перемещающий геометрию через фиксированный конвейер функциональной геометрии, называется модулем преобразования. Он находит модель и смотрящего в реальном мире, проецирует вершины для отображения на экране и обрезает вершины в окне просмотра. Модуль преобразования также выполняет вычисления освещения, чтобы определить рассеянные и зеркальные компоненты в каждой вершине.</p></td>
+<td align="left"><p>Компонент Direct3D, который двигает геометрию через геометрический конвейер с фиксированными функциями, называется модулем преобразований. Он находит модель и смотрящего в реальном мире, проецирует вершины для отображения на экране и обрезает вершины в окне просмотра. Модуль преобразования также выполняет вычисления освещения, чтобы определить рассеянные и зеркальные компоненты в каждой вершине.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="viewports-and-clipping.md">Окна просмотра и обрезка</a></p></td>
@@ -73,16 +71,16 @@ ms.locfileid: "1652333"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
 
 
 [Обучающее руководство по графике Direct3D](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

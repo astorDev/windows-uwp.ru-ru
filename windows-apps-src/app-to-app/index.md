@@ -6,16 +6,14 @@ author: msatranjr
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cc0b8fb9d1388db0e79e5f029ae69bfae1e4c69
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: 52e8479febb2134365bab6c68486d9e284366535
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1706969"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552986"
 ---
 # <a name="app-to-app-communication"></a>Обмен данными между приложениями
 
@@ -32,7 +30,7 @@ ms.locfileid: "1706969"
 
 ## <a name="in-this-section"></a>В этом разделе
 
-| Раздел | Description |
+| Статья | Description |
 |-------|-------------|
 | [Предоставление общего доступа к данным](share-data.md) | В этой статье объясняется, как обеспечить поддержку контракта отправки данных в приложении UWP. Контракт отправки данных–это простой способ, с помощью которого приложения могут быстро предоставлять друг другу общий доступ к данным, например к тексту, ссылкам, фотографиям и видео. Например, пользователю может быть необходимо поделиться со своими друзьями ссылкой на веб-страницу в приложении социальной сети или сохранить ее в приложении для заметок, чтобы вернуться к ней позже. |
 | [Получение данных](receive-data.md) | В данной статье рассказывается, как в приложении UWP получить содержимое, общий доступ к которому предоставлен из другого приложения с помощью контракта отправки данных. Контракт отправки данных позволяет предлагать ваше приложение как вариант, когда пользователь вызывает функцию общего доступа. |

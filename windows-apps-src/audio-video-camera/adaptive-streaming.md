@@ -6,16 +6,14 @@ title: Адаптивная потоковая передача
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ae99a7a92ce933c8536dc30f9807d60a1441a809
-ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
-ms.translationtype: HT
+ms.openlocfilehash: ef8e3ab4abd9ee9159dc7d5aa757f55e00817a51
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "1912972"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551570"
 ---
 # <a name="adaptive-streaming"></a>Адаптивная потоковая передача
 
@@ -120,10 +118,10 @@ ms.locfileid: "1912972"
 
 ## <a name="related-topics"></a>Статьи по теме
 * [Воспроизведение мультимедиа](media-playback.md)
-* [Поддержка тега HLS](hls-tag-support.md) 
-* [Поддержка профиля Dash](dash-profile-support.md) 
+* [Поддержка тега HLS](hls-tag-support.md) 
+* [Поддержка профиля Dash](dash-profile-support.md) 
 * [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Воспроизведение мультимедиа в фоновом режиме](background-audio.md) 
+* [Воспроизведение мультимедиа в фоновом режиме](background-audio.md) 
 
 
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf14efc4c4ec29c98ebebff91493623d55267db5
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: d7456cd773196520e066062c664f5e3073941dfe
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044613"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559396"
 ---
 # <a name="primitive-topologies"></a>Топологии примитивов
 
@@ -68,7 +66,7 @@ Direct3D поддерживает несколько топологий прим
 | ![символ направления поворота](images/d3d10-primitive-topologies-winding-direction.png) | Направление поворота | Порядок вершин при сборке примитива. По часовой стрелке или против часовой стрелки. |
 | ![символ передней вершины](images/d3d10-primitive-topologies-leading-vertex.png)       | Передняя вершина    | Первая несмежная вершина в примитиве, содержащем данные констант.       |
 
- 
+ 
 
 ## <a name="span-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>Создание нескольких полос
 
@@ -86,9 +84,9 @@ Direct3D поддерживает несколько топологий прим
 
 [Графический конвейер](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,19 +6,17 @@ title: Воспроизведение мультимедиа
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 888131d37a86793d67ce71376b158bd7de734331
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: dbcd2a4f9cec02882c62c7d6493746931b7919a8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2017
-ms.locfileid: "837025"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557554"
 ---
 # <a name="media-playback"></a>Воспроизведение мультимедиа
 
-\[ Обновлено для приложений UWP в Windows10. Статьи для Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Этот раздел содержит сведения о создании универсальных приложений для Windows, которые воспроизводят аудио и видео. 
 
@@ -47,7 +45,7 @@ ms.locfileid: "837025"
 * [Пример адаптивной потоковой передачи](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming)
 * [Пример воспроизведения звука в фоновом режиме](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 * [Пример системной транспортировки мультимедиа](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)                                                                                               
- 
+ 
 
 
 

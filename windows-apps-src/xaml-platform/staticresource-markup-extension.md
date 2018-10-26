@@ -6,18 +6,17 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
-ms.openlocfilehash: 234d90382fb62e6f0be9683dfb7b01d9fa80a185
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 83919cc46694279bc35e046c97acf27c64a196f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "225200"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555223"
 ---
 # <a name="staticresource-markup-extension"></a>Расширение разметки {StaticResource}
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Предоставляет значение для любого атрибута языка XAML путем оценки ссылки на уже определенный ресурс. Ресурсы определены в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), а использование **StaticResource** определяет ссылку на ключ ресурса в **ResourceDictionary**.
 
@@ -41,8 +40,7 @@ ms.locfileid: "225200"
 
 Правила, по которым **StaticResource** разрешается в элемент в словаре ресурсов, в этом разделе не описываются. Это зависит от наличия ссылки и ресурса в шаблоне, от применения объединенных словарей ресурсов и т. д. Дополнительные сведения о том, как определять ресурсы и правильно использовать [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), включая образец кода, см. в разделе [Ссылки ResourceDictionary и XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
 
-**Важно!**  
-Расширение **StaticResource** не должно пытаться создать опережающую ссылку на ресурс, который лексически определен далее в XAML-файле. Создание таких ссылок не поддерживается. Даже если опережающая ссылка не вызовет ошибку, ее создание приведет к снижению производительности. Для достижения наилучших результатов составляйте словари ресурсов так, чтобы обходиться без опережающих ссылок.
+**Важные**  **StaticResource** не должно пытаться создать опережающую ссылку на ресурс, который определен лексически далее в XAML-файле. Создание таких ссылок не поддерживается. Даже если опережающая ссылка не вызовет ошибку, ее создание приведет к снижению производительности. Для достижения наилучших результатов составляйте словари ресурсов так, чтобы обходиться без опережающих ссылок.
 
 Если задать в **StaticResource** ключ, который не удается разрешить, то во время выполнения создается исключение синтаксического анализа XAML. Средства разработки также могут выдавать предупреждения и ошибки.
 
@@ -79,7 +77,7 @@ ms.locfileid: "225200"
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>Поддержка средств разработки для расширения разметки **{StaticResource}**
 
-Пакет Microsoft Visual Studio2013 может содержать возможные значения ключей в раскрывающихся меню Microsoft IntelliSense при использовании расширения разметки **{StaticResource}** на XAML-странице. Например, когда вы вводите {StaticResource, в раскрывающемся списке IntelliSense появляются все ключи ресурса из текущей области подстановки. Помимо типичных ресурсов, присутствующих на уровне страницы ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) и уровне приложения ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)), также отображаются [ресурсы темы XAML](https://msdn.microsoft.com/library/windows/apps/mt187274) и ресурсы из всех расширений, используемых в проекте.
+Microsoft Visual Studio2013 может содержать возможные значения ключей в раскрывающихся списков Microsoft IntelliSense при использовании расширения разметки **{StaticResource}** в XAML-страницы. Например, когда вы вводите {StaticResource, в раскрывающемся списке IntelliSense появляются все ключи ресурса из текущей области подстановки. Помимо типичных ресурсов, присутствующих на уровне страницы ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) и уровне приложения ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)), также отображаются [ресурсы темы XAML](https://msdn.microsoft.com/library/windows/apps/mt187274) и ресурсы из всех расширений, используемых в проекте.
 
 Если при использовании **{StaticResource}** обнаруживается ключ ресурса, функция **Перейти к определению** (F12) может разрешить ресурс и показать словарь, в котором он определен. Для ресурсов темы во время разработки эта функция ведет к файлу generic.xaml.
 

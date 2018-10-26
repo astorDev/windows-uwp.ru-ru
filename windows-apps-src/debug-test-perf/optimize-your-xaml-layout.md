@@ -6,19 +6,17 @@ description: Макет может быть затратной частью пр
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 40afd15da7e225ea82814ab2fa680a3c95e00488
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: b0dcb3e49bb35902a17f829c0222c570265be8b5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894748"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553864"
 ---
 # <a name="optimize-your-xaml-layout"></a>Оптимизация макета XAML
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Важные API**
 
@@ -28,7 +26,7 @@ ms.locfileid: "894748"
 
 ## <a name="reduce-layout-structure"></a>Уменьшение структуры макета
 
-Максимального повышения производительности макета можно добиться путем упрощения иерархической структуры дерева элементов пользовательского интерфейса. Панели располагаются в визуальном дереве, однако они являются структурными элементами, а не *элементами, увеличивающими количество пикселей*, как, например, [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) или [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371). Упрощение дерева путем уменьшения количества элементов, не увеличивающих количество пикселей, как правило, обеспечивает существенное повышение производительности.
+Максимального повышения производительности макета можно добиться путем упрощения иерархической структуры дерева элементов пользовательского интерфейса. Панели располагаются в визуальном дереве, однако они являются структурными элементами, а не *элементами, увеличивающими количество пикселей*, как, например, [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) или [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). Упрощение дерева путем уменьшения количества элементов, не увеличивающих количество пикселей, как правило, обеспечивает существенное повышение производительности.
 
 Многие пользовательские интерфейсы реализованы путем вложения панелей, что приводит к созданию сложных деревьев панелей и элементов. Вкладывать панели удобно, но во многих случаях точно такой же пользовательский интерфейс можно создать и с помощью одной более сложной панели. Использование только одной панели позволяет повысить производительность.
 
@@ -138,7 +136,7 @@ ms.locfileid: "894748"
 
 Общее требование к пользовательскому интерфейсу заключается в том, чтобы в макете элементы накладывались друг на друга. Как правило, для размещения элементов подобным образом используют заполнение, поля, выравнивание и преобразование. Элемент управления XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) оптимизирован для повышения производительности макета с накладывающимися элементами.
 
-**Важно!** Чтобы добиться видимого улучшения, используйте элемент [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) с одной ячейкой. Не задавайте [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) или [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
+**Важные**Чтобы добиться видимого улучшения, используйте одной ячейки [**сетки**](https://msdn.microsoft.com/library/windows/apps/BR242704). Не задавайте [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) или [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
 
 ### <a name="examples"></a>Примеры
 

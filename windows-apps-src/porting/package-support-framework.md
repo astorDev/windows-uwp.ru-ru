@@ -6,16 +6,14 @@ title: Устранение проблем, которые не классиче
 ms.author: normesta
 ms.date: 07/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c8e4649fad0e467e0656415e2fd49a9fea05109
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 6bb29a50ef4fc8c5a56e410a59802b217c033cbc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475300"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553451"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Применение исправлений среды выполнения для пакета MSIX с помощью платформа поддержки пакетов
 

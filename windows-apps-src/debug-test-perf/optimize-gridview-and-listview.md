@@ -6,22 +6,19 @@ description: Повысить производительность и время
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cff6e2785434eb4fdb922d8b89b55aca242655f
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 25eeea58e1e03eedfca3aaafda1cee13cac1f3c4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816909"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553649"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>Оптимизация пользовательского интерфейса ListView и GridView
 
 
-**Примечание.**  
-Для получения дополнительных сведений см. мероприятие //build/ [Резкое повышение производительности при взаимодействии пользователей с большим объемом данных в GridView и ListView](https://channel9.msdn.com/events/build/2013/3-158).
+**Примечание**  Дополнительные сведения см. в статье сеансов //build/ [Резкое повышение производительности при взаимодействии пользователей с большим объемом данных, в GridView и ListView](https://channel9.msdn.com/events/build/2013/3-158).
 
 Повысить производительность и время запуска [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) можно с помощью виртуализации пользовательского интерфейса, сокращения элементов и прогрессивного обновления элементов. Подробнее о методах виртуализации данных см. [Виртуализация данных ListView и GridView](listview-and-gridview-data-optimization.md).
 
@@ -325,5 +322,5 @@ private void ListView_ChoosingItemContainer
 
 При неравномерном распределении элементов, использующих различные шаблоны элементов, вероятно, потребуется создать новые шаблоны элементов при сдвиге, что во многом сводит на нет выигрыш, полученный за счет виртуализации. Кроме того, селектор шаблонов элементов учитывает только пять вариантов при оценки возможности повторного использования конкретного контейнера для текущего элемента данных. Поэтому перед использованием селектора шаблонов элементов в приложении необходимо тщательно обдумать, подходят ли ваши данные для использования с таковым. Если ваша коллекция в основном однородна, то селектор возвращает один и тот же тип в большинстве случаев (возможно, во всех). Просто не забывайте о цене, которую вы платите за редкие исключения в этой однородности, и обдумайте, не лучше ли использовать [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (или два элемента управления элементами).
 
- 
+ 
 

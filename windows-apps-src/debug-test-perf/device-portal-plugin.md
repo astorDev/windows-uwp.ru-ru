@@ -6,16 +6,14 @@ description: Узнайте, как создать приложение UWP, к�
 ms.author: pafarley
 ms.date: 03/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, портала устройств
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bf511a910a266877d54a014f087c1748ff25838
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: cceceae4b6b9bf4cecd3c3bee36344f4e5a1eed1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469287"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557693"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Написание пользовательского подключаемого модуля для портала устройств
 

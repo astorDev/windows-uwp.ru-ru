@@ -7,19 +7,17 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 412ba7e36c2bb36562ceee13bb1e204ff402a882
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 9983c62804dad4f0202fc83e3f9b5f23714352d2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843921"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555642"
 ---
 # <a name="timing-and-easing"></a>Согласование по времени и реалистичная анимация
 
@@ -41,19 +39,38 @@ ms.locfileid: "1843921"
 
 ### <a name="150ms-exit"></a>**150мс** (выход)
 
-:::row::: :::column::: Используется для выходящих из сцены объектов или закрывающихся страниц.
-Позволяет получить очень быструю направленную обратную связь о выходе из пользовательского интерфейса, когда согласование по времени не сказывается на частоте кадров, в результате чего достигается плавная анимация.
-:::column-end::: :::column::: ![150мс, движение](images/150msAlt.gif) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Use for objects or pages that are exiting the scene or closing.
+        Allows for very quick directional feedback of exiting UI where timing does not impede upon framerate to achieve a smooth animation.
+    :::column-end:::
+    :::column:::
+        ![150ms motion](images/150msAlt.gif)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="300ms-enter"></a>**300мс** (вход)
 
-:::row::: :::column::: Используется для входящих в сцену объектов или открывающихся страниц.
-Предоставляет достаточное количество времени для ознакомления с содержимым, входящим в сцену.
-:::column-end::: :::column::: ![300мс, движение](images/300ms.gif) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Use for objects or pages that are entering the scene or opening.
+        Allows a reasonable amount of time to celebrate content as it enters the scene.
+    :::column-end:::
+    :::column:::
+        ![300ms motion](images/300ms.gif)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="500ms-move"></a>**≤500мс** (перемещение)
 
-:::row::: :::column::: Используется для объектов, преобразующихся в одной сцене или нескольких сценах. :::column-end::: :::column::: ![500мс, движение](images/500ms.gif) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Use for objects which are translating across a single scene or multiple scenes. 
+    :::column-end:::
+    :::column:::
+        ![500ms motion](images/500ms.gif)
+    :::column-end:::
+:::row-end:::
 
 ## <a name="easing-in-fluent-motion"></a>Реалистичная анимация в плавном движении Fluent
 
@@ -69,7 +86,9 @@ ms.locfileid: "1843921"
 
 ### <a name="accelerate-exit"></a>**Ускорение** (выход)
 
-:::row::: :::column::: Используется для выходящего из сцены пользовательского интерфейса или объектов.
+:::row:::
+    :::column:::
+        Use for UI or objects that are exiting the scene.
 
         Objects become powered and gain momentum until they reach escape velocity.
         The resulting feel is that the object is trying its hardest to get out of the user's way and make room for new content to come in.
@@ -106,7 +125,9 @@ _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 
 ### <a name="decelerate-enter"></a>**Замедление** (выход)
 
-:::row::: :::column::: Используется для входящего в сцену пользовательского интерфейса, перемещения по интерфейсу или создания подпроцессов.
+:::row:::
+    :::column:::
+        Use for objects or UI entering the scene, either navigating or spawning.
 
         Once on-scene, the object is met with extreme friction, which slows the object to rest.
         The resulting feel is that the object traveled from a long distance away and entered at an extreme velocity, or is quickly returning to a rest state.
@@ -145,8 +166,10 @@ _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 
 ### <a name="standard-easing-move"></a>**Стандартная реалистичная анимация** (перемещение)
 
-:::row::: :::column::: Это базовая реалистичная анимация для изменения любого анимируемого параметра внутри системы.
-Используйте стандартную реалистичную анимацию применительно к объектам, которые изменяются от состояния к состоянию на экране (например, простое изменение положения). Также используйте ее для объектов, изменяющих форму в сцене (например, увеличение размеров объекта).
+:::row:::
+    :::column:::
+        This is the baseline easing for any animated parameter change inside of the system.
+        Use standard easing for objects that change from state to state on-screen, such as a simple position change. Also, use it for objects morphing in-scene, like an object that grows.
 
         The resulting feel is that objects changing state from A to B are overcoming, and taken over by, natural forces.
     :::column-end:::

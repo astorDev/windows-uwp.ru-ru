@@ -6,16 +6,14 @@ ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, directx, шаблоны
 ms.localizationpriority: medium
-ms.openlocfilehash: e0252607fcc456a1200231b401ca47132664e9c9
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: d27e4bb0d643b859958f887133a128572ca31225
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488808"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555396"
 ---
 # <a name="directx-game-project-templates"></a>Шаблоны проектов игр DirectX
 
@@ -28,12 +26,12 @@ ms.locfileid: "1488808"
 
 Для создания проекта вам потребуется:
 
--   [Скачать Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio 2015 содержит средства для программирования графических компонентов, например средств отладки. Обзор графических и игровых компонентов и инструментов DirectX можно просмотреть в разделе об [инструментах Visual Studio для разработки игр DirectX](set-up-visual-studio-for-game-development.md).
+-   [Скачать Microsoft Visual Studio2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio2015 содержит средства для программирования, например средств отладки графики. Обзор графических и игровых компонентов и инструментов DirectX можно просмотреть в разделе об [инструментах Visual Studio для разработки игр DirectX](set-up-visual-studio-for-game-development.md).
 
 ## <a name="choosing-a-template"></a>Выбор шаблона
 
 
-Visual Studio 2015 содержит три шаблона DirectX и UWP:
+Visual Studio2015 содержит три шаблона DirectX и UWP:
 
 -   Приложение DirectX 11 (универсальные приложения для Windows)— шаблон приложения DirectX 11 (универсальные приложения для Windows) создает проект UWP, который выполняет обработку с помощью DirectX 11 непосредственно в окне приложения.
 -   Приложение DirectX 12 (универсальные приложения для Windows)— шаблон приложения DirectX 12 (универсальные приложения для Windows) создает проект UWP, который выполняет обработку с помощью DirectX 12 непосредственно в окне приложения.
