@@ -6,19 +6,18 @@ ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, игры, множественная дискретизация, direct3d
-ms.openlocfilehash: 7748bf4c2d1654dad77d5971487330d3530d9e84
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 7b967ae1709849bbe5bc944b00d9e30f22052aeb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.locfileid: "223891"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572150"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Использование множественной дискретизации в приложениях универсальной платформы Windows (UWP)
 
 
-\[ Обновлено для приложений UWP в Windows 10. Статьи о Windows8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Вы научитесь использовать множественную дискретизацию в приложениях универсальной платформы Windows (UWP), созданных с помощью Direct3D. Множественная дискретизация, или сглаживание с множественной дискретизацией,— это графический метод, позволяющий сделать менее заметными линии стыков. При этом рисуется больше пикселей, чем фактически имеется в конечном целевом объекте прорисовки, затем значения усредняются, чтобы сохранить отображение "частичной" кромки в некоторых пикселях. Подробное описание работы множественной дискретизации в Direct3D см. в разделе [Правила растеризации при сглаживании с множественной дискретизацией](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample).
 
@@ -33,7 +32,7 @@ ms.locfileid: "223891"
 
 1.  Вызовите [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497), чтобы узнать, какие форматы DXGI можно использовать с множественной дискретизацией. Предоставьте форматы однобуферной прорисовки, которые может использовать ваша игра. Целевой объект прорисовки и разрешенный целевой объект должны использовать один и тот же формат, поэтому проверьте и [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134), и **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**.
 
-    **Уровень компонентов 9: **устройства уровня компонентов9 [обеспечивают поддержку форматов целевого объекта прорисовки с множественной дискретизацией,](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget) однако поддержка не гарантирована для разрешенных целевых объектов с множественной дискретизацией. Поэтому необходимо выполнить эту проверку перед использованием техники множественной дискретизации, описанной в этом разделе.
+    **Уровень компонентов 9:** Несмотря на то, что уровня компонентов 9 устройств [обеспечивают поддержку форматов целевого объекта прорисовки с множественной дискретизацией](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget), поддержка не гарантирована для целевых объектов с множественной дискретизацией. Поэтому необходимо выполнить эту проверку перед использованием техники множественной дискретизации, описанной в этом разделе.
 
     Следующий код проверяет поддержку множественной дискретизации для всех значений DXGI\_FORMAT:
 
@@ -85,9 +84,9 @@ ms.locfileid: "223891"
     }
     ```
 
-    > **Примечание.** Если нужно проверить буферы с динамическим перераспределением ресурсов, используйте вместо него [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494).
+    > **Примечание**  использование [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494) вместо Если вам нужно проверить-мозаикой буферы ресурсов.
 
-     
+     
 
 3.  Создайте буфер и представление целевого объекта прорисовки с требуемым числом выборок. Используйте тот же DXGI\_FORMAT, ширину и высоту, что и в цепочке буферов, но задайте число выборок больше1 и используйте размеры текстуры с множественной дискретизацией (например, **D3D11\_RTV\_DIMENSION\_TEXTURE2DMS**). При необходимости цепочку буферов можно воссоздать, задав для нее новые параметры, оптимальные для множественной дискретизации.
 
@@ -206,9 +205,9 @@ ms.locfileid: "223891"
     hr = m_swapChain->Present(1, 0);
     ```
 
- 
+ 
 
- 
+ 
 
 
 

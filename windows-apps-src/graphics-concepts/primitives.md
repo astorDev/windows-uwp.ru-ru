@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f94f859b57a0be9cfbb2d81d635ae7714129256
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 349d4aa4fbf35bd7dccbd48b0251f5bb9e90a779
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652543"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572333"
 ---
 # <a name="primitives"></a>Примитивы
 
@@ -33,7 +31,7 @@ ms.locfileid: "1652543"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Раздел</th>
+<th align="left">Статья</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
@@ -61,16 +59,16 @@ ms.locfileid: "1652543"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
 
 
 [Системы координат и геометрия](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -10,19 +10,17 @@ keywords: Xbox, телевизор, просмотр на большом рас�
 ms.author: elcowle
 ms.date: 12/5/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c9751ef316dbec7334fc12242d71dd58ae2cb262
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 098bc97de27d58fdc1d582e0db264ef04f0d3e61
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700970"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572353"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Проектирование для Xbox и телевизора
 
@@ -258,19 +256,19 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ```xml
 <StackPanel>
-    <Button x:Name="MyBtnLeft"
+    <Button x:Name="MyBtnLeft"
             Content="Search" />
-    <Button x:Name="MyBtnRight"
+    <Button x:Name="MyBtnRight"
             Content="Delete"/>
-    <Button x:Name="MyBtnTop"
+    <Button x:Name="MyBtnTop"
             Content="Update" />
-    <Button x:Name="MyBtnDown"
+    <Button x:Name="MyBtnDown"
             Content="Undo" />
-    <Button Content="Home"  
+    <Button Content="Home"  
             XYFocusLeft="{x:Bind MyBtnLeft}"
-            XYFocusRight="{x:Bind MyBtnRight}"
-            XYFocusDown="{x:Bind MyBtnDown}"
-            XYFocusUp="{x:Bind MyBtnTop}" />
+            XYFocusRight="{x:Bind MyBtnRight}"
+            XYFocusDown="{x:Bind MyBtnDown}"
+            XYFocusUp="{x:Bind MyBtnTop}" />
 </StackPanel>
 ```
 
@@ -279,8 +277,8 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 Чтобы не допустить перемещения фокуса от элемента управления в определенном направлении, используйте свойство `XYFocus*` для указания на тот же самый элемент управления.
 
 ```xml
-<Button Name="HomeButton"  
-        Content="Home"  
+<Button Name="HomeButton"  
+        Content="Home"  
         XYFocusLeft ="{x:Bind HomeButton}" />
 ```
 
@@ -324,7 +322,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 Несмотря на то, что элементы `CommandBar` невозможно расположить вертикально, их размещение вдоль направления прокрутки (например, слева или справа от вертикально прокручиваемого списка или сверху или снизу от горизонтально прокручиваемого списка) является еще одним вариантом компоновки пользовательского интерфейса, который можно применять.
 
-Если ваше приложение содержит объект `CommandBar`, элементы которого должны быть доступны пользователям, возможно, их стоит разместить внутри [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) и удалить их из `CommandBar`. `ContextFlyout` является свойством объекта [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx), а также представляет собой [контекстное меню](../controls-and-patterns/dialogs.md), связанное с этим элементом. При работе на компьютере щелчком правой кнопкой мыши на элементе со свойством `ContextFlyout` выводится соответствующее ему контекстное меню. При работе на Xbox One это происходит при нажатии кнопки **Меню**, когда фокус находится на таком элементе.
+Если ваше приложение содержит объект `CommandBar`, элементы которого должны быть доступны пользователям, возможно, их стоит разместить внутри [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) и удалить их из `CommandBar`. `ContextFlyout` является свойством объекта [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx), а также представляет собой [контекстное меню](../controls-and-patterns/dialogs-and-flyouts/index.md), связанное с этим элементом. При работе на компьютере щелчком правой кнопкой мыши на элементе со свойством `ContextFlyout` выводится соответствующее ему контекстное меню. При работе на Xbox One это происходит при нажатии кнопки **Меню**, когда фокус находится на таком элементе.
 
 ### <a name="ui-layout-challenges"></a>Проблемы компоновки пользовательского интерфейса
 
