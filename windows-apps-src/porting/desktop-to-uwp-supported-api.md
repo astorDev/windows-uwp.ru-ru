@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: 9448e8f4a61241879b739ff10fd000ea8c130d52
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5557706"
+ms.locfileid: "5595538"
 ---
 # <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>API UWP, доступные для упакованного классического приложения
 

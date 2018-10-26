@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: c647846aaaf8f7a5cef96e267ad979dc68ee004a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5549538"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5593019"
 ---
 # <a name="camera-barcode-scanner"></a>Сканер штрихкодов на базе камеры
 Сканер штрихкодов на базе камеры создается динамически, когда Windows связывает камеру или камеры, подключенные к компьютеру, с программным декодером.  Каждая пара "камера-декодер" представляет собой полнофункциональный сканер штрихкодов.   

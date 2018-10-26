@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, целевые предложения, предложения, уведомления
 ms.localizationpriority: medium
 ms.openlocfilehash: a808f334692d7775a34bc760bcd799cb87d05b6e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5561815"
+ms.locfileid: "5611418"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>Используйте целевые предложения, чтобы повысить вовлеченность и количество конверсий
 

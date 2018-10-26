@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, порт, шейдер, direct3d, opengl
 ms.localizationpriority: medium
 ms.openlocfilehash: bbf7e05a93ccce4188d62f9800a5f225be713cc6
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5567226"
+ms.locfileid: "5617541"
 ---
 # <a name="port-the-shader-objects"></a>Перенос объектов шейдеров
 

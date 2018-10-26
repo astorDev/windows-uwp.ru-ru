@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
 ms.openlocfilehash: 337342378fc42b33c0bddb980b143ab195305458
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559610"
+ms.locfileid: "5621713"
 ---
 # <a name="get-ad-campaign-performance-data"></a>Получение данных об эффективности рекламной кампании
 
