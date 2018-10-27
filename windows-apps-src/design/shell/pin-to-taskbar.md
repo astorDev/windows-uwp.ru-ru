@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, панель задач, диспетчер панели задач, закрепление на панели задач, основная плитка
 ms.localizationpriority: medium
 ms.openlocfilehash: 47fcd1f9d090c49ecbd49e05696b33f789973160
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5642618"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700634"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>Закрепление приложения на панели задач
 

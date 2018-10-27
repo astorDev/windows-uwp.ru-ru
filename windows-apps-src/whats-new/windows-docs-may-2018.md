@@ -8,11 +8,11 @@ ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 74fc017453472b515e597b73ee8bb582376f6b12
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5653836"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5699358"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Что нового в документации для разработчиков Windows в мая 2018 г.
 

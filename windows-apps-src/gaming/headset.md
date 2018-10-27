@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, гарнитура
 ms.localizationpriority: medium
 ms.openlocfilehash: f5097af13d0714f30eefd7771f798036d069cdea
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5566052"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5701510"
 ---
 # <a name="headset"></a>Гарнитура
 

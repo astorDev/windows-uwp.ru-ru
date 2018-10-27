@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартные, c ++, cpp, winrt, проекция, коллекции
 ms.localizationpriority: medium
 ms.openlocfilehash: 93b486021813abf320645888d4f19971dc2c80ab
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5548388"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700113"
 ---
 # <a name="collections-with-cwinrt"></a>Создание коллекций с помощью C++/WinRT
 
