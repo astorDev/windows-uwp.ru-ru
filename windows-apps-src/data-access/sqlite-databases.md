@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, SQLite, базы данных
 ms.localizationpriority: medium
 ms.openlocfilehash: 77911b101f488bb7bfef82b9cc480679ce15b1f3
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5617651"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5688417"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Использование базы данных SQLite в приложении UWP
 SQLite можно использовать для хранения и извлечения данных из облегченной базы данных на устройстве пользователя. Это руководство содержит соответствующие инструкции.

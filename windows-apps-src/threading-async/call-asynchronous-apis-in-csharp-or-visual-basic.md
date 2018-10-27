@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, C#, Visual Basic, асинхронный
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d9bd5265d72a7a478de8c094cd900072e46a143
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5542225"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5711391"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>Вызов асинхронных API в C# и VisualBasic
 

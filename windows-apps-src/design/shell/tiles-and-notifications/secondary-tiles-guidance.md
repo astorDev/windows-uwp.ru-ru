@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, вспомогательные плитки, руководство, рекомендации, советы
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ad3f7fce761e0709c92f02e2cfa0d2fcd507de4
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5621943"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5686463"
 ---
 # <a name="secondary-tile-guidance"></a>Руководство по вспомогательным плиткам
 
