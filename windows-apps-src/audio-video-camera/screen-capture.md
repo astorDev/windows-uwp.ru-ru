@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, снимок экрана
 ms.localizationpriority: medium
 ms.openlocfilehash: d28ed1fce79a815155180ab8a3c708e2c8bf8916
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5596149"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708767"
 ---
 # <a name="screen-capture"></a>Снимок экрана
 

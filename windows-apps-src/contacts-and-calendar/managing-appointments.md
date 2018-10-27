@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, встречи, календарь
 ms.localizationpriority: medium
 ms.openlocfilehash: 345bbabb2bd80f0cbb8465941bec07c7172156e8
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5604833"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710127"
 ---
 # <a name="manage-appointments"></a>Управление встречами
 
