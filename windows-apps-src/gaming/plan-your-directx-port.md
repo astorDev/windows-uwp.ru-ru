@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, directx, перенос
 ms.localizationpriority: medium
 ms.openlocfilehash: dea6455b4e9aaef2a4239ef70d0919a4b8841bc5
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5617591"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693384"
 ---
 # <a name="plan-your-directx-port"></a>Планирование переноса DirectX
 
