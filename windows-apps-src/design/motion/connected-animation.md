@@ -12,11 +12,11 @@ design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 77050103bb78788a5c1868a41d315edd6832a5fe
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5690192"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5751540"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>Подключенная анимация для приложений UWP
 
@@ -85,7 +85,7 @@ ms.locfileid: "5690192"
 
 Для достижения разных эффектов, в некоторых конфигурациях игнорировать эти свойства на ConnectedAnimationService и использовать свои собственные значения, как описано в следующей таблице.
 
-| Настройка | DefaultDuration отношениях? | DefaultEasingFunction отношениях? |
+| Конфигурация | DefaultDuration отношениях? | DefaultEasingFunction отношениях? |
 | - | - | - |
 | Сила тяготения | Да | Да* <br/> **Базовый перевод от A к B использует эту функцию для реалистичной анимации, но «dip силы тяжести» имеет собственные функции для реалистичной анимации.*  |
 | Прямой | Нет <br/> *Анимируется более 150 мс.*| Нет <br/> *Использует замедлением, функция для реалистичной анимации.* |
