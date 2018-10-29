@@ -3,16 +3,16 @@ author: stevewhims
 description: Ответы на часто возникающие вопросы о разработке и использовании API среды выполнения Windows с помощью C++/WinRT.
 title: Ответы на часто задаваемые вопросы о C++/WinRT
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/26/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, вопросы и ответы, вопросы и ответы
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a2ea3dddc592379199017408652cab0a2a68fbb
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.openlocfilehash: 612eb6ced57fb2a8ca5d855ef9c156b0b9ae4440
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5696479"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5742527"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на вопросы, которые вы, скорее всего имеют о разработке и использовании API среды выполнения Windows с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -51,7 +51,7 @@ ms.locfileid: "5696479"
 #pragma comment(lib, "windowsapp")
 ```
 
-Рекомендуется, что вам устранить все ошибки компоновщика, которые вы можете, привязав его **WindowsApp.lib**. Но если вам не нужны ваше приложение могло пройти тесты [Комплект сертификации приложений для Windows](../debug-test-perf/windows-app-certification-kit.md) , используется в Visual Studio и в магазине Майкрософт для проверки отправки (то есть, в результате будет ваше приложение может быть успешно добавлено в Microsoft Store), а затем вы можете связать альтернативные статическая библиотека вместо. Например если ошибки компоновщика относится к **CoIncrementMTAUsage** (или **WINRT_CoIncrementMTAUsage**), затем можно устранить, связав Ole32.lib случае крайней необходимости (например, если не свою версию **WindowsApp.lib** Экспорт функции).
+Очень важно, что вам устранить все ошибки компоновщика, которые вы можете с привязка **WindowsApp.lib** вместо альтернативных статическая библиотека, в противном случае приложение не будет пройти тесты [Комплект сертификации приложений для Windows](../debug-test-perf/windows-app-certification-kit.md) , используется в Visual Studio и по в Microsoft Store для проверки отправки (это означает, что в результате будет ваше приложение может быть успешно добавлено в Microsoft Store).
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>Следует ли реализовывать [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) и если да, та каким образом?
 Если у вас есть класс среды выполнения, который освобождает ресурсы в своем деструкторе, и этот класс среды предназначен для использования извне его единицы компиляции (это компонент среды выполнения Windows, предназначенный для общего использования клиентскими приложениями среды выполнения Windows), рекомендуется также реализовать **IClosable** для поддержки использования вашего класса среды выполнения языками, в которых отсутствует детерминированная финализация. Убедитесь, что ресурсы освобождаются при вызове деструктора, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.Close) или и того, и другого сразу. **IClosable::Close** можно вызывать произвольное число раз.
