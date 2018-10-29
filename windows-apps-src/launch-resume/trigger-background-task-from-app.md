@@ -8,11 +8,11 @@ ms.topic: article
 keywords: триггер фоновой задачи, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 6846cfe77272a78eff7ddc05c9a7e48dddd21fc2
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5695451"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5758939"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Запуск фоновой задачи в приложении
 
@@ -147,7 +147,7 @@ var result = await _AppTrigger.RequestAsync();
 
 Фоновая задача запускается только с помощью **ApplicationTrigger** , если вы вызвали [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) сначала.
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Смежные разделы
 
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 * [Пример кода фоновой задачи](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)

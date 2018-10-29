@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, данные, типы
 ms.localizationpriority: medium
 ms.openlocfilehash: 5aa6e17fcd95813b6abe05e9e42ad7c86657159f
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5690828"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5745154"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>Стандартные типы данных C++ и C++/WinRT
 
@@ -158,5 +158,5 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 * [IVector&lt;T&gt; интерфейс](/uwp/api/windows.foundation.collections.ivector_t_)
 * [Шаблон структуры winrt::array_view struct template](/uwp/cpp-ref-for-winrt/array-view)
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Смежные разделы
 * [Обработка строк в C++/WinRT](strings.md)
