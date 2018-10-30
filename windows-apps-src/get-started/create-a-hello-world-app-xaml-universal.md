@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, первое приложение, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: b28d0237deda78291816a52affd1fa7b4768640b
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5710607"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5757714"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Создание приложения "Hello, world" (XAML)
 
