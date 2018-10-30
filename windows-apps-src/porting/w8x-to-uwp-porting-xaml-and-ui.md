@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b5a3425c49a30ddb96fcb7a8a2c8b83fbb6dff3
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5690466"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5764930"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Перенос XAML среды выполнения Windows 8.x и пользовательского интерфейса в UWP
 
@@ -440,7 +440,7 @@ API-интерфейсы в пространстве имен [**Windows.Media.P
 
 В приложении магазина Windows Phone и приложении для Windows10 уменьшенным масштабом закрывается при нажатии кнопки "Назад". Для приложений среды выполнения Windows 8.x нет не обрабатывает встроенные кнопки "Назад", поэтому вопрос не применяется.
 
-## <a name="settings"></a>Параметры
+## <a name="settings"></a>Settings
 
 Класс среды выполнения Windows 8.x **SettingsPane** не подходит для Windows10. Вместо этого, в дополнение к построению страницы параметров, необходимо предоставить пользователям способ получать доступ к ней из вашего приложения. Рекомендуется представить страницу параметров приложения на верхнем уровне, как последний закрепленный элемент на панели навигации, но ниже приводится полный набор доступных вариантов.
 
