@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/dev-home.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 232770ab4b746663a105982605d1cedcb92adbe3
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5706747"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5764890"
 ---
 # <a name="developer-home-on-the-console-dev-home"></a>Главная страница разработчика на консоли (Dev Home)
    
@@ -57,7 +57,7 @@ Dev Home — это средства на Xbox One development kit, предна
  
    *  [Главная](devhome-home.md)  
    *  [Xbox Live](devhome-live.md)  
-   *  [Параметры](devhome-settings.md)  
+   *  [Settings](devhome-settings.md)  
    *  [Захват мультимедиа](devhome-capture.md)  
    *  [Сеть](devhome-networking.md)  
    *  [Производительность](devhome-performance.md)  
