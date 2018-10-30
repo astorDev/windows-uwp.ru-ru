@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, данные, база данных, реляционная, таблицы, sqlite
 ms.localizationpriority: medium
 ms.openlocfilehash: beca20d358430ecd82cd1bc57459a6f6af36be77
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5693438"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5753495"
 ---
 # <a name="data-access"></a>Доступ к данным
 
@@ -24,6 +24,6 @@ ms.locfileid: "5693438"
 | [Использование базы данных SQLite в приложении UWP](sqlite-databases.md) | Показано, как использовать SQLite для хранения и извлечения данных из облегченной базы данных на устройстве пользователя. SQLite–это бессерверное встраиваемое ядро СУБД. |
 | [Использование базы данных SQL server в приложении UWP](sql-server-databases.md) | Показано, как подключаться напрямую к базе данных SQL Server и затем хранить и извлекать данные с помощью классов в пространстве имен [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) . Уровень служб не требуется. |
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Смежные разделы
 
 * [Пример базы данных заказов клиентов](https://github.com/Microsoft/Windows-appsample-customers-orders-database)

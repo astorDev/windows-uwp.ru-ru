@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 283ea63d118f9a61fe745dd3eb60b68594c32279
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5697787"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5754074"
 ---
 # <a name="specular-lighting"></a>Отраженное освещение
 

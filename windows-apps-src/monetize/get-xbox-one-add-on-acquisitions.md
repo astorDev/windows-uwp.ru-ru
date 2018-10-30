@@ -1,20 +1,20 @@
 ---
 author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store для получения данных о сводных надстройки.
-title: Получение сведений о покупках Xbox One надстройки
+title: Получение сведений о приобретенных надстройках для Xbox One
 ms.author: mhopkins
 ms.date: 10/18/2018
 ms.topic: article
 keywords: Windows 10, uwp, службы магазина, API, Xbox One надстроек аналитики Microsoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: e703c0c07e981ebf21ad3388ad178eabdd5c068d
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5702804"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5755672"
 ---
-# <a name="get-xbox-one-add-on-acquisitions"></a>Получение сведений о покупках Xbox One надстройки
+# <a name="get-xbox-one-add-on-acquisitions"></a>Получение сведений о приобретенных надстройках для Xbox One
 
 Используйте этот метод в API аналитики Microsoft Store для получения данных о покупках надстройки сводную информацию в формате JSON для Xbox One игры, была добавлена через портал разработчика Xbox (XDP) и доступны на информационной панели центра партнеров аналитики XDP.
 

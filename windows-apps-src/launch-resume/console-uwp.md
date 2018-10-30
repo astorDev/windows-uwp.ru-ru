@@ -8,11 +8,11 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e5923176f5f9fff1a6e4f30a7ba2419e99c074b
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5702327"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5756143"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>Создание консольного приложения для универсальной платформы Windows
 
