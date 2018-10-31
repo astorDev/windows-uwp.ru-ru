@@ -3,23 +3,23 @@ author: JnHs
 Description: Create customer groups that you can use to target a subset of your app's customer base for promotions, testing, or other purposes.
 title: Создание групп пользователей
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, группы пользователей, сегмент, тестовая группа, группы известных пользователей
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
-ms.openlocfilehash: c8a2a1454baa1d5b1f09226e501233aa4c076373
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 381953c51bfeb04625b452bd278ea09a4c9a8368
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5739938"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814250"
 ---
 # <a name="create-customer-groups"></a>Создание групп пользователей
 
 Можно создавать *группы пользователей* , включающий подмножеству пользователей вашего приложения. Эти группы могут использоваться для целевой аудитории для рекламных акций, тестирования и других целей.
 
-Для просмотра и создания групп пользователей, разверните **привлечение** в левом меню навигации из [Центра разработки для Windows](https://partner.microsoft.com/dashboard), а затем выберите **группы пользователей**.
+Для просмотра и создания групп пользователей, разверните **привлечение** в левом меню навигации центра [Партнеров](https://partner.microsoft.com/dashboard), а затем выберите **группы пользователей**.
 
 В настоящее время поддерживаются два типа групп пользователей.
 

@@ -13,24 +13,20 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e27bdd3d5c57b9d45f86c25f0bce0ae1c4a5e999
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1ce72c40d3b97942612fc2979d026c965727512e
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760810"
+ms.locfileid: "5822483"
 ---
 # <a name="control-templates"></a>Шаблоны элементов управления
-
- 
 
 Вы можете настроить визуальную структуру и визуальное поведение элемента управления, создав шаблон элемента управления в среде XAML. У элементов управления много свойств, таких как [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395), [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) и [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404), которые можно задать, чтобы указать различные аспекты вида элемента управления. Однако настройка этих свойств позволяет вносить ограниченные изменения. Вы можете указать дополнительные настройки, создав шаблон с помощью класса [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). Здесь мы покажем, как создать **ControlTemplate** для настройки вида элемента управления [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316).
 
 > **Важные API-интерфейсы**: [**класс ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391), [**свойство Control.Template**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
 
-
 ## <a name="custom-control-template-example"></a>Пример пользовательского шаблона элемента управления
-
 
 По умолчанию элемент управления [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) помещает свое содержимое (строку или объект рядом с **CheckBox**) справа от поля выбора, а флажок указывает, что пользователь выбрал **CheckBox**. Эти характеристики представляют визуальную структуру и визуальное поведение **CheckBox**.
 
@@ -52,7 +48,6 @@ ms.locfileid: "5760810"
 
 ## <a name="specify-the-visual-structure-of-a-control"></a>Указание визуальной структуры элемента управления
 
-
 При создании [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) мы объединяем объекты [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), чтобы создать единый элемент управления. У **ControlTemplate** должен быть только один **FrameworkElement** в качестве корневого элемента. Корневой элемент обычно содержит другие объекты **FrameworkElement**. Такое сочетание объектов формирует визуальную структуру элемента управления.
 
 Данный код XAML создает [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) для [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316), указывающий, что содержимое элемента управления находится под полем выбора. Корневой элемент — [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250). Этот пример предлагает [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) создать **X**, указывающий на то, что пользователь выбрал **CheckBox**, и [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse), указывающий на неопределенное состояние. Обратите внимание, что свойству [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) задано значение 0 в **Path** и **Ellipse**, так что по умолчанию последние не выводятся.
@@ -60,36 +55,36 @@ ms.locfileid: "5760810"
 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) связывает значение свойства в шаблоне элемента управления и значение какого-либо другого предоставленного свойства элемента управления-шаблона. TemplateBinding может использоваться только в пределах определения ControlTemplate в XAML. Подробнее см. в разделе [Расширение разметки TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md).
 
 > [!NOTE]
-> Начиная с следующем крупной обновлении до Windows 10, можно использовать расширения разметки [**x: Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) в местах, используйте [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Подробнее см. в разделе [Расширение разметки TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md).
+> Начиная с Windows 10, версия 1809[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk), можно использовать расширения разметки [**x: Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) в местах, используйте [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Подробнее см. в разделе [Расширение разметки TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md).
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
-    <Border BorderBrush="{TemplateBinding BorderBrush}" 
-            BorderThickness="{TemplateBinding BorderThickness}" 
+    <Border BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
             Background="{TemplateBinding Background}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="25"/>
             </Grid.RowDefinitions>
-            <Rectangle x:Name="NormalRectangle" Fill="Transparent" Height="20" Width="20" 
-                       Stroke="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" 
-                       StrokeThickness="{ThemeResource CheckBoxBorderThemeThickness}" 
+            <Rectangle x:Name="NormalRectangle" Fill="Transparent" Height="20" Width="20"
+                       Stroke="{ThemeResource SystemControlForegroundBaseMediumHighBrush}"
+                       StrokeThickness="{ThemeResource CheckBoxBorderThemeThickness}"
                        UseLayoutRounding="False"/>
             <!-- Create an X to indicate that the CheckBox is selected. -->
-            <Path x:Name="CheckGlyph" 
-                  Data="M103,240 L111,240 119,248 127,240 135,240 123,252 135,264 127,264 119,257 111,264 103,264 114,252 z" 
-                  Fill="{ThemeResource CheckBoxForegroundThemeBrush}" 
-                  FlowDirection="LeftToRight" 
+            <Path x:Name="CheckGlyph"
+                  Data="M103,240 L111,240 119,248 127,240 135,240 123,252 135,264 127,264 119,257 111,264 103,264 114,252 z"
+                  Fill="{ThemeResource CheckBoxForegroundThemeBrush}"
+                  FlowDirection="LeftToRight"
                   Height="14" Width="16" Opacity="0" Stretch="Fill"/>
-            <Ellipse x:Name="IndeterminateGlyph" 
-                     Fill="{ThemeResource CheckBoxForegroundThemeBrush}" 
+            <Ellipse x:Name="IndeterminateGlyph"
+                     Fill="{ThemeResource CheckBoxForegroundThemeBrush}"
                      Height="8" Width="8" Opacity="0" UseLayoutRounding="False" />
-            <ContentPresenter x:Name="ContentPresenter" 
-                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                              Content="{TemplateBinding Content}" 
-                              Margin="{TemplateBinding Padding}" Grid.Row="1" 
-                              HorizontalAlignment="Center" 
+            <ContentPresenter x:Name="ContentPresenter"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              Content="{TemplateBinding Content}"
+                              Margin="{TemplateBinding Padding}" Grid.Row="1"
+                              HorizontalAlignment="Center"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
         </Grid>
     </Border>
@@ -97,7 +92,6 @@ ms.locfileid: "5760810"
 ```
 
 ## <a name="specify-the-visual-behavior-of-a-control"></a>Указание визуального поведения элемента управления
-
 
 Визуальное поведение описывает внешний вид элемента управления в определенных состояниях. У элемента управления [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) есть три состояния выставления: `Checked`, `Unchecked` и `Indeterminate`. Значение свойства [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/br209798) определяет состояние **CheckBox**, а состояние последнего определяет, что появляется в поле.
 
@@ -110,7 +104,6 @@ ms.locfileid: "5760810"
 | **false**           | `Unchecked`        | Пусто.                  |
 | **null**            | `Indeterminate`    | Содержит кружок.      |
 
- 
 
 Для указания представления элемента управления, когда он находится в определенном состоянии, используйте объекты [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007). Объект **VisualState** содержит класс [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) или [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053), меняющий представление элементов в классе [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). Когда элемент управления переходит в состояние, указанное в свойстве [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031), применяются изменения свойств в **Setter** или [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490). Когда элемент управления выходит из этого состояния, изменения удаляются. Мы добавляем объекты **VisualState** к объектам [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014). Мы добавляем объекты **VisualStateGroup** к подключенному свойству [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505), установленному на корневом элементе [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) шаблона **ControlTemplate**.
 
@@ -118,10 +111,10 @@ ms.locfileid: "5760810"
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
-    <Border BorderBrush="{TemplateBinding BorderBrush}" 
-            BorderThickness="{TemplateBinding BorderThickness}" 
+    <Border BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
             Background="{TemplateBinding Background}">
-            
+
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="CheckStates">
                 <VisualState x:Name="Checked">
@@ -130,7 +123,7 @@ ms.locfileid: "5760810"
                     </VisualState.Setters>
                     <!-- This Storyboard is equivalent to the Setter. -->
                     <!--<Storyboard>
-                        <DoubleAnimation Duration="0" To="1" 
+                        <DoubleAnimation Duration="0" To="1"
                          Storyboard.TargetName="CheckGlyph" Storyboard.TargetProperty="Opacity"/>
                     </Storyboard>-->
                 </VisualState>
@@ -153,24 +146,24 @@ ms.locfileid: "5760810"
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="25"/>
             </Grid.RowDefinitions>
-            <Rectangle x:Name="NormalRectangle" Fill="Transparent" Height="20" Width="20" 
-                       Stroke="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" 
-                       StrokeThickness="{ThemeResource CheckBoxBorderThemeThickness}" 
+            <Rectangle x:Name="NormalRectangle" Fill="Transparent" Height="20" Width="20"
+                       Stroke="{ThemeResource SystemControlForegroundBaseMediumHighBrush}"
+                       StrokeThickness="{ThemeResource CheckBoxBorderThemeThickness}"
                        UseLayoutRounding="False"/>
             <!-- Create an X to indicate that the CheckBox is selected. -->
-            <Path x:Name="CheckGlyph" 
-                  Data="M103,240 L111,240 119,248 127,240 135,240 123,252 135,264 127,264 119,257 111,264 103,264 114,252 z" 
-                  Fill="{ThemeResource CheckBoxForegroundThemeBrush}" 
-                  FlowDirection="LeftToRight" 
+            <Path x:Name="CheckGlyph"
+                  Data="M103,240 L111,240 119,248 127,240 135,240 123,252 135,264 127,264 119,257 111,264 103,264 114,252 z"
+                  Fill="{ThemeResource CheckBoxForegroundThemeBrush}"
+                  FlowDirection="LeftToRight"
                   Height="14" Width="16" Opacity="0" Stretch="Fill"/>
-            <Ellipse x:Name="IndeterminateGlyph" 
-                     Fill="{ThemeResource CheckBoxForegroundThemeBrush}" 
+            <Ellipse x:Name="IndeterminateGlyph"
+                     Fill="{ThemeResource CheckBoxForegroundThemeBrush}"
                      Height="8" Width="8" Opacity="0" UseLayoutRounding="False" />
-            <ContentPresenter x:Name="ContentPresenter" 
-                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                              Content="{TemplateBinding Content}" 
-                              Margin="{TemplateBinding Padding}" Grid.Row="1" 
-                              HorizontalAlignment="Center" 
+            <ContentPresenter x:Name="ContentPresenter"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              Content="{TemplateBinding Content}"
+                              Margin="{TemplateBinding Padding}" Grid.Row="1"
+                              HorizontalAlignment="Center"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
         </Grid>
     </Border>
@@ -210,10 +203,6 @@ ms.locfileid: "5760810"
 В некоторых атрибутах в примерах кода XAML вы могли заметить ссылки на ресурсы, которые используют [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md). Данная технология позволяет одному шаблону элемента управления использовать разнообразные ресурсы в зависимости от того, какая из тем активна на текущий момент. Это особенно важно для кистей и цветов, поскольку основная цель тем — предоставить пользователям возможность выбора темной или светлой темы либо темы "Высокая контрастность" в применении к системе в целом. Приложения, которые используют систему на базе ресурсов XAML, могут использовать набор ресурсов, соответствующий определенной теме. Выбор темы в пользовательском интерфейсе приложения будет отражать выбор пользователем темы для всей системы в целом.
 
  ## Получить пример кода
-* [Пример основных элементов пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+
+* [Пример галереи элементов управления XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [Пример пользовательского элемента управления для редактирования текста](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
-
- 
-
-
-

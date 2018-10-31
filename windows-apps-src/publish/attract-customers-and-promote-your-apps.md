@@ -3,20 +3,20 @@ author: jnHs
 Description: Attract customers and promote your apps
 title: Привлечение клиентов и продвижение приложений
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 783531d3663f14ffbeb5b0fad950e41b14e39ddf
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 0880105fccca297204c27e80099f0cfc6d016a27
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5759124"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5815434"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>Привлечение клиентов и продвижение приложений
 
-После добавления приложения в Microsoft Store, пришло время максимальному его количеству пользователей. Мы предлагаем множество функций, которые помогут вам продвигать ваши продукты и расширить клиентскую базу, включая рекламные кампании, промокоды, распродажи и многое другое.
+После добавления приложения в Microsoft Store, пришло время максимальному его количеству пользователей. [Центр партнеров](https://partner.microsoft.com/dashboard) предлагает множество функций, которые помогут вам продвигать ваши продукты и расширить клиентскую базу, включая рекламные кампании, Промокоды, распродажи и др.
 
 -   [Создание промокодов](generate-promotional-codes.md)
 -   [Создание рекламной кампании для вашего приложения](create-an-ad-campaign-for-your-app.md)

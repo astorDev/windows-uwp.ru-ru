@@ -9,11 +9,11 @@ keywords: windows 10, uwp, расширенное выполнение, свер
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
 ms.openlocfilehash: 30e05259306a222a3cb18268aeb58a8380f6d4d2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5743910"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5813259"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>Задержка приостановки приложения с помощью расширенного сеанса выполнения
 

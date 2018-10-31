@@ -8,11 +8,11 @@ ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dcb5c9044cd74f26c06253f22b6672bc5e727dd
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5749170"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5822269"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>Что нового в документации для разработчиков Windows в августе 2017г.
 

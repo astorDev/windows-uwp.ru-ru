@@ -4,16 +4,16 @@ Description: Follow these guidelines to prepare your app's packages for submissi
 title: Требования к пакету приложения
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, требования к пакету, пакеты, формат пакета, поддерживаемая версия, отправить
 ms.localizationpriority: medium
-ms.openlocfilehash: 5270215e1f4834a7e7c86ed4b3052ed4f791d57e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1c76cb26d91ecd1f72b71f90b9ef464cdf52ba55
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5764578"
+ms.locfileid: "5815517"
 ---
 # <a name="app-package-requirements"></a>Требования к пакетам приложения
 
@@ -74,6 +74,8 @@ ms.locfileid: "5764578"
 | Размер пакета         | .msixbundle или .appxbundle: не более 25 ГБ на пакет <br>.msix или .appx пакеты, предназначенные для Windows 10:25 более ГБ на пакет<br>APPX-пакеты приложений для Windows 8.1: не более 8 ГБ на пакет <br> APPX-пакеты приложений для Windows 8: не более 2 ГБ на пакет <br> APPX-пакеты приложений для Windows8.1: не более 4ГБ на пакет <br> XAP-пакеты: не более 1 ГБ на пакет                                                                           |
 | Хэши сопоставления блоков     | Алгоритм SHA2-256                                                   |
 
+> [!IMPORTANT]
+> Начиная с 31 октября 2018 г., созданный продукты не могут включать пакеты, предназначенные для Windows 8.x/Windows Phone 8.x или более ранних версий. Дополнительные сведения см. в разделе этой [записи блога](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 ## <a name="supported-versions"></a>Поддерживаемые версии
 

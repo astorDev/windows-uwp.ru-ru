@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, глубина, эффекты, примитивы, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: f81c441910cd0d0205641a119c243cb22d0b695e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5765579"
+ms.locfileid: "5820279"
 ---
 # <a name="use-depth-and-effects-on-primitives"></a>Применение глубины и эффектов к примитивам
 

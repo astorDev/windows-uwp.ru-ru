@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: The Acquisitions report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details.
+Description: The Acquisitions report in Partner Center lets you see who has acquired and installed your app, along with demographic and platform details.
 title: Отчет "Приобретения"
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 09/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, приобретения, продажи приложений, загрузки приложений, установки, воронка, приобретение, преобразования, канал, представления страницы приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: c2ccb3088d0ef241f950a5f5fcf3f40969bc0531
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: bbd84b32a4e94687ff50f553137a86885094a7d6
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5769230"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5813311"
 ---
 # <a name="acquisitions-report"></a>Отчет "Приобретения"
 
 
-Отчет о **приобретениях** на информационной панели центра разработки для Windows позволяет узнать, кто приобрел и установил приложение, а также получить демографические сведения и данные о платформе, а показаны сведения о том, как пользователи Windows10 (включая Xbox) попали на ваше приложение Описание. Можно также просмотреть практически в реальном времени о покупках для последнего периода или семьдесят двух часов. 
+Отчет о **приобретениях** в [Центре партнеров](https://partner.microsoft.com/dashboard) позволяет узнать, кто приобрел и установил приложение, а также получить демографические сведения и данные о платформе, а показаны сведения о том, как пользователи Windows10 (включая Xbox) попали на страницу с описанием вашего приложения. Можно также просмотреть практически в реальном времени о покупках для последнего периода или семьдесят двух часов. 
 
-Можно просмотреть эти данные на информационной панели или [скачать отчет](download-analytic-reports.md), чтобы просмотреть его в автономном режиме. Кроме того, вы можете получить эти данные программным образом с помощью [API REST аналитики Магазина Windows](../monetize/access-analytics-data-using-windows-store-services.md).
+Эти данные можно просмотреть в центре партнеров или [скачать отчет](download-analytic-reports.md) для просмотра в автономном режиме. Кроме того, вы можете получить эти данные программным образом с помощью [API REST аналитики Магазина Windows](../monetize/access-analytics-data-using-windows-store-services.md).
 
 В этом отчете **приобретение** означает получение новым клиентом лицензии на ваше приложение (как на возмездной, так и на безвозмездной основе). **Установка** относится к приложению, устанавливаемому на устройстве с Windows 10.
 

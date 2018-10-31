@@ -4,21 +4,21 @@ layout: LandingPage
 Description: See how to publish your Windows apps to the Microsoft Store.
 title: Публикация приложений для Windows
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, публикация, публиковать, продажи, продавать, распространять, распространение, магазин, информационная панель
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 98e47934f936b6995ab37623b610869219254b85
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 229e1eab05e392a4091c9eee5bc9af948c678d96
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766827"
+ms.locfileid: "5816395"
 ---
 # <a name="publish-windows-apps-and-games"></a>Публикация приложений и игр для Windows  
  
-На [информационной панели центра разработки для Windows](https://partner.microsoft.com/dashboard) можно использовать для публикации приложений и игр в Microsoft Store. <a href="//developer.microsoft.com/store/register">Зарегистрируйтесь прямо сейчас!</a>
+Можно использовать [Центр партнеров](https://partner.microsoft.com/dashboard) для публикации своих приложений и игр в Microsoft Store. <a href="//developer.microsoft.com/store/register">Зарегистрируйтесь прямо сейчас!</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>

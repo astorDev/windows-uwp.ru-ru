@@ -4,16 +4,16 @@ Description: Common questions about ad campaigns
 title: Общие вопросы о рекламных кампаниях
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c73e51cac3823be7c1abcce223c9d7fecfc58ae
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1d1455dd832a41e2783d6df8b4470ad8a94c5c40
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745920"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5811928"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Общие вопросы о рекламных кампаниях
 
@@ -63,10 +63,3 @@ ms.locfileid: "5745920"
 
 Перейдите в раздел <http://commerce.microsoft.com>, выполните вход, используя учетные данные учетной записи Майкрософт и внесите необходимые изменения.
 
-### <a name="related-topics"></a>Еще по теме
-
-* [Создание рекламной кампании для вашего приложения](create-an-ad-campaign-for-your-app.md)
-* [Управление рекламной кампанией](managing-your-ad-campaign.md)
-* [Сведения о собственной рекламе](about-house-ads.md)
-* [О рекламе от сообщества](about-community-ads.md)
-* [Отчет о рекламных объявлениях, которые привели к установке приложений](app-install-ads-reports.md)

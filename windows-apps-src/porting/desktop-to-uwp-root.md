@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.openlocfilehash: e08856006bc3ed6348a6ded69421ef0be9fc69e5
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5769170"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5813069"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>Упаковка классических приложений (моста для классических приложений)
 

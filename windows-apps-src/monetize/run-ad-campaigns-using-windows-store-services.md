@@ -8,12 +8,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, API рекламных акций Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
-ms.openlocfilehash: 2212a3663e79f4fb068af631cfad7715b5a039ae
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 699efd34a0a304231bcfa865c76452c1260cd675
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757594"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5812428"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Проведение рекламных кампаний с помощью служб Магазина
 
@@ -38,7 +38,7 @@ ms.locfileid: "5757594"
 
 * Перед тем как создать и запустить рекламную кампанию с помощью этого API, необходимо сначала [создать одну платную рекламную кампанию на странице **Продвижение вашего приложения** информационной панели Центра разработки](../publish/create-an-ad-campaign-for-your-app.md) и добавить там же по крайней мере одно платежное средство. После выполнения этих действий можно создавать платные строки поставки для рекламных кампаний с помощью этого API. Строки поставки для рекламных кампаний, созданных с использованием этого API, будут автоматически выставлять счет на оплату платежному средству по умолчанию, выбранному на странице **Продвижение вашего приложения** на информационной панели.
 
-* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае можно [создать новый каталог Azure AD в Центре разработки](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account) без дополнительной платы.
+* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае можно [создать новый каталог Azure AD в Центре разработки](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
 
 * Вам необходимо привязать приложение Azure AD к учетной записи Центра разработки, получить идентификатор клиента для приложения и идентификатор клиента и создать ключ. Приложение Azure AD представляет собой приложение или службу, из которой отправляются вызовы к API промоакций Microsoft Store. Чтобы получить маркер доступа Azure AD, который вы передадите в API, необходимо иметь в наличии идентификатор владельца, идентификатор клиента и ключ.
     > [!NOTE]
@@ -48,7 +48,7 @@ ms.locfileid: "5757594"
 
 1.  В Центре разработки [привяжите учетную запись своей организации к каталогу Azure AD организации](../publish/associate-azure-ad-with-dev-center.md).
 
-2.  Затем на странице **Пользователи** в разделе **Параметры учетной записи** Центра разработки [добавьте приложение Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-dev-center-account), представляющее собой приложение или службу, которые вы будете использовать для управления рекламными кампаниями вашей учетной записи Центра разработки. Обязательно назначьте этому приложению роль **Менеджер**. Если приложение еще не существует в каталоге Azure AD, вы можете [создать новое приложение Azure AD в Центре разработки](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-dev-center-account). 
+2.  Затем на странице **Пользователи** в разделе **Параметры учетной записи** Центра разработки [добавьте приложение Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account), представляющее собой приложение или службу, которые вы будете использовать для управления рекламными кампаниями вашей учетной записи Центра разработки. Обязательно назначьте этому приложению роль **Менеджер**. Если приложение еще не существует в каталоге Azure AD, вы можете [создать новое приложение Azure AD в Центре разработки](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
 
 3.  Вернитесь на страницу **Пользователи**, щелкните имя приложения Azure AD, чтобы перейти к параметрам приложения, и скопируйте значения **идентификатора владельца** и **идентификатора клиента**.
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, покупки из приложения, IAP, надстройки, пробные версии, потребляемые, длительного пользования, подписка
 ms.localizationpriority: medium
 ms.openlocfilehash: 17a93e10f7b440ac7c1926bc64bba4d9be248710
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766706"
+ms.locfileid: "5821948"
 ---
 # <a name="in-app-purchases-and-trials"></a>Покупки из приложения и пробные версии
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, сеть, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
 ms.openlocfilehash: eaba8d7b87d9e2762d13bd86629ee4a996e2d5e8
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766486"
+ms.locfileid: "5821848"
 ---
 # <a name="websockets"></a>WebSockets
 Протокол WebSockets предоставляет механизм быстрого и безопасного двустороннего взаимодействия между клиентом и сервером через HTTP(S) и поддерживает и UTF-8, и двоичные сообщения.

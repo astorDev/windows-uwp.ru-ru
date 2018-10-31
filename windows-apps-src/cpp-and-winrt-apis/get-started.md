@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, начать, начало, работы
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cb8e18904f61976103689c8d83475ec248eb38b
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5758615"
+ms.locfileid: "5819725"
 ---
 # <a name="get-started-with-cwinrt"></a>Начало работы с C++/WinRT
 
