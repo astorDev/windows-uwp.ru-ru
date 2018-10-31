@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8a63e91bd5415f33118294a03567bb5e670ae2
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 3bbf7bdf1f41b1dff1049674f3b4463bac6ccb80
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839825"
+ms.locfileid: "5860085"
 ---
 # <a name="content-links-in-text-controls"></a>Ссылки на содержимое в элементах управления текстом
 
@@ -28,7 +28,7 @@ ms.locfileid: "5839825"
 > **Важные API-интерфейсы**: [класс ContentLink](/uwp/api/windows.ui.xaml.documents.contentlink), [класс ContentLinkInfo](/uwp/api/windows.ui.text.contentlinkinfo), [класс RichEditTextRange](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
-> API-интерфейсы для ссылок на содержимое распределены по следующим пространствам имен: Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents и Windows.UI.Text.
+> API-интерфейсы для ссылок на содержимое распределены следующие пространства имен: Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents и Windows.UI.Text.
 
 
 
