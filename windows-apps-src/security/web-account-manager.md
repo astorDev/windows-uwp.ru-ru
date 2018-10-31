@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, uwp, безопасность
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: bfec782952ef20dbc496e50d9513febc8dee3248
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 71a5cddcd5ccb5185cda422c3df16797f5765688
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5740407"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5825275"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
@@ -337,7 +337,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="remove-a-stored-account"></a>Удаление сохраненной учетной записи
 
-Если вы сохраняете учетную веб-запись, целесообразно предоставить пользователям возможность отвязать их учетную запись от вашего приложения. Так они смогут действительно "выйти" из приложения: сведения об их учетной записи больше не будут автоматически загружаться при запуске. Для этого сначала удалите все сохраненные сведения об учетной записи и поставщике. Затем вызовите метод **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** для очистки кэша и аннулируйте все имеющиеся в приложении маркеры. 
+Если вы сохраняете учетную веб-запись, целесообразно предоставить пользователям возможность отвязать их учетную запись от вашего приложения. Таким образом, они могут действительно «выйти» приложения: сведений своей учетной записи будет больше не будут автоматически загружаться запуска. Для этого сначала удалите все сохраненные сведения об учетной записи и поставщике. Затем вызовите метод **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** для очистки кэша и аннулируйте все имеющиеся в приложении маркеры. 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)

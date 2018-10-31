@@ -4,16 +4,16 @@ Description: The Microsoft Store enforces certain rules related to version numbe
 title: Нумерация версий пакета
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 10/25/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 045e44d3ba243b4c4fbf68ba37e91c06eb022d27
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 5bd34c285a74c0fbe7e51f1f3fa53cdde33733dd
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741688"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5825038"
 ---
 # <a name="package-version-numbering"></a>Нумерация версий пакета
 
@@ -64,6 +64,9 @@ Windows10 позволяет создать единую базу кода, ра
 
 
 ## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>Нумерация Windows8.1 (и более ранних версий) и пакеты Windows Phone 8.1
+
+> [!IMPORTANT]
+> Начиная с 31 октября 2018 г., созданный продукты не могут включать пакеты, предназначенные для Windows 8.x/Windows Phone 8.x или более ранних версий. Дополнительные сведения см. в разделе этой [записи блога](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
 
 Для пакетов .appx, предназначенных для Windows Phone 8.1, номер версии пакета в новой отправке всегда должен быть больше, чем номер пакета, включенного в последнюю отправку (или любую предыдущую отправку).
 

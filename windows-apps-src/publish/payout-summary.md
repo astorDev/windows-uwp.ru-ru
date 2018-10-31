@@ -4,16 +4,16 @@ Description: The Payout summary shows you details about the money you’ve earne
 title: Сводка по выплатам
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.author: wdg-dev-content
-ms.date: 02/13/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, сводка по выплатам, выписка, платежи, прибыль, выплаты, платеж, доход
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cc0b38c8118a3cfc8b157eacecab91f7ac2b120
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 5f6369247f0e287ec2698213b7f0b7be7e1f21d4
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5751257"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827433"
 ---
 # <a name="payout-summary"></a>Сводка по выплатам
 
@@ -29,7 +29,7 @@ ms.locfileid: "5751257"
 >
 > Платежи осуществляются ежемесячно (при условии соблюдения порога оплаты). Обычно мы отправляем платежи до 15-го числа соответствующего месяца. Обратите внимание, что выплата обычно занимает от 3 до 10 дополнительных рабочих дней. Дополнительные сведения см. в разделе [Пороговые значения, методы и сроки оплаты](payment-thresholds-methods-and-timeframes.md).
 
-Чтобы просмотреть раздел **Сводка по выплатам**, нажмите значок **Выплата**, который отображается рядом с правым верхним углом в Центре разработки, а затем выберите **Сводка по выплатам**.
+Чтобы просмотреть **сводки по выплатам**, щелкните значок **выплат** , который отображается рядом с правым верхним углом в центре партнеров, а затем выберите **"Сводка выплат"**.
 
 ## <a name="current-proceeds-and-payments"></a>Текущие поступления и платежи
 

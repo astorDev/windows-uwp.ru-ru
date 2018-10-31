@@ -4,16 +4,16 @@ Description: Listing your app in the right category and subcategory helps custom
 title: Таблица категорий и подкатегорий
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, категория, подкатегория, жанр, категории, жанры
 ms.localizationpriority: medium
-ms.openlocfilehash: a4e85542793fff34609817995fb213eb4f3b7d54
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2c3ea799d030b64c5b4cc67f75cbdd664a8b83da
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5750425"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5840819"
 ---
 # <a name="category-and-subcategory-table"></a>Таблица категорий и подкатегорий
 
@@ -22,7 +22,7 @@ ms.locfileid: "5750425"
 
 Сначала необходимо выбрать категорию, которой лучше всего соответствует ваше приложение. Затем при необходимости выберите подкатегорию, если они доступны. Если вы не уверены, какую категорию или подкатегорию выбрать, или не можете найти подходящую категорию, выберите ту, на которую по вашему мнению пользователи скорее всего обратят внимание при поиске приложений, подобных вашему.
 
-Если вы выберете **Игры** в качестве категории, необходимо выбрать хотя бы одну подкатегорию (также называется *жанр* для игр). Вы можете выбрать сколько угодно жанров, подходящих для описания вашей игры. Обратите внимание, что для публикации игры для пользователей Xbox необходимо включить участвовать в программе [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) или пройти процедуру [утверждения концепции игры](../gaming/concept-approval.md). 
+Если вы решили **игры** в качестве своей категории, необходимо выбрать по крайней мере одну подкатегорию (называемые *Жанр* для игр). Вы можете выбрать сколько угодно жанров, подходящих для описания вашей игры. Обратите внимание, что для публикации игры для пользователей Xbox необходимо включить участвовать в программе [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) или пройти процедуру [утверждения концепции игры](../gaming/concept-approval.md). 
 
 > [!IMPORTANT] 
 > Если вы публикуете приложение в категории **Игры**, вы не сможете выбрать другую категорию в новой отправке; она должна быть снова опубликована в категории **Игры** (однако можно изменить параметры жанра в новой отправке). Аналогичным образом, вы не сможете выбрать категорию **Игры** при обновлении приложения, которое было ранее опубликовано в другой категории.
@@ -149,38 +149,6 @@ ms.locfileid: "5750425"
   </tr>
 </tbody>
 </table>
-
-
-<!--
-| Category                    | Subcategory                                       |
-|-----------------------------|---------------------------------------------------|
-| Books + reference           | E-reader <br> Fiction <br> Nonfiction <br> Reference |
-| Business                    | Accounting + finance <br> Collaboration <br> CRM <br> Data + analytics <br> File management <br> Inventory + logistics <br> Legal + HR <br> Project management <br> Remote desktop <br> Sales + marketing <br> Time + expenses |
-| Developer tools             | Database <br> Design tools <br> Development kits <br> Networking <br> Reference + training <br> Servers <br> Utilities <br> Web hosting |
-| Education                   | Books + reference <br> Early learning <br> Instructional tools <br> Language <br> Study aids |
-| Entertainment               | (None)                                            |
-| Food + dining               | (None)                                            |
-| Games                       | Action + adventure <br> Card + board <br> Casino <br> Classics <br> Educational <br> Family + kids <br> Fighting <br> Multi-Player Online Battle Arena <br> Music <br> Other <br> Platformer <br> Puzzle + trivia <br> Racing + flying <br> Role playing <br> Shooter <br> Simulation <br> Sports <br> Strategy <br> Tools <br> Word |
-| Government + politics       | (None)                                            |
-| Health + fitness            | (None)                                            |
-| Kids + family               | Books + reference <br> Entertainment <br> Hobbies + toys <br> Sports + activities <br> Travel |
-| Lifestyle                   | Automotive <br> DIY <br> Home + garden <br> Relationships <br> Special interest <br> Style + fashion |
-| Medical                     | (None)                                            |
-| Multimedia design           | Illustration + graphic design <br> Music production <br> Photo + video production |
-| Music                       | (None)                                            |
-| Navigation + maps           | (None)                                            |
-| News + weather              | News <br> Weather                                 |
-| Personal finance            | Banking + investments <br> Budgeting + taxes      |
-| Personalization             | Ringtones + sounds <br> Themes <br> Wallpaper + lock screens |
-| Photo + video               | (None)                                            |
-| Productivity                | (None)                                            |
-| Security                    | PC protection <br> Personal security              |
-| Shopping                    | (None)                                            |
-| Social                      | (None)                                            |
-| Sports                      | (None)                                            |
-| Travel                      | City guides <br> Hotels                           |
-| Utilities + tools           | Backup + manage <br> File managers                |
--->
 
 > [!NOTE] 
 > Некоторые из категорий и подкатегорий, используемых в Store для Windows 8.х и более ранних версий, а также для Windows Phone 8.x и более ранних версий, могут выглядеть иначе, чем категории, перечисленные выше. 

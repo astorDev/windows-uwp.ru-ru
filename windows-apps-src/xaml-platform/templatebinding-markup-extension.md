@@ -4,19 +4,18 @@ description: Связывает значение свойства в шабло�
 title: Расширение разметки TemplateBinding
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 10/29/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 842f1bf1642e79d4bd2651560fdf7208cfb1877d
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d4aaca880caf30b46cb1ed26d66700bb12d76404
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5739845"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5823657"
 ---
 # <a name="templatebinding-markup-extension"></a>Расширение разметки {TemplateBinding}
-
 
 Связывает значение свойства в шаблоне элемента управления и значение какого-либо другого предоставленного свойства элемента управления-шаблона. **TemplateBinding** может использоваться только в пределах определения [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) в XAML.
 
@@ -59,18 +58,21 @@ ms.locfileid: "5739845"
 
 ### <a name="xbind-in-controltemplate"></a>x: Bind в ControlTemplate
 
-Начиная с следующем крупной обновлении до Windows 10, можно использовать расширение разметки **x: Bind** в любом использовалось **TemplateBinding** [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
+> [!NOTE]
+> С помощью x: Bind в ControlTemplate требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии. Дополнительные сведения о целевых версиях см. в статье [Адаптивный к версии код](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
-Свойство [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType) , должны будут (обязательно) на [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) при использовании **x: Bind**.
+Начиная с Windows 10, версия 1809, можно использовать расширение разметки **x: Bind** везде, где использовать **TemplateBinding** в [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
 
-Теперь с поддержкой **x: Bind** можно использовать для обеих [привязки функций](../data-binding/function-bindings.md) как хорошо, как двусторонней привязки в [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)
+Свойство [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) необходима (обязательно) на [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) при использовании **x: Bind**.
 
-В следующем примере TextBlock.Text принимает значение Button.Content.ToString(). TargetType на ControlTemplate выступает в качестве источника данных и выполняет тот же результат TemplateBinding родительскому элементу.
+С поддержкой **x: Bind** можно использовать как хорошо, как двухсторонние привязки в шаблоне [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)обеих [привязки функций](../data-binding/function-bindings.md) .
+
+В этом примере свойство **TextBlock.Text** принимает значение **Button.Content.ToString**. TargetType на ControlTemplate выступает в качестве источника данных и выполняет тот же результат TemplateBinding родительскому элементу.
 
 ```xaml
 <ControlTemplate TargetType="Button">
     <Grid>
-        <TextBlock Text="{x:Bind Content}" />
+        <TextBlock Text="{x:Bind Content, Mode=OneWay}"/>
     </Grid>
 </ControlTemplate>
 ```
