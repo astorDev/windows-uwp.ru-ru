@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, асинхронные, потоки, использование потоков
 ms.localizationpriority: medium
 ms.openlocfilehash: f01142695b676ebadea2f227cf5f8beb65ba6f9c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5765120"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5836726"
 ---
 # <a name="threading-and-async-programming"></a>Потоки и асинхронное программирование
 Потоки и асинхронное программирование позволяют приложению выполнять задачи асинхронно параллельными потоками.

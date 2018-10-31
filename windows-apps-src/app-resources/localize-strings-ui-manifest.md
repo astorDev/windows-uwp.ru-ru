@@ -10,12 +10,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e57d5c8ae4d1586de9f16455dc178c5e154fbf
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: c9789e21bd4d2a598db292721cabfe58d7c12ebe
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760531"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5836696"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 Дополнительные сведения о преимуществах локализации приложений см. в разделе [Глобализация и локализация](../design/globalizing/globalizing-portal.md).
@@ -259,7 +259,7 @@ private void RefreshUIText()
 ## <a name="loading-strings-from-a-class-library-or-a-windows-runtime-library"></a>Загрузка строк из библиотеки классов или библиотеки среды выполнения Windows
 Строковые ресурсы в указываемой ссылкой библиотеке классов (универсальная платформа Windows) или [библиотеке среды выполнения Windows (универсальная платформа Windows)](../winrt-components/index.md) обычно добавляются в подпапку пакета, в который они включаются во время сборки. Идентификатор ресурса такой строки обычно принимает форму *LibraryName/ResourcesFileName/ResourceIdentifier*.
 
-Библиотека может получить ResourceLoader для собственных ресурсов. Например, в код ниже показано, как библиотека или приложение, которое ссылается на нее, может получить ResourceLoader для строковых ресурсов библиотеки.
+Библиотека может получить ResourceLoader для собственных ресурсов. Например следующий код иллюстрирует, как библиотека или приложение, которое ссылается на нее может получить ResourceLoader для строковых ресурсов библиотеки.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");

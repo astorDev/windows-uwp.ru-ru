@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: To view performance data for the ad units in your apps, use the advertising performance report on the Windows Dev Center dashboard.
+Description: To view performance data for the ad units in your apps, use the advertising performance report in Partner Center.
 title: Отчет об эффективности рекламы
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.author: wdg-dev-content
-ms.date: 05/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 562348d5077f29af9a0d0776cb421455d45444dc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2cc47e934ca75eb581808483f7875fea901943b3
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5742264"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5836653"
 ---
 # <a name="advertising-performance-report"></a>Отчет об эффективности рекламы
 
 
-В **Отчете об эффективности рекламы** указывается эффективность ваших [рекламных блоков](in-app-ads.md), включая объявления в сообществе. Этот отчет содержит данные от различных поставщиков рекламы в приложениях UWP, которые используют [рекламного посредника](in-app-ads.md#mediation).
+В **отчет о результативности рекламы** в [Центре партнеров](https://partner.microsoft.com/dashboard) отображаются показатели эффективности ваших [рекламных блоков](in-app-ads.md) включая объявления в сообществе. Этот отчет содержит данные от различных поставщиков рекламы в приложениях UWP, которые используют [рекламного посредника](in-app-ads.md#mediation).
 
-Чтобы просмотреть этот отчет, разверните раздел **Анализ** в левом меню навигации, а затем выберите **Эффективность рекламы**. Эти данные можно просмотреть на информационной панели или загрузить данные отчета для просмотра в автономном режиме, щелкнув значок со стрелкой на странице. Кроме того, можно программными средствами получить эти данные с помощью метода [получения данных об эффективности рекламы](../monetize/get-ad-performance-data.md) в [REST API аналитики](../monetize/access-analytics-data-using-windows-store-services.md).
+Чтобы просмотреть этот отчет, разверните раздел **Анализ** в левом меню навигации, а затем выберите **Эффективность рекламы**. Можно просмотреть эти данные в центре партнеров или загрузить данные отчета для просмотра в автономном режиме, щелкнув значок со стрелкой на странице. Кроме того, можно программными средствами получить эти данные с помощью метода [получения данных об эффективности рекламы](../monetize/get-ad-performance-data.md) в [REST API аналитики](../monetize/access-analytics-data-using-windows-store-services.md).
 
 При просмотре отчетов об эффективности рекламы следует помнить, что данные отчетов за последние три дня могут меняться по мере получения и обработки новых сведений из разных источников. Кроме того, может осуществляться повторная публикация данных за прошедшие периоды вплоть до 90 дней.
 

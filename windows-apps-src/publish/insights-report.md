@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Insights report in the Windows Dev Center dashboard
+Description: The Insights report in Partner Center highlights significant changes about your apps.
 title: Аналитический отчет
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, аналитические сведения, тренда, аномалий, аномалии, изменения данных
 ms.localizationpriority: medium
-ms.openlocfilehash: 082f6e133217061d319301ec3f65ed035a3eef23
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 324666095c26eb8d05732ce7e1ad3217b210d406
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745044"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5838003"
 ---
 # <a name="insights-report"></a>Аналитический отчет
 
 
-**Аналитический** отчет на информационной панели центра разработки для Windows выделяет значительные изменения (увеличение или уменьшение в определенных показатель), которые мы обнаружили за последние 30 дней в вашем приобретений, работоспособность, и/или данные об использовании. Это позволяет получить краткий обзор потенциально важные изменения без необходимости для просмотра всех диаграммах в каждом из этих отчетов.
+**Аналитический** отчет в [Центре партнеров](https://partner.microsoft.com/dashboard) выделяет значительные изменения (увеличение или уменьшение в определенных показатель), которые мы обнаружили за последние 30 дней в вашем приобретений, работоспособность, и/или данные об использовании. Это позволяет получить краткий обзор потенциально важные изменения без необходимости для просмотра всех диаграммах в каждом из этих отчетов.
 
 > [!NOTE]
 > Данные в этом отчете рассматривается за последние 30 дней. Нельзя выбрать другой период времени для этого отчета.

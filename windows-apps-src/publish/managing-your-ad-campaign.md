@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: Manage ad campaigns for your apps in the Windows Dev Center dashboard.
+Description: Manage ad campaigns for your apps in Partner Center.
 title: Управление рекламной кампанией
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.author: wdg-dev-content
@@ -8,17 +8,17 @@ ms.date: 06/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 77271d75b29cb13c1d3d1948a9f06a42e940bcb9
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1c53ae429e4cb912ce0ed2480c8cab814cbfaf96
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748407"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835539"
 ---
 # <a name="manage-your-ad-campaign"></a>Управление рекламной кампанией
 
 
-Чтобы управлять рекламными кампаниями вашего приложения, разверните узел **Привлечение** в левом меню навигации информационной панели и выберите пункт **Рекламные кампании**. Вы увидите все рекламные кампании, связанные с вашими приложениями, вместе с числом показов, нажатий и установок для каждой из них. Подробнее о показах, нажатиях и установках см. в разделе [Отчет о рекламной кампании](promote-your-app-report.md).
+Для управления рекламными кампаниями для вашего приложения в [Центре партнеров](https://partner.microsoft.com/dashboard), разверните **привлечение** в левом меню навигации, а затем выберите **рекламных кампаний**. Вы увидите все рекламные кампании, связанные с вашими приложениями, вместе с числом показов, нажатий и установок для каждой из них. Подробнее о показах, нажатиях и установках см. в разделе [Отчет о рекламной кампании](promote-your-app-report.md).
 
 Для фильтрации списка рекламных кампаний щелкните раскрывающееся меню **Фильтры раздела** и выберите один из следующих фильтров.
 

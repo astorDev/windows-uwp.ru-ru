@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, периодический рабочий элемент, потоки, таймеры
 ms.localizationpriority: medium
 ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5747116"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5838520"
 ---
 # <a name="create-a-periodic-work-item"></a>Создание периодического рабочего элемента
 

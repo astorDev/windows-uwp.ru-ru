@@ -4,16 +4,16 @@ Description: Review this list to help avoid issues that frequently prevent apps 
 title: Недопущение распространенных ошибок при сертификации
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a3c3cd5d7b75408a368c6b5fbc0b4a8bfe2839
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 7f37412ac88b001f412a1495f2b4efa029cf4d3a
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5762130"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835254"
 ---
 # <a name="avoid-common-certification-failures"></a>Недопущение распространенных ошибок при сертификации
 
@@ -33,7 +33,7 @@ ms.locfileid: "5762130"
 
 -   [Предоставьте всю информацию](notes-for-certification.md), необходимую для использования приложения, в том числе имя пользователя и пароль тестовой учетной записи, если приложение должно выполнять вход в сетевую службу, а также описание всех действий, необходимых для доступа к скрытым или заблокированным возможностям.
 
--   Добавьте [политику конфиденциальности](create-app-store-listings.md#privacy-policy), если она необходима для приложения. Например, если ваше приложение любым образом получает доступ к любым личным сведениям или если это предусмотрено законом. Чтобы определить, необходима ли вашему приложению политика конфиденциальности, ознакомьтесь с [Соглашением с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) и [Политик Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies).
+-   Включать [URL-адрес политики конфиденциальности](enter-app-properties.md#privacy-policy-url) , если вашему приложению требуется один; Например если ваше приложение получает доступ к любым личным сведениям каким-либо образом или если это предусмотрено законом. Чтобы определить, необходима ли вашему приложению политика конфиденциальности, ознакомьтесь с [Соглашением с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) и [Политик Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies).
 
 -   Убедитесь, что описание приложения четко отражает его функции. В этом вам поможет руководство по [созданию эффективного описания приложения](write-a-great-app-description.md).
 
