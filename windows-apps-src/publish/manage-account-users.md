@@ -1,31 +1,31 @@
 ---
 author: jnHs
-Description: Add users to your Dev Center account and assign them roles with specific permissions.
+Description: Add users to your Partner Center account and assign them roles with specific permissions.
 title: Управление пользователями учетных записей
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
-ms.date: 07/11/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Управление Windows 10, uwp, пользователей учетной записи пользователей, azure ad, нескольких пользователей, несколько пользователей
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b659a12d972612d07f78504d46af396617513b4
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 01517ebd2cc4b86fa1ac440446a5cc59172014b3
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5755745"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829874"
 ---
 # <a name="manage-account-users"></a>Управление пользователями учетных записей
 
-Для добавления дополнительных пользователей в свою учетную запись Центра разработки и управления ими можно использовать Azure Active Directory. Можно определить роли или пользовательские разрешения для каждого пользователя. Вы также можете назначить роль группе пользователей или приложению Azure Active Directory.
+Можно использовать Azure Active Directory для добавления и управления дополнительных пользователей в вашей учетной записи [Центра партнеров](https://partner.microsoft.com/dashboard) . Можно определить роли или пользовательские разрешения для каждого пользователя. Вы также можете назначить роль группе пользователей или приложению Azure Active Directory.
 
-Чтобы добавлять пользователей учетной записи и управлять ими, сначала нужно связать учетную запись Центра разработки с Azure Active Directory организации. 
+Чтобы добавлять и управление пользователями учетных записей, сначала нужно связать учетную запись центра партнеров с Azure Active Directory вашей организации. 
 
 В этом разделе описывается, как выполнять следующие вещи.
 
--   [Связывание Azure Active Directory с учетной записью Центра разработки](associate-azure-ad-with-dev-center.md)
--   [Добавление пользователей, групп и приложений AzureAD в учетную запись Центра разработки](add-users-groups-and-azure-ad-applications.md)
+-   [Связывание Azure Active Directory с учетной записью центра партнеров](associate-azure-ad-with-dev-center.md)
+-   [Добавление пользователей, групп и приложений Azure AD в вашей учетной записи центра партнеров](add-users-groups-and-azure-ad-applications.md)
 -   [Настройка ролей и пользовательских разрешений для пользователей учетных записей](set-custom-permissions-for-account-users.md)
 
 > [!TIP]
-> В этом разделе описана программа для разработчиков приложений для Windows, однако связывание клиента и управление пользователями работает аналогично для учетных записей Программы для разработчиков оборудования для Windows (см. дополнительные сведения в разделе [Администрирование информационной панели](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)) или Программы классических приложений для Windows (см. дополнительные сведения в разделе [Программа классических приложений для Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)).
+> Эти разделы относятся только к программе для разработчиков приложений Windows в центре партнеров, но сопоставление клиента и управление пользователями работают аналогично для учетных записей в программе для разработчиков оборудования Windows (см. в разделе [Администрирование информационной панели](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration) подробнее) или в Программа классических приложений для Windows (Дополнительные сведения см. в. [Программа классических приложений для Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users) ).

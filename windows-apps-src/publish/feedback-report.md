@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Feedback report in the Windows Dev Center dashboard lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
+Description: The Feedback report in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
 title: Отчет об отзывах
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.author: wdg-dev-content
-ms.date: 11/3/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eb8958adaeb78a068ae2baad30b7bc9fa96561a2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ab5e5f3fe533568079869c4fbd62530504544bf7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5744056"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828980"
 ---
 # <a name="feedback-report"></a>Отчет об отзывах
 
-**Отчет об отзывах** на информационной панели Центра разработки для Windows позволяет просматривать проблемы, предложения и голоса, которые были отправлены пользователями Windows 10 через Центр отзывов. Эти сведения можно просмотреть на информационной панели или экспортировать данные для просмотра данных в автономном режиме.
+**Отчет об отзывах** в центре партнеров позволяет просматривать проблемы, предложения и голоса, которые отправлены пользователями Windows 10 через Центр отзывов. Можно просмотреть эти данные в центре партнеров или экспортировать данные для просмотра в автономном режиме.
 
 > [!NOTE]
 > Вы также можете [отвечать на отзывы](respond-to-customer-feedback.md) прямо из отчета, чтобы пользователи знали, что вы прислушиваетесь к их мнению.
@@ -26,7 +26,7 @@ ms.locfileid: "5744056"
 
 Вы можете использовать API-интерфейс для отзывов в пакете [Microsoft Store Services SDK](http://aka.ms/store-em-sdk), чтобы клиенты [запускали Центр отзывов напрямую из вашего приложения](../monetize/launch-feedback-hub-from-your-app.md). Помните, что любой пользователь, который загрузил приложение на устройство Windows 10, поддерживающее Центр отзывов, поддерживает возможность предоставления отзыва с помощью приложения Центр отзывов. По этой причине может см. в этом отчете отзывы клиентов, даже если вы не запросили специально для обратной связи от в вашем приложении.
 
-Отзывы также могут быть полезны, если вы используете [фокус-тестирование пакетов](package-flights.md), так как отчет об отзывах будет отображать определенный пакет, установленный каждым клиентом на своем устройстве при предоставлении отзыва.
+Отзывы также могут быть полезны при использовании [фокус-тестирование пакетов](package-flights.md), так как отчет об **отзывах** показано определенный пакет, установленный каждым клиентом на своем устройстве при предоставлении отзыва.
 
 > [!TIP]
 > Быстро просмотреть рецензии, оценки и отзывы пользователей для всех ваших приложений в течение последних 30 дней, разверните **привлечение** в левом меню навигации и выберите **рецензии и отзывы.** 

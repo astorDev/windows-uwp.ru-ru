@@ -1,24 +1,24 @@
 ---
 author: jnHs
-Description: The Usage report in the Windows Dev Center dashboard lets you see how customers are using your app.
+Description: The Usage report in Partner Center lets you see how customers are using your app.
 title: Отчет об использовании
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.author: wdg-dev-content
-ms.date: 10/05/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, использование, пользовательское событие, отчет, телеметрия, пользовательские сеансы
 ms.localizationpriority: medium
-ms.openlocfilehash: 3998e8c5b207d8484a621db16d2e72a136f22c80
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f07f107a5136ee50cd87032fa3911ab65d33b7c1
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766576"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831061"
 ---
 # <a name="usage-report"></a>Отчет об использовании
 
 
-Отчет **Использование** в информационной панели Центра разработки для Windows позволяет увидеть, как пользователи Windows10 (включая Xbox) применяют ваше приложение, и получить информацию о событиях, которые вы определили. Можно просмотреть эти данные на информационной панели или [скачать отчет](download-analytic-reports.md), чтобы просмотреть его в автономном режиме.
+Отчет об **использовании** в [Центре партнеров](https://partner.microsoft.com/dashboard) позволяет увидеть, как пользователи Windows 10 (включая Xbox) применяют ваше приложение и получить информацию о событиях, которые вы определили. Эти данные можно просмотреть в центре партнеров или [скачать отчет](download-analytic-reports.md) для просмотра в автономном режиме.
 
 
 ## <a name="apply-filters"></a>Применение фильтров

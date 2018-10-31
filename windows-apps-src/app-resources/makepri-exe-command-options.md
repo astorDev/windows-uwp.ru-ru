@@ -8,12 +8,12 @@ ms.date: 04/10/2018
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: c6c71cf98d9720cc5bfea219f565529b3308c49c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f5d47bbe87e9319def2e8c6500fd954f2a291e18
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5756790"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829914"
 ---
 # <a name="makepriexe-command-line-options"></a>Параметры командной строки MakePRI.exe
 
@@ -22,9 +22,11 @@ ms.locfileid: "5756790"
 > [!NOTE]
 > MakePri.exe устанавливается при проверке вариант **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
-## <a name="makepri-commands"></a>Команды MakePri
+## <a name="getting-help-from-the-command-line"></a>Получение справки из командной строки
 
-Запустите `MakePri.exe help`, чтобы увидеть все команды, которые можно использовать с MakePri.exe.
+Можно запустить `MakePri.exe help` или `MakePri.exe /?` для отображения команд, которые можно использовать с MakePri.exe. Можно также выдавать `MakePri.exe <command> /?` чтобы узнать конкретные сведения о команде и в редких случаях, даже `MakePri.exe <command> <option>` Чтобы просмотреть подробные сведения о том параметр.
+
+## <a name="makepri-commands"></a>Команды MakePri
 
 ```
 C:\>makepri help

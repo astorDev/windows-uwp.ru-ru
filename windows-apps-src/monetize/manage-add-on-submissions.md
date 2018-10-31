@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправки надстроек, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bf15f71071355ddf61d820fc33949b10d42cdfa
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d8e3ab04c2842fc08fb8b0aa298660bfbd0cfd7f
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741297"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5833198"
 ---
 # <a name="manage-add-on-submissions"></a>Управление отправками надстроек
 
@@ -336,7 +336,7 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Значение           | Тип    | Описание               |
 |-----------------|---------|------|
-|     date            |    string     |  Дата и время создания отчета (в формате ISO 8601).    |
+|     date            |    string     |  Дата и время создания отчета, в формате ISO 8601.    |
 |     reportUrl            |    Строка     |  URL-адрес, по которому можно получить доступ к отчету.    |
 
 ## <a name="enums"></a>Перечисления

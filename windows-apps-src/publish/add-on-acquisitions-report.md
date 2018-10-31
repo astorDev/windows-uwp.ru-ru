@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
+Description: The Add-on acquisitions report in Partner Center lets you see how many add-ons you've sold, along with demographic and platform details.
 title: Отчет о приобретении надстроек
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
-ms.date: 05/24/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, продажа надстроек, приобретение надстроек, продажи продуктов в приложении, продукты в приложении, iaps, надстройки
 ms.localizationpriority: medium
-ms.openlocfilehash: a1b25067104a664cb90ef068749d9e4cd00bcc80
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 63884d9cce24e6b85f3001ac4c6eb1a07141bfd4
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5761864"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829801"
 ---
 # <a name="add-on-acquisitions-report"></a>Отчет о приобретении надстроек
 
 
-Отчет о **приобретениях надстройки** на информационной панели центра разработки для Windows позволяет увидеть, сколько надстроек вы продали и просмотреть демографические сведения и данные о платформе, а показаны сведения о конверсии для пользователей Windows10 (включая Xbox). Можно также просмотреть практически в реальном времени о покупках для последнего периода или семьдесят двух часов.
+Отчет о **приобретениях надстройки** в [Центре партнеров](https://partner.microsoft.com/dashboard) позволяет увидеть, сколько надстроек вы продали и просмотреть демографические сведения и данные о платформе, а показаны сведения о конверсии для пользователей Windows10 (включая Xbox). Можно также просмотреть практически в реальном времени о покупках для последнего периода или семьдесят двух часов.
 
-Можно просмотреть эти данные на информационной панели или [скачать отчет](download-analytic-reports.md), чтобы просмотреть его в автономном режиме. Кроме того, вы можете программно получить эти данные с помощью метода [получения сведений о покупках надстройки](../monetize/get-in-app-acquisitions.md) в [API REST аналитики Microsoft Store](../monetize/access-analytics-data-using-windows-store-services.md).
+Эти данные можно просмотреть в центре партнеров или [скачать отчет](download-analytic-reports.md) для просмотра в автономном режиме. Кроме того, вы можете программно получить эти данные с помощью метода [получения сведений о покупках надстройки](../monetize/get-in-app-acquisitions.md) в [API REST аналитики Microsoft Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
 В этом отчете "приобретение надстройки" означает факт приобретения пользователем у вас надстройки (или факт бесплатного получения надстройки, если вы предлагаете ее на безвозмездной основе). Несколько покупок одной и той же надстройки одним и тем же пользователем считаются отдельными приобретениями надстройки.
 

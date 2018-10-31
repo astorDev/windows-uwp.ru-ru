@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Health report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
+Description: The Health report in Partner Center lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
 title: Отчет о работоспособности
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, состояние, сбои, отсутствие отклика, работоспособность приложения, сведения о работоспособности, трассировка стека, cab-файл, сбой, сбои, pdb, символы
 ms.localizationpriority: medium
-ms.openlocfilehash: d1c32468bfa933ea0d9d56150f0b2610eb1668e5
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 06cf6a7050f7598e86582393a92b92d1bdd877d1
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766202"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829768"
 ---
 # <a name="health-report"></a>Отчет о работоспособности
 
-Отчет **Работоспособность** на информационной панели Центра разработки для Windows позволяет получать данные, связанные с производительностью и качеством вашего приложения, включая сбои и нереагирование на действия пользователей. Эти сведения можно просмотреть на информационной панели. Кроме того, можно [скачать отчет](download-analytic-reports.md) для просмотра данных в автономном режиме. Там, где это применимо, вы можете просмотреть трассировки стека и/или CAB-файлы для более подробной отладки.
+Отчет о **работоспособности** в [Центре партнеров](https://partner.microsoft.com/dashboard) позволяет получать данные, связанные с производительностью и качеством вашего приложения, включая сбои и нереагирование. Эти данные можно просмотреть в центре партнеров или [скачать отчет](download-analytic-reports.md) для просмотра в автономном режиме. Там, где это применимо, вы можете просмотреть трассировки стека и/или CAB-файлы для более подробной отладки.
 
 Кроме того, вы можете получить данные из этого отчета программным образом с помощью [API REST аналитики Microsoft Store](../monetize/access-analytics-data-using-windows-store-services.md).
 

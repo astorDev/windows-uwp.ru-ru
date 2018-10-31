@@ -3,17 +3,17 @@ title: Реакция на отзывы пользователей
 description: Можно отвечать непосредственно на отзывы, которые клиенты оставляют в Центре отзывов.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
-ms.openlocfilehash: d75eb60de1af031bbda4e5bdb37cf1fc17fe6ee0
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 5da9e96bace29dc33874d5b8c3e4ac846eddeb63
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5761685"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829216"
 ---
 # <a name="respond-to-customer-feedback"></a>Реакция на отзывы пользователей
 
@@ -24,7 +24,7 @@ ms.locfileid: "5761685"
 
 Чтобы ответить на какой-либо отзыв, щелкните ссылку **Реагировать на отзывы**, которая отображается рядом с отзывом в **Отчете об отзывах**.
 
-Центр разработки для Windows поддерживает три типа реагирования на отзывы клиентов о вашем приложении. Независимо от выбранного варианта помните, что для каждого ответа действует ограничение: 1000 символов.
+[Центр партнеров](https://partner.microsoft.com/dashboard) поддерживает три типа реагирования на отзывы о вашем приложении клиентов. Независимо от выбранного варианта помните, что для каждого ответа действует ограничение: 1000 символов.
 
 ## <a name="public-comments-in-feedback-hub"></a>Общедоступные комментарии в Центре отзывов
 

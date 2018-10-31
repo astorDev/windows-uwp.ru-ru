@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: The Reviews report in the Windows Dev Center dashboard lets you see the reviews (comments) that customers entered when rating your app in the Store.
+Description: The Reviews report in Partner Center lets you see the reviews (comments) that customers entered when rating your app in the Store.
 title: Отчет "Отзывы"
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.author: wdg-dev-content
@@ -8,19 +8,19 @@ ms.date: 08/16/2018
 ms.topic: article
 keywords: Windows 10, uwp, просмотр, комментарий, редактор
 ms.localizationpriority: medium
-ms.openlocfilehash: b3b246ec0127373dba2385f249640c09940105fa
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 777decb9b060cc411d6150f199cd7a02f9ffc6cb
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5769100"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831450"
 ---
 # <a name="reviews-report"></a>Отчет "Отзывы"
 
 
-Отчет **отзывы** на информационной панели центра разработки для Windows позволяет просмотреть отзывы (комментарии), оставленные при оценке вашего приложения в магазине.
+Отчет **отзывы** в [Центре партнеров](https://partner.microsoft.com/dashboard) позволяет просмотреть отзывы (комментарии), оставленные при оценке вашего приложения в магазине.
 
-Можно просмотреть эти данные на информационной панели или [скачать отчет](download-analytic-reports.md), чтобы просмотреть его в автономном режиме. Кроме того можно программными средствами получить эти данные, используя метод [получения отзывов о приложении](../monetize/get-app-reviews.md) в [REST API аналитики Microsoft Store](../monetize/access-analytics-data-using-windows-store-services.md).
+Эти данные можно просмотреть в центре партнеров или [скачать отчет](download-analytic-reports.md) для просмотра в автономном режиме. Кроме того можно программными средствами получить эти данные, используя метод [получения отзывов о приложении](../monetize/get-app-reviews.md) в [REST API аналитики Microsoft Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
 Вы также можете отвечать клиента отзывов [непосредственно на этой странице](respond-to-customer-reviews.md), программно [через API отзывов Microsoft Store](../monetize/submit-responses-to-app-reviews.md), или с помощью [приложения центра разработки](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
 
@@ -114,7 +114,7 @@ ms.locfileid: "5769100"
 
 ## <a name="responding-to-customer-reviews"></a>Ответ на отзывы клиентов
 
-Панели мониторинга центра разработки Microsoft Store, [API отзывов Microsoft Store](../monetize/submit-responses-to-app-reviews.md)или [приложения центра разработки](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) можно использовать для отправки ответов на многие отзывы пользователей. Дополнительные сведения см. в разделе [Ответ на отзывы пользователей](respond-to-customer-reviews.md).
+[Центр партнеров](https://partner.microsoft.com/dashboard), [API отзывов Microsoft Store](../monetize/submit-responses-to-app-reviews.md)или [приложения центра разработки](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) можно использовать для отправки ответов на многие отзывы пользователей. Дополнительные сведения см. в разделе [Ответ на отзывы пользователей](respond-to-customer-reviews.md).
 
 Здесь описываются некоторые дополнительные действия, которые разумно выполнить на основании полученных оценок и рецензий.
 
