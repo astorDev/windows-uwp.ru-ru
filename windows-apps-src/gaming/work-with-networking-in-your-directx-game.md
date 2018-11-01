@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, игры, работа по сети, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: cc30a66db3fb01edebf4705ecb2e85ea4dbb94d6
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5835568"
+ms.locfileid: "5867624"
 ---
 # <a name="networking-for-games"></a>Поддержка сети в играх
 

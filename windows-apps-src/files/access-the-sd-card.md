@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, sd-карта, память
 ms.localizationpriority: medium
 ms.openlocfilehash: 498b43dc82100102c90fc7a920bed1538a164afc
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5838023"
+ms.locfileid: "5870605"
 ---
 # <a name="access-the-sd-card"></a>Доступ к SD-карте
 

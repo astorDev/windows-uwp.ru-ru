@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, покупки из приложения, Iap, надстройки, коды ошибок
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a4eff890da48bd60405cadee2d7ecb92bb1b2fa
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5831923"
+ms.locfileid: "5876229"
 ---
 # <a name="error-codes-for-store-operations"></a>Коды ошибок для операций Microsoft Store
 

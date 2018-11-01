@@ -8,17 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1122ae00f9b84980a7793deef08a30a16711b4be
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 730d5ae9062fe39533cd615facaf5beaa7d02ffd
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5823690"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5876087"
 ---
 # <a name="composition-brushes"></a>Кисти композиции
 Все отображаемые на экране из приложения UWP отображается, так как они нарисованы кистью. Кисти позволяют рисовать объекты пользовательского интерфейса пользователя с содержимым, начиная от простого одноцветных изображения или рисунки цепочку эффекты. В этом разделе рассматриваются понятия рисования с помощью CompositionBrush.
 
-Обратите внимание, что при работе с приложением XAML UWP, можно выбрать, для рисования UIElement с помощью [Кисти XAML](/windows/uwp/design/style/brushes) или [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush). Как правило это проще и рекомендуется выбирать кисти XAML, если ваш сценарий поддерживается кисти XAML. Например анимацию цвета кнопки, изменение заливки текст или фигуру с изображением. С другой стороны Если вы пытаетесь сделать что-то, которое не поддерживается кисти XAML как как рисования с анимированной маски или анимированных stretch сетки или цепи эффектов, можно использовать CompositionBrush для рисования UIElement с помощью [ XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+Обратите внимание, что при работе с приложением XAML UWP, можно выбрать, для рисования UIElement с помощью [Кисти XAML](/windows/uwp/design/style/brushes) или [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush). Как правило это проще и рекомендуется выбирать кисти XAML, если ваш сценарий поддерживается кисти XAML. Например анимацию цвета кнопки, изменение заливки текст или фигуру с изображением. С другой стороны Если вы пытаетесь сделать что-то, которое не поддерживается кисти XAML как рисования с анимированной маски или анимированных stretch сетки или цепи эффектов, можно использовать CompositionBrush для рисования UIElement с помощью [ XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
 При работе с визуального уровня, CompositionBrush должен использоваться для рисования области [SpriteVisual](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual).
 

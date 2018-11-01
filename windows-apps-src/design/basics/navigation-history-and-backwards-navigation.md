@@ -9,12 +9,12 @@ ms.date: 06/21/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 42bc7fdb91a8c7642e132d4ac3d93be1f0927df0
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: d2f437db1a1792df22fd084cedee31cb6e590d24
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5840013"
+ms.locfileid: "5873193"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Журнал навигации и навигация в обратном направлении для приложений UWP
 
@@ -287,21 +287,6 @@ bool App::On_BackRequested()
 Ранее в приложениях UWP использовался API [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) для обратной навигации. API по-прежнему будет поддерживаться для обеспечения обратной совместимости, но больше не рекомендуется полагаться на [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility). Вместо этого в приложении следует нарисовать собственную кнопку "Назад".
 
 Если ваше приложение продолжит с помощью [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), система, которую пользовательский Интерфейс будет отображать система обратно кнопки:
-
-- Если ваше приложение **не с вкладками**, кнопка «Назад» отображается в строке заголовка. Визуальные элементы и пользователя взаимодействие с кнопкой «Назад» не изменяются от предыдущих сборок.
-
-    ![Кнопка "Назад" в строке заголовка](images/nav-back-pc.png)
-
-- Если приложение **с вкладками**, то кнопка "Назад" отображается внутри новой системная строка возврата панель.
-
-    ![Система обратно нарисовать кнопку панели](images/back-nav/tabs.png)
-
-### <a name="system-back-bar"></a>Системная строка возврата панель
-
-> [!NOTE]
-> «Системная строка возврата панель» — это только описание, не официальное название.
-
-Системная строка возврата панель — «полоса», которая размещается между полосой вкладок и областью содержимого приложения. Полоса проходит по ширине приложения, а кнопка «Назад» находится у левой границы. Достаточна, высота 32 пикселя, чтобы обеспечить подходящий размер касания для кнопки "Назад".
 
 - Если ваше приложение **не с вкладками**, кнопка «Назад» отображается в строке заголовка. Визуальные элементы и пользователя взаимодействие с кнопкой «Назад» не изменяются от предыдущих сборок.
 
