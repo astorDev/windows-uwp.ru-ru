@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, геймпад, вибрация
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ea8afb0a9e66ccb4ea603bd78dc5030ca18babe
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5818874"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5862908"
 ---
 # <a name="gamepad-and-vibration"></a>Геймпад и вибрация
 

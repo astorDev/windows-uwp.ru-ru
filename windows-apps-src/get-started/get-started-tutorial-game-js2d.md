@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 60060bb3ec7a644d29523483d0d31c0497c543d1
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 597451826958c355dad9f9380dbdc1264bc87883
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5817637"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5865799"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Создание игры UWP на языке JavaScript
 
@@ -63,7 +63,7 @@ ms.locfileid: "5817637"
 
 Теперь можно запустить игру!
 
-Нажмите клавишу **F5**, чтобы запустить приложение. Перед вами должно открыться окно с нашим знакомым динозавром на фоне лаконичного ландшафта. Теперь проанализируем приложение, объясним некоторые важные моменты и по ходу дела добавим остальные функции.
+Нажмите клавишу **F5**, чтобы запустить приложение. Вы должны увидеть открыться окно с нашим знакомым динозавром ландшафта (если разреженное). Теперь проанализируем приложение, объясним некоторые важные моменты и по ходу дела добавим остальные функции.
 
 ![Самый обычный динозавр с котом-ниндзя на спине](images/JS2D_3.png)
 

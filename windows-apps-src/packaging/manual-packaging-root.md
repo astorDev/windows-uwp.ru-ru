@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, упаковка
 ms.localizationpriority: medium
 ms.openlocfilehash: 0268e858ecbcaaee95796fa590d4a9994dcfb505
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5822535"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5868339"
 ---
 # <a name="manual-app-packaging"></a>Упаковка приложений вручную
 

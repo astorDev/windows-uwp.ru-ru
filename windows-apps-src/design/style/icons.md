@@ -12,12 +12,12 @@ keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d5f1ded66ce9d41c386fb55ba8a4e609450d20d
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 31bc1d33bccbf2d1948a119ea42bfef2599f3336
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5826719"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5874100"
 ---
 # <a name="icons-for-uwp-apps"></a>Значки для приложений UWP
 
@@ -137,7 +137,7 @@ ms.locfileid: "5826719"
 
 ## <a name="make-the-icon-do-something"></a>Привязка функции к значку
 
-После создания значка следующим шагом является привязка к нему команды или действия навигации. Для этого рекомендуется добавить значок в кнопку или панель команд. 
+После создания значка, следующим шагом является упрощение сделать что-то за счет связывания ее с помощью команды или действия навигации. Для этого рекомендуется добавить значок в кнопку или панель команд. 
 
 ![Изображение панели команд](images/icons/app-bar-desktop.svg)
 

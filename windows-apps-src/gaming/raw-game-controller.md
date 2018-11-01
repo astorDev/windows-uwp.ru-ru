@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, игры, ввод, необработанное игровое устройство управления
 ms.localizationpriority: medium
 ms.openlocfilehash: c57db3f9604e20d0dc83d6c3cf2ced87b1f5dcc1
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5833955"
+ms.locfileid: "5861288"
 ---
 # <a name="raw-game-controller"></a>Необработанное игровое устройство управления
 

@@ -8,12 +8,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, первое приложение, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: b28d0237deda78291816a52affd1fa7b4768640b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: d6fa9fa708df376edc94d34ea14d8dad4aed10df
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839792"
+ms.locfileid: "5864918"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Создание приложения "Hello, world" (XAML)
 
@@ -85,7 +85,7 @@ ms.locfileid: "5839792"
 -   App.xaml— это файл, в котором объявляются ресурсы, используемые по всему приложению.
 -   App.xaml.cs— это файл кода программной части для App.xaml. Как и все страницы с кодом программной части, эта страница содержит конструктор, который вызывает метод `InitializeComponent`. Вам нет необходимости писать метод `InitializeComponent`. Он создается в Visual Studio, и его главной целью является инициализация элементов, объявленных в XAML-файле.
 -   App.xaml.cs— это точка входа для вашего приложения.
--   App.xaml.cs также содержит методы для обработки активации и приостановки приложения.
+-   App.XAML.cs также содержит методы для обработки [активации](../launch-resume/activate-an-app.md) и [приостановки](../launch-resume/suspend-an-app.md) приложения.
 
 *MainPage.xaml*
 
@@ -95,12 +95,14 @@ ms.locfileid: "5839792"
 
 *Package.appxmanifest*
 -   Файл манифеста, в котором описывается ваше приложение: его имя, описание, плитка, начальная страница и т. д.
--   Хранит список файлов, содержащихся в приложении.
+-   Включает список зависимостей, ресурсы и файлы, содержащиеся в приложении.
 
 *Набор изображений логотипов*
--   Файл Assets/Square150x150Logo.scale-200.png отвечает за отображение вашего приложения в меню "Пуск".
+-   Assets/Square150x150Logo.scale-200.png и Wide310x150Logo.scale 200.png представить ваше приложение (средний или всей размер) в меню "Пуск".
+-   Assets/Square44x44Logo.png представляет ваше приложение в список приложений из меню "Пуск", панели задач и диспетчер задач.
 -   Файл Assets/StoreLogo.png представляет ваше приложение в Microsoft Store.
 -   Файл Assets/SplashScreen.scale-200.png— это экран-заставка, отображающаяся при запуске вашего приложения.
+-   Assets/LockScreenLogo.scale-200.png может использоваться для представления приложения на экране блокировки, если система заблокирована.
 
 ## <a name="step-2-adding-a-button"></a>Шаг 2. Добавление кнопки
 
