@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 91f9d21f6df09bf8f3cad3e5a43f3ed94049338e
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5874602"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5921699"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>Ручные элементы управления для видеозахвата на камере
 

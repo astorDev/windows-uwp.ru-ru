@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, новости, что приложения, new
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ada059dc2acfa96dd61b6f3460e25736d96ff68
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5885672"
+ms.locfileid: "5924611"
 ---
 # <a name="whats-new-in-cwinrt"></a>Новые возможности в C + +/ WinRT
 

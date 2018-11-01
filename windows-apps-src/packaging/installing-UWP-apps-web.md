@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованных приложений, связанный набор, дополнительные пакеты
 ms.localizationpriority: medium
 ms.openlocfilehash: 98a761bf04b56d13745f2505b8d0806fc4fdf3e1
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5864779"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5921158"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>Установка приложений UWP с веб-страницы
 

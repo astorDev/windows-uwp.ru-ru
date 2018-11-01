@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, ошибки, классическое приложение
 ms.localizationpriority: medium
 ms.openlocfilehash: fb48efb2a1792d1c6691dfd38d0a5e36faac6e0b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5887871"
+ms.locfileid: "5919334"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>Получение данных отчетов об ошибках для классического приложения
 
