@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, фиксация отправки надстройки, продукт внутри приложения, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 52dce19410741c0ac7b006b14d572ec7280a5e2c
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5831993"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5888080"
 ---
 # <a name="commit-an-add-on-submission"></a>Фиксация отправки надстройки
 

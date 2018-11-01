@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, игры, DirectX, ввод, мышь, сенсорный ввод, элементы управления
 ms.localizationpriority: medium
 ms.openlocfilehash: 8787400cc1d77afb32df51ba943ae72a99c2b470
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5833766"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5886956"
 ---
 # <a name="game-input-for-directx-games"></a>Игровые средства ввода для игр DirectX
 
