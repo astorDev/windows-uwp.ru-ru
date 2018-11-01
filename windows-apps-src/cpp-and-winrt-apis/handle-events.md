@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, маркер, событие, делегат
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ca257de29be8e732e05c343a4b782b1676627bf
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5864511"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5931397"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Обработка событий с помощью делегатов в C++/WinRT
 

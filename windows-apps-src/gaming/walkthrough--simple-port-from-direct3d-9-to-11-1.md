@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx, перенос, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: bd0a8c07be58d670e60aa3a23504d3f5119e6b50
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5884753"
+ms.locfileid: "5931666"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>Пошаговое руководство: перенос простого приложения Direct3D 9 в DirectX 11 и UWP
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 22ce577f7d70b3750a365462b64181a27e71428e
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5871606"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5947755"
 ---
 # <a name="copy-to-and-from-byte-arrays"></a>Копирование в массивы байтов и из них
 

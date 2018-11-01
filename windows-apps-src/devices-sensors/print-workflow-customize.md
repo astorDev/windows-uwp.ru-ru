@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, печать
 ms.localizationpriority: medium
 ms.openlocfilehash: f58c0c8397831595c237b7bd9fe4eafb25594ab3
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5871311"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5947585"
 ---
 # <a name="customize-the-print-workflow"></a>Создание пользовательского рабочего процесса печати
 
