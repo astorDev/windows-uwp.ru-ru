@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, мост для классических приложений, вспомогательные плитки, закрепить, закрепление, краткое руководство, пример кода, пример, secondarytile, классическое приложение, win32, winforms, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: 44e37b47e22d10f509afd5d7503fa8f7a43ab365
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5832680"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884180"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>Закрепление вспомогательных плиток из классических приложений
 

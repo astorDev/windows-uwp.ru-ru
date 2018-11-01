@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live, достижения
 ms.localizationpriority: medium
 ms.openlocfilehash: a589ee480ee025f2940de93efaf7e453af488690
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5812729"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5881151"
 ---
 # <a name="get-xbox-live-achievements-data"></a>Получение данных о достижениях в Xbox Live
 

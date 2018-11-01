@@ -13,11 +13,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: a0950bfc9d90ba893be8ca52cc295b38b142798e
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5821712"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5880397"
 ---
 # <a name="attached-properties-overview"></a>Общие сведения о присоединенных свойствах
 

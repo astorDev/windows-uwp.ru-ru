@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, карта, расположение, элемент управления картой, представления карты
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b162be26073db6989f9ea13cc7805d2d0f3f0d3
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839034"
+ms.locfileid: "5877743"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside
 

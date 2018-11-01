@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, ошибка, обработка, исключение
 ms.localizationpriority: medium
 ms.openlocfilehash: 15432202e61322191e27e89920f7791878177c8b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5832453"
+ms.locfileid: "5878703"
 ---
 # <a name="error-handling-with-cwinrt"></a>Обработка ошибок в C++/WinRT
 

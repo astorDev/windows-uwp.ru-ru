@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, API отправки в Microsoft Store, примеры кода, параметры игры, трейлеры, дополнительные предложения, python
 ms.localizationpriority: medium
 ms.openlocfilehash: 53267caadcb903ad7eebe31d3a38c5be57a34036
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5811682"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5881403"
 ---
 # <a name="python-sample-app-submission-with-game-options-and-trailers"></a>Пример на языке Python: отправка приложения с трейлерами и параметрами игры
 

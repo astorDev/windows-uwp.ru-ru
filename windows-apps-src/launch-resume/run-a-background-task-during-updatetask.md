@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, обновления, фоновая задача, updatetask, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ef6351bcf2ef57a1900c429ddcb65e5a2a4e67b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5836508"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5880965"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Запуск фоновой задачи при обновлении приложения UWP
 

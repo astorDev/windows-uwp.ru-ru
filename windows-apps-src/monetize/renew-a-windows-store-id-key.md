@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API коллекции Microsoft Store, API покупок Microsoft Store, ключ Microsoft Store, обновление
 ms.localizationpriority: medium
 ms.openlocfilehash: 95ee20628108bd3ea8eb9e48955a356410e91b1b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5823904"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5879519"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>Обновление ключа идентификатора Microsoft Store
 

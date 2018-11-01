@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 14a2811f59b8de33db51b255aee8892abf553198
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5828944"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5879955"
 ---
 # <a name="custom-text-input"></a>Ввод пользовательского текста
 

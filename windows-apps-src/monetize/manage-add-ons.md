@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, надстройки, продукт внутри приложения, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: ab09f72e9cf2bd46246751aab790aa6bab84de10
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5829934"
+ms.locfileid: "5878453"
 ---
 # <a name="manage-add-ons"></a>Управление надстройками
 

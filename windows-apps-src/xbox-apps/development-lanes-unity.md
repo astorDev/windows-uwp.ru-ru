@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: fca3267a-0c0f-4872-8017-90384fb34215
 ms.localizationpriority: medium
 ms.openlocfilehash: f9851b76b218ed4241ccb617979c127d03f57ee7
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5814600"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5879965"
 ---
 # <a name="bringing-unity-games-to-uwp-on-xbox"></a>Перенос игр на Unity в UWP на Xbox
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f2eb12092d27c0033563ebf8cebbe96f949eadf8
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5827336"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5880127"
 ---
 # <a name="play-media-in-the-background"></a>Воспроизведение мультимедиа в фоновом режиме
 В этой статье показано, как настроить приложение, чтобы воспроизведение мультимедиа продолжалось, когда приложение переходит в фоновый режим. Это значит, что даже после того, как пользователь свернет приложение, вернется на начальный экран или выйдет из приложения другим способом, ваше приложение продолжит воспроизводить звук. 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, шаблоны, инструменты, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: ac33b242e2351c21ea22aa9bbb6bf74693e8d4ef
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5829143"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884324"
 ---
 # <a name="project-templates-and-tools-for-games"></a>Шаблоны проектов и средства для игр
 

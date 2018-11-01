@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API рекламных акций Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
 ms.openlocfilehash: 50960a079e2c38d52d3a15403aef091ea99d7696
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5832966"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5882542"
 ---
 # <a name="manage-targeting-profiles"></a>Управление целевыми профилями
 

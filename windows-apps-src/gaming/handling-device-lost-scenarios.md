@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx 11, потеря устройства
 ms.localizationpriority: medium
 ms.openlocfilehash: 888b3ec7ab667a8a92ae638a9d5c456c3180df0d
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5838158"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5883337"
 ---
 # <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>Обработка сценариев удаления устройства в Direct3D11
 

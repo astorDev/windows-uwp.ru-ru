@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live, центры игр
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e029e74920f5782e40a0a1737a5a43723ff8835
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5822213"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5883450"
 ---
 # <a name="get-xbox-live-game-hub-data"></a>Получение данных центра игр в Xbox Live
 
