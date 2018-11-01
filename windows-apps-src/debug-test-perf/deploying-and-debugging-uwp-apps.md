@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, отладка, тестирование, производительность
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a398b621ff309af8c6f8252613d3ea106d96485
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5824657"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5886265"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Развертывание и отладка приложений UWP
 

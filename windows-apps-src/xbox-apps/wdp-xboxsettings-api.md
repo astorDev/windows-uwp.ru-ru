@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f3d0c09b242f8d60b06ee0dc510ad9a756466c5
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5834689"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5886055"
 ---
 # <a name="developer-settings-api-reference"></a>Справочник по параметрам API для разработчика   
 Вы можете получить доступ к параметрам Xbox One, которые будут полезны при разработке с помощью этого API.

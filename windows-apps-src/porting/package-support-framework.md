@@ -8,12 +8,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bb29a50ef4fc8c5a56e410a59802b217c033cbc
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: f17bb6bbefb2fd3266edac20ca1f23af76eb0a3c
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5827877"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884485"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Применение исправлений среды выполнения для пакета MSIX с помощью платформа поддержки пакетов
 
@@ -65,13 +65,13 @@ ms.locfileid: "5827877"
 
 ### <a name="file-redirection-fixup"></a>Исправление перенаправление файлов
 
-[Исправление перенаправление файлов](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim) можно использовать для перенаправления попытки записи или чтения данных в каталоге, который не доступен из приложения, которое выполняется в контейнере MSIX.
+[Исправление перенаправление файлов](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) можно использовать для перенаправления попытки записи или чтения данных в каталоге, который не доступен из приложения, которое выполняется в контейнере MSIX.
 
-Например если приложение записывает в файл журнала, который находится в том же каталоге приложений исполняемого, [Исправить перенаправление файлов](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim) можно использовать для создания этого файла журнала в другом месте, таких как локальное хранилище данных приложения.
+Например если приложение записывает в файл журнала, который находится в том же каталоге приложений исполняемого, [Исправить перенаправление файлов](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup) можно использовать для создания этого файла журнала в другом месте, таких как локальное хранилище данных приложения.
 
 ### <a name="runtime-fixes-from-the-community"></a>Среда выполнения исправления от сообщества
 
-Не забудьте изучить взносы сообщества на нашу страницу [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop) . Это возможно, что другие разработчики была устранена проблема сходные с вашими и предоставили исправление среды выполнения.
+Не забудьте изучить взносы сообщества на нашу страницу [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework) . Это возможно, что другие разработчики была устранена проблема сходные с вашими и предоставили исправление среды выполнения.
 
 ## <a name="apply-a-runtime-fix"></a>Применение исправлений среды выполнения
 
@@ -88,7 +88,7 @@ ms.locfileid: "5827877"
 
 ### <a name="create-the-package-layout-folder"></a>Создайте папку макета пакета
 
-Если у вас уже есть файл .msix (или AppX-файл), можно распаковать его содержимое в папку макета, который будет служить промежуточной области для пакета.  Вы можете сделать это в **x64 собственные средства командной строки для VS 2017**, или вручную с помощью в SDK Bin в пути исполняемого поиска.
+Если у вас уже есть файл .msix (или AppX-файл), можно распаковать его содержимое в папку макета, который будет служить промежуточной области для пакета. Это можно сделать из командной строки с помощью средства makemsix, в зависимости от пути установки пакета SDK, это, где вы найдете средства makemsix.exe свой компьютер с Windows 10: x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makemsix.exe x64: C:\Program Files () x86) \Windows Kits\10\bin\x64\makemsix.exe
 
 ```
 makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -103,11 +103,7 @@ makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 
 ### <a name="get-the-package-support-framework-files"></a>Получение файлов платформа поддержки пакетов
 
-Вы можете получить пакет Nuget Инструмент с помощью Visual Studio. Вы также можете получить с помощью средства командной строки автономную Nuget.
-
-#### <a name="get-the-package-by-using-visual-studio"></a>Получите пакет с помощью Visual Studio
-
-В Visual Studio щелкните правой кнопкой мыши узел вашего решения или проекта и выберите одну из команд Управление пакетами Nuget.  Поиск **Microsoft.PackageSupportFramework** или **Инструмент** поиска пакета Nuget.org. Затем установите его.
+Вы можете получить пакет Nuget Инструмент, с помощью средства командной строки Nuget автономный или с помощью Visual Studio.
 
 #### <a name="get-the-package-by-using-the-command-line-tool"></a>Получите пакет с помощью средства командной строки
 
@@ -117,15 +113,20 @@ makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 nuget install Microsoft.PackageSupportFramework
 ```
 
+#### <a name="get-the-package-by-using-visual-studio"></a>Получите пакет с помощью Visual Studio
+
+В Visual Studio щелкните правой кнопкой мыши узел вашего решения или проекта и выберите одну из команд Управление пакетами Nuget.  Поиск **Microsoft.PackageSupportFramework** или **Инструмент** поиска пакета Nuget.org. Затем установите его.
+
+
 ### <a name="add-the-package-support-framework-files-to-your-package"></a>Добавление файлов платформа поддержки пакетов в пакет
 
 Добавьте необходимые 32-разрядные и 64-разрядных Инструмент DLL-файлы и исполняемые файлы каталога пакета. Руководствуйтесь следующей таблицей. Также необходимо включить все исправления среды выполнения, которые необходимо. В нашем примере нам нужно исправить файл перенаправления среды выполнения.
 
 | Исполняемый файл приложения — это x64 | Исполняемый файл приложения — это x86 |
 |-------------------------------|-----------|
-| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |
-| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) |
-| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) |
+| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |
+| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) |
+| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) |
 
 Содержимое пакета теперь должен выглядеть примерно следующим образом.
 

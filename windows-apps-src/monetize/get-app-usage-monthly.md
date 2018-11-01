@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, службы магазина, API, использование аналитики Microsoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d42cf9f0ed0827b1d5c451ad9fed077ef6acc6b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5832340"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5886315"
 ---
 # <a name="get-monthly-app-usage"></a>Получение сведений о ежемесячном использовании приложения
 
