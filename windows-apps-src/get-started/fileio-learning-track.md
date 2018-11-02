@@ -8,11 +8,11 @@ ms.topic: article
 keywords: начало работы, uwp, windows 10, обучающий курс, файлы, ввод-вывод файлов, чтение файла, запись файла, создание файла, запись текста, чтение текста
 ms.localizationpriority: medium
 ms.openlocfilehash: 02ac4d3f157343182097e67dc8825dde940302c3
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5869528"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5928819"
 ---
 # <a name="work-with-files"></a>Работа с файлами
 

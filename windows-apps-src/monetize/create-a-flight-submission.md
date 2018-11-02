@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание отправки тестируемой возможности
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b06f922de1de1dd9943d460672fab218b51a5eb
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5887626"
+ms.locfileid: "5925861"
 ---
 # <a name="create-a-package-flight-submission"></a>Создание отправки тестового пакета
 

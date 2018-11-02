@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1729f07734b181dc5e0e8c97d702d8592302c2
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5875864"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5932793"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Справочник по API-интерфейсу песочницы Xbox Live   
 Вы можете получить и настроить песочницу Xbox Live с помощью этого API REST.

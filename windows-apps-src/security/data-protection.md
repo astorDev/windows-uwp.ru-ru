@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: edcce656f5be681a11e79b4714e96c2dcde621d5
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5859893"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5925726"
 ---
 # <a name="data-protection"></a>Защита данных
 
