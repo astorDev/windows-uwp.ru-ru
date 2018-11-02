@@ -4,19 +4,19 @@ description: Подключенные анимации позволяют сде
 title: Подключенная анимация
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 10/25/2017
+ms.date: 10/04/2018
 ms.topic: article
 keywords: windows10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 77050103bb78788a5c1868a41d315edd6832a5fe
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 51cf9dd0d28590d86bf05cc16634e465e260626c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938851"
+ms.locfileid: "5977086"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>Подключенная анимация для приложений UWP
 
@@ -55,9 +55,9 @@ ms.locfileid: "5938851"
 ## <a name="configure-connected-animation"></a>Настройка подключенной анимации
 
 > [!IMPORTANT]
-> Эта функция также требуется целевую версию вашего приложения RS5 (Windows SDK версии 10.0.NNNNN.0 (Windows 10, версии YYMM) или более поздней версии. Свойства конфигурации недоступен в более ранних версий пакетов SDK. Вы можете выбрать минимальной версией ниже, чем RS5 (10.0.NNNNN.0 (Windows 10, версии YYMM) версии пакета SDK для Windows с помощью адаптивного кода или условного XAML. Дополнительные сведения см. в разделе [адаптивные к версии приложения](/debug-test-perf/version-adaptive-apps).
+> Эта функция также требуется ваше приложение целевой версии Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии. Свойства конфигурации недоступен в более ранних версий пакетов SDK. Вы можете выбрать минимальной версией ниже, чем SDK 17763 с помощью адаптивного кода или условного XAML. Дополнительные сведения см. в разделе [адаптивные к версии приложения](/debug-test-perf/version-adaptive-apps).
 
-Начиная с версии RS5, подключенные анимации дополнительно включающих проектирования Fluent, предоставляя анимации конфигураций, адаптированных специально для перемещения вперед и назад навигации по страницам.
+Начиная с Windows 10, версия 1809, включающих подключенные анимации дополнительно проектирования Fluent, предоставляя анимации конфигураций, адаптированных специально для перемещения вперед и назад навигации по страницам.
 
 Укажите XML конфигурации анимации, задав свойство конфигурации на ConnectedAnimation. (Мы покажем в качестве примера в следующем разделе.)
 
@@ -74,7 +74,7 @@ ms.locfileid: "5938851"
 
 | [BasicConnectedAnimationConfiguration]() |
 | - |
-| Это значение по умолчанию (и только) анимации, используемые в версиях SDK до RS5 (Windows SDK версии 10.0.NNNNN.0 (Windows 10, версии YYMM). |
+| Это значение по умолчанию (и только) анимации, используемые в версиях, предшествующих Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)). |
 
 ### <a name="connectedanimationservice-configuration"></a>ConnectedAnimationService конфигурации
 

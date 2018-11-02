@@ -8,18 +8,18 @@ ms.date: 10/18/2018
 ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, покупки игры для Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 86ca46903e581922cc571a854d9fa110fa261ece
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 1bf37fa03209561540d63dd4f63a76878f9d813c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5941034"
+ms.locfileid: "5976595"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>Получение сведений о покупках игр на Xbox One
 
-Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных в формате JSON для игры Xbox One, которая добавлена через портал разработчиков для Xbox (XDP), доступных также на информационной панели центра разработки аналитики XDP.
+Используйте этот метод в API аналитики Microsoft Store для получения сводных данных в формате JSON для Xbox One игры, была добавлена через портал разработчика Xbox (XDP) и доступны в информационной панели аналитики XDP.
 
-## <a name="prerequisites"></a>Что вам понадобится
+## <a name="prerequisites"></a>Необходимые условия
 
 Для использования этого метода сначала необходимо сделать следующее:
 

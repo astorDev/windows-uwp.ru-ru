@@ -8,19 +8,19 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, покупки из приложения, IAP, надстройки, каталог, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: eb286c9487b57cf36f9dc558902a0da532bfdc0a
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: f57adf62939c28794e3ecdf6e59f2c4763de9c21
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5929457"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5977865"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>Управление большим каталогом продуктов внутри приложения
 
 Если ваше приложение предлагает большой каталог продуктов внутри приложения, то для облегчения управления каталогом вы можете выполнить действия, описанные в этом разделе. В выпусках до Windows10 в Магазине действовало ограничение в 200 продуктов на одну учетную запись разработчика. Процесс, описанный в этом разделе, можно использовать для обхода этого ограничения. Начиная с Windows10 магазине не ограничено количество продуктов на одну учетную запись разработчика и процесса, описанного в этой статье больше не требуется.
 
 > [!IMPORTANT]
-> В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Пространство имен **Windows.Services.Store** поддерживает новейшие типы надстроек, включая потребляемые надстройки и подписки, управляемые Microsoft Store, а его архитектура обеспечивает совместимость с будущими продуктами и компонентами, которые поддерживаются Центром разработки для Windows и Microsoft Store. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
+> В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Пространство имен **Windows.Services.Store** поддерживает новейшие типы надстроек, таких как подписки и потребляемые надстройки, управляемые магазином, а его архитектура обеспечивает совместимость с будущими продуктами и компонентами, которые поддерживаются центром партнеров и хранилище. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md).
 
 Чтобы включить эту возможность, можно создать множество позиций продуктов для определенных ценовых категорий. Каждая из этих позиций может представлять сотни продуктов в каталоге. Для поддержки этой возможности используйте перегрузку метода [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync). Она позволяет покупателю воспользоваться предложением, определенным непосредственно в приложении и связанным с внутренним продуктом приложения, реализующим продажу из приложения, в Магазине. Помимо указания связи между предложением и продуктовой позицией во время вызова, ваше приложение должно передать объект [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384), содержащий информацию о предложении из большого каталога. Если эти данные не предоставлены, будет использоваться информация для выставленной продуктовой позиции.
 

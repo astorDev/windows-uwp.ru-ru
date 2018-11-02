@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
-description: Используйте этот метод в API отправки в Microsoft Store для получения информации о тестовых пакетах для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
+description: Используйте этот метод в API отправки Microsoft Store для получения информации о тестовых пакетах для приложения, которое зарегистрировано в вашей учетной записи центра партнеров.
 title: Получение тестовых пакетов для приложения
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, тестируемые возможности, тестовые пакеты
 ms.localizationpriority: medium
-ms.openlocfilehash: 847e837c67990b5cbdb3a7a28c0c8115e96c8644
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: f67bb76e1d964dd246be16870a7c76591eb1e7d6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930395"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5974275"
 ---
 # <a name="get-package-flights-for-an-app"></a>Получение тестовых пакетов для приложения
 
-Используйте этот метод в API отправки в Microsoft Store для получения списка тестовых пакетов для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows. Дополнительные сведения о тестовых пакетах см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
+Используйте этот метод в API отправки Microsoft Store для получения списка тестовых пакетов для приложения, которое зарегистрировано в вашей учетной записи центра партнеров. Дополнительные сведения о тестовых пакетах см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -115,7 +115,7 @@ Authorization: Bearer <your access token>
 | Код ошибки |  Описание   |
 |--------|------------------|
 | 404  | Тестовые пакеты не найдены. |
-| 409  | Приложение использует функцию информационной панели Центра разработки, которая [в настоящее время не поддерживается API отправки в Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Приложение использует компонент центра партнеров, [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## <a name="related-topics"></a>Статьи по теме

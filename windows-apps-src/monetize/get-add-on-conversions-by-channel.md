@@ -7,12 +7,12 @@ ms.date: 08/04/2017
 ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, конверсии надстройки, канал
 ms.localizationpriority: medium
-ms.openlocfilehash: d64af06acb730160f7f9f7f0e9eda96074b3eac7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0cf4e0f2cad0ea497e7d97c9b415ab385703c5c4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940270"
+ms.locfileid: "5974678"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>Получение конверсий надстройки по каналу
 
@@ -21,7 +21,7 @@ ms.locfileid: "5940270"
 * *Конверсия* означает, что пользователь (выполнивший вход с помощью учетной записи Майкрософт) получил новую лицензию на вашу надстройку (независимо от того, берете ли вы за это деньги или предоставляете лицензию бесплатно).
 * *Канал* — это способ, с использованием которого пользователь оказался на странице описания вашего приложения (например, через Магазин или [настраиваемую кампанию по продвижению приложения](../publish/create-a-custom-app-promotion-campaign.md)).
 
-Эта информация также доступна в [отчете о приобретениях надстроек](../publish/add-on-acquisitions-report.md#add-on-page-views-and-conversions-by-campaign-id) на информационной панели Центра разработки для Windows.
+Эта информация также доступна в [отчете о приобретениях надстроек](../publish/add-on-acquisitions-report.md#add-on-page-views-and-conversions-by-campaign-id) в центре партнеров.
 
 ## <a name="prerequisites"></a>Необходимые условия
 
