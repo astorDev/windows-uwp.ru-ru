@@ -15,12 +15,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 60bbf42acb90d81892fec2788c83c3595f5b6b2f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d3c8aad90e028ece42128e86f5e255be7fd29177
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932950"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5972285"
 ---
 # <a name="command-bar"></a>Панель команд
 
@@ -35,7 +35,7 @@ ms.locfileid: "5932950"
 CommandBar — это гибкий облегченный элемент управления общего назначения, способный отображать как сложное содержимое, такое как изображения и текстовые блоки, так и простые команды, такие как элементы управления [AppBarButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx) и [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx).
 
 > [!NOTE]
-XAML одновременно поддерживает элементы управления [AppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar) и [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar). Элемент AppBar следует использовать, только если вы выполняете обновление универсального приложения для Windows 8, использующего AppBar, и хотите свести изменения к минимуму. Для новых приложений Windows 10 рекомендуется использовать элемент управления CommandBar. В этом документе предполагается, что вы используете элемент управления CommandBar.
+> XAML одновременно поддерживает элементы управления [AppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar) и [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar). Элемент AppBar следует использовать, только если вы выполняете обновление универсального приложения для Windows 8, использующего AppBar, и хотите свести изменения к минимуму. Для новых приложений Windows 10 рекомендуется использовать элемент управления CommandBar. В этом документе предполагается, что вы используете элемент управления CommandBar.
 
 ## <a name="examples"></a>Примеры
 

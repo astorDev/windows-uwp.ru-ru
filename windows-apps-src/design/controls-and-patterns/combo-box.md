@@ -12,12 +12,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: f641ec3333ed0eda1fdfa5ff82ef236b5ec186ba
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: cf3a69de36f1292dd6ccabb945a33a893064bd02
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927108"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971897"
 ---
 # <a name="combo-box"></a>Поле со списком
 
@@ -169,15 +169,15 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 #### <a name="selected-item-behavior-change"></a>Изменение поведения выбранного элемента
 
-В RS5 (Windows SDK версии 10.0.NNNNN.0 (Windows 10 версии YYMM), поведение выбранных элементов обновляется для поддержки редактируемого поля со списком.
+В Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии, обновить поведение выбранных элементов для поддержки редактируемого поля со списком.
 
-До RS5, значение свойства SelectedItem (и, следовательно, SelectedValue и SelectedIndex) должно было быть в коллекции элементов в поле со списком. В предыдущем примере, установив `colorComboBox.SelectedItem = "Pink"` приводит к:
+До выхода SDK 17763, значение свойства SelectedItem (и, следовательно, SelectedValue и SelectedIndex) должно было быть в коллекции элементов в поле со списком. В предыдущем примере, установив `colorComboBox.SelectedItem = "Pink"` приводит к:
 
 - SelectedItem = null
 - SelectedValue = null
 - SelectedIndex = -1
 
-В RS5 и более поздних версиях значение свойства SelectedItem (и, следовательно, SelectedValue и SelectedIndex) не обязательно должны быть в коллекции элементов в поле со списком. В предыдущем примере, установив `colorComboBox.SelectedItem = "Pink"` приводит к:
+В состав пакета SDK 17763 и более поздних версиях, значение свойства SelectedItem (и, следовательно, SelectedValue и SelectedIndex) не обязательно должны быть в коллекции элементов в поле со списком. В предыдущем примере, установив `colorComboBox.SelectedItem = "Pink"` приводит к:
 
 - SelectedItem = розовый
 - SelectedValue = розовый
@@ -192,7 +192,7 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 ## <a name="make-a-combo-box-editable"></a>Сделайте поле со списком, доступных для редактирования
 
 > [!IMPORTANT]
-> Для этой функции требуется [последние сборки Windows 10 Insider Preview и пакет SDK](https://insider.windows.com/for-developers/).
+> Для этой функции требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии.
 
 По умолчанию поле со списком позволяет пользователю выбирать значение из предопределенных список параметров. Однако бывают случаи, где список содержит только подмножество допустимые значения, а пользователь должен иметь возможность ввести другие значения, которые не указаны. Для этого в поле со списком можно сделать доступным для редактирования.
 

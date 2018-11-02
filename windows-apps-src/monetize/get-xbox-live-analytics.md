@@ -7,16 +7,16 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ef566ed473c7d65ceeb290ee76bfa043f4766f5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 70a1e5d2105c73e76b974a888e3edb1bcb009aa6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941978"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971513"
 ---
 # <a name="get-xbox-live-analytics-data"></a>Получение аналитических данных Xbox Live
 
-Используйте этот метод в API аналитики для Microsoft Store, чтобы получить общие аналитические данные за последние 30 дней для пользователей, игравших в вашу [игру с поддержкой Xbox Live](../xbox-live/index.md), в том числе об использовании периферийных устройств, типе подключения к Интернету, распределении игровых баллов, статистики по игре и данных по друзьям и подписчикам. Эта информация также доступна в [отчете аналитики Xbox](../publish/xbox-analytics-report.md) на информационной панели Центра разработки для Windows.
+Используйте этот метод в API аналитики для Microsoft Store, чтобы получить общие аналитические данные за последние 30 дней для пользователей, игравших в вашу [игру с поддержкой Xbox Live](../xbox-live/index.md), в том числе об использовании периферийных устройств, типе подключения к Интернету, распределении игровых баллов, статистики по игре и данных по друзьям и подписчикам. Эта информация также доступна в [аналитический отчет Xbox](../publish/xbox-analytics-report.md) в центре партнеров.
 
 > [!IMPORTANT]
 > Этот метод поддерживает только игры для Xbox или игры, использующие службы Xbox Live. Эти игры, в том числе игры, опубликованные [партнерами Майкрософт](../xbox-live/developer-program-overview.md#microsoft-partners), и отправленные в рамках программы [ID@Xbox, должны пройти [процесс утверждения концепции](../gaming/concept-approval.md)](../xbox-live/developer-program-overview.md#id). В настоящее время этот метод не поддерживает игры, опубликованные в рамках программы [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
