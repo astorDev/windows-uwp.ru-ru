@@ -8,12 +8,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, службы Store, API целевых предложений Microsoft Store, получение целевых предложений
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a0e9237c7c803a64ec20df0c501773f690f5e9
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 87d59a4b5dabbc76c231e84034d701fccfe36fcf
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931870"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5972456"
 ---
 # <a name="get-targeted-offers"></a>Получение целевых предложений
 
@@ -57,7 +57,7 @@ Authorization: Bearer <Microsoft Account token>
 
 | Поле      | Тип   | Описание         |
 |------------|--------|------------------|
-| offers      | массив  | Массив кодов продуктов для надстроек, связанных с целевыми предложениями, доступными для текущего пользователя. Эти коды продукта указываются на странице **Целевые предложения** для вашего приложения на информационной панели Центра разработки для Windows.            |
+| offers      | массив  | Массив кодов продуктов для надстроек, связанных с целевыми предложениями, доступными для текущего пользователя. Эти коды продукта указываются в странице **целевые предложения** для вашего приложения в центре партнеров.            |
 | trackingId  | строка | Идентификатор GUID, который при необходимости можно использовать для отслеживания целевого предложения в коде или службах. |
 
 

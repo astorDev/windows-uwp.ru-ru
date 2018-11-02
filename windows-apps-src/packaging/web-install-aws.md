@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, Windows 10, UWP, установщик, AppInstaller, загрузка неопубликованных приложений приложения, связанных с установлен, дополнительных пакетов, AWS
 ms.localizationpriority: medium
 ms.openlocfilehash: f24abac93e2444a3c9f454c8883902e5db4d31be
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5946532"
+ms.locfileid: "5972160"
 ---
 # <a name="hosting-uwp-app-packages-on-aws-for-web-install"></a>Размещение пакетов приложение UWP в AWS для веб-установки
 
