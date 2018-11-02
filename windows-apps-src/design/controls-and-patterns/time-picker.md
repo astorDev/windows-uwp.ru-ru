@@ -15,11 +15,11 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: c30b310deb509b9abfcd49531f85ea109cb12864
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5871822"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5946486"
 ---
 # <a name="time-picker"></a>Управляющий элемент выбора времени
  

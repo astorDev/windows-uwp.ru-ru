@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, uwp, уведомления, коллекций, коллекция, группы уведомлений, группировка уведомлений, группа, упорядочивание, центр уведомлений, всплывающее уведомление
 ms.localizationpriority: medium
 ms.openlocfilehash: be7c4ec2e9a47eeeb00663ae94f89e44c6751352
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5862118"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5945203"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>Группирование всплывающих уведомлений с помощью коллекций
 Коллекции можно использовать для упорядочивания всплывающих уведомлений вашего приложения в центре уведомлений. Коллекции помогают пользователям проще находить сведения в центре уведомлений, а разработчикам — лучше управлять своими уведомлениями.  API-интерфейсы ниже позволяют удалять, создавать и обновлять коллекции уведомлений.

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, множественная дискретизация, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b967ae1709849bbe5bc944b00d9e30f22052aeb
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5888647"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5947288"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Использование множественной дискретизации в приложениях универсальной платформы Windows (UWP)
 
