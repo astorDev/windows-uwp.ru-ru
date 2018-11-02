@@ -8,12 +8,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: 71247b8e04e63e5f792a872256dd79447c4d36cd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6762d31ea7ebaeb966cd60f121591ba1534517a3
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927967"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969074"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Отправка запросов в Microsoft Store
 
@@ -79,7 +79,7 @@ public async Task<bool> AddUserToFlightGroup()
 |  *requestKind*                   |  Укажите 7 для возврата группы тестируемой возможности с самым высоким приоритетом для устройства или 8 для возврата группы тестируемой возможности с самым высоким приоритетом для текущего пользователя и устройства. Рекомендуется использовать значение 8 для параметра *requestKind*, поскольку это значение будет возвращать группу тестируемой возможности с самым высоким приоритетом через членство и для текущего пользователя, и для устройства.  |
 |  *parametersAsJson*                   |  Передайте строку формата JSON, содержащую данные, как показано в примере ниже.  |
 
-В следующем примере показан формат данных JSON для передачи в *parametersAsJson*. Поле *type* должно быть назначено строке *GetRemoteVariables*. Назначьте поле *projectId* идентификатору проекта, в котором вы определили удаленные переменные на информационной панели Центра разработки для Windows.
+В следующем примере показан формат данных JSON для передачи в *parametersAsJson*. Поле *type* должно быть назначено строке *GetRemoteVariables*. Назначьте поле *projectId* идентификатор проекта, в котором вы определили удаленные переменные в центре партнеров.
 
 ```json
 { 

@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, отправка приложения, обновление
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bf6ed961f4f84cbc2bbef4a4fe79625dcadc326
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 82311d96296b3b7c7db0a3485348b7d1bf4a734c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5943634"
+ms.locfileid: "5991377"
 ---
 # <a name="update-an-app-submission"></a>Обновление отправки приложения
 
@@ -26,8 +26,8 @@ ms.locfileid: "5943634"
 Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
-* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
-* Создайте отправку для приложения в учетной записи Центра разработки. Это можно сделать на информационной панели Центра разработки или с помощью метода [Создание отправки приложения](create-an-app-submission.md).
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия токена можно получить новый токен.
+* Создание отправки для одного из своих приложений. Это можно сделать в центре партнеров или можно сделать с помощью метода [создания отправки приложения](create-an-app-submission.md) .
 
 ## <a name="request"></a>Запрос
 
@@ -50,7 +50,7 @@ ms.locfileid: "5943634"
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | Обязательный. Код продукта в Магазине для приложения, отправку которого необходимо обновить. Подробнее о коде продукта в Магазине см. в статье[Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | string | Обязательный. Идентификатор отправки для обновления. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки приложения](create-an-app-submission.md). Для отправки, которая была создана в информационной панели центра разработки, этот код также доступен по URL-адресу страницы отправки на информационной панели.  |
+| submissionId | string | Обязательный. Идентификатор отправки для обновления. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки приложения](create-an-app-submission.md). Для отправки, которая была создана в центре партнеров этот идентификатор также доступен по URL-адресу страницы отправки в центр партнеров.  |
 
 
 ### <a name="request-body"></a>Тело запроса
@@ -73,7 +73,7 @@ ms.locfileid: "5943634"
 | hasExternalInAppProducts           |     логическое значение          |   Указывает, позволяет ли приложение пользователям делать покупки без использования коммерческой системы Microsoft Store. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | meetAccessibilityGuidelines           |    логический           |  Указывает, проверено ли приложение на соответствие рекомендациям по специальным возможностям. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).      |   
 | notesForCertification           |  строка  |   Содержит [заметки по сертификации](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) приложения.    |    
-| applicationPackages           |   массив  | Содержит объекты, предоставляющие сведения о каждом пакете в отправке. Дополнительные сведения см. в разделе [Пакет приложения](manage-app-submissions.md#application-package-object). При вызове этого метода для обновления отправки приложения в теле запроса должны присутствовать только значения *fileName*, *fileStatus*, *minimumDirectXVersion* и *minimumSystemRam* этих объектов. Остальные значения заполняются Центром разработки.   |    
+| applicationPackages           |   массив  | Содержит объекты, предоставляющие сведения о каждом пакете в отправке. Дополнительные сведения см. в разделе [Пакет приложения](manage-app-submissions.md#application-package-object). При вызове этого метода для обновления отправки приложения в теле запроса должны присутствовать только значения *fileName*, *fileStatus*, *minimumDirectXVersion* и *minimumSystemRam* этих объектов. Остальные значения заполняются центром партнеров.   |    
 | packageDeliveryOptions    | объект  | Содержит параметры постепенного выпуска пакета и обязательного обновления для отправки. Подробнее см. в разделе [Объект параметров доставки пакета](manage-app-submissions.md#package-delivery-options-object).  |
 | enterpriseLicensing           |  Строка  |  Одно из [значений, связанных с корпоративным лицензированием](manage-app-submissions.md#enterprise-licensing), задающих поведение приложения в отношении корпоративного лицензирования.  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  логический   |  Указывает, разрешено ли Майкрософт [делать приложение доступным для будущих семействустройств Windows 10.](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
@@ -296,7 +296,7 @@ Content-Type: application/json
 | Код ошибки |  Описание   |
 |--------|------------------|
 | 400  | Не удалось обновить отправку. Недопустимый запрос. |
-| 409  | Не удалось обновить отправку из-за текущего состояния приложения или в связи с тем, что приложение использует компонент информационной панели Центра разработки, [который в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | Не удалось обновить отправку из-за текущего состояния приложения или приложение использует компонент центра партнеров, [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Статьи по теме

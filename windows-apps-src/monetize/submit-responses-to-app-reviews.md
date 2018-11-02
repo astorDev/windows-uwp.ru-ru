@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, службы Store, API отзывов Microsoft Store, приобретение надстроек
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fdfe811a90eae1e67ef7f626815be1ef78a4c61
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8a8a336d477e7d66222632821f0fa0855faae6f7
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5928595"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970118"
 ---
 # <a name="submit-responses-to-reviews"></a>Отправка ответов на отзывы
 
@@ -23,9 +23,9 @@ ms.locfileid: "5928595"
 При отправке отзыва клиент может отказаться от получения ответов на него. При попытке ответить на отзыв, для которого клиента заблокировал получение ответов, тело ответа этого метода будет содержать информацию о том, попытка ответа не была удачной. До вызова этого метода, при необходимости вы можете определить разрешено ли отвечать на данный отзыв с помощью метода [получение сведений об ответах на отзывы о приложении](get-response-info-for-app-reviews.md).
 
 > [!NOTE]
-> Помимо использования этого метода для программного ответа на отзывы, вы также можете реагировать на отзывы с помощью [информационной панели Центра разработки для Windows](../publish/respond-to-customer-reviews.md).
+> Помимо использования этого метода для программного ответа на отзывы, вы можете также отвечать на отзывы [с помощью центра партнеров](../publish/respond-to-customer-reviews.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Необходимые условия
 
 Для использования этого метода сначала необходимо выполнить следующее:
 
@@ -67,7 +67,7 @@ ms.locfileid: "5928595"
 
 | Значение        | Тип   | Описание           |  Обязательное  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | string |  Код продукта для приложения с отзывом, на который вы хотите ответить. Код продукта в Магазине доступен на [странице удостоверения приложения](../publish/view-app-identity-details.md) информационной панели Центра разработки. Пример кода продукта в Магазине: 9WZDNCRFJ3Q8   |  Да  |
+| ApplicationId | string |  Код продукта для приложения с отзывом, на который вы хотите ответить. Код продукта в магазине доступен на [странице удостоверения приложения](../publish/view-app-identity-details.md) центра партнеров. Пример кода продукта в Магазине: 9WZDNCRFJ3Q8   |  Да  |
 | ReviewId | string |  Идентификатор отзыва, на который вы хотите ответить (это GUID). Идентификаторы отзывов доступны в данных ответов метода [получения отзывов о приложении](get-app-reviews.md) в API аналитики для Microsoft Store и в [автономном](../publish/download-analytic-reports.md) [отчете об отзывах](../publish/reviews-report.md).   |  Да  |
 | ResponseText | string | Отправляемый вами ответ. Необходимо следовать [этим рекомендациям](../publish/respond-to-customer-reviews.md#guidelines-for-responses).   |  Да  |
 | SupportEmail | string | Адрес электронной почты службы поддержки вашего приложения, по которому клиент может связаться с вами напрямую. Это должен быть допустимый адрес электронной почты.     |  Да  |
@@ -146,7 +146,7 @@ Content-Type: application/json
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Ответ на отзывы клиентов с помощью информационной панели Центра разработки](../publish/respond-to-customer-reviews.md)
+* [Ответ на отзывы пользователей с помощью центра партнеров](../publish/respond-to-customer-reviews.md)
 * [Ответ на отзывы с помощью служб Microsoft Store](respond-to-reviews-using-windows-store-services.md)
 * [Получение сведений об ответах на отзывы о приложении](get-response-info-for-app-reviews.md)
 * [Получение отзывов о приложении](get-app-reviews.md)

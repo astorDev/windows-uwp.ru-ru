@@ -8,12 +8,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные объявления, промежуточная, c#, пример кода
 ms.localizationpriority: medium
-ms.openlocfilehash: 94baaa490859baf57e0bd12bc5a3800ed3b2312a
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 07f0927d741bbadc31aaf26f5188af245ec44790
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5925370"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5968924"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>Пример кода промежуточной рекламы на C\# #  
 
@@ -23,7 +23,7 @@ ms.locfileid: "5925370"
 
 В этом разделе представлено содержимое файлов MainPage.xaml и MainPage.xaml.cs простого приложения, в котором отображается промежуточная реклама. Чтобы использовать эти примеры, скопируйте код в проект **Пустое приложение (универсальные приложения для Windows)**, созданный на Visual C# в Visual Studio.
 
-В этом примере приложения используются две кнопки для запроса и последующего запуска промежуточной рекламы. Замените значения полей ```myAppId``` и ```myAdUnitId``` фактическими значениями из Центра разработки для Windows перед отправкой своего приложения в Магазин. Дополнительные сведения см. в разделе [Настройка групп объявлений в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+В этом примере приложения используются две кнопки для запроса и последующего запуска промежуточной рекламы. Замените значения ```myAppId``` и ```myAdUnitId``` поля фактическими значениями из центра партнеров перед отправкой приложения в магазине. Дополнительные сведения см. в разделе [Настройка групп объявлений в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
 > [!NOTE]
 > Чтобы изменить этот пример для отображения межстраничного баннера вместо межстраничной видеорекламы, передайте значение **AdType.Display** в качестве первого параметра для метода [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad), а не значение **AdType.Video**. Дополнительные сведения см. в разделе [Межстраничные объявления](interstitial-ads.md).

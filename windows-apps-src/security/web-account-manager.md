@@ -9,11 +9,11 @@ keywords: Windows 10, uwp, безопасность
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a5cddcd5ccb5185cda422c3df16797f5765688
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941746"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969210"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 

@@ -8,19 +8,19 @@ ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ae98a3fdea561179b6cd76035715d53521143d35
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 48fb632d0491d333f8c4a7c5e775041ec31aeee3
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5947464"
+ms.locfileid: "5997493"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Исключение или ограничение функций в пробной версии
 
 Если вы разрешаете пользователям бесплатно пользоваться вашим приложением в течение испытательного срока, можно привлечь их к обновлению до полной версии приложения путем удаления или ограничения некоторых функций в течение пробного периода. До начала программирования решите, какие функции лучше ограничить, и сделайте так, чтобы они были доступны только после покупки полной лицензии. Вы можете также включить такие компоненты, как баннеры или водяные знаки, которые будут отображаться только во время пробного периода, пока пользователь не купит приложение.
 
 > [!IMPORTANT]
-> В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) для включения функции пробного периода. Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Пространство имен **Windows.Services.Store** поддерживает новейшие типы надстроек, включая потребляемые надстройки и подписки, управляемые Microsoft Store, а его архитектура обеспечивает совместимость с будущими продуктами и компонентами, которые поддерживаются Центром разработки для Windows и Microsoft Store. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Дополнительные сведения о реализации функции пробного периода с помощью пространства имен **Windows.Services.Store** см. в [этой статье](implement-a-trial-version-of-your-app.md).
+> В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) для включения функции пробного периода. Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Пространство имен **Windows.Services.Store** поддерживает новейшие типы надстроек, таких как подписки и потребляемые надстройки, управляемые магазином, а его архитектура обеспечивает совместимость с будущими продуктами и компонентами, которые поддерживаются центром партнеров и хранилище. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Дополнительные сведения о реализации функции пробного периода с помощью пространства имен **Windows.Services.Store** см. в [этой статье](implement-a-trial-version-of-your-app.md).
 
 ## <a name="prerequisites"></a>Необходимые условия
 

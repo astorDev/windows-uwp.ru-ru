@@ -1,32 +1,32 @@
 ---
 author: Xansky
-Description: You can log custom events from your UWP app and review those events in the Usage report on the Windows Dev Center dashboard.
-title: Регистрация пользовательских событий в журнале для Центра разработки
+Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
+title: Ведение журнала пользовательских событий для центра партнеров
 ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK, журналы событий
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c4dcb11b46b50677b87f9feea6db8b87bfb29d4
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 47c1eb02434dc71cb7da949d58ec38cf3b4cf65a
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5921470"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970347"
 ---
-# <a name="log-custom-events-for-dev-center"></a>Регистрация пользовательских событий в журнале для Центра разработки
+# <a name="log-custom-events-for-partner-center"></a>Ведение журнала пользовательских событий для центра партнеров
 
-[Отчет об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) в информационной панели Центра разработки для Windows позволяет получить информацию о событиях, которые вы определили в своем приложении универсальной платформы Windows (UWP). Пользовательское событие — это произвольная строка, представляющая событие или активность в вашем приложении. Например, игра может определять пользовательские события с именем *firstLevelPassed*, *secondLevelPassed* и т. д., которые регистрируются при прохождении пользователем каждого уровня в игре.
+[Отчет об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) в центре партнеров позволяет получить информацию о событиях, которые вы определили в своем приложении универсальной платформы Windows (UWP). Пользовательское событие — это произвольная строка, представляющая событие или активность в вашем приложении. Например, игра может определять пользовательские события с именем *firstLevelPassed*, *secondLevelPassed* и т. д., которые регистрируются при прохождении пользователем каждого уровня в игре.
 
-Для регистрации пользовательского события из вашего приложения передайте строку пользовательского события методу [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log), предоставляемому пакетом Microsoft Store Services SDK. Можно просматривать общее число возникновений вашего пользовательского события в разделе **Пользовательские события** [Отчета об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) на информационной панели Центра разработки.
+Для регистрации пользовательского события из вашего приложения передайте строку пользовательского события методу [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log), предоставляемому пакетом Microsoft Store Services SDK. Можно просмотреть общее число для вашего пользовательского события в разделе **пользовательские события** в [отчете об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) в центре партнеров.
 
 > [!NOTE]
-> Пользовательские события, регистрируемые в Центре разработки, не связаны с [событиями Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx) и не отображаются в средстве **Просмотр событий**.
+> Пользовательские события, войдите в центр партнеров не связаны с [событиями Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), и они не отображаются в **Средстве просмотра событий**.
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-Прежде чем вы сможете просматривать зарегистрированные пользовательские события в **Отчете об использовании** для вашего приложения на информационной панели, ваше приложение должно быть опубликовано в Магазине.
+Прежде чем сможете просматривать зарегистрированные пользовательские события в **отчете об использовании** для вашего приложения в центре партнеров, ваше приложение должно быть опубликовано в магазине.
 
 ## <a name="how-to-log-custom-events"></a>Регистрация пользовательских событий
 

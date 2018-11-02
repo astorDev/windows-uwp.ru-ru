@@ -7,17 +7,17 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live, работоспособность, ошибки пользователя
 ms.localizationpriority: medium
-ms.openlocfilehash: e2143f04b1b2641123929f5f833df2421f77b99e
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3d08e081491a93a753c2ba0790eec352a9e2ea85
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919304"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969273"
 ---
 # <a name="get-xbox-live-health-data"></a>Получение данных работоспособности в Xbox Live
 
 
-Используйте этот метод в API аналитики для Microsoft Store для получения данных работоспособности для своей [игры с поддержкой Xbox Live](../xbox-live/index.md). Эта информация также доступна в [отчете аналитики Xbox](../publish/xbox-analytics-report.md) на информационной панели Центра разработки для Windows.
+Используйте этот метод в API аналитики для Microsoft Store для получения данных работоспособности для своей [игры с поддержкой Xbox Live](../xbox-live/index.md). Эта информация также доступна в [аналитический отчет Xbox](../publish/xbox-analytics-report.md) в центре партнеров.
 
 > [!IMPORTANT]
 > Этот метод поддерживает только игры для Xbox или игры, использующие службы Xbox Live. Эти игры, в том числе игры, опубликованные [партнерами Майкрософт](../xbox-live/developer-program-overview.md#microsoft-partners), и отправленные в рамках программы [ID@Xbox, должны пройти [процесс утверждения концепции](../gaming/concept-approval.md)](../xbox-live/developer-program-overview.md#id). В настоящее время этот метод не поддерживает игры, опубликованные в рамках программы [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).

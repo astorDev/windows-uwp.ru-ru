@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
-description: Используйте этот метод в API отправки в Microsoft Store для получения всех данных надстроек для всех приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows.
+description: Используйте этот метод в API отправки Microsoft Store для получения всех данных надстроек для всех приложений, которые зарегистрированы в вашей учетной записи центра партнеров.
 title: Получение всех надстроек
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, надстройки, продукты внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 43875ae33c531e66c288f8b54f74116315715380
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4d58b29a959ed791665af52018062d0cf0a3a969
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5922484"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5991289"
 ---
 # <a name="get-all-add-ons"></a>Получение всех надстроек
 
-Используйте этот метод в API отправки в Microsoft Store для получения данных по всем надстройкам для всех приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows.
+Используйте этот метод в API отправки Microsoft Store для получения данных по всем надстройкам для всех приложений, которые зарегистрированы в вашей учетной записи центра партнеров.
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -147,10 +147,10 @@ Authorization: Bearer <your access token>
 | Код ошибки |  Описание   |
 |--------|------------------|
 | 404  | Надстройки не найдены. |
-| 409  | Приложения или надстройки используют функции информационной панели Центра разработки, которые [в настоящее время не поддерживаются API отправки в Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Приложения или надстройки используют функции центра партнеров, которые [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 * [Создание отправок и управление ими с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Управление отправками надстроек](manage-add-on-submissions.md)

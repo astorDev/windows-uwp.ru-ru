@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, службы Store, API отзывов для Microsoft Store, сведения об ответах
 ms.localizationpriority: medium
-ms.openlocfilehash: 71497a858060109eaac0f593ce03f2ba3cbf03cc
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 466455a5e8da9364206245f1e0ac10acfed07ee7
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919541"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5968648"
 ---
 # <a name="get-response-info-for-reviews"></a>Получение сведений об ответах на отзывы
 
@@ -49,7 +49,7 @@ ms.locfileid: "5919541"
 
 | Параметр        | Тип   | Описание                                     |  Обязательный  |
 |---------------|--------|--------------------------------------------------|--------------|
-| applicationId | строка | Код продукта в Магазине для приложения, содержащего отзыв, возможность ответа на который требуется определить. Код продукта в Магазине доступен на [странице удостоверения приложения](../publish/view-app-identity-details.md) информационной панели Центра разработки. Пример кода продукта в Магазине: 9WZDNCRFJ3Q8 |  Да  |
+| applicationId | строка | Код продукта в Магазине для приложения, содержащего отзыв, возможность ответа на который требуется определить. Код продукта в магазине доступен на [странице удостоверения приложения](../publish/view-app-identity-details.md) в центре партнеров. Пример кода продукта в Магазине: 9WZDNCRFJ3Q8 |  Да  |
 | reviewId | строка | Идентификатор отзыва, на который вы хотите ответить (это GUID). Идентификаторы отзывов доступны в данных ответов метода [получения отзывов о приложении](get-app-reviews.md) в API аналитики для Microsoft Store и в [автономном](../publish/download-analytic-reports.md) [отчете об отзывах](../publish/reviews-report.md). <br/>Если вы опустите этот параметр, в тексте ответа для этого метода будет указано, есть ли у вас разрешения на ответ на какие-либо отзывы об указанном приложении. |  Нет  |
 
 
@@ -87,6 +87,6 @@ Authorization: Bearer <your access token>
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Отправка ответов на отзывы с помощью API аналитики для Microsoft Store](submit-responses-to-app-reviews.md)
-* [Ответ на отзывы пользователей с помощью информационной панели Центра разработки](../publish/respond-to-customer-reviews.md)
+* [Ответ на отзывы пользователей с помощью центра партнеров](../publish/respond-to-customer-reviews.md)
 * [Ответ на отзывы с помощью служб Microsoft Store](respond-to-reviews-using-windows-store-services.md)
 * [Получение отзывов о приложении](get-app-reviews.md)

@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, покупки надстройки
 ms.localizationpriority: medium
-ms.openlocfilehash: c1fb44457b8589c9e1525de9c8dca2801c0c47bf
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4adb202df2806caeb0dc88469521b0f373886c43
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940323"
+ms.locfileid: "5969695"
 ---
 # <a name="get-add-on-acquisitions"></a>Получение сведений о покупках надстройки
 
-Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных в формате JSON по приобретениям надстроек для приложения в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о приобретениях надстроек](../publish/add-on-acquisitions-report.md) на информационной панели Центра разработки для Windows.
+Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных в формате JSON по приобретениям надстроек для приложения в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о приобретениях надстроек](../publish/add-on-acquisitions-report.md) в центре партнеров.
 
 ## <a name="prerequisites"></a>Необходимые условия
 

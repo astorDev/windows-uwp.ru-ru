@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bbf7bdf1f41b1dff1049674f3b4463bac6ccb80
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3939995aa2f29f4590c8c71a877b69f0cb81d2ec
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5929618"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969180"
 ---
 # <a name="content-links-in-text-controls"></a>Ссылки на содержимое в элементах управления текстом
 
@@ -164,7 +164,7 @@ editor.ContentLinkProviders = new ContentLinkProviderCollection
 - Если значение LinkContentKind отлично от "People", открывается приложение **Люди**. Например, это может произойти, если вы изменили LinkContentKind в обработчике событий ContentLinkChanged.
 
 > [!TIP]
-> Дополнительные сведения об открытии других приложений и веб-сайтов из вашего приложения см. в разделах [Запуск приложения с помощью URI] (/windows/uwp/launch-resume/launch-app-with-uri).
+> Дополнительные сведения об открытии других приложений и веб-сайтов из вашего приложения см. в разделах [Запуск приложения с помощью Uri](/windows/uwp/launch-resume/launch-app-with-uri).
 
 #### <a name="invoked"></a>Событие Invoked (вызов)
 

@@ -8,17 +8,17 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, приобретения приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a19ca3c45e0420f51d6f52661935681315929b1
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0c2e972b46c830dd6c9ea778e525f0abceda3e99
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5942512"
+ms.locfileid: "5970894"
 ---
 # <a name="get-app-acquisitions"></a>Получение сведений о приобретениях приложения
 
 
-Используйте этот метод в API аналитики Microsoft Store для получения сводных данных в формате JSON для приложения в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о приобретениях](../publish/acquisitions-report.md) на информационной панели Центра разработки для Windows.
+Используйте этот метод в API аналитики Microsoft Store для получения сводных данных в формате JSON для приложения в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о приобретениях](../publish/acquisitions-report.md) в центре партнеров.
 
 ## <a name="prerequisites"></a>Необходимые условия
 

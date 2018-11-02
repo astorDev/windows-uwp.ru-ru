@@ -8,12 +8,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные объявления, промежуточная, javascript, пример кода
 ms.localizationpriority: medium
-ms.openlocfilehash: 42ff810808e0e7b8d83152f7d23e535c721d3405
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 1921725e5b598a2e5e79ed90c607414e4efe574e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5918779"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5968549"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>Пример кода промежуточной рекламы в JavaScript
 
@@ -25,7 +25,7 @@ ms.locfileid: "5918779"
 
 В этом примере приложения используются две кнопки для запроса и последующего запуска промежуточной рекламы. Файлы main.js и index.html, созданные Visual Studio, были изменены и показаны ниже. Представленный ниже файл script.js содержит большую часть кода в примере. Этот файл необходимо добавить в папку **js** вашего проекта.
 
-Замените значения переменных ```applicationId``` и ```adUnitId``` фактическими значениями из Центра разработки для Windows перед отправкой своего приложения в Microsoft Store. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+Замените значения ```applicationId``` и ```adUnitId``` переменные фактическими значениями из центра партнеров перед отправкой приложения в магазине. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
 > [!NOTE]
 > Чтобы изменить этот пример для отображения межстраничного баннера вместо межстраничной видеорекламы, передайте значение **InterstitialAdType.display** в качестве первого параметра для метода [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) вместо значения **InterstitialAdType.video**. Дополнительные сведения см. в разделе [Межстраничные объявления](interstitial-ads.md).

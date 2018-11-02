@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 67be6cacee3b0062118d51105eec9037dd29135b
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5943762"
+ms.locfileid: "5968668"
 ---
 # <a name="cortana-interactions-in-uwp-apps"></a>Взаимодействие с Кортаной в приложениях UWP
 
