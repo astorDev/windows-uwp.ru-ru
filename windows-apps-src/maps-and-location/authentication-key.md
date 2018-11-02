@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, ключ проверки подлинности карт, элемент управления картой
 ms.localizationpriority: medium
 ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5888763"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5943512"
 ---
 # <a name="request-a-maps-authentication-key"></a>Запрос ключа проверки подлинности карт
 

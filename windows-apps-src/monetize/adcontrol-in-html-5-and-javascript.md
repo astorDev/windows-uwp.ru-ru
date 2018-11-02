@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, рекламный элемент управления, HTML, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: de3ffa9e82687e31c7f91548be953f224975d09a
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5873889"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5936685"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>AdControl в HTML 5 и JavaScript
 

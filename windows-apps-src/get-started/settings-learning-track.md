@@ -8,11 +8,11 @@ ms.topic: article
 keywords: начало работы, uwp, windows 10, обучающий курс, параметры, сохранение параметров, загрузка параметров
 ms.localizationpriority: medium
 ms.openlocfilehash: 18b11ea100915f8b6ff52db5223284da6f24a1d4
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5882366"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5938556"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>Загрузка и сохранение параметров в приложении UWP
 

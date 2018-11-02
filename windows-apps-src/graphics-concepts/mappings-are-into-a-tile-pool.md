@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 24c8787efd108acb2353f6705dbb65a34d358ef2
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5876001"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5940544"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>Сопоставления производятся в пуле плиток
 

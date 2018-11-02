@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e15014e39ed6d980cbe80daa0a129ff83a021b9
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5870816"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5937877"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>Перенос со среды выполнения Windows 8.x на UWP для ввода-вывода, устройств и модели приложений
 

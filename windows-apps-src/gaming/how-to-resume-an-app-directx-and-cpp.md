@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, возобновление, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 1149bebfd837e3d4051b5e0fca10aac248d909c5
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5872168"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5942377"
 ---
 # <a name="how-to-resume-an-app-directx-and-c"></a>Возобновление работы приложения (DirectX и C++)
 

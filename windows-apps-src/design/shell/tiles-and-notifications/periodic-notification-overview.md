@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d02bfb8b8bd112a969895d4f2bd5d324fce9d6b8
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5884568"
+ms.locfileid: "5934006"
 ---
 # <a name="periodic-notification-overview"></a>Обзор периодических уведомлений
  

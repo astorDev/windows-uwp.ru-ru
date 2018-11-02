@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, основной объект
 ms.localizationpriority: medium
 ms.openlocfilehash: b94d7139f35b3a18edd66af9959a0958d0bdcbc1
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5859754"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5942558"
 ---
 # <a name="define-the-main-game-object"></a>Определение основного игрового объекта
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, игра, обзор, программирование, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: e422dab7f06e314d849cacc361b51d2f68f0de98
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5888863"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5934922"
 ---
 # <a name="directx-programming"></a>Программирование в DirectX
 

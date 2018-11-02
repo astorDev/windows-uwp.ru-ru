@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, руководство, советы и рекомендации
 ms.localizationpriority: medium
 ms.openlocfilehash: 323190b01cad8a0832d57386f6bde9fde4f2180c
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5863984"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5942443"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Рекомендации по пользовательскому интерфейсу и взаимодействию с пользователем для рекламы
 

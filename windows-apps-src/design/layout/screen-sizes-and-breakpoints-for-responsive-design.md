@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: af172b67a3981b61f4f86078710d87f760f9be3b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5889003"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5936086"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Размеры экрана и точки прерывания
 

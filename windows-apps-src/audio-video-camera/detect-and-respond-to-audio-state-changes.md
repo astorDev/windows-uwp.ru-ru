@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 53ac8dff5895522c24c1645e4db95c90d575df95
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5864564"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5934856"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a>Обнаружение и реагирование на изменения состояния звука
 Начиная с Windows 10 версии 1803 ваше приложение может определять, когда система снижает или отключает уровень звукового потока, который использует ваше приложение. Вы можете получать уведомления для захвата и воспроизведения потоков для определенного звукового устройства и категории аудио или для объекта [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer), который ваше приложение использует для воспроизведения мультимедиа. Например, система может снизить уровень звука, если включается будильник. Система отключает звук приложения, когда оно переходит в фоновый режим, если приложение не объявило возможность *backgroundMediaPlayback* в манифесте приложения. 

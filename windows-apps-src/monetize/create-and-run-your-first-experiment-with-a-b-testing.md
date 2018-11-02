@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B-тесты, эксперименты
 ms.localizationpriority: medium
 ms.openlocfilehash: eb6e3f245aaaff46156964b5a6b37b21d22a2102
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5863598"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5935951"
 ---
 # <a name="create-and-run-your-first-experiment"></a>Создание и запуск первого эксперимента
 

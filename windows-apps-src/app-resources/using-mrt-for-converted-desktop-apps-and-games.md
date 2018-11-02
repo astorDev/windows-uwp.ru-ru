@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, mrt, pri. ресурсы, игры, centennial, desktop app converter, mui, вспомогательная сборка
 ms.localizationpriority: medium
 ms.openlocfilehash: 927e0c5438ea11b751fba40cb76210d0bce112d4
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5877647"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5943024"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Использование Системы управления ресурсами Windows 10 в устаревшем приложении или игре
 
