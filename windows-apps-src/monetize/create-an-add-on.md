@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
-description: Используйте этот метод в API отправки Microsoft Store для создания надстройки для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
+description: Используйте этот метод в API отправки Microsoft Store для создания надстройки для приложения, которое зарегистрировано в вашей учетной записи PartnerCenter.
 title: Создание надстройки
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание надстройки, внутренний продукт приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 36b6be05d1efc1cbc23f26a509230750c8896c87
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d262a86c4a177095015c3f1391b19f1a7719d0a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939299"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992612"
 ---
 # <a name="create-an-add-on"></a>Создание надстройки
 
-Используйте этот метод в API отправки Microsoft Store для создания надстройки (также называется внутренним продуктом приложения или IAP) для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
+Используйте этот метод в API отправки Microsoft Store для создания надстройки (также называется внутренним продуктом приложения или IAP) для приложения, которое зарегистрировано в вашей учетной записи центра партнеров.
 
 > [!NOTE]
 > При использовании этого метода выполняется создание надстройки без отправок. Руководство по созданию отправки для надстройки см. в описании методов в разделе [Управление отправками надстроек](manage-add-on-submissions.md).
@@ -99,7 +99,7 @@ Content-Type: application/json
 | Код ошибки |  Описание                                                                                                                                                                           |
 |--------|------------------|
 | 400  | Недопустимый запрос. |
-| 409  | Не удалось создать надстройку из-за его текущего состояния или в связи с тем, что надстройка использует компонент панели мониторинга Центра разработки, [который в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | Не удалось создать надстройку из-за его текущего состояния или надстройка использует компонент центра партнеров, [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Статьи по теме
