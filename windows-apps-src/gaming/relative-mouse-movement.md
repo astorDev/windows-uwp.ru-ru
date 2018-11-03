@@ -9,11 +9,11 @@ keywords: Windows 10, uwp, игры, мыши, ввод
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
 ms.openlocfilehash: adf3b629095f633521b99133ce1961e5c8408ef5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5934889"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5986293"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a>Относительное перемещение мыши и CoreWindow
 

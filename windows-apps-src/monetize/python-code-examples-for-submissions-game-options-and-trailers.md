@@ -7,12 +7,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, API отправки в Microsoft Store, примеры кода, параметры игры, трейлеры, дополнительные предложения, python
 ms.localizationpriority: medium
-ms.openlocfilehash: 53267caadcb903ad7eebe31d3a38c5be57a34036
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 86c753e51d15b142cdcd7e54b3ed0304d13169b6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5941235"
+ms.locfileid: "5983902"
 ---
 # <a name="python-sample-app-submission-with-game-options-and-trailers"></a>Пример на языке Python: отправка приложения с трейлерами и параметрами игры
 
@@ -30,7 +30,7 @@ ms.locfileid: "5941235"
 
 Этот код вызывает другие класса и функции из примера по использованию API отправки в Microsoft Store для создания и передачи отправки приложения, содержащей трейлер и параметры игры. Адаптация кода для собственного использования.
 
-* Назначьте переменной ```tenant``` идентификатор арендатора для своего приложения и назначьте переменным ```client``` и ```secret``` идентификатор и ключ клиента для своего приложения. Дополнительные сведения см. в разделе [Привязка приложения Azure AD к учетной записи в Центре разработки для Windows](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account).
+* Назначьте переменной ```tenant``` идентификатор арендатора для своего приложения и назначьте переменным ```client``` и ```secret``` идентификатор и ключ клиента для своего приложения. Дополнительные сведения см. в разделе [как привязать приложение Azure AD с учетной записью центра партнеров](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 * Назначьте переменной ```application_id``` [код продукта в Магазине](in-app-purchases-and-trials.md#store-ids) для приложения, отправку которого необходимо создать.
 
 > [!div class="tabbedCodeSnippets"]

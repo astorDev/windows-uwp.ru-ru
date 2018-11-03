@@ -8,17 +8,17 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, службы Магазина, API аналитики для Microsoft Store, установки приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 902ff653d0c573ba5ab094fa81607796b4f01aae
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 72efc20e218cdf718b67c949bd7c71108921bf9c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939216"
+ms.locfileid: "5978218"
 ---
 # <a name="get-app-installs"></a>Получение сведений об установках приложения
 
 
-Используйте этот метод в API аналитики для Microsoft Store, чтобы получить сводные данные об установках приложения в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о приобретениях](../publish/acquisitions-report.md) на информационной панели Центра разработки для Windows.
+Используйте этот метод в API аналитики для Microsoft Store, чтобы получить сводные данные об установках приложения в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчете о приобретениях](../publish/acquisitions-report.md) в центре партнеров.
 
 ## <a name="prerequisites"></a>Необходимые условия
 

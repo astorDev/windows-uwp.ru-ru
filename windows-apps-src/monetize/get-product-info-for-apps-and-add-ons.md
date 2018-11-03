@@ -8,12 +8,12 @@ ms.date: 02/08/2018
 ms.topic: article
 keywords: windows 10, uwp, покупки из приложения, IAP, надстройки, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: e8f82bc3045d56f93e8d42ea183e2ac2bc788380
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: f1544ee3404e77ec7565c626a6ca96e439832c90
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5934446"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5978739"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>Получение информации о продукте для приложений и надстроек
 
@@ -28,8 +28,8 @@ ms.locfileid: "5934446"
 
 Для этих примеров необходимо выполнение следующих предварительных условий.
 * Создан проект Visual Studio для приложения универсальной платформы Windows (UWP), предназначенный для **Windows 10 Anniversary Edition (10.0; сборка 14393)** и более поздних выпусков.
-* Создана [отправка приложения](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) на информационной панели Центра разработки для Windows, и это приложение опубликовано в Магазине. При необходимости можно настроить приложение, чтобы его нельзя было найти в Магазине, пока вы его тестируете. Подробнее см. в нашем [руководстве по тестированию](in-app-purchases-and-trials.md#testing).
-* Если вы хотите получить информацию о продукте для надстройки приложения, необходимо также [создать надстройку на информационной панели Центра разработки](../publish/add-on-submissions.md).
+* У вас есть [создали отправку приложения](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) в центре партнеров, и это приложение опубликовано в магазине. При необходимости можно настроить приложение, чтобы его нельзя было найти в Магазине, пока вы его тестируете. Подробнее см. в нашем [руководстве по тестированию](in-app-purchases-and-trials.md#testing).
+* Если вы хотите получить информацию о продукте для надстройки для приложения, необходимо также [Создать надстройку в центре партнеров](../publish/add-on-submissions.md).
 
 В коде из этих примеров предполагается следующее:
 * Код выполняется в контексте страницы [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx), которая содержит [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) с именем ```workingProgressRing``` и [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) с именем ```textBlock```. Эти объекты используются для индикации выполнения асинхронной операции и отображения выводимых сообщений, соответственно.

@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 250ed555e6fcf7dc40d31d89a40fa7a96295aacf
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930041"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5980456"
 ---
 # <a name="landmarks-and-headings"></a>Ориентиры и заголовки
 

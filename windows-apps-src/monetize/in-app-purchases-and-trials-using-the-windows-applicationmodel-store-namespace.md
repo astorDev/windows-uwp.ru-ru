@@ -8,12 +8,12 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: uwp, покупки из приложения, IAP, надстройки, пробные версии, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 330631afed95c3b0082de69d9369a62aad5a66d5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 28fe27cc4464598414fec11d6812e2e9ea377aff
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945851"
+ms.locfileid: "5978959"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store
 
@@ -22,7 +22,7 @@ ms.locfileid: "5945851"
 Статьи в этом разделе содержат подробные руководства и примеры кода для использования элементов в пространстве имен **Windows.ApplicationModel.Store** для нескольких распространенных сценариев. Обзор базовых концепций, связанных с покупками из приложения в приложениях UWP, см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md). Полный пример, в котором показано внедрение пробных версий и покупок из приложения с использованием пространства имен **Windows.ApplicationModel.Store**, доступен в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
 > [!IMPORTANT]
-> Пространство имен **Windows.ApplicationModel.Store** больше не обновляется с добавлением новых функций. Если проект приложения ориентирован на **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздние версии в Visual Studio (то есть, вы ориентируете приложение на Windows 10 версии 1607 и более поздние версии), рекомендуется вместо этого использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Подробнее см. в разделе [Покупки из приложения и пробные версии](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). Пространство имен **Windows.ApplicationModel.Store** не поддерживается в классических приложениях Windows, использующих [мост для классических приложений](https://developer.microsoft.com/windows/bridges/desktop), и в приложениях и играх, использующих изолированную среду разработки в центре разработки (например, такая ситуация возникает с любой игрой, которая интегрируется с Xbox Live). Эти продукты должны использовать для реализации покупок из приложения и пробных версий пространство имен **Windows.Services.Store**.
+> Пространство имен **Windows.ApplicationModel.Store** больше не обновляется с добавлением новых функций. Если проект приложения ориентирован на **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздние версии в Visual Studio (то есть, вы ориентируете приложение на Windows 10 версии 1607 и более поздние версии), рекомендуется вместо этого использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Подробнее см. в разделе [Покупки из приложения и пробные версии](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). Пространство имен **Windows.ApplicationModel.Store** не поддерживается в классических приложениях Windows, использующие [Мост для настольных компьютеров](https://developer.microsoft.com/windows/bridges/desktop) или в приложениях и играх, использующих изолированную разработки в центре партнеров (например, такая ситуация для любой игры, интегрируется с Xbox Live). Эти продукты должны использовать для реализации покупок из приложения и пробных версий пространство имен **Windows.Services.Store**.
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>Начало работы с классами CurrentApp и CurrentAppSimulator
 
@@ -390,7 +390,7 @@ ms.locfileid: "5945851"
 |  **AppId**  |    Да   |  1   |   GUID, определяющий приложение в Магазине. Это может быть любой GUID для тестирования.        |
 |  **LinkUri**  |    Да  |  1   |    Универсальный код ресурса (URI) страницы с описанием в Магазине. Это может быть любой допустимый универсальный код ресурса (URI) для тестирования.         |
 |  **CurrentMarket**  |    Да  |  1   |    Страна или регион клиента.         |
-|  **AgeRating**  |    Да  |  1   |     Целое число, представляющее минимальную возрастную категорию приложения. Это то же значение, которое вы указываете на информационной панели Центра разработки во время отправки приложения. В Магазине используются значения 3, 7, 12 и 16. Подробнее об этих категориях см. в разделе [Возрастные категории](../publish/age-ratings.md).        |
+|  **AgeRating**  |    Да  |  1   |     Целое число, представляющее минимальную возрастную категорию приложения. Это то же значение, которое вы указываете в центре партнеров при отправке приложения. В Магазине используются значения 3, 7, 12 и 16. Подробнее об этих категориях см. в разделе [Возрастные категории](../publish/age-ratings.md).        |
 |  [MarketData](#marketdata-child-of-app)  |    Да  |  1 или более      |    Содержит сведения о приложении в данной стране/регионе. Для каждой страны/региона, в которых зарегистрировано приложение, необходимо указать элемент **MarketData**.       |    |
 
 <span id="marketdata-child-of-app"/>

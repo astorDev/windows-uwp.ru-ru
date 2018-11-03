@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, объявления, реклама, размеры, баннеры
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f23be9a58a138a82cc4510039a1c0899ef092a2
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5944545"
+ms.locfileid: "5984478"
 ---
 # <a name="supported-banner-ad-sizes"></a>Поддерживаемые размеры рекламных баннеров
 

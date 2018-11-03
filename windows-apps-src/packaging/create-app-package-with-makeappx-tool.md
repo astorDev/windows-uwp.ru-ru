@@ -9,11 +9,11 @@ keywords: windows 10, uwp, упаковка
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d5cc0d73975b591d7584b1ac606aa3323cd6da3
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5925239"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5985536"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Создание пакета приложения с помощью средства MakeAppx.exe
 

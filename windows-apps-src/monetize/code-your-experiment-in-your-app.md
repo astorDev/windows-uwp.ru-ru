@@ -8,26 +8,26 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP, Microsoft Store Services SDK, A/B-тесты, эксперименты
 ms.localizationpriority: medium
-ms.openlocfilehash: 49f67fe9078d9dc3b73f771f64ee26ce0486f990
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: c9212f3a120e03bd436b77e0dd66be4367ded8e1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941446"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5980446"
 ---
 # <a name="code-your-app-for-experimentation"></a>Кодирование приложения для экспериментов
 
-После [создания проекта и определения удаленных переменных на панели мониторинга Центра разработки](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) можно приступить к обновлению кода вашего приложения универсальной платформы Windows (UWP) для реализации следующих целей:
-* Получение значений удаленных переменных из Центра разработки для Windows.
+После [создания проекта и определение удаленных переменных в центре партнеров](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)вы готовы к обновлению кода в приложении универсальной платформы Windows (UWP) для:
+* Получение значений удаленных переменных из центра партнеров.
 * Использование удаленных переменных для настройки процесса взаимодействия пользователей с приложением.
-* Ведение журнала событий в Центре разработки, содержащего сведения о том, когда пользователи просмотрели ваш эксперимент и выполнили соответствующее действие (также называемое *преобразованием*).
+* Ведение журнала событий в центре партнеров, которая указывает, когда пользователи просмотрели ваш эксперимент и выполнили соответствующее действие (также называемых *преобразования*).
 
 Чтобы добавить это поведение в приложение, используйте API-интерфейсы из пакета Microsoft Store Services SDK.
 
-В следующих разделах описывается общий процесс получения вариантов для эксперимента и ведения журнала событий в Центре разработки. После завершения кодирования приложения для экспериментов можно [определить эксперимент на панели мониторинга Центра разработки](define-your-experiment-in-the-dev-center-dashboard.md). Пошаговое руководство, демонстрирующее весь процесс создания и выполнения эксперимента, можно найти в разделе [Создание и проведение первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md).
+В следующих разделах общий процесс получения вариантов для эксперимента и ведения журнала событий в центре партнеров. После завершения кодирования приложения для экспериментов, вы можете [определить эксперимент в центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md). Пошаговое руководство, демонстрирующее весь процесс создания и выполнения эксперимента, можно найти в разделе [Создание и проведение первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 > [!NOTE]
-> Некоторые экспериментальные API-интерфейсов в Microsoft Store Services SDK используют [асинхронной модели](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) для извлечения данных из центра разработки. Это означает, что эти методы могут частично выполняться после их вызова, чтобы интерфейс приложения реагировал на действия пользователя во время выполнения операции. В рамках асинхронной модели приложение должно использовать ключевое слово **async** и оператор **await** при вызове API-интерфейсов, как показано в примерах кода в этой статье. По соглашению асинхронные методы заканчиваются на **Async**.
+> Некоторые экспериментальные API-интерфейсов в Microsoft Store Services SDK используют [асинхронной модели](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) для извлечения данных из центра партнеров. Это означает, что эти методы могут частично выполняться после их вызова, чтобы интерфейс приложения реагировал на действия пользователя во время выполнения операции. В рамках асинхронной модели приложение должно использовать ключевое слово **async** и оператор **await** при вызове API-интерфейсов, как показано в примерах кода в этой статье. По соглашению асинхронные методы заканчиваются на **Async**.
 
 ## <a name="configure-your-project"></a>Настройка проекта
 
@@ -44,7 +44,7 @@ ms.locfileid: "5941446"
 
 ## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>Получение данных о вариантах и запись события просмотра в журнал для эксперимента
 
-Откройте проект и найдите код для функции, которую требуется изменить в рамках эксперимента. Добавьте код, который извлекает данные варианта, используйте их для изменения поведения тестируемой функции, а затем запишите событие просмотра для вашего эксперимента в журнал службы A/B-тестирования в Центре разработки.
+Откройте проект и найдите код для функции, которую требуется изменить в рамках эксперимента. Добавьте код, который извлекает данные варианта, использовать эти данные для изменения поведения тестируемой функции и затем журнал событие просмотра для вашего эксперимента в a / b-тестирования службы в центре партнеров.
 
 Требуемый код зависит от приложения, но в следующем примере показан базовый процесс. Полный пример кода можно найти в разделе [Создание и проведение первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md).
 
@@ -52,13 +52,13 @@ ms.locfileid: "5941446"
 
 Ниже важные части этого процесса показаны более подробно.
 
-1. Объявите объект [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation), представляющий собой текущее назначение вариантов, и объект [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger), который вы будете использовать для ведения журнала событий просмотра и преобразований в Центре разработки.
+1. Объявите объект [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) , представляющий текущее назначение варианта и [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) объект, который будет использоваться для журнала событий просмотра и преобразования в центре партнеров.
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
 
 2. Объявите переменную типа string и присвойте в качестве значения [идентификатор проекта](run-app-experiments-with-a-b-testing.md#terms) для эксперимента, который вы хотите получить.
     > [!NOTE]
-    > Проекта вы получаете идентификатор время [создания проекта в информационной панели центра разработки](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). Указанный ниже идентификатор проекта используется только в качестве примера.
+    > Проекта вы получаете идентификатор время [создания проекта в центре партнеров](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). Указанный ниже идентификатор проекта используется только в качестве примера.
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
 
@@ -70,7 +70,7 @@ ms.locfileid: "5941446"
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
 
-5. Используйте методы [GetBoolean](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean), [GetDouble](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble), [GetInt32](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32) или [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) объекта [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) для получения значений назначения варианта. В каждом методе первый параметр— это имя варианта, который требуется получить (имя, указанное вами на панели мониторинга в Центре разработки). Второй параметр— это значение по умолчанию, которое метод должен вернуть, если ему не удастся получить указанное значение из Центра разработки (например, если отсутствует подключение к сети), а кэшированная версия варианта недоступна.
+5. Используйте методы [GetBoolean](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean), [GetDouble](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble), [GetInt32](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32) или [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) объекта [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) для получения значений назначения варианта. В каждом методе первый параметр — это имя варианта, который требуется получить (это имя, указанное в центре партнеров). Второй параметр — это значение по умолчанию, которое метод должен вернуть, если это не удастся получить указанное значение из центра партнеров (например, если отсутствует подключение к сети), а кэшированная версия варианта недоступна.
 
     В следующем примере используется метод [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring), чтобы получить переменную с именем *buttonText*, а в качестве значения по умолчанию для варианта указано значение **Grey Button**.
 
@@ -80,17 +80,17 @@ ms.locfileid: "5941446"
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet6)]
 
-7. Наконец, запишите [событие просмотра](run-app-experiments-with-a-b-testing.md#terms) для эксперимента в журнал службы A/B-тестирования в Центре разработки. Инициализируйте поле ```logger``` как объект [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) и вызовите метод [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation). Передайте объект [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation), представляющий текущее назначение варианта (этот объект направляет контекст события в Центр разработки) и имя события просмотра для вашего эксперимента. Оно должно соответствовать имени события просмотра, которое вы ввели для эксперимента на информационной панели Центра разработки. Код должен записать в журнал событие просмотра, когда пользователь начинает просмотр варианта, являющегося частью эксперимента.
+7. И, наконец, журнал [событие просмотра](run-app-experiments-with-a-b-testing.md#terms) для вашего эксперимента в a / b-тестирования службы в центре партнеров. Инициализируйте поле ```logger``` как объект [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) и вызовите метод [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation). Передайте [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) объект, представляющий текущее назначение варианта (этот объект направляет контекст события в центр партнеров) и имя события просмотра для вашего эксперимента. Это должно соответствовать имени события просмотра, которое вы ввели для эксперимента в центре партнеров. Код должен записать в журнал событие просмотра, когда пользователь начинает просмотр варианта, являющегося частью эксперимента.
 
     В следующем примере показано, как записать в журнал событие просмотра с именем **userViewedButton**. В этом примере цель эксперимента — заставить пользователя нажать кнопку в приложении, чтобы записать событие просмотра в журнал после того, как приложение получит данные о вариантах (в данном случае это текст кнопки) и сделает их содержимым кнопки.
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet7)]
 
-## <a name="log-conversion-events-to-dev-center"></a>Запись в журнал событий преобразования в Центре разработки
+## <a name="log-conversion-events-to-partner-center"></a>Ведение журнала событий преобразования в центр партнеров
 
-Далее добавьте код, ведущий журнал [событий преобразования](run-app-experiments-with-a-b-testing.md#terms) в службе A/B-тестирования в Центре разработки. Код должен заносить в журнал событие преобразования, когда пользователь достигает цели эксперимента. В каждом случае требуемый код зависит от приложения, но есть несколько общих действий. Полный пример кода можно найти в разделе [Создание и проведение первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md).
+Добавьте следующий код, который записывает [события конверсии](run-app-experiments-with-a-b-testing.md#terms) A / b-тестирования службы в центре партнеров. Код должен заносить в журнал событие преобразования, когда пользователь достигает цели эксперимента. В каждом случае требуемый код зависит от приложения, но есть несколько общих действий. Полный пример кода можно найти в разделе [Создание и проведение первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md).
 
-1. В коде, который выполняется, когда пользователь достигает цель одной из задач эксперимента, повторно вызовите метод [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation) и передайте объект [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) и имя события преобразования для эксперимента. Оно должно совпадать с одним из имен событий преобразования, который вы ввели для эксперимента на информационной панели Центра разработки должны совпадать.
+1. В коде, который выполняется, когда пользователь достигает цель одной из задач эксперимента, повторно вызовите метод [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation) и передайте объект [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) и имя события преобразования для эксперимента. Это должно соответствовать одному из имен событий преобразования, который вы ввели для эксперимента в центре партнеров.
 
     В следующем примере в журнал записывается событие преобразования с именем **userClickedButton** из обработчика события **Click** для кнопки. В этом примере цель эксперимента — заставить пользователя нажать кнопку.
 
@@ -99,14 +99,14 @@ ms.locfileid: "5941446"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 После создания кода для проведения эксперимента в приложении можно выполнять следующие действия.
-1. [Определять эксперимент на панели мониторинга Центра разработки](define-your-experiment-in-the-dev-center-dashboard.md) (создание эксперимента, определяющего события просмотра и преобразования, а также уникальные варианты для A/B-теста).
-2. [Запускать эксперимент и управлять им на панели мониторинга Центра разработки](manage-your-experiment.md).
+1. [Определение эксперимента в центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md). (создание эксперимента, определяющего события просмотра и преобразования, а также уникальные варианты для A/B-теста).
+2. [Запускать эксперимент и управлять им в центре партнеров](manage-your-experiment.md).
 
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Смежные разделы
 
-* [Создание проекта и определение удаленных переменных на панели мониторинга Центра разработки](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [Определение эксперимента на панели мониторинга Центра разработки](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Управление экспериментом на панели мониторинга Центра разработки](manage-your-experiment.md)
+* [Создание проекта и определение удаленных переменных в центре партнеров](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [Определение эксперимента в центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Управление экспериментом в центре партнеров](manage-your-experiment.md)
 * [Создание и запуск первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [Выполнение экспериментов в приложении с использованием A/B-тестирования](run-app-experiments-with-a-b-testing.md)

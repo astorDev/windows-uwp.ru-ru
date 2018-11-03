@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, видимость, частная аудитория, доступен, доступен для обнаружения
 ms.localizationpriority: medium
 ms.openlocfilehash: ec6bc85c15ccf9926939c3bc2e208289c8dc4bcc
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5921211"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5984048"
 ---
 # <a name="choose-visibility-options"></a>Выбор параметров видимости
 

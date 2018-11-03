@@ -7,17 +7,17 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live, одновременное использование
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e982d7c5eb1ff8365d2aa527f75d181905784a0
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4506176dcd62a4699c57343c50dfc1b0e7a40b14
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927138"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5986156"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a>Получение данных параллельного использования Xbox Live
 
 
-Используйте этот метод в API аналитики для Microsoft Store, чтобы получить данные в режиме близости к реальному времени (с задержкой в 5-15минут) о среднем числе пользователей, играющих в вашу [игру с поддержкой Xbox Live](../xbox-live/index.md) в каждую минуту, час или день в течение заданного интервала времени. Эта информация также доступна в [отчете аналитики Xbox](../publish/xbox-analytics-report.md) на информационной панели Центра разработки для Windows.
+Используйте этот метод в API аналитики для Microsoft Store, чтобы получить данные в режиме близости к реальному времени (с задержкой в 5-15минут) о среднем числе пользователей, играющих в вашу [игру с поддержкой Xbox Live](../xbox-live/index.md) в каждую минуту, час или день в течение заданного интервала времени. Эта информация также доступна в [аналитический отчет Xbox](../publish/xbox-analytics-report.md) в центре партнеров.
 
 > [!IMPORTANT]
 > Этот метод поддерживает только игры для Xbox или игры, использующие службы Xbox Live. Эти игры, в том числе игры, опубликованные [партнерами Майкрософт](../xbox-live/developer-program-overview.md#microsoft-partners), и отправленные в рамках программы [ID@Xbox, должны пройти [процесс утверждения концепции](../gaming/concept-approval.md)](../xbox-live/developer-program-overview.md#id). В настоящее время этот метод не поддерживает игры, опубликованные в рамках программы [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
