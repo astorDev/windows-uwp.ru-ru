@@ -7,12 +7,12 @@ ms.date: 08/04/2017
 ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, конверсии приложения, канал
 ms.localizationpriority: medium
-ms.openlocfilehash: 60e166b70c6a2aacf20673b30461002f3aa61305
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: ecb5d5dfbfcbabbd3fa3004c84e2a1a5fff9f2d6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5947655"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5987337"
 ---
 # <a name="get-app-conversions-by-channel"></a>Получение конверсий приложения по каналу
 
@@ -21,7 +21,7 @@ ms.locfileid: "5947655"
 * *Конверсия* означает, что пользователь (выполнивший вход с помощью учетной записи Майкрософт) получил новую лицензию на ваше приложение (независимо от того, берете ли вы за это деньги или предоставляете лицензию бесплатно).
 * *Канал* — это способ, с использованием которого пользователь оказался на странице описания вашего приложения (например, через Магазин или [настраиваемую кампанию по продвижению приложения](../publish/create-a-custom-app-promotion-campaign.md)).
 
-Эта информация также доступна в [отчете о приобретениях](../publish/acquisitions-report.md#app-page-views-and-conversions-by-channel) на информационной панели Центра разработки для Windows.
+Эта информация также доступна в [отчете о приобретениях](../publish/acquisitions-report.md#app-page-views-and-conversions-by-channel) в центре партнеров.
 
 ## <a name="prerequisites"></a>Необходимые условия
 

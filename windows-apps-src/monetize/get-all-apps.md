@@ -1,24 +1,24 @@
 ---
 author: Xansky
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
-description: Используйте этот метод в API отправки в Microsoft Store для получения информации о всех приложениях, которые зарегистрированы в вашей учетной записи Центра разработки для Windows.
+description: Используйте этот метод в API отправки Microsoft Store для получения информации о всех приложениях, которые зарегистрированы в вашей учетной записи центра партнеров.
 title: Получение всех приложений
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: b0f7307e424cebcf52f56e17ad3630f6111bee21
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: a689f540cb939cea3549b6660f2daf9a70f9b1f6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926997"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988112"
 ---
 # <a name="get-all-apps"></a>Получение всех приложений
 
 
-Используйте этот метод в API отправки в Microsoft Store для получения данных для всех приложений, которые зарегистрированы в вашей учетной записи Центра разработки для Windows.
+Используйте этот метод в API отправки Microsoft Store для получения данных для всех приложений, которые зарегистрированы в вашей учетной записи центра партнеров.
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -127,7 +127,7 @@ Authorization: Bearer <your access token>
 | Код ошибки |  Описание   |
 |--------|------------------|
 | 404  | Приложения не найдены. |
-| 409  | Приложения используют функции информационной панели Центра разработки, которые [в настоящее время не поддерживаются API отправки в Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Приложения используют функции центра партнеров, которые [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## <a name="related-topics"></a>Статьи по теме
