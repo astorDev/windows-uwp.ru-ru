@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 31725c6cb9a966f02f8d1f8d62ca980e72c95326
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0ca4bf518837f072fb58fc0a152e08a82cf5dfad
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939747"
+ms.locfileid: "5989631"
 ---
 # <a name="guidelines-for-panning"></a>Руководство по функции сдвига
 
@@ -84,7 +84,7 @@ ms.locfileid: "5939747"
 > <strong>Windows 10 Fall Creators Update — изменения в поведении</strong>
 > </div>
 > По умолчанию вместо выбора текста активное перо теперь выполняет прокрутку и сдвиг в приложениях UWP (как сенсорный экран, сенсорная панель и неактивное перо).  
-> Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. Ссылка на справочные материалы по API представлена в разделе [класс ScrollViewer] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
+> Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. См. в разделе Справочник по API-интерфейс [Класс ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) подробные сведения.
 
 В зависимости от устройства ввода пользователь осуществляет сдвиг соответствующей области с помощью следующих элементов.
 

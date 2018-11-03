@@ -1,19 +1,19 @@
 ---
 author: Xansky
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
-description: Используйте этот метод в API отправки Microsoft Store для создания новой отправки тестового пакета для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
+description: Используйте этот метод в API отправки Microsoft Store для создания новой отправки тестового пакета для приложения, которое зарегистрировано в вашей учетной записи центра партнеров.
 title: Создание отправки тестового пакета
 ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание отправки тестируемой возможности
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b06f922de1de1dd9943d460672fab218b51a5eb
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4cdcc0f06820600523be111d67d3cad5e38b6ceb
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5925861"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5989982"
 ---
 # <a name="create-a-package-flight-submission"></a>Создание отправки тестового пакета
 
@@ -29,8 +29,8 @@ ms.locfileid: "5925861"
 Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
-* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
-* Создайте тестовый пакет для приложения в учетной записи Центра разработки. Это можно сделать на панели мониторинга Центра разработки или с помощью метода [создания тестового пакета](create-a-flight.md).
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия токена можно получить новый токен.
+* Создание тестового пакета для приложения. Это можно сделать в центре партнеров или можно сделать с помощью метода [создания тестового пакета](create-a-flight.md) .
 
 ## <a name="request"></a>Запрос
 
@@ -119,10 +119,10 @@ Authorization: Bearer <your access token>
 | Код ошибки |  Описание   |
 |--------|------------------|
 | 400  | Не удалось создать отправку тестового пакета. Недопустимый запрос. |
-| 409  | Не удалось создать отправку тестового пакета из-за текущего состояния приложения или в связи с тем, что приложение использует компонент панели мониторинга Центра разработки, [который в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | Не удалось создать отправку тестового пакета из-за текущего состояния приложения или приложение использует компонент центра партнеров, [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 * [Создание отправок и управление ими с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Управление отправками тестового пакета](manage-flight-submissions.md)

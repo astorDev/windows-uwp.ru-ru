@@ -14,12 +14,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f54985d446c0c95f4ee0b917a1d91e546e359483
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3594697292d6dfe9435036b838a0ba4bd2dbfc05
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5928773"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5993292"
 ---
 # <a name="lists"></a>Списки
 
@@ -39,7 +39,7 @@ ms.locfileid: "5928773"
 > <strong>Windows 10 Fall Creators Update — изменения в поведении</strong>
 > </div>
 > По умолчанию вместо выбора активное перо теперь прокручивает или сдвигает список в приложениях UWP (как сенсорный экран, сенсорная панель и неактивное перо).
-> Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. Ссылка на справочные материалы по API представлена в разделе [класс ScrollViewer] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
+> Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. См. в разделе Справочник по API-интерфейс [Класс ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) подробные сведения.
 
 ## <a name="list-views"></a>Представления списка
 

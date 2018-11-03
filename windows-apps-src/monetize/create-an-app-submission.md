@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
-description: Используйте этот метод в API отправки Microsoft Store для создания новой отправки для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows.
+description: Используйте этот метод в API отправки Microsoft Store для создания новой отправки для приложения, которое зарегистрировано в вашей учетной записи центра партнеров.
 title: Создание отправки приложения
 ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание отправки приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 740e65d79636c9e5451e68fa84ce2eae4e3252c6
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: fd97efca42049fd9f5adc4d051688074d91132fa
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935697"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992068"
 ---
 # <a name="create-an-app-submission"></a>Создание отправки приложения
 
-Используйте этот метод в API отправки Microsoft Store для создания новой отправки для приложения, которое зарегистрировано в вашей учетной записи Центра разработки для Windows. После успешного создания новой отправки с помощью этого метода [обновите отправку](update-an-app-submission.md), чтобы внести любые необходимые изменения в данные отправки, а затем [зафиксируйте отправку](commit-an-app-submission.md) для внедрения и публикации.
+Используйте этот метод в API отправки Microsoft Store для создания новой отправки для приложения, которое зарегистрировано в вашей учетной записи центра партнеров. После успешного создания новой отправки с помощью этого метода [обновите отправку](update-an-app-submission.md), чтобы внести любые необходимые изменения в данные отправки, а затем [зафиксируйте отправку](commit-an-app-submission.md) для внедрения и публикации.
 
 Дополнительные сведения об использовании этого метода в процессе создания отправки приложения с помощью API отправки Microsoft Store см. в разделе [Управление отправками приложений](manage-app-submissions.md).
 
@@ -188,7 +188,7 @@ Authorization: Bearer <your access token>
 | Код ошибки |  Описание   |
 |--------|------------------|
 | 400  | Не удалось создать отправку. Недопустимый запрос. |
-| 409  | Не удалось создать отправку из-за текущего состояния приложения или в связи с тем, что приложение использует компонент панели мониторинга Центра разработки, [который в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | Не удалось создать отправку из-за текущего состояния приложения или приложение использует компонент центра партнеров, [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Статьи по теме

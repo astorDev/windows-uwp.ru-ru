@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 50ac9fcf984fa6c4ebad7e480ebfc2d002256e26
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938454"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995845"
 ---
 # <a name="networking-basics"></a>Основы работы в сети
 Ниже приведены действия, которые необходимо выполнить для любого приложения, подключаемого к сети.
