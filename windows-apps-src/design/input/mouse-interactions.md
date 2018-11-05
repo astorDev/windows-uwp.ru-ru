@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b79edc5499343498801081dd00554128c3b57eae
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 3ec0f99f069950776ab934c82bd3197bdd6c9dd6
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970171"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6032928"
 ---
 # <a name="mouse-interactions"></a>Взаимодействие с помощью мыши
 
@@ -98,14 +98,14 @@ ms.locfileid: "5970171"
 
 Используйте события [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), чтобы применять основные возможности ввода без написания кода для каждого устройства ввода с указателем. Тем не менее при желании можно воспользоваться преимуществами особых возможностей каждого устройства (например, событиями колесика мыши), используя события указателя, жестов и манипуляции этого объекта.
 
-**Примеры:** См. в разделе этой функциональности в наших [примеров приложений](http://go.microsoft.com/fwlink/p/?LinkID=264996).
+**Примеры:** См. в разделе этой функциональности в наших [примеров приложений](https://go.microsoft.com/fwlink/p/?LinkID=264996).
 
 
-- [Ввод: пример возможностей устройства](http://go.microsoft.com/fwlink/p/?linkid=231530)
+- [Ввод: пример возможностей устройства](https://go.microsoft.com/fwlink/p/?linkid=231530)
 
-- [Пример ввода](http://go.microsoft.com/fwlink/p/?linkid=226855)
+- [Пример ввода](https://go.microsoft.com/fwlink/p/?linkid=226855)
 
-- [Ввод: жесты и манипуляции с помощью GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+- [Ввод: жесты и манипуляции с помощью GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
 
 ## <a name="guidelines-for-visual-feedback"></a>Руководство по визуальной обратной связи
 
@@ -141,16 +141,16 @@ ms.locfileid: "5970171"
 * [Распознавание устройств ввода](identify-input-devices.md)
 
 **Примеры**
-* [Пример базового ввода](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Пример ввода с малой задержкой](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Пример режима взаимодействия с пользователем](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Пример визуальных элементов фокуса](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Пример базового ввода](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Пример ввода с малой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Пример режима взаимодействия с пользователем](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Примеры архивов**
-* [Ввод: пример возможностей устройства](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Ввод: пример событий пользовательского ввода на XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Пример прокрутки, сдвига и масштабирования на XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Ввод: жесты и манипуляции с помощью GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Ввод: пример возможностей устройства](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Ввод: пример событий пользовательского ввода на XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Пример прокрутки, сдвига и масштабирования на XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Ввод: жесты и манипуляции с помощью GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
  
 
