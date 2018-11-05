@@ -9,11 +9,11 @@ ms.topic: article
 keywords: начало работы, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: 0193209c1a603bb253b07b084dd62d29c91009a3
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5997613"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6051909"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Начало работы с приложениями для Windows 10 
  

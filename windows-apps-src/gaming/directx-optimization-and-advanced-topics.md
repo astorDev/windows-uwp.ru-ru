@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, игры, DirectX, оптимизировать, множественная дискретизация, цепочки буферов
 ms.localizationpriority: medium
 ms.openlocfilehash: e1a9b16dcf8c40c2b1db4af172d97009563e677a
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5971013"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6025987"
 ---
 # <a name="optimization-and-advanced-topics-for-directx-games"></a>Оптимизация и более сложные темы, касающиеся игр DirectX
 

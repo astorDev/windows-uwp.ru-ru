@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: c87e2f06-339d-4413-b585-172752964f56
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c97b6b5eca82d309a4b65a914041adeb1e782db
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5968559"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6026390"
 ---
 # <a name="instructional-ui-guidelines"></a>Руководства по инструктивному пользовательскому интерфейсу
 

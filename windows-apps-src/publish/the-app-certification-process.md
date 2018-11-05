@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, публикация, предварительная обработка, сертификация, выпуск, Ожидание, отправка, публикация, состояние, время
 ms.localizationpriority: medium
 ms.openlocfilehash: 161a95141511bc00b1d1a707e893d85dccfa8409
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5973809"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6024612"
 ---
 # <a name="the-app-certification-process"></a>Процесс сертификации приложения
 
