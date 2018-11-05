@@ -10,12 +10,12 @@ ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c0bc236fd3e9e37a759f83e3f24bfcad4817f068
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 32d8e7d858ff28a6ef6a9af517e0a584c6106cd5
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5974992"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6039058"
 ---
 # <a name="selecting-text-and-images"></a>Выделение текста и изображений
 
@@ -114,20 +114,20 @@ Windowsrecognizes два возможных состояния взаимоде�
 * [Настраиваемые взаимодействия с пользователем](https://msdn.microsoft.com/library/windows/apps/mt185599)
 
 **Примеры**
-* [Пример базового ввода](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Пример ввода с малой задержкой](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Пример режима взаимодействия с пользователем](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Пример визуальных элементов фокуса](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Пример базового ввода](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Пример ввода с малой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Пример режима взаимодействия с пользователем](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Примеры архива**
-* [Ввод: пример событий пользовательского ввода на XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Ввод: пример возможностей устройств](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Ввод: пример тестирования сенсорного ввода](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [Пример прокрутки, сдвига и масштабирования на XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Ввод: пример упрощенного рукописного ввода](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Ввод: пример жестов в Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Ввод: пример управления и жестов (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Пример сенсорного ввода в DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Ввод: пример событий пользовательского ввода на XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Ввод: пример возможностей устройств](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Ввод: пример тестирования сенсорного ввода](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [Пример прокрутки, сдвига и масштабирования на XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Ввод: пример упрощенного рукописного ввода](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Ввод: пример жестов в Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Ввод: пример управления и жестов (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [Пример сенсорного ввода в DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
