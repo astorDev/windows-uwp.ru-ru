@@ -9,11 +9,11 @@ keywords: windows 10, uwp, xbox one, инструменты
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ms.localizationpriority: medium
 ms.openlocfilehash: 71fd9f3ad1c3fcf02420502692518310b896f52a
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5988673"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6031376"
 ---
 # <a name="introduction-to-xbox-one-tools"></a>Вводные сведения об инструментах Xbox One
 
