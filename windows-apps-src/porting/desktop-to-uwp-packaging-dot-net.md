@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fb6a552686e35f319d9624ba4c4663dad966f23
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5982279"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6029743"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Упаковки классического приложения с помощью Visual Studio
 

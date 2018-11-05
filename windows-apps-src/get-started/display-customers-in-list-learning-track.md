@@ -8,11 +8,11 @@ ms.topic: article
 keywords: начало работы, uwp, windows 10, обучающий курс, привязка данных, список
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e58231d644616a088eb06f24a2465c240e10c16
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5982322"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6028080"
 ---
 # <a name="display-customers-in-a-list"></a>Отображение пользователей в виде списка
 
