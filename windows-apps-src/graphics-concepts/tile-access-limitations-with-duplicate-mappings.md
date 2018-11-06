@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ce8f71f126aa536f4e235c58f9f5c5ddf13654df
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5993974"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6051273"
 ---
 # <a name="tile-access-limitations-with-duplicate-mappings"></a>Ограничения доступа к плитке с повторяющимися сопоставлениями
 
