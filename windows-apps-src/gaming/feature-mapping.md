@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx 9, directx 11, перенос
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dcf1749f1e7db4d514466d6a753d6f8cace5713
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5975919"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6048105"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>Сопоставление компонентов DirectX9 и API DirectX11
 

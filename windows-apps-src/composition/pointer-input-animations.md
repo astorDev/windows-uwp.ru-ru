@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, анимация
 ms.localizationpriority: medium
 ms.openlocfilehash: b69899761e1c4a139fd2b15d6810440df5192487
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5973403"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6048853"
 ---
 # <a name="pointer-based-animations"></a>Анимации на основе указателей
 

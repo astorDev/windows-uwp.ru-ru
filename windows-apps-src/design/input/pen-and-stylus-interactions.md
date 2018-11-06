@@ -10,12 +10,12 @@ ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d04ea3506fc909b115ba9aab397ded9e4464479
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: a9a9dd4347cc682f384c2d408d30820acf76ce34
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5982139"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047509"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Взаимодействие с пером и Windows Ink в приложениях UWP
 
@@ -52,7 +52,7 @@ ms.locfileid: "5982139"
 | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | Элемент управления платформы XAMLUI, который по умолчанию получает и отображает все входные данные от пера как росчерк пера или росчерк стирания.<br/>Дополнительные сведения о том, как использовать InkCanvas, см. в разделах [Распознавание росчерков пера Windows Ink как текста](convert-ink-to-text.md) и [Хранение и извлечение данных движения пера Windows Ink](save-and-load-ink.md). |
 | [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | Объект кода программной части, создаваемый вместе с элементом управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (предоставляется свойством [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)). Этот объект обеспечивает все возможности рукописного ввода по умолчанию, предоставляемые элементом **InkCanvas**, вместе с полным набором API для дополнительной настройки и персонализации.<br/>Дополнительные сведения о том, как использовать InkPresenter, см. в разделах [Распознавание росчерков пера Windows Ink как текста](convert-ink-to-text.md) и [Хранение и извлечение данных движения пера Windows Ink](save-and-load-ink.md). |
 | [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Элемент управления платформы XAMLUI, содержащий и расширяемую коллекцию кнопок, которые активируют функции рукописного ввода в связанных [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas).<br/>Дополнительные сведения о том, как использовать InkToolbar, см. в разделе [Добавление InkToolbar в приложение универсальной платформы Windows (UWP) для рукописного ввода](ink-toolbar.md). |
-| [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | Позволяет преобразовать росчерки пера в специальный контекст устройства Direct2D универсального приложения для Windows вместо элемента управления по умолчанию [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). Это делает возможным полную настройку рукописного ввода.<br/>Дополнительные сведения см. в разделе [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314). |
+| [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | Позволяет преобразовать росчерки пера в специальный контекст устройства Direct2D универсального приложения для Windows вместо элемента управления по умолчанию [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). Это делает возможным полную настройку рукописного ввода.<br/>Дополнительные сведения см. в разделе [Сложный пример рукописного ввода](https://go.microsoft.com/fwlink/p/?LinkID=620314). |
 
 ## <a name="basic-inking-with-inkcanvas"></a>Базовый рукописный ввод с использованием InkCanvas
 
@@ -456,7 +456,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 Вы также можете выполнить пользовательскую сушку данных рукописного ввода для [SwapChainPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.swapchainpanel), однако синхронизация с потоком пользовательского интерфейса не гарантируется, и может возникнуть задержка между тем, когда данные рукописного ввода отображаются в SwapChainPanel и тем, когда данные рукописного ввода удаляются из InkCanvas.
 
-Полный пример этой функциональности см. в статье [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314).
+Полный пример этой функциональности см. в статье [Сложный пример рукописного ввода](https://go.microsoft.com/fwlink/p/?LinkID=620314).
 
 > [!NOTE]
 > Пользовательская сушка и [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
@@ -484,18 +484,18 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 **Примеры**
 * [Руководство по началу работы: поддержка рукописного ввода в приложении UWP](https://aka.ms/appsample-ink)
-* [Простой пример рукописного ввода (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Сложный пример рукописного ввода (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Пример рукописного ввода (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Простой пример рукописного ввода (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Сложный пример рукописного ввода (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Пример рукописного ввода (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [Пример раскраски](https://aka.ms/cpubsample-coloringbook)
 * [Пример семейных заметок](https://aka.ms/cpubsample-familynotessample)
-* [Пример базового ввода](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Пример ввода с малой задержкой](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Пример режима взаимодействия с пользователем](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Пример визуальных элементов фокуса](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Пример базового ввода](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Пример ввода с малой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Пример режима взаимодействия с пользователем](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Примеры архивов**
-* [Ввод: пример возможностей устройства](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Ввод: пример событий пользовательского ввода на XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Пример прокрутки, сдвига и масштабирования на XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Ввод: жесты и манипуляции с помощью GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Ввод: пример возможностей устройства](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Ввод: пример событий пользовательского ввода на XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Пример прокрутки, сдвига и масштабирования на XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Ввод: жесты и манипуляции с помощью GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
