@@ -8,17 +8,17 @@ ms.date: 04/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 53ac8dff5895522c24c1645e4db95c90d575df95
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: f7b4addf2a7bdc2d93cbcf64f13a640a4ef5b12a
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5982169"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6046626"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a>Обнаружение и реагирование на изменения состояния звука
 Начиная с Windows 10 версии 1803 ваше приложение может определять, когда система снижает или отключает уровень звукового потока, который использует ваше приложение. Вы можете получать уведомления для захвата и воспроизведения потоков для определенного звукового устройства и категории аудио или для объекта [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer), который ваше приложение использует для воспроизведения мультимедиа. Например, система может снизить уровень звука, если включается будильник. Система отключает звук приложения, когда оно переходит в фоновый режим, если приложение не объявило возможность *backgroundMediaPlayback* в манифесте приложения. 
 
-Шаблон обработки изменения состояния звука одинаков для всех поддерживаемых звуковых потоков. Сначала создайте экземпляр класса [**AudioStateMonitor**](https://docs.microsoft.comuwp/api/windows.media.audio.audiostatemonitor). В следующем примере приложение использует класс [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) для записи звука для игрового чата. Фабричный метод вызывается для получения монитора состояния звука, связанного с потоком аудиозаписи игрового чата устройства связи по умолчанию.  Затем регистрируется обработчик события [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged), который активируется при изменении уровня звука связанного потока системой.
+Шаблон обработки изменения состояния звука одинаков для всех поддерживаемых звуковых потоков. Сначала создайте экземпляр класса [**AudioStateMonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor). В следующем примере приложение использует класс [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) для записи звука для игрового чата. Фабричный метод вызывается для получения монитора состояния звука, связанного с потоком аудиозаписи игрового чата устройства связи по умолчанию.  Затем регистрируется обработчик события [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged), который активируется при изменении уровня звука связанного потока системой.
 
 [!code-cs[DeviceIdCategoryVars](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeviceIdCategoryVars)]
 

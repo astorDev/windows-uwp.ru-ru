@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, графика, диагностика, средства, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: aa1c14d15a966f23b86753cf8e5e62e067d10310
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/05/2018
-ms.locfileid: "5984012"
+ms.locfileid: "6040620"
 ---
 # <a name="graphics-diagnostics-tools"></a>Средства диагностики графики
 

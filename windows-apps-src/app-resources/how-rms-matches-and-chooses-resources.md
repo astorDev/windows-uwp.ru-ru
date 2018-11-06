@@ -8,12 +8,12 @@ ms.date: 10/23/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: d31c9fd3a6f8f57f3e78d88d3ad754d4848a9cad
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: c7576f98045bce3bcfcee093aa8d61059354d45a
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996859"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6045281"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>Как система управления ресурсами сопоставляет и выбирает ресурсы
 В момент запроса ресурса текущему контексту ресурса может в той или иной степени соответствовать несколько кандидатов. Система управления ресурсами анализирует все кандидаты и выбирает из них лучший, который будет возвращен. Для ранжирования всех кандидатов учитываются все квалификаторы.
@@ -41,7 +41,7 @@ ms.locfileid: "5996859"
 ## <a name="example-of-choosing-a-resource-candidate"></a>Пример выбора потенциального ресурса
 Рассмотрим эти файлы.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -53,7 +53,7 @@ de/images/logo.jpg
 
 И предположим, что в текущем контексте действуют следующие параметры.
 
-```
+```console
 Application language: en-US; fr-FR;
 Scale: 400
 Contrast: Standard
@@ -61,7 +61,7 @@ Contrast: Standard
 
 Система управления ресурсами отвергает три файла, поскольку высокая контрастность и немецкий язык не соответствуют контексту, определенному данными установками. Остаются эти кандидаты.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -70,7 +70,7 @@ fr/images/logo.scale-100.jpg
 
 Для оставшихся кандидатов система управления ресурсами использует квалификатор с наивысшим приоритетом контекста, которым является язык. Англоязычные ресурсы ближе, чем ресурсы на французском, поскольку в параметрах английский указан перед французским.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -78,13 +78,13 @@ en/images/logo.scale-100.jpg
 
 Затем система управления ресурсами использует следующий по приоритету квалификатор — масштаб. И вот возвращаемый ресурс.
 
-```
+```console
 en/images/logo.scale-400.jpg
 ```
 
 Можно использовать особый метод [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) для возвращения всех потенциальных ресурсов в порядке их соответствия контекстным установкам. В рассмотренном нами примере **ResolveAll** возвращает кандидаты в указанном порядке.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -94,7 +94,7 @@ fr/images/logo.scale-100.jpg
 ## <a name="example-of-producing-a-fallback-choice"></a>Пример выбора запасного варианта
 Рассмотрим эти файлы.
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -105,7 +105,7 @@ de/images/contrast-standard/logo.jpg
 
 И предположим, что в текущем контексте действуют следующие параметры.
 
-```
+```console
 User language: de-DE;
 Scale: 400
 Contrast: High
@@ -113,7 +113,7 @@ Contrast: High
 
 Отвергаются все файлы из-за несоответствия контексту. Поэтому мы входим в процедуру по умолчанию, где параметры по умолчанию (см. раздел [Компиляция ресурсов вручную с помощью MakePRI.exe](compile-resources-manually-with-makepri.md)) при создании PRI-файла были следующими:
 
-```
+```console
 Language: fr-FR;
 Scale: 400
 Contrast: Standard
@@ -121,7 +121,7 @@ Contrast: Standard
 
 В результате остаются все ресурсы, соответствующие либо текущему пользователю, либо параметрам по умолчанию.
 
-```
+```console
 fr/images/contrast-standard/logo.scale-400.jpg
 fr/images/contrast-standard/logo.scale-100.jpg
 de/images/contrast-standard/logo.jpg
@@ -129,7 +129,7 @@ de/images/contrast-standard/logo.jpg
 
 Система управления ресурсами использует квалификатор контекста наивысшего приоритета (язык) и возвращает поименованные ресурсы с наивысшими результатами.
 
-```
+```console
 de/images/contrast-standard/logo.jpg
 ```
 

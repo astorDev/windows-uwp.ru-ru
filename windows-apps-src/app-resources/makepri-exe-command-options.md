@@ -8,12 +8,12 @@ ms.date: 04/10/2018
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: f5d47bbe87e9319def2e8c6500fd954f2a291e18
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: c777996dceeb443c25fcf526e3a029fca00047c1
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996341"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6043487"
 ---
 # <a name="makepriexe-command-line-options"></a>Параметры командной строки MakePRI.exe
 
@@ -28,7 +28,7 @@ ms.locfileid: "5996341"
 
 ## <a name="makepri-commands"></a>Команды MakePri
 
-```
+```console
 C:\>makepri help
 
 Usage:
@@ -67,7 +67,7 @@ Help:
 
 Команда `createconfig` создает новый инициализированный PRI файл конфигурации, определяющий заданные вами значения по умолчанию для квалификатора. Запустите `MakePri.exe createconfig /?`, чтобы увидеть подробную справку для этой команды.
 
-```
+```console
 C:\>makepri createconfig /?
 
 Usage:
@@ -119,7 +119,7 @@ Help:
 > [!NOTE]
 > Пакет ресурсов без схемы был создан с помощью параметра *omitSchemaFromResourcePacks* в PRI-файле конфигурации. Чтобы создать дамп пакета ресурсов без схемы, используйте параметр `/es <main_package_PRI_file>`. Если основной файл не указан, появится сообщение об ошибке "*Файл resources.pri в пакете поврежден, что привело к сбою шифрования (ошибка PRI222: 0xdef0000f— произошла неизвестная ошибка)* ".
 
-```
+```console
 C:\>makepri dump /?
 
 Usage:
@@ -168,7 +168,7 @@ Help:
 
 Команда `new` создает новый файл PRI путем индексирования файлов в проекте согласно указаниям в файле конфигурации. Запустите `MakePri.exe new /?`, чтобы увидеть подробную справку для этой команды.
 
-```
+```console
 C:\>makepri new /?
 
 Usage:
@@ -240,7 +240,7 @@ Help:
 
 Команда `resourcepack` создает новый файл PRI путем индексирования файлов в проекте согласно указаниям в файле конфигурации. Файл PRI пакета ресурсов содержит только дополнительные варианты ресурсов, уже заданных в существующем файле PRI. Запустите `MakePri.exe resourcepack /?`, чтобы увидеть подробную справку для этой команды.
 
-```
+```console
 C:\>makepri resourcepack /?
 
 Usage:
@@ -307,7 +307,7 @@ Help:
 
 Команда `versioned` создает версионный файл PRI путем индексирования файлов в проекте согласно указаниям в файле конфигурации. Запустите `MakePri.exe versioned /?`, чтобы увидеть подробную справку для этой команды.
 
-```
+```console
 C:\>makepri versioned /?
 
 Usage:
@@ -412,7 +412,7 @@ MakePri может включать сведения, относящиеся к 
 
 Для `resourcepack` и `versioned` вместо предоставления файла PRI как входного параметра для /IndexFile(if) можно предоставить файл схемы.
 
-```
+```console
 /IndexFile(if) <FILEPATH>
 ```
 
@@ -422,7 +422,7 @@ MakePri может включать сведения, относящиеся к 
 
 При использовании параметра параметры индекса (/ операций ввода-вывода) с `new`, `resourcepack`, и `versioned` указать параметры, которые предоставляют подробные контроль над поведением индексаторы для ресурса. По умолчанию отключены параметры индекса.
 
-```
+```console
 /IndexOptions(io) <OPTIONS>
 ```
 
@@ -435,25 +435,25 @@ MakePri может включать сведения, относящиеся к 
 
 Используйте параметр файла сопоставления (/mf) с командами `new`, `resourcepack` и `versioned` для создания файла сопоставления. Средство [MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) использует файл сопоставления для создания пакетов приложений.
 
-```
+```console
 /MappingFile(mf) <MAPPINGFILETYPE>
 ```
 
 **MAPPINGFILETYPE** — это токен, который указывает формат файла сопоставления. Поддерживается только формат `appx`.
 
-```
+```console
 /mf appx
 ```
 
 Это пример содержимого главного файла сопоставления.
 
-```
+```console
 "ResourceDimensions"                   "language-de-de"
 ```
 
 А это пример содержимого файла сопоставления пакета ресурсов.
 
-```
+```console
 "ResourceId"                           "Resources184.la5decaf08"
 "ResourceDimensions"                   "language-de-de"
 ```
@@ -462,7 +462,7 @@ MakePri может включать сведения, относящиеся к 
 
 Если создаются пакеты ресурсов, сводка вывода из MakePRI.exe будет более подробной. Вот пример.
 
-```
+```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack
 Language Qualifiers: fr-FR, de-DE
 
@@ -489,7 +489,7 @@ Successfully Completed
 
 Если параметр перезаписи (/o) не указан, а указанный выходной файл уже существует, MakePri.exe требует подтверждения перед перезаписью.
 
-```
+```console
 Following file(s) already exist at output location:
 <file(s)>
 Overwrite these file(s)? [Y]es (any other key to cancel):
@@ -515,7 +515,7 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 Для `resourcepack` и `versioned` вместо предоставления файла PRI как входного параметра для /IndexFile(if) можно предоставить файл схемы.
 
-```
+```console
 /SchemaFile(sf) <FILEPATH>
 ```
 
@@ -545,7 +545,7 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 Параметр основной версии (/vma) (для команды `new`) считается устаревшим, и его использование приведет к появлению этого предупреждающего сообщения.
 
-```
+```console
 'VersionMajor (vma)' input parameter has been deprecated. Please specify major version in the configuration file using 'majorVersion' attribute on 'resources' node.
 ```
 
