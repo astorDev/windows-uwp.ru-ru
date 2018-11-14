@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e76d3d517be73417777eb31dfc3994f92186522
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044671"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6274657"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Улучшите свое классическое приложение для Windows 10
 
@@ -167,7 +167,7 @@ void UWP::ShowToast()
 
 ![Конфигурация сборки](images/desktop-to-uwp/build-config.png)
 
-Для этой конфигурации сборки создайте константу для определения кода, который будет вызывать API среды выполнения Windows.  
+Для этой конфигурации сборки создайте константу для идентификации код, который вызывает API среды выполнения Windows.  
 
 Для проектов на основе .NET эта константа называется **Константой условной компиляции**.
 

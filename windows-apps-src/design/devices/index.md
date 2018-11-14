@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f5e6c96c67052f1933bf4fb69988ae1eae27ee0
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6672282"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6466044"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>Азбука устройств для приложений универсальной платформы Windows (UWP)
 

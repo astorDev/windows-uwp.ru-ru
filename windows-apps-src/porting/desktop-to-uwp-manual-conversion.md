@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b063bf5997bbb1fc082c8d9fefcf0f435262bf1
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: b309064c0110084d5445e8680d65f9935a3f69fe
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6445183"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6654408"
 ---
 # <a name="package-a-desktop-application-manually"></a>Упаковки классического приложения вручную
 
@@ -85,7 +85,7 @@ ms.locfileid: "6445183"
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> Если вы зарезервировали имя приложения в магазине Windows, можно получить имя и издателя с помощью информационной панели центра разработки для Windows. Если вы планируете неопубликованного приложения на другие системы, вы можете предоставить для этих атрибутов собственные имена при условии имя издателя, выбранного вами соответствует имени в сертификате, который используется для подписания приложения.
+> Если вы зарезервировали имя приложения в Microsoft Store, можно получить имя и издателя с помощью [Центра партнеров](https://partner.microsoft.com/dashboard). Если вы планируете неопубликованного приложения на другие системы, вы можете предоставить для этих атрибутов собственные имена при условии имя издателя, выбранного вами соответствует имени в сертификате, который используется для подписания приложения.
 
 ### <a name="properties"></a>Свойства
 

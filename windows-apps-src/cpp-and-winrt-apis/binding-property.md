@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, свойство
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b7c20e0e6cf56afa7e2193739401bf49e0403a2
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6467231"
+ms.locfileid: "6654988"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Элементы управления XAML; привязка к свойству C++/WinRT
 Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя *. В этом разделе показано, как реализовать наблюдаемым свойствам в [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)и привязать к ним элементы управления XAML.
@@ -208,7 +208,7 @@ namespace Bookstore
 
 Сохраните файл. Проект не будет создан до завершения в данный момент, но теперь построение является полезным очередь, необходимо сделать обязательно, поскольку она заново создает файлы исходного кода, в которых реализован класс среды выполнения **MainPage** (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` и `MainPage.cpp`). Таким образом и перейти к построить сейчас. Ошибка сборки, которую можно собрать см. на этом этапе **«MainViewModel»: не является членом «winrt::Bookstore::implementation::MainPage»**.
 
-Если вы опустите включения из `BookstoreViewModel.idl` (см. список `MainPage.idl` выше), отобразится ошибка **ожидает \ < вблизи «MainViewModel»**. Еще один совет — убедиться, оставьте все типы в пространстве имен: пространство имен, которое отображается в описаниях кода.
+Если вы опустите включения из `BookstoreViewModel.idl` (см. список `MainPage.idl` выше), отобразится ошибка, **ожидает \< рядом с «MainViewModel»**. Еще один совет — убедиться, оставьте все типы в пространстве имен: пространство имен, которое отображается в описаниях кода.
 
 Чтобы устранить ошибки, мы ожидаем, что см. в разделе, теперь необходимо скопируйте заглушки доступа для свойства **MainViewModel** из созданных файлов (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` и `MainPage.cpp`) и в `\Bookstore\Bookstore\MainPage.h` и `MainPage.cpp`.
 

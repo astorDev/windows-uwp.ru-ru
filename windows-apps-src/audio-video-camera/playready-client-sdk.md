@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 773216dc392f7bb234e232f3dd3e7c2190a22de1
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 79c1cd5b83c013bdf601022aa7fec9e661b80857
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6190756"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6660481"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -513,10 +513,10 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
 
 ## <a name="use-playready-drm-on-xbox-one"></a>Использование технологии PlayReady DRM на Xbox One
 
-Чтобы использовать технологию управления цифровыми правами PlayReady DRM в приложении UWP на Xbox One, необходимо сначала зарегистрировать учетную запись Центра разработки, которую вы используете для публикации приложения, чтобы авторизовать ее для использования PlayReady. Это можно сделать одним из двух способов:
+Чтобы использовать PlayReady DRM в приложении UWP на Xbox One, необходимо сначала зарегистрировать учетную запись [Центра партнеров](https://partner.microsoft.com/dashboard) , которую вы используете для публикации приложения для авторизации для использования PlayReady. Это можно сделать одним из двух способов:
 
 * Попросить ваше контактное лицо в корпорации Майкрософт запросить для вас разрешение.
-* Подать заявку на авторизацию, отправив свою учетную запись в Центре разработки и название компании по адресу [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com).
+* Подать заявку на авторизацию, отправив свою центра партнеров учетная запись и название компании для [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com).
 
 После получения авторизации вам нужно будет добавить в манифест приложения дополнительный элемент `<DeviceCapability>`. Это необходимо сделать вручную, поскольку в настоящее время в конструкторе манифеста приложения нет соответствующего параметра. Чтобы настроить эту оснастку, выполните указанные ниже действия:
 
