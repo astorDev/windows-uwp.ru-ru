@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, ввод, рукоятка управления полетом
 ms.localizationpriority: medium
 ms.openlocfilehash: ebe7695b3f16271f3adedae658c0d62d38d7c078
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6200571"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6269800"
 ---
 # <a name="flight-stick"></a>Рукоятка управления полетом
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, карты, расположение, службы карт
 ms.localizationpriority: medium
 ms.openlocfilehash: 17d123b440b6ec7892c84a9a6bca9177799ad0fb
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6272741"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6660172"
 ---
 # <a name="maps-and-location-overview"></a>Обзор карт и расположения
 

@@ -6,14 +6,14 @@ author: PatrickFarley
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасность
+keywords: Windows 10, uwp, безопасности
 ms.localizationpriority: medium
 ms.openlocfilehash: 839d44c992977fdad8863203b84116b2faeba76d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040630"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6268391"
 ---
 # <a name="create-a-windows-hello-login-service"></a>Создание службы входа Windows Hello
 

@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2087debd758a24b50ac1885cb68d4b97ea2898fd
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6203879"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6645907"
 ---
 # <a name="optical-zoom-and-resizing"></a>Визуальное масштабирование и изменение размера
 

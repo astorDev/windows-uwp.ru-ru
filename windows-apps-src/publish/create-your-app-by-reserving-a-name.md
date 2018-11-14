@@ -9,11 +9,11 @@ ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a94a07eb80e0b181e49a74beba7690d8a57bfaa6
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6266649"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6445356"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>Создание приложения посредством резервирования имени
 

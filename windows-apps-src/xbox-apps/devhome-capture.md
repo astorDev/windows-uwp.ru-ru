@@ -10,17 +10,17 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-capture.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 1866c4f94c5ef681080ae2a5658c6edba11ec44b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024438"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6452610"
 ---
 # <a name="media-capture-page-dev-home"></a>Страница (Dev Home) записи мультимедиа
    
   
-Страницу **захвата мультимедиа** главную страницу захват видео заголовок, который в настоящее время запущено на консоли.   
- ![Страница главную страницу записи](images/devhome_capture.png)   
+Страницу **захвата мультимедиа** Dev Home захват видео заголовок, который в настоящее время запущено на консоли.   
+ ![Захват главную страницу](images/devhome_capture.png)   
   
 Страница **захвата мультимедиа** содержит следующие области:   
  

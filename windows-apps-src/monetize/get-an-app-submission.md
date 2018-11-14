@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправка приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 66c220e76cd032f4cf36f0d4ae88c01485f31163
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6455281"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6663260"
 ---
 # <a name="get-an-app-submission"></a>Получение отправки приложения
 
