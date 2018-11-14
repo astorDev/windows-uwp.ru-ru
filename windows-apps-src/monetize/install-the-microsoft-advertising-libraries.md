@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные объявления, установка, SDK, рекламная библиотека
 ms.localizationpriority: medium
 ms.openlocfilehash: c08acaf3f5d4ddf59121e68782c0e8b78e8c358e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046458"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6255490"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Установка Microsoft Advertising SDK
 

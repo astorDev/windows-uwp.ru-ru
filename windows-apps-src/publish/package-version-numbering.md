@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bd34c285a74c0fbe7e51f1f3fa53cdde33733dd
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6155600"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6469504"
 ---
 # <a name="package-version-numbering"></a>Нумерация версий пакета
 

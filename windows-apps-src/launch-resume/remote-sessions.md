@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, подключенных устройств, удаленными системами, Рим, project rome
 ms.localizationpriority: medium
 ms.openlocfilehash: 0606c3b1b0b36dadb888166310f8b347d40a480a
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6262339"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6464708"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>Подключение устройств с помощью удаленных сеансов
 

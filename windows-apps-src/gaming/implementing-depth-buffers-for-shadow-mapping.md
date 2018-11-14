@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx, объемные тени, буферы глубины, directx 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 269f8423795d7c2515ce555cf8e65f14a8c63431
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037144"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6471775"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>Пошаговое руководство: реализация объемных теней с помощью буферов глубины в Direct3D 11
 

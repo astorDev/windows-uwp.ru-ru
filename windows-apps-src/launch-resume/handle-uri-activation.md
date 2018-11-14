@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 808242fd7e179c225b3119dad146e7f05d72ffd4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050077"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6253707"
 ---
 # <a name="handle-uri-activation"></a>Обработка активации универсального кода ресурса (URI)
 
@@ -168,7 +168,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 
 ## <a name="related-topics"></a>Статьи по теме
 
-### <a name="complete-sample-app"></a>Полный пример кода приложения
+### <a name="complete-sample-app"></a>Полный пример приложения
 
 - [Пример запуска с сопоставлением](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 

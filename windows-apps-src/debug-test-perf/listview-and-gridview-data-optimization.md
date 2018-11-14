@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 92b81c79eb1be9e21aa7c306ef31b0b3bb62e7d1
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6145083"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198750"
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>Виртуализация данных ListView и GridView
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP, API отправки в Microsoft Store, примеры кода, java
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a0df9fe873ab7d7330e06a18bb1816df3157d7a
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6199761"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6465929"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Пример на языке Java: отправки для приложений, надстроек и тестовых пакетов
 

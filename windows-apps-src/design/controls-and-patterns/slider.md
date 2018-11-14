@@ -15,11 +15,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b6512782d5fa3423dcfee98c98223d77995deeb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6050322"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199914"
 ---
 # <a name="sliders"></a>Ползунки
 

@@ -9,11 +9,11 @@ ms.date: 3/29/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b775901fbb5140b63a76676705f2d2f2ba5f68
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049515"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6654418"
 ---
 <div> 
 <h1>Разработка приложений UWP</h1>
@@ -33,7 +33,7 @@ ms.locfileid: "6049515"
                     </div>
                     <div class="cardText">
                         <h3>Обзор на универсальную платформу Windows</h3>
-                        <p>Описание какие UWP — это, как это работает, и предоставляет функции.</p>
+                        <p>Описание какие UWP, как это работает, и предоставляет функции.</p>
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@ ms.locfileid: "6049515"
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Пользовательский Интерфейс приложения</h3>
-                        <p><a href="https://developer.microsoft.com/windows/apps/design">Элементы управления, макет, оформления текста, анимации, удобство использования и проектирование пользовательского интерфейса см. в разделе проектирование и пользовательский Интерфейс.</a></p>
+                        <p><a href="https://developer.microsoft.com/windows/apps/design">Элементы управления, макет, оформления текста, анимации, удобство использования и проектирование пользовательского интерфейса см. в разделе Оформление и пользовательский Интерфейс.</a></p>
                     </div>
                 </div>
             </div>
@@ -271,7 +271,7 @@ ms.locfileid: "6049515"
                     </div>
                     <div class="cardText">
                         <h3>Примеры</h3>
-                        <p> Сведения о создании качественных приложений для Windows при помощи экспериментов с в этих примерах. В этих примерах показано, как работают функции и помочь вам быстром создании приложений UWP.</p>
+                        <p> Сведения о создании качественных приложений для Windows при помощи экспериментов с эти примеры. В этих примерах показано, как функции работают и помочь вам быстром создании приложений UWP.</p>
                     </div>
                 </div>
             </div>

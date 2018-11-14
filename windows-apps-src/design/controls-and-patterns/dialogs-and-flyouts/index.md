@@ -14,11 +14,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d4ff66e988634cf1ba48809688ea6535e6e95b03
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6161115"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6650066"
 ---
 # <a name="dialogs-and-flyouts"></a>Диалоговые окна и всплывающие элементы
 

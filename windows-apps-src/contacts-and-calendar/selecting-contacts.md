@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a721e618864155e4eec66d222e8eeafa2e0ca038
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6194810"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6470023"
 ---
 # <a name="select-contacts"></a>Выбор контактов
 

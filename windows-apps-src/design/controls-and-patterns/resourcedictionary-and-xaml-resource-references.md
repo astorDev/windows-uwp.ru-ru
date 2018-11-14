@@ -14,11 +14,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b5d2a55610b6cec2f9026a5834b00ad7015a9c6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032366"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6266817"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>Ссылки на ресурсы ResourceDictionary и XAML
 
@@ -204,7 +204,7 @@ sealed partial class App : Application
 
 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) — это базовый класс, от которого наследуют элементы управления, имеющий свойство [Resources](https://msdn.microsoft.com/library/windows/apps/br208740). Таким образом, вы можете добавить локальный словарь ресурсов в любой **FrameworkElement**.
 
-Здесь [Page](https://msdn.microsoft.com/library/windows/apps/br227503) и [Border](https://msdn.microsoft.com/library/windows/apps/br209250) имеют словари ресурсов, а также содержат ресурс с именем greeting. [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) с именем «textBlock2» является внутри **границ**, поэтому его поиск ресурсов сначала **Border**ресурсы **страницы**ресурсов и ресурсы [приложения](https://msdn.microsoft.com/library/windows/apps/br242324) . В **TextBlock** будет отображаться значение Hola mundo.
+Здесь [Page](https://msdn.microsoft.com/library/windows/apps/br227503) и [Border](https://msdn.microsoft.com/library/windows/apps/br209250) имеют словари ресурсов, а также содержат ресурс с именем greeting. [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) с именем «textBlock2» является внутри **границ**, поэтому его поиск ресурсов сначала ресурсы **границы**, ресурсы **страницы**и ресурсы [приложения](https://msdn.microsoft.com/library/windows/apps/br242324) . В **TextBlock** будет отображаться значение Hola mundo.
 
 Чтобы обратиться к ресурсам этого элемента из кода, используйте свойство [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) этого элемента. Доступ к ресурсам [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) в коде, а не XAML, обеспечит поиск только в этом словаре, но не в словарях родительского элемента.
 
