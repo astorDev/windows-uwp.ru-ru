@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, портала устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f267fbcaecfdf9f1888e47d8dbe35d9cc469f4c
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6186535"
+ms.locfileid: "6251716"
 ---
 # <a name="device-portal-for-mobile"></a>Портал устройств для мобильных устройств
 

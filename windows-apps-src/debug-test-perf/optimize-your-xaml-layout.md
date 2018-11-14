@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b0dcb3e49bb35902a17f829c0222c570265be8b5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044104"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6249731"
 ---
 # <a name="optimize-your-xaml-layout"></a>Оптимизация макета XAML
 
@@ -136,7 +136,7 @@ ms.locfileid: "6044104"
 
 Общее требование к пользовательскому интерфейсу заключается в том, чтобы в макете элементы накладывались друг на друга. Как правило, для размещения элементов подобным образом используют заполнение, поля, выравнивание и преобразование. Элемент управления XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) оптимизирован для повышения производительности макета с накладывающимися элементами.
 
-**Важные**Чтобы добиться видимого улучшения, используйте одной ячейки [**сетки**](https://msdn.microsoft.com/library/windows/apps/BR242704). Не задавайте [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) или [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
+**Важные**Чтобы добиться видимого улучшения, использование одной ячейкой [**сетки**](https://msdn.microsoft.com/library/windows/apps/BR242704). Не задавайте [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) или [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
 
 ### <a name="examples"></a>Примеры
 
