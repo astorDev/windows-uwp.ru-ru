@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, сертификации приложений
 ms.localizationpriority: medium
 ms.openlocfilehash: 8363bc3085e9d6ec4e1a86751b691266b12b365c
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6456611"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6265912"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Тесты приложений моста для классических приложений
 

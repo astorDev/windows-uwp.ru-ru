@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 61b526cd7aa2da8733457b16dd0487ef4ead9cca
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6257876"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6460124"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>Добавление ресурсов в пакет приложения, а не в пакет ресурсов
 
