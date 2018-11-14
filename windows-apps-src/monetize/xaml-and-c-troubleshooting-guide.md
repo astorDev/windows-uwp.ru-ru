@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, устранение неполадок, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: 12789767694e4ab3fa13efec4a31c8db4acd5420
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040413"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202625"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>Руководство по устранению неполадок в XAML и C#
 
@@ -39,7 +39,7 @@ ms.locfileid: "6040413"
 
 1.  Убедитесь, что в файле Package.appxmanifest выбрана возможность **Интернет (клиент)**.
 
-2.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны соответствовать Идентификатору приложения и рекламного блока, полученным в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+2.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны соответствовать Идентификатору приложения и идентификатор рекламного блока, полученным в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -175,7 +175,7 @@ ms.locfileid: "6040413"
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны соответствовать Идентификатору приложения и рекламного блока, полученным в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны соответствовать Идентификатору приложения и идентификатор рекламного блока, полученным в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs

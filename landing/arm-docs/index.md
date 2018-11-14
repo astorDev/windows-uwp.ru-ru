@@ -1,6 +1,6 @@
 ---
 layout: LandingPage
-description: Эта страница содержит сведения о вас приступим к разработке приложений UWP и ARM64 win32.
+description: Эта страница содержит сведения о вам приступим к разработке приложений UWP и ARM64 win32.
 title: Windows10 на архитектуре ARM
 author: msatranjr
 ms.author: misatran
@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 ms.topic: article
 keywords: Windows 10 в ARM, ARM, создание приложений win32 ARM64, создание драйверов ARM64
 ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042336"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6252821"
 ---
 # <a name="windows-10-on-arm"></a>Windows10 на архитектуре ARM
-Windows 10 работает на ПК с процессорами ARM. Эта страница содержит сведения о можно узнать больше о платформе и приступим к разработке приложений. Мы также рекомендуем вам предоставить свой отзыв с помощью ссылок в нижней части страницы.
+Windows 10 работает на базе процессоров ARM компьютеров. Эта страница содержит сведения о Дополнительные сведения о платформе и приступим к разработке приложений. Мы также рекомендуем вам для предоставления отзывов с помощью ссылок в нижней части страницы.
 
 ## <a name="introductory-videos"></a>Вводные видео
 Посмотрите и узнайте, как работает Windows 10 в ARM.
@@ -24,20 +24,20 @@ Windows 10 работает на ПК с процессорами ARM. Эта с
 <ul class="cols cols3">
     <li>
         <a href="https://youtu.be/OZtVBDeVqCE"><img alt="Building ARM64 Win32 C++ apps video" src="./images/Arm64Scaled.png" /></a>
-        <h3>Создание приложений C++ Win32 ARM64</h3><p>Узнайте, как установить средства ARM64 для Visual Studio. Затем мы будем пошаговые инструкции по созданию и компиляции новый проект ARM 64.</p>
+        <h3>Создание приложений C++ Win32 ARM64</h3><p>Узнайте, как установить средства ARM64 для Visual Studio. Затем мы будем пошаговые инструкции по созданию и компиляция новый проект ARM 64.</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Build/2018/BRK2438"><img alt="Build 2018 Windows 10 on ARM for developers" src="./images/buildVideoStillScaled.png" /></a>
-        <h3>Build 2018 г. Windows 10 в ARM для разработчиков</h3><p>Узнайте о Windows 10 на устройствах ARM, как Контрольное x86 эмуляции работает и, наконец, как отправлять и создавать приложения для Windows 10 в ARM. Мы будет отображаться как создавать приложения ARM64 для рабочего стола и UWP.</p>
+        <h3>Build 2018 г. Windows 10 в ARM для разработчиков</h3><p>Сведения о Windows 10 на устройствах ARM, как Контрольное x86 эмуляции работает и, наконец, как отправлять и создавать приложения для Windows 10 в ARM. Мы будет отображаться как создавать приложения ARM64 для рабочего стола и UWP.</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Ch9Live/Windows-Community-Standup/Kevin-Gallo-January-2018"><img alt="Community standup video featuring Kevin Gallo" src="./images/communityStandupStillScaled.png" /></a>
-        <h3>Рабочие сообщества Windows с помощью Кевин Gallo</h3><p>Получить глубокое понимание того, как работает Windows 10 в ARM64 и получить представление об приложений и процессов на этой платформе.</p>
+        <h3>Рабочие сообщества Windows с помощью Кевин Gallo</h3><p>Получить глубокое понимание того, как работает Windows 10 в ARM64 и получить представление об приложения и взаимодействия на этой платформе.</p>
     </li>
 </ul>
 
 ## <a name="understanding-windows-10-on-arm"></a>Общие сведения о Windows 10 в ARM
-Ознакомьтесь с платформой, взглянув на эти ресурсы.
+Узнайте о платформе, взглянув на эти ресурсы.
 
 <ul class="cardsF panelContent cols cols2">
     <li>
@@ -65,7 +65,7 @@ Windows 10 работает на ПК с процессорами ARM. Эта с
                 </a>
                 <div class="cardText">
                     <h3>Узнайте, как x86 работает эмуляции</h3>
-                    <p class="x-hidden-focus">Узнайте все об этой основной функции Windows 10 в ARM.</p>
+                    <p class="x-hidden-focus">Узнайте все об этой основные функции Windows 10 в ARM.</p>
                 </div>
             </div>
         </div>
@@ -102,7 +102,7 @@ Windows 10 работает на ПК с процессорами ARM. Эта с
                     </a>
                 <div class="cardText">
                     <h3>Создание приложений ARM64 с помощью пакета SDK</h3>
-                    <p class="x-hidden-focus">Ознакомьтесь с этой записи блога, где описан процесс компиляции приложения как ARM64 для работы в Windows 10 в ARM.</p>
+                    <p class="x-hidden-focus">Ознакомьтесь с этой записи блога, где описан процесс компиляции приложения как ARM64, чтобы работали в Windows 10 в ARM.</p>
                 </div>
             </div>
         </div>
@@ -117,7 +117,7 @@ Windows 10 работает на ПК с процессорами ARM. Эта с
                 </a>
                 <div class="cardText">
                     <h3>Приложения UWP в ARM</h3>
-                    <p class="x-hidden-focus">Следуйте этим рекомендациям для установки приложений универсальной платформы Windows (UWP) для успеха.</p>                    
+                    <p class="x-hidden-focus">Следуйте этим рекомендациям для установки приложения универсальной платформы Windows (UWP), зарегистрируйте успех.</p>                    
                 </div>
             </div>
         </div>
@@ -132,7 +132,7 @@ Windows 10 работает на ПК с процессорами ARM. Эта с
                 </a>
                 <div class="cardText">
                     <h3>Отладка в ARM</h3>
-                    <p class="x-hidden-focus">Получите код бесперебойной на Windows 10 в ARM.</p>
+                    <p class="x-hidden-focus">Получите код бесперебойной в Windows 10 в ARM.</p>
                 </div>
             </div>
         </div>
@@ -164,7 +164,7 @@ Windows 10 работает на ПК с процессорами ARM. Эта с
                 </a>
                 <div class="cardText">
                     <h3>x86 приложения в ARM</h3>
-                    <p class="x-hidden-focus">Разработка вашей x86 приложения для выполнения своих лучше всего на Windows 10 в ARM.</p>
+                    <p class="x-hidden-focus">Разработка вашей x86 приложения для выполнения своих лучше всего в Windows 10 в ARM.</p>
                 </div>
             </div>
         </div>
@@ -192,7 +192,7 @@ Windows 10 работает на ПК с процессорами ARM. Эта с
 </ul>-->
 
 ## <a name="let-us-know-if-you-have-feedback"></a>Дайте нам знать, если вы хотите оставить отзыв
-Мы постоянно расширяют наших продуктов путем использования обратной связи от вас и существующих клиентов. Есть идеи, проблемами на проблемы или просто хотите поделиться как участках работы при, эти ссылки помогут вам.
+Мы постоянно расширяют наш продукт путем использования отзывов вы и существующих пользователей. Если вы знаете все, проблемами на проблемы или просто хотите поделиться как отлично работать является работы, эти ссылки помогут вам.
 
 <ul class="cardsM cols cols3">
 <li>
@@ -200,7 +200,7 @@ Windows 10 работает на ПК с процессорами ARM. Эта с
             <img class="cardImage" role="presentation" alt="Feedback hub icon" src="/media/common/i_feedback.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>Использование отзывов</h3>
-                <p>И мы не заметить что-то? У вас есть идея? Свяжитесь с нами в центре отзывов.</p>
+                <p>И мы что-то пропустите? У вас есть идея? Свяжитесь с нами в центре отзывов.</p>
             </div>
         </a>
     </li>
@@ -218,7 +218,7 @@ Windows 10 работает на ПК с процессорами ARM. Эта с
             <img class="cardImage" role="presentation" alt="Give doc feedback icon" src="/media/common/i_form.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>Обратная связь документа</h3>
-                <p>У вас обнаружена проблема с нашей документации Вы хотите нам сделать что-то более четкими? Оповестить о проблеме в репозитории GitHub нашей документации.</p>
+                <p>Нашел ли проблемы с нашей документации? Вы хотите нам сделать что-то более четкими? Оповестить о проблеме в репозитории GitHub нашей документации.</p>
             </div>
         </a>
     </li>

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, платформа визуализации, преобразование, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 044a0dc7bf264a82b849623a53d00268d7b30fd9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034930"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207828"
 ---
 # <a name="convert-the-rendering-framework"></a>Преобразование платформа визуализации
 
@@ -248,7 +248,7 @@ m_d3dDevice->CreateVertexShader(
 
 Данные вершин должны храниться в системной памяти с использованием совместимых типов данных. Здесь могут помочь типы данных DirectXMath: например, DXGI\_FORMAT\_R32G32B32\_FLOAT соответствует [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475).
 
-> **Примечание**  буферы констант используют фиксированный входной макет, который выравнивается по четырем чисел с плавающей запятой одновременно. [
+> **Примечание**  буферы констант используют фиксированный входной макет, который выравнивается по четырем с плавающей запятой одновременно. [
               Для хранения данных буферов констант рекомендуется использовать тип **XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) и его производные.
 
  

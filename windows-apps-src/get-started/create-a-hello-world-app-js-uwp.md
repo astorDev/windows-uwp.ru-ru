@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d8fb1dc486c039007c3ea0d4ee36d72c0c511f9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032323"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159936"
 ---
 # <a name="create-a-hello-world-app-js"></a>Создание приложения "Hello, world" (JS)
 
-В этом руководстве описано, как с помощью JavaScript и HTML создать простое «Hello, world» приложения, которое предназначено для универсальной платформы Windows (UWP) в Windows10. С помощью одного проекта в Microsoft Visual Studio можно создать приложение, которое работает на любом устройстве Windows10.
+В этом учебнике описано, как с помощью JavaScript и HTML создать простое «Hello, world» приложения, которое предназначено для универсальной платформы Windows (UWP) в Windows10. С помощью единственного проекта в Microsoft Visual Studio вы можете создать приложение, которое работает на любом устройстве Windows10.
 
 > [!NOTE]
 > В этом учебнике используется Visual Studio Community 2017. Если вы используете другую версию Visual Studio, она может выглядеть иначе.
@@ -25,7 +25,7 @@ ms.locfileid: "6032323"
 
 В этом разделе вы научитесь выполнять следующие действия.
 
--   Создание нового проекта **Visual Studio 2017** , предназначенное **Windows10** и **UWP**.
+-   Создание нового проекта **Visual Studio 2017** , предназначенный **Windows10** и **UWP**.
 -   Добавлять содержимое HTML и JavaScript
 -   Запускать проект на локальном компьютере в Visual Studio
 
@@ -157,7 +157,7 @@ function sayHello() {
 ## <a name="summary"></a>Сводка
 
 
-Поздравляем, вы создали приложение на JavaScript для Windows10 и UWP. Это простейший пример, но теперь вы можете добавлять свои избранные библиотеки и платформы JavaScript для создания собственного приложения. А так как это приложение UWP, вы можете опубликовать его в Магазине. Примеры того, как добавить сторонние платформы, см. в следующих проектах:
+Поздравляем, вы создали приложение на JavaScript для Windows10 и UWP! Это простейший пример, но теперь вы можете добавлять свои избранные библиотеки и платформы JavaScript для создания собственного приложения. А так как это приложение UWP, вы можете опубликовать его в Магазине. Примеры того, как добавить сторонние платформы, см. в следующих проектах:
 
 * [Простая двухмерная игра UWP для Microsoft Store, написанная на языках JavaScript и CreateJS](get-started-tutorial-game-js2d.md)
 * [Трехмерная игра UWP для Microsoft Store, написанная на JavaScript и threeJS](get-started-tutorial-game-js3d.md)

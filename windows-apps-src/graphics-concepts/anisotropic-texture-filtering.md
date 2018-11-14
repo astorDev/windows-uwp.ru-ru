@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e91c707b31de859d61ae926518c40812758320e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051157"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6201960"
 ---
 # <a name="anisotropic-texture-filtering"></a>Анизотропная фильтрация текстур
 

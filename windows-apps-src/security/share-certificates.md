@@ -6,14 +6,14 @@ author: PatrickFarley
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасность
+keywords: Windows 10, uwp, безопасности
 ms.localizationpriority: medium
 ms.openlocfilehash: 044b1b60b80cec1fc40adda6b9b6d44bee34ce7c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043337"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6254682"
 ---
 # <a name="share-certificates-between-apps"></a>Совместное использование сертификатов приложениями
 
@@ -76,7 +76,7 @@ ms.locfileid: "6043337"
 
 Если доступных сертификатов клиента нет, пользователю понадобится добавить сертификат в хранилище сертификатов. Вы можете включить в свое приложение код, который позволяет пользователю выбрать PFX-файл, содержащий сертификат клиента, и импортировать этот сертификат в хранилище сертификатов клиента.
 
-**Совет**makecert.exe можно использовать для создания PFX-файл для использования с помощью этого краткого руководства. Подробнее об использовании makecert.exe см. в разделе [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968).
+**Совет**makecert.exe можно использовать для создания PFX-файл для использования с этого краткого руководства. Подробнее об использовании makecert.exe см. в разделе [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968).
 
  
 

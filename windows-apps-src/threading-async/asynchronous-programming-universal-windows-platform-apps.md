@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, асинхронный
 ms.localizationpriority: medium
 ms.openlocfilehash: 04d91fc7166812f53e8b2238b1a47c8aeb9c425f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6049839"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6252059"
 ---
 # <a name="asynchronous-programming"></a>Асинхронное программирование
 В этом разделе описывается асинхронное программирование на универсальной платформы Windows (UWP), а также его представление в C#, Microsoft Visual Basic.NET, C++ и JavaScript.
@@ -23,7 +23,7 @@ ms.locfileid: "6049839"
 Для методов, выполняющихся в течение длительного времени, применение асинхронного программирования является нормой, и в этом смысле UWP — не исключение. JavaScript, C#, Visual Basic и C++ каждого этих языках есть поддержка асинхронных методов.
 
 ## <a name="asynchronous-programming-in-the-uwp"></a>Асинхронное программирование в UWP
-Многие компоненты UWP, такие как [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) API-интерфейсы и [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) API, представлены в виде асинхронных API. По соглашению имена асинхронных API заканчиваются словом «Async» означает, скорее всего, вступит в силу после элемента управления возвращаемый вызывающей стороне, часть их выполнения.
+Многие компоненты UWP, такие как [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) API-интерфейсы и [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) API, представлены в виде асинхронных API. По соглашению имена асинхронных API заканчиваются словом «Async» для указания, что их частично вероятнее всего вступит в силу после элемента управления возвращаемый вызывающей стороне.
 
 При использовании асинхронных API в коде вашего приложения UWP согласованно выполняются неблокирующие вызовы. Если вы будете применять эти асинхронные шаблоны в собственных определениях API, вызывающие объекты будут предсказуемо интерпретировать и использовать ваш код.
 

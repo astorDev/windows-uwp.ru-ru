@@ -13,11 +13,11 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 31bc1d33bccbf2d1948a119ea42bfef2599f3336
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032201"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6258016"
 ---
 # <a name="icons-for-uwp-apps"></a>Значки для приложений UWP
 
@@ -137,7 +137,7 @@ ms.locfileid: "6032201"
 
 ## <a name="make-the-icon-do-something"></a>Привязка функции к значку
 
-После создания значка, следующим шагом является упрощение сделать что-то за счет связывания ее с помощью команды или действия навигации. Для этого рекомендуется добавить значок в кнопку или панель команд. 
+После создания значка, следующим шагом является упрощение сделать что-то за счет связывания ее с помощью команды или действия навигации. Для этого проще всего добавить значок в кнопку или панель команд. 
 
 ![Изображение панели команд](images/icons/app-bar-desktop.svg)
 

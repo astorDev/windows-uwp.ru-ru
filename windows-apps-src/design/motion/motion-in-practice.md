@@ -13,11 +13,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 36081c14cfb75a1cedb103ba17eff4a05f5e4e83
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023291"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202821"
 ---
 # <a name="bringing-it-together"></a>Реализация
 
@@ -84,7 +84,7 @@ ms.locfileid: "6023291"
 > Неявные анимации требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии.
 
 
-Неявные анимации — это простой способ добиться движения Fluent, автоматически выполняя интерполяцию между старых и новых значений во время смены параметра.
+Неявные анимации — это простой способ для достижения движения Fluent, автоматически выполняя интерполяцию между старых и новых значений во время смены параметра.
 
 Неявно, вы можете анимировать изменения в следующие свойства:
 
@@ -97,9 +97,9 @@ ms.locfileid: "6023291"
 - [Границы](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)или [Панель](/uwp/api/windows.ui.xaml.controls.panel)
   - **Фон**
 
-Каждое свойство, которое может быть неявно анимировать изменения имеет соответствующее свойство _перехода_ . Анимировать свойство, назначьте тип перехода к соответствующему свойству _перехода_ . В этой таблице показаны свойства _перехода_ и тип перехода для каждого из них.
+Каждое свойство, которое может быть неявно анимировать изменения имеет соответствующее свойство _перехода_ . Чтобы анимировать свойство, тип перехода назначить соответствующее свойство _перехода_ . В этой таблице показаны свойства _перехода_ и тип перехода для каждого из них.
 
-| Анимируемого свойства | Свойства перехода | Тип неявный перехода |
+| Анимируемого свойства | Свойство перехода | Тип неявное перехода |
 | -- | -- | -- |
 | [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
@@ -109,7 +109,7 @@ ms.locfileid: "6023291"
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-В этом примере показано, как использовать свойства Opacity и перехода, чтобы увеличить размер кнопки появления при включении элемента управления или Исчезание, когда она отключена.
+В этом примере показано, как использовать свойства Opacity и перехода, чтобы сделать кнопку появления при включении элемента управления или Исчезание, когда она отключена.
 
 ```xaml
 <Button x:Name="SubmitButton"

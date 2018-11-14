@@ -11,17 +11,17 @@ pm-contact: clint.rutkas
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 97df5037d2cdc07361cbc7f80830ba951a0a3caa
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6051999"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6251104"
 ---
 # <a name="windows-template-studio"></a>Windows Template Studio
 
 ![главное изображение](images/wts1.png)
 
-Studio шаблона Windows (WTS) — это расширение Visual Studio 2017 г., ускоряется создания новых приложений универсальной платформы Windows (UWP), с помощью взаимодействия на основе мастера. Созданный проект UWP является правильным форматом, для чтения код, который включает новые возможности Windows 10 при реализации проверенные шаблоны и рекомендации. Пронизывать созданный код у нас есть ссылки документы, Stack Overflow и блоги для предоставления полезные сведения. WTS поддерживает создавать приложения на C# или Visual Basic.
+Studio шаблона Windows (WTS) — это расширение Visual Studio 2017 г., ускоряется создания новых приложений универсальной платформы Windows (UWP), с помощью мастера-возможности. Созданный проект UWP является правильным форматом, чтения код, который включает новые возможности Windows 10 при реализации проверенные шаблоны и рекомендации. Пронизывать созданный код у нас есть ссылки, документы, Stack Overflow и блоги для предоставления полезные сведения. WTS поддерживает создавать приложения на C# или Visual Basic.
 
-Дополнительные сведения можно получить в [репозиторий проекта на GitHub](https://github.com/microsoft/windowsTemplateStudio).
+Дополнительные сведения посетите [репозитория проект на GitHub](https://github.com/microsoft/windowsTemplateStudio).
 

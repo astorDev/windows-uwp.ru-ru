@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 63214ce47bffc5a0b13f421e5185d06cd810ea34
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023077"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154090"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Проверка приложений Surface Hub с использованием Visual Studio
 Имитатор Visual Studio предоставляет среду для проектирования, разработки, отладки и тестирования приложений универсальной платформы Windows (UWP), включая приложения, созданные для Microsoft Surface Hub. Имитатор не использует тот же пользовательский интерфейс в качестве Surface Hub, но он полезен для тестирования внешнего вида вашего приложения и ведет себя с Surface Hub размер и разрешение экрана.
@@ -23,7 +23,7 @@ ms.locfileid: "6023077"
 ## <a name="add-surface-hub-resolutions-to-the-simulator"></a>Добавление разрешений Surface Hub в имитатор
 Чтобы добавить разрешения Surface Hub в имитатор, выполните указанные ниже действия.
 
-1. Создайте конфигурацию для 55-дюймовом Surface Hub, сохранив следующий код XML в файл с именем *HardwareConfigurations-SurfaceHub55.xml*.  
+1. Создайте конфигурацию для 55-дюймовом устройстве Surface Hub, сохранив следующий код XML в файл с именем *HardwareConfigurations-SurfaceHub55.xml*.  
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -42,7 +42,7 @@ ms.locfileid: "6023077"
     </ArrayOfHardwareConfiguration>
     ```
 
-2. Создайте конфигурацию для 84-дюймовом Surface Hub, сохранив следующий код XML в файл с именем *HardwareConfigurations-SurfaceHub84.xml*.
+2. Создайте конфигурацию для 84-дюймовом устройстве Surface Hub, сохранив следующий код XML в файл с именем *HardwareConfigurations-SurfaceHub84.xml*.
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -85,7 +85,7 @@ ms.locfileid: "6023077"
 1. В меню **Пуск** Surface Hub откройте приложение "Параметры".
 
    > [!NOTE]
-   > Для получения доступа к приложение "Параметры" на Surface Hub требуются права администратора.
+   > Для доступа к приложение "Параметры" на Surface Hub требуются права администратора.
 
 2. Перейдите к **обновление и безопасность \ > для разработчиков**.
 
@@ -95,7 +95,7 @@ ms.locfileid: "6023077"
 Дополнительные сведения о процессе развертывания в целом, см. в разделе [Развертывание и отладка приложений UWP](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
 
    > [!NOTE]
-   > Для этой функции требуется Visual Studio 2015 с обновлением 1 или более поздней версии, но мы рекомендуем использовать наиболее в актуальном состоянии последнюю версию Visual Studio. В актуальном состоянии экземпляр Visual Studio будет gibe вы все последние разработки и обновлений для системы безопасности.
+   > Для этой функции требуется Visual Studio 2015 с обновлением 1 или более поздней версии, но мы рекомендуем использовать последнюю версию Visual Studio наиболее в актуальном состоянии. Будет gibe экземпляр Visual Studio в актуальном состоянии, вы все последние разработки и обновлений для системы безопасности.
 
 1. Перейдите к раскрывающемуся списку цели отладки рядом с кнопкой **Начать отладку** и выберите элемент **Удаленный компьютер**.
 

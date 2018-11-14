@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, ввод, реестр, настройка
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bbd4074c52514b9cb66fd6f2dd189421f61d5ee
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032064"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192274"
 ---
 # <a name="registry-data-for-game-controllers"></a>Данные реестра для игровых устройств управления
 
@@ -42,7 +42,7 @@ ms.locfileid: "6032064"
         <td>DWORD</td>
         <td>Нет</td>
         <td>
-            <p>Указывает, что данное устройство должна быть отключена.</p>
+            <p>Указывает, что этого устройства должна быть отключена.</p>
             <ul>
                 <li><b>0</b>: устройство не отключено.</li>
                 <li><b>1</b>: устройство отключено.</li>

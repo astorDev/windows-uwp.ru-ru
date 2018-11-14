@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: df6e2c15260759f164a37b68365e0268633b22d5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042369"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6257414"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Поддерживаемые периферийные устройства точек обслуживания
 
@@ -37,7 +37,7 @@ ms.locfileid: "6042369"
 | Honeywell     | N5680                          | 2D         | внутренний     | Компонент    | HID POS Scanner           |
 | Honeywell     | N3680                          | 2D         | внутренний     | Компонент    | HID POS Scanner           |
 | Honeywell     | Орбита 7190g                    | 2D         | USB          | Презентации | HID POS Scanner           |
-| Honeywell     | Stratos 2700                   | 2D         | USB          | Из счетчиков   | HID POS Scanner           |
+| Honeywell     | Stratos 2700                   | 2D         | USB          | В счетчик   | HID POS Scanner           |
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | Ручные     | HID POS Scanner           |
 | Honeywell     | Voyager 1202g                  | 1D         | USB          | Ручные     | HID POS Scanner           |
 | Honeywell     | Voyager 1202-bf                | 1D         | USB          | Ручные     | HID POS Scanner           |
@@ -74,10 +74,10 @@ ms.locfileid: "6042369"
 
 <hr>
 
-### <a name="windows-devices-with-built-in-barcode-scanner"></a>Устройства Windows с помощью сканер штрих-кодов
+### <a name="windows-devices-with-built-in-barcode-scanner"></a>Со сканерами штрихкодов встроенных на устройствах с Windows
 | Изготовитель   | Модель | Операционная система |
 |----------------|-------|------------------|
-| Innowi         | ChecOut M | Windows 10   |
+| Innowi         | ChecOut-M | Windows 10   |
 
 ### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Устройства с Windows Mobile со сканера штрихкодов встроенных
 | Изготовитель   | Модель | Операционная система |
@@ -92,7 +92,7 @@ ms.locfileid: "6042369"
 | Panasonic      | FZ-F1 |Windows Mobile   |
 | PointMobile    | PM80 | Windows Mobile   |
 | Zebra          | TC700j | Windows Mobile   |
-| HP             | Элитному X3 Jacket | Windows Mobile   |
+| HP             | Elite X3 Jacket | Windows Mobile   |
 
 
 

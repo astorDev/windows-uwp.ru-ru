@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows 10, uwp, для образовательных учреждений
 ms.localizationpriority: medium
 ms.openlocfilehash: d64901c08e2945f34e66055d8e2e7d3a8301f66e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034528"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6156598"
 ---
 # <a name="take-a-test-javascript-api"></a>API JavaScript для приложения "Тестирование"
 
-[Тестирование](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) — это браузерное приложение UWP, которое отображает заблокированную онлайн-тесты для проведения важных тестирований, что позволяет преподавателям сосредоточиться на оценке содержимого, а не для предоставления безопасной среды тестирования. Для этого используется API-интерфейс JavaScript, который может применять любое веб-приложение. API-интерфейс приложения "Тестирование" поддерживает [стандарт API для браузеров SBAC](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf), который будет полезен во время важных тестов по обязательным элементам программы.
+[Тестирование](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) — это браузерное приложение UWP, которое отображает заблокированная онлайн-тесты для проведения важных тестирований, что позволяет преподавателям сосредоточиться на оценке содержимого, а не для предоставления безопасной среды тестирования. Для этого используется API-интерфейс JavaScript, который может применять любое веб-приложение. API-интерфейс приложения "Тестирование" поддерживает [стандарт API для браузеров SBAC](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf), который будет полезен во время важных тестов по обязательным элементам программы.
 
 Дополнительные сведения о самом приложении см. в [техническом справочнике по приложению "Тестирование"](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). Справку по устранению неполадок см. в разделе [Устранение неполадок приложения "Тестирование" с помощью средства просмотра событий](troubleshooting.md).
 
