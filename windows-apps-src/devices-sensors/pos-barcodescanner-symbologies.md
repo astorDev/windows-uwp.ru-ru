@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 91e09fd881ea5ce2b5ae6482148cdbb730c7ef17
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043613"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159876"
 ---
 # <a name="working-with-symbologies"></a>Работа с символиками
 [Символика штрихкодов](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies) — это сопоставление данных с конкретным форматом штрихкодов. Распространенным символикам относятся UPC, Code 128, QR Code и т. д.  Сканер штрихкодов универсальной платформы Windows API-интерфейсы позволяют приложению управлять тем, как сканер обрабатывает эти символики, без ручной настройки сканера. 
@@ -22,7 +22,7 @@ ms.locfileid: "6043613"
 
 Как только вы получите объект [BarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner) с помощью метода [BarcodeScanner.FromIdAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync), вызовите метод [GetSupportedSymbologiesAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getsupportedsymbologiesasync#Windows_Devices_PointOfService_BarcodeScanner_GetSupportedSymbologiesAsync), чтобы получить список символик, поддерживаемых устройством.
 
-В следующем примере Получает список поддерживаемых символик сканер штрихкодов и отображает их в блоке текста:
+В следующем примере Получает список поддерживаемых символик сканер штрихкодов и отображает их в текстовом блоке:
 
 ```cs
 private void DisplaySupportedSymbologies(BarcodeScanner barcodeScanner, TextBlock textBlock) 
@@ -40,7 +40,7 @@ private void DisplaySupportedSymbologies(BarcodeScanner barcodeScanner, TextBloc
 ## <a name="determine-if-a-specific-symbology-is-supported"></a>Определение того, поддерживается ли определенная символика
 Чтобы определить, поддерживает ли сканер определенная символика можно вызвать [IsSymbologySupportedAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.issymbologysupportedasync#Windows_Devices_PointOfService_BarcodeScanner_IsSymbologySupportedAsync_System_UInt32_).
 
-В следующем примере проверяется, поддерживает ли сканер штрихкодов символика **Code32** :
+В следующем примере проверяется, поддерживает ли сканер штрихкодов символику **Code32** :
 
 ```cs
 bool symbologySupported = await barcodeScanner.IsSymbologySupportedAsync(BarcodeSymbologies.Code32);
@@ -51,7 +51,7 @@ bool symbologySupported = await barcodeScanner.IsSymbologySupportedAsync(Barcode
 
 Зная, какие символики поддерживает ваш сканер, вы можете задать символики, которые он должен распознавать.  Это можно сделать после [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) объекта, с помощью [ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync). Вы можете вызвать метод [SetActiveSymbologiesAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.setactivesymbologiesasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_SetActiveSymbologiesAsync_Windows_Foundation_Collections_IIterable_System_UInt32__), чтобы включить конкретный набор символик. Символики, которых нет в заданном вами списке, отключаются.
 
-В следующем примере задается active символики присвоенный сканер [Code39](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.code39#Windows_Devices_PointOfService_BarcodeSymbologies_Code39) и [Code39Ex](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.code39ex):
+В следующем примере задается active символиками сканера штрихкодов присвоенные [Code39](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.code39#Windows_Devices_PointOfService_BarcodeSymbologies_Code39) и [Code39Ex](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.code39ex):
 
 ```cs
 private async void SetSymbologies(ClaimedBarcodeScanner claimedBarcodeScanner) 
@@ -62,7 +62,7 @@ private async void SetSymbologies(ClaimedBarcodeScanner claimedBarcodeScanner)
 ```
 
 ## <a name="barcode-symbology-attributes"></a>Атрибуты символики штрихкода
-Символики штрихкодов различных можно имеют различные атрибуты, такие как вспомогательные несколько декодировать длины, передающего контрольную цифру к узлу как часть необработанные данные и выполнить проверку цифр. В классе [BarcodeSymbologyAttributes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes) можно получить и задать эти атрибуты для данного символика [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) и штрих-кода.
+Символики штрихкодов различных можно имеют различные атрибуты, такие как вспомогательные несколько декодировать длины, передающего контрольную цифру к узлу как часть необработанных данных и выполнить проверку цифр. С помощью класса [BarcodeSymbologyAttributes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes) можно получить и задать эти атрибуты для данного символика [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) и штрих-кода.
 
 Вы можете получить атрибуты данного символика с [GetSymbologyAttributesAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.getsymbologyattributesasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_GetSymbologyAttributesAsync_System_UInt32_). В следующем фрагменте кода получает атрибуты символики использованием **ClaimedBarcodeScanner**.
 
@@ -79,15 +79,15 @@ bool success = await claimedBarcodeScanner.SetSymbologyAttributesAsync(
 ```
 
 ### <a name="restrict-scan-data-by-data-length"></a>Ограничение сканируемых данных по длине
-Некоторым символикам, например Code 39 и Code 128, свойственна переменная длина.  Штрихкоды эти символики могут находиться рядом друг с другом содержащие разные данные, зачастую конкретной длины. Задание конкретной длины данных, которые вы хотите получить, помогает предотвратить недействительные считывания.
+Некоторым символикам, например Code 39 и Code 128, свойственна переменная длина.  Штрихкоды эти символик могут находиться рядом друг с другом содержащий различные данные, зачастую конкретной длины. Задание конкретной длины данных, которые вы хотите получить, помогает предотвратить недействительные считывания.
 
 Перед установкой длины декодирования, проверьте, поддерживается ли символика штрихкодов несколько длины с [IsDecodeLengthSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.isdecodelengthsupported#Windows_Devices_PointOfService_BarcodeSymbologyAttributes_IsDecodeLengthSupported). Когда вы знаете, что он поддерживается, вы можете задать [DecodeLengthKind](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelengthkind#Windows_Devices_PointOfService_BarcodeSymbologyAttributes_DecodeLengthKind), которое относится к типу [BarcodeSymbologyDecodeLengthKind](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologydecodelengthkind). Это свойство можно использовать любые из следующих значений:
 
 * **AnyLength**: декодирования длин любое число.
 * **Дискретные**: декодирования длин [DecodeLength1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength1) или [DecodeLength2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength2) символов.
-* **Диапазон**: декодирования длины между **DecodeLength1** и **DecodeLength2** символов. Порядок **DecodeLength1** и выполните **DecodeLength2** буквально несколько (либо может быть выше или ниже, чем другой).
+* **Диапазон**: декодирования длины между **DecodeLength1** и **DecodeLength2** символов. Порядок **DecodeLength1** и **DecodeLength2** буквально несколько (либо может быть выше или ниже, чем другой).
 
-Наконец можно задать значения **DecodeLength1** и **DecodeLength2** , чтобы контролировать длину данных, которые вам необходимы.
+Наконец можно задать значения **DecodeLength1** и **DecodeLength2** для управления длины данных, которые вам необходимы.
 
 В следующем фрагменте кода показано, как задать размер декодирования:
 
@@ -114,11 +114,11 @@ private async Task<bool> SetDecodeLength(
 }
 ```
 
-### <a name="check-digit-transmission"></a>Проверьте передачу цифр
+### <a name="check-digit-transmission"></a>Проверьте передачи цифр
 
-Другой атрибут, который можно установить на определенную символику является ли контрольную цифру, будут отправлены в узле как часть необработанных данных. Прежде чем задавать это, убедитесь, что символика поддерживает проверку цифр передачу данных с [IsCheckDigitTransmissionSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigittransmissionsupported). Затем установите ли проверка цифр передачу включается с помощью [IsCheckDigitTransmissionEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigittransmissionenabled).
+Другой атрибут, который можно установить на определенную символику является ли контрольную цифру, будут отправлены в узле как часть необработанных данных. Прежде чем задавать это, убедитесь, что символика поддерживает проверку цифр передачу данных с [IsCheckDigitTransmissionSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigittransmissionsupported). Затем установите ли проверка цифр передачи включается с помощью [IsCheckDigitTransmissionEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigittransmissionenabled).
 
-В следующем фрагменте кода показано передачу цифр проверьте параметр:
+В следующем фрагменте кода показано передачи цифр проверьте параметр:
 
 ```cs
 private async Task<bool> SetCheckDigitTransmission(ClaimedBarcodeScanner scanner, uint symbology, bool isEnabled)
@@ -136,7 +136,7 @@ private async Task<bool> SetCheckDigitTransmission(ClaimedBarcodeScanner scanner
 }
 ```
 
-### <a name="check-digit-validation"></a>Выполнить проверку цифр
+### <a name="check-digit-validation"></a>Проверьте проверки цифр
 
 Можно также задать ли будут проверены контрольную цифру штрих-кода. Прежде чем задавать это, убедитесь, что символика поддерживает проверку проверки цифр с [IsCheckDigitValidationSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigitvalidationsupported). Затем установите ли с [IsCheckDigitValidationEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigitvalidationenabled)включена проверка цифр проверки.
 

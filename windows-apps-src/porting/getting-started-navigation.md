@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cb4550a7da3b9b547a1d723d5ae8da260149ba2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032672"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188391"
 ---
 # <a name="getting-started-navigation"></a>Начало работы: навигация
 
@@ -22,7 +22,7 @@ ms.locfileid: "6032672"
 
 iOS предоставляет класс **UINavigationController**, чтобы помочь в создании навигации в приложении: вы можете использовать представления push и pop для создания иерархии **UIViewControllers**, определяющей ваше приложение.
 
-В отличие от Windows10 приложение, содержащее несколько представлений занимает больше подход с веб-сайта для навигации. Вы можете представить своих пользователей, которые переходят между «страницами» приложения по мере нажатия элементов управления. Подробнее см. в разделе [Основы проектирования навигации](https://msdn.microsoft.com/library/windows/apps/dn958438).
+В отличие от Windows10 приложение, содержащее несколько представлений занимает больше подход с веб сайтом навигации. Вы можете представить своих пользователей, которые переходят между «страницами» приложения по мере нажатия элементов управления. Подробнее см. в разделе [Основы проектирования навигации](https://msdn.microsoft.com/library/windows/apps/dn958438).
 
 Один из способов управления этой навигацией в приложении для Windows10 является использование класса [**кадра**](https://msdn.microsoft.com/library/windows/apps/br242682) . Эти возможности описаны в указанном ниже пошаговом руководстве.
 

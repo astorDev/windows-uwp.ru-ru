@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, отрисовка, карта теней, буфер глубины, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: a73754fef6d87505751460ec134d853c6bca0530
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047050"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6187818"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>Прорисовка карты теней в буфере глубины
 

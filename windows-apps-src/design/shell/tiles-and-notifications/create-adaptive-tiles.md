@@ -11,17 +11,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f0af7dc153f75826444a517d4958bfeba53b103d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045148"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6150724"
 ---
 # <a name="create-adaptive-tiles"></a>Создание адаптивных плиток
 
 Шаблоны адаптивных плиток — это новая функция в Windows10, что позволяет создавать собственные содержимое уведомления плитки, с помощью простого и гибкого языка разметки который адаптируется к различной плотности экрана. В этой статье рассказывается, как создать адаптивные живые плитки для вашего приложения универсальной платформы Windows (UWP). Полный список адаптивных элементов и атрибутов см. в разделе [Схема адаптивных плиток](../tiles-and-notifications/tile-schema.md).
 
-(Если вам требуется, можно по-прежнему использовать стандартные шаблоны из [каталога шаблонов плиток Windows8](https://msdn.microsoft.com/library/windows/apps/hh761491) при создании уведомлений для Windows10.)
+(Если вы хотите, можно по-прежнему использовать стандартные шаблоны из [каталога шаблонов плиток Windows8](https://msdn.microsoft.com/library/windows/apps/hh761491) при создании уведомлений для Windows10.)
 
 
 ## <a name="getting-started"></a>Начало работы

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d 11, перенос, графика
 ms.localizationpriority: medium
 ms.openlocfilehash: 6421f5a5a71828d5234a11bab9e442a5accecda5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041604"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148610"
 ---
 # <a name="port-from-opengl-es-20-to-direct3d-11"></a>Перенос из OpenGL ES 2.0 в Direct3D 11
 
@@ -21,7 +21,7 @@ ms.locfileid: "6041604"
 
 Включает статьи, обзоры и пошаговые руководства по переносу графического конвейера из OpenGL ES 2.0 в Direct3D 11 и среду выполнения Windows.
 
-> **Примечание**  — промежуточного шага при переносе проекта OpenGL ES 2.0 можно использовать ANGLE для Microsoft Store. ANGLE позволяет запускать содержимое OpenGLES в Windows путем преобразования вызовов API OpenGLES в вызовы API DirectX11. Дополнительные сведения об ANGLE см. в [вики об ANGLE для Microsoft Store](http://go.microsoft.com/fwlink/p/?linkid=618387).
+> **Примечание**  является промежуточного шага при переносе проекта OpenGL ES 2.0 можно использовать ANGLE для Microsoft Store. ANGLE позволяет запускать содержимое OpenGLES в Windows путем преобразования вызовов API OpenGLES в вызовы API DirectX11. Дополнительные сведения об ANGLE см. в [вики об ANGLE для Microsoft Store](http://go.microsoft.com/fwlink/p/?linkid=618387).
 
  
 

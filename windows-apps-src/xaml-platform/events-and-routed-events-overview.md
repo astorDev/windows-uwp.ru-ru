@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ec2986594b043fa088450609e655f4b56b95e25
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026400"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6151074"
 ---
 # <a name="events-and-routed-events-overview"></a>Общие сведения о событиях и перенаправленных событиях
 
@@ -149,7 +149,7 @@ Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As Pointer
 End Sub
 ```
 
-**Примечание**Visual Studio и ее рабочей области конструирования XAML обычно продвижение метод обработки экземпляра вместо ключевого слова **Handles** . Причина заключается в том, что установка подключения обработчика событий в XAML является частью стандартного рабочего процесса дизайнер-разработчик, а подход с использованием ключевого слова **Handles** несовместим с подключением обработчиков событий в XAML.
+**Примечание**Visual Studio и ее рабочей области конструирования XAML обычно продвижение метод обработки экземпляра вместо ключевое слово **Handles** . Причина заключается в том, что установка подключения обработчика событий в XAML является частью стандартного рабочего процесса дизайнер-разработчик, а подход с использованием ключевого слова **Handles** несовместим с подключением обработчиков событий в XAML.
 
 В C + +/ CX, можно также использовать **+=** синтаксиса, но существуют отличия от базовой формы C#:
 
@@ -267,7 +267,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 -   Для его свойства [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) установлено значение [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006).
 -   Значение свойства элемента **Background** или **Fill** не равно **null**. Значение **null** свойства [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) означает, что элемент прозрачен и проверка нажатия не может быть выполнена. (Чтобы сделать элемент прозрачным, но доступным для проверки нажатия, используйте значение свойства кисти [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061), а не **null**.)
 
-**Примечание** **Фона** и **Fill** не определяются элементом [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), а определяются различными производными классами, например, [**элемент управления**](https://msdn.microsoft.com/library/windows/apps/br209390) и [**фигуры**](/uwp/api/Windows.UI.Xaml.Shapes.Shape). Но применения кистей, которые вы используете для свойств переднего и заднего планов, одинаковы для проверки нажатия и событий ввода, независимо от того, какой подкласс реализует свойства.
+**Примечание** **Фон** и **Fill** не определяются элементом [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), а определяются различными производными классами, например, [**элемент управления**](https://msdn.microsoft.com/library/windows/apps/br209390) и [**фигуры**](/uwp/api/Windows.UI.Xaml.Shapes.Shape). Но применения кистей, которые вы используете для свойств переднего и заднего планов, одинаковы для проверки нажатия и событий ввода, независимо от того, какой подкласс реализует свойства.
 
 -   Если элемент является элементом управления, для его свойства [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) должно быть установлено значение **true**.
 -   У элемента в макете должны быть фактические размеры. Элемент, [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) и [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) которого равны 0, не вызывает события ввода.

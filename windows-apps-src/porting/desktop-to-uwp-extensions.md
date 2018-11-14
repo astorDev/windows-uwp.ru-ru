@@ -1,26 +1,26 @@
 ---
-author: normesta
+author: hickeys
 Description: You can use extensions to integrate your packaged desktop app with Windows 10 in predefined ways.
 Search.Product: eADQiWindows 10XVcnh
 title: Интеграция приложения с Windows 10 (мост для классических приложений)
-ms.author: normesta
+ms.author: hickeys
 ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
-ms.openlocfilehash: 252b1309f1218a872ea49dcce7048b890a6139b4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 6761ec38b470b798740cbabc72a648f51557edbc
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041584"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196400"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Интеграция упакованного классического приложения с Windows 10
 
 Используйте расширения для интеграции вашего упакованного классического приложения с Windows 10 предопределенными способами.
 
-Например используйте расширение создание исключения брандмауэра, сделать приложение приложение по умолчанию для типа файлов или определить плитки начального экрана на упакованную версию вашего приложения. Чтобы использовать расширение, просто добавьте разметку XML в файл манифеста пакета приложения. Никакой код не требуется.
+Например используйте расширение создание исключения брандмауэра, сделать ваше приложение приложение по умолчанию для типа файлов или определить плитки начального экрана на упакованную версию вашего приложения. Чтобы использовать расширение, просто добавьте разметку XML в файл манифеста пакета приложения. Никакой код не требуется.
 
 В этой статье описаны эти расширения и задачи, которые можно выполнить с их помощью.
 
@@ -86,6 +86,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
   </Applications>
 </Package>
 ```
+
 #### <a name="related-sample"></a>Связанный пример
 
 [Программа просмотра изображений WPF с переходом, переносом и удалением](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
@@ -146,6 +147,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
   </Applications>
 </Package>
 ```
+
 #### <a name="related-sample"></a>Связанный пример
 
 [Программа просмотра изображений WPF с переходом, переносом и удалением](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
@@ -154,7 +156,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>Связать упакованного приложения с набором типов файлов
 
-Упакованные приложения могут связанные с расширениями типов файлов. Если пользователь щелкнет файл, а затем выбирает **Открыть с помощью** параметра приложение появится в списке вариантов.
+Упакованные приложения могут связанные с расширениями типов файлов. Если пользователь щелкнет файл, а затем выбирает **Открыть с помощью** , приложение появится в списке вариантов.
 
 #### <a name="xml-namespace"></a>Пространство имен XML
 
@@ -194,8 +196,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap3:FileTypeAssociation Name="Contoso">
             <uap:SupportedFileTypes>
-              <uap:FileType>.txt</uap:FileType>
-              <uap:FileType>.avi</uap:FileType>
+            <uap:FileType>.txt</uap:FileType>
+            <uap:FileType>.avi</uap:FileType>
             </uap:SupportedFileTypes>
           </uap3:FileTypeAssociation>
         </uap:Extension>
@@ -223,14 +225,13 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 * http://schemas.microsoft.com/appx/manifest/uap/windows10/2
 * http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 
-
 #### <a name="elements-and-attributes-of-this-extension"></a>Элементы и атрибуты этого расширения
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
     <FileTypeAssociation Name="[AppID]">
         <SupportedVerbs>
-              <Verb Id="[ID]" Extended="[Extended]" Parameters="[parameters]">"[verb label]"</Verb>
+           <Verb Id="[ID]" Extended="[Extended]" Parameters="[parameters]">"[verb label]"</Verb>
         </SupportedVerbs>
     </FileTypeAssociation>
 </Extension>
@@ -243,8 +244,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Категория | Всегда ``windows.fileTypeAssociation``.
 |Имя |Уникальный идентификатор для вашего приложения. |
 |Verb |Имя, которое отображается в контекстном меню проводника. Эта строка может быть локализована с помощью ```ms-resource```.|
-|Id |Уникальный идентификатор команды. Если приложение является приложением UWP, это передается в ваше приложение как часть аргументов события активации, чтобы приложение могло обработать Выбор пользователя соответствующим образом. Если ваше приложение является упакованным приложением с полным доверием, оно будет получать параметры вместо (см. следующий пункт). |
-|Parameters |Связанный с командой список параметров и значений аргументов. Если ваше приложение является упакованным приложением с полным доверием, эти параметры передаются приложению как аргументы события при активации приложения. Вы можете настроить поведение приложения в зависимости от различных команд активации. Если переменная может содержать путь к файлу, заключите значение этого параметра в кавычки. Это позволит избежать проблем, которые возникают в случаях, когда путь содержит пробелы. Если ваше приложение является приложением UWP, передача параметров невозможна. Вместо этого приложение получит идентификатор Id (см. предыдущий пункт).|
+|Id |Уникальный идентификатор команды. Если ваше приложение является приложением UWP, это передается в ваше приложение как часть аргументов события активации, чтобы приложение могло обработать Выбор пользователя соответствующим образом. Если ваше приложение является упакованным приложением с полным доверием, оно будет получать параметры вместо (см. следующий пункт). |
+|Parameters |Связанный с командой список параметров и значений аргументов. Если ваше приложение является упакованным приложением с полным доверием, эти параметры передаются приложению как аргументы события при активации приложения. Вы можете настроить поведение вашего приложения, в зависимости от различных команд активации. Если переменная может содержать путь к файлу, заключите значение этого параметра в кавычки. Это позволит избежать проблем, которые возникают в случаях, когда путь содержит пробелы. Если ваше приложение является приложением UWP, передача параметров невозможна. Вместо этого приложение получит идентификатор Id (см. предыдущий пункт).|
 |Extended |Указывает, что команда появляется, только если пользователь отобразил контекстное меню, удерживая клавишу **SHIFT** перед нажатием правой кнопки мыши. Этот атрибут необязателен и при отсутствии по умолчанию имеет значение **False** (всегда отображать команду). Это поведение задается отдельно для каждой команды (кроме команды "Открыть", для которой всегда используется значение **False**).|
 
 #### <a name="example"></a>Пример
@@ -272,6 +273,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
   </Applications>
 </Package>
 ```
+
 #### <a name="related-sample"></a>Связанный пример
 
 [Программа просмотра изображений WPF с переходом, переносом и удалением](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
@@ -294,7 +296,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
     <FileTypeAssociation Name="[AppID]" UseUrl="true" Parameters="%1">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
-        </SupportedFileTypes> 
+        </SupportedFileTypes>
     </FileTypeAssociation>
 </Extension>
 ```
@@ -324,7 +326,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
               <uap:SupportedFileTypes>
                 <uap:FileType>.txt</uap:FileType>
                 <uap:FileType>.doc</uap:FileType>
-              </uap:SupportedFileTypes> 
+              </uap:SupportedFileTypes>
             </uap3:FileTypeAssociation>
           </uap:Extension>
         </Extensions>
@@ -351,8 +353,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 #### <a name="elements-and-attributes-of-this-extension"></a>Элементы и атрибуты этого расширения
 
 ```XML
-<Extension Category="windows.firewallRules">  
-  <FirewallRules Executable="[executable file name]">  
+<Extension Category="windows.firewallRules">
+  <FirewallRules Executable="[executable file name]">
     <Rule
       Direction="[Direction]"
       IPProtocol="[Protocol]"
@@ -360,10 +362,11 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
       LocalPortMax="LocalPortMax"
       RemotePortMin="RemotePortMin"
       RemotePortMax="RemotePortMax"
-      Profile="[Profile]"/>  
-  </FirewallRules>  
+      Profile="[Profile]"/>
+  </FirewallRules>
 </Extension>
 ```
+
 Полный справочник по схеме можно найти [здесь](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules).
 
 |Имя |Описание |
@@ -378,8 +381,6 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 |RemotePortMax |Наибольшее значение номера порта в диапазоне номеров удаленного порта. |
 |Профиль |Тип сети |
 
-
-
 #### <a name="example"></a>Пример.
 
 ```XML
@@ -387,15 +388,15 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
   xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
   IgnorableNamespaces="desktop2">
   <Extensions>
-    <desktop2:Extension Category="windows.firewallRules">  
-      <desktop2:FirewallRules Executable="Contoso.exe">  
-          <desktop2:Rule Direction="in" IPProtocol="TCP" Profile="all"/>  
-          <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="domain"/>  
-          <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="public"/>  
+    <desktop2:Extension Category="windows.firewallRules">
+      <desktop2:FirewallRules Executable="Contoso.exe">
+          <desktop2:Rule Direction="in" IPProtocol="TCP" Profile="all"/>
+          <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="domain"/>
+          <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="public"/>
           <desktop2:Rule Direction="out" IPProtocol="UDP" LocalPortMin="1339" LocalPortMax="1340" RemotePortMin="15"
-                         RemotePortMax="19" Profile="domainAndPrivate"/>  
-          <desktop2:Rule Direction="out" IPProtocol="GRE" Profile="private"/>  
-      </desktop2:FirewallRules>  
+                         RemotePortMax="19" Profile="domainAndPrivate"/>
+          <desktop2:Rule Direction="out" IPProtocol="GRE" Profile="private"/>
+      </desktop2:FirewallRules>
   </desktop2:Extension>
 </Extensions>
 </Package>
@@ -416,6 +417,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Элементы и атрибуты этого расширения
+
 Объявите это расширение на уровне пакета манифеста вашего приложения.
 
 ```XML
@@ -483,11 +485,12 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
         <SupportedVerbs>
             <Verb Id="Edit" MultiSelectModel="[SelectionModel]">Edit</Verb>
         </SupportedVerbs>
-          <SupportedFileTypes>
-                <FileType>"[FileExtension]"</FileType>
+        <SupportedFileTypes>
+            <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
 </Extension>
 ```
+
 Полный справочник по схеме можно найти [здесь](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Имя |Описание |
@@ -501,9 +504,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 Для упакованных классических приложений, как и для обычных классических приложений, имеется три варианта.
 
- * ``Player``: Приложение активируется один раз. Все выбранные файлы передаются приложению как параметры аргумента.
- * ``Single``: Приложение активируется один раз для первого выбранного файла. Другие файлы игнорируются.
- * ``Document``: Для каждого выбранного файла активируется новый отдельный экземпляр приложения.
+* ``Player``: Приложение активируется один раз. Все выбранные файлы передаются приложению как параметры аргумента.
+* ``Single``: Приложение активируется один раз для первого выбранного файла. Другие файлы игнорируются.
+* ``Document``: Для каждого выбранного файла активируется новый отдельный экземпляр приложения.
 
  Можно установить разные настройки для разных типов файлов и действий. Например, вы можете решить открывать *документы* в режиме *Document*, а *изображения*— в режиме *Player*.
 
@@ -525,7 +528,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
               <uap3:Verb Id="Preview" MultiSelectModel="Document">Preview</uap3:Verb>
             </uap2:SupportedVerbs>
             <uap:SupportedFileTypes>
-                <uap:FileType>.txt</uap:FileType>
+              <uap:FileType>.txt</uap:FileType>
             </uap:SupportedFileTypes>
         </uap:Extension>
       </Extensions>
@@ -689,6 +692,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
     </FileTypeAssociation>
 </Extension>
 ```
+
 Полный справочник по схеме можно найти [здесь](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Имя |Описание |
@@ -726,6 +730,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
   </Applications>
 </Package>
 ```
+
 <a id="make-file-properties" />
 
 ### <a name="make-file-properties-available-to-search-index-property-dialogs-and-the-details-pane"></a>Включение свойств файлов в поиск, индекс, диалоговые окна свойств и область сведений
@@ -748,6 +753,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
     </uap:FileTypeAssociation>
 </uap:Extension>
 ```
+
 Полный справочник по схеме можно найти [здесь](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Имя |Описание |
@@ -833,7 +839,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
                 <ThumbnailProviderHandler Clsid ="20000000-0000-0000-0000-000000000001"/>
                 <ExtendedPropertyhandler Clsid ="20000000-0000-0000-0000-000000000001"/>
                 <desktop:CloudFilesContextMenus>
-                    <desktop:Verb Id ="keep" Clsid=     
+                    <desktop:Verb Id ="keep" Clsid=
                        "20000000-0000-0000-0000-000000000001">
                        Always keep on this device</desktop:Verb>
                 </desktop:CloudFilesContextMenus>
@@ -859,19 +865,18 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ### <a name="start-your-application-by-using-a-protocol"></a>Запустите приложение с помощью протокола
 
-Сопоставления протоколов позволяют другим программам и компонентам системы взаимодействовать с упакованным приложением. Когда ваше упакованное приложение запускается с помощью протокола, можно определить специальные параметры передать передаются аргументам его события активации, она позволит приложению реагировать соответствующим образом. Параметры поддерживаются только для упакованных приложений с полным доверием. Приложения UWP не могут использовать параметры.  
+Сопоставления протоколов позволяют другим программам и компонентам системы взаимодействовать с упакованным приложением. Когда ваше упакованное приложение запускается с помощью протокола, вы можете определить специальные параметры передать передаются аргументам его события активации, она позволит приложению реагировать соответствующим образом. Параметры поддерживаются только для упакованных приложений с полным доверием. Приложения UWP не могут использовать параметры.
 
 #### <a name="xml-namespace"></a>Пространство имен XML
 
 http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Элементы и атрибуты этого расширения
 
 ```XML
 <Extension
     Category="windows.protocol">
-    <Protocol
+  <Protocol
       Name="[Protocol name]"
       Parameters="[Parameters]" />
 </Extension>
@@ -896,15 +901,16 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
       <Extensions>
         <uap3:Extension
           Category="windows.protocol">
-        <uap3:Protocol
-          Name="myapp-cmd"
-          Parameters="/p &quot;%1&quot;" />
+          <uap3:Protocol
+            Name="myapp-cmd"
+            Parameters="/p &quot;%1&quot;" />
         </uap3:Extension>
       </Extensions>
     </Application>
   </Applications>
 </Package>
 ```
+
 <a id="alias" />
 
 ### <a name="start-your-application-by-using-an-alias"></a>Запустите приложение с помощью псевдонима
@@ -916,7 +922,6 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 * http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 * http://schemas.microsoft.com/appx/manifest/desktop/windows10
 
-
 #### <a name="elements-and-attributes-of-this-extension"></a>Элементы и атрибуты этого расширения
 
 ```XML
@@ -925,8 +930,8 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
     Executable="[ExecutableName]"
     EntryPoint="Windows.FullTrustApplication">
     <AppExecutionAlias>
-            <desktop:ExecutionAlias Alias="[AliasName]" />
-      </AppExecutionAlias>
+        <desktop:ExecutionAlias Alias="[AliasName]" />
+    </AppExecutionAlias>
 </Extension>
 ```
 
@@ -949,9 +954,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
         Category="windows.appExecutionAlias"
         Executable="exes\launcher.exe"
         EntryPoint="Windows.FullTrustApplication">
-        <uap3:AppExecutionAlias>
-            <desktop:ExecutionAlias Alias="Contoso.exe" />
-        </uap3:AppExecutionAlias>
+      <uap3:AppExecutionAlias>
+        <desktop:ExecutionAlias Alias="Contoso.exe" />
+      </uap3:AppExecutionAlias>
   </uap3:Extension>
 ...
 </Package>
@@ -966,7 +971,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 Задачи автозагрузки позволяют вашему приложению автоматически запускать исполняемый файл при входе пользователя в систему.
 
 > [!NOTE]
-> Пользователь должен открыть приложение хотя бы один раз зарегистрировать эту задачу автозагрузки.
+> Пользователю необходимо запустить приложение хотя бы один раз, чтобы зарегистрировать эту задачу автозагрузки.
 
 Приложение может объявить несколько задач автозагрузки. Каждая задача запускается независимо друг от друга. Все задачи автозагрузки отображаются в диспетчере задач во вкладке **Автозагрузка** и имеют значки вашего приложения и имена, указанные вами в манифесте приложения. Диспетчер задач автоматически анализирует влияние ваших задач на процесс запуска.
 
@@ -983,7 +988,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
     Category="windows.startupTask"
     Executable="[ExecutableName]"
     EntryPoint="Windows.FullTrustApplication">
-    <StartupTask
+  <StartupTask
       TaskId="[TaskID]"
       Enabled="true"
       DisplayName="[DisplayName]" />
@@ -1011,7 +1016,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
           Category="windows.startupTask"
           Executable="bin\MyStartupTask.exe"
           EntryPoint="Windows.FullTrustApplication">
-          <desktop:StartupTask
+        <desktop:StartupTask
           TaskId="MyStartupTask"
           Enabled="true"
           DisplayName="My App Service" />
@@ -1021,6 +1026,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
   </Applications>
  </Package>
 ```
+
 <a id="autoplay" />
 
 ### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>Разрешите пользователям запускать приложение при подключении устройства к Компьютеру
@@ -1030,7 +1036,6 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 #### <a name="xml-namespace"></a>Пространство имен XML
 
 http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
-
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Элементы и атрибуты этого расширения
 
@@ -1049,11 +1054,11 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |-------|-------------|
 |Категория |Всегда ``windows.autoPlayHandler``.
 |ActionDisplayName |Строка, представляющая действие, которое пользователи могут выполнить с устройством, которое они подключают к ПК (например "Импорт файлов" или "Воспроизведение видео"). |
-|ProviderDisplayName | Строка, представляющая ваше приложение или службу (например: «Contoso видеопроигрывателя»). |
+|ProviderDisplayName | Строка, представляющая ваше приложение или служба (например: «Contoso видеопроигрывателя»). |
 |ContentEvent |Имя события содержимого, при котором ``ActionDisplayName``и ``ProviderDisplayName`` отправляют запрос пользователям. Событие содержимого возникает, когда к компьютеру подключается устройство тома, например карта памяти камеры, флэш-накопитель или DVD-диск. Полный список этих событий можно найти [здесь ](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
 |Verb |Параметр Verb определяет значение, передаваемое приложению для выбранного варианта. Для события автозапуска можно указать несколько действий при запуске и использовать параметр Verb, чтобы определить, какой вариант пользователь выбрал для приложения. Выбранный пользователем вариант можно узнать, проверив свойство verb аргументов события запуска, переданных приложению. Для параметра Verb можно использовать любое значение, кроме значения open, которое зарезервировано. |
 |DropTargetHandler |Идентификатор класса приложения, которое реализует интерфейс [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) . Файлы со съемного носителя передаются методу [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) вашей реализации [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017).  |
-|Параметры |Не требуется реализовывать интерфейс [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) для всех событий содержимого. Для любого из событий содержимого можно указать параметры командной строки вместо реализации интерфейса [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017). Для этих событий автозапуска запускать приложение с помощью этих параметров командной строки. Можно проанализировать эти параметры в коде инициализации приложения, чтобы определить, было ли оно запущено с помощью автозапуска, а затем предоставить пользовательскую реализацию. |
+|Параметры |Не требуется реализовывать интерфейс [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) для всех событий содержимого. Для любого из событий содержимого можно указать параметры командной строки вместо реализации интерфейса [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017). Для этих событий автозапуска будет запустить приложение с помощью этих параметров командной строки. Можно проанализировать эти параметры в коде инициализации приложения, чтобы определить, было ли оно запущено с помощью автозапуска, а затем предоставить пользовательскую реализацию. |
 |DeviceEvent |Имя события устройства, при котором ``ActionDisplayName``и ``ProviderDisplayName`` отправляют запрос пользователям. Событие устройства создается, если устройство подключено к ПК. События устройства начинаются со строки ``WPD`` и их можно найти [здесь](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference). |
 |HWEventHandler |Идентификатор класса приложения, которое реализует интерфейс [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) . |
 |InitCmdLine |Параметр строки, который требуется передать в метод [Initialize](https://msdn.microsoft.com/en-us/library/windows/desktop/bb775495.aspx) интерфейса [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx). |
@@ -1080,17 +1085,18 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
   </Applications>
 </Package>
 ```
+
 <a id="updates" />
 
 ### <a name="restart-automatically-after-receiving-an-update-from-the-microsoft-store"></a>Автоматический перезапуск после получения обновления из Microsoft Store
 
 Если ваше приложение открыто, когда пользователи устанавливают обновление для него, приложение закрывается.
 
-Если вам требуется перезапуск после завершения обновления в этом приложении, вызовите функцию [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) в каждом процессе, который требуется перезапустить.
+Если вы хотите это приложение было перезапуститься после завершения обновления, вызовите функцию [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) в каждом процессе, который требуется перезапустить.
 
 Каждое активное окно в приложении получает сообщение [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx) . На этом этапе приложение может вызвать функцию [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) еще раз, чтобы при необходимости обновить командную строку.
 
-Когда каждое активное окно в приложении получает сообщение [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) , приложение должно сохранить данные и завершить работу.
+Когда каждое активное окно в приложении получает сообщение [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) , ваше приложение должно сохранить данные и завершить работу.
 
 >[!NOTE]
 Активные окна также получают сообщение [WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx) на случай, если приложение не обрабатывает сообщение [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) .
@@ -1111,7 +1117,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 ### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>Сделать ваше приложение отображалось как цель печати в приложениях, поддерживающих печать
 
-Когда пользователи хотят печать данных из другого приложения, такие как "Блокнот", его можно сделать ваше приложение отображалось как цель печати в приложении список доступных целевых объектов печати.
+Когда пользователи хотят печать данных из другого приложения, такие как "Блокнот", его можно сделать ваше приложение отображалось как цель печати в приложения список доступных целевых объектов печати.
 
 Необходимо изменить приложение таким образом, чтобы оно получало данные для печати в формате XML Paper Specification (XPS).
 
@@ -1135,7 +1141,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 |-------|-------------|
 |Категория |Всегда ``windows.appPrinter``.
 |DisplayName |Имя, которое должно отображаться в списке целевых объектов печати для приложения. |
-|Parameters |Все параметры, которые требуются приложению для правильной обработки запроса. |
+|Parameters |Любые параметры, которые вашему приложению требуется для правильной обработки запроса. |
 
 #### <a name="example"></a>Пример
 
@@ -1156,6 +1162,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 </Applications>
 </Package>
 ```
+
 Пример, использующий это расширение, находится [здесь](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/PrintToPDF)
 
 <a id="fonts" />
@@ -1179,7 +1186,6 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 ```
 
 Полный справочник по схеме можно найти [здесь](https://review.docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts).
-
 
 |Имя |Описание |
 |-------|-------------|
@@ -1206,6 +1212,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
   </Applications>
 </Package>
 ```
+
 <a id="win32-process" />
 
 ### <a name="start-a-win32-process-from-a-universal-windows-platform-uwp-app"></a>Запуск процесса Win32 из приложения для универсальной платформы Windows (UWP)
@@ -1258,7 +1265,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
   </Applications>
 </Package>
 ```
-Это расширение может быть полезно, если вы хотите создать Windows пользовательский интерфейс универсальной платформы для работы на всех устройствах, но при этом необходимо компоненты приложения Win32 продолжали работать с полным доверием.
+
+Это расширение может быть полезно, если вы хотите создать универсальной платформы пользовательский интерфейс Windows, работает на всех устройствах, но при этом необходимо компоненты вашего приложения Win32 продолжали работать с полным доверием.
 
 Просто создайте пакета приложения для Windows для вашего приложения Win32. Затем добавьте это расширение в файл пакета вашего приложения UWP. Это расширение указывает, что вы хотите запустить исполняемый файл в пакете приложения для Windows.  Если вы хотите обмениваться данными между вашими приложениями UWP и Win32, для этого можно настроить одну или несколько [служб приложений](../launch-resume/app-services.md). Подробнее об этом сценарии см. [здесь](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
 

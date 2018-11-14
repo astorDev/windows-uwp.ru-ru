@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17ee99553b5713acb1917ccb697abb2387d00da2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044233"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148590"
 ---
 # <a name="xphase-attribute"></a>Атрибут x:Phase
 
@@ -81,5 +81,5 @@ ms.locfileid: "6044233"
 
 Фазирование затрагивает только привязки [{x:Bind}](x-bind-markup-extension.md) и не касается привязок [{Binding}](binding-markup-extension.md).
 
-Фазирование применяется только в тех случаях, когда для отрисовки шаблона элемента используется элемент управления с поддержкой фазирования. Для Windows10, то есть [**элементы управления ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). Фазирование не применяется к шаблонам данных, задействованным в других элементах управления или сценариях (например, [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) или разделы [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)). В этих случаях привязка к данным сразу выполняется для всех элементов пользовательского интерфейса.
+Фазирование применяется только в тех случаях, когда для отрисовки шаблона элемента используется элемент управления с поддержкой фазирования. Для Windows10, то есть [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). Фазирование не применяется к шаблонам данных, задействованным в других элементах управления или сценариях (например, [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) или разделы [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)). В этих случаях привязка к данным сразу выполняется для всех элементов пользовательского интерфейса.
 

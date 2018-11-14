@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, покупки из приложения, IAP, надстройки, пробные версии, потребляемые, длительного пользования, подписка
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c1c4ea1923ff81754b9c8ed8328ba6ec670a3f1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035772"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189796"
 ---
 # <a name="in-app-purchases-and-trials"></a>Покупки из приложения и пробные версии
 
@@ -165,7 +165,7 @@ ms.locfileid: "6035772"
 2. Затем убедитесь, что вы выполнили следующие действия:
 
     * Напишите код в приложении, которое использует класс [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) и другие связанные типы в пространстве имен **Windows.Services.Store**, чтобы реализовать функцию [покупок из приложения](#implement-iap) или [пробной версии](#implement-trial).
-    * Если ваше приложение предлагает надстройку, которую можно приобрести, [Создание отправки надстройки для приложения в центре партнеров](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
+    * Если ваше приложение предлагает надстройку, которую можно приобрести, [Создание отправки надстройки для вашего приложения в центре партнеров](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
     * Если вы хотите исключить или ограничить некоторые функциональные возможности пробной версии вашего приложения, [Настройте свое приложение в качестве бесплатной пробной версии в центре партнеров](../publish/set-app-pricing-and-availability.md#free-trial).
 
 3. Открыв проект в Visual Studio, щелкните **Меню проекта**, укажите на **Магазин** и выберите **Связать приложение с Магазином**. Выполните инструкции мастера, чтобы связать проект приложения с приложением в вашей учетной записи центра партнеров, которое вы хотите использовать для тестирования.

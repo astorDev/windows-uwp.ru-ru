@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 31279de84b8f00e4489a7aae962caa231bb16dc1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037801"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184362"
 ---
 # <a name="improve-garbage-collection-performance"></a>Улучшение производительности сборки мусора
 
 
 Приложения универсальной платформы Windows (UWP) на C# и Visual Basic получают функции автоматического управления памятью от сборщика мусора .NET. В этой статье приведены основные рекомендации по настройке поведения и производительности сборщика мусора .NET в приложениях UWP. Подробнее о принципах работы сборщика мусора .NET и средствах его отладки и анализа производительности см. в статье [Сборка мусора](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx).
 
-**Примечание**необходимость изменить поведение по умолчанию сборщика мусора, свидетельствует о наличии проблем общего характера памятью с вашим приложением. Дополнительные сведения об этом см. в статье [Средство использования памяти при отладке в Visual Studio2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). Эта статья касается только языков C# и Visual Basic.
+**Примечание**необходимость изменить в поведение сборщика мусора по умолчанию, свидетельствует о наличии проблем общего характера памятью с вашим приложением. Дополнительные сведения об этом см. в статье [Средство использования памяти при отладке в Visual Studio2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). Эта статья касается только языков C# и Visual Basic.
 
  
 

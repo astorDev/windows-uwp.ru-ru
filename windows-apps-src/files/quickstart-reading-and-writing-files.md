@@ -14,11 +14,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 9bc19460fe1b9b9c6b637606a737e1157d98feef
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029990"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6146673"
 ---
 # <a name="create-write-and-read-a-file"></a>Создание, запись и чтение файла
 
@@ -256,7 +256,7 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  Затем получите выходной поток, вызвав метод [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) из `stream`. Если вы используете C#, заключите это в оператор **using** для управления временем существования выходного потока. Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то можно управлять своим временем существования, включающего в блоке, или значение `nullptr` после завершения с ним.
+2.  Затем получите выходной поток, вызвав метод [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) из `stream`. Если вы используете C#, заключите это в оператор **using** для управления временем существования выходного потока. Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то вы можете контролировать на протяжении жизненного цикла с заключения его в блок, или значение `nullptr` после завершения с ним.
 
 ```csharp
 using (var outputStream = stream.GetOutputStreamAt(0))

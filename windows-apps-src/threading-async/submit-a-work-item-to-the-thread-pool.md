@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, потоки, пул потоков
 ms.localizationpriority: medium
 ms.openlocfilehash: fe73520782b18fb7419807695296bc6487f9c018
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040311"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6181264"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Отправка рабочего элемента в пул потоков
 
@@ -33,7 +33,7 @@ ms.locfileid: "6040311"
 Доступны три версии функции [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593), поэтому вы можете при необходимости задать приоритет рабочего элемента и контролировать, выполняется ли он параллельно с другими рабочими элементами.
 
 >[!NOTE]
->Используйте [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) для доступа к потоку пользовательского интерфейса и отображения хода выполнения рабочего элемента.
+>Используйте [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) для доступа к потоку пользовательского интерфейса и отображения хода выполнения из рабочего элемента.
 
 В примере ниже создается рабочий элемент и предоставляется лямбда-функция для выполнения работы.
 
@@ -352,7 +352,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 
-Дополнительные сведения, загрузив код из этого краткого руководства в [создании ThreadPool работать образец элемента](http://go.microsoft.com/fwlink/p/?LinkID=328569) для Windows8.1 и повторном использовании исходного кода в Windows10 win\_unap.
+Дополнительные сведения, скачайте код из этого краткого руководства в [создании ThreadPool работать образец элемента](http://go.microsoft.com/fwlink/p/?LinkID=328569) для Windows8.1 и повторном использовании исходного кода в Windows10 win\_unap.
 
 ## <a name="related-topics"></a>Еще по теме
 

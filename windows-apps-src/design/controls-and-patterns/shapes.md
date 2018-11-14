@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 984653ad20fc40035528ab7e32b904e64d6ff8c5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040539"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192875"
 ---
 # <a name="draw-shapes"></a>Рисование фигур
 
@@ -104,7 +104,7 @@ layoutRoot.Children.Add(rectangle1);
 
 ![Обработанный прямоугольник.](images/shapes-rectangle.jpg)
 
-**Совет**существуют сценарии для определения пользовательского интерфейса, где вместо использования [**прямоугольник**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), [**границы**](https://msdn.microsoft.com/library/windows/apps/BR209250) более подходящим будет. Если вы хотите создать прямоугольную фигуру вокруг некоторого содержимого, удобнее использовать объект **Border**, так как он может иметь дочернее содержимое и его размеры автоматически настраиваются по размеру содержимого, благодаря чему отпадает необходимость задавать конкретные ширину и высоту прямоугольника, как в случае с **Rectangle**. Объект **Border** можно также создавать с закругленными углами, задав значение свойства [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius).
+**Совет**существуют определенные сценарии для определения пользовательского интерфейса, где вместо [**прямоугольника**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), [**границы**](https://msdn.microsoft.com/library/windows/apps/BR209250) более подходящим будет. Если вы хотите создать прямоугольную фигуру вокруг некоторого содержимого, удобнее использовать объект **Border**, так как он может иметь дочернее содержимое и его размеры автоматически настраиваются по размеру содержимого, благодаря чему отпадает необходимость задавать конкретные ширину и высоту прямоугольника, как в случае с **Rectangle**. Объект **Border** можно также создавать с закругленными углами, задав значение свойства [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius).
 
 С другой стороны, объект [**Прямоугольник**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) , вероятно, представляет собой лучший вариант для компоновки элементов управления. Фигура **Rectangle** отображается во множестве шаблонов элементов управления, так как она используется как часть "FocusVisual" для фокусируемых элементов управления. Каждый раз, когда элемент управления находится в визуальном состоянии с фокусом ввода, этот прямоугольник становится видимым, в других состояниях он скрыт.
 
@@ -143,7 +143,7 @@ layoutRoot.Children.Add(polygon1);
 
 ![Обработанный многоугольник.](images/shapes-polygon.jpg)
 
-**Совет**значение [**запятой**](https://msdn.microsoft.com/library/windows/apps/BR225870) часто используется в качестве типа в XAML для сценариев не объявляются вершины фигур. Например, **Point** входит в состав данных событий сенсорного ввода, что позволяет точно определить, где в системе координат произошло действие касания. Подробнее о параметре **Point** и его использовании в XAML или коде см. в справочных статьях по API для [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870).
+**Совет**значением [**точки**](https://msdn.microsoft.com/library/windows/apps/BR225870) часто используется в качестве типа в XAML для сценариев не объявляются вершины фигур. Например, **Point** входит в состав данных событий сенсорного ввода, что позволяет точно определить, где в системе координат произошло действие касания. Подробнее о параметре **Point** и его использовании в XAML или коде см. в справочных статьях по API для [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870).
 
 ## <a name="line"></a>Линия
 
@@ -171,7 +171,7 @@ layoutRoot.Children.Add(line1);
 
 Фигура [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) похожа на фигуру [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) тем, что ее граница также определяется набором точек, но последняя точка в **Polyline** не соединяется с первой.
 
-**Примечание**  явным образом может быть так же, как начальную точку и конечной точкой в [**точках**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) задать для [**ломаной линии**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), но в этом случае можно использовать [**многоугольник**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) вместо.
+**Примечание**  явным образом может быть точку так же, как меню "Пуск" и настроить конечную точку в [**точки**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) для [**ломаной линии**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), но в этом случае можно использовать [**многоугольник**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) вместо.
 
 Если вы задаете параметр [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) для фигуры [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), свойство **Fill** закрасит внутреннее пространство фигуры даже в том случае, если начальная и конечная точки в наборе [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) для фигуры **Polyline** не совпадают. Если вы не зададите параметр **Fill**, фигура **Polyline** будет напоминать комбинацию из нескольких отдельных элементов [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line), у которых начальные и конечные точки соседних отрезков линии совпадают.
 

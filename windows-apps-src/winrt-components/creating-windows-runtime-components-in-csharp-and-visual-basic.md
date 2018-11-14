@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e3b9ed2d256fb9ea8d38690a703baf7fbd3e7f0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031861"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191511"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>Создание компонентов среды выполнения Windows в C# и Visual Basic
 Начиная с .NET Framework 4.5 можно создавать собственные типы среды выполнения Windows, упакованные в компонент среды выполнения Windows, с помощью управляемого кода. Этот компонент можно использовать в приложениях универсальной платформы Windows (UWP), написанных на C++, JavaScript, Visual Basic или C#. В этом разделе описываются правила создания компонента и рассматриваются некоторые аспекты поддержки среды выполнения Windows в .NET Framework. Как правило, такая поддержка разрабатывается таким образом, чтобы быть прозрачной для разработчиков .NET Framework. Однако при создании компонента, использующего JavaScript или C++, следует учитывать различия в том, как эти языки поддерживают среду выполнения Windows.
@@ -36,7 +36,7 @@ ms.locfileid: "6031861"
     -   быть созданы путем наследования типов отсутствующих в среде выполнения Windows, таким как System.Exception и System.EventArgs.
 -   Корневое пространство имен всех открытых типов должно совпадать с именем сборки, а имя сборки не должно начинаться на «Windows».
 
-    > **Совет**по умолчанию проектов Visual Studio имеют имена пространств имен, которые совпадают с именами сборок. В Visual Basic оператор Namespace для данного пространства имен по умолчанию в коде не отображается.
+    > **Совет**по умолчанию проекты Visual Studio имеют имена пространств имен, которые совпадают с именами сборок. В Visual Basic оператор Namespace для данного пространства имен по умолчанию в коде не отображается.
 
 -   Открытые структуры не могут иметь членов, отличных от открытых полей, а эти поля должны иметь тип значения или строковый тип.
 -   Открытые классы должны быть **запечатанными** (**NotInheritable** в Visual Basic). Если модель программирования требует полиморфизма, можно создать открытый интерфейс и реализовать его в классах, которые должны быть полиморфными.
@@ -90,7 +90,7 @@ ms.locfileid: "6031861"
 | Windows.UI.Xaml.Data.PropertyChangedEventHandler | System.ComponentModel.PropertyChangedEventHandler |
 | Windows.UI.Xaml.Data.PropertyChangedEventArgs    | System.ComponentModel.PropertyChangedEventArgs    |
 
-Если тип реализует несколько интерфейсов, в качестве типа параметра или типа возвращаемого значения члена можно использовать любой из этих интерфейсов. Например, можно передавать или возвращать словарь&lt;int, string&gt; (Dictionary (Of Integer, String) в Visual Basic) как IDictionary&lt;int, string&gt;, IReadOnlyDictionary&lt;int, string&gt;, или IEnumerable&lt; System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;.
+Если тип реализует несколько интерфейсов, в качестве типа параметра или типа возвращаемого значения члена можно использовать любой из этих интерфейсов. Например, можно передавать или возвращать словарь&lt;int, string&gt; (Dictionary (Of Integer, String) в Visual Basic) как IDictionary&lt;int, string&gt;, IReadOnlyDictionary&lt;int, string&gt;, или IEnumerable&lt; Тип System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;.
 
 **Важные**JavaScript используется интерфейс, занимающий первую позицию в списке интерфейсов, реализуемых управляемым типом. Например, если в код JavaScript возвращается тип Dictionary&lt;int, string&gt;, он отображается как IDictionary&lt;int, string&gt; независимо от того, какой интерфейс указан в качестве типа возвращаемого значения. Это означает, что если первый интерфейс не включает элемент, который отображается в последующих интерфейсах, этот элемент не будет видимым в JavaScript.
 
@@ -210,7 +210,7 @@ function asyncExample(id) {
 
 Для асинхронных действий и операций, которые поддерживают отчеты об отмене и ходе выполнения, следует с помощью класса [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) создавать запущенную задачу и реализовывать функции отчетов об отмене и ходе выполнения с помощью аналогичных функций соответствующего интерфейса среды выполнения Windows. Пример, в котором реализована поддержка отчетов об отмене и ходе выполнения, см. в статье [Пошаговое руководство. Создание простого компонента в C# или Visual Basic и его вызов из кода JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
-Обратите внимание, что методы класса AsyncInfo можно использовать даже в том случае, если асинхронный метод не поддерживает отчеты об отмене и ходе выполнения. При использовании лямбда-функции Visual Basic или анонимного метода C# не указывайте параметры токена и интерфейса [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx). При использовании лямбда-функции C# указывайте параметр токена, но игнорируйте его. Предыдущий пример, в котором используется AsAsyncOperation&lt;TResult&gt; метод, выглядит следующим образом, при использовании [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) метод Вместо этого перегрузку:
+Обратите внимание, что методы класса AsyncInfo можно использовать даже в том случае, если асинхронный метод не поддерживает отчеты об отмене и ходе выполнения. При использовании лямбда-функции Visual Basic или анонимного метода C# не указывайте параметры токена и интерфейса [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx). При использовании лямбда-функции C# указывайте параметр токена, но игнорируйте его. Предыдущий пример, в котором используется AsAsyncOperation&lt;TResult&gt; метода, выглядит следующим образом, при использовании [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) метод Вместо этого перегрузку:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp

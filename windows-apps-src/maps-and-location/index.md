@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, карты, расположение, службы карт
 ms.localizationpriority: medium
 ms.openlocfilehash: 17d123b440b6ec7892c84a9a6bca9177799ad0fb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026948"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199061"
 ---
 # <a name="maps-and-location-overview"></a>Обзор карт и расположения
 
@@ -53,7 +53,7 @@ ms.locfileid: "6026948"
 | [Отображение объектов на карте](display-poi.md) | Добавляйте объекты на карту, используя вешки, изображения, фигуры и элементы пользовательского интерфейса XAML. |
 | [Отображение дорог и направлений](routes-and-directions.md) | Запрос маршрутов и направлений и их отображение в вашем приложении. |
 | [Выполнение геокодирования и обратного геокодирования](geocoding.md) | Вы можете преобразовывать адреса в географические положения (выполнять геокодирование) и географические положения— в адреса (выполнять обратное геокодирование), вызывая методы класса [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) в пространстве имен [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979). |
-| [Найдите и скачайте пакеты карт для автономного использования](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| В прошлом ваше приложение было направлять пользователей на приложение "Параметры" загружать автономные карты. Теперь вы можете использовать классы в пространстве имен [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) найти скачанные пакеты в заданной области, (на основе [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox), и т. д.). <br> Вы можете также проверить и ожидать загруженные состояние пакеты карт как также начать загрузку без взаимодействия с пользователем выйти из приложения. <br> Вы найдете примеры того, как это сделать в справочная информация и [Пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977).
+| [Найдите и скачайте пакеты карт для автономного использования](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| В прошлом ваше приложение было пользователи перенаправляются на приложение "Параметры" загружать автономные карты. Теперь вы можете использовать классы в пространстве имен [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) найти скачанные пакеты в заданной области, (на основе [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox), и т. д.). <br> Вы можете также проверить и ожидать загруженный состояние пакеты карт как также начать загрузку без взаимодействия с пользователем выйти из приложения. <br> Вы найдете примеры того, как это сделать в справочная информация и [Пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977).
 
 ## <a name="get-the-users-location"></a>Получение местоположения пользователя
 

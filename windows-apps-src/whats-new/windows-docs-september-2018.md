@@ -1,18 +1,18 @@
 ---
 author: QuinnRadich
 title: Что нового в документации Windows в сентябре 2018 г. — Разработка приложений UWP
-description: Новые возможности, видео, примеры и руководства для разработчиков добавлены в документацию для сентябрь 2018 г. разработчиков Windows 10.
+description: Новые возможности, видео, примеры и руководства для разработчиков добавлены в документацию для сентября 2018 разработчиков Windows 10.
 keywords: новые возможности, обновления, компоненты, руководство разработчика, Windows 10 сентября
 ms.author: quradic
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 918fd0208d6af17c25ad184a856b2a87a6f61791
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032662"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188198"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Что нового в документации для разработчиков Windows в сентябре 2018 г.
 
@@ -24,7 +24,7 @@ ms.locfileid: "6032662"
 
 ### <a name="windows-machine-learning"></a>Машинное обучение Windows
 
-[Документы машинное обучение Windows](https://docs.microsoft.com/windows/ai/) теперь находятся на свой узел и обновляются при последнюю версию SDK программы предварительной оценки Windows. Существует рабочего стола и учебники по UWP на C++ и C# помогут вам начать добавление WinML ваше приложение.
+[Документы машинное обучение Windows](https://docs.microsoft.com/windows/ai/) теперь находятся на свой узел и обновляются последнюю версию SDK программы предварительной оценки Windows. Существует рабочего стола и учебники по UWP на C++ и C# помогут вам начать добавление WinML к вашему приложению.
 
 [Справочник по API Windows.AI.MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning) был обновлен для последней версии SDK программы предварительной оценки Windows.
 
@@ -42,13 +42,13 @@ ms.locfileid: "6032662"
 
 ### <a name="how-blur-effects-work"></a>Как размытие рабочих эффектов
 
-Один из наших записи esteemed Джекобс Михаил, начнет серия статей о размытия с ослабленным для фотографирования для разработки приложений и игр на носителе. Если вы хотите узнать больше о это распространенная визуальный эффект, ознакомьтесь с [первой статьи на концепции и определять ориентацию](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) и [второй раз на сглаживания в графике.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+Один из наших записи esteemed Джекобс Михаил, начнет серия статей в средний о размытия с ослабленным для фотографирования для разработки приложений и игр. Если вы хотите подробнее узнать об этом распространенная визуальный эффект, ознакомьтесь с [первой статьи на концепции и фотосъемки](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) и [второй на сглаживания в графике.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
-![Размытие в действии](images/blur-example.jpg)
+![Размытия в действии](images/blur-example.jpg)
 
 ### <a name="contributing-guidance"></a>Дополнение рекомендации
 
-Мы обновили [наши вклад рекомендации](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) для нашей документации UWP. Эти новые инструкции об рабочего процесса и ожидания для внешних вклад в нашей документации.
+Мы обновили [наши вклад рекомендации](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) для нашей документации UWP. Эти новые инструкции поясняющий рабочего процесса и ожиданиям для внешних вклад в нашей документации.
 
 ## <a name="videos"></a>Видеоролики
 
@@ -58,11 +58,11 @@ ms.locfileid: "6032662"
 
 Аарон Gustafson:
 
-* [6 видеоролики с инструкциями по прогрессивные веб-приложения](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
+* [6 видео на прогрессивные веб-приложения](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
 
 Крис Heilmann
 
-* [4 видео о средстве webhint](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
+* [4 видео от средства, webhint](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
 
 Ларри Osterman:
 

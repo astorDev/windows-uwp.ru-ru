@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, данные, база данных, реляционная, таблицы, sqlite
 ms.localizationpriority: medium
 ms.openlocfilehash: beca20d358430ecd82cd1bc57459a6f6af36be77
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6048222"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6146683"
 ---
 # <a name="data-access"></a>Доступ к данным
 
-Вы можете сохранить данные на устройстве пользователя с помощью базы данных SQLite. Ваше приложение можно также подключаться напрямую к базе данных SQL Server без использования каких-либо уровень служб.
+Вы можете сохранить данные на устройстве пользователя с помощью базы данных SQLite. Ваше приложение можно также подключаться напрямую к базе данных SQL Server без необходимости использовать каких-либо уровень служб.
 
 | Статья | Описание|
 |-------|------------|

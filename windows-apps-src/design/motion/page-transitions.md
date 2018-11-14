@@ -10,11 +10,11 @@ keywords: Windows10, UWP
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.openlocfilehash: 62e39e8e2cf1caa5673a925481848147cf445188
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6038269"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148709"
 ---
 # <a name="page-transitions"></a>Смена страниц
 
@@ -57,7 +57,7 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="horizontal-slide"></a>Скользящее движение по горизонтали
 
-Используйте горизонтальный слайд для отображения, страницами одного уровня отображаются рядом друг с другом. Элемент управления [NavigationView](../controls-and-patterns/navigationview.md) автоматически использует эту анимацию для верхней панели навигации, но если вы создаете собственный горизонтальной навигацию, затем можно реализовать горизонтальное слайд с SlideNavigationTransitionInfo.
+Используйте горизонтальной слайд, чтобы показать, что страницами одного уровня отображаются рядом друг с другом. Элемент управления [NavigationView](../controls-and-patterns/navigationview.md) автоматически использует эту анимацию для верхней панели навигации, но если вы создаете собственный горизонтальной навигацию, затем можно реализовать горизонтальное слайд с SlideNavigationTransitionInfo.
 
 Создать ощущение, что переход между страницами, которые являются рядом друг с другом. 
 
