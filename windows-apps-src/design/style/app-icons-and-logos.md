@@ -10,12 +10,12 @@ keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c389aa207b0756a222c1c82ea99ea007b451b1e
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: d31916c4db51d278c294de56a7ec8a56d2178a91
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6450119"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6663663"
 ---
 # <a name="app-icons-and-logos"></a>Значки и логотипы приложений 
 
@@ -52,7 +52,7 @@ ms.locfileid: "6450119"
 | Значок приложения | Список приложений в меню "Пуск", панели задач, диспетчер задач | Square44x44Logo.PNG |
 | Экран-заставка | Экран-заставка приложения | SplashScreen.png  |
 | Индикатор событий | Плитки вашего приложения | BadgeLogo.png  |
-| Логотип логотип/Store пакета | Установщик приложений, центра разработки, параметр «Создание отчетов приложения» в магазине, параметр «Написать отзыв» в магазине | StoreLogo.png  |
+| Логотип логотип/Store пакета | Установщик приложений, центра партнеров, параметр «Создание отчетов приложения» в магазине, параметр «Написать отзыв» в магазине | StoreLogo.png  |
 
 \ * Используется, пока не будет выбран для [отображения только выложенные изображения в магазине](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store). 
 
