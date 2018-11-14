@@ -9,18 +9,18 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c41801362a03bb8d1d5e06b3ada876014237b1f7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6048022"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190785"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>Поддержка покупки продуктов из приложения
 
 Предоставьте пользователям возможность покупки из приложения потребляемых внутренних продуктов приложения (товаров, которые можно покупать, использовать и покупать снова) через Магазин. Покупка из приложения — удобный и надежный способ приобрести товар. Это особенно удобно при покупке виртуальной валюты для игр (золота, монет и др.), которую можно потом использовать в процессе игры.
 
 > [!IMPORTANT]
-> В этой статье показано, как использовать элементы пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) для включения покупок потребляемых продуктов в приложении. Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Пространство имен **Windows.Services.Store** поддерживает новейшие типы надстроек, таких как подписки и потребляемые надстройки, управляемые магазином, а его архитектура обеспечивает совместимость с будущими продуктами и компонентами, которые поддерживаются центром партнеров и хранилище. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Дополнительные сведения о включении возможности покупки потребляемых продуктов из приложения с помощью пространства имен **Windows.Services.Store** см. в [этой статье](enable-consumable-add-on-purchases.md).
+> В этой статье показано, как использовать элементы пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) для включения покупок потребляемых продуктов в приложении. Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Пространство имен **Windows.Services.Store** поддерживает новейшие типы надстроек, включая потребляемые надстройки, управляемые магазином и подписки и его архитектура обеспечивает совместимость с будущими продуктами и компонентами, которые поддерживаются центром партнеров и хранилище. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Дополнительные сведения о включении возможности покупки потребляемых продуктов из приложения с помощью пространства имен **Windows.Services.Store** см. в [этой статье](enable-consumable-add-on-purchases.md).
 
 ## <a name="prerequisites"></a>Что вам понадобится
 

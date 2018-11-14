@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, обработка ошибок, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 65887bba125d8d7db1b224c1842da8c9ab34f117
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028871"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6443181"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>Пошаговое руководство по обработке ошибок в JavaScript
 

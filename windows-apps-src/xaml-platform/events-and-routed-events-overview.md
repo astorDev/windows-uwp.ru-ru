@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ec2986594b043fa088450609e655f4b56b95e25
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6151074"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6449859"
 ---
 # <a name="events-and-routed-events-overview"></a>Общие сведения о событиях и перенаправленных событиях
 

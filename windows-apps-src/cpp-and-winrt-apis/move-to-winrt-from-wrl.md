@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: c0fd9be96b0709651ee31f58b0d87227cd5115e0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042349"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192175"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>Переход на C++/WinRT с WRL
 В этом разделе показано, как перенести код [Библиотеки шаблонов C++ (WRL) среды выполнения Windows](/cpp/windows/windows-runtime-cpp-template-library-wrl) в его эквивалент на [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -43,7 +43,7 @@ winrt::check_hresult(m_dxgiFactory->EnumAdapters1(0, previousDefaultAdapter.put(
 ```
 
 > [!IMPORTANT]
-> Если у вас есть [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) , которая уже закреплена (его внутренних необработанный указатель уже имеет конечное) и вы хотите повторно число его, чтобы указывать на другой объект, а затем сначала необходимо назначить `nullptr` к нему&mdash;как показано в следующем примере кода. Если этого не сделать, затем уже закреплена **com_ptr** будете выводить проблемы вашего внимания (при вызове [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) или [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)), утверждая, что его внутреннего указателя не равен null.
+> Если у вас есть [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) , которая уже закреплена (его внутренних необработанный указатель уже имеет конечное) и вы хотите повторно число его, чтобы указывать на другой объект, а затем сначала необходимо назначить `nullptr` к нему&mdash;как показано в следующем примере кода. Если этого не сделать, затем уже вошла **com_ptr** будете выводить проблемы вашего внимания (при вызове [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) или [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)), утверждая, что его внутреннего указателя не равно null.
 
 ```cppwinrt
 winrt::com_ptr<IDXGISwapChain1> m_pDXGISwapChain1;

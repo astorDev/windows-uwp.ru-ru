@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, задержка, dxgi, цепочки буферов, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 51a1dd6d7f1c39d82201d3b9741276a54e4c06a8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041217"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189351"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Сокращение задержки с помощью цепочек буферов DXGI 1.3
 

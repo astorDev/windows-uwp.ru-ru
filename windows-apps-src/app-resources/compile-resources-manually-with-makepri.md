@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 3eb26a8e4939ade3b12e4527b7452a9c6b535a77
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6197610"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6453917"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>Компиляция ресурсов вручную с помощью MakePri.exe
 

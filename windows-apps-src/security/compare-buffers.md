@@ -6,14 +6,14 @@ author: msatranjr
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасность
+keywords: Windows 10, uwp, безопасности
 ms.localizationpriority: medium
 ms.openlocfilehash: f307b459dad90f5204364a8c58a186ffae40c455
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041422"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191738"
 ---
 # <a name="compare-buffers"></a>Сравнение буферов
 

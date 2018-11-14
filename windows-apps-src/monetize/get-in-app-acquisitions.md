@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, покупки надстройки
 ms.localizationpriority: medium
 ms.openlocfilehash: 4adb202df2806caeb0dc88469521b0f373886c43
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044933"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192075"
 ---
 # <a name="get-add-on-acquisitions"></a>Получение сведений о покупках надстройки
 

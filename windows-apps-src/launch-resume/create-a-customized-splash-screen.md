@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 80242b95e64f0d642df0284c94455d60825f6daf
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046422"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6449335"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>Более продолжительное отображение экрана-заставки
 
@@ -75,7 +75,7 @@ ms.locfileid: "6046422"
     </Grid>
 ```
 
-**Примечание**этот код присваивает ширину [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) до 20 пикселей. Можно вручную задать для ширины значение, подходящее для вашего приложения, но элемент управления не будет выполнять отрисовку при ширине меньше 20пикселей.
+**Примечание**этот код присваивает ширина [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) до 20 пикселей. Можно вручную задать для ширины значение, подходящее для вашего приложения, но элемент управления не будет выполнять отрисовку при ширине меньше 20пикселей.
 
  
 
@@ -219,7 +219,7 @@ ms.locfileid: "6046422"
     }
     ```
 
-    **Примечание**перед попыткой получить данные о расположении изображения убедитесь, что переменная класса (`splash`) содержит допустимый объект [**экран-заставка**](https://msdn.microsoft.com/library/windows/apps/br224763) , как показано в примере.
+    **Примечание**прежде чем пытаться получить данные о расположении изображения убедитесь, что переменная класса (`splash`) содержит допустимый объект [**экран-заставка**](https://msdn.microsoft.com/library/windows/apps/br224763) , как показано в примере.
 
      
 

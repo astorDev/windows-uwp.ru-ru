@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: da0bb4d25166dd62372d5902ff89221d20189c22
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6155820"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6455172"
 ---
 # <a name="media-casting"></a>Трансляция мультимедиа
 

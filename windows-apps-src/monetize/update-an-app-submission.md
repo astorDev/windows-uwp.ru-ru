@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, отправка приложения, обновление
 ms.localizationpriority: medium
 ms.openlocfilehash: 82311d96296b3b7c7db0a3485348b7d1bf4a734c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049336"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6449265"
 ---
 # <a name="update-an-app-submission"></a>Обновление отправки приложения
 
@@ -27,7 +27,7 @@ ms.locfileid: "6049336"
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия токена можно получить новый токен.
-* Создание отправки для одного из своих приложений. Это можно сделать в центре партнеров или можно сделать с помощью метода [создания отправки приложения](create-an-app-submission.md) .
+* Создание отправки для одного из своих приложений. Это можно сделать в центре партнеров, или можно сделать с помощью метода [создания отправки приложения](create-an-app-submission.md) .
 
 ## <a name="request"></a>Запрос
 

@@ -6,20 +6,20 @@ ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Управление Windows 10, uwp, пользователей учетной записи пользователей, azure ad, нескольких пользователей, несколько пользователей
+keywords: Управление Windows 10, uwp, пользователей учетной записи пользователей, azure ad, нескольких пользователей, нескольким пользователям
 ms.localizationpriority: medium
 ms.openlocfilehash: 01517ebd2cc4b86fa1ac440446a5cc59172014b3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024812"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190514"
 ---
 # <a name="manage-account-users"></a>Управление пользователями учетных записей
 
 Можно использовать Azure Active Directory для добавления и управления дополнительных пользователей в вашей учетной записи [Центра партнеров](https://partner.microsoft.com/dashboard) . Можно определить роли или пользовательские разрешения для каждого пользователя. Вы также можете назначить роль группе пользователей или приложению Azure Active Directory.
 
-Чтобы добавлять и управление пользователями учетных записей, сначала нужно связать учетную запись центра партнеров с Azure Active Directory вашей организации. 
+Чтобы добавлять и управление пользователями учетных записей, сначала нужно связать учетную запись центра партнеров с вашей организации Azure Active Directory. 
 
 В этом разделе описывается, как выполнять следующие вещи.
 

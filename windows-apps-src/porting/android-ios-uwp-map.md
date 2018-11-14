@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
 ms.openlocfilehash: f7e211ebfa28421340e716c0176cab80a9511671
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6051823"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6447358"
 ---
 #<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Сопоставление концепций приложений для Windows для разработчиков iOS и Android
 
@@ -300,7 +300,7 @@ ms.locfileid: "6051823"
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Жизненный цикл приложения.</strong> <br><br>Обработка событий при запуске, приостановке, возобновлении и закрытии приложения, обеспечивающая возможность сохранения и восстановления состояния приложения или выполнения других задач.</td>
-<td align="left">Каждая активность имеет собственный <strong>жизненный цикл активности</strong> с такими состояниями как <strong>возобновлено</strong>. <strong>Обратные вызовы жизненного цикла</strong> , такие как <strong>onResume</strong> реализуются в ваших <strong>классах активности</strong>.</td>
+<td align="left">Каждая активность имеет собственный <strong>жизненный цикл активности</strong> с такими состояниями как <strong>возобновлено</strong>. <strong>Обратные вызовы жизненного цикла</strong> , например <strong>onResume</strong> реализуются в ваших <strong>классах активности</strong>.</td>
 <td align="left"><strong>Жизненный цикл приложения</strong> имеет такие состояния, как <strong>приостановлено</strong>. Такие методы, как <strong>applicationDidEnterBackground:</strong> реализуются в <strong>объекте делегата приложения</strong> для выполнения кода при изменении состояния.</td>
 <td align="left">Ваше приложение имеет <strong>состояния выполнения</strong> NotRunning, Activated, Running, Suspending, Suspended и Resuming.<br/><br/>Вы можете реализовать в приложении методы <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">класса Application</a></strong> OnLaunched, OnActivated, Suspending и Resuming для выполнения кода при изменении состояния.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">Жизненный цикл приложения</a></td>
 </tr>
