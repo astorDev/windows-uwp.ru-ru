@@ -9,11 +9,11 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 62c62aacd894163ef2c65b9ddfe6d8299733a2e5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042254"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6651180"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>Учебник: поддержка рукописного ввода в приложении UWP
 
@@ -70,7 +70,7 @@ ms.locfileid: "6042254"
 | --- | --- |
 | [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | Элемент управления платформы XAMLUI, который по умолчанию получает и отображает все входные данные от пера как росчерк пера или росчерк стирания. |
 | [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | Объект кода программной части, создаваемый вместе с элементом управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (предоставляется свойством [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)). Этот объект обеспечивает все возможности рукописного ввода по умолчанию, предоставляемые элементом [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), вместе с полным набором API для дополнительной настройки и персонализации. |
-| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Элемент управления платформы XAMLUI, содержащий и расширяемую коллекцию кнопок, которые активируют функции рукописного ввода в связанных [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). |
+| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Элемент управления платформы XAMLUI, содержащий и расширяемую коллекцию кнопок, которые активируют функции рукописного ввода в связанные [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263)<br/>Здесь не описаны эти функции. Дополнительные сведения см. в разделе [Сложный пример рукописного ввода](http://go.microsoft.com/fwlink/p/?LinkID=620314). | Позволяет преобразовать росчерки пера в специальный контекст устройства Direct2D универсального приложения для Windows вместо элемента управления по умолчанию [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). |
 
 ## <a name="step-1-run-the-sample"></a>Шаг1. Запуск примера

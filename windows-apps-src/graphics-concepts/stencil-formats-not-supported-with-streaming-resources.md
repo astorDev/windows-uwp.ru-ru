@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d10478d76be88138d1382793bd8b5e0d5b3ef41a
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6196739"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6662374"
 ---
 # <a name="stencil-formats-not-supported-with-streaming-resources"></a>Форматы трафаретов не поддерживаются потоковыми ресурсами
 

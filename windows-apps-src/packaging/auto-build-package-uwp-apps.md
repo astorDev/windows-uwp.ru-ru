@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 78cb7240fd11cee77556078f10500ca1a2087f0e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 775e780be823b6e7b80eda9f488d69fe4fc29edf
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6194848"
+ms.locfileid: "6258187"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 
@@ -292,7 +292,7 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 
 Мастер связывания со Store создает файл Package.StoreAssociation.xml, содержащий сведения о связывании со Store. Если вы храните исходный код в общедоступном репозитории, например в GitHub, этот файл будет содержать все зарезервированные для этой учетной записи имена приложений. Вы можете исключить или удалить этот файл, прежде чем сделать его общедоступным.
 
-Если у вас нет доступа к учетной записи Центра разработки, которая использовалась для публикации приложения, следуйте инструкциям в этом документе: [Создаете приложение для стороннего поставщика? Как упаковать их приложение Store](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)
+Если нет доступа к учетной записи центра партнеров, которая использовалась для публикации приложения, следуйте инструкциям в этом документе: [создаете приложение для стороннего поставщика? Как упаковать приложение магазина](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97).
 
 Затем вам необходимо убедиться, что в этап сборки включен следующий параметр:
 
@@ -306,11 +306,11 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 
 Используйте расширение Visual Studio Team Services для Microsoft Store, чтобы интегрировать API Store, и отправьте пакет приложения в Store.
 
-Вам необходимо связать учетную запись Центра разработки с Azure Active Directory (AD), а затем создать приложение в AD для проверки подлинности запросов. Для этого следуйте рекомендациям на странице расширения.
+Необходимо подключить учетной записи центра партнеров с Azure Active Directory (AD), а затем создать приложение в AD для проверки подлинности запросов. Для этого следуйте рекомендациям на странице расширения.
 
 После настройки расширения можно добавить задачу построения и настроить ее, указав идентификатор приложения и расположение файла отправки.
 
-![настройка Центра разработки](images/building-screen17.png)
+![Настройка центра партнеров](images/building-screen17.png)
 
 Значением параметра `Package File` будет:
 

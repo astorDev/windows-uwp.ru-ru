@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 74fc017453472b515e597b73ee8bb582376f6b12
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 2dc2f8e65ec9ed4e05b6b62e9fc28bbc75f28075
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6464375"
+ms.locfileid: "6650554"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Что нового в документации для разработчиков Windows в мая 2018 г.
 
@@ -114,11 +114,11 @@ ms.locfileid: "6464375"
 
 ### <a name="advertising-performance-report"></a>Отчет об эффективности рекламы
 
-[Отчет о результативности рекламы](../publish/advertising-performance-report.md) на информационной панели центра разработки теперь предоставляет показатели просмотров. Мы также добавили статью [Оптимизация просматриваемости Ваших рекламных блоков](../monetize/optimize-ad-unit-viewability.md) для предоставления рекомендаций по оптимизации просматриваемости ваших объявлений.
+[Отчет о результативности рекламы](../publish/advertising-performance-report.md) в центре партнеров теперь предоставляет показатели просмотров. Мы также добавили статью [Оптимизация просматриваемости Ваших рекламных блоков](../monetize/optimize-ad-unit-viewability.md) для предоставления рекомендаций по оптимизации просматриваемости ваших объявлений.
 
 ### <a name="targeted-push-notifications"></a>Целевые Push-уведомления
 
-Страница [уведомлений](../publish/send-push-notifications-to-your-apps-customers.md) в информационной панели центра разработки теперь предоставляет дополнительные аналитические данные для всех уведомлений в виде графика и мира представления карты.
+Страница [уведомлений](../publish/send-push-notifications-to-your-apps-customers.md) в центре партнеров теперь предоставляет дополнительные аналитические данные для всех уведомлений в виде графика и мира представления карты.
 
 ## <a name="videos"></a>Видеоролики
 

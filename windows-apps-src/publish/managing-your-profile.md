@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, центр разработки, параметры учетной записи, профиль, профиль учетной записи, учетная запись разработчика, параметры учетной записи разработчика
 ms.localizationpriority: medium
 ms.openlocfilehash: 90bf81f23bcffe05278d12bab7abb2425f7eb773
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6200052"
+ms.locfileid: "6252755"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>Управление параметрами учетной записи и сведениями профиля
 

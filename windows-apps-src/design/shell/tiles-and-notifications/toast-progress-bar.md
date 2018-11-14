@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, uwp, всплывающее уведомление, индикатор выполнения, индикатор выполнения всплывающего уведомления, привязка данных всплывающего уведомления
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ca144f92676f87fcdade37b280c39640bc74624
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6260908"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6649471"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Индикатор выполнения всплывающего уведомления и привязка данных
 

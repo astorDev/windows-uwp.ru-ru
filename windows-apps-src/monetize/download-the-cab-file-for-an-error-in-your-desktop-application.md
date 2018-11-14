@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API аналитики для Microsoft Store, скачать CAB-файл, классическое приложение
 ms.localizationpriority: medium
 ms.openlocfilehash: f9dcd76767662b5e40f587d7ac32ffd7d94a6053
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6141570"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6655608"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-desktop-application"></a>Скачивание CAB-файла для ошибки в классическом приложении
 

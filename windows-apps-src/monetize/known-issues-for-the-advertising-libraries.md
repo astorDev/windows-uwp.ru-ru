@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, реклама, рекламные объявления, известные проблемы, устранение неполадок
 ms.localizationpriority: medium
 ms.openlocfilehash: d1b3b1fb68ed246d6a5a8334c5cf4d1c0754b719
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6274736"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6463263"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Сведения об известных проблемах и устранении неполадок рекламы в приложениях
 

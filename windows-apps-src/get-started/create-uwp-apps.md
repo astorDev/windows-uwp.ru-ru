@@ -7,18 +7,18 @@ ms.date: 5/7/2018
 ms.topic: article
 keywords: windows 10, uwp, начало работы
 ms.localizationpriority: medium
-ms.openlocfilehash: dde635624101fdcf0803770bc69e7922f56f704e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 4bc64b0a6919180b6041bdbf4f81463019d274eb
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031583"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6261582"
 ---
 # <a name="start-coding"></a>Начало разработки
 
 ![Разработка приложения](images/build-your-app.png)
 
-Добро пожаловать на [платформу UWP](universal-application-platform-guide.md)! На этой странице мы приведем необходимую информацию для начала разработки любых приложений для Windows 10, которые вам захочется создать.
+Добро пожаловать на [платформу UWP](universal-application-platform-guide.md)! На этой странице мы будем точке вы нужные сведения, необходимые для начала программирования приложений Windows 10, которые вы хотите создать.
 
 Перед началом разработки не забудьте [выполнить подготовку.](get-set-up.md)
 

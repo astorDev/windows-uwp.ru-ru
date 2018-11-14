@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, API отправки в Microsoft Store, примеры кода, параметры игры, трейлеры, дополнительные предложения, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: 61d2a919d6bebcb1807d8084dda39a2e6d660ca5
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6278230"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6663185"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>Пример на языке C\#: отправка приложения с трейлерами и параметрами игры
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, карты, таблица стилей карты
 ms.localizationpriority: medium
 ms.openlocfilehash: eace82801b2e3d1423eeec9e9da7cf56db043666
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6191007"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6651417"
 ---
 # <a name="map-style-sheet-reference"></a>Справка о таблицах стилей карты
 

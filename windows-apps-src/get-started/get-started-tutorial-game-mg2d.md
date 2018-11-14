@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d43094ba679ebe5439996373626522590e3fcc
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6209541"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6260571"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Создание игры UWP на 2D-платформе MonoGame
 

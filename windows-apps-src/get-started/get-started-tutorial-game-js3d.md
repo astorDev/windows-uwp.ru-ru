@@ -9,11 +9,11 @@ keywords: Windows10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
 ms.openlocfilehash: 0183e19135758f73dfea9b63535437ff9b66011a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036444"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209925"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Создание трехмерной игры JavaScript с использованием библиотеки three.js
 
@@ -26,11 +26,11 @@ ms.locfileid: "6036444"
 
 Хотите немного узнать о приложении, которое нам предстоит создать, прежде чем читать дальше? Ознакомьтесь с ним на CodePen!
 
-<iframe height='300' scrolling='no' title='Окончательный динозавр игры' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpKejy/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. запись <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpKejy/'>Dino game final</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='300' scrolling='no' title='Последний динозавр игры' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpKejy/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. запись <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpKejy/'>Dino game final</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 > [!NOTE] 
-> Этот пример не полный игрой. она предназначена для демонстрации с помощью JavaScript и сторонней библиотеки создать приложение, готовое к публикации в Microsoft Store.
+> Этот пример не завершения игры; она предназначена для демонстрации с помощью JavaScript и сторонней библиотеки создать приложение, готовое к публикации в Microsoft Store.
 
 
 ## <a name="requirements"></a>Требования

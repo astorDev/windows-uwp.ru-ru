@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1859d758806b4e92758decb40b8a30d02acb254d
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6189737"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6471131"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>Файлы и папки в библиотеках музыки, изображений и видео
 
