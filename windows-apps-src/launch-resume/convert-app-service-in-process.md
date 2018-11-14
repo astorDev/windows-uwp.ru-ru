@@ -9,11 +9,11 @@ keywords: Windows 10, uwp, службы приложений
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: 272102f08b145c0681b0e036be4d41bc7c9ad9ff
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040959"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202366"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>Преобразование службы приложений для ее запуска в одном процессе с ведущим приложением
 
@@ -40,13 +40,13 @@ ms.locfileid: "6040959"
 >   </Applications>
 > ```
 
-Удаление `EntryPoint` атрибут из `<Extension>` элемент из-за теперь [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) точку входа, который будет использоваться при вызове службы приложения.
+Удалить `EntryPoint` атрибут из `<Extension>` элемент из-за теперь [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) точку входа, который будет использоваться при вызове службы приложения.
 
 Второе изменение заключается в переносе логики службы из отдельного проекта фоновой задачи в методы, которые можно вызывать из метода **OnBackgroundActivated()**.
 
 Теперь приложение может напрямую выполнять службу приложения. Например в файле App.xaml.cs:
 
-[!NOTE] В приведенном ниже коде отличается от включенный пример 1 (служба вне процесса). В следующем примере кода предоставляется только для иллюстрации и не должен использоваться как часть пример 2 (в работе службы).  Для перехода в статье из примера по-прежнему 1 (служба вне процесса), в примере 2 (в работе службы) продолжать использовать кодом, предоставленным в примере 1 вместо иллюстративных приведенный ниже код.
+[!NOTE] В приведенном ниже коде отличается от включенный пример 1 (служба вне процесса). В приведенном ниже коде предоставляется только для иллюстрации и не следует использовать как часть пример 2 (служба внутри процесса).  Для перехода в статье из примера по-прежнему 1 (служба вне процесса), в примере 2 (служба внутри процесса) продолжать использовать кодом, предоставленным в примере 1 вместо иллюстративных приведенный ниже код.
 
 ``` cs
 using Windows.ApplicationModel.AppService;

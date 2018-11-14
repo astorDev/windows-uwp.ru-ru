@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032267"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6281703"
 ---
 # <a name="network-communications-in-the-background"></a>Передача данных по сети в фоновом режиме
 Чтобы продолжить сетевое взаимодействие, когда оно не находится на переднем плане, ваше приложение может использовать фоновые задачи и один из этих двух вариантов.
@@ -24,7 +24,7 @@ ms.locfileid: "6032267"
 - Используйте [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) для активации фоновой задачи при получении пакета и возникновении необходимости выполнить кратковременную задачу. После выполнения задачи фоновая задача должна завершить работу для экономии энергии.
 - Используйте [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) для активации фоновой задачи при получении пакета и возникновении необходимости выполнить долговременную задачу.
 
-**Сетевые условия и флаги**
+**Условия, связанные с сетью и флаги**
 
 - Добавьте условие **InternetAvailable** в фоновую задачу [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) для задержки активации фоновой задачи, пока не заработает сетевой стек. Это условие экономит энергию, так как фоновая задача не будет выполняться, пока нет сети. Это условие не поддерживает активацию в режиме реального времени.
 

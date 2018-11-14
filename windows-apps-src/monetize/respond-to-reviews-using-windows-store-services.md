@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отзывов Microsoft Store, ответ на отзывы
 ms.localizationpriority: medium
 ms.openlocfilehash: 063c228a9a2fcfde9350af4872aabba44f9bb8a5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032865"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6181304"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>Ответ на отзывы с помощью служб Магазина
 
@@ -26,7 +26,7 @@ ms.locfileid: "6032865"
 3.  [Вызов интерфейса API отзывов Microsoft Store](#call-the-windows-store-reviews-api).
 
 > [!NOTE]
-> Помимо использования API для программного ответа на отзывы, вы можете также отвечать на отзывы [с помощью центра партнеров](../publish/respond-to-customer-reviews.md)отзывов в Microsoft Store.
+> Помимо использования API, чтобы программно отвечать на отзывы, вы можете также отвечать на отзывы [с помощью центра партнеров](../publish/respond-to-customer-reviews.md)отзывов в Microsoft Store.
 
 <span id="prerequisites" />
 
@@ -36,15 +36,15 @@ ms.locfileid: "6032865"
 
 * У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае вы можете [Создать новую службу Azure AD в центре партнеров](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
 
-* Необходимо привязать приложение Azure AD с учетной записью центра партнеров, получить идентификатор владельца и идентификатор клиента для приложения и создать ключ. Приложение Azure AD представляет собой приложение или службу, из которой отправляются вызовы в интерфейс API отзывов Microsoft Store. Чтобы получить маркер доступа Azure AD, который вы передадите в API, необходимо иметь в наличии идентификатор владельца, идентификатор клиента и ключ.
+* Необходимо привязать приложение Azure AD к учетной записи центра партнеров, получить идентификатор владельца и идентификатор клиента для приложения и создать ключ. Приложение Azure AD представляет собой приложение или службу, из которой отправляются вызовы в интерфейс API отзывов Microsoft Store. Чтобы получить маркер доступа Azure AD, который вы передадите в API, необходимо иметь в наличии идентификатор владельца, идентификатор клиента и ключ.
     > [!NOTE]
     > Эту операцию необходимо выполнить только один раз. После того как вы получите идентификатор владельца, идентификатор клиента и ключ, их можно будет использовать повторно в любое время для создания нового маркера доступа Azure AD.
 
-Чтобы привязать приложение Azure AD с учетной записью центра партнеров и получить необходимые значения:
+Чтобы привязать приложение Azure AD к учетной записи центра партнеров и получить необходимые значения:
 
-1.  В центре партнеров, [связать учетную запись центра партнеров вашей организации в каталог Azure AD вашей организации](../publish/associate-azure-ad-with-dev-center.md).
+1.  В центре партнеров, [связать учетную запись центра партнеров вашей организации с каталогом Azure AD вашей организации](../publish/associate-azure-ad-with-dev-center.md).
 
-2.  Затем на страницу **пользователей** в разделе **Параметры учетной записи** центра партнеров, [добавьте приложение Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) , представляющее собой приложение или службу, которые вы будете использовать для ответа на отзывы. Обязательно назначьте этому приложению роль **Менеджер**. Если приложение еще не существует в каталоге Azure AD, вы можете [Создать новое приложение Azure AD в центре партнеров](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
+2.  Затем на странице **пользователей** в разделе **Параметры учетной записи** центра партнеров, [добавьте приложение Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) , представляющее собой приложение или службу, которые вы будете использовать для ответа на отзывы. Обязательно назначьте этому приложению роль **Менеджер**. Если приложение еще не существует в ваш каталог Azure AD, вы можете [Создать новое приложение Azure AD в центре партнеров](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
 
 3.  Вернитесь на страницу **Пользователи**, щелкните имя приложения Azure AD, чтобы перейти к параметрам приложения, и скопируйте значения **идентификатора владельца** и **идентификатора клиента**.
 
@@ -69,7 +69,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-Для значения *tenant\_id* в POST URI и параметров, *client\_id* и *client\_secret* укажите идентификатор владельца, идентификатор клиента и ключ для вашего приложения, которые вы получили из центра партнеров в предыдущем разделе. Для параметра *resource* укажите ```https://manage.devcenter.microsoft.com```.
+Для *tenant\_id* значение в POST URI и параметры *client\_id* и *client\_secret* укажите идентификатор владельца, идентификатор клиента и ключ для вашего приложения, которые вы получили из центра партнеров в предыдущем разделе. Для параметра *resource* укажите ```https://manage.devcenter.microsoft.com```.
 
 После истечения срока действия маркера доступа вы можете обновить его, следуя инструкциям, приведенным [здесь](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
 

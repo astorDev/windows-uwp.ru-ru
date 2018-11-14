@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, игры, гоночный руль, обратная связь по усилию
 ms.localizationpriority: medium
 ms.openlocfilehash: 20b4b35bb729ee49dbfd3f2b2b2a029a4319521c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029940"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188653"
 ---
 # <a name="racing-wheel-and-force-feedback"></a>Гоночный руль и обратная связь по усилию
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP, Microsoft Store Services SDK, A/B-тесты, эксперименты
 ms.localizationpriority: medium
 ms.openlocfilehash: 19a59110fa094aeae3d40dca1372fde9889c108e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6190169"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6277709"
 ---
 # <a name="create-an-experiment-project-in-partner-center"></a>Создание проекта эксперимента в центре партнеров
 

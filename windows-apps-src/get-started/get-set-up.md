@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 18fd4d481d30eda68acaf4e48e4d1c1bf4ed7d24
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6158937"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205617"
 ---
 # <a name="get-set-up"></a>Подготовка
 

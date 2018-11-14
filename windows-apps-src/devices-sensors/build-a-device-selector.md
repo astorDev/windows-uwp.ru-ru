@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 036ea8b7d9797112dca9b6594e9bc1e33e923588
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041194"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6161806"
 ---
 # <a name="build-a-device-selector"></a>Создание средства выбора устройств
 
@@ -38,7 +38,7 @@ ms.locfileid: "6041194"
 
 API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) используют канонический синтаксис AQS, но не все операторы поддерживаются. Список доступных при построении строки фильтра свойств см. в разделе [Свойства сведений об устройстве](device-information-properties.md).
 
-**Внимание**пользовательские свойства, которые определяются с помощью `{GUID} PID` формат не может использоваться при построении строки фильтра aqs. Это вызвано тем, что данный тип свойства образован на основе имени известного свойства.
+**Внимание**пользовательские свойства, которые определяются с помощью `{GUID} PID` формат не могут использоваться при построении строки фильтра aqs. Это вызвано тем, что данный тип свойства образован на основе имени известного свойства.
 
  
 
