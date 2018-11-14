@@ -9,29 +9,29 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 730d5ae9062fe39533cd615facaf5beaa7d02ffd
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047090"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185008"
 ---
 # <a name="composition-brushes"></a>Кисти композиции
-Все отображаемые на экране из приложения UWP отображается, так как они нарисованы кистью. Кисти позволяют рисовать объекты пользовательского интерфейса пользователя с содержимым, начиная от простого одноцветных изображения или рисунки цепочку эффекты. В этом разделе рассматриваются понятия рисования с помощью CompositionBrush.
+Все отображаемые на экране из приложения UWP отображается, так как они нарисованы кистью. Кисти позволяют рисовать объекты пользовательского интерфейса пользователя с содержимым, начиная с простых, сплошного цвета изображения или рисунки цепочку эффекты. В этом разделе рассматриваются понятия рисования с помощью CompositionBrush.
 
-Обратите внимание, что при работе с приложением XAML UWP, можно выбрать, для рисования UIElement с помощью [Кисти XAML](/windows/uwp/design/style/brushes) или [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush). Как правило это проще и рекомендуется выбирать кисти XAML, если ваш сценарий поддерживается кисти XAML. Например анимацию цвета кнопки, изменение заливки текст или фигуру с изображением. С другой стороны Если вы пытаетесь сделать что-то, которое не поддерживается кисти XAML как рисования с анимированной маски или анимированных stretch сетки или цепи эффектов, можно использовать CompositionBrush для рисования UIElement с помощью [ XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+Обратите внимание, что при работе с приложением XAML UWP, можно выбрать для рисования UIElement с помощью [Кисти XAML](/windows/uwp/design/style/brushes) или [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush). Как правило это проще и рекомендуется выбрать кисти XAML, если ваш сценарий поддерживается кисти XAML. Например анимация цвета кнопки, изменения заполнения текст или фигуру с изображением. С другой стороны Если вы пытаетесь выполнить действие, которое не поддерживается кисти XAML как рисования с анимированной маски или анимированных stretch сетки или цепи эффектов, можно использовать CompositionBrush для рисования UIElement благодаря использованию [ XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
 При работе с визуального уровня, CompositionBrush должен использоваться для рисования области [SpriteVisual](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual).
 
 -   [Необходимые условия](./composition-brushes.md#prerequisites)
--   [Рисование с CompositionBrush](./composition-brushes.md#paint-with-a-compositionbrush)
+-   [Paint с CompositionBrush](./composition-brushes.md#paint-with-a-compositionbrush)
     -   [Рисования сплошным цветом](./composition-brushes.md#paint-with-a-solid-color)
-    -   [Рисование с помощью линейного градиента](./composition-brushes.md#paint-with-a-linear-gradient)
-    -   [Рисование с изображением](./composition-brushes.md#paint-with-an-image)
-    -   [Рисовать с помощью пользовательской отрисовки](./composition-brushes.md#paint-with-a-custom-drawing)
+    -   [Рисовать с помощью линейного градиента](./composition-brushes.md#paint-with-a-linear-gradient)
+    -   [Рисовать с помощью изображения](./composition-brushes.md#paint-with-an-image)
+    -   [Рисовать с помощью пользовательской прорисовки](./composition-brushes.md#paint-with-a-custom-drawing)
     -   [Рисование с видео](./composition-brushes.md#paint-with-a-video)
-    -   [Рисование с эффект фильтра](./composition-brushes.md#paint-with-a-filter-effect)
-    -   [Рисование с CompositionBrush с маску непрозрачности](./composition-brushes.md#paint-with-a-compositionbrush-with-opacity-mask-applied)
-    -   [Рисование с CompositionBrush, с помощью NineGrid stretch](./composition-brushes.md#paint-with-a-compositionbrush-using-ninegrid-stretch)
+    -   [Рисовать с помощью эффект фильтра](./composition-brushes.md#paint-with-a-filter-effect)
+    -   [Рисовать с помощью CompositionBrush с маску непрозрачности](./composition-brushes.md#paint-with-a-compositionbrush-with-opacity-mask-applied)
+    -   [Рисовать с помощью CompositionBrush, с помощью NineGrid stretch](./composition-brushes.md#paint-with-a-compositionbrush-using-ninegrid-stretch)
     -   [Рисование с помощью фоновой пикселей](./composition-brushes.md#paint-using-background-pixels)
 -   [Объединение CompositionBrushes](./composition-brushes.md#combining-compositionbrushes)
 -   [С помощью CompositionBrush и с кисти XAML](./composition-brushes.md#using-a-xaml-brush-vs-compositionbrush)
@@ -40,11 +40,11 @@ ms.locfileid: "6047090"
 ## <a name="prerequisites"></a>Необходимые условия
 В этом разделе предполагается, что вы знакомы со структурой базового приложения композиции, как описано в [Обзор визуального уровня](visual-layer.md).
 
-## <a name="paint-with-a-compositionbrush"></a>Рисование с CompositionBrush
+## <a name="paint-with-a-compositionbrush"></a>Paint с CompositionBrush
 
-[CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) «закрашивает» область с выходными данными. Разные кисти имеют различные типы выводимых данных. Некоторые кисти закрашивают область сплошным цветом, другим пользователям, имеющим градиент, изображения, пользовательское рисование или эффекта. Существуют также специализированных кистей, которые изменяют поведение других кистей. Например маску непрозрачности можно использовать для управления, какие области закрашивается путем CompositionBrush или сетки можно использовать для управления stretch, применяются к CompositionBrush при рисовании области. CompositionBrush может иметь одно из следующих типов:
+[CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) «закрашивает «область своими выводимыми. Разные кисти имеют различные типы выводимых данных. Некоторые кисти закрашивают область сплошным цветом, другим пользователям, имеющим градиент, изображения, пользовательское рисование или эффекта. Существует также специализированных кистей, которые изменяют поведение других кистей. Например маску непрозрачности можно использовать для управления, какие области, закрашенная с CompositionBrush или сетки можно использовать для управления stretch, применяются к CompositionBrush при рисовании область. CompositionBrush может иметь одно из следующих типов:
 
-|Класс                                   |Сведения                                         |Представлена в|
+|Класс                                   |Сведения                                         |Появились в|
 |-------------------------------------|---------------------------------------------------------|--------------------------------------|
 |[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)         |Закрашивает область сплошным цветом                        |Обновление за ноябрь Windows10 (SDK 10586)|
 |[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)       |Закрашивает область содержимого [ICompositionSurface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.ICompositionSurface)|Обновление за ноябрь Windows10 (SDK 10586)|
@@ -52,11 +52,11 @@ ms.locfileid: "6047090"
 |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)          |Закрашивает визуальный CompositionBrush с маску непрозрачности |Юбилейного обновления Windows10 (пакет SDK 14393)
 |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)      |Закрашивает область с CompositionBrush, с помощью NineGrid stretch |Юбилейного обновления Windows10 SDK (14393)
 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)|Закрашивает область с помощью линейного градиента                    |Windows 10 Fall Creators Update (Insider Preview SDK)
-|[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)     |Закрашивает область по выборке точки фона либо приложения или пиксели непосредственно программной части окна приложения на рабочем столе. Используется в качестве входных данных для другой CompositionBrush как CompositionEffectBrush | Юбилейное обновление Windows 10 (пакет SDK 14393)
+|[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)     |Закрашивает область по выборке пикселей фона или приложения, либо пикселей непосредственно программной части окна приложения на рабочем столе. Используется в качестве входных данных для другой CompositionBrush как CompositionEffectBrush | Юбилейное обновление Windows 10 (пакет SDK 14393)
 
 ### <a name="paint-with-a-solid-color"></a>Рисования сплошным цветом
 
-[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush) закрашивает область сплошным цветом. Существует множество способов указать цвета SolidColorBrush. Например можно указать его каналы альфа, красного, синего и зеленого (ARGB) или использовать один из предопределенных цветов, предоставленных классом [цвета](https://docs.microsoft.com/uwp/api/windows.ui.colors) .
+[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush) закрашивает область сплошным цветом. Существует множество способов указать цвет SolidColorBrush. Например можно указать его каналы альфа, красного, синего и зеленого (ARGB) или использовать один из предопределенных цветов, предоставленных классом [цвета](https://docs.microsoft.com/uwp/api/windows.ui.colors) .
 
 Следующий рисунок и фрагмент кода демонстрируют небольшое визуальное дерево для создания прямоугольника, заштрихованного с помощью кисти черного цвета и заполненного с помощью кисти сплошного цвета с кодом 0x9ACD32.
 
@@ -86,11 +86,11 @@ _colorVisual2.Offset = new Vector3(3, 3, 0);
 _container.Children.InsertAtBottom(_colorVisual2);
 ```
 
-### <a name="paint-with-a-linear-gradient"></a>Рисование с помощью линейного градиента
+### <a name="paint-with-a-linear-gradient"></a>Рисовать с помощью линейного градиента
 
-[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush) закрашивает область линейный градиент. Линейный градиент сочетает два или более цветов через строку оси градиента. Объекты GradientStop используется для указания цвета градиента и их позиции.
+[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush) закрашивает область с линейный градиент. Линейный градиент сочетает два или более цветов через строку, а ось градиента. Объекты GradientStop используется для указания цвета градиента и их положения.
 
-Следующий рисунок и код показывает SpriteVisual, закрашенная с LinearGradientBrush с 2 останавливается, с помощью красного и желтого цветов.
+Следующий рисунок и код показывает SpriteVisual, заполнен LinearGradientBrush с 2 останавливается, с помощью красного и желтого цветов.
 
 ![CompositionLinearGradientBrush](images/composition-compositionlineargradientbrush.png)
 
@@ -109,11 +109,11 @@ _gradientVisual.Brush = _redyellowBrush;
 _gradientVisual.Size = new Vector2(156, 156);
 ```
 
-### <a name="paint-with-an-image"></a>Рисование с изображением
+### <a name="paint-with-an-image"></a>Рисовать с помощью изображения
 
-[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) закрашивает область с пикселями, отображаемые в ICompositionSurface. Например CompositionSurfaceBrush может использоваться для рисования области с изображением отрисовки поверхность ICompositionSurface, с помощью [LoadedImageSurface](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.loadedimagesurface) API.
+[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) закрашивает область с пикселями, отображается на ICompositionSurface. Например CompositionSurfaceBrush может использоваться для рисования области с изображением отрисовки поверхность ICompositionSurface, с помощью [LoadedImageSurface](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.loadedimagesurface) API.
 
-Следующий рисунок и кода показывают, что объекта SpriteVisual заполнен точечный licorice, отображаемые в ICompositionSurface, с помощью LoadedImageSurface. Свойства CompositionSurfaceBrush может использоваться растягивается и они будут согласованы растровое изображение в пределах границ визуального объекта.
+Следующий рисунок и кода показывают, что объекта SpriteVisual заполнен это точечный рисунок licorice, отображается на ICompositionSurface, с помощью LoadedImageSurface. Свойства CompositionSurfaceBrush может использоваться растягивается, и они будут согласованы растрового изображения в пределах границ визуального объекта.
 
 ![CompositionSurfaceBrush](images/composition-compositionsurfacebrush.png)
 
@@ -135,10 +135,10 @@ _imageVisual.Brush = _imageBrush;
 _imageVisual.Size = new Vector2(156, 156);
 ```
 
-### <a name="paint-with-a-custom-drawing"></a>Рисовать с помощью пользовательской отрисовки
-[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) также может использоваться для рисования области с пикселей из ICompositionSurface, обработан с помощью [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm) (или D2D).
+### <a name="paint-with-a-custom-drawing"></a>Рисовать с помощью пользовательской прорисовки
+[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) также может использоваться для рисования области с пикселей из ICompositionSurface обработан с помощью [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm) (или D2D).
 
-Следующий код показывает, что объект SpriteVisual окрашен с текстом, запустите обработанный на ICompositionSurface с помощью Win2D. Обратите внимание, что для использования Win2D, необходимо добавить пакет [Win2D NuGet](http://www.nuget.org/packages/Win2D.uwp) в проект.
+Следующий код показывает, что объекта SpriteVisual окрашен с текстом, запустите обработанный на ICompositionSurface с помощью Win2D. Обратите внимание, что для использования необходимо включить в свой проект пакет [Win2D NuGet](http://www.nuget.org/packages/Win2D.uwp) Win2D.
 
 ```cs
 Compositor _compositor;
@@ -176,12 +176,12 @@ _drawingVisual.Brush = _drawingBrush;
 _drawingVisual.Size = new Vector2(156, 156);
 ```
 
-Аналогичным образом CompositionSurfaceBrush также может использоваться для рисования SpriteVisual с следует использовать подобласть, с помощью Win2D взаимодействия. [В этом примере](https://github.com/Microsoft/Win2D-Samples/tree/master/CompositionExample) приведен пример использования Win2D для рисования SpriteVisual с следует использовать подобласть.
+Аналогичным образом CompositionSurfaceBrush также может использоваться для рисования SpriteVisual с следует использовать подобласть, с помощью Win2D взаимодействия. [В этом примере](https://github.com/Microsoft/Win2D-Samples/tree/master/CompositionExample) представлены примеры того, как использовать Win2D для закрашивания SpriteVisual с следует использовать подобласть.
 
 ### <a name="paint-with-a-video"></a>Рисование с видео
-[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) также может использоваться для рисования области с пикселей из ICompositionSurface, отрисовка с использованием видео, загружаются с помощью класса [MediaPlayer](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) .
+[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) также может использоваться для рисования области с пикселей из ICompositionSurface отрисовать с использованием видео, загружаются с помощью класса [MediaPlayer](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) .
 
-Следующий код показывает, что объект SpriteVisual заполнен загрузке в ICompositionSurface видео.
+Следующий код показывает, что объекта SpriteVisual заполнен загрузке в ICompositionSurface видео.
 
 ```cs
 Compositor _compositor;
@@ -207,9 +207,9 @@ _videoVisual.Brush = _videoBrush;
 _videoVisual.Size = new Vector2(156, 156);
 ```
 
-### <a name="paint-with-a-filter-effect"></a>Рисование с эффект фильтра
+### <a name="paint-with-a-filter-effect"></a>Рисовать с помощью эффект фильтра
 
-[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush) закрашивает область вывода CompositionEffect. Эффекты в визуальном уровне могут рассматриваться как эффектов анимируемые фильтра, применяются к коллекции источника содержимого, например цветов, градиентов, изображений, видео, swapchains, области пользовательского интерфейса или деревья визуальных элементов. Содержимое исходного обычно задается с помощью другого CompositionBrush.
+[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush) закрашивает область с результат CompositionEffect. Эффекты в визуальном уровне могут рассматриваться как эффектов анимируемые фильтра, применяются к коллекции источника содержимого, например цветов, градиентов, изображений, видео, swapchains, области пользовательского интерфейса или деревья визуальных элементов. Исходным содержимым обычно задается с помощью другого CompositionBrush.
 
 Следующий рисунок и код показывает SpriteVisual, заполнен изображение с минимальным уровнем насыщенности с примененным эффектом насыщенности фильтра.
 
@@ -245,9 +245,9 @@ _effectVisual.Size = new Vector2(156, 156);
 
 ### <a name="paint-with-a-compositionbrush-with-opacity-mask-applied"></a>Рисование с помощью CompositionBrush с применить маску непрозрачности
 
-[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush) закрашивает область CompositionBrush с маску непрозрачности, примененным к ней. Источник маску непрозрачности может быть любой CompositionBrush типа CompositionColorBrush, CompositionLinearGradientBrush, CompositionSurfaceBrush, CompositionEffectBrush или CompositionNineGridBrush. В качестве CompositionSurfaceBrush необходимо указать маску непрозрачности.
+[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush) закрашивает область с CompositionBrush с маску непрозрачности, примененным к ней. Источник маску непрозрачности может быть любой CompositionBrush типа CompositionColorBrush, CompositionLinearGradientBrush, CompositionSurfaceBrush, CompositionEffectBrush или CompositionNineGridBrush. В качестве CompositionSurfaceBrush необходимо указать маску непрозрачности.
 
-Следующий рисунок и код показывает SpriteVisual, закрашенная с помощью CompositionMaskBrush. Источник маска — CompositionLinearGradientBrush, который маскируется следующим круг, используя изображение круг в качестве маски.
+Следующий рисунок и код показывает SpriteVisual, заполнен CompositionMaskBrush. Источник маски является CompositionLinearGradientBrush, который маскируется следующим круг с помощью образа круга в качестве маски.
 
 ![CompositionMaskBrush](images/composition-compositionmaskbrush.png)
 
@@ -273,11 +273,11 @@ _maskVisual.Brush = _maskBrush;
 _maskVisual.Size = new Vector2(156, 156);
 ```
 
-### <a name="paint-with-a-compositionbrush-using-ninegrid-stretch"></a>Рисование с CompositionBrush, с помощью NineGrid stretch
+### <a name="paint-with-a-compositionbrush-using-ninegrid-stretch"></a>Рисовать с помощью CompositionBrush, с помощью NineGrid stretch
 
-[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush) закрашивает область с CompositionBrush, растягивается с помощью метафора сетки. Метафора сетки позволяет по-разному растягивается края и углы CompositionBrush от своего центра. Источник stretch сетки можно с помощью любого CompositionBrush типа CompositionColorBrush, CompositionSurfaceBrush или CompositionEffectBrush.
+[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush) закрашивает область с CompositionBrush, который растянут с помощью метафора сетки. Метафора сетки позволяет по-разному растянуть края и углы CompositionBrush чем своего центра. Источник stretch сетки можно с помощью любого CompositionBrush типа CompositionColorBrush, CompositionSurfaceBrush или CompositionEffectBrush.
 
-Следующий код показывает, что объект SpriteVisual заполнен CompositionNineGridBrush. Источник маска — CompositionSurfaceBrush, который растянут с помощью сетки.
+Следующий код показывает, что объекта SpriteVisual заполнен CompositionNineGridBrush. Источник маски является CompositionSurfaceBrush, который растянут с помощью сетки.
 
 ```cs
 Compositor _compositor;
@@ -308,9 +308,9 @@ _nineGridVisual.Size = new Vector2(100, 75);
 
 ### <a name="paint-using-background-pixels"></a>Рисование с помощью фоновой пикселей
 
-[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush) закрашивает область содержимому позади области. CompositionBackdropBrush никогда не используется сама по себе, но вместо этого используется в качестве входных данных для другой CompositionBrush как EffectBrush. Например с помощью CompositionBackdropBrush в качестве входных данных для эффекта размытия, можно добиться эффекта матированного стекла.
+[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush) закрашивает область с содержимым программной части области. CompositionBackdropBrush на собственный никогда не используется, но вместо этого используется в качестве входных данных для другой CompositionBrush как EffectBrush. Например с помощью CompositionBackdropBrush в качестве входных данных для эффекта размытия, можно добиться эффекта матированного стекла.
 
-В следующем коде показано небольшое визуальное дерево для создания образа с помощью CompositionSurfaceBrush и наложение матированное стекло поверх изображения. Наложение матированное стекло создается путем размещения SpriteVisual, заполненного EffectBrush над изображением. EffectBrush использует CompositionBackdropBrush в качестве входных данных для эффекта размытия.
+В следующем коде показано небольшое визуальное дерево для создания образа с помощью CompositionSurfaceBrush и матированного стекла наложение поверх изображения. Наложение матированное стекло создается путем размещения SpriteVisual, заполненного EffectBrush над изображением. EffectBrush использует CompositionBackdropBrush в качестве входных данных для эффекта размытия.
 
 ```cs
 Compositor _compositor;
@@ -363,7 +363,7 @@ _containerVisual.Children.InsertAtTop(_backdropVisual);
 ```
 
 ## <a name="combining-compositionbrushes"></a>Объединение CompositionBrushes
-Количество CompositionBrushes использовать другие CompositionBrushes в качестве входных данных. Например с помощью метода SetSourceParameter может использоваться для установки другого CompositionBrush в качестве входных данных для CompositionEffectBrush. В следующей таблице описаны поддерживаемые сочетания CompositionBrushes. Обратите внимание, что с помощью использования неподдерживаемого сочетания вызовет исключение.
+Количество CompositionBrushes использовать другие CompositionBrushes в качестве входных данных. Например с помощью метода SetSourceParameter можно использовать для установки другого CompositionBrush в качестве входных данных для CompositionEffectBrush. В следующей таблице описаны поддерживаемые сочетания CompositionBrushes. Обратите внимание, что с помощью использования неподдерживаемого сочетания вызовет исключение.
 
 <table>
 <tbody>
@@ -429,7 +429,7 @@ _containerVisual.Children.InsertAtTop(_backdropVisual);
 
 ## <a name="using-a-xaml-brush-vs-compositionbrush"></a>С помощью CompositionBrush и с кисти XAML
 
-В таблице ниже представлены список сценариев и ли стандартные использования кисти XAML или композиции при рисовании UIElement или SpriteVisual в приложении. 
+В таблице ниже предоставляет список сценариев и ли стандартные использования кисти XAML или композиции при рисовании UIElement или объект SpriteVisual в приложении. 
 
 > [!NOTE]
 > Если CompositionBrush предлагается для UIElement для XAML, предполагается, что CompositionBrush упаковано с использованием XamlCompositionBrushBase.
@@ -437,23 +437,23 @@ _containerVisual.Children.InsertAtTop(_backdropVisual);
 |Сценарий                                                                   | UIElement для XAML                                                                                                |SpriteVisual композиции
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------
 |Закрашивают область со сплошным цветом                                             |[SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962)                                |[CompositionColorBrush](https://msdn.microsoft.com/library/windows/apps/Mt589399)
-|Закрашивают область с анимированных цвета                                          |[SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962)                                |[CompositionColorBrush](https://msdn.microsoft.com/library/windows/apps/Mt589399)
+|Закрашивают область с анимированного цвета                                          |[SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962)                                |[CompositionColorBrush](https://msdn.microsoft.com/library/windows/apps/Mt589399)
 |Закрашивают область градиентом, статические                                       |[LinearGradientBrush](https://msdn.microsoft.com/library/windows/apps/BR210108)                            |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)
-|Закрашивают область с анимированных градиента                                 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)                                                                                 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)
+|Закрашивают область с анимированного градиента                                 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)                                                                                 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)
 |Закрашивают область с изображением                                                |[ImageBrush](https://msdn.microsoft.com/library/windows/apps/BR210101)                                     |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415)
 |Закрашивают область с веб-страницы                                               |[WebViewBrush](https://msdn.microsoft.com/library/windows/apps/BR227703)                                   |Н/Д
-|Закрашивают область изображением, воспользовавшись NineGrid stretch                         |[Элемент управления Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)                   |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
-|Закрашивают область с анимированных stretch NineGrid                               |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)                                                                                       |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
-|Закрашивают область следует использовать подобласть                                             |[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) с взаимодействия следует использовать подобласть
+|Закрашивают область с изображения с помощью NineGrid stretch                         |[Элемент управления Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)                   |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
+|Закрашивают область с анимированного stretch NineGrid                               |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)                                                                                       |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
+|Закрашивают область с следует использовать подобласть                                             |[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) с взаимодействия следует использовать подобласть
 |Закрашивают область с видео                                                 |[MediaElement](https://msdn.microsoft.com/library/windows/apps/mt187272.aspx)                                                                                                  |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) с взаимодействия мультимедиа
-|Закрашивают область с пользовательской двумерной отрисовки                                       |[CanvasControl](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm) из Win2D                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) с Win2D взаимодействия
-|Закрашивают область с неанимированные маски                                       |Используйте XAML [фигуры](https://docs.microsoft.com/windows/uwp/graphics/drawing-shapes) , чтобы определить маски   |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
+|Закрашивают область с пользовательской прорисовки 2D                                       |[CanvasControl](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm) из Win2D                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) с Win2D взаимодействия
+|Закрашивают область с неанимированные маски                                       |Используйте XAML [фигуры](https://docs.microsoft.com/windows/uwp/graphics/drawing-shapes) , чтобы определить маску   |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
 |Закрашивают область с анимированной маски                                        |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)                                                                                           |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
-|Закрашивают область с эффектом анимированных фильтра                               |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)                                                                                         |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)
+|Закрашивают область с эффектом анимированные фильтра                               |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)                                                                                         |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)
 |Закрашивают область с эффект, примененный к пикселям фона        |[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)                                                                                        |[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)
 
 ## <a name="related-topics"></a>Еще по теме
 
-[Композиция встроенного DirectX и Direct2D взаимодействия с BeginDraw и EndDraw](composition-native-interop.md)
+[Композиции собственных Direct2D Межпрограммное взаимодействие DirectX и с BeginDraw и EndDraw](composition-native-interop.md)
 
-[Взаимодействие с XAML кисти с XamlCompositionBrushBase](/windows/uwp/design/style/brushes#xamlcompositionbrushbase)
+[Межпрограммное взаимодействие XAML кисти с XamlCompositionBrushBase](/windows/uwp/design/style/brushes#xamlcompositionbrushbase)

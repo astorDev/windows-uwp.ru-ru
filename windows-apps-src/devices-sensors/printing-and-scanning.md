@@ -6,14 +6,14 @@ description: В этом разделе описываются печать и �
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, печать 3dprinting трехмерной печати
+keywords: Windows 10, uwp, печать 3dprinting, трехмерной печати
 ms.localizationpriority: medium
 ms.openlocfilehash: 51afa49dac094bdd203e080c682e681f752d15e4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6051879"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183750"
 ---
 # <a name="printing-and-scanning"></a>Печать и сканирование
 
