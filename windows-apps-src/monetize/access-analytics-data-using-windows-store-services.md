@@ -8,12 +8,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики дляMicrosoft Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 80ca7d66489f936e8097e9466f74032fbfb78eaf
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.openlocfilehash: a5d2689f5041035ba78cd9aef1f0610f0e1619dd
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6257983"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6458678"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Доступ к аналитическим данным с помощью служб Магазина
 
@@ -116,6 +116,7 @@ grant_type=client_credentials
 | Сценарий       | Методы      |
 |---------------|--------------------|
 | Приобретения |  <ul><li>[Получение сведений о покупках игр на Xbox One](get-xbox-one-game-acquisitions.md)</li><li>[Получение сведений о приобретенных надстройках для Xbox One](get-xbox-one-add-on-acquisitions.md)</li></ul> |
+| Ошибки |  <ul><li>[Получение данных системы отчетов для Xbox One игры](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[Получение сведений об ошибке в Xbox One игры](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[Получение трассировки стека при возникновении ошибки в Xbox One игры](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[Скачать CAB-файл для ошибки в игры Xbox One](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>Методы для оборудования и драйверов
 
