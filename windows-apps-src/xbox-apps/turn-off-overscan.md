@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 1adb221f-6f70-4255-9329-2046a486ca45
 ms.localizationpriority: medium
 ms.openlocfilehash: 32932845db47ed47b7e80f68cf4e424ba97e85c0
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6192215"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6263248"
 ---
 # <a name="how-to-draw-ui-to-the-edge-of-the-screen"></a>Рисование пользовательского интерфейса до края экрана   
 По умолчанию вокруг области приложения по краям области просмотра есть границы, необходимые для учета безопасной для телевизора области (Дополнительные сведения см. в разделе [Проектирование для Xbox и Телевизора](../design/devices/designing-for-tv.md#tv-safe-area)). 

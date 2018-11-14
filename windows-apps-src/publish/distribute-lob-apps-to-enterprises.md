@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, бизнес-приложения, бизнес, корпоративные приложения, store для бизнеса, store для образовательных учреждений, предприятия
 ms.localizationpriority: medium
 ms.openlocfilehash: d90a3b3b0eb216dbc07bbc331d7d461ed0f825c4
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6282025"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6458356"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Распространение бизнес-приложений для предприятий
 

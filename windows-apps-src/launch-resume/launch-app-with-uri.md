@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9126d33c18ede90e9c20339d9a793f3ab2835e76
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026915"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196848"
 ---
 # <a name="launch-an-app-with-a-uri"></a>Запуск приложения с помощью URI
 
@@ -29,7 +29,7 @@ ms.locfileid: "6026915"
 | [Запуск приложения UWP](launch-store-app.md) | В этом разделе описывается схема URI ms-windows-store. Ваше приложение может использовать эту схему URI для запуска приложения UWP на определенных страницах в Store. |
 | [Запуск приложения «Карты Windows»](launch-maps-app.md) | Узнайте, как запустить приложение "Карты Windows" из вашего приложения. |
 | [Запуск приложения "Люди"](launch-people-apps.md) | В этом разделе приводится описание схемы URI ms-people. Ваше приложение может использовать эту схему URI для запуска приложения "Люди" для конкретных действий. |
-| [Запуск функции "Фрагмент экрана"](launch-screen-snipping.md) | Узнайте, как использовать схемы URI для открытия нового фрагмент или открыть приложение фрагмент & эскиза. |
+| [Запуск функции "Фрагмент экрана"](launch-screen-snipping.md) | Узнайте, как использовать схемы URI для открытия нового фрагмент, или, чтобы открыть его фрагмент & эскиза. |
 | [Включение приложения для веб-сайтов с помощью обработчиков URI приложения](web-to-app-linking.md) | Повышайте интерес пользователей вашего приложения с помощью поддержки приложений для компонента веб-сайтов. |
 
 ## <a name="related-topics"></a>Статьи по теме

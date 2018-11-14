@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 42dfecd7d1bc2c298a70fec2bdebfc4c4f9dd66c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030496"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6200843"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Запуск приложения Microsoft Store
 
@@ -21,7 +21,7 @@ ms.locfileid: "6030496"
 
 В этом разделе описывается схема URI **ms-windows-store:**. Ваше приложение может использовать эту схему URI для запуска приложения Microsoft Store на определенных страницах в магазине с помощью метода [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) .
 
-В этом примере показано, как открыть страницу игр в магазине.
+В этом примере показано, как открыть страницу игры в магазине.
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));

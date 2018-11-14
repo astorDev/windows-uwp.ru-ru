@@ -5,15 +5,15 @@ author: PatrickFarley
 ms.author: pafarley
 ms.date: 12/6/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасность
+keywords: Windows 10, uwp, безопасности
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a5cddcd5ccb5185cda422c3df16797f5765688
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028060"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267059"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
@@ -177,7 +177,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * Сведения об областях OneDrive см. в разделе [Аутентификация OneDrive и вход в систему](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]
-> Кроме того Если ваше приложение использует подсказку для входа в систему (чтобы заполнить поле пользователя с адресом электронной почты по умолчанию) или другие специальные свойства, связанные с входа в систему, список его в свойстве **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** . Это приведет к система игнорирует свойства при кэшировании учетных записей в Интернете, которое предотвращает несоответствия учетной записи в кэше.
+> При необходимости Если ваше приложение использует подсказки входа (чтобы заполнить поле пользователя с адресом электронной почты по умолчанию) или другого специальные свойства, связанные с входа в систему, список его в свойство **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** . Это приведет к системе игнорировать свойства при кэшировании учетных записей в Интернете, которое предотвращает несоответствия учетной записи в кэше.
 
 Если вы разрабатываете корпоративное приложение, то, скорее всего, захотите подключиться к экземпляру Azure Active Directory (AAD) и использовать Microsoft Graph API вместо обычных служб учетной записи Майкрософт. В этом случае используйте следующий код: 
 

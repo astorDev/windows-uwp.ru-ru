@@ -9,11 +9,11 @@ keywords: Windows 10, UWP, API отправки Microsoft Store, выпуск п
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b65f4071fb9a05754ef68d98b8e2da1435c0153
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6164250"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202973"
 ---
 # <a name="update-the-rollout-percentage-for-a-flight-submission"></a>Обновление процента выпуска для отправки тестируемой возможности
 

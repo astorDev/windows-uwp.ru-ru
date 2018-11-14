@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 91a1ca0ee99833280aaa41ca4d9c94d043a78e0a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034713"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6271030"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Реализация навигации между двумя страницами
 
@@ -89,7 +89,7 @@ ms.locfileid: "6034713"
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) элемента в качестве дочернего элемента корневого элемента [**сетки**](https://msdn.microsoft.com/library/windows/apps/br242704) и после `pageTitle`элемент [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) .
+-   Элемент [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) в качестве дочернего элемента корневого элемента [**сетки**](https://msdn.microsoft.com/library/windows/apps/br242704) и после `pageTitle`элемент [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) .
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -126,7 +126,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) элемента в качестве дочернего элемента корневого элемента [**сетки**](https://msdn.microsoft.com/library/windows/apps/br242704) и после `pageTitle`элемент [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) .
+-   Элемент [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) в качестве дочернего элемента корневого элемента [**сетки**](https://msdn.microsoft.com/library/windows/apps/br242704) и после `pageTitle`элемент [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) .
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -318,7 +318,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 Наше приложение переключается между страницами, но пока не умеет делать ничего интересного. Часто, если в приложении есть несколько страниц, необходим общий доступ к информации. Давайте передадим какую-нибудь информацию с первой страницы на вторую.
 
-В Page1.xaml замените **HyperlinkButton** был добавлен ранее следующие [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
+В Page1.xaml замените **HyperlinkButton** , который был добавлен ранее с помощью следующих [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
 
 Теперь добавим метку [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) и [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (`name`) для ввода текстовой строки.
 
@@ -332,7 +332,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 </StackPanel>
 ```
 
-В `HyperlinkButton_Click` обработчик событий в файле кода программной части Page1.xaml добавьте параметр, ссылающийся на `Text` свойства `name` **TextBox** , чтобы `Navigate` метод.
+В `HyperlinkButton_Click` обработчик событий файла кода программной части Page1.xaml добавьте параметр, ссылающийся на `Text` свойства `name` **TextBox** `Navigate` метод.
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)

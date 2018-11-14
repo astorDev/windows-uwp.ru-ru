@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 661c324fbe7a80a6ff150da06536879a25c0c0c2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041790"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203849"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>Настройка Mac с Windows10
 
@@ -24,9 +24,9 @@ ms.locfileid: "6041790"
 
 Вы готовы приступить к разработке универсальных приложений для Windows, но под рукой нет ПК? Нет проблем— можно работать на Mac! С помощью популярных сторонними решениями, такие как Apple Boot Camp, Oracle VirtualBox, VMware Fusion и Parallels Desktop можно установить Windows10 и Microsoft Visual Studio на компьютере Apple.
 
-**Примечание**понадобится загрузочный образ Windows10 на диске или USB-накопителя. Подписчики MSDN могут скачать образ с веб-сайта скачиваемых файлов для подписчиков MSDN. Если вы не являетесь подписчиком, установщик можно приобрести в [Microsoft Store](http://apps.microsoft.com/windows/app). Его также можно скачать [здесь](http://go.microsoft.com/fwlink/?LinkId=623906), что полезно, если вы уже работаете с Windows и хотите обновиться.
+**Примечание**вам понадобится загрузочный образ Windows10 на диске или USB-накопителя. Подписчики MSDN могут скачать образ с веб-сайта скачиваемых файлов для подписчиков MSDN. Если вы не являетесь подписчиком, установщик можно приобрести в [Microsoft Store](http://apps.microsoft.com/windows/app). Его также можно скачать [здесь](http://go.microsoft.com/fwlink/?LinkId=623906), что полезно, если вы уже работаете с Windows и хотите обновиться.
 
-После создания под управлением Windows, можно установить последний выпуск Visual Studio из [загружаемые компоненты для Windows10 разработчиков](https://developer.microsoft.com/en-us/windows/downloads) и приступить к созданию приложений!
+Получив под управлением Windows, можно установить последний выпуск Visual Studio из [загружаемые компоненты для Windows10 разработчиков](https://developer.microsoft.com/en-us/windows/downloads) и приступить к созданию приложений!
 
 **Примечание**Если вы планируете использовать эмуляторы устройств в Visual Studio, **необходимо** установить 64-разрядный (x 64) версию Windows10 Pro или выше. К сожалению, 64-разрядная версия Windows не будет работать на некоторых старых компьютерах Mac. Узнать, совместимо ли ваше оборудование, можно на[этой странице поддержки Apple](http://go.microsoft.com/fwlink/p/?LinkID=397959).
 

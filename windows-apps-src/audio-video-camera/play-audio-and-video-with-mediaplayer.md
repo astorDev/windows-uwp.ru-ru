@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b83be1dee4e23fa6974e39fbfb0f9ce26529274
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6144279"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6263440"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Воспроизведение аудио и видео с помощью MediaPlayer
 
