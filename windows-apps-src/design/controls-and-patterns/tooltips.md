@@ -15,11 +15,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 87001cb99a7d5cb1a150bceed3f6c9ba187caa94
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035513"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205994"
 ---
 # <a name="tooltips"></a>Подсказки
 
@@ -114,7 +114,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 По умолчанию подсказка отображается по центру над указателем. Размещение не ограничивается окном приложения, поэтому подсказка может отображаться частично или полностью вне границ окна приложения.
 
-Для широкого корректировок используйте свойство [размещения](/uwp/api/windows.ui.xaml.controls.tooltip.placement) или **ToolTipService.Placement** присоединенное свойство для указания, нужно ли рисовать подсказку, выше, ниже, слева или справа от указателя. Можно задать свойства [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) или [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) , чтобы изменить расстояние между указателем и подсказкой. Только одно из двух значений смещения, повлияют на конечное расположение - VerticalOffset при размещении сверху или снизу, HorizontalOffset при слева размещения или вправо.
+Для широкого корректировки используйте свойство [размещения](/uwp/api/windows.ui.xaml.controls.tooltip.placement) или **ToolTipService.Placement** присоединенное свойство для указания, нужно ли рисовать подсказку, выше, ниже, слева или справа от указателя. Можно задать свойства [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) или [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) , чтобы изменить расстояние между указателем и подсказкой. Только одно из двух значений смещения может повлиять на конечное расположение - VerticalOffset при размещения сверху или снизу, HorizontalOffset при размещении слева или справа.
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -127,7 +127,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-Если подсказку закрывает содержимое, которое ссылается на, вы можете настроить ее размещение точно с помощью нового свойства **PlacementRect** . PlacementRect привязывает положение подсказки и выступать в качестве области, не будут загородить подсказку, предоставленные достаточно места на экране для рисования подсказку за пределами этой области. Вы можете указать начало координат прямоугольника относительно подсказку владельца и высоту и ширину области исключений. Свойства [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) определит, если подсказки следует нарисовать выше, ниже, слева или справа от PlacementRect. 
+Если подсказку закрывает содержимое, которое ссылается на, вы можете настроить ее размещение точно с помощью нового свойства **PlacementRect** . PlacementRect привязывает положение подсказки и выступать в качестве области, не будет загородить подсказку, предоставленные достаточно места на экране для рисования подсказку за пределами этой области. Вы можете указать начало координат прямоугольника относительно владельца подсказки и высоту и ширину области исключений. Свойство [размещения](/uwp/api/windows.ui.xaml.controls.tooltip.placement) определит, если подсказки следует нарисовать выше, ниже, слева или справа от PlacementRect. 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->

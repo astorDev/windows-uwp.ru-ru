@@ -2,18 +2,18 @@
 author: stevewhims
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: Этот пример, в котором используются данные в Bookstore, начинается с приложения WindowsPhone Silverlight, отображающего сгруппированные данные в классе LongListSelector.
-title: Silverlight и WindowsPhone практический пример UWP, Bookstore2
+title: WindowsPhone Silverlight практический пример UWP, Bookstore2
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e518439ddd4e131c2d045f4467670b42a392fca
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040193"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199537"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone Silverlight в UWP практический пример: Bookstore2
 
@@ -270,7 +270,7 @@ ms.locfileid: "6040193"
 
 ## <a name="making-the-view-model-more-flexible"></a>Создание более гибкой модели представления
 
-В этом разделе представлен пример, который показывает все преимущества переноса приложения в UWP. Здесь мы описываем необязательные действия, которые можно выполнить, чтобы сделать модель представления более гибкой при доступе через **CollectionViewSource**. Модель представления (исходный файл — ViewModel\\BookstoreViewModel.cs), мы перенесли из приложения Bookstore2WPSL8 для WindowsPhone Silverlight содержит класс с именем Author, производный от **списка&lt;T&gt;**, где **T** — BookSku. Это означает, что класс Author *является* группой BookSku.
+В этом разделе представлен пример, который показывает все преимущества переноса приложения в UWP. Здесь мы описываем необязательные действия, которые можно выполнить, чтобы сделать модель представления более гибкой при доступе через **CollectionViewSource**. Модель представления (исходный файл — ViewModel\\BookstoreViewModel.cs), мы перенесли из приложения Bookstore2WPSL8 для WindowsPhone Silverlight содержит класс с именем Author, производный от **список&lt;T&gt;**, где **T** — BookSku. Это означает, что класс Author *является* группой BookSku.
 
 Когда мы привязываем свойство **CollectionViewSource.Source** к Authors, мы просто сообщаем, что каждый класс Author — это группа *неких элементов*. Класс **CollectionViewSource** определяет, что представляет собой Author. В данном случае это группа BookSku. Этот подход работает, но он не универсальный. Как быть, если Author должен *одновременно* быть группой BookSku *и* группой адресов, где данный автор жил? Author не может *быть* двумя этими группами одновременно. Однако *у* Author может быть любое количество групп. Это и есть решение: используйте шаблон *has-a-group* вместо шаблона *is-a-group*, который мы применяем сейчас, или в дополнение к нему. Вот как это сделать.
 

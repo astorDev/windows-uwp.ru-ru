@@ -8,11 +8,11 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 971e828f4642a0a9c47994b1c7c0bfdbc5f01ad3
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6183581"
+ms.locfileid: "6251235"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Включение надстроек с подпиской для приложения
 

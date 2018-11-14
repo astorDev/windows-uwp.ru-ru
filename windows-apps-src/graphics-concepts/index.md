@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e325494cefeab4cf3ed40939f5b24de5e921b68
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040972"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186415"
 ---
 # <a name="direct3d-graphics-glossary"></a>Глоссарий графики Direct3D
 
 
-Определение терминов графики Microsoft Direct3D. Определяет этот словарь терминов, в условий высокого уровня, общие трехмерной компьютерной графики, которые используются в разработке игр и приложений Direct3D.
+Определяет условия графики Microsoft Direct3D. Определяет этот словарь терминов, в условий высокого уровня, общие трехмерной компьютерной графики, которые используются в разработке игр и приложений Direct3D.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>В этом разделе
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, устранение неполадок, HTML, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 38f0b36769d13d119965e7d15c5812b9ba1d6ecd
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6155063"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191600"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>Руководство по устранению неполадок для HTML и JavaScript
 

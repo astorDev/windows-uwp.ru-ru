@@ -2,26 +2,26 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: Создание приложения "Hello, world" на XAML
-description: Используйте разметки языка XAML (Extensible Application) с помощью C# для создания простого приложения Hello, world, предназначенное для универсальной платформы Windows (UWP) в Windows10.
+description: Используйте разметку языка XAML (Extensible Application) с помощью C# для создания простого приложения Hello, world, предназначенное для универсальной платформы Windows (UWP) на Windows10.
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, первое приложение, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: d6fa9fa708df376edc94d34ea14d8dad4aed10df
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039246"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192325"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Создание приложения "Hello, world" (XAML)
 
-В этом учебнике описано, как использовать XAML и C# для создания простого «Hello, world» приложение для универсальной платформы Windows (UWP) в Windows10. С помощью одного проекта в Microsoft Visual Studio можно создать приложение, которое работает на любом устройстве Windows10.
+В этом учебнике описано, как использовать XAML и C# для создания простого «Hello, world» приложение для универсальной платформы Windows (UWP) в Windows10. С помощью единственного проекта в Microsoft Visual Studio вы можете создать приложение, которое работает на любом устройстве Windows10.
 
 В этом разделе вы научитесь выполнять следующие действия.
 
--   Создание нового проекта **Visual Studio 2017** , предназначенное **Windows10** и **UWP**.
+-   Создание нового проекта **Visual Studio 2017** , предназначенный **Windows10** и **UWP**.
 -   Писать код XAML, чтобы изменить пользовательский интерфейс на начальной странице.
 -   Запускать проект на локальном компьютере в Visual Studio.
 -   Использовать объект SpeechSynthesizer, чтобы добавить в приложение голосовую функцию, активируемую нажатием кнопки.
@@ -46,9 +46,9 @@ ms.locfileid: "6039246"
 
 1.  Запустите Visual Studio2017.
 
-2.  В меню " **файл** " выберите **Создать > проект** чтобы открыть диалоговое окно *Новый проект* .
+2.  В меню " **файл** ", выберите **Создать > проект** чтобы открыть диалоговое окно *Новый проект* .
 
-3.  В списке шаблонов слева выберите **Установленные > Visual C# > Windows Universal** , чтобы просмотреть список шаблонов проектов UWP.
+3.  В списке шаблонов слева выберите **Установленные > Visual C# > Windows Universal** список шаблонов проектов UWP.
 
     (Если универсальные шаблоны не отображаются, возможно, у вас нет компонентов для создания приложений UWP. Вы можете повторить процесс установки и добавить поддержку UWP. Для этого нажмите **Открыть установщик Visual Studio** в диалоговом окне *Новый проект*. См. [Подготовка](get-set-up.md)).
 
@@ -235,7 +235,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>Резюме
 
-Поздравляем, вы создали свое первое приложение для Windows10 и UWP.
+Поздравляем, вы создали свое первое приложение для Windows10 и UWP!
 
 Чтобы узнать, как использовать XAML для размещения элементов управления, которые будут использоваться в вашем приложении, изучите [учебник по сетке](../design/layout/grid-tutorial.md) или сразу перейдите к [следующему шагу](learn-more.md).
 

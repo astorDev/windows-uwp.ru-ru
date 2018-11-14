@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ad87bdfa468c98a2e10d57f81b8e8d187bfbcef
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036934"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6210155"
 ---
 # <a name="device-information-properties"></a>Свойства сведений об устройствах
 
@@ -36,7 +36,7 @@ ms.locfileid: "6036934"
 При запросе свойств вы не ограничены только общими свойствами с понятными именами. Вы можете использовать GUID и PID для запроса любого доступного свойства, в том числе настраиваемого свойства, предусмотренного конкретным устройством или драйвером. Формат указания настраиваемого свойства: «`{GUID} PID`». Например: «`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`». 
 
 > [!Note]
-> Список свойств GUID можно найти в файле заголовка ключа свойств устройства драйвера устройства.
+> Список свойств GUID можно найти в файле заголовка ключа свойств устройства для драйвера устройства.
 
 Некоторые свойства используются во многих объектах [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind), но большинство из них уникальны и предназначены только для определенного вида. В следующих разделах перечислены некоторые распространенные свойства, отсортированные по **DeviceInformationKind**. Подробнее о том, как разные виды связаны друг с другом, см. в статье **DeviceInformationKind**.
 

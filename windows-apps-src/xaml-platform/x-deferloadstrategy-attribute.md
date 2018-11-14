@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cd958ba5f9025430be2736329c5a909233461039
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041349"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202406"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>Атрибут x:DeferLoadStrategy
 
@@ -34,7 +34,7 @@ ms.locfileid: "6041349"
 
 Предусмотрены следующие ограничения по использованию **x:DeferLoadStrategy**:
 
-- Необходимо определить [Атрибут x: Name](x-name-attribute.md)для элемента, поскольку должна быть возможность найти этот элемент позднее.
+- Необходимо определить [x: Name](x-name-attribute.md)для элемента, поскольку должна быть возможность найти этот элемент позднее.
 - Вы можете отложить только те типы, которые наследованы от классов [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) или [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
 - Вы не можете отложить корневые элементы в [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), [**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) и [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
 - Вы не можете отложить элементы в [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).

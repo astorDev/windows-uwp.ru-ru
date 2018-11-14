@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание надстройки, внутренний продукт приложения, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: d262a86c4a177095015c3f1391b19f1a7719d0a4
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6449979"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6187696"
 ---
 # <a name="create-an-add-on"></a>Создание надстройки
 

@@ -9,11 +9,11 @@ keywords: Windows 10, UWP, API отправки в Microsoft Store, выпуск
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ca3b457158ee1f509591c89ee6ac2819c819326
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047755"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196121"
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>Остановка выпуска тестируемой возможности
 
@@ -28,7 +28,7 @@ ms.locfileid: "6047755"
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия токена можно получить новый токен.
-* Создание отправки для одного из своих приложений. Это можно сделать в центре партнеров или можно сделать с помощью метода [создания отправки приложения](create-an-app-submission.md) .
+* Создание отправки для одного из своих приложений. Это можно сделать в центре партнеров, или можно сделать с помощью метода [создания отправки приложения](create-an-app-submission.md) .
 * Включите постепенный выпуск пакета для отправки. Можно сделать это [в центре партнеров](../publish/gradual-package-rollout.md), или можно сделать с [помощью API отправки Microsoft Store](manage-flight-submissions.md#manage-gradual-package-rollout).
 
 ## <a name="request"></a>Запрос

@@ -2,18 +2,18 @@
 author: stevewhims
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
 description: В этом разделе представлен практический пример переноса очень простого приложения WindowsPhone Silverlight в приложение универсальной платформы Windows (UWP) Windows10.
-title: Silverlight и WindowsPhone практический пример UWP, Bookstore1
+title: WindowsPhone Silverlight практический пример UWP, Bookstore1
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c335f607eb1897f79035850cd6a5af9e7a7a56dc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035280"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186882"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>WindowsPhone Silverlight в UWP практический пример: Bookstore1
 
@@ -78,9 +78,9 @@ ms.locfileid: "6035280"
 
 ## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>Выплачивание долгов и некоторый начальный стиль
 
-По умолчанию все ориентации поддерживаются. Приложение WindowsPhone Silverlight явно ограничивает себя только книжной ориентацией, тем не менее, поэтому элементы \#1 и \#2 оплачиваются, перейдя в манифесте пакета приложения в новом проекте и проверив **Книжная** в разделе **Supported ориентации**.
+По умолчанию все ориентации поддерживаются. Приложение WindowsPhone Silverlight явно ограничивает себя только книжной ориентацией, поэтому элементы \#1 и \#2 оплачиваются, перейдя в манифесте пакета приложения в новом проекте и проверка **Книжная** в разделе **Supported ориентации**.
 
-Для этого приложения элемент \#3 не является долгом, так как строка состояния (ранее называемая панелью задач) отображается по умолчанию. Для элементов \#4 и \#5 необходимо найти четыре стиля универсальной платформы Windows (UWP) **TextBlock** , которые соответствуют стилям WindowsPhone Silverlight, которые мы использовали. Можно запустить приложение WindowsPhone Silverlight в эмуляторе и сравнить его рядом с иллюстрацией в разделе " [текст](wpsl-to-uwp-porting-xaml-and-ui.md) ". Из этого, и просмотра свойств системных стилей WindowsPhone Silverlight мы сможем сделать эту таблицу.
+Для этого приложения элемент \#3 не является долгом, так как строка состояния (ранее называемая панелью задач) отображается по умолчанию. Для элементов \#4 и \#5 необходимо найти четыре стиля универсальной платформы Windows (UWP) **TextBlock** , которые соответствуют стилям WindowsPhone Silverlight, которые мы использовали. Можно запустить приложение WindowsPhone Silverlight в эмуляторе и сравнить его рядом с иллюстрацией в разделе " [текст](wpsl-to-uwp-porting-xaml-and-ui.md) ". Из этого и из рассмотрения свойств системных стилей WindowsPhone Silverlight мы сможем сделать эту таблицу.
 
 | Ключ стиля WindowsPhone Silverlight | Ключ стилей UWP          |
 |-------------------------------------|------------------------|

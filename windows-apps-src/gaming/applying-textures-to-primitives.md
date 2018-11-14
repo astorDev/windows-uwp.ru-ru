@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, текстуры, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 252613bbea7f4cdb720758d3435cf0920dd93efa
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030558"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6250592"
 ---
 # <a name="apply-textures-to-primitives"></a>Применение текстур к примитивам
 

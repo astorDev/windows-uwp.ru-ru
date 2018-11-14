@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ba685f30eb0cf94314996587073a82440cf6c951
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051353"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188311"
 ---
 # <a name="handle-pointer-input"></a>Работа с входными данными указателя
 
@@ -77,7 +77,7 @@ ms.locfileid: "6051353"
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208965"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>Происходит, если указатель захватывается другим элементом пользовательского интерфейса, если указатель отпущен пользователем или если происходит захват другого указателя программным путем.</p>
 <div class="alert">
-<strong>Примечание</strong>нет соответствующее событие захвата указателя не.
+<strong>Примечание</strong>есть соответствующее событие захвата указателя не происходит.
 </div>
 <div>
  
