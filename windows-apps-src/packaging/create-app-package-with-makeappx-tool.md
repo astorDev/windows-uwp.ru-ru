@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp, упаковка
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d5cc0d73975b591d7584b1ac606aa3323cd6da3
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 86472e4b3f9c7390eb7e6236de088ba2649901d1
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6206929"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6268462"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Создание пакета приложения с помощью средства MakeAppx.exe
 
@@ -23,7 +23,7 @@ ms.locfileid: "6206929"
 > [!IMPORTANT] 
 > Если для разработки приложения использовали Visual Studio, рекомендуется применять мастер Visual Studio для создания пакета приложения. Дополнительные сведения см. в разделе [Упаковка приложения UWP с помощью Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-Обратите внимание, что **MakeAppx.exe** не создает файл .appxupload. Файл .appxupload создается как часть процесса упаковки Visual Studio и содержит два других файла: .msix или .appx и .appxsym. Файл .appxsym — это сжатый файл .pdb, содержащий общедоступные символы вашего приложения, используемые для [аналитики по сбоям](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) в Центре разработки для Windows. Можно также отправить обычный файл .appx, но аналитика по сбоям или сведения отладки не будут доступны. Подробнее об отправке пакетов в Store см. в разделе [Отправка пакетов приложений](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages). 
+Обратите внимание, что **MakeAppx.exe** не создает файл .appxupload. Файл .appxupload создается как часть процесса упаковки Visual Studio и содержит два других файла: .msix или .appx и .appxsym. Файл .appxsym — это сжатый файл .pdb содержащий общедоступные символы вашего приложения, используемые для [сбоя аналитика](../publish/health-report.md) в центре партнеров. Можно также отправить обычный файл .appx, но аналитика по сбоям или сведения отладки не будут доступны. Подробнее об отправке пакетов в Store см. в разделе [Отправка пакетов приложений](../publish/upload-app-packages.md). 
 
  Обновления для данного средства в самая последняя версия Windows 10 не влияют на использование пакета .appx. Можно продолжать использовать это средство с AppX-пакеты приложений, или использовать средство с поддержкой для пакетов, .msix, как описано ниже.
 

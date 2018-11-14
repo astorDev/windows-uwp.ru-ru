@@ -2,18 +2,18 @@
 author: PatrickFarley
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: Отладка, тестирование и производительность
-description: Используйте Microsoft Visual Studio и другие инструменты для отладки и тестирования приложения и подготовить его к процессе сертификации Microsoft Store.
+description: Используйте Microsoft Visual Studio и другие инструменты для отладки и тестирования приложения и подготовить его к в процессе сертификации Microsoft Store.
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a6651c6d1117648522f95c7e7c85aad11ceed42f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040331"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6249932"
 ---
 # <a name="debugging-testing-and-performance"></a>Отладка, тестирование и производительность
 
