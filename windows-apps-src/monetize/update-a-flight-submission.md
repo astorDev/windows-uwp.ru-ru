@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, отправка тестируемой возможности, обновление
 ms.localizationpriority: medium
 ms.openlocfilehash: 670522e9842ca5e048777a1168caa1efbca6ce94
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044378"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205179"
 ---
 # <a name="update-a-package-flight-submission"></a>Обновление отправки тестового пакета
 
@@ -28,7 +28,7 @@ ms.locfileid: "6044378"
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия токена можно получить новый токен.
-* Создайте отправку тестового пакета для одного из своих приложений. Это можно сделать в центре партнеров или можно сделать с помощью метода [создания отправки тестового пакета](create-a-flight-submission.md) .
+* Создайте отправку тестового пакета для одного из своих приложений. Это можно сделать в центре партнеров, или можно сделать с помощью метода [создания отправки тестового пакета](create-a-flight-submission.md) .
 
 ## <a name="request"></a>Запрос
 

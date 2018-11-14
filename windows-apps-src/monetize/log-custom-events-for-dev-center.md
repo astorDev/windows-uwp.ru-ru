@@ -1,7 +1,7 @@
 ---
 author: Xansky
 Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
-title: Ведение журнала пользовательских событий для центра партнеров
+title: Регистрировать пользовательские события для центра партнеров
 ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
@@ -9,20 +9,20 @@ keywords: windows 10, uwp, Microsoft Store Services SDK, журналы собы
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: 47c1eb02434dc71cb7da949d58ec38cf3b4cf65a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047459"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6210015"
 ---
-# <a name="log-custom-events-for-partner-center"></a>Ведение журнала пользовательских событий для центра партнеров
+# <a name="log-custom-events-for-partner-center"></a>Регистрировать пользовательские события для центра партнеров
 
 [Отчет об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) в центре партнеров позволяет получить информацию о событиях, которые вы определили в своем приложении универсальной платформы Windows (UWP). Пользовательское событие — это произвольная строка, представляющая событие или активность в вашем приложении. Например, игра может определять пользовательские события с именем *firstLevelPassed*, *secondLevelPassed* и т. д., которые регистрируются при прохождении пользователем каждого уровня в игре.
 
 Для регистрации пользовательского события из вашего приложения передайте строку пользовательского события методу [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log), предоставляемому пакетом Microsoft Store Services SDK. Можно просмотреть общее число для вашего пользовательского события в разделе **пользовательские события** в [отчете об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) в центре партнеров.
 
 > [!NOTE]
-> Пользовательские события, войдите в центр партнеров не связаны с [событиями Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), и они не отображаются в **Средстве просмотра событий**.
+> Пользовательских событий, войдите в центр партнеров не связаны с [событиями Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), и они не отображаются в **Средстве просмотра событий**.
 
 ## <a name="prerequisites"></a>Предварительные условия
 
