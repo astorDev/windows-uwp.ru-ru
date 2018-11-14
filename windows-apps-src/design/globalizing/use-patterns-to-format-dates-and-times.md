@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
 ms.openlocfilehash: 04a0288d0b28c12eb68cf56225747224e8df9777
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6277171"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6465300"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>Использование шаблонов для форматирования даты и времени
 

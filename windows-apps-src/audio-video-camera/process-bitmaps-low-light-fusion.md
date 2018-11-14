@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, low light fusion, точечные рисунки, обработка изображений
 ms.localizationpriority: medium
 ms.openlocfilehash: aa1fa0ae298bf9f0403a3a565f44010b022ba1f6
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6444884"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6669315"
 ---
 # <a name="process-bitmaps-with-the-lowlightfusion-api"></a>Обработка точечных рисунков с помощью API LowLightFusion
 

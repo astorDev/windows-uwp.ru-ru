@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, рекламные объявления, реклама, рекламные блоки, тестирование
 ms.localizationpriority: medium
 ms.openlocfilehash: 11c66756d95e041a45fbc075b02eb744bf542871
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6462757"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6652399"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>Настройка рекламных блоков в приложении
 

@@ -8,11 +8,11 @@ ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8022b3bb5ca312be259c554f46dc9f432ea3caeb
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6193448"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6647317"
 ---
 # <a name="writing-style"></a>Стиль письма
 

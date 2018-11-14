@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f103ee3c281ca95abcaee76cdc6f88b74a49eb1
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6455563"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6672070"
 ---
 # <a name="aep-service-class-ids"></a>Идентификаторы класса службы AEP
 
