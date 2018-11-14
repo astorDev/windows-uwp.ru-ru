@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, стандартная, c++, cpp, winrt, проекция, создание, событие
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c4d36fa22953bc4745b631303aae62985a5aa05
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6444601"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6671618"
 ---
 # <a name="author-events-in-cwinrt"></a>Создание событий в C++/WinRT
 
@@ -148,7 +148,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 ## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>Простой сигналов, между ABI и параметризованными делегаты
 
-Если событий должен быть доступен через двоичного интерфейса приложений (ABI)&mdash;например между компонента и его использующем приложения&mdash;события необходимо использовать тип делегата среды выполнения Windows. В приведенном выше примере используется тип делегата [**Windows::Foundation::EventHandler\ < T\ >**](/uwp/api/windows.foundation.eventhandler) среды выполнения Windows. [**TypedEventHandler\ < TSender, TResult\ >**](/uwp/api/windows.foundation.eventhandler) — еще один пример типа делегата среды выполнения Windows.
+Если событий должен быть доступен через двоичного интерфейса приложений (ABI)&mdash;например между компонента и его использующем приложения&mdash;события необходимо использовать тип делегата среды выполнения Windows. Приведенный выше использует [**Windows::Foundation::EventHandler\<T\ >**](/uwp/api/windows.foundation.eventhandler) типа делегата среды выполнения Windows. [**TypedEventHandler\<TSender, TResult\ >**](/uwp/api/windows.foundation.eventhandler) — еще один пример типа делегата среды выполнения Windows.
 
 Параметры типа для этих типов два делегата имеют перекрестной ABI, поэтому параметры типа должны являться типами среды выполнения Windows, слишком. Включает в себя классы среды выполнения первого и сторонних поставщиков, а также как простые типы, такие как строки и числа. Компилятор поможет вам с ошибкой «,*должен иметь тип WinRT*» Если вы забудете такое ограничение.
 

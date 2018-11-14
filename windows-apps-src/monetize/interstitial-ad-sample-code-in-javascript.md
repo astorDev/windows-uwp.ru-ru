@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные объявления, промежуточная, javascript, пример кода
 ms.localizationpriority: medium
 ms.openlocfilehash: 1921725e5b598a2e5e79ed90c607414e4efe574e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044857"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6256292"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>Пример кода промежуточной рекламы в JavaScript
 

@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 112e9f60e38bc5a665d9011f35b9e92189f15f80
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 394dbdb5ae9065aa9424a470ad2e9295ddd63c8d
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6460907"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6671970"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Что нового в документации для разработчиков Windows в декабре 2017г.
 
@@ -48,7 +48,7 @@ ms.locfileid: "6460907"
 
 Портал совместной работы Microsoft Collaborate предоставляет средства и службы для упрощения совместной работы при проектировании в пределах экосистемы Майкрософт, обеспечивая общий доступ к рабочим элементам системы проектирования (ошибки, запросы функций, и т. д.) и распространение содержимого (сборки, документы, спецификации). [Подробнее](https://docs.microsoft.com/en-us/collaborate).
 
-![Портал Microsoft Collaborate на информационной панели Центра разработки](images/microsoft_collaborate_screenshot.PNG)
+![Портал Microsoft Collaborate в центре партнеров](images/microsoft_collaborate_screenshot.PNG)
 
 ### <a name="package-desktop-applications-with-uwp-projects"></a>Упаковка классических приложений с проектами UWP
 
