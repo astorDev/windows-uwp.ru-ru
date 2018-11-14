@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a7250c41795373b089f7a4c76b603c169b1e4dc3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042825"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194227"
 ---
 # <a name="enable-device-capabilities"></a>Включение возможностей устройств
 
@@ -26,7 +26,7 @@ ms.locfileid: "6042825"
 
 Приложения для Windows требуют, чтобы в манифесте пакета приложения было указано, что используются определенные типы устройств. Большинство возможностей можно объявить в Visual Studio с помощью [конструктора манифеста](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx) или добавить вручную, как описано в разделе об [определении возможностей устройств в манифесте пакета вручную](https://msdn.microsoft.com/library/windows/apps/Dn263092). В этом учебнике предполагается, что вы пользуетесь конструктором манифеста.
 
-**Примечание**  некоторые типы устройств, таких как принтеры, сканеры и датчики, не требуется объявлять в манифесте пакета приложения.
+**Примечание**  некоторые типы устройств, таких как принтеры, сканеры и датчики, не нужно объявлять в манифесте пакета приложения.
 
 -   Дважды щелкните файл манифеста пакета **Package.appxmanifest** в обозревателе решений Visual Studio.
 -   Откройте вкладку **Возможности**.

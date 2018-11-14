@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, службы Store, API отзывов для Microsoft Store, сведения об ответах
 ms.localizationpriority: medium
 ms.openlocfilehash: 466455a5e8da9364206245f1e0ac10acfed07ee7
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6156156"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190140"
 ---
 # <a name="get-response-info-for-reviews"></a>Получение сведений об ответах на отзывы
 

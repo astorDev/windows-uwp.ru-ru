@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 866fedf35aa6f1f585825195b18cdd1fed4bad11
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034415"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6193285"
 ---
 # <a name="process-media-files-in-the-background"></a>Обработка файлов мультимедиа в фоновом режиме
 
@@ -126,7 +126,7 @@ ms.locfileid: "6034415"
 
 [!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
-Типичное приложение зарегистрирует своих фоновых задач, когда приложение находится изначально запущенного, например, событие **OnNavigatedTo** .
+Типичное приложение будет зарегистрировать своих фоновых задач, когда приложение находится изначально запущенного, например, событие **OnNavigatedTo** .
 
 Запустите фоновую задачу, вызвав метод **MediaProcessingTrigger** объекта [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071). Объект [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007), возвращенный этим методом, позволяет узнать, была ли фоновая задача успешно запущена, а также определить причину, если эта фоновая задача не была запущена. 
 

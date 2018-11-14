@@ -1,18 +1,18 @@
 ---
 author: M-Stahl
-title: Сведения об устройстве Xbox портала Справочник по API
-description: Узнайте, как получить доступ к данным устройства Xbox.
+title: Сведения об устройстве Xbox портал Справочник по API
+description: Узнайте, как получить доступ к информации устройства Xbox.
 ms.author: mstahl
 ms.date: 11/7/2017
 ms.topic: article
 keywords: Windows 10, uwp, xbox, портала устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b0e2bab0ce7d5525e8032809954ff656a74a61c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039299"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198860"
 ---
 # <a name="xbox-info-api-reference"></a>Справочник по API сведения Xbox   
 Можно получить доступ к Xbox One сведения об устройстве, с помощью этого API.
@@ -42,12 +42,12 @@ GET | /ext/xbox/info
 **Ответ**   
 Объект JSON с перечисленными ниже полями.
 
-* OsVersion - (строка) версию операционной системы.
-* OsEdition - (String) в выпуске операционной системы, такие как «Март 2017 г.» или «март 2017 г. QFE 1".
-* ConsoleId - код (строка) консоли приложения.
-* DeviceId - (строка) консоли Xbox Live устройства идентификатор.
-* SerialNumber - (строка) консоли серийный номер.
-* DevMode - режима текущего разработчика (строка) консоли элемента, например «None» или «Коммерческие».
+* OsVersion - (String) версию операционной системы.
+* OsEdition - (String) в версии операционной системы, такие как «Март 2017 г.» или «март 2017 г. QFE 1".
+* ConsoleId - код (String) консоли приложения.
+* DeviceId - (String) консоли Xbox Live устройства идентификатор.
+* SerialNumber - (String) консоли серийный номер.
+* DevMode - режима текущего разработчика (String) консоли приложения, например «None» или «Retail».
 * ConsoleType - типа (String) консоли приложения, например «Xbox One» или «Xbox One S».
 * DevkitCertificateExpirationTime - (Number) — время UTC в секундах, когда истечет срок действия сертификата комплект средств для разработчика консоли.
 

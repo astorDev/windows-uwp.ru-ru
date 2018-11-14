@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c0fcd158dac77b3b3322167b82131e51f62390f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025379"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6262692"
 ---
 # <a name="images-and-image-brushes"></a>Изображения и кисти изображений
 
@@ -58,7 +58,7 @@ ms.locfileid: "6025379"
 
 ![Пример элемента Image](images/Image_Licorice.jpg)
 
-В этом примере свойство [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) определяет расположение изображения, которое следует отобразить. Вы можете задать источник абсолютный URL-адрес (например, http://contoso.com/myPicture.jpg) или URL-адрес, который является относительным структуре упаковки вашего приложения. В нашем примере мы помещаем файл изображения "licorice.jpg" в корневую папку проекта и объявляем параметры проекта, которые содержат этот файл.
+В этом примере свойство [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) определяет расположение изображения, которое следует отобразить. Вы можете задать источник абсолютный URL-адрес (например, http://contoso.com/myPicture.jpg) или URL-адрес, который является относительным для структуре упаковки вашего приложения. В нашем примере мы помещаем файл изображения "licorice.jpg" в корневую папку проекта и объявляем параметры проекта, которые содержат этот файл.
 
 ### <a name="imagebrush"></a>ImageBrush
 

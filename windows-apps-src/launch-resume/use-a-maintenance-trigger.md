@@ -13,11 +13,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 5f11afbafc424a4ed7f2c973f0417c792ab7da65
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050210"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6156728"
 ---
 # <a name="use-a-maintenance-trigger"></a>Использование триггера обслуживания
 
@@ -40,7 +40,7 @@ ms.locfileid: "6050210"
 > [!NOTE]
 > Если *FreshnessTime* задано значение меньше 15 минут, — это исключение при попытке зарегистрировать фоновую задачу.
 
-В этом примере кода создает триггер, запускаемый один раз в час.
+Этот пример кода создает триггер, запускаемый один раз в час.
 
 ```csharp
 uint waitIntervalMinutes = 60;
