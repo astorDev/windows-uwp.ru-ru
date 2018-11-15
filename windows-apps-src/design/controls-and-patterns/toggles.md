@@ -15,11 +15,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d166e872af0824c9eb5df15510f9597d0303f483
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6860934"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6456892"
 ---
 # <a name="toggle-switches"></a>Тумблеры
 

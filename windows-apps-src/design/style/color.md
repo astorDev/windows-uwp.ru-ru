@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.openlocfilehash: cbc884fa3079eaa9db348de3430ed6d59d1e8a0d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6659557"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834333"
 ---
 # <a name="color"></a>Цвет
 

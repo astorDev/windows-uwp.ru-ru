@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, аналитические сведения, тенденции, аномалий, аномалии, изменения данных
 ms.localizationpriority: medium
 ms.openlocfilehash: 324666095c26eb8d05732ce7e1ad3217b210d406
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6671527"
+ms.locfileid: "6832005"
 ---
 # <a name="insights-report"></a>Аналитический отчет
 

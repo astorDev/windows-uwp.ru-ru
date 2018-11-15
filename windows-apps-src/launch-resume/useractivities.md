@@ -7,12 +7,12 @@ ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e99796decfa5ed434fddee3be4340380e2376a2
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 37b7ed35edecb95deb4b3ba568227f4cd8e32d9a
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6654054"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6455356"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Продолжение активности пользователей даже на разных устройствах
 
@@ -157,7 +157,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 ## <a name="summary"></a>Краткий обзор
 
 Можно использовать API [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities), чтобы ваше приложение отображалось на временной шкале и в Кортане.
-* Узнать больше о [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* Подробные сведения о API **UserActivity** можно найти в [Центре разработки для Windows](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities).
 * Ознакомьтесь с [примером кода](https://github.com/Microsoft/project-rome).
 * Посмотрите [более сложные адаптивные карты](http://adaptivecards.io/).
 * Опубликуйте **UserActivity** с iOS, Android или через веб-службу с помощью [Microsoft Graph](https://developer.microsoft.com/graph/).
