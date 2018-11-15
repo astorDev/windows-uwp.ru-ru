@@ -8,11 +8,11 @@ ms.topic: article
 keywords: триггер фоновой задачи, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 6846cfe77272a78eff7ddc05c9a7e48dddd21fc2
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6646226"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6838749"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Запуск фоновой задачи в приложении
 

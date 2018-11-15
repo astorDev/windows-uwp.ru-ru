@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 269d51ec6005bcd61ac01a66d72c34bdb2901add
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6654240"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6837286"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>Демонстрационные данные в рабочей области конструирования и демонстрационные данные для создания прототипов
 =============================================================================================

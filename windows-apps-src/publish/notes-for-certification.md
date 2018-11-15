@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, заметки для тест-инженеров
 ms.localizationpriority: medium
 ms.openlocfilehash: ab3ba2eb08c01bac3b9c0536ce11b8e2bea96054
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6653703"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6836597"
 ---
 # <a name="notes-for-certification"></a>Заметки по сертификации
 

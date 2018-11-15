@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: 6761ec38b470b798740cbabc72a648f51557edbc
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6672765"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6836786"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Интеграция упакованного классического приложения с Windows 10
 

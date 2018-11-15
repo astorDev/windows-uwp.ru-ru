@@ -10,18 +10,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d2d5d6dd53ffcb14ed6223e2fd0f85324a8438
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 933ca3f6d683d5a58e10f87059527038e7b696d1
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665715"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6833762"
 ---
 # <a name="controls-by-function"></a>Элементы управления по функциям
 
 Инфраструктура пользовательского интерфейса XAML для Windows предоставляет обширную библиотеку элементов управления, поддерживающих разработку интерфейса. Часть элементов управления имеет визуальное представление, а остальные используются в качестве контейнеров для других элементов управления или содержимого — например, для изображений и мультимедиа. 
 
-Чтобы просмотреть элементы управления интерфейса Windows в действии, скачайте [Пример основных элементов пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992).
+Чтобы просмотреть элементы управления интерфейса Windows в действии, скачайте [Пример основных элементов пользовательского интерфейса XAML](https://go.microsoft.com/fwlink/p/?LinkId=619992).
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -56,21 +56,21 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Руководство по элементам управления панели приложения и панели команд](app-bars.md) 
 
-Пример кода: [Пример команд XAML](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+Пример кода: [Пример команд XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-separator"></a>Разделитель панели приложения
 Визуально разделяет группы команд на соответствующей панели.
 
 Справка: [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 
 
-Пример кода: [Пример команд XAML](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+Пример кода: [Пример команд XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-toggle-button"></a>Переключатель панели приложения
 Кнопка для переключения команд на соответствующей панели.
 
 Справка: [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 
 
-Пример кода: [Пример команд XAML](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+Пример кода: [Пример команд XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="command-bar"></a>Панель команд
 Специализированная панель приложения, которая обрабатывает изменение размера кнопок панели приложения.
@@ -88,7 +88,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Руководство по элементам управления "Панель приложения" и "Панель команд"](app-bars.md)
 
-Пример кода: [Пример команд XAML](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+Пример кода: [Пример команд XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="buttons"></a>Кнопки
 
@@ -116,7 +116,7 @@ ms.locfileid: "6665715"
 
 ```xaml
 <HyperlinkButton Content="www.microsoft.com" 
-                 NavigateUri="http://www.microsoft.com"/>
+                 NavigateUri="https://www.microsoft.com"/>
 ```
 
 Справка: [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
@@ -168,7 +168,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Списки](lists.md) 
 
-Пример кода: [Пример ListView](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+Пример кода: [Пример ListView](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ### <a name="items-control"></a>Элемент управления "Элементы"
 Элемент управления, представляющий коллекцию элементов, которые расположены в пользовательском интерфейсе, указанном в шаблоне данных. 
@@ -193,7 +193,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Списки](lists.md) 
 
-Пример кода: [Пример ListView](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+Пример кода: [Пример ListView](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ## <a name="date-and-time-controls"></a>Элементы управления датой и временем
 
@@ -290,7 +290,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [меню и контекстные меню](menus.md) 
 
-Пример кода: [Пример контекстного меню XAML](http://go.microsoft.com/fwlink/p/?LinkId=620021)
+Пример кода: [Пример контекстного меню XAML](https://go.microsoft.com/fwlink/p/?LinkId=620021)
 
 ### <a name="popup-menu"></a>Контекстное меню
 Настраиваемое меню с выбранными вами командами.
@@ -326,7 +326,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Image и ImageBrush](images-imagebrushes.md) 
 
-Пример кода: [Пример изображений в XAML](http://go.microsoft.com/fwlink/p/?linkid=226867)
+Пример кода: [Пример изображений в XAML](https://go.microsoft.com/fwlink/p/?linkid=226867)
 
 ## <a name="graphics-and-ink"></a>Графика и рукописный ввод
 
@@ -355,7 +355,7 @@ ms.locfileid: "6665715"
 
 Инструкции: [Рисование фигур](../../graphics/drawing-shapes.md) 
 
-Пример кода: [Пример рисования на основе векторов в языке XAML](http://go.microsoft.com/fwlink/p/?linkid=226866)
+Пример кода: [Пример рисования на основе векторов в языке XAML](https://go.microsoft.com/fwlink/p/?linkid=226866)
 
 ## <a name="layout-controls"></a>Элементы управления для макета
 
@@ -455,7 +455,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Руководство по элементам управления прокруткой и сдвигом](scroll-controls.md) 
 
-Пример кода: [Пример прокрутки, сдвига и масштабирования на XAML](http://go.microsoft.com/fwlink/p/?linkid=238577)
+Пример кода: [Пример прокрутки, сдвига и масштабирования на XAML](https://go.microsoft.com/fwlink/p/?linkid=238577)
 
 ### <a name="stack-panel"></a>Панель стека
 Панель макета, упорядочивающая дочерние элементы в одной строке, которую можно расположить по горизонтали или вертикали.
@@ -544,7 +544,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Руководство по элементам управления мультимедиа](media-playback.md) 
 
-Пример кода: [Пример элементов управления транспортировкой мультимедиа](http://go.microsoft.com/fwlink/p/?LinkId=620023)
+Пример кода: [Пример элементов управления транспортировкой мультимедиа](https://go.microsoft.com/fwlink/p/?LinkId=620023)
 
 ### <a name="video"></a>Видео
 См. "Элемент мультимедиа".
@@ -585,7 +585,7 @@ ms.locfileid: "6665715"
 Контейнерный элемент управления, содержащий веб-страницу.
 
 ```xaml
-<WebView x:Name="webView1" Source="http://dev.windows.com" 
+<WebView x:Name="webView1" Source="https://developer.microsoft.com" 
          Height="400" Width="800"/>
 ```
 
@@ -593,7 +593,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: Руководство по представлениям веб-страниц 
 
-Пример кода: [Пример элемента управления WebView на языке XAML](http://go.microsoft.com/fwlink/p/?linkid=238582)
+Пример кода: [Пример элемента управления WebView на языке XAML](https://go.microsoft.com/fwlink/p/?linkid=238582)
 
 ### <a name="semantic-zoom"></a>Контекстное масштабирование
 
@@ -614,7 +614,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Руководство по элементам управления контекстным масштабированием](semantic-zoom.md)
 
-Пример кода: [Пример группировки GridView и элемент управления SemanticZoom на языке XAML](http://go.microsoft.com/fwlink/p/?linkid=226564)
+Пример кода: [Пример группировки GridView и элемент управления SemanticZoom на языке XAML](https://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>Элементы управления "Ход выполнения"
 
@@ -665,7 +665,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Элементы управления текстом](text-controls.md), [Руководство по элементу управления полем автозаполнения](auto-suggest-box.md)
 
-Пример кода: [Пример переноса AutoSuggestBox](http://go.microsoft.com/fwlink/p/?LinkId=619996)
+Пример кода: [Пример переноса AutoSuggestBox](https://go.microsoft.com/fwlink/p/?LinkId=619996)
 
 ### <a name="multi-line-text-box"></a>Поле многострочного текста
 См. "Текстовое поле".
@@ -684,7 +684,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Элементы управления текстом](text-controls.md), [Руководство по элементу управления "Поле ввода пароля"](password-box.md) 
 
-Пример кода: [Пример отображения текста на языке XAML](http://go.microsoft.com/fwlink/p/?linkid=238579), [Пример редактирования текста на языке XAML](http://go.microsoft.com/fwlink/p/?linkid=251417)
+Пример кода: [Пример отображения текста на языке XAML](https://go.microsoft.com/fwlink/p/?linkid=238579), [Пример редактирования текста на языке XAML](https://go.microsoft.com/fwlink/p/?linkid=251417)
 
 ### <a name="rich-edit-box"></a>Поле с форматом
 Элемент управления, при помощи которого пользователь может редактировать документы в формате RTF, содержащие, например, форматированный текст, гиперссылки и изображения.
@@ -697,7 +697,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Элементы управления текстом](text-controls.md), [Руководство по элементу управления "Поле с форматированием"](rich-edit-box.md)
 
-Пример кода: [Пример текста на языке XAML](http://go.microsoft.com/fwlink/p/?linkid=238578)
+Пример кода: [Пример текста на языке XAML](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="search-box"></a>Поле поиска
 См. "Поле автозаполнения".
@@ -721,7 +721,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Элементы управления текстом](text-controls.md), [Руководство по элементу управления "Блок текста"](text-block.md), [Руководство по элементу управления "Блок текста с форматированием"](rich-text-block.md)
 
-Пример кода: [Пример текста на языке XAML](http://go.microsoft.com/fwlink/p/?linkid=238578)
+Пример кода: [Пример текста на языке XAML](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="text-box"></a>Текстовое поле
 Поле для однострочного или многострочного ввода обычного текста.
@@ -737,7 +737,7 @@ ms.locfileid: "6665715"
 
 Проектирование и инструкции: [Элементы управления текстом](text-controls.md), [Руководство по элементу управления "Текстовое поле"](text-box.md) 
 
-Пример кода: [Пример текста на языке XAML](http://go.microsoft.com/fwlink/p/?linkid=238578)
+Пример кода: [Пример текста на языке XAML](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ## <a name="selection-controls"></a>Элементы управления выделением
 

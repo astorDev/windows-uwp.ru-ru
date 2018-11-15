@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b258569b707f50051eaa266e2cae5b9971894cf3
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6650677"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834525"
 ---
 # <a name="display-the-camera-preview"></a>Отображение предварительного изображения с камеры
 

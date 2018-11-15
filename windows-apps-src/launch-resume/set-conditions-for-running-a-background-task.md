@@ -13,11 +13,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: e64f36eb400d683da1cb52a819da5aa245a41ac4
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6673396"
+ms.locfileid: "6836673"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Задание условий выполнения фоновой задачи
 

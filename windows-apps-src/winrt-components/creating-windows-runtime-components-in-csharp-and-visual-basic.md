@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e3b9ed2d256fb9ea8d38690a703baf7fbd3e7f0
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6655887"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6836333"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>Создание компонентов среды выполнения Windows в C# и Visual Basic
 Начиная с .NET Framework 4.5 можно создавать собственные типы среды выполнения Windows, упакованные в компонент среды выполнения Windows, с помощью управляемого кода. Этот компонент можно использовать в приложениях универсальной платформы Windows (UWP), написанных на C++, JavaScript, Visual Basic или C#. В этом разделе описываются правила создания компонента и рассматриваются некоторые аспекты поддержки среды выполнения Windows в .NET Framework. Как правило, такая поддержка разрабатывается таким образом, чтобы быть прозрачной для разработчиков .NET Framework. Однако при создании компонента, использующего JavaScript или C++, следует учитывать различия в том, как эти языки поддерживают среду выполнения Windows.
