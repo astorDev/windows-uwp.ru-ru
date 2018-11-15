@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, рекламные объявления, реклама, AdControl, баннеры
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a8a08f81328be5dcf28a3f73a592e88e1edd135
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6278835"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6661284"
 ---
 # <a name="banner-ads"></a>Рекламные баннеры
 

@@ -8,12 +8,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, первое приложение, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: d6fa9fa708df376edc94d34ea14d8dad4aed10df
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 28b30a592951017fb4a0b3803261cb0258be6ae3
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6466465"
+ms.locfileid: "6652112"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Создание приложения "Hello, world" (XAML)
 
@@ -204,7 +204,7 @@ ms.locfileid: "6466465"
 
 3.  Измените код обработчика событий в файле *MainPage.xaml.cs* на странице с кодом программной части. Это самый интересный этап. Код обработчика событий по умолчанию выглядит следующим образом.
 
-```C#
+```cs
 private void Button_Click(object sender, RoutedEventArgs e)
 {
 
@@ -213,18 +213,18 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
   Давайте изменим его, чтобы он выглядел следующим образом.
 
-```C#
+```cs
 private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MediaElement mediaElement = new MediaElement();
-            var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
-            Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync("Hello, World!");
-            mediaElement.SetSource(stream, stream.ContentType);
-            mediaElement.Play();
-        }
+{
+    MediaElement mediaElement = new MediaElement();
+    var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+    Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync("Hello, World!");
+    mediaElement.SetSource(stream, stream.ContentType);
+    mediaElement.Play();
+}
 ```
 
-Обязательно добавьте ключевое слово **async**. Если этого не сделать, приложение выдаст ошибку при попытке его запуска.
+Убедитесь, что сигнатура метода теперь включает ключевое слово **async** или вы получите ошибку при попытке запустить приложение.
 
 ### <a name="what-did-we-just-do"></a>Что нам удалось сделать?
 
