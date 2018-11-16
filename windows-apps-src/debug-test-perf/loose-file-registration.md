@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, портал устройств, диспетчер приложений, развертывания, sdk
 ms.localizationpriority: medium
 ms.openlocfilehash: 16dc7c3d8182e249134be941d466574cddc36157
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6841141"
+ms.locfileid: "6970476"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>Развертывание приложения через свободную регистрацию файлов 
 
@@ -79,7 +79,7 @@ Windows PowerShell позволяет зарегистрировать маке�
 Add-AppxPackage -Register <path to manifest file>
 ```
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Поиск и устранение неисправностей
 
 ### <a name="mapped-network-drives"></a>Подключенных сетевых дисков
 Подключенных сетевых дисков в настоящее время не поддерживается для свободных регистраций. Обратитесь к подключенный диск с полным путь к общей папке сети.

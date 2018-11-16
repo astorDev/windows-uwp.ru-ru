@@ -8,16 +8,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, центр разработки, параметры учетной записи, профиль, профиль учетной записи, учетная запись разработчика, параметры учетной записи разработчика
 ms.localizationpriority: medium
-ms.openlocfilehash: 90bf81f23bcffe05278d12bab7abb2425f7eb773
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 0acbf8378d2cffa7c083e1da06ed0775df69d60e
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670650"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6974639"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>Управление параметрами учетной записи и сведениями профиля
 
-Можно просмотреть и обновить настройки учетной записи разработчика и сведения профиля в разделе **Параметры учетной записи** [Центра партнеров](https://partner.microsoft.com/dashboard). 
+Можно просмотреть и обновить настройки учетной записи разработчика и сведения профиля в разделе **Параметры учетной записи** центра [Партнеров](https://partner.microsoft.com/dashboard). 
 
 > [!NOTE]
 > Можно управлять параметрами уведомлений (например, выберите тип уведомлений и способ получаемых) в **Центре сообщений** (который может получить доступ, щелкнув значок с сообщением в верхней части центра партнеров).

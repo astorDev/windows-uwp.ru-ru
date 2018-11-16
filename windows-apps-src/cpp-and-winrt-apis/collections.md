@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартные, c ++, cpp, winrt, проекция, коллекции
 ms.localizationpriority: medium
 ms.openlocfilehash: 93b486021813abf320645888d4f19971dc2c80ab
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6859341"
+ms.locfileid: "6982210"
 ---
 # <a name="collections-with-cwinrt"></a>Создание коллекций с помощью C++/WinRT
 
@@ -342,6 +342,6 @@ private:
 * [Шаблон структуры WinRT::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
 * [Шаблон структуры WinRT::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 * [Категории значений и ссылки на них](cpp-value-categories.md)
 * [Элементы управления XAML; привязка к коллекции C++/WinRT](binding-collection.md)

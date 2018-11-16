@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, A/B-тесты, эксперименты
 ms.localizationpriority: medium
 ms.openlocfilehash: e5a4c3607486a7163648c7aa5a0e1d03d37e421f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6658977"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6992441"
 ---
 # <a name="create-and-run-your-first-experiment"></a>Создание и запуск первого эксперимента
 
@@ -107,6 +107,6 @@ ms.locfileid: "6658977"
 
 * [Создание проекта и определение удаленных переменных в центре партнеров](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [Кодирование приложения для экспериментов](code-your-experiment-in-your-app.md)
-* [Определение эксперимента в центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Управление экспериментом в центре партнеров](manage-your-experiment.md)
+* [Определение эксперимента в Центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Управление экспериментом в Центре партнеров](manage-your-experiment.md)
 * [Выполнение экспериментов в приложении с использованием A/B-тестирования](run-app-experiments-with-a-b-testing.md)

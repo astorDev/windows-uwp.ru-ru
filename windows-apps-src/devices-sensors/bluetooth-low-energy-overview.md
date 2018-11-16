@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, bluetooth, bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ, низком энергопотреблении, gatt, зазора, центрального, периферийного устройства, клиент, сервер, наблюдателя, "издатель"
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5bef16c76ee14c2abb7a5a41ab02d150a97333
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6838563"
+ms.locfileid: "6973292"
 ---
 # <a name="bluetooth-low-energy"></a>Bluetooth с низким энергопотреблением
 Bluetooth с низким энергопотреблением (LE) — это спецификация, определяющий протоколы для обнаружения и обмен данными между энергопотребление устройства. Обнаружение устройств выполняется через протокол универсального профиля доступа (пробел). После обнаружения обмена данными для устройства выполняется по протоколу Generic Attribute (GATT). В этом разделе представлен краткий обзор Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ в приложениях UWP. Более подробные сведения о Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ, см. в разделе [Спецификации Core Bluetooth](https://www.bluetooth.com/specifications/bluetooth-core-specification) версии 4.0, где был введен Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ. 
