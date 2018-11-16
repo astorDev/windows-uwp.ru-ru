@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, безопасности
 ms.localizationpriority: medium
 ms.openlocfilehash: 88210182f46fa8149e4b2d0278d7df89033e62b6
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6667004"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6843287"
 ---
 # <a name="web-authentication-broker"></a>Брокер веб-проверки подлинности
 

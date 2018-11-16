@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, игра, запись, звук, видео, метаданные
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c1641cb4c50b86d7f678bf18fa85ad0215b4b15
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6661874"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6843141"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>Запись звука, видео, снимков экрана и метаданных из игры
 В этой статье рассказывается, как выполнять запись видео, звука и снимков экрана в играх, а также как отправлять метаданные, которые система добавит в записанное и транслируемое мультимедийное содержимое, позволяя вашим и другим приложениям обеспечивать динамичное взаимодействие, синхронизируемое с событиями игрового процесса. 

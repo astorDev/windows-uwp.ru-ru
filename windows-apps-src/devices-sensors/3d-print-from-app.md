@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 3dprinting, трехмерной печати
 ms.localizationpriority: medium
 ms.openlocfilehash: 818e1338a1d36d24990f22316dc2072c2c0d7cc5
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6657469"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6844573"
 ---
 # <a name="3d-printing-from-your-app"></a>Трехмерная печать из приложения
 

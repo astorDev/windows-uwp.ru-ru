@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, шейдеры, примитивы, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 475a69837796b0b64be27c96f10b42d5b61390c1
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6647038"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6840155"
 ---
 # <a name="create-shaders-and-drawing-primitives"></a>Создание шейдеров и примитивов рисования
 

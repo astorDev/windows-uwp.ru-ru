@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 6e68c1fc-a407-4c0b-b0f4-e445ccb72ff3
 ms.localizationpriority: medium
 ms.openlocfilehash: 82b42b25d3894a82e92af9a520ee5f951a5ba344
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6648226"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6843237"
 ---
 # <a name="how-to-turn-off-scaling"></a>Отключение масштабирования   
 По умолчанию XAML-приложения масштабируются до 200%, а HTML-приложения — до 150%. Коэффициент масштабирования по умолчанию можно отключить. В результате приложение будет использовать фактические размеры устройства в пикселях (1910 x 1080 пикселей).   

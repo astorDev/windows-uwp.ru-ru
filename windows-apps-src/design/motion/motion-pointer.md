@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c54218582b3ef31df07a5969ad5e83be7af2952
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6457158"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6841790"
 ---
 # <a name="pointer-click-animations"></a>Анимации щелчков указателя
 

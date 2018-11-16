@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e00762f389791fb3972b6f224759d35bf547e38
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6671384"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6973409"
 ---
 # <a name="functions-in-xbind"></a>Функции в x:Bind
 
@@ -106,7 +106,7 @@ public class MyPage : Page
 - Типы аргументов должны соответствовать передаваемым данным — сужающие преобразования не производятся
 - Возвращаемый тип функции должен соответствовать типу свойства, использующего привязку
 
-Начиная с следующем крупной обновлении до Windows 10, модуль привязки будет реагировать на уведомлений об изменении свойств с помощью имени функции и повторно оценивать привязки при необходимости. Пример 
+Начиная с следующем крупной обновлении до Windows 10, модуль привязки будет реагировать на уведомлений об изменении свойств с помощью имени функции и повторно оценивать привязки при необходимости. Пример. 
 
 ```XAML
 <DataTemplate x:DataType="local:Person">

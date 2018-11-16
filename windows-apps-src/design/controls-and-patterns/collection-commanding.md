@@ -15,11 +15,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f06d7015fcb208b55fe0cb57b96eaecbc99317cc
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6658233"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6839840"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>Контекстно-зависимые команды для коллекций и списков
 

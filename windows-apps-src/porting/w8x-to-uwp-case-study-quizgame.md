@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 69aae85f4e0bb01833114ae5b2cbfab45e9dd84d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6673416"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6839783"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Среда выполнения Windows 8.x в UWP практический пример: образец приложения QuizGame
 

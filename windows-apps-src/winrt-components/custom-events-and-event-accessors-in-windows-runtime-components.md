@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 99e215f382bbfe409ac72d021540a471294634ca
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6671414"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6845526"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows
 
