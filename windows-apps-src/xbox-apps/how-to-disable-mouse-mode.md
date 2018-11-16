@@ -9,11 +9,11 @@ keywords: Windows 10, uwp
 ms.assetid: e57ee4e6-7807-4943-a933-c2b4dc80fc01
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cc6989103442deb364654ec006c0fe4b1455511
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6456843"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6839456"
 ---
 # <a name="how-to-disable-mouse-mode"></a>Отключение режима мыши
 Режим мыши включен по умолчанию для всех приложений; это означает, что все приложения, которые явно не отключили указатель мыши, получают его (аналогично указателю в браузере Edge на консоли). Настоятельно рекомендуется отключать эту функцию и выполнять оптимизацию для навигации с помощью направляемого контроллера.   
