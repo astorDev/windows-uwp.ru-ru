@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 9684db2495e974c23d81b21e9a4a2e764d390255
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "6996331"
+ms.locfileid: "7103558"
 ---
 # <a name="hosting-a-camera-barcode-scanner-preview-in-your-application"></a>Размещение в приложении предварительного изображения со сканера штрихкодов на базе камеры
 ## <a name="step-1-setup-your-camera-preview"></a>Шаг 1. Настройка предварительного изображения с камеры

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, потоки, синхронный, C++
 ms.localizationpriority: medium
 ms.openlocfilehash: 33b110e713608260cd5c19544292e9211904a730
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6984209"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7111887"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>Асинхронное программирование на языке C++/CX
 > [!NOTE]

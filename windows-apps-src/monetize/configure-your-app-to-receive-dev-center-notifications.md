@@ -9,11 +9,11 @@ keywords: Windows 10, uwp, Microsoft Store Services SDK, целевые Push-у�
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d1281436ce0fe8c7b04429cea897eedc58b15d9
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6976915"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7103598"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>Настройка приложения для получения целевых push-уведомлений
 
