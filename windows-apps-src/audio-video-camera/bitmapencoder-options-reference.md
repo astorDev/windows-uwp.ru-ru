@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 13f19ce909703b6748ab00aec1026e30d5c70a64
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6841441"
+ms.locfileid: "6973969"
 ---
 # <a name="bitmapencoder-options-reference"></a>Справочник по параметрам BitmapEncoder
 

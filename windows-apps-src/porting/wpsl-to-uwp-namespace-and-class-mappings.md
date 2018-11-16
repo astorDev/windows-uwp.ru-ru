@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 54118b41fc1f3036dddba9a0cfb8ecd860c1e233
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6661925"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848072"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>API-Интерфейс UWP сопоставление Silverlight и WindowsPhone
 

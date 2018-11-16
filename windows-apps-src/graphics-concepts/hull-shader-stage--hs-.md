@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d2aed18d476f966e644fa095aa6a5a518ebbe959
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6667862"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851871"
 ---
 # <a name="hull-shader-hs-stage"></a>Этап шейдера поверхностей (HS)
 
