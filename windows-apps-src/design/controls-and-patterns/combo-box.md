@@ -12,12 +12,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: cf3a69de36f1292dd6ccabb945a33a893064bd02
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 0c34dda3039a9b6a66428266e37f81b41695fbc0
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6647516"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6849516"
 ---
 # <a name="combo-box"></a>Поле со списком
 
@@ -224,7 +224,7 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 ### <a name="sample---validate-input-and-use-locally"></a>Пример: проверка ввода и использовать локально
 
-В этом examle выбора размера шрифта содержит набор значений, соответствующих шрифтов размер шрифта, но пользователь может ввести размеры шрифтов, которые не входят в списке.
+В этом примере выбора размера шрифта содержит набор значений, соответствующих шрифтов размер шрифта, но пользователь может ввести размеры шрифтов, которые не входят в списке.
 
 Когда пользователь добавляет значение, которое не находится в списке, обновления размер шрифта, но значение не добавляется в список размеры шрифтов.
 

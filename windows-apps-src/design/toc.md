@@ -170,7 +170,6 @@
 ### [Плитки, поддержка всплывающих уведомлений для языка, масштаба, контрастности](shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
 ## [Закрепление приложения на панели задач](shell/pin-to-taskbar.md)
 ## [Настройка заголовка окна](shell/title-bar.md)
-## [Разработка для Sets](shell/design-for-sets.md)
 
 ## Уведомления
 ### Всплывающие уведомления

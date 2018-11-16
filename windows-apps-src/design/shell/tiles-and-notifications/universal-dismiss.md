@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, всплывающее уведомление, центр уведомлений в облаке, универсальное закрытие, уведомление, разные устройства, закрыть один раз закрыть везде
 ms.localizationpriority: medium
 ms.openlocfilehash: 40a9c446172b25f2430a3f75014c8e168a91c233
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6653803"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6845222"
 ---
 # <a name="universal-dismiss"></a>Универсальное закрытие
 
