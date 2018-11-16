@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 1adaf2b7df04a6e60d5d2ea37167cd4d5c55c42c
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6672931"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6990821"
 ---
 # <a name="posprinter"></a>POSPrinter
 

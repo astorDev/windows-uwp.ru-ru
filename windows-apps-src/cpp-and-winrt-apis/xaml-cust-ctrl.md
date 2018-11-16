@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, XAML, пользовательский, шаблон, элемент управления
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e06a28125b3cf3a760d7e9170512b6467c0170d
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6858797"
+ms.locfileid: "6969876"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>Создание пользовательских (на основе шаблона) элементов управления XAML с помощью C++/WinRT
 
@@ -192,6 +192,6 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 * [Класс FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)
 * [Класс UIElement](/uwp/api/windows.ui.xaml.uielement)
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 * [Шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates)
 * [Пользовательские свойства зависимостей](/windows/uwp/xaml-platform/custom-dependency-properties)

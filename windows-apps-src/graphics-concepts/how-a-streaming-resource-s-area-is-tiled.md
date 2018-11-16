@@ -12,11 +12,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ad096389c27fb65970424569c7c1d2ea0cb097
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6858297"
+ms.locfileid: "6983303"
 ---
 # <a name="how-a-streaming-resources-area-is-tiled"></a>Размещение плиток в области потокового ресурса
 

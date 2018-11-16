@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, трассировка стека, ошибка
 ms.localizationpriority: medium
 ms.openlocfilehash: df3af90bda9d972a891dce67730f8f320b7607c1
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6835181"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6976825"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-xbox-one-game"></a>Получение трассировки стека при возникновении ошибки в Xbox One игры
 

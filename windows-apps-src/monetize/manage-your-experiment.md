@@ -1,7 +1,7 @@
 ---
 author: Xansky
 Description: After you define your experiment in Partner Center and code your experiment in your app, you are ready to active your experiment and use Partner Center to review the results of your experiment.
-title: Управление экспериментом в центре партнеров
+title: Управление экспериментом в Центре партнеров
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: windows 10, UWP, Microsoft Store Services SDK, A/B-тесты, эксперименты
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d1cdb80a2278850f18cecc631fef0b5dff0fefc
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6838789"
+ms.locfileid: "6988223"
 ---
-# <a name="manage-your-experiment-in-partner-center"></a>Управление экспериментом в центре партнеров
+# <a name="manage-your-experiment-in-partner-center"></a>Управление экспериментом в Центре партнеров
 
 После [определения эксперимента в центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md) и [вашего приложения для экспериментов](code-your-experiment-in-your-app.md)вы готовы активировать эксперимента и просмотреть его результаты эксперимента с помощью центра партнеров. Получив все необходимые данные, вы можете завершить эксперимент и решить, следует ли продолжать использовать значения вариантов в элементах управления для всех приложений или переключиться на значения вариантов в одном из других ваших вариантов.
 
@@ -63,6 +63,6 @@ ms.locfileid: "6838789"
 
 * [Создание проекта и определение удаленных переменных в центре партнеров](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [Кодирование приложения для экспериментов](code-your-experiment-in-your-app.md)
-* [Определение эксперимента в центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Определение эксперимента в Центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
 * [Создание и запуск первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [Выполнение экспериментов в приложении с использованием A/B-тестирования](run-app-experiments-with-a-b-testing.md)

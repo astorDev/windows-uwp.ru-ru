@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
 ms.openlocfilehash: 08d861355a235c9217f51ce6f925224a27a562ef
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6844064"
+ms.locfileid: "6986048"
 ---
 # <a name="custom-video-effects"></a>Пользовательские видеоэффекты
 

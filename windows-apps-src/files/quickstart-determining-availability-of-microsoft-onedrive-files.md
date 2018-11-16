@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 87eb93fbc100d143ab9fe75d34bb9c4d2caaf01d
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6848727"
+ms.locfileid: "6983799"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>Определение доступности файлов Microsoft OneDrive
 

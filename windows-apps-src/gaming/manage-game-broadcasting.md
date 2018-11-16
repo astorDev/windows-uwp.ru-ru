@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, игра, трансляция
 ms.localizationpriority: medium
 ms.openlocfilehash: ae70c29927925abcf948435ed768871ba2427fd9
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6842936"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6972763"
 ---
 # <a name="manage-game-broadcasting"></a>Управление трансляциями игр
 В этой статье рассказывается, как управлять функцией трансляции игрового процесса для приложения UWP. Пользователи должны запускать трансляцию игрового процесса с помощью системного пользовательского интерфейса, встроенного в Windows, но, начиная с Windows 10 версии 1709, приложения могут запускать системный пользовательский интерфейса трансляции и получать уведомления о начале и прекращении трансляции.

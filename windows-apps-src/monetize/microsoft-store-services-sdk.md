@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f29062e00701f578b63f79935d17b1203afc0f
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6856595"
+ms.locfileid: "6978973"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Привлечение пользователей с помощью пакета Microsoft Store Services SDK
 
@@ -144,4 +144,4 @@ Microsoft Store Services SDK предъявляет следующие треб�
 * [Проведение экспериментов с использованием A/B-тестирования](run-app-experiments-with-a-b-testing.md)
 * [Запуск Центра отзывов из приложения](launch-feedback-hub-from-your-app.md)
 * [Настройка приложения для получения Push-уведомлений центра партнеров](configure-your-app-to-receive-dev-center-notifications.md)
-* [Регистрировать пользовательские события для центра партнеров](log-custom-events-for-dev-center.md)
+* [Ведение журнала пользовательских событий для Центра партнеров](log-custom-events-for-dev-center.md)

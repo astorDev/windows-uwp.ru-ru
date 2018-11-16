@@ -15,11 +15,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b1dd6bd1bc165a79ba123c94e63e1dcfa58ec21
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6465603"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6985456"
 ---
 # <a name="pull-to-refresh"></a>Обновление путем оттягивания
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 199f9def3150373fed2b3c7d8e711c1eeda6e721
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6859882"
+ms.locfileid: "6986008"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>Ресурсы приложения и Система управления ресурсами
 

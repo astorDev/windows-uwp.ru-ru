@@ -1,7 +1,7 @@
 ---
 author: Xansky
 Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must create a project and define your remote variables in Partner Center.
-title: Создание проекта эксперимента в центре партнеров
+title: Создание проекта эксперимента в Центре партнеров
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: windows 10, UWP, Microsoft Store Services SDK, A/B-тесты, эксперименты
 ms.localizationpriority: medium
 ms.openlocfilehash: 19a59110fa094aeae3d40dca1372fde9889c108e
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6849272"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6992381"
 ---
-# <a name="create-an-experiment-project-in-partner-center"></a>Создание проекта эксперимента в центре партнеров
+# <a name="create-an-experiment-project-in-partner-center"></a>Создание проекта эксперимента в Центре партнеров
 
 Для проведения эксперимента, создайте эксперимент [проекта](run-app-experiments-with-a-b-testing.md#terms) для вашего приложения в центре партнеров и определение удаленных переменных, которые вашему приложению.
 
@@ -45,7 +45,7 @@ ms.locfileid: "6849272"
 ## <a name="related-topics"></a>Связанные разделы
 
 * [Кодирование приложения для экспериментов](code-your-experiment-in-your-app.md)
-* [Определение эксперимента в центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Управление экспериментом в центре партнеров](manage-your-experiment.md)
+* [Определение эксперимента в Центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Управление экспериментом в Центре партнеров](manage-your-experiment.md)
 * [Создание и запуск первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [Выполнение экспериментов в приложении с использованием A/B-тестирования](run-app-experiments-with-a-b-testing.md)

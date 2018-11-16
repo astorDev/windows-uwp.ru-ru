@@ -8,11 +8,11 @@ ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e99796decfa5ed434fddee3be4340380e2376a2
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6851927"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6994671"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Продолжение активности пользователей даже на разных устройствах
 
@@ -167,7 +167,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 * [Пространство имен UserActivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 * [Действия пользователей (документы Project Rome)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Адаптивные карты](https://docs.microsoft.com/adaptive-cards/)
