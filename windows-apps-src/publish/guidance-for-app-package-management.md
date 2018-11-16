@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e625522b0e9fd03fda49eb28bbedb20c00c15634
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6861117"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6988662"
 ---
 # <a name="guidance-for-app-package-management"></a>Руководство по управлению пакетами приложения
 

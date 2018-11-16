@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 91a7d69d945b2ba2452d5bc477b6c17bf1dc6845
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6837704"
+ms.locfileid: "6986038"
 ---
 # <a name="variable-photo-sequence"></a>Переменная последовательность фотографий
 
@@ -93,7 +93,7 @@ ms.locfileid: "6837704"
 
 [!code-cs[CleanUpVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVPS)]
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

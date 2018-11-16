@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация, справа налево, слева направо
 ms.localizationpriority: medium
 ms.openlocfilehash: 24e4c5dfce4aa3e773ab8c334ca732ac5ed53030
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6854960"
+ms.locfileid: "6975623"
 ---
 # <a name="design-your-app-for-bidirectional-text"></a>Разработка приложений с поддержкой двунаправленного текста
 

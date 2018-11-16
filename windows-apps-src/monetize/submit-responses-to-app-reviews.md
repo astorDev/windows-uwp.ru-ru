@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, службы Store, API отзывов Microsoft Store, приобретение надстроек
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a8a336d477e7d66222632821f0fa0855faae6f7
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6858681"
+ms.locfileid: "6980039"
 ---
 # <a name="submit-responses-to-reviews"></a>Отправка ответов на отзывы
 
