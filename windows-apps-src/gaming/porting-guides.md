@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, игры, перенос, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 47892bac1a19018201187cbc901e4b680480268b
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6861287"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6993115"
 ---
 # <a name="game-porting-guides"></a>Руководства по портированию игр
 

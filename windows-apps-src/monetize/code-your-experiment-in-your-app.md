@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP, Microsoft Store Services SDK, A/B-тесты, эксперименты
 ms.localizationpriority: medium
 ms.openlocfilehash: c9212f3a120e03bd436b77e0dd66be4367ded8e1
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6857133"
+ms.locfileid: "6971906"
 ---
 # <a name="code-your-app-for-experimentation"></a>Кодирование приложения для экспериментов
 
@@ -103,10 +103,10 @@ ms.locfileid: "6857133"
 2. [Запускать эксперимент и управлять им в центре партнеров](manage-your-experiment.md).
 
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 * [Создание проекта и определение удаленных переменных в центре партнеров](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [Определение эксперимента в центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Управление экспериментом в центре партнеров](manage-your-experiment.md)
+* [Определение эксперимента в Центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Управление экспериментом в Центре партнеров](manage-your-experiment.md)
 * [Создание и запуск первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [Выполнение экспериментов в приложении с использованием A/B-тестирования](run-app-experiments-with-a-b-testing.md)

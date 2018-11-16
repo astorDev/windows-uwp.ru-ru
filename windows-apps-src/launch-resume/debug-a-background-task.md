@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 03b1e6a5fce559e9e6bf900bae3e3f83921567e6
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6843297"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6996607"
 ---
 # <a name="debug-a-background-task"></a>Отладка фоновой задачи
 
@@ -105,7 +105,7 @@ ms.locfileid: "6843297"
 
 Дополнительные сведения об использовании Visual STUDIO для отладки фоновых задач см. в разделе [Активация приостановки, возобновления и фоновых событий в приложениях UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 * [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)

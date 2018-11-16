@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, продвижение, приложение, кампания, отчеты, установки
 ms.localizationpriority: medium
 ms.openlocfilehash: d4cbc467ae864ecd5314eedfbf54b2c3de9a3ed8
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6844315"
+ms.locfileid: "6986314"
 ---
 # <a name="ad-campaign-report"></a>Отчет о рекламной кампании
 
@@ -80,7 +80,7 @@ ms.locfileid: "6844315"
 
 Вы можете скачать журнал выставления для вашей учетной записи в виде документа Microsoft Word, щелкнув ссылку **Скачать**.
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Создание рекламной кампании для своего приложения](create-an-ad-campaign-for-your-app.md)
 

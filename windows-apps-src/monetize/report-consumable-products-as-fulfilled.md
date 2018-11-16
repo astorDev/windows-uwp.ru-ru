@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API коллекции Microsoft Store, исполнение, потребляемый продукт
 ms.localizationpriority: medium
 ms.openlocfilehash: 69795a40ae5e46f95330cd6a6d2738adc9a74686
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6832608"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6994481"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>Объявление потребляемого продукта в качестве выполненного
 
