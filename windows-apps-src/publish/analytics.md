@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, аналитика, отчеты, панели мониторинга, приложений, данных, показатели
 ms.localizationpriority: medium
 ms.openlocfilehash: 22d9a4d4b66091148bbb078abfb89237ab14ea87
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6669644"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851548"
 ---
 # <a name="analyze-app-performance"></a>Анализ производительности приложений
 

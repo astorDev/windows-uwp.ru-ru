@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c733fe0f4e8ee955c68ff4ec30bd9f9f2675899d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 6d4c752438af3425fffc69ecf71ff0dc8abe5963
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6649778"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851578"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Обработка кадров мультимедиа с помощью MediaFrameReader
 
@@ -50,7 +50,7 @@ ms.locfileid: "6649778"
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-Также можно создать [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) c использованием [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427) и значения, возвращаемого из [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector), для получения уведомлений об изменении доступных групп источников кадров на устройстве, например при подключении внешней камеры. Дополнительные сведения см. в разделе [**Перечисление устройств**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices).
+Вы также можете создать [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) , с помощью [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427) и значение, возвращаемое при [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector) получать уведомления, когда доступных групп источников кадров на устройстве изменения, например при подключении внешней камеры. Дополнительные сведения см. в разделе [**Перечисление устройств**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices).
 
 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) содержит коллекцию объектов [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo), описывающих источники кадров, включенные в эту группу. После получения групп источников кадров, доступных на устройстве, можно выбрать группу, которая предоставляет интересующие вас источники кадров.
 
