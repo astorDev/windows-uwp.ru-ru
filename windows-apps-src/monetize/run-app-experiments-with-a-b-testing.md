@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, А/B тестирование, эксперименты
 ms.localizationpriority: medium
 ms.openlocfilehash: 6697d522ee14a00bb8cb9c0c2c367f01d6e50ef4
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6854742"
+ms.locfileid: "6980491"
 ---
 # <a name="run-app-experiments-with-ab-testing"></a>Выполнение экспериментов в приложении с использованием A/B-тестирования
 
@@ -66,6 +66,6 @@ A / b-тестирования в центре партнеров поддерж
 
 * [Создание проекта и определение удаленных переменных в центре партнеров](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [Кодирование приложения для экспериментов](code-your-experiment-in-your-app.md)
-* [Определение эксперимента в центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Управление экспериментом в центре партнеров](manage-your-experiment.md)
+* [Определение эксперимента в Центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Управление экспериментом в Центре партнеров](manage-your-experiment.md)
 * [Создание и запуск первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md)
