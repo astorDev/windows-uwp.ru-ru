@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, упаковка, макет пакета, пакет активов
 ms.localizationpriority: medium
 ms.openlocfilehash: 98980e67d24eb96aa55af7fefe10b5e4c2cdfa67
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6860396"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6993680"
 ---
 # <a name="introduction-to-asset-packages"></a>Вводные сведения о пакетах активов
 

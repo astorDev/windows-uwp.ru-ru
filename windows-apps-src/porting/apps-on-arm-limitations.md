@@ -9,11 +9,11 @@ keywords: windows 10 s, постоянно подключен, ограниче�
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
 ms.openlocfilehash: 24afc8a876b976f21d0f4ebd5892ceef7c403018
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6655532"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6988443"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>Ограничения приложений и процессов в ARM
 Windows 10 в ARM имеет следующие обязательные ограничения:

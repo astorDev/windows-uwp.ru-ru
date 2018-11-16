@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, сертификации приложений
 ms.localizationpriority: medium
 ms.openlocfilehash: f228cb4783c33bc0ea2acecba79893939cadd91e
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6673210"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6969635"
 ---
 # <a name="windows-app-certification-kit"></a>Комплект сертификации приложений для Windows
 

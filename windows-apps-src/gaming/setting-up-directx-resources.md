@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, игры, directx, ресурсы, изображения
 ms.localizationpriority: medium
 ms.openlocfilehash: 24fd038bdd447491da43e5d5803445d00147ba2d
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6455533"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6970839"
 ---
 # <a name="set-up-directx-resources-and-display-an-image"></a>Настройка ресурсов DirectX и отображение изображения
 

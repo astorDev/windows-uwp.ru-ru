@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: a72d13689b278c1048cab6b1fcb4fd788658602c
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6846173"
+ms.locfileid: "6980215"
 ---
 # <a name="support-your-app-with-background-tasks"></a>Поддержка приложения с помощью фоновых задач
 
@@ -171,7 +171,7 @@ ms.locfileid: "6846173"
 
 Проверьте ваше регистрации фоновой задачи во время запуска приложения. Убедитесь, что ваше приложение без группировки фоновые задачи присутствуют в BackgroundTaskBuilder.AllTasks. Повторно зарегистрируйте те, которые не отображаются. Отмените регистрацию все задачи, которые больше не требуется. Это гарантирует, что все регистрации фоновой задачи актуальны при каждом запуске приложения.
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 **Концептуальное руководство по многозадачности в Windows10**
 
