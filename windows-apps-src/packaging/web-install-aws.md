@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, Windows 10, UWP, установщик, AppInstaller, загрузка неопубликованных приложений приложения, связанных с установлен, дополнительных пакетов, AWS
 ms.localizationpriority: medium
 ms.openlocfilehash: f24abac93e2444a3c9f454c8883902e5db4d31be
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6967902"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7157616"
 ---
 # <a name="hosting-uwp-app-packages-on-aws-for-web-install"></a>Размещение пакетов приложение UWP в AWS для веб-установки
 
@@ -96,7 +96,7 @@ Amazon Simple Storage Service (S3) является AWS, предлагая дл
 
 Используйте ссылку, чтобы открыть веб-страницу. Так как мы задаем разрешения, чтобы предоставить общий доступ к пакет приложения и веб-страницы, любой пользователь, имеющий ссылку на веб-страницы не смогут получить к нему доступ и установить пакеты приложений UWP, с помощью установщика приложений. Обратите внимание, что установщик является частью платформой Windows 10. Как разработчику не нужно добавлять дополнительный код или функции в приложение, чтобы разрешить использование установщика приложений. 
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Поиск и устранение неисправностей
 
 ### <a name="app-installer-fails-to-install"></a>Не удается установить установщик приложений 
 

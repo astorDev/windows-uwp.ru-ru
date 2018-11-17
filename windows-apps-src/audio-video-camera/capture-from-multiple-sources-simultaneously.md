@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, фиксация, видео
 ms.localizationpriority: medium
 ms.openlocfilehash: ae52026d5fb1ab3c140edfdcd1f92f7d3d0fd143
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7104216"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7149286"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>Фиксация из нескольких источников с использованием класса MediaFrameSourceGroup
 

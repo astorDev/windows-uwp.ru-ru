@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7104394"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7157000"
 ---
 # <a name="network-communications-in-the-background"></a>Передача данных по сети в фоновом режиме
 Чтобы продолжить сетевое взаимодействие, когда оно не находится на переднем плане, ваше приложение может использовать фоновые задачи и один из этих двух вариантов.
