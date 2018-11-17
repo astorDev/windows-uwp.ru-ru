@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ссылка, протокола Магазина Windows, привязка к приложению, ссылка на приложение
 ms.localizationpriority: medium
 ms.openlocfilehash: d0d0a9fc862734611167e5118392126cb42687f2
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6977135"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7152915"
 ---
 # <a name="link-to-your-app"></a>Ссылка на ваше приложение
 

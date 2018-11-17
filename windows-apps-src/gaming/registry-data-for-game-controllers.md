@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, ввод, реестр, настройка
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bbd4074c52514b9cb66fd6f2dd189421f61d5ee
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6988919"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7172385"
 ---
 # <a name="registry-data-for-game-controllers"></a>Данные реестра для игровых устройств управления
 

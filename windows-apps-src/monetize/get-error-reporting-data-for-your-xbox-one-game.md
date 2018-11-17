@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, ошибки
 ms.localizationpriority: medium
 ms.openlocfilehash: 45e494b3e93e2dd6ac23ef1562c32485bf2e7ddb
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7099961"
+ms.locfileid: "7145281"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>Получение данных системы отчетов для Xbox One игры
 

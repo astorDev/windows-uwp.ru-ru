@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, устранение неполадок, HRESULT, ошибка
 ms.localizationpriority: medium
 ms.openlocfilehash: f1a25b606def215defb8be0e0a38c628349f2440
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6973003"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7147990"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>Устранение неполадок C++/WinRT
 

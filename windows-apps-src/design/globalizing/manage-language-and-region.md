@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
 ms.openlocfilehash: 2215231b21700fc17b08c2149316f9a59f8d1f04
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6984492"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7149884"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Обзор языков профиля пользователя и языков манифеста приложения
 Пользователь Windows может использовать раздел **Параметры** > **Время и язык** > **Язык и региональные стандарты** для настройки упорядоченного списка предпочтительных языков интерфейса или только одного основного языка интерфейса. У языка может быть региональный вариант. Например, можно выбрать испанский язык в качестве разговорного языка в Испании, в Мексике, в Соединенных Штатах и другие варианты.

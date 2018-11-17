@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, специальные возможности, игры
 ms.localizationpriority: medium
 ms.openlocfilehash: 79426a302be59af73536081cd13e14cad4facbe3
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6981575"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7155428"
 ---
 #  <a name="making-games-accessible"></a>Создание игр со специальными возможностями
 

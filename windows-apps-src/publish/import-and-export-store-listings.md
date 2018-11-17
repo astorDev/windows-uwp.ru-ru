@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, импорт описаний в store, экспорт описаний в store, импорт, экспорт, csv описаний в store
 ms.localizationpriority: medium
 ms.openlocfilehash: 9df66baa1b5771055894b2e3accc0c8a9dff8a60
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "6996504"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7149852"
 ---
 # <a name="import-and-export-store-listings"></a>Импорт и экспорт описаний в Store
 

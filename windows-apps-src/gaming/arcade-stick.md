@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, аркадный джойстик, ввод
 ms.localizationpriority: medium
 ms.openlocfilehash: 13bc03559fb32156f5ff8bb29ed96f8a1e4ac84f
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6987629"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7146244"
 ---
 # <a name="arcade-stick"></a>Аркадный джойстик
 

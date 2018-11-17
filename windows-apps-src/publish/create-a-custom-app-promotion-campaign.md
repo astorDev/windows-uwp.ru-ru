@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, пользовательский, приложение, продвижение, кампания
 ms.localizationpriority: medium
 ms.openlocfilehash: 643c6c70b4482e7069c1254e27a5688f81bf7e07
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7102374"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7149349"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>Создание пользовательской кампании по продвижению приложения.
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, ввод
 ms.localizationpriority: medium
 ms.openlocfilehash: bb7d70c20aeb2b91d8a6db863e165e017810e924
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6986148"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7105033"
 ---
 # <a name="input-for-games"></a>Ввод данных в играх
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 371fbed113af10c8e5b388a8f271d99df4b4c4e9
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6982356"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7164762"
 ---
 # <a name="download-analytics-reports"></a>Скачивание аналитических отчетов
 

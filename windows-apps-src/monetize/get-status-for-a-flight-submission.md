@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправка тестируемой возможности, состояние
 ms.localizationpriority: medium
 ms.openlocfilehash: 4378df5333e29dfe570ff50efd37b0361b9a6ca9
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6971168"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7145511"
 ---
 # <a name="get-the-status-of-a-package-flight-submission"></a>Получение состояния отправки тестового пакета
 

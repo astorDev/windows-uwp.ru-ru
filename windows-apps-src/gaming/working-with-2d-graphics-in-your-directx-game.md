@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx, двумерная, графика
 ms.localizationpriority: medium
 ms.openlocfilehash: 8628588cdc20179e9505e45694d43788eb1d7cb6
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "6993065"
+ms.locfileid: "7105156"
 ---
 # <a name="2d-graphics-for-directx-games"></a>Двумерная графика для игр DirectX
 

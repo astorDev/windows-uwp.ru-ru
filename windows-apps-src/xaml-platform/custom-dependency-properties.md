@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 3b52c801ffcf1cfe916e41cfd102a37397fadfee
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7128784"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7152662"
 ---
 # <a name="custom-dependency-properties"></a>Пользовательские свойства зависимостей
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, службы Store, API целевых предложений Microsoft Store, целевые предложения
 ms.localizationpriority: medium
 ms.openlocfilehash: dbfefefdb7f7b96dbe99b35656b610b393ab3afa
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6968098"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7151126"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>Управление целевыми предложениями с помощью служб Магазина
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e0b85293ada8619246c3c23ef2103ead5f40c23
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6976126"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7105544"
 ---
 # <a name="controller-api-reference"></a>Справочные материалы по API для контроллеров   
 Вы можете получить количество подключенных физических контроллеров и отключить их, используя этот API REST.
