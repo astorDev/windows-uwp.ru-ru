@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, контакты, календарь, встречи, сообщения электронной почты
 ms.localizationpriority: medium
 ms.openlocfilehash: c020a871863df6fac3dabc3ffab4bafc57227b50
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7101418"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7170346"
 ---
 # <a name="contacts-my-people-and-calendar"></a>Контакты, близкие люди и календарь
 

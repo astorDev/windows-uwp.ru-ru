@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 946e8421cf21c37c929e7a9f9687117c3d7aca92
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7101791"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7168625"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>Хранение и извлечение данных о росчерках пера Windows Ink
 

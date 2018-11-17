@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, возрастная категория, категория игры, iarc, оценка, анкета, комиссия по оценке, оценка содержимого
 ms.localizationpriority: medium
 ms.openlocfilehash: 53692f7d3f5ae9d4a5e6bdcc1d5909467987d264
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7103172"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7167700"
 ---
 # <a name="age-ratings"></a>Возрастные категории
 
