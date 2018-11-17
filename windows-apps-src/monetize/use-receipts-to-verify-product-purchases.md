@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, покупки из приложения, IAP, квитанции, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: ed79a3ac50fb3a6cbe735e0ea713256845d39441
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7105707"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7172790"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Проверка покупок продуктов с помощью квитанций
 
