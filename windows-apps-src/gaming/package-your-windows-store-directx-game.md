@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, игры, directx, пакет
 ms.localizationpriority: medium
 ms.openlocfilehash: 252f67a3cb307f10b1a973a17144f211c9c676b0
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7104374"
+ms.locfileid: "7173461"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>Создание пакета игры DirectX универсальной платформы Windows (UWP)
 

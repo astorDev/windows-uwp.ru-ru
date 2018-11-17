@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, портала устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: 525c64ab289d26a4835168f410ac4ba3fc14343a
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6981565"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7159296"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>Подготовка портала устройств с использованием пользовательского сертификата SSL
 В Windows 10 Creators Update портал устройств Windows добавлены способ для администраторов устройства для установки пользовательского сертификата для использования в связи с HTTPS. 

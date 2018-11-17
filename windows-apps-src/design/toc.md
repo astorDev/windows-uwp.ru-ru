@@ -30,7 +30,6 @@
 ## Преобразования
 ### [Обзор](layout/transforms.md)
 ### [Трехмерные эффекты](layout/3-d-perspective-effects.md)
-## [Глубина трехмерной сцены и тени](layout/depth-shadow.md)
 
 # Элементы управления
 ## [Обзор](controls-and-patterns/index.md)

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, дополнительные пакеты, связанный набор, пакет расширения, visual studio
 ms.localizationpriority: medium
 ms.openlocfilehash: c21b84467151493836186d1d55ab5e4e542899ec
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7102806"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7158926"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Разработка дополнительных пакетов и связанных наборов
 Дополнительные пакеты включают содержимое, которое можно интегрировать с главным пакетом. Они полезны для загружаемого контента (DLC), так большое приложение для как размер или доставить любое дополнительное содержимое отдельно от исходного приложения.
