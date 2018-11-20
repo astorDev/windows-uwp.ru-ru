@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправка надстройки, состояние
 ms.localizationpriority: medium
 ms.openlocfilehash: e2013a081898dbf46958190da1df01adaac9d820
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7154275"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7295678"
 ---
 # <a name="get-the-status-of-an-add-on-submission"></a>Получение состояния отправки надстройки
 

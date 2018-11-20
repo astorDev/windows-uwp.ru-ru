@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 3dprinting, трехмерной печати
 ms.localizationpriority: medium
 ms.openlocfilehash: d09ed242b2c5f0186b05279706943c9a65ee7c8a
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7166161"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7293914"
 ---
 # <a name="3d-printing"></a>3D Printing
 

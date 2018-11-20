@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, метаданные, подсказки, голосовые функции, глава
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e97c913764db24c68ce7becdba0fc283e1a3b73
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7149183"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7295159"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>Поддерживаемые системой синхронизированные подсказки метаданных
 В этой статье описано, как использовать несколько форматов синхронизированных метаданных, которые можно внедрять в файлы или потоки мультимедиа. Приложения UWP можно регистрировать для событий, вызываемых конвейером мультимедиа во время воспроизведения при обнаружении этих подсказок метаданных. С помощью класса [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) приложения могут реализовывать собственные пользовательские подсказки метаданных, но в этой статье рассматриваются несколько стандартов метаданных, которые автоматически определяются конвейером мультимедиа, в том числе:

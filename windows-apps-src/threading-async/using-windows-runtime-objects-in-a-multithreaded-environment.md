@@ -9,11 +9,11 @@ ms.author: normesta
 keywords: windows 10, uwp, таймер, потоки
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f4b8249a81cb7d71ba1f4775fd858ae87779c85
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163458"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7292969"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Использование объектов среды выполнения Windows во многопоточной среде
 В статье рассматривается, как .NET Framework обрабатывает вызовы из кода C# и Visual Basic к объектам, предоставляемым средой выполнения Windows или компонентами этой среды.
