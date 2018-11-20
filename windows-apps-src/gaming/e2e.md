@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, игры, разработка игр
 ms.localizationpriority: medium
-ms.openlocfilehash: f695e281c754eaa81f9851ab814520f57fc249ab
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 7481c1d0f64ccb25168200cdf5e6ccc068f769b9
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7155402"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7291638"
 ---
 # <a name="windows-10-game-development-guide"></a>Руководство по разработке игр для Windows 10
 
@@ -247,8 +247,8 @@ ms.locfileid: "7155402"
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Форумы разработчиков приложений для Windows</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Форумы, посвященные приложениям и Магазину Windows</a></td>
+        <td>Публикация приложений и игр, форумы разработчиков</td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Публикация и реклама в приложении</a></td>
     </tr>
     <tr>
         <td>Форум разработчиков приложений UWP</td>
@@ -1661,10 +1661,6 @@ BabylonJS — это комплексная платформа JavaScript для
     <col width="50%" />
     <col width="50%" />
     </colgroup>
-    <tr>
-        <td>Приложение Центра разработки</td>
-        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">Получить приложение для просмотра показателей опубликованных приложений.</a></td>
-    </tr>  
     <tr>
         <td>Аналитика центра партнеров</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148522">Анализ эффективности приложений</a></td>
