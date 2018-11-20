@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, строка
 ms.localizationpriority: medium
 ms.openlocfilehash: 72032c3c522a8434d266842a83c443889e8efc19
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7170000"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7302056"
 ---
 # <a name="string-handling-in-cwinrt"></a>Обработка строк в C++/WinRT
 

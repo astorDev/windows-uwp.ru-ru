@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, оценки, отзывы
 ms.localizationpriority: medium
 ms.openlocfilehash: c00e69ed7d5057db4f835f3d91320806067d86e1
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7170526"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7302481"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Запрос оценок и отзывов для вашего приложения
 

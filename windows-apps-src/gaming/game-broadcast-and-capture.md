@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, ввод
 ms.localizationpriority: medium
 ms.openlocfilehash: ad42b62d627dd4a506fc4ff451f6365d4133fd70
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7144288"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7301200"
 ---
 # <a name="game-broadcast-and-capture"></a>Трансляция и запись игрового процесса
 
