@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3efbbd09cc066a7455ef8d60556345a2ed5b459c
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7304044"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7417263"
 ---
 # <a name="view-app-identity-details"></a>Просмотр сведений об идентификации приложений
 

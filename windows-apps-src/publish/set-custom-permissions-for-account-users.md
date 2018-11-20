@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, роли пользователей, разрешение пользователя, пользовательские роли, доступ пользователей, настроить разрешения, стандартные роли
 ms.localizationpriority: medium
 ms.openlocfilehash: 2af203ae78ae34a0a6bc9884cbaeaa730ee83e9b
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7298372"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7425546"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Настройка ролей и пользовательских разрешений для пользователей учетных записей
 

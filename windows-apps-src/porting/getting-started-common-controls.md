@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: db2b4a74b5b40060779dd82764dcf2ed2799b285
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7292492"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7417050"
 ---
 # <a name="getting-started-common-controls"></a>Начало работы: общие элементы управления
 

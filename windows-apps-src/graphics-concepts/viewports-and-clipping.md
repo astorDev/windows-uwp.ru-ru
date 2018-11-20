@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dd319c686bebf2a30431017f399f48b08618cb6
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7156375"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7425005"
 ---
 # <a name="viewports-and-clipping"></a>Окна просмотра и кадрирование
 

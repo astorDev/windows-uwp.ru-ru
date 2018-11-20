@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b96fafe380c08c74c4e411c7d559cc961c6da1ed
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7299639"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7425209"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Адаптивные к версии приложения: используйте новые API, сохраняя совместимость с предыдущими версиями
 

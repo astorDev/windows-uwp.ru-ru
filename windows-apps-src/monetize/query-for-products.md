@@ -8,12 +8,12 @@ ms.date: 03/16/2018
 ms.topic: article
 keywords: Windows 10, API коллекции Microsoft Store, uwp, просмотр продуктов
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e5d6376420a1ee4ac166330371cf6e058d3476e
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.openlocfilehash: 2ed5e4b34f3ad46daaaac8310b6eced8639bde27
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7306777"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7441683"
 ---
 # <a name="query-for-products"></a>Запрос продуктов
 
@@ -61,7 +61,7 @@ ms.locfileid: "7306777"
 | modifiedAfter     | Дата и время     | Если параметр указан, служба возвращает только продукты, которые были изменены после этой даты.        | Нет       |
 | parentProductId   | строка       | Если параметр указан, служба возвращает только надстройки, которые соответствуют указанному приложению.      | Нет       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | Если параметр указан, служба возвращает только продукты, соответствующие предоставленным парам «продукт — SKU». Дополнительные сведения см. в таблице ниже.      | Нет       |
-| productTypes      | строка       | Если параметр указан, служба возвращает только продукты, соответствующие указанным типам продуктов. Поддерживаемые типы продуктов: **Application**, **Durable** и **UnmanagedConsumable**.     | Нет       |
+| productTypes      | список&lt;строки&gt;       | Указывает, какие типы продуктов, возвращаемых в результаты запроса. Поддерживаемые типы продуктов: **Application**, **Durable** и **UnmanagedConsumable**.     | Да       |
 | validityType      | строка       | Если выбрано значение **All**, возвращаются все продукты пользователя, в том числе продукты с истекшим сроком. Если выбрано значение **Valid**, возвращаются только продукты, действительные на данный момент (то есть в активном состоянии, с датой начала &lt; ранее текущего момента и датой окончания &gt; позднее текущего момента). | Нет       |
 
 

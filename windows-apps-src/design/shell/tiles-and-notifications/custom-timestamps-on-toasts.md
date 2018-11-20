@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, всплывающее уведомление, настраиваемая метка времени, метка времени, уведомление, центр уведомлений
 ms.localizationpriority: medium
 ms.openlocfilehash: 290825fa079052b79fb2feaec8af928f8da93f95
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7291440"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7416960"
 ---
 # <a name="custom-timestamps-on-toasts"></a>Настраиваемые метки времени во всплывающих уведомлениях
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, пользовательский интерфейс, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 9962cc9043bd650390721715ca73b2e85a219c25
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7286713"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7441762"
 ---
 # <a name="add-a-user-interface"></a>Добавление пользовательского интерфейса
 

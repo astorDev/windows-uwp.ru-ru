@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, игры, DirectX, загрузка, растеризация, mesh-объект, точечный рисунок, двумерный, трехмерный
 ms.localizationpriority: medium
 ms.openlocfilehash: 7947f1e0684bc76c95fe8099f5ef123f2a32566e
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7301264"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7445803"
 ---
 # <a name="fundamentals-of-directx-programming"></a>Основы программирования на DirectX
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b93b3028c7968c417d4476a6f183805cdec797b0
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7284741"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7424934"
 ---
 # <a name="windows-runtime-components"></a>Компоненты среды выполнения Windows
 Компоненты среды выполнения Windows представляют собой автономные объекты, которые позволяют создавать экземпляры и могут быть использованы в любом языке, включая C#, VisualBasic, JavaScript и C++.

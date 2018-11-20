@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, точка службы, pos, считыватель магнитных карт
 ms.localizationpriority: medium
 ms.openlocfilehash: 11653c10310726c79de9deef17a570207045ec4a
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7283944"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7418782"
 ---
 # <a name="magnetic-stripe-reader"></a>Считыватель магнитных карт
 
