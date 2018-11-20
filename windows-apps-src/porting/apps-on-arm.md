@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10 s, постоянно подключенный, ARM, ARM64, эмуляция x86
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f62a873e84f200a019bde23038ae10b21150072
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7171597"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7281410"
 ---
 # <a name="windows-10-on-arm"></a>Windows10 на архитектуре ARM
 Изначально Windows 10 (в отличие от Windows 10 Mobile) могла выполняться только на ПК с процессорами x86 или x64. Теперь настольная версия Windows 10 (выпуски Pro и S) могут выполняться на компьютерах с процессорами ARM64, если имеется обновление Fall Creators Update. Архитектура ЦП ARM обладает энергосберегающими свойствами, что позволяет этим компьютерам работать от аккумулятора весь день и поддерживать мобильные сети передачи данных. Эти ПК обеспечивают высокую совместимость приложений и позволяют выполнять существующие приложения win32 x86 без изменений. Например: Adobe Reader. Дополнительные сведения и демонстрации доступны в [видео на Channel 9 о постоянно подключенных ПК](https://channel9.msdn.com/Events/Build/2017/P4171). 

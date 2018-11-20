@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, аналитика, отчеты, панели мониторинга, приложений, данных, показатели
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d9a4d4b66091148bbb078abfb89237ab14ea87
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 8d7998366d484c95b90b765eb9227a7c3df41b6f
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7167320"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7289868"
 ---
 # <a name="analyze-app-performance"></a>Анализ производительности приложений
 
@@ -49,7 +49,7 @@ ms.locfileid: "7167320"
 
 ## <a name="access-analytics-data-outside-of-partner-center"></a>Доступ к аналитическим данным внешнюю среду центра партнеров
 
-Помимо просмотра отчетов в центре партнеров, вы можете открыть аналитики приложений несколькими различными способами.
+Помимо просмотра отчетов в центре партнеров, можно получить доступ к analytics приложения другими способами.
 
 ### <a name="microsoft-store-analytics-api"></a>API аналитики дляMicrosoft Store
 
@@ -67,8 +67,3 @@ ms.locfileid: "7167320"
 
 > [!NOTE]
 > Чтобы подключиться к пакету содержимого из центра разработки для Windows для Power BI, рекомендуется указывать учетные данные из каталога Azure AD, связанный с учетной записью центра партнеров. Если вы используете свои учетные записи Майкрософт, ваши аналитические данные в Power BI не будут обновляться автоматически, и вам потребуется войти в учетную запись Power BI для обновления своих данных. Если ваша организация уже использует Office 365 или другие бизнес-службы от Майкрософт, то у вас уже есть Azure AD. В противном случае вы можете [скачать этот продукт бесплатно](http://go.microsoft.com/fwlink/p/?LinkId=703757). Дополнительные сведения о настройке привязки см. в разделе [Привязывание Azure Active Directory с учетной записью центра партнеров](associate-azure-ad-with-dev-center.md).
-
-### <a name="dev-center-app"></a>Приложение Центра разработки
-
-Установите приложение [Центра разработки](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) для быстрого просмотра сведений о работоспособности и производительности своих приложений на любом устройстве с Windows 10.
-

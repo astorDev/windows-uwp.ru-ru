@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, элемент управления рекламой, собственная реклама
 ms.localizationpriority: medium
 ms.openlocfilehash: 36b96add3aa785ad20ddd1c42cd46e498d0264a6
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7144318"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7278764"
 ---
 # <a name="native-ads"></a>Собственные объявления
 

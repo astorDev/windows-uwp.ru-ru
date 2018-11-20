@@ -8,12 +8,12 @@ ms.date: 08/16/2018
 ms.topic: article
 keywords: Windows 10, uwp, просмотр, комментарий, редактор
 ms.localizationpriority: medium
-ms.openlocfilehash: 777decb9b060cc411d6150f199cd7a02f9ffc6cb
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: e5deef6d5e67c1236fb88f93269fcf91bb50243c
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7158255"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7281786"
 ---
 # <a name="reviews-report"></a>Отчет "Отзывы"
 
@@ -22,7 +22,7 @@ ms.locfileid: "7158255"
 
 Эти данные можно просмотреть в центре партнеров или [скачать отчет](download-analytic-reports.md) для просмотра в автономном режиме. Кроме того можно программными средствами получить эти данные, используя метод [получения отзывов о приложении](../monetize/get-app-reviews.md) в [REST API аналитики Microsoft Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Вы также можете отвечать клиента отзывов [непосредственно на этой странице](respond-to-customer-reviews.md), программно [через API отзывов Microsoft Store](../monetize/submit-responses-to-app-reviews.md), или с помощью [приложения центра разработки](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
+Вы также можете отвечать на клиента отзывов [непосредственно на этой странице](respond-to-customer-reviews.md) или программно [через Microsoft Store API отзывов](../monetize/submit-responses-to-app-reviews.md).
 
 > [!TIP]
 > Чтобы быстро просмотреть рецензии, оценки и отзывы пользователей для всех ваших приложений за последние 30 дней, разверните узел **Привлечение** в левом меню навигации и выберите пункт **Рецензии и отзывы**. 
@@ -114,7 +114,7 @@ ms.locfileid: "7158255"
 
 ## <a name="responding-to-customer-reviews"></a>Ответ на отзывы клиентов
 
-[Центр партнеров](https://partner.microsoft.com/dashboard), [API отзывов Microsoft Store](../monetize/submit-responses-to-app-reviews.md)или [приложения центра разработки](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) можно использовать для отправки ответов на многие отзывы пользователей. Дополнительные сведения см. в разделе [Ответ на отзывы пользователей](respond-to-customer-reviews.md).
+Чтобы отправлять ответы на многие из отзывов ваших клиентов, можно использовать [Центр партнеров](https://partner.microsoft.com/dashboard) или [API отзывов Microsoft Store](../monetize/submit-responses-to-app-reviews.md) . Дополнительные сведения см. в разделе [Ответ на отзывы пользователей](respond-to-customer-reviews.md).
 
 Здесь описываются некоторые дополнительные действия, которые разумно выполнить на основании полученных оценок и рецензий.
 
