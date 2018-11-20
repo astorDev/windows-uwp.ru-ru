@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
 ms.openlocfilehash: 320445022fa836e05d04e93b85d333ef1ad40a53
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7145465"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7297676"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>Вопросы и ответы и руководство по диагностике набора средств для многоязычных приложений версии 4.0
 

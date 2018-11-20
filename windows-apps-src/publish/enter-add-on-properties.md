@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, надстройки, свойства, период подписки, срок действия продукта, тип содержимого, iap, покупки из приложения, внутренний продукт приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: fa0559c79b758373347427c0aa88b351c0fbddf0
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7157554"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7299931"
 ---
 # <a name="enter-add-on-properties"></a>Ввод свойств надстройки
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, поток, пул потоков
 ms.localizationpriority: medium
 ms.openlocfilehash: ff607e3b39ea9d9a3731cc1f231fe1eb27b0b155
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7168981"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7299482"
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>Рекомендации по использованию пула потоков
 

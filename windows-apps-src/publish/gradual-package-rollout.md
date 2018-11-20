@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium
 ms.openlocfilehash: ab2db3d34ed223b318d65ec497cc0feb7cb16342
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7173787"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7300729"
 ---
 # <a name="gradual-package-rollout"></a>Постепенный выпуск пакета
 
