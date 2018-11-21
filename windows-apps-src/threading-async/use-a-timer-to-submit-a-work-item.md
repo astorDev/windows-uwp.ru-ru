@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, таймер, потоки
 ms.localizationpriority: medium
 ms.openlocfilehash: d65faebfc2be0e9ed254185d00932da9a57f718b
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7303334"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7426251"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>Отправка рабочего элемента по таймеру
 

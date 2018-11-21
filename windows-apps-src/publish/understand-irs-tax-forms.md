@@ -9,11 +9,11 @@ keywords: windows 10, uwp, налогообложение, irs, налогово
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
 ms.openlocfilehash: 326de9b3160f492566306b18252bbc3bacf58531
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7292993"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7426321"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Общие сведения о налоговых формах IRS, присылаемых корпорацией Майкрософт
 
