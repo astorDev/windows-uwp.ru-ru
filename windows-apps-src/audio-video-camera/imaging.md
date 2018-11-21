@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dc7d3d70291d29102af614f29fd4531523a961e1
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7285746"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7443638"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Создание, редактирование и сохранение точечных рисунков
 

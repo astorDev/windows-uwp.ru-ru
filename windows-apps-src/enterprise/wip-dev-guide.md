@@ -11,11 +11,11 @@ keywords: windows 10, uwp, wip, Windows Information Protection, корпорат
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
 ms.openlocfilehash: 74d5ac551efdd4b48b39686758a5e68e946ba1aa
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7298472"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7443145"
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Руководство разработчика Windows Information Protection (WIP)
 

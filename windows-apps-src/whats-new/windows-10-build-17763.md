@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ff1f4327b82e2b81cc1ec3d64b352e4e85e7bb12
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7279348"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7442533"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Новые возможности в Windows 10 для разработчиков, сборка 17763
 

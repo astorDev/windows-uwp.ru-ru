@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, цены, доступность, возможность обнаружения, бесплатная пробная версия, пробные версии, пробная версия, приложения, дата выпуска
 ms.localizationpriority: medium
 ms.openlocfilehash: a21cc94dd9b22304c715cc0e6b038ffdac6da02b
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7279246"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7443764"
 ---
 # <a name="set-app-pricing-and-availability"></a>Настройки цен и доступности
 
