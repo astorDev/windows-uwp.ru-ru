@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, пакеты, отправка, отправки пакета
 ms.localizationpriority: medium
 ms.openlocfilehash: f02ca7c43443289ef9d2d0562be25f277068685b
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7422245"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7577320"
 ---
 # <a name="upload-app-packages"></a>Отправка пакетов приложений
 

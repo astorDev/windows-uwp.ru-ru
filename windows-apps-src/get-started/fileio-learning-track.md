@@ -9,11 +9,11 @@ keywords: начало работы, uwp, windows 10, обучающий кур�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 68240e5b3d2fb476b731853e6a7d020ecd9e2887
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7420058"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7556956"
 ---
 # <a name="work-with-files"></a>Работа с файлами
 

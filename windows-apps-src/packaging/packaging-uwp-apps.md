@@ -12,11 +12,11 @@ f1_keywords:
 - vs.storeassociationwizard
 ms.localizationpriority: medium
 ms.openlocfilehash: 03d656d7a79dfa2a09e98f0fd54d9d0a4924559e
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7442704"
+ms.locfileid: "7555435"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Упаковка приложения UWP с помощью Visual Studio
 
