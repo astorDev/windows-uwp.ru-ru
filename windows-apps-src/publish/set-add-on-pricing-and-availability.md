@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, надстройки, iap, цена
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dc557306fe2e5e24ce1210e75ac5f29628306ae
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7423139"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7563983"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Настройки цен и доступности надстройки
 

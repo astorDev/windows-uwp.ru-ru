@@ -10,12 +10,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, прослушиватель уведомлений, usernotificationlistener, документация, уведомления о доступе
 ms.localizationpriority: medium
-ms.openlocfilehash: 635ee4cbdd0139ec9e431726ea5b040713abe97d
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: c67f3531d248ef46a162b992850d0240c37ba21a
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7416830"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7568097"
 ---
 # <a name="notification-listener-access-all-notifications"></a>Прослушиватель уведомлений: доступ ко всем уведомлениям
 
@@ -259,7 +259,7 @@ foreach (UserNotification userNotification in userNotifications)
         toBeRemoved.Remove(userNotification.Id);
     }
  
-    // Othwerise it's a new notification
+    // Otherwise it's a new notification
     else
     {
         // Display it on the Wearable
@@ -296,4 +296,4 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 
 ## <a name="howto-fixdelays-in-the-background-task"></a>Практическое руководство fixdelays в фоновой задаче
 
-При тестировании приложения можно заметить, что фоновая задача иногда откладывается и не запускается несколько минут. Чтобы устранить эту проблему, необходимо будет напоминать того в параметры системы -> системные -> батарея -> Использование заряда батареи конкретными приложениями, найти приложение в списке, выберите его и изменить его на «всегда разрешена работа в фоновом режиме».После этого фоновая задача будет всегда запускаться в течение секунды получения уведомления.
+При тестировании приложения можно заметить, что фоновая задача иногда откладывается и не запускается несколько минут. Чтобы устранить задержку, командной строке того пользователя в параметры системы -> системы -> батарея -> Использование заряда батареи конкретными приложениями, найти приложение в списке, выберите его и настроить его для «всегда разрешена работа в фоновом режиме».После этого фоновая задача будет всегда запускаться в течение секунды получения уведомления.
