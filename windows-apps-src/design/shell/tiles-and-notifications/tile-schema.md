@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, плитка, уведомление на плитке, содержимое плитки, схема, полезные данные плитки
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cdcf8b609b76283ba680ec9ca4d2502624e2024
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7425717"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7581460"
 ---
 # <a name="tile-content-schema"></a>Схема содержимого плитки
 
