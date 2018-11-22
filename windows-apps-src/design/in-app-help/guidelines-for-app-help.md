@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e4cb60526fda9495249cd310ad434878941a97d
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7438050"
+ms.locfileid: "7562876"
 ---
 # <a name="guidelines-for-app-help"></a>Руководство по справке для приложений
 

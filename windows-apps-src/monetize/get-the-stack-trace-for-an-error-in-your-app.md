@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, трассировка стека, ошибка
 ms.localizationpriority: medium
 ms.openlocfilehash: 0befb91175690576b4c0b44fe6e701d4c4efd7df
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7445943"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7561039"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>Получение трассировки стека при возникновении ошибки в приложении
 

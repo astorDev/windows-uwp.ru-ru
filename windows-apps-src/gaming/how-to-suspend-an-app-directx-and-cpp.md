@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, приостановка, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 204d61430f59c820e9ef9ef36832cd1c24ee7f9c
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7443847"
+ms.locfileid: "7567084"
 ---
 # <a name="how-to-suspend-an-app-directx-and-c"></a>Приостановка работы приложения (DirectX и C++)
 
