@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, SQL Server, база данных
 ms.localizationpriority: medium
 ms.openlocfilehash: 8396fb7685a774568b6cd63acb11f78133584f46
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7430726"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7573158"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Использование базы данных SQL Server в приложении UWP
 Ваше приложение может подключаться напрямую к базе данных SQL Server и затем хранить и извлекать данные с помощью классов в пространстве имен [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx).

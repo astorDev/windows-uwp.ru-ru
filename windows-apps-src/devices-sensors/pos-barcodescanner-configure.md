@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 07198b382be911f30016f2106949d2dea751afa5
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7417349"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7571865"
 ---
 # <a name="configure-a-barcode-scanner"></a>Настройка сканера штрихкодов
 

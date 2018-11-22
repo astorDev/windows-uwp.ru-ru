@@ -954,7 +954,7 @@ ms.locfileid: "7564683"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Тайвань</td>
+    <td>Taiwan</td>
     <td>200 долл. США</td>
     <td>Банковский перевод</td>
     <td>25 долл. США</td>
@@ -2016,7 +2016,7 @@ ms.locfileid: "7564683"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Тайвань</td>
+    <td>Taiwan</td>
     <td>50 долл. США</td>
     <td>Банковский перевод</td>
     <td>50 долл. США</td>
@@ -3064,7 +3064,7 @@ ms.locfileid: "7564683"
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>Тайвань</td>
+    <td>Taiwan</td>
     <td>200 долл. США</td>
     <td>Банковский перевод</td>
     <td>25 долл. США</td>
@@ -4055,7 +4055,7 @@ ms.locfileid: "7564683"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Тайвань</td>
+    <td>Taiwan</td>
     <td>200 долл. США</td>
     <td>Банковский перевод</td>
     <td>25 долл. США</td>

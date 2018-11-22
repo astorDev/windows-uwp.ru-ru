@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 33e567db01916367c8ea30d98e59f421581ac7aa
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7422019"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7574729"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Добавление поддержки функции "Близкие люди" в приложение
 

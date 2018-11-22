@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованных приложений, связанных с установлен, дополнительных пакетов, сервера IIS
 ms.localizationpriority: medium
 ms.openlocfilehash: 2898a3450f75379492bae1ade5c85581cc8e5a4e
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7428940"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7575638"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>Установка приложения UWP с сервера IIS
 

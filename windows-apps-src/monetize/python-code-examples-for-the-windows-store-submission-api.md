@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, примеры кода, python
 ms.localizationpriority: medium
 ms.openlocfilehash: 34d686b8e20d384da4a3db1ea3805ad082d5f8a8
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7417335"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7573228"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Пример на языке Python: отправки для приложений, надстроек и тестовых пакетов
 

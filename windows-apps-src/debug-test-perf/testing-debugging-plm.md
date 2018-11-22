@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
 ms.openlocfilehash: 92d03ce30443f6efe8b19f4938b35d4040d7ea70
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7420255"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7574650"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>Средства тестирования и отладки для управления жизненным циклом процесса (PLM)
 

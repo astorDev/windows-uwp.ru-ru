@@ -9,11 +9,11 @@ keywords: windows 10, uwp, целевые уведомления, push-увед�
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c2cf6c9cbd4aa0b25afea47a2fe82774c3c87a7
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7445823"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7574600"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>Отправка уведомлений пользователям вашего приложения
 

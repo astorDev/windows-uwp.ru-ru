@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, данные приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: ecda61bff6fac407dbde175f584a09d6b871d989
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7439433"
+ms.locfileid: "7571356"
 ---
 # <a name="get-app-data"></a>Получение данных приложения
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, пример, directx, трехмерный
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a808c36ab319d76f16c653c5812ebe4b269ec59
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7434674"
+ms.locfileid: "7575216"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Разработка Marble Maze— игры UWP— на C++ и DirectX
 

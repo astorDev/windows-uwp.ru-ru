@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, надстройки, iap, длительное использование, потребляемая надстройка, подписка, тип продукта, код продукта, покупка из приложения, внутренний продукт приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 14d0cd40e0a7a170a835b000dc66ec683c2fb59c
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7443744"
+ms.locfileid: "7573570"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>Установка типа и кода продукта для надстройки
 

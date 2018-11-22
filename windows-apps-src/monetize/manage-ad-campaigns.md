@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API рекламных акций Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c86c0d5d1a10442c7addeed11cdbfc37846f337
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7443422"
+ms.locfileid: "7573920"
 ---
 # <a name="manage-ad-campaigns"></a>Управление рекламными кампаниями
 

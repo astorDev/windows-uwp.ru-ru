@@ -9,11 +9,11 @@ keywords: Windows 10, UWP, рекламные объявления, реклам
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
 ms.openlocfilehash: 48fc818c1ae7a9a46912ff52c2b00b07f19c366e
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7439628"
+ms.locfileid: "7571616"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>Обновление приложения для использования последних рекламных библиотек для баннеров
 
