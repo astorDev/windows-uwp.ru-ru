@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cf8b634cfc7ba66cde107150b54ecec76b2861d
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7417531"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7577695"
 ---
 # <a name="high-contrast-themes"></a>Темы с высокой контрастностью  
 

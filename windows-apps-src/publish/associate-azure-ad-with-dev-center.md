@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, azure ad, клиент azure, клиент aad, клиент azure ad, управление клиентами, клиенты
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f44d5bc0e07ab40a396c103d2a8ba6db5427ae8
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7438469"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7578550"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>Связывание Azure Active Directory с учетной записью центра партнеров
 

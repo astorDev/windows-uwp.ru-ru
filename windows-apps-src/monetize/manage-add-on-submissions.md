@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправки надстроек, продукт внутри приложения, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae0e07b588415094281683ff762c02ed5242654
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7427250"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7576761"
 ---
 # <a name="manage-add-on-submissions"></a>Управление отправками надстроек
 

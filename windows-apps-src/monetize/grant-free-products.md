@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API покупок Microsoft Store, предоставление продуктов
 ms.localizationpriority: medium
 ms.openlocfilehash: 27503148d4406cb0ba1c2ce9782ca7131c8ce081
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7430640"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7578540"
 ---
 # <a name="grant-free-products"></a>Предоставление бесплатных продуктов
 

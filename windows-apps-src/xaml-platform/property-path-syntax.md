@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7435925"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7574095"
 ---
 # <a name="property-path-syntax"></a>Синтаксис PropertyPath
 

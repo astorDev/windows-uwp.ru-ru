@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, direct3d 11, инициализация, портирование, direct3d 9
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f6aa5bca3ecc242e90b42081a0111358afdfa9b
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7432986"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7580428"
 ---
 # <a name="initialize-direct3d-11"></a>Инициализация Direct3D 11
 

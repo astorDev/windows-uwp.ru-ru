@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартный, c++, cpp, winrt, проекция, пример, приложение, фотографии, редактор
 ms.localizationpriority: medium
 ms.openlocfilehash: 60bfcd79ed2d659aff8d435bd397df05eb45af72
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7417190"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7578845"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>Пример приложения на C++/WinRT — редактор фотографий
 Пример приложения можно клонировать или скачать из репозитория [Пример приложения на C++/WinRT — редактор фотографий](https://github.com/Microsoft/Windows-appsample-photo-editor) на GitHub.
