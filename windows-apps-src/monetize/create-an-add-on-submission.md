@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
 description: Используйте этот метод в API отправки Microsoft Store для создания новой отправки надстройки для приложения, которое зарегистрировано в центре партнеров.
 title: Создание отправки надстройки
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание отправки надстройки, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: c4aecb07034b7c8a161546fc9d8001247e9234cb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578151"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691815"
 ---
 # <a name="create-an-add-on-submission"></a>Создание отправки надстройки
 

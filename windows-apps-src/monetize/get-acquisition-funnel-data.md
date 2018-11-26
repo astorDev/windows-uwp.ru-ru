@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store для получения данных о воронке приобретений приложения в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение данных воронки приобретений приложения
-ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, приобретение, воронка
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aaceb9af3eed04039148bdd863ca3e473c7c245
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d9ccbb081ef6f39ad795105ee2449de4d8442ab3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569527"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692282"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>Получение данных воронки приобретений приложения
 

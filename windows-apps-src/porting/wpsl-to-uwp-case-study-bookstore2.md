@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: Этот пример, в котором используются данные в Bookstore, начинается с приложения WindowsPhone Silverlight, отображающего сгруппированные данные в классе LongListSelector.
 title: WindowsPhone Silverlight практический пример UWP, Bookstore2
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e518439ddd4e131c2d045f4467670b42a392fca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5b75da7d50135ee8d40f8ed44f0239edb54dcf65
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577495"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719546"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone Silverlight в UWP практический пример: Bookstore2
 
@@ -275,8 +273,8 @@ ms.locfileid: "7577495"
 Когда мы привязываем свойство **CollectionViewSource.Source** к Authors, мы просто сообщаем, что каждый класс Author — это группа *неких элементов*. Класс **CollectionViewSource** определяет, что представляет собой Author. В данном случае это группа BookSku. Этот подход работает, но он не универсальный. Как быть, если Author должен *одновременно* быть группой BookSku *и* группой адресов, где данный автор жил? Author не может *быть* двумя этими группами одновременно. Однако *у* Author может быть любое количество групп. Это и есть решение: используйте шаблон *has-a-group* вместо шаблона *is-a-group*, который мы применяем сейчас, или в дополнение к нему. Вот как это сделать.
 
 -   Измените класс Author, чтобы он не наследовался от **List&lt;T&gt;**.
--   Добавьте это поле в класс Author: `private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`.
--   Добавьте это свойство в класс Author: `public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`.
+-   Добавьте это поле для 
+-   Добавьте это свойство 
 -   Конечно, мы можем повторить два указанные выше действия, чтобы добавить любое количество групп в класс Author.
 -   Измените реализацию метода AddBookSku на `this.BookSkus.Add(bookSku);`.
 -   Теперь Author *содержит* по крайней мере одну группу, и нам нужно сообщить классу **CollectionViewSource**, какую из групп следует использовать. Для этого добавьте это свойство к **CollectionViewSource**: `ItemsPath="BookSkus"`

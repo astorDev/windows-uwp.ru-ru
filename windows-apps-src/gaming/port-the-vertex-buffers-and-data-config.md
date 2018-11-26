@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Перенос буферов вершин и данных
 description: На этом шаге вы определите буферы вершин, которые будут содержать ваши сетки, и буферы индексов, которые позволят шейдерам обходить вершины в указанном порядке.
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, перенос, буферы вершин, данные, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: b32747a4e11d258f71d4e55e41b7f54bb5e99246
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4c961a8852fb1e03e4e86209f62bda821b980f8c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558594"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712271"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>Перенос данных и буферов вершин
 

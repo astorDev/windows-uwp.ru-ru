@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: At build time, the Resource Management System creates an index of all the different variants of the resources that are packaged up with your app. At run-time, the system detects the user and machine settings that are in effect and loads the resources that are the best match for those settings.
 title: Система управления ресурсами
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/20/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: b80eda57ff700d732ba2402582ed6402acca4fc6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bedbad9e4de22ee098863d013a1e4ad16d86543e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563694"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695722"
 ---
 # <a name="resource-management-system"></a>Система управления ресурсами
 Система управления ресурсами имеет функции, работающие во время сборки и во время выполнения. Во время построения система создает индекс всех различных вариантов ресурсов, которые упакованы с вашим приложением. Этот индекс называется индексом ресурсов пакета или PRI и также включается в пакет вашего приложения. Во время выполнения система определяет текущие параметры пользователя и компьютера, проверяет информацию в PRI и автоматически загружает ресурсы, которые лучше всего подходят для этих параметров.

@@ -4,17 +4,15 @@ description: Буфер трафаретов применяется для ма�
 ms.assetid: 544B3B9E-31E3-41DA-8081-CC3477447E94
 keywords:
 - Буферы трафаретов
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 090dcab3b46b031a16be35973e1183220d5b1da0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 285e4a70062c57c957530aa1e548c22c4cf7711e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566922"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707178"
 ---
 # <a name="stencil-buffers"></a>Буферы трафаретов
 

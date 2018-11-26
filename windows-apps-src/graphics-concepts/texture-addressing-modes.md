@@ -8,17 +8,15 @@ keywords:
 - Режим адресации текстур Mirror (отражение)
 - Режим адресации текстуры Clamp (закрепление)
 - Режим адресации текстур Border color (цвет рамки)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e817dcc92741ca2e738784f387cfe49399a108c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5e263876f414e5683ffc8a5645a12e5031b3d6fb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564598"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696762"
 ---
 # <a name="texture-addressing-modes"></a>Режимы адресации текстур
 

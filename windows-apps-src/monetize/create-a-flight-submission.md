@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: Используйте этот метод в API отправки Microsoft Store для создания новой отправки тестового пакета для приложения, которое зарегистрировано в вашей учетной записи центра партнеров.
 title: Создание отправки тестового пакета
-ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание отправки тестируемой возможности
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cdcc0f06820600523be111d67d3cad5e38b6ceb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e303027aaf3b10260090c500df573f1bf484e20
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568995"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691665"
 ---
 # <a name="create-a-package-flight-submission"></a>Создание отправки тестового пакета
 

@@ -1,20 +1,18 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP apps.
 title: Имитация ввода данных пользователем с помощью внедрения ввода
 label: Input injection
 template: detail.hbs
 keywords: устройство, дигитайзер, ввод, взаимодействие, внедрение
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aa83e202078336884ff2e1924ebc223bbe13dcdd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572656"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694655"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Имитация ввода данных пользователем с помощью внедрения ввода
 

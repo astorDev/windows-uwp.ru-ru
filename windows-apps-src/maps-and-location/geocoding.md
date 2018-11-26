@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Выполнение геокодирования и обратного геокодирования
 description: В этом руководстве показано, как преобразовать улицы адреса в географические расположения (геокодирование) и географические в улицы адреса (обратное геокодирование), вызывая методы класса MapLocationFinder в пространстве имен Windows.Services.Maps.
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
-ms.author: pafarley
 ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp, геокодирование, карта, расположение
 ms.localizationpriority: medium
-ms.openlocfilehash: bdd956dece4435ceb8e14121ec2b545095af3a11
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e8b0efe39578974090844a4224055821c29f8ced
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578237"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706901"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>Выполнение геокодирования и обратного геокодирования
 

@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 title: Настройка автоматических сборок для приложения UWP
 description: Узнайте, как настроить автоматические сборки для создания неопубликованных пакетов и пакетов для Store.
-ms.author: hickeys
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 775e780be823b6e7b80eda9f488d69fe4fc29edf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4208fd56b16d5130f218492428eb459364b8ada9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566198"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693075"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 

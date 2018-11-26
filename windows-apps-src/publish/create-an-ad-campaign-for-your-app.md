@@ -1,19 +1,17 @@
 ---
-author: JnHs
 Description: You can create ad campaigns in Partner Center to help promote your app and grow your app's user base.
 title: Создание рекламной кампании для вашего приложения
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, реклама, кампания, продвижение
 ms.localizationpriority: medium
-ms.openlocfilehash: c6df022cbd474c9e73a84b86b245511d23293b0e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8ece97d2e2cf96d2905902fd563f1de9027aa64a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553083"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693585"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Создание рекламной кампании для своего приложения
 

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Код, интегрирующийся с устройством и его датчиками, включает ввод от пользователя и вывод к нему.
 title: Перенос со среды выполнения Windows 8.x на UWP для ввода-вывода, устройств и модели приложений
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e15014e39ed6d980cbe80daa0a129ff83a021b9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5847553bed563b724bb142f7abe62403fa8ec097
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574437"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694101"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>Перенос со среды выполнения Windows 8.x на UWP для ввода-вывода, устройств и модели приложений
 

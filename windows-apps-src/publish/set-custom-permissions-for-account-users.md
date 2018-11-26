@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Set roles or custom permissions for account users.
 title: Настройка ролей и пользовательских разрешений для пользователей учетных записей
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, роли пользователей, разрешение пользователя, пользовательские роли, доступ пользователей, настроить разрешения, стандартные роли
 ms.localizationpriority: medium
-ms.openlocfilehash: 2af203ae78ae34a0a6bc9884cbaeaa730ee83e9b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5a76dd85343ddf81baceb4946515c869083b839e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580438"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719624"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Настройка ролей и пользовательских разрешений для пользователей учетных записей
 

@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: Запуск фоновой задачи при обновлении приложения UWP
 description: Узнайте, как создать фоновую задачу, которая выполняется при обновлении приложения магазина универсальной платформы Windows (UWP).
-ms.author: twhitney
 ms.date: 04/21/2017
 ms.topic: article
 keywords: Windows 10, uwp, обновление, фоновая задача, updatetask, фоновой задачи
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ef6351bcf2ef57a1900c429ddcb65e5a2a4e67b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8cd7d4494340d1c5e617361f2e3d750b35ebabb9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582414"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696445"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Запуск фоновой задачи при обновлении приложения UWP
 

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: В приложениях для Windows используется общий вид и стиль на всех компьютерах, мобильных устройствах и множестве других устройств. Пользовательский интерфейс, ввод и шаблоны взаимодействия очень похожи, и пользователь, использующий приложения на разных устройствах, оценит это.
 title: Перенос WindowsPhone Silverlight в UWP для форм-фактора и взаимодействия с Пользователем
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 809cf2691a2bc7b7c72d4ba031fa4c6b45335dde
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0897bd2636f13cfb02568847c0ba40b2d6b218f3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555346"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706881"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>Перенос WindowsPhone Silverlight в UWP для форм-фактора и взаимодействия с Пользователем
 

@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: Доступ к содержимому домашней группы
 description: Получайте доступ к содержимому в папке домашней группы пользователя, включая изображения, музыку и видео.
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 398c44db6a391008605ed6fa4dad877bcead035d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 422d02b8797bef8ea4f793ba652e9e4e34421a9b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569081"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712773"
 ---
 # <a name="accessing-homegroup-content"></a>Доступ к содержимому домашней группы
 

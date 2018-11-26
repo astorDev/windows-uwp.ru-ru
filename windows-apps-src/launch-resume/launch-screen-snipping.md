@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Запуск функции "Фрагмент экрана"
 description: В этом разделе описываются схемы URI ms-screenclip и ms-screensketch. Ваше приложение может использовать эти схемы URI для запуска приложения фрагмент & эскиза или, чтобы открыть новый фрагмент.
-ms.author: quradic
 ms.date: 8/1/2017
 ms.topic: article
 keywords: Windows 10, uwp, uri, фрагмент, эскиза
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ef83c3b5c23b703fcd40f7e4a7570b263cbc8e00
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7aa0b70aee50c79088a68378fa75664711c3d564
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556803"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691088"
 ---
 # <a name="launch-screen-snipping"></a>Запуск функции "Фрагмент экрана"
 

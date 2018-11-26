@@ -1,20 +1,18 @@
 ---
-author: mijacobs
 Description: The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.
 title: Обзор служб push-уведомлений Windows (WNS)
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 633fd26a7dfc799f9b9c9058f88ba6b1fa40ac57
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f131ad229b4ba22f7fa4652aa302e3596819f206
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556156"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695473"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Обзор служб push-уведомлений Windows (WNS)
  

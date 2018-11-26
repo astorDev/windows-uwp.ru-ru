@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Создание пакета игры DirectX универсальной платформы Windows (UWP)
 description: Масштабные игры универсальной платформы Windows (UWP) (особенно те, которые поддерживают несколько языков и региональные ресурсы для них или включают дополнительные ресурсы высокого разрешения) могут легко раздуться до больших размеров.
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, игры, directx, пакет
 ms.localizationpriority: medium
-ms.openlocfilehash: 252f67a3cb307f10b1a973a17144f211c9c676b0
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: 631ba2c278c72f406a0fdd8a6d6d8d8a14c9eb05
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7422860"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692173"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>Создание пакета игры DirectX универсальной платформы Windows (UWP)
 

@@ -4,17 +4,15 @@ description: Текстурный ресурс — это структура д�
 ms.assetid: 6F3C76A8-F762-4296-AE02-BFBD6476A5A8
 keywords:
 - Вводные сведения о текстурах
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f88cccc3f32449d09c01450bf159b3fca6a3d59f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3cd5ca66635b57b79c2fca3e6ff10b8debb43fd0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555649"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693674"
 ---
 # <a name="introduction-to-textures"></a>Вводные сведения о текстурах
 

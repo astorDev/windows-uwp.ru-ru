@@ -1,18 +1,16 @@
 ---
-author: JoshuaPartlow
 description: Редактор фотографий — это пример приложения UWP, демонстрирующего возможности разработки с помощью проекции языка C++/WinRT. Пример приложения позволяет извлекать фотографии из библиотеки "Изображения", а затем редактировать выбранное изображение, используя разные фотографические эффекты.
 title: Пример приложения на C++/WinRT — редактор фотографий
-ms.author: wdg-dev-content
 ms.date: 06/08/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартный, c++, cpp, winrt, проекция, пример, приложение, фотографии, редактор
 ms.localizationpriority: medium
-ms.openlocfilehash: 60bfcd79ed2d659aff8d435bd397df05eb45af72
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8c6f668ef3d92f968e75659b0ba1937abadb079c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578845"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694913"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>Пример приложения на C++/WinRT — редактор фотографий
 Пример приложения можно клонировать или скачать из репозитория [Пример приложения на C++/WinRT — редактор фотографий](https://github.com/Microsoft/Windows-appsample-photo-editor) на GitHub.

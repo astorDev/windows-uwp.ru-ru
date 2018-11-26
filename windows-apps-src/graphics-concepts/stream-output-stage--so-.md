@@ -4,17 +4,15 @@ description: Этап потокового вывода (SO) непрерывн�
 ms.assetid: DE89E99F-39BC-4B34-B80F-A7D373AA7C0A
 keywords:
 - Этап потокового вывода (SO)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a86aa5a78bc4df9deaeea239356345c33736d942
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 12a0c59942eefd2ab9625b1b442043a1868230a1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558712"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707198"
 ---
 # <a name="stream-output-so-stage"></a>Этап потокового вывода (SO)
 

@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: The core text APIs in the Windows.UI.Text.Core namespace enable a Universal Windows Platform (UWP) app to receive text input from any text service supported on Windows devices.
 title: Обзор пользовательского ввода текста
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
 keywords: клавиатура, текст, основной текст, пользовательский текст, инфраструктура текстовых служб, ввод, взаимодействие с пользователем
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 14a2811f59b8de33db51b255aee8892abf553198
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 161278dc5fe0bb8c7d4c790def6a9f7ba88b83d2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558821"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694389"
 ---
 # <a name="custom-text-input"></a>Ввод пользовательского текста
 

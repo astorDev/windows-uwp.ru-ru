@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: Microsoft Advertising SDK предоставляет несколько способов монетизации приложения с помощью рекламы.
 title: Показ рекламы в приложении с помощью Microsoft Advertising SDK
-ms.author: mhopkins
 ms.date: 06/20/2018
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, баннер, управление рекламой, межстраничная
 ms.localizationpriority: medium
-ms.openlocfilehash: 7acf2424a7d2fee322ba799ec670f0576b33a208
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: baf26335ccdf34c8403cc15ecc1e68527d92e90e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582017"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695043"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Показ рекламы в приложении с помощью Microsoft Advertising SDK
 

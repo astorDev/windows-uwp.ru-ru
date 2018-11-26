@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
 description: Узнайте, как использовать пространство имен Windows.Services.Store для предоставления пользователям пробной версии приложения.
 title: Внедрение пробной версии приложения
 keywords: windows 10, uwp, пробная версия, покупки из приложения, Windows.Services.Store
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d428128430a6d7743ebdf94fb8d9aff8286d8d77
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 796266565965a62d3f168b48893d62e1cdd7df44
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575058"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692018"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>Внедрение пробной версии приложения
 

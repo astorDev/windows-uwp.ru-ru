@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: Типы архитектуры пакетов приложений
 description: Узнайте больше о том, какие типы архитектуры процессоров следует использовать при создании пакета приложения UWP.
-ms.author: lahugh
 ms.date: 7/13/2017
 ms.topic: article
 keywords: windows 10, uwp, пакет, архитектура, конфигурация пакета
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e265df32a8c4168cddced905e7b0712e4601264
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 15b1b8531390cf1b83c15e0aec1d371266417a87
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573298"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712694"
 ---
 # <a name="app-package-architectures"></a>Типы архитектуры пакетов приложений
 

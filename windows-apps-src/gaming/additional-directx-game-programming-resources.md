@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Ресурсы по программированию игр
 description: Следующие ресурсы содержат дополнительную информацию о программировании игр для Windows.
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, программирование
 ms.localizationpriority: medium
-ms.openlocfilehash: d201caefedca0d810f78d893ea779bd6b814f007
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d75495f75459122f5a5b01d7a82450c72cd2bb1c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557174"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692965"
 ---
 # <a name="game-programming-resources"></a>Ресурсы по программированию игр
 

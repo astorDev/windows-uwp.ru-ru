@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: FAD033C7-F887-4217-A385-089F09242827
 description: Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных об установках приложения в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение сведений об установках приложения
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, службы Магазина, API аналитики для Microsoft Store, установки приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 72efc20e218cdf718b67c949bd7c71108921bf9c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e2dc604e15180296e84d6177aa3d9b71a0bf82dc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574154"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692765"
 ---
 # <a name="get-app-installs"></a>Получение сведений об установках приложения
 

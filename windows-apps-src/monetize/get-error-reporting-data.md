@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных отчетов об ошибках в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение данных отчетов об ошибках для вашего приложения
-ms.author: mhopkins
 ms.date: 09/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, ошибки
 ms.localizationpriority: medium
-ms.openlocfilehash: fd463bf98fb751efa011ba5fc3e1e7b9eb7b41eb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 69504fd8d670158a35e5afd5dcd035acd296f084
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558004"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692084"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>Получение данных отчетов об ошибках для вашего приложения
 

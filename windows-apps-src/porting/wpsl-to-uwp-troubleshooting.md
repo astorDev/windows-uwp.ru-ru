@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Мы настоятельно рекомендуем прочитать до конца это руководство по переносу, но мы также понимаем, что вы жаждете двигаться вперед и добраться до этапа, на котором выполняется построение и запуск вашего проекта.
 title: Устранение неполадок при переносе WindowsPhone Silverlight в UWP
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5d3ab7b50721b969859006831b33e9b00e300f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 372fd491e329a468c273dd039c917eba5dc3e123
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582164"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719218"
 ---
 #  <a name="troubleshooting-porting-windowsphone-silverlight-to-uwp"></a>Устранение неполадок при переносе WindowsPhone Silverlight в UWP
 

@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 title: Доступ к датчикам и устройствам из фоновой задачи
 description: DeviceUseTrigger позволяет универсальному приложению для Windows получать доступ к датчикам и периферийным устройствам в фоновом режиме даже тогда, когда приложение переднего плана приостановлено.
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
-ms.openlocfilehash: 1666d64c26c8ccfecda142e50f2e672d0f4c8864
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 13bc8f2558b3e3f15d7329697a41b177777b6e7a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576800"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718838"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>Доступ к датчикам и устройствам из фоновой задачи
 

@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: Начало работы с POS-устройствами
 description: Эта статья содержит сведения о начале работы с API-интерфейсами PointOfService для UWP.
-ms.author: jken
 ms.date: 06/13/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 46dd1f615e42f6e89ee9a92cb980299e9a0e5205
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1b4ff9443c40cf44e171bf898b627de3e2819034
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580674"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692362"
 ---
 # <a name="getting-started-with-point-of-service"></a>Начало работы с POS-устройствами
 

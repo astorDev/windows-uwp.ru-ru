@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: Your tiles and toasts can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts.
 title: Поддержка различных языков, масштабирования и высокой контрастности в плитках и всплывающих уведомлениях
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 89a97342139449b6c333055ec66e8939234a9507
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aa6e93196d30c15374129eee7714604cfab7b82e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568575"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698463"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности
 

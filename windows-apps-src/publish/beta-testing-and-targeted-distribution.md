@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Partner Center gives you several options to let testers try out your app before you offer it to the public.
 title: Бета-тестирование и целевое распространение
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, бета-тестирование, ограниченное распространение, бета-версия, бета-версии, тестирование, тест-инженеры
 ms.localizationpriority: medium
-ms.openlocfilehash: 49641007f939faf333ea5aca357266225f8484c8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1560da53ebcc2b24bc9bc13034431c3a2208dfe5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568865"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694200"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>Бета-тестирование и целевое распространение
 

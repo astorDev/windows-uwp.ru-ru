@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: Установка связанного набора с помощью файла Установщика приложений
 description: В этом разделе описываются действия, которые необходимо выполнить, чтобы обеспечить установку связанного набора с помощью Установщика приложений. Также здесь рассматриваются шаги по созданию файла *.appinstaller, определяющего связанный набор.
-ms.author: lahugh
 ms.date: 1/4/2018
 ms.topic: article
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованных приложений, связанный набор, дополнительные пакеты
 ms.localizationpriority: medium
-ms.openlocfilehash: 4caf4333bb3d442779aedac2028b0996cbd17645
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c90fffeee7003159f58cf2e108286f4fe7732fd6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576468"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692595"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>Установка связанного набора с помощью файла Установщика приложений
 

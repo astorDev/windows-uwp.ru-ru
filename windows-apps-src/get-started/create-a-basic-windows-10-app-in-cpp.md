@@ -1,19 +1,17 @@
 ---
-author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: Создание Hello World приложения на C + +/ CX (Windows10)
 description: В Microsoft Visual Studio2017, вы можете использовать C + +/ CX для разработки приложения, которое работает в Windows10, в том числе на телефонах под управлением Windows10. Пользовательский интерфейс в этих приложениях определен на языке XAML.
-ms.author: jken
 ms.date: 06/11/2018
 ms.topic: article
 keywords: Windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc2258557c492956130424069e6e0c4b73f28056
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6954f935440f75a728c3f3601ade884bbee7b6bc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574304"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712389"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Создание приложения «Hello world» на C + +/ CX
 

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Если у вас имеется универсальное приложение версии 8.1 \#8212;whether, ориентированное на Windows8.1, Windows Phone 8.1 или на обе & \#8212;then, вы обнаружите, что ваш исходный код можно с легкостью перенести на Windows10.
 title: Переход со среды выполнения Windows 8.x на UWP
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eebd0467696b78458835425f7feac903ba435f42
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c94b2a9a1ad13db4051d276aaff9a082f95f33fb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573098"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693752"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>Переход со среды выполнения Windows 8.x на UWP
 

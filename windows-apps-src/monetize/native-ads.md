@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Узнайте, как добавлять собственную рекламу в приложения UWP.
 title: Собственные объявления
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, элемент управления рекламой, собственная реклама
 ms.localizationpriority: medium
-ms.openlocfilehash: 36b96add3aa785ad20ddd1c42cd46e498d0264a6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c978a07ceb30aaf9c2d0df3d38ff7ee9abbb5b2a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558348"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692715"
 ---
 # <a name="native-ads"></a>Собственные объявления
 

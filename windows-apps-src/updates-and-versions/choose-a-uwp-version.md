@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Выбор версии UWP
 description: При создании приложения UWP в Microsoft Visual Studio можно выбрать его целевую версию. Изучите различия версий UWP и узнайте, как настроить параметры в новых и существующих проектах.
-ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, uwp, версия, сборка, версии, windows, выбор, обновление, обновления
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e2b241d0369d50e600a5497811ac7d4bbb823bc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3461170110a4ca4391c41bee815a83b6d45cee75
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582234"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691898"
 ---
 # <a name="choose-a-uwp-version"></a>Выбор версии UWP
 

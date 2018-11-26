@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 8e6c3d3d-0120-40f4-9f90-0b0518188a1a
 description: Используйте API промоакций Microsoft Store для программным образом управлять рекламными кампаниями для приложений, которые зарегистрированы в учетной записи центра партнеров вашей или вашей организации.
 title: Проведение рекламных кампаний с помощью служб Магазина
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, API рекламных акций Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
-ms.openlocfilehash: 81e77fb01347c2a6ec2630e08f3a00ee6cf47de7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 038003714d6543580f618b381ac7f4ecbde22da9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575266"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698353"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Проведение рекламных кампаний с помощью служб Магазина
 

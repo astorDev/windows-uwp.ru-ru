@@ -2,18 +2,16 @@
 title: Создание приложения для входа с использованием Windows Hello
 description: Это первая часть полного пошагового руководства по созданию приложения Windows 10 UWP (универсальной платформы Windows), которое использует Windows Hello в качестве альтернативы традиционным системам проверки подлинности с помощью имени пользователя и пароля.
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, безопасности
 ms.localizationpriority: medium
-ms.openlocfilehash: caa0063c0aa919e094abedd96b6205e83467e0e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8319d4a0975e209edea7cb70b22910e8124f16c1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565032"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694071"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Создание приложения для входа с использованием Windows Hello
 

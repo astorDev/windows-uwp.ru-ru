@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Создание и отображение базовой сетки
 description: Для представления объектов и поверхностей в трехмерных играх универсальной платформы Windows (UWP) обычно используются многоугольники.
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, сетка, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: e3ae6416217efa16d70b65b8ff55e36654a11557
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555326"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693614"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>Создание и отображение базовой сетки
 

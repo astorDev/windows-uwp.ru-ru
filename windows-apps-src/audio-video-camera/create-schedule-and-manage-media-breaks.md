@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 0309c7a1-8e4c-4326-813a-cbd9f8b8300d
 description: В данной статье показано, как создавать и планировать мультимедийные вставки, а также управлять ими в приложении воспроизведения мультимедиа.
 title: Создание, планирование мультимедийных вставок и управление ими
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0feb7f6771254bf500e4b64fd0e632daad9817e4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 93bcadad38e3d070e8a6b541db4d68bf547bc0b4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569834"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706711"
 ---
 # <a name="create-schedule-and-manage-media-breaks"></a>Создание, планирование и управление мультимедийными вставками
 

@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: С помощью C++/WinRT можно вызывать API среды выполнения Windows, используя стандартные типы широких строк C++ или тип winrt::hstring.
 title: Обработка строк в C++/WinRT
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, строка
 ms.localizationpriority: medium
-ms.openlocfilehash: 72032c3c522a8434d266842a83c443889e8efc19
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9572d9ba8b96d245b783535e159acbae9043ea3e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578317"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695345"
 ---
 # <a name="string-handling-in-cwinrt"></a>Обработка строк в C++/WinRT
 

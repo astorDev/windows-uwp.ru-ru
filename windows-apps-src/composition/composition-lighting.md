@@ -1,18 +1,16 @@
 ---
-author: daneuber
 title: Освещение композиции
 description: API-интерфейсов освещение композиции можно использовать для добавления динамического освещения 3D для вашего приложения.
-ms.author: jimwalk
 ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c5c7bfcb06eb673b0516cef7882685ebd19ddb97
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d8c33504fcc785aa2f1fc94796e47fe097fbea96
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573078"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706724"
 ---
 # <a name="using-lights-in-windows-ui"></a>С помощью источников света в Интерфейсе Windows
 

@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: Планирование игр UWP
 description: Планирование игр UWP.
 ms.assetid: 25e104da-7b79-48b2-ae15-614ba41ca90c
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, игра, планирование, специальные возможности, облако, монетизировать, пакет, технология, концепция, утверждение
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d350077e3199bdc875d4ad89559cb88ae8950c9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 47f613ff814788df947ee39590af0e01b7e3622f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576787"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712952"
 ---
 # <a name="planning-for-uwp-games"></a>Планирование игр UWP
 

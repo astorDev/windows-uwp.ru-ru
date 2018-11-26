@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Применение глубины и эффектов к примитивам
 description: Здесь мы покажем, как применять к примитивам глубину, перспективу, цвет и другие эффекты.
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, глубина, эффекты, примитивы, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: f81c441910cd0d0205641a119c243cb22d0b695e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 02911338da858e3718235736cee7969a7bdebae2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558323"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691505"
 ---
 # <a name="use-depth-and-effects-on-primitives"></a>Применение глубины и эффектов к примитивам
 
@@ -34,7 +32,6 @@ ms.locfileid: "7558323"
 
 <a name="instructions"></a>Инструкции
 ------------
-
 ### <a name="1-defining-cube-variables"></a>1. Определение переменных куба
 
 Сначала потребуется определить структуры **SimpleCubeVertex** и **ConstantBuffer** для куба. Эти структуры определяют положения и цвета вершин для куба, а также метод его просмотра. Мы объявляем [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) и [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) с [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) и объявляем экземпляр **ConstantBuffer**.

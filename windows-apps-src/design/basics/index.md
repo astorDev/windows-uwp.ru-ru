@@ -1,18 +1,16 @@
 ---
 description: Научитесь проектировать и писать код для приложения UWP, с которым удобно работать и которое прекрасно выглядит на различных устройствах и экранах разного размера.
 title: Основы проектирования
-author: mijacobs
 keywords: макет приложения uwp, универсальная платформа Windows, проектирование приложений, интерфейс
-ms.author: mijacobs
 ms.date: 3/7/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22ab5ad60ed397092e61f2c43cde4eb2e0c86c4f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5196503a4a50d1565d00b9ac0e48e6c2d0b6e426
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553751"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693654"
 ---
 # <a name="design-basics-for-uwp-apps"></a>Основы проектирования в приложениях UWP
 

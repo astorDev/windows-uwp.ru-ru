@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Поддержка ориентации экрана (DirectX и C++)
 description: Здесь мы обсудим рекомендации по обработке поворота экрана в приложении UWP на базе DirectX, чтобы графическое оборудование устройства Windows10 использовалось эффективно.
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, ориентация экрана, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ed8739f8ba7b2049af154d458ccaa831b8526a5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eb86cfaefe7112d408a17a54bf4f4b482c218be8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574019"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712548"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>Поддержка ориентации экрана (DirectX и C++)
 

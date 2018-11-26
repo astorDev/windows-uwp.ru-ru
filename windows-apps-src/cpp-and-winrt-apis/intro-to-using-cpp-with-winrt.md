@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: Введение в C++/WinRT &mdash; стандартную проекцию языка C++ для API среды выполнения Windows.
 title: Введение в C++/WinRT
-ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, введение
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b88eac972cd65b771827d7e3125476265cf671e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b92d0def08267c36497f0afd24d23308bc4a2e85
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554609"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695136"
 ---
 # <a name="introduction-to-cwinrt"></a>Введение в C++/WinRT
 &nbsp;

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Средства Visual Studio для программирования игр
 description: Обзор средств разработки для DirectX, имеющихся в составе Visual Studio.
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, игры, visual studio, инструменты, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: eec406fd317abbd0034ba573cc0e791f9e32ba98
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576012"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719928"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>Средства Visual Studio для программирования игр
 

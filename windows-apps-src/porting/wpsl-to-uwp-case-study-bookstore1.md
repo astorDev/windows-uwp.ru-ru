@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
 description: В этом разделе представлен практический пример переноса очень простого приложения WindowsPhone Silverlight в приложение универсальной платформы Windows (UWP) Windows10.
 title: WindowsPhone Silverlight практический пример UWP, Bookstore1
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c335f607eb1897f79035850cd6a5af9e7a7a56dc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 19045e84f1ca3396321dd4f8c4e76da24dc9a588
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579555"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691415"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>WindowsPhone Silverlight в UWP практический пример: Bookstore1
 

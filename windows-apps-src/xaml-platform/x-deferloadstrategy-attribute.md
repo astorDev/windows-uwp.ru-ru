@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 title: Атрибут xDeferLoadStrategy
 description: xDeferLoadStrategy задерживает создание элемента и его дочерних объектов, сокращая тем самым время запуска и немного увеличивая объем использования памяти.Каждый задействованный элемент прибавляет около 600 байт к объему использования памяти.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cd958ba5f9025430be2736329c5a909233461039
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4432362db74f830774a2c4f74401c472c128a120
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565429"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719386"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>Атрибут x:DeferLoadStrategy
 

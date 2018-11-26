@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Аркадный джойстик
 description: Для обнаружения аркадных джойстиков и чтения их данных используйте API аркадных джойстиков Windows.Gaming.Input.
 ms.assetid: 2E52232F-3014-4C8C-B39D-FAC478BA3E01
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, аркадный джойстик, ввод
 ms.localizationpriority: medium
-ms.openlocfilehash: 13bc03559fb32156f5ff8bb29ed96f8a1e4ac84f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6f9e3ff29dfb17b6e2a07df52153013b5266206e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575196"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692805"
 ---
 # <a name="arcade-stick"></a>Аркадный джойстик
 

@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: Learn how to use custom audio on your toast notifications.
 title: Настраиваемый звук всплывающих уведомлениях
 label: Custom audio on toasts
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/15/2017
 ms.topic: article
 keywords: windows 10 uwp, всплывающее уведомление, настраиваемый звук, уведомление, аудио, звук
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ef27dfed400715256d1d9cfa51f383a9b72c90d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 982340901d13f17945c1e7ffa11099f52732f619
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556633"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693575"
 ---
 # <a name="custom-audio-on-toasts"></a>Настраиваемый звук всплывающих уведомлениях
 

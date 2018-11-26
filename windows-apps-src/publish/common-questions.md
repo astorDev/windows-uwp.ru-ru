@@ -1,19 +1,17 @@
 ---
-author: JnHs
 Description: Common questions about ad campaigns
 title: Общие вопросы о рекламных кампаниях
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d1455dd832a41e2783d6df8b4470ad8a94c5c40
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6875f5b06bbd253b7fe80fbc53936fe0dcf1a6b9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576208"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694164"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Общие вопросы о рекламных кампаниях
 
@@ -43,7 +41,7 @@ ms.locfileid: "7576208"
 
 Рекламные кампании в настоящее время поддерживаются в перечисленных ниже странах и регионах.
 
-Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Belize, Bolivia, Brazil, Canada, Chile, China, Colombia, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Finland, France, Germany, Guatemala, Haiti, Honduras, Hong Kong SAR, India, Indonesia, Iraq, Ireland, Italy, Jamaica, Jordan, Kuwait, Lebanon, Malaysia, Mexico, Morocco, New Zealand, Netherlands, Nicaragua, Norway, Oman, Panama, Paraguay, Peru, Philippines, Puerto Rico, Qatar, Saudi Arabia, Singapore, Spain, South Africa, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Tunisia, United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vietnam.
+Алжир, Аргентина, Австралия, Австрия, Багамские острова, Бахрейн, Барбадос, Бельгия, Белиз, Боливия, Бразилия, Канада, Чили, Китай, Колумбия, Дания, Доминиканская Республика, Эквадор, Египет, Сальвадор, Финляндия, Франция, Германия, Гватемала, Гаити, Гондурас, Гонконг (CАР), Индия, Индонезия, Ирак, Ирландия, Италия, Ямайка, Иордания, Кувейт, Ливан, Малайзия, Мексика, Марокко, Новая Зеландия, Нидерланды, Никарагуа, Норвегия, Оман, Панама, Парагвай, Перу, Филиппины, Пуэрто-Рико, Катар, Саудовская Аравия, Сингапур, Испания, Южная Африка, Швеция, Швейцария, Тайвань, Таиланд, Тринидад и Тобаго, Тунис, Объединенные Арабские Эмираты, Соединенное Королевство, США, Уругвай, Венесуэла, Вьетнам.
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>Какие языки поддерживаются для рекламных кампаний?
 

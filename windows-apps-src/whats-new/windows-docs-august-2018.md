@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Что нового в документации Windows в августа 2018 г. — Разработка приложений UWP
 description: Новые возможности, видео, примеры и руководства для разработчиков добавлены в документацию для августа 2018 разработчиков Windows 10.
 keywords: новые возможности, обновления, компоненты, руководство разработчика, Windows 10 августа
-ms.author: quradic
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 76de6c5c1e8925dd8b166a8d99c39116bf66141d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: da8bc3b441a1b619e086934f277cb14be6bcc37a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579492"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698693"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Что нового в документации для разработчиков Windows в августа 2018 г.
 

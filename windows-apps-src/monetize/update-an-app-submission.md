@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: Используйте этот метод в API отправки Microsoft Store для обновления существующей отправки приложения.
 title: Обновление отправки приложения
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, отправка приложения, обновление
 ms.localizationpriority: medium
-ms.openlocfilehash: 82311d96296b3b7c7db0a3485348b7d1bf4a734c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b61508edf2ebc2ab155110189fe67df63e2bab30
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557949"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712681"
 ---
 # <a name="update-an-app-submission"></a>Обновление отправки приложения
 

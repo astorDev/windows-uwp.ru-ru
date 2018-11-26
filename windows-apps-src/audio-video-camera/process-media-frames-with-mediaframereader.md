@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: a128edc8-8a80-4645-ac29-908ede2d1c72
 description: В этой статье рассказывается, как использовать класс MediaFrameReader с MediaCapture для получения кадров мультимедиа из одного или нескольких доступных источников, включая цветные камеры, камеры с эффектом глубины, инфракрасные камеры, звуковые устройства и даже специальные источники кадров, например создающие скелетные кадры отслеживания.
 title: Обработка кадров мультимедиа с помощью MediaFrameReader
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d4c752438af3425fffc69ecf71ff0dc8abe5963
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9940367054ae8771355012492434e12aa97d43ad
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554715"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706675"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Обработка кадров мультимедиа с помощью MediaFrameReader
 

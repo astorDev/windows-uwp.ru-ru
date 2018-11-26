@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Новые возможности в Windows 10 для разработчиков, средства и компоненты
 description: 17763 сборка Windows 10 и новые средства разработчика предоставляют инструменты, функции и возможности на основе универсальной платформы Windows.
 keywords: новые возможности, новые возможности, обновление, обновления, компоненты, новые, Windows 10, новинки, разработчики, 17763
-ms.author: quradic
 ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ff1f4327b82e2b81cc1ec3d64b352e4e85e7bb12
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dc18577015db5384c2a1f13e8a48758634a053a5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560307"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691695"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Новые возможности в Windows 10 для разработчиков, сборка 17763
 

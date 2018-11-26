@@ -4,17 +4,15 @@ description: Состояние устройства группируется в
 ms.assetid: D998745C-2B75-4E59-9923-AD1A17A92E05
 keywords:
 - Объекты состояния
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b0333d77e635961d51d3d5bb45cdf2def646fb8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3437119979073a5cec27948fc90f954e06c2fc93
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573198"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707125"
 ---
 # <a name="state-objects"></a>Объекты состояния
 

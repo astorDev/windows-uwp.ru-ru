@@ -1,19 +1,17 @@
 ---
-author: payzer
 title: Портал устройства - справочник по API-интерфейсу песочницы Xbox Live
 description: Узнайте, как получить доступ к песочнице Xbox Live программными средствами.
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f1729f07734b181dc5e0e8c97d702d8592302c2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d05528ecf4408a7e7483b909b75722037c6528b7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564275"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691988"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Справочник по API-интерфейсу песочницы Xbox Live   
 Вы можете получить и настроить песочницу Xbox Live с помощью этого API REST.

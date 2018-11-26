@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: Используйте приведенные в этом разделе примеры кода на C#, чтобы подробнее ознакомиться с работой API отправки в Microsoft Store.
 title: 'Пример на языке C#: отправки для приложений, надстроек и тестовых пакетов'
-ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
 keywords: windows 10, UWP, API отправки в Microsoft Store, примеры кода, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 495bf2e58fafd9e321937bd6fdb3be8c8dea68e2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 27325938ef159dfcb29de174064314ee21d3a3f5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565628"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712448"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>Пример на языке C\#: отправки для приложений, надстроек и тестовых пакетов
 

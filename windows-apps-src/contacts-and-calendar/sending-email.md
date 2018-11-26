@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: В данной статье рассказывается, как запустить диалоговое окно составления электронного письма, с помощью которого пользователь может отправить электронное письмо. Перед отображением диалогового окна вы можете заполнить поля сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки.
 title: Отправка сообщения электронной почты
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: контакты, электронное письмо, отправка
-ms.author: normesta
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a28809210f71bf523e3cc5f9c8da1db9fbcc90c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565575"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695281"
 ---
 # <a name="send-email"></a>Отправка сообщения электронной почты
 

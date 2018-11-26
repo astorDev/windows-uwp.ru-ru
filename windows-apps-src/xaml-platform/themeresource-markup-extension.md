@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Предоставляет значение для любого атрибута XAML, обрабатывая ссылку на ресурс. Дополнительная системная логика возвращает различные ресурсы в зависимости от активной темы.
 title: Расширение разметки ThemeResource
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 024e48380941c0d79eef65780396ec9b89edc3c7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9466ec598fad090e31768d680b64ffea52688844
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568442"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691297"
 ---
 # <a name="themeresource-markup-extension"></a>Расширение разметки {ThemeResource}
 

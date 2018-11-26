@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Снимок экрана
 description: Пространство имен Windows.Graphics.Capture предоставляет API-интерфейсы для извлечения кадров из окна отображения или приложения, создания видеопотоков или снимков в рамках формирования интерактивного интерфейса для совместной работы.
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
-ms.author: elcowle
 ms.date: 10/09/2018
 ms.topic: article
 keywords: windows 10, uwp, снимок экрана
 ms.localizationpriority: medium
-ms.openlocfilehash: d28ed1fce79a815155180ab8a3c708e2c8bf8916
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 14273f919cacfb27671ba72022ab6c8ff0a2f0ef
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555501"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698313"
 ---
 # <a name="screen-capture"></a>Снимок экрана
 

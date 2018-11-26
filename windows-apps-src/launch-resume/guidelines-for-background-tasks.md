@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Руководство по работе с фоновыми задачами
 description: Убедитесь, что ваше приложение отвечает требованиям, необходимым для выполнения фоновых задач.
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
-ms.openlocfilehash: fd98a3019efc8f2774fb7a1b52f5dcd27778cd2a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd851b6deab0f7a2772720fac83bb2bfa3175071
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576318"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691645"
 ---
 # <a name="guidelines-for-background-tasks"></a>Руководство по работе с фоновыми задачами
 

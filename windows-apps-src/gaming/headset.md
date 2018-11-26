@@ -1,19 +1,17 @@
 ---
-author: mithom
 title: Гарнитура
 description: Используйте API Windows.Gaming.Input гарнитуры для обнаружения гарнитур, записи голоса игрока и воспроизведения звука.
 ms.assetid: 021CCA26-D339-4C8B-B084-0D499BD83ABE
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, гарнитура
 ms.localizationpriority: medium
-ms.openlocfilehash: f5097af13d0714f30eefd7771f798036d069cdea
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b3de68cc59c9928a52eba5caeb840e9e825eecf0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557654"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691918"
 ---
 # <a name="headset"></a>Гарнитура
 

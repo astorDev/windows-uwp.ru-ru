@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: Используйте этот метод в API отправки в Microsoft Store для получения сведений о выпуске пакета для отправки приложения.
 title: Получение сведений о выпуске для отправки приложения
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, выпуск пакета, отправка приложения
 ms.assetid: 9ada5ac3-a86e-4bb6-8ebc-915ba9649e3c
 ms.localizationpriority: medium
-ms.openlocfilehash: 247c4e58740450bb9846c543e883ac62a8009429
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 301973fd231570f0fe63b8838971906c25e2d55c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565449"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692117"
 ---
 # <a name="get-rollout-info-for-an-app-submission"></a>Получение сведений о выпуске для отправки приложения
 

@@ -1,9 +1,7 @@
 ---
-author: stevewhims
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: Подробно о привязке данных
 description: Привязка данных обеспечивает отображение данных в пользовательском интерфейсе приложения и (дополнительно) синхронизацию с этими данными.
-ms.author: stwhi
 ms.date: 10/05/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -11,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 0d7f6667aeb2f6c7c07f8f4c2d5944f559ebe0d8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dcaad17df5c036069dcdd729e662e5418db7646e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563472"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720210"
 ---
 # <a name="data-binding-in-depth"></a>Подробно о привязке данных
 

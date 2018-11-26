@@ -4,17 +4,15 @@ description: Каждая грань в сетке имеет вектор-но�
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
 keywords:
 - Нормальные векторы поверхностей и вершин
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2081e8c09a6f6fd75f460af3f339902bcb80bac6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2347efc5d68abd53442f52ecabdc060393ee561b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560986"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718905"
 ---
 # <a name="face-and-vertex-normal-vectors"></a>Нормальные векторы поверхностей и вершин
 

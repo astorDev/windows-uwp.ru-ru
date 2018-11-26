@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: dd2a1e01-c284-4d62-963e-f59f58dca61a
 description: В этой статье описывается, как импортировать мультимедиа с устройства, включая поиск доступных мультимедийных ресурсов, импорт файлов (фото и файлы образов данных) и удаление импортированных файлов с исходного устройства.
 title: Импорт мультимедиа
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f8956e2ca167d98bb8e6ecf35ce3d131d7b032
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c08612e48eec7989f3b56fba41a17e1c149b2058
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557401"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696057"
 ---
 # <a name="import-media-from-a-device"></a>Импорт мультимедиа с устройства
 

@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: Пакеты приложений на основе плоских пакетов
 description: Описывает создание плоского пакета, связывающего файлы пакета .appx вашего приложения со ссылками на пакеты приложений.
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, упаковка, конфигурация пакета, плоский пакет
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d95591f12b61054a654b9b1284bdd90d74a937b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b7066b7f2e5bd72ebee3169e03c7940b6fef4dba
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555071"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712856"
 ---
 # <a name="flat-bundle-app-packages"></a>Пакеты приложений на основе плоских пакетов 
 

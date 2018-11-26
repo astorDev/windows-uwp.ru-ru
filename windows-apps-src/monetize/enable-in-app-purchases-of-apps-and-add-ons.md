@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: B356C442-998F-4B2C-B550-70070C5E4487
 description: Узнайте, как использовать пространство имен Windows.Services.Store для покупки приложения или одной из его надстроек.
 title: Поддержка покупок приложений и надстроек из приложения
 keywords: windows 10, uwp, надстройки, покупки из приложения, IAP, Windows.Services.Store
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: beb7165586c62770fd6b18fff8c7ad0095bc78ba
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a64a52005221c418ea82e8fffa9ecf94b6d1bef3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560665"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720170"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>Поддержка покупок приложений и надстроек из приложения
 

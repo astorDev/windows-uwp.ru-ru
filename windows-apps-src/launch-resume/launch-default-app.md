@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Запуск приложения по умолчанию для URI
 description: Узнайте, как запускать приложение по умолчанию для универсального кода ресурса (URI). Универсальные коды ресурсов (URI) позволяют запустить приложение, чтобы выполнить определенную задачу. В этом разделе также приводится обзор множества схем URI, встроенных в Windows.
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
-ms.author: twhitney
 ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5a0af7b7227f149722cf34a368fc588198880ef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 143aa8310cdfe9dd5f0be29bf07f03c23293a647
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572013"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696488"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Запуск приложения по умолчанию для URI
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
 description: Используйте этот метод в API отправки Microsoft Store для получения информации о всех приложениях, которые зарегистрированы в вашей учетной записи центра партнеров.
 title: Получение всех приложений
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: a689f540cb939cea3549b6660f2daf9a70f9b1f6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5c909e707d25e4add534ce89319abe71c2557b59
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576708"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691825"
 ---
 # <a name="get-all-apps"></a>Получение всех приложений
 

@@ -1,5 +1,4 @@
 ---
-author: eliotcowley
 Description: Design your app so that it looks good and functions well on your television.
 title: Проектирование для Xbox и телевизора
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
@@ -7,7 +6,6 @@ label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 keywords: Xbox, телевизор, просмотр на большом расстоянии, геймпад, пульт дистанционного управления, ввод, взаимодействие
-ms.author: elcowle
 ms.date: 11/13/2018
 ms.topic: article
 pm-contact: chigy
@@ -15,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d9598b53b257d5d45c96b472c5c2110c9fe4478
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7b09e90ea71872421a0caf1edcc1a03ce25fef42
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581107"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720440"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Проектирование для Xbox и телевизора
 

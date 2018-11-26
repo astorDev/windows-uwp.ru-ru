@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: В этой статье описаны распространенные коды ошибок для операций Microsoft Store для приложений и надстроек, включая покупки из приложения, лицензирования и обновления самостоятельно установить приложения.
 title: Коды ошибок для операций Microsoft Store
-ms.author: mhopkins
 ms.date: 08/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, покупки из приложения, Iap, надстройки, коды ошибок
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4eff890da48bd60405cadee2d7ecb92bb1b2fa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ba505b30076c356a39ae195e1d187cbc49d8a66a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582194"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720310"
 ---
 # <a name="error-codes-for-store-operations"></a>Коды ошибок для операций Microsoft Store
 

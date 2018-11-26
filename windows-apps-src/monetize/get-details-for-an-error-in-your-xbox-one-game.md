@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store, чтобы получить подробные данные об определенной ошибке для Xbox One игры.
 title: Получение сведений об ошибке в Xbox One игры
-ms.author: mhopkins
 ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, ошибки, подробные сведения
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f665b99b7f64e41597a5767d58b86ac8e85c6bd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6b713e3c6c2f7b82e5779e4785cc6b2e320b24f0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569366"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712608"
 ---
 # <a name="get-details-for-an-error-in-your-xbox-one-game"></a>Получение сведений об ошибке в Xbox One игры
 

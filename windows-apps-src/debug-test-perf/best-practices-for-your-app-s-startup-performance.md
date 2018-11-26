@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: Рекомендации по повышению производительности запуска приложения
 description: Создавайте приложения универсальной платформы Windows (UWP) с оптимальными временем запуска, улучшив управление им, а также активацией.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ddcc6c9ceaecd858733a0222c22c18682041b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e9d0fdee4ba9f44f15c461e5a53dad28700023a4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575942"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720150"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>Рекомендации по повышению производительности запуска приложения
 

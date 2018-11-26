@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Новые возможности в Windows 10 для разработчиков, средства и компоненты
 description: Сборка 16299 Windows10 и новые средства разработчика предоставляют доступ к инструментам, компонентам и возможностям универсальной платформы Windows.
 keywords: что нового, новые возможности, обновление, обновления, функции, новая, Windows 10, 1709, октябрь, новейшая, разработчики, 16299, Fall Creators
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 458a5999c1f56a3bc9f445f260d1d294c395b850
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd333cecc5f9141b3fd34593ea10d17fe6face1e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562988"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693495"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Новые возможности для разработчиков в Windows 10, сборка 16299
 

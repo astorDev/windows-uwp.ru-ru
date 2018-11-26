@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: Используйте этот метод в API отправки в Microsoft Store, чтобы получить данные для существующей отправки приложения.
 title: Получение отправки приложения
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправка приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 66c220e76cd032f4cf36f0d4ae88c01485f31163
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca13ff36db823bfea44fa9e31c20a621c5b8aa2e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558508"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692219"
 ---
 # <a name="get-an-app-submission"></a>Получение отправки приложения
 

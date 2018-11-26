@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: В этой статье показано, как транслировать мультимедиа в удаленные устройства из универсального приложения для Windows.
 title: Трансляция мультимедиа
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: da0bb4d25166dd62372d5902ff89221d20189c22
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9e4b794e560c213e5c3796b11dd1a5fd77a98506
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562746"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698523"
 ---
 # <a name="media-casting"></a>Трансляция мультимедиа
 

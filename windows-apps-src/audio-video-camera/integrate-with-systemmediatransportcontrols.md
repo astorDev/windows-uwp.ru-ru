@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: eb690f2b-3bf8-4a65-99a4-2a3a8c7760b7
 description: В этой статье показано, как взаимодействовать с системными элементами управления транспортировкой мультимедиа.
 title: Интеграция с системными элементами управления транспортировкой мультимедиа
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 15d7e3b3e822081a751aa791a76e674b07af8d9d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c89a1901d15d00c7c102157c8f44d6ab96272ef0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573308"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706701"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>Интеграция с системными элементами управления транспортировкой мультимедиа
 
