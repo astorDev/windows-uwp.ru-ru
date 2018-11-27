@@ -4,17 +4,15 @@ description: В этом разделе описывается поддержк�
 ms.assetid: 153DA429-0C99-4691-AEB4-124FD9B17BE2
 keywords:
 - Уровень 1
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9aab54e23d59b21901e3aa4700581d2d7eeeee8e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0ae76111f6feefa0bb63fd18516e033050cc06fc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573012"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704505"
 ---
 # <a name="tier-1"></a>Уровень 1
 

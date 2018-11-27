@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Запуск приложения с помощью URI
 description: В этом разделе описывается использование универсального кода ресурса (URI) для запуска одного приложения из другого.
 ms.assetid: a40c4ce2-4f41-4a55-aeb3-1beb3e84e839
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9126d33c18ede90e9c20339d9a793f3ab2835e76
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a42a59f76da99461b2e2428f5732ca0c433b6540
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570277"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705953"
 ---
 # <a name="launch-an-app-with-a-uri"></a>Запуск приложения с помощью URI
 
@@ -29,7 +27,7 @@ ms.locfileid: "7570277"
 | [Запуск приложения UWP](launch-store-app.md) | В этом разделе описывается схема URI ms-windows-store. Ваше приложение может использовать эту схему URI для запуска приложения UWP на определенных страницах в Store. |
 | [Запуск приложения «Карты Windows»](launch-maps-app.md) | Узнайте, как запустить приложение "Карты Windows" из вашего приложения. |
 | [Запуск приложения "Люди"](launch-people-apps.md) | В этом разделе приводится описание схемы URI ms-people. Ваше приложение может использовать эту схему URI для запуска приложения "Люди" для конкретных действий. |
-| [Запуск функции "Фрагмент экрана"](launch-screen-snipping.md) | Узнайте, как использовать схемы URI для открытия нового фрагмент, или, чтобы открыть его фрагмент & эскиза. |
+| [Запуск функции "Фрагмент экрана"](launch-screen-snipping.md) | Узнайте, как использовать схемы URI для открытия нового фрагмент или открыть приложение фрагмент & эскиза. |
 | [Включение приложения для веб-сайтов с помощью обработчиков URI приложения](web-to-app-linking.md) | Повышайте интерес пользователей вашего приложения с помощью поддержки приложений для компонента веб-сайтов. |
 
 ## <a name="related-topics"></a>Статьи по теме

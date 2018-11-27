@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
 title: Получение сведений о батарее
 description: Узнайте, как получить подробные сведения об аккумуляторе с помощью API в пространстве имен Windows.Devices.Power.
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c745b99104495b4d0b3c60202c378285dbfdd7b6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 81f4232d038b89f2c49cf584346d632911fb70e2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581883"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698823"
 ---
 # <a name="get-battery-information"></a>Получение сведений об аккумуляторе
 

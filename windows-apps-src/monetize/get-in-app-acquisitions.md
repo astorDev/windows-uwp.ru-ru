@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
 description: Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных о покупках надстройки в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение сведений о покупках надстройки
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, покупки надстройки
 ms.localizationpriority: medium
-ms.openlocfilehash: 4adb202df2806caeb0dc88469521b0f373886c43
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cd7e907994943dbce83d195e80a15770833f7e4b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559013"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703338"
 ---
 # <a name="get-add-on-acquisitions"></a>Получение сведений о покупках надстройки
 

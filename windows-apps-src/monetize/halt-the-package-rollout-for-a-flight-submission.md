@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: Используйте этот метод в API отправки в Microsoft Store для остановки выпуска тестового пакета.
 title: Остановка выпуска тестируемой возможности
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, выпуск пакета, отправка тестового пакета, остановка
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ca3b457158ee1f509591c89ee6ac2819c819326
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 74c95e36d0bc4c9848be1e336b2e34c41dc0631f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571084"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703298"
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>Остановка выпуска тестируемой возможности
 

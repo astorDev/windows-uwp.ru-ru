@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Планирование переноса из OpenGL ES2.0 в Direct3D
 description: Если вы переносите игру с платформы iOS или Android, вам, вероятно, потребуется существенно углубиться в OpenGL ES 2.0.
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 2308c0b931b58209d1233205c355ac09680803dd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b17f18876ebc2faead08d8c777c7502e937aef86
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574620"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703098"
 ---
 # <a name="plan-your-port-from-opengl-es-20-to-direct3d"></a>Планирование переноса из OpenGL ES2.0 в Direct3D
 

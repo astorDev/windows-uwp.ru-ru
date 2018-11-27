@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: Оптимизация макета XAML
 description: Макет может быть затратной частью приложения XAML как в плане загрузки ЦП, так и в плане использования памяти. Ниже приведены несколько простых действий, которые можно выполнить для повышения производительности макета приложения XAML.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0dcb3e49bb35902a17f829c0222c570265be8b5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ab894a9ba9c51b091e593503be2db57ba3b1a913
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7576918"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708754"
 ---
 # <a name="optimize-your-xaml-layout"></a>Оптимизация макета XAML
 
@@ -136,7 +134,7 @@ ms.locfileid: "7576918"
 
 Общее требование к пользовательскому интерфейсу заключается в том, чтобы в макете элементы накладывались друг на друга. Как правило, для размещения элементов подобным образом используют заполнение, поля, выравнивание и преобразование. Элемент управления XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) оптимизирован для повышения производительности макета с накладывающимися элементами.
 
-**Важные**Чтобы добиться видимого улучшения, использование одной ячейкой [**сетки**](https://msdn.microsoft.com/library/windows/apps/BR242704). Не задавайте [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) или [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
+**Важные**Чтобы добиться видимого улучшения, используйте одной ячейки [**сетки**](https://msdn.microsoft.com/library/windows/apps/BR242704). Не задавайте [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) или [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
 
 ### <a name="examples"></a>Примеры
 

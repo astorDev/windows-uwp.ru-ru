@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Обучающий курс — создание и настройка формы
 description: Узнайте, что нужно сделать, чтобы создать надежную форму в приложении.
-ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
 keywords: начало работы, uwp, windows 10, обучающий курс, макет, форма
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c624a3c666dcc405ee2375738c605ae147b7d9d3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0cb42552139fd706dd9e87d61c24f8fe2c2d51f7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575236"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697084"
 ---
 # <a name="create-and-customize-a-form"></a>Создание и настройка формы
 

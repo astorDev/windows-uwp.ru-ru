@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
 description: Узнайте, как перехватывать ошибки AdControl в приложении.
 title: Пошаговое руководство по обработке ошибок в JavaScript
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, обработка ошибок, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 65887bba125d8d7db1b224c1842da8c9ab34f117
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 68f49cd97e8b4e2ef5e20502909a7dc8cb4ab676
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572195"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697337"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>Пошаговое руководство по обработке ошибок в JavaScript
 

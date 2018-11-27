@@ -1,18 +1,16 @@
 ---
-author: ridomin
 title: Создание файла установщика приложений в Visual Studio
 description: Узнайте, как использовать Visual Studio для включения автоматических обновлений с помощью файла .appinstaller.
-ms.author: rmpablos
 ms.date: 5/2/2018
 ms.topic: article
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованного приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d4740c132f274cb3eeee5776790d077d2cbec47
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5c7055748eb8905341d9f90c47e6141c9c9c599e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567702"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697777"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Создание файла установщика приложений в Visual Studio
 

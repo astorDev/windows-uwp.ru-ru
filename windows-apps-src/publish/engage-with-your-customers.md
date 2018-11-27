@@ -1,18 +1,16 @@
 ---
-author: jnHs
 Description: Drive customer engagement and satisfaction by using features like notifications, targeted offers, responding to reviews and feedback, and more.
 title: Привлечение клиентов
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f9f266538c42b83da9135079f51a3f935f459020
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 44ca4c9799a4bfe15decf0e23516d663f48092e9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580020"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704741"
 ---
 # <a name="engage-with-your-customers"></a>Привлечение клиентов
 

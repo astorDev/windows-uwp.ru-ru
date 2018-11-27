@@ -4,17 +4,15 @@ description: Полоса треугольников — это ряд соед�
 ms.assetid: BACC74C5-14E5-4ECC-9139-C2FD1808DB82
 keywords:
 - Полосы треугольников
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f60f0f65868d4dec67bf77a329d4b952c20ec44a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9a420ed5ed8f498eb9c900cbacb1b766c4a01214
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581614"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704272"
 ---
 # <a name="triangle-strips"></a>Полосы треугольников
 

@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store для получения данных работоспособности Xbox Live.
 title: Получение данных работоспособности в Xbox Live
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live, работоспособность, ошибки пользователя
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d08e081491a93a753c2ba0790eec352a9e2ea85
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3b996d85776cb49d45cc5b699709b4eb107e7086
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575922"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697467"
 ---
 # <a name="get-xbox-live-health-data"></a>Получение данных работоспособности в Xbox Live
 

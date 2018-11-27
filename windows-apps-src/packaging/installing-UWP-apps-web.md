@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: Установка приложений UWP с веб-страницы
 description: В этом разделе описываются действия, которые необходимо выполнить, чтобы дать пользователям возможность устанавливать приложения напрямую с веб-страницы.
-ms.author: lahugh
 ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованных приложений, связанный набор, дополнительные пакеты
 ms.localizationpriority: medium
-ms.openlocfilehash: 98a761bf04b56d13745f2505b8d0806fc4fdf3e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 515beebd55049ecb4d0c6747fa7d37e76577ef7f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582204"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708124"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>Установка приложений UWP с веб-страницы
 
@@ -31,9 +29,9 @@ ms.locfileid: "7582204"
 ### <a name="requirements-for-protocol-activation-scheme"></a>Требования для схемы активации протокола
 
 1. Веб-серверы должны иметь поддержку запросы диапазона байтов (HTTP/1.1)
-    - Серверам, поддерживающим протокол HTTP/1.1 должно иметь поддержку для запросы диапазона байтов 
-2. Веб-серверы, необходимо будет знать о типах содержимого пакета приложения Windows 10
-    - Вот как объявить новых типов содержимого в рамках [веб-файл конфигурации](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
+    - Серверы с поддержкой протокола HTTP/1.1 должны иметь поддержку запросы диапазона байтов 
+2. Веб-серверы необходимо знать о типах содержимого пакета приложения Windows 10
+    - Ниже показано, как объявить новых типов содержимого в рамках [веб-файл конфигурации](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>Как включить этот механизм на веб-странице 
 Разработчики приложений, которым требуется разместить пакеты приложений на веб-сайтах, должны сделать следующее.

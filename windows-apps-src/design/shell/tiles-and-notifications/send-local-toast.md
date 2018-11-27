@@ -1,21 +1,19 @@
 ---
-author: andrewleader
 Description: Learn how to send a local toast notification and handle the user clicking the toast.
 title: Отправка локального всплывающего уведомления
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, отправка всплывающих уведомлений, уведомления, отправка уведомлений, всплывающие уведомления, руководство, краткое руководство, начало работы, пример кода, пошаговое руководство
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f72180038b6ccbed5f399c2cd58081915baf2c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dd7dfb621d84a3ce1d934c358ab60683caee9238
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565302"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703018"
 ---
 # <a name="send-a-local-toast-notification"></a>Отправка локального всплывающего уведомления
 

@@ -1,19 +1,17 @@
 ---
 Description: Troubleshoot Microsoft Take a Test events and errors with the event viewer.
 title: Устранение неполадок тестирования Microsoft с помощью просмотра событий.
-author: PatrickFarley
-ms.author: pafarley
 ms.assetid: 9218e542-f520-4616-98fc-b113d5a08e0f
 ms.date: 10/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, для образовательных учреждений
 ms.localizationpriority: medium
-ms.openlocfilehash: eaf4c8e2641359e6d9a92444f66a1b6d4e5e5881
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2f4bdcf45c7dd37dd540a666d99b5fa2fd2d49f8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563440"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701353"
 ---
 # <a name="troubleshoot-microsoft-take-a-test-with-the-event-viewer"></a>Устранение неполадок тестирования Microsoft с помощью просмотра событий
 

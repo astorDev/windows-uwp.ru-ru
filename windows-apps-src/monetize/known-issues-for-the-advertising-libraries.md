@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: Изучите известные проблемы текущего выпуска Microsoft Advertising SDK.
 title: Сведения об известных проблемах и устранении неполадок рекламы в приложениях
-ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, реклама, рекламные объявления, известные проблемы, устранение неполадок
 ms.localizationpriority: medium
-ms.openlocfilehash: d1b3b1fb68ed246d6a5a8334c5cf4d1c0754b719
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8b32b390cc4ca6af5b03a22e30323ded5aeac516
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567649"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701128"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Сведения об известных проблемах и устранении неполадок рекламы в приложениях
 

@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: Создание компонентов среды выполнения Windows на C++
 description: В этом разделе показано, как использовать C + +/ CX для создания компонента среды выполнения Windows, которое является компонентом, которую можно вызывать из универсального приложения для Windows созданных с помощью C#, Visual Basic, C++ или Javascript.
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
-ms.author: misatran
 ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a7e7a29d766cc226b3e4afd4376a6c5c9ec42a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4dacca1cff943001c03f9f432404b6dab2fb5b94
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553964"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701623"
 ---
 # <a name="creating-windows-runtime-components-in-ccx"></a>Создание компонентов среды выполнения Windows на C++/CX
 > [!NOTE]

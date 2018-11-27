@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: C + +/ WinRT предоставляет функции и базовые классы, которые сэкономить время и усилия, если вы хотите реализовать и/или передать коллекции.
 title: Создание коллекций с помощью C++/WinRT
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартные, c ++, cpp, winrt, проекция, коллекции
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9c5cbf5c7709c70d2eb47c57009bbd264a6d2c20
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a50ab5f70faa0c8f8b73eada38444bcafd444d8b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567387"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700422"
 ---
 # <a name="collections-with-cwinrt"></a>Создание коллекций с помощью C++/WinRT
 

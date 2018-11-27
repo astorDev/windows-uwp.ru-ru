@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Поддержка сети в играх
 description: Узнайте, как разрабатывать компоненты для работы в сети и включать их в игру DirectX.
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, игры, работа по сети, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: cc30a66db3fb01edebf4705ecb2e85ea4dbb94d6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2697564e703cfe290e33f204125346f3e8bad8ac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579215"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702014"
 ---
 # <a name="networking-for-games"></a>Поддержка сети в играх
 

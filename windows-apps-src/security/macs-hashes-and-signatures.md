@@ -2,18 +2,16 @@
 title: Коды проверки подлинности сообщений, хэши и подписи
 description: В этой статье обсуждается выявление несанкционированных изменений сообщений с помощью кодов проверки подлинности сообщения (MAC), хэшей и подписей в приложениях универсальной платформы Windows (UWP).
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, безопасности
 ms.localizationpriority: medium
-ms.openlocfilehash: b472a7209ddb9e67f7bb7c00e967295892568a29
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6517241826d06b63fd88b45237552acffbdc62da
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572750"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701608"
 ---
 # <a name="macs-hashes-and-signatures"></a>Коды проверки подлинности сообщений, хэши и подписи
 

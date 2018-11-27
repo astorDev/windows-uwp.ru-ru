@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: Каждая транзакция Microsoft Store, которая заканчивается успешной сделкой, может дополнительно возвращать квитанцию транзакции.
 title: Проверка покупок продуктов с помощью квитанций
-ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, покупки из приложения, IAP, квитанции, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: ed79a3ac50fb3a6cbe735e0ea713256845d39441
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b71d55d71a63060a66265051fafc8bdf7313e77b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563160"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702748"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Проверка покупок продуктов с помощью квитанций
 

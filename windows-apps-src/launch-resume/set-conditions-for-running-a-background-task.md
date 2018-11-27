@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: Задание условий выполнения фоновой задачи
 description: Узнайте, как задать условия, которые управляют запуском выполнения фоновой задачи.
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: Windows 10, uwp, фоновой задачи
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: e64f36eb400d683da1cb52a819da5aa245a41ac4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ac6dd17f31dab1898aa394f901613d268c159b06
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560708"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698902"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Задание условий выполнения фоновой задачи
 

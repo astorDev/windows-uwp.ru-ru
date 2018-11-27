@@ -1,19 +1,17 @@
 ---
-author: payzer
 title: Отключение режима мыши
 description: Инструкции по отключению режима мыши по умолчанию.
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.assetid: e57ee4e6-7807-4943-a933-c2b4dc80fc01
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc6989103442deb364654ec006c0fe4b1455511
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e4b8868f416494daf978d65d4a4ccde02d6ccf5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557846"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702262"
 ---
 # <a name="how-to-disable-mouse-mode"></a>Отключение режима мыши
 Режим мыши включен по умолчанию для всех приложений; это означает, что все приложения, которые явно не отключили указатель мыши, получают его (аналогично указателю в браузере Edge на консоли). Настоятельно рекомендуется отключать эту функцию и выполнять оптимизацию для навигации с помощью направляемого контроллера.   

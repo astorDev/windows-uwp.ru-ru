@@ -2,18 +2,16 @@
 title: Кодирование и декодирование данных
 description: В этом примере кода показано, как кодировать и декодировать данные base64 и шестнадцатеричные данные в приложении универсальной платформы Windows (UWP).
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, безопасности
 ms.localizationpriority: medium
-ms.openlocfilehash: 76c43f5b72b47c9ce88a0ee12223ff099127ff8f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3c4e694dca3c84c7e94e513d8bb10a3f405bbc86
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570640"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704926"
 ---
 # <a name="encode-and-decode-data"></a>Кодирование и декодирование данных
 

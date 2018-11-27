@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: Примеры DirectX
 description: Примеры игр, написанных в DirectX.
 ms.assetid: a54273f8-1e91-4d02-8762-6eab2f00f7b0
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, игра, DirectX, примеры, трехмерный
 ms.localizationpriority: medium
-ms.openlocfilehash: f5929a0256c7f9808079f902a258b3fd094f241c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8d31c6e5b7307c7d93d7c06a0c4ae915ea788655
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575856"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702432"
 ---
 # <a name="directx-samples"></a>Примеры DirectX
 

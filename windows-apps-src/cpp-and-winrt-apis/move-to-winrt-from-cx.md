@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: В этом разделе объясняется, как перенести код C++/CX в его эквивалент на C++/WinRT.
 title: Переход на C++/WinRT из C++/CX
-ms.author: stwhi
 ms.date: 10/18/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 35fe84747624c9a855df5520322546b83772379b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5a6a778f1efe16d56c24e437a0c25a8b8c5e3bc7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560202"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700753"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Переход на C++/WinRT с C++/CX
 

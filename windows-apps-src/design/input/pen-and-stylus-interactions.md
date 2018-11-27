@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Build Universal Windows Platform (UWP) apps that support custom interactions from pen and stylus devices, including digital ink for natural writing and drawing experiences.
 title: Взаимодействие с пером и Windows Ink в приложениях UWP
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, распознавание рукописного ввода, взаимодействие с пользователем, ввод
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a9a9dd4347cc682f384c2d408d30820acf76ce34
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 22477ab0facfcb67d44057a91c7c3a49df57f8b9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562693"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704445"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Взаимодействие с пером и Windows Ink в приложениях UWP
 
@@ -51,7 +49,7 @@ ms.locfileid: "7562693"
 | --- | --- |
 | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | Элемент управления платформы XAMLUI, который по умолчанию получает и отображает все входные данные от пера как росчерк пера или росчерк стирания.<br/>Дополнительные сведения о том, как использовать InkCanvas, см. в разделах [Распознавание росчерков пера Windows Ink как текста](convert-ink-to-text.md) и [Хранение и извлечение данных движения пера Windows Ink](save-and-load-ink.md). |
 | [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | Объект кода программной части, создаваемый вместе с элементом управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (предоставляется свойством [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)). Этот объект обеспечивает все возможности рукописного ввода по умолчанию, предоставляемые элементом **InkCanvas**, вместе с полным набором API для дополнительной настройки и персонализации.<br/>Дополнительные сведения о том, как использовать InkPresenter, см. в разделах [Распознавание росчерков пера Windows Ink как текста](convert-ink-to-text.md) и [Хранение и извлечение данных движения пера Windows Ink](save-and-load-ink.md). |
-| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Элемент управления платформы XAMLUI, содержащий и расширяемую коллекцию кнопок, которые активируют функции рукописного ввода в связанные [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas).<br/>Дополнительные сведения о том, как использовать InkToolbar, см. в разделе [Добавление InkToolbar в приложение универсальной платформы Windows (UWP) для рукописного ввода](ink-toolbar.md). |
+| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Элемент управления платформы XAMLUI, содержащий и расширяемую коллекцию кнопок, которые активируют функции рукописного ввода в связанных [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas).<br/>Дополнительные сведения о том, как использовать InkToolbar, см. в разделе [Добавление InkToolbar в приложение универсальной платформы Windows (UWP) для рукописного ввода](ink-toolbar.md). |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | Позволяет преобразовать росчерки пера в специальный контекст устройства Direct2D универсального приложения для Windows вместо элемента управления по умолчанию [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). Это делает возможным полную настройку рукописного ввода.<br/>Дополнительные сведения см. в разделе [Сложный пример рукописного ввода](https://go.microsoft.com/fwlink/p/?LinkID=620314). |
 
 ## <a name="basic-inking-with-inkcanvas"></a>Базовый рукописный ввод с использованием InkCanvas

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Настройка ресурсов DirectX и отображение изображения
 description: В этом разделе мы покажем, как создать устройство Direct3D, цепочку буферов и представление целевого объекта обработки, а также как представить обработанное изображение для отображения.
 ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, игры, directx, ресурсы, изображения
 ms.localizationpriority: medium
-ms.openlocfilehash: 24fd038bdd447491da43e5d5803445d00147ba2d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b650f77627e02427b2861a2e6d0df7d1fc86831a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564490"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697627"
 ---
 # <a name="set-up-directx-resources-and-display-an-image"></a>Настройка ресурсов DirectX и отображение изображения
 

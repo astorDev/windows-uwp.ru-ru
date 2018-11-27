@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store, чтобы получить трассировку стека при возникновении ошибки в классическом приложении.
 title: Получение трассировки стека при возникновении ошибки в классическом приложении
-ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, трассировка стека, ошибка, классическое приложение
 ms.localizationpriority: medium
-ms.openlocfilehash: 024c903ea43d9fabc90b2f6b7891f6de4e92b1d5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8cc8aaef2b26af88234efe62bf7cf1cb998e19bc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564370"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698173"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>Получение трассировки стека при возникновении ошибки в классическом приложении
 

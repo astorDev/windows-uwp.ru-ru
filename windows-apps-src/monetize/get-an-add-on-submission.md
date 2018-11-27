@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: Используйте этот метод в API отправки в Microsoft Store, чтобы получить данные для существующей отправки надстройки.
 title: Получение отправки надстройки
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправка надстройки, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: ad6381562b37b1a759a575e070edd6b1bf63402d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a87f0e694434774db215f3f5323588f94ec0465b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565840"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697577"
 ---
 # <a name="get-an-add-on-submission"></a>Получение отправки надстройки
 

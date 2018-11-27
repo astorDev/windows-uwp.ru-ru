@@ -4,17 +4,15 @@ description: Фильтрация текстур создает цвет для 
 ms.assetid: 1CCF4138-5D48-4B07-9490-996844F994D8
 keywords:
 - Фильтрация текстур
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ce80bc0f64e1aba8328880203f22ea3909fdb3e3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 449a31d92235efc50119bcd0db11b3532f523cd2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567298"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700862"
 ---
 # <a name="texture-filtering"></a>Фильтрация текстур
 

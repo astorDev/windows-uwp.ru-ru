@@ -1,19 +1,17 @@
 ---
-author: KarlErickson
 ms.assetid: F46306EC-DFF3-4FF0-91A8-826C1F8C4A52
 title: Привязка данных и MVVM
 description: Привязка данных основой шаблон проектирования архитектуры пользовательского интерфейса Model-View-ViewModel (MVVM) и позволяет свободная связь между кодом пользовательского интерфейса и без пользовательского интерфейса.
-ms.author: karler
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a70603c26c7123af50fc920d327ccef332b7ed6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 931f2fcbcdbf58b9dc2ca40403d7466b620a8991
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564640"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700097"
 ---
 # <a name="data-binding-and-mvvm"></a>Привязка данных и MVVM
 

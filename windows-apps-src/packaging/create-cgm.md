@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: ff2523cb-8109-42be-9dfc-cb5d09002574
 title: Создание и преобразование исходного файла сопоставления группы содержимого
 description: Чтобы подготовить ваше приложение универсальной платформы Windows (UWP) для потоковой установки, необходимо создать файл сопоставления группы содержимого. Эта статья поможет вам создать и преобразовать файл сопоставления группы содержимого, а также даст некоторые советы и рекомендации.
-ms.author: lahugh
 ms.date: 9/30/2018
 ms.topic: article
 keywords: windows 10, uwp, сопоставление группы содержимого, потоковая установка, потоковая установка приложений uwp, исходный файл сопоставления группы содержимого
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2922d6d3f54d693a9fe9c0982ea06cc5f2caae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ea6e83521007572449b28e65bdff56d9d2c11186
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560179"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697527"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>Создание и преобразование исходного файла сопоставления группы содержимого
 

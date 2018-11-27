@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store для получения данных клуба Xbox Live.
 title: Получение данных клуба в Xbox Live
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live, клубы
 ms.localizationpriority: medium
-ms.openlocfilehash: fd28e6877f5b2bb3fa7d85f9dbc7c82672b7ea2f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dbf9d06f96632237c10de0fe3b6c4723a2501254
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565151"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697990"
 ---
 # <a name="get-xbox-live-club-data"></a>Получение данных клуба в Xbox Live
 

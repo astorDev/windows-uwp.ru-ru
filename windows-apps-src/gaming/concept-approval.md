@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Утверждение концепций
 description: Узнайте, как отправить ваш продукт для утверждения его концепции, которое необходимо, если ваш продукт предназначен для запуска на консоли Xbox или использует Xbox Live.
 ms.assetid: 850ec988-761b-49d8-9508-da8a83108de3
-ms.author: elcowle
 ms.date: 06/23/2017
 ms.topic: article
 keywords: windows 10, uwp, концепция утверждения
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b63e3002d6816b30a71c775cfcf87817d4f9879
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e4ecdbb77e1e3df10963a59dff38d4ecf215126
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561457"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697747"
 ---
 # <a name="concept-approval"></a>Утверждение концепций
 

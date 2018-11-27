@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Работа с файлами
 description: Узнайте, как работать с файлами на универсальной платформе Windows.
-ms.author: twhitney
 ms.date: 05/01/2018
 ms.topic: article
 keywords: начало работы, uwp, windows 10, обучающий курс, файлы, ввод-вывод файлов, чтение файла, запись файла, создание файла, запись текста, чтение текста
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 68240e5b3d2fb476b731853e6a7d020ecd9e2887
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9350228585ec8108c41bd15de6179de0294140dc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556956"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707875"
 ---
 # <a name="work-with-files"></a>Работа с файлами
 

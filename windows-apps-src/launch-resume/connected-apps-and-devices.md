@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Подключенные приложения и устройства (Project Rome)
 description: В этом разделе описывается, как использовать платформу удаленных систем для обнаружения удаленных устройств, запуска приложения на удаленном устройстве и обмена данными со службой приложений на удаленном устройстве.
-ms.author: pafarley
 ms.date: 06/08/2018
 ms.topic: article
 keywords: Windows 10, uwp, подключенных устройств, удаленными системами, Рим, project rome
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c462bb28de23db735b957870cf456d3649282ae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 79decdcb420e7d1b5cb732a354ccddb1ce5b7404
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574234"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699170"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>Подключенные приложения и устройства (Project Rome)
 

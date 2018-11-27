@@ -1,19 +1,17 @@
 ---
-author: TerryWarwick
 title: Сканер штрихкодов
 description: В этой статье перечисляются функции сканера штрихкодов, доступные для приложений UWP, и приводятся ссылки на статьи с инструкциями по их использованию.
-ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3a58062ba3908287f9009288136814e7e26d3127
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7a4021a2a0fb6c84755730e4f0e9917b10e94ec8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580312"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703957"
 ---
 # <a name="barcode-scanner"></a>Сканер штрихкодов
 

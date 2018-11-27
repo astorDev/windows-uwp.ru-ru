@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Описана концепция программирования событий в приложении среды выполнения Windows при использовании расширений компонентов C#, Visual Basic или VisualC ++ (C + +/ CX) качестве языка программирования и XAML для определения пользовательского интерфейса.
 title: Общие сведения о событиях и перенаправленных событиях
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
-ms.author: jimwalk
 ms.date: 07/12/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ec2986594b043fa088450609e655f4b56b95e25
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7f24543c1afcd9c154788cc4be03434384f00f0c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570590"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708031"
 ---
 # <a name="events-and-routed-events-overview"></a>Общие сведения о событиях и перенаправленных событиях
 
@@ -149,7 +147,7 @@ Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As Pointer
 End Sub
 ```
 
-**Примечание**Visual Studio и ее рабочей области конструирования XAML обычно продвижение метод обработки экземпляра вместо ключевое слово **Handles** . Причина заключается в том, что установка подключения обработчика событий в XAML является частью стандартного рабочего процесса дизайнер-разработчик, а подход с использованием ключевого слова **Handles** несовместим с подключением обработчиков событий в XAML.
+**Примечание**Visual Studio и ее рабочей области конструирования XAML обычно продвижение метод обработки экземпляра вместо ключевого слова **Handles** . Причина заключается в том, что установка подключения обработчика событий в XAML является частью стандартного рабочего процесса дизайнер-разработчик, а подход с использованием ключевого слова **Handles** несовместим с подключением обработчиков событий в XAML.
 
 В C + +/ CX, можно также использовать **+=** синтаксиса, но существуют отличия от базовой формы C#:
 
@@ -267,7 +265,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 -   Для его свойства [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) установлено значение [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006).
 -   Значение свойства элемента **Background** или **Fill** не равно **null**. Значение **null** свойства [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) означает, что элемент прозрачен и проверка нажатия не может быть выполнена. (Чтобы сделать элемент прозрачным, но доступным для проверки нажатия, используйте значение свойства кисти [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061), а не **null**.)
 
-**Примечание** **Фон** и **Fill** не определяются элементом [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), а определяются различными производными классами, например, [**элемент управления**](https://msdn.microsoft.com/library/windows/apps/br209390) и [**фигуры**](/uwp/api/Windows.UI.Xaml.Shapes.Shape). Но применения кистей, которые вы используете для свойств переднего и заднего планов, одинаковы для проверки нажатия и событий ввода, независимо от того, какой подкласс реализует свойства.
+**Примечание** **Фона** и **Fill** не определяются элементом [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), а определяются различными производными классами, например, [**элемент управления**](https://msdn.microsoft.com/library/windows/apps/br209390) и [**фигуры**](/uwp/api/Windows.UI.Xaml.Shapes.Shape). Но применения кистей, которые вы используете для свойств переднего и заднего планов, одинаковы для проверки нажатия и событий ввода, независимо от того, какой подкласс реализует свойства.
 
 -   Если элемент является элементом управления, для его свойства [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) должно быть установлено значение **true**.
 -   У элемента в макете должны быть фактические размеры. Элемент, [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) и [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) которого равны 0, не вызывает события ввода.

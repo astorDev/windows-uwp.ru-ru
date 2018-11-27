@@ -1,8 +1,6 @@
 ---
-author: daneuber
 title: Освещение XAML
 description: Объекты Light используются в сочетании с SceneLightingEffect для имитации динамического освещения и отражений.
-ms.author: jimwalk
 ms.date: 06/28/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -12,12 +10,12 @@ dev_langs:
 - vb
 - cppcx
 - cppwinrt
-ms.openlocfilehash: fae2a222ae20c64e8e8adb2abfa973d62216239e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7d66eaa77f86deffd59ebc81360ccb8183afd7d6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580249"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700502"
 ---
 # <a name="xaml-lighting"></a>Освещение XAML
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 14C23FE6-3EAF-445E-85C1-DF188A7822CA
-description: Используйте примеры кода в этом разделе, чтобы узнать больше об использовании API отправки Microsoft Store.
+description: Используйте примеры кода в этом разделе для получения дополнительных сведений об использовании API отправки Microsoft Store.
 title: Примеры кода для API отправки
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, API отправки Microsoft Store, примеры кода
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b9c2acbdd6c45c00ba96bdc11a8273a66a67116
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f60668ba81bbaefe2c190f7212618684797366bf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558176"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707935"
 ---
 # <a name="code-examples-for-the-submission-api"></a>Примеры кода для API отправки
 

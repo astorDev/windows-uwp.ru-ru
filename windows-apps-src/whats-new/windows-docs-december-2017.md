@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Что нового в документации Windows в декабре 2017г.— разработка приложений UWP
 description: Новые возможности, видео и руководства для разработчиков добавлены в документацию для разработчиков Windows 10 в декабре 2017г.
 keywords: новые возможности, обновления, компоненты, руководство разработчика, Windows 10, декабрь
-ms.author: quradic
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 394dbdb5ae9065aa9424a470ad2e9295ddd63c8d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c9b4c834c646aed7953dc2b0f992dea579d8b9fd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560905"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701039"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Что нового в документации для разработчиков Windows в декабре 2017г.
 

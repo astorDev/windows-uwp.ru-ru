@@ -1,21 +1,19 @@
 ---
-author: stevewhims
 Description: Use the Windows.Globalization.DateTimeFormatting API with custom templates and patterns to display dates and times in exactly the format you wish.
 title: Использование шаблонов для форматирования даты и времени
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/09/2017
 ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
-ms.openlocfilehash: 04a0288d0b28c12eb68cf56225747224e8df9777
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9a86d0b29b39ecb4d2793e641c8c53f6c2a4e3c0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577531"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705179"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>Использование шаблонов для форматирования даты и времени
 
@@ -115,7 +113,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` — идентификатор ресурса, который ссылается на локализуемый ресурс в файле ресурсов (.resw). Для языка по умолчанию — английский язык (США), этому идентификатору будет задано значение "{0} | {1}«вместе с комментарий, указывающий, что»{0}» — это дата и "{1}«— это время. Таким образом, переводчики могут настраивать элементы формата нужным образом. Например, они могут изменить порядок элементов, если для того или иного языка или региона естественнее указывать время перед датой. Они также могут заменить "|" другим знаком разделения.
+`CustomDateTimeFormatString` — идентификатор ресурса, который ссылается на локализуемый ресурс в файле ресурсов (.resw). Для языка по умолчанию — английский язык (США), этому идентификатору будет задано значение "{0} | {1}«вместе с комментарием, это означает, что»{0}» — это дата и "{1}«— это время. Таким образом, переводчики могут настраивать элементы формата нужным образом. Например, они могут изменить порядок элементов, если для того или иного языка или региона естественнее указывать время перед датой. Они также могут заменить "|" другим знаком разделения.
 
 Другой способ реализовать этот пример — запросить у двух модулей форматирования их нестандартные шаблоны формата, объединить их вместе, а затем создать третий модуль форматирования из результирующего нестандартного шаблона формата.
 

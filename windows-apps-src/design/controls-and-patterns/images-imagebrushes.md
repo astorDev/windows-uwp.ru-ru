@@ -1,21 +1,19 @@
 ---
-author: Jwmsft
 Description: Learn how to integrate images into your app, including how to use the APIs of the two main XAML classes, Image and ImageBrush.
 title: Изображения и кисти изображений
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c0fcd158dac77b3b3322167b82131e51f62390f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: af6dff9c0cf8aad1f9d7df7f94cc2af099a2ca1e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568309"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705986"
 ---
 # <a name="images-and-image-brushes"></a>Изображения и кисти изображений
 
@@ -58,7 +56,7 @@ ms.locfileid: "7568309"
 
 ![Пример элемента Image](images/Image_Licorice.jpg)
 
-В этом примере свойство [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) определяет расположение изображения, которое следует отобразить. Вы можете задать источник абсолютный URL-адрес (например, http://contoso.com/myPicture.jpg) или URL-адрес, который является относительным для структуре упаковки вашего приложения. В нашем примере мы помещаем файл изображения "licorice.jpg" в корневую папку проекта и объявляем параметры проекта, которые содержат этот файл.
+В этом примере свойство [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) определяет расположение изображения, которое следует отобразить. Вы можете задать источник абсолютный URL-адрес (например, http://contoso.com/myPicture.jpg) или URL-адрес, который является относительным структуре упаковки вашего приложения. В нашем примере мы помещаем файл изображения "licorice.jpg" в корневую папку проекта и объявляем параметры проекта, которые содержат этот файл.
 
 ### <a name="imagebrush"></a>ImageBrush
 

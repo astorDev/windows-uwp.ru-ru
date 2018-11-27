@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Важные изменения в Direct3D11 по сравнению с Direct3D9
 description: В этой статье рассматриваются основные различия между DirectX 9 и DirectX 11.
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx, direct3d 9, direct3d 11, изменения
 ms.localizationpriority: medium
-ms.openlocfilehash: 969d8f2620adbc289c1f4c89242e0282901357c2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ecdd8591efb3920d2cfe333aa8ec02c65c1a1465
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563970"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700432"
 ---
 # <a name="important-changes-from-direct3d-9-to-direct3d-11"></a>Важные изменения в Direct3D 11 по сравнению с Direct3D 9
 

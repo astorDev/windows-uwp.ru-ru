@@ -1,20 +1,18 @@
 ---
-author: manoskow
 Description: Learn how to create effective and user-focused notifications that make your users productive and happy.
 title: Руководство по взаимодействию с Пользователем всплывающего уведомления
 label: Toast UX Guidance
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, uwp, уведомления, коллекция, группы, взаимодействие с пользователем, руководство по взаимодействию с пользователем, руководство, действие, всплывающее уведомление, центр уведомлений, noninterruptive, эффективных уведомления, неинтрузивного уведомления, активные, управление, упорядочение
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d9c33a4fa4b9c408927292b7def38f42d53b816
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 17861760ea5640eca01d3e69c1ed36a023c8f9d3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559577"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702352"
 ---
 # <a name="toast-notification-ux-guidance"></a>Руководство по взаимодействию с Пользователем уведомлений всплывающего уведомления
 Уведомления — необходимую часть современных батареи; Эти параметры позволяют пользователям работать более эффективной работы и запланированного с приложений и веб-сайты, а также текущей Оставайтесь с все обновления. Тем не менее уведомления могут быстро включать полезно overbearing и назойливой, если они не предназначены способом, ориентированных на пользователя. Уведомления одного щелчка правой кнопкой мыши от будут отключены и маловероятно, как только они будут отключены, они будет включена снова.  Поэтому убедитесь, что уведомления уважительно места на экране пользователя и времени, чтобы оставить этот канал интереса к открытым.

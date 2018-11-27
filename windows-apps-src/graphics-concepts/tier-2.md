@@ -4,17 +4,15 @@ description: Поддержка второго уровня потоковых �
 ms.assetid: 111A28EA-661A-4D29-921A-F2E376A46DC5
 keywords:
 - Уровень 2
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fac8780995231ce56d1264ea8a1a5cb52fd9a3d0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6f9f9a69c0e30459929d1e31084ea88b3f7ebbd0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566449"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704232"
 ---
 # <a name="tier-2"></a>Уровень 2
 

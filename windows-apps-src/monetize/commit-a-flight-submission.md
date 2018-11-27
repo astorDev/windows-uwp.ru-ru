@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: Используйте этот метод в API отправки Microsoft Store для фиксации отправки тестового пакета новых или обновленных в центр партнеров.
 title: Фиксация отправки тестового пакета
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, фиксация отправки тестируемой возможности
 ms.localizationpriority: medium
-ms.openlocfilehash: 58293a73589c7d2780360df24bcc24f38335f1e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 820e10695cce2d6242a51b0017d2fe3981cf77b1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581493"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702658"
 ---
 # <a name="commit-a-package-flight-submission"></a>Фиксация отправки тестового пакета
 

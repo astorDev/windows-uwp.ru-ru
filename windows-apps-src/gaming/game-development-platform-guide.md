@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Игровые технологии для приложений универсальной платформы Windows (UWP)
 description: В этом руководстве содержатся сведения о технологиях, доступных для разработки игр универсальной платформы Windows (UWP).
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, технологии, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: c6896bda0498483efb4d77e1fa2a6ef82e0f8789
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6d2ebad640849cd81d6a2704f89ca1f05cc1b27
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576839"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707677"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>Технологии игр для приложений UWP
 

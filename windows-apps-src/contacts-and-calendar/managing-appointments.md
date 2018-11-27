@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: Пространство имен Windows.ApplicationModel.Appointments позволяет создавать встречи в приложении календаря пользователя и управлять ими.
 title: Управление встречами
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, встречи, календарь
 ms.localizationpriority: medium
-ms.openlocfilehash: 345bbabb2bd80f0cbb8465941bec07c7172156e8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 805383d243008f839b04c98906edd3beb52d581a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562129"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706149"
 ---
 # <a name="manage-appointments"></a>Управление встречами
 

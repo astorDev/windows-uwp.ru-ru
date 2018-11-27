@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: Создание и регистрация фоновой задачи, выполняемой вне процесса
 description: Создайте класс фоновой задачи, выполняемой вне процесса, и зарегистрируйте его для выполнения, когда приложение не работает на переднем плане.
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
-ms.author: twhitney
 ms.date: 07/02/2018
 ms.topic: article
 keywords: Windows 10, uwp, фоновой задачи
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 8d32b4559e91cc898944f3767d4b082935359d49
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eb6cde0c3c31f0116c65e5d5dc4a0d8ae4a1b540
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553601"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704545"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>Создание и регистрация фоновой задачи, выполняемой вне процесса
 
@@ -43,7 +41,7 @@ ms.locfileid: "7553601"
 3.  Чтобы на проект фоновых задач добавьте новый класс, реализующий интерфейс [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) . Метод [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) — это обязательная точка входа, будет вызываться при активации указанного события; Этот метод необходим в каждой фоновой задаче.
 
 > [!NOTE]
-> Класс фоновой задачи сам&mdash;и все остальные классы в фоновой задаче&mdash;должны быть **открытые** классы, которые являются **запечатанными** (или **последний**).
+> Класс фоновой задачи сам&mdash;и все остальные классы в фоновой задаче&mdash;должны быть **открытые** классы, которые являются **запечатанными** (или **окончательное**).
 
 В следующем примере кода показана очень простая отправная точка для класса фоновой задачи.
 
@@ -421,7 +419,7 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 2.  Перейдите на вкладку **Объявления**.
 3.  В раскрывающемся списке **Доступные объявления** выберите **Фоновые задачи** и щелкните **Добавить**.
 4.  Установите флажок **Системное событие**.
-5.  В **точка входа:** textbox, введите пространство имен и имя вашего фонового класса в этом примере использовано Tasks.ExampleBackgroundTask.
+5.  В **точка входа:** в текстовое поле введите пространство имен и имя вашего фонового класса в этом примере использовано Tasks.ExampleBackgroundTask.
 6.  Закройте конструктор манифестов.
 
 Следующий элемент расширений добавляется в файл Package.appxmanifest для регистрации фоновой задачи:

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Справочник по переносу с OpenGL ES 2.0 на Direct3D 11
 description: Используйте эти справочные разделы для поиска соответствий API и коротких примеров кода при переносе из OpenGL ES 2.0 в Direct3D 11.
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 14259fb6949eaa100d51fbdbda6f96bd07a4fa80
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e3b86054048aaa6aa80f37f66ebc57ab9b8e6b50
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563944"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707760"
 ---
 # <a name="opengl-es-20-to-direct3d-11-reference"></a>Справочник по переходу с OpenGL ES 2.0 на Direct3D 11
 

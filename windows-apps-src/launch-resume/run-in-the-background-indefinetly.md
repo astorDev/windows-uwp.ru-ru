@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Выполнение в фоновом режиме в течение неограниченного срока
 description: Используйте возможность extendedExecutionUnconstrained для выполнения фоновой задачи или расширенного сеанса выполнения в фоновом режиме в течение неограниченного срока.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: фоновая задача, расширенное выполнение, ресурсы, ограничения, фоновой задачи
-ms.author: twhitney
 ms.date: 10/3/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eb6e0735620c4a940d3414f22aaa4f09bb608424
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aedd948fe58efcc3edc160db971478189d9cb4ad
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554082"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698938"
 ---
 # <a name="run-in-the-background-indefinitely"></a>Выполнение в фоновом режиме в течение неограниченного срока
 

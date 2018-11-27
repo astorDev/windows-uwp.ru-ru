@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: Работа с символиками сканера штрихкодов
 description: Эта статья содержит сведения о символиках сканера штрихкодов.
-ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 91e09fd881ea5ce2b5ae6482148cdbb730c7ef17
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 690b6b8ee688f62dcae375ed48e07797c921bf43
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582344"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703970"
 ---
 # <a name="working-with-symbologies"></a>Работа с символиками
 [Символика штрихкодов](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies) — это сопоставление данных с конкретным форматом штрихкодов. Распространенным символикам относятся UPC, Code 128, QR Code и т. д.  Сканер штрихкодов универсальной платформы Windows API-интерфейсы позволяют приложению управлять тем, как сканер обрабатывает эти символики, без ручной настройки сканера. 

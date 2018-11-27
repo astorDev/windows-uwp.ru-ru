@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: Объявления Bluetooth
 description: Этот раздел содержит статьи о том, как интегрировать объявления Bluetooth с низким энергопотреблением (LE) c приложениями универсальной платформы Windows (UWP) при помощи пользователя API AdvertisementWatcher и AdvertisementPublisher.
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f850cfb811260758377d5404e01c8e540e7ec2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e9eafde0596ad3156f52a7a2f0a1566444a9836a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571675"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708484"
 ---
 # <a name="bluetooth-le-advertisements"></a>Объявления Bluetooth LE
 

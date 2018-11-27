@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how to capture and recognize long-form, continuous dictation speech input.
 title: Включение непрерывной диктовки
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
 keywords: речь, голос, распознавание речи, естественный язык, диктовка, ввод, взаимодействие с пользователем
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ea7c0b92c5900e468023dd5b972942a89c2833c3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 839dc024204ec9b76ffe621a35cbbbaffc248d02
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557740"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705036"
 ---
 # <a name="continuous-dictation"></a>Непрерывная диктовка
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: D677E126-C3D6-46B6-87A5-6237EBEDF1A9
 description: Используйте этот метод в API отправки в Microsoft Store для удаления существующей отправки надстройки.
 title: Удаление отправки надстройки
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправка надстройки, удаление, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: ca534cfc7c38dba9d77749e17f15dd66766de7ca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cdcd74b86ce846f19f8a4eb912781762adb66a2d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581568"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700329"
 ---
 # <a name="delete-an-add-on-submission"></a>Удаление отправки надстройки
 

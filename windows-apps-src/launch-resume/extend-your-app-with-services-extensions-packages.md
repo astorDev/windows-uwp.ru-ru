@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: Расширение приложения за счет служб, расширений и пакетов
 description: Узнайте, как создать фоновую задачу, которая выполняется при обновлении приложения магазина универсальной платформы Windows (UWP).
-ms.author: twhitney
 ms.date: 05/7/2018
 ms.topic: article
 keywords: Windows 10, uwp, расширения, разбить службы приложения, пакет, расширения
 ms.localizationpriority: medium
-ms.openlocfilehash: 624d52ff96fb2537afa3affb2d842aa29e1e6667
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 110fa8ec9feba1f54155d41b4c726ffb28f71630
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579502"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703078"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>Расширение приложения за счет служб, расширений и пакетов
 

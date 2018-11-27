@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Запуск приложения с помощью автозапуска
 description: Автозапуск можно использовать для добавления приложения в список вариантов при подключении пользователем устройств к компьютеру. Это могут быть как устройства томов, такие как USB-устройства флэш-памяти, SD-карты или DVD-диски, так и прочие устройства, такие как камеры или проигрыватели мультимедиа.
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98c537ef3b2a5d002644cc554eae72b89a1799b0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558841"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699101"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Запуск приложения с помощью автозапуска
 

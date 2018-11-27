@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: Утверждение и включить модели устройства PointOfService
 description: Узнайте о утверждения PointOfService и включить модели
-ms.author: jken
 ms.date: 06/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: df9c4764b8f7d752a132d6759054660f481cce55
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7169848084b587793ba1537ea3d6ad78d31892d5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582314"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698968"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>Утверждение и включить модели POS-устройства
 

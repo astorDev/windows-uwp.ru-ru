@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: Узнайте, как включить покупки из приложения и пробные версии в приложениях UWP, предназначенных для выпусков Windows 10 до версии 1607.
 title: Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 keywords: uwp, покупки из приложения, IAP, надстройки, пробные версии, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 28fe27cc4464598414fec11d6812e2e9ea377aff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 72f5875721d17bda79842989c1ac22475a06e938
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581994"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700236"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store
 

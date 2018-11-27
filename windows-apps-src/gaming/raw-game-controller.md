@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Необработанное игровое устройство управления
 description: API-интерфейсы необработанного игрового устройства управления Windows.Gaming.Input позволяют считывать входные данные практически с любых типов игровых устройств управления.
 ms.assetid: 2A466C16-1F51-4D8D-AD13-704B6D3C7BEC
-ms.author: wdg-dev-content
 ms.date: 03/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, игры, ввод, необработанное игровое устройство управления
 ms.localizationpriority: medium
-ms.openlocfilehash: c57db3f9604e20d0dc83d6c3cf2ced87b1f5dcc1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7b5f4d49ad49cf9f9065fe17788456e9dd2a4a4e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577900"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702605"
 ---
 # <a name="raw-game-controller"></a>Необработанное игровое устройство управления
 

@@ -1,18 +1,16 @@
 ---
-author: Jwmsft
 Description: View multiple parts of your app in separate windows.
 title: Отображение нескольких представлений для приложения
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 048b62e5131852c917b6ec6cd66273760509ef02
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 107c904dc4b89941c0f453efd830504d2d032534
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570490"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708434"
 ---
 # <a name="show-multiple-views-for-an-app"></a>Отображение нескольких представлений для приложения
 

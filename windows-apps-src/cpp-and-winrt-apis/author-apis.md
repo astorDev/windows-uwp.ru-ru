@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: В этом разделе показано, как создавать API-интерфейсы C++/ WinRT, используя базовую структуру **winrt::implements** прямо или косвенно.
 title: Создание API-интерфейсов с помощью C++/WinRT
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 21670e0908a212341d401b4cbca314a9242b26a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7fd543d7c3ad9dec878cc02b14a79c254d91b4be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580820"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706009"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание API-интерфейсов с помощью C++/WinRT
 
@@ -283,7 +281,7 @@ iclosable.Close();
 В случае, когда у вас есть объект интерфейса, и повлияет на том, что интерфейс от вашей реализации затем вы можете получить обратно с помощью шаблона функции [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) реализации. Опять же, это метод, который позволяет избежать вызовов виртуальных функций и перейти непосредственно к реализации.
 
 > [!NOTE]
-> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, необходимо вызвать [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) вместо [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
+> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, затем необходимо вызвать [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) вместо [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
 
 Вот пример. Существует еще один пример в [Реализуйте класс пользовательского элемента управления **BgLabelControl** ](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
 

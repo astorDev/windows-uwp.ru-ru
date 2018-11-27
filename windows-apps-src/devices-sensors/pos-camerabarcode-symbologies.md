@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: Символики, поддерживаемые сканером штрихкодов на базе камеры
 description: Символики, поддерживаемые сканером штрихкодов на базе камеры
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: c74e72c826687c2b21284c169c345e145505e104
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ecb40528ee0104a2e25b5e95499c4404057eba1f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576774"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708104"
 ---
 # <a name="symbologies"></a>Символики
 В этой статье приведены примеры штрихкодов для каждой из символик, поддерживаемых программным декодером штрихкодов в Windows 10, в том числе UPC/EAN, Code 39, Code 128, Interleaved 2 of 5, Databar Omnidirectional, Databar Stacked, QR Code и GS1DWCode.

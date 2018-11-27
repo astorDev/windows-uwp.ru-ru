@@ -4,17 +4,15 @@ description: Формат текстур BC1 предназначен для н�
 ms.assetid: 8C53ACDD-72ED-4307-B4F3-2FCF9A9F53EC
 keywords:
 - Непрозрачные и 1-разрядные альфа-текстуры
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 672d7b2ddc913ea3a966fbd0a095367521a27d7c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4227a3ad77eadaa40e47420a5fdab6d65c875da5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577541"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703228"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>Непрозрачные и 1-разрядные альфа-текстуры
 

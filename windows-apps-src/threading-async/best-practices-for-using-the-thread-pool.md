@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: Рекомендации по использованию пула потоков
 description: Этот раздел содержит рекомендации по работе с пулом потоков.
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, поток, пул потоков
 ms.localizationpriority: medium
-ms.openlocfilehash: ff607e3b39ea9d9a3731cc1f231fe1eb27b0b155
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6c004feabf561c5a94fadba858762bf683c9ff0e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576698"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699905"
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>Рекомендации по использованию пула потоков
 

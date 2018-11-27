@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Стиль письма
 description: Использование подходящего стиля и тона играет важную роль в том, чтобы текст в приложении представлял собой неотъемлемую его часть.
 keywords: UWP, Windows 10, текст, письмо, стиль, тон, проектирование, пользовательский интерфейс, взаимодействие с пользователем
-ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 500eb490083dfa631f9ff84195ec3ae86027e3ab
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b09265164ccd922ab310c06e6c2bd14b6d7a841c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576102"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697064"
 ---
 # <a name="writing-style"></a>Стиль письма
 

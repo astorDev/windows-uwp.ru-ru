@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных о конверсиях по каждому каналу для надстройки в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение конверсий надстройки по каналу
-ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, конверсии надстройки, канал
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf4e0f2cad0ea497e7d97c9b415ab385703c5c4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1b1cbc33b2ce53ea7f851e78433b74b103e5a035
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568515"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705268"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>Получение конверсий надстройки по каналу
 

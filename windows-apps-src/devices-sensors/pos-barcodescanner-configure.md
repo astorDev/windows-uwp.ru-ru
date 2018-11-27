@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: Настройка сканера штрихкодов
 description: Узнайте, как настроить сканер штрихкодов его предполагаемым.
-ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 07198b382be911f30016f2106949d2dea751afa5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8f88b376dca80043f88260700bb7ef4168b3a445
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571865"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703764"
 ---
 # <a name="configure-a-barcode-scanner"></a>Настройка сканера штрихкодов
 

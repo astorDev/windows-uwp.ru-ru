@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Что нового в документации Windows в сентябре 2018 г. — Разработка приложений UWP
 description: Новые возможности, видео, примеры и руководства для разработчиков добавлены в документацию для сентября 2018 разработчиков Windows 10.
 keywords: новые возможности, обновления, компоненты, руководство разработчика, Windows 10 сентября
-ms.author: quradic
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 918fd0208d6af17c25ad184a856b2a87a6f61791
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: 16ddf00e88842bc6a83ecf759427984a50f5b4a9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7426271"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701884"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Что нового в документации для разработчиков Windows в сентябре 2018 г.
 

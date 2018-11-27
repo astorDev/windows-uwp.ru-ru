@@ -1,18 +1,16 @@
 ---
 title: Средство устранения проблем с совместимостью программ в ARM
-author: msatranjr
 description: Руководство по регулированию настроек совместимости в случае неправильной работы приложения в ARM
-ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, постоянно подключенный, средство устранения неполадок с совместимостью, windows в ARM
 ms.localizationpriority: medium
-ms.openlocfilehash: 4765ad324e90167c7279c9245bccd840bce1163d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 763b00a5790274d81b6daa2838ef926936e458db
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572324"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701141"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>Средство устранения проблем с совместимостью программ в ARM
 Эмуляция для поддержки приложений x86— новая функция, созданная для Windows 10 в ARM64. Иногда эмуляция выполняет оптимизации, которые не повышают удобство работы. Можно использовать средство устранения проблем с совместимостью программ для переключения параметров эмуляции для вашего приложения x86, уменьшая число оптимизаций по умолчанию и потенциально повышая совместимость.

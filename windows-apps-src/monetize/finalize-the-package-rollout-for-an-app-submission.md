@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: Используйте этот метод в API отправки в Microsoft Store, чтобы завершить выпуск пакета для отправки приложения.
 title: Завершение выпуска для отправки приложения
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, выпуск пакета, отправка приложения, завершение
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac0ebcef45bc19bd38381a3c6fdfa5d02276be6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c8fe211268190ac269018a6bd47acb4b824d2075
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567124"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702998"
 ---
 # <a name="finalize-the-rollout-for-an-app-submission"></a>Завершение выпуска для отправки приложения
 

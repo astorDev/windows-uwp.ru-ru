@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: Пользовательские манипуляции, выполняемые с помощью InteractionTracker
 description: Используйте API InteractionTracker для создания пользовательских взаимодействий с манипуляциями.
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, анимация
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a991d692b4ba4c7a221932218a7d25e48fe16ca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9d2c965bcfbf81efe73ce8aff93cdb8b31163fbd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567629"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697054"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a>Пользовательские взаимодействия с манипуляциями, выполняемые с помощью InteractionTracker
 

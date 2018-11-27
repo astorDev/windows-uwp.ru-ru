@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Контроллер навигации по пользовательскому интерфейсу
 description: Используйте API контроллера навигации по пользовательскому интерфейсу Windows.Gaming.Input для обнаружения и чтения различных устройств ввода для навигации по пользовательскому интерфейсу.
 ms.assetid: 5A14926D-8C2E-4DE8-AAFB-BEEB9BFE91A5
-ms.author: elcowle
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, пользовательский интерфейс, навигация
 ms.localizationpriority: medium
-ms.openlocfilehash: a0ec2790f6dddf93959a8c826602c0ac622a7d23
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7cc879ba89dc3c70ebc08d948b25f31bc30a3c6e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554566"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696403"
 ---
 # <a name="ui-navigation-controller"></a>Контроллер навигации по пользовательскому интерфейсу
 

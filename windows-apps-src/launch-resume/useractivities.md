@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: Продолжение активности пользователей даже на разных устройствах
 description: В этом разделе рассказывается, как помочь пользователям возобновить свою активность в вашем приложении даже на нескольких устройствах.
 keywords: активность пользователя, действия пользователя, временная шкала, кортана просмотр с места остановки, кортана продолжение работы, project rome
-ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e99796decfa5ed434fddee3be4340380e2376a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 98a7697715b456498db3ee5642e2743ae228b3cb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561856"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708061"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Продолжение активности пользователей даже на разных устройствах
 
@@ -157,7 +155,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 ## <a name="summary"></a>Краткий обзор
 
 Можно использовать API [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities), чтобы ваше приложение отображалось на временной шкале и в Кортане.
-* Узнать больше о [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* Дополнительные сведения о [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Ознакомьтесь с [примером кода](https://github.com/Microsoft/project-rome).
 * Посмотрите [более сложные адаптивные карты](http://adaptivecards.io/).
 * Опубликуйте **UserActivity** с iOS, Android или через веб-службу с помощью [Microsoft Graph](https://developer.microsoft.com/graph/).

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: With the package resource indexing (PRI) APIs, you can develop a custom build system for your UWP app's resources. The build system will be able to create, version, and dump PRI files to whatever level of complexity your UWP app needs.
 title: API-интерфейса индексирования ресурсов пакета (PRI) и пользовательские системы сборки
 template: detail.hbs
-ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b85f40fc391df764515d21ba3b334bfe068725c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 617812415d3dcd00ec24d5f55971ae311265b61d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554877"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701373"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>API-интерфейсы индексирования ресурсов пакета (PRI) и пользовательские системы сборки
 С помощью [API-интерфейсов индексирования ресурсов пакета (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690) можно создать настраиваемую систему сборки для ресурсов приложения UWP. Система сборка сможет создавать файлы индекса ресурсов пакета (PRI), управлять версиями и создавать дампы файлов (в формате XML) пакетов (PRI) любого уровня сложности, требуемого приложению UWP. Если вы используете систему сборки, которая применяет средство командной строки MakePri.exe (см. раздел [Компиляция ресурсов вручную с помощью MakePri.exe](makepri-exe-command-options.md)), то для повышения производительности и улучшения управления рекомендуется вызывать API-интерфейсы PRI вместо MakePri.exe.

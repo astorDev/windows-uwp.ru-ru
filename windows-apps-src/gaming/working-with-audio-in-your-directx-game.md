@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Звук для игр
 description: Благодаря сведениям в этом разделе вы научитесь создавать и встраивать музыку и звуки в игры DirectX, а также обрабатывать звуковые сигналы для создания динамичного и позиционного звука.
 ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, звук, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: a0b0ae219ea7fd014b39eb8eb7a09049f7c632a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fd106e07e6359e9289074cb62cec6bf7458ac5bc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582364"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697437"
 ---
 # <a name="audio-for-games"></a>Звук для игр
 

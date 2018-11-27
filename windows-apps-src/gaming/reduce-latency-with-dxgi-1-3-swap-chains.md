@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Сокращение задержки с помощью цепочек буферов DXGI 1.3
 description: DXGI1.3 позволяет сократить фактическую задержку кадров путем ожидания от цепочки буферов сигнала о подходящем моменте для начала отрисовки нового кадра.
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, задержка, dxgi, цепочки буферов, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 51a1dd6d7f1c39d82201d3b9741276a54e4c06a8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ec315cc9ed59a4b3272151f2ee1bb4bde8d9df10
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555639"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697387"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Сокращение задержки с помощью цепочек буферов DXGI 1.3
 

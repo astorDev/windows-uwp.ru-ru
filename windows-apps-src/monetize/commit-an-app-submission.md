@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
 description: Используйте этот метод в API отправки Microsoft Store для фиксации новой или обновленной отправки приложения в центр партнеров.
 title: Фиксация отправки приложения
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, фиксация отправки приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a61fb1568cf85d01a31e5921fa757d3e8c767ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a860239bcd266f577abca3af1cfc994393cae8e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582081"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697367"
 ---
 # <a name="commit-an-app-submission"></a>Фиксация отправки приложения
 

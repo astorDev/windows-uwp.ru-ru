@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: Использование инклинометра
 description: Узнайте, как использовать инклинометр для определения поворотов относительно поперечной, продольной и вертикальной осей.
-ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dd335d56fb2a01ed1b9255f974bcaacd47f623f5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bfd617c3c08cdcb7815010648c6036a5f39ee3ab
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565098"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703844"
 ---
 # <a name="use-the-inclinometer"></a>Использование инклинометра
 

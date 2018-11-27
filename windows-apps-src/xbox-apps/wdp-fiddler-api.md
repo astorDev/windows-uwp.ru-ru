@@ -1,19 +1,17 @@
 ---
-author: WilliamsJason
 title: Справочник по API Fiddler для портала устройств
 description: Узнайте о том, как программно включить или отключить трассировку Fiddler.
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e0faf3a0b6a4f13c0fce24aa093cf94a1e7ee7e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570600"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705156"
 ---
 # <a name="fiddler-settings-api-reference"></a>Справочник по API параметров Fiddler   
 В комплекте средств разработки можно включать и отключать трассировку сети Fiddler с помощью API REST.

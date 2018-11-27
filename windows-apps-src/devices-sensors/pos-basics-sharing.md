@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: Совместное использование устройств PointOfService
 description: Совместное использование периферийные устройства PointOfService с другими
-ms.author: jken
 ms.date: 06/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 591ba592d1c17b03ae29c6fb98ef546bc18b8bdc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 53dc22b2aa35b5e69854f6fb489ff6a454c73bf6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579784"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699091"
 ---
 # <a name="pointofservice-device-sharing"></a>Совместное использование устройств PointOfService
 

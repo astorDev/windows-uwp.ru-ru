@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: Если у вас имеется каталог приложений и надстроек, с помощью API коллекции Microsoft Store и API покупок в Microsoft Store вы можете получить доступ к информации о принадлежности этих продуктов из ваших служб.
 title: Управление правами на продукты из службы
-ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
 keywords: windows 10, uwp, API коллекции Microsoft Store, API покупки Microsoft Store, просмотр продуктов, предоставление продуктов
 ms.localizationpriority: medium
-ms.openlocfilehash: 21be5f50a78dd1bd1ef7c549add04a3b7c494dd1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 68bcee02c07ea8c998927d558521084cb49e9e24
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582254"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697727"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Управление правами на продукты из службы
 

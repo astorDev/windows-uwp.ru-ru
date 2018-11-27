@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: FD381669-F962-465E-940B-AED9C8D19C90
 description: Узнайте, как использовать пространство имен Windows.Services.Store для работы с потребляемыми надстройками.
 title: Поддержка покупок потребляемых надстроек
 keywords: windows 10, uwp, потребляемые, надстройки, покупки из приложения, IAP, Windows.Services.Store
-ms.author: mhopkins
 ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e4687833b55f1456d298b552f5cce897f8b4eaa1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0446269fcbde87dfa25b7bff25f7160335950fba
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572933"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705146"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>Поддержка покупок потребляемых надстроек
 
@@ -48,7 +46,7 @@ ms.locfileid: "7572933"
 Для этих примеров необходимо выполнение следующих предварительных условий:
 * Создан проект Visual Studio для приложения универсальной платформы Windows (UWP), предназначенный для **Windows 10 Anniversary Edition (10.0; сборка 14393)** и более поздних выпусков.
 * У вас есть [создали отправку приложения](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) в центре партнеров, и это приложение опубликовано в магазине. При необходимости можно настроить приложение, чтобы его нельзя было найти в Магазине, пока вы его тестируете. Подробнее см. в нашем [руководстве по тестированию](in-app-purchases-and-trials.md#testing).
-* У вас есть [создан потребляемую надстройку для приложения](../publish/add-on-submissions.md) в центре партнеров.
+* У вас есть [созданный потребляемой надстройки для приложения](../publish/add-on-submissions.md) в центре партнеров.
 
 В коде из этих примеров предполагается следующее:
 * Код выполняется в контексте страницы [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx), которая содержит [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) с именем ```workingProgressRing``` и [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) с именем ```textBlock```. Эти объекты используются для индикации выполнения асинхронной операции и отображения выводимых сообщений, соответственно.

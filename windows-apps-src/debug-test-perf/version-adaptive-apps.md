@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: Приложения с адаптивным к версии кодом
 description: Узнайте, как воспользоваться новыми API, при этом сохраняя совместимость с предыдущими версиями
-ms.author: jimwalk
 ms.date: 09/17/2018
 ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b96fafe380c08c74c4e411c7d559cc961c6da1ed
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8bbe7875fcd35003b1ec35b02da0f1a86a54ef31
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568905"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701984"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Адаптивные к версии приложения: используйте новые API, сохраняя совместимость с предыдущими версиями
 

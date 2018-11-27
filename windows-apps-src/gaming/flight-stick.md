@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Рукоятка управления полетом
 description: Используйте API-интерфейс рукоятки управления полетом Windows.Gaming.Input для чтения ввода из рукоятки тестового накопителя.
 ms.assetid: DC633F6B-FDC9-4D6E-8401-305861F31192
-ms.author: wdg-dev-content
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, ввод, рукоятка управления полетом
 ms.localizationpriority: medium
-ms.openlocfilehash: ebe7695b3f16271f3adedae658c0d62d38d7c078
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5eceb30c62f1e803397aff71d59b560c39736cf9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564249"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707539"
 ---
 # <a name="flight-stick"></a>Рукоятка управления полетом
 

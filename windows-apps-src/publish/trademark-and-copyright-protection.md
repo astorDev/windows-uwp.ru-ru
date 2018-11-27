@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Learn what you can do if you think another app is infringing on your intellectual property rights.
 title: Защита товарных знаков и авторских прав
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
-ms.author: wdg-dev-content
 ms.date: 06/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 68ef1a9372523ea489677620acc039642bfc64ae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 658694e157a526f9090a5dbf387c80087ae1d4fc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572036"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701565"
 ---
 # <a name="trademark-and-copyright-protection"></a>Защита товарных знаков и авторских прав
 

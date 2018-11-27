@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Основные положения примера Marble Maze
 description: В этом документе описаны основные характеристики проекта Marble Maze; например как использование Visual C++ в среде выполнения Windows, как он создается и структурирование и как его сборки.
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
-ms.author: elcowle
 ms.date: 08/22/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, пример, directx, основы
 ms.localizationpriority: medium
-ms.openlocfilehash: f595c8f429c93a13d6342c281a90f3b0f5741621
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 94dd22a6f6b1ace5589104574a695b236c1ebd39
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577025"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704133"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Основные положения примера Marble Maze
 
@@ -74,7 +72,7 @@ ms.locfileid: "7577025"
 -   Используйте сенсорный ввод, A или меню "Пуск" кнопки на контроллере или мышь, чтобы закрыть меню, например таблицу.
 -   Используйте кнопку «Пуск» на контроллере или клавишу P на клавиатуре для приостановки и возобновления игры.
 -   Для перезапуска игры используйте кнопку «Назад» на контроллере или клавишу HOME на клавиатуре.
--   Когда отображается лучших, используйте кнопки "Назад" на контроллере или клавишу Home на клавиатуре для очистки всех результатов.
+-   Если лучших отображается, используйте кнопки "Назад" на контроллере или клавишу Home на клавиатуре для очистки всех результатов.
 
 ##  <a name="code-conventions"></a>Соглашения, касающиеся кода
 

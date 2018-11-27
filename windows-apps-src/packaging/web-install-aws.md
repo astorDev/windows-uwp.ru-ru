@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: Размещение пакетов приложение UWP в AWS для веб-установки
 description: Руководство по настройке AWS веб-сервер для проверки установки приложений через приложение установщика приложений
-ms.author: cdon
 ms.date: 05/30/2018
 ms.topic: article
 keywords: Windows 10, Windows 10, UWP, установщик, AppInstaller, загрузка неопубликованных приложений приложения, связанных с установлен, дополнительных пакетов, AWS
 ms.localizationpriority: medium
-ms.openlocfilehash: f24abac93e2444a3c9f454c8883902e5db4d31be
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 53fe01a1c1a825377e886e042b4eef3868cbf5eb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579089"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696201"
 ---
 # <a name="hosting-uwp-app-packages-on-aws-for-web-install"></a>Размещение пакетов приложение UWP в AWS для веб-установки
 

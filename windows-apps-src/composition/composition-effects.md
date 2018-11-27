@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: Эффекты композиции
 description: API эффектов позволяют разработчикам настраивать отрисовку пользовательского интерфейса.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b943807f6102c80af76fecb650087f4f2e91b9c6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 75af433d80364485b0c12a9540c0d7bb471c4e28
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563763"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697347"
 ---
 # <a name="composition-effects"></a>Эффекты композиции
 

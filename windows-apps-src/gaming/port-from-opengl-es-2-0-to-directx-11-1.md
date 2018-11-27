@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Перенос из OpenGL ES2.0 в Direct3D11
 description: Включает статьи, обзоры и пошаговые руководства по переносу графического конвейера из OpenGL ES 2.0 в Direct3D 11 и среду выполнения Windows.
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d 11, перенос, графика
 ms.localizationpriority: medium
-ms.openlocfilehash: 6421f5a5a71828d5234a11bab9e442a5accecda5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9af5e42a27e21b8a4300edc4b8171f7abc64bac7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581039"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696875"
 ---
 # <a name="port-from-opengl-es-20-to-direct3d-11"></a>Перенос из OpenGL ES 2.0 в Direct3D 11
 

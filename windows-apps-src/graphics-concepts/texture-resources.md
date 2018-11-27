@@ -4,17 +4,15 @@ description: Текстуры — это тип ресурса, использу
 ms.assetid: 016F6CDA-D361-4E6B-BA99-49E915A19364
 keywords:
 - Ресурсы текстур
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f58521e01d46437ba44453b94d12a82bb3e639
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6f52a032b7fe61df67aaf35c57b2ca64ac8eef6a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559170"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701029"
 ---
 # <a name="texture-resources"></a>Ресурсы текстур
 

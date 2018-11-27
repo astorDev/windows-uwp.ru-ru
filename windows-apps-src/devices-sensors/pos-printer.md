@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: POSPrinter
 description: В этой статье перечисляются функции POSPrinter, доступные для приложений UWP, и приводятся ссылки на статьи с инструкциями по их использованию.
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 1adaf2b7df04a6e60d5d2ea37167cd4d5c55c42c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b1b01f366c5a094e538424c57091fb2589eae329
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565201"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704515"
 ---
 # <a name="posprinter"></a>POSPrinter
 

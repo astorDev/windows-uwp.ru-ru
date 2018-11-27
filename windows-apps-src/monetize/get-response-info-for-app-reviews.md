@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: fb6bb856-7a1b-4312-a602-f500646a3119
 description: Используйте этот метод в API отзывов для Microsoft Store, чтобы определять возможность ответа на определенный или любой отзыв о конкретном приложении.
 title: Получение сведений об ответах на отзывы
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, службы Store, API отзывов для Microsoft Store, сведения об ответах
 ms.localizationpriority: medium
-ms.openlocfilehash: 466455a5e8da9364206245f1e0ac10acfed07ee7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0497b5eec67f9204139cd10d4523b534d6c8779f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554000"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698213"
 ---
 # <a name="get-response-info-for-reviews"></a>Получение сведений об ответах на отзывы
 
