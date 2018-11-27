@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных отчетов об ошибках в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение данных системы отчетов для Xbox One игры
-ms.author: mhopkins
 ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, службы Store, API аналитики для Microsoft Store, ошибки
 ms.localizationpriority: medium
-ms.openlocfilehash: 45e494b3e93e2dd6ac23ef1562c32485bf2e7ddb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f9ae7c75fb332e910aa1b63712cf0d230172afd3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560320"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713478"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>Получение данных системы отчетов для Xbox One игры
 
@@ -101,7 +99,7 @@ Authorization: Bearer <your access token>
 | eventType       | строка  | Одна из следующих строк:<ul><li>**crash,**</li><li>**hang,**</li><li>**Сбой памяти**</li></ul>      |
 | market          | string  | Код страны рынка устройства по стандарту ISO 3166   |
 | deviceType      | строка  | Тип устройства, на котором произошла ошибка. Это значение всегда по **консоли**.    |
-| packageName     | string  | Игры уникальное имя пакета, связанного с этой ошибкой.      |
+| packageName     | string  | Пакет уникальное имя игры, связанного с этой ошибкой.      |
 | packageVersion  | string  | Версия пакета игры, связанного с этой ошибкой.   |
 | deviceCount     | integer | Количество уникальных устройств, соответствующих этой ошибке, на указанном уровне агрегирования.  |
 | eventCount      | integer | Количество событий, которые вызваны этой ошибкой, на указанном уровне агрегирования.      |

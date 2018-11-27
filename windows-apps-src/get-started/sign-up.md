@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
 title: Создание учетной записи разработчика
 description: Зарегистрируйте учетную запись разработчика, чтобы размещать свои приложения в Microsoft Store и принимать участие в других программах Майкрософт.
-ms.author: quradic
 ms.date: 4/04/2018
 ms.topic: article
 keywords: windows 10, uwp, регистрация, учетная запись разработчика
 ms.localizationpriority: medium
-ms.openlocfilehash: dc7f887018dc550ff28101acc6187c9b06235f1f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6c15f6df30477f11c8b20afd08fa1c1cd55b34b3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563057"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715852"
 ---
 # <a name="create-a-developer-account"></a>Создание учетной записи разработчика
 

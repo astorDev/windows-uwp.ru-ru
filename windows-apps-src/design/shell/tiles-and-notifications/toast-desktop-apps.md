@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: Discover the different options desktop Win32 apps have for sending toast notifications
 title: Всплывающие уведомления из классических приложений
 label: Toast notifications from desktop apps
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/01/2018
 ms.topic: article
 keywords: Windows 10, uwp, win32, классический, всплывающие уведомления, мост для классических приложений, параметры для отправки всплывающих уведомлений, com-сервер, com-активатор, com, фиктивный com, не com, без com, отправка всплывающего уведомления
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ee44d990ef29fa8281a14c8ad03b6c6ff16a4cf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bab89962bdc7986f7653e39c7e5967a493421f05
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561263"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713757"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Всплывающие уведомления из классических приложений
 

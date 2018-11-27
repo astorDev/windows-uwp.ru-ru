@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Используйте приведенные в этом разделе примеры кода на Python, чтобы подробнее ознакомиться с использованием API отправки в Microsoft Store для отправки трейлеров и параметров игры.
 title: Пример на языке Python — отправка приложения с трейлерами и параметрами игры
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, API отправки в Microsoft Store, примеры кода, параметры игры, трейлеры, дополнительные предложения, python
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c753e51d15b142cdcd7e54b3ed0304d13169b6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 59306e32fe1fcc68978c977b89934e64d85b8cc8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582394"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7713218"
 ---
 # <a name="python-sample-app-submission-with-game-options-and-trailers"></a>Пример на языке Python: отправка приложения с трейлерами и параметрами игры
 

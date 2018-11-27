@@ -2,18 +2,16 @@
 title: Общие задачи шифрования
 description: В данных статьях показан пример кода для типичных задач шифрования универсальной платформы Windows (UWP), включая создание случайных значений, сравнение буферов, преобразования между строками и двоичными данными, копирование в массив байтов и из него и кодирование и декодирование данных.
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bca6496498c9d7a9caaf958fdc7e74dc16ccc98
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d52943ab28ba9cb7544db827528985746585e361
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570194"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7715255"
 ---
 # <a name="common-cryptography-tasks"></a>Общие задачи шифрования
 

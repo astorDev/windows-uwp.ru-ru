@@ -1,19 +1,17 @@
 ---
-author: Karl-Bridge-Microsoft
 ms.assetid: ''
 title: Поддержка Surface Dial (и других устройств с колесиком) в приложении UWP
 description: Пошаговое руководство по добавлению поддержки для Surface Dial (и других устройств с колесиком) в приложении UWP.
 keywords: dial, радиальный, учебник
-ms.author: kbridge
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df0f37fda62a7b673e28a6198758365886b6783
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d8729826c2f372b3d3b5607ce828aaf515e47f3d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579429"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713637"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Учебник: "Поддержка Surface Dial (и других устройств с колесиком) в приложении UWP"
 

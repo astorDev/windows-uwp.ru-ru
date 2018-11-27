@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Узнайте о способах улучшения просматриваемости ваших рекламных блоков.
 title: Оптимизация просматриваемости ваших рекламных блоков
-ms.author: mhopkins
 ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, руководство, просмотры
 ms.localizationpriority: medium
-ms.openlocfilehash: ef815dab027f86e5d73f24ae0355f7f41612fae5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 87e21f4e98c58f79f397c369891212eccb196c18
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558851"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713228"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a>Оптимизация просматриваемости ваших рекламных блоков
 

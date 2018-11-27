@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: To view performance data for the ad units in your apps, use the advertising performance report in Partner Center.
 title: Отчет об эффективности рекламы
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cc47e934ca75eb581808483f7875fea901943b3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a96f6f6593a8ccc6714f67b6f825a6416750b432
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555520"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714889"
 ---
 # <a name="advertising-performance-report"></a>Отчет об эффективности рекламы
 
@@ -60,7 +58,7 @@ ms.locfileid: "7555520"
 | Отношение показов к попыткам  | Процент рекламных запросов, отправленных из вашего приложения, по которым были показаны объявления.  |
 | Переходы  |  Количество переходов пользователей по объявлению в вашем приложении. |
 | CTR  |  Отношение количества переходов по объявлению к количеству его показов. |
-| Просмотры | Процент показов рекламы, которые отображаются в вашем приложении. Дополнительные сведения о том, как это значение рассчитывается см. в разделе [Оптимизация просматриваемости Ваших рекламных блоков](../monetize/optimize-ad-unit-viewability.md). |
+| Просмотры | Процент показов рекламы, которые доступны для просмотра в вашем приложении. Дополнительные сведения о том, как это значение рассчитывается см. в разделе [Оптимизация просматриваемости Ваших рекламных блоков](../monetize/optimize-ad-unit-viewability.md). |
 | Полученные баллы  | Если вы проводите кампанию по [показу рекламы от сообщества](https://docs.microsoft.com/windows/uwp/publish/about-community-ads), этот показатель означает количество баллов, полученных вами для использования рекламного пространства за показ рекламы сообщества в вашем приложении.  |
 | Потраченные баллы  | Если вы проводите кампанию по [показу рекламы от сообщества](https://docs.microsoft.com/windows/uwp/publish/about-community-ads), этот показатель означает количество баллов, потраченных вами на рекламу своего приложения.  |
 

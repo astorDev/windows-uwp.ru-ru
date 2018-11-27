@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: Создание периодического рабочего элемента
 description: Узнайте, как создать периодически повторяющийся рабочий элемент.
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, периодический рабочий элемент, потоки, таймеры
 ms.localizationpriority: medium
-ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 92142bcf084b6504e4c694ca33d2dc8532f1acca
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570317"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715225"
 ---
 # <a name="create-a-periodic-work-item"></a>Создание периодического рабочего элемента
 

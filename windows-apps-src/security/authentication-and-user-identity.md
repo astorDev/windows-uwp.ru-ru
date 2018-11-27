@@ -2,18 +2,16 @@
 title: Проверка подлинности и удостоверение пользователя
 description: В приложениях универсальной платформы Windows (UWP) есть несколько вариантов проверки подлинности пользователя, начиная с простого единого входа (SSO), использующего брокер веб-проверки подлинности до двухфакторной проверки подлинности с высокой степенью безопасности.
 ms.assetid: 53E36DDC-200A-4850-AAF0-07ECA3662BB9
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e41ef25f0d4cce3b36187862936136d84988ad0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3d23f54a371a883de8b56d03ddd153ab2d91c230
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570144"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715041"
 ---
 # <a name="authentication-and-user-identity"></a>Проверка подлинности и удостоверение пользователя
 

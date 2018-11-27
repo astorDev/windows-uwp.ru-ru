@@ -2,18 +2,16 @@
 title: Windows Hello
 description: В этой статье описывается новая технология Windows Hello, которая поставляется в комплекте с операционной системой Windows 10, и рассказывается, как разработчики могут реализовать эту технологию для защиты своих приложений универсальной платформы Windows (UWP) и внутренних служб. Здесь рассматриваются определенные возможности этих технологий, помогающие снизить угрозы от использования стандартных учетных данных, и содержит рекомендации по разработке и развертыванию этих технологий в рамках внедрения Windows 10.
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b2ee216059163e7232d65eb515645d9e7db56b3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ccffc523dd1196c208c2fe0abdb7297c19892279
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581974"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716017"
 ---
 # <a name="windows-hello"></a>Windows Hello
 

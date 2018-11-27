@@ -1,19 +1,17 @@
 ---
-author: Mtoepke
 title: Настройка UWP в среде разработки Xbox
 description: Этапы настройки и тестирования платформы UWP в среде разработки Xbox.
-ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
-ms.openlocfilehash: 2234b7d39f130da03562176f0df878701d524635
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 54bc87e007cc42cb4abe1ca8e01d0c8f3b76792f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554072"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711666"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>Настройка среды разработки UWP для Xbox
 
@@ -25,7 +23,7 @@ ms.locfileid: "7554072"
 
 ## <a name="visual-studio-setup"></a>Настройка Visual Studio
 
-1. Установите Visual Studio 2017, Visual Studio 2015 с обновлением 3 или последний выпуск Visual Studio. Дополнительные сведения и инструкции по установке доступны в разделе [Загрузки и средства для Windows 10](https://dev.windows.com/downloads). Мы рекомендуем использовать последнюю версию Visual Studio, чтобы вы могли получать последние обновления для разработчиков и безопасности.
+1. Установка Visual Studio 2017, Visual Studio 2015 с обновлением 3 или последний выпуск Visual Studio. Дополнительные сведения и инструкции по установке доступны в разделе [Загрузки и средства для Windows 10](https://dev.windows.com/downloads). Мы рекомендуем использовать последнюю версию Visual Studio, чтобы вы могли получать последние обновления для разработчиков и безопасности.
 
 2. Если устанавливается Visual Studio 2017, убедитесь, что выбрана рабочая нагрузка **Разработка универсальной платформы Windows**. Разработчикам C++ следует также установить флажок **Инструменты C++ универсальной платформы Windows** в области **Сводка** справа, в разделе **Разработка универсальной платформы Windows**. Это не является частью установки по умолчанию.
 

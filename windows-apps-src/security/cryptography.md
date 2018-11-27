@@ -2,18 +2,16 @@
 title: Шифрование
 description: В статье содержится обзор функций шифрования, доступных для приложений универсальной платформы Windows (UWP). Подробнее об определенных задачах см. в таблице в конце данной статьи.
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
-ms.openlocfilehash: 0caa3f63d8a92c75bdce10cdb277967dca21fafb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 156c4cc62e1997f5d647c06c87e226fe519de168
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568362"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715344"
 ---
 # <a name="cryptography"></a>Шифрование
 

@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: Отслеживание хода выполнения и завершения фоновых задач
 description: Узнайте, как ваше приложение распознает события выполнения и завершения, сообщаемые фоновой задачей.
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: Windows 10, uwp, фоновой задачи
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 9c71d8a42a71d221f6a20850f1d002be922517be
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 12772d81742815b8d739f61aee9461e64f970ef2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582424"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715862"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>Отслеживание хода выполнения и завершения фоновых задач
 
@@ -36,7 +34,7 @@ ms.locfileid: "7582424"
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>Создание обработчика событий для обработки завершенных фоновых задач
 
 ### <a name="step-1"></a>Шаг 1
-Создайте функцию обработчика событий для обработки завершенных фоновых задач. Этот код должен объем памяти, которая принимает объект [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) и [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) объекта.
+Создайте функцию обработчика событий для обработки завершенных фоновых задач. Этот код должен объем памяти, которая принимает объект [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) и [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) объекта.
 
 Используйте следующий объем памяти для **фоновых задач обработчика событий OnCompleted** .
 

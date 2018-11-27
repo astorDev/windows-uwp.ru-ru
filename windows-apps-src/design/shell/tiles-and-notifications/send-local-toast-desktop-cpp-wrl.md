@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: Learn how Win32 C++ WRL apps can send local toast notifications and handle the user clicking the toast.
 title: Отправка локального всплывающего уведомлений из классических приложений C++ WRL
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 03/7/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, настольный компьютер, всплывающие уведомления, отправка уведомления, отправка локального уведомления, мост для классических приложений, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f1cd95d6dfff6b4c9038fd5a773d1438b1b7176
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8508ed18e216270b901a5462d80238fae0763982
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567440"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713840"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Отправка локального всплывающего уведомлений из классических приложений C++ WRL
 

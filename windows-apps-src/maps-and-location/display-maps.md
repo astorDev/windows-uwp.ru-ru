@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside
 description: Карту можно показывать в исчезающем окне, называемом *карточкой места*, или в полнофункциональном элементе управления с картой.
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
-ms.author: normesta
 ms.date: 03/14/2018
 ms.topic: article
 keywords: windows 10, uwp, карта, расположение, элемент управления картой, представления карты
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b162be26073db6989f9ea13cc7805d2d0f3f0d3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7242bdcedd4380c5593dba2788706ed0fbbc94a4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564786"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714856"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside
 

@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: Передача массивов компоненту среды выполнения Windows
 description: В универсальной платформе Windows (UWP) параметры используются для ввода или вывода, но не для того и другого. Это значит, что содержимое массива, который передается методу, а также сам массив предназначены только для ввода или только для вывода.
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e01c9e5698ec1d7a23298b46f6bde9e1bbf36b04
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 60c2e2221cd174ffd75a45d6fe8e2f66744d67a0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553073"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711699"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>Передача массивов компоненту среды выполнения Windows
 

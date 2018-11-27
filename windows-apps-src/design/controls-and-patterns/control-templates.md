@@ -1,5 +1,4 @@
 ---
-author: Jwmsft
 Description: You can customize a control's visual structure and visual behavior by creating a control template in the XAML framework.
 MS-HAID: dev\_ctrl\_layout\_txt.control\_templates
 MSHAttr: PreferredLib:/library/windows/apps
@@ -8,17 +7,16 @@ title: Шаблоны элементов управления
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ce72c40d3b97942612fc2979d026c965727512e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ad66d8797234d01673518256d6f5376ce93245f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576122"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714613"
 ---
 # <a name="control-templates"></a>Шаблоны элементов управления
 
@@ -55,7 +53,7 @@ ms.locfileid: "7576122"
 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) связывает значение свойства в шаблоне элемента управления и значение какого-либо другого предоставленного свойства элемента управления-шаблона. TemplateBinding может использоваться только в пределах определения ControlTemplate в XAML. Подробнее см. в разделе [Расширение разметки TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md).
 
 > [!NOTE]
-> Начиная с Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), можно использовать расширения разметки [**x: Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) в местах использовать [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Подробнее см. в разделе [Расширение разметки TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md).
+> Начиная с Windows 10, версия 1809[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk), можно использовать расширения разметки [**x: Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) в местах, используйте [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Подробнее см. в разделе [Расширение разметки TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md).
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">

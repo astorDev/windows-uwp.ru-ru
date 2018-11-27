@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Чтобы продолжить сетевое взаимодействие, пока оно не в фоновом режиме, приложение может использовать фоновые задачи и посредник сокетов или триггеры канала управления.
 title: Передача данных по сети в фоновом режиме
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
-ms.author: stwhi
 ms.date: 06/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f206700360b6590a88b76f04531c9c6b1e94414f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555386"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713571"
 ---
 # <a name="network-communications-in-the-background"></a>Передача данных по сети в фоновом режиме
 Чтобы продолжить сетевое взаимодействие, когда оно не находится на переднем плане, ваше приложение может использовать фоновые задачи и один из этих двух вариантов.
@@ -24,7 +22,7 @@ ms.locfileid: "7555386"
 - Используйте [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) для активации фоновой задачи при получении пакета и возникновении необходимости выполнить кратковременную задачу. После выполнения задачи фоновая задача должна завершить работу для экономии энергии.
 - Используйте [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) для активации фоновой задачи при получении пакета и возникновении необходимости выполнить долговременную задачу.
 
-**Условия, связанные с сетью и флаги**
+**Сетевые условия и флаги**
 
 - Добавьте условие **InternetAvailable** в фоновую задачу [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) для задержки активации фоновой задачи, пока не заработает сетевой стек. Это условие экономит энергию, так как фоновая задача не будет выполняться, пока нет сети. Это условие не поддерживает активацию в режиме реального времени.
 

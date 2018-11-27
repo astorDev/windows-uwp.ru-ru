@@ -1,27 +1,25 @@
 ---
-author: jwmsft
 description: Расширение разметки Binding преобразовывается во время загрузки XAML в экземпляр класса Binding.
 title: Расширение разметки Binding'
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c35f8794cb77d7a05f2861e1d4d45023dc216129
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b197ea668ec73711b7a9c63e516b4ec9a5f54d62
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572646"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713990"
 ---
 # <a name="binding-markup-extension"></a>Расширение разметки {Binding}
 
 
 **Примечание**новый механизм привязки доступен для Windows10, который оптимизирован для повышения быстродействия и производительности и разработчика. См. раздел [Расширение разметки: {x:Bind}](x-bind-markup-extension.md).
 
-**Примечание**Общие сведения об использовании данных привязки в вашем приложении с **{Binding}** (и комплексное сравнение между **{x: Bind}** и **{Binding}**), см. в разделе [подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Примечание**Общие сведения об использовании данных привязки в вашем приложении с **{Binding}** (и комплексное сравнение между **{x: Bind}** и **{Binding}**) см. в разделе [подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 Для привязки свойств элементов управления к значениям от источника данных, например кода используется расширение разметки **{Binding}** . Расширение разметки **{Binding}** преобразовывается во время загрузки XAML в экземпляр класса [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Этот объект привязки получает значение из свойства в источнике данных и передает его в свойство в элементе управления. Объект привязки можно дополнительно настроить таким образом, чтобы он регистрировал изменения значений свойства источника данных и сам обновлялся на основании этих данных. Кроме того, его можно настроить, чтобы он отправлял изменения значения элемента управления назад к свойству источника. Свойство, являющееся целью привязки данных, должно быть свойством зависимостей. Подробнее см. в разделе [Общие сведения о свойствах зависимостей](dependency-properties-overview.md).
 
@@ -82,7 +80,7 @@ ms.locfileid: "7572646"
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | Задает значение, которое отображается, когда значение источника разрешается, но оно явно равно **null**. |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | Задает время обновления источника привязки. Если значение не задано, по умолчанию используется **Default**. |
 
-**Примечание**Если вы преобразование разметки из **{x: Bind}** **{Binding}**, а затем следует учитывать различия значения по умолчанию для свойства **режим** .
+**Примечание**при преобразовании разметки **{x: Bind}** для **{Binding}**, то следует учитывать различия в основной значения для свойства **режим** .
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) и **ConverterLanguage** связаны сценарием преобразования значения или типа из источника привязки в тип или значение, совместимые со свойством целевого объекта привязки. Более подробную информацию и примеры см. в разделе "Преобразования данных" статьи [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
@@ -91,7 +89,7 @@ ms.locfileid: "7572646"
 
 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832), [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) и [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) указывают источник привязки, поэтому они являются взаимоисключающими.
 
-**Совет**Если необходимо указать одну фигурную скобку значения, например [**путь**](https://msdn.microsoft.com/library/windows/apps/br209830) или [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), затем поставьте перед ней обратную косую черту: `\{`. Также можно включить всю строку, содержащую скобки, которые нужно преобразовать, в дополнительный набор кавычек, например: `ConverterParameter='{Mix}'`.
+**Совет**Если вам необходимо указать одну фигурную скобку значения, например [**путь**](https://msdn.microsoft.com/library/windows/apps/br209830) или [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), затем поставьте обратную косую черту: `\{`. Также можно включить всю строку, содержащую скобки, которые нужно преобразовать, в дополнительный набор кавычек, например: `ConverterParameter='{Mix}'`.
 
 ## <a name="examples"></a>Примеры.
 

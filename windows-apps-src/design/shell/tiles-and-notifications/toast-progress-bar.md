@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: Learn how to use a progress bar within your toast notification.
 title: Индикатор выполнения всплывающего уведомления и привязка данных
 label: Toast progress bar and data binding
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/7/2017
 ms.topic: article
 keywords: Windows 10, uwp, всплывающее уведомление, индикатор выполнения, индикатор выполнения всплывающего уведомления, привязка данных всплывающего уведомления
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ca144f92676f87fcdade37b280c39640bc74624
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 853e9c1672f1933789c961838734a67b3e816b6a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570571"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714010"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Индикатор выполнения всплывающего уведомления и привязка данных
 

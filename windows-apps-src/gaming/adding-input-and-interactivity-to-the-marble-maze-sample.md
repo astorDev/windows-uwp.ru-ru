@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Добавление средств ввода и взаимодействия в пример Marble Maze
 description: Некоторые важные рекомендации, которые следует иметь в виду при работе с устройствами ввода.
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
-ms.author: elcowle
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, ввод, пример
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7e9a3f655b8be1b93334ed8decf9fe6fa8bbf2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aee239f76c3d4431426f0bc9fe519a59f8f48838
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565237"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714050"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Добавление средств ввода и взаимодействия в пример Marble Maze
 

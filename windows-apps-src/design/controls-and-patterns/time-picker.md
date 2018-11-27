@@ -1,11 +1,9 @@
 ---
-author: muhsinking
 Description: The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input.
 title: Выбор времени
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/08/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -14,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c30b310deb509b9abfcd49531f85ea109cb12864
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2f9947f2910855b5d55b5140f043d65fd0befeae
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553113"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716325"
 ---
 # <a name="time-picker"></a>Управляющий элемент выбора времени
  

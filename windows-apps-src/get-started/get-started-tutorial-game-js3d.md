@@ -1,19 +1,17 @@
 ---
 title: 'Руководство по началу работы: трехмерная игра UWP на JavaScript'
 description: Игра UWP для Microsoft Store, написанная на JavaScript с использованием библиотеки three.js
-author: abbycar
-ms.author: abigailc
 ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 0183e19135758f73dfea9b63535437ff9b66011a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5f707e72e73398ae21cd391da16a0f2b40dcd7ee
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553974"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713584"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Создание трехмерной игры JavaScript с использованием библиотеки three.js
 
@@ -26,11 +24,11 @@ ms.locfileid: "7553974"
 
 Хотите немного узнать о приложении, которое нам предстоит создать, прежде чем читать дальше? Ознакомьтесь с ним на CodePen!
 
-<iframe height='300' scrolling='no' title='Последний динозавр игры' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpKejy/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. запись <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpKejy/'>Dino game final</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='300' scrolling='no' title='Окончательный динозавр игры' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpKejy/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. запись <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpKejy/'>Dino game final</a> от Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 > [!NOTE] 
-> Этот пример не завершения игры; она предназначена для демонстрации с помощью JavaScript и сторонней библиотеки создать приложение, готовое к публикации в Microsoft Store.
+> Этот пример не полный игрой. она предназначена для демонстрации с помощью JavaScript и сторонней библиотеки создать приложение, готовое к публикации в Microsoft Store.
 
 
 ## <a name="requirements"></a>Требования

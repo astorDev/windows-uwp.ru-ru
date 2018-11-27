@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: Используйте этот метод в API коллекции Microsoft Store для получения всех продуктов, принадлежащих пользователю, для приложений, связанных с вашим идентификатором клиента Azure AD. Вы можете ограничить запрос определенным продуктом или использовать другие фильтры.
 title: Запрос продуктов
-ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 keywords: Windows 10, API коллекции Microsoft Store, uwp, просмотр продуктов
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ed5e4b34f3ad46daaaac8310b6eced8639bde27
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5e0f7f8c0f682eaa129f44eaa421fabd63dbfce4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581407"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713165"
 ---
 # <a name="query-for-products"></a>Запрос продуктов
 
@@ -134,7 +132,7 @@ Content-Type: application/json
 | devOfferId           | строка             | Идентификатор предложения покупки из приложения.              | Нет       |
 | endDate              | Дата и время           | Дата окончания срока действия элемента.              | Да      |
 | fulfillmentData      | строка             | Н/д         | Нет       |
-| inAppOfferToken      | строка             | Строка идентификатора указанная разработчиком продукта, назначенная элементу в центре партнеров. Пример кода продукта — это *product123*. | Нет       |
+| inAppOfferToken      | строка             | Строка кода указанная разработчиком продукта, назначенная элементу в центре партнеров. Пример кода продукта — это *product123*. | Нет       |
 | itemId               | строка             | Идентификатор, отличающий этот элемент коллекции от других элементов, принадлежащих пользователю. Этот идентификатор уникален для каждого продукта.   | Да      |
 | localTicketReference | string             | Идентификатор ранее предоставленного в тексте запроса параметра *localTicketReference*.                  | Да      |
 | modifiedDate         | Дата и время           | Дата последнего изменения элемента.              | Да      |

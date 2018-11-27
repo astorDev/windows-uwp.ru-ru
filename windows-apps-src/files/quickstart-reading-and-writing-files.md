@@ -1,9 +1,7 @@
 ---
-author: laurenhughes
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: Создание, запись и чтение файла
 description: Считайте и запишите файл с помощью объекта StorageFile.
-ms.author: lahugh
 ms.date: 06/28/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -13,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 9bc19460fe1b9b9c6b637606a737e1157d98feef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6079ea8ca844efc912b970c00c6907d98378dd07
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577177"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714355"
 ---
 # <a name="create-write-and-read-a-file"></a>Создание, запись и чтение файла
 
@@ -256,7 +254,7 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  Затем получите выходной поток, вызвав метод [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) из `stream`. Если вы используете C#, заключите это в оператор **using** для управления временем существования выходного потока. Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то вы можете контролировать на протяжении жизненного цикла с заключения его в блок, или значение `nullptr` после завершения с ним.
+2.  Затем получите выходной поток, вызвав метод [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) из `stream`. Если вы используете C#, заключите это в оператор **using** для управления временем существования выходного потока. Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то можно управлять своим временем существования, включающего в блоке, или значение `nullptr` после завершения с ним.
 
 ```csharp
 using (var outputStream = stream.GetOutputStreamAt(0))

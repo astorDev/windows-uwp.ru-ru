@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Наложения и масштабирование цепочки буферов
 description: Узнайте, как создавать масштабируемые цепочки буферов для более быстрой отрисовки на мобильных устройствах и как использовать наложения цепочки буферов (если они есть) для повышения качества визуального восприятия.
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, масштабирование цепочки буферов, наложения, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d159a78412bea528c1a12428288daebe31d1fe1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 12aede6c4af61c4b86d1f1090a2ec3d0e5ecce68
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564558"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713145"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>Наложения и масштабирование цепочки буферов
 

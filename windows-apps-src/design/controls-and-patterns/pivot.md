@@ -1,9 +1,7 @@
 ---
-author: QuinnRadich
 Description: The Pivot control enables touch-swiping between a small set of content sections.
 title: Сводка
 template: detail.hbs
-ms.author: quradic
 ms.date: 06/19/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -12,12 +10,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 386fba3cec00de6c443daa60409fe3bb74621fa1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 48aff6bd0b5f6ce955168bdc5faef67b7f43925e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577340"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713707"
 ---
 # <a name="pivot"></a>Сводка
 
@@ -41,7 +39,7 @@ ms.locfileid: "7577340"
 </tr>
 </table>
 
-Элемент управления Pivot, так же, как [NavigationView](navigationview.md), подчеркивает выбранный элемент.
+Элемент управления "Сводка", так же, как [NavigationView](navigationview.md)подчеркивает выбранный элемент.
 
 ![Фокус по умолчанию подчеркивает выбранный заголовок](images/pivot_focus_selectedHeader.png)
 
@@ -51,14 +49,14 @@ ms.locfileid: "7577340"
 
 Тем не менее если навигации требуется прокрутка сенсорного ввода, мы рекомендуем использовать "Сводка".
 
-Основные различия между элементами управления NavigationView и сводки: переполнения поведение по умолчанию и навигации API:
+Основные различия между элементами управления NavigationView и "Сводка" — это поведение по умолчанию переполнения и навигации API:
 
 - Сводки переполнения обойм, которые элементов, когда NavigationView использует раскрывающееся меню переполнения, чтобы пользователи могли видеть все элементы.
-- PIVOT обрабатывает навигацию между разделы содержимого, когда NavigationView позволяет больше контроля над поведение навигации.
+- "Сводка" обрабатывает навигацию между разделы содержимого, когда NavigationView позволяет больше контроля над поведение навигации с помощью.
 
 ## <a name="use-navigationview-instead-of-pivot"></a>Использовать NavigationView вместо "Сводка"
 
-Если пользовательский Интерфейс приложения используется элемент управления "Сводка", затем вы можете преобразовать "Сводка" для NavigationView следующим кодом.
+Если пользовательский Интерфейс приложения используется элемент управления "Сводка", затем можно преобразовать "Сводка" для NavigationView следующим кодом.
 
 Этот код XAML создает NavigationView с 3 разделами содержимого, как и в примере Pivot в [Создать элемент управления "Сводка"](#create-a-pivot-control).
 

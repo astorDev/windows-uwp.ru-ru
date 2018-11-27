@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
 title: Бета-тестирование
 description: Бета-тестирование дает возможность улучшить приложение на основе отзывов пользователей вне группы разработчиков, которые используют невыпущенные приложения на собственных устройствах.
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 55d90ffb50d6db71e135cbecf56487b96ba3377c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2eca388b37cc95803b7ecb94bc0b0b5b990f5de3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560595"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715424"
 ---
 # <a name="beta-testing"></a>Бета-тестирование
 

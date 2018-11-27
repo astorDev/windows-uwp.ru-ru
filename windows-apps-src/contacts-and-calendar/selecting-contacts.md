@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: Пространство имен Windows.ApplicationModel.Contacts позволяет выбирать контакты несколькими способами.
 title: Выбор контактов
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
 keywords: контакты, выбор, выбор одного контакта, выбор нескольких контактов, контакты, выбор нескольких, выбор определенных, контактные данные, контакт, выбор определенных контактных данных, выбор определенных полей
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a721e618864155e4eec66d222e8eeafa2e0ca038
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 28943c5ff60ebf2326193e4c3f90a02111f4aec2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579711"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716165"
 ---
 # <a name="select-contacts"></a>Выбор контактов
 

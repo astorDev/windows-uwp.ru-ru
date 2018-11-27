@@ -1,19 +1,17 @@
 ---
 title: Диспетчер учетных веб-записей
 description: В этой статье описан метод использования AccountsSettingsPane для подключения приложения универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Microsoft или Facebook, с помощью API диспетчера учетных веб-записей для Windows10.
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 12/6/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a5cddcd5ccb5185cda422c3df16797f5765688
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b0a052d08c6b0816d977d3e86881540194075818
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569943"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711855"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
@@ -177,7 +175,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * Сведения об областях OneDrive см. в разделе [Аутентификация OneDrive и вход в систему](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]
-> При необходимости Если ваше приложение использует подсказки входа (чтобы заполнить поле пользователя с адресом электронной почты по умолчанию) или другого специальные свойства, связанные с входа в систему, список его в свойство **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** . Это приведет к системе игнорировать свойства при кэшировании учетных записей в Интернете, которое предотвращает несоответствия учетной записи в кэше.
+> Кроме того Если ваше приложение использует подсказку для входа в систему (чтобы заполнить поле пользователя с адресом электронной почты по умолчанию) или другие специальные свойства, связанные с входа в систему, список его в свойстве **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** . Это приведет к система игнорирует свойства при кэшировании учетных записей в Интернете, которое предотвращает несоответствия учетной записи в кэше.
 
 Если вы разрабатываете корпоративное приложение, то, скорее всего, захотите подключиться к экземпляру Azure Active Directory (AAD) и использовать Microsoft Graph API вместо обычных служб учетной записи Майкрософт. В этом случае используйте следующий код: 
 

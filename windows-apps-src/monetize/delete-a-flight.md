@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
 description: Используйте этот метод в API отправки Microsoft Store для удаления тестового пакета для приложения, которое зарегистрировано в вашей учетной записи центра партнеров.
 title: Удаление тестового пакета
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, удаление тестового пакета
 ms.localizationpriority: medium
-ms.openlocfilehash: 23e90a322f347375cfdb33eca9315a5ca538fd4c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fa3fa78c695538ec13dbd20d38a24224c560463e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555550"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715822"
 ---
 # <a name="delete-a-package-flight"></a>Удаление тестового пакета
 

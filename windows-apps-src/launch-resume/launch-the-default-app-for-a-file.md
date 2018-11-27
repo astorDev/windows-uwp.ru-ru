@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Запуск приложения по умолчанию для файла
 description: Узнайте, как запускать приложение по умолчанию для файла.
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 736018fbf966b547c3dd41e245149d498c1231e3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f8e59ae5fb20ce8e1a900f7c1415a699715215e0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566156"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7712018"
 ---
 # <a name="launch-the-default-app-for-a-file"></a>Запуск приложения по умолчанию для файла
 
@@ -294,7 +292,7 @@ void MainPage::DefaultLaunch()
 В некоторых случаях у пользователя может быть не установлено приложение для обработки запускаемого файла. Тогда по умолчанию Windows предоставит пользователю ссылку для поиска подходящего приложения в Магазине. Если вы при этом хотите порекомендовать пользователю конкретное приложение, вы можете передать рекомендацию вместе с запускаемым файлом. Для этого вызовите метод [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465), указав в качестве значения параметра [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) имя семейства пакета приложения Магазина, которое вы рекомендуете. Затем задайте для параметра [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) имя этого приложения. Windows будет использовать эту информацию, чтобы заменить общий параметр (поиск приложения в Магазине) конкретным параметром (приобретение рекомендованного приложения в Магазине).
 
 > [!NOTE]
-> Необходимо задать оба этих варианта, чтобы порекомендовать приложение. Настройка одного параметра без другого приведет к ошибке.
+> Необходимо задать оба этих варианта рекомендовать приложение. Настройка одного параметра без другого приведет к ошибке.
 
 ![Диалоговое окно «Открыть с помощью» для запуска файла CONTOSO. Поскольку для формата CONTOSO на компьютере не установлен обработчик, диалоговое окно содержит параметр со значком Магазина и текстом, направляющим пользователя к правильному приложению в Магазине. Диалоговое окно также содержит ссылку "Дополнительные параметры".](images/howdoyouwanttoopen.png)
 

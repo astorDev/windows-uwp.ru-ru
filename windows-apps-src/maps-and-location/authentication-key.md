@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: Запрос ключа проверки подлинности карт
 description: Ваше универсальное приложение для Windows должно пройти проверку подлинности, прежде чем оно сможет использовать MapControl и службы карт в пространстве имен Windows.Services.Maps.
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, ключ проверки подлинности карт, элемент управления картой
 ms.localizationpriority: medium
-ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e986880ccedfdb4648b1554c35c23a8a841fe820
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571276"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715021"
 ---
 # <a name="request-a-maps-authentication-key"></a>Запрос ключа проверки подлинности карт
 

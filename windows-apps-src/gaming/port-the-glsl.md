@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Перенос GLSL
 description: После переноса кода, который создает и настраивает буферы и объекты шейдеров, следует перенести внутренний код шейдеров из версии GLSL (GL Shader Language) для OpenGL ES 2.0 в HLSL (High-level Shader Language) для Direct3D 11.
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, игры, glsl, перенос
 ms.localizationpriority: medium
-ms.openlocfilehash: 47fa601a7e0ff307108713a0a6fcd7a5468b0468
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 809440f9e77af19c01f4a050eee3b6f8d1c709b7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554033"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713085"
 ---
 # <a name="port-the-glsl"></a>Перенос GLSL
 
@@ -60,7 +58,6 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 <a name="instructions"></a>Инструкции
 ------------
-
 ### <a name="step-1-port-the-vertex-shader"></a>Шаг1. Перенос вершинного шейдера
 
 В нашем простом примере OpenGL ES 2.0 вершинный шейдер имеет три входных параметра: постоянная матрица модель-представление-проекция 4×4 и два вектора с 4 координатами. Эти два вектора содержат позицию вершины и ее цвет. Шейдер преобразует вектор позиции в координаты перспективы и назначает их встроенному элементу gl\_Position для растеризации. Цвет вершины также копируется в изменяющуюся переменную для интерполяции при растеризации.
@@ -160,10 +157,8 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 [Перенос буферов вершин и данных](port-the-vertex-buffers-and-data-config.md) Следующий шаг
 ---------
-
 [Рисование на экране](draw-to-the-screen.md) Заметки
 -------
-
 Понимание семантики HLSL и упаковки буферов констант избавит вас от многих затруднений при отладке, а также обеспечит возможности оптимизации. Если у вас есть возможность, внимательно изучите разделы [Синтаксис переменных (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Введение в буферы в Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898) и [Инструкции: создание буфера констант](https://msdn.microsoft.com/library/windows/desktop/ff476896). Если нет, вот для начала несколько полезных замечаний о семантике и буферах констант:
 
 -   Всегда тщательно проверяйте код конфигурации вашего обработчика Direct3D, чтобы убедиться, что структуры ваших буферов констант соответствуют объявлениям cbuffer элементов struct в коде HLSL и что скалярные типы компонентов совпадают в обоих объявлениях.

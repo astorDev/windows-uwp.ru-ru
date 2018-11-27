@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: Используйте этот метод в API отправки Microsoft Store, чтобы изменить процент выпуска пакета для отправки приложения.
 title: Обновление процента выпуска для отправки приложения
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, выпуск пакета, отправка приложения, обновление, процент
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 ms.localizationpriority: medium
-ms.openlocfilehash: ee7657a1ebd08e70e6b5dac8a9a723637539066e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 172c750d370f8fd8822d78265a04e694bc958ddf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574875"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713418"
 ---
 # <a name="update-the-rollout-percentage-for-an-app-submission"></a>Обновление процента выпуска для отправки приложения
 
@@ -27,8 +25,8 @@ ms.locfileid: "7574875"
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия токена можно получить новый токен.
-* Создание отправки для одного из своих приложений. Это можно сделать в центре партнеров, или можно сделать с помощью метода [создания отправки приложения](create-an-app-submission.md) .
-* Включите постепенный выпуск пакета для отправки. Это можно сделать в [Центре партнеров](../publish/gradual-package-rollout.md), или можно сделать с [помощью API отправки Microsoft Store](manage-app-submissions.md#manage-gradual-package-rollout).
+* Создание отправки для одного из своих приложений. Это можно сделать в центре партнеров или можно сделать с помощью метода [создания отправки приложения](create-an-app-submission.md) .
+* Включите постепенный выпуск пакета для отправки. Это можно сделать в [в центре партнеров](../publish/gradual-package-rollout.md)или можно сделать с [помощью API отправки Microsoft Store](manage-app-submissions.md#manage-gradual-package-rollout).
 
 ## <a name="request"></a>Запрос
 

@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Подключение устройств с помощью удаленных сеансов
 description: Предоставляйте общие возможности на нескольких устройствах за счет их объединения через удаленный сеанс.
 ms.assetid: 1c8dba9f-c933-4e85-829e-13ad784dd3e2
-ms.author: pafarley
 ms.date: 06/28/2017
 ms.topic: article
 keywords: Windows 10, uwp, подключенных устройств, удаленными системами, Рим, project rome
 ms.localizationpriority: medium
-ms.openlocfilehash: 0606c3b1b0b36dadb888166310f8b347d40a480a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3dd23603df1f1c3fac151da2aea2f8435b3ee423
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570620"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715782"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>Подключение устройств с помощью удаленных сеансов
 

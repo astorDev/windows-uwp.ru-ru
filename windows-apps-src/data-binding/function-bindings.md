@@ -1,18 +1,16 @@
 ---
-author: jwmsft
-description: Расширение разметки xBind позволяет функции для использования в разметке.
+description: Расширение разметки xBind позволяет функции, которые будут использоваться в разметке.
 title: Функции в x:Bind
-ms.author: jimwalk
 ms.date: 04/26/2018
 ms.topic: article
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e00762f389791fb3972b6f224759d35bf547e38
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 371b64a6161911242acd5b9abf97cfa7d2f05358
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560010"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7715480"
 ---
 # <a name="functions-in-xbind"></a>Функции в x:Bind
 
@@ -64,7 +62,7 @@ class ColorEntry
 
 Путь к функции определяется аналогично другим путям свойств и может содержать точки (.), индексаторы или приведения.
 
-Статические функции можно указывать с помощью синтаксиса XMLNamespace:ClassName.MethodName. Например, используйте ниже синтаксис для привязки к статические функции в коде программной.
+Статические функции можно указывать с помощью синтаксиса XMLNamespace:ClassName.MethodName. Например, используйте ниже синтаксис для привязки к статические функции в коде.
 
 ```xaml
 <Page 
@@ -86,7 +84,7 @@ public class MyPage : Page
 }
 ```
 
-Можно также использовать системные функции непосредственно в разметке для выполнения простых сценариев, таких как форматирование дат, форматирование текста, конкатенации текста, и т.д., например:
+Можно также использовать системные функции непосредственно в разметке для выполнения простых сценариев, таких как форматирование дат форматирование текста, сцепление текста, и пр., например:
 ```xaml
 <Page 
      xmlns:sys="using:System"
