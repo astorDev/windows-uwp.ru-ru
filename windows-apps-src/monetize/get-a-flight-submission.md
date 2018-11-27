@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: A0DFF26B-FE06-459B-ABDC-3EA4FEB7A21E
 description: Используйте этот метод в API отправки в Microsoft Store, чтобы получить данные для существующей отправки тестового пакета.
 title: Получение отправки тестового пакета
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправка тестируемой возможности
 ms.localizationpriority: medium
-ms.openlocfilehash: f9f40219503c0a57f76fcee81858acf51f59b1df
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7fcbdaa90f09ba1a813612d6104268c4930c9a6d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562503"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718276"
 ---
 # <a name="get-a-package-flight-submission"></a>Получение отправки тестового пакета
 
@@ -25,7 +23,7 @@ ms.locfileid: "7562503"
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия токена можно получить новый токен.
-* Создание отправки тестового пакета для приложения в центре партнеров. Это можно сделать в центре партнеров, или можно сделать с помощью метода [создания отправки тестового пакета](create-a-flight-submission.md) .
+* Создание отправки тестового пакета для приложения в центре партнеров. Это можно сделать в центре партнеров или можно сделать с помощью метода [создания отправки тестового пакета](create-a-flight-submission.md) .
 
 ## <a name="request"></a>Запрос
 

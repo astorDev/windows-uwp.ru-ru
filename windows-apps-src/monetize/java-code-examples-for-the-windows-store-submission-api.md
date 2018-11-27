@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: Используйте примеры кода на языке Java, приведенные в этом разделе, чтобы более подробно ознакомиться с работой API отправки в Microsoft Store.
 title: Пример на языке Java — отправки для приложений, надстроек и тестовых пакетов
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, UWP, API отправки в Microsoft Store, примеры кода, java
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a0df9fe873ab7d7330e06a18bb1816df3157d7a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0466c7dad5ac2f543e6b447a9b2661c2889f7b4e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579324"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718595"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Пример на языке Java: отправки для приложений, надстроек и тестовых пакетов
 

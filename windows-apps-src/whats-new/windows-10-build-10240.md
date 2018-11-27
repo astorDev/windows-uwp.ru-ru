@@ -1,25 +1,23 @@
 ---
-author: QuinnRadich
 Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
 title: Новые возможности в Windows10 сборка 10240 — июль 2015 г.
 keywords: новые возможности, что нового, обновление, обновления, возможности, новые, Windows 10, 1507, 10240
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: c38fe989bd854d44bb7dc3c0cba36a4ae145854c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 75c5c34f3dec48bbee2feccde5b60cde45a241f9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578058"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717760"
 ---
 # <a name="whats-new-in-windows10-for-developers-build-10240"></a>Новые возможности в Windows10 для разработчиков, сборка 10240
 
 Сборка 10240 Windows10 и обновленные средства разработчика предоставляют доступ к инструментам, компонентам и возможностям для создания потрясающих приложений универсальной платформы Windows. [Установив средства и пакет SDK](http://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
-Вот рассмотрим сгруппированные по новые возможности для вас в Windows10 сборка 10240 (также известная как Windows 10 версии 1507).
+Вот по характеристикам Изучите новые возможности для вас в Windows10 сборка 10240 (также известная как Windows 10 версии 1507).
 
 ## <a name="adaptive-layouts"></a>Адаптивные макеты
 

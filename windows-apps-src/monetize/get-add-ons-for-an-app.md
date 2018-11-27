@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
 description: Используйте этот метод в API отправки Microsoft Store для получения информации о покупке из приложения для приложения, которое зарегистрировано в центра партнеров.
 title: Получение надстроек для приложения
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, надстройки, продукты внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3689a4fe16d016bb23bb7141630fd1f6a7b83142
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ec065eef5d411e35515837b169fd57d71e4ef6ac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567094"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718475"
 ---
 # <a name="get-add-ons-for-an-app"></a>Получение надстроек для приложения
 

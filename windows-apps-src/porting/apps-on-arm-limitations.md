@@ -1,19 +1,17 @@
 ---
 title: Ограничения приложений и процессов в ARM
-author: msatranjr
 description: Устранение неполадок в приложениях, которые неправильно работают в ARM.
-ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, постоянно подключен, ограничения, windows 10 в ARM
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
-ms.openlocfilehash: 24afc8a876b976f21d0f4ebd5892ceef7c403018
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5fa05e1dfd04208ba547a692473fc3df136e6e4f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580830"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716256"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>Ограничения приложений и процессов в ARM
 Windows 10 в ARM имеет следующие обязательные ограничения:

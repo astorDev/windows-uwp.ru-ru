@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 55315F38-6EC5-4889-A14E-7D8EC282FE98
 description: Используйте этот метод в API отправки в Microsoft Store для получения сведений о состоянии отправки надстройки.
 title: Получение состояния отправки надстройки
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправка надстройки, состояние
 ms.localizationpriority: medium
-ms.openlocfilehash: e2013a081898dbf46958190da1df01adaac9d820
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1bfec8232fe8e410e65997098954e35d3f5fdc1b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564859"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718236"
 ---
 # <a name="get-the-status-of-an-add-on-submission"></a>Получение состояния отправки надстройки
 
@@ -25,7 +23,7 @@ ms.locfileid: "7564859"
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия токена можно получить новый токен.
-* Создайте отправку надстройки для одного из своих приложений. Это можно сделать в центре партнеров, или можно сделать с помощью метода [создания отправки надстройки](create-an-add-on-submission.md) .
+* Создайте отправку надстройки для одного из своих приложений. Это можно сделать в центре партнеров или можно сделать с помощью метода [создания отправки надстройки](create-an-add-on-submission.md) .
 
 ## <a name="request"></a>Запрос
 

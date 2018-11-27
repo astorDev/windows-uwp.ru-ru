@@ -4,17 +4,15 @@ description: Увеличьте размер пула плиток, если п�
 ms.assetid: A54A06DC-BDDB-42DC-85E8-C64241100ED5
 keywords:
 - Изменение размера пула плиток
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e676b28750375a353bb41ce8e14ec1d4c3371c4c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7e08447c575e99178e503e99eb651cd5e225a898
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556264"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718738"
 ---
 # <a name="tile-pool-resizing"></a>Изменение размера пула плиток
 

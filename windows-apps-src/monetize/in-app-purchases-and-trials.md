@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: Узнайте, как включить покупки из приложения и пробные версии в приложениях UWP.
 title: Покупки из приложения и пробные версии
-ms.author: mhopkins
 ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10, uwp, покупки из приложения, IAP, надстройки, пробные версии, потребляемые, длительного пользования, подписка
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c1c4ea1923ff81754b9c8ed8328ba6ec670a3f1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9891205d4fdc8110cb727fb5caabbff6c5f4f948
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566208"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718329"
 ---
 # <a name="in-app-purchases-and-trials"></a>Покупки из приложения и пробные версии
 
@@ -165,7 +163,7 @@ ms.locfileid: "7566208"
 2. Затем убедитесь, что вы выполнили следующие действия:
 
     * Напишите код в приложении, которое использует класс [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) и другие связанные типы в пространстве имен **Windows.Services.Store**, чтобы реализовать функцию [покупок из приложения](#implement-iap) или [пробной версии](#implement-trial).
-    * Если ваше приложение предлагает надстройку, которую можно приобрести, [Создание отправки надстройки для вашего приложения в центре партнеров](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
+    * Если ваше приложение предлагает надстройку, которую можно приобрести, [Создание отправки надстройки для приложения в центре партнеров](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
     * Если вы хотите исключить или ограничить некоторые функциональные возможности пробной версии вашего приложения, [Настройте свое приложение в качестве бесплатной пробной версии в центре партнеров](../publish/set-app-pricing-and-availability.md#free-trial).
 
 3. Открыв проект в Visual Studio, щелкните **Меню проекта**, укажите на **Магазин** и выберите **Связать приложение с Магазином**. Выполните инструкции мастера, чтобы связать проект приложения с приложением в вашей учетной записи центра партнеров, которое вы хотите использовать для тестирования.

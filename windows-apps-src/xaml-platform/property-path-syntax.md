@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Класс PropertyPath и синтаксис строки можно использовать для создания экземпляра значения PropertyPath в XAML или в коде.
 title: Синтаксис PropertyPath
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f0f49792a92010f97c8388540fd63c38eed5f75e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574095"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717717"
 ---
 # <a name="property-path-syntax"></a>Синтаксис PropertyPath
 

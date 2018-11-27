@@ -2,18 +2,16 @@
 title: Создание службы входа Windows Hello
 description: Это вторая часть полного пошагового руководства по использованию Windows Hello в качестве альтернативы традиционным системам проверки подлинности с помощью имени пользователя и пароля в приложениях универсальной платформы Windows 10 (UWP).
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
-ms.openlocfilehash: 839d44c992977fdad8863203b84116b2faeba76d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: de4d8fc797efe2a0dde7340f42208a97bccf0b10
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556398"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717093"
 ---
 # <a name="create-a-windows-hello-login-service"></a>Создание службы входа Windows Hello
 

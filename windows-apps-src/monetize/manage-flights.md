@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
 description: Используйте эти методы в API отправки Microsoft Store для управления тестовыми пакетами для приложений, которые зарегистрированы в вашей учетной записи центра партнеров.
 title: Управление тестовыми пакетами
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, тестируемые возможности
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f1300151d8b50a0a9e192c2090e9a3d72afa86e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8678ee4d73f13e241a2c72d6dac532289af13ced
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560921"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718064"
 ---
 # <a name="manage-package-flights"></a>Управление тестовыми пакетами
 

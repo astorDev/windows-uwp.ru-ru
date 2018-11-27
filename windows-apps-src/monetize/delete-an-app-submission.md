@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 96C090C1-88F8-42E7-AED1-AFA9031E952B
 description: Используйте этот метод в API отправки в Microsoft Store для удаления существующей отправки приложения.
 title: Удаление отправки приложения
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправка приложения, удаление
 ms.localizationpriority: medium
-ms.openlocfilehash: da2533eb8b6e45e4426a1d25931638466547e01b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5d582f79d57fb8b3648d8c872f700d998a2fec1a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570417"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718147"
 ---
 # <a name="delete-an-app-submission"></a>Удаление отправки приложения
 

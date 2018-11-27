@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
 description: Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK и Microsoft Store предоставляют множество функций, позволяющих извлекать финансовую прибыль из своих приложений и получать клиентов в процессе взаимодействия с пользователями.
 title: Монетизация, привлечение и службы Магазина
-ms.author: mhopkins
 ms.date: 11/29/2017
 ms.topic: article
 keywords: windows 10, uwp, монетизация, привлечение, продвижение, службы Магазина
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eca34975217bace912ee06b967e028f30155452
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 747dbf7951a9db20bb8a1063757b88320fcc3f43
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566771"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718678"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Монетизация, привлечение и службы Магазина
 
@@ -34,7 +32,7 @@ Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK и Microsof
 | [Ведение журнала пользовательских событий для Центра партнеров](log-custom-events-for-dev-center.md)  | Регистрировать пользовательские события из приложения UWP и просматривать события в [отчете об использовании](../publish/usage-report.md) в центре партнеров. Для этой функции требуется пакет Microsoft Store Services SDK. |
 | [Запрос оценок и отзывов](request-ratings-and-reviews.md) |  Побудите пользователей оставить оценки или отзывы на ваше приложение, отображая программными средствами пользовательский интерфейс для оценок и отзывов.  |
 | [Службы Microsoft Store](using-windows-store-services.md)    |  Узнайте, как использовать API-интерфейсы RESTful для автоматизации процесса отправок в Магазин, осуществления доступа к аналитическим данным ваших приложений, а также автоматизации выполнения других задач, связанных с Магазином.    |
-| [Добавление функций розничных магазинах (RDX) в приложение](retail-demo-experience.md)        |  Включите режиме демонстрации retail в приложении для Windows, таким образом пользователи, которые испытать компьютеров и устройств на продажу низ можно перейти непосредственно к.  |
+| [Добавление функций розничных магазинах (RDX) в приложение](retail-demo-experience.md)        |  Включите коммерческом режиме демонстрации в приложении для Windows, таким образом пользователи, которые испытать компьютеров и устройств на продажу низ можно перейти непосредственно к.  |
 
 ## <a name="related-topics"></a>Статьи по теме
 

@@ -1,21 +1,19 @@
 ---
-author: stevewhims
 Description: If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
 title: Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: c9789e21bd4d2a598db292721cabfe58d7c12ebe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6740e6ce35277fa7f7f088c312f8b9ee1f5281c3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558419"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716892"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 Дополнительные сведения о преимуществах локализации приложений см. в разделе [Глобализация и локализация](../design/globalizing/globalizing-portal.md).
@@ -30,7 +28,7 @@ ms.locfileid: "7558419"
 1. Установите язык по умолчанию для приложения.
     1. Открыв решение в Visual Studio, откройте файл `Package.appxmanifest`.
     2. На вкладке «Приложения» убедитесь, что язык по умолчанию задан соответствующим образом (например, en или en-US). На дальнейших этапах предполагается, что вы задали язык по умолчанию en-US.
-    <br>**Примечание**как минимум, необходимо предоставить строковых ресурсов, локализованных для этого языка по умолчанию. Это и есть ресурсы, которые будут загружены в том случае, если не будет найдено более подходящих для выбранного пользователем языка или языка отображения ресурсов.
+    <br>**Примечание**как минимум, необходимо предоставить строковые ресурсы, локализованные для этого языка по умолчанию. Это и есть ресурсы, которые будут загружены в том случае, если не будет найдено более подходящих для выбранного пользователем языка или языка отображения ресурсов.
 2. Создайте файл ресурсов (.resw) для языка по умолчанию.
     1. В узле проекта создайте новую папку и назовите ее Strings.
     2. В разделе `Strings` создайте новую вложенную папку и назовите ее en-US.
@@ -61,7 +59,7 @@ ms.locfileid: "7558419"
 
 Вместо определения значения **Width** из файла ресурсов, возможно, логично будет разрешить динамическую адаптацию размера элементов управления по содержимому.
 
-**Примечание**для [присоединенных свойств](../xaml-platform/attached-properties-overview.md), вам требуется особый синтаксис в столбце Name в файле .resw. Например, вот что надо ввести в столбце Name, чтобы задать значение для присоединенного свойства [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) для идентификатора Greeting.
+**Примечание**для [присоединенных свойств](../xaml-platform/attached-properties-overview.md), требуется особый синтаксис в столбце Name в файле .resw. Например, вот что надо ввести в столбце Name, чтобы задать значение для присоединенного свойства [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) для идентификатора Greeting.
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -90,13 +88,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 Тот же самый код можно использовать из проекта с библиотекой классов (Universal Windows) или [библиотекой среды выполнения Windows (универсальная платформа Windows)](../winrt-components/index.md). Во время выполнения загружаются ресурсы приложения, в котором размещается библиотека. Рекомендуется, чтобы библиотека загружала ресурсы из приложения, в котором она расположена, поскольку выше вероятность, что это приложение локализовано в большей степени. Если библиотеке не требуется предоставлять ресурсы, то она должна обеспечить приложению возможность заменять их при вызове.
 
-Если имя ресурса отделен (он содержит «.» символов), затем замены точек с помощью косой черты («/») знаков в имени ресурса. Идентификаторы свойств, например, содержать несколько точек; Поэтому вам потребуется сделать это substition, чтобы загрузить один из них из кода.
+Если имя ресурса отделен (он содержит «.» символов), затем замены точек с помощью косой черты («/») знаков в имени ресурса. Идентификаторы свойств, например, содержать несколько точек; Поэтому вам потребуется сделать это substition, чтобы загрузить одну из них из кода.
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп PRI-файл вашего приложения. Каждый ресурс `uri` отображается в файле дамп.
+Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп PRI-файл вашего приложения. Каждый ресурс `uri` отображаются в файле дамп.
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -118,7 +116,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ## <a name="localize-the-string-resources"></a>Локализация строковых ресурсов
 1. Создайте копию файла ресурсов (.resw) для другого языка.
     1. В разделе Strings создайте новую вложенную папку и назовите ее de-DE для немецкого языка (Германия).
-   <br>**Примечание**имя папки, можно использовать любой [тег языка BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Дополнительные сведения о языковых квалификаторах и список распространенных языковых тегов приводятся в разделе [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md).
+   <br>**Примечание**в имени папки можно использовать любой [тег языка BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Дополнительные сведения о языковых квалификаторах и список распространенных языковых тегов приводятся в разделе [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md).
    2. Создайте копию `Strings/en-US/Resources.resw` в папке `Strings/de-DE`.
 2. Переведите строки.
     1. Откройте `Strings/de-DE/Resources.resw` и переведите значения в столбце Value. Комментарии переводить не нужно.
@@ -173,13 +171,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 Если вы решите переместить ресурс AppDisplayName из `Resources.resw` в `ManifestResources.resw`, то в манифесте пакета приложения необходимо изменить `ms-resource:AppDisplayName` на `ms-resource:/ManifestResources/AppDisplayName`.
 
-Если разбита на сегменты имени файла ресурсов (он содержит «.» символов), оставьте точек в имени при создании ссылок на его. **Не** точек замените символы косой черты («/»), как и для имени ресурса.
+Если имя файла ресурсов отделен (он содержит «.» символов), оставьте точек в имени при создании ссылок. **Не** точек замените символы косой черты («/»), как и для имени ресурса.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп PRI-файл вашего приложения. Каждый ресурс `uri` отображается в файле дамп.
+Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп PRI-файл вашего приложения. Каждый ресурс `uri` отображаются в файле дамп.
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -272,14 +270,14 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-Вам не нужно сделать это для библиотеки классов (Universal Windows). Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп компонент или библиотеки PRI-файла. Каждый ресурс `uri` отображается в файле дамп.
+Вам не нужно сделать это для библиотеки классов (Universal Windows). Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп компонент или библиотеки PRI-файла. Каждый ресурс `uri` отображаются в файле дамп.
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>Загрузка строк из других пакетов
-Ресурсы для пакета приложения управляемые и доступ к которому осуществляется через пакета есть верхнего уровня[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) , доступной с текущей[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). В каждом пакете различные компоненты могут иметь их ownResourceMapsubtrees, который можно получить через [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
+Управляемые и доступ к которому осуществляется через пакета ресурсов для пакета приложения есть верхнего уровня[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) , доступной с текущей[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). В каждом пакете различные компоненты могут иметь их ownResourceMapsubtrees, к которому можно получить через [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
 
 Платформенный пакет может обращаться к собственным ресурсам с использованием абсолютного идентификатора ресурса (URI). См. также раздел [Схемы URI](uri-schemes.md).
 

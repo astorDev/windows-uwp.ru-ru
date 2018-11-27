@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store для получения данных достижений Xbox Live.
 title: Получение данных о достижениях в Xbox Live
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live, достижения
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b635a659a8516184998b5f0b05d2d7692a42af1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 23a99c637dfd466ba21169626315803dec60e4e8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581009"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718286"
 ---
 # <a name="get-xbox-live-achievements-data"></a>Получение данных о достижениях в Xbox Live
 

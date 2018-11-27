@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных о покупках приложения в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение сведений о приобретениях приложения
-ms.author: mhopkins
 ms.date: 03/23/2018
 ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, приобретения приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c2e972b46c830dd6c9ea778e525f0abceda3e99
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4ef5c9cedcb828f6c7df8a294fc4aad87e9f74ae
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562593"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718319"
 ---
 # <a name="get-app-acquisitions"></a>Получение сведений о приобретениях приложения
 

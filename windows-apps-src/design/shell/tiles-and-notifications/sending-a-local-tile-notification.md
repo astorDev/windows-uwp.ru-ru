@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
 title: Отправка локального уведомления на плитке
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 76af980aeb759905259a043fdb9b4b828a90d819
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563550"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716834"
 ---
 # <a name="send-a-local-tile-notification"></a>Отправка локального уведомления на плитке
  

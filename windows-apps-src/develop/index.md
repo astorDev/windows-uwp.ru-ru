@@ -1,19 +1,17 @@
 ---
 description: Узнайте, как разрабатывать приложения UWP.
 title: Разработка приложений UWP
-author: mijacobs
 layout: LandingPage
 keywords: uwp разработки потоков async платформы Обзор портала приложения разрабатывать разработчиков
-ms.author: mijacobs
 ms.date: 3/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b775901fbb5140b63a76676705f2d2f2ba5f68
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 615a5a0762cfa55d7b8be7ce392e02ee1802ded2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558980"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718645"
 ---
 <div> 
 <h1>Разработка приложений UWP</h1>
@@ -33,7 +31,7 @@ ms.locfileid: "7558980"
                     </div>
                     <div class="cardText">
                         <h3>Обзор на универсальную платформу Windows</h3>
-                        <p>Описание какие UWP, как это работает, и предоставляет функции.</p>
+                        <p>Описание какие UWP — это, как это работает, и предоставляет функции.</p>
                     </div>
                 </div>
             </div>
@@ -118,7 +116,7 @@ ms.locfileid: "7558980"
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Пользовательский Интерфейс приложения</h3>
-                        <p><a href="https://developer.microsoft.com/windows/apps/design">Элементы управления, макет, оформления текста, анимации, удобство использования и проектирование пользовательского интерфейса см. в разделе Оформление и пользовательский Интерфейс.</a></p>
+                        <p><a href="https://developer.microsoft.com/windows/apps/design">Элементы управления, макет, оформления текста, анимации, удобство использования и проектирование пользовательского интерфейса см. в разделе проектирование и пользовательский Интерфейс.</a></p>
                     </div>
                 </div>
             </div>
@@ -176,7 +174,7 @@ ms.locfileid: "7558980"
                         <h3>Платформа</h3>
                         <p style="display:block"><a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a></p>
                         <p style="display:block"><a href="/windows/uwp/launch-resume/">Запуск, возобновление и фоновые задачи</a></p>
-                        <p style="display:block"><a href="/windows/uwp/security/">Security</a></p>
+                        <p style="display:block"><a href="/windows/uwp/security/">Безопасность</a></p>
                         <p style="display:block"><a href="/windows/uwp/threading-async/">Потоки и асинхронное программирование</a></p>
                         <p style="display:block"><a href="/windows/uwp/composition/visual-layer">Визуальный уровень</a></p>
                         <p style="display:block"><a href="/windows/uwp/updates-and-versions/application-development-for-windows-as-a-service">Windows как услуга</a></p>
@@ -271,7 +269,7 @@ ms.locfileid: "7558980"
                     </div>
                     <div class="cardText">
                         <h3>Примеры</h3>
-                        <p> Сведения о создании качественных приложений для Windows при помощи экспериментов с эти примеры. В этих примерах показано, как функции работают и помочь вам быстром создании приложений UWP.</p>
+                        <p> Сведения о создании качественных приложений для Windows при помощи экспериментов с в этих примерах. В этих примерах показано, как работают функции и помочь вам быстром создании приложений UWP.</p>
                     </div>
                 </div>
             </div>

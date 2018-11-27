@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Руководства по портированию игр
 description: Содержит инструкции по переносу существующих игр на Direct3D 11, универсальной платформы Windows (UWP) и Windows10.
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, игры, перенос, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 47892bac1a19018201187cbc901e4b680480268b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6eaa057c700c69621fd66090618ca7c945522d57
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559273"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717594"
 ---
 # <a name="game-porting-guides"></a>Руководства по портированию игр
 

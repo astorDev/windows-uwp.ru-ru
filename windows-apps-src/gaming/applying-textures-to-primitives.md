@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Применение текстур к примитивам
 description: Здесь мы загрузим необработанные данные текстур и применим эти данные к трехмерному примитиву с помощью куба, который нами создан в разделе Применение глубины и эффектов к примитивам.
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, текстуры, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 252613bbea7f4cdb720758d3435cf0920dd93efa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 437c861e6d3017d83b520732dd0e279d882835c5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577748"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717657"
 ---
 # <a name="apply-textures-to-primitives"></a>Применение текстур к примитивам
 
@@ -34,7 +32,6 @@ ms.locfileid: "7577748"
 
 <a name="instructions"></a>Инструкции
 ------------
-
 ### <a name="1-defining-variables-for-a-textured-cube"></a>1. Определение переменных для текстурированного куба
 
 Сначала потребуется определить структуры **BasicVertex** и **ConstantBuffer** для текстурированного куба. Эти структуры определяют положения вершин, ориентации и текстуры для куба, а также метод его просмотра. В остальном объявим переменные, как в предыдущем учебнике [Использование глубины и эффектов на примитивах](using-depth-and-effects-on-primitives.md).

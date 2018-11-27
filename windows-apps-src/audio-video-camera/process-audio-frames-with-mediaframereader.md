@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: D6A785C6-DF28-47E6-BDC1-7A7129EC40A0
 description: В этой статье показано, как использовать класс MediaFrameReader и MediaCapture для получения кадров AudioFrames, содержащих звуковые данные из источника захвата.
 title: Обработка аудиокадров с помощью MediaFrameReader
-ms.author: drewbat
 ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d69e8d8cca3932045d4b43d727210f84e816f30b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f85570d5c66db1641ec6352526d4db6213e199b4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560522"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716612"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Обработка аудиокадров с помощью MediaFrameReader
 

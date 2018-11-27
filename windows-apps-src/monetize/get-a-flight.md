@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
 description: Используйте этот метод в API отправки Microsoft Store для получения данных о тестовом пакете для приложения, которое зарегистрировано в вашей учетной записи центра партнеров.
 title: Получение тестового пакета
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, тестируемая возможность, тестовый пакет
 ms.localizationpriority: medium
-ms.openlocfilehash: 09fd5c703e4a601ad28a05156aec9133444cfd9e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c4ff6c929a7264b5dece0057701c8348fe5d39be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568203"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717974"
 ---
 # <a name="get-a-package-flight"></a>Получение тестового пакета
 

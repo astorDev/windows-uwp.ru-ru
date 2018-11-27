@@ -1,19 +1,17 @@
 ---
-author: Xansky
 Description: The Microsoft Store Services SDK provides libraries and tools that you can use to add features to your apps that help you make more money and gain customers.
 title: Привлечение пользователей с помощью пакета Microsoft Store Services SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
-ms.author: mhopkins
 ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f29062e00701f578b63f79935d17b1203afc0f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8394a1a44173541e8982a660591e84b25b985205
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567520"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718455"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Привлечение пользователей с помощью пакета Microsoft Store Services SDK
 
@@ -30,9 +28,9 @@ Microsoft Store Services SDK в настоящее время поддержив
 
 |  Сценарий  |  Описание   |
 |------------|----------------|
-|  [Проведение экспериментов с A/B-тестированием в приложениях UWP](run-app-experiments-with-a-b-testing.md)    |  Проводите A/B-тестирование в своем приложении для универсальной платформы Windows (UWP), чтобы оценить эффективность функций на некоторых пользователях перед выпуском этих функций для всех пользователей. После определения эксперимента в центре партнеров, с помощью класса [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) получения вариантов для эксперимента в приложении, эти данные можно использовать для изменения поведения тестируемой функции, а затем использовать [LogForVariation ](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)метод, чтобы отправить событие просмотра и события конверсии в центр партнеров. Наконец используйте центр партнеров для просмотра результатов и управления экспериментом.  |
+|  [Проведение экспериментов с A/B-тестированием в приложениях UWP](run-app-experiments-with-a-b-testing.md)    |  Проводите A/B-тестирование в своем приложении для универсальной платформы Windows (UWP), чтобы оценить эффективность функций на некоторых пользователях перед выпуском этих функций для всех пользователей. После определения эксперимента в центре партнеров с помощью класса [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) получения вариантов для эксперимента в приложении, использовать эти данные для изменения поведения тестируемой функции, а затем использовать [LogForVariation ](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)метод, чтобы отправить событие просмотра и события конверсии в центр партнеров. Наконец используйте центр партнеров для просмотра результатов и управления экспериментом.  |
 |  [Запуск Центра отзывов из приложения UWP](launch-feedback-hub-from-your-app.md)    |  Используйте класс [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) в своем приложении UWP, чтобы направлять пользователей Windows 10 в Центр отзывов, где они смогут сообщать о проблемах, делиться предложениями и голосовать за комментарии других пользователей. Затем вы сможете проанализировать все эти данные в [отчете об отзывах](../publish/feedback-report.md) в центре партнеров. |
-|  [Настройка приложения UWP для получения Push-уведомлений центра партнеров](configure-your-app-to-receive-dev-center-notifications.md)    |  Используйте класс [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) в своем приложении UWP для регистрации вашего приложения для получения целевых Push-уведомлений, отправляемых пользователям с помощью центра партнеров.  |
+|  [Настройка приложения UWP для получения Push-уведомлений центра партнеров](configure-your-app-to-receive-dev-center-notifications.md)    |  Используйте класс [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) в своем приложении UWP для регистрации приложения для получения целевых Push-уведомлений, отправляемых пользователям с помощью центра партнеров.  |
 |   [Регистрировать пользовательские события в приложении UWP для отчета об использовании в центре партнеров](log-custom-events-for-dev-center.md)   |  Используйте класс [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) в своем приложении UWP регистрировать пользовательские события, которые связаны с приложением в центре партнеров. Просмотрите общее число возникновений вашего пользовательского события в разделе **пользовательские события** в [отчете об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) в центре партнеров.  |
 
 <span id="prerequisites" />

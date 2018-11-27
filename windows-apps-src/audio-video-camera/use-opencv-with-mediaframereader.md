@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: ''
 description: В этой статье рассказывается, как использовать библиотеку компьютерного зрения с открытым исходным кодом (OpenCV) с классом MediaFrameReader.
 title: Используйте OpenCV с MediaFrameReader
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b139d0b8747931f7cac9885d441122af97f7dad
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a603899776879cb7c8dc2439c3c22906db0b8038
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554910"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7716552"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Использование библиотеки компьютерного зрения с открытым исходным кодом (OpenCV) с MediaFrameReader
 
@@ -30,7 +28,7 @@ ms.locfileid: "7554910"
 
 Помимо этих статей, чтобы просмотреть и скачать полный рабочий пример сценария, описанного в этой статье, см. раздел [Пример кадров камеры + OpenCV](https://go.microsoft.com/fwlink/?linkid=854003) в репозитории универсальных примеров Windows на GitHub.
 
-Для начала разработки быстро можно включить библиотеку OpenCV в проект приложения UWP с помощью пакетов NuGet, но эти пакеты не может пройти процесс certficication приложения, при отправке приложения в Store, поэтому рекомендуется загрузить OpenCV Библиотека исходный код и сборки двоичных файлов самостоятельно перед отправкой своего приложения. Сведения по разработке с помощью OpenCV можно найти на сайте [http://opencv.org](http://opencv.org)
+Чтобы начать разработку быстро, вы можете включить библиотеку OpenCV в проект приложения UWP с помощью пакетов NuGet, но эти пакеты не может пройти процесс certficication приложения, при отправке приложения в Store, поэтому рекомендуется загрузить OpenCV Библиотека исходный код и сборки двоичных файлов самостоятельно перед отправкой своего приложения. Сведения по разработке с помощью OpenCV можно найти на сайте [http://opencv.org](http://opencv.org)
 
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>Реализация компонента среды выполнения Windows с собственным кодом OpenCVHelper
