@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: Используйте этот метод в API аналитики для Microsoft Store для получения отзывов о приложении в заданном диапазоне дат или с учетом других дополнительных фильтров.
 title: Получение отзывов о приложении
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, отзывы
 ms.localizationpriority: medium
-ms.openlocfilehash: 656f00ec8a7711a43c44790b04ea01dace4c4ee2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 084158c0eb20f1d2a03c0e178064ac168c689872
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557095"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707955"
 ---
 # <a name="get-app-reviews"></a>Получение отзывов о приложении
 

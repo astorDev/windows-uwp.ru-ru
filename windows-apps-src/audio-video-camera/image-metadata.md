@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
 description: В этой статье описано, как считывать и записывать свойства метаданных изображения, а также как добавить геотег к файлам с помощью служебного класса GeotagHelper.
 title: Метаданные изображения
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a3e2f10174412b49ce60f3da6a4bb73b2efc4411
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2ab1279a8744d6dc9cddc88abaa064058f1259c2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560824"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711274"
 ---
 # <a name="image-metadata"></a>Метаданные изображения
 

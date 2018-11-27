@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: Визуальный компонент композиции
 description: Визуальные компоненты композиции составляют визуальную древовидную структуру, которую используют и на которую опираются другие функции API композиции. API позволяет разработчикам определить и создать один или несколько объектов класса Visual, каждый из которых представляет отдельный узел визуального дерева.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e43d5697a8fe4536e3574d93bda5836133ec8a8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6b1c0b78ca45d98428f38518b337b5889f595c49
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573739"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711244"
 ---
 # <a name="composition-visual"></a>Визуальный компонент композиции
 

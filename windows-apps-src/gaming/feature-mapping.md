@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Сопоставление компонентов DirectX9 и API DirectX11
 description: Прочитав этот раздел, вы поймете, как компоненты, которые использует ваша игра с Direct3D9, будут перенесены в Direct3D11 и на универсальную платформу Windows (UWP).
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx 9, directx 11, перенос
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dcf1749f1e7db4d514466d6a753d6f8cace5713
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 56bb86706795e773d21e45263f640f9fc0aa596a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567838"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708334"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>Сопоставление компонентов DirectX9 и API DirectX11
 
@@ -354,7 +352,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>Примечание</strong>  используйте Фиксировано .rrrg в шейдере, чтобы дублировать красный цвет и переместить зеленый цвет в альфа-компоненты, чтобы получить поведение Direct3D 9.
+<strong>Примечание</strong>  используйте Фиксировано .rrrg в шейдере, чтобы дублировать красный цвет, переместить зеленый цвет в альфа-компоненты поведение Direct3D 9 и.
 </div>
 <div>
  
@@ -400,7 +398,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>Примечание</strong>  в Direct3D 9 данные было увеличено, 255.0f, но это может быть обработано шейдером.
+<strong>Примечание</strong>  в Direct3D 9 данные было увеличено с 255.0f, но это может быть обработано шейдером.
 </div>
 <div>
  
@@ -414,7 +412,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>Примечание</strong>  в Direct3D 9 данные было увеличено, 255.0f, но это может быть обработано шейдером.
+<strong>Примечание</strong>  в Direct3D 9 данные было увеличено с 255.0f, но это может быть обработано шейдером.
 </div>
 <div>
  
@@ -582,7 +580,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>Примечание</strong>  шейдер получает значения UINT, но необходимы Если стиле Direct3D 9 целых чисел с плавающей точкой (0.0f, 1, 0f … 255.f), UINT можно просто преобразовать в тип float32 в шейдере.
+<strong>Примечание</strong>  шейдер получает значения UINT, но если Direct3D 9 стиле целых чисел с плавающей точкой (0, 0f, 1.0f … 255.f), UINT можно просто преобразовать в тип float32 в шейдере.
 </div>
 <div>
  

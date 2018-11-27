@@ -1,21 +1,19 @@
 ---
 description: Здесь вы найдете инструкции по проектированию и программированию для добавления элементов управления и шаблонов в приложение UWP. Свыше 45 функциональных элементов управления для использования с приложением.
 title: Элементы управления и шаблоны UWP — разработка приложений для Windows
-author: mijacobs
 keywords: элементы управления uwp, пользовательский интерфейс, элементы управления приложения
 label: Controls & patterns
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: e28d557280ab253a09d5697f369c694e490d3c7d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c2f1a2b5ae514222ed6ef06cc7099a0261747dbc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564578"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709843"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Элементы управления и шаблоны для приложений UWP
  

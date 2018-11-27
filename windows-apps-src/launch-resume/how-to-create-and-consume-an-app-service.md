@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Создание и использование службы приложения
 description: Узнайте, как написать приложение универсальной платформы Windows (UWP), которое может предоставлять службы другим приложениям UWP, и как использовать эти службы.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: связь между приложениями, межпроцессная связь, Межпроцессное взаимодействие, фоновые сообщения, фоновая связь, приложения в приложение, приложение служба приложения в приложение
-ms.author: twhitney
 ms.date: 09/18/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1407187f9883f44bb9fdc56fd3ae80820b5920f8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 34414d20a25e59a2569417c75ebfae90727d830d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556333"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7710513"
 ---
 # <a name="create-and-consume-an-app-service"></a>Создание и использование службы приложений
 

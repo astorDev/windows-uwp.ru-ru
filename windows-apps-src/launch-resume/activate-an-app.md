@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: Обработка активации приложения
 description: Узнайте, как обрабатывать активацию приложения путем переопределения метода OnLaunched.
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
-ms.author: twhitney
 ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -13,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 4d69680df1684da756219c180bbe6d47263801b9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a75136f26aa6cfa330e4118e6709b0b4d4be4054
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559776"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705297"
 ---
 # <a name="handle-app-activation"></a>Обработка активации приложения
 
@@ -266,7 +264,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ## <a name="remarks"></a>Примечания
 
 > [!NOTE]
-> Приложения могут пропустить инициализацию, если содержимое уже задано в текущем окне. Можно проверить свойство [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) , чтобы определить, было ли приложение запущено с основной или вспомогательной плитки и на основе этих данных решить, следует ли заново или возобновление работы приложения.
+> Приложения могут пропустить инициализацию, если содержимое уже задано в текущем окне. Можно проверить свойство [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) , чтобы определить, было ли приложение запущено с основной или вспомогательной плитки и на основе этих данных решить, следует ли заново или возобновлении работы приложения.
 
 ## <a name="important-apis"></a>Важные API
 * [Windows.ApplicationModel.Activation](https://msdn.microsoft.com/library/windows/apps/br224766)

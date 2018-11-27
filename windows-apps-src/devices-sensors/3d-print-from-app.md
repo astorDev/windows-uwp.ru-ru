@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Трехмерная печать из приложения
 description: Узнайте, как добавить функцию трехмерной печати в универсальное приложение для Windows. Эта статья содержит сведения о том, как вызвать диалоговое окно трехмерной печати, убедившись в том, что трехмерная модель пригодна для печати и представлена в нужном формате.
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 3dprinting, трехмерной печати
 ms.localizationpriority: medium
-ms.openlocfilehash: 818e1338a1d36d24990f22316dc2072c2c0d7cc5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a51312cc9be466c6847ec7f2d98b29da1c8e5c9f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574407"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708514"
 ---
 # <a name="3d-printing-from-your-app"></a>Трехмерная печать из приложения
 

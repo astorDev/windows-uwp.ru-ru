@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Используйте этот метод в API аналитики для Microsoft Store для получения трассировки стека для ошибки в Xbox One игры.
 title: Получение трассировки стека при возникновении ошибки в Xbox One игры
-ms.author: mhopkins
 ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, трассировка стека, ошибка
 ms.localizationpriority: medium
-ms.openlocfilehash: 78e65ad78079762ea5aabb95ddcaf4ce508b89bc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fd43305c54245c3281a0e840d3df4c5c87ff7ad8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557975"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705333"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-xbox-one-game"></a>Получение трассировки стека при возникновении ошибки в Xbox One игры
 
@@ -56,7 +54,7 @@ ms.locfileid: "7557975"
  
 ### <a name="request-example"></a>Пример запроса
 
-В следующем примере показано, как получить трассировку стека для Xbox One игры с помощью этого метода. Замените значение *applicationId* код продукта для вашей игры.
+Следующий пример демонстрирует получение трассировки стека для Xbox One игры с помощью этого метода. Замените значение *applicationId* код продукта для вашей игры.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/stacktrace?applicationId=BRRT4NJ9B3D1&cabId=1336373323853 HTTP/1.1

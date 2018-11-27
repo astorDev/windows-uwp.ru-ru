@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Присваивает уникальный идентификатор элементам, которые были созданы и отмечены как ресурсы и которые существуют в ResourceDictionary.
 title: Атрибут xKey
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d48ccb93a411e92b57059192de38366f27353a3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 407ceeb4964e616bdbcacb14620ed1a488a0072b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557128"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708832"
 ---
 # <a name="xkey-attribute"></a>Атрибут x:Key
 

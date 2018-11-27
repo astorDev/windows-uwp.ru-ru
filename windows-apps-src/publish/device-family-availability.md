@@ -1,18 +1,16 @@
 ---
-author: jnHs
 Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
 title: Доступность семейства устройств
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, пакеты, отправка, доступность семейства устройств
 ms.localizationpriority: medium
-ms.openlocfilehash: 543b5c519e7514ccef397c2bb78eadcc5e3692f5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 217a6ab9f25ee533a754138db5cf83c2ac81e3e9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574029"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709499"
 ---
 # <a name="device-family-availability"></a>Доступность семейства устройств
 
@@ -55,7 +53,7 @@ ms.locfileid: "7574029"
 > [!IMPORTANT]
 > Чтобы полностью запретить на определенном семействе устройств Windows 10 получения вашей отправки, обновите элемент [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) в манифесте предназначенные только для семейства устройств, который вы хотите поддерживать (например, Windows.Mobile или Windows.Desktop), а чем оставлять значение Windows.Universal (для универсального семейства устройств), Microsoft Visual Studio включает в манифест по умолчанию.
 
-Не менее важно помнить, что параметры выбранные в разделе **Доступность семейства устройств**, применяются только к новым приобретениям. Любой пользователь, который уже получил ваше приложение, сможет работать с ним и будет получать все публикуемые вами обновления, даже если вы удалите это семейство устройств из манифеста. Это применимо даже для пользователей, которые приобрели ваше приложение перед обновлением до Windows10. Например если у вас уже опубликованного приложения с пакетами Windows Phone 8.1, а также добавить пакет Windows 10 (UWP), предназначенные для семейства устройств Windows.Universal, пользователи мобильных устройств Windows 10, получившим пакет Windows Phone 8.1 будут предлагаться обновления для этого Windows Пакет 10 (UWP), даже если вы устанавливайте флажок для **Windows 10 Mobile**.
+Не менее важно помнить, что параметры выбранные в разделе **Доступность семейства устройств**, применяются только к новым приобретениям. Любой пользователь, который уже получил ваше приложение, сможет работать с ним и будет получать все публикуемые вами обновления, даже если вы удалите это семейство устройств из манифеста. Это применимо даже для пользователей, которые приобрели ваше приложение перед обновлением до Windows10. Например если у вас есть опубликованного приложения с пакетами Windows Phone 8.1 и добавить пакет Windows 10 (UWP), предназначенные для семейства устройств Windows.Universal, пользователи мобильных устройств Windows 10, получившим пакет Windows Phone 8.1 будут предлагаться обновления для этого Windows Упаковка 10 (UWP), даже если вы устанавливайте флажок для **Windows 10 Mobile**.
 
 Дополнительные сведения о семействах устройств см. в разделе [**Общие сведения о семействах устройств **](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview).
 

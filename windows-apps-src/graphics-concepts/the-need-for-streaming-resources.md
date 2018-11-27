@@ -4,17 +4,15 @@ description: Потоковые ресурсы необходимы для то�
 ms.assetid: A88BE65B-104F-4176-9809-C12580A3684C
 keywords:
 - Потребность в потоковых ресурсах
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 25d5e1d88ec631c3d9105d0291710ca6d0389f13
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0e0354b0e727e84d562bf63779e74be72f87198f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571794"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708554"
 ---
 # <a name="the-need-for-streaming-resources"></a>Потребность в потоковых ресурсах
 

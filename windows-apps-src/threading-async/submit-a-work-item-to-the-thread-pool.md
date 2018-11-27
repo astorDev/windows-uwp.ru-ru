@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: Отправка рабочего элемента в пул потоков
 description: Узнайте, как выполнить работу в отдельном потоке, отправив рабочий элемент в пул потоков.
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, потоки, пул потоков
 ms.localizationpriority: medium
-ms.openlocfilehash: fe73520782b18fb7419807695296bc6487f9c018
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4c1df6a4b72b7c73cac41e66ef1074975db0d979
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579930"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705359"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Отправка рабочего элемента в пул потоков
 

@@ -1,21 +1,19 @@
 ---
-author: mijacobs
 Description: Edge-based animations show or hide UI that originates from the edge of the screen.
 title: Элементы анимации пользовательского интерфейса с использованием края в приложениях UWP
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1cb6cee78d7c7d1e59e64dd151539ce6b3e5d7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e07ac565fe2e223b2fb33573ad083edfdfbc888a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582334"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708884"
 ---
 # <a name="edge-based-ui-animations"></a>Анимации пользовательского интерфейса с использованием края
 

@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: This topic describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.
 title: Поворот
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cc2e48239fd2f0e3d9299417a0d96d33acdc122
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f631f3178b4af4fe1c1d2d8b27e8ae6ac25c6ad1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578703"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711024"
 ---
 # <a name="rotation"></a>Поворот
 
@@ -46,7 +44,7 @@ ms.locfileid: "7578703"
 
 ![Схема с различными поддерживаемыми положениями пальцев для поворота.](images/ux-rotate-positions.png)
 
-**Примечание**  интуитивно и в большинстве случаев точка поворота — это один из двух точек касания, если пользователь может указать точку поворота, которые не связаны с контактными точками (например, в приложениях для рисования или приложения). Следующие изображения демонстрируют, насколько хуже может стать взаимодействие с пользователем, если точка поворота не ограничена таким образом.
+**Примечание**  интуитивно и в большинстве случаев точка поворота — это один из двух точек касания, если только пользователь может указать точку поворота, которые не связаны с контактными точками (например, в приложениях для рисования или приложения). Следующие изображения демонстрируют, насколько хуже может стать взаимодействие с пользователем, если точка поворота не ограничена таким образом.
 
 На первом изображении представлены начальная (большой палец) и дополнительная (указательный палец) точки касания: указательный палец касается дерева, а большой палец — бревна.
 

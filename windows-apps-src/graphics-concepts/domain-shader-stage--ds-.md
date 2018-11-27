@@ -4,17 +4,15 @@ description: На этапе шейдера доменов вычисляетс�
 ms.assetid: 673CC04A-A74F-495F-AFB7-49157538749C
 keywords:
 - Этап шейдера доменов (DS)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bcad4a5e22249d4d7faed08fe9cc9af4c3fb338
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bbde90d848d3bc8fb18a5ecf370c85121adc02f6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561737"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7710401"
 ---
 # <a name="domain-shader-ds-stage"></a>Этап шейдера доменов (DS)
 

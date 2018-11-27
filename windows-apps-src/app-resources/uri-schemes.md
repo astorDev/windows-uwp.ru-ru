@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
 title: Схемы URI
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 75ba42674ca1ea460698fcce6e67bb3528589797
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 345a41a45e28843161e65ecb04f0083f1a71269a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563674"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711254"
 ---
 # <a name="uri-schemes"></a>Схемы URI
 
@@ -253,7 +251,7 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 Дополнительные сведения и примеры см. в разделах [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md) и [Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
-Компонент пути схемы `ms-resource`, как и стандартные URI, учитывает регистр. Тем не менее, базовый извлечение делает [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) с *ignoreCase* значение `true`.
+Компонент пути схемы `ms-resource`, как и стандартные URI, учитывает регистр. Тем не менее, базовое извлечение делает [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) с *ignoreCase* значение `true`.
 
 Нормализованная форма URI поддерживает регистр и декодирует (используя символ "%", за которым следуют двузначный шестнадцатеричный символ) незарезервированные символы RFC 3986. Символы ?, #, /, * и ” (символ кавычки), представляющие такие данные в пути, как имена файлов или папок, должны кодироваться. Все закодированные символы перед получением декодируются. Таким образом, чтобы получить строковый ресурс из файла ресурсов с именем `Hello#World.resw`, используйте этот URI.
 

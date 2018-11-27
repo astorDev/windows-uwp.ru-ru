@@ -1,14 +1,13 @@
 ---
-author: WilliamsJason
 title: Справка по API для сведений о развертывании портала устройств
 description: Узнайте, как программными средствами получить доступ к API для сведений о развертывании.
 ms.localizationpriority: medium
-ms.openlocfilehash: c0e8c6ea8fb42c6e11de8002da4b6c78d35e675b
-ms.sourcegitcommit: c104b653601d9b81cfc8bb6032ca434cff8fe9b1
-ms.translationtype: HT
+ms.openlocfilehash: c44089313b100880b419e9b55a26101e877496f3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "1921172"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709856"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>Запрашивает сведения о развертывании для одного или нескольких установленных пакетов.
 

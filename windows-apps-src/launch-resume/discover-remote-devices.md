@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: Обнаружение удаленных устройств
 description: Узнайте, как обнаруживать удаленные устройства из приложения с помощью платформы Project Rome.
 ms.assetid: 5b4231c0-5060-49e2-a577-b747e20cf633
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, подключенных устройств, удаленными системами, Рим, project rome
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e6d3d4a549c5e815464ef696a938b44dbe6128c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7788cb546eddf77292210b5b1e8268239504a843
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561131"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706227"
 ---
 # <a name="discover-remote-devices"></a>Обнаружение удаленных устройств
 Ваше приложение может использовать беспроводную сеть, Bluetooth и облачное подключение для обнаружения устройств с Windows, вход с которых выполнен с той же учетной записью Майкрософт, что и у обнаруживающего устройства. Обнаружение удаленных устройств возможно без установки на них какого-либо специального программного обеспечения.

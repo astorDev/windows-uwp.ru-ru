@@ -1,26 +1,24 @@
 ---
-author: jwmsft
 ms.assetid: F912161D-3767-4F35-88C0-E1ECDED692A2
 title: Улучшение производительности сборки мусора
 description: Приложения универсальной платформы Windows (UWP) на C# и Visual Basic получают функции автоматического управления памятью от сборщика мусора .NET. В этой статье приведены основные рекомендации по настройке поведения и производительности сборщика мусора .NET в приложениях UWP.
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 31279de84b8f00e4489a7aae962caa231bb16dc1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6d3940f519706fba6d795d60344cbd83337ae482
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553891"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710563"
 ---
 # <a name="improve-garbage-collection-performance"></a>Улучшение производительности сборки мусора
 
 
 Приложения универсальной платформы Windows (UWP) на C# и Visual Basic получают функции автоматического управления памятью от сборщика мусора .NET. В этой статье приведены основные рекомендации по настройке поведения и производительности сборщика мусора .NET в приложениях UWP. Подробнее о принципах работы сборщика мусора .NET и средствах его отладки и анализа производительности см. в статье [Сборка мусора](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx).
 
-**Примечание**необходимость изменить в поведение сборщика мусора по умолчанию, свидетельствует о наличии проблем общего характера памятью с вашим приложением. Дополнительные сведения об этом см. в статье [Средство использования памяти при отладке в Visual Studio2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). Эта статья касается только языков C# и Visual Basic.
+**Примечание**необходимость изменить поведение по умолчанию сборщика мусора, свидетельствует о наличии проблем общего характера памятью с вашим приложением. Дополнительные сведения об этом см. в статье [Средство использования памяти при отладке в Visual Studio2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). Эта статья касается только языков C# и Visual Basic.
 
  
 

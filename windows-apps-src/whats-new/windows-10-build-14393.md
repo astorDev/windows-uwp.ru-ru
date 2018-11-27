@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Новые возможности в Windows 10 для разработчиков, средства и компоненты
 description: Windows 10 (сборка 14393) и новые средства разработчика обеспечивают доступ к средствам, компонентам и возможностям универсальной платформы Windows.
 keywords: новые возможности, что нового, обновление, обновления, компоненты, новые, Windows 10, 1607, июль, самое новое, 14393
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
-ms.openlocfilehash: a350ff9cd5a2a3ec22637eabbcfc55b693cdd283
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7aff0812da6b7c3d8e55bc31ed196211f54252e3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570224"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709717"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a>Новые возможности для разработчиков в Windows 10, сборка 14393
 

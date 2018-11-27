@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 Description: This topic describes performance guidelines for apps that require access to a user's location.
 title: Рекомендации относительно приложений с определением расположения
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, расположение, карта, геолокация
 ms.localizationpriority: medium
-ms.openlocfilehash: d0101124febc52da379d2e829e86bdbba7583851
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e5150188c99bfc448bf85df6a6dabbbb4c60bd49
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582274"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709602"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>Рекомендации относительно приложений с определением расположения
 
@@ -89,7 +87,7 @@ ms.locfileid: "7582274"
         Например:
 
         -   Если приложение определяет расположение для настройки рекламы, сводок погоды, новостей и т.п., вполне достаточной будет точность 5000метров.
-        -   Если ваше приложение отображает сделки по дает соседству, обычно хорошие результаты точность 300 метров.
+        -   Если ваше приложение отображает сделки окружения соседству, обычно хорошие результаты точность 300 метров.
         -   Если пользователь ищет рекомендации для ближайших ресторанов, вероятно, требуется позиция в пределах квартала, то есть достаточной будет точность 100метров.
         -   Если пользователь хочет сообщить кому-то о своем местонахождении, приложение должно запрашивать точность около 10метров.
     -   Если у приложения имеются конкретные требования к точности, используйте свойство [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526). Например, в приложениях для навигации следует использовать свойство **Geocoordinate.accuracy** для определения того, соответствуют ли доступные данные о расположении требованиям приложения.

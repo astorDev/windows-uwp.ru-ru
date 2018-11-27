@@ -1,22 +1,20 @@
 ---
-author: stevewhims
 description: В этом разделе описаны две вспомогательные функции, которые могут использоваться для преобразования между объектами C++/ CX и C++/WinRT.
 title: Взаимодействие между C++/WinRT и C++/CX
-ms.author: stwhi
 ms.date: 10/09/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, взаимодействие, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3cc69065ef2898aebafc832da1639985231d60
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 71cc7a24be7afd7a6221e8e474161b453b5ee19a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561385"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710137"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>Взаимодействие между C++/WinRT и C++/CX
 
-Стратегии для постепенного переноса кода в вашем [C + +/ CX](/cpp/cppcx/visual-c-language-reference-c-cx) проекта [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) рассматриваются в [Переход на C + +/ WinRT из C + +/ CX](move-to-winrt-from-cx.md).
+Стратегии для постепенного переноса кода в вашем [C + +/ CX](/cpp/cppcx/visual-c-language-reference-c-cx) проекта в [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) рассматриваются в [Переход на C + +/ WinRT из C + +/ CX](move-to-winrt-from-cx.md).
 
 В этом разделе описаны две вспомогательные функции, которые можно использовать для преобразования между C + +/ CX и C + +/ WinRT объекты в одном проекте. Их можно использовать для взаимодействия между кодом, который использует эти две языковых проекции, или можно использовать функции, как перенести код из C + +/ CX в C + +/ WinRT.
 
@@ -49,12 +47,12 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 
 ## <a name="example-project-showing-the-two-helper-functions-in-use"></a>Пример проекта показывает использование двух вспомогательных функций
 
-Для воспроизведения в это простой способ сценарий постепенного переноса кода на C + +/ CX проекта на C + +/ WinRT, вы можете начать с создания нового проекта в Visual Studio, с помощью одного из C + +/ WinRT шаблоны проектов (см. в разделе [Поддержка Visual Studio для C + +/ WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)).
+Для воспроизведения простым способом, сценарий постепенного переноса кода на C + +/ CX проекта на C + +/ WinRT, вы можете начать с создания нового проекта в Visual Studio, с помощью одного из C + +/ WinRT шаблоны проектов (см. в разделе [Поддержка Visual Studio для C + +/ WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)).
 
 Этот пример проекта также показывает, как использовать псевдонимы пространств имен для различных островов кода, чтобы справиться с пространством имен конфликтами между C + +/ WinRT проекции и C + +/ CX проекции.
 
 - Создание **Visual C++** \> **Универсальные** > **приложения основных компонентов (C + +/ WinRT)** проекта.
-- В свойствах проекта **C/C++** \> **Общие** \> **Использовать расширение среды выполнения Windows** \> **Да (/ZW)**. Это включает поддержку проекта для C + +/ CX.
+- В свойствах проекта **C/C++** \> **Общие** \> **Использовать расширение среды выполнения Windows** \> **Да (/ZW)**. Это включает поддержку проекта C + +/ CX.
 - Замените содержимое `App.cpp` с помощью приведенного ниже кода.
 
 ```cppwinrt

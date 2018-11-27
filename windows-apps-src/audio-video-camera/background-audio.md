@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: b7333924-d641-4ba5-92a2-65925b44ccaa
 description: В этой статье показано, как воспроизводить мультимедиа, когда приложение работает в фоновом режиме.
 title: Воспроизведение мультимедиа в фоновом режиме
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e1ec460403617cbbf0fb6d6bbff9950046790039
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b8a859f27ff24dba15f7e4fde66a8d54a84a8bf4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574560"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706507"
 ---
 # <a name="play-media-in-the-background"></a>Воспроизведение мультимедиа в фоновом режиме
 В этой статье показано, как настроить приложение, чтобы воспроизведение мультимедиа продолжалось, когда приложение переходит в фоновый режим. Это значит, что даже после того, как пользователь свернет приложение, вернется на начальный экран или выйдет из приложения другим способом, ваше приложение продолжит воспроизводить звук. 

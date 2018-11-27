@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Перенос простого обработчика OpenGL ES 2.0 в Direct3D 11
 description: В качестве первого упражнения в переносе начнем с основ - с переноса простого обработчика для вращающегося куба с затенением по вершинам из OpenGL ES 2.0 в Direct3D, чтобы он соответствовал шаблону «Приложение DirectX 11 (универсальные приложения для Windows)» из Visual Studio 2015.
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d 11, перенос
 ms.localizationpriority: medium
-ms.openlocfilehash: e7541a8f54f64197c17acea5f1737e36b0e6f670
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 78bcf3c2cae53fba4e67ecd4b3bcc44adddde1bf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559196"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707710"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>Перенос простого отрисовщика OpenGL ES 2.0 в Direct3D 11
 

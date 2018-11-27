@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: Сведения о решении распространенных проблем разработки при использовании библиотек Microsoft Advertising в приложениях XAML.
 title: Руководство по устранению неполадок в XAML и C#
-ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, устранение неполадок, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 12789767694e4ab3fa13efec4a31c8db4acd5420
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564190"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707991"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>Руководство по устранению неполадок в XAML и C#
 
@@ -39,7 +37,7 @@ ms.locfileid: "7564190"
 
 1.  Убедитесь, что в файле Package.appxmanifest выбрана возможность **Интернет (клиент)**.
 
-2.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны соответствовать Идентификатору приложения и идентификатор рекламного блока, полученным в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+2.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны соответствовать Идентификатору приложения и рекламного блока, полученным в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -175,7 +173,7 @@ ms.locfileid: "7564190"
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны соответствовать Идентификатору приложения и идентификатор рекламного блока, полученным в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны соответствовать Идентификатору приложения и рекламного блока, полученным в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs

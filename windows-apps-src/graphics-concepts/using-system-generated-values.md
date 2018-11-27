@@ -4,17 +4,15 @@ description: Создаваемые системой значения генер
 ms.assetid: C7CBA81D-68CA-4E9A-95E3-8185C280C843
 keywords:
 - Использование системных значений
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f187495568892f5b489f6e109669811f4c45ab1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6efe7aa27721f519ba93052abf2d0e8189f58941
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558485"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709171"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>Использование системных значений
 

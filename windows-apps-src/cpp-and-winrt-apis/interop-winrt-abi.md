@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: В этом разделе показано, как выполнять преобразование между объектами двоичного интерфейса приложений (ABI) и C++/WinRT.
 title: Взаимодействие между C++/WinRT и интерфейсом ABI
-ms.author: stwhi
 ms.date: 05/21/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, взаимодействие, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 40d2c29dcab1a54046cb0def882cfa5f80b1f1f6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6597846ae96b498a7b0068151a33cf31d17511d5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565399"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710690"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Взаимодействие между C++/WinRT и интерфейсом ABI
 

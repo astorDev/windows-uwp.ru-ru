@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: Перечисление устройств
 description: Пространство имен перечисления позволяет обнаружить устройства, которые подключены к системе изнутри, внешним образом или могут быть обнаружены по протоколам проводной или беспроводной сети.
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: df6082665136442c03273dea4132417b0fd7033c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f6348cc713d4fb93dfed9310eea9d3fd1025a2de
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553438"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708714"
 ---
 # <a name="enumerate-devices"></a>Перечисление устройств
 
@@ -125,7 +123,7 @@ async void enumerateSnapshot(){
 
 Отслеживание устройств в фоновой задаче очень похоже на создание [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), рассмотренное выше. К слову, вам все равно придется сначала создать обычный объект **DeviceWatcher**, как описано в предыдущем разделе. После его создания вызовите [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) вместо [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start). При вызове метода **GetBackgroundTrigger** необходимо определить, какие из уведомлений вас интересуют: уведомления о добавлении, удалении или обновлении. Невозможно запросить обновление или удаление, не запросив также и добавление. После регистрации триггера объект **DeviceWatcher** сразу же начнет свою работу в фоновом режиме. С этого момента при получении нового уведомления для вашего приложения, которое соответствует заданным условиям, активируется фоновая задача, которая предоставит вам последние изменения с момента последней активации вашего приложения.
 
-**Важные**в первый раз, что [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) запускает ваше приложение будет, когда наблюдатель **EnumerationCompleted** состояние. Это означает, что он будет содержать все исходные результаты. При последующей активации приложения он будет содержать только уведомления о добавлении, обновлении и удалении, полученные с момента последней активации. Это немного отличается от объекта переднего плана [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), так как исходные результаты поступают не по одному, а только пакетом после перехода в состояние **EnumerationCompleted**.
+**Важные**в первый раз, что [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) запускает приложение будет, когда наблюдатель **EnumerationCompleted** состояния. Это означает, что он будет содержать все исходные результаты. При последующей активации приложения он будет содержать только уведомления о добавлении, обновлении и удалении, полученные с момента последней активации. Это немного отличается от объекта переднего плана [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446), так как исходные результаты поступают не по одному, а только пакетом после перехода в состояние **EnumerationCompleted**.
 
  
 

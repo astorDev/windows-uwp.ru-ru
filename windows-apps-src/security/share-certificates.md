@@ -2,18 +2,16 @@
 title: Совместное использование сертификатов приложениями
 description: Приложения универсальной платформы Windows (UWP), требующие безопасной проверки подлинности помимо идентификатора пользователя и пароля, могут использовать для проверки подлинности сертификаты.
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
-ms.openlocfilehash: 044b1b60b80cec1fc40adda6b9b6d44bee34ce7c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1caa7361011b535a0dd63da53e0aba2eadff72be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570357"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711401"
 ---
 # <a name="share-certificates-between-apps"></a>Совместное использование сертификатов приложениями
 
@@ -76,7 +74,7 @@ ms.locfileid: "7570357"
 
 Если доступных сертификатов клиента нет, пользователю понадобится добавить сертификат в хранилище сертификатов. Вы можете включить в свое приложение код, который позволяет пользователю выбрать PFX-файл, содержащий сертификат клиента, и импортировать этот сертификат в хранилище сертификатов клиента.
 
-**Совет**makecert.exe можно использовать для создания PFX-файл для использования с этого краткого руководства. Подробнее об использовании makecert.exe см. в разделе [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968).
+**Совет**makecert.exe можно использовать для создания PFX-файл для использования с помощью этого краткого руководства. Подробнее об использовании makecert.exe см. в разделе [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968).
 
  
 
