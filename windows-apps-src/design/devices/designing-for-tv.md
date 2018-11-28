@@ -14,11 +14,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b09e90ea71872421a0caf1edcc1a03ce25fef42
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720440"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7850113"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Проектирование для Xbox и телевизора
 
@@ -832,7 +832,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 > [!NOTE]
 > Этот фрагмент кода предназначен специально для стиля `ListView`. Для стиля `GridView` задайте атрибут [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) для [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) и [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) равным `GridView`.
 
-Для более точное управление как элементы добавляются в представление, если ваше приложение предназначено для версии 1803 или более поздней версии, можно использовать [событие UIElement.BringIntoViewRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Поместите ее на [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) для **ListView**/**GridView** для перехвата его перед делает внутренние **ScrollViewer** , как показано в следующем фрагменте кода:
+Для более точное управление как элементы добавляются в представление, если ваше приложение предназначено для версии 1803 или более поздней версии, можно использовать [событие UIElement.BringIntoViewRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Поместите ее на [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) для **ListView**/**GridView** перехватить раньше внутреннего **ScrollViewer** , как показано в следующем фрагменте кода:
 
 ```xaml
 <GridView x:Name="gridView">

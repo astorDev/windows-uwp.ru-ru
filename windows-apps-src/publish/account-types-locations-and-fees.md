@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, учетная запись разработчика, отдельное лицо, компания, бизнес
 ms.localizationpriority: medium
 ms.openlocfilehash: 3163b4c89cc1d0bf3e4adfdea39222dfcb5a3ee1
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7709302"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852995"
 ---
 # <a name="account-types-locations-and-fees"></a>Типы, доступность и стоимость учетных записей
 
@@ -226,7 +226,7 @@ ms.locfileid: "7709302"
 |  Свазиленд | 19 USD | 99 USD | Нет выплаты | Нет | 
 |  Швеция | 123 SEK | 700 SEK | Платежи в шведских кронах (SEK) через банк | Да | 
 |  Швейцария | 17 CHF | 90 CHF | Платежи в швейцарских франках (CZK) через банк | Да | 
-|  Taiwan | 568 TWD | 2840 TWD | Платежи в долларах США (USD) через банк | Да | 
+|  Тайвань | 568 TWD | 2840 TWD | Платежи в долларах США (USD) через банк | Да | 
 |  Таджикистан | 19 USD | 99 USD | Платежи в долларах США (USD) через банк | Нет | 
 |  Танзания | 19 USD | 99 USD | Платежи в танзанийских шиллингах (TZS) через банк | Нет | 
 |  Таиланд | 601 THB | 3000 THB | Платежи в тайских батах (THB) через банк | Да | 

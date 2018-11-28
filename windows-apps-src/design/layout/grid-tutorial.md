@@ -8,11 +8,11 @@ keywords: Windows10, UWP
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b221220d417df5b70927984ac65eff93fae54a4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707038"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7847278"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Учебник: использование Grid и StackPanel для создания простого погодного приложения
 
@@ -21,7 +21,7 @@ ms.locfileid: "7707038"
 > **Важные API**: [Класс Grid](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [Класс StackPanel](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>Предварительные требования
-- Windows 10 и Microsoft Visual Studio 2015 или более поздней версии. (Новые Visual Studio рекомендуется для текущей разработки и безопасности обновления) [Щелкните здесь, чтобы узнать, как подготовиться к работе с Visual Studio](../../get-started/get-set-up.md).
+- Windows 10 и Microsoft Visual Studio 2015 или более поздней версии. (Новейшей Visual Studio рекомендуется для текущей разработки и безопасности обновления) [Щелкните здесь, чтобы узнать, как подготовиться к работе с Visual Studio](../../get-started/get-set-up.md).
 - Сведения о том, как создать базовое приложение "Hello World" с помощью XAML и C#. [Щелкните здесь, чтобы узнать, как создать приложение "Hello World"](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal), если у вас его еще нет.
 
 ## <a name="step-1-create-a-blank-app"></a>Шаг 1. Создайте пустое приложение

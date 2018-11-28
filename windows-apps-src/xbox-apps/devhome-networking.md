@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 06d82b350cccfd90509f3b9f031de2785e91e0dc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702292"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7850488"
 ---
 # <a name="networking-page-dev-home"></a>Страница сети (Dev Home)
    
@@ -33,7 +33,7 @@ ms.locfileid: "7702292"
 ## <a name="network-simulation"></a>Сетевую симуляцию  
    
   
-На панели **сетевую симуляцию** запускает сетевую симуляцию, чтобы протестировать различные профили пропускной способности.   
+Области **сетевую симуляцию** запускает сетевую симуляцию протестировать на предмет различными профилями пропускной способности.   
   
 <a id="ID4EOB"></a>
 

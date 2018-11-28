@@ -5,12 +5,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a68e78bef540717d4f4c33d3132748fa727b4068
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 551f8b925ffd56950ba893da7b81fefb4579f558
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7714090"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840017"
 ---
 # <a name="bluetooth-gatt-server"></a>Сервер GATT Bluetooth
 
@@ -68,7 +68,7 @@ Windows обычно выполняется в роли клиента. Тем �
 
 > Обратите внимание, что трансляции в данный момент не поддерживается.  Указав GattCharacteristicProperty рассылка приведет к вызову исключения.
 
-### <a name="build-up-the-heirarchy-of-services-and-characteristics"></a>Создания иерархии службах и характеристиках
+### <a name="build-up-the-hierarchy-of-services-and-characteristics"></a>Создания иерархии службах и характеристиках
 GattServiceProvider используется для создания и объявление определение основного службы корневой.  Каждая служба требует, чтобы это собственный поставщик службы объекта, который принимает в GUID: 
 
 ```csharp

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 241ee0de885dd1b2e40b6ce51c21312dbcb9f655
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 811a9b42efe83cf89fd3df89e5c43c72274af36f
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692143"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844091"
 ---
  # <a name="files-folders-and-libraries"></a>Файлы, папки и библиотеки
 
@@ -29,6 +29,7 @@ API в пространствах имен [Windows.Storage](https://msdn.micros
 | [Определение доступности файлов MicrosoftOneDrive](quickstart-determining-availability-of-microsoft-onedrive-files.md) | Определите доступность файла MicrosoftOneDrive с помощью свойства [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx). |
 | [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | Добавьте существующие папки музыки, изображений или видео в соответствующие библиотеки. Можно также удалить папки из библиотек, получить список папок в библиотеке и найти сохраненные фотографии, музыку и видео. |
 | [Отслеживание недавно использовавшихся файлов и папок](how-to-track-recently-used-files-and-folders.md) | Отслеживайте файлы, к которым часто обращается пользователь, добавляя их в список недавно использованных файлов (MRU). Платформа управляет списком MRU, сортируя элементы по времени последнего доступа к ним и удаляя самые старые элементы списка, имеющего ограничение в 25 элементов. Каждое приложение имеет собственный список MRU. |
+| [Отслеживание изменений файловой системы в фоновом режиме](change-tracking-filesystem.md) | Отслеживание изменений в файловой системе, даже в том случае, когда приложение не выполняется.|
 | [Доступ к SD-карте](access-the-sd-card.md) | Не очень важные данные можно хранить на дополнительной карте microSD, в особенности на недорогих мобильных устройствах с ограниченным объемом внутренней памяти. |
 | [Разрешения на доступ к файлам](file-access-permissions.md) | Приложения могут иметь доступ к определенным расположениям в файловой системе по умолчанию. Приложения также могут получить доступ к дополнительным расположениям через средство выбора файлов или с помощью объявления возможностей. |
 | [Быстрый доступ к свойствам файлов в UWP](fast-file-properties.md) | Теперь можно получить список файлов и их свойств из библиотеки для использования в приложении UWP. |

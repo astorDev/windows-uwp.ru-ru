@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание отправки надстройки, продукт внутри приложения, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691815"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7851667"
 ---
 # <a name="create-an-add-on-submission"></a>Создание отправки надстройки
 
@@ -29,7 +29,7 @@ ms.locfileid: "7691815"
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия токена можно получить новый токен.
-* Создайте надстройку для одного из своих приложений. Это можно сделать в центре партнеров, или можно сделать с помощью метода [создания надстройки](create-an-add-on.md) .
+* Создайте надстройку для одного из своих приложений. Это можно сделать в центре партнеров или можно сделать с помощью метода [создания надстройки](create-an-add-on.md) .
 
 ## <a name="request"></a>Запрос
 

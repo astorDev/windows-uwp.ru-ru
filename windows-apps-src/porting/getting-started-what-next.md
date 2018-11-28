@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ab12f79670428fa2b6affa91240787f75bc51bc2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698413"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7847616"
 ---
 # <a name="getting-started-what-next"></a>Начало работы: что дальше?
 
@@ -29,7 +29,7 @@ ms.locfileid: "7698413"
 
 Кроме того, ознакомьтесь с [ресурсами сообщества](https://developer.microsoft.com/en-us/windows/support), чтобы узнать, как получить справку и дополнительные сведения с помощью форумов и блогов, а также как принять участие в семинарах разработчиков и мероприятиях Майкрософт.
 
-Мы надеемся, что Windows10 откроет новый приложений для вас. С нетерпением ждем воплощения ваших замыслов!
+Мы надеемся, что Windows10 откроет новый приложений за вас. С нетерпением ждем воплощения ваших замыслов!
 
 ## <a name="related-topics"></a>Еще по теме
 

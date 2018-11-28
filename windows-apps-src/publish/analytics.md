@@ -1,25 +1,23 @@
 ---
-author: JnHs
 Description: Get detailed analytics for your Windows apps, in Partner Center or via other methods.
 title: Анализ эффективности приложений
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, uwp, аналитика, отчеты, панели мониторинга, приложений, данных, показатели
+keywords: Windows 10, uwp, аналитика, отчеты, панели мониторинга, приложений, данных, метрик
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d7998366d484c95b90b765eb9227a7c3df41b6f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f6a6d79745ec98af2c7f562297092eea3feda659
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560758"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7845853"
 ---
 # <a name="analyze-app-performance"></a>Анализ производительности приложений
 
 Вы можете просматривать подробную аналитику для ваших приложений в [Центре партнеров](https://partner.microsoft.com/dashboard). Статистика и диаграммы позволяют узнать, как работают ваши приложения, начиная от количества пользователей до использования ими того или иного приложения вместе с соответствующими отзывами. Можно также найти показатели работоспособности приложения, сведения об использовании рекламных объявлений и многом другом.
 
-Можно просмотреть аналитические отчеты справа в центре партнеров или [скачать отчеты, необходимые](download-analytic-reports.md) для анализа данных в автономном режиме. Мы также предоставляем несколько способов для вас для [доступа к аналитическим данным внешнюю среду центра партнеров](#outside).
+Можно просмотреть аналитические отчеты справа в центре партнеров или [скачать отчеты, необходимые](download-analytic-reports.md) для анализа данных в автономном режиме. Мы также предлагаем несколько способов для вас доступ к [аналитическим данным внешнюю среду центра партнеров](#outside).
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>Просмотр основных данных аналитики для всех приложений
 

@@ -4,14 +4,14 @@ description: В этой статье описано, как приложени�
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ac2a625b3769377ed6c8dddce3ca25177dee5f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693729"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7842937"
 ---
 # <a name="credential-locker"></a>Хранилище учетных данных
 

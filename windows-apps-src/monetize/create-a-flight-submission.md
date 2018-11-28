@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание отправки тестируемой возможности
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e303027aaf3b10260090c500df573f1bf484e20
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691665"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839419"
 ---
 # <a name="create-a-package-flight-submission"></a>Создание отправки тестового пакета
 
@@ -28,7 +28,7 @@ ms.locfileid: "7691665"
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия токена можно получить новый токен.
-* Создание тестового пакета для приложения. Это можно сделать в центре партнеров, или можно сделать с помощью метода [создания тестового пакета](create-a-flight.md) .
+* Создание тестового пакета для приложения. Это можно сделать в центре партнеров или можно сделать с помощью метода [создания тестового пакета](create-a-flight.md) .
 
 ## <a name="request"></a>Запрос
 

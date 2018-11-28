@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ca4c9799a4bfe15decf0e23516d663f48092e9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704741"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7846628"
 ---
 # <a name="engage-with-your-customers"></a>Привлечение клиентов
 
-[Центр партнеров](https://partner.microsoft.com/dashboard) включает функций для диска Повышайте интерес и удовлетворенность. Узнайте, как использовать уведомления и целевые предложения, отвечать на рецензии и отзывы и многое другое.
+[Центр партнеров](https://partner.microsoft.com/dashboard) включает в себя функций для диска Повышайте интерес и удовлетворенность. Узнайте, как использовать уведомления и целевые предложения, отвечать на рецензии и отзывы и многое другое.
 
 -   [Создание групп пользователей](create-customer-groups.md)
 -   [Ответ на оценки пользователей](respond-to-customer-reviews.md)

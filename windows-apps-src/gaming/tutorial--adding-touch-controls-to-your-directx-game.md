@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, сенсорный ввод, элементы управления, directx, ввод
 ms.localizationpriority: medium
 ms.openlocfilehash: e8892219b485d320bb77f90ac0d172e8e2403392
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697014"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7842917"
 ---
 # <a name="touch-controls-for-games"></a>Сенсорные элементы управления для игр
 

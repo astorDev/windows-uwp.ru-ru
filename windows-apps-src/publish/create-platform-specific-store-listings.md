@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, настройка, описания, описание, более ранние версии
 ms.localizationpriority: medium
 ms.openlocfilehash: bfb21d56df357640734e9e5026783cc398468f0a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7714928"
+ms.locfileid: "7841243"
 ---
 # <a name="create-platform-specific-store-listings"></a>Создание описаний в Store для определенной платформы
 

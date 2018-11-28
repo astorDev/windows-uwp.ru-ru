@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7a4021a2a0fb6c84755730e4f0e9917b10e94ec8
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703957"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844813"
 ---
 # <a name="barcode-scanner"></a>Сканер штрихкодов
 

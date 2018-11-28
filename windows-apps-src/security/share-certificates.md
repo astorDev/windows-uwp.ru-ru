@@ -4,14 +4,14 @@ description: Приложения универсальной платформы 
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасность
+keywords: Windows 10, uwp, безопасности
 ms.localizationpriority: medium
 ms.openlocfilehash: 1caa7361011b535a0dd63da53e0aba2eadff72be
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7711401"
+ms.locfileid: "7848580"
 ---
 # <a name="share-certificates-between-apps"></a>Совместное использование сертификатов приложениями
 

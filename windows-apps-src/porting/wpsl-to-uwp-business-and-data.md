@@ -1,19 +1,19 @@
 ---
 description: За вашим пользовательским интерфейсом расположены уровни бизнеса и данных.
-title: Перенос уровней данных для UWP и бизнес-WindowsPhone Silverlight
+title: Перенос бизнеса WindowsPhone Silverlight и уровни данных в UWP
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cb53295227655e3067dafd5e3a3f1f4631a97455
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703996"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7849152"
 ---
-#  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>Перенос уровней данных для UWP и бизнес-WindowsPhone Silverlight
+#  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>Перенос бизнеса WindowsPhone Silverlight и уровни данных в UWP
 
 
 Предыдущий раздел назывался [Перенос для ввода-вывода, устройств и моделей приложений](wpsl-to-uwp-input-and-sensors.md).
@@ -26,7 +26,7 @@ ms.locfileid: "7703996"
 
 ## <a name="background-processing"></a>Фоновая обработка
 
-Приложение WindowsPhone Silverlight может использовать управляемый объект **ScheduledTaskAgent** выполнить задачу, пока приложение не находится на переднем плане. Приложение UWP использует класс [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) для создания и регистрации фоновой задачи подобным образом. Вы определяете класс, реализующий работу фоновой задачи. Система выполняет фоновую задачу, периодически вызывая метод [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) вашего класса для выполнения работы. Не забудьте в приложении UWP установить объявление **Фоновые задачи** в манифесте пакета приложения. Дополнительные сведения см. в разделе [Поддержка приложения с помощью фоновых задач](https://msdn.microsoft.com/library/windows/apps/mt299103).
+Приложение WindowsPhone Silverlight может использовать управляемый объект **ScheduledTaskAgent** для выполнения задачи, пока приложение не находится на переднем плане. Приложение UWP использует класс [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) для создания и регистрации фоновой задачи подобным образом. Вы определяете класс, реализующий работу фоновой задачи. Система выполняет фоновую задачу, периодически вызывая метод [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) вашего класса для выполнения работы. Не забудьте в приложении UWP установить объявление **Фоновые задачи** в манифесте пакета приложения. Дополнительные сведения см. в разделе [Поддержка приложения с помощью фоновых задач](https://msdn.microsoft.com/library/windows/apps/mt299103).
 
 Для передачи файлов большие объемы данных в фоновом режиме, приложение WindowsPhone Silverlight использует класс **BackgroundTransferService** . В приложении UWP для этого используются API-интерфейсы в пространстве имен [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242). Данные функции используют аналогичный шаблон начала передачи данных, но новый API обладает улучшенными возможностями и производительностью. Дополнительные сведения см. в разделе [Передача данных в фоновом режиме](https://msdn.microsoft.com/library/windows/apps/xaml/hh452975).
 
@@ -44,13 +44,13 @@ UWP частично поддерживает класс **System.Net.HttpWebReq
 
 ## <a name="launchers-and-choosers"></a>Средства запуска и выбора
 
-С помощью средства запуска и выбора, (находятся в пространстве имен **Microsoft.Phone.Tasks** ), приложение WindowsPhone Silverlight могут взаимодействовать с операционной системой для выполнения общих операций, например составление сообщение электронной почты, выбору фотографий или совместного использования определенных видов из данные с другим приложением. Поиск **Microsoft.Phone.Tasks** в разделе [Windows Phone Silverlight в Windows10 сопоставление пространства имен и класса](wpsl-to-uwp-namespace-and-class-mappings.md) , чтобы найти эквивалентный тип UWP. Они варьируются от подобных механизмов, называемых средствами запуска и выбора, до реализации контракта для совместного использования данных между приложениями.
+С помощью средства запуска и выбора (находятся в пространстве имен **Microsoft.Phone.Tasks** ), приложение WindowsPhone Silverlight могут взаимодействовать с операционной системой для выполнения общих операций, например составление сообщение электронной почты, выбору фотографий или совместного использования определенных видов из данные с другим приложением. Поиск **Microsoft.Phone.Tasks** в разделе [Windows Phone Silverlight в Windows10 сопоставление пространства имен и класса](wpsl-to-uwp-namespace-and-class-mappings.md) , чтобы найти эквивалентный тип UWP. Они варьируются от подобных механизмов, называемых средствами запуска и выбора, до реализации контракта для совместного использования данных между приложениями.
 
 Приложение WindowsPhone Silverlight можно поместить в неактивное состояние или даже полностью удалить при использовании, например, фотографий вариантов. Приложение UWP остается активным и продолжает работу во время использования класса [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847).
 
 ## <a name="monetization-trial-mode-and-in-app-purchases"></a>Получение дохода (пробный режим и покупки из приложения)
 
-Приложение WindowsPhone Silverlight может использовать класс UWP [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) для большей части своих функций пробного режима и функциональные возможности покупки из приложения, таким образом, чтобы код не нужно переносить. Но приложение WindowsPhone Silverlight вызывает **MarketplaceDetailTask.Show** , чтобы предлагать приложение для покупки.
+Приложение WindowsPhone Silverlight можно использовать класс UWP [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) для большей части своих функций пробного режима и функциональные возможности покупки из приложения, таким образом, чтобы код не должен быть перенесен. Но приложение WindowsPhone Silverlight вызывает **MarketplaceDetailTask.Show** предлагать приложение для покупки.
 
 ```csharp
     private void Buy()
@@ -101,7 +101,7 @@ UWP частично поддерживает класс **System.Net.HttpWebReq
     string myFavoriteAuthor = propertySet.ContainsKey(key) ? (string)propertySet[key] : "<none>";
 ```
 
-Несмотря на то, что им доступна подмножество пространство имен **Windows.Storage** , многие приложения WindowsPhone Silverlight выполнять файл с помощью **IsolatedStorageFile** класс, поскольку он происходило больше. Предполагая, что используется **IsolatedStorageFile** ниже приведен пример до и после написания и чтения файла, сначала версия WindowsPhone Silverlight:
+Несмотря на то, что им доступна подмножество пространство имен **Windows.Storage** , многие приложения WindowsPhone Silverlight выполнение файла с помощью **IsolatedStorageFile** класс, поскольку он происходило больше. Предположим, что используется **IsolatedStorageFile** ниже приведен пример до и после написания и чтения файла, сначала версия WindowsPhone Silverlight:
 
 ```csharp
     const string filename = "FavoriteAuthor.txt";

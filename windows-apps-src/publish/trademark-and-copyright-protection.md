@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 658694e157a526f9090a5dbf387c80087ae1d4fc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701565"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7849981"
 ---
 # <a name="trademark-and-copyright-protection"></a>Защита товарных знаков и авторских прав
 
@@ -21,7 +21,7 @@ ms.locfileid: "7701565"
 ### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. Как сообщить о нарушении моих прав на интеллектуальную собственность в приложении для Windows?
 
 
-Используйте следующую [форму](http://go.microsoft.com/fwlink/p/?LinkId=273879), чтобы отправить жалобу о нарушении авторских прав, прав на товарные знаки или публичность в приложении для Windows. Жалобы о нарушении авторских прав, прав на товарные знаки или публичность в нескольких приложениях отправляйте на адрес mktlegal@microsoft.com. Если вам нужны дополнительные сведения о политике DMCA корпорации Майкрософт, посетите: [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976).
+Используйте следующую [форму](http://go.microsoft.com/fwlink/p/?LinkId=273879), чтобы отправить жалобу о нарушении авторских прав, прав на товарные знаки или публичность в приложении для Windows. Жалобы о нарушении авторских прав, прав на товарные знаки или публичность в нескольких приложениях отправляйте на адрес mktlegal@microsoft.com. Если вам нужны дополнительные сведения о политике DMCA корпорации Майкрософт, посетите страницу: [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976).
 
 ### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. Мое приложение создано для работы с продуктом или службой Microsoft. Можно ли использовать имя продукта или службы Microsoft в имени приложения?
 

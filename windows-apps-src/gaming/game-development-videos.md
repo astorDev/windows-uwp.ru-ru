@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, видеоролики, GDC, сборка
 ms.localizationpriority: medium
 ms.openlocfilehash: de04b0b272bbc6889c5fb9b13e5487902a77e98c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7708214"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7843362"
 ---
 # <a name="game-development-videos"></a>Видеоролики о разработке игр
 
