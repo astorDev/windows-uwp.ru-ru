@@ -7,11 +7,11 @@ ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695281"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832392"
 ---
 # <a name="send-email"></a>Отправка сообщения электронной почты
 
@@ -47,7 +47,7 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> Вложения, добавляемых в сообщение электронной почты с использованием класса [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) будут отображаться только в приложение "Почта". Если пользователи имеют другие программы Почта, настроенный в качестве их по умолчанию почтовой программы, без вложения появится окно составления. Это известная проблема.
+> Вложения, добавляемых в сообщение электронной почты с помощью класса [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) будет отображаться только в приложение "Почта". Если пользователи имеют другие программы Почта, настроенный в качестве своей программы почты по умолчанию, то составления появится окно без вложения. Это известная проблема.
 
 ## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 

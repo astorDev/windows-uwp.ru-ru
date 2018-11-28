@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправка приложения, удаление
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d582f79d57fb8b3648d8c872f700d998a2fec1a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7718147"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7842977"
 ---
 # <a name="delete-an-app-submission"></a>Удаление отправки приложения
 

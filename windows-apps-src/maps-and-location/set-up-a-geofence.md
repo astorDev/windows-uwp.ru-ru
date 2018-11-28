@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, карта, расположение, геозоны, уведомления
 ms.localizationpriority: medium
 ms.openlocfilehash: adcce5716a2982cf2c08e98ee337dbad20bddf28
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691320"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827478"
 ---
 # <a name="set-up-a-geofence"></a>Настройка геозоны
 
@@ -475,7 +475,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 Для того чтобы ваше приложение могло получить доступ к данным о расположении, необходимо включить на устройстве функцию **расположение**. Убедитесь, что в приложении **Параметры** включены следующие **параметры конфиденциальности данных о расположении**.
 
--   **Местоположение для этого устройства …** — **включен (неприменимо в Windows10 Mobile)**
+-   **Местоположение для этого устройства …** будет **включен (неприменимо в Windows10 Mobile)**
 -   Параметр **Местоположение** служб определения местоположения **включен**
 -   В разделе **Выберите приложения, которым будет разрешено использовать данные о вашем местоположении** для вашего приложения установлено значение **Вкл.**
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 76e4b60e1cd25a205d6a304f12a0b04f5db693b5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707083"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828803"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Расширение классических приложений с помощью современных компонентов UWP
 
@@ -36,13 +36,13 @@ ms.locfileid: "7707083"
 
 ![Расширение начального проекта](images/desktop-to-uwp/extend-start-project.png)
 
-Если ваше решение не содержит проект упаковки, см. в разделе [пакет классического приложения с помощью Visual Studio](desktop-to-uwp-packaging-dot-net.md).
+Если ваше решение не содержит проект упаковки, см. в разделе [пакета приложения для настольных компьютеров с помощью Visual Studio](desktop-to-uwp-packaging-dot-net.md).
 
 ### <a name="configure-the-desktop-application"></a>Настройка классического приложения
 
 Убедитесь, что приложения для настольных компьютеров имеет ссылки на файлы, которые необходимо вызывать API среды выполнения Windows.
 
-Чтобы это сделать, см. раздел [расширение классического приложения для Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)разделе [сначала настройте свой проект](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project) .
+Чтобы это сделать, см. раздел [сначала настройте свой проект](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project) разделе [расширение классического приложения для Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project).
 
 ### <a name="add-a-uwp-project"></a>Добавление проекта UWP
 
@@ -76,7 +76,7 @@ ms.locfileid: "7707083"
 
 ### <a name="build-your-solution"></a>Построение решения
 
-Построение решения, чтобы убедиться, что ошибки не отображаются. Если возникнут ошибки, откройте **Диспетчер конфигурации** и убедитесь, что проекты предназначены для платформы.
+Построение решения, чтобы убедиться, что ошибки не отображаются. Если возникнут ошибки, откройте **Диспетчер конфигураций** и убедитесь, что проекты предназначены для платформы.
 
 ![Диспетчер конфигурации](images/desktop-to-uwp/config-manager.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "7707083"
 ![адаптивный макет](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->В этом примере показан пользовательский Интерфейс на XAML, добавив в решение проект UWP. Это стабильность способ отображения элементов пользовательского интерфейса XAML в классическом приложении. Альтернативой этот подход может добавлять элементы управления UWP XAML непосредственно в свое классическое приложение с помощью остров XAML. О-ва XAML в настоящее время доступны как предварительной версии для разработчиков. Несмотря на то, что мы рекомендуем вам оценить их в коде прототипа теперь, мы не рекомендуем использовать их в рабочем коде в данный момент. Эти API-интерфейсы и элементы управления будет продолжать улучшаться и стабилизация в будущих выпусках Windows. Дополнительные сведения о XAML, о-ва, см. в разделе [элементы управления UWP в классических приложениях](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+>В этом примере показан пользовательский Интерфейс на XAML, добавив в решение проект UWP. Это стабильность способ отображения элементов пользовательского интерфейса XAML в приложении для настольных систем. Вместо этого подхода можно добавлять элементы управления UWP XAML непосредственно к классического приложения с помощью XAML остров. О-ва XAML в настоящее время доступны как ознакомительная версия для разработчиков. Несмотря на то, что мы рекомендуем вам оценить их в коде прототипа сейчас, не рекомендуется использовать их в рабочем коде в данный момент. Эти API-интерфейсы и элементы управления будет продолжать улучшаться и стабилизация в будущих выпусках Windows. Дополнительные сведения о XAML, о-ва, см. в разделе [элементы управления UWP в классических приложениях](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>Шаблон проектирования
 
@@ -266,9 +266,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 : three: [Добавление расширений рабочего стола в проект UWP](#desktop-extensions)
 
-: four: [Добавить расширения процесса полного доверия](#full-trust)
+: four: [Добавление расширения процесса полного доверия](#full-trust)
 
-: five: [Изменить классического приложения для получения общего файла](#modify-desktop)
+: five: [Изменение классического приложения для получения общего файла](#modify-desktop)
 
 <a id="share-extension" />
 
@@ -296,13 +296,13 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Укажите имя исполняемого файла, созданного проектом UWP, и имя класса точки входа. Эта разметка предполагается, что имя исполняемого файла для вашего приложения UWP `ShareTarget.exe`.
 
-Также необходимо указать типы файлов, которые могут быть переданы вашему приложению. В этом примере мы предоставим классического приложения [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) получателя для образов растрового изображения, поэтому мы указываем `Bitmap` для поддерживаемого типа файлов.
+Также необходимо указать типы файлов, которые могут быть переданы вашему приложению. В этом примере мы изменяем классического приложения [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) получателя для точечных образов, поэтому мы указываем `Bitmap` для поддерживаемого типа файлов.
 
 <a id="override" />
 
 ### <a name="override-the-onsharetargetactivated-event-handler"></a>Переопределение обработчика событий OnShareTargetActivated
 
-Переопределение обработчика событий **OnShareTargetActivated** в классе **приложения** в свой проект UWP.
+Переопределение обработчика событий **OnShareTargetActivated** в классе **приложения** проекта UWP.
 
 Этот обработчик событий вызывается, когда пользователи выбирают ваше приложение в качестве получателя файлов.
 
@@ -343,7 +343,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 ### <a name="add-the-full-trust-process-extension"></a>Добавление расширения процесса полного доверия
 
-В **Обозревателе решений**откройте файл **package.appxmanifest** проекта упаковки в вашем решении и добавьте расширение процесса полного доверия рядом с расширения получателя данных добавить этот файл ранее.
+В **Обозревателе решений**откройте файл **package.appxmanifest** проекта упаковки в вашем решении и добавьте расширение процесс полного доверия рядом с расширения получателя данных добавить этот файл ранее.
 
 ```xml
 <Extensions>
@@ -353,13 +353,13 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 </Extensions>  
 ```
 
-Это расширение позволит приложения UWP для запуска классического приложения, к которому вы хотите общей файла. В примере мы будем говорить в исполняемый файл классического приложения [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) .
+Это расширение приведет к включению приложение UWP для запуска классического приложения, к которому вы хотите общей файла. В примере мы будем говорить в исполняемый файл классического приложения [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) .
 
 <a id="modify-desktop" />
 
 ### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>Изменение классического приложения для получения общего файла
 
-Измените классического приложения для поиска и обработки общего файла. В этом примере приложения UWP хранить общий файл в папку данных локального приложения. Таким образом мы бы изменять [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) классического приложения для извлечения фотографии из этой папки.
+Измените классического приложения для поиска и обработки общего файла. В этом примере приложения UWP хранить общий файл в папку данных локального приложения. Таким образом мы бы изменять [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) Классические приложения для извлечения фотографии из этой папки.
 
 ```csharp
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;

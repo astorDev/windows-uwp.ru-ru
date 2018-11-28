@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
 ms.openlocfilehash: 5606a8fa6db5b439aa71f5d72b34c0f519d7eea9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698928"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835899"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>Деактивация режима разработчика Xbox One
 
@@ -72,7 +72,7 @@ ms.locfileid: "7698928"
 
 ## <a name="deactivate-your-console-using-partner-center"></a>Деактивация консоли с помощью центра партнеров
 
-Если вам не удается получить доступ к консоли по какой-либо причине, вы можете также отключить режим разработчика на консоли с помощью центра партнеров.
+Если вам не удается получить доступ к консоли по какой-либо причине, можно отключить режим разработчика на консоли с помощью центра партнеров.
 
 1. Перейдите на страницу [Управление консолями Xbox One](https://partner.microsoft.com/xboxdevices) в центре партнеров. Может быть предложено войти.
 

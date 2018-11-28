@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, целевые предложения, предложения, уведомления
 ms.localizationpriority: medium
 ms.openlocfilehash: e894e81b560f071cf42198f09aad0b2b82eae2cd
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705310"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830318"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>Используйте целевые предложения, чтобы повысить вовлеченность и количество конверсий
 
@@ -32,7 +32,7 @@ ms.locfileid: "7705310"
 
 ## <a name="to-create-and-send-a-targeted-offer"></a>Создание и отправка целевого предложения
 
-1.  В [Центре партнеров](https://partner.microsoft.com/dashboard)разверните **привлечение** в левом меню навигации, а затем выберите **целевые предложения**.
+1.  В [Центре партнеров](https://partner.microsoft.com/dashboard)последовательно разверните **привлечение** в левом меню навигации, а затем выберите **целевые предложения**.
 2.  На странице **Целевые предложения** просмотрите доступные предложения. Выберите **Создать новое предложение**.
 
     > [!NOTE]

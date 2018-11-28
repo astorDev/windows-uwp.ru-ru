@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 922798fad97754421541297a5434a81e9c660b2b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693315"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852641"
 ---
 # <a name="operations-available-on-streaming-resources"></a>Доступные операции с потоковыми ресурсами
 

@@ -4,14 +4,14 @@ description: В этом разделе объясняется, каким об�
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 47a4ceef2603d7b0178431c93fb6c271b24c506a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696097"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828475"
 ---
 # <a name="smart-cards"></a>Смарт-карты
 

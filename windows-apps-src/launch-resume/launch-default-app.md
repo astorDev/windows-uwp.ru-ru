@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 143aa8310cdfe9dd5f0be29bf07f03c23293a647
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696488"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827888"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Запуск приложения по умолчанию для URI
 
@@ -244,4 +244,4 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | Схема URI | Результаты |
 |------------|---------|
-| msnweather://forecast?LA= \[latitude\] & lo = \ [longitude\] | Запускает приложение "Погода" на странице прогноз основании координаты географическое расположение.<br>`latitude` относится к Широта расположения.<br> `longitude` относится к Долгота расположения.<br> |
+| msnweather://forecast?LA= \[latitude\] & lo = \ [longitude\] | Запускает приложение "Погода" на странице прогноз основании географические координаты местоположения.<br>`latitude` относится к Широта расположения.<br> `longitude` относится к Долгота расположения.<br> |

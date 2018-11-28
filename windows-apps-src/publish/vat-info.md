@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 90447f63cf28660eaffc0dff4e28524f8ef4372a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691174"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828763"
 ---
 # <a name="vat-info"></a>Сведения об НДС
 
 
-Если вы должны указать номер Плательщика НДС во время регистрации центра партнеров, Вот некоторые сведения, чтобы приступить к работе.
+Если вы должны указать номер Плательщика НДС в процессе регистрации центра партнеров, Вот некоторые сведения, чтобы приступить к работе.
 
 ## <a name="understanding-vat-numbers"></a>Номера плательщиков НДС
 

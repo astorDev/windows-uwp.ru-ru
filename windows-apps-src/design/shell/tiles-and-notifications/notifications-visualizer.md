@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2bb5a450aebdf38f3d4f1a710f3537544dcddd6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691317"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835995"
 ---
 # <a name="notifications-visualizer"></a>Визуализатор уведомлений
 
  
 
 
-Визуализатор уведомлений — это новое приложение универсальной платформы Windows (UWP) [в магазине](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) , позволяющая разработчикам проектировать адаптивные живые плитки и Интерактивные всплывающие уведомления для Windows10.
+Визуализатор уведомлений — это новое приложение универсальной платформы Windows (UWP) [в магазине](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) , позволяющая разработчикам создавать адаптивные живые плитки и Интерактивные всплывающие уведомления для Windows10.
 
 
 ## <a name="overview"></a>Обзор

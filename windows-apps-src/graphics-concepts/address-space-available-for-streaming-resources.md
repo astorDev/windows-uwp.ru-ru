@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 35a591d805870df97ee03169b20e664316e094a7
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697537"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826470"
 ---
 # <a name="address-space-available-for-streaming-resources"></a>Адресное пространство, доступное для потоковых ресурсов
 

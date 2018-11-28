@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699101"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827276"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Запуск приложения с помощью автозапуска
 
@@ -218,7 +218,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 1.  Нажмите клавишу F5 для выполнения сборки и развертывания приложения (в режиме отладки).
 2.  Чтобы запустить приложение, вставьте карту памяти камеры или другое запоминающее устройство из камеры в компьютер. Затем в списке вариантов автозапуска выберите один из вариантов событий содержимого, который вы указали в файле package.appxmanifest. Этот пример кода только показывает или копирует изображения в папке DCIM на карте памяти камеры. Если изображения хранятся в папке AVCHD или PRIVATE\\ACHD на карте памяти камеры, то потребуется изменить код соответствующим образом.
-    **Примечание**Если у вас нет на карте памяти камеры, флэш-накопитель можно использовать ли у него папку с именем **DCIM** в корневой папке DCIM есть вложенная папка, содержащая изображения.
+    **Примечание**при отсутствии карты памяти камеры, флэш-накопитель можно использовать ли у него папку с именем **DCIM** в корневой папке DCIM есть вложенная папка, содержащая изображения.
 
 ## <a name="register-for-an-autoplay-device"></a>Регистрация для автозапуска устройств
 

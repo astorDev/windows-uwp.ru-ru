@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, заметки о выпуске
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bab822c81cdd5af1e6b00ca8d33ed7f7ea3838f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703478"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828645"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Заметки о выпуске библиотек Microsoft Advertising
 

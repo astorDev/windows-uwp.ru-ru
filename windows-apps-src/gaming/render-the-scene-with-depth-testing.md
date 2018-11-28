@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, отрисовка, сцена, тестирование глубины, direct3d, тени
 ms.localizationpriority: medium
 ms.openlocfilehash: 237da82ef51466ae2460c3be27486091bf4066f3
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696670"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826669"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>Прорисовка сцены с тестированием глубины
 

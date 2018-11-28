@@ -4,14 +4,14 @@ title: Создание пользовательского рабочего пр
 description: Создайте пользовательский рабочий процесс печати, чтобы удовлетворить потребности вашей организации.
 ms.date: 08/10/2017
 ms.topic: article
-keywords: Windows 10, uwp, печати
+keywords: Windows 10, uwp, печать
 ms.localizationpriority: medium
 ms.openlocfilehash: 96e308793e60c0367c712fb93a5d25a056397568
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698743"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830228"
 ---
 # <a name="customize-the-print-workflow"></a>Создание пользовательского рабочего процесса печати
 

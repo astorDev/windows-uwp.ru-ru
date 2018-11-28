@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9940367054ae8771355012492434e12aa97d43ad
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706675"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840548"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Обработка кадров мультимедиа с помощью MediaFrameReader
 
@@ -44,7 +44,7 @@ ms.locfileid: "7706675"
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>Выбор источников кадров и групп источников кадров
-Многим приложениям, обрабатывающим кадры мультимедиа, требуется получать кадры из нескольких источников одновременно, например от цветных камер и камер с эффектом глубины. Объект [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) представляет набор источников кадров мультимедиа, которые могут использоваться одновременно. Вызовите статический метод [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync), чтобы получить список всех групп источников кадров, поддерживаемых данным устройством.
+Многим приложениям, обрабатывающим кадры мультимедиа, требуется получать кадры из нескольких источников одновременно, например от цветных камер и камер с эффектом глубины. Объект [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) представляет набор источников кадров мультимедиа, которые могут быть использованы одновременно. Вызовите статический метод [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync), чтобы получить список всех групп источников кадров, поддерживаемых данным устройством.
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 

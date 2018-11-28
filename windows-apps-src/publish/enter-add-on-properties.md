@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, надстройки, свойства, период подписки, срок действия продукта, тип содержимого, iap, покупки из приложения, внутренний продукт приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 17025282aec18da01f14431996a3942ffdd90312
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699514"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832834"
 ---
 # <a name="enter-add-on-properties"></a>Ввод свойств надстройки
 
@@ -39,7 +39,7 @@ ms.locfileid: "7699514"
 
 ## <a name="subscription-period"></a>Период подписки
 
-Если выбран тип продукта **Подписка**, здесь отображается **Период подписки**. Выберите параметр, чтобы указать, как часто взимается плата за подписку. По умолчанию используется **ежемесячно**, но также можно выбрать **3 месяца**, **6 месяцев**, **ежегодно**или **24 месяца**.
+Если выбран тип продукта **Подписка**, здесь отображается **Период подписки**. Выберите параметр, чтобы указать, как часто взимается плата за подписку. Значение по умолчанию — **ежемесячно**, но также можно выбрать **3 месяца**, **6 месяцев**, **ежегодно**или **24 месяца**.
 
 > [!IMPORTANT]
 > После публикации надстройки **Период подписки** изменить будет невозможно.
@@ -97,7 +97,7 @@ ms.locfileid: "7699514"
 Для запроса этого поля используйте свойство [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) в [пространстве имен Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store). (Либо, если вы используете [пространство имен Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store), используйте свойство [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag).)
 
 > [!NOTE]
-> Поле **пользовательские данные разработчика** не доступны для использования в пакетах для Windows8 и Windows8.1.
+> **Пользовательские данные разработчика** поле недоступно для использования в пакетах для Windows8 и Windows8.1.
 
  
 

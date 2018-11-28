@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b8ef16d9fe789c2c386b27ffe221aa797a3b5ef
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694001"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826021"
 ---
 # <a name="avoid-common-certification-failures"></a>Недопущение распространенных ошибок при сертификации
 

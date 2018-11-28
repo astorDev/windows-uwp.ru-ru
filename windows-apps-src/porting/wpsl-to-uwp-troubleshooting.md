@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 372fd491e329a468c273dd039c917eba5dc3e123
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719218"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844522"
 ---
 #  <a name="troubleshooting-porting-windowsphone-silverlight-to-uwp"></a>Устранение неполадок при переносе WindowsPhone Silverlight в UWP
 
@@ -30,9 +30,9 @@ ms.locfileid: "7719218"
 
 ## <a name="targetplatformversion"></a>TargetPlatformVersion
 
-В этом разделе объясняется, что делать, если при открытии проекта Windows10 в Visual Studio, вы увидите сообщение «требуется обновление Visual Studio. Для одного или нескольких проектов требуется пакет SDK &lt;версия&gt;, который не установлен или не включен в обновление Visual Studio».
+В этом разделе объясняется, что делать, если при открытии Windows10 проекта в Visual Studio, вы увидите сообщение «требуется обновление Visual Studio. Для одного или нескольких проектов требуется пакет SDK &lt;версия&gt;, который не установлен или не включен в обновление Visual Studio».
 
--   Во-первых определите номер версии пакета SDK для Windows10, который вы установили. Откройте **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\&lt;versionfoldername&gt;** и проверьте значение *&lt;versionfoldername&gt;*, которое будет представлено в формате четырехкомпонентной системы обозначений: Major.Minor.Build.Revision.
+-   Во-первых определите номер версии пакета SDK для Windows10, что вы установили. Откройте **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\&lt;versionfoldername&gt;** и проверьте значение *&lt;versionfoldername&gt;*, которое будет представлено в формате четырехкомпонентной системы обозначений: Major.Minor.Build.Revision.
 -   Откройте файл проекта для правки и найдите элементы `TargetPlatformVersion` и `TargetPlatformMinVersion` . Измените их, чтобы они выглядели таким образом вид, заменив *&lt;versionfoldername&gt;* номером версии в формате четырехкомпонентной системы обозначений, найденным на диске:
 
 ```xml

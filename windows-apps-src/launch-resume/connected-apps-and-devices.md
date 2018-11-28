@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, подключенных устройств, удал
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: 79decdcb420e7d1b5cb732a354ccddb1ce5b7404
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699170"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830158"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>Подключенные приложения и устройства (Project Rome)
 

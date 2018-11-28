@@ -13,11 +13,11 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 960628156777e18781c82eeda9348823be3dbf4c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7709010"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7836902"
 ---
 # <a name="calendar-date-picker"></a>Управляющий элемент выбора даты в календаре
 

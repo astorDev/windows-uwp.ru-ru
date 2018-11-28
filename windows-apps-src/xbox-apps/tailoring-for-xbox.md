@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e64feb8938be3e7338c87acdf8fd18fb13e525b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699494"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829664"
 ---
 # <a name="xbox-best-practices"></a>Рекомендации для Xbox
 
@@ -65,10 +65,10 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 ## <a name="app-dev-on-xbox"></a>Разработка приложений на Xbox
 
-Событие **Разработка приложений на Xbox** — превосходная отправная точка для разработчиков, не знакомы с созданием приложений на консоли Xbox.
+**Разработка приложений на Xbox** событие — превосходная отправная точка для разработчиков, не знакомы с созданием приложений на консоли Xbox.
 
 * [Посмотрите записи сеансов](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
-* [Чтение в записях блога](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
+* [Чтение в блогах](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
 ## <a name="see-also"></a>См. также
 

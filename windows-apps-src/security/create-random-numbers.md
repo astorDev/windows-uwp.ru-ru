@@ -4,14 +4,14 @@ description: В этом примере кода показано, как соз
 ms.assetid: 15746824-F93A-4DC7-836E-EBA916D2CFD3
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: f36e50f2de36df39177370d688b9add5591403e1
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693961"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852089"
 ---
 # <a name="create-random-numbers"></a>Создание случайных значений
 

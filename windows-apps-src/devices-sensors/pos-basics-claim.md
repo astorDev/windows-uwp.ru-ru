@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 7169848084b587793ba1537ea3d6ad78d31892d5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698968"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826643"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>Утверждение и включить модели POS-устройства
 
@@ -34,7 +34,7 @@ ms.locfileid: "7698968"
 
 ## <a name="enable-device-for-io-operations"></a>Подготовьте устройство к операции ввода-вывода
 
-Действие утверждения просто устанавливает права монопольного доступа к устройству, но не помещать в рабочее состояние.  Для получения событий или выполнения любых операций, выходные данные необходимо включить устройства с помощью **EnableAsync**.  И наоборот вы можете вызвать **DisableAsync** , чтобы остановить прослушивание события из устройства или выполнение выходных данных.  **IsEnabled** также можно использовать для определения состояния устройства.
+Действие утверждения просто устанавливает права монопольного доступа к устройству, но не помещать в рабочее состояние.  Для получения событий или выполнения любых операций, выходные данные необходимо включить устройства с помощью **EnableAsync**.  И наоборот вы можете вызвать **DisableAsync** , чтобы остановить прослушивание события из устройства или выполнение выходных данных.  Можно также использовать **IsEnabled** для определения состояния устройства.
 
 ### <a name="apis-used-enable--disable"></a>API, используемые включить / отключить
 
@@ -47,7 +47,7 @@ ms.locfileid: "7698968"
 |ClaimedPosPrinter | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.disableasyc) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.isenabled) |
 |
 
-¹ строковый дисплей не требуется явным образом включить устройство для операции ввода-вывода.  Включение автоматически выполняется с помощью API LineDisplay PointOfService, которое выполнения операций ввода-вывода.
+¹ строковый дисплей не требуется явным образом включить устройство для операции ввода-вывода.  Включение выполняется автоматически с помощью API LineDisplay PointOfService, которое выполнения операций ввода-вывода.
 
 ## <a name="code-sample-claim-and-enable"></a>Пример кода: утверждения и включение
 
@@ -93,7 +93,7 @@ ms.locfileid: "7698968"
 
 Если приложение с активным присвоением сразу же не ответит с помощью метода **RetainDevice**, будет предполагаться, что приложение было приостановлено или не нуждается в устройстве, что приведет к отзыву присвоения и его передаче другому приложению. 
 
-Первый шаг — создать обработчик событий, который реагирует на событие **ReleaseDeviceRequested** с **RetainDevice**.  
+Первым шагом является создание обработчика событий, который реагирует на событие **ReleaseDeviceRequested** с **RetainDevice**.  
 
 ```Csharp
     /// <summary>
@@ -107,7 +107,7 @@ ms.locfileid: "7698968"
     }
 ```
 
-Зарегистрируйте обработчик событий в связи с присвоенные устройства
+Зарегистрируйте обработчик событий в связи с присвоенное устройство
 
 ```Csharp
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);

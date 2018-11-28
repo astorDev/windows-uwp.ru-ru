@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c6664d13e76a5774172094d632de9db25109fdc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696156"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840096"
 ---
 # <a name="http-live-streaming-hls-tag-support"></a>Поддержка тегов протокола HTTP Live Streaming (HLS)
 В следующей таблице перечислены теги HLS, которые поддерживаются для приложений UWP.

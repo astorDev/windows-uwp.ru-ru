@@ -7,11 +7,11 @@ keywords: начало работы, uwp, windows 10, обучающий кур�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bd4a1f6747ea68623039b7eac22ac08aaa15d9ea
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712150"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832683"
 ---
 # <a name="display-customers-in-a-list"></a>Отображение пользователей в виде списка
 

@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cb210621b74fef5128456d06a7cdf047752f45f5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701506"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7843475"
 ---
 # <a name="midi"></a>MIDI
 
 
 
-В этой статье показано, как перечислять MIDI-устройства (Musical Instrument Digital Interface), а также отправлять и получать сообщения MIDI из универсального приложения для Windows. Windows 10 поддерживает MIDI по USB (класс со стандартами и наиболее принадлежит драйверов), MIDI через Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ (Windows 10 Anniversary Edition и более поздние версии) и через свободно доступных продуктов сторонних поставщиков, MIDI через Ethernet и перенаправленных MIDI.
+В этой статье показано, как перечислять MIDI-устройства (Musical Instrument Digital Interface), а также отправлять и получать сообщения MIDI из универсального приложения для Windows. Windows 10 поддерживает MIDI по USB (класс со стандартами и наиболее принадлежит драйверов), MIDI через Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ (Windows 10 Anniversary Edition и более поздние версии) и с помощью свободно доступных продуктов сторонних поставщиков, MIDI через Ethernet и перенаправленных MIDI.
 
 ## <a name="enumerate-midi-devices"></a>Перечисление MIDI-устройств
 

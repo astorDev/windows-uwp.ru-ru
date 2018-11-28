@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d960235e73ea9172fb966f227af9440923f3553e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691938"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830578"
 ---
 # <a name="file-access-permissions"></a>Разрешения на доступ к файлам
 
@@ -21,7 +21,7 @@ ms.locfileid: "7691938"
 
 Создавая новое приложение, вы по умолчанию получаете доступ к следующим расположениям в файловой системе:
 
-### <a name="application-install-directory"></a>Каталог установки приложения
+### <a name="application-install-directory"></a>Папка установки приложения
 Папка, где установлено ваше приложение в системе пользователя.
 
 Существует два основных способа получения доступа к файлам и папкам в вашем приложении папке установки:
@@ -255,7 +255,7 @@ createFolderTask.then([](StorageFolder^ newFolder)
 | Местоположение | Возможность | API Windows.Storage |
 |----------|------------|---------------------|
 | Все файлы, к которым у пользователя имеется доступ. Например: документы, изображения, фотографии, файлы для загрузки, рабочий стол, OneDrive и т. д. | broadFileSystemAccess<br><br>Это ограниченная возможность. При первом использовании система попросит пользователя предоставить доступ. Доступ настраивается в разделе "Параметры" > "Конфиденциальность" > "Файловая система". Если приложение отправляется в магазин Store, объявляющий эту возможность, потребуется дополнительно обосновать, зачем приложению нужна эта возможность и как планируется ее использовать.<br>Эта возможность работает для API-интерфейсов в пространстве [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) | Неприменимо |
-| Документы | DocumentsLibrary <br><br>Примечание. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении. <br><br>Используйте данную возможность, если ваше приложение:<br>- поддерживает кросс-платформенный автономный доступ к конкретному содержимому OneDrive, используя допустимые URL-адреса OneDrive или идентификаторы ресурсов;<br>-Сохраняет открытые файлы в OneDrive пользователя автоматически при автономном режиме | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
+| Документы | DocumentsLibrary <br><br>Примечание. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении. <br><br>Используйте данную возможность, если ваше приложение:<br>- поддерживает кросс-платформенный автономный доступ к конкретному содержимому OneDrive, используя допустимые URL-адреса OneDrive или идентификаторы ресурсов;<br>-Сохраняет открытые файлы в OneDrive пользователя автоматически во время автономного | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
 | Музыка     | MusicLibrary <br>См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | Изображения  | PicturesLibrary<br> См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
 | Видео    | VideosLibrary<br>См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   

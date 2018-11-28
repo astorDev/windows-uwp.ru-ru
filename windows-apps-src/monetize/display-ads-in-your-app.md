@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, баннер, управление рекламой, межстраничная
 ms.localizationpriority: medium
 ms.openlocfilehash: baf26335ccdf34c8403cc15ecc1e68527d92e90e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695043"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848022"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Показ рекламы в приложении с помощью Microsoft Advertising SDK
 
-Увеличьте свою прибыль, размещая рекламу в своих приложениях универсальной платформы Windows (UWP) для Windows 10 с помощью Microsoft Advertising SDK. Наша платформа рекламной монетизации предлагает различные форматы рекламы, которые можно легко интегрировать в приложения, а также поддерживает посредника со множеством популярных рекламных сетей. Наша платформа совместим с OpenRTB, РАЗНООБРАЗНЫХ 2.x, MRAID 2 и VPAID 3 стандартов и совместим с MOAT и IAS. 
+Увеличьте свою прибыль, размещая рекламу в своих приложениях универсальной платформы Windows (UWP) для Windows 10 с помощью Microsoft Advertising SDK. Наша платформа рекламной монетизации предлагает различные форматы рекламы, которые можно легко интегрировать в приложения, а также поддерживает посредника со множеством популярных рекламных сетей. Наша платформа соответствует OpenRTB, РАЗНООБРАЗНЫХ 2.x, MRAID 2 и VPAID 3 стандартов и совместим с MOAT и IAS. 
 
 <br/>
 

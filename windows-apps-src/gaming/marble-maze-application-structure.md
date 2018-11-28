@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, пример, directx, структура
 ms.localizationpriority: medium
 ms.openlocfilehash: d19fe1a81a193baf7fe6b7b86865dfb7ea65c00b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691865"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831055"
 ---
 # <a name="marble-maze-application-structure"></a>Структура приложения Marble Maze
 

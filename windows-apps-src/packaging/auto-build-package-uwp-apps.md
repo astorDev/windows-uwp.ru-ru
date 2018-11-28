@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 4208fd56b16d5130f218492428eb459364b8ada9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693075"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827455"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 
@@ -268,9 +268,9 @@ CI_MyUWPApp_1.1.2501.0
 Далее настройте подключение HockeyApp с помощью этого руководства: [Использование HockeyApp со службами Visual Studio Team Services (VSTS) или Team Foundation Server (TFS).](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs)
 Для настройки учетной записи HockeyApp вы можете воспользоваться учетной записью Microsoft, учетной записью социальных сетей или электронным адресом. Бесплатный тарифный план предоставляет два приложения и одного владельца без ограничения данных.
 
-Затем вы можете создать приложение HockeyApp вручную или загрузить существующий файл пакета приложения. Дополнительные сведения см. в разделе [Создание приложения.](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)
+Затем можно создать приложение HockeyApp вручную или загрузить существующий файл пакета приложения. Дополнительные сведения см. в разделе [Создание приложения.](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)
 
-Чтобы использовать существующий файл пакета приложения, добавьте этап сборки и задайте параметр путь к двоичному файлу на этапе сборки.
+Чтобы использовать существующий файл пакета приложения, добавьте этап сборки и установите для параметра путь к двоичному файлу на этапе сборки.
 
 ![настройка hockey app](images/building-screen15.png)
 
@@ -304,7 +304,7 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 
 Используйте расширение Visual Studio Team Services для Microsoft Store, чтобы интегрировать API Store, и отправьте пакет приложения в Store.
 
-Необходимо подключить учетной записи центра партнеров с Azure Active Directory (AD), а затем создать приложение в AD для проверки подлинности запросов. Для этого следуйте рекомендациям на странице расширения.
+Необходимо подключить учетной записи центра партнеров с помощью Azure Active Directory (AD), а затем создать приложение в AD для проверки подлинности запросов. Для этого следуйте рекомендациям на странице расширения.
 
 После настройки расширения можно добавить задачу построения и настроить ее, указав идентификатор приложения и расположение файла отправки.
 
@@ -327,7 +327,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 Если вы хотите распространять приложение без публикации в Store, вы можете отправлять его непосредственно на устройства, если они доверяют сертификату, который использовался для подписи пакета приложения.
 
-Используйте сценарий PowerShell `Add-AppDevPackage.ps1` для установки приложений. Этот сценарий будет добавить сертификат в разделе доверенного корневого центра сертификации локального компьютера и затем будет установите или обновите файл пакета приложения.
+Используйте сценарий PowerShell `Add-AppDevPackage.ps1` для установки приложений. Этот сценарий добавить сертификат в разделе доверенного корневого центра сертификации локального компьютера и на ней затем установите или обновите файл пакета приложения.
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Загрузка неопубликованного приложения в юбилейном обновлении Windows 10
 

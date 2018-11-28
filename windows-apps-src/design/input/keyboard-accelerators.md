@@ -1,23 +1,21 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how accelerator keys can improve the usability and accessibility of UWP apps.
 title: Ускорители клавиатуры
 label: Keyboard accelerators
 template: detail.hbs
 keywords: клавиатура, ускоритель, клавиша вызова, сочетания клавиш, специальные возможности, навигация, фокус, текст, ввод, взаимодействие с пользователем, геймпад, пульт управления
-ms.author: kbridge
 ms.date: 10/10/2017
 ms.topic: article
 pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: dcbb27a87b48a124fe4463578bc32d908f399ccb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6f764d15c1bf5a52a6a48a45856daf9031bbd346
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567134"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831629"
 ---
 # <a name="keyboard-accelerators"></a>Ускорители клавиатуры
 
@@ -250,7 +248,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>Переопределение поведения клавиатуры по умолчанию
 
-В некоторых случаях может потребоваться переопределить поведение по умолчанию для определенных клавиши, такие как клавиша Backspace или клавишу ВВОД. Например: 
+В некоторых случаях может потребоваться переопределить поведение по умолчанию определенных ключей, таких как клавиша Backspace или клавишу ВВОД. Например: 
 
 ## <a name="disable-a-keyboard-accelerator"></a>Отключение ускорителя клавиатуры 
 
@@ -368,10 +366,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 *Комбинация сочетаний клавиш в подсказке*
 
-Для [кнопки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button) [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)и [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) объекты ускоритель клавиатуры добавляется к подсказки по умолчанию элемента управления. Для [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) объекты, ускоритель клавиатуры отображается с текстом всплывающий элемент.
+Для [кнопки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button) [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)и [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) объекты ускоритель клавиатуры добавляется в подсказке по умолчанию элемента управления. [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) объекты, ускоритель клавиатуры отображается с текстом всплывающий элемент.
 
 > [!NOTE]
-> (См. Button1 в следующем примере), указав подсказку переопределяет это поведение.
+> Указание подсказки (см. раздел Button1 в следующем примере) переопределяет это поведение.
 
 ```xaml
 <StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">
@@ -414,7 +412,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![Подсказка сочетания клавиш](images/accelerators/accelerators-appbarbutton-small.png)
 
-*Сочетания клавиш, добавленная для элемента AppBarButton подсказки по умолчанию*
+*Сочетания клавиш, добавленная в подсказке по умолчанию элемента AppBarButton*
 
 ```xaml
 <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">

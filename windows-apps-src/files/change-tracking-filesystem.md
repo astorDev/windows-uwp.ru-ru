@@ -1,0 +1,171 @@
+---
+title: Отслеживание изменений файловой системы в фоновом режиме
+description: Описывается, как отслеживать изменения в файлы и папки в фоновом режиме, как пользователи перемещать их системы.
+ms.date: 11/20/2018
+ms.topic: article
+keywords: windows 10, uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: e90692753924572a932767b9c188ed6d24f94593
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829896"
+---
+# <a name="track-file-system-changes-in-the-background"></a>Отслеживание изменений файловой системы в фоновом режиме
+
+Класс [StorageLibraryChangeTracker](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibraryChangeTracker) позволяет приложениям отслеживать изменения в файлах и папках, как пользователям перемещать их система. С помощью класса **StorageLibraryChangeTracker** , приложение может отслеживать:
+
+- Файловые операции, включая добавление, удаление и изменение.
+- Папка таких операций, удаления и переименования.
+- Файлы и папки, переход на диске.
+
+Используйте это руководство Узнайте модель программирования для работы с объект отслеживания изменений, просмотреть пример кода и ознакомиться с различными типами файлов операций, которые будут отслеживаться с **StorageLibraryChangeTracker**.
+
+**StorageLibraryChangeTracker** работает для библиотек пользователя или для любой папки на локальном компьютере. Это включает в себя дополнительные диски или съемные носители, но не включает NAS дисков и сетевых дисков.
+
+## <a name="using-the-change-tracker"></a>С помощью объект отслеживания изменений
+
+Объект отслеживания изменений реализуется в системе как кольцевой буфер хранения последнего операций *N* файловой системы. Приложения могут считывать изменения за пределами буфера и обрабатывать их в собственные взаимодействия. После завершения приложения с изменениями, он помечает изменения при обработке и никогда не будут видеть снова.
+
+Чтобы использовать объект отслеживания изменений для папки, выполните следующие действия.
+
+1. Включите отслеживание изменений для папки.
+2. Подождите, пока изменения.
+3. Чтение изменения.
+4. Принимаете изменения.
+
+Далее разделах пошаговую каждого этапа в некоторых примерах кода. Полный код примера приведен в конце данной статьи.
+
+### <a name="enable-the-change-tracker"></a>Включить объект отслеживания изменений
+
+— Это первое, что приложению требуется, чтобы сообщить системе, что он является заинтересованы в определенной библиотеке отслеживания изменений. Это достигается путем вызова метода [Включить](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) на объект отслеживания изменений для использования в библиотеке объектов на карте.
+
+```csharp
+StorageLibrary videosLib = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Videos);
+StorageLibraryChangeTracker videoTracker = videosLib.ChangeTracker;
+videoTracker.Enable();
+```
+
+Некоторые важные сведения.
+
+- Убедитесь, что ваше приложение имеет разрешение на соответствующую библиотеку в манифесте перед созданием объекта [StorageLibrary](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary) . Дополнительные сведения см. [Разрешения на доступ к файлу](https://docs.microsoft.com/en-us/windows/uwp/files/file-access-permissions) .
+- [Включение](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) является потокобезопасной, не приведет к сбросу указатель и может быть вызван сколько угодно вам нравится (об этом подробнее позже).
+
+![Включение объект отслеживания пустой изменений](images/changetracker-enable.png)
+
+### <a name="wait-for-changes"></a>Подождите, пока изменения
+
+После инициализации объект отслеживания изменений начнет записывает все операции, которые возникают в библиотеке, даже в том случае, если приложение не выполняется. Приложения могут регистрировать необходимо активировать всякий раз, когда изменяется путем регистрации для событий [StorageLibraryChangedTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger) .
+
+![Изменения, добавляемого объект отслеживания изменений без их чтения приложения](images/changetracker-waiting.png)
+
+### <a name="read-the-changes"></a>Чтение изменения
+
+Приложение можно опрашивать изменения из объект отслеживания изменений и получать список изменения с момента последнего он установлен. В следующем примере кода показано, как получить список изменений из объект отслеживания изменений.
+
+```csharp
+StorageLibrary videosLibrary = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Videos);
+videosLibrary.ChangeTracker.Enable();
+StorageLibraryChangeReader videoChangeReader = videosLibrary.ChangeTracker.GetChangeReader();
+IReadOnlyList changeSet = await changeReader.ReadBatchAsync();
+```
+
+Затем приложение отвечает за обработку изменения в свой собственный возможностями или базы данных при необходимости.
+
+![Считывание изменения из объект отслеживания изменений в базе данных приложения](images/changetracker-reading.png)
+
+> [!TIP]
+> Второй вызов для включения — противодействие гонки, если пользователь добавляет другую папку в библиотеку, пока ваше приложение выполняет чтение изменения. Без дополнительных вызов для **включения** кода приведет к сбою с ecSearchFolderScopeViolation (0x80070490) Если пользователь изменяет папки библиотеке
+
+### <a name="accept-the-changes"></a>Принять изменения
+
+После завершения приложения обработка изменений, оно должно сообщить системе о необходимости никогда не показывать эти изменения, вызвав метод [AcceptChangesAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync) .
+
+```csharp
+await changeReader.AcceptChangesAsync();
+```
+
+![Отметка изменения в виде чтения, поэтому они никогда не будут отображаться снова](images/changetracker-accepting.png)
+
+Приложения теперь получит только новые изменения при чтении объект отслеживания изменений в будущем.
+
+- Если изменения произошло между вызывающего [ReadBatchAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.readbatchasync) и [AcceptChangesAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync), указатель будет только опытным последнее изменение показано приложение. Эти другие изменения по-прежнему будут доступны следующий раз, когда он вызывает **ReadBatchAsync**.
+- Принятие изменений не приведет к система возвращает один и тот же набор изменений в следующий раз, когда приложение вызывает **ReadBatchAsync**.
+
+## <a name="important-things-to-remember"></a>Необходимо помнить
+
+Если вы используете объект отслеживания изменений, существует несколько вещей, которые следует иметь в виду, чтобы убедиться в том, что все работает правильно.
+
+### <a name="buffer-overruns"></a>Переполнений буфера
+
+Несмотря на то, что мы стараемся зарезервировать достаточно места для хранения всех операций, возникающих в системе, пока ваше приложение может считывать их объект отслеживания изменений, это очень легко представьте ситуацию, где приложение не читает изменения до самого перезаписывает циклического буфера. Особенно в том случае, если пользователь восстановление данных из резервной копии или синхронизации для большой коллекции изображений с телефона камеры.
+
+В этом случае **ReadBatchAsync** вернет код ошибки [StorageLibraryChangeType.ChangeTrackingLost](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetype). Если ваше приложение получает этот код ошибки, это означает следующее:
+
+* Буфер, перезаписывает сам с момента последнего окончательная его. Лучший план действий является выполните обход библиотеки, так как любые сведения в инспекторе, будут неполными.
+* Объект отслеживания изменений не возвращает все дополнительные изменения после вызова [вернуть в исходное состояние](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.reset). После приложение вызывает сброс, указатель мыши перемещается в последнее изменение и отслеживания будет возобновлен обычным образом.
+
+Она должна быть редких для получения этих случаев, но в сценариях, где пользователь перемещается большого количества файлов на диске вокруг мы не хотим объект отслеживания изменений в выноска и занимают слишком много хранилища. Это должно позволяют реагировать на операций значительное файловой системы, при этом не повреждение взаимодействие с клиентом в Windows.
+
+### <a name="changes-to-a-storagelibrary"></a>Изменения в StorageLibrary
+
+Класс [StorageLibrary](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary) существует как виртуальную группу корневой папки, содержащие другие папки. Чтобы согласовать это с помощью объект отслеживания изменений системы файлов, мы сделали один из следующих вариантов:
+
+- Любые изменения потомком корневой папки библиотеки будут представлены в объект отслеживания изменений. Корневой папки библиотеки можно найти с помощью свойства [папки](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) .
+- Добавление или удаление корневой папки из **StorageLibrary** (через [RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestaddfolderasync) и [RequestRemoveFolderAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync)) не создает запись в объект отслеживания изменений. Эти изменения могут отслеживаться через событие [DefinitionChanged](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.definitionchanged) или перечисление корневой папки в библиотеку, с помощью свойства [папки](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) .
+- Если папка с содержимым в нем уже добавляется в библиотеку, не будет изменение уведомления или изменение регистрации записям, созданным. Любые последующие изменения потомков этой папке будут создавать уведомления и измените регистрация записей.
+
+### <a name="calling-the-enable-method"></a>Вызов метода Enable
+
+Приложения должны вызывать [Включить](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrarychangetracker.enable) сразу же после их запуска отслеживания в файловой системе и до каждого перечисления изменений. Это позволит гарантировать, что все изменения будут записаны, объект отслеживания изменений.  
+
+## <a name="putting-it-together"></a>Чтобы продемонстрировать вместе
+
+Вот весь код, который используется Регистрация изменений в библиотеке видео и начать похожий изменения из объект отслеживания изменений.
+
+```csharp
+private async void EnableChangeTracker()
+{
+    StorageLibrary videosLib = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Videos);
+    StorageLibraryChangeTracker videoTracker = videosLib.ChangeTracker;
+    videoTracker.Enable();
+}
+
+private async void GetChanges()
+{
+    StorageLibrary videosLibrary = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Videos);
+    videosLibrary.ChangeTracker.Enable();
+    StorageLibraryChangeReader videoChangeReader = videosLibrary.ChangeTracker.GetChangeReader();
+    IReadOnlyList changeSet = await changeReader.ReadBatchAsync();
+
+
+    //Below this line is for the blog post. Above the line is for the magazine
+    foreach (StorageLibraryChange change in changeSet)
+    {
+        if (change.ChangeType == StorageLibraryChangeType.ChangeTrackingLost)
+        {
+            //We are in trouble. Nothing else is going to be valid.
+            log("Resetting the change tracker");
+            videosLibrary.ChangeTracker.Reset();
+            return;
+        }
+        if (change.IsOfType(StorageItemTypes.Folder))
+        {
+            await HandleFileChange(change);
+        }
+        else if (change.IsOfType(StorageItemTypes.File))
+        {
+            await HandleFolderChange(change);
+        }
+        else if (change.IsOfType(StorageItemTypes.None))
+        {
+            if (change.ChangeType == StorageLibraryChangeType.Deleted)
+            {
+                RemoveItemFromDB(change.Path);
+            }
+        }
+    }
+    await changeReader.AcceptChangesAsync();
+}
+```

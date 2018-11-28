@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, glsl, hlsl, opengl, directx, шейдеры
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f468584d995de40ff14df1527ab1df8275c36a8
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691958"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826895"
 ---
 # <a name="glsl-to-hlsl-reference"></a>Справочные материалы по переносу с GLSL на HLSL
 
@@ -94,7 +94,7 @@ GLSL и HLSL отличаются в следующем.
 <td align="left">Развернутые по строкам матрицы (по умолчанию)</td>
 <td align="left">Развернутые по столбцам матрицы (по умолчанию)
 <div class="alert">
-<strong>Примечание</strong>  используйте модификатор типа <strong>row_major</strong> , чтобы изменить макет для одной переменной. Подробнее см. <a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">Синтаксис переменной</a>. Вы также можете указать флажок компилятора или псевдокомментарий, чтобы изменить глобальное значение по умолчанию.
+<strong>Примечание</strong>  используйте модификатор типа <strong>row_major</strong> изменить макет для одной переменной. Подробнее см. <a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">Синтаксис переменной</a>. Вы также можете указать флажок компилятора или псевдокомментарий, чтобы изменить глобальное значение по умолчанию.
 </div>
 <div>
  

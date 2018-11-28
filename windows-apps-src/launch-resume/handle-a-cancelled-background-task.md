@@ -11,11 +11,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: b888bf1373dfb0cac80881117570eb23e8802142
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701851"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7845538"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Обработка отмененной фоновой задачи
 
@@ -85,7 +85,7 @@ private:
 
 В методе **OnCanceled** , созданную на шаге 1 задайте переменной флага **\_CancelRequested** значение **true**.
 
-Полный [пример фоновой задачи]( http://go.microsoft.com/fwlink/p/?linkid=227509) метод **OnCanceled** задает **\_CancelRequested** значение **true** и записывает потенциально полезную отладочную.
+Полный [пример фоновой задачи]( http://go.microsoft.com/fwlink/p/?linkid=227509) метод **OnCanceled** устанавливает **\_CancelRequested** значение **true** и записывает потенциально полезную отладочную.
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -131,9 +131,9 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 ## <a name="handle-cancellation-by-exiting-your-background-task"></a>Обработка отмены путем выхода из фоновой задачи
 
-При получении запроса на отмену необходимо остановить работу метода, выполняющего фоновую работу, и выйти из него, если для переменной **\_cancelRequested** установлено значение **true**. Для внутри процесса фоновые задачи это означает возврат из метода **OnBackgroundActivated** . Для вне процесса фоновые задачи это означает возврат из метода **Run** .
+При получении запроса на отмену необходимо остановить работу метода, выполняющего фоновую работу, и выйти из него, если для переменной **\_cancelRequested** установлено значение **true**. Для внутри процесса фоновые задачи это означает возврат из метода **OnBackgroundActivated** . Для фоновых задач вне процесса это означает возврат из метода **Run** .
 
-Измените код класса вашей фоновой задачи, чтобы проверить переменную флага во время выполнения задачи. Если **\_cancelRequested** становится установлено значение true, остановите рабочие продолжение.
+Измените код класса вашей фоновой задачи, чтобы проверить переменную флага во время выполнения задачи. Если **\_cancelRequested** становится значение true, остановите рабочие продолжение.
 
 [Пример фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) , включает проверку, которая останавливает периодический обратный вызов таймера, если фоновая задача отменена.
 
@@ -177,7 +177,7 @@ else
 ```
 
 > [!NOTE]
-> Приведенный выше пример кода использует [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797). Свойства [**Ход выполнения**](https://msdn.microsoft.com/library/windows/apps/br224800) , которое применяется для записи хода выполнения фоновой задачи. Сведения о ходе выполнения возвращаются приложению при помощи класса [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
+> Приведенный выше пример кода использует [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797). Свойства [**хода выполнения**](https://msdn.microsoft.com/library/windows/apps/br224800) , которое используется для записи хода выполнения фоновой задачи. Сведения о ходе выполнения возвращаются приложению при помощи класса [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
 
 Измените метод **Run** , таким образом, чтобы после остановки работы он записывал ли задача завершена или отменена. Этот шаг относится к фоновым задачам, которые выполняются вне процесса, поскольку требуется способ связи между двумя процессами при отмене фоновой задачи. Чтобы указать, что задача была отменена для фоновых задач внутри процесса, можно просто использовать состояние совместно с приложением.
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, объявления, реклама, размеры, баннеры
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bc59026f8e2ba9b736db8514508ca9ccfad62f8
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692495"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832630"
 ---
 # <a name="supported-banner-ad-sizes"></a>Поддерживаемые размеры рекламных баннеров
 
@@ -26,7 +26,7 @@ ms.locfileid: "7692495"
 * 728x90
 
 > [!NOTE]
-> Для оптимальной работы рекомендуется использовать на устройствах Windows 10 Mobile следующих размеров: 300 x 50, 320 x 50 и 640 x 100.
+> Для оптимальной работы рекомендуется использовать на устройствах с Windows 10 Mobile следующих размеров: 300 x 50, 320 x 50 и 640 x 100.
 
 В таблице ниже приведены примеры иллюстрируют каждого размера рекламных баннеров.
 
