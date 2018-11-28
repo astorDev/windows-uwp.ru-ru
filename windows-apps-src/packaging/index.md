@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, упаковка
 ms.localizationpriority: medium
 ms.openlocfilehash: 04736c9ac4de5adf162d32191ff30f7a981d6a6f
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7854412"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7969935"
 ---
 # <a name="packaging-apps"></a>Создание пакетов приложений
 
