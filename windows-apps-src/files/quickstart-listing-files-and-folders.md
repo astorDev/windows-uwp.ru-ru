@@ -12,11 +12,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 47680b97bacaa34570daf2a14dc9bb6a551d4443
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703884"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839469"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Перечисление и запрос файлов и папок
 
@@ -42,7 +42,7 @@ ms.locfileid: "7703884"
 > [!NOTE]
 > Обязательно объявите возможность **picturesLibrary**.
 
-В этом примере мы сначала используем метод [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) для получения всех файлов в корневой папке [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (не во вложенных папках) и перечислить имена всех файлов. Затем мы используем метод [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) для получения всех вложенных папок в **PicturesLibrary** и перечислить имена каждой вложенной папки.
+В этом примере мы сначала используем метод [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) для получения всех файлов в корневой папке [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (не во вложенных папках) и перечислить имена всех файлов. Затем мы используем метод [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) для получения всех вложенных папок в **PicturesLibrary** и перечислить имена каждой из вложенных папок.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -280,7 +280,7 @@ Next item
 
 ## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>Запрос файлов в расположении и перечисление соответствующих файлов
 
-В этом примере, что мы запрашиваем для всех файлов в [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) , сгруппированные по месяца и это время пример рекурсивно проходит в вложенных папок. Сначала мы вызываем [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) и передаем значение [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) в метод. Благодаря этому получаем объект [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult).
+В этом примере мы запрашиваем для всех файлов в [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) , сгруппированные по месяца и это время пример рекурсивно проходит в вложенных папок. Сначала мы вызываем [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) и передаем значение [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) в метод. Благодаря этому получаем объект [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult).
 
 Затем мы вызываем [**StorageFolderQueryResult.GetFoldersAsync**](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync), который возвращает объекты класса [**StorageFolder**](/uwp/api/windows.storage.storagefolder), представляющие виртуальные папки. В этом случае мы группируем по месяцам, поэтому каждая виртуальная папка представляет группу файлов с одинаковым месяцем.
 

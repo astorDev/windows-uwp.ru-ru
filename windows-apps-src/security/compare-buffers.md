@@ -4,14 +4,14 @@ description: В этом примере кода показано, как сра
 ms.assetid: CB086E51-544A-470D-B7C8-C055271CD615
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 828f3a081aa3dcd095f036fb47385fc261335a7a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699799"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834193"
 ---
 # <a name="compare-buffers"></a>Сравнение буферов
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, множественная дискретизация, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c1634af8589a97f5070ff85909fe12ab16bf8d6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712909"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832854"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Использование множественной дискретизации в приложениях универсальной платформы Windows (UWP)
 
@@ -82,7 +82,7 @@ ms.locfileid: "7712909"
     }
     ```
 
-    > **Примечание**  использование [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494) вместо Если вам нужно проверить-мозаикой буферов ресурсов.
+    > **Примечание**  использование [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494) вместо Если вам нужно проверить-мозаикой буферы ресурсов.
 
      
 

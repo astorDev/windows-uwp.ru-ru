@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp, файл, свойства
 ms.localizationpriority: medium
 ms.openlocfilehash: 772abd3696850be202593c582e6338a04de38537
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702978"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7842591"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>Быстрый доступ к свойствам файлов в UWP 
 
 Узнайте, как быстро получить список файлов и их свойств из библиотеки для использования этих свойств в приложении.  
 
 Предварительные требования 
-- **Асинхронное программирование для приложений универсальной платформы Windows (UWP)**  вы узнаете, как написания асинхронных приложений на C# или Visual Basic, см. в разделе [вызов асинхронных API в C# или Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).     Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
+- **Асинхронное программирование для приложений универсальной платформы Windows (UWP)**  рассказывается, как для написания асинхронных приложений на C# или Visual Basic, см. в разделе [вызов асинхронных API в C# или Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).     Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
 - **Разрешения на доступ к библиотекам**  Коду в этих примерах требуется возможность **picturesLibrary** , но вашего расположения файла может потребоваться другая возможность либо никаких возможностей вообще. Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). 
 - **Простое перечисление файлов**  В этом примере используется [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) для настройки нескольких расширенных свойств перечисления. Подробные инструкции о том, как получить простой список файлов для небольшого каталога, см. в разделе [Перечисление файлов и папок и адресация им запросов](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
 

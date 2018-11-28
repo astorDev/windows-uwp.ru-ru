@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
 ms.openlocfilehash: 442b3b9328212a5115384b5175b519b76286dd28
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696928"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839529"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Предоставление доступа в пользовательском режиме к GPIO, I2C и SPI
 
@@ -744,7 +744,7 @@ devcon status *msft8000
 
 Теперь, если rhproxy запущен, он должен был создать интерфейсы устройств, доступ к которым может осуществляться из пользовательского режима. Мы используем несколько средств командной строки для перечисления устройств и проверим, присутствуют ли они.
 
-Клон [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) репозитория и сборки `GpioTestTool`, `I2cTestTool`, `SpiTestTool`, и `Mincomm` примеры. Скопируйте средства на свое устройство в тестовую папку и используйте следующие команды для перечисления устройств.
+Клонирование [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) репозитория и сборки `GpioTestTool`, `I2cTestTool`, `SpiTestTool`, и `Mincomm` примеры. Скопируйте средства на свое устройство в тестовую папку и используйте следующие команды для перечисления устройств.
 
 ```ps
 I2cTestTool.exe -list
