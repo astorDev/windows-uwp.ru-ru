@@ -1,23 +1,23 @@
 ---
 title: Безопасность
-description: Этот раздел содержит статьи о создании безопасных приложений универсальной платформы Windows (UWP) для Windows10.
+description: Этот раздел содержит справочные статьи о создании безопасных приложений универсальной платформы Windows (UWP) для Windows10.
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 88e45740f457086a925674b37baacc8fc7b4e9b6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693716"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854865"
 ---
 # <a name="security"></a>Безопасность
 
 
 
-Этот раздел содержит статьи о создании безопасных приложений универсальной платформы Windows (UWP) для Windows10.
+Этот раздел содержит справочные статьи о создании безопасных приложений универсальной платформы Windows (UWP) для Windows10.
 
 ## <a name="introduction"></a>Введение 
 

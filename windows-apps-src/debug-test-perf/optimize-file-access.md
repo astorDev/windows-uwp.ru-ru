@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cacd915530bb599936730ec404a6e524fef0105d
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700452"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7851863"
 ---
 # <a name="optimize-file-access"></a>Оптимизация доступа к файлам
 
@@ -133,7 +133,7 @@ ms.locfileid: "7700452"
 
 ### <a name="buffering-between-uwp-and-net-streams"></a>Буферизация между потоками UWP и .NET
 
-Существует много сценариев, когда вам может понадобиться преобразовать поток UWP (например, [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) или [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) в поток .NET ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). Например, это может пригодиться, когда вы пишете приложение UWP и хотите использовать уже существующий код .NET, который работает в потоках с файловой системой UWP. Чтобы это, API .NET для приложений UWP предоставляют методы расширения, которые позволяют вам преобразовывать потоки типа потоки типа .NET и UWP. Подробнее см. в разделе [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
+Существует много сценариев, когда вам может понадобиться преобразовать поток UWP (например, [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) или [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) в поток .NET ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). Например, это может пригодиться, когда вы пишете приложение UWP и хотите использовать уже существующий код .NET, который работает в потоках с файловой системой UWP. Чтобы это, API-интерфейсы .NET для приложений UWP предоставляют методы расширения, которые позволяют вам преобразовывать потоки типа потоки типа .NET и UWP. Подробнее см. в разделе [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
 
 Во время преобразования потока UWP в поток .NET вы создаете адаптер для основного потока UWP. При некоторых условиях требуются затраты времени, связанные с применением методов на потоках UWP. Это может повлиять на скорость вашего приложения, особенно в сценариях, где необходимо выполнять много маленьких и частых операций чтения или записи.
 

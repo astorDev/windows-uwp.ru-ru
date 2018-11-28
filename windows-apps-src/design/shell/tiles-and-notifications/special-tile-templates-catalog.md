@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 09647347134463c8dd2d93f6b869796c8def44e2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698143"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7850011"
 ---
 # <a name="special-tile-templates"></a>Специальные шаблоны плиток
  
@@ -184,7 +184,7 @@ TileContent content = new TileContent()
 ## <a name="people-tile-template"></a>Шаблон плитки People (Люди)
 
 
-В приложении «Люди» для Windows 10 используется специальный шаблон плитки, который отображает коллекцию изображений по кругу, перемещающихся по горизонтали или по вертикали на плитке. Этот шаблон появившийся Windows10 сборки 10572, и для использовать его в своих приложениях.
+В приложении «Люди» для Windows 10 используется специальный шаблон плитки, который отображает коллекцию изображений по кругу, перемещающихся по горизонтали или по вертикали на плитке. Этот шаблон появившийся Windows10 сборки 10572, а для использования в своих приложениях.
 
 Шаблон плитки People работает с плитками следующих размеров:
 

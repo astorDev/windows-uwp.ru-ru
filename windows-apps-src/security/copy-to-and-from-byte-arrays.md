@@ -4,14 +4,14 @@ description: В этом примере кода показано, как коп
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: b3ce63ca1780f9ed1ecd32f3ab1c029a1a92e1b5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693844"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854282"
 ---
 # <a name="copy-to-and-from-byte-arrays"></a>Копирование в массивы байтов и из них
 

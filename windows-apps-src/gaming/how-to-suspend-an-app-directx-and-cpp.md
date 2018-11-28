@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, приостановка, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b588d6bf6e7cbf43651d94a7fd46e9a767c6f09
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697887"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854342"
 ---
 # <a name="how-to-suspend-an-app-directx-and-c"></a>Приостановка работы приложения (DirectX и C++)
 
@@ -97,7 +97,7 @@ void App::Run()
 ## <a name="call-trim"></a>Вызов Trim()
 
 
-Начиная с Windows8.1, все приложения UWP на DirectX необходимо вызвать метод [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) при приостановке. Такой вызов сообщает графическому драйверу, что можно освободить все временные буферы, выделенные приложению. Это снижает вероятность завершения приложения для высвобождения памяти в приостановленном состоянии. Это требование сертификации для Windows8.1.
+Начиная с версии Windows8.1, все приложения UWP на DirectX необходимо вызвать метод [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) при приостановке. Такой вызов сообщает графическому драйверу, что можно освободить все временные буферы, выделенные приложению. Это снижает вероятность завершения приложения для высвобождения памяти в приостановленном состоянии. Это требуется для сертификации для Windows8.1.
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)

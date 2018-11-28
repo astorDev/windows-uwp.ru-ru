@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: e6938807a589337489f07f5865e02a580a72dae2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720490"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855242"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Индексаторы для конкретных форматов MakePri.exe
 
 В этом разделе описываются специальные индексаторы, которые используются средством [MakePri.exe](compile-resources-manually-with-makepri.md) для создания указателя ресурсов.
 
 > [!NOTE]
-> MakePri.exe устанавливается при проверке параметр **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe устанавливается при проверке вариант **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 MakePri.exe обычно используется вместе с командами `new`, `versioned` и `resourcepack`. См. [Параметры командной строки MakePRI.exe](makepri-exe-command-options.md). В таких случаях программа индексирует исходные файлы, чтобы создать индекс ресурсов. MakePri.exe использует различные отдельные индексаторы для чтения различных исходных файлов ресурсов или контейнеров для ресурсов. Самый простой индексатор — это индексатор папки, который индексирует содержимое папки, например изображения в форматах `.jpg` или `.png`.
 

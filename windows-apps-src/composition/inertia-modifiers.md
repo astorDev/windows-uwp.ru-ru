@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, анимация
 ms.localizationpriority: medium
 ms.openlocfilehash: f99ebc4b98c87a4bc6d77fd2c626f481563e50c5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712349"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854086"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>Создание точек прикрепления с модификаторами инерции
 

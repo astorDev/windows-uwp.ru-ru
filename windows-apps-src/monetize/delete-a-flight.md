@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, удаление тестового пакета
 ms.localizationpriority: medium
 ms.openlocfilehash: fa3fa78c695538ec13dbd20d38a24224c560463e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7715822"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7851687"
 ---
 # <a name="delete-a-package-flight"></a>Удаление тестового пакета
 

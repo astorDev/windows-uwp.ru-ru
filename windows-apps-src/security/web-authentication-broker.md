@@ -4,14 +4,14 @@ description: В этой статье описывается, как подкл�
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасности
+keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 8781cbffcb8d5c433c58865fba38cd65369b5c49
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707366"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7853131"
 ---
 # <a name="web-authentication-broker"></a>Брокер веб-проверки подлинности
 
@@ -87,7 +87,7 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->Помимо [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) пространство имен [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) включает метод [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425). Не вызывайте этот метод. Он разработан для приложений, предназначенных для Windows Phone 8.1 и является устаревшим начиная с Windows10.
+>Помимо [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) пространство имен [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) включает метод [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425). Не вызывайте этот метод. Он разработан для приложений, предназначенных для Windows Phone 8.1 и устаревшими начиная с Windows10.
 
 ## <a name="connecting-with-single-sign-on-sso"></a>Подключение с единым входом
 
