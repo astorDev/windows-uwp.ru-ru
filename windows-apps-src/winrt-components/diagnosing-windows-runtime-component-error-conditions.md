@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4733edba06b7042c436918e882556f86dfa00071
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7833303"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7993610"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>Диагностика состояний ошибки компонентов среды выполнения Windows
 

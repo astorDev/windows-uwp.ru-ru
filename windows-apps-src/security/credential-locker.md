@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ac2a625b3769377ed6c8dddce3ca25177dee5f
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7842937"
+ms.locfileid: "7968029"
 ---
 # <a name="credential-locker"></a>Хранилище учетных данных
 

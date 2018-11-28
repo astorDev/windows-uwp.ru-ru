@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, вспомогательные плитки
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f95699fd6eb0803824c9bcdea46d275ab4383ac
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7847218"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7966742"
 ---
 # <a name="secondary-tiles"></a>Вспомогательные плитки
 
