@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ade10b4d5e2653eb214d93c2c9166e6a3e3defc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702332"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7841131"
 ---
 # <a name="templatebinding-markup-extension"></a>Расширение разметки {TemplateBinding}
 
@@ -63,7 +63,7 @@ ms.locfileid: "7702332"
 
 Свойство [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) необходима (обязательно) на [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) при использовании **x: Bind**.
 
-С поддержкой **x: Bind** можно использовать как хорошо, как двухсторонние привязки в [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)обеих [привязки функций](../data-binding/function-bindings.md) .
+С поддержкой **x: Bind** можно использовать как хорошо, как двухсторонние привязки в шаблоне [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)обеих [привязки функций](../data-binding/function-bindings.md) .
 
 В этом примере свойство **TextBlock.Text** принимает значение **Button.Content.ToString**. TargetType на ControlTemplate выступает в качестве источника данных и выполняет тот же результат TemplateBinding родительскому элементу.
 

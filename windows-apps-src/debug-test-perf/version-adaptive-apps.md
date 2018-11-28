@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bbe7875fcd35003b1ec35b02da0f1a86a54ef31
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701984"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7842399"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Адаптивные к версии приложения: используйте новые API, сохраняя совместимость с предыдущими версиями
 
@@ -60,7 +60,7 @@ ms.locfileid: "7701984"
 
 Вы можете скачать все выпущенные версии SDK из [архива Windows SDK и эмулятора](https://developer.microsoft.com/downloads/sdk-archive). Последнюю версию Windows Insider Preview SDK можно скачать в разделе для разработчиков сайта [Windows Insider](https://insider.windows.com/Home/BuildWithWindows).
 
- Дополнительные сведения об обновлениях Windows 10 см. [сведения о выпуске Windows 10](https://technet.microsoft.com/windows/release-info). Важные сведения о Windows 10 поддерживает жизненного цикла, [факты жизненного цикла Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
+ Дополнительные сведения об обновлениях Windows 10 см. [сведения о выпуске Windows 10](https://technet.microsoft.com/windows/release-info). Важные сведения о Windows 10 поддерживает жизненного цикла, [Windows жизненного цикла справочные материалы](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
 ## <a name="perform-api-checks"></a>Проверки API
 

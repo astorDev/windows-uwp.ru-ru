@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, игры, visual studio, инструменты, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719928"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7843856"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>Средства Visual Studio для программирования игр
 
@@ -64,7 +64,7 @@ ms.locfileid: "7719928"
 
 Дополнительные сведения см. в разделе [Работа с трехмерными моделями](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx).
 
-> **Примечание**редактор моделей не предназначены для замены для полного функцию модели приложения для редактирования, но также подходит для многих простого просмотра и редактирования.
+> **Примечание**редактор моделей не предназначены для замены для полной функцию модели приложения для редактирования, но также подходит для многих простого просмотра и редактирования.
 
  
 

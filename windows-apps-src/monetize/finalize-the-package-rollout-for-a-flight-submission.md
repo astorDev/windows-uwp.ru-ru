@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, API отправки в Microsoft Store, выпуск
 ms.assetid: e4a645f6-1f00-4af5-80d6-d2ee179acc8a
 ms.localizationpriority: medium
 ms.openlocfilehash: 29ac212e0549e754c0865aab5d497fa6d51f075f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702928"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7843150"
 ---
 # <a name="finalize-the-rollout-for-a-flight-submission"></a>Завершение выпуска для отправки тестируемой возможности
 
@@ -25,8 +25,8 @@ ms.locfileid: "7702928"
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия токена можно получить новый токен.
-* Создайте отправку для приложения в центре партнеров. Это можно сделать в центре партнеров, или можно сделать с помощью метода [создания отправки приложения](create-an-app-submission.md) .
-* Включите постепенный выпуск пакета для отправки. Это можно сделать в [Центре партнеров](../publish/gradual-package-rollout.md), или можно сделать с [помощью API отправки Microsoft Store](manage-flight-submissions.md#manage-gradual-package-rollout).
+* Создайте отправку для приложения в центре партнеров. Это можно сделать в центре партнеров или можно сделать с помощью метода [создания отправки приложения](create-an-app-submission.md) .
+* Включите постепенный выпуск пакета для отправки. Это можно сделать в [Центре партнеров](../publish/gradual-package-rollout.md)или можно сделать с [помощью API отправки Microsoft Store](manage-flight-submissions.md#manage-gradual-package-rollout).
 
 ## <a name="request"></a>Запрос
 

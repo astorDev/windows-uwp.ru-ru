@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6aecc5b9a43d6cb00b42b1535a196afd8a138af9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706652"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7843585"
 ---
 # <a name="audio-video-and-camera"></a>Звук, видео и камера
 

@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a75d3822f6ddac06387c7233692b2c26222612e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693205"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7843432"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Активация режима разработчика Xbox One
 
@@ -40,7 +40,7 @@ Xbox One поддерживает два режима: *коммерческий
     
 5.  Перейдите к [partner.microsoft.com/xboxactivate](https://partner.microsoft.com/xboxactivate).
 
-6.  Войдите [Центр партнеров](https://partner.microsoft.com/dashboard) с учетными данными учетной записи.
+6.  Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard) с учетными данными учетной записи.
 
 7.  Введите код активации, который отображается в приложении Dev Mode Activation. Количество активаций для вашей учетной записи ограничено. После активации режима разработчика центр партнеров укажет, что вы использовали одну из активаций, связанных с вашей учетной записью.
 

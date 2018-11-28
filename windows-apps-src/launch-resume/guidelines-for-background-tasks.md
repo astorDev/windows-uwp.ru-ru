@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: bd851b6deab0f7a2772720fac83bb2bfa3175071
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691645"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7843748"
 ---
 # <a name="guidelines-for-background-tasks"></a>Руководство по работе с фоновыми задачами
 
@@ -59,7 +59,7 @@ ms.locfileid: "7691645"
 
 **Запрос на выполнение фоновых задач:**
 
-> **Важные**начиная с Windows10, приложениям больше не потребуется располагалось на экране блокировки выполнять фоновые задачи.
+> **Важные**начиная с Windows10, приложениям больше не потребуется располагалось на экране блокировки для выполнения фоновых задач.
 
 Приложения универсальной платформы Windows (UWP) могут выполнять все поддерживаемые типы задач без закрепления на экране блокировки. Но приложения должны вызвать метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией фоновой задачи любого типа. Этот метод возвратит [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439), если пользователь в параметрах устройствах явно запретил разрешения на выполнение фоновых задач для вашего приложения. Дополнительные сведения о доступных пользователю настройках фоновых задач и экономии заряда см. в разделе [Оптимизация фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity). 
 ## <a name="background-task-checklist"></a>Контрольный список для фоновых задач

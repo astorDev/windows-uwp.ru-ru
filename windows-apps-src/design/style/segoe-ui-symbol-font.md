@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700084"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7846062"
 ---
 # <a name="segoe-mdl2-icons"></a>Значки Segoe MDL2
 
@@ -55,7 +55,7 @@ ms.locfileid: "7700084"
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-Вы также можете использовать статический ресурс `SymbolThemeFontFamily` для доступа к **Segoe MDL2 Assets**, вместо указания шрифта по имени:
+Вы также можете использовать статический ресурс `SymbolThemeFontFamily` для доступа к **Segoe MDL2 Assets**, вместо указания шрифт по имени:
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
@@ -63,7 +63,7 @@ ms.locfileid: "7700084"
 
 ## <a name="how-do-i-get-this-font"></a>Как получить этот шрифт?
 * В Windows 10: Нет ничего, что нужно сделать, шрифт поставляется вместе с Windows.
-* На компьютере Mac, необходимо загрузить и установить шрифт: <a href="https://aka.ms/SegoeFonts">Получение Segoe UI и MDL2 шрифты значков</a>
+* На компьютере Mac, вам необходимо загрузить и установить шрифт: <a href="https://aka.ms/SegoeFonts">Получение Segoe UI и MDL2 шрифты значков</a>
 
 ## <a name="icon-list"></a>Список значков
 Помните, здесь по причине нехватки места показаны не все значки шрифта **Segoe MDL2 Assets** — их гораздо больше. Большая часть значков применяется со специальной целью, и обычно такие значки больше нигде не используются.

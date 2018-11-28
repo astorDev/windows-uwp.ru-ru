@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ef51e2235d8ac5c46af6093809d241d5c137d57d
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7711550"
+ms.locfileid: "7835560"
 ---
 # <a name="distributing-a-managed-windows-runtime-component"></a>Распространение управляемого компонента среды выполнения Windows
 

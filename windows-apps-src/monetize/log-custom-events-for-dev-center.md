@@ -7,11 +7,11 @@ keywords: windows 10, uwp, Microsoft Store Services SDK, журналы собы
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b338fd3b34d530ad365b0377d6b6c6c65398b7
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692755"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7841580"
 ---
 # <a name="log-custom-events-for-partner-center"></a>Ведение журнала пользовательских событий для Центра партнеров
 
@@ -20,7 +20,7 @@ ms.locfileid: "7692755"
 Для регистрации пользовательского события из вашего приложения передайте строку пользовательского события методу [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log), предоставляемому пакетом Microsoft Store Services SDK. Можно просмотреть общее число для вашего пользовательского события в разделе **пользовательские события** в [отчете об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) в центре партнеров.
 
 > [!NOTE]
-> Пользовательских событий, войдите в центр партнеров не связаны с [событиями Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), и они не отображаются в **Средстве просмотра событий**.
+> Пользовательские события, войдите в центр партнеров не связаны с [событиями Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), и они не отображаются в **Средстве просмотра событий**.
 
 ## <a name="prerequisites"></a>Предварительные условия
 
