@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a86d0b29b39ecb4d2793e641c8c53f6c2a4e3c0
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: 9ffcbc3d1c11c8f756b6307b15b87c14b09f65c4
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7830368"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7989231"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>Использование шаблонов для форматирования даты и времени
 
@@ -39,7 +39,7 @@ var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatt
 
 В результате создается модуль форматирования на основе языка и региона в текущем контексте. Порядок компонентов в стандартном шаблоне формата не имеет значения; модуль форматирования отображает их в правильном порядке для текущего языка. Поэтому, для английского языка (США) будет отображаться "January1", для французского языка (Франция) — "1janvier", а для японского — "1月1日".
 
-С другой стороны нестандартный шаблон формата зависит от языка и региональных параметров. Давайте осуществим доступ к нестандартному формату шаблона для стандартного шаблона формата.
+С другой стороны нестандартный шаблон формата зависит от языка и региональных параметров. Давайте доступ к шаблон формата для шаблона формата.
 
 ```csharp
 IReadOnlyList<string> monthDayPatterns = dateFormatter.Patterns;

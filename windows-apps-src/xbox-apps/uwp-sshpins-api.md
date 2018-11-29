@@ -3,11 +3,11 @@ title: Портал устройств — справочные материал
 description: Узнайте, как удалить все доверенные PIN-коды SSH программными средствами.
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ddf15d3cdb4089a8ef010a4ae46d247a06a10d7
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7848193"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7991247"
 ---
 # <a name="ssh-pins-api-reference"></a>Справочные материалы по API для PIN-кодов SSH
 Вы можете удалить все доверенные PIN-коды SSH в комплекте средств разработки, используя этот API REST.

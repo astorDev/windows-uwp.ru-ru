@@ -6,12 +6,12 @@ ms.date: 03/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, портала устройств
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e6177cb3b948c44943753f7ae45c72a76d4a1d5
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: d9e11445d77434320c8842608bf8183a078c0660
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7832531"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7989043"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Написание пользовательского подключаемого модуля для портала устройств
 
@@ -108,7 +108,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-Существует два события, которые должны обрабатываться приложением для завершения цикла обработки запросов: **Closed**, когда служба портала устройств завершает работу, и [**RequestRecieved**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), которое проверяет входящие HTTP-запросы и предоставляет основные функциональные возможности поставщика портала устройств. 
+Существует два события, которые должны обрабатываться приложением для завершения цикла обработки запросов: **Закрыто**, для каждый раз, когда служба портала устройств завершает работу, и [**RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), который поверхности Входящие HTTP запросы и предоставляет основной функциональные возможности поставщика портала устройств. 
 
 ## <a name="handle-the-requestreceived-event"></a>Обработка события RequestReceived
 Событие **RequestReceived** происходит один раз для каждого HTTP-запроса, который выполняется на маршруте обработчика, указанного для подключаемого модуля. Цикл обработки запросов для поставщиков портала устройств похож на аналогичный объект в NodeJS Express: объекты запроса и ответа предоставляются вместе с событием, а обработчик отвечает путем заполнения объекта запроса. Для поставщиков портала устройства событие **RequestReceived** и его обработчики используют объекты [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httprequestmessage) и [**HttpResponseMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httpresponsemessage).   

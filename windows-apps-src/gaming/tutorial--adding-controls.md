@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, элементы управления, ввод
 ms.localizationpriority: medium
 ms.openlocfilehash: 01c0d1361dcc0858a54792adc0d17408ed281c99
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7846806"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7991181"
 ---
 # <a name="add-controls"></a>Добавление элементов управления
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, directx, объект приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: e12ad6ce221440e8840006b3883980721b899ae6
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7848792"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7984872"
 ---
 # <a name="the-app-object-and-directx"></a>Объект приложения и DirectX
 
