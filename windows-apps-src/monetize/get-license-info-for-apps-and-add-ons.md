@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, лицензии, приложения, надстройки, покупки из приложения, IAP, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d7c832907af17436d588f0fac6c5039d4affa82
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7827858"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7982948"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>Получение информации о лицензии для приложений и надстроек
 

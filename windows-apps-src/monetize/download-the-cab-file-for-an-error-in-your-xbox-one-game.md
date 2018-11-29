@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API аналитики для Microsoft Store, скачать CAB-файл
 ms.localizationpriority: medium
 ms.openlocfilehash: 736219533a254e6380c10600e97f707f15e37de6
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7834844"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7985231"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-xbox-one-game"></a>Скачать CAB-файл для ошибки в игры Xbox One
 

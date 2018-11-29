@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c5b99c95167940c1ae51dbe96a3e43dc6fb0af34
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7833704"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7982876"
 ---
 # <a name="create-a-hello-world-app-js"></a>Создание приложения "Hello, world" (JS)
 

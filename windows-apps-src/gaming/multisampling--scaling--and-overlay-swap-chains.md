@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, масштабирование цепочки буферов, наложения, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 12aede6c4af61c4b86d1f1090a2ec3d0e5ecce68
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7835074"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7983008"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>Наложения и масштабирование цепочки буферов
 
