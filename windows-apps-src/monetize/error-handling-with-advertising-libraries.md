@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, обработка ошибок, javascript, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: a6c14ecf8e8909ab6cd95a54ca8144fbf8a8d912
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7985658"
+ms.locfileid: "8197431"
 ---
 # <a name="handle-ad-errors"></a>Обработка ошибок рекламы
 

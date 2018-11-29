@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0aa227a47fc3940f3fa5c3010eed70f37067935
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7979588"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8196966"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture
 
