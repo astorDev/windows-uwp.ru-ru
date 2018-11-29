@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: ca618dde24c1eed254d89c2d84734b7e3aec6306
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7967991"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8204164"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Упаковки классического приложения с помощью Desktop App Converter
 

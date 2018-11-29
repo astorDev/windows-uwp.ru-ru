@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 012b0bae7c0abdacba352a3e8f60bcfd0aa1dd54
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7986395"
+ms.locfileid: "8191750"
 ---
 # <a name="lighting"></a>Освещение
 

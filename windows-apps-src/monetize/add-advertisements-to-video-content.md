@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные материалы, видео, планировщик, javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 29e2c46636445adac496d0f2149e956c5703c20d
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7990595"
+ms.locfileid: "8189538"
 ---
 # <a name="show-ads-in-video-content"></a>Показ рекламы в видеосодержимом
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, стандартная, c++, cpp, winrt, проекция, создание, событие
 ms.localizationpriority: medium
 ms.openlocfilehash: 31f076ca259d10cc5bd49daea66741ead6e117c2
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7978732"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8190503"
 ---
 # <a name="author-events-in-cwinrt"></a>Создание событий в C++/WinRT
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, асинхронный
 ms.localizationpriority: medium
 ms.openlocfilehash: 50e8bae0db888b947c568deb50fa5f2fc227e734
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7972694"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8191571"
 ---
 # <a name="asynchronous-programming"></a>Асинхронное программирование
 В этом разделе описывается асинхронное программирование на универсальной платформы Windows (UWP), а также его представление в C#, Microsoft Visual Basic.NET, C++ и JavaScript.

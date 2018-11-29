@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, точка службы, pos, считыватель магнитных карт
 ms.localizationpriority: medium
 ms.openlocfilehash: 1805213c7c30ccbc67fb96098f11480703589bb4
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7969542"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8196010"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a>Получение и распознавание данных магнитных карт
 

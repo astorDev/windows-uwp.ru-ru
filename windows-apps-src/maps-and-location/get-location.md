@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, карта, расположение, функция определения местоположения
 ms.localizationpriority: medium
 ms.openlocfilehash: fae533e0ce42e14e3c53f5083b746a9aae221adf
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7991632"
+ms.locfileid: "8194645"
 ---
 # <a name="get-the-users-location"></a>Получение местоположения пользователя
 
