@@ -3,11 +3,11 @@ title: Справка по API для сведений о развертыван
 description: Узнайте, как программными средствами получить доступ к API для сведений о развертывании.
 ms.localizationpriority: medium
 ms.openlocfilehash: c44089313b100880b419e9b55a26101e877496f3
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7973965"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8198466"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>Запрашивает сведения о развертывании для одного или нескольких установленных пакетов.
 
