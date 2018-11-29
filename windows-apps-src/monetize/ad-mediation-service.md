@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, рекламные объявления, реклама, рекламный посредник
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f4041c21665bd77856b15b7e94e45d613d6ea51
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7847669"
+ms.locfileid: "7980921"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Служба рекламного посредника Майкрософт
 
