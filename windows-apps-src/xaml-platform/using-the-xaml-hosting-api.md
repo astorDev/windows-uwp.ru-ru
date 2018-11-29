@@ -1,16 +1,16 @@
 ---
 description: В этой статье описывается, как разместить пользовательский Интерфейс XAML UWP в классическом приложении.
 title: С помощью XAML UWP, API размещения в приложении рабочего стола
-ms.date: 09/21/2018
+ms.date: 11/27/2018
 ms.topic: article
 keywords: Windows 10, uwp, windows forms, wpf, win32
 ms.localizationpriority: medium
-ms.openlocfilehash: b6883b605bed0b259cd70d1f6dc0264476eddd40
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: df6c47fd93c3f42721fd072d6406a2d32f7889db
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7837566"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7990121"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>С помощью XAML UWP, API размещения в приложении рабочего стола
 
@@ -46,8 +46,8 @@ XAML UWP, API размещения инфраструктура для разм�
 
 Элемент управления [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) в наборе средств сообщества Windows выступает в качестве Образцовый пример использования UWP, API размещения в приложениях WPF и Windows Forms. Исходный код доступен в следующих местах:
 
-  * Для WPF версию элемента управления, [перейдите по ссылке](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost). Версия WPF является производным от [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost).
-  * Для версии Windows Forms элемента управления, [перейдите по ссылке](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost). Версии Windows Forms является производным от [**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control).
+  * Для WPF версию элемента управления, [перейдите по ссылке](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Wpf.UI.XamlHost). Версия WPF является производным от [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost).
+  * Для версии Windows Forms элемента управления, [перейдите по ссылке](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost). Версии Windows Forms является производным от [**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control).
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -161,8 +161,8 @@ XAML UWP, API размещения включает в себя [**DesktopWindow
 Полные примеры, демонстрирующие эти задачи в контексте рабочий пример приложения см. следующие файлы кода.
 
   * **C++ Win32:** См. в файле [Main.cpp](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting/blob/master/XamlHostingSample/Main.cpp) примера [XamlHostingSample](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting) или в файле [Desktop.cpp](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/Desktop.cpp) [XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32) примера.
-  * **WPF:** См. в файлах [WindowsXamlHostBase.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) и [WindowsXamlHost.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) в наборе средств сообщества Windows.  
-  * **Windows Forms:** См. в файлах [WindowsXamlHostBase.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) и [WindowsXamlHost.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) в наборе средств сообщества Windows.
+  * **WPF:** См. в файлах [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) и [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) в наборе средств сообщества Windows.  
+  * **Windows Forms:** См. в файлах [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) и [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) в наборе средств сообщества Windows.
 
 
 ## <a name="how-to-host-custom-uwp-xaml-controls"></a>Для пользовательских узла UWP XAML элементов управления
@@ -174,11 +174,11 @@ XAML UWP, API размещения включает в себя [**DesktopWindow
 
 1. Определение пользовательского типа, который является производным от [**Windows.UI.Xaml.Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application) , а также реализует [**IXamlMetadataProvider**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider). Этот тип выступает в качестве корневого поставщика метаданных для загрузки метаданных для настраиваемых типов UWP XAML в сборках в текущем каталоге вашего приложения.
 
-    Пример, в котором показано, как это сделать см. в разделе файл с кодом [XamlApplication.cs](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Windows.Interop.WindowsXamlHost.Shared/XamlApplication.cs) в наборе средств сообщества Windows. Этот файл является частью общих классов, реализующих **WindowsXamlHost** для WPF и Windows Forms, который поможет показывают, как использовать XAML UWP, API в этих типов приложений размещения.
+    Пример, в котором показано, как это сделать см. в разделе файл с кодом [XamlApplication.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/XamlApplication.cs) в наборе средств сообщества Windows. Этот файл является частью общих классов, реализующих **WindowsXamlHost** для WPF и Windows Forms, который поможет показывают, как использовать XAML UWP, API в этих типов приложений размещения.
 
 2. Вызовите метод [**GetXamlType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider.getxamltype) вашего поставщика корневой метаданных присваивается имя типа элемента управления UWP XAML (это может быть назначены в коде во время выполнения, или вы можете включить этот назначены в окне Свойства Visual Studio).
 
-    Пример, в котором показано, как это сделать см. в разделе файл с кодом [UWPTypeFactory.cs](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Windows.Interop.WindowsXamlHost.Shared/UWPTypeFactory.cs) в наборе средств сообщества Windows. Этот файл является частью общих классов, реализующих **WindowsXamlHost** для WPF и Windows Forms.
+    Пример, в котором показано, как это сделать см. в разделе файл с кодом [UWPTypeFactory.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/UWPTypeFactory.cs) в наборе средств сообщества Windows. Этот файл является частью общих классов, реализующих **WindowsXamlHost** для WPF и Windows Forms.
 
 3. Интегрировать исходный код для пользовательского элемента управления UWP XAML в решение приложения узла, построения пользовательского элемента управления и использовать его в приложении, [эти инструкции](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control)ниже.
 
@@ -193,8 +193,8 @@ XAML UWP, API размещения предоставляет несколько
 2. Когда пользователь находится на последней фокусируемый элемент в вашем **DesktopWindowXamlSource** и нажимает клавишу **Tab** или клавиши со стрелкой, возникает событие [**TakeFocusRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested) . Обрабатывать это событие и программными средствами переместить фокус на следующий фокусируемый элемент в основное приложение. Например в приложении WPF, где размещена **DesktopWindowXamlSource** в [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost), можно использовать метод [**MoveFocus**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.movefocus) для передачи фокус на следующий фокусируемый элемент в основное приложение.
 
 Примеры, демонстрирующие, как это сделать в контексте рабочий пример приложения см. следующие файлы кода.
-  * **WPF:** См. в файле [WindowsXamlHostBase.Focus.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) набора средств сообщества Windows.  
-  * **Windows Forms:** См. в файле [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs) набора средств сообщества Windows.
+  * **WPF:** См. в файле [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) набора средств сообщества Windows.  
+  * **Windows Forms:** См. в файле [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs) набора средств сообщества Windows.
 
 ## <a name="how-to-handle-layout-changes"></a>Как обрабатывать изменения макета
 
@@ -209,8 +209,8 @@ XAML UWP, API размещения предоставляет несколько
     * В приложение Windows Forms можно выполнить это в обработчике событий [**SizeChanged**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged) элемента [**управления**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) , на котором размещается **DesktopWindowXamlSource**.
 
 Примеры, демонстрирующие, как это сделать в контексте рабочий пример приложения см. следующие файлы кода.
-  * **WPF:** См. в файле [WindowsXamlHost.Layout.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) набора средств сообщества Windows.  
-  * **Windows Forms:** См. в файле [WindowsXamlHost.Layout.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) набора средств сообщества Windows.
+  * **WPF:** См. в файле [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) набора средств сообщества Windows.  
+  * **Windows Forms:** См. в файле [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) набора средств сообщества Windows.
 
 ## <a name="how-to-handle-dpi-changes"></a>Как обрабатывать изменения DPI
 

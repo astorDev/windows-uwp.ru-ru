@@ -3,11 +3,11 @@ title: 'Unity: управление версиями проекта UWP'
 description: Управление версиями проекта UWP.
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fe59b0c63f536822ec50a225bbdc11e68b97713
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7837082"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7992016"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity: управление версиями проекта UWP
 

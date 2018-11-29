@@ -5,12 +5,12 @@ ms.date: 09/17/2018
 ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bbe7875fcd35003b1ec35b02da0f1a86a54ef31
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: 435bbdbfaaf1bec90fa1ee2d598b4a3fe78d3789
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7842399"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7990520"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Адаптивные к версии приложения: используйте новые API, сохраняя совместимость с предыдущими версиями
 
@@ -56,7 +56,7 @@ ms.locfileid: "7842399"
 | Creators Update | 1703 | 15063 |
 | Fall Creators Update | 1709 | 16299 |
 | Обновление за апрель 2018 г. | 1803 | 17134 |
-| Обновление октября 2018 г. | 1809 | _Insider Preview_ |
+| Обновление октября 2018 г. | 1809 | 17763 |
 
 Вы можете скачать все выпущенные версии SDK из [архива Windows SDK и эмулятора](https://developer.microsoft.com/downloads/sdk-archive). Последнюю версию Windows Insider Preview SDK можно скачать в разделе для разработчиков сайта [Windows Insider](https://insider.windows.com/Home/BuildWithWindows).
 
