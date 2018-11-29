@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx 9, directx 11, перенос
 ms.localizationpriority: medium
 ms.openlocfilehash: 68c80f0fbe83d0a9a931a8437b5125c064bbe438
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7967638"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8200246"
 ---
 # <a name="port-from-directx-9-to-universal-windows-platform-uwp"></a>Перенос из DirectX9 на универсальную платформу Windows (UWP)
 
