@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, basicreaderwriter
 ms.localizationpriority: medium
 ms.openlocfilehash: 60c2bf74de1e56004f1f705f317bc6bd1bb34b26
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7846361"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7972257"
 ---
 # <a name="complete-code-for-basicreaderwriter"></a>Полный код класса BasicReaderWriter
 
