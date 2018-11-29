@@ -1,11 +1,11 @@
 ---
 ms.localizationpriority: medium
 ms.openlocfilehash: 649c221f8dd9221e0a1df8dbea74e4facefadd92
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7967714"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8193306"
 ---
 #<a name="xaml-samples-for-developers"></a>Примеры XAML для разработчиков
 
