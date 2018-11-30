@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, iap, покупки из приложения, внутренний продукт приложения, отправки iap
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dc3e9b928c544b8552abc6c289c682694f623c0
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7971636"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8216746"
 ---
 # <a name="add-on-submissions"></a>Отправка надстроек
 

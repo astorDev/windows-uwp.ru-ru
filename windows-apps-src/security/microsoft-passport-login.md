@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 8319d4a0975e209edea7cb70b22910e8124f16c1
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7992813"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8211483"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Создание приложения для входа с использованием Windows Hello
 

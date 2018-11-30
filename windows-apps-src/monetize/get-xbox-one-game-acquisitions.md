@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store, покупки игры для Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 348430f7ceee66a9c4e82f258a70e57d8f344943
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7986115"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8208023"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>Получение сведений о покупках игр на Xbox One
 

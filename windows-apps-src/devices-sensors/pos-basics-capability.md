@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 832881919a3ed1f44c0912703ede5948c5b10d11
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7986009"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8212052"
 ---
 # <a name="pointofservice-device-capability"></a>Возможность устройств PointOfService
 Доступ к API-интерфейсам PointOfService запрашивается путем объявления возможности в манифесте пакета приложения. Большую часть возможностей можно объявить, используя конструктор манифестов в Microsoft Visual Studio, либо добавить их вручную.  
