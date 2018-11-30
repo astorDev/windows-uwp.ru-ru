@@ -3,11 +3,11 @@ title: Справочные материалы по API удаленного в�
 description: Сведения об удаленной отправке данных ввода с контроллера, клавиатуры и мыши на Xbox.
 ms.localizationpriority: medium
 ms.openlocfilehash: e0db86ad50bfb1cb27f516243542a554e710c3ea
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8200519"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8326504"
 ---
 # <a name="remote-input-api-reference"></a>Справочник по API удаленного ввода   
 С помощью этого API-интерфейса можно удаленно отправлять данные ввода с контроллера, клавиатуры и мыши в режиме реального времени.

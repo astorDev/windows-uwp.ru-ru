@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, маршрут, карта, расположение, направления
 ms.localizationpriority: medium
 ms.openlocfilehash: dd93a092ee0db0821e9326d0f9ffa86890850b87
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8216078"
+ms.locfileid: "8325821"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>Отображение маршрутов и направлений на карте
 
