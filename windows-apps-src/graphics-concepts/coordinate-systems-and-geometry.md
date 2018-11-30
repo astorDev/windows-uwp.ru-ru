@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 962002d635c3e6edbf1f9581a4cbc57fbd5b1d96
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7971494"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8211052"
 ---
 # <a name="coordinate-systems-and-geometry"></a>Системы координат и геометрия
 

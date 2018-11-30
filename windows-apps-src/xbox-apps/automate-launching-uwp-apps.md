@@ -3,11 +3,11 @@ title: Автоматизация запуска приложений униве
 description: Разработчики могут использовать активацию по протоколу и активацию при запуске для автоматизации запуска своих приложений или игр UWP для автоматического тестирования.
 ms.localizationpriority: medium
 ms.openlocfilehash: 123e2dfff909265673a711f480f5fe636590afa4
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7983197"
+ms.locfileid: "8203211"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>Автоматизация запуска приложений UWP для Windows 10
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a7e278df29a531e5bf1d0d92946cd0199f85515d
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7964423"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8210002"
 ---
 # <a name="save-a-file-with-a-picker"></a>Сохранение файла с помощью средства выбора
 
