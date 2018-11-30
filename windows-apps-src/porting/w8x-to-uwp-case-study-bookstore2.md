@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 156f780e5637852d554488adfeeb9d688fa4a4d7
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7967372"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8200745"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a>Пример переноса со среды выполнения Windows 8.x на UWP: Bookstore2
 

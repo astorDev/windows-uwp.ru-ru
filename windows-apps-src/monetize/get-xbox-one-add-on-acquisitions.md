@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, службы магазина, API, Xbox One надстроек аналитики Microsoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: f102d2d692a2307c25dcb95e66d612fc561dec70
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7980164"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8201215"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>Получение сведений о приобретенных надстройках для Xbox One
 
