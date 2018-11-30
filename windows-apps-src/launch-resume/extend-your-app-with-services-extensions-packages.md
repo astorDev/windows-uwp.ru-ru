@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, расширения, разбить службы приложения, пакет, расширения
 ms.localizationpriority: medium
 ms.openlocfilehash: 110fa8ec9feba1f54155d41b4c726ffb28f71630
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7987798"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8213679"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>Расширение приложения за счет служб, расширений и пакетов
 

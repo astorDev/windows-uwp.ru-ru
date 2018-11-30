@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 107c904dc4b89941c0f453efd830504d2d032534
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7988038"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8210204"
 ---
 # <a name="show-multiple-views-for-an-app"></a>Отображение нескольких представлений для приложения
 

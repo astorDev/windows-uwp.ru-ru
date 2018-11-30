@@ -3,11 +3,11 @@ title: Справочник по учетных данных API сети пор
 description: Узнайте, как добавление, удаление или обновление сетевых учетных данных программными средствами.
 ms.localizationpriority: medium
 ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7974099"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8213709"
 ---
 # <a name="network-credentials-api-reference"></a>Справочник по API учетные данные сети
 Можно добавить, удалить или обновление сетевых сохраненных учетных данных в комплекте средств разработки с помощью этого API REST.
