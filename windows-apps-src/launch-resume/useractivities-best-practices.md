@@ -6,11 +6,11 @@ ms.date: 08/23/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 33103ebfc7ee3e26a11de781af7981bce78b349c
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8217927"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8323328"
 ---
 # <a name="user-activities-best-practices"></a>Рекомендации для пользователя
 
