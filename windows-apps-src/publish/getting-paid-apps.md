@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, платежи, продажа приложений, доход от приложения, выплата, плата store, удержание платежей, процент
 ms.localizationpriority: medium
 ms.openlocfilehash: 91289948f2f4745456b9cebe587cf75366a4877b
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8197067"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8329455"
 ---
 # <a name="getting-paid"></a>Получение платежей
 Ниже приводятся некоторые важные сведения о получении платежей за ваши приложения, надстройки и прибыли от рекламы.

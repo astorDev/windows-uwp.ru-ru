@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, локализуемость, локализация, справа налево, слева направо
 ms.localizationpriority: medium
 ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8207854"
+ms.locfileid: "8328895"
 ---
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>Настройка макета и шрифтов, реализация поддержки написания справа налево
 Проектируйте свое приложение таким образом, чтобы оно поддерживало макеты и шрифты различных языков, в том числе с написанием справа налево. Направление текста — это направление, в котором написан и отображается сценарий, а также направление, в котором элементы пользовательского интерфейса просматриваются на странице взглядом.
