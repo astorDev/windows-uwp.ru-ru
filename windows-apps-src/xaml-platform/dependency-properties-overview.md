@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 92e8b0b0d68b1dc4110818977024d3040194a376
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8205186"
+ms.locfileid: "8334583"
 ---
 # <a name="dependency-properties-overview"></a>Общие сведения о свойствах зависимостей
 

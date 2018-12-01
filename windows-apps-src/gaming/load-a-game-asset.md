@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx, загрузка ресурсов
 ms.localizationpriority: medium
 ms.openlocfilehash: ca16dd6115bbbe84529928ca58ee0d3074498728
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8206902"
+ms.locfileid: "8343696"
 ---
 # <a name="load-resources-in-your-directx-game"></a>Загрузка ресурсов в игре DirectX
 

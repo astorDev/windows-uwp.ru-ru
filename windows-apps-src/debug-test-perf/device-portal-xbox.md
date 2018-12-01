@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, портала устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: 0930e970af943329cac60d02a4bfe5986c21757a
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8213809"
+ms.locfileid: "8331816"
 ---
 # <a name="device-portal-for-xbox"></a>Портал устройств для Xbox
 

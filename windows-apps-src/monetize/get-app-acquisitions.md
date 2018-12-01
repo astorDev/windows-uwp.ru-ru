@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, приобретения приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ef5c9cedcb828f6c7df8a294fc4aad87e9f74ae
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8206505"
+ms.locfileid: "8339512"
 ---
 # <a name="get-app-acquisitions"></a>Получение сведений о приобретениях приложения
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 7759186d45d3488336a1b793d173d6d1f21aa601
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8194700"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8343686"
 ---
 # <a name="enumerating-point-of-service-devices"></a>Перечисление POS-устройств
 В этом разделе вы узнайте, как [определить средство выбора устройств](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector), использующееся для запроса устройств, доступных системе, а также, как использовать это средство выбора для перечисления POS-устройств с помощью одного из следующих способов:
