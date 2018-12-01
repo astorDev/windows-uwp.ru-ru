@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, данные приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 54f5989f0aa2fb5eeed26f16ab9e07671e26832c
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 23e392e2064a2a48089d1efadd1461c146e0d343
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8198757"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8348826"
 ---
 # <a name="get-app-data"></a>Получение данных приложения
 
@@ -19,44 +19,12 @@ ms.locfileid: "8198757"
 
 Прежде чем использовать эти методы, приложение должно уже существовать в вашей учетной записи центра партнеров. Для создания отправок для приложений и управления ими см. описания методов в разделе [Управление отправками приложений](manage-app-submissions.md).
 
-<table>
-<colgroup>
-<col width="10%" />
-<col width="30%" />
-<col width="60%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Способ</th>
-<th align="left">URI</th>
-<th align="left">Описание</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications</td>
-<td align="left"><a href="get-all-apps.md">Получение данных для всех приложений</a></td>
-</tr>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}</td>
-<td align="left"><a href="get-an-app.md">Получение данных для конкретного приложения</a></td>
-</tr>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts</td>
-<td align="left"><a href="get-add-ons-for-an-app.md">Получение надстроек для приложения</a></td>
-</tr>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights</td>
-<td align="left"><a href="get-flights-for-an-app.md">Получение тестовых пакетов для приложения</a></td>
-</tr>
-</tbody>
-</table>
-
-<span/>
+| Способ | URI                                                                                             | Описание                                                 |
+|------- |------------------------------------------------------------------------------------------------ |------------------------------------------------------------ |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications`                                   | [Получение данных для всех приложений](get-all-apps.md)               |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}`                   | [Получение данных для конкретного приложения](get-an-app.md)                |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [Получение надстроек для приложения](get-add-ons-for-an-app.md)         |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [Получение тестовых пакетов для приложения](get-flights-for-an-app.md) |
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -180,13 +148,12 @@ ms.locfileid: "8198757"
 
 Этот ресурс содержит следующие значения.
 
-| Значение           | Тип    | Описание                 |
-|-----------------|---------|------------------------------|
-| id            | string  | Идентификатор отправки.    |
-| resourceLocation   | string  | Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для отправки.            |
- 
-<span/>
+| Значение              | Тип   | Описание               |
+|--------------------|--------|---------------------------|
+| id                 | string | Идентификатор отправки. |
+| resourceLocation   | string | Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для отправки. |
 
+ 
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Создание отправок и управление ими с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)

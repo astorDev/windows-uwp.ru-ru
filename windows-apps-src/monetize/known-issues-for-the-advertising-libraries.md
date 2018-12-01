@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, реклама, рекламные объявления, известные проблемы, устранение неполадок
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b32b390cc4ca6af5b03a22e30323ded5aeac516
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8217289"
+ms.locfileid: "8344650"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Сведения об известных проблемах и устранении неполадок рекламы в приложениях
 
@@ -46,7 +46,7 @@ ms.locfileid: "8217289"
 
 * Если вы создали новый идентификатор рекламной единицы в последние полчаса, реклама может не отображаться до тех пор, пока серверы не распространят новые данные по системе. Существующие идентификаторы, которые показывали рекламу раньше, должны показывать ее немедленно.
 
-Если вы видите тестовые объявления в приложении, то ваш код работает и может отображать рекламу. Если проблемы сохраняются, обратитесь в [службу поддержки по продукту](https://developer.microsoft.com/en-us/windows/support). На этой странице выберите **Реклама в приложении**.
+Если вы видите тестовые объявления в приложении, то ваш код работает и может отображать рекламу. Если проблемы сохраняются, обратитесь в [службу поддержки по продукту](https://developer.microsoft.com/en-us/windows/support). На этой странице выберите **свяжитесь с нами**.
 
 Можно также опубликовать вопрос на [форуме](http://go.microsoft.com/fwlink/p/?LinkId=401266).
 
