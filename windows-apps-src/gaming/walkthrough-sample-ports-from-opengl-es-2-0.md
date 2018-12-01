@@ -4,11 +4,11 @@ description: В этой группе разделов подробно расс
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aefd725c1a73bac3212bf80036462c9bcb7dcc9
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8189568"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8349549"
 ---
 # <a name="walkthrough-sample-ports-from-opengl-es-20"></a>Пошаговое руководство - образцы переноса из OpenGL ES 2.0
 
