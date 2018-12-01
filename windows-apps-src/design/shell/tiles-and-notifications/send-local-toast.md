@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, отправка всплывающих уведомлений, уведомления, отправка уведомлений, всплывающие уведомления, руководство, краткое руководство, начало работы, пример кода, пошаговое руководство
 ms.localizationpriority: medium
-ms.openlocfilehash: dd7dfb621d84a3ce1d934c358ab60683caee9238
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 410e8121aecfe13805586c9287f62444f80a1b1b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8215688"
+ms.locfileid: "8343855"
 ---
 # <a name="send-a-local-toast-notification"></a>Отправка локального всплывающего уведомления
 
@@ -361,7 +361,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 При указании активации фона всплывающего уведомления (или кнопка внутри всплывающего уведомления), фоновая задача будет выполнен вместо активация приложения переднего плана.
 
-Подробнее об использовании фоновых задач см. в разделе [Поддержка приложения с помощью фоновых задач](/launch-resume/support-your-app-with-background-tasks.md).
+Подробнее об использовании фоновых задач см. в разделе [Поддержка приложения с помощью фоновых задач](/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
 Если вы используете сборки 14393 или более поздней версии, можно использовать в процесс фоновой задачи, которые значительно упрощают вещи. Обратите внимание, что в процессе фоновые задачи не сможет запуститься в более старых версиях Windows. Мы будем использовать фоновую задачу в процессе в этом примере кода.
 

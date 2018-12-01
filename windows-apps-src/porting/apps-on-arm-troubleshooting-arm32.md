@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10 s, постоянно подключенный, приложения ARM32 в ARM, windows 10 в ARM, устранение неполадок
 ms.localizationpriority: medium
 ms.openlocfilehash: 6858f9add2430dc83d468b98d4147cc205dd372e
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8191200"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8339191"
 ---
 # <a name="troubleshooting-arm32-uwp-apps"></a>Устранение неполадок в приложениях UWP ARM32
 >[!IMPORTANT]
