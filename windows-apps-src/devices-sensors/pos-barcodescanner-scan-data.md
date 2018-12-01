@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ece246ffd369ee21c089598f07b2566424757f55
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8198968"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8343865"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>Получение и распознавание данных штрих-кода
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, настройка, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8198393"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8330926"
 ---
 # <a name="set-up-the-game-project"></a>Настройка проекта игры
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d75afd17d5aa7edf64fda36b3a35b3a101c1d89
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8217053"
+ms.locfileid: "8332550"
 ---
 # <a name="sockets"></a>Сокеты
 Сокеты — это технология передачи данных низкого уровня, на основе которой реализованы многие сетевые протоколы. UWP предоставляет классы сокетов TCP и UDP для клиент-серверных или одноранговых приложений, если устанавливаются долгосрочные подключения или установленное подключение не требуется.
