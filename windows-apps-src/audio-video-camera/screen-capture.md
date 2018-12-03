@@ -2,16 +2,16 @@
 title: Снимок экрана
 description: Пространство имен Windows.Graphics.Capture предоставляет API-интерфейсы для извлечения кадров из окна отображения или приложения, создания видеопотоков или снимков в рамках формирования интерактивного интерфейса для совместной работы.
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
-ms.date: 10/09/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, снимок экрана
 ms.localizationpriority: medium
-ms.openlocfilehash: 14273f919cacfb27671ba72022ab6c8ff0a2f0ef
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: db32db6b293dce4210bebee139e05447da996b42
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8328460"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470768"
 ---
 # <a name="screen-capture"></a>Снимок экрана
 
@@ -383,6 +383,10 @@ namespace WindowsGraphicsCapture
     }
 }
 ```
+
+## <a name="record-a-video"></a>Запись видео
+
+Если вы хотите записать видео в приложении, поэтому более легко сделать с помощью пространства [имен Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording). Это часть рабочего стола расширения SDK, поэтому это работает только на настольных компьютерах и требуется добавить ссылку на нее из проекта. Дополнительные сведения см. [Общие сведения о семействах устройств](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) .
 
 ## <a name="see-also"></a>См. также:
 
