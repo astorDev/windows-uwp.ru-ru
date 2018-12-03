@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, пакет, архитектура, конфигурация пакета
 ms.localizationpriority: medium
 ms.openlocfilehash: 15b1b8531390cf1b83c15e0aec1d371266417a87
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8334688"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8487146"
 ---
 # <a name="app-package-architectures"></a>Типы архитектуры пакетов приложений
 

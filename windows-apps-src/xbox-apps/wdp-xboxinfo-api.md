@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, xbox, портала устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: d7901890e1cc8fab24742e8785562d13d2fe182a
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8338816"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8462943"
 ---
 # <a name="xbox-info-api-reference"></a>Справочник по API сведения Xbox   
 Можно получить доступ к Xbox One сведения об устройстве, с помощью этого API.
