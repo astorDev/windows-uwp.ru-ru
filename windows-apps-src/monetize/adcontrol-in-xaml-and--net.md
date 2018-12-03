@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, объявления, реклама, AdControl, элемент управления рекламным объявлением, XAML, .net, пошаговое руководство
 ms.localizationpriority: medium
 ms.openlocfilehash: 161718bb88d7588db345f3de26de2a955ca6620e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "8351202"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8464787"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>AdControl в XAML и .NET
 
