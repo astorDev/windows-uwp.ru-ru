@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, перенос, буферы вершин, данные, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c961a8852fb1e03e4e86209f62bda821b980f8c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8336254"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8486182"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>Перенос данных и буферов вершин
 

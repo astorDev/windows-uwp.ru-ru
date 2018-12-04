@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, приложение для демонстрации в розничных магазинах
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d6baaff5ca2af781e72c9b4643fa1ea0624e0eb
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8347628"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485744"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>Добавление функций розничных магазинах (RDX) в приложение
 

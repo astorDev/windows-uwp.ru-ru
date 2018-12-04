@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, игра, DirectX, примеры, трехмерный
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d31c6e5b7307c7d93d7c06a0c4ae915ea788655
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8344017"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8486334"
 ---
 # <a name="directx-samples"></a>Примеры DirectX
 
