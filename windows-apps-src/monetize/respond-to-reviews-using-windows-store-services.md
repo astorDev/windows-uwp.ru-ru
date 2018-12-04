@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отзывов Microsoft Store, ответ на отзывы
 ms.localizationpriority: medium
 ms.openlocfilehash: 2547daa3de7b4a3825060550b7ddc00c10df3e90
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8329244"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482695"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>Ответ на отзывы с помощью служб Магазина
 

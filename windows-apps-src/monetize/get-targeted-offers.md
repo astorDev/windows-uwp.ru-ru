@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, службы Store, API целевых предложений Microsoft Store, получение целевых предложений
 ms.localizationpriority: medium
 ms.openlocfilehash: 71cd6ce3b9736b812f8ccdf4d21d35357928c63c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8336760"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482219"
 ---
 # <a name="get-targeted-offers"></a>Получение целевых предложений
 

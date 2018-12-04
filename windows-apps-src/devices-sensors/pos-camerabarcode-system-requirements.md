@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: aea2a339c450f50ca3ae6f6250d056b4a1e70aa1
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8334120"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479984"
 ---
 # <a name="camera-barcode-scanner-system-requirements"></a>Системные требования к камерам, используемым в качестве сканера штрихкодов
 Начиная с Windows 10 версии 1803 можно считывать штрихкоды через объектив стандартной камеры из универсального приложения для Windows.
