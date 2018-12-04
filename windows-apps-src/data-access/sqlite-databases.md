@@ -1,16 +1,16 @@
 ---
 title: Использование базы данных SQLite в приложении UWP
 description: Использование базы данных SQLite в приложении UWP.
-ms.date: 06/08/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, SQLite, базы данных
 ms.localizationpriority: medium
-ms.openlocfilehash: 1588dfbfb1c33b246caba0816c584135f2094f35
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: 3780423b0c2fc2bbe1ebc81054e13997d5ebde7f
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8336951"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473194"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Использование базы данных SQLite в приложении UWP
 SQLite можно использовать для хранения и извлечения данных из облегченной базы данных на устройстве пользователя. Это руководство содержит соответствующие инструкции.
@@ -163,10 +163,11 @@ namespace DataAccessLibrary
 
 ```
 
-Добавьте следующий оператор using в верхнюю часть файла.
+Добавьте следующие директивы using в верхнюю часть этого файла.
 
 ```csharp
 using Microsoft.Data.Sqlite;
+using System.Collections.Generic;
 ```
 
 <a id="initialize" />
