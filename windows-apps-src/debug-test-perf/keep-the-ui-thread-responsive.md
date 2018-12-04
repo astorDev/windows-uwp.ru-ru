@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0bc555030c2f5202e5c128c1d1a2fe45b5b71b4b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8347431"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8465670"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>Обеспечение быстрого отклика потока пользовательского интерфейса
 

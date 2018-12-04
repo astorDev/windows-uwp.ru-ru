@@ -3,11 +3,11 @@ title: API-интерфейс CPUSets для разработки игр
 description: Эта статья содержит обзор нового API-интерфейса CPUSets универсальной платформы Windows (UWP). Также в ней приведены сведения, относящиеся к разработке игр и приложений.
 ms.localizationpriority: medium
 ms.openlocfilehash: 942c6b79d3b26e620ebb6e1318e1f7ffd75f929c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8323120"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8467103"
 ---
 # <a name="cpusets-for-game-development"></a>API-интерфейс CPUSets для разработки игр
 
