@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, API коллекции Microsoft Store, uwp, просмотр продуктов
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e0f7f8c0f682eaa129f44eaa421fabd63dbfce4
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8340282"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8468133"
 ---
 # <a name="query-for-products"></a>Запрос продуктов
 

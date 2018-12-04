@@ -9,11 +9,11 @@ ms.date: 08/4/2017
 keywords: windows uwp, универсальная платформа windows, API среды выполнения Windows, windows api, справочник windows api, winrt api, справочник по windows api, uwp api, справочник по uwp api, разработка для uwp, проектирование uwp, публикация uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b31e29d0967c8514de0566647c657574f6e5930
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8343205"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469627"
 ---
 # <a name="universal-windows-platform-documentation"></a>Документация по универсальной платформе Windows
 Универсальная платформа Windows (UWP) позволяет создавать приложения для любых устройств с Windows — компьютеров, телефонов, Xbox One, HoloLens и т. д. — и публиковать их в Microsoft Store.

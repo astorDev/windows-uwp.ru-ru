@@ -5,12 +5,12 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованных приложений, связанных с установлен, дополнительных пакетов, сервера IIS
 ms.localizationpriority: medium
-ms.openlocfilehash: b447093ba54f2c979d35793a6a4eaa7538ee4892
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: 6a4512229a29a7adc59d6b61edd596eaeb56a5a8
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8352138"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469374"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>Установка приложения UWP с сервера IIS
 
@@ -119,7 +119,7 @@ ms.locfileid: "8352138"
 
 Из-за сетевой изоляции приложений UWP, такие как установщик приложений ограничены IP-адресам замыкания на себя как http://localhost/. При использовании локального сервера IIS, установщик приложений необходимо добавить в список исключение замыкания на себя. 
 
-Чтобы сделать это, откройте **командную строку** с правами **администратора** и введите следующую команду: ''' CheckNetIsolation.exe LoopbackExempt командной строки --n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+Чтобы сделать это, откройте **командную строку** с правами **администратора** и введите следующую команду: ''' CheckNetIsolation.exe LoopbackExempt командной строки --n="microsoft.desktopappinstaller_8wekyb3d8bbwe»
 ```
 
 To verify that the app is added to the exempt list, use the following command to display the apps in the loopback exempt list: 
@@ -131,7 +131,7 @@ CheckNetIsolation.exe LoopbackExempt -s
 
 После завершения локальной проверки установки приложения через установщик приложений вы можете удалить замыкания, который был добавлен на этом этапе по:
 
-''' Командной строки CheckNetIsolation.exe LoopbackExempt -d-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+' Командной строки CheckNetIsolation.exe LoopbackExempt -d-n="microsoft.desktopappinstaller_8wekyb3d8bbwe»
 ```
 
 ## Step 9 - Run the Web App 
