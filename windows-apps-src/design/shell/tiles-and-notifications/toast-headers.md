@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, всплывающее уведомление, заголовок, заголовки всплывающих уведомлений, уведомление, групповые всплывающие уведомления, центр уведомлений
 ms.localizationpriority: medium
 ms.openlocfilehash: 361b161b8cf323596a3b07665819300c78f1dcc5
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8459290"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8707968"
 ---
 # <a name="toast-headers"></a>Заголовки всплывающих уведомлений
 
