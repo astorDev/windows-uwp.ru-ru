@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проек�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: e6b77f8be6c75070336ad48f0c6471fc0a824a4c
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8710794"
+ms.locfileid: "8740425"
 ---
 # <a name="author-com-components-with-cwinrt"></a>Создание COM-компонентов с помощью C++/WinRT
 

@@ -12,11 +12,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: a92e1ad1c5bfb3960950b976da46ca16490d097e
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8687476"
+ms.locfileid: "8758544"
 ---
 # <a name="custom-attached-properties"></a>Пользовательские присоединенные свойства
 

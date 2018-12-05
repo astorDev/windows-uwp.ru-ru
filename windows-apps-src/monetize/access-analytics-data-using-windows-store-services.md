@@ -8,11 +8,11 @@ keywords: windows 10, uwp, службы Store, API аналитики дляMicr
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0f0df87f8ed5339c977dbd468f8aa2a7877f0d9e
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8690562"
+ms.locfileid: "8734036"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Доступ к аналитическим данным с помощью служб Магазина
 

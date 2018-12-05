@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c909e707d25e4add534ce89319abe71c2557b59
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8460220"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8740255"
 ---
 # <a name="get-all-apps"></a>Получение всех приложений
 

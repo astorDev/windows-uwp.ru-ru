@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 2122c259e78ce96c4553dd676c0c1ed78e4e7123
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8688284"
+ms.locfileid: "8738239"
 ---
 # <a name="create-and-manage-submissions"></a>Создание отправок и управление ими
 
