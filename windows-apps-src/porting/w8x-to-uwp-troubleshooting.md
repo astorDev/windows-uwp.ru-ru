@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c31d414bab1e551b418a1ff653678665d66aea5
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8473244"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8694461"
 ---
 # <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>Устранение неполадок при переносе со среды выполнения Windows 8.x на UWP
 
