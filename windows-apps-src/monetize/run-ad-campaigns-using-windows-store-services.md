@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, API рекламных акций Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
-ms.openlocfilehash: 038003714d6543580f618b381ac7f4ecbde22da9
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 35b2df09bcac553eeb939f516e950150cf2ee40d
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8479142"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8689824"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Проведение рекламных кампаний с помощью служб Магазина
 
@@ -36,7 +36,7 @@ ms.locfileid: "8479142"
 
 * Вы можете создать и запустить рекламную кампанию с помощью этого API, необходимо [создать одну платную рекламную кампанию на странице **рекламные кампании** в центре партнеров](../publish/create-an-ad-campaign-for-your-app.md)первого и необходимо добавить по крайней мере одно средство платежа на этой странице. После выполнения этих действий можно создавать платные строки поставки для рекламных кампаний с помощью этого API. Строки поставки для рекламных кампаний, созданные с помощью этого API, будут автоматически выставлять счет на оплату платежному средству по умолчанию, выбранному на странице **рекламные кампании** в центре партнеров.
 
-* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае вы можете [Создать новую службу Azure AD в центре партнеров](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
+* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае вы можете [Создать новую службу Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
 
 * Необходимо привязать приложение Azure AD с учетной записью центра партнеров, получить идентификатор владельца и идентификатор клиента для приложения и создать ключ. Приложение Azure AD представляет собой приложение или службу, из которой отправляются вызовы к API промоакций Microsoft Store. Чтобы получить маркер доступа Azure AD, который вы передадите в API, необходимо иметь в наличии идентификатор владельца, идентификатор клиента и ключ.
     > [!NOTE]
@@ -44,7 +44,7 @@ ms.locfileid: "8479142"
 
 Чтобы привязать приложение Azure AD с учетной записью центра партнеров и получить необходимые значения:
 
-1.  В центре партнеров, [связать учетную запись центра партнеров вашей организации в каталог Azure AD вашей организации](../publish/associate-azure-ad-with-dev-center.md).
+1.  В центре партнеров, [связать учетную запись центра партнеров вашей организации в каталог Azure AD вашей организации](../publish/associate-azure-ad-with-partner-center.md).
 
 2.  Затем на странице **пользователей** в разделе **Параметры учетной записи** центра партнеров, [добавьте приложение Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) , представляющее собой приложение или службу, которая будет использоваться для управления рекламными кампаниями вашей учетной записи центра партнеров. Обязательно назначьте этому приложению роль **Менеджер**. Если приложение еще не существует в каталоге Azure AD, вы можете [Создать новое приложение Azure AD в центре партнеров](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
 
