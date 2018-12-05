@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aec7ed4f97a0ce4733cfba450770de86a84d6ee
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 2122c259e78ce96c4553dd676c0c1ed78e4e7123
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8469852"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8688284"
 ---
 # <a name="create-and-manage-submissions"></a>Создание отправок и управление ими
 
@@ -41,9 +41,9 @@ ms.locfileid: "8469852"
 
 Перед тем как начать писать код для вызова API отправки в Microsoft Store, убедитесь, что вы выполнили следующие необходимые условия.
 
-* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае вы можете [Создать новую службу Azure AD в центре партнеров](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
+* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае вы можете [Создать новую службу Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
 
-* Необходимо [Привязать приложение Azure AD с учетной записью центра партнеров](#associate-an-azure-ad-application-with-your-windows-dev-center-account) и получить владельца, идентификатор, идентификатор клиента и ключ. Эти данные вам понадобятся для получения маркера доступа Azure AD, который будет использоваться в вызовах к API отправки в Microsoft Store.
+* Необходимо [Привязать приложение Azure AD с учетной записью центра партнеров](#associate-an-azure-ad-application-with-your-windows-partner-center-account) и получить владельца, идентификатор, идентификатор клиента и ключ. Эти данные вам понадобятся для получения маркера доступа Azure AD, который будет использоваться в вызовах к API отправки в Microsoft Store.
 
 * Подготовка приложения для использования с API отправки в Microsoft Store.
 
@@ -57,7 +57,7 @@ ms.locfileid: "8469852"
 
   * Если при создании или обновлении отправки надстройки требуется добавить значок, [подготовьте значок](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon).
 
-<span id="associate-an-azure-ad-application-with-your-windows-dev-center-account" />
+<span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 
 ### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>Как привязать приложение Azure AD с учетной записью центра партнеров
 
@@ -66,7 +66,7 @@ ms.locfileid: "8469852"
 > [!NOTE]
 > Эту операцию необходимо выполнить только один раз. После того как вы получите идентификатор владельца, идентификатор клиента и ключ, их можно будет использовать повторно в любое время для создания нового маркера доступа Azure AD.
 
-1.  В центре партнеров, [связать учетную запись центра партнеров вашей организации в каталог Azure AD вашей организации](../publish/associate-azure-ad-with-dev-center.md).
+1.  В центре партнеров, [связать учетную запись центра партнеров вашей организации в каталог Azure AD вашей организации](../publish/associate-azure-ad-with-partner-center.md).
 
 2.  Затем на странице **пользователей** в разделе **Параметры учетной записи** центра партнеров, [добавьте приложение Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) , представляющее собой приложение или службу, которая будет использоваться для доступа к отправкам вашей учетной записи центра партнеров. Обязательно назначьте этому приложению роль **Менеджер**. Если приложение еще не существует в каталоге Azure AD, вы можете [Создать новое приложение Azure AD в центре партнеров](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).  
 
