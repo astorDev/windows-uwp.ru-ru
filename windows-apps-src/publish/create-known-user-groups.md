@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, целевая группа, клиенты, тестируемая группа, пользовательские группы, известные пользователи
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fcb111121511553bba22cef55f94125d47e9f21
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8459333"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8709419"
 ---
 # <a name="create-known-user-groups"></a>Создание групп известных пользователей
 

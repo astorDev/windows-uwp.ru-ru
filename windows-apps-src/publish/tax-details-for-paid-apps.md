@@ -6,12 +6,12 @@ ms.date: 11/20/2018
 ms.topic: article
 keywords: windows 10, uwp, налоги, налоги на приложение, налоговые требования, расширение торговли, ставка налога
 ms.localizationpriority: medium
-ms.openlocfilehash: 60bf36e8e5e07c73e8c59088be167e9dfb584c60
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 2065fb2a1cfeb2a895757e1aedc86cd421ff826c
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8480036"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8709872"
 ---
 # <a name="tax-details-for-paid-apps"></a>Налогообложение для платных приложений
 
@@ -19,7 +19,7 @@ ms.locfileid: "8480036"
 Сведения о применимых налогах при выборе цены, условиях выплат и налоговой ответственности см. в таблицах для стран или регионов распространения ниже.
 
 > [!NOTE]
-> Условия выплат для корректировки коммерческого расширения могут применяться только в некоторых странах и регионах. Дополнительные сведения о корректировке коммерческого расширения и применимых рынках см. в [соглашении с разработчиком приложения](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) и списке [затронутых стран и регионов](define-pricing-and-market-selection.md#price-considerations-for-specific-markets).
+> Условия выплат для корректировки коммерческого расширения могут применяться только в некоторых странах и регионах. Дополнительные сведения о корректировке коммерческого расширения и применимых рынках см. в [соглашении с разработчиком приложения](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) и списке [затронутых стран и регионов](define-market-selection.md#price-considerations-for-specific-markets).
 
 > [!IMPORTANT]
 > Налоговые ставки могут быть изменены в любое время. Корпорация Майкрософт не может гарантировать, что ставки в следующих таблицах всегда будут точны.

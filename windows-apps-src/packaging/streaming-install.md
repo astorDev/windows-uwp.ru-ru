@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Установка Windows 10, uwp, потоковая передача установки, потоковая передача приложения uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fa33410be31b1732a04c51d14dbbd114e1f5e0c
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8466984"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8707804"
 ---
 # <a name="uwp-app-streaming-install"></a>Потоковая установка приложений UWP
 Потоковая установка приложений универсальной платформы Windows (UWP) позволяет указать Microsoft Store, какие части вашего приложения следует скачивать в первую очередь. Когда основные файлы приложения будут загружены, пользователь сможет запустить приложение и работать с ним, пока остальные файлы будут скачиваться в фоновом режиме. 

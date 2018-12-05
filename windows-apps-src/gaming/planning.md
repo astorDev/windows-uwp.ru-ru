@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, игра, планирование, специальные возможности, облако, монетизировать, пакет, технология, концепция, утверждение
 ms.localizationpriority: medium
 ms.openlocfilehash: 47f613ff814788df947ee39590af0e01b7e3622f
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8468248"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8710110"
 ---
 # <a name="planning-for-uwp-games"></a>Планирование игр UWP
 
