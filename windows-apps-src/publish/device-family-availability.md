@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, пакеты, отправка, доступность семейства устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: 217a6ab9f25ee533a754138db5cf83c2ac81e3e9
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8695584"
+ms.locfileid: "8729669"
 ---
 # <a name="device-family-availability"></a>Доступность семейства устройств
 
