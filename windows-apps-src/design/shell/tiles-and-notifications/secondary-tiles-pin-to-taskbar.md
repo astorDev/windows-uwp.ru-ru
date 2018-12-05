@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, закрепить на панели задач, вспомогательные плитки, закрепить вспомогательные плитки на панели задач, ярлык
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ad322fe371b0e1f3605ffb4c29108a15bb28e0c
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8474926"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8700178"
 ---
 # <a name="pin-secondary-tiles-to-taskbar"></a>Закрепление вспомогательных плиток на панели задач
 

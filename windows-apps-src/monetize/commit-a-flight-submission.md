@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, фиксация отправки тестируемой возможности
 ms.localizationpriority: medium
 ms.openlocfilehash: 820e10695cce2d6242a51b0017d2fe3981cf77b1
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8473641"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8702299"
 ---
 # <a name="commit-a-package-flight-submission"></a>Фиксация отправки тестового пакета
 

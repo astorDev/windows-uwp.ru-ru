@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 145912f08075678c98dfb34ac491e123577c69e3
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8471492"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8701469"
 ---
 # <a name="key-frame-animations-and-easing-function-animations"></a>Анимации по ключевым кадрам и на основе функций для реалистичной анимации
 

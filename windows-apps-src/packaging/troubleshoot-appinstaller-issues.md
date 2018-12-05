@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованного приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: d4c3aa690dd45a50e6f33d664fbc6cc4503e93f8
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8471115"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8705189"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>Диагностика и устранение проблем с установкой в файле установщика приложений
 

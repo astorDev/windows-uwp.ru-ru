@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b8ef16d9fe789c2c386b27ffe221aa797a3b5ef
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 62c99c159ff68201919fa15baded999e3b6a2477
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8472431"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8700132"
 ---
 # <a name="avoid-common-certification-failures"></a>Недопущение распространенных ошибок при сертификации
 
@@ -37,7 +37,7 @@ ms.locfileid: "8472431"
 
 -   Предоставьте полные и точные ответы на все вопросы в разделе [Возрастные категории](age-ratings.md).
 
--   Не [объявляйте приложение поддерживающим специальные возможности](app-declarations.md#this-app-has-been-tested-to-meet-accessibility-guidelines), если вы не спроектировали его таким намеренно и не проверили его в сценариях использования специальных возможностей.
+-   Не [объявляйте приложение поддерживающим специальные возможности](product-declarations.md#this-app-has-been-tested-to-meet-accessibility-guidelines), если вы не спроектировали его таким намеренно и не проверили его в сценариях использования специальных возможностей.
 
 -   Если в приложении используются коммерческие API Магазина Windows из пространства имен [**Windows.ApplicationModel.Store**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store), обязательно протестируйте приложение и удостоверьтесь в том, что обрабатываются типичные исключения. Кроме того, убедитесь, что в приложении используется класс [**CurrentApp**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp), а не класс [**CurrentAppSimulator**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator), который предназначен только для тестирования. (Обратите внимание, что если ваше приложение предназначено для Windows 10 версии 1607 или более поздней, для управления покупками из приложения рекомендуется использовать элементы, входящие в пространство имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store), а не Windows.ApplicationModel.Store.)
 

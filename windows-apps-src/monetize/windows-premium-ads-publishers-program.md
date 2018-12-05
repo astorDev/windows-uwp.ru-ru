@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама
 ms.localizationpriority: medium
 ms.openlocfilehash: 638854066c02edb923c8d4153f2125142d6b966b
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8467744"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8703378"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Премиальная программа для издателей рекламы в Windows
 
