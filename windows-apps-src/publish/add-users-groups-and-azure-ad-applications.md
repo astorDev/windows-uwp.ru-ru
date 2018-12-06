@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, приложение azure ad, aad, пользователя, группы, несколько пользователей, нескольких пользователей
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ecdcf2b148f53fefb5edc7e1f2df0d6bab58475
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8685808"
+ms.locfileid: "8753022"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>Добавление пользователей, групп и приложений Azure AD в вашей учетной записи центра партнеров
 
