@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx, графика
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dbdf6072f57d12d424f0787cfa2e8993a1624af
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8694530"
+ms.locfileid: "8755632"
 ---
 # <a name="basic-3d-graphics-for-directx-games"></a>Простая трехмерная графика для игр DirectX
 

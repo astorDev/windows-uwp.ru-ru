@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10 s, всегда подключен, эмуляция x86 в ARM
 ms.localizationpriority: medium
 ms.openlocfilehash: 22b8d55fa2074d18ed3e5f3fe9fa3ab8161637be
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8695473"
+ms.locfileid: "8752871"
 ---
 # <a name="how-x86-emulation-works-on-arm"></a>Функционирование эмуляции x86 в ARM
 Благодаря эмуляции приложений x86 богатая экосистема приложений Win32 доступна в ARM. Это обеспечивает для пользователей уникальную возможность работать с существующим приложением x86 win32, не внося никаких изменений. Приложение даже не "знает", что выполняется на ПК с Windows в ARM, пока не вызовет определенные API ([IsWoW64Process2](https://msdn.microsoft.com/en-us/library/windows/desktop/mt804318.aspx)).

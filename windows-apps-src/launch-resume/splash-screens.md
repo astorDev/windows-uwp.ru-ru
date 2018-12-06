@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: df3fc8f54a4174006fd28f319d7cab09142a81fd
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8482801"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8746416"
 ---
 # <a name="splash-screens"></a>Экраны-заставки
 
