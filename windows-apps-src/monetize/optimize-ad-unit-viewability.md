@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, руководство, просмотры
 ms.localizationpriority: medium
 ms.openlocfilehash: 87e21f4e98c58f79f397c369891212eccb196c18
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8464682"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8748924"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a>Оптимизация просматриваемости ваших рекламных блоков
 
