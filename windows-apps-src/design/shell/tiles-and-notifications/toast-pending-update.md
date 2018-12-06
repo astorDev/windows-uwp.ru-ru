@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, всплывающее уведомление, ожидающее обновления, pendingupdate, многоэтапное взаимодействие, многоэтапная интерактивность
 ms.localizationpriority: medium
 ms.openlocfilehash: b1574ee2913bd2889af204aae1089dc170df95b8
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8713057"
+ms.locfileid: "8746449"
 ---
 # <a name="toast-with-pending-update-activation"></a>Всплывающее уведомление с ожидающей активацией обновления
 

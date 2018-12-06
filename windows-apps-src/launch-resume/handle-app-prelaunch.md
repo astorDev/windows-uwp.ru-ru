@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 11f68d9dd912c92ff7de8b861f576e8f0c4b4dde
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8462890"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8745771"
 ---
 # <a name="handle-app-prelaunch"></a>Обработка предварительного запуска приложения
 

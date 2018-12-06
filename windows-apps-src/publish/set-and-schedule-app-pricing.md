@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, цена, цены на приложения, цена приложения, продажа приложений, изменение цены, рассчитываемая цена, цена, цены, стоимость, переопределить базовую цену, цена в произвольной форме, произвольная форма
 ms.localizationpriority: medium
 ms.openlocfilehash: ea873d2c1f78762741d6272fafe1496d6b3a71ea
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8696780"
+ms.locfileid: "8746761"
 ---
 # <a name="set-and-schedule-app-pricing"></a>Настройка и планирование цены приложения
 

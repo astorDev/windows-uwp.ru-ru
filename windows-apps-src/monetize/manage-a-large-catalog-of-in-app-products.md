@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, покупки из приложения, IAP, надстройки, каталог, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 2335e09253570d09c33422d2f5ba4179697e4ea7
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8457917"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8746141"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>Управление большим каталогом продуктов внутри приложения
 

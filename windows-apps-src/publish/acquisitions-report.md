@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, приобретения, продажи приложений, загрузки приложений, установки, воронка, приобретение, преобразования, канал, представления страницы приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 33d5885c5161793807bf32f62ff2df4bab5b2c1d
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8478523"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8752305"
 ---
 # <a name="acquisitions-report"></a>Отчет "Приобретения"
 

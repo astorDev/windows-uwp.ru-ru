@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d, буферы, однородности, атрибуты вершин
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a1db1890e47257412a7e2ee8e08c40164d0d927
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8712558"
+ms.locfileid: "8752858"
 ---
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>Сравнение атрибутов буферов, однородностей и вершин OpenGL ES 2.0 с Direct3D
 

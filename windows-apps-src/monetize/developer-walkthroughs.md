@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, пошаговые руководства
 ms.localizationpriority: medium
 ms.openlocfilehash: 423b005028ca7796dbab81d2c26a68c3d74fc922
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8476013"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8746588"
 ---
 # <a name="implement-ads-in-your-app"></a>Реализация рекламы в приложении
 

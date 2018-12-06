@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d 11, перенос, графика
 ms.localizationpriority: medium
 ms.openlocfilehash: 9af5e42a27e21b8a4300edc4b8171f7abc64bac7
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8708196"
+ms.locfileid: "8745906"
 ---
 # <a name="port-from-opengl-es-20-to-direct3d-11"></a>Перенос из OpenGL ES 2.0 в Direct3D 11
 
