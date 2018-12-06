@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, вспомогательные плитки, закрепить, закрепление, краткое руководство, пример кода, пример, secondarytile
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bebee86c824242cf031503617d4a880ebbb74df
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8709991"
+ms.locfileid: "8743072"
 ---
 # <a name="pin-secondary-tiles-to-start"></a>Закрепление вспомогательных плиток меню "Пуск"
 
