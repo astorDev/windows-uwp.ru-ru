@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 355c760e173bd101b2865c300824de44b6434ee4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735102"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791272"
 ---
 # <a name="bringing-it-together"></a>Реализация
 
@@ -96,7 +96,7 @@ ms.locfileid: "8735102"
 - [Границы](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)или [Панель](/uwp/api/windows.ui.xaml.controls.panel)
   - **Фон**
 
-Каждое свойство, которое может быть неявно анимировать изменения имеет соответствующее свойство _перехода_ . Анимировать свойство, назначьте тип перехода к соответствующему свойству _перехода_ . В этой таблице показаны свойства _перехода_ и тип перехода для каждого из них.
+Каждое свойство, которое может быть неявно анимировать изменения имеет соответствующее свойство _перехода_ . Анимировать свойство, назначьте тип перехода к соответствующему свойству _перехода_ . В этой таблице представлены свойства _перехода_ и тип перехода, используемый для каждого из них.
 
 | Анимируемого свойства | Свойства перехода | Тип неявный перехода |
 | -- | -- | -- |

@@ -12,11 +12,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 9c362cfde71ef3bb75840216c787403846d3da95
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753935"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792266"
 ---
 # <a name="custom-dependency-properties"></a>Пользовательские свойства зависимостей
 
@@ -166,7 +166,7 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> Для C + +/ CX кода, причину, почему у вас есть закрытое поле и открытое свойство только для чтения, которое поверхности [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) является таким образом, чтобы другие вызывающие стороны, которые используют ваше свойство зависимостей можно также использовать служебные API системы свойств, требуют открытый идентификатор. Если оставить идентификатор закрытым, то другие пользователи не смогут использовать служебные API. Примеры таких API и сценариев включают [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) или [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (по выбору), [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) и [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Для этого невозможно использовать открытое поле, поскольку правила метаданных среды выполнения Windows не допускают открытые поля.
+> Для C + +/ CX кода, причины почему у вас есть закрытое поле и открытое свойство только для чтения, которое поверхности [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) является таким образом, чтобы другие вызывающие стороны, которые используют ваше свойство зависимостей можно также использовать служебные API системы свойств, требуют открытый идентификатор. Если оставить идентификатор закрытым, то другие пользователи не смогут использовать служебные API. Примеры таких API и сценариев включают [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) или [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (по выбору), [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) и [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Для этого невозможно использовать открытое поле, поскольку правила метаданных среды выполнения Windows не допускают открытые поля.
 
 ## <a name="dependency-property-name-conventions"></a>Соглашения об именовании свойств зависимостей
 
@@ -182,7 +182,7 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 Программе-оболочке свойства следует вызывать [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) в реализации **get** и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) в реализации **set**.
 
 > [!WARNING]
-> В исключительных обстоятельств вашей реализации оболочки должны выполнять только [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) операции. В ином случае поведение при задании свойства через разметку XAML и при его задании через код будет различным. Для эффективности средство синтаксического анализа XAML обходит программы-оболочки при установке свойств зависимостей; оно обменивается данными с резервным хранилищем через **SetValue**.
+> В исключительных обстоятельств вашей реализации оболочки необходимо выполнить только [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) и [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) операции. В ином случае поведение при задании свойства через разметку XAML и при его задании через код будет различным. Для эффективности средство синтаксического анализа XAML обходит программы-оболочки при установке свойств зависимостей; оно обменивается данными с резервным хранилищем через **SetValue**.
 
 ```csharp
 public String Label
@@ -312,7 +312,7 @@ Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
 ```
 
 > [!NOTE]
-> Не регистрировать со значением по умолчанию [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371). Это может запутать объект-получатель свойств и повлечет непредвиденные последствия внутри системы свойств.
+> Не регистрируют со значением по умолчанию [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371). Это может запутать объект-получатель свойств и повлечет непредвиденные последствия внутри системы свойств.
 
 ### <a name="createdefaultvaluecallback"></a>CreateDefaultValueCallback
 

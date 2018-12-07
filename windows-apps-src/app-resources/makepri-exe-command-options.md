@@ -7,22 +7,22 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756080"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791713"
 ---
 # <a name="makepriexe-command-line-options"></a>Параметры командной строки MakePRI.exe
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) имеет следующий набор команд: `createconfig`, `dump`, `new`, `resourcepack` и `versioned`. В данном разделе описаны параметры командной строки для их использования.
 
 > [!NOTE]
-> MakePri.exe устанавливается при проверке вариант **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe устанавливается при проверке параметр **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 ## <a name="getting-help-from-the-command-line"></a>Получение справки из командной строки
 
-Можно запустить `MakePri.exe help` или `MakePri.exe /?` для отображения команд, которые можно использовать с MakePri.exe. Можно также выдавать `MakePri.exe <command> /?` чтобы узнать конкретные сведения о команде и в редких случаях, даже `MakePri.exe <command> <option>` Чтобы просмотреть подробные сведения о том параметр.
+Можно запустить `MakePri.exe help` или `MakePri.exe /?` чтобы увидеть все команды, которые можно использовать с MakePri.exe. Можно также выполнить `MakePri.exe <command> /?` чтобы узнать конкретные сведения о команде и, в редких случаях, даже `MakePri.exe <command> <option>` Чтобы просмотреть подробные сведения о том параметр.
 
 ## <a name="makepri-commands"></a>Команды MakePri
 
@@ -418,7 +418,7 @@ MakePri может включать сведения, относящиеся к 
 
 ## <a name="47indexoptionsio-option"></a>& #47;IndexOptions(io) параметр
 
-При использовании параметра параметры индекса (/ операций ввода-вывода) с `new`, `resourcepack`, и `versioned` указать параметры, которые предоставляют подробные контроль над поведением индексаторы для ресурса. По умолчанию отключены параметры индекса.
+При использовании параметра параметры индекса (/ операций ввода-вывода) с `new`, `resourcepack`, и `versioned` указать параметры, которые предоставляют подробные контроль над поведением индексаторы для ресурсов. Параметры индекса будут отключены по умолчанию.
 
 ```console
 /IndexOptions(io) <OPTIONS>

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, directx, объект приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: e12ad6ce221440e8840006b3883980721b899ae6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753210"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792437"
 ---
 # <a name="the-app-object-and-directx"></a>Объект приложения и DirectX
 
@@ -32,7 +32,7 @@ ms.locfileid: "8753210"
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **Примечание**  Если вы не разрабатываете приложение UWP, используйте компоненты пользовательского интерфейса, предоставленные в библиотеках конкретных JavaScript или XAML и пространств имен, а не типы, предоставленные в этих пространствах имен.
+> **Примечание**  Если вы не разрабатываете приложение UWP, используйте компоненты пользовательского интерфейса, предоставленные в JavaScript или XAML-библиотеках и пространствах имен, а не типы, предоставленные в этих пространствах имен.
 
  
 

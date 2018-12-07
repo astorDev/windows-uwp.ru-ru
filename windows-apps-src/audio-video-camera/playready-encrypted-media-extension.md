@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b324cbca6d5e36193c057a6d1473ff1aad7be095
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745148"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791819"
 ---
 # <a name="playready-encrypted-media-extension"></a>Расширение зашифрованного мультимедиа PlayReady
 
@@ -34,7 +34,7 @@ ms.locfileid: "8745148"
 -   Обеспечивает заблаговременное получение несохраняемых лицензий.
 -   Обеспечивает получение нескольких лицензий в одном сообщении.
 
-    Можно использовать объект PlayReady с помощью нескольких ключевых идентификаторами как Windows8.1 или использовать [данные модели расшифровки содержимого (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) с несколькими идентификаторами ключей.
+    Можно использовать объект PlayReady с нескольких ключевых идентификаторами как Windows8.1 или использовать [данные модели расшифровки содержимого (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) с несколькими идентификаторами ключей.
 
     > [!NOTE]
     > В Windows10, несколько идентификаторов ключей поддерживаются в разделе &lt;идентификатор ключа&gt; в CDMData.

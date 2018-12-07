@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756648"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791179"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Запуск приложения с помощью автозапуска
 
@@ -227,7 +227,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 В этом разделе показано, как определить приложение в качестве варианта **AutoPlay** при подключении камеры к компьютеру. Приложение регистрируется в качестве обработчика для события **WPD\\ImageSourceAutoPlay**. Это распространенное событие, которое вызывается системой переносного устройства Windows (WPD) при уведомлении камерами или другими устройствами обработки изображений о том, что они являются источниками изображений (ImageSource), использующими MTP. Подробнее см. в разделе о [переносных устройствах Windows](https://msdn.microsoft.com/library/windows/hardware/ff597729).
 
-**Важные** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) API-интерфейсы являются частью [семейства настольных устройств](https://msdn.microsoft.com/library/windows/apps/dn894631). Приложения могут использовать эти API только на устройствах Windows10 семейства настольных устройств, например компьютерах.
+**Важные** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) API-интерфейсы являются частью [семейства настольных устройств](https://msdn.microsoft.com/library/windows/apps/dn894631). Приложения могут использовать эти API только на устройствах Windows10 из семейства настольных устройств, например компьютеров.
 
  
 
@@ -336,7 +336,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-> **Примечание** `ShowImages` метод добавляется в следующем шаге.
+> **Примечание** `ShowImages` метод будет добавлен на следующем этапе.
 
 ### <a name="step-5-add-code-to-display-device-information"></a>Шаг 5. Добавление кода для отображения сведений об устройстве
 
@@ -407,7 +407,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 
 1.  Нажмите клавишу F5 для выполнения сборки и развертывания приложения (в режиме отладки).
 2.  Для запуска приложения подключите камеру к компьютеру. Затем выберите приложение из списка вариантов автозапуска.
-    **Примечание**не все камеры рекламу для **WPD\\ImageSource** автозапуска устройства.
+    **Примечание**объявление не все камеры для **WPD\\ImageSource** автозапуска устройства.
 
 ## <a name="configure-removable-storage"></a>Настройка съемного носителя
 
@@ -475,7 +475,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **Примечание** `DisplayFiles` метод добавляется в следующем шаге.
+> **Примечание** `DisplayFiles` метод будет добавлен на следующем этапе.
 
  
 

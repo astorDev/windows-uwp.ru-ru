@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
 ms.openlocfilehash: 45f76744070a7557939d1d7f2307113852737072
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8737285"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791766"
 ---
 # <a name="process-bitmaps-with-opencv"></a>Обработка точечных рисунков с помощью OpenCV
 

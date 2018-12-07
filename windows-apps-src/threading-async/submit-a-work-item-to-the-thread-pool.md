@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, потоки, пул потоков
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c1df6a4b72b7c73cac41e66ef1074975db0d979
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754479"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793096"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Отправка рабочего элемента в пул потоков
 
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 
-Дополнительные сведения, загрузив код из этого краткого руководства в [создании ThreadPool работать образец элемента](http://go.microsoft.com/fwlink/p/?LinkID=328569) для Windows8.1 и повторном использовании исходного кода в Windows10 win\_unap.
+Дополнительные сведения, скачайте код из этого краткого руководства в [создании ThreadPool работать образец элемента](http://go.microsoft.com/fwlink/p/?LinkID=328569) для Windows8.1 и повторно используйте исходный код в Windows10 win\_unap.
 
 ## <a name="related-topics"></a>Еще по теме
 

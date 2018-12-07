@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f8ddbdd1e8079e4b5bf945455bfa2efe7094203
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740122"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790899"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>Оптимизация пользовательского интерфейса ListView и GridView
 
 
-**Примечание**  Дополнительные сведения см. в статье сеансов //build/ [Резкое повышение производительности при взаимодействии пользователей с большим объемом данных, в GridView и ListView](https://channel9.msdn.com/events/build/2013/3-158).
+**Примечание**  Дополнительные сведения см. в разделе //build/ сеанс [Резкое повышение производительности при взаимодействии пользователей с большим объемом данных, в GridView и ListView](https://channel9.msdn.com/events/build/2013/3-158).
 
 Повысить производительность и время запуска [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) можно с помощью виртуализации пользовательского интерфейса, сокращения элементов и прогрессивного обновления элементов. Подробнее о методах виртуализации данных см. [Виртуализация данных ListView и GridView](listview-and-gridview-data-optimization.md).
 

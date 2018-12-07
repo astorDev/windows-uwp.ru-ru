@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx, задержка ввода
 ms.localizationpriority: medium
 ms.openlocfilehash: 537dd6e9d3f300666a0692b66f422ce00dd68460
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8737688"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789977"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>Минимизация задержки ввода в играх DirectX универсальной платформы Windows (UWP)
 
@@ -246,7 +246,7 @@ void JigsawPuzzleMain::StartRenderThread()
 
 ![Рисунок 1. Задержка ввода в DirectX ](images/input-latency1.png)
 
-В Windows8.1 DXGI представили флаг **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** для цепочки буферов, что позволяет приложениям легко сократить задержку без необходимости использовать эвристику для очереди Present пустым. Цепочки буферов с таким флагом называются цепочками буферов с поддержкой ожидания. На рисунке2 представлены примерный жизненный цикл и реакция на событие ввода для приложений, использующих цепочки буферов с поддержкой ожидания.
+В Windows8.1 DXGI представили **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** флаг цепочки буферов, который позволяет приложениям легко сократить задержку без необходимости использовать эвристику для очереди Present пустым. Цепочки буферов с таким флагом называются цепочками буферов с поддержкой ожидания. На рисунке2 представлены примерный жизненный цикл и реакция на событие ввода для приложений, использующих цепочки буферов с поддержкой ожидания.
 
 Рисунок 2
 

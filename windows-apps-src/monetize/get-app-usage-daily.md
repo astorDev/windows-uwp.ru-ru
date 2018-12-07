@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, службы магазина, API, использование аналитики Microsoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: d3460b61e6a9a7c36be6fd87c4dc7fcc1ab811d1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753815"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791047"
 ---
 # <a name="get-daily-app-usage"></a>Получение сведений о ежедневном использовании приложения
 
@@ -95,7 +95,7 @@ Authorization: Bearer <your access token>
 | dailyActiveDevices        | long    | Число ежедневных устройств, используемых для взаимодействия с вашим приложением по всем пользователям.  |
 | dailyNewUsers             | long    | Количество пользователей, которые использовали приложение в первый раз этого дня.    |
 | monthlyActiveUsers        | long    | Количество пользователей, с помощью приложения соответствующего месяца.                         |
-| monthlyActiveDevices      | long    | Количество устройств с запуском приложения для определенный период времени, начиная с при запуске приложения (Начало процесса) и конечный завершением работы (завершение процесса) или после периода неактивности.                                      |
+| monthlyActiveDevices      | long    | Количество устройств с запуском приложения для определенный период времени, начиная с при запуске приложения (Начало процесса) и конечный завершением работы (завершение процесса) или по истечении периода неактивности.                                      |
 | monthlyNewUsers           | long    | Количество пользователей, которые использовали приложение в первый раз соответствующего месяца.  |
 
 
