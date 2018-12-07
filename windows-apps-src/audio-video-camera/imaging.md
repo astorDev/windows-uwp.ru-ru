@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c7959231596829e20dc8afea654b2d51977abe4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 287079bf7195ebcadc3543d9369a0567f197b10c
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736962"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787920"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Создание, редактирование и сохранение точечных рисунков
 
@@ -45,7 +45,7 @@ ms.locfileid: "8736962"
 
 Чтобы сохранить **SoftwareBitmap** в файл, получите экземпляр **StorageFile**, в котором будет сохранено изображение. В этом примере используется [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), что позволяет пользователю выбирать выходной файл.
 
-[!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
+[!code-cs[PickOutputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOutputFile)]
 
 Вызовите метод [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) объекта **StorageFile**, чтобы получить поток произвольного доступа, в который будет записано изображение. Вызовите статический метод [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211), чтобы получить экземпляр класса [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) для указанного потока. Первый параметр **CreateAsync**— это идентификатор GUID, представляющий кодек, который необходимо использовать для кодирования изображения. **BitmapEncoder** — класс, который предоставляет свойство, содержащее идентификатор для каждого кодека, поддерживаемого кодировщиком, например [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
 

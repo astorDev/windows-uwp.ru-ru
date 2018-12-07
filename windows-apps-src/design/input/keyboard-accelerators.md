@@ -11,11 +11,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f764d15c1bf5a52a6a48a45856daf9031bbd346
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747134"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8784753"
 ---
 # <a name="keyboard-accelerators"></a>Ускорители клавиатуры
 
@@ -248,7 +248,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>Переопределение поведения клавиатуры по умолчанию
 
-В некоторых случаях может потребоваться переопределить поведение по умолчанию определенных ключей, таких как клавиша Backspace или клавишу ВВОД. Например: 
+В некоторых случаях может потребоваться переопределить поведение по умолчанию отдельных клавиш, таких как клавиша Backspace или клавишу ВВОД. Например: 
 
 ## <a name="disable-a-keyboard-accelerator"></a>Отключение ускорителя клавиатуры 
 
@@ -355,7 +355,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 Так как обычно ускорители клавиатуры не описаны непосредственно в пользовательском интерфейсе приложения UWP, можно улучшить их обнаружение с помощью [подсказок](../controls-and-patterns/tooltips.md), которые автоматически появляются, когда пользователь перемещает фокус, нажимает и удерживает кнопку мыши или наводит указатель мыши на элемент управления. Всплывающая подсказка помогает определить, есть ли у элемента управления связанные с ним ускорители клавиатуры, и если они есть — указывает, какая для этого используется клавиша ускорителя клавиатуры.
 
-**Windows 10, версия 1803 (обновление за апрель 2018 г.) и более поздних версиях**
+**Windows 10, версия 1803 (обновление за апрель 2018 г.) и более поздних версий**
 
 По умолчанию когда объявляются сочетания клавиш, все элементы управления (за исключением [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) предоставляют соответствующие сочетания клавиш в подсказке.
 
@@ -366,7 +366,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 *Комбинация сочетаний клавиш в подсказке*
 
-Для [кнопки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button) [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)и [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) объекты ускоритель клавиатуры добавляется в подсказке по умолчанию элемента управления. [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) объекты, ускоритель клавиатуры отображается с текстом всплывающий элемент.
+Для [кнопки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button) [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)и [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) объектов ускоритель клавиатуры добавляется к подсказки по умолчанию элемента управления. [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) объекты, ускоритель клавиатуры отображается текст всплывающий элемент.
 
 > [!NOTE]
 > Указание подсказки (см. раздел Button1 в следующем примере) переопределяет это поведение.
@@ -412,7 +412,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![Подсказка сочетания клавиш](images/accelerators/accelerators-appbarbutton-small.png)
 
-*Сочетания клавиш, добавленная в подсказке по умолчанию элемента AppBarButton*
+*Сочетания клавиш, добавленная для элемента AppBarButton подсказки по умолчанию*
 
 ```xaml
 <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">

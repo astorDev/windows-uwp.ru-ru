@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, отзывы
 ms.localizationpriority: medium
 ms.openlocfilehash: 084158c0eb20f1d2a03c0e178064ac168c689872
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741480"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781166"
 ---
 # <a name="get-app-reviews"></a>Получение отзывов о приложении
 
 
-Используйте этот метод в API аналитики для Microsoft Store для получения рецензий в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчет отзывы](../publish/reviews-report.md) в центре партнеров.
+Используйте этот метод в API аналитики для Microsoft Store для получения рецензий в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчет "рецензии"](../publish/reviews-report.md) в центре партнеров.
 
 После получения отзывов вы можете использовать методы [получения сведений об ответах на отзывы о приложении](get-response-info-for-app-reviews.md) и [отправки ответов на отзывы о приложении](submit-responses-to-app-reviews.md) в API отзывов Microsoft Store, чтобы программно отвечать на отзывы.
 

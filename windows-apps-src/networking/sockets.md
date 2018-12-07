@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d75afd17d5aa7edf64fda36b3a35b3a101c1d89
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729692"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782867"
 ---
 # <a name="sockets"></a>Сокеты
 Сокеты — это технология передачи данных низкого уровня, на основе которой реализованы многие сетевые протоколы. UWP предоставляет классы сокетов TCP и UDP для клиент-серверных или одноранговых приложений, если устанавливаются долгосрочные подключения или установленное подключение не требуется.
@@ -1202,7 +1202,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-Следующий пример подходит для любого языка UWP, не только C#. В его основе— поведение потоков [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) и [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream), объединяющих отправки. Метод вызывает [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) в потоке вывода, который начиная с Windows10, гарантированно возвращается только после завершения всех операций выходного потока.
+Следующий пример подходит для любого языка UWP, не только C#. В его основе— поведение потоков [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) и [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream), объединяющих отправки. Метод вызывает [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) потоке вывода, который, начиная с Windows10, гарантированно возвращается только после завершения всех операций выходного потока.
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.

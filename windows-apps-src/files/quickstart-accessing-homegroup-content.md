@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 422d02b8797bef8ea4f793ba652e9e4e34421a9b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745725"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8779804"
 ---
 # <a name="accessing-homegroup-content"></a>Доступ к содержимому домашней группы
 
@@ -193,7 +193,7 @@ ms.locfileid: "8745725"
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **Открыть файл Выбор пользователя для доступа на чтение и задайте поток файла в качестве источника для** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), а затем воспроизведение файла.
+3.  **Откройте файл Выбор пользователя для доступа на чтение и задайте поток файла в качестве источника для** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), а затем воспроизведение файла.
     ```cs
     if (file != null)
     {

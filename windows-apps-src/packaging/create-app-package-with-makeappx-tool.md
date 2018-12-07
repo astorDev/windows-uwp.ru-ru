@@ -8,11 +8,11 @@ ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: dc109fe2e684dd3bc1fef62cece5cac3ab50d246
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739999"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785088"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Создание пакета приложения с помощью средства MakeAppx.exe
 
@@ -24,7 +24,7 @@ ms.locfileid: "8739999"
 
 Обратите внимание, что **MakeAppx.exe** не создает файл .appxupload. Файл .appxupload создается в процессе упаковки Visual Studio и содержит два других файла: .msix или .appx и .appxsym. Файл .appxsym — это сжатый файл .pdb содержащий общедоступные символы вашего приложения, используемые для [сбоя аналитика](../publish/health-report.md) в центре партнеров. Можно также отправить обычный файл .appx, но аналитика по сбоям или сведения отладки не будут доступны. Подробнее об отправке пакетов в Store см. в разделе [Отправка пакетов приложений](../publish/upload-app-packages.md). 
 
- Обновления этого средства в последней версии Windows 10 не влияют на использование пакета .appx. Можно продолжать использовать это средство с AppX-пакеты или использовать средство с поддержкой для пакетов, .msix, как описано ниже.
+ Обновления для данного средства в последней версии Windows 10 не влияют на использование пакета .appx. Можно продолжать использовать это средство с AppX-пакеты приложений, или использовать средство с поддержкой для пакетов, .msix, как описано ниже.
 
 Создание файла .appxupload вручную:
 - Поместите .msix и .appxsym в папку

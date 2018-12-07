@@ -6,12 +6,12 @@ ms.date: 03/14/2018
 ms.topic: article
 keywords: windows 10, uwp, карта, расположение, элемент управления картой, представления карты
 ms.localizationpriority: medium
-ms.openlocfilehash: 7242bdcedd4380c5593dba2788706ed0fbbc94a4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 7713c1664018a1875d80f70fb75da2afe6104c3c
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750795"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780118"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside
 
@@ -421,8 +421,7 @@ private async void display3DLocation()
 
 Чтобы получить информацию о местоположениях на карте, вызовите указанные ниже методы объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
--   
-              Метод [**GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016): получение географического расположения, соответствующего заданной точке в окне просмотра элемента управления картой.
+-   Метод [**TryGetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) — получение географического расположения, соответствующего заданной точке в окне просмотра элемента управления картой.
 -   
               Метод [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018): получение в окне просмотра элемента управления картой точки, которая соответствует заданному географическому расположению.
 -   

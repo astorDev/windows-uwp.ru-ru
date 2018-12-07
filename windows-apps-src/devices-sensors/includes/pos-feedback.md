@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 869ee88eea6161f8d308f2e5cd72773dc7162b0b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8760304"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8809833"
 ---
 ## <a name="support-and-feedback"></a>Поддержка и отзывы
 
@@ -19,8 +19,8 @@ ms.locfileid: "8760304"
 Есть вопросы? Задайте их на [Stack Overflow](https://aka.ms/pos-stackoverflow) или [Форум MSDN UWP](https://aka.ms/pos-msdn-uwpforum)
 
 Помогите нам обнаружить свои вопросы:
-- Добавление тега [pointofservice](https://aka.ms/pos-stackoverflow) на ваш вопрос на Stack Overflow. 
-- Включает этот термин [«pointofservice»](https://aka.ms/pos-msdn-uwpforum) в вашем блога на форуме UWP MSDN
+- Добавление тега [pointofservice](https://aka.ms/pos-stackoverflow) на ваш вопрос на портале Stack Overflow. 
+- Включает этот термин [«pointofservice»](https://aka.ms/pos-msdn-uwpforum) в записи на форуме UWP MSDN
 
 ### <a name="make-feature-suggestions-or-give-feedback"></a>Предложите новые возможности или обратная связь
 См. в разделе [обратной связи UserVoice разработчика](https://wpdev.uservoice.com/forums/110705-universal-windows-platform?category_id=202594).

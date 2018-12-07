@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8710754"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785379"
 ---
 # <a name="segoe-mdl2-icons"></a>Значки Segoe MDL2
 
@@ -63,7 +63,7 @@ ms.locfileid: "8710754"
 
 ## <a name="how-do-i-get-this-font"></a>Как получить этот шрифт?
 * В Windows 10: Нет ничего, что нужно сделать, шрифт поставляется вместе с Windows.
-* На компьютере Mac, вам необходимо загрузить и установить шрифт: <a href="https://aka.ms/SegoeFonts">Получение Segoe UI и MDL2 шрифты значков</a>
+* На компьютере Mac, необходимо загрузить и установить шрифт: <a href="https://aka.ms/SegoeFonts">Получение Segoe UI и MDL2 шрифты значков</a>
 
 ## <a name="icon-list"></a>Список значков
 Помните, здесь по причине нехватки места показаны не все значки шрифта **Segoe MDL2 Assets** — их гораздо больше. Большая часть значков применяется со специальной целью, и обычно такие значки больше нигде не используются.

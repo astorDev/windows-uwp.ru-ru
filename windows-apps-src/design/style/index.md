@@ -8,11 +8,11 @@ ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1d313e35b7d1ab3ebe72bd3a073323fe8782098a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747672"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789826"
 ---
 # <a name="style-for-uwp-apps"></a>Стиль приложений UWP
 
@@ -29,7 +29,7 @@ ms.locfileid: "8747672"
     :::column:::
         ![hero image](images/header-typography.svg)
         ### [Typography](typography.md)
-       Основная цель шрифтового оформления как визуального представления языка — это ясность. Стиль шрифтов никогда не должен затмевать эту цель. Следующие рекомендации сосредоточиться на том, как использовать оформление текста, чтобы помочь пользователям понимать содержимое. 
+       Основная цель шрифтового оформления как визуального представления языка — это ясность. Стиль шрифтов никогда не должен затмевать эту цель. Следующие рекомендации сосредоточиться на том, как использовать оформление текста, чтобы помочь пользователям легко понимать содержимое. 
     :::column-end:::
 :::row-end:::
 

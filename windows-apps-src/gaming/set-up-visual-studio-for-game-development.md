@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, игры, visual studio, инструменты, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754433"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8779355"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>Средства Visual Studio для программирования игр
 
@@ -45,7 +45,7 @@ ms.locfileid: "8754433"
 
 Дополнительные сведения об этом см. в разделе [Работа с текстурами и изображениями](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx).
 
-> **Примечание**редактор изображений не предназначены для замены для образа полный компонентов, приложения для редактирования, но также подходит для многих простого просмотра и редактирования.
+> **Примечание**редактор изображений не предназначены для замены для образа возможности приложения для редактирования, но также подходит для многих простого просмотра и редактирования.
 
  
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Создание первого приложения
-description: Создание приложения универсальной платформы Windows (UWP) для Windows10, на своем любимом языке программирования.
+description: Создание приложения универсальной платформы Windows (UWP) для Windows10 на своем любимом языке программирования.
 ms.date: 1/25/2017
 ms.topic: article
 keywords: windows 10, uwp, первое приложение, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cd4d60e6eb3eee7253997938882e6fbdf9fba69
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729516"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780462"
 ---
 # <a name="create-your-first-app"></a>Создание первого приложения
 

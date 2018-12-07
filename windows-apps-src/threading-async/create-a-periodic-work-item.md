@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, периодический рабочий элемент, потоки, таймеры
 ms.localizationpriority: medium
 ms.openlocfilehash: 92142bcf084b6504e4c694ca33d2dc8532f1acca
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742393"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8784013"
 ---
 # <a name="create-a-periodic-work-item"></a>Создание периодического рабочего элемента
 
@@ -29,7 +29,7 @@ ms.locfileid: "8742393"
 
 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) возвращает объект [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Храните этот объект на случай, если таймер придется отменить.
 
-> **Примечание**избежать, указав нулевое значение (или значения меньше одной миллисекунды) в течение интервала. Это приведет к тому, что периодический таймер будет вести себя как одиночный.
+> **Примечание**не указывайте нулевое значение (или значения меньше одной миллисекунды) в течение интервала. Это приведет к тому, что периодический таймер будет вести себя как одиночный.
 
 > **Примечание** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) можно использовать для доступа к пользовательского интерфейса и отображения хода выполнения из рабочего элемента.
 

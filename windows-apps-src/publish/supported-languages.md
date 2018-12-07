@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d2e883fca2b5ca350322fc44c1de51a02aaa4d85
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740971"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781615"
 ---
 # <a name="supported-languages"></a>Поддерживаемые языки
 
 
-Вы можете отправить приложений Microsoft Store в более чем на 100 языках.
+Вы можете отправить приложения в Microsoft Store в более чем на 100 языках.
 
 Дополнительные сведения о настройке языков в приложениях, см. в разделе [глобализации и локализации](../design/globalizing/globalizing-portal.md) и [Обзор языков профиля пользователя и языков манифеста приложения](../design/globalizing/manage-language-and-region.md). [Набор средств для многоязычных приложений](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) также поможет вам в создании приложений, поддерживающих несколько языков.
 

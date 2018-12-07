@@ -8,19 +8,19 @@ ms.topic: article
 keywords: windows 10, uwp, карты, таблица стилей карты
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ecf83b25a8f448cb0ac22bbad0aa2d4f687c721
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731783"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780330"
 ---
 # <a name="map-style-sheet-reference"></a>Справка о таблицах стилей карты
 
-Сопоставление технологий Майкрософт использовать _стилей карты_ для определения внешнего вида карты.  Стилей карты определяется с помощью JavaScript Object Notation (JSON) и может использоваться в различных способов включения в приложении магазин Windows [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) через метод [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) .
+Сопоставление технологий Майкрософт использовать _стилей карты_ для определения внешнего вида карты.  Стилей карты определяются с помощью JavaScript Object Notation (JSON) и может использоваться в различных способов включения в приложении магазина Windows [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) через метод [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) .
 
 Таблицы стилей могут создаваться в интерактивном режиме с помощью приложения, [Редактор таблиц стилей карты](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) .
 
-Можно использовать указанный ниже JSON для области воды красным цветом, отображаться метки воды — зеленым цветом, а области Земли синего цвета:
+Можно использовать указанный ниже JSON для области воды красным цветом, отображаются метки воды — зеленым цветом, а области Земли синего цвета:
 
 ```json
     {"version":"1.*",
@@ -50,7 +50,7 @@ ms.locfileid: "8731783"
 <a id="entries" />
 
 ## <a name="entries"></a>Записи
-В этой таблице символы ">" используются для представления уровней в иерархии записей.  Также показано, какие версии Windows поддерживают каждой записи и который проигнорировать ее.
+В этой таблице символы ">" используются для представления уровней в иерархии записей.  Также показано, какие версии Windows поддерживает каждой записи и который проигнорировать ее.
 
 | Version | Имя выпуск Windows |
 |---------|----------------------|
@@ -88,7 +88,7 @@ ms.locfileid: "8731783"
 | >>>> golfCourse              | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Области, составляющих Гольф курсы. |
 | >>>> park                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Области, составляющих парков. |
 | >>>> playingField            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Спортивные поля, например поле для игры в бейсбол или теннисный корт. |
-| >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Резервирует областей, которые охватывают характера. |
+| >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Оставляет за собой областей, которые охватывают характера. |
 | >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Все функции точки, которые рисуются с определенным значком. |
 | >>> address                  | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   | Адрес номера метки. |
 | >>> naturalPoint             | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют естественный функции. |
@@ -97,11 +97,11 @@ ms.locfileid: "8731783"
 | >>>> waterPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют расположение водных точек, например водопадов. |
 | >>> pointOfInterest          | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют любого интересные места. |
 | >>>> business                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют все locaiton бизнеса. |
-| >>>>> attractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют сеанса туристов, например музеи, zoos, и т. д. |
+| >>>>> attractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют сеанса туристов, например музеи, zoos и т. д. |
 | >>>>> communityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют расположение общего использования в сообществе. |
 | >>>>> educationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют учебных заведений и других для образовательных учреждений, связанные с расположениями. |
 | >>>>> entertainmentPoint     | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют развлечения ресурсах, таких как театры, кинотеатрах, и т. д. |
-| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icons that represent essential services such as parking, banks, gas, etc. |
+| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют основных служб, таких как парковки, банки, газа и т. д. |
 | >>>>> foodPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Значки, которые представляют рестораны, кафе и т. д. |
 | >>>>> lodgingPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют отелей и других организаций проживание. |
 | >>>>> realEstatePoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Значки, которые представляют недвижимости компаний. |
@@ -130,7 +130,7 @@ ms.locfileid: "8731783"
 | >>>> majorRoad               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют основных дороги. |
 | >>>> arterialRoad            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют arterial дороги. |
 | >>>> street                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют улиц. |
-| >>>>> ramp                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют съезды, которые обычно подключаются к магистрали. |
+| >>>>> ramp                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют съезды, обычно подключаются к магистрали. |
 | >>>>> unpavedStreet          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют unpaved улиц. |
 | >>>> tollRoad                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют дороги, цена за использование которых. |
 | >>> railway                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Железные дороги. |
@@ -143,7 +143,7 @@ ms.locfileid: "8731783"
 | >> routeLine                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии маршрута связанных записей. |
 | >>> drivingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, которые представляют автомобильного маршрутов. |
 | >>> scenicRoute              | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Линии, которые представляют живописных автомобильного маршрутов. |
-| >>> walkingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Линии, представляющие прохода маршрутов. |
+| >>> walkingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Строки, представляющие прохода маршрутов. |
 | > userMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Все записи пользователя. |
 | >> userBillboard             | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Оформление экземпляров [MapBillboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) по умолчанию. |
 | >> userLine                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Оформление экземпляров [MapPolyline](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mappolyline) по умолчанию. |
@@ -184,7 +184,7 @@ ms.locfileid: "8731783"
 | shadedReliefLightColor       | Color (Цвет)   |  ✔   |  ✔   |  ✔   |  ✔   | Цвет светлой части затененного рельефа.  Альфа-канал представляет максимальное значение альфа-канала. |
 | shadowColor                  | Цвет   |      |      |      |  ✔️   | Цвет тени за значки, которые используют тени. |
 | spaceColor                   | Color (Цвет)   |  ✔   |  ✔   |  ✔   |  ✔   | Значение цвета ARGB для области вокруг карты. |
-| useDefaultImageColors        | Логический    |  ✔   |  ✔   |  ✔   |  ✔   | Флаг, указывающий, следует ли цвета в SVG используется вместо того чтобы привлекательный вверх в палитре цветов изображения. |
+| useDefaultImageColors        | Логический    |  ✔   |  ✔   |  ✔   |  ✔   | Флаг, указывающий, следует ли цвета в SVG используется, а не привлекательный вверх в палитре цветов изображения. |
 
 <a id="mapelement" />
 
@@ -228,7 +228,7 @@ ms.locfileid: "8731783"
 
 | Свойство                     | Тип    | 1703 | 1709 | 1803 | 1809 | Описание |
 |------------------------------|---------|------|------|------|------|-------------|
-| Фон формы             | Плавающий   |      |      |      |  ✔️   | Форма для использования в качестве фона значок--заменить любой формы, которую там имеется. |
+| Фон формы             | Плавающий   |      |      |      |  ✔️   | Форма для использования в качестве фона значок--заменить любой формы, которую существует. |
 | stemAnchorRadiusScale        | Плавающий   |      |      |  ✔   |  ✔   | Уровень масштабирования точки привязки основы значка.  Например, используйте значение *1* для стандартного размера и значение *2* для вдвое большего размера. |
 | stemColor                    | Color (Цвет)   |  ✔   |  ✔   |  ✔   |  ✔   | Цвет основы, которая выступает в нижней части значка в трехмерном режиме. |
 | stemHeightScale              | Плавающий   |      |      |  ✔   |  ✔   | Уровень масштабирования длины основы значка.  Например, используйте значение *1* для стандартного размера и значение *2* для вдвое большего размера. |

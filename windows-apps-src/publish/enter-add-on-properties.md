@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, надстройки, свойства, период подписки, срок действия продукта, тип содержимого, iap, покупки из приложения, внутренний продукт приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 17025282aec18da01f14431996a3942ffdd90312
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733803"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794154"
 ---
 # <a name="enter-add-on-properties"></a>Ввод свойств надстройки
 
@@ -29,7 +29,7 @@ ms.locfileid: "8733803"
 
 ## <a name="product-lifetime"></a>Срок службы продукта
 
-Если вы выбрали тип продукта **Длительное пользование**, здесь отображается **Срок службы продукта**. Для надстройки длительного пользования **Срок службы продукта** по умолчанию имеет значение **Всегда**, то есть срок службы надстройки никогда не заканчивается. При желании можно изменить **Срок действия продукта** , чтобы службы надстройки истекал через определенное время (в диапазоне от 1 до 365 дней).
+Если вы выбрали тип продукта **Длительное пользование**, здесь отображается **Срок службы продукта**. Для надстройки длительного пользования **Срок службы продукта** по умолчанию имеет значение **Всегда**, то есть срок службы надстройки никогда не заканчивается. При желании можно изменить **Срок службы продукта** таким образом, чтобы службы надстройки истекал через определенное время (в диапазоне от 1 до 365 дней).
 
 
 ## <a name="quantity"></a>Количество
@@ -97,7 +97,7 @@ ms.locfileid: "8733803"
 Для запроса этого поля используйте свойство [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) в [пространстве имен Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store). (Либо, если вы используете [пространство имен Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store), используйте свойство [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag).)
 
 > [!NOTE]
-> **Пользовательские данные разработчика** поле недоступно для использования в пакетах для Windows8 и Windows8.1.
+> Поле **пользовательские данные разработчика** не доступны для использования в пакетах для Windows8 и Windows8.1.
 
  
 

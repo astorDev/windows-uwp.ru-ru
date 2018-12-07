@@ -1,18 +1,18 @@
 ---
 ms.assetid: d40056bc-76bc-c123-4d36-973ec46d11fc
 title: Страница "производительность" (Dev Home)
-description: Предоставляет сведения о странице производительности главную страницу приложения для Xbox One.
+description: Сведения о странице производительности главную страницу приложения для Xbox One.
 ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 589084a7da23b037fe61ea5e4c9e52dffb1c29be
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729801"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785641"
 ---
 # <a name="performance-page-dev-home"></a>Страница "производительность" (Dev Home)
    
@@ -33,7 +33,7 @@ ms.locfileid: "8729801"
 ## <a name="disk-simulation"></a>Моделирование диска  
    
   
-Области **диска моделирования** имитирует активность диска из системы или других приложений.   
+Области **диска моделирования** имитирует активности диска из системы или других приложений.   
   
 <a id="ID4EOB"></a>
 

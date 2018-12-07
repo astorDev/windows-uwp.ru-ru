@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 411d19ba26dca1edff91fb7e5b432aa4da3bd120
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750976"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782327"
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>Виртуализация данных ListView и GridView
 
 
-**Примечание**Дополнительные сведения см. в статье сеансов //build/ [Резкое повышение производительности при взаимодействии пользователей с большим объемом данных, в GridView и ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
+**Примечание**Дополнительные сведения см. в разделе //build/ сеанс [Резкое повышение производительности при взаимодействии пользователей с большим объемом данных, в GridView и ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
 
 Улучшите производительность и время запуска [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) с помощью виртуализации данных. Подробнее о виртуализации пользовательского интерфейса, сокращении элементов и прогрессивном обновлении элементов см. в разделе [Оптимизация пользовательского интерфейса ListView и GridView](optimize-gridview-and-listview.md).
 

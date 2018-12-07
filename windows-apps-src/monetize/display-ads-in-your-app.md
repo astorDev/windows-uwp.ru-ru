@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, баннер, управление рекламой, межстраничная
 ms.localizationpriority: medium
 ms.openlocfilehash: baf26335ccdf34c8403cc15ecc1e68527d92e90e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732162"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782824"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Показ рекламы в приложении с помощью Microsoft Advertising SDK
 
-Увеличьте свою прибыль, размещая рекламу в своих приложениях универсальной платформы Windows (UWP) для Windows 10 с помощью Microsoft Advertising SDK. Наша платформа рекламной монетизации предлагает различные форматы рекламы, которые можно легко интегрировать в приложения, а также поддерживает посредника со множеством популярных рекламных сетей. Наша платформа соответствует OpenRTB, РАЗНООБРАЗНЫХ 2.x, MRAID 2 и VPAID 3 стандартов и совместим с MOAT и IAS. 
+Увеличьте свою прибыль, размещая рекламу в своих приложениях универсальной платформы Windows (UWP) для Windows 10 с помощью Microsoft Advertising SDK. Наша платформа рекламной монетизации предлагает различные форматы рекламы, которые можно легко интегрировать в приложения, а также поддерживает посредника со множеством популярных рекламных сетей. Наша платформа соответствует OpenRTB РАЗНООБРАЗНЫХ 2.x, MRAID 2 и VPAID 3 стандартов и совместим с MOAT и IAS. 
 
 <br/>
 
@@ -98,7 +98,7 @@ Microsoft Advertising SDK предоставляет несколько разл
 
 ## <a name="step-4-submit-your-app-and-review-performance"></a>Этап 4. Отправка приложения и проверка результатов
 
-Завершив разрабатывать приложения с рекламой, вы можете [Отправить обновленного приложения](https://docs.microsoft.com/windows/uwp/publish/app-submissions) в центре партнеров, чтобы сделать его доступным в магазине. Приложения, отображающие рекламу, должны отвечать дополнительным требованиям, изложенным в [разделе 10.10 Политики Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) и [приложении E к Соглашению с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
+После завершения разработки приложения с рекламой, вы можете [Отправить обновленного приложения](https://docs.microsoft.com/windows/uwp/publish/app-submissions) в центре партнеров, чтобы сделать его доступным в магазине. Приложения, отображающие рекламу, должны отвечать дополнительным требованиям, изложенным в [разделе 10.10 Политики Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) и [приложении E к Соглашению с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
 
 Как ваше приложение опубликовано и доступно в магазине, можно просмотреть [отчеты об эффективности рекламы](../publish/advertising-performance-report.md) в центре партнеров и продолжать вносить изменения в параметры посредника для оптимизации производительности рекламных объявлений. Доход от рекламы входит в состав вашей [Сводки по выплатам](../publish/payout-summary.md).
 

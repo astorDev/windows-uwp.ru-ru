@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная c++, cpp, winrt, проецируемый, проекция, реализация, класс среды выполнения, активация
 ms.localizationpriority: medium
 ms.openlocfilehash: 59b056e160a1d7782e054ad4dbf1b63e91be42e9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747609"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782037"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Использование API-интерфейсов с помощью C++/WinRT
 
@@ -176,7 +176,7 @@ MainPage::MainPage()
 Дополнительные сведения, код и пошаговое руководство по использованию класса среды выполнения, реализованного в использующем его проекте, см. в разделе [Элементы управления XAML; привязка к свойству C++/WinRT ](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>Создание экземпляров и возврат проецируемых типов и интерфейсов
-Вот пример того, как проецируемые типы и интерфейсы могут выглядеть в вашем использующем их проекте. Помните, что проецируемого типа (как в этом примере), созданное средство и не является что-то, что необходимо создать самостоятельно.
+Вот пример того, как проецируемые типы и интерфейсы могут выглядеть в вашем использующем их проекте. Помните, что проецируемого типа (как в этом примере), созданное средство и не что-то, что необходимо создать самостоятельно.
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,

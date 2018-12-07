@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, надстройка, удаление, продукт внутри приложения, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 837cbc19268a88be986068f4a5e60002a1eb55e2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755524"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781301"
 ---
 # <a name="delete-an-add-on"></a>Удаление надстройки
 
@@ -73,7 +73,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | Недопустимый запрос. |
 | 404  | Не удалось найти указанную надстройку.  |
-| 409  | Указанная надстройка найдена, однако ее не удалось удалить в текущем состоянии или надстройка использует компонент центра партнеров, [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | Указанная надстройка найдена, однако ее не удалось удалить в текущем состоянии или надстройка использует компонент центра партнеров, [в настоящее время не поддерживается API отправки в Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Статьи по теме

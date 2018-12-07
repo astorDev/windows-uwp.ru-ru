@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10, uwp, рекламные объявления, реклама, AdControl, баннеры
 ms.localizationpriority: medium
 ms.openlocfilehash: e8754790fac07e6e1babdb44888cfd1ff138c230
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741368"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8784882"
 ---
 # <a name="banner-ads"></a>Рекламные баннеры
 
-Статьи в этом разделе показано, как использовать класс [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) в Microsoft Advertising SDK для добавления баннерной рекламы в приложение UWP.
+Статьи в этом разделе показано, как использовать класс [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) в Microsoft Advertising SDK для добавления рекламных баннеров в своем приложении UWP.
 
 Рекламные баннеры — статичные рекламные материалы, занимающие прямоугольную страницы в приложении, чтобы отображать рекламное содержимое. Эти объявления можно автоматически обновлять с регулярным интервалом. Это хорошая возможность для начала работы, если вы еще не размещали рекламу в своем приложении.
 

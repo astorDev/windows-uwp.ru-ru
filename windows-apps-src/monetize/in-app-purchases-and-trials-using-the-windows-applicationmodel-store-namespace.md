@@ -7,11 +7,11 @@ ms.topic: article
 keywords: uwp, покупки из приложения, IAP, надстройки, пробные версии, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 72f5875721d17bda79842989c1ac22475a06e938
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739916"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780878"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store
 
@@ -20,7 +20,7 @@ ms.locfileid: "8739916"
 Статьи в этом разделе содержат подробные руководства и примеры кода для использования элементов в пространстве имен **Windows.ApplicationModel.Store** для нескольких распространенных сценариев. Обзор базовых концепций, связанных с покупками из приложения в приложениях UWP, см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md). Полный пример, в котором показано внедрение пробных версий и покупок из приложения с использованием пространства имен **Windows.ApplicationModel.Store**, доступен в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
 > [!IMPORTANT]
-> Пространство имен **Windows.ApplicationModel.Store** больше не обновляется с добавлением новых функций. Если проект приложения ориентирован на **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздние версии в Visual Studio (то есть, вы ориентируете приложение на Windows 10 версии 1607 и более поздние версии), рекомендуется вместо этого использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Подробнее см. в разделе [Покупки из приложения и пробные версии](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). Пространство имен **Windows.ApplicationModel.Store** не поддерживается в классических приложениях Windows, использующие [Мост для настольных компьютеров](https://developer.microsoft.com/windows/bridges/desktop) или в приложениях и играх, использующих изолированную разработки в центре партнеров (например, такая ситуация для любой игры, интегрируется с Xbox Live). Эти продукты должны использовать для реализации покупок из приложения и пробных версий пространство имен **Windows.Services.Store**.
+> Пространство имен **Windows.ApplicationModel.Store** больше не обновляется с добавлением новых функций. Если проект приложения ориентирован на **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздние версии в Visual Studio (то есть, вы ориентируете приложение на Windows 10 версии 1607 и более поздние версии), рекомендуется вместо этого использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Подробнее см. в разделе [Покупки из приложения и пробные версии](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). Пространство имен **Windows.ApplicationModel.Store** не поддерживается в классических приложениях Windows, использующие [Мост для настольных компьютеров](https://developer.microsoft.com/windows/bridges/desktop) или в приложениях и играх, использующих среда разработки в центре партнеров (например, такая ситуация для любой игры, интегрируется с Xbox Live). Эти продукты должны использовать для реализации покупок из приложения и пробных версий пространство имен **Windows.Services.Store**.
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>Начало работы с классами CurrentApp и CurrentAppSimulator
 

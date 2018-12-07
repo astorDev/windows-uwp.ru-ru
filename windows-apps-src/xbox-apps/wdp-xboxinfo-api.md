@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, uwp, xbox, портала устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: d7901890e1cc8fab24742e8785562d13d2fe182a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749949"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786149"
 ---
 # <a name="xbox-info-api-reference"></a>Справочник по API сведения Xbox   
 Можно получить доступ к Xbox One сведения об устройстве, с помощью этого API.
 
-## <a name="get-xbox-one-device-information"></a>Получить Xbox One сведения об устройстве
+## <a name="get-xbox-one-device-information"></a>Получение сведений об устройстве Xbox One
 
 **Запрос**
 
@@ -40,13 +40,13 @@ GET | /ext/xbox/info
 **Ответ**   
 Объект JSON с перечисленными ниже полями.
 
-* OsVersion - (строка) версию операционной системы.
-* OsEdition - (String) в выпуске операционной системы, такие как «Март 2017 г.» или «март 2017 г. QFE 1".
-* ConsoleId - код (строка) консоли приложения.
-* DeviceId - (строка) консоли Xbox Live устройства идентификатор.
-* SerialNumber - (строка) консоли серийный номер.
-* DevMode - режима текущего разработчика (строка) консоли элемента, например «None» или «Коммерческие».
-* ConsoleType - типа (String) консоли приложения, например «Xbox One» или «Xbox One S».
+* OsVersion - (строка) — версия операционной системы.
+* OsEdition - (String) в версии операционной системы, такие как «Март 2017 г.» или «март 2017 г. QFE 1".
+* ConsoleId - код (строки) консоли.
+* DeviceId - (строки) консоли Xbox Live устройства идентификатор.
+* Серийный номер - (строка) консоли серийный номер.
+* DevMode - режима текущего разработчика (строки) консоли, например «None» или «Коммерческие».
+* ConsoleType - типа (строки) консоли, например «Xbox One» или «Xbox One S».
 * DevkitCertificateExpirationTime - (Number) — время UTC в секундах, когда истечет срок действия сертификата комплект средств для разработчика консоли.
 
 **Код состояния**

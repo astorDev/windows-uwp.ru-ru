@@ -11,11 +11,11 @@ dev_langs:
 - cppcx
 - cppwinrt
 ms.openlocfilehash: 7d66eaa77f86deffd59ebc81360ccb8183afd7d6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735511"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783769"
 ---
 # <a name="xaml-lighting"></a>Освещение XAML
 
@@ -34,7 +34,7 @@ ms.locfileid: "8735511"
 
 [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight)— это базовый класс, который можно использовать для создания пользовательских источников света.
 
-В этом примере показано определение пользовательского класса XamlLight, который применяет разноцветных прожектора целевых объектов UIElement и кисти.
+В этом примере показано определение пользовательского класса XamlLight, который применяет разноцветных важных сведений для целевых объектов UIElement и кисти.
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight
@@ -460,7 +460,7 @@ Platform::String^ OrangeSpotLight::GetId()
 Затем можно применить этот светлый UIElement для XAML или кисть для их освещения. В этом примере показано различные возможные варианты использования.
 
 > [!Important]
-> Для [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), удалите двумя вхождения `local:OrangeSpotLight.IsTarget="True"` из разметки ниже. Уже присоединенные свойства задаются в коде программной.
+> Для [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), удалите двумя экземплярами `local:OrangeSpotLight.IsTarget="True"` из разметки ниже. Уже присоединенные свойства задаются в коде программной.
 
 ```xaml
 <StackPanel Width="100">
