@@ -1,13 +1,15 @@
 ---
 title: Автоматизация запуска приложений универсальной платформы Windows (UWP) в Windows 10
 description: Разработчики могут использовать активацию по протоколу и активацию при запуске для автоматизации запуска своих приложений или игр UWP для автоматического тестирования.
+ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 123e2dfff909265673a711f480f5fe636590afa4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.date: 02/08/2017
+ms.openlocfilehash: fb68b4bbd1b751591e9f336efe5dad3c22b3bf92
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751838"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800445"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>Автоматизация запуска приложений UWP для Windows 10
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dc5e107fd343798698f5957c26d87a0d3ffe6625
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751887"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800170"
 ---
 # <a name="getting-started-animation"></a>Начало работы: анимация
 
@@ -126,7 +126,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Вы можете изменить этот код XAML вручную или вернуться к Blend, чтобы продолжить работу над кодом. Blend значительно упрощает создание интересных пользовательских интерфейсов, а возможность анимировать их при помощи графического инструмента может существенно сократить время разработки. Дополнительную информацию об анимациях см. в статье [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350).
 
-**Примечание**Подробнее об анимации для <span class="legacy-term">приложений UWP на JavaScript и HTML</span>: [Анимация пользовательского интерфейса (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
+**Примечание**об анимации для <span class="legacy-term">приложений UWP на JavaScript и HTML</span>, см. в разделе [Анимация пользовательского интерфейса (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
 
 ### <a name="next-step"></a>Следующие шаги
 

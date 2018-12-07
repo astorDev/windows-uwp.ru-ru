@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 345a41a45e28843161e65ecb04f0083f1a71269a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745473"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799567"
 ---
 # <a name="uri-schemes"></a>Схемы URI
 
@@ -251,7 +251,7 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 Дополнительные сведения и примеры см. в разделах [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md) и [Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
-Компонент пути схемы `ms-resource`, как и стандартные URI, учитывает регистр. Тем не менее, базовое извлечение делает [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) с *ignoreCase* значение `true`.
+Компонент пути схемы `ms-resource`, как и стандартные URI, учитывает регистр. Тем не менее, базовый извлечение делает [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) с *ignoreCase* значение `true`.
 
 Нормализованная форма URI поддерживает регистр и декодирует (используя символ "%", за которым следуют двузначный шестнадцатеричный символ) незарезервированные символы RFC 3986. Символы ?, #, /, * и ” (символ кавычки), представляющие такие данные в пути, как имена файлов или папок, должны кодироваться. Все закодированные символы перед получением декодируются. Таким образом, чтобы получить строковый ресурс из файла ресурсов с именем `Hello#World.resw`, используйте этот URI.
 

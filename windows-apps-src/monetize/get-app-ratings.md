@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, оценки
 ms.localizationpriority: medium
 ms.openlocfilehash: 32f32d3389a340c25d99ec0f0a68e0c20af89c2b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748832"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797941"
 ---
 # <a name="get-app-ratings"></a>Получение сведений об оценках приложения
 
-Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных об оценках в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчет отзывы](../publish/reviews-report.md) в центре партнеров.
+Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных об оценках в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчет "рецензии"](../publish/reviews-report.md) в центре партнеров.
 
 ## <a name="prerequisites"></a>Необходимые условия
 

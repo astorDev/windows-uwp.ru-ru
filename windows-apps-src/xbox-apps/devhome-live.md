@@ -8,16 +8,16 @@ keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-live.html
 ms.localizationpriority: medium
 ms.openlocfilehash: c72137b8419526b65dc3c6cb75a511a7a6f50a82
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751065"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800309"
 ---
 # <a name="xbox-live-page-dev-home"></a>Xbox Live страницы (главную страницу)
    
   
-Страница **Xbox Live** главную страницу захватывает многопользовательских сведения и отображает текущее состояние службы Xbox Live.   
+Страницу главную страницу разработчика в **Xbox Live** завладеть многопользовательских информацией и отображает текущее состояние службы Xbox Live.   
  ![Xbox Live главную страницу](images/devhome_live.png)   
   
 Страница **Xbox Live** содержит следующие области:   
@@ -33,7 +33,7 @@ ms.locfileid: "8751065"
 ## <a name="xbtrace-advancedmp"></a>XBTrace (advancedmp)  
    
   
-На странице **XBTrace (advancedmp)** запускается или останавливается захвата многопользовательских трассировки. Также можно записывать моментальный снимок текущего состояния многопользовательской игры.   
+На странице **XBTrace (advancedmp)** запускается или останавливается захвата многопользовательских трассировки. Он также позволяет захватывать моментальный снимок текущего состояния многопользовательской игры.   
   
 <a id="ID4E3B"></a>
 

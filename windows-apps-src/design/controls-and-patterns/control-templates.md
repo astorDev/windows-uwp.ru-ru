@@ -12,11 +12,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ad66d8797234d01673518256d6f5376ce93245f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742230"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801330"
 ---
 # <a name="control-templates"></a>Шаблоны элементов управления
 
@@ -53,7 +53,7 @@ ms.locfileid: "8742230"
 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) связывает значение свойства в шаблоне элемента управления и значение какого-либо другого предоставленного свойства элемента управления-шаблона. TemplateBinding может использоваться только в пределах определения ControlTemplate в XAML. Подробнее см. в разделе [Расширение разметки TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md).
 
 > [!NOTE]
-> Начиная с Windows 10, версия 1809[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk), можно использовать расширения разметки [**x: Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) в местах, используйте [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Подробнее см. в разделе [Расширение разметки TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md).
+> Начиная с Windows 10, версия 1809[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk), можно использовать расширения разметки [**x: Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) в местах, используемого [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Подробнее см. в разделе [Расширение разметки TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md).
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
