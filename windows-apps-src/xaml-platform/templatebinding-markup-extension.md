@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ade10b4d5e2653eb214d93c2c9166e6a3e3defc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749454"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795688"
 ---
 # <a name="templatebinding-markup-extension"></a>Расширение разметки {TemplateBinding}
 
@@ -59,11 +59,11 @@ ms.locfileid: "8749454"
 > [!NOTE]
 > С помощью x: Bind в ControlTemplate требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии. Дополнительные сведения о целевых версиях см. в статье [Адаптивный к версии код](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
-Начиная с Windows 10, версия 1809, можно использовать расширение разметки **x: Bind** везде, где использовать **TemplateBinding** в [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
+Начиная с Windows 10, версия 1809, можно использовать расширение разметки **x: Bind** в любом использовании **TemplateBinding** в [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
 
 Свойство [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) необходима (обязательно) на [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) при использовании **x: Bind**.
 
-С поддержкой **x: Bind** можно использовать как хорошо, как двухсторонние привязки в шаблоне [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)обеих [привязки функций](../data-binding/function-bindings.md) .
+С поддержкой **x: Bind** можно использовать оба [привязки функций](../data-binding/function-bindings.md) как хорошо, как двухсторонние привязки в шаблоне [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391).
 
 В этом примере свойство **TextBlock.Text** принимает значение **Button.Content.ToString**. TargetType на ControlTemplate выступает в качестве источника данных и выполняет тот же результат TemplateBinding родительскому элементу.
 

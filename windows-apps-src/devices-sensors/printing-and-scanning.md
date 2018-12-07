@@ -4,14 +4,14 @@ title: Печать и сканирование
 description: В этом разделе описываются печать и сканирование из вашего универсального приложения для Windows.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, печать 3dprinting трехмерной печати
+keywords: Windows 10, uwp, печати, 3dprinting, трехмерной печати
 ms.localizationpriority: medium
 ms.openlocfilehash: 5cfc91ae6f74117c6c3414691137b334cfd0dc4f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754413"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795101"
 ---
 # <a name="printing-and-scanning"></a>Печать и сканирование
 

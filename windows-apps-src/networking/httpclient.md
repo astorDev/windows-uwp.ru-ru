@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 706432123d8a778af558d0c3e426ad4f5120bdba
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738179"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8796877"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -58,7 +58,7 @@ ms.locfileid: "8738179"
 
 ## <a name="send-a-simple-get-request-over-http"></a>Отправка простого запроса GET через HTTP
 
-Как упоминалось ранее в этой статье, пространство имен [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) позволяет приложениям UWP отправлять запросы GET. В следующем фрагменте кода показано, как отправлять запрос GET для http://www.contoso.com с помощью класса [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) и класса [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) для чтения ответа из запроса GET.
+Как упоминалось ранее в этой статье, пространство имен [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) позволяет приложениям UWP отправлять запросы GET. В следующем фрагменте кода показано, как отправлять запрос GET для http://www.contoso.com с помощью классов [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) и [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) для чтения ответа из запроса GET.
 
 ```csharp
 //Create an HTTP client object

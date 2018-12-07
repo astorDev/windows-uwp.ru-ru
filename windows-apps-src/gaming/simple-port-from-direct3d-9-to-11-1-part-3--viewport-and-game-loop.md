@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, портирование, игровой цикл, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b0cf6352d400371b54a54d71176c4d8e1dc457d
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 2087959bc29d2b2b02cdc9a2f373a8b62ea8c25a
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732979"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793805"
 ---
 # <a name="port-the-game-loop"></a>Портирование игрового цикла
 
@@ -131,7 +131,7 @@ while (true)
 
 Шаблоны UWP на базе DirectX включают надежную инфраструктуру устройств Direct3D, готовую к использованию в игровых приложениях. Инструкции по выбору шаблона см. в разделе [Создание проекта игры DirectX на основе шаблона](user-interface.md).
 
-Ознакомьтесь со следующими подробными статьями о разработке игр для Microsoft Store:
+Ознакомьтесь со следующими подробными о разработке игр Microsoft Store:
 
 -   [Пошаговое руководство: создание простой игры UWP с использованием DirectX](tutorial--create-your-first-uwp-directx-game.md)
 -   [Звук для игр](working-with-audio-in-your-directx-game.md)

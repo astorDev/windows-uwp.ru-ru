@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e64feb8938be3e7338c87acdf8fd18fb13e525b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756778"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795780"
 ---
 # <a name="xbox-best-practices"></a>Рекомендации для Xbox
 
@@ -22,7 +22,7 @@ ms.locfileid: "8756778"
 
 ### <a name="do-turn-off-mouse-mode"></a>*Рекомендуется:* отключение режима мыши
 
-Пользователям Xbox нравится их контроллерами. Для оптимизации ввода с помощью контроллера [отключите режим мыши](how-to-disable-mouse-mode.md) и включите направленную навигацию (также называемую [фокус по оси X и Y](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)). Обращайте внимание на ловушки фокус и недоступный пользовательский Интерфейс.
+Пользователям Xbox нравится их контроллеров. Для оптимизации ввода с помощью контроллера [отключите режим мыши](how-to-disable-mouse-mode.md) и включите направленную навигацию (также называемую [фокус по оси X и Y](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)). Обращайте внимание на ловушки фокус и недоступный пользовательский Интерфейс.
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*Рекомендуется:* оптимизация прямоугольника фокуса для просмотра на большом расстоянии
 
@@ -65,7 +65,7 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 ## <a name="app-dev-on-xbox"></a>Разработка приложений на Xbox
 
-**Разработка приложений на Xbox** событие — превосходная отправная точка для разработчиков, не знакомы с созданием приложений на консоли Xbox.
+Событие **Разработка приложений на Xbox** — превосходная отправная точка для разработчиков, не знакомы с созданием приложений на консоли Xbox.
 
 * [Посмотрите записи сеансов](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
 * [Чтение в блогах](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)

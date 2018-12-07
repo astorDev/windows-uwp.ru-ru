@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f24543c1afcd9c154788cc4be03434384f00f0c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747374"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8796982"
 ---
 # <a name="events-and-routed-events-overview"></a>Общие сведения о событиях и перенаправленных событиях
 
@@ -265,7 +265,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 -   Для его свойства [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) установлено значение [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006).
 -   Значение свойства элемента **Background** или **Fill** не равно **null**. Значение **null** свойства [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) означает, что элемент прозрачен и проверка нажатия не может быть выполнена. (Чтобы сделать элемент прозрачным, но доступным для проверки нажатия, используйте значение свойства кисти [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061), а не **null**.)
 
-**Примечание** **Фона** и **Fill** не определяются элементом [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), а определяются различными производными классами, например, [**элемент управления**](https://msdn.microsoft.com/library/windows/apps/br209390) и [**фигуры**](/uwp/api/Windows.UI.Xaml.Shapes.Shape). Но применения кистей, которые вы используете для свойств переднего и заднего планов, одинаковы для проверки нажатия и событий ввода, независимо от того, какой подкласс реализует свойства.
+**Примечание** **Фона** и **заполнения** не определяются элементом [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), а определяются различными производными классами, например, [**элемент управления**](https://msdn.microsoft.com/library/windows/apps/br209390) и [**фигуры**](/uwp/api/Windows.UI.Xaml.Shapes.Shape). Но применения кистей, которые вы используете для свойств переднего и заднего планов, одинаковы для проверки нажатия и событий ввода, независимо от того, какой подкласс реализует свойства.
 
 -   Если элемент является элементом управления, для его свойства [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) должно быть установлено значение **true**.
 -   У элемента в макете должны быть фактические размеры. Элемент, [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) и [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) которого равны 0, не вызывает события ввода.

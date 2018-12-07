@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, реклама, эффективность
 ms.localizationpriority: medium
 ms.openlocfilehash: c6bec86929284e49e4e882597422d316276c0a33
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741596"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793176"
 ---
 # <a name="get-ad-performance-data"></a>Получение данных об эффективности рекламы
 
 
 Используйте этот метод в API аналитики для Microsoft Store для получения сводных данных об эффективности рекламы в вашем приложении в заданном диапазоне дат или с учетом других дополнительных фильтров. Этот метод возвращает данные в формате JSON.
 
-Этот метод возвращает те же данные, предоставляемые [отчет о результативности рекламы](../publish/advertising-performance-report.md) в центре партнеров.
+Этот метод возвращает те же данные, предоставляемые в [отчет о результативности рекламы](../publish/advertising-performance-report.md) в центре партнеров.
 
 ## <a name="prerequisites"></a>Необходимые условия
 

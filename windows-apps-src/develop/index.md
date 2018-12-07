@@ -7,11 +7,11 @@ ms.date: 3/29/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 615a5a0762cfa55d7b8be7ce392e02ee1802ded2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753120"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793428"
 ---
 <div> 
 <h1>Разработка приложений UWP</h1>
@@ -31,7 +31,7 @@ ms.locfileid: "8753120"
                     </div>
                     <div class="cardText">
                         <h3>Обзор на универсальную платформу Windows</h3>
-                        <p>Описание какие UWP — это, как это работает, и предоставляет функции.</p>
+                        <p>Описание какие UWP, как это работает, и предоставляет функции.</p>
                     </div>
                 </div>
             </div>
@@ -269,7 +269,7 @@ ms.locfileid: "8753120"
                     </div>
                     <div class="cardText">
                         <h3>Примеры</h3>
-                        <p> Сведения о создании качественных приложений для Windows при помощи экспериментов с в этих примерах. В этих примерах показано, как работают функции и помочь вам быстром создании приложений UWP.</p>
+                        <p> Сведения о создании качественных приложений для Windows при помощи экспериментов с помощью этих примеров. В этих примерах показано, как работают функции и помочь вам быстрое создание приложения UWP.</p>
                     </div>
                 </div>
             </div>

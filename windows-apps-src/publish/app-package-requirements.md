@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, требования к пакету, пакеты, формат пакета, поддерживаемая версия, отправить
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c04ac5aa12fc67cf911d575540b05f96753519b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736234"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799494"
 ---
 # <a name="app-package-requirements"></a>Требования к пакетам приложения
 
@@ -37,7 +37,7 @@ ms.locfileid: "8736234"
 
 ### <a name="app-bundles"></a>Пакеты приложений
 
-Для приложений UWP Visual Studio можно создать пакет приложений (.msixbundle или .appxbundle), чтобы уменьшить размер приложения, скачиваемого пользователями. Это полезно, если вы определили ресурсы, связанные с конкретным языком, множество различных ресурсов с определенным масштабом изображений или ресурсы, которые применяются к конкретным версиям DirectX.
+Для приложений UWP Visual Studio можно создавать пакет приложений (.msixbundle или .appxbundle), чтобы уменьшить размер приложения, скачиваемого пользователями. Это полезно, если вы определили ресурсы, связанные с конкретным языком, множество различных ресурсов с определенным масштабом изображений или ресурсы, которые применяются к конкретным версиям DirectX.
 
 > [!NOTE]
 > Один пакет приложений может содержать пакеты для всех архитектур.
@@ -57,7 +57,7 @@ ms.locfileid: "8736234"
 > Значения в манифесте вводятся с учетом регистра. Пробелы и знаки препинания тоже должны совпадать. Правильно введите значения и внимательно проверьте их.
 
 
-(.Msixbundle или .appxbundle) в наборе приложений используется другой манифест. Подробнее о манифестах пакетов приложений и требованиях к ним см. в разделе о [манифесте пакета приложений](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Обратите внимание, что в .msixbundle или .appxbundle, манифест каждого включенного пакета необходимо использовать одинаковые элементы и атрибуты, за исключением атрибута **ProcessorArchitecture** [идентификатора](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) элемента.
+(.Msixbundle или .appxbundle) в наборе приложений используется другой манифест. Подробнее о манифестах пакетов приложений и требованиях к ним см. в разделе о [манифесте пакета приложений](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Обратите внимание, что в .msixbundle или .appxbundle, манифест каждого включены пакета необходимо использовать одинаковые элементы и атрибуты, за исключением атрибут **ProcessorArchitecture** [идентификатора](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) элемента.
 
 > [!TIP]
 > Перед отправкой протестируйте пакеты с помощью [комплекта сертификации приложений для Windows](../debug-test-perf/windows-app-certification-kit.md). Это поможет вам выявить в манифесте проблемы, способные привести к сбою сертификации или отправки.

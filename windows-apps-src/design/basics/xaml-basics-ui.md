@@ -6,11 +6,11 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bae8455f1062b3ad62aeac3807c6c58ae274a1b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753309"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799743"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Руководство: создание пользовательского интерфейса
 
@@ -39,7 +39,7 @@ ms.locfileid: "8753309"
 
 В этом руководстве мы начнем с упрощенной версии примера PhotoLab. 
 
-1. Последовательно выберите пункты [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). Вы перейдете на страницу GitHub с примером кода. 
+1. Перейдите в раздел [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). Вы перейдете на страницу GitHub с примером кода. 
 2. Далее необходимо клонировать или скачать пример. Нажмите кнопку **Клонировать или скачать**. Откроется подменю.
     <figure>
         <img src="images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">

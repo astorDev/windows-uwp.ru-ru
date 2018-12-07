@@ -2,12 +2,14 @@
 title: Портал устройств— справочник по API для мониторинга HTTP
 description: Узнайте, как осуществлять доступ к HTTP-трафику из приложения в фокусе на Xbox.
 ms.localizationpriority: medium
-ms.openlocfilehash: 81de2a2a3194384e9c5de1c5c45a827e4d965c91
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.topic: article
+ms.date: 02/08/2017
+ms.openlocfilehash: 8b8828b060e0401e7938517e497bae20e1234baf
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751933"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797896"
 ---
 # <a name="http-monitor-api-reference"></a>Справочник по API для мониторинга HTTP   
 Трафик HTTP в режиме реального времени доступен для приложения в фокусе через этот API, если на консоли Xbox был включен монитор HTTP (для этого нужно установить соответствующий флажок в Dev Home).

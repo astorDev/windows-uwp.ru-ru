@@ -11,11 +11,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ac6dd17f31dab1898aa394f901613d268c159b06
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758504"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792691"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Задание условий выполнения фоновой задачи
 
@@ -27,11 +27,11 @@ ms.locfileid: "8758504"
 
 Узнайте, как задать условия, которые управляют запуском выполнения фоновой задачи.
 
-В некоторых случаях фоновых задач требуется соблюдение определенных условий должны быть выполнены для успешного выполнения фоновой задачи. При регистрации фоновой задачи можно указать одно или несколько условий, определяемых типом [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835). Условия проверяются после триггера. Фоновая задача будет затем очередь, но она не будет выполняться, пока не будут выполнены все необходимые условия.
+В некоторых случаях фоновых задач требуется соблюдение определенных условий должны быть выполнены для успешного выполнения фоновой задачи. При регистрации фоновой задачи можно указать одно или несколько условий, определяемых типом [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835). Условия проверяются после триггера. Фоновая задача затем будут помещаться в очередь, но она не будет выполняться, пока не будут выполнены все необходимые условия.
 
 Настройка условий для фоновых задач продлевает время работы от батареи и ЦП, так как задачи без необходимости запускать. Например, если фоновая задача запускается по таймеру и требует подключения к Интернету, перед регистрацией задачи добавьте условие **InternetAvailable** в [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Это помогает избежать ненужного использования системных ресурсов или заряда батареи, запуская выполнение фоновой задачи только при срабатывании таймера *и* наличии доступа к Интернету.
 
-Можно также объединить несколько условий, вызвав **AddCondition** несколько раз в одном [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Следите за тем, чтобы не добавить конфликтующие условия, например **UserPresent** и **UserNotPresent**.
+Это также можно скомбинировать несколько условий, вызвав **AddCondition** несколько раз в одном [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Следите за тем, чтобы не добавить конфликтующие условия, например **UserPresent** и **UserNotPresent**.
 
 ## <a name="create-a-systemcondition-object"></a>Создание объекта SystemCondition
 
@@ -60,7 +60,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 Чтобы добавить условие, вызовите метод [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) применительно к объекту [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) и передайте его объекту [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834).
 
-В следующем коде используется **taskBuilder** добавить условие **InternetAvailable** .
+Следующий код использует **taskBuilder** добавить условие **InternetAvailable** .
 
 ```csharp
 taskBuilder.AddCondition(internetCondition);
@@ -105,7 +105,7 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 Чтобы добавить несколько условий, приложение многократно вызывает метод [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) . Чтобы быть эффективными, такие вызовы должны предшествовать регистрации задачи.
 
 > [!NOTE]
-> Постарайтесь не добавить конфликтующие условия для фоновой задачи.
+> Будьте внимательны, чтобы не добавить конфликтующие условия для фоновой задачи.
 
 В следующем фрагменте показано несколько условий в контексте создания и регистрации фоновой задачи.
 
@@ -178,7 +178,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>Комментарии
 
 > [!NOTE]
-> Выберите такие условия для фоновая задача запускается только при необходим и не выполнялась, когда он не следует. Обзор различных условий выполнения фоновых задач см. в разделе [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+> Выберите условия для фоновой задачи, чтобы его только выполняется, когда он необходим, а не выполнялась, когда он не должен. Обзор различных условий выполнения фоновых задач см. в разделе [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
 ## <a name="related-topics"></a>Статьи по теме
 

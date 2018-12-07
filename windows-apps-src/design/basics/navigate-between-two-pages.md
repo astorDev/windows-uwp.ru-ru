@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: e72dc726143d17f605283fa801f8e286c2c58878
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8757657"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793716"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Реализация навигации между двумя страницами
 
@@ -316,7 +316,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 Наше приложение переключается между страницами, но пока не умеет делать ничего интересного. Часто, если в приложении есть несколько страниц, необходим общий доступ к информации. Давайте передадим какую-нибудь информацию с первой страницы на вторую.
 
-В Page1.xaml замените **HyperlinkButton** был добавлен ранее следующие [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
+В Page1.xaml замените **HyperlinkButton** был добавлен ранее с помощью следующих [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
 
 Теперь добавим метку [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) и [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (`name`) для ввода текстовой строки.
 
@@ -330,7 +330,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 </StackPanel>
 ```
 
-В `HyperlinkButton_Click` обработчик событий в файле кода программной части Page1.xaml добавьте параметр, ссылающийся на `Text` свойства `name` **TextBox** , чтобы `Navigate` метод.
+В `HyperlinkButton_Click` обработчик событий файла кода программной части Page1.xaml добавьте параметр, ссылающийся на `Text` свойства `name` **TextBox** `Navigate` метод.
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)

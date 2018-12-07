@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b14e413a5629dfb5447750e32c42c4efafef8fa
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744770"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799381"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>Сценарий 1. Создание PRI-файла из строковых ресурсов и файлов ресурсов
 В этом сценарии мы будем использовать [API-интерфейсы индексирования ресурсов пакета (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690), чтобы новое приложение представляло нашу систему сборки. Цель этой пользовательской системы сборки, как вы помните,— создание PRI-файлов для целевого приложения UWP. Итак, в рамках этого пошагового руководства мы создадим файлы ресурсов для представления ресурсов целевого приложения UWP (содержащих строки и другие типы ресурсов).

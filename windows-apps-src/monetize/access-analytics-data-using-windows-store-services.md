@@ -1,6 +1,6 @@
 ---
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: Используйте API аналитики Microsoft Store для программного извлечения аналитических данных по приложениям, которые зарегистрированы в вашей или вашей организации '' учетную запись центра партнеров для Windows.
+description: Используйте API аналитики для Microsoft Store для программного извлечения аналитических данных по приложениям, которые зарегистрированы в вашей или вашей организации '' учетную запись центра партнеров для Windows.
 title: Доступ к аналитическим данным с помощью служб Магазина
 ms.date: 06/04/2018
 ms.topic: article
@@ -8,15 +8,15 @@ keywords: windows 10, uwp, службы Store, API аналитики дляMicr
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0f0df87f8ed5339c977dbd468f8aa2a7877f0d9e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734036"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799321"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Доступ к аналитическим данным с помощью служб Магазина
 
-Используйте *API аналитики для Microsoft Store* для программного извлечения аналитических данных по приложениям, которые зарегистрированы в учетной записи центра партнеров Windows вашего или вашей организации. Этот API позволяет извлекать данные о приобретении, ошибках, оценках и отзывов для приложения и надстройки (внутреннего продукта или IAP). Для проверки подлинности вызовов из приложения или службы в этом интерфейсе используется служба Azure Active Directory (Azure AD).
+Используйте *API аналитики для Microsoft Store* для программного извлечения аналитических данных по приложениям, которые зарегистрированы в учетной записи центра партнеров Windows вашей или вашей организации. Этот API позволяет извлекать данные о приобретении, ошибках, оценках и отзывов для приложения и надстройки (внутреннего продукта или IAP). Для проверки подлинности вызовов из приложения или службы в этом интерфейсе используется служба Azure Active Directory (Azure AD).
 
 Далее описан весь процесс.
 
@@ -30,13 +30,13 @@ ms.locfileid: "8734036"
 
 Перед тем как начать писать код для вызова API аналитики для Microsoft Store, убедитесь, что вы выполнили следующие необходимые условия.
 
-* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае вы можете [Создать новую службу Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
+* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае можно [Создать новую Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
 
-* Необходимо привязать приложение Azure AD с учетной записью центра партнеров, получить идентификатор владельца и идентификатор клиента для приложения и создать ключ. Приложение Azure AD представляет собой приложение или службу, из которой отправляются вызовы в API аналитики дляMicrosoft Store. Чтобы получить маркер доступа Azure AD, который вы передадите в API, необходимо иметь в наличии идентификатор владельца, идентификатор клиента и ключ.
+* Необходимо привязать приложение Azure AD к учетной записи центра партнеров, получить идентификатор владельца и идентификатор клиента для приложения и создать ключ. Приложение Azure AD представляет собой приложение или службу, из которой отправляются вызовы в API аналитики дляMicrosoft Store. Чтобы получить маркер доступа Azure AD, который вы передадите в API, необходимо иметь в наличии идентификатор владельца, идентификатор клиента и ключ.
     > [!NOTE]
     > Эту операцию необходимо выполнить только один раз. После того как вы получите идентификатор владельца, идентификатор клиента и ключ, их можно будет использовать повторно в любое время для создания нового маркера доступа Azure AD.
 
-Чтобы привязать приложение Azure AD с учетной записью центра партнеров и получить необходимые значения:
+Чтобы привязать приложение Azure AD к учетной записи центра партнеров и получить необходимые значения:
 
 1.  В центре партнеров, [связать учетную запись центра партнеров вашей организации в каталог Azure AD вашей организации](../publish/associate-azure-ad-with-partner-center.md).
 
@@ -65,7 +65,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-Для значения *tenant\_id* в POST URI и параметров, *client\_id* и *client\_secret* укажите идентификатор владельца, идентификатор клиента и ключ для вашего приложения, которые вы получили из центра партнеров в предыдущем разделе. Для параметра *resource* укажите ```https://manage.devcenter.microsoft.com```.
+Значение *tenant\_id* в POST URI и параметров, *client\_id* и *client\_secret* укажите идентификатор владельца, идентификатор клиента и ключ для вашего приложения, которые вы получили из центра партнеров в предыдущем разделе. Для параметра *resource* укажите ```https://manage.devcenter.microsoft.com```.
 
 После истечения срока действия токена доступа вы можете обновить его, следуя инструкциям, приведенным [здесь](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
 
@@ -83,7 +83,7 @@ grant_type=client_credentials
 |---------------|--------------------|
 | Приобретение, преобразования, установки и использования |  <ul><li>[Получение сведений о покупках приложения](get-app-acquisitions.md)</li><li>[Получение данных воронки приобретений приложения](get-acquisition-funnel-data.md)</li><li>[Получение преобразований приложения по каналу](get-app-conversions-by-channel.md)</li><li>[Получение сведений о приобретениях надстройки](get-in-app-acquisitions.md)</li><li>[Получение сведений о приобретениях надстройки с подпиской](get-subscription-acquisitions.md)</li><li>[Получение конверсий надстройки по каналу](get-add-on-conversions-by-channel.md)</li><li>[Получение сведений об установках приложения](get-app-installs.md)</li><li>[Получение сведений о ежедневном использовании приложения](get-app-usage-daily.md)</li><li>[Получение сведений о ежемесячном использовании приложения](get-app-usage-monthly.md)</li></ul> |
 | Ошибки приложения | <ul><li>[Получение данных отчетов об ошибках](get-error-reporting-data.md)</li><li>[Получение сведений об ошибке в приложении](get-details-for-an-error-in-your-app.md)</li><li>[Получение трассировки стека при возникновении ошибки в приложении](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[Скачивание CAB-файла для ошибки в приложении](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
-| Аналитика | <ul><li>[Получение аналитических данных о вашем приложении](get-insights-data-for-your-app.md)</li></ul>  |
+| Дополнительная информация | <ul><li>[Получение аналитических данных о вашем приложении](get-insights-data-for-your-app.md)</li></ul>  |
 | Оценки и отзывы | <ul><li>[Получение сведений об оценках приложения](get-app-ratings.md)</li><li>[Получение отзывов о приложении](get-app-reviews.md)</li></ul> |
 | Реклама в приложении и рекламные кампании | <ul><li>[Получение данных об эффективности рекламы](get-ad-performance-data.md)</li><li>[Получение данных об эффективности рекламной кампании](get-ad-campaign-performance-data.md)</li></ul> |
 
@@ -96,7 +96,7 @@ grant_type=client_credentials
 | Установки |  <ul><li>[Получение установок классического приложения](get-desktop-app-installs.md)</li></ul> |
 | Блоки |  <ul><li>[Получение блоков обновлений для классического приложения](get-desktop-block-data.md)</li><li>[Получение сведений о блоках обновлений для классического приложения](get-desktop-block-data-details.md)</li></ul> |
 | Ошибки приложений |  <ul><li>[Получение данных отчетов об ошибках для классического приложения](get-desktop-application-error-reporting-data.md)</li><li>[Получение сведений об ошибке в классическом приложении](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Получение трассировки стека при возникновении ошибки в классическом приложении](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Скачивание CAB-файла для ошибки в классическом приложении](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-| Аналитика | <ul><li>[Получение аналитических данных о классическом приложении](get-insights-data-for-your-desktop-app.md)</li></ul>  |
+| Дополнительная информация | <ul><li>[Получение аналитических данных о классическом приложении](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>Методы для служб Xbox Live
 
@@ -119,7 +119,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-hardware-and-drivers"></a>Методы для оборудования и драйверов
 
-Учетных записей разработчиков, принадлежащих [программы информационной панели Windows оборудования](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) иметь доступ к дополнительный набор методов для извлечения аналитических данных по оборудования и драйверов. Дополнительные сведения см. в разделе [панели мониторинга оборудования API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
+Учетные записи разработчика, входящие в [информационной панели программы оборудования Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) иметь доступ к дополнительный набор методов для извлечения аналитических данных по оборудования и драйверов. Дополнительные сведения см. в разделе [информационной панели оборудования API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## <a name="code-example"></a>Пример кода
 

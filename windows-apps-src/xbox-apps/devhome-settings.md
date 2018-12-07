@@ -1,23 +1,23 @@
 ---
 ms.assetid: ec3945e7-cfb1-b91a-7ae6-e767a7227f8a
 title: Страница параметров (Dev Home)
-description: Предоставляет сведения о странице параметров приложения Dev Home для Xbox One.
+description: Сведения о том, на странице параметров приложения Dev Home для Xbox One.
 ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a0a94a7a8e22ee63cb126bb50ad1c74837c4f55
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735036"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797661"
 ---
 # <a name="settings-page-dev-home"></a>Страница параметров (Dev Home)
    
   
-На странице **параметров** из Dev Home предоставляет доступ к различные параметры для консоли разработки.   
+На странице **параметров** из Dev Home предоставляет доступ к различные параметры консоли разработки.   
  ![Параметры диалогового окна Dev Home](images/devhome_settings.png)   
   
 На странице **параметров** содержит следующие области:   
@@ -46,7 +46,7 @@ ms.locfileid: "8735036"
 ## <a name="os-recovery-update-settings"></a>Параметры обновления ОС восстановления  
    
   
-На панели **восстановления ОС обновление параметров** настраивает параметры автоматического обновления консоли. Обратите внимание, что изменения этих параметров может занять до 24 часов в силу.   
+На панели **восстановления ОС обновление параметров** настраивает параметры автоматического обновления консоли. Обратите внимание, что изменения этих параметров может занять до 24 часов, вступают в силу.   
   
 <a id="ID4EYB"></a>
 
@@ -55,7 +55,7 @@ ms.locfileid: "8735036"
 ## <a name="visual-studio"></a>Visual Studio  
    
   
-Области **Visual Studio** позволяет связывать консоль с Visual Studio. Вы также можете удалить все связанные экземпляры Visual Studio.   
+На панели **Visual Studio** позволяет связывать консоль с Visual Studio. Вы также можете удалить все связанные экземпляры Visual Studio.   
   
 <a id="ID4ECC"></a>
 
@@ -82,7 +82,7 @@ ms.locfileid: "8735036"
 ## <a name="default-home-experience"></a>Взаимодействие с Home по умолчанию  
    
   
-Области **По умолчанию домашняя взаимодействие с** определяет, будет ли на главном экране retail или [Главная страница разработчика на консоли (Dev Home)](dev-home.md) экран отображается при запуске консоли.   
+На панели **По умолчанию домашняя взаимодействия** на главном экране retail или на экране [Главная страница разработчика на консоли (Dev Home)](dev-home.md) отображение определяется при запуске консоли.   
   
 <a id="ID4EJD"></a>
 

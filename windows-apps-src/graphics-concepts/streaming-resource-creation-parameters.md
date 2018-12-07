@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ddb150e570e25af7162a50309b9b0fc30cedf60
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8757531"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793275"
 ---
 # <a name="streaming-resource-creation-parameters"></a>Параметры создания потоковых ресурсов
 
@@ -37,7 +37,7 @@ Texture2D\ [Array\] (включая TextureCube\ [Array\], который явл
 <span id="Supported-Bind-Flags"></span><span id="supported-bind-flags"></span><span id="SUPPORTED-BIND-FLAGS"></span>**Поддерживаемые флаги привязки**  
 Привязать как ресурс шейдера, цель прорисовки, буфер глубины или неупорядоченный доступ.
 
-**Не поддерживается:** Привязка как буфер констант, буфер вершин (привязка разбитого буфера, как SRV/UAV/RTV поддерживается), указатель буфера, вывод потока, декодера или кодировщика видео.
+**Не поддерживается:** Привязка как буфер констант, буфер вершин (привязка разбитого буфер, как SRV/UAV/RTV поддерживается), указатель буфера, вывод потока, декодера или кодировщика видео.
 
 <span id="Supported-Formats"></span><span id="supported-formats"></span><span id="SUPPORTED-FORMATS"></span>**Поддерживаемые форматы**  
 Все форматы, которые будут доступны для определенной конфигурации независимо от разбиения на плитки с некоторыми исключениями.

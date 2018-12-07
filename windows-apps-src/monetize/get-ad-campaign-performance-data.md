@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
 ms.openlocfilehash: 1190ec43c5b98eabd897a3bed3788aaf6eb0cb7d
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738640"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797091"
 ---
 # <a name="get-ad-campaign-performance-data"></a>Получение данных об эффективности рекламной кампании
 
 
 Используйте этот метод в API аналитики для Microsoft Store для получения сводных общих данных об эффективности рекламных кампаний для ваших приложений в заданном диапазоне дат или с учетом других дополнительных фильтров. Этот метод возвращает данные в формате JSON.
 
-Этот метод возвращает те же данные, предоставляемые [отчет о рекламной кампании](../publish/app-install-ads-reports.md) в центре партнеров. Дополнительные сведения о рекламных кампаниях см. в разделе [Создание рекламной кампании для вашего приложения](../publish/create-an-ad-campaign-for-your-app.md).
+Этот метод возвращает те же данные, предоставляемые в [отчет о рекламной кампании](../publish/app-install-ads-reports.md) в центре партнеров. Дополнительные сведения о рекламных кампаниях см. в разделе [Создание рекламной кампании для вашего приложения](../publish/create-an-ad-campaign-for-your-app.md).
 
 Для создания и обновления рекламных кампаний, а также получения подробных сведений о них, вы можете использовать методы [Управление рекламными кампаниями](manage-ad-campaigns.md) в [API рекламных акций Microsoft Store](run-ad-campaigns-using-windows-store-services.md).
 

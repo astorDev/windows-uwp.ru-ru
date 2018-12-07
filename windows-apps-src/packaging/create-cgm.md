@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, сопоставление группы содержимого, потоковая установка, потоковая установка приложений uwp, исходный файл сопоставления группы содержимого
 ms.localizationpriority: medium
 ms.openlocfilehash: ea6e83521007572449b28e65bdff56d9d2c11186
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738159"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797641"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>Создание и преобразование исходного файла сопоставления группы содержимого
 
@@ -166,4 +166,4 @@ MakeAppx convertCGM /s MyApp\SourceAppxContentGroupMap.xml /f MyApp\AppxContentG
 MakeAppx convertCGM /?
 ```
 
-Это все, что требуется, чтобы получить окончательный готовый файл `AppxContentGroupMap.xml` для вашего приложения! Это еще перед ваше приложение будет полностью готово для Microsoft Store. Дополнительные сведения о полном процессе добавления потоковой установки в ваше приложение UWP см. в [этой записи блога](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/).
+Это все, что требуется, чтобы получить окончательный готовый файл `AppxContentGroupMap.xml` для вашего приложения! Это еще до ваше приложение будет полностью готово для Microsoft Store. Дополнительные сведения о полном процессе добавления потоковой установки в ваше приложение UWP см. в [этой записи блога](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/).

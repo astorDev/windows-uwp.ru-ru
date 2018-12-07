@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 30be8d13c7e549f8ed75060f614de5bbcdb6284f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736124"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795061"
 ---
 # <a name="tools-for-profiling-and-performance"></a>Инструменты для профилирования и производительности
 
@@ -26,4 +26,4 @@ ms.locfileid: "8736124"
 |-----------|-------------|
 | [Анализ производительности приложений UWP с помощью средств диагностики Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh696636.aspx) | Показывая, где находится код приложения во время выполнения программы, профилировщики Visual Studio помогут вам найти узкие места производительности в приложениях, функциях и алгоритмах. |
 | [Производительность XAML: методы расширения возможностей универсальных приложений для Windows с помощью XAML](https://channel9.msdn.com/Events/Build/2015/3-698) | В этой конференции Microsoft Build вы узнаете о новых компонентах платформы, новых инструментах и методах для существенного увеличения производительности универсальных приложений для Windows, основанных на XAML. |
-| [Новые средства XAML в Visual Studio](https://channel9.msdn.com/Events/Build/2015/2-697) | В этой конференции Microsoft Build вы узнаете о некоторых новых возможностях Visual Studio 2015, включая усовершенствованные функции Blend, средства отладки пользовательского интерфейса и улучшенный редактор XAML. Эти средства также доступны в Visual Studio 2017 |
+| [Новые средства XAML в Visual Studio](https://channel9.msdn.com/Events/Build/2015/2-697) | В этой конференции Microsoft Build вы узнаете о некоторых новых возможностях Visual Studio 2015, включая усовершенствованные функции Blend, средства отладки пользовательского интерфейса и улучшенный редактор XAML. Эти средства доступны в Visual Studio 2017 |

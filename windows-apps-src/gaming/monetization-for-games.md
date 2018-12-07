@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, монетизация
 ms.localizationpriority: medium
 ms.openlocfilehash: 91545116b0d7eae107021cc52ee05d299257518c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739876"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794915"
 ---
 #  <a name="monetization-for-games"></a>Монетизация для игр
 
@@ -37,7 +37,7 @@ ms.locfileid: "8739876"
 
 ### <a name="base-price"></a>Базовая цена
 
-Базовая цена игры определяет, как классифицируется ваша игра: как _платная_ или как _бесплатная_. Настроить базовую цену в зависимости от страны и регионы можно использовать [Центр партнеров](https://partner.microsoft.com/dashboard) .
+Базовая цена игры определяет, как классифицируется ваша игра: как _платная_ или как _бесплатная_. Чтобы настроить базовую цену в зависимости от страны и регионы можно использовать [Центр партнеров](https://partner.microsoft.com/dashboard) .
 При определении цены необходимо учитывать [налогообложение при продаже приложений в разные страны](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps) и [ценовые соображения для конкретных рынков](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets). Также можно [установить особые цены для конкретных рынков](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets).
 
 ### <a name="sale-price"></a>Цена распродажи
@@ -90,7 +90,7 @@ ms.locfileid: "8739876"
 
 1. Откройте решение игры в Visual Studio.
 2. В Visual Studio выберите __Проект__ > __Магазин__ > __создание пакетов приложения...__
-3. Для __требуется сборку пакетов для отправки в Microsoft Store?__ следует выбрать __Да__.
+3. Для __вы хотите выполнить сборку пакетов для отправки в Microsoft Store?__ следует выбрать __Да__.
 4. Войдите в свою учетную запись разработчика [Центр партнеров](https://partner.microsoft.com/dashboard) . Если у вас нет учетной записи разработчика, [зарегистрируйтесь](https://developer.microsoft.com/store/register), чтобы получить ее.
 5. Выберите приложение, для которого требуется создать пакет отправки. Если вы еще не создали отправку приложения, укажите новое имя приложения для создания новой отправки. Подробнее см. в статье [Создание приложения посредством резервирования имени](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name).
 6. После создания пакета щелкните __Запустить комплект сертификации приложений для Windows__, чтобы начать процесс тестирования.
@@ -102,7 +102,7 @@ ms.locfileid: "8739876"
 2. На странице __Обзор панели мониторинга__ или __Все приложения__ щелкните нужное приложение. Если вы еще не создали отправку приложения, щелкните __Создать новое приложение__ и зарезервируйте имя.
 3. На странице __Обзор приложения__ щелкните __Начать отправку__.
 4. Настройте эту новую отправку. На странице отправки:
-    * Щелкните __Цены и доступность__. В разделе " __видимость__ " выберите «__Скрыть это приложение и запретить его покупку …__» убедитесь, что вашей команды разработчиков имеет доступ к игре. Подробнее см. в статье [Распространение и видимость](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility).
+    * Щелкните __Цены и доступность__. В разделе " __видимость__ " выберите «__Скрыть это приложение и запретить его покупку …__» убедитесь, что только разработчиков имеет доступ к игре. Подробнее см. в статье [Распространение и видимость](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility).
     * Щелкните __Свойства__. В разделе __Категория и подкатегория__ выберите __Игры__ и выберите подходящую подкатегорию для своей игры.
     * Щелкните __Возрастной рейтинг__. Внимательно заполните анкету.
     * Щелкните __Пакеты__. Отправьте пакет игры, созданный на предыдущем шаге.
@@ -138,7 +138,7 @@ ms.locfileid: "8739876"
 * [Цена и доступность](https://msdn.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
 * [Описание в Магазине](https://msdn.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
 
-Если ваша игра содержит много надстроек, их можно создать программным способом с помощью __API отправки Microsoft Store__. Дополнительные сведения см. в разделе [Создание и управление отправками с помощью служб Microsoft Store](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services).
+Если в игре много надстроек, их можно создать программным способом с помощью __API отправки Microsoft Store__. Дополнительные сведения см. в разделе [Создание и управление отправками с помощью служб Microsoft Store](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services).
 
 ## <a name="display-ads-in-your-game"></a>Показ рекламы в игре
 

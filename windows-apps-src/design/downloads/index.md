@@ -8,16 +8,16 @@ ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 8ffcbbcc73db049498eb09ea60061f93cd7b09f2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751634"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795480"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Наборы инструментов для проектирования и образцы приложений UWP
  
 
-Проектирование и загрузки, связанные с пользовательского интерфейса для приложений Fluent проектирования и UWP. Дополнительные инструменты, такие как Visual Studio, можно найти <a href="https://developer.microsoft.com/downloads">на главной странице загружаемых файлов</a>. 
+Проектирование и связанных с Пользовательским интерфейсом загрузки для Fluent оформление/приложений UWP. Дополнительные инструменты, такие как Visual Studio, можно найти <a href="https://developer.microsoft.com/downloads">на главной странице загружаемых файлов</a>. 
 
 
 ## <a name="design-toolkits"></a>Наборы инструментов для проектирования
@@ -106,12 +106,12 @@ ms.locfileid: "8751634"
 
 ![Fluent изображение редактора темы XAML](images/XamlThemeEditor_screenshot.png)
 **Fluent темы редактора XAML**<br>
-Fluent редактора темы XAML — это средство, которое помогает демонстрируют возможности системы проектирования Fluent Design, а также поддерживает процесс разработки приложения, создающего разметку XAML для нашей инфраструктуры ResourceDictionary, используемые в приложениях универсальной платформы Windows (Многократно).
+Fluent темы редактор XAML — это средство, которое помогает демонстрируют возможности системы проектирования Fluent Design, а также поддерживает процесс разработки приложения, создавая разметку XAML для нашей инфраструктуры ResourceDictionary, используемые в приложениях универсальной платформы Windows (Многократно).
 <a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">Скачать пример средства</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">Ознакомьтесь с помощью средства на GitHub</a>
 
 ![Изображение VanArsdel](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-Пример приложения UWP начала до конца Van Arsdel, Ltd. был создан для демонстрации следующего поколения Microsoft системы проектирования Fluent Design. В случае всесторонней широко используются улучшенные плотность и новые элементы управления в <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Библиотеке пользовательского интерфейса Windows</a> , а также важных базовых возможностей взаимодействия с пользователем платформы и композиции. В примере показано, как вы можете создать широкий эффективной работы взаимодействие с для приобретения устройства IoT (в данном случае лампы) и управления ими.<br>
+Пример приложения UWP начала до конца Van Arsdel, Ltd. был создан для демонстрации следующее поколение Microsoft системы проектирования Fluent Design. В случае всесторонней широко используются улучшенные плотность и новые элементы управления в <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Библиотеке пользовательского интерфейса Windows</a> , а также важных базовых возможностей взаимодействия с пользователем платформы и композиции. В примере показано, как вы можете создать более широкие, эффективной работы с управление и приобретения устройства IoT (в данном случае лампы).<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Скачать пример VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">Посмотреть пример VanArsdel на GitHub</a>
 
 ![создать образ приведите](images/buildcast.png)
