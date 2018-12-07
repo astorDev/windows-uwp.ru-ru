@@ -11,11 +11,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 87df67c480c18ef2c75a9c63d538f0107908ca10
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758754"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787940"
 ---
 # <a name="use-a-maintenance-trigger"></a>Использование триггера обслуживания
 
@@ -36,7 +36,7 @@ ms.locfileid: "8758754"
 Создайте новый объект [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517). Второй параметр— *OneShot*— указывает, однократно или периодически будет выполняться задача обслуживания. Если *OneShot* имеет значение True, первый параметр (*FreshnessTime*) задает число минут ожидания перед планированием фоновой задачи. Если *OneShot* имеет значение False, частоту выполнения фоновой задачи определяет *FreshnessTime*.
 
 > [!NOTE]
-> Если *FreshnessTime* задано значение меньше 15 минут, — это исключение при попытке зарегистрировать фоновую задачу.
+> Если *FreshnessTime* задано значение меньше 15 минут, исключение при попытке зарегистрировать фоновую задачу.
 
 В этом примере кода создает триггер, запускаемый один раз в час.
 

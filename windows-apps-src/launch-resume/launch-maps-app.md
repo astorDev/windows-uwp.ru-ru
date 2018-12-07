@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 08fab2b312fa4ea79d03f350d62070e205d535f8
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742025"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785475"
 ---
 # <a name="launch-the-windows-maps-app"></a>Запуск приложения «Карты Windows»
 
@@ -299,7 +299,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>trfc=1</p></td>
 <td align="left"><p>Определяет, добавляются ли на карту данные о пробках. Если опустить параметр trfc, результаты будут аналогичны использованию <code>trfc=0</code>.</p>
 <div class="alert">
-**Примечание**данные о пробках доступна не во всех регионах.
+**Примечание**данные о пробках доступно не во всех регионах.
 </div>
 <div>
  

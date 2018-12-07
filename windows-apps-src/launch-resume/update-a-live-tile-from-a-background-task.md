@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d5d9e1b93c9f769a748a6a44d0ed77f5bd3a9da
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749202"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8808659"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Обновление живой плитки из фоновой задачи
 
@@ -152,7 +152,7 @@ namespace BackgroundTasks
 6.  Щелкните вкладку **Application UI** (Пользовательский интерфейс приложения) или коснитесь ее.
 7.  Установите для параметра **Lock screen notifications** (Уведомления экрана блокировки) значение **Badge and Tile Text** (Индикатор событий и текст плитки).
 8.  Укажите путь к значку размером 24x24 пикселя в поле **Badge logo** (Индикатор событий).
-    **Важные**этом значке должны быть использованы только монохромные и прозрачные пиксели.
+    **Важные**этот значок должны быть использованы только монохромные и прозрачные пиксели.
 9.  В поле **Small logo** (Мелкий значок) укажите путь к значку размером 30x30 пикселей.
 10. В поле **Wide logo** (Широкий значок) укажите путь к значку размером 310x150 пикселей.
 

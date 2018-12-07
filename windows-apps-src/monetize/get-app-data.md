@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, данные приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 23e392e2064a2a48089d1efadd1461c146e0d343
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748354"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786758"
 ---
 # <a name="get-app-data"></a>Получение данных приложения
 
@@ -68,7 +68,7 @@ ms.locfileid: "8748354"
 | primaryName   | string  | Основное имя приложения.      |
 | packageFamilyName | string  | Имя семейства пакетов для приложения.      |
 | packageIdentityName          | string  | Имя идентификации пакета для приложения.                       |
-| publisherName       | string  | Идентификатор издателя Windows, который связан с приложением. Это соответствует значению **Пакет/идентификатор/издатель** , которое отображается на странице [удостоверения приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) для приложения в центре партнеров.       |
+| publisherName       | string  | Идентификатор издателя Windows, который связан с приложением. Это соответствует значению **Пакет/идентификатор/издатель** , которое отображается на странице " [удостоверение приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) " для приложения в центре партнеров.       |
 | firstPublishedDate      | string  | Дата первой публикации приложения в формате ISO 8601.   |
 | lastPublishedApplicationSubmission       | объект | [Ресурс отправки](#submission_object), который предоставляет сведения о последней опубликованной отправке для приложения.    |
 | pendingApplicationSubmission        | объект  |  [Ресурс отправки](#submission_object), который предоставляет сведения о текущей ожидающей отправке для приложения.   |   

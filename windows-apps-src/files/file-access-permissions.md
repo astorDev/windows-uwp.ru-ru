@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d960235e73ea9172fb966f227af9440923f3553e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739716"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8784395"
 ---
 # <a name="file-access-permissions"></a>Разрешения на доступ к файлам
 
@@ -87,7 +87,7 @@ getFileTask.then([](StorageFile^ file)
 
 Кроме того, доступ к файлам в каталоге установки приложения (в отличие от иных расположений) также можно получить, используя некоторые [модели Win32 и COM для приложений универсальной платформы Windows (UWP)](https://msdn.microsoft.com/library/windows/apps/br205757) и [функции стандартной библиотеки C/C++ из Microsoft Visual Studio](http://msdn.microsoft.com/library/hh875057.aspx).
 
-Папка установки приложения предназначена только для чтения. Не удается получить доступ к папке установки через средство выбора файлов.
+Папка установки приложения предназначена только для чтения. Нельзя получить доступ к папке установки через средство выбора файлов.
 
 ### <a name="application-data-locations"></a>Расположения данных приложения
 Папки, в которых ваше приложение может хранить данные. Эти папки (локальная, перемещаемая и временная) создаются при установке вашего приложения.
@@ -255,7 +255,7 @@ createFolderTask.then([](StorageFolder^ newFolder)
 | Местоположение | Возможность | API Windows.Storage |
 |----------|------------|---------------------|
 | Все файлы, к которым у пользователя имеется доступ. Например: документы, изображения, фотографии, файлы для загрузки, рабочий стол, OneDrive и т. д. | broadFileSystemAccess<br><br>Это ограниченная возможность. При первом использовании система попросит пользователя предоставить доступ. Доступ настраивается в разделе "Параметры" > "Конфиденциальность" > "Файловая система". Если приложение отправляется в магазин Store, объявляющий эту возможность, потребуется дополнительно обосновать, зачем приложению нужна эта возможность и как планируется ее использовать.<br>Эта возможность работает для API-интерфейсов в пространстве [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) | Неприменимо |
-| Документы | DocumentsLibrary <br><br>Примечание. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении. <br><br>Используйте данную возможность, если ваше приложение:<br>- поддерживает кросс-платформенный автономный доступ к конкретному содержимому OneDrive, используя допустимые URL-адреса OneDrive или идентификаторы ресурсов;<br>-Сохраняет открытые файлы в OneDrive пользователя автоматически во время автономного | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
+| Документы | DocumentsLibrary <br><br>Примечание. Необходимо добавить сопоставления типов файлов в манифест приложения, в котором указаны конкретные типы файлов, доступные приложению в этом расположении. <br><br>Используйте данную возможность, если ваше приложение:<br>- поддерживает кросс-платформенный автономный доступ к конкретному содержимому OneDrive, используя допустимые URL-адреса OneDrive или идентификаторы ресурсов;<br>-Сохраняет открытые файлы в OneDrive пользователя автоматически при автономном режиме | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
 | Музыка     | MusicLibrary <br>См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | Изображения  | PicturesLibrary<br> См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
 | Видео    | VideosLibrary<br>См. также статью [Файлы и папки в библиотеках музыки, изображений и видео](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   

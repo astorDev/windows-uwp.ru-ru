@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, отправка всплывающих уведомлений, уведомления, отправка уведомлений, всплывающие уведомления, руководство, краткое руководство, начало работы, пример кода, пошаговое руководство
 ms.localizationpriority: medium
 ms.openlocfilehash: 410e8121aecfe13805586c9287f62444f80a1b1b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739178"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787238"
 ---
 # <a name="send-a-local-toast-notification"></a>Отправка локального всплывающего уведомления
 
@@ -46,7 +46,7 @@ ms.locfileid: "8739178"
 
 Чтобы полностью понять этот раздел, изучите инструкции ниже...
 
-* Хорошее знание понятий и терминов всплывающих уведомлений. Дополнительные сведения см. в разделе[всплывающего уведомления и центр уведомлений обзора](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
+* Хорошее знание понятий и терминов всплывающих уведомлений. Дополнительные сведения см. в разделе[всплывающего уведомления и центр уведомлений Обзор](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
 * Знакомство с содержимым всплывающего уведомления Windows 10. Дополнительные сведения см. в [документации по содержимому всплывающего уведомления](adaptive-interactive-toasts.md).
 * Проект приложения Windows 10 UWP
 

@@ -1,16 +1,16 @@
 ---
 title: Тени композиции
-description: Тени API-интерфейсы позволяют добавлять динамических настраиваемые теней содержимое пользовательского интерфейса.
+description: Тени API-интерфейсы позволяют добавлять динамические настраиваемые тени содержимое пользовательского интерфейса.
 ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9541ea1c00d473bc4881a80d8597625592e278f9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733025"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783868"
 ---
 # <a name="shadows-in-windows-ui"></a>Тени в окнах пользовательского интерфейса
 
@@ -18,7 +18,7 @@ ms.locfileid: "8733025"
 
 ## <a name="basic-drop-shadow"></a>Основные тени
 
-Для создания базового тени, просто создайте новый DropShadow и сопоставить его с вашей visual. Тени — прямоугольную по умолчанию. Стандартный набор свойств, доступны для настройки внешнего вида вашего теней.
+Для создания базового тени, просто создайте новый DropShadow и сопоставить его с вашей visual. Тени — прямоугольную по умолчанию. Стандартный набор свойств, доступные для настройки внешнего вида вашего теней.
 
 ```cs
 var basicRectVisual = _compositor.CreateSpriteVisual();
@@ -39,13 +39,13 @@ basicRectVisual.Shadow = basicShadow;
 
 Существует несколько способов для определения формы для вашего DropShadow:
 
-- **Используйте значение по умолчанию** — по умолчанию фигуры DropShadow определяется свойством режим «По умолчанию» на CompositionDropShadowSourcePolicy. Для SpriteVisual по умолчанию используется прямоугольные, если не предоставляется маски. Для LayerVisual по умолчанию — наследовать маски с помощью альфа-канал кисти визуального элемента.
+- **Используйте значение по умолчанию** — по умолчанию форма DropShadow определяется свойством режима «По умолчанию» на CompositionDropShadowSourcePolicy. Для SpriteVisual по умолчанию используется прямоугольные, если не предоставляется маски. LayerVisual по умолчанию является наследуют маски с помощью альфа-канал кисти визуального элемента.
 - **Задайте маску** — можно задать свойство [маски](/uwp/api/windows.ui.composition.dropshadow.mask) , чтобы определить маску непрозрачности тени.
-- **Укажите, использовать унаследованные маска** — задайте свойство [SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy) использовать [CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy). InheritFromVisualContent используется маска, созданное из альфа-канал кисти визуального элемента.
+- **Укажите, использовать унаследованные маска** — свойства [SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy) использовать [CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy). InheritFromVisualContent используется маска, созданное из альфа-канал кисти визуального элемента.
 
 ## <a name="masking-to-match-your-content"></a>Маскировка в соответствии содержимого
 
-Если вы хотите, чтобы ваш теней в соответствии с содержимым визуального элемента можно использовать кисть визуального элемента для свойства маски теней или задать тени автоматически наследовать маска от содержимого. Если вы используете LayerVisual, тени будет наследовать маски по умолчанию.
+Если вы хотите, чтобы ваш теней в соответствии с содержимым визуального элемента можно использовать кисть визуального элемента для свойства маска теней или задать тени автоматически наследовать маска от содержимого. Если вы используете LayerVisual, тени будет наследовать маски по умолчанию.
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -65,9 +65,9 @@ shadow.Offset = new Vector3(20, 20, 20);
 imageSpriteVisual.Shadow = shadow;
 ```
 
-![Подключенная веб-изображения с маской тени](images/ms-brand-web-dropshadow.png)
+![Подключенные веб-изображения с маской тени](images/ms-brand-web-dropshadow.png)
 
-## <a name="using-an-alternative-mask"></a>С помощью альтернативных маску
+## <a name="using-an-alternative-mask"></a>С помощью альтернативных маски
 
 В некоторых случаях может потребоваться фигур тени, таким образом, чтобы она не соответствует содержимое визуального элемента. Для достижения этого эффекта, необходимо явно задать свойство маски, с помощью кисти с альфа-канала.
 
@@ -93,11 +93,11 @@ shadow.Offset = new Vector3(20, 20, 20);
 imageSpriteVisual.Shadow = shadow;
 ```
 
-![Подключенная веб-изображения с помощью круг маскируется тени](images/ms-brand-web-masked-dropshadow.png)
+![Подключенные веб-изображения с помощью круг маскируется тени](images/ms-brand-web-masked-dropshadow.png)
 
 ## <a name="animating"></a>Анимация
 
-Как и стандартные в визуальном уровне, DropShadow свойства можно анимировать с помощью анимации композиции. Ниже мы измените код из примера брызги выше анимировать radius размытия тени.
+Как и стандартные в визуальном уровне, DropShadow свойства можно анимировать с помощью анимации композиции. Ниже мы измените код из примера брызги выше анимировать радиуса размытия тени.
 
 ```cs
 ScalarKeyFrameAnimation blurAnimation = _compositor.CreateScalarKeyFrameAnimation();
@@ -113,13 +113,13 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 Если вы хотите добавить тени для более сложных элементов платформы, для взаимодействия с тенями между XAML и композиции несколькими способами:
 
-1. Используйте [DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) из набора средств сообщества Windows. См. в [документации по DropShadowPanel](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel) подробные сведения о том, как его использовать.
-1. Создание визуального использовать в качестве узла тени и привязать к XAML выданного объекта Visual.
-1. Используйте элемент управления пользовательских CompositionShadow Галерея образцов композиции [SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon) . См. в примере для использования.
+1. Используйте [DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) , доступные в наборе средств сообщества Windows. См. в [документации DropShadowPanel](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel) подробные сведения о том, как его использовать.
+1. Создание визуального элемента на использовать в качестве узла тени и привязать к XAML выданного объекта Visual.
+1. Используйте элемент управления галереи пример композиции [SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon) пользовательских CompositionShadow. См. в примере для использования.
 
 ## <a name="performance"></a>Производительность
 
-Несмотря на то, что визуальный уровень снабжена многих возможностей оптимизации для создания эффектов эффективный и удобным, создающего тени может быть относительно дорого операции в зависимости от того, какие параметры, выбранные. Ниже приведены высокого уровня «затраты на» для разных типов тени. Обратите внимание, что несмотря на то, что некоторые тени может быть затратной они по-прежнему возможно, стоит слишком часто используется в некоторых сценариях.
+Несмотря на то, что визуальный уровень снабжена многих возможностей оптимизации для создания эффектов эффективный и удобным, создающего тени может быть относительно дорого операции в зависимости от того, какие параметры, выбранные. Ниже приведены высокого уровня «затраты» для разных типов тени. Обратите внимание, что несмотря на то, что некоторые тени может быть затратной они по-прежнему возможно, стоит слишком часто используется в некоторых сценариях.
 
 Характеристики теней| Стоимость
 ------------- | -------------

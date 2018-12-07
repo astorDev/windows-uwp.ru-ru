@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, заметки о выпуске
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bab822c81cdd5af1e6b00ca8d33ed7f7ea3838f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738126"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8806732"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Заметки о выпуске библиотек Microsoft Advertising
 
 
 
 
-Этот раздел содержит заметки о текущем выпуске библиотек Microsoft Advertising. Эти библиотеки поддерживают приложения XAML и JavaScript/HTML для Windows10, Windows8.1, Windows Phone 8.1 и WindowsPhone8.
+Этот раздел содержит заметки о текущем выпуске библиотек Microsoft Advertising. Библиотеки поддерживают приложения XAML и JavaScript/HTML для Windows10, Windows8.1, Windows Phone 8.1 и WindowsPhone8.
 
 ## <a name="installation"></a>Установка
 

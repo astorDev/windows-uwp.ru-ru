@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, удаление тестового пакета
 ms.localizationpriority: medium
 ms.openlocfilehash: fa3fa78c695538ec13dbd20d38a24224c560463e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733473"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8784326"
 ---
 # <a name="delete-a-package-flight"></a>Удаление тестового пакета
 
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | Недопустимые параметры запроса. |
 | 404  | Не удалось найти указанный тестовый пакет.  |
-| 409  | Указанный тестовый пакет найден, однако ее не удалось удалить в текущем состоянии или приложение использует компонент центра партнеров, [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | Указанный тестовый пакет найден, однако ее не удалось удалить в текущем состоянии или приложение использует компонент центра партнеров, [в настоящее время не поддерживается API отправки в Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Статьи по теме

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, API коллекции Microsoft Store, uwp, просмотр продуктов
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e0f7f8c0f682eaa129f44eaa421fabd63dbfce4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734424"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794200"
 ---
 # <a name="query-for-products"></a>Запрос продуктов
 
@@ -132,7 +132,7 @@ Content-Type: application/json
 | devOfferId           | строка             | Идентификатор предложения покупки из приложения.              | Нет       |
 | endDate              | Дата и время           | Дата окончания срока действия элемента.              | Да      |
 | fulfillmentData      | строка             | Н/д         | Нет       |
-| inAppOfferToken      | строка             | Строка кода указанная разработчиком продукта, назначенная элементу в центре партнеров. Пример кода продукта — это *product123*. | Нет       |
+| inAppOfferToken      | строка             | Строка идентификатора указанная разработчиком продукта, назначенная элементу в центре партнеров. Пример кода продукта — *product123*. | Нет       |
 | itemId               | строка             | Идентификатор, отличающий этот элемент коллекции от других элементов, принадлежащих пользователю. Этот идентификатор уникален для каждого продукта.   | Да      |
 | localTicketReference | string             | Идентификатор ранее предоставленного в тексте запроса параметра *localTicketReference*.                  | Да      |
 | modifiedDate         | Дата и время           | Дата последнего изменения элемента.              | Да      |

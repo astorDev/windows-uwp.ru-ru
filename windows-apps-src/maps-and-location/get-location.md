@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, карта, расположение, функция определения местоположения
 ms.localizationpriority: medium
 ms.openlocfilehash: fae533e0ce42e14e3c53f5083b746a9aae221adf
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8752158"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783308"
 ---
 # <a name="get-the-users-location"></a>Получение местоположения пользователя
 
@@ -56,7 +56,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 Метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) запрашивает у пользователя разрешение на доступ к данным о местоположении. Каждое приложение запрашивает у пользователя доступ только один раз. После того как пользователь в первый раз предоставил или запретил доступ, этот метод больше не запрашивает его у пользователя. Чтобы помочь пользователю изменять разрешения на доступ к данным о местоположении после первоначального решения, рекомендуется предоставить ссылку на параметры местоположения, как показано далее в этом разделе.
 
->Примечание: Этот компонент грубым расположение позволяет приложению получать намеренно огрубленные (приблизительные) данные о местоположении без явного разрешения пользователя (коммутатор системные расположение по-прежнему необходимо **на**, однако). Узнайте, как использовать грубым месте вашего приложения, см. в разделе метод [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) в классе [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) .
+>Примечание: Этот компонент грубым расположение позволяет приложению получать намеренно огрубленные (приблизительные) данные о местоположении без явного разрешения пользователя (расположение системные переход по-прежнему необходимо **на**, однако). Узнайте, как использовать грубым месте вашего приложения, см. в разделе метод [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) в классе [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) .
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>Шаг 2. Определение местоположения пользователя и регистрация изменений в разрешениях на доступ к данным о местоположении
 
@@ -261,7 +261,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 Для того чтобы ваше приложение могло получить доступ к данным о местоположении пользователя, необходимо включить на устройстве функцию **Местоположение**. Убедитесь, что в приложении **Параметры** включены следующие **параметры конфиденциальности данных о местоположении**.
 
--   **Местоположение для этого устройства …** будет **включен (неприменимо в Windows10 Mobile)**
+-   **Местоположение для этого устройства …** — **включен (неприменимо в Windows10 Mobile)**
 -   Параметр **Местоположение** служб определения местоположения **включен**
 -   В разделе **Выберите приложения, которым будет разрешено использовать данные о вашем местоположении** для вашего приложения установлено значение **Вкл.**
 

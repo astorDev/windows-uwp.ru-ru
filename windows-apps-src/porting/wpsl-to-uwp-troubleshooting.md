@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 372fd491e329a468c273dd039c917eba5dc3e123
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732212"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794230"
 ---
 #  <a name="troubleshooting-porting-windowsphone-silverlight-to-uwp"></a>Устранение неполадок при переносе WindowsPhone Silverlight в UWP
 
@@ -32,7 +32,7 @@ ms.locfileid: "8732212"
 
 В этом разделе объясняется, что делать, если при открытии Windows10 проекта в Visual Studio, вы увидите сообщение «требуется обновление Visual Studio. Для одного или нескольких проектов требуется пакет SDK &lt;версия&gt;, который не установлен или не включен в обновление Visual Studio».
 
--   Во-первых определите номер версии пакета SDK для Windows10, что вы установили. Откройте **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\&lt;versionfoldername&gt;** и проверьте значение *&lt;versionfoldername&gt;*, которое будет представлено в формате четырехкомпонентной системы обозначений: Major.Minor.Build.Revision.
+-   Во-первых определите номер версии пакета SDK для Windows10, который вы установили. Откройте **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\&lt;versionfoldername&gt;** и проверьте значение *&lt;versionfoldername&gt;*, которое будет представлено в формате четырехкомпонентной системы обозначений: Major.Minor.Build.Revision.
 -   Откройте файл проекта для правки и найдите элементы `TargetPlatformVersion` и `TargetPlatformMinVersion` . Измените их, чтобы они выглядели таким образом вид, заменив *&lt;versionfoldername&gt;* номером версии в формате четырехкомпонентной системы обозначений, найденным на диске:
 
 ```xml

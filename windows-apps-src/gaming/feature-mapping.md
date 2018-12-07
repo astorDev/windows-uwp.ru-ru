@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx 9, directx 11, перенос
 ms.localizationpriority: medium
 ms.openlocfilehash: 56bb86706795e773d21e45263f640f9fc0aa596a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758384"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783588"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>Сопоставление компонентов DirectX9 и API DirectX11
 
@@ -342,7 +342,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>Примечание</strong>  использование Фиксировано .r в шейдере, чтобы дублировать красный цвет в другие компоненты, чтобы получить поведение Direct3D 9.
+<strong>Примечание</strong>  использование Фиксировано .r в шейдере, чтобы дублировать красный цвет в другие компоненты поведение Direct3D 9.
 </div>
 <div>
  
@@ -352,7 +352,7 @@ Microsoft DirectPlay устарел. Если ваша игра использу
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>Примечание</strong>  используйте Фиксировано .rrrg в шейдере, чтобы дублировать красный цвет, переместить зеленый цвет в альфа-компоненты поведение Direct3D 9 и.
+<strong>Примечание</strong>  используйте Фиксировано .rrrg в шейдере, чтобы дублировать красный цвет и переместить зеленый цвет в альфа-компоненты поведение Direct3D 9.
 </div>
 <div>
  
