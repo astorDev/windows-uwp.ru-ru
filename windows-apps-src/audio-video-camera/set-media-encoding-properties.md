@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f81ab1ef635bf4cfb20c289d6998c242f7aa47fc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736890"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787420"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Установка формата, разрешения и частоты кадров для MediaCapture
 
@@ -30,7 +30,7 @@ ms.locfileid: "8736890"
 
 Если создать простой вспомогательный класс, включающий функции интерфейса [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011), будет удобнее выбирать набор свойств кодирования, которые отвечают конкретным критериям. Этот вспомогательный класс особенно полезен для следующего поведения свойств кодирования.
 
-**Предупреждение**  [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) метод принимает член перечисления [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) , такие как **VideoRecord** или **фото**и возвращает список либо [** ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) или [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) объекты, которые передают поток кодирования параметры, например разрешение фотографию или видео. Результаты вызова **GetAvailableMediaStreamProperties** могут включать **ImageEncodingProperties** или **VideoEncodingProperties**, независимо от того, какое указано значение **MediaStreamType**. По этой причине необходимо всегда проверять тип каждого возвращенного значения и приводить его к соответствующему типу, прежде чем пытаться получить доступ к какому-либо значению свойства.
+**Предупреждение**  [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) метод принимает член перечисления [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) , например **VideoRecord** или **фото**и возвращает список либо [** ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) или [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) объектов, которые передают поток кодирования параметры, например разрешение фотографию или видео. Результаты вызова **GetAvailableMediaStreamProperties** могут включать **ImageEncodingProperties** или **VideoEncodingProperties**, независимо от того, какое указано значение **MediaStreamType**. По этой причине необходимо всегда проверять тип каждого возвращенного значения и приводить его к соответствующему типу, прежде чем пытаться получить доступ к какому-либо значению свойства.
 
 Вспомогательный класс, определенный ниже, выполняет проверку и приведение типа для параметра [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) или [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217), чтобы коду приложения не нужно было различать два типа. В дополнение к этому, вспомогательный класс представляет свойства для пропорций свойств, частоты кадров (только для свойств кодирования видео) и понятного имени, что упрощает отображение свойств кодирования в пользовательском интерфейсе приложения.
 

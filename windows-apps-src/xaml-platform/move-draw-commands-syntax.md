@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 604ad25bb65486b3b388a9a03d7503b0c1ce9c03
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8746559"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783845"
 ---
 # <a name="move-and-draw-commands-syntax"></a>Синтаксис команд перемещения и рисования
 
@@ -227,7 +227,7 @@ ms.locfileid: "8746559"
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>Средства проектирования, создающие команды перемещения и рисования
 
-С помощью **пера** и другие инструменты рисования в Blend для Microsoft Visual Studio2015 обычно создают объект [**путь**](/uwp/api/Windows.UI.Xaml.Shapes.Path) с перемещением и команд рисования.
+С помощью **пера** и другие инструменты рисования в Blend для Microsoft Visual Studio2015 обычно создают объект [**пути**](/uwp/api/Windows.UI.Xaml.Shapes.Path) , при перемещении и команд рисования.
 
 Вы можете увидеть существующие данные команд перемещения и рисования в некоторых частях элемента управления, определенных в стандартных XAML-шаблонах для элементов управления в среде выполнения Windows. Например, некоторые элементы управления используют [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722), который содержит данные, определенные как команды перемещения и рисования.
 

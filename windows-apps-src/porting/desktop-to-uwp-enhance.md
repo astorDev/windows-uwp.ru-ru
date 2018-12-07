@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 42229212a0f54e307eaa841849c1a279c4354d2a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736274"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788662"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Улучшите свое классическое приложение для Windows 10
 
@@ -203,7 +203,7 @@ void UWP::ShowToast()
 
 Можно скомпилировать один набор двоичных файлов для всех пользователей Windows независимо от того, какой версией Windows они пользуются. Приложение вызывает API среды выполнения Windows только в том случае, если пользователь работает ваше приложение как упакованное приложение в Windows 10.
 
-Для добавления проверок во время выполнения кода проще всего установить этот пакет Nuget: [Вспомогательные элементы моста для рабочего стола](https://www.nuget.org/packages/DesktopBridge.Helpers/) , а затем воспользоваться ``IsRunningAsUWP()`` метод для отсеивания всего кода, который вызывает API среды выполнения Windows. Дополнительные сведения см. в этой записи блога: [Мост для классических приложений — определение контекста приложения](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
+Для добавления проверок во время выполнения кода проще всего установить этот пакет Nuget: [Вспомогательные элементы моста для рабочего стола](https://www.nuget.org/packages/DesktopBridge.Helpers/) , а затем воспользоваться ``IsRunningAsUWP()`` метод для отсеивания всего кода, который будет вызывать API среды выполнения Windows. Дополнительные сведения см. в этой записи блога: [Мост для классических приложений — определение контекста приложения](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
 
 ## <a name="related-video"></a>Видео по теме
 

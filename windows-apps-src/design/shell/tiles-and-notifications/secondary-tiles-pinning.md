@@ -1,6 +1,6 @@
 ---
 Description: Learn how to pin a secondary tile to Start from your UWP app.
-title: Закрепление вспомогательных плиток меню "Пуск"
+title: Закрепление вспомогательных плиток в меню "Пуск"
 label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
@@ -8,13 +8,13 @@ ms.topic: article
 keywords: windows 10, uwp, вспомогательные плитки, закрепить, закрепление, краткое руководство, пример кода, пример, secondarytile
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bebee86c824242cf031503617d4a880ebbb74df
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743072"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789687"
 ---
-# <a name="pin-secondary-tiles-to-start"></a>Закрепление вспомогательных плиток меню "Пуск"
+# <a name="pin-secondary-tiles-to-start"></a>Закрепление вспомогательных плиток в меню "Пуск"
 
 
 В этом разделе описано, как создать вспомогательную плитку для приложения UWP и закрепить ее в меню "Пуск".
