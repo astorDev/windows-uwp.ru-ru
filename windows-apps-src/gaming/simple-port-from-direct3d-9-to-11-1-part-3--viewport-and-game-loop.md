@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, портирование, игровой цикл, direct3d 9, directx 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 2087959bc29d2b2b02cdc9a2f373a8b62ea8c25a
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8793805"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8829947"
 ---
 # <a name="port-the-game-loop"></a>Портирование игрового цикла
 

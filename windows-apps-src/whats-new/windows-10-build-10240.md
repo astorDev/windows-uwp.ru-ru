@@ -7,17 +7,17 @@ ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
 ms.openlocfilehash: 75c5c34f3dec48bbee2feccde5b60cde45a241f9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729926"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8827209"
 ---
 # <a name="whats-new-in-windows10-for-developers-build-10240"></a>Новые возможности в Windows10 для разработчиков, сборка 10240
 
 Сборка 10240 Windows10 и обновленные средства разработчика предоставляют доступ к инструментам, компонентам и возможностям для создания потрясающих приложений универсальной платформы Windows. [Установив средства и пакет SDK](http://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
-Вот по характеристикам Изучите новые возможности для вас в Windows10 сборка 10240 (также известная как Windows 10 версии 1507).
+Вот, сгруппированные Изучите новые возможности для вас в Windows10 сборке 10240 (также известная как Windows 10 версии 1507).
 
 ## <a name="adaptive-layouts"></a>Адаптивные макеты
 
