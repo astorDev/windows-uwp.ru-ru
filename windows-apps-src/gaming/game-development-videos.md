@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, видеоролики, GDC, сборка
 ms.localizationpriority: medium
 ms.openlocfilehash: de04b0b272bbc6889c5fb9b13e5487902a77e98c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750172"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892731"
 ---
 # <a name="game-development-videos"></a>Видеоролики о разработке игр
 
@@ -25,12 +25,12 @@ ms.locfileid: "8750172"
 
 * [Сцене несколько маленьких пушистых страницу экономичного подход к разработке игр — как независимая studio увеличился попадание игры после только 8 недель](https://channel9.msdn.com/Shows/Level-Up/Fluffy-Fairys-Lean-Approach-to-Game-Development-How-an-Indie-Studio-Grew-a-Hit-Game-After-Only-8-W) - Владимир Löffler из сцене несколько маленьких Пушистых страницу
 * [1 день: игры, везде](https://channel9.msdn.com/Shows/Level-Up/Your-game-everywhere-PlayFab) -Brendan Vanous
-* [День 2: игры для всех пользователей с помощью PlayFab (презентации)](https://channel9.msdn.com/Shows/Level-Up/Your-Game-For-Everyone-With-PlayFab-Theater-Presentation) -Brendan Vanous
+* [День 2: игры для всех пользователей с помощью PlayFab (представление)](https://channel9.msdn.com/Shows/Level-Up/Your-Game-For-Everyone-With-PlayFab-Theater-Presentation) -Brendan Vanous
 * [День 3: игры, каждый способом, он воспроизводится](https://channel9.msdn.com/Shows/Level-Up/Your-game-every-way-its-played-PlayFab-Theater-Presentation) -Brendan Vanous
 
 ### <a name="azure-cloud-services"></a>Облачные службы Azure
 
-* [Был создан как Walking Dead нет человека Земли игры масштабирование на Azure](https://channel9.msdn.com/Shows/Level-Up/How-The-Walking-Dead-No-Mans-Land-was-built-to-scale-on-Azure-Theater-Presentation) -Hiitola Калле из Next Games
+* [Был создан как Walking Dead нет человека Земли игры для масштабирования в Azure](https://channel9.msdn.com/Shows/Level-Up/How-The-Walking-Dead-No-Mans-Land-was-built-to-scale-on-Azure-Theater-Presentation) -Hiitola Калле из Next Games
 * [Azure Cosmos DB: полный обзор](https://channel9.msdn.com/Shows/Level-Up/Azure-Cosmos-DB-Comprehensive-Overview) -Aleksey Savateyev
 * [Контейнеры, кластерами и облака для игр](https://channel9.msdn.com/Shows/Level-Up/Containers-Clusters-and-the-Cloud-for-Gaming-Theater-Presentation-1) - Джеймс Trott
 * [Отрисовка в Azure](https://channel9.msdn.com/Shows/Level-Up/Rendering-in-Azure-Theater-Presentation) - John Thuotte
@@ -48,18 +48,18 @@ ms.locfileid: "8750172"
 
 Что такое VSTS? Узнайте, как реализовать разработка и эксплуатация в процессе сборки: [Введение в Visual Studio Team Services](https://channel9.msdn.com/Shows/Level-Up/Introduction-to-Visual-Studio-Team-Services) - Lyalin Дмитрий, Джеймс Montemagno
 
-* [Планирование и Разработка игр с помощью всю мощь VSTS: гибкими, демонстрации начала до конца CI & компакт-диска](https://channel9.msdn.com/Shows/Level-Up/Planning-and-building-games-using-the-full-power-of-VSTS-Agile-CI--CD-end-to-end-demo) -Фергюсон Rogan
-* [Сборка в следующей игре компонентам Visual Studio Team Services и группам Unity построения облачных](https://channel9.msdn.com/Shows/Level-Up/Build-your-next-game-powered-by-Visual-Studio-Team-Services-and-Unity-Teams-cloud-build-Theater) - Дмитрий Lyalin
+* [Планирование и Разработка игр с помощью всю мощь VSTS: гибкими, демонстрации начала до конца CI и компакт-](https://channel9.msdn.com/Shows/Level-Up/Planning-and-building-games-using-the-full-power-of-VSTS-Agile-CI--CD-end-to-end-demo) -Rogan Фергюсон
+* [Сборка Далее игры на платформе Visual Studio Team Services и Unity построения облачных](https://channel9.msdn.com/Shows/Level-Up/Build-your-next-game-powered-by-Visual-Studio-Team-Services-and-Unity-Teams-cloud-build-Theater) - Дмитрий Lyalin
 * [Постоянно проверки, распространения и отслеживания игры с помощью приложения центр](https://channel9.msdn.com/Shows/Level-Up/Continuously-Test-distribute-and-monitor-your-game-with-App-Center-Theater-Presentation) - белый Джеймс
-* [Настройка CI/CD конвейер для Node.js, Python, .NET, Go, Ruby или на языке Java — в минутах](https://channel9.msdn.com/Shows/Level-Up/Setup-your-CICD-pipeline-for-Nodejs-Python-NET-Go-Ruby-or-Java-in-Minutes) - метка Wang
-* [Agile инструменты набор с VSTS](https://channel9.msdn.com/Shows/Level-Up/Agile-tooling-set-with-VSTS) - Фергюсон Rogan, Джеймс Montemagno
+* [Настройка CI/CD конвейер Node.js, Python, .NET, Go, Ruby, или на языке Java — в минутах](https://channel9.msdn.com/Shows/Level-Up/Setup-your-CICD-pipeline-for-Nodejs-Python-NET-Go-Ruby-or-Java-in-Minutes) - метка Wang
+* [Гибкий инструменты набор с VSTS](https://channel9.msdn.com/Shows/Level-Up/Agile-tooling-set-with-VSTS) - Фергюсон Rogan, Джеймс Montemagno
 
 ### <a name="git"></a>Git
 
 Только начинаете знакомство системы управления версиями? Введение в Git и Git виртуальной файловой системы (GVFS): [Введение в GVFS](https://channel9.msdn.com/Shows/Level-Up/Introduction-to-GVFS) - Thomson Эдвард, Джеймс Montemagno
 
 * [Работа с большой двоичный ресурсы игры, с помощью системы большого файла Git](https://channel9.msdn.com/Shows/Level-Up/Working-with-large-binary-game-assets-using-Git-Large-File-system) - Thomson Эдвард
-* [Git с помощью Unity для разработки игр](https://channel9.msdn.com/Shows/Level-Up/Git-with-Unity-for-Game-Development) - Thomson Эдвард
+* [Git с Unity для разработки игр](https://channel9.msdn.com/Shows/Level-Up/Git-with-Unity-for-Game-Development) - Thomson Эдвард
 
 ### <a name="visual-studio"></a>Visual Studio
 
@@ -84,15 +84,15 @@ ms.locfileid: "8750172"
 
 * [Перемещает специальных возможностей смотрит яркости. 2017 г. игра](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Looking-Bright-2017s-Game-Accessibility-Advances) - Hamilton Ян эксперта отрасли специальных возможностей
 * [CVAA и что это означает для игр доступа](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-The-CVAA-and-What-it-Means-for-Gaming-Access) -Strauss Petlz Карен из Федеральной комиссии связи
-* [Я внесенные моих игры Blind специальных возможностей — вы не уверены, что произошло Далее …](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-I-Made-My-Game-Blind-Accessible--You-Wont-Believe-What-Happened-Next) -Мишель Мартен из MetalPop игр
+* [Я внесенные моей игры Blind специальных возможностей — вы не уверены, что произошло Далее …](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-I-Made-My-Game-Blind-Accessible--You-Wont-Believe-What-Happened-Next) -Мишель Мартен из MetalPop игры
 * [Параметры дизайна cognitive специальных возможностей и для образовательных учреждений музыки для аутизмом](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Cognitive-Accessibility-Design-Choices-and-Music-Education-for-Autism) - Лори Landay из Berklee института музыки
 * [Ramping вверх специальных возможностей](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Ramping-Up-Accessibility) - Stevens Карен из EA Спорт
-* [Современных реализации специальных возможностей. Изменение соболезнованиями решение](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Modern-Game-Accessibility-Changing-Sympathy-to-Solution) -Кевин Keeker из Playstation и Томпсона Sam с широким Studios Sony мира
+* [Современных реализации специальных возможностей. Изменение сочувствием решение](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Modern-Game-Accessibility-Changing-Sympathy-to-Solution) -Кевин Keeker из Playstation и Томпсона Sam с широким Studios Sony мира
 * Представитель [Воспроизведение основной видеоигры без при появлении](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Playing-Mainstream-Video-Games-Without-Sight) - SightlessKombat, специальные возможности
-* [Как сообществу внести вклад позволяет улучшить разработку](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-How-Community-Collaboration-Improves-Development) - Джейсон Canam из семьи игр
+* [Как сообществу внести вклад позволяет улучшить разработку](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-How-Community-Collaboration-Improves-Development) - Джейсон Canam из семьи игры
 * [Как Live Streaming объединяет следующего уровня включения](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Beyond-Gaming-How-Live-Streaming-Brings-Next-Level-Inclusion) - Tara Voelker из Mixer
-* [Все неслышащие игроки хотят — у некоторых исследованием](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-All-Deaf-Gamers-Wanna-Do-is-Have-Some-Fun) - динамики панели: пропагандирует Крис Робинсоном и Piersa Кристен специальных возможностей. Майкл Энтони от корпорации Майкрософт
-* Представитель [Появлением любви букву в отрасли игры](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-A-Fraught-Love-Letter-to-the-Games-Industry) - Томпсона Вишня специальных возможностей
+* [Все неслышащие игроки хотят — у некоторых удовольствие](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-All-Deaf-Gamers-Wanna-Do-is-Have-Some-Fun) - динамики панели: пропагандирует Крис Робинсоном и Piersa Кристен специальных возможностей. Майкл Энтони от корпорации Майкрософт
+* Представитель [Появлением любовь букву в отрасли игры](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-A-Fraught-Love-Letter-to-the-Games-Industry) - Томпсона Вишня специальных возможностей
 * [Журнал специальное игры](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Accessible-Gaming-History) - Barrie Ellis OneSwitch и оформление
 
 ## <a name="build-2017-videos"></a>Видео Build 2017 г.
@@ -103,7 +103,7 @@ ms.locfileid: "8750172"
 
 * [Новые перспективы для разработчиков игр на платформе Xbox и Windows](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-001)— Крис Чарла (Chris Charla)
 * [Знакомство с пространственный звук возможности для Xbox andWindows](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002) - Scott Selfon
-* [Настройка производительности и отладка с помощью PIX и GPUValidation D3d12](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-003) - Шон Hargreaves, макмаллен (Max mcmullen)
+* [Настройка производительности и отладка с помощью PIX и GPUValidation D3d12](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-003) - Hargreaves Шон макмаллен (Max mcmullen)
 * [Режим игры и Эволюция GameDevelopment кросс платформенной UWP](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-004) - Eric Walston
 * [Xbox Live для AllGame](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-005) - Brian Tyler
 * [Соответствует Гиперконвергентном Microsoft Store для Windows andXbox](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-006) - объединенный Poobala-Chandran

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, игры, glsl, перенос
 ms.localizationpriority: medium
 ms.openlocfilehash: 809440f9e77af19c01f4a050eee3b6f8d1c709b7
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8796485"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8891656"
 ---
 # <a name="port-the-glsl"></a>Перенос GLSL
 

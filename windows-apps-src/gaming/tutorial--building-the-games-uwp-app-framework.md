@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 16af4bcabbc21c60a5dc0006da51f5bd23eef791
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8796642"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892229"
 ---
 #  <a name="define-the-uwp-app-framework"></a>Определение структуры приложения UWP
 
