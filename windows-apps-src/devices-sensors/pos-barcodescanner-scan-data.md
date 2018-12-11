@@ -7,15 +7,15 @@ keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ece246ffd369ee21c089598f07b2566424757f55
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734728"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8878814"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>Получение и распознавание данных штрих-кода
 
-После того, как настроить сканер штрихкодов, конечно же нужен способ для понимания данных при сканировании. При сканировании штрихкода, создается событие [DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived) . [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) необходимо подписаться на это событие. Событие **DataReceived** передает объект [BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs) , который можно использовать для доступа к данным штрих-кода.
+После настройки сканера штрихкодов, вы, конечно нужен способ Общие сведения о данных, которые вы сканирования. При сканировании штрихкода, создается событие [DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived) . [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) необходимо подписаться на событие. Событие **DataReceived** передает объект [BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs) , который можно использовать для доступа к данным штрих-кода.
 
 ## <a name="subscribe-to-the-datareceived-event"></a>Подписаться на событие DataReceived
 
@@ -25,7 +25,7 @@ ms.locfileid: "8734728"
 claimedBarcodeScanner.DataReceived += ClaimedBarcodeScanner_DataReceived;
 ```
 
-Обработчик событий будет передано **ClaimedBarcodeScanner** и **BarcodeScannerDataReceivedEventArgs** объекта. Можно получить доступ к данных штрих-кода через этот объект [отчета](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) свойство, которое относится к типу [BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport).
+Обработчик событий будет передаваться **ClaimedBarcodeScanner** и объект **BarcodeScannerDataReceivedEventArgs** . Можно получить доступ к данных штрих-кода через этот объект [отчета](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) свойство, которое относится к типу [BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport).
 
 ```cs
 private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner sender, BarcodeScannerDataReceivedEventArgs args)
@@ -36,7 +36,7 @@ private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner send
 
 ## <a name="get-the-data"></a>Получение данных
 
-После создания **BarcodeScannerReport**, можно получить доступ к и анализа данных штрих-кода. **BarcodeScannerReport** имеет три свойства:
+Получив **BarcodeScannerReport**, можно получить доступ к и анализа данных штрих-кода. **BarcodeScannerReport** имеет три свойства:
 
 * [ScanData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandata): штрихкодов полное и необработанные данные.
 * [ScanDataLabel](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel): метке расшифрованного штрих-кода, которая не содержит заголовок, контрольной суммы и других данных.
@@ -50,7 +50,7 @@ claimedBarcodeScanner.IsDecodeDataEnabled = true;
 
 ### <a name="get-the-scan-data-type"></a>Получить тип данных
 
-Получение тип декодированного штрихкодов метки вполне достаточно&mdash;мы просто вызываем [GetName](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname) на **ScanDataType**.
+Получив тип декодированного штрихкодов метки вполне достаточно&mdash;мы просто вызываем [GetName](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname) на **ScanDataType**.
 
 ```cs
 private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
@@ -61,7 +61,7 @@ private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
 
 ### <a name="get-the-scan-data-label"></a>Получить значок данных проверок
 
-Для получения метки расшифрованного штрих-кода, существуют некоторые действия, которые необходимо учитывать. Только определенные типы данных содержат закодированного текста, поэтому необходимо сначала проверить, если символика можно преобразовать в строку, а затем преобразовать буфера, который мы получаем от **ScanDataLabel** закодированной строкой UTF-8.
+Чтобы получить метку расшифрованного штрих-кода, существуют некоторые действия, которые необходимо учитывать. Только определенные типы данных содержат закодированного текста, поэтому необходимо проверить, если символика можно преобразовать в строку, а затем преобразовать буфера, который мы получаем от **ScanDataLabel** закодированного строку UTF-8.
 
 ```cs
 private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
@@ -99,9 +99,9 @@ private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
 }
 ```
 
-### <a name="get-the-raw-scan-data"></a>Получение данных необработанных сканирования
+### <a name="get-the-raw-scan-data"></a>Получение данных необработанные сканирования
 
-Чтобы получить полный, необработанные данные из штрих-кода, мы просто преобразовать буфера, который мы получаем из **ScanData** в строку.
+Чтобы получить полный, необработанные данные с помощью штрихкода, мы просто преобразовать буфера, который мы получаем из **ScanData** в строку.
 
 ```cs
 private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
@@ -120,15 +120,15 @@ private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
 }
 ```
 
-Эти данные являются, как правило, в формате, поставленные со сканера. Сведения о трейлер и заголовок сообщения будут удалены, тем не менее, так как они не содержат полезные сведения для приложения и может быть определенной сканера.
+Эти данные являются, как правило, в формате, поставляемые со сканера. Сведения о трейлер и заголовок сообщения будут удалены, тем не менее, так как они не содержат полезные сведения для приложения и может быть определенной сканера.
 
-Общие сведения о заголовке является символ префикса (например, символ STX). Общие сведения о трейлера является символ конца (например, ETX или CR символов) и символ проверки блока, если он создан сканером.
+Общие сведения о заголовке является символ префикса (например, символ STX). Общие сведения о трейлера является символом конца (например, символ ETX или CR) и символ проверки блок, если он создан сканером.
 
-Это свойство необходимо включить символ символика, если одна возвращается сканером (например, **A** для UPC A). Оно также должно включать проверку цифр, если они есть в метке и возвращается сканером. (Обратите внимание, может содержать символика символов и проверка цифр или может отсутствовать, в зависимости от конфигурации сканера. Сканер будет возвращать их, если присутствует, но не вычисляет их, если они отсутствуют или создания.)
+Это свойство следует использовать знак символика, если один возвращается сканером (например, **A** для UPC A). Он также необходимо добавить цифр флажок, если они есть в метке и возвращенная сканера. (Заметьте, что символики знаки и цифры проверка может или может отсутствовать, в зависимости от конфигурации сканера. Сканер будет возвращать их, если присутствует, но не вычислить их, если они отсутствуют или создания.)
 
-Некоторые товара могут быть помечены дополнительные штрих-кода. Это штрихкодов помещается в правой части основного штрих-кода, как правило и состоит из дополнительных два бита или пять символов информации. Если сканер считывает товара, содержащий основные и дополнительные штрихкоды, дополнительные символы добавляются в конец главными персонажами и результат передается приложению в виде одной метки. (Обратите внимание, что сканер может поддерживать конфигурацию, которая включает или отключает чтения дополнительные коды).
+Некоторые товара может быть помечены дополнительные штрих-кода. Это штрихкодов помещается в правой части основного штрих-кода, как правило и состоит из дополнительных два бита или пять символов информации. Если сканер считывает товара, содержащий основные и дополнительные штрихкоды, добавленные дополнительные символы главными персонажами и результат передается приложению в виде одной метки. (Обратите внимание, что сканер может поддерживать конфигурацию, которая включает или отключает считывание Дополнительные коды).
 
-Некоторые товара могут быть помечены с помощью нескольких метки, иногда называют *multisymbol метки* или *Многоуровневые метки*. Эти штрихкоды обычно упорядочены по вертикали, а также могут быть символика же или другие. Если сканер считывает рекламные материалы, которые содержит несколько меток, каждый штрихкодов доставляется приложению в виде отдельных метку. Это необходимо из-за текущего отсутствие стандартизации этих типов штрих-кода. Он не может определить все варианты, на основе данных отдельных штрих-кода. Таким образом приложение необходимо определить, когда несколько штрихкодов метку была прочитана зависимости от данных, возвращаемых. (Обратите внимание, что сканер может поддерживать не чтения несколько меток.)
+Некоторые товара могут быть помечены с помощью нескольких метки, иногда называют *multisymbol метки* или *Многоуровневые метки*. Эти штрихкоды обычно упорядочены по вертикали, а также могут быть символика же или другие. Если сканер считывает рекламные материалы, которые содержит несколько метки, каждого штрихкодов доставляются приложению в виде отдельных метку. Это необходимо из-за текущего отсутствие стандартизации этих типов штрих-кода. Он не может определить все варианты, на основе данных отдельных штрих-кода. Таким образом приложение необходимо определить, когда несколько штрихкодов метку была прочитана основе возвращенными данными. (Обратите внимание, что сканер может поддерживать не чтения из нескольких метки.)
 
 Это значение до **DataReceived** события в приложение.
 
