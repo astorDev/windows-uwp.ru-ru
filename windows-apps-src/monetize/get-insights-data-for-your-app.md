@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, службы магазина, API, аналитич�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1847f22f52eb066115b5681e745e74ec74f77f7d
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8790432"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8854665"
 ---
 # <a name="get-insights-data"></a>Получение аналитических данных
 

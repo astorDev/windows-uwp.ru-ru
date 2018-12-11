@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c5b99c95167940c1ae51dbe96a3e43dc6fb0af34
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731356"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8872202"
 ---
 # <a name="create-a-hello-world-app-js"></a>Создание приложения "Hello, world" (JS)
 
-В этом руководстве описано, как с помощью JavaScript и HTML создать простое «Hello, world» приложения, которое предназначено для универсальной платформы Windows (UWP) в Windows10. С помощью одного проекта в Microsoft Visual Studio можно создать приложение, которое работает на любом устройстве Windows10.
+В этом учебнике описано, как с помощью JavaScript и HTML создать простое «Hello, world» приложения, которое предназначено для универсальной платформы Windows (UWP) в Windows10. С помощью единственного проекта в Microsoft Visual Studio вы можете создать приложение, которое работает на любом устройстве Windows10.
 
 > [!NOTE]
 > В этом учебнике используется Visual Studio Community 2017. Если вы используете другую версию Visual Studio, она может выглядеть иначе.
@@ -155,7 +155,7 @@ function sayHello() {
 ## <a name="summary"></a>Сводка
 
 
-Поздравляем, вы создали приложение на JavaScript для Windows10 и UWP. Это простейший пример, но теперь вы можете добавлять свои избранные библиотеки и платформы JavaScript для создания собственного приложения. А так как это приложение UWP, вы можете опубликовать его в Магазине. Примеры того, как добавить сторонние платформы, см. в следующих проектах:
+Поздравляем, вы создали приложение на JavaScript для Windows10 и UWP! Это простейший пример, но теперь вы можете добавлять свои избранные библиотеки и платформы JavaScript для создания собственного приложения. А так как это приложение UWP, вы можете опубликовать его в Магазине. Примеры того, как добавить сторонние платформы, см. в следующих проектах:
 
 * [Простая двухмерная игра UWP для Microsoft Store, написанная на языках JavaScript и CreateJS](get-started-tutorial-game-js2d.md)
 * [Трехмерная игра UWP для Microsoft Store, написанная на JavaScript и threeJS](get-started-tutorial-game-js3d.md)
