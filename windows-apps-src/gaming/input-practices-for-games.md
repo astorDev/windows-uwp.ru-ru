@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, ввод
 ms.localizationpriority: medium
 ms.openlocfilehash: 73e0ba3e563b57c2e392809097567b7e6739c90d
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8884917"
+ms.locfileid: "8927834"
 ---
 # <a name="input-practices-for-games"></a>Способы ввода данных в играх
 

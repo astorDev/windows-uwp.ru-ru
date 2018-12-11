@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e8c995c5a9513bea44664bcb395cd604ba2668c3
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8896637"
+ms.locfileid: "8926360"
 ---
 # <a name="composition-brushes"></a>Кисти композиции
 Все отображаемые на экране из приложения UWP отображается, так как они нарисованы кистью. Кисти позволяют рисовать объекты пользовательского интерфейса пользователя с содержимым, начиная от простого одноцветных изображения или рисунки цепочку эффекты. В этом разделе рассматриваются понятия рисования с помощью CompositionBrush.
