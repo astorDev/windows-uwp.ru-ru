@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0006d20c1db7da16b885e82fb3f066b081e27349
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8746892"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8899940"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Введение в проектирование приложений UWP
 
@@ -26,7 +26,7 @@ ms.locfileid: "8746892"
 
 ## <a name="effective-pixels-and-scaling"></a>Эффективные пиксели и масштабирование
 
-Приложения UWP запускаются на всех [устройствах с Windows 10](../devices/index.md), от Телевизора до планшета или настольного компьютера. Так как проектирование пользовательского интерфейса, которое хорошо выглядит на различных устройствах и экранах разного размера?
+Приложения UWP запускаются на всех [устройствах с Windows 10](../devices/index.md), от Телевизора до планшета или настольного компьютера. Так как вы разработать пользовательский Интерфейс, который выглядит хорошо на различных устройствах и экранах разного размера?
 
 ![одно приложение на различных устройствах](images/universal-image-1.jpg)
 

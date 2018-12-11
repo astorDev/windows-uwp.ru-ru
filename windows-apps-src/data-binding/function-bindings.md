@@ -1,16 +1,16 @@
 ---
-description: Расширение разметки xBind позволяет функции, которые будут использоваться в разметке.
+description: Расширение разметки xBind позволяет функции для использования в разметке.
 title: Функции в x:Bind
 ms.date: 04/26/2018
 ms.topic: article
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: 371b64a6161911242acd5b9abf97cfa7d2f05358
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735884"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8899169"
 ---
 # <a name="functions-in-xbind"></a>Функции в x:Bind
 
@@ -159,7 +159,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> Можно использовать функции в расширении разметки x: Bind для достижения те же сценарии, как поддерживаемые через конвертеры и связывание с несколькими источниками в WPF.
+> Можно использовать функции в расширении разметки x: Bind для достижения те же сценарии, как что поддерживался через конвертеры и связывание с несколькими источниками в WPF.
 
 ## <a name="function-arguments"></a>Аргументы функции
 
@@ -173,7 +173,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>Двухсторонняя привязка функции
 
-При двусторонней привязке следует определить вторую функцию для обратного направления привязки. Это делается с помощью свойства **BindBack** привязки. В следующем примере функция должна принимать один аргумент, представляющий собой значение, которое будет быть возвращено модели.
+При двусторонней привязке следует определить вторую функцию для обратного направления привязки. Это делается с помощью свойства **BindBack** привязки. В следующем примере функция должна принимать один аргумент, представляющий собой значение, которое должно быть возвращено модели.
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```
