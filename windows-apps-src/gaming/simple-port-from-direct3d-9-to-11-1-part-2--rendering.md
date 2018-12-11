@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, платформа визуализации, преобразование, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: aba723a5ee2443664d6d640adc124b991ff0da7e
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8875768"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8919250"
 ---
 # <a name="convert-the-rendering-framework"></a>Преобразование платформа визуализации
 

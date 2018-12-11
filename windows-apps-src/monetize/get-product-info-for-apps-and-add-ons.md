@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, покупки из приложения, IAP, надстройки, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b923764c6374e403d2652db715f65a80c48bacf
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8880916"
+ms.locfileid: "8918949"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>Получение информации о продукте для приложений и надстроек
 

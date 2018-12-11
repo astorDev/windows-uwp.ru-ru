@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 96bc0c48865d862e5ac834c5828d4057a06242d5
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8886286"
+ms.locfileid: "8919290"
 ---
 # <a name="accessibility-practices-to-avoid"></a>Рекомендации по специальным возможностям, которых следует избегать
 
