@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f81ab1ef635bf4cfb20c289d6998c242f7aa47fc
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8787420"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8890244"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Установка формата, разрешения и частоты кадров для MediaCapture
 
