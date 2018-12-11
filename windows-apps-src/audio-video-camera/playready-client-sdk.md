@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fac02f892c66a1bcf0b08986ae00a3a162b44ca
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736604"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8878873"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -398,7 +398,7 @@ PlayReady DRM позволяет воспроизводить содержимо
 Прежде чем приступить к созданию приложения UWP, защищенного PlayReady, в вашей системе необходимо установить указанное ниже программное обеспечение.
 
 -   Windows10.
--   Если вы компилируете какие-либо примеры для пакета PlayReady DRM для приложений UWP, необходимо использовать Microsoft Visual Studio2015 или более поздней версии для компиляции примеров. Microsoft Visual Studio2013 по-прежнему можно использовать для компиляции любых примеров из пакета PlayReady DRM для приложений магазина Windows8.1.
+-   Если вы компилируете какие-либо примеры для пакета PlayReady DRM для приложений UWP, необходимо использовать Microsoft Visual Studio2015 или более поздней версии для компиляции примеры. Microsoft Visual Studio2013 по-прежнему можно использовать для компиляции любых примеров из пакета PlayReady DRM для приложений магазина Windows8.1.
 
 <!--This is no longer available-->
 <!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).-->
@@ -511,7 +511,7 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
 
 ## <a name="use-playready-drm-on-xbox-one"></a>Использование технологии PlayReady DRM на Xbox One
 
-Чтобы использовать PlayReady DRM в приложении UWP на Xbox One, необходимо сначала зарегистрировать учетную запись [Центра партнеров](https://partner.microsoft.com/dashboard) , которую вы используете для публикации приложения, разрешение на использование PlayReady. Это можно сделать одним из двух способов:
+Чтобы использовать PlayReady DRM в приложении UWP на Xbox One, необходимо сначала зарегистрировать учетную запись [Центра партнеров](https://partner.microsoft.com/dashboard) , которую вы используете для публикации приложения авторизовать ее для использования PlayReady. Это можно сделать одним из двух способов:
 
 * Попросить ваше контактное лицо в корпорации Майкрософт запросить для вас разрешение.
 * Подать заявку на авторизацию, отправив свою центра партнеров учетную запись и название компании для [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com).

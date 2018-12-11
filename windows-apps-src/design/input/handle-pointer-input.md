@@ -8,12 +8,12 @@ keywords: перо, мышь, сенсорная панель, сенсорны�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f1030e6cddf5a0ded289545de752d926789314ed
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: d5a51bd55a081265b4a90dfa662216977d1bded2
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749567"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8879459"
 ---
 # <a name="handle-pointer-input"></a>Работа с входными данными указателя
 
@@ -75,7 +75,7 @@ ms.locfileid: "8749567"
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208965"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>Происходит, если указатель захватывается другим элементом пользовательского интерфейса, если указатель отпущен пользователем или если происходит захват другого указателя программным путем.</p>
 <div class="alert">
-<strong>Примечание</strong>нет соответствующее событие захвата указателя не.
+<strong>Примечание</strong>существует соответствующее событие захвата указателя не происходит.
 </div>
 <div>
  
@@ -494,7 +494,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 ```csharp
 /// <summary>
 /// The pointer canceled event handler.
-/// Fires for for various reasons, including: 
+/// Fires for various reasons, including: 
 ///    - Touch contact canceled by pen coming into range of the surface.
 ///    - The device doesn't report an active contact for more than 100ms.
 ///    - The desktop is locked or the user logged off. 

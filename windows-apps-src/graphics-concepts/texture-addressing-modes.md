@@ -12,11 +12,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e263876f414e5683ffc8a5645a12e5031b3d6fb
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8783079"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8879717"
 ---
 # <a name="texture-addressing-modes"></a>Режимы адресации текстур
 
