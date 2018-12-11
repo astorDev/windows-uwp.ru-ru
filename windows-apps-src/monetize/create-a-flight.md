@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание тестируемой возможности
 ms.localizationpriority: medium
 ms.openlocfilehash: af5ffe0dd72f0c3aae21a2dc522b469358626bab
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738914"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8883713"
 ---
 # <a name="create-a-package-flight"></a>Создание тестового пакета
 
@@ -111,7 +111,7 @@ Content-Type: application/json
 | Код ошибки |  Описание   |
 |--------|------------------|
 | 400  | Недопустимый запрос. |
-| 409  | Не удалось создать тестовый пакет из-за его текущего состояния или приложение использует компонент центра партнеров, [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | Не удалось создать тестовый пакет из-за его текущего состояния или приложение использует компонент центра партнеров, [в настоящее время не поддерживается API отправки в Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
 ## <a name="related-topics"></a>Статьи по теме

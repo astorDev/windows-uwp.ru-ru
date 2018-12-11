@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8808789"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8882564"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Загрузка изображений и ресурсов, адаптированных по масштабированию, теме, высокой контрастности и другим аспектам
 Приложение может загружать файлы ресурсов изображений (или другие файлы ресурсов), адаптированные по контексту [коэффициента масштабирования дисплея](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), темы, высокой контрастности и другим аспектам. На эти изображения можно ссылаться из императивного кода или разметки XAML, например в виде свойства **Source** объекта **Image**. Они также могут появляться в исходном файле манифеста пакета приложения (файле `Package.appxmanifest`)— например, в качестве значения для App Icon на вкладке Visual Assets в конструкторе манифеста Visual Studio— или на плитке и всплывающих уведомлениях. Используя квалификаторы в именах файлов изображений при необходимости динамической их загрузке с помощью [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), можно обеспечить загрузку наиболее подходящего файла изображения, который наилучшим образом соответствует параметрам среды выполнения пользователя для масштабирования дисплея, темы, высокой контрастности, языку и другим аспектам.

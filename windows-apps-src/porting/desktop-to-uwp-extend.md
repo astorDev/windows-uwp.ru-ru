@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 76e4b60e1cd25a205d6a304f12a0b04f5db693b5
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730225"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8883138"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Расширение классических приложений с помощью современных компонентов UWP
 
@@ -42,7 +42,7 @@ ms.locfileid: "8730225"
 
 Убедитесь, что приложения для настольных компьютеров имеет ссылки на файлы, которые необходимо вызывать API среды выполнения Windows.
 
-Чтобы это сделать, см. раздел [сначала настройте свой проект](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project) разделе [расширение классического приложения для Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project).
+Чтобы это сделать, см. в разделе [сначала настройте свой проект](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project) раздела [расширение классического приложения для Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project).
 
 ### <a name="add-a-uwp-project"></a>Добавление проекта UWP
 
@@ -93,7 +93,7 @@ ms.locfileid: "8730225"
 ![адаптивный макет](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->В этом примере показан пользовательский Интерфейс на XAML, добавив в решение проект UWP. Это стабильность способ отображения элементов пользовательского интерфейса XAML в приложении для настольных систем. Вместо этого подхода можно добавлять элементы управления UWP XAML непосредственно к классического приложения с помощью XAML остров. О-ва XAML в настоящее время доступны как ознакомительная версия для разработчиков. Несмотря на то, что мы рекомендуем вам оценить их в коде прототипа сейчас, не рекомендуется использовать их в рабочем коде в данный момент. Эти API-интерфейсы и элементы управления будет продолжать улучшаться и стабилизация в будущих выпусках Windows. Дополнительные сведения о XAML, о-ва, см. в разделе [элементы управления UWP в классических приложениях](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+>В этом примере показан пользовательский Интерфейс на XAML, добавив в решение проект UWP. Это стабильность способ отображения элементов пользовательского интерфейса XAML в приложении для настольных систем. Вместо этого подхода можно добавлять элементы управления UWP XAML непосредственно в свое классическое приложение с помощью Рождества XAML. О-ва XAML в настоящее время доступны как ознакомительная версия для разработчиков. Несмотря на то, что мы рекомендуем вам оценить их в коде прототип теперь, мы не рекомендуем использовать их в рабочем коде в данный момент. Эти API-интерфейсы и элементы управления будет продолжать улучшаться и стабилизация в будущих выпусках Windows. Дополнительные сведения о том, о-ва XAML, см. в разделе [элементы управления UWP в классических приложениях](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>Шаблон проектирования
 
@@ -266,7 +266,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 : three: [Добавление расширений рабочего стола в проект UWP](#desktop-extensions)
 
-: four: [Добавление расширения процесса полного доверия](#full-trust)
+: four: [Добавление расширение процесс полного доверия](#full-trust)
 
 : five: [Изменение классического приложения для получения общего файла](#modify-desktop)
 
@@ -296,7 +296,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Укажите имя исполняемого файла, созданного проектом UWP, и имя класса точки входа. Эта разметка предполагается, что имя исполняемого файла для вашего приложения UWP `ShareTarget.exe`.
 
-Также необходимо указать типы файлов, которые могут быть переданы вашему приложению. В этом примере мы изменяем классического приложения [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) получателя для точечных образов, поэтому мы указываем `Bitmap` для поддерживаемого типа файлов.
+Также необходимо указать типы файлов, которые могут быть переданы вашему приложению. В этом примере мы предоставим классического приложения [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) получателя для точечных изображений, мы указываем `Bitmap` для поддерживаемого типа файлов.
 
 <a id="override" />
 
@@ -329,7 +329,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 }
 ```
 
-В этом фрагменте кода мы сохранить изображение, которое используется совместно с пользователя в локальной папке приложения. Позже мы изменим классического приложения для извлечения изображения из этой же папки. Классическое приложение можно сделать, так как он включен в тот же пакет, что и приложение UWP.
+В этом коде мы сохранить изображение, которое используется совместно с пользователя в локальной папке приложения. Позже мы изменим классического приложения для извлечения изображения из этой же папки. Классические приложения можно сделать, так как он включен в тот же пакет, что и приложение UWP.
 
 <a id="desktop-extensions" />
 
@@ -341,7 +341,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 <a id="full-trust" />
 
-### <a name="add-the-full-trust-process-extension"></a>Добавление расширения процесса полного доверия
+### <a name="add-the-full-trust-process-extension"></a>Добавление расширения процесс полного доверия
 
 В **Обозревателе решений**откройте файл **package.appxmanifest** проекта упаковки в вашем решении и добавьте расширение процесс полного доверия рядом с расширения получателя данных добавить этот файл ранее.
 
@@ -359,13 +359,13 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 ### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>Изменение классического приложения для получения общего файла
 
-Измените классического приложения для поиска и обработки общего файла. В этом примере приложения UWP хранить общий файл в папку данных локального приложения. Таким образом мы бы изменять [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) Классические приложения для извлечения фотографии из этой папки.
+Измените классического приложения для поиска и обработки общих файлов. В этом примере приложения UWP хранить общий файл в папку данных локального приложения. Таким образом мы бы изменять [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) классического приложения для извлечения фотографии из этой папки.
 
 ```csharp
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-Для экземпляров классического приложения, которые уже открыть пользователем, мы также может обрабатывать событие [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2) и передайте путь к расположению файла. Таким образом все открытые экземпляры классического приложения будет отображаться общего фотографий.
+Для экземпляров классического приложения, которые уже открыть пользователем, мы также может обрабатывать событие [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2) и передайте путь к расположению файла. Таким образом все открытые экземпляры классического приложения будет отображаться общего фотографии.
 
 ```csharp
 ...
@@ -395,7 +395,7 @@ private void Watcher_Created(object sender, FileSystemEventArgs e)
 
 Добавьте фоновую задачу для выполнения кода, даже если приложение приостановлено. Фоновые задачи отлично подходят для небольших задач, не требующих участия пользователя. Например, ваша задача может скачивать почту, показывать всплывающее уведомление о входящем сообщении в чате или реагировать на изменение системного условия.
 
-Вот пример приложения WPF, которое регистрирует фоновую задачу.
+Вот пример приложения WPF, регистрирует фоновую задачу.
 
 ![фоновая задача](images/desktop-to-uwp/sample-background-task.png)
 
