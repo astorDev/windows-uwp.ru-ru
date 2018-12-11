@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, анимация
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e00aa383bcce17b7cd6b67514647c2f6137cc32
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8797581"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8898113"
 ---
 # <a name="spring-animations"></a>Пружинная анимация
 

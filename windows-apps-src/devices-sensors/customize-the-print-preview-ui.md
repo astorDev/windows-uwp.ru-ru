@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, печать
 ms.localizationpriority: medium
 ms.openlocfilehash: 16fca2fc98450375ec2dcf7a0d10775b2bba1bf2
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8794552"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8897678"
 ---
 # <a name="customize-the-print-preview-ui"></a>Настройка пользовательского интерфейса предварительного просмотра
 

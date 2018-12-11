@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d, конвейер шейдеров
 ms.localizationpriority: medium
 ms.openlocfilehash: f02b365175909b5038e5eb117f12851be9f14e3a
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8783931"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8897748"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>Сравнение конвейера шейдеров OpenGL ES2.0 с Direct3D
 
