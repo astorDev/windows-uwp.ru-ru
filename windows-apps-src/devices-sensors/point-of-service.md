@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a0c55f1b739ef88ec65b7fd44655406415bc0468
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742660"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8877251"
 ---
 # <a name="point-of-service"></a>POS-устройства
 Этот раздел содержит статьи о том, как использовать [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) для взаимодействия с периферийными устройствами, используемыми в розничной торговле и гостиничной индустрии, из универсальных приложений для Windows.
@@ -18,7 +18,7 @@ ms.locfileid: "8742660"
 | Статья | Описание |
 |------|------------|
 | [Основы](pos-basics.md) | Эта статья поможет вам приступить к работе с API-интерфейсами для устройств в точках обслуживания (POS-устройств), предусмотренных в UWP. |
-| [Поддержка оборудования](pos-device-support.md) | Список известных устройств, совместимых с API-интерфейсы UWP [Windows.Devices.PointOfService](https://aka.ms/pointofservice-api) . |
+| [Поддержка оборудования](pos-device-support.md) | Список известных устройств, совместимых с API-интерфейсов UWP [Windows.Devices.PointOfService](https://aka.ms/pointofservice-api) . |
 | [Сканер штрихкодов](pos-barcodescanner.md) | Указатель статей о сканере штрихкодов. |
 | [Считыватель магнитных карт](pos-magnetic-stripe-reader.md) | Указатель статей о считыватель магнитных карт.
 | [POSPrinter](pos-printer.md) | Указатель статей о POSPrinter. |

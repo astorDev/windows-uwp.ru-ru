@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store Services SDK, А/B тестирование, эксперименты
 ms.localizationpriority: medium
 ms.openlocfilehash: d4f5271d70cefea99a9caff04e7203e05043440c
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8790224"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8875440"
 ---
 # <a name="run-app-experiments-with-ab-testing"></a>Выполнение экспериментов в приложении с использованием A/B-тестирования
 
