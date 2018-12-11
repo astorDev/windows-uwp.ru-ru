@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, direct3d 11, инициализация, портирование, direct3d 9
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738365"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8895515"
 ---
 # <a name="initialize-direct3d-11"></a>Инициализация Direct3D 11
 
@@ -125,7 +125,7 @@ context.As(&m_d3dContext);
 
 Устройство Direct3D реализует COM-интерфейс для DXGI. Первым делом нам нужно получить этот интерфейс и с его помощью запросить адаптер DXGI, в котором содержится устройство. Затем мы воспользуемся адаптером DXGI для создания фабрики DXGI.
 
-> **Примечание**  это COM-интерфейсы, поэтому ваше первым побуждением будет использовать [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Но вместо него следует использовать интеллектуальные указатели [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx). После этого просто вызовите метод [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx), передав ему пустой COM-указатель на надлежащий тип интерфейса.
+> **Примечание**  это COM-интерфейсы, чтобы ваш первым побуждением будет использовать [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Но вместо него следует использовать интеллектуальные указатели [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx). После этого просто вызовите метод [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx), передав ему пустой COM-указатель на надлежащий тип интерфейса.
 
  
 
