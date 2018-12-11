@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fd543d7c3ad9dec878cc02b14a79c254d91b4be
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8798947"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8900013"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание API-интерфейсов с помощью C++/WinRT
 

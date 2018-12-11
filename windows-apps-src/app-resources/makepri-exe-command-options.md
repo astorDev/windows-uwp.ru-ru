@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8791713"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8900276"
 ---
 # <a name="makepriexe-command-line-options"></a>Параметры командной строки MakePRI.exe
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, службы Магазина, API аналитики для Microsoft Store, установки приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: e2dc604e15180296e84d6177aa3d9b71a0bf82dc
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8793295"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8900033"
 ---
 # <a name="get-app-installs"></a>Получение сведений об установках приложения
 
