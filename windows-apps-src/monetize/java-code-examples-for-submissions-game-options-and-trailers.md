@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, API отправки в Microsoft Store, примеры кода, параметры игры, трейлеры, дополнительные предложения, java
 ms.localizationpriority: medium
 ms.openlocfilehash: 974bbc4c864edb9450f9ba677c60349b5e1f8ece
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8889091"
+ms.locfileid: "8920774"
 ---
 # <a name="java-sample-app-submission-with-game-options-and-trailers"></a>Пример на языке Java: отправка приложения с трейлерами и параметрами игры
 

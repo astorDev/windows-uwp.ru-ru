@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, стандартные, c ++, cpp, winrt, проек�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: a50ab5f70faa0c8f8b73eada38444bcafd444d8b
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8899541"
+ms.locfileid: "8922190"
 ---
 # <a name="collections-with-cwinrt"></a>Создание коллекций с помощью C++/WinRT
 
