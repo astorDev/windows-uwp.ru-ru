@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, тестируемые возможности, тестовые пакеты
 ms.localizationpriority: medium
 ms.openlocfilehash: c7e7ab4db7690cee86b76e39caa30b3c0fb25618
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730278"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8871367"
 ---
 # <a name="get-package-flights-for-an-app"></a>Получение тестовых пакетов для приложения
 
@@ -113,7 +113,7 @@ Authorization: Bearer <your access token>
 | Код ошибки |  Описание   |
 |--------|------------------|
 | 404  | Тестовые пакеты не найдены. |
-| 409  | Приложение использует компонент центра партнеров, [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Приложение использует компонент центра партнеров, [в настоящее время не поддерживается API отправки в Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## <a name="related-topics"></a>Статьи по теме

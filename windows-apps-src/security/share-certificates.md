@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 1caa7361011b535a0dd63da53e0aba2eadff72be
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8781565"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8825832"
 ---
 # <a name="share-certificates-between-apps"></a>Совместное использование сертификатов приложениями
 

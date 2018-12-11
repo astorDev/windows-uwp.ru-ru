@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
 ms.openlocfilehash: d492bc7dde990404552689516731850974c31a7c
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8797372"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8873941"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Отправка запросов в Microsoft Store
 

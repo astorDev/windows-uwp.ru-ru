@@ -2,12 +2,14 @@
 title: 'Unity: управление версиями проекта UWP'
 description: Управление версиями проекта UWP.
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fe59b0c63f536822ec50a225bbdc11e68b97713
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.topic: article
+ms.date: 02/08/2017
+ms.openlocfilehash: 064eaf42fe7d664be273cd7e2222fa5d90be1a11
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732400"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8873109"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity: управление версиями проекта UWP
 
@@ -60,7 +62,7 @@ ms.locfileid: "8732400"
 `App.cs` | ***Включить*** | Точка входа для приложения UWP. ее можно изменять и дополнять с помощью других исходных файлов  
 `Package.appxmanifest` | ***Включить*** | Приложение исходный файл манифест пакета для AppX  
 `project.json` | ***Включить*** | Описывает пакеты NuGet вашего `*.csproj` зависит от  
-`ScrapyardPhoenix.csproj` | ***Включить*** | Описывает цель сборки UWP; Если вы добавили Дополнительные зависимости для игры UWP проект, этот `*.csproj` файл будет содержать сведения об  
+`ScrapyardPhoenix.csproj` | ***Включить*** | Описывает цель сборки UWP; Если вы добавили Дополнительные зависимости для игры UWP проект, это `*.csproj` файл будет содержать сведения об  
 `ScrapyardPhoenix.csproj.user` | ***Игнорировать*** | Этот файл содержит сведения о локальном пользователе
 
 ## <a name="resulting-gitignore"></a>Конечный вид файла .gitignore

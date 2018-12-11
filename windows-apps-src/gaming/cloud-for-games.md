@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, облачные службы
 ms.localizationpriority: medium
 ms.openlocfilehash: 12f9125b4a128b754fc90c48e6a289cec40a7f54
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750082"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8825091"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Использование облачных служб при разработке игр UWP
 
@@ -199,7 +199,7 @@ ms.locfileid: "8750082"
 ## <a name="learning-resources"></a>Ресурсы для обучения
 
 * //build 2016: [CodeLabs. Использование службы приложений Microsoft Azure и внутреннего сервера Microsoft SQL Azure для хранения игровых очков в Unity](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* Build 2017 г.: [Предоставление игровых возможностей мирового уровня с помощью Microsoft Azure: уроки как Halo, Hitman и WalkingDead (видео)](https://channel9.msdn.com/Events/Build/2017/P4062)
+* Build 2017 г.: [Предоставление игровых возможностей мирового уровня с помощью Microsoft Azure: уроков как Halo, Hitman и WalkingDead (видео)](https://channel9.msdn.com/Events/Build/2017/P4062)
 * Многократно используемый набор стандартных блоков, проектов, услуг и рекомендаций, предназначенных для поддержки типичных игровых рабочих нагрузок с использованием Azure на GitHub: [стандартные блоки для игр на Azure](https://github.com/MicrosoftDX/nether)
 * [Игровые службы на Azure (видеоролики)](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
 

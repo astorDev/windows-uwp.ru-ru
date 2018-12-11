@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, расположение, карта, геолокация
 ms.localizationpriority: medium
 ms.openlocfilehash: e5150188c99bfc448bf85df6a6dabbbb4c60bd49
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8783651"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8829001"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>Рекомендации относительно приложений с определением расположения
 

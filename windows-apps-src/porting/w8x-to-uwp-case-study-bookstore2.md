@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 156f780e5637852d554488adfeeb9d688fa4a4d7
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736473"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8828193"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a>Пример переноса со среды выполнения Windows 8.x на UWP: Bookstore2
 
@@ -51,7 +51,7 @@ Bookstore2\_81 в WindowsPhone в уменьшенном масштабе
 
 Решение Bookstore2\_81— это проект универсального приложения для версии 8.1. Проект bookstore2\_81.Windows создает пакет приложения для Windows8.1, и проект Bookstore2\_81.WindowsPhone создает пакет приложения для Windows Phone 8.1. Bookstore2\_81.Shared— это проект, который содержит исходный код, файлы разметки и другие ресурсы, используемые обоими приложениями.
 
-Так же, как в предыдущем примере, доступных вариантов мы рассмотрим (из тех, что описаны в систему, [Если у вас универсальное приложение версии 8.1](w8x-to-uwp-root.md)) — это перенести содержимое общего проекта в Windows10, предназначенное для универсального семейства устройств.
+Так же, как в предыдущем примере, доступных вариантов мы рассмотрим (из тех, что описаны в систему, [Если у вас универсальное приложение версии 8.1](w8x-to-uwp-root.md)) — это переносить содержимое общего проекта для Windows10, предназначенное для универсального семейства устройств.
 
 Начните с создания нового проекта пустого приложения (Windows Universal). Назовите его Bookstore2Universal\_10. Эти файлы следует скопировать из Bookstore2\_81 в Bookstore2Universal\_10.
 
@@ -72,7 +72,7 @@ Bookstore2\_81 в WindowsPhone в уменьшенном масштабе
 
 ![Работа приложения для Windows10 с начальными изменениями исходного кода на ПК в увеличенном масштабе](images/w8x-to-uwp-case-studies/c02-05-desk10-zi-initial-source-code-changes.png)
 
-Приложение Windows10 с начальными изменениями исходного кода на настольном устройстве в увеличенном масштабе
+Приложение Windows10 с начальными изменениями исходного кода на настольном устройстве, в увеличенном масштабе
 
 ![Работа приложения для Windows 10 с начальными изменениями исходного кода на ПК в уменьшенном масштабе](images/w8x-to-uwp-case-studies/c02-06-desk10-zo-initial-source-code-changes.png)
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, концепция утверждения
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e4ecdbb77e1e3df10963a59dff38d4ecf215126
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8786182"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8871840"
 ---
 # <a name="concept-approval"></a>Утверждение концепций
 

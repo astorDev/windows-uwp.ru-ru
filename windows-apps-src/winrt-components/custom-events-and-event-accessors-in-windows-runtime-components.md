@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b8c4777e1c34bca36200bf6e8a96c35d6a0b1079
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751499"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8826868"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows
 
@@ -99,7 +99,7 @@ ms.locfileid: "8751499"
 
 Статический метод (общий метод в Visual Basic) GetOrCreateEventRegistrationTokenTable создает экземпляр объекта EventRegistrationTokenTable&lt;T&gt; для события отложенным образом. Передайте в этот метод поле уровня класса, в котором будет храниться экземпляр таблицы токенов. Если поле оставлено пустым, метод создает таблицу, сохраняет ссылку на нее в поле и возвращает ссылку на эту таблицу. Если поле уже содержит ссылку на таблицу маркеров, то метод просто возвращает эту ссылку.
 
-> **Важные**для обеспечения потокобезопасности поле, которое хранит экземпляр объекта EventRegistrationTokenTable&lt;T&gt; должно быть полем уровня класса. Если это поле является полем уровня класса, метод GetOrCreateEventRegistrationTokenTable гарантирует, что при попытке создания таблицы токенов несколькими потоками все потоки получают один и тот же экземпляр таблицы. Для заданного события все вызовы метода GetOrCreateEventRegistrationTokenTable должны использовать одно и то же поле уровня класса.
+> **Важные**для обеспечения потокобезопасности поле, экземпляр объекта EventRegistrationTokenTable&lt;T&gt; должно быть полем уровня класса. Если это поле является полем уровня класса, метод GetOrCreateEventRegistrationTokenTable гарантирует, что при попытке создания таблицы токенов несколькими потоками все потоки получают один и тот же экземпляр таблицы. Для заданного события все вызовы метода GetOrCreateEventRegistrationTokenTable должны использовать одно и то же поле уровня класса.
 
 Вызов метода GetOrCreateEventRegistrationTokenTable в методе доступа remove и в методе [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) (метод OnRaiseEvent в C#) обеспечивает отсутствие исключений при вызове этих методов до добавления делегатов каких-либо обработчиков событий.
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10 S, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a8b17697612d50d10ecfbb07388207527a4cb39b
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8782528"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8825453"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Тестирование приложения для Windows 10 в режиме S.
 

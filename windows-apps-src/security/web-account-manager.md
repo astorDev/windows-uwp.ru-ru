@@ -7,11 +7,11 @@ keywords: Windows 10, uwp, безопасность
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: b0a052d08c6b0816d977d3e86881540194075818
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744969"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8826974"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
@@ -175,7 +175,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * Сведения об областях OneDrive см. в разделе [Аутентификация OneDrive и вход в систему](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]
-> Кроме того Если ваше приложение использует подсказку для входа в систему (чтобы заполнить поле пользователя с адресом электронной почты по умолчанию) или другие специальные свойства, связанные с входа в систему, список его в свойстве **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** . Это приведет к система игнорирует свойства при кэшировании учетных записей в Интернете, которое предотвращает несоответствия учетной записи в кэше.
+> При необходимости Если ваше приложение использует подсказку для входа в систему (чтобы заполнить поле пользователя с адресом электронной почты по умолчанию) или другие специальные свойства, связанные с входа в систему, укажите его в свойстве **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** . Это приведет к система игнорирует свойства при кэшировании учетных записей в Интернете, которое предотвращает несоответствия учетной записи в кэше.
 
 Если вы разрабатываете корпоративное приложение, то, скорее всего, захотите подключиться к экземпляру Azure Active Directory (AAD) и использовать Microsoft Graph API вместо обычных служб учетной записи Майкрософт. В этом случае используйте следующий код: 
 
