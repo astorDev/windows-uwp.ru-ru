@@ -12,11 +12,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 6079ea8ca844efc912b970c00c6907d98378dd07
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748901"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8896010"
 ---
 # <a name="create-write-and-read-a-file"></a>Создание, запись и чтение файла
 
@@ -254,7 +254,7 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  Затем получите выходной поток, вызвав метод [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) из `stream`. Если вы используете C#, заключите это в оператор **using** для управления временем существования выходного потока. Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то можно управлять своим временем существования, включающего в блоке, или значение `nullptr` после завершения с ним.
+2.  Затем получите выходной поток, вызвав метод [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) из `stream`. Если вы используете C#, заключите это в оператор **using** для управления временем существования выходного потока. Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то можно управлять своим временем существования, заключите его в блоке, или значение `nullptr` после завершения с ним.
 
 ```csharp
 using (var outputStream = stream.GetOutputStreamAt(0))
@@ -280,7 +280,7 @@ Using outputStream = stream.GetOutputStreamAt(0)
 End Using
 ```
 
-3.  Теперь добавьте следующий код для записи в поток вывода, создав новый объект [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) и вызвав метод [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring) (Если вы используете C# в пределах существующего оператора **using** ).
+3.  Теперь добавьте следующий код для записи в поток вывода, создав новый объект [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) и вызвав метод [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring) (Если вы используете C#, в пределах существующего оператора **using** ).
 
 ```csharp
 using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
@@ -306,7 +306,7 @@ Dim dataWriter As New DataWriter(outputStream)
 dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
 ```
 
-4.  И наконец, добавьте следующий код для сохранения текста в файл с помощью [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync) и закрытия потока с помощью [**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)(Если вы используете C# в пределах оператор **с помощью** внутреннего).
+4.  И наконец, добавьте следующий код для сохранения текста в файл с помощью [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync) и закрытия потока с помощью [**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)(Если вы используете C#, в рамках оператор **с помощью** внутреннего).
 
 ```csharp
 await dataWriter.StoreAsync();
@@ -390,7 +390,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 
 **Чтение текста из файла с использованием буфера (2 действия)**
 
-1.  Во-первых вызовите метод [**FileIO.ReadBufferAsync**](/uwp/api/windows.storage.fileio.readbufferasync) .
+1.  Во-первых вызов метода [**FileIO.ReadBufferAsync**](/uwp/api/windows.storage.fileio.readbufferasync) .
 
 ```csharp
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);

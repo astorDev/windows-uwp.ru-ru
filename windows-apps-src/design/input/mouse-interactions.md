@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ad801dee43607b4fb6e75bd30f612682e1214ff
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8779967"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8897160"
 ---
 # <a name="mouse-interactions"></a>Взаимодействие с помощью мыши
 
