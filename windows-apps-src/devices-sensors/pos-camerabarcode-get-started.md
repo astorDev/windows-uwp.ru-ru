@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: b49ba463e39d09b915ce3925f94ae7d9f11a9a47
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8899634"
+ms.locfileid: "8932610"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a>Начало работы со сканерами штрихкодов на базе камеры
 ## <a name="step-1-add-capability-declarations-to-your-app-manifest"></a>Шаг 1. Добавление объявлений возможностей в манифест приложения

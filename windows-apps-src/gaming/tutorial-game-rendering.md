@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, отрисовка
 ms.localizationpriority: medium
 ms.openlocfilehash: f73665e60513e4f8465be3dbe69f792af285a8e1
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8875801"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8934649"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>Платформа отрисовки II: отрисовка игры
 
