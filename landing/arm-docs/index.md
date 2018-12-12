@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.topic: article
 keywords: Windows 10 в ARM, ARM, создание приложений win32 ARM64, создание драйверов ARM64
 ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8879446"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8929474"
 ---
 # <a name="windows-10-on-arm"></a>Windows10 на архитектуре ARM
 Windows 10 работает на ПК с процессорами ARM. Эта страница содержит сведения о Дополнительные сведения о платформе и приступим к разработке приложений. Мы также рекомендуем предоставить отзыв с помощью ссылок в нижней части страницы.
