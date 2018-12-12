@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, API покупок Microsoft Store, подписки
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e4cf27331a218c0c0ef06ee1a80c141b889504a
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8880673"
+ms.locfileid: "8943739"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>Изменение состояния выставления счетов за подписку для пользователя
 
