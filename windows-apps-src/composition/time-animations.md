@@ -1,16 +1,16 @@
 ---
 title: Анимации времени
 description: Используйте классы KeyFrameAnimation, чтобы менять пользовательский интерфейс во времени.
-ms.date: 10/10/2017
+ms.date: 12/12/2018
 ms.topic: article
 keywords: windows 10, uwp, анимация
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1fe8c1fcb641c3bc79f1f058befe6f4b44044a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 838a8c3a6dfe89de49fddefd28c53cea563408cf
+ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934373"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8968578"
 ---
 # <a name="time-based-animations"></a>Анимации на основе времени
 
@@ -62,22 +62,22 @@ ms.locfileid: "8934373"
 1. Используя шаблон анимации, начните добавлять KeyFrames и определять свойства анимации.
     - Требуется по меньшей мере один объект KeyFrame (ключевой кадр 100% или 1f).
     - Рекомендуется также определить продолжительность.
-1. Как только вы будете готовы к запуску этой анимации, вызовите функцию StartAnimation(…) в объекте CompositionObject, указав в качестве целевого объекта свойство, которое требуется анимировать. В частности:
-    - `Visual.StartAnimation("targetProperty", CompositionAnimation animation);`
-    - `Visual.StartAnimationGroup(AnimationGroup animationGroup);`
-1. Если выполняется какая-либо анимация и вы хотите остановить анимацию или группу анимаций, можно воспользоваться следующими API:
-    - `Visual.StopAnimation("targetProperty");`
-    - `Visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
+1. Один раз вы будете готовы к запуску этой анимации, а затем вызовите функцию Startanimation(…) в CompositionObject, предназначенных для свойства, которое требуется анимировать. В частности:
+    - `visual.StartAnimation("targetProperty", CompositionAnimation animation);`
+    - `visual.StartAnimationGroup(AnimationGroup animationGroup);`
+1. Если у вас есть запущена анимация и вы хотите остановить анимацию или группу анимаций, могут использовать эти API:
+    - `visual.StopAnimation("targetProperty");`
+    - `visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
 
 Давайте рассмотрим пример, чтобы увидеть эту формулу в действии.
 
 ## <a name="example"></a>Пример.
 
-В этом примере анимируется смещение визуального элемента с <0,0,0> на <20,20,20> за 1 секунду. Кроме того, между указанными позициями этот визуальный элемент должен выполнить анимацию 10 раз.
+В этом примере вы хотите анимировать смещение визуального элемента с < 0,0,0 > на < 200,0,0 > за 1 секунду. Кроме того, между указанными позициями этот визуальный элемент должен выполнить анимацию 10 раз.
 
 ![Анимация по ключевым кадрам](images/animation/animated-rectangle.gif)
 
-Для начала вы идентифицируете объект CompositionObject и свойство, которое требуется анимировать. В этом случае красный квадрат представлен составным визуальным элементом с именем `redSquare`. Анимация начинается с этого объекта.
+Для начала вы идентифицируете объект CompositionObject и свойство, которое требуется анимировать. В этом случае красный квадрат представлен составным визуальным элементом с именем `redVisual`. Анимация начинается с этого объекта.
 
 Затем, поскольку нужно анимировать свойство Offset, необходимо создать анимацию Vector3KeyFrameAnimation (Offset— это тип Vector3). Кроме того, вы определяете соответствующие кадры KeyFrames для анимации KeyFrameAnimation.
 
@@ -86,7 +86,7 @@ ms.locfileid: "8934373"
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
 ```
 
-Затем мы определим свойства анимации KeyFrameAnimation, чтобы описать ее продолжительность, а также поведение анимирования между двумя позициями (текущей и <200,0,0>) 10 раз.
+Затем вы определите свойства анимации keyframeanimation, чтобы описать ее продолжительность, а также поведение анимирования между двумя позициями (текущей и < 200,0,0 >) 10 раз.
 
 ```csharp
     animation.Duration = TimeSpan.FromSeconds(2);
@@ -98,13 +98,13 @@ ms.locfileid: "8934373"
 Наконец, для выполнения анимации необходимо запустить ее в свойстве CompositionObject.
 
 ```csharp
-redVisual.StartAnimation("Offset.X", animation);
+redVisual.StartAnimation("Offset", animation);
 ```
 
 Ниже приводится полный код для выполнения этого действия.
 
 ```csharp
-private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
+private void AnimateSquare(Compositor compositor, SpriteVisual redVisual)
 { 
     Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
@@ -112,6 +112,6 @@ private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
     animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
     // Run animation for 10 times
     animation.IterationCount = 10;
-    visual.StartAnimation("Offset.X", animation);
+    redVisual.StartAnimation("Offset", animation);
 } 
 ```
