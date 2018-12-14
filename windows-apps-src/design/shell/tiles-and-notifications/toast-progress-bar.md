@@ -7,12 +7,12 @@ ms.date: 12/7/2017
 ms.topic: article
 keywords: Windows 10, uwp, всплывающее уведомление, индикатор выполнения, индикатор выполнения всплывающего уведомления, привязка данных всплывающего уведомления
 ms.localizationpriority: medium
-ms.openlocfilehash: 853e9c1672f1933789c961838734a67b3e816b6a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f955f2a71fed6444c65f9550e1f4fa3baeabe092
+ms.sourcegitcommit: 88265a8c9f6a77a0508a0c9d89b6ab0a6238a1da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921319"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8969061"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Индикатор выполнения всплывающего уведомления и привязка данных
 
@@ -21,7 +21,7 @@ ms.locfileid: "8921319"
 > [!IMPORTANT]
 > **Требует обновления Creators Update и библиотека уведомлений версии 1.4.0**: вам необходимо выбрать целевой пакет SDK 15063 и использовать сборку 15063 или более поздней версии для применения индикаторов выполнения во всплывающих уведомлениях. Для создания индикатора выполнения в содержимом всплывающего уведомления необходимо использовать [библиотеку уведомлений набора средств сообщества UWP из NuGet](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) версии 1.4.0 или более поздней.
 
-Индикатор хода выполнения внутри всплывающего уведомления может быть "не определенным"» (нет конкретного значения, анимированные точки, обозначающие выполнение операции) или "определенным" (определенная доля заполнения индикатора, например 60%).
+Индикатор хода выполнения внутри всплывающего уведомления может быть «неопределенное» (нет конкретного значения, анимированные точки обозначающие выполнение операции) или «определенным» (панели — это, например 60%).
 
 > **Важные API-интерфейсы**: [класс NotificationData](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata), [метод ToastNotifier.Update](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update), [класс ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
