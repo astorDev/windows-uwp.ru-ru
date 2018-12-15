@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 336e4e64cc0b1819081a7e42b6e3e2d099355248
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92c08971ee498e93e5a974ef8bd63d00dd27fc7d
+ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947846"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970987"
 ---
 # <a name="acrylic-material"></a>Акриловый материал
 
@@ -72,7 +72,7 @@ ms.locfileid: "8947846"
 
 ## <a name="when-to-use-acrylic"></a>Когда использовать акрил
 
-* Используйте акрил приложения для поддержки пользовательского интерфейса, например NavigationView или командные элементы в строке. 
+* Используйте акрил приложения для поддержки пользовательского интерфейса, например NavigationView или командные элементы в строке.
 * Используйте акрил фона для отображения промежуточных элементов пользовательского интерфейса, например контекстные меню, всплывающие элементы и dimsissable свет пользовательского интерфейса.<br />С помощью Акрила в промежуточный сценариев обеспечивает визуальную взаимосвязь с содержимым, вызвавшим этот промежуточный Интерфейс.
 
 Если вы используете акрил приложения на поверхностях навигации, рассмотрите возможность распространить содержимое под акриловая панель для улучшения поток в вашем приложении. С помощью NavigationView сделает это за вас автоматически. Тем не менее чтобы избежать эффекту "зебры", не пытается разместить несколько объектов акриловый края до края - это может создать нежелательных границе между двумя размытое поверхности. Акрил — инструмент, призванный сделать ваши проекты, но при неправильном использовании, может привести к визуальному шуму.
@@ -192,6 +192,7 @@ ms.locfileid: "8947846"
 Акриловую поверхность в вашем приложении можно подкрасить в какой-либо цвет, чтобы придать ей фирменный стиль или добиться гармонии с другими элементами на странице. Чтобы перейти от черно-белой шкалы к цветной, необходимо определить собственные акриловые кисти с помощью указанных ниже свойств.
  - **TintColor**— слой наложения цвета/оттенка. Можно задать RGB-значение цвета и прозрачность альфа-канала.
  - **TintOpacity**— непрозрачность цветного слоя. Корпорация Майкрософт рекомендует 80% непрозрачности как отправную точку, несмотря на то, что разные цвета могут выглядеть привлекательнее при других translucencies.
+ - **TintLuminosityOpacity**: элементы управления значение насыщенности, которые разрешается через акриловую поверхность в фоновом режиме.
  - **BackgroundSource**— флаг, указывающий тип акриловой поверхности (акрил фона или приложения).
  - **FallbackColor**: сплошной цвет, заменяющий акрил в режиме экономии заряда. Акрил фона также сменяется резервным цветом, если окно приложения на рабочем столе неактивно или приложение запущено на телефоне или Xbox.
 
@@ -199,7 +200,12 @@ ms.locfileid: "8947846"
 
 ![Акриловая палитра (темная тема)](images/CustomAcrylic_Swatches_DarkTheme.png)
 
+![По сравнению с непрозрачность тона opactity яркости](images/LuminosityVersusTint.png)
+
 Чтобы добавить акриловую кисть, определите три ресурса для темной, светлой и высококонтрастной тем. Обратите внимание, что в режиме высокой контрастности рекомендуется использовать SolidColorBrush с тем же значением x:Key, что и для светлой/темной AcrylicBrush.
+
+> [!Note] 
+> Если вы не укажете значение TintLuminosityOpacity, система автоматически изменяется его значение на основе TintColor и TintOpacity.
 
 ```xaml
 <ResourceDictionary.ThemeDictionaries>
@@ -208,6 +214,7 @@ ms.locfileid: "8947846"
             BackgroundSource="HostBackdrop"
             TintColor="#FFFF0000"
             TintOpacity="0.8"
+            TintLuminosityOpacity="0.5"
             FallbackColor="#FF7F0000"/>
     </ResourceDictionary>
 
@@ -221,6 +228,7 @@ ms.locfileid: "8947846"
             BackgroundSource="HostBackdrop"
             TintColor="#FFFF0000"
             TintOpacity="0.8"
+            TintLuminosityOpacity="0.5"
             FallbackColor="#FFFF7F7F"/>
     </ResourceDictionary>
 </ResourceDictionary.ThemeDictionaries>
@@ -249,10 +257,9 @@ else
 
 ## <a name="extend-acrylic-into-the-title-bar"></a>Применение акрила в заголовке окна
 
-Чтобы взгляд легче скользил по окну вашего приложения, можно использовать акриловую поверхность в области его заголовка. В этом примере акрил используется в заголовке окна путем задания свойствам [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) и [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) объекта [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) значения [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent). 
+Чтобы взгляд легче скользил по окну вашего приложения, можно использовать акриловую поверхность в области его заголовка. В этом примере акрил используется в заголовке окна путем задания свойствам [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) и [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) объекта [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) значения [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent).
 
 ```csharp
-/// Extend acrylic into the title bar. 
 private void ExtendAcrylicIntoTitleBar()
 {
     CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
@@ -262,11 +269,10 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-Этот код можно разместить в методе [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) приложения (_App.xaml.cs_) после вызова [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate), как показано здесь, или на первой странице приложения. 
-
+Этот код можно разместить в методе [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) приложения (_App.xaml.cs_) после вызова [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate), как показано здесь, или на первой странице приложения.
 
 ```csharp
-// Call your extend acrylic code in the OnLaunched event, after 
+// Call your extend acrylic code in the OnLaunched event, after
 // calling Window.Current.Activate.
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
