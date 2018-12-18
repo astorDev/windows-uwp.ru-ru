@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7083152efb4cf871f8abebf6d2970d2da4ba06e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b755e8d165d58ce4303d9fefe6d051abce6c9765
+ms.sourcegitcommit: 3433d0c7e70e00df0418887f71c2d094e9c30476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926096"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "8973945"
 ---
 # <a name="app-icons-and-logos"></a>Значки и логотипы приложений 
 
@@ -71,7 +71,7 @@ ms.locfileid: "8926096"
 :::row-end:::  
 
 
-Так как ресурсы значков приложения — это точечные рисунки, а не масштабированию точечные рисунки, мы рекомендуем предоставить версии каждый ресурс значка для каждого коэффициента масштабирования: 100%, 125%, 150%, 200% и 400%. Это очень значков! Fortunatly, Visual Studio предоставляет средство, которое позволяет легко создавать и обновлять эти значки. 
+Так как ресурсы значков приложения — это точечные рисунки, а не масштабированию точечные рисунки, мы рекомендуем предоставить версии каждый ресурс значка для каждого коэффициента масштабирования: 100%, 125%, 150%, 200% и 400%. Это очень значков! К счастью Visual Studio предоставляет средство, которое позволяет легко создавать и обновлять эти значки. 
 
 ## <a name="microsoft-store-listing-image"></a>Описание образа Microsoft Store
 
