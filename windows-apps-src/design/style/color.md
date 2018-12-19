@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 55e93cdbeec5aad487d7c03c1877095dc13955b1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e6547267a1d0b478fdda8698bd1dcf89523442b
+ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947866"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "8976901"
 ---
 # <a name="color"></a>Цвет
 
@@ -213,7 +213,7 @@ ms.locfileid: "8947866"
 
 На приведенной ниже схеме показан пример различных светлых и темных оттенков цвета элементов и применения цветного типа на цветной поверхности.
 
-![цвет на цвете](images/color/color-on-color.svg)
+![цвет на цвете](images/color/color-on-color.png)
 
 Подробнее об использовании стилей для элементов управления см. в разделе [Стили XAML](../controls-and-patterns/xaml-styles.md).
 

@@ -5,12 +5,12 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, SQL Server, база данных
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cb4b16cea3368660ffcb1bc4b252391a73ab13e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4fe215a593293ff91afb7f71a830512ac365093f
+ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940815"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "8976931"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Использование базы данных SQL Server в приложении UWP
 Ваше приложение может подключаться напрямую к базе данных SQL Server и затем хранить и извлекать данные с помощью классов в пространстве имен [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx).
@@ -29,7 +29,7 @@ ms.locfileid: "8940815"
 
 Откройте файл **Package.appxmanifest** проекта UWP в конструкторе манифестов.
 
-На вкладке **Возможности** установите флажок **Корпоративная проверка подлинности**.
+На вкладке " **возможности** " установите флажок **Корпоративная проверка подлинности** при использовании проверки подлинности Windows для проверки подлинности SQL Server.
 
 ![Корпоративная проверка подлинности](images/enterprise-authentication.png)
 
@@ -61,8 +61,13 @@ ms.locfileid: "8940815"
 ```csharp
 sealed partial class App : Application
 {
+    // Connection string for using Windows Authentication.
     private string connectionString =
         @"Data Source=YourServerName\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+
+    // This is an example connection string for using SQL Server Authentication.
+    // private string connectionString =
+    //     @"Data Source=YourServerName\YourInstanceName;Initial Catalog=DatabaseName; User Id=XXXXX; Password=XXXXX";
 
     public string ConnectionString { get => connectionString; set => connectionString = value; }
 

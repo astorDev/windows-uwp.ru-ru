@@ -5,12 +5,12 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, вопросы и ответы, вопросы и ответы
 ms.localizationpriority: medium
-ms.openlocfilehash: b162fbaaeda8e1ded1f0d3e1d75c840dfa543f4c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5a0018047b74ffa385cdd758578f3bdad9078c03
+ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934809"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "8976911"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на вопросы, которые вы, скорее всего имеют о разработке и использовании API среды выполнения Windows с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -149,6 +149,10 @@ a.f();
 ```
 
 Рекомендуемые приведенный выше шаблон применяется не только к C + +/ WinRT, но все языковые проекции среды выполнения Windows.
+
+## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>Как включить строку в тип&mdash;для навигации, например?
+
+В конце в [примере кода представление навигации](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (который является главным образом в C#), существует объект C + +/ WinRT фрагмент кода, показывающий, как это сделать.
 
 > [!NOTE]
 > Если в этом разделе не ответить на вопрос, то вы можете обнаружить справки, перейдя к [сообществу разработчиков Visual Studio C++](https://developercommunity.visualstudio.com/spaces/62/index.html)или с помощью [ `c++-winrt` метки на Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).
