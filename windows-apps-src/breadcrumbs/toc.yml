@@ -1,0 +1,185 @@
+items:
+- name: Документы
+  tocHref: /
+  topicHref: /
+  items:
+  - name: Windows
+    tocHref: /windows/
+    topicHref: /windows/
+    items:
+    - name: UWP
+      tocHref: /windows/uwp/
+      topicHref: /windows/uwp/index
+      items:
+      - name: Новые возможности
+        tocHref: /windows/uwp/whats-new/
+        topicHref: /windows/uwp/whats-new/windows-10-version-latest
+      - name: Начало работы
+        tocHref: /windows/uwp/get-started/
+        topicHref: /windows/uwp/get-started/
+      - name: Оформление и пользовательский интерфейс
+        tocHref: /windows/uwp/design/
+        topicHref: /windows/uwp/design/basics/index
+        items:
+        - name: Основы проектирования
+          tocHref: /windows/uwp/design/basics/
+          topicHref: /windows/uwp/design/basics/index
+        - name: Основы проектирования
+          tocHref: /windows/uwp/design/fluent-design-system/
+          topicHref: /windows/uwp/design/basics/index
+        - name: Структура
+          tocHref: /windows/uwp/design/layout/
+          topicHref: /windows/uwp/design/layout/index
+        - name: Стиль
+          tocHref: /windows/uwp/design/style/
+          topicHref: /windows/uwp/design/style/index
+        - name: Движение
+          tocHref: /windows/uwp/design/motion/
+          topicHref: /windows/uwp/design/motion/index
+        - name: Элементы управления
+          tocHref: /windows/uwp/design/controls-and-patterns/
+          topicHref: /windows/uwp/design/controls-and-patterns/index
+        - name: Методы ввода и взаимодействие
+          tocHref: /windows/uwp/design/input/
+          topicHref: /windows/uwp/design/input/index
+        - name: Устройства
+          tocHref: /windows/uwp/design/devices/
+          topicHref: /windows/uwp/design/devices/index
+        - name: Удобство использования
+          tocHref: /windows/uwp/design/usability/
+          topicHref: /windows/uwp/design/usability/index
+          items:
+          - name: Специальные возможности
+            tocHref: /windows/uwp/design/accessibility/
+            topicHref: /windows/uwp/design/accessibility/accessibility
+          - name: Параметры приложений и данные
+            tocHref: /windows/uwp/design/app-settings/
+            topicHref: /windows/uwp/design/app-settings/app-settings-and-data
+          - name: Глобализация и локализация
+            tocHref: /windows/uwp/design/globalizing/
+            topicHref: /windows/uwp/design/globalizing/globalizing-portal
+          - name: Руководство по справке для приложений
+            tocHref: /windows/uwp/design/guidelines-for-app-help/
+            topicHref: /windows/uwp/design/guidelines-for-app-help/index
+        - name: Наборы инструментов для проектирования
+          tocHref: /windows/uwp/design/downloads/
+          topicHref: /windows/uwp/design/downloads/index
+      - name: Разработка
+        tocHref: /windows/uwp/develop/
+        topicHref: /windows/uwp/develop/index
+        items:
+        - name: Ресурсы приложения
+          tocHref: /windows/uwp/app-resources/
+          topicHref: /windows/uwp/app-resources/index
+        - name: Обмен данными между приложениями
+          tocHref: /windows/uwp/app-to-app/
+          topicHref: /windows/uwp/app-to-app/index
+        - name: Звук, видео и камера
+          tocHref: /windows/uwp/audio-video-camera/
+          topicHref: /windows/uwp/audio-video-camera/index
+        - name: "\"Контакты\", \"Близкие люди\" и \"Календарь\""
+          tocHref: /windows/uwp/contacts-and-calendar/
+          topicHref: /windows/uwp/contacts-and-calendar/index
+        - name: Доступ к данным
+          tocHref: /windows/uwp/data-access/
+          topicHref: /windows/uwp/data-access/index
+        - name: Привязка данных
+          tocHref: /windows/uwp/data-binding/
+          topicHref: /windows/uwp/data-binding/index
+        - name: Средства отладки, тестирования и повышения производительности
+          tocHref: /windows/uwp/debug-test-perf/
+          topicHref: /windows/uwp/debug-test-perf/index
+        - name: Образовательные приложения
+          tocHref: /windows/uwp/apps-for-education/
+          topicHref: /windows/uwp/apps-for-education/index
+        - name: Устройства, датчики и питание
+          tocHref: /windows/uwp/devices-sensors/
+          topicHref: /windows/uwp/devices-sensors/index
+        - name: Функции корпоративного уровня
+          tocHref: /windows/uwp/enterprise/
+          topicHref: /windows/uwp/enterprise/index
+        - name: Файлы, папки и библиотеки
+          tocHref: /windows/uwp/files/
+          topicHref: /windows/uwp/files/index
+        - name: Графика
+          tocHref: /windows/uwp/graphics/
+          topicHref: /windows/uwp/graphics/index
+        - name: Размещенные веб-приложения
+          tocHref: /windows/uwp/bridges/
+          topicHref: /windows/uwphttps://developer.microsoft.com/en-us/windows/bridges/hosted-web-apps
+        - name: Запуск, возобновление и фоновые задачи
+          tocHref: /windows/uwp/launch-resume/
+          topicHref: /windows/uwp/launch-resume/index
+        - name: Машинное обучение
+          tocHref: /windows/uwp/machine-learning/
+          topicHref: /windows/uwp/machine-learning/index
+        - name: Карты и расположение
+          tocHref: /windows/uwp/maps-and-location/
+          topicHref: /windows/uwp/maps-and-location/index
+        - name: Монетизация, привлечение и службы Store
+          tocHref: /windows/uwp/monetize/
+          topicHref: /windows/uwp/monetize/index
+        - name: Сети и веб-службы
+          tocHref: /windows/uwp/networking/
+          topicHref: /windows/uwp/networking/index
+        - name: Создание пакетов приложений
+          tocHref: /windows/uwp/packaging/
+          topicHref: /windows/uwp/packaging/index
+        - name: Перенос приложений в Windows10
+          tocHref: /windows/uwp/porting/
+          topicHref: /windows/uwp/porting/index
+        - name: Безопасность
+          tocHref: /windows/uwp/security/
+          topicHref: /windows/uwp/security/index
+        - name: Потоки и асинхронное программирование
+          tocHref: /windows/uwp/threading-async/
+          topicHref: /windows/uwp/threading-async/index
+        - name: Визуальный уровень
+          tocHref: /windows/uwp/visual-layer/
+          topicHref: /windows/uwp/visual-layer/index
+        - name: Компоненты среды выполнения Windows
+          tocHref: /windows/uwp/winrt-components/
+          topicHref: /windows/uwp/winrt-components//index
+        - name: Платформа XAML
+          tocHref: /windows/uwp/xaml-platform/
+          topicHref: /windows/uwp/xaml-platform/index
+        - name: Справочные материалы по API
+          tocHref: /windows/uwp/api/
+          topicHref: https://docs.microsoft.com/en-us/uwp/
+        - name: Windows как услуга
+          tocHref: /windows/uwp/application-development-for-windows-as-a-service/
+          topicHref: /windows/uwp/application-development-for-windows-as-a-service/index
+        - name: Выбор версии UWP
+          tocHref: /windows/uwp/choose-a-uwp-version/
+          topicHref: /windows/uwp/choose-a-uwp-version/index
+        - name: Службы
+          tocHref: /windows/uwp/microsoft-services/
+          topicHref: /windows/uwp/microsoft-services/index
+      - name: Разработка игр
+        tocHref: /windows/uwp/gaming/
+        topicHref: /windows/uwp/gaming/e2e
+        items:
+        - name: UWP на Xbox One
+          tocHref: /windows/uwp/xbox-apps/
+          topicHref: /windows/uwp/xbox-apps/index
+        - name: Программирование игр
+          tocHref: /windows/uwp/gaming/
+          topicHref: /windows/uwp/gaming/index
+        - name: Программирование в DirectX
+          tocHref: /windows/uwp/directx-programming/
+          topicHref: /windows/uwp/directx-programming/index
+        - name: Обучающее руководство по графике Direct3D
+          tocHref: /windows/uwp/graphics-concepts/
+          topicHref: /windows/uwp/graphics-concepts/index
+        - name: Xbox Live
+          tocHref: /windows/uwp/xbox-live/
+          topicHref: /windows/uwp/xbox-live/index
+      - name: Публикация
+        tocHref: /windows/uwp/publish/
+        topicHref: /windows/uwp/publish/index
+ms.openlocfilehash: 1d79038daa4f2a50dd287da879fa8153ca3fb118
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8962506"

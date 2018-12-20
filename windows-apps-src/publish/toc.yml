@@ -1,0 +1,222 @@
+items:
+- name: Обзор
+  href: ../publish/index.md
+- name: Создание учетной записи разработчика
+  href: ../publish/opening-a-developer-account.md
+  items:
+  - name: Типы, доступность и стоимость учетных записей
+    href: ../publish/account-types-locations-and-fees.md
+  - name: Управление параметрами учетной записи и сведениями профиля
+    href: ../publish/manage-account-settings-and-profile.md
+  - name: Защита товарных знаков и авторских прав
+    href: ../publish/trademark-and-copyright-protection.md
+  - name: Программа предварительной оценки для Центра разработки
+    href: ../publish/dev-center-insider-program.md
+- name: Управление пользователями учетных записей
+  href: ../publish/manage-account-users.md
+  items:
+  - name: Привязка Azure AD к учетной записи Центра партнеров
+    href: ../publish/associate-azure-ad-with-partner-center.md
+  - name: Добавление пользователей, групп и приложений Azure Active Directory
+    href: ../publish/add-users-groups-and-azure-ad-applications.md
+  - name: Настройка ролей и пользовательских разрешений
+    href: ../publish/set-custom-permissions-for-account-users.md
+- name: Создание приложения посредством резервирования имени
+  href: ../publish/create-your-app-by-reserving-a-name.md
+- name: Отправка приложений
+  href: ../publish/app-submissions.md
+  items:
+  - name: Настройки цен и доступности приложений
+    href: ../publish/set-app-pricing-and-availability.md
+    items:
+    - name: Выбор определенных стран
+      href: ../publish/define-market-selection.md
+    - name: Выбор параметров видимости
+      href: ../publish/choose-visibility-options.md
+    - name: Настройка точного расписания выпуска
+      href: ../publish/configure-precise-release-scheduling.md
+    - name: Настройка и планирование цены приложения
+      href: ../publish/set-and-schedule-app-pricing.md
+    - name: Параметры организационного лицензирования
+      href: ../publish/organizational-licensing.md
+  - name: Ввод свойств приложения
+    href: ../publish/enter-app-properties.md
+    items:
+    - name: Таблица категорий и подкатегорий
+      href: ../publish/category-and-subcategory-table.md
+    - name: Объявления продукта
+      href: ../publish/product-declarations.md
+  - name: Возрастные категории
+    href: ../publish/age-ratings.md
+  - name: Отправка пакетов приложений
+    href: ../publish/upload-app-packages.md
+    items:
+    - name: Доступность семейства устройств
+      href: ../publish/device-family-availability.md
+    - name: Требования к пакету приложения
+      href: ../publish/app-package-requirements.md
+    - name: Нумерация версий пакета
+      href: ../publish/package-version-numbering.md
+    - name: Поддерживаемые языки
+      href: ../publish/supported-languages.md
+    - name: Руководство по управлению пакетами приложения
+      href: ../publish/guidance-for-app-package-management.md
+  - name: Создание описаний приложения в Store
+    href: ../publish/create-app-store-listings.md
+    items:
+    - name: Создание эффективного описания приложения
+      href: ../publish/write-a-great-app-description.md
+    - name: Снимки экрана, изображения и трейлеры приложения
+      href: ../publish/app-screenshots-and-images.md
+    - name: Импорт и экспорт описаний в Магазине
+      href: ../publish/import-and-export-store-listings.md
+    - name: Создание описаний в Store для определенной платформы
+      href: ../publish/create-platform-specific-store-listings.md
+  - name: Параметры управления отправкой
+    href: ../publish/manage-submission-options.md
+    items:
+    - name: Заметки по сертификации
+      href: ../publish/notes-for-certification.md
+  - name: Процесс сертификации приложения
+    href: ../publish/the-app-certification-process.md
+    items:
+    - name: Устранение ошибок отправки
+      href: ../publish/resolve-submission-errors.md
+    - name: Недопущение распространенных ошибок при сертификации
+      href: ../publish/avoid-common-certification-failures.md
+  - name: Тестовые пакеты
+    href: ../publish/package-flights.md
+  - name: Постепенный выпуск пакета
+    href: ../publish/gradual-package-rollout.md
+  - name: Бета-тестирование и целевое распространение
+    href: ../publish/beta-testing-and-targeted-distribution.md
+  - name: Распространение бизнес-приложений для предприятий
+    href: ../publish/distribute-lob-apps-to-enterprises.md
+- name: Отправка надстроек
+  href: ../publish/add-on-submissions.md
+  items:
+  - name: Установка типа и кода продукта для надстройки
+    href: ../publish/set-your-add-on-product-id.md
+  - name: Ввод свойств надстройки
+    href: ../publish/enter-add-on-properties.md
+  - name: Настройки цен и доступности надстройки
+    href: ../publish/set-add-on-pricing-and-availability.md
+  - name: Создание описания надстройки в Store
+    href: ../publish/create-add-on-store-listings.md
+- name: Реклама в приложении
+  href: ../publish/in-app-ads.md
+- name: Управление приложениями и службы
+  href: ../publish/app-management-and-services.md
+  items:
+  - name: Просмотр сведений об идентификации приложений
+    href: ../publish/view-app-identity-details.md
+  - name: Управление именами приложений
+    href: ../publish/manage-app-names.md
+  - name: Создание пакетов предустановки для изготовителей оборудования
+    href: ../publish/generate-preinstall-packages-for-oems.md
+- name: Привлечение внимания и продвижение
+  href: ../publish/attract-customers-and-promote-your-apps.md
+  items:
+  - name: Создание промокодов
+    href: ../publish/generate-promotional-codes.md
+  - name: Создание рекламной кампании для вашего приложения
+    href: ../publish/create-an-ad-campaign-for-your-app.md
+    items:
+    - name: Управление рекламной кампанией
+      href: ../publish/managing-your-ad-campaign.md
+    - name: О собственных объявлениях
+      href: ../publish/about-house-ads.md
+    - name: О рекламе от сообщества
+      href: ../publish/about-community-ads.md
+    - name: Общие вопросы о рекламных кампаниях
+      href: ../publish/common-questions.md
+  - name: Создание пользовательской кампании по продвижению приложения
+    href: ../publish/create-a-custom-app-promotion-campaign.md
+  - name: Выставление приложений и надстроек на продажу
+    href: ../publish/put-apps-and-add-ons-on-sale.md
+  - name: Рекомендации по маркетингу приложений
+    href: ../publish/app-marketing-guidelines.md
+  - name: Ссылка на ваше приложение
+    href: ../publish/link-to-your-app.md
+  - name: Повышение популярности своего приложения
+    href: ../publish/make-your-app-easier-to-promote.md
+- name: Привлечение клиентов
+  href: ../publish/engage-with-your-customers.md
+  items:
+  - name: Создание групп пользователей
+    href: ../publish/create-customer-groups.md
+    items:
+    - name: Создание сегментов пользователей
+      href: ../publish/create-customer-segments.md
+    - name: Создание групп известных пользователей
+      href: ../publish/create-known-user-groups.md
+  - name: Ответ на оценки пользователей
+    href: ../publish/respond-to-customer-reviews.md
+  - name: Реакция на отзывы пользователей
+    href: ../publish/respond-to-customer-feedback.md
+  - name: Отправка уведомлений пользователям вашего приложения
+    href: ../publish/send-push-notifications-to-your-apps-customers.md
+  - name: Использование целевых предложений
+    href: ../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
+- name: Анализ производительности приложений
+  href: ../publish/analytics.md
+  items:
+  - name: Отчет "Приобретения"
+    href: ../publish/acquisitions-report.md
+  - name: Отчет о приобретении надстроек
+    href: ../publish/add-on-acquisitions-report.md
+  - name: Отчет об использовании
+    href: ../publish/usage-report.md
+  - name: Отчет о работоспособности
+    href: ../publish/health-report.md
+  - name: Отчет "Оценки"
+    href: ../publish/ratings-report.md
+  - name: Отчет "Отзывы"
+    href: ../publish/reviews-report.md
+  - name: Отчет "Отзывы"
+    href: ../publish/feedback-report.md
+  - name: Аналитический отчет Xbox
+    href: ../publish/xbox-analytics-report.md
+  - name: Аналитический отчет
+    href: ../publish/insights-report.md
+  - name: Отчет об эффективности рекламы
+    href: ../publish/advertising-performance-report.md
+  - name: Отчет о рекламной кампании
+    href: ../publish/ad-campaign-report.md
+  - name: Скачивание аналитических отчетов
+    href: ../publish/download-analytic-reports.md
+- name: Получение платежей
+  href: ../publish/getting-paid-apps.md
+  items:
+  - name: Настройка счета для выплат и налоговых форм
+    href: ../publish/setting-up-your-payout-account-and-tax-forms.md
+  - name: Пороговые значения, методы и сроки оплаты
+    href: ../publish/payment-thresholds-methods-and-timeframes.md
+  - name: Сводка по выплатам
+    href: ../publish/payout-summary.md
+  - name: Налогообложение для платных приложений
+    href: ../publish/tax-details-for-paid-apps.md
+  - name: Общие сведения о налоговых формах IRS
+    href: ../publish/understand-irs-tax-forms.md
+  - name: Выставление счетов мобильным оператором
+    href: ../publish/mobile-operator-billing.md
+  - name: Сведения об НДС
+    href: ../publish/vat-info.md
+- name: Политики и правила поведения Store
+  href: https://docs.microsoft.com/legal/windows/agreements/store-policies-and-code-of-conduct
+  items:
+  - name: Политики Microsoft Store
+    href: https://docs.microsoft.com/legal/windows/agreements/store-policies
+    items:
+    - name: Журнал изменений
+      href: https://docs.microsoft.com/legal/windows/agreements/store-policies-change-history
+  - name: Качество приложений
+    href: https://docs.microsoft.com/legal/windows/agreements/store-app-quality
+  - name: Правила поведения для разработчиков
+    href: https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct
+ms.openlocfilehash: 53ac86d707ecbf117e4fc2852ca476dc73cc9525
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8962486"

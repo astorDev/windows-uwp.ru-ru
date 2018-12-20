@@ -1,0 +1,572 @@
+items:
+- name: Основы проектирования
+  items:
+  - name: Обзор
+    href: basics/index.md
+  - name: Введение в проектирование приложений
+    href: basics/design-and-ui-intro.md
+  - name: Система Fluent Design
+    href: fluent-design-system/index.md
+  - name: Основы навигации
+    items:
+    - name: Обзор
+      href: basics/navigation-basics.md
+    - name: Реализация базовой навигации
+      href: basics/navigate-between-two-pages.md
+    - name: Журнал навигации и навигация в обратном направлении
+      href: basics/navigation-history-and-backwards-navigation.md
+  - name: Основные сведения о командных элементах
+    href: basics/commanding-basics.md
+  - name: Основные сведения о содержимом
+    href: basics/content-basics.md
+  - name: Учебники
+    items:
+    - name: Создание пользовательского интерфейса
+      href: basics/xaml-basics-ui.md
+    - name: Создание адаптивных макетов
+      href: basics/xaml-basics-adaptive-layout.md
+    - name: Стиль элемент управления
+      href: basics/xaml-basics-style.md
+- name: Макет
+  items:
+  - name: Обзор
+    href: layout/index.md
+  - name: Макет страницы
+    href: layout/page-layout.md
+  - name: Размеры экрана и точки прерывания
+    href: layout/screen-sizes-and-breakpoints-for-responsive-design.md
+  - name: Методы создания отзывчивого дизайна
+    href: layout/responsive-design.md
+  - name: Макеты на основе XAML
+    href: layout/layouts-with-xaml.md
+  - name: Отображение нескольких представлений
+    href: layout/show-multiple-views.md
+  - name: Выравнивание, поля и заполнение
+    href: layout/alignment-margin-padding.md
+  - name: Панели макета
+    items:
+    - name: Обзор
+      href: layout/layout-panels.md
+    - name: 'Руководство: использование панелей макета'
+      href: layout/grid-tutorial.md
+    - name: Комбинированный режим
+      href: controls-and-patterns/split-view.md
+    - name: Настраиваемые панели
+      href: layout/custom-panels-overview.md
+    - name: 'Пример настраиваемой панели: BoxPanel'
+      href: layout/boxpanel-example-custom-panel.md
+  - name: Преобразования
+    items:
+    - name: Обзор
+      href: layout/transforms.md
+    - name: Трехмерные эффекты
+      href: layout/3-d-perspective-effects.md
+- name: Элементы управления
+  items:
+  - name: Обзор
+    href: controls-and-patterns/index.md
+  - name: Введение в элементы управления и события
+    href: controls-and-patterns/controls-and-events-intro.md
+  - name: Указатель элементов управления по функциям
+    href: controls-and-patterns/controls-by-function.md
+  - name: Базовый ввод
+    items:
+    - name: Кнопки
+      href: controls-and-patterns/buttons.md
+    - name: Флажок
+      href: controls-and-patterns/checkbox.md
+    - name: Поле со списком
+      href: controls-and-patterns/combo-box.md
+    - name: Гиперссылки
+      href: controls-and-patterns/hyperlinks.md
+    - name: Переключатель
+      href: controls-and-patterns/radio-button.md
+    - name: Элемент управления "Оценка"
+      href: controls-and-patterns/rating.md
+    - name: Ползунок
+      href: controls-and-patterns/slider.md
+    - name: Переключение
+      href: controls-and-patterns/toggles.md
+  - name: Коллекции
+    items:
+    - name: Обзор
+      href: controls-and-patterns/lists.md
+    - name: Представление пролистывания
+      href: controls-and-patterns/flipview.md
+    - name: Представления списка и сетки
+      href: controls-and-patterns/listview-and-gridview.md
+      items:
+      - name: Контейнеры и шаблоны элементов
+        href: controls-and-patterns/item-containers-templates.md
+      - name: Шаблоны элементов для представления списка
+        href: controls-and-patterns/item-templates-listview.md
+      - name: Шаблоны элементов для представления сетки
+        href: controls-and-patterns/item-templates-gridview.md
+    - name: Перевернутые списки
+      href: controls-and-patterns/inverted-lists.md
+    - name: Обновление путем перетаскивания
+      href: controls-and-patterns/pull-to-refresh.md
+    - name: Вложенные элементы пользовательского интерфейса
+      href: controls-and-patterns/nested-ui.md
+    - name: Командный интерфейс коллекции
+      href: controls-and-patterns/collection-commanding.md
+    - name: Прокрутка (сдвиг)
+      href: controls-and-patterns/swipe.md
+    - name: Представление в виде дерева (иерархическое представление)
+      href: controls-and-patterns/tree-view.md
+  - name: Диалоговые окна и всплывающие элементы
+    items:
+    - name: Обзор
+      href: controls-and-patterns/dialogs-and-flyouts/index.md
+    - name: Диалоговые окна
+      href: controls-and-patterns/dialogs-and-flyouts/dialogs.md
+    - name: Всплывающие элементы
+      href: controls-and-patterns/dialogs-and-flyouts/flyouts.md
+  - name: Формы
+    href: controls-and-patterns/forms.md
+  - name: Мультимедиа, графики и фигуры
+    items:
+    - name: Изображения и кисти изображений
+      href: controls-and-patterns/images-imagebrushes.md
+    - name: Рукописный ввод
+      href: controls-and-patterns/inking-controls.md
+    - name: Воспроизведение мультимедиа
+      href: controls-and-patterns/media-playback.md
+    - name: Пользовательские элементы управления транспортировкой
+      href: controls-and-patterns/custom-transport-controls.md
+    - name: Фигуры
+      href: controls-and-patterns/shapes.md
+    - name: Представление веб-страницы
+      href: controls-and-patterns/web-view.md
+  - name: Меню и панели инструментов
+    items:
+    - name: Панель приложения и панель команд
+      href: controls-and-patterns/app-bars.md
+    - name: Всплывающее меню панели команд
+      href: controls-and-patterns/command-bar-flyout.md
+    - name: Меню и контекстные меню
+      href: controls-and-patterns/menus.md
+  - name: Навигация
+    items:
+    - name: Центр
+      href: controls-and-patterns/hub.md
+    - name: Основные и подробные данные
+      href: controls-and-patterns/master-details.md
+    - name: Представление навигации
+      href: controls-and-patterns/navigationview.md
+    - name: Сводка
+      href: controls-and-patterns/pivot.md
+  - name: Люди
+    items:
+    - name: Карточка контакта
+      href: controls-and-patterns/contact-card.md
+    - name: Изображение пользователя
+      href: controls-and-patterns/person-picture.md
+  - name: Средства выбора
+    items:
+    - name: Палитра
+      href: controls-and-patterns/color-picker.md
+    - name: Элементы управления датой и временем
+      href: controls-and-patterns/date-and-time.md
+    - name: Управляющий элемент выбора даты в календаре
+      href: controls-and-patterns/calendar-date-picker.md
+    - name: Представление календаря
+      href: controls-and-patterns/calendar-view.md
+    - name: Управляющий элемент выбора даты
+      href: controls-and-patterns/date-picker.md
+    - name: Выбор времени
+      href: controls-and-patterns/time-picker.md
+  - name: Прокрутка
+    items:
+    - name: Элементы управления прокруткой и панорамированием
+      href: controls-and-patterns/scroll-controls.md
+    - name: Контекстное масштабирование
+      href: controls-and-patterns/semantic-zoom.md
+  - name: Поиск
+    href: controls-and-patterns/search.md
+  - name: Состояние и сведения
+    items:
+    - name: Ход выполнения
+      href: controls-and-patterns/progress-controls.md
+    - name: Подсказка
+      href: controls-and-patterns/tooltips.md
+  - name: Текст
+    items:
+    - name: Обзор
+      href: controls-and-patterns/text-controls.md
+    - name: Поле автозаполнения
+      href: controls-and-patterns/auto-suggest-box.md
+    - name: Блок текста
+      href: controls-and-patterns/text-block.md
+    - name: Блок форматированного текста
+      href: controls-and-patterns/rich-text-block.md
+    - name: Текстовое поле
+      href: controls-and-patterns/text-box.md
+    - name: Поле с форматом
+      href: controls-and-patterns/rich-edit-box.md
+    - name: Поле ввода пароля
+      href: controls-and-patterns/password-box.md
+    - name: Метки
+      href: controls-and-patterns/labels.md
+    - name: Ссылки на содержимое
+      href: controls-and-patterns/content-links.md
+    - name: Представление рукописного ввода
+      href: controls-and-patterns/text-handwriting-view.md
+- name: Стиль
+  items:
+  - name: Обзор
+    href: style/index.md
+  - name: Цвет
+    href: style/color.md
+  - name: Оформление текста
+    href: style/typography.md
+  - name: Значки
+    items:
+    - name: Обзор
+      href: style/icons.md
+    - name: Значки и логотипы приложений
+      href: style/app-icons-and-logos.md
+    - name: Значки Segoe MDL2
+      href: style/segoe-ui-symbol-font.md
+  - name: Акрил
+    href: style/acrylic.md
+  - name: Эффект отображения
+    href: style/reveal.md
+  - name: Фокус отображения
+    href: style/reveal-focus.md
+  - name: Звук
+    href: style/sound.md
+  - name: Стиль письма
+    href: style/writing-style.md
+  - name: Кисти XAML
+    href: style/brushes.md
+  - name: Стили XAML
+    href: controls-and-patterns/xaml-styles.md
+    items:
+    - name: Шаблоны элементов управления XAML
+      href: controls-and-patterns/control-templates.md
+    - name: Ссылки на ресурсы ResourceDictionary и XAML
+      href: controls-and-patterns/resourcedictionary-and-xaml-resource-references.md
+    - name: Ресурсы темы XAML
+      href: controls-and-patterns/xaml-theme-resources.md
+- name: Движение
+  items:
+  - name: Обзор
+    href: motion/index.md
+  - name: Согласование по времени и реалистичная анимация
+    href: motion/timing-and-easing.md
+  - name: Направление и сила притяжения
+    href: motion/directionality-and-gravity.md
+  - name: Движение на практике
+    href: motion/motion-in-practice.md
+  - name: Смена страниц
+    href: motion/page-transitions.md
+  - name: Подключенная анимация
+    href: motion/connected-animation.md
+  - name: Параллакс
+    href: motion/parallax.md
+  - name: Анимации в XAML
+    href: motion/xaml-animation.md
+    items:
+    - name: Свойства анимации
+      href: motion/xaml-property-animations.md
+    - name: Раскадрованные анимации
+      href: motion/storyboarded-animations.md
+    - name: Анимации по ключевым кадрам и на основе функций для реалистичной анимации
+      href: motion/key-frame-and-easing-function-animations.md
+- name: Оболочка
+  items:
+  - name: Плитки
+    href: shell/tiles-and-notifications/creating-tiles.md
+    items:
+    - name: Вспомогательные плитки
+      href: shell/tiles-and-notifications/secondary-tiles.md
+      items:
+      - name: Руководство
+        href: shell/tiles-and-notifications/secondary-tiles-guidance.md
+      - name: Закрепление в меню "Пуск"
+        href: shell/tiles-and-notifications/secondary-tiles-pinning.md
+      - name: Закрепление на панели задач
+        href: shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md
+      - name: Классические приложения
+        href: shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md
+    - name: Содержимое плиток
+      href: shell/tiles-and-notifications/create-adaptive-tiles.md
+    - name: Схема содержимого плитки
+      href: shell/tiles-and-notifications/tile-schema.md
+    - name: Специальные шаблоны плиток
+      href: shell/tiles-and-notifications/special-tile-templates-catalog.md
+    - name: Отправка локального уведомления на плитке
+      href: shell/tiles-and-notifications/sending-a-local-tile-notification.md
+    - name: Уведомления на отслеживаемых плитках
+      href: shell/tiles-and-notifications/chaseable-tile-notifications.md
+    - name: API для работы с основными плитками
+      href: shell/tiles-and-notifications/primary-tile-apis.md
+    - name: Плитки, поддержка всплывающих уведомлений для языка, масштаба, контрастности
+      href: shell/tiles-and-notifications/tile-toast-language-scale-contrast.md
+  - name: Закрепление приложения на панели задач
+    href: shell/pin-to-taskbar.md
+  - name: Настройка заголовка окна
+    href: shell/title-bar.md
+  - name: Уведомления
+    items:
+    - name: Всплывающие уведомления
+      items:
+      - name: Руководство по взаимодействию с пользователем
+        href: shell/tiles-and-notifications/toast-ux-guidance.md
+      - name: Содержимое всплывающего уведомления
+        href: shell/tiles-and-notifications/adaptive-interactive-toasts.md
+      - name: Схема содержимого всплывающего уведомления
+        href: shell/tiles-and-notifications/toast-schema.md
+      - name: Отправка локального всплывающего уведомления
+        href: shell/tiles-and-notifications/send-local-toast.md
+        items:
+        - name: Классические приложения
+          href: shell/tiles-and-notifications/toast-desktop-apps.md
+          items:
+          - name: Приложения на C#
+            href: shell/tiles-and-notifications/send-local-toast-desktop.md
+          - name: Приложения C++ WRL
+            href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+      - name: Настраиваемый звук
+        href: shell/tiles-and-notifications/custom-audio-on-toasts.md
+      - name: Индикатор выполнения
+        href: shell/tiles-and-notifications/toast-progress-bar.md
+      - name: Ожидание обновления
+        href: shell/tiles-and-notifications/toast-pending-update.md
+      - name: Пользовательские отметки времени
+        href: shell/tiles-and-notifications/custom-timestamps-on-toasts.md
+      - name: Коллекции
+        href: shell/tiles-and-notifications/toast-collections.md
+      - name: Заголовки
+        href: shell/tiles-and-notifications/toast-headers.md
+      - name: Прослушиватель уведомлений
+        href: shell/tiles-and-notifications/notification-listener.md
+      - name: Зеркальное отображение уведомлений
+        href: shell/tiles-and-notifications/notification-mirroring.md
+      - name: Универсальное закрытие
+        href: shell/tiles-and-notifications/universal-dismiss.md
+    - name: Уведомления на индикаторе событий
+      href: shell/tiles-and-notifications/badges.md
+    - name: Визуализатор уведомлений
+      href: shell/tiles-and-notifications/notifications-visualizer.md
+    - name: Методы доставки уведомлений
+      href: shell/tiles-and-notifications/choosing-a-notification-delivery-method.md
+      items:
+      - name: Типы каналов уведомлений
+        href: shell/tiles-and-notifications/channel-types.md
+      - name: Альтернативные каналы с Webpush и VAPID
+        href: shell/tiles-and-notifications/alternate-channel-vapid-webpush.md
+      - name: Периодические уведомления
+        href: shell/tiles-and-notifications/periodic-notification-overview.md
+    - name: Службы push-уведомлений Windows (WNS)
+      href: shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md
+      items:
+      - name: Приоритеты WNS
+        href: shell/tiles-and-notifications/wns-notification-priorities.md
+      - name: Код, генерируемый мастером push-уведомлений
+        href: shell/tiles-and-notifications/the-code-generated-by-the-push-notification-wizard.md
+    - name: Необработанные уведомления
+      href: shell/tiles-and-notifications/raw-notification-overview.md
+- name: Методы ввода и взаимодействие
+  items:
+  - name: Обзор
+    href: input/index.md
+  - name: Краткий обзор методов ввода
+    href: input/input-primer.md
+  - name: Ввод с помощью указателя
+    href: input/handle-pointer-input.md
+  - name: Взгляд
+    href: input/gaze-interactions.md
+  - name: Перо и Windows Ink
+    href: input/pen-and-stylus-interactions.md
+    items:
+    - name: 'Руководство: добавление поддержки рукописного ввода в приложение'
+      href: input/ink-walkthrough.md
+    - name: Распознавание росчерков пера
+      href: input/convert-ink-to-text.md
+    - name: Хранение и извлечение росчерков пера
+      href: input/save-and-load-ink.md
+    - name: Добавление InkToolbar
+      href: input/ink-toolbar.md
+  - name: Сенсорный ввод
+    href: input/touch-interactions.md
+  - name: Мышь
+    href: input/mouse-interactions.md
+  - name: Клавиатура
+    href: input/keyboard-interactions.md
+    items:
+    - name: Ключи доступа
+      href: input/access-keys.md
+    - name: Сочетания клавиш
+      href: input/keyboard-accelerators.md
+    - name: Перемещение фокуса с помощью клавиатуры, геймпада, пульта дистанционного управления и средств специальных возможностей
+      href: input/focus-navigation.md
+    - name: Перемещение фокуса программным путем
+      href: input/focus-navigation-programmatic.md
+    - name: События клавиатуры
+      href: input/keyboard-events.md
+    - name: Реакция на наличие сенсорной клавиатуры
+      href: input/respond-to-the-presence-of-the-touch-keyboard.md
+    - name: Использование типа вводимых данных для изменения сенсорной клавиатуры
+      href: input/use-input-scope-to-change-the-touch-keyboard.md
+  - name: Геймпад и пульт дистанционного управления
+    href: input/gamepad-and-remote-interactions.md
+  - name: Сенсорная панель
+    href: input/touchpad-interactions.md
+  - name: Surface Dial
+    href: input/windows-wheel-interactions.md
+    items:
+    - name: 'Руководство: добавление поддержки Surface Dial в приложение'
+      href: input/radialcontroller-walkthrough.md
+  - name: Взаимодействие с помощью голосовых функций
+    href: input/speech-interactions.md
+    items:
+    - name: Распознавание речи
+      href: input/speech-recognition.md
+    - name: Определение языка для распознавателя речи
+      href: input/specify-the-speech-recognizer-language.md
+    - name: Определение настраиваемых ограничений распознавания
+      href: input/define-custom-recognition-constraints.md
+    - name: Непрерывная диктовка
+      href: input/enable-continuous-dictation.md
+    - name: Проблемы голосового ввода
+      href: input/manage-issues-with-audio-input.md
+    - name: Время ожидания распознавания речи
+      href: input/set-speech-recognition-timeouts.md
+  - name: Кортана
+    href: input/cortana-interactions.md
+    items:
+    - name: Рекомендации по проектированию
+      href: https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines
+    - name: Активация приложения переднего плана
+      href: https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
+    - name: Изменение списков фраз в формате VCD
+      href: https://docs.microsoft.com/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
+    - name: Запуск фонового приложения
+      href: https://docs.microsoft.com/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
+    - name: Взаимодействие с фоновым приложением
+      href: https://docs.microsoft.com/cortana/voice-commands/interact-with-a-background-app-in-cortana
+    - name: Прямая ссылка из фонового приложения
+      href: https://docs.microsoft.com/cortana/voice-commands/deep-link-into-your-app-from-cortana
+    - name: Поддержка голосовых команд на естественном языке
+      href: https://docs.microsoft.com/cortana/voice-commands/support-natural-language-voice-commands-in-cortana
+  - name: Несколько типов ввода
+    href: input/multiple-input-design-guidelines.md
+  - name: Вставка ввода
+    href: input/input-injection.md
+  - name: Определение устройств ввода
+    href: input/identify-input-devices.md
+  - name: Ввод пользовательского текста
+    href: input/custom-text-input.md
+  - name: Масштабирование текста
+    href: input/text-scaling.md
+  - name: Перетаскивание
+    href: input/drag-and-drop.md
+  - name: Визуальное масштабирование и изменение размера
+    href: input/guidelines-for-optical-zoom.md
+  - name: Сдвиг
+    href: input/guidelines-for-panning.md
+  - name: Поворот
+    href: input/guidelines-for-rotation.md
+  - name: Выделение текста и изображений
+    href: input/guidelines-for-textselection.md
+  - name: Таргетинг
+    href: input/guidelines-for-targeting.md
+  - name: Визуальная обратная связь
+    href: input/guidelines-for-visualfeedback.md
+- name: Устройства
+  items:
+  - name: Обзор
+    href: devices/index.md
+  - name: Проектирование для Xbox и телевизора
+    href: devices/designing-for-tv.md
+  - name: Смешанная реальность
+    href: devices/designing-for-MR.md
+- name: Удобство использования
+  items:
+  - name: Обзор
+    href: usability/index.md
+  - name: Специальные возможности
+    href: accessibility/accessibility.md
+    items:
+    - name: Обзор
+      href: accessibility/accessibility-overview.md
+    - name: Проектирование инклюзивного программного обеспечения
+      href: accessibility/designing-inclusive-software.md
+    - name: Разработка инклюзивных приложений для Windows
+      href: accessibility/developing-inclusive-windows-apps.md
+    - name: Проверка специальных возможностей
+      href: accessibility/accessibility-testing.md
+    - name: Специальные возможности в Магазине
+      href: accessibility/accessibility-in-the-store.md
+    - name: Контрольный список специальных возможностей
+      href: accessibility/accessibility-checklist.md
+    - name: Предоставление основных сведений о специальных возможностях
+      href: accessibility/basic-accessibility-information.md
+    - name: Специальные возможности клавиатуры
+      href: accessibility/keyboard-accessibility.md
+    - name: Ориентиры и заголовки
+      href: accessibility/landmarks-and-headings.md
+    - name: Темы с высокой контрастностью
+      href: accessibility/high-contrast-themes.md
+    - name: Требования к специальным возможностям отображения текста
+      href: accessibility/accessible-text-requirements.md
+    - name: Рекомендации по специальным возможностям, которых следует избегать
+      href: accessibility/practices-to-avoid.md
+    - name: Настраиваемые одноранговые элементы автоматизации
+      href: accessibility/custom-automation-peers.md
+      items:
+      - name: Шаблоны и интерфейсы элементов управления
+        href: accessibility/control-patterns-and-interfaces.md
+  - name: Параметры приложения
+    href: app-settings/app-settings-and-data.md
+    items:
+    - name: Требования
+      href: app-settings/guidelines-for-app-settings.md
+    - name: Хранение и извлечение параметров и данных приложения
+      href: app-settings/store-and-retrieve-app-data.md
+  - name: Глобализация и локализация
+    href: globalizing/globalizing-portal.md
+    items:
+    - name: Руководство по глобализации
+      href: globalizing/guidelines-and-checklist-for-globalizing-your-app.md
+    - name: Общие сведения о профиле пользователя и языках манифеста приложения
+      href: globalizing/manage-language-and-region.md
+    - name: Глобализация форматов даты, времени и чисел
+      href: globalizing/use-global-ready-formats.md
+    - name: Использование шаблонов для форматирования даты и времени
+      href: globalizing/use-patterns-to-format-dates-and-times.md
+    - name: Настройка макета и шрифтов, реализация поддержки написания справа налево
+      href: globalizing/adjust-layout-and-fonts--and-support-rtl.md
+    - name: Значения NumeralSystem
+      href: globalizing/glob-numeralsystem-values.md
+    - name: Подготовка приложения к локализации
+      href: globalizing/prepare-your-app-for-localization.md
+    - name: Международные шрифты
+      href: globalizing/loc-international-fonts.md
+    - name: Разработка приложений с поддержкой двунаправленного текста
+      href: globalizing/design-for-bidi-text.md
+    - name: Использование набора средств для многоязычных приложений версии 4.0
+      href: globalizing/use-mat.md
+    - name: Вопросы и ответы и руководство по диагностике набора средств для многоязычных приложений версии 4.0
+      href: globalizing/mat-faq-troubleshooting.md
+    - name: Подготовка приложения к изменению японской эры
+      href: globalizing/japanese-era-change.md
+  - name: Руководство по справке для приложений
+    href: in-app-help/guidelines-for-app-help.md
+    items:
+    - name: Инструктивный пользовательский интерфейс
+      href: in-app-help/instructional-ui.md
+    - name: Справка в приложении
+      href: in-app-help/in-app-help.md
+    - name: Внешняя справка
+      href: in-app-help/external-help.md
+- name: Наборы инструментов для проектирования
+  href: downloads/index.md
+ms.openlocfilehash: 410998c21e9351062118d63328c8e580a52b4c08
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8962606"
