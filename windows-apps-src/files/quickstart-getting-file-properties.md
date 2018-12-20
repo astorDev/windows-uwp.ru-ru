@@ -2,20 +2,18 @@
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: Получение свойств файла
 description: Получите свойства&\#8212;верхнего уровня, базовые и расширенные&\#8212;для файла, представленного объектом StorageFile.
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b0747dd3b8992ab456bdb00a4dc7157211eb8ba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f69c86ac8f7d13970eca8d1bbb50d4859b95f6a6
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932986"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980362"
 ---
 # <a name="get-file-properties"></a>Получение свойств файла
-
-
 
 **Важные API**
 
@@ -26,10 +24,7 @@ ms.locfileid: "8932986"
 Получите свойства — верхнего уровня, базовые и расширенные — для файла, представленного объектом [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
 
 > [!NOTE]
-> [См. также [Пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).]
-
- 
-
+> Полный пример см. [Пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -45,9 +40,8 @@ ms.locfileid: "8932986"
 
 Доступ ко многим свойствам файла верхнего уровня можно получить как к членам класса [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). К таким свойствам относятся атрибуты файлов, тип содержимого, дата создания, отображаемое имя, тип файла и т. д.
 
-**Примечание**не забудьте объявить возможность **picturesLibrary** .
-
- 
+> [!NOTE]
+> Обязательно объявите возможность **picturesLibrary**.
 
 Этот пример перечисляет все файлы библиотеки «Изображения», предоставляя доступ к некоторым свойствам верхнего уровня каждого из файлов.
 

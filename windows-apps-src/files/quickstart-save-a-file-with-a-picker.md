@@ -2,16 +2,16 @@
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: Сохранение файла с помощью средства выбора
 description: Чтобы дать пользователям возможность задать имя и расположение, в которое приложение должно сохранить файл, воспользуйтесь средством FileSavePicker.
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a7e278df29a531e5bf1d0d92946cd0199f85515d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9953afcdf595508d09f44262bcd92e104e0ce0c5
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919200"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980322"
 ---
 # <a name="save-a-file-with-a-picker"></a>Сохранение файла с помощью средства выбора
 
@@ -23,7 +23,7 @@ ms.locfileid: "8919200"
 Чтобы дать пользователям возможность задать имя и расположение, в которое они хотели бы, чтобы приложение сохранило файл, воспользуйтесь средством [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871).
 
 > [!NOTE]
-> См. также [пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994).
+> Полный пример см. в статье [Пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
  
 
@@ -44,31 +44,29 @@ ms.locfileid: "8919200"
 
 1.  **Создание и настройка FileSavePicker**
 
-```cs
-var savePicker = new Windows.Storage.Pickers.FileSavePicker();
-savePicker.SuggestedStartLocation =
-    Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
-// Dropdown of file types the user can save the file as
-savePicker.FileTypeChoices.Add("Plain Text", new List<string>() { ".txt" });
-// Default file name if the user does not type one in or select a file to replace
-savePicker.SuggestedFileName = "New Document";
-```
+    ```cs
+    var savePicker = new Windows.Storage.Pickers.FileSavePicker();
+    savePicker.SuggestedStartLocation =
+        Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+    // Dropdown of file types the user can save the file as
+    savePicker.FileTypeChoices.Add("Plain Text", new List<string>() { ".txt" });
+    // Default file name if the user does not type one in or select a file to replace
+    savePicker.SuggestedFileName = "New Document";
+    ```
 
-Задайте свойства объекта средства выбора файлов, соответствующие вашим пользователям и приложению.
-
-В этом примере настраиваются три свойства: [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880), [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) и [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878).
-
-> [!NOTE]
->Объекты [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) отображают средство выбора файлов с помощью [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891).
+Задайте свойства объекта средства выбора файлов, соответствующие вашим пользователям и приложению. В этом примере настраиваются три свойства: [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880), [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) и [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878).
      
 - Поскольку пользователь сохраняет документ или текстовый файл, пример присваивает [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880) локальной папке приложения с помощью [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621). Присвойте свойство [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) расположению, подходящему для типа сохраняемых файлов, например «Музыка», «Изображения», «Видео» или «Документы». Из начального расположения пользователь может перейти в другие расположения.
 
 - Чтобы убедиться, что приложение сможет открыть файл после его сохранения, мы используем [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) для указания типов файлов, поддерживаемых примером (документы Microsoft Word и текстовые файлы). Убедитесь, что ваше приложение поддерживает все заданные типы файлов. Пользователи смогут сохранить свой файл как один из указанных типов файлов. Кроме того, они могут изменить тип файла, выбрав другой из указанных типов файлов. Первый тип файла в списке будет выбран по умолчанию. Для управления этим параметром настройте свойство [**DefaultFileExtension**](https://msdn.microsoft.com/library/windows/apps/br207873).
 
-> [!NOTE]
-> Средство выбора файлов также использует текущий выбранный тип файла в качестве фильтра отображения, то есть пользователь видит только типы файлов, соответствующие выбранным.
+    > [!NOTE]
+    > Средство выбора файлов также использует текущий выбранный тип файла в качестве фильтра отображения, то есть пользователь видит только типы файлов, соответствующие выбранным.
 
 - Чтобы избавить пользователя от лишней работы с клавиатурой, в примере задается [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878). Сделайте предлагаемое имя файла подходящим для сохраняемого файла. Например, можно предложить имя существующего файла, если оно есть, или первую строку документа, если сохраняемому файлу еще не присвоено имя, как это делается в Word.
+
+> [!NOTE]
+>Объекты [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) отобразить средство выбора файлов в режиме представления [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891) .
 
 2.  **Отобразите FileSavePicker и сохраните выбранный файл.**
 
@@ -105,4 +103,5 @@ savePicker.SuggestedFileName = "New Document";
 
 В примере проверяется допустимость файла и записывается его собственное имя. См. также [Создание, запись и чтение файла](quickstart-reading-and-writing-files.md).
 
-**Совет**следует всегда проверять сохраненный файл, чтобы убедиться, что он является допустимым, прежде чем выполнять дальнейшую обработку. Затем можно сохранить содержимое в файл так, как это нужно для вашего приложения, и принять соответствующие меры, если выбранный файл окажется недопустимым.
+> [!TIP]
+> Следует всегда проверять сохраненный файл, чтобы убедиться в том, что он является допустимым, прежде чем выполнять дальнейшую обработку. Затем можно сохранить содержимое в файл так, как это нужно для вашего приложения, и принять соответствующие меры, если выбранный файл окажется недопустимым.

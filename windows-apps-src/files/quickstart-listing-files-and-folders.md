@@ -2,7 +2,7 @@
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: Перечисление и запрос файлов и папок
 description: Доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения вы также можете создавать запросы файлов и папок.
-ms.date: 06/28/2018
+ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 47680b97bacaa34570daf2a14dc9bb6a551d4443
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e964650e90870ef09d8d1b142917f96b61002544
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931587"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980282"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Перечисление и запрос файлов и папок
 
@@ -25,9 +25,9 @@ ms.locfileid: "8931587"
 Рекомендации по сохранению данных приложения универсальной платформы Windows см. в классе [ApplicationData](/uwp/api/windows.storage.applicationdata).
 
 > [!NOTE]
-> См. также раздел [Пример перечисления папок](http://go.microsoft.com/fwlink/p/?linkid=619993).
+> Полный пример см. [Пример перечисления папок](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Необходимые условия
 
 -   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
 
