@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: c6d13b848a9e5d2dfc145431f732187c35c46ab6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 37deaabe2586391b0f0c93359133f10830558539
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939164"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981498"
 ---
 # <a name="game-flow-management"></a>Управление потоком игры
 
@@ -289,7 +289,7 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 <td align="left">OnDpiChanged</td>
 <td align="left">Обрабатывает <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>. Разрешение экрана было изменено, и игровое приложение соответствующим образом перераспределяет ресурсы.
 <div class="alert">
-<strong>Примечание</strong>[<strong>CoreWindow</strong>] (https://msdn.microsoft.com/library/windows/desktop/hh404559) координаты находятся в (аппаратно-независимые пиксели) для [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). В результате необходимо передать в Direct2D уведомление об изменениях разрешения для правильного отображения любых двумерных ресурсов или примитивов.
+<strong>Примечание</strong> <a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>CoreWindow</strong></a> координаты находятся в (аппаратно-независимые пиксели) для <a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">Direct2D</a>. В результате необходимо передать в Direct2D уведомление об изменениях разрешения для правильного отображения любых двумерных ресурсов или примитивов.
 </div>
 <div>
 </div></td>

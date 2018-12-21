@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f64a290443ed5e45a5379b13f70dcc1ea2f57fa9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cda37ee9964a3e7e02f4e4ce3829a8b55e823692
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930145"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981538"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Запуск приложения Microsoft Store
 
@@ -41,7 +41,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">Запускает страницу сведений о продукте (PDP). <p>Код продукта в Магазине рекомендуется использовать клиентам с Windows 10, он работает во всех версиях ОС, однако предыдущие методы решения этой задачи (например, с помощью PFN) по-прежнему поддерживаются.</p>
-<p>Эти значения можно найти в [Центре партнеров](https://partner.microsoft.com/dashboard) на странице " <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">удостоверение приложения</a> " в разделе управления приложениями для каждого приложения.</p>
+<p>Эти значения можно найти в <a href="https://partner.microsoft.com/dashboard">Центре партнеров</a> на странице " <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">удостоверение приложения</a> " в разделе управления приложениями для каждого приложения.</p>
 </td>
 <td>
 Код продукта в Магазине <p>(рекомендуется)</p>
@@ -57,7 +57,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td>Код продукта (Windows Phone 7.x/8.x)</td>
-<td>ms-windows-store://pdp/?PhoneAppId=ca05b3ab-f157-450c-8c49-a1f127f5e71d </td>
+<td>ms-windows-store://pdp/?PhoneAppId=ca05b3ab-f157-450c-8c49-a1f127f5e71d</td>
 </tr>
 <tr>
 <td>Код продукта (Windows 8.x)</td>

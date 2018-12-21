@@ -3,12 +3,12 @@ description: ''
 title: Содержимое в виде объектов
 template: detail.hbs
 ms.localizationpriority: medium
-ms.openlocfilehash: 37ba5093f2d7cfe268be40413b889801daf00967
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ed2ac8530d69929cc0e0e921cfb1cc5368058cd2
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942405"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981448"
 ---
 # <a name="content-as-objects"></a>Содержимое в виде объектов
 
@@ -35,7 +35,7 @@ ms.locfileid: "8942405"
   <p>Как же создать четкую визуальную иерархию? В более ранних версиях Windows 10 для создания визуальной иерархии можно было использовать пустое пространство, позиционирование и оформление текста. </p>
   </div>
   <div class="side-by-side-content-right">
-    ![Плоский макет](images/content-as-objects/flat-layout.png)
+    <a href="images/content-as-objects/flat-layout.png">Плоский макет</a>
     
   </div>
 </div>
@@ -43,7 +43,7 @@ ms.locfileid: "8942405"
 
 В Windows 10 RS2 мы буквально добавили еще одно измерение — глубину. 
 
-![Глубина в макете](images/content-as-objects/depth-in-layout2.png)
+<a href="images/content-as-objects/depth-in-layout2.png">Глубина в макете</a>
 
 
 ## <a name="use-depth-to-establish-a-hierarchy"></a>Использование глубины для создания иерархии 
@@ -59,7 +59,7 @@ ms.locfileid: "8942405"
     </p>
   </div>
   <div class="side-by-side-content-right">
-    ![Глубина в макете](images/content-as-objects/elements-forward-backward.png) 
+    <a href="images/content-as-objects/elements-forward-backward.png">Глубина в макете</a> 
     
   </div>
 </div>
@@ -76,13 +76,12 @@ ms.locfileid: "8942405"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **За фоном** <br/>
-Этот уровень находится за приложением.  При перемещении элементов на этот уровень рекомендуется делать их неинтерактивными. Элементы на этом уровне имеют самый медленный параллакс и обрезаются до размера окна приложения. TODO: масштабируется ли этот уровень? 
+<b>За фоном</b> Этот уровень находится за приложением.  При перемещении элементов на этот уровень рекомендуется делать их неинтерактивными. Элементы на этом уровне имеют самый медленный параллакс и обрезаются до размера окна приложения. TODO: масштабируется ли этот уровень? 
 
 <p>Примером фоновых элементов могут служить изображения, расположенные за содержимым. TODO: пример, TODO: пример.</p>
   </div>
   <div class="side-by-side-content-right">
-    ![Уровень приложения "за фоном"](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">Уровень приложения "за фоном"</a>
     
   </div>
 </div>
@@ -93,13 +92,12 @@ ms.locfileid: "8942405"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **Пассивный уровень** <br/>
-Это базовый уровень приложения, на котором элементы пользовательского интерфейса располагаются по умолчанию.  Элементы перемещаются по этому уровню в режиме реального времени (без параллакса), обрезаются по размеру окна приложения и отображаются в масштабе 100%. 
+<b>Пассивный уровень</b> Это базовый уровень приложения, в котором элементы пользовательского интерфейса располагаются по умолчанию.  Элементы перемещаются по этому уровню в режиме реального времени (без параллакса), обрезаются по размеру окна приложения и отображаются в масштабе 100%. 
 
 <p>Пример элементов: фон приложения, текст, дополнительные элементы пользовательского интерфейса, такие как элементы навигации по приложению.</p>
   </div>
   <div class="side-by-side-content-right">
-    ![Пассивный уровень приложения](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">Пассивный уровень приложения</a>
     
   </div>
 </div>
@@ -110,13 +108,12 @@ ms.locfileid: "8942405"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **Призывы к действию** <br/>
-Этот уровень предназначен для интерактивных элементов, которые имеют приоритет по сравнению с элементами пассивного уровня. Элементы на этом уровне имеют средний параллакс и обрезаются до размера окна приложения. TODO: масштабируются ли элементы этого уровня и имеют ли они тень?
+<b>Призывы к действию</b> Этот уровень предназначен для интерактивных элементов, которые имеют приоритет над элементами пассивного уровня. Элементы на этом уровне имеют средний параллакс и обрезаются до размера окна приложения. TODO: масштабируются ли элементы этого уровня и имеют ли они тень?
 
 <p>Пример элементов: списки, сетки, основные команды (TODO: например...).</p> 
   </div>
   <div class="side-by-side-content-right">
-    ![Уровень приложения "призывы к действию"](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">Уровень приложения "призывы к действию"</a>
     
   </div>
 </div>
@@ -126,13 +123,12 @@ ms.locfileid: "8942405"
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **Главный уровень** <br/>
-Этот уровень предназначен для элементов с максимальным приоритетом из тех, что находятся в данный момент на экране.  Элементы на этом уровне могут выходить за границы окна приложения, могут масштабироваться и автоматически получают тени.
+<b>Главный уровень</b> Этот уровень предназначен для элементов с максимальным приоритетом на экране во время.  Элементы на этом уровне могут выходить за границы окна приложения, могут масштабироваться и автоматически получают тени.
 
 <p>Примеры элементов: фотографии, выбранное элементы.</p>  
   </div>
   <div class="side-by-side-content-right">
-    ![Главный уровень приложения](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">Главный уровень приложения</a>
     
   </div>
 </div>

@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, звуки
 ms.localizationpriority: medium
-ms.openlocfilehash: 94044e3d10df15cb1cb256d86ced798395e6af6f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7ceef2da582f5d825949afdf2e116862c990165c
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923775"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981388"
 ---
 # <a name="add-sound"></a>Добавление звука
 
@@ -337,7 +337,7 @@ void SoundEffect::Initialize(
 
 Так как взаимодействие между объектами существенно отличается в зависимости от игры, мы не будем обсудим dynamics здесь игровых объектов. Если вы хотите понять его реализации, перейдите к [Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method) метод.
 
-В принципе когда происходит, активации звуковой эффект для воспроизведения, вызвав метод [SoundEffect::PlaySound]((soundeffectplaysound-method). Этот метод останавливает все звуковые эффекты, которые очереди в памяти буфера нужные звуковых данных и воспроизводится в данный момент. Он использует исходный тембр громкость, отправить звуковых данных и воспроизведения.
+В принципе когда происходит, инициирует звуковой эффект для воспроизведения путем вызова **SoundEffect::PlaySound**. Этот метод останавливает все звуковые эффекты, которые очереди в памяти буфера нужные звуковых данных и воспроизводится в данный момент. Он использует исходный тембр громкость, отправить звуковых данных и воспроизведения.
 
 ### <a name="soundeffectplaysound-method"></a>Метод SoundEffect::PlaySound
 

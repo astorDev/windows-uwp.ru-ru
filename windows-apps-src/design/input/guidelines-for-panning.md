@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 340289c16cfd9c63f578c63827b1c0b35162cdfd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 363ea5728b94d6b42f29299e8d240bcfc6242b4c
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920834"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981568"
 ---
 # <a name="guidelines-for-panning"></a>Руководство по функции сдвига
 
@@ -82,7 +82,7 @@ ms.locfileid: "8920834"
 > <strong>Windows 10 Fall Creators Update — изменения в поведении</strong>
 > </div>
 > По умолчанию вместо выбора текста активное перо теперь выполняет прокрутку и сдвиг в приложениях UWP (как сенсорный экран, сенсорная панель и неактивное перо).  
-> Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. См. в разделе Справочник по API-интерфейс [Класс ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) подробные сведения.
+> Если ваше приложение зависит от предыдущего поведения, вы можете переопределить прокрутку пера и вернуться к предыдущему алгоритму. Дополнительные сведения см. в справочном разделе API <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">Класс ScrollViewer</a>.
 
 В зависимости от устройства ввода пользователь осуществляет сдвиг соответствующей области с помощью следующих элементов.
 

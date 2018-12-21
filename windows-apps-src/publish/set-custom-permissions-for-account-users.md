@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, роли пользователей, разрешение пользователя, пользовательские роли, доступ пользователей, настроить разрешения, стандартные роли
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a76dd85343ddf81baceb4946515c869083b839e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d1581757cb16cf2ed5d0082a6a0e4a4e09299361
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947986"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981508"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Настройка ролей и пользовательских разрешений для пользователей учетных записей
 
@@ -170,7 +170,7 @@ ms.locfileid: "8947986"
     <tr><td align="left">    <b>Использование</b> </td><td>    Можно просматривать <a href="usage-report.md">Отчет об использовании</a> для продукта.     </td><td>    Н/Д       </td><td>    Н/Д     </td><td>    Н/Д         </td></tr>
     <tr><td align="left">    <b>Health</b> </td><td>    Можно просматривать <a href="health-report.md">Отчет о работоспособности</a> для продукта.    </td><td>    Н/Д     </td><td>    Н/Д     </td><td>    Н/Д         </td></tr>
     <tr><td align="left">    <b>Отзывы пользователей</b>    </td><td>    Можно просматривать отчеты <a href="reviews-report.md">Рецензии</a> и <a href="feedback-report.md">Отзывы</a> для продукта.       </td><td>    Н/Д (для ответа на отзывы или рецензии должно быть предоставлено разрешение <b>Связаться с клиентом</b>)   </td><td>    Н/Д     </td><td>    Н/Д         </td></tr>
-    <tr><td align="left">    <b>Аналитика Xbox</b> </td><td>    Можно просматривать [аналитический отчет Xbox](xbox-analytics-report.md) для продукта.    </td><td>    Н/Д   </td><td>    Н/Д       </td><td>    Н/Д          </td></tr>
+    <tr><td align="left">    <b>Аналитика Xbox</b> </td><td>    Можно просматривать <a href="xbox-analytics-report.md">аналитический отчет Xbox</a> для продукта.    </td><td>    Н/Д   </td><td>    Н/Д       </td><td>    Н/Д          </td></tr>
     </tbody>
     </table>
 

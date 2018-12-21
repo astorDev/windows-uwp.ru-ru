@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ed6d9e21f3fed4a5f1d02a3b45fa08917a96117f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bc39c3aa59ca9624cc4664136b6294c07ed56083
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933767"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981428"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>Создание приложения для смарт-карты NFC
 
@@ -382,4 +382,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-** Важные ** двоичного поддержка традиционного перехвата SMS в Windows Phone 8.1 была удалена и заменена новой более широкой поддержкой SMS в Windows10 Mobile, но любые традиционные приложения Windows Phone 8.1, основанные на этом, необходимо обновить для использования нового SMS-сообщения Windows10 Mobile API-интерфейсы.
+<b>Важные</b>  двоичного поддержка традиционного перехвата SMS в Windows Phone 8.1 была удалена и заменена новой более широкой поддержкой SMS в Windows10 Mobile, но любые традиционные приложения Windows Phone 8.1, основанные на этом, необходимо обновить для использования нового SMS-сообщения Windows10 Mobile API-интерфейсы.
