@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f764d15c1bf5a52a6a48a45856daf9031bbd346
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e898b0552a9485cd15079a37940a2151e4bc9f9
+ms.sourcegitcommit: 2ef3d22a30afe853de891280e11d96e5e1ab62d1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921598"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "8981883"
 ---
 # <a name="keyboard-accelerators"></a>Ускорители клавиатуры
 
@@ -193,9 +193,9 @@ ms.locfileid: "8921598"
 
 ## <a name="invoke-a-keyboard-accelerator"></a>Вызов ускорителя клавиатуры 
 
-Объект [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) использует [шаблон элемента управления на основе модели автоматизации пользовательского интерфейса (UIA)](https://msdn.microsoft.com/library/windows/desktop/ee671194(v=vs.85).aspx) для выполнения действия при вызове ускорителя.
+Объект [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) использует [шаблон элемента управления на основе модели автоматизации пользовательского интерфейса (UIA)](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controlpatternsoverview) для выполнения действия при вызове ускорителя.
 
-Элементы управления на основе модели автоматизации пользовательского интерфейса предоставляют общие возможности элементов управления. Например, элемент управления "Кнопка" реализовывает шаблон элемента управления [Вызов](https://msdn.microsoft.com/library/windows/desktop/ee671279(v=vs.85).aspx), чтобы обеспечить поддержку события "Щелчок" (как правило, элемент управления вызывается щелчком, двойным щелчком, нажатием клавиши ВВОД, предварительно заданным сочетанием клавиш или альтернативным сочетанием нажатий клавиш). Когда ускоритель клавиатуры используется для вызова элемента управления, платформа XAML проверяет, реализовывает ли этот элемент управления шаблон элемента управления "Вызов", и, если это так, активирует его (нет необходимости прослушивать событие KeyboardAcceleratorInvoked).
+Элементы управления на основе модели автоматизации пользовательского интерфейса предоставляют общие возможности элементов управления. Например, кнопка реализует [шаблон элемента управления для поддержки событие Click](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke) (как правило, элемент управления вызывается, щелкнув, двойным щелчком, нажатием клавиши ВВОД, предварительно сочетания клавиш или определенная комбинация клавиш). Когда ускоритель клавиатуры используется для вызова элемента управления, платформа XAML проверяет, реализовывает ли этот элемент управления шаблон элемента управления "Вызов", и, если это так, активирует его (нет необходимости прослушивать событие KeyboardAcceleratorInvoked).
 
 В следующем примере сочетание клавиш CTRL+S активирует событие "Щелчок", так как эта кнопка реализует шаблон "Вызов".
 
@@ -218,10 +218,12 @@ ms.locfileid: "8921598"
 ## <a name="custom-keyboard-accelerator-behavior"></a>Поведение пользовательского ускорителя клавиатуры
 
 Событие Invoked объекта [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) активируется при выполнении ускорителя. Объект события [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) включает в себя следующие свойства:
-- **Handled** (Логическое). Если установить для этого свойства значение true, событие, активирующее шаблон элемента управления, не запускается, а восходящая маршрутизация события ускорителя останавливается. Значение по умолчанию — false.
-- **Element** (DependencyObject). Объект, содержащий ускоритель.
 
-Ниже демонстрируется, как определить коллекцию ускорителей клавиатуры и обработать событие Invoked.
+- [**Обработанные**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (Логическое): это значение true событие, активирующее не шаблона элемента управления а восходящая маршрутизация события ускорителя останавливается. Значение по умолчанию — false.
+- [**Элемент**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): объект, связанный с помощью сочетания клавиш.
+- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): ускоритель клавиатуры, используемый для вызова событие Invoked.
+
+Здесь мы покажем, как определить коллекцию ускорителей клавиатуры для элементов в ListView и как обрабатывать событие Invoked для каждого сочетания.
 
 ``` xaml
 <ListView x:Name="MyListView">
@@ -229,19 +231,20 @@ ms.locfileid: "8921598"
     <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
     <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
-</ListView>   
+</ListView>
 ```
 
 ``` csharp
-void SelectAllInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+void SelectAllInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-  CustomSelectAll(MyListView);
+  MyListView.SelectAll();
   args.Handled = true;
 }
 
 void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-  Refresh(MyListView);
+  MyListView.SelectionMode = ListViewSelectionMode.None;
+  MyListView.SelectionMode = ListViewSelectionMode.Multiple;
   args.Handled = true;
 }
 ```
@@ -257,7 +260,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 ``` xaml
 <ListView >
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" 
+    <KeyboardAccelerator Key="A"
       Modifiers="Control"
       Invoked="CustomListViewSelecAllInvoked" />
   </ListView.KeyboardAccelerators>
@@ -487,7 +490,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ### <a name="when-an-accelerator-is-invoked"></a>Условия вызова ускорителя
 
-Ускорители состоят из двух типов клавиш: модификаторов и немодификаторов. К клавишам-модификаторам относятся SHIFT, MENU, CTRL и клавиша Windows, предоставляемые через [VirtualKeyModifiers](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.System.VirtualKeyModifiers). Немодификаторы— это любые виртуальные клавиши, такие как Delete, F3, ПРОБЕЛ, ESC, а также все буквенно-цифровые и пунктуационные клавиши. Ускоритель клавиатуры вызывается, когда пользователь нажимает клавишу-немодификатор, зажав одну или несколько клавиш-модификаторов. Например, если пользователь нажимает сочетание клавиш CTRL+SHIFT+M, то при нажатии клавиши M платформа проверяет модификаторы (CTRL и SHIFT) и активирует ускоритель, если он существует.
+Ускорители состоят из двух типов клавиш: модификаторов и немодификаторов. К клавишам-модификаторам относятся SHIFT, MENU, CTRL и клавиша Windows, предоставляемые через [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKeyModifiers). Немодификаторы— это любые виртуальные клавиши, такие как Delete, F3, ПРОБЕЛ, ESC, а также все буквенно-цифровые и пунктуационные клавиши. Ускоритель клавиатуры вызывается, когда пользователь нажимает клавишу-немодификатор, зажав одну или несколько клавиш-модификаторов. Например, если пользователь нажимает сочетание клавиш CTRL+SHIFT+M, то при нажатии клавиши M платформа проверяет модификаторы (CTRL и SHIFT) и активирует ускоритель, если он существует.
 
 > [!NOTE]
 > Ускоритель автоматически активируется повторно (например, когда пользователь нажимает сочетание клавиш CTRL+SHIFT, а затем зажимает M, ускоритель вызывается многократно, пока зажата клавиша M). Это поведение невозможно изменить.
@@ -499,7 +502,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 В XAML нажатие клавиши обрабатывается так, как если бы существовал только один входной конвейер восходящей маршрутизации. Этот входной конвейер используется событиями KeyDown/KeyUp и при вводе символов. Например, если фокус находится на определенном элементе, и пользовать нажимает клавишу, вызывается событие KeyDown для этого элемента, затем для его родительского элемента и так далее вверх по дереву, пока свойству args.Handled не будет присвоено значение true.
 
-Кроме того, событие KeyDown использует некоторыми элементами управления для реализации встроенных ускорителей элементов управления. Если у элемента управления есть ускоритель клавиатуры, он обрабатывает событие KeyDown, то есть восходящей маршрутизации события KeyDown не будет. Например, RichEditBox поддерживает копирование с помощью сочетания клавиш CTRL+C. При нажатии клавиши CTRL активируется событие KeyDown, и начинается его восходящая маршрутизация, но если пользователь одновременно нажимает клавишу C, событие KeyDown получается метку Handled ("Обработано") и не вызывается (если только параметру handledEventsToo метода [UIElement.AddHandler](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.UI.Xaml.UIElement.AddHandler) не будет присвоено значение true).
+Кроме того, событие KeyDown использует некоторыми элементами управления для реализации встроенных ускорителей элементов управления. Если у элемента управления есть ускоритель клавиатуры, он обрабатывает событие KeyDown, то есть восходящей маршрутизации события KeyDown не будет. Например, RichEditBox поддерживает копирование с помощью сочетания клавиш CTRL+C. При нажатии клавиши CTRL активируется событие KeyDown, и начинается его восходящая маршрутизация, но если пользователь одновременно нажимает клавишу C, событие KeyDown получается метку Handled ("Обработано") и не вызывается (если только параметру handledEventsToo метода [UIElement.AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) не будет присвоено значение true).
 
 #### <a name="the-characterreceived-event"></a>Событие CharacterReceived
 
