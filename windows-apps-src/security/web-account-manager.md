@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, безопасность
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: b0a052d08c6b0816d977d3e86881540194075818
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 14f5139f5fe2c3d5d1f97040ee3bec33ea48d6ac
+ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941282"
+ms.lasthandoff: 12/31/2018
+ms.locfileid: "8990332"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
@@ -74,6 +74,9 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 ![Панель параметров учетных записей](images/tb-1.png)
 
 Панель пуста, поскольку система предоставляет лишь оболочку пользовательского интерфейса, — разработчику необходимо программно добавить в панель поставщиков удостоверений. 
+
+> [!TIP]
+> При необходимости можно использовать **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** вместо **[отображения](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**, который возвращает **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**, для запроса состояние операции. 
 
 ## <a name="register-for-accountcommandsrequested"></a>Регистрация AccountCommandsRequested
 
