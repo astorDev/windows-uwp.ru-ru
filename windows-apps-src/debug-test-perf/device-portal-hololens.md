@@ -2,16 +2,16 @@
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Портал устройства для HoloLens
 description: Узнайте, как портал устройств Windows для HoloLens позволяет удаленно настраивать устройство HoloLens и управлять им.
-ms.date: 09/26/2017
+ms.date: 1/3/2019
 ms.topic: article
 keywords: Windows 10, uwp, портала устройств
 ms.localizationpriority: medium
-ms.openlocfilehash: 2607b40e53ab4a6fa1dbca389348d2de9108e4b0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6d02f9eac43687974ed76ef25e53f654783956a9
+ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931382"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991620"
 ---
 # <a name="device-portal-for-hololens"></a>Портал устройств для HoloLens
 
@@ -34,8 +34,7 @@ ms.locfileid: "8931382"
 #### <a name="connect-over-wi-fi"></a>Подключение через Wi-Fi 
 
 1. Подключите устройство HoloLens к Wi-Fi.
-2. Посмотрите на IP-адрес устройства. -Найдите IP-адрес на устройстве в разделе «Параметры > Сеть и Интернет > Wi-Fi > Расширенные параметры».
-    Можно также спросить: «Привет, Кортана! Какой у меня IP-адрес»?
+2. Поиск IP-адрес вашего устройства. Найдите IP-адрес на устройстве в разделе **Параметры > сеть и Интернет > Wi-Fi > Свойства оборудования**. Можно также спросить: «Привет, Кортана! Какой у меня IP-адрес»?
 
 3. В веб-браузере на своем ПК откройте  `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - В браузере появится следующее сообщение: «Возникла проблема с сертификатом безопасности этого веб-сайта». Это происходит потому, что сертификат, выданный Порталу устройства, является проверочным. Сейчас можно игнорировать эту ошибку сертификата и продолжить работу.
