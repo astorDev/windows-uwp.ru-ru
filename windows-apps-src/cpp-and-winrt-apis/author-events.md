@@ -5,12 +5,12 @@ ms.date: 07/18/2018
 ms.topic: article
 keywords: Windows 10, UWP, стандартная, c++, cpp, winrt, проекция, создание, событие
 ms.localizationpriority: medium
-ms.openlocfilehash: 31f076ca259d10cc5bd49daea66741ead6e117c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bbc9fcd2b29183352fd06a7d7403aad2d0f011d9
+ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945308"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992257"
 ---
 # <a name="author-events-in-cwinrt"></a>Создание событий в C++/WinRT
 
@@ -43,7 +43,7 @@ namespace BankAccountWRC
 
 Сохраните файл. Проект не будет создан до завершения в данный момент, но создание теперь — это полезно объект, так как он создает файлы исходного кода, в которых реализуем класс среды выполнения **BankAccount** . Таким образом построить сейчас и перейти к (ошибок построения, которую можно собрать см. на этом этапе требуется сделать с помощью `Class.h` и `Class.g.h` не найден). Во время сборки запускается `midl.exe` запускается средство для создания файла метаданных компонента среды выполнения Windows (который является `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`). Затем запускается средство `cppwinrt.exe` (с параметром `-component`) для создания файлов исходного кода для поддержки создания компонента. Эти файлы включают заглушки для начала реализации класса среды выполнения **BankAccount** , объявленного в вашем IDL. Это заглушки `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` и `BankAccount.cpp`.
 
-В проводнике, скопируйте файлы заглушек `BankAccount.h` и `BankAccount.cpp` из папки `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` в папку, содержащую файлы проекта, который является `\BankAccountWRC\BankAccountWRC\`и замените файлы в месте назначения. Теперь давайте откроем `BankAccount.h` и `BankAccount.cpp` и реализуем класс среды выполнения. В `BankAccount.h` добавьте два закрытых члена в реализацию (*не* фабричную реализацию) BankAccount.
+Щелкните правой кнопкой мыши узел проекта и выберите команду **Открыть папку в проводнике**. Откроется папка проекта в проводнике. Скопируйте файлы заглушек `BankAccount.h` и `BankAccount.cpp` из папки `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` и в папку, содержащую файлы проекта, который является `\BankAccountWRC\BankAccountWRC\`и замените файлы в месте назначения. Теперь давайте откроем `BankAccount.h` и `BankAccount.cpp` и реализуем класс среды выполнения. В `BankAccount.h` добавьте два закрытых члена в реализацию (*не* фабричную реализацию) BankAccount.
 
 ```cppwinrt
 // BankAccount.h

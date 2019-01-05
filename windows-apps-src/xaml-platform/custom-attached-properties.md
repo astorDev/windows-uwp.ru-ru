@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: a92e1ad1c5bfb3960950b976da46ca16490d097e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 12aabe7a17a9bc62c5e6da27fe019e540db725df
+ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923012"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992237"
 ---
 # <a name="custom-attached-properties"></a>Пользовательские присоединенные свойства
 
@@ -120,19 +120,21 @@ End Class
 // GameService.idl
 namespace UserAndCustomControls
 {
+    [default_interface]
     runtimeclass GameService : Windows.UI.Xaml.DependencyObject
     {
         GameService();
         static Windows.UI.Xaml.DependencyProperty IsMovableProperty{ get; };
-        Boolean IsMovable;
+        static Boolean GetIsMovable(Windows.UI.Xaml.DependencyObject target);
+        static void SetIsMovable(Windows.UI.Xaml.DependencyObject target, Boolean value);
     }
 }
 
 // GameService.h
 ...
-    bool IsMovable(){ return winrt::unbox_value<bool>(GetValue(m_IsMovableProperty)); }
-    void IsMovable(bool value){ SetValue(m_IsMovableProperty, winrt::box_value(value)); }
-    Windows::UI::Xaml::DependencyProperty IsMovableProperty(){ return m_IsMovableProperty; }
+    static Windows::UI::Xaml::DependencyProperty IsMovableProperty() { return m_IsMovableProperty; }
+    static bool GetIsMovable(Windows::UI::Xaml::DependencyObject const& target) { return winrt::unbox_value<bool>(target.GetValue(m_IsMovableProperty)); }
+    static void SetIsMovable(Windows::UI::Xaml::DependencyObject const& target, bool value) { target.SetValue(m_IsMovableProperty, winrt::box_value(value)); }
 
 private:
     static Windows::UI::Xaml::DependencyProperty m_IsMovableProperty;
@@ -204,7 +206,10 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## <a name="using-your-custom-attached-property-in-xaml"></a>Применение пользовательского присоединенного свойства в языке XAML
+## <a name="setting-your-custom-attached-property-from-xaml-markup"></a>Настройка пользовательского присоединенного свойства из разметки XAML
+
+> [!NOTE]
+> Если вы используете C + +/ WinRT, переходите к следующему разделу ([параметр пользовательского присоединенного свойства императивно с помощью C + +/ WinRT](#setting-your-custom-attached-property-imperatively-with-cwinrt)).
 
 После определения присоединенного свойства и включения членов его поддержки как составляющей настраиваемого типа необходимо выполнить определения, доступные для использования XAML. Для этого следует сопоставить пространство имен XAML, которое будет ссылаться на пространство имен кода, содержащее соответствующий класс. При определении присоединенного свойства как части библиотеки необходимо включить данную библиотеку как часть пакета приложения для данного приложения.
 
@@ -230,7 +235,32 @@ GameService::RegisterDependencyProperties() {
 ```
 
 > [!NOTE]
-> Если вы создаете пользовательский Интерфейс на XAML с помощью C++, необходимо включить заголовок для настраиваемого типа, определяющий присоединенное свойство, в любое время, на странице XAML использует этот тип. Каждая страница XAML имеет сопоставленный заголовок поддерживающего кода .xaml.h. Именно в него следует включить (с помощью **\#include**) заголовок для определения типа владельца присоединенного свойства.
+> Если вы создаете пользовательский Интерфейс на XAML с помощью C + +/ CX, то вам необходимо включать заголовок для настраиваемого типа, определяющий присоединенное свойство, в любое время, страницей XAML этого типа. Каждая страница XAML имеет заголовок выделенным кодом (. xaml.h). Именно в него следует включить (с помощью **\#include**) заголовок для определения типа владельца присоединенного свойства.
+
+## <a name="setting-your-custom-attached-property-imperatively-with-cwinrt"></a>Настройка пользовательского присоединенного свойства императивно с помощью C + +/ WinRT
+
+Если вы используете C + +/ WinRT, то вы можете получить доступ к пользовательского присоединенного свойства из императивного кода, но не из разметки XAML. Код ниже показывает как.
+
+```xaml
+<Image x:Name="gameServiceImage"/>
+```
+
+```cppwinrt
+// MainPage.h
+...
+#include "GameService.h"
+...
+
+// MainPage.cpp
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+    GameService::SetIsMovable(gameServiceImage(), true);
+}
+...
+```
 
 ## <a name="value-type-of-a-custom-attached-property"></a>Тип значения пользовательского присоединенного свойства
 
