@@ -6,16 +6,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a8f75fae686763f3d79cea2f02c3208993cb723
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cd6f6a6fb638069dba58c62eca91b74868816d2a
+ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937968"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "8997399"
 ---
 # <a name="app-management-and-services"></a>Управление приложениями и службы
 
-Можно управлять и просматривать сведения о каждой из ваших приложений в [центра партнеров и настройки служб, таких как уведомления, A / b-тестирования и карт.
+Можно управлять и просматривать сведения о каждой из ваших приложений в [Центре партнеров](https://partner.microsoft.com/dashboard/)и настройки служб, таких как уведомления, A / b-тестирования и карт.
 
 При работе с приложением в центре партнеров, вы увидите раздела в левом меню навигации для **служб** и **Управление приложениями**. Вы можете развернуть эти разделы, чтобы получить доступ к описанным ниже функциям.
 
@@ -49,7 +49,7 @@ ms.locfileid: "8937968"
 
 ## <a name="administrator-consent"></a>Разрешения администратора
 
-f ваш продукт интегрируется с Azure AD и вызывать API, запрос [разрешения приложения или делегированные разрешения](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) , требующие разрешения администратора, введите идентификатор клиента Azure AD. Это позволяет администраторам, которые приобретают приложения на предоставление согласия пользователя организации для вашего продукта действовать от имени всех пользователей в клиенте.
+Если ваш продукт интегрируется с Azure AD и вызывать API, запрос [разрешения приложения или делегированные разрешения](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) , требующие разрешения администратора, введите идентификатор клиента Azure AD. Это позволяет администраторам, которые приобретают приложения на предоставление согласия пользователя организации для вашего продукта действовать от имени всех пользователей в клиенте.
 
 Дополнительные сведения см. в разделе [Запрос согласия для всей клиента](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
 
