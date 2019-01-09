@@ -2,16 +2,16 @@
 title: Запуск приложения "Параметры" для Windows
 description: Узнайте, как запустить приложение "Параметры" для Windows из вашего приложения. В этом разделе приводится описание схемы URI ms-settings. Используйте эту схему URI для запуска приложения "Параметры" для Windows на определенных страницах параметров.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 03/20/2018
+ms.date: 1/8/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff9510b65bd635b5b10e0cbea551c12b29ef8f37
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92cfb1318f176e7d8adb8052c119a006389f49e5
+ms.sourcegitcommit: 158467c576c5924e1822d397bd449fc8251bf92f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937898"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "8996079"
 ---
 # <a name="launch-the-windows-settings-app"></a>Запуск приложения «Параметры» для Windows
 
@@ -62,6 +62,17 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 > Обратите внимание, что доступность страницы параметров зависит от Windows SKU. Не все страницы параметров, доступные в Windows 10 для настольных систем, доступны в Windows 10 Mobile и наоборот. В столбце "Примечания" также представлены дополнительные требования, которые должны быть выполнены, чтобы страница была доступна.
 
+<!-- TODO: 
+* ms-settings:controlcenter
+* ms-settings:cortana-windowssearch
+* ms-settings:holographic
+* ms-settings:keyboard-advanced
+* ms-settings:regionlanguage-adddisplaylanguage (crashed)
+* ms-settings:regionlanguage-setdisplaylanguage (crashed)
+* ms-settings:signinoptions-launchpinenrollment
+* ms-settings:storagecleanup
+* ms-settings:update-security -->
+
 ## <a name="accounts"></a>Аккаунты
 
 |Страница параметров| URI |
@@ -69,6 +80,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Доступ на рабочем месте или в учебном учреждении | ms-settings:workplace |
 | Учетные записи электронной почты и приложений  | ms-settings:emailandaccounts |
 | Семья и другие пользователи | ms-settings:otherusers |
+| Настройка режима терминала | MS-параметры: assignedaccess |
 | Параметры входа | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
 | Синхронизация параметров | ms-settings:sync |
 | Настройка функции Windows Hello | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
@@ -83,7 +95,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Приложения для веб-сайтов | ms-settings:appsforwebsites |
 | Приложения по умолчанию | ms-settings:defaultapps |
 | Управление дополнительными возможностями | ms-settings:optionalfeatures |
-| Карты для автономного использования | ms-settings:maps |
+| Карты для автономного использования | ms-settings:maps<br/>MS-параметры: maps-downloadmaps (загрузка maps) |
 | Автозагружаемые приложения | ms-settings:startupapps |
 | Воспроизведение видео | ms-settings:videoplayback |
 
@@ -94,7 +106,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Разрешения и журнал | ms-settings:cortana-permissions |
 | Подробности | ms-settings:cortana-moredetails |
 | Кортана на разных устройствах | ms-settings:cortana-notifications |
-| Общение с Кортаной | ms-settings:cortana-language |
+| Общение с Кортаной | ms-settings:cortana-language<br/>MS-параметры: кортаны<br/>MS-параметры: кортаны-talktocortana |
 
 > [!NOTE] 
 > В этом разделе параметров на рабочем столе будет вызываться поиска при настройке компьютера на регионах, где Кортаны в данный момент невозможен или Кортана отключена. Страницу Кортаны (Кортаны на разных устройствах) и общения с Кортана не будет отображаться в этом случае. 
@@ -107,7 +119,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Автозапуск | ms-settings:autoplay |
 | Bluetooth | ms-settings:bluetooth |
 | Подключенные устройства | ms-settings:connecteddevices |
-| Камера по умолчанию | ms-settings:camera |
+| Камера по умолчанию | MS-параметры: камера (**не рекомендуемые к использованию в Windows 10, версия 1809 и более поздние версии**) |
 | Мышь и сенсорная панель | ms-settings:mousetouchpad (параметры сенсорной панели доступны только на устройствах с сенсорной панелью) |
 | Перо и Windows Ink | ms-settings:pen |
 | Принтеры и сканеры | ms-settings:printers |
@@ -124,6 +136,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Звук | ms-settings:easeofaccess-audio |
 | Скрытые субтитры | ms-settings:easeofaccess-closedcaptioning |
 | Фильтры цвета | MS-параметры: easeofaccess-colorfilter |
+| Размер курсора и указателя | MS-параметры: easeofaccess-cursorandpointersize |
 | Дисплей | ms-settings:easeofaccess-display |
 | Управление глазами | ms-settings:easeofaccess-eyecontrol |
 | Шрифты | ms-settings:fonts |
@@ -133,7 +146,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Экранная лупа | ms-settings:easeofaccess-magnifier |
 | Мышь | ms-settings:easeofaccess-mouse |
 | Экранный диктор | ms-settings:easeofaccess-narrator |
-| Другие параметры | ms-settings:easeofaccess-otheroptions |
+| Другие параметры | MS-параметры: easeofaccess-otheroptions (**не рекомендуемые к использованию в Windows 10, версия 1809 и более поздние версии**) |
 | Голосовые функции | ms-settings:easeofaccess-speechrecognition |
 
 ## <a name="extras"></a>Дополнительно
@@ -151,7 +164,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | DVR для игр | ms-settings:gaming-gamedvr |
 | Режим игры | ms-settings:gaming-gamemode |
 | Отображение игры в полноэкранном режиме | ms-settings:quietmomentsgame |
-| TruePlay | ms-settings:gaming-trueplay |
+| TruePlay | MS-параметры: игры-trueplay (**не рекомендуемые к использованию в Windows 10, версия 1809 и более поздние версии**) |
 | Сеть на Xbox | ms-settings:gaming-xboxnetworking |
 
 ## <a name="home-page"></a>Домашняя страница
@@ -165,7 +178,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |Страница параметров| URI |
 |-------------|-----|
-| Режим «в самолете» | ms-settings:network-airplanemode (используйте ms-settings:proximity в Windows 8.x) |
+| Режим «в самолете» | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | Передача данных и SIM | ms-settings:network-cellular |
 | Использование данных | ms-settings:datausage |
 | Коммутируемое соединение | ms-settings:network-dialup |
@@ -175,7 +188,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Мобильный хот-спот | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | Прокси | ms-settings:network-proxy |
-| Статус | ms-settings:network-status |
+| Статус | ms-settings:network-status<br/>MS-параметры: сети |
 | VPN | ms-settings:network-vpn |
 | Wi-Fi | ms-settings:network-wifi (доступно, только если на устройстве есть адаптер Wi-Fi) |
 | Вызов через Wi-Fi | ms-settings:network-wificalling (доступно, только если возможность вызова через Wi-Fi включена) |
@@ -186,10 +199,10 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | Фон | ms-settings:personalization-background |
 | Выберите, какие папки будут отображаться на начальном экране | ms-settings:personalization-start-places |
-| Цвета | ms-settings:personalization-colors |
-| Заставка | ms-settings:personalization-glance |
+| Цвета | ms-settings:personalization-colors<br/>MS-параметры: цвета |
+| Заставка | MS-параметры: персонализация-быстро (**не рекомендуемые к использованию в Windows 10, версия 1809 и более поздние версии**) |
 | Экран блокировки | ms-settings:lockscreen |
-| Панель навигации | ms-settings:personalization-navbar |
+| Панель навигации | MS-параметры: персонализация-переходов (**не рекомендуемые к использованию в Windows 10, версия 1809 и более поздние версии**) |
 | Персонализация (категория) | ms-settings:personalization |
 | Начальный экран | ms-settings:personalization-start |
 | Панель задач | ms-settings:taskbar |
@@ -199,16 +212,16 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |Страница параметров| URI |
 |-------------|-----|
-| Ваш телефон | ms-settings:mobile-devices  |
+| Ваш телефон | ms-settings:mobile-devices<br/>MS-параметры: mobile-устройств-addphone<br/>MS-параметры: mobile-устройств-addphone-direct (приложение откроется **Ваш телефон** ) |
 
 ## <a name="privacy"></a>Конфиденциальность
 
 |Страница параметров| URI |
 |-------------|-----|
-| Приложения-помощники | ms-settings:privacy-accessoryapps |
+| Приложения-помощники | MS-параметры: privacy-accessoryapps (**не рекомендуемые к использованию в Windows 10, версия 1809 и более поздние версии**) |
 | Сведения об учетной записи | ms-settings:privacy-accountinfo |
 | Журнал действий | ms-settings:privacy-activityhistory |
-| Идентификатор получателя рекламы | ms-settings:privacy-advertisingid |
+| Идентификатор получателя рекламы | MS-параметры: конфиденциальность — advertisingid (**не рекомендуемые к использованию в Windows 10, версия 1809 и более поздние версии**) |
 | Диагностика приложений | ms-settings:privacy-appdiagnostics |
 | Автоматически загружаемые файлы | ms-settings:privacy-automaticfiledownloads |
 | Фоновые приложения | ms-settings:privacy-backgroundapps |
@@ -229,7 +242,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Уведомления | ms-settings:privacy-notifications |
 | Другие устройства | ms-settings:privacy-customdevices |
 | Изображения | ms-settings:privacy-pictures |
-| Телефонные звонки | ms-settings:privacy-phonecall |
+| Телефонные звонки | MS-параметры: privacy-phonecall (**не рекомендуемые к использованию в Windows 10, версия 1809 и более поздние версии**) |
 | Радиомодули | ms-settings:privacy-radios |
 | Голосовые функции, рукописный ввод и ввод с клавиатуры |ms-settings:privacy-speechtyping |
 | Задачи | ms-settings:privacy-tasks |
@@ -254,6 +267,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Экономия заряда аккумулятора | ms-settings:batterysaver (доступно только на устройствах с аккумулятором, таких как планшет) |
 | Параметры экономии заряда | ms-settings:batterysaver-settings (доступно только на устройствах с аккумулятором, таких как планшет) |
 | Использование аккумулятора | ms-settings:batterysaver-usagedetails (доступно только на устройствах с аккумулятором, таких как планшет) |
+| Буфер обмена | MS-параметры: буфер обмена |
 | Дисплей | ms-settings:display |
 | Места сохранения по умолчанию | ms-settings:savelocations |
 | Дисплей | ms-settings:screenrotation |
@@ -272,7 +286,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Панель задач | ms-settings:taskbar |
 | Уведомления и действия | ms-settings:notifications |
 | Удаленный рабочий стол | ms-settings:remotedesktop |
-| Телефон | ms-settings:phone |
+| Телефон | MS-параметров: телефона (**не рекомендуемые к использованию в Windows 10, версия 1809 и более поздние версии**) |
 | Питание и спящий режим | ms-settings:powersleep |
 | Звуки | ms-settings:sounds |
 | Память | ms-settings:storagesense |
@@ -284,9 +298,9 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | Дата и время | ms-settings:dateandtime |
 | Параметры IME для Японии | ms-settings:regionlanguage-jpnime (доступно, если установлен редактор метода ввода Microsoft для Японии) |
+| Language | MS-параметры: клавиатуры<br/>ms-settings:regionlanguage<br/>MS-параметры: regionlanguage-bpmfime<br/>MS-параметры: regionlanguage-cangjieime<br/>MS-параметры: regionlanguage-chsime-pinyin-domainlexicon<br/>MS-параметры: regionlanguage-chsime-pinyin-keyconfig<br/>MS-параметры: regionlanguage-chsime-pinyin-udp<br/>MS-параметры: regionlanguage-chsime-wubi-udp<br/>MS-параметры: regionlanguage-quickime |
 | Параметры IME пиньинь | ms-settings:regionlanguage-chsime-pinyin (доступно, если установлен редактор метода ввода Microsoft Pinyin) |
-| Язык и региональные стандарты | ms-settings:regionlanguage |
-| Язык голосовых функций | ms-settings:speech |
+| Speech | ms-settings:speech |
 | Параметры IME Wubi  | ms-settings:regionlanguage-chsime-wubi (доступно, если установлен редактор метода ввода Microsoft Wubi) |
 
 ## <a name="update--security"></a>Обновление и безопасность
@@ -301,7 +315,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Восстановление | ms-settings:recovery |
 | Устранение неполадок | ms-settings:troubleshoot |
 | Безопасность Windows | ms-settings:windowsdefender |
-| Программа предварительной оценки Windows | ms-settings:windowsinsider (доступно, только если пользователь зарегистрирован в WIP) |
+| Программа предварительной оценки Windows | ms-settings:windowsinsider (доступно, только если пользователь зарегистрирован в WIP)<br/>MS-параметры: windowsinsider-optin |
 | Центр обновления Windows | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Параметры Windows Update-Advanced | ms-settings:windowsupdate-options |
 | Параметры Windows Update-Restart | ms-settings:windowsupdate-restartoptions |
