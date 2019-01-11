@@ -1,16 +1,16 @@
 ---
 description: В этом разделе показано, как создавать API-интерфейсы C++/ WinRT, используя базовую структуру **winrt::implements** прямо или косвенно.
 title: Создание API-интерфейсов с помощью C++/WinRT
-ms.date: 10/03/2018
+ms.date: 01/10/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fd543d7c3ad9dec878cc02b14a79c254d91b4be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5b0f2c5a9941e8f82e77cbaaf2d38badb41ce7c0
+ms.sourcegitcommit: 1294275b5044ef8878d54bf4fd7aa8e0203e6fac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943402"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "9001570"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание API-интерфейсов с помощью C++/WinRT
 
@@ -311,7 +311,28 @@ myimpl.Close();
 IClosable ic1 = myimpl.as<IClosable>(); // error
 ```
 
-Если у вас есть экземпляр типа реализации и вам необходимо передать его функции, которая ожидает соответствующий тип проекции, это можно сделать. Существует оператор преобразования для типа реализации (при условии, что тип реализации был создан с `cppwinrt.exe` средство), делает это возможным.
+Если у вас есть экземпляр типа реализации и вам необходимо передать его функции, которая ожидает соответствующий тип проекции, это можно сделать. Существует оператор преобразования для типа реализации (при условии, что тип реализации был создан с `cppwinrt.exe` средство), делает это возможным. Можно передать значение типа реализации непосредственно в метод, который принимает значение соответствующий тип проекции. На функцию-член типа реализации, которые можно передавать `*this` к методу, который принимает значение соответствующий тип проекции.
+
+```cppwinrt
+// MyProject::MyType is the projected type; the implementation type would be MyProject::implementation::MyType.
+
+void MyOtherType::DoWork(MyProject::MyType const&){ ... }
+
+...
+
+void FreeFunction(MyProject::MyOtherType const& ot)
+{
+    MyType myimpl;
+    ot.DoWork(myimpl);
+}
+
+...
+
+void MyType::MemberFunction(MyProject::MyOtherType const& ot)
+{
+    ot.DoWork(*this);
+}
+```
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>Получение производного от типа, имеющего нестандартный конструктор
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) является примером нестандартного конструктора. Конструктора по умолчанию не существует, поэтому для создания **ToggleButtonAutomationPeer**, нужно передать *owner*. Следовательно, в случае наследования от **ToggleButtonAutomationPeer** необходимо предоставить конструктор, который принимает *owner* и передает его базовому объекту. Давайте посмотрим, как это выглядит на практике.

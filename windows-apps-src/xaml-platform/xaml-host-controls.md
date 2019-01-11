@@ -6,17 +6,19 @@ ms.topic: article
 keywords: Windows 10, uwp, windows forms, wpf
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bd22aa761d4a9a79c95c7bc424ab1d2a31ca6cdf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 43cdb19e791726732f564ffea1b03af53a4a1ffe
+ms.sourcegitcommit: 1294275b5044ef8878d54bf4fd7aa8e0203e6fac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923996"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "9001560"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>Элементы управления UWP в классических приложениях
 
 > [!NOTE]
-> API-интерфейсы и элементы управления, описанные в этой статье в настоящее время доступны как ознакомительная версия для разработчиков. Несмотря на то, что мы рекомендуем вам оценить их в коде прототип теперь, мы не рекомендуем использовать их в рабочем коде в данный момент. Эти API-интерфейсы и элементы управления будет продолжать улучшаться и стабилизация в будущих выпусках Windows. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.
+> О-ва XAML в настоящее время доступны как ознакомительная версия для разработчиков. Несмотря на то, что мы рекомендуем вам оценить их в коде прототип теперь, мы не рекомендуем использовать их в рабочем коде в данный момент. Эти API-интерфейсы и элементы управления будет продолжать улучшаться и стабилизация в будущих выпусках Windows. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.
+>
+> Если вы хотите оставить отзыв о XAML, о-ва, отправки отзывов в XamlIslandsFeedback@microsoft.com. Сведения и сценарии являются критически важными для нас.
 
 Windows 10 теперь позволяет использовать элементы управления UWP в классических приложениях не UWP, таким образом, вы можете улучшить внешний вид и функциональные возможности своих существующих классических приложений с помощью новейшие возможности пользовательского интерфейса Windows 10, которые доступны только через элементы управления UWP. Это означает, что можно использовать функции UWP, например [Windows Ink](../design/input/pen-and-stylus-interactions.md) и элементы управления, которые поддерживают [Системы проектирования Fluent Design](../design/fluent-design-system/index.md) в существующих WPF, Windows Forms и приложения C++ Win32. Этот сценарий разработчика иногда называют *острова XAML*.
 
@@ -35,8 +37,9 @@ WPF и Windows Forms можно использовать ряд оболочку
 |-----------------|-------------------------------|-------------|
 | [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows10 версии1803 | Использует механизм визуализации Microsoft Edge для отображения содержимого веб-страницы. |
 | [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows7 | Предоставляет версию **WebView** , совместимая с несколько версий ОС. Этот элемент управления использует механизм визуализации Microsoft Edge для отображения веб-содержимого в Windows 10 версии 1803 и более поздних версий, а также механизм визуализации Internet Explorer для отображения веб-содержимого в более ранних версиях Windows 10, Windows 8.x и Windows 7. |
-| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 Insider Preview SDK сборки 17709 | Предоставить surface и связанное с панели инструментов для взаимодействия с пользователем на основе Windows Ink в классическом приложении Windows Forms или WPF. |
-| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 Insider Preview SDK сборки 17709 | Внедряет представление, что потоки, а также мультимедийного содержимого, например видео в классическом приложении Windows Forms или WPF. |
+| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, версия 1809 (сборка 17763) | Предоставить surface и связанное с панели инструментов для взаимодействия с пользователем на основе Windows Ink в классическом приложении Windows Forms или WPF. |
+| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, версия 1809 (сборка 17763) | Внедряет представление, что потоки, а также мультимедийного содержимого, например видео в классическом приложении Windows Forms или WPF. |
+| [MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, версия 1809 (сборка 17763) | Позволяет отображать символьную или фотореалистичную карту в классическом приложении Windows Forms или WPF. |
 
 ## <a name="host-controls"></a>Стандартные элементы управления
 
