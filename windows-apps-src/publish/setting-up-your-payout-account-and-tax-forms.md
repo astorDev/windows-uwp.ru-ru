@@ -6,12 +6,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a24e038dc2645b0aea7b1e7e516886af9a9e6f09
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 81aa15892bf39209c31238878e0ca19a996d0b3e
+ms.sourcegitcommit: 322e1ae259ba0480b816a004d7a52bb0d1618b90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930264"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "9000279"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Настройка счета для выплат и налоговых форм
 
@@ -42,8 +42,8 @@ ms.locfileid: "8930264"
  
 **Настройка платежного счета**
 
-1.  В [Центре партнеров](https://partner.microsoft.com/dashboard)выберите значок **параметров учетной записи** в верхнем правом углу, а затем выберите **Параметры разработчика**.
-2.  В левом меню навигации выберите **выплат**.
+1.  В [Центре партнеров](https://partner.microsoft.com/dashboard)выберите значок **параметров** в виде шестерни в правом верхнем углу, а затем выберите **Параметры разработчика**.
+2.  В левом меню навигации на странице параметров выберите **выплат**.
 
    > [!NOTE]
    > Поскольку это конфиденциальные данные, возможно, вам будет предложено повторно выполнить вход.

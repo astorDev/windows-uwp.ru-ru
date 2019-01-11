@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, azure ad, клиент azure, клиент aad, клиент azure ad, управление клиентами, клиенты
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f807799740d7e832da2f6a6fa3ea63e00deaee4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: aacfdb0044fa9b9368ecbd032629ed5e572ece99
+ms.sourcegitcommit: 322e1ae259ba0480b816a004d7a52bb0d1618b90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931491"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "9000269"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>Связывание Azure Active Directory с учетной записью центра партнеров
 
@@ -31,7 +31,7 @@ ms.locfileid: "8931491"
 
 Если ваша организация уже использует Azure AD, выполните следующие действия, чтобы связать свою учетную запись центра партнеров.
 
-1.  Из [Центра партнеров](https://partner.microsoft.com/dashboard) выберите значок шестеренки (рядом с правом верхнем углу информационной панели), а затем выберите **Параметры разработчика**. В меню " **Параметры** " выберите **клиентов**.
+1.  Из [Центра партнеров](https://partner.microsoft.com/dashboard)выберите значок шестеренки (рядом с правом верхнем углу информационной панели), а затем выберите **Параметры разработчика**. В меню " **Параметры** " выберите **клиентов**.
 2.  Выберите **связать Azure AD с учетной записью центра партнеров**.
 3.  Введите свои учетные данные Azure AD для клиента, который требуется привязать.
 4.  Проверьте название организации и доменное имя клиента Azure Active Directory. Чтобы установить связь, нажмите кнопку **Подтвердить**.
