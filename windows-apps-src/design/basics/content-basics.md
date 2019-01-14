@@ -9,12 +9,12 @@ ms.date: 12/1/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fc27a2c24128553b7c1449bd8e724e2097213b80
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
+ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981418"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004610"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>Основы проектирования содержимого для приложений UWP
 
@@ -38,11 +38,6 @@ ms.locfileid: "8981418"
 
 Коллекции позволяют пользователям просматривать группы содержимого или данных. [Представление в виде сетки](../controls-and-patterns/item-templates-gridview.md) является хорошим способом размещения фотографий или мультимедиа-содержимого, а [представление списка](../controls-and-patterns/item-templates-listview.md) является хорошим способом размещения содержимого с большим количеством текста или данных.
 
-### <a name="hub"></a>Центр
-
-![центр](images/content-basics/hub.png)
-
-[Центры](../controls-and-patterns/hub.md) предназначены для просмотра содержимого с его последующим выбором. Пользователи получают возможность хорошо рассмотреть предлагаемое содержимое. Основной задачей центров является компактная демонстрация всего разнообразия содержимого. Например, раздел 1 центра может содержать главный экран, раздел 2 центра может содержать коллекцию, раздел 3 центра может содержать другую коллекцию и так далее.
 
 ### <a name="masterdetail"></a>Основные и подробные данные
 

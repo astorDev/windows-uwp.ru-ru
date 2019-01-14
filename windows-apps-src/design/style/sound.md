@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 74d1d5b04b13795a075e7111ed898243ed59e7b7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5060012c90ec9cfef093021f44b39321f452e01c
+ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935778"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004600"
 ---
 # <a name="sound"></a>Звук
 
@@ -118,7 +118,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### <a name="navigation-within-a-page"></a>Навигация в пределах страницы
 
-Навигация между панелями и представлениями в пределах страницы приложения (см. раздел [Главный раздел](../controls-and-patterns/hub.md) или [Вкладки и элементы управления "Сводка"](../controls-and-patterns/tabs-pivot.md))–это обычно двунаправленное движение. Это означает, что можно перейти к следующему или предыдущему представлению/панели, не покидая текущую страницу приложения.
+Навигация между панелями и представлениями в пределах страницы приложения (см. в разделе [вкладки и сводки](../controls-and-patterns/tabs-pivot.md)) – это обычно двунаправленное движение. Это означает, что можно перейти к следующему или предыдущему представлению/панели, не покидая текущую страницу приложения.
 
 Эта концепция навигации представлена звуками **MovePrevious** и **MoveNext**.
 
