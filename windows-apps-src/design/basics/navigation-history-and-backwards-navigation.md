@@ -7,12 +7,12 @@ ms.date: 06/21/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ca79220bf2f5c93f7b8f04a787662470f87a06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 192c5f4be7496b3fe47238c4965d6854f06d21b4
+ms.sourcegitcommit: 2e47a0d047e6ca8d3f473434a2b07b6216b55d17
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945956"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004507"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Журнал навигации и навигация в обратном направлении для приложений UWP
 
@@ -284,15 +284,9 @@ bool App::On_BackRequested()
 
 Ранее в приложениях UWP использовался API [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) для обратной навигации. API по-прежнему будет поддерживаться для обеспечения обратной совместимости, но больше не рекомендуется полагаться на [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility). Вместо этого в приложении следует нарисовать собственную кнопку "Назад".
 
-Если ваше приложение продолжит с помощью [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), система, которую пользовательский Интерфейс будет отображать система обратно кнопки:
+Если ваше приложение продолжит с помощью [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), система, которую пользовательский Интерфейс будет отображать система обратно кнопки в строке заголовка. (Внешний вид и взаимодействие пользователя с кнопкой «Назад» не изменяются от предыдущих сборок.)
 
-- Если ваше приложение **не вкладками**, кнопка «Назад» отображается в строке заголовка. Visual взаимодействие и взаимодействие пользователя с кнопкой «Назад» не изменяются от предыдущих сборок.
-
-    ![Кнопка "Назад" в строке заголовка](images/nav-back-pc.png)
-
-- Если приложение **с вкладками**, то кнопка "Назад" отображается внутри новой системная строка возврата панель.
-
-    ![Система обратно нарисовать кнопку панели](images/back-nav/tabs.png)
+![Кнопка "Назад" в строке заголовка](images/nav-back-pc.png)
 
 ### <a name="system-back-bar"></a>Системная строка возврата панель
 
