@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ра�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22477ab0facfcb67d44057a91c7c3a49df57f8b9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2451606ccb9dfb604dd9f8aaffe245016776c1e7
+ms.sourcegitcommit: 906b494aa190e6e5b46e7b73d4a900b2cc7d53ef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937994"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "9010998"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Взаимодействие с пером и Windows Ink в приложениях UWP
 
@@ -64,7 +64,7 @@ ms.locfileid: "8937994"
 В этом примере [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) перекрывает фоновое изображение.
 
 > [!NOTE]
-> InkCanvas по умолчанию имеет значения свойств [**Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) и [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width) равными нулю, если он не является дочерним элементом, который автоматически задает размеры своих дочерних элементов. 
+> InkCanvas имеет свойства [**высоты**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) и [**ширины**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width) по умолчанию, равными нулю, если он не является дочерним элементом, автоматически изменяет размер его дочерние элементы, такие как элементы управления [StackPanel](stackpanel.md) или [сетки](grid.md) .
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
