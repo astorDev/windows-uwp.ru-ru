@@ -6,12 +6,12 @@ keywords: приложения для связи между приложения
 ms.date: 1/16/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9029c8ee3a930e66ebdbd0c4d0681d87486a8393
-ms.sourcegitcommit: 6e2027f8ebc1d891d27ea6b2e4676d592871bcc7
+ms.openlocfilehash: 5239bff53bb0e5383bce28b4d781a0ab6a41c3af
+ms.sourcegitcommit: cfdc854fede8e586202523cdb59d3d0a2f5b4b36
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "9011264"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9013963"
 ---
 # <a name="create-and-consume-an-app-service"></a>Создание и использование службы приложений
 
@@ -214,17 +214,9 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 ## <a name="deploy-the-service-app-and-get-the-package-family-name"></a>Развертывание приложения службы и получение имени семейства пакетов
 
-Должны быть развернуты поставщика службы приложений, прежде чем можно будет вызывать его из клиента. Также необходимо будет имя семейства пакетов службы приложения для ее вызова.
+Должны быть развернуты поставщика службы приложений, прежде чем можно будет вызывать его из клиента. Вы можете развернуть, выбрав **сборка > развернуть решение** в Visual Studio.
 
-Один из способов получить имя семейства пакетов приложения службы приложения является вызов [Windows.ApplicationModel.Package.Current.Id.FamilyName](https://msdn.microsoft.com/library/windows/apps/br224670) из в проект **AppServiceProvider** (например, из конструктора **приложения** в ** App.XAML.cs**) и запомнить. Чтобы запустить **AppServiceProvider** в Visual Studio, настройте его в качестве запускаемого проекта в окне **Обозревателя решений** и запустите проект.
-
-Другой способ получить имя семейства пакетов — это развернуть решение (**сборка &gt; развернуть решение**) и запомнить полное имя пакета в окне **вывода** (**представление &gt; вывода**). Необходимо удалить сведения о платформе из строки в окне **вывода** , чтобы получить имя пакета. Например если в окне **вывода** указано полное имя пакета были:
-
-`Microsoft.SDKSamples.AppServicesProvider.CPP_1.0.0.0_x86__8wekyb3d8bbwe`
-
-Затем необходимо извлечь `1.0.0.0\_x86\_\_`, оставив следующее имя семейства пакетов:
-
-`Microsoft.SDKSamples.AppServicesProvider.CPP_8wekyb3d8bbwe`
+Также необходимо имя семейства пакетов приложения поставщика службы чтобы вызвать его. Вы можете получить, запустив файл **Package.appxmanifest** проекта **AppServiceProvider** в область конструктора (дважды щелкните его в **Обозревателе решений**). Выберите вкладку " **Упаковка** ", скопируйте значение рядом с **именем семейства пакета**и вставьте его где-либо как "Блокнот" сейчас.
 
 ## <a name="write-a-client-to-call-the-app-service"></a>Написание клиента для вызова службы приложений
 
