@@ -5,12 +5,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная c++, cpp, winrt, проецируемый, проекция, реализация, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b056e160a1d7782e054ad4dbf1b63e91be42e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cd26bfe2643b7130227e758083d820ce6be7d24e
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919957"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014749"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Использование API-интерфейсов с помощью C++/WinRT
 
@@ -122,6 +122,20 @@ private:
 ```
 
 Все конструкторы проецируемого типа, *кроме* конструктора `nullptr_t`, приводят к созданию опорного объекта среды выполнения Windows. Конструктор `nullptr_t` является по сути безоперационным. Он ожидает инициализацию проецируемого объекта в более поздний момент. Таким образом, независимо от того, имеет ли класс среды выполнения конструктор или нет, этот способ можно использовать для эффективной отложенной инициализации.
+
+Это соображение влияет на других местах, где вызов конструктора по умолчанию, такие как векторы и "карты". Рассмотрим следующий пример кода.
+
+```cppwinrt
+std::map<int, TextBlock> lookup;
+lookup[2] = value;
+```
+
+Назначение создает новый **TextBlock**и немедленно перезаписывает его с `value`. Вот проблему.
+
+```cppwinrt
+std::map<int, TextBlock> lookup;
+lookup.insert_or_assign(2, value);
+```
 
 ## <a name="if-the-api-is-implemented-in-a-windows-runtime-component"></a>Если API-интерфейс реализован в компоненте среды выполнения Windows
 Этот раздел применим, если вы создали компонент самостоятельно или получили его от поставщика.

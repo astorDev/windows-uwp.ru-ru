@@ -6,12 +6,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6727c22631a9536a0ed8d04e7c88602bba890284
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: abc2ba7287541d97208899b51e81110b464b6cdd
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932590"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014719"
 ---
 # <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>Совместное использование кода классического приложения и приложения UWP
 
@@ -23,7 +23,7 @@ ms.locfileid: "8932590"
 
 Вот видео, в котором рассказывается об этом подробнее.
 &nbsp;
-> [!VIDEO https://www.youtube.com/embed/YI4MurjfMn8]
+> [!VIDEO https://www.youtube-nocookie.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1]
 
 ### <a name="add-net-standard-libraries"></a>Добавление библиотек .NET Standard
 
@@ -53,7 +53,7 @@ ms.locfileid: "8932590"
 
 Используйте эти же инструменты для анализа кода. Скачайте инструменты по этой ссылке ([dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/releases)) и просмотрите это видео, чтобы научиться ими пользоваться.
 &nbsp;
-> [!VIDEO https://www.youtube.com/embed/rzs_FGPyAlY]
+> [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
 Если ваш код не соответствует стандарту, рассмотрите другие варианты использования этого кода. В первую очередь, откройте [обозреватель API-интерфейсов .NET](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). С его помощью можно просматривать API-интерфейсы, доступные в стандарте .NET Standard 2.0. В качестве области списка выберите .NET Standard 2.0.
 

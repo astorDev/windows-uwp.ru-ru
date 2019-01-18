@@ -1,16 +1,16 @@
 ---
 description: В этом разделе объясняется, как перенести код C++/CX в его эквивалент на C++/WinRT.
 title: Переход на C++/WinRT из C++/CX
-ms.date: 10/18/2018
+ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a6a778f1efe16d56c24e437a0c25a8b8c5e3bc7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4dc1d63451e1c344e4dd6bb2aeac31c814bd294a
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927239"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014739"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Переход на C++/WinRT с C++/CX
 
@@ -45,7 +45,7 @@ ms.locfileid: "8927239"
 ## <a name="parameter-passing"></a>Передача параметров
 При написании исходного кода на C++/CX вы передаете типы C++/CX в качестве параметров функции как ссылки циркумфлекса (\^).
 
-```cpp
+```cppcx
 void LogPresenceRecord(PresenceRecord^ record);
 ```
 
@@ -61,7 +61,7 @@ IASyncAction LogPresenceRecordAsync(PresenceRecord const record);
 ## <a name="variable-and-field-references"></a>Ссылки переменных и полей
 При написании исходного кода C++/CX для установки ссылок на объекты среды выполнения Windows следует использовать переменные со знаком циркумфлекса (\^) и оператор косвенного обращения (-&gt;) для разыменовывания переменной с циркумфлексом.
 
-```cpp
+```cppcx
 IVectorView<User^>^ userList = User::Users;
 
 if (userList != nullptr)
@@ -70,7 +70,7 @@ if (userList != nullptr)
     ...
 ```
 
-При переносе в эквивалентный C + +/ WinRT кода, по сути вы удаляете циркумфлексы и изменяете оператор косвенного (-&gt;) оператор-точку (.), так как C + +/ WinRT проецируемые типы являются значениями, а не указателями.
+При переносе в эквивалентный C + +/ WinRT кода, вы можете получить долгий путь, удаление циркумфлексы и изменив оператор косвенного (-&gt;) на оператор-точку (.). C + +/ WinRT проецируемых типов являются значениями, а не указателями.
 
 ```cppwinrt
 IVectorView<User> userList = User::Users();
@@ -81,6 +81,19 @@ if (userList != nullptr)
     ...
 ```
 
+Конструктор по умолчанию для C + +/ CX hat указателя ей присваивается значение null. Вот C + +/ CX пример кода, в котором мы создаем переменной или полем правильный тип, но тот, который uninitialized. Другими словами он не ссылаться изначально в **TextBlock**; Мы планируем присвоить ссылку на более поздней версии.
+
+```cppcx
+TextBlock^ textBlock;
+
+class MyClass
+{
+    TextBlock^ textBlock;
+};
+```
+
+Для эквивалент в C + +/ WinRT, см. в разделе [Отложенный инициализации](consume-apis.md#delayed-initialization).
+
 ## <a name="properties"></a>Свойства
 Расширения языка C++/CX включают концепцию свойств. При написании исходного кода C++/CX к свойству можно получить доступ, как если бы оно было полем. В стандартной версии C++ отсутствует концепция свойств, поэтому в C++/WinRT осуществляется вызов функций get и set.
 
@@ -89,7 +102,7 @@ if (userList != nullptr)
 ### <a name="retrieving-a-value-from-a-property"></a>Извлечение значения из свойства
 Вот как получить значение свойства в C++/CX.
 
-```cpp
+```cppcx
 void Sample::LogPresenceRecord(PresenceRecord^ record)
 {
     auto id = record->XboxUserId;
@@ -114,7 +127,7 @@ void Sample::LogPresenceRecord(PresenceRecord const& record)
 ### <a name="setting-a-property-to-a-new-value"></a>Задание свойству нового значения
 Задание свойству нового значения выполняется по аналогичной схеме. Во-первых, это делается в C++/CX.
 
-```cpp
+```cppcx
 record->UserState = newValue;
 ```
 
@@ -127,7 +140,7 @@ record.UserState(newValue);
 ## <a name="creating-an-instance-of-a-class"></a>Создание экземпляра класса
 Работа с объектом C++/CX осуществляется с помощью его дескриптора, так называемой ссылки со знаком циркумфлекс (\^). Создание нового объекта выполняется с помощью ключевого слова `ref new`, которое, в свою очередь, вызывает [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646), чтобы активировать новый экземпляр класса среды выполнения.
 
-```cpp
+```cppcx
 using namespace Windows::Storage::Streams;
 
 class Sample
@@ -151,7 +164,7 @@ private:
 
 Если инициализация ресурса является затратной, рекомендуется отложить инициализацию до того момента, когда возникнет фактическая необходимость в ресурсе.
 
-```cpp
+```cppcx
 using namespace Windows::Storage::Streams;
 
 class Sample
@@ -189,7 +202,7 @@ private:
 ## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>Преобразование из класса базовой среды выполнения в извлеченных из них
 Это обычно существует ссылка для базового, вы знаете, что ссылается на объект производного типа. В C + +/ CX, можно использовать `dynamic_cast` к *приведите* ссылку для базового в ссылки к производным. `dynamic_cast` — Это лишь скрытые вызов [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Ниже приведен стандартный пример&mdash;обрабатывать событие изменения свойства зависимостей, и вы хотите приведение **DependencyObject** вернуться к фактического типа, которому принадлежит свойство зависимостей.
 
-```cpp
+```cppcx
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
 {
     BgLabelControl^ theControl{ dynamic_cast<BgLabelControl^>(d) };
@@ -226,19 +239,21 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 ## <a name="event-handling-with-a-delegate"></a>Обработка событий с помощью делегата
 Ниже приведен стандартный пример обработки события в C++/CX с помощью лямбда-функции в качестве делегата в этом случае.
 
-```cpp
-auto token = myButton->Click += ref new RoutedEventHandler([&](Platform::Object^ sender, RoutedEventArgs^ args)
+```cppcx
+auto token = myButton->Click += ref new RoutedEventHandler([=](Platform::Object^ sender, RoutedEventArgs^ args)
 {
     // Handle the event.
+    // Note: locals are captured by value, not reference, since this handler is delayed.
 });
 ```
 
 Это эквивалентно и для C++/WinRT.
 
 ```cppwinrt
-auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs const& args)
+auto token = myButton().Click([=](IInspectable const& sender, RoutedEventArgs const& args)
 {
     // Handle the event.
+    // Note: locals are captured by value, not reference, since this handler is delayed.
 });
 ```
 
@@ -249,7 +264,7 @@ auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs co
 ## <a name="revoking-a-delegate"></a>Отзыв делегата
 В C++/CX можно использовать оператор `-=`, чтобы отозвать регистрацию предыдущих событий.
 
-```cpp
+```cppcx
 myButton->Click -= token;
 ```
 
@@ -277,7 +292,7 @@ C++/CX предоставляет несколько типов данных в 
 
 В C++/CX.
 
-```cpp
+```cppcx
 Platform::Agile<Windows::UI::Core::CoreWindow> m_window;
 ```
 
@@ -294,7 +309,7 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 В C++/CX.
 
-```cpp
+```cppcx
 catch (Platform::Exception^ ex)
 ```
 
@@ -326,7 +341,7 @@ C++/WinRT предоставляет эти классы исключений.
 
 Ниже приведен пример создания исключения в C++/CX.
 
-```cpp
+```cppcx
 throw ref new Platform::InvalidArgumentException(L"A valid User is required");
 ```
 
@@ -348,21 +363,21 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 
 С помощью C++/CX можно получить доступ к свойству [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data), чтобы получить строку в качестве массива **const wchar_t\**** языков группы C (например, чтобы передать ее в **std::wcout**).
 
-```C++
-auto var = titleRecord->TitleName->Data();
+```cppcx
+auto var{ titleRecord->TitleName->Data() };
 ```
 
 Чтобы сделать то же самое в C++/WinRT, можно использовать функцию [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function), чтобы получить версию строки, заканчивающуюся символом NULL (языка группы С), так же как и из **std::wstring**.
 
-```C++
-auto var = titleRecord.TitleName().c_str();
+```cppwinrt
+auto var{ titleRecord.TitleName().c_str() };
 ```
 
 При необходимости реализации API-интерфейсов, получающих или возвращающих строки, как правило, требуется изменить любой код C++/CX, использующий **Platform::String\^**, чтобы вместо этого применить **winrt::hstring**.
 
 Вот пример API-интерфейса C++/CX, который принимает строковое значение.
 
-```cpp
+```cppcx
 void LogWrapLine(Platform::String^ str);
 ```
 
@@ -377,6 +392,22 @@ void LogWrapLine(String str);
 
 ```cppwinrt
 void LogWrapLine(winrt::hstring const& str);
+```
+
+#### <a name="tostring"></a>ToString()
+
+C + +/ CX предоставляет метод [Object::ToString](/cpp/cppcx/platform-object-class?view=vs-2017#tostring) .
+
+```cppcx
+int i{ 2 };
+auto s{ i.ToString() }; // s is a Platform::String^ with value L"2".
+```
+
+C + +/ WinRT не предоставляет непосредственно этого средства, но можно включить для получения дополнительных сведений.
+
+```cppwinrt
+int i{ 2 };
+auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 ```
 
 ## <a name="important-apis"></a>Важные API
