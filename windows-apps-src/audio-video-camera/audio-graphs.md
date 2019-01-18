@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0211e451c3e700da34d24e39a5045f9e046020a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0b360425755a7dc2249a284d9f68761ce3c783ef
+ms.sourcegitcommit: 92ce837841ae8f16d203e919dbf5c4436bee56e5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933617"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "9015259"
 ---
 # <a name="audio-graphs"></a>Звуковые графы
 
@@ -81,7 +81,7 @@ API звуковых графов среды выполнения Windows:
 
 [!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-Чтобы указать конкретное устройство аудиозаписи для узла ввода устройства, можно использовать класс [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393), который позволяет получить список устройств аудиозаписи, доступных в системе, путем вызова метода [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) и передачи селектора устройств рендеринга звуковых данных, возвращенного методом [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817). Вы можете выбрать один из возвращенных объектов **DeviceInformation** программным путем или отобразить пользовательский интерфейс, с помощью которого пользователь сможет выбрать устройство для последующей передачи методу [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218).
+Если вы хотите указать конкретное устройство аудиозаписи для узла ввода устройства, можно использовать класс [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) , чтобы получить список устройств аудиозаписи, доступных в системе путем вызова [**метода FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) и Передача звука отрисовки средство выбора устройств, возвращаемое [**Windows.Media.Devices.MediaDevice.GetAudioCaptureSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector). Вы можете выбрать один из возвращенных объектов **DeviceInformation** программным путем или отобразить пользовательский интерфейс, с помощью которого пользователь сможет выбрать устройство для последующей передачи методу [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218).
 
 [!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
