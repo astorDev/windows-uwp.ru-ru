@@ -5,16 +5,16 @@ ms.date: 5/2/2018
 ms.topic: article
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованного приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c7055748eb8905341d9f90c47e6141c9c9c599e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b547394657fc992474ac0ef9e79719e3ab8f31e1
+ms.sourcegitcommit: 58783d1ea22e632b9c50dcfbaa1cc57686bcdd8e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929671"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024231"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Создание файла установщика приложений в Visual Studio
 
-Начиная с Windows 10 (версия 1804) и Visual Studio 2017 (обновление 15.7), загруженные неопубликованные приложения можно настроить, чтобы получать автоматические уведомления с помощью файла `.appinstaller`. Visual Studio поддерживает включение этих обновлений.
+Начиная с Windows 10, версия 1803 и Visual Studio 2017, обновление 15.7, неопубликованных приложений можно настроить, чтобы получать автоматические уведомления с помощью `.appinstaller` файла. Visual Studio поддерживает включение этих обновлений.
 
 ## <a name="app-installer-file-location"></a>Местоположение файла установщика приложений
 Файл `.appinstaller` можно разместить в общем расположении, например конечной точке HTTP или общей папке UNC. Этот файл включает путь для поиска пакетов приложения, которые требуется установить. Пользователи устанавливают приложение из общего расположения и включают периодические проверки обновлений. 
@@ -25,7 +25,7 @@ ms.locfileid: "8929671"
 Можно настроить свойство `TargetPlatformMinVersion` при создании проекта или изменить его позже в свойствах проекта. 
 
 >[!IMPORTANT]
-> Файл установщика приложений создается только если `TargetPlatformMinVersion`— Windows 10 версии 1804 или выше.
+> Файл установщика приложений только в том случае, возникающие при `TargetPlatformMinVersion` — Windows 10 версии 1803 или более поздней версии.
 
 
 ### <a name="create-packages"></a>Создание пакетов
