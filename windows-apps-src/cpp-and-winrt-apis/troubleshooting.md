@@ -5,17 +5,17 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, устранение неполадок, HRESULT, ошибка
 ms.localizationpriority: medium
-ms.openlocfilehash: 120d5c8014ce9ac3cab9b2dfb1d778173f2434c4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8b82fa3e8c5aa222f18c67fa0679374ef3d58a67
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927023"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024533"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>Устранение неполадок C++/WinRT
 
 > [!NOTE]
-> Сведения об установке и использовании [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) расширения Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также C + +/ WinRT MSBuild свойств и целевых объектов) см. в разделе [Поддержка Visual Studio для C + +/ WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> Сведения об установке и использовании [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) расширения Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также C + +/ WinRT MSBuild свойств и целевых объектов) см. в разделе [Поддержка Visual Studio для C + +/ WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
 
 Этот раздел представлен заранее, чтобы вы знали о нем уже сейчас; даже если он еще не требуется. Таблица симптомов и способов их устранения ниже может быть полезна при создании нового кода и переносе существующего приложения. Если вы переносите приложение и жаждете двигаться вперед и добраться до этапа, на котором выполняется построение и запуск вашего проекта, вы можете достичь временного прогресса с помощью комментирования и создания заглушек для любого некритичного кода, вызывающего неполадки, а затем вернуться, чтобы уплатить этот долг позже.
 
@@ -37,7 +37,7 @@ ms.locfileid: "8927023"
 | Компилятор C++ выдает ошибку формы "*'MyImplementationType_base&lt;MyImplementationType&gt;': no appropriate default constructor available*".|Это может произойти, когда вы получили производное от типа, который имеет нестандартный конструктор. Конструктор производного типа должен передать параметры, которые требуются конструктору базового типа. Рабочий пример см. в разделе [Получение производного от типа, имеющего нестандартный конструктор](author-apis.md#deriving-from-a-type-that-has-a-non-default-constructor).|
 | Компилятор C++ выдает ошибку "*cannot convert from 'const std::vector&lt;std::wstring,std::allocator&lt;_Ty&gt;&gt;' to 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*".|Это может произойти при передаче std::vector std::wstring API-интерфейсу среды выполнения Windows, который ожидает коллекцию. Дополнительные сведения см. в разделе [Стандартные типы данных C++ и C++/WinRT](std-cpp-data-types.md).|
 | Компилятор C++ выдает ошибку "*cannot convert from 'const std::vector&lt;winrt::hstring,std::allocator&lt;_Ty&gt;&gt;' to 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*".|Это может произойти при передаче std::vector winrt::hstring асинхронному API-интерфейсу среды выполнения Windows, который ожидает коллекцию, при этом вектор не скопирован и не перемещен в асинхронный вызываемый. Дополнительные сведения см. в разделе [Стандартные типы данных C++ и C++/WinRT](std-cpp-data-types.md).|
-| При открытии проекта Visual Studio выдает ошибку "*The application for the project is not installed*".|Если вы еще не сделали этого, необходимо установить **средства универсальной платформы Windows для разработки на C++** в диалоговом окне Visual Studio **Новый проект**. Если это не устраняет проблему, то проект может зависеть от расширения Visual Studio (VSIX) C++/WinRT (см. раздел [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)).|
+| При открытии проекта Visual Studio выдает ошибку "*The application for the project is not installed*".|Если вы еще не сделали этого, необходимо установить **средства универсальной платформы Windows для разработки на C++** в диалоговом окне Visual Studio **Новый проект**. Если это не устраняет проблему, то проект может зависеть от расширения Visual Studio (VSIX) C++/WinRT (см. раздел [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)).|
 | Тесты комплекта сертификации приложений для Windows создают ошибку о том, что один из ваших классов среды выполнения "*не является производным от базового класса Windows. Все составные классы должны наследоваться от типа в пространстве имен Windows*".|Любой класс среды выполнения, (которые были объявлены в приложении), который является производным от базового класса называется *составные* класса. Первичный базовый класс составные класса должен являться типом из пространства имен Windows.*; Например, [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject). См. в разделе [элементы управления XAML; привязка к C + +/ WinRT свойства](binding-property.md) для получения дополнительных сведений.|
 | Компилятор C++ создает ошибку "*must be WinRT type*" для специализации делегата EventHandler или TypedEventHandler.|Рассмотрите возможность использования **winrt::delegate&lt;...T&gt;**. См. раздел [Создание событий в C++/WinRT](author-events.md).|
 | Компилятор C++ создает ошибку "*must be WinRT type*" для специализации асинхронной операции среды выполнения Windows.|Рассмотрите возможность возврата шаблона [**task**](https://msdn.microsoft.com/library/hh750113) библиотеки параллельных шаблонов (PPL). См. раздел [Параллельная обработка и асинхронные операции](concurrency.md).|

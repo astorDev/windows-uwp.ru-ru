@@ -5,19 +5,19 @@ ms.date: 07/18/2018
 ms.topic: article
 keywords: Windows 10, UWP, стандартная, c++, cpp, winrt, проекция, создание, событие
 ms.localizationpriority: medium
-ms.openlocfilehash: bbc9fcd2b29183352fd06a7d7403aad2d0f011d9
-ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
+ms.openlocfilehash: fc4047344daa19888912f3a93175b36cd0dfa96b
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2019
-ms.locfileid: "8992257"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024563"
 ---
 # <a name="author-events-in-cwinrt"></a>Создание событий в C++/WinRT
 
 В этом разделе показано, как создать компонент среды выполнения Windows, который содержит класс среды выполнения, представляющий банковский счет, который вызывает событие при списании с баланса. В нем также показано базовое приложение, которое использует класс среды выполнения банковского счета, вызывает функцию для изменения баланса и обрабатывает все возникающие события.
 
 > [!NOTE]
-> Сведения об установке и использовании [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) расширения Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также C + +/ WinRT MSBuild свойств и целевых объектов) см. в разделе [Поддержка Visual Studio для C + +/ WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> Сведения об установке и использовании [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) расширения Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также C + +/ WinRT MSBuild свойств и целевых объектов) см. в разделе [Поддержка Visual Studio для C + +/ WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
 
 > [!IMPORTANT]
 > Основные понятия и термины, которые помогают понять, как использовать и создавать классы среды выполнения с помощью C++/WinRT, см. в разделах [Использование API-интерфейсов в C++/WinRT](consume-apis.md) и [Создание API-интерфейсов в C++/WinRT ](author-apis.md).
@@ -146,7 +146,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 ## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>Параметризованному делегаты и простого сигналы, через ABI
 
-Если событие должен быть доступен через двоичного интерфейса приложений (ABI)&mdash;например между компонента и его использующем приложения&mdash;событий должны использовать тип делегата среды выполнения Windows. Приведенный выше использует [**Windows::Foundation::EventHandler\<T\ >**](/uwp/api/windows.foundation.eventhandler) типа делегата среды выполнения Windows. [**TypedEventHandler\<TSender, TResult\ >**](/uwp/api/windows.foundation.eventhandler) — еще один пример типа делегата среды выполнения Windows.
+Если событие должен быть доступен через двоичного интерфейса приложений (ABI)&mdash;например между компонента и его использующем приложения&mdash;событий должны использовать тип делегата среды выполнения Windows. В приведенном выше примере используется тип делегата [**Windows::Foundation::EventHandler\<T\>**](/uwp/api/windows.foundation.eventhandler) среды выполнения Windows. [**TypedEventHandler\<TSender, TResult\>**](/uwp/api/windows.foundation.eventhandler) — еще один пример типа делегата среды выполнения Windows.
 
 Параметры типа для этих типов два делегата имеют перекрестной ABI, поэтому параметры типа должны являться типами среды выполнения Windows, слишком. Включает в себя классы среды выполнения первого и сторонних поставщиков, а также простые типы, такие как строки и числа. Компилятор поможет вам с ошибкой «*должны иметь тип WinRT*» Если вы забудете такое ограничение.
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, новости, что приложения, new
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 87ab438de08ed5d6165343e7b9c4a559f37b351e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 986b0e896ca00e1fc15a6ed265ea1e98103524f3
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927013"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024583"
 ---
 # <a name="whats-new-in-cwinrt"></a>Новые возможности в C + +/ WinRT
 
@@ -31,7 +31,7 @@ ms.locfileid: "8927013"
 
 Другие изменения.
 
-- **Критическое изменение**. [**winrt::get_abi(winrt::hstring const&)**](/uwp/cpp-ref-for-winrt/get-abi) теперь возвращает `void*` вместо `HSTRING`. Вы можете использовать `static_cast<HSTRING>(get_abi(my_hstring));` для получения HSTRING.
+- **Критическое изменение**. Теперь возвращает [**WinRT::get_abi(WinRT::hstring const&)**](/uwp/cpp-ref-for-winrt/get-abi) `void*` вместо `HSTRING`. Вы можете использовать `static_cast<HSTRING>(get_abi(my_hstring));` для получения HSTRING.
 - **Критическое изменение**. Теперь возвращает [**WinRT::put_abi(WinRT::hstring&)**](/uwp/cpp-ref-for-winrt/put-abi) `void**` вместо `HSTRING*`. Вы можете использовать `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` для получения HSTRING *.
 - **Критическое изменение**. HRESULT теперь проецируется как **winrt::hresult**. Если вам требуется HRESULT (проверка типа или поддержка характеристикам типов), то вы можете `static_cast` **winrt::hresult**. В противном случае **winrt::hresult** преобразует HRESULT, до тех пор, пока вы включить `unknwn.h` прежде чем включать C + +/ WinRT заголовков.
 - **Критическое изменение**. GUID теперь проецируется как **winrt::guid**. API-интерфейсов, которую можно реализовать необходимо использовать **winrt::guid** для параметров GUID. В противном случае **winrt::hresult** преобразует код GUID, до тех пор, пока вы включить `unknwn.h` прежде чем включать C + +/ WinRT заголовков.
@@ -44,7 +44,7 @@ ms.locfileid: "8927013"
 - Жесткой интеллектуальных указателей. Ранее revokers событие, не удалось отозвать при перемещения назначенный новое значение. Это позволило помогает выявить проблемы, где смарт-указателя классы не обработка надежно самообновления назначения; корневой каталог [**шаблон структуры winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr). **WinRT::com_ptr** была устранена, и событие revokers, привязанной к обрабатывать семантику перемещения правильно таким образом, чтобы они отозвать после назначения.
 
 > [!NOTE]
-> Версия 1.0.181002.2 (или более поздней версии) из [C + +/ расширение Visual Studio WinRT (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix) установлен, создав новый C + +/ WinRT проекта автоматически устанавливает [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) для данного проекта. Пакет Microsoft.Windows.CppWinRT NuGet обеспечивает повышенную C + +/ WinRT проект поддержку при построении, что проект переносить с одного компьютера разработчика и агента построения (на котором только пакет NuGet и не VSIX, установлены).
+> Версия 1.0.181002.2 (или более поздней версии) из [C + +/ расширение Visual Studio WinRT (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix) установлен, создав новый C + +/ WinRT проекта автоматически устанавливает [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) для данного проекта. Пакет Microsoft.Windows.CppWinRT NuGet обеспечивает повышенную C + +/ WinRT проект поддержку при построении, что проект переносить с одного компьютера разработчика и агента построения (на котором только пакет NuGet и не VSIX, установлены).
 >
 > Для существующего проекта&mdash;после установки версии 1.0.181002.2 (или более поздней версии) из VSIX&mdash;рекомендуется откройте проект в Visual Studio, щелкните **проект** \> **Управление пакетами NuGet …**  \>  **Обзор**, введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выбрать элемент в результатах поиска и нажмите кнопку **установить** для установки пакета для данного проекта.
 

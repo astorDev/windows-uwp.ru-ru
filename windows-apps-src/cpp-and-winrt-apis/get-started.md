@@ -5,12 +5,12 @@ ms.date: 10/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, начать, начало, работы
 ms.localizationpriority: medium
-ms.openlocfilehash: cc98f61acc3b5dccdc4869b646337fdf9a6e701a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 069212fd9a6e0bcf3fb024d7f28738dd3049f5e1
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945420"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024483"
 ---
 # <a name="get-started-with-cwinrt"></a>Начало работы с C++/WinRT
 
@@ -22,7 +22,7 @@ ms.locfileid: "8945420"
 ## <a name="a-cwinrt-quick-start"></a>Краткое руководство по C++/WinRT
 
 > [!NOTE]
-> Сведения об установке и использовании расширения C++/WinRT для Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также свойств и целевых объектов MSBuild C++/WinRT) см. в разделе [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> Сведения об установке и использовании расширения C++/WinRT для Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также свойств и целевых объектов MSBuild C++/WinRT) см. в разделе [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
 
 Создайте новый проект **консольного приложение для Windows (C++/WinRT)**.
 

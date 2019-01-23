@@ -5,12 +5,12 @@ ms.date: 10/09/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, взаимодействие, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 71cc7a24be7afd7a6221e8e474161b453b5ee19a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e1e4570320e9d48351ccb01052fc77d35ae03642
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943540"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024573"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>Взаимодействие между C++/WinRT и C++/CX
 
@@ -47,7 +47,7 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 
 ## <a name="example-project-showing-the-two-helper-functions-in-use"></a>Пример проекта показывает использование двух вспомогательных функций
 
-Для воспроизведения, простым способом, сценарий постепенного переноса кода в C + +/ CX проекта на C + +/ WinRT, вы можете начать с создания нового проекта в Visual Studio, с помощью одного из C + +/ WinRT шаблоны проектов (см. в разделе [Поддержка Visual Studio для C + +/ WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)).
+Для воспроизведения, простым способом, сценарий постепенного переноса кода в C + +/ CX проекта на C + +/ WinRT, вы можете начать с создания нового проекта в Visual Studio, с помощью одного из C + +/ WinRT шаблоны проектов (см. в разделе [Поддержка Visual Studio для C + +/ WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)).
 
 Этот пример проекта также показывает, как использовать псевдонимы пространств имен для различных островов кода, чтобы справиться с пространством имен конфликтами между C + +/ WinRT проекции и C + +/ CX проекции.
 
