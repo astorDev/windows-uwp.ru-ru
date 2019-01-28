@@ -6,16 +6,18 @@ ms.topic: article
 keywords: Windows 10, uwp, безопасность
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: b33cf07ef10d0891f2747a06caf098b7d37b62f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fb1ff6431b3ccf609b7362db819569c2f6cebc48
+ms.sourcegitcommit: 9448348d7bc6590849db3a41e988dff9470ec111
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938824"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "9031390"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Разблокировка Windows с помощью устройств-компаньонов (IoT) для Windows Hello
 
 Устройство-компаньон Windows Hello— это устройство, которое может взаимодействовать с настольным компьютером Windows 10 для повышения удобства процедуры проверки подлинности пользователя. При работе с платформой сопутствующих устройств для Windows Hello устройство-компаньон открывает широкие возможности использования Windows Hello, даже если функция биометрии недоступна (например, на компьютере с Windows 10 отсутствует камера для проверки подлинности по лицу или устройство для считывания отпечатков пальцев).
+
+> **Примечание** Корпорация Майкрософт будет объявляем Windows Hello сопутствующих устройств в будущем и опубликует дату раньше убедитесь, что пользователи имеют достаточного интереса их развертывание альтернативные решения.
 
 > **Примечание.** Платформа сопутствующих устройств для Windows Hello — это специальная функция, доступная лишь некоторым разработчикам приложений. Чтобы использовать эту платформу, ваше приложение должно быть особым образом подготовлено к работе корпорацией Майкрософт и содержать ограниченную возможность *secondaryAuthenticationFactor* в своем манифесте. Чтобы получить утверждение, напишите на адрес [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
 
