@@ -7,12 +7,12 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
-ms.openlocfilehash: 43aeccecee5b4b2d7a2d5fa1082fb619e87e7268
-ms.sourcegitcommit: 51ea7eae59684400e7813a9dd3376d5e7bfb3635
+ms.openlocfilehash: d70dbc0dffc3763855924b8f7faca61ca2fb18f2
+ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "8972048"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035405"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Обзор языков профиля пользователя и языков манифеста приложения
 Пользователь Windows может использовать раздел **Параметры** > **Время и язык** > **Язык и региональные стандарты** для настройки упорядоченного списка предпочтительных языков интерфейса или только одного основного языка интерфейса. У языка может быть региональный вариант. Например, можно выбрать испанский язык в качестве разговорного языка в Испании, в Мексике, в Соединенных Штатах и другие варианты.
@@ -191,6 +191,9 @@ ms.locfileid: "8972048"
 </tr>
 </tbody>
 </table>
+
+>[!NOTE]
+> Список кодов стандартных Страна или регион, используются корпорацией Майкрософт см. в [Списке официальных стране/регионе](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
 
 ## <a name="important-apis"></a>Важные API
 * [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
