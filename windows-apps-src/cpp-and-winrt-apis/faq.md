@@ -5,12 +5,12 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, вопросы и ответы, вопросы и ответы
 ms.localizationpriority: medium
-ms.openlocfilehash: 3be87431d421b2307bc298934adc991d6e71c6ab
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: e02622452aa99cd262221cd0c448ceca8271b00d
+ms.sourcegitcommit: a71122082947b4cc3d157465e402746760d1d5c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024513"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035729"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на вопросы, которые вы, скорее всего имеют о разработке и использовании API среды выполнения Windows с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -27,7 +27,7 @@ ms.locfileid: "9024513"
 Если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет Windows SDK версии 10.0.17134.0 (Windows 10, версия 1803), выберите только что созданный C + +/ WinRT проект может к ошибке при компиляции с ошибкой «ошибка*C3861: «from_abi»: идентификатор не найти*«и другие ошибки, которые происходят *base.h*. Решением является более поздней версии (Дополнительные совместимые) либо целевой версии пакета SDK для Windows, или задать свойство проекта **C/C++** > **язык** > **режим совместимости: нет** (Кроме того, если **/ permissive-** отображается в свойство проекта ** C/C++** > **командной строки** в столбце **Дополнительные параметры**, удалите его).
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>Каковы требования для [расширения Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix)?
-[VSIX](https://aka.ms/cppwinrt/vsix) требует минимальную целевую версию пакета Windows SDK 10.0.17134.0 (Windows 10, версия 1803). Вам также потребуется Visual Studio 2017 (по крайней мере версия 15.6; рекомендуется версия не младше 15.7). Проект, использующий VSIX, можно определить по наличию `<CppWinRTEnabled>true</CppWinRTEnabled>`в `<PropertyGroup Label="Globals">` в файле `.vcxproj`. Дополнительные сведения см. в разделе [поддержка Visual Studio для C++/WinRT и VSIX ](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
+[Расширение VSIX](https://aka.ms/cppwinrt/vsix) требуется Минимальная версия целевого пакета Windows SDK 10.0.17134.0 (Windows 10, версия 1803). Вам также понадобится Visual Studio 2017 (по крайней мере версия 15,6; рекомендуется версия не младше 15.7), или Visual Studio 2019 г. Проект, использующий VSIX, можно определить по наличию `<CppWinRTEnabled>true</CppWinRTEnabled>`в `<PropertyGroup Label="Globals">` в файле `.vcxproj`. Дополнительные сведения, включая сведения о том, требует ли проект [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) для установки, см. в разделе [Поддержка Visual Studio для C + +/ WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
 
 ## <a name="whats-a-runtime-class"></a>Что такое *класс среды выполнения*?
 Класс среды выполнения — это тип, который можно активировать и использовать через современные интерфейсы COM, обычно через границы исполняемого файла. Тем не менее, класс среды выполнения может также использоваться в единице компиляции, которая его реализует. Класс среды выполнения объявляется в языке описания интерфейса (IDL) и может реализоваться в стандартной версии C++ с использованием C++/WinRT.
