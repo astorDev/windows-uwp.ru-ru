@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7e6547267a1d0b478fdda8698bd1dcf89523442b
-ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
+ms.openlocfilehash: cbe2a62d52d546e06d3da3250dcd0f7394ba39c5
+ms.sourcegitcommit: 1391190e27907f0c7cd40e4bb56cdead387a53cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8976901"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035544"
 ---
 # <a name="color"></a>Цвет
 
@@ -351,7 +351,7 @@ ColorSchemeResources — это API, который сообщает систе�
 
 #### <a name="mycustomthemexaml"></a>MyCustomTheme.xaml
 
-Во-первых необходимо создать ResourceDictionary. Затем поместите **ColorSchemeResources** в ThemeDictionaries и переопределить нужные системные цвета:
+Во-первых необходимо создать ResourceDictionary. Затем поместите **ColorPaletteResources** в ThemeDictionaries и переопределить нужные системные цвета:
 
 ```xaml
 <ResourceDictionary
@@ -360,11 +360,16 @@ ColorSchemeResources — это API, который сообщает систе�
     xmlns:local="using:TestApp">
 
     <ResourceDictionary.ThemeDictionaries>
-
-        <ColorSchemeResources x:Key="Default"
-            SystemBaseLowColor="LightGreen"
-            SystemBaseMediumLowColor="DarkCyan"/>
-        
+        <ResourceDictionary x:Key="Default">
+            <ResourceDictionary.MergedDictionaries>
+            
+                <ColorPaletteResources x:Key="Default"
+                    Accent="#FF0073CF" 
+                    AltHigh="#FF000000" 
+                    AltLow="#FF000000"/>
+                    
+            </ResourceDictionary>
+        </ResourceDictionary.MergedDictionaries>        
     </ResourceDictionary.ThemeDictionaries>
 </ResourceDictionary>
 ```
