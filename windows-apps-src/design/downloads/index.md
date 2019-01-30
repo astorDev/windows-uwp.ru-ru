@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7089f4b6e28056f44a6ad5d37aa90f6cf84784df
-ms.sourcegitcommit: 05335f65dfe497ef4027b7249c0119fc59e355e2
+ms.openlocfilehash: 09fa50319defd90479ca93e4ba1b920948fbb9d3
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "8964677"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9036926"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Наборы инструментов для проектирования и образцы приложений UWP
  
@@ -40,7 +40,7 @@ ms.locfileid: "8964677"
     :::column:::
         ![hero image](images/adobe-xd.png)
         <b>Adobe XD toolkit</b><br>
-        v1806, June 2018<br>
+        v1901, January 2019<br>
         <a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
 :::row-end:::
@@ -126,7 +126,7 @@ BuildCast — это пример начала до конца, созданны
 
 ![Галереи элементов управления XAML](images/xaml-controls-gallery.png)
 **Галереи элементов управления XAML**<br>
-Этот пример представляет собой интерактивную демонстрацию всех элементов управления XAML. Он показывает различные макеты — от базового до адаптивного — и отображает разметку, которую можно скопировать в собственный проект. Примечание. Файл для скачивания и репозиторий GitHub для этого образца приложения в настоящий момент названы "Основы пользовательского интерфейса (XAML)". <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">Скачать пример "Галерея элементов управления XAML"</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Посмотреть пример галереи элементов управления XAML на GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Скачать пример галереи элементов управления XAML в Store</a></p>
+Этот пример представляет собой интерактивную демонстрацию всех элементов управления XAML. Он показывает различные макеты — от базового до адаптивного — и отображает разметку, которую можно скопировать в собственный проект. Примечание. Файл для скачивания и репозиторий GitHub для этого образца приложения в настоящий момент названы "Основы пользовательского интерфейса (XAML)". <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">Скачать пример "Галерея элементов управления XAML"</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Посмотреть пример галереи элементов управления XAML на GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Скачать пример галереи элементов управления XAML в Store</a></p>
 
 ## <a name="want-more-code"></a>Вам нужно больше примеров кода?
 

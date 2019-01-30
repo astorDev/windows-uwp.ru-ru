@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: a76a03eaff3d831b48e7b86c0b70ff2cbae7360a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4a969c0dfbfd08b5cc29651e2ad295c2bdd60ee0
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936220"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037016"
 ---
 # <a name="inking-controls"></a>Элементы управления рукописным вводом
 
@@ -59,7 +59,7 @@ InkCanvas позволяет включить в приложении базов
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/InkCanvas">открыть приложение и увидеть InkCanvas в действии</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Получить исходный код (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -166,7 +166,7 @@ InkCanvas позволяет включить в приложении базов
 
 - [В примере использования элемента управления SimpleInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) показано 8сценариев реализации возможностей настройки и расширения элементов управления InkCanvas и InkToolbar. Каждый сценарий сопровождается базовыми инструкциями по наиболее распространенным ситуациям, в которых используется рукописный ввод, и реализации элементов управления.
 - [Пример ComplexInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) — демонстрация расширенных сценариев рукописного ввода.
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
 ## <a name="related-articles"></a>Еще по теме
 
