@@ -1,6 +1,6 @@
 ---
 title: Перемещение фокуса с помощью клавиатуры, геймпада, пульта дистанционного управления и средств специальных возможностей
-Description: ''
+Description: Learn how to use focus navigation to provide comprehensive and consistent interaction experiences in your UWP apps and custom controls for keyboard power users, those with disabilities and other accessibility requirements, as well as the 10-foot experience of television screens and the Xbox One.
 label: ''
 template: detail.hbs
 keywords: клавиатура, игровое устройство управления, удаленное управление, навигация, направленная внутренняя навигация, область направления, стратегия навигации, ввод, взаимодействие с пользователем, специальные возможности, удобство использования
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c76e62a4fcccec91fc6b3a083671ff68af2202e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7dd7ca5ed7694ba5f114d913580e7e3a233537ae
+ms.sourcegitcommit: 8e0fa6e2cdd5d7456a4c8a10fd9f2501b346294f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934041"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "9041052"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>Перемещение фокуса с помощью клавиатуры, геймпада, пульта дистанционного управления и средств специальных возможностей
 
@@ -28,7 +28,7 @@ ms.locfileid: "8934041"
 
 В основе перемещения фокуса лежит базовый механизм, который позволяет пользователям перемещаться по пользовательскому интерфейсу приложения UWP и взаимодействовать с ним с помощью клавиатуры, геймпада или пульта дистанционного управления.
 
-> [!NOTE] 
+> [!NOTE]
 > Устройства ввода обычно классифицируются как указывающие устройства, такие как сенсорный ввод, сенсорная панель, перо и мышь, и как неуказывающие устройства, такие как клавиатура, геймпад и пульт дистанционного управления.
 
 В этом разделе описывается, как оптимизировать приложение UWP и реализовать настраиваемые возможности взаимодействия для пользователей, использующих неуказывающие способы ввода. 
@@ -40,14 +40,16 @@ ms.locfileid: "8934041"
 Дополнительные общие сведения о создании приложений и возможностей для клавиатуры см. в разделе [Взаимодействие с помощью клавиатуры](keyboard-interactions.md).
 
 ## <a name="general-guidance"></a>Общие правила
+
 Только те элементы пользовательского интерфейса, для которых требуется взаимодействие с пользователем, должны поддерживать перемещение фокуса; элементы, для которых не требуется выполнение действия, например, статические изображения, не требуют поддержки фокуса клавиатуры. Средства чтения с экрана и подобные средства специальных возможностей по-прежнему объявляют эти статические элементы даже в том случае, если они не включены в перемещение фокуса. 
 
 Важно помнить, что, в отличие от навигации с помощью указывающего устройства, например мыши или сенсорного управления, навигация с помощью клавиатуры является линейной. При реализации перемещения фокуса следует оценить, как пользователь будет взаимодействовать с приложением и какова будет логическая навигация. В большинстве случаев мы рекомендуем реализовывать настраиваемое поведение перемещения фокуса в соответствии с предпочтительным шаблоном чтения для языка и региональных параметров пользователя.
 
 Некоторые другие рекомендации по реализации перемещения фокуса включают в себя:
+
 - Элементы управления сгруппированы логически?
-- Есть ли группы элементов управления, которые важнее других? 
-   - Если да, то имеют ли эти группы подгруппы?
+- Есть ли группы элементов управления, которые важнее других?
+  - Если да, то имеют ли эти группы подгруппы?
 - Требуется ли для макета реализация пользовательской направленной навигации (клавиши со стрелками) и формирование последовательности табуляции?
 
 В электронной книге [Разработка программного обеспечения с учетом специальных возможностей](https://www.microsoft.com/download/details.aspx?id=19262) есть глава под названием *Проектирование логической иерархии*, которая посвящена этой теме.
@@ -57,13 +59,12 @@ ms.locfileid: "8934041"
 Область навигации элемента управления или группы элементов управления двухмерной внутренней навигации называется "областью направления". При переносе фокуса на этот объект для перехода между дочерними элементами в области направления можно использовать клавиши со стрелками (влево, вправо, вверх и вниз).
 
 ![область направления](images/keyboard/directional-area-small.png)
-
-*Область двухмерной внутренней навигации (область направления) группы элементов управления*
+*область двухмерной внутренней навигации, или области направления, группы элементов управления*
 
 Для управления двухмерной внутренней навигацией с помощью клавиш со стрелками на клавиатуре можно использовать свойство [XYFocusKeyboardNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation) (возможные значения [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (автоматически), [Enabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (включено) или [Disabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (отключено)).
 
-> [!NOTE]  
-> Это свойство не влияет на последовательность табуляции. Чтобы избежать запутанного взаимодействия при навигации, для дочерних элементов области направления *не рекомендуется* явно задавать значения в порядке перехода по клавише табуляции в приложении. Дополнительные сведения о поведении перехода с помощью клавиши табуляции для элемента см. в разделах, посвященных свойствам [UIElement.TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) и [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex).  
+> [!NOTE]
+> Это свойство не влияет на последовательность табуляции. Чтобы избежать запутанного взаимодействия при навигации, для дочерних элементов области направления *не рекомендуется* явно задавать значения в порядке перехода по клавише табуляции в приложении. Дополнительные сведения о поведении перехода с помощью клавиши табуляции для элемента см. в разделах, посвященных свойствам [UIElement.TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) и [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex).
 
 ### <a name="autohttpsdocsmicrosoftcomuwpapiwindowsuixamlinputxyfocuskeyboardnavigationmode-default-behavior"></a>[Автоматически](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (поведение по умолчанию)
 
@@ -73,9 +74,8 @@ ms.locfileid: "8934041"
 
 Задайте свойству **XYFocusKeyboardNavigation** значение **Disabled** (отключено), чтобы заблокировать направленную навигацию к элементу управления и его дочерним элементам.
 
-![Поведение XYFocusKeyboardNavigation со значением "Отключено"](images/keyboard/xyfocuskeyboardnav-disabled.gif)
-
-*Поведение XYFocusKeyboardNavigation со значением "Отключено"*
+![Поведение "отключено" XYFocusKeyboardNavigation](images/keyboard/xyfocuskeyboardnav-disabled.gif)
+*XYFocusKeyboardNavigation поведение "отключено"*
 
 В этом примере в основной панели [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) для свойства **XYFocusKeyboardNavigation** задано значение **Enabled** (включено). Все дочерние элементы наследуют этот параметр и к ним можно перейти с помощью клавиш со стрелками. Однако элементы B3 и B4 находятся во вспомогательной панели [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary), свойство **XYFocusKeyboardNavigation** которой имеет значение **Disabled** (отключено), что переопределяет основной контейнер и отключает навигацию с помощью клавиш со стрелками на себя, а также между его дочерними элементами.
 
@@ -131,9 +131,8 @@ ms.locfileid: "8934041"
 
 При задании этого значения навигация с помощью клавиш со стрелками будет ограничена элементами в области направления. Это не влияет на навигацию клавишей TAB, так как все элементы управления остаются доступны посредством их иерархии в последовательности табуляции.
 
-![Поведение XYFocusKeyboardNavigation со значением "Включено"](images/keyboard/xyfocuskeyboardnav-enabled.gif)
-
-*Поведение XYFocusKeyboardNavigation со значением "Включено"*
+![Включить поведение XYFocusKeyboardNavigation](images/keyboard/xyfocuskeyboardnav-enabled.gif)
+*XYFocusKeyboardNavigation включено поведение*
 
 В этом примере в основной панели [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) для свойства **XYFocusKeyboardNavigation** задано значение **Enabled** (включено). Все дочерние элементы наследуют этот параметр и к ним можно перейти с помощью клавиш со стрелками. Элементы B3 и B4 находятся во вспомогательной панели [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary), в которой свойству **XYFocusKeyboardNavigation** значение не задано и которое затем будет наследовать значение параметра основного контейнера. Элемент B5 не находится внутри объявленной области направления и не поддерживает навигацию с помощью клавиш со стрелками, однако поддерживает стандартное поведение навигации с помощью клавиши TAB.
 
@@ -195,9 +194,8 @@ ms.locfileid: "8934041"
 
 Вот пример двух вложенных областей направления в элементе, который явным образом не поддерживает двухмерную направленную навигацию. В этом случае направленная навигация между двумя вложенными областями не поддерживается.
 
-![Вложенное поведение XYFocusKeyboardNavigation со значением "Включено"](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
-
-*Вложенное поведение XYFocusKeyboardNavigation со значением "Включено"*
+![Включить вложенное поведение XYFocusKeyboardNavigation](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
+*включен вложенное поведение XYFocusKeyboardNavigation*
 
 Ниже приведен более сложный пример трех вложенных областей направления, где:
 
