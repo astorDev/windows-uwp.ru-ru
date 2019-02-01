@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fd921782571082ee696c26480f1c55c96c30d7c2
-ms.sourcegitcommit: 7bea35c5a35c78e65f822313962c4b1579b163b2
+ms.openlocfilehash: b753b9e93a0cd2abae089f9d53915e0c109f6b63
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035448"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042426"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -158,7 +158,7 @@ int main()
 
 ## <a name="post-binary-data-over-http"></a>Учет двоичных данных по протоколу HTTP
 
-[C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis) приведенный ниже пример кода демонстрирует отправки небольшого количества двоичные данные с запросом POST, с помощью класса [HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent) .
+[C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis) приведенный ниже пример кода демонстрирует отправки небольшого количества двоичные данные с запросом POST, с помощью класса [HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent) . Вызов **get** (как показано в следующем примере кода) подходит не для потока пользовательского интерфейса. Правильное применение для использования в этом случае см. в разделе [параллельная обработка и асинхронные операции с помощью C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 ```cppwinrt
 // pch.h

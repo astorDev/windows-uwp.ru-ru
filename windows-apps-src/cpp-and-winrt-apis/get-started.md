@@ -5,12 +5,12 @@ ms.date: 10/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, начать, начало, работы
 ms.localizationpriority: medium
-ms.openlocfilehash: 069212fd9a6e0bcf3fb024d7f28738dd3049f5e1
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: c0d11a8718f61666d6285d8a1c91b48992044b22
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024483"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042356"
 ---
 # <a name="get-started-with-cwinrt"></a>Начало работы с C++/WinRT
 
@@ -22,7 +22,7 @@ ms.locfileid: "9024483"
 ## <a name="a-cwinrt-quick-start"></a>Краткое руководство по C++/WinRT
 
 > [!NOTE]
-> Сведения об установке и использовании расширения C++/WinRT для Visual Studio (VSIX) (которое обеспечивает поддержку шаблона проекта, а также свойств и целевых объектов MSBuild C++/WinRT) см. в разделе [Поддержка Visual Studio для C++/WinRT и VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix).
+> Сведения об установке и использовании C + +/ WinRT Visual Studio расширения (VSIX) (которое обеспечивает поддержку шаблона проекта) см. в разделе [Поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Создайте новый проект **консольного приложение для Windows (C++/WinRT)**.
 
@@ -120,6 +120,8 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 В этом разделе показано, как добавить C + +/ WinRT поддержки в проект приложения рабочего стола Windows, у вас может быть. Если у вас нет существующий проект приложения Windows Desktop, после этого можно выполнить вместе эти действия, первый из них создавать. Например, откройте Visual Studio и создайте **Visual C++** \> **Рабочий стол Windows** \> проекта**Классических приложений для Windows** .
 
+При необходимости можно установить [C + +/ WinRT Visual Studio расширения (VSIX)](https://aka.ms/cppwinrt/vsix). Дополнительные сведения см. в разделе [Поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
 ### <a name="set-project-properties"></a>Задание свойств проекта
 
 Перейдите в проект **Общие**свойства \> **Версия Windows SDK**и установите **Все конфигурации** и **Всех платформ**. Убедитесь, что **Версия Windows SDK** для 10.0.17134.0 (Windows 10, версия 1803) или более поздней версии.
@@ -146,11 +148,9 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 C + +/ WinRT языковой проекции зависит от определенных бесплатные (не член) функции среды выполнения Windows и точки входа, которые требуют ссылки на [WindowsApp.lib](/uwp/win32-and-com/win32-apis) библиотеку. В этом разделе описаны три способа удовлетворить компоновщик.
 
-Первый вариант является добавление в Visual Studio проект все C + +/ WinRT MSBuild свойств и целевых объектов. Изменение вашего `.vcxproj` файл, найдите `<PropertyGroup Label="Globals">` и внутри этой группы свойств настройте свойство `<CppWinRTEnabled>true</CppWinRTEnabled>`.
+Первый вариант является добавление в Visual Studio проект все C + +/ WinRT MSBuild свойств и целевых объектов. Чтобы сделать это, установите [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) в свой проект. Откройте проект в Visual Studio, щелкните **проект** \> **Управление пакетами NuGet …**  \>  **Обзор**, введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выбрать элемент в результатах поиска и нажмите кнопку **установить** для установки пакета для данного проекта.
 
-Кроме того, можно использовать параметры ссылки проекта явной ссылкой `WindowsApp.lib`.
-
-Или, это можно сделать в исходный код (в `pch.h`, например) следующим образом.
+Можно также использовать параметры ссылки проекта явной ссылкой `WindowsApp.lib`. Или, это можно сделать в исходный код (в `pch.h`, например) следующим образом.
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
