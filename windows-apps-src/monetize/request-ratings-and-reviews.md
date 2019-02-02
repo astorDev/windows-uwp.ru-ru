@@ -1,16 +1,16 @@
 ---
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Запрос оценок и отзывов для вашего приложения
-ms.date: 06/15/2018
+ms.date: 01/22/2019
 ms.topic: article
 keywords: Windows 10, uwp, оценки, отзывы
 ms.localizationpriority: medium
-ms.openlocfilehash: 377b71dba2fb62dfc562b56d40e65e43b0bd49c9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b167f4cc40ee72e6405436bacee28f2f20b4623c
+ms.sourcegitcommit: 7a1899358cd5ce9d2f9fa1bd174a123740f98e7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946865"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042640"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Запрос оценок и отзывов для вашего приложения
 
@@ -25,38 +25,87 @@ ms.locfileid: "8946865"
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>Показ диалогового окна оценки и отзыва в приложении
 
-Чтобы программным образом показать пользователю диалоговое окно, где он может оставить оценку и отзыв, вызовите метод [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) в пространстве имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store). Передайте целое число 16 в параметр *requestKind* и пустую строку в параметр *parametersAsJson*, как показано в следующем примере кода. В этом примере требуется библиотека [Json.NET](http://www.newtonsoft.com/json) от Newtonsoft и использование инструкций для пространств имен **Windows.Services.Store**, **System.Threading.Tasks** и **Newtonsoft.Json.Linq**.
+Чтобы программным образом показать пользователю диалоговое окно вашего приложения, которое просит клиентов оценить ваше приложение и отзыв, вызовите метод [RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) в пространстве имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) . 
 
 > [!IMPORTANT]
 > Запрос на показ диалогового окна оценку и отзыва должен вызываться в потоке пользовательского интерфейса в приложении.
 
 ```csharp
-public async Task<bool> ShowRatingReviewDialog()
-{
-    StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
-        StoreContext.GetDefault(), 16, String.Empty);
+using Windows.ApplicationModel.Store;
 
-    if (result.ExtendedError == null)
+private StoreContext _storeContext;
+
+public async Task Initialize()
+{
+    if (App.IsMultiUserApp) // pseudo-code
     {
-        JObject jsonObject = JObject.Parse(result.Response);
-        if (jsonObject.SelectToken("status").ToString() == "success")
-        {
-            // The customer rated or reviewed the app.
-            return true;
-        }
+        IReadOnlyList<User> users = await User.FindAllAsync();
+        User firstUser = users[0];
+        _storeContext = StoreContext.GetForUser(firstUser);
+    }
+    else
+    {
+        _storeContext = StoreContext.GetDefault();
+    }
+}
+
+private async Task PromptUserToRateApp()
+{
+    // Check if we’ve recently prompted user to review, we don’t want to bother user too often and only between version changes
+    if (HaveWePromptedUserInPastThreeMonths())  // pseudo-code
+    {
+        return;
     }
 
-    // There was an error with the request, or the customer chose not to
-    // rate or review the app.
-    return false;
+    StoreRateAndReviewResult result = await 
+        _storeContext.RequestRateAndReviewAppAsync();
+
+    // Check status
+    switch (result.Status)
+    { 
+        case StoreRateAndReviewStatus.Succeeded:
+            // Was this an updated review or a new review, if Updated is false it means it was a users first time reviewing
+            if (result.UpdatedExistingRatingOrReview)
+            {
+                // This was an updated review thank user
+                ThankUserForReview(); // pseudo-code
+            }
+            else
+            {
+                // This was a new review, thank user for reviewing and give some free in app tokens
+                ThankUserForReviewAndGrantTokens(); // pseudo-code
+            }
+            // Keep track that we prompted user and don’t do it again for a while
+            SetUserHasBeenPrompted(); // pseudo-code
+            break;
+
+        case StoreRateAndReviewStatus.CanceledByUser:
+            // Keep track that we prompted user and don’t prompt again for a while
+            SetUserHasBeenPrompted(); // pseudo-code
+
+            break;
+
+        case StoreRateAndReviewStatus.NetworkError:
+            // User is probably not connected, so we’ll try again, but keep track so we don’t try too often
+            SetUserHasBeenPromptedButHadNetworkError(); // pseudo-code
+
+            break;
+
+        // Something else went wrong
+        case StoreRateAndReviewStatus.OtherError:
+        default:
+            // Log error, passing in ExtendedJsonData however it will be empty for now
+            LogError(result.ExtendedError, result.ExtendedJsonData); // pseudo-code
+            break;
+    }
 }
 ```
 
-Метод **SendRequestAsync** использует систему простых запросов на основе целых чисел и данные параметров на основе JSON для доступа к различным операциям Store для приложений. Когда вы передаете целое число 16 параметру *requestKind*, вы создаете запрос на показ диалогового окна оценки и отзыва и отправляете соответствующие данные в Store. Этот метод впервые появился в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Общие сведения об этом методе см. в разделе [Отправка запросов в Store](send-requests-to-the-store.md).
+Метод **RequestRateAndReviewAppAsync** впервые появился в Windows 10, версия 1809, и может использоваться только в проектах, предназначенных для **Windows 10 октября 2018 г. Update (10.0; Сборка 17763)** или более поздней версии в Visual Studio.
 
 ### <a name="response-data-for-the-rating-and-review-request"></a>Данные ответов для запросов на оценку и отзыв
 
-После отправки этого запроса для отображения диалогового окна оценки и отзыва свойство [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response) возвращаемого значения [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) содержит строку формата JSON, которая указывает, успешно ли выполнен запрос.
+После отправки этого запроса для отображения оценки и отзыва диалоговое окно, свойство [ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) класса [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult) содержит строку формата JSON, указывающий, является ли запрос выполнен успешно.
 
 В следующем примере показано возвращаемое значение для данного запроса после успешной отправки оценки или отзыва пользователем.
 
@@ -81,11 +130,11 @@ public async Task<bool> ShowRatingReviewDialog()
 
 В таблице ниже указаны поля, которые включаются в строку формата JSON.
 
-|  Поле  |  Описание  |
-|----------------------|---------------|
-|  *status*                   |  Строка, указывающая, оставил ли пользователь оценку или отзыв. Поддерживаются значения **success** и **aborted**.   |
-|  *data*                   |  Объект, содержащий одно логическое значение с именем *updated*. Это значение указывает, обновил ли пользователь существующую оценку или отзыв. Объект *data* включается только в ответы при успешном завершении.   |
-|  *errorDetails*                   |  Строка, содержащая информацию об ошибках для запроса. |
+| Поле          | Описание                                                                                                                                   |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| *status*       | Строка, указывающая, оставил ли пользователь оценку или отзыв. Поддерживаются значения **success** и **aborted**. |
+| *data*         | Объект, содержащий одно логическое значение с именем *updated*. Это значение указывает, обновил ли пользователь существующую оценку или отзыв. Объект *data* включается только в ответы при успешном завершении. |
+| *errorDetails* | Строка, содержащая информацию об ошибках для запроса.                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>Запуск страницы оценки и отзыва страницы для вашего приложения в Store
 

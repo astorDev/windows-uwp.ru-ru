@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
-ms.openlocfilehash: 19ae09190b916fdaae68a67a2b9c11caa20d30e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1c0dcb40e4e70fc28dc0ccdbbf4aa329b00c71cf
+ms.sourcegitcommit: 7a1899358cd5ce9d2f9fa1bd174a123740f98e7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922355"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042650"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Интеграция упакованного классического приложения с Windows 10
 
@@ -246,7 +246,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Parameters |Связанный с командой список параметров и значений аргументов. Если ваше приложение является упакованным приложением с полным доверием, эти параметры передаются приложению как аргументы события при активации приложения. Вы можете настроить поведение вашего приложения, в зависимости от различных команд активации. Если переменная может содержать путь к файлу, заключите значение этого параметра в кавычки. Это позволит избежать проблем, которые возникают в случаях, когда путь содержит пробелы. Если ваше приложение является приложением UWP, передача параметров невозможна. Вместо этого приложение получит идентификатор Id (см. предыдущий пункт).|
 |Extended |Указывает, что команда появляется, только если пользователь отобразил контекстное меню, удерживая клавишу **SHIFT** перед нажатием правой кнопки мыши. Этот атрибут необязателен и при отсутствии по умолчанию имеет значение **False** (всегда отображать команду). Это поведение задается отдельно для каждой команды (кроме команды "Открыть", для которой всегда используется значение **False**).|
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Пример.
 
 ```XML
 <Package
@@ -309,7 +309,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Parameters |Дополнительные параметры. |
 |FileType |Соответствующие расширения файлов. |
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Пример.
 
 ```XML
 <Package
@@ -379,7 +379,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 |RemotePortMax |Наибольшее значение номера порта в диапазоне номеров удаленного порта. |
 |Профиль |Тип сети |
 
-#### <a name="example"></a>Пример.
+#### <a name="example"></a>Пример
 
 ```XML
 <Package
@@ -508,7 +508,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
  Можно установить разные настройки для разных типов файлов и действий. Например, вы можете решить открывать *документы* в режиме *Document*, а *изображения*— в режиме *Player*.
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Пример.
 
 ```XML
 <Package
@@ -573,7 +573,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |FileType |Соответствующие расширения файлов. |
 |Clsid   |Идентификатор класса для вашего приложения. |
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Пример.
 
 ```XML
 <Package
@@ -635,7 +635,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |FileType |Соответствующие расширения файлов. |
 |Clsid   |Идентификатор класса для вашего приложения. |
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Пример.
 
 ```XML
 <Package
@@ -812,7 +812,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ```
 
-|Имя |Описание |
+|Name |Описание |
 |-------|-------------|
 |Категория |Всегда ``windows.cloudfiles``.
 |iconResource |Значок, который представляет службу поставщика облачных файлов. Этот значок отображается в области навигации проводника.  Пользователи выбирают этот значок, чтобы показать файлы из вашей облачной службы. |
@@ -885,10 +885,10 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 |Имя |Описание |
 |-------|-------------|
 |Категория |Всегда ``windows.protocol``.
-|Name |Имя протокола. |
+|Имя |Имя протокола. |
 |Parameters |Список параметров и значений, передаваемых в приложении в качестве аргументов события при активации приложения. Если переменная может содержать путь к файлу, заключите значение этого параметра в кавычки. Это позволит избежать проблем, которые возникают в случаях, когда путь содержит пробелы. |
 
-### <a name="example"></a>Пример
+### <a name="example"></a>Пример.
 
 ```XML
 <Package
@@ -897,11 +897,13 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
   <Applications>
     <Application>
       <Extensions>
-        <uap3:Extension
-          Category="windows.protocol">
-          <uap3:Protocol
-            Name="myapp-cmd"
-            Parameters="/p &quot;%1&quot;" />
+         <uap3:Extension
+                Category="windows.appExecutionAlias"
+                Executable="exes\launcher.exe"
+                EntryPoint="Windows.FullTrustApplication">
+            <uap3:AppExecutionAlias>
+                <desktop:ExecutionAlias Alias="Contoso.exe" />
+            </uap3:AppExecutionAlias>
         </uap3:Extension>
       </Extensions>
     </Application>
@@ -933,7 +935,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 </Extension>
 ```
 
-|Имя |Описание |
+|Name |Описание |
 |-------|-------------|
 |Категория |Всегда ``windows.appExecutionAlias``.
 |Executable |Относительный путь к исполняемому файлу для запуска приложения при применении псевдонима. |
@@ -947,15 +949,20 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
   xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
   IgnorableNamespaces="uap3, desktop">
-  ...
-  <uap3:Extension
-        Category="windows.appExecutionAlias"
-        Executable="exes\launcher.exe"
-        EntryPoint="Windows.FullTrustApplication">
-      <uap3:AppExecutionAlias>
-        <desktop:ExecutionAlias Alias="Contoso.exe" />
-      </uap3:AppExecutionAlias>
-  </uap3:Extension>
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap3:Extension
+          Category="windows.protocol">
+          <uap3:Protocol
+            Name="myapp-cmd"
+            Parameters="/p &quot;%1&quot;" />
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+ 
 ...
 </Package>
 ```
@@ -993,7 +1000,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 </Extension>
 ```
 
-|Имя |Описание |
+|Name |Описание |
 |-------|-------------|
 |Категория |Всегда ``windows.startupTask``.|
 |Executable |Относительный путь к исполняемому файлу для запуска. |
@@ -1048,7 +1055,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
   </AutoPlayHandler>
 ```
 
-|Имя |Описание |
+|Name |Описание |
 |-------|-------------|
 |Категория |Всегда ``windows.autoPlayHandler``.
 |ActionDisplayName |Строка, представляющая действие, которое пользователи могут выполнить с устройством, которое они подключают к ПК (например "Импорт файлов" или "Воспроизведение видео"). |
@@ -1139,9 +1146,9 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 |-------|-------------|
 |Категория |Всегда ``windows.appPrinter``.
 |DisplayName |Имя, которое должно отображаться в списке целевых объектов печати для приложения. |
-|Parameters |Все параметры, которые требуются приложению для правильной обработки запроса. |
+|Параметры |Все параметры, которые требуются приложению для правильной обработки запроса. |
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Пример.
 
 ```XML
 <Package
@@ -1190,7 +1197,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 |Категория |Всегда ``windows.sharedFonts``.
 |File |Файл, содержащий шрифты, которые вы хотите предоставить в общий доступ. |
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Пример.
 
 ```XML
 <Package
@@ -1237,7 +1244,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 |GroupID |Строка, определяющая набор параметров, которые необходимо передать в исполняемый файл. |
 |Parameters |Параметры, которые необходимо передать в исполняемый файл. |
 
-#### <a name="example"></a>Пример
+#### <a name="example"></a>Пример.
 
 ```XML
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
