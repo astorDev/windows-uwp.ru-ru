@@ -1,17 +1,17 @@
 ---
-title: Добавление звука в пример Marble Maze
+title: Добавление звука в образец Marble Maze
 description: В данном документе описаны ключевые принципы, которые следует учитывать при работе со звуком, и показано, как эти принципы применяются в игре Marble Maze.
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ms.date: 10/18/2017
 ms.topic: article
 keywords: windows 10, uwp, звук, игры, пример
 ms.localizationpriority: medium
-ms.openlocfilehash: 666ea75f1d4f18121b7ae9fa3def3b455ae3e7a3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 40fa8b1c23d591453308c3ad066967ed65902917
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924714"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050897"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>Добавление звука в пример Marble Maze
 
@@ -20,7 +20,7 @@ ms.locfileid: "8924714"
 Marble Maze воспроизводит музыку в фоновом режиме, а также использует звуки во время игрового процесса для указания на события в игре, например столкновение шарика со стеной. Важной частью реализации является то, что Marble Maze использует эффект реверберации (эхо) для имитации звука шарика при отскоке. Реализация эффекта реверберации позволяет эху доходить до ушей пользователя быстрее и более громко в небольших пространствах. Если пространство велико, эхо будет тише и дойдет до слушателя не так скоро.
 
 > [!NOTE]
-> Пример кода, соответствующего этому документу, см. в [примере игры DirectX Marble Maze](http://go.microsoft.com/fwlink/?LinkId=624011).
+> Пример кода, соответствующего этому документу, см. в [примере игры DirectX Marble Maze](https://go.microsoft.com/fwlink/?LinkId=624011).
 
 Некоторые из ключевых аспектов работы со звуком в игре, рассматриваемые в данном документе.
 

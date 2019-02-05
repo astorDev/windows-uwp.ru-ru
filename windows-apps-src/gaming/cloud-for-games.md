@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: windows 10, uwp, игры, облачные службы
 ms.localizationpriority: medium
-ms.openlocfilehash: 12f9125b4a128b754fc90c48e6a289cec40a7f54
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5781d8f8606f68360018cfa17d5cfe5719ed31a6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925318"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045593"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Использование облачных служб при разработке игр UWP
 
@@ -81,7 +81,7 @@ ms.locfileid: "8925318"
         </td>
     </tr>
     <tr>
-        <td><a href="http://web.ageofascent.com/">Illyriad Games</a></td>
+        <td><a href="https://web.ageofascent.com/">Illyriad Games</a></td>
         <td>Компания Illyriad Games разработала игру <b>Age of Ascent</b>, относящуюся к жанру массовых многопользовательских сетевых игр, действия которой разворачиваются в трехмерной космическом пространстве и играть в которую можно на устройствах с современными браузерами. В эту игру можно играть на ПК, ноутбуках, мобильных телефонах и других мобильных устройствах без подключаемых модулей. В игре используются ASP.NET Core, HTML5, WebGL и Azure.</td>
         <td>
             <ul>
@@ -96,7 +96,7 @@ ms.locfileid: "8925318"
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.nextgames.com/">Next Games</a></td>
+        <td><a href="https://www.nextgames.com/">Next Games</a></td>
         <td>Компания Next Games является разработчиком видеоигры <b>The Walking Dead: No Man's Land</b>, созданной по мотивам сериала, транслируемого телеканалом AMC. В качестве серверной части в игре The Walking Dead используется платформа Azure. В премьерные выходные количество скачиваний игры составило 1000000раз и в течение первой недели после выпуска она получила статус "Лучшая бесплатная игра для iPhone и iPad" в американском магазине App Store, "Лучшее бесплатное приложение" в 12странах и "Лучшая бесплатная игра" в 13странах.
         </td>
         <td>
@@ -111,7 +111,7 @@ ms.locfileid: "8925318"
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
+        <td><a href="https://www.crimecoast.com/">Pixel Squad</a></td>
         <td>Компания Pixel Squad разработала игру <b>Crime Coast</b> на базе игрового движка Unity с применением платформы Azure. <b>Crime Coast</b> — это социальная игра в жанре стратегии, доступная на платформах Android, iOS и Windows. В игре использовались следующие технологии: хранилище больших двоичных объектов Azure, управляемый кэш Redis для Azure, виртуальные машины IIS с балансировкой нагрузки и центр уведомлений Майкрософт. Узнайте, как компания управляла масштабированием игры и наплывами игроков при одновременном подключении 5000игроков.
         </td>
         <td>
@@ -130,7 +130,7 @@ ms.locfileid: "8925318"
 ### <a name="other-links"></a>Прочие ссылки
 
 * [Hitman и Azure: создание таких игровых возможностей, как "ускользающая цель", доступных только при использовании облака](https://channel9.msdn.com/Series/Hitman)
-* [Представители компаний Hitcents, Game Troopers и InnoSpark рассказывают об уникальных возможностях Azure](http://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
+* [Представители компаний Hitcents, Game Troopers и InnoSpark рассказывают об уникальных возможностях Azure](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
 * [Начинающие компании используют Azure в рамках программы BizSpark](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
@@ -194,7 +194,7 @@ ms.locfileid: "8925318"
     
 * [Программы для разработчиков](e2e.md#developer-programs)
 
-    Корпорация Майкрософт предлагает несколько программ для разработчиков, призванных помочь вам разрабатывать и публиковать игры, например [ID@Xbox](http://www.xbox.com/Developers/id) и [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator).
+    Корпорация Майкрософт предлагает несколько программ для разработчиков, призванных помочь вам разрабатывать и публиковать игры, например [ID@Xbox](https://www.xbox.com/Developers/id) и [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator).
 
 ## <a name="learning-resources"></a>Ресурсы для обучения
 
@@ -225,7 +225,7 @@ ms.locfileid: "8925318"
 * [Azure для игр](https://azure.microsoft.com/solutions/gaming/)
 * [PlayFab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)
-* [ID@Xbox](http://www.xbox.com/Developers/id)
+* [ID@Xbox](https://www.xbox.com/Developers/id)
 
 
  

@@ -6,12 +6,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, заметки о выпуске
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bab822c81cdd5af1e6b00ca8d33ed7f7ea3838f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d7a250880d148dd4ca3ced522312904f2786715e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923861"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050867"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Заметки о выпуске библиотек Microsoft Advertising
 
@@ -23,7 +23,7 @@ ms.locfileid: "8923861"
 ## <a name="installation"></a>Установка
 
 
-Библиотеки рекламы Microsoft теперь доступны в [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). Дополнительные сведения об установке SDK см. в разделе [Установка Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md).
+Библиотеки рекламы Microsoft теперь доступны в [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp). Дополнительные сведения об установке SDK см. в разделе [Установка Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md).
 
 ## <a name="uninstall-previous-versions"></a>Удаление предыдущих версий
 
@@ -39,7 +39,7 @@ ms.locfileid: "8923861"
 
 ## <a name="no-toolbox-control"></a>Отсутствие элемента управления на панели инструментов
 
-В текущем выпуске библиотек Microsoft Advertising в пакете [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) отсутствует элемент управления для перетаскивания классов **AdControl** или **InterstitialAd** в область конструктора приложения. Инструкции о добавлении этих элементов управления в разметку и код см. в разделе [Пошаговые руководства для разработчиков](developer-walkthroughs.md).
+В текущем выпуске библиотек Microsoft Advertising в пакете [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) отсутствует элемент управления для перетаскивания классов **AdControl** или **InterstitialAd** в область конструктора приложения. Инструкции о добавлении этих элементов управления в разметку и код см. в разделе [Пошаговые руководства для разработчиков](developer-walkthroughs.md).
 
 ## <a name="latitude-and-longitude-properties-no-longer-available"></a>Свойства широты и долготы более недоступны
 

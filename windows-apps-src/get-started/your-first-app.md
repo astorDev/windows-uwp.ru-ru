@@ -6,12 +6,12 @@ ms.date: 1/25/2017
 ms.topic: article
 keywords: windows 10, uwp, первое приложение, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd4d60e6eb3eee7253997938882e6fbdf9fba69
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ef6e364f8c6c88400d2d47a0591d4b7432c33215
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923745"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048021"
 ---
 # <a name="create-your-first-app"></a>Создание первого приложения
 
@@ -30,7 +30,7 @@ ms.locfileid: "8923745"
 * [Основы C# для абсолютных новичков](https://go.microsoft.com/fwlink/?linkid=850801)
 * [Основы VB для абсолютных новичков](https://go.microsoft.com/fwlink/?linkid=850802)
 * [Руководство разработчика по Windows10](https://go.microsoft.com/fwlink/?linkid=850804)
-* [Виртуальная академия Майкрософт](http://www.microsoftvirtualacademy.com/)
+* [Виртуальная академия Майкрософт](https://www.microsoftvirtualacademy.com/)
 
 Если вы готовы попробовать что-нибудь поинтереснее, чем "Hello, World!", попробуйте эти учебники:
 
@@ -46,8 +46,8 @@ ms.locfileid: "8923745"
 
 Подробнее о C++ можно узнать здесь:
 
-* [C++: язык и библиотека общего назначения — вводный курс](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
-* [Виртуальная академия Майкрософт](http://go.microsoft.com/fwlink/p/?LinkID=389916)
+* [C++: язык и библиотека общего назначения — вводный курс](https://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
+* [Виртуальная академия Майкрософт](https://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 Если вы готовы попробовать что-нибудь поинтереснее, чем "Hello, World!", попробуйте эти учебники:
 
@@ -71,9 +71,9 @@ ms.locfileid: "8923745"
 
 Хотите освежить навыки веб-программирования?
 
-* [Основы JavaScript для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
-* [Основы HTML5 и CSS3 для абсолютных новичков](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
-* [Виртуальная академия Майкрософт](http://go.microsoft.com/fwlink/p/?LinkID=389916)
+* [Основы JavaScript для абсолютных новичков](https://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
+* [Основы HTML5 и CSS3 для абсолютных новичков](https://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
+* [Виртуальная академия Майкрософт](https://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## <a name="see-also"></a>См. также
 

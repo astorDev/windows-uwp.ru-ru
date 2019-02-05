@@ -8,12 +8,12 @@ keywords: речь, голос, распознавание речи, естес�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 73c7e889b4633dae9e416cf7ccde13eb3f58e8ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 679c2632fd5793ae083b2a79e29de3a3e9da04cf
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939266"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044927"
 ---
 # <a name="set-speech-recognition-timeouts"></a>Установка времени ожидания распознавания речи
 
@@ -47,7 +47,7 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 * [Взаимодействие с помощью голосовых функций](speech-interactions.md)
 **Примеры**
-* [Пример распознавания и синтеза речи](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Пример распознавания и синтеза речи](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

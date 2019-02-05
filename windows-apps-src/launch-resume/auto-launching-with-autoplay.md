@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f49d70ceadad8309419846aa26cb9f97df1c82ff
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947127"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047439"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Запуск приложения с помощью автозапуска
 
 **Автозапуск** можно использовать для добавления приложения в список вариантов при подключении пользователем устройств к компьютеру. Это могут быть как устройства томов, такие как USB-устройства флэш-памяти, SD-карты или DVD-диски, так и прочие устройства, такие как камеры или проигрыватели мультимедиа. **Автозапуск** также можно использовать, чтобы предложить свое приложение в качестве одного из открытых для общего доступа, при котором пользователи обмениваются файлами между двумя компьютерами с помощью близкого взаимодействия (касания).
 
-> **Примечание**Если вы являетесь изготовителем устройства и хотите назначить [приложения Microsoft Store для устройства](http://go.microsoft.com/fwlink/p/?LinkID=301381) в качестве обработчика **автозапуска** для вашего устройства, вы можете задать это приложение в метаданных устройства. Подробнее см. в разделе об [автозапуске приложений Microsoft Store для устройства](http://go.microsoft.com/fwlink/p/?LinkId=306684).
+> **Примечание**Если вы являетесь изготовителем устройства и хотите назначить [приложения Microsoft Store для устройства](https://go.microsoft.com/fwlink/p/?LinkID=301381) в качестве обработчика **автозапуска** для вашего устройства, вы можете задать это приложение в метаданных устройства. Подробнее см. в разделе об [автозапуске приложений Microsoft Store для устройства](https://go.microsoft.com/fwlink/p/?LinkId=306684).
 
 ## <a name="register-for-autoplay-content"></a>Регистрация для автозапуска содержимого
 

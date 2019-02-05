@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ab12f79670428fa2b6affa91240787f75bc51bc2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e5b273df8120d982f263c4411012baa715b2820c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921266"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044245"
 ---
 # <a name="getting-started-what-next"></a>Начало работы: что дальше?
 
@@ -24,7 +24,7 @@ ms.locfileid: "8921266"
 -   [Работа с плитками, индикаторами событий и всплывающими уведомлениями](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259): инструкции по созданию плиток, обновлению плиток и их индикаторов событий, отправке всплывающих уведомлений, а также по отображению обновлений плиток и индикаторов событий на заблокированном экране.
 -   [Запуск, возобновление и многозадачность](https://msdn.microsoft.com/library/windows/apps/hh770837): автоматический запуск, активация, приостановка и возобновление работы приложения, а также работа с фоновыми задачами.
 -   [Перенос данных приложения](https://msdn.microsoft.com/library/windows/apps/hh465094): как создать хорошие впечатления от использования приложений, которые пользователь запускает на нескольких устройствах, например на рабочем компьютере и на планшете дома.
--   [Создание первого приложения среды выполнения Windows на C# или Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=394138): раздел о разработке для Windows Phone.
+-   [Создание первого приложения среды выполнения Windows на C# или Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=394138): раздел о разработке для Windows Phone.
 -   [Видео для разработчиков iOS и Android](https://msdn.microsoft.com/library/windows/apps/dn393982): дополнительная справка в визуальном формате.
 
 Кроме того, ознакомьтесь с [ресурсами сообщества](https://developer.microsoft.com/en-us/windows/support), чтобы узнать, как получить справку и дополнительные сведения с помощью форумов и блогов, а также как принять участие в семинарах разработчиков и мероприятиях Майкрософт.

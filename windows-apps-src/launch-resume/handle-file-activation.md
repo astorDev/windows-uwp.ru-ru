@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: abe77526a7ac12bc905839065913dd59d70fdf62
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: eaf6118720ab77931decf93113a13341ab4f51d0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925901"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046517"
 ---
 # <a name="handle-file-activation"></a>Обработка активации файла
 
@@ -129,13 +129,13 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 
 ## <a name="remarks"></a>Примечания
 
-Принимаемые вами файлы могут поступать из ненадежного источника. Мы рекомендуем проверять содержимое файла перед тем, как выполнять с ним какие-либо действия. Подробнее о проверке ввода см. в книге [Написание безопасного кода](http://go.microsoft.com/fwlink/p/?LinkID=142053).
+Принимаемые вами файлы могут поступать из ненадежного источника. Мы рекомендуем проверять содержимое файла перед тем, как выполнять с ним какие-либо действия. Подробнее о проверке ввода см. в книге [Написание безопасного кода](https://go.microsoft.com/fwlink/p/?LinkID=142053).
 
 ## <a name="related-topics"></a>Статьи по теме
 
 ### <a name="complete-example"></a>Полный пример
 
-* [Пример запуска с сопоставлением](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [Пример запуска с сопоставлением](https://go.microsoft.com/fwlink/p/?LinkID=231484)
 
 ### <a name="concepts"></a>Понятия
 

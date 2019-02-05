@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: eb6cde0c3c31f0116c65e5d5dc4a0d8ae4a1b540
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9df6eef44d45db37e17610d6a5333f3a387b5cf6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920379"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045813"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>Создание и регистрация фоновой задачи, выполняемой вне процесса
 
@@ -202,7 +202,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 > [!NOTE]
 > В C# асинхронные методы вашей фоновой задачи можно вызвать с помощью ключевых слов **async/await**. В C + +/ CX, аналогичный результат можно получить при помощи цепочки задач.
 
-Подробнее о шаблонах асинхронных операций см. в разделе [Асинхронное программирование](https://msdn.microsoft.com/library/windows/apps/mt187335). Дополнительные примеры использования задержек для предотвращения преждевременной остановки фоновой задачи см. в [примере фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+Подробнее о шаблонах асинхронных операций см. в разделе [Асинхронное программирование](https://msdn.microsoft.com/library/windows/apps/mt187335). Дополнительные примеры использования задержек для предотвращения преждевременной остановки фоновой задачи см. в [примере фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666).
 
 Следующие действия выполняются в одном из классов вашего приложения (например, MainPage.xaml.cs).
 
@@ -393,7 +393,7 @@ void MainPage::OnCompleted(BackgroundTaskRegistration^ task, BackgroundTaskCompl
 ```
 
 > [!NOTE]
-> Обновления пользовательского интерфейса должны выполняться асинхронно, чтобы избежать остановки потока пользовательского интерфейса. Пример см. в методе UpdateUI в [образце фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+> Обновления пользовательского интерфейса должны выполняться асинхронно, чтобы избежать остановки потока пользовательского интерфейса. Пример см. в методе UpdateUI в [образце фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666).
 
 2.  Вернитесь к тому месту, где вы регистрировали фоновую задачу. После этой строки кода добавьте новый объект [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781). Предоставьте свой метод OnCompleted в качестве параметра для конструктора **BackgroundTaskCompletedEventHandler**.
 
@@ -439,7 +439,7 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 Теперь вы понимаете, как создавать класс фоновой задачи, как регистрировать фоновую задачу из приложения и как сделать так, чтобы приложение распознавало ее завершение. Вы также знаете, как обновить манифест приложения, чтобы приложение могло успешно регистрировать фоновые задачи.
 
 > [!NOTE]
-> Скачайте [пример фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666), чтобы увидеть похожие примеры кода в контексте полного и надежного приложения UWP, использующего фоновые задачи.
+> Скачайте [пример фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666), чтобы увидеть похожие примеры кода в контексте полного и надежного приложения UWP, использующего фоновые задачи.
 
 В статьях ниже можно найти справочник по API, концептуальное руководство по фоновым задачам и подробные инструкции по созданию приложений, использующих фоновые задачи.
 
@@ -461,7 +461,7 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 * [Отладка фоновой задачи](debug-a-background-task.md)
-* [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
 **Справочник по API для фоновых задач**
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, печать
 ms.localizationpriority: medium
-ms.openlocfilehash: 16fca2fc98450375ec2dcf7a0d10775b2bba1bf2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3783105c054e5d956ab64aabe9971bb952d6cae6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926267"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046387"
 ---
 # <a name="customize-the-print-preview-ui"></a>Настройка пользовательского интерфейса предварительного просмотра
 
@@ -25,7 +25,7 @@ ms.locfileid: "8926267"
 
 В этом разделе описывается настройка параметров печати в пользовательском интерфейсе предварительного просмотра. Дополнительные сведения о печати см. в разделе [Печать из приложения](print-from-your-app.md).
 
-**Совет**Большинство примеров в этой статье основаны на примере печати. Чтобы увидеть полный код, скачайте [пример печати в универсальной платформе Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619984) из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на GitHub.
+**Совет**Большинство примеров в этой статье основаны на примере печати. Чтобы увидеть полный код, скачайте [пример печати в универсальной платформе Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619984) из [репозитория Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) на GitHub.
 
  
 
@@ -187,4 +187,4 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 * [Руководство по проектированию печати](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Видео c конференции Build 2015: разработка приложений для печати в Windows10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [Пример печати в UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [Пример печати в UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984)

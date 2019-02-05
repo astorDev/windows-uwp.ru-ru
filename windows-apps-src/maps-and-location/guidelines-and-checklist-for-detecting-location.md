@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, расположение, карта, геолокация
 ms.localizationpriority: medium
-ms.openlocfilehash: e5150188c99bfc448bf85df6a6dabbbb4c60bd49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d7004f579bb8bb60b1f9585e49319e278770700a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921107"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048161"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>Рекомендации относительно приложений с определением расположения
 
@@ -165,7 +165,7 @@ ms.locfileid: "8921107"
 * [Получение сведений о текущем расположении](https://msdn.microsoft.com/library/windows/apps/mt219698)
 * [Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside](https://msdn.microsoft.com/library/windows/apps/mt219695)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [Пример расположения для UWP (геолокация)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Пример расположения для UWP (геолокация)](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  

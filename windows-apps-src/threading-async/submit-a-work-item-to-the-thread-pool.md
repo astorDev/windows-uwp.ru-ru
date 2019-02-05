@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, потоки, пул потоков
 ms.localizationpriority: medium
-ms.openlocfilehash: 08608bc5715031f9ddf5b6bec05e7c86737f7e10
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: 423f0efa9118f581d6e768a815dd2550801aa87e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981378"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048621"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Отправка рабочего элемента в пул потоков
 
-\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Обновлено для приложений UWP в Windows10. Статьи о Windows 8.x см. в [архиве](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 <b>Важные API</b>
 
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 
-Дополнительные сведения, скачайте код из этого краткого руководства в [создании ThreadPool работать образец элемента](http://go.microsoft.com/fwlink/p/?LinkID=328569) для Windows8.1 и повторно используйте исходный код в Windows10 win\_unap.
+Дополнительные сведения, скачайте код из этого краткого руководства в [создании ThreadPool работать образец элемента](https://go.microsoft.com/fwlink/p/?LinkID=328569) для Windows8.1 и повторно используйте исходный код в Windows10 win\_unap.
 
 ## <a name="related-topics"></a>Еще по теме
 

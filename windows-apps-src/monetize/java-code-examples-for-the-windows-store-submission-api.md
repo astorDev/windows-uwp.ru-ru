@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, UWP, API отправки в Microsoft Store, примеры кода, java
 ms.localizationpriority: medium
-ms.openlocfilehash: 0466c7dad5ac2f543e6b447a9b2661c2889f7b4e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9a98584fcac446a673bf76cd3d448e05455a89bb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924356"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045057"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Пример на языке Java: отправки для приложений, надстроек и тестовых пакетов
 
@@ -30,7 +30,7 @@ ms.locfileid: "8924356"
 
 В этих примерах используются следующие библиотеки:
 
-* [Apache Commons Logging 1.2](http://commons.apache.org/proper/commons-logging) (commons-logging-1.2.jar).
+* [Apache Commons Logging 1.2](https://commons.apache.org/proper/commons-logging) (commons-logging-1.2.jar).
 * [Apache HttpComponents Core 4.4.5 и Apache HttpComponents Client 4.5.2](https://hc.apache.org/) (httpcore-4.4.5.jar и httpclient-4.5.2.jar).
 * [JSR 353 JSON Processing API 1.0](https://mvnrepository.com/artifact/javax.json/javax.json-api/1.0) и [JSR 353 JSON Processing Default Provider API 1.0.4](https://mvnrepository.com/artifact/org.glassfish/javax.json/1.0.4) (javax.json-api-1.0.jar и javax.json-1.0.4.jar).
 
@@ -68,7 +68,7 @@ ms.locfileid: "8924356"
 
 ## <a name="create-an-app-submission"></a>Создание отправки приложения
 
-В следующем примере показано, как использовать несколько методов в API отправки в Microsoft Store для создания отправки приложения. Чтобы сделать это, ```SubmitNewApplicationSubmission``` метод создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в центре партнеров. В частности, метод ```SubmitNewApplicationSubmission``` выполняет следующие задачи:
+В следующем примере показано, как использовать несколько методов в API отправки в Microsoft Store для создания отправки приложения. Чтобы сделать это, ```SubmitNewApplicationSubmission``` метод создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в центре партнеров. В частности, метод ```SubmitNewApplicationSubmission``` выполняет следующие задачи.
 
 1. Сначала метод [получает данные для указанного приложения](get-an-app.md).
 2. Затем он [удаляет ожидающую отправку для приложения](delete-an-app-submission.md), если она существует.

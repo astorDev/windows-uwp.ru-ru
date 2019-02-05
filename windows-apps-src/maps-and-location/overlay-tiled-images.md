@@ -6,18 +6,18 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: Windows 10, uwp, карта, расположение, изображения, наложение
 ms.localizationpriority: medium
-ms.openlocfilehash: 47b9c4335a99e7b0f17da0fb9ddb520cc917e398
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c0c2f07a364980b67a34a519eb5dd8b4da1a18f0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942306"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046437"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>Наложение плиточных изображений на карту
 
 Наложение сторонних или настраиваемых мозаичных изображений на карте с помощью источников мозаичных данных. Используйте источники плиточных данных для наложения специальных сведений, таких как данные о погоде, населении или сейсмической активности, а также для полной замены карты по умолчанию.
 
-**Совет**. Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте [пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977) с сайта GitHub.
+**Совет**. Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте [пример карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977) с сайта GitHub.
 
 <a id="tileintro" />
 
@@ -35,7 +35,7 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
 (Координаты X и Y обозначают размещение отдельной плитки на карте мира при заданном уровне детализации. Система нумерации плиток начинается с {0, 0} в верхнем левом углу карты. Например, плитка с координатами {1, 2} находится во втором столбце в третьей строке сетки плиток.)
 
-Дополнительные сведения о системе плиток, использующейся службами карт, см. в разделе [Система плиток Карт Bing](http://go.microsoft.com/fwlink/p/?LinkId=626692).
+Дополнительные сведения о системе плиток, использующейся службами карт, см. в разделе [Система плиток Карт Bing](https://go.microsoft.com/fwlink/p/?LinkId=626692).
 
 ### <a name="overlay-tiles-from-a-tile-source"></a>Наложение плиток из источника плиточных данных
 
@@ -421,7 +421,7 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
 ## <a name="related-topics"></a>Ссылки по теме
 
 * [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
-* [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Видео c конференции Build 2015: использование карт и местоположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Пример приложения UWP для работы с картами](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Пример приложения UWP для работы с картами](https://go.microsoft.com/fwlink/p/?LinkId=619982)

@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, обработка ошибок, javascript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: a6c14ecf8e8909ab6cd95a54ca8144fbf8a8d912
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d0e2e1c019497fc22e8d922ba5f0a02a30034b65
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947681"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050667"
 ---
 # <a name="handle-ad-errors"></a>Обработка ошибок рекламы
 
@@ -67,9 +67,9 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 </div>
 ```
 
-Функция обработки ошибок является декларативной и должна быть заключена в функцию [markSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx).
+Функция обработки ошибок является декларативной и должна быть заключена в функцию [markSupportedForProcessing](https://msdn.microsoft.com/library/windows/apps/Hh967819.aspx).
 
-Обработчик ошибок перехватывает объект ошибки JavaScript, когда происходит ошибка. Объект ошибки предоставляет два аргумента обработчику ошибок. Дополнительные сведения см. в разделе [Специальные свойства ошибок из асинхронных методов среды выполнения Windows](http://msdn.microsoft.com/library/windows/apps/hh994690.aspx).
+Обработчик ошибок перехватывает объект ошибки JavaScript, когда происходит ошибка. Объект ошибки предоставляет два аргумента обработчику ошибок. Дополнительные сведения см. в разделе [Специальные свойства ошибок из асинхронных методов среды выполнения Windows](https://msdn.microsoft.com/library/windows/apps/hh994690.aspx).
 
 Ниже приводится пример функции обработки ошибок с именем **errorLogger**, которая обрабатывает событие **onErrorOccurred**.
 

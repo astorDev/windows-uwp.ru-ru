@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: b888bf1373dfb0cac80881117570eb23e8802142
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2c8bb1e352fe4924b45fd56963de324528269a12
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929444"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044478"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Обработка отмененной фоновой задачи
 
@@ -135,7 +135,7 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 Измените код класса вашей фоновой задачи, чтобы проверить переменную флага во время выполнения задачи. Если **\_cancelRequested** становится значение true, остановите рабочие продолжение.
 
-[Пример фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) , включает проверку, которая останавливает периодический обратный вызов таймера, если фоновая задача отменена.
+[Пример фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666) , включает проверку, которая останавливает периодический обратный вызов таймера, если фоновая задача отменена.
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -181,7 +181,7 @@ else
 
 Измените метод **Run** , таким образом, чтобы после остановки работы он записывал ли задача завершена или отменена. Этот шаг относится к фоновым задачам, которые выполняются вне процесса, поскольку требуется способ связи между двумя процессами при отмене фоновой задачи. Чтобы указать, что задача была отменена для фоновых задач внутри процесса, можно просто использовать состояние совместно с приложением.
 
-В [образце фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) состояние записывается в LocalSettings.
+В [образце фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666) состояние записывается в LocalSettings.
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -255,13 +255,13 @@ else
 
 ## <a name="remarks"></a>Примечания
 
-Вы можете скачать [пример фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666), чтобы увидеть эти примеры кода в контексте методов.
+Вы можете скачать [пример фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666), чтобы увидеть эти примеры кода в контексте методов.
 
-Для наглядности в примере кода показана только часть метода **Run** (и обратный вызов таймера) из [примера фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+Для наглядности в примере кода показана только часть метода **Run** (и обратный вызов таймера) из [примера фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666).
 
 ## <a name="run-method-example"></a>Пример метода Run
 
-Выполните метод **Run** , а также код обратного вызова для таймера, из [примера фоновой задачи](http://go.microsoft.com/fwlink/p/?LinkId=618666) показаны ниже для контекста.
+Выполните метод **Run** , а также код обратного вызова для таймера, из [примера фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666) показаны ниже для контекста.
 
 ```csharp
 // The Run method is the entry point of a background task.
@@ -414,4 +414,4 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 - [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
 - [Использование триггера обслуживания](use-a-maintenance-trigger.md)
 - [Отладка фоновой задачи](debug-a-background-task.md)
-- [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+- [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](https://go.microsoft.com/fwlink/p/?linkid=254345)

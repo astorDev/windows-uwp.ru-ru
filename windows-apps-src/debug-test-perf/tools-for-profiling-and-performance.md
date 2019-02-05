@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30be8d13c7e549f8ed75060f614de5bbcdb6284f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: adaf1bc4b3cc70c3ceb22eb561d9782520415c4a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936501"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048041"
 ---
 # <a name="tools-for-profiling-and-performance"></a>Инструменты для профилирования и производительности
 
 
 Майкрософт предоставляет несколько средств, с помощью которых можно повысить производительность приложения универсальной платформы Windows (UWP). Чтобы узнать об использовании этих средств, перейдите по указанным ниже ссылкам.
 
-**Средство отклика пользовательского интерфейса XAML в Visual Studio**. Одно из лучших средств для измерения влияния производительности в приложении — это средство отклика пользовательского интерфейса XAML. Это был [обновлен](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx) , чтобы поддерживать дополнительные сценарии.
+**Средство отклика пользовательского интерфейса XAML в Visual Studio**. Одно из лучших средств для измерения влияния производительности в приложении — это средство отклика пользовательского интерфейса XAML. Это был [обновлен](https://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx) , чтобы поддерживать дополнительные сценарии.
 
 См. также:
 

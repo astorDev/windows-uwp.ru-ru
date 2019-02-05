@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, сводка по выплатам, выписка, платежи, прибыль, выплаты, платеж, доход
 ms.localizationpriority: medium
-ms.openlocfilehash: fa35ac4961b64379ee8a50ec192f5cebad5720d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e9ab2d2d096c6c0a639a831bb7d09f6d1d044a0c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919884"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046244"
 ---
 # <a name="payout-summary"></a>Сводка по выплатам
 
@@ -20,7 +20,7 @@ ms.locfileid: "8919884"
 
 Если вы зарабатываете деньги с помощью рекламы, со сведениями о доходе от рекламы можно ознакомиться в разделе **Сводка по выплатам**. Отображается приложение, в котором был получен этот доход, либо значение "не сопоставлено" для рекламных единиц, использованных в разных приложениях, и тех, которые невозможно сопоставить конкретному приложению. 
 
-Если вы продаете продукты в Azure Marketplace, вы также увидите в **Сводке по выплатам** сведения об успешных выплатах. Дополнительные сведения о выплатах в Azure Marketplace см. в разделах [Политики участия Microsoft Azure Marketplace](http://go.microsoft.com/fwlink/p/?LinkId=722436) и [Соглашение Microsoft Azure Marketplace с издателем](http://go.microsoft.com/fwlink/p/?LinkID=699560 ). Дополнительные сведения об отчетах о выплатах в Azure Marketplace см. [здесь](http://go.microsoft.com/fwlink/p/?LinkID=722439).
+Если вы продаете продукты в Azure Marketplace, вы также увидите в **Сводке по выплатам** сведения об успешных выплатах. Дополнительные сведения о выплатах в Azure Marketplace см. в разделах [Политики участия Microsoft Azure Marketplace](https://go.microsoft.com/fwlink/p/?LinkId=722436) и [Соглашение Microsoft Azure Marketplace с издателем](https://go.microsoft.com/fwlink/p/?LinkID=699560 ). Дополнительные сведения об отчетах о выплатах в Azure Marketplace см. [здесь](https://go.microsoft.com/fwlink/p/?LinkID=722439).
 
 > [!NOTE]
 > Чтобы получить право на выплату, вы должны достичь определенного [порогового значения дохода](payment-thresholds-methods-and-timeframes.md). Если сумма дохода меньше порога, она будет оставаться в категории **Резерв** до тех пор, пока не будет достигнут необходимый порог. Дополнительные сведения о пороговом значении дохода см. в разделе [Соглашение с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Для выручки за рекламу пороговое значение оплаты составляет 50долл.США (или эквивалентную сумму в местной валюте). 

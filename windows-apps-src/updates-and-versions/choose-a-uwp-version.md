@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, версия, сборка, версии, windows, выбор, обновление, обновления
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
-ms.openlocfilehash: 3461170110a4ca4391c41bee815a83b6d45cee75
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fed67ca6547ec8c8f90bc67a7be1f0d97af475df
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931266"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047379"
 ---
 # <a name="choose-a-uwp-version"></a>Выбор версии UWP
 
@@ -20,7 +20,7 @@ ms.locfileid: "8931266"
 > [!WARNING]
 > Проект UWP, созданный в текущих версиях Visual Studio не удается открыть в Visual Studio 2015.
 
-В следующей таблице описаны доступные версии Windows10. Обратите внимание, что эта таблица применяется только для создания приложений UWP, которые поддерживаются исключительно в Windows10. Вы не можете разрабатывать приложения UWP для более ранних версий Windows. Необходимо [установить соответствующий целевой версии выпуск пакета SDK](http://go.microsoft.com/fwlink/?LinkId=821431). 
+В следующей таблице описаны доступные версии Windows10. Обратите внимание, что эта таблица применяется только для создания приложений UWP, которые поддерживаются исключительно в Windows10. Вы не можете разрабатывать приложения UWP для более ранних версий Windows. Необходимо [установить соответствующий целевой версии выпуск пакета SDK](https://go.microsoft.com/fwlink/?LinkId=821431). 
 
 | Версия | Описание |
 | --- | --- |

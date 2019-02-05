@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, целевые уведомления, push-уведомления, всплывающее уведомление, плитка
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
-ms.openlocfilehash: 902a8d84c2a0cfa1549c4c3926e838e9bb8ed9c4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9858665eaf36f5cd261dd1098b23aeecccf9179c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923141"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045783"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>Отправка уведомлений пользователям вашего приложения
 
@@ -45,7 +45,7 @@ ms.locfileid: "8923141"
 Выполните следующие действия, чтобы создать уведомление в центре партнеров и его отправки определенному сегменту клиентов.
 
 > [!NOTE]
-> Прежде чем приложение сможет получать уведомления от центра партнеров, необходимо сначала вызвать метод [RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) в вашем приложении, чтобы зарегистрировать приложение для получения уведомлений. Этот метод доступен в [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). Дополнительные сведения о том, как вызывать этот метод, в том числе пример кода, см. в разделе [Настройка приложения для получения целевых push-уведомлений](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+> Прежде чем приложение сможет получать уведомления от центра партнеров, необходимо сначала вызвать метод [RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) в вашем приложении, чтобы зарегистрировать приложение для получения уведомлений. Этот метод доступен в [Microsoft Store Services SDK](https://aka.ms/store-em-sdk). Дополнительные сведения о том, как вызывать этот метод, в том числе пример кода, см. в разделе [Настройка приложения для получения целевых push-уведомлений](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
 1. В [Центре партнеров](https://partner.microsoft.com/dashboard)раздел "Прочее" **привлечение** , а затем выберите **уведомления**.
 2. На странице **Уведомления** выберите **Новое уведомление**.

@@ -6,18 +6,18 @@ ms.date: 03/14/2018
 ms.topic: article
 keywords: windows 10, uwp, карта, расположение, элемент управления картой, представления карты
 ms.localizationpriority: medium
-ms.openlocfilehash: 7713c1664018a1875d80f70fb75da2afe6104c3c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 03c864a6e8bc6191f63a2b6fd55d8eb23ad965e4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924366"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046993"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside
 
 Карту можно показывать во всплывающем окне, называемом *карточкой места*, или в полнофункциональном элементе управления с картой.
 
-Загрузите [пример карты](http://go.microsoft.com/fwlink/p/?LinkId=619977), чтобы опробовать некоторые функции, описанные в данном руководстве.
+Загрузите [пример карты](https://go.microsoft.com/fwlink/p/?LinkId=619977), чтобы опробовать некоторые функции, описанные в данном руководстве.
 
 <a id="placecard" />
 
@@ -457,10 +457,10 @@ private async void display3DLocation()
 ## <a name="related-topics"></a>Связанные разделы
 
 * [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
-* [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Получение сведений о текущем местоположении](get-location.md)
 * [Рекомендации по разработке приложений с определением местоположения](https://msdn.microsoft.com/library/windows/apps/hh465148)
 * [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Видео c конференции Build 2015: использование карт и местоположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Пример приложения UWP для работы с картами](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Пример приложения UWP для работы с картами](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)

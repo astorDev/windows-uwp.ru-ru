@@ -6,16 +6,16 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные объявления, промежуточная, c#, пример кода
 ms.localizationpriority: medium
-ms.openlocfilehash: a8276e1a9639b23a965c5a608fb951d1e1035133
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 075d98d49ba7e878abc7e800af84984bdb93e3a2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947892"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045090"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>Пример кода промежуточной рекламы на C\# #  
 
-В этом разделе представлен полный пример кода для простого приложения универсальной платформы Windows (UWP) на C# и XAML, в котором отображается межстраничная видеореклама. Пошаговые инструкции по настройке проекта для использования этого кода см. в разделе [Межстраничные объявления](interstitial-ads.md). Полный пример с проектом см. в разделе [рекламы примеров на GitHub](http://aka.ms/githubads).
+В этом разделе представлен полный пример кода для простого приложения универсальной платформы Windows (UWP) на C# и XAML, в котором отображается межстраничная видеореклама. Пошаговые инструкции по настройке проекта для использования этого кода см. в разделе [Межстраничные объявления](interstitial-ads.md). Полный пример с проектом см. в разделе [рекламы примеров на GitHub](https://aka.ms/githubads).
 
 ## <a name="code-example"></a>Пример кода
 
@@ -39,5 +39,5 @@ ms.locfileid: "8947892"
  
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Примеры рекламы на GitHub](http://aka.ms/githubads)
+* [Примеры рекламы на GitHub](https://aka.ms/githubads)
  

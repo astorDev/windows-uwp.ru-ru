@@ -6,12 +6,12 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
-ms.openlocfilehash: 2413a27c12a9b36f0fd57482492414e7b5a379b6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 71026762933267e1cad9a1cd9b6581eed1dadbb8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934779"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044571"
 ---
 # <a name="support-your-app-with-background-tasks"></a>Поддержка приложения с помощью фоновых задач
 
@@ -158,7 +158,7 @@ ms.locfileid: "8934779"
 > [!IMPORTANT]
 > Триггеры **DeviceUseTrigger** и **DeviceServicingTrigger** невозможно использовать с фоновыми задачами, выполняемыми внутри процесса.
 
-Некоторые критические операции с устройством, например длительные обновления встроенного ПО, не могут выполняться с помощью класса [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Такие операции могут выполняться только на компьютере и только привилегированным приложением, которое использует [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). *Привилегированным* называется приложение, которому изготовитель устройства разрешил выполнять эти операции. Метаданные устройства позволяют указать, какое приложение (при его наличии) было назначено в качестве привилегированного приложения на устройстве. Дополнительные сведения см. в разделе [Синхронизация и обновление устройства с приложениями Microsoft Store](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+Некоторые критические операции с устройством, например длительные обновления встроенного ПО, не могут выполняться с помощью класса [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Такие операции могут выполняться только на компьютере и только привилегированным приложением, которое использует [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). *Привилегированным* называется приложение, которому изготовитель устройства разрешил выполнять эти операции. Метаданные устройства позволяют указать, какое приложение (при его наличии) было назначено в качестве привилегированного приложения на устройстве. Дополнительные сведения см. в разделе [Синхронизация и обновление устройства с приложениями Microsoft Store](https://go.microsoft.com/fwlink/p/?LinkId=306619)
 
 ## <a name="managing-background-tasks"></a>Управление фоновыми задачами
 

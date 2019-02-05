@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: Windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6954f935440f75a728c3f3601ade884bbee7b6bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7acf2715ff4b6328beaae017722fc58d5788fe1d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919045"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047868"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Создание приложения «Hello world» на C + +/ CX
 
@@ -25,7 +25,7 @@ ms.locfileid: "8919045"
 
 ## <a name="before-you-start"></a>Перед началом работы
 
--   Для работы с этим учебником необходимо использовать Visual StudioCommunity 2017 или одну из версий Visual Studio2017, кроме Community на компьютере, на котором выполняется Windows10. Для скачивания перейдите на страницу [Получение инструментов](http://go.microsoft.com/fwlink/p/?LinkId=532666).
+-   Для работы с этим учебником необходимо использовать Visual StudioCommunity 2017 или одну из версий Visual Studio2017, кроме Community на компьютере, на котором выполняется Windows10. Для скачивания перейдите на страницу [Получение инструментов](https://go.microsoft.com/fwlink/p/?LinkId=532666).
 -   Предполагается, что у вас есть базовое понимание C + +/ CX, XAML и концепции в [обзоре языка XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 -   Также предполагается, что вы используете в Visual Studio макет окна по умолчанию. Чтобы вернуться к макету по умолчанию, выберите в строке меню пункт **Окно** > **Сброс макета окон**.
 
@@ -238,7 +238,7 @@ MainPage::MainPage()
 
 Чтобы завершить отладку и закрыть приложение, вернитесь в Visual Studio и нажмите клавиши SHIFT+F5.
 
-Дополнительные сведения см. в статье [Выполнение приложения Магазина в Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=619619).
+Дополнительные сведения см. в статье [Выполнение приложения Магазина в Visual Studio](https://go.microsoft.com/fwlink/p/?LinkId=619619).
 
 В приложении можно вводить информацию в [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), но при нажатии [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) ничего не происходит. Позднее мы создадим для кнопки обработчик события [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737), который отображает персонализированное приветствие.
 
@@ -404,7 +404,7 @@ MainPage::MainPage()
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если у вас есть универсальные приложения проекта, который Windows8.1 и/или Windows Phone 8.1, вы можете перенести в Windows10. Для этого действия нет автоматического процесса, но его можно выполнить вручную. Начните новый проект универсального приложения для Windows, чтобы получить последнюю структуру системы и файлы манифеста проекта, скопируйте файлы кода в структуру каталогов проекта, добавьте элементы в проект и перепишите код XAML, используя [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) в соответствии с рекомендациями в этом разделе. Дополнительные сведения см. в разделах: [Перенос проекта среды выполнения Windows 8 в проект универсальной платформы Windows (UWP)](https://msdn.microsoft.com/library/windows/apps/Mt188203) и [Перенос на универсальную платформу Windows (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525).
+Если у вас есть универсальные приложения проекта, который Windows8.1 и/или Windows Phone 8.1, вы можете перенести в Windows10. Для этого действия нет автоматического процесса, но его можно выполнить вручную. Начните новый проект универсального приложения для Windows, чтобы получить последнюю структуру системы и файлы манифеста проекта, скопируйте файлы кода в структуру каталогов проекта, добавьте элементы в проект и перепишите код XAML, используя [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) в соответствии с рекомендациями в этом разделе. Дополнительные сведения см. в разделах: [Перенос проекта среды выполнения Windows 8 в проект универсальной платформы Windows (UWP)](https://msdn.microsoft.com/library/windows/apps/Mt188203) и [Перенос на универсальную платформу Windows (C++)](https://go.microsoft.com/fwlink/p/?LinkId=619525).
 
-Если у вас есть код на C++, который вы хотите включить в приложение UWP, например для создания нового пользовательского интерфейса UWP для существующего приложения, см. раздел [Инструкции: использование существующего кода C++ в проекте универсального приложения для Windows](http://go.microsoft.com/fwlink/p/?LinkId=619623).
+Если у вас есть код на C++, который вы хотите включить в приложение UWP, например для создания нового пользовательского интерфейса UWP для существующего приложения, см. раздел [Инструкции: использование существующего кода C++ в проекте универсального приложения для Windows](https://go.microsoft.com/fwlink/p/?LinkId=619623).
 

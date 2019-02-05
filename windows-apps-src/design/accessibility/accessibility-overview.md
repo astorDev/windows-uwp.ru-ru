@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 50e6c68841440120b783713ef0a591e39a7c7eec
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d0c3bea228cae8d9482a8e0cb24c958e36992848
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942827"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046577"
 ---
 # <a name="accessibility-overview"></a>Обзор специальных возможностей  
 
@@ -188,11 +188,11 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"/>
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>Поддержка специальных возможностей в приложениях, поддерживающих межпрограммное взаимодействие XAML и Microsoft DirectX  
-Содержимое Microsoft DirectX, размещенное в пользовательском интерфейсе XAML (с помощью [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) или [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)), по умолчанию не поддерживает специальные возможности. [Образец межпрограммного взаимодействия XAML SwapChainPanel DirectX](http://go.microsoft.com/fwlink/p/?LinkID=309155) показывает, как создать одноранговые элементы автоматизации пользовательского интерфейса для содержимого DirectX. Этот метод обеспечивает доступ к такому содержимому для модели автоматизации пользовательского интерфейса.
+Содержимое Microsoft DirectX, размещенное в пользовательском интерфейсе XAML (с помощью [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) или [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)), по умолчанию не поддерживает специальные возможности. [Образец межпрограммного взаимодействия XAML SwapChainPanel DirectX](https://go.microsoft.com/fwlink/p/?LinkID=309155) показывает, как создать одноранговые элементы автоматизации пользовательского интерфейса для содержимого DirectX. Этот метод обеспечивает доступ к такому содержимому для модели автоматизации пользовательского интерфейса.
 
 ## <a name="related-topics"></a>Связанные темы  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 * [Рекомендации по специальным возможностям](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [Пример реализации специальных возможностей на XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Пример реализации специальных возможностей на XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Специальные возможности](accessibility.md)
 * [Начало работы с экранным диктором](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

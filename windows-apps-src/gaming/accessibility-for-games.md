@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: windows 10, uwp, специальные возможности, игры
 ms.localizationpriority: medium
-ms.openlocfilehash: 489804c4645c8e6d1c4926e362f81926c8b2f3c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0e1d9d25fc63dd2fbb8d258fdaee692ccdfdc911
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937602"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046337"
 ---
 #  <a name="making-games-accessible"></a>Создание игр со специальными возможностями
 
@@ -33,7 +33,7 @@ ms.locfileid: "8937602"
 
 количество пользователей, которые могут играть в вашу игру X увлекательность игры = продажи игры
 
-Если вы создали замечательную игру, однако она настолько сложна или замысловата, что играть в нее может только ограниченный круг людей, вы автоматически уменьшили свои продажи. Аналогично, создавая игру, в которую не могут играть люди с физическими, сенсорными или когнитивными нарушениями, вы уменьшаете количество ее потенциальных покупателей. Принимая во внимание, что, например, [19% населения США имеют ту или иную форму инвалидности](http://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [примерно 14% взрослых в США испытывают затруднения с чтением](https://nces.ed.gov/naal/estimates/overview.aspx) и [примерно у 10% лиц мужского пола наблюдается то или иное нарушение цветного зрения](https://www.aao.org/eye-health/diseases/color-blindness-risk), это может существенно сказаться на выручке от вашей игры. 
+Если вы создали замечательную игру, однако она настолько сложна или замысловата, что играть в нее может только ограниченный круг людей, вы автоматически уменьшили свои продажи. Аналогично, создавая игру, в которую не могут играть люди с физическими, сенсорными или когнитивными нарушениями, вы уменьшаете количество ее потенциальных покупателей. Принимая во внимание, что, например, [19% населения США имеют ту или иную форму инвалидности](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [примерно 14% взрослых в США испытывают затруднения с чтением](https://nces.ed.gov/naal/estimates/overview.aspx) и [примерно у 10% лиц мужского пола наблюдается то или иное нарушение цветного зрения](https://www.aao.org/eye-health/diseases/color-blindness-risk), это может существенно сказаться на выручке от вашей игры. 
 
 Другие бизнес-обоснования можно найти в статье [Making Video Games Accessible](https://msdn.microsoft.com/library/windows/desktop/ee415219).
 
@@ -158,7 +158,7 @@ ms.locfileid: "8937602"
 
 ## <a name="game-accessibility-features"></a>Специальные возможности в играх
 
-В этом разделе рассматриваются некоторые функции, которые сделают ваши игры доступными людям с ограниченными возможностями. Перечень функций составлен по рекомендациям из документа [Game accessibility guidelines](http://gameaccessibilityguidelines.com/), который представляет собой результаты исследований группы разработчиков, специалистов и ученых. Дополнительные сведения см. в документе [Game accessibility guidelines](http://gameaccessibilityguidelines.com/). 
+В этом разделе рассматриваются некоторые функции, которые сделают ваши игры доступными людям с ограниченными возможностями. Перечень функций составлен по рекомендациям из документа [Game accessibility guidelines](https://gameaccessibilityguidelines.com/), который представляет собой результаты исследований группы разработчиков, специалистов и ученых. Дополнительные сведения см. в документе [Game accessibility guidelines](https://gameaccessibilityguidelines.com/). 
 
 ### <a name="colorblind-friendly-graphics-and-user-interface"></a>Графика и пользовательский интерфейс, подходящие для дальтоников
 
@@ -175,7 +175,7 @@ ms.locfileid: "8937602"
     
   + Нельзя использовать для дифференциации игровых объектов исключительно цвет. Используйте для этого также форму и рисунок.
   + Если приходится использовать только цвет, задайте цвета по умолчанию, но также предусмотрите возможность свободно выбирать другие цвета. Так люди, которым это нужно, смогут адаптировать цвета под свои потребности, а другие смогут не тратить на это время.
-  + Используйте для тестирования своих дизайнерских решений симулятор дальтонизма, чтобы увидеть их глазами дальтоника. Это поможет вам избежать распространенных проблем с контрастностью. [Color Oracle](http://www.colororacle.org) — это бесплатный симулятор дальтонизма, способный моделировать три наиболее распространенных нарушения цветного зрения — дейтеранопию, протанопию и тританопию.
+  + Используйте для тестирования своих дизайнерских решений симулятор дальтонизма, чтобы увидеть их глазами дальтоника. Это поможет вам избежать распространенных проблем с контрастностью. [Color Oracle](https://www.colororacle.org) — это бесплатный симулятор дальтонизма, способный моделировать три наиболее распространенных нарушения цветного зрения — дейтеранопию, протанопию и тританопию.
   
 ### <a name="closed-captioning-and-subtitles"></a>Субтитры и скрытые субтитры
 
@@ -209,13 +209,13 @@ ms.locfileid: "8937602"
 
 ### <a name="fully-mappable-controls"></a>Полностью переназначаемые элементы управления
 
-Существуют компании и организации, такие как [Special Effect](http://www.specialeffect.org.uk/), которые занимаются разработкой нестандартных игровых контроллеров для различных игровых систем, таких как Windows и Xbox One. Такие нестандартные контроллеры позволяют людям с различными физическими нарушениями играть в игры, в которые они иначе играть не смогли бы. Дополнительные сведения о людях, которые благодаря нестандартным контроллерам теперь могут играть самостоятельно, можно найти [здесь](http://www.specialeffect.org.uk/who-we-helped).
+Существуют компании и организации, такие как [Special Effect](https://www.specialeffect.org.uk/), которые занимаются разработкой нестандартных игровых контроллеров для различных игровых систем, таких как Windows и Xbox One. Такие нестандартные контроллеры позволяют людям с различными физическими нарушениями играть в игры, в которые они иначе играть не смогли бы. Дополнительные сведения о людях, которые благодаря нестандартным контроллерам теперь могут играть самостоятельно, можно найти [здесь](https://www.specialeffect.org.uk/who-we-helped).
 
 Разрабатывая игру, вы можете увеличить ее доступность, сделав элементы управления полностью переназначаемыми, чтобы у игроков была возможность подключать свои нестандартные контроллеры и сопоставлять кнопки в соответствии со своими потребностями.
 
 Возможность полностью переназначать элементы управления полезна и людям, которые пользуются стандартными контроллерами. Ваши игроки могут разработать для себя схему, которая отвечает их индивидуальным потребностям.
 
-Стандартные контроллеры Xbox One и Xbox Elite поддерживают возможность настройки контроллеров, позволяя играть с максимальной точностью. Чтобы можно было полностью использовать возможности переназначения, __рекомендуется, чтобы разработчики включали переназначение непосредственно в игру__. Подробнее см. в описаниях [Xbox One](http://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) и [Xbox Elite](http://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller).
+Стандартные контроллеры Xbox One и Xbox Elite поддерживают возможность настройки контроллеров, позволяя играть с максимальной точностью. Чтобы можно было полностью использовать возможности переназначения, __рекомендуется, чтобы разработчики включали переназначение непосредственно в игру__. Подробнее см. в описаниях [Xbox One](https://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) и [Xbox Elite](https://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller).
 
 ### <a name="wider-selection-of-difficulty-levels"></a>Более широкий выбор уровней сложности
 
@@ -225,7 +225,7 @@ ms.locfileid: "8937602"
 
 ### <a name="photosensitivity-epilepsy-testing"></a>Тестирование на предмет провоцирования приступов фотосенситивной эпилепсии
 
-Фотосенситивная эпилепсия— это заболевание, приступы которого вызываются световой стимуляцией, например вспышками света или определенными движущимися формами и рисунками. Фотосенситивной эпилепсией страдают примерно три процента людей; в большей степени она распространена среди детей и подростков. В количественном выражении это примерно [1 из 4000 человек в возрасте от 5 до 24лет](http://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3).
+Фотосенситивная эпилепсия— это заболевание, приступы которого вызываются световой стимуляцией, например вспышками света или определенными движущимися формами и рисунками. Фотосенситивной эпилепсией страдают примерно три процента людей; в большей степени она распространена среди детей и подростков. В количественном выражении это примерно [1 из 4000 человек в возрасте от 5 до 24лет](https://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3).
 
 Существует множество факторов, способных вызвать подобную реакцию при игре в видеоигры, включая длительность игры, частоту вспышек, интенсивность света, контраст фона и света, расстояние между экраном и игроком, а также длину волны света.
 
@@ -241,7 +241,7 @@ ms.locfileid: "8937602"
 * Пяти или более повторяющихся через равномерные промежутки высококонтрастных полос — строк или столбцов, таких как в таблице или шахматном рисунке, которые могут состоять из более мелких повторяющихся элементов, например кружков.
 * Более пяти строк текста, состоящего исключительно из прописных букв с небольшим межбуквенным интервалом и междустрочным интервалом той же высоты, что и буквы (из-за чего текст превращается в равномерное чередование высококонтрастных полос).
 
-Используйте автоматизированную систему для проверки игры на предмет стимулов, которые могут спровоцировать приступ фотосенситивной эпилепсии. (Например, [тест Хардинга](http://www.hardingtest.com/index.php?page=test) и [анализатор вспышек и паттернов Хардинга (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/), разработанные компанией Cambridge Research System Ltd и профессором Грэмом Хардингом.) 
+Используйте автоматизированную систему для проверки игры на предмет стимулов, которые могут спровоцировать приступ фотосенситивной эпилепсии. (Например, [тест Хардинга](https://www.hardingtest.com/index.php?page=test) и [анализатор вспышек и паттернов Хардинга (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/), разработанные компанией Cambridge Research System Ltd и профессором Грэмом Хардингом.) 
 
 Добавьте в настройки параметр **Мерцание вкл./выкл.** и установите параметр **Мерцание** по умолчанию в значение **Выкл.**. Так вы защитите тех своих игроков, которые еще не знают о своей склонности к припадкам.
 
@@ -252,21 +252,21 @@ ms.locfileid: "8937602"
 Вот несколько внешних сайтов, на которых можно найти дополнительную информацию о специальных возможностях в играх.
 
 ### <a name="game-accessibility-guidelines"></a>Game accessibility guidelines
-* [Game accessibility guidelines](http://gameaccessibilityguidelines.com/)
-* [Рекомендации AbleGamers Foundation](http://www.includification.com/)
-* [Разработка универсально доступных игр](http://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
+* [Game accessibility guidelines](https://gameaccessibilityguidelines.com/)
+* [Рекомендации AbleGamers Foundation](https://www.includification.com/)
+* [Разработка универсально доступных игр](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>Нестандартные контроллеры ввода
-* [Special Effect](http://www.specialeffect.org.uk/)
-* [Warfighter Engaged](http://www.warfighterengaged.org/)
+* [Special Effect](https://www.specialeffect.org.uk/)
+* [Warfighter Engaged](https://www.warfighterengaged.org/)
 
 ## <a name="references-used"></a>Использованные материалы
-* [Game accessibility guidelines](http://gameaccessibilityguidelines.com/)
-* [Рекомендации AbleGamers Foundation](http://www.includification.com/)
-* [Компания общественных интересов Color Blind Awareness](http://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [Как правильно делать субтитры— статья в блоге Иэна Хэмилтона на Gamasutra](http://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [Программа Innovation for All](http://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
-* [Epilepsy Foundation](http://www.epilepsy.com/)
+* [Game accessibility guidelines](https://gameaccessibilityguidelines.com/)
+* [Рекомендации AbleGamers Foundation](https://www.includification.com/)
+* [Компания общественных интересов Color Blind Awareness](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+* [Как правильно делать субтитры— статья в блоге Иэна Хэмилтона на Gamasutra](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+* [Программа Innovation for All](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
+* [Epilepsy Foundation](https://www.epilepsy.com/)
 
 ## <a name="related-links"></a>Дополнительные ссылки
 * [Инклюзивное проектирование](https://www.microsoft.com/design/inclusive)

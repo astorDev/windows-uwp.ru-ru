@@ -6,16 +6,16 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, элемент управления рекламой, межстраничные
 ms.localizationpriority: medium
-ms.openlocfilehash: c1860fe51035699aaa55d014c2f76a95c7622061
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9abf761aa141ef3d0c19d6d5401b6815542d4172
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943271"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047735"
 ---
 # <a name="interstitial-ads"></a>Межстраничные объявления
 
-В этом пошаговом руководстве показано, как включить межстраничные объявления в приложения универсальной платформы Windows (UWP) и игры для Windows 10. Полные примеры проектов, демонстрирующие способы добавления промежуточной рекламы в приложения на JavaScript/HTML, а также в приложения на XAML с помощью языков C# и C++, см. в [примерах рекламы на GitHub](http://aka.ms/githubads).
+В этом пошаговом руководстве показано, как включить межстраничные объявления в приложения универсальной платформы Windows (UWP) и игры для Windows 10. Полные примеры проектов, демонстрирующие способы добавления промежуточной рекламы в приложения на JavaScript/HTML, а также в приложения на XAML с помощью языков C# и C++, см. в [примерах рекламы на GitHub](https://aka.ms/githubads).
 
 <span id="whatareinterstitialads10"/>
 
@@ -36,7 +36,7 @@ ms.locfileid: "8943271"
 
 ## <a name="prerequisites"></a>Что вам понадобится
 
-* Установка [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) с помощью Visual Studio 2015 или более поздней версии Visual Studio. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
+* Установка [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) с помощью Visual Studio 2015 или более поздней версии Visual Studio. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
 
 ## <a name="integrate-an-interstitial-ad-into-your-app"></a>Интеграция межстраничного объявления в приложение
 
@@ -113,7 +113,7 @@ ms.locfileid: "8943271"
 
     1. В **Обозревателе решений** щелкните правой кнопкой мыши элемент **Ссылки** и выберите **Добавить ссылку...**.
     2.  В **Диспетчере ссылок** разверните раздел **Универсальная платформа Windows**, нажмите **Расширения** и выберите флажок рядом с **Microsoft Advertising SDK для JavaScript** (версия 10.0).
-    3.  В **диспетчере ссылок** нажмите "ОК".
+    3.  В **Диспетчере ссылок** нажмите "ОК".
 
 3.  В разделе **&lt;head&gt;** HTML-файла в проекте после ссылок на JavaScript проекта из файлов default.css и default.js добавьте ссылку на файл ad.js.
 
@@ -239,5 +239,5 @@ ms.locfileid: "8943271"
 * [Рекомендации для промежуточной рекламы](ui-and-user-experience-guidelines.md#interstitialbestpractices10)
 * [Пример кода межстраничного объявления на C#](interstitial-ad-sample-code-in-c.md)
 * [Пример кода межстраничного объявления на JavaScript](interstitial-ad-sample-code-in-javascript.md)
-* [Примеры рекламы на GitHub](http://aka.ms/githubads)
+* [Примеры рекламы на GitHub](https://aka.ms/githubads)
 * [Настройка групп объявлений для приложения](set-up-ad-units-in-your-app.md)

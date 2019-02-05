@@ -6,12 +6,12 @@ ms.date: 04/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, метаданные, подсказки, голосовые функции, глава
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f461bb70c1319352c66b8d12775dc7fa1db0edf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2b3753e92524e300252930f48433f91e175353c9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921628"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046111"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>Поддерживаемые системой синхронизированные подсказки метаданных
 В этой статье описано, как использовать несколько форматов синхронизированных метаданных, которые можно внедрять в файлы или потоки мультимедиа. Приложения UWP можно регистрировать для событий, вызываемых конвейером мультимедиа во время воспроизведения при обнаружении этих подсказок метаданных. С помощью класса [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) приложения могут реализовывать собственные пользовательские подсказки метаданных, но в этой статье рассматриваются несколько стандартов метаданных, которые автоматически определяются конвейером мультимедиа, в том числе:
@@ -148,7 +148,7 @@ ms.locfileid: "8921628"
 
 [!code-cs[RegisterMetadataHandlerForID3Cues](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetRegisterMetadataHandlerForID3Cues)]
 
-В обработчике для события **CueEntered** приведите подсказку данных, содержащуюся в свойстве **Cue** [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs), к [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue).  Убедитесь, что **DataCue** и свойство [**Data**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Data) подсказки не равны Null. Расширенные комментарии ЕС предоставляются в виде необработанных байт в транспортном потока (см. [http://id3.org/id3v2.4.0-structure](http://id3.org/id3v2.4.0-structure)). Создайте новый **DataReader** для считывания данных подсказок, вызвав [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer).  В этом примере значения заголовка из тега ID3 считываются из данных подсказки и записываются в отладочные данные.
+В обработчике для события **CueEntered** приведите подсказку данных, содержащуюся в свойстве **Cue** [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs), к [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue).  Убедитесь, что **DataCue** и свойство [**Data**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Data) подсказки не равны Null. Расширенные комментарии ЕС предоставляются в виде необработанных байт в транспортном потока (см. [http://id3.org/id3v2.4.0-structure](https://id3.org/id3v2.4.0-structure)). Создайте новый **DataReader** для считывания данных подсказок, вызвав [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer).  В этом примере значения заголовка из тега ID3 считываются из данных подсказки и записываются в отладочные данные.
 
 [!code-cs[ID3CueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetID3CueEntered)]
 
@@ -174,7 +174,7 @@ ms.locfileid: "8921628"
 
 В обработчике для события **CueEntered** приведите подсказку данных, содержащуюся в свойстве **Cue** [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs), к [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue).  Убедитесь, что значение объекта **DataCue**— не NULL. Свойства поля emsg предоставляются конвейером мультимедиа как настраиваемые свойства в коллекции [**Properties**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Properties) объекта DataCue. В этом примере выполняется попытка извлечь несколько различных значений свойств с помощью метода **[TryGetValue](https://docs.microsoft.com/uwp/api/windows.foundation.collections.propertyset.trygetvalue)**. Если этот метод возвращает значение NULL, это означает, что запрошенное свойство отсутствует в поле emsg, поэтому устанавливается значение по умолчанию.
 
-В следующей части примера демонстрируется сценарий запуска воспроизведения рекламы. Это происходит, когда в свойстве *scheme_id_uri*, полученного на предыдущем шаге, указано значение "urn:scte:scte35:2013:xml" (см. [http://dashif.org/identifiers/event-schemes/](http://dashif.org/identifiers/event-schemes/)). Обратите внимание, что согласно стандарту рекомендуется отправлять этот emsg несколько раз для обеспечения избыточности, поэтому в данном примере поддерживается список идентификаторов emsg, которые уже были обработаны, и обрабатывает только новые сообщения. Создайте новый **DataReader** для считывания данных подсказок, вызвав [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer), и задайте кодировку UTF-8, установив свойство [**UnicodeEncoding**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.UnicodeEncoding), а затем считайте данные. В этом примере полезные данные сообщения записываются в отладочные данные. Реальное приложение использовало бы полезные данные для планирования воспроизведения рекламного объявления.
+В следующей части примера демонстрируется сценарий запуска воспроизведения рекламы. Это происходит, когда в свойстве *scheme_id_uri*, полученного на предыдущем шаге, указано значение "urn:scte:scte35:2013:xml" (см. [http://dashif.org/identifiers/event-schemes/](https://dashif.org/identifiers/event-schemes/)). Обратите внимание, что согласно стандарту рекомендуется отправлять этот emsg несколько раз для обеспечения избыточности, поэтому в данном примере поддерживается список идентификаторов emsg, которые уже были обработаны, и обрабатывает только новые сообщения. Создайте новый **DataReader** для считывания данных подсказок, вызвав [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer), и задайте кодировку UTF-8, установив свойство [**UnicodeEncoding**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.UnicodeEncoding), а затем считайте данные. В этом примере полезные данные сообщения записываются в отладочные данные. Реальное приложение использовало бы полезные данные для планирования воспроизведения рекламного объявления.
 
 [!code-cs[EmsgCueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetEmsgCueEntered)]
 

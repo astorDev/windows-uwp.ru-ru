@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx, взаимодействие с xaml
 ms.localizationpriority: medium
-ms.openlocfilehash: 058a1458f8990e5f70e7ed0ea4ef1a2b5f4a4956
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 34fb65ec53f6addccf8723b451d333d602c17908
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944529"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046214"
 ---
 # <a name="directx-and-xaml-interop"></a>Взаимодействие DirectX и XAML
 
@@ -53,7 +53,7 @@ DirectX предоставляет две мощные библиотеки дл
 
 1.  Определите размер общей поверхности, передав высоту и ширину конструктору [SurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702041). Вы можете также указать, требуется ли поверхности поддержка альфа-режима (непрозрачности).
 
-    Например:
+    Пример.
 
     `SurfaceImageSource^ surfaceImageSource = ref new SurfaceImageSource(400, 300);`
 
@@ -77,7 +77,7 @@ DirectX предоставляет две мощные библиотеки дл
     > [!NOTE]
     > Если вы будете рисовать в **SurfaceImageSource** из фонового потока, убедитесь также, что на устройстве DXGI разрешен многопоточный доступ. Это действие необходимо выполнить для повышения производительности, только если вы будете рисовать из фонового потока.
 
-    Например:
+    Пример.
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;
@@ -462,7 +462,7 @@ DirectX предоставляет две мощные библиотеки дл
 
 ## <a name="related-topics"></a>Связанные разделы
 
-* [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)
+* [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [SurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702041)
 * [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050)
 * [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834)

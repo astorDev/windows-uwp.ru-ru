@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: e964650e90870ef09d8d1b142917f96b61002544
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: b561e08227664f723802ffc0ee3f0e16bc34a5cc
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980282"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045100"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Перечисление и запрос файлов и папок
 
@@ -25,7 +25,7 @@ ms.locfileid: "8980282"
 Рекомендации по сохранению данных приложения универсальной платформы Windows см. в классе [ApplicationData](/uwp/api/windows.storage.applicationdata).
 
 > [!NOTE]
-> Полный пример см. [Пример перечисления папок](http://go.microsoft.com/fwlink/p/?linkid=619993).
+> Полный пример см. [Пример перечисления папок](https://go.microsoft.com/fwlink/p/?linkid=619993).
 
 ## <a name="prerequisites"></a>Необходимые условия
 

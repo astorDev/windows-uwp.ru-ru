@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a969c0dfbfd08b5cc29651e2ad295c2bdd60ee0
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: fcbed8400b31616f92f20aa3a64a4dd8603dc7b0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037016"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047898"
 ---
 # <a name="inking-controls"></a>Элементы управления рукописным вводом
 
@@ -84,7 +84,7 @@ InkCanvas позволяет включить в приложении базов
 ```
 
 > [!NOTE]
-> Сведения о детальной настройке элемента управления InkCanvas с использованием InkPresenter см. в статье ["Взаимодействие с помощью пера в приложениях UWP"](http://windowsstyleguide/input/pen-and-stylus-interactions/).
+> Сведения о детальной настройке элемента управления InkCanvas с использованием InkPresenter см. в статье ["Взаимодействие с помощью пера в приложениях UWP"](https://windowsstyleguide/input/pen-and-stylus-interactions/).
 
 Элементы управления InkToolbar и InkCanvas необходимо использовать вместе. Чтобы включить элемент управления InkToolbar (со всеми встроенными инструментами) в приложение, необходима одна дополнительная строка разметки:
 
@@ -170,6 +170,6 @@ InkCanvas позволяет включить в приложении базов
 
 ## <a name="related-articles"></a>Еще по теме
 
-- [Взаимодействие с помощью пера в приложениях UWP](http://windowsstyleguide/input/pen-and-stylus-interactions/)
-- [Распознавание росчерков пера](http://windowsstyleguide/input/convert-ink-to-text/)
-- [Хранение и извлечение росчерков пера](http://windowsstyleguide/input/save-and-load-ink/)
+- [Взаимодействие с помощью пера в приложениях UWP](https://windowsstyleguide/input/pen-and-stylus-interactions/)
+- [Распознавание росчерков пера](https://windowsstyleguide/input/convert-ink-to-text/)
+- [Хранение и извлечение росчерков пера](https://windowsstyleguide/input/save-and-load-ink/)

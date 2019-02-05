@@ -1,8 +1,22 @@
 ---
-Автор HEAD <<<<<<<: описание Карл мост корпорации Майкрософт: оптимизировать приложение для ввода от игрового контроллера Xbox и пульт дистанционного управления.
-=== Описание: TODO
->>>>>>> основных и подробных данных заголовка: ms.assetid взаимодействие с помощью Геймпада и пульта дистанционного управления: метку 784a08dc-2736-4bd3-bea0-08da16b1bd47: игрового контроллера и шаблон удаленного взаимодействия: detail.hbs isNew: true <<<<<<< HEAD ms.author: kbridge =======
-главной MS.Date: 02/08/2017 ms.topic: статье ключевые слова: windows 10, uwp ms.localizationpriority: средний
+author: Karl-Bridge-Microsoft
+Description: Optimize your app for input from Xbox gamepad and remote control.
+title: Взаимодействие с помощью геймпада и пульта дистанционного управления
+ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
+label: Gamepad and remote interactions
+template: detail.hbs
+isNew: true
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+keywords: windows 10, uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: 022724064ad1e7f5551b6676bf256ca5cf6e4b8e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048561"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Взаимодействие с помощью геймпада и пульта дистанционного управления
 

@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9953afcdf595508d09f44262bcd92e104e0ce0c5
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 4c61a34b983b0faaedc509b68fd4225ea0859a7d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980322"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044834"
 ---
 # <a name="save-a-file-with-a-picker"></a>Сохранение файла с помощью средства выбора
 
@@ -23,7 +23,7 @@ ms.locfileid: "8980322"
 Чтобы дать пользователям возможность задать имя и расположение, в которое они хотели бы, чтобы приложение сохранило файл, воспользуйтесь средством [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871).
 
 > [!NOTE]
-> Полный пример см. в статье [Пример средства выбора файлов](http://go.microsoft.com/fwlink/p/?linkid=619994).
+> Полный пример см. в статье [Пример средства выбора файлов](https://go.microsoft.com/fwlink/p/?linkid=619994).
 
  
 

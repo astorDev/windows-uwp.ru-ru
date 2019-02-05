@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, игры, работа по сети, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 2697564e703cfe290e33f204125346f3e8bad8ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3d9675d59a727829946a7ef2a7d4f3780db36bee
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947766"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044804"
 ---
 # <a name="networking-for-games"></a>Поддержка сети в играх
 
@@ -388,7 +388,7 @@ using namespace Windows::Web::Http;
 
 **Примеры**
 
-* [Образец DatagramSocket](http://go.microsoft.com/fwlink/p/?LinkID=243037)
+* [Образец DatagramSocket](https://go.microsoft.com/fwlink/p/?LinkID=243037)
 * [Образец HttpClient]( http://go.microsoft.com/fwlink/p/?linkid=242550)
-* [Образец Proximity](http://go.microsoft.com/fwlink/p/?linkid=245082)
-* [Образец StreamSocket](http://go.microsoft.com/fwlink/p/?linkid=243037)
+* [Образец Proximity](https://go.microsoft.com/fwlink/p/?linkid=245082)
+* [Образец StreamSocket](https://go.microsoft.com/fwlink/p/?linkid=243037)

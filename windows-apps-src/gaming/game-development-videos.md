@@ -6,12 +6,12 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: Windows 10, UWP, видеоролики, GDC, сборка
 ms.localizationpriority: medium
-ms.openlocfilehash: de04b0b272bbc6889c5fb9b13e5487902a77e98c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2360af867fdc708f49cf5ba804a204ae497705b3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929958"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050977"
 ---
 # <a name="game-development-videos"></a>Видеоролики о разработке игр
 
@@ -48,7 +48,7 @@ ms.locfileid: "8929958"
 
 Что такое VSTS? Узнайте, как реализовать разработка и эксплуатация в процессе сборки: [Введение в Visual Studio Team Services](https://channel9.msdn.com/Shows/Level-Up/Introduction-to-Visual-Studio-Team-Services) - Lyalin Дмитрий, Джеймс Montemagno
 
-* [Планирование и Разработка игр с помощью всю мощь VSTS: гибкими, демонстрации начала до конца CI и компакт-](https://channel9.msdn.com/Shows/Level-Up/Planning-and-building-games-using-the-full-power-of-VSTS-Agile-CI--CD-end-to-end-demo) -Rogan Фергюсон
+* [Планирование и Разработка игр с помощью всю мощь VSTS: гибкими, CI & компакт-диска начала до конца демонстрации](https://channel9.msdn.com/Shows/Level-Up/Planning-and-building-games-using-the-full-power-of-VSTS-Agile-CI--CD-end-to-end-demo) -Фергюсон Rogan
 * [Сборка Далее игры на платформе Visual Studio Team Services и Unity построения облачных](https://channel9.msdn.com/Shows/Level-Up/Build-your-next-game-powered-by-Visual-Studio-Team-Services-and-Unity-Teams-cloud-build-Theater) - Дмитрий Lyalin
 * [Постоянно проверки, распространения и отслеживания игры с помощью приложения центр](https://channel9.msdn.com/Shows/Level-Up/Continuously-Test-distribute-and-monitor-your-game-with-App-Center-Theater-Presentation) - белый Джеймс
 * [Настройка CI/CD конвейер Node.js, Python, .NET, Go, Ruby, или на языке Java — в минутах](https://channel9.msdn.com/Shows/Level-Up/Setup-your-CICD-pipeline-for-Nodejs-Python-NET-Go-Ruby-or-Java-in-Minutes) - метка Wang
@@ -112,20 +112,20 @@ ms.locfileid: "8929958"
 
 ## <a name="gdc-2015-game-dev-session-videos"></a>Видеоролики о разработке игр с конференции GDC2015
 
--   [Будущее игр в экосистеме Microsoft](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem)— Фил Спенсер (Phil Spencer)
--   [Разработка игр для Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10)— Крис Тектор (Chris Tector), Дон Иксбокс (Don Xbox)
--   [Улучшенная графика и производительность DirectX 12](http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance)— Макс Макмаллен (Max McMullen)
--   [Игровое взаимодействие с пользователем в Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) — Билл Шифельбайн (Bill Schiefelbein)
--   [Новые возможности для независимых разработчиков](http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) — Крис Чарла (Chris Charla)
--   [Разработка с Xbox LIVE для Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) — Виджай Гадджала (Vijay Gajjala), Брайан Тайлер (Brian Tyler)
--   [Многопользовательский режим Xbox Live: знакомство со службой кросс-платформенного проведения матчей и игр](http://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) — Фердинанд Шобер (Ferdinand Schober)
--   [Fable Legends: многопользовательские игры на разных устройствах с Xbox Live](http://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live) — Рэймонд Арифьянто (Raymond Arifianto), Джулиан Дэвис (Julian Davis)
--   [Рекомендации по использованию облачной статистики и достижений пользователя в Xbox Live](http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live) — Сьерра Макдоналд (Cierra McDonald)
--   [Решение сложных проблем с игровой графикой при помощи средств DirectX](http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools) — Рудольф Балаж (Rudolph Balaz), Жун Лу (Rong Lu), Джейсон Страйер (Jason Strayer)
--   [Выше мощность — выше производительность: ваша игра на DirectX 12](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12) — Беннет Сорбо (Bennett Sorbo)
--   [Стабильная производительность игры на многоядерных мобильных устройствах](http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices) — Джулиан Калинов (Julian Calinov)
--   [Разработка игр мира Windows Core](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) — Тодд Уильямс (Todd Williams), Шай Хиниц (Shai Hinitz)
--   [Компьютерные игры для Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) — Чак Валборн (Chuck Walbourn)
+-   [Будущее игр в экосистеме Microsoft](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem)— Фил Спенсер (Phil Spencer)
+-   [Разработка игр для Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10)— Крис Тектор (Chris Tector), Дон Иксбокс (Don Xbox)
+-   [Улучшенная графика и производительность DirectX 12](https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance)— Макс Макмаллен (Max McMullen)
+-   [Игровое взаимодействие с пользователем в Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) — Билл Шифельбайн (Bill Schiefelbein)
+-   [Новые возможности для независимых разработчиков](https://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) — Крис Чарла (Chris Charla)
+-   [Разработка с Xbox LIVE для Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) — Виджай Гадджала (Vijay Gajjala), Брайан Тайлер (Brian Tyler)
+-   [Многопользовательский режим Xbox Live: знакомство со службой кросс-платформенного проведения матчей и игр](https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) — Фердинанд Шобер (Ferdinand Schober)
+-   [Fable Legends: многопользовательские игры на разных устройствах с Xbox Live](https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live) — Рэймонд Арифьянто (Raymond Arifianto), Джулиан Дэвис (Julian Davis)
+-   [Рекомендации по использованию облачной статистики и достижений пользователя в Xbox Live](https://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live) — Сьерра Макдоналд (Cierra McDonald)
+-   [Решение сложных проблем с игровой графикой при помощи средств DirectX](https://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools) — Рудольф Балаж (Rudolph Balaz), Жун Лу (Rong Lu), Джейсон Страйер (Jason Strayer)
+-   [Выше мощность — выше производительность: ваша игра на DirectX 12](https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12) — Беннет Сорбо (Bennett Sorbo)
+-   [Стабильная производительность игры на многоядерных мобильных устройствах](https://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices) — Джулиан Калинов (Julian Calinov)
+-   [Разработка игр мира Windows Core](https://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) — Тодд Уильямс (Todd Williams), Шай Хиниц (Shai Hinitz)
+-   [Компьютерные игры для Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) — Чак Валборн (Chuck Walbourn)
 
 ## <a name="build-2015-session-videos"></a>Видеозаписи мероприятий //Build 2015
 

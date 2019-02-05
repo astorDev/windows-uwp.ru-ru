@@ -5,12 +5,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, API отправки в Microsoft Store, примеры кода, параметры игры, трейлеры, дополнительные предложения, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 041f07fd6b24af3658bc9cfffe07117e4b353831
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 277d455fe3387452a4afe91fd74e5c2099f76ce4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939640"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044265"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>Пример на языке C\#: отправка приложения с трейлерами и параметрами игры
 
@@ -29,7 +29,7 @@ ms.locfileid: "8939640"
 Для этих примеров необходимо выполнение следующих требований.
 
 * Добавьте ссылку на сборку System.Web в свой проект.
-* Установите пакет NuGet [Newtonsoft.Json](http://www.newtonsoft.com/json) от Newtonsoft в свой проект.
+* Установите пакет NuGet [Newtonsoft.Json](https://www.newtonsoft.com/json) от Newtonsoft в свой проект.
 
 <span id="create-app-submission" />
 

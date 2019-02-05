@@ -5,12 +5,12 @@ keywords: активность пользователя, действия пол
 ms.date: 08/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 33103ebfc7ee3e26a11de781af7981bce78b349c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e98f5d73cf2d1afb26a823ed417c8980d118485c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930985"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046883"
 ---
 # <a name="user-activities-best-practices"></a>Рекомендации для пользователя
 
@@ -101,7 +101,7 @@ ms.locfileid: "8930985"
 
 * [Действия пользователей (документы Project Rome)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Адаптивные карты](https://docs.microsoft.com/adaptive-cards/)
-* [Визуализатор адаптивных карт, примеры](http://adaptivecards.io/)
+* [Визуализатор адаптивных карт, примеры](https://adaptivecards.io/)
 * [Обработка активации универсального кода ресурса (URI)](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Взаимодействие с пользователями на всех платформах с помощью Microsoft Graph, ленты действий и адаптивных карт](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

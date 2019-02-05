@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e4e8d5f49d10219a06a36fdfbe7ec3abe236109a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b58eb4b6e3f3f02bb1f72fcba9da3710f08a72da
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931461"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045998"
 ---
 # <a name="high-contrast-themes"></a>Темы с высокой контрастностью  
 
@@ -46,7 +46,7 @@ Windows поддерживает темы с высокой контрастно
 Если необходимо изменить цвет, заданный в системе по умолчанию, создайте для приложения коллекцию ThemeDictionaries.
 
 1. Начните с создания надлежащих элементов подключения, если они еще не созданы. В файле App.xaml создайте коллекцию **ThemeDictionaries** и включите в нее (как минимум) элементы **Default** и **HighContrast**.
-2. В разделе **Default** создайте тот тип инструмента [Brush](http://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx), который вам необходим; чаще всего это **SolidColorBrush**. Задайте ему имя *x:Key*, указывающее его предназначение.
+2. В разделе **Default** создайте тот тип инструмента [Brush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx), который вам необходим; чаще всего это **SolidColorBrush**. Задайте ему имя *x:Key*, указывающее его предназначение.
 3. Назначьте ему требуемое значение цвета **Color**.
 4. Скопируйте этот инструмент **Brush** в **HighContrast**.
 
@@ -235,7 +235,7 @@ Windows поддерживает темы с высокой контрастно
 
 ## <a name="related-topics"></a>Связанные статьи  
 * [Специальные возможности](accessibility.md)
-* [Пример контрастности и параметров пользовательского интерфейса](http://go.microsoft.com/fwlink/p/?linkid=231539)
-* [Пример XAML accessibility](http://go.microsoft.com/fwlink/p/?linkid=238570)
-* [Пример XAML с высокой контрастностью](http://go.microsoft.com/fwlink/p/?linkid=254993)
+* [Пример контрастности и параметров пользовательского интерфейса](https://go.microsoft.com/fwlink/p/?linkid=231539)
+* [Пример XAML accessibility](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Пример XAML с высокой контрастностью](https://go.microsoft.com/fwlink/p/?linkid=254993)
 * [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)

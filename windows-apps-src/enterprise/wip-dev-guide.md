@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp, wip, Windows Information Protection, корпоративные данные, защита корпоративных данных, edp, грамотные приложения
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
-ms.openlocfilehash: 229d97c137344de26be0168be437825bea8e9700
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6f022045787512f6baea679633d5327b6ba4caf8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932547"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048361"
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Руководство разработчика Windows Information Protection (WIP)
 
@@ -21,7 +21,7 @@ ms.locfileid: "8932547"
 
 В этом руководстве мы покажем вам, как создать такое приложение. После этого администраторы политик смогут доверять вашему приложению в вопросе использования данных их организации. А сотрудникам понравится, что вы храните их персональные данные в целости и сохранности на устройстве, даже если они откажутся от участия в системе управления мобильными устройствами (MDM) или совсем уйдут из компании.
 
-__Примечание.__ Это руководство поможет вам расширить приложение UWP. Если вы хотите расширить классическое приложение на C++ для Windows, см. [руководство разработчика Windows Information Protection (WIP) (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
+__Примечание.__ Это руководство поможет вам расширить приложение UWP. Если вы хотите расширить классическое приложение на C++ для Windows, см. [руководство разработчика Windows Information Protection (WIP) (C++)](https://go.microsoft.com/fwlink/?LinkId=822192).
 
 Более подробные сведения о WIP и грамотных приложениях можно найти здесь: [Windows Information Protection (WIP)](wip-hub.md).
 
@@ -1163,4 +1163,4 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 
 ## <a name="related-topics"></a>Еще по теме
 
-[Пример Windows Information Protection (WIP)](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
+[Пример Windows Information Protection (WIP)](https://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e431694f3f0effb6fd5e7688b146109dfc1f5dc7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 26eb371e767f0c1e7f3d5855cf68728958c0cda3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946026"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044997"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>Определение доступности файлов Microsoft OneDrive
 
@@ -53,7 +53,7 @@ ms.locfileid: "8946026"
 
 1.  Объявите возможность, соответствующую библиотеке, к которой требуется получить доступ.
 2.  Включите пространство имен [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346). Это пространство имен содержит типы для управления файлами, папками и параметрами приложений. Кроме того, оно включает необходимый тип [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171).
-3.  Получите объект [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) для нужных файлов. Если выполняется перечисление библиотеки, для выполнения этого шага обычно необходимо вызвать метод [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252), а затем — метод [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276.aspx) результирующего объекта [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046). Метод **GetFilesAsync** возвращает коллекцию [IReadOnlyList](http://go.microsoft.com/fwlink/p/?LinkId=324970) объектов **StorageFile**.
+3.  Получите объект [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) для нужных файлов. Если выполняется перечисление библиотеки, для выполнения этого шага обычно необходимо вызвать метод [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252), а затем — метод [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276.aspx) результирующего объекта [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046). Метод **GetFilesAsync** возвращает коллекцию [IReadOnlyList](https://go.microsoft.com/fwlink/p/?LinkId=324970) объектов **StorageFile**.
 4.  После получения доступа к объекту [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171), представляющему нужные файлы, значение свойства [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) показывает, доступен ли файл.
 
 Следующий общий метод иллюстрирует способ перечисления любой папки и возвращения коллекции объектов [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) для этой папки. Затем метод вызова повторяется для возвращенной коллекции, ссылаясь на свойство [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) каждого файла.

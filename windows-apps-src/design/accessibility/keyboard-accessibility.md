@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 938b5b3cdd2e23995a1031875a28f178e0c97a26
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5ad64c2a0d4d7569ec2c0c0a44f9236fc4b2819f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931135"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045523"
 ---
 # <a name="keyboard-accessibility"></a>Специальные возможности клавиатуры  
 
@@ -148,7 +148,7 @@ XAML
 
 Для упрощения представления в предыдущем примере не используются ресурсы для таких строк, как Ctrl+A. Однако вы также должны учитывать сочетания клавиш при локализации. Локализация сочетания клавиш имеет важное значение, потому что их выбор обычно зависит от видимых текстовых подписей для элемента.
 
-Подробнее о реализации сочетаний клавиш см. в разделе [Сочетания клавиш](http://go.microsoft.com/fwlink/p/?linkid=221825) Справочника Windows по взаимодействию с пользователями.
+Подробнее о реализации сочетаний клавиш см. в разделе [Сочетания клавиш](https://go.microsoft.com/fwlink/p/?linkid=221825) Справочника Windows по взаимодействию с пользователями.
 
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
@@ -249,5 +249,5 @@ XAML
 * [Специальные возможности](accessibility.md)
 * [Взаимодействие с помощью клавиатуры](https://msdn.microsoft.com/library/windows/apps/Mt185607)
 * [Пример сенсорной клавиатуры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [Пример специальных возможностей XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Пример специальных возможностей XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
 

@@ -6,12 +6,12 @@ ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: e6938807a589337489f07f5865e02a580a72dae2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925861"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044631"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Индексаторы для конкретных форматов MakePri.exe
 
@@ -311,7 +311,7 @@ Images\logo.scale-180.png
 </xs:schema>\
 ```
 
-Файл `.resjson` содержит текст JSON, как определено в стандарте [The application/json Media Type for JavaScript Object Notation (JSON)](http://www.ietf.org/rfc/rfc4627.txt). В файле должен содержаться один объект JSON с иерархическими свойствами. Каждое свойство должно быть либо другим объектом JSON, либо строковым значением.
+Файл `.resjson` содержит текст JSON, как определено в стандарте [The application/json Media Type for JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt). В файле должен содержаться один объект JSON с иерархическими свойствами. Каждое свойство должно быть либо другим объектом JSON, либо строковым значением.
 
 Свойства JSON, чьи имена начинаются с символа подчеркивания ("_"), не компилируются в конечный PRI-файл, но содержатся в файле журнала.
 
@@ -400,4 +400,4 @@ Images\logo.scale-180.png
 * [Компиляция ресурсов вручную с помощью MakePri.exe](compile-resources-manually-with-makepri.md)
 * [Параметры командной строки MakePRI.exe](makepri-exe-command-options.md)
 * [Файл конфигурации MakePri.exe](makepri-exe-configuration.md)
-* [Стандарт The application/json Media Type for JavaScript Object Notation (JSON)](http://www.ietf.org/rfc/rfc4627.txt)
+* [Стандарт The application/json Media Type for JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)

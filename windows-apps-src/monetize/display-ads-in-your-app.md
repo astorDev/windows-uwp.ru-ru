@@ -6,12 +6,12 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, баннер, управление рекламой, межстраничная
 ms.localizationpriority: medium
-ms.openlocfilehash: baf26335ccdf34c8403cc15ecc1e68527d92e90e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 84ed7f5f1eb65f06a47e92de962777ca9d3c50c7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941431"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044858"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Показ рекламы в приложении с помощью Microsoft Advertising SDK
 
@@ -32,7 +32,7 @@ ms.locfileid: "8941431"
 <tr>
 <td align="left"><img src="images/install-sdk.png" alt="Install SDK icon" /></td>
 <td align="left"><b>Начало работы</b><br/><br/>
-    <a href="http://aka.ms/ads-sdk-uwp">Установка Microsoft Advertising SDK</a>
+    <a href="https://aka.ms/ads-sdk-uwp">Установка Microsoft Advertising SDK</a>
 </td>
 <td align="left"><img src="images/write-code.png" alt="Develop icon" /></td>
 <td align="left"><b>Руководства разработчика</b><br/><br/>
@@ -56,7 +56,7 @@ ms.locfileid: "8941431"
 
 ## <a name="step-1-install-the-microsoft-advertising-sdk"></a>Этап 1. Установите Microsoft Advertising SDK
 
-Чтобы начать работу, установите [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) на компьютере разработчика, который вы используете для создания приложения. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
+Чтобы начать работу, установите [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) на компьютере разработчика, который вы используете для создания приложения. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
 
 ## <a name="step-2-implement-ads-in-your-app"></a>Этап 2. Реализация рекламы в приложении
 
@@ -111,16 +111,16 @@ Microsoft Advertising SDK предоставляет несколько разл
 |  Задача    | Ресурс |               
 |----------|-------|
 | Сообщить об ошибке или получить техническую поддержку по вопросам рекламы     | Посетите [страницу поддержки](https://developer.microsoft.com/en-us/windows/support) и выберите **Реклама в приложениях**.        |
-| Получить поддержку сообщества     | Посетите [форум](http://go.microsoft.com/fwlink/p/?LinkId=401266).       |
-| Скачайте примеры проектов, демонстрирующие, как добавлять баннеры и межстраничные объявления в приложения.     | См. [примеры рекламы на GitHub](http://aka.ms/githubads).       |
+| Получить поддержку сообщества     | Посетите [форум](https://go.microsoft.com/fwlink/p/?LinkId=401266).       |
+| Скачайте примеры проектов, демонстрирующие, как добавлять баннеры и межстраничные объявления в приложения.     | См. [примеры рекламы на GitHub](https://aka.ms/githubads).       |
 | Сведения о последних возможностях получения дохода из приложений для Windows     | Посетите раздел [Монетизация приложений](https://developer.microsoft.com/store/monetize).        |
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Приложения для Windows 8.1 и Windows Phone 8.x
 
-Для приложений для Windows 8.1 и Windows Phone 8.x предусмотрен [Microsoft Advertising SDK для Windows и Windows Phone 8.x](http://aka.ms/store-8-sdk). Дополнительные сведения об использовании этого SDK для показа рекламы в приложениях для Windows 8.1 и Windows Phone 8.x см. в [этой статье](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10)).
+Для приложений для Windows 8.1 и Windows Phone 8.x предусмотрен [Microsoft Advertising SDK для Windows и Windows Phone 8.x](https://aka.ms/store-8-sdk). Дополнительные сведения об использовании этого SDK для показа рекламы в приложениях для Windows 8.1 и Windows Phone 8.x см. в [этой статье](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10)).
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)
+* [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)
 * [Отчет об эффективности рекламы](../publish/advertising-performance-report.md)
 * [Премиальная программа для издателей рекламы в Windows](windows-premium-ads-publishers-program.md)

@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d14467856aee733f2e11d057db0deb873269ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a92b8d0f921bc747108b802d285b783e7f2bcaa8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920638"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047941"
 ---
 # <a name="get-set-up"></a>Подготовка
 
@@ -64,7 +64,7 @@ Microsoft Visual Studio2017 помогает проектировать, код,
 
 ## <a name="want-more-tools-and-downloads"></a>Нужны дополнительные инструменты и скачиваемые файлы?
 
-Полный список инструментов и скачиваемых файлов см. на странице [скачиваемых файлов](http://go.microsoft.com/fwlink/p/?linkid=285935).
+Полный список инструментов и скачиваемых файлов см. на странице [скачиваемых файлов](https://go.microsoft.com/fwlink/p/?linkid=285935).
 
 ## <a name="see-also"></a>См. также
 

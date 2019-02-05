@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, анонс, видео, снимок экрана, изображение, значок, описание в Store, изображения для описания в Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 0019ded3b409acf0e6530bffa4ad73f85bfa8855
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0ae5b68d73a3776adf6250dbb96de827a106a6c5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942648"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051007"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Снимки экрана, изображения и трейлеры приложения
 
@@ -106,7 +106,7 @@ ms.locfileid: "8942648"
 
 Трейлеры— это короткие видеоролики, которые помогают клиентам увидеть ваш продукт в действии, чтобы они могли лучше понять, что он из себя представляет. Они отображаются в верхней части приложения описание в Store (при условии, что включение образа [главное 16:9](#windows-10-and-xbox-image-169-super-hero-art) ). 
 
-Трейлеры кодируются с помощью расширения [SmoothStreaming](http://www.iis.net/downloads/microsoft/smooth-streaming), которое в реальном времени адаптирует качество принимаемого клиентом видеопотока в соответствии с его доступной пропускной способностью и ресурсами ЦП.
+Трейлеры кодируются с помощью расширения [SmoothStreaming](https://www.iis.net/downloads/microsoft/smooth-streaming), которое в реальном времени адаптирует качество принимаемого клиентом видеопотока в соответствии с его доступной пропускной способностью и ресурсами ЦП.
 
 > [!NOTE]
 > Трейлеры доступны только для клиентов, использующих ОС Windows10 версии 1607 или более поздних версий (включая Xbox).

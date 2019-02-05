@@ -6,12 +6,12 @@ ms.date: 07/06/2018
 ms.topic: article
 keywords: Windows 10, uwp, фоновой задачи
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b64ca35e47044cbc2320ca77c1d1ba2e3d66fcb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 46d2b5704fa8a9bf53534ded98647ce57da0f520
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947034"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048967"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>Запуск фоновой задачи по таймеру
 
@@ -138,7 +138,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Освобождение памяти при переходе приложения в фоновый режим](reduce-memory-usage.md)
 * [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
-* [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 * [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
 * [Задержка приостановки приложения с помощью расширенного сеанса выполнения](run-minimized-with-extended-execution.md)
 * [Регистрация фоновой задачи](register-a-background-task.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f81ab1ef635bf4cfb20c289d6998c242f7aa47fc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 77b8f075e0eac02722c29eddddb6f188575ca18f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929193"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047509"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Установка формата, разрешения и частоты кадров для MediaCapture
 
@@ -21,7 +21,7 @@ ms.locfileid: "8929193"
 
 Профили камеры предлагают более современный способ обнаружения и задания свойств потока камеры, но они поддерживаются не на всех устройствах. Дополнительные сведения см. в разделе [Профили камеры](camera-profiles.md).
 
-В этой статье используется код, адаптированный из [примера CameraResolution](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). Вы можете скачать этот пример, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки собственного приложения.
+В этой статье используется код, адаптированный из [примера CameraResolution](https://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). Вы можете скачать этот пример, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки собственного приложения.
 
 > [!NOTE] 
 > В этой статье используются понятия и код из статьи [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), в которой описаны этапы реализации основных принципов фото- и видеозахвата. Мы рекомендуем ознакомиться с базовым шаблоном захвата мультимедиа в этой статье, прежде чем перейти к более сложным сценариям захвата. Код в этой статье подразумевает, что ваше приложение уже содержит экземпляр MediaCapture, инициализированный надлежащим образом.

@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, сертификации приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 614f59fe06528d7b5bac36290eae14f0d7d49653
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e3c8729a6d2ac828f3d7b257681d64f4c7834587
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930775"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048874"
 ---
 # <a name="windows-app-certification-kit"></a>Комплект сертификации приложений для Windows
 
 
 
-Чтобы получить приложение [Сертифицировано для Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) или подготовить его к [публикации в Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), должны Проверьте и протестируйте приложение локально сначала. В этом разделе показано, как установить и запустить [Комплект сертификации приложений для Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666) , чтобы убедиться, что ваше приложение является безопасный и эффективный.
+Чтобы получить приложение [Сертифицировано для Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) или подготовить его к [публикации в Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), должны Проверьте и протестируйте приложение локально сначала. В этом разделе показано, как установить и запустить [Комплект сертификации приложений для Windows](https://go.microsoft.com/fwlink/p/?LinkID=309666) , чтобы убедиться, что ваше приложение является безопасный и эффективный.
 
 ## <a name="prerequisites"></a>Необходимые условия
 

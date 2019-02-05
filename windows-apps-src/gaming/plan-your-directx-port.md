@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, directx, перенос
 ms.localizationpriority: medium
-ms.openlocfilehash: abbcd688df01b779a1cb3ab9e30bd13709926be4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6779fd95d4fd1964a8ca19aa4a7a9f9c29a6179b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942515"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044385"
 ---
 # <a name="plan-your-directx-port"></a>Планирование переноса DirectX
 
@@ -35,7 +35,7 @@ ms.locfileid: "8942515"
 
 Вспомогательные библиотеки D3DX и DXUT необходимо заменить на собственные вспомогательные библиотеки или средства от сообщества. Подробнее см. в разделе [о сопоставлении компонентов](feature-mapping.md).
 
-> **Примечание**  [Набор инструментов DirectX](http://go.microsoft.com/fwlink/p/?LinkID=248929) или [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) можно использовать для замены некоторых функций, ранее предоставляемых D3DX и DXUT.
+> **Примечание**  [Набор инструментов DirectX](https://go.microsoft.com/fwlink/p/?LinkID=248929) или [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) можно использовать для замены некоторых функций, ранее предоставляемых D3DX и DXUT.
 
  
 

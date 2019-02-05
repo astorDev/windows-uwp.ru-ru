@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: e3e18bc5ec683e6c7a8aab18321f4b98511faa62
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: d60dcb60d8628822d7597ad25268aae5e7a7ae6a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980342"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044581"
 ---
 # <a name="create-write-and-read-a-file"></a>Создание, запись и чтение файла
 
@@ -29,7 +29,7 @@ ms.locfileid: "8980342"
 Считайте и запишите файл с помощью объекта [**StorageFile**](/uwp/api/windows.storage.storagefile).
 
 > [!NOTE]
-> Полный пример см. [Пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> Полный пример см. [Пример доступа к файлам](https://go.microsoft.com/fwlink/p/?linkid=619995).
 
 ## <a name="prerequisites"></a>Необходимые условия
 

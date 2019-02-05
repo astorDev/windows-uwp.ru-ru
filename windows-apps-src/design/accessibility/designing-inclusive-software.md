@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 52504855a83b8fdf30de311028c39e30ddd2b026
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 88d2377f95efbe79853b1416213a25e22ed7d5f0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921147"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044751"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Проектирование инклюзивного программного обеспечения для Windows10  
 
@@ -104,7 +104,7 @@ Microsoft стремится проводить исследования в об
 7.  Предоставьте готовый продукт и составьте документацию для тех разработчиков, которые придут вам на смену.  
 
 ## <a name="related-topics"></a>Еще по теме  
-* [Инклюзивное проектирование](http://design.microsoft.com/inclusive)
+* [Инклюзивное проектирование](https://design.microsoft.com/inclusive)
 * [Создание программного обеспечения с учетом специальных возможностей](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Информация о специальных возможностях Microsoft в центре разработчиков](https://developer.microsoft.com/windows/accessible-apps)
 * [Разработка инклюзивных приложений для Windows](developing-inclusive-windows-apps.md) 

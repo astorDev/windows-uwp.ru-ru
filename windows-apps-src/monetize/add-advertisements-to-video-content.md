@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные материалы, видео, планировщик, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e2c46636445adac496d0f2149e956c5703c20d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 69fef2bc5deb21be8685badb0cf18f38769170cb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934789"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045077"
 ---
 # <a name="show-ads-in-video-content"></a>Показ рекламы в видеосодержимом
 
@@ -26,7 +26,7 @@ ms.locfileid: "8934789"
 
 ## <a name="prerequisites"></a>Необходимые компоненты
 
-* Установка [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) с помощью Visual Studio 2015 или более поздней версии.
+* Установка [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) с помощью Visual Studio 2015 или более поздней версии.
 
 * В проекте необходимо использовать элемент управления [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview), чтобы обслуживать видеосодержимое, в котором планируется показывать рекламу. Этот элемент управления доступен в коллекции библиотек [TVHelpers](https://github.com/Microsoft/TVHelpers) от корпорации Майкрософт на портале GitHub.
 

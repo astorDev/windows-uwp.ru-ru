@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e18be702c1b2bbd9ce1831b6991324896769192
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c72af86edd3d0a20ab8a0f062b5e0ccf8608e8a9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930745"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050797"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>Демонстрационные данные в рабочей области конструирования и демонстрационные данные для создания прототипов
 =============================================================================================
@@ -24,8 +24,8 @@ ms.locfileid: "8930745"
 
 **Примеры приложений с расширением разметки {Binding}**
 
--   Скачайте приложение [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950).
--   Скачайте приложение [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952).
+-   Скачайте приложение [Bookstore1](https://go.microsoft.com/fwlink/?linkid=532950).
+-   Скачайте приложение [Bookstore2](https://go.microsoft.com/fwlink/?linkid=532952).
 
 <a name="setting-datacontext-in-markup"></a>Задание DataContext в разметке
 -----------------------------
@@ -97,7 +97,7 @@ else
 
 Различные объявления xmlns означают, что атрибуты с префиксом **d:** интерпретируются только во время разработки и игнорируются во время выполнения. Поэтому атрибут **d:DataContext** влияет на значение свойства [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) только во времени разработки; он не действует во время выполнения. При желании в разметке можно задать и **d:DataContext**, и **DataContext**. **d:DataContext** будет переопределять значение во время разработки, а **DataContext** — во время выполнения. Эти же правила переопределения применяются ко всем атрибутам времени разработки и времени выполнения.
 
-Атрибут **d:DataContext** и все остальные атрибуты времени разработки задокументированы в разделе [Атрибуты времени разработки](http://go.microsoft.com/fwlink/p/?LinkId=272504), который по-прежнему доступен для приложений универсальной платформы Windows (UWP).
+Атрибут **d:DataContext** и все остальные атрибуты времени разработки задокументированы в разделе [Атрибуты времени разработки](https://go.microsoft.com/fwlink/p/?LinkId=272504), который по-прежнему доступен для приложений универсальной платформы Windows (UWP).
 
 У [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) нет свойства **DataContext**, но есть свойство **Source**. Следовательно, есть свойство **d:Source**, которое можно использовать, чтобы задать демонстрационные данные, отображаемые только во время разработки, в **CollectionViewSource**.
 

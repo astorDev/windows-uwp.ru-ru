@@ -1,21 +1,21 @@
 ---
 ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
 description: Узнайте, как запускать промежуточную рекламу с помощью JavaScript И HTML.
-title: Пример кода промежуточной рекламы в JavaScript
+title: Пример кода межстраничного объявления на JavaScript
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные объявления, промежуточная, javascript, пример кода
 ms.localizationpriority: medium
-ms.openlocfilehash: 98ba09b88c96b0f0afb4ba5a786d31442fd9da05
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 641a3bfc2c2869cab6f3bbf480aa599cadd955a2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928123"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047113"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>Пример кода промежуточной рекламы в JavaScript
 
-В этом разделе представлен полный пример кода для простого приложения универсальной платформы Windows (UWP) на JavaScript и HTML, в котором отображается промежуточная реклама. Пошаговые инструкции по настройке проекта для использования этого кода см. в разделе [Промежуточная реклама](interstitial-ads.md). Полный пример с проектом см. в разделе [рекламы примеров на GitHub](http://aka.ms/githubads).
+В этом разделе представлен полный пример кода для простого приложения универсальной платформы Windows (UWP) на JavaScript и HTML, в котором отображается промежуточная реклама. Пошаговые инструкции по настройке проекта для использования этого кода см. в разделе [Промежуточная реклама](interstitial-ads.md). Полный пример с проектом см. в разделе [рекламы примеров на GitHub](https://aka.ms/githubads).
 
 ## <a name="code-example"></a>Пример кода
 
@@ -45,6 +45,6 @@ ms.locfileid: "8928123"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Примеры рекламы на GitHub](http://aka.ms/githubads)
+* [Примеры рекламы на GitHub](https://aka.ms/githubads)
 
  

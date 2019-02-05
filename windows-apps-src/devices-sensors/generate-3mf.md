@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ac71b1fd876c5fec67bcdc292f407a04211de88c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a3615dac98c5bc8469c8c8ebc47ef718c0131844
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927690"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048441"
 ---
 # <a name="generate-a-3mf-package"></a>Создание пакета 3MF
 
@@ -28,7 +28,7 @@ ms.locfileid: "8927690"
 
 Формат создания 3D — это набор соглашений об использовании XML для описания вида и структуры трехмерных моделей для производства (трехмерной печати). Он определяет набор компонентов (обязательных и необязательных) и их связи для предоставления всех необходимых сведений устройству для трехмерной печати. Набор данных, соответствующий формату создания 3D, можно сохранять как файл с расширением .3mf.
 
-В Windows10 [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) класса в пространстве имен **Windows.Graphics.Printing3D** аналогичен одному 3mf-файлу и другие классы соответствуют определенным элементам XML в файл. В этом руководстве описывается, как создать и настроить основные части документа 3MF программными средствами, как использовать расширение 3MF Materials и как преобразовать объект **Printing3D3MFPackage** и сохранить его в виде 3MF-файла. Подробнее о стандартах 3MF и расширении 3MF Materials см. в разделе [3MF Specification](http://3mf.io/what-is-3mf/3mf-specification/).
+В Windows10 [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) класса в пространстве имен **Windows.Graphics.Printing3D** аналогичен одному 3mf-файлу и другие классы соответствуют определенным элементам XML в файл. В этом руководстве описывается, как создать и настроить основные части документа 3MF программными средствами, как использовать расширение 3MF Materials и как преобразовать объект **Printing3D3MFPackage** и сохранить его в виде 3MF-файла. Подробнее о стандартах 3MF и расширении 3MF Materials см. в разделе [3MF Specification](https://3mf.io/what-is-3mf/3mf-specification/).
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -43,7 +43,7 @@ ms.locfileid: "8927690"
 
 ## <a name="metadata"></a>Метаданные
 
-Часть модели документа 3MF может содержать метаданные в виде пар "ключ/значение", которые хранятся в свойстве **Metadata**. Существует ряд предопределенных имен метаданных, но можно добавить и другие пары как часть расширения (это описано более подробно в [спецификации 3MF](http://3mf.io/what-is-3mf/3mf-specification/). Получатель пакета (устройство трехмерной печати) определяет, следует ли обрабатывать метаданные и как это делать, но рекомендуется добавлять в пакет 3MF как можно больше базовых сведений:
+Часть модели документа 3MF может содержать метаданные в виде пар "ключ/значение", которые хранятся в свойстве **Metadata**. Существует ряд предопределенных имен метаданных, но можно добавить и другие пары как часть расширения (это описано более подробно в [спецификации 3MF](https://3mf.io/what-is-3mf/3mf-specification/). Получатель пакета (устройство трехмерной печати) определяет, следует ли обрабатывать метаданные и как это делать, но рекомендуется добавлять в пакет 3MF как можно больше базовых сведений:
 
 [!code-cs[Metadata](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMetadata)]
 

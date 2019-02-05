@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, платежи, продажа приложений, доход от приложения, выплата, плата store, удержание платежей, процент
 ms.localizationpriority: medium
-ms.openlocfilehash: 91289948f2f4745456b9cebe587cf75366a4877b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0d59519e23955b53b32d2178e37e75f195fd54eb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941161"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044365"
 ---
 # <a name="getting-paid"></a>Получение платежей
 Ниже приводятся некоторые важные сведения о получении платежей за ваши приложения, надстройки и прибыли от рекламы.
@@ -21,7 +21,7 @@ ms.locfileid: "8941161"
 
 ## <a name="store-fee"></a>Комиссия Магазина
 
-При [регистрации учетной записи разработчика](http://go.microsoft.com/fwlink/p/?LinkID=615100) вы принимаете [соглашение с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). В этом соглашении описываются отношения между вами и корпорацией Майкрософт, касающиеся продажи приложений в Microsoft Store, в том числе оговаривается комиссия Microsoft Store, взимаемая корпорацией Майкрософт за каждую продажу.
+При [регистрации учетной записи разработчика](https://go.microsoft.com/fwlink/p/?LinkID=615100) вы принимаете [соглашение с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). В этом соглашении описываются отношения между вами и корпорацией Майкрософт, касающиеся продажи приложений в Microsoft Store, в том числе оговаривается комиссия Microsoft Store, взимаемая корпорацией Майкрософт за каждую продажу.
 
 В большинстве случаев комиссия Магазина составляют 30%. Суммы комиссии официально определены в [соглашении с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Всегда обращайтесь к этому документу, если у вас возникают вопросы.
 

@@ -6,16 +6,16 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, пошаговые руководства
 ms.localizationpriority: medium
-ms.openlocfilehash: 423b005028ca7796dbab81d2c26a68c3d74fc922
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8bf2605c55b9b73ccd3376f9c812da31339caedc
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919708"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050717"
 ---
 # <a name="implement-ads-in-your-app"></a>Реализация рекламы в приложении
 
-В статьях этого раздела описывается процесс добавления рекламных баннеров, межстраничных и собственных объявлений в приложения с помощью Microsoft Advertising SDK. Полные примеры проектов см. в разделе [примеры рекламы на GitHub](http://aka.ms/githubads).
+В статьях этого раздела описывается процесс добавления рекламных баннеров, межстраничных и собственных объявлений в приложения с помощью Microsoft Advertising SDK. Полные примеры проектов см. в разделе [примеры рекламы на GitHub](https://aka.ms/githubads).
 
 ## <a name="in-this-section"></a>В этом разделе
 

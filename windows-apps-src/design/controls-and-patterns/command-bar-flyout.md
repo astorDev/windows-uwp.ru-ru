@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dc4adf5002858b394c6908b91f14557c3e1eed7b
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 0760805128f8f11b4598a5c8b0d19d8e9f20d04d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037346"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050957"
 ---
 # <a name="command-bar-flyout"></a>Всплывающее меню панели команд
 
@@ -406,7 +406,7 @@ TextCommandBarFlyout не может быть изменен и автомати
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
-- [Пример команд XAML](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [Пример команд XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="related-articles"></a>Смежные разделы
 

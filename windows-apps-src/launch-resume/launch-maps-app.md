@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08fab2b312fa4ea79d03f350d62070e205d535f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 021e3142a4e94f762cc48dbc86905dcf0b658772
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920734"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045703"
 ---
 # <a name="launch-the-windows-maps-app"></a>Запуск приложения «Карты Windows»
 
@@ -20,7 +20,7 @@ ms.locfileid: "8920734"
 
 Узнайте, как запустить приложение «Карты Windows» из вашего приложения. В этом разделе приводится описание схем универсального кода ресурсов (URI) **bingmaps:, *ms-drive-to:, ms-walk-to:** и **ms-settings:**. Используйте эти схемы URI, чтобы запустить приложение «Карты Windows» для определенных карт, маршрутов и результатов поиска или чтобы скачать автономные карты в приложении «Параметры».
 
-**Совет.** Чтобы получить дополнительные сведения о запуске приложения «Карты Windows» из вашего приложения, скачайте документ [Пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977) из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
+**Совет.** Чтобы получить дополнительные сведения о запуске приложения «Карты Windows» из вашего приложения, скачайте документ [Пример карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977) из [репозитория Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
 ## <a name="introducing-uris"></a>Знакомство с URI
 
@@ -185,7 +185,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>cpval = degreeslat "~" degreeslon</p>
 <p>degreeslat = ["-"] 1*3DIGIT ["." 1*7DIGIT]</p>
 <p>degreeslon = ["-"] 1*2DIGIT ["." 1*7DIGIT]</p>
-<p>Пример:</p>
+<p>Пример.</p>
 <p>cp=40.726966~-74.006076</p></td>
 <td align="left"><p>Оба значения должны быть выражены в градусах с десятичными знаками и разделены тильдой (<b>~</b>).</p>
 <p>Допустимые значения долготы: от -180 до +180 включительно.</p>
@@ -201,7 +201,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>eastlongitude = degreeslon</p>
 <p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT]</p>
 <p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT]</p>
-<p>Пример:</p>
+<p>Пример.</p>
 <p>bb=39.719_-74.52~41.71_-73.5</p></td>
 <td align="left"><p>Прямоугольная область, определяющая ограничивающий прямоугольник, выраженный в градусах с десятичными знаками; при этом тильда (<b>~</b>) отделяет левый нижний угол от правого верхнего угла. Координаты широты и долготы разделяются символом подчеркивания (<b>_</b>).</p>
 <p>Допустимые значения долготы: от -180 до +180 включительно.</p>
@@ -221,7 +221,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>Условие запроса</p></td>
 <td align="left"><p>q = "q="</p>
 <p>whereval</p>
-<p>Пример:</p>
+<p>Пример.</p>
 <p>q=mexican%20restaurants</p></td>
 <td align="left"><p>Условия поиска местной компании или категории компаний.</p></td>
 </tr>
@@ -237,7 +237,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>sty</b></p></td>
 <td align="left"><p>Стиль</p></td>
 <td align="left"><p>sty = "sty=" ("a" / "r"/"3d")</p>
-<p>Пример:</p>
+<p>Пример.</p>
 <p>sty=a</p></td>
 <td align="left"><p>Определяет стиль карты. Допустимые значения этого параметра приведены ниже.</p>
 <ul>
@@ -257,7 +257,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>rad</b></p></td>
 <td align="left"><p>Радиус</p></td>
 <td align="left"><p>rad = "rad=" 1*8DIGIT</p>
-<p>Пример:</p>
+<p>Пример.</p>
 <p>rad=1000</p></td>
 <td align="left"><p>Круговая область, которая определяет нужное представление карты. Значение радиуса измеряется в метрах.</p></td>
 </tr>
@@ -265,7 +265,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>pit</b></p></td>
 <td align="left"><p>Уклон</p></td>
 <td align="left"><p>pit = "pit=" уклон</p>
-<p>Пример:</p>
+<p>Пример.</p>
 <p>pit=60</p></td>
 <td align="left"><p>Обозначает угол просмотра карты, где 90 смотрит на горизонт (максимум), а 0— непосредственно вниз (минимум).</p><p>Допустимые значения угла: от 0 до 90 включительно.</td>
 </tr>
@@ -273,7 +273,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>hdg</b></p></td>
 <td align="left"><p>Направление</p></td>
 <td align="left"><p>hdg = "hdg=" heading</p>
-<p>Пример:</p>
+<p>Пример.</p>
 <p>hdg=180</p></td>
 <td align="left"><p>Обозначает направление карты в градусах, где 0 или 360— это север, 90— восток, 180— юг, а 270— запад.</p></td>
 </tr>
@@ -281,7 +281,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>ss</b></p></td>
 <td align="left"><p>Streetside</p></td>
 <td align="left"><p>ss = "ss=" BIT</p>
-<p>Пример:</p>
+<p>Пример.</p>
 <p>ss=1</p></td>
 <td align="left"><p>Обозначает, что при <code>ss=1</code> отображается представление на уровне улиц. Если опустить параметр <b>ss</b>, будут получены те же результаты, что и при указании <code>ss=0</code>. Используйте совместно с параметром <b>cp</b>, чтобы указать местоположение представления на уровне улиц.</p>
 <div class="alert">

@@ -5,12 +5,12 @@ ms.date: 07/06/2018
 ms.topic: article
 keywords: триггер фоновой задачи, фоновой задачи
 ms.localizationpriority: medium
-ms.openlocfilehash: 237f342029f8d9bc0bbec1fcef5c7059cbf09840
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 02e4bf3d7977c9bdd675f264a37e608a5082ef4c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935378"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050727"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Запуск фоновой задачи в приложении
 
@@ -155,7 +155,7 @@ var result = await _AppTrigger.RequestAsync();
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Освобождение памяти при переходе приложения в фоновый режим](reduce-memory-usage.md)
 * [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
-* [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 * [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
 * [Задержка приостановки приложения с помощью расширенного сеанса выполнения](run-minimized-with-extended-execution.md)
 * [Регистрация фоновой задачи](register-a-background-task.md)

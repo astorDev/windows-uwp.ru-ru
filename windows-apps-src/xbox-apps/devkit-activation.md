@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: bdde349c09b08efcbc18857f67444bb990b25421
-ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
+ms.openlocfilehash: 59da5dd5866fe79f4420e1e895af74f976526f27
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "8997409"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046264"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Активация режима разработчика Xbox One
 
@@ -46,7 +46,7 @@ Xbox One поддерживает два режима: *коммерческий
 
     ![Активация. Шаг 8](images/activation-step-8-rs2.png)    
     
-8.  Щелкните **Принять и активировать**. Это приведет к перезагрузке страницы, после чего ваше устройство будет внесено в таблицу. Условия соглашения программы активации режима разработчика Xbox One можно найти в разделе [Программа активации режима разработчика Xbox One](http://go.microsoft.com/fwlink/p/?LinkId=760399).
+8.  Щелкните **Принять и активировать**. Это приведет к перезагрузке страницы, после чего ваше устройство будет внесено в таблицу. Условия соглашения программы активации режима разработчика Xbox One можно найти в разделе [Программа активации режима разработчика Xbox One](https://go.microsoft.com/fwlink/p/?LinkId=760399).
 
 9.  После ввода кода активации на консоли появится экран хода выполнения активации.  
     

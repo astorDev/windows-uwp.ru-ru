@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b324cbca6d5e36193c057a6d1473ff1aad7be095
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c598868610e42e0f2ad64ef2d4fedfb48c4d91e9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945078"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047296"
 ---
 # <a name="playready-encrypted-media-extension"></a>Расширение зашифрованного мультимедиа PlayReady
 
@@ -61,7 +61,7 @@ ms.locfileid: "8945078"
 
 В данном разделе описывается версия расширения зашифрованного мультимедиа W3C, поддерживаемого PlayReady.
 
-В настоящее время PlayReady для веб-приложений описан в [черновом варианте расширения зашифрованного мультимедиа W3C от 10мая2013г](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/). В будущих версиях Windows эта поддержка будет изменена до обновленной спецификации расширения зашифрованного мультимедиа.
+В настоящее время PlayReady для веб-приложений описан в [черновом варианте расширения зашифрованного мультимедиа W3C от 10мая2013г](https://www.w3.org/TR/2013/WD-encrypted-media-20130510/). В будущих версиях Windows эта поддержка будет изменена до обновленной спецификации расширения зашифрованного мультимедиа.
 
 ## <a name="use-hardware-drm"></a>Использование аппаратного управления цифровыми правами DRM
 

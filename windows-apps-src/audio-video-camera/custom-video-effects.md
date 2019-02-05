@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: a9e796eee76025e7697c08669e6942e0d69206f7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1e48febb3fb49a35fe256e58cf7c80b4abe93267
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923494"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045573"
 ---
 # <a name="custom-video-effects"></a>Пользовательские видеоэффекты
 
@@ -162,7 +162,7 @@ ms.locfileid: "8923494"
 ## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>Реализация интерфейса IBasicVideoEffect путем аппаратной обработки
 
 
-Создание пользовательского видеоэффекта с помощью аппаратной (GPU) обработки выполняется практически так же, как с использованием программной обработки, описанной выше. В этом разделе показаны несколько отличий в эффекте, использующем аппаратную обработку. В этом примере используется API среды выполнения Windows Win2D. Подробную информацию об использовании Win2D см. в [документации по Win2D](http://go.microsoft.com/fwlink/?LinkId=519078).
+Создание пользовательского видеоэффекта с помощью аппаратной (GPU) обработки выполняется практически так же, как с использованием программной обработки, описанной выше. В этом разделе показаны несколько отличий в эффекте, использующем аппаратную обработку. В этом примере используется API среды выполнения Windows Win2D. Подробную информацию об использовании Win2D см. в [документации по Win2D](https://go.microsoft.com/fwlink/?LinkId=519078).
 
 Выполните следующие действия, чтобы добавить пакет Win2D NuGet в проект, созданный согласно описанию в разделе **Добавление пользовательского эффекта в приложение** в начале этой статьи.
 
@@ -241,5 +241,5 @@ ms.locfileid: "8923494"
 ## <a name="related-topics"></a>Статьи по теме
 * [Простой доступ к просмотру камеры](simple-camera-preview-access.md)
 * [Создание и редактирование композиций мультимедиа](media-compositions-and-editing.md)
-* [Документация по Win2D](http://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Документация по Win2D](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Воспроизведение мультимедиа](media-playback.md)

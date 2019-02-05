@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: d56482ee036eaadbd759de9af22fdd10c652aceb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9c437e30db7007a6889a822d7d2219f1647bb3d8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932640"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051037"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>Известные проблемы с упакованных классических приложений
 
@@ -67,7 +67,7 @@ ms.locfileid: "8932640"
 - Размер записи **WIN_CERTIFICATE** должен быть положительным.
 - Запись **WIN_CERTIFICATE** должна начинаться после структуры **IMAGE_NT_HEADERS32** для 32-разрядных исполняемых файлов и после структуры IMAGE_NT_HEADERS64 для 64-разрядных исполняемых файлов.
 
-Дополнительные сведения см. в спецификациях [Формат подписи Authenticode Portal Executable](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx) и [Формат файла PE](https://msdn.microsoft.com/windows/hardware/gg463119.aspx).
+Дополнительные сведения см. в спецификациях [Формат подписи Authenticode Portal Executable](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx) и [Формат файла PE](https://msdn.microsoft.com/windows/hardware/gg463119.aspx).
 
 Обратите внимание, что при попытке подписывания пакета приложения для Windows средство SignTool.exe может выводить информацию о поврежденных или деформированных двоичных файлах. Чтобы это сделать, включите регистрацию подробных сведений в журнале, задав переменной среды APPXSIP_LOG значение 1 (например, ```set APPXSIP_LOG=1``` ) и перезапустите средство SignTool.exe.
 
@@ -164,7 +164,7 @@ ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.e
 
 **Поиск ответов на вопросы**
 
-Есть вопросы? Задайте их на Stack Overflow. Наша команда следит за этими [тегами](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Вы также можете задать нам вопросы [здесь](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Есть вопросы? Задайте их на Stack Overflow. Наша команда следит за этими [тегами](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Вы также можете задать нам вопросы [здесь](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
 **Оставьте отзыв или предложите новые возможности для реализации**
 

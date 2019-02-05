@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: uwp, покупки из приложения, IAP, надстройки, пробные версии, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f5875721d17bda79842989c1ac22475a06e938
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 96260b0fb2aa0818dd6df52f88bd0c63d56c35b7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946129"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046983"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store
 
@@ -155,7 +155,7 @@ ms.locfileid: "8946129"
 5. Переключитесь на ваш файл WindowsStoreProxy.xml в Visual Studio.
 6. В меню **XML** нажмите **Схемы** и найдите строку в списке для файла WindowsStoreProxy.xsd. Если указанное расположение для файла не соответствует требуемому (например, если все еще отображается временный файл), нажмите **Добавить**. Перейдите к нужному файлу и нажмите **ОК**. Теперь вы должны увидеть этот файл в списке. Убедитесь, что в столбце **Использовать** для этой схемы появился флажок.
 
-После этого изменения, внесенные в WindowsStoreProxy.xml, будут зависеть от схемы. Дополнительные сведения см. в разделе [Практическое руководство: выбор схем XML для использования](http://go.microsoft.com/fwlink/p/?LinkId=403014).
+После этого изменения, внесенные в WindowsStoreProxy.xml, будут зависеть от схемы. Дополнительные сведения см. в разделе [Практическое руководство: выбор схем XML для использования](https://go.microsoft.com/fwlink/p/?LinkId=403014).
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -441,7 +441,7 @@ ms.locfileid: "8946129"
 |  **Price**  |    Да  |  1   |     Цена надстройки в этой стране/регионе.        |
 |  **CurrencySymbol**  |    Да  |  1   |     Обозначение денежной единицы, используемой в этой стране/регионе.        |
 |  **CurrencyCode**  |    Нет  |  0или1      |      Код валюты, используемой в этой стране/регионе.         |  
-|  **Description**  |    Нет  |   0или1   |      Описание надстройки в этой стране/регионе.       |
+|  **Description**  |    No  |   0или1   |      Описание надстройки в этой стране/регионе.       |
 |  **Tag**  |    Нет  |   0или1   |      [Пользовательские данные, определенные разработчиком](../publish/enter-add-on-properties.md#custom-developer-data) (также называются тегом) для надстройки.       |
 |  **Keywords**  |    Нет  |   0или1   |      Содержит до 10 элементов **Keyword**, которые содержат [ключевые слова](../publish/enter-add-on-properties.md#keywords) для надстройки.       |
 |  **ImageUri**  |    Нет  |   0или1   |      [Универсальной код ресурса (URI) для изображения](../publish/create-add-on-store-listings.md#icon) в описании надстройки.           |  |

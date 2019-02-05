@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 31c165d47beea8ee0e31a3213bdd0dbf0c2bc3d7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d2f883e62cf7c61560295673cf48cf891befed91
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927778"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044458"
 ---
 # <a name="directx-11-porting-faq"></a>Вопросы и ответы по переносу на DirectX11
 
@@ -42,12 +42,12 @@ Direct3D11 значительно обновлен по сравнению с Di
 ## <a name="my-game-code-is-based-on-d3dx-and-dxut-is-there-anything-available-that-can-help-me-migrate-my-code"></a>Код моей игры основан на D3DX и DXUT. Есть ли какие-либо способы переноса моего кода?
 
 
-Сообщество [DirectX Tool Kit (DirectXTK)](http://go.microsoft.com/fwlink/p/?LinkID=248929) предлагает вспомогательные классы для использования с Direct3D11.
+Сообщество [DirectX Tool Kit (DirectXTK)](https://go.microsoft.com/fwlink/p/?LinkID=248929) предлагает вспомогательные классы для использования с Direct3D11.
 
 ##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>Как сохранить пути кода для рабочего стола и магазина Майкрософт?
 
 
-Chuck Walbourn серии [Методы написания кода использовании для игр](http://go.microsoft.com/fwlink/p/?LinkID=286210) представлены рекомендации совместное использование кода между рабочего стола и пути кода Microsoft Store.
+Chuck Walbourn серии [Методы написания кода использовании для игр](https://go.microsoft.com/fwlink/p/?LinkID=286210) представлены рекомендации совместное использование кода между рабочего стола и пути кода Microsoft Store.
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>Как загружать ресурсы изображений в приложение UWP с DirectX?
 
@@ -57,7 +57,7 @@ Chuck Walbourn серии [Методы написания кода исполь
 -   Конвейер содержимого преобразует изображения в DDS-файлы, используемые в качестве ресурсов текстур Direct3D. См. раздел [Использование трехмерных ресурсов в игре или приложении](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx).
 -   Для загрузки изображений в различных форматах можно использовать [Компонент обработки изображений Windows](https://msdn.microsoft.com/library/windows/desktop/ee719902). Его также можно применять для точечных рисунков Direct2D и ресурсов текстур Direct3D.
 
-Также можно воспользоваться средствами загрузки DDSTextureLoader и WICTextureLoader из [DirectXTK](http://go.microsoft.com/fwlink/p/?LinkID=248929) или [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926).
+Также можно воспользоваться средствами загрузки DDSTextureLoader и WICTextureLoader из [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929) или [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926).
 
 ## <a name="where-is-the-directx-sdk"></a>Где находится пакет SDK для DirectX?
 
@@ -74,7 +74,7 @@ Chuck Walbourn серии [Методы написания кода исполь
 ## <a name="is-there-any-way-i-can-update-my-desktop-code-to-directx-11-before-moving-away-from-effects"></a>Есть ли способ обновить код для рабочего стола до DirectX11 перед прекращением использования эффектов?
 
 
-См. раздел [Эффекты для обновления Direct3D11](http://go.microsoft.com/fwlink/p/?LinkId=271568). Эффекты11 помогают удалить зависимости от устаревших заголовков DirectX SDK. Их можно использовать в качестве помощи при переносе и только с классическими приложениями.
+См. раздел [Эффекты для обновления Direct3D11](https://go.microsoft.com/fwlink/p/?LinkId=271568). Эффекты11 помогают удалить зависимости от устаревших заголовков DirectX SDK. Их можно использовать в качестве помощи при переносе и только с классическими приложениями.
 
 ##  <a name="is-there-a-path-for-porting-my-directx-8-game-to-uwp"></a>Существует ли путь переноса игры с DirectX8 в UWP?
 
@@ -116,7 +116,7 @@ Chuck Walbourn серии [Методы написания кода исполь
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>Что использовать для моделей вместо формата файлов .x?
 
 
-Хотя у нас нет официальной замены формата файлов .x, во многих примерах использован формат SDKMesh. Visual Studio также включает [конвейер содержимого](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx), который компилирует несколько популярных форматов в CMO-файлы, которые можно загрузить с кодом из начального набора Visual Studio3D или с помощью [DirectXTK](http://go.microsoft.com/fwlink/p/?LinkID=248929).
+Хотя у нас нет официальной замены формата файлов .x, во многих примерах использован формат SDKMesh. Visual Studio также включает [конвейер содержимого](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx), который компилирует несколько популярных форматов в CMO-файлы, которые можно загрузить с кодом из начального набора Visual Studio3D или с помощью [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929).
 
 ## <a name="how-do-i-debug-my-shaders"></a>Как реализовать отладку шейдеров?
 

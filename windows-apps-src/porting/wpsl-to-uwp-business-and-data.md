@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cb53295227655e3067dafd5e3a3f1f4631a97455
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3e5b97c236f71c95cdff9c56ccc205d3b0fbde5e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936745"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044701"
 ---
 #  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>Перенос бизнеса WindowsPhone Silverlight и уровни данных в UWP
 
@@ -30,11 +30,11 @@ ms.locfileid: "8936745"
 
 Для передачи файлов большие объемы данных в фоновом режиме, приложение WindowsPhone Silverlight используется класс **BackgroundTransferService** . В приложении UWP для этого используются API-интерфейсы в пространстве имен [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242). Данные функции используют аналогичный шаблон начала передачи данных, но новый API обладает улучшенными возможностями и производительностью. Дополнительные сведения см. в разделе [Передача данных в фоновом режиме](https://msdn.microsoft.com/library/windows/apps/xaml/hh452975).
 
-Приложение WindowsPhone Silverlight использует управляемые классы в пространстве имен **Microsoft.Phone.BackgroundAudio** для воспроизведения звука, пока приложение не находится на переднем плане. UWP использует модель приложения Магазина Windows Phone. См. раздел [Фоновый звук](https://msdn.microsoft.com/library/windows/apps/mt282140) и пример [Фоновый звук](http://go.microsoft.com/fwlink/p/?linkid=619997).
+Приложение WindowsPhone Silverlight использует управляемые классы в пространстве имен **Microsoft.Phone.BackgroundAudio** для воспроизведения звука, пока приложение не находится на переднем плане. UWP использует модель приложения Магазина Windows Phone. См. раздел [Фоновый звук](https://msdn.microsoft.com/library/windows/apps/mt282140) и пример [Фоновый звук](https://go.microsoft.com/fwlink/p/?linkid=619997).
 
 ## <a name="cloud-services-networking-and-databases"></a>Облачные службы, сеть и и базы данных
 
-Размещение данных и служб приложений в облаке возможны с помощью Azure. См. раздел [Начало работы с мобильными службами](http://go.microsoft.com/fwlink/p/?LinkID=403138). Решения, которым требуются сетевые и автономные данные, описаны в разделе [Использование синхронизации автономных данных в мобильных службах](http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/).
+Размещение данных и служб приложений в облаке возможны с помощью Azure. См. раздел [Начало работы с мобильными службами](https://go.microsoft.com/fwlink/p/?LinkID=403138). Решения, которым требуются сетевые и автономные данные, описаны в разделе [Использование синхронизации автономных данных в мобильных службах](https://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/).
 
 UWP частично поддерживает класс **System.Net.HttpWebRequest**, но класс **System.Net.WebClient** не поддерживается. Рекомендуемая дальновидная альтернатива — класс [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx), если необходимо, чтобы код можно было переносить на другие платформы, поддерживающие .NET). Эти API-интерфейсы используют [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) для представления запроса HTTP.
 

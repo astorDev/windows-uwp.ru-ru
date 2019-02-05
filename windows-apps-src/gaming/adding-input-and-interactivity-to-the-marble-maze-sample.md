@@ -1,17 +1,17 @@
 ---
-title: Добавление средств ввода и взаимодействия в пример Marble Maze
+title: Добавление ввода и интерактивной функциональности в образец Marble Maze
 description: Некоторые важные рекомендации, которые следует иметь в виду при работе с устройствами ввода.
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, ввод, пример
 ms.localizationpriority: medium
-ms.openlocfilehash: aee239f76c3d4431426f0bc9fe519a59f8f48838
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d545f696a93bfa8416e1a772ecc015867a3615c2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923444"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045450"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Добавление средств ввода и взаимодействия в пример Marble Maze
 
@@ -21,7 +21,7 @@ ms.locfileid: "8923444"
 Игры универсальной платформы Windows (UWP) работают на самых разных устройствах, таких как настольные компьютеры, ноутбуки и планшеты. Устройство может располагать разнообразными механизмами ввода и управления. В данном документе приведены ключевые рекомендации, которые стоит учитывать при работе с устройствами ввода, и показано применение этих рекомендаций на примере приложения Marble Maze.
 
 > [!NOTE]
-> Пример кода, соответствующего этому документу, см. в [примере игры DirectX Marble Maze](http://go.microsoft.com/fwlink/?LinkId=624011).
+> Пример кода, соответствующего этому документу, см. в [примере игры DirectX Marble Maze](https://go.microsoft.com/fwlink/?LinkId=624011).
 
  
 Вот ключевые моменты, которые касаются работы с вводом в игре и рассматриваются в этом документе.

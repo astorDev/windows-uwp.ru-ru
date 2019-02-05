@@ -6,12 +6,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f9912abb954592cd2a467008cc427cac833f35
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b0ed1c7f01e8cb06f6950f2ad23a42605e97c1a0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928435"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050737"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Применение исправлений среды выполнения для пакета MSIX с помощью платформа поддержки пакетов
 
@@ -29,7 +29,7 @@ ms.locfileid: "8928435"
 
 ### <a name="using-process-monitor-to-identify-an-issue"></a>Использование монитора процесс для определения проблемы
 
-[Монитор процессов](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) — это мощное служебная программа для наблюдение файл приложения и операции и его результаты.  Это может помочь вам понять проблем совместимости приложений.  После открытия монитор процессов, добавьте фильтр (фильтр > Фильтр …) для включения только события исполняемый файл приложения.
+[Монитор процессов](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) — это мощное служебная программа для наблюдение файл приложения и операции и его результаты.  Это может помочь вам понять проблем совместимости приложений.  После открытия монитор процессов, добавьте фильтр (… для фильтра > фильтра), чтобы включить только события исполняемый файл приложения.
 
 ![Фильтр ProcMon приложения](images/desktop-to-uwp/procmon_app_filter.png)
 
@@ -186,7 +186,7 @@ nuget install Microsoft.PackageSupportFramework
 
 Ниже приведена руководство по схеме config.json.
 
-| Массив | key | Значение |
+| Массив | key | Value |
 |-------|-----------|-------|
 | Приложения | id |  Используйте значение `Id` атрибута `Application` в манифесте пакета. |
 | Приложения | исполняемые | Пакет относительный путь исполняемого файла, который вы хотите начать. В большинстве случаев вы можете получить это значение из файла манифеста пакета перед внесением изменений. Это значение `Executable` атрибута `Application` элемента. |
@@ -399,7 +399,7 @@ Visual Studio можно использовать для отладки испр
 
 Предоставляет значение для каждого ключа. Руководствуйтесь в этой таблице.
 
-| Массив | key | Значение |
+| Массив | key | Value |
 |-------|-----------|-------|
 | Приложения | id |  Используйте значение `Id` атрибута `Application` в манифесте пакета. |
 | Приложения | исполняемые | Пакет относительный путь исполняемого файла, который вы хотите начать. В большинстве случаев вы можете получить это значение из файла манифеста пакета перед внесением изменений. Это значение `Executable` атрибута `Application` элемента. |
@@ -553,4 +553,4 @@ bp ...
 
 **Поиск ответов на вопросы**
 
-Есть вопросы? Задайте их на Stack Overflow. Наша команда следит за этими [тегами](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Вы также можете задать нам вопросы [здесь](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Есть вопросы? Задайте их на Stack Overflow. Наша команда следит за этими [тегами](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Вы также можете задать нам вопросы [здесь](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).

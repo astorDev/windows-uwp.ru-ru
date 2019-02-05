@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 345a41a45e28843161e65ecb04f0083f1a71269a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942850"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048351"
 ---
 # <a name="uri-schemes"></a>Схемы URI
 
@@ -19,9 +19,9 @@ ms.locfileid: "8942850"
 
 ## <a name="common-features-of-the-uri-schemes"></a>Общие компоненты схем URI
 
-Все схемы, описанные в этом разделе, соответствуют стандартам схем URI по нормализации и извлечению ресурсов. В разделе [RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) приводится универсальный синтаксис URI.
+Все схемы, описанные в этом разделе, соответствуют стандартам схем URI по нормализации и извлечению ресурсов. В разделе [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) приводится универсальный синтаксис URI.
 
-Все схемы URI определяют иерархическую часть в соответствии с [RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) как компоненты полномочий и пути URI.
+Все схемы URI определяют иерархическую часть в соответствии с [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) как компоненты полномочий и пути URI.
 
 ```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
@@ -267,7 +267,7 @@ ms-resource:///Hello%23World/String1
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Универсальный код ресурса (URI): общий синтаксис](http://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [Универсальный код ресурса (URI): общий синтаксис](https://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [Создание пакетов приложений](../packaging/index.md)
 * [Ссылки на изображения и другие ресурсы из кода и разметки XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md)

@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: e765faeabc754581efc769804e2daf4bfe7f9671
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e440812861cf853810f9fee597c807b439dda426
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941335"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044149"
 ---
 # <a name="handle-app-suspend"></a>Обработка приостановки работы приложения
 
@@ -137,7 +137,7 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 Система не уведомляет приложение о завершении его работы, поэтому в случае приостановки приложение должно сохранять свои данные и освобождать монопольные ресурсы и дескрипторы файлов, а затем восстанавливать их во время активации после завершения работы.
 
-Если вы используете асинхронный вызов в обработчике, контроль после его завершения возвращается немедленно. Это означает, что обработчик событий вернет управление приложению, которое сможет перейти в следующее состояние, даже если асинхронный вызов еще не завершен. Используйте метод [**GetDeferral**](http://aka.ms/Kt66iv) объекта [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4), который передается обработчику события, чтобы задержать приостановку после вызова метода [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) возвращенного объекта [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx).
+Если вы используете асинхронный вызов в обработчике, контроль после его завершения возвращается немедленно. Это означает, что обработчик событий вернет управление приложению, которое сможет перейти в следующее состояние, даже если асинхронный вызов еще не завершен. Используйте метод [**GetDeferral**](https://aka.ms/Kt66iv) объекта [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4), который передается обработчику события, чтобы задержать приостановку после вызова метода [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) возвращенного объекта [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx).
 
 Отсрочка не увеличивает время, необходимое для выполнения кода перед завершением работы приложения. Она только откладывает завершение до вызова метода *Complete* отсрочки или наступления крайнего срока (*в зависимости от того, происходит первым*). Чтобы увеличить это время используется состояние Suspending [ **ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 

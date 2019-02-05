@@ -8,12 +8,12 @@ keywords: перо, мышь, сенсорная панель, сенсорны�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c8f670a5139d4969489bede3b0b4bbf72de2d55
-ms.sourcegitcommit: 2ef3d22a30afe853de891280e11d96e5e1ab62d1
+ms.openlocfilehash: 596e9221fac686964b4faaa8a75f112dbb8ddf5a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "8981873"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048401"
 ---
 # <a name="handle-pointer-input"></a>Работа с входными данными указателя
 
@@ -954,15 +954,15 @@ namespace UWP_Pointers
 * [Пример ввода указателя (UserControl с анимацией)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
 
 **Другие примеры**
-* [Пример базового ввода](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Пример ввода с малой задержкой](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Пример режима взаимодействия с пользователем](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Пример визуальных элементов фокуса](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Пример базового ввода](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Пример ввода с малой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Пример режима взаимодействия с пользователем](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Примеры архива**
-* [Ввод: пример событий пользовательского ввода на XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Ввод: пример возможностей устройств](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Ввод: пример управления и жестов (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Ввод: пример тестирования сенсорного ввода](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [Пример прокрутки, сдвига и масштабирования на XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Ввод: пример упрощенного рукописного ввода](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Ввод: пример событий пользовательского ввода на XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Ввод: пример возможностей устройств](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Ввод: пример управления и жестов (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [Ввод: пример тестирования сенсорного ввода](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [Пример прокрутки, сдвига и масштабирования на XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Ввод: пример упрощенного рукописного ввода](https://go.microsoft.com/fwlink/p/?linkid=246570)

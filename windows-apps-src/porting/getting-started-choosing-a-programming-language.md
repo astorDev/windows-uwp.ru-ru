@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a9544c1eecc4c1a86552d053694872743a17142c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 48cea8c1a3a3c35a53a3376c48e3192c94caf709
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926227"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049291"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>Начало работы: выбор языка программирования
 
@@ -31,7 +31,7 @@ ms.locfileid: "8926227"
 **Примечание**для приложений, использующих трехмерную графику: стандарты OpenGL и OpenGL ES не являются доступными для приложений UWP. Если вы не желаете переписывать код OpenGL ES в Microsoft DirectX, возможно, вам будет интересно узнать о проекте **Angle**. Angle — это текущий проект, предназначенный для преобразования OpenGL в DirectX путем перевода вызовов API OpenGL в вызовы API DirectX. Подробнее см. в следующих разделах:
 -   [Angle](https://code.google.com/p/angleproject/)
 -   [Создание первого приложения UWP с использованием DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
--   [Примеры приложений UWP, использующие DirectX](http://go.microsoft.com/fwlink/p/?LinkId=263603)
+-   [Примеры приложений UWP, использующие DirectX](https://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [Где находится пакет SDK для DirectX?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
 ## <a name="giving-c-a-go"></a>Попробуйте C#
@@ -39,8 +39,8 @@ ms.locfileid: "8926227"
 Как разработчик iOS, вы привыкли использовать Objective-C и Swift. Среди языков программирования Майкрософт наиболее близким к обеим является C#. Мы считаем, что для разработчиков наиболее простым в изучении и использовании является C#, поэтому для пошаговых руководств выбран именно этот язык. Подробнее о языке C#:
 
 -   [Создание первого приложения UWP на C# или Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
--   [Примеры приложений UWP, использующих C#](http://go.microsoft.com/fwlink/p/?LinkId=263453)
--   [Visual C#](http://go.microsoft.com/fwlink/p/?LinkId=263450)
+-   [Примеры приложений UWP, использующих C#](https://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [Visual C#](https://go.microsoft.com/fwlink/p/?LinkId=263450)
 
 Ниже приведен класс, написанный на языках Objective-C и C#. Вариант на Objective-C показан первым, а вариант на C#— вторым.
 

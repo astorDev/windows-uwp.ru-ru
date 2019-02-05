@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ddeee438e946dd28a78d59d163f59cb1114aa65
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4de36ba8c87c764ff1280e2c886d1ff8692b3246
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929424"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046038"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Перенос XAML среды выполнения Windows 8.x и пользовательского интерфейса в UWP
 
@@ -104,9 +104,9 @@ ms.locfileid: "8929424"
 | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584), [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | В приложении для Windows10 невозможно разместить [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) и [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) внутри всплывающего элемента. Если вы хотите, чтобы эти элементы управления отображались во всплывающем элементе управления, затем можно использовать [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) и [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313). |
 | **GridView**, **ListView** | Сведения о **GridView**/**ListView** см. в разделе [Изменения GridView в и ListView](#gridview-and-listview-changes). |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | В приложении Магазина Windows Phone элемент управления [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) создает оболочку от последнего раздела к первому. В приложении среды выполнения Windows 8.x и в приложении для Windows10 главных разделов не создают оболочку. |
-| [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | В приложении Магазина Windows Phone фоновое изображение элемента управления [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) перемещается в параллаксе относительно главных разделов. В приложении среды выполнения Windows 8.x и в приложении для Windows10 параллакс не используется. |
+| [**Центр**](https://msdn.microsoft.com/library/windows/apps/dn251843) | В приложении Магазина Windows Phone фоновое изображение элемента управления [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) перемещается в параллаксе относительно главных разделов. В приложении среды выполнения Windows 8.x и в приложении для Windows10 параллакс не используется. |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | В универсальном приложении версии 8.1 из-за свойства [**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) заголовок раздела и глиф шеврона, отображаемый рядом с ним, становятся интерактивными. В приложении для Windows10 кроме заголовка существует интерактивная возможность «Подробнее», но сам заголовок не является интерактивным. **IsHeaderInteractive** по-прежнему определяет, вызывает ли взаимодействие событие [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953). |
-| **MessageDialog** | Рекомендуется вместо **MessageDialog** использовать более гибкий [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972). См. также пример [Основы создания пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?linkid=619992). |
+| **MessageDialog** | Рекомендуется вместо **MessageDialog** использовать более гибкий [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972). См. также пример [Основы создания пользовательского интерфейса XAML](https://go.microsoft.com/fwlink/p/?linkid=619992). |
 | **ListPickerFlyout**, **PickerFlyout**  | **ListPickerFlyout** и **PickerFlyout** являются устаревшими для Windows10 приложения. Для простого всплывающего элемента используйте [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030). Для более сложных элементов используйте [**Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496). |
 | [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | Свойство [**PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579) рекомендуется использовать в приложении для Windows10 и его установка не оказывает воздействия. Вместо этого используйте [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867) по умолчанию для **временного просмотра** (в котором глиф глаза отображается, как в приложении среды выполнения Windows 8.x). См. также раздел [Руководство по полям паролей](https://msdn.microsoft.com/library/windows/apps/dn596103). |
 | [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) | Элемент управления [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) теперь универсален, его использование больше не ограничивается мобильными устройствами. |
@@ -122,7 +122,7 @@ ms.locfileid: "8929424"
 
 ##  <a name="design-language-in-windows10"></a>Язык дизайна в Windows10
 
-Существуют некоторые небольшие, но важные отличия в языке дизайна между универсальных приложений версии 8.1 и Windows10. Все сведения см. в разделе [Дизайн](http://dev.windows.com/design). Несмотря на изменения языка дизайна, принципы дизайна остаются прежними: будьте внимательны к подробным сведениям, но всегда стремитесь к простоте и фокусируйте внимание на содержимом, а не внешнем оформлении, уменьшая количество визуальных элементов и сохраняя аутентичность цифрового домена; используйте визуальную иерархию особенно для шрифтового оформления; проектируйте, используя сетку; а также реализуйте свои идеи с помощью плавных анимаций.
+Существуют некоторые небольшие, но важные отличия в языке дизайна между универсальных приложений версии 8.1 и Windows10. Все сведения см. в разделе [Дизайн](https://dev.windows.com/design). Несмотря на изменения языка дизайна, принципы дизайна остаются прежними: будьте внимательны к подробным сведениям, но всегда стремитесь к простоте и фокусируйте внимание на содержимом, а не внешнем оформлении, уменьшая количество визуальных элементов и сохраняя аутентичность цифрового домена; используйте визуальную иерархию особенно для шрифтового оформления; проектируйте, используя сетку; а также реализуйте свои идеи с помощью плавных анимаций.
 
 ## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>Эффективные пиксели, расстояние от экрана и коэффициенты масштабирования
 
@@ -247,7 +247,7 @@ API-интерфейсы в пространстве имен [**Windows.Media.P
 
 В других случаях ключи ресурсов больше не поддерживаются. Редактор разметки XAML в Visual Studio выделяет ссылки на ключи ресурсов, которые не могут быть разрешены. Например, редактор разметки XAML подчеркнет ссылку к ключу стиля `ListViewItemTextBlockStyle` волнистой линией красного цвета. Если она не будет исправлена, приложение немедленно завершит работу при попытке развернуть его в эмуляторе или на устройстве. Поэтому важно обращать внимание на правильность разметки XAML. И вы увидите, что Visual Studio— это отличный инструмент для нахождения подобных проблем.
 
-Для ключей, которые по-прежнему поддерживаются, изменения языка дизайна означают, что изменились свойства, заданные некоторыми стилями. Например `TitleTextBlockStyle` задает **FontSize** 14,667 пикселя в приложении среды выполнения Windows 8.x и 18,14 пикселя в приложении магазина Windows Phone. Однако тот же стиль задает **FontSize** гораздо большее значение 24 пикселя в приложении для Windows10. Проверьте свои разработки и макеты и используйте соответствующие стили в нужных местах. Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) и [Оформление приложений UWP](http://dev.windows.com/design).
+Для ключей, которые по-прежнему поддерживаются, изменения языка дизайна означают, что изменились свойства, заданные некоторыми стилями. Например `TitleTextBlockStyle` задает **FontSize** 14,667 пикселя в приложении среды выполнения Windows 8.x и 18,14 пикселя в приложении магазина Windows Phone. Однако тот же стиль задает **FontSize** гораздо большее значение 24 пикселя в приложении для Windows10. Проверьте свои разработки и макеты и используйте соответствующие стили в нужных местах. Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) и [Оформление приложений UWP](https://dev.windows.com/design).
 
 Далее приведен полный список ключей, которые больше не поддерживаются.
 
@@ -424,7 +424,7 @@ API-интерфейсы в пространстве имен [**Windows.Media.P
     </AutoSuggestBox>
 ```
 
-См. также раздел [Пример переноса AutoSuggestBox](http://go.microsoft.com/fwlink/p/?linkid=619996).
+См. также раздел [Пример переноса AutoSuggestBox](https://go.microsoft.com/fwlink/p/?linkid=619996).
 
 ## <a name="semanticzoom-changes"></a>Изменения SemanticZoom
 
@@ -460,7 +460,7 @@ API-интерфейсы в пространстве имен [**Windows.Media.P
 
 В приложениях среды выполнения Windows 8.x и Windows Phone, язык по умолчанию для текста — это задать язык сборки или en-us. В приложении для Windows10 язык по умолчанию задано значение язык главного приложения (резервный вариант шрифта). Вы можете явно установить [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066), но вам будет удобнее использовать резервный вариант шрифта, если вы не установите значение для этого свойства.
 
-Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) и [Оформление приложений UWP](http://go.microsoft.com/fwlink/p/?LinkID=533896). Сведения об изменениях элементов управления текстом также см. в разделе [Элементы управления](#controls-and-control-styles-and-templates) выше.
+Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) и [Оформление приложений UWP](https://go.microsoft.com/fwlink/p/?LinkID=533896). Сведения об изменениях элементов управления текстом также см. в разделе [Элементы управления](#controls-and-control-styles-and-templates) выше.
 
 ## <a name="theme-changes"></a>Изменения тем
 

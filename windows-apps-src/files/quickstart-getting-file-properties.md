@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f69c86ac8f7d13970eca8d1bbb50d4859b95f6a6
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 6cde9d8753248614603ee49fb1415ec18ec4669b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980362"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044192"
 ---
 # <a name="get-file-properties"></a>Получение свойств файла
 
@@ -24,7 +24,7 @@ ms.locfileid: "8980362"
 Получите свойства — верхнего уровня, базовые и расширенные — для файла, представленного объектом [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
 
 > [!NOTE]
-> Полный пример см. [Пример доступа к файлам](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> Полный пример см. [Пример доступа к файлам](https://go.microsoft.com/fwlink/p/?linkid=619995).
 
 ## <a name="prerequisites"></a>Необходимые условия
 
@@ -88,9 +88,9 @@ foreach (Windows.Storage.StorageFile file in files)
 
 ## <a name="getting-a-files-extended-properties"></a>Получение расширенных свойств файла
 
-Помимо свойств верхнего уровня и базовых свойств, существует много свойств, связанных с содержимым файла. Доступ к этим расширенным свойствам можно получить, вызвав метод [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124). (Объект [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) получают, вызывая свойство [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225).) Доступ к свойствам верхнего уровня и базовым свойствам файла можно получить, обратившись к ним как к свойствам класса ([**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) и **BasicProperties** соответственно). Однако расширенные свойства получают, передавая коллекцию [IEnumerable](http://go.microsoft.com/fwlink/p/?LinkID=313091) объектов [String](http://go.microsoft.com/fwlink/p/?LinkID=325032), представляющих имена свойств, которые должны быть получены методом **BasicProperties.RetrievePropertiesAsync**. Затем этот метод возвращает коллекцию [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238). После этого каждое расширенное свойство извлекается из коллекции по имени или индексу.
+Помимо свойств верхнего уровня и базовых свойств, существует много свойств, связанных с содержимым файла. Доступ к этим расширенным свойствам можно получить, вызвав метод [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124). (Объект [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) получают, вызывая свойство [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225).) Доступ к свойствам верхнего уровня и базовым свойствам файла можно получить, обратившись к ним как к свойствам класса ([**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) и **BasicProperties** соответственно). Однако расширенные свойства получают, передавая коллекцию [IEnumerable](https://go.microsoft.com/fwlink/p/?LinkID=313091) объектов [String](https://go.microsoft.com/fwlink/p/?LinkID=325032), представляющих имена свойств, которые должны быть получены методом **BasicProperties.RetrievePropertiesAsync**. Затем этот метод возвращает коллекцию [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238). После этого каждое расширенное свойство извлекается из коллекции по имени или индексу.
 
-Этот пример перечисляет все файлы библиотеки изображений, указывает имена нужных свойств (**DataAccessed** и **FileOwner**) в объекте [List](http://go.microsoft.com/fwlink/p/?LinkID=325246), передает объект [List](http://go.microsoft.com/fwlink/p/?LinkID=325246) в [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) для извлечения свойств и затем получает свойства по имени из возвращенного объекта [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238).
+Этот пример перечисляет все файлы библиотеки изображений, указывает имена нужных свойств (**DataAccessed** и **FileOwner**) в объекте [List](https://go.microsoft.com/fwlink/p/?LinkID=325246), передает объект [List](https://go.microsoft.com/fwlink/p/?LinkID=325246) в [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) для извлечения свойств и затем получает свойства по имени из возвращенного объекта [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238).
 
 В разделе [Основные свойства Windows](https://msdn.microsoft.com/library/windows/desktop/mt805470) представлен полный список расширенных свойств файла.
 

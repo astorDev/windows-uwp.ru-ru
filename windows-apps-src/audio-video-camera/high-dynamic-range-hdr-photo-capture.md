@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a4c5005885d150fdd4f6a41b3fb2586e2728bbd5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dde7f966e47aa6c35e3bc4e508eddabf13e313ee
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921888"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045915"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>Фотозахват с расширенным динамическим диапазоном (HDR) и в условиях низкой освещенности
 
@@ -39,7 +39,7 @@ ms.locfileid: "8921888"
 > [!NOTE] 
 > В этой статье используются понятия и код из статьи [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), в которой описаны этапы реализации основных принципов фото- и видеозахвата. Мы рекомендуем ознакомиться с базовым шаблоном захвата мультимедиа в этой статье, прежде чем перейти к более сложным сценариям захвата. Код в этой статье подразумевает, что ваше приложение уже содержит экземпляр MediaCapture, инициализированный надлежащим образом.
 
-Существует универсальной пример Windows, демонстрирующий функциональность класса **AdvancedPhotoCapture**, с помощью которого можно увидеть API, используемые в контексте. Кроме того, этот класс может служить начальной точкой создания собственного приложения. Дополнительные сведения см. в разделе [Пример расширенной съемки на камеру](http://go.microsoft.com/fwlink/?LinkID=620517).
+Существует универсальной пример Windows, демонстрирующий функциональность класса **AdvancedPhotoCapture**, с помощью которого можно увидеть API, используемые в контексте. Кроме того, этот класс может служить начальной точкой создания собственного приложения. Дополнительные сведения см. в разделе [Пример расширенной съемки на камеру](https://go.microsoft.com/fwlink/?LinkID=620517).
 
 ## <a name="advanced-photo-capture-namespaces"></a>Пространства имен расширенного фотозахвата
 

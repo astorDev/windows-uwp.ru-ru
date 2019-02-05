@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e8c995c5a9513bea44664bcb395cd604ba2668c3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7a7f080a3de18ec0acc8fe68d8f0282d92f46125
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926360"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050997"
 ---
 # <a name="composition-brushes"></a>Кисти композиции
 Все отображаемые на экране из приложения UWP отображается, так как они нарисованы кистью. Кисти позволяют рисовать объекты пользовательского интерфейса пользователя с содержимым, начиная от простого одноцветных изображения или рисунки цепочку эффекты. В этом разделе рассматриваются понятия рисования с помощью CompositionBrush.
@@ -134,9 +134,9 @@ _imageVisual.Size = new Vector2(156, 156);
 ```
 
 ### <a name="paint-with-a-custom-drawing"></a>Рисовать с помощью пользовательской отрисовки
-[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) также может использоваться для рисования области с пикселей из ICompositionSurface обработан с помощью [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm) (или D2D).
+[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) также может использоваться для рисования области с пикселей из ICompositionSurface обработан с помощью [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm) (или D2D).
 
-Следующий код показывает, что объекта SpriteVisual заполнен текстовая цепочка обработанный на ICompositionSurface с помощью Win2D. Обратите внимание, что для использования Win2D, необходимо добавить пакет [Win2D NuGet](http://www.nuget.org/packages/Win2D.uwp) в проект.
+Следующий код показывает, что объекта SpriteVisual заполнен текстовая цепочка обработанный на ICompositionSurface с помощью Win2D. Обратите внимание, что для использования Win2D, необходимо добавить пакет [Win2D NuGet](https://www.nuget.org/packages/Win2D.uwp) в проект.
 
 ```cs
 Compositor _compositor;
@@ -444,7 +444,7 @@ _containerVisual.Children.InsertAtTop(_backdropVisual);
 |Закрашивают область с анимированных stretch NineGrid                               |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)                                                                                       |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
 |Закрашивают область следует использовать подобласть                                             |[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) с взаимодействия следует использовать подобласть
 |Закрашивают область с видео                                                 |[MediaElement](https://msdn.microsoft.com/library/windows/apps/mt187272.aspx)                                                                                                  |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) с взаимодействия мультимедиа
-|Закрашивают область с пользовательской двумерной отрисовки                                       |[CanvasControl](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm) из Win2D                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) с Win2D взаимодействия
+|Закрашивают область с пользовательской двумерной отрисовки                                       |[CanvasControl](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm) из Win2D                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) с Win2D взаимодействия
 |Закрашивают область маской неанимированные                                       |Используйте XAML [фигуры](https://docs.microsoft.com/windows/uwp/graphics/drawing-shapes) , чтобы определить маску   |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
 |Закрашивают область с анимированной маски                                        |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)                                                                                           |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
 |Закрашивают область с эффектом анимированных фильтра                               |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)                                                                                         |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, карта, расположение, геозоны
 ms.localizationpriority: medium
-ms.openlocfilehash: e29bcdb8c36cc8cbbb5de11d669da1249e10d706
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e3fe7cb84d4ae265ed20a6a74b76e4f08dd4c1dd
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924837"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047409"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>Руководство по приложениям, использующим функцию геозон
 
@@ -129,7 +129,7 @@ function onVisibilityChanged() {
 
 * [Настройка геозоны](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [Получение сведений о текущем расположении](https://msdn.microsoft.com/library/windows/apps/mt219698)
-* [Пример расположения для универсальной платформы Wndows (UWP) (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Пример расположения для универсальной платформы Wndows (UWP) (geolocation)](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  

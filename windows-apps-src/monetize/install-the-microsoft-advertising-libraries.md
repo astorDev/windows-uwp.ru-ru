@@ -6,16 +6,16 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные объявления, установка, SDK, рекламная библиотека
 ms.localizationpriority: medium
-ms.openlocfilehash: 2066d055f7abf0e9a34e245d9c6a95e14596d362
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 121accdfc8996c609c616838f645f19e2377c7c5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939342"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047755"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Установка Microsoft Advertising SDK
 
-Для отображения рекламы в приложениях UWP для Windows 10 установите [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). Этот пакет SDK является расширением Visual Studio 2015 и последующих версий.
+Для отображения рекламы в приложениях UWP для Windows 10 установите [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp). Этот пакет SDK является расширением Visual Studio 2015 и последующих версий.
 
 > [!NOTE]
 > Если вы разрабатываете приложение UWP на JavaScript/HTML и установили пакет Windows 10 SDK версии 10.0.14393 (Юбилейное обновление) или более поздней версии, вам также потребуется установить библиотеку [WinJS](https://github.com/winjs/winjs) . Эта библиотека ранее включалась в предыдущие версии Windows 10 SDK, но, начиная с Windows 10 SDK версии 10.0.14393 (юбилейное обновление), ее необходимо устанавливать отдельно.
@@ -35,7 +35,7 @@ ms.locfileid: "8939342"
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  Скачайте и установите пакет [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). Установка может занять несколько минут. Обязательно дождитесь завершения процесса.
+3.  Скачайте и установите пакет [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp). Установка может занять несколько минут. Обязательно дождитесь завершения процесса.
 
 4.  Перезапустите Visual Studio.
 
@@ -66,7 +66,7 @@ ms.locfileid: "8939342"
 
 5. В поле поиска введите **Microsoft.Advertising.XAML** (для проектов на XAML) или **Microsoft.Advertising.JS** (для проектов на JavaScript и HTML) и установите соответствующий пакет. Когда установка пакета завершится, сохраните решение.
     > [!NOTE]
-    > Если в окне **Вывод** содержится ошибка *Install-Package*, указывающая, что заданный путь слишком длинный, вам может потребоваться настроить NuGet, чтобы извлечь пакеты в альтернативное расположение с более коротким путем, чем расположение по умолчанию. Для этого добавьте значение ```repositoryPath``` в файл nuget.config на компьютере и задайте ему более короткий путь к папке, куда можно извлечь пакеты NuGet. Дополнительные сведения см. в [этой статье](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) в документации NuGet. Кроме того можно попробовать переместить проект Visual Studio в другую папку с более коротким путем.
+    > Если в окне **Вывод** содержится ошибка *Install-Package*, указывающая, что заданный путь слишком длинный, вам может потребоваться настроить NuGet, чтобы извлечь пакеты в альтернативное расположение с более коротким путем, чем расположение по умолчанию. Для этого добавьте значение ```repositoryPath``` в файл nuget.config на компьютере и задайте ему более короткий путь к папке, куда можно извлечь пакеты NuGet. Дополнительные сведения см. в [этой статье](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) в документации NuGet. Кроме того можно попробовать переместить проект Visual Studio в другую папку с более коротким путем.
 
 6. Закройте решение и снова откройте его.
 
@@ -101,7 +101,7 @@ ms.locfileid: "8939342"
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>Общие сведения о пакетах платформы в Microsoft Advertising SDK
 
-Библиотека Microsoft.Advertising.dll в [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (только UWP) настроена как *пакет платформы*. Эта библиотека содержит рекламные API-интерфейсы в пространствах имен [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) и [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui).
+Библиотека Microsoft.Advertising.dll в [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) (только UWP) настроена как *пакет платформы*. Эта библиотека содержит рекламные API-интерфейсы в пространствах имен [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) и [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui).
 
 Поскольку библиотека представляет собой пакет платформы, это означает, что после установки пользователем версии вашего приложения, которое применяет эту библиотеку, библиотека будет автоматически обновляться на устройстве пользователя через Центр обновления Windows, когда мы опубликуем новую версию библиотеки с исправлениями и улучшенной производительностью. Это позволяет гарантировать, что ваши клиенты всегда будут иметь последнюю доступную версию библиотеки на своих устройствах.
 

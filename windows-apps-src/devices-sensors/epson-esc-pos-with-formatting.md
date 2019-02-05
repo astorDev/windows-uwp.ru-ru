@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 11467a45021da7898c2b617e3b1b01312c795c4c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3c17fb7de151308e41a2e613d86a9c0413c7517e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947538"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047798"
 ---
 # <a name="epson-escpos-with-formatting"></a>Epson ESC/POS с форматированием
 
@@ -59,4 +59,4 @@ printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 printJob.ExecuteAsync();
 ```
 
-Подробнее об ESC/POS, в том числе о доступных командах, см. в разделе [Epson ESC/POS — вопросы и ответы](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). Подробнее о [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) и всех доступных функциях см. в статье [Принтер PointofService](https://msdn.microsoft.com/library/windows/apps/Mt426652) на сайте MSDN.
+Подробнее об ESC/POS, в том числе о доступных командах, см. в разделе [Epson ESC/POS — вопросы и ответы](https://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). Подробнее о [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) и всех доступных функциях см. в статье [Принтер PointofService](https://msdn.microsoft.com/library/windows/apps/Mt426652) на сайте MSDN.

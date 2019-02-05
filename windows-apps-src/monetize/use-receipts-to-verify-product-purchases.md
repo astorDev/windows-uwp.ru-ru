@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, покупки из приложения, IAP, квитанции, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: b71d55d71a63060a66265051fafc8bdf7313e77b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923305"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047256"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Проверка покупок продуктов с помощью квитанций
 
@@ -108,7 +108,7 @@ ms.locfileid: "8923305"
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    Нет        |  0или1  |  Содержит информацию о покупках для текущего приложения.            |
 |  [ProductReceipt](#productreceipt)  |     Нет       |  0 или более    |   Содержит сведения о покупке из приложения для текущего приложения.     |
-|  Signature  |      Да      |  1   |   Этот элемент — стандартная [конструкция XML-DSIG](http://go.microsoft.com/fwlink/p/?linkid=251093). Он содержит элемент **SignatureValue** с подписью, который можно использовать для проверки квитанции, а также элемент **SignedInfo**.      |
+|  Signature  |      Да      |  1   |   Этот элемент — стандартная [конструкция XML-DSIG](https://go.microsoft.com/fwlink/p/?linkid=251093). Он содержит элемент **SignatureValue** с подписью, который можно использовать для проверки квитанции, а также элемент **SignedInfo**.      |
 
 **Receipt** содержит следующие атрибуты.
 

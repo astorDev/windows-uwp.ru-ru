@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e03da83d4045c570490a26cb2e111d12f709ee0
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 1897eded4d18a00a3c11cf1926adb1ebec6ae69a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037156"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044651"
 ---
 # <a name="person-picture-control"></a>Элемент управления "Аватар пользователя"
 
@@ -190,4 +190,4 @@ namespace SampleApp
 ## <a name="related-articles"></a>Еще по теме
 
 * [Контакты и календарь](../../contacts-and-calendar/index.md)
-* [Пример карт контакта](http://go.microsoft.com/fwlink/p/?LinkId=624040)
+* [Пример карт контакта](https://go.microsoft.com/fwlink/p/?LinkId=624040)

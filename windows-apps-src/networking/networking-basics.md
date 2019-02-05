@@ -6,12 +6,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 173164106e068e3fa081c8d7ddf7838d5b3d18db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ffc2f31b52e7913905c7d64ab797b2939cfb313d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927460"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045227"
 ---
 # <a name="networking-basics"></a>Основы работы в сети
 Ниже приведены действия, которые необходимо выполнить для любого приложения, подключаемого к сети.
@@ -45,7 +45,7 @@ ms.locfileid: "8927460"
 ### <a name="choosing-a-network-trigger"></a>Выбор сетевого триггера
 Существуют определенные сценарии, когда любой тип триггера будет соответствующим. При выборе типа триггера для использования в своем приложении не забывайте следующие рекомендации.
 
--   Если вы используете [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) или [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638), вы должны использовать [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+-   Если вы используете [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) или [System.Net.Http.HttpClientHandler](https://go.microsoft.com/fwlink/p/?linkid=241638), вы должны использовать [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 -   Если вы используете **StreamSockets** с поддержкой push-уведомлений, можно использовать триггеры канала управления, но лучше всего использовать [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). Последний вариант позволяет системе освободить память и снизить энергопотребление, когда подключение активно не используется.
 -   Если вы хотите сократить используемый объем памяти приложения, когда приложение активно не обслуживает запросы сети, отдайте предпочтение [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009), если это возможно.
 -   Если вы хотите, чтобы ваше приложение могло получать данные, когда система находится в режиме ожидания с подключением, используйте [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009).
@@ -507,4 +507,4 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 -   Другие API предоставляют метод для получения фактического значения **HRESULT**.
 
 ## <a name="related-topics"></a>Ссылки по теме
-* [Улучшения сетевых API в Windows10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
+* [Улучшения сетевых API в Windows10](https://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)

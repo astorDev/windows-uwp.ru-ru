@@ -6,12 +6,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp, геокодирование, карта, расположение
 ms.localizationpriority: medium
-ms.openlocfilehash: e8b0efe39578974090844a4224055821c29f8ced
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a30ca89242b15866019fffc6972bdae7086f3f7e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920319"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046447"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>Выполнение геокодирования и обратного геокодирования
 
@@ -121,8 +121,8 @@ town = Redmond
 
 ## <a name="related-topics"></a>Связанные разделы
 
-* [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Пример приложения UWP для работы с картами](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Пример приложения UWP для работы с картами](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Видео: Использование карт и расположения на телефонах, планшетов и ПК в приложениях Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Центр разработки Карт Bing](https://www.bingmapsportal.com/)

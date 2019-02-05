@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp, потоки, синхронный, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f0da2f0b9642a817f4efb5b6d30a968c0803ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: beab78415ab36fc7bc0659af1b3466b2c3601d88
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920513"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045968"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>Асинхронное программирование на языке C++/CX
 > [!NOTE]
@@ -289,7 +289,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 ## <a name="related-topics"></a>Еще по теме
 * [Создание асинхронных операций на языке C++/CX для приложений UWP](https://msdn.microsoft.com/library/hh750082)
-* [Справочник по языку Visual C++](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
+* [Справочник по языку Visual C++](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [Асинхронное программирование][AsyncProgramming]
 * [Параллельное выполнение задач (параллельная среда выполнения)][taskParallelism]
 * [concurrency::task](/cpp/parallel/concrt/reference/task-class)

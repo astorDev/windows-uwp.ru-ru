@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6388158a7b1c4fd3fa3e0ab17dcc86b7ef2d7c0e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3bfe034ed697661c81b2f01b67fafeee1941832d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921568"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050767"
 ---
 # <a name="planning-for-performance"></a>Планирование производительности
 
@@ -104,7 +104,7 @@ ms.locfileid: "8921568"
 
 **Запуск и возобновление приложения**
 
--   Откладывание экрана-заставки приложения и предотвращение его ненужного расширения. Дополнительные сведения см. в разделе [Создание быстрого и гибкого взаимодействия при запуске приложения](http://go.microsoft.com/fwlink/p/?LinkId=317595) и [Более продолжительное отображение экрана-заставки](https://msdn.microsoft.com/library/windows/apps/Mt187309).
+-   Откладывание экрана-заставки приложения и предотвращение его ненужного расширения. Дополнительные сведения см. в разделе [Создание быстрого и гибкого взаимодействия при запуске приложения](https://go.microsoft.com/fwlink/p/?LinkId=317595) и [Более продолжительное отображение экрана-заставки](https://msdn.microsoft.com/library/windows/apps/Mt187309).
 -   Отключайте анимации, которые срабатывают сразу после закрытия экрана-заставки, поскольку во время запуска приложения они вызывают ощущение задержки.
 
 **Адаптивный пользовательский интерфейс и ориентация**
@@ -152,7 +152,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 // ...
 ```
 
-См. также раздел [Пример ведения журнала](http://go.microsoft.com/fwlink/p/?LinkId=529576).
+См. также раздел [Пример ведения журнала](https://go.microsoft.com/fwlink/p/?LinkId=529576).
 
 После того как приложение инструментировано, можно тестировать и измерять его производительность.
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, монетизация
 ms.localizationpriority: medium
-ms.openlocfilehash: 91545116b0d7eae107021cc52ee05d299257518c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92d85f81be25eed5f0a43cafb4bb34d9f879c827
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929760"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050927"
 ---
 #  <a name="monetization-for-games"></a>Монетизация для игр
 
@@ -22,7 +22,7 @@ ms.locfileid: "8929760"
 Для продвижения и монетизации игры UWP существуют следующие способы:
 * Помещение игры в Microsoft Store, являющийся защищенной, Интернет-магазин предложения [по всему миру распространения](#worldwide-distribution-channel). Пользователи по всему миру смогут купить вашу игру в Интернете по [установленной вами цене](#set-a-price-for-your-game).
 * Использование API-интерфейсов в Windows SDK для создания [покупок из игры](#in-game-purchases). Игроки могут покупать какие-либо товары из вашей игры или приобретать дополнительное содержимое, например дополнительное снаряжение, обложки, карты или игровые уровни.
-* Использование API-интерфейсов в пакете [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) для показа рекламы из рекламных сетей. Вы можете [показывать рекламу в своей игре](#display-ads-in-your-game) и предоставлять игрокам возможность просматривать видеорекламу в обмен на какие-либо бонусы в игре.
+* Использование API-интерфейсов в пакете [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) для показа рекламы из рекламных сетей. Вы можете [показывать рекламу в своей игре](#display-ads-in-your-game) и предоставлять игрокам возможность просматривать видеорекламу в обмен на какие-либо бонусы в игре.
 * [Увеличение потенциала игры посредством рекламных кампаний](#maximize-your-games-potential-through-ad-campaigns). Вы можете продвигать свою игру, используя платные рекламные кампании, рекламные кампании сообщества (бесплатные) или собственные рекламные кампании (бесплатные) для наращивания пользовательской базы.
 
 ## <a name="worldwide-distribution-channel"></a>Всемирное распространение
@@ -165,7 +165,7 @@ ms.locfileid: "8929760"
 
 Классы [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) и [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) в Microsoft Advertising SDK позволяют отображать рекламу в играх.
 
-Для начала работы с ними скачайте и установите [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) с Visual Studio 2015 или более поздней версией. Подробнее см. в статье об [установке Microsoft Advertising SDK](../monetize/install-the-microsoft-advertising-libraries.md).
+Для начала работы с ними скачайте и установите [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) с Visual Studio 2015 или более поздней версией. Подробнее см. в статье об [установке Microsoft Advertising SDK](../monetize/install-the-microsoft-advertising-libraries.md).
 
 #### <a name="implementation-guides"></a>Пошаговые руководства
 

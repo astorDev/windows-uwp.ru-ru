@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 92e8b0b0d68b1dc4110818977024d3040194a376
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 52ab0dfba6261a5e278a42f38ea13c632df400f9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928465"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050777"
 ---
 # <a name="dependency-properties-overview"></a>Общие сведения о свойствах зависимостей
 
@@ -207,7 +207,7 @@ public bool IsSpinning
 - [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946)
 - [Раскадрованные анимации](https://msdn.microsoft.com/library/windows/apps/mt187354)
 - [Создание компонентов среды выполнения Windows](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-- [Пример пользовательских и настраиваемых элементов управления XAML](http://go.microsoft.com/fwlink/p/?linkid=238581)
+- [Пример пользовательских и настраиваемых элементов управления XAML](https://go.microsoft.com/fwlink/p/?linkid=238581)
 
 ## <a name="apis-related-to-dependency-properties"></a>API, связанные с использованием свойств зависимостей
 

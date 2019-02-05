@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 194bbeefbd3ca5f8237bb3449ec935211056aea3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1c2280fd7234fc41ee02dc17909bda8d7af0e1b9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923686"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049099"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>Привязка к иерархическим данным и создание представления основных и подробных данных
 
 
 
-> **Примечание**также см. [Пример подробных данных](http://go.microsoft.com/fwlink/p/?linkid=619991).
+> **Примечание**также см. [Пример подробных данных](https://go.microsoft.com/fwlink/p/?linkid=619991).
 
 Вы можете создать многоуровневое представление основных и подробных иерархических данных (также известное как "список/подробности") с помощью привязки элементов управления к экземплярам [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), связанным друг с другом в цепочку. В этом разделе мы используем [расширение разметки {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) где возможно, и более гибкое (но менее производительное) [расширение разметки {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) там, где необходимо.
 

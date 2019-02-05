@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6178e2072721ad8514ba7ddfc0ae8f99ab59d34c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4332bd0b19d381937e477efc472634d6d81afd58
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920586"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046497"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>Пространства имен XAML и их сопоставление
 
@@ -65,7 +65,7 @@ ms.locfileid: "8920586"
 
 -   **Атрибут d:DataContext** Этот атрибут можно задать в корне страницы или элементе управления для переопределения любого явного или унаследованного [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713), в противном случае находящегося в объекте.
 -   **Атрибут d:DesignSource** Указывает источник данных времени разработки для [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833), переопределяя [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835).
--   **Расширения разметки d:DesignInstance и d:DesignData** Эти расширения разметки используются для предоставления ресурсов данных времени разработки для **d:DataContext** или **d:DesignSource**. В этом разделе не приводится подробное описание использования ресурсов данных времени разработки. Подробнее см. в разделе [Атрибуты времени разработки](http://go.microsoft.com/fwlink/p/?LinkId=272504). Примеры использования см. в разделе [Демонстрационные данные в рабочей области конструирования и для создания прототипов](https://msdn.microsoft.com/library/windows/apps/mt517866).
+-   **Расширения разметки d:DesignInstance и d:DesignData** Эти расширения разметки используются для предоставления ресурсов данных времени разработки для **d:DataContext** или **d:DesignSource**. В этом разделе не приводится подробное описание использования ресурсов данных времени разработки. Подробнее см. в разделе [Атрибуты времени разработки](https://go.microsoft.com/fwlink/p/?LinkId=272504). Примеры использования см. в разделе [Демонстрационные данные в рабочей области конструирования и для создания прототипов](https://msdn.microsoft.com/library/windows/apps/mt517866).
 
 ### **<a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 

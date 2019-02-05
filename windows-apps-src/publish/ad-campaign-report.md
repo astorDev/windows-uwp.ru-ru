@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, продвижение, приложение, кампания, отчеты, установки
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e44374d56796ea2151424a11df1652892f247b6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7b798abf88805ef3c693149149be958ba0cc1de9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947484"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046843"
 ---
 # <a name="ad-campaign-report"></a>Отчет о рекламной кампании
 
@@ -65,7 +65,7 @@ ms.locfileid: "8947484"
 
 1.  пользователь не отказался от таргетинга;
 2.  пользователь выполнил вход под учетной записью Майкрософт;
-3.  пользователь соответствует требованиям [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) (пользователи, не соответствующие требованиям COPPA, не могут отслеживаться).
+3.  пользователь соответствует требованиям [COPPA](https://go.microsoft.com/fwlink?LinkId=536558) (пользователи, не соответствующие требованиям COPPA, не могут отслеживаться).
 
 В итоге отслеживание установки приложений может привести к занижению фактического числа установок в результате рекламной кампании. Обратите внимание, что вы можете просмотреть общее число установок приложения (посредством кампаний или другим способом) в отчет " [приобретения](acquisitions-report.md) " в центре партнеров.
 

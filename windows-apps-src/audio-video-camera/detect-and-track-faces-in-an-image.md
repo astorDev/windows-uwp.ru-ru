@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 970fbcef984f28e779ea7c133de95f7f7f99be8d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fdeb3f18e6500cc0a907e725f34c0eb96d33876e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923527"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045935"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Обнаружение лиц на изображениях или в видео
 
@@ -23,7 +23,7 @@ ms.locfileid: "8923527"
 
 Сведения об альтернативном методе отслеживания лиц с помощью [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) см. в разделе [Анализ сцен для захвата мультимедиа](scene-analysis-for-media-capture.md).
 
-В этой статье используется код, адаптированный из примеров [Базовое обнаружение лиц](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) и [Базовое отслеживание лиц](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409). Вы можете скачать эти примеры, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки вашего приложения.
+В этой статье используется код, адаптированный из примеров [Базовое обнаружение лиц](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) и [Базовое отслеживание лиц](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409). Вы можете скачать эти примеры, чтобы просмотреть код в контексте или использовать пример как отправную точку для настройки вашего приложения.
 
 ## <a name="detect-faces-in-a-single-image"></a>Обнаружение лиц на одном изображении
 
@@ -98,8 +98,8 @@ ms.locfileid: "8923527"
 ## <a name="related-topics"></a>Смежные разделы
 
 * [Анализ сцен для захвата мультимедиа](scene-analysis-for-media-capture.md)
-* [Пример базового обнаружения лиц](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [Пример базового отслеживания лиц](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [Пример базового обнаружения лиц](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [Пример базового отслеживания лиц](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [Камера](camera.md)
 * [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Воспроизведение мультимедиа](media-playback.md)

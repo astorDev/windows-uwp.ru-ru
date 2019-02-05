@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 ms.localizationpriority: medium
-ms.openlocfilehash: 60642016e5924c554534775a6576b61e935eaf1e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 019db8c93b61f84dde400f7be9f98bf82b1466e8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932507"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048581"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>Перенос игр на HTML для Xbox на UWP
 Xbox One— превосходная платформа для игр на HTML5. Игры на HTML5 работают на браузерном движке [Microsoft Edge](https://developer.microsoft.com/microsoft-edge/). Edge отличается высокой скоростью работы и полностью поддерживает такие возможности HTML5 и CSS 3, как WebGL и холст.
@@ -20,7 +20,7 @@ Xbox One— превосходная платформа для игр на HTML5
 
 Возможности игр на HTML аналогичны возможностям игр любого другого типа. Разработчики могут получать полный доступ к собственным API-интерфейсам, таким как ввод с помощью контроллера, Kinect и др.
 
-Xbox One работает на универсальной платформе Windows. Это значит, что, как и другие устройства Майкрософт, эта консоль поддерживает размещенные веб-приложения, то есть приложения, полностью получаемые с сервера. Подробнее см. в разделе [Размещенные веб-приложения](http://microsoftedge.github.io/WebAppsDocs/en-US/win10/HWA.htm).
+Xbox One работает на универсальной платформе Windows. Это значит, что, как и другие устройства Майкрософт, эта консоль поддерживает размещенные веб-приложения, то есть приложения, полностью получаемые с сервера. Подробнее см. в разделе [Размещенные веб-приложения](https://microsoftedge.github.io/WebAppsDocs/en-US/win10/HWA.htm).
 
 
 В этом видео подробно рассказывается об упакованных и размещенных веб-приложениях на Xbox, включая процедуру их создания.

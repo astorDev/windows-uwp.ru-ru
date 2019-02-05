@@ -8,12 +8,12 @@ keywords: сенсорный ввод, указатель, ввод, взаим�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b662a7689f0b0b24fc3f70a9fbc143d4268d2cb8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b889fede67c7e32ff48c0e48a516f389afda820a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940498"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048646"
 ---
 # <a name="touch-interactions"></a>Взаимодействие с помощью сенсорного экрана
 
@@ -591,17 +591,17 @@ End Sub
 
 **Примеры**
 
-* [Пример базового ввода](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Пример ввода с малой задержкой](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Пример режима взаимодействия с пользователем](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Пример визуальных элементов фокуса](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Пример базового ввода](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Пример ввода с малой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Пример режима взаимодействия с пользователем](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Примеры архивов**
 
-* [Ввод: пример возможностей устройства](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Ввод: пример событий пользовательского ввода на XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Пример прокрутки, сдвига и масштабирования на XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Ввод: жесты и манипуляции с помощью GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Ввод: пример возможностей устройства](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Ввод: пример событий пользовательского ввода на XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Пример прокрутки, сдвига и масштабирования на XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Ввод: жесты и манипуляции с помощью GestureRecognizer](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  

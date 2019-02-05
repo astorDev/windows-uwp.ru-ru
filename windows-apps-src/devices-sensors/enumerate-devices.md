@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f6348cc713d4fb93dfed9310eea9d3fd1025a2de
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 538f7e953d430ce36ae8aa679865aa634ec49553
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8948016"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047659"
 ---
 # <a name="enumerate-devices"></a>Перечисление устройств
 
@@ -26,7 +26,7 @@ async void enumerateSnapshot(){
 }
 ```
 
-Чтобы скачать пример, показывающий более сложное применение API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), перейдите [по этой ссылке](http://go.microsoft.com/fwlink/?LinkID=620536).
+Чтобы скачать пример, показывающий более сложное применение API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), перейдите [по этой ссылке](https://go.microsoft.com/fwlink/?LinkID=620536).
 
 ## <a name="enumeration-apis"></a>Интерфейсы API перечисления
 

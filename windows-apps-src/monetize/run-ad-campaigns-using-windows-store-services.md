@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, API рекламных акций Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
-ms.openlocfilehash: 35b2df09bcac553eeb939f516e950150cf2ee40d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 58325074a2f59dcd146a9534054b302b3ce9956b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929414"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044681"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Проведение рекламных кампаний с помощью служб Магазина
 
@@ -36,7 +36,7 @@ ms.locfileid: "8929414"
 
 * Вы можете создать и запустить рекламную кампанию с помощью этого API, необходимо [создать одну платную рекламную кампанию на странице **рекламные кампании** в центре партнеров](../publish/create-an-ad-campaign-for-your-app.md)первого и необходимо добавить по крайней мере одно средство платежа на этой странице. После выполнения этих действий можно создавать платные строки поставки для рекламных кампаний с помощью этого API. Строки поставки для рекламных кампаний, созданных с помощью этого API, будут автоматически выставлять счет на оплату платежному средству по умолчанию, выбранному на странице **рекламные кампании** в центре партнеров.
 
-* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае можно [Создать новую Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
+* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](https://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае можно [Создать новую Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
 
 * Необходимо привязать приложение Azure AD к учетной записи центра партнеров, получить идентификатор владельца и идентификатор клиента для приложения и создать ключ. Приложение Azure AD представляет собой приложение или службу, из которой отправляются вызовы к API промоакций Microsoft Store. Чтобы получить маркер доступа Azure AD, который вы передадите в API, необходимо иметь в наличии идентификатор владельца, идентификатор клиента и ключ.
     > [!NOTE]
@@ -100,7 +100,7 @@ grant_type=client_credentials
 
 ## <a name="code-example"></a>Пример кода
 
-В следующем примере кода показано, как получить маркер доступа Azure AD и вызвать API промоакций Microsoft Store из консольного приложения C#. Чтобы использовать этот пример кода, назначьте переменным *tenantId*, *clientId*, *clientSecret* и *appID* соответствующие вашему сценарию значения. Для этого примера требуется [пакет Json.NET](http://www.newtonsoft.com/json) от Newtonsoft для десериализации JSON-данных, возвращаемых API промоакций Microsoft Store.
+В следующем примере кода показано, как получить маркер доступа Azure AD и вызвать API промоакций Microsoft Store из консольного приложения C#. Чтобы использовать этот пример кода, назначьте переменным *tenantId*, *clientId*, *clientSecret* и *appID* соответствующие вашему сценарию значения. Для этого примера требуется [пакет Json.NET](https://www.newtonsoft.com/json) от Newtonsoft для десериализации JSON-данных, возвращаемых API промоакций Microsoft Store.
 
 [!code-cs[PromotionsApi](./code/StoreServicesExamples_Promotions/cs/Program.cs#PromotionsApiExample)]
 

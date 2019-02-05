@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c9716483d7df51c2c02d2f9c88e5a4cec05437cc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 28c21b3d3b3e53def2181e96a58b53998ee0f04a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942989"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046607"
 ---
 # <a name="free-memory-when-your-app-moves-to-the-background"></a>Освобождение памяти при переходе приложения в фоновый режим
 
@@ -103,5 +103,5 @@ ms.locfileid: "8942989"
 
 ## <a name="related-topics"></a>Связанные статьи
 
-* [Пример воспроизведения мультимедиа в фоновом режиме](http://go.microsoft.com/fwlink/p/?LinkId=800141)— показывает, как освободить память при переходе приложения в фоновый режим.
+* [Пример воспроизведения мультимедиа в фоновом режиме](https://go.microsoft.com/fwlink/p/?LinkId=800141)— показывает, как освободить память при переходе приложения в фоновый режим.
 * [Диагностические инструменты](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/)— используйте диагностические инструменты, чтобы наблюдать за событиями сбора мусора и убедиться, что приложение освобождает память ожидаемым образом.

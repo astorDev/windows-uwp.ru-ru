@@ -6,18 +6,18 @@ ms.date: 08/11/2017
 ms.topic: article
 keywords: windows 10, uwp, карта, расположение, вешки
 ms.localizationpriority: medium
-ms.openlocfilehash: f67c93a6f56fd466d981bce10eb41c16ff8da1f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bfb307093889c5a40a452d2d406f02224ab5eab1
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930254"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050647"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>Отображение объектов на карте
 
 Добавляйте объекты на карту, используя вешки, изображения, фигуры и элементы пользовательского интерфейса XAML. Объект— это определенная точка на карте, представляющая что-нибудь интересное. Например, это может быть расположение компании, города или друга.
 
-Чтобы получить дополнительные сведения об отображении объектов в приложении, скачайте [пример карты универсальной платформы для Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977) из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
+Чтобы получить дополнительные сведения об отображении объектов в приложении, скачайте [пример карты универсальной платформы для Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977) из [репозитория Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
 Вы можете отображать вешки, изображения и фигуры на карте, добавляя объекты [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077), [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard), [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) и [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) в коллекцию **MapElements** объекта [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer). Затем добавьте этот объект слоя в коллекцию **Layers** элемента управления картой.
 
@@ -92,7 +92,7 @@ public void AddSpaceNeedleIcon()
 
 ## <a name="add-a-3d-pushpin"></a>Добавление трехмерной вешки
 
-Трехмерные объекты можно добавлять на карту. Используйте класс [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) для импорта трехмерного объекта из файла в [трехмерном производственном формате (3MF)](http://3mf.io/specification/).
+Трехмерные объекты можно добавлять на карту. Используйте класс [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) для импорта трехмерного объекта из файла в [трехмерном производственном формате (3MF)](https://3mf.io/specification/).
 
 На этом изображении трехмерные чашки кофе используются для обозначения расположения кофеен в районе.
 
@@ -186,7 +186,7 @@ public void AddLandmarkPhoto()
 
 ## <a name="add-a-shape"></a>Добавление фигуры
 
-Для отображения многоточечной фигуры на карте используйте класс [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103). В показанном ниже фрагменте из [примера карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977) показано, как отобразить красное поле с синей рамкой на карте.
+Для отображения многоточечной фигуры на карте используйте класс [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103). В показанном ниже фрагменте из [примера карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977) показано, как отобразить красное поле с синей рамкой на карте.
 
 ```csharp
 public void HighlightArea()
@@ -229,7 +229,7 @@ public void HighlightArea()
 ## <a name="add-a-line"></a>Добавление линии
 
 
-Для отображения линии на карте используйте класс [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114). В показанном ниже фрагменте из [примера карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977) показано, как отобразить пунктирную линию на карте.
+Для отображения линии на карте используйте класс [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114). В показанном ниже фрагменте из [примера карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977) показано, как отобразить пунктирную линию на карте.
 
 ```csharp
 public void DrawLineOnMap()
@@ -474,10 +474,10 @@ public myMapPage()
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
-* [Пример карты UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Видео c конференции Build 2015: использование карт и местоположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Пример приложения UWP для работы с картами](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Пример приложения UWP для работы с картами](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)

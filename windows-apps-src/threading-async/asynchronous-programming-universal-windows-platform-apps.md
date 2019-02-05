@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp, асинхронный
 ms.localizationpriority: medium
-ms.openlocfilehash: 50e8bae0db888b947c568deb50fa5f2fc227e734
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a8349b9a96dd67d64abb368f0fdadd822af2fe84
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924744"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048081"
 ---
 # <a name="asynchronous-programming"></a>Асинхронное программирование
 В этом разделе описывается асинхронное программирование на универсальной платформы Windows (UWP), а также его представление в C#, Microsoft Visual Basic.NET, C++ и JavaScript.
@@ -63,7 +63,7 @@ ms.locfileid: "8924744"
 Функция [**create\_async function**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx) обеспечивает поддержку создания асинхронных API, которые можно использовать в JavaScript или других языках, поддерживающих UWP. Дополнительные сведения см. в разделе [Создание асинхронных операций на C + +/ CX](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx).
 
 ## <a name="asynchronous-patterns-in-uwp-using-javascript"></a>Асинхронные шаблоны в UWP на JavaScript
-В JavaScript асинхронное программирование следует предложенному стандарту [Common JS Promises/A](http://wiki.commonjs.org/wiki/Promises/A), в соответствии с которым асинхронные методы возвращают объекты Promise. Объекты Promise используются в UWP и в библиотеке Windows для JavaScript.
+В JavaScript асинхронное программирование следует предложенному стандарту [Common JS Promises/A](https://wiki.commonjs.org/wiki/Promises/A), в соответствии с которым асинхронные методы возвращают объекты Promise. Объекты Promise используются в UWP и в библиотеке Windows для JavaScript.
 
 Объект Promise представляет собой значение, которое будет сформировано в будущем. В UWP вы получаете объект Promise из функции фабрики, которая по правилам имеет имя, оканчивающееся словом «Async».
 
@@ -71,5 +71,5 @@ ms.locfileid: "8924744"
 
 ## <a name="related-topics"></a>Еще по теме
 * [Вызов асинхронных API в C# и Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
-* [Асинхронное программирование с использованием Async и Await (C# и Visual Basic)](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
+* [Асинхронное программирование с использованием Async и Await (C# и Visual Basic)](https://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [Особенности сценариев для образца Reversi: асинхронный код](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)

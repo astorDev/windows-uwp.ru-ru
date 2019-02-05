@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e418e5a159df44d6ff6e15e4faa972164447f5ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b64ddadd0e543930fa72d0c44a6cacf0a873df89
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944519"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050687"
 ---
 # <a name="which-networking-technology"></a>Какую сетевую технологию выбрать?
 
@@ -91,7 +91,7 @@ API [**Windows.Networking.Connectivity**](https://msdn.microsoft.com/library/win
 
 ### <a name="dns-service-discovery"></a>Обнаружение служб DNS
 
-API [**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) позволяет сообщать о сетевой службе другим устройствам в сети по протоколу DNS-SD, описанному в документе [RFC 2782](http://go.microsoft.com/fwlink/?LinkId=524158) организации IETF.
+API [**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) позволяет сообщать о сетевой службе другим устройствам в сети по протоколу DNS-SD, описанному в документе [RFC 2782](https://go.microsoft.com/fwlink/?LinkId=524158) организации IETF.
 
 ### <a name="communicating-over-bluetooth"></a>Обмен данными по Bluetooth
 

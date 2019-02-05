@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5060012c90ec9cfef093021f44b39321f452e01c
-ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
+ms.openlocfilehash: 9dd47ce2acf78a76ad413d70ce8c3e7f39a793ea
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004600"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048201"
 ---
 # <a name="sound"></a>Звук
 
@@ -53,7 +53,7 @@ ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ### <a name="sound-for-tv-and-xbox"></a>Звук для телевизора и Xbox
 
 Звук имеет важное значение для просмотра на большом расстоянии, поэтому по умолчанию для **ElementSoundPlayer** установлено значение **Auto**, что означает, что звук будет воспроизводиться, только когда приложение запущено на Xbox.
-Дополнительные сведения о проектировании Xbox и телевизора см. в статье [Проектирование для Xbox и телевизора](http://go.microsoft.com/fwlink/?LinkId=760736).
+Дополнительные сведения о проектировании Xbox и телевизора см. в статье [Проектирование для Xbox и телевизора](https://go.microsoft.com/fwlink/?LinkId=760736).
 
 ## <a name="sound-volume-override"></a>Переопределение громкости звука
 
@@ -166,5 +166,5 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 
 ## <a name="related-articles"></a>Еще по теме
 
-* [Проектирование для Xbox и телевизора](http://go.microsoft.com/fwlink/?LinkId=760736)
+* [Проектирование для Xbox и телевизора](https://go.microsoft.com/fwlink/?LinkId=760736)
 * [Документация класса ElementSoundPlayer](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer)

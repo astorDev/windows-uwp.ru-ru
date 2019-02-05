@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e7453d3973cef31ae8143f3ecff31fffeb763a3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9ff4e7d01d907112558993f52c8a214c91f7d499
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942555"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047073"
 ---
 # <a name="keyboard-events"></a>События клавиатуры
 
@@ -391,16 +391,16 @@ public class CustomGridView : GridView
 
 **Примеры**
 * [Пример сенсорной клавиатуры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [Пример базового ввода](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Пример ввода с малой задержкой](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Пример визуальных элементов фокуса](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Пример базового ввода](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Пример ввода с малой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Примеры архивов**
-* [Пример ввода](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Ввод: пример возможностей устройства](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Ввод: пример сенсорной клавиатуры](http://go.microsoft.com/fwlink/p/?linkid=246019)
-* [Пример реакции на появление экранной клавиатуры](http://go.microsoft.com/fwlink/p/?linkid=231633)
-* [Пример редактирования текста XAML](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [Пример ввода](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Ввод: пример возможностей устройства](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Ввод: пример сенсорной клавиатуры](https://go.microsoft.com/fwlink/p/?linkid=246019)
+* [Пример реакции на появление экранной клавиатуры](https://go.microsoft.com/fwlink/p/?linkid=231633)
+* [Пример редактирования текста XAML](https://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
  

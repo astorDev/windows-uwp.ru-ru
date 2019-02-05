@@ -5,12 +5,12 @@ keywords: активность пользователя, действия пол
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f35882af5ed7f66f59eb4e7fc4410223c4424e92
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2e1c2a3da3711bbc5335a9c44a4b280e3934adac
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941798"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046204"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Продолжение активности пользователей даже на разных устройствах
 
@@ -34,7 +34,7 @@ ms.locfileid: "8941798"
 
 1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) используется, чтобы возобновить работу приложения в определенном контексте. Как правило, эта ссылка принимает форму обработчика протокола для схемы (например, my-app://page2?action=edit) или AppUriHandler (например, http://constoso.com/page2?action=edit).
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) предоставляет класс, который позволяет пользователю визуально распознать действие с помощью названия, описания или элементов адаптивной карты.
-3. Наконец, [Содержимое](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) — объект для хранения метаданных для этого действия, которые могут использоваться для группировки и получения действий в определенном контексте. Зачастую оно принимает форму данных [http://schema.org](http://schema.org).
+3. Наконец, [Содержимое](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) — объект для хранения метаданных для этого действия, которые могут использоваться для группировки и получения действий в определенном контексте. Зачастую оно принимает форму данных [http://schema.org](https://schema.org).
 
 Добавление **UserActivity** в приложение:
 
@@ -103,7 +103,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>Используйте адаптивные карты для улучшения работы с временной шкалой
 
-Действия пользователя отображаются в Кортане и на временной шкале. Когда действия появляются на временной шкале, мы отображаем их с помощью структуры [адаптивной карты](http://adaptivecards.io/). Если вы не предоставляете адаптивную карту для каждого действия, временная шкала автоматически создаст карту простого действия на основании имени и значка вашего приложения, поля заголовка и необязательного описания. Ниже приведен пример полезных данных адаптивной карты и получаемая с их помощью карта.
+Действия пользователя отображаются в Кортане и на временной шкале. Когда действия появляются на временной шкале, мы отображаем их с помощью структуры [адаптивной карты](https://adaptivecards.io/). Если вы не предоставляете адаптивную карту для каждого действия, временная шкала автоматически создаст карту простого действия на основании имени и значка вашего приложения, поля заголовка и необязательного описания. Ниже приведен пример полезных данных адаптивной карты и получаемая с их помощью карта.
 
 ![Адаптивная карта](images/adaptivecard.png)]
 
@@ -157,7 +157,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 Можно использовать API [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities), чтобы ваше приложение отображалось на временной шкале и в Кортане.
 * Дополнительные сведения о [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Ознакомьтесь с [примером кода](https://github.com/Microsoft/project-rome).
-* Посмотрите [более сложные адаптивные карты](http://adaptivecards.io/).
+* Посмотрите [более сложные адаптивные карты](https://adaptivecards.io/).
 * Опубликуйте **UserActivity** с iOS, Android или через веб-службу с помощью [Microsoft Graph](https://developer.microsoft.com/graph/).
 * Узнайте больше о [Project Rome на GitHub](https://github.com/Microsoft/project-rome).
 
@@ -169,7 +169,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 * [Действия пользователей (документы Project Rome)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Адаптивные карты](https://docs.microsoft.com/adaptive-cards/)
-* [Визуализатор адаптивных карт, примеры](http://adaptivecards.io/)
+* [Визуализатор адаптивных карт, примеры](https://adaptivecards.io/)
 * [Обработка активации универсального кода ресурса (URI)](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Взаимодействие с пользователями на всех платформах с помощью Microsoft Graph, ленты действий и адаптивных карт](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

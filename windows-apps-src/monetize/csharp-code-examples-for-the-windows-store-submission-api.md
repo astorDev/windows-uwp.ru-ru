@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: windows 10, UWP, API отправки в Microsoft Store, примеры кода, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 27325938ef159dfcb29de174064314ee21d3a3f5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 19cfec890d6a434a392ce08257cad6bbeee4cda1
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924240"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044987"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>Пример на языке C\#: отправки для приложений, надстроек и тестовых пакетов
 
@@ -29,7 +29,7 @@ ms.locfileid: "8924240"
 В этих примерах используются следующие библиотеки:
 
 * Microsoft.WindowsAzure.Storage.dll. Эта библиотека доступна в [Пакете SDK Azure для .NET](https://azure.microsoft.com/downloads/). Ее также можно получить путем установки [пакета NuGet WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage).
-* Пакет NuGet [Newtonsoft.Json](http://www.newtonsoft.com/json) от Newtonsoft.
+* Пакет NuGet [Newtonsoft.Json](https://www.newtonsoft.com/json) от Newtonsoft.
 
 ## <a name="main-program"></a>Основная программа
 
@@ -54,7 +54,7 @@ ms.locfileid: "8924240"
 
 ## <a name="create-an-app-submission"></a>Создание отправки приложения
 
-В следующем примере реализован класс, который использует несколько методов из API отправки в Microsoft Store для обновления отправки приложения. ```RunAppSubmissionUpdateSample``` Метод в классе создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в центре партнеров. В частности, метод ```RunAppSubmissionUpdateSample``` выполняет следующие задачи:
+В следующем примере реализован класс, который использует несколько методов из API отправки в Microsoft Store для обновления отправки приложения. ```RunAppSubmissionUpdateSample``` Метод в классе создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в центре партнеров. В частности, метод ```RunAppSubmissionUpdateSample``` выполняет следующие задачи.
 
 1. Сначала метод [получает данные для указанного приложения](get-an-app.md).
 2. Затем он [удаляет ожидающую отправку для приложения](delete-an-app-submission.md), если она существует.

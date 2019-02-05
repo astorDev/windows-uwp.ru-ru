@@ -6,12 +6,12 @@ ms.topic: article
 keywords: начало работы, uwp, windows 10, обучающий курс, файлы, ввод-вывод файлов, чтение файла, запись файла, создание файла, запись текста, чтение текста
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9350228585ec8108c41bd15de6179de0294140dc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e0abc146820ca27ee83662ba5f8b79a1daf90bab
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921084"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045533"
 ---
 # <a name="work-with-files"></a>Работа с файлами
 
@@ -130,7 +130,7 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 | [Создание, запись и чтение файла](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | Описание создания, чтения и записи текста, двоичных данных и потоков. |
 | [Начало работы с локальным хранением данных приложения](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | Помимо рекомендаций для хранения локальных данных здесь также описывается назначение папок LocalSettings и LocalCache. |
 | [Начало работы с перемещающимися данными приложения](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | Серия из двух частей, посвященная использованию перемещаемых данных приложения. |
-| [Руководство по перемещаемым данным приложения](http://msdn.microsoft.com/library/windows/apps/hh465094) | Следуйте этим рекомендациям для перемещаемых данных при проектировании приложения. |
+| [Руководство по перемещаемым данным приложения](https://msdn.microsoft.com/library/windows/apps/hh465094) | Следуйте этим рекомендациям для перемещаемых данных при проектировании приложения. |
 | [Хранение и извлечение параметров и прочих данных приложения](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | Общие сведения о различных хранилищах+ данных приложений, таких как локальные, перемещаемые и временные папки. В разделе [Перемещаемые данные](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data) представлены инструкции и дополнительные сведения о записи данных, которые перемещаются между устройствами. |
 | [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | Сведения о расположениях в файловой системе, доступных вашему приложению. |
 | [Открытие файлов и папок с помощью средства выбора](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | Здесь описывается, как получить доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. |
@@ -143,6 +143,6 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 |-----------------|---------------|
 | [Образец данных приложения](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | Здесь показано, как хранить и извлекать данные, связанные с отдельным пользователем, с помощью API-интерфейсов данных приложения. |
 | [Пример доступа к файлу](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Здесь показано, как создавать, читать, копировать и удалять файл. |
-| [Пример средства выбора файлов](http://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Здесь показано, как получить доступ к файлам и папкам, позволяя пользователю выбирать их с помощью пользовательского интерфейса, и как сохранить файл, чтобы пользователь мог указывать имя, тип и расположение файла. |
+| [Пример средства выбора файлов](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Здесь показано, как получить доступ к файлам и папкам, позволяя пользователю выбирать их с помощью пользовательского интерфейса, и как сохранить файл, чтобы пользователь мог указывать имя, тип и расположение файла. |
 | [Пример JSON](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | В этой статье показано, как кодировать и декодировать объекты, массивы, строки, числа и логические значения JSON с помощью [пространства имен Windows.Data.Json](https://docs.microsoft.com/uwp/api/Windows.Data.Json). |
 | [Дополнительные примеры кода](https://developer.microsoft.com//windows/samples) | Выберите **Файлы, папки и библиотеки** в раскрывающемся списке категорий. |

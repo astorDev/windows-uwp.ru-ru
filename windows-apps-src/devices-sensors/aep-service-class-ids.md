@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: faa9e3f8936e8650af905678ce7434c4b9967be0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 08a186e0a8e7293b139f756b69966cd8d4b49c92
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939842"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048301"
 ---
 # <a name="aep-service-class-ids"></a>Идентификаторы класса службы AEP
 
@@ -72,7 +72,7 @@ ms.locfileid: "8939842"
 
  
 
-Более полный список доступных служб Bluetooth см. на страницах о протоколе и службах Bluetooth [здесь](http://go.microsoft.com/fwlink/p/?LinkID=619586) и [здесь](http://go.microsoft.com/fwlink/p/?LinkID=619587). Вы также можете использовать API [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571), чтобы получить доступ к некоторым распространенным службам GATT.
+Более полный список доступных служб Bluetooth см. на страницах о протоколе и службах Bluetooth [здесь](https://go.microsoft.com/fwlink/p/?LinkID=619586) и [здесь](https://go.microsoft.com/fwlink/p/?LinkID=619587). Вы также можете использовать API [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571), чтобы получить доступ к некоторым распространенным службам GATT.
 
 ## <a name="custom-bluetooth-le-services"></a>Настраиваемые службы Bluetooth с низким энергопотреблением
 
