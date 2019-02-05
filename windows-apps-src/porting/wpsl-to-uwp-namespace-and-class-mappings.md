@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0072aa814e0bcb22806cad764b5f365770961ac3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9acd42f57117fb01eef4ba8f87d35664be21cf32
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926214"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048824"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>API-Интерфейс UWP сопоставление Silverlight и WindowsPhone
 
@@ -28,7 +28,7 @@ ms.locfileid: "8926214"
 | WindowsPhone Silverlight | Среда выполнения Windows |
 | ------------------------- | --------------- |
 | Реклама | |
-| Класс **Microsoft.Advertising.Mobile.UI.AdControl** | Класс [AdControl](http://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) |
+| Класс **Microsoft.Advertising.Mobile.UI.AdControl** | Класс [AdControl](https://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) |
 | Сигналы, напоминания и фоновые агенты | |
 | Класс **Microsoft.Phone.BackgroundAgent** | Класс [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) |
 | Пространство имен **Microsoft.Phone.Scheduler** | Пространство имен [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847) |
@@ -52,11 +52,11 @@ ms.locfileid: "8926214"
 | (SWT = **System.Windows.Threading**) <br/> Класс **SWT.DispatcherTimer** | Класс [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) |
 | Blend для Visual Studio | |
 | (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> Класс **MEDC.GeometryHelper** | Нет прямого эквивалента |
-| Пространство имен **Microsoft.Expression.Interactivity** | Пространство имен [Microsoft.Xaml.Interactivity](http://go.microsoft.com/fwlink/p/?LinkId=328776) |
-| Пространство имен **Microsoft.Expression.Interactivity.Core** | Пространство имен [Microsoft.Xaml.Interactions.Core](http://go.microsoft.com/fwlink/p/?LinkId=328773) |
+| Пространство имен **Microsoft.Expression.Interactivity** | Пространство имен [Microsoft.Xaml.Interactivity](https://go.microsoft.com/fwlink/p/?LinkId=328776) |
+| Пространство имен **Microsoft.Expression.Interactivity.Core** | Пространство имен [Microsoft.Xaml.Interactions.Core](https://go.microsoft.com/fwlink/p/?LinkId=328773) |
 | (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> Класс **MEIC.ExtendedVisualStateManager** | Нет прямого эквивалента |
 | Пространство имен **Microsoft.Expression.Interactivity.Input** | Нет прямого эквивалента |
-| Пространство имен **Microsoft.Expression.Interactivity.Media** | Пространство имен [Microsoft.Xaml.Interactions.Media](http://go.microsoft.com/fwlink/p/?LinkId=328775) |
+| Пространство имен **Microsoft.Expression.Interactivity.Media** | Пространство имен [Microsoft.Xaml.Interactions.Media](https://go.microsoft.com/fwlink/p/?LinkId=328775) |
 | Пространство имен **Microsoft.Expression.Shapes** | Нет прямого эквивалента |
 | (MI = **Microsoft.Internal**) <br/> Интерфейс **MI.IManagedFrameworkInternalHelper** | Нет прямого эквивалента |
 | Данные контактов и календаря | |
@@ -109,7 +109,7 @@ ms.locfileid: "8926214"
 | Классы **Microsoft.Devices.Camera**, **Microsoft.Devices.PhotoCamera** | Класс [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124). Также класс [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) (только Windows). |
 | Класс **Microsoft.Devices.CameraButtons** | Класс [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) |
 | Класс **Microsoft.Devices.CameraVideoBrushExtensions** | Класс [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) |
-| Класс **Microsoft.Devices.Environment** | Нет прямого эквивалента. В качестве обходного пути используйте условную компиляцию и укажите настраиваемый символ. Или можно создать обходной путь с помощью свойства [IsAttached](http://msdn.microsoft.com/library/e299w87h.aspx). |
+| Класс **Microsoft.Devices.Environment** | Нет прямого эквивалента. В качестве обходного пути используйте условную компиляцию и укажите настраиваемый символ. Или можно создать обходной путь с помощью свойства [IsAttached](https://msdn.microsoft.com/library/e299w87h.aspx). |
 | Класс **Microsoft.Devices.MediaHistory** | Нет прямого эквивалента |
 | Класс **Microsoft.Devices.VibrateController** | Класс [**VibrationDevice**](https://msdn.microsoft.com/library/windows/apps/jj207230) |
 | Класс **Microsoft.Devices.Radio.FMRadio** | Нет прямого эквивалента |
@@ -121,7 +121,7 @@ ms.locfileid: "8926214"
 | (ST = **System.Threading**) <br/> Свойство **ST.Thread.CurrentCulture** | (SG = **System.Globalization**) <br/> Свойство **S.CultureInfo.CurrentCulture** |
 | (ST = **System.Threading**) <br/> Свойство **ST.Thread.CurrentUICulture** | (SG = **System.Globalization**) <br/> Свойство **S.CultureInfo.CurrentUICulture** |
 | Графика и анимация | |
-| Пространства имен **Microsoft.Xna.Framework.\***, [XNA Framework Class Library](http://go.microsoft.com/fwlink/p/?LinkId=263769), [Content Pipeline Class Library](http://go.microsoft.com/fwlink/p/?LinkId=263770) | Нет прямого эквивалента. Обычно используется [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) и C++. См. разделы [Разработка игр](https://msdn.microsoft.com/library/windows/apps/hh452744) и [Взаимодействие DirectX и XAML](https://msdn.microsoft.com/library/windows/apps/hh825871). |
+| Пространства имен **Microsoft.Xna.Framework.\***, [XNA Framework Class Library](https://go.microsoft.com/fwlink/p/?LinkId=263769), [Content Pipeline Class Library](https://go.microsoft.com/fwlink/p/?LinkId=263770) | Нет прямого эквивалента. Обычно используется [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) и C++. См. разделы [Разработка игр](https://msdn.microsoft.com/library/windows/apps/hh452744) и [Взаимодействие DirectX и XAML](https://msdn.microsoft.com/library/windows/apps/hh825871). |
 | Класс **Microsoft.Xna.Framework.Audio.Microphone** | Класс [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) |
 | Класс **Microsoft.Xna.Framework.Audio.SoundEffect** | Класс [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) |
 | Пространство имен **Microsoft.Xna.Framework.GamerServices** | (WPS = **Windows.Phone.System**) <br/> Пространство имен [**WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) |

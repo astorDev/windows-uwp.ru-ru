@@ -5,12 +5,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: webvr, edge, веб-разработки, babylon, babylonjs, babylon.js, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e2081f0dbe163dcbcf35d83ea111caf573dacfb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1d8029752790e19adc5eb4266615372fb346e001
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919074"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050111"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>Добавление поддержки WebVR в трехмерную игру Babylon.js
 
@@ -132,7 +132,7 @@ navigator.getVRDisplays().then(function (displays) {
 
 ## <a name="creating-and-selecting-the-initial-camera"></a>Создание и выбрав начальной камеры
 
-С помощью Babylon.js, WebVR можно добавить быстро с помощью [`WebVRFreeCamera`](http://doc.babylonjs.com/classes/3.1/webvrfreecamera). Это камеры может занять ввода с клавиатуры и позволяет использовать гарнитура VR для управления вращением вашего «head».
+С помощью Babylon.js, WebVR можно добавить быстро с помощью [`WebVRFreeCamera`](https://doc.babylonjs.com/classes/3.1/webvrfreecamera). Это камеры может занять ввода с клавиатуры и позволяет использовать гарнитура VR для управления вращением вашего «head».
 
 
 ### <a name="step-1-checking-for-headsets"></a>Шаг 1: Проверка гарнитур

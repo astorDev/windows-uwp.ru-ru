@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
-ms.openlocfilehash: 38318e7f97c8eba7d0137a865f5025fb9a77fa55
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5c3c57653899ce7d849eec72ad36f14f7806652c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930695"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049871"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>Введение в разработку безопасных приложений для Windows
 
@@ -96,7 +96,7 @@ ms.locfileid: "8930695"
 
 Если взаимодействие успешно, обработайте строку ответа, возвращенную поставщиком удостоверений. Если взаимодействие неуспешно, обработайте ошибку.
 
-См. пример кода на языке C#, который предназначен для этого процесса, ниже. Дополнительные сведения и пошаговое руководство см. в разделе [WebAuthenticationBroker](web-authentication-broker.md). Полный пример кода см. в [образце WebAuthenticationBroker на GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).
+См. пример кода на языке C#, который предназначен для этого процесса, ниже. Дополнительные сведения и пошаговое руководство см. в разделе [WebAuthenticationBroker](web-authentication-broker.md). Полный пример кода см. в [образце WebAuthenticationBroker на GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620622).
 
 ```cs
 string startURL = "https://<providerendpoint>?client_id=<clientid>";

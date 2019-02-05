@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f642466137320732ccbee9ceea859a7fb954f1e
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 3d2a7d34f00d40429863f08ffe6a9c34222daa32
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036956"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050031"
 ---
 # <a name="command-bar"></a>Панель команд
 
@@ -277,7 +277,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
-- [Пример команд XAML](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [Пример команд XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="related-articles"></a>Смежные разделы
 

@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, объявления, реклама, AdControl, элемент управления рекламным объявлением, XAML, .net, пошаговое руководство
 ms.localizationpriority: medium
-ms.openlocfilehash: 161718bb88d7588db345f3de26de2a955ca6620e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8784de7025a2e9efa8e9e02be14c94579730a1dd
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920412"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050191"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>AdControl в XAML и .NET
 
@@ -19,11 +19,11 @@ ms.locfileid: "8920412"
 В этом пошаговом руководстве рассказывается, как использовать класс [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) для показа баннерной рекламы в приложении UWP на XAML для Windows 10, реализованном с использованием C#.
 
 > [!NOTE]
-> Microsoft Advertising SDK также поддерживает приложения XAML, которые реализуются с использованием C++. Полный пример с проектом см. в разделе [примеры рекламы на GitHub](http://aka.ms/githubads).
+> Microsoft Advertising SDK также поддерживает приложения XAML, которые реализуются с использованием C++. Полный пример с проектом см. в разделе [примеры рекламы на GitHub](https://aka.ms/githubads).
 
 ## <a name="prerequisites"></a>Что вам понадобится
 
-* Установка [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) с помощью Visual Studio 2015 или более поздней версии Visual Studio. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
+* Установка [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) с помощью Visual Studio 2015 или более поздней версии Visual Studio. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
 
 ## <a name="integrate-a-banner-ad-into-your-app"></a>Интеграция собственного баннера в приложение
 
@@ -149,5 +149,5 @@ ms.locfileid: "8920412"
 
 * [Рекомендации для рекламных баннеров](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
 * [Пошаговое руководство по обработке ошибок XAML/C#](error-handling-in-xamlc-walkthrough.md).
-* [Примеры рекламы на GitHub](http://aka.ms/githubads)
+* [Примеры рекламы на GitHub](https://aka.ms/githubads)
 * [Настройка групп объявлений для приложения](set-up-ad-units-in-your-app.md)

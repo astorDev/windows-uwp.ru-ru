@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: 95fa9e8ef9c508846443e04e23184c03e38ce9a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e6d36c368672675f503359735de8717df1be8b57
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939329"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050657"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Создание игры UWP на 2D-платформе MonoGame
 
@@ -43,7 +43,7 @@ MonoGame— это упрощенная платформа для разрабо
 **Примечание.** Этот пример не претендует на то, чтобы считаться завершенной (или даже забавной) игрой. Его единственная цель — продемонстрировать все базовые понятия разработки двухмерных игр в MonoGame. Вы можете использовать этот код, чтобы сделать что-то намного лучшее. Или же, освоив основы, создайте свою игру с чистого листа!
 
 ## <a name="set-up-monogame-project"></a>Настройка проекта MonoGame
-1. Установите **MonoGame 3.6** для Visual Studio от [MonoGame.net](http://www.monogame.net/).
+1. Установите **MonoGame 3.6** для Visual Studio от [MonoGame.net](https://www.monogame.net/).
 
 2. Запустите Visual Studio 2017.
 

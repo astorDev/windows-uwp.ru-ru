@@ -6,19 +6,19 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, игры, разработка игр
 ms.localizationpriority: medium
-ms.openlocfilehash: 58044fba24450c397ee58b1034429f2af8d23ed6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9b11f927eca82e2c068f0210022893905b1503db
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940045"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049971"
 ---
 # <a name="windows-10-game-development-guide"></a>Руководство по разработке игр для Windows 10
 
 
 Предлагаем вашему вниманию руководство по разработке игр для Windows 10.
 
-Это руководство содержит полную коллекцию ресурсов и сведений, необходимых для разработки игры для универсальной платформы Windows (UWP). Версия этого руководства на английском языке (США) доступна в формате [PDF](http://download.microsoft.com/download/9/C/9/9C9D344F-611F-412E-BB01-259E5C76B17F/Windev_Game_Dev_Guide_Oct_2017.pdf).
+Это руководство содержит полную коллекцию ресурсов и сведений, необходимых для разработки игры для универсальной платформы Windows (UWP). Версия этого руководства на английском языке (США) доступна в формате [PDF](https://download.microsoft.com/download/9/C/9/9C9D344F-611F-412E-BB01-259E5C76B17F/Windev_Game_Dev_Guide_Oct_2017.pdf).
 
 ## <a name="introduction-to-game-development-for-the-universal-windows-platform-uwp"></a>Введение в разработку игр для универсальной платформы Windows (UWP)
 
@@ -119,7 +119,7 @@ ms.locfileid: "8940045"
 
 В рамках Creators Program вы можете развертывать, проектировать и публиковать свои игры без специального комплекта для разработчиков, используя только оборудование, доступное в розничной продаже. Для начала работы скачайте [приложение Dev Mode Activation](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation) на Xbox One.
 
-Если вы хотите получить доступ к еще большим возможностям Xbox Live, находиться в основном магазине Xbox One или получать специальную маркетинговую поддержку и поддержку при разработке, примите участие в программе [ID@Xbox](http://www.xbox.com/Developers/id).
+Если вы хотите получить доступ к еще большим возможностям Xbox Live, находиться в основном магазине Xbox One или получать специальную маркетинговую поддержку и поддержку при разработке, примите участие в программе [ID@Xbox](https://www.xbox.com/Developers/id).
 
 <table>
     <colgroup>
@@ -143,11 +143,11 @@ ms.locfileid: "8940045"
     </colgroup>
     <tr>
         <td>Программа для разработчиков ID@Xbox</td>
-        <td><a href="http://go.microsoft.com/fwlink/p/?LinkID=526271">Программа независимых разработчиков для Xbox One</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?LinkID=526271">Программа независимых разработчиков для Xbox One</a></td>
     </tr>
     <tr>
         <td>Сайт для потребителей ID@Xbox</td>
-        <td><a href="http://www.idatxbox.com/">ID@Xbox</a></td>
+        <td><a href="https://www.idatxbox.com/">ID@Xbox</a></td>
     </tr>
 </table>
 
@@ -194,15 +194,15 @@ ms.locfileid: "8940045"
     </tr>
     <tr>
         <td>Пример эффектов пользовательского изображения Direct2D</td>
-        <td><a href="http://go.microsoft.com/fwlink/p/?LinkId=620531">D2DCustomEffects</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?LinkId=620531">D2DCustomEffects</a></td>
     </tr>
     <tr>
         <td>Пример сетки градиента Direct2D</td>
-        <td><a href="http://go.microsoft.com/fwlink/p/?LinkId=620532">D2DGradientMesh</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?LinkId=620532">D2DGradientMesh</a></td>
     </tr>
     <tr>
         <td>Пример корректировки фотографии Direct2D</td>
-        <td><a href="http://go.microsoft.com/fwlink/p/?LinkId=620533">D2DPhotoAdjustment</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?LinkId=620533">D2DPhotoAdjustment</a></td>
     </tr>
     <tr>
         <td>Открытые примеры, опубликованные группой Xbox Advanced Technology Group</td>
@@ -262,11 +262,11 @@ ms.locfileid: "8940045"
     </tr>
     <tr>
         <td>Форум разработчиков для управляемых партнеров Windows 10</td>
-        <td><a href="http://aka.ms/win10devforums">Форумы разработчиков для XBOX: Windows 10</a></td>
+        <td><a href="https://aka.ms/win10devforums">Форумы разработчиков для XBOX: Windows 10</a></td>
     </tr>
     <tr>
         <td>Форумы DirectX</td>
-        <td><a href="http://forums.directxtech.com/index.php">Форум по DirectX 12</a></td>
+        <td><a href="https://forums.directxtech.com/index.php">Форум по DirectX 12</a></td>
     </tr>
     <tr>
         <td>Форумы по платформе Azure</td>
@@ -294,35 +294,35 @@ ms.locfileid: "8940045"
     </colgroup>
     <tr>
         <td>Блог «Создание приложений для Windows»</td>
-        <td><a href="http://blogs.windows.com/buildingapps/">Создание приложений для Windows</a></td>
+        <td><a href="https://blogs.windows.com/buildingapps/">Создание приложений для Windows</a></td>
     </tr>
     <tr>
         <td>Windows 10 (записи в блоге)</td>
-        <td><a href="http://blogs.windows.com/blog/tag/windows-10/">Записи в блоге Windows 10</a></td>
+        <td><a href="https://blogs.windows.com/blog/tag/windows-10/">Записи в блоге Windows 10</a></td>
     </tr>
     <tr>
         <td>Блог группы разработчиков Visual Studio</td>
-        <td><a href="http://blogs.msdn.com/b/visualstudio/">Блог Visual Studio</a></td>
+        <td><a href="https://blogs.msdn.com/b/visualstudio/">Блог Visual Studio</a></td>
     </tr>
     <tr>
         <td>Блоги о средствах разработчика Visual Studio</td>
-        <td><a href="http://blogs.msdn.com/b/developer-tools/">Блоги о средствах разработчика</a></td>
+        <td><a href="https://blogs.msdn.com/b/developer-tools/">Блоги о средствах разработчика</a></td>
     </tr>
     <tr>
         <td>Блог о средствах разработчика Somasegar</td>
-        <td><a href="http://blogs.msdn.com/b/somasegar/">Блог Somasegar</a></td>
+        <td><a href="https://blogs.msdn.com/b/somasegar/">Блог Somasegar</a></td>
     </tr>
     <tr>
         <td>Блог разработчиков DirectX</td>
-        <td><a href="http://blogs.msdn.com/b/directx">Блог разработчиков DirectX</a></td>
+        <td><a href="https://blogs.msdn.com/b/directx">Блог разработчиков DirectX</a></td>
     </tr>
     <tr>
         <td>Введение в DirectX 12 (запись в блоге)</td>
-        <td><a href="http://blogs.msdn.com/b/directx/archive/2014/03/20/directx-12.aspx">DirectX12</a></td>
+        <td><a href="https://blogs.msdn.com/b/directx/archive/2014/03/20/directx-12.aspx">DirectX12</a></td>
     </tr>
     <tr>
         <td>Блог группы разработчиков средств Visual C++</td>
-        <td><a href="http://blogs.msdn.com/b/vcblog/">Блог рабочей группы Visual C++</a></td>
+        <td><a href="https://blogs.msdn.com/b/vcblog/">Блог рабочей группы Visual C++</a></td>
     </tr>
     <tr>
         <td>Блог группы PIX</td>
@@ -367,15 +367,15 @@ ms.locfileid: "8940045"
     </colgroup>
     <tr>
         <td>Обзор разработки игр для Windows 10 (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10">Разработка игр для Windows10</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10">Разработка игр для Windows10</a></td>
     </tr>
     <tr>
         <td>Игровое взаимодействие в Windows 10 (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10">Игровое взаимодействие с пользователем в Windows 10</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10">Игровое взаимодействие с пользователем в Windows 10</a></td>
     </tr>
     <tr>
         <td>Игры в экосистеме Microsoft (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem">Будущее игр в экосистеме Microsoft</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem">Будущее игр в экосистеме Microsoft</a></td>
     </tr>
 </table>
 
@@ -481,7 +481,7 @@ HyperText Markup Language (HTML) — это общий язык разметки
     </tr>
     <tr>
         <td>Рекомендации W3C по HTML5</td>
-        <td><a href="http://go.microsoft.com/fwlink/p/?linkid=221374">HTML5</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=221374">HTML5</a></td>
     </tr>
 </table>
  
@@ -688,15 +688,15 @@ Unity предоставляет платформу для создания кр
     </colgroup>
     <tr>
         <td>Игровая подсистема Unity</td>
-        <td><a href="http://unity3d.com/">Unity — игровой движок</a></td>
+        <td><a href="https://unity3d.com/">Unity — игровой движок</a></td>
     </tr>
     <tr>
         <td>Получить Unity</td>
-        <td><a href="http://unity3d.com/get-unity">Получить Unity</a></td>
+        <td><a href="https://unity3d.com/get-unity">Получить Unity</a></td>
     </tr>
     <tr>
         <td>Документация по Unity для Windows</td>
-        <td><a href="http://docs.unity3d.com/Manual/Windows.html">Руководство по Unity для Windows</a></td>
+        <td><a href="https://docs.unity3d.com/Manual/Windows.html">Руководство по Unity для Windows</a></td>
     </tr>
     <tr>
         <td>Добавление технологии LiveOps с использованием PlayFab</td>
@@ -732,7 +732,7 @@ Unity предоставляет платформу для создания кр
     </tr>
     <tr>
         <td>Разработка игры Unity с помощью Visual Studio (серия видео)</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkId=722359">Использование Unity с Visual Studio 2015</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=722359">Использование Unity с Visual Studio 2015</a></td>
     </tr>
 </table>
  
@@ -748,15 +748,15 @@ Unity предоставляет платформу для создания кр
     </colgroup>
     <tr>
         <td>Веб-сайт Havok</td>
-        <td><a href="http://www.havok.com/">Havok</a></td>
+        <td><a href="https://www.havok.com/">Havok</a></td>
     </tr>
     <tr>
         <td>Набор средств Havok</td>
-        <td><a href="http://www.havok.com/products/">Обзор продуктов Havok</a></td>
+        <td><a href="https://www.havok.com/products/">Обзор продуктов Havok</a></td>
     </tr>
     <tr>
         <td>Форумы технической поддержки Havok</td>
-        <td><a href="http://support.havok.com">Havok</a></td>
+        <td><a href="https://support.havok.com">Havok</a></td>
     </tr>
 </table>
  
@@ -772,15 +772,15 @@ MonoGame —это кроссплатформенное решение с отк
     </colgroup>
     <tr>
         <td>MonoGame</td>
-        <td><a href="http://www.monogame.net">Веб-сайт MonoGame</a></td>
+        <td><a href="https://www.monogame.net">Веб-сайт MonoGame</a></td>
     </tr>
     <tr>
         <td>Документация по MonoGame</td>
-        <td><a href="http://www.monogame.net/documentation/">Документация MonoGame (последняя)</a></td>
+        <td><a href="https://www.monogame.net/documentation/">Документация MonoGame (последняя)</a></td>
     </tr>
     <tr>
         <td>Скачиваемые файлы Monogame</td>
-        <td><a href="http://www.monogame.net/downloads/">Скачайте выпуски, сборки для разработчиков и исходный код</a> с веб-сайта MonoGame или <a href="https://www.nuget.org/profiles/MonoGame">получите последний выпуск через NuGet</a>.
+        <td><a href="https://www.monogame.net/downloads/">Скачайте выпуски, сборки для разработчиков и исходный код</a> с веб-сайта MonoGame или <a href="https://www.nuget.org/profiles/MonoGame">получите последний выпуск через NuGet</a>.
     </tr>
     <tr>
         <td>Пример 2D-игры UWP на MonoGame</td>
@@ -800,11 +800,11 @@ Cocos2d-x — это кроссплатформенный набор средс�
     </colgroup>
     <tr>
         <td>Cocos2d-x</td>
-        <td><a href="http://www.cocos2d-x.org/">Что такое Cocos2d-x?</a></td>
+        <td><a href="https://www.cocos2d-x.org/">Что такое Cocos2d-x?</a></td>
     </tr>
     <tr>
         <td>Руководство по Cocos2d-x для программистов</td>
-        <td><a href="http://www.cocos2d-x.org/programmersguide/">Руководство по программированию в Cocos2d-x</a></td>
+        <td><a href="https://www.cocos2d-x.org/programmersguide/">Руководство по программированию в Cocos2d-x</a></td>
     </tr>
     <tr>
         <td>Cocos2d-x в Windows 10 (запись в блоге)</td>
@@ -851,7 +851,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>BabylonJS</td>
-        <td><a href="http://www.babylonjs.com/">BabylonJS</a></td>
+        <td><a href="https://www.babylonjs.com/">BabylonJS</a></td>
     </tr>
     <tr>
         <td>WebGL 3D с HTML5 и BabylonJS (серия видео)</td>
@@ -910,7 +910,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Перенос из OpenGL ES в Direct3D11 с помощью ANGLE</td>
-        <td><a href="http://go.microsoft.com/fwlink/p/?linkid=618387">ANGLE</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">ANGLE</a></td>
     </tr>
     <tr>
         <td>Эквиваленты классических API для Windows в UWP</td>
@@ -978,7 +978,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Объявление о выходе серии видео о разработке для Windows 10 с помощью XAML для абсолютных новичков (запись в блоге)</td>
-        <td><a href="http://blogs.windows.com/buildingapps/2015/09/30/windows-10-development-for-absolute-beginners/">Разработка для Windows 10 для абсолютных новичков</a></td>
+        <td><a href="https://blogs.windows.com/buildingapps/2015/09/30/windows-10-development-for-absolute-beginners/">Разработка для Windows 10 для абсолютных новичков</a></td>
     </tr>
 </table>
 
@@ -1082,7 +1082,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Написание приложений для разных форм-факторов устройств (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World">Разработка игр мира Windows Core</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World">Разработка игр мира Windows Core</a></td>
     </tr>   
 </table>
  
@@ -1114,7 +1114,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Руководство по оформлению текста</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkId=535007">Рекомендации: оформление текста</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535007">Рекомендации: оформление текста</a></td>
     </tr>
 </table>
  
@@ -1130,7 +1130,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Руководство по карте пользовательского интерфейса</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkId=535008">Рекомендации: карта пользовательского интерфейса</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">Рекомендации: карта пользовательского интерфейса</a></td>
     </tr>
 </table>
 
@@ -1204,7 +1204,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Основы DirectX 12 (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">Выше мощность — выше производительность: ваша игра на DirectX 12</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">Выше мощность — выше производительность: ваша игра на DirectX 12</a></td>
     </tr>
 </table>
 
@@ -1255,27 +1255,27 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Получить набор инструментов DirectX для DirectX 11</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkId=248929">DirectXTK</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=248929">DirectXTK</a></td>
     </tr>
     <tr>
         <td>Получить набор инструментов DirectX для DirectX 12</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkID=615561">DirectXTK 12</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkID=615561">DirectXTK 12</a></td>
     </tr>
     <tr>
         <td>Получить библиотеку обработки текстур DirectX</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkId=248926">DirectXTex</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=248926">DirectXTex</a></td>
     </tr>
     <tr>
         <td>Получить библиотеку обработки геометрии DirectXMesh</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkID=324981">DirectXMesh</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkID=324981">DirectXMesh</a></td>
     </tr>
     <tr>
         <td>Получить библиотеку UVAtlas для создания и упаковывания атласа текстуры isochart.</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkID=512686">UVAtlas</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkID=512686">UVAtlas</a></td>
     </tr>
     <tr>
         <td>Получить библиотеку DirectXMath</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkID=615560">DirectXMath</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkID=615560">DirectXMath</a></td>
     </tr>
     <tr>
         <td>Поддержка Direct3D12 в DirectXTK (запись блога)</td>
@@ -1335,7 +1335,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Шаблоны адаптивных плиток (запись в блоге)</td>
-        <td><a href="http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/06/30/adaptive-tile-templates-schema-and-documentation.aspx">Шаблоны адаптивных плиток: схема и документация</a></td>
+        <td><a href="https://blogs.msdn.com/b/tiles_and_toasts/archive/2015/06/30/adaptive-tile-templates-schema-and-documentation.aspx">Шаблоны адаптивных плиток: схема и документация</a></td>
     </tr>
     <tr>
         <td>Проектирование плиток и индикаторов событий</td>
@@ -1452,11 +1452,11 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Оптимизация графики и производительности (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance">Улучшенная графика и производительность DirectX 12</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance">Улучшенная графика и производительность DirectX 12</a></td>
     </tr>
     <tr>
         <td>Отладка графики DirectX (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools">Решение сложных проблем графики игры с помощью средств DirectX</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools">Решение сложных проблем графики игры с помощью средств DirectX</a></td>
     </tr>
     <tr>
         <td>Средства Visual Studio 2015 для отладки DirectX 12 (видео)</td>
@@ -1511,7 +1511,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Объединение языков, культур и технологий</td>
-        <td><a href="http://www.microsoft.com/Language/Default.aspx">Интернет-ресурс с языковыми соглашениями и стандартной терминологией Майкрософт</a></td>
+        <td><a href="https://www.microsoft.com/Language/Default.aspx">Интернет-ресурс с языковыми соглашениями и стандартной терминологией Майкрософт</a></td>
     </tr>
 </table>
 
@@ -1680,7 +1680,7 @@ BabylonJS — это комплексная платформа JavaScript для
 
 ### <a name="visual-studio-application-insights"></a>Visual Studio Application Insights
 
-Статистика Visual Studio Application Insights позволяет получать аналитические сведения о производительности, телеметрии и использовании опубликованной игры. Статистика Application Insights помогает обнаруживать и устранять проблемы после выхода игры, постоянно контролировать и совершенствовать игровой процесс, понимать характер взаимодействия игроков с игрой. Статистика Application Insights работает путем добавления SDK в приложение, которое отправляет телеметрию на [портал Azure](http://portal.azure.com/).
+Статистика Visual Studio Application Insights позволяет получать аналитические сведения о производительности, телеметрии и использовании опубликованной игры. Статистика Application Insights помогает обнаруживать и устранять проблемы после выхода игры, постоянно контролировать и совершенствовать игровой процесс, понимать характер взаимодействия игроков с игрой. Статистика Application Insights работает путем добавления SDK в приложение, которое отправляет телеметрию на [портал Azure](https://portal.azure.com/).
 
 <table>
     <colgroup>
@@ -1707,7 +1707,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Анализ поведения игроков с помощью GameAnalytics</td>
-        <td><a href="http://www.gameanalytics.com/">GameAnalytics</a></td>
+        <td><a href="https://www.gameanalytics.com/">GameAnalytics</a></td>
     </tr>
     <tr>
         <td>Подключение игры UWP к Google Analytics</td>
@@ -1845,7 +1845,7 @@ Xbox Live — это высококлассная игровая сеть, ко�
     </tr>
     <tr>
         <td>Требования к играм, использующим Xbox Live (GDN)</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkId=533217">Требования к Xbox для Xbox Live в Windows 10</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=533217">Требования к Xbox для Xbox Live в Windows 10</a></td>
     </tr>
     <tr>
         <td>Примеры</td>
@@ -1853,19 +1853,19 @@ Xbox Live — это высококлассная игровая сеть, ко�
     </tr>  
     <tr>
         <td>Обзор разработки игр для Xbox Live (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10">Разработка с использованием Xbox Live для Windows 10</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10">Разработка с использованием Xbox Live для Windows 10</a></td>
     </tr>
     <tr>
         <td>Кроссплатформенное проведение матчей (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Многопользовательский режим Xbox Live: знакомство со службой кросс-платформенного проведения матчей и игр</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Многопользовательский режим Xbox Live: знакомство со службой кросс-платформенного проведения матчей и игр</a></td>
     </tr>
     <tr>
         <td>Многопользовательские игры на разных устройствах в Fable Legends (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">Fable Legends: многопользовательские игры на разных устройствах с Xbox Live</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">Fable Legends: многопользовательские игры на разных устройствах с Xbox Live</a></td>
     </tr>
     <tr>
         <td>Статистика и достижения Xbox Live (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live">Рекомендации по использованию облачной статистики и достижений пользователя в Xbox Live</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live">Рекомендации по использованию облачной статистики и достижений пользователя в Xbox Live</a></td>
     </tr>
 </table>
 
@@ -1883,15 +1883,15 @@ Xbox Live — это высококлассная игровая сеть, ко�
     </tr>
     <tr>
         <td>Независимая разработка игр (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers">Новые возможности для независимых разработчиков</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers">Новые возможности для независимых разработчиков</a></td>
     </tr>
     <tr>
         <td>Особенности многоядерных мобильных устройств (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices">Стабильная производительность игры на многоядерных мобильных устройствах</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices">Стабильная производительность игры на многоядерных мобильных устройствах</a></td>
     </tr>
     <tr>
         <td>Разработка классических игр для Windows 10 (видео)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10">Компьютерные игры для Windows 10</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10">Компьютерные игры для Windows 10</a></td>
     </tr>
 </table>
 

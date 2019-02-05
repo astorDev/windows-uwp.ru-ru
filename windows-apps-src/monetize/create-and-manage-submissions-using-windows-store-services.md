@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 2122c259e78ce96c4553dd676c0c1ed78e4e7123
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 82e5ba10b8f0480f4d996840df26817e324111d8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922804"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049471"
 ---
 # <a name="create-and-manage-submissions"></a>Создание отправок и управление ими
 
@@ -41,7 +41,7 @@ ms.locfileid: "8922804"
 
 Перед тем как начать писать код для вызова API отправки в Microsoft Store, убедитесь, что вы выполнили следующие необходимые условия.
 
-* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае можно [Создать новую Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
+* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](https://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае можно [Создать новую Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
 
 * Необходимо [Привязать приложение Azure AD с учетной записью центра партнеров](#associate-an-azure-ad-application-with-your-windows-partner-center-account) и получить владельца, идентификатор, идентификатор клиента и ключ. Эти данные вам понадобятся для получения маркера доступа Azure AD, который будет использоваться в вызовах к API отправки в Microsoft Store.
 

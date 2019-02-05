@@ -6,12 +6,12 @@ ms.date: 07/12/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf84846fc34a7b93f168abc1dfa31e9f743be209
-ms.sourcegitcommit: 444fd387c55618f9afdac115264c85b14fd8b826
+ms.openlocfilehash: 33814efca80bd4ad6348f730242d2edab1edda97
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "8999927"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050201"
 ---
 # <a name="events-and-routed-events-overview"></a>Общие сведения о событиях и перенаправленных событиях
 
@@ -300,7 +300,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
     - Для работы с обработчиком событий используйте делегат [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx). Он имеет встроенное преобразование в универсальный делегат события [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577) среды выполнения Windows.
     - Не используйте в качестве основы класса событий данных класс [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx). Он не имеет встроенного преобразования в среду выполнения Windows. Используйте существующий класс событий данных либо вообще не используйте базовый класс.
     - Если вы используете пользовательские методы доступа, см. статью [Пользовательские события и методы доступа событий в компонентах среды выполнения Windows](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx).
-    - Если вам не совсем понятен стандартный шаблон событий среды .NET, см. статью [Определение событий для пользовательских классов Silverlight](http://msdn.microsoft.com/library/dd833067.aspx). В статье приведены примеры для Microsoft Silverlight, но они могут быть полезны для стандартного шаблона события среды .NET.
+    - Если вам не совсем понятен стандартный шаблон событий среды .NET, см. статью [Определение событий для пользовательских классов Silverlight](https://msdn.microsoft.com/library/dd833067.aspx). В статье приведены примеры для Microsoft Silverlight, но они могут быть полезны для стандартного шаблона события среды .NET.
 - Для C++/CX см. [События в C++/CX](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx).
     - Присваивайте имена ссылкам даже при использовании собственных пользовательских событий. Не используйте лямбда-выражения для пользовательских событий — может возникнуть циклическая ссылка.
 
@@ -313,6 +313,6 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 * [Обзор языка XAML](xaml-overview.md)
 * [Краткое руководство: сенсорный ввод](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)
 * [Взаимодействие с помощью клавиатуры](https://msdn.microsoft.com/library/windows/apps/mt185607)
-* [События .NET и делегаты](http://go.microsoft.com/fwlink/p/?linkid=214364)
+* [События .NET и делегаты](https://go.microsoft.com/fwlink/p/?linkid=214364)
 * [Создание компонентов среды выполнения Windows](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)

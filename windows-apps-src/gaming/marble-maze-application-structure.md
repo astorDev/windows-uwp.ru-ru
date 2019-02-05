@@ -6,12 +6,12 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, пример, directx, структура
 ms.localizationpriority: medium
-ms.openlocfilehash: d19fe1a81a193baf7fe6b7b86865dfb7ea65c00b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 55b933db7f9b26de2caa3877bde445f96c08d561
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936177"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049881"
 ---
 # <a name="marble-maze-application-structure"></a>Структура приложения Marble Maze
 
@@ -21,7 +21,7 @@ ms.locfileid: "8936177"
 Структура приложения универсальной платформы Windows (UWP) на базе DirectX отличается от обычного классического приложения. Вместо работы с такими типами дескрипторов, как [HWND](https://msdn.microsoft.com/library/windows/desktop/aa383751), и функциями, подобными [CreateWindow](https://msdn.microsoft.com/library/windows/desktop/ms632679), среда выполнения Windows предоставляет такие интерфейсы, как [Windows::UI::Core::ICoreWindow](https://msdn.microsoft.com/library/windows/apps/br208296), благодаря чему вы можете разрабатывать приложения UWP более современным объектно-ориентированным образом. В этом разделе документации показана структура программного кода приложения Marble Maze.
 
 > [!NOTE]
-> Пример кода, соответствующего этому документу, см. в [примере игры DirectX Marble Maze](http://go.microsoft.com/fwlink/?LinkId=624011).
+> Пример кода, соответствующего этому документу, см. в [примере игры DirectX Marble Maze](https://go.microsoft.com/fwlink/?LinkId=624011).
 
  
 ## 

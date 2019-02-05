@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, реклама, рекламные объявления, известные проблемы, устранение неполадок
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 029d595c41301e62f74c9b08b633bb22bfb12786
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939382"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049182"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Сведения об известных проблемах и устранении неполадок рекламы в приложениях
 
@@ -48,7 +48,7 @@ ms.locfileid: "8939382"
 
 Если вы видите тестовые объявления в приложении, то ваш код работает и может отображать рекламу. Если проблемы сохраняются, обратитесь в [службу поддержки по продукту](https://developer.microsoft.com/en-us/windows/support). На этой странице выберите **свяжитесь с нами**.
 
-Можно также опубликовать вопрос на [форуме](http://go.microsoft.com/fwlink/p/?LinkId=401266).
+Можно также опубликовать вопрос на [форуме](https://go.microsoft.com/fwlink/p/?LinkId=401266).
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>В приложении отображается тестовая реклама, а не реальные объявления
 
@@ -91,7 +91,7 @@ ms.locfileid: "8939382"
 
 ## <a name="more-information"></a>Дополнительные сведения
 
-Дополнительные сведения об актуальных известных ошибках и публикации вопросов, связанных с Microsoft Advertising SDK, см. на [форуме](http://go.microsoft.com/fwlink/p/?LinkId=401266).
+Дополнительные сведения об актуальных известных ошибках и публикации вопросов, связанных с Microsoft Advertising SDK, см. на [форуме](https://go.microsoft.com/fwlink/p/?LinkId=401266).
 
  
 

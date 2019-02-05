@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, центр разработки, параметры учетной записи, профиль, профиль учетной записи, учетная запись разработчика, параметры учетной записи разработчика
 ms.localizationpriority: medium
-ms.openlocfilehash: c4f7bd6d7aa085c3d5066d3b486583c5b3f37182
-ms.sourcegitcommit: b66c5ccbf519b99a432c83c890436a044fc891df
+ms.openlocfilehash: 25e18956900a873c22ec95858e72f02e74aa7370
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "8992608"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049341"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>Управление параметрами учетной записи и сведениями профиля
 
@@ -51,6 +51,6 @@ ms.locfileid: "8992608"
 - **Клиенты**: управление сопоставлениями вашего клиента Azure AD. Дополнительные сведения см. в разделе [связать Azure AD с учетной записью центра партнеров](associate-azure-ad-with-dev-center.md).
 - **Программы**: просматривайте сведения о программах, в которых вы принимаете участие, и узнавайте о других программах, которые могут быть вам интересны.
 - **Соглашения**: просмотр соглашений, принятых вашей учетной записью.
-- **Разработки устройств**: представление [устройств Windows Phone 8.x, которые вы Разблокировали для тестирования](http://go.microsoft.com/fwlink/p/?LinkId=533897) и [консолей Xbox One, включенных для разработки](../xbox-apps/devkit-activation.md)и управления ими. 
+- **Разработки устройств**: представление [устройств Windows Phone 8.x, которые вы Разблокировали для тестирования](https://go.microsoft.com/fwlink/p/?LinkId=533897) и [консолей Xbox One, включенных для разработки](../xbox-apps/devkit-activation.md)и управления ими. 
 
 

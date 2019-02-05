@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 6740e6ce35277fa7f7f088c312f8b9ee1f5281c3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 321f8efc1475bc153102f3f8157cd2d094b37077
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923973"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049056"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 Дополнительные сведения о преимуществах локализации приложений см. в разделе [Глобализация и локализация](../design/globalizing/globalizing-portal.md).
@@ -116,7 +116,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ## <a name="localize-the-string-resources"></a>Локализация строковых ресурсов
 1. Создайте копию файла ресурсов (.resw) для другого языка.
     1. В разделе Strings создайте новую вложенную папку и назовите ее de-DE для немецкого языка (Германия).
-   <br>**Примечание**имя папки, можно использовать любой [тег языка BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Дополнительные сведения о языковых квалификаторах и список распространенных языковых тегов приводятся в разделе [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md).
+   <br>**Примечание**имя папки, можно использовать любой [тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302). Дополнительные сведения о языковых квалификаторах и список распространенных языковых тегов приводятся в разделе [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md).
    2. Создайте копию `Strings/en-US/Resources.resw` в папке `Strings/de-DE`.
 2. Переведите строки.
     1. Откройте `Strings/de-DE/Resources.resw` и переведите значения в столбце Value. Комментарии переводить не нужно.
@@ -291,6 +291,6 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 * [Директива x:Uid](../xaml-platform/x-uid-directive.md)
 * [вложенные свойства](../xaml-platform/attached-properties-overview.md)
 * [Локализуемые элементы манифеста](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [Тег языка BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md)
 * [Загрузка строковых ресурсов](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)

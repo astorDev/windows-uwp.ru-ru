@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f707e72e73398ae21cd391da16a0f2b40dcd7ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2c7d40765e0d12e3543f198aebd5acd15ed3aff3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942791"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047778"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Создание трехмерной игры JavaScript с использованием библиотеки three.js
 
@@ -35,7 +35,7 @@ ms.locfileid: "8942791"
 
 Для этого проекта понадобятся:
 -   компьютер (или виртуальная машина) под управлением текущей версии Windows10;
--   копия Visual Studio. Бесплатный выпуск Visual Studio Community Edition можно скачать на [домашней странице Visual Studio](http://visualstudio.com/).
+-   копия Visual Studio. Бесплатный выпуск Visual Studio Community Edition можно скачать на [домашней странице Visual Studio](https://visualstudio.com/).
 В этом проекте используется библиотека JavaScript **three.js**. Библиотека **three.js** выпускается по лицензии MIT. Эта библиотека уже есть в проекте (ищите `js/libs` в представлении "Обозреватель решений"). Подробнее об этой библиотеке можно узнать на домашней странице [**three.js**](https://threejs.org/).
 
 ## <a name="getting-started"></a>Начало работы

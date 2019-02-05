@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, пример кода, примеры кода
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: 64eb0d13db1fbcf49d9da28e57eb85ff84823bf1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946299"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049721"
 ---
 # <a name="get-uwp-app-samples"></a>Получение примеров приложений UWP
 
@@ -28,7 +28,7 @@ ms.locfileid: "8946299"
 
 
 > [!NOTE]
-> Для открытия, создания и запуска примеров UWP требуется Visual Studio 2015 или более поздней версии, а также пакет Windows SDK. Вы можете получить бесплатную копию Visual Studio Community с поддержкой разработки приложений UWP [здесь](http://go.microsoft.com/fwlink/p/?LinkID=280676 "Скачать средства разработки для Windows").  
+> Для открытия, создания и запуска примеров UWP требуется Visual Studio 2015 или более поздней версии, а также пакет Windows SDK. Вы можете получить бесплатную копию Visual Studio Community с поддержкой разработки приложений UWP [здесь](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Скачать средства разработки для Windows").  
 >
 > Кроме того, не забудьте распаковать весь архив, а не только отдельные примеры. Все примеры зависят от папки SharedContent в архиве. Примеры функций UWP используют связанные файлы в Visual Studio, чтобы уменьшить дублирование общих файлов, включая файлы шаблонов примеров и ресурсы изображений. Эти общие файлы хранятся в папке SharedContent в корневом каталоге репозитория, а файлы проекта ссылаются на них с помощью ссылок.
 

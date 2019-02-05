@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: dcaad17df5c036069dcdd729e662e5418db7646e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fe86656756eab9d9286d68c2a37357a9b824561e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923514"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048947"
 ---
 # <a name="data-binding-in-depth"></a>Подробно о привязке данных
 
@@ -40,14 +40,14 @@ ms.locfileid: "8923514"
 
 **Примеры приложений с расширением разметки {x:Bind}**
 
--   [Пример {x:Bind}](http://go.microsoft.com/fwlink/p/?linkid=619989).
+-   [Пример {x:Bind}](https://go.microsoft.com/fwlink/p/?linkid=619989).
 -   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame).
--   [Пример основных элементов пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?linkid=619992).
+-   [Пример основных элементов пользовательского интерфейса XAML](https://go.microsoft.com/fwlink/p/?linkid=619992).
 
 **Примеры приложений с расширением разметки {Binding}**
 
--   Скачайте приложение [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950).
--   Скачайте приложение [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952).
+-   Скачайте приложение [Bookstore1](https://go.microsoft.com/fwlink/?linkid=532950).
+-   Скачайте приложение [Bookstore2](https://go.microsoft.com/fwlink/?linkid=532952).
 
 ## <a name="every-binding-involves-these-pieces"></a>Неотъемлемые компоненты каждой привязки
 
@@ -606,7 +606,7 @@ Click="{x:Bind RootFrame.GoForward}"/>
 
 ## <a name="binding-to-a-collection-of-folders-or-files"></a>Привязка к коллекции папок или файлов
 
-Для извлечения данных из папок и файлов можно использовать API в пространстве имен [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346). Однако разные методы **GetFilesAsync**, **GetFoldersAsync** и **GetItemsAsync** не возвращают значения, которые подходят для привязки к элементам управления списком. Вместо этого необходимо выполнить привязку к возвращаемым значениям методов [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422), [**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428) и [**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) класса [**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501). В приведенном ниже примере кода из [статьи с примером StorageDataSource и GetVirtualizedFilesVector](http://go.microsoft.com/fwlink/p/?linkid=228621) демонстрируется типичное использование. Не забудьте объявить возможность **picturesLibrary** в манифесте пакета приложения и убедитесь, что в вашей папке библиотеки изображений есть изображения.
+Для извлечения данных из папок и файлов можно использовать API в пространстве имен [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346). Однако разные методы **GetFilesAsync**, **GetFoldersAsync** и **GetItemsAsync** не возвращают значения, которые подходят для привязки к элементам управления списком. Вместо этого необходимо выполнить привязку к возвращаемым значениям методов [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422), [**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428) и [**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) класса [**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501). В приведенном ниже примере кода из [статьи с примером StorageDataSource и GetVirtualizedFilesVector](https://go.microsoft.com/fwlink/p/?linkid=228621) демонстрируется типичное использование. Не забудьте объявить возможность **picturesLibrary** в манифесте пакета приложения и убедитесь, что в вашей папке библиотеки изображений есть изображения.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -673,9 +673,9 @@ ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
 </GridView>
 ```
 
-Вы можете реализовать шаблон "is-a-group" одним из двух способов. Первый способ — создать собственный класс группы. Создайте класс на основе **List&lt;T&gt;** (где *T*— это тип элементов). Например, `public class Author : List<BookSku>`. Второй способ — использовать выражение [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) для динамического создания объектов группы (и класса группы) из вероятных значений свойств элементов **BookSku**. Этот подход с поддержкой только плоского списка элементов и их группированием в ходе процесса обычно используется приложением, которое получает доступ к данным из облачной службы. Это позволяет гибко группировать книги по авторам или жанрам (к примеру) без специальных классов групп, таких как **Author** и **Genre**.
+Вы можете реализовать шаблон "is-a-group" одним из двух способов. Первый способ — создать собственный класс группы. Создайте класс на основе **List&lt;T&gt;** (где *T*— это тип элементов). Например, `public class Author : List<BookSku>`. Второй способ — использовать выражение [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) для динамического создания объектов группы (и класса группы) из вероятных значений свойств элементов **BookSku**. Этот подход с поддержкой только плоского списка элементов и их группированием в ходе процесса обычно используется приложением, которое получает доступ к данным из облачной службы. Это позволяет гибко группировать книги по авторам или жанрам (к примеру) без специальных классов групп, таких как **Author** и **Genre**.
 
-В примере ниже показан шаблон "is-a-group", использующий выражение [LINQ](http://msdn.microsoft.com/library/bb397926.aspx). На этот раз мы группируем книги по жанрам, причем названия жанров отображаются в заголовках групп. На это указывает путь свойства Key в ссылке на значение [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx) группы.
+В примере ниже показан шаблон "is-a-group", использующий выражение [LINQ](https://msdn.microsoft.com/library/bb397926.aspx). На этот раз мы группируем книги по жанрам, причем названия жанров отображаются в заголовках групп. На это указывает путь свойства Key в ссылке на значение [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx) группы.
 
 ```csharp
 using System.Linq;
@@ -724,7 +724,7 @@ public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
     </GridView>
 ```
 
-С помощью элемента управления [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/Hh702601) пользователи могут эффективно просматривать сгруппированные данные и переходить между ними. Пример приложения [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) демонстрирует, как использовать элемент управления **SemanticZoom**. В этом приложении вы можете просмотреть список книг, сгруппированных по автору (представление с увеличенным масштабом). Уменьшите масштаб представления, чтобы просмотреть список переходов между авторами. Список переходов — это гораздо более быстрый способ навигации, чем прокрутка списка книг. Увеличенное и уменьшенное представления являются элементами управления **ListView** и **GridView**, привязанными к одному классу **CollectionViewSource**.
+С помощью элемента управления [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/Hh702601) пользователи могут эффективно просматривать сгруппированные данные и переходить между ними. Пример приложения [Bookstore2](https://go.microsoft.com/fwlink/?linkid=532952) демонстрирует, как использовать элемент управления **SemanticZoom**. В этом приложении вы можете просмотреть список книг, сгруппированных по автору (представление с увеличенным масштабом). Уменьшите масштаб представления, чтобы просмотреть список переходов между авторами. Список переходов — это гораздо более быстрый способ навигации, чем прокрутка списка книг. Увеличенное и уменьшенное представления являются элементами управления **ListView** и **GridView**, привязанными к одному классу **CollectionViewSource**.
 
 ![Иллюстрация элемента управления SemanticZoom](images/sezo.png)
 

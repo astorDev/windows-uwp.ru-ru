@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c75a6c487fe4a7f7cb56deff869b36309a4b9c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a3133508a0cb8919994543845412ef71a8d463fe
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921767"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050847"
 ---
 # <a name="conditional-xaml"></a>Условный XAML
 
@@ -59,7 +59,7 @@ IsPropertyPresent(ControlType, PropertyName) | IsPropertyNotPresent(ControlType,
 
 В этом примере необходимо отобразить текст «Здравствуйте, "условный XAML"» в качестве содержимого текстового блока, если приложение выполняется в обновлении Fall Creators Update или более поздней версии, и по умолчанию не отображать никакого содержимого, если приложение выполняется в предыдущей версии операционной системы.
 
-Во-первых, определите пользовательское пространство имен с префиксом 'contract5Present' и используйте пространство имен XAML по умолчанию (http://schemas.microsoft.com/winfx/2006/xaml/presentation) в качестве схемы со свойством [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text). Чтобы сделать это пространство имен условным, добавьте разделитель "?" после схемы.
+Во-первых, определите пользовательское пространство имен с префиксом 'contract5Present' и используйте пространство имен XAML по умолчанию (https://schemas.microsoft.com/winfx/2006/xaml/presentation) в качестве схемы со свойством [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text). Чтобы сделать это пространство имен условным, добавьте разделитель "?" после схемы.
 
 Затем определите условный оператор, возвращающий значение **true** на устройствах с обновлением Fall Creators Update или выше. Используйте метод ApiInformation **IsApiContractPresent** для проверки наличия пятой версии UniversalApiContract. Версия 5 UniversalApiContract была выпущена вместе с обновлением Fall Creators Update (пакет SDK 16299).
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, egl, dxgi, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 1279d5100aa00e1b94d7d56b472a0574d22c3416
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 19c857ae5274be70d19a14d5bbf47adb595b5676
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929829"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049701"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>Сравнение кода EGL с DXGI и Direct3D
 
@@ -28,7 +28,7 @@ ms.locfileid: "8929829"
 
 DXGI и Direct3D, подобно EGL, предоставляют методы для настройки графических ресурсов, получения контекста отрисовки, в котором будут рисовать шейдеры, и отображения результатов в окне. Но у DXGI и Direct3D есть целый ряд дополнительных возможностей, и они требуют дополнительных усилий для правильной настройки при переносе с EGL.
 
-> **Примечание**  это руководство основано на открытой спецификации Khronos Group для EGL 1.4, найти здесь: [собственные графический интерфейс платформы Khronos (версия EGL 1.4, 6 апреля 2011 г.) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Различия в синтаксисе, касающиеся других платформ и языков разработки, не охвачены в этом руководстве.
+> **Примечание**  это руководство основано на открытой спецификации Khronos Group для EGL 1.4, найти здесь: [собственные графический интерфейс платформы Khronos (версия EGL 1.4, 6 апреля 2011 г.) \[PDF\]](https://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Различия в синтаксисе, касающиеся других платформ и языков разработки, не охвачены в этом руководстве.
 
  
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ee38abfb28aad8d6a3ce073a947580b3df29593
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: df03c6f10f106868213fe812b2f303d7675c567b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942598"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050131"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Тестирование с помощью эмулятора устройства с Windows 10 Mobile (Майкрософт)
 
@@ -237,7 +237,7 @@ ESC | WIN + ESC | НАЗАД | Длинные нажатия работают д
 -   Установите флажок **Включить прослушиватель MasterCard** под окнами редактора скриптов и запустите симулятор MasterCard.
 -   С помощью средства можно формировать команды, которые передаются в приложение, запущенное в эмуляторе, с помощью средства NFC.
 
-Чтобы узнать больше о поддержке HCE и разработке приложений HCE в Windows 10 Mobile, изучите [блог группы разработчиков NFC Microsoft](http://go.microsoft.com/fwlink/?LinkId=534749).
+Чтобы узнать больше о поддержке HCE и разработке приложений HCE в Windows 10 Mobile, изучите [блог группы разработчиков NFC Microsoft](https://go.microsoft.com/fwlink/?LinkId=534749).
 
 ### <a name="how-to-create-scripts-for-hce-testing"></a>Создание скриптов для тестирования HCE
 
@@ -656,7 +656,7 @@ Push-уведомления несложно протестировать без
 
 ## <a name="support-resources"></a>Ресурсы поддержки
 
-Ответы на возможные вопросы и способы устранения проблем со средствами Windows 10 см. на [форуме, посвященном средствам Windows 10](http://go.microsoft.com/fwlink/?LinkId=534765). Чтобы просмотреть все форумы, посвященные разработке для Windows 10, перейдите по [этой ссылке](http://go.microsoft.com/fwlink/?LinkId=535000).
+Ответы на возможные вопросы и способы устранения проблем со средствами Windows 10 см. на [форуме, посвященном средствам Windows 10](https://go.microsoft.com/fwlink/?LinkId=534765). Чтобы просмотреть все форумы, посвященные разработке для Windows 10, перейдите по [этой ссылке](https://go.microsoft.com/fwlink/?LinkId=535000).
 
 ## <a name="related-topics"></a>Ссылки по теме
 

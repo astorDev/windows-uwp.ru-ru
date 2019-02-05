@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: 45f76744070a7557939d1d7f2307113852737072
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ccc3f22d0485faa0df01828f1a6f807d2a1ce555
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938572"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046903"
 ---
 # <a name="process-bitmaps-with-opencv"></a>Обработка точечных рисунков с помощью OpenCV
 
@@ -20,7 +20,7 @@ ms.locfileid: "8938572"
 В примерах в этой статье объясняется процесс создания собственного кода для компонента среды выполнения Windows, который может использоваться из приложений UWP, включая приложения, созданные с помощью C#. Этот вспомогательный компонент будет предоставлять лишь один метод **Blur**, который будет использовать функции обработки OpenCV для размытия изображения. Этот компонент реализует частные методы, позволяющие получать указатель на базовый буфер данных изображений, который можно использовать непосредственно в библиотеке OpenCV, что упрощает развитие вспомогательного компонента для реализации других функций обработки OpenCV. 
 
 * Введение в использование **SoftwareBitmap** см. в разделе [Создание, редактирование и сохранение растровых изображений](imaging.md). 
-* Чтобы узнать, как использовать библиотеку OpenCV, перейдите на сайт [http://opencv.org](http://opencv.org).
+* Чтобы узнать, как использовать библиотеку OpenCV, перейдите на сайт [http://opencv.org](https://opencv.org).
 * Чтобы узнать, как использовать описанный в этой статье вспомогательный компонент OpenCV вместе с **[MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)** для реализации обработки изображений на поступающих с камеры кадрах в режиме реального времени, см. раздел [Использование OpenCV с MediaFrameReader](use-opencv-with-mediaframereader.md).
 * Полный пример кода, реализующий некоторые различные эффекты, см. в разделе [Пример кадров камеры + OpenCV](https://go.microsoft.com/fwlink/?linkid=854003) в репозитории универсальных примеров Windows на GitHub.
 

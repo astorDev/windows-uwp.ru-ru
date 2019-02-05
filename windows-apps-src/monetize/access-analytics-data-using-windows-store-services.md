@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики дляMicrosoft Store
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0f0df87f8ed5339c977dbd468f8aa2a7877f0d9e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 72e0941bb42a2a507af652758432ce51212c1042
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939144"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046407"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Доступ к аналитическим данным с помощью служб Магазина
 
@@ -30,7 +30,7 @@ ms.locfileid: "8939144"
 
 Перед тем как начать писать код для вызова API аналитики для Microsoft Store, убедитесь, что вы выполнили следующие необходимые условия.
 
-* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае можно [Создать новую Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
+* У вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](https://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть Azure Active Directory. В противном случае можно [Создать новую Azure AD в центре партнеров](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) без дополнительной платы.
 
 * Необходимо привязать приложение Azure AD к учетной записи центра партнеров, получить идентификатор владельца и идентификатор клиента для приложения и создать ключ. Приложение Azure AD представляет собой приложение или службу, из которой отправляются вызовы в API аналитики дляMicrosoft Store. Чтобы получить маркер доступа Azure AD, который вы передадите в API, необходимо иметь в наличии идентификатор владельца, идентификатор клиента и ключ.
     > [!NOTE]
@@ -114,8 +114,8 @@ grant_type=client_credentials
 
 | Сценарий       | Методы      |
 |---------------|--------------------|
-| Приобретения |  <ul><li>[Получение сведений о покупках игр на Xbox One](get-xbox-one-game-acquisitions.md)</li><li>[Получение сведений о приобретенных надстройках для Xbox One](get-xbox-one-add-on-acquisitions.md)</li></ul> |
-| Ошибки |  <ul><li>[Получение данных системы отчетов для Xbox One игры](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[Получение сведений об ошибке в Xbox One игры](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[Получение трассировки стека при возникновении ошибки в Xbox One игры](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[Скачать CAB-файл для ошибки в игры Xbox One](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
+| Приобретения |  <ul><li>[Получение сведений о покупках игр на Xbox One](get-xbox-one-game-acquisitions.md)</li><li>[Получение сведений о приобретениях надстроек для Xbox One](get-xbox-one-add-on-acquisitions.md)</li></ul> |
+| Ошибки |  <ul><li>[Получение данных системы отчетов об ошибках для игры Xbox One](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[Получение сведений об ошибке в игре Xbox One](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[Получение трассировки стека при возникновении ошибки в игре Xbox One](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[Скачать CAB-файл для ошибки в игре Xbox One](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>Методы для оборудования и драйверов
 
@@ -123,7 +123,7 @@ grant_type=client_credentials
 
 ## <a name="code-example"></a>Пример кода
 
-В следующем примере кода показано, как получить маркер доступа Azure AD и вызвать API аналитики для Microsoft Store из консольного приложения C#. Чтобы использовать этот пример кода, назначьте переменным *tenantId*, *clientId*, *clientSecret* и *appID* соответствующие вашему сценарию значения. В этом примере для десериализации данных JSON, возвращаемых API аналитики дляMicrosoft Store, требуется [пакет Json.NET](http://www.newtonsoft.com/json).
+В следующем примере кода показано, как получить маркер доступа Azure AD и вызвать API аналитики для Microsoft Store из консольного приложения C#. Чтобы использовать этот пример кода, назначьте переменным *tenantId*, *clientId*, *clientSecret* и *appID* соответствующие вашему сценарию значения. В этом примере для десериализации данных JSON, возвращаемых API аналитики дляMicrosoft Store, требуется [пакет Json.NET](https://www.newtonsoft.com/json).
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]

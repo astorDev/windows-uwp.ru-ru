@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 88dc22a11f88bbf0945340729722ea434345b205
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 15c0ff77d511e531bcb8b20b21f3c52a8c753b7a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037356"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049119"
 ---
 # <a name="reveal-focus"></a>Фокус отображения
 
@@ -163,7 +163,7 @@ ms.locfileid: "9037356"
 
 ## <a name="use-your-own-focus-visuals"></a>Использование собственных визуальных элементов фокуса
 
-Еще один способ настройки фокуса отображения — отказаться от использования системных визуальных элементов, нарисовав собственные с помощью визуальных состояний. Дополнительные сведения приводятся в статье [Пример визуальных элементов фокуса](http://go.microsoft.com/fwlink/p/?LinkID=619895).
+Еще один способ настройки фокуса отображения — отказаться от использования системных визуальных элементов, нарисовав собственные с помощью визуальных состояний. Дополнительные сведения приводятся в статье [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895).
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>Фокус отображения и система проектирования Fluent
@@ -175,7 +175,7 @@ ms.locfileid: "9037356"
 - [Эффект](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [Проектирование для Xbox и телевизора](/windows/uwp/design/devices/designing-for-tv)
 - [Взаимодействие с помощью геймпада и пульта дистанционного управления](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
-- [Пример визуальных элементов фокуса](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 - [Эффекты композиции](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Наука системы: система проектирования Fluent Design и глубина](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Наука системы: система проектирования Fluent и свет](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

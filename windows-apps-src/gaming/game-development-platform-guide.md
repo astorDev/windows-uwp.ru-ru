@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, технологии, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: c6d2ebad640849cd81d6a2704f89ca1f05cc1b27
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 53616e572be6051d096c095f9587c498b769a6af
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942969"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048531"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>Технологии игр для приложений UWP
 
@@ -323,7 +323,7 @@ ms.locfileid: "8942969"
 
 [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) позволяет любому разработчику интегрировать Xbox Live в свою игру UWP и опубликовать ее для Xbox One и Windows10. Интегрируйте социальные возможности Xbox Live, такие как вход в систему, сведения о присутствии, списки лидеров и т. д., в вашу игру с минимальными усилиями. Социальные функции Xbox Live помогают органичным образом расширить вашу аудиторию, сообщая о вашей игре более чем 55миллионам активных пользователей.
 
-Если вы хотите получить доступ к еще большим возможностям Xbox Live, находиться в основном магазине Xbox One или получать специальную маркетинговую поддержку и поддержку при разработке, примите участие в программе [ID@Xbox](http://www.xbox.com/developers/id). Сведения о функциях, доступных в программах Xbox Live Creators Program и ID@Xbox, см. в разделе [Таблица функций](../xbox-live/developer-program-overview.md#feature-table).
+Если вы хотите получить доступ к еще большим возможностям Xbox Live, находиться в основном магазине Xbox One или получать специальную маркетинговую поддержку и поддержку при разработке, примите участие в программе [ID@Xbox](https://www.xbox.com/developers/id). Сведения о функциях, доступных в программах Xbox Live Creators Program и ID@Xbox, см. в разделе [Таблица функций](../xbox-live/developer-program-overview.md#feature-table).
 
 Дополнительные сведения см. разделе [Добавление Xbox Live в игру](e2e.md#adding-xbox-live-to-your-game).
 
@@ -332,7 +332,7 @@ ms.locfileid: "8942969"
 
 ### <a name="uwp-games-without-directx"></a>Игры UWP без DirectX
 
-Более простые игры с минимальными требованиями к производительности, например карточные или настольные игры, можно написать без использования DirectX и необязательно на языке C++. Для написания игр этого типа можно использовать языки, поддерживаемые UWP, например C#, Visual Basic, C++ и HTML/JavaScript. Если быстродействие и интенсивная графика не являются обязательными требованиями для вашей игры, ознакомьтесь с [Примером сенсорной игры с использованием JavaScript и HTML5](http://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031).
+Более простые игры с минимальными требованиями к производительности, например карточные или настольные игры, можно написать без использования DirectX и необязательно на языке C++. Для написания игр этого типа можно использовать языки, поддерживаемые UWP, например C#, Visual Basic, C++ и HTML/JavaScript. Если быстродействие и интенсивная графика не являются обязательными требованиями для вашей игры, ознакомьтесь с [Примером сенсорной игры с использованием JavaScript и HTML5](https://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031).
 
 ### <a name="game-engines"></a>Игровые подсистемы
 

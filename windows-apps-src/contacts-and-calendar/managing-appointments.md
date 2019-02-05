@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, встречи, календарь
 ms.localizationpriority: medium
-ms.openlocfilehash: 805383d243008f839b04c98906edd3beb52d581a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ece137fafc2fdcca7ce41839aa4614456973cf40
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938784"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049521"
 ---
 # <a name="manage-appointments"></a>Управление встречами
 
@@ -565,11 +565,11 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 ## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
 
-Теперь вы имеете общее представление об управлении встречами. Скачайте [Примеры универсальных приложений для Windows](http://go.microsoft.com/fwlink/p/?linkid=619979) с GitHub, чтобы просмотреть дополнительные примеры управления встречами.
+Теперь вы имеете общее представление об управлении встречами. Скачайте [Примеры универсальных приложений для Windows](https://go.microsoft.com/fwlink/p/?linkid=619979) с GitHub, чтобы просмотреть дополнительные примеры управления встречами.
 
 ## <a name="related-topics"></a>Еще по теме
 
-* [Пример API встреч](http://go.microsoft.com/fwlink/p/?linkid=309836)
+* [Пример API встреч](https://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  

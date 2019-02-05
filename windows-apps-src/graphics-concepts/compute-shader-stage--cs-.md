@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ed63b3a22329fcf65aa20fc994037aeea2e86be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 29645500f8a3d1b953c24921c32a59f283bd5db3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942173"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048764"
 ---
 # <a name="compute-shader-cs-stage"></a>Этап шейдера вычислений (CS)
 
@@ -21,7 +21,7 @@ ms.locfileid: "8942173"
 
 Шейдер вычислений может выполняться параллельно во многих потоках.
 
-Шейдер вычислений представляет собой этап шейдера, программируемый на языке [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561), который расширяет возможности Direct3D за пределы графического программирования, используя технологию [DirectCompute](http://go.microsoft.com/fwlink/p/?linkid=209544).
+Шейдер вычислений представляет собой этап шейдера, программируемый на языке [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561), который расширяет возможности Direct3D за пределы графического программирования, используя технологию [DirectCompute](https://go.microsoft.com/fwlink/p/?linkid=209544).
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
 

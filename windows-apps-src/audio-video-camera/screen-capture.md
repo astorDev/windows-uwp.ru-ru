@@ -6,12 +6,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, снимок экрана
 ms.localizationpriority: medium
-ms.openlocfilehash: db32db6b293dce4210bebee139e05447da996b42
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dfed365e097b6f0d3816477513202b2693127ade
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946505"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049981"
 ---
 # <a name="screen-capture"></a>Снимок экрана
 
@@ -166,7 +166,7 @@ _framePool.FrameArrived += (s, a) =>
 В следующем фрагменте кода приведен пример реализации снимка экрана в приложении UWP начала до конца. В этом примере у нас есть кнопки на внешней сети, при нажатии вызывает метод **Button_ClickAsync** .
 
 > [!NOTE]
-> Этот фрагмент использует [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm), библиотеку для отрисовки двумерной графики. В документации свои сведения о том, как настроить его для вашего проекта.
+> Этот фрагмент использует [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm), библиотеку для отрисовки двумерной графики. В документации свои сведения о том, как настроить его для вашего проекта.
 
 ```cs
 using Microsoft.Graphics.Canvas;
