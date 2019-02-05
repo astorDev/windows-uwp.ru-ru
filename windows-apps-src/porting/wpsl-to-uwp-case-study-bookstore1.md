@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19045e84f1ca3396321dd4f8c4e76da24dc9a588
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2b9f8de488ad0baea1de9aea5c911f2519385d25
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935918"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049571"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>WindowsPhone Silverlight в UWP практический пример: Bookstore1
 
@@ -26,9 +26,9 @@ ms.locfileid: "8935918"
 
 ## <a name="downloads"></a>Загрузки
 
-[Скачать Bookstore1WPSL8 WindowsPhone Silverlight приложение](http://go.microsoft.com/fwlink/?linkid=517053).
+[Скачать Bookstore1WPSL8 WindowsPhone Silverlight приложение](https://go.microsoft.com/fwlink/?linkid=517053).
 
-[Скачать приложение Bookstore1Universal\_10 для Windows10](http://go.microsoft.com/fwlink/?linkid=532950).
+[Скачать приложение Bookstore1Universal\_10 для Windows10](https://go.microsoft.com/fwlink/?linkid=532950).
 
 ## <a name="the-windowsphone-silverlight-app"></a>Приложение WindowsPhone Silverlight
 

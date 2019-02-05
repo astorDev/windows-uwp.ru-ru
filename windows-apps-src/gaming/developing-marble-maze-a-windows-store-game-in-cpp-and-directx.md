@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, пример, directx, трехмерный
 ms.localizationpriority: medium
-ms.openlocfilehash: e61c96a1b4deb7dd1beb0233814f86ce1b5fb42c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 39f915ad9cf200a5c2c762976ab3c39c2ef85410
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936031"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050091"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Разработка Marble Maze— игры UWP— на C++ и DirectX
 
@@ -21,7 +21,7 @@ ms.locfileid: "8936031"
 В этом разделе описывается, как использовать DirectX и Visual C++ для создания трехмерной игры универсальной платформы Windows (UWP). Игра Marble Maze подходит для нескольких форм-факторов, таких как планшеты, а также для традиционных настольных компьютеров и ноутбуков.
 
 > [!NOTE]
-> Скачать исходный код игры Marble Maze вы можете на [портале GitHub](http://go.microsoft.com/fwlink/?LinkId=624011).
+> Скачать исходный код игры Marble Maze вы можете на [портале GitHub](https://go.microsoft.com/fwlink/?LinkId=624011).
 
 > [!IMPORTANT]
 > Marble Maze иллюстрирует шаблоны проектирования, которые мы считаем оптимальными для создания игр UWP. Многие особенности этой реализации вы сможете приспособить к собственной практике и требованиям той игры, которую вы разрабатываете. Вы можете без колебаний пользоваться другими методиками или библиотеками, если они лучше отвечают вашим потребностям. (Но обязательно позаботьтесь о том, чтобы ваш код успешно проходил тестирование с использованием [комплекта сертификации приложений для Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).) Когда мы полагаем, что реализация тех или иных аспектов в игре Marble Maze имеет первостепенное значение для успешной разработки игр, мы подчеркиваем это в руководстве.

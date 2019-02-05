@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e7082c3e572493656e8b109da35861ec820d4ec9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050837"
+ms.locfileid: "9058775"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Обработка аудиокадров с помощью MediaFrameReader
 
@@ -49,7 +49,7 @@ ms.locfileid: "9050837"
 
 Получите новый экземпляр **MediaFrameReader**, вызвав метод [**MediaCapture.CreateFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_) и передав объект **MediaFrameSource**, выбранный на предыдущем шаге. По умолчанию аудиокадры извлекаются в режиме буферизации, что снижает вероятность потери кадров, хотя это по-прежнему может произойти, если аудиокадры обрабатываются недостаточно быстро и заполняют доступный буфер памяти системы.
 
-Зарегистрируйте обработчик для события [**MediaFrameReader.FrameArrived**](*https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived), которое система вызывает при поступлении нового кадра аудиоданных. Вызовите метод [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync), чтобы начать получать аудиокадры. Если средство чтения кадров не запускается, возвращенное значение состояния будет отличаться от [**Success**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus).
+Зарегистрируйте обработчик для события [**MediaFrameReader.FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived), которое система вызывает при поступлении нового кадра аудиоданных. Вызовите метод [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync), чтобы начать получать аудиокадры. Если средство чтения кадров не запускается, возвращенное значение состояния будет отличаться от [**Success**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus).
 
 [!code-cs[CreateAudioFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateAudioFrameReader)]
 

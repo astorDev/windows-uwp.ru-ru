@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b4f5a2de5c3fa5564b4e4389cfc0806fd5d2844f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5a7f2d2db5670b0102f589fcd6d764a239d3bb3f
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928113"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058825"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>Создание компонентов среды выполнения Windows в C# и Visual Basic
 Начиная с .NET Framework 4.5, можно использовать управляемый код для создания собственных типов среды выполнения Windows и упаковать их в компоненте среды выполнения Windows. Компонент можно использовать в приложениях универсальной платформы Windows (UWP), написанных на C++, JavaScript, Visual Basic или C#. В этом разделе описываются правила создания компонента и рассматриваются некоторые аспекты поддержки среды выполнения Windows в .NET Framework. Как правило, такая поддержка разрабатывается таким образом, чтобы быть прозрачной для разработчиков .NET Framework. Однако при создании компонента, использующего JavaScript или C++, следует учитывать различия в том, как эти языки поддерживают среду выполнения Windows.
@@ -270,7 +270,7 @@ End Function
 
 При объявлении типа, в котором будут храниться данные вашего события, создавайте класс, производный от Object, а не от EventArgs, поскольку EventArgs не является типом среды выполнения Windows. Используйте [**EventHandler&lt;TEventArgs&gt; **](https://msdn.microsoft.com/library/db0etb8x.aspx) в качестве типа события и тип аргумента события в качестве аргумента универсального типа. Вызов событий осуществляется так же, как и в приложениях .NET Framework.
 
-Когда компонент среды выполнения Windows вызывается из JavaScript или C++, событие выполняется в соответствии с шаблоном событий среды выполнения Windows, ожидаемым этими языками. Когда компонент вызывается из C# или Visual Basic, событие представляется обычным событием .NET Framework. Пример приведен в статье [Пошаговое руководство. Создание простого компонента в C# или Visual Basic и его вызов из кода JavaScript]().
+Когда компонент среды выполнения Windows вызывается из JavaScript или C++, событие выполняется в соответствии с шаблоном событий среды выполнения Windows, ожидаемым этими языками. Когда компонент вызывается из C# или Visual Basic, событие представляется обычным событием .NET Framework. Пример приведен в статье [Пошаговое руководство. Создание простого компонента в C# или Visual Basic и его вызов из кода JavaScript](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript).
 
 При реализации пользовательских методов доступа к событиям (событие объявляется с ключевым словом **Custom** в Visual Basic) в такой реализации необходимо соблюдать шаблон событий среды выполнения Windows. См. раздел [Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows](custom-events-and-event-accessors-in-windows-runtime-components.md). Обратите внимание, что при обработке события в коде C# или Visual Basic оно все равно представляется обычным событием .NET Framework.
 

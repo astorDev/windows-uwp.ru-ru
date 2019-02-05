@@ -8,12 +8,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: Windows 10, uwp, win32, рабочий стол, всплывающие уведомления, отправка a всплывающего уведомления, отправка локального всплывающего уведомления, мост, C#, c четкие, всплывающее уведомление, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 3436433c8086c2801f1ee2174a51525e48c2f7c9
-ms.sourcegitcommit: fae67a53ab1468a31120293653ade9541085bdd7
+ms.openlocfilehash: 907ba19812c9a34a7a91f42fefac4c190bfd394b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "8992315"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058705"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Отправка локального всплывающего уведомлений из классических приложений C#
 
@@ -386,7 +386,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="step-10-deploying-and-debugging"></a>Шаг 10. Развертывание и отладка
 
-Сведения о развертывании и отладке приложения моста для классических приложений см. в разделе [Запуск, отладка и тестирование упакованного классического приложения](/porting/desktop-to-uwp-debug.md).
+Сведения о развертывании и отладке приложения моста для классических приложений см. в разделе [Запуск, отладка и тестирование упакованного классического приложения](/windows/uwp/porting/desktop-to-uwp-debug).
 
 Для развертывания и отладки классического приложения Win32 необходимо установить приложение с помощью установщика перед отладкой в обычном режиме, чтобы ярлык в меню "Пуск" с вашими AUMID и CLSID существовал. После создания ярлыка в меню "Пуск" вы можете выполнить отладку, нажав клавишу F5 в Visual Studio.
 

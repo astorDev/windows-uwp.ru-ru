@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: db25954b7fc6541ac5f5900236e61cb8da488be6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e4657c9dfb651c1e7f6bb4e2cafdc49d0a11237b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922385"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058725"
 ---
 # <a name="my-people-notifications"></a>Уведомления близких людей
 
@@ -78,7 +78,7 @@ experienceType=”shoulderTap”
 > Если ваше приложение использует [API ContactStore](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) и свойство [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) для связи контрактов, сохраненных на компьютере, с контрактами, сохраненными удаленно, важно, чтобы значение свойства RemoteId было и стабильным, и уникальным. Это значит, что удаленный идентификатор должен неизменно обозначать одну учетную запись пользователя и содержать уникальный тег, чтобы гарантировать отсутствие конфликтов с удаленными идентификаторами других контактов на компьютере, включая контакты, которыми владеют другие приложения.
 > Если уникальность и стабильность удаленных идентификаторов, используемых вашим приложением, нельзя гарантировать, то можно использовать класс [RemoteIdHelper](https://msdn.microsoft.com/en-us/library/windows/apps/jj207024(v=vs.105).aspx#BKMK_UsingtheRemoteIdHelperclass), показанный ниже в этом разделе, чтобы добавить ко всем вашим удаленным идентификаторам уникальный тег перед добавлением их к системе. Или можно вовсе отказаться от использования свойства RemoteId и создать собственное расширенное свойство, в котором будут храниться удаленные идентификаторы для ваших контактов.
 
-Помимо второй привязки и полезных данных необходимо включить другие полезные данные в первую привязку для резервного всплывающего уведомления. Оно будет использоваться, если потребуется вернуться к обычному уведомлению (описание приведено в [конце данной статьи](https://review.docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)).
+Помимо второй привязки и полезных данных необходимо включить другие полезные данные в первую привязку для резервного всплывающего уведомления. Оно будет использоваться, если потребуется вернуться к обычному уведомлению (описание приведено в [конце данной статьи](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)).
 
 ## <a name="creating-the-notification"></a>Создание уведомления
 Вы можете создать шаблон уведомления "Близкие люди" так же, как для [всплывающего уведомления](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).

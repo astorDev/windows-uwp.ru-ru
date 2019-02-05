@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 ms.topic: article
 keywords: windows 10, uwp, карта, расположение, функция определения местоположения
 ms.localizationpriority: medium
-ms.openlocfilehash: fae533e0ce42e14e3c53f5083b746a9aae221adf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b3582aa8ed406a25eb704f2f86f8ed272bea2c63
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941361"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050224"
 ---
 # <a name="get-the-users-location"></a>Получение местоположения пользователя
 
@@ -20,9 +20,9 @@ ms.locfileid: "8941361"
 
 Определение местоположения пользователя и реагирование на его изменение. Доступ к сведениям о местоположении пользователя управляется параметрами конфиденциальности в приложении «Параметры». В этой статье рассказывается, как проверить, имеется ли у вашего приложения разрешение на доступ к данным о местоположении пользователя.
 
-**Совет.** Чтобы получить дополнительные сведения о доступе к данным о местоположении в приложении, скачайте следующий пример из [репозитория Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
+**Совет.** Чтобы получить дополнительные сведения о доступе к данным о местоположении в приложении, скачайте следующий пример из [репозитория Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
--   [Пример карты универсальной платформы Windows (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Пример карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>Включение функции определения местоположения
 
@@ -267,6 +267,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 ## <a name="related-topics"></a>Связанные разделы
 
-* [Пример определения географического положения UWP](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Пример определения географического положения UWP](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [Рекомендации для разработчиков относительно создания геозон](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [Рекомендации по разработке приложений с определением местоположения](https://msdn.microsoft.com/library/windows/apps/hh465148)

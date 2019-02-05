@@ -6,18 +6,18 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
-ms.openlocfilehash: 3791887baaefeca0052a10c60d4650d5623ba3fd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e3d0a17bbb46cf2b855749f7349f86268b915ec6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947259"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050557"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>Новые возможности для разработчиков в Windows 10, сборка 15063
 
-Сборка 15063 Windows 10 (также известная как Creators Update или версия 1703), в сочетании с Visual Studio 2017 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](http://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md), либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+Сборка 15063 Windows 10 (также известная как Creators Update или версия 1703), в сочетании с Visual Studio 2017 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md), либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
-В этом разделе приводится подборка новых и улучшенных функций для разработчиков. Полный список новых пространств имен, добавленных в WindowsSDK, см. в разделе [Изменения API в Windows10, сборка 15063](windows-10-build-15063-api-diff.md). Дополнительные сведения об основных функциях Windows10 см. в разделе [Потрясающие возможности Windows10](http://go.microsoft.com/fwlink/?LinkId=823181). Кроме того, в списке [возможностей платформы разработки Windows](https://developer.microsoft.com/windows/platform/features) можно найти краткий обзор прошлых и будущих дополнений к ней.
+В этом разделе приводится подборка новых и улучшенных функций для разработчиков. Полный список новых пространств имен, добавленных в WindowsSDK, см. в разделе [Изменения API в Windows10, сборка 15063](windows-10-build-15063-api-diff.md). Дополнительные сведения об основных функциях Windows10 см. в разделе [Потрясающие возможности Windows10](https://go.microsoft.com/fwlink/?LinkId=823181). Кроме того, в списке [возможностей платформы разработки Windows](https://developer.microsoft.com/windows/platform/features) можно найти краткий обзор прошлых и будущих дополнений к ней.
 
 ## <a name="windows-10-build-15063---march-2017"></a>Windows10 (сборка15063)— март 2017г.
 

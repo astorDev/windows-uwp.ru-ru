@@ -5,12 +5,12 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: b2e09bc5d65e9bf3029b4049049de52709e648b2
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042346"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058815"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>Переход на C++/WinRT с WRL
 В этом разделе показано, как перенести код [Библиотеки шаблонов C++ (WRL) среды выполнения Windows](/cpp/windows/windows-runtime-cpp-template-library-wrl) в его эквивалент на [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -116,7 +116,7 @@ winrt::check_hresult(
 );
 ```
 
-## <a name="porting-a-wrl-module-microsoftwrlmodule"></a>Перенос модуля WRL ([Microsoft::WRL::Module]())
+## <a name="porting-a-wrl-module-microsoftwrlmodule"></a>Перенос модуля WRL (Microsoft::WRL::Module)
 Вы можете постепенно добавлять код C++/WinRT в существующий проект, который использует WRL для реализации компонента; при этом поддержка существующих классов WRL останется активна. В этом разделе показано, как это сделать.
 
 При создании нового проекта типа **Компонент среды выполнения Windows (C++/WinRT)** в Visual Studio и в ходе последующей сборки создается файл `Generated Files\module.g.cpp`. Этот файл содержит определения двух полезных функций C++/WinRT (перечислены ниже), которые можно скопировать и добавить в проект. Этими функциями являются **WINRT_CanUnloadNow** и **WINRT_GetActivationFactory**. Как видно, они осуществляют условный вызов WRL для предоставления поддержки на любом этапе переноса.

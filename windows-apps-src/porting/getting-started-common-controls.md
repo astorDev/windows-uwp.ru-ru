@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 05cf78d7dec260b990d2ce71662e3db6eb07d07f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ebba5abe0de8014a21d2e651534dacc118705fff
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941220"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050161"
 ---
 # <a name="getting-started-common-controls"></a>Начало работы: общие элементы управления
 
@@ -30,12 +30,12 @@ ms.locfileid: "8941220"
 | Управляющий элемент выбора даты (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | Представление изображения (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> См. также статью [Image и ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | Подпись (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> См. также [Краткое руководство: отображение текста](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392). |
-| Представление карты (MKMapView) и делегат представления карты (MKMapViewDelegate) | См. в разделе ["карты Bing" для приложений UWP](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
+| Представление карты (MKMapView) и делегат представления карты (MKMapViewDelegate) | См. в разделе ["карты Bing" для приложений UWP](https://go.microsoft.com/fwlink/p/?LinkId=263496) |
 | Контроллер навигации (UINavigationController) и делегат контроллера навигации (UINavigationControllerDelegate) | [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> См. также раздел [Навигация](https://msdn.microsoft.com/library/windows/apps/mt187344). |
 | Элемент управления страницей (UIPageControl) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> См. также раздел [Навигация](https://msdn.microsoft.com/library/windows/apps/mt187344). |
 | Представление выбора (UIPickerView) и делегат представления выбора (UIPickerViewDelegate) | [ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> См. также [Добавление полей со списком и списков](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616). |
 | Индикатор выполнения (UIProgressView) | [ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529) <br/> См. также [Краткое руководство. Добавление элементов управления ходом выполнения](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
-| Представление с прокруткой (UIScrollView) и делегат представления с прокруткой (UIScrollViewDelegate) | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  См. также [Примеры прокрутки, сдвига и масштабирования в XAML](http://go.microsoft.com/fwlink/p/?LinkId=238577) |
+| Представление с прокруткой (UIScrollView) и делегат представления с прокруткой (UIScrollViewDelegate) | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  См. также [Примеры прокрутки, сдвига и масштабирования в XAML](https://go.microsoft.com/fwlink/p/?LinkId=238577) |
 | Панель поиска (UISearchBar) и делегат панели поиска (UISearchBarDelegate) | См. раздел [Добавление поиска в приложение](https://msdn.microsoft.com/library/windows/apps/xaml/jj130767) <br/>  См. также [Краткое руководство. Добавление поиска в приложение](https://msdn.microsoft.com/library/windows/apps/xaml/hh868180) |
 | Сегментированный элемент управления (UISegmentedControl) | Нет |
 | Ползунок (UISlider) | [Slider](https://msdn.microsoft.com/library/windows/apps/br209614) <br/>  См. также раздел [Добавление ползунка](https://msdn.microsoft.com/library/windows/apps/xaml/hh868197) |
@@ -46,7 +46,7 @@ ms.locfileid: "8941220"
 | Текстовое поле (UITextField) и делегат текстового поля (UITextFieldDelegate) | [TextBox](https://msdn.microsoft.com/library/windows/apps/br209683) <br/>  См. также статью [Отображение и редактирование текста](https://msdn.microsoft.com/library/windows/apps/mt280218) |
 | Текстовое представление (UITextView) и делегат текстового представления (UITextViewDelegate) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/>  См. также [Краткое руководство: отображение текста](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392). |
 | Представление (UIView) и контроллер представления (UIViewController) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/>  См. также раздел [Навигация](https://msdn.microsoft.com/library/windows/apps/mt187344). |
-| Веб-представление (UIWebView) и делегат веб-представления (UIWebViewDelegate) | [WebView](https://msdn.microsoft.com/library/windows/apps/br227702) <br/>  См. также [Пример элемента управления WebView на XAML](http://go.microsoft.com/fwlink/p/?LinkId=238582) |
+| Веб-представление (UIWebView) и делегат веб-представления (UIWebViewDelegate) | [WebView](https://msdn.microsoft.com/library/windows/apps/br227702) <br/>  См. также [Пример элемента управления WebView на XAML](https://go.microsoft.com/fwlink/p/?LinkId=238582) |
 | Окно (UIWindow) | [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/>  См. также раздел [Навигация](https://msdn.microsoft.com/library/windows/apps/mt187344). |
 
 Сведения о других элементах управления: [Список элементов управления](https://msdn.microsoft.com/library/windows/apps/mt185406).
@@ -59,6 +59,6 @@ ms.locfileid: "8941220"
 
 ## <a name="related-topics"></a>Еще по теме
 
-* [build 2014: как насчет пользовательского интерфейса XAML и элементов управления?](http://go.microsoft.com/fwlink/p/?LinkID=397897)
-* [build 2014: разработка приложений с помощью общей инфраструктуры пользовательского интерфейса XAML](http://go.microsoft.com/fwlink/p/?LinkID=397898)
-* [build 2014: использование Visual Studio для создания универсальных приложений XAML](http://go.microsoft.com/fwlink/p/?LinkID=397876)
+* [build 2014: как насчет пользовательского интерфейса XAML и элементов управления?](https://go.microsoft.com/fwlink/p/?LinkID=397897)
+* [build 2014: разработка приложений с помощью общей инфраструктуры пользовательского интерфейса XAML](https://go.microsoft.com/fwlink/p/?LinkID=397898)
+* [build 2014: использование Visual Studio для создания универсальных приложений XAML](https://go.microsoft.com/fwlink/p/?LinkID=397876)

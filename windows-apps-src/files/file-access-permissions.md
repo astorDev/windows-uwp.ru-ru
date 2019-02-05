@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - javascript
-ms.openlocfilehash: 5c3732927c59cb768ef522a847f79f82994852b7
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 4845b20ed74642f6fb34ea40dd774c91ae378e7b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980402"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050284"
 ---
 # <a name="file-access-permissions"></a>Разрешения на доступ к файлам
 
@@ -90,7 +90,7 @@ ms.locfileid: "8980402"
     
     Префикс «ms-appx:///» в универсальном коде ресурса относится к папке установки приложения. Дополнительные сведения об использовании универсальных кодов ресурсов: [Добавление ссылок на содержимое с помощью URI](https://msdn.microsoft.com/library/windows/apps/hh781215).
 
-Кроме того, доступ к файлам в каталоге установки приложения (в отличие от иных расположений) также можно получить, используя некоторые [модели Win32 и COM для приложений универсальной платформы Windows (UWP)](https://msdn.microsoft.com/library/windows/apps/br205757) и [функции стандартной библиотеки C/C++ из Microsoft Visual Studio](http://msdn.microsoft.com/library/hh875057.aspx).
+Кроме того, доступ к файлам в каталоге установки приложения (в отличие от иных расположений) также можно получить, используя некоторые [модели Win32 и COM для приложений универсальной платформы Windows (UWP)](https://msdn.microsoft.com/library/windows/apps/br205757) и [функции стандартной библиотеки C/C++ из Microsoft Visual Studio](https://msdn.microsoft.com/library/hh875057.aspx).
 
 Папка установки приложения предназначена только для чтения. Нельзя получить доступ к папке установки через средство выбора файлов.
 

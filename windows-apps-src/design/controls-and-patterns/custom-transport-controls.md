@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2101eba9c78c87339af5f1bd46e6afc81eacf6af
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: d4b9e82b0ab5e798bb0b29c4d5127cfe773db5f7
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047429"
+ms.locfileid: "9058655"
 ---
 # <a name="create-custom-transport-controls"></a>Создание пользовательских элементов управления транспортировкой
 
@@ -57,7 +57,7 @@ ms.locfileid: "9047429"
 - Третий раздел содержит сетку [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx), которая объединяет различные элементы MediaTransportControls и определяет расположение компонентов относительно друг друга.
 
 > [!NOTE]
-> Дополнительные сведения об изменении шаблонов см. в разделе [Шаблоны элементов управления](). Для открытия файлов XAML, расположенных в папке \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic, можно использовать текстовый редактор или похожие программы редактирования из вашей среды разработки. Стиль и шаблон по умолчанию для каждого элемента управления определяются в файле **generic.xaml**. Чтобы найти шаблон MediaTransportControls в файле generic.xaml, используйте строку поиска "MediaTransportControls".
+> Дополнительные сведения об изменении шаблонов см. в разделе [Шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates). Для открытия файлов XAML, расположенных в папке \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic, можно использовать текстовый редактор или похожие программы редактирования из вашей среды разработки. Стиль и шаблон по умолчанию для каждого элемента управления определяются в файле **generic.xaml**. Чтобы найти шаблон MediaTransportControls в файле generic.xaml, используйте строку поиска "MediaTransportControls".
 
 В следующих разделах вы научитесь настраивать ряд основных элементов управления транспортировкой:
 - [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): позволяет вручную управлять воспроизведением мультимедиа и показывает ход выполнения
@@ -91,7 +91,7 @@ ms.locfileid: "9047429"
 </MediaPlayerElement>
 ```
 
-Подробнее об изменении стилей и шаблонов см. в статьях [Настройка стиля элементов управления]() и [Шаблоны элементов управления]().
+Подробнее об изменении стилей и шаблонов см. в статьях [Настройка стиля элементов управления](/windows/uwp/design/controls-and-patterns/xaml-styles) и [Шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates).
 
 ### <a name="create-a-derived-control"></a>Создание производного элемента управления
 

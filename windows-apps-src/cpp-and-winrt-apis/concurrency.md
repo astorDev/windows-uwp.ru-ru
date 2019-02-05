@@ -5,12 +5,12 @@ ms.date: 10/27/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, параллелизм, async, асинхронный, асинхронность
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c9a0912b0287d45633aeec4dbb643e7959c215
-ms.sourcegitcommit: 4ee300bfa6a238d3ce7674036ec1c574bb025210
+ms.openlocfilehash: f3283ffa5fa047806befa2712301c25a7d07af8e
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "9029937"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058805"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Параллельная обработка и асинхронные операции с помощью C++/WinRT
 
@@ -289,7 +289,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 }
 ```
 
-Приведенный выше код выдает исключение [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/hresult-wrong-thread), поскольку **TextBlock** должен обновляться из создавшего его потока, а это поток пользовательского интерфейса. Одним из решений является захват контекста потока, в котором изначально была вызвана наша сопрограмма. Для этого создайте экземпляр объекта [**winrt::apartment_context**](/uwp/cpp-ref-for-winrt/apartment-context) , выполнения фоновой задачи, а затем `co_await` **apartment_context** переключение обратно на контекст вызова.
+Приведенный выше код выдает исключение [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/error-handling/hresult-wrong-thread), поскольку **TextBlock** должен обновляться из создавшего его потока, а это поток пользовательского интерфейса. Одним из решений является захват контекста потока, в котором изначально была вызвана наша сопрограмма. Для этого создайте экземпляр объекта [**winrt::apartment_context**](/uwp/cpp-ref-for-winrt/apartment-context) , выполнения фоновой задачи, а затем `co_await` **apartment_context** переключение обратно на контекст вызова.
 
 ```cppwinrt
 IAsyncAction DoWorkAsync(TextBlock textblock)

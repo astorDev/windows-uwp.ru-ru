@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: windows 10, uwp, API коллекции Microsoft Store, API покупки Microsoft Store, просмотр продуктов, предоставление продуктов
 ms.localizationpriority: medium
-ms.openlocfilehash: 68bcee02c07ea8c998927d558521084cb49e9e24
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a749550c1dc644c4a9fb3f91530503adf192246e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925537"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050264"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Управление правами на продукты из службы
 
@@ -23,7 +23,7 @@ ms.locfileid: "8925537"
 -   API покупок в Microsoft Store: [предоставлять бесплатный продукт пользователю](grant-free-products.md), [получать подписки для пользователя](get-subscriptions-for-a-user.md) и [изменять состояние выставления счета подписки для пользователя](change-the-billing-state-of-a-subscription-for-a-user.md).
 
 > [!NOTE]
-> Для получения доступа к информации о принадлежности API коллекции Microsoft Store и API покупок в Microsoft Store используют проверку подлинности Azure Active Directory (Azure AD). Для использования этих API у вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](http://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть катало Azure AD.
+> Для получения доступа к информации о принадлежности API коллекции Microsoft Store и API покупок в Microsoft Store используют проверку подлинности Azure Active Directory (Azure AD). Для использования этих API у вас (или у вашей организации) должен быть каталог Azure AD, а также разрешение [глобального администратора](https://go.microsoft.com/fwlink/?LinkId=746654) для этого каталога. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть катало Azure AD.
 
 ## <a name="overview"></a>Обзор
 
@@ -122,11 +122,11 @@ grant_type=client_credentials
 
 Для каждого маркера укажите следующие параметры:
 
-* Для параметров *client\_id* и *client\_secret* укажите идентификатор приложения и секрет клиента для приложения, полученные на [Портале управления Azure](http://manage.windowsazure.com). Оба эти параметра являются обязательными для создания маркера доступа с уровнем проверки подлинности, необходимым для API коллекции Microsoft Store или API покупки Microsoft Store.
+* Для параметров *client\_id* и *client\_secret* укажите идентификатор приложения и секрет клиента для приложения, полученные на [Портале управления Azure](https://manage.windowsazure.com). Оба эти параметра являются обязательными для создания маркера доступа с уровнем проверки подлинности, необходимым для API коллекции Microsoft Store или API покупки Microsoft Store.
 
 * В качестве параметра *resource* укажите один из URI аудиторий, указанных в [предыдущем разделе](#access-tokens), в зависимости от типа создаваемого маркера доступа.
 
-После истечения срока действия маркера доступа вы можете обновить его, следуя инструкциям [здесь](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). Дополнительную информацию о структуре маркера доступа см. в статье [Поддерживаемые маркеры и типы утверждений](http://go.microsoft.com/fwlink/?LinkId=722501).
+После истечения срока действия маркера доступа вы можете обновить его, следуя инструкциям [здесь](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). Дополнительную информацию о структуре маркера доступа см. в статье [Поддерживаемые маркеры и типы утверждений](https://go.microsoft.com/fwlink/?LinkId=722501).
 
 <span id="step-4"/>
 
@@ -252,6 +252,6 @@ grant_type=client_credentials
 * [Получение подписок для пользователя](get-subscriptions-for-a-user.md)
 * [Изменение состояния выставления счетов за подписку для пользователя](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [Обновление ключа идентификатора Microsoft Store](renew-a-windows-store-id-key.md)
-* [Интеграция приложений с Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502)
+* [Интеграция приложений с Azure Active Directory](https://go.microsoft.com/fwlink/?LinkId=722502)
 * [Основные сведения о манифесте приложения Azure Active Directory]( http://go.microsoft.com/fwlink/?LinkId=722500)
-* [Поддерживаемые токены и типы утверждений](http://go.microsoft.com/fwlink/?LinkId=722501)
+* [Поддерживаемые токены и типы утверждений](https://go.microsoft.com/fwlink/?LinkId=722501)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ef1814443b3831e514eafb3f5a0c58b7703126b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2235e8781d8a795145c7080bfd846c58b6253629
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947926"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049228"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>Перенос WindowsPhone Silverlight в UWP для ввода-вывода, устройств и модели приложения
 
@@ -72,7 +72,7 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 | WindowsPhoneSilverlight                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Свойства **ApplicationCurrentMemoryUsage** и **ApplicationCurrentMemoryUsageLimit** | Свойства [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/dn633832) и [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836)                                                                                                                                    |
-| Свойство **ApplicationPeakMemoryUsage**                                                 | Используйте инструменты профилирования памяти в Visual Studio. Подробнее см. в разделе [Анализ использования памяти](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx).                                                                                                                                                                          |
+| Свойство **ApplicationPeakMemoryUsage**                                                 | Используйте инструменты профилирования памяти в Visual Studio. Подробнее см. в разделе [Анализ использования памяти](https://msdn.microsoft.com/library/windows/apps/dn645469.aspx).                                                                                                                                                                          |
 | Свойство **DeviceFirmwareVersion**                                                      | Свойство [**EasClientDeviceInformation.SystemFirmwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608144) (только семейство настольных устройств)                                                                                                                                                                             |
 | Свойство **DeviceHardwareVersion**                                                      | Свойство [**EasClientDeviceInformation.SystemHardwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608145) (только семейство настольных устройств)                                                                                                                                                                             |
 | Свойство **DeviceManufacturer**                                                         | Свойство [**EasClientDeviceInformation.SystemManufacturer**](https://msdn.microsoft.com/library/windows/apps/hh701398) (только семейство настольных устройств)                                                                                                                                                                                |

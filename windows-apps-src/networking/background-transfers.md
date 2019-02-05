@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2535818d5362b1ffe4b7b35c7b4079bee73a511f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 20662a562e67ee836feb1da73a71c76228a550cb
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9046058"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058685"
 ---
 # <a name="background-transfers"></a>Фоновая передача данных
 Используйте фоновую передачу данных API, чтобы надежно копировать файлы по сети. API фоновой передачи данных обеспечивает дополнительные функции отправки и скачивания, которые работают в фоновом режиме в случае приостановки приложения и сохраняются в случае завершения работы приложения. API контролирует состояние сети и автоматически приостанавливает, а затем возобновляет передачу данных в случае потери соединения. Кроме того, эти процессы передачи данных регистрируются приложениями Data Sense и Battery Sense, а это означает, что процесс скачивания корректируется в зависимости от текущего состояния подключения и батареи устройства. API идеально подходит для отправки и скачивания больших файлов с помощью HTTP(S). Протокол FTP также поддерживается, но только для скачиваний.
@@ -28,7 +28,7 @@ ms.locfileid: "9046058"
 > [!NOTE]
 > В связи с ограниченностью ресурсов для каждого приложения приложение не должно создавать более 200 операций передачи (DownloadOperations + UploadOperations) в любой момент времени. Превышение этого количества может привести очередь передач этого приложения в состояние неустранимой ошибки.
 
-При запуске приложения оно должно вызвать [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) на все существующие объекты [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live) и [**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live) . Невыполнение этого приведет к утечке уже завершения передачи и в конечном итоге будет отображаться использование функцию фоновой передачи бесполезной.
+При запуске приложения оно должно вызвать [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) на все существующие объекты [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation) и [**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadoperation) . Невыполнение этого приведет к утечке уже завершения передачи и в конечном итоге будет отображаться использование функцию фоновой передачи бесполезной.
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>Выполнение запросов файлов, которые прошли проверку подлинности, с помощью фоновой передачи данных
 Функция передачи данных в фоновом режиме предоставляет методы, поддерживающие базовые учетные данные сервера и прокси-сервера, файлы cookie, а также настраиваемые заголовки HTTP (с помощью метода [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)) для каждой операции передачи.

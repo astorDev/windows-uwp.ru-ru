@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows 10, uwp, таймер, потоки
 ms.localizationpriority: medium
-ms.openlocfilehash: ad0d342d773723981138619a07ea6ee37ecdc8dd
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: f11207a774b1ffcebde95e316634592020e6ed49
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044977"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058505"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Использование объектов среды выполнения Windows во многопоточной среде
 В статье рассматривается, как .NET Framework обрабатывает вызовы из кода C# и Visual Basic к объектам, предоставляемым средой выполнения Windows или компонентами этой среды.
@@ -161,6 +161,6 @@ End Sub
 Для объектов, которые работают в потоке пользовательского интерфейса и создают исключения при вызове из потоков, отличных от потоков пользовательского интерфейса, можно использовать объект потока пользовательского интерфейса [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) для перенаправления вызова.
 
 ## <a name="see-also"></a>См. также
-[Руководство по C#](/dotnet/articles/csharp/)
+[Руководство по C#](/dotnet/csharp/)
 
-[Руководство по Visual Basic](/dotnet/articles/visual-basic/)
+[Руководство по Visual Basic](/dotnet/visual-basic/)

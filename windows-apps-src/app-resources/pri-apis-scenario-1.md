@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b14e413a5629dfb5447750e32c42c4efafef8fa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0ccb9447e9594f71907f0da5d0e15f9c6c65bb6b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931451"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058845"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>Сценарий 1. Создание PRI-файла из строковых ресурсов и файлов ресурсов
 В этом сценарии мы будем использовать [API-интерфейсы индексирования ресурсов пакета (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690), чтобы новое приложение представляло нашу систему сборки. Цель этой пользовательской системы сборки, как вы помните,— создание PRI-файлов для целевого приложения UWP. Итак, в рамках этого пошагового руководства мы создадим файлы ресурсов для представления ресурсов целевого приложения UWP (содержащих строки и другие типы ресурсов).
@@ -119,7 +119,7 @@ std::wstring filePathPRIDumpBasic{ generatedPRIsFolder + L"\\resources-pri-dump-
 ::CreateDirectory(generatedPRIsFolder.c_str(), nullptr);
 ```
 
-Сразу после вызова для инициализации COM объявите дескриптор индексатора ресурса, а затем вызовите метод [**MrmCreateResourceIndexer**]() для создания индексатора ресурсов.
+Сразу после вызова для инициализации COM объявите дескриптор индексатора ресурса, а затем вызовите метод [**MrmCreateResourceIndexer**](/windows/desktop/menurc/mrmcreateresourceindexer) для создания индексатора ресурсов.
 
 ```cppwinrt
 MrmResourceIndexerHandle indexer;
@@ -139,7 +139,7 @@ MrmResourceIndexerHandle indexer;
 - Список квалификаторов ресурсов по умолчанию.
 - Указатель на дескриптор индексатора ресурсов, с помощью которой эта функция может настроить дескриптор.
 
-Следующий шаг— добавление ресурсов в созданный индексатор ресурса. `resources.resw` — это файл ресурсов (.resw), содержащий нейтральные строки для целевого приложения UWP. Прокрутите экран (в этом разделе), если вы хотите просмотреть его содержимое. `de-DE\resources.resw` содержит строки на немецком языке, а `en-US\resources.resw`— на английском языке. Чтобы добавить строковые ресурсы из файла ресурсов в индексатор ресурсов, вызовите метод [**MrmIndexResourceContainerAutoQualifiers**](). В-третьих, мы вызываем функцию [**MrmIndexFile**]() для файла, содержащего нейтральный ресурс изображения, и индексатора ресурсов.
+Следующий шаг— добавление ресурсов в созданный индексатор ресурса. `resources.resw` — это файл ресурсов (.resw), содержащий нейтральные строки для целевого приложения UWP. Прокрутите экран (в этом разделе), если вы хотите просмотреть его содержимое. `de-DE\resources.resw` содержит строки на немецком языке, а `en-US\resources.resw`— на английском языке. Чтобы добавить строковые ресурсы из файла ресурсов в индексатор ресурсов, вызовите метод [**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers). В-третьих, мы вызываем функцию [**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile) для файла, содержащего нейтральный ресурс изображения, и индексатора ресурсов.
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
@@ -150,19 +150,19 @@ MrmResourceIndexerHandle indexer;
 
 В вызове функции **MrmIndexFile** значение L"ms-resource:///Files/sample-image.png"— это URI ресурса. Первый сегмент пути — это "Files", и он будет использоваться как имя поддерева схемы ресурсов при создании PRI-файла из этого ресурса индексатора позднее.
 
-После опроса индексатора ресурсов о файлах ресурсов мы создадим PRI-файл на диске, вызвав функцию [**MrmCreateResourceFile**]().
+После опроса индексатора ресурсов о файлах ресурсов мы создадим PRI-файл на диске, вызвав функцию [**MrmCreateResourceFile**](/windows/desktop/menurc/mrmcreateresourcefile).
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmCreateResourceFile(indexer, MrmPackagingModeStandaloneFile, MrmPackagingOptionsNone, generatedPRIsFolder.c_str()));
 ```
 
-После этого PRI-файл с именем `resources.pri` будет создан в папке с именем `Generated PRIs`. После работы с индексатором ресурсов мы вызываем функцию [**MrmDestroyIndexerAndMessages**](), чтобы удалить дескриптор и освободить все выделенные ресурсы.
+После этого PRI-файл с именем `resources.pri` будет создан в папке с именем `Generated PRIs`. После работы с индексатором ресурсов мы вызываем функцию [**MrmDestroyIndexerAndMessages**](/windows/desktop/menurc/mrmdestroyindexerandmessages), чтобы удалить дескриптор и освободить все выделенные ресурсы.
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
-Так как PRI-файл— двоичный файл, будет проще просмотреть то, что мы создали, если мы создадим дамп двоичного PRI-файла в эквивалентом XML-файле. Для этого мы вызываем [**MrmDumpPriFile**]().
+Так как PRI-файл— двоичный файл, будет проще просмотреть то, что мы создали, если мы создадим дамп двоичного PRI-файла в эквивалентом XML-файле. Вызов [**MrmDumpPriFile**](/windows/desktop/menurc/mrmdumpprifile) делает именно.
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));

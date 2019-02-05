@@ -6,16 +6,16 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
 ms.localizationpriority: medium
-ms.openlocfilehash: 6557648e3998cedee2a6eb0bcc9e58ca2f4c27d9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ff5e131c0d6f5371d4ce9cf2b1b59ebba928c759
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928912"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050397"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-10586"></a>Новые возможности для разработчиков в Windows 10, сборка 10586
 
-Сборка 10586 Windows 10 (также известная как November Update или версия 1511), в сочетании с Visual Studio 2017 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](http://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md), либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+Сборка 10586 Windows 10 (также известная как November Update или версия 1511), в сочетании с Visual Studio 2017 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md), либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
 ## <a name="windows-10-build-10586---november-2015"></a>Windows 10 (сборка 10586), ноябрь 2015г.
 

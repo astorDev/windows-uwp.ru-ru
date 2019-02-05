@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a29f58ff8dc842fd985a44f94ff44baea51dc2e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7af61b7d442fee7eff6399a7a5d143adb53fb560
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941006"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058555"
 ---
 # <a name="web-view"></a>Представление веб-страницы
  
@@ -73,7 +73,7 @@ webView1.Navigate("http://www.contoso.com");
 
 Для перехода к URI с запросом POST и заголовками HTTP, используйте метод [NavigateWithHttpRequestMessage](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx). Этот метод поддерживает только [HttpMethod.Post](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) и [HttpMethod.Get](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) для значения свойства [HttpRequestMessage.Method](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx). 
 
-Чтобы загрузить несжатое и незашифрованное содержимое хранилищ данных [LocalFolder]() или [TemporaryFolder]() вашего приложения, используйте метод **Navigate** с **Uri**, использующим [схему ms-appdata](). Для поддержки представлений веб-страницы для этой схемы необходимо поместить содержимое во вложенную папку локальной или временной папки. Это позволяет переходить к таким URI, как ms-appdata:///local/*folder*/*file*.html и ms-appdata:///temp/*folder*/*file*.html. (Подробнее о загрузке сжатых или зашифрованных файлов см. в разделе [NavigateToLocalStreamUri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx).) 
+Чтобы загрузить несжатое и незашифрованное содержимое хранилищ данных [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) или [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) вашего приложения, используйте метод **Navigate** с **Uri**, использующим [схему ms-appdata](/windows/uwp/app-resources/uri-schemes). Для поддержки представлений веб-страницы для этой схемы необходимо поместить содержимое во вложенную папку локальной или временной папки. Это позволяет переходить к таким URI, как ms-appdata:///local/*folder*/*file*.html и ms-appdata:///temp/*folder*/*file*.html. (Подробнее о загрузке сжатых или зашифрованных файлов см. в разделе [NavigateToLocalStreamUri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx).) 
 
 Каждая из этих вложенных папок первого уровня изолирована от содержимого других вложенных папок первого уровня. Например, вы можете перейти к ms-appdata:///temp/folder1/file.html, но в этом файле не может быть ссылки на ms-appdata:///temp/folder2/file.html. Тем не менее можно в пакете приложения сделать ссылку на содержимое HTML с помощью **схемы ms-appx-web** и на веб-содержимое с помощью схем URI **http** и **https**.
 

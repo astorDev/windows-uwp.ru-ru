@@ -6,22 +6,22 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, рекламный элемент управления, HTML, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 08b834343aafb91fee1e75f9df7ed2a752992fa2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 556493ffc901021310036cfb417c3c3b815c529e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936253"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049601"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>AdControl в HTML 5 и JavaScript
 
 В этом пошаговом руководстве рассказывается, как использовать класс [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) для показа баннерной рекламы в приложении UWP на JavaScript или HTML для Windows 10.
 
-Полный пример с проектом, демонстрирующим способы добавления баннерной рекламы в приложение на JavaScript и HTML, см. в разделе [примеров рекламы на GitHub](http://aka.ms/githubads).
+Полный пример с проектом, демонстрирующим способы добавления баннерной рекламы в приложение на JavaScript и HTML, см. в разделе [примеров рекламы на GitHub](https://aka.ms/githubads).
 
 ## <a name="prerequisites"></a>Что вам понадобится
 
-* Установка [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) с помощью Visual Studio 2015 или более поздней версии Visual Studio. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
+* Установка [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) с помощью Visual Studio 2015 или более поздней версии Visual Studio. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
 
 > [!NOTE]
 > Если у вас установлен Windows 10 SDK версии 10.0.14393 (Юбилейное обновление) или более поздняя версия пакета Windows SDK, необходимо также установить библиотеку [WinJS](https://github.com/winjs/winjs) . Эта библиотека ранее включалась в предыдущие версии Windows SDK для Windows 10, но, начиная с Windows 10 SDK версии 10.0.14393 (юбилейное обновление), ее необходимо устанавливать отдельно. 
@@ -139,6 +139,6 @@ ms.locfileid: "8936253"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Рекомендации для рекламных баннеров](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
-* [Примеры рекламы на GitHub](http://aka.ms/githubads)
+* [Примеры рекламы на GitHub](https://aka.ms/githubads)
 * [Настройка групп объявлений для приложения](set-up-ad-units-in-your-app.md)
 * [Пошаговое руководство по обработке ошибок в JavaScript](error-handling-in-javascript-walkthrough.md)

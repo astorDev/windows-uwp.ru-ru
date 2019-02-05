@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: ac6dd17f31dab1898aa394f901613d268c159b06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8740829ab95b804afba564110f38116f2c90b416
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926572"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049801"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Задание условий выполнения фоновой задачи
 
@@ -194,4 +194,4 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 * [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 * [Отладка фоновой задачи](debug-a-background-task.md)
-* [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](https://go.microsoft.com/fwlink/p/?linkid=254345)

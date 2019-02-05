@@ -6,12 +6,12 @@ ms.date: 09/12/2017
 ms.topic: article
 keywords: windows 10, uwp, фиксация, видео
 ms.localizationpriority: medium
-ms.openlocfilehash: a654739490043b9f821e7906fa8cf9e3e7259fed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c474221769bf3aec6e32c80f21386ac1ca2620ea
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919937"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058635"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>Фиксация из нескольких источников с использованием класса MediaFrameSourceGroup
 
@@ -56,7 +56,7 @@ ms.locfileid: "8919937"
 
 [!code-cs[GetStreamDescriptor](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetStreamDescriptor)]
 
-Вызовите метод [MediaEncodingProfile.SetTimedMetadataTracks](**https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks**), чтобы добавить дескриптор потока метаданных в профиль кодирования. В следующем примере показан вспомогательный метод, который принимает два дескриптора видеопотока, один дескриптор звукового потока и один дескриптор потока синхронизированных метаданных и возвращает объект **MediaEncodingProfile**, который можно использовать для кодирования потоков.
+Вызовите [**MediaEncodingProfile.SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks) , чтобы добавить дескриптор потока метаданных в профиль кодирования. В следующем примере показан вспомогательный метод, который принимает два дескриптора видеопотока, один дескриптор звукового потока и один дескриптор потока синхронизированных метаданных и возвращает объект **MediaEncodingProfile**, который можно использовать для кодирования потоков.
 
 [!code-cs[GetMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetMediaEncodingProfile)]
 

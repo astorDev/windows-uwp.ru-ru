@@ -6,12 +6,12 @@ ms.topic: article
 keywords: начало работы, uwp, windows 10, обучающий курс, макет, форма
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1c316ac97211e85b782bdbf8f5642889a7726a95
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 45c4acda953808a85363d1cec7c623dd79cc08f1
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037056"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058535"
 ---
 # <a name="create-and-customize-a-form"></a>Создание и настройка формы
 
@@ -135,7 +135,7 @@ ms.locfileid: "9037056"
 
 Несмотря на то что здесь вы создали форму, концепции макетов и элементов управления применяются во всех пользовательских интерфейсах на XAML, которые можно создать. Вы можете вернуться документам по ссылкам и поэкспериментировать с формой, у вас есть, добавляя новые функции пользовательского интерфейса и отлаживая работу пользователя. Если вы хотите Пошаговое руководство в дополнительные возможности макета, см. в разделе наших [учебнике по адаптивному макету](../design/basics/xaml-basics-adaptive-layout.md)
 
-Формы также существуют не в вакууме — можно пройти на один шаг дальше и включить свою форму в [шаблон основных и подробных данных](../design/controls-and-patterns/master-details.md) или [элемент управления Pivot](../design/controls-and-patterns/tabs-pivot.md). Также, если вы хотите поработать с кодом программной части вашей формы, можете приступить к работе с разделом [общих сведений о событиях](../xaml-platform/events-and-routed-events-overview.md).
+Формы также существуют не в вакууме — можно пройти на один шаг дальше и включить свою форму в [шаблон основных и подробных данных](../design/controls-and-patterns/master-details.md) или [элемент управления Pivot](../design/controls-and-patterns/pivot.md). Также, если вы хотите поработать с кодом программной части вашей формы, можете приступить к работе с разделом [общих сведений о событиях](../xaml-platform/events-and-routed-events-overview.md).
 
 ## <a name="useful-apis-and-docs"></a>Полезные API и документы
 
@@ -161,7 +161,7 @@ ms.locfileid: "9037056"
 | [Формы](../design/controls-and-patterns/forms.md) | Общее руководство по созданию форм. |
 | [Панели макета](../design/layout/layout-panels.md) | Обзор типов панелей макета и их использования. |
 | [Шаблон основных и подробных данных](../design/controls-and-patterns/master-details.md) | Шаблон проектирования, который можно реализовать с одной или несколькими формами. |
-| [Элемент управления Pivot](../design/controls-and-patterns/tabs-pivot.md) | Элемент управления, который может содержать одну или несколько форм. |
+| [Элемент управления Pivot](../design/controls-and-patterns/pivot.md) | Элемент управления, который может содержать одну или несколько форм. |
 | [Адаптивный дизайн](../design/layout/responsive-design.md) | Общие сведения об основных принципах адаптивного дизайна. | 
 | [Гибкие макеты в XAML](../design/layout/layouts-with-xaml.md) | Конкретные сведения о визуальных состояниях и других реализациях адаптивного дизайна. |
 | [Размеры экранов для адаптивного дизайна](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | Рекомендации по размерам экрана, для которых необходимо предусматривать гибкие макеты. |

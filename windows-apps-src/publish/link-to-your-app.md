@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, ссылка, протокола Магазина Windows, привязка к приложению, ссылка на приложение
 ms.localizationpriority: medium
-ms.openlocfilehash: 59df207adf44cea04505e41a3323da1743170c46
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 56bc051c3c5a935f3b6b26e478731fcde9c06902
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931768"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050617"
 ---
 # <a name="link-to-your-app"></a>Ссылка на ваше приложение
 
@@ -29,7 +29,7 @@ ms.locfileid: "8931768"
 
 Вы можете напрямую привязать описание вашего приложения к настраиваемой эмблеме, чтобы пользователи знали, что ваше приложение в Microsoft Store.
 
-Чтобы создать эмблему, посетите страницу [эмблемы Microsoft Store](http://go.microsoft.com/fwlink/p/?LinkID=534236) . Для создания такой эмблемы и ссылки вам понадобится 12-значный **Код продукта в Магазине**. **Код продукта в Магазине** можно найти на странице [Удостоверение приложения](view-app-identity-details.md) в разделе **Управление приложениями**.
+Чтобы создать эмблему, посетите страницу [эмблемы Microsoft Store](https://go.microsoft.com/fwlink/p/?LinkID=534236) . Для создания такой эмблемы и ссылки вам понадобится 12-значный **Код продукта в Магазине**. **Код продукта в Магазине** можно найти на странице [Удостоверение приложения](view-app-identity-details.md) в разделе **Управление приложениями**.
 
 > [!NOTE]
 > Сведения и требования, касающиеся использования эмблемы Microsoft Store см. [рекомендации по продвижению приложений приложения](app-marketing-guidelines.md) .

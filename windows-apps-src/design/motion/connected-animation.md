@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ce639faac66e93b65a398e6d9cdc700546fc68ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a205fb151d1c9e6614dc97ccde639e43720aa8a9
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941818"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058595"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>Подключенная анимация для приложений UWP
 
@@ -53,7 +53,7 @@ ms.locfileid: "8941818"
 ## <a name="configure-connected-animation"></a>Настройка подключенной анимации
 
 > [!IMPORTANT]
-> Эта функция также требуется приложения целевую версию Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии. Свойства конфигурации недоступен в более ранних версий пакетов SDK. Вы можете выбрать минимальной версией ниже, чем SDK 17763 с помощью адаптивного кода или условного XAML. Дополнительные сведения см. в разделе [адаптивные к версии приложения](/debug-test-perf/version-adaptive-apps).
+> Эта функция также требуется приложения целевую версию Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии. Свойства конфигурации недоступен в более ранних версий пакетов SDK. Вы можете выбрать минимальной версией ниже, чем SDK 17763 с помощью адаптивного кода или условного XAML. Дополнительные сведения см. в разделе [адаптивные к версии приложения](/windows/uwp/debug-test-perf/version-adaptive-apps).
 
 Начиная с Windows 10, версия 1809, включающих подключенные анимации дополнительно проектирования Fluent, предоставляя анимации конфигураций, адаптированных специально для перемещения вперед и назад страницам.
 
@@ -61,16 +61,16 @@ ms.locfileid: "8941818"
 
 В этой таблице описаны доступные конфигурации. Дополнительные сведения о принципах движения, применяется в эти анимации см. в разделе [направление и сила притяжения](index.md).
 
-| [GravityConnectedAnimationConfiguration]() |
+| [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration) |
 | - |
 | Это конфигурация по умолчанию и рекомендуется для переходов вперед. |
 Когда пользователь переходит вперед в приложении (A-B), подключенных элемент отображается способы физически «на странице». Соответственно, элемент отображается для перемещения вперед в z пространстве и немного опускается как эффект выполнения удержание сила притяжения. Разработчики результат сила притяжения, элемент получает скорости и ускоряет в его конечное расположение. В результате получается анимацию «scale и dip». |
 
-| [DirectConnectedAnimationConfiguration]() |
+| [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration) |
 | - |
 | Когда пользователь переходит назад в приложении (B A), более прямолинейно анимации. Элемент подключенных линейно преобразуется из B замедлением кривая Безье третьего порядка функции для реалистичной анимации с помощью. Навигация в обратном визуальная возможность пользователь возвращается в предыдущее состояние как можно скорее сохраняя при этом контексте потока навигации. |
 
-| [BasicConnectedAnimationConfiguration]() |
+| [BasicConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.basicconnectedanimationconfiguration) |
 | - |
 | Это значение по умолчанию (и только) анимации, используемые в версиях, предшествующих Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)). |
 
@@ -118,7 +118,7 @@ if (animation != null)
 
 В этом примере показано, как использовать ConnectedAnimationService для создания перехода вперед навигации между двумя страницами (Page_A для Page_B).
 
-Рекомендованная анимация переходов вперед отдает [GravityConnectedAnimationConfiguration](). Это значение по умолчанию, поэтому вам не нужно задавать свойство [конфигурации](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration) , если это не требуется указать различные конфигурации.
+Рекомендованная анимация переходов вперед отдает [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration). Это значение по умолчанию, поэтому вам не нужно задавать свойство [конфигурации](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration) , если это не требуется указать различные конфигурации.
 
 Настройка анимации на исходной странице.
 
@@ -185,7 +185,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Для обратной навигации (Page_B для Page_A), выполните те же действия, но отменяются страницы источника и назначения.
 
-Когда пользователь переходит назад, они ожидают приложение возвращается к предыдущему состоянию, как можно скорее. Таким образом рекомендуется использовать, [DirectConnectedAnimationConfiguration](). Эта анимация быстрее, более прямолинейно и замедлением в анимации.
+Когда пользователь переходит назад, они ожидают приложение возвращается к предыдущему состоянию, как можно скорее. Таким образом рекомендуется использовать, [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration). Эта анимация быстрее, более прямолинейно и замедлением в анимации.
 
 Настройка анимации на исходной странице.
 
@@ -314,8 +314,8 @@ void OnNavigatedTo(NavigationEventArgs e)
 ## <a name="dos-and-donts"></a>Рекомендации
 
 - Используйте подключенную анимацию для переходов между страницами, когда исходная и целевая страница содержат общий элемент.
-- Используйте [GravityConnectedAnimationConfiguration]() для переходов вперед.
-- Используйте [DirectConnectedAnimationConfiguration]() для обратной навигации.
+- Используйте [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration) для переходов вперед.
+- Используйте [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration) для обратной навигации.
 - Не ждите сетевые запросы или другие долго выполняющиеся асинхронные операции между подготовкой и запуском подключенной анимации. Может потребоваться предварительно загрузить данные, необходимые для выполнения перехода, или использовать изображение-заполнитель с низким разрешением во время загрузки в представлении назначения изображения с высоким разрешением.
 - Используйте [SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) , чтобы избежать анимации перехода в **кадр** , если вы используете **ConnectedAnimationService**, поскольку подключенная анимация не предназначена для использования одновременно с навигации по умолчанию переходы. Дополнительную информацию об использовании переходов навигации см. [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition).
 

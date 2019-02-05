@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ce39e87f3c5c9e11f3e9ddb1424d606356ee3c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d2d1b2b4e6875730d5a6bfa8dd711e11ac5d049c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918876"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049311"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Среда выполнения Windows 8.x в UWP практический пример: образец приложения QuizGame
 
@@ -36,9 +36,9 @@ ms.locfileid: "8918876"
 
 ## <a name="downloads"></a>Загрузки
 
-[Скачать универсальное приложение QuizGame для версии 8.1](http://go.microsoft.com/fwlink/?linkid=532953). Это начальное состояние приложения до переноса. 
+[Скачать универсальное приложение QuizGame для версии 8.1](https://go.microsoft.com/fwlink/?linkid=532953). Это начальное состояние приложения до переноса. 
 
-[Скачать приложение QuizGame10 для Windows10](http://go.microsoft.com/fwlink/?linkid=532954). Это состояние приложения сразу после переноса. 
+[Скачать приложение QuizGame10 для Windows10](https://go.microsoft.com/fwlink/?linkid=532954). Это состояние приложения сразу после переноса. 
 
 [См. последнюю версию этого примера в GitHub](https://github.com/Microsoft/Windows-appsample-quizgame).
 

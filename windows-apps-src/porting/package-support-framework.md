@@ -6,12 +6,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0ed1c7f01e8cb06f6950f2ad23a42605e97c1a0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 80f9c8bad9445bd9cfef9b09c00f99929fda37aa
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050737"
+ms.locfileid: "9058665"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Применение исправлений среды выполнения для пакета MSIX с помощью платформа поддержки пакетов
 
@@ -86,7 +86,7 @@ ms.locfileid: "9050737"
 
 ### <a name="create-the-package-layout-folder"></a>Создайте папку макета пакета
 
-Если у вас уже есть файл .msix (или AppX-файл), можно распаковать его содержимое в папку макета, которая будет выступать в качестве области размещения для пакета. Это можно сделать из командной строки с помощью средства makemsix, зависит от пути установки пакета SDK, это, где вы найдете средства makeappx.exe свой компьютер с Windows 10: x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Program Files () x86) \Windows Kits\10\bin\x64\makeappx.exe
+Если у вас уже есть файл .msix (или AppX-файл), можно распаковать его содержимое в папку макета, которая будет выступать в качестве области размещения для пакета. Это можно сделать из командной строки с помощью средства MakeAppx, зависит от пути установки пакета SDK, это, где вы найдете средства makeappx.exe свой компьютер с Windows 10: x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Program Files () x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -514,7 +514,7 @@ if (auto configRoot = ::FixupQueryCurrentDllConfig())
 
 Во-первых, отладки F5 запускает приложение путем развертывания свободных файлов из путь к папке макета пакета, а не Установка из .msix / пакета AppX.  Папка макета обычно не имеет те же ограничения безопасности папки установленного пакета. Таким образом воспроизвести пакетов путь доступа отказ ошибки до применение исправлений среды выполнения не возможно.
 
-Чтобы устранить эту проблему, используйте .msix / развертывание пакета AppX-файл, а не F5 свободных файлов развертывания.  Для создания .msix / файл пакета .appx использовать служебную программу [MakeMSIX](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) из пакета Windows SDK, как описано выше. Или, из в Visual Studio, щелкните правой кнопкой мыши узел проекта приложения и выберите **хранилище**->**Создание пакетов приложений**.
+Чтобы устранить эту проблему, используйте .msix / развертывание пакета AppX-файл, а не F5 свободных файлов развертывания.  Для создания .msix / файл пакета .appx использовать программу [MakeAppx](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) из пакета Windows SDK, как описано выше. Или, из в Visual Studio, щелкните правой кнопкой мыши узел проекта приложения и выберите **хранилище**->**Создание пакетов приложений**.
 
 Другая проблема с помощью Visual Studio является то, что он не встроенную поддержку для присоединения к все дочерние процессы, запущенные в отладчике.   Это затрудняет для отладки логики в пути запуска целевого приложения, которое необходимо вручную подключить с помощью Visual Studio после запуска.
 

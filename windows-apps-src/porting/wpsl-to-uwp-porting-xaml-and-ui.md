@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 153d73a75b48d61cb490a903c6657c42638c6674
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ec5f12c60e9fd244805209720e3e6d29260d5100
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939256"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049691"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Перенос WindowsPhone Silverlight XAML и пользовательского интерфейса в UWP
 
@@ -161,9 +161,9 @@ ms.locfileid: "8939256"
 -   Отсутствует встроенная поддержка проверки вводимых данных и интерфейсов [**IDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.idataerrorinfo.aspx) и [**INotifyDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.inotifydataerrorinfo.aspx).
 -   Класс [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) не включает расширенные свойства форматирования, доступные в WindowsPhone Silverlight. Тем не менее для предоставления пользовательского форматирования все еще можно использовать [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
 -   Методы [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) принимают в качестве параметров языковые строки, а не объекты [**CultureInfo**](https://msdn.microsoft.com/library/system.globalization.cultureinfo.aspx).
--   Класс [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) не имеет встроенной поддержки сортировки и фильтрации, а группирование работает по-другому. Дополнительную информацию см. в разделах [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946) и [Образец привязки данных](http://go.microsoft.com/fwlink/p/?linkid=226854).
+-   Класс [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) не имеет встроенной поддержки сортировки и фильтрации, а группирование работает по-другому. Дополнительную информацию см. в разделах [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946) и [Образец привязки данных](https://go.microsoft.com/fwlink/p/?linkid=226854).
 
-Несмотря на то, что такие же функции привязки по-прежнему широко поддерживаются, Windows10 предлагается новый и более производительный механизм называется привязки скомпилированными привязками, использующими расширение разметки {x: Bind}. См. разделы [Привязка данных. Поддержка производительности приложений по новым улучшениям для привязки данных XAML](http://channel9.msdn.com/Events/Build/2015/3-635) и [Пример привязки x:](http://go.microsoft.com/fwlink/p/?linkid=619989).
+Несмотря на то, что такие же функции привязки по-прежнему широко поддерживаются, Windows10 предлагается новый и более производительный механизм называется привязки скомпилированными привязками, использующими расширение разметки {x: Bind}. См. разделы [Привязка данных. Поддержка производительности приложений по новым улучшениям для привязки данных XAML](https://channel9.msdn.com/Events/Build/2015/3-635) и [Пример привязки x:](https://go.microsoft.com/fwlink/p/?linkid=619989).
 
 ## <a name="binding-an-image-to-a-view-model"></a>Привязка изображения к модели представления
 
@@ -205,7 +205,7 @@ ms.locfileid: "8939256"
 
 ##  <a name="design-language-in-windows10"></a>Язык дизайна в Windows10
 
-Существуют некоторые отличия в языке дизайна между Windows10 и WindowsPhone Silverlight приложениями. Все сведения см. в разделе [Дизайн](http://dev.windows.com/design). Несмотря на изменения языка дизайна, принципы дизайна остаются прежними: будьте внимательны к деталям, при этом всегда стремитесь к простоте и фокусируйте внимание на содержимом, а не внешнем оформлении, уменьшая количество визуальных элементов и сохраняя характерные особенности цифрового домена, используйте визуальную иерархию (особенно для шрифтового оформления), проектируйте, используя сетку, оживляйте интерфейс с помощью плавных анимаций.
+Существуют некоторые отличия в языке дизайна между Windows10 и WindowsPhone Silverlight приложениями. Все сведения см. в разделе [Дизайн](https://dev.windows.com/design). Несмотря на изменения языка дизайна, принципы дизайна остаются прежними: будьте внимательны к деталям, при этом всегда стремитесь к простоте и фокусируйте внимание на содержимом, а не внешнем оформлении, уменьшая количество визуальных элементов и сохраняя характерные особенности цифрового домена, используйте визуальную иерархию (особенно для шрифтового оформления), проектируйте, используя сетку, оживляйте интерфейс с помощью плавных анимаций.
 
 ## <a name="localization-and-globalization"></a>Локализация и глобализация
 
@@ -313,7 +313,7 @@ WindowsPhone Silverlight имеет свойство **System.Windows.UIElement.
 
 Стили системы TextBlock для Windows10 приложений
 
-В приложении для WindowsPhone Silverlight семейством шрифтов по умолчанию является Segoe WP. В приложении для Windows10 семейством шрифтов по умолчанию является Segoe UI. В результате метрика шрифта в приложении может выглядеть иначе. Если вы хотите воспроизвести вид текста WindowsPhone Silverlight, можно задать собственную метрику с помощью свойства, такие как [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) и [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362). Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) и [Оформление приложений UWP](http://dev.windows.com/design).
+В приложении для WindowsPhone Silverlight семейством шрифтов по умолчанию является Segoe WP. В приложении для Windows10 семейством шрифтов по умолчанию является Segoe UI. В результате метрика шрифта в приложении может выглядеть иначе. Если вы хотите воспроизвести вид текста WindowsPhone Silverlight, можно задать собственную метрику с помощью свойства, такие как [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) и [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362). Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) и [Оформление приложений UWP](https://dev.windows.com/design).
 
 ## <a name="theme-changes"></a>Изменения тем
 

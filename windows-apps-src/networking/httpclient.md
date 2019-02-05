@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b753b9e93a0cd2abae089f9d53915e0c109f6b63
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: f4e0b2a2370acd3571b48eecdf13e44cadc3879c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042426"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050477"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -39,7 +39,7 @@ ms.locfileid: "9042426"
 
 -   информация о ходе выполнения HTTP-запроса доступна для асинхронных методов.
 
-Класс [**Windows.Web.Http.HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) представляет сообщение HTTP-запроса, отправляемое объектом [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639). Класс [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) представляет сообщение HTTP-ответа, полученного в ответ на HTTP-запрос. Сообщения HTTP определены IETF в [RFC 2616](http://go.microsoft.com/fwlink/p/?linkid=241642).
+Класс [**Windows.Web.Http.HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) представляет сообщение HTTP-запроса, отправляемое объектом [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639). Класс [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) представляет сообщение HTTP-ответа, полученного в ответ на HTTP-запрос. Сообщения HTTP определены IETF в [RFC 2616](https://go.microsoft.com/fwlink/p/?linkid=241642).
 
 Пространство имен [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) представляет содержимое HTTP в виде основного текста и заголовков содержимого, включая файлы cookie. Содержимое HTTP может связываться с HTTP-запросом или HTTP-ответом. В пространстве имен **Windows.Web.Http** доступно несколько классов для представления содержимого HTTP.
 
@@ -228,9 +228,9 @@ int main()
 
 В пространстве имен [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) отсутствует удобная функция для обработки исключений. Поэтому приложение, использующее класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) и другие классы из этого пространства имен, должно использовать значение **HRESULT**.
 
-В приложениях с помощью Framework4.5 .NET в C#, VB.NET, [System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) представляет ошибку во время выполнения приложения при возникновении исключения. Свойство [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) возвращает значение **HRESULT**, назначенное определенному исключению. Свойство [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) возвращает сообщение с описанием исключения. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
+В приложениях с помощью Framework4.5 .NET в C#, VB.NET, [System.Exception](https://msdn.microsoft.com/library/system.exception.aspx) представляет ошибку во время выполнения приложения при возникновении исключения. Свойство [System.Exception.HResult](https://msdn.microsoft.com/library/system.exception.hresult.aspx) возвращает значение **HRESULT**, назначенное определенному исключению. Свойство [System.Exception.Message](https://msdn.microsoft.com/library/system.exception.message.aspx) возвращает сообщение с описанием исключения. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
 
-В приложениях на управляемом C++ объект [Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) представляет ошибку во время выполнения приложения, когда возникает исключение. Свойство [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) возвращает значение **HRESULT**, назначенное определенному исключению. Свойство [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) возвращает строку, которая предоставляется системой и связывается со значением **HRESULT**. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
+В приложениях на управляемом C++ объект [Platform::Exception](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) представляет ошибку во время выполнения приложения, когда возникает исключение. Свойство [Platform::Exception::HResult](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) возвращает значение **HRESULT**, назначенное определенному исключению. Свойство [Platform::Exception::Message](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) возвращает строку, которая предоставляется системой и связывается со значением **HRESULT**. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
 
 Для многих ошибок при проверке параметров возвращаемым **HRESULT** является **E\_INVALIDARG**. Для некоторых непредусмотренных вызовов методов возвращаемым **HRESULT** является **E\_ILLEGAL\_METHOD\_CALL**.
 

@@ -5,12 +5,12 @@ ms.date: 10/20/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, гибкий, объект, гибкость, IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 2711779f2f5fc13be19a4a10224b110564716477
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2481396d9348250e14ebfc2d1f940b663b405f77
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945249"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058625"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Гибкие объекты в C++/WinRT
 
@@ -63,7 +63,7 @@ if (myimpl.try_as<IAgileObject>()) { /* myimpl is agile. */ }
 
 ## <a name="opting-out-of-agile-object-support"></a>Отказ от поддержки гибких объектов
 
-Вы можете явным образом отказаться от поддержки гибких объектов, передав структуру маркера [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non_agile) в качестве аргумента шаблона базовому классу.
+Вы можете явным образом отказаться от поддержки гибких объектов, передав структуру маркера [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non-agile) в качестве аргумента шаблона базовому классу.
 
 При непосредственном наследовании из **winrt::implements**.
 
@@ -120,7 +120,7 @@ winrt::hstring message{ nonagile_obj_again.Message() };
 * [Шаблон структуры winrt::agile_ref](/uwp/cpp-ref-for-winrt/agile-ref)
 * [Шаблон структуры winrt::implements](/uwp/cpp-ref-for-winrt/implements)
 * [Шаблон функции winrt::make_agile](/uwp/cpp-ref-for-winrt/make-agile)
-* [Структура маркера winrt::non_agile](/uwp/cpp-ref-for-winrt/non_agile)
+* [Структура маркера winrt::non_agile](/uwp/cpp-ref-for-winrt/non-agile)
 * [Функция winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [Функция winrt::Windows::Foundation::IUnknown::try_as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
 

@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b09e90ea71872421a0caf1edcc1a03ce25fef42
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f6868975f793bf504dac167bf4d57d2574ddc0e9
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930665"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058645"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Проектирование для Xbox и телевизора
 
@@ -933,9 +933,9 @@ private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoVie
 
 ![Подчеркивание с помощью сводки](images/designing-for-tv/pivot-underline.png)
 
-Вы можете задать свойству [Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) значение `true`, чтобы сводки всегда находились в одном положении, вместо того чтобы заголовок выбранной сводки перемещался на первое место. Это особенно удобно в случае больших экранов, например экранов телевизоров, так как перенос заголовков может отвлекать пользователей. Если все заголовки сводок не помещаются на экране, клиенты смогут просматривать другие заголовки с помощью полосы прокрутки. Но для максимального удобства взаимодействия вам следует убедиться, что они все помещаются на экране. Дополнительные сведения см. в разделе [Вкладки и сводки](../controls-and-patterns/tabs-pivot.md).
+Вы можете задать свойству [Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) значение `true`, чтобы сводки всегда находились в одном положении, вместо того чтобы заголовок выбранной сводки перемещался на первое место. Это особенно удобно в случае больших экранов, например экранов телевизоров, так как перенос заголовков может отвлекать пользователей. Если все заголовки сводок не помещаются на экране, клиенты смогут просматривать другие заголовки с помощью полосы прокрутки. Но для максимального удобства взаимодействия вам следует убедиться, что они все помещаются на экране. Дополнительные сведения см. в разделе [Вкладки и сводки](../controls-and-patterns/pivot.md).
 
-### <a name="navigation-pane-a-namenavigation-pane"></a>Панель навигации <a name="navigation-pane">
+### <a name="navigation-pane-a-namenavigation-pane-"></a>Панель навигации <a name="navigation-pane" />
 
 Панель навигации (также называемая *кнопка-гамбургер*) представляет собой элемент управления навигацией, часто используемый в приложениях UWP. Как правило, это панель с несколькими вариантами выбора в меню в виде списка, использующегося для перенаправления пользователя на различные страницы. Обычно эта панель отображается в свернутом состоянии для экономии пространства и пользователь может открыть ее, нажав соответствующую кнопку.
 

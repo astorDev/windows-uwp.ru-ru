@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0760805128f8f11b4598a5c8b0d19d8e9f20d04d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 90c86e071b0e1d2a07d7755ba23cb6418ca0022a
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050957"
+ms.locfileid: "9058575"
 ---
 # <a name="command-bar-flyout"></a>Всплывающее меню панели команд
 
@@ -165,7 +165,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 ### <a name="other-content"></a>Другое содержимое
 
-Всплывающий элемент панели команд можно добавить другие элементы управления, обтекания в AppBarElementContainer. Это позволяет добавлять элементы управления, такие как [DropDownButton]() или [SplitButton]()или добавить контейнеры, такие как [StackPanel]() для создания более сложных пользовательских Интерфейсов.
+Всплывающий элемент панели команд можно добавить другие элементы управления, обтекания в AppBarElementContainer. Это позволяет добавлять элементы управления, такие как [DropDownButton](buttons.md) или [SplitButton](buttons.md)или добавить контейнеры, такие как [StackPanel](buttons.md) для создания более сложных пользовательских Интерфейсов.
 
 Чтобы добавить к коллекции основной или вспомогательной команду всплывающий элемент панели команд, элемент должен реализовывать интерфейс [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement) . AppBarElementContainer является оболочкой, реализующий этот интерфейс, поэтому можно добавить элемент на панели команд, даже если он не реализован интерфейс сам.
 
@@ -174,7 +174,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 > [!TIP]
 > По умолчанию элементы, созданные для на холсте приложения может выглядеть неправильно на панели команд. При добавлении элемента с помощью AppBarElementContainer, существует несколько действий, которые следует предпринять, чтобы сделать элемент сопоставить другие элементы панели команд.
 >
-> - Переопределение по умолчанию кисти с [Облегченное определение стиля](/design/controls-and-patterns/xaml-styles#lightweight-styling) фона и границы элемента соответствует кнопок панели приложения.
+> - Переопределение по умолчанию кисти с [Облегченное определение стиля](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling) фона и границы элемента соответствует кнопок панели приложения.
 > - Измените размер и положение элемента.
 > - Заключите значки в Viewbox с шириной и высотой 16px.
 

@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f7a5054fde1a1a24945b193f578b8389519dc2d5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7a3bf2ce69105787b7ca9e83c7f7fe5db8ae1038
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918630"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050517"
 ---
 # <a name="periodic-notification-overview"></a>Обзор периодических уведомлений
  
@@ -25,7 +25,7 @@ ms.locfileid: "8918630"
 
 Периодические уведомления позволяют приложению обновлять живые плитки с минимальным участием облачной службы и клиента. Периодические уведомления удобно использовать для распространения одного и того же содержимого среди широкой аудитории.
 
-**Примечание**  Дополнительные сведения, загрузив [Push-уведомлений и периодических уведомлений пример](http://go.microsoft.com/fwlink/p/?linkid=231476) для Windows8.1 и использовав исходный код из него в приложении Windows10.
+**Примечание**  Дополнительные сведения, загрузив [Push-уведомлений и периодических уведомлений пример](https://go.microsoft.com/fwlink/p/?linkid=231476) для Windows8.1 и использовав исходный код из него в приложении Windows10.
 
  
 
@@ -77,7 +77,7 @@ ms.locfileid: "8918630"
 
 По умолчанию срок действия периодических уведомлений на индикаторах событий и плитках истекает через три дня с момента скачивания уведомлений. По окончании срока действия уведомления содержимое удаляется с плитки или из очереди и более не показывается пользователю. Рекомендуется явным образом установить срок действия для всех периодических уведомлений на плитках и индикаторах событий. Исходя из особенностей вашего приложения или уведомления, следует выбрать время, позволяющее гарантировать, что содержание вашей плитки не будет сохраняться после того, как утратит актуальность. Явное указание срока действия важно для содержимого с определенной продолжительностью существования. Это также гарантирует удаление устаревшего содержимого, если облачная служба стала недоступной или если пользователь отключился от сети на продолжительное время.
 
-Облачная служба устанавливает срок действия и время уведомления добавлением HTTP-заголовка X-WNS-Expires в полезные данные HTTP-отклика. HTTP-заголовок X-WNS-Expires соответствует формату [HTTP-date](http://go.microsoft.com/fwlink/p/?linkid=253706). Подробнее: [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) или [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_).
+Облачная служба устанавливает срок действия и время уведомления добавлением HTTP-заголовка X-WNS-Expires в полезные данные HTTP-отклика. HTTP-заголовок X-WNS-Expires соответствует формату [HTTP-date](https://go.microsoft.com/fwlink/p/?linkid=253706). Подробнее: [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) или [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_).
 
 Например, во время торгового дня на бирже срок действия для обновлений курсов акций можно установить равным двойному интервалу опроса (допустим, через час после получения при опросе, выполняемом каждые полчаса). Рассмотрим другой пример: для новостного приложения можно определить, что один день является подходящим временем для истечения срока действия обновлений плитки ежедневных новостей.
 

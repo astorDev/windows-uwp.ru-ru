@@ -6,12 +6,12 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
-ms.openlocfilehash: a39d2b3133714ab784309e131a71219beae4e3c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2e27256fbf19ed31a7b087e94dea9e5514db516f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926656"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050597"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>Вопросы и ответы и руководство по диагностике набора средств для многоязычных приложений версии 4.0
 
@@ -83,7 +83,7 @@ No XLIFF language files were found. The app will not contain any localized resou
 
 ## <a name="what-is-microsoft-translator"></a>Что такое Microsoft Translator?
 
-Microsoft Translator является облачной службой, обеспечивающей машинный перевод. Машинный перевод является идеальным решением, когда выполнение перевода человеком нецелесообразно. Подробнее см. в разделе [Переводчик Майкрософт](http://go.microsoft.com/fwlink/p/?LinkId=258220).
+Microsoft Translator является облачной службой, обеспечивающей машинный перевод. Машинный перевод является идеальным решением, когда выполнение перевода человеком нецелесообразно. Подробнее см. в разделе [Переводчик Майкрософт](https://go.microsoft.com/fwlink/p/?LinkId=258220).
 
 Набор средств использует службу Microsoft Translator для обеспечения разработчиков предложениями по переводу. Поддерживаемые Microsoft Translator языки можно увидеть при появлении значка Microsoft Translator в диалоговом окне "Языки перевода".
 
@@ -178,5 +178,5 @@ TPX-файл обеспечивал простой способ включени
 ## <a name="related-topics"></a>Смежные разделы
 
 * [Использование набора средств для многоязычных приложений версии 4.0](use-mat.md)
-* [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
 * [Параметры командной строки MakePRI.exe](../../app-resources/makepri-exe-command-options.md)

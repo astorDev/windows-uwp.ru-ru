@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 428f6787dfeb18d7ebf02f96acea2a6ab55c7fe7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c7a40d81171113656a39dda2fe02e0701fdd8ba4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938595"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050364"
 ---
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>Перенос проекта среды выполнения Windows 8.x в проект UWP
 
@@ -39,7 +39,7 @@ ms.locfileid: "8938595"
 -   Вы сможете удалить многие директивы условной компиляции в исходном коде ваше универсальное приложение версии 8.1 Если необходимо поддерживать Windows10. См. подраздел [Условная компиляция и адаптивный код](#conditional-compilation-and-adaptive-code) в этом разделе.
 -   Чтобы использовать функции, которые доступны не на всех семействах устройств (например, принтеры, сканеры или кнопку камеры), можно написать адаптивный код. См. третий пример в подразделе [Условная компиляция и адаптивный код](#conditional-compilation-and-adaptive-code) в этом разделе.
 -   Если вы хотите поддерживать Windows 8.1, Windows Phone 8.1 и Windows10, можно сохранить три проекта в одном решении и совместное использование кода с помощью общего проекта. Кроме того, можно также совместно использовать файлы исходного кода в разных проектах. Порядок работы: в Visual Studio, щелкните правой кнопкой мыши проект в **Обозревателе решений**, выберите **Добавить существующий элемент**, выберите файлы для совместного использования и затем щелкните **Добавить как связь**. Храните файлы исходного кода в общей папке в файловой системе, в которой привязанные к ним проекты могут их видеть. И не забывайте добавлять их в систему управления версиями.
--   Многократное использование на двоичном уровне, а не на уровне исходного кода см. в разделе [Создание компонентов среды выполнения Windows на C# и Visual Basic](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx). Существуют также переносимые библиотеки классов, которые поддерживают подмножество API .NET, доступные в .NET Framework для Windows 8.1, Windows Phone 8.1 и Windows10 (.NET Core) и полной платформе .NET Framework. Сборки переносимой библиотеки классов совместимы на уровне двоичного кода со всеми этими платформами. Используйте Visual Studio для создания проекта, который использует переносимую библиотеку классов. См. раздел [Кроссплатформенная разработка с помощью переносимой библиотеки классов](http://msdn.microsoft.com/library/gg597391.aspx).
+-   Многократное использование на двоичном уровне, а не на уровне исходного кода см. в разделе [Создание компонентов среды выполнения Windows на C# и Visual Basic](https://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx). Существуют также переносимые библиотеки классов, которые поддерживают подмножество API .NET, доступные в .NET Framework для Windows 8.1, Windows Phone 8.1 и Windows10 (.NET Core) и полной платформе .NET Framework. Сборки переносимой библиотеки классов совместимы на уровне двоичного кода со всеми этими платформами. Используйте Visual Studio для создания проекта, который использует переносимую библиотеку классов. См. раздел [Кроссплатформенная разработка с помощью переносимой библиотеки классов](https://msdn.microsoft.com/library/gg597391.aspx).
 
 ## <a name="extension-sdks"></a>Пакеты SDK расширения
 
@@ -172,8 +172,8 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 ## <a name="related-topics"></a>Еще по теме
 
-* [Разработка приложений для универсальной платформы Windows](http://msdn.microsoft.com/library/dn975273.aspx)
+* [Разработка приложений для универсальной платформы Windows](https://msdn.microsoft.com/library/dn975273.aspx)
 * [Быстрое создание вашей среды выполнения Windows 8.x приложение с помощью шаблонов (C#, C++ или Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [Создание компонентов среды выполнения Windows](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [Кроссплатформенная разработка с помощью переносимой библиотеки классов](http://msdn.microsoft.com/library/gg597391.aspx)
+* [Кроссплатформенная разработка с помощью переносимой библиотеки классов](https://msdn.microsoft.com/library/gg597391.aspx)
 
