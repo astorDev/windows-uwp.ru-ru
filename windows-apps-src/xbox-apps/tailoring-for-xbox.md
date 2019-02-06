@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 400d80018201c8ae048cb4a5d326fa560b9cdd5c
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: e273b1b3bb84929005cfbe4a205397fa298ea1c8
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981398"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059735"
 ---
 # <a name="xbox-best-practices"></a>Рекомендации для Xbox
 
@@ -22,11 +22,11 @@ ms.locfileid: "8981398"
 
 ### <a name="do-turn-off-mouse-mode"></a>*Рекомендуется:* отключение режима мыши
 
-Пользователям Xbox нравится их контроллеров. Для оптимизации ввода с помощью контроллера [отключите режим мыши](how-to-disable-mouse-mode.md) и включите направленную навигацию (также называемую [фокус по оси X и Y](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)). Обращайте внимание на ловушки фокус и недоступный пользовательский Интерфейс.
+Пользователям Xbox нравится их контроллеров. Для оптимизации для контроллера ввода, [Отключение режима мыши](how-to-disable-mouse-mode.md) и включите направленную навигацию (также известной как [взаимодействие и Перемещения фокуса](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)). Обращайте внимание на ловушки фокус и недоступный пользовательский Интерфейс.
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*Рекомендуется:* оптимизация прямоугольника фокуса для просмотра на большом расстоянии
 
-Большинство пользователей Xbox находятся перед телевизором на большом расстоянии, поэтому следует учитывать, что стандартный прямоугольник фокуса сложно увидеть с расстояния трех метров. Чтобы убедиться, что элемент пользовательского интерфейса с фокусом ввода всегда виден пользователю, следуйте рекомендациям по [визуальным элементам фокуса](../design/devices/designing-for-tv.md#focus-visual). В языке XAML вы получите это поведение бесплатно при запуске приложения на Xbox, а в HTML-приложениях для этого потребуется добавить пользовательский стиль CSS.
+Большинство пользователей Xbox находятся перед телевизором на большом расстоянии, поэтому следует учитывать, что стандартный прямоугольник фокуса сложно увидеть с расстояния трех метров. Чтобы убедиться, что элемент пользовательского интерфейса с фокусом ввода всегда виден пользователю, следуйте рекомендациям по [визуальным элементам фокуса](../design/input/gamepad-and-remote-interactions.md#focus-visual). В языке XAML вы получите это поведение бесплатно при запуске приложения на Xbox, а в HTML-приложениях для этого потребуется добавить пользовательский стиль CSS.
 
 ### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*Рекомендуется:* интеграция с классом SystemMediaTransportControls
 

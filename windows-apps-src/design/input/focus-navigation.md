@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd7ca5ed7694ba5f114d913580e7e3a233537ae
-ms.sourcegitcommit: 8e0fa6e2cdd5d7456a4c8a10fd9f2501b346294f
+ms.openlocfilehash: a699ef00b3f377656940e66e6d35bfcba1cc5762
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "9041052"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059705"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>Перемещение фокуса с помощью клавиатуры, геймпада, пульта дистанционного управления и средств специальных возможностей
 
@@ -425,7 +425,7 @@ ms.locfileid: "9041052"
 
 В этом разделе мы расскажем, как задать предпочтительную стратегию навигации и настроить перемещение фокуса внутри приложения с помощью набора свойств стратегии навигации, которые поддерживают все типы ввода без указателя на основе фокуса.
 
-Дополнительные общие сведения о создании приложений и взаимодействий для консоли Xbox и телевизора см. в разделе [Взаимодействие с помощью клавиатуры](keyboard-interactions.md) и [Проектирование для Xbox и телевизора](../devices/designing-for-tv.md#xy-focus-navigation-and-interaction).
+Дополнительные общие сведения о создании приложений и взаимодействий для Xbox и Телевизора см. в разделе [Взаимодействие с помощью клавиатуры](keyboard-interactions.md), [Проектирование для Xbox и Телевизора](../devices/designing-for-tv.md)и [Геймпад и пульт дистанционного управления взаимодействия](gamepad-and-remote-interactions.md).
 
 ### <a name="navigation-strategies"></a>Стратегии навигации
 
