@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 920ff8e295959ad6ea66cdb3b673217ff19b89e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 212ef252e7d123ebf457a6584f77addb04fdfb2c
+ms.sourcegitcommit: a5f5bd724e65ce4a62d28dfd9080afb127886d6e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943155"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059995"
 ---
 # <a name="storyboarded-animations"></a>Раскадрованные анимации
 
@@ -265,7 +265,8 @@ ms.locfileid: "8943155"
 Кроме того, как разработчик вы можете решить применять параметр приложения, который всегда отключает зависимые анимации, даже те, где **EnableDependentAnimation** имеет значение **true**. См.: [**Timeline.AllowDependentAnimations**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations).
 
 > [!TIP]
-> Если вы создаете визуальные состояния для элемента управления с Visual Studio, то конструктор будет отображать предупреждения при каждой попытке применить зависимую анимацию к свойству визуального состояния.
+> Если вы используете области анимации в Blend для Visual Studio 2017, при каждой попытке применить зависимую анимацию к свойству визуального состояния, предупреждения будет отображаться в конструкторе. Предупреждения не будут отображаться в выходных данных сборки или список ошибок. При редактировании XAML вручную, конструктор не будет отображаться предупреждение. Во время выполнения во время отладки, области вывода отладочный вывод будет отображаться предупреждение, анимация не является независимой и будет пропущен.
+
 
 ## <a name="starting-and-controlling-an-animation"></a>Анимация: запуск и управление
 
