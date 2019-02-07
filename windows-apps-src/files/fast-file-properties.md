@@ -1,16 +1,16 @@
 ---
 title: Быстрый доступ к свойствам файлов в UWP
 description: Теперь можно получить список файлов и их свойств из библиотеки для использования в приложении UWP.
-ms.date: 03/22/2018
+ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp, файл, свойства
 ms.localizationpriority: medium
-ms.openlocfilehash: 772abd3696850be202593c582e6338a04de38537
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5ae884ca5424f50a7a835bc55602b5aa7c54096d
+ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926539"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9060058"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>Быстрый доступ к свойствам файлов в UWP 
 
@@ -118,6 +118,5 @@ while (images.Count != 0 || index < 10000) 
 [Справочные материалы по API QueryOptions](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
 [Перечисление файлов и папок и адресация им запросов](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
 [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
-[Пошаговое руководство по быстрому доступу к свойствам](https://blogs.msdn.microsoft.com/adamdwilson/2017/12/20/fast-file-enumeration-with-partially-initialized-storagefiles/)
  
  

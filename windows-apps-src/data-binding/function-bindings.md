@@ -1,20 +1,21 @@
 ---
 description: Расширение разметки xBind позволяет функции для использования в разметке.
 title: Функции в x:Bind
-ms.date: 04/26/2018
+ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 38573bf4602c88d2e04d4bf29b39191045eddec8
-ms.sourcegitcommit: 58783d1ea22e632b9c50dcfbaa1cc57686bcdd8e
+ms.openlocfilehash: b85777c254c36cc7bf5b156569c7cef267a6c567
+ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024221"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9060038"
 ---
 # <a name="functions-in-xbind"></a>Функции в x:Bind
 
-**Примечание**Общие сведения об использовании данных привязки в вашем приложении с **{x: Bind}** (и комплексное сравнение между **{x: Bind}** и **{Binding}**), см. в разделе [подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946).
+> [!NOTE]
+> Общие сведения об использовании привязки данных в приложении с помощью **{x: Bind}** (и комплексное сравнение между **{x: Bind}** и **{Binding}**) см. в разделе [подробно о привязке данных](data-binding-in-depth.md).
 
 Начиная с Windows 10 версии 1607 **{x: Bind}** поддерживает использование функции на конечном этапе шаге пути привязки. Это позволяет:
 
@@ -54,7 +55,7 @@ class ColorEntry
 
 ## <a name="xaml-attribute-usage"></a>Использование атрибутов XAML
 
-``` syntax
+```xaml
 <object property="{x:Bind pathToFunction.FunctionName(functionParameter1, functionParameter2, ...), bindingProperties}" ... />
 ```
 
@@ -75,6 +76,7 @@ class ColorEntry
     </StackPanel>
 </Page>
 ```
+
 ```csharp
 namespace MyNamespace
 {
@@ -86,6 +88,7 @@ namespace MyNamespace
 ```
 
 Можно также использовать системные функции непосредственно в разметке для выполнения простых сценариев, таких как форматирование дат форматирование текста, сцепление текста, и пр., например:
+
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -105,9 +108,9 @@ namespace MyNamespace
 - Типы аргументов должны соответствовать передаваемым данным — сужающие преобразования не производятся
 - Возвращаемый тип функции должен соответствовать типу свойства, использующего привязку
 
-Начиная с следующем крупной обновлении до Windows 10, модуль привязки будет реагировать на уведомлений об изменении свойств с помощью имени функции и повторно оценивать привязки при необходимости. Пример. 
+Модуль привязки реагирует на изменение свойства уведомления активируется с помощью имени функции и повторно оценивать привязки при необходимости. Пример.
 
-```XAML
+```xaml
 <DataTemplate x:DataType="local:Person">
    <StackPanel>
       <TextBlock Text="{x:Bind FullName}" />
@@ -115,6 +118,7 @@ namespace MyNamespace
    </StackPanel>
 </DataTemplate>
 ```
+
 ```csharp
 public class Person:INotifyPropertyChanged
 {
@@ -148,7 +152,7 @@ public class Person:INotifyPropertyChanged
     public string FullName
     {
         get { return this.fullName; }
-        set 
+        set
         {
             this.fullName = value;
             this.OnPropertyChanged ();
@@ -175,6 +179,7 @@ public class Person:INotifyPropertyChanged
 ### <a name="two-way-function-bindings"></a>Двухсторонняя привязка функции
 
 При двусторонней привязке следует определить вторую функцию для обратного направления привязки. Это делается с помощью свойства **BindBack** привязки. В следующем примере функция должна принимать один аргумент, представляющий собой значение, которое должно быть возвращено модели.
+
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```
