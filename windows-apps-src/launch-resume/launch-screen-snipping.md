@@ -1,17 +1,17 @@
 ---
 title: Запуск функции "Фрагмент экрана"
-description: В этом разделе описываются схемы URI ms-screenclip и ms-screensketch. Ваше приложение может использовать эти схемы URI для запуска приложения фрагмент & эскиза или открытие нового фрагмент.
+description: В этом разделе описываются схемы URI ms-screenclip и ms-screensketch. Ваше приложение может использовать эти схемы URI для запуска приложения эскиза & фрагмент или, чтобы открыть новый фрагмент.
 ms.date: 8/1/2017
 ms.topic: article
 keywords: Windows 10, uwp, uri, фрагмент, эскиза
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 07c095e661327ba1b64c4ba897937c8e3e905140
-ms.sourcegitcommit: d705a79d037baa764790d3d8daa9321ed0ac9ebc
+ms.openlocfilehash: 2bddea1dd2b5f21a145bde789f1ad760bb5e556a
+ms.sourcegitcommit: b126940932935ebd2965ea68078798fb6e876b23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2019
-ms.locfileid: "8992194"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "9065991"
 ---
 # <a name="launch-screen-snipping"></a>Запуск функции "Фрагмент экрана"
 
@@ -27,21 +27,22 @@ ms.locfileid: "8992194"
 | --- | --- | --- | --- |
 | источник | string | нет | Свободный строка для указания источника, который запустил URI. |
 | delayInSeconds | int | нет | Целое число, от 1 до 30. Задержка, в полной секунд, вызов URI, когда начинается выделения. |
+| callbackformat | string | нет | Этот параметр недоступен. |
 
-## <a name="launching-the-snip--sketch-app"></a>Запуск фрагмент и эскиз приложений
+## <a name="launching-the-snip--sketch-app"></a>Запуск приложения эскиза & фрагмент
 
-**Ms-screensketch:** URI позволяет программными средствами запуска приложения фрагмент и эскиз и откройте определенного изображения из этого приложения для заметок.
+**Ms-screensketch:** URI позволяет программными средствами запуска приложения эскиза & фрагмент и откройте определенного изображения из этого приложения для заметок.
 
 **ms-screensketch:** принимает следующие параметры:
 
 | Параметр | Тип | Обязательный | Описание |
 | --- | --- | --- | --- |
-| sharedAccessToken | string | нет | Маркер, определяющий файл, чтобы открыть в приложении фрагмент и эскиз. Полученный [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Если этот параметр задан, приложение будет запущено без открыть файл. |
+| sharedAccessToken | string | нет | Маркер, определяющий файл, чтобы открыть в приложении эскиза & фрагмент. Полученный [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile). Если этот параметр задан, приложение будет запущено без открыть файл. |
 | secondarySharedAccessToken | string | нет | Строка, указывающая JSON-файл метаданные о фрагмента. Метаданные могут включать поля **clipPoints** с массив x, y координаты и/или [userActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity). |
 | источник | string | нет | Свободный строка для указания источника, который запустил URI. |
 | isTemporary | bool | нет | Если задано значение True, наброска экрана пытается удалить файл после его открытия. |
 
-Следующий пример вызывает метод [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) отправить изображение фрагмент & эскиза из приложения пользователя.
+В следующем примере вызывается метод [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) , чтобы отправлять & фрагмент эскиза изображения из приложения пользователя.
 
 ```csharp
 
