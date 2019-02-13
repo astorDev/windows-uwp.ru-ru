@@ -6,12 +6,12 @@ ms.date: 10/04/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b6e85c47c569f1a4a0a39a8ce12bc7c091316c10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 236b5ab54de4224cccfc72a68c95c8160f148986
+ms.sourcegitcommit: b589795bedbff993867ddce16ed1f1a4a4b39e8c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918823"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "9070335"
 ---
 # <a name="use-app-services-and-extensions"></a>Использование служб и расширений приложения
 
@@ -22,7 +22,7 @@ ms.locfileid: "8918823"
 | [Создание и использование службы приложений](how-to-create-and-consume-an-app-service.md) | Узнайте, как написать приложение универсальной платформы Windows (UWP), которое может предоставлять службы другим приложениям UWP, и как использовать эти службы. |
 | [Преобразование службы приложений для ее запуска в одном процессе с ведущим приложением](convert-app-service-in-process.md) | Преобразуйте код службы приложений, выполняемый в отдельном фоновом процессе, в код, выполняемый в одном процессе с поставщиком службы приложений. |
 | [Расширение приложения за счет его служб, расширений и пакетов](extend-your-app-with-services-extensions-packages.md) | Определите, какую технологию следует использовать для расширения и разбиения приложения на компоненты, и получите краткий обзор каждого метода. |
-| [Создание и использование расширения приложения](how-to-create-an-extension.md) | Создавайте и размещайте расширения приложений универсальной платформы Windows (UWP) расширяющие приложение с помощью пакетов, которые пользователи могут установить через Microsoft Store. |
+| [Создание и размещение расширения приложения](how-to-create-an-extension.md) | Создавайте и размещайте расширения приложений универсальной платформы Windows (UWP) расширяющие приложение с помощью пакетов, которые пользователи могут установить через Microsoft Store. |
 
 
 ## <a name="related-topics"></a>Статьи по теме
