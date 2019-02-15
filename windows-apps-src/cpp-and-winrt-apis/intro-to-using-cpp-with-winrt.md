@@ -5,12 +5,12 @@ ms.date: 01/31/2019
 ms.topic: article
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, введение
 ms.localizationpriority: medium
-ms.openlocfilehash: 5281049aa9ddec58a97283a2ca6ba5d229a49c4e
-ms.sourcegitcommit: 038fe813c73804285d5e74d97864ac1a2fb531f3
+ms.openlocfilehash: 883463f291864016ebc32f2d510936452c931366
+ms.sourcegitcommit: fde2d41ef4b5658785723359a8c4b856beae8f95
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042608"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "9079222"
 ---
 # <a name="introduction-to-cwinrt"></a>Введение в C++/WinRT
 &nbsp;
@@ -111,6 +111,8 @@ Surface поддержки конструктора XAML-Visual Studio для C 
 Как упоминалось выше, C + +/ WinRT проекта теперь необходимо иметь установлен пакет NuGet.
 
 Так как `<CppWinRTEnabled>` элемент устарел, можно при необходимости изменить ваше `.vcxproj`и удалить элемент. Это не является обязательным, но это параметр.
+
+Кроме того Если ваш `.vcxproj` содержит `<RequiredBundles>$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>`, можно удалить его таким образом, вы можете создать без необходимости C + +/ WinRT VSIX расширения для установки.
 
 ## <a name="custom-types-in-the-cwinrt-projection"></a>Пользовательские типы в проекции C++/WinRT
 В C + +/ WinRT можно применять стандартные функции языка C++ и [Стандартные типы данных C++ и C + +/ WinRT](std-cpp-data-types.md)&mdash;включая некоторые типы данных стандартной библиотеки C++. Однако вы также получите сведения о некоторых пользовательских типах данных в проекции, и сможете использовать их. Например, мы используем [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) в кратком примере кода в разделе [Начало работы с C++/WinRT](get-started.md).

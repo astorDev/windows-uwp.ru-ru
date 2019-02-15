@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f4e0b2a2370acd3571b48eecdf13e44cadc3879c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: dd4b8c137d65339701b40027bb3230162e2c2456
+ms.sourcegitcommit: fde2d41ef4b5658785723359a8c4b856beae8f95
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050477"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "9079212"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -158,12 +158,16 @@ int main()
 
 ## <a name="post-binary-data-over-http"></a>Учет двоичных данных по протоколу HTTP
 
-[C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis) приведенный ниже пример кода демонстрирует отправки небольшого количества двоичные данные с запросом POST, с помощью класса [HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent) . Вызов **get** (как показано в следующем примере кода) подходит не для потока пользовательского интерфейса. Правильное применение для использования в этом случае см. в разделе [параллельная обработка и асинхронные операции с помощью C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+[C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis) пример кода ниже описывается использование данных формы и запрос POST для отправки небольшого количества двоичные данные как отправки файла на веб-сервере. Код использует класс [**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent) для представления двоичных данных и [**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent) класс, представляющий данные несколько формы.
+
+> [!NOTE]
+> Вызов **get** (как показано в следующем примере кода) подходит не для потока пользовательского интерфейса. Правильное применение для использования в этом случае см. в разделе [параллельная обработка и асинхронные операции с помощью C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 ```cppwinrt
 // pch.h
 #pragma once
 #include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Security.Cryptography.h>
 #include <winrt/Windows.Storage.Streams.h>
 #include <winrt/Windows.Web.Http.Headers.h>
 
@@ -171,7 +175,6 @@ int main()
 #include "pch.h"
 #include <iostream>
 #include <sstream>
-#include <winrt/Windows.Security.Cryptography.h>
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
@@ -180,18 +183,31 @@ int main()
 {
     init_apartment();
 
-    // Create an HttpClient object.
     Windows::Web::Http::HttpClient httpClient;
 
-    Uri requestUri{ L"http://www.contoso.com/post" };
+    Uri requestUri{ L"https://www.contoso.com/post" };
+
+    Windows::Web::Http::HttpMultipartFormDataContent postContent;
+    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue disposition{ L"form-data" };
+    postContent.Headers().ContentDisposition(disposition);
+    // The 'name' directive contains the name of the form field representing the data.
+    disposition.Name(L"fileForUpload");
+    // Here, the 'filename' directive is used to indicate to the server a file name
+    // to use to save the uploaded data.
+    disposition.FileName(L"file.dat");
 
     auto buffer{
-    Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
-        L"A sentence of text by way of sample data",
-        Windows::Security::Cryptography::BinaryStringEncoding::Utf8)
+        Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
+            L"A sentence of text to encode into binary to serve as sample data.",
+            Windows::Security::Cryptography::BinaryStringEncoding::Utf8
+        )
     };
-    Windows::Web::Http::HttpBufferContent postContent{ buffer };
-    postContent.Headers().Append(L"Content-Type", L"image/jpeg");
+    Windows::Web::Http::HttpBufferContent binaryContent{ buffer };
+    // You can use the 'image/jpeg' content type to represent any binary data;
+    // it's not necessarily an image file.
+    binaryContent.Headers().Append(L"Content-Type", L"image/jpeg");
+
+    postContent.Add(binaryContent); // Add the binary data content as a part of the form data content.
 
     // Send the POST request asynchronously, and retrieve the response as a string.
     Windows::Web::Http::HttpResponseMessage httpResponseMessage;
@@ -212,9 +228,9 @@ int main()
 }
 ```
 
-Чтобы ОПУБЛИКОВАТЬ содержимое двоичный файл, вы найдете его проще использовать объект [HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent) . Создать одно и, в качестве аргумента для его конструктор, передайте значение, возвращаемое при вызове [StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync). Этот метод возвращает поток данных внутри двоичного файла.
+Чтобы ОПУБЛИКОВАТЬ содержимое реальный двоичный файл (а не явные двоичных данных, используемым выше), вы найдете его проще использовать объект [HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent) . Создать одно и, в качестве аргумента для его конструктор, передайте значение, возвращаемое при вызове [StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync). Этот метод возвращает поток данных внутри двоичного файла.
 
-Кроме того Если вы отправляете больших файлов (больше около 10 МБ), затем мы рекомендуем использовать [Фоновой передачи данных](/uwp/api/windows.networking.backgroundtransfer) API среды выполнения Windows.
+Кроме того Если вы отправляете большого файла (больше около 10 МБ), то рекомендуется, чтобы вы используете среды выполнения Windows [Фоновой передачи данных](/uwp/api/windows.networking.backgroundtransfer) API-интерфейсы.
 
 ## <a name="exceptions-in-windowswebhttp"></a>Исключения в Windows.Web.Http
 
