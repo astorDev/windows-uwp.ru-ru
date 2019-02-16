@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ec673236f41d4128e6aa5702f4d54f43c55890ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 479c4410384613b22ba86bc976a360125bb73c3a
+ms.sourcegitcommit: d6bc0c73df105482cab00c41e80c7c98d6834874
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937958"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "9079777"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Установка приложений с помощью средства WinAppDeployCmd.exe
 
@@ -22,7 +22,7 @@ Windows Application Deployment (WinAppDeployCmd.exe) — это средство
 
 Для развертывания на мобильных устройствах необходимо сначала создать пакет. Дополнительные сведения см. [здесь](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-Средства **WinAppDeployCmd.exe** находится на Компьютере Windows10: **C:\\Program Files (x86) \\Windows Kits\\10\\bin\\<SDK Version>\\x86\\WinAppDeployCmd.exe** (в зависимости от пути установки для SDK). 
+Средства **WinAppDeployCmd.exe** находится на Компьютере Windows10: **C:\\Program Files (x86) \\Windows Kits\\10\\bin\\&lt;версия SDK&gt;\\x86\\WinAppDeployCmd.exe** (в зависимости от пути установки для SDK). 
 > [!NOTE]
 > В версии 15063 и более поздних версиях SDK пакет SDK устанавливается параллельно папкам для соответствующей версии.  Предыдущие пакеты SDK (включая 14393 и более ранние) записываются непосредственно в родительскую папку.
 
