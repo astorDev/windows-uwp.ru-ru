@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ad66d8797234d01673518256d6f5376ce93245f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 539f67079547db28a02ef34fc4b9af2e15d107d3
+ms.sourcegitcommit: 4e80ee8d577c3475b6d247317a24411a48b02c29
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928705"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9083895"
 ---
 # <a name="control-templates"></a>Шаблоны элементов управления
 
@@ -200,7 +200,7 @@ ms.locfileid: "8928705"
 
 В некоторых атрибутах в примерах кода XAML вы могли заметить ссылки на ресурсы, которые используют [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md). Данная технология позволяет одному шаблону элемента управления использовать разнообразные ресурсы в зависимости от того, какая из тем активна на текущий момент. Это особенно важно для кистей и цветов, поскольку основная цель тем — предоставить пользователям возможность выбора темной или светлой темы либо темы "Высокая контрастность" в применении к системе в целом. Приложения, которые используют систему на базе ресурсов XAML, могут использовать набор ресурсов, соответствующий определенной теме. Выбор темы в пользовательском интерфейсе приложения будет отражать выбор пользователем темы для всей системы в целом.
 
- ## Получить пример кода
+## <a name="get-the-sample-code"></a>Получить пример кода
 
 * [Пример галереи элементов управления XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [Пример пользовательского элемента управления для редактирования текста](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
