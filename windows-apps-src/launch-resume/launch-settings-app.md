@@ -6,12 +6,12 @@ ms.date: 1/8/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 92cfb1318f176e7d8adb8052c119a006389f49e5
-ms.sourcegitcommit: 158467c576c5924e1822d397bd449fc8251bf92f
+ms.openlocfilehash: 5a1f9d853e41642ca5f8027d42b49fcbc3122a66
+ms.sourcegitcommit: 6ba110be80bc343a1aecaf4361edcdb70278c0a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "8996079"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "9086662"
 ---
 # <a name="launch-the-windows-settings-app"></a>Запуск приложения «Параметры» для Windows
 
@@ -103,7 +103,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |Страница параметров| URI |
 |-------------|-----|
-| Разрешения и журнал | ms-settings:cortana-permissions |
+| Журнал & разрешения | ms-settings:cortana-permissions |
 | Подробности | ms-settings:cortana-moredetails |
 | Кортана на разных устройствах | ms-settings:cortana-notifications |
 | Общение с Кортаной | ms-settings:cortana-language<br/>MS-параметры: кортаны<br/>MS-параметры: кортаны-talktocortana |
@@ -136,7 +136,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Звук | ms-settings:easeofaccess-audio |
 | Скрытые субтитры | ms-settings:easeofaccess-closedcaptioning |
 | Фильтры цвета | MS-параметры: easeofaccess-colorfilter |
-| Размер курсора и указателя | MS-параметры: easeofaccess-cursorandpointersize |
+| Размер указателя & курсор | MS-параметры: easeofaccess-cursorandpointersize |
 | Дисплей | ms-settings:easeofaccess-display |
 | Управление глазами | ms-settings:easeofaccess-eyecontrol |
 | Шрифты | ms-settings:fonts |
@@ -268,7 +268,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Параметры экономии заряда | ms-settings:batterysaver-settings (доступно только на устройствах с аккумулятором, таких как планшет) |
 | Использование аккумулятора | ms-settings:batterysaver-usagedetails (доступно только на устройствах с аккумулятором, таких как планшет) |
 | Буфер обмена | MS-параметры: буфер обмена |
-| Дисплей | ms-settings:display |
+| Display | ms-settings:display |
 | Места сохранения по умолчанию | ms-settings:savelocations |
 | Дисплей | ms-settings:screenrotation |
 | Дублирование дисплея | ms-settings:quietmomentspresentation |
@@ -288,7 +288,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Удаленный рабочий стол | ms-settings:remotedesktop |
 | Телефон | MS-параметров: телефона (**не рекомендуемые к использованию в Windows 10, версия 1809 и более поздние версии**) |
 | Питание и спящий режим | ms-settings:powersleep |
-| Звуки | ms-settings:sounds |
+| Звук | MS-параметры: звук |
 | Память | ms-settings:storagesense |
 | Контроль памяти | ms-settings:storagepolicies |
 
