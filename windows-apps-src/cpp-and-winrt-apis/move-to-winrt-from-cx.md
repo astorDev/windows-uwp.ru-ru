@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: ba64afe3440ed209a6f637871f21427716533b09
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: 39f60576962d9e69d8ec7ba80918fdbdfe96f070
+ms.sourcegitcommit: 9b0f9c8854277d2e786e9294af3a2b559aa457a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042286"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "9099321"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Переход на C++/WinRT с C++/CX
 
@@ -282,6 +282,7 @@ C++/CX предоставляет несколько типов данных в 
 | C++/CX | C++/WinRT |
 | ---- | ---- |
 | **Платформа:: Agile\ ^** | [**WinRT::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
+| **Платформа:: Array\ ^** | См. в разделе [порт **платформы:: Array\ ^** ](#port-platformarray) |
 | **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
 | **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
 | **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
@@ -301,6 +302,9 @@ Platform::Agile<Windows::UI::Core::CoreWindow> m_window;
 ```cppwinrt
 winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 ```
+
+### <a name="port-platformarray"></a>Порт **платформы:: Array\ ^**
+Возможности включают в себя использование список инициализатора, **std::array**или **std::vector**. Дополнительные сведения и примеры кода см. в разделе [перечислены стандартные инициализатора](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) и [Стандартные массивы и векторы](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
 
 ### <a name="port-platformexception-to-winrthresulterror"></a>Перенесите **Platform::Exception\^** в **winrt::hresult_error**
 Когда API-интерфейс среды выполнения Windows возвращает результат, отличный от S\_OK HRESULT, в C++/CX создается тип **Platform::Exception\^**. Для C++/WinRT эквивалентом является [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error).
