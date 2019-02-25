@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, игры, разработка игр
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b11f927eca82e2c068f0210022893905b1503db
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: c0113f039ccd2d2df0c155b77295afef194018ce
+ms.sourcegitcommit: f7b8112a99097c7c8a76b028aef436d1a5c68cdb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049971"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "9099464"
 ---
 # <a name="windows-10-game-development-guide"></a>Руководство по разработке игр для Windows 10
 
@@ -1512,21 +1512,6 @@ BabylonJS — это комплексная платформа JavaScript для
     <tr>
         <td>Объединение языков, культур и технологий</td>
         <td><a href="https://www.microsoft.com/Language/Default.aspx">Интернет-ресурс с языковыми соглашениями и стандартной терминологией Майкрософт</a></td>
-    </tr>
-</table>
-
-### <a name="security"></a>Безопасность
-
-Создайте среду, где ваши игроки смогут соревноваться на равных и без обмана. Игры, зарегистрированные в TruePlay, выполняются в защищенном процессе, который обеспечивает защиту от ряда распространенных атак. Система мониторинга игры также позволяет выявлять распространенные сценарии "читинга". 
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Средства для борьбы с обманом в играх для ПК</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/mt808781">TruePlay</a></td>
     </tr>
 </table>
 
