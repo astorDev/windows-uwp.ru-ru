@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: windows 10, uwp, API коллекции Microsoft Store, API покупки Microsoft Store, просмотр продуктов, предоставление продуктов
 ms.localizationpriority: medium
-ms.openlocfilehash: a749550c1dc644c4a9fb3f91530503adf192246e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 0bf85a73cb35044b4be2282c9a13c1e65b836a92
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050264"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114510"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Управление правами на продукты из службы
 
@@ -253,5 +253,5 @@ grant_type=client_credentials
 * [Изменение состояния выставления счетов за подписку для пользователя](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [Обновление ключа идентификатора Microsoft Store](renew-a-windows-store-id-key.md)
 * [Интеграция приложений с Azure Active Directory](https://go.microsoft.com/fwlink/?LinkId=722502)
-* [Основные сведения о манифесте приложения Azure Active Directory]( http://go.microsoft.com/fwlink/?LinkId=722500)
+* [Основные сведения о манифесте приложения Azure Active Directory]( https://go.microsoft.com/fwlink/?LinkId=722500)
 * [Поддерживаемые токены и типы утверждений](https://go.microsoft.com/fwlink/?LinkId=722501)

@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 2c8bb1e352fe4924b45fd56963de324528269a12
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 1feffac4d9b616c2fadff0080c3282e4200f3be7
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044478"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114440"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Обработка отмененной фоновой задачи
 
@@ -85,7 +85,7 @@ private:
 
 В методе **OnCanceled** , созданную на шаге 1 задайте переменной флага **\_CancelRequested** значение **true**.
 
-Полный [пример фоновой задачи]( http://go.microsoft.com/fwlink/p/?linkid=227509) метод **OnCanceled** задает **\_CancelRequested** значение **true** и записывает потенциально полезную отладочную.
+Полный [пример фоновой задачи]( https://go.microsoft.com/fwlink/p/?linkid=227509) метод **OnCanceled** задает **\_CancelRequested** значение **true** и записывает потенциально полезную отладочную.
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)

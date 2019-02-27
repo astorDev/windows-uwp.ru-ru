@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, программирование
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c69d317f920e5b829eb5dea796b7930cc387203
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 84d5068c2f474af22d789dea6428f911087f9ff0
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044325"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114450"
 ---
 # <a name="game-programming-resources"></a>Ресурсы по программированию игр
 
@@ -34,15 +34,15 @@ ms.locfileid: "9044325"
 ## <a name="blogs"></a>Блоги
 
 
--   [Записи блога, посвященные играм для Windows и DirectX SDK]( http://go.microsoft.com/fwlink/p/?LinkID=288873)
--   [Блог разработчиков DirectX]( http://go.microsoft.com/fwlink/p/?LinkID=288874)
--   [Блог Шона Харгривза]( http://go.microsoft.com/fwlink/p/?LinkID=288872) (сведения об играх на платформе XNA).
+-   [Записи блога, посвященные играм для Windows и DirectX SDK]( https://go.microsoft.com/fwlink/p/?LinkID=288873)
+-   [Блог разработчиков DirectX]( https://go.microsoft.com/fwlink/p/?LinkID=288874)
+-   [Блог Шона Харгривза]( https://go.microsoft.com/fwlink/p/?LinkID=288872) (сведения об играх на платформе XNA).
 
 ## <a name="toolkits"></a>Наборы инструментов
 
 
--   [Набор инструментов DirectX](  http://go.microsoft.com/fwlink/p/?LinkID=248929)
--   [Библиотеки обработки текстур DirectXTex](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
+-   [Набор инструментов DirectX](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
+-   [Библиотеки обработки текстур DirectXTex](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   [Диагностика графики](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx) в MicrosoftVisualStudio
 -   [Win2D](https://github.com/Microsoft/Win2D) — простой в использовании API среды выполнения Windows для отрисовки двумерной графики в непосредственном режиме с ускорением GPU.
 -   [ANGLE для Microsoft Store](https://go.microsoft.com/fwlink/p/?linkid=618387) - содержимое выполняется OpenGL ES в Windows путем преобразования вызовов OpenGL ES API в вызовы DirectX 11 API.

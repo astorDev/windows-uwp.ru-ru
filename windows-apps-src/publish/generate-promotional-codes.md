@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, промокод, промокоды, токен, токены
 ms.localizationpriority: medium
-ms.openlocfilehash: ce8fb38ee26beadc68eb8e5829549f69e2d11d16
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: db4cde6f8c195101ec31de26c00ffa7325e08d71
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929028"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114490"
 ---
 # <a name="generate-promotional-codes"></a>Создание промокодов
 
@@ -71,7 +71,7 @@ ms.locfileid: "8929028"
     -   **Название продукта**: имя приложения или надстройка, с которыми связан код.
     -   **Название заказа**: название заказа, в котором был создан этот код.
     -   **Рекламный код**: сам код. Это строка алфавитно-цифровых символов, разделенная дефисами на пятьгрупп по пятьсимволов в каждой. Например, так: DM3GY-M2GYM-6YMW6-4QHHT-23W2Z.
-    -   **URL-адрес с промокодом**: URL-адрес, с помощью которого клиент может использовать код и установить ваши приложения или надстройки. URL-адрес имеет следующий формат: http://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt; promotional_code >
+    -   **URL-адрес с промокодом**: URL-адрес, с помощью которого клиент может использовать код и установить ваши приложения или надстройки. URL-адрес имеет следующий формат: https://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt; promotional_code>
     -   **Дата начала срока действия**: дата, когда этот код стал активным.
     -   **Дата истечения срока действия**: дата истечения срока действия кода.
     -   **Идентификатор кода**: уникальный идентификатор кода.

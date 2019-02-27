@@ -5,12 +5,12 @@ keywords: активность пользователя, действия пол
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1c2a3da3711bbc5335a9c44a4b280e3934adac
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 2756231b067176da66c6dbcedf7a1452d5d109f4
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046204"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114550"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Продолжение активности пользователей даже на разных устройствах
 
@@ -34,7 +34,7 @@ ms.locfileid: "9046204"
 
 1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) используется, чтобы возобновить работу приложения в определенном контексте. Как правило, эта ссылка принимает форму обработчика протокола для схемы (например, my-app://page2?action=edit) или AppUriHandler (например, http://constoso.com/page2?action=edit).
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) предоставляет класс, который позволяет пользователю визуально распознать действие с помощью названия, описания или элементов адаптивной карты.
-3. Наконец, [Содержимое](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) — объект для хранения метаданных для этого действия, которые могут использоваться для группировки и получения действий в определенном контексте. Зачастую оно принимает форму данных [http://schema.org](https://schema.org).
+3. Наконец, [Содержимое](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) — объект для хранения метаданных для этого действия, которые могут использоваться для группировки и получения действий в определенном контексте. Зачастую оно принимает форму данных [https://schema.org](https://schema.org).
 
 Добавление **UserActivity** в приложение:
 
@@ -165,7 +165,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 * [Пространство имен UserActivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Смежные разделы
 
 * [Действия пользователей (документы Project Rome)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Адаптивные карты](https://docs.microsoft.com/adaptive-cards/)

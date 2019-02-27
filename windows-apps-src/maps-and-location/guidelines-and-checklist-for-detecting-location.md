@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, расположение, карта, геолокация
 ms.localizationpriority: medium
-ms.openlocfilehash: d7004f579bb8bb60b1f9585e49319e278770700a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 723b1b12a6bbfb572c9aaacf66c97541bf70f72d
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048161"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114530"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>Рекомендации относительно приложений с определением расположения
 
@@ -155,7 +155,7 @@ ms.locfileid: "9048161"
 
 Данные о географическом положении пользователя являются персональными данными. На следующем веб-сайте приведены рекомендации по защите персональных данных пользователей.
 
--   [Политика конфиденциальности Майкрософт]( http://go.microsoft.com/fwlink/p/?LinkId=259692)
+-   [Политика конфиденциальности Майкрософт]( https://go.microsoft.com/fwlink/p/?LinkId=259692)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 

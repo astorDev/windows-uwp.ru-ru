@@ -6,12 +6,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10, uwp, покупки из приложения, IAP, надстройки, пробные версии, потребляемые, длительного пользования, подписка
 ms.localizationpriority: medium
-ms.openlocfilehash: 9891205d4fdc8110cb727fb5caabbff6c5f4f948
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5a8bad5207c5907beb91e5664b4bc7e140ab036b
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945996"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114680"
 ---
 # <a name="in-app-purchases-and-trials"></a>Покупки из приложения и пробные версии
 
@@ -175,7 +175,7 @@ ms.locfileid: "8945996"
     > [!NOTE]
     > После выполнения этих шагов вы сможете продолжить обновлять код вашего приложения, а затем выполнить отладку обновленного проекта на компьютере для разработки без отправки новых пакетов приложения в Магазин. Чтобы получить локальную лицензию, которая будет использоваться для тестирования, необходимо всего один раз скачать версию вашего приложения в Магазине на ваш компьютер для разработки. Вам всего лишь необходимо отправить новые пакеты приложения в Магазин после завершения тестирования, и когда вам потребуется открыть доступ для пользователей к покупкам из приложения или возможностям пробной версии вашего приложения.
 
-Если ваше приложение использует пространство имен **Windows.ApplicationModel.Store**, вы можете использовать в своем приложении класс [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) для моделирования лицензионных сведений во время тестирования перед отправкой приложения в Магазин. Дополнительные сведения см. в разделе [Начало работы с классами CurrentApp и CurrentAppSimulator] (in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes).  
+Если ваше приложение использует пространство имен **Windows.ApplicationModel.Store**, вы можете использовать в своем приложении класс [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) для моделирования лицензионных сведений во время тестирования перед отправкой приложения в Магазин. Дополнительные сведения см. в разделе [Начало работы с классами CurrentApp и CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes).  
 
 > [!NOTE]
 > Пространство имен **Windows.Services.Store** не предоставляет класс, который можно использовать для имитации лицензионных сведений во время тестирования. Если вы используете пространство имен **Windows.Services.Store** для реализации покупок из приложения и пробных версий, вам необходимо опубликовать приложение в Магазине и скачать его на свое устройство разработки, чтобы использовать его лицензию для тестирования, как описано выше.

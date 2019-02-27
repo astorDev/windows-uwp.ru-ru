@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, сертификации приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c8729a6d2ac828f3d7b257681d64f4c7834587
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: b480e96621e143e283a2556bdbef394aaf7dbc07
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048874"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114470"
 ---
 # <a name="windows-app-certification-kit"></a>Комплект сертификации приложений для Windows
 
@@ -24,13 +24,13 @@ ms.locfileid: "9048874"
 Необходимые условия для тестирования универсального приложения для Windows:
 
 -   Необходимо установить и запустить Windows10.
--   Вам необходимо установить [Комплект сертификации приложений для Windows версии 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), которая входит в комплект средств для разработки программного обеспечения Windows (SDK) для Windows10.
+-   Вам необходимо установить [Комплект сертификации приложений для Windows версии 10]( https://go.microsoft.com/fwlink/p/?LinkID=309666), которая входит в комплект средств для разработки программного обеспечения Windows (SDK) для Windows10.
 -   Необходимо [подготовить устройство к разработке](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 -   Необходимо развернуть на компьютере приложение для Windows, которое вы хотите протестировать.
 
 **Примечание об обновлениях на месте**
 
-Установка более современной версии [комплекта сертификации приложений для Windows]( http://go.microsoft.com/fwlink/p/?LinkID=309666) заменяет все предыдущие версии комплекта, установленные на компьютере.
+Установка более современной версии [комплекта сертификации приложений для Windows]( https://go.microsoft.com/fwlink/p/?LinkID=309666) заменяет все предыдущие версии комплекта, установленные на компьютере.
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-interactively"></a>Проверка приложения для Windows с помощью комплекта сертификации приложений для Windows в интерактивном режиме
 

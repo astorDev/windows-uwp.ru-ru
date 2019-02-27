@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx, загрузка ресурсов
 ms.localizationpriority: medium
-ms.openlocfilehash: ca16dd6115bbbe84529928ca58ee0d3074498728
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 478c61713dfcf5bc8a420aa71b0dced81ed6a169
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937213"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114590"
 ---
 # <a name="load-resources-in-your-directx-game"></a>Загрузка ресурсов в игре DirectX
 
@@ -690,7 +690,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 В этом коде после считывания байтовых данных для CSO-файла шейдера вершин вызовом метода [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) создается шейдер вершин. После этого в той же лямбда-функции вы создаете входной макет для шейдера.
 
-Другие типы шейдеров, например шейдеры геометрии и поверхности, также могут потребовать определенной настройки. Полный код для разных методов загрузки шейдеров представлен в разделах [Полный код модуля BasicLoader](complete-code-for-basicloader.md) и [Образец загрузки ресурсов Direct3D]( http://go.microsoft.com/fwlink/p/?LinkID=265132).
+Другие типы шейдеров, например шейдеры геометрии и поверхности, также могут потребовать определенной настройки. Полный код для разных методов загрузки шейдеров представлен в разделах [Полный код модуля BasicLoader](complete-code-for-basicloader.md) и [Образец загрузки ресурсов Direct3D]( https://go.microsoft.com/fwlink/p/?LinkID=265132).
 
 ## <a name="remarks"></a>Примечания
 
@@ -698,7 +698,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ## <a name="related-topics"></a>Связанные разделы
 
-* [Образец загрузки ресурсов Direct3D]( http://go.microsoft.com/fwlink/p/?LinkID=265132)
+* [Образец загрузки ресурсов Direct3D]( https://go.microsoft.com/fwlink/p/?LinkID=265132)
 * [Полный код для BasicLoader](complete-code-for-basicloader.md)
 * [Полный код модуля BasicReaderWriter](complete-code-for-basicreaderwriter.md)
 * [Полный код модуля DDSTextureLoader](complete-code-for-ddstextureloader.md)
