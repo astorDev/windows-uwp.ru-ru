@@ -2,16 +2,16 @@
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: Используйте этот метод в API коллекции Microsoft Store, чтобы объявить потребляемый продукт в качестве выполненного для указанного покупателя. Перед повторной покупкой продукта пользователем ваше приложение или служба должны сообщить о нем как о выполненном для этого пользователя.
 title: Объявление потребляемого продукта в качестве выполненного
-ms.date: 03/16/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, API коллекции Microsoft Store, исполнение, потребляемый продукт
 ms.localizationpriority: medium
-ms.openlocfilehash: e3271dd26a4e7eaa23d63efa3b75cf321480528d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cea8937af3df0ad1e80434d649f431d188521667
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935665"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116030"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>Объявление потребляемого продукта в качестве выполненного
 
@@ -67,7 +67,7 @@ ms.locfileid: "8935665"
 
 | Параметр            | Тип   | Описание       | Обязательный |
 |----------------------|--------|-------------------|----------|
-| identityType         | строка | Укажите строковое значение **b2b**.    | Да      |
+| identityType         | string | Укажите строковое значение **b2b**.    | Да      |
 | identityValue        | string | [Ключ идентификатора Microsoft Store](view-and-grant-products-from-a-service.md#step-4), представляющий удостоверение пользователя, для которого потребляемый продукт необходимо объявить в качестве выполненного.      | Да      |
 | localTicketReference | строка | Запрошенный идентификатор для возвращаемого ответа. Рекомендуется использовать то же значение, что и в [утверждении](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) *userId* в ключе идентификатора Microsoft Store. | Да      |
 

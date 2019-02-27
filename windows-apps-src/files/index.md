@@ -1,17 +1,11 @@
 ---
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
-title: Файлы, папки и библиотеки
-description: Узнайте о параметрах приложения для чтения и записи, о средствах выбора файлов и папок, а также о специальных расположениях песочниц, например о библиотеках видео и музыки.
+title: 'Файлы, папки и библиотеки'
+description: 'Узнайте о параметрах приложения для чтения и записи, о средствах выбора файлов и папок, а также о специальных расположениях песочниц, например о библиотеках видео и музыки.'
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: 'windows 10, uwp'
 ms.localizationpriority: medium
-ms.openlocfilehash: 517302b7db1e7b65ca7a181a8c766ce1e71737ac
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044548"
 ---
  # <a name="files-folders-and-libraries"></a>Файлы, папки и библиотеки
 
@@ -22,6 +16,7 @@ API в пространствах имен [Windows.Storage](https://msdn.micros
 |-------|--------------|
 | [Перечисление и запрос файлов и папок](quickstart-listing-files-and-folders.md) | Получайте доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения также можно создавать запросы файлов и папок. |
 | [Создание, запись и чтение файла](quickstart-reading-and-writing-files.md) | Считайте и запишите файл с помощью объекта [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171). |
+| [Рекомендации по составлению файлов](best-practices-for-writing-to-files.md) | Рекомендации по использованию различных написание методов классов [файловый ввод-вывод](https://docs.microsoft.com/uwp/api/windows.storage.fileio) и [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) файла. |
 | [Получение свойств файла](quickstart-getting-file-properties.md) | Получите свойства–верхнего уровня, базовые и расширенные–для файла, представленного объектом [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171). |
 | [Открытие файлов и папок с помощью средства выбора](quickstart-using-file-and-folder-pickers.md) | Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Для получения доступа к папкам можно использовать класс [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881). |
 | [Сохранение файла с помощью средства выбора](quickstart-save-a-file-with-a-picker.md) | Чтобы дать пользователям возможность задать имя и расположение, в которое приложение должно сохранить файл, воспользуйтесь средством [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871). |

@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 04a5285c39e46019275b3dd6fb3843d932b53901
-ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
+ms.openlocfilehash: 788f47c1b29766cae1f437992aee8414580f3935
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059755"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116496"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Проектирование для Xbox и телевизора
 
@@ -434,7 +434,7 @@ private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoVie
 
 ![Подчеркивание с помощью сводки](images/designing-for-tv/pivot-underline.png)
 
-Вы можете задать свойству [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) значение `true`, чтобы сводки всегда находились в одном положении, вместо того чтобы заголовок выбранной сводки перемещался на первое место. Это особенно удобно в случае больших экранов, например экранов телевизоров, так как перенос заголовков может отвлекать пользователей. Если все заголовки сводок не помещаются на экране, клиенты смогут просматривать другие заголовки с помощью полосы прокрутки. Но для максимального удобства взаимодействия вам следует убедиться, что они все помещаются на экране. Дополнительные сведения см. в разделе [Вкладки и сводки](../controls-and-patterns/tabs-pivot.md).
+Вы можете задать свойству [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) значение `true`, чтобы сводки всегда находились в одном положении, вместо того чтобы заголовок выбранной сводки перемещался на первое место. Это особенно удобно в случае больших экранов, например экранов телевизоров, так как перенос заголовков может отвлекать пользователей. Если все заголовки сводок не помещаются на экране, клиенты смогут просматривать другие заголовки с помощью полосы прокрутки. Но для максимального удобства взаимодействия вам следует убедиться, что они все помещаются на экране. Дополнительные сведения см. в разделе [Вкладки и сводки](/windows/uwp/design/controls-and-patterns/pivot).
 
 ### <a name="navigation-pane-a-namenavigation-pane-"></a>Панель навигации <a name="navigation-pane" />
 

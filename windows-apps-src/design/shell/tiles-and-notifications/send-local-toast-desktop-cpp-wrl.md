@@ -3,16 +3,16 @@ Description: Learn how Win32 C++ WRL apps can send local toast notifications and
 title: Отправка локального всплывающего уведомлений из классических приложений C++ WRL
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
-ms.date: 03/7/2018
+ms.date: 03/07/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, настольный компьютер, всплывающие уведомления, отправка уведомления, отправка локального уведомления, мост для классических приложений, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b7dbe75b06e264eed67d9f08b1e12a42ecb890
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 82de349009350c970fce923a2aa503df0801c3b7
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926822"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116266"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Отправка локального всплывающего уведомлений из классических приложений C++ WRL
 
@@ -395,7 +395,7 @@ if (SUCCEEDED(hr))
 
 ## <a name="step-10-deploying-and-debugging"></a>Шаг 10. Развертывание и отладка
 
-Сведения о развертывании и отладке приложения моста для классических приложений см. в разделе [Запуск, отладка и тестирование упакованного классического приложения](/porting/desktop-to-uwp-debug.md).
+Сведения о развертывании и отладке приложения моста для классических приложений см. в разделе [Запуск, отладка и тестирование упакованного классического приложения](/windows/uwp/porting/desktop-to-uwp-debug).
 
 Для развертывания и отладки классического приложения Win32 необходимо установить приложение с помощью установщика перед отладкой в обычном режиме, чтобы ярлык в меню "Пуск" с вашими AUMID и CLSID существовал. После создания ярлыка в меню "Пуск" вы можете выполнить отладку, нажав клавишу F5 в Visual Studio.
 

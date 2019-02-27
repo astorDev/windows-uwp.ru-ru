@@ -2,16 +2,16 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Портал устройств для компьютеров с Windows
 description: Узнайте, как с помощью портала устройств Windows получить доступ к средствам диагностики и автоматизации на компьютере с Windows.
-ms.date: 2/6/2019
+ms.date: 02/6/2019
 ms.topic: article
 keywords: Windows 10, uwp, портала устройств
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dcf35a1bd43930e616edc6d1e7180c9cea31560
-ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
+ms.openlocfilehash: c499c14d98f63836d80134aac70b2c80902f049b
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9060048"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116136"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Портал устройств для компьютеров с Windows
 

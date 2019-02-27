@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d983de8f9f58e5c9fe6b048b98ea00ebef7197c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 66618d79166e06f6ee2696ed3c9f193a310b6ae9
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923414"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116346"
 ---
 # <a name="adaptive-streaming"></a>Адаптивная потоковая передача
 
@@ -95,7 +95,7 @@ ms.locfileid: "8923414"
 [!code-cs[AMSDownloadCompleted](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDownloadCompleted)]
 
 ## <a name="gather-adaptive-streaming-telemetry-data-with-adaptivemediasourcediagnostics"></a>Сбор телеметрических данных адаптивной потоковой передачи с помощью AdaptiveMediaSourceDiagnostics
-**AdaptiveMediaSource** предоставляет свойство [**Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource?branch=master.Diagnostics), которое возвращает объект [**AdaptiveMediaSourceDiagnostics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics). Этот объект используется для регистрации события [**DiagnosticAvailable**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics.DiagnosticAvailable). Это событие предназначено для использования для сбора телеметрии и не должно использоваться для изменения поведения приложения во время выполнения. Это событие диагностики создается по разным причинам. Смотрите свойства [**DiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs.DiagnosticType) объекта [**AdaptiveMediaSourceDiagnosticAvailableEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs), переданного с событием, чтобы определить причину возникновения последнего. К возможным причинам относятся ошибки доступа к запрашиваемому ресурсу и ошибки анализа файла манифеста потоковой передачи. Список ситуаций, которые могут инициировать событие диагностики, см. в разделе [**AdaptiveMediaSourceDiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostictype). Как и аргументы для других событий адаптивной потоковой передачи, **AdaptiveMediaSourceDiagnosticAvailableEventArgs** предоставляет свойство **RequestId** для сопоставления сведений о запросе между различными событиями.
+**AdaptiveMediaSource** предоставляет свойство [**Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource), которое возвращает объект [**AdaptiveMediaSourceDiagnostics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics). Этот объект используется для регистрации события [**DiagnosticAvailable**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics.DiagnosticAvailable). Это событие предназначено для использования для сбора телеметрии и не должно использоваться для изменения поведения приложения во время выполнения. Это событие диагностики создается по разным причинам. Смотрите свойства [**DiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs.DiagnosticType) объекта [**AdaptiveMediaSourceDiagnosticAvailableEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs), переданного с событием, чтобы определить причину возникновения последнего. К возможным причинам относятся ошибки доступа к запрашиваемому ресурсу и ошибки анализа файла манифеста потоковой передачи. Список ситуаций, которые могут инициировать событие диагностики, см. в разделе [**AdaptiveMediaSourceDiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostictype). Как и аргументы для других событий адаптивной потоковой передачи, **AdaptiveMediaSourceDiagnosticAvailableEventArgs** предоставляет свойство **RequestId** для сопоставления сведений о запросе между различными событиями.
 
 [!code-cs[AMSDiagnosticAvailable](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDiagnosticAvailable)]
 

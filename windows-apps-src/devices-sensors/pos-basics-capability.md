@@ -1,16 +1,16 @@
 ---
 title: Возможность устройств PointOfService
 description: Возможность PointOfService требуется для использования пространства имен Windows.Devices.PointOfService.
-ms.date: 05/1/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 832881919a3ed1f44c0912703ede5948c5b10d11
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9c09a9093389fc0a917243773eae6803220ed610
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945475"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115758"
 ---
 # <a name="pointofservice-device-capability"></a>Возможность устройств PointOfService
 Доступ к API-интерфейсам PointOfService запрашивается путем объявления возможности в манифесте пакета приложения. Большую часть возможностей можно объявить, используя конструктор манифестов в Microsoft Visual Studio, либо добавить их вручную.  

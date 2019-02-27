@@ -1,16 +1,16 @@
 ---
 title: Дополнительные пакеты с исполняемым кодом
 description: Узнайте, как с помощью Visual Studio создать дополнительный пакет с исполняемым кодом.
-ms.date: 9/30/2018
+ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованных приложений, связанный набор, дополнительные пакеты
 ms.localizationpriority: medium
-ms.openlocfilehash: 465253be7ebf8cf7794004c0a6832a78cb0ced69
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 44e32438034cf09695f313d24055b6ed3c82df0b
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927703"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115891"
 ---
 # <a name="optional-packages-with-executable-code"></a>Дополнительные пакеты с исполняемым кодом
  

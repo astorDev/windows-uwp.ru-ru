@@ -1,16 +1,16 @@
 ---
 title: Сведения об устройстве Xbox портала Справочник по API
 description: Узнайте, как получить доступ к данным устройства Xbox.
-ms.date: 11/7/2017
+ms.date: 11/072017
 ms.topic: article
 keywords: Windows 10, uwp, xbox, портала устройств
 ms.localizationpriority: medium
-ms.openlocfilehash: d7901890e1cc8fab24742e8785562d13d2fe182a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 85c2c139aa8064e1f0769064b95eeb531086b8c1
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918408"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115984"
 ---
 # <a name="xbox-info-api-reference"></a>Справочник по API сведения Xbox   
 Можно получить доступ к Xbox One сведения об устройстве, с помощью этого API.
@@ -31,7 +31,7 @@ GET | /ext/xbox/info
 
 **Заголовки запроса**
 
-- Нет
+- None (Нет)
 
 **Тело запроса**
 

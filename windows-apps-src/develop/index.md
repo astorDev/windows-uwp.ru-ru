@@ -1,17 +1,11 @@
 ---
-description: Узнайте, как разрабатывать приложения UWP.
+description: 'Узнайте, как разрабатывать приложения UWP.'
 title: Разработка приложений UWP
 layout: LandingPage
 keywords: uwp разработки потоков async платформы Обзор портала приложения разрабатывать разработчиков
-ms.date: 3/29/2018
+ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 615a5a0762cfa55d7b8be7ce392e02ee1802ded2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926380"
 ---
 <div> 
 <h1>Разработка приложений UWP</h1>
@@ -26,7 +20,7 @@ ms.locfileid: "8926380"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                 
-                            <img src="http://docs.microsoft.com//media/hubs/windows/win_developer-uwp.svg" alt=" "/>
+                            <img src="https://docs.microsoft.com//media/hubs/windows/win_developer-uwp.svg" alt=" "/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -45,7 +39,7 @@ ms.locfileid: "8926380"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                
-                            <img src="http://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt=" " />
+                            <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt=" " />
                         </div>
                     </div>                
                     <div class="cardText">
@@ -59,7 +53,7 @@ ms.locfileid: "8926380"
     </li>                 
 </ul>
 
-## <a name="api-reference"></a>Справочник по API
+## <a name="api-reference"></a>Справочные материалы по API
 
 <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
@@ -264,7 +258,7 @@ ms.locfileid: "8926380"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                 
-                            <img src="http://docs.microsoft.com/media/illustrations/sql-database-develop.svg" alt=" "/>
+                            <img src="https://docs.microsoft.com/media/illustrations/sql-database-develop.svg" alt=" "/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -283,7 +277,7 @@ ms.locfileid: "8926380"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                
-                            <img src="http://docs.microsoft.com/media/illustrations/sql-get-started-download.svg" alt=" " />
+                            <img src="https://docs.microsoft.com/media/illustrations/sql-get-started-download.svg" alt=" " />
                         </div>
                     </div>                
                     <div class="cardText">

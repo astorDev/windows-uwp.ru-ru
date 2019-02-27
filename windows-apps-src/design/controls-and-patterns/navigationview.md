@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b61c36143749ddb358cea1d4cf59f43ecb8c6338
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 4ba3a45701d82ad0b43591469bf390190ec18db0
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037096"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116456"
 ---
 # <a name="navigation-view"></a>Представление навигации
 
@@ -143,7 +143,7 @@ _Левой навигационной макета_
 Панель NavigationView может содержать:
 
 - Объекты [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem) . Элементы навигации для перехода на определенные страницы.
-- Объекты [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) . Разделители для группировки элементов навигации. Задайте свойства [Opacity](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity) 0 для отрисовки в качестве разделителя места.
+- Объекты [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) . Разделители для группировки элементов навигации. Задайте свойства [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) 0 для отрисовки в качестве разделителя места.
 - Объекты [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader) . Заголовки для маркировки групп элементов.
 - Дополнительный элемент управления [AutoSuggestBox](auto-suggest-box.md) для поиска на уровне приложения. Назначение элемента управления к свойству [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox) .
 - Необязательная точка входа для [параметров приложения](../app-settings/app-settings-and-data.md). Чтобы скрыть элемент параметров, задайте свойство [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) значение **false**.

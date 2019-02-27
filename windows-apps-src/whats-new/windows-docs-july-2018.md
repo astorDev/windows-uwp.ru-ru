@@ -2,15 +2,15 @@
 title: Что нового в документации Windows в июле 2018 г. — Разработка приложений UWP
 description: Новые возможности, видео, примеры и руководства для разработчиков добавлены в документацию для июля 2018 г. разработчиков Windows 10.
 keywords: новые возможности, обновления, компоненты, руководство разработчика, Windows 10 июля
-ms.date: 7/11/2018
+ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 83d890983cfe32aaf1204b21552a7d72d89d9675
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 22a3a9614a4488791a36f81a3d4dedac572111b4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049641"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115881"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Что нового в документации для разработчиков Windows в июле 2018 г.
 

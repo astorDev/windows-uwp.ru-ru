@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 143aa8310cdfe9dd5f0be29bf07f03c23293a647
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6c5c8b99ec3646d1eebbb922557f97c9e9304ed4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919039"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116466"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Запуск приложения по умолчанию для URI
 
@@ -46,7 +46,7 @@ ms.locfileid: "8919039"
 <br>
 Например, следующая схема URI открывает браузер, заданный по умолчанию, и отображает веб-сайт Bing.
 
-`http://bing.com`
+`https://bing.com`
 
 Кроме того, вы можете запустить собственные схемы URI. Если ни одно из установленных приложений не предназначено для обработки URI, можно порекомендовать пользователю приложение для установки. Дополнительные сведения см. в разделе [Рекомендовать приложение, если для обработки URI нет доступных приложений](#recommend-an-app-if-one-is-not-available-to-handle-the-uri).
 
@@ -206,7 +206,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="photos-app-uri-scheme"></a>Схема URI приложения «Фотографии»
 
-Используйте схему URI **ms-photos:** для запуска приложения "Фотографии", чтобы просмотреть изображение или редактировать видео. Пример  
+Используйте схему URI **ms-photos:** для запуска приложения "Фотографии", чтобы просмотреть изображение или редактировать видео. Пример.  
 Просмотр изображения: `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
 Редактирование видео: `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
 
@@ -244,4 +244,4 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | Схема URI | Результаты |
 |------------|---------|
-| msnweather://forecast?LA= \[latitude\] & lo = \ [longitude\] | Запускает приложение "Погода" на странице прогноз основании координаты географическое расположение.<br>`latitude` относится к Широта расположения.<br> `longitude` относится к Долгота расположения.<br> |
+| msnweather://forecast?LA= \[latitude\]&lo=\[longitude\] | Запускает приложение "Погода" на странице прогноз основании координаты географическое расположение.<br>`latitude` относится к Широта расположения.<br> `longitude` относится к Долгота расположения.<br> |

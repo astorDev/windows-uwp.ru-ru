@@ -2,15 +2,15 @@
 title: Что нового в документации Windows в феврале 2018г.— разработка приложений UWP
 description: Новые возможности, видео и руководства для разработчиков добавлены в документацию для разработчиков Windows 10 в феврале 2018г.
 keywords: новые возможности, обновления, компоненты, руководство разработчика, Windows 10, февраль
-ms.date: 2/5/2018
+ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22ff57fb32d9c65c675ca63ae0c644b146226795
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044225"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115841"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Что нового в документации для разработчиков Windows в феврале 2018г.
 

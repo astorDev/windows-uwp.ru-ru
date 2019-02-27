@@ -2,7 +2,7 @@
 description: Отображение— это световой эффект, который добавляет приложению глубины и помогает привлечь внимание к интерактивным элементам приложения.
 title: Эффект
 template: detail.hbs
-ms.date: 08/9/2017
+ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e5647d60cc043e167f8e2962680a88c750cc2eb1
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: aeba4dbd734ea4b521033726968e90c232c154cb
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037266"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116406"
 ---
 # <a name="reveal-highlight"></a>Эффект
 

@@ -2,16 +2,16 @@
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Используйте этот метод, чтобы обновить ключ Microsoft Store.
 title: Обновление ключа идентификатора Microsoft Store
-ms.date: 03/16/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, API коллекции Microsoft Store, API покупок Microsoft Store, ключ Microsoft Store, обновление
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f1c6248b2d87a68b77cad6f1bdc7cce0fae587e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fd4d7ce26e12f7ff939ced8d456390b97d0c8a0d
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939095"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116040"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>Обновление ключа идентификатора Microsoft Store
 
@@ -42,7 +42,7 @@ ms.locfileid: "8939095"
 
 | Заголовок         | Тип   | Описание                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Host           | строка | Должен иметь значение **collections.mp.microsoft.com** или **purchase.mp.microsoft.com**.           |
+| Host           | Строка | Должен иметь значение **collections.mp.microsoft.com** или **purchase.mp.microsoft.com**.           |
 | Content-Length | Число | Длина текста запроса.                                                                       |
 | Content-Type   | Строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
 

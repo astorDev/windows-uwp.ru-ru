@@ -2,16 +2,16 @@
 title: Запуск приложения "Параметры" для Windows
 description: Узнайте, как запустить приложение "Параметры" для Windows из вашего приложения. В этом разделе приводится описание схемы URI ms-settings. Используйте эту схему URI для запуска приложения "Параметры" для Windows на определенных страницах параметров.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 1/8/2019
+ms.date: 01/08/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a1f9d853e41642ca5f8027d42b49fcbc3122a66
-ms.sourcegitcommit: 6ba110be80bc343a1aecaf4361edcdb70278c0a3
+ms.openlocfilehash: 87074e9871fae6be32e2862fc547097898baede8
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "9086662"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116476"
 ---
 # <a name="launch-the-windows-settings-app"></a>Запуск приложения «Параметры» для Windows
 

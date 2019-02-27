@@ -2,16 +2,16 @@
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: Используйте этот метод в API покупок Microsoft Store, чтобы предоставить бесплатное приложение или надстройку определенному пользователю.
 title: Предоставление бесплатных продуктов
-ms.date: 03/16/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, API покупок Microsoft Store, предоставление продуктов
 ms.localizationpriority: medium
-ms.openlocfilehash: 75edbe720e2e4483432d3d865650e5d7e7a24b40
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 957958891b1052be4ac9ae65d90f97ff8a44ef36
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929799"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116366"
 ---
 # <a name="grant-free-products"></a>Предоставление бесплатных продуктов
 
@@ -52,11 +52,11 @@ ms.locfileid: "8929799"
 
 | Параметр      | Тип   | Описание        | Обязательный |
 |----------------|--------|---------------------|----------|
-| availabilityId | строка | ИД доступности предоставляемого продукта из каталога Microsoft Store.         | Да      |
-| b2bKey         | строка | [Ключ в Microsoft Store](view-and-grant-products-from-a-service.md#step-4), представляющий удостоверение пользователя, которому требуется предоставить продукт.    | Да      |
-| devOfferId     | строка | ИД определенного разработчиком предложения, который появится в элементе коллекции после покупки.        |
+| availabilityId | string | ИД доступности предоставляемого продукта из каталога Microsoft Store.         | Да      |
+| b2bKey         | string | [Ключ в Microsoft Store](view-and-grant-products-from-a-service.md#step-4), представляющий удостоверение пользователя, которому требуется предоставить продукт.    | Да      |
+| devOfferId     | string | ИД определенного разработчиком предложения, который появится в элементе коллекции после покупки.        |
 | language       | string | Язык пользователя.  | Да      |
-| market         | string | Рынок пользователя.       | Да      |
+| market         | строка | Рынок пользователя.       | Да      |
 | orderId        | Глобальный уникальный идентификатор   | GUID, созданный для заказа. Это значение должно быть уникальным для пользователя, но оно не обязательно должно быть уникальным для всех заказов.    | Да      |
 | productId      | string | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для [продукта](in-app-purchases-and-trials.md#products-skus-and-availabilities) в каталоге Microsoft Store. Пример кода магазина продукта — 9NBLGGH42CFD. | Да      |
 | quantity       | int    | Объем покупки. На данный момент единственным поддерживаемым значением является «1». Если оно не указано, по умолчанию используется значение «1».   | Нет       |
@@ -92,11 +92,11 @@ Content-Type: application/json
 | clientContext             | ClientContextV6             | Контекстно-зависимая информация клиента об этом заказе. Присваивается значению *clientID* маркера Azure AD.    | Да      |
 | createdtime               | datetimeoffset              | Время создания заказа.         | Да      |
 | currencyCode              | string                      | Код валюты для *totalAmount* и *totalTaxAmount*. Недоступно для бесплатных элементов.     | Да      |
-| friendlyName              | string                      | Понятное имя для заказа. Недоступно для заказов, осуществляемых с помощью API покупок Microsoft Store. | Да      |
+| friendlyName              | Строка                      | Понятное имя для заказа. Недоступно для заказов, осуществляемых с помощью API покупок Microsoft Store. | Да      |
 | isPIRequired              | boolean                     | Указывает, является ли платежное средство (PI) обязательной частью заказа на покупку.  | Да      |
 | language                  | string                      | Код языка для заказа (например, «en»).       | Да      |
 | market                    | string                      | Код рынка для заказа (например, «США»).  | Да      |
-| orderId                   | string                      | Код, который идентифицирует данный заказ для конкретного пользователя.                | Да      |
+| orderId                   | строка                      | Код, который идентифицирует данный заказ для конкретного пользователя.                | Да      |
 | orderLineItems            | list&lt;OrderLineItemV6&gt; | Список позиций для заказа. Обычно в заказе имеется 1 позиция.       | Да      |
 | orderState                | string                      | Состояние заказа. Допустимые состояния: **Editing**, **CheckingOut**, **Pending**, **Purchased**, **Refunded**, **ChargedBack** и **Cancelled**. | Да      |
 | orderValidityEndTime      | string                      | Крайний срок перед отправкой, до которого цена заказа является действительной. Недоступно для бесплатных приложений.      | Да      |
@@ -134,12 +134,12 @@ Content-Type: application/json
 | legacyBillingOrderId    | string         | Устаревший идентификатор для выставления счетов.                                                                                       | Нет       |
 | lineItemId              | string         | Идентификатор позиции для элемента в этом заказе.                                                                 | Да      |
 | listPrice               | decimal        | Заявленная цена позиции в этом заказе.                                                                    | Да      |
-| productId               | строка         | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для [продукта](in-app-purchases-and-trials.md#products-skus-and-availabilities) представляющий позицию в каталоге Microsoft Store. Пример кода продукта в Store: 9NBLGGH42CFD.   | Да      |
-| productType             | string         | Тип продукта. Поддерживаемые значения: **Durable**, **Application** и **UnmanagedConsumable**. | Да      |
+| productId               | string         | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для [продукта](in-app-purchases-and-trials.md#products-skus-and-availabilities) представляющий позицию в каталоге Microsoft Store. Пример кода продукта в Store: 9NBLGGH42CFD.   | Да      |
+| productType             | строка         | Тип продукта. Поддерживаемые значения: **Durable**, **Application** и **UnmanagedConsumable**. | Да      |
 | quantity                | int            | Количество экземпляров заказанной позиции.                                                                            | Да      |
 | retailPrice             | decimal        | Розничная цена заказанного элемента.                                                                        | Да      |
 | revenueRecognitionState | string         | Состояние признания дохода.                                                                               | Да      |
-| skuId                   | строка         | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) позиции в каталоге Microsoft Store. Пример кода продукта в Store для номера SKU: 0010.                                                                   | Да      |
+| skuId                   | string         | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) позиции в каталоге Microsoft Store. Пример кода продукта в Store для номера SKU: 0010.                                                                   | Да      |
 | taxAmount               | decimal        | Сумма налогов для позиции.                                                                            | Да      |
 | taxType                 | string         | Тип применимых налогов.                                                                       | Да      |
 | Title                   | string         | Локализованное название позиции.                                                                        | Да      |
@@ -150,7 +150,7 @@ Content-Type: application/json
 
 | Параметр     | Тип   | Описание                                                                        | Обязательный |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
-| identityType  | строка | Содержит значение **"pub"**.                                                      | Да      |
+| identityType  | string | Содержит значение **"pub"**.                                                      | Да      |
 | identityValue | Строка | Строковое значение *publisherUserId* конкретного ключа идентификатора Microsoft Store. | Да      |
 
 
