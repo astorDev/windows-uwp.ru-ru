@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, игры, разработка игр
 ms.localizationpriority: medium
-ms.openlocfilehash: c0113f039ccd2d2df0c155b77295afef194018ce
-ms.sourcegitcommit: f7b8112a99097c7c8a76b028aef436d1a5c68cdb
+ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "9099464"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117744"
 ---
 # <a name="windows-10-game-development-guide"></a>Руководство по разработке игр для Windows 10
 
@@ -1070,7 +1070,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Рекомендации и основы проектирования для UWP</td>
-        <td><a href="https://dev.windows.com/design">Проектирование приложений UWP</a></td>
+        <td><a href="https://developer.microsoft.com/en-us/windows/apps/design">Проектирование приложений UWP</a></td>
     </tr>
     <tr>
         <td>Проектирование этапов жизненного цикла приложения</td>

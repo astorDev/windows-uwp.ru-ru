@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 770896f467ff3a2c24fff65fdf16f1e13c83b688
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933552"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117614"
 ---
 # <a name="xaml-theme-resources"></a>Ресурсы темы XAML
 
@@ -430,7 +430,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ## <a name="troubleshooting-theme-resources"></a>Устранение неполадок с ресурсами тем
 
-Если вы не будете следовать [рекомендациям по использованию ресурсов темы](#guidelines-for-using-theme-resources), вы можете столкнуться с непредвиденным поведением, связанным с темами в приложении.
+Если вы не будете следовать [рекомендациям по использованию ресурсов темы](#guidelines-for-custom-theme-resources), вы можете столкнуться с непредвиденным поведением, связанным с темами в приложении.
 
 Например, при открытии всплывающего элемента, для которого используется светлая тема, элементы приложения, использующего темную тему, также изменятся, как если бы для них была задана светлая тема. Или если осуществляется переход к странице со светлой темой, а затем назад, оригинальная страница с темной темой (полностью или частично) будет выглядеть так, будто для нее используется светлая тема.
 

@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 16af4bcabbc21c60a5dc0006da51f5bd23eef791
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 175009773f7969adbaf36a036e733443f593467f
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941997"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117774"
 ---
 #  <a name="define-the-uwp-app-framework"></a>Определение структуры приложения UWP
 
@@ -23,7 +23,7 @@ ms.locfileid: "8941997"
 
 Вам понадобится реализовать следующие пять методов, вызываемые singleton-объектом приложения:
 * [__Initialize__](#initialize-the-view-provider)
-* [__SetWindow__](#configure-the-window-and-display-behavior)
+* [__SetWindow__](#configure-the-window-and-display-behaviors)
 * [__Load__](#load-method-of-the-view-provider)
 * [__Run__](#run-method-of-the-view-provider)
 * [__Uninitialize__](#uninitialize-method-of-the-view-provider)

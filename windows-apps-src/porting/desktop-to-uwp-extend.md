@@ -6,12 +6,12 @@ ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e4b60e1cd25a205d6a304f12a0b04f5db693b5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2d1fac6d735d4f6915dea1af531dffa666607fe3
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941101"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117814"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Расширение классических приложений с помощью современных компонентов UWP
 
@@ -103,7 +103,7 @@ ms.locfileid: "8941101"
 
 :two: [Создайте пользовательский интерфейс на XAML](#xaml-UI)
 
-:three: [Добавьте расширение протокола в этот проект UWP](#protocol)
+:three: [Добавьте расширение протокола в этот проект UWP](#add-a-protocol-extension)
 
 :four: [Запустите приложение UWP из классического приложения](#start)
 

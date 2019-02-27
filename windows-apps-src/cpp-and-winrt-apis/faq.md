@@ -5,12 +5,12 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, вопросы и ответы, вопросы и ответы
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d4bb534ae5b5dc02f72712cf417ca9054f21b6e
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: 9dd051ffe3af9e18370666f5c6c772b7f188e54a
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042296"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117624"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на вопросы, которые вы, скорее всего имеют о разработке и использовании API среды выполнения Windows с помощью [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -53,9 +53,9 @@ ms.locfileid: "9042296"
 Очень важно, что вам устранить все ошибки компоновщика, которые вы можете, привязав его **WindowsApp.lib** вместо альтернативные статическая библиотека, в противном случае приложение не будет передавать используется с помощью Visual Studio и тесты [Комплект сертификации приложений для Windows](../debug-test-perf/windows-app-certification-kit.md) в Microsoft Store для проверки отправки (это означает, что в результате будет ваше приложение может быть успешно добавлено в Microsoft Store).
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>Следует ли реализовывать [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) и если да, та каким образом?
-Если у вас есть класс среды выполнения, который освобождает ресурсы в своем деструкторе, и этот класс среды предназначен для использования извне его единицы компиляции (это компонент среды выполнения Windows, предназначенный для общего использования клиентскими приложениями среды выполнения Windows), рекомендуется также реализовать **IClosable** для поддержки использования вашего класса среды выполнения языками, в которых отсутствует детерминированная финализация. Убедитесь, что ресурсы освобождаются при вызове деструктора, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.Close) или и того, и другого сразу. **IClosable::Close** можно вызывать произвольное число раз.
+Если у вас есть класс среды выполнения, который освобождает ресурсы в своем деструкторе, и этот класс среды предназначен для использования извне его единицы компиляции (это компонент среды выполнения Windows, предназначенный для общего использования клиентскими приложениями среды выполнения Windows), рекомендуется также реализовать **IClosable** для поддержки использования вашего класса среды выполнения языками, в которых отсутствует детерминированная финализация. Убедитесь, что ресурсы освобождаются при вызове деструктора, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) или и того, и другого сразу. **IClosable::Close** можно вызывать произвольное число раз.
 
-## <a name="do-i-need-to-call-iclosablecloseuwpapiwindowsfoundationiclosablewindowsfoundationiclosableclose-on-runtime-classes-that-i-consume"></a>Нужно ли вызывать [**IClosable::Close**](/uwp/api/windows.foundation.iclosable#Windows_Foundation_IClosable_Close_) для классов среды выполнения, которые я использую?
+## <a name="do-i-need-to-call-iclosablecloseuwpapiwindowsfoundationiclosableclose-on-runtime-classes-that-i-consume"></a>Нужно ли вызывать [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) для классов среды выполнения, которые я использую?
 **IClosable** существует для поддержки языков, в которых отсутствует детерминированная финализация. Таким образом, не следует вызывать метод **IClosable::Close** из C++/WinRT, за исключением очень редких случаев полувзаимной блокировки. К примеру, если вы используете типы **Windows.UI.Composition**, может возникнуть ситуация, в которой вам понадобится удалить объекты в установленной последовательности, а не оставлять задачу их уничтожения программе-оболочке C++/WinRT.
 
 ## <a name="can-i-use-llvmclang-to-compile-with-cwinrt"></a>Можно ли использовать LLVM/Clang для компиляции с C++/WinRT?

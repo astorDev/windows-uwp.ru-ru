@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d8e065b76a79a6733d1fa066cd924d07a8fc7c9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 625c48e2f0fc57a4e9fd3a98acc505e01e2eb42c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045370"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117834"
 ---
 # <a name="xbind-markup-extension"></a>Расширение разметки {x:Bind}
 
@@ -52,7 +52,7 @@ ms.locfileid: "9045370"
 | _bindingProperties_ |
 | _propName_=_value_\[, _propName_=_value_\]* | Одна или несколько привязок свойств, указанных с помощью синтаксиса пары "имя/значение". |
 | _propName_ | Имя строки свойства для установки на объекте привязки. Например, Converter. |
-| _value_ | Значение, которое следует задать для свойства. Синтаксис аргумента зависит от задаваемого свойства. Вот пример использования _propName_=_значение_, где значение само является расширением разметки: `Converter={StaticResource myConverterClass}`. Дополнительную информацию см. в разделе [Свойства, которые можно задать с помощью расширения разметки {x:Bind}](#properties-you-can-set) ниже. |
+| _value_ | Значение, которое следует задать для свойства. Синтаксис аргумента зависит от задаваемого свойства. Вот пример использования _propName_=_значение_, где значение само является расширением разметки: `Converter={StaticResource myConverterClass}`. Дополнительную информацию см. в разделе [Свойства, которые можно задать с помощью расширения разметки {x:Bind}](#properties-that-you-can-set-with-xbind) ниже. |
 
 ## <a name="examples"></a>Примеры.
 

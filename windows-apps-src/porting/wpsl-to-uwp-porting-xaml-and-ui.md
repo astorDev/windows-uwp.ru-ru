@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5f12c60e9fd244805209720e3e6d29260d5100
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 869ab9994f10070797fb4b803b1189127d84eadf
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049691"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117714"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Перенос WindowsPhone Silverlight XAML и пользовательского интерфейса в UWP
 
@@ -205,7 +205,7 @@ ms.locfileid: "9049691"
 
 ##  <a name="design-language-in-windows10"></a>Язык дизайна в Windows10
 
-Существуют некоторые отличия в языке дизайна между Windows10 и WindowsPhone Silverlight приложениями. Все сведения см. в разделе [Дизайн](https://dev.windows.com/design). Несмотря на изменения языка дизайна, принципы дизайна остаются прежними: будьте внимательны к деталям, при этом всегда стремитесь к простоте и фокусируйте внимание на содержимом, а не внешнем оформлении, уменьшая количество визуальных элементов и сохраняя характерные особенности цифрового домена, используйте визуальную иерархию (особенно для шрифтового оформления), проектируйте, используя сетку, оживляйте интерфейс с помощью плавных анимаций.
+Существуют некоторые отличия в языке дизайна между Windows10 и WindowsPhone Silverlight приложениями. Все сведения см. в разделе [Дизайн](https://developer.microsoft.com/en-us/windows/apps/design). Несмотря на изменения языка дизайна, принципы дизайна остаются прежними: будьте внимательны к деталям, при этом всегда стремитесь к простоте и фокусируйте внимание на содержимом, а не внешнем оформлении, уменьшая количество визуальных элементов и сохраняя характерные особенности цифрового домена, используйте визуальную иерархию (особенно для шрифтового оформления), проектируйте, используя сетку, оживляйте интерфейс с помощью плавных анимаций.
 
 ## <a name="localization-and-globalization"></a>Локализация и глобализация
 
@@ -313,7 +313,7 @@ WindowsPhone Silverlight имеет свойство **System.Windows.UIElement.
 
 Стили системы TextBlock для Windows10 приложений
 
-В приложении для WindowsPhone Silverlight семейством шрифтов по умолчанию является Segoe WP. В приложении для Windows10 семейством шрифтов по умолчанию является Segoe UI. В результате метрика шрифта в приложении может выглядеть иначе. Если вы хотите воспроизвести вид текста WindowsPhone Silverlight, можно задать собственную метрику с помощью свойства, такие как [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) и [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362). Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) и [Оформление приложений UWP](https://dev.windows.com/design).
+В приложении для WindowsPhone Silverlight семейством шрифтов по умолчанию является Segoe WP. В приложении для Windows10 семейством шрифтов по умолчанию является Segoe UI. В результате метрика шрифта в приложении может выглядеть иначе. Если вы хотите воспроизвести вид текста WindowsPhone Silverlight, можно задать собственную метрику с помощью свойства, такие как [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) и [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362). Дополнительные сведения см. в разделе [Рекомендации по шрифтам](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) и [Оформление приложений UWP](https://developer.microsoft.com/en-us/windows/apps/design).
 
 ## <a name="theme-changes"></a>Изменения тем
 

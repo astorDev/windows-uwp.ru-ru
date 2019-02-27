@@ -2,15 +2,15 @@
 title: Что нового в документации Windows в мая 2018 г. — Разработка приложений UWP
 description: Новые возможности, видео и руководства для разработчиков добавлены в документацию для мая разработчиков Windows 10 и конференцию Microsoft Build.
 keywords: новые возможности, обновления, компоненты, руководство разработчика, Windows 10, май, сборки
-ms.date: 5/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be67c83a986602318adf995bae35c09e5a7a4997
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 69df2bbe8bc91fcf4a2631c0f257fc44851c24f2
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048671"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116226"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Что нового в документации для разработчиков Windows в мая 2018 г.
 

@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, отрисовка
 ms.localizationpriority: medium
-ms.openlocfilehash: f73665e60513e4f8465be3dbe69f792af285a8e1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934649"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117754"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>Платформа отрисовки II: отрисовка игры
 
@@ -42,7 +42,7 @@ ms.locfileid: "8934649"
     * Используйте несколько буферов констант с различной частотой обновления для уменьшения количества данных, которые необходимо посылать GPU для каждого кадра. В этом примере константы разделяются по разным буферам на основании частоты их обновления. Это лучшая методика программирования в Direct3D. 
     * В этом примере игры определены 4 буфера констант.
         1. __m\_constantBufferNeverChanges__ содержит параметры освещения. Он задается однократно в методе __FinalizeCreateGameDeviceResources__ и никогда не меняется.
-        2. __m\_constantBufferChangeOnResize__ содержит матрицу проекции. Матрица проекции зависит от размера и пропорций окна. Он задается в [__CreateWindowSizeDependentResources__](#createwindowsizedependentresources-method) и затем обновляется после загрузки ресурсов в методе [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method). Если выполняется отрисовка в трехмерном пространстве, он также изменяется дважды для каждого кадра.
+        2. __m\_constantBufferChangeOnResize__ содержит матрицу проекции. Матрица проекции зависит от размера и пропорций окна. Он задается в [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) и затем обновляется после загрузки ресурсов в методе [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method). Если выполняется отрисовка в трехмерном пространстве, он также изменяется дважды для каждого кадра.
         3. __m\_constantBufferChangesEveryFrame__ содержит матрицу представления. Эта матрица зависит от положения камеры и направления взгляда (перпендикулярно проекции) и изменяется только один раз за каждый кадр в методе __Render__. Это было описано ранее в разделе __Платформа отрисовки I: введение в отрисовку__ в описании метода [__GameRenderer::Render__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
         4. __m\_constantBufferChangesEveryPrim__ содержит матрицу модели и свойства материала каждого примитива. Матрица модели преобразует вершины из локальных координат в мировые. Эти константы являются специфическими для каждого примитива и обновляются при каждом вызове метода рисования. Это было описано ранее в разделе __Платформа отрисовки I: введение в отрисовку__ в подразделе [Отрисовка примитивов](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering).
 * В этом классе также определяются объекты ресурсов шейдеров, которые содержат текстуры для примитивов.
@@ -158,7 +158,7 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 В нашем примере игры (и в шаблоне Visual Studio для __приложения DirectX 11 (Universal Windows)__) создание и загрузка ресурсов игры реализуются с помощью этих двух методов, которые вызываются из конструктора __GameRenderer__:
 
 * [__CreateDeviceDependentResources__](#createdevicedependentresources-method)
-* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresources-method)
+* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method)
 
 ## <a name="createdevicedependentresources-method"></a>Метод CreateDeviceDependentResources
 
@@ -590,7 +590,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 В этом примере игры количество вызовов метода совпадает с методом [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method). Пошаговый анализ кода приводится в предыдущем разделе.
 
-Изменение отрисовки размера окна наложения и элементов HUD рассматривается в разделе [Добавление пользовательского интерфейса](#tutorial--adding-a-user-interface).
+Изменение отрисовки размера окна наложения и элементов HUD рассматривается в разделе [Добавление пользовательского интерфейса](tutorial--adding-a-user-interface.md).
 
 ```cpp
 // Initializes view parameters when the window size changes.

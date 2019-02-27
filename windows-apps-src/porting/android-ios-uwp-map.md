@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 008dce5ffc3824d49830bc368a3eaa9d55b7d229
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2d4739442414b02358f3afea8967b0fc404ff7f9
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8948026"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117824"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Сопоставление концепций приложений для Windows для разработчиков iOS и Android
 
@@ -43,7 +43,7 @@ ms.locfileid: "8948026"
 <td align="left"><strong>Язык дизайна.</strong><br><br>Набор соглашений, описывающих вид и работу приложений на платформе.</td>
 <td align="left">Руководство по <strong>Android Material Design</strong> содержит описание визуального языка для дизайнеров и разработчиков Android.</td>
 <td align="left"><strong>Human Interface Guidelines</strong> ("Руководство по пользовательскому интерфейсу") содержит рекомендации для дизайнеров и разработчиков iOS.</td>
-<td align="left">В разделе <a href="https://dev.windows.com/design"><strong>Проектирование приложений UWP для Windows</strong></a> показано, как создать приложение, которое превосходно выглядит на любых устройствах под управлением Windows 10. Здесь описаны основы проектирования пользовательского интерфейса, методы создания отзывчивого дизайна и представлен полный список подробных руководств.<br/></td>
+<td align="left">В разделе <a href="https://developer.microsoft.com/en-us/windows/apps/design"><strong>Проектирование приложений UWP для Windows</strong></a> показано, как создать приложение, которое превосходно выглядит на любых устройствах под управлением Windows 10. Здесь описаны основы проектирования пользовательского интерфейса, методы создания отзывчивого дизайна и представлен полный список подробных руководств.<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Язык разметки пользовательского интерфейса.</strong> <br><br>Язык разметки, который отображает и описывает пользовательский интерфейс и его компоненты. Каждая платформа предоставляет программу как для визуального редактирования, так и для редактирования разметки.<br/></td>

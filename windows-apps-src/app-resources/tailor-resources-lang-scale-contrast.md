@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 82dd3d20aa39ea471618e7707d066c67a6547f9f
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.openlocfilehash: 1ac80888019044beabc44335290bc6ad59cf377c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058755"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117664"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Адаптация ресурсов с учетом языка, масштаба, высокой контрастности и других квалификаторов
 
@@ -130,7 +130,7 @@ ms.locfileid: "9058755"
 
 ## <a name="custom"></a>Custom
 
-Приложение может установить значение для квалификатора `custom`, после чего загружаются ресурсы, наиболее соответствующие этому значению. Например, можно загружать ресурсы с учетом лицензии приложения. При запуске приложение проверяет лицензию и использует ее как значение для квалификатора `custom` путем вызова метода [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_), как показано в примере кода.
+Приложение может установить значение для квалификатора `custom`, после чего загружаются ресурсы, наиболее соответствующие этому значению. Например, можно загружать ресурсы с учетом лицензии приложения. При запуске приложение проверяет лицензию и использует ее как значение для квалификатора `custom` путем вызова метода [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue), как показано в примере кода.
 
 ```csharp
 public void SetLicenseLevel(BrandID brand)
@@ -263,7 +263,7 @@ Windows автоматически выбирает коэффициент ма�
 ## <a name="important-apis"></a>Важные API
 
 * [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
-* [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
+* [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)
 
 ## <a name="related-topics"></a>Статьи по теме
 

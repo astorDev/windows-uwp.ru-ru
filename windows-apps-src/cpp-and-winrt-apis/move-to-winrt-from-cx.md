@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f60576962d9e69d8ec7ba80918fdbdfe96f070
-ms.sourcegitcommit: 9b0f9c8854277d2e786e9294af3a2b559aa457a8
+ms.openlocfilehash: fe988bffbf024308fb5d43da7ed538e5330b58de
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "9099321"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117644"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Переход на C++/WinRT с C++/CX
 
@@ -371,7 +371,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 auto var{ titleRecord->TitleName->Data() };
 ```
 
-Чтобы сделать то же самое в C++/WinRT, можно использовать функцию [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function), чтобы получить версию строки, заканчивающуюся символом NULL (языка группы С), так же как и из **std::wstring**.
+Чтобы сделать то же самое в C++/WinRT, можно использовать функцию [**hstring::c_str**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_), чтобы получить версию строки, заканчивающуюся символом NULL (языка группы С), так же как и из **std::wstring**.
 
 ```cppwinrt
 auto var{ titleRecord.TitleName().c_str() };
