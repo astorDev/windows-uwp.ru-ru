@@ -1,23 +1,23 @@
 ---
-Description: Panning and scrolling allows users to reach content that extends beyond the bounds of the screen.
+Description: Сдвиг и прокрутка дают пользователям возможность получить доступ к содержимому, находящемуся за пределами экрана.
 title: Элементы управления "Средство прокрутки"
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: Abarlow, pagildea
 design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 6578ddfd077e121e0eca5a5fcc8c06cdec26aa42
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058615"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656059"
 ---
 # <a name="scroll-viewer-controls"></a>Элементы управления "Средство прокрутки"
 
@@ -25,7 +25,7 @@ ms.locfileid: "9058615"
 
 При наличии большего содержимого пользовательского интерфейса, чем можно поместить в область, используйте средство прокрутки.
 
-> **Важные API-интерфейсы**: [класс ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527), [класс ScrollBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
+> **Важные API-интерфейсы**: [Класс ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527), [класс полосы прокрутки](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
 
 Средства прокрутки позволяют содержимому выходить за пределы окна просмотра (видимой области). Пользователи могут добраться до этого содержимого, манипулируя средством прокрутки с помощью сенсорного ввода, колесика мыши, клавиатуры или игрового планшета или с помощью курсора мыши либо пера, для взаимодействия с полосой прокрутки средства прокрутки. На рисунке показано несколько примеров элементов управления средством прокрутки.
 
@@ -51,7 +51,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 > [!NOTE]
 > Когда полоса прокрутки отображается, она накладывается на 16 пикселей поверх содержимого внутри ScrollViewer. Чтобы обеспечить качественное проектирование взаимодействия с пользователем, необходимо убедиться, что интерактивное содержимое не замещается перекрытием. Кроме того, если вы не хотите иметь перекрытие взаимодействия с пользователем, оставьте 16 пикселей заполнения границ окна просмотра, чтобы оставить место для полосы прокрутки.
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -60,7 +60,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/ScrollViewer">открыть приложение и увидеть ScrollViewer в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -87,7 +87,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 </Page>
 ```
 
-Этот код XAML показано, как включить горизонтальной прокрутки, размещать изображение в средстве прокрутки и включать масштабирование.
+Этот XAML показано, как включение горизонтальной прокрутки, поместите изображение в средстве прокрутки и масштабирования.
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"
@@ -105,7 +105,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 
 Чтобы позволить элементам управления, имеющим в своем составе ScrollViewer, влиять на поведение и свойства, имеющие отношение к ScrollViewer, элемент ScrollViewer определяет несколько подключенных свойств XAML, которые можно настраивать в стилях и использовать в привязках шаблонов. Подробнее о подключенных свойствах см. в разделе [Общие сведения о подключенных свойствах](../../xaml-platform/attached-properties-overview.md).
 
-**Подключенные свойства XAML для ScrollViewer**
+**XAML ScrollViewer вложенные свойства**
 
 ScrollViewer определяет следующие подключенные свойства XAML:
 
@@ -143,14 +143,14 @@ ScrollViewer определяет следующие подключенные с
 - Если вы хотите, чтобы пользователь мог применять сдвиг в обоих направлениях на довольно большой области и, возможно, также масштабирование, например если вы даете пользователю возможность сдвигать и масштабировать полноразмерное изображение (а не изображение по размеру экрана), то поместите это изображение в средство прокрутки.
 - Если пользователь прокручивает большой объем текста, настройте средство прокрутки так, чтобы прокрутка осуществлялась только по вертикали.
 - Средство прокрутки должно содержать только один объект. Имейте в виду, что один объект может являться панелью макета, в свою очередь содержащей любое количество собственных объектов.
-- Не помещайте элемент управления [Сводка](pivot.md) внутрь средства просмотра прокрутки, чтобы избежать конфликтов с логикой прокрутки этого элемента управления.
+- Не помещайте элемент управления [Сведение](pivot.md) внутрь средства просмотра прокрутки, чтобы избежать конфликтов с логикой прокрутки этого элемента управления.
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 
-**Для разработчиков (XAML)**
+**Разработчикам (XAML)**
 
 * [Класс ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527)

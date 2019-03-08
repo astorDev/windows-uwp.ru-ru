@@ -1,5 +1,5 @@
 ---
-title: Межпрограммное взаимодействие DirectX и XAML
+title: Взаимодействие DirectX и XAML
 description: Вы можете использовать одновременно и XAML, и Microsoft DirectX в своей игре универсальной платформы Windows (UWP).
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 ms.date: 02/08/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx, взаимодействие с xaml
 ms.localizationpriority: medium
 ms.openlocfilehash: 34fb65ec53f6addccf8723b451d333d602c17908
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046214"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604709"
 ---
 # <a name="directx-and-xaml-interop"></a>Взаимодействие DirectX и XAML
 
@@ -21,17 +21,17 @@ ms.locfileid: "9046214"
 
 Если в вашем приложении в основном используется двухмерная отрисовка, возможно, вам стоит применять библиотеку [Win2D](https://github.com/microsoft/win2d) среды выполнения Windows. Эта библиотека, поддерживаемая корпорацией Microsoft, создана на основе базовых технологий Direct2D. Она значительно упрощает использование двумерной графики и включает удобные абстракции для некоторых методов, описанных в данном документе. Для получения дополнительных сведений см. страницу проекта. В этом документе приводится руководство для разработчиков приложений, которые *не* используют Win2D.
 
-> **Примечание**API DirectX не определены как типы среды выполнения Windows, поэтому обычно вы используете расширения компонентов VisualC ++ (C + +/ CX) для разработки XAML UWP компоненты, которые взаимодействуют с использованием DirectX. Кроме того, вы можете создавать приложения UWP, использующие DirectX, на C# и XAML, если инкорпорируете вызовы DirectX в отдельный файл метаданных среды выполнения Windows.
+> **Примечание**  прикладные интерфейсы DirectX API не определены как типы среды выполнения Windows, поэтому обычно использовать расширения компонентов Visual C++ (C + +/ CX) для разработки XAML UWP компоненты, которые взаимодействуют с DirectX. Кроме того, вы можете создавать приложения UWP, использующие DirectX, на C# и XAML, если инкорпорируете вызовы DirectX в отдельный файл метаданных среды выполнения Windows.
 
  
 
 ## <a name="xaml-and-directx"></a>XAML и DirectX
 
-DirectX предоставляет две мощные библиотеки для двух- и трехмерной графики: Direct2D и Microsoft Direct3D. Хотя язык XAML поддерживает базовые двухмерные примитивы и эффекты, многим приложениям (например, приложениям для моделирования или играм) необходима поддержка более сложной графики. В этих случаях библиотеки Direct2D и Direct3D можно использовать для обработки части или всей графики, а язык XAML — для всего остального.
+DirectX предоставляет две эффективные библиотеки для двухмерной и трехмерной графики: Direct2D и Microsoft Direct3D. Хотя язык XAML поддерживает базовые двухмерные примитивы и эффекты, многим приложениям (например, приложениям для моделирования или играм) необходима поддержка более сложной графики. В этих случаях библиотеки Direct2D и Direct3D можно использовать для обработки части или всей графики, а язык XAML — для всего остального.
 
 Если вы реализуете особое межпрограммное взаимодействие между XAML и DirectX, вам нужно знать о двух следующих концепциях.
 
--   Общие поверхности— это области отображения заданного размера, определенные средствами языка XAML, на которых можно рисовать средствами DirectX (не напрямую) с помощью типов [Windows::UI::Xaml::Media::ImageSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagesource.aspx). В случае общих поверхностей вы не управляете точной синхронизацией отображения нового содержимого на экране. Обновления общих поверхностей синхронизируются с обновлениями платформы XAML.
+-   Общие поверхности — это области отображения заданного размера, определенные средствами языка XAML, на которых можно рисовать средствами DirectX (не напрямую) с помощью типов [Windows::UI::Xaml::Media::ImageSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagesource.aspx). В случае общих поверхностей вы не управляете точной синхронизацией отображения нового содержимого на экране. Обновления общих поверхностей синхронизируются с обновлениями платформы XAML.
 -   [Цепочки буферов](https://msdn.microsoft.com/library/windows/desktop/bb206356(v=vs.85).aspx) представляют собой коллекцию буферов, используемых для отображения графики с минимальной задержкой. Обычно цепочки буферов обновляются с частотой 60 кадров в секунду отдельно от потока пользовательского интерфейса. Однако цепочки буферов используют больше памяти и ресурсов процессора, чтобы обеспечить быстрое обновление. Кроме того, с ними сложнее работать, поскольку приходится управлять несколькими потоками.
 
 Проанализируйте, для чего вы используете DirectX. Будет ли DirectX использоваться для формирования или анимации отдельного элемента управления, соответствующего размерам отображаемого окна? Будет ли DirectX содержать выходные данные, требующие обработки и управления в режиме реального времени, как, например, в игре? Если это так, вероятно, вам потребуется реализовать цепочку буферов. В противном случае следует использовать общую поверхность.
@@ -53,7 +53,7 @@ DirectX предоставляет две мощные библиотеки дл
 
 1.  Определите размер общей поверхности, передав высоту и ширину конструктору [SurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702041). Вы можете также указать, требуется ли поверхности поддержка альфа-режима (непрозрачности).
 
-    Пример.
+    Например:
 
     `SurfaceImageSource^ surfaceImageSource = ref new SurfaceImageSource(400, 300);`
 
@@ -77,7 +77,7 @@ DirectX предоставляет две мощные библиотеки дл
     > [!NOTE]
     > Если вы будете рисовать в **SurfaceImageSource** из фонового потока, убедитесь также, что на устройстве DXGI разрешен многопоточный доступ. Это действие необходимо выполнить для повышения производительности, только если вы будете рисовать из фонового потока.
 
-    Пример.
+    Например:
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;
@@ -174,11 +174,9 @@ DirectX предоставляет две мощные библиотеки дл
 
 ## <a name="virtualsurfaceimagesource"></a>VirtualSurfaceImageSource
 
+Класс [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050) расширяет класс [SurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702041), когда содержимое может не поместиться на экране и поэтому требуется виртуализация содержимого для оптимального формирования изображения.
 
-              Класс [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050) расширяет класс [SurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702041), когда содержимое может не поместиться на экране и поэтому требуется виртуализация содержимого для оптимального формирования изображения.
-
-
-              Класс [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050) отличается от класса [SurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702041) тем, что использует обратный вызов [IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded](https://msdn.microsoft.com/library/windows/desktop/hh848337), реализуемый для обновления областей поверхности по мере их появления на экране. Скрытые области очищать не нужно, так как за это отвечает платформа XAML.
+Класс [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050) отличается от класса [SurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702041) тем, что использует обратный вызов [IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded](https://msdn.microsoft.com/library/windows/desktop/hh848337), реализуемый для обновления областей поверхности по мере их появления на экране. Скрытые области очищать не нужно, так как за это отвечает платформа XAML.
 
 Здесь описывается простой процесс создания и обновления объекта [VirtualSurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702050) в коде программной части.
 
@@ -317,7 +315,7 @@ DirectX предоставляет две мощные библиотеки дл
     }
     ```
 
-6.  И наконец, для каждой области, которую нужно обновить, выполните следующее:
+6.  И наконец, для каждой области, которую нужно обновить, выполните следующее.
 
     1.  Предоставьте указатель на объект **ID2D1DeviceContext** для метода **ISurfaceImageSourceNativeWithD2D::BeginDraw** и используйте возвращенный контекст рисования, чтобы заполнить содержимое нужного прямоугольника в **SurfaceImageSource**. Метод **ISurfaceImageSourceNativeWithD2D::BeginDraw** и команды рисования можно вызывать из фонового потока. Прорисовка будет производиться только в области, указанной для обновления в параметре *updateRect*.
 
@@ -358,7 +356,7 @@ DirectX предоставляет две мощные библиотеки дл
 
     2.  Рисуйте конкретное содержимое в этой области, но не выходите за пределы областей, чтобы не снизить производительность.
 
-    3.  Вызовите метод **ISurfaceImageSourceNativeWithD2D::EndDraw**. Результатом станет растровое изображение.
+    3.  Вызовите метод **ISurfaceImageSourceNativeWithD2D::EndDraw**. Результат — растровое изображение
 
 > [!NOTE]
 > Приложения должны избегать рисования на объекте **SurfaceImageSource**, пока связанный с ними объект [Window](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) скрыт, в противном случае API **ISurfaceImageSourceNativeWithD2D** завершится с ошибкой. Для этого зарегистрируйте событие [Window.VisibilityChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) в качестве прослушивателя событий, чтобы отслеживать изменения видимости.
@@ -366,14 +364,14 @@ DirectX предоставляет две мощные библиотеки дл
 ## <a name="swapchainpanel-and-gaming"></a>SwapChainPanel и игры
 
 
-[SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834)— это тип среды выполнения Windows, разработанный для поддержки высокопроизводительных игр и графики, в котором вы управляете цепочкой буферов напрямую. В данном случае вы создаете собственную цепочку буферов DirectX и управляете представлением своего отображаемого содержимого.
+[SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) — это тип среды выполнения Windows, разработанный для поддержки высокопроизводительных игр и графики, в котором вы управляете цепочкой буферов напрямую. В данном случае вы создаете собственную цепочку буферов DirectX и управляете представлением своего отображаемого содержимого.
 
 Тип [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) имеет определенные ограничения, благодаря которым обеспечивается хорошая производительность:
 
 -   Допускается только 4 экземпляра [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) на приложение.
--   Следует задать высоту и ширину цепочки буферов DirectX (в структуре [DXGI\_SWAP\_CHAIN\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528)) равными текущим размерам элемента цепочки буферов. Если этого не сделать, содержимое экрана подгоняется под его размер (с помощью **DXGI\_SCALING\_STRETCH**).
--   Для режима масштабирования цепочки буферов DirectX (в структуре [DXGI\_SWAP\_CHAIN\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528)) необходимо задать состояние **DXGI\_SCALING\_STRETCH**.
--   Для режима альфа-канала цепочки буферов DirectX (в структуре [DXGI\_SWAP\_CHAIN\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528)) нельзя задавать состояние **DXGI\_ALPHA\_MODE\_PREMULTIPLIED**.
+-   Необходимо задать высоту и ширину цепочки буферов DirectX (в [DXGI\_ЗАМЕНЫ\_ЦЕПОЧКИ\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528)) для текущего измерения элемента цепочке замены. Если этого не сделать, отображаемое содержимое будет масштабироваться (с помощью **DXGI\_МАСШТАБИРОВАНИЕ\_STRETCH**) в соответствии с.
+-   Необходимо установить режим масштабирования цепочки буферов DirectX (в [DXGI\_ЗАМЕНЫ\_ЦЕПОЧКИ\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528)) для **DXGI\_МАСШТАБИРОВАНИЕ\_STRETCH**.
+-   Невозможно задать режим альфа-цепочки буферов DirectX (в [DXGI\_ЗАМЕНЫ\_ЦЕПОЧКИ\_DESC1](https://msdn.microsoft.com/library/windows/desktop/hh404528)) для **DXGI\_альфа-канал\_режим\_ Заранее УМНОЖЕННЫЕ**.
 -   Необходимо создать цепочку буферов DirectX путем вызова [IDXGIFactory2::CreateSwapChainForComposition](https://msdn.microsoft.com/library/windows/desktop/hh404558).
 
 [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) обновляется в зависимости от потребностей приложения, а не обновлений платформы XAML. Если обновления **SwapChainPanel** необходимо синхронизировать с обновлениями платформы XAML, зарегистрируйте событие [Windows::UI::Xaml::Media::CompositionTarget::Rendering](https://msdn.microsoft.com/library/windows/apps/br228127). В противном случае необходимо учитывать все возможные проблемы с разными потоками при попытке обновления элементов XAML не из того потока, который обновляет **SwapChainPanel**.
@@ -460,7 +458,7 @@ DirectX предоставляет две мощные библиотеки дл
 
     Элементы XAML обновляются, когда логика макета или отрисовки среды выполнения Windows сигнализирует об обновлении.
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 * [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [SurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702041)

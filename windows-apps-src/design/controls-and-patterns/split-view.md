@@ -6,24 +6,24 @@ label: Split view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e0c709261b08231fa82af615d5398fd66648d4e
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036876"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646469"
 ---
-# <a name="split-view-control"></a>Элемент управления «Комбинированный режим»
+# <a name="split-view-control"></a>Элемент управления "Комбинированный режим"
 
 Элемент управления "Комбинированный режим" содержит разворачиваемую и сворачиваемую панель, а также область содержимого.
 
-> **Важные API-интерфейсы**: [класс SplitView](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **Важные API-интерфейсы**: [Класс SplitView](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 Вот пример использования SplitView в Microsoft Edge для отображения Центра.
 
@@ -36,7 +36,7 @@ ms.locfileid: "9036876"
 
     Панель скрыта до тех пор, пока не будет открыта. После открытия панель перекрывает область содержимого.
 
--   **Встроенный**
+-   **встроенный**
 
     Панель всегда видима и не перекрывает область содержимого. Доступное пространство экрана делится между областью панели и областью содержимого.
 
@@ -54,7 +54,7 @@ ms.locfileid: "9036876"
 
 Если вы хотите создать меню навигации с кнопками развертывания/свертывания и список элементов навигации, используйте элемент управления [NavigationView](navigationview.md).
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -63,7 +63,7 @@ ms.locfileid: "9036876"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/SplitView">открыть приложение и увидеть SplitView в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -97,7 +97,7 @@ ms.locfileid: "9036876"
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 - [Шаблон панели навигации](navigationview.md)
 - [Представление списка](lists.md)
 - [Основные и подробные данные](master-details.md)

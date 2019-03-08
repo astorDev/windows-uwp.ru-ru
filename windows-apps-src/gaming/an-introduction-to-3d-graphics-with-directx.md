@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx, графика
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dbdf6072f57d12d424f0787cfa2e8993a1624af
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932136"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621799"
 ---
 # <a name="basic-3d-graphics-for-directx-games"></a>Простая трехмерная графика для игр DirectX
 
@@ -19,21 +19,21 @@ ms.locfileid: "8932136"
 
 Здесь мы покажем, как использовать программирование в DirectX для реализации базовых принципов трехмерной графики.
 
-**Цель:** Создание трехмерного графического приложения.
+**Цель:** Узнайте, как программировать приложения трехмерной графики.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 
 Предполагается, что вы знакомы с C++. Также вы должны быть знакомы с основными принципами программирования графики.
 
-**Общее время выполнения:** 30 минут.
+**Общее время:** 30 минут.
 
 ## <a name="where-to-go-from-here"></a>Дополнительные ресурсы
 
 
-Здесь мы поговорим о разработке трехмерной графики с помощью DirectX и C++\\Cx. В этом учебнике, который состоит из пяти частей, представлен обзор API [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466), а также концепции и код, используемые во многих других примерах с DirectX. В учебнике последовательно описываются различные аспекты от настройки DirectX для приложения UWP на языке C++ до создания текстуры примитивов и добавления эффектов.
+Здесь мы говорим о разработке трехмерной графики с DirectX и C++\\Cx. В этом учебнике, который состоит из пяти частей, представлен обзор API [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466), а также концепции и код, используемые во многих других примерах с DirectX. В учебнике последовательно описываются различные аспекты от настройки DirectX для приложения UWP на языке C++ до создания текстуры примитивов и добавления эффектов.
 
-> **Примечание**в этом учебнике используется правая система координат с векторами столбцов. Во многих примерах и приложениях DirectX применяется левая система координат с векторами строк. Чтобы получить более полное графическое математическое решение, поддерживающее левую систему координат с векторами строк, попробуйте воспользоваться [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833). Дополнительные сведения см. в разделе [Использование DirectXMath с Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff729728#Use_DXMath_with_D3D).
+> **Примечание**  этот учебник использует правостороннюю систему координат с векторами столбца. Во многих примерах и приложениях DirectX применяется левая система координат с векторами строк. Чтобы получить более полное графическое математическое решение, поддерживающее левую систему координат с векторами строк, попробуйте воспользоваться [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833). Дополнительные сведения см. в разделе [Использование DirectXMath с Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff729728#Use_DXMath_with_D3D).
 
  
 
@@ -51,12 +51,12 @@ ms.locfileid: "8932136"
 
 Затем мы создадим устройство Direct3D, цепочку буферов и представление однобуферной обработки и выведем сформированное изображение на экран.
 
-[Краткое руководство: настройка ресурсов DirectX и отображение изображения](setting-up-directx-resources.md)
+[Краткое руководство: Настройка ресурсов DirectX и отображения изображения](setting-up-directx-resources.md)
 
-## <a name="related-topics"></a>Связанные темы
+## <a name="related-topics"></a>Статьи по теме
 
 
-* [Графика Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
+* [Direct3D 11 графики](https://msdn.microsoft.com/library/windows/desktop/ff476080)
 * [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)
 * [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, шейдеры, примитивы, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 5173adc26e0730ccb80f93fe0c12af286b0c1a49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923474"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589769"
 ---
 # <a name="create-shaders-and-drawing-primitives"></a>Создание шейдеров и примитивов рисования
 
@@ -21,20 +21,20 @@ ms.locfileid: "8923474"
 
 Мы создадим и нарисуем желтый треугольник при помощи построителя текстур и вершинного шейдера. Мы создадим устройство Direct3D, цепочку буферов и представление однобуферной обработки, а затем прочитаем данные из двоичного объектного файла шейдера на диске.
 
-**Цель.** Создание шейдеров и рисование примитивов.
+**Цель:** Создание шейдеров и Рисование примитивов.
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
 
 Предполагается, что вы знакомы с C++. Также вы должны быть знакомы с основными принципами программирования графики.
 
 Предполагается также, что вы изучили раздел [Краткое руководство: настройка ресурсов DirectX и вывод изображения.](setting-up-directx-resources.md)
 
-**Время выполнения:** 20 минут.
+**Время завершения:** 20 минут.
 
-## <a name="instructions"></a>Инструкции
+## <a name="instructions"></a>Инструкция
 
-### <a name="1-compiling-hlsl-source-files"></a>1. Компиляция исходных HLSL-файлов
+### <a name="1-compiling-hlsl-source-files"></a>1. Компиляция исходные файлы HLSL
 
 Microsoft Visual Studio использует компилятор кода HLSL [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) для компиляции исходных HLSL-файлов (SimpleVertexShader.hlsl и SimplePixelShader.hlsl) в двоичные объектные CSO-файлы шейдеров (SimpleVertexShader.cso и SimplePixelShader.cso). Подробнее о компиляторе кода HLSL см. в разделе, посвященном средству компиляции эффектов. Подробнее о компиляции кода шейдера см. в разделе о [компиляции шейдеров](https://msdn.microsoft.com/library/windows/desktop/bb509633).
 
@@ -79,13 +79,13 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 ### <a name="2-reading-data-from-disk"></a>2. Чтение данных с диска
 
-Мы используем функцию DX::ReadDataAsync из DirectXHelper.h в шаблоне приложения DirectX11 (универсальное приложение Windows) для асинхронного чтения данных из файла на диске.
+Мы используем функцию DX::ReadDataAsync из DirectXHelper.h в шаблоне приложения DirectX 11 (универсальное приложение Windows) для асинхронного чтения данных из файла на диске.
 
-### <a name="3-creating-vertex-and-pixel-shaders"></a>3. Создание вершинных и пискельных шейдеров
+### <a name="3-creating-vertex-and-pixel-shaders"></a>3. Создание шейдеров вершин и пикселей
 
-Считываем данные из файла SimpleVertexShader.cso и назначаем данные массиву байтов *vertexShaderBytecode*. Вызываем [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) с массивом байтов, чтобы создать вершинный шейдер ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)). Чтобы обеспечить отрисовку треугольника, мы задаем для параметра vertex depth в исходном файле SimpleVertexShader.hlsl значение 0,5. Далее необходимо заполнить массив структур [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180), чтобы описать структуру кода вершинного шейдера, а затем создать эту структуру при помощи вызова метода [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512). Массив содержит один элемент структуры, определяющий расположение вершины. Считываем данные из файла SimplePixelShader.cso и назначаем их массиву байтов *pixelShaderBytecode*. Вызываем [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) с массивом байтов, чтобы создать пиксельный шейдер ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)). Чтобы наш треугольник стал желтым, мы задаем для параметра pixel value в исходном файле SimplePixelShader.hlsl значение «1,1,1,1». Изменяя это значение, можно изменять цвет примитива.
+Считываем данные из файла SimpleVertexShader.cso и назначаем данные массиву байтов *vertexShaderBytecode*. Вызываем [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) с массивом байтов, чтобы создать вершинный шейдер ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)). Чтобы обеспечить отрисовку треугольника, мы задаем для параметра vertex depth в исходном файле SimpleVertexShader.hlsl значение 0,5. Мы заполнить массив [ **D3D11\_ввода\_элемент\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180) структуры описывают макет код шейдера вершин, а затем вызвать [ **ID3D11Device::CreateInputLayout** ](https://msdn.microsoft.com/library/windows/desktop/ff476512) для создания макета. Массив содержит один элемент структуры, определяющий расположение вершины. Считываем данные из файла SimplePixelShader.cso и назначаем их массиву байтов *pixelShaderBytecode*. Вызываем [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) с массивом байтов, чтобы создать пиксельный шейдер ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)). Чтобы наш треугольник стал желтым, мы задаем для параметра pixel value в исходном файле SimplePixelShader.hlsl значение «1,1,1,1». Изменяя это значение, можно изменять цвет примитива.
 
-Нам нужно создать буферы вершин и индексов, определяющих простой треугольник. Для этого мы сначала определяем треугольник, затем описываем буферы вершин и индексов ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) и [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) с помощью определения треугольника и, наконец, вызываем метод [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) по одному разу для каждого буфера.
+Нам нужно создать буферы вершин и индексов, определяющих простой треугольник. Чтобы сделать это, мы сначала определяем треугольника, далее описания буферы вершин и индексов ([**D3D11\_БУФЕРА\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) и [ **D3D11\_ SUBRESOURCE\_данных**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) с помощью определения треугольника и вызвать [ **ID3D11Device::CreateBuffer** ](https://msdn.microsoft.com/library/windows/desktop/ff476501) один раз для каждого буфера.
 
 ```cpp
         auto loadVSTask = DX::ReadDataAsync(L"SimpleVertexShader.cso");
@@ -200,17 +200,17 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 Чтобы нарисовать желтый треугольник, мы используем вершинные и пиксельные шейдеры, структуру вершинного шейдера, а также буферы вершин и индексов.
 
-### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4. Рисование треугольника и представление обработанного изображения
+### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4. Рисование треугольника и представляя подготовленного изображения
 
 Для непрерывной обработки и вывода сцены на экран мы воспользуемся бесконечным циклом. Вызываем [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464), чтобы указать однобуферную прорисовку в качестве цели вывода. Вызываем [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) с параметрами { 0.071f, 0.04f, 0.561f, 1.0f } для очистки однобуферной прорисовки до сплошного синего цвета.
 
 В бесконечном цикле выполняется отрисовка желтого треугольника на синем фоне.
 
-**Рисование желтого треугольника**
+**Для рисования желтый треугольник**
 
 1.  Сначала мы вызываем метод [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454), чтобы описать способ потоковой передачи данных буфера вершин на этап входной сборки.
 2.  Далее вызываем [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) и [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453), чтобы связать буферы индексов и вершин с этапом входной сборки.
-3.  Затем вызываем [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) со значением [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP), чтобы на этапе входной сборки данные вершин интерпретировались как полоса треугольников.
+3.  Затем мы вызываем [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455) с [ **D3D11\_ПРИМИТИВНЫЙ\_ТОПОЛОГИИ\_ TRIANGLESTRIP** ](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) значение для указания на этапе сборщик входных данных для интерпретации данных вершин как ленты треугольника.
 4.  Затем вызывается метод [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) для инициализации стадии вершинного шейдера и метод [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) для инициализации построителя текстур с кодом построителя текстур.
 5.  В завершение вызывается метод [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) для отрисовки треугольника и его передачи в канал визуализации.
 
@@ -280,14 +280,14 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
                 );
 ```
 
-## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
+## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
 
 
 Мы создаем и рисуем желтый треугольник при помощи построителя текстур и вершинного шейдера.
 
 Затем мы создаем вращающийся трехмерный куб и применяем к нему эффекты освещения.
 
-[Применение глубины и эффектов к примитивам](using-depth-and-effects-on-primitives.md)
+[С помощью глубины и влияние на примитивы](using-depth-and-effects-on-primitives.md)
 
  
 

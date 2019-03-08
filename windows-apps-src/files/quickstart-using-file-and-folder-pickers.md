@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 09ddb212cd84b9754c35adccdf6e60ad96a4f94f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050807"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662769"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>Открытие файлов и папок с помощью средства выбора
 
@@ -21,19 +21,19 @@ ms.locfileid: "9050807"
 -   [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)
 -   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
 
-Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Для получения доступа к файлам можно использовать классы [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) и [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), а для получения доступа к папкам— класс [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881).
+Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Для получения доступа к файлам можно использовать классы [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) и [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), а для получения доступа к папкам — класс [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881).
 
 > [!NOTE]
-> Полный пример см. в статье [Пример средства выбора файлов](https://go.microsoft.com/fwlink/p/?linkid=619994).
+> Полный пример см. в разделе [образец средства выбора файла](https://go.microsoft.com/fwlink/p/?linkid=619994).
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
 
--   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
+-   **Понять асинхронного программирования для приложений универсальной платформы Windows (UWP)**
 
     Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **Права на доступ к расположению**
+-   **Разрешения на доступ к папке**
 
     См. раздел [Разрешения на доступ к файлам](file-access-permissions.md).
 
@@ -103,17 +103,17 @@ else
     ```
     Задайте свойства объекта «средство выбора файлов», соответствующие вашим пользователям и приложению.
 
-    В этом примере создается сложное визуальное представление в виде картинок в удобном расположении, из которых может выбирать пользователь, путем задания трех свойств: [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855), [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) и [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850).
+    В этом примере создает подробные и visual отображение изображений в удобном месте, которое пользователь может выбрать из, задав три свойства: [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855), [ **SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854), и [ **FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850).
 
-    -   Задание свойства [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) равным значению **Thumbnail** перечисления [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) создает сложное визуальное представление за счет эскизов картинок, представляющих файлы в средстве выбора файлов. Выполните это, чтобы выбрать визуальные файлы, например фотографии или видео. В других случаях воспользуйтесь [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list). Гипотетическое почтовое приложение с функциями **Прикрепить изображение или видео** и **Прикрепить документ** установит свойство **ViewMode**, соответствующее функции, прежде чем отобразить средство выбора файлов.
+    -   Установка [ **ViewMode** ](https://msdn.microsoft.com/library/windows/apps/br207855) для [ **PickerViewMode** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) **эскиз** форматированного текста, создает значение перечисления визуальное отображение с помощью эскизов изображений для представления файлы в средстве выбора файлов. Выполните это, чтобы выбрать визуальные файлы, например фотографии или видео. В других случаях воспользуйтесь [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list). Гипотетическое почтовое приложение с функциями **Прикрепить изображение или видео** и **Прикрепить документ** установит свойство **ViewMode**, соответствующее функции, прежде чем отобразить средство выбора файлов.
 
     -   Выбор библиотеки «Изображения» в качестве значения для параметра [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) с помощью [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) позволяет пользователю начать работу в расположении вероятного нахождения изображений. Присвойте свойство **SuggestedStartLocation** расположению, подходящему для типа выбранных файлов, например «Музыка», «Изображения», «Видео» или «Документы». Из начального расположения пользователь может перейти в другие расположения.
 
     -   Использование [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) для указания типов файлов сохраняет внимание пользователя на выборе соответствующих файлов. Чтобы заменить предыдущие типы файлов в **FileTypeFilter** новыми записями, используйте вместо метода [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834) метод [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844).
 
-2.  **Отображение FileOpenPicker**
+2.  **Показать FileOpenPicker**
 
-    - **Выбор одного файла**
+    - **Для выбора одного файла**
 
         ```cs
         Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
@@ -128,7 +128,7 @@ else
         }
         ```
 
-    - **Выбор нескольких файлов**  
+    - **Чтобы выбрать несколько файлов**  
 
         ```cs
         var files = await picker.PickMultipleFilesAsync();
@@ -149,7 +149,7 @@ else
         }
         ```
 
-## <a name="pick-a-folder-complete-code-listing"></a>Выбор папки: приводится полный код
+## <a name="pick-a-folder-complete-code-listing"></a>Выбор папки: полный код
 
 
 ```cs

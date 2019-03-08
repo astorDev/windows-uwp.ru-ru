@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044448"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611539"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Добавление поддержки функции "Близкие люди" в приложение
 
@@ -20,15 +20,15 @@ ms.locfileid: "9044448"
 
 ## <a name="requirements"></a>Требования
 
-+ Windows10 и Microsoft Visual Studio2017. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 и Microsoft Visual Studio 2017. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Знание основ C# или похожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Обзор
 
 Чтобы реализовать поддержку функции "Близкие люди" в приложении, необходимо выполнить три действия:
 
-1. [Объявить поддержку контракта активации shareTarget в манифесте приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Указать контакты, с которыми пользователи могут делиться данными с помощью вашего приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Объявите поддержку по контракту активации shareTarget в манифесте приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Добавление заметок контакты, пользователи могут совместно использовать с помощью вашего приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  Реализовать поддержку нескольких экземпляров приложения, запущенных одновременно. Пользователям необходимо взаимодействовать с полной версией приложения при работе с ним на панели контактов.  Они могут даже использовать его на нескольких панелях контактов одновременно.  Для этого приложение должно поддерживать возможность одновременного запуска нескольких представлений. Сведения о том, как это сделать, см. в статье [Отображение нескольких представлений для приложения](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views).
 
 После реализации этой возможности ваше приложение будет отображаться на панели контактов для указанных контактов.
@@ -37,7 +37,7 @@ ms.locfileid: "9044448"
 
 Чтобы объявить поддержку контракта "Близкие люди", откройте приложение в Visual Studio. В **обозревателе решений** щелкните правой кнопкой мыши файл **Package.appxmanifest** и выберите команду **Открыть с помощью**. В меню выберите пункт **Редактор (текстовый) XML** и нажмите кнопку **ОК**. Внесите следующие изменения в манифест:
 
-**До**
+**Прежде чем**
 
 ```xml
 <Package
@@ -79,7 +79,7 @@ ms.locfileid: "9044448"
 
 Чтобы включить отображение контактов из вашего приложения на панели задач с использованием области "Близкие люди", необходимо записать их в хранилище контактов Windows.  Сведения о записи контактов см. в разделе [Пример карточки контакта](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration).
 
-Ваше приложение также должно записать аннотацию для каждого контакта. Аннотации— это компоненты данных из приложения, связанные с контактом. Аннотация должна содержать активируемый класс, соответствующий требуемому представлению, в элементе **ProviderProperties**, а также должна объявить поддержку операции **ContactProfile**.
+Ваше приложение также должно записать аннотацию для каждого контакта. Аннотации — это компоненты данных из приложения, связанные с контактом. Аннотация должна содержать активируемый класс, соответствующий требуемому представлению, в элементе **ProviderProperties**, а также должна объявить поддержку операции **ContactProfile**.
 
 Аннотировать контакты можно в любой момент во время работы приложения, но в общем случае необходимо делать это, как только они добавляются в хранилище контактов Windows.
 
@@ -101,13 +101,13 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-"appId"— это имя семейства пакетов, за которым следует символ "!" и идентификатор активируемого класса. Чтобы найти имя семейства пакета, откройте **Package.appxmanifest** с помощью редактора по умолчанию и найдите вкладку «Упаковка». Здесь элемент «Приложение» является активируемым классом, соответствующим представлению запуска приложения.
+"appId" — это имя семейства пакетов, за которым следует символ "!" и идентификатор активируемого класса. Чтобы найти имя семейства пакета, откройте файл **Package.appxmanifest** с помощью редактора по умолчанию и перейдите на вкладку "Упаковка". Здесь "App" — это активируемый класс, соответствующий представлению приложения при запуске.
 
 ## <a name="allow-contacts-to-invite-new-potential-users"></a>Предоставление контактам возможности приглашать новых потенциальных пользователей
 
 По умолчанию приложение отображается на панели контактов только для указанных вами контактов.  Это позволяет избежать путаницы с контактами, с которыми невозможно взаимодействовать с помощью вашего приложения.  Чтобы приложение отображалось для контактов, которые неизвестны вашему приложению (например, чтобы пригласить пользователей добавить эти контакты в свою учетную запись), можно добавить следующий код в манифест:
 
-**До**
+**Прежде чем**
 
 ```Csharp
 <Applications>
@@ -248,11 +248,11 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 **Примечание.** 
 
-## <a name="see-also"></a>См. также:
-+ [Публикации близких людей](my-people-sharing.md)
-+ [Уведомления близких людей](my-people-notifications.md)
-+ [Видео Channel 9 о добавлении поддержки функции "Близкие люди" в приложение](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [Пример интеграции функции "Близкие люди"](https://aka.ms/mypeoplebuild2017)
-+ [Пример карточки контакта](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
-+ [Документация по классу PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [Подключение приложения к действиям в карточках контактов](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
+## <a name="see-also"></a>См. также
++ [Мои человек используют](my-people-sharing.md)
++ [Мои notificatons людей](my-people-notifications.md)
++ [Видео на Channel 9 о добавлении поддержку Мои людей в приложение](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [Мой пример интеграции людей](https://aka.ms/mypeoplebuild2017)
++ [Обратитесь в службу примере карты](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [Документации по классу PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
++ [Подключение приложения к действиям на карточку контакта](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

@@ -8,25 +8,25 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8126ac8fa738a2b8a9680d215179fe23f77c5d44
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937848"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659299"
 ---
 # <a name="attenuation-and-spotlight-factor"></a>Коэффициент затухания и вспышки
 
 
 Компоненты рассеянного и зеркального света глобального уравнения света содержат термины, описывающие затухание света и конус вспышки. Эти термины описаны ниже.
 
-## <a name="span-idattenuationspanspan-idattenuationspanspan-idattenuationspanattenuation"></a><span id="Attenuation"></span><span id="attenuation"></span><span id="ATTENUATION"></span>Затухание
+## <a name="span-idattenuationspanspan-idattenuationspanspan-idattenuationspanattenuation"></a><span id="Attenuation"></span><span id="attenuation"></span><span id="ATTENUATION"></span>Ослабление
 
 
 Затухание света зависит от типа света и расстояния между светом и положением вершины. Чтобы вычислить затухание, используйте одну из следующих формул.
 
-Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
+Atten = 1 / (att0<sub>я</sub> + att1<sub>я</sub> \* d + att2<sub>я</sub> \* d²)
 
-Где:
+Где
 
 | Параметр        | Значение по умолчанию | Тип           | Описание                                     | Диапазон          |
 |------------------|---------------|----------------|-------------------------------------------------|----------------|
@@ -44,7 +44,7 @@ Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
 
 d = | L<sub>dir</sub> |
 
-Где:
+Где
 
 | Параметр       | Значение по умолчанию | Тип                                             | Описание                                                 |
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
@@ -58,7 +58,7 @@ d = | L<sub>dir</sub> |
 
 Затухание в максимальном диапазоне света не равно 0,0. Чтобы не допустить случайного отображения света при нахождении в диапазоне света, приложение может увеличить диапазон света. Либо приложение может настроить константы затухания так, чтобы коэффициент затухания был близок к 0,0 в диапазоне света. Значение затухания умножается на компоненты красного, зеленого и синего цветов света, чтобы регулировать интенсивность света как коэффициент расстояния, которое свет проходит до вершины.
 
-## <a name="span-idspotlight-factorspanspan-idspotlight-factorspanspan-idspotlight-factorspanspotlight-factor"></a><span id="Spotlight-Factor"></span><span id="spotlight-factor"></span><span id="SPOTLIGHT-FACTOR"></span>Коэффициент вспышки
+## <a name="span-idspotlight-factorspanspan-idspotlight-factorspanspan-idspotlight-factorspanspotlight-factor"></a><span id="Spotlight-Factor"></span><span id="spotlight-factor"></span><span id="SPOTLIGHT-FACTOR"></span>Коэффициент Spotlight
 
 
 Следующее уравнение задает коэффициент вспышки.
@@ -68,13 +68,13 @@ d = | L<sub>dir</sub> |
 | Параметр         | Значение по умолчанию | Тип           | Описание                              | Диапазон                    |
 |-------------------|---------------|----------------|------------------------------------------|--------------------------|
 | rho<sub>i</sub>   | Н/Д           | Число с плавающей запятой | cosine(угол) для i света            | Н/Д                      |
-| phi<sub>i</sub>   | 0,0           | Число с плавающей запятой | Угол мягкого затенения вспышки i в радиусе | \[theta<sub>i</sub>, pi) |
+| phi<sub>i</sub>   | 0,0           | Число с плавающей запятой | Угол мягкого затенения вспышки i в радиусе | \[тета<sub>я</sub>, pi) |
 | theta<sub>i</sub> | 0,0           | Число с плавающей запятой | Угол полной тени вспышки i в радиусе    | \[0, pi)                 |
 | снижение           | 0,0           | Число с плавающей запятой | Коэффициент снижения                           | (-∞ + ∞)   |
 
  
 
-Где:
+Где
 
 rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
 
@@ -89,10 +89,10 @@ rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
 
 После вычисления затухания света для того, чтобы вычислить компоненты рассеивания и зеркального отражения для вершины, Direct3D также учитывает эффекты вспышки, если применимо; угол, под которым свет отражается с поверхности, и отражающую способность текущего материала. В статье [Типы света](light-types.md) см. раздел "Вспышка".
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Математические аспекты освещения](mathematics-of-lighting.md)
+[Математика освещения](mathematics-of-lighting.md)
 
  
 

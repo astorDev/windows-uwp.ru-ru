@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, ввод, рукоятка управления полетом
 ms.localizationpriority: medium
 ms.openlocfilehash: 5eceb30c62f1e803397aff71d59b560c39736cf9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927977"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609019"
 ---
 # <a name="flight-stick"></a>Рукоятка управления полетом
 
@@ -26,7 +26,7 @@ ms.locfileid: "8927977"
 
 ## <a name="overview"></a>Обзор
 
-Рукоятки управления полетом— это игровые устройства ввода, которые используются для воспроизведения функций рукояток управления в кабине самолета или космического корабля. Эти устройства ввода идеально подходят для быстрого и точного управления летательным аппаратом. Поддержка рукояток управления полетом в приложениях UWP для Windows 10 и Xbox One реализована с помощью пространства имен [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input).
+Рукоятки управления полетом — это игровые устройства ввода, которые используются для воспроизведения функций рукояток управления в кабине самолета или космического корабля. Эти устройства ввода идеально подходят для быстрого и точного управления летательным аппаратом. Поддержка рукояток управления полетом в приложениях UWP для Windows 10 и Xbox One реализована с помощью пространства имен [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input).
 
 Рукоятки управления полетом Xbox One оснащаются следующими элементами управления:
 
@@ -45,7 +45,7 @@ ms.locfileid: "8927977"
 
 Как контроллер навигации в пользовательском интерфейсе, рукоятка управления полетом сопоставляет [требуемый набор](ui-navigation-controller.md#required-set) команд навигации с джойстиком и кнопками **Представление**, **Меню**, **FirePrimary** и **FireSecondary**.
 
-| Команды навигации | Ввод рукоятки управления полетом                  |
+| Команда навигации | Ввод рукоятки управления полетом                  |
 | ------------------:| ----------------------------------- |
 |                 Вверх | Джойстик вверх                         |
 |               Вниз | Джойстик вниз                       |
@@ -56,11 +56,11 @@ ms.locfileid: "8927977"
 |             Принять | Кнопка **FirePrimary**              |
 |             Отмена | Кнопка **FireSecondary**            |
 
-Рукоятки управления полетомне поддерживают какие-либо [дополнительные наборы](ui-navigation-controller.md#optional-set) команд навигации.
+Рукоятки управления полетом не поддерживают какие-либо [дополнительные наборы](ui-navigation-controller.md#optional-set) команд навигации.
 
 ## <a name="detect-and-track-flight-sticks"></a>Обнаружение и отслеживание рукояток управления полетом
 
-Обнаружение и отслеживание рукояток управления полетом происходит точно так же, как в случае геймпадов, за тем исключением, что вместо класса [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) используется класс [FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick). Дополнительные сведения см. в статье [Геймпад и вибрация](gamepad-and-vibration.md).
+Обнаружение и отслеживание рукояток управления полетом происходит точно так же, как в случае геймпадов, за тем исключением, что вместо класса [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) используется класс [FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick). Подробнее см. в статье [Геймпад и вибрация](gamepad-and-vibration.md).
 
 <!-- Flight sticks are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected flight sticks and events to notify you when a flight stick is added or removed.
 
@@ -150,7 +150,7 @@ float yaw = reading.Yaw;
 
 При считывании значений джойстика можно заметить, что когда джойстик находится в состоянии покоя в центральном положении, значения могут быть не равны 0,0. Вместо этого вы будете получать различные значения, близкие к 0,0, каждый раз, когда джойстик перемещается и возвращается в центральное положение. Для устранения данной проблемы можно установить небольшую _мертвую зону_ — диапазон значений рядом с идеальным центральным положением, которые будут игнорироваться.
 
-Один из способов создания мертвой зоны— определить, насколько далеко от центра сдвинулся джойстик, и игнорировать смещения на расстояние, которое окажется меньше выбранного. Расстояние можно вычислить приблизительно &mdash; не точно, поскольку показания джойстика по сути полярные, а не плоскостные &mdash; с помощью теоремы Пифагора. В результате вы получите радиальную мертвую зону.
+Один из способов создания мертвой зоны — определить, насколько далеко от центра сдвинулся джойстик, и игнорировать смещения на расстояние, которое окажется меньше выбранного. Расстояние можно вычислить приблизительно &mdash; не точно, поскольку показания джойстика по сути полярные, а не плоскостные &mdash; с помощью теоремы Пифагора. В результате вы получите радиальную мертвую зону.
 
 В следующем примере показан расчет базовой радиальной мертвой зоны с помощью теоремы Пифагора:
 
@@ -197,7 +197,7 @@ if (FlightStickButtons::None == (reading.Buttons & FlightStickButtons::FirePrima
 }
 ```
 
-Иногда нужно определить, когда кнопка переходит из нажатого состояния в отпущенное или наоборот, узнать состояние сразу нескольких кнопок (нажаты или отпущены) либо определить особую схему расположения кнопок в наборе&mdash;некоторые кнопки могут быть нажаты, а другие отпущены. Сведения о том, как определить каждое из этих условий, см. в разделах [Определение положений кнопки](input-practices-for-games.md#detecting-button-transitions) и [Определение сложных схем положений кнопок](input-practices-for-games.md#detecting-complex-button-arrangements).
+Иногда нужно определить, когда кнопка переходит из нажатого состояния в отпущенное или наоборот, узнать состояние сразу нескольких кнопок (нажаты или отпущены) либо определить особую схему расположения кнопок в наборе — некоторые кнопки могут быть нажаты, а другие отпущены. Сведения о том, как определить каждое из этих условий, см. в разделах [Определение положений кнопки](input-practices-for-games.md#detecting-button-transitions) и [Определение сложных схем положений кнопок](input-practices-for-games.md#detecting-complex-button-arrangements).
 
 Значение переключателя считывается из свойства [FlightStickReading.HatSwitch](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.HatSwitch). Поскольку это свойство также является битовым полем, побитовая маскировка снова используется для изоляции положения переключателя.
 
@@ -223,8 +223,8 @@ if (GameControllerSwitchPosition::Center == (reading.HatSwitch & GameControllerS
 
 The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) demonstrates how to use flight sticks and different kinds of input devices in tandem, as well as how these input devices behave as UI navigation controllers.-->
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
 * [Класс Windows.Gaming.Input.UINavigationController](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
 * [Интерфейс Windows.Gaming.Input.IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Рекомендации по использованию устройств ввода для игр](input-practices-for-games.md)
+* [Входной и рекомендации для игр](input-practices-for-games.md)

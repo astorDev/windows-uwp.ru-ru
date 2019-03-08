@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ec96f6245969d32357563c44107f539fb9043aac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924448"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618249"
 ---
 # <a name="creating-streaming-resources"></a>Создание потоковых ресурсов
 
@@ -37,37 +37,37 @@ ms.locfileid: "8924448"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Статья</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="mappings-are-into-a-tile-pool.md">Сопоставления в пуле плиток</a></p></td>
-<td align="left"><p>При создании ресурса в качестве потокового плитки, составляющие этот ресурс, поступают из указаний на расположения в пуле плиток. Пул плиток— это пул памяти (в фоновом режиме которого выполняется одно или несколько выделений, которые не видны приложению).</p></td>
+<td align="left"><p><a href="mappings-are-into-a-tile-pool.md">Сопоставления являются в пул плитки</a></p></td>
+<td align="left"><p>При создании ресурса в качестве потокового плитки, составляющие этот ресурс, поступают из указаний на расположения в пуле плиток. Пул плиток — это пул памяти (в фоновом режиме которого выполняется одно или несколько выделений, которые не видны приложению).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="streaming-resource-creation-parameters.md">Параметры создания потоковых ресурсов</a></p></td>
+<td align="left"><p><a href="streaming-resource-creation-parameters.md">Параметры создания для потоковой передачи ресурсов</a></p></td>
 <td align="left"><p>Существуют определенные ограничения на тип ресурсов Direct3D, которые можно создать в качестве потоковых.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="tile-pool-creation-parameters.md">Параметры создания пула плиток</a></p></td>
+<td align="left"><p><a href="tile-pool-creation-parameters.md">Параметры создания плитки пула</a></p></td>
 <td align="left"><p>Используйте параметры в этом разделе для определения пулов плиток при создании буфера.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="streaming-resource-cross-process-and-device-sharing.md">Потоковые ресурсы: совместное использование процессов и устройств</a></p></td>
-<td align="left"><p>Пулы могут совместно использоваться разными процессами— точно так же как традиционные ресурсы. Потоковые ресурсы, ссылающиеся на пулы плиток, невозможно совместно использовать на устройствах или в процессах.</p></td>
+<td align="left"><p><a href="streaming-resource-cross-process-and-device-sharing.md">Потоковая передача ресурсов между процессами и совместного использования устройств</a></p></td>
+<td align="left"><p>Пулы могут совместно использоваться разными процессами — точно так же как традиционные ресурсы. Потоковые ресурсы, ссылающиеся на пулы плиток, невозможно совместно использовать на устройствах или в процессах.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="operations-available-on-streaming-resources.md">Доступные операции с потоковыми ресурсами</a></p></td>
+<td align="left"><p><a href="operations-available-on-streaming-resources.md">Операции, доступные на потоковую передачу ресурсов</a></p></td>
 <td align="left"><p>В этом разделе перечислены операции, которые можно выполнить с потоковыми ресурсами.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="operations-available-on-tile-pools.md">Доступные операции с пулами плиток</a></p></td>
+<td align="left"><p><a href="operations-available-on-tile-pools.md">Операций, доступных в пулах плитки</a></p></td>
 <td align="left"><p>Операции с пулами плиток включают изменение размера пула плиток, предложение ресурсов (временную выдачу памяти системе для всего пула плиток) и освобождение ресурсов.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="how-a-streaming-resource-s-area-is-tiled.md">Размещение плиток в области потокового ресурса</a></p></td>
+<td align="left"><p><a href="how-a-streaming-resource-s-area-is-tiled.md">Как выполняется мозаичное заполнение области потоковой передачи ресурсов</a></p></td>
 <td align="left"><p>При создании потокового ресурса измерения, размер элемента формата и количество текстур и(или) фрагментов массива (если применимо) определяют количество плиток, необходимых для резервирования всей области поверхности.</p></td>
 </tr>
 </tbody>
@@ -75,10 +75,10 @@ ms.locfileid: "8924448"
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Потоковые ресурсы](streaming-resources.md)
+[Потоковую передачу ресурсов](streaming-resources.md)
 
  
 

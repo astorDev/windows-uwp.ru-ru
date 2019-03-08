@@ -7,17 +7,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: abc9ca7d6c3d6e7120cfc5ede4f10a4dfd5a7c1f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050697"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597659"
 ---
 # <a name="send-an-sms-message"></a>Отправка SMS-сообщения
 
 В данной статье рассказывается, как запустить диалоговое окно составления SMS, с помощью которого пользователь может отправить SMS-сообщение. Перед отображением диалогового окна вы можете заполнить поля SMS-сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки.
 
-Чтобы вызвать этот код, объявления **чата**, **smsSend**и **chatSystem** возможностей в манифесте пакета. Ниже перечислены [ограниченные возможности](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities) , но их можно использовать в вашем приложении. Утверждение требуется только в том случае, если вы планируете опубликовать приложение в магазин. См. в разделе [типы учетных записей, расположений и сборы](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees).
+Чтобы вызвать этот код, объявите **чата**, **smsSend**, и **chatSystem** возможности в манифесте пакета. Это [ограниченные возможности](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities) , но их можно использовать в приложении. Только в том случае, если вы планируете опубликовать приложение в Store, требующие утверждения. См. в разделе [типы, расположения и стоимость учетных записей](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees).
 
 ## <a name="launch-the-compose-sms-dialog"></a>Запуск диалогового окна составления SMS
 
@@ -52,7 +52,7 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 }
 ```
 
-Чтобы определить, является ли устройство, на котором выполняется ваше приложение сможет отправлять SMS-сообщений, можно использовать следующий код.
+Чтобы определить, является ли устройство, которое выполняется ваше приложение для отправки SMS-сообщения можно использовать следующий код.
 
 ```csharp
 if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.ApplicationModel.Chat"))
@@ -61,10 +61,10 @@ if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Applicatio
 }
 ```
 
-## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
+## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
 
 В этой статье рассказано, как запустить диалоговое окно составления SMS. Сведения о том, как выбрать контакты-получатели SMS-сообщения, см. в статье [Выбор контактов](selecting-contacts.md). Скачайте [Примеры универсальных приложений для Windows](https://go.microsoft.com/fwlink/p/?linkid=619979) из GitHub, чтобы просмотреть дополнительные примеры отправки и получения SMS с помощью фоновой задачи.
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Выбор контактов](selecting-contacts.md)

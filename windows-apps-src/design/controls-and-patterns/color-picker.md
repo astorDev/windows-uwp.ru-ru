@@ -1,5 +1,5 @@
 ---
-Description: A color picker lets a user browse through and select colors.
+Description: Палитра позволяет пользователю просматривать и выбирать цвета.
 title: Палитра
 label: Color Picker
 template: detail.hbs
@@ -12,17 +12,17 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 215a15e3a8e1b0264987adcf6228ec52a696f50c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047103"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654479"
 ---
 # <a name="color-picker"></a>Палитра
 
 Палитра используется для просмотра и выбрать цвета. По умолчанию он позволяет пользователю перемещаться по цветов на спектр цветов или задать цвет в текстовые поля, красный, зеленый, синий (RGB), значение насыщенности оттенок (HSV) или шестнадцатеричном формате.
 
-> **Важные API-интерфейсы**: [класс ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [свойство Color](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [событие ColorChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
+> **Важные API-интерфейсы**: [Класс ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [свойство цвета](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [ColorChanged событий](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ![Палитра по умолчанию](images/color-picker-default.png)
 
@@ -33,7 +33,7 @@ ms.locfileid: "9047103"
 
 Если ваше приложение для рисования или других задач, с помощью пера, рассмотрите возможность использования [рукописный ввод элементов управления](inking-controls.md) вместе с палитра.
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -42,7 +42,7 @@ ms.locfileid: "9047103"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/ColorPicker">открыть приложение и увидеть ColorPicker в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -188,7 +188,7 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 В этой таблице показаны все параметры, которые можно использовать для настройки управления ColorPicker.
 
-Компонент | Свойства
+Функция | Свойства
 --------|-----------
 Спектр цветов | IsColorSpectrumVisible, ColorSpectrumShape, ColorSpectrumComponents
 Цвет предварительного просмотра | IsColorPreviewVisible
@@ -211,9 +211,9 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
-- [Взаимодействие с помощью пера в приложениях UWP](../input/pen-and-stylus-interactions.md)
+- [С помощью пера и пера взаимодействий в приложениях UWP](../input/pen-and-stylus-interactions.md)
 - [Рукописный ввод](inking-controls.md)
 
 <!--

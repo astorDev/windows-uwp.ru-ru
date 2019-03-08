@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP, игры, DirectX, ввод, мышь, сенсорный ввод, элементы управления
 ms.localizationpriority: medium
 ms.openlocfilehash: 549a4da0614dd1c7cc6884c5556c061edfccaf18
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936167"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599459"
 ---
 # <a name="game-input-for-directx-games"></a>Игровые средства ввода для игр DirectX
 
 В этом разделе представлены сведения о добавлении различных типов ввода для игр DirectX.
 
-В разделе "Элементы управления перемещением и обзором для игр" описано, как добавить в игру DirectX традиционные элементы управления, т.е. мышь и клавиатуру.
+В разделе "Элементы управления перемещением и обзором для игр" описано, как добавить в игру DirectX традиционные элементы управления, т. е. мышь и клавиатуру.
 
 В разделе "Относительное движение мыши" обсуждается реализация управления мышью за счет отслеживания изменения значений пикселей при перемещении мыши.
 
@@ -36,15 +36,15 @@ ms.locfileid: "8936167"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">Элементы управления перемещением и обзором для игр</a></p></td>
+<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">Перемещение внешний вид элементов управления для игр</a></p></td>
 <td align="left"><p>Добавление элементов управления перемещением и обзором.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="relative-mouse-movement.md">Относительное движение мыши</a></p></td>
+<td align="left"><p><a href="relative-mouse-movement.md">Относительный мыши</a></p></td>
 <td align="left"><p>Обработка относительных значений перемещения мыши.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="tutorial--adding-touch-controls-to-your-directx-game.md">Сенсорные элементы управления для игр</a></p></td>
+<td align="left"><p><a href="tutorial--adding-touch-controls-to-your-directx-game.md">Сенсорных элементов управления для игр</a></p></td>
 <td align="left"><p>Добавление основных сенсорных элементов управления в игру.</p></td>
 </tr>
 </tbody>

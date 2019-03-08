@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ebf54e062ef2388562cc970a2f124f0ce1f978c7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045317"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653829"
 ---
 # <a name="composition-effects"></a>Эффекты композиции
 
@@ -27,17 +27,17 @@ API [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps
 
 ## <a name="effect-features"></a>Функции эффекта
 
-- [Библиотека эффектов](./composition-effects.md#effect-library)
-- [Создание цепочки эффектов](./composition-effects.md#chaining-effects)
+- [Эффект библиотеки](./composition-effects.md#effect-library)
+- [Цепочки эффекты](./composition-effects.md#chaining-effects)
 - [Поддержка анимации](./composition-effects.md#animation-support)
-- [Постоянные и анимированные свойства эффекта](./composition-effects.md#constant-vs-animated-effect-properties)
-- [Несколько экземпляров эффектов с независимыми свойствами](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+- [Константа vs. Анимированный эффект свойства](./composition-effects.md#constant-vs-animated-effect-properties)
+- [Эффект нескольких экземпляров при использовании независимых свойства](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
 ### <a name="effect-library"></a>Библиотека эффектов
 
 В данный момент композиция поддерживает следующие эффекты.
 
-| Эффект               | Описание                                                                                                                                                                                                                |
+| Результат               | Описание                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Двумерное аффинное преобразование  | Применяет двумерную матрицу афинного преобразования к изображению. Мы использовали этот эффект, чтобы анимировать альфа-маску в наших [примерах](https://go.microsoft.com/fwlink/?LinkId=785341) эффектов.       |
 | Арифметическое композитное | Объединяет два изображения с помощью легко приспосабливаемого уравнения. Мы использовали арифметическое композитное для создания эффекта перехода в наших [примерах](https://go.microsoft.com/fwlink/?LinkId=785341). |
@@ -54,7 +54,7 @@ API [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps
 | Сепия                | Преобразовывает изображение с использованием оттенков сепии.                                                                                                                                                                                          |
 | Изменение температуры и оттенков | Изменяет температуру и (или) оттенки изображения.                                                                                                                                                                           |
 
-Более подробные сведения см. в разделе, посвященном пространству имен [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) Win2D. Эффекты не поддерживаемые композицией помечены как \[NoComposition\].
+Более подробные сведения см. в разделе, посвященном пространству имен [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) Win2D. Эффекты не поддерживается в композиции, указаны как \[NoComposition\].
 
 ### <a name="chaining-effects"></a>Создание цепочки эффектов
 
@@ -125,7 +125,7 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 
 Сведения о свойствах эффекта, анимированных при помощи ключевых кадров, см. в примере [Уменьшение насыщенности — анимация](https://go.microsoft.com/fwlink/?LinkId=785342), а сведения об использовании эффектов и выражений — в [примере альфа-маски](https://go.microsoft.com/fwlink/?LinkId=785343).
 
-### <a name="multiple-effect-instances-with-independent-properties"></a>Несколько экземпляров эффектов с независимыми свойствами.
+### <a name="multiple-effect-instances-with-independent-properties"></a>Несколько экземпляров эффектов с независимыми свойствами
 
 Если во время компиляции указать, что параметр должен быть динамическим, его можно будет изменять для каждого экземпляра эффекта. Это позволит двум визуальным элементам использовать один и тот же эффект. При этом визуальные эффекты будут отрисовываться с использованием различных свойств эффекта. Для получения более подробных сведений см. [пример](https://go.microsoft.com/fwlink/?LinkId=785344) источника цвета и смешивания.
 
@@ -136,7 +136,7 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 - [Установка Visual Studio](./composition-effects.md#installing-visual-studio)
 - [Создание нового проекта](./composition-effects.md#creating-a-new-project)
 - [Установка Win2D](./composition-effects.md#installing-win2d)
-- [Настройка основных параметров композиции](./composition-effects.md#setting-your-composition-basics)
+- [Настройка вашей основы композиции](./composition-effects.md#setting-your-composition-basics)
 - [Создание кисти CompositionSurface](./composition-effects.md#creating-a-compositionsurface-brush)
 - [Создание, компиляция и применение эффектов](./composition-effects.md#creating-compiling-and-applying-effects)
 
@@ -237,12 +237,12 @@ LoadImage(surfaceBrush);
 
 ## <a name="more-information"></a>Дополнительные сведения
 
-- [Страница Microsoft на веб-сайте GitHub, посвященная композиции](https://github.com/Microsoft/composition)
+- [Майкрософт — композиции GitHub](https://github.com/Microsoft/composition)
 - [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
-- [Команда Windows Composition в Твиттере](https://twitter.com/wincomposition)
-- [Обзор композиции](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
-- [Основы визуального дерева](composition-visual-tree.md)
-- [Кисти композиции](composition-brushes.md)
+- [Композиции Windows team в Twitter](https://twitter.com/wincomposition)
+- [Общие сведения о композиции](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
+- [Основные сведения о визуальном дереве](composition-visual-tree.md)
+- [Композиция кисти](composition-brushes.md)
 - [XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
-- [Обзор анимации](composition-animation.md)
-- [Собственное взаимодействие DirectX и Direct2D композиции с BeginDraw и EndDraw](composition-native-interop.md)
+- [Общие сведения об анимации](composition-animation.md)
+- [Композиции собственного DirectX и Direct2D взаимодействия с BeginDraw и EndDraw](composition-native-interop.md)

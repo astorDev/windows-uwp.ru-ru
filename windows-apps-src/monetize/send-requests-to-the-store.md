@@ -1,5 +1,5 @@
 ---
-Description: You can use the SendRequestAsync method to send requests to the Microsoft Store for operations that do not yet have an API available in the Windows SDK.
+Description: Метод SendRequestAsync можно использовать для отправки запросов к Microsoft Store для операций, которые еще не доступны в пакете SDK для Windows API.
 title: Отправка запросов в Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
 ms.openlocfilehash: d492bc7dde990404552689516731850974c31a7c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942100"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589799"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Отправка запросов в Microsoft Store
 
@@ -77,7 +77,7 @@ public async Task<bool> AddUserToFlightGroup()
 |  *requestKind*                   |  Укажите 7 для возврата группы тестируемой возможности с самым высоким приоритетом для устройства или 8 для возврата группы тестируемой возможности с самым высоким приоритетом для текущего пользователя и устройства. Рекомендуется использовать значение 8 для параметра *requestKind*, поскольку это значение будет возвращать группу тестируемой возможности с самым высоким приоритетом через членство и для текущего пользователя, и для устройства.  |
 |  *parametersAsJson*                   |  Передайте строку формата JSON, содержащую данные, как показано в примере ниже.  |
 
-В следующем примере показан формат данных JSON для передачи в *parametersAsJson*. Поле *type* должно быть назначено строке *GetRemoteVariables*. Назначьте поле *projectId* идентификатор проекта, в котором вы определили удаленные переменные в центре партнеров.
+В следующем примере показан формат данных JSON для передачи в *parametersAsJson*. Поле *type* должно быть назначено строке *GetRemoteVariables*. Назначить *projectId* на идентификатор проекта, в котором определена удаленных переменных в центре партнеров.
 
 ```json
 { 
@@ -90,9 +90,9 @@ public async Task<bool> AddUserToFlightGroup()
 
 |  Поле  |  Описание  |
 |----------------------|---------------|
-|  *anonymous*                   |  Логическое значение, где **true** указывает, что удостоверение пользователя или устройства не было представлено в запросе, а **false** указывает, что удостоверение пользователя или устройства было представлено в запросе.  |
+|  *Анонимный*                   |  Логическое значение, где **true** указывает, что удостоверение пользователя или устройства не было представлено в запросе, а **false** указывает, что удостоверение пользователя или устройства было представлено в запросе.  |
 |  *name*                   |  Строка, содержащая имя группы тестируемой возможности с самым высоким приоритетом, к которой принадлежит устройство или пользователь.  |
-|  *settings*                   |  Словарь пар "ключ— значение", содержащий имя и значение удаленных переменных, которые разработчик настроил для группы тестируемой возможности.  |
+|  *Параметры*                   |  Словарь пар "ключ — значение", содержащий имя и значение удаленных переменных, которые разработчик настроил для группы тестируемой возможности.  |
 
 В следующем примере показано возвращаемое значение для этого запроса.
 
@@ -156,5 +156,5 @@ public async Task<bool> AddUserToFlightGroup()
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Показ диалогового окна оценки и отзыва в приложении](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
+* [Показать оценку и просмотрите диалоговое окно в приложении](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
 * [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

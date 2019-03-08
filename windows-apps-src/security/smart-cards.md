@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 47a4ceef2603d7b0178431c93fb6c271b24c506a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920543"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599229"
 ---
 # <a name="smart-cards"></a>Смарт-карты
 
@@ -119,7 +119,7 @@ static class ChallengeResponseAlgorithm
 
 2.  Затем передайте значение запроса карты и ключ администратора, предоставленный службой или средством управления, в **ChallengeResponseAlgorithm** , определенный в предыдущем примере.
 
-3.  Если проверка подлинности проходит успешно, [**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) возвращает значение **true**.
+3.  [**VerifyResponseAsync** ](https://msdn.microsoft.com/library/windows/apps/dn297627) вернет **true** при успешном выполнении проверки.
 
 ```cs
 bool verifyResult = false;
@@ -157,7 +157,7 @@ bool result = await provisioning.RequestPinChangeAsync();
 Чтобы запросить сброс ПИН-кода, сделайте следующее.
 
 1.  Вызовите метод [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) для запуска операции. В этот вызов входит метод [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701), который представляет смарт-карту, и запрос на сброс ПИН-кода.
-2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) предоставляет информацию, которая используется алгоритмом **ChallengeResponseAlgorithm**, заключенным в вызов [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693), для сравнения значения запроса карты и ключа администратора, предоставленного службой или средством управления, для проверки подлинности запроса.
+2.  [**SmartCardPinResetHandler** ](https://msdn.microsoft.com/library/windows/apps/dn297701) сведения, наши **ChallengeResponseAlgorithm**заключен в [ **SmartCardPinResetDeferral** ](https://msdn.microsoft.com/library/windows/apps/dn297693) вызов, использует для сравнения значения запрос карты и ключ администратора, предоставляемые службы или средства управления для аутентификации запроса.
 
 3.  Если запрос выполняется успешно, то вызов [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) завершается, и возвращается значение **true**, если ПИН-код успешно сброшен.
 

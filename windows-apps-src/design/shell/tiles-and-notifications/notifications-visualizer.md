@@ -1,5 +1,5 @@
 ---
-Description: Notifications Visualizer is a new Universal Windows Platform (UWP) app in the Store that helps developers design adaptive live tiles for Windows 10.
+Description: Уведомления, что новое приложение универсальной платформы Windows (UWP) в Store, которое помогает разработчикам проектировать адаптивной визуализатор живые плитки для Windows 10.
 title: Визуализатор уведомлений
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2bb5a450aebdf38f3d4f1a710f3537544dcddd6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928326"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616679"
 ---
 # <a name="notifications-visualizer"></a>Визуализатор уведомлений
 
  
 
 
-Визуализатор уведомлений — это новое приложение универсальной платформы Windows (UWP) [в магазине](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) , позволяющая разработчикам создавать адаптивные живые плитки и Интерактивные всплывающие уведомления для Windows10.
+Визуализатор уведомления — новое приложение универсальной платформы Windows (UWP) [в Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) , разработчики могут проектировать адаптивной динамические плитки и Интерактивные всплывающие уведомления для Windows 10.
 
 
 ## <a name="overview"></a>Обзор
@@ -34,7 +34,7 @@ ms.locfileid: "8928326"
 
 С помощью визуализатора уведомлений вы можете создавать и тестировать полезные данные плиток и всплывающих уведомлений, не изменяя и не развертывая само приложение. Создав полезные данные с идеальными результатами, вы легко можете вставить их в приложение. Дополнительные сведения см. в разделах [Отправка локального уведомления на плитке](sending-a-local-tile-notification.md) и [Отправка локального уведомления](send-local-toast.md).
 
-**Примечание**  Симуляция начального экрана Windows меню и всплывающих уведомлений в визуализаторе уведомлений не всегда точна, и она не поддерживает некоторые дополнительные свойства полезных данных. Получив нужные визуальные параметры плитки или всплывающего уведомления, протестируйте их, закрепив плитку или вызвав всплывающее уведомление, чтобы убедиться, что она отображается, как требуется.
+**Примечание**    моделирование уведомлений визуализатор Windows запустите меню и всплывающие уведомления не вполне точной всегда и не поддерживает некоторые расширенные полезные данные свойства. Получив нужные визуальные параметры плитки или всплывающего уведомления, протестируйте их, закрепив плитку или вызвав всплывающее уведомление, чтобы убедиться, что она отображается, как требуется.
 
  
 
@@ -52,8 +52,8 @@ ms.locfileid: "8928326"
 
  
 
-## <a name="related-topics"></a>Ссылки по теме
+## <a name="related-topics"></a>Статьи по теме
 
-* [Скачайте визуализатор уведомлений в Магазине](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
+* [Получение уведомлений визуализатора в Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
 * [Создание адаптивных плиток](create-adaptive-tiles.md)
 * [Интерактивные всплывающие уведомления](adaptive-interactive-toasts.md)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 751cda36fc58d0e6add9204327a74ec947c9fc53
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930595"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660919"
 ---
 # <a name="xfieldmodifier-attribute"></a>Атрибут x:FieldModifier
 
@@ -26,15 +26,15 @@ ms.locfileid: "8930595"
 
 ## <a name="dependencies"></a>Зависимости
 
-Для этого элемента необходимо также указать [атрибут x:Name](x-name-attribute.md).
+[x:Name attribute](x-name-attribute.md) необходимо также указать для того же элемента.
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Замечания
 
-Значение атрибута **x:FieldModifier** зависит от языка программирования. Допустимые значения: **private**, **public**, **protected**, **internal** и **friend**. Для C#, Microsoft Visual Basic или VisualC ++ расширения компонентов (C + +/ CX), можно присвоить строковое значение «общедоступной» или «Общедоступной»; средство синтаксического анализа не учитывает регистр для значения этого атрибута.
+Значение атрибута **x:FieldModifier** зависит от языка программирования. Допустимые значения: **private**, **public**, **protected**, **internal** и **friend**. Для C#, расширения компонентов для Microsoft Visual Basic или Visual C++ (C + +/ CX), можно присвоить строковое значение «public» или «Public»; средство синтаксического анализа не ограничивает минимальный вариант на это значение атрибута.
 
 По умолчанию используется закрытый доступ (**Private**).
 
 **x:FieldModifier** имеет смысл только для элементов с [x:Name attribute](x-name-attribute.md), поскольку это имя используется для ссылки на поле, если оно общедоступно.
 
-**Примечание**XAML среды выполнения Windows не поддерживает **x: ClassModifier** или **x: Subclass**.
+**Примечание**  XAML среды выполнения Windows не поддерживает **x: ClassModifier** или **x: Subclass**.
 

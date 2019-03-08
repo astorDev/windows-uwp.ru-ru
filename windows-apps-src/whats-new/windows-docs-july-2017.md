@@ -1,22 +1,22 @@
 ---
-title: Что нового в документации Windows в июле 2017г.— разработка приложений UWP
-description: Новые возможности, примеры и руководства для разработчиков добавлены в документацию для разработчиков Windows 10 в июле 2017г
+title: Что нового в документации Windows в июле 2017 г. — разработка приложений UWP
+description: Новые возможности, примеры и руководства для разработчиков добавлены в документацию для разработчиков Windows 10 в июле 2017 г
 keywords: новые возможности, обновления, компоненты, руководство разработчика, Windows 10
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1875fecbdfa6b97cdc30413c8afa6cc58d3251ef
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045483"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595039"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Что нового в документации для разработчиков Windows в июле 2017г.
+# <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Что нового в документации для разработчиков Windows в июле 2017 г.
 
 Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. Недавно стали доступны следующие обзоры функций, руководства для разработчиков и примеры кода, содержащие новые и обновленные сведения для разработчиков Windows.
 
-[Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/your-first-app.md), либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+[Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/your-first-app.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
 ## <a name="features"></a>Возможности
 
@@ -24,7 +24,7 @@ ms.locfileid: "9045483"
 
 Чтобы помочь пользователям сосредоточиться на важных элементах пользовательского интерфейса, в новых эффектах, доступных [участникам программы предварительной оценки Windows](https://insider.windows.com/) в предварительных сборках SDK используются глубина, перспектива и движение.
 
-[Акриловый материал](../design/style/acrylic.md)— это тип кисти, которая создает прозрачные текстуры. 
+[Акриловый материал](../design/style/acrylic.md) — это тип кисти, которая создает прозрачные текстуры. 
 
 ![Акрил в светлой теме](../design/style/images/Acrylic_DarkTheme_Base.png)
 
@@ -38,7 +38,7 @@ ms.locfileid: "9045483"
 
 ### <a name="ui-controls"></a>Элементы управления пользовательским интерфейсом
 
-Доступные [участникам программы предварительной оценки Windows](https://insider.windows.com/) в предварительной сборке Windows10 SDK, эти новые элементы управления существенно упрощают и ускоряют создание потрясающего пользовательского интерфейса
+Доступные [участникам программы предварительной оценки Windows](https://insider.windows.com/) в предварительной сборке Windows 10 SDK, эти новые элементы управления существенно упрощают и ускоряют создание потрясающего пользовательского интерфейса
 
 [Элемент управления "Палитра"](../design/controls-and-patterns/color-picker.md) позволяет пользователям просматривать и выбирать цвета.  
 
@@ -68,7 +68,7 @@ ms.locfileid: "9045483"
 
 * [API аналитики для Microsoft Store](../monetize/access-analytics-data-using-windows-store-services.md) теперь предоставляет способ для [загрузки связанного с ошибкой приложения CAB-файла](../monetize/download-the-cab-file-for-an-error-in-your-app.md).
 
-* [Целевые предложения](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md) позволяют вам разделить пользователей на сегменты и предлагать им привлекательный, персонализированный контент, чтобы повысить вовлеченность, коэффициент удержания и монетизацию. 
+* [Целевые предложения](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md) позволяют разделить пользователей на сегменты и предлагать им привлекательный, персонализированный контент, чтобы повысить вовлеченность, коэффициент удержания и монетизацию. 
 
 * Описание вашего приложения в Магазине теперь может включать [видеоанонсы](../publish/app-screenshots-and-images.md#trailers).
 
@@ -78,7 +78,7 @@ ms.locfileid: "9045483"
 
 ### <a name="my-people"></a>Близкие люди
 
-Функция "Близкие люди", доступная [участникам программы предварительной оценки Windows](https://insider.windows.com/) в предварительной сборке Windows10 SDK, позволяет закреплять контакты из приложения непосредственно на панели задач. [Узнайте, как добавить в приложение поддержку функции "Близкие люди".](../contacts-and-calendar/my-people-support.md)
+Функция "Близкие люди", доступная [участникам программы предварительной оценки Windows](https://insider.windows.com/) в предварительной сборке Windows 10 SDK, позволяет закреплять контакты из приложения непосредственно на панели задач. [Узнайте, как добавить в приложение поддержку Мои людей.](../contacts-and-calendar/my-people-support.md)
 
 ![Панель контактов "Близкие люди"](images/my-people.png)
 
@@ -86,19 +86,19 @@ ms.locfileid: "9045483"
 
 ![Публикации близких людей](images/my-people-sharing.png)
 
-[Уведомления близких людей](../contacts-and-calendar/my-people-support.md)— это новый вид всплывающих уведомлений, которые пользователи могут отправлять закрепленным контактам.
+[Уведомления близких людей](../contacts-and-calendar/my-people-support.md) — это новый вид всплывающих уведомлений, которые пользователи могут отправлять закрепленным контактам.
 
 ![Уведомление близких людей](images/my-people-notification.png)
 
 ### <a name="pin-to-taskbar"></a>Закрепление на панели задач
 
-Доступный [участникам программы предварительной оценки Windows](https://insider.windows.com/) в предварительной сборке Windows10 SDK новый класс TaskbarManager позволят попросить пользователя [закрепить приложение на панели задач](../design/shell/pin-to-taskbar.md).
+Доступный [участникам программы предварительной оценки Windows](https://insider.windows.com/) в предварительной сборке Windows 10 SDK новый класс TaskbarManager позволят попросить пользователя [закрепить приложение на панели задач](../design/shell/pin-to-taskbar.md).
 
 ## <a name="developer-guidance"></a>Руководство для разработчиков
 
 ### <a name="media-playback"></a>Воспроизведение мультимедиа
 
-В основную статью о воспроизведении мультимедиа добавлены новые разделы: [Воспроизведение звука и видео с помощью MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md). В разделе [Воспроизведение сферического видео с MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) показано, как воспроизводить сферически кодированное видео, включая регулировку поля зрения и ориентацию представления для поддерживаемых форматов. В разделе [Использование MediaPlayer в режиме сервера кадров](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) показано, как копировать кадры из мультимедиа, воспроизводимого с помощью [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer), на поверхность Direct3D. Это позволяет реализовывать такие сценарии, как применение эффектов в режиме реального времени с помощью построителей текстуры. В примере кода показана быстрая реализация эффекта размытия для воспроизведения видео с помощью Win2D.
+Новые разделы добавлены в основную статью о воспроизведении мультимедиа: [Воспроизведение звука и видео с помощью MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md). В разделе [Воспроизведение сферического видео с MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) показано, как воспроизводить сферически кодированное видео, включая регулировку поля зрения и ориентацию представления для поддерживаемых форматов. В разделе [Использование MediaPlayer в режиме сервера кадров](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) показано, как копировать кадры из мультимедиа, воспроизводимого с помощью [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer), на поверхность Direct3D. Это позволяет реализовывать такие сценарии, как применение эффектов в режиме реального времени с помощью построителей текстуры. В примере кода показана быстрая реализация эффекта размытия для воспроизведения видео с помощью Win2D.
 
 ### <a name="media-capture"></a>Запись мультимедиа
 
@@ -110,7 +110,7 @@ ms.locfileid: "9045483"
 
 ![Поиск по ограниченным областям](images/scoped-search.png)
 
-### <a name="test-your-windows-app-for-windows-10-s"></a>Тестирование приложения для Windows на Windows10S.
+### <a name="test-your-windows-app-for-windows-10-s"></a>Тестирование приложения для Windows на Windows 10 S.
 
 Протестируйте приложение Windows, чтобы убедиться, что оно будет работать правильно на устройствах под управлением Windows S. Используйте [это новое руководство](../porting/desktop-to-uwp-test-windows-s.md) для получения инструкций. 
 
@@ -138,6 +138,6 @@ ms.locfileid: "9045483"
 
 API запроса оплаты помогает клиентам и продавцам легко выполнять процесс оформления заказа в Интернете. [Посмотрите это видео](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-the-Payments-Request-API), а затем изучите [документацию по запросу оплаты](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-the-Payments-Request-API).
 
-### <a name="windows-10-iot-core"></a>Windows10 IoT Базовая
+### <a name="windows-10-iot-core"></a>Windows 10 IoT Базовая
 
 В Windows 10 IoT Базовая и на универсальной платформе Windows можно быстро создавать прототипы и разрабатывать проекты с подключениями видения и компонентов, такими как Pet Recognition Door. [Посмотрите это видео](https://channel9.msdn.com/Blogs/One-Dev-Minute/Building-a-Pet-Recognition-Door-Using-Windows-10-IoT-Core) и узнайте больше о том, как [начать работу с Windows 10 IoT Базовая](https://developer.microsoft.com/en-us/windows/iot).

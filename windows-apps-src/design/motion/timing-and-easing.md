@@ -1,22 +1,22 @@
 ---
-Description: Learn how Fluent motion uses timing and easing functions.
+Description: Узнайте, как Fluent использует движения, о времени и функции плавности.
 title: Согласование по времени и реалистичная анимация — анимация в приложениях UWP
 label: Timing and easing
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5b9a0719e4967f9d527d2b2565818a0dea1be0a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945495"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645269"
 ---
 # <a name="timing-and-easing"></a>Согласование по времени и реалистичная анимация
 
@@ -32,11 +32,11 @@ ms.locfileid: "8945495"
 
 ## <a name="timing-in-fluent-motion"></a>Согласование по времени в плавном движении Fluent
 
-Согласование по времени для плавного движения Fluent составляет 500мс (или пол секунды) в качестве контрольной точки, так это максимальное количество времени, которое пользователь может мгновенно воспринять.
+Согласование по времени для плавного движения Fluent составляет 500 мс (или пол секунды) в качестве контрольной точки, так это максимальное количество времени, которое пользователь может мгновенно воспринять.
 
 ![главное изображение](images/time.gif)
 
-### <a name="150ms-exit"></a>**150мс** (выход)
+### <a name="150ms-exit"></a>**150 мс** (выход)
 
 :::row:::
     :::column:::
@@ -48,7 +48,7 @@ ms.locfileid: "8945495"
     :::column-end:::
 :::row-end:::
 
-### <a name="300ms-enter"></a>**300мс** (вход)
+### <a name="300ms-enter"></a>**300 мс** (вход)
 
 :::row:::
     :::column:::
@@ -60,7 +60,7 @@ ms.locfileid: "8945495"
     :::column-end:::
 :::row-end:::
 
-### <a name="500ms-move"></a>**≤500мс** (перемещение)
+### <a name="500ms-move"></a>**≤500 мс** (перемещение)
 
 :::row:::
     :::column:::
@@ -202,7 +202,7 @@ CubicBezierEasingFunction standard =
  _moveAnimation.Duration = TimeSpan.FromMilliseconds(500);
 ```
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Связанные статьи
 
-- [Обзор движения](index.md)
-- [Направление и сила притяжения](directionality-and-gravity.md)
+- [Обзор методологии Motion](index.md)
+- [Направленность и тяжести](directionality-and-gravity.md)

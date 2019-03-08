@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 08a186e0a8e7293b139f756b69966cd8d4b49c92
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048301"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598219"
 ---
 # <a name="aep-service-class-ids"></a>Идентификаторы класса службы AEP
 
@@ -27,14 +27,14 @@ ms.locfileid: "9048301"
 
 ## <a name="bluetooth-and-bluetooth-le-services"></a>Bluetooth и службы Bluetooth с низким энергопотреблением
 
-Службы Bluetooth используют один из двух протоколов— Bluetooth или Bluetooth с низким энергопотреблением. Эти протоколы имеют такие идентификаторы:
+Службы Bluetooth используют один из двух протоколов — Bluetooth или Bluetooth с низким энергопотреблением. Эти протоколы имеют такие идентификаторы:
 
 -   Идентификатор протокола Bluetooth: {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
 -   Идентификатор протокола Bluetooth с низким энергопотреблением: {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
 
 Протокол Bluetooth поддерживает ряд служб, в которых используется один и тот же базовый формат. Первые четыре цифры GUID меняются в зависимости от службы, но все идентификаторы GUID для Bluetooth заканчиваются на **0000-0000-1000-8000-00805F9B34FB**. Например, для службы RFCOMM используются цифры 0x0003 в начале, поэтому полный идентификатор будет иметь вид **00030000-0000-1000-8000-00805F9B34FB**. В таблице ниже приведены некоторые из основных служб Bluetooth.
 
-| Название службы                         | GUID                                     |
+| Служебное имя                         | Код GUID                                     |
 |--------------------------------------|------------------------------------------|
 | RFCOMM                               | **00030000-0000-1000-8000-00805F9B34FB** |
 | GATT — Alert notification service (Служба уведомлений)    | **18110000-0000-1000-8000-00805F9B34FB** |
@@ -86,33 +86,33 @@ ms.locfileid: "9048301"
 
 Как правило, имена всех служб UPnP хэшируются в GUID с помощью алгоритма, определенного в RFC 4122. В таблице ниже приведены некоторые распространенные службы UPnP, определенные в Windows.
 
-| Название службы                       | GUID                                      |
+| Служебное имя                       | Код GUID                                      |
 |------------------------------------|-------------------------------------------|
-| Connection manager (диспетчер подключений)                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
-| AV transport (транспорт аудио/видео)                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
-| Rendering control (управление отрисовкой)                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
-| Layer 3 forwarding (перенаправление уровня 3)                 | **97d477fa-f403-577b-a714-b29a9007797f**  |
-| WAN common interface configuration (конфигурация общего интерфейса WAN) | **e4c1c624-c3c4-5104-b72e-ac425d9d157c**  |
-| WAP IP connection (подключение к WAP IP)                  | **e4ac1c23-b5ac-5c27-8814-6bd837d8832c**  |
-| WFA WLAN configuration (конфигурация WFA WLAN)             | **23d5f7db-747f-5099-8f21-3ddfd0c3c688**  |
-| Printer enhanced (принтер расширенный)                   | **fb9074da-3d9f-5384-922e-9978ae51ef0c**  |
-| Printer basic (принтер базовый)                      | **5d2a7252-d45c-5158-87a4-05212da327e1**  |
-| Media receiver registrar (регистратор приемника мультимедиа)           | **0b4a2add-d725-5198-b2ba-852b8bf8d183**  |
-| Content directory (каталог содержимого)                  | **89e701dd-0597-5279-a31c-235991d0db1c**  |
+| Диспетчер подключений                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
+| AV transport (Антивирусный транспорт)                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
+| Rendering control (Элемент управления отрисовкой)                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
+| Layer 3 forwarding (Пересылка третьего уровня)                 | **97d477fa-f403-577b-a714-b29a9007797f**  |
+| WAN common interface configuration (Конфигурация общего интерфейса WAN) | **e4c1c624-c3c4-5104-b72e-ac425d9d157c**  |
+| WAP IP connection (WAP и IP-подключение)                  | **e4ac1c23-b5ac-5c27-8814-6bd837d8832c**  |
+| WFA WLAN configuration (Конфигурация WFA WLAN)             | **23d5f7db-747f-5099-8f21-3ddfd0c3c688**  |
+| Printer enhanced (Принтер расширенный)                   | **fb9074da-3d9f-5384-922e-9978ae51ef0c**  |
+| Printer basic (Принтер основной)                      | **5d2a7252-d45c-5158-87a4-05212da327e1**  |
+| Media receiver registrar (Регистратор приемника мультимедиа)           | **0b4a2add-d725-5198-b2ba-852b8bf8d183**  |
+| Content directory (Каталог содержимого)                  | **89e701dd-0597-5279-a31c-235991d0db1c**  |
 | DIAL                               | **085dfa4a-3948-53c7-a0d7-16d8ec26b29b**  |
 
  
 
-## <a name="wsd-services"></a>WSD services (службы WSD)
+## <a name="wsd-services"></a>WSD services (Службы WSD)
 
 Службы WSD используют следующий идентификатор протокола: {782232aa-a2f9-4993-971b-aedc551346b0}
 
 Как правило, имена всех служб WSD хэшируются в GUID с помощью алгоритма, определенного в RFC 4122. В таблице ниже приведены некоторые распространенные службы WSD, определенные в Windows.
 
-| Название службы | GUID                                     |
+| Служебное имя | Код GUID                                     |
 |--------------|------------------------------------------|
-| Printer (принтер)      | **65dca7bd-2611-583e-9a12-ad90f47749cf** |
-| Scanner (сканер)      | **56ec8b9e-0237-5cae-aa3f-d322dd2e6c1e** |
+| Принтер      | **65dca7bd-2611-583e-9a12-ad90f47749cf** |
+| Сканер      | **56ec8b9e-0237-5cae-aa3f-d322dd2e6c1e** |
 
  
 

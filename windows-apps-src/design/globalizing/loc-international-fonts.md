@@ -1,5 +1,5 @@
 ---
-Description: This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English.
+Description: В этом разделе перечислены шрифтов, доступных для приложений универсальной платформы Windows, на которые переведены на языки, отличные от США английский.
 title: Международные шрифты
 template: detail.hbs
 ms.date: 11/02/2017
@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046657"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601139"
 ---
 # <a name="international-fonts"></a>Международные шрифты
 
-В этом разделе перечислены шрифты, доступные для приложений UWP, которые локализованы для языков, отличных от английского (США).
+В этом разделе перечислены шрифтов, доступных для приложений универсальной платформы Windows, на которые переведены на языки, отличные от США английский.
 
 В следующей таблице столбец "Тег языка" содержит [тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) для различных языков. Список тегов языков, специально поддерживаемых в Microsoft Store, см. в разделе [Поддерживаемые языки](../../publish/supported-languages.md).
 
@@ -30,11 +30,11 @@ ms.locfileid: "9046657"
 | Азербайджанский (латиница) | az-Latn-AZ | Segoe UI |
 | Бенгальский (Бангладеш) | bn-BD | Nirmala UI |
 | Бенгальский (Индия) | bn-IN | Nirmala UI |
-| Баскский | eu-ES | Segoe UI |
+| Баскский (Баскония) | eu-ES | Segoe UI |
 | Белорусский | be-BY | Segoe UI |
 | Боснийский (латиница) | bs-Latn-BA | Segoe UI |
 | Болгарский | bg-BG | Segoe UI |
-| Каталанский | ca-ES | Segoe UI |
+| Каталонский | ca-ES | Segoe UI |
 | Центральнокурдский (арабский) | ku-ARAB-IQ | Segoe UI |
 | Чероки (чероки) | chr-CHER-US | Gadugi |
 | Китайский (упрощенное письмо) | zh-CN | MS YaHei UI |
@@ -54,7 +54,7 @@ ms.locfileid: "9046657"
 | Грузинский | ka-GE | Segoe UI |
 | Немецкий | de-DE | Segoe UI |
 | Греческий | el-GR | Segoe UI |
-| Гуджарати | gu-IN | Nirmala UI |
+| Письменность гуджарати | gu-IN | Nirmala UI |
 | Хауса (латиница) | ha-Latn-NG | Segoe UI |
 | Иврит | he-IL | Segoe UI |
 | Хинди | hi-IN | Nirmala UI |
@@ -67,8 +67,8 @@ ms.locfileid: "9046657"
 | Зулу | zu-ZA | Segoe UI |
 | Итальянский | it-IT | Segoe UI |
 | Японский | ja-JP | Meiryo UI (см. Примечания ниже) |
-| Каннада | kn-IN | Nirmala UI |
-| Казахский | kk-KZ | Segoe UI |
+| Письменность каннада | kn-IN | Nirmala UI |
+| казахский; | kk-KZ | Segoe UI |
 | Кхмерский | km-KH | Leelawadee UI |
 | Киче | qut-GT | Segoe UI |
 | Киньяруанда | rw-RW | Segoe UI |
@@ -81,7 +81,7 @@ ms.locfileid: "9046657"
 | Люксембургский | lb-LU | Segoe UI |
 | Македонский | mk-MK | Segoe UI |
 | Малайский | ms-MY | Segoe UI |
-| Малаялам | ml-IN | Nirmala UI |
+| Письменность малаялам | ml-IN | Nirmala UI |
 | Мальтийский | mt-MT | Segoe UI |
 | Маори | mi-NZ | Segoe UI |
 | Маратхи | mr-IN | Nirmala UI |
@@ -89,7 +89,7 @@ ms.locfileid: "9046657"
 | Непальский | ne-NP | Nirmala UI |
 | Норвежский (букмол) | nb-NO | Segoe UI |
 | Норвежский (нюнорск) | nn-NO | Segoe UI |
-| Ория | or-IN | Nirmala UI |
+| Odia | or-IN | Nirmala UI |
 | Фарси | fa-IR | Segoe UI |
 | Польский | pl-PL | Segoe UI |
 | Португальский (Бразилия) | pt-BR | Segoe UI |
@@ -114,7 +114,7 @@ ms.locfileid: "9046657"
 | Таджикский (кириллица) | tg-Cyrl-TJ | Segoe UI |
 | Тамильский | ta-IN | Nirmala UI |
 | Татарский | tt-RU | Segoe UI |
-| Телугу | te-IN | Nirmala UI |
+| Письменность телугу | te-IN | Nirmala UI |
 | Тайский | th-TH | Leelawadee UI |
 | Тигринья | ti-ET | Ebrima |
 | Турецкий | tr-TR | Segoe UI |
@@ -133,7 +133,7 @@ ms.locfileid: "9046657"
 
 Шрифт Meiryo UI используется в Windows. Windows содержит два семейства шрифтов Yu Gothic и Yu Mincho для просмотра и правки документов на японском языке. Шрифт Yu Gothic не рекомендуется использовать для пользовательского интерфейса приложений.
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 * [Тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Поддерживаемые языки](../../publish/supported-languages.md)

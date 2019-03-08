@@ -1,5 +1,5 @@
 ---
-title: Создание сертификата для подписывания пакета
+title: Создание сертификата для подписания пакета
 description: Создавайте и экспортируйте сертификат для пакета приложения, подписывая его с использованием инструментов PowerShell.
 ms.date: 09/30/2018
 ms.topic: article
@@ -7,13 +7,13 @@ keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: 963c73bb7667ced5bbe9e33fef0cac561fe1183a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928978"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591549"
 ---
-# <a name="create-a-certificate-for-package-signing"></a>Создание сертификата для подписывания пакета
+# <a name="create-a-certificate-for-package-signing"></a>Создание сертификата для подписания пакета
 
 
 В этой статье объясняется, как создать и экспортировать сертификат для подписывания пакета приложений с помощью инструментов PowerShell. Рекомендуется использовать Visual Studio для [упаковки приложений UWP](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps), однако готовые к публикации в Магазине приложения можно упаковать вручную, если для их разработки не использовалась среда Visual Studio.
@@ -23,7 +23,7 @@ ms.locfileid: "8928978"
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-- **Упакованное или распакованное приложение**  
+- **Упакованные или работе приложения**  
 Приложение, содержащее файл AppxManifest.xml. При создании сертификата, который будет использоваться для подписывания окончательного пакета приложений, потребуется сослаться на этот файл манифеста. Сведения о том, как вручную упаковать приложение, см. в разделе [Создание пакета приложений с помощью инструмента MakeAppx.exe](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
 
 - **Командлеты инфраструктуры открытых ключей (PKI)**  
@@ -44,7 +44,7 @@ ms.locfileid: "8928978"
     Publisher="CN=Contoso Software, O=Contoso Corporation, C=US"/>
 ```
 
-"Издатель" в данном случае— "CN=Contoso Software, O=Contoso Corporation, C=US", и именно его следует использовать для создания сертификата. 
+"Издатель" в данном случае — "CN=Contoso Software, O=Contoso Corporation, C=US", и именно его следует использовать для создания сертификата. 
 
 ### <a name="use-new-selfsignedcertificate-to-create-a-certificate"></a>Использование командлета **New-SelfSignedCertificate** для создания сертификата
 Используйте командлет PowerShell **New-SelfSignedCertificate** для создания самозаверяющего сертификата. Командлет **New-SelfSignedCertificate** имеет несколько параметров для настройки, однако в этой статье мы сконцентрируемся на создании простого сертификата, который будет работать вместе с **SignTool**. Дополнительные примеры и варианты использования этого командлета см. в статье [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/New-SelfSignedCertificate).
@@ -54,9 +54,9 @@ ms.locfileid: "8928978"
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
-После выполнения этой команды сертификат будет добавлен в локальное хранилище сертификатов, как указано в параметре "-CertStoreLocation". Результат выполнения команды будет также создан отпечаток сертификата.  
+После выполнения этой команды сертификат будет добавлен в локальное хранилище сертификатов, как указано в параметре "-CertStoreLocation". В результате выполнения команды будет также создается отпечаток сертификата.  
 
-**Примечание.**  
+**Примечание**  
 Сертификат можно просмотреть в окне PowerShell, выполнив следующие команды:
 ```
 Set-Location Cert:\LocalMachine\My
@@ -70,7 +70,7 @@ Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 
 При использовании командлета **Export-PfxCertificate** следует либо создать и использовать пароль, либо с помощью параметра "-ProtectTo" указать, какие пользователи или группы могут осуществлять доступ к файлу без пароля. Обратите внимание, что если вы не используете параметр "-Password" или "-ProtectTo", отобразится ошибка.
 
-- **Использование пароля**
+- **Использование паролей**
 ```
 $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
 Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd

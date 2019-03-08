@@ -1,5 +1,5 @@
 ---
-Description: Some kinds of apps (multilingual dictionaries, translation tools, etc.) need to override the default behavior of an app bundle, and build resources into the app package instead of having them in separate resource packages. This topic explains how to do that.
+Description: Некоторым видам приложений (многоязычных словари, средства перевода и т. д.) необходимо переопределить поведение пакета приложения по умолчанию и встроить ресурсы в пакет приложения, а не в отдельный пакеты ресурсов. В этом разделе объясняется, как это сделать.
 title: Добавление ресурсов в пакет приложения, а не в пакет ресурсов
 template: detail.hbs
 ms.date: 11/14/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf2d34bc3dae20750f66c9116499a17444b798c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938497"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627289"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>Добавление ресурсов в пакет приложения, а не в пакет ресурсов
 
@@ -99,4 +99,4 @@ Visual Studio запускает средство `MakePri.exe` в фоново�
 
 * [Упаковка приложения UWP с помощью Visual Studio](../packaging/packaging-uwp-apps.md)
 * [Компиляция ресурсов вручную с помощью MakePri.exe](compile-resources-manually-with-makepri.md)
-* [Указание ресурсов по умолчанию, которые используются в приложении](specify-default-resources-installed.md)
+* [Указание ресурсов по умолчанию, которые использует ваше приложение](specify-default-resources-installed.md)

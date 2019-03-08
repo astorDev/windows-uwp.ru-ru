@@ -1,6 +1,6 @@
 ---
 title: Прямоугольники
-description: В контексте Direct3D и программирования для Windows объекты на экране называют на основе ограничивающих прямоугольников.
+description: В программировании для Direct3D и Windows объекты на экране называются терминами ограничивающих прямоугольников.
 ms.assetid: 3B78AE66-2C1A-4191-BDCA-D737E33460BA
 keywords:
 - Прямоугольники
@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: aa94eb00058ba3297e7ca7cc4f93581d9281fd1c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947916"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608019"
 ---
 # <a name="rectangles"></a>Прямоугольники
 
 
-В программировании для Direct3D и Windows объекты на экране называются терминами ограничивающих прямоугольников. Стороны ограничивающего прямоугольник всегда параллельно сторонам экрана, поэтому прямоугольник можно описать двумя точками — верхним левым углом и правым нижним углом.
+В программировании для Direct3D и Windows объекты на экране называются терминами ограничивающих прямоугольников. Стороны ограничивающего прямоугольника всегда параллельны сторонам экрана, поэтому такой прямоугольник можно описать двумя точками: левый верхний угол и правый нижний угол.
 
-## <a name="span-idboundingrectanglesspanspan-idboundingrectanglesspanspan-idboundingrectanglesspanbounding-rectangles"></a><span id="Bounding_rectangles"></span><span id="bounding_rectangles"></span><span id="BOUNDING_RECTANGLES"></span>Ограничивающие прямоугольники
+## <a name="span-idboundingrectanglesspanspan-idboundingrectanglesspanspan-idboundingrectanglesspanbounding-rectangles"></a><span id="Bounding_rectangles"></span><span id="bounding_rectangles"></span><span id="BOUNDING_RECTANGLES"></span>Ограничивающих прямоугольников
 
 
 Большинство приложений используют структуру [**RECT**](https://msdn.microsoft.com/library/windows/desktop/dd162897) (или преобразованный с помощью typedef псевдоним) для передачи сведений об ограничивающем прямоугольнике, который необходимо использовать при копировании битового блока на экран или при обнаружении попаданий. В C++ структура **RECT** содержит следующее определение.
@@ -41,10 +41,10 @@ typedef struct tagRECT {
 
 Для эффективности, согласования и удобства все функции представления Direct3D работают с прямоугольниками.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Системы координат и геометрия](coordinate-systems-and-geometry.md)
+[Системы координат и geometry](coordinate-systems-and-geometry.md)
 
  
 

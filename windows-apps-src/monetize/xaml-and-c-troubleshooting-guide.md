@@ -7,25 +7,25 @@ ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, устранение неполадок, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941391"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615919"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>Руководство по устранению неполадок в XAML и C#
 
 В этом разделе содержится описание решений распространенных проблем разработки, связанных с библиотеками Microsoft Advertising, в приложениях XAML.
 
 * [XAML](#xaml)
-  * [Элемент AdControl не отображается](#xaml-notappearing)
-  * [«Черный ящик» моргает и исчезает](#xaml-blackboxblinksdisappears)
-  * [Реклама не обновляется](#xaml-adsnotrefreshing)
+  * [AdControl не отображаются](#xaml-notappearing)
+  * [Включает и отключает светодиодный черного прямоугольника и исчезает](#xaml-blackboxblinksdisappears)
+  * [ADS не обновляется](#xaml-adsnotrefreshing)
 
 * [C#](#csharp)
-  * [Элемент AdControl не отображается](#csharp-adcontrolnotappearing)
-  * [«Черный ящик» моргает и исчезает](#csharp-blackboxblinksdisappears)
-  * [Реклама не обновляется](#csharp-adsnotrefreshing)
+  * [AdControl не отображаются](#csharp-adcontrolnotappearing)
+  * [Включает и отключает светодиодный черного прямоугольника и исчезает](#csharp-blackboxblinksdisappears)
+  * [ADS не обновляется](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 
@@ -37,7 +37,7 @@ ms.locfileid: "8941391"
 
 1.  Убедитесь, что в файле Package.appxmanifest выбрана возможность **Интернет (клиент)**.
 
-2.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны соответствовать Идентификатору приложения и рекламного блока, полученным в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+2.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны совпадать с Идентификатором приложения и идентификатор единицы ad, полученный в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -83,7 +83,7 @@ ms.locfileid: "8941391"
 
 <span id="xaml-blackboxblinksdisappears"/>
 
-### <a name="black-box-blinks-and-disappears"></a>«Черный ящик» моргает и исчезает
+### <a name="black-box-blinks-and-disappears"></a>"Черный ящик" моргает и исчезает
 
 1.  Тщательно проверьте все действия, выполненные в предыдущем разделе [Элемент AdControl не отображается](#xaml-notappearing).
 
@@ -111,7 +111,7 @@ ms.locfileid: "8941391"
     }
     ```
 
-    Наиболее распространенная ошибка, в следствие которой появляется "черный ящик", это— "Реклама недоступна". Эта ошибка означает, что для возврата по запросу реклама недоступна.
+    Наиболее распространенная ошибка, в следствие которой появляется "черный ящик", это — "Реклама недоступна". Эта ошибка означает, что для возврата по запросу реклама недоступна.
 
 3.  Элемент [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) работает нормально.
 
@@ -173,7 +173,7 @@ ms.locfileid: "8941391"
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны соответствовать Идентификатору приложения и рекламного блока, полученным в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны совпадать с Идентификатором приложения и идентификатор единицы ad, полученный в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs
@@ -220,7 +220,7 @@ ms.locfileid: "8941391"
 
 <span id="csharp-blackboxblinksdisappears"/>
 
-### <a name="black-box-blinks-and-disappears"></a>«Черный ящик» моргает и исчезает
+### <a name="black-box-blinks-and-disappears"></a>"Черный ящик" моргает и исчезает
 
 1.  Тщательно проверьте все действия, выполненные в разделе [Элемент AdControl не отображается](#csharp-adcontrolnotappearing) выше.
 
@@ -238,7 +238,7 @@ ms.locfileid: "8941391"
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
 
-    Наиболее распространенная ошибка, в следствие которой появляется «черный ящик», это— «Реклама недоступна». Эта ошибка означает, что для возврата по запросу реклама недоступна.
+    Наиболее распространенная ошибка, в следствие которой появляется "черный ящик", это — "Реклама недоступна". Эта ошибка означает, что для возврата по запросу реклама недоступна.
 
 3.  Элемент **AdControl** работает нормально. Иногда одна и та же реклама может отображаться несколько раз подряд, в результате чего может показаться, что рекламные блоки не обновляются.
 

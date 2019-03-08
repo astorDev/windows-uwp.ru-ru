@@ -1,5 +1,5 @@
 ---
-Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP apps.
+Description: Моделировать и автоматизировать ввод из устройств, таких как клавиатуры, мыши, сенсорного ввода, пера и игровой в приложениях универсальной платформы Windows.
 title: Имитация ввода данных пользователем с помощью внедрения ввода
 label: Input injection
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933978"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602329"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Имитация ввода данных пользователем с помощью внедрения ввода
 
@@ -26,7 +26,7 @@ ms.locfileid: "8933978"
 
 Внедрение ввода полезно для приложений UWP и средства, которым необходимо реализовать специальные возможности, тестирование (специальное и автоматическое), удаленный доступ и поддержку.
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
 Чтобы использовать API-интерфейсы внедрения ввода в приложении UWP, вам потребуется добавить следующий код в манифест приложения.
 
@@ -41,11 +41,11 @@ ms.locfileid: "8933978"
 
 | ![Пример внедрения сенсорного ввода](images/injection/touch-input-injection.gif) | 
 |:--:|
-| *Пример внедрения сенсорного ввода* |
+| *Пример сенсорного ввода путем внедрения кода* |
 
 В этом примере мы покажем, как использовать API-интерфейсы внедрения ввода ([Windows.UI.Input.Preview.Injection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)) для прослушивания событий ввода мыши в одной области приложения и имитации соответствующих событий сенсорного ввода в другой области.
 
-**Скачайте этот пример в разделе [Пример внедрения ввода (мышь и сенсорный ввод)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
+**Загрузить этот образец из [примера внедрения входных данных (мышь на касания)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
 
 1. Сначала мы настраиваем пользовательский интерфейс (MainPage.xaml).
 
@@ -360,8 +360,8 @@ ms.locfileid: "8933978"
 
 4. Наконец, мы обрабатываем все перенаправленные события [щелкните](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase) кнопки в области внедрение ввода и отображаем в пользовательском интерфейсе имя нажатой кнопки.
 
-## <a name="see-also"></a>Статьи по теме
+## <a name="see-also"></a>См. также
 
 ### <a name="topic-samples"></a>Примеры в разделе
 
-- [Пример внедрения ввода (мышь и сенсорный ввод)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)
+- [Пример ввода путем внедрения кода (мышь на касания)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)

@@ -7,17 +7,17 @@ keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
 ms.openlocfilehash: 01bc72051e9efa69adbbab574b932da829c83e72
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046537"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626639"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Известные проблемы с программой для разработчиков UWP для Xbox
 
 В этом разделе описываются известные проблемы с программой для разработчиков UWP для Xbox One. Дополнительные сведения об этой программе см. в разделе [UWP для Xbox](index.md). 
 
-\ [Если вы перешли сюда по ссылке в справочном разделе об API и ищете сведения об API для всех семейств устройств, см. раздел [Функции UWP, которые в настоящее время не поддерживаются в Xbox](https://go.microsoft.com/fwlink/?LinkID=760755).\]
+\[Если вы здесь документации с помощью ссылок в справочник по API и ищете сведения о семействах API универсальной устройства, см. раздел [возможностей универсальной платформы Windows, которые еще не поддерживаются на Xbox](https://go.microsoft.com/fwlink/?LinkID=760755).\]
 
 В следующем списке приведены некоторые известные проблемы, которые могут возникнуть при работе (список не является исчерпывающим). 
 
@@ -116,5 +116,5 @@ namespace TestDNLA {
 ```
 
 ## <a name="see-also"></a>См. также
-- [Вопросы и ответы](frequently-asked-questions.md)
+- [Часто задаваемые вопросы](frequently-asked-questions.md)
 - [Приложения UWP для Xbox One](index.md)

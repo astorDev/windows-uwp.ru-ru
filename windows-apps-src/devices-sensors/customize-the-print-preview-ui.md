@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, печать
 ms.localizationpriority: medium
 ms.openlocfilehash: 3783105c054e5d956ab64aabe9971bb952d6cae6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046387"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643979"
 ---
 # <a name="customize-the-print-preview-ui"></a>Настройка пользовательского интерфейса предварительного просмотра
 
@@ -25,7 +25,7 @@ ms.locfileid: "9046387"
 
 В этом разделе описывается настройка параметров печати в пользовательском интерфейсе предварительного просмотра. Дополнительные сведения о печати см. в разделе [Печать из приложения](print-from-your-app.md).
 
-**Совет**Большинство примеров в этой статье основаны на примере печати. Чтобы увидеть полный код, скачайте [пример печати в универсальной платформе Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619984) из [репозитория Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) на GitHub.
+**Совет**  Большинство примеров в этом разделе основаны на образце печати. Чтобы увидеть полный код, скачайте [пример печати с использованием универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619984) из [репозитория Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) на GitHub.
 
  
 
@@ -33,22 +33,22 @@ ms.locfileid: "9046387"
 
 По умолчанию в пользовательском интерфейсе предварительного просмотра отображаются параметры печати [**ColorMode**](https://msdn.microsoft.com/library/windows/apps/BR226478), [**Copies**](https://msdn.microsoft.com/library/windows/apps/BR226479) и [**Orientation**](https://msdn.microsoft.com/library/windows/apps/BR226486). Кроме них существует несколько других распространенных параметров принтера, которые можно добавить в пользовательский интерфейс предварительного просмотра:
 
--   [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR226476)
--   [**Collation**](https://msdn.microsoft.com/library/windows/apps/BR226477)
--   [**Duplex**](https://msdn.microsoft.com/library/windows/apps/BR226480)
+-   [**Привязки**](https://msdn.microsoft.com/library/windows/apps/BR226476)
+-   [**Параметры сортировки**](https://msdn.microsoft.com/library/windows/apps/BR226477)
+-   [**Дуплексный режим**](https://msdn.microsoft.com/library/windows/apps/BR226480)
 -   [**HolePunch**](https://msdn.microsoft.com/library/windows/apps/BR226481)
 -   [**InputBin**](https://msdn.microsoft.com/library/windows/apps/BR226482)
 -   [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483)
--   [**MediaType**](https://msdn.microsoft.com/library/windows/apps/BR226484)
+-   [**Тип носителя**](https://msdn.microsoft.com/library/windows/apps/BR226484)
 -   [**NUp**](https://msdn.microsoft.com/library/windows/apps/BR226485)
 -   [**PrintQuality**](https://msdn.microsoft.com/library/windows/apps/BR226487)
--   [**Staple**](https://msdn.microsoft.com/library/windows/apps/BR226488)
+-   [**Скрепка**](https://msdn.microsoft.com/library/windows/apps/BR226488)
 
 Эти параметры определены в классе [**StandardPrintTaskOptions**](https://msdn.microsoft.com/library/windows/apps/BR226475). Вы можете добавить или удалить параметры из списка, отображаемого в пользовательском интерфейсе предварительного просмотра. Можно также менять порядок отображения параметров и задавать значения по умолчанию, которые будут показаны пользователю.
 
 Но изменения, внесенные этим способом, повлияют только на пользовательский интерфейс предварительного просмотра. Пользователь всегда сможет получить доступ ко всем поддерживаемым принтером параметрам посредством пункта **Дополнительные параметры** в пользовательском интерфейсе предварительного просмотра.
 
-**Примечание**несмотря на то, что ваше приложение может указать любые параметры печати для отображения, только те, которые поддерживаются выбранным принтером, отображаются в пользовательском Интерфейсе предварительного просмотра. Параметры, не поддерживаемые выбранным принтером, не будут отображаться в пользовательском интерфейсе печати.
+**Примечание**  несмотря на то, что приложение может указать параметры печати для отображения, только те, которые поддерживаются на данном принтере отображаются в режиме предварительного просмотра пользовательского интерфейса. Параметры, не поддерживаемые выбранным принтером, не будут отображаться в пользовательском интерфейсе печати.
 
  
 
@@ -96,7 +96,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**Важные**вызова [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() удаляет все параметры печати из пользовательского интерфейса, включая ссылку **Дополнительные параметры** предварительного. Не забудьте добавить параметры, которые требуется показывать в пользовательском интерфейсе предварительного просмотра.
+**Важные**  вызова [ **displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() удаляет все параметры печати в режиме предварительного просмотра пользовательского интерфейса, включая **Дополнительные параметры** ссылку. Не забудьте добавить параметры, которые требуется показывать в пользовательском интерфейсе предварительного просмотра.
 
 ### <a name="specify-default-options"></a>Определение параметров по умолчанию
 
@@ -159,7 +159,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-Эти параметры появляются в пользовательском интерфейсе предварительного просмотра в порядке их добавления— первый параметр отображается вверху окна. В данном примере настраиваемый параметр добавляется последним, поэтому он отображается в нижней части списка параметров. Однако его можно поместить в любое место списка; необязательно добавлять настраиваемые параметры печати последними.
+Эти параметры появляются в пользовательском интерфейсе предварительного просмотра в порядке их добавления — первый параметр отображается вверху окна. В данном примере настраиваемый параметр добавляется последним, поэтому он отображается в нижней части списка параметров. Однако его можно поместить в любое место списка; необязательно добавлять настраиваемые параметры печати последними.
 
 Когда пользователь изменяет выбранную настройку в вашем настраиваемом параметре, нужно обновить изображение предварительного просмотра. Вызовите метод [**InvalidatePreview**](https://msdn.microsoft.com/library/windows/apps/Hh702146) для перерисовки изображения в пользовательском интерфейсе предварительного просмотра, как показано ниже.
 
@@ -183,8 +183,8 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 }
 ```
 
-## <a name="related-topics"></a>Ссылки по теме
+## <a name="related-topics"></a>Статьи по теме
 
-* [Руководство по проектированию печати](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Видео c конференции Build 2015: разработка приложений для печати в Windows10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [Пример печати в UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [Рекомендации по проектированию для печати](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [Видео с Build 2015: Разработка приложений, осуществляющие печать в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [Пример печати UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984)

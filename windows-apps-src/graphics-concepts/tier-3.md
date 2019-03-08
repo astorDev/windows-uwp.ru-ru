@@ -8,21 +8,21 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 019899df18831167f0744d5274aa120cc7dd2096
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934679"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603319"
 ---
 # <a name="tier-3"></a>Уровень 3
 
 
 Уровень 3 добавляет поддержку Texture3D для потоковой передачи ресурсов, в дополнение к возможностям [уровня 2](tier-2.md) .
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Уровни функций для потоковых ресурсов](streaming-resources-features-tiers.md)
+[Уровни функции потоковой передачи ресурсов](streaming-resources-features-tiers.md)
 
  
 

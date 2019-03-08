@@ -1,5 +1,5 @@
 ---
-Description: Use a label to indicate to the user what they should enter into an adjacent control. You can also label a group of related controls, or display instructional text near a group of related controls.
+Description: Используйте метку, чтобы показать пользователю, что он должен ввести в данный элемент управления. Также можно присвоить метку группе связанных элементов управления или показать текст рекомендации рядом с группой связанных элементов управления.
 title: Метки
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
@@ -12,19 +12,19 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4345daf5b879fed7ba9805e4a448c473299031d7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926033"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654149"
 ---
 # <a name="labels"></a>Метки
 
  
 
-Метка— это имя или название элемента управления или группы связанных элементов.
+Метка — это имя или название элемента управления или группы связанных элементов.
 
-> **Важные API-интерфейсы**: свойство Header, [класс TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
+> **Важные API-интерфейсы**: Свойство Header [класс TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 В XAML встроенное свойство заголовка, с помощью которого задаются метки, доступно во многих элементах управления. Для элементов управления, не имеющих свойства заголовка, а также для того, чтобы присвоить метку группе элементов управления, можно использовать [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652).
 
@@ -39,10 +39,10 @@ ms.locfileid: "8926033"
 
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
-* [Основы создания пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [Пример основы пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## <a name="related-topics"></a>Еще по теме
-* [Элементы управления текстом](text-controls.md)
+## <a name="related-topics"></a>Статьи по теме
+* [Текстовые элементы управления](text-controls.md)
 * [Свойство TextBox.Header](https://msdn.microsoft.com/library/windows/apps/dn252861)
 * [Свойство PasswordBox.Header](https://msdn.microsoft.com/library/windows/apps/dn299051)
 * [Свойство ToggleSwitch.Header](https://msdn.microsoft.com/library/windows/apps/br209713)

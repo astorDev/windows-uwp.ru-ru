@@ -1,5 +1,5 @@
 ---
-Description: Learn how Fluent motion uses directionality and gravity.
+Description: Узнайте, как Fluent использует направления движения и gravity.
 title: Направление и сила притяжения — анимация в приложениях UWP
 label: Directionality and gravity
 template: detail.hbs
@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4bb6f0ba60e89720a6daa37604cbe93696fb2bb7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922655"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603079"
 ---
 # <a name="directionality-and-gravity"></a>Направление и сила притяжения
 
@@ -110,7 +110,7 @@ ms.locfileid: "8922655"
 
 ![направление назад и внутрь](images/continuity-photos.gif)
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Связанные статьи
 
-- [Обзор движения](index.md)
-- [Синхронность и реалистичная анимация](timing-and-easing.md)
+- [Обзор методологии Motion](index.md)
+- [О времени и реалистичной анимации](timing-and-easing.md)

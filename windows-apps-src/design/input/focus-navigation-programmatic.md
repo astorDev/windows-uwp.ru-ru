@@ -1,5 +1,5 @@
 ---
-Description: Learn how to programmatically manage focus navigation with keyboard, gamepad, and accessibility tools in a UWP app.
+Description: Узнайте, как программно управлять навигации с фокусом клавиатуры, игровой и специальные возможности в приложении UWP.
 title: Перемещение фокуса программным путем с помощью клавиатуры, геймпада и средств специальных возможностей
 label: Programmatic focus navigation
 keywords: клавиатура, игровое устройство управления, пульт дистанционного управления, стратегия навигации, ввод, взаимодействие с пользователем, специальные возможности, удобство использования
@@ -11,11 +11,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d25896a490b0a6b1d65075852f44dfb89c2e53
-ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9075137"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662719"
 ---
 # <a name="programmatic-focus-navigation"></a>Перемещение фокуса программным путем
 
@@ -143,7 +143,7 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 
 ![Настройка поведения перемещения фокуса с помощью подсказок для навигации](images/keyboard/navigation-hints.png)
 
-*Настройка поведения перемещения фокуса с помощью подсказок для навигации*
+*Фокус пользовательского поведения навигации, с помощью ссылки навигации*
 
 ## <a name="navigation-focus-events"></a>События перемещения фокуса
 
@@ -205,13 +205,13 @@ private void OnNoFocusCandidateFound (
 1.  [LosingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) — при установке фокуса обратно на элемент, теряющий фокус, или если [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) было выполнено успешно; другие события не возникают.
 2.  [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) — при установке фокуса обратно на элемент, теряющий фокус, или если [TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) было выполнено успешно; другие события не возникают.
 3.  [LostFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
-4.  [GotFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
+4.  [Получение фокуса](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
 
 На следующем рисунке показано, как при перемещении вправо от элемента A XYFocus выбирает элемент B4 в качестве кандидата. B4 затем запускает событие GettingFocus, в котором у ListView есть возможность для переназначения фокуса на B3.
 
 ![Изменение цели перемещения фокуса при возникновении события GettingFocus](images/keyboard/focus-events.png)
 
-*Изменение цели перемещения фокуса при возникновении события GettingFocus*
+*Изменение цели навигации фокус при событии GettingFocus*
 
 Здесь мы покажем, как обрабатывать событие [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) и перенаправлять фокус.
 
@@ -325,8 +325,8 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 }
 ```
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Связанные статьи
 
-- [Перемещение фокуса с помощью клавиатуры, геймпада, пульта дистанционного управления и средств специальных возможностей](focus-navigation.md)
-- [Взаимодействие с помощью клавиатуры](keyboard-interactions.md)
+- [Навигации с фокусом клавиатуры, игровой, удаленное управление и специальные возможности](focus-navigation.md)
+- [Взаимодействия пользователей с клавиатурой](keyboard-interactions.md)
 - [Специальные возможности клавиатуры](../accessibility/keyboard-accessibility.md)

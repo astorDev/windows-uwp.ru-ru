@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0605de5313b59689c19b9560d10e088d26d29b52
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940865"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627739"
 ---
 # <a name="diffuse-light-maps"></a>Карты рассеянного света
 
@@ -21,7 +21,7 @@ ms.locfileid: "8940865"
 
 Эффекты рассеянного света, моделируемые с помощью расчетов освещения, обеспечивают создание лишь общих эффектов. Ваше приложение может моделировать более сложный рассеянный свет с использованием карт освещения для текстур.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Сопоставление света с текстурами](light-mapping-with-textures.md)

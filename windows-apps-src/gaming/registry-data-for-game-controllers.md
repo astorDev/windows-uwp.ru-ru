@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, ввод, реестр, настройка
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936979"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633609"
 ---
 # <a name="registry-data-for-game-controllers"></a>Данные реестра для игровых устройств управления
 
@@ -32,18 +32,18 @@ ms.locfileid: "8936979"
     <tr>
         <th>Имя</th>
         <th>Тип</th>
-        <th>Обязательно?</th>
+        <th>Требуется?</th>
         <th>Сведения</th>
     </tr>
     <tr>
-        <td>Disabled</td>
+        <td>Отключено</td>
         <td>DWORD</td>
         <td>Нет</td>
         <td>
-            <p>Указывает, что данное устройство должна быть отключена.</p>
+            <p>Указывает, что следует отключить это устройство.</p>
             <ul>
-                <li><b>0</b>: устройство не отключено.</li>
-                <li><b>1</b>: устройство отключено.</li>
+                <li><b>0</b>: Устройство не отключено.</li>
+                <li><b>1</b>: Устройство отключено.</li>
             </ul>
         </td>
     </tr>
@@ -58,23 +58,23 @@ ms.locfileid: "8936979"
 
 Подразделы корневой папки устройства подробно описаны в следующих разделах.
 
-### <a name="gamepad"></a>Gamepad
+### <a name="gamepad"></a>Геймпад
 
 В таблице ниже приведены обязательные и необязательные подразделы в разделе **Gamepad**:
 
 <table>
     <tr>
         <th>Подраздел</th>
-        <th>Обязательно?</th>
+        <th>Требуется?</th>
         <th>Сведения</th>
     </tr>
     <tr>
-        <td>Menu</td>
+        <td>Меню</td>
         <td>Да</td>
         <td rowspan="18" style="vertical-align: middle;">См. раздел <a href="#button-mapping">Сопоставление кнопок</a>.</td>
     </tr>
     <tr>
-        <td>View</td>
+        <td>Просмотр</td>
         <td>Да</td>
     </tr>
     <tr>
@@ -178,7 +178,7 @@ ms.locfileid: "8936979"
 <table>
     <tr>
         <th>Подраздел</th>
-        <th>Обязательно?</th>
+        <th>Требуется?</th>
         <th>Сведения</th>
     </tr>
     <tr>
@@ -303,7 +303,7 @@ ms.locfileid: "8936979"
         <td>Нет</td>
     </tr>
     <tr>
-        <td>Wheel</td>
+        <td>Колесо</td>
         <td>Да</td>
         <td rowspan="5" style="vertical-align: middle;">См. разделе <a href="#axis-mapping">Сопоставление осей</a></td>
     </tr>
@@ -337,7 +337,7 @@ ms.locfileid: "8936979"
 <table>
     <tr>
         <th>Подраздел</th>
-        <th>Обязательно?</th>
+        <th>Требуется?</th>
         <th>Сведения</th>
     </tr>
     <tr>
@@ -398,7 +398,7 @@ ms.locfileid: "8936979"
 <table>
     <tr>
         <th>Подраздел</th>
-        <th>Обязательно?</th>
+        <th>Требуется?</th>
         <th>Сведения</th>
     </tr>
     <tr>
@@ -416,7 +416,7 @@ ms.locfileid: "8936979"
         <td rowspan="4" style="vertical-align: middle;">См. разделе <a href="#axis-mapping">Сопоставление осей</a></td>
     </tr>
     <tr>
-        <td>Pitch</td>
+        <td>Уклон</td>
         <td>Да</td>
     </tr>
     <tr>
@@ -441,24 +441,24 @@ ms.locfileid: "8936979"
 <table>
     <tr>
         <th>Подраздел</th>
-        <th>Обязательно?</th>
+        <th>Требуется?</th>
         <th>Сведения</th>
     </tr>
     <tr>
-        <td>Menu</td>
+        <td>Меню</td>
         <td>Да</td>
         <td rowspan="24" style="vertical-align: middle;">См. раздел <a href="#button-mapping">Сопоставление кнопок</a>.</td>
     </tr>
     <tr>
-        <td>View</td>
+        <td>Просмотр</td>
         <td>Да</td>
     </tr>
     <tr>
-        <td>Accept</td>
+        <td>Принять</td>
         <td>Да</td>
     </tr>
     <tr>
-        <td>Cancel</td>
+        <td>Отмена</td>
         <td>Да</td>
     </tr>
     <tr>
@@ -551,14 +551,14 @@ ms.locfileid: "8936979"
 
 ### <a name="button-mapping"></a>Сопоставление кнопок
 
-В таблице ниже приведены значения, которые необходимы для сопоставления кнопки. Например, если при нажатии **DPadUp** на игровом устройстве управления сопоставление **DPadUp** должно содержать значение **ButtonIndex** (значение **Source**— **Button**). Если **DPadUp** необходимо сопоставить с положением переключателя, то сопоставление **DPadUp** должно содержать значения **SwitchIndex** и **SwitchPosition** (значение **Source**— **Switch**).
+В таблице ниже приведены значения, которые необходимы для сопоставления кнопки. Например, если при нажатии **DPadUp** на игровом устройстве управления сопоставление **DPadUp** должно содержать значение **ButtonIndex** (значение **Source** — **Button**). Если **DPadUp** необходимо сопоставить с положением переключателя, то сопоставление **DPadUp** должно содержать значения **SwitchIndex** и **SwitchPosition** (значение **Source** — **Switch**).
 
 <table>
     <tr>
         <th>Источник</th>
         <th>Значение</th>
         <th>Тип значения</th>
-        <th>Обязательно?</th>
+        <th>Требуется?</th>
         <th>Сведения о значении</th>
     </tr>
     <tr>
@@ -576,7 +576,7 @@ ms.locfileid: "8936979"
         <td>Индекс в массиве осей <b>RawGameController</b>.</td>
     </tr>
     <tr>
-        <td>Invert</td>
+        <td>Инверсия</td>
         <td>DWORD</td>
         <td>Нет</td>
         <td>Указывает, что значение оси следует инвертировать перед применением коэффициентов <b>ThresholdPercent</b> и <b>DebouncePercent</b>.</td>
@@ -585,19 +585,19 @@ ms.locfileid: "8936979"
         <td>ThresholdPercent</td>
         <td>DWORD</td>
         <td>Да</td>
-        <td>Указывает положение оси, в котором сопоставленное значение кнопки переходит между состоянием "нажато" и "отпущено". Допустимый диапазон значений— от 0 до 100. Кнопка считается нажатой, если значение оси больше или равно этому значению.</td>
+        <td>Указывает положение оси, в котором сопоставленное значение кнопки переходит между состоянием "нажато" и "отпущено". Допустимый диапазон значений — от 0 до 100. Кнопка считается нажатой, если значение оси больше или равно этому значению.</td>
     </tr>
     <tr>
         <td>DebouncePercent</td>
         <td>DWORD</td>
         <td>Да</td>
         <td>
-            <p>Определяет размер окна вокруг значения <b>ThresholdPercent</b>, которое используется для устранения ложного срабатывания обнаруженного состояния кнопки. Допустимый диапазон значений— от 0 до 100. Переход между состояниями кнопки возможен, только если значение оси выходит за верхнюю или нижнюю границу окна между моментом. Например, если <b>ThresholdPercent</b> имеет значение 50, а <b>DebouncePercent</b>— 10, то границами окна между моментом будет 45% и 55% от полных значений диапазона оси. Кнопка не может перейти в нажатое состояние, пока значение оси не достигнет 55% или не превысит это значение, и не может перейти в отпущенное состояние, пока значение оси не достигнет 45% или меньшего значения.</p>
-            <p>Вычисленные границы окна между моментом находятся в диапазоне от 0% до 100%. Например, пороговое значение 5% и окно между моментом 20% приведут к тому, что границы окна между моментом станут равны 0% и 15%. Состояние кнопки для значений оси 0% и 100% всегда отображаются как отпущенное и нажатое соответственно независимо от порогового значения и значения между моментом.</p>
+            <p>Определяет размер окна вокруг значения <b>ThresholdPercent</b>, которое используется для устранения ложного срабатывания обнаруженного состояния кнопки. Допустимый диапазон значений — от 0 до 100. Переход между состояниями кнопки возможен, только если значение оси выходит за верхнюю или нижнюю границу окна между моментом. Например, если <b>ThresholdPercent</b> имеет значение 50, а <b>DebouncePercent</b> — 10, то границами окна между моментом будет 45 % и 55 % от полных значений диапазона оси. Кнопка не может перейти в нажатое состояние, пока значение оси не достигнет 55 % или не превысит это значение, и не может перейти в отпущенное состояние, пока значение оси не достигнет 45 % или меньшего значения.</p>
+            <p>Вычисленные границы окна между моментом находятся в диапазоне от 0 % до 100 %. Например, пороговое значение 5 % и окно между моментом 20 % приведут к тому, что границы окна между моментом станут равны 0 % и 15 %. Состояние кнопки для значений оси 0 % и 100 % всегда отображаются как отпущенное и нажатое соответственно независимо от порогового значения и значения между моментом.</p>
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">Переключатель</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Да</td>
@@ -610,13 +610,13 @@ ms.locfileid: "8936979"
         <td>
             <p>Указывает положение переключателя, в котором сопоставленная кнопка сообщит о нажатии. Значением положений может быть одна из этих строк:</p>
             <ul>
-                <li>Up</li> 
+                <li>Вверх</li> 
                 <li>UpRight</li>
-                <li>Right</li>
+                <li>Вправо</li>
                 <li>DownRight</li>
-                <li>Down</li>
+                <li>Вниз</li>
                 <li>DownLeft</li>
-                <li>Left</li>
+                <li>Влево</li>
                 <li>UpLeft</li>
             </ul>
         </td>
@@ -638,7 +638,7 @@ ms.locfileid: "8936979"
         <th>Источник</th>
         <th>Значение</th>
         <th>Тип значения</th>
-        <th>Обязательно?</th>
+        <th>Требуется?</th>
         <th>Сведения о значении</th>
     </tr>
     <tr>
@@ -659,7 +659,7 @@ ms.locfileid: "8936979"
                 </tr>
                 <tr>
                     <td>TRUE</td>
-                    <td>1,0</td>
+                    <td>1.0</td>
                 </tr>
             </table>
         </td>
@@ -684,7 +684,7 @@ ms.locfileid: "8936979"
                 <tr>
                     <td>FALSE</td>
                     <td>TRUE</td>
-                    <td>1,0</td>
+                    <td>1.0</td>
                 </tr>
                 <tr>
                     <td>TRUE</td>
@@ -707,13 +707,13 @@ ms.locfileid: "8936979"
         <td>Индекс в массиве осей <b>RawGameController</b>.</td>
     </tr>
     <tr>
-        <td>Invert</td>
+        <td>Инверсия</td>
         <td>DWORD</td>
         <td>Нет</td>
         <td>Указывает, что сопоставленное значение оси следует инвертировать перед возвратом.</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">Переключатель</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Да</td>
@@ -726,13 +726,13 @@ ms.locfileid: "8936979"
         <td>
             <p>Одна из следующих строк:</p>
             <ul>
-                <li>Up</li>
+                <li>Вверх</li>
                 <li>UpRight</li>
-                <li>Right</li>
+                <li>Вправо</li>
                 <li>DownRight</li>
-                <li>Down</li>
+                <li>Вниз</li>
                 <li>DownLeft</li>
-                <li>Left</li>
+                <li>Влево</li>
                 <li>UpLeft</li>
             </ul>
             <p>Указывает положение переключателя, в котором сопоставленное значение оси отображается как равное 1,0. Противоположное направление <b>MaxValueSwitchPosition</b> считается равным 0,0. Например, если значение <b>MaxValueSwitchPosition</b> равно <b>Up</b>, значение оси преобразуется, как показано ниже:</p>
@@ -742,15 +742,15 @@ ms.locfileid: "8936979"
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Up</td>
-                    <td>1,0</td>
+                    <td>Вверх</td>
+                    <td>1.0</td>
                 </tr>
                 <tr>
                     <td>Center</td>
                     <td>0,5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>Вниз</td>
                     <td>0,0</td>
                 </tr>
             </table>
@@ -768,23 +768,23 @@ ms.locfileid: "8936979"
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Up</td>
-                    <td>1,0</td>
+                    <td>Вверх</td>
+                    <td>1.0</td>
                 </tr>
                 <tr>
                     <td>UpRight</td>
-                    <td>1,0</td>
+                    <td>1.0</td>
                 </tr>
                 <tr>
                     <td>UpLeft</td>
-                    <td>1,0</td>
+                    <td>1.0</td>
                 </tr>
                 <tr>
                     <td>Center</td>
                     <td>0,5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>Вниз</td>
                     <td>0,0</td>
                 </tr>
                 <tr>
@@ -820,7 +820,7 @@ ms.locfileid: "8936979"
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>, <b>FourWay</b> или <b>EightWay</b>
+        <td><b>TwoWay</b>, <b>FourWay</b>, или <b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -898,13 +898,13 @@ ms.locfileid: "8936979"
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">Переключатель</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Индекс в массиве переключателей <b>RawGameController</b>.
     </tr>
     <tr>
-        <td>Invert</td>
+        <td>Инверсия</td>
         <td>DWORD</td>
         <td>Указывает, что переключатель сообщает о положении против часовой стрелки, а не по часовой стрелке.</td>
     </tr>
@@ -926,7 +926,7 @@ ms.locfileid: "8936979"
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td>Right</td>
+                    <td>Вправо</td>
                     <td>1</td>
                     <td>2</td>
                 </tr>
@@ -936,7 +936,7 @@ ms.locfileid: "8936979"
                     <td>1</td>
                 </tr>
                 <tr>
-                    <td>Up</td>
+                    <td>Вверх</td>
                     <td>3</td>
                     <td>0</td>
                 </tr>
@@ -946,7 +946,7 @@ ms.locfileid: "8936979"
                     <td>7</td>
                 </tr>
                 <tr>
-                    <td>Left</td>
+                    <td>Влево</td>
                     <td>5</td>
                     <td>6</td>
                 </tr>
@@ -956,7 +956,7 @@ ms.locfileid: "8936979"
                     <td>5</td>
                 </tr>
                 <tr>
-                    <td>Down</td>
+                    <td>Вниз</td>
                     <td>7</td>
                     <td>4</td>
                 </tr>
@@ -966,7 +966,7 @@ ms.locfileid: "8936979"
 
 #### <a name="buttonindex-values"></a>Значения *ButtonIndex
 
-Индекс значений \*ButtonIndex в массиве кнопок **RawGameController**:
+\*Индекс ButtonIndex значений в **RawGameController**элемента массива кнопки:
 
 <table>
     <tr>
@@ -1041,13 +1041,13 @@ ms.locfileid: "8936979"
         <td>RacingWheel</td>
         <td>MaxWheelAngle</td>
         <td>DWORD</td>
-        <td>Указывает максимальный физический угол колесика, поддерживаемый в одном направлении. Например, для колесика с возможностью поворота от –90градусов до 90градусов здесь будет указано значение 90.</td>
+        <td>Указывает максимальный физический угол колесика, поддерживаемый в одном направлении. Например, для колесика с возможностью поворота от –90 градусов до 90 градусов здесь будет указано значение 90.</td>
     </tr>
 </table>
 
 ## <a name="labels"></a>Метки
 
-Метки должны находиться в разделе **Labels** в корневом каталоге устройства. В разделе **Labels** может быть три подраздела: **Buttons**, **Axes** и **Switches**.
+Метки должны находиться в разделе **Labels** в корневом каталоге устройства. **Метки** может иметь 3 подразделов: **Кнопки**, **осей**, и **коммутаторы**.
 
 ### <a name="button-labels"></a>Метки кнопок
 
@@ -1075,11 +1075,11 @@ RightBumper         // Index 9
     </tr>
     <tr>
         <td>Button0</td>
-        <td>Menu</td>
+        <td>Меню</td>
     </tr>
     <tr>
         <td>Button1</td>
-        <td>View</td>
+        <td>Просмотр</td>
     </tr>
     <tr>
         <td>Button2</td>
@@ -1345,8 +1345,8 @@ Windows Registry Editor Version 5.00
 "Invert" = dword:00000000
 ```
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
 * [Пространство имен Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 * [Пространство имен Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
-* [INF-файлы](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)
+* [Файлы INF](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

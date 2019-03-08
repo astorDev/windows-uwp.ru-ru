@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dec176206aacb946bfd65341c483d8ba61558ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938741"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629749"
 ---
 # <a name="hazard-tracking-versus-tile-pool-resources"></a>Отслеживание рисков и ресурсы пула плиток
 
@@ -25,10 +25,10 @@ ms.locfileid: "8938741"
 
 При выдаче операции записи или чтения для потокового ресурса, ссылающегося на память пула плиток, на которую также будут ссылаться отдельные потоковые ресурсы в последующих операциях чтения или записи, приложение должно сообщить драйверу дисплея, что оно ожидает завершения первой операции, прежде чем смогут начаться следующие операции.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Сопоставления в пуле плиток](mappings-are-into-a-tile-pool.md)
+[Сопоставления являются в пул плитки](mappings-are-into-a-tile-pool.md)
 
  
 

@@ -1,5 +1,5 @@
 ---
-Description: At build time, the Resource Management System creates an index of all the different variants of the resources that are packaged up with your app. At run-time, the system detects the user and machine settings that are in effect and loads the resources that are the best match for those settings.
+Description: Во время построения Система управления ресурсами создает индекс всех различных вариантов ресурсов, которые упакованы с вашим приложением. Во время выполнения система определяет текущие параметры пользователя и компьютера и загружает ресурсы, которые лучше всего подходят для этих параметров.
 title: Система управления ресурсами
 template: detail.hbs
 ms.date: 10/20/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: bedbad9e4de22ee098863d013a1e4ad16d86543e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931627"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598629"
 ---
 # <a name="resource-management-system"></a>Система управления ресурсами
 Система управления ресурсами имеет функции, работающие во время сборки и во время выполнения. Во время построения система создает индекс всех различных вариантов ресурсов, которые упакованы с вашим приложением. Этот индекс называется индексом ресурсов пакета или PRI и также включается в пакет вашего приложения. Во время выполнения система определяет текущие параметры пользователя и компьютера, проверяет информацию в PRI и автоматически загружает ресурсы, которые лучше всего подходят для этих параметров.
@@ -26,7 +26,7 @@ ms.locfileid: "8931627"
 - Для разработки приложений MakePRI.exe обычно не требуется, так как он уже интегрирован в рабочий процесс компиляции Visual Studio. И Visual Studio поддерживает редактирование файлов PRI в выделенном пользовательском интерфейсе. Однако ваши локализаторы и средства, которые они используют, могут опираться на MakePRI.exe.
 - Каждый PRI-файл содержит именованный набор ресурсов — карту ресурсов. Во время загрузки PRI-файла из пакета имя карты ресурсов сопоставляется с именем идентификатора пакета.
 - PRI-файлы содержат только данные, поэтому они не используют переносимый исполняемый формат (PE). Эти файлы специально предназначены для хранения данных в формате ресурсов для Windows. Они заменяют ресурсы, которые в модели приложений Microsoft Win32 содержатся в библиотеках DLL.
-- Ограничение на размер PRI-файла— 64КБ.
+- Ограничение на размер PRI-файла — 64 КБ.
 
 ## <a name="uwp-api-access-to-app-resources"></a>Доступ к ресурсам приложения через API UWP
 
@@ -42,7 +42,7 @@ ms.locfileid: "8931627"
 
 Доступные приложению ресурсы хранятся в иерархических коллекциях, доступ к которым можно получить с помощью объекта [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live). Класс **ResourceManager** предоставляет доступ к разным экземплярам **ResourceMap** верхнего уровня, используемым приложением, которые соответствуют разным пакетам приложения. Значение [**MainResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager.MainResourceMap) соответствует карте ресурсов для текущего пакета приложения, за исключением пакетов платформ, на которые имеются ссылки. Каждая карта **ResourceMap** носит имя пакета, которое указано в манифесте пакета. В **ResourceMap** существуют поддеревья (см. [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)), которые содержат дополнительные объекты **NamedResource**. Поддеревья обычно соответствуют файлам ресурсов, которые содержат ресурс. Дополнительные сведения см. в разделах [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md) и [Загрузка изображений и ресурсов, адаптированных по масштабированию, теме, высокой контрастности и другим аспектам](images-tailored-for-scale-theme-contrast.md).
 
-Вот пример.
+Рассмотрим пример.
 
 ```csharp
 // using Windows.ApplicationModel.Resources.Core;
@@ -66,5 +66,5 @@ API [**StorageFile**](/uwp/api/Windows.Storage.StorageFile?branch=live) проз
 * [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md)
-* [Загрузка изображений и ресурсов, адаптированных по масштабированию, теме, высокой контрастности и другим аспектам](images-tailored-for-scale-theme-contrast.md)
+* [Локализация строк в манифесте пакета интерфейса пользователя и приложения](localize-strings-ui-manifest.md)
+* [Загрузка изображений и ресурсы, предназначенные специально для масштабирования, темы, высокая контрастность и другим пользователям](images-tailored-for-scale-theme-contrast.md)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, directx, объект приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: e12ad6ce221440e8840006b3883980721b899ae6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922979"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616979"
 ---
 # <a name="the-app-object-and-directx"></a>Объект приложения и DirectX
 
@@ -19,7 +19,7 @@ ms.locfileid: "8922979"
 
 В играх универсальной платформы Windows (UWP) с DirectX используется мало элементов и объектов интерфейса Windows. Поскольку они выполняются на более низком уровне в стеке среды выполнения Windows, они должны взаимодействовать со структурой пользовательского интерфейса более фундаментальным способом: напрямую получая доступ и взаимодействуя с объектом приложения. Узнайте, когда и как происходит такое взаимодействие и как вы, как разработчик DirectX, можете эффективно использовать эту модель при разработке приложений UWP.
 
-См. сведения о графики незнакомых терминов и понятия, которые могут возникнуть при чтении [глоссарий графики Direct3D](../graphics-concepts/index.md) .
+См. в разделе [глоссарий графики Direct3D](../graphics-concepts/index.md) сведения о незнакомых графической точки зрения или концепции, которые возникают при чтении.
 
 ## <a name="the-important-core-user-interface-namespaces"></a>Важные основные пространства имен пользовательского интерфейса
 
@@ -32,7 +32,7 @@ ms.locfileid: "8922979"
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **Примечание**  Если вы не разрабатываете приложение UWP, используйте компоненты пользовательского интерфейса, предоставленные в JavaScript или XAML-библиотеках и пространствах имен, а не типы, предоставленные в этих пространствах имен.
+> **Примечание**    Если вы не разрабатываете приложения универсальной платформы Windows, использовать компоненты пользовательского интерфейса, в состав библиотеки для конкретных JavaScript или XAML и пространства имен вместо типов, предоставляемых в этих пространствах имен.
 
  
 
@@ -87,14 +87,14 @@ ms.locfileid: "8922979"
 ## <a name="coreapplicationview-behaviors-and-properties"></a>Поведение и свойства класса CoreApplicationView
 
 
-[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) представляет текущее представление приложения. Во время инициализации singleton-объект приложения создает представление приложения, ожидающее своей активации. Класс [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), отображающий это представление, можно получить, обратившись к его свойству [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019), а события активации и деактивации для этого представления можно обработать, зарегистрировав делегаты с помощью события [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018).
+[**CoreApplicationView** ](https://msdn.microsoft.com/library/windows/apps/br225017) представляет текущее представление приложения. Во время инициализации singleton-объект приложения создает представление приложения, ожидающее своей активации. Класс [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), отображающий это представление, можно получить, обратившись к его свойству [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019), а события активации и деактивации для этого представления можно обработать, зарегистрировав делегаты с помощью события [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018).
 
 ## <a name="corewindow-behaviors-and-properties"></a>Поведение и свойства класса CoreWindow
 
 
 Родительское окно (экземпляр класса [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)) создается и передается поставщику представлений при инициализации объекта приложения. Если у приложения есть окно для отображения, оно его отображает; в противном случае просто инициализирует данное представление.
 
-[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) предоставляет несколько событий, характерных для поведения входного и основного окон. Такие события можно обрабатывать, регистрируя с их помощью собственные делегаты.
+[**Объект CoreWindow** ](https://msdn.microsoft.com/library/windows/apps/br208225) предоставляет ряд событий поведения, специфичные для ввода и основные окна. Такие события можно обрабатывать, регистрируя с их помощью собственные делегаты.
 
 Для данного окна также можно получить диспетчер событий, обратившись к свойству [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264), предоставляющему экземпляр класса [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211).
 

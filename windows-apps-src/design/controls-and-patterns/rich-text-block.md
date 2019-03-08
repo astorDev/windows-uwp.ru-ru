@@ -1,22 +1,22 @@
 ---
-Description: Use a RichTextBlock with RichTextBlockOverflow elements to create advanced text layouts.
+Description: Использование RichTextBlock с элементами RichTextBlockOverflow позволяет создавать сложные текстовые макеты.
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ab83e74dc59b407c15e1a8213540c8954fcd16e
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037049"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610899"
 ---
 # <a name="rich-text-block"></a>Блок форматированного текста
 
@@ -24,7 +24,7 @@ ms.locfileid: "9037049"
 
 Блоки форматированного текста предоставляют ряд функций для создания расширенного текстового макета, который можно использовать, чтобы обеспечить поддержку абзацев, встроенных элементов пользовательского интерфейса или сложных текстовых макетов.
 
-> **Важные API-интерфейсы**: [класс RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [класс RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx), [класс Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx), [класс Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
+> **Важные API-интерфейсы**: [Класс RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [класс RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx), [абзаца класс](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx), [класс Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -32,7 +32,7 @@ ms.locfileid: "9037049"
 
 Для отображения в приложении текста «только для чтения», как правило, используется **TextBlock**. Его можно использовать для отображения однострочного или многострочного текста, строковых гиперссылок и текста с полужирным шрифтом, курсивом или подчеркиванием. TextBlock предоставляет более простую модель содержимого, поэтому данный элемент обычно проще использовать, и он может обеспечить лучшую отрисовку текста по сравнению с элементом RichTextBlock. Это предпочтительный способ для большинства текстов пользовательского интерфейса приложения. Хотя в текст можно поместить разрывы строк, элемент TextBlock разработан для отображения одного абзаца и не поддерживает отступ текста.
 
-Дополнительные сведения о выборе подходящего элемента управления текстом см. в статье [Элементы управления текстом](text-controls.md).
+Дополнительные сведения о выборе подходящего элемента управления текстом можно найти в статье [Элементы управления текстом](text-controls.md).
 
 ## <a name="examples"></a>Примеры
 
@@ -43,7 +43,7 @@ ms.locfileid: "9037049"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/RichTextBlock">открыть приложение и увидеть RichTextBlock в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -75,7 +75,7 @@ RichTextBlock поддерживает следующие функции.
 
 ### <a name="inline-ui-elements"></a>Строковые элементы пользовательского интерфейса
 
-Класс [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) позволяет встроить в текст любой элемент UIElement. Распространенный сценарий— вставка элемента Image в текст, но можно использовать и интерактивные элементы, такие как Button или CheckBox.
+Класс [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) позволяет встроить в текст любой элемент UIElement. Распространенный сценарий — вставка элемента Image в текст, но можно использовать и интерактивные элементы, такие как Button или CheckBox.
 
 Если в одно и то же место нужно встроить несколько элементов, используйте панель в качестве отдельного дочернего элемента InlineUIContainer, а затем поместите несколько элементов на эту панель.
 
@@ -117,13 +117,13 @@ RichTextBlock поддерживает следующие функции.
 
 ## <a name="formatting-text"></a>Форматирование текста
 
-Хотя RichTextBlock содержит обычный текст, для настройки отрисовки текста в приложении можно применять различные параметры форматирования. Можно задать стандартные свойства элемента управления, например FontFamily, FontSize, FontStyle, Foreground и CharacterSpacing, чтобы изменить внешний вид текста. Для форматирования текста также можно использовать строковые текстовые элементы и подключенные свойства Typography. Эти параметры влияют только на то, как RichTextBlock отображает текст локально, поэтому если, например, скопировать и вставить текст в поле с форматом, форматирование не будет применено.
+Хотя RichTextBlock содержит обычный текст, для настройки отрисовки текста в приложении можно применять различные параметры форматирования. Можно задать стандартные свойства элемента управления, например FontFamily, FontSize, FontStyle, Foreground и CharacterSpacing, чтобы изменить внешний вид текста. Для форматирования текста также можно использовать строковые текстовые элементы и вложенные свойства Typography. Эти параметры влияют только на то, как RichTextBlock отображает текст локально, поэтому если, например, скопировать и вставить текст в поле с форматом, форматирование не будет применено.
 
 ### <a name="inline-elements"></a>Строковые элементы
 
-Пространство имен [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) предоставляет разнообразные строковые элементы, которые можно использовать для форматирования текста, например Bold, Italic, Run, Span и LineBreak. Типичный способ применить форматирование к отдельным частям текста— это поместить текст в элемент Run или Span и задать свойства этого элемента.
+Пространство имен [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) предоставляет разнообразные строковые элементы, которые можно использовать для форматирования текста, например Bold, Italic, Run, Span и LineBreak. Типичный способ применить форматирование к отдельным частям текста — это поместить текст в элемент Run или Span и задать свойства этого элемента.
 
-Вот элемент Paragraph, первая фраза которого отображается полужирным шрифтом 16пт в синем цвете.
+Вот элемент Paragraph, первая фраза которого отображается полужирным шрифтом 16 пт в синем цвете.
 
 ```xaml
 <Paragraph>
@@ -132,9 +132,9 @@ RichTextBlock поддерживает следующие функции.
 </Paragraph>
 ```
 
-### <a name="typography"></a>Оформление текста
+### <a name="typography"></a>Шрифтовое оформление
 
-Подключенные свойства класса [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) предоставляют доступ к набору типографских свойств Microsoft OpenType. Эти подключенные свойства можно задать либо в объекте RichTextBlock, либо в отдельных строковых текстовых элементах, как показано здесь.
+Вложенные свойства класса [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) предоставляют доступ к набору типографских свойств Microsoft OpenType. Эти подключенные свойства можно задать либо в объекте RichTextBlock, либо в отдельных строковых текстовых элементах, как показано здесь.
 
 ```xaml
 <RichTextBlock Typography.StylisticSet4="True">
@@ -153,19 +153,19 @@ RichTextBlock поддерживает следующие функции.
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
-[Элементы управления текстом](text-controls.md)
+[Текстовые элементы управления](text-controls.md)
 
 **Проектировщикам**
-- [Руководство по проверке орфографии](text-controls.md)
+- [Рекомендации для проверки орфографии](text-controls.md)
 - [Добавление поиска](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [Руководство по текстовому вводу](text-controls.md)
+- [Рекомендации для ввода текста](text-controls.md)
 
 **Разработчикам (XAML)**
 - [Класс TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [Класс Windows.UI.Xaml.Controls PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**Разработчикам (прочее)**
+**Для разработчиков (другое)**
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

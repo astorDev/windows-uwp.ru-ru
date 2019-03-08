@@ -1,16 +1,16 @@
 ---
-Description: Learn about several ways you can programmatically enable customers to rate and review your app.
+Description: Дополнительные сведения о нескольких способах можно программно включить клиентам оценить и проверить приложение.
 title: Запрос оценок и отзывов для вашего приложения
 ms.date: 01/22/2019
 ms.topic: article
 keywords: Windows 10, uwp, оценки, отзывы
 ms.localizationpriority: medium
 ms.openlocfilehash: b167f4cc40ee72e6405436bacee28f2f20b4623c
-ms.sourcegitcommit: 7a1899358cd5ce9d2f9fa1bd174a123740f98e7a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042640"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601309"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Запрос оценок и отзывов для вашего приложения
 
@@ -18,14 +18,14 @@ ms.locfileid: "9042640"
 * Можно отобразить диалоговое окно оценки и отзыва непосредственно в контексте приложения.
 * Можно программным способом открыть страницу оценки и отзывов для вашего приложения в Microsoft Store.
 
-Когда вы будете готовы проанализировать оценки и отзывы данных, можно просмотреть данные в центре партнеров или использовать API аналитики для Microsoft Store для программного получения этих данных.
+Когда будете готовы для анализа, оценки и проверки данных, можно просмотреть данные в центре партнеров или использовать API анализа Microsoft Store для получения этих данных программными средствами.
 
 > [!IMPORTANT]
-> При добавлении функции оценки в вашем приложении, все отзывы необходимо отправить пользователю механизмов оценку магазина, независимо от выбранного по звездам. Если от пользователей, собирать отзывы или комментарии, она должна быть очистки, что он не связан с приложения оценки или отзывы в магазине, но отправляется непосредственно в разработчик приложения. См. в разделе, разработчика поведения Дополнительные сведения, связанные с [Fraudulent или хакеры действия](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
+> При добавлении функции оценки в приложении, все проверки должно отправить пользователя механизмы оценки Store, независимо от оценки выбранного типа "звезда". Если собирать отзывы и комментарии от пользователей, должно быть понятно, что оно относится к оценка приложения или проверки в Store, но отправляется непосредственно для разработчика приложений. См. правила поведения разработчиков, Дополнительные сведения, относящиеся к [Fraudulent или действий недобросовестных](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities).
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>Показ диалогового окна оценки и отзыва в приложении
 
-Чтобы программным образом показать пользователю диалоговое окно вашего приложения, которое просит клиентов оценить ваше приложение и отзыв, вызовите метод [RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) в пространстве имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) . 
+Чтобы программным способом отображать диалоговое окно из приложения, которое запрашивает у клиента оценить ваше приложение и отправить отзыв, вызовите [RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) метод в [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) пространства имен. 
 
 > [!IMPORTANT]
 > Запрос на показ диалогового окна оценку и отзыва должен вызываться в потоке пользовательского интерфейса в приложении.
@@ -101,11 +101,11 @@ private async Task PromptUserToRateApp()
 }
 ```
 
-Метод **RequestRateAndReviewAppAsync** впервые появился в Windows 10, версия 1809, и может использоваться только в проектах, предназначенных для **Windows 10 октября 2018 г. Update (10.0; Сборка 17763)** или более поздней версии в Visual Studio.
+**RequestRateAndReviewAppAsync** метод появился в Windows 10, версия 1809, и может использоваться только в проектах, предназначенных **Windows 10 октября 2018 Update (10.0; Сборка 17763)** или более поздней версии, в Visual Studio.
 
 ### <a name="response-data-for-the-rating-and-review-request"></a>Данные ответов для запросов на оценку и отзыв
 
-После отправки этого запроса для отображения оценки и отзыва диалоговое окно, свойство [ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) класса [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult) содержит строку формата JSON, указывающий, является ли запрос выполнен успешно.
+После отправки запроса, чтобы отобразить оценку и просмотрите диалоговое окно, [ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) свойство [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult) класс содержит строку в формате JSON, указывающее, является ли запрос выполнен успешно.
 
 В следующем примере показано возвращаемое значение для данного запроса после успешной отправки оценки или отзыва пользователем.
 
@@ -132,9 +132,9 @@ private async Task PromptUserToRateApp()
 
 | Поле          | Описание                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| *status*       | Строка, указывающая, оставил ли пользователь оценку или отзыв. Поддерживаются значения **success** и **aborted**. |
-| *data*         | Объект, содержащий одно логическое значение с именем *updated*. Это значение указывает, обновил ли пользователь существующую оценку или отзыв. Объект *data* включается только в ответы при успешном завершении. |
-| *errorDetails* | Строка, содержащая информацию об ошибках для запроса.                                                                                     |
+| *состояние*       | Строка, указывающая, оставил ли пользователь оценку или отзыв. Поддерживаются значения **success** и **aborted**. |
+| *Данные*         | Объект, содержащий одно логическое значение с именем *updated*. Это значение указывает, обновил ли пользователь существующую оценку или отзыв. Объект *data* включается только в ответы при успешном завершении. |
+| *ErrorDetails* | Строка, содержащая информацию об ошибках для запроса.                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>Запуск страницы оценки и отзыва страницы для вашего приложения в Store
 
@@ -149,11 +149,11 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 ## <a name="analyze-your-ratings-and-reviews-data"></a>Анализ данных оценок и отзывов
 
 Для анализа данных оценок и отзывов пользователей есть несколько вариантов:
-* Отчет [отзывы](../publish/reviews-report.md) в центре партнеров можно использовать для просмотра оценок и отзывов пользователей. Также можно скачать этот отчет для просмотра в автономном режиме.
+* Можно использовать [просматривает](../publish/reviews-report.md) отчетов в центре партнеров, чтобы увидеть рейтинги и отзывы от клиентов. Также можно скачать этот отчет для просмотра в автономном режиме.
 * Можно использовать методы [Получения оценок приложения](get-app-ratings.md) и [Получения отзывов на приложение](get-app-reviews.md) в API аналитики Microsoft Store, чтобы программным образом получить оценки и отзывы пользователей в формате JSON.
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Отправка запросов в Store](send-requests-to-the-store.md)
-* [Запуск приложения Microsoft Store](../launch-resume/launch-store-app.md)
-* [Отчет "Отзывы"](../publish/reviews-report.md)
+* [Отправлять запросы к Store](send-requests-to-the-store.md)
+* [Запустите приложение Microsoft Store](../launch-resume/launch-store-app.md)
+* [Отчет "Рецензии"](../publish/reviews-report.md)

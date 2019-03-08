@@ -7,11 +7,11 @@ keywords: начало работы, uwp, windows 10, обучающий кур�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4aa56bf24d2dfa1fd4ae1947a5b0edf7f312ea2f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931902"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614639"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>Загрузка и сохранение параметров в приложении UWP
 
@@ -89,17 +89,17 @@ if (composite != null)
 | [ApplicationData.LocalSettings](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.temporaryfolder) | Получает контейнер параметров приложения из локального хранилища данных приложения. |
 | [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | Получает контейнер параметров приложения из перемещаемого хранилища данных приложения. |
 | [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | Контейнер для параметров приложения, который поддерживает создание, удаление, перечисление и обход иерархии контейнеров. |
-| [Windows.UI.ApplicationSettings Namespace](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Содержит классы, которые вы будете использовать для определения параметров приложения, отображающихся на панели параметров оболочки Windows. |
+| [Пространство имен Windows.UI.ApplicationSettings](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Содержит классы, которые вы будете использовать для определения параметров приложения, отображающихся на панели параметров оболочки Windows. |
 
 ### <a name="useful-docs"></a>Полезные документы
 
-| Статья | Описание |
+| Раздел | Описание |
 |-------|----------------|
-| [Руководство по параметрам приложений](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | Рекомендации по созданию и отображению параметров приложения. |
+| [Рекомендации по настройке параметров приложения](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | Рекомендации по созданию и отображению параметров приложения. |
 | [Хранение и извлечение параметров и прочих данных приложения](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | Руководство по сохранению и извлечению параметров, включая перемещаемые параметры. |
 
 ## <a name="useful-code-samples"></a>Полезные примеры кода
 
 | Пример кода | Описание |
 |-----------------|---------------|
-| [Образец данных приложения](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) | В сценариях 2–4 рассказывается о работе с параметрами |
+| [Пример данных приложения](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) | В сценариях 2–4 рассказывается о работе с параметрами |

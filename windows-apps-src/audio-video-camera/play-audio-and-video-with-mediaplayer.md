@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d33a2bf1505618dca4e0e54c2bd9a534f58bcfc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938415"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628209"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Воспроизведение аудио и видео с помощью MediaPlayer
 
@@ -20,7 +20,7 @@ ms.locfileid: "8938415"
 Эта статья содержит подробный разбор функций **MediaPlayer**, которые обычно используются в приложениях для воспроизведения мультимедиа. Обратите внимание, что **MediaPlayer** использует класс [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) в качестве контейнера для всех элементов мультимедиа. Этот класс позволяет загружать и воспроизводить мультимедиа из множества различных источников, включая локальные файлы, потоки в памяти и сетевые источники, с использованием одного интерфейса. Также существуют классы более высокого уровня, совместимые с **MediaSource**, например [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) и [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList), которые предоставляют расширенные возможности, такие как списки воспроизведения, и обеспечивают способность работать с источниками мультимедиа, содержащими несколько дорожек видео-, аудио- и метаданных. Подробные сведения о классе **MediaSource** и связанных с ним API см. в разделе [Элементы, плей-листы и звуковые дорожки мультимедиа](media-playback-with-mediasource.md).
 
 > [!NOTE] 
-> В выпусках Windows 10 N и Windows 10 KN нет компонентов мультимедиа, необходимых для использования **MediaPlayer** для воспроизведения. Эти компоненты можно установить вручную. Дополнительные сведения см. в разделе [Пакет дополнительных компонентов для работы с мультимедиа для выпусков Windows10N и Windows10KN](https://support.microsoft.com/en-us/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions).
+> В выпусках Windows 10 N и Windows 10 KN нет компонентов мультимедиа, необходимых для использования **MediaPlayer** для воспроизведения. Эти компоненты можно установить вручную. Дополнительные сведения см. в разделе [Пакет дополнительных компонентов для работы с мультимедиа для выпусков Windows 10 N и Windows 10 KN](https://support.microsoft.com/en-us/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions).
 
 ## <a name="play-a-media-file-with-mediaplayer"></a>Воспроизведение файла мультимедиа с помощью MediaPlayer  
 Простое воспроизведение мультимедиа с помощью **MediaPlayer** реализовать очень легко. Сначала создайте новый экземпляр класса **MediaPlayer**. Ваше приложение может содержать несколько активных экземпляров **MediaPlayer** одновременно. Затем задайте свойству [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) проигрывателя значение объекта, реализующего [**IMediaPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.IMediaPlaybackSource), такого как [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) или [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList). В этом примере **MediaSource** создается из файла в локальном хранилище приложения, затем из источника создается **MediaPlaybackItem** и далее назначается свойству **Source** проигрывателя.
@@ -38,7 +38,7 @@ ms.locfileid: "8938415"
 
 [!code-xml[MediaPlayerElementXAML](./code/MediaPlayer_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
-Вы можете задать экземпляр **MediaPlayer**, к которому привязан элемент управления, вызвав метод [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764).
+Вы можете задать экземпляр **MediaPlayer**, к которому привязан элемент управления, путем вызова [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764).
 
 [!code-cs[SetMediaPlayer](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetMediaPlayer)]
 
@@ -104,7 +104,7 @@ ms.locfileid: "8938415"
 
 [!code-cs[DeclareSourceRect](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareSourceRect)]
 
-Обработчик **ManipulationDelta** подстраивает либо масштаб, либо перемещение прямоугольника масштабирования. Если значение изменения масштаба не равно 1, это означает, что пользователь выполнил жест сжатия. Если значение больше 1, прямоугольник источника необходимо уменьшить для увеличения содержимого. Если значение меньше 1, то прямоугольник источника необходимо сделать больше для уменьшения масштаба. Перед установкой новых значений масштабирования проверятся целевой прямоугольник, чтобы он находится в пределах (0,0,1,1).
+Обработчик **ManipulationDelta** подстраивает либо масштаб, либо перемещение прямоугольника масштабирования. Если значение изменения масштаба не равно 1, это означает, что пользователь выполнил жест сжатия. Если значение больше 1, прямоугольник источника необходимо уменьшить для увеличения содержимого. Если значение меньше 1, прямоугольник источника необходимо увеличить, чтобы отдалить содержимое. Перед установкой новых значений масштабирования образуемый прямоугольник проверяется на предмет полного размещения в пределах (0,0,1,1).
 
 Если значение масштабирования равно 1, обрабатывается жест перемещения. Прямоугольник просто перемещается на количество пикселей в жесте, разделенное на ширину и высоту элемента управления. И снова образуемый прямоугольник проверяется на предмет полного размещения в границах (0,0,1.1).
 
@@ -112,7 +112,7 @@ ms.locfileid: "8938415"
 
 [!code-cs[ManipulationDelta](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-В обработчике событий [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.DoubleTapped) прямоугольник источника возвращается к значениям (0,0,1,1), что приводит к отрисовке всего видеокадра.
+В обработчике событий [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.DoubleTapped) прямоугольник источника возвращается к значениям (0,0,1,1), что влечет отрисовку всего видеокадра.
 
 [!code-cs[DoubleTapped](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDoubleTapped)]
 
@@ -143,7 +143,7 @@ ms.locfileid: "8938415"
 
 [!code-cs[SetTimelineController](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetTimelineController)]
 
-**Внимание!** [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) обеспечивает автоматическую интеграцию **MediaPlayer** и системных элементов управления транспортом мультимедиа (SMTC), однако эта автоматическая интеграция не может использоваться с проигрывателями мультимедиа, которыми управляет **MediaTimelineController**. Поэтому перед установкой контроллера временной шкалы проигрывателя необходимо отключить менеджер команд для проигрывателя мультимедиа. Невыполнение этого условия приведет к созданию исключения со следующим сообщением: "Attaching Media Timeline Controller is blocked because of the current state of the object" (Прикрепление контроллера временной шкалы мультимедиа заблокировано в связи с текущим состоянием объекта). Подробные сведения об интеграции проигрывателя с SMTC см. в разделе [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md). Если вы используете **MediaTimelineController**, управление SMTC по-прежнему можно осуществлять вручную. Дополнительные сведения см. в разделе [Ручное управление системными элементами управления воспроизведением мультимедиа](system-media-transport-controls.md).
+**Внимание!**[**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) обеспечивает автоматическую интеграцию **MediaPlayer** и системных элементов управления транспортом мультимедиа (SMTC), однако эта автоматическая интеграция не может использоваться с проигрывателями мультимедиа, которыми управляет **MediaTimelineController**. Поэтому перед установкой контроллера временной шкалы проигрывателя необходимо отключить менеджер команд для проигрывателя мультимедиа. Невыполнение этого требования приведет к возникновению исключения со следующим сообщением: «Присоединение контроллера временной шкалы мультимедиа блокируется из-за текущего состояния объекта.» Подробные сведения об интеграции проигрывателя с SMTC см. в разделе [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md). Если вы используете **MediaTimelineController**, управление SMTC по-прежнему можно осуществлять вручную. Дополнительные сведения см. в разделе [Ручное управление системными элементами управления воспроизведением мультимедиа](system-media-transport-controls.md).
 
 После прикрепления **MediaTimelineController** к одному или нескольким проигрывателям мультимедиа управлять состоянием воспроизведения можно с помощью методов, предоставляемых контроллером. В следующем примере производится вызов [**Start**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController.Start), чтобы начать воспроизведение с начала мультимедийного содержимого на всех связанных проигрывателях.
 
@@ -180,7 +180,7 @@ ms.locfileid: "8938415"
 
 [!code-cs[OffsetSliders](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOffsetSliders)]
 
-В событии [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Primitives.RangeBase.ValueChanged) для каждого ползунка свойству **TimelineControllerPositionOffset** каждого проигрывателя задается соответствующее значение.
+В событии [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Primitives.RangeBase.ValueChanged) для каждого ползунка свойству **TimelineControllerPositionOffset** для каждого проигрывателя задается соответствующее значение.
 
 [!code-cs[TimelineOffset](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetTimelineOffset)]
 
@@ -214,13 +214,13 @@ ms.locfileid: "8938415"
 ## <a name="use-mediaplayer-in-frame-server-mode"></a>Использование MediaPlayer в режиме сервера кадров
 Начиная с Windows 10 версии 1703, можно использовать **MediaPlayer** в режиме сервера кадров. В этом режиме **MediaPlayer** не выполняет автоматическую отрисовку кадров для соответствующего элемента **MediaPlayerElement**. Вместо этого ваше приложение копирует текущий кадр из **MediaPlayer** в объект, реализующий [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). Основной сценарий, который реализует эта функция, заключается обработке видеокадров, предоставляемых **MediaPlayer**, с помощью построителей текстуры. Ваше приложение отвечает за отображение каждого кадра после обработки, например отображение кадра в элементе управления XAML [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image).
 
-В следующем примере инициализируется новый **MediaPlayer** и загружается видео. Затем регистрируется обработчик для события [**VideoFrameAvailable**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.VideoFrameAvailable). Чтобы включить режим сервера кадров, задайте для свойства объекта **MediaPlayer** [**IsVideoFrameServerEnabled**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.IsVideoFrameServerEnabled) значение **true**. Наконец, начните воспроизведение мультимедиа, вызвав метод [**Play**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play).
+В следующем примере инициализируется новый **MediaPlayer** и загружается видео. Затем регистрируется обработчик для события [**VideoFrameAvailable**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.VideoFrameAvailable). Чтобы включить режим сервера кадров, задайте для свойства объекта **MediaPlayer**[**IsVideoFrameServerEnabled**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.IsVideoFrameServerEnabled) значение **true**. Наконец, начните воспроизведение мультимедиа, вызвав метод [**Play**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play).
 
 [!code-cs[FrameServerInit](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetFrameServerInit)]
 
 В следующем примере показан обработчик для события **VideoFrameAvailable**, использующий [Win2D](https://github.com/Microsoft/Win2D) для добавления простого эффекта размытия в каждый кадр видео. Затем обработанные кадры отображаются в элементе управления XAML [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image).
 
-Каждый раз, когда вызывается обработчик события **VideoFrameAvailable**, метод [**CopyFrameToVideoSurface**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.copyframetovideosurface) используется для копирования содержимого кадра в [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). Также можно использовать [**CopyFrameToStereoscopicVideoSurfaces**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.copyframetostereoscopicvideosurfaces) для копирования трехмерного содержимого в две плоскости, с отдельной обработкой данных для левого и правого глаза. Для получения объекта, реализующего **IDirect3DSurface**, в этом примере создается объект [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap). Этот объект впоследствии используется для создания объекта Win2D **CanvasBitmap**, реализующего необходимый интерфейс. **CanvasImageSource**— это объект Win2D, который можно использовать в качестве источника для элемента управления **Image**, поэтому создается новый объект и указывается в качестве источника для элемента управления **Image**, в котором отображается содержимое. Далее создается **CanvasDrawingSession**. Win2D использует этот объект для отрисовки эффекта размытия.
+Каждый раз, когда вызывается обработчик события **VideoFrameAvailable**, метод [**CopyFrameToVideoSurface**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.copyframetovideosurface) используется для копирования содержимого кадра в [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). Также можно использовать [**CopyFrameToStereoscopicVideoSurfaces**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.copyframetostereoscopicvideosurfaces) для копирования трехмерного содержимого в две плоскости, с отдельной обработкой данных для левого и правого глаза. Для получения объекта, реализующего **IDirect3DSurface**, в этом примере создается объект [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap). Этот объект впоследствии используется для создания объекта Win2D **CanvasBitmap**, реализующего необходимый интерфейс. **CanvasImageSource** — это объект Win2D, который можно использовать в качестве источника для элемента управления **Image**, поэтому создается новый объект и указывается в качестве источника для элемента управления **Image**, в котором отображается содержимое. Далее создается **CanvasDrawingSession**. Win2D использует этот объект для отрисовки эффекта размытия.
 
 После создания экземпляров всех необходимых объектов вызывается метод **CopyFrameToVideoSurface**, который копирует текущий кадр из **MediaPlayer** в **CanvasBitmap**. Затем создается объект Win2D **GaussianBlurEffect**, а **CanvasBitmap** указывается в качестве источника операции. Наконец, вызывается функция **CanvasDrawingSession.DrawImage** для рисования исходного изображения с примененным эффектом размытия. Это изображение передается в **CanvasImageSource**, связанный с элементом управления **Image**, и отрисовывается в пользовательском интерфейсе.
 
@@ -228,12 +228,12 @@ ms.locfileid: "8938415"
 
 Дополнительные сведения об использовании Win2D см. в [репозитории Win2D в GitHub](https://github.com/Microsoft/Win2D). Чтобы протестировать приведенный выше пример кода, необходимо добавить в проект пакет Win2D NuGet (см. инструкции ниже).
 
-**Добавление пакета Win2D NuGet в проект эффекта**
+**Чтобы добавить пакет Win2D NuGet в проект эффект**
 
 1.  В **обозревателе решений** щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**.
 2.  В верхней части окна выберите вкладку **Обзор**.
 3.  В поле поиска введите **Win2D**.
-4.  Выберите **Win2D.uwp**, а затем— **Установить** в области справа.
+4.  Выберите **Win2D.uwp**, а затем — **Установить** в области справа.
 5.  В диалоговом окне **Просмотр изменений** отобразится назначенный для установки пакет. Нажмите кнопку **ОК**.
 6.  Примите условия лицензии пакета.
 
@@ -258,9 +258,9 @@ ms.locfileid: "8938415"
 
 ## <a name="related-topics"></a>Статьи по теме
 * [Воспроизведение мультимедиа](media-playback.md)
-* [Элементы, плей-листы и звуковые дорожки мультимедиа](media-playback-with-mediasource.md)
-* [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md)
-* [Создание, планирование и управление перерывами при воспроизведении мультимедиа](create-schedule-and-manage-media-breaks.md)
+* [Элементы мультимедиа, списки воспроизведения и дорожек](media-playback-with-mediasource.md)
+* [Интеграция с элементами управления мультимедиа Sytem транспорта](integrate-with-systemmediatransportcontrols.md)
+* [Создавать, планировать и управлять разрывы мультимедиа](create-schedule-and-manage-media-breaks.md)
 * [Воспроизведение мультимедиа в фоновом режиме](background-audio.md)
 
 

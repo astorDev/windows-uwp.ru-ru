@@ -1,16 +1,16 @@
 ---
-Description: View multiple parts of your app in separate windows.
+Description: Просмотр нескольких частей приложения в отдельных окнах.
 title: Отображение нескольких представлений для приложения
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed69dc912e916f7964c125550621c22dfcd9555
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049066"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607629"
 ---
 # <a name="show-multiple-views-for-an-app"></a>Отображение нескольких представлений для приложения
 
@@ -18,7 +18,7 @@ ms.locfileid: "9049066"
 
 Помогите пользователям работать эффективнее, дав им возможность открывать независимые компоненты приложения в отдельных окнах. Если создать для приложения несколько окон, каждое окно будет работать независимо. На панели задач каждое окно отображается отдельно. Пользователи могут перемещать, отображать, скрывать окна приложения и менять их размеры независимо друг от друга, а также переключаться между окнами, как будто это разные приложения. Каждое окно работает в собственном потоке.
 
-> **Важные API-интерфейсы**: [**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094), [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
+> **Важные API-интерфейсы**: [**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094), [ **CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
 ## <a name="when-should-an-app-use-multiple-views"></a>Когда приложение должно использовать несколько представлений?
 Существует ряд сценариев, для которых может быть удобным использование нескольких представлений. Вот несколько примеров.
@@ -30,9 +30,9 @@ ms.locfileid: "9049066"
 
 Для создания отдельных экземпляров приложения см. раздел [Создание нескольких экземпляров приложения UWP](../../launch-resume/multi-instance-uwp.md).
 
-## <a name="what-is-a-view"></a>Что такое представление?
+## <a name="what-is-a-view"></a>Что такое представление приложения?
 
-Представление приложения— это совокупность 1:1 потока и окна, которая используется приложением для отображения содержимого. Оно представляется объектом [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017).
+Представление приложения — это совокупность 1:1 потока и окна, которая используется приложением для отображения содержимого. Оно представляется объектом [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017).
 
 Представления управляются объектом [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016). Необходимо вызвать [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278), чтобы создать объект [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). **CoreApplicationView** объединяет [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) и [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) (которые хранятся в свойствах [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) и [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/dn433264)). **CoreApplicationView** можно считать объектом, который использует среда выполнения Windows для взаимодействия с основной системой Windows.
 
@@ -65,7 +65,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Отображение нового представления**
+**Чтобы отобразить новое представление**
 
 1.  Вызовите [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297291), чтобы создать новое окно и поток для содержимого представления.
 
@@ -85,7 +85,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
     При помощи метода [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) запланируйте задачу в потоке пользовательского интерфейса для нового представления. Используйте [лямбда-выражение](https://go.microsoft.com/fwlink/p/?LinkId=389615), чтобы передать функцию методу **RunAsync** как аргумент. Результаты работы лямбда-функции влияют на поток нового представления.
 
-    В XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) обычно добавляется к свойству [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041), а затем выполняется переход **Frame** к [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503), где определено содержимое приложения. Подробнее см. в разделе [Одноранговая навигация между двумя страницами](../basics/navigate-between-two-pages.md).
+    В XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) обычно добавляется к свойству [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051)[**Window**](https://msdn.microsoft.com/library/windows/apps/br209041), а затем выполняется переход **Frame** к [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503), где определено содержимое приложения. Подробнее см. в разделе [Одноранговая навигация между двумя страницами](../basics/navigate-between-two-pages.md).
 
     После заполнения нового [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) необходимо вызвать метод [**Activate**](https://msdn.microsoft.com/library/windows/apps/br209046)&nbsp;**Window** для отображения **Window** позднее. Результаты влияют на поток нового представления, так что активируется новое **Window**.
 
@@ -117,7 +117,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 Первое представление, создаваемое при запуске приложения, называется *главным*. Это представление хранится в свойстве [**CoreApplication.MainView**](https://msdn.microsoft.com/library/windows/apps/hh700465), и его свойство [**IsMain**](https://msdn.microsoft.com/library/windows/apps/hh700452) имеет значение true. Вам не нужно создавать это представление, его создает приложение. Поток главного представления служит диспетчером для приложения, и события активации в приложении происходят в этом потоке.
 
-Если открыты вспомогательные представления, окно главного представления может быть скрыто, например, по нажатию кнопки закрытия (x) на панели заголовка окна, но его поток остается активным. Вызов [**Close**](https://msdn.microsoft.com/library/windows/apps/br209049) в [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) главного представления приведет к возникновению **InvalidOperationException**. (Чтобы закрыть приложение, используйте [**Application.Exit**](https://msdn.microsoft.com/library/windows/apps/br242327).) Если работа потока главного представления завершается, приложение закрывается.
+Если открыты вспомогательные представления, окно главного представления может быть скрыто, например, по нажатию кнопки закрытия (x) на панели заголовка окна, но его поток остается активным. Вызов [**Close**](https://msdn.microsoft.com/library/windows/apps/br209049) в [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) главного представления приведет к возникновению **InvalidOperationException**. (Используйте [ **Application.Exit** ](https://msdn.microsoft.com/library/windows/apps/br242327) чтобы закрыть приложение.) Если основное представление поток завершается, приложение закрывается.
 
 ## <a name="secondary-views"></a>Дополнительные представления
 
@@ -137,7 +137,7 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 Используя [**SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097), можно определить, следует ли закрыть начальное окно и удалить его из панели задач, указав значение [**ApplicationViewSwitchingOptions**](https://msdn.microsoft.com/library/windows/apps/dn281105).
 
-## <a name="dos-and-donts"></a>Рекомендации
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
 * Укажите четкую точку входа в дополнительное представление, используя значок «открыть новое окно».
 * Обсудите цель предоставления дополнительного представления для пользователей.

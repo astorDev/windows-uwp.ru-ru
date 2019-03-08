@@ -8,13 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d84bbebfaf19b756e6abc6c592187b6b0ee92200
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945045"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618469"
 ---
-# <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>Оконный или полноэкранный режим
+# <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>Оконные и полноэкранном режиме
 
 
 Приложения Direct3D могут работать в одном из двух режимов: оконном или полноэкранном. В *оконном режиме* приложение делит доступное пространство рабочего стола со всеми запущенными приложениям. В *полноэкранном режиме* окно, в котором запущено приложение, занимает весь рабочий стол и скрывает все остальные запущенные приложения (включая среду разработки). Игры обычно по умолчанию запускаются в полноэкранном режиме и скрывают все другие работающие приложения, чтобы дать пользователю возможность полностью погрузиться в игру.
@@ -23,7 +23,7 @@ ms.locfileid: "8945045"
 
 Поскольку приложение, запущенное в полноэкранном экране, занимает весь экран, для отладки этого приложения требуется отдельный монитор или удаленный отладчик. Одним из преимуществ приложения в оконном режиме является то, что код можно выполнять по шагам в отладчике без дополнительных мониторов или удаленного отладчика.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Устройства](devices.md)

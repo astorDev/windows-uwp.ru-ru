@@ -7,20 +7,20 @@ keywords: windows 10, uwp, пример кода, примеры кода
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049721"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598539"
 ---
 # <a name="get-uwp-app-samples"></a>Получение примеров приложений UWP
 
 Примеры приложений универсальной платформы Windows (UWP) доступны в репозиториях на GitHub. См. раздел [Примеры](https://developer.microsoft.com/windows/samples "Примеры из Центра разработки") чтобы воспользоваться сгруппированным списком с возможностью поиска, или обратитесь к репозиторию [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Репозиторий примеров приложений универсальной платформы Windows на GitHub"), который содержит примеры, демонстрирующие все функции UWP и шаблоны использования их API.  
-![Репозиторий примеров UWP в GitHub](images/GitHubUWPSamplesPage.png)
+![Пример репозитория GitHub универсальной платформы Windows](images/GitHubUWPSamplesPage.png)
 
 ## <a name="download-the-code"></a>Скачать код
 
-Чтобы скачать примеры, перейдите в [репозиторий](https://github.com/Microsoft/Windows-universal-samples "Репозиторий примеров приложений универсальной платформы Windows на GitHub") и выберите **Клонировать или скачать**, а затем— **Скачать ZIP-файл**. Или просто нажмите [здесь](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "Скачать ZIP-файл с примерами приложений универсальной платформы Windows").
+Чтобы скачать примеры, перейдите в [репозиторий](https://github.com/Microsoft/Windows-universal-samples "Репозиторий примеров приложений универсальной платформы Windows на GitHub") и выберите **Клонировать или скачать**, а затем — **Скачать ZIP-файл**. Или просто нажмите [здесь](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "Скачать ZIP-файл с примерами приложений универсальной платформы Windows").
 
 В этом ZIP-файле вы всегда найдете актуальные примеры. Учетная запись GitHub для скачивания не требуется. Если выпущено обновление SDK или необходимо получить только последние изменения и добавления, просто скачайте актуальный ZIP-файл.
 
@@ -45,7 +45,7 @@ ms.locfileid: "9049721"
 
     ![Языковые папки](images/SamplesUnzip3.png)
 
-4.  Выберите язык, который требуется использовать, например CS или C\#, и вы увидите файл решения Visual Studio, который можно открыть в Visual Studio.
+4.  Выберите язык, который вы хотите использовать, например CS для C\#, и вы увидите файл решения Visual Studio, которое можно открыть в Visual Studio.
 
     ![Решение VS](images/SamplesUnzip4.png)
 

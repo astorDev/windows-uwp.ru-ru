@@ -1,5 +1,5 @@
 ---
-Description: You can programmatically pin your app to the taskbar,  bnd you can check if it's currently pinned.
+Description: Вы можете программно закрепить приложение на панели задач и проверить, закреплено ли оно в данный момент.
 title: Закрепление приложения на панели задач
 template: detail.hbs
 ms.date: 02/08/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, панель задач, диспетчер панели задач, закрепление на панели задач, основная плитка
 ms.localizationpriority: medium
 ms.openlocfilehash: 640dc637a1c50718210d87af87cb8b8e706a5ab7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937572"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604099"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>Закрепление приложения на панели задач
 
@@ -20,9 +20,9 @@ ms.locfileid: "8937572"
 ![Панель задач](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
-> **Требуется обновление Fall Creators Update**. Обратите внимание, что для использования API панели задач необходим пакет SDK 16299 и сборка 16299 или более поздней версии.
+> **Требуется Fall Creators Update**: Вы должны быть предназначены SDK 16299 и выполняться сборка 16299 или более поздней, чтобы воспользоваться панелью задач API-интерфейсы.
 
-> **Важные API-интерфейсы**: [класс TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
+> **Важные API-интерфейсы**: [Класс TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>Когда следует попросить пользователя закрепить приложение на панели задач? 
@@ -36,7 +36,7 @@ ms.locfileid: "8937572"
 * **Не** вызывайте API закрепления без явного взаимодействия с пользователем или при сворачивании либо неоткрытии приложения.
 
 
-## <a name="1-check-whether-the-required-apis-exist"></a>1. Проверьте, существует ли требуемые API.
+## <a name="1-check-whether-the-required-apis-exist"></a>1. Проверьте, существует ли требуемых API
 
 Если ваше приложение поддерживает более ранние версии Windows 10, необходимо проверить, доступен ли класс TaskbarManager. Вы можете использовать [метод ApiInformation.IsTypePresent](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_) для этой проверки. Если класс TaskbarManager недоступен, исключите любые вызовы API.
 
@@ -53,7 +53,7 @@ else
 ```
 
 
-## <a name="2-check-whether-taskbar-is-present-and-allows-pinning"></a>2. Проверьте, присутствует ли панель задач и допускает ли она закрепление.
+## <a name="2-check-whether-taskbar-is-present-and-allows-pinning"></a>2. Присутствует и позволяет закрепления панели задач
 
 Приложения UWP могут работать на различных устройствах, и не все из них поддерживают панель задач. Сейчас ее поддерживают только настольные компьютеры. 
 
@@ -68,7 +68,7 @@ bool isPinningAllowed = TaskbarManager.GetDefault().IsPinningAllowed;
 > Если вы не собираетесь закреплять приложение на панели задач и просто хотите узнать, доступна ли панель задач, используйте [свойство TaskbarManager.IsSupported](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsSupported).
 
 
-## <a name="3-check-whether-your-app-is-currently-pinned-to-the-taskbar"></a>3. Проверьте, не закреплено ли ваше приложение на панели задач в данный момент.
+## <a name="3-check-whether-your-app-is-currently-pinned-to-the-taskbar"></a>3. Проверьте, закреплен ли в настоящее время приложения на панели задач
 
 Очевидно, что нет смысла просить пользователя закрепить приложение на панели задач, если оно уже закреплено. Вы можете использовать [метод TaskbarManager.IsCurrentAppPinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsCurrentAppPinnedAsync), чтобы проверить, закреплено ли приложение, перед тем как обращаться к пользователю.
 
@@ -87,7 +87,7 @@ else
 ```
 
 
-##  <a name="4-pin-your-app"></a>4. Закрепите ваше приложение.
+##  <a name="4-pin-your-app"></a>4. Закрепление приложения
 
 Если панель задач присутствует, закрепление разрешено и приложение в настоящее время не закреплено, вы можете показать подсказку, чтобы сообщить пользователям, что они могут закрепить ваше приложение. Например, можно отобразить значок закрепления в интерфейсе, который пользователь может щелкнуть. 
 
@@ -108,6 +108,6 @@ bool isPinned = await TaskbarManager.GetDefault().RequestPinCurrentAppAsync();
 
 ## <a name="resources"></a>Ресурсы
 
-* [Полный пример кода на GitHub](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
+* [Полный образец кода на GitHub](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
 * [Класс TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
-* [Закрепление приложения в меню "Пуск"](tiles-and-notifications/primary-tile-apis.md)
+* [ПИН-код приложения с меню "Пуск"](tiles-and-notifications/primary-tile-apis.md)

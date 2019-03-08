@@ -6,37 +6,37 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b444a11ab032034976d2f1b269bd10a89bf339e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928988"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593079"
 ---
-# <a name="tutorial-create-adaptive-layouts"></a>Учебник: создание адаптивных макетов
+# <a name="tutorial-create-adaptive-layouts"></a>Учебник. Создание адаптивных макетов
 
 В этом учебнике рассматриваются основы использования возможностей языка XAML по созданию адаптивных и специально разработанных макетов. Эти возможности помогают создавать приложения, которые выглядят отлично на любом устройстве. Вы узнаете, как создать новый шаблон DataTemplate, добавить точки прикрепления окна и адаптировать макет приложения с помощью элементов VisualStateManager и AdaptiveTrigger. С помощью этих средств мы оптимизируем программу редактирования изображений для устройств с небольшими экранами. 
 
 Программа редактирования изображений, над которой вы будете работать, содержит две страницы/экрана.
 
-**Главная страница**— отображает представление фотоальбома, а также некоторые сведения о каждой файле изображения.
+**Главная страница** — отображает представление фотоальбома, а также некоторые сведения о каждой файле изображения.
 
 ![MainPage](../basics/images/xaml-basics/mainpage.png)
 
-**Страница сведений**— отображает одну выбранную фотографию. Всплывающее меню редактирования позволяет изменить, переименовать и сохранить фотографию.
+**Страница сведений** — отображает одну выбранную фотографию. Всплывающее меню редактирования позволяет изменить, переименовать и сохранить фотографию.
 
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
 
-## <a name="prerequisites"></a>Что вам понадобится
+## <a name="prerequisites"></a>Предварительные условия
 
-* Visual Studio 2017: [скачать Visual Studio Community 2017 (бесплатно)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
-* Пакет SDK для Windows 10 (10.0.15063.468 или более поздней версии): [скачать последнюю версию Windows SDK (бесплатно)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Мобильный эмулятор Windows: [скачать мобильный эмулятор Windows 10 (бесплатно)](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+* Visual Studio 2017: [Скачайте Visual Studio 2017 Community (бесплатно)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Пакет SDK для Windows 10 (10.0.15063.468 или более поздней версии):  [Загрузка последней версии Windows SDK (бесплатно)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* Эмулятор мобильных устройств с Windows: [Скачать эмулятор Windows 10 мобильных устройств (бесплатно)](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 
-## <a name="part-0-get-the-starter-code-from-github"></a>Часть 0. Получите начальный код на GitHub
+## <a name="part-0-get-the-starter-code-from-github"></a>Часть 0. Получение начального кода из github
 
 В этом руководстве мы начнем с упрощенной версии примера PhotoLab. 
 
-1. Перейдите в раздел [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). Вы перейдете на страницу GitHub с примером кода. 
+1. Перейдите к [ https://github.com/Microsoft/Windows-appsample-photo-lab ](https://github.com/Microsoft/Windows-appsample-photo-lab). Вы перейдете на страницу GitHub с примером кода. 
 2. Далее необходимо клонировать или скачать пример. Нажмите кнопку **Клонировать или скачать**. Откроется подменю.
     <figure>
         <img src="../basics/images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
@@ -45,17 +45,17 @@ ms.locfileid: "8928988"
 
     **Если вы не знакомы с GitHub:**
     
-    А. Нажмите кнопку **Скачать ZIP-файл** и сохраните его локально. Будет выполнено скачивание ZIP-файла с необходимыми файлами проекта.
-    Б. Извлеките файл. Используйте проводник, чтобы перейти к скачанному ZIP-файлу, щелкните его правой кнопкой мыши и выберите **Извлечь все...**. В. Перейдите к локальной копии примера кода, а затем в каталог `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout`.    
+    а. Нажмите кнопку **Скачать ZIP-файл** и сохраните его локально. Будет выполнено скачивание ZIP-файла с необходимыми файлами проекта.
+    б) Извлеките файл. Используйте проводник, чтобы перейти к скачанному ZIP-файлу, щелкните его правой кнопкой мыши и выберите **Извлечь все...**. В. Перейдите к локальной копии примера кода, а затем в каталог `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout`.    
 
     **Если вы знакомы с GitHub:**
 
-    А. Клонируйте основную ветвь репозитория локально.
-    Б. Перейдите в каталог `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout`.
+    а. Клонируйте основную ветвь репозитория локально.
+    б) Перейдите в каталог `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout`.
 
 3. Откройте проект, щелкнув `Photolab.sln`.
 
-## <a name="part-1-run-the-mobile-emulator"></a>Часть 1. Запуск мобильного эмулятора
+## <a name="part-1-run-the-mobile-emulator"></a>Часть 1. Запустить эмулятор мобильных устройств
 
 Убедитесь, что на панели инструментов Visual Studio в качестве платформы решения выбрана архитектура x86 или x64, а не ARM, а затем измените целевое с устройство с локального компьютера на один из установленных мобильных эмуляторов (например, Mobile Emulator 10.0.15063 WVGA 5 inch 1GB). Попробуйте запустить приложение "Фотоальбом" в выбранном мобильном эмуляторе с помощью клавиши **F5**.
 
@@ -63,7 +63,7 @@ ms.locfileid: "8928988"
 
 ![Мобильный макет: после](../basics/images/xaml-basics/adaptive-layout-mobile-before.png)
 
-## <a name="part-2-build-a-tailored-mobile-layout"></a>Часть 2. Создание специально разработанного мобильного макета
+## <a name="part-2-build-a-tailored-mobile-layout"></a>Часть 2. Создание специализированных макета для мобильных устройств
 Чтобы это приложение отлично смотрелось на небольших устройствах, мы создадим отдельный набор стилей на странице XAML, который будет использоваться только при обнаружении мобильного устройства.
 
 ### <a name="create-a-new-datatemplate"></a>Создание нового шаблона DataTemplate
@@ -133,7 +133,7 @@ ms.locfileid: "8928988"
 
 ### <a name="add-a-visualstatemanager-and-statetrigger"></a>Добавление элементов VisualStateManager и StateTrigger
 
-Мы создали новый макет для данных, но приложение еще не может понять, когда использовать этот макет вместо стилей по умолчанию. Чтобы исправить эту ситуацию, необходимо добавить элемент **VisualStateManager**. Добавьте следующий код в корневой элемент страницы— **RelativePanel**.
+Мы создали новый макет для данных, но приложение еще не может понять, когда использовать этот макет вместо стилей по умолчанию. Чтобы исправить эту ситуацию, необходимо добавить элемент **VisualStateManager**. Добавьте следующий код в корневой элемент страницы — **RelativePanel**.
 
 ```XAML
 <VisualStateManager.VisualStateGroups>
@@ -211,7 +211,7 @@ ms.locfileid: "8928988"
 
 ![Мобильный макет: после](../basics/images/xaml-basics/adaptive-layout-mobile-after.png)
 
-## <a name="part-3-adapt-to-multiple-window-sizes-on-a-single-device"></a>Часть 3. Адаптация под разные размеры экрана на одном устройстве
+## <a name="part-3-adapt-to-multiple-window-sizes-on-a-single-device"></a>Часть 3. Адаптироваться к несколько размеров окна на одном устройстве
 Создание нового специально разработанного макета решает проблему отзывчивого дизайна для мобильных устройств, но как обстоят дела с планшетами и настольными компьютерами? Приложение может хорошо выглядеть в полноэкранном режиме, но если пользователь уменьшит окно, интерфейс может отображаться неправильно. Мы можем обеспечить конечному пользователю удобный и красивый интерфейс путем использования элемента **VisualStateManager** для адаптации под разные размеры экрана на одном устройстве.
 
 ![Маленькое окно: до](../basics/images/xaml-basics/adaptive-layout-small-before.png)
@@ -317,12 +317,12 @@ ms.locfileid: "8928988"
 
 ## <a name="going-further"></a>Дальнейшая работа
 
-Завершив это практическое занятие, вы получили достаточный объем знаний об адаптивном макете, чтобы в дальнейшем экспериментировать самостоятельно. Попробуйте добавить элемент управления оценкой в добавленную ранее мобильную подсказку. Кроме того, попробуйте выполнить более сложную задачу— оптимизировать макет для большее крупных экранов (например, экранов телевизоров или Surface Studio)
+Завершив это практическое занятие, вы получили достаточный объем знаний об адаптивном макете, чтобы в дальнейшем экспериментировать самостоятельно. Попробуйте добавить элемент управления оценкой в добавленную ранее мобильную подсказку. Кроме того, попробуйте выполнить более сложную задачу — оптимизировать макет для большее крупных экранов (например, экранов телевизоров или Surface Studio)
 
 Если у вас возникнут проблемы, дополнительные рекомендации см. в следующих разделах статьи [Определение макетов страниц с помощью XAML](../layout/layouts-with-xaml.md).
 
-+ [Визуальные состояния и триггеры состояния](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [Специально разработанные макеты](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
++ [Визуальные состояния и состояния триггеров](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
++ [Специализированные макеты](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
 
 Кроме того, если вы хотите узнать больше о процессе создания изначального приложения для редактирования фотографий, ознакомьтесь с этими учебниками по [пользовательским интерфейсам](../basics/xaml-basics-ui.md) и [привязке данных](../../data-binding/xaml-basics-data-binding.md) в XAML.
 

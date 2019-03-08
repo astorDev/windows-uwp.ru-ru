@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 2c7dc6fab021c11c98276ee53af161bea25601a9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926503"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663359"
 ---
 # <a name="ssh-pins-api-reference"></a>Справочные материалы по API для PIN-кодов SSH
 Вы можете удалить все доверенные PIN-коды SSH в комплекте средств разработки, используя этот API REST.
@@ -18,11 +18,11 @@ ms.locfileid: "8926503"
 
 **Запрос**
 
-Метод      | URI запроса
+Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
 DELETE | /ext/app/sshpins
 <br />
-**Параметры универсального кода ресурса (URI)**
+**Параметры URI**
 
 - Нет
 
@@ -30,7 +30,7 @@ DELETE | /ext/app/sshpins
 
 - Нет
 
-**Тело запроса**   
+**Текст запроса**   
 
 - Нет
 
@@ -49,7 +49,7 @@ DELETE | /ext/app/sshpins
 5XX | Коды ошибок
 
 <br />
-**Доступные семейства устройств**
+**Семейств доступных устройств**
 
 * Windows Xbox
 

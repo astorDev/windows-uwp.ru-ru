@@ -1,28 +1,28 @@
 ---
 ms.assetid: 5aeb009c-1f2f-7c04-4477-cbe92c473174
-title: Страница сети (Dev Home)
-description: Предоставляет сведения о странице сеть главную страницу приложения для Xbox One.
+title: Страница сети (главная страница разработчика)
+description: Содержит сведения о странице сети в приложении Dev Home для Xbox One.
 ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 06d82b350cccfd90509f3b9f031de2785e91e0dc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943679"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646349"
 ---
-# <a name="networking-page-dev-home"></a>Страница сети (Dev Home)
+# <a name="networking-page-dev-home"></a>Страница сети (главная страница разработчика)
    
   
-Страницу " **сеть** " Dev Home имитирует различные сетевые условия для устранения неполадок. Он также позволяет для запуска трассировки сети пакетов.   
- ![Страница сети Dev Home](images/devhome_networking.png)   
+Страница **Сеть** на главной странице разработчика имитирует различные сетевые условия для устранения неполадок. Он также позволяет запустить трассировку пакетов сети.   
+ ![Странице разработки домашней сети](images/devhome_networking.png)   
   
-Страница **сети** содержит следующие области:   
+Страница **Сеть** содержит следующие области:   
  
-   *  [Сетевую симуляцию](#ID4EEB)  
+   *  [Сетевая Симуляция](#ID4EEB)  
    *  [XBTrace (netcap)](#ID4EOB)  
 
  
@@ -30,10 +30,10 @@ ms.locfileid: "8943679"
 
    
 
-## <a name="network-simulation"></a>Сетевую симуляцию  
+## <a name="network-simulation"></a>Network simulation  
    
   
-Области **сетевую симуляцию** запускает сетевую симуляцию, чтобы протестировать различные профили пропускной способности.   
+Панель **Network simulation** выполняет сетевую симуляцию, чтобы протестировать различные профили пропускной способности.   
   
 <a id="ID4EOB"></a>
 
@@ -42,13 +42,13 @@ ms.locfileid: "8943679"
 ## <a name="xbtrace-netcap"></a>XBTrace (netcap)  
    
   
-В области **XBTrace (netcap)** запускается или останавливается сетевой трассировки пакетов.   
+Панель **XBTrace (netcap)** запускает или останавливает трассировку пакетов сети.   
   
 <a id="ID4E2B"></a>
 
    
 
 ## <a name="see-also"></a>См. также  
- [Главная страница разработчика на консоли (Dev Home)](dev-home.md)
+ [Домашняя разработчика на консоль (Dev Home)](dev-home.md)
 
   

@@ -4,18 +4,18 @@ description: Узнайте, как ваше приложение распозн
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, uwp, фоновой задачи
+keywords: Windows 10, uwp, фоновую задачу
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 5417a2cded6dab98747569acc4e6e92356361482
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050827"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595819"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>Отслеживание хода выполнения и завершения фоновых задач
 
@@ -33,10 +33,10 @@ ms.locfileid: "9050827"
 
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>Создание обработчика событий для обработки завершенных фоновых задач
 
-### <a name="step-1"></a>Шаг 1
-Создайте функцию обработчика событий для обработки завершенных фоновых задач. Этот код должен объем памяти, которая принимает объект [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) и объект [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) .
+### <a name="step-1"></a>Шаг 1
+Создайте функцию обработчика событий для обработки завершенных фоновых задач. Этот код должен соответствовать определенной объем пространства, который принимает [ **IBackgroundTaskRegistration** ](https://msdn.microsoft.com/library/windows/apps/br224803) объекта и [ **BackgroundTaskCompletedEventArgs** ](https://msdn.microsoft.com/library/windows/apps/br224778) объекта.
 
-Используйте следующий объем памяти для **фоновых задач обработчика событий OnCompleted** .
+Используйте следующие занимаемое пространство **OnCompleted** фоновых метод обработчика событий для задач.
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
@@ -91,7 +91,7 @@ auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskComplete
 
 ## <a name="create-an-event-handler-function-to-handle-background-task-progress"></a>Создание функции обработчика событий для обработки хода выполнения фоновых задач
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 Создайте функцию обработчика событий для обработки завершенных фоновых задач. В этом коде необходимо использовать отдельный объем памяти, которая принимает объект [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) и объект [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782):
 
 Используйте следующий объем памяти для метода OnProgress обработчика событий фоновой задачи:
@@ -155,7 +155,7 @@ auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressE
 
 ## <a name="register-the-event-handler-functions-with-new-and-existing-background-tasks"></a>Регистрация функций обработчика событий в новых и существующих фоновых задачах
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 Когда приложение регистрирует фоновую задачу впервые, оно должно выполнить регистрацию, чтобы получить обновления выполнения и завершения для задачи, в случае если задача выполняется в то время, когда приложение еще работает на переднем плане.
 
 Например, в [образце фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666) для каждой регистрируемой фоновой задачи вызывается следующая функция:
@@ -288,15 +288,15 @@ void SampleBackgroundTask::OnNavigatedTo(NavigationEventArgs^ e)
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
-* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
-* [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
-* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
-* [Регистрация фоновой задачи](register-a-background-task.md)
-* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
-* [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
+* [Создание и регистрация вне процесса фоновой задачи](create-and-register-a-background-task.md)
+* [Объявите фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
+* [Обработка отменена фоновой задачи](handle-a-cancelled-background-task.md)
+* [Зарегистрировать фоновую задачу](register-a-background-task.md)
+* [Реакция на системные события с фоновыми задачами](respond-to-system-events-with-background-tasks.md)
+* [Задайте условия для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
 * [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)
-* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
+* [Выполнять фоновую задачу по таймеру](run-a-background-task-on-a-timer-.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Отладка фоновой задачи](debug-a-background-task.md)
-* [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Отладить фоновую задачу](debug-a-background-task.md)
+* [Активация приостановки, возобновления и фоновых событий для приложений универсальной платформы Windows (при отладке)](https://go.microsoft.com/fwlink/p/?linkid=254345)

@@ -1,42 +1,42 @@
 ---
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
 description: Приступая к работе с общими элементами управления
-title: Начало работы с общими элементами управления
+title: Приступая к работе с общими элементами управления
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ebba5abe0de8014a21d2e651534dacc118705fff
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050161"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610629"
 ---
-# <a name="getting-started-common-controls"></a>Начало работы: общие элементы управления
+# <a name="getting-started-common-controls"></a>Приступая к работе: Стандартные элементы управления
 
 
 ## <a name="common-controls-list"></a>Список общих элементов управления
 
-В предыдущем разделе вы работали только с двумя элементами управления: кнопками и текстовыми блоками. Разумеется, существует множество других элементов управления, которые будут доступны пользователю. Вот некоторые элементы управления, часто используемые в приложениях, и их аналоги в iOS. Элементы управления iOS перечислены в алфавитном порядке. Напротив них указаны эквивалентные элементы управления универсальной платформы Windows (UWP).
+В предыдущем разделе вы работали только с двумя элементами управления: кнопками и текстовыми блоками. Конечно, существует намного больше элементов, которые будут доступны пользователю. Вот некоторые элементы управления, часто используемые в приложениях, и их аналоги в iOS. Элементы управления iOS перечислены в алфавитном порядке. Напротив них указаны эквивалентные элементы управления универсальной платформы Windows (UWP).
 
 Довольно продуманной функцией элементов управления UWP является то, что они могут распознавать тип устройств, на которых они запущены, и менять свой внешний вид и функции соответствующим образом. Например, если в проекте используется элемент управления [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681), он достаточно продуман, чтобы самостоятельно оптимизировать внешний вид и вести себя на настольном компьютере иначе, чем на телефоне. Ничего делать не нужно: элементы управления настраиваются самостоятельно во время работы.
 
-| Элемент управления iOS (класс и протокол) | Эквивалентный элемент управления UWP |
+| Элемент управления iOS (класс и протокол) | Эквивалентный элемент управления универсальной платформы Windows |
 |------------------------------|--------------------------------------|
 | Индикатор действий (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> См. также [Краткое руководство. Добавление элементов управления ходом выполнения](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
 | Представление баннера (**ADBannerView**) и делегат представления баннера (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> См. также [Показ рекламы в приложении](../monetize/display-ads-in-your-app.md) |
-| Кнопка (UIButton) | [Button](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> См. также [Краткое руководство: добавление кнопок](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
-| Управляющий элемент выбора даты (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
+| Кнопка (UIButton) | [Button](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> См. также [краткое руководство: Добавление элементов управления кнопки](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
+| Управляющий элемент выбора даты (UIDatePicker) | [Выбор даты](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | Представление изображения (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> См. также статью [Image и ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | Подпись (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> См. также [Краткое руководство: отображение текста](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392). |
-| Представление карты (MKMapView) и делегат представления карты (MKMapViewDelegate) | См. в разделе ["карты Bing" для приложений UWP](https://go.microsoft.com/fwlink/p/?LinkId=263496) |
+| Представление карты (MKMapView) и делегат представления карты (MKMapViewDelegate) | См. в разделе [карт Bing для приложений UWP](https://go.microsoft.com/fwlink/p/?LinkId=263496) |
 | Контроллер навигации (UINavigationController) и делегат контроллера навигации (UINavigationControllerDelegate) | [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> См. также раздел [Навигация](https://msdn.microsoft.com/library/windows/apps/mt187344). |
 | Элемент управления страницей (UIPageControl) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> См. также раздел [Навигация](https://msdn.microsoft.com/library/windows/apps/mt187344). |
 | Представление выбора (UIPickerView) и делегат представления выбора (UIPickerViewDelegate) | [ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> См. также [Добавление полей со списком и списков](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616). |
 | Индикатор выполнения (UIProgressView) | [ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529) <br/> См. также [Краткое руководство. Добавление элементов управления ходом выполнения](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
 | Представление с прокруткой (UIScrollView) и делегат представления с прокруткой (UIScrollViewDelegate) | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  См. также [Примеры прокрутки, сдвига и масштабирования в XAML](https://go.microsoft.com/fwlink/p/?LinkId=238577) |
-| Панель поиска (UISearchBar) и делегат панели поиска (UISearchBarDelegate) | См. раздел [Добавление поиска в приложение](https://msdn.microsoft.com/library/windows/apps/xaml/jj130767) <br/>  См. также [Краткое руководство. Добавление поиска в приложение](https://msdn.microsoft.com/library/windows/apps/xaml/hh868180) |
+| Панель поиска (UISearchBar) и делегат панели поиска (UISearchBarDelegate) | См. раздел [Добавление поиска в приложение](https://msdn.microsoft.com/library/windows/apps/xaml/jj130767) <br/>  См. также [краткое руководство: Добавление поиска в приложение](https://msdn.microsoft.com/library/windows/apps/xaml/hh868180) |
 | Сегментированный элемент управления (UISegmentedControl) | Нет |
 | Ползунок (UISlider) | [Slider](https://msdn.microsoft.com/library/windows/apps/br209614) <br/>  См. также раздел [Добавление ползунка](https://msdn.microsoft.com/library/windows/apps/xaml/hh868197) |
 | Контроллер разделенного представления (UISplitViewController) и делегат контроллера разделенного представления (UISplitViewControllerDelegate) | Нет |
@@ -51,14 +51,14 @@ ms.locfileid: "9050161"
 
 Сведения о других элементах управления: [Список элементов управления](https://msdn.microsoft.com/library/windows/apps/mt185406).
 
-**Примечание**список элементов управления для приложений UWP на JavaScript и HTML, см. в разделе [список элементов управления](https://msdn.microsoft.com/library/windows/apps/hh465453).
+**Примечание**  список элементов управления для приложений универсальной платформы Windows, с помощью JavaScript и HTML, см. в разделе [список элементов управления](https://msdn.microsoft.com/library/windows/apps/hh465453).
 
-### <a name="next-step"></a>Следующие шаги
+### <a name="next-step"></a>Дальнейшие действия
 
-[Приступая к работе: навигация](getting-started-navigation.md)
+[Приступая к работе: Навигации](getting-started-navigation.md)
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Статьи по теме
 
-* [build 2014: как насчет пользовательского интерфейса XAML и элементов управления?](https://go.microsoft.com/fwlink/p/?LinkID=397897)
-* [build 2014: разработка приложений с помощью общей инфраструктуры пользовательского интерфейса XAML](https://go.microsoft.com/fwlink/p/?LinkID=397898)
-* [build 2014: использование Visual Studio для создания универсальных приложений XAML](https://go.microsoft.com/fwlink/p/?LinkID=397876)
+* [сборка 2014: Как насчет пользовательского интерфейса XAML и элементов управления?](https://go.microsoft.com/fwlink/p/?LinkID=397897)
+* [сборка 2014: Разработка приложений с помощью общей инфраструктуры пользовательского интерфейса XAML](https://go.microsoft.com/fwlink/p/?LinkID=397898)
+* [сборка 2014: С помощью Visual Studio для создания XAML Конвергированных приложений](https://go.microsoft.com/fwlink/p/?LinkID=397876)

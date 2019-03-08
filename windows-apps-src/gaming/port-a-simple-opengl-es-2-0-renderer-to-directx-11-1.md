@@ -1,5 +1,5 @@
 ---
-title: Перенос простого обработчика OpenGL ES 2.0 в Direct3D 11
+title: Перенос простого отрисовщика OpenGL ES 2.0 в Direct3D 11
 description: В качестве первого упражнения в переносе начнем с основ - с переноса простого обработчика для вращающегося куба с затенением по вершинам из OpenGL ES 2.0 в Direct3D, чтобы он соответствовал шаблону «Приложение DirectX 11 (универсальные приложения для Windows)» из Visual Studio 2015.
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 ms.date: 02/08/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d 11, перенос
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b6d06ff168f778c87e46fa399775492a3cebcaa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047682"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594219"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>Перенос простого отрисовщика OpenGL ES 2.0 в Direct3D 11
 
@@ -80,7 +80,7 @@ typedef struct
 
 У этой структуры имеется один экземпляр, и он содержит все необходимые компоненты для прорисовки очень простой сетки с затенением по вершинам.
 
-> **Примечание**код любого OpenGL ES 2.0 в этой теме основан на реализации Windows API, предоставленной Khronos Group и использует синтаксис программирования Windows c..
+> **Примечание**  Any OpenGL ES 2.0 кода в этом разделе основан на реализации Windows API, предоставляемые группе Khronos и использует C Windows, программирования синтаксис.
 
  
 
@@ -92,11 +92,11 @@ typedef struct
 -   [Microsoft Visual C++](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
 -   OpenGL ES 2.0
 
-### <a name="prerequisites"></a>Необходимые условия
+### <a name="prerequisites"></a>Предварительные условия
 
 -   Необязательно. Просмотрите раздел [Перенос кода EGL в DXGI и Direct3D](moving-from-egl-to-dxgi.md). Прочитайте этот раздел, чтобы лучше понять графический интерфейс, предоставляемый DirectX.
 
-## <a name="span-idkeylinksstepsheadingspansteps"></a><span id="keylinks_steps_heading"></span>Этапы
+## <a name="span-idkeylinksstepsheadingspansteps"></a><span id="keylinks_steps_heading"></span>Действия
 
 
 <table>
@@ -116,7 +116,7 @@ typedef struct
 <td align="left"><p>При переносе простого обработчика из OpenGL ES 2.0 прежде всего следует задать эквивалентные объекты вершинного шейдера и шейдера фрагментов в Direct3D 11 и убедиться, что основная программа может связываться с объектами шейдера после их компиляции.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="port-the-vertex-buffers-and-data-config.md">Перенос буферов вершин и данных</a></p></td>
+<td align="left"><p><a href="port-the-vertex-buffers-and-data-config.md">Перенос данных и буферов вершин</a></p></td>
 <td align="left"><p>На этом шаге вы определите буферы вершин, которые будут содержать ваши сетки, и буферы индексов, которые позволят шейдерам обходить вершины в указанном порядке.</p></td>
 </tr>
 <tr class="odd">
@@ -124,7 +124,7 @@ typedef struct
 <td align="left"><p>После переноса кода, который создает и настраивает буферы и объекты шейдеров, следует перенести внутренний код шейдеров из версии GLSL (GL Shader Language) для OpenGL ES 2.0 в HLSL (High-level Shader Language) для Direct3D 11.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="draw-to-the-screen.md">Рисование на экране</a></p></td>
+<td align="left"><p><a href="draw-to-the-screen.md">Рисование объектов на экране</a></p></td>
 <td align="left"><p>Наконец, мы переносим код, который отрисовывает вращающийся куб на экране.</p></td>
 </tr>
 </tbody>
@@ -135,9 +135,9 @@ typedef struct
 ## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>Дополнительные ресурсы
 
 
--   [Подготовьте свою среду разработки для создания игр DirectX для UWP](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
--   [Создание нового проекта DirectX11 для UWP](user-interface.md)
--   [Сопоставьте концепции и инфраструктуру OpenGL ES 2.0 и Direct3D 11](map-concepts-and-infrastructure.md)
+-   [Подготовка среды разработки для разработки игр DirectX для универсальной платформы Windows](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
+-   [Создание нового проекта DirectX 11 для универсальной платформы Windows](user-interface.md)
+-   [Основные понятия OpenGL ES 2.0 и инфраструктуры сопоставляются Direct3D 11](map-concepts-and-infrastructure.md)
 
  
 

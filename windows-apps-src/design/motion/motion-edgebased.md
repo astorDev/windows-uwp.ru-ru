@@ -1,21 +1,21 @@
 ---
-Description: Edge-based animations show or hide UI that originates from the edge of the screen.
+Description: Анимации с использованием края показывают или скрывают элементы пользовательского интерфейса, которые возникают у края экрана.
 title: Элементы анимации пользовательского интерфейса с использованием края в приложениях UWP
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e07ac565fe2e223b2fb33573ad083edfdfbc888a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934849"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610209"
 ---
-# <a name="edge-based-ui-animations"></a>Анимации пользовательского интерфейса с использованием края
+# <a name="edge-based-ui-animations"></a>Элементы анимации пользовательского интерфейса с использованием края
 
 
 
@@ -23,10 +23,10 @@ ms.locfileid: "8934849"
 
 Анимации с использованием края показывают или скрывают элементы пользовательского интерфейса, которые возникают у края экрана. Действия отображения и скрытия могут вызываться либо пользователем, либо приложением. Пользовательский интерфейс может перекрывать приложение либо становиться частью основной поверхности приложения. Если пользовательский интерфейс становится частью поверхности приложения, возможно, потребуется соответствующим образом изменить размер остальной части приложения.
 
-> **Важные API-интерфейсы**: [**класс EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+> **Важные API-интерфейсы**: [**Класс EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
 
-## <a name="dos-and-donts"></a>Рекомендации
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
 
 -   Используйте анимации, привязанные к границам экрана, чтобы отобразить или скрыть панель настраиваемых сообщений или ошибок, которая занимает немного места на экране.
@@ -41,17 +41,17 @@ ms.locfileid: "8934849"
 
     ![Демонстрирует, где следует использовать анимации, привязанные к границам экрана, или анимации панелей, а где необходимо использовать изменение положения.](images/edgevsreposition.png)
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
 
 **Для разработчиков**
-* [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Анимация пользовательского интерфейса по краям экрана](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [Краткое руководство: анимация пользовательского интерфейса с помощью анимаций библиотеки](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Общие сведения об анимации](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [Анимация на границе пользовательского интерфейса](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
+* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Класс EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 * [**Класс PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh969160)
-* [Анимация появления или исчезания](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [Анимация перемещений](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [Анимация затухание](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [Анимация изменяет положение](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
 
  
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 66618d79166e06f6ee2696ed3c9f193a310b6ae9
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116346"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617879"
 ---
 # <a name="adaptive-streaming"></a>Адаптивная потоковая передача
 
@@ -27,13 +27,13 @@ ms.locfileid: "9116346"
 
 ## <a name="simple-adaptive-streaming-with-mediaplayer-and-mediaplayerelement"></a>Простая адаптивная потоковая передача с использованием MediaPlayer и MediaPlayerElement
 
-Для потокового воспроизведения адаптивного мультимедиа в приложении UWP создайте объект **Uri**, указывающий на файл манифеста DASH или HLS. Создайте экземпляр класса [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer). Вызовите [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912), чтобы создать объект **MediaSource**, и задайте его в качестве значения свойства [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) объекта **MediaPlayer**. Вызовите [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play), чтобы начать воспроизведение мультимедиа-содержимого.
+Для потокового воспроизведения адаптивного мультимедиа в приложении UWP создайте объект **Uri**, указывающий на файл манифеста DASH или HLS. Создайте экземпляр класса [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer). Вызовите [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912), чтобы создать объект **MediaSource**, и задайте его в качестве значения свойства [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) объекта **MediaPlayer**. Вызовите [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play), чтобы начать воспроизведение мультимедиа.
 
 [!code-cs[DeclareMediaPlayer](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaPlayer)]
 
 [!code-cs[ManifestSourceNoUI](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetManifestSourceNoUI)]
 
-Приведенный выше пример воспроизводит аудио из мультимедиа-содержимого, но не отображает автоматически содержимое в пользовательском интерфейсе. Большинству приложений, которые воспроизводят видео, требуется отображать содержимое на странице XAML.  Для этого добавьте элемент управления [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) на страницу XAML.
+Приведенный выше пример воспроизводит звук мультимедиа, но не отображает содержимое автоматически в пользовательском интерфейсе. Большинству приложений, которые воспроизводят видео, требуется отображать содержимое на странице XAML.  Для этого добавьте элемент управления [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) на страницу XAML.
 
 [!code-xml[MediaPlayerElementXAML](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
@@ -116,9 +116,9 @@ ms.locfileid: "9116346"
 
 ## <a name="related-topics"></a>Статьи по теме
 * [Воспроизведение мультимедиа](media-playback.md)
-* [Поддержка тега HLS](hls-tag-support.md) 
-* [Поддержка профиля Dash](dash-profile-support.md) 
-* [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [Поддержка тегов HLS](hls-tag-support.md) 
+* [Поддержка профиля dash](dash-profile-support.md) 
+* [Воспроизведение аудио и видео с MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Воспроизведение мультимедиа в фоновом режиме](background-audio.md) 
 
 

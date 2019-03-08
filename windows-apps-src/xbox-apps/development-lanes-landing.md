@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 9ac96766-df89-4403-89f2-200549436921
 ms.localizationpriority: medium
 ms.openlocfilehash: 11af5f09d9c66fc9103b36dc80eae8b8bbc88854
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945360"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595169"
 ---
 # <a name="bringing-existing-games-to-xbox"></a>Перенос существующих игр на Xbox
 
@@ -23,10 +23,10 @@ ms.locfileid: "8945360"
 
 | Движок      | Описание |
 |------------|-------------|
-|[Особая версия C++](development-lanes-custom-cpp.md)| Сведения о разработке игр на C++ для Xbox с помощью UWP. |
+|[Custom C++](development-lanes-custom-cpp.md)| Сведения о разработке игр на C++ для Xbox с помощью UWP. |
 |[Unity](development-lanes-unity.md)| Учебник, который поможет перенести существующие игры из Unity на Xbox. |
-|[HTML/JS](development-lanes-html.md)| Сведения о разработке игр HTML на Xbox. |
+|[HTML / JS](development-lanes-html.md)| Сведения о разработке игр HTML на Xbox. |
 
 ## <a name="see-also"></a>См. также
 
-- [UWP на Xbox One](index.md)
+- [Приложения UWP для Xbox One](index.md)

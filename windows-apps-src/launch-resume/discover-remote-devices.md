@@ -4,14 +4,14 @@ description: Узнайте, как обнаруживать удаленные 
 ms.assetid: 5b4231c0-5060-49e2-a577-b747e20cf633
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, подключенных устройств, удаленными системами, Рим, project rome
+keywords: устройства Windows 10, универсальной платформы Windows, подключенных удаленных систем, Рим, рим проекта
 ms.localizationpriority: medium
 ms.openlocfilehash: 7788cb546eddf77292210b5b1e8268239504a843
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930860"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592139"
 ---
 # <a name="discover-remote-devices"></a>Обнаружение удаленных устройств
 Ваше приложение может использовать беспроводную сеть, Bluetooth и облачное подключение для обнаружения устройств с Windows, вход с которых выполнен с той же учетной записью Майкрософт, что и у обнаруживающего устройства. Обнаружение удаленных устройств возможно без установки на них какого-либо специального программного обеспечения.
@@ -31,7 +31,7 @@ ms.locfileid: "8930860"
 
 > [!NOTE]
 > Значение фильтра "proximal" не гарантирует степень физической близости. Для сценариев, которым требуется надежная физическая близость, используйте значение [**RemoteSystemDiscoveryType.SpatiallyProximal**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) в своем фильтре. В настоящее время этот фильтр допускает только устройства, которые обнаружены с помощью Bluetooth. Так как новые механизмы обнаружения и протоколы, которые гарантируют физическую близость, поддерживаются, они также будут включены здесь.  
-Также существует свойство в классе [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem), которое указывает, находится ли обнаруженное устройство на самом деле в пределах физической близости: [**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity).
+Имеется также свойство в [ **RemoteSystem** ](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) класс, который указывает, располагается ли обнаружено устройство, на самом деле внутри физического местонахождения: [**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity).
 
 > [!NOTE]
 > Если требуется обнаруживать устройства по локальной сети (определяется фильтром выбора типа обнаружения), в вашей сети необходимо использовать профиль «частная» или «доменная». Устройство не будет обнаруживать другие устройства в «общедоступной» сети.
@@ -92,8 +92,8 @@ if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anony
 
 ![страница параметров общих возможностей](images/shared-experiences-settings.png)
 
-## <a name="related-topics"></a>Еще по теме
-* [Подключенные приложения и устройства (Project Rome)](connected-apps-and-devices.md)
+## <a name="related-topics"></a>Статьи по теме
+* [Подключенные приложения и устройства (рим проекта)](connected-apps-and-devices.md)
 * [Запуск удаленного приложения](launch-a-remote-app.md)
-* [Справочник по API удаленных систем](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+* [Удаленный Справочник по API системы](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
 * [Пример удаленных систем](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)

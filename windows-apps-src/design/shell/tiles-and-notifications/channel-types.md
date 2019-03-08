@@ -1,32 +1,32 @@
 ---
-Description: Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. There are many ways to send the notifications depending on the needs of your application
+Description: Службы push-уведомлений Windows (WNS) позволяют сторонним разработчикам отправлять обновления всплывающих уведомлений, плиток, индикаторов событий и необработанные обновления из своей облачной службы. Существует множество способов для отправки уведомлений в зависимости от потребностей вашего приложения
 title: Выбор правильного типа канала push-уведомлений
 ms.date: 07/07/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 075eaf5c02e5bddb4b87d7e4aaf931cbfde53cdd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944299"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616419"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>Выбор правильного типа канала push-уведомлений
 
 В этой статье рассматриваются три типа каналов push-уведомлений UWP (основной, вспомогательный и альтернативный), которые помогут вам доставить содержимое в ваше приложение. 
 
-(Дополнительные сведения о том, как Push-уведомлений, см. раздел [Обзор служб Push-уведомлений Windows (WNS)](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)). 
+(Дополнительные сведения о том, как создать Push-уведомлений, см. в разделе [Обзор службы Windows Push Notification Services (WNS)](../tiles-and-notifications/windows-push-notification-services--wns--overview.md).) 
 
 ## <a name="types-of-push-channels"></a>Типы каналов push-уведомлений 
 
 Существует три типа каналов push-уведомлений, которые можно использовать для отправки уведомлений приложению UWP. К ним относятся: 
 
-[Основной канал](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_)— «традиционный» канал для push-уведомлений. Может использоваться в любом приложении в Магазине для отправки уведомлений следующих типов: плитка, всплывающее уведомление, индикатор события или необработанное уведомление (ссылка на описание всплывающих уведомлений, уведомлений плиток и индикаторов событий)
+[Основной канал](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) — «традиционный» канал для push-уведомлений. Может использоваться в любом приложении в Магазине для отправки уведомлений следующих типов: плитка, всплывающее уведомление, индикатор события или необработанное уведомление (ссылка на описание всплывающих уведомлений, уведомлений плиток и индикаторов событий)
 
-[Канал вспомогательных плиток](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_)— используется для отправки обновлений вспомогательным плиткам. Может использоваться только для отправки уведомлений плитки или индикатора событий вспомогательной плитке, закрепленной на начальном экране пользователя
+[Канал вспомогательных плиток](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) — используется для отправки обновлений вспомогательным плиткам. Может использоваться только для отправки уведомлений плитки или индикатора событий вспомогательной плитке, закрепленной на начальном экране пользователя
 
-[Альтернативный канал](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_)— новый тип канала, добавленный в обновлении Creators Update. Он позволяет отправлять необработанные уведомления в любое приложение UWP, в том числе незарегистрированное в Магазине. 
+[Альтернативный канал](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) — новый тип канала, добавленный в обновлении Creators Update. Он позволяет отправлять необработанные уведомления в любое приложение UWP, в том числе незарегистрированное в Магазине. 
 
 > [!NOTE]
 > Независимо от того, какой канал push-уведомлений используется, когда приложение выполняется на устройстве, оно будет всегда сможет отправлять локальные всплывающие уведомления, а также уведомления плиток и индикатора событий. Оно может отправлять локальные уведомления из процессов переднего плана или из фоновой задачи. 
@@ -38,10 +38,10 @@ ms.locfileid: "8944299"
 
 ### <a name="what-do-primary-channels-enable"></a>Какие возможности предоставляют основные каналы?
 
--   **Отправка обновлений плитки или индикатора событий основной плитке.** Если пользователь закрепил вашу плитку на начальном экране, вы сможете воспользоваться этим. Отправляйте обновления с полезной информацией или напоминания о работе с приложением. 
+-   **Отправка плитки или значок обновления основной плитки.** Если пользователь закрепил вашу плитку на начальном экране, вы сможете воспользоваться этим. Отправляйте обновления с полезной информацией или напоминания о работе с приложением. 
 -   **Отправка всплывающих уведомлений.** Всплывающие уведомления позволяют немедленно показать нужную информацию пользователю. Они закрашиваются оболочкой поверх большинства приложений и динамически отображаются в центре уведомлений, чтобы пользователь мог вернуться и просмотреть их позже. 
--   **Отправка необработанных уведомлений для инициализации фоновой задачи.** Иногда требуется выполнить некоторые действия от имени пользователя в зависимости от уведомления. Необработанные уведомления позволяют выполнять фоновые задачи вашего приложения. 
--   **Шифрование сообщений в процессе передачи обеспечивается Windows с помощью TLS.** Сообщения шифруются при передаче в WNS и на устройство пользователя.  
+-   **Отправка необработанных уведомлений для запуска фоновой задачи.** Иногда требуется выполнить некоторые действия от имени пользователя в зависимости от уведомления. Необработанные уведомления позволяют выполнять фоновые задачи вашего приложения. 
+-   **Шифрование сообщений во время передачи, предоставляемых Windows, с помощью протокола TLS.** Сообщения шифруются при передаче в WNS и на устройство пользователя.  
 
 ### <a name="limitations-of-primary-channels"></a>Ограничения основных каналов
 
@@ -108,21 +108,21 @@ PushNotificationChannel webChannel =
 
 <tr class="header">
 <th align="left"><b>Тип</b></th>
-<th align="left"><b>Всплывающее уведомление?</b></th>
-<th align="left"><b>Обновление плитки и индикатора событий?</b></th>
-<th align="left"><b>Необработанные уведомления?</b></th>
+<th align="left"><b>Отправить всплывающее уведомление?</b></th>
+<th align="left"><b>Push-уведомлений плитки и эмблемы?</b></th>
+<th align="left"><b>Push-уведомления raw?</b></th>
 <th align="left"><b>Проверка подлинности</b></th>
 <th align="left"><b>API</b></th>
-<th align="left"><b>Требуется регистрация в Магазине?</b></th>
+<th align="left"><b>Необходима регистрация Store?</b></th>
 <th align="left"><b>Каналы</b></th>
 <th align="left"><b>Шифрование</b></th>
 </tr>
 
 
 <tr class="odd">
-<td align="left">Основной</td>
+<td align="left">Первичный</td>
 <td align="left">Да</td>
-<td align="left">Да— только основная плитка</td>
+<td align="left">Да — только основная плитка</td>
 <td align="left">Да</td>
 <td align="left">OAuth</td>
 <td align="left">API REST WNS</td>
@@ -133,7 +133,7 @@ PushNotificationChannel webChannel =
 <tr class="even">
 <td align="left">Вспомогательная плитка</td>
 <td align="left">Нет</td>
-<td align="left">Да— только вспомогательная плитка</td>
+<td align="left">Да — только вспомогательная плитка</td>
 <td align="left">Нет</td>
 <td align="left">OAuth</td>
 <td align="left">API REST WNS</td>
@@ -142,7 +142,7 @@ PushNotificationChannel webChannel =
 <td align="left">Во время передачи</td>
 </tr>
 <tr class="odd">
-<td align="left">Альтернативный</td>
+<td align="left">Другое</td>
 <td align="left">Нет</td>
 <td align="left">Нет</td>
 <td align="left">Да</td>
@@ -163,15 +163,15 @@ PushNotificationChannel webChannel =
 3. Если вы создаете приложение, которое не будет отображаться в Магазине Windows (например, бизнес-приложение), используйте альтернативный канал.
 4. Если на сервере уже есть существующий веб-код для отправки уведомлений, который вы хотите повторно использовать, или вам необходимо несколько каналов для внутренней службы, используйте альтернативные каналы.
 
-## <a name="related-articles"></a>Статьи по теме
+## <a name="related-articles"></a>Связанные статьи
 
 * [Отправка локального уведомления на плитке](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [Адаптивные и интерактивные всплывающие уведомления](../tiles-and-notifications/adaptive-interactive-toasts.md)
-* [Краткое руководство: отправка push-уведомлений](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [Обновление индикатора событий с помощью push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [Запрос, создание и сохранение канала уведомлений](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [Перехват уведомлений для выполняемых приложений ](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [Проверка подлинности с помощью службы push-уведомлений Windows (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [Заголовки запроса и ответа службы push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [Руководство и контрольный список для push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Краткое руководство. Отправка Push-уведомление](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
+* [Как обновить эмблему через Push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [Запрос, создание и сохранение канала уведомлений с помощью](https://msdn.microsoft.com/library/windows/apps/hh465412)
+* [Как перехватить уведомления для запуска приложений](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [Способ проверки подлинности с помощью Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
+* [Push-уведомления службы: заголовки запросов и ответов](https://msdn.microsoft.com/library/windows/apps/hh465435)
+* [Контрольный список для Push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [Необработанные уведомления](raw-notification-overview.md)

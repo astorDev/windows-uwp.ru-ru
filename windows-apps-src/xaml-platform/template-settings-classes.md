@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b44aaf741c188658c7a639422b0d091f8db6e3e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924870"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589789"
 ---
 # <a name="template-settings-classes"></a>Классы параметров шаблона
 
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
-Предполагается, что вы умеете добавлять элементы управления в пользовательский интерфейс, задавать их свойства и подключать обработчики событий. Инструкции по добавлению элементов управления в приложение см. в разделе [Добавление элементов управления и обработка событий](https://msdn.microsoft.com/library/windows/apps/mt228345). Предполагается также, что вы знаете, как определить настраиваемый шаблон для элемента управления, сделав копию шаблона по умолчанию и отредактировав ее. Дополнительные сведения об этом см. в разделе [кратком руководстве по шаблонам элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
+Предполагается, что вы умеете добавлять элементы управления в пользовательский интерфейс, задавать их свойства и подключать обработчики событий. Инструкции по добавлению элементов управления в приложение см. в разделе [Добавление элементов управления и обработка событий](https://msdn.microsoft.com/library/windows/apps/mt228345). Предполагается также, что вы знаете, как определить настраиваемый шаблон для элемента управления, сделав копию шаблона по умолчанию и отредактировав ее. Дополнительные сведения об этом см. в разделе [краткое руководство: Шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
 
 ## <a name="the-scenario-for-templatesettings-classes"></a>Сценарий для классов **TemplateSettings**
 
@@ -26,14 +26,14 @@ ms.locfileid: "8924870"
 
 Есть несколько классов **TemplateSettings**. Все они находятся в пространстве имен [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818). Вот список классов и ссылка на свойства **TemplateSettings** соответствующего элемента управления. Это свойство **TemplateSettings** определяет способ получения доступа к значениям **TemplateSettings** для элемента управления и может установить привязки шаблона к его свойствам:
 
--   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752): значение [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
--   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499): значение [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
--   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948): значение [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
--   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856): значение [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
--   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248): значение [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
--   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721): значение [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
--   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804): значение [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
--   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813): значение [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
+-   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752): значение [ **ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
+-   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499): значение [ **GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
+-   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948): значение [ **ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
+-   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856): значение [ **ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
+-   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248): значение [ **ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
+-   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721): значение [ **SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
+-   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804): значение [ **ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
+-   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813): значение [ **ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
 
 Свойства **TemplateSettings** предназначены для использования в XAML, а не в коде. Это составляющие свойства только для чтения свойства **TemplateSettings** только для чтения родительского элемента управления. В случае сложного сценария пользовательского элемента управления, в котором вы создаете новый класс на основе [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) и таким образом можете повлиять на логику управления, рекомендуется определить пользовательское свойство **TemplateSettings** для элемента управления, чтобы передавать информацию, которая может быть полезна всем, кто создает шаблон элемента управления повторно. Так как это свойство — значение только для чтения, определите новый класс **TemplateSettings**, связанный с элементом управления, который содержит свойства только для чтения для каждого из информационных элементов, необходимых для измерений шаблона, размещения анимации и т.д., и предоставьте абонентам экземпляр среды выполнения этого класса, инициализированного с помощью логики управления. Классы **TemplateSettings** являются производными от [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), чтобы свойства могли использовать систему свойств зависимостей для обратных вызовов при изменении свойств. Но идентификаторы свойств зависимостей для свойств не отображаются как общедоступный API, так как свойства **TemplateSettings** должны быть доступны абонентам только для чтения.
 
@@ -95,9 +95,9 @@ ms.locfileid: "8924870"
 
 Опять же в шаблоне много кодов XAML, поэтому показан только отрывок. И это только одно из нескольких состояний и анимаций тем, в которых используются одинаковые свойства [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752). Для [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) использование значений **ComboBoxTemplateSettings** через привязки обеспечивает то, что соответствующие анимации в шаблоне будут остановлены и запущены в позициях, основой которых являются общие значения, результатом чего будет плавный переход.
 
-**Примечание**  при использовании значения **TemplateSettings** в составе шаблона элемента управления, убедитесь, что задаете свойства, которые соответствуют типу значения. В противном случае вам придется создать преобразователь значений для привязки, чтобы тип целевого объекта привязки можно было преобразовать из другого исходного типа значения **TemplateSettings**. Дополнительные сведения см. в разделе [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
+**Примечание**    при использовании **TemplateSettings** значения как часть шаблона элемента управления, убедитесь, что, вы изменяете свойства, соответствующие типу значения. В противном случае вам придется создать преобразователь значений для привязки, чтобы тип целевого объекта привязки можно было преобразовать из другого исходного типа значения **TemplateSettings**. Дополнительные сведения см. в разделе [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
 
-## <a name="related-topics"></a>Ссылки по теме
+## <a name="related-topics"></a>Статьи по теме
 
-* [Краткое руководство: шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [Краткое руководство. Шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 

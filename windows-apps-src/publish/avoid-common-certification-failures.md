@@ -1,5 +1,5 @@
 ---
-Description: Review this list to help avoid issues that frequently prevent apps from getting certified, or that might be identified during a spot check after the app is published.
+Description: Изучите этот список, чтобы избежать часто возникающих проблем, из-за которых приложения не проходят сертификацию, а также тех проблем, которые могут быть обнаружены при выборочной проверке после публикации приложения.
 title: Недопущение распространенных ошибок при сертификации
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 ms.date: 10/31/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 62c99c159ff68201919fa15baded999e3b6a2477
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932011"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625799"
 ---
 # <a name="avoid-common-certification-failures"></a>Недопущение распространенных ошибок при сертификации
 
@@ -19,7 +19,7 @@ ms.locfileid: "8932011"
 Изучите этот список, чтобы избежать часто возникающих проблем, из-за которых приложения не проходят сертификацию, а также тех проблем, которые могут быть обнаружены при выборочной проверке после публикации приложения.
 
 > [!NOTE]
-> Обязательно изучите [Политик Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies) , чтобы убедиться, что ваше приложение соответствует всем здесь требованиям.
+> Обязательно просмотрите [политики Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies) чтобы ваше приложение удовлетворяет всем требованиям, в списке.
 
 -   Отправляйте приложение, только когда оно закончено. Вы можете упоминать о планируемых возможностях в описании приложения, однако необходимо исключить из приложения незавершенные разделы, ссылки на веб-страницы, находящиеся в разработке, и прочие элементы, которые вызовут у пользователя ощущение незаконченности приложения.
 
@@ -31,7 +31,7 @@ ms.locfileid: "8932011"
 
 -   [Предоставьте всю информацию](notes-for-certification.md), необходимую для использования приложения, в том числе имя пользователя и пароль тестовой учетной записи, если приложение должно выполнять вход в сетевую службу, а также описание всех действий, необходимых для доступа к скрытым или заблокированным возможностям.
 
--   Включать [URL-адрес политики конфиденциальности](enter-app-properties.md#privacy-policy-url) , если вашему приложению требуется один; Например если ваше приложение получает доступ к любым личным сведениям каким-либо образом или если это предусмотрено законом. Чтобы определить, необходима ли вашему приложению политика конфиденциальности, ознакомьтесь с [Соглашением с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) и [Политик Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies).
+-   Включить [URL-адрес политики конфиденциальности](enter-app-properties.md#privacy-policy-url) Если вашему приложению требуется один; например, если приложение обращается к любые персональные данные любым способом, или в противном случае требуется по закону. Чтобы определить, если вашему приложению требуется политика конфиденциальности, просмотрите [соглашение с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) и [политики Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies).
 
 -   Убедитесь, что описание приложения четко отражает его функции. В этом вам поможет руководство по [созданию эффективного описания приложения](write-a-great-app-description.md).
 

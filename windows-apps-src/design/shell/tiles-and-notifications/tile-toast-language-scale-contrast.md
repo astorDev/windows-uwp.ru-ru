@@ -1,5 +1,5 @@
 ---
-Description: Your tiles and toasts can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts.
+Description: Вы можете загружать в ваши плитки и всплывающие уведомления строки и изображения, соответствующие языку интерфейса, коэффициенту экранного увеличения, режиму контрастности и другим факторам времени исполнения.
 title: Поддержка различных языков, масштабирования и высокой контрастности в плитках и всплывающих уведомлениях
 template: detail.hbs
 ms.date: 10/12/2017
@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: aa6e93196d30c15374129eee7714604cfab7b82e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942910"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601479"
 ---
-# <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности
+# <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>Поддержка различных языков, масштабирования и высокой контрастности в плитках и всплывающих уведомлениях
 
-Плитки и всплывающие уведомления могут загружать строки и изображения, адаптированные по контексту языка, [коэффициента масштабирования дисплея](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), темы, высокой контрастности и другим аспектам. Дополнительные сведения об использовании квалификаторов в именах файлов ресурсов см. в разделе [адаптация ресурсов с учетом языка, масштаба и других квалификаторов](../../../app-resources/tailor-resources-lang-scale-contrast.md) и [значки и логотипы приложений](/windows/uwp/design/style/app-icons-and-logos).
+Плитки и всплывающие уведомления могут загружать строки и изображения, адаптированные по контексту языка, [коэффициента масштабирования дисплея](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), темы, высокой контрастности и другим аспектам. Дополнительные сведения об использовании квалификаторы в именах файлов ресурсов см. в разделе [адаптировать ресурсы для языка, масштаба и квалификаторов](../../../app-resources/tailor-resources-lang-scale-contrast.md) и [значков приложений и логотипы](/windows/uwp/design/style/app-icons-and-logos).
 
 Дополнительные сведения о преимуществах локализации приложений см. в разделе [Глобализация и локализация](../../globalizing/globalizing-portal.md).
 
@@ -70,11 +70,11 @@ ms.locfileid: "8942910"
 
 Это строки запросов, которые можно использовать.
 
-| Квалификатор | Строка запроса | Пример. |
+| Квалификатор | Строка запроса | Пример |
 | --------- | ------------ | ------- |
 | Масштаб | ms-scale | ?ms-scale=400 |
 | Язык | ms-lang | ?ms-lang=en-US |
-| Контраст | ms-contrast | ?ms-contrast=high |
+| Контрастность | ms-contrast | ?ms-contrast=high |
 
 Справочную таблицу всех возможных значений квалификаторов, которые можно использовать в строках запросов, см. в разделе [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues).
 
@@ -84,12 +84,12 @@ ms.locfileid: "8942910"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Размеры экрана и точки прерывания для реализации отзывчивого дизайна](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
-* [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](../../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Размеры экрана и точек останова для адаптивный Дизайн](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
+* [Настроить ресурсы для языка, масштаба и квалификаторов](../../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Руководство по работе с ресурсами плиток и значков](app-assets.md).
 * [Глобализация и локализация](../../globalizing/globalizing-portal.md)
-* [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](../../../app-resources/localize-strings-ui-manifest.md)
-* [Ссылки на изображения и другие ресурсы из кода и разметки XAML](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
+* [Локализация строк в манифесте пакета интерфейса пользователя и приложения](../../../app-resources/localize-strings-ui-manifest.md)
+* [Ссылаться на изображения и другие ресурсы из XAML-разметки и кода](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
 * [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
-* [Схема плитки](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
-* [Схема всплывающих уведомлений](/uwp/schemas/tiles/toastschema/schema-root?branch=live)
+* [Плитка схемы](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
+* [Схема всплывающее уведомление](/uwp/schemas/tiles/toastschema/schema-root?branch=live)

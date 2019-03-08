@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e90e460cf5f5bda7d90447440d76cf6898a83747
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931847"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660209"
 ---
 # <a name="lighting-overview"></a>Обзор освещения
 
@@ -27,7 +27,7 @@ ms.locfileid: "8931847"
 
 Для отрисовки сцены источники света не требуются, но компоненты в сцене без освещения не видны. В лучшем случае отрисовка неосвещенной сцены приведет к отображению силуэтов объектов сцены. Такой уровень детализации недостаточен для большинства целей.
 
-## <a name="span-iddirectlightvsambientlightspanspan-iddirectlightvsambientlightspandirect-light-vs-ambient-light"></a><span id="direct_light_vs._ambient_light"></span><span id="DIRECT_LIGHT_VS._AMBIENT_LIGHT"></span>Прямое и фоновое освещение
+## <a name="span-iddirectlightvsambientlightspanspan-iddirectlightvsambientlightspandirect-light-vs-ambient-light"></a><span id="direct_light_vs._ambient_light"></span><span id="DIRECT_LIGHT_VS._AMBIENT_LIGHT"></span>Прямой свет и внешнее освещение
 
 
 Несмотря на то что объекты в сцене получают и прямое, и фоновое освещение, они не зависят друг от друга, они оказывают очень различное действие и требуют совершенно различных подходов в работе.
@@ -40,7 +40,7 @@ ms.locfileid: "8931847"
 
 Красный, зеленый и синий компоненты сочетаются и создают окончательный цвет фонового освещения. Альфа-компонент определяет прозрачность цвета. При использовании аппаратного ускорения или эмуляции RGB альфа-компонент игнорируется.
 
-## <a name="span-iddirect3dlightmodelvsnaturespanspan-iddirect3dlightmodelvsnaturespandirect3d-light-model-vs-nature"></a><span id="direct3d_light_model_vs._nature"></span><span id="DIRECT3D_LIGHT_MODEL_VS._NATURE"></span>Модель освещения Direct3D и естественное освещение
+## <a name="span-iddirect3dlightmodelvsnaturespanspan-iddirect3dlightmodelvsnaturespandirect3d-light-model-vs-nature"></a><span id="direct3d_light_model_vs._nature"></span><span id="DIRECT3D_LIGHT_MODEL_VS._NATURE"></span>Модель освещения Direct3D и характера
 
 
 По своей природе, когда свет испускается источником, он отражается от сотен, если не тысяч или миллионов объектов, перед тем как достичь глаз пользователя. Каждый раз, когда свет отражается, какая-то его часть поглощается поверхностью, другая рассеивается в случайных направлениях, а оставшийся свет попадает на другую поверхность или попадает в глаза пользователя. Этот процесс продолжается, пока уровень освещения не ослабнет до нуля или до восприятия света пользователем.
@@ -57,7 +57,7 @@ ms.locfileid: "8931847"
 
 Кроме того, материал многоугольников имеет определенные свойства, которые влияют на то, как этот многоугольник отражает попадающий на него свет. Вы задаете одно свойство отражения, которое определяет, как этот материал отражает фоновый свет, а также задаете индивидуальные особенности, чтобы определить зеркальное и рассеивающее отражающие свойства материала.
 
-## <a name="span-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspancolor-values-for-lights-and-materials"></a><span id="Color_Values_for_Lights_and_Materials"></span><span id="color_values_for_lights_and_materials"></span><span id="COLOR_VALUES_FOR_LIGHTS_AND_MATERIALS"></span>Значения цвета для источников света и материалов
+## <a name="span-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspancolor-values-for-lights-and-materials"></a><span id="Color_Values_for_Lights_and_Materials"></span><span id="color_values_for_lights_and_materials"></span><span id="COLOR_VALUES_FOR_LIGHTS_AND_MATERIALS"></span>Значения цвета для освещения и материалы
 
 
 Direct3D описывает цвет с помощью четырех компонентов (красного, зеленого, синего и альфа-канала), которые в сочетании определяют окончательный цвет. Каждый компонент принимает значение в диапазоне от 0,0 до 1,0. Несмотря на то что для описания цвета источников света и материалов используется одна и та же конструкция, значения у этих двух видов объектов используются немного по-разному.
@@ -70,7 +70,7 @@ Direct3D описывает цвет с помощью четырех компо
 
 См. разделы [Типы освещения](light-types.md) и [Свойства освещения](light-properties.md).
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Источники света и материалы](lights-and-materials.md)

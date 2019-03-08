@@ -1,45 +1,45 @@
 ---
 title: Bluetooth с низким энергопотреблением
-description: В этом разделе представлен краткий обзор Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ в приложениях UWP.
-ms.date: 03/15/2017
+description: В этом разделе содержится краткий обзор Bluetooth с низким потреблением в приложениях UWP.
+ms.date: 03/19/2017
 ms.topic: article
-keywords: Windows 10, uwp, bluetooth, bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ, низком энергопотреблении, gatt, зазора, центральная, периферийного устройства, клиент, сервер, наблюдателя, "издатель"
+keywords: windows 10, uwp, bluetooth, bluetooth с низким энергопотреблением, низкое энергопотребление, gatt, gap, центральное устройство, периферийное устройство, клиент, сервер, наблюдатель, издатель
 ms.localizationpriority: medium
-ms.openlocfilehash: ecc78bd4bb079adbaaa58c981ce55457c522764b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1714a4c21852a7582325fc26f7e6a1f0f969126e
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938126"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629039"
 ---
 # <a name="bluetooth-low-energy"></a>Bluetooth с низким энергопотреблением
-Bluetooth с низким энергопотреблением (LE) — это спецификация, определяющая протоколы для обнаружения и обмен данными между энергопотребление устройства. Обнаружение устройств выполняется через протокол универсального профиля доступа (пробел). После обнаружения обмена данными для устройства выполняется по протоколу Generic Attribute (GATT). В этом разделе представлен краткий обзор Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ в приложениях UWP. Более подробные сведения о Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ, см. в разделе [Спецификации Core Bluetooth](https://www.bluetooth.com/specifications/bluetooth-core-specification) версии 4.0, где был введен Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ. 
+Bluetooth с низким энергопотреблением (LE) является спецификацией, определяющей протоколы для обнаружения и обмена данными между энергоэффективными устройствами. Обнаружение устройств выполняется с помощью протокола Generic Access Profile (GAP). После обнаружения обмен данными между устройствами выполняется с помощью протокола Generic Attribute (GATT). В этом разделе содержится краткий обзор Bluetooth с низким потреблением в приложениях UWP. Более подробные сведения о Bluetooth с низким энергопотреблением см. в разделе [Основные характеристики Bluetooth](https://www.bluetooth.com/specifications/bluetooth-core-specification) версии 4.0, где представлена технология Bluetooth с низким энергопотреблением. 
 
-![Роли Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ](images/gatt-roles.png)
+![Роли Bluetooth с низким энергопотреблением](images/gatt-roles.png)
 
-*GATT и РАЗРЫВА роли появились в Windows 10 версии 1703*
+*Роли GATT и свойство GAP появились в Windows 10 версии 1703*
 
-Протоколы GATT и РАЗРЫВА может осуществляться в приложении UWP с помощью следующих пространств имен.
+Протоколы GATT и GAP можно внедрить в приложение UWP с помощью указанных ниже пространств имен.
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
 - [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
 
-## <a name="central-and-peripheral"></a>Центр и периферийных устройств
-Две основные функции обнаружения называются центральная и периферийных устройств. Как правило Windows работает в режиме центрального и подключается к различным периферийные устройства. 
+## <a name="central-and-peripheral"></a>Центральное и периферийное устройство
+Две основные роли обнаружения называются центральное устройство и периферийное устройство. Как правило, Windows работает в режиме центрального устройства и подключается к различным периферийным устройствам. 
 
 ## <a name="attributes"></a>Атрибуты
-Распространенные аббревиатуре, которое вы увидите в API-интерфейсы Windows Bluetooth — Generic Attribute (GATT). Профиль GATT определяет структуру данных и режима работы, по которым связи два устройства Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ. Атрибут является основного создание блока GATT. Приведены основные типы атрибутов служб, характеристик и дескрипторов. Эти атрибуты по-разному выполнять между клиентами и серверами, поэтому это удобнее обсуждать их взаимодействие в соответствующих разделах. 
+Распространенная аббревиатура, которую можно увидеть в API Windows Bluetooth, — это Generic Attribute (GATT). Профиль GATT определяет структуру данных и режимы работы, по которым взаимодействуют два устройства Bluetooth с низким энергопотреблением. Атрибут является основным блоком построения GATT. Основными типами атрибутов являются службы, характеристики и дескрипторы. Эти атрибуты действуют по-разному между клиентами и серверами, поэтому полезнее обсудить их взаимодействие в соответствующих разделах. 
 
-![Типичные иерархии атрибута в общего профиля](images/gatt-service.png)
+![Типичный иерархии атрибута в общий профиль](images/gatt-service.png)
 
-*Служба частота пульса выражается в форме API сервер GATT*
+*Пульс службы выражается в форме GATT API сервера*
 
-## <a name="client-and-server"></a>Клиента и сервера
-После установления подключения, устройство, которое содержит данные (обычно датчик небольшой IoT или носимое устройство) называется сервера. Устройство, которое использует эти данные для выполнения функций называется клиента. Например ПК с Windows (клиент) считывает данные из монитор частота пульса (сервер), чтобы отслеживать пользователь работу оптимально. Дополнительные сведения см. в разделах [Клиент GATT](gatt-client.md) и [Сервер GATT](gatt-server.md) .
+## <a name="client-and-server"></a>Клиент и сервер
+После установления подключения устройство, которое содержит данные (обычно небольшой датчик IoT или носимое устройство), называется сервером. Устройство, которое использует данные для выполнения функций, называется клиентом. Например, компьютер под управлением Windows (клиент) считывает данные с монитора частоты пульса (сервер) для отслеживания оптимальных тренировок пользователя. Дополнительные сведения см. в разделах [Клиент GATT](gatt-client.md) и [Сервер GATT](gatt-server.md).
 
-## <a name="watchers-and-publishers-beacons"></a>Наблюдатели и издателей (маяки)
-В дополнение к роли центрального и периферийные устройства роли наблюдателя и вещателем. Источников часто называются маяков, они не передают данные по GATT так, как они используют ограниченном пространстве, предоставленных в пакете объявления для обмена данными. Аналогичным образом наблюдателя не нужно установить подключение для получения данных, он ищет поблизости объявления. Для настройки Windows отслеживать соседние рекламу, используйте класс [BluetoothLEAdvertisementWatcher](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher) . Чтобы рассылка маяка полезных данных, используйте класс [BluetoothLEAdvertisementPublisher](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher) . Дополнительные сведения см. в разделе [объявления](ble-beacon.md) .
+## <a name="watchers-and-publishers-beacons"></a>Наблюдатели и издатели (маяки)
+Кроме ролей центрального и периферийного устройств, существуют роли наблюдателя и вещателя. Вещатели обычно называются маяками, они не взаимодействуют через GATT, поскольку используют ограниченное пространство, предоставленное в пакете объявления для передачи данных. Аналогично наблюдатель не должен устанавливать подключения для получения данных, он сканирует ближайшие рекламные объявления. Чтобы настроить Windows для отслеживания ближайших рекламных объявлений, используйте класс [BluetoothLEAdvertisementWatcher](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher). Чтобы транслировать полезные данные маяка, используйте класс [BluetoothLEAdvertisementPublisher](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher). Дополнительные сведения см. в разделе [Рекламные объявления](ble-beacon.md).
 
 ## <a name="see-also"></a>См. также
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
 - [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Спецификации Bluetooth Core](https://www.bluetooth.com/specifications/bluetooth-core-specification)
+- [Bluetooth основной спецификации](https://www.bluetooth.com/specifications/bluetooth-core-specification)

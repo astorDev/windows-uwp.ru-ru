@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fe876b362f09eaca68d84516d413d3f458edf0a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920055"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603409"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>Обнаружение и выбор возможностей камеры с помощью профилей камеры
 
@@ -52,7 +52,7 @@ ms.locfileid: "8920055"
 
 Создайте объект [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) с выбранным идентификатором устройства. Вызовите статический метод [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708), чтобы получить список всех профилей камеры, поддерживаемых устройством.
 
-В этом примере метод запроса Linq, содержащийся в пространстве имен **System.Linq**, используется для выбора профиля, содержащего объект [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705), свойства [**Width**](https://msdn.microsoft.com/library/windows/apps/dn926700), [**Height**](https://msdn.microsoft.com/library/windows/apps/dn926697), и [**FrameRate**](https://msdn.microsoft.com/library/windows/apps/dn926696) которого соответствуют запрошенным значениям. Если найдено соответствие, для свойств **MediaCaptureInitializationSettings** [**VideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926679) и [**RecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926678) задаются анонимные значения, возвращенные запросом Linq. Если совпадений не найдено, используется профиль по умолчанию.
+В этом примере метод запроса Linq, содержащийся в пространстве имен **System.Linq**, используется для выбора профиля, содержащего объект [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705), свойства [**Width**](https://msdn.microsoft.com/library/windows/apps/dn926700), [**Height**](https://msdn.microsoft.com/library/windows/apps/dn926697), и [**FrameRate**](https://msdn.microsoft.com/library/windows/apps/dn926696) которого соответствуют запрошенным значениям. Если найдено соответствие, для свойств **MediaCaptureInitializationSettings**[**VideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926679) и [**RecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926678) задаются анонимные значения, возвращенные запросом Linq. Если совпадений не найдено, используется профиль по умолчанию.
 
 [!code-cs[FindWVGA30FPSProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindWVGA30FPSProfile)]
 
@@ -73,7 +73,7 @@ ms.locfileid: "8920055"
 > [!NOTE] 
 > API-интерфейсы, описанные в этом разделе, являются устаревшими начиная с Windows 10 версии 1803. См. предыдущий раздел **Использование групп источников кадров мультимедиа для получения профилей**.
 
-Выбор профиля, который поддерживает HDR, начинается так же, как и другие сценарии. Создайте **MediaCaptureInitializationSettings** и строку для идентификатора устройства захвата. Добавьте логическую переменную, которая будет отслеживать, поддерживается ли видео HDR.
+Выбор профиля, который поддерживает HDR, начинается так же, как и другие сценарии. Создание **MediaCaptureInitializationSettings** и строку для хранения идентификатора записи устройства. Добавьте логическую переменную, которая будет отслеживать, поддерживается ли видео HDR.
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 
@@ -95,10 +95,10 @@ ms.locfileid: "8920055"
 
 Этот запрос можно уточнить для поиска профилей, которые кроме одновременной записи видео поддерживают определенные разрешения или другие возможности. Вы также можете использовать для получения профилей, поддерживающих синхронный захват, метод [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) и значение [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843). Однако обратите внимание, что при отправке запросов всем профилям можно получить более полные результаты.
 
-## <a name="related-topics"></a>Связанные статьи
+## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
-* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

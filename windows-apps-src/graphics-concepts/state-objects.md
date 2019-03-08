@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3437119979073a5cec27948fc90f954e06c2fc93
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944935"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596089"
 ---
 # <a name="state-objects"></a>Объекты состояния
 
 
 Состояние устройства группируется в объекты состояния, что значительно сокращает затраты на смену состояний. Есть несколько объектов состояния и каждый из них разработан для инициализации набора состояний определенной стадии конвейера. Объекты состояния в различных версиях Direct3D разные.
 
-## <a name="span-idinputlayoutspanspan-idinputlayoutspanspan-idinputlayoutspaninput-layout-state"></a><span id="Input_Layout"></span><span id="input_layout"></span><span id="INPUT_LAYOUT"></span>Состояние макета входных данных
+## <a name="span-idinputlayoutspanspan-idinputlayoutspanspan-idinputlayoutspaninput-layout-state"></a><span id="Input_Layout"></span><span id="input_layout"></span><span id="INPUT_LAYOUT"></span>Состояния входных данных структуры
 
 
 Эта группа состояний определяет как [стадия сборщика данных (IA)](input-assembler-stage--ia-.md) считывает данные из входных буферов и собирает их для применения в шейдере вершин. Сюда входит такое состояние, как число элементов в буфера ввода и подпись входных данных. Стадия сборщика входных данных (IA) передает примитивы потоком из памяти в конвейер.
@@ -57,10 +57,10 @@ ms.locfileid: "8944935"
 
 Кроме того вы можете использовать систему эффектов, которая будет автоматически управлять эффективным созданием и уничтожением объектов состояния в вашем приложении.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Графический конвейер](graphics-pipeline.md)
+[Графического конвейера](graphics-pipeline.md)
 
 [Представления](views.md)
 

@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 012b0bae7c0abdacba352a3e8f60bcfd0aa1dd54
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935225"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646329"
 ---
 # <a name="lighting"></a>Освещение
 
 
 Для освещения объектов в сцене используются источники света. Цвет каждой вершины объекта основан на текущей карте текстур, цветах вершин и источниках света.
 
-**Примечание**  этот раздел предназначен только для конвейера фиксированной функции. Программируемые шейдеры выполняют все функции освещения явным образом.
+**Примечание**    этот раздел предназначен только для фиксированных функций конвейера. Программируемые шейдеры выполняют все функции освещения явным образом.
 
  
 
@@ -33,25 +33,25 @@ ms.locfileid: "8935225"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Статья</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="lighting-overview.md">Обзор освещения</a></p></td>
+<td align="left"><p><a href="lighting-overview.md">Общие сведения о освещения</a></p></td>
 <td align="left"><p>При использовании освещения Direct3D вы позволяете Direct3D обрабатывать подробную реализацию освещения за вас. Опытные пользователи могут при необходимости заниматься освещением самостоятельно.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="light-types.md">Типы освещения</a></p></td>
+<td align="left"><p><a href="light-types.md">Типы света</a></p></td>
 <td align="left"><p>Свойство типа освещения определяет, какой тип источника света вы используете. В Direct3D существует три типа источников света — точечные, прожекторные и направленные.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="light-properties.md">Свойства света</a></p></td>
+<td align="left"><p><a href="light-properties.md">Свойства освещения</a></p></td>
 <td align="left"><p>Свойства света описывают тип источника света (точечный, направленный, прожектор), его затухание, цвет, направление, положение и дальность действия.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="mathematics-of-lighting.md">Математические аспекты освещения</a></p></td>
+<td align="left"><p><a href="mathematics-of-lighting.md">Математика освещения</a></p></td>
 <td align="left"><p>Модель освещения в Direct3D включает в себя фоновое, рассеянное, отраженное и излучаемое освещение. Это обеспечивает достаточную гибкость для решения широкого спектра вопросов освещения. Общая сумма света в сцене называется <em>глобальной освещенностью</em>.</p></td>
 </tr>
 </tbody>
@@ -59,10 +59,10 @@ ms.locfileid: "8935225"
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Обучающее руководство по графике Direct3D](index.md)
+[Руководство по обучения графики Direct3D](index.md)
 
  
 

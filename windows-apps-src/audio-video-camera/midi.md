@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cb210621b74fef5128456d06a7cdf047752f45f5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947567"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612749"
 ---
 # <a name="midi"></a>MIDI
 
 
 
-В этой статье показано, как перечислять MIDI-устройства (Musical Instrument Digital Interface), а также отправлять и получать сообщения MIDI из универсального приложения для Windows. Windows 10 поддерживает MIDI по USB (класс со стандартами и наиболее принадлежит драйверов), MIDI через Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ (Windows 10 Anniversary Edition и более поздние версии) и с помощью свободно доступных продуктов сторонних поставщиков, MIDI через Ethernet и перенаправленных MIDI.
+В этой статье показано, как перечислять MIDI-устройства (Musical Instrument Digital Interface), а также отправлять и получать сообщения MIDI из универсального приложения для Windows. Windows 10 поддерживает MIDI по USB (класс совместимым и наиболее собственные драйверы), MIDI по Bluetooth с НИЗКИМ (Юбилейное обновление Windows 10 и более поздних версий) и с помощью свободно доступных продуктов независимых производителей, MIDI через Ethernet и перенаправленные MIDI.
 
 ## <a name="enumerate-midi-devices"></a>Перечисление MIDI-устройств
 
@@ -50,7 +50,7 @@ ms.locfileid: "8947567"
 -   Объект [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446), который будет отслеживать изменения устройств.
 -   Строку селектора устройства, которая будет содержать строку селектора входного MIDI-порта для одного экземпляра и строку селектора выходного MIDI-порта для другого экземпляра.
 -   Элемент управления [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868), который будет заполнен именами доступных устройств.
--   [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211), необходимый для обновления пользовательского интерфейса из потока, отличного от потока пользовательского интерфейса.
+-   [  **CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211), необходимый для обновления пользовательского интерфейса из потока, отличного от потока пользовательского интерфейса.
 
 [!code-cs[WatcherVariables](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherVariables)]
 
@@ -68,10 +68,10 @@ ms.locfileid: "8947567"
 
 **DeviceWatcher** содержит следующие события.
 
--   [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450). Создается при добавлении в систему нового устройства.
--   [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453). Создается при удалении устройства из системы.
--   [**Updated**](https://msdn.microsoft.com/library/windows/apps/br225458). Создается при обновлении информации, связанной с существующим устройством.
--   [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451). Создается, когда наблюдатель завершил перечисление типов запрошенных устройств.
+-   [**Добавлен** ](https://msdn.microsoft.com/library/windows/apps/br225450) -возникает при добавлении нового устройства в системе.
+-   [**Удалить** ](https://msdn.microsoft.com/library/windows/apps/br225453) — вызывается, когда устройство будет удалено из системы.
+-   [**Обновить** ](https://msdn.microsoft.com/library/windows/apps/br225458) -возникает при обновлении данные, связанные с существующее устройство.
+-   [**EnumerationCompleted** ](https://msdn.microsoft.com/library/windows/apps/br225451) -возникает после завершения его перечисления этого типа запрошенном устройстве наблюдатель.
 
 В обработчике событий для каждого из этих событий вызывается вспомогательный метод **UpdateDevices**, который обновляет **ListBox** с помощью текущего списка устройств. Поскольку **UpdateDevices** обновляет элементы пользовательского интерфейса, а эти обработчики событий не вызываются в потоке пользовательского интерфейса, каждый вызов должен быть заключен в вызов [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317), который запускает указанный код в потоке пользовательского интерфейса.
 
@@ -111,7 +111,7 @@ ms.locfileid: "8947567"
 
 [!code-cs[InPortSelectionChanged](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetInPortSelectionChanged)]
 
-Когда вызывается обработчик **MessageReceived**, это сообщение содержится в свойстве [**Message**](https://msdn.microsoft.com/library/windows/apps/dn894783) для **MidiMessageReceivedEventArgs**. [**Type**](https://msdn.microsoft.com/library/windows/apps/dn894726) объекта сообщения — это значение из перечисления [**MidiMessageType**](https://msdn.microsoft.com/library/windows/apps/dn894786), указывающее тип полученного сообщения. Данные сообщения зависят от его типа. Этот пример выполняет проверку, определяющую, является ли данное сообщение инициирующим, и если это так, выводит MIDI-канал, примечание и скорость сообщения.
+Когда вызывается обработчик **MessageReceived**, это сообщение содержится в свойстве [**Message**](https://msdn.microsoft.com/library/windows/apps/dn894783) для **MidiMessageReceivedEventArgs**. [  **Type**](https://msdn.microsoft.com/library/windows/apps/dn894726) объекта сообщения — это значение из перечисления [**MidiMessageType**](https://msdn.microsoft.com/library/windows/apps/dn894786), указывающее тип полученного сообщения. Данные сообщения зависят от его типа. Этот пример выполняет проверку, определяющую, является ли данное сообщение инициирующим, и если это так, выводит MIDI-канал, примечание и скорость сообщения.
 
 [!code-cs[MessageReceived](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetMessageReceived)]
 
@@ -131,7 +131,7 @@ ms.locfileid: "8947567"
 
 При перечислении устройств вывода MIDI, используя описанный выше способ, ваше приложение обнаружит MIDI-устройство «Microsoft GS Wavetable Synth». Это встроенный синтезатор General MIDI, который можно использовать в приложении. Однако если попытаться создать выходной порт MIDI для этого устройства, возникнет ошибка, если вы не включили расширение SDK для встроенного синтезатора в свой проект.
 
-**Включение расширения SDK синтезатора General MIDI в проект приложения**
+**Чтобы включить расширение общие SDK MIDI-синтезатор в проекте приложения**
 
 1.  В **обозревателе решений** щелкните правой кнопкой мыши **Ссылки** и выберите **Добавить ссылку...**.
 2.  Разверните узел **Универсальное приложение для Windows**.

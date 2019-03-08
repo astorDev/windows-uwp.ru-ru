@@ -7,26 +7,26 @@ ms.topic: article
 keywords: windows 10, UWP, API отправки в Microsoft Store, примеры кода, java
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a98584fcac446a673bf76cd3d448e05455a89bb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045057"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599989"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Пример на языке Java: отправки для приложений, надстроек и тестовых пакетов
 
 В этой статье представлены примеры кода на Java по использованию [API отправки в Microsoft Store](create-and-manage-submissions-using-windows-store-services.md) для решения этих задач.
 
-* [Получение маркера доступа Azure AD](#token)
-* [Создание надстройки](#create-add-on)
-* [Создание тестового пакета](#create-package-flight)
-* [Создание отправки приложения](#create-app-submission)
-* [Создание отправки надстройки](#create-add-on-submission)
-* [Создание отправки тестового пакета](#create-flight-submission)
+* [Получить маркер доступа Azure AD](#token)
+* [Создать надстройку](#create-add-on)
+* [Создание пакета рейса](#create-package-flight)
+* [Создание, отправка приложения](#create-app-submission)
+* [Создайте надстройку отправки](#create-add-on-submission)
+* [Создание рейсов отправка пакета](#create-flight-submission)
 
 Вы можете ознакомиться с каждым примером, чтобы подробнее узнать о демонстрируемой в нем задаче, либо вы можете собрать все примеры кода в этой статье в консольное приложение. Полный текст кода см. в разделе [Текст кода](java-code-examples-for-the-windows-store-submission-api.md#code-listing) в конце данной статьи.
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
 В этих примерах используются следующие библиотеки:
 
@@ -44,7 +44,7 @@ ms.locfileid: "9045057"
 
 ## <a name="obtain-an-azure-ad-access-token"></a>Получение токена доступа Azure AD
 
-В следующем примере показано, как [получить маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который можно использовать для вызова методов в API отправки в Microsoft Store. После получения маркера доступа у вас будет 60минут, чтобы использовать его в вызовах к API отправки Microsoft Store до окончания срока действия маркера. После истечения срока действия маркера можно сформировать новый маркер.
+В следующем примере показано, как [получить маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который можно использовать для вызова методов в API отправки в Microsoft Store. После получения маркера доступа у вас будет 60 минут, чтобы использовать его в вызовах к API отправки Microsoft Store до окончания срока действия маркера. После истечения срока действия маркера можно сформировать новый маркер.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L65-L95)]
 
@@ -68,13 +68,13 @@ ms.locfileid: "9045057"
 
 ## <a name="create-an-app-submission"></a>Создание отправки приложения
 
-В следующем примере показано, как использовать несколько методов в API отправки в Microsoft Store для создания отправки приложения. Чтобы сделать это, ```SubmitNewApplicationSubmission``` метод создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в центре партнеров. В частности, метод ```SubmitNewApplicationSubmission``` выполняет следующие задачи.
+В следующем примере показано, как использовать несколько методов в API отправки в Microsoft Store для создания отправки приложения. Чтобы сделать это, ```SubmitNewApplicationSubmission``` метод создает новый отправки клонировать последней опубликованной отправки, а затем обновляет и фиксирует клонированный отправки в центр партнеров. В частности, метод ```SubmitNewApplicationSubmission``` выполняет следующие задачи.
 
 1. Сначала метод [получает данные для указанного приложения](get-an-app.md).
 2. Затем он [удаляет ожидающую отправку для приложения](delete-an-app-submission.md), если она существует.
-3. После этого [выполняется создание новой отправки для приложения](create-an-app-submission.md) (новая отправка— это копия последней опубликованной отправки).
+3. После этого [выполняется создание новой отправки для приложения](create-an-app-submission.md) (новая отправка — это копия последней опубликованной отправки).
 4. Код изменяет некоторые сведения о новой отправке и отправляет новый пакет отправки в хранилище BLOB-объектов Azure.
-5. Затем он [обновления](update-an-app-submission.md) , а затем [фиксирует](commit-an-app-submission.md) новую отправку в центре партнеров.
+5. Далее он [обновления](update-an-app-submission.md) и затем [фиксирует](commit-an-app-submission.md) Новая отправка центр партнеров.
 6. Наконец, он периодически [проверяет состояние новой отправки](get-status-for-an-app-submission.md), пока она не будет успешно зафиксирована.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L97-L183)]
@@ -83,13 +83,13 @@ ms.locfileid: "9045057"
 
 ## <a name="create-an-add-on-submission"></a>Создание отправки надстройки
 
-В следующем примере показано, как использовать несколько методов в API отправки в Microsoft Store для создания отправки надстройки. Чтобы сделать это, ```SubmitNewInAppProductSubmission``` метод создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в центр партнеров. В частности, метод ```SubmitNewInAppProductSubmission``` выполняет следующие задачи:
+В следующем примере показано, как использовать несколько методов в API отправки в Microsoft Store для создания отправки надстройки. Чтобы сделать это, ```SubmitNewInAppProductSubmission``` метода создает новый отправки клонировать последней опубликованной отправки и затем обновляет и фиксирует клонированный отправки в центр партнеров. В частности, метод ```SubmitNewInAppProductSubmission``` выполняет следующие задачи.
 
 1. Сначала метод [получает данные для указанной надстройки](get-an-add-on.md).
 2. Затем он [удаляет ожидающую отправку для надстройки](delete-an-add-on-submission.md), если она существует.
-3. После этого [выполняется создание новой отправки для надстройки](create-an-add-on-submission.md) (новая отправка— это копия последней опубликованной отправки).
+3. После этого [выполняется создание новой отправки для надстройки](create-an-add-on-submission.md) (новая отправка — это копия последней опубликованной отправки).
 4. Код передает ZIP-архив, содержащий значки для отправки, в хранилище BLOB-объектов Azure.
-5. Затем он [обновления](update-an-add-on-submission.md) , а затем [фиксирует](commit-an-add-on-submission.md) новую отправку в центре партнеров.
+5. Далее он [обновления](update-an-add-on-submission.md) и затем [фиксирует](commit-an-add-on-submission.md) Новая отправка центр партнеров.
 6. Наконец, он периодически [проверяет состояние новой отправки](get-status-for-an-add-on-submission.md), пока она не будет успешно зафиксирована.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L347-L431)]
@@ -98,13 +98,13 @@ ms.locfileid: "9045057"
 
 ## <a name="create-a-package-flight-submission"></a>Создание отправки тестового пакета
 
-В следующем примере показано, как использовать несколько методов в API отправки в Microsoft Store для создания отправки тестового пакета. Чтобы сделать это, ```SubmitNewFlightSubmission``` метод создает новую отправку в качестве клона последней опубликованной отправки, а затем обновляет и фиксирует клонированную отправку в центр партнеров. В частности, метод ```SubmitNewFlightSubmission``` выполняет следующие задачи:
+В следующем примере показано, как использовать несколько методов в API отправки в Microsoft Store для создания отправки тестового пакета. Чтобы сделать это, ```SubmitNewFlightSubmission``` метода создает новый отправки клонировать последней опубликованной отправки и затем обновляет и фиксирует клонированный отправки в центр партнеров. В частности, метод ```SubmitNewFlightSubmission``` выполняет следующие задачи.
 
 1. Сначала метод [получает данные для указанного тестового пакета](get-a-flight.md).
 2. Затем он [удаляет ожидающую отправку для тестового пакета](delete-a-flight-submission.md), если она существует.
-3. После этого [выполняется создание новой отправки для тестового пакета](create-a-flight-submission.md) (новая отправка— это копия последней опубликованной отправки).
+3. После этого [выполняется создание новой отправки для тестового пакета](create-a-flight-submission.md) (новая отправка — это копия последней опубликованной отправки).
 4. Код передает новый пакет для отправки в хранилище BLOB-объектов Azure.
-5. Затем он [обновления](update-a-flight-submission.md) , а затем [фиксирует](commit-a-flight-submission.md) новую отправку для PartnerCenter.
+5. Далее он [обновления](update-a-flight-submission.md) и затем [фиксирует](commit-a-flight-submission.md) новый отправку, чтобы PartnerCenter.
 6. Наконец, он периодически [проверяет состояние новой отправки](get-status-for-a-flight-submission.md), пока она не будет успешно зафиксирована.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L223-L308)]
@@ -128,6 +128,6 @@ ms.locfileid: "9045057"
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L1-L491)]
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
-* [Создание отправок и управление ими с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)

@@ -1,5 +1,5 @@
 ---
-Description: Use chaseable tile notifications to find out what your app displayed on its Live Tile when the user clicked it.
+Description: Уведомления на отслеживаемых плитках позволяют узнать, что было изображено на живой плитке приложения, когда пользователь щелкнул ее.
 title: Уведомления на отслеживаемых плитках
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tile notifications
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, отслеживаемые плитки, живые плитки, уведомления на отслеживаемых плитках
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938004"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592649"
 ---
 # <a name="chaseable-tile-notifications"></a>Уведомления на отслеживаемых плитках
 
@@ -21,10 +21,10 @@ ms.locfileid: "8938004"
 Например, приложение новостей могло использовать эту функцию, чтобы определить, какая новость отображалась на живой плитке при запуске приложения; можно также настроить заметное отображение новости, чтобы пользователю было легко ее найти. 
 
 > [!IMPORTANT]
-> **Требуется юбилейное обновление**. Чтобы использовать уведомления на отслеживаемых плитках в приложениях UWP, написанных на языках C#, C++ и VB, необходимо выбрать целевой пакет SDK 14393 и использовать сборку 14393 или более поздней версии. Для приложений UWP на основе JavaScript необходимо выбрать целевой пакет SDK 17134 и использовать сборку 17134 или более поздней версии. 
+> **Требует обновления Годовщина**: Для использования уведомлений chaseable плитки с помощью C#, C++ или VB-универсальной платформы Windows приложения, должен быть предназначен для пакета SDK для 14393 и выполняться сборка 14393 или более поздней версии. Для приложений UWP на основе JavaScript необходимо выбрать целевой пакет SDK 17134 и использовать сборку 17134 или более поздней версии. 
 
 
-> **Важные API**. [Свойство LaunchActivatedEventArgs.TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [класс TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **Важные API-интерфейсы**: [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo class](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## <a name="how-it-works"></a>Принцип работы
@@ -40,7 +40,7 @@ ms.locfileid: "8938004"
 
 ## <a name="what-to-do-with-a-chaseable-tile-notifications"></a>Что делать с уведомлениями на отслеживаемых плитках
 
-Важно отметить, что в большинстве сценариев **НЕ следует переходить непосредственно к конкретному уведомлению**, отображавшемуся на плитке, когда ее щелкнул пользователь. Живая плитка используется как точка входа в приложение. Возможны два сценария, в которых пользователь щелкает живую плитку: (1) пользователю необходимо запустить приложение в стандартном режиме; (2) пользователь хочет просмотреть дополнительную информацию о конкретном уведомлении, отображавшемся на живой плитке. Поскольку у пользователя нет способа явно заявить о том, какое из двух поведений ему необходимо, в идеале **нужно запускать приложение в обычном режиме и предоставлять пользователю возможность легко найти нужное уведомление**.
+Важно отметить, что в большинстве сценариев **НЕ следует переходить непосредственно к конкретному уведомлению**, отображавшемуся на плитке, когда ее щелкнул пользователь. Живая плитка используется как точка входа в приложение. Когда пользователь щелкает на живых иконок может быть два сценария: (1) нужно было запустить приложение, как правило, или (2) они хотели посмотреть дополнительные сведения об определенных уведомлений на живой плитки. Поскольку у пользователя нет способа явно заявить о том, какое из двух поведений ему необходимо, в идеале **нужно запускать приложение в обычном режиме и предоставлять пользователю возможность легко найти нужное уведомление**.
 
 Например, при нажатии на живую плитку приложения MSN Новости приложение запускается в обычном режиме: отображается домашняя страница или статья, которую пользователь начал читать ранее. Однако на домашней странице приложения легко найти новости с живой плитки. Это обеспечивает поддержку обоих сценариев: сценария, в котором вам просто нужно запустить приложение или продолжить его работу; и сценария, где требуется просмотреть определенную новость.
 
@@ -109,9 +109,9 @@ TileContent content = new TileContent()
 
 Объект LaunchActivatedEventArgs имеет свойство, позволяющее использовать отслеживаемые уведомления: свойство [TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), предоставляющее доступ к объекту [TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo). Когда пользователь запускает приложение из плитки (а не из списка приложений, поиска или любой другой точки входа), приложение инициализирует это свойство.
 
-Объект [TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo) содержит свойство [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications), которое в свою очередь содержит список уведомлений, отображавшихся на плитке за последние 15 минут. Первый элемент в списке представляет уведомление, которое отображается на плитке в настоящее время, а последующие— уведомления, которые пользователь видел раньше. Если плитка очищена, список пуст.
+Объект [TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo) содержит свойство [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications), которое в свою очередь содержит список уведомлений, отображавшихся на плитке за последние 15 минут. Первый элемент в списке представляет уведомление, которое отображается на плитке в настоящее время, а последующие — уведомления, которые пользователь видел раньше. Если плитка очищена, список пуст.
 
-Каждый ShownTileNotificationhas Argumentsproperty. Argumentsproperty будет инициализируются с argumentsstring из полезных данных уведомления плитки или значение null, если в полезных данных отсутствовала argumentsstring.
+Каждый ShownTileNotification имеет свойство аргументы. Свойство Arguments инициализируются строкой аргументы из плитки полезные данные уведомления или значение null, если полезных данных не содержит строку аргументов.
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -176,7 +176,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 
 
-## <a name="related-articles"></a>Статьи по теме
+## <a name="related-articles"></a>Связанные статьи
 
-- [Свойство LaunchActivatedEventArgs.TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
 - [Класс TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

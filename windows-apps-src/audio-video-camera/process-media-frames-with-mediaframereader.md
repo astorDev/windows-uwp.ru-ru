@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a1d5a15bd88b7adc23ccc835001c384a91e65a31
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050707"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597989"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Обработка кадров мультимедиа с помощью MediaFrameReader
 
@@ -32,9 +32,9 @@ ms.locfileid: "9050707"
 ## <a name="setting-up-your-project"></a>Настройка проекта
 Как и в любом приложении, использующем **MediaCapture**, перед попыткой получить доступ к камере вам необходимо объявить, что ваше приложение использует возможность *webcam*. Если ваше приложение получает данные от звукового устройства, рекомендуется также объявить возможность устройства *microphone*. 
 
-**Добавление возможностей в манифест приложения**
+**Добавления возможностей в манифесте приложения**
 
-1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest** в **Обозревателе решений**.
+1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest**в **Обозревателе решений**.
 2.  Перейдите на вкладку **Возможности**.
 3.  Выставьте флажок для пункта **Веб-камера** и поле для параметра **Микрофон**.
 4.  Для доступа к библиотеке изображений и видео установите флажки **Библиотека изображений** и **Библиотека видео**.
@@ -44,13 +44,13 @@ ms.locfileid: "9050707"
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>Выбор источников кадров и групп источников кадров
-Многим приложениям, обрабатывающим кадры мультимедиа, требуется получать кадры из нескольких источников одновременно, например от цветных камер и камер с эффектом глубины. Объект [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) представляет набор источников кадров мультимедиа, которые можно использовать одновременно. Вызовите статический метод [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync), чтобы получить список всех групп источников кадров, поддерживаемых данным устройством.
+Многим приложениям, обрабатывающим кадры мультимедиа, требуется получать кадры из нескольких источников одновременно, например от цветных камер и камер с эффектом глубины. [ **MediaFrameSourceGroup** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) представляет набор источников мультимедиа кадров, которые могут использоваться одновременно. Вызовите статический метод [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync), чтобы получить список всех групп источников кадров, поддерживаемых данным устройством.
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-Вы также можете создать объект [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) с помощью [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427) и значение, возвращаемое при [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector) для получения уведомлений при доступных групп источников кадров на устройстве изменения, например при подключении внешней камеры. Дополнительные сведения см. в разделе [**Перечисление устройств**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices).
+Вы также можете создать [ **DeviceWatcher** ](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) с помощью [ **DeviceInformation.CreateWatcher** ](https://msdn.microsoft.com/library/windows/apps/br225427) и значение, возвращаемое из [ **MediaFrameSourceGroup.GetDeviceSelector** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector) получать уведомления, когда источник доступный кадр группирует на изменения устройства, например при подключении внешнего камеры. Дополнительные сведения см. в разделе [**Перечисление устройств**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices).
 
-[**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) содержит коллекцию объектов [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo), описывающих источники кадров, включенные в эту группу. После получения групп источников кадров, доступных на устройстве, можно выбрать группу, которая предоставляет интересующие вас источники кадров.
+[  **MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) содержит коллекцию объектов [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo), описывающих источники кадров, включенные в эту группу. После получения групп источников кадров, доступных на устройстве, можно выбрать группу, которая предоставляет интересующие вас источники кадров.
 
 В следующем примере показан простейший способ выбора группы источников кадров. Этот код просто перебирает все доступные группы и затем перебирает все элементы в коллекции [**SourceInfos**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.SourceInfos). Каждый элемент **MediaFrameSourceInfo** проверяется на предмет поддержки необходимых нам функций. В этом случае свойство [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo.MediaStreamType) проверяется по значению [**VideoPreview**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType); это означает, что устройство предоставляет поток предварительного просмотра видео, а свойство [**SourceKind**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo.SourceKind) проверяется по значению [**Color**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceKind), указывая, что источник предоставляет цветные кадры.
 
@@ -81,10 +81,10 @@ ms.locfileid: "9050707"
 
 Создайте экземпляр объекта **MediaCapture**, вызвав конструктор. Далее создайте объект [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings), который будет использоваться для инициализации объекта **MediaCapture**. В этом примере использованы следующие параметры:
 
-* [**SourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SourceGroup) — сообщает системе, какая группа источников будет использоваться для получения кадров. Не забывайте, что группа источников определяет набор источников кадров мультимедиа, которые можно использовать одновременно.
-* [**SharingMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SharingMode) — сообщает системе, требуется ли монопольное управление устройствами-источниками захвата. Если здесь задается [**ExclusiveControl**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode), это означает, что вы можете изменить параметры устройства захвата, например формат производимых им кадров, но это также означает, что если другое приложение уже обладает монопольным управлением, ваше приложение получит сбой при попытке инициализации устройства захвата мультимедиа. Если здесь задается [**SharedReadOnly**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode), вы можете получить кадры из источников, даже если они используются другим приложением, но не можете изменять параметры устройств.
-* [**MemoryPreference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.MemoryPreference) — если задается параметр [**CPU**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference), система будет использовать память ЦП, что гарантирует доступность кадров как объектов [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) при их поступлении. Если здесь задается [**Auto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference), система будет динамически выбирать оптимальный участок памяти для хранения кадров. Если система выбирает использование памяти GPU, кадры мультимедиа будут поступать как объект [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface), а не **SoftwareBitmap**.
-* [**StreamingCaptureMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.StreamingCaptureMode) — задайте здесь значение [**Video**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.StreamingCaptureMode), чтобы указать, что передача потока аудио не требуется.
+* [**SourceGroup** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SourceGroup) -это сообщает системе какой исходной группы, вы будете использовать для получения кадров. Не забывайте, что группа источников определяет набор источников кадров мультимедиа, которые можно использовать одновременно.
+* [**SharingMode** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SharingMode) -это сообщает системе, нужны ли исключительный контроль над устройства источник записи. Если здесь задается [**ExclusiveControl**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode), это означает, что вы можете изменить параметры устройства захвата, например формат производимых им кадров, но это также означает, что если другое приложение уже обладает монопольным управлением, ваше приложение получит сбой при попытке инициализации устройства захвата мультимедиа. Если здесь задается [**SharedReadOnly**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode), вы можете получить кадры из источников, даже если они используются другим приложением, но не можете изменять параметры устройств.
+* [**MemoryPreference** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.MemoryPreference) — при указании [ **ЦП**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference), система будет использовать память ЦП, что гарантирует, что при получении кадров, они будут доступны как [  **SoftwareBitmap** ](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) объектов. Если здесь задается [**Auto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference), система будет динамически выбирать оптимальный участок памяти для хранения кадров. Если система выбирает использование памяти GPU, кадры мультимедиа будут поступать как объект [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface), а не **SoftwareBitmap**.
+* [**StreamingCaptureMode** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.StreamingCaptureMode) -устанавливать равным [ **видео** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.StreamingCaptureMode) для указания аудио не требуется выполнить потоковую передачу.
 
 Вызовите [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) для инициализации **MediaCapture** с требуемыми параметрами. Не забудьте поместить этот вызов в блок *try* на случай сбоя инициализации.
 
@@ -97,12 +97,12 @@ ms.locfileid: "9050707"
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
-## <a name="create-a-frame-reader-for-the-frame-source"></a>Создание средство чтения кадров для источника кадров
+## <a name="create-a-frame-reader-for-the-frame-source"></a>Создание ридера кадров для источника кадров
 Для получения кадров от источника кадров мультимедиа используйте [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader).
 
 [!code-cs[DeclareMediaFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaFrameReader)]
 
-Создайте экземпляр средства чтения кадров путем вызова [**CreateFrameReaderAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CreateFrameReaderAsync) в инициализированном объекте **MediaCapture**. Первым аргументом этого метода должен быть источник кадров, из которого вы хотите получать кадры. Можно создать отдельный ридер кадров для каждого источника кадров, который вы хотите использовать. Второй аргумент сообщает системе формат вывода, в котором вы хотите получать кадры. Это поможет вам избежать необходимости самостоятельного преобразования кадров при их поступлении. Обратите внимание, что при выборе формата, не поддерживаемого источником кадров, возникнет исключение, поэтому убедитесь, что это значение входит в коллекцию [**SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats).  
+Создайте экземпляр ридера кадров путем вызова [**CreateFrameReaderAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CreateFrameReaderAsync) на инициализированном объекте **MediaCapture**. Первым аргументом этого метода должен быть источник кадров, из которого вы хотите получать кадры. Можно создать отдельный ридер кадров для каждого источника кадров, который вы хотите использовать. Второй аргумент сообщает системе формат вывода, в котором вы хотите получать кадры. Это поможет вам избежать необходимости самостоятельного преобразования кадров при их поступлении. Обратите внимание, что при выборе формата, не поддерживаемого источником кадров, возникнет исключение, поэтому убедитесь, что это значение входит в коллекцию [**SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats).  
 
 После создания ридера кадров зарегистрируйте обработчик для события [**FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived), которое создается при поступлении нового кадра из источника.
 
@@ -117,11 +117,11 @@ ms.locfileid: "9050707"
 
 [!code-xml[ImageElementXAML](./code/Frames_Win10/Frames_Win10/MainPage.xaml#SnippetImageElementXAML)]
 
-На странице программной части объявите переменную-член класса типа **SoftwareBitmap**, которая будет использоваться в качестве заднего буфера, в который будут копироваться все входящие изображения. Обратите внимание, что копируются не сами данные изображений, а только ссылки на объекты. Также объявите логическую переменную для отслеживания того, выполняется ли в данный момент наша операция пользовательского интерфейса.
+На странице программной части объявите переменную-член класса типа **SoftwareBitmap**, которая будет использоваться в качестве заднего буфера, в который будут копироваться все входящие изображения. Обратите внимание, что копируются не сами данные изображений, а только ссылки на объекты. Также объявите логическую переменную для отслеживания того, выполняется ли наша операция пользовательского интерфейса в данный момент.
 
 [!code-cs[DeclareBackBuffer](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareBackBuffer)]
 
-Поскольку кадры будут поступать как объекты **SoftwareBitmap**, необходимо создать объект [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource), который позволяет использовать **SoftwareBitmap** в качестве источника для **элемента управления** XAML. Перед запуском средства чтения кадров необходимо задать где-либо в коде источник изображений.
+Поскольку кадры будут поступать как объекты **SoftwareBitmap**, необходимо создать объект [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource), который позволяет использовать **SoftwareBitmap** в качестве источника для **элемента управления** XAML. Перед запуском ридера кадров необходимо где-либо в коде задать источник изображений.
 
 [!code-cs[ImageElementSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetImageElementSource)]
 
@@ -252,7 +252,7 @@ ms.locfileid: "9050707"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
-* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Пример кадров камеры](https://go.microsoft.com/fwlink/?LinkId=823230)
  
 

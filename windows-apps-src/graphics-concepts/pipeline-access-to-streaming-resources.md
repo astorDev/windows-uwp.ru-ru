@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d95ffc14e9ae6d4ea59a4b3bdc33fd215cb61be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925911"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616379"
 ---
 # <a name="pipeline-access-to-streaming-resources"></a>Конвейерный доступ к потоковым ресурсам
 
@@ -33,33 +33,33 @@ ms.locfileid: "8925911"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Статья</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="srv-behavior-with-non-mapped-tiles.md">Поведение SRV с несопоставленными плитками</a></p></td>
+<td align="left"><p><a href="srv-behavior-with-non-mapped-tiles.md">Поведение SRV с несопоставленные плитки</a></p></td>
 <td align="left"><p>Поведение операций чтения представления ресурса шейдера (SRV), включающих несопоставленные плитки, зависит от уровня поддержки оборудования.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="uav-behavior-with-non-mapped-tiles.md">Поведение UAV с несопоставленными плитками</a></p></td>
+<td align="left"><p><a href="uav-behavior-with-non-mapped-tiles.md">Поведение UAV с несопоставленные плитки</a></p></td>
 <td align="left"><p>Поведение операций чтения и записи представлений неупорядоченного доступа (UAV) зависит от уровня поддержки оборудования.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="rasterizer-behavior-with-non-mapped-tiles.md">Поведение средства программной прорисовки с несопоставленными плитками</a></p></td>
+<td align="left"><p><a href="rasterizer-behavior-with-non-mapped-tiles.md">Поведение растеризации с несопоставленные плитки</a></p></td>
 <td align="left"><p>В этом разделе описывается поведение растеризации несопоставленных плиток.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="tile-access-limitations-with-duplicate-mappings.md">Ограничения доступа к плитке с повторяющимися сопоставлениями</a></p></td>
+<td align="left"><p><a href="tile-access-limitations-with-duplicate-mappings.md">Ограничения доступа плитки с повторяющиеся сопоставления</a></p></td>
 <td align="left"><p>Существуют ограничения на доступ к плиткам с повторяющимися сопоставлениями, например при копировании потоковых ресурсов с перекрывающимися источником и назначением или при отрисовке общих плиток для области отрисовки.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="streaming-resources-texture-sampling-features.md">Функции создания образцов текстур для потоковых ресурсов</a></p></td>
+<td align="left"><p><a href="streaming-resources-texture-sampling-features.md">Потоковой передачи ресурсов текстуры функции выборки</a></p></td>
 <td align="left"><p>Дискретизация текстур потоковых ресурсов включает в себя обратную связь от шейдера о состоянии сопоставленных областей. При этом проверяется, были ли все данные, к которым запрашивается доступ, сопоставлены в ресурсе, выполняется сжатие, чтобы помочь шейдерам избежать областей в потоковых ресурсах, которые не были сопоставлены, и определяется минимальный уровень детализации, полностью сопоставленной для всего фильтра текстуры.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="hlsl-streaming-resources-exposure.md">Экспозиция потоковых ресурсов HLSL</a></p></td>
+<td align="left"><p><a href="hlsl-streaming-resources-exposure.md">Ресурсы раскрытия HLSL для потоковой передачи</a></p></td>
 <td align="left"><p>Для поддержки потоковых ресурсов в <a href="https://msdn.microsoft.com/library/windows/desktop/ff471356">модели шейдера 5</a> требуется определенный синтаксис HLSL.</p></td>
 </tr>
 </tbody>
@@ -67,10 +67,10 @@ ms.locfileid: "8925911"
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Потоковые ресурсы](streaming-resources.md)
+[Потоковую передачу ресурсов](streaming-resources.md)
 
  
 

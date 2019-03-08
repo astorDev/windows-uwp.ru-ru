@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ca3b5e230270b46b7cb2709d4bfa06c4c51d0224
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947196"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598159"
 ---
 # <a name="vertex-shader-vs-stage"></a>Этап шейдера вершин (VS)
 
 
 На этапе шейдера вершин (VS) происходит обработка вершин, обычно с выполнением таких операций, как преобразования, скиннинг и освещение. Шейдер вершин принимает одну входную вершину и создает одну выходную вершину.
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Назначение и способы использования
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Назначения и использования
 
 
 Этап шейдера вершин (VS) используется для отдельных операций повершинной обработки, например:
@@ -35,11 +35,11 @@ ms.locfileid: "8947196"
 
 Каждая входная вершина шейдера вершин может состоять из 32-разрядных векторов (до 4 компонентов в каждом) в количестве до 16 штук. Каждая выходная вершина может состоять из 16 32-разрядных четырехкомпонентных векторов. Все шейдеры вершин должны иметь как минимум один вход и один выход, который может представлять собой даже одно-единственное скалярное значение.
 
-Этап шейдера вершин может потреблять два системных значения от сборщика входных данных: VertexID and InstanceID (см. раздел "Системные значения и семантика"). Поскольку и VertexID, и InstanceID являются значимыми на уровне вершины, а формируемые оборудованием идентификаторы могут подаваться на вход только первого этапа, которому они понятны, эти значения идентификаторов могут подаваться только на вход этапа шейдера вершин.
+На этапе шейдера вершин можно использовать два значения, сформированные системой из сборщик входных данных: VertexID и InstanceID (см. в разделе значения системных и семантика). Поскольку и VertexID, и InstanceID являются значимыми на уровне вершины, а формируемые оборудованием идентификаторы могут подаваться на вход только первого этапа, которому они понятны, эти значения идентификаторов могут подаваться только на вход этапа шейдера вершин.
 
 Шейдеры вершин всегда выполняются над всеми вершинами, включая смежные вершины во входных топологиях примитивов со смежностью. Число раз выполнения шейдера вершин можно запросить у ЦП с помощью статистики конвейера VSInvocations.
 
-Шейдер вершин может выполнять операции загрузки и дискретизации текстур, когда производные экранного пространства не требуются (с использованием встроенных функций HLSL: [Sample (объект текстуры DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509695), [SampleCmpLevelZero (объект текстуры DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509697) и [SampleGrad (объект текстуры DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509698)).
+Вершинный построитель текстуры можно выполнять нагрузки дискретизации текстур операции и где производные пространство экрана не являются обязательными (использование встроенных функций HLSL: [Пример (объект текстуры DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509695), [SampleCmpLevelZero (объект текстуры DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509697), и [SampleGrad (объект текстуры DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509698)).
 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Входные данные
 
@@ -51,10 +51,10 @@ ms.locfileid: "8947196"
 
 Одна вершина. Каждая выходная вершина может состоять из 16 32-разрядных четырехкомпонентных векторов.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Графический конвейер](graphics-pipeline.md)
+[Графического конвейера](graphics-pipeline.md)
 
  
 

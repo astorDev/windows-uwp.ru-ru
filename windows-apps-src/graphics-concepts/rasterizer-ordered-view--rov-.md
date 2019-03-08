@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ed49ba81c44a799e4d827d636f601c77d01333b3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940302"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603599"
 ---
 # <a name="rasterizer-ordered-view-rov"></a>Упорядоченное представление средства программной прорисовки (ROV)
 
@@ -21,7 +21,7 @@ ms.locfileid: "8940302"
 
 Упорядоченное представление средства программной прорисовки позволяет применять алгоритмы "порядко-независимой прозрачности " (OIT) при отрисовке пикселей. Буфер глубины только позволяет нарисовать или закрыть пиксель, но прозрачность дает такого понятия как частичное перекрытие. Алгоритмы OIT применяют прозрачные текстуры в правильном порядке, т. е. если прозрачный стеклянный объект должен отображаться за стеклянным окном, которое находится за зелеными насаждениями, использующими прозрачные текстуры, то конечный результат рисуется предсказуемо правильно. Без представлений ROV и алгоритмов OIT порядок рисования этих прозрачных объектов был непредсказуемым, и полученная сцена могла оказаться неверной.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Представления](views.md)

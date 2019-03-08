@@ -5,22 +5,22 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 882e84c5126e4f67e246dd479008133c979c06b1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939962"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595959"
 ---
 # <a name="remote-input-api-reference"></a>Справочник по API удаленного ввода   
 С помощью этого API-интерфейса можно удаленно отправлять данные ввода с контроллера, клавиатуры и мыши в режиме реального времени.
 
 **Запрос**
 
-Метод      | URI запроса
+Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
 WebSocket | /ext/remoteinput
 <br />
-**Параметры универсального кода ресурса (URI)**
+**Параметры URI**
 
 - Нет
 
@@ -38,8 +38,8 @@ WebSocket | /ext/remoteinput
 |------------|-------------|
 Keyboard KeyCodes (клавиатура) | 0x01
 Keyboard ScanCodes (клавиатура) | 0x02
-Mouse (мышь) | 0x03
-Clear All (очистить все) | 0x04
+Мышь | 0x03
+Очистить все | 0x04
 
 Для KeyboardKeyCodes и KeyboardScanCodes второй байт является значением кода клавиши или кода опроса, а третий байт имеет значение 0x01 для нажатия вниз и значение 0x00 — для отпускания клавиши.
 
@@ -47,7 +47,7 @@ Clear All (очистить все) | 0x04
 
 | Тип действия        | Значение UINT16 |
 |------------|-------------|
-Move (переместить) | 0x0001
+Переместить | 0x0001
 LeftDown (влево вниз) | 0x0002
 LeftUp (влево вверх) | 0x0004
 RightDown (вправо вниз) | 0x0008
@@ -110,6 +110,6 @@ VK_GAMEPAD_RIGHT_THUMBSTICK_LEFT   |  0xDA
 5XX | Коды ошибок
 
 <br />
-**Доступные семейства устройств**
+**Семейств доступных устройств**
 
 * Windows Xbox

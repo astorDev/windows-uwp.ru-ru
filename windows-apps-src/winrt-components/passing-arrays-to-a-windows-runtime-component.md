@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 60c2e2221cd174ffd75a45d6fe8e2f66744d67a0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936207"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657879"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>Передача массивов компоненту среды выполнения Windows
 
@@ -22,7 +22,7 @@ ms.locfileid: "8936207"
 
 -   Для возвращаемого значения или выходного параметра (параметр **ByRef** с атрибутом [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) в Visual Basic) массив всегда предназначен только для вывода. Не применяйте атрибут ReadOnlyArrayAttribute. Атрибут WriteOnlyArrayAttribute разрешен для выходных параметров, но он избыточен.
 
-    > **Внимание**компилятор Visual Basic не применяет правила только для вывода. Ни в коем случае не следует читать данные из выходного параметра, так как он может содержать **Nothing**. Всегда присваивайте новый массив.
+    > **Внимание**  компилятор Visual Basic не применяет правила только вывода. Ни в коем случае не следует читать данные из выходного параметра, так как он может содержать **Nothing**. Всегда присваивайте новый массив.
  
 -   Параметры с модификатором **ref** (**ByRef** в Visual Basic) не разрешены. Winmdexp.exe вызывает ошибку.
 -   Для параметра, который передается значением, необходимо указать, предназначено ли содержимое массива для ввода или вывода, применив атрибут [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) или [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx). Если указать оба атрибута, возникнет ошибка.
@@ -55,13 +55,13 @@ ms.locfileid: "8936207"
 
 Параметры с атрибутом ReadOnlyArrayAttribute или WriteOnlyArrayAttribute ведут себя по-разному в зависимости от того, написан ли вызывающий объект на управляемом или неуправляемом коде. Если вызывающий объект написан на неуправляемом коде (расширения компонентов JavaScript или Visual C++), содержимое массива обрабатывается следующим образом.
 
--   ReadOnlyArrayAttribute: массив копируется, когда вызов пересекает границу (двоичного интерфейса приложения ABI). Элементы при необходимости преобразуются. Поэтому все случайные изменения, вносимые методом в массив только для ввода, не видны вызывающей стороне.
--   WriteOnlyArrayAttribute: метод не может делать предположений о содержимом исходного массива. Например, массив, который получает метод, может быть инициализирован или может содержать значения по умолчанию. Ожидается, что метод установит значения всех элементов в массиве.
+-   ReadOnlyArrayAttribute: Массив копируется в том случае, когда вызов пересекает границы двоичного интерфейса (ABI) приложения. Элементы при необходимости преобразуются. Поэтому все случайные изменения, вносимые методом в массив только для ввода, не видны вызывающей стороне.
+-   WriteOnlyArrayAttribute: Вызванный метод не может вносить никаких предположений о содержимом исходного массива. Например, массив, который получает метод, может быть инициализирован или может содержать значения по умолчанию. Ожидается, что метод установит значения всех элементов в массиве.
 
 Если вызывающий объект написан на управляемом коде, исходный массив доступен вызывающему методу, как и любой вызов метода на платформе .NET Framework. Содержимое массива не изменяется в коде .NET Framework, поэтому изменения, вносимые методом в массиве, видны вызывающей стороне. Необходимо помнить об этой особенности, поскольку она влияет на модульные тесты, создаваемые для компонента среды выполнения Windows. Если тесты написаны на неуправляемом коде, содержимое массива не будет изменяться во время тестирования.
 
-## <a name="related-topics"></a>Ссылки по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
 * [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
-* [Создание компонентов среды выполнения Windows на C# и VisualBasic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Создание компонентов среды выполнения Windows на C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

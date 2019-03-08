@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, игры, DirectX, загрузка, растеризация, mesh-объект, точечный рисунок, двумерный, трехмерный
 ms.localizationpriority: medium
 ms.openlocfilehash: afd08d62182bd0980f43ce1c4578c1181f8a6d2f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925155"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613749"
 ---
 # <a name="fundamentals-of-directx-programming"></a>Основы программирования на DirectX
 
@@ -42,15 +42,15 @@ ms.locfileid: "8925155"
 <td align="left"><p>Создание двумерной графики с помощью DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/windows/uwp/graphics-concepts/index">Обучающее руководство по графике Direct3D</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/windows/uwp/graphics-concepts/index">Руководство по обучения графики Direct3D</a></p></td>
 <td align="left"><p>Пояснение концепций графики Direct3D.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="an-introduction-to-3d-graphics-with-directx.md">Простая трехмерная графика для игр DirectX</a></p></td>
+<td align="left"><p><a href="an-introduction-to-3d-graphics-with-directx.md">Основные 3D-графики для игр DirectX</a></p></td>
 <td align="left"><p>Создание простой трехмерной графики в DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="load-a-game-asset.md">Загрузка ресурсов в игре DirectX</a></p></td>
+<td align="left"><p><a href="load-a-game-asset.md">Загрузка ресурсов в игре для DirectX</a></p></td>
 <td align="left"><p>Загрузка mesh-объектов в игру DirectX.</p></td>
 </tr>
 </tbody>

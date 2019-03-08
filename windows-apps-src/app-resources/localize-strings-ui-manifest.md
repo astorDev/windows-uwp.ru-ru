@@ -1,5 +1,5 @@
 ---
-Description: If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
+Description: Если вы хотите, чтобы ваше приложение поддерживало разные языки интерфейса, а в вашем коде или разметке XAML либо манифесте пакета приложения есть строковые литералы, переместите эти строки из кода или разметки в файл ресурсов (.resw). Затем можно создать переведенную копию этого файла ресурсов для каждого языка, поддерживаемого вашим приложением.
 title: Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 321f8efc1475bc153102f3f8157cd2d094b37077
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049056"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630139"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 Дополнительные сведения о преимуществах локализации приложений см. в разделе [Глобализация и локализация](../design/globalizing/globalizing-portal.md).
@@ -28,12 +28,12 @@ ms.locfileid: "9049056"
 1. Установите язык по умолчанию для приложения.
     1. Открыв решение в Visual Studio, откройте файл `Package.appxmanifest`.
     2. На вкладке «Приложения» убедитесь, что язык по умолчанию задан соответствующим образом (например, en или en-US). На дальнейших этапах предполагается, что вы задали язык по умолчанию en-US.
-    <br>**Примечание**как минимум, необходимо предоставить строковых ресурсов, локализованных для этого языка по умолчанию. Это и есть ресурсы, которые будут загружены в том случае, если не будет найдено более подходящих для выбранного пользователем языка или языка отображения ресурсов.
+    <br>**Примечание** как минимум, необходимо предоставить строковые ресурсы, локализованные для данного языка по умолчанию. Это и есть ресурсы, которые будут загружены в том случае, если не будет найдено более подходящих для выбранного пользователем языка или языка отображения ресурсов.
 2. Создайте файл ресурсов (.resw) для языка по умолчанию.
     1. В узле проекта создайте новую папку и назовите ее Strings.
     2. В разделе `Strings` создайте новую вложенную папку и назовите ее en-US.
     3. В разделе `en-US` создайте новый файл ресурсов (.resw) и убедитесь, что он называется Resources.resw.
-    <br>**Примечание**при наличии файлов ресурсов .NET (.resx), которые требуется перенести, см. в разделе [Перенос XAML и пользовательского интерфейса](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
+    <br>**Примечание** при наличии файлы ресурсов .NET (.resx), которые требуется перенести, см. в разделе [перенос XAML и пользовательским Интерфейсом](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
 3.  Откройте `Resources.resw` и добавьте эти строковые ресурсы.
 
     `Strings/en-US/Resources.resw`
@@ -53,13 +53,13 @@ ms.locfileid: "9049056"
 <TextBlock x:Uid="Greeting"/>
 ```
 
-Во время выполнения загружается `\Strings\en-US\Resources.resw` (поскольку сейчас это единственный файл ресурсов в проекте). Директива **X:Uid** для **TextBlock** вызывает выполнение поиска в `Resources.resw` для обнаружения идентификаторов свойств, содержащих идентификатор строкового ресурса Greeting. Обнаруживаются идентификаторы свойств Greeting.Text и Greeting.Width, и их значения применяются к **TextBlock**, переопределяя значения, заданные локально в разметке. Значение Greeting.Foreground также будет применяться, если оно добавлено. Однако только идентификаторы свойств используются для задания свойств элементов разметки XAML, поэтому установка **x:Uid** со значением Farewell для этого TextBlock не даст никакого эффекта. `Resources.resw` *does* содержит идентификатор строкового ресурса Farewell, но не содержит идентификаторы свойств для него.
+Во время выполнения загружается `\Strings\en-US\Resources.resw` (поскольку сейчас это единственный файл ресурсов в проекте). Директива **X:Uid** для **TextBlock** вызывает выполнение поиска в `Resources.resw` для обнаружения идентификаторов свойств, содержащих идентификатор строкового ресурса Greeting. Обнаруживаются идентификаторы свойств Greeting.Text и Greeting.Width, и их значения применяются к **TextBlock**, переопределяя значения, заданные локально в разметке. Значение Greeting.Foreground также будет применяться, если оно добавлено. Однако только идентификаторы свойств используются для задания свойств элементов разметки XAML, поэтому установка **x:Uid** со значением Farewell для этого TextBlock не даст никакого эффекта. `Resources.resw` *does* содержать идентификатор ресурса строку «Заключение», но содержит не идентификаторов свойств для него.
 
 При назначении идентификатора строкового ресурса элементу XAML следите за тем, чтобы *все* идентификаторы свойств для этого идентификатора подходили этому элементу XAML. Например, если установить `x:Uid="Greeting"` для **TextBlock**, то значение Greeting.Text будет обработано, поскольку у типа **TextBlock** есть свойство Text. Но если вы задали `x:Uid="Greeting"` для **Button**, то Greeting.Text приведет к ошибке во время выполнения, поскольку у типа **Button** нет свойства Text. Возможное решение проблемы в этом случае — создать идентификатор свойства с именем ButtonGreeting.Content и задать `x:Uid="ButtonGreeting"` для **Button**.
 
 Вместо определения значения **Width** из файла ресурсов, возможно, логично будет разрешить динамическую адаптацию размера элементов управления по содержимому.
 
-**Примечание**для [присоединенных свойств](../xaml-platform/attached-properties-overview.md), требуется особый синтаксис в столбце Name в файле .resw. Например, вот что надо ввести в столбце Name, чтобы задать значение для присоединенного свойства [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) для идентификатора Greeting.
+**Примечание** для [присоединенных свойств](../xaml-platform/attached-properties-overview.md), вам потребуется специальный синтаксис в столбце имени в resw-файл. Например, вот что надо ввести в столбце Name, чтобы задать значение для присоединенного свойства [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) для идентификатора Greeting.
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -88,13 +88,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 Тот же самый код можно использовать из проекта с библиотекой классов (Universal Windows) или [библиотекой среды выполнения Windows (универсальная платформа Windows)](../winrt-components/index.md). Во время выполнения загружаются ресурсы приложения, в котором размещается библиотека. Рекомендуется, чтобы библиотека загружала ресурсы из приложения, в котором она расположена, поскольку выше вероятность, что это приложение локализовано в большей степени. Если библиотеке не требуется предоставлять ресурсы, то она должна обеспечить приложению возможность заменять их при вызове.
 
-Если имя ресурса отделен (он содержит «.» символов), затем замены точек с помощью косой черты («/») символов в имени ресурса. Идентификаторы свойств, например, содержать несколько точек; Поэтому вам потребуется сделать это substition, чтобы загрузить один из них из кода.
+Если имя ресурса разбито (он содержит «.» символов), затем замените точек с косой черты («/») символы в имени ресурса. Идентификаторы свойств, например, содержать точки; Поэтому необходимо сделать это substition, чтобы загрузить один из них из кода.
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп PRI-файл вашего приложения. Каждый ресурс `uri` отображается в файле дамп.
+Если вы сомневаетесь, вы можете использовать [MakePri.exe](makepri-exe-command-options.md) для помещения в дамп PRI-файл приложения. Каждый ресурс `uri` отображается в файле дампа.
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -116,7 +116,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ## <a name="localize-the-string-resources"></a>Локализация строковых ресурсов
 1. Создайте копию файла ресурсов (.resw) для другого языка.
     1. В разделе Strings создайте новую вложенную папку и назовите ее de-DE для немецкого языка (Германия).
-   <br>**Примечание**имя папки, можно использовать любой [тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302). Дополнительные сведения о языковых квалификаторах и список распространенных языковых тегов приводятся в разделе [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md).
+   <br>**Примечание** для имени папки, можно использовать любой [тега языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302). Дополнительные сведения о языковых квалификаторах и список распространенных языковых тегов приводятся в разделе [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md).
    2. Создайте копию `Strings/en-US/Resources.resw` в папке `Strings/de-DE`.
 2. Переведите строки.
     1. Откройте `Strings/de-DE/Resources.resw` и переведите значения в столбце Value. Комментарии переводить не нужно.
@@ -147,7 +147,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 <TextBlock x:Uid="/ErrorMessages/PasswordTooWeak"/>
 ```
 
-Необходимо лишь добавить `/<resources-file-name>/` перед идентификатором строкового ресурса для файлов ресурсов, *отличных от* `Resources.resw`. Это вызвано тем, что Resources.resw — имя файла по умолчанию, и оно используется, если имя файла не указано (как в предыдущих примерах в этом разделе).
+Необходимо добавить `/<resources-file-name>/` перед идентификатором строку ресурса для файлов ресурсов *отличное от* `Resources.resw`. Это вызвано тем, что Resources.resw — имя файла по умолчанию, и оно используется, если имя файла не указано (как в предыдущих примерах в этом разделе).
 
 В коде ниже предполагается, что `ErrorMessages.resw` содержит ресурс с именем MismatchedPasswords, значение которого описывает ошибку.
 
@@ -171,13 +171,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 Если вы решите переместить ресурс AppDisplayName из `Resources.resw` в `ManifestResources.resw`, то в манифесте пакета приложения необходимо изменить `ms-resource:AppDisplayName` на `ms-resource:/ManifestResources/AppDisplayName`.
 
-Если отделен имени файла ресурсов (он содержит «.» символов), затем покинуть точек в имени при ссылке. **Не** точек замените символы косой черты («/»), как и для имени ресурса.
+Если имя файла ресурсов делится (он содержит «.» символов), оставьте число точек в имени при ссылке на нее. **Не** replace точек с косой черты («/»), символы, так же, как для имени ресурса.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп PRI-файл вашего приложения. Каждый ресурс `uri` отображается в файле дамп.
+Если вы сомневаетесь, вы можете использовать [MakePri.exe](makepri-exe-command-options.md) для помещения в дамп PRI-файл приложения. Каждый ресурс `uri` отображается в файле дампа.
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -257,27 +257,27 @@ private void RefreshUIText()
 ## <a name="loading-strings-from-a-class-library-or-a-windows-runtime-library"></a>Загрузка строк из библиотеки классов или библиотеки среды выполнения Windows
 Строковые ресурсы в указываемой ссылкой библиотеке классов (универсальная платформа Windows) или [библиотеке среды выполнения Windows (универсальная платформа Windows)](../winrt-components/index.md) обычно добавляются в подпапку пакета, в который они включаются во время сборки. Идентификатор ресурса такой строки обычно принимает форму *LibraryName/ResourcesFileName/ResourceIdentifier*.
 
-Библиотека может получить ResourceLoader для собственных ресурсов. Например следующий код иллюстрирует, как библиотека или приложение, которое ссылается на нее может получить ResourceLoader для строковых ресурсов библиотеки.
+Библиотека может получить ResourceLoader для собственных ресурсов. Например следующий код иллюстрирует, как библиотека или приложение, которое ссылается на него можно получить ResourceLoader для строковых ресурсов библиотеки.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Для библиотеки среды выполнения Windows (универсальное приложение Windows), если пространство имен по умолчанию отделен (он содержит «.» символов), затем используйте точек в имя карты ресурсов.
+Для библиотеки среды выполнения Windows (универсальных Windows), если разделить пространство имен по умолчанию (он содержит «.» символов), затем используйте точки в имени карты ресурса.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-Вам не нужно сделать это для библиотеки классов (Universal Windows). Если есть сомнения, можно использовать [MakePri.exe](makepri-exe-command-options.md) создать дамп компонент или библиотеки PRI-файла. Каждый ресурс `uri` отображается в файле дамп.
+Не нужно делать и для библиотеки классов (универсальной Windows). Если вы сомневаетесь, вы можете использовать [MakePri.exe](makepri-exe-command-options.md) для помещения в дамп компонента или библиотеки PRI-файл. Каждый ресурс `uri` отображается в файле дампа.
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>Загрузка строк из других пакетов
-Управляемые и доступ к которому осуществляется через пакета ресурсов для пакета приложения есть верхнего уровня[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) , доступной с текущей[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). В каждом пакете различные компоненты могут иметь их ownResourceMapsubtrees, к которому можно получить через [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
+Ресурсы для пакета приложения управлять и пользоваться из пакета владельцем верхнего уровня [**ResourceMap** ](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) , доступен из текущей [**ResourceManager** ](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). В рамках каждого пакета различные компоненты могут иметь свои собственные ResourceMap поддеревьях, которые можно получить через [ **ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
 
 Платформенный пакет может обращаться к собственным ресурсам с использованием абсолютного идентификатора ресурса (URI). См. также раздел [Схемы URI](uri-schemes.md).
 
@@ -288,9 +288,9 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 ## <a name="related-topics"></a>Статьи по теме
 * [Перенос XAML и пользовательского интерфейса](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
-* [Директива x:Uid](../xaml-platform/x-uid-directive.md)
-* [вложенные свойства](../xaml-platform/attached-properties-overview.md)
+* [Директива x: Uid](../xaml-platform/x-uid-directive.md)
+* [Вложенные свойства](../xaml-platform/attached-properties-overview.md)
 * [Локализуемые элементы манифеста](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [Тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md)
+* [Настроить ресурсы для языка, масштаба и квалификаторов](tailor-resources-lang-scale-contrast.md)
 * [Загрузка строковых ресурсов](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)

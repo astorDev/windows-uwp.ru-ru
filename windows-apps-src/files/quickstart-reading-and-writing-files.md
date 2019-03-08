@@ -12,11 +12,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 6ff7b37eee4f2b9228a635a117e164d7d9859629
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116070"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610999"
 ---
 # <a name="create-write-and-read-a-file"></a>Создание, запись и чтение файла
 
@@ -24,20 +24,20 @@ ms.locfileid: "9116070"
 
 -   [**Класс StorageFolder**](/uwp/api/windows.storage.storagefolder)
 -   [**Класс StorageFile**](/uwp/api/windows.storage.storagefile)
--   [**Класс FileIO**](/uwp/api/windows.storage.fileio)
+-   [**Класс файловый ввод-вывод**](/uwp/api/windows.storage.fileio)
 
 Считайте и запишите файл с помощью объекта [**StorageFile**](/uwp/api/windows.storage.storagefile).
 
 > [!NOTE]
-> Полный пример см. [Пример доступа к файлам](https://go.microsoft.com/fwlink/p/?linkid=619995).
+> Полный пример см. в разделе [файла доступ к образцу](https://go.microsoft.com/fwlink/p/?linkid=619995).
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
--   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
+-   **Понять асинхронного программирования для приложений универсальной платформы Windows (UWP)**
 
-    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Сведения о создании асинхронных приложений на C + +/ WinRT, см. в разделе [параллельная обработка и асинхронные операции с помощью C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). Сведения о создании асинхронных приложений на C + +/ CX, см. в разделе [асинхронное программирование на C + +/ CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Чтобы узнать, как написание асинхронных приложений в C + +/ WinRT, см. в разделе [параллелизма и асинхронные операции с использованием C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). Чтобы узнать, как написание асинхронных приложений в C + +/ CX, см. в разделе [асинхронное программирование в C + +/ CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
--   **Знание порядка вызова файла для считывания, записи или выполнения обеих этих операций**
+-   **Узнать, как получить файл, который требуется для операций чтения и записи, или оба**
 
     Сведения о вызове файла с помощью средства выбора файлов см. в разделе [Открытие файлов и папок с помощью средства выбора](quickstart-using-file-and-folder-pickers.md).
 
@@ -116,7 +116,7 @@ Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 
 **Запись текста в файл**
 
-Запись текста в файл, вызвав метод [**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync) .
+Запись текста в файл путем вызова [ **FileIO.WriteTextAsync** ](/uwp/api/windows.storage.fileio.writetextasync) метод.
 
 ```csharp
 await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
@@ -148,9 +148,9 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 ```
 
-**Запись байт в файл с использованием буфера (2 действия)**
+**Запись байтов в файл буфера (2 шага)**
 
-1.  Во-первых, вызовите метод [**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary) для получения буфера байтов (на основе строки), вы хотите записать в файл.
+1.  Во-первых, вызовите [ **CryptographicBuffer.ConvertStringToBinary** ](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary) получить буфер байтов (на основе строки), необходимо выполнить запись в файл.
 
     ```csharp
     var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
@@ -191,7 +191,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
         Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
     ```
 
-2.  Затем запишите байты из буфера в файл, вызвав метод [**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync) .
+2.  Затем записывать байты из буфера в файл путем вызова [ **FileIO.WriteBufferAsync** ](/uwp/api/windows.storage.fileio.writebufferasync) метод.
 
     ```csharp
     await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
@@ -217,7 +217,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer)
     ```
 
-**Запись текста в файл с использованием потока (4 действия)**
+**Запись текста в файл с помощью потока (потребуется выполнить четыре шага)**
 
 1.  Сначала откройте файл, вызвав метод [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync). По завершении операции открытия будет возвращен поток содержимого файла.
 
@@ -254,7 +254,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
     ```
 
-2.  Затем получите выходной поток, вызвав метод [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) из `stream`. Если вы используете C#, заключите это в оператор **using** для управления временем существования выходного потока. Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то можно управлять своим временем существования, заключите его в блоке, или значение `nullptr` после завершения с ним.
+2.  Затем получите поток вывода, вызвав [ **IRandomAccessStream.GetOutputStreamAt** ](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) метода из `stream`. Если вы используете C#, заключите его в **с помощью** инструкции для управления временем существования в выходной поток. Если вы используете [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), то вы можете контролировать его времени существования путем заключения его в блок, а также `nullptr` Закончив с ним.
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))
@@ -280,7 +280,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     End Using
     ```
 
-3.  Теперь добавьте следующий код для записи в поток вывода, создав новый объект [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) и вызвав метод [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring) (Если вы используете C#, в пределах существующего оператора **using** ).
+3.  Теперь добавьте следующий код (Если вы используете C#, в существующих **с помощью** инструкции) для записи в исходящий поток путем создания нового [ **DataWriter** ](/uwp/api/windows.storage.streams.datawriter) объекта и вызова метода [ **DataWriter.WriteString** ](/uwp/api/windows.storage.streams.datawriter.writestring) метод.
 
     ```csharp
     using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
@@ -306,7 +306,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
     ```
 
-4.  И наконец, добавьте следующий код для сохранения текста в файл с помощью [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync) и закрытия потока с помощью [**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)(Если вы используете C#, в рамках оператор **с помощью** внутреннего).
+4.  И, наконец, добавьте следующий код (Если вы используете C#, в рамках внутреннего **с помощью** инструкции) для сохранения текста в файл с [ **DataWriter.StoreAsync** ](/uwp/api/windows.storage.streams.datawriter.storeasync) и закрыть поток с помощью [ **IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync).
 
     ```csharp
     await dataWriter.StoreAsync();
@@ -329,9 +329,9 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Await outputStream.FlushAsync()
     ```
 
-**Рекомендации по составлению в файл**
+**Рекомендации по записи в файл**
 
-Дополнительные сведения и рекомендаций см. в разделе [рекомендации по составлению файлов](best-practices-for-writing-to-files.md).
+Дополнительные сведения и рекомендации, см. в разделе [советы и рекомендации для записи в файлы](best-practices-for-writing-to-files.md).
     
 ## <a name="reading-from-a-file"></a>Чтение из файла
 
@@ -365,7 +365,7 @@ Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 
 **Чтение текста из файла**
 
-Чтение текста из файла, вызвав метод [**FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync) .
+Чтение текста из файла путем вызова [ **FileIO.ReadTextAsync** ](/uwp/api/windows.storage.fileio.readtextasync) метод.
 
 ```csharp
 string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
@@ -392,9 +392,9 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**Чтение текста из файла с использованием буфера (2 действия)**
+**Чтение текста из файла с помощью буфера (2 шага)**
 
-1.  Во-первых вызов метода [**FileIO.ReadBufferAsync**](/uwp/api/windows.storage.fileio.readbufferasync) .
+1.  Во-первых, вызовите [ **FileIO.ReadBufferAsync** ](/uwp/api/windows.storage.fileio.readbufferasync) метод.
 
     ```csharp
     var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
@@ -448,7 +448,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim text As String = dataReader.ReadString(buffer.Length)
     ```
 
-**Чтение текста из файла с использованием потока (4 действия)**
+**Чтение текста из файла с помощью потока (потребуется выполнить четыре шага)**
 
 1.  Откройте поток для файла, вызвав метод [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync). По завершении операции будет возвращен поток содержимого файла.
 
@@ -498,7 +498,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim size = stream.Size
     ```
 
-3.  Получите входной поток, вызвав метод [**IRandomAccessStream.GetInputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat) . Вставьте его в оператор **using**, чтобы получить возможность управления временем существования потока. При вызове **GetInputStreamAt** укажите значение 0, чтобы установить положение в начале потока.
+3.  Получите входной поток, вызвав [ **IRandomAccessStream.GetInputStreamAt** ](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat) метод. Вставьте его в оператор **using**, чтобы получить возможность управления временем существования потока. При вызове **GetInputStreamAt** укажите значение 0, чтобы установить положение в начале потока.
 
     ```csharp
     using (var inputStream = stream.GetInputStreamAt(0))

@@ -1,6 +1,6 @@
 ---
-Description: Radio buttons let users select one option from two or more choices.
-title: Руководство по переключателям
+Description: Переключатели типа Radio Button позволяют пользователю выбрать один параметр из двух или более предлагаемых вариантов.
+title: Руководство по элементам управления Radio Button
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
@@ -13,15 +13,15 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 91903365a258d54804b420cd217dd7c25d79406a
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037236"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606139"
 ---
 # <a name="radio-buttons"></a>Переключатели
 
-> **Важные API-интерфейсы**: [класс RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [событие Checked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [свойство IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+> **Важные API-интерфейсы**: [Класс RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [Checked событий](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [свойство IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 Переключатели позволяют пользователям выбирать один вариант из набора. Каждый параметр представлен одним переключателем и пользователь может выбрать только один переключатель из группы.
 
@@ -29,7 +29,7 @@ ms.locfileid: "9037236"
 
 ![Переключатели](images/controls/radio-button.png)
 
-## <a name="is-this-the-right-control"></a>Выбор подходящего элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте кнопки переключателей, чтобы предлагать пользователям два или более взаимоисключающих параметра.
 
@@ -57,7 +57,7 @@ ms.locfileid: "9037236"
 
 Если доступные варианты основаны на текущем контексте приложения или могут динамически варьироваться по другим причинам, используйте [простой список](lists.md).
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -66,7 +66,7 @@ ms.locfileid: "9037236"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/RadioButton">открыть приложение и увидеть RadioButton в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -169,17 +169,17 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 ![Переключатели в двух группах](images/radio-button-groups.png)
 
-Переключатель может иметь два состояния: *selected* или *cleared*. Если переключатель выбран, его свойство [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) имеет значение **true**. Если переключатель не выбран, его свойство **IsChecked** имеет значение **false**. Выбор переключателя можно отменить, выбрав другой переключатель в той же группе, но нельзя отменить выбор, щелкнув переключатель еще раз. Однако можно отменить выбор переключателя программным способом, установив для свойства IsChecked значение **false**. Фактически можно сравнить свойство **IsChecked** с логическим параметром (bool), получив **Value** свойства **IsChecked**.
+Возможных состояния у переключателя два: *выбран* или *не выбран*. Если переключатель выбран, его свойство [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked) имеет значение **true**. Если переключатель не выбран, его свойство **IsChecked** имеет значение **false**. Выбор переключателя можно отменить, выбрав другой переключатель в той же группе, но нельзя отменить выбор, щелкнув переключатель еще раз. Однако можно отменить выбор переключателя программным способом, установив для свойства IsChecked значение **false**. Фактически можно сравнить свойство **IsChecked** с логическим параметром (bool), получив **Value** свойства **IsChecked**.
 
 ## <a name="recommendations"></a>Рекомендации
 
 -   Убедитесь, что назначение и текущее состояние набора переключателей ясны и понятны.
 -   Текстовое содержимое переключателя следует ограничить одной строкой.
 -   Если текстовое содержимое является динамическим, следует подумать о том, как будет изменяться размер кнопки и что произойдет с визуальными элементами вокруг нее.
--   Используйте шрифт по умолчанию, если правила вашего фирменного стиля не предписывают иное.
+-   Используйте шрифт по умолчанию, если указания для торговой марки не требуют использования другого шрифта.
 -   Не следует размещать две группы переключателей рядом. Когда две группы переключателей находятся рядом, сложно определить, какой переключатель принадлежит к какой группе.
 
-## <a name="additional-usage-guidance"></a>Дополнительное рекомендации по использованию
+## <a name="additional-usage-guidance"></a>Дополнительные рекомендации по использованию
 
 На этой иллюстрации показано, как правильно расположить переключатели.
 
@@ -187,14 +187,14 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 ![Руководство расстояниям между переключателями](images/radiobutton-redlines.png)
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 **Проектировщикам**
 - [Кнопки](buttons.md)
-- [Тумблеры](toggles.md)
+- [Переключить коммутаторов](toggles.md)
 - [Флажки](checkbox.md)
 - [Списки и поля со списком](lists.md)
 - [Ползунки](slider.md)
 
 **Разработчикам (XAML)**
-- [Класс RadioButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)
+- [RadioButton-класс](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)

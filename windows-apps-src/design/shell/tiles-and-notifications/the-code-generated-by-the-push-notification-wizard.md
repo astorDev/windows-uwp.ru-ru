@@ -1,5 +1,5 @@
 ---
-Description: By using a wizard in Visual Studio, you can generate push notifications from a mobile service that was created with Azure Mobile Services.
+Description: С помощью мастера Visual Studio можно формировать push-уведомления из мобильной службы, созданной средствами мобильных служб Windows Azure.
 title: Код, генерируемый мастером push-уведомлений
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac5ca785eab39612bb3a9c6ccd58779c6241059
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049921"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596869"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>Код, генерируемый мастером push-уведомлений
  
@@ -42,7 +42,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
 ## <a name="registration-for-push-notifications"></a>Регистрация для push-уведомлений
 
 
-В файле push.register.\* метод UploadChannel регистрирует устройство для получения push-уведомлений. Магазин отслеживает установленные экземпляры вашего приложения и обеспечивает канал для push-уведомлений. См. [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
+В push.register. \*, метод UploadChannel регистрирует устройство для получения Push-уведомлений. Магазин отслеживает установленные экземпляры вашего приложения и обеспечивает канал для push-уведомлений. См. [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
 
 Клиентский код напоминает серверные компоненты JavaScript и .NET. По умолчанию при добавлении push-уведомлений для службы серверного компонента JavaScript образец вызова notifyAllUsers пользовательского API вставляется в метод UploadChannel.
 
@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 Функция sendNotifications отправляет единичное уведомление в виде всплывающего уведомления. Можно также использовать другие типы push-уведомлений.
 
-**Совет**сведения о том, как для получения справки по редактированию сценариев см. [Активация IntelliSense для серверного JavaScript](https://go.microsoft.com/fwlink/p/?LinkId=309275).
+**Совет**  сведения о получении справки во время редактирования скриптов, см. в разделе [включения IntelliSense для JavaScript на стороне сервера](https://go.microsoft.com/fwlink/p/?LinkId=309275).
 
  
 
@@ -224,7 +224,7 @@ Push-уведомления следует использовать соглас
 
 В случае обновления живых плиток с помощью push-уведомлений рекомендуется также следовать указаниям в [руководстве и контрольном списке по плиткам и индикаторам событий](https://msdn.microsoft.com/library/windows/apps/hh465403).
 
-## <a name="next-steps"></a>Следующие действия
+## <a name="next-steps"></a>Дальнейшие действия
 
 
 ### <a name="using-the-windows-push-notification-services-wns"></a>Использование служб push-уведомлений Windows (WNS)
@@ -233,18 +233,18 @@ Push-уведомления следует использовать соглас
 
 Можно также отправлять push-уведомления с помощью плановой задачи в мобильной службе. См. раздел [Планирование повторяющихся заданий в мобильных службах](https://go.microsoft.com/fwlink/p/?linkid=301694).
 
-**Предупреждение**после запуска мастера Push-уведомлений один раз, не запускайте его вторично для добавления кода регистрации для другой мобильной службы. Если запустить мастер в одном проекте несколько раз, то в созданном коде появятся перекрывающиеся вызовы метода [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync), что вызовет исключение во время выполнения. Чтобы зарегистрироваться для получения push-уведомлений в нескольких мобильных службах, запустите мастер один раз, а затем перепишите код регистрации, чтобы гарантировать, что вызовы **CreatePushNotificationChannelForApplicationAsync** не будут совершаться одновременно. Например, для этого можно переместить код, созданный мастером в файле push.register.\* (в том числе вызов **CreatePushNotificationChannelForApplicationAsync**), за пределы события OnLaunched, но конкретная реализация зависит от архитектуры приложения.
+**Предупреждение**  после завершения проверки мастер Push-уведомлений один раз, не запустите мастер повторно добавить код регистрации для другой мобильной службы. Если запустить мастер в одном проекте несколько раз, то в созданном коде появятся перекрывающиеся вызовы метода [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync), что вызовет исключение во время выполнения. Чтобы зарегистрироваться для получения push-уведомлений в нескольких мобильных службах, запустите мастер один раз, а затем перепишите код регистрации, чтобы гарантировать, что вызовы **CreatePushNotificationChannelForApplicationAsync** не будут совершаться одновременно. Например это можно сделать, переместив код, созданный мастером в push.register. \* (включая вызов **CreatePushNotificationChannelForApplicationAsync**) за пределами OnLaunched событие, но особенности этого будет зависеть от архитектуры приложения.
 
  
 
-## <a name="related-topics"></a>Ссылки по теме
+## <a name="related-topics"></a>Статьи по теме
 
 
 * [Обзор служб push-уведомлений Windows (WNS)](windows-push-notification-services--wns--overview.md)
 * [Общие сведения о необработанных уведомлениях](raw-notification-overview.md)
-* [Подключение к мобильным службам Windows Azure (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
-* [Подключение к мобильным службам Windows Azure (C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
-* [Краткое руководство: добавление push-уведомлений в мобильную службу (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)
+* [Подключение к Windows мобильных служб Azure (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
+* [Подключение к Windows мобильных служб Azure (C#/C+ +/ VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
+* [Краткое руководство. Добавление Push-уведомлений для мобильной службы (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)
  
 
  

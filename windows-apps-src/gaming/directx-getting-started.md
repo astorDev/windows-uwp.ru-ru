@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Windows 10, UWP, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 127d600b840c21eb78c3f6b98a100b7639ea25bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929147"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660229"
 ---
-# <a name="directx-getting-started"></a>Начало работы с DirectX
+# <a name="directx-getting-started"></a>DirectX: Начало работы
 
 В этом разделе представлена информация, которая поможет вам приступить к разработке игр UWP с использованием DirectX. 
 

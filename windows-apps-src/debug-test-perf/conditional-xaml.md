@@ -3,20 +3,20 @@ title: Условный XAML
 description: Используйте новые API в разметке XAML, сохраняя совместимость с предыдущими версиями
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a3133508a0cb8919994543845412ef71a8d463fe
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050847"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611769"
 ---
 # <a name="conditional-xaml"></a>Условный XAML
 
 *Условный XAML* обеспечивает возможность использовать метод [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) в разметке XAML. Благодаря этому можно задавать свойства и создавать экземпляры объектов в разметке в зависимости от наличия API, а необходимость использования кода программной части отсутствует. Условный XAML выполняет выборочный синтаксический разбор элементов или атрибутов, чтобы определить, будут ли они доступны во время выполнения. Условные операторы оцениваются во время выполнения, и если в результате оценки получено значение **true**, выполняется синтаксический разбор элементов с тегом "Условный XAML"; в противном случае эти элементы игнорируются.
 
-Условный XAML доступен, начиная с обновления Creators Update (версия 1703, сборка 15063). Использовать условный XAML можно, если в качестве минимальной версии проекта Visual Studio указана сборка 15063 (Creators Update) или выше, а в качестве целевой версии— версия выше минимальной. См. дополнительные сведения о настройке вашего проекта Visual Studio в разделе [Адаптивные к версии приложения](version-adaptive-apps.md).
+Условный XAML доступен, начиная с обновления Creators Update (версия 1703, сборка 15063). Использовать условный XAML можно, если в качестве минимальной версии проекта Visual Studio указана сборка 15063 (Creators Update) или выше, а в качестве целевой версии — версия выше минимальной. См. дополнительные сведения о настройке вашего проекта Visual Studio в разделе [Адаптивные к версии приложения](version-adaptive-apps.md).
 
 > [!NOTE]
 > Чтобы создать адаптивное к версии приложение с минимальной версией ниже сборки 15063, воспользуйтесь [адаптивным к версии кодом](version-adaptive-code.md), а не XAML.
@@ -183,7 +183,7 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 </Rectangle>
 ```
 
-При привязке свойства к другому свойству, которое зависит от условного пространства имен, необходимо использовать одно и то же условие для обоих свойств. В этом примере `colorPicker.Color` зависит от условного пространства имен 'contract5Present', поэтому необходимо также добавить префикс 'contract5Present' к свойству SolidColorBrush.Color. (Либо можно добавить префикс 'contract5Present' к свойству SolidColorBrush, а не Color.) В противном случае отобразится ошибка времени компиляции.
+При привязке свойства к другому свойству, которое зависит от условного пространства имен, необходимо использовать одно и то же условие для обоих свойств. В этом примере `colorPicker.Color` зависит от условного пространства имен 'contract5Present', поэтому необходимо также добавить префикс 'contract5Present' к свойству SolidColorBrush.Color. (Или префикс «contract5Present» можно поместить на SolidColorBrush, а не на свойство цвета). Если этого не сделать, вы получите ошибку компиляции.
 
 ```xaml
 <SolidColorBrush contract5Present:Color="{x:Bind colorPicker.Color, Mode=OneWay}"/>
@@ -245,5 +245,5 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 ## <a name="related-articles"></a>Связанные статьи
 
 - [Руководство по приложениям UWP](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-- [Динамическое обнаружение компонентов с контрактами API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [Динамическое определение компонентов с помощью контрактов API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [Контракты API](https://channel9.msdn.com/Events/Build/2015/3-733) (видео с конференции Build 2015)

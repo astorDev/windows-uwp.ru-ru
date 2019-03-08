@@ -1,32 +1,32 @@
 ---
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: Используйте эти методы в API отправки Microsoft Store для получения данных для приложений, которые зарегистрированы в вашей учетной записи центра партнеров.
+description: Эти методы можно используете в интерфейсе API отправки Microsoft Store для получения данных для приложений, зарегистрированных для учетной записи центра партнеров.
 title: Получение данных приложения
 ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, данные приложения
 ms.localizationpriority: medium
 ms.openlocfilehash: 23e392e2064a2a48089d1efadd1461c146e0d343
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930020"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598899"
 ---
 # <a name="get-app-data"></a>Получение данных приложения
 
-Используйте следующие методы в API отправки Microsoft Store для получения данных о существующих приложениях в вашей учетной записи центра партнеров. Введение в API отправки в Microsoft Store, включая необходимые условия для использования этого API, см. в разделе [Создание отправок и управление ими с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md).
+Используйте следующие методы в интерфейсе API отправки Microsoft Store для получения данных для существующих приложений в вашей учетной записи центра партнеров. Введение в API отправки в Microsoft Store, включая необходимые условия для использования этого API, см. в разделе [Создание отправок и управление ими с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md).
 
-Прежде чем использовать эти методы, приложение должно уже существовать в вашей учетной записи центра партнеров. Для создания отправок для приложений и управления ими см. описания методов в разделе [Управление отправками приложений](manage-app-submissions.md).
+Прежде чем использовать эти методы, приложение уже должен существовать в учетную запись центра партнеров. Для создания отправок для приложений и управления ими см. описания методов в разделе [Управление отправками приложений](manage-app-submissions.md).
 
-| Способ | URI                                                                                             | Описание                                                 |
+| Метод | URI                                                                                             | Описание                                                 |
 |------- |------------------------------------------------------------------------------------------------ |------------------------------------------------------------ |
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications`                                   | [Получение данных для всех приложений](get-all-apps.md)               |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}`                   | [Получение данных для конкретного приложения](get-an-app.md)                |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}`                   | [Получение данных для определенного приложения](get-an-app.md)                |
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [Получение надстроек для приложения](get-add-ons-for-an-app.md)         |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [Получение тестовых пакетов для приложения](get-flights-for-an-app.md) |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [Получить пакет авиарейсов для приложения](get-flights-for-an-app.md) |
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store, прежде чем использовать любой из этих методов.
 
@@ -60,19 +60,19 @@ ms.locfileid: "8930020"
 }
 ```
 
-Этот ресурс содержит следующие значения.
+У этого ресурса есть следующие значения.
 
 | Значение           | Тип    | Описание       |
 |-----------------|---------|---------------------|
-| id            | string  | Код продукта в Магазине для приложения. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
-| primaryName   | string  | Основное имя приложения.      |
-| packageFamilyName | string  | Имя семейства пакетов для приложения.      |
-| packageIdentityName          | string  | Имя идентификации пакета для приложения.                       |
-| publisherName       | string  | Идентификатор издателя Windows, который связан с приложением. Это соответствует значению **Пакет/идентификатор/издатель** , которое отображается на странице " [удостоверение приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) " для приложения в центре партнеров.       |
-| firstPublishedDate      | string  | Дата первой публикации приложения в формате ISO 8601.   |
-| lastPublishedApplicationSubmission       | объект | [Ресурс отправки](#submission_object), который предоставляет сведения о последней опубликованной отправке для приложения.    |
-| pendingApplicationSubmission        | объект  |  [Ресурс отправки](#submission_object), который предоставляет сведения о текущей ожидающей отправке для приложения.   |   
-| hasAdvancedListingPermission        | логическое значение  |  Указывает, можно ли настроить [gamingOptions](manage-app-submissions.md#gaming-options-object) или [trailers](manage-app-submissions.md#trailer-object) для отправки для приложения. Это значение равно true для отправок, созданных после мая 2017 г. |  |
+| id            | Строка  | Код продукта в Магазине для приложения. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
+| primaryName   | Строка  | Основное имя приложения.      |
+| packageFamilyName | Строка  | Имя семейства пакетов для приложения.      |
+| packageIdentityName          | Строка  | Имя идентификации пакета для приложения.                       |
+| publisherName       | Строка  | Идентификатор издателя Windows, который связан с приложением. Это соответствует **пакета/удостоверений/издатель** значение, которое появляется на [удостоверения приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) страницу приложения в центре партнеров.       |
+| firstPublishedDate      | Строка  | Дата первой публикации приложения в формате ISO 8601.   |
+| lastPublishedApplicationSubmission       | Объект | [Ресурс отправки](#submission_object), который предоставляет сведения о последней опубликованной отправке для приложения.    |
+| pendingApplicationSubmission        | Объект  |  [Ресурс отправки](#submission_object), который предоставляет сведения о текущей ожидающей отправке для приложения.   |   
+| hasAdvancedListingPermission        | Логический  |  Указывает, можно ли настроить [gamingOptions](manage-app-submissions.md#gaming-options-object) или [trailers](manage-app-submissions.md#trailer-object) для отправки для приложения. Это значение равно true для отправок, созданных после мая 2017 г. |  |
 
 
 <span id="add-on-object" />
@@ -87,7 +87,7 @@ ms.locfileid: "8930020"
 }
 ```
 
-Этот ресурс содержит следующие значения.
+У этого ресурса есть следующие значения.
 
 | Значение           | Тип    | Описание         |
 |-----------------|---------|----------------------|
@@ -119,15 +119,15 @@ ms.locfileid: "8930020"
 }
 ```
 
-Этот ресурс содержит следующие значения.
+У этого ресурса есть следующие значения.
 
 | Значение           | Тип    | Описание           |
 |-----------------|---------|------------------------|
-| flightId            | Строка  | Идентификатор для тестового пакета. Это значение предоставляется центром партнеров.  |
+| flightId            | Строка  | Идентификатор для тестового пакета. Это значение предоставляется путем центра партнеров.  |
 | friendlyName           | Строка  | Имя тестового пакета, указанное разработчиком.   |
-| lastPublishedFlightSubmission       | объект | [Ресурс отправки](#submission_object), который предоставляет сведения о последней опубликованной отправке для тестового пакета.   |
-| pendingFlightSubmission        | объект  |  [Ресурс отправки](#submission_object), который предоставляет сведения о текущей ожидающей отправке для тестового пакета.  |    
-| groupIds           | массив  | Массив строк, содержащий идентификаторы тестовых групп, которые связаны с тестовым пакетом. Дополнительные сведения о тестовых группах см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
+| lastPublishedFlightSubmission       | Объект | [Ресурс отправки](#submission_object), который предоставляет сведения о последней опубликованной отправке для тестового пакета.   |
+| pendingFlightSubmission        | Объект  |  [Ресурс отправки](#submission_object), который предоставляет сведения о текущей ожидающей отправке для тестового пакета.  |    
+| groupIds           | Массив  | Массив строк, содержащий идентификаторы тестовых групп, которые связаны с тестовым пакетом. Дополнительные сведения о тестовых группах см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
 | rankHigherThan           | Строка  | Понятное имя тестового пакета, приоритет которого на единицу ниже приоритета текущего тестового пакета. Дополнительные сведения о задании приоритетов тестовых групп см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
 
 
@@ -146,19 +146,19 @@ ms.locfileid: "8930020"
 }
 ```
 
-Этот ресурс содержит следующие значения.
+У этого ресурса есть следующие значения.
 
 | Значение              | Тип   | Описание               |
 |--------------------|--------|---------------------------|
-| id                 | string | Идентификатор отправки. |
-| resourceLocation   | string | Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для отправки. |
+| id                 | Строка | Идентификатор отправки. |
+| resourceLocation   | Строка | Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для отправки. |
 
  
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Создание отправок и управление ими с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
-* [Управление отправками приложений с помощью API отправки в Microsoft Store](manage-app-submissions.md)
-* [Получение всех приложений](get-all-apps.md)
-* [Получение приложения](get-an-app.md)
+* [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Управление отправки приложений, с помощью API отправки Microsoft Store](manage-app-submissions.md)
+* [Получить все приложения](get-all-apps.md)
+* [Получить приложения](get-an-app.md)
 * [Получение надстроек для приложения](get-add-ons-for-an-app.md)
-* [Получение тестовых пакетов для приложения](get-flights-for-an-app.md)
+* [Получить пакет авиарейсов для приложения](get-flights-for-an-app.md)

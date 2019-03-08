@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: aba44cec7081d05f66e90b2540f0e9609b87ab83
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934300"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596879"
 ---
 # <a name="pointofservice-device-objects"></a>Объекты устройств PointOfService
 
@@ -45,6 +45,6 @@ ms.locfileid: "8934300"
 
 > [!TIP]
 > Дополнительные сведения о жизненном цикле приложения универсальной платформы Windows (для Windows 10) см. в следующих разделах:
-> - [Жизненный цикл приложения универсальной платформы Windows (UWP) для Windows 10](../launch-resume/app-lifecycle.md)
-> - [Обработка приостановки работы приложения](../launch-resume/suspend-an-app.md)
-> - [Обработка возобновления работы приложения](../launch-resume/resume-an-app.md)
+> - [Жизненный цикл приложения 10 универсальных Windows платформы Windows (UWP)](../launch-resume/app-lifecycle.md)
+> - [Приостановка дескриптор приложения](../launch-resume/suspend-an-app.md)
+> - [Дескриптор возобновлении приложения](../launch-resume/resume-an-app.md)

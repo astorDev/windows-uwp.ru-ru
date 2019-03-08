@@ -1,5 +1,5 @@
 ---
-Description: Design your app so that it looks good and functions well in Mixed Reality.
+Description: Проектируйте приложения таким образом, чтобы он вас устраивает и функции в смешанной реальности.
 title: Проектирование для смешанной реальности
 ms.assetid: ''
 label: Designing for Mixed Reality
@@ -14,11 +14,11 @@ dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: b988859422a80b31d94a133e36631b078ac7c14e
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116216"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610499"
 ---
 # <a name="designing-for-mixed-reality"></a>Проектирование для смешанной реальности
 
@@ -34,7 +34,7 @@ ms.locfileid: "9116216"
 
 Как гарнитура HoloLens, так и гарнитура смешанной реальности поддерживают приложений, работающих на платформе UWP, в двух различных типах взаимодействия. 
 
-### <a name="2d-vs-immersive-experience"></a>Двухмерное и иммерсивное взаимодействия
+### <a name="2d-vs-immersive-experience"></a>2D vs. Подробная информация
 
 Иммерсивные приложения занимают все пространство видимого пользователю дисплея, размещая его в центре представления, созданного приложением. Например иммерсивная игра может поместить пользователя на поверхность другой планеты, а приложение, представляющее собой туристический путеводитель, может поместить его в обстановку южноамериканской деревни. Для создания иммерсивного приложения требуется трехмерная графика или захваченное стереографическое видео. Иммерсивные приложения часто разрабатываются с помощью игровых движков сторонних производителей, таких как Unity или даже DirectX.
 
@@ -84,7 +84,7 @@ ms.locfileid: "9116216"
 * [Устройство Clicker](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (только HoloLens);
 * [Контроллеры движений](https://developer.microsoft.com/windows/mixed-reality/motion_controllers) (только устройства смешанной реальности, показаны выше).
 
-Эти контроллеры обеспечивают естественное и точное взаимодействие с виртуальными объектами. Некоторые взаимодействия вы получаете без дополнительных затрат. Например HoloLens выберите жест или щелкнув клавиши Windows контроллера движения или триггера создаст ввода ответа, которую можно ожидать, опять же, без написания кода с вашей стороны.
+Эти контроллеры обеспечивают естественное и точное взаимодействие с виртуальными объектами. Некоторые взаимодействия вы получаете без дополнительных затрат. Например HoloLens выберите жест или щелкнув ключ Windows движения контроллера или триггер создает входной ответ, который можно ожидать, опять же, не обладая со стороны пользователя.
 
 В других случаях потребуется добавить код, чтобы воспользоваться преимуществами дополнительной информации и входных данных, которые становятся доступными. Например, контроллеры движений можно использовать для управления объектами с высоким уровнем точности, если вы написали код, который учитывает их положение и нажатия кнопок.
 
@@ -92,7 +92,7 @@ ms.locfileid: "9116216"
 > В целом, руководящий принцип состоит в том, чтобы всегда предоставлять пользователю максимально естественные и удобные методы ввода из возможных.
 
 
-## <a name="2d-app-design-considerations-functionality"></a>Аспекты проектирования двухмерных приложений: функции
+## <a name="2d-app-design-considerations-functionality"></a>2D рекомендации по проектированию приложений: Функция
 
 При создании приложения UWP, которое потенциально будет использоваться на платформе смешанной реальности, следует иметь в виду несколько аспектов.
 
@@ -105,7 +105,7 @@ ms.locfileid: "9116216"
 * Двухмерное приложение автоматически получает [панель приложения](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box), которая позволяет пользователю перемещать и масштабировать приложение в виртуальной среде. Размер представления можно изменять по вертикали или пропорционально.
 
 
-## <a name="2d-app-design-considerations-uiux"></a>Аспекты проектирования двухмерных приложений: взаимодействие с пользователем и пользовательский интерфейс
+## <a name="2d-app-design-considerations-uiux"></a>Рекомендации по проектированию 2D приложения: UI/UX
 
 * Элементы управления XAML, которые реализуют [систему проектирования Fluent Design](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/), например [представление навигации](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) и эффекты, такие как [акрил](https://docs.microsoft.com/windows/uwp/design/style/acrylic), особенно хорошо работают в двухмерных приложениях смешанной реальности.
 
@@ -160,12 +160,12 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 
 
 
-## <a name="related-articles"></a>Статьи по теме
+## <a name="related-articles"></a>Связанные статьи
 
 
-* [Текущие ограничения для приложений, использующие API из оболочки](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
-* [Сборка двухмерных приложений](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
-* [HoloLens: создание двухмерных приложений UWP для Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
+* [Текущие ограничения для приложений с помощью API-интерфейсы из оболочки](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
+* [Создание двухмерных приложений](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
+* [HoloLens: Создание двухмерных Uwp для Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
 * [Условный XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
 
 

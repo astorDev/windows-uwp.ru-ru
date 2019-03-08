@@ -1,5 +1,5 @@
 ---
-Description: The media player has customizable XAML transport controls to manage control of audio and video content.
+Description: Проигрыватель мультимедиа имеет настраиваемые элементы управления транспортировкой XAML для управления аудио- и видеосодержимым.
 title: Создание пользовательских элементов управления транспортировкой мультимедиа
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b9e82b0ab5e798bb0b29c4d5127cfe773db5f7
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058655"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616259"
 ---
 # <a name="create-custom-transport-controls"></a>Создание пользовательских элементов управления транспортировкой
 
@@ -57,10 +57,10 @@ ms.locfileid: "9058655"
 - Третий раздел содержит сетку [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx), которая объединяет различные элементы MediaTransportControls и определяет расположение компонентов относительно друг друга.
 
 > [!NOTE]
-> Дополнительные сведения об изменении шаблонов см. в разделе [Шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates). Для открытия файлов XAML, расположенных в папке \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic, можно использовать текстовый редактор или похожие программы редактирования из вашей среды разработки. Стиль и шаблон по умолчанию для каждого элемента управления определяются в файле **generic.xaml**. Чтобы найти шаблон MediaTransportControls в файле generic.xaml, используйте строку поиска "MediaTransportControls".
+> Дополнительные сведения об изменении шаблонов см. в разделе [Шаблоны элементов управления](/windows/uwp/design/controls-and-patterns/control-templates). Можно использовать текстовый редактор или аналогичные редакторов в среде IDE для открытия файлов XAML в \( *Program Files*) \Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*версия пакета SDK*) \Generic. Стиль и шаблон по умолчанию для каждого элемента управления определяются в файле **generic.xaml**. Чтобы найти шаблон MediaTransportControls в файле generic.xaml, используйте строку поиска "MediaTransportControls".
 
 В следующих разделах вы научитесь настраивать ряд основных элементов управления транспортировкой:
-- [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): позволяет вручную управлять воспроизведением мультимедиа и показывает ход выполнения
+- [**Ползунок**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): пользователь может очистить через их носители, а также отображает ход выполнения
 - [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx): содержит все кнопки.
 Дополнительные сведения см. в разделе "Анатомия" справочного раздела по MediaTransportControls.
 
@@ -70,7 +70,7 @@ ms.locfileid: "9058655"
 
 ### <a name="re-template-the-control"></a>Изменение шаблона элемента управления
 
-**Настройка стандартного стиля и шаблона MediaTransportControls**
+**Чтобы настроить стиль по умолчанию MediaTransportControls и шаблона**
 1. Скопируйте стиль по умолчанию из раздела "Стили и шаблоны MediaTransportControls" в класс ResourceDictionary в своем проекте.
 2. Для определения стиля присвойте ему значение x:Key, как показано далее.
 
@@ -97,7 +97,7 @@ ms.locfileid: "9058655"
 
 Чтобы добавить или изменить функционал элементов управления транспортировкой, необходимо создать новый класс, производный от MediaTransportControls. Производный класс под названием `CustomMediaTransportControls` показан в [примере Media Transport Controls](https://go.microsoft.com/fwlink/p/?LinkId=620023) и других примерах на этой странице.
 
-**Создание нового класса, производного от MediaTransportControls**
+**Чтобы создать новый класс, производный от MediaTransportControls**
 1. Добавьте новый файл класса в проект.
     - В Visual Studio выберите элементы Проект > Добавить класс. Откроется диалоговое окно Добавление нового элемента.
     - В диалоговом окне "Добавление нового элемента" введите имя файла класса и нажмите кнопку "Добавить". (В примере Media Transport Controls класс имеет имя `CustomMediaTransportControls`.)
@@ -159,7 +159,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 Чтобы переместить элемент из раздела главных команд панели команд в меню переполнения, необходимо изменить шаблон элемента управления XAML.
 
-**Перемещение команды в меню переполнения**
+**Чтобы переместить команду в меню переполнения:**
 1. В шаблоне элемента управления найдите элемент CommandBar с именем `MediaControlsCommandBar`.
 2. Добавьте раздел [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) к коду XAML элемента CommandBar. Поместите его после закрывающего тега для [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx).
 
@@ -204,7 +204,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 Одной из причин, по которой может потребоваться настройка MediaTransportControls, является добавление пользовательской команды к элементу управления. Независимо от того, добавляете ли вы ее как основную команду или как второстепенную, процедуры создания кнопки команды и изменения ее поведение одинаковы. В [примере Media Transport Controls](https://go.microsoft.com/fwlink/p/?LinkId=620023) кнопка оценки добавляется к основным командам.
 
-**Добавление пользовательской кнопки команды**
+**Чтобы добавить пользовательские кнопки**
 1. Создайте объект AppBarButton и добавьте его в CommandBar в шаблоне элемента управления.
 
 ```xaml
@@ -215,9 +215,9 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
               VerticalAlignment="Center" />
 ```
 
-Необходимо добавить его в CommandBar в соответствующее место. (Дополнительные сведения см. в разделе Работа с разделом меню переполнения.) Как расположены в пользовательском Интерфейсе определяется тем, где кнопки в разметке. Например если вы хотите эту кнопку для отображения в качестве последнего элемента в основные команды, добавьте его в самом конце списка основные команды.
+Его необходимо добавить строку в соответствующем месте. (Дополнительные сведения см в разделе меню переполнения.) Расположение в пользовательском Интерфейсе определяется где кнопка находится в разметке. Например если требуется, чтобы эта кнопка в виде последнего элемента в основные команды, добавьте его в самом конце списка основные команды.
 
-Кроме того, вы можете настроить значок для кнопки. Дополнительные сведения см. в разделе ссылки на <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx"><b>AppBarButton</b></a> .
+Можно также настроить значок для кнопки. Дополнительные сведения см. в разделе <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx"> <b>AppBarButton</b> </a> ссылки.
     
 
 2. В переопределении метода [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) получите кнопку из шаблона и зарегистрируйте обработчик для события [**Click**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) этой кнопки. Этот код перейдет в класс `CustomMediaTransportControls`.
@@ -272,14 +272,14 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-**Пользовательские элементы управления транспортировкой мультимедиа с добавленной кнопкой "Нравится"**
-![Пользовательский элемент управления транспортировкой мультимедиа с дополнительной кнопкой "Нравится"](images/controls/mtc_double_custom_inprod.png)
+**Элементы управления транспортом пользовательских мультимедиа с отметку «нравится» кнопкой, добавленными**
+![пользовательский элемент управления транспорта мультимедиа с помощью дополнительных, такие как кнопки](images/controls/mtc_double_custom_inprod.png)
 
 ### <a name="modifying-the-slider"></a>Изменение ползунка
 
 Навигация в MediaTransportControls обеспечивается элементом [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx). Один из способов его настройки — изменение точности навигации.
 
-По умолчанию ползунок поиска состоит из 100 частей, следовательно, поведение поиска ограничено данным количеством частей. Вы можете изменить точность навигации ползунка, получив элемент Slider из визуального дерева XAML в обработчике событий [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) в [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). В этом примере показано, как использовать [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) для получения ссылки на элемент Slider, а затем изменить стандартный шаг перемещения ползунка с 1% до 0,1% (1000 шагов), если продолжительность мультимедиа превышает 120 минут. Элемент MediaPlayerElement имеет имя `MediaPlayerElement1`.
+По умолчанию ползунок поиска состоит из 100 частей, следовательно, поведение поиска ограничено данным количеством частей. Вы можете изменить точность навигации ползунка, получив элемент Slider из визуального дерева XAML в обработчике событий [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) в [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). В этом примере показано, как использовать [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) для получения ссылки на элемент Slider, а затем изменить стандартный шаг перемещения ползунка с 1 % до 0,1 % (1000 шагов), если продолжительность мультимедиа превышает 120 минут. Элемент MediaPlayerElement имеет имя `MediaPlayerElement1`.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -299,6 +299,6 @@ private void MediaPlayerElement_MediaPlayer_MediaOpened(object sender, RoutedEve
   }
 }
 ```
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
 - [Воспроизведение мультимедиа](media-playback.md)

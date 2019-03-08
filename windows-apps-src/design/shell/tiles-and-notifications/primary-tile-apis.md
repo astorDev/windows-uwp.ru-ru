@@ -1,5 +1,5 @@
 ---
-Description: You can programmatically pin your own app's primary tile to Start, just like you can pin secondary tiles. And you can check whether it's currently pinned.
+Description: Вы можете программно закрепить главную плитку приложения в меню "Пуск" таким же способом, как и дополнительные плитки. Вы можете проверить, закреплена ли плитка в данный момент.
 title: API основной плитки
 label: Primary tile API's
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, StartScreenManager, закрепление основной плитки, api основной плитки, проверка закрепления плитки, живая плитка
 ms.localizationpriority: medium
 ms.openlocfilehash: 04d7c66b358a3a465522ad3b56d8ae926358ae57
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922939"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596199"
 ---
 # <a name="primary-tile-apis"></a>API для работы с основными плитками
  
@@ -20,9 +20,9 @@ ms.locfileid: "8922939"
 Интерфейсы API основной плитки позволяют проверить, закреплено ли ваше приложение в меню "Пуск" и закрепить основную плитку вашего приложения.
 
 > [!IMPORTANT]
-> **Требуется обновление Creators Update**. Обратите внимание, что для использования API основных плиток необходим пакет SDK 15063 и сборка 15063 или более поздней версии.
+> **Требуется Creators Update**: Вы должны быть предназначены SDK 15063 и выполняться сборка 15063 или более поздней версии, чтобы с помощью основного элемента API-интерфейсы.
 
-> **Важные API-интерфейсы**: [**класс StartScreenManager**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager), [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_), [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
+> **Важные API-интерфейсы**: [**Класс StartScreenManager**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager), [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_), [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
 
 
 ## <a name="when-to-use-primary-tile-apis"></a>Когда следует использовать API-интерфейсы основной плитки
@@ -84,7 +84,7 @@ bool isPinned = await StartScreenManager.GetDefault().ContainsAppListEntryAsync(
 Если основная плитка не закреплена, и ваша плитка поддерживается меню "Пуск", вы можете показать совет пользователям относительно закрепления основной плитки.
 
 > [!NOTE]
-> Необходимо вызвать этот API из потока пользовательского интерфейса, пока приложение находится на переднем плане, и следует вызывать только этот APIafterthe намеренного запроса пользователем bepinned основной плитки (например, после того как пользователь нажал кнопку Да в вашем совете о закреплении плитки).
+> Необходимо вызвать этот API из потока пользовательского интерфейса, пока приложение находится на переднем плане, и этот API следует вызывать только после намеренно пользователь запросил закрепить плитку первичного (например, после щелчка ссылки Да для вашей подсказки о возможности закрепления плитки).
 
 Если пользователь нажимает кнопку, чтобы закрепить основную плитку, вы вызываете метод [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) для запроса относительно закрепления плитки на начальном экране. Отобразится диалоговое окно подтверждения, чтобы пользователь подтвердил, что он хочет закрепить плитку на начальном экране.
 
@@ -101,7 +101,7 @@ bool isPinned = await StartScreenManager.GetDefault().RequestAddAppListEntryAsyn
 
 ## <a name="resources"></a>Ресурсы
 
-* [Полный пример кода на GitHub](https://github.com/WindowsNotifications/quickstart-pin-primary-tile)
-* [Закрепление на панели задач](../pin-to-taskbar.md)
+* [Полный образец кода на GitHub](https://github.com/WindowsNotifications/quickstart-pin-primary-tile)
+* [Закрепить на панели задач](../pin-to-taskbar.md)
 * [Плитки, индикаторы событий и уведомления](index.md)
-* [Документация по адаптивной плитке](create-adaptive-tiles.md)
+* [Документация по адаптивной плитку](create-adaptive-tiles.md)

@@ -8,25 +8,25 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 98cb6c62248fbf273a9d7ca1ef0d1d82293122eb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936448"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656189"
 ---
-# <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>Настройка функции трафарета глубины
+# <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>Настройка функций трафарета глубины
 
 
-В этом разделе приводится пошаговая инструкция по настройке буфера трафарета глубины и рассматривается состояние трафарета глубины для стадии средства слияния вывода.
+В этом разделе приводится пошаговая инструкция по настройке буфера трафарета глубины и рассматривается состояние трафарета глубины для стадии слияния вывода.
 
 Узнав, как использовать буфер трафарета глубины и соответствующее состояние трафарета глубины, приступайте к изучению [сложных техник работы с трафаретами](#advanced-stencil-techniques).
 
-## <a name="span-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespancreate-depth-stencil-state"></a><span id="Create_Depth_Stencil_State"></span><span id="create_depth_stencil_state"></span><span id="CREATE_DEPTH_STENCIL_STATE"></span>Создание состояния трафарета глубины
+## <a name="span-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespancreate-depth-stencil-state"></a><span id="Create_Depth_Stencil_State"></span><span id="create_depth_stencil_state"></span><span id="CREATE_DEPTH_STENCIL_STATE"></span>Создать состояние трафарета глубины
 
 
 Состояние трафарета глубины сообщает стадии средства слияния вывода способ выполнения [проверки трафарета глубины](https://msdn.microsoft.com/library/windows/desktop/bb205120). Проверка трафарета глубины позволяет определить, нужно ли рисовать тот или иной пиксель.
 
-## <a name="span-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanbind-depth-stencil-data-to-the-om-stage"></a><span id="Bind_Depth_Stencil_to_the_OM_Stage"></span><span id="bind_depth_stencil_to_the_om_stage"></span><span id="BIND_DEPTH_STENCIL_TO_THE_OM_STAGE"></span>Привязка данных трафарета глубины к стадии средства слияния вывода
+## <a name="span-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanbind-depth-stencil-data-to-the-om-stage"></a><span id="Bind_Depth_Stencil_to_the_OM_Stage"></span><span id="bind_depth_stencil_to_the_om_stage"></span><span id="BIND_DEPTH_STENCIL_TO_THE_OM_STAGE"></span>Привязка данных трафарета глубины в рабочую область OM
 
 
 Привязка состояния трафарета глубины.
@@ -38,28 +38,28 @@ ms.locfileid: "8936448"
 Если буфер используется в качестве однобуферной прорисовки, проверка трафарета глубины и использование нескольких однобуферных прорисовок не поддерживаются.
 
 -   Одновременно можно связать до 8 однобуферных прорисовок.
--   Все однобуферные прорисовки должны иметь одинаковый размер во всех измерениях (ширина, высота и глубина для трехмерных объектов или размер массива для типов \*Array).
+-   Все целевые объекты отрисовки должен иметь тот же размер во всех измерениях (ширину и высоту и глубины 3D или массив размера для \*типы массивов).
 -   Каждая однобуферная прорисовка может иметь свой формат данных.
 -   Маски записи контролируют, какие данные записываются в однобуферную прорисовку. Маски записи вывода контролируют, какие данные записываются в однобуферные прорисовки на уровне однобуферных прорисовок и компонентов.
 
-## <a name="span-idadvancedstenciltechniquesspanspan-idadvancedstenciltechniquesspanspan-idadvancedstenciltechniquesspanspan-idadvanced-stencil-techniquesspanadvanced-stencil-techniques"></a><span id="Advanced_Stencil_Techniques"></span><span id="advanced_stencil_techniques"></span><span id="ADVANCED_STENCIL_TECHNIQUES"></span><span id="advanced-stencil-techniques"></span>Сложные техники работы с трафаретами
+## <a name="span-idadvancedstenciltechniquesspanspan-idadvancedstenciltechniquesspanspan-idadvancedstenciltechniquesspanspan-idadvanced-stencil-techniquesspanadvanced-stencil-techniques"></a><span id="Advanced_Stencil_Techniques"></span><span id="advanced_stencil_techniques"></span><span id="ADVANCED_STENCIL_TECHNIQUES"></span><span id="advanced-stencil-techniques"></span>Методы расширенный набор элементов
 
 
 Трафаретная часть буфера трафарета глубины может использоваться для создания эффектов отрисовки, таких как компоновка, переводные картинки и структурирование.
 
--   [Компоновка](#compositing)
--   [Переводные картинки](#decaling)
--   [Структуры и силуэты](#outlines-and-silhouettes)
--   [Двусторонний трафарет](#two-sided-stencil)
--   [Считывание буфера трафарета глубины как текстуры](#reading-the-depth-stencil-buffer-as-a-texture)
+-   [Совмещение](#compositing)
+-   [Decaling](#decaling)
+-   [Контуры и силуэтам](#outlines-and-silhouettes)
+-   [Двухсторонний шаблон](#two-sided-stencil)
+-   [Чтение буфера трафарета глубины в качестве текстуры](#reading-the-depth-stencil-buffer-as-a-texture)
 
-### <a name="span-idcompositingspanspan-idcompositingspanspan-idcompositingspancompositing"></a><span id="Compositing"></span><span id="compositing"></span><span id="COMPOSITING"></span>Компоновка
+### <a name="span-idcompositingspanspan-idcompositingspanspan-idcompositingspancompositing"></a><span id="Compositing"></span><span id="compositing"></span><span id="COMPOSITING"></span>Совмещение
 
 Ваше приложение может использовать буфер трафарета для создания двух- или трехмерных изображений в трехмерной сцене. Маска в буфере трафарета используется для ограждения области, которая является поверхностью однобуферной прорисовки. Сохраненную двухмерную информацию, такую как текст или точечные рисунки, затем можно записать в огороженную область. Кроме того, ваше приложение может отрисовывать дополнительные трехмерные примитивы в замаскированный трафаретом регион поверхности однобуферной прорисовки. Приложение даже может отрисовывать всю сцену.
 
 Игры часто предполагают компоновку нескольких трехмерных сцен. Так, в симуляторах вождения, как правило, показано отражение в зеркале заднего вида. В нем отражается происходящее за водителем в трехмерном формате. Это вторая трехмерная сцена, скомпонованная с передним обзором водителя.
 
-### <a name="span-iddecalingspanspan-iddecalingspanspan-iddecalingspandecaling"></a><span id="Decaling"></span><span id="decaling"></span><span id="DECALING"></span>Переводные картинки
+### <a name="span-iddecalingspanspan-iddecalingspanspan-iddecalingspandecaling"></a><span id="Decaling"></span><span id="decaling"></span><span id="DECALING"></span>Decaling
 
 В приложениях Direct3D пользователи с помощью переводных картинок контролируют, какие пиксели из определенного изображения-примитива рисуются на поверхность однобуферной прорисовки. Приложения применяют переводные картинки к изображениям примитивов для правильной отрисовки многоугольников.
 
@@ -69,33 +69,33 @@ ms.locfileid: "8936448"
 
 Для решения этой проблемы можно использовать наложение нескольких текстур.
 
-### <a name="span-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlines-and-silhouettesoutlines-and-silhouettes"></a><span id="Outlines_and_Silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span><span id="outlines-and-silhouettes">Структуры и силуэты
+### <a name="span-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlines-and-silhouettesoutlines-and-silhouettes"></a><span id="Outlines_and_Silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span><span id="outlines-and-silhouettes">Контуры и силуэтам
 
 Буфер трафарета можно использовать и для более абстрактных эффектов, таких как создание структур и силуэтов.
 
-Если ваше приложение выполняет два прохода отрисовки (один— чтобы создать маску трафарета, а второй— чтобы применить маску трафарета к изображению, однако во втором проходе используются несколько более мелкие примитивы), получившееся изображение будет содержать только структуру примитива. Затем приложение может заполнить замаскированную трафаретом область изображения сплошным цветом, создавая для примитива эффект приподнятости.
+Если ваше приложение выполняет два прохода отрисовки (один — чтобы создать маску трафарета, а второй — чтобы применить маску трафарета к изображению, однако во втором проходе используются несколько более мелкие примитивы), получившееся изображение будет содержать только структуру примитива. Затем приложение может заполнить замаскированную трафаретом область изображения сплошным цветом, создавая для примитива эффект приподнятости.
 
 Если маска трафарета имеет те же размеры и форму, что и примитив, который вы отрисовываете, на полученном изображении на месте примитива будет отверстие. Затем приложение может заполнить это отверстие черным, создавая силуэт примитива.
 
-### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspantwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span>Двусторонний трафарет
+### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspantwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span>Двухсторонний шаблон
 
 Теневые тома используются для рисования теней с использованием буфера трафарета. Приложение вычисляет теневые тома, переданные геометрией ограждения, вычисляя края силуэта и вытягивая их от света в набор трехмерных томов. Затем эти тома дважды отрисовываются в буфер трафарета.
 
 В ходе первой отрисовки рисуются многоугольники переднего обзора и увеличиваются значения буфера трафарета. В ходе второй отрисовки рисуются многоугольники заднего вида, относящиеся к теневому тому, а значения буфера трафарета уменьшаются.
 
-Как правило значения увеличения и уменьшения уравновешивают отменяют друг друга. Однако сцена уже была отрисована с нормальной геометрией, что приводит к некоторые пиксели не проверку z буфера при отрисовке теневого тома. Значения, оставшиеся в буфере трафарета, соответствуют пикселям в тени. Оставшееся содержимое буфера трафарета используется в качестве маски, чтобы выполнить альфа-смешение крупного, всеобъемлющего черного квартета со сценой. Если буфер трафарета используется в качестве маски, в результате затеняются пиксели, которые находятся в тени.
+Как правило, значения увеличения и уменьшения уравновешивают друг друга. Однако сцена уже была отрисована с нормальной геометрией, из-за чего некоторые пиксели не прошли проверку Z-буфера при отрисовке теневого тома. Значения, оставшиеся в буфере трафарета, соответствуют пикселям в тени. Оставшееся содержимое буфера трафарета используется в качестве маски, чтобы выполнить альфа-смешение крупного, всеобъемлющего черного квартета со сценой. Если буфер трафарета используется в качестве маски, в результате затеняются пиксели, которые находятся в тени.
 
-Это означает, что теневая геометрия рисуется дважды для каждого источника света, оказывая давление на пропускную способность вершин графического процессора. Для устранения этого эффекта разработана функция двустороннего трафарета. При таком подходе существует два набора состояний трафарета (они указаны ниже): один— для треугольников переднего обзора, другой— для треугольников заднего вида. В этом случае для каждого теневого тома рисуется по одному проходу на источник освещения.
+Это означает, что теневая геометрия рисуется дважды для каждого источника света, оказывая давление на пропускную способность вершин графического процессора. Для устранения этого эффекта разработана функция двустороннего трафарета. При таком подходе существует два набора состояний трафарета (они указаны ниже): один — для треугольников переднего обзора, другой — для треугольников заднего вида. В этом случае для каждого теневого тома рисуется по одному проходу на источник освещения.
 
-### <a name="span-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreading-the-depth-stencil-buffer-as-a-texturespanreading-the-depth-stencil-buffer-as-a-texture"></a><span id="Reading_the_Depth-Stencil_Buffer_as_a_Texture"></span><span id="reading_the_depth-stencil_buffer_as_a_texture"></span><span id="READING_THE_DEPTH-STENCIL_BUFFER_AS_A_TEXTURE"></span><span id="reading-the-depth-stencil-buffer-as-a-texture"></span>Считывание буфера трафарета глубины как текстуры
+### <a name="span-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreading-the-depth-stencil-buffer-as-a-texturespanreading-the-depth-stencil-buffer-as-a-texture"></a><span id="Reading_the_Depth-Stencil_Buffer_as_a_Texture"></span><span id="reading_the_depth-stencil_buffer_as_a_texture"></span><span id="READING_THE_DEPTH-STENCIL_BUFFER_AS_A_TEXTURE"></span><span id="reading-the-depth-stencil-buffer-as-a-texture"></span>Чтение буфера трафарета глубины в качестве текстуры
 
-Неактивный буфер трафарета глубины может считываться шейдером как текстура. Приложение, считывающее буфер трафарета глубины как текстуру, отрисовывается за два прохода: первый проход выполняет запись в буфер трафарета глубины, а второй— чтение из этого буфера. Это позволяет шейдеру сравнить значения глубины или трафарета, ранее записанные в буфер, со значением для отрисовываемого в настоящее время пикселя. Результат сравнения может использоваться для создания эффектов, таких как сопоставление теней или мягкие частицы в системе частиц.
+Неактивный буфер трафарета глубины может считываться шейдером как текстура. Приложение, считывающее буфер трафарета глубины как текстуру, отрисовывается за два прохода: первый проход выполняет запись в буфер трафарета глубины, а второй — чтение из этого буфера. Это позволяет шейдеру сравнить значения глубины или трафарета, ранее записанные в буфер, со значением для отрисовываемого в настоящее время пикселя. Результат сравнения может использоваться для создания эффектов, таких как сопоставление теней или мягкие частицы в системе частиц.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Стадия средства слияния вывода](output-merger-stage--om-.md)
+[Этап средства слияния (OM) вывода](output-merger-stage--om-.md)
 
-[Графический конвейер](graphics-pipeline.md)
+[Графического конвейера](graphics-pipeline.md)
 
-[Стадия средства слияния вывода](https://msdn.microsoft.com/library/windows/desktop/bb205120)
+[Этап средства слияния вывода](https://msdn.microsoft.com/library/windows/desktop/bb205120)

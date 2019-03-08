@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7768d63405281d3155affc6c9f09c62568761718
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945511"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607399"
 ---
 # <a name="tessellator-ts-stage"></a>Этап тесселятора (TS)
 
 
 Этап тесселятора (TS) создает шаблон выборки домена, который представляет преобразование геометрии и формирует набор меньших объектов (треугольников, точек и линий), которые соединяют эти выборки.
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Назначение и способы применения
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Назначения и использования
 
 
 Ниже на схеме рассматриваются этапы графического конвейера Direct3D.
@@ -52,9 +52,9 @@ ms.locfileid: "8945511"
 
 Графический конвейер Direct3D реализует аппаратную тесселяцию, что переводит работу с ЦП на GPU. Это может дать очень существенный прирост производительности, если в приложение реализуется большое число морфинговых целей и/или более сложные модели деформации/скиннинга.
 
-Тесселятор — это этап фиксированной функции, который инициализируется привязкой [шейдера поверхности](hull-shader-stage--hs-.md) к конвейеру. (см. [Руководство: инициализация этапа тесселятора](https://msdn.microsoft.com/library/windows/desktop/ff476341)). Назначение этапа тесселятора подразделить домен (четырехугольник, треугольник или линию ) на большое число меньших объектов (треугольников, точек или линий). Тесселятор разбивает канонический домен в нормализованной (ноль к единице) системе координат. Например, домен четырехугольника тесселируется в единичный квадрат.
+Тесселятор — это этап фиксированной функции, который инициализируется привязкой [шейдера поверхности](hull-shader-stage--hs-.md) к конвейеру. (см. в разделе [How To: Инициализировать этап тесселяции](https://msdn.microsoft.com/library/windows/desktop/ff476341)). Назначение этапа тесселятора подразделить домен (четырехугольник, треугольник или линию ) на большое число меньших объектов (треугольников, точек или линий). Тесселятор разбивает канонический домен в нормализованной (ноль к единице) системе координат. Например, домен четырехугольника тесселируется в единичный квадрат.
 
-### <a name="span-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>Фазы этапа тесселятора (TS)
+### <a name="span-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>Этапы, на этапе тесселяции (TS)
 
 Этап тесселятора (TS) выполняется в две фазы:
 
@@ -63,14 +63,14 @@ ms.locfileid: "8945511"
 
     | Тип секционирования | Диапазон                       |
     |----------------------|-----------------------------|
-    | Fractional\_odd      | \[1...63\]                  |
-    | Fractional\_even     | Диапазон TessFactor: \[2..64\] |
-    | Integer              | Диапазон TessFactor: \[1..64\] |
+    | Доли\_нечетное      | \[1...63\]                  |
+    | Доли\_даже     | Диапазон TessFactor: \[2..64\] |
+    | целое число              | Диапазон TessFactor: \[1..64\] |
     | Pow2                 | Диапазон TessFactor: \[1..64\] |
 
      
 
-Тесселяция реализуется с помощью двух этапов программируемых шейдеров: [шейдера поверхности](hull-shader-stage--hs-.md) и [шейдера доменов](domain-shader-stage--ds-.md). Эти этапы шейдеров программируются с помощью кода HLSL, определенного в 5 модели шейдеров. Целевые объекты шейдеров,: hs\_5\_0 и ds\_5\_0. Заголовок создает шейдер, затем код для оборудования извлекается из скомпилированных шейдеров, переданных в среду исполнения при направлении шейдеров в конвейер.
+Тесселяция реализуется с помощью двух этапов программируемых шейдеров: [шейдера поверхности](hull-shader-stage--hs-.md) и [шейдера доменов](domain-shader-stage--ds-.md). Эти этапы шейдеров программируются с помощью кода HLSL, определенного в 5 модели шейдеров. Цели шейдера не: hs\_5\_0 и доменных служб Active Directory\_5\_0. Заголовок создает шейдер, затем код для оборудования извлекается из скомпилированных шейдеров, переданных в среду исполнения при направлении шейдеров в конвейер.
 
 ### <a name="span-idenablingdisablingtessellationspanspan-idenablingdisablingtessellationspanspan-idenablingdisablingtessellationspanenablingdisabling-tessellation"></a><span id="Enabling_disabling_tessellation"></span><span id="enabling_disabling_tessellation"></span><span id="ENABLING_DISABLING_TESSELLATION"></span>Включение и отключение тесселяции
 
@@ -81,17 +81,17 @@ ms.locfileid: "8945511"
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Входные данные
 
 
-Тесселятор срабатывает один раз на преобразование, используя факторы тесселяции (которые определяют насколько точно тесселируется домен) и тип секционирования (указывающий алгоритм, используемый для разрезания преобразования), передаваемые из этапа шейдера поверхности.
+Тесселяция выполняется единожды для каждого участка с использованием факторов тесселяции (указывают тщательность тесселяции домена) и типа секционирования (указывает алгоритм разделения участка на части), переданных с предыдущего этапа шейдера поверхностей.
 
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Выходные данные
 
 
-Тесселятор выдает uv (и при необходимости w) координаты и топологию поверхности в этап шейдера доменов.
+Тесселяция выводит координаты uv (дополнительно — w) и топологию поверхности для этапа шейдера доменов.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Графический конвейер](graphics-pipeline.md)
+[Графического конвейера](graphics-pipeline.md)
 
  
 

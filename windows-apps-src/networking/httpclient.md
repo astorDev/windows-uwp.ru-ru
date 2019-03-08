@@ -1,5 +1,5 @@
 ---
-description: Используйте HttpClient и остаток API пространства имен Windows.Web.Http для отправки и получения данных по протоколам HTTP2.0 и HTTP1.1.
+description: Используйте HttpClient и остаток API пространства имен Windows.Web.Http для отправки и получения данных по протоколам HTTP 2.0 и HTTP 1.1.
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
 ms.date: 02/08/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dd4b8c137d65339701b40027bb3230162e2c2456
-ms.sourcegitcommit: fde2d41ef4b5658785723359a8c4b856beae8f95
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "9079212"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620479"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -21,7 +21,7 @@ ms.locfileid: "9079212"
 -   [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692)
 -   [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631)
 
-Используйте [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) и остаток API пространства имен [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) для отправки и получения данных по протоколам HTTP2.0 и HTTP1.1.
+Используйте [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) и остаток API пространства имен [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) для отправки и получения данных по протоколам HTTP 2.0 и HTTP 1.1.
 
 ## <a name="overview-of-httpclient-and-the-windowswebhttp-namespace"></a>Обзор HttpClient и пространства имен Windows.Web.Http
 
@@ -45,11 +45,11 @@ ms.locfileid: "9079212"
 
 -   [**HttpBufferContent**](https://msdn.microsoft.com/library/windows/apps/dn298625). Содержимое в виде буфера
 -   [**HttpFormUrlEncodedContent**](https://msdn.microsoft.com/library/windows/apps/dn298685). Содержимое как кортежи "имя-значение", закодированные типом MIME **application/x-www-form-urlencoded**
--   [**HttpMultipartContent**](https://msdn.microsoft.com/library/windows/apps/dn298708). Содержимое в форме типа MIME **multipart/\***.
+-   [**HttpMultipartContent**](https://msdn.microsoft.com/library/windows/apps/dn298708). Содержимое в виде **составного /\***  тип MIME.
 -   [**HttpMultipartFormDataContent**](https://msdn.microsoft.com/library/windows/apps/dn279596). Содержимое, закодированное как тип MIME **multipart/form-data**.
 -   [**HttpStreamContent**](https://msdn.microsoft.com/library/windows/apps/dn279649). Содержимое как поток (внутренний тип, который используется HTTP-методом GET для получения данных и HTTP-методом POST для отправки данных)
 -   [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661). Содержимое в виде строки.
--   [**IHttpContent**](https://msdn.microsoft.com/library/windows/apps/dn279684)— это базовый интерфейс для разработчиков, создающих собственные объекты содержимого
+-   [**IHttpContent** ](https://msdn.microsoft.com/library/windows/apps/dn279684) -базовый интерфейс для разработчикам создавать свои собственные объекты содержимого
 
 Фрагмент кода в разделе "Отправка простого запроса GET через HTTP" использует класс [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661) для представления ответа HTTP из запроса GET HTTP в виде строки.
 
@@ -57,7 +57,7 @@ ms.locfileid: "9079212"
 
 ## <a name="send-a-simple-get-request-over-http"></a>Отправка простого запроса GET через HTTP
 
-Как упоминалось ранее в этой статье, пространство имен [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) позволяет приложениям UWP отправлять запросы GET. В следующем фрагменте кода показано, как отправлять запрос GET для http://www.contoso.com с помощью классов [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) и [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) для чтения ответа из запроса GET.
+Как упоминалось ранее в этой статье, пространство имен [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) позволяет приложениям UWP отправлять запросы GET. В следующем фрагменте кода показано, как отправить запрос GET к http://www.contoso.com с помощью [ **Windows.Web.Http.HttpClient** ](https://msdn.microsoft.com/library/windows/apps/dn298639) класс и [  **Windows.Web.Http.HttpResponseMessage** ](https://msdn.microsoft.com/library/windows/apps/dn279631) класс для чтения ответа из запроса GET.
 
 ```csharp
 //Create an HTTP client object
@@ -158,10 +158,10 @@ int main()
 
 ## <a name="post-binary-data-over-http"></a>Учет двоичных данных по протоколу HTTP
 
-[C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis) пример кода ниже описывается использование данных формы и запрос POST для отправки небольшого количества двоичные данные как отправки файла на веб-сервере. Код использует класс [**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent) для представления двоичных данных и [**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent) класс, представляющий данные несколько формы.
+[C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis) приведенном ниже примере кода показано, используя данные формы и запрос POST для отправки небольшой объем двоичных данных как передачу файла на веб-сервере. Код использует [ **HttpBufferContent** ](/uwp/api/windows.web.http.httpbuffercontent) класс для представления двоичных данных и [ **HttpMultipartFormDataContent** ](/uwp/api/windows.web.http.httpmultipartformdatacontent) класс представления форм с несколькими частями данных.
 
 > [!NOTE]
-> Вызов **get** (как показано в следующем примере кода) подходит не для потока пользовательского интерфейса. Правильное применение для использования в этом случае см. в разделе [параллельная обработка и асинхронные операции с помощью C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+> Вызов **получить** (как показано в следующем примере кода) не подходит для потока пользовательского интерфейса. Правильный способ использования в этом случае, см. в разделе [параллелизма и асинхронные операции с использованием C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 ```cppwinrt
 // pch.h
@@ -228,15 +228,15 @@ int main()
 }
 ```
 
-Чтобы ОПУБЛИКОВАТЬ содержимое реальный двоичный файл (а не явные двоичных данных, используемым выше), вы найдете его проще использовать объект [HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent) . Создать одно и, в качестве аргумента для его конструктор, передайте значение, возвращаемое при вызове [StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync). Этот метод возвращает поток данных внутри двоичного файла.
+Чтобы ПЕРЕДАТЬ содержимое реальных двоичных файлов (а не явных двоичные данные, используемые выше), вы найдете его проще в использовании [HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent) объекта. Конструирует и, в качестве аргумента в его конструктор, передайте значение, возвращенное из вызова [StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync). Этот метод возвращает поток для данных в двоичном файле.
 
-Кроме того Если вы отправляете большого файла (больше около 10 МБ), то рекомендуется, чтобы вы используете среды выполнения Windows [Фоновой передачи данных](/uwp/api/windows.networking.backgroundtransfer) API-интерфейсы.
+Кроме того, если вы загружаете больших файлов (размером более около 10 МБ), затем мы рекомендуем использовать среды выполнения Windows [фоновой передачи](/uwp/api/windows.networking.backgroundtransfer) API-интерфейсы.
 
 ## <a name="exceptions-in-windowswebhttp"></a>Исключения в Windows.Web.Http
 
 Исключение создается, если конструктору для объекта [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) передается неправильная строка универсального кода ресурса (URI).
 
-**.NET:** тип [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) отображается как [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) в C# и VB.
+**.NET:**   [ **Windows.Foundation.Uri** ](https://msdn.microsoft.com/library/windows/apps/br225998) тип отображается как [ **System.Uri** ](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) в C# и VISUAL BASIC.
 
 В C# и Visual Basic можно избежать этой ошибки, используя класс [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) из платформы .NET 4.5 и один из методов [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx), чтобы перед составлением URI проверить строку, полученную от пользователя приложения.
 
@@ -244,9 +244,9 @@ int main()
 
 В пространстве имен [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) отсутствует удобная функция для обработки исключений. Поэтому приложение, использующее класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) и другие классы из этого пространства имен, должно использовать значение **HRESULT**.
 
-В приложениях с помощью Framework4.5 .NET в C#, VB.NET, [System.Exception](https://msdn.microsoft.com/library/system.exception.aspx) представляет ошибку во время выполнения приложения при возникновении исключения. Свойство [System.Exception.HResult](https://msdn.microsoft.com/library/system.exception.hresult.aspx) возвращает значение **HRESULT**, назначенное определенному исключению. Свойство [System.Exception.Message](https://msdn.microsoft.com/library/system.exception.message.aspx) возвращает сообщение с описанием исключения. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
+В приложениях с помощью .NET Framework 4.5 в C#, VB.NET, [System.Exception](https://msdn.microsoft.com/library/system.exception.aspx) представляет ошибку во время выполнения приложения при возникновении исключения. Свойство [System.Exception.HResult](https://msdn.microsoft.com/library/system.exception.hresult.aspx) возвращает значение **HRESULT**, назначенное определенному исключению. Свойство [System.Exception.Message](https://msdn.microsoft.com/library/system.exception.message.aspx) возвращает сообщение с описанием исключения. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
 
 В приложениях на управляемом C++ объект [Platform::Exception](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) представляет ошибку во время выполнения приложения, когда возникает исключение. Свойство [Platform::Exception::HResult](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) возвращает значение **HRESULT**, назначенное определенному исключению. Свойство [Platform::Exception::Message](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) возвращает строку, которая предоставляется системой и связывается со значением **HRESULT**. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Приложение может фильтровать полученные данные по определенному значению перечисления **HRESULT**, чтобы действовать в зависимости от причины исключения.
 
-Для многих ошибок при проверке параметров возвращаемым **HRESULT** является **E\_INVALIDARG**. Для некоторых непредусмотренных вызовов методов возвращаемым **HRESULT** является **E\_ILLEGAL\_METHOD\_CALL**.
+Для большинства ошибок проверки параметра **HRESULT** возвращаемый **E\_INVALIDARG**. Для некоторых вызовов недопустимый метод **HRESULT** возвращаемый **E\_НЕДОПУСТИМЫЙ\_МЕТОД\_вызвать**.
 

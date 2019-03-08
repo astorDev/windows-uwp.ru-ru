@@ -1,31 +1,31 @@
 ---
-Description: You can submit apps to the Microsoft Store in over 100 languages.
+Description: Можно отправлять приложения Microsoft Store в более чем 100 языках.
 title: Поддерживаемые языки
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.date: 02/20/2019
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
-ms.sourcegitcommit: a32f656253acc1e8b150919e73c886a59e65756a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9083712"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657759"
 ---
 # <a name="supported-languages"></a>Поддерживаемые языки
 
 
-Вы можете отправить приложения в Microsoft Store в более чем на 100 языках.
+Можно отправлять приложения Microsoft Store в более чем 100 языках.
 
-Дополнительные сведения о настройке языков в приложениях, см. в разделе [глобализации и локализации](../design/globalizing/globalizing-portal.md) и [Обзор языков профиля пользователя и языков манифеста приложения](../design/globalizing/manage-language-and-region.md). [Набор средств для многоязычных приложений](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) также поможет вам в создании приложений, поддерживающих несколько языков.
+Дополнительные сведения о настройке языков в приложениях, см. в разделе [глобализации и локализации](../design/globalizing/globalizing-portal.md) и [языков профиля пользователя общие принципы и приложение манифеста языков](../design/globalizing/manage-language-and-region.md). [Набор средств для многоязычных приложений](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) также поможет вам в создании приложений, поддерживающих несколько языков.
 
 ## <a name="supported-languages"></a>Поддерживаемые языки
 
 
-Ниже перечислены языки, поддерживаемые Microsoft Store. Ваше приложение должно поддерживать хотя бы один из этих языков. 
+Это те языки, Microsoft Store. Приложения должны поддерживать хотя бы один из этих языков. 
 
-Кодов языков, которые не включены здесь не поддерживаются в магазине. Мы рекомендуем не включить пакеты, предназначенные для кодов языков, отличных от указанных ниже; такие пакеты не будут использованы для клиентов и что может привести к сбои или задержки сертификации.
+Коды языков, которые не включены в здесь не поддерживаются Store. Мы рекомендуем не использовать пакеты, предназначенные для кодов языка, отличного от перечисленных ниже; такие пакеты не будут распространяться среди клиентов и может вызвать задержки или ошибки центра сертификации.
 
 | Название языка         | Поддерживаемые коды языков                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -36,12 +36,12 @@ ms.locfileid: "9083712"
 | Армянский              | hy, hy-am                                                                                                                                                                                             |
 | Ассамский              | as, as-in                                                                                                                                                                                             |
 | Азербайджанский           | az, az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
-| Баскский (Баскский)       | eu, eu-es                                                                                                                                                                                             |
+| Баскский (Баскония)       | eu, eu-es                                                                                                                                                                                             |
 | Белорусский            | be, be-by                                                                                                                                                                                             |
 | Бенгальский                | bn, bn-bd, bn-in                                                                                                                                                                                      |
 | Боснийский               | bs, bs-cyrl, bs-cyrl-ba, bs-latn, bs-latn-ba                                                                                                                                                          |
 | Болгарский             | bg, bg-bg                                                                                                                                                                                             |
-| Каталанский               | ca, ca-es, ca-es-valencia                                                                                                                                                                             |
+| Каталонский               | ca, ca-es, ca-es-valencia                                                                                                                                                                             |
 | Чероки              | chr-cher, chr-cher-us, chr-latn                                                                                                                                                                       |
 | Китайский (упрощенное письмо)  | zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
 | Китайский (традиционное письмо) | zh-Hant, zh-hk, zh-mo, zh-tw, zh-hant-hk, zh-hant-mo, zh-hant-tw                                                                                                                                      |
@@ -59,7 +59,7 @@ ms.locfileid: "9083712"
 | Грузинский              | ka, ka-ge                                                                                                                                                                                             |
 | Немецкий                | de, de-at, de-ch, de-de, de-lu                                                                                                                                                                 |
 | Греческий                 | el, el-gr                                                                                                                                                                                             |
-| Гуджарати              | gu, gu-in                                                                                                                                                                                             |
+| Письменность гуджарати              | gu, gu-in                                                                                                                                                                                             |
 | Хауса                 | ha, ha-latn, ha-latn-ng                                                                                                                                                                               |
 | Иврит                | he, he-il                                                                                                                                                                                             |
 | Хинди                 | hi, hi-in                                                                                                                                                                                             |
@@ -73,8 +73,8 @@ ms.locfileid: "9083712"
 | Зулу               | zu, zu-za                                                                                                                                                                                             |
 | Итальянский               | it, it-it, it-ch                                                                                                                                                                                      |
 | Японский              | ja, ja-jp                                                                                                                                                                                            |
-| Каннада               | kn, kn-in                                                                                                                                                                                             |
-| Казахский                | kk, kk-kz                                                                                                                                                                                             |
+| Письменность каннада               | kn, kn-in                                                                                                                                                                                             |
+| казахский;                | kk, kk-kz                                                                                                                                                                                             |
 | Кхмерский                 | km, km-kh                                                                                                                                                                                             |
 | Киче               | quc-latn, qut-gt, qut-latn                                                                                                                                                                            |
 | Киньяруанда           | rw, rw-rw                                                                                                                                                                                             |
@@ -89,14 +89,14 @@ ms.locfileid: "9083712"
 | Люксембургский         | lb, lb-lu                                                                                                                                                                                             |
 | Македонский            | mk, mk-mk                                                                                                                                                                                             |
 | Малайский                 | ms, ms-bn, ms-my                                                                                                                                                                                      |
-| Малаялам             | ml, ml-in                                                                                                                                                                                             |
+| Письменность малаялам             | ml, ml-in                                                                                                                                                                                             |
 | Мальтийский               | mt, mt-mt                                                                                                                                                                                             |
 | Маори                 | mi, mi-latn, mi-nz                                                                                                                                                                                    |
 | Маратхи               | mr, mr-in                                                                                                                                                                                             |
 | Монгольский (кириллица)  | mn-cyrl, mn-mong, mn-mn, mn-phag                                                                                                                                                                      |
 | Непальский                | ne, ne-np                                                                                                                                                                                             |
 | Норвежский             | nb, nb-no, nn, nn-no, no, no-no                                                                                                                                                                      |
-| Ория                  | or, or-in                                                                                                                                                                                             |
+| Odia                  | or, or-in                                                                                                                                                                                             |
 | Фарси               | fa, fa-ir                                                                                                                                                                                             |
 | Польский                | pl, pl-pl                                                                                                                                                                                             |
 | Португальский (Бразилия)   | pt-br                                                                                                                                                                                                 |
@@ -119,7 +119,7 @@ ms.locfileid: "9083712"
 | Таджикский (кириллица)      | tg-arab, tg-cyrl, tg-cyrl-tj, tg-latn                                                                                                                                                                 |
 | Тамильский                 | ta, ta-in                                                                                                                                                                                             |
 | Татарский                 | tt-arab, tt-cyrl, tt-latn, tt-ru                                                                                                                                                                      |
-| Телугу                | te, te-in                                                                                                                                                                                             |
+| Письменность телугу                | te, te-in                                                                                                                                                                                             |
 | Тайский                  | th, th-th                                                                                                                                                                                             |
 | Тигринья              | ti, ti-et                                                                                                                                                                                             |
 | Турецкий               | tr, tr-tr                                                                                                                                                                                             |

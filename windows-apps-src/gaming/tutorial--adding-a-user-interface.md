@@ -1,76 +1,76 @@
 ---
 title: Добавление пользовательского интерфейса
-description: Инструкции по добавлению наложение 2D пользовательского интерфейса в игру UWP на DirectX.
+description: Сведения о добавлении наложенными интерфейс 2D пользователя для игры DirectX универсальной платформы Windows.
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, пользовательский интерфейс, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 09005eb12997126a9cad68c388beb0473b19fda3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930575"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609059"
 ---
 # <a name="add-a-user-interface"></a>Добавление пользовательского интерфейса
 
 
-Теперь, когда наш игра снабжена его визуальных эффектов трехмерной, пора сосредоточиться на добавление некоторых двухмерных элементов, чтобы игру можно отправить отзыв о состоянии игры игроку. Это можно сделать путем добавления простые команды меню и экранные элементы поверх трехмерной графики конвейера выходных данных.
+Теперь, когда нашей игре имеет его трехмерные визуальные элементы на месте, пришло время уделяем внимание добавлению некоторые двухмерные элементы, так что игру можно оставить отзыв о состояния игры с проигрывателем. Это можно сделать, добавив параметры простого меню и окна отображения компонентов на основе трехмерной графики конвейера выходные данные.
 
 >[!Note]
 >Если вы еще не скачали последний код для игры из этого примера, перейдите в раздел [Пример игры Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Этот пример является частью большой коллекции примеров функций UWP. Указания по скачиванию этого примера приводятся в разделе [Получение примеров UWP из GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
 ## <a name="objective"></a>Цель
 
-С помощью Direct2D, добавьте количество графического интерфейса пользователя и поведение наших UWP на базе DirectX игры в том числе:
-- Экранных элементов, включая прямоугольники boundry для [управления перемещением и обзором](tutorial--adding-controls.md)
+С помощью Direct2D, добавьте несколько графического интерфейса пользователя и поведения наших DirectX для универсальной платформы Windows игры включая:
+- Отображение информационных индикаторов, включая [внешний вид, Перемещение контроллера](tutorial--adding-controls.md) boundry прямоугольников
 - Меню состояния игры
 
 
 ## <a name="the-user-interface-overlay"></a>Перекрытие пользовательского интерфейса
 
 
-Существует множество способов для отображения текста и элементов пользовательского интерфейса в игре DirectX, мы добавим фокуса на использовании [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx). Мы будем также использовать [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) для текстовых элементов.
+Хотя существует много способов для отображения текста и пользовательских элементов интерфейса в игр DirectX, мы собираемся фокус по использованию [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx). Мы также используем [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) для текстовых элементов.
 
 
-Direct2D — это набор двухмерных рисования API используется для рисования двухмерных пиксельных примитивов и эффектов. Когда начиная работу с Direct2D, лучше не усложнять. Сложные макеты и функции интерфейса требуют времени на разработку и заблаговременного планирования. Если в игре нужен сложный пользовательский интерфейс, как в стратегиях и симуляторах, попробуйте использовать XAML.
+Direct2D — набор двухмерных рисования API используется для рисования точечных примитивы и эффекты. При начале работы с помощью Direct2D, лучше всего усложнять вещи. Сложные макеты и функции интерфейса требуют времени на разработку и заблаговременного планирования. Если вашей игре требуются сложного пользовательского интерфейса, аналогичные операциям в моделирование и стратегические игры, попробуйте использовать XAML.
 
 > [!NOTE]
-> Сведения о разработке пользовательского интерфейса в XAML в игре UWP DirectX см. [образец расширения игры](tutorial-resources.md).
+> Сведения о разработке пользовательского интерфейса с помощью XAML в игру DirectX для универсальной платформы Windows, см. в разделе [расширение пример игры](tutorial-resources.md).
 
-Direct2D не предназначен специально для разработки пользовательского интерфейса и макетов, таких как HTML и XAML. Он не предоставляет компоненты пользовательского интерфейса, такие как списки, поля или кнопки. Он также не предоставляет компонентов макета элементов div, таблицы или сетки.
+Direct2D не предназначена специально для пользовательских интерфейсов или макеты, например, HTML и XAML. Она не предоставляет компоненты пользовательского интерфейса, такие как списки, поля или кнопки. Он также не предоставляет макет компонентов, таких как элементы DIV, таблицы или сетки.
 
 
-В этом примере игры у нас есть два основных компонента пользовательского интерфейса.
-1. Экранных элементов для оценки и элементов управления в игре.
-2. Наложение используется для отображения текста состояния игры и параметры, такие как сведений о паузе и параметры запуска уровня.
+Для этого образца игры у нас есть два основных компонента пользовательского интерфейса.
+1. Индикации оценка и элементы управления, в игре.
+2. Наложение, используемый для отображения текста состояния игры и параметры, такие как Приостановка сведения и параметры запуска уровень.
 
 ### <a name="using-direct2d-for-a-heads-up-display"></a>Использование Direct2D для отображения экранных элементов
 
-На следующем рисунке показано отображение экранных элементов в игре для примера. Оно не загромождает экран, позволяя игроку сосредоточиться на перемещении трехмерному миру и стрельбе конечных объектов. Хороший интерфейс и экранные никогда не должны усложнить возможности игроку своевременно реагировать на события в игре.
+На следующем рисунке индикации в игре для примера. Это деталей, позволяя видеопроигрывателю сосредоточиться на перемещение трехмерный мир и устранении неполадок целевых объектов. Хороший интерфейс или hud-дисплея никогда не должен усложнить возможности проигрывателя для обработки и реагировать на них в игре.
 
 ![Снимок экрана с перекрытием в игре](images/simple-dx-game-ui-overlay.png)
 
-Перекрытие состоит из следующих простых примитивов.
-- Текст [**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038) в правом верхнем углу, который сообщает игроку 
-    - Успешно ошибок
-    - Число снимков, сделанные игроком
+Наложение состоит из следующих основных примитивы.
+- [**DirectWrite** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038) текста в правом верхнем углу, о том, исполнитель 
+    - Успешных попаданий
+    - Число снимков, сделанные проигрывателя
     - Время, оставшееся на уровне
     - Номер текущего уровня 
-- Два пересечение отрезков, используемый для формирования курсором-перекрестием
-- Двух прямоугольников в нижнем углах для [контроллера движения наблюдения](tutorial--adding-controls.md) имеющему скрытые границы. 
+- Два пересекающиеся сегменты линии, используемый для формирования перекрестие
+- Двух прямоугольников в углах нижней для [внешний вид, Перемещение контроллера](tutorial--adding-controls.md) границы. 
 
 
-Состояние экранных элементов в игре наложения рисуется в методе [**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358) [**GameHud**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h) класса. В этом методе изображение Direct2D, представляющий наш пользовательский Интерфейс обновляется в соответствии с меняющимся числом попаданий, время оставшиеся и уровня номер.
+Состояние внутриигровой hud-дисплея наложения рисуется [ **GameHud::Render** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358) метод [ **GameHud** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h) класса. В этом методе Direct2D оверлее, который представляет наш пользовательский Интерфейс обновляется в соответствии с изменениями в число попаданий, оставшиеся и уровней количество раз.
 
-При инициализации игры, мы добавляем `TotalHits()`, `TotalShots()`, и `TimeRemaining()` для [**swprintf_s**](https://docs.microsoft.com/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l) буфера и указать формат печати. Затем мы можно рисовать с помощью метода [**DrawText**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd742848) . Мы делаем так же для текущего индикатор уровня рисования пустой для отображения незавершенные уровни как ➀ и заполненного номеров как ➊ для отображения, что определенный уровень была выполнена.
+При инициализации игры, мы добавим `TotalHits()`, `TotalShots()`, и `TimeRemaining()` для [ **swprintf_s** ](https://docs.microsoft.com/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l) буфера и указать формат печати. Затем можно провести его с помощью [ **DrawText** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dd742848) метод. Мы не только для текущего уровня индикатора, рисования пустой числа для отображения незавершенных уровней, таких как ➀ и заполненный числа, например ➊, чтобы показать, что определенный уровень была выполнена.
 
 
-В следующем фрагменте кода проходит через метод **GameHud::Render** процесс 
+В следующем фрагменте кода описывается **GameHud::Render** процесс метода 
 - Создание растрового изображения с помощью [** ID2D1RenderTarget::DrawBitmap **](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371880)
-- Вводится параметр области пользовательского интерфейса в используя [ **D2D1::RectF**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368184)
-- С помощью **DrawText** создать текстовые элементы
+- Разделив областей пользовательского интерфейса в прямоугольников с помощью [ **D2D1::RectF**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368184)
+- С помощью **DrawText** чтобы сделать текстовые элементы
 
 ```cpp
 void GameHud::Render(_In_ Simple3DGame^ game)
@@ -171,7 +171,7 @@ void GameHud::Render(_In_ Simple3DGame^ game)
 }
 ```
 
-Неисправность метод вниз, эта часть рисует метод [**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L320-L358) наши перемещения прямоугольники и огня с [**ID2D1RenderTarget::DrawRectangle**](https://msdn.microsoft.com/library/windows/desktop/dd371902)и перекрестья с помощью двух вызовов к [**ID2D1RenderTarget::DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895).
+Критические метод вниз Кроме того, эту часть [ **GameHud::Render** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L320-L358) метод рисует наш переход и инициировать прямоугольники с [ **ID2D1RenderTarget::DrawRectangle** ](https://msdn.microsoft.com/library/windows/desktop/dd371902)и с помощью двух вызовов в виде перекрестия [ **ID2D1RenderTarget::DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895).
 
 ```cpp
         // Check if game is playing
@@ -214,79 +214,79 @@ void GameHud::Render(_In_ Simple3DGame^ game)
         }
 ```
 
-В методе **GameHud::Render** сохраняем логический размер окна игры в `windowBounds` переменной. Используется [`GetLogicalSize`](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.h#L41) метод класса **DeviceResources** . 
+В **GameHud::Render** метод мы сохраняем логический размер окна игры в `windowBounds` переменной. При этом используется [ `GetLogicalSize` ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.h#L41) метод **DeviceResources** класса. 
 ```cpp
 auto windowBounds = m_deviceResources->GetLogicalSize();
 ```
 
- Получение размера окна игры является надлежащая Подготовка программирования пользовательского интерфейса. Размер окна устанавливается в единицах под названием (аппаратно-независимые пиксели), где DIP определяется как 1/96 дюйма. Direct2D масштабирует единицы в реальные пиксели при возникновении отрисовки, при этом с помощью Windows параметр точек на дюйм (точек на ДЮЙМ). Аналогичным образом при рисовании текста в [**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038), укажите DIPs, а не точек для размера шрифта. Значения DIP выражаются числами с плавающей запятой.
+ Получение размера окна игры очень важен для программирование пользовательского интерфейса. Указывает размер окна в измерения, именем частные интерфейсы (аппаратно-независимых пикселях), где DIP определяется как 1/96 дюйма. Direct2D масштабирует единицы измерения, рисования собственно пикселы при возникновении рисунка, таким образом с помощью Windows точек на дюйм (DPI). Аналогично, при рисовании текста с помощью [ **DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038), укажите частные интерфейсы, а не точки для размера шрифта. Значения DIP выражаются числами с плавающей запятой.
 
  
 
-### <a name="displaying-game-state-info"></a>Отображение сведений о состоянии игры
+### <a name="displaying-game-state-info"></a>Отображение сведений о состояния игры
 
-Помимо отображения экранных элементов образец игры есть перекрытие, представляющее шесть состояний игры. Все состояния компонентов примитив большой черный прямоугольник с текстом для игрока. Прямоугольники для управления перемещением и обзором и перекрестья не рисуются, так как они не активны в этих состояниях.
+Помимо отображения информационных индикаторов пример игры имеет наложение, представляющий шесть состояния игры. Все состояния компонентов примитив большой черный прямоугольник с текстом для проигрывателя для чтения. Прямоугольники контроллера внешний вид, перемещения и перекрестье так, как они могут не действовать в эти состояния не отображаются.
 
-Наложение создается с использованием класса [**GameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.h) , позволяя нам отключения какой текст отображается в соответствии с состоянием игры.
+Наложение создается с помощью [ **GameInfoOverlay** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.h) класса, что позволило нам для какой текст отображается в соответствии с состоянием игры.
 
-![состояние и действие наложения](images/simple-dx-game-ui-finaloverlay.png)
+![состояния и операций наложения](images/simple-dx-game-ui-finaloverlay.png)
 
-Наложение разбивается на две части: **состояние** и **действия**. **Состояние** ассемблерного разбивается на **заголовке** и **основном тексте** прямоугольников. В разделе **действий** есть только один прямоугольник. Каждый прямоугольник имеет другой цели.
+Наложение разбивается на два раздела: **Состояние** и **действие**. **Состояние** ассемблерного дополнительно разделить на **Title** и **текст** прямоугольники. **Действие** раздел имеет только один прямоугольник. Каждый прямоугольник у нее другая роль.
 
 -   `titleRectangle` содержит текст заголовка.
 -   `bodyRectangle` содержит текст.
--   `actionRectangle` содержит текст, который сообщает игроку определенное действие.
+-   `actionRectangle` содержит текст, который информирует проигрывателя, чтобы выполнить определенное действие.
 
-Игра снабжена шесть состояний, которые могут быть установлены. Состояние игры, передать **состояние** часть накладываемого слоя. Прямоугольники **состояние** обновляются с помощью следующих состояний, соответствующие методам.
+Игра имеет шесть состояний, которые могут быть заданы. Состояние игры, передать **состояние** часть наложения. **Состояние** прямоугольники обновляются с помощью нескольких методов, соответствующих со следующими состояниями.
 
 - Загрузка
-- Начальное меню "Пуск" и высокой оценкой статистики
-- Уровень меню "Пуск"
+- Статистика оценки начального запуска и высокий уровень
+- Уровень запуска
 - Игра приостановлена
 - Игра закончена
-- Выигранные игры
+- Победа
 
 
-**Действие** часть накладываемого слоя обновляется с помощью метода [**GameInfoOverlay::SetAction**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564) , позволяя задать одно из следующих действий текст.
-- «Коснитесь начать новую игру …»
-- «Уровень загрузки, подождите …»
-- «Коснитесь для продолжения …»
+**Действие** часть наложения обновляется с помощью [ **GameInfoOverlay::SetAction** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564) метод, что текст будет присвоено одно из следующих действий.
+- «Коснитесь, чтобы повторно воспроизвести...»
+- «Уровень загрузки, пожалуйста, подождите...»
+- «Коснитесь, чтобы продолжить...»
 - Нет
 
 > [!NOTE]
-> Оба этих метода обсуждаются далее в разделе " [представление состояния игры](#representing-game-state) ".
+> Обоих методов будет рассказано далее в [представляющий состояния игры](#representing-game-state) раздел.
 
-В зависимости от того, что происходит в игре, **состояние** и раздел **действий** корректируются текстовых полей.
-Давайте рассмотрим, как инициализируется и рисуется перекрытие в этих шести состояний.
+В зависимости от того, что происходит в игре **состояние** и **действие** корректируются разделе текстовые поля.
+Давайте рассмотрим, как инициализировать и нарисовать наложение для этих шести состояний.
 
 ### <a name="initializing-and-drawing-the-overlay"></a>Инициализация и рисование перекрытия
 
-**Шесть состояния** есть несколько общих, ресурсы и методы необходимой очень похожи.
-    - Все они используют черный прямоугольник в центре экрана с фоном.
-    - Отображается текст является **заголовком** или **основного** текста.
-    - Стиль текста используется Интерфейсный шрифт и рисуется поверх фонового прямоугольника. 
+Шесть **состояние** состояния есть несколько общих, ресурсы и методы необходимым очень похожи.
+    - Они все используют черный прямоугольник в центре экрана с фоном.
+    - Отображаемый текст является либо **Title** или **текст** текста.
+    - Текст используется шрифт Segoe UI и рисуется поверх назад прямоугольника. 
 
 
-Образец игры используются четыре метода, которые следует учитывать при создании наложения.
+Пример игры имеет четыре метода, которые следует учитывать при создании наложения.
  
 
 #### <a name="gameinfooverlaygameinfooverlay"></a>GameInfoOverlay::GameInfoOverlay
-[**GameInfoOverlay::GameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L30-L78) конструктор инициализирует наложения, обслуживание, мы будем использовать для отображения информации для игрока на поверхности растрового изображения. Конструктор получает фабрику из объекта [**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478) передаются приложению, который используется для создания [**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479) , которую можно выводить сам объект перекрытия. [IDWriteFactory::CreateTextFormat](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368203) 
+[ **GameInfoOverlay::GameInfoOverlay** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L30-L78) конструктор инициализирует наложения, рабочей области точечного рисунка, который будет использоваться для отображения информации в проигрыватель на обслуживание. Конструктор получает фабрику из [ **ID2D1Device** ](https://msdn.microsoft.com/library/windows/desktop/hh404478) , переданное в него, которая используется для создания [ **ID2D1DeviceContext** ](https://msdn.microsoft.com/library/windows/desktop/hh404479) что сам объект наложения можно нарисовать. [IDWriteFactory::CreateTextFormat](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368203) 
 
 
 #### <a name="gameinfooverlaycreatedevicedependentresources"></a>GameInfoOverlay::CreateDeviceDependentResources
-[**GameInfoOverlay::CreateDeviceDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104) — это наш метод для создания кисти, которые будут использоваться для рисования наш текст. Чтобы сделать это, мы получите объект [**ID2D1DeviceContext2**](https://msdn.microsoft.com/en-us/library/windows/desktop/dn890789) , который позволяет создавать и рисования геометрии, а также функции, такие как рукописный ввод и градиент сетки отрисовки. Затем мы создадим ряд цветной кисти с помощью [**ID2D1SolidColorBrush**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd372207) для рисования элементов пользовательского интерфейса folling.
-- Черную кисть для фона прямоугольник
-- Белую кисть для текст состояния
-- Оранжевую кисть для текста уведомлений
+[**GameInfoOverlay::CreateDeviceDependentResources** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104) — это наш метод для создания кисти, которая будет использоваться для рисования наш текст. Чтобы сделать это, мы получаем [ **ID2D1DeviceContext2** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dn890789) объект, который позволяет создавать и отрисовка для класса geometry, а также функции, такие как рукописный ввод и градиент mesh подготовки к просмотру. Затем мы создаем ряд цветные кисти с использованием [ **ID2D1SolidColorBrush** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dd372207) для рисования folling элементы пользовательского интерфейса.
+- Черная кисть для фона прямоугольника
+- Белый кисти для текста состояния
+- Оранжевый кисти для текста действие
 
 #### <a name="deviceresourcessetdpi"></a>DeviceResources::SetDpi
-Метод [**DeviceResources::SetDpi**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L514-L527) устанавливает точек на дюйм окна. Этот метод вызывается, когда меняется DPI и должен быть переопределяется, что происходит при изменении размера окна игры. После обновления DPI, этот метод также вызывает[**DeviceResources::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L214-L487) убедитесь, что необходимые ресурсы создаются заново при каждом изменении размера окна.
+[ **DeviceResources::SetDpi** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L514-L527) метод задает размер в точках на дюйм окна. Этот метод вызывается, когда меняется DPI и должен быть перенастроены, что возникает при изменении размера окна игры. После обновления DPI, этот метод также вызывает[**DeviceResources::CreateWindowSizeDependentResources** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L214-L487) для создания действительно необходимых ресурсов создаются повторно каждый раз при изменении размера окна.
 
 
 #### <a name="gameinfooverlaycreatewindowssizedependentresources"></a>GameInfoOverlay::CreateWindowsSizeDependentResources
-Метод [**GameInfoOverlay::CreateWindowsSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L108-L225) является, где все рисование выполняется. Ниже приведен краткие сведения о методе действия.
-- Три прямоугольника создаются раздел текста пользовательского интерфейса для текста **заголовка**, **текст**и **Действие** .
+[ **GameInfoOverlay::CreateWindowsSizeDependentResources** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L108-L225) метод является, где наши рисование выполняется. Ниже приводится объяснение того метода действия.
+- Создаются три прямоугольника, раздел текста пользовательского интерфейса для **Title**, **текст**, и **действие** текста.
     ```cpp 
     m_titleRectangle = D2D1::RectF(
         GameInfoOverlayConstant::SideMargin,
@@ -308,40 +308,40 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
         );
     ```
 
-- Создается точечный рисунок `m_levelBitmap`, учитывая текущее разрешение с помощью **CreateBitmap**.
-- `m_levelBitmap` устанавливается как наш 2D отрисовки с помощью [**ID2D1DeviceContext::SetTarget**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh404533)целевого объекта.
-- Растровое изображение удаляется с каждого пикселя внесенные черным цветом с помощью [**ID2D1RenderTarget::Clear**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371772).
-- [**ID2D1RenderTarget::BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371768) вызывается для запуска рисования. 
-- **DrawText** вызывается для написания текста, хранящиеся в `m_titleString`, `m_bodyString`, и `m_actionString` в соответствии с новым прямоугольник с помощью соответствующих **ID2D1SolidColorBrush**.
-- [**ID2D1RenderTarget::EndDraw**](ID2D1RenderTarget::EndDraw) вызывается, чтобы остановить все операции рисования на `m_levelBitmap`.
-- Другой точечный рисунок создается с использованием **CreateBitmap** с именем `m_tooSmallBitmap` для использования в качестве резервного, отображение только если конфигурация экрана слишком мал для игры.
-- Повторите процесс для рисования на `m_levelBitmap` для `m_tooSmallBitmap`, на этот раз только графические строка `Paused` в тексте.
+- Битовая карта создается именованный `m_levelBitmap`, учитывая учетной записи с помощью текущего DPI **CreateBitmap**.
+- `m_levelBitmap` задается как нашей двухмерной отрисовки целевого с помощью [ **ID2D1DeviceContext::SetTarget**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh404533).
+- Точечный рисунок снят в каждом пикселе, внесенные с помощью черной [ **ID2D1RenderTarget::Clear**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371772).
+- [**ID2D1RenderTarget::BeginDraw** ](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371768) вызывается в начале документа. 
+- **DrawText** вызывается для рисования текста, хранящегося в `m_titleString`, `m_bodyString`, и `m_actionString` в прямоугольнике approperiate, с помощью соответствующего **ID2D1SolidColorBrush**.
+- [**ID2D1RenderTarget::EndDraw** ](ID2D1RenderTarget::EndDraw) вызывается, чтобы остановить все операции рисования на `m_levelBitmap`.
+- Создан с помощью другого точечного рисунка **CreateBitmap** с именем `m_tooSmallBitmap` для использования в качестве запасного варианта, отображаются только, если конфигурация отображения слишком мал для игры.
+- Повторите процедуру для рисования на `m_levelBitmap` для `m_tooSmallBitmap`, на этот раз только графические строка `Paused` в тексте.
 
 
 
 
-Теперь все, что нам нужно, шесть методов для заполнения текст из наших состояний перекрытия шесть!
+Теперь необходимо шесть методов для заполнения текст из наших состояний шесть наложения!
 
-### <a name="representing-game-state"></a>Представление состояния игры
+### <a name="representing-game-state"></a>Представляет состояния игры
 
 
-Каждый из состояний шесть перекрытия в игре имеет соответствующий метод в объекте **GameInfoOverlay** . Эти методы рисуют вариант перекрытия для явной передачи игроку информации об игре. Это взаимодействие представляется со строкой **заголовка** и **основного** . Пример уже настроены ресурсы и макет для такой информации, когда он был инициализирован и с помощью метода [**GameInfoOverlay::CreateDeviceDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104) , его нужно только задать строки состояния.
+Каждая из шести наложения состояний в игре имеет соответствующий метод **GameInfoOverlay** объекта. Эти методы рисуют вариант перекрытия для явной передачи игроку информации об игре. Это взаимодействие представляется с помощью **Title** и **текст** строка. Так как образец уже настроенного ресурсы и макет для этой информации при инициализации с [ **GameInfoOverlay::CreateDeviceDependentResources** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104) метод, вполне достаточно для предоставления строки состояния наложения.
 
-**Состояние** часть накладываемого слоя задается с помощью вызова к одному из следующих методов.
+**Состояние** задана часть наложения с вызовом одного из следующих методов.
 
-Состояния игры | Метод set состояние | Поля состояния
+Состояния игры | Метод set состояния | Поля состояния
 :----- | :------- | :---------
-Загрузка | [GameInfoOverlay::SetGameLoading](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L254-L306) |**Title**</br>Загрузка ресурсов </br>**Body**</br> Постепенно выводит «.» подразумевает загрузки действий.
-Начальное меню "Пуск" и высокой оценкой статистики | [GameInfoOverlay::SetGameStats](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L310-L354) |**Title**</br>Максимальный результат</br> **Body**</br> Уровни завершения # </br>Общее количество баллов #</br>Общее количество снимков #
-Уровень меню "Пуск" | [GameInfoOverlay::SetLevelStart](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L413-L471) |**Title**</br>Level #</br>**Body**</br>Описание уровня цели.
-Игра приостановлена | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**Title**</br>Игра приостановлена</br>**Body**</br>Нет
-Игра закончена | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Title**</br>Игра закончена</br> **Body**</br> Уровни завершения # </br>Общее количество баллов #</br>Общее количество снимков #</br>Уровни завершения #</br>Высокая оценка #
-Выигранные игры | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Title**</br>Вы ВЫИГРАЛ!</br> **Body**</br> Уровни завершения # </br>Общее количество баллов #</br>Общее количество снимков #</br>Уровни завершения #</br>Высокая оценка #
+Загрузка | [GameInfoOverlay::SetGameLoading](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L254-L306) |**Заголовок**</br>Загрузка ресурсов </br>**Текст**</br> Последовательно выводит «.» подразумевается действие загрузки.
+Статистика оценки начального запуска и высокий уровень | [GameInfoOverlay::SetGameStats](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L310-L354) |**Заголовок**</br>Высокая оценка</br> **Текст**</br> Уровни завершения # </br>Общее число точек #</br>Всего кадрами #
+Уровень запуска | [GameInfoOverlay::SetLevelStart](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L413-L471) |**Заголовок**</br># Уровня</br>**Текст**</br>Описание цели уровня.
+Игра приостановлена | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**Заголовок**</br>Игра приостановлена</br>**Текст**</br>Нет
+Игра закончена | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Заголовок**</br>Игра закончена</br> **Текст**</br> Уровни завершения # </br>Общее число точек #</br>Всего кадрами #</br>Уровни завершения #</br>Высокая оценка #
+Победа | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Заголовок**</br>Вы ВЫИГРАЛИ!</br> **Текст**</br> Уровни завершения # </br>Общее число точек #</br>Всего кадрами #</br>Уровни завершения #</br>Высокая оценка #
 
 
 
 
-С помощью метода [**GameInfoOverlay::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L117-L134) объявляются три прямоугольные области, которые соответствуют определенным регионам наложения.
+С помощью [ **GameInfoOverlay::CreateWindowSizeDependentResources** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L117-L134) метод, образец объявлены три прямоугольной области, которые соответствуют определенные регионы наложения.
 
 
 
@@ -401,12 +401,12 @@ void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
 }
 ```
 
-Используя контекст устройства Direct2D, инициализированного объекта **GameInfoOverlay** , этот метод заполняет прямоугольники заголовка и основного с черным с помощью кисти фона. Белой кистью в прямоугольнике заголовка рисуется текст "High Score" (Лучший результат), а в прямоугольнике основного текста — строка с обновленным состоянием игры.
+Использование контекста устройства Direct2D, **GameInfoOverlay** объект инициализирован, этот метод заполняет прямоугольники заголовок и текст с черным, используя кисть фона. Белой кистью в прямоугольнике заголовка рисуется текст "High Score" (Лучший результат), а в прямоугольнике основного текста — строка с обновленным состоянием игры.
 
 
-Прямоугольник действий обновляется последующим вызовом [**GameInfoOverlay::SetAction**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564) из метода в объекте **GameMain** , который предоставляет данные о состоянии игры, необходимые **GameInfoOverlay::SetAction** для определения сообщение, справа игрок, например, «продолжить».
+Действие прямоугольник обновляется с последующим вызовом [ **GameInfoOverlay::SetAction** ](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564) из метода на **GameMain** объектом, который предоставляет сведения состояния игры, необходимые по **GameInfoOverlay::SetAction** для определения соответствующего сообщения с проигрывателем, например «Коснитесь, чтобы продолжить».
 
-Перекрытие для состояния выбирается в методе [**GameMain::SetGameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/GameMain.cpp#L606-L661) следующим образом:
+Наложение для любого заданного состояния выбирается в [ **GameMain::SetGameInfoOverlay** ](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/GameMain.cpp#L606-L661) метод следующим образом:
 
 ```cpp
 void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
@@ -467,9 +467,9 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 }
 ```
 
-Теперь у игры есть возможность игроку текст в зависимости от состояния игры, и у нас есть способ переключения, отображаемых на них во время игры.
+Теперь игра имеет способ сообщить текста сведения проигрывателя, в зависимости от состояния игры и мы предлагаем возможность переключения, отображаемые в них во всей игры.
 
-### <a name="next-steps"></a>Следующие шаги
+### <a name="next-steps"></a>Дальнейшие действия
 
 Следующий раздел называется [Добавление элементов управления](tutorial--adding-controls.md). В нем мы рассмотрим, как игрок взаимодействует с игрой и как вводимые команды меняют состояние игры.
 

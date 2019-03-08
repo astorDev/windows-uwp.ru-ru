@@ -1,5 +1,5 @@
 ---
-Description: This is a hub topic covering the full developer picture of how Windows Information Protection (WIP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.
+Description: Это одна из ключевых тем руководства, позволяющая разработчикам сформировать полное представление о том, как защита Windows Information Protection (WIP) связана с файлами, буферами, буфером обмена, сетью, фоновыми задачами и защитой заблокированных данных.
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -10,11 +10,11 @@ keywords: windows 10, uwp, Windows Information Protection, корпоратив�
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
 ms.openlocfilehash: f6938118b3a9041eea27367c3916e94ce34d468e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049501"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595479"
 ---
 # <a name="windows-information-protection-wip"></a>Windows Information Protection (WIP)
 
@@ -41,8 +41,8 @@ WIP вместе с MDM предоставляет организации бол
 
 ![Жизненный цикл WIP](images/wip-lifecycle.png)
 
-> **Подробнее о WIP** <br>
-* [Представляем Windows Information Protection](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
+> **Дополнительные сведения о WIP** <br>
+* [Знакомство с Windows Information Protection](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
 * [Защита корпоративных данных с помощью Windows Information Protection (WIP)](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
 
 Если ваше приложение входит в список разрешенных, на все данные, созданные вашим приложением, распространяются ограничения политики. Это означает, что если администраторы отзовут у пользователей права доступа к корпоративным данным, эти пользователи потеряют доступ ко всем данным, созданным в приложении.
@@ -61,11 +61,11 @@ WIP вместе с MDM предоставляет организации бол
 
 Если вы готовы обучить свое приложение, ознакомьтесь с каким-либо из указанных ниже руководств.
 
-**Для приложений универсальной платформы Windows (UWP), которые можно создавать с помощью C#**
+**Для приложений универсальной платформы Windows (UWP), создаваемых с помощьюC#**
 
 [Руководство разработчика Windows Information Protection (WIP)](wip-dev-guide.md).
 
-**Для классических приложений, создаваемых на C++**
+**Для классических приложений, создаваемых с помощью C++**
 
 [Руководство разработчика Windows Information Protection (WIP) (C++)](https://go.microsoft.com/fwlink/?LinkId=822192).
 

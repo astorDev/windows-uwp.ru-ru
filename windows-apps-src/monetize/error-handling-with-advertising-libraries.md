@@ -1,17 +1,17 @@
 ---
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
-description: Узнайте, как обрабатывать ошибки, созданные классом AdControl в библиотеках Microsoft Advertising.
+description: Изучите процесс обработки ошибок, формируемых классом AdControl, в библиотеках Microsoft Advertising.
 title: Обработка ошибок рекламы
 ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, обработка ошибок, javascript, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e2e1c019497fc22e8d922ba5f0a02a30034b65
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050667"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617759"
 ---
 # <a name="handle-ad-errors"></a>Обработка ошибок рекламы
 

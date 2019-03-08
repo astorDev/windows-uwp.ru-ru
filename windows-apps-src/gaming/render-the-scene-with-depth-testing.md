@@ -1,24 +1,24 @@
 ---
-title: Прорисовка сцены с проверкой глубины
-description: Создание эффекта тени путем добавления проверки глубины в шейдер вершин (или геометрии) и в шейдер пикселей.
+title: Прорисовка сцены с тестированием глубины
+description: Создание эффекта тени путем добавления проверки глубины в шейдер вершин (или геометрии) и в построитель текстуры.
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, отрисовка, сцена, тестирование глубины, direct3d, тени
 ms.localizationpriority: medium
 ms.openlocfilehash: 237da82ef51466ae2460c3be27486091bf4066f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924523"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630459"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>Прорисовка сцены с тестированием глубины
 
 
 
 
-Создание эффекта тени путем добавления проверки глубины в шейдер вершин (или геометрии) и в построитель текстуры. [Пошаговое руководство. Реализация теневых объемов с помощью буферов глубины в Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md), часть 3.
+Создание эффекта тени путем добавления проверки глубины в шейдер вершин (или геометрии) и в построитель текстуры. Часть 3 из [Пошаговое руководство: Реализовать тома с помощью буферов глубины в Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
 ## <a name="include-transformation-for-light-frustum"></a>Включение преобразования для усеченного светового конуса
 
@@ -67,7 +67,7 @@ PixelShaderInput main(VertexShaderInput input)
 ## <a name="test-whether-the-position-is-in-the-light-frustum"></a>Проверка нахождения в усеченном световом конусе
 
 
-Сначала проверим, находится для пиксель в усеченном световом конусе, нормализовав координаты X и Y. Если обе координаты попадают в диапазон \[0, 1\], то пиксель может находиться в тени. В противном случае проверку глубины можно пропустить. Шейдер может быстро выполнить эту проверку, вызвав метод [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) и сравнив результат с исходным значением.
+Сначала проверим, находится для пиксель в усеченном световом конусе, нормализовав координаты X и Y. Если оба они находятся в диапазоне \[0, 1\] возможно для пикселя в тени. В противном случае проверку глубины можно пропустить. Шейдер может быстро выполнить эту проверку, вызвав метод [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) и сравнив результат с исходным значением.
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.

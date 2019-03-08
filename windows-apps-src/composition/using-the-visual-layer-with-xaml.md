@@ -1,17 +1,17 @@
 ---
 ms.assetid: b7a4ac8a-d91e-461b-a060-cc6fcea8e778
 title: Использование визуального уровня с помощью XAML
-description: Узнайте, как использовать интерфейсы API визуального уровня в сочетании с существующим содержимым XAML, чтобы создавать сложные анимации и эффекты.
+description: Узнайте методы использования интерфейсов API визуального уровня в сочетании с существующим содержимым XAML, чтобы создавать сложные анимации и эффекты.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 66b61b9db88392c7ca7370f06fb2150deba7c8c3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047539"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606829"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Использование визуального уровня с помощью XAML
 
@@ -45,12 +45,12 @@ ms.locfileid: "9047539"
 
 ## <a name="the-elementcompositionpreview-class"></a>Класс ElementCompositionPreview
 
-[**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx) — статический класс, обеспечивающий функции взаимодействия между XAML и визуальным уровнем. Обзор визуального уровня и его функций см. в разделе [Визуальный уровень](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer). Класс **ElementCompositionPreview** предоставляет следующие методы.
+[**ElementCompositionPreview** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx) является статическим классом с функциональными возможностями XAML и визуальный слой взаимодействия. Обзор визуального уровня и его функций см. в разделе [Визуальный уровень](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer). Класс **ElementCompositionPreview** предоставляет следующие методы.
 
--   [**GetElementVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): получение "выдаваемого" объекта Visual, используемого для отрисовки этого элемента
--   [**SetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual.aspx): определение "возвращаемого" объекта Visual как последнего дочернего элемента в визуальном дереве данного элемента. Этот объект Visual отрисовывается поверх остальных элементов. 
--   [**GetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): получение набора объектов Visual с помощью **SetElementChildVisual**
--   [**GetScrollViewerManipulationPropertySet**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): получение объекта, который может использоваться для создания анимаций 60 кадров в секунду на основании смещения прокрутки в **ScrollViewer**
+-   [**GetElementVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Получения визуальный элемент, который используется для отображения этого элемента «выдачи»
+-   [**SetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual.aspx): Задает «handin» визуальный элемент, как последний дочерний элемент этого элемента визуального дерева. Этот объект Visual отрисовывается поверх остальных элементов. 
+-   [**GetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Получить Visual набора с помощью **SetElementChildVisual**
+-   [**GetScrollViewerManipulationPropertySet**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Получить объект, который может использоваться для создания анимации 60 кадров/с на смещение прокрутки в основе **ScrollViewer**
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>Примечания относительно ElementCompositionPreview.GetElementVisual
 
@@ -94,11 +94,9 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 **ElementCompositionPreview.SetElementChildVisual** позволяет разработчику предоставить "возвращаемый" объект Visual, который будет отображаться как часть визуального дерева элемента. Это позволяет разработчикам создавать "Остров композиции", где содержимое на основе объекта Visual может размещаться в пользовательском интерфейсе на XAML. Разработчикам следует осторожно использовать этот подход, поскольку содержимое на основе объекта Visual не будет обладать теми же гарантиями по специальным возможностям и взаимодействию с пользователем, как содержимое на XAML. Соответственно, обычно рекомендуется использовать этот метод, только если это необходимо для реализации пользовательских эффектов, подобных приведенным ниже в разделе рецептов.
 
-## <a name="getalphamask-methods"></a>
-              Методы **GetAlphaMask**
+## <a name="getalphamask-methods"></a>Методы **GetAlphaMask**
 
-
-              Каждый из классов [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752), [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) и [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) реализует метод под названием **GetAlphaMask**, возвращающий объект **CompositionBrush**, представляющий собой черно-белое изображение, по форме соответствующее данному элементу. Этот объект **CompositionBrush** может служить входными данными для **DropShadow** композиции, чтобы тень соответствовала форме элемента и не была просто прямоугольной. Это позволяет использовать точные до пикселя основанные на контурах тени для текста, изображений с альфа-каналом и различных фигур. См. раздел *Отбрасывание тени* ниже для ознакомления с примером этого API.
+[**Изображение**](https://msdn.microsoft.com/library/windows/apps/br242752), [ **TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652), и [ **фигуры** ](/uwp/api/Windows.UI.Xaml.Shapes.Shape) каждый из которых реализует метод, вызванный  **GetAlphaMask** , возвращающий **CompositionBrush** представляет изображение в оттенках серого с фигурой элемента. Этот объект **CompositionBrush** может служить входными данными для **DropShadow** композиции, чтобы тень соответствовала форме элемента и не была просто прямоугольной. Это позволяет использовать точные до пикселя основанные на контурах тени для текста, изображений с альфа-каналом и различных фигур. См. раздел *Отбрасывание тени* ниже для ознакомления с примером этого API.
 
 ## <a name="recipes"></a>Рецепты
 
@@ -364,9 +362,8 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Обзор визуального уровня](https://msdn.microsoft.com/windows/uwp/composition/visual-layer)
-- [
-              Класс **ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/mt608976)
+- [Наглядное представление слоя](https://msdn.microsoft.com/windows/uwp/composition/visual-layer)
+- [**ElementCompositionPreview** класса](https://msdn.microsoft.com/library/windows/apps/mt608976)
 - Расширенные примеры пользовательского интерфейса и композиции в [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs)
 - [Пример BasicXamlInterop](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
 - [Пример ParallaxingListItems](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

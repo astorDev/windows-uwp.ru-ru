@@ -1,29 +1,29 @@
 ---
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: Визуальный компонент композиции
-description: Визуальные компоненты композиции составляют визуальную древовидную структуру, которую используют и на которую опираются другие функции API композиции. API позволяет разработчикам определить и создать один или несколько объектов класса Visual, каждый из которых представляет отдельный узел визуального дерева.
+description: В композиции объекты класса Visual составляют визуальную древовидную структуру, которую используют и на которую опираются другие функции API композиции. API позволяет разработчикам определить и создать один или несколько объектов класса Visual, каждый из которых представляет отдельный узел визуального дерева.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b1c0b78ca45d98428f38518b337b5889f595c49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943382"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602439"
 ---
 # <a name="composition-visual"></a>Визуальный компонент композиции
 
-Визуальные компоненты композиции составляют визуальную древовидную структуру, которую используют и на которую опираются другие функции API композиции. API позволяет разработчикам определить и создать один или несколько объектов класса Visual, каждый из которых представляет отдельный узел визуального дерева.
+В композиции объекты класса Visual составляют визуальную древовидную структуру, которую используют и на которую опираются другие функции API композиции. API позволяет разработчикам определить и создать один или несколько объектов класса Visual, каждый из которых представляет отдельный узел визуального дерева.
 
 ## <a name="visuals"></a>Объекты класса Visual
 
 Визуальная древовидная структура включает три типа объектов класса Visual, а также базовый класс кисти с несколькими подклассами, которые влияют на содержимое визуального объекта.
 
-- [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)— базовый объект, обладающий большей частью свойств, которые наследуют другие объекты класса Visual.
-- [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)— является производным от класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) и добавляет возможность создавать дочерние объекты.
-- [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)— класс, производный от класса [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810), в котором добавляется возможность подключения кисти. Это позволяет визуальному объекту отрисовывать пиксели, в том числе изображения, эффекты или заполнение сплошным цветом.
+- [**Visual** ](https://msdn.microsoft.com/library/windows/apps/Dn706858) — базовый объект, большинство свойств являются здесь и наследоваться от других визуальных объектов.
+- [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) — является производным от [ **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)и добавляет возможность создания дочерних элементов.
+- [**SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) — является производным от [ **ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) и добавляет возможность сопоставить кисти, что визуальный элемент можно построить пикселей, включая изображения, эффекты или надежную Цвет.
 
 Контент и эффекты можно применить к объекту SpriteVisuals при помощи [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) и его подклассам, в том числе [**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush),[**CompositionSurfaceBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) и [**CompositionEffectBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush). Дополнительные сведения о кистях см. в статье [**Обзор CompositionBrush**](https://docs.microsoft.com/windows/uwp/composition/composition-brushes).
 
@@ -59,11 +59,11 @@ var visual = _compositor.CreateSpriteVisual();
 visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
 ```
 
-Это всего лишь несколько строчек кода, но они демонстрируют всю мощь концепции. Основой системы эффектов являются объекты [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433). **SpriteVisual** обеспечивает гибкость при использовании и комбинировании цветов, изображений и создаваемых эффектов. **SpriteVisual** является единственным типом визуального объекта, с помощью которого можно заполнить двумерный прямоугольник содержимым кисти, в данном случае — сплошным цветом.
+Это всего несколько строк кода, он демонстрирует это мощная концепция: [**SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) объекты являются основой система эффектов. **SpriteVisual** обеспечивает гибкость при использовании и комбинировании цветов, изображений и создаваемых эффектов. **SpriteVisual** является единственным типом визуального объекта, с помощью которого можно заполнить двумерный прямоугольник содержимым кисти, в данном случае — сплошным цветом.
 
 ## <a name="clipping-a-visual"></a>Обрезка объекта класса Visual
 
-[**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) также можно использовать для обрезки объектов класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858). Ниже приведен фрагмент примера, в котором [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) используется для усечения каждой стороны визуального объекта.
+[  **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) также можно использовать для обрезки объектов класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858). Ниже приведен фрагмент примера, в котором [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) используется для усечения каждой стороны визуального объекта.
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -76,7 +76,7 @@ _currentVisual.Clip = clip;
 
 Как и другие объекты в API, объект [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) позволяет анимировать свои свойства.
 
-## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Поворот клипа
+## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Вращение картинки
 
 К объекту класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) можно применить поворот. Обратите внимание, что свойство [**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) поддерживает значения как в радианах, так и в градусах. По умолчанию используются значения в радианах, но их можно указать и в градусах, как показано в следующем фрагменте кода.
 

@@ -1,5 +1,5 @@
 ---
-Description: A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
+Description: Элемент управления представлением веб-страницы внедряет в приложение представление, которое отображает содержимое веб-страницы с помощью механизма визуализации Microsoft Edge. В элементе управления представлением веб-страницы могут отображаться и работать гиперссылки.
 title: Представление веб-страницы
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7af61b7d442fee7eff6399a7a5d143adb53fb560
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058555"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610639"
 ---
 # <a name="web-view"></a>Представление веб-страницы
  
 
 Элемент управления представлением веб-страницы внедряет в приложение представление, которое отображает содержимое веб-страницы с помощью механизма визуализации Microsoft Edge. В элементе управления представлением веб-страницы могут отображаться и работать гиперссылки.
 
-> **Важные API-интерфейсы**: [класс WebView](https://msdn.microsoft.com/library/windows/apps/br227702)
+> **Важные API-интерфейсы**: [Класс WebView](https://msdn.microsoft.com/library/windows/apps/br227702)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -28,7 +28,7 @@ ms.locfileid: "9058555"
 
 ## <a name="create-a-web-view"></a>Создание представления веб-страницы
 
-**Изменение внешнего вида представления веб-страницы**
+**Изменение внешнего вида веб-представление**
 
 [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) не относится к подклассу [Control](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx), поэтому у него нет шаблона элемента управления. Но можно задать различные свойства для управления некоторыми визуальными аспектами представления веб-страницы.
 - Чтобы ограничить область отображения, задайте свойства [Width](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) и [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx). 
@@ -36,11 +36,11 @@ ms.locfileid: "9058555"
 - Для управления прозрачностью представления веб-страницы задайте свойство [Opacity](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx).
 - Для определения цвета, который необходимо использовать в качестве фона веб-страницы, если содержимое HTML не определяет цвет, задайте свойство [DefaultBackgroundColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultbackgroundcolor.aspx). 
 
-**Получение заголовка веб-страницы**
+**Заголовок веб-страницы**
 
 Получить заголовок документа HTML, отображаемого в представлении веб-страницы в настоящий момент, можно с помощью свойства [DocumentTitle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.documenttitle.aspx). 
 
-**События ввода и порядок вкладок**
+**Входные события и последовательность табуляции**
 
 Хотя WebView не относится к подклассу "Control", он получает фокус ввода с клавиатуры и участвует в порядке вкладок. Он предоставляет метод [Focus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.focus.aspx), а также события [GotFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.gotfocus.aspx) и [LostFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.lostfocus.aspx), но у него отсутствуют свойства, связанные с вкладками. Его положение в последовательности вкладок такое же, как его положение в порядке документа XAML. Последовательность вкладок включает все элементы в содержимом представления веб-страницы, которые могут получать фокус ввода. 
 
@@ -48,7 +48,7 @@ ms.locfileid: "9058555"
 
 ### <a name="navigating-to-content"></a>Переход к содержимому
 
-Представление веб-страницы предоставляет несколько интерфейсов API для базовой навигации: [GoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx), [GoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx), [Stop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx), [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx), [CanGoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx) и [CanGoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx). Вы можете использовать их, чтобы добавить в приложение типовые возможности веб-серфинга. 
+Веб-представление предоставляет несколько интерфейсов API для основные средства перемещения: [GoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx), [GoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx), [остановить](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx), [обновить](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx), [CanGoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx), и [CanGoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx). Вы можете использовать их, чтобы добавить в приложение типовые возможности веб-серфинга. 
 
 Задайте в коде XAML свойство [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx), чтобы настроить начальное содержимое представления веб-страницы. Анализатор XAML автоматически преобразует строку в [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx). 
 
@@ -63,7 +63,7 @@ ms.locfileid: "9058555"
 <WebView x:Name="webView3" Source="ms-appx-web:///help/about.html"/>
 ```
 
-Свойство "Source" можно задать в коде, но вместо этого для загрузки содержимого в код обычно предпочтительнее использовать один из методов **Navigate**. 
+Свойство Source можно задать в коде, но вместо этого для загрузки содержимого в код обычно предпочтительнее использовать один из методов **Navigate**. 
 
 Для загрузки веб-содержимого используйте метод [Navigate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigate.aspx) с **Uri**, который использует схему http или https. 
 
@@ -91,7 +91,7 @@ webView1.Navigate("ms-appx-web:///help/about.html");
 
 ### <a name="responding-to-navigation-events"></a>Реакция на события навигации
 
-Элемент управления представлением веб-страницы имеет несколько событий, которые можно использовать, чтобы реагировать на состояния навигации и загрузки содержимого. Для корневого содержимого представления веб-страницы события происходят в следующем порядке: [NavigationStarting](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx), [ContentLoading](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx), [DOMContentLoaded](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx), [NavigationCompleted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
+Элемент управления представлением веб-страницы имеет несколько событий, которые можно использовать, чтобы реагировать на состояния навигации и загрузки содержимого. События происходят в следующем порядке для корневой веб-представление содержимого. [NavigationStarting](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx), [ContentLoading](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx), [DOMContentLoaded](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx), [NavigationCompleted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
 
 
 **NavigationStarting** — происходит перед тем, как представление веб-страницы переходит к новому содержимому. Можно отменить навигацию в обработчике для этого события, задав для свойства WebViewNavigationStartingEventArgs.Cancel значение "true". 
@@ -137,7 +137,7 @@ private void webView1_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEv
 }
 ```
 
-**NavigationCompleted** — происходит, когда представление веб-страницы заканчивает загружать текущее содержимое, или при сбое навигации. Чтобы определить результат навигации, проверьте свойства [IsSuccess](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) и [WebErrorStatus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) класса [WebViewNavigationCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx). 
+**NavigationCompleted** — происходит, когда представление веб-страницы заканчивает загружать текущее содержимое или при сбое навигации. Чтобы определить результат навигации, проверьте свойства [IsSuccess](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) и [WebErrorStatus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) класса [WebViewNavigationCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx). 
 
 ```csharp
 webView1.NavigationCompleted += webView1_NavigationCompleted;
@@ -258,7 +258,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 Сценарии в содержимом представления веб-страницы могут использовать событие **window.external.notify** с параметром строки для отправки сведений в ваше приложение. Для получения этих сообщений обработайте событие [ScriptNotify](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx). 
 
-Чтобы разрешить внешней веб-странице запускать событие **ScriptNotify** при вызове "window.external.notify", необходимо включить URI этой страницы в раздел **ApplicationContentUriRules** манифеста приложения. (Это можно сделать в Microsoft Visual Studio на вкладке "URI содержимого" конструктора Package.appxmanifest.) URI в этом списке должны использовать HTTPS и могут содержать знаки подстановки для поддоменов (например, `https://*.microsoft.com`), но не могут содержать знаки подстановки для доменов (например, `https://*.com` и `https://*.*`). Требования манифеста не применяются к содержимому, которое поступает из пакета приложения, использует ms-local-stream:// URI или загружается с помощью метода [NavigateToString](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx). 
+Чтобы разрешить внешней веб-странице запускать событие **ScriptNotify** при вызове "window.external.notify", необходимо включить URI этой страницы в раздел **ApplicationContentUriRules** манифеста приложения. (Это можно сделать в Microsoft Visual Studio на вкладке URI содержимого конструктора Package.appxmanifest.) URI в этот список необходимо использовать протокол HTTPS и может содержать подстановочные знаки поддомен (например, `https://*.microsoft.com`), но они не могут содержать подстановочные знаки домена (например, `https://*.com` и `https://*.*`). Требования манифеста не применяются к содержимому, которое поступает из пакета приложения, использует ms-local-stream:// URI или загружается с помощью метода [NavigateToString](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx). 
 
 ### <a name="accessing-the-windows-runtime-in-a-web-view"></a>Доступ к среде выполнения Windows в представлении веб-страницы
 
@@ -321,7 +321,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 
 
-## <a name="related-topics"></a>Ссылки по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Класс WebView](https://msdn.microsoft.com/library/windows/apps/br227702)
  

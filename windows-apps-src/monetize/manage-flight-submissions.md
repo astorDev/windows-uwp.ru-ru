@@ -1,30 +1,30 @@
 ---
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
-description: Используйте эти методы в API отправки Microsoft Store для управления отправками тестовых пакетов для приложений, которые зарегистрированы в вашей учетной записи центра партнеров.
-title: Управление отправками тестового пакета
+description: Эти методы в интерфейсе API отправки Microsoft Store можно используете для управления отправки рейсов пакета для приложений, зарегистрированных для учетной записи центра партнеров.
+title: Управление отправкой тестового пакета
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправки тестируемых возможностей
 ms.localizationpriority: medium
 ms.openlocfilehash: 19ddd43d4e61480764882f1b10e6240aa2afeb8c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945936"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662729"
 ---
-# <a name="manage-package-flight-submissions"></a>Управление отправками тестового пакета
+# <a name="manage-package-flight-submissions"></a>Управление отправкой тестового пакета
 
 API отправки в Microsoft Store предоставляет методы, которые можно использовать для управления отправками тестового пакета для приложений, включая постепенные выпуски пакетов. Введение в API отправки в Microsoft Store, включая необходимые условия для использования этого API, см. в разделе [Создание отправок и управление ими с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> Если вы используете API отправки Microsoft Store для создания отправки тестового пакета, не забудьте внести изменения в отправку только с помощью API, а не через Центр партнеров. Если вы используете информационную панель для изменения отправки, изначально созданной с помощью API, вы более не сможете изменять или фиксировать эту отправку с помощью этого API. В некоторых случаях отправка может оставаться в состоянии ошибки, когда продолжить процесс отправки невозможно. В этом случае необходимо удалить отправку и создать новую.
+> Если вы используете API отправки Microsoft Store для создания отправки пакета рейса, убедитесь, что вносить дальнейшие изменения для отправки только с помощью API, а не центр партнеров. Если вы используете информационную панель для изменения отправки, изначально созданной с помощью API, вы более не сможете изменять или фиксировать эту отправку с помощью этого API. В некоторых случаях отправка может оставаться в состоянии ошибки, когда продолжить процесс отправки невозможно. В этом случае необходимо удалить отправку и создать новую.
 
 <span id="methods-for-package-flight-submissions" />
 
 ## <a name="methods-for-managing-package-flight-submissions"></a>Методы управления отправками тестового пакета
 
-Используйте следующие методы для получения, создания, обновления, фиксации и удаления отправки тестового пакета. Прежде чем использовать эти методы, тестовый пакет должен уже существовать в центре партнеров. Вы можете создать пакет тестового пакета [в центре партнеров](https://msdn.microsoft.com/windows/uwp/publish/package-flights) или с помощью методов API отправки в Microsoft Store в [тестовые пакеты управление](manage-flights.md).
+Используйте следующие методы для получения, создания, обновления, фиксации и удаления отправки тестового пакета. Прежде чем использовать эти методы, полета пакет уже должен существовать в центре партнеров. Можно создать пакет рейса [в центре партнеров](https://msdn.microsoft.com/windows/uwp/publish/package-flights) или с помощью методов API отправки в Microsoft Store, описанных в [управление рейсы пакета](manage-flights.md).
 
 <table>
 <colgroup>
@@ -43,32 +43,32 @@ API отправки в Microsoft Store предоставляет методы,
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
-<td align="left"><a href="get-a-flight-submission.md">Получение существующей отправки тестового пакета</a></td>
+<td align="left"><a href="get-a-flight-submission.md">Получение существующего отправки рейсов пакета</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status</td>
-<td align="left"><a href="get-status-for-a-flight-submission.md">Получение состояния существующей отправки тестового пакета</a></td>
+<td align="left"><a href="get-status-for-a-flight-submission.md">Получение состояния существующего отправки рейсов пакета</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions</td>
-<td align="left"><a href="create-a-flight-submission.md">Создание новой отправки тестового пакета</a></td>
+<td align="left"><a href="create-a-flight-submission.md">Создание нового рейса отправка пакета</a></td>
 </tr>
 <tr>
 <td align="left">PUT</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
-<td align="left"><a href="update-a-flight-submission.md">Обновление существующей отправки тестового пакета</a></td>
+<td align="left"><a href="update-a-flight-submission.md">Обновление существующего отправки рейсов пакета</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit</td>
-<td align="left"><a href="commit-a-flight-submission.md">Фиксация новой или обновленной отправки тестового пакета</a></td>
+<td align="left"><a href="commit-a-flight-submission.md">Фиксация рейс Отправка новых или обновленных пакетов</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
-<td align="left"><a href="delete-a-flight-submission.md">Удаление отправки тестового пакета</a></td>
+<td align="left"><a href="delete-a-flight-submission.md">Удалить рейсов отправка пакета</a></td>
 </tr>
 </tbody>
 </table>
@@ -79,9 +79,9 @@ API отправки в Microsoft Store предоставляет методы,
 
 Чтобы создать отправку для тестового пакета, выполните следующие действия.
 
-1. Если еще не сделано, выполните необходимые условия, описанные в [Создание и управление отправками с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md), включая привязку приложения Azure AD с учетной записью центра партнеров и получение клиента идентификатор и ключ. Это необходимо сделать только один раз; после получения идентификатора клиента и ключа с их помощью можно в любой момент создать новый маркер доступа Azure AD.  
+1. Если еще не сделано, полный предварительные требования описано в разделе [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md), в том числе сопоставления для приложения Azure AD с вашей учетной записи центра партнеров и получение вашей Идентификатор клиента и ключ. Это необходимо сделать только один раз; после получения идентификатора клиента и ключа с их помощью можно в любой момент создать новый маркер доступа Azure AD.  
 
-2. [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Этот маркер доступа необходимо передавать методам из API отправки в Microsoft Store. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+2. [Получение токена доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Этот маркер доступа необходимо передавать методам из API отправки в Microsoft Store. После получения токена доступа у вас будет 60 минут, чтобы использовать его до окончания его срока действия. После истечения срока действия токена можно получить новый токен.
 
 3. [Создание отправки тестового пакета](create-a-flight-submission.md) путем выполнения следующего метода в API отправки в Microsoft Store. Этот метод создает новую выполняющуюся отправку, которая является копией последней опубликованной отправки.
 
@@ -92,7 +92,7 @@ API отправки в Microsoft Store предоставляет методы,
     Тело ответа содержит ресурс [отправка тестового пакета](#flight-submission-object), включающий в себя идентификатор новой отправки, URI подписанного URL-адреса (Shared Access Signature, SAS) для передачи любых пакетов приложений и изображений описания для отправки в хранилище BLOB-объектов Azure, а также данные для новой отправки (в том числе все описания и информацию о ценах).
 
     > [!NOTE]
-    > URI SAS предоставляет доступ к защищенному ресурсу в хранилище Azure без необходимости в использовании ключей учетной записи. Основные сведения об URI SAS и их использовании с хранилищем BLOB-объектов Azure см. в разделах [Подписанные URL-адреса, часть 1. Общие сведения о модели SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) и [Подписанные URL-адреса, часть 2. Создание и использование SAS с хранилищем BLOB-объектов](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+    > URI SAS предоставляет доступ к защищенному ресурсу в хранилище Azure без необходимости в использовании ключей учетной записи. Справочные сведения о URI SAS и их использования с хранилищем BLOB-объектов Azure, см. в разделе [Shared Access Signatures, Part 1: Общие сведения о модели SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) и [Shared Access Signatures, Part 2: Создание и использование SAS в хранилище BLOB-объектов](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. При добавлении новых пакетов для отправки [подготовьте пакеты](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements) и добавьте их в ZIP-архив.
 
@@ -106,9 +106,9 @@ API отправки в Microsoft Store предоставляет методы,
 
 4. При добавлении новых пакетов для отправки выложите ZIP-архив в [хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage), используя URI SAS, полученный в теле ответа метода POST, вызов которого был выполнен ранее. Существуют разные библиотеки Azure, которые можно использовать в этих целях на различных платформах, включая следующие.
 
-    * [Клиентская библиотека службы хранилища Azure для .NET](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
-    * [Пакет SDK службы хранилища Azure для Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
-    * [Пакет SDK службы хранилища Azure для Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
+    * [Клиентская библиотека хранилища Azure для .NET](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
+    * [Пакет SDK для Java хранилища Azure](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
+    * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
     В следующем фрагменте кода на C# показано, как передать ZIP-архив в хранилище BLOB-объектов Azure с помощью класса [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) клиентской библиотеки службы хранилища Azure для .NET. В этом примере кода предполагается, что ZIP-архив уже был записан в потоковый объект.
 
@@ -119,7 +119,7 @@ API отправки в Microsoft Store предоставляет методы,
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. [Подтвердите отправку тестового пакета](commit-a-flight-submission.md), выполнив следующий метод. Таким образом оповещается центра партнеров, что Вы завершили отправка и что обновления теперь должен применяться к вашей учетной записи.
+5. [Подтвердите отправку тестового пакета](commit-a-flight-submission.md), выполнив следующий метод. Это оповещает центра партнеров, вы закончите заявку и что обновлений теперь должна применяться к учетной записи.
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
@@ -133,7 +133,7 @@ API отправки в Microsoft Store предоставляет методы,
 
     Чтобы проверить состояние отправки, посмотрите значение поля *status* в теле ответа. Это значение должно измениться с **CommitStarted** на **PreProcessing**, если запрос выполнен успешно, или на **CommitFailed**, если в запросе возникли ошибки. Если имеются ошибки, поле *statusDetails* содержит дополнительные сведения об ошибке.
 
-7. После успешного завершения подтверждения отправки она отправляется в Магазин для внедрения. Вы можете продолжать отслеживать ход выполнения отправки с помощью предыдущего метода или центра партнеров.
+7. После успешного завершения подтверждения отправки она отправляется в Магазин для внедрения. Вы можете отслеживать ход выполнения передачи, с помощью метода, или посетив центр партнеров.
 
 <span/>
 
@@ -141,9 +141,9 @@ API отправки в Microsoft Store предоставляет методы,
 
 Следующие статьи содержат подробные примеры кода на нескольких разных языках программирования, демонстрирующие процесс создания отправки тестового пакета.
 
-* [Примеры кода на C#](csharp-code-examples-for-the-windows-store-submission-api.md)
-* [Примеры кода на Java](java-code-examples-for-the-windows-store-submission-api.md)
-* [Примеры кода на Python](python-code-examples-for-the-windows-store-submission-api.md)
+* [C#Примеры кода](csharp-code-examples-for-the-windows-store-submission-api.md)
+* [Примеры кода Java](java-code-examples-for-the-windows-store-submission-api.md)
+* [Примеры кода Python](python-code-examples-for-the-windows-store-submission-api.md)
 
 ## <a name="storebroker-powershell-module"></a>Модуль StoreBroker PowerShell
 
@@ -155,7 +155,7 @@ API отправки в Microsoft Store предоставляет методы,
 
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>Управление постепенным выпуском пакета для отправки тестового пакета
 
-Вы можете постепенно выполнять выпуск обновленных пакетов в отправке тестового пакета для части пользователей вашего приложения в Windows 10. Это позволяет контролировать отзывы и аналитические данные для конкретных пакетов, чтобы вы могли убедиться в правильности обновления до его более широкого распространения. Можно изменить процент выпуска (или остановить обновление) для опубликованной отправки без необходимости создания новой отправки. Дополнительные сведения, включая инструкции для включения и управления постепенного выпуска пакета в центре партнеров см. [в этой статье](../publish/gradual-package-rollout.md).
+Вы можете постепенно выполнять выпуск обновленных пакетов в отправке тестового пакета для части пользователей вашего приложения в Windows 10. Это позволяет контролировать отзывы и аналитические данные для конкретных пакетов, чтобы вы могли убедиться в правильности обновления до его более широкого распространения. Можно изменить процент выпуска (или остановить обновление) для опубликованной отправки без необходимости создания новой отправки. Дополнительные сведения, включая инструкции для включения и управления постепенное пакета развертывания в центре партнеров, см. в разделе [в этой статье](../publish/gradual-package-rollout.md).
 
 Чтобы программным образом включить постепенный выпуск пакета для отправки тестового пакета, выполните следующие действия, используя методы в API отправки в Microsoft Store.
 
@@ -182,22 +182,22 @@ API отправки в Microsoft Store предоставляет методы,
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout</td>
-<td align="left"><a href="get-package-rollout-info-for-a-flight-submission.md">Получение сведений о постепенном выпуске для отправки тестового пакета</a></td>
+<td align="left"><a href="get-package-rollout-info-for-a-flight-submission.md">Получение сведений о постепенное развертывание для отправки рейсов пакета</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage</td>
-<td align="left"><a href="update-the-package-rollout-percentage-for-a-flight-submission.md">Обновление процента пользователей, которые будут получать постепенный выпуск для отправки тестового пакета</a></td>
+<td align="left"><a href="update-the-package-rollout-percentage-for-a-flight-submission.md">Процент постепенное развертывание для отправки рейсов пакета обновления</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout</td>
-<td align="left"><a href="halt-the-package-rollout-for-a-flight-submission.md">Остановка постепенного выпуска для отправки тестового пакета</a></td>
+<td align="left"><a href="halt-the-package-rollout-for-a-flight-submission.md">Halt постепенное развертывание для отправки рейсов пакета</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout</td>
-<td align="left"><a href="finalize-the-package-rollout-for-a-flight-submission.md">Завершение постепенного выпуска для отправки тестового пакета</a></td>
+<td align="left"><a href="finalize-the-package-rollout-for-a-flight-submission.md">Завершение подготовки постепенное развертывание для отправки рейсов пакета</a></td>
 </tr>
 </tbody>
 </table>
@@ -257,16 +257,16 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Значение      | Тип   | Описание              |
 |------------|--------|------------------------------|
-| id            | string  | Идентификатор для отправки.  |
-| flightId           | string  |  Идентификатор тестового пакета, с которым связана отправка.  |  
-| status           | string  | Состояние отправки. Может принимать одно из следующих значений. <ul><li>None (Нет)</li><li>Canceled (Отменено)</li><li>PendingCommit (Ожидание фиксации)</li><li>CommitStarted (Фиксация запущена)</li><li>CommitFailed (Сбой фиксации)</li><li>PendingPublication (Ожидание публикации)</li><li>Publishing (Выполняется публикация)</li><li>Published (Опубликовано)</li><li>PublishFailed (Сбой публикации)</li><li>PreProcessing (Предварительная обработка)</li><li>PreProcessingFailed (Сбой предварительной обработки)</li><li>Certification (Сертификация)</li><li>CertificationFailed (Сбой сертификации)</li><li>Release (Выпуск)</li><li>ReleaseFailed (Сбой выпуска)</li></ul>   |
+| id            | Строка  | Идентификатор для отправки.  |
+| flightId           | Строка  |  Идентификатор тестового пакета, с которым связана отправка.  |  
+| status           | Строка  | Состояние отправки. Может принимать одно из следующих значений. <ul><li>Нет</li><li>Canceled (Отменено)</li><li>PendingCommit (Ожидание фиксации)</li><li>CommitStarted (Фиксация запущена)</li><li>CommitFailed (Сбой фиксации)</li><li>PendingPublication (Ожидание публикации)</li><li>Publishing (Выполняется публикация)</li><li>Published (Опубликовано)</li><li>PublishFailed (Сбой публикации)</li><li>PreProcessing (Предварительная обработка)</li><li>PreProcessingFailed (Сбой предварительной обработки)</li><li>Certification (Сертификация)</li><li>CertificationFailed (Сбой сертификации)</li><li>Выпуск</li><li>ReleaseFailed (Сбой выпуска)</li></ul>   |
 | statusDetails           | Объект  |  [Ресурс сведений о состоянии](#status-details-object), который содержит дополнительные сведения о состоянии отправки, включая сведения об ошибках.  |
 | flightPackages           | Массив  | Содержит [ресурсы тестового пакета](#flight-package-object), которые предоставляют сведения о каждом пакете в отправке.   |
 | packageDeliveryOptions    | Объект  | [Ресурс параметров доставки пакета](#package-delivery-options-object), который содержит постепенный выпуск пакета и обязательные параметры обновления для отправки.   |
-| fileUploadUrl           | строка  | URI подписанного URL-адреса (SAS) для передачи пакетов для отправки. При добавлении новых пакетов для отправки выложите ZIP-архив, содержащий пакеты, по этому URI. Дополнительные сведения см. в разделе [Создание отправки тестового пакета](#create-a-package-flight-submission).  |
+| fileUploadUrl           | Строка  | URI подписанного URL-адреса (SAS) для передачи пакетов для отправки. При добавлении новых пакетов для отправки выложите ZIP-архив, содержащий пакеты, по этому URI. Дополнительные сведения см. в разделе [Создание отправки тестового пакета](#create-a-package-flight-submission).  |
 | targetPublishMode           | Строка  | Режим публикации для отправки. Может принимать одно из следующих значений. <ul><li>Immediate (Незамедлительно)</li><li>Manual (Вручную)</li><li>SpecificDate (Указанная дата)</li></ul> |
-| targetPublishDate           | строка  | Дата публикации отправки в формате ISO 8601, если для *targetPublishMode* задано значение SpecificDate.  |
-| notesForCertification           | строка  |  Предоставляет дополнительные сведения для тест-инженеров сертификации, такие как учетные данные тестовой учетной записи и действия, которые требуется выполнить для доступа к функциям их проверки. Дополнительные сведения см. в разделе [Заметки по сертификации](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
+| targetPublishDate           | Строка  | Дата публикации отправки в формате ISO 8601, если для *targetPublishMode* задано значение SpecificDate.  |
+| notesForCertification           | Строка  |  Предоставляет дополнительные сведения для тест-инженеров сертификации, такие как учетные данные тестовой учетной записи и действия, которые требуется выполнить для доступа к функциям их проверки. Дополнительные сведения см. в разделе [Заметки по сертификации](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
 
 <span id="status-details-object" />
 
@@ -297,11 +297,11 @@ API отправки в Microsoft Store предоставляет методы,
 
 ### <a name="certification-report-resource"></a>Ресурс отчета о сертификации
 
-Этот ресурс предоставляет доступ к данным отчета о сертификации для отправки. Этот ресурс содержит следующие значения.
+Этот ресурс предоставляет доступ к данным отчета о сертификации для отправки. У этого ресурса есть следующие значения.
 
 | Значение           | Тип    | Описание         |
 |-----------------|---------|------|
-|     date            |    string     |  Дата и время создания отчета, в формате ISO 8601.    |
+|     date            |    Строка     |  Дата и время создания отчета, в формате ISO 8601.    |
 |     reportUrl            |    Строка     |  URL-адрес, по которому можно получить доступ к отчету.    |
 
 
@@ -328,22 +328,22 @@ API отправки в Microsoft Store предоставляет методы,
 }
 ```
 
-Этот ресурс содержит следующие значения.
+У этого ресурса есть следующие значения.
 
 > [!NOTE]
-> При вызове метода для [обновления отправки тестового пакета](update-a-flight-submission.md) в тексте запроса требуются только значения *fileName*, *fileStatus*, *minimumDirectXVersion* и *minimumSystemRam* этого объекта. Остальные значения заполняются центром партнеров.
+> При вызове метода для [обновления отправки тестового пакета](update-a-flight-submission.md) в тексте запроса требуются только значения *fileName*, *fileStatus*, *minimumDirectXVersion* и *minimumSystemRam* этого объекта. Другие значения заполняются с помощью центра партнеров.
 
 | Значение           | Тип    | Описание              |
 |-----------------|---------|------|
-| fileName   |   string      |  Имя пакета.    |  
-| fileStatus    | string    |  Состояние пакета. Может принимать одно из следующих значений. <ul><li>None (Нет)</li><li>PendingUpload (Ожидает передачи)</li><li>Uploaded (Передан)</li><li>PendingDelete (Ожидает удаления)</li></ul>    |  
-| id    |  string   |  Идентификатор, который уникально идентифицирует пакет. Это значение используется центром партнеров.   |     
-| version    |  string   |  Версия пакета приложения. Дополнительные сведения см. в разделе [Нумерация версий пакета](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
-| architecture    |  string   |  Архитектура пакета приложения (например, ARM).   |     
-| languages    | array    |  Массив кодов языков, которые поддерживает приложение. Дополнительные сведения см. в разделе [Поддерживаемые языки](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
-| capabilities    |  array   |  Массив возможностей, необходимых для этого пакета. Дополнительные сведения о возможностях см. в разделе [Объявления возможностей приложения](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
-| minimumDirectXVersion    |  string   |  Минимальная версия DirectX, поддерживаемая пакетом приложения. Может задаваться только для приложений, предназначенных для Windows 8.x; игнорируется для приложений, предназначенных для других версий. Может принимать одно из следующих значений. <ul><li>None (Нет)</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | string    |  Минимальный объем ОЗУ, необходимый для пакета приложения. Может задаваться только для приложений, предназначенных для Windows 8.x; игнорируется для приложений, предназначенных для других версий. Может принимать одно из следующих значений. <ul><li>None (Нет)</li><li>Memory2GB</li></ul>   |    
+| fileName   |   Строка      |  Имя пакета.    |  
+| fileStatus    | Строка    |  Состояние пакета. Может принимать одно из следующих значений. <ul><li>Нет</li><li>PendingUpload (Ожидает передачи)</li><li>Uploaded (Передан)</li><li>PendingDelete (Ожидает удаления)</li></ul>    |  
+| id    |  Строка   |  Идентификатор, который уникально идентифицирует пакет. Это значение используется в центре партнеров.   |     
+| version    |  Строка   |  Версия пакета приложения. Дополнительные сведения см. в разделе [Нумерация версий пакета](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
+| architecture    |  Строка   |  Архитектура пакета приложения (например, ARM).   |     
+| languages    | Массив    |  Массив кодов языков, которые поддерживает приложение. Дополнительные сведения см. в разделе [Поддерживаемые языки](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
+| capabilities    |  Массив   |  Массив возможностей, необходимых для этого пакета. Дополнительные сведения о возможностях см. в разделе [Объявления возможностей приложения](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
+| minimumDirectXVersion    |  Строка   |  Минимальная версия DirectX, поддерживаемая пакетом приложения. Может задаваться только для приложений, предназначенных для Windows 8.x; игнорируется для приложений, предназначенных для других версий. Может принимать одно из следующих значений. <ul><li>Нет</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | Строка    |  Минимальный объем ОЗУ, необходимый для пакета приложения. Может задаваться только для приложений, предназначенных для Windows 8.x; игнорируется для приложений, предназначенных для других версий. Может принимать одно из следующих значений. <ul><li>Нет</li><li>Memory2GB</li></ul>   |    
 
 
 <span id="package-delivery-options-object" />
@@ -379,17 +379,17 @@ API отправки в Microsoft Store предоставляет методы,
 
 ### <a name="package-rollout-resource"></a>Ресурс выпуска пакета
 
-Этот ресурс содержит [параметры постепенного выпуска пакета](#manage-gradual-package-rollout) для отправки. Этот ресурс содержит следующие значения.
+Этот ресурс содержит [параметры постепенного выпуска пакета](#manage-gradual-package-rollout) для отправки. У этого ресурса есть следующие значения.
 
 | Значение           | Тип    | Описание        |
 |-----------------|---------|------|
-| isPackageRollout   |   boolean      |  Указывает, включен ли постепенный выпуск пакета для этой отправки.    |  
+| isPackageRollout   |   Логический      |  Указывает, включен ли постепенный выпуск пакета для этой отправки.    |  
 | packageRolloutPercentage    | float    |  Процент пользователей, которые будут получать пакеты при постепенном выпуске.    |  
-| packageRolloutStatus    |  string   |  Одна из следующих строк, указывающая состояние постепенного выпуска пакета: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
-| fallbackSubmissionId    |  string   |  ИД отправки, который будет поступать от пользователей, не получающих пакеты постепенного выпуска.   |          
+| packageRolloutStatus    |  Строка   |  Одна из следующих строк, указывающая состояние постепенного выпуска пакета: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
+| fallbackSubmissionId    |  Строка   |  Идентификатор отправки, который будет поступать от пользователей, которые не получают пакеты постепенного выпуска.   |          
 
 > [!NOTE]
-> Значения *packageRolloutStatus* и *fallbackSubmissionId* назначаются центром партнеров и не предназначены для задания разработчиком. Если эти значения содержатся в теле запроса, они будут проигнорированы.
+> *PackageRolloutStatus* и *fallbackSubmissionId* значения назначаются с помощью центра партнеров и не предназначены для значение определяется разработчиком. Если эти значения содержатся в теле запроса, они будут проигнорированы.
 
 <span/>
 
@@ -405,7 +405,7 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Код           |  Описание      |
 |-----------------|---------------|
-|  None (Нет)            |     Код не указан.         |     
+|  Нет            |     Код не указан.         |     
 |      InvalidArchive        |     ZIP-архив, содержащий пакет, является недопустимым или имеет неизвестный формат архива.  |
 | MissingFiles | В ZIP-архиве отсутствуют файлы, перечисленные в данных отправки, или они находятся в неправильном месте в архиве. |
 | PackageValidationFailed | Один или несколько пакетов в вашей отправке не прошли проверку. |
@@ -417,18 +417,18 @@ API отправки в Microsoft Store предоставляет методы,
 | ListingOptOutWarning | Разработчик удалил описание из предыдущей отправки или не включил данные описания, которые поддерживаются пакетом. |
 | ListingOptInWarning  | Разработчик добавил описание. |
 | UpdateOnlyWarning | Разработчик пытается вставить какой-то элемент, который имеет только поддержку обновления. |
-| Other  | Отправка находится в неизвестном состоянии или состоянии, не отнесенном ни к одной из категорий. |
+| Другое  | Отправка находится в неизвестном состоянии или состоянии, не отнесенном ни к одной из категорий. |
 | PackageValidationWarning | В процессе проверки пакета создано предупреждение. |
 
 <span/>
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Создание отправок и управление ими с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
-* [Управление тестовыми пакетами с помощью API отправки в Microsoft Store](manage-flights.md)
-* [Получение отправки тестового пакета](get-a-flight-submission.md)
-* [Создание отправки тестового пакета](create-a-flight-submission.md)
-* [Обновление отправки тестового пакета](update-a-flight-submission.md)
-* [Подтверждение отправки тестового пакета](commit-a-flight-submission.md)
-* [Удаление отправки тестового пакета](delete-a-flight-submission.md)
-* [Получение состояния отправки тестового пакета](get-status-for-a-flight-submission.md)
+* [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Управление рейсы пакета с помощью API отправки Microsoft Store](manage-flights.md)
+* [Получить рейсов отправка пакета](get-a-flight-submission.md)
+* [Создание рейсов отправка пакета](create-a-flight-submission.md)
+* [Отправка рейсов пакета обновления](update-a-flight-submission.md)
+* [Фиксация рейс отправка пакета](commit-a-flight-submission.md)
+* [Удалить рейсов отправка пакета](delete-a-flight-submission.md)
+* [Получение состояния рейсов отправка пакета](get-status-for-a-flight-submission.md)

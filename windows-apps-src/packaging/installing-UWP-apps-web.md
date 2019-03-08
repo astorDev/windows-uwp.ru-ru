@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованных приложений, связанный набор, дополнительные пакеты
 ms.localizationpriority: medium
 ms.openlocfilehash: 515beebd55049ecb4d0c6747fa7d37e76577ef7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927076"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623559"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>Установка приложений UWP с веб-страницы
 
@@ -28,10 +28,10 @@ ms.locfileid: "8927076"
 
 ### <a name="requirements-for-protocol-activation-scheme"></a>Требования для схемы активации протокола
 
-1. Веб-серверы должны иметь поддержку запросы диапазона байтов (HTTP/1.1)
-    - Серверам, поддерживающим протокол HTTP/1.1 должно иметь поддержку для запросы диапазона байтов 
-2. Веб-серверы необходимо знать о типах содержимого пакета приложения Windows 10
-    - Ниже показано, как объявить новых типов содержимого в рамках [веб-файл конфигурации](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
+1. Веб-серверы должны была добавлена поддержка запросов диапазона байтов (HTTP/1.1)
+    - Серверы, поддерживающие протокол HTTP/1.1 должен иметь поддержку для запросов диапазона байтов 
+2. Веб-серверов необходимо знать о типах содержимого пакета приложения Windows 10
+    - Вот как можно объявить новые типы содержимого как часть [файла веб-конфигурации](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>Как включить этот механизм на веб-странице 
 Разработчики приложений, которым требуется разместить пакеты приложений на веб-сайтах, должны сделать следующее.

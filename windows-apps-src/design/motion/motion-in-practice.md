@@ -1,22 +1,22 @@
 ---
-Description: Learn how Fluent motion fundamentals come together in your app.
+Description: Узнайте, как Fluent движения, основы, объединяются в вашем приложении.
 title: Движение на практике — анимация в приложениях UWP
 label: Motion in practice
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6eafbfd965d2783c0f72e75c91a04e5ac1cb119f
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058565"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599409"
 ---
 # <a name="bringing-it-together"></a>Реализация
 
@@ -83,22 +83,22 @@ ms.locfileid: "9058565"
 > Неявные анимации требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии.
 
 
-Неявные анимации — это простой способ добиться движения Fluent, автоматически выполняя интерполяцию между старых и новых значений во время смены параметра.
+Неявные анимации представляет собой простой способ добиться Fluent движения, автоматически интерполяции между значениями старого и нового во время изменения параметра.
 
-Неявно, вы можете анимировать изменения в следующие свойства:
+Неявно можно анимировать изменения в следующие свойства:
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
-  - **Opacity (Прозрачность)**
+  - **Непрозрачности**
   - **Поворот**
   - **Масштаб**
-  - **Translation (Преобразование)**
+  - **Перевод**
 
-- [Границы](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)или [Панель](/uwp/api/windows.ui.xaml.controls.panel)
+- [Границы](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter), или [панели](/uwp/api/windows.ui.xaml.controls.panel)
   - **Фон**
 
-Каждое свойство, которое может быть неявно анимировать изменения имеет соответствующее свойство _перехода_ . Анимировать свойство, назначьте тип перехода к соответствующему свойству _перехода_ . В этой таблице представлены свойства _перехода_ и тип перехода, используемый для каждого из них.
+Каждое свойство, которое может быть неявно анимировать изменения имеет соответствующий _перехода_ свойство. Для анимации свойства, назначаемые к типу перехода к соответствующему _перехода_ свойство. В этой таблице показаны _перехода_ свойства и тип перехода для использования для каждого из них.
 
-| Анимируемого свойства | Свойства перехода | Тип неявный перехода |
+| Анимируемого свойства | Свойство перехода | Тип неявное перехода |
 | -- | -- | -- |
 | [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
@@ -108,7 +108,7 @@ ms.locfileid: "9058565"
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-В этом примере показано, как использовать свойства Opacity и перехода, чтобы увеличить размер кнопки появления при включении элемента управления или Исчезание, когда она отключена.
+В этом примере показано, как использовать свойства Opacity и перехода для создания кнопки проявляться при включении элемента управления и Исчезание, когда она неактивна.
 
 ```xaml
 <Button x:Name="SubmitButton"
@@ -127,8 +127,8 @@ public double OpaqueIfEnabled(bool IsEnabled)
 }
 ```
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Связанные статьи
 
-- [Обзор движения](index.md)
-- [Синхронность и реалистичная анимация](timing-and-easing.md)
-- [Направление и сила притяжения](directionality-and-gravity.md)
+- [Обзор методологии Motion](index.md)
+- [О времени и реалистичной анимации](timing-and-easing.md)
+- [Направленность и тяжести](directionality-and-gravity.md)

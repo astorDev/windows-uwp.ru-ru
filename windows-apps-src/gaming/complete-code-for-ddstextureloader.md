@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, ddstextureloader
 ms.localizationpriority: medium
 ms.openlocfilehash: 1501a13b188a995d591b7348202792dfbfd27ac8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941657"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662449"
 ---
 # <a name="complete-code-for-ddstextureloader"></a>Полный код класса DDSTextureLoader
 
@@ -23,8 +23,8 @@ ms.locfileid: "8941657"
 Эта статья содержит следующие разделы.
 
 -   [Технологии](#technologies)
--   [Требования](#requirements)
--   [Просмотреть код (C++)](#view-the-code-c)
+-   [Требования к](#requirements)
+-   [Представление кода (C++)](#view-the-code-c)
 
 
 ## <a name="download-location"></a>Папка для загрузки

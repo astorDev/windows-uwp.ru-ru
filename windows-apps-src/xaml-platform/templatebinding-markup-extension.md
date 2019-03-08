@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ade10b4d5e2653eb214d93c2c9166e6a3e3defc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940113"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661809"
 ---
 # <a name="templatebinding-markup-extension"></a>Расширение разметки {TemplateBinding}
 
@@ -36,13 +36,13 @@ ms.locfileid: "8940113"
 | propertyName | Имя свойства, задаваемого в синтаксисе метода присваивания. Это свойство должно быть свойством зависимостей. |
 | sourceProperty | Имя другого свойства зависимостей, которое существует в типе, по которому создается шаблон. |
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Замечания
 
-Использование **TemplateBinding** — фундаментальная часть процесса определения шаблона элемента управления независимо от того, создаете ли вы пользовательский элемент управления или заменяете шаблон для уже существующих элементов управления. Подробнее см. в разделе [Краткое руководство: шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
+Использование **TemplateBinding** — фундаментальная часть процесса определения шаблона элемента управления независимо от того, создаете ли вы пользовательский элемент управления или заменяете шаблон для уже существующих элементов управления. Дополнительные сведения см. в разделе [краткое руководство: Шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
 
 Использование одного и того же имени свойства — довольно частая практика для *propertyName* и *targetProperty*. В данном случае элемент управления может определить свойство для самого себя и перенаправить это свойство существующему и интуитивно названному свойству одного из своих компонентов. Например, элемент управления, включающий в свою компоновку объект [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652), используемый для отображения собственного свойства **Text** элемента управления, может содержать этот XAML в составе шаблона элемента управления: `<TextBlock Text="{TemplateBinding Text}" .... />`
 
-Типы, используемые в качестве значений исходного и целевого свойств, должны совпадать. При использовании **TemplateBinding** невозможно добавить конвертер. Несовпадение значений приводит к ошибке при синтаксическом анализе XAML. Если вам требуется конвертер, можно использовать подробный синтаксис для привязки шаблона, например:  `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
+Типы, используемые в качестве значений исходного и целевого свойств, должны совпадать. При использовании **TemplateBinding** невозможно добавить конвертер. Несовпадение значений приводит к ошибке при синтаксическом анализе XAML. Если вам требуется конвертер, можно использовать подробный синтаксис для привязки шаблона, например: `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
 
 Попытка использования **TemplateBinding** вне определения [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) в XAML вызовет ошибку средства синтаксического анализа.
 
@@ -52,20 +52,20 @@ ms.locfileid: "8940113"
 
 **TemplateBinding** является расширением разметки. Расширения разметки обычно реализуются, если необходимо, чтобы значения атрибутов являлись буквенными значениями или именами обработчиков, и это требование является более глобальным, чем простая настройка преобразователей типов для определенных типов или свойств. Для всех расширений разметки в XAML в синтаксисе атрибутов используются символы "{" и "}". Это соответствует соглашению, по которому процессор XAML распознает, что расширение разметки должно обработать атрибут.
 
-**Примечание**реализации процессора в XAML среды выполнения Windows нет отсутствует представление класса резервирования для **TemplateBinding**. Расширение **TemplateBinding** предназначено исключительно для использования в разметке XAML. Не существует простого способа для воспроизведения этого поведения в коде.
+**Примечание**  реализации обработчика в среды выполнения XAML Windows никак не представлен класс резервного для **TemplateBinding**. Расширение **TemplateBinding** предназначено исключительно для использования в разметке XAML. Не существует простого способа для воспроизведения этого поведения в коде.
 
 ### <a name="xbind-in-controltemplate"></a>x: Bind в ControlTemplate
 
 > [!NOTE]
-> С помощью x: Bind в ControlTemplate требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии. Дополнительные сведения о целевых версиях см. в статье [Адаптивный к версии код](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> X: Bind для использования в ControlTemplate требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии. Дополнительные сведения о целевых версиях см. в статье [Адаптивный к версии код](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
-Начиная с Windows 10, версия 1809, можно использовать расширение разметки **x: Bind** в любом использовании **TemplateBinding** в [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
+Начиная с Windows 10, версия 1809, можно использовать **x: Bind** расширение разметки везде, где используются **TemplateBinding** в [ **ControlTemplate** ](https://msdn.microsoft.com/library/windows/apps/br209391). 
 
-Свойство [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) необходима (обязательно) на [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) при использовании **x: Bind**.
+[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) необходимо свойство (обязательно) на [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) при использовании **x: Bind**.
 
-С поддержкой **x: Bind** можно использовать оба [привязки функций](../data-binding/function-bindings.md) как хорошо, как двухсторонние привязки в шаблоне [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391).
+С помощью **x: Bind** поддержки, можно использовать как [функцию привязки](../data-binding/function-bindings.md) а также имеют двухсторонние привязки в [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391).
 
-В этом примере свойство **TextBlock.Text** принимает значение **Button.Content.ToString**. TargetType на ControlTemplate выступает в качестве источника данных и выполняет тот же результат TemplateBinding родительскому элементу.
+В этом примере **TextBlock.Text** значение свойства равно **Button.Content.ToString**. TargetType на ControlTemplate выступает в качестве источника данных и выполняет тот же результат, как TemplateBinding к родительскому элементу.
 
 ```xaml
 <ControlTemplate TargetType="Button">
@@ -75,10 +75,10 @@ ms.locfileid: "8940113"
 </ControlTemplate>
 ```
 
-## <a name="related-topics"></a>Ссылки по теме
+## <a name="related-topics"></a>Статьи по теме
 
-* [Краткое руководство: шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-* [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Краткое руководство. Шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [Привязка данных в глубину](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
 * [Обзор языка XAML](xaml-overview.md)
 * [Общие сведения о свойствах зависимостей](dependency-properties-overview.md)

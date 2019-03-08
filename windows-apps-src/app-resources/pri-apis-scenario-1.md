@@ -1,5 +1,5 @@
 ---
-Description: In this scenario, we'll make a new app to represent our custom build system. We'll create a resource indexer and add strings and other kinds of resources to it. Then we'll generate and dump a PRI file.
+Description: В этом сценарии мы создаем новое приложение для нашей системы сборки. Мы создадим индексатор ресурсов и добавим в него строки и другие типы ресурсов. Затем мы создадим PRI-файл и его дамп.
 title: Сценарий 1. Создание PRI-файла из строковых ресурсов и файлов ресурсов
 template: detail.hbs
 ms.date: 05/07/2018
@@ -7,14 +7,14 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ccb9447e9594f71907f0da5d0e15f9c6c65bb6b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058845"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622759"
 ---
-# <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>Сценарий 1. Создание PRI-файла из строковых ресурсов и файлов ресурсов
-В этом сценарии мы будем использовать [API-интерфейсы индексирования ресурсов пакета (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690), чтобы новое приложение представляло нашу систему сборки. Цель этой пользовательской системы сборки, как вы помните,— создание PRI-файлов для целевого приложения UWP. Итак, в рамках этого пошагового руководства мы создадим файлы ресурсов для представления ресурсов целевого приложения UWP (содержащих строки и другие типы ресурсов).
+# <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>Сценарий 1. Создания файла PRI, из строковых ресурсов и файлов ресурсов
+В этом сценарии мы будем использовать [API-интерфейсы индексирования ресурсов пакета (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690), чтобы новое приложение представляло нашу систему сборки. Цель этой пользовательской системы сборки, как вы помните, — создание PRI-файлов для целевого приложения UWP. Итак, в рамках этого пошагового руководства мы создадим файлы ресурсов для представления ресурсов целевого приложения UWP (содержащих строки и другие типы ресурсов).
 
 ## <a name="new-project"></a>Новый проект
 Начните с создания нового проекта в Microsoft Visual Studio. Создайте проект **Консольное приложение Visual C++ для Windows** и назовите его *CBSConsoleApp* (для "консольного приложения пользовательской системы сборки").
@@ -139,7 +139,7 @@ MrmResourceIndexerHandle indexer;
 - Список квалификаторов ресурсов по умолчанию.
 - Указатель на дескриптор индексатора ресурсов, с помощью которой эта функция может настроить дескриптор.
 
-Следующий шаг— добавление ресурсов в созданный индексатор ресурса. `resources.resw` — это файл ресурсов (.resw), содержащий нейтральные строки для целевого приложения UWP. Прокрутите экран (в этом разделе), если вы хотите просмотреть его содержимое. `de-DE\resources.resw` содержит строки на немецком языке, а `en-US\resources.resw`— на английском языке. Чтобы добавить строковые ресурсы из файла ресурсов в индексатор ресурсов, вызовите метод [**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers). В-третьих, мы вызываем функцию [**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile) для файла, содержащего нейтральный ресурс изображения, и индексатора ресурсов.
+Следующий шаг — добавление ресурсов в созданный индексатор ресурса. `resources.resw` — Это файл ресурсов (.resw), содержащий строки, нейтральные для нашего приложения универсальной платформы Windows на целевой. Прокрутите экран (в этом разделе), если вы хотите просмотреть его содержимое. `de-DE\resources.resw` содержит наших немецкий строк и `en-US\resources.resw` наших строки на английском языке. Чтобы добавить строковые ресурсы из файла ресурсов в индексатор ресурсов, вызовите метод [**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers). В-третьих, мы вызываем функцию [**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile) для файла, содержащего нейтральный ресурс изображения, и индексатора ресурсов.
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
@@ -148,7 +148,7 @@ MrmResourceIndexerHandle indexer;
 ::ThrowIfFailed(::MrmIndexFile(indexer, L"ms-resource:///Files/sample-image.png", L"sample-image.png", L""));
 ```
 
-В вызове функции **MrmIndexFile** значение L"ms-resource:///Files/sample-image.png"— это URI ресурса. Первый сегмент пути — это "Files", и он будет использоваться как имя поддерева схемы ресурсов при создании PRI-файла из этого ресурса индексатора позднее.
+В вызове функции **MrmIndexFile** значение L"ms-resource:///Files/sample-image.png" — это URI ресурса. Первый сегмент пути — это "Files", и он будет использоваться как имя поддерева схемы ресурсов при создании PRI-файла из этого ресурса индексатора позднее.
 
 После опроса индексатора ресурсов о файлах ресурсов мы создадим PRI-файл на диске, вызвав функцию [**MrmCreateResourceFile**](/windows/desktop/menurc/mrmcreateresourcefile).
 
@@ -162,7 +162,7 @@ MrmResourceIndexerHandle indexer;
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
-Так как PRI-файл— двоичный файл, будет проще просмотреть то, что мы создали, если мы создадим дамп двоичного PRI-файла в эквивалентом XML-файле. Вызов [**MrmDumpPriFile**](/windows/desktop/menurc/mrmdumpprifile) делает именно.
+Так как PRI-файл — двоичный файл, будет проще просмотреть то, что мы создали, если мы создадим дамп двоичного PRI-файла в эквивалентом XML-файле. Вызов [ **MrmDumpPriFile** ](/windows/desktop/menurc/mrmdumpprifile) делает именно это.
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));
@@ -225,13 +225,13 @@ MrmResourceIndexerHandle indexer;
 
 Данные начинаются со схемы ресурсов, которой присваивается имя семейства пакетов целевого приложения UWP. В схеме ресурса размещены два поддерева схемы ресурсов: одна для файловых ресурсов, которые мы проиндексировали, и другая для строковых ресурсов. Обратите внимание, что имя семейства пакетов вставлено во все URI ресурсов.
 
-Первый строковый ресурс— это *EnOnlyString* из `en-US\resources.resw`, который содержит только одного кандидата (соответствующий квалификатору *language-en-US*). Далее следует *LocalizedString1* из `resources.resw` и `en-US\resources.resw`. Следовательно, он содержит два кандидата: соответствующий *language-en-US*и резервный нейтральный кандидат, соответствующий любому контексту. Аналогичным образом *LocalizedString2* содержит два кандидата: *language-de-DE*и нейтральный. И, наконец, *NeutralOnlyString* существует только в нейтральной форме. Мы присвоили это имя, чтобы пояснить, что его не следует переводить.
+Первый строковый ресурс — это *EnOnlyString* из `en-US\resources.resw`, который содержит только одного кандидата (соответствующий квалификатору *language-en-US*). Далее следует *LocalizedString1* из `resources.resw` и `en-US\resources.resw`. Следовательно, он содержит два кандидата: соответствующий *language-en-US*и резервный нейтральный кандидат, соответствующий любому контексту. Аналогичным образом *LocalizedString2* содержит два кандидата: *language-de-DE*и нейтральный. И, наконец, *NeutralOnlyString* существует только в нейтральной форме. Мы присвоили это имя, чтобы пояснить, что его не следует переводить.
 
-## <a name="summary"></a>Краткий обзор
+## <a name="summary"></a>Сводка
 В этом сценарии мы показали, как использовать [API-интерфейсы индексирования ресурсов пакетов (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690) для создания индексатора ресурсов. Мы добавили строковые ресурсы и файлы ресурсов в индексатор ресурсов. Затем мы использовали индексатор ресурсов для созданного двоичного PRI-файла. И, наконец, мы создали дамп PRI-файла в формате XML, чтобы убедиться, что он содержит сведения, которые мы ожидали.
 
 ## <a name="important-apis"></a>Важные API
-* [Справочник по индексированию ресурсов пакетов (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690)
+* [Ресурс Package, индексирование ссылки (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>Статьи по теме
-* [API-интерфейса индексирования ресурсов пакета (PRI) и пользовательские системы сборки](pri-apis-custom-build-systems.md)
+* [Ресурс Package индексирования API-интерфейсы (PRI) и пользовательских систем сборки](pri-apis-custom-build-systems.md)

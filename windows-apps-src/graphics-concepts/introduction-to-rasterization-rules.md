@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d1907be029254d99be9e6158c93c179baea1fb0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947936"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641089"
 ---
 # <a name="introduction-to-rasterization-rules"></a>Общие сведения о правилах растеризации
 
@@ -21,7 +21,7 @@ ms.locfileid: "8947936"
 
 Это упрощенное введение в правила растеризации. Дополнительные сведения см. в разделе [Правила растеризации](rasterization-rules.md). См. также [Этап средства программной прорисовки (RS)](rasterizer-stage--rs-.md).
 
-## <a name="span-idtrianglerasterizationrulesspanspan-idtrianglerasterizationrulesspanspan-idtrianglerasterizationrulesspantriangle-rasterization-rules"></a><span id="Triangle_Rasterization_Rules"></span><span id="triangle_rasterization_rules"></span><span id="TRIANGLE_RASTERIZATION_RULES"></span>Правила растеризации по треугольнику
+## <a name="span-idtrianglerasterizationrulesspanspan-idtrianglerasterizationrulesspanspan-idtrianglerasterizationrulesspantriangle-rasterization-rules"></a><span id="Triangle_Rasterization_Rules"></span><span id="triangle_rasterization_rules"></span><span id="TRIANGLE_RASTERIZATION_RULES"></span>Правила растеризации треугольник
 
 
 Direct3D использует общепринятый подход с началом отсчета в левом верхнему углу для размещения геометрических элементов. Этот же подход используется для прямоугольников в GDI и OpenGL. В Direct3D центр пикселя является решающей точкой. Если центр находится внутри треугольника, этот пиксель является частью такого треугольника. Центрам пикселей соответствуют целочисленные координаты.
@@ -52,24 +52,24 @@ Direct3D использует общепринятый подход с нача�
 
 ![пиксели, задействованные в двух предыдущих пронумерованных квадратах](images/samepix.png)
 
-## <a name="span-idpointandlinerulesspanspan-idpointandlinerulesspanspan-idpointandlinerulesspanpoint-and-line-rules"></a><span id="Point_and_Line_Rules"></span><span id="point_and_line_rules"></span><span id="POINT_AND_LINE_RULES"></span>Правила линий и точек
+## <a name="span-idpointandlinerulesspanspan-idpointandlinerulesspanspan-idpointandlinerulesspanpoint-and-line-rules"></a><span id="Point_and_Line_Rules"></span><span id="point_and_line_rules"></span><span id="POINT_AND_LINE_RULES"></span>Точка и правилах линии
 
 
 Точки отрисовываются так же, как и точечные спрайты, то есть оба эти вида элементов отрисовываются как выровненные по экрану четырехгранники, и, соответственно, на них распространяются те же правила, что и на отрисовку многоугольников.
 
 Правила отрисовки линий без сглаживания являются точно такими же, что и для [линий GDI](https://msdn.microsoft.com/library/windows/desktop/dd145027).
 
-## <a name="span-idpointspriterulesspanspan-idpointspriterulesspanspan-idpointspriterulesspanpoint-sprite-rules"></a><span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>Правила точечных спрайтов
+## <a name="span-idpointspriterulesspanspan-idpointspriterulesspanspan-idpointspriterulesspanpoint-sprite-rules"></a><span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>Правила спрайт точки
 
 
 Точечные спрайты и фрагментарные примитивы подвергаются растеризации таким образом, как если бы эти примитивы сначала рассекались на треугольники и затем проводилась бы растеризация полученных треугольников.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Устройства](devices.md)
 
-[Этап средства программной прорисовки (RS)](rasterizer-stage--rs-.md)
+[Этап растеризации (RS)](rasterizer-stage--rs-.md)
 
 [Правила растеризации](rasterization-rules.md)
 

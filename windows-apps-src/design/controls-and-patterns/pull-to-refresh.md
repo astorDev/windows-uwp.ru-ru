@@ -1,5 +1,5 @@
 ---
-Description: Use the pull-to-refresh control to get new content into a list.
+Description: Используйте элемент управления по запросу для обновления для получения нового содержимого в список.
 title: Обновление путем оттягивания
 label: Pull-to-refresh
 template: detail.hbs
@@ -13,11 +13,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2efd091d90a856e45d76c0b1357f30417812160a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932840"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659259"
 ---
 # <a name="pull-to-refresh"></a>Обновление путем оттягивания
 
@@ -27,7 +27,7 @@ ms.locfileid: "8932840"
 
 ![Изображение "Обновление путем оттягивания"](images/Pull-To-Refresh.gif)
 
-## <a name="is-this-the-right-control"></a>Выбор подходящего элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте функцию обновления путем оттягивания при работе со списком или сеткой с данными, которые пользователю может потребоваться регулярно обновлять, и если ваше приложение предназначено для работы на устройствах, рассчитанным на сенсорное управление.
 
@@ -48,7 +48,7 @@ ms.locfileid: "8932840"
 
  Расстояние, на которое пользователь должен оттянуть список вниз для инициации обновления, называется _threshold_ (пороговое значение). Визуализатор [State](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.State) определяется по состоянию оттягивания в отношении этого порогового значения. Допустимые значения находятся в перечислении [RefreshVisualizerState](/uwp/api/windows.ui.xaml.controls.refreshvisualizerstate).
 
-### <a name="idle"></a>Состояние Idle (в покое)
+### <a name="idle"></a>Idle
 
 Состоянием визуализатора по умолчанию является **Idle**. Пользователь не взаимодействует с RefreshContainer посредством сенсорного ввода и обновление не выполняется.
 
@@ -70,7 +70,7 @@ ms.locfileid: "8932840"
 
     Визуально прозрачность значка составит 100% и он будет меняться в размере до 150% и обратно до 100% во время процесса перехода состояний.
 
-### <a name="pending"></a>Состояние Pending (ожидание)
+### <a name="pending"></a>Pending
 
 Когда пользователь оттягивает список, превысив пороговое значение, визуализатор переходит в состояние **Pending**.
 
@@ -81,7 +81,7 @@ ms.locfileid: "8932840"
 
 Визуально размер и прозрачность значка составляют 100%. В этом состоянии значок продолжает перемещаться вниз с помощью действия прокрутки, но больше не вращается.
 
-### <a name="refreshing"></a>Состояние Refreshing (обновление)
+### <a name="refreshing"></a>Обновление
 
 Когда пользователь отпускает визуализатор за пороговое значение, он переходит в состояние **Refreshing**.
 
@@ -101,7 +101,7 @@ ms.locfileid: "8932840"
 
 По умолчанию пользователь оттягивает список сверху вниз, чтобы обновить его. Если у вас есть список или сетка с разной ориентацией, следует изменить направление оттягивания, чтобы обеспечить соответствие контейнера обновления.
 
-Свойство [PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer.PullDirection) принимает одно из следующих значений [RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection): **BottomToTop**, **TopToBottom**, **RightToLeft** или **LeftToRight**.
+[PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer.PullDirection) свойство принимает одно из этих [RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection) значения: **BottomToTop**, **TopToBottom**, **RightToLeft**, или **LeftToRight**.
 
 При изменении направления оттягивания начальное положение индикатора хода выполнения визуализатора начинает автоматически вращаться, и таким образом стрелка размещается в положении, соответствующем направлению оттягивания. При необходимости можно изменить свойство [RefreshVisualizer.Orientation](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.Orientation), чтобы переопределить автоматическое поведение. В большинстве случаев мы рекомендуем оставлять значение по умолчанию: **Auto**.
 
@@ -116,7 +116,7 @@ ms.locfileid: "8932840"
 > [!NOTE]
 > Можно создать отдельный экземпляр RefreshVisualizer. Тем не менее рекомендуется переносить содержимое в RefreshContainer и использовать RefreshVisualizer, предоставляемый свойством RefreshContainer.Visualizer даже для сценариев без сенсорного ввода. В этой статье предполагается, что визуализатор всегда берется из контейнера обновления.
 
-> Кроме того, используйте члены контейнера обновления RequestRefresh и RefreshRequested для удобства. `refreshContainer.RequestRefresh()` эквивалентен `refreshContainer.Visualizer.RequestRefresh()` и вызовет события RefreshContainer.RefreshRequested и RefreshVisualizer.RefreshRequested.
+> Кроме того, используйте члены контейнера обновления RequestRefresh и RefreshRequested для удобства. `refreshContainer.RequestRefresh()` эквивалентно `refreshContainer.Visualizer.RequestRefresh()`, после чего либо выведет RefreshContainer.RefreshRequested события и события RefreshVisualizer.RefreshRequested.
 
 ### <a name="request-a-refresh"></a>Запрос на обновление
 
@@ -180,7 +180,7 @@ private void Visualizer_RefreshStateChanged(RefreshVisualizer sender, RefreshSta
 }
 ```
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 ### <a name="using-a-scrollviewer-in-a-refreshcontainer"></a>Использование ScrollViewer в RefreshContainer
 
@@ -331,9 +331,9 @@ public class ListItemData
 }
 ```
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Связанные статьи
 
 - [Взаимодействия с помощью сенсорного ввода](../input/touch-interactions.md)
-- [Представления списка и сетки](listview-and-gridview.md)
-- [Контейнеры и шаблоны элементов](item-containers-templates.md)
-- [Анимация с помощью выражений](../../composition/composition-animation.md)
+- [Представление списка и представление сетки](listview-and-gridview.md)
+- [Контейнеры элементов и шаблонов](item-containers-templates.md)
+- [Выражение анимации](../../composition/composition-animation.md)

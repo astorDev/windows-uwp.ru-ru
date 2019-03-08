@@ -8,36 +8,36 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d5563a9909ba3d6cb3deaae43bcf9e55b4b2c880
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947836"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607969"
 ---
 # <a name="tile-access-limitations-with-duplicate-mappings"></a>Ограничения доступа к плитке с повторяющимися сопоставлениями
 
 
 Существуют ограничения на доступ к плиткам с повторяющимися сопоставлениями, например при копировании потоковых ресурсов с перекрывающимися источником и назначением или при отрисовке общих плиток для области отрисовки.
 
-## <a name="span-idcopyingstreamingresourceswithoverlappingsourceanddestinationspanspan-idcopyingstreamingresourceswithoverlappingsourceanddestinationspanspan-idcopyingstreamingresourceswithoverlappingsourceanddestinationspancopying-streaming-resources-with-overlapping-source-and-destination"></a><span id="Copying_streaming_resources_with_overlapping_source_and_destination"></span><span id="copying_streaming_resources_with_overlapping_source_and_destination"></span><span id="COPYING_STREAMING_RESOURCES_WITH_OVERLAPPING_SOURCE_AND_DESTINATION"></span>Копирование потоковых ресурсов с перекрывающимся источником и назначением
+## <a name="span-idcopyingstreamingresourceswithoverlappingsourceanddestinationspanspan-idcopyingstreamingresourceswithoverlappingsourceanddestinationspanspan-idcopyingstreamingresourceswithoverlappingsourceanddestinationspancopying-streaming-resources-with-overlapping-source-and-destination"></a><span id="Copying_streaming_resources_with_overlapping_source_and_destination"></span><span id="copying_streaming_resources_with_overlapping_source_and_destination"></span><span id="COPYING_STREAMING_RESOURCES_WITH_OVERLAPPING_SOURCE_AND_DESTINATION"></span>Копирование потоковой передачи ресурсов с перекрывающимися источником и назначением
 
 
-Если плитки в области источника и назначения операции Copy\* имеют дублирующиеся сопоставления в области копирования, которые могли бы перекрываться, даже если бы оба ресурса не являлись потоковыми, а операция Copy\ * поддерживает перекрывающиеся копии, то она будет выполнена надлежащим образом (как если бы источник был скопирован во временное местоположение перед копированием в конечное). Но если перекрытие не является очевидным (например, когда ресурсы источника и назначения различаются, но имеют общие сопоставления, или сопоставления дублируются на определенной поверхности), результаты операции копирования для общих плиток будут не определены.
+Если плитки в области источника и назначения копирования\* дублирования операции сопоставления в области копирования, будут перекрываться, даже если эти ресурсы не были потоковой передачи, ресурсы и копировании\* операция поддерживает перекрывающиеся Копирует копию\* операции отлично работает (как, если источник копируется во временную папку перед переходом в место назначения). Но если перекрытие не является очевидным (например, когда ресурсы источника и назначения различаются, но имеют общие сопоставления, или сопоставления дублируются на определенной поверхности), результаты операции копирования для общих плиток будут не определены.
 
-## <a name="span-idcopyingtostreamingresourcewithduplicatedtilesindestinationareaspanspan-idcopyingtostreamingresourcewithduplicatedtilesindestinationareaspanspan-idcopyingtostreamingresourcewithduplicatedtilesindestinationareaspancopying-to-streaming-resource-with-duplicated-tiles-in-destination-area"></a><span id="Copying_to_streaming_resource_with_duplicated_tiles_in_destination_area"></span><span id="copying_to_streaming_resource_with_duplicated_tiles_in_destination_area"></span><span id="COPYING_TO_STREAMING_RESOURCE_WITH_DUPLICATED_TILES_IN_DESTINATION_AREA"></span>Копирование в потоковый ресурс с дублирующимися плитками в области назначения
+## <a name="span-idcopyingtostreamingresourcewithduplicatedtilesindestinationareaspanspan-idcopyingtostreamingresourcewithduplicatedtilesindestinationareaspanspan-idcopyingtostreamingresourcewithduplicatedtilesindestinationareaspancopying-to-streaming-resource-with-duplicated-tiles-in-destination-area"></a><span id="Copying_to_streaming_resource_with_duplicated_tiles_in_destination_area"></span><span id="copying_to_streaming_resource_with_duplicated_tiles_in_destination_area"></span><span id="COPYING_TO_STREAMING_RESOURCE_WITH_DUPLICATED_TILES_IN_DESTINATION_AREA"></span>Копирование для потоковой передачи ресурсов с плитками, повторяющиеся в области назначения
 
 
 Копирование в потоковый ресурс с повторяющимися плитками в области назначения приводит к неопределенным результатам в таких плитках, если сами данные не являются одинаковыми; различные плитки могут записывать плитки в разном порядке.
 
-## <a name="span-iduavaccessestoduplicatetilesmappingsspanspan-iduavaccessestoduplicatetilesmappingsspanspan-iduavaccessestoduplicatetilesmappingsspanuav-accesses-to-duplicate-tiles-mappings"></a><span id="UAV_accesses_to_duplicate_tiles_mappings"></span><span id="uav_accesses_to_duplicate_tiles_mappings"></span><span id="UAV_ACCESSES_TO_DUPLICATE_TILES_MAPPINGS"></span>Доступ UAV к сопоставлениям дублирующихся плиток
+## <a name="span-iduavaccessestoduplicatetilesmappingsspanspan-iduavaccessestoduplicatetilesmappingsspanspan-iduavaccessestoduplicatetilesmappingsspanuav-accesses-to-duplicate-tiles-mappings"></a><span id="UAV_accesses_to_duplicate_tiles_mappings"></span><span id="uav_accesses_to_duplicate_tiles_mappings"></span><span id="UAV_ACCESSES_TO_DUPLICATE_TILES_MAPPINGS"></span>UAV доступ к данным плиток-дубликатов сопоставления
 
 
 Предположим, что представление неупорядоченного доступа (UAV) потокового ресурса имеет плитки с повторяющимися сопоставлениями в своей области или в других ресурсах, привязанных к конвейеру. Порядок доступа к этим повторяющимся плиткам не определен, если выполняется разными потоками, так же, как и любой порядок доступа к памяти в представлениях неупорядоченного доступа.
 
-## <a name="span-idrenderingaftertilemappingchangesorcontentupdatesfromoutsidemappingsspanspan-idrenderingaftertilemappingchangesorcontentupdatesfromoutsidemappingsspanspan-idrenderingaftertilemappingchangesorcontentupdatesfromoutsidemappingsspanrendering-after-tile-mapping-changes-or-content-updates-from-outside-mappings"></a><span id="Rendering_after_tile_mapping_changes_or_content_updates_from_outside_mappings"></span><span id="rendering_after_tile_mapping_changes_or_content_updates_from_outside_mappings"></span><span id="RENDERING_AFTER_TILE_MAPPING_CHANGES_OR_CONTENT_UPDATES_FROM_OUTSIDE_MAPPINGS"></span>Отрисовка после изменения сопоставления плиток или обновления содержимого из внешних сопоставлений
+## <a name="span-idrenderingaftertilemappingchangesorcontentupdatesfromoutsidemappingsspanspan-idrenderingaftertilemappingchangesorcontentupdatesfromoutsidemappingsspanspan-idrenderingaftertilemappingchangesorcontentupdatesfromoutsidemappingsspanrendering-after-tile-mapping-changes-or-content-updates-from-outside-mappings"></a><span id="Rendering_after_tile_mapping_changes_or_content_updates_from_outside_mappings"></span><span id="rendering_after_tile_mapping_changes_or_content_updates_from_outside_mappings"></span><span id="RENDERING_AFTER_TILE_MAPPING_CHANGES_OR_CONTENT_UPDATES_FROM_OUTSIDE_MAPPINGS"></span>Отрисовки после сопоставления плитки, изменяется или обновления содержимого из внешнего сопоставления
 
 
-Если сопоставления плиток потокового ресурса были изменены, или содержимое в сопоставленных пулах плиток изменилось через сопоставление другого потокового ресурса, и потоковый ресурс будет отображаться через представление целевого объекта прорисовки или представление "глубина-трафарет", приложение должно очистить (с помощью API-интерфейсов Clear с фиксированными функциями) или полностью скопировать с помощью API-интерфейсов Copy\* или Update\* плитки, которые были изменены в пределах области отрисовки (сопоставленные или нет).
+Если сопоставления плитки потоковой передачи ресурса были изменены или содержимое на плитках сопоставленные мозаичного пула были изменены с помощью другого потоковой передачи ресурса сопоставления и потоковой передачи ресурсов будет передаваться через представление целевого объекта прорисовки или представление трафарета глубины, приложение должно Очистить (с помощью функции fixed очистить API-интерфейсы) или полностью скопировать с помощью копирования\*/Update\* API-интерфейсы плитки, которые были изменены в пределах области визуализируемого (или отсутствия сопоставления).
 
 Если приложение в этих случаях не очистит и не скопирует плитки, структуры оптимизации оборудования для представления целевого объекта отрисовки или представления "глубина-трафарет" будут устаревшими, на некотором оборудовании будет отрисовываться мусор, а результаты для различного оборудования будут нестабильными. Эти скрытые структуры данных оптимизации, используемые оборудованием, могут быть локальными для отдельных сопоставлений и недоступны другим сопоставлениям одной и той же памяти.
 
@@ -47,7 +47,7 @@ ms.locfileid: "8947836"
 
 Если плитка сопоставлена нескольким потоковым ресурсам одновременно, и над содержимым плитки выполняются какие-либо действия (отрисовка, копирование и т. д.) через один из потоковых ресурсов, при необходимости отрисовки той же плитки через любой другой потоковый ресурс необходимо сначала очистить плитку как описано выше.
 
-## <a name="span-idrenderingtotilessharedoutsiderenderareaspanspan-idrenderingtotilessharedoutsiderenderareaspanspan-idrenderingtotilessharedoutsiderenderareaspanrendering-to-tiles-shared-outside-render-area"></a><span id="Rendering_to_tiles_shared_outside_render_area"></span><span id="rendering_to_tiles_shared_outside_render_area"></span><span id="RENDERING_TO_TILES_SHARED_OUTSIDE_RENDER_AREA"></span>Отрисовка общих плиток вне области отрисовки
+## <a name="span-idrenderingtotilessharedoutsiderenderareaspanspan-idrenderingtotilessharedoutsiderenderareaspanspan-idrenderingtotilessharedoutsiderenderareaspanrendering-to-tiles-shared-outside-render-area"></a><span id="Rendering_to_tiles_shared_outside_render_area"></span><span id="rendering_to_tiles_shared_outside_render_area"></span><span id="RENDERING_TO_TILES_SHARED_OUTSIDE_RENDER_AREA"></span>Область отрисовки отрисовки в совместном использовании за пределами плитки
 
 
 Предположим, что область в потоковом ресурсе отрисовывается из-за пределов области отрисовки, и плитки из пула плиток сопоставлены за пределами области отрисовки (включая другие потоковые ресурсы, одновременно или нет). Правильное отображение данных на этих плитках не гарантируется при просмотре через другие сопоставления, даже если базовая структура памяти совместима. Это происходит из-за структур данных оптимизации, используемых некоторым оборудованием, которые могут быть локальными для отдельных сопоставлений отрисовываемых поверхностей и недоступны другим сопоставлениям того же участка памяти.
@@ -56,12 +56,12 @@ ms.locfileid: "8947836"
 
 Кроме того, при переключении между различными потоковыми ресурсами, совместно использующими сопоставление (за исключением чтения), необходимо указать ограничение (барьер) порядка доступа к данным для нескольких ресурсов плиток между переключениями.
 
-## <a name="span-idrenderingtotilessharedwithinrenderareaspanspan-idrenderingtotilessharedwithinrenderareaspanspan-idrenderingtotilessharedwithinrenderareaspanrendering-to-tiles-shared-within-render-area"></a><span id="Rendering_to_tiles_shared_within_render_area"></span><span id="rendering_to_tiles_shared_within_render_area"></span><span id="RENDERING_TO_TILES_SHARED_WITHIN_RENDER_AREA"></span>Отрисовка общих плиток внутри области отрисовки
+## <a name="span-idrenderingtotilessharedwithinrenderareaspanspan-idrenderingtotilessharedwithinrenderareaspanspan-idrenderingtotilessharedwithinrenderareaspanrendering-to-tiles-shared-within-render-area"></a><span id="Rendering_to_tiles_shared_within_render_area"></span><span id="rendering_to_tiles_shared_within_render_area"></span><span id="RENDERING_TO_TILES_SHARED_WITHIN_RENDER_AREA"></span>Подготовка к просмотру в плитки, совместно используемым внутри области отрисовки
 
 
 Если область в потоковом ресурсе отрисовывается внутри, и в области отрисовки несколько плиток сопоставлены с одним и тем же расположением пула плиток, результаты отрисовки для таких плиток не определены.
 
-## <a name="span-iddatacompatibilityacrossstreamingresourcessharingtilesspanspan-iddatacompatibilityacrossstreamingresourcessharingtilesspanspan-iddatacompatibilityacrossstreamingresourcessharingtilesspandata-compatibility-across-streaming-resources-sharing-tiles"></a><span id="Data_compatibility_across_streaming_resources_sharing_tiles"></span><span id="data_compatibility_across_streaming_resources_sharing_tiles"></span><span id="DATA_COMPATIBILITY_ACROSS_STREAMING_RESOURCES_SHARING_TILES"></span>Совместимость данных между потоковыми ресурсами с общими плитками
+## <a name="span-iddatacompatibilityacrossstreamingresourcessharingtilesspanspan-iddatacompatibilityacrossstreamingresourcessharingtilesspanspan-iddatacompatibilityacrossstreamingresourcessharingtilesspandata-compatibility-across-streaming-resources-sharing-tiles"></a><span id="Data_compatibility_across_streaming_resources_sharing_tiles"></span><span id="data_compatibility_across_streaming_resources_sharing_tiles"></span><span id="DATA_COMPATIBILITY_ACROSS_STREAMING_RESOURCES_SHARING_TILES"></span>Совместимость данных через потоковую передачу ресурсов, совместное использование плиток
 
 
 Предположим, что у нескольких потоковых ресурсов имеются сопоставления с одними и теми же расположениями пула плиток, и все ресурсы используются для доступа к одним и тем же данным. Этот сценарий действует, только если исключаются остальные правила по избежанию проблем со структурами оптимизации оборудования, устанавливаются соответствующие барьеры (ограничения порядка доступа к данным для нескольких ресурсов плиток), а потоковые ресурсы совместимы друг с другом.
@@ -70,16 +70,16 @@ ms.locfileid: "8947836"
 
 Если другие сопоставления общих ресурсов сначала инициализируются с новыми данными (утилизация памяти для другой цели), последующие операции чтения или отрисовки проходят нормально, так как данные не подвергаются несовместимым интерпретациям. Однако при таком переключении между доступом к несовместимым сопоставлениям необходимо указать барьеры (ограничения порядка доступа к данным для нескольких ресурсов плиток).
 
-Если флаг привязки цели отрисовки или трафарета глубины не установлен ни на одном ресурсе, имеющем общие сопоставления с другими ресурсами, ограничений становится гораздо меньше. Если формат и типы поверхностей (например, Texture2D) совпадают, плитки могут использоваться совместно. Примерами различающихся совместимых форматов являются поверхности BC\ * и несжатые форматы эквивалентного размера (32 или 16 бит на компонент), такие как BC6H и R32G32B32A32. Многие 32-разрядные форматы также могут являться псевдонимами R32\_\* (R10G10B10A2\_\*, R8G8B8A8\_\*, B8G8R8A8\_\*,B8G8R8X8\_\*,R16G16\_\*); эта операция всегда была разрешена для ресурсов, не являющихся потоковыми.
+Если флаг привязки цели отрисовки или трафарета глубины не установлен ни на одном ресурсе, имеющем общие сопоставления с другими ресурсами, ограничений становится гораздо меньше. Если формат и типы поверхностей (например, Texture2D) совпадают, плитки могут использоваться совместно. Различные форматы, совместимую являются случаи, например BC\* поверхностями и эквивалент размер несжатого 32- или 16 бит на компонент формата, например BC6H и R32G32B32A32. Многие 32-разрядная версия на один элемент форматы может быть присвоен псевдоним с R32\_ \* также (R10G10B10A2\_\*, R8G8B8A8\_\*, B8G8R8A8\_\*, B8G8R8X8\_ \*, R16G16\_\*); эта операция всегда разрешен непотоковые ресурсы.
 
 Совместное использование упакованных и не упакованных плиток допускается, если форматы совместимы, а плитки заполняются сплошным цветом.
 
 И наконец, если у ресурсов, использующих общее сопоставление плиток, нет ничего общего, за исключением отсутствующих флагов привязки цели отрисовки или трафарета глубины, безопасно можно совместно использовать только память, заполненную нулями; сопоставление будет отображаться в виде декодированного нуля для определения формата конкретного ресурса (обычно просто 0).
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Конвейерный доступ к потоковым ресурсам](pipeline-access-to-streaming-resources.md)
+[Конвейер доступ к потоковой передачи ресурсов](pipeline-access-to-streaming-resources.md)
 
  
 

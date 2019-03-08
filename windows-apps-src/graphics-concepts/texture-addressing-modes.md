@@ -12,36 +12,36 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e263876f414e5683ffc8a5645a12e5031b3d6fb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946056"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660189"
 ---
 # <a name="texture-addressing-modes"></a>Режимы адресации текстур
 
 
 Приложение Direct3D может назначать координаты текстуры любым вершинам любого примитива. Как правило U- и V-координаты текстур, назначаемых вершине, находятся в диапазоне от 0,0 до 1,0 включительно. Однако назначая координаты текстуры вне этого диапазона, можно создавать некоторые специальные эффекты текстурирования. .
 
-Вы управляете способом, которым Direct3D обрабатывает координаты текстур, находящиеся вне диапазона от 0.0 до 1.0, устанавливая режим адресации текстуры. Например, приложение может задать режим адресации текстур, чтобы текстура разместилась на примитиве мозаикой.
+Вы управляете, что делает Direct3D по координатам текстуры, которые находятся за пределами \[0.0, 1.0\] диапазон, задав режим адресации текстуры. Например, приложение может задать режим адресации текстур, чтобы текстура разместилась на примитиве мозаикой.
 
 Direct3D позволяет приложениям выполнять обтекание текстур. См. раздел [Обтекание текстур](texture-wrapping.md)
 
-Включение обтекания фактически делает координаты текстур вне диапазона \[0.0–1.0\] недействительными, и поведение для растеризации таких недопустимых координат в данном случае не определено. При включении обтекания текстур режимы адресации текстур не используются. Следите за тем, чтобы приложение не указывало координаты текстуры меньше 0.0 или больше 1.0 при включенном обтекании текстур.
+При включении текстуры, эффективно упаковки становится координат текстуры за пределы \[0.0, 1.0\] недопустимый диапазон, а также поведение для растрирования такие координаты текстуры оплачен не определен в этом случае. При включении обтекания текстур режимы адресации текстур не используются. Следите за тем, чтобы приложение не указывало координаты текстуры меньше 0.0 или больше 1.0 при включенном обтекании текстур.
 
-## <a name="span-idsummaryofthetextureaddressingmodesspanspan-idsummaryofthetextureaddressingmodesspanspan-idsummaryofthetextureaddressingmodesspansummary-of-the-texture-addressing-modes"></a><span id="Summary_of_the_texture_addressing_modes"></span><span id="summary_of_the_texture_addressing_modes"></span><span id="SUMMARY_OF_THE_TEXTURE_ADDRESSING_MODES"></span>Сводка режимов адресации текстур
+## <a name="span-idsummaryofthetextureaddressingmodesspanspan-idsummaryofthetextureaddressingmodesspanspan-idsummaryofthetextureaddressingmodesspansummary-of-the-texture-addressing-modes"></a><span id="Summary_of_the_texture_addressing_modes"></span><span id="summary_of_the_texture_addressing_modes"></span><span id="SUMMARY_OF_THE_TEXTURE_ADDRESSING_MODES"></span>Сводка по адресации текстуры
 
 
 | Режим адресации текстур | Описание                                                                                                                           |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | Обертывание (Wrap)                    | Повторяет текстуру при каждом пересечении целых чисел.                                                                                        |
-| Отражение (Mirror)                  | Зеркально отражает текстуру у каждой целочисленной границы.                                                                                        |
-| Закрепление (Clamp)                   | Фиксирует координаты текстуры в пределах диапазона от 0.0 до 1.0. Режим закрепления применяет текстуру один раз, а затем размывает цвет граничных пикселей. |
+| Зеркальное отображение                  | Зеркально отражает текстуру у каждой целочисленной границы.                                                                                        |
+| Закрепление (Clamp)                   | Clamps текстура координирует для \[0.0, 1.0\] диапазон; Режим выполняют приведение применяется текстуры один раз, а затем smears цвет пикселей edge. |
 | Цвет рамки (Border color)            | Использует произвольный *цвет рамки* для любых координат текстуры вне диапазона от 0.0 до 1.0 включительно.                         |
 
  
 
-## <a name="span-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanwrap-texture-address-mode"></a><span id="Wrap_texture_address_mode"></span><span id="wrap_texture_address_mode"></span><span id="WRAP_TEXTURE_ADDRESS_MODE"></span>Режим адресации текстур Wrap (обертывание)
+## <a name="span-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanwrap-texture-address-mode"></a><span id="Wrap_texture_address_mode"></span><span id="wrap_texture_address_mode"></span><span id="WRAP_TEXTURE_ADDRESS_MODE"></span>Режим адреса текстуры по словам
 
 
 В режиме адресации текстур Wrap (обертывание) Direct3D повторяет текстуру при каждом пересечении целых чисел.
@@ -52,7 +52,7 @@ Direct3D позволяет приложениям выполнять обтек
 
 Сравните это со следующим **режимом адресации текстур — отражением**.
 
-## <a name="span-idmirrortextureaddressmodespanspan-idmirrortextureaddressmodespanspan-idmirrortextureaddressmodespanmirror-texture-address-mode"></a><span id="Mirror_texture_address_mode"></span><span id="mirror_texture_address_mode"></span><span id="MIRROR_TEXTURE_ADDRESS_MODE"></span>Режим адресации текстур Mirror (отражение)
+## <a name="span-idmirrortextureaddressmodespanspan-idmirrortextureaddressmodespanspan-idmirrortextureaddressmodespanmirror-texture-address-mode"></a><span id="Mirror_texture_address_mode"></span><span id="mirror_texture_address_mode"></span><span id="MIRROR_TEXTURE_ADDRESS_MODE"></span>Режим адреса зеркальной текстуры
 
 
 В режиме адресации текстур Mirror Direct3D зеркально отражает текстуру у каждой целочисленной границы.
@@ -63,10 +63,10 @@ Direct3D позволяет приложениям выполнять обтек
 
 Сравните этот режим с предыдущим **режимом адресации текстуры — обертыванием**.
 
-## <a name="span-idclamptextureaddressmodespanspan-idclamptextureaddressmodespanspan-idclamptextureaddressmodespanclamp-texture-address-mode"></a><span id="Clamp_texture_address_mode"></span><span id="clamp_texture_address_mode"></span><span id="CLAMP_TEXTURE_ADDRESS_MODE"></span>Режим адресации текстуры Clamp (закрепление)
+## <a name="span-idclamptextureaddressmodespanspan-idclamptextureaddressmodespanspan-idclamptextureaddressmodespanclamp-texture-address-mode"></a><span id="Clamp_texture_address_mode"></span><span id="clamp_texture_address_mode"></span><span id="CLAMP_TEXTURE_ADDRESS_MODE"></span>Установить режим адресации текстуры
 
 
-В режиме адресации текстур Clamp Direct3D фиксирует координаты текстуры в диапазоне от 0.0 до 1.0. Режим закрепления применяет текстуру один раз, а затем размывает цвет граничных пикселей.
+Режим адреса текстуры выполняют приведение вызывает Direct3D для фиксации координаты текстуры для \[0.0, 1.0\] диапазон; Режим выполняют приведение применяется текстуры один раз, а затем smears цвет пикселей edge.
 
 Предположим, что приложение создает квадратный примитив и задает его вершинам координаты текстуры (0.0,0.0), (0.0,3.0), (3.0,3.0) и (3.0,0.0). Установка режима адресации текстуры "Закрепление" приводит к тому, что текстура применяется один раз. Цвета пикселей вверху столбцов и в конце строк применяются к верхней и правой части примитива соответственно.
 
@@ -74,7 +74,7 @@ Direct3D позволяет приложениям выполнять обтек
 
 ![изображение текстуры и прикрепленной текстуры](images/clamp.png)
 
-## <a name="span-idbordercolortextureaddressmodespanspan-idbordercolortextureaddressmodespanspan-idbordercolortextureaddressmodespanborder-color-texture-address-mode"></a><span id="Border_Color_texture_address_mode"></span><span id="border_color_texture_address_mode"></span><span id="BORDER_COLOR_TEXTURE_ADDRESS_MODE"></span>Режим адресации текстур Border color (цвет рамки)
+## <a name="span-idbordercolortextureaddressmodespanspan-idbordercolortextureaddressmodespanspan-idbordercolortextureaddressmodespanborder-color-texture-address-mode"></a><span id="Border_Color_texture_address_mode"></span><span id="border_color_texture_address_mode"></span><span id="BORDER_COLOR_TEXTURE_ADDRESS_MODE"></span>Режим адреса цвет границы текстуры
 
 
 В режиме адресации текстур Border Color Direct3D использует произвольный цвет, называемый *цвет рамки*, для любых координат текстуры вне диапазона от 0.0 до 1.0 включительно.
@@ -92,7 +92,7 @@ Direct3D позволяет приложениям выполнять обтек
 
 Ограничения повторения текстур могут зависеть от размера текстуры, индексируемого координатами текстуры. В этом случае предположим, что размер текстуры — 32 пкс, и диапазона разрешенных устройством координат текстуры составляет 512, тогда фактически допустимым диапазоном текстуры будет 512/32=16, поэтому координаты текстуры для этого устройства должны находиться в пределах диапазона от -16.0 до +16.0.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Текстуры](textures.md)

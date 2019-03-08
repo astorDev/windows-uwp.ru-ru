@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10 s, постоянно подключенный, эмуляция x86 в ARM, устранение неполадок
 ms.localizationpriority: medium
 ms.openlocfilehash: 396bb0bf2c5ba5236e0e46e7b474867ffacb8c75
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938615"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589859"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>Устранение неполадок в классических приложениях x86
 >[!IMPORTANT]
@@ -43,7 +43,7 @@ ms.locfileid: "8938615"
 Приложения, которые пытаются перехватить компоненты Windows или загрузить их DLL-файлы в процессы Windows, должны будут перекомпилировать эти DLL, чтобы они соответствовали архитектуре системы, например ARM64. Как правило, они используются редакторами метода ввода (IME), вспомогательными технологиями и приложениями расширения оболочки (например, чтобы отобразить значки облачного хранилища в проводнике или контекстном меню правой кнопки мыши). Чтобы узнать, как перекомпилировать приложения или библиотеки DLL для ARM64, см. запись блога [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). 
 
 ## <a name="debugging"></a>Отладка
-Чтобы более тщательно проанализировать поведение вашего приложения, см. раздел [Отладка в ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64)— это позволит узнать больше об инструментах и стратегиях отладки в ARM.
+Чтобы более тщательно проанализировать поведение вашего приложения, см. раздел [Отладка в ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) — это позволит узнать больше об инструментах и стратегиях отладки в ARM.
 
 ## <a name="virtual-machines"></a>Виртуальные машины
 Платформа гипервизора Windows не поддерживается на платформе мобильных ПК Qualcomm Snapdragon 835. Следовательно, запуск виртуальных машин с помощью Hyper-V не сработает. Мы продолжим развивать эти технологии в будущих микросхемах Qualcomm. 

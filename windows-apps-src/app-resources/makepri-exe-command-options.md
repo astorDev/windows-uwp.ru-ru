@@ -1,5 +1,5 @@
 ---
-Description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
+Description: 'MakePri.exe имеет следующий набор команд: createconfig, dump, new, resourcepack и versioned. В этом разделе описывается их использование.'
 title: Параметры командной строки MakePRI.exe
 template: detail.hbs
 ms.date: 04/10/2018
@@ -7,22 +7,22 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943418"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603399"
 ---
 # <a name="makepriexe-command-line-options"></a>Параметры командной строки MakePRI.exe
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) имеет следующий набор команд: `createconfig`, `dump`, `new`, `resourcepack` и `versioned`. В данном разделе описаны параметры командной строки для их использования.
 
 > [!NOTE]
-> MakePri.exe устанавливается при проверке параметр **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe устанавливается в том случае, если выбран **Windows SDK для приложений универсальной платформы Windows, управляемых** параметр при установке пакета средств разработки программного обеспечения Windows. Он устанавливается в путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именами других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 ## <a name="getting-help-from-the-command-line"></a>Получение справки из командной строки
 
-Можно запустить `MakePri.exe help` или `MakePri.exe /?` чтобы увидеть все команды, которые можно использовать с MakePri.exe. Можно также выполнить `MakePri.exe <command> /?` чтобы узнать конкретные сведения о команде и, в редких случаях, даже `MakePri.exe <command> <option>` Чтобы просмотреть подробные сведения о том параметр.
+Можно запустить `MakePri.exe help` или `MakePri.exe /?` для вывода списка команд, которые можно использовать с MakePri.exe. Можно также выдать `MakePri.exe <command> /?` Чтобы просмотреть сведения о команде и в очень редких случаях, даже `MakePri.exe <command> <option>` Чтобы просмотреть подробные сведения о параметр.
 
 ## <a name="makepri-commands"></a>Команды MakePri
 
@@ -115,7 +115,7 @@ Help:
 Команда `dump` выводит содержащий дамп XML-файл со списком всех ресурсов в указанном файле PRI. Запустите `MakePri.exe dump /?`, чтобы увидеть подробную справку для этой команды.
 
 > [!NOTE]
-> Пакет ресурсов без схемы был создан с помощью параметра *omitSchemaFromResourcePacks* в PRI-файле конфигурации. Чтобы создать дамп пакета ресурсов без схемы, используйте параметр `/es <main_package_PRI_file>`. Если основной файл не указан, появится сообщение об ошибке "*Файл resources.pri в пакете поврежден, что привело к сбою шифрования (ошибка PRI222: 0xdef0000f— произошла неизвестная ошибка)* ".
+> Пакет ресурсов без схемы был создан с помощью параметра *omitSchemaFromResourcePacks* в PRI-файле конфигурации. Чтобы создать дамп пакета ресурсов без схемы, используйте параметр `/es <main_package_PRI_file>`. Если не указать основной файл, а затем появится сообщение об ошибке "*resources.pri в пакете была повреждена, сбой шифрования (ошибка PRI222: Произошла неизвестная ошибка 0xdef0000f -)*«.
 
 ```console
 C:\>makepri dump /?
@@ -416,18 +416,18 @@ MakePri может включать сведения, относящиеся к 
 
 **FILEPATH** является токеном, указывающим расположение входного PRI-файла или файла схемы PRI.
 
-## <a name="47indexoptionsio-option"></a>& #47;IndexOptions(io) параметр
+## <a name="47indexoptionsio-option"></a>&#47;Параметр IndexOptions(io)
 
-При использовании параметра параметры индекса (/ операций ввода-вывода) с `new`, `resourcepack`, и `versioned` указать параметры, которые предоставляют подробные контроль над поведением индексаторы для ресурсов. Параметры индекса будут отключены по умолчанию.
+При использовании параметра параметры индекса (/ операций ввода-вывода) с `new`, `resourcepack`, и `versioned` для указания параметров, которые обеспечивают четкий контроль над поведением индексаторы ресурсов. Параметры индекса отключены по умолчанию.
 
 ```console
 /IndexOptions(io) <OPTIONS>
 ```
 
-**Параметры** — это разделенный запятыми список, состоящий из следующих вариантов.
+**Параметры** является разделенный запятыми список, состоящий из следующих параметров.
 
-- Положительным HiddenFiles(hf). Индекс (+) или игнорировать (-) скрытые файлы и папки.
-- Положительным LinkedFiles(lf). Индекс (+) или игнорировать (-) связанные файлы и папки.
+- +/-HiddenFiles(hf). Индекс (+) или игнорировать (-) и папки.
+- +/-LinkedFiles(lf). Индекс (+) или игнорировать (-) связанных файлов и папок.
 
 ## <a name="47mappingfilemf-option"></a>&#47;MappingFile(mf) параметр
 
@@ -458,7 +458,7 @@ MakePri может включать сведения, относящиеся к 
 
 ## <a name="output-summary"></a>Сводка вывода
 
-Если создаются пакеты ресурсов, сводка вывода из MakePRI.exe будет более подробной. Вот пример.
+Если создаются пакеты ресурсов, сводка вывода из MakePRI.exe будет более подробной. Рассмотрим пример.
 
 ```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack
@@ -501,7 +501,7 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 | Ошибка | Сообщение об ошибке |
 | --------------- | ------------- |
-| Имя выходного файла совпадает с одним из имен пакетов ресурсов в конфигурации. | Недопустимая конфигурация: имя пакета ресурсов <resource pack name> не должно совпадать с именем выходного файла <имя_выходного_файла.pri>. |
+| Имя выходного файла совпадает с одним из имен пакетов ресурсов в конфигурации. | Недопустимая конфигурация: Имя пакета ресурсов <resource pack name> не может быть таким же, как < outputfilename.pri > выходной файл. |
 
 ## <a name="reversemaprm-option"></a>Параметр /ReverseMap(RM)
 

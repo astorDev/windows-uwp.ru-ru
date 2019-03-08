@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ce41a495297870f512f0694e4f2b63eedebbc37
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114600"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616969"
 ---
 # <a name="process-bitmaps-with-opencv"></a>Обработка точечных рисунков с помощью OpenCV
 
@@ -29,15 +29,15 @@ ms.locfileid: "9114600"
 
 ## <a name="create-a-helper-windows-runtime-component-for-opencv-interop"></a>Создание вспомогательного компонента среды выполнения Windows для взаимодействия OpenCV
 
-### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. Добавление проекта с новым собственным кодом для компонента среды выполнения Windows в свое решение.
+### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. Добавьте в решение новый проект компонента среды выполнения Windows в машинный код
 
 1. Добавьте новый проект в свое решение в Visual Studio, щелкнув правой кнопкой мыши по решению в Обозревателе решений и выбрав **Добавить -> Новый проект**. 
 2. В категории **Visual C++** выберите **Windows Runtime Component (Universal Windows)**. Для этого примера назовите проект OpenCVBridge и нажмите **ОК**. 
 3. В диалоговом окне **Новый проект Windows Universal** выберите целевую и минимальную версии ОС для приложения и нажмите кнопку **ОК**.
 4. Щелкните правой кнопкой мыши по автоматически созданному файлу Class1.cpp в Обозревателе решений и выберите **Удалить**; когда появится диалоговое окно подтверждения, выберите **Удалить**. Удалите файл заголовка Class1.h.
-5. Щелкните правой кнопкой мыши значок проекта OpenCVBridge и выберите **Добавить -> Класс...**. В диалоговом окне **Добавить класс** введите OpenCVHelper в поле **Имя класса**, а затем нажмите **OK**. Код добавляется в файлы созданного класса позднее.
+5. Щелкните правой кнопкой мыши значок OpenCVBridge проект и выберите **Добавить -> класс...** . В **Добавление класса** диалоговом окне ввода «OpenCVHelper» в **имя класса** поле и нажмите кнопку **ОК**. Код добавляется в файлы созданного класса позднее.
 
-### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. Добавление пакетов OpenCV NuGet в проект компонента
+### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. Добавьте пакеты OpenCV NuGet для проекта компонента
 
 1. В Обозревателе решений щелкните правой кнопкой мыши значок проекта OpenCVBridge и выберите **Управление пакетами NuGet...**
 2. Когда откроется диалоговое окно "Диспетчер пакетов Nuget", выберите вкладку **Обзор** и введите в поле поиска OpenCV.Win.
@@ -63,7 +63,7 @@ ms.locfileid: "9114600"
 
 Затем добавьте метод **GetPointerToPixelData** в OpenCVHelper.cpp. Этот метод принимает **[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** и путем ряда преобразований получает представление COM-интерфейса для пиксельных данных, с помощью которого мы можем получить указатель на базовый буфер данных как массив **char**. 
 
-Первый **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)**, содержащий пиксельные данные, можно получить путем вызова **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)**, запрашивая буфер чтения и записи, чтобы библиотека OpenCV могла изменять пиксельные данные.  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** вызывается для получения объекта **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)**. Далее интерфейс **IMemoryBufferByteAccess** приводится к типу **IInspectable**, базовому интерфейсу всех классов среды выполнения Windows, и вызывается **[QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521(v=vs.85).aspx)** для получения COM-интерфейса **[IMemoryBufferByteAccess](https://msdn.microsoft.com/library/mt297505(v=vs.85).aspx)**, который позволит нам получить буфер пиксельных данных как массив **char**. Наконец, заполните массив **char**, вызвав метод **[IMemoryBufferByteAccess::GetBuffer](https://msdn.microsoft.com/library/mt297506(v=vs.85).aspx)**. Если какие-либо действия преобразования в этом методе завершатся сбоем, метод возвращает **false**, сообщая о том, что продолжить дальнейшую обработку не удастся.
+Первый **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)**, содержащий пиксельные данные, можно получить путем вызова **[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)**, запрашивая буфер чтения и записи, чтобы библиотека OpenCV могла изменять пиксельные данные.  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)**  вызывается для получения **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** объекта. Далее интерфейс **IMemoryBufferByteAccess** приводится к типу **IInspectable**, базовому интерфейсу всех классов среды выполнения Windows, и вызывается **[QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521(v=vs.85).aspx)** для получения COM-интерфейса **[IMemoryBufferByteAccess](https://msdn.microsoft.com/library/mt297505(v=vs.85).aspx)**, который позволит нам получить буфер пиксельных данных как массив **char**. Наконец, заполните массив **char**, вызвав метод **[IMemoryBufferByteAccess::GetBuffer](https://msdn.microsoft.com/library/mt297506(v=vs.85).aspx)**. Если какие-либо действия преобразования в этом методе завершатся сбоем, метод возвращает **false**, сообщая о том, что продолжить дальнейшую обработку не удастся.
 
 [!code-cpp[OpenCVHelperGetPointerToPixelData](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperGetPointerToPixelData)]
 
@@ -82,7 +82,7 @@ ms.locfileid: "9114600"
 
 
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>Простой пример SoftwareBitmap OpenCV с использованием вспомогательного компонента
-После создания компонента OpenCVBridge можно создать простое приложение на C#, использующее OpenCV-метод **Blur** для изменения **SoftwareBitmap**. Чтобы открыть компонент среды выполнения Windows из приложения UWP, сначала необходимо добавить ссылку на этот компонент. В Обозревателе решений щелкните правой кнопкой мыши по узлу **Ссылки** в проекте приложения UWP и выберите **Добавить ссылку...**. В диалоговом окне Диспетчера ссылок выберите **Проекты -> Решение**. Установите флажок рядом с проектом OpenCVBridge и нажмите **ОК**.
+После создания компонента OpenCVBridge можно создать простое приложение на C#, использующее OpenCV-метод **Blur** для изменения **SoftwareBitmap**. Чтобы открыть компонент среды выполнения Windows из приложения UWP, сначала необходимо добавить ссылку на этот компонент. В обозревателе решений щелкните правой кнопкой мыши **ссылки** в узле проекта приложения UWP и выберите **добавить ссылку...** . В диалоговом окне диспетчера ссылок выберите **проекты "->" решение**. Установите флажок рядом с проектом OpenCVBridge и нажмите **ОК**.
 
 В примере кода ниже пользователь выбирает файл изображения, а затем для создания представления **SoftwareBitmap** этого изображения используется **[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)**. Дополнительные сведения о работе с **SoftwareBitmap** см. в разделе [Создание, редактирование и сохранение растровых изображений](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging).
 
@@ -98,7 +98,7 @@ ms.locfileid: "9114600"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Справочник по параметрам BitmapEncoder](bitmapencoder-options-reference.md)
-* [Метаданные изображения](image-metadata.md)
+* [Метаданные изображений](image-metadata.md)
  
 
  

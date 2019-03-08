@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945400"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597829"
 ---
 # <a name="my-people-sharing"></a>Публикации близких людей
 
@@ -20,15 +20,15 @@ ms.locfileid: "8945400"
 
 ## <a name="requirements"></a>Требования
 
-+ Windows10 и Microsoft Visual Studio2017. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 и Microsoft Visual Studio 2017. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Знание основ C# или похожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Обзор
 
 Вам необходимо выполнить три действия, что сделать ваше приложением допустимой целью для публикации с помощью функции "Близкие люди".
 
-1. [Объявить поддержку контракта активации shareTarget в манифесте приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Указать контакты, с которыми пользователи могут делиться данными с помощью вашего приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Объявите поддержку по контракту активации shareTarget в манифесте приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Добавление заметок контакты, пользователи могут совместно использовать с помощью вашего приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3. Реализовать поддержку нескольких экземпляров приложения, запущенных одновременно.  Пользователям необходимо взаимодействовать с полной версией приложения, сохраняя возможность делиться содержимым с другими. Они могут использовать его в нескольких окнах общего доступа одновременно. Для этого приложение должно поддерживать возможность одновременного запуска нескольких представлений. Сведения о том, как это сделать, см. в статье [Отображение нескольких представлений для приложения](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views).
 
 После этого приложение станет целью общего доступа в окне "Близкие люди", которое можно запустить двумя способами:
@@ -40,7 +40,7 @@ ms.locfileid: "8945400"
 Чтобы объявить поддержку приложением получения данных, откройте приложение в Visual Studio. В **обозревателе решений** щелкните правой кнопкой мыши файл **Package.appxmanifest** и выберите команду **Открыть с помощью**. В меню выберите пункт **Редактор (текстовый) XML** и нажмите кнопку **ОК**. Затем внесите следующие изменения в манифест:
 
 
-**До**
+**Прежде чем**
 ```xml
 <Applications>
     <Application Id="MyApp"
@@ -81,7 +81,7 @@ ms.locfileid: "8945400"
 
 Чтобы ваше приложение отображалось как цель в окне общего доступа "Близкие люди" для ваших контактов, необходимо записать их в хранилище контактов Windows. Сведения о записи контактов см. в разделе [Пример интеграции карточки контакта](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration). 
 
-Чтобы приложение отображалось как цель передачи данных функции "Близкие люди", оно должно записать аннотацию для этого контакта. Аннотации— это компоненты данных из приложения, связанные с контактом. Аннотация должна содержать активируемый класс, соответствующий требуемому представлению, в элементе **ProviderProperties**, а также должна объявить поддержку операции **Share**.
+Чтобы приложение отображалось как цель передачи данных функции "Близкие люди", оно должно записать аннотацию для этого контакта. Аннотации — это компоненты данных из приложения, связанные с контактом. Аннотация должна содержать активируемый класс, соответствующий требуемому представлению, в элементе **ProviderProperties**, а также должна объявить поддержку операции **Share**.
 
 Аннотировать контакты можно в любой момент во время работы приложения, но в общем случае необходимо делать это, как только они добавляются в хранилище контактов Windows.
 
@@ -103,7 +103,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-"appId"— это имя семейства пакетов, за которым следует символ "!" и идентификатор активируемого класса. Чтобы найти имя семейства пакета, откройте **Package.appxmanifest** , с помощью редактора по умолчанию и перейдите на вкладку «Упаковка». Здесь «Приложение» является активируемый класс, соответствующий представлению цели.
+"appId" — это имя семейства пакетов, за которым следует символ "!" и идентификатор активируемого класса. Чтобы найти имя семейства пакета, откройте файл **Package.appxmanifest** с помощью редактора по умолчанию и перейдите на вкладку "Упаковка". Здесь "App" — это активируемый класс, соответствующий представлению цели передачи данных.
 
 ## <a name="running-as-a-my-people-share-target"></a>Запуск приложения в качестве цели общего доступа функции "Близкие люди"
 
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>См. также:
-+ [Добавление поддержки функции "Близкие люди"](my-people-support.md)
+## <a name="see-also"></a>См. также
++ [Поддерживает добавление Мои людей](my-people-support.md)
 + [Класс ShareTarget](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
-+ [Пример интеграции карточки контакта](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [Контактные пример интеграции карты](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

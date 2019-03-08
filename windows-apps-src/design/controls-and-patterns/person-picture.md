@@ -12,20 +12,20 @@ dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1897eded4d18a00a3c11cf1926adb1ebec6ae69a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044651"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638939"
 ---
 # <a name="person-picture-control"></a>Элемент управления "Аватар пользователя"
 
 Элемент управления аватаром пользователя отображает аватар для пользователя, если он доступен; в противном случае отображаются инициалы лица или универсальный глиф. Элемент управления можно использовать для отображения [объекта Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), который управляет контактными данными пользователя, или можно вручную указать контактные данные, такие как отображаемое имя и изображение профиля.  
 
-> **Важные API-интерфейсы**: [класс PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [класс Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [класс ContactManager](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **Важные API-интерфейсы**: [Класс PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [класс](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager-класс](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 На этом рисунке показаны два элемента управления аватаром пользователя вместе с двумя элементами [блоков текста](text-block.md), в которых отображаются имена пользователей. 
-![Элемент управления "Аватар пользователя"](images/person-picture/person-picture_hero.png)
+![Элемент управления рисунка person](images/person-picture/person-picture_hero.png)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -36,9 +36,9 @@ ms.locfileid: "9044651"
 * Для отображения отправителя сообщения 
 * Для отображения контакта в социальных сетях
 
-На рисунке показан элемент управления аватаром в списке контактов: ![средство управления аватарами](images/person-picture/person-picture-control.png)
+На рисунке показан person управления "изображения" в список контактов. ![Элемент управления рисунка person](images/person-picture/person-picture-control.png)
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -47,7 +47,7 @@ ms.locfileid: "9044651"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/PersonPicture">открыть приложение и увидеть PersonPicture в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -187,7 +187,7 @@ namespace SampleApp
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
 * [Контакты и календарь](../../contacts-and-calendar/index.md)
-* [Пример карт контакта](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+* [Пример карточки контакта](https://go.microsoft.com/fwlink/p/?LinkId=624040)

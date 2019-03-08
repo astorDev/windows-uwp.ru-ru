@@ -1,43 +1,43 @@
 ---
-Description: Learn how to pin secondary tiles to taskbar.
-title: Закрепление вспомогательных плиток на панели задач
+Description: Узнайте, как закрепить вспомогательные плитки на панели задач.
+title: ПИН-код вспомогательных плиток на панели задач
 label: Pin secondary tiles to taskbar
 template: detail.hbs
 ms.date: 11/28/2018
 ms.topic: article
-keywords: Windows 10, uwp, закрепить на панели задач, вспомогательные плитки, закрепить вспомогательные плитки на панели задач, ярлык
+keywords: Windows 10, uwp, закрепить на панели задач, вторичная Плитка закрепить вспомогательные плитки на панели задач, ярлык
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ad322fe371b0e1f3605ffb4c29108a15bb28e0c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933178"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591979"
 ---
-# <a name="pin-secondary-tiles-to-taskbar"></a>Закрепление вспомогательных плиток на панели задач
+# <a name="pin-secondary-tiles-to-taskbar"></a>ПИН-код вспомогательных плиток на панели задач
 
-Так же, как закрепление вспомогательных плиток в меню "Пуск", могут закреплять вспомогательные плитки на панели задач, что дает пользователям быстрый доступ к содержимому в вашем приложении.
+Так же, как закрепления вспомогательные плитки на начальном, вы можете закрепить вспомогательные плитки на панели задач, предоставление пользователям быстрый доступ к содержимому в приложении.
 
 <img alt="Taskbar pinning" src="../images/taskbar/pin-secondary-ui.png" width="972"/>
 
 > [!IMPORTANT]
-> **Ограниченный доступ к API**: этот API — это функция ограниченного доступа. Чтобы использовать этот API, обратитесь к [taskbarsecondarytile@microsoft.com](mailto:taskbarsecondarytile@microsoft.com?Subject=Limited%20Access%20permission%20to%20use%20secondary%20tiles%20on%20taskbar).
+> **Ограниченный доступ к API**: Этот API — это функция ограниченный доступ. Чтобы использовать этот API, обратитесь в службу [ taskbarsecondarytile@microsoft.com ](mailto:taskbarsecondarytile@microsoft.com?Subject=Limited%20Access%20permission%20to%20use%20secondary%20tiles%20on%20taskbar).
 
-> **Требует октября 2018 г. обновление**: 17763 необходим пакет SDK и использовать сборку 17763 или более поздней версии для закрепить на панели задач.
+> **Требуется обновление октября 2018**: Вы должны быть предназначены SDK 17763 и выполняться сборка 17763 или более поздней версии для закрепить на панели задач.
 
 
 ## <a name="guidance"></a>Руководство
 
-Вспомогательная Плитка представляет собой единообразный и эффективный способ предоставить пользователям прямой доступ к определенным областям приложения. Несмотря на то, что пользователь может выбрать «закреплять» вспомогательную плитку на панели задач или нет, можно закрепить области в приложении, определяются разработчика. Дополнительные рекомендации см. [руководство по вспомогательным плиткам](secondary-tiles-guidance.md).
+Вторичная Плитка обеспечивает согласованное эффективный способ для пользователей, для прямого доступа к определенной области в приложении. Несмотря на то, что пользователь выберет ли «закрепить» вторичная Плитка на панели задач, также прикрепляемые областей в приложении определяются разработчиком. Дополнительные рекомендации см. в разделе [рекомендации вторичная Плитка](secondary-tiles-guidance.md).
 
 
-## <a name="1-determine-if-api-exists-and-unlock-limited-access"></a>1. Определите, существует ли API и разблокировать ограниченный доступ
+## <a name="1-determine-if-api-exists-and-unlock-limited-access"></a>1. Определение наличия API и разблокировать ограниченным доступом
 
-Более старых устройствах не отображать панель задач, закрепление API-интерфейсы (Если вы хотите использовать более ранние версии Windows 10). Таким образом не следует отображать кнопку PIN-код на этих устройствах, которые не поддерживают закрепление.
+Старые устройства нет задач, закрепление API-интерфейсы (если целевой платформой является более старых версиях Windows 10). Таким образом не должен отображать кнопку закрепления на этих устройствах, которые не способны закрепления.
 
-Кроме того эта функция заблокирован в разделе ограниченным доступом. Чтобы получить доступ, обратитесь в корпорацию Майкрософт. Вызовы API **[TaskbarManager.RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync#Windows_UI_Shell_TaskbarManager_RequestPinSecondaryTileAsync_Windows_UI_StartScreen_SecondaryTile_)**, **[TaskbarManager.IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** и **[TaskbarManager.TryUnpinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** приведет к сбою с исключение отказано в доступе. Приложения не могут использовать этот API, без разрешения и определение API может измениться в любой момент.
+Кроме того эта функция заблокирована в группе с ограниченным доступом. Чтобы получить доступ, обратитесь в Майкрософт. Вызовы API  **[TaskbarManager.RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync#Windows_UI_Shell_TaskbarManager_RequestPinSecondaryTileAsync_Windows_UI_StartScreen_SecondaryTile_)**,  **[TaskbarManager.IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** и **[TaskbarManager.TryUnpinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** завершится ошибкой с исключением отказано в доступе. Приложения не разрешается использовать этот API без разрешения и определение API может измениться в любое время.
 
-Используйте метод [ApiInformation.IsMethodPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.ismethodpresent#Windows_Foundation_Metadata_ApiInformation_IsMethodPresent_System_String_System_String_) , чтобы определить, присутствуют ли API-интерфейсы. А затем воспользоваться **[LimitedAccessFeatures](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures)** API разблокирование API.
+Используйте [ApiInformation.IsMethodPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.ismethodpresent#Windows_Foundation_Metadata_ApiInformation_IsMethodPresent_System_String_System_String_) метод, чтобы определить, присутствуют ли API-интерфейсы. А затем с помощью **[LimitedAccessFeatures](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures)** API попробовать разблокировки API.
 
 ```csharp
 if (ApiInformation.IsMethodPresent("Windows.UI.Shell.TaskbarManager", "RequestPinSecondaryTileAsync"))
@@ -70,9 +70,9 @@ else
 
 ## <a name="2-get-the-taskbarmanager-instance"></a>2. Получите экземпляр TaskbarManager
 
-Приложения UWP могут работать на различных устройствах, и не все из них поддерживают панель задач. Сейчас ее поддерживают только настольные компьютеры. Кроме того наличие панели задач могут поступать и перейти. Чтобы проверить, является ли панель задач в данный момент, вызовите метод **[TaskbarManager.GetDefault](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** и проверьте, что экземпляр, возвращаемый не равно null. Не отображать кнопку PIN-код, если отсутствует панели задач.
+Приложения UWP могут работать на различных устройствах, и не все из них поддерживают панель задач. Сейчас ее поддерживают только настольные компьютеры. Кроме того наличие панели задач могут поступать и перейти. Чтобы проверить, является ли в данный момент задач, вызовите **[TaskbarManager.GetDefault](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** метод и проверьте, что возвращенный экземпляр не равен null. Не отображать кнопку ПИН-код, если отсутствует панели задач.
 
-Мы рекомендуем удерживать на экземпляр в течение одной операции, например закрепления, а затем перетаскивая новый экземпляр в следующий раз, необходимо сделать другой операции.
+Мы рекомендуем напряженной на экземпляр, в течение одной операции, такие как закрепление, а затем перетащив новый экземпляр в следующий раз, необходимо выполнить другую операцию.
 
 ```csharp
 TaskbarManager taskbarManager = TaskbarManager.GetDefault();
@@ -88,9 +88,9 @@ else
 ```
 
 
-## <a name="3-check-whether-your-tile-is-currently-pinned-to-the-taskbar"></a>3. Проверьте, закреплена ли в данный момент плитки на панели задач
+## <a name="3-check-whether-your-tile-is-currently-pinned-to-the-taskbar"></a>3. Проверьте, закреплен ли в настоящее время плитки на панели задач
 
-Если Плитка уже закреплена, вместо этого следует Показать "открепить". Чтобы проверить, закреплена ли Плитка в данный момент можно использовать метод **[IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** (пользователи могут открепить его в любое время). При использовании этого метода вы передаете **TileId** плитки, чтобы узнать, закреплена.
+Если элемент уже закреплен, можно отображать кнопку изъять вместо этого. Можно использовать **[IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** метод для проверки ли в настоящее время закреплена плитки (пользователи можете открепить его в любое время). В этом методе вы передаете **идентификатор TileId** закрепленные плитки, которые вы хотите узнать.
 
 ```csharp
 if (await taskbarManager.IsSecondaryTilePinnedAsync("myTileId"))
@@ -105,11 +105,11 @@ else
 ```
 
 
-## <a name="4-check-whether-pinning-is-allowed"></a>4. Проверьте, разрешен ли закрепление
+## <a name="4-check-whether-pinning-is-allowed"></a>4. Проверьте, разрешено ли закрепления
 
-Закрепление на панели задач можно отключить с помощью групповой политики. Свойство [TaskbarManager.IsPinningAllowed](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.ispinningallowed) позволяет проверить, разрешен ли закрепление.
+Закрепление на панели задач можно отключить с помощью групповой политики. [TaskbarManager.IsPinningAllowed](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.ispinningallowed) свойство позволяет проверить, разрешен ли закрепления.
 
-Когда пользователь нажимает кнопку PIN-код, необходимо проверить это свойство, и если оно является "false", должно отображаться диалоговое окно сообщения, информирующее пользователя, закрепление не поддерживается на этом компьютере.
+При нажатии кнопки ПИН-код, необходимо проверить это свойство, и если он имеет значение false, должно отобразиться диалоговое окно сообщения, сообщая пользователю, что закрепление на этом компьютере не допускается.
 
 ```csharp
 TaskbarManager taskbarManager = TaskbarManager.GetDefault();
@@ -130,13 +130,13 @@ else
 ```
 
 
-## <a name="5-construct-and-pin-your-tile"></a>5. Создание, и закрепить плитки
+## <a name="5-construct-and-pin-your-tile"></a>5. Создавать и закреплять плитки
 
-Пользователь нажал кнопку PIN-код, и вы определили, что API-интерфейсы присутствуют, панель задач присутствует и закрепление разрешено … до PIN-код!
+Пользователь нажал на кнопку закрепления, и вы определили, присутствуют интерфейсы API, присутствует панель задач, что закрепление допускается... время для ПИН-кода!
 
-Во-первых создайте сокет вспомогательной плитке, так же, как при закреплении меню "Пуск". Подробнее о свойствах вспомогательной плитки, читая [Закрепление вспомогательных плиток в меню "Пуск"](secondary-tiles-pinning.md). Тем не менее при закреплении на панели задач, в дополнение к ранее необходимые свойства, Square44x44Logo (это логотип, используемых задач) также является обязательным. В противном случае будет создано исключение.
+Во-первых создания вторичной плитки, так же, как при закреплении начало. Дополнительные сведения о свойствах вторичной плитке путем чтения [ПИН-код вспомогательные плитки на начальном](secondary-tiles-pinning.md). Тем не менее при закреплении на панели задач, в дополнение к ранее обязательных свойств Square44x44Logo (это логотип, используемые на панели задач) также является обязательным. В противном случае будет создано исключение.
 
-Затем передайте методу **[RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync)** плитки. Так как это в разделе ограниченным доступом, это не будет отображать диалоговое окно подтверждения и не требует потока пользовательского интерфейса. Однако в будущем при это открывается за пределы ограниченным доступом, вызывающие методы использования ограниченным доступом не будет получать диалогового окна и необходимо использовать поток пользовательского интерфейса.
+Затем передайте плитку, чтобы **[RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync)** метод. Так как это выполняется с ограниченным доступом, это не отобразит диалоговое окно подтверждения и не требует поток пользовательского интерфейса. Но в будущем это открытием за пределы ограниченным доступом, вызывающие объекты не использования ограниченный доступ будет получен диалог и обязательно использовать в потоке пользовательского интерфейса.
 
 ```csharp
 // Initialize the tile (all properties below are required)
@@ -150,12 +150,12 @@ tile.VisualElements.Square150x150Logo = new Uri("ms-appdata:///AppIcons/PowerPoi
 bool isPinned = await taskbarManager.RequestPinSecondaryTileAsync(tile);
 ```
 
-Этот метод возвращает логическое значение, указывающее, закреплен ли теперь плитки на панели задач. Если Плитка уже закреплена, метод обновляет существующую плитку и возвращает значение true. Если закрепление не поддерживается или задач не поддерживается, метод возвращает значение false.
+Этот метод возвращает логическое значение, указывающее, закреплен ли теперь плитки на панели задач. Если Плитка была закреплена, метод обновляет существующий элемент и возвращает значение true. Если закрепление не разрешено или панели задач не поддерживается, метод возвращает значение false.
 
 
-## <a name="enumerate-tiles"></a>Перечисление плитки
+## <a name="enumerate-tiles"></a>Перечислить плитки
 
-Чтобы просмотреть все плитки, которые вы создали и по-прежнему закреплены участок (меню "Пуск", панели задач или оба), используйте **[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.findallasync)**. Впоследствии можно проверить закреплено ли эти плитки на панели задач и меню "Пуск". Если поверхности не поддерживается, эти методы возвращают значение false.
+Чтобы увидеть все плитки, которые вы создали и по-прежнему являются закрепленные где-нибудь (Start, задач или оба), используйте  **[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.findallasync)**. Впоследствии можно проверить ли эти плитки закреплены на панели задач и/или запуска. Если области не поддерживается, эти методы возвращают значение false.
 
 ```csharp
 var taskbarManager = TaskbarManager.GetDefault();
@@ -177,18 +177,18 @@ foreach (SecondaryTile tile in await SecondaryTile.FindAllAsync())
 ```
 
 
-## <a name="update-a-tile"></a>Обновление плитки
+## <a name="update-a-tile"></a>Обновления плитки
 
-Чтобы обновить уже закрепления плитки, можно использовать метод [**SecondaryTile.UpdateAsync**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.updateasync) , как описано в [обновление вспомогательной плитки](secondary-tiles-pinning.md#updating-a-secondary-tile).
+Чтобы обновить уже закрепленной плитки, можно использовать [ **SecondaryTile.UpdateAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.updateasync) метод, как описано в разделе [обновление вторичная Плитка](secondary-tiles-pinning.md#updating-a-secondary-tile).
 
 
-## <a name="unpin-a-tile"></a>Откреплять плитки
+## <a name="unpin-a-tile"></a>Открепить плитки
 
-Ваше приложение должно предоставлять "открепить", закреплена ли Плитка в данный момент. Чтобы открепить плитки, просто вызовите метод **[TryUnpinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)**, передав **TileId** из вспомогательной плитки, которые хотели бы открепил.
+Приложения должны предоставлять кнопка изъять, если элемент закреплен в настоящее время. Чтобы открепить плитку, просто вызовите  **[TryUnpinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)**, передавая **идентификатор TileId** вторичной плитки хотелось бы отменено.
 
-Этот метод возвращает логическое значение, указывающее, закреплен ли больше не плитки на панели задач. Если Плитка не закреплена в первую очередь, также возвращает значение true. Если откреплять не был включен, этот метод возвращает значение false.
+Этот метод возвращает логическое значение, указывающее, закреплен ли больше не плитки на панели задач. Если элемент не был закреплен в первую очередь, также возвращает значение true. Если после освобождения не был разрешен, возвращается false.
 
-Если Плитка только закреплена на панели задач, так как он больше не закреплено в любом будут удалены плитки.
+Если Плитка была только закреплен на панели задач, так как он больше не закреплен в любом месте будут удалены плитки.
 
 ```csharp
 var taskbarManager = TaskbarManager.GetDefault();
@@ -199,11 +199,11 @@ if (taskbarManager != null)
 ```
 
 
-## <a name="delete-a-tile"></a>Удаление плитка
+## <a name="delete-a-tile"></a>Удаление плитки
 
-Если вы хотите откреплять плитки из любой точки (меню "Пуск", панели задач), используйте метод **[RequestDeleteAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync)** .
+Если вы хотите отменить закрепление плитки из любого расположения (запуск задач), используйте **[RequestDeleteAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync)** метод.
 
-Это подходит для случаев, когда содержимое, закрепленные пользователем требование больше не применяется. Например если приложение позволяет закрепить ноутбук к меню "Пуск" и панели задач, а затем пользователь удаляет разделе "заметки", необходимо просто удалить плитки, связанные с заметками.
+Такой вариант подходит для случаев, где содержимое закрепленные пользователь больше не применяется. Например если приложение позволяет закреплять записной книжки для запуска и задач, а затем пользователь удаляет записную книжку, следует просто удалить плитки, связанные с записной книжкой.
 
 ```csharp
 // Initialize a secondary tile with the same tile ID you want removed.
@@ -215,11 +215,11 @@ await toBeDeleted.RequestDeleteAsync();
 ```
 
 
-## <a name="unpin-only-from-start"></a>Открепить только из меню "Пуск"
+## <a name="unpin-only-from-start"></a>Открепить только от начального экрана
 
-Если вы хотите только открепить вспомогательную плитку из меню "Пуск", сохраняя при этом его на панели задач, можно вызвать метод **[StartScreenManager.TryRemoveSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager.tryremovesecondarytileasync)** . Если он больше не закреплен на других поверхностях аналогично удаление плитки.
+Если вы только хотите открепить вторичная Плитка с начала, оставив ее на панели задач, можно вызвать **[StartScreenManager.TryRemoveSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager.tryremovesecondarytileasync)** метод. Если больше не будет закреплена на любой другой поверхности аналогичным образом будут удалены плитки.
 
-Этот метод возвращает логическое значение, указывающее, закреплен ли больше не плитку в меню "Пуск". Если Плитка не закреплена в первую очередь, также возвращает значение true. Если откреплять не было разрешено или меню "Пуск" не поддерживается, этот метод возвращает значение false.
+Этот метод возвращает логическое значение, указывающее, закреплен ли больше не плитки на начальном. Если элемент не был закреплен в первую очередь, также возвращает значение true. Если после освобождения Недозволенный или запуска не поддерживается, он возвращает значение false.
 
 ```csharp
 await StartScreenManager.GetDefault().TryRemoveSecondaryTileAsync("myTileId");
@@ -229,4 +229,4 @@ await StartScreenManager.GetDefault().TryRemoveSecondaryTileAsync("myTileId");
 ## <a name="resources"></a>Ресурсы
 
 * [Класс TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
-* [Закрепление вспомогательных плиток в меню "Пуск"](secondary-tiles-pinning.md)
+* [Вспомогательные плитки ПИН-код для начала](secondary-tiles-pinning.md)

@@ -7,13 +7,13 @@ keywords: windows 10, uwp
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
 ms.openlocfilehash: 23dfb8843ed8e70fc6f979bd778a517d0c30327a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943925"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613879"
 ---
-# <a name="bring-custom-c-games-to-uwp-on-xbox"></a>Перенесите пользовательские C++ игры UWP на Xbox
+# <a name="bring-custom-c-games-to-uwp-on-xbox"></a>Перенос пользовательских игр на C++ для Xbox на UWP
 
 Если вы создаете пользовательскую версию средств разработки C++, Xbox One обеспечивает полную поддержку C++. 
 
@@ -28,6 +28,6 @@ ms.locfileid: "8943925"
 
 
 ## <a name="see-also"></a>См. также
-- [Перенос существующих игр на Xbox](development-lanes-landing.md)
+- [Перенос существующих игры для Xbox](development-lanes-landing.md)
 - [Приложения UWP для Xbox One](index.md)
 
