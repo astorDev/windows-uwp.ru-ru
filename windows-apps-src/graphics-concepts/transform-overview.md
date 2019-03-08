@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928073"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640149"
 ---
 # <a name="transform-overview"></a>Обзор преобразований
 
 
-Значительная часть низкоуровневых математических вычислений в 3D-графике приходится на матричные преобразования.
+Большая часть низкоуровневых математических вычислений в 3D-графике приходится на матричные преобразования.
 
 Геометрический конвейер принимает вершины в качестве входных данных. Модуль преобразований применяет к вершинам мировое, видовое и проекционное преобразования, кадрирует результат и передает все в средство программной прорисовки.
 
@@ -38,7 +38,7 @@ ms.locfileid: "8928073"
 -   [Видовое преобразование](view-transform.md) — обеспечивает преобразование из мирового пространства в видовое пространство.
 -   [Проекционное преобразование](projection-transform.md) — обеспечивает преобразование из видового пространства в проекционное пространство.
 
-## <a name="span-idmatrixtransformsspanspan-idmatrixtransformsspanspan-idmatrixtransformsspanmatrix-transforms"></a><span id="Matrix_Transforms"></span><span id="matrix_transforms"></span><span id="MATRIX_TRANSFORMS"></span>Матричные преобразования
+## <a name="span-idmatrixtransformsspanspan-idmatrixtransformsspanspan-idmatrixtransformsspanmatrix-transforms"></a><span id="Matrix_Transforms"></span><span id="matrix_transforms"></span><span id="MATRIX_TRANSFORMS"></span>Преобразования матрицы
 
 
 В приложениях, работающих с 3D-графикой, с помощью геометрических преобразований можно:
@@ -72,7 +72,7 @@ D3DMATRIX scale = {
 };
 ```
 
-## <a name="span-idtranslatespanspan-idtranslatespanspan-idtranslatespantranslate"></a><span id="Translate"></span><span id="translate"></span><span id="TRANSLATE"></span>Параллельный перенос
+## <a name="span-idtranslatespanspan-idtranslatespanspan-idtranslatespantranslate"></a><span id="Translate"></span><span id="translate"></span><span id="TRANSLATE"></span>Перевести
 
 
 Следующее уравнение параллельно переносит точку (X, Y, Z) в новую точку (X', Y', Z').
@@ -93,7 +93,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 }    // End of Translate
 ```
 
-## <a name="span-idscalespanspan-idscalespanspan-idscalespanscale"></a><span id="Scale"></span><span id="scale"></span><span id="SCALE"></span>Масштабирование
+## <a name="span-idscalespanspan-idscalespanspan-idscalespanscale"></a><span id="Scale"></span><span id="scale"></span><span id="SCALE"></span>Масштаб
 
 
 Следующее уравнение масштабирует точку (X, Y, Z) на произвольные значения в направлениях (X, Y, Z) для получения новой точки (X', Y', Z').
@@ -135,7 +135,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 }
 ```
 
-## <a name="span-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanconcatenating-matrices"></a><span id="Concatenating_Matrices"></span><span id="concatenating_matrices"></span><span id="CONCATENATING_MATRICES"></span>Конкатенация матриц
+## <a name="span-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanconcatenating-matrices"></a><span id="Concatenating_Matrices"></span><span id="concatenating_matrices"></span><span id="CONCATENATING_MATRICES"></span>Объединение матрицы
 
 
 Одним из преимуществ использования матриц является то, что эффекты двух или нескольких матриц можно объединить путем перемножения этих матриц. Это означает, что для поворота модели и последующего ее параллельного переноса в какое-либо место не нужно применять две матрицы. Вместо этого необходимо перемножить матрицы поворота и параллельного переноса для получения составной матрицы, содержащей все их эффекты. Этот процесс называется конкатенацией матриц и может описываться следующим уравнением.
@@ -154,10 +154,10 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 
 Вне зависимости от того, матрицу какого типа вы создаете, помните о правиле "слева направо", чтобы результаты всегда соответствовали ожидаемым.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Преобразования](transforms.md)
+[Преобразует](transforms.md)
 
  
 

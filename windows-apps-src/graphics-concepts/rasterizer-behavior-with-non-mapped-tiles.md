@@ -8,13 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e3089444820f990644526eaafb7f2ef9007fa70a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929905"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631889"
 ---
-# <a name="span-iddirect3dconceptsrasterizerbehaviorwithnon-mappedtilesspanrasterizer-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>Поведение средства программной прорисовки с несопоставленными плитками
+# <a name="span-iddirect3dconceptsrasterizerbehaviorwithnon-mappedtilesspanrasterizer-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>Поведение растеризации с несопоставленные плитки
 
 
 В этом разделе описывается поведение растеризации несопоставленных плиток.
@@ -39,10 +39,10 @@ ms.locfileid: "8929905"
 
 Операции чтения из RTV возвращают значение 0 для отсутствующих плиток, а операции записи отклоняются. Такое идеальное определение обработки записи не требуется для [второго уровня](tier-2.md). Операции записи в несопоставленные плитки могут оказаться в кэше, откуда данные могут взять последующие операции чтения.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Конвейерный доступ к потоковым ресурсам](pipeline-access-to-streaming-resources.md)
+[Конвейер доступ к потоковой передачи ресурсов](pipeline-access-to-streaming-resources.md)
 
  
 

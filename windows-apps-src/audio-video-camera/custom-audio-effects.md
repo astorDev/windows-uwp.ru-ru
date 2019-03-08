@@ -1,5 +1,5 @@
 ---
-Description: This article describes how to create a Windows Runtime component that implements the IBasicAudioEffect interface to allow you to create custom effects for audio streams.
+Description: В этой статье описано, как создать компонент среды выполнения Windows, реализующий интерфейс IBasicAudioEffect, который позволяет создавать пользовательские эффекты для аудиопотоков.
 title: Пользовательские звуковые эффекты
 ms.date: 02/08/2017
 ms.topic: article
@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
 ms.openlocfilehash: e04b3a764c170fa3e3e0ce1372e72b73795b5b12
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049331"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617959"
 ---
 # <a name="custom-audio-effects"></a>Пользовательские звуковые эффекты
 
@@ -22,14 +22,14 @@ ms.locfileid: "9049331"
 
 Пользовательский аудиоэффект определяется в классе, реализующем интерфейс [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect). Этот класс невозможно включить непосредственно в проект приложения. Вместо этого необходимо использовать компонент среды выполнения Windows для размещения вашего класса аудиоэффекта.
 
-**Добавление компонента среды выполнения Windows для вашего аудиоэффекта**
+**Добавление в компонент среды выполнения Windows, для звуковых эффектов**
 
 1.  Открыв свое решение в Microsoft Visual Studio, перейдите в меню **Файл** и выберите пункт **Добавить-&gt;Новый проект**.
 2.  Выберите тип проекта **Компонент среды выполнения Windows (универсальное приложение)**.
 3.  Для соответствия этому примеру задайте проекту название *AudioEffectComponent*. Это название будет использоваться в коде далее.
 4.  Нажмите кнопку **ОК**.
 5.  Шаблон проекта создает класс под названием Class1.cs. В **Обозревателе решений** щелкните правой кнопкой мыши по значку для Class1.cs и выберите **Переименовать**.
-6.  Переименуйте файл в *ExampleAudioEffect.cs*. Visual Studio отобразит уведомление с вопросом о том, не следует ли обновить все упоминания с использованием нового имени. Щелкните **Да**.
+6.  Переименуйте файл в *ExampleAudioEffect.cs*. Visual Studio отобразит уведомление с вопросом о том, не следует ли обновить все упоминания с использованием нового имени. нажмите кнопку **Да**.
 7.  Откройте **ExampleAudioEffect.cs** и дополните определение класса для реализации интерфейса [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect).
 
 
@@ -93,7 +93,7 @@ ms.locfileid: "9049331"
 
 ### <a name="close-method"></a>Метод Close
 
-Система вызывает метод [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764782) для вашего класса, когда соответствующий эффект должен будет завершить работу. Этот метод следует использовать для утилизации всех созданных вами ресурсов. Аргументом этого метода является [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason), и он позволяет узнать, был ли эффект закрыт в нормальном режиме либо произошла ошибка, либо эффект не поддерживает необходимый формат кодирования.
+Система будет вызывать [ **закрыть** ](https://msdn.microsoft.com/library/windows/apps/dn764782) [ **закрыть** ](https://msdn.microsoft.com/library/windows/apps/dn764782) метода в классе, если эффект следует завершить работу. Этот метод следует использовать для утилизации всех созданных вами ресурсов. Аргументом этого метода является [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason), и он позволяет узнать, был ли эффект закрыт в нормальном режиме либо произошла ошибка, либо эффект не поддерживает необходимый формат кодирования.
 
 [!code-cs[Close](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetClose)]
 
@@ -123,7 +123,7 @@ ms.locfileid: "9049331"
 
 1.  В обозревателе решений внутри проекта приложения щелкните правой кнопкой мыши по разделу **Ссылки** и выберите **Добавить ссылку**.
 2.  Разверните вкладку **Проекты**, выберите **Решение** и установите флажок для имени вашего проекта эффекта. В этом примере используется имя *AudioEffectComponent*.
-3.  Нажмите **ОК**
+3.  Нажмите кнопку **ОК**
 
 Если ваш класс звукового эффекта объявлен в другом пространстве имен, не забудьте включить это пространство имен в свой файл кода.
 
@@ -144,9 +144,9 @@ ms.locfileid: "9049331"
 
 
 
-## <a name="related-topics"></a>Смежные разделы
-* [Простой доступ к просмотру камеры](simple-camera-preview-access.md)
-* [Создание и редактирование композиций мультимедиа](media-compositions-and-editing.md)
+## <a name="related-topics"></a>Статьи по теме
+* [Доступ к предварительной версии простой камеры](simple-camera-preview-access.md)
+* [Создание и редактирование мультимедиа](media-compositions-and-editing.md)
 * [Документация по Win2D](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Воспроизведение мультимедиа](media-playback.md)
 

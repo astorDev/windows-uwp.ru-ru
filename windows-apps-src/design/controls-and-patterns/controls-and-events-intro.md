@@ -1,5 +1,5 @@
 ---
-Description: You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input. Here, we show you how to add controls to your app.
+Description: Пользовательский интерфейс приложения, используемый для отображения и ввода данных пользователем, создается с помощью элементов управления, таких как кнопки, текстовые поля и поля со списком. Ниже показано, как добавлять элементы управления в приложение.
 title: Введение в работу с элементами управления и шаблонами
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
@@ -9,19 +9,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ff3f89887235fc9c8d9d7afbbdea3d79bace810
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923088"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630799"
 ---
 # <a name="intro-to-controls-and-patterns"></a>Введение в работу с элементами управления и шаблонами
 
-В разработке приложений UWP *элемент управления*— это элемент пользовательского интерфейса, отображающий содержимое или обеспечивающий взаимодействие. Пользовательский интерфейс приложения, используемый для отображения и ввода данных пользователем, создается с помощью элементов управления, таких как кнопки, текстовые поля и поля со списком.
+В разработке приложений UWP *элемент управления* — это элемент пользовательского интерфейса, отображающий содержимое или обеспечивающий взаимодействие. Пользовательский интерфейс приложения, используемый для отображения и ввода данных пользователем, создается с помощью элементов управления, таких как кнопки, текстовые поля и поля со списком.
 
-> **Важные API-интерфейсы**: [пространство имен Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **Важные API-интерфейсы**: [Пространство имен Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
-*Шаблон*— это макет для изменения элемента управления или объединения нескольких элементов управления, позволяющий получить что-то новое. Например [подробных](master-details.md) способ можно использовать элемент управления [SplitView](split-view.md) для навигации по приложению. Аналогичным образом вы можете настроить шаблон элемента управления [NavigationView](navigationview.md) , чтобы реализовать шаблон вкладки.
+*Шаблон* — это макет для изменения элемента управления или объединения нескольких элементов управления, позволяющий получить что-то новое. Например [основной/подробности](master-details.md) шаблон — это способ, который можно использовать [SplitView](split-view.md) управления для переходов приложения. Аналогичным образом, можно настроить шаблон из [NavigationView](navigationview.md) управления для реализации шаблона вкладки.
 
 В большинстве случаев элемент управления можно использовать в его исходном виде. Однако элементы управления XAML отделяют функционал приложения от его структуры и внешнего вида, поэтому вы можете вносить изменения разной степени, чтобы элементы управления соответствовали вашим целям. В разделе [Стиль](../style/index.md) приведены инструкции по использованию [Стилей XAML](xaml-styles.md) и [шаблонов элементов управления](control-templates.md) для изменения элемента управления.
 
@@ -141,7 +141,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 Button1.Click += new RoutedEventHandler(Button_Click);
 ```
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Статьи по теме
 
 -   [Указатель элементов управления по функциям](controls-by-function.md)
 -   [Пространство имен Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)

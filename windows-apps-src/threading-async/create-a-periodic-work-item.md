@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, периодический рабочий элемент, потоки, таймеры
 ms.localizationpriority: medium
 ms.openlocfilehash: 05ed3b4bc4fa6dbe1119dca40d22107e94cea576
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981548"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636909"
 ---
 # <a name="create-a-periodic-work-item"></a>Создание периодического рабочего элемента
 
@@ -27,11 +27,11 @@ ms.locfileid: "8981548"
 
 Для создания периодического рабочего элемента используется метод [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915). Создайте лямбда-функцию, выполняющую работу, и используйте параметр *period* для указания интервала между отправками. Период указывается с помощью структуры [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996). Рабочий элемент будет отправляться каждый раз по истечении периода времени, поэтому убедитесь, что этот период является достаточным для завершения работы.
 
-[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) возвращает объект [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Храните этот объект на случай, если таймер придется отменить.
+[**CreateTimer** ](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) возвращает [ **ThreadPoolTimer** ](https://msdn.microsoft.com/library/windows/apps/BR230587) объекта. Храните этот объект на случай, если таймер придется отменить.
 
-> **Примечание**не указывайте нулевое значение (или значения меньше одной миллисекунды) в течение интервала. Это приведет к тому, что периодический таймер будет вести себя как одиночный.
+> **Примечание**  не рекомендуется указывать значение, равное нулю (или любое значение менее одной миллисекунды) для интервала. Это приведет к тому, что периодический таймер будет вести себя как одиночный.
 
-> **Примечание** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) можно использовать для доступа к пользовательского интерфейса и отображения хода выполнения из рабочего элемента.
+> **Примечание**  можно использовать [ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317) доступ к пользовательскому Интерфейсу и отображает ход выполнения задания из рабочего элемента.
 
 В следующем фрагменте кода создается рабочий элемент, который запускается каждые 60 секунд.
 
@@ -196,11 +196,11 @@ ms.locfileid: "8981548"
 > PeriodicTimer->Cancel();
 > ```
 
-## <a name="remarks"></a>Примечания.
+## <a name="remarks"></a>Замечания
 
 Подробнее об одиночных таймерах см. в разделе [Отправка рабочего элемента по таймеру](use-a-timer-to-submit-a-work-item.md).
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)

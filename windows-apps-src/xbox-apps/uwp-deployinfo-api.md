@@ -5,17 +5,17 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 7543b41c6ee1d9c07f4540012f84dccc10bb4d76
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922784"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638009"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>Запрашивает сведения о развертывании для одного или нескольких установленных пакетов.
 
 **Запрос**
 
-Метод      | URI запроса
+Метод      | Универсальный код ресурса (URI) запроса
 :------     | :------
 POST | /ext/app/deployinfo
 <br />
@@ -43,7 +43,7 @@ JSON-массив в следующем формате:
 
 * DeployInfo
   * PackageFullName — имя пакета, о котором мы получаем сведения.
-  * DeployType— тип развертывания.
+  * DeployType — тип развертывания.
   * DeployPathOrSpecifiers — путь для свободных развертываний или установленных описателей для упакованных развертываний.
   * DeployDrive — диск, на котором развертывается пакет (для применимых типов развертывания).
   * DeploySizeInBytes — размер пакета в байтах для применимых типов развертывания.
@@ -55,11 +55,11 @@ JSON-массив в следующем формате:
 
 Код состояния HTTP      | Описание
 :------     | :-----
-200 | Успех
+200 | Успешно
 4XX | Коды ошибок
 5XX | Коды ошибок
 <br />
 
-**Доступные семейства устройств**
+**Семейств доступных устройств**
 
 * Windows Xbox

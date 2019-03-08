@@ -7,20 +7,20 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dbcaa683e2c7a2bb18d88fcba03e10fa951d4459
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934290"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626159"
 ---
 # <a name="deploy-barcode-scanner-profiles-with-mdm"></a>Развернуть профили сканер штрихкодов с помощью MDM
 
-**Примечание**этой функции требуется Windows10 Mobile или более поздней версии.
+**Примечание**  этой функции требуется Windows 10 Mobile или более поздней версии.
 
-Профили сканера штрихкодов можно развернуть с помощью MDM-сервера. Чтобы развернуть профили, используйте *OemProfile* в [EnterpriseExtFileSystem CSP](https://msdn.microsoft.com/library/windows/hardware/mt157025) для размещения их в папке \\Data\\SharedData\\OEM\\Public\\Profile. Эти профили сканера могут затем использоваться производителями драйвера для настройки параметров, недоступных через поверхность API.
+Профили сканера штрихкодов можно развернуть с помощью MDM-сервера. Чтобы развернуть профили, используйте *OemProfile* в [EnterpriseExtFileSystem CSP](https://msdn.microsoft.com/library/windows/hardware/mt157025) размещать их в \\данных\\SharedData\\OEM\\ Открытый\\папки профиля. Эти профили сканера могут затем использоваться производителями драйвера для настройки параметров, недоступных через поверхность API.
 
 Майкрософт не определяет специфику профиля сканера или методы их реализации.
 
-## <a name="related-topics"></a>Еще по теме
-- [Поставщик служб конфигурации EnterpriseExtFileSystem](https://msdn.microsoft.com/library/windows/hardware/mt157025)
+## <a name="related-topics"></a>Статьи по теме
+- [EnterpriseExtFileSystem CSP](https://msdn.microsoft.com/library/windows/hardware/mt157025)
 - [Поддержка устройств сканера штрихкодов](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-device-support#barcode-scanner)

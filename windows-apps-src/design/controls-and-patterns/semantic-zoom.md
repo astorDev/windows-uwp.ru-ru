@@ -1,22 +1,22 @@
 ---
-Description: A semantic zoom control allows the user to zoom between two different semantic views of the same data set.
+Description: Элемент управления Semantic Zoom дает пользователю возможность изменять масштаб, переходя от одного семантического представления одного и того же набора данных к другому.
 title: Контекстное масштабирование
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 210cca8a4b17b77e8c1f9cb490a79bcd1a53b6c7
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058795"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627619"
 ---
 # <a name="semantic-zoom"></a>Контекстное масштабирование
 
@@ -29,7 +29,7 @@ ms.locfileid: "9058795"
 
 Например, при просмотре адресной книги пользователь может уменьшить масштаб, чтобы быстро перейти к списку имен на букву "Б", а затем, увеличив масштаб представления, просмотреть имена на эту букву. 
 
-> **Важные API-интерфейсы**: [класс SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601), [класс ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
+> **Важные API-интерфейсы**: [Класс SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601), [класса ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
 
 **Возможности**:
 
@@ -52,20 +52,20 @@ ms.locfileid: "9058795"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/SemanticZoom">открыть приложение и увидеть SemanticZoom в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-**Приложение "Фотографии"**
+**Приложение "фотографии"**
 
 Это контекстное масштабирование в приложении "Фотографии". Фотографии группируются по месяцам. При выборе названия месяца в представлении таблицы по умолчанию изображение уменьшается до представления списка месяцев для ускорения навигации.
 
 ![Контекстное масштабирование в приложении "Фотографии"](images/control-examples/semantic-zoom-photos.png)
 
-**адресная книга;**
+**Адресная книга**
 
 Адресная книга — еще один пример набора данных, по которому может быть гораздо удобнее перемещаться при помощи контекстного масштабирования. Уменьшенное представление можно использовать для быстрого перехода к определенной букве (левое изображение), а в представлении с увеличенным масштабом отображаются отдельные элементы данных (правое изображение).
 
@@ -80,9 +80,9 @@ ms.locfileid: "9058795"
 - Увеличенное представление, в котором отображаются данные на уровне элемента.
 - Уменьшенное представление, в котором отображаются данные уровня группы.
 
-Прежде чем использовать контекстное масштабирование, вы должны знать, как использовать представление списка со сгруппированными данными. Дополнительные сведения см. в разделе [представления списка и сетки](listview-and-gridview.md). 
+Прежде чем использовать контекстное масштабирование, вы должны знать, как использовать представление списка со сгруппированными данными. Дополнительные сведения см. в разделе [списка и представление сетки](listview-and-gridview.md). 
 
-> **Примечание.**&nbsp;&nbsp;Чтобы определить увеличенное и уменьшенное представление элемента управления SemanticZoom, можно использовать любые два элемента управления, реализующие интерфейс [ISemanticZoomInformation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.isemanticzoominformation.aspx). Платформа XAML предоставляет три элемента управления, которые реализуют этот интерфейс: ListView, GridView и Hub.
+> **Примечание.**&nbsp;&nbsp;Чтобы определить увеличенное и уменьшенное представление элемента управления SemanticZoom, можно использовать любые два элемента управления, реализующие интерфейс [ISemanticZoomInformation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.isemanticzoominformation.aspx). Платформа XAML предоставляет 3 элементов управления, реализующих этот интерфейс: ListView, GridView и центром.
  
  Данный пример XAML демонстрирует структуру элемента управления SemanticZoom. Другие элементы управления назначаются свойствам ZoomedInView и ZoomedOutView.
  
@@ -98,9 +98,9 @@ ms.locfileid: "9058795"
 </SemanticZoom>
  ```
  
-Приведенные здесь примеры взяты со страницы SemanticZoom [Пример базовых характеристик пользовательского интерфейса XAML](https://go.microsoft.com/fwlink/p/?LinkId=619992). Чтобы просмотреть код полностью, включая источник данных, нужно загрузить этот пример. Это контекстное масштабирование использует класс GridView для представления увеличенного представления, а класс ListView— для уменьшенного представления.
+Приведенные здесь примеры взяты со страницы SemanticZoom [Пример базовых характеристик пользовательского интерфейса XAML](https://go.microsoft.com/fwlink/p/?LinkId=619992). Чтобы просмотреть код полностью, включая источник данных, нужно загрузить этот пример. Это контекстное масштабирование использует класс GridView для представления увеличенного представления, а класс ListView — для уменьшенного представления.
   
-**Определение увеличенного представления**
+**Определение представления — увеличенное**
 
 Это элемент управления GridView для увеличенного представления. Увеличенное представление должно отображать отдельные элементы данных в группах. В этом примере показано, как отображать элементы в сетке с изображением и текстом. 
 
@@ -140,7 +140,7 @@ ms.locfileid: "9058795"
 </DataTemplate>
 ```
 
-**Определение уменьшенного представления**
+**Определите уменьшенное представление**
 
 Этот код XAML определяет элемент управления ListView для уменьшенного представления. Этот пример показывает, как отобразить заголовки группы в качестве текста в списке.
 
@@ -198,11 +198,11 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
 - [Основы проектирования навигации](../basics/navigation-basics.md)
-- [Представления списка и сетки](listview-and-gridview.md)
-- [Контейнеры и шаблоны элементов](item-containers-templates.md)
+- [Представление списка и представление сетки](listview-and-gridview.md)
+- [Контейнеры элементов и шаблонов](item-containers-templates.md)
 
 
 

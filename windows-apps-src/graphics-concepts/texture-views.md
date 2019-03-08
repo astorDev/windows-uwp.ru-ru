@@ -1,20 +1,20 @@
 ---
-title: Представления текстур
+title: Представления текстуры
 description: В Direct3D доступ к ресурсам текстур осуществляется через представление, которое представляет собой механизм аппаратной интерпретации ресурсов в памяти.
 ms.assetid: 18DABFCE-8A36-4C4E-B08E-10428B05D701
 keywords:
-- Представления текстур
+- Представления текстуры
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e9167db4648dd193acaff0a224f3378486d171ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941068"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638449"
 ---
-# <a name="texture-views"></a>Представления текстур
+# <a name="texture-views"></a>Представления текстуры
 
 
 В Direct3D доступ к ресурсам текстур осуществляется через представление, которое представляет собой механизм аппаратной интерпретации ресурсов в памяти. Представление позволяет определенному циклу конвейера получать доступ только к необходимым ему [вложенным ресурсам](resource-types.md) в виде, требуемом для приложения.
@@ -31,7 +31,7 @@ ms.locfileid: "8941068"
 
 ![Иллюстрация привязки только ко второму уровню MIP-карты массива текстур](images/d3d10-cube-texture-faces-subresource.png)
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Ресурсы](resources.md)

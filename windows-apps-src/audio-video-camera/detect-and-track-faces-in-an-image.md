@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fdeb3f18e6500cc0a907e725f34c0eb96d33876e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045935"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640839"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Обнаружение лиц на изображениях или в видео
 
 
 
-\[Некоторые сведения относятся к предварительным версиям продуктов, в которые перед коммерческим выпуском могут быть внесены существенные изменения. Майкрософт не дает никаких гарантий, явных или подразумеваемых, в отношении предоставленной здесь информации.\]
+\[Некоторая информация имеет отношение к предварительному выпуску продукта, который может быть значительно изменен перед коммерческим выпуском. Майкрософт не предоставляет никаких гарантий, явных или подразумеваемых, относительно предоставленной здесь информации.\]
 
 В этом разделе объясняется, как использовать [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) для обнаружения лиц на изображении. Инструмент [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) оптимизирован для отслеживания лиц с течением времени в последовательности видеокадров.
 
@@ -29,7 +29,7 @@ ms.locfileid: "9045935"
 
 Класс [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) позволяет обнаружить одно или несколько лиц на неподвижном изображении.
 
-В этом примере используются API из следующих пространств имен.
+В этом примере используется API из следующих пространств имен.
 
 [!code-cs[FaceDetectionUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceDetectionUsing)]
 
@@ -49,7 +49,7 @@ ms.locfileid: "9045935"
 
 [!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-Создайте экземпляр объекта **FaceDetector**, вызвав [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), а затем вызовите [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), передав точечный рисунок, который был масштабирован до оптимального размера и преобразован в поддерживаемый формат пикселей. Этот метод возвращает список объектов [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). **ShowDetectedFaces**— это вспомогательный метод, показанный ниже, который рисует квадраты вокруг лиц на изображении.
+Создайте экземпляр объекта **FaceDetector**, вызвав [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), а затем вызовите [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), передав точечный рисунок, который был масштабирован до оптимального размера и преобразован в поддерживаемый формат пикселей. Этот метод возвращает список объектов [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). **ShowDetectedFaces** — это вспомогательный метод, показанный ниже, который рисует квадраты вокруг лиц на изображении.
 
 [!code-cs[Detect](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 
@@ -95,11 +95,11 @@ ms.locfileid: "9045935"
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 
-* [Анализ сцен для захвата мультимедиа](scene-analysis-for-media-capture.md)
-* [Пример базового обнаружения лиц](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [Пример базового отслеживания лиц](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [Анализ сцены для записи мультимедиа](scene-analysis-for-media-capture.md)
+* [Пример простого обнаружение лиц](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [Пример простого отслеживания лиц](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [Камера](camera.md)
-* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Воспроизведение мультимедиа](media-playback.md)

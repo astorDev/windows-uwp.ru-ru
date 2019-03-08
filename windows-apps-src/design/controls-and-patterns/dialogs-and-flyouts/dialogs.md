@@ -1,5 +1,5 @@
 ---
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
+Description: Диалоговые окна и всплывающие элементы используются для временного отображения элементов пользовательского интерфейса по запросу пользователя, либо если происходит нечто, требующее уведомления или подтверждения.
 title: Диалоговые элементы управления
 label: Dialogs
 template: detail.hbs
@@ -13,28 +13,28 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: bee954cba446ac7dc7eb41622d9275b3b73af6ee
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116103"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621839"
 ---
 # <a name="dialog-controls"></a>Диалоговые элементы управления
 
-Элементы управления диалогового окна — это модальные наложения пользовательского интерфейса, которые предоставляют контекстную информацию о приложении. Они блокируют взаимодействие с окном приложения, пока не будут закрыты явным образом. Они часто требуют от пользователя совершения каких-либо действий.
+Элементы управления диалоговых окон являются модальное наложений пользовательского интерфейса, которые предоставляют сведения о контекстно-зависимое приложение. Взаимодействие с окном приложения они блокировать до явным образом было отклонено. Они часто требуют от пользователя совершения каких-либо действий.
 
 ![Пример диалогового окна](../images/dialogs/dialog_RS2_delete_file.png)
 
 
-> **Важные API -интерфейсы**: [класс ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+> **Важные API-интерфейсы**: [Класс ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
-## <a name="is-this-the-right-control"></a>Выбор подходящего элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Диалоговые окна используются для уведомления пользователей о важной информации или запроса подтверждения либо дополнительных сведений перед совершением действия.
 
-Рекомендации по использованию диалогового окна и когда следует использовать всплывающий элемент (аналогичного элемента управления), см. в разделе [диалоговые окна и всплывающие элементы](index.md). 
+Рекомендации по использованию диалогового окна и когда следует использовать всплывающее окно (аналогичного элемента управления), см. в разделе [диалоговые окна и всплывающие окна](index.md). 
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -43,7 +43,7 @@ ms.locfileid: "9116103"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы открыть приложение и увидеть <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> или <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> в действии.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -70,7 +70,7 @@ ms.locfileid: "9116103"
 -   Не используйте диалоговые окна при возникновении контекстно-зависимых от определенной области на странице ошибок, таких как ошибки при проверке (например, в полях для ввода паролей). Используйте непосредственно элемент Canvas приложения для отображения внутренних ошибок.
 - Используйте [класс ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) для построения работы в диалоговом окне. Не используйте устаревший MessageDialog API.
 
-## <a name="how-to-create-a-dialog"></a>Создание диалогового окна
+## <a name="how-to-create-a-dialog"></a>Как создать диалоговое окно
 Для создания диалогового окна используется [класс ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog). Диалоговое окно можно создать в виде кода или разметки. Хотя обычно проще определять элементы пользовательского интерфейса в XAML, при создании простого диалогового окна удобнее использовать обычный код. В этом примере показано создание диалогового окна для уведомления пользователя об отсутствии подключения к сети WiFi, а для отображения диалогового окна используется метод [ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync).
 
 ```csharp
@@ -118,8 +118,8 @@ private async void DisplayDeleteFileDialog()
 }
 ```
 
-## <a name="provide-a-safe-action"></a>Обеспечить безопасное действие
-Поскольку диалоговые окна блокируют взаимодействие с пользователем, и кнопки — это основной механизм, позволяющий пользователям закрыть диалоговое окно, убедитесь, что диалоговое окно содержит по крайней мере одну кнопку "Безопасность" и обратимое, например, "Закрыть" или "Получено!". **Все диалоговые окна должны содержать, по крайней мере, одну безопасную кнопку действия, чтобы закрыть диалоговое окно.** Это гарантирует, что пользователь может уверенно закрыть диалоговое окно без выполнения действий пользователя.<br>![Диалоговое окно с одной кнопкой](../images/dialogs/dialog_RS2_one_button.png)
+## <a name="provide-a-safe-action"></a>Обеспечивают безопасное действие
+Поскольку диалоговые окна блокируют взаимодействие с пользователем, и кнопки — это основной механизм, позволяющий пользователям закрыть диалоговое окно, убедитесь, что диалоговое окно содержит по крайней мере одну кнопку "Безопасность" и обратимое, например, "Закрыть" или "Получено!". **Все диалоги должны содержать по крайней мере один безопасное действие кнопку, чтобы закрыть диалоговое окно.** Это гарантирует, что пользователь может уверенно закрыть диалоговое окно без выполнения действий пользователя.<br>![Окно сообщения об одной кнопки](../images/dialogs/dialog_RS2_one_button.png)
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -204,7 +204,7 @@ ContentDialog имеет три различных типа кнопки, кот
 Когда пользователь нажимает на PrimaryButton [ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) метод возвращает ContentDialogResult.Primary.
 Когда пользователь нажимает кнопку SecondaryButton, метод [ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) возвращает ContentDialogResult.Secondary.
 
-![Диалоговое окно три кнопки](../images/dialogs/dialog_RS2_three_button.png)
+![Диалоговое окно с тремя кнопками](../images/dialogs/dialog_RS2_three_button.png)
 
 ### <a name="defaultbutton"></a>DefaultButton
 При необходимости можно дифференциировать одну из трех кнопок как кнопку по умолчанию. Указание кнопку по умолчанию вызывает происходит следующее:
@@ -258,8 +258,8 @@ private async void DisplaySubscribeDialog()
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 - [Подсказки](../tooltips.md)
-- [Меню и контекстное меню](../menus.md)
-- [Класс Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+- [Меню и контекстного меню](../menus.md)
+- [Класс всплывающего меню](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 - [Класс ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)

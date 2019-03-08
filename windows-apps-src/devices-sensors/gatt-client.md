@@ -1,18 +1,18 @@
 ---
-title: Клиент GATT Bluetooth
-description: В этой статье представлен обзор Bluetooth Generic Attribute Profile (GATT) клиента для приложений универсальной платформы Windows (UWP), а также пример кода для наиболее распространенных случаев использования.
+title: Клиент Bluetooth GATT
+description: В этой статье представлен обзор клиента Bluetooth Generic Attribute Profile (GATT) для приложений универсальной платформы Windows (UWP), а также пример кода для распространенных сценариев.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ae656b473a4dd5999588057b0ec970645703eec
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928296"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635089"
 ---
-# <a name="bluetooth-gatt-client"></a>Клиент GATT Bluetooth
+# <a name="bluetooth-gatt-client"></a>Клиент Bluetooth GATT
 
 
 **Важные API**
@@ -20,40 +20,40 @@ ms.locfileid: "8928296"
 -   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
 -   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
 
-В этой статье показано использование API-интерфейсы клиента Bluetooth Generic Attribute (GATT) для приложений универсальной платформы Windows (UWP), а также пример кода для типичных задач клиент GATT:
-- Запрос ближайшие устройства
+В этой статье описывается использование API-интерфейсов клиента Bluetooth Generic Attribute (GATT) для приложений универсальной платформы Windows (UWP) и приводится пример кода для основных задач клиента GATT.
+- Отправка запросов для ближайших устройств
 - Подключение к устройству
 - Перечисление поддерживаемых служб и характеристик устройства
-- Чтение и запись в характеристикой
-- Подписка для уведомления при форматировать значение изменений
+- Чтение и запись в характеристику
+- Подписка на уведомления об изменении значения характеристики
 
 ## <a name="overview"></a>Обзор
-Разработчики могут использовать API-интерфейсы в пространстве имен [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) для доступа к устройствам Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ. Функции устройств Bluetooth с низким энергопотреблением доступны через набор:
+С помощью API-интерфейсов в пространстве имен [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) разработчики получают доступ к устройствам Bluetooth с низким энергопотреблением. Функции устройств Bluetooth с низким энергопотреблением доступны через набор:
 
 -   Службы
 -   характеристик;
 -   дескрипторов.
 
-Службы определяют функциональный контракт устройства с низким ЭНЕРГОПОТРЕБЛЕНИЕМ и содержат коллекцию характеристик, определяющих службу. Эти характеристики, в свою очередь, содержат дескрипторы, которые описывают характеристики. Эти условия 3 — известны как атрибуты устройства.
+Службы определяют функциональный контракт устройства с низким энергопотреблением и содержат набор характеристик, определяющих службу. Эти характеристики, в свою очередь, содержат дескрипторы, которые описывают характеристики. Эти 3 элемента, как правило, называют атрибутами устройства.
 
-API-интерфейсы Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ GATT предоставляют доступ к объектам и функциям, а не доступ к механизмам передачи. API-интерфейсы GATT также позволяют разработчикам работать с устройствами Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ возможность выполнять следующие задачи:
+API-интерфейсы Bluetooth GATT для устройств с низким энергопотреблением предоставляют доступ к объектам и функциям, а не собственно к механизмам передачи. Кроме того, API-интерфейсы Bluetooth GATT позволяют разработчикам работать с устройствами Bluetooth с низким энергопотреблением и выполнять следующие задачи:
 
--   Обнаружение атрибута
+-   Обнаружение атрибутов
 -   Чтение и запись значений атрибутов
--   Регистрация обратного вызова для события Characteristic.ValueChanged.
+-   Регистрация обратного вызова для события Characteristic ValueChanged
 
-Для создания реализации разработчик должен иметь представление о службах и характеристиках GATT, приложения для эффективной и обработка значения отдельных характеристик, например двоичных данных, предоставляемых API в полезные данные перед показать пользователю. API Bluetooth GATT предоставляют только основные примитивы, необходимые для взаимодействия с устройством Bluetooth с низким энергопотреблением. Для интерпретации данных необходимо определить профиль приложения. Для этого используется либо стандартный профиль Bluetooth SIG, либо настраиваемый профиль, реализованный поставщиком устройства. Профиль создает контракт привязки между приложением и устройством в отношении содержимого передаваемых данных и их интерпретации.
+Для эффективной реализации разработчик должен иметь представление о службах и характеристиках GATT, которые будет обрабатывать приложение. Он должен уметь преобразовывать значения отдельных характеристик, например двоичных данных, предоставляемых API-интерфейсами, в полезные данные, отображаемые для пользователей. API Bluetooth GATT предоставляют только основные примитивы, необходимые для взаимодействия с устройством Bluetooth с низким энергопотреблением. Для интерпретации данных необходимо определить профиль приложения. Для этого используется либо стандартный профиль Bluetooth SIG, либо настраиваемый профиль, реализованный поставщиком устройства. Профиль создает контракт привязки между приложением и устройством в отношении содержимого передаваемых данных и их интерпретации.
 
 Для удобства Bluetooth SIG ведет [список доступных общих профилей](https://www.bluetooth.com/specifications/adopted-specifications#gattspec).
 
-## <a name="query-for-nearby-devices"></a>Запрос ближайшие устройства
-Существует два основных способа запросить ближайшие устройства.
+## <a name="query-for-nearby-devices"></a>Отправка запросов для ближайших устройств
+Существует два основных метода отправки запросов для ближайших устройств:
 - DeviceWatcher в Windows.Devices.Enumeration
 - AdvertisementWatcher в Windows.Devices.Bluetooth.Advertisement
 
-Метод 2-го описывается объяснял в документации для [объявления](ble-beacon.md) , он не будет рассказано гораздо здесь, но основная идея — это адрес Bluetooth ближайшие устройства, которые удовлетворяют определенным [Рекламный фильтр](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter.aspx)поиска. Получив адрес, вы можете вызвать [BluetoothLEDevice.FromBluetoothAddressAsync](https://msdn.microsoft.com/en-us/library/windows/apps/mt608819.aspx) для получения ссылки на устройстве. 
+Второй метод подробно рассматривается в документации по классу [Advertisement](ble-beacon.md), поэтому здесь упоминается только основной принцип — поиск адресов ближайших устройств Bluetooth, соответствующих критериям конкретного [фильтра объявления](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter.aspx). Когда адрес найден, можно вызвать [BluetoothLEDevice.FromBluetoothAddressAsync](https://msdn.microsoft.com/en-us/library/windows/apps/mt608819.aspx) для получения ссылки на устройство. 
 
-Вернемся к методу DeviceWatcher. Устройство Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ так же, как и любого другого устройства в Windows и можно запросить с помощью [Интерфейсов API перечисления](https://msdn.microsoft.com/library/windows/apps/BR225459). Используйте класс [DeviceWatcher](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher) и передайте строку запроса, указав устройств для поиска: 
+Вернемся к методу DeviceWatcher. Устройство Bluetooth с низким энергопотреблением ничем не отличается от любых других устройств в Windows. Запрос к этому устройству можно отправить с помощью [API-интерфейсов перечисления](https://msdn.microsoft.com/library/windows/apps/BR225459). Используйте класс [DeviceWatcher](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher), чтобы передать строку запроса с указанием искомых устройств: 
 
 ```csharp
 // Query for extra properties you want returned
@@ -78,10 +78,10 @@ deviceWatcher.Stopped += DeviceWatcher_Stopped;
 // Start the watcher.
 deviceWatcher.Start();
 ```
-После начала DeviceWatcher, вы будете получать [DeviceInformation](https://msdn.microsoft.com/library/windows/apps/br225393) для каждого устройства, который удовлетворяет запрос в обработчике для события [Added](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.added) рассматриваемый устройств. Более подробное описание DeviceWatcher см. Полный пример [на Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing). 
+После запуска DeviceWatcher вы получите [DeviceInformation](https://msdn.microsoft.com/library/windows/apps/br225393) для каждого устройства, соответствующего критериям запроса, в обработчике события [Added](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.added) для соответствующих устройств. Чтобы получить более полное представление о методе DeviceWatcher, см. полный пример кода [на Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing). 
 
 ## <a name="connecting-to-the-device"></a>Подключение к устройству
-После обнаружения нужного устройства используйте [DeviceInformation.Id](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.id) для получения объекта устройства Bluetooth с низким ЭНЕРГОПОТРЕБЛЕНИЕМ для устройства: 
+После обнаружения нужного устройства используйте [DeviceInformation.Id](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.id), чтобы получить объект BluetoothLEDevice для соответствующего устройства: 
 
 ```csharp
 async void ConnectDevice(DeviceInformation deviceInfo)
@@ -91,15 +91,15 @@ async void ConnectDevice(DeviceInformation deviceInfo)
     // ...
 }
 ```
-С другой стороны, ликвидировать все ссылки на BluetoothLEDevice объект на устройстве (и если другое приложение в системе ссылку на устройстве) будет отправлено автоматически отключиться после небольшой ожидания. 
+С другой стороны, при удалении всех ссылок на объект BluetoothLEDevice инициируется автоматическое отключение от устройства после короткого периода ожидания (если на это устройство не ссылаются другие приложения в системе). 
 
 ```csharp
 bluetoothLeDevice.Dispose();
 ```
-Если приложение должно снова доступ к устройству, просто повторного создания объекта устройства и доступа к характеристикой (описано в следующем разделе) будет отправлено операционная система повторно подключиться при необходимости. Если устройство находится поблизости от него, вы получите доступ к устройству в противном случае будет возвращено с ошибкой DeviceUnreachable.  
+Если приложению снова потребуется доступ к устройству, создайте объект устройства заново и предоставьте доступ к характеристике (см. следующий раздел). После этого операционная система будет инициировать повторное подключение по требованию. Если устройство находится поблизости, вы получите доступ к нему. В противном случае будет получен ответ с ошибкой DeviceUnreachable.  
 
-## <a name="enumerating-supported-services-and-characteristics"></a>Перечисление поддерживаемых службах и характеристиках
-Теперь у вас есть объект BluetoothLEDevice, следующий шаг — для обнаружения устройства предоставляет данные. Первым шагом для этого является запрашивать службы: 
+## <a name="enumerating-supported-services-and-characteristics"></a>Перечисление поддерживаемых служб и характеристик
+Теперь, когда у вас есть объект BluetoothLEDevice, можно перейти к следующему шагу — обнаружению данных, предоставляемых устройством. Сначала необходимо запросить службы: 
 
 ```csharp
 GattDeviceServicesResult result = await bluetoothLeDevice.GetGattServicesAsync();
@@ -110,7 +110,7 @@ if (result.Status == GattCommunicationStatus.Success)
     // ...
 }
 ```
-После определения службы объектов на карте, следующим шагом является запрос характеристики. 
+После определения нужных служб необходимо запросить характеристики. 
 
 ```csharp
 GattCharacteristicsResult result = await service.GetCharacteristicsAsync();
@@ -121,13 +121,13 @@ if (result.Status == GattCommunicationStatus.Success)
     // ...
 }
 ```  
-Операционная система возвращает ReadOnly список GattCharacteristic объектов, что можно выполнять операции на.
+Операционная система возвращает список ReadOnly, где перечислены объекты GattCharacteristic, с которыми можно выполнять операции.
 
-## <a name="perform-readwrite-operations-on-a-characteristic"></a>Выполнять операции чтения и записи на характеристикой
+## <a name="perform-readwrite-operations-on-a-characteristic"></a>Выполнение операций чтения и записи с характеристикой
 
-Характеристика является неотъемлемой частью GATT на основе связи. Он содержит значение, представляющее определенную часть данных на устройстве. Например Эта характеристика уровня заряда батареи имеет значение, представляющее уровень заряда аккумулятора устройства.
+Характеристика — неотъемлемая часть обмена данными с использованием GATT. Она содержит значение, представляющее уникальный фрагмент данных на устройстве. Например, характеристика Battery Level содержит значение, представляющее уровень заряда аккумулятора устройства.
 
-Прочтите характеристик свойства, чтобы определить, какие операции поддерживаются.
+Изучите свойства характеристики, чтобы определить поддерживаемые операции:
 ```csharp
 GattCharacteristicProperties properties = characteristic.CharacteristicProperties
 
@@ -145,7 +145,7 @@ if(properties.HasFlag(GattCharacteristicProperties.Notify))
 }
 ```
 
-Если чтение поддерживается, вы можете прочитать значение: 
+Если поддерживается чтение, можно прочитать значение: 
 ```csharp
 GattReadResult result = await selectedCharacteristic.ReadValueAsync();
 if (result.Status == GattCommunicationStatus.Success)
@@ -156,7 +156,7 @@ if (result.Status == GattCommunicationStatus.Success)
     // Utilize the data as needed
 }
 ```
-Запись характеристикой выполняется по аналогичной схеме: 
+Запись в характеристику выполняется по аналогичному шаблону: 
 ```csharp
 var writer = new DataWriter();
 // WriteByte used for simplicity. Other commmon functions - WriteInt16 and WriteSingle
@@ -168,18 +168,18 @@ if (result.Status == GattCommunicationStatus.Success)
     // Successfully wrote to device
 }
 ```
-> **Совет**: получение знакомы с использованием [DataReader](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datareader.aspx) и [DataWriter](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datawriter.aspx). Их функциональные возможности будут необходимые при работе с необработанных буферов, которые вы получаете из многих интерфейсов API для Bluetooth. 
-## <a name="subscribing-for-notifications"></a>Подписка для уведомлений
+> **Совет**. Ознакомьтесь с помощью [DataReader](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datareader.aspx) и [DataWriter](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datawriter.aspx). Их функциональные возможности незаменимы в операциях с необработанными буферами, которые передаются многими API-интерфейсами Bluetooth. 
+## <a name="subscribing-for-notifications"></a>Подписка на уведомления
 
-Убедитесь, что эта характеристика поддерживает сообщения и уведомления (проверьте характеристики свойства, чтобы убедиться, что). 
+Проверьте свойства характеристики и убедитесь, что характеристика поддерживает операцию Indicate или Notify. 
 
-> **Выделяет**: указать, считается более надежным, так как каждое событие изменения значения сочетается с подтверждение с клиентского устройства. Уведомлять связано с более распространенными вредоносными большинство операций GATT будет вместо энергии, а не упором. В любом случае все из них обрабатывается на уровне контроллера, чтобы приложение не участвует. Мы будем визуально называть их просто «notifications», но теперь вы знаете. 
+> **Выделить**: Указать, считается более надежным, так как каждое значение изменено событие связана с подтверждения от клиентского устройства. Операция Notify используется чаще, так как большинство транзакций GATT обеспечивает экономию энергии, а не высочайший уровень надежности. Так или иначе, все эти операции обрабатываются на уровне контроллера без участия приложения. В дальнейшем для этих операций будет использоваться собирательный термин "уведомления". 
 
-Существует два аспекта, которые обеспечивают до получения уведомления.
-- Запись в дескриптор характеристик конфигурации клиента (CCCD)
+Перед получением уведомлений необходимо обеспечить выполнение двух условий:
+- Запись в дескриптор конфигурации характеристик клиента (Client Characteristic Configuration, CCCD)
 - Обработка события Characteristic.ValueChanged
 
-Запись CCCD сообщает устройству сервера, этот клиент хочет получить каждый раз, когда для изменения конкретного форматировать значение. Для этого выполните следующие действия. 
+Запись в CCCD сообщает серверу, что данный клиент должен получать оповещение каждый раз, когда меняется значение определенной характеристики. Выполните указанные ниже действия. 
 
 ```csharp
 GattCommunicationStatus status = await selectedCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(
@@ -189,7 +189,7 @@ if(status == GattCommunicationStatus.Success)
     // Server has been informed of clients interest.
 }
 ```
-Теперь событие ValueChanged GattCharacteristic будет вызываться каждый раз, когда значение получает было изменено на удаленном устройстве. Остается является реализация обработчика: 
+Теперь событие ValueChanged для GattCharacteristic будет вызываться при каждом изменении значения на удаленном устройстве. Осталось только реализовать обработчик: 
 
 ```csharp
 characteristic.ValueChanged += Characteristic_ValueChanged;

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 407ceeb4964e616bdbcacb14620ed1a488a0072b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924774"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618219"
 ---
 # <a name="xkey-attribute"></a>Атрибут x:Key
 
@@ -38,7 +38,7 @@ ms.locfileid: "8924774"
 
 | Термин | Описание |
 |------|-------------|
-| object | Любой объект, к которому можно открыть общий доступ. См. раздел [Ссылки на ресурсы ResourceDictionary и XAML](https://msdn.microsoft.com/library/windows/apps/mt187273). |
+| Объект | Любой объект, к которому можно открыть общий доступ. См. раздел [Ссылки на ресурсы ResourceDictionary и XAML](https://msdn.microsoft.com/library/windows/apps/mt187273). |
 | stringKeyValue | Строка true используется в качестве ключа, который должен соответствовать грамматике _XamlName_. См. раздел "Грамматика XamlName" ниже. | 
 
 ##  <a name="xamlname-grammar"></a>Грамматика XamlName
@@ -54,11 +54,11 @@ DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
 
--   Можно использовать только нижний диапазон символов ASCII, то есть латинские буквы верхнего и нижнего регистров, цифры и символ подчеркивания ("_").
+-   Символов только нижнего диапазона ASCII и точнее латинского алфавита прописные и строчные буквы, цифры и символ подчеркивания (\_) символов.
 -   Диапазон символов Юникод не поддерживается.
 -   Имя не может начинаться с цифры.
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Замечания
 
 Дочерние элементы [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) обычно содержат атрибут **x:Key**, который указывает уникальное значение ключа в этом словаре. Уникальность ключа требуется процессором XAML во время загрузки. Неуникальные значения **x:Key** приведут к исключениям синтаксического анализа XAML. Если этого требует [Расширение разметки {StaticResource}](staticresource-markup-extension.md), неразрешенный ключ также приведет к исключениям синтаксического анализа XAML.
 

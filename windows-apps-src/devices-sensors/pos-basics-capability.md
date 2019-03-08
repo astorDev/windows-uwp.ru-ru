@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c09a9093389fc0a917243773eae6803220ed610
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115758"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634689"
 ---
 # <a name="pointofservice-device-capability"></a>Возможность устройств PointOfService
 Доступ к API-интерфейсам PointOfService запрашивается путем объявления возможности в манифесте пакета приложения. Большую часть возможностей можно объявить, используя конструктор манифестов в Microsoft Visual Studio, либо добавить их вручную.  
@@ -22,7 +22,7 @@ ms.locfileid: "9115758"
 
 1. В **обозревателе решений** разверните узел проекта приложения UWP.
 2. Дважды щелкните файл **Package.appxmanifest**.  
-*Если файл манифеста уже открыт в представлении кода XML, Visual Studio предложит вам закрыть файл.*
+*Если файл манифеста открыт в окне просмотра кода XML, Visual Studio предложит закрыть его.*
 3. Откройте вкладку **Возможности**.
 4. Установите флажок рядом с пунктом **Point of Service** в списке возможностей, чтобы включить возможность точки обслуживания для устройства.
 

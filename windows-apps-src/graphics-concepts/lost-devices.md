@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f0b42a10c2cdd61aef84e08d6bd4f6408a978c3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922084"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617319"
 ---
 # <a name="lost-devices"></a>Потерянные устройства
 
@@ -24,10 +24,10 @@ ms.locfileid: "8922084"
 Все методы, которые являются производными от [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509), гарантированно будут работать после потери устройства. После потери устройства каждая функция обычно имеет следующие три варианта действий.
 
 -   Сбой с ошибкой «потеря устройства». Это означает, что приложение должно распознать потерю устройства, чтобы определить, что какие-то операции происходят не так, как ожидалось.
--   Тихий сбой с возвращением S\_OK или любого другого кода. Если происходит тихий сбой функции, приложение обычно не может различить результаты «успех» и «тихий сбой».
+-   Автоматически ошибкой, возвращая S\_ОК или любой другой код возврата — Если функция автоматически завершается ошибкой, приложение обычно не различает результат «успех» и «автоматической сбой».
 -   Возврат определенного кода.
 
-## <a name="span-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanresponding-to-a-lost-device"></a><span id="Responding_to_a_Lost_Device"></span><span id="responding_to_a_lost_device"></span><span id="RESPONDING_TO_A_LOST_DEVICE"></span>Реакция на потерю устройства
+## <a name="span-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanresponding-to-a-lost-device"></a><span id="Responding_to_a_Lost_Device"></span><span id="responding_to_a_lost_device"></span><span id="RESPONDING_TO_A_LOST_DEVICE"></span>Реагирование на потерянного устройства
 
 
 Потеря устройства должна привести к повторному созданию ресурсов (включая ресурсы видеопамяти) после его сброса. Если устройство потеряно, приложение отправляет запрос устройству, чтобы определить, можно ли восстановить его рабочее состояние. Если это невозможно, приложение ожидает, пока устройство не сможет быть восстановлено.
@@ -36,7 +36,7 @@ ms.locfileid: "8922084"
 
 В большинстве случаев при высокой частоте вызовов Direct3D не возвращается никакой информации о том, было ли устройство потеряно. Приложение может продолжить вызывать методы отрисовки, не получая уведомлений о потере устройства. Внутри системы эти операции отменяются, пока устройство не вернется в рабочее состояние.
 
-## <a name="span-idlockingoperationsspanspan-idlockingoperationsspanspan-idlockingoperationsspanlocking-operations"></a><span id="Locking_Operations"></span><span id="locking_operations"></span><span id="LOCKING_OPERATIONS"></span>Операции блокировки
+## <a name="span-idlockingoperationsspanspan-idlockingoperationsspanspan-idlockingoperationsspanlocking-operations"></a><span id="Locking_Operations"></span><span id="locking_operations"></span><span id="LOCKING_OPERATIONS"></span>Операциями блокировки
 
 
 Внутри системы Direct3D выполняет достаточный объем работы, чтобы гарантировать успешное завершение операции блокировки после потери устройства. Однако не гарантируется, что данные ресурсов видеопамяти будут точными во время операции блокировки. Гарантируется, что не произойдет возврата никакого кода ошибки. Это позволяет писать приложения, не беспокоясь о потере устройства во время операции блокировки.
@@ -59,7 +59,7 @@ Direct3D также позволяет приложениям копироват
 
 Операции копирования могут завершаться сбоем, поскольку при потере устройства нет первичной поверхности. Создание цепочки буферов также может завершаться ошибкой, поскольку при потере устройства невозможно создать обратный буфер.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Устройства](devices.md)

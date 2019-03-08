@@ -6,18 +6,18 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058815"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630749"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>Переход на C++/WinRT с WRL
-В этом разделе показано, как перенести код [Библиотеки шаблонов C++ (WRL) среды выполнения Windows](/cpp/windows/windows-runtime-cpp-template-library-wrl) в его эквивалент на [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+В этом разделе показано, как перенести [библиотеки шаблонов C++ (WRL) среды выполнения Windows](/cpp/windows/windows-runtime-cpp-template-library-wrl) кода в его эквивалент в [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
-Первым шагом при переносе в C + +/ WinRT — вручную добавить C + +/ WinRT поддержки для вашего проекта (см. в разделе [Поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Для этого необходимо установите [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) в свой проект. Откройте проект в Visual Studio, щелкните **проект** \> **Управление пакетами NuGet …**  \>  **Обзор**, введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выбрать элемент в результатах поиска и нажмите кнопку **установить** для установки пакета для данного проекта. Одним из последствий этого изменения является поддержки для [C + +/ CX](/cpp/cppcx/visual-c-language-reference-c-cx) отключена в проекте. Если вы используете C++/CX в проекте, в последствии можно оставить поддержку отключенной и обновить код C++/CX до кода C++/WinRT (см. раздел [Переход на C++/WinRT с C++/CX](move-to-winrt-from-cx.md)). Либо можно включить поддержку (в свойствах проекта перейдите в раздел **C/C++** \> **Общие** \> **Использовать расширение среды выполнения Windows** \> **Да (/ZW)**) и сначала сосредоточиться на переносе кода WRL. C + +/ CX и C + +/ WinRT кода могут сосуществовать в одном проекте, за исключением поддержку компилятора XAML и компоненты среды выполнения Windows (см. в разделе [Переход на C + +/ WinRT из C + +/ CX](move-to-winrt-from-cx.md)).
+Первым шагом в перенос кода в C + +/ WinRT — Ручное добавление C + +/ WinRT поддержка в проект (см. в разделе [поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Чтобы сделать это, установите [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) в проект. Откройте проект в Visual Studio щелкните **проекта** \> **управление пакетами NuGet...** \> **Обзор**введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выберите элемент в результатах поиска, а затем нажмите кнопку **установить** для установки пакета для этого проекта. Один это изменение применяется такой поддержки для [C + +/ CX](/cpp/cppcx/visual-c-language-reference-c-cx) отключена в проекте. Если вы используете C++/CX в проекте, в последствии можно оставить поддержку отключенной и обновить код C++/CX до кода C++/WinRT (см. раздел [Переход на C++/WinRT с C++/CX](move-to-winrt-from-cx.md)). Или можно включить поддержку обратно на (в свойствах проекта **C/C++** \> **Общие** \> **использовать расширение среды выполнения Windows** \> **Да (/ZW)**) и сначала остановиться на переносе кода WRL. C + +/ CX и C + +/ WinRT кода могут сосуществовать в одном проекте, за исключением поддержки компилятора XAML и компоненты среды выполнения Windows (см. в разделе [переместить в C + +/ WinRT в C + +/ CX](move-to-winrt-from-cx.md)).
 
-Задайте свойству проекта **Общие** \> **Версия целевой платформы** значение 10.0.17134.0 (Windows 10, версия 1803) или более позднюю версию.
+Установите свойство проекта **Общие** \> **версии целевой платформы** к 10.0.17134.0 (Windows 10 версии 1803) или более поздней версии.
 
 В предварительно скомпилированный файл заголовка (обычно это `pch.h`) добавьте `winrt/base.h`.
 
@@ -28,7 +28,7 @@ ms.locfileid: "9058815"
 При добавлении заголовков с API-интерфейсами Windows, проецируемыми в C++/WinRT, (например, `winrt/Windows.Foundation.h`) необходимость в явном добавлении `winrt/base.h` подобным образом отсутствует, так как этот элемент будет добавлен автоматически.
 
 ## <a name="porting-wrl-com-smart-pointers-microsoftwrlcomptrcppwindowscomptr-class"></a>Перенос интеллектуальных указателей WRL COM ([Microsoft::WRL::ComPtr](/cpp/windows/comptr-class))
-Перенесите любой код, использующий **Microsoft::WRL::ComPtr\<T\>**, для использования метода [**winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr). Вот пример "до" и "после". В версии *после* функция-член [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) извлекает базовой необработанные указатели, чтобы их можно было настроить.
+Любой код, который использует порт **Microsoft::wrl:: comptr\<T\>**  использовать [ **winrt::com_ptr\<T\>**](/uwp/cpp-ref-for-winrt/com-ptr). Вот пример "до" и "после". В версии *после* функция-член [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) извлекает базовой необработанные указатели, чтобы их можно было настроить.
 
 ```cpp
 ComPtr<IDXGIAdapter1> previousDefaultAdapter;
@@ -41,7 +41,7 @@ winrt::check_hresult(m_dxgiFactory->EnumAdapters1(0, previousDefaultAdapter.put(
 ```
 
 > [!IMPORTANT]
-> Если у вас есть [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) , который уже установлен (его внутренних необработанный указатель уже имеет конечное) и вы хотите повторно число его, чтобы указывать на другой объект, а затем сначала необходимо назначить `nullptr` к нему&mdash;как показано в следующем примере кода. Если этого не сделать, уже закреплена **com_ptr** будет рисуем проблему для вашего внимания (при вызове [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) или [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)), утверждая, что его внутреннего указателя не равно null.
+> Если у вас есть [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr) , уже установлен (его внутренней необработанный указатель уже задан целевой объект) и вы хотите повторно рабочих мест, чтобы она указывала на другой объект, то необходимо сначала назначить `nullptr` к нему&mdash;как показано в следующем примере кода. Если этого не сделать, затем уже — сидели **com_ptr** рисующий проблему для вашего внимания (при вызове [ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) или [ **com_ptr:: put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)), утверждая, что его внутренний указатель не равен null.
 
 ```cppwinrt
 winrt::com_ptr<IDXGISwapChain1> m_pDXGISwapChain1;
@@ -87,7 +87,7 @@ m_d3dDevice->CreateDepthStencilView(m_depthStencil.Get(), &dsvDesc, m_dsvHeap->G
 m_d3dDevice->CreateDepthStencilView(m_depthStencil.get(), &dsvDesc, m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
 ```
 
-Если требуется передать базовый необработанный указатель функции, которая ожидает указатель на **интерфейс IUnknown**, используйте свободная функция [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) , как показано в следующем примере.
+Если требуется передать в функцию, ожидающую указатель на базовый необработанный указатель **IUnknown**, использовать [ **winrt::get_unknown** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) бесплатные функции, как показано в следующей Пример.
 
 ```cpp
 ComPtr<IDXGISwapChain1> swapChain;
@@ -116,7 +116,7 @@ winrt::check_hresult(
 );
 ```
 
-## <a name="porting-a-wrl-module-microsoftwrlmodule"></a>Перенос модуля WRL (Microsoft::WRL::Module)
+## <a name="porting-a-wrl-module-microsoftwrlmodule"></a>Перенос модуль WRL (Microsoft::wrl:: module)
 Вы можете постепенно добавлять код C++/WinRT в существующий проект, который использует WRL для реализации компонента; при этом поддержка существующих классов WRL останется активна. В этом разделе показано, как это сделать.
 
 При создании нового проекта типа **Компонент среды выполнения Windows (C++/WinRT)** в Visual Studio и в ходе последующей сборки создается файл `Generated Files\module.g.cpp`. Этот файл содержит определения двух полезных функций C++/WinRT (перечислены ниже), которые можно скопировать и добавить в проект. Этими функциями являются **WINRT_CanUnloadNow** и **WINRT_GetActivationFactory**. Как видно, они осуществляют условный вызов WRL для предоставления поддержки на любом этапе переноса.
@@ -210,10 +210,10 @@ HRESULT __stdcall DllCanUnloadNow(void)
 ```
 
 ## <a name="important-apis"></a>Важные API
-* [Шаблон структуры winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
+* [Структура WinRT::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
-## <a name="related-topics"></a>Смежные разделы
-* [Введение в C++/WinRT](intro-to-using-cpp-with-winrt.md)
-* [Переход на C++/WinRT из C++/CX](move-to-winrt-from-cx.md)
-* [Библиотека шаблонов C++ для среды выполнения Windows (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)
+## <a name="related-topics"></a>Статьи по теме
+* [Введение в C + +/ WinRT](intro-to-using-cpp-with-winrt.md)
+* [Переместить в C + +/ WinRT в C + +/ CX](move-to-winrt-from-cx.md)
+* [Библиотека шаблонов C++ среды выполнения Windows (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)

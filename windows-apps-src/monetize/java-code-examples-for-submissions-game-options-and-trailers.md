@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, API отправки в Microsoft Store, примеры кода, параметры игры, трейлеры, дополнительные предложения, java
 ms.localizationpriority: medium
 ms.openlocfilehash: 974bbc4c864edb9450f9ba677c60349b5e1f8ece
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920774"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641059"
 ---
 # <a name="java-sample-app-submission-with-game-options-and-trailers"></a>Пример на языке Java: отправка приложения с трейлерами и параметрами игры
 
@@ -28,15 +28,15 @@ ms.locfileid: "8920774"
 
 Класс ```CreateAndSubmitSubmissionExample``` реализует программу ```main```, которая вызывает другие методы из примера по использованию API отправки в Microsoft Store для создания и передачи отправки приложения, содержащей трейлер и параметры игры. Адаптация кода для собственного использования.
 
-* Назначьте переменной ```tenantId``` идентификатор арендатора для своего приложения и назначьте переменным ```clientId``` и ```clientSecret``` идентификатор и ключ клиента для своего приложения. Дополнительные сведения см. в разделе [как привязать приложение Azure AD с учетной записью центра партнеров](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
-* Назначьте переменной ```applicationId``` [код продукта в Магазине](in-app-purchases-and-trials.md#store-ids) для приложения, отправку которого необходимо создать.
+* Назначьте переменной ```tenantId``` идентификатор арендатора для своего приложения и назначьте переменным ```clientId``` и ```clientSecret``` идентификатор и ключ клиента для своего приложения. Дополнительные сведения см. в разделе [как связать приложение Azure AD с помощью учетной записи центра партнеров](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
+* Назначьте переменной ```applicationId```[код продукта в Магазине](in-app-purchases-and-trials.md#store-ids) для приложения, отправку которого необходимо создать.
 
 > [!div class="tabbedCodeSnippets"]
 [!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/CreateAndSubmitSubmissionExample.java#L1-L313)]
 
 <span id="token" />
 
-## <a name="obtain-an-azure-ad-access-token"></a>Получение маркера доступа Azure AD
+## <a name="obtain-an-azure-ad-access-token"></a>Получение токена доступа Azure AD
 
 Класс ```DevCenterAccessTokenClient``` определяет вспомогательный метод, который использует ваши значения ```tenantId```, ```clientId``` и ```clientSecret``` для создания маркера доступа Azure AD для использования с API отправки в Microsoft Store.
 
@@ -54,4 +54,4 @@ ms.locfileid: "8920774"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Создание отправок и управление ими с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)

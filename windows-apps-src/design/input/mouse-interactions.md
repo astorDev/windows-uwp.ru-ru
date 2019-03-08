@@ -1,5 +1,5 @@
 ---
-Description: Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
+Description: В приложениях вы можете отвечать на ввод с помощью мыши, обрабатывая те же базовые события указателя, которые используются для сенсорного ввода и ввода с помощью пера.
 title: Взаимодействие с помощью мыши
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f81634fdb0f9382b1f660394764e5555189783e4
-ms.sourcegitcommit: 444fd387c55618f9afdac115264c85b14fd8b826
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "8999917"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622359"
 ---
 # <a name="mouse-interactions"></a>Взаимодействие с помощью мыши
 
@@ -23,7 +23,7 @@ ms.locfileid: "8999917"
 
 Взаимодействие при помощи мыши лучше всего подходит для приложений, требующих точного указания и щелчков. Эта точность естественным образом поддерживается пользовательским интерфейсом Windows, который оптимизирован для неточных по своей природе сенсорных взаимодействий.
 
-Существенное отличие ввода с помощью мыши от сенсорного ввода — возможность эмуляции непосредственного взаимодействия с элементами пользовательского интерфейса на экране с использованием физических жестов (прокрутка, сдвиг, перетаскивание, поворот и т.п.) в случае сенсорного ввода. Для манипуляций с помощью мыши обычно требуются другие возможности пользовательского интерфейса, например использование маркеров для изменения размера или поворота объекта.
+Существенное отличие ввода с помощью мыши от сенсорного ввода — возможность эмуляции непосредственного взаимодействия с элементами пользовательского интерфейса на экране с использованием физических жестов (прокрутка, сдвиг, перетаскивание, поворот и т. п.) в случае сенсорного ввода. Для манипуляций с помощью мыши обычно требуются другие возможности пользовательского интерфейса, например использование маркеров для изменения размера или поворота объекта.
 
 В этом разделе описываются вопросы разработки для взаимодействия с помощью мыши.
 
@@ -59,7 +59,7 @@ ms.locfileid: "8999917"
 <td align="left"><p>Щелчок правой кнопкой мыши для выбора и выполнения команды</p></td>
 <td align="left"><p>Щелчок правой кнопкой мыши для отображения панели навигации (при наличии) и панели приложения с глобальными командами. Щелчок правой кнопкой мыши на элементе для его выделения и отображения контекстных команд для выбранного элемента.</p>
 <div class="alert">
-<strong>Примечание</strong>щелчка правой кнопкой мыши для отображения контекстного меню, если выбор или команды панели приложения являются неподходящими вариантами поведения пользовательского интерфейса. Однако настоятельно рекомендуется для всех вариантов поведения команд использовать панель приложения.
+<strong>Примечание</strong>  щелкните правой кнопкой мыши для вызова контекстного меню, если выделение или приложение на панели команд, не соответствующие правила поведения пользовательского интерфейса. Однако настоятельно рекомендуется для всех вариантов поведения команд использовать панель приложения.
 </div>
 <div>
  
@@ -86,7 +86,7 @@ ms.locfileid: "8999917"
 
 ## <a name="mouse-input-events"></a>События ввода мыши
 
-Большинство ввода с помощью мыши может обрабатываться с помощью общих перенаправленных событий ввода, поддерживаемым всеми объектами [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) . К ним относятся следующие задачи.
+Большинство мыши входные данные могут обрабатываться с помощью общих перенаправленных событий ввода, поддерживается всеми [ **UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) объектов. К ним можно отнести следующие.
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
@@ -97,11 +97,11 @@ ms.locfileid: "8999917"
 - [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
 - [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
 - [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
-- [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+- [**DROP**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
 - [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
-- [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**Получение фокуса**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
+- [**Удерживая**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
 - [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
 - [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
 - [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
@@ -120,21 +120,21 @@ ms.locfileid: "8999917"
 - [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
 - [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
-- [**События PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown.md)
+- [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown.md)
 - [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
 - [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**Касание**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
-Тем не менее можно воспользоваться преимуществами определенных возможностей каждого устройства (например, колесо мыши) с помощью указателя, жестов и события манипуляции в [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input).
+Тем не менее, можно воспользоваться преимуществами определенных возможностей каждого устройства (например, колесо мыши) с помощью указателя, жестов и обработки событий в [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input).
 
-**Примеры:** Содержатся в нашем [примере BasicInput](https://go.microsoft.com/fwlink/p/?LinkID=620302).
+**Примеры:** См. в разделе наших [BasicInput пример](https://go.microsoft.com/fwlink/p/?LinkID=620302), для.
 
 ## <a name="guidelines-for-visual-feedback"></a>Руководство по визуальной обратной связи
 
 - Обнаружив мышь (при помощи событий перемещения или наведения), отображайте пользовательский интерфейс для мыши, чтобы показать функциональность, которую предоставляет элемент. Если мышь не перемещается в течение определенного времени или если пользователь инициирует взаимодействие касанием, сделайте так, чтобы пользовательский интерфейс для мыши постепенно исчезал с экрана. В этом случае пользовательский интерфейс будет аккуратным, не загроможденным лишними элементами.
 - Не используйте курсор для обратной связи при наведении, для этого достаточно обратной связи от элемента (см. ниже раздел "Курсоры").
-- Не отображайте визуальную обратную связь, если элемент не поддерживает взаимодействие (например, статический текст).
+- Не отображайте визуальную обратную связь, если элемент не поддерживает взаимодействия (например, статический текст).
 - Не используйте прямоугольник фокуса для взаимодействий с помощью мыши. Оставьте их для взаимодействий с использованием клавиатуры.
 - Отображайте визуальную обратную связь одновременно для всех элементов, представляющих одну и ту же цель ввода.
 - Предусмотрите кнопки (например, + и -) для эмуляции манипуляций касания, таких как сдвиг, поворот, масштабирование и пр.
@@ -155,15 +155,15 @@ ms.locfileid: "8999917"
 - Используйте курсоры изменения размеров по горизонтали, вертикали и диагонали (![Курсор изменения размеров по вертикали](images/cursor-vertical.png), ![Курсор изменения размеров по горизонтали](images/cursor-horizontal.png), ![Курсор изменения размеров по диагонали (левый нижний, правый верхний)](images/cursor-diagonal2.png), ![Курсор изменения размеров по диагонали (левый верхний, правый нижний)](images/cursor-diagonal1.png)), если размер объекта можно изменить.
 - Используйте курсоры "хватающая рука" (![Курсор "хватающая рука" (открыта)](images/cursor-pan1.png), ![Курсор "хватающая рука" (сжатая)](images/cursor-pan2.png)) для сдвига содержимого в пределах фиксированного холста, например карты.
 
-## <a name="related-articles"></a>Статьи по теме
+## <a name="related-articles"></a>Связанные статьи
 
 - [Работа с данными указателя](handle-pointer-input.md)
-- [Определение устройств ввода](identify-input-devices.md)
+- [Распознавание устройств ввода](identify-input-devices.md)
 - [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
 
 ### <a name="samples"></a>Примеры
 
-- [Пример базового ввода](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [Пример ввода с малой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [Базовый пример входной привязки](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [Пример входной привязки для низкой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 - [Пример режима взаимодействия с пользователем](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 - [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)

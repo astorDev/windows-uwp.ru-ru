@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, фиксация, видео
 ms.localizationpriority: medium
 ms.openlocfilehash: c474221769bf3aec6e32c80f21386ac1ca2620ea
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058635"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636619"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>Фиксация из нескольких источников с использованием класса MediaFrameSourceGroup
 
@@ -22,9 +22,9 @@ ms.locfileid: "9058635"
 В остальных частях этой статьи приводятся пошаговые инструкции по записи видео с двух цветных камер в один файл с несколькими видеодорожками.
 
 ## <a name="find-available-sensor-groups"></a>Поиск доступных групп датчиков
-Тип **MediaFrameSourceGroup** представляет собой коллекцию источников кадров (как правило, камер), доступ к которым можно осуществлять одновременно. Наборы доступных групп источников кадров для разных устройств различаются, поэтому в качестве первого шага в этом примере является получение списка доступных групп источников и поиск группы, содержащей необходимые камеры для этого сценария (в данном случае— это две цветные камеры).
+Тип **MediaFrameSourceGroup** представляет собой коллекцию источников кадров (как правило, камер), доступ к которым можно осуществлять одновременно. Наборы доступных групп источников кадров для разных устройств различаются, поэтому в качестве первого шага в этом примере является получение списка доступных групп источников и поиск группы, содержащей необходимые камеры для этого сценария (в данном случае — это две цветные камеры).
 
-Метод **[MediaFrameSourceGroup.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.FindAllAsync)** возвращает все группы источников, доступные на текущем устройстве. Каждый возвращенный тип **MediaFrameSourceGroup** содержит список объектов **[MediaFrameSourceInfo](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo)**, описывающих каждый источник кадров в группе. Запрос Linq используется для поиска группы источников, которая содержит две цветные камеры: одну— для передней панели, а другую— для задней. Возвращается анонимный объект, который содержит выбранные типы **MediaFrameSourceGroup** и **MediaFrameSourceInfo** для каждой цветной камеры. Вместо того чтобы использовать синтаксис Linq, можно выполнить циклический перебор каждой группы, а затем с помощью метода **MediaFrameSourceInfo** найти группу, соответствующую вашим требованиям.
+Метод **[MediaFrameSourceGroup.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.FindAllAsync)** возвращает все группы источников, доступные на текущем устройстве. Каждый возвращенный тип **MediaFrameSourceGroup** содержит список объектов **[MediaFrameSourceInfo](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo)**, описывающих каждый источник кадров в группе. Запрос Linq используется для поиска группы источников, которая содержит две цветные камеры: одну — для передней панели, а другую — для задней. Возвращается анонимный объект, который содержит выбранные типы **MediaFrameSourceGroup** и **MediaFrameSourceInfo** для каждой цветной камеры. Вместо того чтобы использовать синтаксис Linq, можно выполнить циклический перебор каждой группы, а затем с помощью метода **MediaFrameSourceInfo** найти группу, соответствующую вашим требованиям.
 
 Обратите внимание, что не каждое устройство будет содержать группу источников с двумя цветными камерами, поэтому прежде чем пытаться зафиксировать видео, необходимо убедиться, что группа источников найдена.
 
@@ -50,29 +50,29 @@ ms.locfileid: "9058635"
 
 Начиная с Windows 10 версии 1803, помимо аудио и видео, вы можете кодировать синхронизированные метаданные в файле мультимедиа, формат данных которого поддерживается. Например, метаданные GoPro (gpmd) могут храниться в MP4-файлах для передачи сведений о географическом положении, связанных с видеопотоком. 
 
-При кодировке метаданных используется шаблон, аналогичный кодированию аудио или видео. Класс [**TimedMetadataEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties) описывает тип, подтип и свойства кодирования метаданных так же, как **VideoEncodingProperties** делает это для видео. [**TimedMetadataStreamDescriptor**](https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor) определяет поток метаданных так же, как **VideoStreamDescriptor** делает это для видеопотоков.  
+При кодировке метаданных используется шаблон, аналогичный кодированию аудио или видео. Класс [**TimedMetadataEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties) описывает тип, подтип и свойства кодирования метаданных так же, как **VideoEncodingProperties** делает это для видео. [  **TimedMetadataStreamDescriptor**](https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor) определяет поток метаданных так же, как **VideoStreamDescriptor** делает это для видеопотоков.  
 
 В следующем примере показано, как инициализировать объект **TimedMetadataStreamDescriptor**. Сначала создается объект **TimedMetadataEncodingProperties**, а свойству **Subtype** задает значение GUID, определяющее тип метаданных, которые будут включены в поток. В этом примере использует идентификатор GUID для метаданных GoPro (gpmd). Метод [**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata) вызывается для настройки данных, связанных с форматом. Для MP4-файлов данные для определенного формата хранятся в поле SampleDescription (stsd). Затем на основе свойств кодирования создается новый объект **TimedMetadataStreamDescriptor**. Свойства **Label** и **Name** задаются для идентификации кодируемого потока. 
 
 [!code-cs[GetStreamDescriptor](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetStreamDescriptor)]
 
-Вызовите [**MediaEncodingProfile.SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks) , чтобы добавить дескриптор потока метаданных в профиль кодирования. В следующем примере показан вспомогательный метод, который принимает два дескриптора видеопотока, один дескриптор звукового потока и один дескриптор потока синхронизированных метаданных и возвращает объект **MediaEncodingProfile**, который можно использовать для кодирования потоков.
+Вызовите [ **MediaEncodingProfile.SetTimedMetadataTracks** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks) добавить дескриптор потока метаданных профиль кодирования. В следующем примере показан вспомогательный метод, который принимает два дескриптора видеопотока, один дескриптор звукового потока и один дескриптор потока синхронизированных метаданных и возвращает объект **MediaEncodingProfile**, который можно использовать для кодирования потоков.
 
 [!code-cs[GetMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetMediaEncodingProfile)]
 
 ## <a name="record-using-the-multi-stream-mediaencodingprofile"></a>Запись с использованием многопоточного профиля MediaEncodingProfile
-Заключительный шаг в этом примере— запуск захвата видео посредством вызова метода **[StartRecordToStorageFileAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.startrecordtostoragefileasync)**, передача файла **StorageFile**, в который осуществляется запись мультимедиа, и профиля **MediaEncodingProfile**, созданного в предыдущем примере кода. Через несколько секунд ожидания запись останавливается, вызывается метод **[StopRecordAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.StopRecordAsync)**.
+Заключительный шаг в этом примере — запуск захвата видео посредством вызова метода **[StartRecordToStorageFileAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.startrecordtostoragefileasync)**, передача файла **StorageFile**, в который осуществляется запись мультимедиа, и профиля **MediaEncodingProfile**, созданного в предыдущем примере кода. Через несколько секунд ожидания запись останавливается, вызывается метод **[StopRecordAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.StopRecordAsync)**.
 
 [!code-cs[MultiRecordToFile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetMultiRecordToFile)]
 
 В результате операции создается видеофайл, который содержит видео, захваченное с каждой камеры, которая кодируется в файле в качестве отдельного потока. Сведения о воспроизведении файлов мультимедиа, которые содержат несколько видеодорожек, см. в разделе [Элементы мультимедиа, списки воспроизведения и звуковые дорожки](media-playback-with-mediasource.md).
 
-## <a name="related-topics"></a>Связанные статьи
+## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
-* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Обработка кадров мультимедиа с помощью MediaFrameReader](process-media-frames-with-mediaframereader.md)
-* [Элементы мультимедиа, списки воспроизведения и звуковые дорожки](media-playback-with-mediasource.md)
+* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Обработка мультимедиа кадров с MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [Элементы мультимедиа, списки воспроизведения и дорожек](media-playback-with-mediasource.md)
 
 
  

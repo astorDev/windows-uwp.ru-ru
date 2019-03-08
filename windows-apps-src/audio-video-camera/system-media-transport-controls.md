@@ -1,19 +1,19 @@
 ---
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
 description: Класс SystemMediaTransportControls позволяет приложению использовать встроенные в Windows системные элементы управления транспортом мультимедиа и обновлять отображаемые элементом управления метаданные о мультимедиа, воспроизводимом приложением.
-title: Ручное управление системными элементами управления транспортировкой мультимедиа
+title: Ручное управление системными элементами управления воспроизведением мультимедиа
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6be1680d1ce843c1fbe7105dc2027e764095495a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933310"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635659"
 ---
-# <a name="manual-control-of-the-system-media-transport-controls"></a>Ручное управление системными элементами управления транспортировкой мультимедиа
+# <a name="manual-control-of-the-system-media-transport-controls"></a>Ручное управление системными элементами управления воспроизведением мультимедиа
 
 
 Начиная c Windows 10 версии 1607, приложения UWP, использующие класс [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) для воспроизведения мультимедиа, по умолчанию автоматически интегрируются с системными элементами управления транспортировкой мультимедиа (SMTC). Это рекомендуемый способ взаимодействия с SMTC для большинства сценариев. Дополнительные сведения о настройке интеграции SMTC с **MediaPlayer** по умолчанию см. в разделе [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md).
@@ -74,7 +74,7 @@ ms.locfileid: "8933310"
 
 -   Необходимо указать значение для свойств [**StartTime**](https://msdn.microsoft.com/library/windows/apps/mt218751), [**EndTime**](https://msdn.microsoft.com/library/windows/apps/mt218747) и [**Position**](https://msdn.microsoft.com/library/windows/apps/mt218755), чтобы системные элементы управления отображали временную шкалу для воспроизводящегося элемента.
 
--   С помощью свойств [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) и [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) можно указать диапазон в пределах временной шкалы, в котором пользователь может выполнять поиск. Для этого можно использовать типичный сценарий, заключающийся в том, чтобы разрешить поставщикам содержимого включать рекламные паузы в их мультимедиа.
+-   [**MinSeekTime** ](https://msdn.microsoft.com/library/windows/apps/mt218749) и [ **MaxSeekTime** ](https://msdn.microsoft.com/library/windows/apps/mt218748) позволяют пользователю указать диапазон в установленные сроки, пользователь может выполнять поиск. Для этого можно использовать типичный сценарий, заключающийся в том, чтобы разрешить поставщикам содержимого включать рекламные паузы в их мультимедиа.
 
     Необходимо настроить свойства [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) и [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748), чтобы можно было создать событие [**PositionChangeRequest**](https://msdn.microsoft.com/library/windows/apps/mt218755).
 
@@ -95,7 +95,7 @@ ms.locfileid: "8933310"
 
 [!code-cs[RegisterPlaybackChangedHandler](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterPlaybackChangedHandler)]
 
-Прежде всего убедитесь, что в обработчике события необходимое значение находится в допустимом и ожидаемом диапазоне. Если это так, настройте соответствующее свойство объекта [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), а затем— соответствующее свойство объекта [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677).
+Прежде всего убедитесь, что в обработчике события необходимое значение находится в допустимом и ожидаемом диапазоне. Если это так, настройте соответствующее свойство объекта [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), а затем — соответствующее свойство объекта [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677).
 
 [!code-cs[PlaybackChangedHandler](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetPlaybackChangedHandler)]
 
@@ -109,10 +109,10 @@ ms.locfileid: "8933310"
 
 Дополнительные сведения о воспроизведении звука в фоновом режиме см. в разделе [Воспроизведение мультимедиа в фоновом режиме](background-audio.md).
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Статьи по теме
 * [Воспроизведение мультимедиа](media-playback.md)
-* [Интеграция с системными элементами управления транспортировкой мультимедиа](integrate-with-systemmediatransportcontrols.md) 
-* [Пример системной транспортировки мультимедиа](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
+* [Интеграция с носителя системы элементы управления транспортировкой](integrate-with-systemmediatransportcontrols.md) 
+* [Если указанное мультимедиа пример системой](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
  
 

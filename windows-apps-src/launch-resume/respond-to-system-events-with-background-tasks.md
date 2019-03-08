@@ -4,18 +4,18 @@ description: Узнайте, как создавать фоновые задач
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, uwp, фоновой задачи
+keywords: Windows 10, uwp, фоновую задачу
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: de8d585d7178a277d1df248858f69a5a5705fb1d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044538"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634859"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>Реагирование на системные события с помощью фоновых задач
 
@@ -79,14 +79,14 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 ```
 
 > [!NOTE]
-> Приложения универсальной платформы Windows необходимо вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
+> Приложений универсальной платформы Windows необходимо вызвать [ **RequestAccessAsync** ](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любого типа триггера фона.
 
-Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем— метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Подробнее см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
+Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
 > [!NOTE]
-> Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации оказываются недопустимыми, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
+> Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации недопустимы, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
  
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Замечания
 
 Чтобы увидеть регистрацию фоновой задачи в действии, скачайте [образец фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666).
 
@@ -94,18 +94,18 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 Приложения способны регистрировать фоновые задачи, которые выполняются в ответ на события [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843), [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) и [**NetworkOperatorNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/br224831). Это позволяет им поддерживать связь с пользователем в реальном времени, даже когда приложение не находится на переднем плане. Дополнительные сведения см. в разделе [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
 
-## <a name="related-topics"></a>Связанные статьи
+## <a name="related-topics"></a>Статьи по теме
 
-* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
-* [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)
-* [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
-* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
-* [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
-* [Регистрация фоновой задачи](register-a-background-task.md)
-* [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
+* [Создание и регистрация вне процесса фоновой задачи](create-and-register-a-background-task.md)
+* [Создание и регистрация в процесс фоновой задачи](create-and-register-an-inproc-background-task.md)
+* [Объявите фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
+* [Обработка отменена фоновой задачи](handle-a-cancelled-background-task.md)
+* [Отслеживать ход выполнения задач в фоновом режиме и завершения](monitor-background-task-progress-and-completion.md)
+* [Зарегистрировать фоновую задачу](register-a-background-task.md)
+* [Задайте условия для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
 * [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)
-* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
+* [Выполнять фоновую задачу по таймеру](run-a-background-task-on-a-timer-.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Отладка фоновой задачи](debug-a-background-task.md)
-* [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Отладить фоновую задачу](debug-a-background-task.md)
+* [Активация приостановки, возобновления и фоновых событий для приложений универсальной платформы Windows (при отладке)](https://go.microsoft.com/fwlink/p/?linkid=254345)

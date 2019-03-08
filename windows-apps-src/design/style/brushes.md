@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e46ef0e459ede5fd1185d78186968735d886e63
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940103"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634869"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>Использование кистей для рисования фона, переднего плана и контуров
 
 Объекты [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) применяются для рисования внутреннего наполнения и контуров фигур XAML, текста и частей элементов управления, чтобы рисуемый объект был виден в пользовательском интерфейсе. Так какие же кисти доступны и как ими пользоваться?
 
-> **Важные API**:  [класс Brush](/uwp/api/Windows.UI.Xaml.Media.Brush)
+> **Важные API-интерфейсы**:  [Класс Brush](/uwp/api/Windows.UI.Xaml.Media.Brush)
 
 ## <a name="introduction-to-brushes"></a>Знакомство с кистями
 
@@ -37,7 +37,7 @@ ms.locfileid: "8940103"
 
 ### <a name="predefined-color-names"></a>Стандартные имена цветов
 
-Можно использовать стандартное имя цвета, например [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) или [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). Доступно 256 цветов с именами. Средство синтаксического анализа XAML преобразует имя цвета в структуру [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) с правильными цветовыми каналами. 256 именованных цветов основаны на именах цветов *X11* из каскадных таблиц стилей, Level3 спецификации (CSS3), тогда вы уже знакомы со списком именованных цветов, если у вас есть опыт веб-разработки или проектирования.
+Можно использовать стандартное имя цвета, например [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) или [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). Доступно 256 цветов с именами. Средство синтаксического анализа XAML преобразует имя цвета в структуру [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) с правильными цветовыми каналами. На основе 256 именованные цвета *X11* названий цветов из таблицы каскадных стилей, спецификации уровня 3 (CSS3), поэтому уже может быть знакомы с этот список именованные цвета, если у вас есть опыт разработки веб-приложений или Структура.
 
 В следующем примере в свойстве [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) объекта [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) задается стандартный цвет [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
 
@@ -53,9 +53,9 @@ ms.locfileid: "8940103"
 
 ### <a name="hexadecimal-color-values"></a>Шестнадцатеричные значения цвета
 
-Можно использовать строку в шестнадцатеричном формате для объявления точных 24-битных значений цвета с 8-битным альфа-каналом для [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962). Два символа в диапазоне от 0 до F определяют значение каждого из компонентов. Порядок значений компонентов в шестнадцатеричной строке следующий: альфа-канал (непрозрачность), красный, зеленый и синий каналы (**ARGB**). Например, шестнадцатеричное значение "\#FFFF0000" задает полностью непрозрачный красный (альфа="FF", красный="FF", зеленый="00" и синий="00").
+Можно использовать строку в шестнадцатеричном формате для объявления точных 24-битных значений цвета с 8-битным альфа-каналом для [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962). Два символа в диапазоне от 0 до F определяют значение каждого из компонентов. Порядок значений компонентов в шестнадцатеричной строке следующий: альфа-канал (непрозрачность), красный, зеленый и синий каналы (**ARGB**). Например, шестнадцатеричное значение "\#FFFF0000» определяет полностью непрозрачный red (альфа-версия = «FF», красный = «FF», зеленый = «00» и синий = «00»).
 
-В данном примере XAML для свойства [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) объекта [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) задается шестнадцатеричное значение "\#FFFF0000" и достигается результат, аналогичный именованному цвету [**Colors.Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
+В этом примере XAML задает [ **заполнения** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) свойство [ **прямоугольник** ](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) шестнадцатеричному значению "\#FFFF0000» и дает идентичных результатов, с помощью именованный цвет [ **Colors.Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
 
 ```xml
 <StackPanel>
@@ -63,7 +63,7 @@ ms.locfileid: "8940103"
 </StackPanel>
 ```
 
-### <a name="span-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanproperty-element-syntax"></a><span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>Синтаксис свойств
+### <a name="span-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanproperty-element-syntax"></a><span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>Синтаксис элемента свойства
 
 Объект [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) можно определить в синтаксисе элементов свойств. Он не так компактен, как предыдущие способы, но позволяет задавать дополнительные значения свойств для элемента, например [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx). Подробнее о синтаксисе XAML, включая синтаксис элементов свойств, можно узнать в статьях [Обзор языка XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595) и [Руководство по основам синтаксиса языка XAML](https://msdn.microsoft.com/library/windows/apps/Mt185596).
 
@@ -105,9 +105,9 @@ ms.locfileid: "8940103"
 
 Цвет каждой точки между ограничениями градиента определяется линейной интерполяцией сочетания цветов, заданных соседними ограничениями градиента. На рисунке отмечены ограничения градиента из предыдущего примера. Положение ограничений градиента отмечено кружками, а ось градиента показана пунктирной линией.
 
-![Ограничения градиента](images/linear-gradients-stops.png) Можно изменить линию, по которой определяются позиции ограничений градиента, установив для свойств [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) и [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) значения, отличающиеся от принятых по умолчанию `(0,0)` и `(1,1)`. Изменяя значения координат **StartPoint** и **EndPoint**, можно создать горизонтальные и вертикальные градиенты, обратить направление градиента или сжать охват градиента, применив его к меньшему диапазону, чем полная закрашенная область. Чтобы сжать градиент, следует задать значения **StartPoint** и**EndPoint**, находящиеся между 0 и1. Например, если требуется горизонтальный градиент, где все затухание цвета происходит на левой половине кисти, а с правой стороны используется сплошной цвет последнего [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078), следует указать для **StartPoint** значение `(0,0)`, а для **EndPoint** — значение `(0.5,0)`.
+![Ступени градиента](images/linear-gradients-stops.png) можно изменить строки, по которому расположены градиента, задав [ **StartPoint** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) и [ **конечной точки** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) свойств различных значений, чем `(0,0)` и `(1,1)` начиная значения по умолчанию. Изменяя значения координат **StartPoint** и **EndPoint**, можно создать горизонтальные и вертикальные градиенты, обратить направление градиента или сжать охват градиента, применив его к меньшему диапазону, чем полная закрашенная область. Чтобы сжать градиент, следует задать значения **StartPoint** и **EndPoint**, находящиеся между 0 и 1. Например, если требуется горизонтальный градиент, где все затухание цвета происходит на левой половине кисти, а с правой стороны используется сплошной цвет последнего [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078), следует указать для **StartPoint** значение `(0,0)`, а для **EndPoint** — значение `(0.5,0)`.
 
-### <a name="span-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanuse-tools-to-make-gradients"></a><span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>Использование средств для создания градиента
+### <a name="span-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanuse-tools-to-make-gradients"></a><span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>Использовать инструменты для создания градиента
 
 Теперь, когда вы знаете, как работают линейные градиенты, вам будет легче создавать их с помощью Visual Studio или Blend. Чтобы создать градиент, выделите в рабочей области конструирования или в представлении XAML объект, к которому нужно применить градиент. Разверните **Кисть** и выберите вкладку **Линейный градиент** (см. снимок экрана ниже).
 
@@ -117,7 +117,7 @@ ms.locfileid: "8940103"
 
 ![Панель в нижней части окна свойств, управляющая ограничениями градиента.](images/tool-gradient-brush-2.png)
 
-## <a name="span-idimagebrushesspanspan-idimagebrushesspanspan-idimagebrushesspanimage-brushes"></a><span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>Кисти изображений
+## <a name="span-idimagebrushesspanspan-idimagebrushesspanspan-idimagebrushesspanimage-brushes"></a><span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>Используя кисти изображения
 
 Объект [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) заполняет область изображением, которое поступает из источника файла изображения. В свойстве [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) задается путь к загружаемому изображению. Обычно источник изображения поступает из элемента **Content**, являющегося частью ресурсов вашего приложения.
 
@@ -137,7 +137,7 @@ ms.locfileid: "8940103"
 
 ![Отображение ImageBrush.](images/brushes-imagebrush.jpg)
 
-[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) и [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) ссылаются на исходный файл изображения по универсальному коду ресурса (URI). Для этого файла допустимы несколько графических форматов. Такие исходные файлы изображений указываются в виде URI. Подробнее об указании источников изображений, их возможных форматах и упаковке в приложении можно узнать в разделе [Классы Image и ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382).
+[**ImageBrush** ](https://msdn.microsoft.com/library/windows/apps/BR210101) и [ **изображение** ](https://msdn.microsoft.com/library/windows/apps/BR242752) обе ссылки на файл источника изображения, универсальный код ресурса (URI), где этот файл источника изображения использует несколько форматов изображения. Такие исходные файлы изображений указываются в виде URI. Подробнее об указании источников изображений, их возможных форматах и упаковке в приложении можно узнать в разделе [Классы Image и ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382).
 
 ## <a name="brushes-and-text"></a>Кисти и текст
 
@@ -151,7 +151,7 @@ ms.locfileid: "8940103"
 
 ## <a name="xamlcompositionbrushbase"></a>XamlCompositionBrushBase
 
-[**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) – это базовый класс, который используется для создания настраиваемых кистей, использующих [**CompositionBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionBrush) для рисования элементов пользовательского интерфейса XAML.
+[**XamlCompositionBrushBase** ](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) является базовым классом, используемым для создания пользовательских кисти, использующих [ **CompositionBrush** ](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionBrush) отображать элементы пользовательского интерфейса XAML.
 
 Это включает "нисходящее" взаимодействие между слоями Windows.UI.Xaml и Windows.UI.Composition, как описано в статье [**Обзор визуального уровня**](/windows/uwp/composition/visual-layer). 
 
@@ -159,7 +159,7 @@ ms.locfileid: "8940103"
 
 Например, она может использоваться для применения [**эффектов**](/windows/uwp/composition/composition-effects) к элементам пользовательского интерфейса XAML с помощью [**CompositionEffectBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionEffectBrush), например **GaussianBlurEffect** или [**SceneLightingEffect**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect), который контролирует отражающие свойства UIElement XAML при его освещении с помощью [**XamlLight**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamllight).
 
-Примеры кода на странице со справочной документацией по [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+Примеры кода см. на странице со справочной документацией по [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
 ## <a name="brushes-as-xaml-resources"></a>Кисти как ресурсы XAML
 
@@ -189,7 +189,7 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 Для [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) и [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) используйте конструктор по умолчанию. Затем, до попытки использовать эту кисть для свойства пользовательского интерфейса, вызывайте другие API.
 
--   Для [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) требуется [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (не URI) при определении [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) с помощью кода. Если источником является поток, для инициализации значения используйте метод [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522). Если источником является URI, который включает содержимое в ваше приложение, использующее схемы **ms-appx** или **ms-resource**, используйте конструктор [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/br243238.aspx), который применяет URI. Также можно рассмотреть вариант обработки события [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx), если существуют некоторые временные проблемы с получением или декодированием источника изображения, при которых может понадобиться отображать альтернативное содержимое до тех пор, пока источник изображения не станет доступным.
+-   [**ImageSource** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) требует [ **BitmapImage** ](https://msdn.microsoft.com/library/windows/apps/BR243235) (не URI) при определении [ **ImageBrush** ](https://msdn.microsoft.com/library/windows/apps/BR210101) с помощью код. Если источником является поток, для инициализации значения используйте метод [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522). Если источником является URI, который включает содержимое в ваше приложение, использующее схемы **ms-appx** или **ms-resource**, используйте конструктор [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/br243238.aspx), который применяет URI. Также можно рассмотреть вариант обработки события [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx), если существуют некоторые временные проблемы с получением или декодированием источника изображения, при которых может понадобиться отображать альтернативное содержимое до тех пор, пока источник изображения не станет доступным.
 -   Для [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) вам может понадобиться вызов [**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx), если вы недавно сбросили свойство [**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) или если содержимое [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) также было изменено с помощью кода.
 
 Примеры кода см. на справочных страницах для [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703),  [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) и [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).

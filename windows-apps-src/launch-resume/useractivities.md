@@ -6,11 +6,11 @@ ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2756231b067176da66c6dbcedf7a1452d5d109f4
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114550"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641159"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Продолжение активности пользователей даже на разных устройствах
 
@@ -39,7 +39,7 @@ ms.locfileid: "9114550"
 Добавление **UserActivity** в приложение:
 
 1. Создайте объекты **UserActivity** при изменении контекста пользователя в приложении (например, навигация по странице, новый уровень игры и т. п.)
-2. Заполните объекты **UserActivity** минимальным набором обязательных полей: [ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId), [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri) и [UserActivity.VisualElements.DisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText).
+2. Заполнение **UserActivity** объектов с минимальным набором обязательных полей: [ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId), [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri), и [UserActivity.VisualElements.DisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText).
 3. Добавьте собственный обработчик схемы для вашего приложения, чтобы его можно было повторно активировать с помощью **UserActivity**.
 
 **UserActivity** можно интегрировать в приложение с помощью нескольких строк кода. Например, предположим, что этот код расположен в MainPage.xaml.cs, в классе MainPage (обратите внимание: предполагается `using Windows.ApplicationModel.UserActivities;`):
@@ -99,7 +99,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-Что этот код делает — определяет, было ли приложение активировано при помощи протокола. Если это так, затем он ищет, что приложение должно сделать для возобновления задачи, ради которой оно активировано. Простое приложение, единственное Возобновляемое это приложение переход ко второй странице при активации приложения.
+Что этот код делает — определяет, было ли приложение активировано при помощи протокола. Если это так, затем он ищет, что приложение должно сделать для возобновления задачи, ради которой оно активировано. Будучи простое приложение, это приложение возобновляет только действия является размещение вы на дополнительной страницы при переходе.
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>Используйте адаптивные карты для улучшения работы с временной шкалой
 
@@ -152,7 +152,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 Если ваше приложение работает на разных платформах (например, на Android и iOS) или хранит данные состояния пользователя в облаке, можно опубликовать UserActivities через [Microsoft Graph](https://developer.microsoft.com/graph/).
 После проверки подлинности вашего приложения или службы с помощью учетной записи Майкрософт требуется всего два простых вызова REST для создания объектов [Действие](https://developer.microsoft.com/graph/docs/api-reference/beta/api/projectrome_put_activity) и [Журнал](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/projectrome_historyitem) с использованием тех же данных, что и выше.
 
-## <a name="summary"></a>Краткий обзор
+## <a name="summary"></a>Сводка
 
 Можно использовать API [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities), чтобы ваше приложение отображалось на временной шкале и в Кортане.
 * Дополнительные сведения о [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
@@ -165,11 +165,11 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 * [Пространство имен UserActivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 
-* [Действия пользователей (документы Project Rome)](https://docs.microsoft.com/windows/project-rome/user-activities/)
-* [Адаптивные карты](https://docs.microsoft.com/adaptive-cards/)
-* [Визуализатор адаптивных карт, примеры](https://adaptivecards.io/)
-* [Обработка активации универсального кода ресурса (URI)](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-* [Взаимодействие с пользователями на всех платформах с помощью Microsoft Graph, ленты действий и адаптивных карт](https://channel9.msdn.com/Events/Connect/2017/B111)
+* [Действия пользователя (рим проекта docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [Адаптивная карты](https://docs.microsoft.com/adaptive-cards/)
+* [Визуализатор адаптивной карты, примеры](https://adaptivecards.io/)
+* [Выполнять активацию URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+* [Привлекательные со своими клиентами на любой платформе, с помощью Microsoft Graph, канал активности и адаптивной карты](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

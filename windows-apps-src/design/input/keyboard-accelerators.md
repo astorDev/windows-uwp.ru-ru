@@ -1,5 +1,5 @@
 ---
-Description: Learn how accelerator keys can improve the usability and accessibility of UWP apps.
+Description: Узнайте, как клавиши вызова могут повысить удобство использования и расширить специальные возможности приложений UWP.
 title: Ускорители клавиатуры
 label: Keyboard accelerators
 template: detail.hbs
@@ -11,11 +11,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e898b0552a9485cd15079a37940a2151e4bc9f9
-ms.sourcegitcommit: 2ef3d22a30afe853de891280e11d96e5e1ab62d1
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "8981883"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590739"
 ---
 # <a name="keyboard-accelerators"></a>Ускорители клавиатуры
 
@@ -35,20 +35,20 @@ ms.locfileid: "8981883"
 > [!NOTE]
 > Элементы управления платформы UWP оснащены встроенными ускорителями клавиатуры. Например, ListView поддерживает сочетание клавиш CTRL+A для выбора всех элементов в списке, а RichEditBox поддерживает сочетание клавиш CTRL+TAB для вставки табуляции в текстовое поле. Эти встроенные ускорители клавиатуры называются **ускорителями элементов управления** и выполняются только в том случае, если фокус находится на элементе или одном из его дочерних элементов. Описываемые здесь ускорители, определенные пользователем с помощью API-интерфейсов ускорителей клавиатуры, называются **ускорителями приложений**.
 
-Ускорители клавиатуры доступны не для всех действий, но часто связаны с командами в меню (и должны указываться в содержимом пункта меню).Также ускорители могут быть связаны с действиями, у которых нет эквивалентных пунктов меню. Тем не менее, пользователи находят и изучают доступный набор команд с помощью меню приложения, поэтому следует максимально упростить процесс обнаружения ускорителей (например, с помощью меток или проверенных шаблонов).
+Ускорители клавиатуры доступны не для всех действий, но часто связаны с командами в меню (и должны указываться в содержимом пункта меню). Также ускорители могут быть связаны с действиями, у которых нет эквивалентных пунктов меню. Тем не менее, пользователи находят и изучают доступный набор команд с помощью меню приложения, поэтому следует максимально упростить процесс обнаружения ускорителей (например, с помощью меток или проверенных шаблонов).
 
-![Описание ускорителей клавиатуры в метке пункта меню](images/accelerators/accelerators_menuitemlabel.png)  
-*Описание ускорителей клавиатуры в метке пункта меню*
+![Сочетания клавиш, описанные в метки элемента меню](images/accelerators/accelerators_menuitemlabel.png)  
+*Сочетания клавиш, описанные в метки элемента меню*
 
 ## <a name="when-to-use-keyboard-accelerators"></a>Сценарии использования ускорителей клавиатуры
 
 Рекомендуется указывать ускорители клавиатуры всегда, когда это уместно в пользовательском интерфейсе, и предусматривать поддержку ускорителей во всех пользовательских элементах управления.
 
-- Ускорители клавиатуры делают приложение более accessiblefor пользователей с нарушениями двигательных функций, в том числе таких пользователей, которые могут нажимать только одну клавишу за один раз или испытывают трудности при работе с за *
+- Сочетания клавиш делают приложения более доступным для пользователей с ограниченными возможностями двигателя, включая тех пользователей, которые можно нажать только один ключ или трудно работать с mouse.* *
 
   Правильно разработанный пользовательский интерфейс клавиатуры является важным аспектом доступности программы. Он позволяет людям с ослабленным зрением или с определенными нарушениями двигательных способностей осуществлять переходы в приложении и взаимодействовать с его компонентами. Такие пользователи могут не иметь возможности использовать мышь. Вместо этого они могут рассчитывать на различные специальные возможности, такие как средства расширения функций клавиатуры, экранные клавиатуры, экранные лупы, средства чтения с экрана и средства голосового управления. Для этих пользователей крайне важно иметь доступ ко всем командам.
 
-- Ускорители клавиатуры делают приложение более usablefor опытных пользователей, предпочитающих взаимодействовать с помощью клавиатуры.
+- Сочетания клавиш приложение сделать более удобным для опытных пользователей, которые предпочли взаимодействовать с клавиатуры.
 
   Опытные пользователи часто применяют клавиатуру, так как с ее помощью можно быстрее вводить команды, при этом не требуется убирать руки с клавиатуры. Для таких пользователей эффективность и согласованность критически важна. Полнота важна только для наиболее часто используемых команд.
 
@@ -126,14 +126,14 @@ ms.locfileid: "8981883"
 </CommandBar>
 ```
 
-![Описание ускорителя клавиатуры в подсказке](images/accelerators/accelerators_tooltip.png)  
-***Описание ускорителя клавиатуры в подсказке***
+![Сочетания клавиш, описанные в подсказке](images/accelerators/accelerators_tooltip.png)  
+***Сочетания клавиш, описанные в подсказке***
 
 У объекта [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) есть коллекция [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator), [KeyboardAccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators), в которой указываются пользовательские объекты KeyboardAccelerator и определяются нажатия клавиш для ускорителя клавиатуры:
 
--   **[Key](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)**— перечисление [VirtualKey](https://docs.microsoft.com/uwp/api/windows.system.virtualkey), используемое для ускорителя клавиатуры.
+-   **[Ключ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)**  - [VirtualKey](https://docs.microsoft.com/uwp/api/windows.system.virtualkey) для сочетания клавиш.
 
--   **[Modifiers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)**— перечисление [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/windows.system.virtualkeymodifiers), используемое для ускорителя клавиатуры. Если свойству Modifiers не задано значение, используется значение по умолчанию None.
+-   **[Модификаторы](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)**  — [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/windows.system.virtualkeymodifiers) для сочетания клавиш. Если свойству Modifiers не задано значение, используется значение по умолчанию None.
 
 > [!NOTE]
 > Поддерживаются ускорители, состоящие из одной клавиши (A, Delete, F2, ПРОБЕЛ, ESC, клавиша мультимедиа) и нескольких клавиш (CTRL+SHIFT+M). Тем не менее, виртуальные клавиши геймпада не поддерживаются.
@@ -195,7 +195,7 @@ ms.locfileid: "8981883"
 
 Объект [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) использует [шаблон элемента управления на основе модели автоматизации пользовательского интерфейса (UIA)](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controlpatternsoverview) для выполнения действия при вызове ускорителя.
 
-Элементы управления на основе модели автоматизации пользовательского интерфейса предоставляют общие возможности элементов управления. Например, кнопка реализует [шаблон элемента управления для поддержки событие Click](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke) (как правило, элемент управления вызывается, щелкнув, двойным щелчком, нажатием клавиши ВВОД, предварительно сочетания клавиш или определенная комбинация клавиш). Когда ускоритель клавиатуры используется для вызова элемента управления, платформа XAML проверяет, реализовывает ли этот элемент управления шаблон элемента управления "Вызов", и, если это так, активирует его (нет необходимости прослушивать событие KeyboardAcceleratorInvoked).
+Элементы управления на основе модели автоматизации пользовательского интерфейса предоставляют общие возможности элементов управления. Например, элемент управления Button реализует [Invoke](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke) шаблон элемента управления для поддержки событие Click (обычно элемент управления вызывается путем щелчка, дважды щелкните или нажмите клавишу ВВОД, стандартное сочетание клавиш или каком-либо другом сочетание клавиш). Когда ускоритель клавиатуры используется для вызова элемента управления, платформа XAML проверяет, реализовывает ли этот элемент управления шаблон элемента управления "Вызов", и, если это так, активирует его (нет необходимости прослушивать событие KeyboardAcceleratorInvoked).
 
 В следующем примере сочетание клавиш CTRL+S активирует событие "Щелчок", так как эта кнопка реализует шаблон "Вызов".
 
@@ -219,11 +219,11 @@ ms.locfileid: "8981883"
 
 Событие Invoked объекта [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) активируется при выполнении ускорителя. Объект события [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) включает в себя следующие свойства:
 
-- [**Обработанные**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (Логическое): это значение true событие, активирующее не шаблона элемента управления а восходящая маршрутизация события ускорителя останавливается. Значение по умолчанию — false.
-- [**Элемент**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): объект, связанный с помощью сочетания клавиш.
-- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): ускоритель клавиатуры, используемый для вызова событие Invoked.
+- [**Обработано** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (логическое): Этот параметр предотвращает событие активации шаблон элемента управления и останавливает accelerator восходящая маршрутизация событий. Значение по умолчанию — false.
+- [**Элемент** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): Объект, связанный с помощью ускорителя.
+- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): Сочетания клавиш, используемый для вызова события Invoked.
 
-Здесь мы покажем, как определить коллекцию ускорителей клавиатуры для элементов в ListView и как обрабатывать событие Invoked для каждого сочетания.
+Здесь мы покажем, как определить коллекцию сочетания клавиш для элементов в ListView и как обрабатывать событие Invoked для каждого сочетания.
 
 ``` xaml
 <ListView x:Name="MyListView">
@@ -249,9 +249,9 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 }
 ```
 
-## <a name="override-default-keyboard-behavior"></a>Переопределение поведения клавиатуры по умолчанию
+## <a name="override-default-keyboard-behavior"></a>Переопределить стандартное поведение клавиатуры
 
-В некоторых случаях может потребоваться переопределить поведение по умолчанию отдельных клавиш, таких как клавиша Backspace или клавишу ВВОД. Например: 
+В некоторых случаях может потребоваться переопределить поведение по умолчанию определенные ключи, такие как клавиша Backspace или клавишу ВВОД. Например: 
 
 ## <a name="disable-a-keyboard-accelerator"></a>Отключение ускорителя клавиатуры 
 
@@ -314,13 +314,13 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 Это не всегда возможно из-за различий в возможностях приложений.
 
-| **Редактирование** | **Распространенный ускоритель клавиатуры** |
+| **Редактирование** | **Распространенные сочетания клавиш** |
 | ------------- | ----------------------------------- |
 | Открыть режим редактирования | CTRL+E |
 | Выбрать все элементы в элементе управления или окне с фокусом | CTRL+A |
 | Найти и заменить | CTRL+H |
 | Отменить | CTRL+Z |
-| Повторить | CTRL+Y |
+| Redo | CTRL+Y |
 | Удалить выделение и скопировать его в буфер обмена | CTRL+X |
 | Скопировать выделение в буфер обмена | CTRL+C, CTRL+INSERT |
 | Вставить содержимое буфера обмена | CTRL+V, SHIFT+INSERT |
@@ -330,9 +330,9 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | Добавить дополнительный элемент | CTRL+SHIFT+N |
 | Удалить выбранный элемент (с возможностью отмены) | DEL, CTRL+D |
 | Удалить выбранный элемент (без возможности отмены) | SHIFT+DEL |
-| Полужирный | CTRL+B |
-| Подчеркнутый | CTRL+U |
-| Курсив | Ctrl+I |
+| Bold | CTRL+B |
+| Underline | CTRL+U |
+| Italic | Ctrl+I |
 
 | **Навигация** | |
 | ------------- | ----------------------------------- |
@@ -343,12 +343,12 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | ------------- | ----------------------------------- |
 | Добавить избранное | CTRL+D | 
 | Обновить | F5 или CTRL+R | 
-| Увеличить | CTRL++ | 
+| Увеличение | CTRL++ | 
 | Уменьшить | CTRL+- | 
 | Масштаб по умолчанию | CTRL+0 | 
 | Сохранить | CTRL+S | 
 | Закрыть | CTRL+W | 
-| Печать | CTRL+P | 
+| Print | CTRL+P | 
 
 Обратите внимание, что некоторые сочетания недопустимы для локализованных версий Windows. Например, в версии Windows на испанском языке для выделения полужирным шрифтом вместо CTRL+B используется сочетание CTRL+N. Если приложение локализовано, мы рекомендуем предоставить локализованные ускорители клавиатуры.
 
@@ -358,21 +358,21 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 Так как обычно ускорители клавиатуры не описаны непосредственно в пользовательском интерфейсе приложения UWP, можно улучшить их обнаружение с помощью [подсказок](../controls-and-patterns/tooltips.md), которые автоматически появляются, когда пользователь перемещает фокус, нажимает и удерживает кнопку мыши или наводит указатель мыши на элемент управления. Всплывающая подсказка помогает определить, есть ли у элемента управления связанные с ним ускорители клавиатуры, и если они есть — указывает, какая для этого используется клавиша ускорителя клавиатуры.
 
-**Windows 10, версия 1803 (обновление за апрель 2018 г.) и более поздних версий**
+**Windows 10, версия 1803 (обновление за апрель 2018 года) и более поздних версий**
 
-По умолчанию когда объявляются сочетания клавиш, все элементы управления (за исключением [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) предоставляют соответствующие сочетания клавиш в подсказке.
+По умолчанию при объявлении сочетания клавиш, все элементы управления (за исключением [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) представляют соответствующие клавиши во всплывающей подсказке.
 
 > [!NOTE] 
-> Если для элемента управления определено несколько ускорителей, будет отображаться только первый.
+> Если элемент управления имеет определенные несколько сочетаний клавиш, будут отображаться только первые.
 
 ![Подсказка сочетания клавиш](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
-*Комбинация сочетаний клавиш в подсказке*
+*Ускоритель клавиши в подсказке*
 
-Для [кнопки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button) [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)и [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) объектов ускоритель клавиатуры добавляется к подсказки по умолчанию элемента управления. [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) объекты, ускоритель клавиатуры отображается текст всплывающий элемент.
+Для [кнопку](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), и [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) объектов, в сочетании клавиш добавляется к подсказке по умолчанию элемента управления. Для [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) объектов, в сочетании клавиш отображается текст всплывающего меню.
 
 > [!NOTE]
-> Указание подсказки (см. раздел Button1 в следующем примере) переопределяет это поведение.
+> Указание подсказки (в следующем примере, см. Button1) переопределяет это поведение.
 
 ```xaml
 <StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">
@@ -403,7 +403,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![Подсказка сочетания клавиш](images/accelerators/accelerators-button-small.png)
 
-*Сочетания клавиш, добавленная в подсказке по умолчанию кнопки*
+*Со списком ключей сочетаний клавиш, добавляемой в подсказки кнопки по умолчанию*
 
 ```xaml
 <AppBarButton Icon="Save" Label="Save">
@@ -415,7 +415,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![Подсказка сочетания клавиш](images/accelerators/accelerators-appbarbutton-small.png)
 
-*Сочетания клавиш, добавленная для элемента AppBarButton подсказки по умолчанию*
+*Со списком ключей сочетаний клавиш, добавляемой в подсказки по умолчанию в AppBarButton*
 
 ```xaml
 <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
@@ -441,9 +441,9 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![Подсказка сочетания клавиш](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
 
-*Сочетания клавиш, добавленная к тексту MenuFlyoutItem*
+*Клавиши добавляется к тексту элемента MenuFlyoutItem сочетаний клавиш*
 
-Управление поведением отображения осуществляется с помощью свойства [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode), которое принимает два значения: [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) или [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
+Управлять поведением презентации с помощью [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) свойство, которое принимает два значения: [Автоматическое](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) или [скрытые](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
 
 ```xaml
 <Button Content="Save" Click="OnSave" KeyboardAcceleratorPlacementMode="Auto">
@@ -476,8 +476,8 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 Некоторые элементы управления платформы делают это по умолчанию, в частности, объекты [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) и [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), а объект [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) делает это, когда они отображаются в меню переполнения [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar).
 
-![Описание ускорителей клавиатуры в метке пункта меню](images/accelerators/accelerators_menuitemlabel.png)  
-*Описание ускорителей клавиатуры в метке пункта меню*
+![Сочетания клавиш, описанные в метки элемента меню](images/accelerators/accelerators_menuitemlabel.png)  
+*Сочетания клавиш, описанные в метки элемента меню*
 
 Вы можете переопределить текст ускорителя по умолчанию для метки с помощью свойства [KeyboardAcceleratorTextOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton.KeyboardAcceleratorTextOverride) элементов управления [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem), [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) (используйте пробел для указания на отсутствие текста). 
 
@@ -490,7 +490,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ### <a name="when-an-accelerator-is-invoked"></a>Условия вызова ускорителя
 
-Ускорители состоят из двух типов клавиш: модификаторов и немодификаторов. К клавишам-модификаторам относятся SHIFT, MENU, CTRL и клавиша Windows, предоставляемые через [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKeyModifiers). Немодификаторы— это любые виртуальные клавиши, такие как Delete, F3, ПРОБЕЛ, ESC, а также все буквенно-цифровые и пунктуационные клавиши. Ускоритель клавиатуры вызывается, когда пользователь нажимает клавишу-немодификатор, зажав одну или несколько клавиш-модификаторов. Например, если пользователь нажимает сочетание клавиш CTRL+SHIFT+M, то при нажатии клавиши M платформа проверяет модификаторы (CTRL и SHIFT) и активирует ускоритель, если он существует.
+Ускорители состоят из двух типов клавиш: модификаторов и немодификаторов. К клавишам-модификаторам относятся SHIFT, MENU, CTRL и клавиша Windows, предоставляемые через [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKeyModifiers). Немодификаторы — это любые виртуальные клавиши, такие как Delete, F3, ПРОБЕЛ, ESC, а также все буквенно-цифровые и пунктуационные клавиши. Ускоритель клавиатуры вызывается, когда пользователь нажимает клавишу-немодификатор, зажав одну или несколько клавиш-модификаторов. Например, если пользователь нажимает сочетание клавиш CTRL+SHIFT+M, то при нажатии клавиши M платформа проверяет модификаторы (CTRL и SHIFT) и активирует ускоритель, если он существует.
 
 > [!NOTE]
 > Ускоритель автоматически активируется повторно (например, когда пользователь нажимает сочетание клавиш CTRL+SHIFT, а затем зажимает M, ускоритель вызывается многократно, пока зажата клавиша M). Это поведение невозможно изменить.
@@ -510,11 +510,11 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 #### <a name="the-previewkeydown-and-previewkeyup-events"></a>События PreviewKeyDown и PreviewKeyUp
 
-События ввода предварительного просмотра активируются перед всеми остальными событиями. Если эти события не обрабатываются, активируется ускоритель для элемента с фокусом, а за ним— событие KeyDown. Выполняется восходящая маршрутизация обоих событий, пока они не будут обработаны.
+События ввода предварительного просмотра активируются перед всеми остальными событиями. Если эти события не обрабатываются, активируется ускоритель для элемента с фокусом, а за ним — событие KeyDown. Выполняется восходящая маршрутизация обоих событий, пока они не будут обработаны.
 
 
-![Последовательность основных событий](images/accelerators/accelerators_keyevents.png)
-***Последовательность основных событий***
+![Ключевая последовательность событий](images/accelerators/accelerators_keyevents.png)
+***ключевой последовательности событий***
 
 Порядок событий:
 
@@ -559,8 +559,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 Мы рекомендуем локализовывать все ускорители клавиатуры. Это можно сделать с помощью стандартного файла ресурсов UWP (.resw) и атрибута x:Uid в объявлениях XAML. В этом примере среды выполнения Windows автоматически загружает ресурсы.
 
-![Локализация ускорителя клавиатуры с помощью файла ресурсов UWP](images/accelerators/accelerators_localization.png)
-***Локализация ускорителя клавиатуры с помощью файла ресурсов UWP***
+![Сочетания локализации ускоритель с файлом ресурсов UWP](images/accelerators/accelerators_localization.png)
+***сочетания локализации ускоритель с файлом ресурсов универсальной платформы Windows***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
@@ -616,13 +616,13 @@ public class MyListView : ListView
 }
 ```
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
-* [Взаимодействие с помощью клавиатуры](keyboard-interactions.md)
+* [Взаимодействия пользователей с клавиатурой](keyboard-interactions.md)
 * [Ключи доступа](access-keys.md)
 
 **Примеры**
-* [Галереи элементов управления XAML (то есть XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [Галерея элементов управления XAML (также называемые XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 
  

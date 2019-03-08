@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d, перенос
 ms.localizationpriority: medium
 ms.openlocfilehash: e09dcb1830e62d17983f564771b4808d132179a0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926516"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640829"
 ---
 # <a name="map-opengl-es-20-to-direct3d-11"></a>Сопоставление OpenGL ES 2.0 с Direct3D 11
 
@@ -32,20 +32,20 @@ ms.locfileid: "8926516"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="compare-opengl-es-2-0-api-design-to-directx.md">Планирование переноса из OpenGL ES2.0 в Direct3D</a></p></td>
-<td align="left"><p>Если вы переносите игру с платформы iOS или Android, вам, вероятно, потребуется существенно углубиться в OpenGL ES2.0. При подготовке к переносу базы кода вашего конвейера графики в Direct3D11 и среду выполнения Windows необходимо перед началом работы решить несколько вопросов.</p></td>
+<td align="left"><p><a href="compare-opengl-es-2-0-api-design-to-directx.md">Планирование вашей перенос с OpenGL ES 2.0 на Direct3D</a></p></td>
+<td align="left"><p>Если вы переносите игру с платформы iOS или Android, вам, вероятно, потребуется существенно углубиться в OpenGL ES 2.0. При подготовке к переносу базы кода вашего конвейера графики в Direct3D 11 и среду выполнения Windows необходимо перед началом работы решить несколько вопросов.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="moving-from-egl-to-dxgi.md">Сравнение кода EGL с DXGI и Direct3D</a></p></td>
+<td align="left"><p><a href="moving-from-egl-to-dxgi.md">Сравните код EGL DXGI и Direct3D</a></p></td>
 <td align="left"><p>Программный интерфейс DirectX для работы с графикой (DXGI) и несколько API Direct3D выполняют ту же роль, что и EGL. Этот раздел помогает разобраться в DXGI и Direct3D 11 с точки зрения EGL.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="porting-uniforms-and-attributes.md">Сравнение атрибутов буферов, однородностей и вершин OpenGL ES 2.0 с Direct3D</a></p></td>
+<td align="left"><p><a href="porting-uniforms-and-attributes.md">Сравнить буферов, форменная одежда и атрибуты вершины на Direct3D OpenGL ES 2.0</a></p></td>
 <td align="left"><p>В процессе переноса в Direct3D 11 из OpenGL ES 2.0 необходимо изменить синтаксис и поведение API для передачи данных между приложением и программами-шейдерами.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="change-your-shader-loading-code.md">Сравнение конвейера шейдеров OpenGL ES2.0 с Direct3D</a></p></td>
-<td align="left"><p>Концептуально конвейер шейдеров Direct3D11 очень похож на таковой в OpenGL ES2.0. Однако в терминах проектного решения API главными компонентами для создания и управления стадиями шейдеров являются части двух основных интерфейсов, <a href="https://msdn.microsoft.com/library/windows/desktop/hh404575"><strong>ID3D11Device1</strong></a> и <a href="https://msdn.microsoft.com/library/windows/desktop/hh404598"><strong>ID3D11DeviceContext1</strong></a>. В этом разделе делается попытка сопоставить общие шаблоны API конвейера шейдеров OpenGL ES2.0 с их эквивалентами Direct3D11 в этих интерфейсах.</p></td>
+<td align="left"><p><a href="change-your-shader-loading-code.md">Сравнение конвейера шейдеров OpenGL ES 2.0 на Direct3D</a></p></td>
+<td align="left"><p>Концептуально конвейер шейдеров Direct3D 11 очень похож на таковой в OpenGL ES 2.0. Однако в терминах проектного решения API главными компонентами для создания и управления стадиями шейдеров являются части двух основных интерфейсов, <a href="https://msdn.microsoft.com/library/windows/desktop/hh404575"><strong>ID3D11Device1</strong></a> и <a href="https://msdn.microsoft.com/library/windows/desktop/hh404598"><strong>ID3D11DeviceContext1</strong></a>. В этом разделе делается попытка сопоставить общие шаблоны API конвейера шейдеров OpenGL ES 2.0 с их эквивалентами Direct3D 11 в этих интерфейсах.</p></td>
 </tr>
 </tbody>
 </table>

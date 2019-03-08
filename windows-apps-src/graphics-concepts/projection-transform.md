@@ -1,20 +1,20 @@
 ---
-title: Проекционное преобразование
+title: Преобразование проекции
 description: Проекционное преобразование управляет внутренними процедурами камеры, такими как выбор объектива для камеры. Это самый сложный из всех трех типов преобразований.
 ms.assetid: 378F205D-3800-4477-9820-5EBE6528B14A
 keywords:
-- Проекционное преобразование
+- Преобразование проекции
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f0806c0aa7a130a080457f4361d17f64451846f9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931220"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634549"
 ---
-# <a name="projection-transform"></a>Проекционное преобразование
+# <a name="projection-transform"></a>Преобразование проекции
 
 
 *Проекционное преобразование* управляет внутренними процедурами камеры, такими как выбор объектива для камеры. Это самый сложный из всех трех типов преобразований.
@@ -29,7 +29,7 @@ ms.locfileid: "8931220"
 
 ![иллюстрация матрицы преобразования](images/projmat2.png)
 
-Если умножить матрицу преобразования на матрицу проекции (T\*P), мы получим составную матрицу проекции, как показано на следующем рисунке.
+Умножении матрицы преобразования матрица проекции (T\*P) предоставляет матрица составного проекции, как показано на следующем рисунке.
 
 ![иллюстрация составной матрицы проекции](images/projmat3.png)
 
@@ -55,7 +55,7 @@ ms.locfileid: "8931220"
 
 Какую бы формулу вы ни выбрали, обязательно установите для Zₙ максимально возможное значение, так как z-значения, очень близкие к камере, не сильно отличаются. Это относительно усложняет сравнение глубины с помощью 16-разрядных z-буферов.
 
-## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>Матрица проекции с поддержкой переменной w
+## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>Матрица проекции w с поддержкой
 
 
 Direct3D может использовать компонент w вершины, которая была преобразована абсолютной матрицей, а также матрицами представления и проекции для вычислений на основе глубины при использовании буфера глубины или эффекта тумана. Для таких вычислений требуется, чтобы матрица проекции нормализовала переменную w как эквивалентную координате z в абсолютном пространстве. Иными словами, если матрица проекции включает коэффициент (3,4), не равный 1, необходимо масштабировать все коэффициенты, инвертируя коэффициент (3,4) для получения правильной матрицы. Если не предоставить совместимую матрицу, эффекты тумана и буферизация глубины не будут правильно применены.
@@ -68,10 +68,10 @@ Direct3D может использовать компонент w вершины
 
 Direct3D использует текущую матрицу проекции при расчетах глубины вершин на основе переменной w. В результате приложения должны установить соответствующую матрицу проекции для получения необходимых функций на основе компонента w, даже если они не используют Direct3D для преобразования.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Преобразования](transforms.md)
+[Преобразует](transforms.md)
 
  
 

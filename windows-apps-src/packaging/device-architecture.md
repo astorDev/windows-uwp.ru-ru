@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, пакет, архитектура, конфигурация пакета
 ms.localizationpriority: medium
 ms.openlocfilehash: 338dac1d43e08257fa00b51c0c311a090f3d95c0
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116113"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619939"
 ---
 # <a name="app-package-architectures"></a>Типы архитектуры пакетов приложений
 
@@ -25,7 +25,7 @@ ms.locfileid: "9116113"
 ## <a name="windows-10-devices-and-architectures"></a>Типы архитектуры и устройства Windows 10
 
 > [!div class="mx-tableFixed"]
-| Архитектура UWP | Классическая (x86)      | Классическая (x64)      | Классическая (ARM)      | Мобильная             | HoloLens и смешанной реальности           | Xbox               | IoT Core (зависит от устройства) | SurfaceHub        |
+| Архитектура UWP | Классическая (x86)      | Классическая (x64)      | Классическая (ARM)      | Мобильные устройства             | Windows Mixed Reality и HoloLens           | Xbox               | IoT Core (зависит от устройства) | Surface Hub        |
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|--------------------|
 | x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          | :heavy_check_mark: |
 | x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          | :heavy_check_mark: |
@@ -44,8 +44,8 @@ ms.locfileid: "9116113"
 Windows 10 на архитектуре ARM включает в себя настольные компьютеры, мобильные устройства и некоторые устройства IoT Core (Raspberry Pi 2, Raspberry Pi 3 и DragonBoard). Windows 10 на настольных компьютерах с архитектурой ARM — это новое пополнение в семействе Windows, поэтому если вы разрабатываете приложения UWP, вам потребуется отправлять пакеты для ARM в Магазин, чтобы обеспечить оптимальную работу на таких компьютерах.
 
 >[!NOTE]
-> Чтобы выполнить сборку приложения UWP для изначально платформы ARM64, вам потребуется Visual Studio 2017 версии 15,9 или более поздней версии. Дополнительные сведения см. [в этой записи блога](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
+> Чтобы создать приложение универсальной платформы Windows для скомпилированных в собственном коде платформы ARM64, необходимо иметь Visual Studio 2017 15,9 или более поздней версии. Дополнительные сведения см. в разделе [этой записи блога](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
 
-Дополнительные сведения см. в разделе [Windows 10 в ARM](../porting/apps-on-arm.md). Посмотрите это обсуждение //Build, чтобы ознакомиться с демонстрацией [Windows 10 на ARM](https://channel9.msdn.com/Events/Build/2017/P4171) и узнать больше о том, как это работает.
+Дополнительные сведения см. в разделе [Windows 10 на ARM](../porting/apps-on-arm.md). Посмотрите это обсуждение //Build, чтобы ознакомиться с демонстрацией [Windows 10 на ARM](https://channel9.msdn.com/Events/Build/2017/P4171) и узнать больше о том, как это работает.
 
-Дополнительные сведения о том, относящимся к IoT темам см. в разделе [развертывание приложения с помощью Visual Studio](https://developer.microsoft.com/windows/iot/Docs/AppDeployment).
+Дополнительные сведения о практических Интернета вещей, см. в разделе [развертывание приложения с помощью Visual Studio](https://developer.microsoft.com/windows/iot/Docs/AppDeployment).
