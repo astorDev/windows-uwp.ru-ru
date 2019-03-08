@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, шаблоны, инструменты, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: a272c579fb3ead676fe76f16c33b70f557de4ed8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941177"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653769"
 ---
 # <a name="project-templates-and-tools-for-games"></a>Шаблоны проектов и средства для игр
 
@@ -25,7 +25,7 @@ ms.locfileid: "8941177"
 ## <a name="get-visual-studio"></a>Получение Visual Studio
 
 
-[Скачайте и установите Microsoft Visual Studio2015](https://www.visualstudio.com/vs-2015-product-editions).
+[Скачайте и установите Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
 
 <table>
 <colgroup>
@@ -34,17 +34,17 @@ ms.locfileid: "8941177"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Статья</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="user-interface.md">Шаблоны проектов игр DirectX</a></p></td>
+<td align="left"><p><a href="user-interface.md">Шаблоны проекта игр DirectX</a></p></td>
 <td align="left"><p>Изучите шаблоны для создания игры UWP и DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="set-up-visual-studio-for-game-development.md">Средства Visual Studio для программирования игр</a></p></td>
+<td align="left"><p><a href="set-up-visual-studio-for-game-development.md">Инструменты Visual Studio для программирования игр</a></p></td>
 <td align="left"><p>Здесь дается обзор средств разработки для DirectX, имеющихся в составе Visual Studio.</p></td>
 </tr>
 <tr class="odd">
@@ -59,15 +59,15 @@ ms.locfileid: "8941177"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 
-Сведения о переносе существующей игры см. в следующих разделах.
+Сведения о портировании существующей игры см. в следующих разделах.
 
--   [Портирование из OpenGL ES2.0 в DirectX11](port-from-opengl-es-2-0-to-directx-11-1.md)
--   [Портирование из DirectX 9 в UWP](porting-your-directx-9-game-to-windows-store.md)
+-   [Перенос с OpenGL ES 2.0 на DirectX 11](port-from-opengl-es-2-0-to-directx-11-1.md)
+-   [Перенос с DirectX 9 на UWP](porting-your-directx-9-game-to-windows-store.md)
 
 Сведения о создании новой игры DirectX см. в следующих разделах.
 
 -   [Создание простой игры UWP c использованием DirectX](tutorial--create-your-first-uwp-directx-game.md)
--   [Разработка Marble Maze— игры универсальной платформы Windows— на C++ и DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [Разработка Marble Maze — игры для универсальной платформы Windows в C++ и DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

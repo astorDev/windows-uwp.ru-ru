@@ -1,5 +1,5 @@
 ---
-Description: How to use thumbnail images to help users preview files in UWP apps.
+Description: Как использовать эскизов изображений, чтобы помочь пользователям Предварительный просмотр файлов в приложениях универсальной платформы Windows.
 title: Руководство по эскизам в приложениях UWP
 label: Thumbnail images
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 15984e00b036bf44d6e4a7f60cb6435ea1add291
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980352"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642009"
 ---
 # <a name="thumbnail-images"></a>Эскизы
 
@@ -66,16 +66,16 @@ ms.locfileid: "8980352"
 <tr>
 <td> Изображения<br /> Видео </td>
 <td> PicturesView <br />VideosView </td>
-<td> <b>Размер</b>: средний, предпочтительно не менее 190 пикселей (если размер изображения составляет 190 x 130) <br />
-<b>Пропорции</b>: однородные прямоугольные пропорции, примерно равные 0,7 (190 x 130, если размер составляет 190 пикселей) <br />
+<td> <b>Размер</b>: Средний, предпочтительно по крайней мере 190 (если размер изображения равно 190 x 130) <br />
+<b>Соотношение сторон</b>: Универсальный код, расширенных пропорции около.7 (190 x 130 при размере 190) <br />
 Обрезано для предварительного просмотра. <br /> 
 Обеспечивает выравнивание изображений в сетке благодаря одинаковым пропорциям.  </td>
 </tr>
 <tr>
 <td> Документы<br />Музыка </td>
 <td> DocumentsView <br />MusicView <br /> ListView</td>
-<td> <b>Размер</b>: небольшой, желательно не менее 40x40 пикселей <br />
-<b>Пропорции</b>: однородные, квадратные  <br />
+<td> <b>Размер</b>: Мелкий, предпочтительно минимум 40 x 40 пикселей <br />
+<b>Соотношение сторон</b>:  Универсальный код, квадратный пропорции  <br />
 Хорошо подходит для предварительного просмотра обложек альбомов благодаря квадратным пропорциям. <br /> 
 Документы выглядят так же, как в окне средства выбора файлов (в нем используются те же значки). </td>
 </tr>
@@ -83,8 +83,8 @@ ms.locfileid: "8980352"
 <tr>
 <td> Любой отдельный элемент (вне зависимости от типа файла) </td>
 <td> SingleItem </td>
-<td> <b>Размер</b>: небольшой, желательно не менее 40x40 пикселей <br />
-<b>Пропорции</b>: однородные, квадратные  <br />
+<td> <b>Размер</b>: Мелкий, предпочтительно минимум 40 x 40 пикселей <br />
+<b>Соотношение сторон</b>:  Универсальный код, квадратный пропорции  <br />
 Хорошо подходит для предварительного просмотра обложек альбомов благодаря квадратным пропорциям. <br /> 
 Документы выглядят так же, как в окне средства выбора файлов (в нем используются те же значки). </td>
 </tr>
@@ -119,24 +119,24 @@ ms.locfileid: "8980352"
 </tr>
 <tr>
 <td>Музыка</td>
-<td>Эскиз— это значок на фоне соответствующего размера. Цвет фона определяется цветом фона плитки приложения. <br />
+<td>Эскиз — это значок на фоне соответствующего размера. Цвет фона определяется цветом фона плитки приложения. <br />
 <img src="images/thumbnail-music-picvid-modes.png" alt="Music thumbnail in picture or video mode"/></td>
 <td>Если у файла есть обложка альбома, то эскизом будет обложка альбома.  <br />
 <img src="images/thumbnail-music-doclistmusic-modes.png" alt="Music thumbnail in documents, music, or list mode"/> <br />
-В противном случае эскиз— это значок на фоне соответствующего размера.</td>
+В противном случае эскиз — это значок на фоне соответствующего размера.</td>
 <td>Если у файла есть обложка альбома, то эскизом будет обложка альбома, для которого будут использоваться исходные пропорции файла.  <br />
 <img src="images/thumbnail-music-single-mode.png" alt="Music thumbnail in single mode"/> <br />
-В противном случае эскиз— это значок. </td>
+В противном случае эскиз — это значок. </td>
 </tr>
 <tr>
 <td>Документ</td>
-<td>Эскиз— это значок на фоне соответствующего размера. Цвет фона определяется цветом фона плитки приложения. <br />
+<td>Эскиз — это значок на фоне соответствующего размера. Цвет фона определяется цветом фона плитки приложения. <br />
 <img src="images/thumbnail-docs-picvid-modes.png" alt="Document thumbnail in picture or video mode"/></td>
-<td>Эскиз— это значок на фоне соответствующего размера. Цвет фона определяется цветом фона плитки приложения. <br />
+<td>Эскиз — это значок на фоне соответствующего размера. Цвет фона определяется цветом фона плитки приложения. <br />
 <img src="images/thumbnail-doc-doclistmusic-modes.png" alt="Document thumbnail in documents, music, or list mode"/></td>
 <td>Эскиз документа, если таковой существует. <br />
 <img src="images/thumbnail-doc1-single-mode.png" alt="Document thumbnail in single mode"/><br />
-В противном случае эскиз— это значок. <br />
+В противном случае эскиз — это значок. <br />
 <img src="images/thumbnail-doc2-single-mode.png" alt="Document thumbnail icon in single mode"/></td>
 </tr>
 <tr>
@@ -155,7 +155,7 @@ ms.locfileid: "8980352"
 <td>Если среди файлов в группе есть файл, у которого есть обложка альбома, то в качестве эскиза используется обложка альбома. <br />
 <img src="images/thumbnail-grp-doclistmusic-modes.png" alt="File group thumbnail in documents, music or list mode"/> <br />В противном случае эскиз не загружается. </td>
 <td>Если среди файлов в группе есть файл, у которого есть обложка альбома, то в качестве эскиза используется обложка альбома, для которого используются исходные пропорции файла. <br />
-<img src="images/thumbnail-grp1-single-mode.png" alt="File group thumbnail in picture or video mode"/> <br />В противном случае эскиз— это значок, представляющий группу файлов. <br />
+<img src="images/thumbnail-grp1-single-mode.png" alt="File group thumbnail in picture or video mode"/> <br />В противном случае эскиз — это значок, представляющий группу файлов. <br />
 <img src="images/thumbnail-grp2-single-mode.png" alt="File group icon in single mode"/> 
 </td>
 </tr>
@@ -166,5 +166,5 @@ ms.locfileid: "8980352"
 - [Перечисление ThumbnailMode](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
 - [Класс StorageItemThumbnail](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
 - [Класс StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)
-- [Пример эскизов файлов и папок (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
-- [Представления списка и сетки](../design/controls-and-patterns/lists.md)
+- [Пример эскиза файлов и папок (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
+- [Представление списка и сетки](../design/controls-and-patterns/lists.md)

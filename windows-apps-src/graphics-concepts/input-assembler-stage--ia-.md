@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c5e1c294da2b4ef24ff8f62b686890cb8c69c06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942946"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646289"
 ---
 # <a name="input-assembler-ia-stage"></a>Этап сборщика входных данных
 
 
 Этап сборщика входных данных (IA) поставляет данные о смежности и примитивах в контейнер, например о треугольниках, линиях и точках, включая семантические идентификаторы, чтобы повысить эффективность шейдеров путем снижения объемов обработки до примитивов, которые еще не были обработаны.
 
-## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>Назначение и способы использования
+## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>Назначения и использования
 
 
 Назначение этапа сборщика входных данных (IA) — чтение данных примитивов (точки, линии и треугольники) из заполняемых пользователем буферов и сбор данных в примитивы, которые будут использоваться другими этапами конвейера, а также прикрепление [созданных системой значений](https://msdn.microsoft.com/library/windows/desktop/bb509647) для повышения эффективности шейдеров. Создаваемые системой значения являются текстовыми строками, которые также называют семантическими элементами. Программируемые этапы шейдера создаются из общего ядра шейдера, которое использует созданные системой значения (например, идентификатор примитива, идентификатор экземпляра или идентификатор вершины), таким образом, чтобы этот этап шейдера мог сократить объемы обработки лишь до тех примитивов, экземпляров или вершин, которые еще не были обработаны.
@@ -30,12 +30,12 @@ ms.locfileid: "8942946"
 
 При поступлении этапу сборщика входных данных запроса на вывод данных о смежности входные данные должны включать данные о смежности. Для этого может потребоваться предоставление фиктивной вершины (с образованием неполноценного треугольника) или, возможно, создание в одном из атрибутов вершины отметки о том, существует ли эта вершина. Это также должно распознаваться и обрабатываться шейдером геометрии, несмотря на то что отбраковка неполноценной геометрии будет происходить на этапе растеризации.
 
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Ввод
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Входные данные
 
 
 Этап сборщика входных данных считывает данные из памяти: данные примитивов (точки, линии и треугольники) из заполняемых пользователем буферов.
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Вывод
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Выходные данные
 
 
 Этап сборщика входных данных объединяет данные в примитивы и прикрепляет к ним созданные системой значения, и выводит эти данные как примитивы, которые будут использоваться [этапом шейдера вершин (VS)](vertex-shader-stage--vs-.md), а затем другими этапами конвейера.
@@ -50,17 +50,17 @@ ms.locfileid: "8942946"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Статья</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="primitive-topologies.md">Топологии примитивов</a></p></td>
+<td align="left"><p><a href="primitive-topologies.md">Примитив топологий</a></p></td>
 <td align="left"><p>Direct3D поддерживает несколько топологий примитивов, которые определяют, как вершины интерпретируются и рассматриваются конвейером; к ним относятся списки точек, списки линий, и полосы треугольников.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="using-system-generated-values.md">Использование системных значений</a></p></td>
+<td align="left"><p><a href="using-system-generated-values.md">С помощью системных значений</a></p></td>
 <td align="left"><p>Создаваемые системой значения генерируются этапом сборщика входных данных (на основе введенных пользователем <a href="https://msdn.microsoft.com/library/windows/desktop/bb509647">семантических элементов</a>) в целях повышения эффективности операций шейдера. Благодаря прикреплению определенных данных, таких как идентификатор экземпляра (видимый <a href="vertex-shader-stage--vs-.md">этапу шейдера вершин (VS)</a>), идентификатор вершины (видимый VS) или идентификатор примитива (видимый <a href="geometry-shader-stage--gs-.md">этапу шейдера геометрии (GS)</a>/<a href="pixel-shader-stage--ps-.md">этапу построителя текстуры (PS)</a>), последующий этап шейдера может искать эти системные значения для оптимизации обработки на этом этапе.</p></td>
 </tr>
 </tbody>
@@ -68,10 +68,10 @@ ms.locfileid: "8942946"
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Графический конвейер](graphics-pipeline.md)
+[Графического конвейера](graphics-pipeline.md)
 
  
 

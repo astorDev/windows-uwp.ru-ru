@@ -1,5 +1,5 @@
 ---
-Description: This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font.
+Description: В этой статье перечислены и предоставлены рекомендации по использованию глифов, которые входят в состав шрифта Segoe MDL2 Assets.
 Search.Refinement.TopicID: 184
 title: Руководство по значкам Segoe MDL2
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
@@ -7,14 +7,14 @@ label: Segoe MDL2 icons
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934819"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649059"
 ---
 # <a name="segoe-mdl2-icons"></a>Значки Segoe MDL2
 
@@ -22,11 +22,11 @@ ms.locfileid: "8934819"
 
 В этой статье перечислены значки, доступные в шрифте Segoe MDL2 Assets. 
 
-> **Важные API-интерфейсы**: [**перечисления Symbol**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [**класс FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **Важные API-интерфейсы**: [**Символ перечисления**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [ **FontIcon-класс**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>Сведения о шрифте Segoe MDL2 Assets
 
-С момента выпуска Windows 10 шрифт Segoe MDL2 Assets заменил шрифт для значка Segoe UI Symbol из Windows 8/8.1. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> ( **Segoe UI Symbol** будет по-прежнему доступен как "устаревший ресурс", но рекомендуется обновить свое приложение и использовать новый шрифт **Segoe MDL2 Assets**.)
+С момента выпуска Windows 10 шрифт Segoe MDL2 Assets заменил шрифт для значка Segoe UI Symbol из Windows 8/8.1. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** по-прежнему будут доступны как ресурс «устаревшего», но мы рекомендуем обновить приложение для использования нового **Segoe MDL2 активы**.)
 
 Большинство значков и элементов управления пользовательского интерфейса, включенных в шрифт **Segoe MDL2 Assets**, сопоставлены с областью личных символов Юникода (PUA). Область личных символов позволяет разработчикам шрифтов присваивать личные значения Юникода глифам, которые не сопоставлены с существующими кодовыми точками. Это полезно при создании символьного шрифта, но вызывает проблемы с взаимодействием. Если шрифт недоступен, глифы не отображаются. Используйте эти глифы, только если можете задать шрифт **Segoe MDL2 Assets** .
 
@@ -43,7 +43,7 @@ ms.locfileid: "8934819"
 Для многих значков также доступны зеркальные формы для использования в языках с направлением письма справа налево, таких как арабский, фарси и иврит.
 
 ## <a name="using-the-icons"></a>Использование значков
-Если вы разрабатываете приложение на C# / VB/C++ и XAML, можно использовать глифы из Segoe MDL2 Assets с [перечисление Symbol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
+Если вы разрабатываете приложения в C#/VB/C++ и XAML, можно использовать указанный глифов из Segoe MDL2 активов с помощью [символ перечисления](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
@@ -55,15 +55,15 @@ ms.locfileid: "8934819"
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-Вы также можете использовать статический ресурс `SymbolThemeFontFamily` для доступа к **Segoe MDL2 Assets**, вместо указания шрифт по имени:
+Можно также использовать статический ресурс `SymbolThemeFontFamily` для доступа к **Segoe MDL2 активы**, вместо указания шрифт по имени:
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
 
 
 ## <a name="how-do-i-get-this-font"></a>Как получить этот шрифт?
-* В Windows 10: Нет ничего, что нужно сделать, шрифт поставляется вместе с Windows.
-* На компьютере Mac, необходимо загрузить и установить шрифт: <a href="https://aka.ms/SegoeFonts">Получение Segoe UI и MDL2 шрифты значков</a>
+* В Windows 10: Нет ничего, что вам нужно сделать, шрифт поставляется с Windows.
+* На компьютере Mac вам потребуется загрузить и установить шрифт. <a href="https://aka.ms/SegoeFonts">Шрифты значок Segoe UI и MDL2</a>
 
 ## <a name="icon-list"></a>Список значков
 Помните, здесь по причине нехватки места показаны не все значки шрифта **Segoe MDL2 Assets** — их гораздо больше. Большая часть значков применяется со специальной целью, и обычно такие значки больше нигде не используются.
@@ -90,7 +90,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E703.png" width="32" height="32" alt="Connect" /></td>
   <td>E703</td>
-  <td>Connect</td>
+  <td>Подключить</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E704.png" width="32" height="32" alt="InternetSharing" /></td>
   <td>E704</td>
@@ -118,7 +118,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E70A.png" width="32" height="32" alt="Tablet" /></td>
   <td>E70A</td>
-  <td>Tablet</td>
+  <td>Планшет</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E70B.png" width="32" height="32" alt="QuickNote" /></td>
   <td>E70B</td>
@@ -138,15 +138,15 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E70F.png" width="32" height="32" alt="Edit" /></td>
   <td>E70F</td>
-  <td>Edit</td>
+  <td>Измените</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E710.png" width="32" height="32" alt="Add" /></td>
   <td>E710</td>
-  <td>Add</td>
+  <td>Добавить</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E711.png" width="32" height="32" alt="Cancel" /></td>
   <td>E711</td>
-  <td>Cancel</td>
+  <td>Отмена</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E712.png" width="32" height="32" alt="More" /></td>
   <td>E712</td>
@@ -154,11 +154,11 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E713.png" width="32" height="32" alt="Settings" /></td>
   <td>E713</td>
-  <td>Settings</td>
+  <td>Параметры</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E714.png" width="32" height="32" alt="Video" /></td>
   <td>E714</td>
-  <td>Video</td>
+  <td>Видео</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E715.png" width="32" height="32" alt="Mail" /></td>
   <td>E715</td>
@@ -170,7 +170,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E717.png" width="32" height="32" alt="Phone" /></td>
   <td>E717</td>
-  <td>Phone</td>
+  <td>Телефон</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E718.png" width="32" height="32" alt="Pin" /></td>
   <td>E718</td>
@@ -190,7 +190,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E71C.png" width="32" height="32" alt="Filter" /></td>
   <td>E71C</td>
-  <td>Filter</td>
+  <td>Фильтр</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E71D.png" width="32" height="32" alt="AllApps" /></td>
   <td>E71D</td>
@@ -206,15 +206,15 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E720.png" width="32" height="32" alt="Microphone" /></td>
   <td>E720</td>
-  <td>Microphone</td>
+  <td>Микрофон</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E721.png" width="32" height="32" alt="Search" /></td>
   <td>E721</td>
-  <td>Search</td>
+  <td>Поиск</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E722.png" width="32" height="32" alt="Camera" /></td>
   <td>E722</td>
-  <td>Camera</td>
+  <td>Камера</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E723.png" width="32" height="32" alt="Attach" /></td>
   <td>E723</td>
@@ -254,7 +254,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E72C.png" width="32" height="32" alt="Refresh" /></td>
   <td>E72C</td>
-  <td>Refresh</td>
+  <td>Обновить</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E72D.png" width="32" height="32" alt="Share" /></td>
   <td>E72D</td>
@@ -286,7 +286,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E738.png" width="32" height="32" alt="Remove" /></td>
   <td>E738</td>
-  <td>Remove</td>
+  <td>Удалить</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E739.png" width="32" height="32" alt="Checkbox" /></td>
   <td>E739</td>
@@ -358,23 +358,23 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E74A.png" width="32" height="32" alt="Up" /></td>
   <td>E74A</td>
-  <td>Up</td>
+  <td>Вверх</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74B.png" width="32" height="32" alt="Down" /></td>
   <td>E74B</td>
-  <td>Down</td>
+  <td>Вниз</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74C.png" width="32" height="32" alt="OEM" /></td>
   <td>E74C</td>
-  <td>OEM</td>
+  <td>Изготовитель оборудования</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74D.png" width="32" height="32" alt="Delete" /></td>
   <td>E74D</td>
-  <td>Delete</td>
+  <td>Удалить</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74E.png" width="32" height="32" alt="Save" /></td>
   <td>E74E</td>
-  <td>Save</td>
+  <td>Сохранить</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74F.png" width="32" height="32" alt="Mute" /></td>
   <td>E74F</td>
@@ -394,7 +394,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E753.png" width="32" height="32" alt="Cloud" /></td>
   <td>E753</td>
-  <td>Cloud</td>
+  <td>Облако</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E754.png" width="32" height="32" alt="Flashlight" /></td>
   <td>E754</td>
@@ -474,7 +474,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E769.png" width="32" height="32" alt="Pause" /></td>
   <td>E769</td>
-  <td>Pause</td>
+  <td>Пауза</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E76B.png" width="32" height="32" alt="ChevronLeft" /></td>
   <td>E76B</td>
@@ -498,7 +498,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E770.png" width="32" height="32" alt="System" /></td>
   <td>E770</td>
-  <td>System</td>
+  <td>Система</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E771.png" width="32" height="32" alt="Personalize" /></td>
   <td>E771</td>
@@ -506,7 +506,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E772.png" width="32" height="32" alt="Devices" /></td>
   <td>E772</td>
-  <td>Devices</td>
+  <td>Устройства</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E773.png" width="32" height="32" alt="SearchAndApps" /></td>
   <td>E773</td>
@@ -550,7 +550,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E77F.png" width="32" height="32" alt="Paste" /></td>
   <td>E77F</td>
-  <td>Paste</td>
+  <td>Вставка</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E780.png" width="32" height="32" alt="PhoneBook" /></td>
   <td>E780</td>
@@ -562,7 +562,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E783.png" width="32" height="32" alt="Error" /></td>
   <td>E783</td>
-  <td>Error</td>
+  <td>Ошибка</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E784.png" width="32" height="32" alt="GripperBarVertical" /></td>
   <td>E784</td>
@@ -578,7 +578,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E787.png" width="32" height="32" alt="Calendar" /></td>
   <td>E787</td>
-  <td>Calendar</td>
+  <td>Календарь</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E788.png" width="32" height="32" alt="GripperResize" /></td>
   <td>E788</td>
@@ -602,7 +602,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E790.png" width="32" height="32" alt="Color" /></td>
   <td>E790</td>
-  <td>Color</td>
+  <td>Цвет</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E791.png" width="32" height="32" alt="DataSense" /></td>
   <td>E791</td>
@@ -614,7 +614,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E793.png" width="32" height="32" alt="Light" /></td>
   <td>E793</td>
-  <td>Light</td>
+  <td>Светлая</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E799.png" width="32" height="32" alt="AspectRatio" /></td>
   <td>E799</td>
@@ -630,7 +630,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7A7.png" width="32" height="32" alt="Undo" /></td>
   <td>E7A7</td>
-  <td>Undo</td>
+  <td>Отменить</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7A8.png" width="32" height="32" alt="Crop" /></td>
   <td>E7A8</td>
@@ -658,11 +658,11 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7B8.png" width="32" height="32" alt="Package" /></td>
   <td>E7B8</td>
-  <td>Пакет</td>
+  <td>Упаковка</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BA.png" width="32" height="32" alt="Warning" /></td>
   <td>E7BA</td>
-  <td>Warning</td>
+  <td>Тревожное</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BC.png" width="32" height="32" alt="ReadingList" /></td>
   <td>E7BC</td>
@@ -670,7 +670,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BE.png" width="32" height="32" alt="Education" /></td>
   <td>E7BE</td>
-  <td>Education</td>
+  <td>Образование</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BF.png" width="32" height="32" alt="ShoppingCart" /></td>
   <td>E7BF</td>
@@ -678,7 +678,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C0.png" width="32" height="32" alt="Train" /></td>
   <td>E7C0</td>
-  <td>Train</td>
+  <td>Поезд</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C1.png" width="32" height="32" alt="Flag" /></td>
   <td>E7C1</td>
@@ -722,7 +722,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7E6.png" width="32" height="32" alt="Highlight" /></td>
   <td>E7E6</td>
-  <td>Highlight</td>
+  <td>Выделить</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7E7.png" width="32" height="32" alt="ActionCenterNotification" /></td>
   <td>E7E7</td>
@@ -754,7 +754,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7EF.png" width="32" height="32" alt="Admin" /></td>
   <td>E7EF</td>
-  <td>Admin</td>
+  <td>Администратор</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7F0.png" width="32" height="32" alt="CC" /></td>
   <td>E7F0</td>
@@ -778,7 +778,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7F5.png" width="32" height="32" alt="Speakers" /></td>
   <td>E7F5</td>
-  <td>Speakers</td>
+  <td>Динамики</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7F6.png" width="32" height="32" alt="Headphone" /></td>
   <td>E7F6</td>
@@ -850,7 +850,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E80F.png" width="32" height="32" alt="Home" /></td>
   <td>E80F</td>
-  <td>Home</td>
+  <td>Главная</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E811.png" width="32" height="32" alt="ParkingLocation" /></td>
   <td>E811</td>
@@ -870,7 +870,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E815.png" width="32" height="32" alt="Touch" /></td>
   <td>E815</td>
-  <td>Touch</td>
+  <td>Сенсорный ввод</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E816.png" width="32" height="32" alt="MapDirections" /></td>
   <td>E816</td>
@@ -890,7 +890,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E81C.png" width="32" height="32" alt="History" /></td>
   <td>E81C</td>
-  <td>History</td>
+  <td>Журнал</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E81D.png" width="32" height="32" alt="Location" /></td>
   <td>E81D</td>
@@ -1318,7 +1318,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E890.png" width="32" height="32" alt="View" /></td>
   <td>E890</td>
-  <td>View</td>
+  <td>Просмотр</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E891.png" width="32" height="32" alt="HighlightFill" /></td>
   <td>E891</td>
@@ -1326,15 +1326,15 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E892.png" width="32" height="32" alt="Previous" /></td>
   <td>E892</td>
-  <td>Previous</td>
+  <td>Назад</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E893.png" width="32" height="32" alt="Next" /></td>
   <td>E893</td>
-  <td>Next</td>
+  <td>Далее</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E894.png" width="32" height="32" alt="Clear" /></td>
   <td>E894</td>
-  <td>Clear</td>
+  <td>Четкость</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E895.png" width="32" height="32" alt="Sync" /></td>
   <td>E895</td>
@@ -1342,7 +1342,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E896.png" width="32" height="32" alt="Download" /></td>
   <td>E896</td>
-  <td>Download</td>
+  <td>Скачивание</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E897.png" width="32" height="32" alt="Help" /></td>
   <td>E897</td>
@@ -1398,7 +1398,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8A5.png" width="32" height="32" alt="Document" /></td>
   <td>E8A5</td>
-  <td>Document</td>
+  <td>Документ</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8A6.png" width="32" height="32" alt="ProtectedDocument" /></td>
   <td>E8A6</td>
@@ -1422,7 +1422,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8AB.png" width="32" height="32" alt="Switch" /></td>
   <td>E8AB</td>
-  <td>Switch</td>
+  <td>Переключатель</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8AC.png" width="32" height="32" alt="Rename" /></td>
   <td>E8AC</td>
@@ -1438,11 +1438,11 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8AF.png" width="32" height="32" alt="Remote" /></td>
   <td>E8AF</td>
-  <td>Remote</td>
+  <td>Пульт ДУ</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B0.png" width="32" height="32" alt="Click" /></td>
   <td>E8B0</td>
-  <td>Click</td>
+  <td>Нажмите</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B1.png" width="32" height="32" alt="Shuffle" /></td>
   <td>E8B1</td>
@@ -1458,7 +1458,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B4.png" width="32" height="32" alt="Orientation" /></td>
   <td>E8B4</td>
-  <td>Orientation</td>
+  <td>Ориентация</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B5.png" width="32" height="32" alt="Import" /></td>
   <td>E8B5</td>
@@ -1470,7 +1470,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B7.png" width="32" height="32" alt="Folder" /></td>
   <td>E8B7</td>
-  <td>Folder</td>
+  <td>Папка</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B8.png" width="32" height="32" alt="Webcam" /></td>
   <td>E8B8</td>
@@ -1482,7 +1482,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BA.png" width="32" height="32" alt="Caption" /></td>
   <td>E8BA</td>
-  <td>Caption</td>
+  <td>Заголовок</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BB.png" width="32" height="32" alt="ChromeClose" /></td>
   <td>E8BB</td>
@@ -1494,7 +1494,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BD.png" width="32" height="32" alt="Message" /></td>
   <td>E8BD</td>
-  <td>Message</td>
+  <td>Сообщение</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BE.png" width="32" height="32" alt="Leaf" /></td>
   <td>E8BE</td>
@@ -1530,7 +1530,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C6.png" width="32" height="32" alt="Cut" /></td>
   <td>E8C6</td>
-  <td>Cut</td>
+  <td>Вырезать</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C7.png" width="32" height="32" alt="PaymentCard" /></td>
   <td>E8C7</td>
@@ -1538,11 +1538,11 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C8.png" width="32" height="32" alt="Copy" /></td>
   <td>E8C8</td>
-  <td>Copy</td>
+  <td>Копировать</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C9.png" width="32" height="32" alt="Important" /></td>
   <td>E8C9</td>
-  <td>Important</td>
+  <td>Важно.</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8CA.png" width="32" height="32" alt="MailReply" /></td>
   <td>E8CA</td>
@@ -1594,11 +1594,11 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D6.png" width="32" height="32" alt="Audio" /></td>
   <td>E8D6</td>
-  <td>Audio</td>
+  <td>Звук</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D7.png" width="32" height="32" alt="Permissions" /></td>
   <td>E8D7</td>
-  <td>Permissions</td>
+  <td>Разрешения</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D8.png" width="32" height="32" alt="DisableUpdates" /></td>
   <td>E8D8</td>
@@ -1694,7 +1694,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8EF.png" width="32" height="32" alt="Calculator" /></td>
   <td>E8EF</td>
-  <td>Calculator</td>
+  <td>Калькулятор</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F0.png" width="32" height="32" alt="Directions" /></td>
   <td>E8F0</td>
@@ -1742,7 +1742,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8FB.png" width="32" height="32" alt="Accept" /></td>
   <td>E8FB</td>
-  <td>Accept</td>
+  <td>Принять</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8FC.png" width="32" height="32" alt="GoToStart" /></td>
   <td>E8FC</td>
@@ -1790,7 +1790,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E90A.png" width="32" height="32" alt="Comment" /></td>
   <td>E90A</td>
-  <td>Comment</td>
+  <td>Примечание</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E90B.png" width="32" height="32" alt="MusicInfo" /></td>
   <td>E90B</td>
@@ -1814,7 +1814,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E910.png" width="32" height="32" alt="Accounts" /></td>
   <td>E910</td>
-  <td>Accounts</td>
+  <td>Учетные записи</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E911.png" width="32" height="32" alt="DullSound" /></td>
   <td>E911</td>
@@ -1822,7 +1822,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E912.png" width="32" height="32" alt="Manage" /></td>
   <td>E912</td>
-  <td>Manage</td>
+  <td>Управление</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E913.png" width="32" height="32" alt="Street" /></td>
   <td>E913</td>
@@ -1954,7 +1954,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E943.png" width="32" height="32" alt="Code" /></td>
   <td>E943</td>
-  <td>Code</td>
+  <td>Код</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E944.png" width="32" height="32" alt="ReturnToWindow" /></td>
   <td>E944</td>
@@ -1966,7 +1966,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E946.png" width="32" height="32" alt="Info" /></td>
   <td>E946</td>
-  <td>Info</td>
+  <td>Сведения</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E947.png" width="32" height="32" alt="CalculatorMultiply" /></td>
   <td>E947</td>
@@ -2042,11 +2042,11 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E95A.png" width="32" height="32" alt="Communications" /></td>
   <td>E95A</td>
-  <td>Communications</td>
+  <td>Переписка</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E95B.png" width="32" height="32" alt="Headset" /></td>
   <td>E95B</td>
-  <td>Headset</td>
+  <td>Гарнитура</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E95D.png" width="32" height="32" alt="Projector" /></td>
   <td>E95D</td>
@@ -2066,7 +2066,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E962.png" width="32" height="32" alt="Mouse" /></td>
   <td>E962</td>
-  <td>Mouse</td>
+  <td>Мышь</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E963.png" width="32" height="32" alt="Smartcard" /></td>
   <td>E963</td>
@@ -2154,7 +2154,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E97A.png" width="32" height="32" alt="Reply" /></td>
   <td>E97A</td>
-  <td>Reply</td>
+  <td>Ответить</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E97B.png" width="32" height="32" alt="SetTile" /></td>
   <td>E97B</td>
@@ -2162,7 +2162,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E97C.png" width="32" height="32" alt="Type" /></td>
   <td>E97C</td>
-  <td>Type</td>
+  <td>Тип</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E97D.png" width="32" height="32" alt="Korean" /></td>
   <td>E97D</td>
@@ -2354,7 +2354,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/E9CE.png" width="32" height="32" alt="Unknown" /></td>
   <td>E9CE</td>
-  <td>Unknown (неизвестно).</td>
+  <td>Неизвестно</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D2.png" width="32" height="32" alt="AreaChart" /></td>
   <td>E9D2</td>
@@ -2394,7 +2394,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/EA18.png" width="32" height="32" alt="Shield" /></td>
   <td>EA18</td>
-  <td>Щита</td>
+  <td>Shield</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EA1F.png" width="32" height="32" alt="Info2" /></td>
   <td>EA1F</td>
@@ -2690,7 +2690,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/EB44.png" width="32" height="32" alt="Radar" /></td>
   <td>EB44</td>
-  <td>Радиальной</td>
+  <td>Лепестковая диаграмма</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB47.png" width="32" height="32" alt="BusSolid" /></td>
   <td>EB47</td>
@@ -3042,7 +3042,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/EBC6.png" width="32" height="32" alt="Project" /></td>
   <td>EBC6</td>
-  <td>Project</td>
+  <td>Проект</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EBD2.png" width="32" height="32" alt="AdjustHologram" /></td>
   <td>EBD2</td>
@@ -3426,7 +3426,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/ECA5.png" width="32" height="32" alt="Tiles" /></td>
   <td>ECA5</td>
-  <td>Tiles</td>
+  <td>Плитки</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/ECA7.png" width="32" height="32" alt="PartyLeader" /></td>
   <td>ECA7</td>
@@ -3478,7 +3478,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/ECC6.png" width="32" height="32" alt="Unit" /></td>
   <td>ECC6</td>
-  <td>Unit</td>
+  <td>Единица измерения</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/ECC8.png" width="32" height="32" alt="AddTo" /></td>
   <td>ECC8</td>
@@ -3542,7 +3542,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/ED15.png" width="32" height="32" alt="Feedback" /></td>
   <td>ED15</td>
-  <td>Feedback</td>
+  <td>Отзыв</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/ED1E.png" width="32" height="32" alt="Subtitles" /></td>
   <td>ED1E</td>
@@ -3834,7 +3834,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/EDE1.png" width="32" height="32" alt="Export" /></td>
   <td>EDE1</td>
-  <td>Export</td>
+  <td>Экспортировать</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EDE2.png" width="32" height="32" alt="ExportMirrored" /></td>
   <td>EDE2</td>
@@ -3974,7 +3974,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3B.png" width="32" height="32" alt="Replay" /></td>
   <td>EF3B</td>
-  <td>Воспроизведение</td>
+  <td>воспроизведение</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3C.png" width="32" height="32" alt="Eyedropper" /></td>
   <td>EF3C</td>
@@ -4010,11 +4010,11 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/EFA9.png" width="32" height="32" alt="Speech" /></td>
   <td>EFA9</td>
-  <td>Speech</td>
+  <td>Голосовые функции</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F000.png" width="32" height="32" alt="KnowledgeArticle" /></td>
   <td>F000</td>
-  <td>KnowledgeArticle</td>
+  <td>Объект KnowledgeArticle</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F003.png" width="32" height="32" alt="Relationship" /></td>
   <td>F003</td>
@@ -4098,7 +4098,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/F0B9.png" width="32" height="32" alt="Connected" /></td>
   <td>F0B9</td>
-  <td>Connected</td>
+  <td>Подключен</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F0C6.png" width="32" height="32" alt="PencilFill" /></td>
   <td>F0C6</td>
@@ -4154,7 +4154,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/F0E2.png" width="32" height="32" alt="GridView" /></td>
   <td>F0E2</td>
-  <td>GridView</td>
+  <td>GridView;</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F0E3.png" width="32" height="32" alt="ClipboardList" /></td>
   <td>F0E3</td>
@@ -4742,7 +4742,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/F540.png" width="32" height="32" alt="Safe" /></td>
   <td>F540</td>
-  <td>Безопасные</td>
+  <td>Safe</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F552.png" width="32" height="32" alt="LaptopSecure" /></td>
   <td>F552</td>
@@ -5014,7 +5014,7 @@ ms.locfileid: "8934819"
  </tr>
 <tr><td><img src="images/segoe-mdl/F5ED.png" width="32" height="32" alt="Set" /></td>
   <td>F5ED</td>
-  <td>Настройка</td>
+  <td>Установить</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F5EE.png" width="32" height="32" alt="SetSolid" /></td>
   <td>F5EE</td>
@@ -5164,10 +5164,10 @@ ms.locfileid: "8934819"
 
 
 
-## <a name="related-articles"></a>Статьи по теме
+## <a name="related-articles"></a>Связанные статьи
 
-* [Руководство по значкам](../style/icons.md)
-* [Перечисление Symbol](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
+* [Рекомендации для значков](../style/icons.md)
+* [Символ перечисления](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
 * [Класс FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 

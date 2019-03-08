@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ddcb64aed8205f18b17706e987cbd9981bb8044
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051067"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655469"
 ---
 # <a name="move-from-ios-to-uwp"></a>Переход с iOS на UWP
 
-Если вы являетесь разработчиком приложений iOS и желаете расширить свою базу пользователей, включив в нее пользователей Windows 10 и универсальной платформы Windows (UWP), для решения этой задачи можно использовать разнообразные инструменты. Подходы к решению этой задачи зависят от типа приложения, с которым вы работаете (игра, стиль жизни, корпоративные и т. д.) и стадии разработки. Так, готовая или почти готовая игра, в которой активно используются технологии OpenGL или Cocos2D,— это идеальный кандидат для [моста Windows для iOS](https://dev.windows.com/bridges/ios), в то время как в работе с кроссплатформенным приложением для малого бизнеса лучше использовать [Xamarin.Forms](https://www.xamarin.com/forms). Если для написания приложения вы использовали кроссплатформенное средство, например Unity, [опубликовать его в Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) будет достаточно просто.
+Если вы являетесь разработчиком приложений iOS и желаете расширить свою базу пользователей, включив в нее пользователей Windows 10 и универсальной платформы Windows (UWP), для решения этой задачи можно использовать разнообразные инструменты. Подходы к решению этой задачи зависят от типа приложения, с которым вы работаете (игра, стиль жизни, корпоративные и т. д.) и стадии разработки. Так, готовая или почти готовая игра, в которой активно используются технологии OpenGL или Cocos2D, — это идеальный кандидат для [моста Windows для iOS](https://dev.windows.com/bridges/ios), в то время как в работе с кроссплатформенным приложением для малого бизнеса лучше использовать [Xamarin.Forms](https://www.xamarin.com/forms). Если для написания приложения вы использовали кроссплатформенное средство, например Unity, [опубликовать его в Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) будет достаточно просто.
 
 ## <a name="why-windows"></a>Почему Windows?
 
@@ -24,14 +24,14 @@ ms.locfileid: "9051067"
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-Convert-your-iOS-app-to-Windows/player]
 
-| Статья | Описание |
+| Раздел | Описание |
 |-------|-------------|
-| [Выбор подхода к разработке приложений iOS и UWP](selecting-an-approach-to-ios-and-uwp-app-development.md) | Какие варианты доступны при разработке кроссплатформенных приложений? |
-| [Знакомство с UWP для разработчиков iOS](getting-started-with-uwp-for-ios-developers.md) | Если вы являетесь разработчиком приложений iOS и планируете разрабатывать приложения для Windows10, то данные документы послужат отличной отправной точкой. |
-| [Настройка Mac с Windows10](setting-up-your-mac-with-windows-10.md) | Используйте ваш компьютер Mac для разработки приложений для Windows. |
+| [Выбрав это решение для iOS и разработки приложений UWP](selecting-an-approach-to-ios-and-uwp-app-development.md) | Какие варианты доступны при разработке кроссплатформенных приложений? |
+| [Начало работы с универсальной платформы Windows для разработчиков iOS](getting-started-with-uwp-for-ios-developers.md) | Если вы являетесь разработчиком приложений iOS и планируете разрабатывать приложения для Windows 10, то данные документы послужат отличной отправной точкой. |
+| [Настройка Mac с Windows 10](setting-up-your-mac-with-windows-10.md) | Использование компьютера Mac для разработки приложений для Windows. |
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Статьи по теме
 
-**Для проектировщиков и разработчиков**
-* [Разработка универсальных приложений для Windows для всех устройств с ОС Windows](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [Скачивание материалов по проектированию приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+**Для дизайнеров и разработчиков**
+* [Создание приложений Windows универсальные для всех устройств Windows](https://go.microsoft.com/fwlink/p/?LinkID=397871)
+* [Скачать материалы для разработки для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)

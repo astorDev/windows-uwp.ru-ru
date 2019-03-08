@@ -1,36 +1,36 @@
 ---
 title: Запуск приложения Microsoft Store
-description: В этом разделе описывается схема URI ms-windows-store. Ваше приложение может использовать эту схему URI для запуска приложения Microsoft Store на определенных страницах в магазине.
+description: В этом разделе описывается схема URI ms-windows-store. Приложение может использовать эту схему URI, чтобы запустить приложение Microsoft Store для определенных страниц в Store.
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cda37ee9964a3e7e02f4e4ce3829a8b55e823692
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981538"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660899"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Запуск приложения Microsoft Store
 
 
 
-В этом разделе описывается схема URI **ms-windows-store:**. Ваше приложение может использовать эту схему URI для запуска приложения Microsoft Store на определенных страницах в магазине с помощью метода [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) .
+В этом разделе описывается **ms-windows-store:** Схема URI. Приложение может использовать эту схему URI, чтобы запустить приложение Microsoft Store для определенных страниц в хранилище с помощью [ **LaunchUriAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701476) метод.
 
-В этом примере показано, как открыть страницу игр в магазине.
+В этом примере показано, как открыть Microsoft Store на странице игры.
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));
 ```
 
-## <a name="ms-windows-store-uri-scheme-reference"></a>Справка по схеме URI ms-windows-store:
+## <a name="ms-windows-store-uri-scheme-reference"></a>ms-windows-store: Схема URI-ссылка
 
 <table>
-<tr><th>описание</th><th></th><th>Схема URI</th></tr>
+<tr><th>Описание</th><th></th><th>Схема URI</th></tr>
 <tr><td>Запускает домашнюю страницу Магазина.</td><td /><td>ms-windows-store://home</td></tr>
-<tr><td>Запускает вертикаль верхнего уровня в Магазине.<p>Примечание. Не у всех пользователей есть доступ ко всем вертикалям.</p>
+<tr><td>Запускает вертикаль верхнего уровня в Магазине.<p>Примечание. Не все пользователи имеют доступ для всех отраслей.</p>
 </td><td /><td>
 <p>ms-windows-store://navigatetopage/?Id=Apps </p>
 <p>ms-windows-store://navigatetopage/?Id=Games</p>
@@ -40,11 +40,11 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </td>
 </tr>
 <tr>
-<td rowspan="4">Запускает страницу сведений о продукте (PDP). <p>Код продукта в Магазине рекомендуется использовать клиентам с Windows 10, он работает во всех версиях ОС, однако предыдущие методы решения этой задачи (например, с помощью PFN) по-прежнему поддерживаются.</p>
-<p>Эти значения можно найти в <a href="https://partner.microsoft.com/dashboard">Центре партнеров</a> на странице " <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">удостоверение приложения</a> " в разделе управления приложениями для каждого приложения.</p>
+<td rowspan="4">Запускает страницу сведений о продукте (PDP). <p>Идентификатор Store рекомендуется для клиентов в Windows 10 и будет работать на всех версиях ОС, но более ранних способов выполнения этого действия (например: PFN) все еще поддерживается.</p>
+<p>Эти значения можно найти в <a href="https://partner.microsoft.com/dashboard">центра партнеров</a> на <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">удостоверения приложения</a> странице в разделе управления приложения для каждого приложения.</p>
 </td>
 <td>
-Код продукта в Магазине <p>(рекомендуется)</p>
+Код продукта в Store <p>(рекомендуется)</p>
 </td>
 <td>
 <p>ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL</p>
@@ -66,7 +66,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">Запускает запись обзора для продукта.</td>
-<td>Код продукта в Магазине <p>(рекомендуется)</p></td>
+<td>Код продукта в Store <p>(рекомендуется)</p></td>
 <td>ms-windows-store://review/?ProductId=9WZDNCRFHVJL </td>
 </tr>
 <tr>

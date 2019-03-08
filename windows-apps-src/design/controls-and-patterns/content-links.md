@@ -1,21 +1,21 @@
 ---
-Description: Use content links to embed rich data in your text controls.
+Description: Используйте ссылки для внедрения в ваш текстовых элементов управления с богатыми возможностями.
 title: Ссылки на содержимое в элементах управления текстом
 label: Content links
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: a984e30bbdc569522b04d328087775aa9e8ce2bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946452"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648539"
 ---
 # <a name="content-links-in-text-controls"></a>Ссылки на содержимое в элементах управления текстом
 
@@ -23,10 +23,10 @@ ms.locfileid: "8946452"
 
 Когда пользователь использует символ амперсанд (@) перед записью в RichEditBox, отображается список людей и/или мест, соответствующих записи. Затем, например, когда пользователь выбирает место, ContentLink для этого места вставляется в текст. Когда пользователь вызывает ссылку на содержимое из RichEditBox, отображается всплывающий элемент с картой и дополнительными сведениями о месте.
 
-> **Важные API-интерфейсы**: [класс ContentLink](/uwp/api/windows.ui.xaml.documents.contentlink), [класс ContentLinkInfo](/uwp/api/windows.ui.text.contentlinkinfo), [класс RichEditTextRange](/uwp/api/windows.ui.text.richedittextrange)
+> **Важные API-интерфейсы**: [Класс ContentLink](/uwp/api/windows.ui.xaml.documents.contentlink), [класс ContentLinkInfo](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange-класс](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
-> API-интерфейсы для ссылок на содержимое распределены следующие пространства имен: Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents и Windows.UI.Text.
+> Интерфейсы API для ссылки на материалы о распределены на следующие пространства имен: Windows.UI.Xaml.Controls Windows.UI.Xaml.Documents и Windows.UI.Text.
 
 
 
@@ -39,14 +39,14 @@ ms.locfileid: "8946452"
 
 Вот как ссылки на содержимое выглядят по умолчанию в элементах RichEditBox и TextBlock.
 
-![ссылка на содержимое в поле с форматом](images/content-link-default-richedit.png)
-![ссылка на содержимое в текстовом блоке](images/content-link-default-textblock.png)
+![ссылка на содержимое в формате RTF поле ввода](images/content-link-default-richedit.png)
+![ссылку на содержимое в блоке текста](images/content-link-default-textblock.png)
 
 Отличия в использовании, отображении и поведении подробно описаны в следующих разделах. Эта таблица содержит краткое сравнение основных различий между ссылкой на содержимое в элементе RichEditBox и текстовом блоке.
 
-| Компонент   | Элемент управления RichEditBox | Текстовый блок |
+| Функция   | Элемент управления RichEditBox | Текстовый блок |
 | --------- | ----------- | ---------- |
-| Usage (Использование) | Экземпляр ContentLinkInfo | Текстовый элемент ContentLink |
+| Использование | Экземпляр ContentLinkInfo | Текстовый элемент ContentLink |
 | Cursor (Курсор) | Определяется типом ссылки на содержимое; изменение невозможно | Определяется свойством Cursor; значение **null** по умолчанию |
 | ToolTip | Не отображается | Отображает дополнительный текст |
 
@@ -129,7 +129,7 @@ editor.ContentLinkProviders = new ContentLinkProviderCollection
 - **SecondaryText** — эта строка отображается в ToolTip отображенной ссылки на содержимое.
   - В ссылке на содержимое Place, созданной с помощью средства выбора, содержится адрес места (если он доступен).
 - **URI** — ссылка на дополнительные сведения об объекте ссылки на содержимое. Этот URI может открыть установленное приложение или веб-сайт.
-- **Id** — это нередактируемый параметр, который используется для каждого элемента управления и создается счетчиком элемента управления RichEditBox. Он позволяет отслеживать сведения ContentLinkInfo во время выполнения действий, таких как удаление или изменение. При вырезании и вставке сведений ContentLinkInfo обратно в элемент управления, он получает новый идентификатор. Значения идентификаторов являются приращиваемыми.
+- **Id** — это нередактируемый параметр, который используется для каждого элемента управления и создается счетчиком элемента управления RichEditBox. Он позволяет отслеживать сведения ContentLinkInfo во время выполнения действий, таких как удаление или изменение. Если ContentLinkInfo является Вырезать и вставить обратно в элемент управления, он получит новый идентификатор. Значения идентификаторов являются добавочными.
 - **LinkContentKind** — строка, которая описывает тип ссылки на содержимое. Встроенные типы содержимого: _Places_ и _Contacts_. Значение обрабатывается с учетом регистра.
 
 #### <a name="link-content-kind"></a>Тип ссылки на содержимое
@@ -154,7 +154,7 @@ editor.ContentLinkProviders = new ContentLinkProviderCollection
 - Если значением LinkContentKind не является "Places", происходит попытка открыть приложение **Карты** в указанном расположении. Например, это может произойти, если вы изменили LinkContentKind в обработчике событий ContentLinkChanged.
 - Если не удается открыть URI в приложении "Карты", карта открывается в браузере по умолчанию. Как правило, это происходит, когда пользовательские параметры раздела _Приложения для веб-сайтов_ запрещают открытие URI с помощью приложения **Карты**.
 
-##### <a name="people"></a>People (Люди)
+##### <a name="people"></a>People
 
 Средство выбора People создает ContentLinkInfo с URI, который использует протокол **ms-people**.
 
@@ -162,7 +162,7 @@ editor.ContentLinkProviders = new ContentLinkProviderCollection
 - Если значение LinkContentKind отлично от "People", открывается приложение **Люди**. Например, это может произойти, если вы изменили LinkContentKind в обработчике событий ContentLinkChanged.
 
 > [!TIP]
-> Дополнительные сведения об открытии других приложений и веб-сайтов из вашего приложения см. в разделах [Запуск приложения с помощью Uri](/windows/uwp/launch-resume/launch-app-with-uri).
+> Дополнительные сведения об открытии другим приложениям и веб-сайтов из приложения, см. в разделах [запуск приложения с Uri](/windows/uwp/launch-resume/launch-app-with-uri).
 
 #### <a name="invoked"></a>Событие Invoked (вызов)
 
@@ -305,7 +305,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 > [!TIP]
 > При использовании ContentLink в текстовом элементе управления в XAML разместите содержимое в контейнере [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) и примените атрибут `xml:space="preserve"` к Span для сохранения пробела между ContentLink и другими элементами.
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 В этом примере пользователь может добавить в RickTextBlock ссылку на содержимое о человеке или месте. Обработка события ContentLinkChanged осуществляется для извлечения ссылок на содержимое и сохранения их в актуальном состоянии в списке людей или в списке мест.
 

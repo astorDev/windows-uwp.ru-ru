@@ -1,5 +1,5 @@
 ---
-Description: This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0.
+Description: В этом разделе содержатся ответы на часто задаваемые вопросы и инструкции по устранению проблем, связанных с работой набора средств для многоязычных приложений (MAT) версии 4.0.
 title: Вопросы и ответы и руководство по диагностике набора средств для многоязычных приложений
 template: detail.hbs
 ms.date: 11/13/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e27256fbf19ed31a7b087e94dea9e5514db516f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050597"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648269"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>Вопросы и ответы и руководство по диагностике набора средств для многоязычных приложений версии 4.0
 
@@ -140,9 +140,9 @@ msbuild /t:rebuild <project-name>
 
 Перед импортом выполняется базовая проверка. Это гарантирует, что целевая языковая и региональная информация в импортируемых XLF-файлах соответствует информации в существующих XLF-файлах. Откройте XLF-файлы в многоязычном редакторе и проверьте совпадение сведений о языке и региональных параметрах.
 
-## <a name="what-if-my-translator-doesnt-have-windows-10-andor-visual-studio-andor-the-multilingual-app-toolkit-installed"></a>Что делать, если у переводчика нет Windows10 и/или Visual Studio и/или набора средств для многоязычных приложений?
+## <a name="what-if-my-translator-doesnt-have-windows-10-andor-visual-studio-andor-the-multilingual-app-toolkit-installed"></a>Что делать, если у переводчика нет Windows 10 и/или Visual Studio и/или набора средств для многоязычных приложений?
 
-При выборе параметра **Выходные данные: адресат** в диалоговом окне "Экспорт ресурсов строк" в электронное письмо добавляется ссылка на скачивание и установку набора средств для многоязычных приложений (MAT) версии 4.0. Ваш переводчик может установить автономное средство Многоязычный редактор для MAT 4.0 даже без Windows 10 и Visual Studio.
+При выборе **выходные данные: Сообщение** в диалоговом окне экспорта ресурсы строковое сообщение электронной почты со ссылкой для загрузки и установки многоязыковых приложений Toolkit (MAT) 4.0. Ваш переводчик может установить автономное средство Многоязычный редактор для MAT 4.0 даже без Windows 10 и Visual Studio.
 
 Подробнее см. в разделе [Использование набора средств для многоязычных приложений версии 4.0](use-mat.md).
 
@@ -175,8 +175,8 @@ TPX-файл обеспечивал простой способ включени
 
 Перед началом сертификации для Microsoft Store вам необходимо убрать файл `<project-name>.qps-ploc.xlf` из проекта. Псевдоязык используется для обнаружения потенциальных проблем или ошибок, связанных с возможностями локализации, но не является допустимым языком Microsoft Store. Если этот файл не будет удален, приложение не пройдет сертификацию для Microsoft Store.
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 
-* [Использование набора средств для многоязычных приложений версии 4.0](use-mat.md)
+* [Использовать набор многоязычных инструментов 4.0](use-mat.md)
 * [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
-* [Параметры командной строки MakePRI.exe](../../app-resources/makepri-exe-command-options.md)
+* [Параметры командной строки MakePri.exe](../../app-resources/makepri-exe-command-options.md)

@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use custom audio on your toast notifications.
+Description: Сведения об использовании пользовательских аудио на всплывающие уведомления.
 title: Настраиваемый звук всплывающих уведомлениях
 label: Custom audio on toasts
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10 uwp, всплывающее уведомление, настраиваемый звук, уведомление, аудио, звук
 ms.localizationpriority: medium
 ms.openlocfilehash: 982340901d13f17945c1e7ffa11099f52732f619
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944703"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644069"
 ---
 # <a name="custom-audio-on-toasts"></a>Настраиваемый звук всплывающих уведомлениях
 
@@ -27,7 +27,7 @@ ms.locfileid: "8944703"
 
 ## <a name="add-namespace-declarations"></a>Добавление объявлений пространств имен
 
-`Windows.UI.Notifications` содержит API плиток и всплывающих уведомлений. `Microsoft.Toolkit.Uwp.Notifications` содержит библиотеку уведомлений.
+`Windows.UI.Notifications` включает в себя плиток и всплывающих API. `Microsoft.Toolkit.Uwp.Notifications` включает библиотеку уведомления.
 
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
@@ -54,7 +54,7 @@ ToastContent toastContent = new ToastContent()
 
 ОС Windows Mobile всегда поддерживала настраиваемый звук для всплывающих уведомлений. Однако в ОС для настольных компьютеров поддержка настраиваемых звуков была реализована только в версии 1511 (сборка 10586). При отправке всплывающего уведомления, содержащего настраиваемый звук, на настольный компьютер с версией ОС до 1511, звук всплывающего уведомления не воспроизводится. Поэтому для настольных компьютеров с ОС версией до 1511 вам не следует включать настраиваемый звук для всплывающего уведомления, чтобы уведомление использовало по крайней мере звуковой сигнал по умолчанию.
 
-**Известная проблема**: если вы используете ОС для настольного компьютера версии 1511, настраиваемый звук всплывающего уведомления будет работать, только если приложение установлено через Store. Это означает, что вы не сможете локально протестировать настраиваемый звук до отправки приложения в Store, но звук будет работать после установки из Store. Мы исправили это в юбилейном обновлении, чтобы настраиваемый звук из локально развернутого приложения работал правильно.
+**Известная проблема**: При использовании версии 1511 рабочего стола, аудио пользовательского всплывающего работает только если приложение устанавливается с помощью Store. Это означает, что вы не сможете локально протестировать настраиваемый звук до отправки приложения в Store, но звук будет работать после установки из Store. Мы исправили это в юбилейном обновлении, чтобы настраиваемый звук из локально развернутого приложения работал правильно.
 
 ```csharp
 ?
@@ -79,12 +79,12 @@ if (supportsCustomAudio)
 
 Поддерживаемые типы звуковых файлов...
 
-- .aac
+- AAC
 - .flac
-- .m4a
-- .mp3
-- .wav
-- .wma
+- M4A
+- MP3
+- WAV
+- WMA
 
 
 ## <a name="send-the-notification"></a>Отправка уведомления
@@ -102,6 +102,6 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 ## <a name="related-topics"></a>Статьи по теме
 
-- [Полный пример кода на GitHub](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
-- [Отправка локального всплывающего уведомления](send-local-toast.md)
-- [Документация по содержимому всплывающего уведомления](adaptive-interactive-toasts.md)
+- [Полный образец кода на GitHub](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
+- [Отправка локального всплывающее уведомление](send-local-toast.md)
+- [Содержимое документации всплывающее уведомление](adaptive-interactive-toasts.md)

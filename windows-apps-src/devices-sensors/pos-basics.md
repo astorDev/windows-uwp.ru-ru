@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b4ff9443c40cf44e171bf898b627de3e2819034
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939932"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656469"
 ---
 # <a name="getting-started-with-point-of-service"></a>Начало работы с POS-устройствами
 
@@ -18,33 +18,33 @@ ms.locfileid: "8939932"
 
 Этот раздел содержит темы, которые являются общими для всех категорий POS-устройств.
 
-|Тема |Описание |
+|Раздел |Описание |
 |------|------------|
-| [Объявление возможностей](pos-basics-capability.md)      | Узнайте, как добавить возможность **pointOfService** в манифест приложения.  Эта возможность требуется для использования пространства имен Windows.Devices.PointOfService.  |
+| [Объявление функции](pos-basics-capability.md)      | Узнайте, как добавить возможность **pointOfService** в манифест приложения.  Эта возможность требуется для использования пространства имен Windows.Devices.PointOfService.  |
 | [Перечисление устройств](pos-basics-enumerating.md)        | Узнайте, как определить средство выбора устройств, использующееся для запроса устройств, доступных системе, а также, как использовать это средство выбора для перечисления POS-устройств.  |
 | [Создание объекта устройства](pos-basics-deviceobject.md)  | Узнайте, как создать объект устройства PointOfService, который предоставит вам доступ к нередактируемым свойствам периферийного устройства и возможность утвердить это устройство для исключительного использования. |
-| [Утверждение и включить ](pos-basics-claim.md)  | Узнайте, как зарезервировать периферийное устройство PointOfService для исключительного использования и включать для операций ввода-вывода.  |
-| [Общий доступ к периферийным устройствам для других пользователей](pos-basics-sharing.md) | Узнайте, как совместного доступа сети или периферийных устройств Bluetooth подключены другие компьютеры в среде, где компьютерах полагаться на периферийных устройств, а не выделенный периферийные устройства, подключенные к каждому компьютеру.
-| [PointOfService-комплексного](pos-get-started.md)  | Это пример начала до конца для взаимодействия с использованием приведенных выше примерах периферийные устройства PointOfService. |
+| [Утверждение и включить ](pos-basics-claim.md)  | Узнайте, как зарезервировать PointOfService, периферийных для монопольного использования и включить для операций ввода-вывода.  |
+| [Совместно с другими пользователями периферийные устройства](pos-basics-sharing.md) | Узнайте, как доступ сети или периферийные устройства Bluetooth подключен с другими компьютерами в среде, где нескольких ПК зависят от периферийных устройств, а не выделенные периферийные устройства, подключенные к каждому компьютеру.
+| [PointOfService end-to-end](pos-get-started.md)  | Это пример сквозного способы взаимодействия с периферийные устройства PointOfService, используя приведенные выше примеры. |
 |
 
 ## <a name="see-also"></a>См. также
 
-| Статья   | Описание |
+| Раздел   | Описание |
 |:--------|:------------|
-| [Распространение приложения](../publish/distribute-lob-apps-to-enterprises.md) | Узнайте о доступных для распространения приложения для корпоративных клиентов. |
-| [Жизненный цикл приложения](../launch-resume/app-lifecycle.md) | Сведения о жизненном цикле приложения UWP и что происходит, когда Windows запускает приостанавливает и возобновляет работу приложения. |
-| [Ресурсы приложения](../app-resources/index.md) | Узнайте, как создавать, упаковывать и использовать строки, изображения и файловые ресурсы вашего приложения. |
+| [Распространение приложений](../publish/distribute-lob-apps-to-enterprises.md) | Узнайте о параметрах для распространения приложения для корпоративных клиентов. |
+| [Жизненный цикл приложения](../launch-resume/app-lifecycle.md) | Дополнительные сведения о жизненном цикле приложения универсальной платформы Windows, и что происходит при запуске Windows, приостанавливает и возобновляет работу приложения. |
+| [Ресурсы приложений](../app-resources/index.md) | Узнайте, как создавать, пакет и использовать строки, изображения и файловые ресурсы приложения. |
 | [Привязка данных](../data-binding/index.md) | Узнайте, как использовать привязку данных для отображения данных в пользовательском Интерфейсе приложения. |
-| [Перечисление устройств](enumerate-devices.md) | Узнайте методы использования advanced перечисления найти периферийных устройств.|
-| [Версия адаптивных приложений](../debug-test-perf/version-adaptive-apps.md) | Бережливого как спроектировать приложение так, чтобы он выполнялся в нескольких версиях Windows 10.|
+| [Перечисление устройства](enumerate-devices.md) | Ознакомьтесь с приемами перечисления использовать расширенные найти периферийных устройств.|
+| [Версия адаптивных приложений](../debug-test-perf/version-adaptive-apps.md) | Узнайте, как разработать приложение таким образом, чтобы он выполняется в нескольких версиях Windows 10.|
 |
 
 
-## <a name="sample-code"></a>Пример кода
+## <a name="sample-code"></a>Образец кода
 + [Пример сканера штрихкодов](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [Образец кассового аппарата]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
-+ [Пример строкового дисплея](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
-+ [Пример считывателя магнитных карт](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
++ [Пример панель денежных средств]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
++ [Пример отображения строки](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
++ [Пример модуля чтения магнитных](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
 + [Пример POSPrinter](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
 

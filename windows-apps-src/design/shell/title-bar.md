@@ -8,11 +8,11 @@ keywords: windows 10, uwp, заголовок окна
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 88c613456525648883735850fe831cb3b67f145c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923454"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648819"
 ---
 # <a name="title-bar-customization"></a>Настройка заголовка окна
 
@@ -20,7 +20,7 @@ ms.locfileid: "8923454"
 
 Если приложение выполняется в окне рабочего стола, можно настроить заголовки окон с учетом индивидуальных особенностей приложения. API-интерфейсы для настройки заголовка окна позволяют указать цвета элементов заголовка окна или расширить содержимое приложения до области заголовка окна и получить над ним полный контроль.
 
-> **Важные API-интерфейсы**: [свойство ApplicationView.TitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [класс ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [класс CoreApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **Важные API-интерфейсы**: [Свойство ApplicationView.TitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [класс ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [CoreApplicationViewTitleBar-класс](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>Степень настройки заголовка окна
 
@@ -28,7 +28,7 @@ ms.locfileid: "8923454"
 
 Для простой настройки цвета можно установить свойствам [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) значения в соответствии с цветами, в которые требуется окрасить элементы заголовка окна. В этом случае система продолжает управлять всеми остальными аспектами заголовка окна, такими как отрисовка названия приложения и определение перетаскиваемых областей.
 
-Другой вариант— скрыть заголовок окна по умолчанию и заменить его собственным содержимым XAML. Например, в области заголовка окна можно разместить текст, кнопки или пользовательские меню. Кроме того, этот вариант следует использовать для расширения [акрилового](../style/acrylic.md) фона до области заголовка окна.
+Другой вариант — скрыть заголовок окна по умолчанию и заменить его собственным содержимым XAML. Например, в области заголовка окна можно разместить текст, кнопки или пользовательские меню. Кроме того, этот вариант следует использовать для расширения [акрилового](../style/acrylic.md) фона до области заголовка окна.
 
 Выбирая полную настройку, вы отвечаете за размещение содержимого в области заголовка окна и можете определить собственную перетаскиваемую область. Системные кнопки "Назад", "Закрыть", "Свернуть" и "Развернуть" остаются доступными и обрабатываются системой, в отличие от таких элементов, как название приложения. Вам потребуется самостоятельно создать эти элементы с учетом потребностей приложения.
 
@@ -166,7 +166,7 @@ public MainPage()
 
 Можно обработать событие [LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged), чтобы отреагировать на изменения размера кнопок заголовка. Например, это может произойти, если системная кнопка "Назад" отображается или скрывается. Обработайте это событие для проверки и обновления позиционирования элементов пользовательского интерфейса, который зависят от размера панели заголовка окна.
 
-В этом примере показано, как настроить макет заголовка окна с учетом таких изменений, как отображение или скрытие системной кнопки "Назад". `AppTitleBar`, `LeftPaddingColumn` и `RightPaddingColumn` объявлены в коде XAML, показанном ранее.
+В этом примере показано, как настроить макет заголовка окна с учетом таких изменений, как отображение или скрытие системной кнопки "Назад". `AppTitleBar`, `LeftPaddingColumn`, и `RightPaddingColumn` объявлены в XAML, было показано ранее.
 
 ```csharp
 private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -275,7 +275,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->_Полноэкранный_ режим можно включить, только если он поддерживается приложением. Дополнительные сведения см. в разделе [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode). [_Режим планшета_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) доступен на поддерживаемом оборудовании, поэтому пользователь может запустить любое приложение в режиме планшета.
+>_Полноэкранный_ режим можно включить, только если он поддерживается приложением. Дополнительные сведения см. в разделе [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode). [_Режим планшета_ ](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) является параметр на поддерживаемом оборудовании, поэтому пользователь может выбрать для запуска любого приложения в режим планшета.
 
 ## <a name="full-customization-example"></a>Пример полной настройки
 
@@ -373,13 +373,13 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 }
 ```
 
-## <a name="dos-and-donts"></a>Рекомендации
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
 - Обеспечьте явное указание на то, является ли окно активным или неактивным. Как минимум, следует настроить изменение цвета текста, значков и кнопок в заголовке окна.
 - Определите перетаскиваемую область вдоль верхнего края холста приложения. Если ее совместить с системными заголовками окон, пользователям будет легче ее найти.
 - Определите перетаскиваемую область, соответствующую визуальному заголовку окна (если он есть) холста приложения.
 
-## <a name="related-articles"></a>Статьи по теме
+## <a name="related-articles"></a>Связанные статьи
 
-- [Акрил](../style/acrylic.md)
+- [Acrylic](../style/acrylic.md)
 - [Цвет](../style/color.md)

@@ -1,19 +1,19 @@
 ---
-Description: List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
+Description: Анимации списка позволяют вставлять или удалять один или несколько элементов коллекции, например в фотоальбоме или результатах поиска.
 title: Анимации добавления и удаления в приложениях UWP
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c7ca332b73aba067c2ae003d458e8d0d97c7a7e3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942890"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642839"
 ---
 # <a name="add-and-delete-animations"></a>Анимации добавления и удаления
 
@@ -21,10 +21,10 @@ ms.locfileid: "8942890"
 
 Анимации списка позволяют вставлять или удалять один или несколько элементов коллекции, например в фотоальбоме или результатах поиска.
 
-> **Важные API-интерфейсы**: [**класс AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
+> **Важные API-интерфейсы**: [**Класс AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
 
-## <a name="dos-and-donts"></a>Рекомендации
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
 
 -   Используйте анимацию списка при добавлении нового элемента к существующему набору элементов. Используйте ее, например, когда приходит новое электронное сообщение или когда новое фото импортируется в существующую коллекцию.
@@ -36,11 +36,11 @@ ms.locfileid: "8942890"
 
 
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
-* [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Анимация добавления и удаления элементов списка](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
-* [Краткое руководство: анимация пользовательского интерфейса с помощью анимаций библиотеки](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Общие сведения об анимации](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [Анимация список добавления и удаления](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
+* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Класс AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
  

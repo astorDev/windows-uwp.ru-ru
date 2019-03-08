@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 208a61b565c0522d3e9ce88f3938f57dfa1fbddd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945199"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644849"
 ---
 # <a name="variable-photo-sequence"></a>Переменная последовательность фотографий
 
@@ -19,7 +19,7 @@ ms.locfileid: "8945199"
 
 В данной статье рассказывается, как захватить переменную последовательность фотографий (то есть несколько снимков, быстро идущих один за другим) и настроить для каждого снимка различные параметры фокусировки, вспышки, ISO, экспозиции и коррекции экспозиции. Эта функция позволяет использовать такие сценарии, как создание изображений с помощью технологии High Dynamic Range (HDR).
 
-Если вам необходимо захватывать изображения с использованием технологии HDR, но вы не хотите создавать собственный алгоритм обработки, вы можете применять API [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386), чтобы использовать встроенные в ОСWindows возможности HDR. Дополнительные сведения см. в статье [Захват фотографий с использованием технологии High Dynamic Range (HDR)](high-dynamic-range-hdr-photo-capture.md).
+Если вам необходимо захватывать изображения с использованием технологии HDR, но вы не хотите создавать собственный алгоритм обработки, вы можете применять API [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386), чтобы использовать встроенные в ОС Windows возможности HDR. Дополнительные сведения см. в статье [Захват фотографий с использованием технологии High Dynamic Range (HDR)](high-dynamic-range-hdr-photo-capture.md).
 
 > [!NOTE] 
 > В этой статье используются понятия и код из статьи [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), в которой описаны этапы реализации основных принципов фото- и видеозахвата. Мы рекомендуем ознакомиться с базовым шаблоном захвата мультимедиа в этой статье, прежде чем перейти к более сложным сценариям захвата. Код в этой статье подразумевает, что ваше приложение уже содержит экземпляр MediaCapture, инициализированный надлежащим образом.
@@ -40,12 +40,12 @@ ms.locfileid: "8945199"
 
 [!code-cs[IsVPSSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsVPSSupported)]
 
-Получите объект [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) из контроллера переменной последовательности фотографий. У этого объекта имеется свойство для каждого параметра, который можно настроить для каждого кадра в последовательности фотографий. К ним относятся следующие:
+Получите объект [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) из контроллера переменной последовательности фотографий. У этого объекта имеется свойство для каждого параметра, который можно настроить для каждого кадра в последовательности фотографий. К ним можно отнести следующие.
 
--   [**Exposure**](https://msdn.microsoft.com/library/windows/apps/dn652552)
+-   [**Раскрытие**](https://msdn.microsoft.com/library/windows/apps/dn652552)
 -   [**ExposureCompensation**](https://msdn.microsoft.com/library/windows/apps/dn652560)
 -   [**Flash**](https://msdn.microsoft.com/library/windows/apps/dn652566)
--   [**Focus**](https://msdn.microsoft.com/library/windows/apps/dn652570)
+-   [**Фокус**](https://msdn.microsoft.com/library/windows/apps/dn652570)
 -   [**IsoSpeed**](https://msdn.microsoft.com/library/windows/apps/dn652574)
 -   [**PhotoConfirmation**](https://msdn.microsoft.com/library/windows/apps/dn652578)
 
@@ -81,7 +81,7 @@ ms.locfileid: "8945199"
 
 ## <a name="update-frame-controllers"></a>Обновление контроллеров кадров
 
-Если вам необходимо захватить еще одну переменную последовательность фотографий с различными параметрами для каждого кадра, то нет необходимости выполнять полную повторную инициализацию **VariablePhotoSequenceCapture**. Достаточно либо очистить коллекцию [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) и добавить новые контроллеры кадров, либо изменить существующие значения контроллера кадра. В примере ниже показано, как проверить объект [**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657), чтобы убедиться, что текущее устройство поддерживает вспышку и управление ее мощностью для кадров переменной последовательности фотографий. Если это так, то каждый кадр будет обновлен, чтобы использовать вспышку на 100% ее мощности. Значения коррекции экспозиции, ранее установленные для каждого кадра, будут по-прежнему активными.
+Если вам необходимо захватить еще одну переменную последовательность фотографий с различными параметрами для каждого кадра, то нет необходимости выполнять полную повторную инициализацию **VariablePhotoSequenceCapture**. Достаточно либо очистить коллекцию [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) и добавить новые контроллеры кадров, либо изменить существующие значения контроллера кадра. В примере ниже показано, как проверить объект [**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657), чтобы убедиться, что текущее устройство поддерживает вспышку и управление ее мощностью для кадров переменной последовательности фотографий. Если это так, то каждый кадр будет обновлен, чтобы использовать вспышку на 100 % ее мощности. Значения коррекции экспозиции, ранее установленные для каждого кадра, будут по-прежнему активными.
 
 [!code-cs[UpdateFrameControllers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateFrameControllers)]
 
@@ -94,7 +94,7 @@ ms.locfileid: "8945199"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
-* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

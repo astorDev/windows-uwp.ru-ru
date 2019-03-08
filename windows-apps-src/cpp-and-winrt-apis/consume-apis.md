@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная c++, cpp, winrt, проецируемый, проекция, реализация, класс среды выполнения, активация
 ms.localizationpriority: medium
 ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117694"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645149"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Использование API-интерфейсов с помощью C++/WinRT
 
-В этом разделе показано, как использовать [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API-интерфейсы, они являются компонентом Windows, реализованный поставщиком сторонних компонентов или вами самостоятельно.
+В этом разделе показано, как использовать [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API, ли они являются частью Windows, реализуемый компонента независимого поставщика или реализовать самостоятельно.
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>Если API находится в пространстве имен Windows
 Это наиболее распространенный случай, в котором вы будете использовать API среды выполнения Windows. Для каждого типа в пространстве имен Windows, указанного в метаданных, C++/WinRT определяет подходящий для C++ эквивалент (называемый *проецируемым типом*). Проецируемый тип имеет то же полное доменное имя, что и тип в Windows, но он размещается в пространстве имен C++ **winrt** с использованием синтаксиса C++. Например, [**Windows::Foundation:: URI**](/uwp/api/windows.foundation.uri) проецируется в C++/WinRT как **winrt::Windows::Foundation::Uri**.
@@ -42,7 +42,7 @@ int main()
 
 В примере кода выше после инициализации C++/WinRT значение проецируемого типа **winrt::Windows::Foundation::Uri** помещается в стек с помощью одного из его задокументированных конструкторов (в этом примере — [**Uri(String)**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)). Для данного наиболее распространенного случая использования обычно это все, что нужно сделать. Когда у вас есть значение проецируемого типа C++/WinRT, вы можете работать с ним, как будто это экземпляр фактического типа среды выполнения Windows, поскольку он имеет те же члены.
 
-На самом деле это проецируемое значение является своего рода псевдонимом; по сути это просто смарт-указатель на расположенный за ним объект. Конструктор(ы) проецируемого значения вызывает [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) для создания экземпляра опорного класса среды выполнения Windows (в этом случае — **Windows.Foundation.Uri**) и сохранения интерфейса по умолчанию этого объекта внутри нового проецируемого значения. Как показано ниже, ваши вызовы членов проецируемого значения фактически делегируются, с помощью смарт-указателя, на стоящий за ним объект; Это происходят изменения состояния.
+На самом деле это проецируемое значение является своего рода псевдонимом; по сути это просто смарт-указатель на расположенный за ним объект. Конструктор(ы) проецируемого значения вызывает [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) для создания экземпляра опорного класса среды выполнения Windows (в этом случае — **Windows.Foundation.Uri**) и сохранения интерфейса по умолчанию этого объекта внутри нового проецируемого значения. Как показано ниже, вызовы к членам Проецируемое значение фактически делегат, через смарт-указатель, на резервного объекта; — где происходят изменения состояния.
 
 ![Проецируемый тип Windows::Foundation::Uri](images/uri.png)
 
@@ -123,14 +123,14 @@ private:
 
 Все конструкторы проецируемого типа, *кроме* конструктора `nullptr_t`, приводят к созданию опорного объекта среды выполнения Windows. Конструктор `nullptr_t` является по сути безоперационным. Он ожидает инициализацию проецируемого объекта в более поздний момент. Таким образом, независимо от того, имеет ли класс среды выполнения конструктор или нет, этот способ можно использовать для эффективной отложенной инициализации.
 
-Это соображение влияет на других местах, где вызов конструктора по умолчанию, такие как векторы и "карты". Рассмотрим следующий пример кода.
+Это влияет на других местах, где вызове конструктора по умолчанию, такие как в векторы и карт. Рассмотрим следующий пример кода.
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
 lookup[2] = value;
 ```
 
-Назначение создает новый **TextBlock**и немедленно перезаписывает его с `value`. Вот проблему.
+Это назначение создает новый **TextBlock**и затем немедленно перезаписывает его с `value`. Вот компенсация.
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
@@ -141,9 +141,9 @@ lookup.insert_or_assign(2, value);
 Этот раздел применим, если вы создали компонент самостоятельно или получили его от поставщика.
 
 > [!NOTE]
-> Сведения об установке и использовании C + +/ WinRT Visual Studio расширения (VSIX) (которое обеспечивает поддержку шаблона проекта) см. в разделе [Поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Сведения об установке и использовании C + +/ WinRT Visual Studio Extension (VSIX) (который поддерживает шаблон проекта) см. в разделе [поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-В проекте приложения создайте ссылку на файл метаданных среды выполнения Windows (`.winmd`) компонента среды выполнения Windows и выполните сборку. Во время сборки средство `cppwinrt.exe` создает стандартную библиотеку C++, которая полностью описывает &mdash; или *проецирует *&mdash; поверхность API для компонента. Другими словами, созданная библиотека содержит проецируемые типы для компонента.
+В проекте приложения создайте ссылку на файл метаданных среды выполнения Windows (`.winmd`) компонента среды выполнения Windows и выполните сборку. Во время сборки средство `cppwinrt.exe` создает стандартную библиотеку C++, которая полностью описывает &mdash; или *проецирует* &mdash; поверхность API для компонента. Другими словами, созданная библиотека содержит проецируемые типы для компонента.
 
 Затем, как и в случае типа пространства имен Windows, необходимо включить заголовок и создать проецируемый типа через один из его конструкторов. Код запуска проекта вашего приложения регистрирует класс среды выполнения, а конструктор проецируемого типа вызывает [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) для активации класса среды выполнения из указанного компонента.
 
@@ -190,7 +190,7 @@ MainPage::MainPage()
 Дополнительные сведения, код и пошаговое руководство по использованию класса среды выполнения, реализованного в использующем его проекте, см. в разделе [Элементы управления XAML; привязка к свойству C++/WinRT ](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>Создание экземпляров и возврат проецируемых типов и интерфейсов
-Вот пример того, как проецируемые типы и интерфейсы могут выглядеть в вашем использующем их проекте. Помните, что проецируемого типа (как в этом примере), созданное средство и не что-то, что необходимо создать самостоятельно.
+Вот пример того, как проецируемые типы и интерфейсы могут выглядеть в вашем использующем их проекте. Помните, что проецируемых типа (например, указанному в этом примере), формируемые средством и не будет создавать самостоятельно.
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,
@@ -258,13 +258,13 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ## <a name="important-apis"></a>Важные API
 * [Интерфейс QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [Функция RoActivateInstance](https://msdn.microsoft.com/library/br224646)
-* [Класс Windows::Foundation:: URI](/uwp/api/windows.foundation.uri)
-* [Шаблон функции winrt::get_activation_factory](/uwp/cpp-ref-for-winrt/get-activation-factory)
-* [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
-* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [Класс Windows::Foundation::URI](/uwp/api/windows.foundation.uri)
+* [winrt::get_activation_factory function template](/uwp/cpp-ref-for-winrt/get-activation-factory)
+* [Шаблон функции WinRT::make](/uwp/cpp-ref-for-winrt/make)
+* [Структура WinRT::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
-## <a name="related-topics"></a>Смежные разделы
-* [Создание событий в C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [Взаимодействие между C++/WinRT и интерфейсом ABI](interop-winrt-abi.md)
-* [Введение в C++/WinRT](intro-to-using-cpp-with-winrt.md)
-* [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+## <a name="related-topics"></a>Статьи по теме
+* [Создание событий в C + +/ WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
+* [Взаимодействия между C + +/ WinRT и ABI](interop-winrt-abi.md)
+* [Введение в C + +/ WinRT](intro-to-using-cpp-with-winrt.md)
+* [Элементы управления XAML; Привязка к C + +/ WinRT-свойство](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

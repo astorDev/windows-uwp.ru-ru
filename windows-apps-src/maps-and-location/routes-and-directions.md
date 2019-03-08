@@ -1,27 +1,27 @@
 ---
 title: Отображение маршрутов и направлений на карте
-description: Запрос маршрутов и направлений и их отображение в приложении.
+description: Запрос маршрутов и направлений и их отображение в вашем приложении.
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ms.date: 09/20/2017
 ms.topic: article
 keywords: Windows 10, uwp, маршрут, карта, расположение, направления
 ms.localizationpriority: medium
 ms.openlocfilehash: 218ca052a3e525a1f7cfc2ce18542a5a30c61e5e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049261"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646689"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>Отображение маршрутов и направлений на карте
 
 
 
-Запрос маршрутов и направлений и их отображение в приложении.
+Запрос маршрутов и направлений и их отображение в вашем приложении.
 
 >[!Note]
 >Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте [пример карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
->Если работа с картами является второстепенной функцией приложения, то рекомендуется использовать приложение "Карты Windows". Вы можете использовать `bingmaps:`, `ms-drive-to:`и схемы URI `ms-walk-to:` для запуска приложения "Карты Windows" с определенными картами и маршрутами. Дополнительные сведения см. в разделе [Запуск приложения "Карты Windows"](https://msdn.microsoft.com/library/windows/apps/mt228341).
+>Если работа с картами является второстепенной функцией приложения, то рекомендуется использовать приложение "Карты Windows". Вы можете использовать `bingmaps:`, `ms-drive-to:`и схемы URI `ms-walk-to:` для запуска приложения «Карты Windows» с определенными картами и маршрутами. Дополнительные сведения см. в разделе [Запуск приложения «Карты Windows»](https://msdn.microsoft.com/library/windows/apps/mt228341).
 
  
 ## <a name="an-intro-to-maproutefinder-results"></a>Общие сведения о результатах MapRouteFinder
@@ -31,9 +31,9 @@ ms.locfileid: "9049261"
 
 * Класс [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) использует методы, позволяющие получать маршруты и направления. Эти методы возвращают [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939).
 
-* [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) содержит объект [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937). Получите доступ к этому объекту через свойство [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) класса **MapRouteFinderResult**.
+* [  **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) содержит объект [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937). Получите доступ к этому объекту через свойство [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) класса **MapRouteFinderResult**.
 
-* [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) содержит коллекцию объектов [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955). Получите доступ к этой коллекции с помощью свойства [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) класса **MapRoute**.
+* [  **MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) содержит коллекцию объектов [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955). Получите доступ к этой коллекции с помощью свойства [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) класса **MapRoute**.
 
 * Каждый [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) содержит коллекцию объектов [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961). Получите доступ к этой коллекции с помощью свойства [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) класса **MapRouteLeg**.
 
@@ -51,7 +51,7 @@ ms.locfileid: "9049261"
 
 * Можно указать ограничения (например, избегать магистрали).
 
-## <a name="display-directions"></a>Отображение направлений
+## <a name="display-directions"></a>Отображение маршрутов
 
 В объекте [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) содержится объект [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937), доступ к которому можно получить с помощью свойства [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940).
 
@@ -192,7 +192,7 @@ private async void ShowRouteOnMap()
 
 В этом примере показан следующий элемент управления [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) с именем **MapWithRoute**.
 
-![элемент управления картой с отображенным маршрутом](images/routeonmap.png)
+![Отображение карты с маршрутом](images/routeonmap.png)
 
 Вот версия этого примера, в которой используется пункт *via* между двумя пунктами *stop*:
 
@@ -241,8 +241,8 @@ private async void ShowRouteOnMap()
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
-* [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Видео c конференции Build 2015: использование карт и местоположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Пример приложения UWP для работы с картами](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Центр разработчиков Bing Maps](https://www.bingmapsportal.com/)
+* [Образец карты универсальной платформы Windows](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Рекомендации по проектированию для карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Видео с Build 2015: Использование карты и расположение между телефоном, планшетом и ПК в приложениях Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Пример приложения UWP трафика](https://go.microsoft.com/fwlink/p/?LinkId=619982)

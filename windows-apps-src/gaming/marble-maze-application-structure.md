@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, игры, пример, directx, структура
 ms.localizationpriority: medium
 ms.openlocfilehash: 55b933db7f9b26de2caa3877bde445f96c08d561
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049881"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653729"
 ---
 # <a name="marble-maze-application-structure"></a>Структура приложения Marble Maze
 
 
 
 
-Структура приложения универсальной платформы Windows (UWP) на базе DirectX отличается от обычного классического приложения. Вместо работы с такими типами дескрипторов, как [HWND](https://msdn.microsoft.com/library/windows/desktop/aa383751), и функциями, подобными [CreateWindow](https://msdn.microsoft.com/library/windows/desktop/ms632679), среда выполнения Windows предоставляет такие интерфейсы, как [Windows::UI::Core::ICoreWindow](https://msdn.microsoft.com/library/windows/apps/br208296), благодаря чему вы можете разрабатывать приложения UWP более современным объектно-ориентированным образом. В этом разделе документации показана структура программного кода приложения Marble Maze.
+Структура приложения универсальной платформы Windows (UWP) на DirectX отличается от обычного классического приложения. Вместо работы с такими типами дескрипторов, как [HWND](https://msdn.microsoft.com/library/windows/desktop/aa383751), и функциями, подобными [CreateWindow](https://msdn.microsoft.com/library/windows/desktop/ms632679), среда выполнения Windows предоставляет такие интерфейсы, как [Windows::UI::Core::ICoreWindow](https://msdn.microsoft.com/library/windows/apps/br208296), благодаря чему вы можете разрабатывать приложения UWP более современным объектно-ориентированным образом. В этом разделе документации показана структура программного кода приложения Marble Maze.
 
 > [!NOTE]
 > Пример кода, соответствующего этому документу, см. в [примере игры DirectX Marble Maze](https://go.microsoft.com/fwlink/?LinkId=624011).
@@ -45,21 +45,21 @@ ms.locfileid: "9049881"
 | BasicLoader.h, BasicLoader.cpp             | Определяют класс **BasicLoader**, который предоставляет служебные методы, упрощающие загрузку текстур, сеток и шейдеров                                                                  |
 | BasicMath.h                                | Определяет структуры и функции для работы с векторными и матричными данными и вычислениями. Многие из этих функций совместимы с типами шейдеров HLSL.                     |
 | BasicReaderWriter.h, BasicReaderWriter.cpp | Определяют класс **BasicReaderWriter**, который использует среду выполнения Windows для чтения и записи файловых данных в приложение UWP                                                                    |
-| BasicShapes.h, BasicShapes.cpp             | Определяют класс **BasicShapes**, который предоставляет служебные методы для создания основных фигур (кубов, сфер и т.п.). (Эти файлы не используются в реализации Marble Maze). |                                                                                  |
+| BasicShapes.h, BasicShapes.cpp             | Определяют класс **BasicShapes**, который предоставляет служебные методы для создания основных фигур (кубов, сфер и т. п.). (Эти файлы не используются в реализации Marble Maze) |                                                                                  |
 | Camera.h, Camera.cpp                       | Определяют класс **Camera**, который предоставляет положение и ориентацию камеры                                                                                               |
 | Collision.h, Collision.cpp                 | Обрабатывают столкновения шарика с другими объектами (в том числе со стенами лабиринта)                                                                                                       |
-| DDSTextureLoader.h, DDSTextureLoader.cpp   | Определяют функцию **CreateDDSTextureFromMemory**, которая загружает текстуры в формате DDS из буфера памяти.                                                              |
+| DDSTextureLoader.h, DDSTextureLoader.cpp   | Определяют функцию **CreateDDSTextureFromMemory**, которая загружает текстуры в формате DDS из буфера памяти                                                              |
 | DirectXHelper.h             | Определяет вспомогательные функции DirectX, используемые во многих приложениях UWP DirectX.                                                                            |
-| LoadScreen.h, LoadScreen.cpp               | Определяют класс **LoadScreen**, который отображает экран загрузки во время инициализации приложения.                                                                                         |
+| LoadScreen.h, LoadScreen.cpp               | Определяют класс **LoadScreen**, который отображает экран загрузки во время инициализации приложения                                                                                         |
 | MarbleMazeMain.h, MarbleMazeMain.cpp               | Определяют класс **MarbleMazeMain**, который управляет игровыми ресурсами и определяет большую часть игровой логики.                                                                          |
 | MediaStreamer.h, MediaStreamer.cpp         | Определяют класс **MediaStreamer**, который с помощью Media Foundation управляет звуковыми ресурсами в игре                                                                            |
 | PersistentState.h, PersistentState.cpp     | Определяют класс **PersistentState**, который считывает примитивные типы данных из резервного хранилища и записывает их в резервное хранилище                                                                      |
 | Physics.h, Physics.cpp                     | Определяют класс **Physics**, в котором реализуется физика взаимодействия шарика и лабиринта                                                                              |
 | Primitives.h                               | Определяет геометрические типы, используемые в игре                                                                                                                                   |
 | SampleOverlay.h, SampleOverlay.cpp         | Определяют класс **SampleOverlay**, предоставляющий общие данные и операции для двухмерной графики и пользовательского интерфейса.                                                                               |
-| SDKMesh.h, SDKMesh.cpp                     | Определяют класс **SDKMesh**, который загружает и отрисовывает сетки в формате SDK Mesh (.sdkmesh).                                                                                |
+| SDKMesh.h, SDKMesh.cpp                     | Определяют класс **SDKMesh**, который загружает и отрисовывает сетки в формате SDK Mesh (.sdkmesh)                                                                                |
 | StepTimer.h               | Определяют класс **StepTimer**, который позволяет легко получать значения общего и затраченного времени.
-| UserInterface.h, UserInterface.cpp         | Определяют функции пользовательского интерфейса (системы меню, таблицы результатов и т.п.).                                                                        |
+| UserInterface.h, UserInterface.cpp         | Определяют функции пользовательского интерфейса (системы меню, таблицы результатов и т. п.).                                                                        |
 
  
 
@@ -88,7 +88,7 @@ ms.locfileid: "9049881"
 ##  <a name="adding-to-the-template"></a>Добавление в шаблон
 
 
-Шаблон **Приложение DirectX11 (универсальное приложение Windows)** создает основное окно, в котором можно выполнять отрисовку с помощью Direct3D. Этот шаблон включает также класс **DeviceResources**, создающий все ресурсы устройства Direct3D, которые необходимы для отрисовки трехмерного содержимого в приложении UWP.
+Шаблон **Приложение DirectX 11 (универсальное приложение Windows)** создает основное окно, в котором можно выполнять отрисовку с помощью Direct3D. Этот шаблон включает также класс **DeviceResources**, создающий все ресурсы устройства Direct3D, которые необходимы для отрисовки трехмерного содержимого в приложении UWP.
 
 Класс **App** создает объект класса **MarbleMazeMain**, запускает загрузку ресурсов, выполняет цикл для обновления таймера и вызывает метод **MarbleMazeMain::Render** в каждом кадре. Каждый из методов **App::OnWindowSizeChanged**, **App::OnDpiChanged** и **App::OnOrientationChanged** вызывает метод **MarbleMazeMain::CreateWindowSizeDependentResources**, а метод **App::Run** вызывает методы **MarbleMazeMain::Update** и **MarbleMazeMain::Render**.
 
@@ -123,7 +123,7 @@ ms.locfileid: "9049881"
     });
 ```
 
-В классе **MarbleMazeMain** определяется флаг *m\_deferredResourcesReady*, указывающий на завершение асинхронной загрузки. Метод **MarbleMazeMain::LoadDeferredResources** загружает ресурсы игры, а затем устанавливает этот флаг. На этапах обновления (**MarbleMazeMain::Update**) и отрисовки (**MarbleMazeMain::Render**) приложение проверяет состояние этого флага. Если флаг установлен, то игра продолжает работу обычным образом. Если флаг еще не установлен, то игра отображает экран загрузки.
+**MarbleMazeMain** класс определяет *m\_deferredResourcesReady* флаг, указывающий, что асинхронная загрузка завершена. Метод **MarbleMazeMain::LoadDeferredResources** загружает ресурсы игры, а затем устанавливает этот флаг. На этапах обновления (**MarbleMazeMain::Update**) и отрисовки (**MarbleMazeMain::Render**) приложение проверяет состояние этого флага. Если флаг установлен, то игра продолжает работу обычным образом. Если флаг еще не установлен, то игра отображает экран загрузки.
 
 Дополнительные сведения об асинхронном программировании для приложений UWP см. в разделе [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
@@ -195,7 +195,7 @@ enum class GameState
 };
 ```
 
-Например, состояние **MainMenu** определяет, что отображается главное меню, а игра неактивна. Состояние **InGameActive**, напротив, определяет, что игра активна, а меню не отображается. В классе **MarbleMazeMain** определяется переменная-член **m\_gameState** для хранения активного состояния игры.
+Например, состояние **MainMenu** определяет, что отображается главное меню, а игра неактивна. Состояние **InGameActive**, напротив, определяет, что игра активна, а меню не отображается. **MarbleMazeMain** класс определяет **m\_gameState** переменную-член для хранения в активное состояние игры.
 
 В методах **MarbleMazeMain::Update** и **MarbleMazeMain::Render** с помощью операторов switch выполняется логика для текущего состояния. В следующем примере показано, как выглядит оператор switch для метода **MarbleMazeMain::Update** (подробности опущены для наглядности представления структуры).
 
@@ -421,11 +421,11 @@ void MarbleMazeMain::LoadState()
 
 Ознакомьтесь с разделом [Добавление визуального содержимого в пример Marble Maze](adding-visual-content-to-the-marble-maze-sample.md), чтобы изучить основные моменты, о которых нужно помнить при работе с визуальными ресурсами.
 
-## <a name="related-topics"></a>Ссылки по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Добавление визуального содержимого в пример Marble Maze](adding-visual-content-to-the-marble-maze-sample.md)
-* [Основные характеристики примера Marble Maze](marble-maze-sample-fundamentals.md)
-* [Разработка Marble Maze — игры UWP — на C++ и DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Основные сведения о примере marble Maze](marble-maze-sample-fundamentals.md)
+* [Разработка Marble Maze, игрой UWP на C++ и DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

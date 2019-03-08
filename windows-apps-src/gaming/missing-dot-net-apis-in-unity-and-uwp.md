@@ -7,19 +7,19 @@ ms.topic: article
 keywords: windows 10, uwp, игры, .net, unity
 ms.localizationpriority: medium
 ms.openlocfilehash: 247761f47b578099bf8672d9e1b2469e6506682e
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116083"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641789"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>Отсутствующие API-интерфейсы .NET в Unity и UWP
 
 При создании UWP-игры с использованием .NET вы, вероятно, обнаружите, что некоторые API-интерфейсы, которые вы использовали в редакторе Unity или в игре для ПК, не представлены для UWP. Это вызвано тем, что .NET для приложений UWP включает в себя набор типов, предоставленных в полной платформе .NET Framework для каждого пространства имен.
 
-Кроме того, некоторые игровые движки используют разные версии .NET, которые не полностью совместимы с .NET для UWP, например Mono в Unity. Поэтому при написании игры все может отлично работать в редакторе, но при выполнении сборки для UWP возможно получение таких ошибок: **Тип или пространство имен Formatters не существует в пространстве имен System.Runtime.Serialization (отсутствует ссылка на сборку?)**
+Кроме того, некоторые игровые движки используют разные версии .NET, которые не полностью совместимы с .NET для UWP, например Mono в Unity. Поэтому при создании игры, все может работать нормально в редакторе, но при переходе на построение для универсальной платформы Windows, могут возникнуть ошибки следующим образом: **Тип или пространство имен «модули форматирования» не существует в пространстве имен «System.Runtime.Serialization» (возможно, отсутствует ссылка на сборку?)**
 
-К счастью, Unity предоставляет некоторые из этих отсутствующих API в виде методов расширения и заменяющих типов, которые описаны в разделе [Универсальная платформа Windows: отсутствующие типы .NET на сервере сценариев .NET](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). Однако если требуемая функциональность не представлена, в [Обзоре приложений .NET для Windows 8.x](https://msdn.microsoft.com/library/windows/apps/br230302) рассматриваются способы преобразования кода для использования .NET или WinRT для API-интерфейсов UWP. (В нем рассматривается Windows 8, но это также относится к приложениям UWP для Windows 10.)
+К счастью, среда Unity предоставляет некоторые из этих отсутствующих API как методы расширения и замены типы, которые описаны в [универсальной платформы Windows: Отсутствуют типы .NET на сценариев серверной части .NET](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). Однако если требуемая функциональность не представлена, в [Обзоре приложений .NET для Windows 8.x](https://msdn.microsoft.com/library/windows/apps/br230302) рассматриваются способы преобразования кода для использования .NET или WinRT для API-интерфейсов UWP. (В нем рассматривается Windows 8, но это также относится к приложениям UWP для Windows 10.)
 
 ## <a name="net-standard"></a>.NET Standard
 
@@ -43,7 +43,7 @@ ms.locfileid: "9116083"
 
 Как правило, для **Версии среды выполнения сценариев** и **Уровня совместимости Api** следует выбирать последнюю доступную версию, чтобы обеспечить дополнительную совместимость с .NET Framework и таким образом использовать дополнительные API-интерфейсы .NET.
 
-![Конфигурация: Версия среды выполнения сценариев; Сервер сценариев; Уровень совместимости API](images/missing-dot-net-apis-in-unity-1.png)
+![Конфигурация: Создание сценариев версии среды выполнения; Создание сценариев серверной части; Уровень совместимости API](images/missing-dot-net-apis-in-unity-1.png)
 
 ## <a name="platform-dependent-compilation"></a>Компиляция в зависимости от платформы
 
@@ -60,7 +60,7 @@ ms.locfileid: "9116083"
 ```
 
 > [!NOTE]
-> `NETFX_CORE` предназначен только для проверки того, выполняется ли компиляция кода C# с использованием сервера сценариев .NET. Если вы используете другой сервер сценариев, такой как IL2CPP, вместо этого используйте `UNITY_WSA_10_0`.
+> `NETFX_CORE` предназначена только для проверки, если компилируются C# кода для сценариев серверной части .NET. Если вы используете другой сервер сценариев, такой как IL2CPP, вместо этого используйте `UNITY_WSA_10_0`.
 
 Полный список директив компиляции в зависимости от платформы см. в разделе [Компиляция в зависимости от платформы](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html).
 
@@ -144,6 +144,6 @@ private async void GetCertificatesAsync(string certStoreName)
 
 ## <a name="see-also"></a>См. также
 
-* [Универсальная платформа Windows: отсутствующие типы .NET на сервере сценариев .NET](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
-* [Обзор .NET для приложений UWP](https://msdn.microsoft.com/library/windows/apps/br230302)
-* [Руководства по переносу на Unity UWP](https://unity3d.com/partners/microsoft/porting-guides)
+* [Платформа универсальных Windows: Отсутствуют типы .NET на сценариев серверной части .NET](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
+* [.NET для Обзор приложений универсальной платформы Windows](https://msdn.microsoft.com/library/windows/apps/br230302)
+* [Руководства по переносу UWP Unity](https://unity3d.com/partners/microsoft/porting-guides)

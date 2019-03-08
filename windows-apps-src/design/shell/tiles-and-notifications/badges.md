@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
+Description: Узнайте, как использовать плитки, индикаторы событий, всплывающие и простые уведомления, чтобы предоставлять точки входа в свои приложения и держать пользователей в курсе последних событий.
 title: Уведомления на индикаторах событий для приложений UWP
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b41069f1ca964f978ba0cff73f5c34a9db133a10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920289"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649089"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>Уведомления на индикаторах событий для приложений UWP
 
@@ -35,7 +35,7 @@ ms.locfileid: "8920289"
 <table>
     <tr>
         <th>Значение</th>
-        <th>Индикатор событий</th>
+        <th>Badge</th>
         <th>XML</th>
     </tr>
     <tr>
@@ -128,7 +128,7 @@ ms.locfileid: "8920289"
 
 ## <a name="create-a-badge"></a>Создание индикатора событий
 
-В этих примерах показано, как для создания обновления индикатора событий.
+Эти примеры демонстрируют Создание обновление индикаторов событий.
 
 ### <a name="create-a-numeric-badge"></a>Создание числового индикатора событий
 
@@ -198,7 +198,7 @@ private void clearBadge()
 
 * [Пример уведомлений](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Демонстрирует, как создавать интерактивные плитки, отправлять обновления индикатора событий и отображать всплывающие уведомления. 
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
 * [Адаптивные и интерактивные всплывающие уведомления](adaptive-interactive-toasts.md)
 * [Создание плиток](creating-tiles.md)

@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
 ms.openlocfilehash: b1c8271c8066304dce355cf50afd4509173eed3e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046793"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653269"
 ---
 # <a name="bluetooth-le-advertisements"></a>Объявления Bluetooth LE
 
@@ -41,9 +41,9 @@ ms.locfileid: "9046793"
 
 ## <a name="publishing-advertisements"></a>Публикация объявлений
 
-С помощью объявлений Bluetooth LE устройство может постоянно устанавливать маяки в определенных полезных данных— объявлениях. Это объявление будет видно любому устройству с поддержкой Bluetooth LE поблизости, если оно настроено для прослушивания именно этого объявления.
+С помощью объявлений Bluetooth LE устройство может постоянно устанавливать маяки в определенных полезных данных — объявлениях. Это объявление будет видно любому устройству с поддержкой Bluetooth LE поблизости, если оно настроено для прослушивания именно этого объявления.
 
-> **Обратите внимание**: для конфиденциальности пользователя, продолжительность существования объявления привязана к продолжительности существования приложения. Вы можете создать BluetoothLEAdvertisementPublisher и вызвать задачу "Запуск в фоновом режиме" для объявления в фоновом режиме. Подробнее о фоновых задачах см. в разделе [Запуск, возобновление и фоновые задачи](https://msdn.microsoft.com/windows/uwp/launch-resume/index).
+> **Примечание**. Для обеспечения конфиденциальности пользователей срок действия вашего объявления связано с вашего приложения. Вы можете создать BluetoothLEAdvertisementPublisher и вызвать задачу "Запуск в фоновом режиме" для объявления в фоновом режиме. Подробнее о фоновых задачах см. в разделе [Запуск, возобновление и фоновые задачи](https://msdn.microsoft.com/windows/uwp/launch-resume/index).
 
 ### <a name="basic-publishing"></a>Базовые возможности публикации
 
@@ -55,7 +55,7 @@ ms.locfileid: "9046793"
 BluetoothLEAdvertisementPublisher publisher = new BluetoothLEAdvertisementPublisher();
 ```
 
-Затем создайте пользовательский раздел данных. В этом примере используется неназначенное значение **CompanyId** *0xFFFE*, а в объявление добавляется текст *Hello World*. 
+Затем создайте пользовательский раздел данных. В этом примере используется неназначенное значение **CompanyId***0xFFFE*, а в объявление добавляется текст *Hello World*. 
 
 ```csharp
 // Add custom data to the advertisement

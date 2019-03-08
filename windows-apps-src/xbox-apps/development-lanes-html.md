@@ -7,14 +7,14 @@ keywords: windows 10, uwp
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 ms.localizationpriority: medium
 ms.openlocfilehash: 019db8c93b61f84dde400f7be9f98bf82b1466e8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048581"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660329"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>Перенос игр на HTML для Xbox на UWP
-Xbox One— превосходная платформа для игр на HTML5. Игры на HTML5 работают на браузерном движке [Microsoft Edge](https://developer.microsoft.com/microsoft-edge/). Edge отличается высокой скоростью работы и полностью поддерживает такие возможности HTML5 и CSS 3, как WebGL и холст.
+Xbox One — превосходная платформа для игр на HTML5. Игры на HTML5 работают на браузерном движке [Microsoft Edge](https://developer.microsoft.com/microsoft-edge/). Edge отличается высокой скоростью работы и полностью поддерживает такие возможности HTML5 и CSS 3, как WebGL и холст.
 
 В популярных игровых движках, например [Construct 2](https://www.scirra.com/blog/176/announcing-xbox-one-export-beta), реализована поддержка Xbox One. Мы не проводили тестирование всех платформ и движков HTML, однако, судя по нашему опыту работы с некоторыми из них, мы считаем, что большинство этих платформ будет совместимо с Xbox One.
 
@@ -32,5 +32,5 @@ Xbox One работает на универсальной платформе Win
 Чтобы начать работу, скачайте необходимый вам движок и найдите инструкции по его использованию для разработки приложений для Windows 10. Также ознакомьтесь с [руководством по началу работы](getting-started.md), в котором содержатся инструкции по превращению вашей консоли в пакет средств разработки ПО, а также развертыванию приложений из Visual Studio.
 
 ## <a name="see-also"></a>См. также
-- [Перенос существующих игр на Xbox](development-lanes-landing.md)
+- [Перенос существующих игры для Xbox](development-lanes-landing.md)
 - [Приложения UWP для Xbox One](index.md)

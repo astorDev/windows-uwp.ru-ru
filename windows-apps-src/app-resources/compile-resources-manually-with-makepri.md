@@ -1,5 +1,5 @@
 ---
-Description: MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system.
+Description: MakePri.exe — инструмент командной строки, который можно использовать для создания и наполнения PRI-файлов. Он интегрирован как часть MSBuild в Microsoft Visual Studio, но разработчики могут использовать его для создания пакетов вручную или с помощью пользовательских систем сборки.
 title: Компиляция ресурсов вручную с помощью MakePri.exe
 template: detail.hbs
 ms.date: 10/23/2017
@@ -7,27 +7,27 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f4feff88507ae5f84bccf044aa9ab6711d6b8bb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919865"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645769"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>Компиляция ресурсов вручную с помощью MakePri.exe
 
 MakePri.exe — инструмент командной строки, который можно использовать для создания и наполнения PRI-файлов. Он интегрирован как часть MSBuild в Microsoft Visual Studio, но разработчики могут использовать его для создания пакетов вручную или с помощью пользовательских систем сборки.
 
 > [!NOTE]
-> MakePri.exe устанавливается при проверке параметр **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe устанавливается в том случае, если выбран **Windows SDK для приложений универсальной платформы Windows, управляемых** параметр при установке пакета средств разработки программного обеспечения Windows. Он устанавливается в путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именами других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
-Ограничение на размер PRI-файла— 64КБ.
+Ограничение на размер PRI-файла — 64 КБ.
 
 ## <a name="in-this-section"></a>В этом разделе
-|Статья|Описание|
+|Раздел|Описание|
 |-|-|
-| [Параметры командной строки MakePRI.exe](makepri-exe-command-options.md) | MakePri.exe имеет набор команд `createconfig`, `dump`, `new`, `resourcepack` и `versioned`. В данном разделе описаны параметры командной строки для их использования. |
+| [Параметры командной строки MakePri.exe](makepri-exe-command-options.md) | MakePri.exe имеет набор команд `createconfig`, `dump`, `new`, `resourcepack` и `versioned`. В данном разделе описаны параметры командной строки для их использования. |
 | [Файл конфигурации MakePri.exe](makepri-exe-configuration.md) | В этом разделе дается описание схемы XML-файла конфигурации MakePri.exe. |
-| [Индексаторы для конкретных форматов MakePri.exe](makepri-exe-format-specific-indexers.md) | В этом разделе описываются специальные индексаторы, которые используются средством MakePri.exe для создания указателя ресурсов. |
+| [Индексаторы определенного формата MakePri.exe](makepri-exe-format-specific-indexers.md) | В этом разделе описываются специальные индексаторы, которые используются средством MakePri.exe для создания указателя ресурсов. |
 
 ## <a name="makepriexe-command-line-options"></a>Параметры командной строки MakePRI.exe
 
@@ -66,7 +66,7 @@ No default or neutral resource given for '<resource identifier>'. The applicatio
 Когда PRI-файлы создаются для других компонентов, библиотек классов, сборок, библиотек DLL и пакетов SDK, следует применять конфигурацию **initialPath**, чтобы обеспечить, что ресурсы компонентов имеют свои собственные подкарты ресурсов, не конфликтующие с приложением, в которое их добавляют.
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Параметры командной строки MakePRI.exe](makepri-exe-command-options.md)
-* [Настройка MakePri.exe](makepri-exe-configuration.md)
-* [Индексаторы для конкретных форматов MakePri.exe](makepri-exe-format-specific-indexers.md)
-* [Адаптация ресурсов с учетом языка, масштаба и других квалификаторов](tailor-resources-lang-scale-contrast.md)
+* [Параметры командной строки MakePri.exe](makepri-exe-command-options.md)
+* [Конфигурации MakePri.exe](makepri-exe-configuration.md)
+* [Индексаторы определенного формата MakePri.exe](makepri-exe-format-specific-indexers.md)
+* [Настроить ресурсы для языка, масштаба и квалификаторов](tailor-resources-lang-scale-contrast.md)

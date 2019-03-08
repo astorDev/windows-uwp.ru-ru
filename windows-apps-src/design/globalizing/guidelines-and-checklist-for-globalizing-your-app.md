@@ -1,5 +1,5 @@
 ---
-Description: Design and develop your app in such a way that it functions appropriately on systems with different language and culture configurations.
+Description: Проектирование и разработка приложения таким образом, чтобы оно правильно работало на системах с различными конфигурациями языка и региона.
 Search.Refinement.TopicID: 180
 title: Руководство по глобализации
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
 ms.openlocfilehash: bdc7e5de3be941f2622c04d515e5e1211247b9a2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047246"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648249"
 ---
 # <a name="guidelines-for-globalization"></a>Руководство по глобализации
 
-Проектируйте и разрабатывайте приложения таким образом, чтобы они правильно работали на системах с различными конфигурациями языка и региона. Используйте API-интерфейсы [**Globalization**](/uwp/api/Windows.Globalization?branch=live) для форматирования данных; избегайте предположений в коде в отношении языка, региона, классификации символов, системы письменности, форматирования данных/времени, чисел, валют, систем измерения веса и правил сортировки.
+Проектирование и разработка приложения таким образом, чтобы оно правильно работало на системах с различными конфигурациями языка и региона. Используйте API-интерфейсы [**Globalization**](/uwp/api/Windows.Globalization?branch=live) для форматирования данных; избегайте предположений в коде в отношении языка, региона, классификации символов, системы письменности, форматирования данных/времени, чисел, валют, систем измерения веса и правил сортировки.
 
-| Рекомендация | Описание |
+| Рекомендации | Описание |
 | ------------- | ----------- |
 | Учитывайте язык и региональные параметры при обработке и сравнении строк. | Например, не изменяйте регистр строк до их сравнения. См. раздел [Рекомендации по использованию строк](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage). |
 | При сортировке строк и других данных не следует предполагать, что она всегда выполняется в алфавитном порядке. | Для языков, не использующих латиницу, сортировка основана на таких факторах, как произношение или число росчерков пера. Даже для языков, основанных на латинице, сортировка по алфавиту используется не всегда. Например, в некоторых культурах записи в телефонной книге не сортируются в алфавитном порядке. Windows может провести сортировку за вас, но если вы создаете собственный алгоритм сортировки, следует учесть методы сортировки, принятые на ваших целевых рынках. |
@@ -36,23 +36,23 @@ ms.locfileid: "9047246"
 
 ## <a name="important-apis"></a>Важные API
  
-* [Globalization](/uwp/api/Windows.Globalization?branch=live)
+* [Глобализация](/uwp/api/Windows.Globalization?branch=live)
 * [GeographicRegion.CurrenciesInUse](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse)
 * [Language.CurrentInputMethodLanguageTag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)
 * [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live)
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 * [Рекомендации по использованию строк](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
-* [Глобализация форматов даты/времени/чисел](use-global-ready-formats.md)
-* [Обзор языков профиля пользователя и языков манифеста приложения](manage-language-and-region.md)
-* [Языковые теги BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Ресурсы приложения и Система управления ресурсами](../../app-resources/index.md)
-* [Как Система управления ресурсами сопоставляет языковые теги](../../app-resources/how-rms-matches-lang-tags.md)
-* [Настройка макета и шрифтов, реализация поддержки написания справа налево](adjust-layout-and-fonts--and-support-rtl.md)
+* [Глобализация форматирования даты, времени и номеров](use-global-ready-formats.md)
+* [Сведения о языках профиля пользователя и языки манифеста приложения](manage-language-and-region.md)
+* [Теги языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Ресурсы приложения и система управления ресурсами](../../app-resources/index.md)
+* [Как система управления ресурсами соответствует тегам языка](../../app-resources/how-rms-matches-lang-tags.md)
+* [Настройка макета и шрифтов, добавление поддержки написания справа налево](adjust-layout-and-fonts--and-support-rtl.md)
 * [Международные шрифты](loc-international-fonts.md)
-* [Подготовка приложения к локализации](prepare-your-app-for-localization.md)
+* [Сделать локализуемые приложения](prepare-your-app-for-localization.md)
 
 ## <a name="samples"></a>Примеры
 
-* [Пример параметров глобализации](https://go.microsoft.com/fwlink/p/?linkid=231608)
+* [Пример Globalization предпочтения](https://go.microsoft.com/fwlink/p/?linkid=231608)

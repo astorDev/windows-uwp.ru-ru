@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
 ms.openlocfilehash: 0869f5cfc2499a00577f0196cd9f9f84987c0321
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048371"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647329"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>Системные ресурсы для приложений UWP и игр для Xbox One
 
@@ -30,15 +30,15 @@ ms.locfileid: "9048371"
 
 * ЦП
     * Приложения: общее использование 2–4 ядер процессора в зависимости от количества приложений и игр, запущенных в системе.
-    * Игры: 4 эксклюзивных и 2 общих ядра ЦП.
+    * Игры: 4 эксклюзивное и 2 общих ядер ЦП.
 
 * Графический процессор
-    * Приложения: общее использование 45% процессора в зависимости от количества приложений и игр, запущенных в системе.
+    * Приложения: общее использование 45 % процессора в зависимости от количества приложений и игр, запущенных в системе.
     * Игры: полный доступ к доступным циклам графического процессора.
 
 * Поддержка DirectX
-    * Приложения: DirectX 11, функциональный уровень 10.
-    * Игры: DirectX 12 и DirectX 11, функциональный уровень 10.
+    * Приложения: Уровень компонентов DirectX 11 10.
+    * Игры: DirectX 12, а уровень возможностей DirectX 11 10.
 
 * Все приложения и игры должны быть предназначены для 64-разрядной архитектуры, чтобы вести их разработку и отправлять в магазин для Xbox.  
 
@@ -52,8 +52,8 @@ ms.locfileid: "9048371"
 </br>
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developing-xbox-one-applications-16860/Video-What-s-Unique--vk0fOPf9C_2006218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
-## <a name="see-also"></a>См. также:
-- [UWP на Xbox One](index.md)
-- [Начало работы с программой Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)
-- [DirectX и UWP для Xbox One](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
+## <a name="see-also"></a>См. также
+- [Приложения UWP для Xbox One](index.md)
+- [Начало работы с Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)
+- [DirectX и универсальной платформы Windows на Xbox One](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
 

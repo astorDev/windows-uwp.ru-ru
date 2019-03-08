@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, directx, активация
 ms.localizationpriority: medium
 ms.openlocfilehash: 51c2435c8edeac2431198b7b5f3d9b1a307b5b78
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920200"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648849"
 ---
 # <a name="how-to-activate-an-app-directx-and-c"></a>Активация приложения (DirectX и C++)
 
@@ -82,11 +82,11 @@ void App::Run()
 }
 ```
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 
-* [Приостановка работы приложения (DirectX и C++)](how-to-suspend-an-app-directx-and-cpp.md)
-* [Возобновление работы приложения (DirectX и C++)](how-to-resume-an-app-directx-and-cpp.md)
+* [Приостановка приложения (DirectX и C++)](how-to-suspend-an-app-directx-and-cpp.md)
+* [Возобновление приложения (DirectX и C++)](how-to-resume-an-app-directx-and-cpp.md)
 
  
 

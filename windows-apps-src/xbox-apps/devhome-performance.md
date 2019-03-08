@@ -1,26 +1,26 @@
 ---
 ms.assetid: d40056bc-76bc-c123-4d36-973ec46d11fc
-title: Страница "производительность" (Dev Home)
-description: Сведения о странице производительности главную страницу приложения для Xbox One.
+title: Страница производительности (главная страница разработчика)
+description: Содержит сведения о странице производительности в приложении Dev Home для Xbox One.
 ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 589084a7da23b037fe61ea5e4c9e52dffb1c29be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925848"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646319"
 ---
-# <a name="performance-page-dev-home"></a>Страница "производительность" (Dev Home)
+# <a name="performance-page-dev-home"></a>Страница производительности (главная страница разработчика)
    
   
-Страницу " **производительность** " Dev Home имитирует различные активности диска и условия использования ЦП для устранения неполадок.   
- ![Страница "производительность" из Dev Home](images/devhome_performance.png)   
+Страница **Производительность** на главной странице разработчика имитирует различную активность диска и условия использования процессора для устранения неполадок.   
+ ![Страница производительности разработки дома](images/devhome_performance.png)   
   
-Страница " **производительность** " содержит следующие области:   
+Страница **Производительность** содержит следующие области:   
  
    *  [Моделирование диска](#ID4EEB)  
    *  [Моделирование ЦП](#ID4EOB)  
@@ -30,25 +30,25 @@ ms.locfileid: "8925848"
 
    
 
-## <a name="disk-simulation"></a>Моделирование диска  
+## <a name="disk-simulation"></a>Disk simulation  
    
   
-Области **диска моделирования** имитирует активности диска из системы или других приложений.   
+Панель **Disk simulation** имитирует активность диска при взаимодействии с системой или другими приложениями.   
   
 <a id="ID4EOB"></a>
 
    
 
-## <a name="cpu-simulation"></a>Моделирование ЦП  
+## <a name="cpu-simulation"></a>CPU Simulation  
    
   
-Области **Моделирования ЦП** имитирует действие на CPU6 (общего базовая).   
+Панель **CPU Simulation** имитирует активность CPU6 (общего ядра).   
   
 <a id="ID4EYB"></a>
 
    
 
 ## <a name="see-also"></a>См. также  
- [Главная страница разработчика на консоли (Dev Home)](dev-home.md)
+ [Домашняя разработчика на консоль (Dev Home)](dev-home.md)
 
   

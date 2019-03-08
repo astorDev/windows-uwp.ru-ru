@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, безопасность
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b74eccd5f6138e5a9d670aa3a0a93239813cf4d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918617"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658359"
 ---
 # <a name="cryptographic-keys"></a>Криптографические ключи
 
@@ -71,7 +71,7 @@ ms.locfileid: "8918617"
 
 | Объект                                                                            | Описание                                                                                                                                |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | Создает объект KeyDerivationParameters, который используется функцией формирования ключа при помощи пароля2 (PBKDF2).                                 |
+| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | Создает объект KeyDerivationParameters, который используется функцией формирования ключа при помощи пароля 2 (PBKDF2).                                 |
 | [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | Создает объект KeyDerivationParameters для использования в режиме счетчика функцией формирования ключа при помощи хэш-кода проверки подлинности сообщения (HMAC). |
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | Создает объект KeyDerivationParameters, который используется функцией формирования ключа при помощи SP800-56A.                                                 |
 

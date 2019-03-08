@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d6c16ecaa64abf7d83154fdb864671dbff3eae
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936286"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643489"
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>Экспозиция потоковых ресурсов HLSL
 
@@ -21,21 +21,21 @@ ms.locfileid: "8936286"
 
 Синтаксис HLSL модели шейдера 5 разрешен только на устройствах с поддержкой потоковых ресурсов. Каждый соответствующий метод HLSL для потоковых ресурсов в следующей таблице принимает один (feedback) или два (сначала clamp, а затем feedback) дополнительных необязательных параметра. Например, метод **Sample** выглядит так:
 
-**Sample(sampler, location \[, offset \[, clamp \[, feedback\] \] \])**
+**Пример (дискретизатора, расположение \[, смещение \[, выполняют приведение \[, отзыв\] \] \])**
 
-Пример метода **Sample**— [**Texture2D.Sample(S,float,int,float,uint)**](https://msdn.microsoft.com/library/windows/desktop/dn393787).
+Пример метода **Sample** — [**Texture2D.Sample(S,float,int,float,uint)**](https://msdn.microsoft.com/library/windows/desktop/dn393787).
 
 Параметры offset, clamp и feedback необязательны. Необходимо указать все необязательные параметры вплоть до требуемого в соответствии с правилами C++ касательно аргументов функций по умолчанию. Например, если требуется состояние feedback, необходимо явным образом предоставить параметры offset и clamp методу **Sample**, даже если логически они не нужны.
 
-Параметр clamp— скалярное значение с плавающей точкой. Литеральное значение clamp=0.0f указывает, что операция прикрепления не выполнена.
+Параметр clamp — скалярное значение с плавающей точкой. Литеральное значение clamp=0.0f указывает, что операция прикрепления не выполнена.
 
-Параметр feedback— это переменная **uint**, которую можно передать встроенной функции опроса доступа к памяти [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083). Значение параметра feedback нельзя изменять или интерпретировать. Но компилятор не предоставляет средств расширенного анализа и диагностики для обнаружения изменений значения.
+Параметр feedback — это переменная **uint**, которую можно передать встроенной функции опроса доступа к памяти [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083). Значение параметра feedback нельзя изменять или интерпретировать. Но компилятор не предоставляет средств расширенного анализа и диагностики для обнаружения изменений значения.
 
 Вот синтаксис [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083):
 
-**bool CheckAccessFullyMapped(in uint FeedbackVar);**
+**bool CheckAccessFullyMapped (в целое число без знака FeedbackVar);**
 
-[**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) интерпретирует значение *FeedbackVar* и возвращает значение true, если все данные, к которым осуществляется доступ, сопоставлены в ресурсе. В противном случае **CheckAccessFullyMapped** возвращает значение false.
+[**CheckAccessFullyMapped** ](https://msdn.microsoft.com/library/windows/desktop/dn292083) интерпретирует значение *FeedbackVar* и возвращает значение true, если все данные сопоставленные в ресурсе, в противном случае — **CheckAccessFullyMapped**возвращает значение false.
 
 Если параметр clamp или feedback присутствует, компилятор выдает вариант базовой инструкции. Например, выборка потокового ресурса приводит к созданию инструкции `sample_cl_s`.
 
@@ -43,7 +43,7 @@ ms.locfileid: "8936286"
 
 Если параметру clamp присвоено значение 0.0f, прикрепление не выполнено. Компилятор драйвера может дополнительно настроить инструкцию под целевое оборудование. Если значением параметра feedback является регистр NULL в инструкции, параметр feedback не используется. Таким образом, компилятор драйвера может дополнительно настроить инструкцию под целевую архитектуру.
 
-Если компилятор HLSL делает логический вывод, что значение параметра clamp— 0.0f, а параметр feedback не используется, компилятор выдает соответствующую базовую инструкцию (например, `sample` вместо `sample_cl_s`).
+Если компилятор HLSL делает логический вывод, что значение параметра clamp — 0.0f, а параметр feedback не используется, компилятор выдает соответствующую базовую инструкцию (например, `sample` вместо `sample_cl_s`).
 
 Если доступ к потоковому ресурсу состоит из нескольких инструкций байт-кода, например для структурированных ресурсов, компилятор выполняет статистическое вычисление отдельных значений параметра feedback через операцию ИЛИ, чтобы получить окончательное значение параметра feedback. Таким образом, для такого сложного доступа вы получаете одно значение параметра feedback.
 
@@ -57,7 +57,7 @@ ms.locfileid: "8936286"
 <thead>
 <tr class="header">
 <th align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471359">Объекты HLSL</a> </th>
-<th align="left">Встроенные методы с параметром feedback (*)— также с параметром clamp</th>
+<th align="left">Встроенные методы с параметром feedback (*) — также с параметром clamp</th>
 </tr>
 </thead>
 <tbody>
@@ -103,17 +103,17 @@ ms.locfileid: "8936286"
 <p>[RW]Buffer</p>
 <p>[RW]ByteAddressBuffer</p>
 <p>[RW]StructuredBuffer</p></td>
-<td align="left">Load</td>
+<td align="left">Загрузить</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Конвейерный доступ к потоковым ресурсам](pipeline-access-to-streaming-resources.md)
+[Конвейер доступ к потоковой передачи ресурсов](pipeline-access-to-streaming-resources.md)
 
  
 

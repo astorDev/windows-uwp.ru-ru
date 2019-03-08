@@ -1,5 +1,5 @@
 ---
-Description: Learn how to create multi-step interactions in your notifications.
+Description: Сведения о создании многоэтапный взаимодействий в уведомлениях.
 title: Всплывающее уведомление с ожидающей активацией обновления
 label: Toast with pending update activation
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, всплывающее уведомление, ожидающее обновления, pendingupdate, многоэтапное взаимодействие, многоэтапная интерактивность
 ms.localizationpriority: medium
 ms.openlocfilehash: b1574ee2913bd2889af204aae1089dc170df95b8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940739"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648559"
 ---
 # <a name="toast-with-pending-update-activation"></a>Всплывающее уведомление с ожидающей активацией обновления
 
@@ -21,15 +21,15 @@ ms.locfileid: "8940739"
 ![Всплывающее уведомление с ожидающим обновлением](images/toast-pendingupdate.gif)
 
 > [!IMPORTANT]
-> **Требуется обновление Desktop Fall Creators Update и библиотека уведомлений версии 2.0.0**: вам необходимо использовать сборку для настольного компьютера 16299 или более поздней версии, чтобы увидеть ожидающие обновления. Для назначения **PendingUpdate** кнопкам необходимо использовать [библиотеку уведомлений набора средств сообщества UWP из NuGet](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) версии 2.0.0 или более поздней. **PendingUpdate** поддерживается только на настольных компьютерах и игнорируется на других устройствах.
+> **Требуется рабочий стол Fall Creators Update и 2.0.0 библиотека уведомлений**: Вам должна быть запущена локальная сборка 16299 или более поздней версии, чтобы просмотреть ожидающие операции обновления. Для назначения **PendingUpdate** кнопкам необходимо использовать [библиотеку уведомлений набора средств сообщества UWP из NuGet](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) версии 2.0.0 или более поздней. **PendingUpdate** поддерживается только на настольных компьютерах и игнорируется на других устройствах.
 
 
-## <a name="prerequisites"></a>Что вам понадобится
+## <a name="prerequisites"></a>Предварительные условия
 
 В этой статье предполагается, что вы знакомы со следующими темами..
 
-- [Создание содержимое всплывающего уведомления](adaptive-interactive-toasts.md)
-- [Отправка всплывающего уведомления и обработка активации фона](send-local-toast.md)
+- [Создав всплывающее содержимое](adaptive-interactive-toasts.md)
+- [При отправке всплывающее уведомление и обработке активации фон](send-local-toast.md)
 
 
 ## <a name="overview"></a>Обзор
@@ -116,7 +116,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 
 ## <a name="related-topics"></a>Статьи по теме
 
-- [Полный пример кода на GitHub](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
-- [Отправка локального всплывающего уведомления и обработка активации](send-local-toast.md)
-- [Документация по содержимому всплывающего уведомления](adaptive-interactive-toasts.md)
-- [Индикатор хода выполнения всплывающего уведомления](toast-progress-bar.md)
+- [Полный образец кода на GitHub](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
+- [Отправить Локальная активация всплывающее уведомление и дескриптора](send-local-toast.md)
+- [Содержимое документации всплывающее уведомление](adaptive-interactive-toasts.md)
+- [Индикатор хода выполнения всплывающее уведомление](toast-progress-bar.md)

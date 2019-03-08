@@ -1,21 +1,21 @@
 ---
-Description: Content transition animations let you change the content of an area of the screen while keeping the container or background constant. New content fades in. If there is existing content to be replaced, that content fades out.
+Description: Анимация переходов содержимого используется для изменения содержимого области экрана, при котором фон или контейнер остаются неизменными. Появляется новое содержимое. Если существует содержимое, которое необходимо заменить, оно исчезает.
 title: Руководство по анимациям перехода содержимого
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 096cc0aaa9b0580eb6b45328a3243ba75d82f202
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940573"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649809"
 ---
 # <a name="content-transition-animations"></a>Анимации переходов содержимого
 
@@ -23,9 +23,9 @@ ms.locfileid: "8940573"
 
 Анимация переходов содержимого используется для изменения содержимого области экрана, при котором фон или контейнер остаются неизменными. Появляется новое содержимое. Если существует содержимое, которое необходимо заменить, оно исчезает.
 
-> **Важные API-интерфейсы**: [**класс ContentThemeTransition (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
+> **Важные API-интерфейсы**: [**Класс ContentThemeTransition (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
-## <a name="dos-and-donts"></a>Рекомендации
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
 
 -   Используйте анимационный эффект открытия, когда необходимо ввести набор новых элементов в пустой контейнер. Например, после начальной загрузки приложения часть содержимого приложения может быть недоступна для немедленного отображения. Когда эта часть содержимого будет готова для отображения, используйте анимацию перехода содержимого, чтобы отобразить это появившееся с опозданием содержимое.
@@ -38,12 +38,12 @@ ms.locfileid: "8940573"
 
 
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
-**Для разработчиков (XAML)**
-* [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Анимация переходов содержимого](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
-* [Краткое руководство: анимация пользовательского интерфейса с помощью анимаций библиотеки](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+**Разработчикам (XAML)**
+* [Общие сведения об анимации](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [Анимация содержимого переходы](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
+* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Класс ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
  

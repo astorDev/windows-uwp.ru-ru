@@ -6,13 +6,13 @@ ms.topic: article
 keywords: windows 10, uwp, ExtendedJsonData, продукты Store, схема
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f51f0fffae3fa8e9a54214f78aa93fe39eab080
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937672"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656109"
 ---
-# <a name="data-schemas-for-store-products"></a>Схемы данных для продуктов из Store
+# <a name="data-schemas-for-store-products"></a>Схемы данных для продуктов из Магазина
 
 При отправке в Магазин какого-либо продукта, например приложения или надстройки, Магазин поддерживает полный набор данных для продукта и его лицензий. В коде вашего приложения вы может программным способом получить доступ к некоторым из этих данных с помощью свойств в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Например, вы можете получить описание и цену текущего приложения или надстройки для текущего приложения с помощью свойств [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) и [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price).
 
@@ -69,11 +69,11 @@ ms.locfileid: "8937672"
 
 [!code[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json#L1-L12)]
 
-## <a name="related-topics"></a>Еще по теме:
+## <a name="related-topics"></a>Статьи по теме
 
-* [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
-* [Получение информации о продукте для приложений и надстроек](get-product-info-for-apps-and-add-ons.md)
-* [Получение информации о лицензии для приложений и надстроек](get-license-info-for-apps-and-add-ons.md)
-* [Поддержка покупок приложений и надстроек внутри приложения](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Поддержка покупок потребляемых надстроек внутри приложения](enable-consumable-add-on-purchases.md)
-* [Реализация пробной версии приложения](implement-a-trial-version-of-your-app.md)
+* [Покупки из приложений и пробные версии](in-app-purchases-and-trials.md)
+* [Получите сведения о продукте для приложения и надстройки](get-product-info-for-apps-and-add-ons.md)
+* [Получить сведения о лицензии для приложений и надстроек](get-license-info-for-apps-and-add-ons.md)
+* [Включить покупки из приложений, приложений и надстроек](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Включить покупки готовых к использованию надстройки](enable-consumable-add-on-purchases.md)
+* [Реализуйте пробную версию приложения](implement-a-trial-version-of-your-app.md)

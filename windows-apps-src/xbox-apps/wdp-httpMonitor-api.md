@@ -1,15 +1,15 @@
 ---
-title: Портал устройств— справочник по API для мониторинга HTTP
+title: Портал устройств — справочник по API для мониторинга HTTP
 description: Узнайте, как осуществлять доступ к HTTP-трафику из приложения в фокусе на Xbox.
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 8b8828b060e0401e7938517e497bae20e1234baf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927490"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645679"
 ---
 # <a name="http-monitor-api-reference"></a>Справочник по API для мониторинга HTTP   
 Трафик HTTP в режиме реального времени доступен для приложения в фокусе через этот API, если на консоли Xbox был включен монитор HTTP (для этого нужно установить соответствующий флажок в Dev Home).
@@ -20,11 +20,11 @@ ms.locfileid: "8927490"
 
 Узнать, включен ли монитор HTTP, можно в Dev Home.
 
-Способ      | URI запроса
+Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
 GET | /ext/httpmonitor/sessions
 <br />
-**Параметры универсального кода ресурса (URI)**
+**Параметры URI**
 
 - Нет
 
@@ -32,7 +32,7 @@ GET | /ext/httpmonitor/sessions
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -56,11 +56,11 @@ GET | /ext/httpmonitor/sessions
 
 Вы можете получать трафик HTTP от приложения в фокусе на Xbox (кроме системных приложений) в режиме реального времени, если монитор HTTP включен в Dev Home.
 
-Способ      | URI запроса
+Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
 WebSocket | /ext/httpmonitor/sessions
 <br />
-**Параметры универсального кода ресурса (URI)**
+**Параметры URI**
 
 - Нет
 
@@ -68,7 +68,7 @@ WebSocket | /ext/httpmonitor/sessions
 
 - Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
@@ -99,6 +99,6 @@ WebSocket | /ext/httpmonitor/sessions
 5XX | Коды ошибок
 
 <br />
-**Доступные семейства устройств**
+**Семейств доступных устройств**
 
 * Windows Xbox

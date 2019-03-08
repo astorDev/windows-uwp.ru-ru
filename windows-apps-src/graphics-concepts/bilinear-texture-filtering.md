@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 437650883b4782ca02c0daf24cc8ebed01d954f6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932933"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651259"
 ---
 # <a name="bilinear-texture-filtering"></a>Билинейная фильтрация текстур
 
@@ -20,14 +20,14 @@ ms.locfileid: "8932933"
 *Билинейная фильтрация* вычисляет средневзвешенное значение 4 текселей, которые расположены ближе всего к точке выборки. Этот способ фильтрации является более точным и распространенным, чем фильтрация по ближайшим точкам. Это эффективный способ, поскольку он реализован в современном графическом оборудовании.
 
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Пример.
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Пример
 
 
 Текстуры всегда линейно описываются от (0,0, 0,0) в верхнем левом углу до (1,0, 1,0) в нижнем правом углу. Линейное описание текстуры показано на следующем рисунке.
 
 ![Иллюстрация текстуры 4x4 со сплошными блоками цвета](images/bilinear-fig7a.png)
 
-Обычно текстуры представляются как состоящие из сплошных блоков цвета, однако правильнее воспринимать текстуры так же, как растровые дисплеи: каждый тексель определяется точно по центру ячейки сетки, как показано на следующем рисунке.
+Текстуры обычно представлены в виде, как в том случае, если они состояли из solid блоки цветов, но более правильный думать текстур так же, как следует рассматривать растеризация: Каждый текселя определяется в центре точное ячейки сетки, как показано на следующем рисунке.
 
 ![Иллюстрация текстуры 4x4 с текселями, определенными в центре ячеек сетки](images/bilinear-fig7b.png)
 
@@ -86,7 +86,7 @@ UV: (0.375, 0.375)
 
 ![иллюстрация текстуры 4x4 с выполненной в каждом адресе текстуры билинейной фильтрацией](images/bilinear-fig7c.jpg)
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Фильтрация текстур](texture-filtering.md)

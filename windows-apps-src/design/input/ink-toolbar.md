@@ -1,5 +1,5 @@
 ---
-Description: Add a default InkToolbar to a Universal Windows Platform (UWP) inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition.
+Description: Добавьте InkToolbar по умолчанию в приложение универсальной платформы Windows (UWP) для рукописного ввода, добавьте кнопку специального пера в InkToolbar и привяжите кнопку специального пера к определению специального пера.
 title: Добавление InkToolbar в приложение универсальной платформы Windows (UWP)
 label: Add an InkToolbar to a Universal Windows Platform (UWP) app
 template: detail.hbs
@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
 ms.openlocfilehash: 77bb78fe9509936fec5267162deab382bafffb61
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045297"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650579"
 ---
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>Добавление InkToolbar в приложение универсальной платформы Windows (UWP)
 
 
 
-В приложениях универсальной платформы Windows (UWP) рукописный ввод контролируется с помощью двух разных элементов управления: [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) и [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
+Существует два различных элементов управления, предназначенных для упрощения рукописного ввода в приложениях универсальной платформы Windows (UWP). [**InkCanvas** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) и [ **InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
 
 Элемент управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) предоставляет базовую функциональность Windows Ink. Используйте его для отрисовки ввода с помощью пера в качестве росчерка пера (с параметрами цвета и толщины по умолчанию) или росчерка стирания.
 
@@ -35,14 +35,14 @@ ms.locfileid: "9045297"
 
   В этом разделе мы рассмотрим элемент управления InkToolbar.
 
-> **Важные API-интерфейсы**: [**класс InkCanvas**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx), [**класс InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx), [**класс InkPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx), [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **Важные API-интерфейсы**: [**Класс InkCanvas**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx), [ **класс InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx), [ **класс InkPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx), [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 ## <a name="default-inktoolbar"></a>InkToolbar по умолчанию
 
 По умолчанию элемент управления [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) содержит кнопки для рисования, стирания, выделения и отображения линейки или транспортира. В зависимости от функции во всплывающем элементе могут отображаться другие параметры и команды, например цвет чернил, толщина росчерка и стирание всего написанного.
 
 ![InkToolbar](./images/ink/ink-tools-invoked-toolbar-small.png)  
-*Windows Ink toolbar по умолчанию*
+*Панель инструментов рукописного ввода Windows по умолчанию*
 
 Чтобы добавить [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) по умолчанию в приложение рукописного ввода, просто поместите его на одной странице с вашим [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) и свяжите эти два элемента управления.
 
@@ -90,7 +90,7 @@ ms.locfileid: "9045297"
 | По умолчанию | Задано явным образом |
 | --- | --- |
 | ![Расположение и ориентация панели инструментов рукописного ввода по умолчанию](./images/ink/location-default-small.png) | ![Расположение и ориентация панели инструментов рукописного ввода, заданные явно](./images/ink/location-explicit-small.png) |
-| *Расположение и ориентация панели инструментов Windows Ink по умолчанию* | *Расположение и ориентация панели инструментов Windows Ink, заданные явно* |
+| *Расположение по умолчанию панель инструментов рукописного ввода Windows и ориентации* | *Прямое местоположение панели инструментов рукописного ввода Windows и ориентации* |
 
 Следующий код используется, чтобы явным образом задать расположение и ориентацию панели инструментов рукописного ввода в XAML.
 ```xaml
@@ -101,16 +101,16 @@ ms.locfileid: "9045297"
     TargetInkCanvas="{x:Bind inkCanvas}" />
 ```
 
-**Инициализация на основе предпочтений пользователя или состояния устройства**
+**Initialize, в зависимости от настроек пользователя или состояния устройства**
 
 В некоторых случаях может потребоваться настроить расположение и ориентацию панели инструментов рукописного ввода в зависимости от предпочтений пользователя или состояния устройства. В следующем примере показано, как настроить расположение и ориентацию панели инструментов рукописного ввода на основе параметров письма левой или правой рукой. Для этого перейдите в раздел **Параметры > Устройства > Перо и Windows Ink > Перо > Выберите, какой рукой вы пишете**.
 
-![Параметр доминантной руки](./images/ink/location-handedness-setting.png)  
-*Параметр доминантной руки*
+![Параметр главным вручную](./images/ink/location-handedness-setting.png)  
+*Параметр главным вручную*
 
 Вы можете отправить запрос этому параметру через свойство HandPreference пространства имен Windows.UI.ViewManagement и задать [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) в соответствии с возвращенным значением. В этом примере мы размещаем панель инструментов в левой части приложения для пользователя-левши и справа — для пользователя-правши.
 
-**Скачайте этот пример в разделе [Пример кода для задания расположения и ориентации панели инструментов рукописного ввода (базовый)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)**
+**Загрузить этот образец из [рукописного ввода инструментов расположение и ориентацию пример (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)**
 
 ```csharp
 public MainPage()
@@ -127,11 +127,11 @@ public MainPage()
 }
 ```
 
-**Динамическая подстройка к пользователю или состоянию устройства**
+**Динамически корректировать состояние пользователя или устройства**
 
 Также можно использовать привязку для отслеживания обновлений пользовательского интерфейса на основе изменений, вносимых в предпочтения пользователя, параметры устройства или состояния устройства. В следующем примере мы подробнее рассмотрим предыдущий пример и покажем, как динамически расположить панель инструментов рукописного ввода в зависимости от ориентации устройства с помощью привязки, объекта ViewMOdel и интерфейса [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged). 
 
-**Скачайте этот пример в разделе [Пример кода для задания расположения и ориентации панели инструментов рукописного ввода (динамический)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)**
+**Загрузить этот образец из [рукописного ввода инструментов расположение и ориентацию образец (динамический)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)**
 
 1. Сначала давайте добавим объект ViewModel.
     1. Добавьте новую папку в проект и назовите ее **ViewModels**.
@@ -170,7 +170,7 @@ public MainPage()
         }
         ```
 
-    1. Добавьте два логических свойства в класс InkToolbarSnippetHostViewModel: свойство **LeftHandedLayout** (функционал аналогичен предыдущему примеру только на основе XAML) и свойство **PortraitLayout** (ориентация устройства).
+    1. Добавьте два свойства bool InkToolbarSnippetHostViewModel класс: **LeftHandedLayout** (же функциональность, как в предыдущем примере только для XAML) и **PortraitLayout** (ориентации устройства).
         >[!NOTE] 
         > Свойство PortraitLayout является настраиваемым и содержит определение события [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged).
 

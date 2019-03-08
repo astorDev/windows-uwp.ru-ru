@@ -1,19 +1,19 @@
 ---
-Description: Share code between a desktop application and a UWP app
+Description: Совместное использование кода в приложении для настольных систем и приложений универсальной платформы Windows
 Search.Product: eADQiWindows 10XVcnh
-title: Совместное использование кода классического приложения и приложения UWP
+title: Совместное использование кода в приложении для настольных систем и приложений универсальной платформы Windows
 ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 151584f15013c9d4ab7d9566e175b957a7a84149
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9045743"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644349"
 ---
-# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>Совместное использование кода классического приложения и приложения UWP
+# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>Совместное использование кода в приложении для настольных систем и приложений универсальной платформы Windows
 
 Можно переместить код в библиотеки .NET Standard, а затем создать приложение универсальной платформы Windows (UWP) для поддержки всех устройств с Windows 10. Несмотря на отсутствие инструмента для преобразования классического приложения в приложение UWP, можно многократно использовать существующий код, чтобы сократить расходы на разработку такого приложения. В данном руководстве показано, как это сделать.
 
@@ -35,7 +35,7 @@ ms.locfileid: "9045743"
 
 Убедитесь, что целевым объектом каждой библиотеки классов является **.NET Standard 2.0**.
 
-![Целевой объект— .NET Standard 2.0](images/desktop-to-uwp/target-standard-20.png)
+![Целевой объект — .NET Standard 2.0](images/desktop-to-uwp/target-standard-20.png)
 
 Этот параметр находится на страницах свойств проекта библиотеки классов.
 
@@ -43,7 +43,7 @@ ms.locfileid: "9045743"
 
 ![Ссылка на библиотеку классов](images/desktop-to-uwp/class-library-reference.png)
 
-Далее используйте специальные инструменты, чтобы определить, насколько ваш код соответствует стандарту. Таким образом, перед перемещением кода в библиотеку вы решите, какие его части можно использовать повторно, какие части требуют минимальных изменений, а какиебудут предназначаться для конкретных приложений.
+Далее используйте специальные инструменты, чтобы определить, насколько ваш код соответствует стандарту. Таким образом, перед перемещением кода в библиотеку вы решите, какие его части можно использовать повторно, какие части требуют минимальных изменений, а какие будут предназначаться для конкретных приложений.
 
 ### <a name="check-library-and-code-compatibility"></a>Проверка совместимости библиотеки и кода
 
@@ -61,9 +61,9 @@ ms.locfileid: "9045743"
 
 Часть кода будет предназначена для определенной платформы и останется в проекте классического приложения.
 
-### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>Пример. Перенос кода доступа к данным в библиотеку .NET Standard 2.0
+### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>Пример. Перенос кода доступа к данным в библиотеке .NET Standard 2.0
 
-Предположим, что у нас есть очень простое приложение Windows Forms, отображающее пользователей из примера базы данных Northwind.
+Предположим, что у нас есть очень простое приложение Windows Forms, отображающую для клиентов из нашей учебной базы данных "Борей".
 
 ![Приложение Windows Forms](images/desktop-to-uwp/win-forms-app.png)
 
@@ -225,7 +225,7 @@ public sealed partial class MainPage : Page
 ![Приложения Xamarin](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->Межплатформенные проекты подходят для приложений с минимальным набором возможностей для конкретных платформ. Эти проекты можно использовать для создания единого собственного пользовательского интерфейса на основе XAML, который будет работать в iOS, Android и Windows. Более подробную информацию см. [здесь](https://www.xamarin.com/forms).
+>Межплатформенные проекты подходят для приложений с минимальным набором возможностей для конкретных платформ. Эти проекты можно использовать для создания единого собственного пользовательского интерфейса на основе XAML, который будет работать в iOS, Android и Windows. Дополнительные сведения см. [здесь](https://www.xamarin.com/forms).
 
 Затем добавьте ссылку на проект библиотеки классов через проект Android, iOS или межплатформенный проект.
 
@@ -268,10 +268,10 @@ public class MainActivity : ListActivity
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-**Поиск ответов на вопросы**
+**Найдите ответы на ваши вопросы**
 
 Есть вопросы? Задайте их на Stack Overflow. Наша команда следит за этими [тегами](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Вы также можете задать нам вопросы [здесь](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-**Оставьте отзыв или предложите новые возможности для реализации**
+**Отправить отзыв или предложения по функциям**
 
 См. раздел [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)

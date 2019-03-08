@@ -1,5 +1,5 @@
 ---
-Description: You can create an ad to promote one of your apps in your other apps, for free. We call these house ads.
+Description: Вы можете бесплатно создать рекламу, чтобы продвигать одно из своих приложений в других своих приложениях. Мы называем такую рекламу собственной.
 title: О собственной рекламе
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 ms.date: 10/31/2018
@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f5a42d6c4a4de15105afdec2bc9bc0b4cb27c94
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940993"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649849"
 ---
 # <a name="about-house-ads"></a>О собственной рекламе
 
 
 Вы можете бесплатно создать рекламу, чтобы продвигать одно из своих приложений в других своих приложениях. Мы называем такую рекламу *собственной*.
 
-Собственные объявления будут отображаться только в ваших собственных приложениях, которые настроены для [показа рекламы от корпорации Майкрософт](../monetize/display-ads-in-your-app.md).
+Дом реклама будет отображаться только в приложениях, которые настроены для [Показывать рекламу от корпорации Майкрософт](../monetize/display-ads-in-your-app.md).
 
 Чтобы настроить собственную рекламу, выберите значение **Собственное объявление (бесплатно)** для параметра **Тип кампании** при [создании рекламной кампании](create-an-ad-campaign-for-your-app.md). Реклама автоматически появится в любом вашем приложении, соответствующем следующим критериям:
 
@@ -35,5 +35,5 @@ ms.locfileid: "8940993"
 ### <a name="related-topics"></a>Статьи по теме
 
 
-* [Создание рекламной кампании для вашего приложения](create-an-ad-campaign-for-your-app.md)
-* [Общие вопросы](common-questions.md)
+* [Создайте рекламную кампанию для своего приложения](create-an-ad-campaign-for-your-app.md)
+* [Часто задаваемые вопросы](common-questions.md)

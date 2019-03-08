@@ -1,11 +1,11 @@
 ---
-Description: Use ListView and GridView controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.
+Description: Использование элементов управления ListView и GridView для отображения и изменения наборов данных, например коллекции образов или несколько сообщений электронной почты.
 title: Представления списка и сетки
 label: List view and grid view
 template: detail.hbs
 ms.date: 05/20/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, uwp
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
 pm-contact: predavid
 design-contact: kimsea
@@ -13,17 +13,17 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efbdaef0fbcbe076133be1c491f7ed173c01257
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037106"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653579"
 ---
 # <a name="list-view-and-grid-view"></a>Представления списка и сетки
 
 Большая часть приложений отображает наборы данных, такие как коллекции изображений или набор сообщений электронной почты, и управляет ими. Платформа пользовательского интерфейса XAML предоставляет элементы управления ListView и GridView, упрощающие отображение данных и управление ими в приложении.  
 
-> **Важные API-интерфейсы**: [класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [свойство ItemsSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx), [свойство Items](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
+> **Важные API-интерфейсы**: [Класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [свойство ItemsSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx), [элементы свойства](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
 
 Элементы управления ListView и GridView являются производными от класса ListViewBase, поэтому они имеют аналогичные функции, но отображают данные по-другому. В этой статье вся информация об элементе управления ListView актуальна для обоих элементов управления (ListView и GridView), если не указано иное. Когда упоминаются классы ListView или ListViewItem, нужно помнить, что префикс "List" может быть заменен префиксом "Grid" для соответствующего эквивалента сетки (GridView или GridViewItem). 
 
@@ -39,7 +39,7 @@ ListView отображает данные в одном столбце и уп�
 
 Более подробное сравнение и инструкции по выбору элемента управления см. в разделе [Списки](lists.md).
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -48,7 +48,7 @@ ListView отображает данные в одном столбце и уп�
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы открыть приложение и увидеть <a href="xamlcontrolsgallery:/item/ListView">ListView</a> или <a href="xamlcontrolsgallery:/item/GridView">GridView</a> в действии.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -198,7 +198,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ![Элементы представления списка, отображаемые с помощью шаблона данных](images/listview-itemstemplate.png)
 
-Шаблоны данных— это основной способ определения внешнего вида представления списка. Они могут значительно влиять на производительность, если список содержит много элементов. В этой статье используются простые строковые данные для большинства примеров, а шаблон данных не задается. Дополнительные сведения и примеры использования шаблонов данных и контейнеров элементов для определения внешнего вида элементов в списке или сетке см. в разделе [Контейнеры элементов и шаблоны](item-containers-templates.md). 
+Шаблоны данных — это основной способ определения внешнего вида представления списка. Они могут значительно влиять на производительность, если список содержит много элементов. В этой статье используются простые строковые данные для большинства примеров, а шаблон данных не задается. Дополнительные сведения и примеры использования шаблонов данных и контейнеров элементов для определения внешнего вида элементов в списке или сетке см. в разделе [Контейнеры элементов и шаблоны](item-containers-templates.md). 
 
 ## <a name="change-the-layout-of-items"></a>Изменение макета элементов
 
@@ -290,11 +290,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Чтобы включить взаимодействие, выполните следующие действия. | Используйте следующие параметры: | Обработайте следующее событие: | Используйте это свойство, чтобы получить выбранный элемент:
 ----------------------------|---------------------|--------------------|--------------------------------------------
-Без взаимодействия | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **None**, [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | Н/д | Н/д 
+Без взаимодействия | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **None**, [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | Н/Д | Н/Д 
 Выбор одного элемента | SelectionMode = **Single**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx), [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx)  
-Выбор нескольких элементов | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
-Расширенный выбор | SelectionMode = **Extended**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
-Щелчок | SelectionMode = **None**, IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | Н/д 
+Выбор нескольких элементов | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [Свойство SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
+Расширенный выбор | SelectionMode = **Extended**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [Свойство SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
+Нажмите | SelectionMode = **None**, IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | Н/Д 
 
 > **Примечание.**&nbsp;&nbsp;Начиная с Windows 10, можно сделать так, чтобы свойство IsItemClickEnabled вызывало событие ItemClick, если для SelectionMode выбрано значение Single, Multiple или Extended. В этом случае сначала вызывается событие ItemClick, а затем — SelectionChanged. В некоторых случаях, например при переходе на другую страницу в обработчике событий ItemClick, событие SelectionChanged не вызывается, элемент не выделяется.
 
@@ -328,7 +328,7 @@ myGridView.IsItemClickEnabled = true;
 Нет | <li>Пользователь может выбрать один элемент с помощью клавиши пробела, щелчка мыши или касания.</li>
 Ctrl | <li>Пользователь может отменить выбор одного элемента с помощью клавиши пробела, щелчка мыши или касания.</li><li>С помощью клавиш со стрелками пользователь может перемещать фокус независимо от выделения.</li>
 
-Если SelectionMode имеет значение **Single**, выбранный элемент данных можно получить из свойства [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx). Можно получить индекс в коллекции выбранного элемента с помощью свойства [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx). Если элементы не выбраны, SelectedItem имеет значение **null**, и SelectedIndex— -1. 
+Если SelectionMode имеет значение **Single**, выбранный элемент данных можно получить из свойства [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx). Можно получить индекс в коллекции выбранного элемента с помощью свойства [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx). Если элементы не выбраны, SelectedItem имеет значение **null**, и SelectedIndex — -1. 
  
 Если попытаться задать элемент вне коллекции **Items**, например **SelectedItem**, операция будет проигнорирована, а SelectedItem будет равен **null**. Однако если попытаться задать для **SelectedIndex** индекс вне диапазона **Items** в списке, произойдет исключение **System.ArgumentException**. 
 
@@ -339,7 +339,7 @@ Ctrl | <li>Пользователь может отменить выбор од�
 Клавиша-модификатор | Тип взаимодействия
 -------------|------------
 Нет | <li>Пользователь может выбрать несколько элементов с помощью клавиши пробела, щелчка мыши или касания сенсорной панели, чтобы выбрать элемент в фокусе или отменить его выбор.</li><li>С помощью клавиш со стрелками пользователь может перемещать фокус независимо от выделения.</li>
-Shift | <li>Пользователь может выбрать несколько смежных элементов, щелкнув первый элемент выделения (или коснувшись его), а затем— последний.</li><li>С помощью клавиш со стрелками пользователь может создать непрерывное выделение, начиная с выбранного с нажатой клавишей Shift элемента.</li>
+Shift | <li>Пользователь может выбрать несколько смежных элементов, щелкнув первый элемент выделения (или коснувшись его), а затем — последний.</li><li>С помощью клавиш со стрелками пользователь может создать непрерывное выделение, начиная с выбранного с нажатой клавишей Shift элемента.</li>
 
 ### <a name="extended-selection"></a>Расширенный выбор
 
@@ -349,7 +349,7 @@ Shift | <li>Пользователь может выбрать нескольк�
 -------------|------------
 Нет | <li>Поведение схоже с выделением **Single**.</li>
 Ctrl | <li>Пользователь может выбрать несколько элементов с помощью клавиши пробела, щелчка мыши или касания сенсорной панели, чтобы выбрать элемент в фокусе или отменить его выбор.</li><li>С помощью клавиш со стрелками пользователь может перемещать фокус независимо от выделения.</li>
-Shift | <li>Пользователь может выбрать несколько смежных элементов, щелкнув первый элемент выделения (или коснувшись его), а затем— последний.</li><li>С помощью клавиш со стрелками пользователь может создать непрерывное выделение, начиная с выбранного с нажатой клавишей Shift элемента.</li>
+Shift | <li>Пользователь может выбрать несколько смежных элементов, щелкнув первый элемент выделения (или коснувшись его), а затем — последний.</li><li>С помощью клавиш со стрелками пользователь может создать непрерывное выделение, начиная с выбранного с нажатой клавишей Shift элемента.</li>
 
 Если SelectionMode имеет значение **Multiple** или **Extended**, выбранные элементы данных можно получить из свойства [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx). 
 
@@ -523,8 +523,8 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 - [Пример перетаскивания в XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlDragAndDrop) — демонстрация перетаскивания с помощью элемента управления ListView.
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
 - [Списки](lists.md)
-- [Контейнеры и шаблоны элементов](item-containers-templates.md)
+- [Контейнеры элементов и шаблонов](item-containers-templates.md)
 - [Перетаскивание](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)

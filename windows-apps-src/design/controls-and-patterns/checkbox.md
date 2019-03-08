@@ -1,5 +1,5 @@
 ---
-Description: Used to select or deselect action items. Can be used for a single list item or for multiple list items.
+Description: Используется для выбора или отмены выбора элементов действий. Можно использовать для одного элемента списка или для нескольких элементов списка.
 title: Флажки
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
@@ -13,11 +13,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a13c0c3d0e91a3932b4f9a26e564fbf364e5551
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037126"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648899"
 ---
 # <a name="check-boxes"></a>Флажки
 
@@ -25,7 +25,7 @@ ms.locfileid: "9037126"
 
 Флажок используется для выбора или отмены выбора элементов действий. Его можно использовать для одного элемента или списка из нескольких элементов с возможностью выбора. Элемент управления предусматривает три состояния выделения: "не выбрано", "выбрано" и "не определено". Состояние "не определено" используется, когда в подсписке вариантов есть одновременно состояния "не выбрано" и "выбрано".
 
-> **Важные API-интерфейсы**: [класс CheckBox](https://msdn.microsoft.com/library/windows/apps/br209316), [событие Checked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [свойство IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+> **Важные API-интерфейсы**: [Класс флажок](https://msdn.microsoft.com/library/windows/apps/br209316), [Checked событий](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [свойство IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
 ![Пример состояний флажка](images/templates-checkbox-states-default.png)
 
@@ -50,7 +50,7 @@ ms.locfileid: "9037126"
 
 С помощью элементов управления **флажок** и **переключатель** пользователь может выбирать варианты из списка. Флажки позволяют пользователю выбирать сочетание вариантов. В отличие от них, при помощи переключателей пользователь может выбрать один из взаимоисключающих вариантов. Если есть несколько вариантов, но выбрать можно только один из них, используйте переключатель.
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <tr>
@@ -58,7 +58,7 @@ ms.locfileid: "9037126"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/CheckBox">открыть приложение и увидеть CheckBox в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -277,12 +277,12 @@ private void SetCheckedState()
 }
 ```
 
-## <a name="dos-and-donts"></a>Рекомендации
+## <a name="dos-and-donts"></a>Возможности и ограничения
 
 -   Убедитесь, что цель применения флажка и его текущее состояние понятны.
 -   Длина текстового содержимого, связанного с флажком, не должна превышать двух строк
 -   Формулируйте подпись к флажку как инструкцию, для которой установка флажка соответствует значению "истина", а снятие флажка обозначает "ложь".
--   Используйте шрифт по умолчанию, если правила вашего фирменного стиля не предписывают иное.
+-   Используйте шрифт по умолчанию, если указания для торговой марки не требуют использования другого шрифта.
 -   Если применяется динамическое текстовое содержимое, подумайте, как будет изменяться размер элемента управления и что будет происходить с окружающими его визуальными элементами.
 -   Если выбирать нужно из двух или более взаимоисключающих вариантов, обдумайте использование [переключателей](radio-button.md).
 -   Не следует размещать две группы флажков рядом друг с другом. Используйте метки групп, чтобы разделить группы.
@@ -294,16 +294,16 @@ private void SetCheckedState()
 
     ![Флажок с неопределенным состоянием](images/checkbox4_spicy.png)
 
-    Вместо этого используйте переключатель, имеющий три варианта: "Без специй", "Со специями" и "Много специй".
+    Используйте группы переключателей, есть три варианта: Не острый острый и дополнительных острый.
 
-    ![Переключатель с тремя вариантами: "Без специй", "Со специями" и "Много специй".](images/spicyoptions.png)
+    ![Группы переключателей с три варианта: Не острый острый и дополнительных острый](images/spicyoptions.png)
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
-- [Класс CheckBox](https://msdn.microsoft.com/library/windows/apps/br209316) 
+- [Класс флажок](https://msdn.microsoft.com/library/windows/apps/br209316) 
 - [Переключатели](radio-button.md)
-- [Тумблер](toggles.md)
+- [Переключатель](toggles.md)

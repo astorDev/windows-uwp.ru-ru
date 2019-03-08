@@ -1,5 +1,5 @@
 ---
-Description: This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources.
+Description: В этом разделе описываются специальные индексаторы, которые используются средством MakePri.exe для создания указателя ресурсов.
 title: Индексаторы для конкретных форматов MakePri.exe
 template: detail.hbs
 ms.date: 10/18/2017
@@ -7,26 +7,26 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044631"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645879"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Индексаторы для конкретных форматов MakePri.exe
 
 В этом разделе описываются специальные индексаторы, которые используются средством [MakePri.exe](compile-resources-manually-with-makepri.md) для создания указателя ресурсов.
 
 > [!NOTE]
-> MakePri.exe устанавливается при проверке параметр **Windows SDK для управляемых приложений UWP** при установке пакета средств разработки программного обеспечения Windows. Он устанавливается на путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именем для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe устанавливается в том случае, если выбран **Windows SDK для приложений универсальной платформы Windows, управляемых** параметр при установке пакета средств разработки программного обеспечения Windows. Он устанавливается в путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именами других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 MakePri.exe обычно используется вместе с командами `new`, `versioned` и `resourcepack`. См. [Параметры командной строки MakePRI.exe](makepri-exe-command-options.md). В таких случаях программа индексирует исходные файлы, чтобы создать индекс ресурсов. MakePri.exe использует различные отдельные индексаторы для чтения различных исходных файлов ресурсов или контейнеров для ресурсов. Самый простой индексатор — это индексатор папки, который индексирует содержимое папки, например изображения в форматах `.jpg` или `.png`.
 
-Индексаторы для конкретных форматов отличаются наличием элементов `<indexer-config>` в элементе `<index>` [файла конфигурации MakePri.exe](makepri-exe-configuration.md). Используемый индексатор для конкретных форматов определяется атрибутом `type`.
+Индексаторы для конкретных форматов отличаются наличием элементов `<indexer-config>` в элементе `<index>`[файла конфигурации MakePri.exe](makepri-exe-configuration.md). Используемый индексатор для конкретных форматов определяется атрибутом `type`.
 
 Если в ходе индексации встречаются контейнеры ресурсов, то обычно индексируется их содержимое, но сами они в индекс не добавляются. Например, файлы `.resjson`, найденные индексатором папки, могут быть далее обработаны индексатором для формата `.resjson`, и в этом случае сам файл `.resjson` в индексе не появится. **Примечание**. Для этого элемент `<indexer-config>` для индексатора, связанного с данным контейнером, необходимо включить в файл конфигурации.
 
-Обычно квалификаторы, указанные в контейнере &mdash; например в папке или файле `.resw` &mdash; применяются ко всем ресурсам внутри контейнера, например к файлам внутри папки или к строкам в файле `.resw`.
+Обычно квалификаторы, указанные в контейнере &mdash; например в папке или файле `.resw`&mdash; применяются ко всем ресурсам внутри контейнера, например к файлам внутри папки или к строкам в файле `.resw`.
 
 ## <a name="folder"></a>Папка
 
@@ -282,7 +282,7 @@ MakePri.exe пропускает некоторые элементы файла 
 </xs:schema>\
 ```
 
-Файл `.resfiles` — это текстовый файл, который содержит плоский список путей к файлу. Файл `.resfiles` может содержать комментарии вида "//". Вот пример.
+Файл `.resfiles` — это текстовый файл, который содержит плоский список путей к файлу. Файл `.resfiles` может содержать комментарии вида "//". Рассмотрим пример.
 
 ```
 Strings\component1\fr\elements.resjson
@@ -398,6 +398,6 @@ Images\logo.scale-180.png
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Компиляция ресурсов вручную с помощью MakePri.exe](compile-resources-manually-with-makepri.md)
-* [Параметры командной строки MakePRI.exe](makepri-exe-command-options.md)
+* [Параметры командной строки MakePri.exe](makepri-exe-command-options.md)
 * [Файл конфигурации MakePri.exe](makepri-exe-configuration.md)
-* [Стандарт The application/json Media Type for JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)
+* [Тип носителя application/json для JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)

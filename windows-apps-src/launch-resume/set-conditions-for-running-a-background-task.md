@@ -4,18 +4,18 @@ description: Узнайте, как задать условия, которые 
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, uwp, фоновой задачи
+keywords: Windows 10, uwp, фоновую задачу
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 8740829ab95b804afba564110f38116f2c90b416
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049801"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650939"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Задание условий выполнения фоновой задачи
 
@@ -27,11 +27,11 @@ ms.locfileid: "9049801"
 
 Узнайте, как задать условия, которые управляют запуском выполнения фоновой задачи.
 
-В некоторых случаях фоновых задач требуется соблюдение определенных условий должны быть выполнены для успешного выполнения фоновой задачи. При регистрации фоновой задачи можно указать одно или несколько условий, определяемых типом [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835). Условия проверяются после триггера. Фоновая задача затем будут помещаться в очередь, но она не будет выполняться, пока не будут выполнены все необходимые условия.
+Иногда для успешного выполнения фоновых задач требуется соблюдение определенных условий. При регистрации фоновой задачи можно указать одно или несколько условий, определяемых типом [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835). Условие будет проверяться после срабатывания триггера. Фоновая задача затем помещается в очередь и выполняется только при соблюдении всех требуемых условий.
 
-Настройка условий для фоновых задач продлевает время работы от батареи и ЦП, так как задачи без необходимости запускать. Например, если фоновая задача запускается по таймеру и требует подключения к Интернету, перед регистрацией задачи добавьте условие **InternetAvailable** в [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Это помогает избежать ненужного использования системных ресурсов или заряда батареи, запуская выполнение фоновой задачи только при срабатывании таймера *и* наличии доступа к Интернету.
+Настройка условий для фоновых задач продлевает время работы от батареи и сокращает нагрузку ЦП, так как препятствует запуску задач без необходимости. Например, если фоновая задача запускается по таймеру и требует подключения к Интернету, перед регистрацией задачи добавьте условие **InternetAvailable** в [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Это помогает избежать ненужного использования системных ресурсов или заряда батареи, запуская выполнение фоновой задачи только при срабатывании таймера *и* наличии доступа к Интернету.
 
-Это также можно скомбинировать несколько условий, вызвав **AddCondition** несколько раз в одном [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Следите за тем, чтобы не добавить конфликтующие условия, например **UserPresent** и **UserNotPresent**.
+Также можно скомбинировать несколько условий, вызвав **AddCondition** несколько раз в одном [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Следите за тем, чтобы не добавить конфликтующие условия, например **UserPresent** и **UserNotPresent**.
 
 ## <a name="create-a-systemcondition-object"></a>Создание объекта SystemCondition
 
@@ -39,9 +39,9 @@ ms.locfileid: "9049801"
 
 Этот раздел применяется к фоновым задачам, которые выполняются вне процесса или в том же процессе, что и приложение переднего плана.
 
-Прежде чем добавлять само условие, создание объекта [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) для представления условия, которое должно быть в силу для фоновой задачи для выполнения. В конструкторе укажите условия, которое необходимо обеспечить выполнение со значением перечисления [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) .
+Прежде чем добавлять само условие, создайте объект [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) для представления условия, которое должно соблюдаться для запуска задачи. Задайте в конструкторе необходимое для выполнения условие с помощью значения перечисления [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-Следующий код создает объект [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) , который задает **InternetAvailable** условие:
+Следующий код создает объект [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834), указывающий условие **InternetAvailable**:
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -60,7 +60,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 Чтобы добавить условие, вызовите метод [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) применительно к объекту [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) и передайте его объекту [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834).
 
-Следующий код использует **taskBuilder** добавить условие **InternetAvailable** .
+В следующем коде используется **taskBuilder** для добавления условия **InternetAvailable**.
 
 ```csharp
 taskBuilder.AddCondition(internetCondition);
@@ -76,7 +76,7 @@ taskBuilder->AddCondition(internetCondition);
 
 ## <a name="register-your-background-task"></a>Регистрация фоновой задачи
 
-Теперь вы можете зарегистрировать фоновую задачу с помощью метода [**регистрации**](https://msdn.microsoft.com/library/windows/apps/br224772) , и фоновая задача не будет запущена до заданного условия.
+Теперь вы можете зарегистрировать свою фоновую задачу с помощью метода [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772), при этом фоновая задача запускается только при соблюдении заданного условия.
 
 В следующем коде регистрируется задача и сохраняется полученный в результате объект BackgroundTaskRegistration:
 
@@ -95,19 +95,19 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 > [!NOTE]
 > Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
 
-Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем— метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Подробнее см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
+Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
 > [!NOTE]
-> Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации оказываются недопустимыми, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
+> Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации недопустимы, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
 
 ## <a name="place-multiple-conditions-on-your-background-task"></a>Размещение в фоновой задаче нескольких условий
 
 Чтобы добавить несколько условий, приложение многократно вызывает метод [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) . Чтобы быть эффективными, такие вызовы должны предшествовать регистрации задачи.
 
 > [!NOTE]
-> Будьте внимательны, чтобы не добавить конфликтующие условия для фоновой задачи.
+> Постарайтесь не добавить конфликтующие условия в фоновом режиме.
 
-В следующем фрагменте показано несколько условий в контексте создания и регистрации фоновой задачи.
+В следующем фрагменте показано несколько условий в контексте создания и регистрации в фоновом режиме.
 
 ```csharp
 // Set up the background task.
@@ -175,23 +175,23 @@ recurringTaskBuilder->AddCondition(internetCondition);
 BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ```
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Замечания
 
 > [!NOTE]
-> Выберите условия для фоновой задачи, чтобы его только выполняется, когда он необходим, а не выполнялась, когда он не должен. Обзор различных условий выполнения фоновых задач см. в разделе [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+> Выберите условия для фоновой задачи, чтобы ее можно запускать только когда он необходим и не запускается, когда его не следует. Обзор различных условий выполнения фоновых задач см. в разделе [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
-* [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)
-* [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
-* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
-* [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
-* [Регистрация фоновой задачи](register-a-background-task.md)
-* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
+* [Создание и регистрация вне процесса фоновой задачи](create-and-register-a-background-task.md)
+* [Создание и регистрация в процесс фоновой задачи](create-and-register-an-inproc-background-task.md)
+* [Объявите фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
+* [Обработка отменена фоновой задачи](handle-a-cancelled-background-task.md)
+* [Отслеживать ход выполнения задач в фоновом режиме и завершения](monitor-background-task-progress-and-completion.md)
+* [Зарегистрировать фоновую задачу](register-a-background-task.md)
+* [Реакция на системные события с фоновыми задачами](respond-to-system-events-with-background-tasks.md)
 * [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)
-* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
+* [Выполнять фоновую задачу по таймеру](run-a-background-task-on-a-timer-.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Отладка фоновой задачи](debug-a-background-task.md)
-* [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Отладить фоновую задачу](debug-a-background-task.md)
+* [Активация приостановки, возобновления и фоновых событий для приложений универсальной платформы Windows (при отладке)](https://go.microsoft.com/fwlink/p/?linkid=254345)

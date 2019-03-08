@@ -1,5 +1,5 @@
 ---
-Description: The Pivot control enables touch-swiping between a small set of content sections.
+Description: Элемент управления Pivot позволяет touch считывания между небольшое количество разделов содержимого.
 title: Сводка
 template: detail.hbs
 ms.date: 06/19/2018
@@ -11,54 +11,54 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 56079bc51d3efa8f7ecaaee21379a6e9caf7d440
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036896"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642929"
 ---
 # <a name="pivot"></a>Сводка
 
-Элемент управления ["Сводка"](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) позволяет сенсорный ввод прокрутка между небольшой набор разделы содержимого.
+[Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) control обеспечивает touch считывания между небольшое количество разделов содержимого.
 
-> **Важные API -интерфейсы**: [класс Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [класс NavigationView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+> **Важные API-интерфейсы**: [Сведение класс](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [NavigationView-класс](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">Галереи элементов управления XAML</strong> , щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/Pivot">открыть приложение и увидеть Pivot в действии</a>.</p>
+    <p>Если у вас есть <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong> приложения. Щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/Pivot">откройте приложение и элемент управления Pivot в действии см. в разделе</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-Элемент управления "Сводка", так же, как [NavigationView](navigationview.md), подчеркивает выбранный элемент.
+Элемент управления Pivot, так же, как [NavigationView](navigationview.md), подчеркивает выбранного элемента.
 
 ![Фокус по умолчанию подчеркивает выбранный заголовок](images/pivot_focus_selectedHeader.png)
 
-## <a name="is-this-the-right-control"></a>Выбор подходящего элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
-Для достижения распространенных верхней навигационной и шаблоны вкладки, мы рекомендуем использовать [NavigationView](navigationview.md), который автоматически адаптируется к различным размерам экрана и позволяет более настройки.
+Для достижения общих верхней панели навигации и шаблоны вкладок, мы рекомендуем использовать [NavigationView](navigationview.md), которая автоматически адаптируется под различные размеры экранов и позволяет выполнять больше настройку.
 
-Тем не менее если навигации требуется прокрутка сенсорного ввода, мы рекомендуем использовать "Сводка".
+Тем не менее если Навигация требует считывания сенсорного ввода, мы рекомендуем использовать Pivot.
 
-Другие основные различия между элементами управления NavigationView и "Сводка" — это поведение по умолчанию переполнения и навигации API:
+Основные различия между элементами управления NavigationView и Pivot: переполнение поведение по умолчанию и навигации API:
 
-- Сводки переполнения обойм, которые элементов, когда NavigationView использует раскрывающееся меню переполнения, чтобы пользователи могли видеть все элементы.
-- "Сводка" обрабатывает навигацию между разделы содержимого, когда NavigationView обеспечивает больше контроля над поведение навигации с помощью.
+- Сведение переполнения каруселей, элементы, а NavigationView в раскрывающемся меню переполнения, чтобы пользователи могли видеть все элементы.
+- PIVOT обрабатывает Навигация между разделами содержимого, хотя NavigationView позволяет лучше контролировать поведение навигации.
 
-## <a name="use-navigationview-instead-of-pivot"></a>Использовать NavigationView вместо "Сводка"
+## <a name="use-navigationview-instead-of-pivot"></a>Используйте NavigationView вместо Pivot
 
-Если пользовательский Интерфейс приложения используется элемент управления "Сводка", затем можно преобразовать "Сводка" для NavigationView следующим кодом.
+Если пользовательский Интерфейс приложения использует элемент управления Pivot, затем можно преобразовать Pivot NavigationView приведенный ниже код.
 
-Этот код XAML создает NavigationView с 3 разделами содержимого, как и в примере Pivot в [Создать элемент управления "Сводка"](#create-a-pivot-control).
+Этот XAML создает NavigationView с 3 разделов содержимого, как показано в примере Pivot в [Создание элемента управления pivot](#create-a-pivot-control).
 
 ```xaml
 <NavigationView x:Name="rootNavigationView" Header="Category Title"
@@ -83,7 +83,7 @@ ms.locfileid: "9036896"
 </Page>
 ```
 
-NavigationView обеспечивает больший контроль над настройки навигации и требует соответствующего кода программной части. Для описания выше XAML, используйте следующий код программной части:
+NavigationView обеспечивает больший контроль над настройки навигации и требует соответствующего кода. Для сопровождения выше XAML, используйте следующий код программной части:
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -112,11 +112,11 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-Этот код имитирует элемента управления "Сводка" встроенные навигацию, минус прокрутка сенсорного взаимодействия между разделами содержимого. Тем не менее как видно, можно также настроить несколько точек, включая анимированный переход, параметров навигации и возможности стека.
+Этот код имитирует элемент управления Pivot встроенные навигацию, за вычетом считывания touch взаимодействие разделы содержимого. Тем не менее как вы видите, можно также настроить несколько точек, включая анимированный переход, параметров навигации и возможности стека.
 
 ## <a name="create-a-pivot-control"></a>Создание элемента управления "Cводка"
 
-Этот код создает базовый элемент управления "Сводка" с 3 разделами содержимого.
+Этот код создает базовый элемент управления Pivot с 3 разделы содержимого.
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="Category Title">
@@ -172,7 +172,7 @@ Pivot представляет собой [ItemsControl](https://msdn.microsoft.
 
 Элемент управления доступен в двух режимах:
 
-**Стационарный**
+**Стационарные**
 
 - Сводки неподвижны, если все заголовки сводок вписываются в доступное пространство.
 - Касание метки сводки приводит к переходу на соответствующую страницу, но сама сводка не перемещается. Активная сводка выделена.
@@ -181,7 +181,7 @@ Pivot представляет собой [ItemsControl](https://msdn.microsoft.
 
 - Карусель сводок, когда все заголовки не помещаются в доступном пространстве.
 - Касание метки сводки приводит к переходу на соответствующую страницу, а метка активной сводки перемещается на первую позицию.
-- Элементы Pivot в цикле карусели сменяются от последнего к первому разделу сводки.
+- Элементы сводки в цикле карусели сменяются от последнего к первому разделу сводки.
 
 > **Примечание.** Заголовки Pivot не должны прокручиваться на устройствах [с большим экраном](../devices/designing-for-tv.md). Присвойте свойству [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) значение **false**, если приложение выполняется на консоли Xbox.
 
@@ -193,7 +193,7 @@ Pivot представляет собой [ItemsControl](https://msdn.microsoft.
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 
-- [Класс Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)
+- [Класс PIVOT](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)
 - [Основы проектирования навигации](../basics/navigation-basics.md)

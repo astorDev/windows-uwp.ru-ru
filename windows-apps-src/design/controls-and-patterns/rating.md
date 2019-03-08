@@ -4,28 +4,28 @@ title: Элемент управления "Оценка"
 template: detail.hbs
 ms.date: 10/25/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, uwp
 pm-contact: abarlow
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c5736e917d77415eeb6df53b3fd92f7ab584884
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036906"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644929"
 ---
 # <a name="rating-control"></a>Элемент управления "Оценка"
 
 Элемент управления "Оценка" позволяет пользователям просматривать и ставить оценки, отражающие степень удовлетворенности содержимым и службами. Пользователи могут взаимодействовать с элементом управления оценками с помощью сенсорного ввода, пера, мыши, игрового контроллера или клавиатуры. В следующем руководстве показано, как использовать функции управления оценками, чтобы обеспечить гибкость и возможность настройки.
 
-> **Важные API-интерфейсы**: [класс RatingControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> **Важные API-интерфейсы**: [Класс RatingControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ![Пример элемента управления "Оценка"](images/rating_rs2_doc_ratings_intro.png)
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -34,7 +34,7 @@ ms.locfileid: "9036906"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/RatingControl">открыть приложение и увидеть RatingControl в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>

@@ -1,5 +1,5 @@
 ---
-Description: Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
+Description: Упакованные классические приложения могут использовать широкий спектр API-интерфейсов универсальной платформы Windows (UWP), даже если они не полностью преобразованы в приложение UWP. В этой статье перечисляются доступные классы, которые может использовать упакованное приложение.
 Search.Product: eADQiWindows 10XVcnh
 title: API-интерфейсы UWP доступны упакованным классическим приложениям (мост для классических приложений)
 ms.date: 10/27/2017
@@ -8,30 +8,30 @@ keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: c3131207c04b421a6d8ab6aeeb16aa3107bbf21d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048854"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644719"
 ---
-# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>API UWP, доступные для упакованного классического приложения
+# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>Интерфейсы API универсальной платформы Windows, доступные для упакованного приложения для настольных систем
 
 Упакованные классические приложения могут использовать широкий спектр API-интерфейсов универсальной платформы Windows (UWP), даже если они не полностью преобразованы в приложение UWP. В этой статье перечисляются доступные классы, которые может использовать упакованное приложение.
 
 Большинство API-интерфейсов UWP хорошо работают с упакованными классическими приложениями. Однако некоторые функциональные области пока еще не прошли полное тестирование или работают неправильно.
 
-<table><tr><th>Область применения компонента</th><th>Сведения</th><tr>
+<table><tr><th>Область применения компонента</th><th>Подробности</th><tr>
 <tr><td>Встречи, контакты и сообщения электронной почты</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
 <tr><td>Проверка подлинности и удостоверение пользователя</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
 <tr><td>Фоновые задачи</td><td>Хотя упакованные приложения могут регистрировать фоновые задачи, только полностью совместимые приложения UWP могут выполняться <i>как</i> фоновая задача. Дополнительные сведения см. в разделе <a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">Пример фоновой задачи на GitHub</a>.</td></tr>
 <tr><td>Bluetooth</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
 <tr><td>Чат и телефонные звонки</td><td>Упакованные приложения не могут выполняться на мобильных устройствах, пока они не будут полностью перенесены в UWP.</td></tr>
-<tr><td>Активация контракта</td><td>Только полностью совместимые приложения UWP могут быть активированы контрактом.</td></tr>
+<tr><td>Активация контракта</td><td>Контракт может быть активирована только полный приложений универсальной платформы Windows.</td></tr>
 <tr><td>Шифрование</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
 <tr><td>Геолокация</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
 <tr><td>Средства выбора файлов и папок</td><td>Упакованные приложения имеют полный доступ к файловой системе, и для них не требуются средства выбора UWP.</td></tr>
-<tr><td>Мультимедиа</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
-<tr><td>Точка обслуживания</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
+<tr><td>Media</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
+<tr><td>POS-терминал</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
 <tr><td>Смарт-карты</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
 <tr><td>PlayReady</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
 <tr><td>VPN</td><td>В настоящее время не все API поддерживаются для упакованных приложений.</td></tr>
@@ -634,15 +634,15 @@ ms.locfileid: "9048854"
 * [Windows.Devices.WiFiDirect.WiFiDirectDevice](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectDevice)
 * [Windows.Devices.WiFiDirect.WiFiDirectInformationElement](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectInformationElement)
 * [Windows.Devices.WiFiDirect.WiFiDirectLegacySettings](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectLegacySettings)
-* [Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
-* [Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
+* [Windows.Foundation.AsyncOperationProgressHandler < Tresult. TProgress >](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
+* [Windows.Foundation.AsyncOperationWithProgressCompletedHandler < Tresult. TProgress >](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
 * [Windows.Foundation.Collections.MapChangedEventHandler<K,.V>](https://msdn.microsoft.com/library/windows/apps/br206644.aspx)
 * [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet)
 * [Windows.Foundation.Collections.StringMap](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.StringMap)
 * [Windows.Foundation.Collections.ValueSet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.ValueSet)
 * [Windows.Foundation.Deferral](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral)
 * [Windows.Foundation.PropertyValue](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.PropertyValue)
-* [Windows.Foundation.TypedEventHandler<Tsender,.TResult>](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
+* [Windows.Foundation.TypedEventHandler < Tsender,. TResult >](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
 * [Windows.Foundation.Uri](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Uri)
 * [Windows.Foundation.WwwFormUrlDecoder](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoder)
 * [Windows.Foundation.WwwFormUrlDecoderEntry](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoderEntry)
@@ -1048,10 +1048,10 @@ ms.locfileid: "9048854"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-**Поиск ответов на вопросы**
+**Найдите ответы на ваши вопросы**
 
 Есть вопросы? Задайте их на Stack Overflow. Наша команда следит за этими [тегами](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Вы также можете задать нам вопросы [здесь](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-**Оставьте отзыв или предложите новые возможности для реализации**
+**Отправить отзыв или предложения по функциям**
 
 См. раздел [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, ключ проверки подлинности карт, элемент управления картой
 ms.localizationpriority: medium
 ms.openlocfilehash: 620566036dc5aa9357d10e60ec92067ba0faf130
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046164"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649559"
 ---
 # <a name="request-a-maps-authentication-key"></a>Запрос ключа проверки подлинности карт
 
@@ -20,9 +20,9 @@ ms.locfileid: "9046164"
 
 Ваше [приложение Universal Windows](https://msdn.microsoft.com/library/windows/apps/dn894631) должно пройти проверку подлинности, прежде чем оно сможет использовать [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) и службы карт в пространстве имен [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979). Для проверки подлинности приложения необходимо указать ключ проверки подлинности карт. В этом разделе описано, как запросить ключ проверки подлинности карт из [центра разработки Карт Bing](https://www.bingmapsportal.com/) и добавить его в приложение.
 
-**Подсказка.** Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте следующий пример из [репозитория Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub:
+**Совет** Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте следующий пример из [репозитория универсальных примеров для Windows](https://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
--   [Примеры карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Образец карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="get-a-key"></a>Получение ключа
 
@@ -31,7 +31,7 @@ ms.locfileid: "9046164"
 
 Вот как создать новый ключ
 
-1.  В браузере перейдите в центр разработки карт Bing ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
+1.  В окне браузера, перейдите в Центр разработчика Bing Maps ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
 
 2.  Если появится запрос на вход, введите свою учетную запись Майкрософт и щелкните **Войти**.
 
@@ -45,10 +45,10 @@ ms.locfileid: "9046164"
 
 7.  Заполните форму **Создание ключа**, а затем щелкните **Создать**.
 
-    -   **Имя приложения:** имя вашего приложения.
-    -   **URL-адрес приложения (необязательно):** URL-адрес вашего приложения.
-    -   **Тип ключа:** выберите **Базовый** или **Корпоративный**.
-    -   **Тип приложения:** выберите **Универсальное приложение для Windows** для использования в универсальном приложении для Windows.
+    -   **Имя приложения:** Имя приложения.
+    -   **URL-адрес приложения (необязательно):** URL-адрес приложения.
+    -   **Тип ключа:** Выберите **основные** или **Enterprise**.
+    -   **Тип приложения:** Выберите **универсальное приложение Windows** для использования в приложении универсальной Windows.
 
     Ниже приведен пример формы.
 
@@ -87,10 +87,10 @@ ms.locfileid: "9046164"
     MapService.ServiceToken = "abcdef-abcdefghijklmno";
     ```
 
-## <a name="related-topics"></a>Связанные темы
+## <a name="related-topics"></a>Статьи по теме
 
-* [Центр разработки Карт Bing](https://www.bingmapsportal.com/)
-* [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Видео c конференции Build 2015: использование карт и местоположений в приложениях для Windows на телефонах, планшетах и ПК](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Пример приложения UWP для работы с картами](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Центр разработчиков Bing Maps](https://www.bingmapsportal.com/)
+* [Образец карты универсальной платформы Windows](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Рекомендации по проектированию для карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Видео с Build 2015: Использование карты и расположение между телефоном, планшетом и ПК в приложениях Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Пример приложения UWP трафика](https://go.microsoft.com/fwlink/p/?LinkId=619982)

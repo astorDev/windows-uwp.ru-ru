@@ -7,15 +7,15 @@ keywords: windows 10, uwp
 ms.assetid: 9ef40050-7df6-49bd-8563-1bd58bb6e3f0
 ms.localizationpriority: medium
 ms.openlocfilehash: b0f793dfb1c261ed967e79ab2a64e09306a57917
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919310"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659819"
 ---
 # <a name="uwp-on-xbox-one-samples"></a>Примеры приложений UWP для Xbox One
 
-Существует несколько примеров UWP кросс платформенной, которые были оптимизированы для Xbox One при запуске на этой платформе. Можно просмотреть код на GitHub, прочитайте разделы сведений и вики и клонировать проекты на вашем компьютере.
+Существует несколько примеров кросс платформенных универсальной платформы Windows, которые оптимизированы для Xbox One, при выполнении на этой платформе. Можно просмотреть код на GitHub, прочтите файл readme и вики-страниц и клонируйте проекты на свой компьютер.
 
 ## <a name="tvhelpers"></a>TVHelpers
 
@@ -25,18 +25,18 @@ TVJS включает поддержку автоматической навиг
 
 Дополнительные сведения см. в разделах [TVHelpers](https://github.com/Microsoft/TVHelpers) и [Справка](https://github.com/Microsoft/TVHelpers/wiki).
 
-## <a name="the-news-experience"></a>Взаимодействие новости
+## <a name="the-news-experience"></a>В интерфейсе новости
 
-[Возникают новости](https://github.com/Microsoft/uwp-experiences/tree/news/apps/News), четвертый кофе, — это пример новостного приложения, работающего на рабочий стол, телефонах и Xbox One и обеспечивает удобство premium, использующее преимущества силе каждое устройство. На консоли Xbox он оптимизирован для игрового контроллера, пользовательский Интерфейс позволяет на большом расстоянии и сохраняет содержимое в безопасной области, среди других оптимизации. См. [в блоге](https://blogs.windows.com/buildingapps/2016/09/09/tailoring-your-app-for-xbox-and-the-tv-app-dev-on-xbox-series/) Дополнительные сведения.
+[Новости возникают](https://github.com/Microsoft/uwp-experiences/tree/news/apps/News), Fourth Coffee — это пример приложения новостей, который работает на рабочий стол, phone и Xbox One и обеспечивает первоклассный уровень поддержки, в котором используются преимущества сильные стороны каждого устройства. На Xbox оно оптимально подходит для игровой, на самом общем 10 интерфейс предназначен пользовательский Интерфейс и он обеспечивает хранение содержимого в области ТВ safe между другими оптимизациями. См. в разделе [в записи блога](https://blogs.windows.com/buildingapps/2016/09/09/tailoring-your-app-for-xbox-and-the-tv-app-dev-on-xbox-series/) Дополнительные сведения.
 
-![Взаимодействие новости](images/samples-1.png)
+![В интерфейсе новости](images/samples-1.png)
 
-## <a name="gamepad-style-navigation-xaml-sample"></a>Пример стиле игрового контроллера навигации (XAML)
+## <a name="gamepad-style-navigation-xaml-sample"></a>Пример навигации (XAML) стиле Gamepad
 
-[Пример стиле игрового контроллера навигации (XAML)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlGamepadNavigation) — это пример приложения UWP, демонстрирующий способов улучшения направленную навигацию в приложении. Это также применимы к Классические приложения, где клиент может захотеть иметь возможность использовать клавиатуру для навигации по приложению, особенно важны для приложений Xbox, где основным методом ввода — игрового контроллера или пульта дистанционного управления.
+[Пример перехода (XAML) стиле игровой](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlGamepadNavigation) образце показаны способы улучшения направленное перемещение между элементами в приложении универсальной платформы Windows. Хотя это также применимо к классическим приложениям, где клиент может захотеть иметь возможность использовать клавиатуру для перехода в приложение, это особенно актуальны для приложений Xbox, где основной метод ввода игровой или удаленного управления.
 
-![Примеры универсальной платформы Windows: изменить размер окна приложения](images/samples-2.png)
+![Образец универсальной платформы Windows: Изменение размера представления приложения](images/samples-2.png)
 
 ## <a name="see-also"></a>См. также
 
-- [UWP на Xbox One](index.md)
+- [Приложения UWP для Xbox One](index.md)

@@ -11,30 +11,30 @@ dev_langs:
 - cppcx
 - cppwinrt
 ms.openlocfilehash: 7d66eaa77f86deffd59ebc81360ccb8183afd7d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929651"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654539"
 ---
 # <a name="xaml-lighting"></a>Освещение XAML
 
-Объекты [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) используются в сочетании с [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) для имитации динамического освещения и отражений.
+[**CompositionLight** ](/uwp/api/Windows.UI.Composition.CompositionLight) объекты используются в сочетании с [ **SceneLightingEffect** ](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) для имитации динамического освещения и отражательную.
 
 Освещение можно применять к [**объектам класса Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) и объектам XAML [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement).
 
 ## <a name="applying-lights-to-xaml-uielements"></a>Применение освещения к XAML UIElements
 
-Объекты [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) позволяют применять [**CompositionLights**](/uwp/api/Windows.UI.Composition.CompositionLight) для динамического освещения объектов XAML UIElement. XamlLight предоставляет методы для целевых объектов UIElement или кистей XAML, к деревьям объектов UIElement, и помогает управлять жизненным циклом CompositionLight использовать ресурсы с учетом ли они в данный момент.
+[**XamlLight** ](/uwp/api/windows.ui.xaml.media.xamllight) объекты используются для применения [ **CompositionLights** ](/uwp/api/Windows.UI.Composition.CompositionLight) динамически выявляет XAML UIElements. XamlLight содержит методы для нацеливания на элементы интерфейса пользователя UIElement или кисти XAML, применение источников света в деревья элементов UIElement, и помогает управлять временем существования CompositionLight ресурсы, в зависимости от того, находятся ли они в данный момент.
 
 - Если в качестве целевого объекта XamlLight выбрана кисть (**Brush**), будут освещены все части объектов UIElements, для которых использовалась эта кисть.
 - Если в качестве целевого объекта XamlLight выбран **UIElement**, будет освещен весь этот объект UIElement вместе со своими дочерними объектами UIElement.
 
 ## <a name="creating-and-using-a-xamllight"></a>Создание и использование XamlLight
 
-[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight)— это базовый класс, который можно использовать для создания пользовательских источников света.
+[**XamlLight** ](/uwp/api/windows.ui.xaml.media.xamllight) является базовым классом, который может использоваться для создания пользовательских источников света.
 
-В этом примере показано определение пользовательского класса XamlLight, который применяет разноцветных важных сведений для целевых объектов UIElement и кисти.
+В этом примере показано определение для пользовательских XamlLight, к которому применяется разноцветный spotlight целевые элементы интерфейса пользователя UIElement и кистей.
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight
@@ -457,10 +457,10 @@ Platform::String^ OrangeSpotLight::GetId()
 }
 ```
 
-Затем можно применить этот светлый UIElement для XAML или кисть для их освещения. В этом примере показано различные возможные варианты использования.
+Затем можно применить этот индикатор XAML UIElement или кисти умения для оживления их. Этот пример различных возможных использований.
 
 > [!Important]
-> Для [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), удалите двумя экземплярами `local:OrangeSpotLight.IsTarget="True"` из разметки ниже. Уже присоединенные свойства задаются в коде программной.
+> Для [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), удалите два вхождения `local:OrangeSpotLight.IsTarget="True"` из следующей разметкой. Вложенные свойства уже заданы в коде.
 
 ```xaml
 <StackPanel Width="100">
@@ -489,9 +489,9 @@ Platform::String^ OrangeSpotLight::GetId()
 </StackPanel>
 ```
 
-Результаты этот код XAML будет выглядеть следующим образом.
+Результаты этого XAML будет выглядеть следующим образом.
 
-![Примеры элементов освещении с xaml света](images/orange-spot-light.png)
+![Примеры элементов, даже с xaml света](images/orange-spot-light.png)
 
 > [!Important]
 > Элемент разметки UIElement.Lights, показанный в приведенном выше примере, поддерживается только для приложений, минимальная версия которых соответствует Windows 10 Creators Update или более поздней версии. Для приложений, предназначенных для более ранних версий, необходимо создать источники освещения в программной части кода.

@@ -1,5 +1,5 @@
 ---
-Description: This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
+Description: В этой статье содержится обзор понятий и технологий, связанных со сценариями использования специальных возможностей для приложений универсальной платформы Windows (UWP).
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Обзор специальных возможностей
 label: Accessibility overview
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0c3bea228cae8d9482a8e0cb24c958e36992848
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046577"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649739"
 ---
 # <a name="accessibility-overview"></a>Обзор специальных возможностей  
 
@@ -190,9 +190,9 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>Поддержка специальных возможностей в приложениях, поддерживающих межпрограммное взаимодействие XAML и Microsoft DirectX  
 Содержимое Microsoft DirectX, размещенное в пользовательском интерфейсе XAML (с помощью [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) или [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)), по умолчанию не поддерживает специальные возможности. [Образец межпрограммного взаимодействия XAML SwapChainPanel DirectX](https://go.microsoft.com/fwlink/p/?LinkID=309155) показывает, как создать одноранговые элементы автоматизации пользовательского интерфейса для содержимого DirectX. Этот метод обеспечивает доступ к такому содержимому для модели автоматизации пользовательского интерфейса.
 
-## <a name="related-topics"></a>Связанные темы  
+## <a name="related-topics"></a>Статьи по теме  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
-* [Рекомендации по специальным возможностям](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [Пример реализации специальных возможностей на XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Конструктор для объекта специальных возможностей](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [XAML примера специальных возможностей](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Специальные возможности](accessibility.md)
-* [Начало работы с экранным диктором](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
+* [Начало работы с экранного диктора](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

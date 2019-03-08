@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, игры, ввод, необработанное игровое устройство управления
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5f4d49ad49cf9f9065fe17788456e9dd2a4a4e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946800"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644629"
 ---
 # <a name="raw-game-controller"></a>Необработанное игровое устройство управления
 
@@ -26,9 +26,9 @@ ms.locfileid: "8946800"
 
 ## <a name="overview"></a>Обзор
 
-Необработанное игровое устройство управления— это общее представление игрового устройства управления, элементы которого используются в различных распространенных игровых устройствах управления. Эти элементы управления представлены простыми массивами безымянных кнопок, переключателей и осей. С помощью необработанного игрового устройства управления можно разрешить пользователям создавать собственные сопоставления ввода независимо от типа используемого контроллера.
+Необработанное игровое устройство управления — это общее представление игрового устройства управления, элементы которого используются в различных распространенных игровых устройствах управления. Эти элементы управления представлены простыми массивами безымянных кнопок, переключателей и осей. С помощью необработанного игрового устройства управления можно разрешить пользователям создавать собственные сопоставления ввода независимо от типа используемого контроллера.
 
-Класс [RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller) фактически предназначен для сценариев, когда другие классы ввода ([ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick), и т.д) не соответствуют требованиям &mdash; если вам нужно что-то более универсальное и вы предполагаете, что ваши клиенты будут использовать различные типы игровых устройств управления, выбирайте этот класс.
+Класс [RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller) фактически предназначен для сценариев, когда другие классы ввода ([ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick), и т. д) не соответствуют требованиям &mdash; если вам нужно что-то более универсальное и вы предполагаете, что ваши клиенты будут использовать различные типы игровых устройств управления, выбирайте этот класс.
 
 ## <a name="detect-and-track-raw-game-controllers"></a>Обнаружение и отслеживание необработанных игровых устройств управления
 
@@ -90,7 +90,7 @@ Each raw game controller can be associated with a user account to link their ide
 
 ## <a name="get-the-capabilities-of-a-raw-game-controller"></a>Получение информации о возможностях необработанного игрового устройства управления
 
-Выбрав нужное необработанное игровое устройство управления, можно собрать сведения о возможностях этого устройства. Можно получить количество кнопок на необработанном игровом устройстве управления с помощью [RawGameController.ButtonCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.ButtonCount), количество аналоговых осей— с помощью [RawGameController.AxisCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.AxisCount), а количество переключателей— с помощью  [RawGameController.SwitchCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.SwitchCount). Кроме того, можно получить тип переключателя с помощью [RawGameController.GetSwitchKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetSwitchKind_System_Int32_).
+Выбрав нужное необработанное игровое устройство управления, можно собрать сведения о возможностях этого устройства. Можно получить количество кнопок на необработанном игровом устройстве управления с помощью [RawGameController.ButtonCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.ButtonCount), количество аналоговых осей — с помощью [RawGameController.AxisCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.AxisCount), а количество переключателей — с помощью  [RawGameController.SwitchCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.SwitchCount). Кроме того, можно получить тип переключателя с помощью [RawGameController.GetSwitchKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetSwitchKind_System_Int32_).
 
 В следующем примере показано, как получить количество точек ввода для необработанного игрового устройства управления:
 
@@ -168,7 +168,7 @@ for (uint32_t i = 0; i < buttonCount; i++)
 }
 ```
 
-Иногда нужно определить, когда кнопка переходит из нажатого состояния в отпущенное или наоборот, узнать состояние сразу нескольких кнопок (нажаты или отпущены) либо определить особую схему расположения кнопок в наборе&mdash;некоторые кнопки могут быть нажаты, а другие отпущены. Сведения о том, как определить каждое из этих условий, см. в разделах [Определение положений кнопки](input-practices-for-games.md#detecting-button-transitions) и [Определение сложных схем положений кнопок](input-practices-for-games.md#detecting-complex-button-arrangements).
+Иногда нужно определить, когда кнопка переходит из нажатого состояния в отпущенное или наоборот, узнать состояние сразу нескольких кнопок (нажаты или отпущены) либо определить особую схему расположения кнопок в наборе — некоторые кнопки могут быть нажаты, а другие отпущены. Сведения о том, как определить каждое из этих условий, см. в разделах [Определение положений кнопки](input-practices-for-games.md#detecting-button-transitions) и [Определение сложных схем положений кнопок](input-practices-for-games.md#detecting-complex-button-arrangements).
 
 Значения переключателей предоставляются в виде массива [GameControllerSwitchPosition](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerswitchposition). Поскольку это свойство является битовым полем, для изоляции направление переключения используется побитовая маскировка.
 
@@ -185,7 +185,7 @@ for (uint32_t i = 0; i < switchCount; i++)
 }
 ```
 
-### <a name="reading-the-analog-inputs-sticks-triggers-throttles-and-so-on"></a>Считывание данных с аналоговых устройств ввода (рукояток, триггеров, регуляторов и т.д.)
+### <a name="reading-the-analog-inputs-sticks-triggers-throttles-and-so-on"></a>Считывание данных с аналоговых устройств ввода (рукояток, триггеров, регуляторов и т. д.)
 
 Аналоговая ось предоставляет показания от 0,0 до 1,0. В эти показания входят все измерения джойстика, например оси X и Y для стандартных джойстиков, или оси X, Y и Z (разворот, уклон и поворот соответственно) для рукояток управления полетами.
 
@@ -207,7 +207,7 @@ float rightTrigger = currentAxisReading[5];
 
 При считывании значений джойстика можно заметить, что значения могут быть не равны 0,5, даже если джойстик находится без движения в центральном положении. Вместо этого отображаются различные значения, близкие к 0,5, когда джойстик перемещается и возвращается в центральное положение. Для устранения данной проблемы можно установить небольшую _мертвую зону_ — диапазон значений рядом с идеальным центральным положением, которые будут игнорироваться.
 
-Один из способов создания мертвой зоны— определить, насколько далеко от центра сдвинулся джойстик, и игнорировать смещения на расстояние, которое окажется меньше выбранного. Расстояние можно вычислить приблизительно&mdash;не точно, поскольку показания джойстика по сути полярные, а не плоскостные&mdash;с помощью теоремы Пифагора. В результате вы получите радиальную мертвую зону.
+Один из способов создания мертвой зоны — определить, насколько далеко от центра сдвинулся джойстик, и игнорировать смещения на расстояние, которое окажется меньше выбранного. Расстояние можно вычислить приблизительно&mdash;не точно, поскольку показания джойстика по сути полярные, а не плоскостные&mdash;с помощью теоремы Пифагора. В результате вы получите радиальную мертвую зону.
 
 В следующем примере показан расчет базовой радиальной мертвой зоны с помощью теоремы Пифагора:
 
@@ -233,9 +233,9 @@ The [RawGameControllerUWP sample (GitHub)](TODO: Link) demonstrates how to use r
 
 ## <a name="see-also"></a>См. также
 
-* [Устройства ввода для игр](input-for-games.md)
-* [Рекомендации по использованию устройств ввода для игр](input-practices-for-games.md)
+* [Входные данные для игр](input-for-games.md)
+* [Входной и рекомендации для игр](input-practices-for-games.md)
 * [Пространство имен Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Класс Windows.Gaming.Input.IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)
+* [Класс Windows.Gaming.Input.RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)
 * [Интерфейс Windows.Gaming.Input.IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
 * [Интерфейс Windows.Gaming.Input.IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo)

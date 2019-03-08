@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 81bd9f699e899f895d55b2b2132681824ed40b7b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921862"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650629"
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>Зарезервированные имена файлов и схем URI
 
@@ -25,18 +25,18 @@ ms.locfileid: "8921862"
 Типы файлов, зарезервированные для встроенных приложений
 
 <table>
-<tr><td>.aac</td><td>.icon</td><td>.pem</td><td>.wdp</td></tr>
-<tr><td>.aetx</td><td>.jpeg</td><td>.png</td><td>.wmv</td></tr>
-<tr><td>.asf</td><td>.jxr</td><td>.pptm</td><td>.xap</td></tr>
-<tr><td>.bmp</td><td>.m4a</td><td>.pptx</td><td>.xht</td></tr>
-<tr><td>.cer</td><td>.m4r</td><td>.qcp</td><td>.xhtml</td></tr>
-<tr><td>.dotm</td><td>.m4v</td><td>.rtf</td><td>.xltm</td></tr>
-<tr><td>.dotx</td><td>.mov</td><td>.tif</td><td>.xltx</td></tr>
-<tr><td>.gif</td><td>.mp3</td><td>.tiff</td><td>.xml</td></tr>
-<tr><td>.hdp</td><td>.mp4</td><td>.txt</td><td>.xsl</td></tr>
-<tr><td>.htm</td><td>.one</td><td>.url</td><td>.zip</td></tr>
+<tr><td>AAC</td><td>.icon</td><td>.pem</td><td>.wdp</td></tr>
+<tr><td>.aetx</td><td>JPEG</td><td>PNG</td><td>.wmv</td></tr>
+<tr><td>.asf</td><td>.jxr</td><td>PPTM</td><td>.xap</td></tr>
+<tr><td>BMP</td><td>M4A</td><td>PPTX</td><td>.xht</td></tr>
+<tr><td>.cer</td><td>M4R</td><td>QCP</td><td>.xhtml</td></tr>
+<tr><td>DOTM</td><td>.m4v</td><td>.rtf</td><td>XLTM</td></tr>
+<tr><td>DOTX</td><td>.mov</td><td>.tif</td><td>XLTX</td></tr>
+<tr><td>GIF</td><td>MP3</td><td>.tiff</td><td>XML</td></tr>
+<tr><td>.hdp</td><td>.mp4</td><td>TXT.</td><td>.xsl</td></tr>
+<tr><td>.htm</td><td>.one</td><td>.url</td><td>ZIP</td></tr>
 <tr><td>.html</td><td>.onetoc2</td><td>.vcf</td><td></td></tr>
-<tr><td>.ico</td><td>.p7b</td><td>.wav</td><td></td></tr>
+<tr><td>.ico</td><td>.p7b</td><td>WAV</td><td></td></tr>
 </table> 
 
 ## <a name="file-types-reserved-for-the-operating-system"></a>Типы файлов, зарезервированные для операционной системы
@@ -46,17 +46,17 @@ ms.locfileid: "8921862"
 <table>
 <tr><td>.accountpicture-ms</td><td>its</td><td>.ops</td><td>.url</td></tr>
 <tr><td>.ade</td><td>.jar</td><td>.pcd</td><td>.vb</td></tr>
-<tr><td>.adp</td><td>.js</td><td>.pif</td><td>.vbe</td></tr>
+<tr><td>.adp</td><td>JS</td><td>.pif</td><td>.vbe</td></tr>
 <tr><td>.app</td><td>.jse</td><td>.pl</td><td>.vbp</td></tr>
-<tr><td>.appx</td><td>.ksh</td><td>.plg</td><td>.vbs</td></tr>
+<tr><td>APPX</td><td>.ksh</td><td>.plg</td><td>VBS</td></tr>
 <tr><td>.application</td><td>.lnk</td><td>.plsc</td><td>.vhd</td></tr>
 <tr><td>.appref-ms</td><td>.mad</td><td>.prf</td><td>.vhdx</td></tr>
 <tr><td>.asp</td><td>.maf</td><td>.prg</td><td>.vsmacros</td></tr>
 <tr><td>.bas</td><td>.mag</td><td>.printerexport</td><td>.vsw</td></tr>
-<tr><td>.bat</td><td>.mam</td><td>.provxml</td><td>.webpnp</td></tr>
-<tr><td>.cab</td><td>.maq</td><td>.ps1</td><td>.ws</td></tr>
+<tr><td>BAT</td><td>.mam</td><td>.provxml</td><td>.webpnp</td></tr>
+<tr><td>CAB</td><td>.maq</td><td>PS1</td><td>.ws</td></tr>
 <tr><td>.chm</td><td>.mar</td><td>.ps1xml</td><td>.wsc</td></tr>
-<tr><td>.cmd</td><td>.mas</td><td>.ps2</td><td>.wsf</td></tr>
+<tr><td>CMD</td><td>.mas</td><td>.ps2</td><td>.wsf</td></tr>
 <tr><td>.cnt</td><td>.mat</td><td>.ps2xml</td><td>.wsh</td></tr>
 <tr><td>.com</td><td>.mau</td><td>.psc1</td><td>.xaml</td></tr>
 <tr><td>.cpf</td><td>.mav</td><td>.psc2</td><td>.xdp</td></tr>
@@ -66,20 +66,20 @@ ms.locfileid: "8921862"
 <tr><td>.crt</td><td>.mdb</td><td>.py</td><td></td></tr>
 <tr><td>.csh</td><td>.mde</td><td>.pyc</td><td></td></tr>
 <tr><td>.der</td><td>.mdt</td><td>.pyo</td><td></td></tr>
-<tr><td>.dll</td><td>.mdw</td><td>.rb</td><td></td></tr>
+<tr><td>DLL</td><td>.mdw</td><td>.rb</td><td></td></tr>
 <tr><td>.drv</td><td>.mdz</td><td>.rbw</td><td></td></tr>
-<tr><td>.exe</td><td>.msc</td><td>.rdp</td><td></td></tr>
+<tr><td>EXE</td><td>.msc</td><td>.rdp</td><td></td></tr>
 <tr><td>.fxp</td><td>.msh</td><td>.reg</td><td></td></tr>
 <tr><td>.fon</td><td>.msh1</td><td>.rgu</td><td></td></tr>
 <tr><td>.gadget</td><td>.msh1xml</td><td>.scf</td><td></td></tr>
 <tr><td>.grp</td><td>.msh2</td><td>.scr</td><td></td></tr>
 <tr><td>.hlp</td><td>.msh2xml</td><td>.shb</td><td></td></tr>
 <tr><td>.hme</td><td>.mshxml</td><td>.shs</td><td></td></tr>
-<tr><td>.hpj</td><td>.msi</td><td>.sys</td><td></td></tr>
-<tr><td>.hta</td><td>.msp</td><td>.theme</td><td></td></tr>
-<tr><td>.inf</td><td>.mst</td><td>.tmp</td><td></td></tr>
-<tr><td>.ins</td><td>.msu</td><td>.tsk</td><td></td></tr>
-<tr><td>.isp</td><td>.ocx</td><td>.ttf</td><td></td></tr>
+<tr><td>.hpj</td><td>MSI</td><td>.sys</td><td></td></tr>
+<tr><td>.hta</td><td>MSP</td><td>.theme</td><td></td></tr>
+<tr><td>INF</td><td>MST</td><td>.tmp</td><td></td></tr>
+<tr><td>INF</td><td>.msu</td><td>.tsk</td><td></td></tr>
+<tr><td>.isp</td><td>OCX</td><td>.ttf</td><td></td></tr>
 </table>
 
 ## <a name="reserved-uri-scheme-names"></a>Зарезервированные имена схем URI

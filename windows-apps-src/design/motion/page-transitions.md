@@ -1,19 +1,19 @@
 ---
-Description: Learn how to use page transitions in your UWP apps.
+Description: Узнайте, как использовать переходы в приложениях универсальной платформы Windows.
 title: Переходы между страницами в приложениях UWP
 template: detail.hbs
 ms.date: 04/08/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 38fe6b92828459f91ba6ea2f836d274c2cc8d761
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942246"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646459"
 ---
 # <a name="page-transitions"></a>Смена страниц
 
@@ -37,7 +37,7 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ```
 
-**Примечание**. [**Кадр**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame) автоматически использует [**NavigationThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) для анимации навигации между двумя страницами. По умолчанию анимацией является обновление страницы.
+**Примечание**. Объект [ **кадра** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame) автоматически использует [ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) для анимации перехода между двумя страницами. По умолчанию анимацией является обновление страницы.
 
 ## <a name="drill"></a>Винт
 
@@ -54,11 +54,11 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 ```
 
-## <a name="horizontal-slide"></a>Скользящее движение по горизонтали
+## <a name="horizontal-slide"></a>Горизонтальная слайд
 
-Используйте горизонтальный слайд для отображения, страницами одного уровня отображаются рядом друг с другом. Элемент управления [NavigationView](../controls-and-patterns/navigationview.md) автоматически использует эту анимацию для верхней панели навигации, но если вы создаете собственный горизонтальной навигацию, затем можно реализовать горизонтальное слайд с SlideNavigationTransitionInfo.
+Используйте горизонтальное слайд, чтобы показать, что родственным ей страницам отображаются рядом друг с другом. [NavigationView](../controls-and-patterns/navigationview.md) элемент управления автоматически использует эту анимацию для верхней панели навигации, но если вы создаете собственный горизонтальное навигацию, затем можно реализовать горизонтальное слайд с SlideNavigationTransitionInfo.
 
-Создать ощущение, что переход между страницами, которые являются рядом друг с другом. 
+Требуемой чувство является то, что пользователь перемещается между страницами, которые находятся рядом друг с другом. 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage
@@ -85,7 +85,7 @@ myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
 
 Это может быть полезно при динамическом изменении поведения навигации в зависимости от размера экрана, например при использовании адаптивного шаблона основных и подробных данных.
 
-## <a name="related-topics"></a>Смежные разделы
+## <a name="related-topics"></a>Статьи по теме
 
-- [Навигация между двумя страницами](../basics/navigate-between-two-pages.md)
-- [Движение в приложениях UWP](index.md)
+- [Переход между двумя страницами](../basics/navigate-between-two-pages.md)
+- [Движения в приложениях универсальной платформы Windows](index.md)

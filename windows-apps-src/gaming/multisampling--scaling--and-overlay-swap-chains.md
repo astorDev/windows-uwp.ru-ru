@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, игры, масштабирование цепочки буферов, наложения, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 12aede6c4af61c4b86d1f1090a2ec3d0e5ecce68
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943789"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644199"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>Наложения и масштабирование цепочки буферов
 
@@ -148,15 +148,15 @@ Direct3D 11.2 также предлагает новую возможность 
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > **Примечание**  Если адаптер DXGI поддерживает наложения, перейдите к следующему шагу. Если устройство не поддерживает наложения, отрисовки с несколькими цепочками буферов будет недостаточно. Вместо этого отрисуйте пользовательский интерфейс с более низким разрешением в той же цепочке буферов, что и содержимое игры в реальном времени.
+    > **Примечание**    Если DXGI адаптер поддерживает наложение, перейдите к следующему шагу. Если устройство не поддерживает наложения, отрисовки с несколькими цепочками буферов будет недостаточно. Вместо этого отрисуйте пользовательский интерфейс с более низким разрешением в той же цепочке буферов, что и содержимое игры в реальном времени.
 
      
 
-2.  Создайте цепочку буферов переднего плана с помощью [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). В [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528), предоставляемом параметру *pDesc*, необходимо указать следующие параметры:
+2.  Создайте цепочку буферов переднего плана с помощью [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). Необходимо задать следующие параметры в [ **DXGI\_ЗАМЕНЫ\_ЦЕПОЧКИ\_DESC1** ](https://msdn.microsoft.com/library/windows/desktop/hh404528) передаваемое *параметре pDesc* параметр:
 
-    -   Укажите флаг цепочки буферов [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076), чтобы обозначить цепочку буферов переднего плана.
-    -   Используйте флаг режима альфа-канала [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496). Цепочки буферов переднего плана всегда предварительно умножены.
-    -   Установите флаг [**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526). Цепочки буферов переднего плана всегда выполняются с основным разрешением.
+    -   Укажите [ **DXGI\_ЗАМЕНЫ\_ЦЕПОЧКИ\_ФЛАГ\_переднего ПЛАНА\_СЛОЙ** ](https://msdn.microsoft.com/library/windows/desktop/bb173076) замены цепочки флаг, указывающий цепочку обмена переднего плана.
+    -   Используйте [ **DXGI\_альфа-канал\_режим\_PREMULTIPLIED** ](https://msdn.microsoft.com/library/windows/desktop/hh404496) флаг альфа-режима. Цепочки буферов переднего плана всегда предварительно умножены.
+    -   Задайте [ **DXGI\_МАСШТАБИРОВАНИЕ\_NONE** ](https://msdn.microsoft.com/library/windows/desktop/hh404526) флаг. Цепочки буферов переднего плана всегда выполняются с основным разрешением.
 
     ```cpp
      foregroundSwapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER;
@@ -164,7 +164,7 @@ Direct3D 11.2 также предлагает новую возможность 
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **Примечание**  снова установить [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) всякий раз при изменении размера цепочки буферов.
+    > **Примечание**    задать [ **DXGI\_ЗАМЕНЫ\_ЦЕПОЧКИ\_ФЛАГ\_переднего ПЛАНА\_СЛОЙ** ](https://msdn.microsoft.com/library/windows/desktop/bb173076) попытку каждые время, когда изменяется цепочки буферов.
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -197,9 +197,9 @@ Direct3D 11.2 также предлагает новую возможность 
     }
     ```
 
-4.  Цепочки буферов переднего плана всегда используются с предварительным умножением альфа-канала. Ожидается, что значения цвета каждого пикселя уже умножены перед представлением кадра. Например, 100% белый пиксель BGRA при альфа-канале 50% имеет значение (0,5, 0,5, 0,5, 0,5).
+4.  Цепочки буферов переднего плана всегда используются с предварительным умножением альфа-канала. Ожидается, что значения цвета каждого пикселя уже умножены перед представлением кадра. Например, 100 % белый пиксель BGRA при альфа-канале 50 % имеет значение (0,5, 0,5, 0,5, 0,5).
 
-    Предварительное умножение альфа-канала можно выполнить на этапе слияния вывода, применив состояние смешения приложения (см. [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) со структурой [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200), в поле **SrcBlend** которой установлено значение **D3D11\_SRC\_ALPHA**. Также можно использовать ресурсы с предварительно умноженными альфа-каналами.
+    Альфа-premultiplication можно сделать на этапе средство слияния вывода путем применения к состоянию приложения blend (см. в разделе [ **ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) с [ **D3D11\_ ВИЗУАЛИЗАЦИИ\_ЦЕЛЕВОЙ\_BLEND\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476200) структуры **SrcBlend** поле "значение" **D3D11\_SRC\_Альфа-канал**. Также можно использовать ресурсы с предварительно умноженными альфа-каналами.
 
     Если предварительное умножение альфа-канала не выполнено, цвета в цепочке буферов переднего плана будут ярче, чем ожидается.
 

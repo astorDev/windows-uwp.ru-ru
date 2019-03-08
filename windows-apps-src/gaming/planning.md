@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, игра, планирование, специальные возможности, облако, монетизировать, пакет, технология, концепция, утверждение
 ms.localizationpriority: medium
 ms.openlocfilehash: 47f613ff814788df947ee39590af0e01b7e3622f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946006"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653779"
 ---
 # <a name="planning-for-uwp-games"></a>Планирование игр UWP
 
@@ -30,7 +30,7 @@ ms.locfileid: "8946006"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="game-development-platform-guide.md">Игровые технологии</a></p></td>
+<td align="left"><p><a href="game-development-platform-guide.md">Технологии игр</a></p></td>
 <td align="left"><p>Список технологий, помогающих при разработке игр.</p></td>
 </tr>
 <tr class="even">
@@ -42,15 +42,15 @@ ms.locfileid: "8946006"
 <td align="left"><p>Использование облака для игр.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="monetization-for-games.md">Монетизация для игр</a></p></td>
+<td align="left"><p><a href="monetization-for-games.md">Монетизацию для игр</a></p></td>
 <td align="left"><p>Способы монетизации игры.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="package-your-windows-store-directx-game.md">Создание пакета игры</a></p></td>
+<td align="left"><p><a href="package-your-windows-store-directx-game.md">Упаковка игры</a></p></td>
 <td align="left"><p>Подготовка пакета игры для Microsoft Store.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="concept-approval.md">Утверждение концепций</a></p></td>
+<td align="left"><p><a href="concept-approval.md">Утверждение концепции</a></p></td>
 <td align="left"><p>Получение утверждения концепции игры.</p></td>
 </tr>
 </tbody>

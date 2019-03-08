@@ -1,25 +1,25 @@
 ---
-Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must create a project and define your remote variables in Partner Center.
+Description: Перед запуском эксперимента в приложении универсальной платформы Windows (UWP) с A / B-тестирования, необходимо создать проект и определение удаленных переменных в центре партнеров.
 title: Создание проекта эксперимента в Центре партнеров
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP, Microsoft Store Services SDK, A/B-тесты, эксперименты
+keywords: Windows 10, uwp, Microsoft Store Services SDK, А/B тестирование, эксперименты
 ms.localizationpriority: medium
 ms.openlocfilehash: acfd654f02cb7fb727d35271175e59966e2abdc4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931932"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650799"
 ---
 # <a name="create-an-experiment-project-in-partner-center"></a>Создание проекта эксперимента в Центре партнеров
 
-Для проведения эксперимента, создайте эксперимент [проекта](run-app-experiments-with-a-b-testing.md#terms) для вашего приложения в центре партнеров и укажите удаленные переменные, которые вашему приложению.
+Чтобы начать работу с помощью службы "Экспериментирование", создайте эксперимент [проекта](run-app-experiments-with-a-b-testing.md#terms) для вашего приложения в центре партнеров и определите удаленного переменные, которые приложение может обращаться к.
 
 Приведенные ниже инструкции описывают основные действия, необходимые для создания проекта. Подробное пошаговое руководство, демонстрирующее весь процесс создания проекта и выполнения эксперимента, можно найти в разделе [Создание и проведение первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md).
 
-## <a name="instructions"></a>Инструкции
+## <a name="instructions"></a>Инструкция
 
 1. Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard).
 2. В разделе **Ваши приложения** выберите приложение, для которого следует создать эксперимент.
@@ -30,7 +30,7 @@ ms.locfileid: "8931932"
   1. Если раздел **Удаленные переменные** свернут, нажмите **Показать** в заголовке раздела.
   2. Нажимайте **Добавьте переменную** для создания каждой новой переменной, которая должна быть доступна для всех экспериментов в этом проекте, и введите значение по умолчанию для переменной.
   3. Закончив добавление переменных, нажмите кнопку **Сохранить**.
-3. В разделе **Интеграция SDK** посмотрите значение [идентификатора проекта](run-app-experiments-with-a-b-testing.md#terms). Когда [вашего приложения для экспериментов](code-your-experiment-in-your-app.md), необходимо указывать этот идентификатор проекта в коде таким образом вы можете получать переменные данные и регистрировать события просмотра и преобразования в центр партнеров.
+3. В разделе **Интеграция SDK** посмотрите значение [идентификатора проекта](run-app-experiments-with-a-b-testing.md#terms). Когда вы [код приложения для службы "Экспериментирование"](code-your-experiment-in-your-app.md), этот идентификатор проекта должен ссылаться в коде, чтобы можно было получать данные вариантов и сообщает о событиях представление и преобразования для центра партнеров.
 
 > [!NOTE]
 > Удаленные переменные невозможно изменять, добавлять или удалять, если в проекте имеется активный эксперимент. Это ограничение гарантирует целостность данных контрольной группы для активного эксперимента.
@@ -40,10 +40,10 @@ ms.locfileid: "8931932"
 
 После создания проекта можно [закодировать приложение для экспериментов](code-your-experiment-in-your-app.md), чтобы начать получать значения удаленных переменных в вашем приложении, и можно [создать эксперимент в проекте](define-your-experiment-in-the-dev-center-dashboard.md).
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
-* [Кодирование приложения для экспериментов](code-your-experiment-in-your-app.md)
-* [Определение эксперимента в Центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Управление экспериментом в Центре партнеров](manage-your-experiment.md)
-* [Создание и запуск первого эксперимента с использованием A/B-тестирования](create-and-run-your-first-experiment-with-a-b-testing.md)
-* [Выполнение экспериментов в приложении с использованием A/B-тестирования](run-app-experiments-with-a-b-testing.md)
+* [Код приложения для службы "Экспериментирование"](code-your-experiment-in-your-app.md)
+* [Определите свой эксперимент в центре партнеров](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Управление эксперимента в центре партнеров](manage-your-experiment.md)
+* [Создание и запуск первого эксперимента с A / B-тестирование](create-and-run-your-first-experiment-with-a-b-testing.md)
+* [Запустите приложение экспериментов с A / B-тестирование](run-app-experiments-with-a-b-testing.md)

@@ -1,24 +1,24 @@
 ---
-title: Что нового в документации Windows в сентябре 2017г.— разработка приложений UWP
-description: Новые возможности, видео и руководства для разработчиков добавлены в документацию для разработчиков Windows 10 в сентябре 2017г
+title: Что нового в документации Windows в сентябре 2017 г. — разработка приложений UWP
+description: Новые возможности, видео и руководства для разработчиков добавлены в документацию для разработчиков Windows 10 в сентябре 2017 г
 keywords: новые возможности, обновления, компоненты, руководство разработчика, Windows 10, 1709
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a296cc877279292f73b591a86ede9136b0d9758
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044172"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645199"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Что нового в документации для разработчиков Windows в сентябре 2017г.
+# <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Что нового в документации для разработчиков Windows в сентябре 2017 г.
 
 Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. Недавно стали доступны следующие обзоры функций, руководства для разработчиков и примеры, содержащие новые и обновленные сведения для разработчиков Windows.
 
 Конечно, приближается осеннее обновление Creators Update, поэтому следите за новостями, чтобы получить доступ к большому объему дополнительной документации, которая поступит в ближайший месяц!
 
-[Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/your-first-app.md), либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+[Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/your-first-app.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
 ## <a name="features"></a>Возможности
 
@@ -36,10 +36,10 @@ ms.locfileid: "9044172"
 
 Вот краткий обзор новых статей.
 
-+ [**Создание пользовательских интерфейсов**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui) — здесь демонстрируется создание простого интерфейса коллекции фотографий.
-+ [**Создание привязки данных**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding) — здесь показано, как добавить привязки данных к коллекции фотографий, заполнив ее настоящими изображениями.
-+ [**Создание настраиваемых стилей**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style) — здесь рассказывается, как добавить необычные настраиваемые стили в меню редактирования фотографий.
-+ [**Создание адаптивных макетов**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout) — здесь поясняется, как сделать макет коллекции адаптивным, чтобы она хорошо выглядела на всех устройствах и с экранами разного размера.
++ [**Создавать пользовательские интерфейсы** ](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui) показано, как создать интерфейс коллекции основные фотографии.
++ [**Создание привязки данных** ](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding) показано добавление привязки данных в фотоальбом, заполнение его данными реального изображения.
++ [**Создания собственных таблиц стилей** ](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style) показано, как добавить правило, понимаем пользовательские стили редактирования меню фотографий.
++ [**Создание адаптивной макетов** ](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout) показано создание макета коллекции адаптивной, поэтому оно хорошо выглядит на каждого устройства и размера экрана.
 
 ### <a name="get-started-tutorials"></a>Учебники по началу работы
 
