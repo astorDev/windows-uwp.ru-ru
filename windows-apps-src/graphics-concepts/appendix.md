@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f4cd2e17754dc5b5958e8bca208e30b87718cdd8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922867"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632499"
 ---
 # <a name="appendices"></a>Приложения
 
@@ -27,7 +27,7 @@ ms.locfileid: "8922867"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Статья</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
@@ -37,7 +37,7 @@ ms.locfileid: "8922867"
 <td align="left"><p>Direct3D поддерживает несколько представлений с плавающей запятой. Все вычисления с плавающей запятой выполняются в определенном подмножестве 32-битных правил с плавающей запятой одинарной точности IEEE 754.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="data-type-conversion.md">Преобразование типа данных</a></p></td>
+<td align="left"><p><a href="data-type-conversion.md">Преобразование типов данных</a></p></td>
 <td align="left"><p>В следующих разделах описано, как Direct3D обрабатывает преобразования между типами данных.</p></td>
 </tr>
 <tr class="odd">
@@ -45,7 +45,7 @@ ms.locfileid: "8922867"
 <td align="left"><p>Правила растеризации определяют, как векторные данные сопоставляются с растровыми. Растровые данные прикрепляются в целочисленные расположения, которые затем сортируются и обрезаются (так, чтобы рисовать минимальное число пикселей), а атрибуты отдельных пикселей интерполируются (от атрибутов отдельных вершин), прежде чем будут переданы в построитель текстуры.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="texture-block-compression.md">Сжатие блоков текстур</a></p></td>
+<td align="left"><p><a href="texture-block-compression.md">Сжатие блока текстуры</a></p></td>
 <td align="left"><p>В Direct3D 11 расширена поддержка сжатия блоков для текстур и теперь она включает алгоритмы BC6H и BC7. BC6H поддерживает исходные данные цвета из высокодинамичного диапазона, а BC7 обеспечивает качество сжатия выше среднего с меньшим количеством артефактов для стандартных исходных данных RGB.</p></td>
 </tr>
 </tbody>
@@ -53,10 +53,10 @@ ms.locfileid: "8922867"
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Обучающее руководство по графике Direct3D](index.md)
+[Руководство по обучения графики Direct3D](index.md)
 
  
 

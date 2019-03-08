@@ -1,34 +1,34 @@
 ---
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: Используйте этот метод в API отправки Microsoft Store для получения информации о конкретном приложении, которое зарегистрировано в вашей учетной записи центра партнеров.
+description: Используйте этот метод в интерфейсе API отправки Microsoft Store для получения сведений о определенное приложение, которое регистрируется для учетной записи центра партнеров.
 title: Получение приложения
 ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, приложение
 ms.localizationpriority: medium
 ms.openlocfilehash: ccb5473f85cba08c170af2334b0894a11e27a15a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941627"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590519"
 ---
 # <a name="get-an-app"></a>Получение приложения
 
-Используйте этот метод в API отправки Microsoft Store для получения информации о конкретном приложении, которое зарегистрировано в вашей учетной записи центра партнеров.
+Используйте этот метод в интерфейсе API отправки Microsoft Store для получения сведений о определенное приложение, которое регистрируется для учетной записи центра партнеров.
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
-* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения токена доступа у вас будет 60 минут, чтобы использовать его до окончания его срока действия. После истечения срока действия токена можно получить новый токен.
 
 ## <a name="request"></a>Запрос
 
 У этого метода следующий синтаксис. Примеры использования и описание текста заголовка и запроса приведены в следующих разделах.
 
-| Метод | URI запроса                                                      |
+| Метод | Универсальный код ресурса (URI) запроса                                                      |
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` |
 
@@ -37,14 +37,14 @@ ms.locfileid: "8941627"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Обязательный. Код продукта в Магазине для приложения, которое требуется получить. Дополнительные сведения о коде продукта в Магазине см. в разделе [Просмотр сведений об идентификации приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | Строка | Обязательный. Код продукта в Магазине для приложения, которое требуется получить. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 
 
 ### <a name="request-body"></a>Тело запроса
@@ -62,7 +62,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>Ответ
 
-В следующем примере представлено тело ответа JSON в случае успешного вызова этого метода. Дополнительные сведения о значениях в теле ответа см. в разделе [Ресурс приложения](get-app-data.md#application_object).
+В следующем примере представлен текст ответа JSON в случае успешного вызова этого метода. Дополнительные сведения о значениях в теле ответа см. в разделе [Ресурс приложения](get-app-data.md#application_object).
 
 ```json
 {
@@ -91,12 +91,12 @@ Authorization: Bearer <your access token>
 | Код ошибки |  Описание   |
 |--------|------------------|
 | 404  | Не удалось найти указанное приложение. |
-| 409  | Приложение использует компонент центра партнеров, [в настоящее время не поддерживается API отправки в Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Приложение использует функцию центра партнеров, которая [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Создание отправок и управление ими с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
-* [Получение всех приложений](get-all-apps.md)
-* [Получение тестовых пакетов для приложения](get-flights-for-an-app.md)
+* [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Получить все приложения](get-all-apps.md)
+* [Получить пакет авиарейсов для приложения](get-flights-for-an-app.md)
 * [Получение надстроек для приложения](get-add-ons-for-an-app.md)

@@ -8,11 +8,11 @@ keywords: windows 10, uwp, контакты, карточка контакта, 
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a3485635a49b1690116e7cb271435e63bee2151
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920402"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616439"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>Подключение приложения к действиям в карточках контактов
 
@@ -185,7 +185,7 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 В коде файла страницы переопределите метод [Page.OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx). Карточка контакта передает этому методу название операции и идентификатор пользователя.
 
-См. [пример с VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP), чтобы начать видеовызов или звонок. Полноценный API можно найти в пространстве имен [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
+Начать видео или аудио, см. в этом примере: [Пример VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Полноценный API можно найти в пространстве имен [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
 
 Способ упрощения обмена сообщениями см. в пространстве имен [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.aspx).
 
@@ -213,4 +213,4 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Свойство ```args.uri.scheme``` содержит название операции, а свойство ```args.uri.Query```— идентификатор пользователя.
+Свойство ```args.uri.scheme``` содержит название операции, а свойство ```args.uri.Query``` — идентификатор пользователя.

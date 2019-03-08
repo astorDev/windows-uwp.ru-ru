@@ -7,23 +7,23 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e508feb8a530f29b40d5a3839df573cb2ce89896
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932175"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634399"
 ---
 # <a name="drag-and-drop"></a>Перетаскивание
 
 Перетаскивание является интуитивно понятным способом передачи данных в приложении или между приложениями на компьютере с Windows. Перетаскивание дает пользователю возможность перемещать данные между приложениями или внутри приложения с помощью стандартного жеста ("нажатие-удержание-сдвиг" с помощью пальца или "нажатие-сдвиг" с помощью мыши или пера).
 
-> **Важные API-интерфейсы**: [свойство CanDrag](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag), [свойство AllowDrop](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
+> **Важные API-интерфейсы**: [Свойство CanDrag](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag), [свойства AllowDrop свойство](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
 
 Источник перетаскивания, который является приложением или областью, в которой запускается жест перетаскивания, предоставляет данные для передачи путем заполнения объекта пакета данных, который может содержать стандартные форматы данных, включая текст, RTF, HTML, точечные рисунки, элементы хранилища или пользовательские форматы данных. Источник также обозначает тип операций, которые он поддерживает: копировать, переместить или ссылка. При освобождении указателя выполняется перетаскивание. Место переноса, которое является приложением или областью под указателем, обрабатывает пакет данных и возвращает тип выполненной операции.
 
 Во время перетаскивания пользовательский интерфейс перетаскивания предоставляет визуальную индикацию типа выполняемой операции перетаскивания. Эта визуальная обратная связь изначально предоставляется источником, но может быть изменена местом переноса при наведении на них указателя.
 
-Современная функция перетаскивания доступна на всех устройствах, поддерживающих UWP. Эта функция позволяет передавать данные между приложениями любого типа либо внутри самого приложения, включая классические Windows-приложения. Тем не менее в этой статье основное внимание уделяется API-интерфейсу XAML для современной операции перетаскивания. После реализации функции перетаскивание корректно работает во всех направлениях, в том числе из приложения UWP в приложение UWP, из приложения UWP в классическое приложение и из классического приложения в приложение UWP.
+Современная функция перетаскивания доступна на всех устройствах, поддерживающих UWP. Эта функция позволяет передавать данные между приложениями любого типа либо внутри самого приложения, включая классические Windows-приложения. Тем не менее в этой статье основное внимание уделяется API-интерфейсу XAML для современной операции перетаскивания. После реализации перетаскивание работает без проблем во всех направлениях, в том числе из приложения в приложение, из приложения на рабочий стол и с рабочего стола в приложение.
 
 Здесь приведен обзор действий по реализации функции перетаскивания в вашем приложении.
 
@@ -50,14 +50,14 @@ ms.locfileid: "8932175"
 ## <a name="construct-a-data-package"></a>Создание пакета данных 
 
 В большинстве случаев система будет создавать пакет данных за вас. Система автоматически обрабатывает:
-* Изображения
+* образы,
 * Текст 
 
 При работе с другим содержимым необходимо обработать события **DragStarted** и **DragCompleted** и использовать их для создания собственного пакета данных [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage).
 
 ## <a name="enable-dropping"></a>Включение отпускания
 
-Следующая разметка демонстрирует, как сделать отпускание доступным для конкретной области приложения, используя [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) в XAML. Если пользователь попытается отпустить перетаскиваемое содержимое в другом месте, система не позволит сделать это. Если вы хотите, чтобы пользователи могли использовать отпускание в любом месте вашего приложения, установите весь фон в качестве места переноса.
+Следующая разметка демонстрирует, как сделать перетаскивание доступным для конкретной области приложения, используя [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) в XAML. Если пользователь попытается отпустить перетаскиваемое содержимое в другом месте, система не позволит сделать это. Если вы хотите, чтобы пользователи могли использовать перетаскивание в любом месте вашего приложения, установите весь фон в качестве места переноса.
 
 [!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
 
@@ -68,7 +68,7 @@ ms.locfileid: "8932175"
 
 [!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
 
-## <a name="process-the-drop-event"></a>Обработка события Drop
+## <a name="process-the-drop-event"></a>Обработка завершения перетаскивания
 
 Событие [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) возникает, когда пользователь отпускает элементы в допустимой области приложения. Обработайте их с помощью свойства [**DataView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DataView).
 
@@ -98,9 +98,9 @@ ms.locfileid: "8932175"
 
 ## <a name="implementing-custom-drag-and-drop"></a>Реализация пользовательской функции перетаскивания
 
-Класс [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) выполняет большую часть работы по реализации функции перетаскивания за вас. Но если вы хотите, вы можете реализовать собственную версию с помощью API-интерфейсы в пространстве [имен Windows.ApplicationModel.DataTransfer.DragDrop.Core](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
+Класс [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) выполняет большую часть работы по реализации функции перетаскивания за вас. Но если требуется, вы можете реализовать собственную версию с помощью интерфейсов API в [пространства имен Windows.ApplicationModel.DataTransfer.DragDrop.Core](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
 
-| Функции | API-интерфейс WinRT |
+| Функция | API-интерфейс WinRT |
 | --- | --- |
 |  Включение перетаскивания | [CoreDragOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
 |  Создание пакета данных | [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)  |
@@ -109,14 +109,14 @@ ms.locfileid: "8932175"
 
 
 
-## <a name="see-also"></a>Смежные разделы
+## <a name="see-also"></a>См. также
 
 * [Связь между приложениями](index.md)
-* [AllowDrop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx)
+* [Свойства AllowDrop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx)
 * [CanDrag](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx)
 * [DragOver](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx)
 * [AcceptedOperation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.acceptedoperation.aspx)
 * [DataView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.dataview.aspx)
 * [DragUIOverride](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
-* [Drop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
+* [DROP](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
 * [IsDragSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isdragsource.aspx)

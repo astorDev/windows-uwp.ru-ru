@@ -6,22 +6,22 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, ошибка, обработка, исключение
 ms.localizationpriority: medium
 ms.openlocfilehash: c6f7135e85ab63ddfe92bd0de8c656b58fb1a020
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937512"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626579"
 ---
 # <a name="error-handling-with-cwinrt"></a>Обработка ошибок в C++/WinRT
 
-В этом разделе обсуждаются стратегии обработки ошибок при программировании на [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Общие и дополнительные сведения см. в разделе [Обработка ошибок и исключений (современный C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
+В этом разделе рассматриваются стратегии для обработки ошибок при программировании с [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Общие и дополнительные сведения см. в разделе [Обработка ошибок и исключений (современный C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
 
 ## <a name="avoid-catching-and-throwing-exceptions"></a>Избегайте создания и перехвата исключений
 Мы рекомендуем по-прежнему писать [код с обработкой исключений](/cpp/cpp/how-to-design-for-exception-safety), но при этом избегать создания и перехват исключений, когда это возможно. Если для исключения обработчика нет, Windows автоматически создает отчет об ошибках (в том числе минидамп сбоя), который поможет вам отследить проблему.
 
 Не создавайте исключение, которое вы собираетесь перехватить. И не используйте исключения для ожидаемых ошибок. Создавайте исключение *только при возникновении непредвиденной ошибки во времени выполнения*и обрабатывайте все остальные проблемы с помощью кодов ошибок и результатов&mdash;напрямую, рядом с источником сбоя. Таким образом, при *вызове* исключения вы будете знать, причина заключается в ошибке в вашем коде или в состоянии исключения системы.
 
-Рассмотрим сценарий доступа к реестру Windows. Если вашему приложение не удается прочитать значение из реестра, этой ошибки следует ожидать, и ее необходимо корректно обрабатывать. Не вызывайте исключение, а верните значение `bool` или `enum`, указывающее, что значение не было прочитано и, возможно, причину этой ошибки. Ошибка *записи* значения в реестре, с другой стороны, скорее всего указывает на более серьезную проблему, которую невозможно обработать в вашем приложении. В такой ситуации не следует продолжать работу приложения, поэтому создание исключения, которое создает отчет об ошибках,— этой самый быстрый способ предотвращения проблем.
+Рассмотрим сценарий доступа к реестру Windows. Если вашему приложение не удается прочитать значение из реестра, этой ошибки следует ожидать, и ее необходимо корректно обрабатывать. Не вызывайте исключение, а верните значение `bool` или `enum`, указывающее, что значение не было прочитано и, возможно, причину этой ошибки. Ошибка *записи* значения в реестре, с другой стороны, скорее всего указывает на более серьезную проблему, которую невозможно обработать в вашем приложении. В такой ситуации не следует продолжать работу приложения, поэтому создание исключения, которое создает отчет об ошибках, — этой самый быстрый способ предотвращения проблем.
 
 В качестве другого примера рассмотрим получение эскиза изображения из вызова метода [**StorageFile.GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync#Windows_Storage_StorageFile_GetThumbnailAsync_Windows_Storage_FileProperties_ThumbnailMode_) и последующую передачу этого эскиза в [**BitmapSource.SetSourceAsync**](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync#Windows_UI_Xaml_Media_Imaging_BitmapSource_SetSourceAsync_Windows_Storage_Streams_IRandomAccessStream_). Если в результате такой последовательности вызовов `nullptr` передается в **SetSourceAsync** (не удалось прочитать файл изображения; возможно файл не содержит изображение, хотя расширение указывает на обратное), это приведет к вызову исключения о недопустимом указателе. Если вы обнаружили такую ситуацию в вашем коде, вместо перехвата и обработки исключения проверьте значение `nullptr`, возвращенное **GetThumbnailAsync**.
 
@@ -75,7 +75,7 @@ winrt::check_bool(::SetEvent(h.get()));
 Если значение, которое вы передаете функции [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool), равно false, выполняются следующие действия.
 
 - **winrt::check_bool** вызывает функцию [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error).
-- **WinRT::throw_last_error** вызывает [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) для извлечения значения последнего кода ошибки вызывающего потока, а затем вызывает функцию [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) .
+- **WinRT::throw_last_error** вызовы [ **GetLastError** ](https://msdn.microsoft.com/library/windows/desktop/ms679360) извлекаемого значение кода последней ошибки вызывающего потока, а затем вызывает [ **winrt::throw_ HRESULT** ](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) функции.
 - **winrt::throw_hresult** вызывает исключение, используя объект [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) (или стандартный объект), представляющий этот код ошибки.
 
 Поскольку API-интерфейсы Windows сообщают об ошибках во время выполнению с помощью различных типов возвращаемых значений, в дополнение к **winrt::check_bool** используется ряд других полезных вспомогательных функций для проверки значений и создания исключений.
@@ -105,7 +105,7 @@ HRESULT DoWork() noexcept
 }
 ```
 
-[**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) обрабатывает исключения, производные от **std::exception**, [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) и производных типов. В реализации лучше всего использовать **winrt::hresult_error** или производный тип, чтобы пользователи вашего API получали расширенные сведения об ошибке. Значение **std::exception** (которое сопоставляется с E_FAIL) поддерживается, если исключения возникают при использовании стандартной библиотеки шаблонов.
+[**WinRT::to_hresult** ](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) обрабатывает исключения, производного от **std::exception**, и [ **winrt::hresult_error** ](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) и его производные типы. В реализации лучше всего использовать **winrt::hresult_error** или производный тип, чтобы пользователи вашего API получали расширенные сведения об ошибке. Значение **std::exception** (которое сопоставляется с E_FAIL) поддерживается, если исключения возникают при использовании стандартной библиотеки шаблонов.
 
 ## <a name="assertions"></a>Проверочные утверждения
 Для проверки внутренних предположений в приложении используются проверочные утверждения. Когда это возможно, используйте **static_assert** для проверки во время компиляции. Во время выполнения используйте WINRT_ASSERT с логическим выражением.
@@ -124,17 +124,17 @@ WINRT_VERIFY_(TRUE, ::CloseHandle(value));
 ```
 
 ## <a name="important-apis"></a>Важные API
-* [Шаблон функции winrt::check_bool](/uwp/cpp-ref-for-winrt/error-handling/check-bool)
-* [Функция winrt::check_hresult](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
-* [Шаблон функции winrt::check_nt](/uwp/cpp-ref-for-winrt/error-handling/check-nt)
-* [Шаблон функции winrt::check_pointer](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)
-* [Шаблон функции winrt::check_win32](/uwp/cpp-ref-for-winrt/error-handling/check-win32)
-* [Структура winrt::handle](/uwp/cpp-ref-for-winrt/handle)
-* [Структура winrt::hresult_error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
-* [Функция winrt::throw_hresult](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)
-* [Функция winrt::throw_last_error](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error)
-* [Функция winrt::to_hresult](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
+* [Шаблон функции WinRT::check_bool](/uwp/cpp-ref-for-winrt/error-handling/check-bool)
+* [winrt::check_hresult function](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
+* [Шаблон функции WinRT::check_nt](/uwp/cpp-ref-for-winrt/error-handling/check-nt)
+* [winrt::check_pointer function template](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)
+* [Шаблон функции WinRT::check_win32](/uwp/cpp-ref-for-winrt/error-handling/check-win32)
+* [Структура WinRT::Handle](/uwp/cpp-ref-for-winrt/handle)
+* [Структура WinRT::hresult_error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [функция WinRT::throw_hresult](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)
+* [функция WinRT::throw_last_error](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error)
+* [winrt::to_hresult function](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Обработка ошибок и исключений (современный C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)
-* [Практическое руководство. Проектирования для безопасной обработки исключений](/cpp/cpp/how-to-design-for-exception-safety)
+* [Ошибки и обработка исключений (современный C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)
+* [Инструкции: Разработка с учетом безопасности исключений](/cpp/cpp/how-to-design-for-exception-safety)

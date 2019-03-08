@@ -8,13 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6efe7aa27721f519ba93052abf2d0e8189f58941
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933724"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622319"
 ---
-# <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>Использование системных значений
+# <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>С помощью системных значений
 
 
 Создаваемые системой значения генерируются [этапом сборщика входных данных (IA)](input-assembler-stage--ia-.md) (на основе заданной пользователем [семантики](https://msdn.microsoft.com/library/windows/desktop/bb509647) входных данных) в целях повышения эффективности операций шейдера. Благодаря прикреплению определенных данных, таких как идентификатор экземпляра (видимый [этапу шейдера вершин (VS)](vertex-shader-stage--vs-.md)), идентификатор вершины (видимый VS) или идентификатор примитива (видимый [этапу шейдера геометрии (GS)](geometry-shader-stage--gs-.md)/[этапу построителя текстуры (PS)](pixel-shader-stage--ps-.md)), последующий этап шейдера может искать эти системные значения для оптимизации обработки на этом этапе.
@@ -95,10 +95,10 @@ IA будет добавлять идентификатор вершины к к
 
 [Этап сборщика входных данных (IA)](input-assembler-stage--ia-.md) создает идентификаторы (вершин, примитивов и экземпляров); также обратите внимание, что каждому экземпляру присваивается уникальный идентификатор экземпляра. Данные заканчиваются вырезанием полосы, которое разделяет экземпляры полосы треугольников.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Этап сборщика входных данных (IA)](input-assembler-stage--ia-.md)
+[Сборщик входных данных (IA) рабочей области](input-assembler-stage--ia-.md)
 
  
 

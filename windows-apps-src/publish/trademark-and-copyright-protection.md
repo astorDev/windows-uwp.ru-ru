@@ -1,5 +1,5 @@
 ---
-Description: Learn what you can do if you think another app is infringing on your intellectual property rights.
+Description: Узнайте, что делать, если вы считаете, что другое приложение нарушает ваши права на интеллектуальную собственность.
 title: Защита товарных знаков и авторских прав
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 ms.date: 06/19/2017
@@ -7,23 +7,23 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 34448b5bfae7efb5dc5edbbd527307b45623c2ca
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045503"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630309"
 ---
 # <a name="trademark-and-copyright-protection"></a>Защита товарных знаков и авторских прав
 
 
 Узнайте, что делать, если вы считаете, что другое приложение нарушает ваши права на интеллектуальную собственность.
 
-### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. Как сообщить о нарушении моих прав на интеллектуальную собственность в приложении для Windows?
+### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. Как может сообщить о нарушении прав на моем прав интеллектуальной собственности в приложении Windows?
 
 
-Используйте следующую [форму](https://go.microsoft.com/fwlink/p/?LinkId=273879), чтобы отправить жалобу о нарушении авторских прав, прав на товарные знаки или публичность в приложении для Windows. Жалобы о нарушении авторских прав, прав на товарные знаки или публичность в нескольких приложениях отправляйте на адрес mktlegal@microsoft.com. Если вам нужны дополнительные сведения о политике DMCA корпорации Майкрософт, посетите страницу: [https://www.microsoft.com/info/cpyrtInfrg.aspx](https://go.microsoft.com/fwlink/p/?LinkId=626976).
+Используйте следующую [форму](https://go.microsoft.com/fwlink/p/?LinkId=273879), чтобы отправить жалобу о нарушении авторских прав, прав на товарные знаки или публичность в приложении для Windows. Жалобы о нарушении авторских прав, прав на товарные знаки или публичность в нескольких приложениях отправляйте на адрес mktlegal@microsoft.com. Если вам нужна дополнительная информация о политике DMCA корпорации Майкрософт, посетите: [ https://www.microsoft.com/info/cpyrtInfrg.aspx ](https://go.microsoft.com/fwlink/p/?LinkId=626976).
 
-### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. Мое приложение создано для работы с продуктом или службой Microsoft. Можно ли использовать имя продукта или службы Microsoft в имени приложения?
+### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. Я создал приложение для работы с Microsoft продуктов и служб. Можно ли использовать имя продукта или службы Microsoft в имени приложения?
 
 
 Корпорация Microsoft настоятельно не рекомендует этого. Но если существует четкая бизнес-необходимость, вы можете сделать это, следуя указанным ниже требованиям:
@@ -34,31 +34,31 @@ ms.locfileid: "9045503"
 
 Дополнительные сведения см. в [общих рекомендациях по использованию товарных знаков Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=225434).
 
-### <a name="3-is-it-ok-if-i-use-the-trademarked-name-or-logo-of-another-company-in-the-title-of-my-app-or-as-part-of-the-content-of-my-app"></a>3. Можно ли использовать имя или эмблему, зарегистрированную как торговый знак другой компании, в названии приложения или контенте приложения?
+### <a name="3-is-it-ok-if-i-use-the-trademarked-name-or-logo-of-another-company-in-the-title-of-my-app-or-as-part-of-the-content-of-my-app"></a>3. Это ОК Если я использую формируют имя или логотип компании, другой в заголовке моего приложения или как часть содержимого моего приложения?
 
 
 Вам следует проконсультироваться с юридическим советником по использованию имени или эмблемы, зарегистрированной как товарный знак другой компании. Однако корпорация Microsoft удаляет приложения из Магазина до уведомления от владельцев товарного знака по поводу его использования. Поэтому мы настоятельно рекомендуем выполнить все необходимые проверки и процедуры.
 
-Дополнительные сведения см. в [статье на веб-сайте Бюро США по патентам и товарным знакам, посвященной товарным знакам](https://go.microsoft.com/fwlink/p/?LinkId=225271).
+Дополнительные сведения см. в разделе [США Патентов и товарных знаков Office: Основы Trademark](https://go.microsoft.com/fwlink/p/?LinkId=225271).
 
-### <a name="4-may-i-use-microsofts-graphical-trademarks-logos-such-as-the-windows-flag-logo-in-my-app"></a>4. Можно ли использовать графические торговые знаки Microsoft (эмблемы), например WINDOWS FLAG, в приложении?
+### <a name="4-may-i-use-microsofts-graphical-trademarks-logos-such-as-the-windows-flag-logo-in-my-app"></a>4. Может использовать графический товарными знаками корпорации Майкрософт (логотипы), такие как эмблема WINDOWS ФЛАГ, в моем приложении?
 
 
 Нет. Microsoft разрешает использовать третьим лицам зарегистрированные эмблемы только посредством формальной лицензии. В данном контексте подобные лицензии обычно недоступны.
 
-Дополнительные сведения см. в [статье на веб-сайте Бюро США по патентам и товарным знакам, посвященной товарным знакам](https://go.microsoft.com/fwlink/p/?LinkId=225271). Также вы можете загрузить документ [Бюро по охране авторских прав США: основы защиты авторских прав](https://go.microsoft.com/fwlink/p/?LinkID=225273).
+Дополнительные сведения см. в разделе [США Патентов и товарных знаков Office: Основы Trademark](https://go.microsoft.com/fwlink/p/?LinkId=225271) или загрузить [США Авторские права Office: Основные сведения об авторских правах](https://go.microsoft.com/fwlink/p/?LinkID=225273).
 
-### <a name="5-do-i-need-to-use-registered--or-trademark--symbols-when-i-refer-to-a-microsoft-trademark-in-my-app-and-must-i-when-using-a-microsoft-trademark-place-a-trademark-attribution-notice-in-my-app-for-example-microsoft-is-a-registered-trademark-of-the-microsoft-corporation"></a>5.Следует ли использовать символы ® или ™ при указании торгового знака Microsoft в своем приложении? И следует ли размещать уведомление о торговом знаке, например "Microsoft является зарегистрированным торговым знаком корпорации Microsoft", в приложении при использовании торгового знака Microsoft?
+### <a name="5-do-i-need-to-use-registered--or-trademark--symbols-when-i-refer-to-a-microsoft-trademark-in-my-app-and-must-i-when-using-a-microsoft-trademark-place-a-trademark-attribution-notice-in-my-app-for-example-microsoft-is-a-registered-trademark-of-the-microsoft-corporation"></a>5. Нужно ли использовать зарегистрированные® или товарный знак™ символов, когда я ссылаюсь товарным знаком корпорации Майкрософт в моем приложении? И следует ли размещать уведомление о торговом знаке, например "Microsoft является зарегистрированным торговым знаком корпорации Microsoft", в приложении при использовании торгового знака Microsoft?
 
 
 Не существует юридического требования для указания таких символов или уведомления, но корпорация Microsoft будет крайне вам благодарна за это.
 
-### <a name="6-is-it-ok-if-i-make-a-game-that-is-identical-to-someone-elses-game-as-long-as-i-change-the-name"></a>6. Можно ли создать игру, которая идентична игре другого разработчика, изменив ее имя?
+### <a name="6-is-it-ok-if-i-make-a-game-that-is-identical-to-someone-elses-game-as-long-as-i-change-the-name"></a>6. Это ОК Если я создаю игры, в которой идентичен игры другого пользователя, до тех пор, пока изменить имя?
 
 
-Нет, без разрешения автора это запрещается. Хотя закон об авторском праве на защищает идею игры, он охраняет оригинальное выражение игры, например аудиовизуальные элементы, графику, звуки, персонажи и т. д., а также оригинальную выборку и расположение этих элементов. Игра, которая слишком похоже на чью-то другую игру, может стать причиной жалобы о нарушении авторских прав. Корпорация Microsoft не предоставляет консультаций по этому вопросу. Возможно, вам потребуется обратиться к собственному адвокату, если вы не уверены о том, являются ли игры похожими. Для получения дополнительных сведений загрузите документ [Бюро по охране авторских прав США: основы защиты авторских прав](https://go.microsoft.com/fwlink/p/?LinkID=225273).
+Нет, без разрешения автора это запрещается. Хотя закон об авторском праве на защищает идею игры, он охраняет оригинальное выражение игры, например аудиовизуальные элементы, графику, звуки, персонажи и т. д., а также оригинальную выборку и расположение этих элементов. Игра, которая слишком похоже на чью-то другую игру, может стать причиной жалобы о нарушении авторских прав. Корпорация Microsoft не предоставляет консультаций по этому вопросу. Возможно, вам потребуется обратиться к собственному адвокату, если вы не уверены о том, являются ли игры похожими. Чтобы получить дополнительные сведения, скачайте [США Авторские права Office: Основные сведения об авторских правах](https://go.microsoft.com/fwlink/p/?LinkID=225273).
 
-### <a name="7-what-should-i-do-if-i-get-a-notice-from-microsoft-telling-me-it-has-received-a-complaint-that-my-app-infringes-a-trademark-or-copyright"></a>7. Что делать, если мне пришло уведомление от Microsoft о том, что в Microsoft поступила жалоба о нарушении моим приложением авторских прав или прав на использование торгового знака?
+### <a name="7-what-should-i-do-if-i-get-a-notice-from-microsoft-telling-me-it-has-received-a-complaint-that-my-app-infringes-a-trademark-or-copyright"></a>7. Что делать, если получено уведомление от корпорации Майкрософт о том, что он получил жалобы, что мое приложение нарушает товарный знак или авторские права?
 
 
 Внимательно прочитайте уведомление от Microsoft и следуйте инструкциям. Уведомление от Microsoft может содержать конкретные инструкции для предоставления нам сведений о том, что вы сделали, чтобы исправить проблему, о том, что вы не согласны с заявителем, и (или) о том, что вы хотите повторно отправить приложение в Магазин.

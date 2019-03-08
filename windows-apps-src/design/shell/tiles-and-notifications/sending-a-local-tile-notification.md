@@ -1,5 +1,5 @@
 ---
-Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
+Description: В этой статье описывается, как с помощью шаблонов адаптивных плиток отправлять локальное уведомление на плитке на основную и вспомогательную плитку.
 title: Отправка локального уведомления на плитке
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
@@ -8,16 +8,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946319"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636109"
 ---
 # <a name="send-a-local-tile-notification"></a>Отправка локального уведомления на плитке
  
 
-Основные плитки приложений в Windows10 определяются в манифесте приложения, а вспомогательные плитки создаются программно и определяются кодом приложения. В этой статье описывается, как с помощью шаблонов адаптивных плиток отправлять локальное уведомление на плитке на основную и вспомогательную плитку. (Локальное уведомление — это уведомление, отправляемое из кода приложения, тогда как уведомление другого типа отправляется принудительно (push-уведомление) или поступает с веб-сервера).
+Основное приложение плитки в Windows 10 определены в манифесте приложения, хотя вспомогательные плитки программным образом создаются и определяются в коде приложения. В этой статье описывается, как с помощью шаблонов адаптивных плиток отправлять локальное уведомление на плитке на основную и вспомогательную плитку. (Локальное уведомление — это уведомление, отправляемое из кода приложения, тогда как уведомление другого типа отправляется принудительно (push-уведомление) или поступает с веб-сервера).
 
 ![стандартная плитка и плитка с уведомлением](images/sending-local-tile-01.png)
 
@@ -46,7 +46,7 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>Создание содержимого уведомления
 
 
-В Windows10 полезные данные плитки определяются с помощью шаблонов адаптивных плиток, которые позволяют создавать собственные визуальные макеты для уведомлений. (Дополнительные сведения об операциях, которые можно выполнять с адаптивными плитками, см. в статье [Создание адаптивных плиток](create-adaptive-tiles.md)).
+В Windows 10 Плитка полезных данных определяются с помощью адаптивной плитку шаблоны, которые позволяют создавать собственные макеты visual для уведомлений. (Дополнительные сведения об операциях, которые можно выполнять с адаптивными плитками, см. в статье [Создание адаптивных плиток](create-adaptive-tiles.md)).
 
 В этом примере кода создается содержимое адаптивной плитки для средних и широких плиток.
 
@@ -150,7 +150,7 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
 
 Несмотря на то, что локальная отправка уведомления плитки является простым процессом, отправка уведомления на основную или вспомогательную плитку выполняется несколько иначе.
 
-**Основная плитка**
+**Основной элемент**
 
 Чтобы отправить уведомление на основную плитку, используйте [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager) для создания средства обновления основной плитки и отправьте уведомление, вызвав метод «Update». Независимо от того, отображается основная плитка приложения или нет, она всегда существует, таким образом на нее можно отправлять уведомления, даже если она не закреплена. Когда пользователь закрепит основную плитку, тогда и отобразятся отправленные вами уведомления.
 
@@ -162,7 +162,7 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
 TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 ```
 
-**Вспомогательная плитка**
+**Вторичная плитка**
 
 Чтобы отправить уведомление на вспомогательную плитку, сначала убедитесь, что вспомогательная плитка существует. Если создать средство обновления плитки для вспомогательной плитки, которой не существует (например, если пользователь открепил вспомогательную плитку), будет выдано исключение. Вы можете использовать [**SecondaryTile.Exists**](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.SecondaryTile#Windows_UI_StartScreen_SecondaryTile_Exists_System_String_)(tileId), чтобы определить, закреплена ли вспомогательная плитка, а затем создать средство обновления плитки для вспомогательной плитки и отправить уведомление.
 
@@ -199,10 +199,10 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();
 
 ![плитка с уведомлением и плитка после ее очищения](images/sending-local-tile-03.png)
 
-## <a name="next-steps"></a>Следующие этапы
+## <a name="next-steps"></a>Дальнейшие действия
 
 
-**Использование очереди уведомлений**
+**С помощью очереди уведомлений**
 
 Теперь, когда вы выполнили первое обновление плитки, вы можете расширить функциональность своей плитки, включив [очередь уведомлений](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234).
 
@@ -284,14 +284,14 @@ doc.LoadXml(content);
 var notification = new TileNotification(doc);
 ```
 
-## <a name="related-topics"></a>Ссылки по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Создание адаптивных плиток](create-adaptive-tiles.md)
 * [Схема содержимого плитки](../tiles-and-notifications/tile-schema.md)
 * [Библиотека уведомлений](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
-* [Полный пример кода на GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
+* [Полный образец кода на GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Пространство имен Windows.UI.Notifications**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
-* [Использование очереди уведомлений (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
+* [Как использовать очереди уведомлений (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
 * [Доставка уведомлений](choosing-a-notification-delivery-method.md)
  
 

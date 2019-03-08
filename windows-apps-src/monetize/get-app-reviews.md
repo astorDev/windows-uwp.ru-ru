@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp, службы Магазина, API аналитики для Microsoft Store, отзывы
 ms.localizationpriority: medium
 ms.openlocfilehash: 084158c0eb20f1d2a03c0e178064ac168c689872
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919240"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599119"
 ---
 # <a name="get-app-reviews"></a>Получение отзывов о приложении
 
 
-Используйте этот метод в API аналитики для Microsoft Store для получения рецензий в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [отчет "рецензии"](../publish/reviews-report.md) в центре партнеров.
+Используйте этот метод в API аналитики для Microsoft Store для получения рецензий в формате JSON в заданном диапазоне дат или с учетом других дополнительных фильтров. Эта информация также доступна в [просматривает отчет](../publish/reviews-report.md) в центре партнеров.
 
 После получения отзывов вы можете использовать методы [получения сведений об ответах на отзывы о приложении](get-response-info-for-app-reviews.md) и [отправки ответов на отзывы о приложении](submit-responses-to-app-reviews.md) в API отзывов Microsoft Store, чтобы программно отвечать на отзывы.
 
@@ -25,13 +25,13 @@ ms.locfileid: "8919240"
 Для использования этого метода сначала необходимо сделать следующее:
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](access-analytics-data-using-windows-store-services.md#prerequisites) для API аналитики для Microsoft Store.
-* [Получите маркер доступа Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения маркера доступа у вас будет 60минут, чтобы использовать его до окончания срока действия маркера. После истечения срока действия маркера можно получить новый маркер.
+* [Получите маркер доступа Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения токена доступа у вас будет 60 минут, чтобы использовать его до окончания его срока действия. После истечения срока действия токена можно получить новый токен.
 
 ## <a name="request"></a>Запрос
 
 ### <a name="request-syntax"></a>Синтаксис запроса
 
-| Метод | URI запроса                                                      |
+| Метод | Универсальный код ресурса (URI) запроса                                                      |
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews``` |
 
@@ -40,20 +40,20 @@ ms.locfileid: "8919240"
 
 | Заголовок        | Тип   | Описание                                                                 |
 |---------------|--------|---------------------|
-| Authorization | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;. |
+| Authorization | Строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-| Параметр        | Тип   |  Описание      |  Обязательный  
+| Параметр        | Тип   |  Описание      |  Обязательно  
 |---------------|--------|---------------|------|
-| applicationId | string | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для приложения, по которому требуется получить данные об отзывах.  |  Да  |
-| startDate | date | Начальная дата диапазона дат, для которого требуется получить данные об отзывах. По умолчанию используется текущая дата |  Нет  |
-| endDate | date | Конечная дата диапазона дат, для которого требуется получить данные об отзывах. По умолчанию используется текущая дата |  Нет  |
-| top | int | Количество строк данных, возвращаемых в запросе. Максимальное значение и значение по умолчанию (если параметр не указан) — 10 000. Если в запросе содержится больше строк, то тело ответа будет содержать ссылку «Далее», которую можно использовать для запроса следующей страницы данных |  Нет  |
+| applicationId | Строка | [Код продукта в Store](in-app-purchases-and-trials.md#store-ids) для приложения, по которому требуется получить данные об отзывах.  |  Да  |
+| startDate | date | Начальная дата диапазона дат, для которого требуется получить данные об отзывах. По умолчанию используется текущая дата. |  Нет  |
+| endDate | date | Конечная дата диапазона дат, для которого требуется получить данные об отзывах. По умолчанию используется текущая дата. |  Нет  |
+| top | int | Количество строк данных, возвращаемых в запросе. Максимальное значение и значение по умолчанию (если параметр не указан) — 10 000. Если в запросе содержится больше строк, то тело ответа будет содержать ссылку "Далее", которую можно использовать для запроса следующей страницы данных |  Нет  |
 | skip | int | Количество строк, пропускаемых в запросе. Используйте этот параметр для постраничного перемещения по большим наборам данных. Например, при top=10000 и skip=0 извлекаются первые 10 000 строк данных; при top=10000 и skip=10000 извлекаются следующие 10 000 строк данных и т. д. |  Нет  |
-| filter |string  | Один или несколько операторов для фильтрации строк в ответе. Дополнительные сведения см. далее в разделе [фильтрация полей](#filter-fields) | Нет   |
-| orderby | string | Выражение, которое определяет порядок полученных значений данных. Используется следующий синтаксис: <em>orderby=field [order],field [order],...</em>, где параметр <em>field</em> может принимать одно из следующих строковых значений:<ul><li><strong>date,</strong></li><li><strong>osVersion,</strong></li><li><strong>market,</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised,</strong></li><li><strong>packageVersion,</strong></li><li><strong>deviceModel,</strong></li><li><strong>productFamily,</strong></li><li><strong>deviceScreenResolution,</strong></li><li><strong>isTouchEnabled,</strong></li><li><strong>reviewerName,</strong></li><li><strong>reviewTitle,</strong></li><li><strong>reviewText,</strong></li><li><strong>helpfulCount,</strong></li><li><strong>notHelpfulCount,</strong></li><li><strong>responseDate,</strong></li><li><strong>responseText,</strong></li><li><strong>deviceRAM,</strong></li><li><strong>deviceStorageCapacity,</strong></li><li><strong>rating.</strong></li></ul><p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p><p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p> |  Нет  |
+| filter |Строка  | Один или несколько операторов для фильтрации строк в ответе. Дополнительные сведения см. далее в разделе [фильтрация полей](#filter-fields) | Нет   |
+| orderby | Строка | Оператор, который определяет порядок полученных значений данных. Используется следующий синтаксис: <em>orderby=field [порядк.],field [порядк.],...</em>. Параметр <em>field</em> может быть одной из следующих строк:<ul><li><strong>Дата</strong></li><li><strong>версия ОС</strong></li><li><strong>на рынке</strong></li><li><strong>типа устройства</strong></li><li><strong>isRevised</strong></li><li><strong>packageVersion</strong></li><li><strong>deviceModel</strong></li><li><strong>Семейство productFamily</strong></li><li><strong>deviceScreenResolution</strong></li><li><strong>isTouchEnabled</strong></li><li><strong>reviewerName</strong></li><li><strong>reviewTitle</strong></li><li><strong>reviewText</strong></li><li><strong>helpfulCount</strong></li><li><strong>notHelpfulCount</strong></li><li><strong>responseDate</strong></li><li><strong>responseText</strong></li><li><strong>deviceRAM</strong></li><li><strong>deviceStorageCapacity</strong></li><li><strong>Оценка</strong></li></ul><p>Параметр <em>order</em> является необязательным и может принимать значения <strong>asc</strong> или <strong>desc</strong>, которые указывают, соответственно, порядок сортировки по возрастанию или по убыванию для каждого поля. Значение по умолчанию — <strong>asc</strong>.</p><p>Пример: строка <em>orderby</em>: <em>orderby=date,market</em></p> |  Нет  |
 
 
 ### <a name="filter-fields"></a>Поля фильтра
@@ -67,12 +67,12 @@ ms.locfileid: "8919240"
 | Поля        | Поддерживаемые операторы   |  Описание        |
 |---------------|--------|-----------------|
 | market | eq, ne | Строка, которая содержит код страны рынка устройства по стандарту ISO 3166 |
-| osVersion  | eq, ne  | Одна из следующих строк:<ul><li><strong>Windows Phone 7.5;</strong></li><li><strong>Windows Phone 8;</strong></li><li><strong>Windows Phone8.1;</strong></li><li><strong>Windows Phone 10;</strong></li><li><strong>Windows 8;</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown (неизвестно).</strong></li></ul>  |
-| deviceType  | eq, ne  | Одна из следующих строк:<ul><li><strong>Компьютер</strong></li><li><strong>Телефон</strong></li><li><strong>Console (консоль),</strong></li><li><strong>Интернет вещей</strong></li><li><strong>Holographic (голография),</strong></li><li><strong>Неизвестно</strong></li></ul>  |
+| osVersion  | eq, ne  | Одна из следующих строк:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Неизвестный</strong></li></ul>  |
+| deviceType  | eq, ne  | Одна из следующих строк:<ul><li><strong>ПК</strong></li><li><strong>Телефон</strong></li><li><strong>Консоль</strong></li><li><strong>Интернета вещей</strong></li><li><strong>Holographic</strong></li><li><strong>Неизвестный</strong></li></ul>  |
 | isRevised  | eq, ne  | Если нужно отфильтровать пересмотренные отзывы, укажите значение <strong>true</strong>, в противном случае — <strong>false</strong>  |
 | packageVersion  | eq, ne  | Версия пакета приложения, на которую оставлен отзыв  |
 | deviceModel  | eq, ne  | Тип устройства, на котором был оставлен отзыв на приложение  |
-| productFamily  | eq, ne  | Одна из следующих строк:<ul><li><strong>Компьютер</strong></li><li><strong>Планшет</strong></li><li><strong>Телефон</strong></li><li><strong>Носимое устройство</strong></li><li><strong>Server</strong></li><li><strong>Collaborative</strong></li><li><strong>Прочее</strong></li></ul>  |
+| productFamily,  | eq, ne  | Одна из следующих строк:<ul><li><strong>ПК</strong></li><li><strong>Планшета</strong></li><li><strong>Телефон</strong></li><li><strong>Переносной</strong></li><li><strong>Сервер</strong></li><li><strong>Совместной работы</strong></li><li><strong>Другие</strong></li></ul>  |
 | deviceRAM  | eq, ne, gt, lt, ge, le  | Физическое ОЗУ в МБ.  |
 | deviceScreenResolution  | eq, ne  | Разрешение экрана устройства в формате &quot;<em>ширина</em> x <em>высота</em>&quot;.   |
 | deviceStorageCapacity  | eq, ne, gt, lt, ge, le   | Объем основного запоминающего устройства в ГБ.  |
@@ -82,7 +82,7 @@ ms.locfileid: "8919240"
 | reviewTitle  | eq, ne, contains  | Заголовок отзыва.  |
 | reviewText  | eq, ne, contains  |  Текстовое содержимое отзыва. |
 | helpfulCount  | eq, ne  |  Количество оценок отзыва как полезного. |
-| notHelpfulCount  | eq, ne  | Количество оценок отзыва как бесполезного.  |
+| notHelpfulCount,  | eq, ne  | Количество оценок отзыва как бесполезного.  |
 | responseDate  | eq, ne  | Дата отправки ответа.  |
 | responseText  | eq, ne, contains  | Текстовое содержимое ответа.  |
 | id  | eq, ne  | ИД отзыва (это GUID).        |
@@ -107,8 +107,8 @@ Authorization: Bearer <your access token>
 
 | Значение      | Тип   | Описание      |
 |------------|--------|------------------|
-| Значение      | array  | Массив объектов, содержащий информацию об отзывах. Дополнительные сведения о данных в каждом объекте см. далее в разделе [Значения отзывов](#review-values).       |
-| @nextLink  | string | При наличии дополнительных страниц данных эта строка содержит URI-адрес, который можно использовать для запроса следующей страницы данных. Например, это значение возвращается в том случае, если параметр **top** запроса имеет значение 10 000, но для данного запроса имеется больше 10 000 строк с информацией об отзывах. |
+| Значение      | Массив  | Массив объектов, содержащий информацию об отзывах. Дополнительные сведения о данных в каждом объекте см. далее в разделе [Значения отзывов](#review-values)       |
+| @nextLink  | Строка | При наличии дополнительных страниц данных эта строка содержит универсальный код ресурса (URI), который можно использовать для запроса следующей страницы данных. Например, это значение возвращается в том случае, если параметр **top** запроса имеет значение 10 000, но для данного запроса имеется больше 10 000 строк с информацией об отзывах. |
 | TotalCount | int    | Общее количество строк в результирующих данных для запроса.  |
 
  
@@ -118,29 +118,29 @@ Authorization: Bearer <your access token>
 
 | Значение           | Тип    | Описание       |
 |-----------------|---------|-------------------|
-| date            | string  | Первая дата в диапазоне дат, для которого требуется получить данные об отзывах. Если в запросе указан один день, это значение равно соответствующей дате. Если запрос указывает неделю, месяц или другой диапазон дат, это значение равно первой дате в этом диапазоне дат |
-| applicationId   | string  | Код продукта в Магазине для приложения, по которому запрашиваются данные об отзывах.         |
-| applicationName | string  | Отображаемое имя приложения.    |
-| market          | string  | Код страны рынка, на котором был отправлен отзыв, по стандарту ISO 3166.        |
-| osVersion       | string  | Версия ОС, в которой был отправлен отзыв. Список поддерживаемых строк см. выше в разделе [Поля фильтра](#filter-fields)            |
-| deviceType      | string  | Тип устройства, на котором был отправлен отзыв. Список поддерживаемых строк см. выше в разделе [Поля фильтра](#filter-fields)            |
-| isRevised       | Boolean | Значение **true** указывает, что отзыв был пересмотрен; в противном случае используется значение **false**   |
-| packageVersion  | string  | Версия пакета приложения, на которую оставлен отзыв        |
-| deviceModel        | string  |Тип устройства, на котором был оставлен отзыв на приложение     |
-| productFamily      | string  | Имя семейства устройств. Список поддерживаемых строк см. выше в разделе [Поля фильтра](#filter-fields)   |
+| date            | Строка  | Первая дата в диапазоне дат, для которого требуется получить данные об отзывах. Если в запросе указан один день, это значение равно соответствующей дате. Если запрос указывает неделю, месяц или другой диапазон дат, это значение равно первой дате в этом диапазоне дат |
+| applicationId   | Строка  | Код продукта в Магазине для приложения, по которому запрашиваются данные об отзывах.         |
+| applicationName | Строка  | Отображаемое имя приложения.    |
+| market          | Строка  | Код страны рынка, на котором был отправлен отзыв, по стандарту ISO 3166.        |
+| osVersion       | Строка  | Версия ОС, в которой был отправлен отзыв. Список поддерживаемых строк см. выше в разделе [Поля фильтра](#filter-fields)            |
+| deviceType      | Строка  | Тип устройства, на котором был отправлен отзыв. Список поддерживаемых строк см. выше в разделе [Поля фильтра](#filter-fields)            |
+| isRevised       | Boolean (Логическое) | Значение **true** указывает, что отзыв был пересмотрен; в противном случае используется значение **false**   |
+| packageVersion  | Строка  | Версия пакета приложения, на которую оставлен отзыв        |
+| deviceModel        | Строка  |Тип устройства, на котором был оставлен отзыв на приложение     |
+| productFamily,      | Строка  | Имя семейства устройств. Список поддерживаемых строк см. выше в разделе [Поля фильтра](#filter-fields)   |
 | deviceRAM       | number  | Физическое ОЗУ в МБ.    |
-| deviceScreenResolution       | string  | Разрешение экрана устройства в формате "*ширина* x *высота*"    |
+| deviceScreenResolution       | Строка  | Разрешение экрана устройства в формате "*ширина* x *высота*"    |
 | deviceStorageCapacity | number | Объем основного запоминающего устройства в ГБ. |
-| isTouchEnabled | Boolean | Значение **true** указывает, что сенсорный ввод включен; в противном случае используется значение **false** |
-| reviewerName | string | Имя автора отзыва. |
+| isTouchEnabled | Boolean (Логическое) | Значение **true** указывает, что сенсорный ввод включен; в противном случае используется значение **false** |
+| reviewerName | Строка | Имя автора отзыва. |
 | rating | number | Оценка приложения в звездах. |
-| reviewTitle | string | Заголовок отзыва. |
-| reviewText | string | Текстовое содержимое отзыва. |
+| reviewTitle | Строка | Заголовок отзыва. |
+| reviewText | Строка | Текстовое содержимое отзыва. |
 | helpfulCount | number | Количество оценок отзыва как полезного. |
-| notHelpfulCount | number | Количество оценок отзыва как бесполезного. |
-| responseDate | string | Дата отправки ответа. |
-| responseText | string | Текстовое содержимое ответа. |
-| id | string | ИД отзыва (это GUID). Вы можете использовать этот ИД в методах [получения сведений об ответах на отзывы о приложении](get-response-info-for-app-reviews.md) и [отправки ответов на отзывы о приложении](submit-responses-to-app-reviews.md). |
+| notHelpfulCount, | number | Количество оценок отзыва как бесполезного. |
+| responseDate | Строка | Дата отправки ответа. |
+| responseText | Строка | Текстовое содержимое ответа. |
+| id | Строка | ИД отзыва (это GUID). Вы можете использовать этот ИД в методах [получения сведений об ответах на отзывы о приложении](get-response-info-for-app-reviews.md) и [отправки ответов на отзывы о приложении](submit-responses-to-app-reviews.md). |
 
 
 ### <a name="response-example"></a>Пример ответа
@@ -181,13 +181,13 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## <a name="related-topics"></a>Связанные статьи
+## <a name="related-topics"></a>Статьи по теме
 
-* [Отчет "Отзывы"](../publish/reviews-report.md)
-* [Доступ к аналитическим данным с помощью служб Microsoft Store](access-analytics-data-using-windows-store-services.md)
-* [Получение сведений об ответах на отзывы о приложении](get-response-info-for-app-reviews.md)
-* [Отправка ответов на отзывы о приложении](submit-responses-to-app-reviews.md)
-* [Получение сведений о приобретениях приложения](get-app-acquisitions.md)
-* [Получение сведений о покупках надстройки](get-in-app-acquisitions.md)
-* [Получение данных отчетов об ошибках](get-error-reporting-data.md)
-* [Получение сведений об оценках приложения](get-app-ratings.md)
+* [Отчет "Рецензии"](../publish/reviews-report.md)
+* [Доступ к данным аналитики с помощью служб Microsoft Store](access-analytics-data-using-windows-store-services.md)
+* [Получение сведений о ответа для проверки приложения](get-response-info-for-app-reviews.md)
+* [Отправка ответов на проверки приложения](submit-responses-to-app-reviews.md)
+* [Получить приобретения приложений](get-app-acquisitions.md)
+* [Получить приобретение надстройки](get-in-app-acquisitions.md)
+* [Получить данные отчетов об ошибках](get-error-reporting-data.md)
+* [Получение оценок приложения](get-app-ratings.md)

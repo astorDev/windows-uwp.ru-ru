@@ -1,21 +1,21 @@
 ---
 title: Диспетчер учетных веб-записей
-description: В этой статье описан метод использования AccountsSettingsPane для подключения приложения универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Microsoft или Facebook, с помощью API диспетчера учетных веб-записей для Windows10.
+description: В этой статье описан метод использования AccountsSettingsPane для подключения приложения универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Microsoft или Facebook, с помощью API диспетчера учетных веб-записей для Windows 10.
 ms.date: 12/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, безопасность
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: a0a16ac9a2d810f7f4cbe2be403713b5cec4997b
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116050"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641029"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
-В этой статье описан метод использования **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** для подключения приложения универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Microsoft или Facebook, с помощью API диспетчера учетных веб-записей для Windows10. Вы узнаете, как запросить разрешение пользователя на использование учетной записи Майкрософт, получить маркер доступа и использовать его для выполнения базовых операций (например, для получения данных профиля или отправки файлов в учетную запись OneDrive). Порядок действий при получении разрешения пользователя и доступа с помощью любого поставщика удостоверений, поддерживающего диспетчер учетных записей в Интернете, практически одинаков.
+В этой статье описан метод использования **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** для подключения приложения универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Microsoft или Facebook, с помощью API диспетчера учетных веб-записей для Windows 10. Вы узнаете, как запросить разрешение пользователя на использование учетной записи Майкрософт, получить маркер доступа и использовать его для выполнения базовых операций (например, для получения данных профиля или отправки файлов в учетную запись OneDrive). Порядок действий при получении разрешения пользователя и доступа с помощью любого поставщика удостоверений, поддерживающего диспетчер учетных записей в Интернете, практически одинаков.
 
 > [!NOTE]
 > Полный пример кода см. в [образце кода WebAccountManagement на GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620621).
@@ -76,7 +76,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 Панель пуста, поскольку система предоставляет лишь оболочку пользовательского интерфейса, — разработчику необходимо программно добавить в панель поставщиков удостоверений. 
 
 > [!TIP]
-> При необходимости можно использовать **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** вместо **[отображения](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**, который возвращает **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**, для запроса состояние операции. 
+> При необходимости можно использовать **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** вместо  **[Показать](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**, возвращающий  **[ IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**, чтобы запросить состояние операции. 
 
 ## <a name="register-for-accountcommandsrequested"></a>Регистрация AccountCommandsRequested
 
@@ -178,7 +178,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * Сведения об областях OneDrive см. в разделе [Аутентификация OneDrive и вход в систему](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]
-> При необходимости Если ваше приложение использует подсказку для входа в систему (чтобы заполнить поле пользователя с адресом электронной почты по умолчанию) или другие специальные свойства, связанные с входа в систему, укажите его в свойстве **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** . Это приведет к система игнорирует свойства при кэшировании учетных записей в Интернете, которое предотвращает несоответствия учетной записи в кэше.
+> При необходимости, если ваше приложение использует Указание имени входа (для заполнения поле пользователя с электронным адресом по умолчанию) или другие специальные свойства, связанного с входа в систему, укажите ее в **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** свойство. В результате система игнорирует свойство при кэшировании web учетной записи, что предотвращает несоответствия учетной записи в кэше.
 
 Если вы разрабатываете корпоративное приложение, то, скорее всего, захотите подключиться к экземпляру Azure Active Directory (AAD) и использовать Microsoft Graph API вместо обычных служб учетной записи Майкрософт. В этом случае используйте следующий код: 
 
@@ -338,7 +338,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="remove-a-stored-account"></a>Удаление сохраненной учетной записи
 
-Если вы сохраняете учетную веб-запись, целесообразно предоставить пользователям возможность отвязать их учетную запись от вашего приложения. Таким образом, они могут действительно «выйти» приложения: сведений своей учетной записи будет больше не будут автоматически загружаться запуска. Для этого сначала удалите все сохраненные сведения об учетной записи и поставщике. Затем вызовите метод **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** для очистки кэша и аннулируйте все имеющиеся в приложении маркеры. 
+Если вы сохраняете учетную веб-запись, целесообразно предоставить пользователям возможность отвязать их учетную запись от вашего приложения. Таким образом, они могут эффективно «выход» приложения: свои сведения об учетной записи больше не будут автоматически загружены при запуске. Для этого сначала удалите все сохраненные сведения об учетной записи и поставщике. Затем вызовите метод **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** для очистки кэша и аннулируйте все имеющиеся в приложении маркеры. 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)
@@ -398,7 +398,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 На AccountsSettingsPane можно добавлять пользовательские команды, которые отображаются в виде ссылок под списком поддерживаемых WebAccountProviders. Пользовательские команды прекрасно подходят для выполнения простых задач, связанных с учетной записью пользователя, таких как отображение политики конфиденциальности или переход на страницу поддержки пользователей, столкнувшихся с проблемами. 
 
-Пример. 
+Пример: 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -428,8 +428,8 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 [Класс AccountsSettingsPane](https://msdn.microsoft.com/library/windows/apps/windows.ui.applicationsettings.accountssettingspane)
 
-[Брокер веб-проверки подлинности](web-authentication-broker.md)
+[Веб-брокер проверки подлинности](web-authentication-broker.md)
 
-[Пример управления учетной веб-записью](https://go.microsoft.com/fwlink/p/?LinkId=620621)
+[Пример учетной записи службы управления Web](https://go.microsoft.com/fwlink/p/?LinkId=620621)
 
-[Приложение "Планировщик обедов"](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
+[Обеденный планировщик](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

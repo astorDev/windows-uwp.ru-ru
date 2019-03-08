@@ -1,29 +1,29 @@
 ---
-title: Утверждение и включите модель устройства PointOfService
-description: Узнайте о утверждения PointOfService и включить модели
+title: Устройства PointOfService утверждения и включить модели
+description: Дополнительные сведения о PointOfService утверждение и включить модели
 ms.date: 06/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e7d60c0b612a8067ac4c225dff9da5da428f1a1
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117654"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639319"
 ---
-# <a name="point-of-service-device-claim-and-enable-model"></a>POS-устройства утверждения и включить модели
+# <a name="point-of-service-device-claim-and-enable-model"></a>Точка обслуживания устройств утверждения и включите модели
 
-## <a name="claiming-for-exclusive-use"></a>Присвоение для исключительного использования
+## <a name="claiming-for-exclusive-use"></a>Утверждаем, что для монопольного использования
 
 После успешного создания объекта устройства PointOfService его необходимо присвоить, используя соответствующий метод присвоения для типа устройства, прежде чем вы сможете использовать устройство для ввода или вывода данных.  Присвоение предоставляет приложению монопольный доступ ко многим функциям устройства. Это позволяет обеспечить, что приложению не будет мешать использовать устройство другое приложение.  Только одно приложение одновременно может претендовать на монопольный доступ к устройству PointOfService. 
 
 > [!Note]
-> Действие утверждения устанавливает монопольной блокировки на устройстве, но не помещать в рабочее состояние.  Дополнительные сведения см. [Включение устройства для операций ввода-вывода](#enable-device-for-io-operations) .
+> Действие утверждения устанавливает монопольную блокировку на устройстве, но не включайте его в рабочее состояние.  См. в разделе [включить устройство для операций ввода-вывода](#enable-device-for-io-operations) Дополнительные сведения.
 
-### <a name="apis-used-to-claim--release"></a>Использовать API-интерфейсы для присвоения / выпуска
+### <a name="apis-used-to-claim--release"></a>Использовать API для утверждения / release
 
-|Устройство|Присвоение | Выпуск | 
+|Устройство|Утверждение | Выпуск | 
 |-|:-|:-|
 |BarcodeScanner | [BarcodeScanner.ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync) | [ClaimedBarcodeScanner.Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.close) |
 |CashDrawer | [CashDrawer.ClaimDrawerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.claimdrawerasync) | [ClaimedCashDrawer.Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.close) | 
@@ -32,11 +32,11 @@ ms.locfileid: "9117654"
 |PosPrinter | [PosPrinter.ClaimPrinterAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.claimprinterasync) |  [ClaimedPosPrinter.Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.close) | 
  | 
 
-## <a name="enable-device-for-io-operations"></a>Подготовьте устройство к операции ввода-вывода
+## <a name="enable-device-for-io-operations"></a>Включить устройство для операций ввода-вывода
 
-Утверждение действие просто устанавливает права монопольного доступа к устройству, но не помещать в рабочее состояние.  Для получения событий или выполнения любых операций, выходные данные необходимо включить устройства с помощью **EnableAsync**.  И наоборот вы можете вызвать **DisableAsync** , чтобы остановить прослушивание события из устройства или выполнение выходных данных.  Можно также использовать **IsEnabled** для определения состояния устройства.
+Действие утверждения просто устанавливает права монопольного доступа к устройству, но не включайте его в рабочее состояние.  Чтобы получать события или выполнять любые операции выходных данных необходимо включить устройства с помощью **EnableAsync**.  И наоборот, можно вызвать **DisableAsync** Чтобы остановить прослушивание событий из устройства и другие выходные данные.  Можно также использовать **IsEnabled** для определения состояния устройства.
 
-### <a name="apis-used-enable--disable"></a>API, используемые включить / отключить
+### <a name="apis-used-enable--disable"></a>API-интерфейсы, включение и отключение
 
 | Устройство | Включить | Отключить | IsEnabled? |
 |-|:-|:-|:-|
@@ -47,9 +47,9 @@ ms.locfileid: "9117654"
 |ClaimedPosPrinter | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.disableasyc) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.isenabled) |
 |
 
-¹ строковый дисплей не требуется явным образом включить устройство для операций ввода-вывода.  Включение выполняется автоматически с помощью API LineDisplay PointOfService, которое выполнения операций ввода-вывода.
+¹ Отображение строк не требуется явным образом включить устройство для операций ввода-вывода.  Включение выполняется автоматически с API LineDisplay PointOfService, выполнения операций ввода-вывода.
 
-## <a name="code-sample-claim-and-enable"></a>Пример кода: утверждения и включение
+## <a name="code-sample-claim-and-enable"></a>Пример кода: утверждение и включить
 
 В этом примере показано, как присвоить устройство со сканером штрихкодов после создания объекта сканера штрихкодов.
 
@@ -93,7 +93,7 @@ ms.locfileid: "9117654"
 
 Если приложение с активным присвоением сразу же не ответит с помощью метода **RetainDevice**, будет предполагаться, что приложение было приостановлено или не нуждается в устройстве, что приведет к отзыву присвоения и его передаче другому приложению. 
 
-Первым шагом является создание обработчика событий, который реагирует на событие **ReleaseDeviceRequested** с **RetainDevice**.  
+Первым шагом является создание обработчика событий, соответствующая значениям, **ReleaseDeviceRequested** событие с **RetainDevice**.  
 
 ```Csharp
     /// <summary>
@@ -107,7 +107,7 @@ ms.locfileid: "9117654"
     }
 ```
 
-Зарегистрируйте обработчик событий в связи с присвоенные устройства
+Зарегистрируйте обработчик событий в связи с устройством запрошенные
 
 ```Csharp
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);

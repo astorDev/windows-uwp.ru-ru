@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, API коллекции Microsoft Store, исполнение, потребляемый продукт
 ms.localizationpriority: medium
 ms.openlocfilehash: cea8937af3df0ad1e80434d649f431d188521667
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116030"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615809"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>Объявление потребляемого продукта в качестве выполненного
 
@@ -19,10 +19,10 @@ ms.locfileid: "9116030"
 
 Существует два способа использования данного метода, которые позволяют объявить потребляемый продукт в качестве выполненного.
 
-* Укажите код товара (он возвращается параметром **itemId** [запроса продуктов](query-for-products.md)) и предоставляемый вами уникальный ИД отслеживания. Если один и тот же ИД отслеживания будет использован несколько раз, будет возвращен тот же самый результат, даже если элемент уже потреблен. Если вы не уверены что запрос потребления был выполнен успешно, ваша служба должна повторно отправить запросы потребления с тем же самым ИД отслеживания. ИД отслеживания всегда будет привязан к этому запросу потребления и может отправляться неограниченное количество раз.
-* Укажите код продукта (он возвращается параметром **productId** [запроса продуктов](query-for-products.md)) и код транзакции, получаемый от одного или нескольких источников, перечисленных в описании параметра **transactionId** в разделе «Текст запроса» этой статьи.
+* Укажите код товара (он возвращается параметром **itemId**[запроса продуктов](query-for-products.md)) и предоставляемый вами уникальный ИД отслеживания. Если один и тот же ИД отслеживания будет использован несколько раз, будет возвращен тот же самый результат, даже если элемент уже потреблен. Если вы не уверены что запрос потребления был выполнен успешно, ваша служба должна повторно отправить запросы потребления с тем же самым ИД отслеживания. ИД отслеживания всегда будет привязан к этому запросу потребления и может отправляться неограниченное количество раз.
+* Укажите код продукта (он возвращается параметром **productId**[запроса продуктов](query-for-products.md)) и код транзакции, получаемый от одного или нескольких источников, перечисленных в описании параметра **transactionId** в разделе «Текст запроса» этой статьи.
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
 
 Для использования этого метода вам понадобится:
@@ -37,7 +37,7 @@ ms.locfileid: "9116030"
 
 ### <a name="request-syntax"></a>Синтаксис запроса
 
-| Метод | URI запроса                                                   |
+| Метод | Универсальный код ресурса (URI) запроса                                                   |
 |--------|---------------------------------------------------------------|
 | POST   | ```https://collections.mp.microsoft.com/v6.0/collections/consume``` |
 
@@ -46,30 +46,30 @@ ms.locfileid: "9116030"
 
 | Заголовок         | Тип   | Описание                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | string | Обязательный. Маркер доступа Azure AD в формате **Bearer** &lt;*token*&gt;.                           |
-| Host           | Строка | Должен иметь значение **collections.mp.microsoft.com**.                                            |
-| Content-Length | Число | Длина текста запроса.                                                                       |
+| Authorization  | Строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;.                           |
+| Hyper-V           | Строка | Должен иметь значение **collections.mp.microsoft.com**.                                            |
+| Content-Length | number | Длина текста запроса.                                                                       |
 | Content-Type   | Строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
 
 
 ### <a name="request-body"></a>Тело запроса
 
-| Параметр     | Тип         | Описание         | Обязательный |
+| Параметр     | Тип         | Описание         | Обязательно |
 |---------------|--------------|---------------------|----------|
 | beneficiary   | UserIdentity | Пользователь, для которого выполняется потребление этого элемента. Подробная информация приводится в следующей таблице.        | Да      |
-| itemId        | string       | Значение *itemId*, возвращаемое [запросом продуктов](query-for-products.md). Используйте этот параметр с *trackingId*      | Нет       |
+| itemId        | Строка       | Значение *itemId*, возвращаемое [запросом продуктов](query-for-products.md). Используйте этот параметр с *trackingId*      | Нет       |
 | trackingId    | guid         | Уникальный ИД отслеживания, предоставляемый разработчиком. Используйте этот параметр с *itemId*.         | Нет       |
-| productId     | string       | Значение *productId*, возвращаемое [запросом продуктов](query-for-products.md). Используйте этот параметр с *transactionId*   | Нет       |
+| productId     | Строка       | Значение *productId*, возвращаемое [запросом продуктов](query-for-products.md). Используйте этот параметр с *transactionId*   | Нет       |
 | transactionId | guid         | Код транзакции, получаемый от одного следующих источников. Используйте этот параметр с *productId*.<ul><li>Свойство [TransactionID](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.purchaseresults.transactionid) класса [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392).</li><li>Квитанция приложения или продукта, возвращаемая [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync), [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) или [GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync).</li><li>Параметр *transactionId*, возвращаемый [запросом продуктов](query-for-products.md).</li></ul>   | Нет       |
 
 
 Объект UserIdentity содержит следующие параметры.
 
-| Параметр            | Тип   | Описание       | Обязательный |
+| Параметр            | Тип   | Описание       | Обязательно |
 |----------------------|--------|-------------------|----------|
-| identityType         | string | Укажите строковое значение **b2b**.    | Да      |
-| identityValue        | string | [Ключ идентификатора Microsoft Store](view-and-grant-products-from-a-service.md#step-4), представляющий удостоверение пользователя, для которого потребляемый продукт необходимо объявить в качестве выполненного.      | Да      |
-| localTicketReference | строка | Запрошенный идентификатор для возвращаемого ответа. Рекомендуется использовать то же значение, что и в [утверждении](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) *userId* в ключе идентификатора Microsoft Store. | Да      |
+| identityType         | Строка | Укажите строковое значение **b2b**.    | Да      |
+| identityValue        | Строка | [Ключ идентификатора Microsoft Store](view-and-grant-products-from-a-service.md#step-4), представляющий удостоверение пользователя, для которого потребляемый продукт необходимо объявить в качестве выполненного.      | Да      |
+| localTicketReference | Строка | Запрошенный идентификатор для возвращаемого ответа. Мы рекомендуем использовать то же значение, что *userId*[утверждения](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) в Microsoft Store идентификатор ключа.   | Да      |
 
 
 ### <a name="request-examples"></a>Примеры запросов
@@ -136,15 +136,15 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 | Код | Ошибка        | Внутренний код ошибки           | Описание           |
 |------|--------------|----------------------------|-----------------------|
-| 401  | Unauthorized | AuthenticationTokenInvalid | Маркер доступа Azure AD недействителен. В некоторых случаях сведения об ошибке ServiceError содержат больше информации, например если истек срок действия маркера или отсутствует утверждение *appid*. |
-| 401  | Unauthorized | PartnerAadTicketRequired   | Маркер доступа Azure AD не был передан службе в заголовке авторизации.                                                                                                   |
-| 401  | Unauthorized | InconsistentClientId       | Утверждение *clientId* в ключе идентификатора Microsoft Store в теле запроса и утверждение *appid* в маркере доступа Azure AD в заголовке авторизации не совпадают.                     |
+| 401  | Недостаточно прав | AuthenticationTokenInvalid | Маркер доступа Azure AD недействителен. В некоторых случаях сведения об ошибке ServiceError содержат больше информации, например если истек срок действия маркера или отсутствует утверждение *appid*. |
+| 401  | Недостаточно прав | PartnerAadTicketRequired   | Маркер доступа Azure AD не был передан службе в заголовке авторизации.                                                                                                   |
+| 401  | Недостаточно прав | InconsistentClientId       | Утверждение *clientId* в ключе идентификатора Microsoft Store в теле запроса и утверждение *appid* в маркере доступа Azure AD в заголовке авторизации не совпадают.                     |
 
 <span/> 
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Управление правами на продукты из службы](view-and-grant-products-from-a-service.md)
-* [Запрос продуктов](query-for-products.md)
-* [Предоставление бесплатных продуктов](grant-free-products.md)
-* [Обновление ключа идентификатора Microsoft Store](renew-a-windows-store-id-key.md)
+* [Управление прав продукта из службы](view-and-grant-products-from-a-service.md)
+* [Запрос для продуктов](query-for-products.md)
+* [Предоставьте бесплатные продукты](grant-free-products.md)
+* [Обновить ключ идентификатор Microsoft Store](renew-a-windows-store-id-key.md)

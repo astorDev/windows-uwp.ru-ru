@@ -6,22 +6,22 @@ ms.topic: article
 keywords: windows 10, uwp, анимация
 ms.localizationpriority: medium
 ms.openlocfilehash: 118b3f6e306e60d1d8d569f0d58f2d77ea30d9a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932693"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635069"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>Улучшения существующих механизмов взаимодействия ScrollViewer
 
 В этой статье рассказывается, как использовать XAML ScrollViewer и анимации ExpressionAnimation для создания динамичных моделей движения на основе ввода.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Подразумевается, что вы знакомы с понятиями, которые рассматриваются в этих статьях:
 
-- [Анимации на основе ввода](input-driven-animations.md)
-- [Анимации на основе отношений](relation-animations.md)
+- [Анимации на основе входных данных](input-driven-animations.md)
+- [Связь на основе анимации](relation-animations.md)
 
 ## <a name="why-build-on-top-of-scrollviewer"></a>Причины для создания объектов поверх ScrollViewer
 
@@ -34,8 +34,8 @@ ms.locfileid: "8932693"
 Положение ScrollViewer можно использовать для создания ряда динамических компонентов:
 
 - Параллакс — используйте положение ScrollViewer для перемещения содержимого фона или переднего плана с относительной скоростью в положение прокрутки.
-- Закрепленные заголовки— используйте положение ScrollViewer, чтобы сделать заголовок анимированным и "зафиксировать" его в определенном положении
-- Эффекты на основе ввода— используйте положение Scrollviewer для анимирования эффекта композиции, например размытия.
+- Закрепленные заголовки — используйте положение ScrollViewer, чтобы сделать заголовок анимированным и "зафиксировать" его в определенном положении
+- Эффекты на основе ввода — используйте положение Scrollviewer для анимирования эффекта композиции, например размытия.
 
 Как правило, ссылаясь на положение ScrollViewer в анимации ExpressionAnimation, можно создать динамически меняющуюся относительно величины прокрутки анимацию.
 
@@ -54,10 +54,10 @@ ms.locfileid: "8932693"
     - `ElementCompositionPreview.GetScrollManipulationPropertySet(ScrollViewer scroller)`
 1. Создайте анимацию ExpressionAnimation, которая ссылается на свойство Translation в PropertySet.
     - Не забудьте настроить параметр ссылки!
-1. Укажите в качестве целевого свойство объекта CompositionObject с ExpressionAnimation.
+1. Назначьте свойство объекта CompositionObject целевым объектом анимации ExpressionAnimation.
 
 > [!NOTE]
-> Рекомендуется назначить набор PropertySet, возвращаемый из метода GetScrollManipulationPropertySet в переменную класса. Благодаря этому набор свойств не будет удален при сборке мусора и никак не повлияет на анимацию ExpressionAnimation, содержащую ссылку на него. Анимации ExpressionAnimations не поддерживают строгую ссылку ни на какой из объектов, используемых в уравнении.
+> Рекомендуется назначить набор PropertySet, возвращаемый из метода GetScrollManipulationPropertySet в переменную класса. В этом случае набор свойств не будет удален при сборке мусора и, следовательно, никак не повлияет на анимацию ExpressionAnimation, которая содержит на него ссылку. Анимации ExpressionAnimations не поддерживают строгую ссылку ни на какой из объектов, используемых в уравнении.
 
 ## <a name="example"></a>Пример
 

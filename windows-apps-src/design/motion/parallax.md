@@ -1,29 +1,29 @@
 ---
-Description: Use the ParallaxView control to add depth and movement to your app.
+Description: Используйте элемент управления ParallaxView, чтобы добавить своему приложению глубины и движения.
 title: Сведения об использовании элемента управления ParallaxView для добавления в приложение глубины и движения.
 ms.assetid: ''
 label: Parallax View
 template: detail.hbs
 ms.date: 08/09/2017
 ms.topic: article
-keywords: windows10, uwp
+keywords: windows 10, uwp
 pm-contact: abarlow
 design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 719a150c6750116a368d59fff9600fcf65bf8f61
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115811"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590689"
 ---
 # <a name="parallax"></a>Параллакс
 
-Параллакс— это визуальный эффект, при котором элементы, расположенные ближе к зрителю, перемещаются быстрее элементов фона. Эффект параллакса создает ощущение глубины, перспективы и движения. В приложении UWP для создания эффекта параллакса можно использовать элемент управления ParallaxView.  
+Параллакс — это визуальный эффект, при котором элементы, расположенные ближе к зрителю, перемещаются быстрее элементов фона. Эффект параллакса создает ощущение глубины, перспективы и движения. В приложении UWP для создания эффекта параллакса можно использовать элемент управления ParallaxView.  
 
-> **Важные API**: [класс ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [свойство VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift), [свойство HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+> **Важные API-интерфейсы**: [Класс ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [свойство VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift), [HorizontalShift свойство](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 
 ## <a name="examples"></a>Примеры
 
@@ -34,7 +34,7 @@ ms.locfileid: "9115811"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/ParallaxView">открыть приложение и увидеть ParallaxView в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -43,13 +43,13 @@ ms.locfileid: "9115811"
 
 ## <a name="parallax-and-the-fluent-design-system"></a>Параллакс и система проектирования Fluent Design
 
- Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Параллакс— это компонент системы проектирования Fluent Design, добавляющий движение, глубину и масштаб вашему приложению. Дополнительные сведения см. в разделе [Обзор системы проектирования Fluent для UWP](../fluent-design-system/index.md).
+ Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Параллакс — это компонент системы проектирования Fluent Design, добавляющий движение, глубину и масштаб вашему приложению. Дополнительные сведения см. в разделе [Обзор системы проектирования Fluent Design для UWP](../fluent-design-system/index.md).
 
 ## <a name="how-it-works-in-a-user-interface"></a>Как это работает в пользовательском интерфейсе
 
-В пользовательском интерфейсе можно создать эффекта параллакса, перемещая различные объекты с разной скоростью при горизонтальной или вертикальной прокрутке. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> Чтобы продемонстрировать это, давайте рассмотрим пример с двумя уровнями содержимого: списком и фоновым изображением.  Список размещается поверх фонового изображения, создавая ощущение, что список находится ближе к зрителю.  Для достижения эффекта параллакса нужно, чтобы объект, расположенный ближе к нам, двигался "быстрее" расположенного дальше.  Когда пользователь прокручивает интерфейс, список перемещается быстрее относительно фонового изображения, что создает иллюзию глубины.
+В пользовательском интерфейсе можно создать эффекта параллакса, перемещая различные объекты с разной скоростью при горизонтальной или вертикальной прокрутке. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> Чтобы продемонстрировать, давайте взглянем на два уровня содержимого "," список "и" фонового изображения.  Список размещается поверх фонового изображения, создавая ощущение, что список находится ближе к зрителю.  Для достижения эффекта параллакса нужно, чтобы объект, расположенный ближе к нам, двигался "быстрее" расположенного дальше.  Когда пользователь прокручивает интерфейс, список перемещается быстрее относительно фонового изображения, что создает иллюзию глубины.
 
- ![Пример эффекта параллакса со списком и фоновым изображением](images/_Parallax_v2.gif)
+ ![Пример эффекта фокусировки со списком и фоновым изображением](images/_Parallax_v2.gif)
 
  
 ## <a name="using-the-parallaxview-control-to-create-a-parallax-effect"></a>Использование элемента управления ParallaxView для создания эффекта параллакса
@@ -106,8 +106,8 @@ ParallaxView автоматически подстраивает размер и
 
 Свойства VerticalShift и HorizontalShift позволяют контролировать степень эффекта параллакса.
 
-* Свойство VerticalShift указывает, насколько фон должен сдвинуться по вертикали за всю операцию параллакса. Значение 0 означает, что фон не перемещается.
-* Свойство HorizontalShift указывает, насколько фон должен сдвинуться по горизонтали за всю операцию параллакса. Значение 0 означает, что фон не перемещается.
+* Свойство VerticalShift указывает, насколько фон должен сдвинуться по вертикали за всю операцию параллакса. Значение 0 означает, что фон без перемещения вообще.
+* Свойство HorizontalShift указывает, насколько фон должен сдвинуться по горизонтали за всю операцию параллакса. Значение 0 означает, что фон без перемещения вообще.
 
 Чем выше значение, тем сильнее эффект. 
 
@@ -123,8 +123,8 @@ ParallaxView автоматически подстраивает размер и
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
 - [Класс ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
-- [Система проектирования Fluent для UWP](../fluent-design-system/index.md)
-- [Наука системы: система проектирования Fluent и глубина](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [Fluent разработка для универсальной платформы Windows](../fluent-design-system/index.md)
+- [В системе обработки и анализа: Fluent Design and глубины](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

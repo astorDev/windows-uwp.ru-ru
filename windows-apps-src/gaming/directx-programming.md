@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, игра, обзор, программирование, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 83ac401892761e1e6433d337babbce00dc559b98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923963"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608849"
 ---
 # <a name="directx-programming"></a>Программирование в DirectX
 
@@ -30,7 +30,7 @@ ms.locfileid: "8923963"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="directx-getting-started.md">Начало работы</a></p></td>
+<td align="left"><p><a href="directx-getting-started.md">Приступая к работе</a></p></td>
 <td align="left"><p>Введение в программирование в DirectX.</p></td>
 </tr>
 <tr class="even">
@@ -42,19 +42,19 @@ ms.locfileid: "8923963"
 <td align="left"><p>Пояснение основных концепций программирования в DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="directx-add-features.md">Добавление функций</a></p></td>
+<td align="left"><p><a href="directx-add-features.md">Добавление компонентов</a></p></td>
 <td align="left"><p>Инструкции по добавлению различных функций в игру DirectX.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="directx-optimization-and-advanced-topics.md">Оптимизация и более сложные темы</a></p></td>
+<td align="left"><p><a href="directx-optimization-and-advanced-topics.md">Оптимизация и дополнительные разделы</a></p></td>
 <td align="left"><p>Информация об оптимизации и другие более сложные темы.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">Портирование из DirectX 9 в UWP</a></p></td>
+<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">Порт DirectX 9 для универсальной платформы Windows</a></p></td>
 <td align="left"><p>Узнайте, как перенести игру на DirectX 9 на платформу UWP.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md">Перенос из OpenGL в Direct3D</a></p></td>
+<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md">Порт OpenGL для Direct3D</a></p></td>
 <td align="left"><p>Узнайте, как перенести игру на базе OpenGL ES 2.0 в Direct3D 11.</p></td>
 </tr>
 </tbody>

@@ -1,5 +1,5 @@
 ---
-Description: The master/detail pattern displays a master list and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.
+Description: Шаблон основных и подробных данных отображает основной список и подробные сведения о выбранном элементе. Этот шаблон часто используется для работы с почтой, списками контактов и адресными книгами.
 title: Основные и подробные данные
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d8d8a381c0fce186b39853f57d35c1dce4b8f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940643"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601259"
 ---
 # <a name="masterdetails-pattern"></a>Шаблон основных и подробных данных
 
@@ -21,7 +21,7 @@ ms.locfileid: "8940643"
 
 В шаблоне основных и подробных есть главная панель (обычно с [представлением списка](lists.md)) и область сведений для содержимого. Если выбрать элемент в главном списке, область сведений обновляется. Этот шаблон часто используется для работы с электронной почтой и адресными книгами.
 
-> **Важные API-интерфейсы**: [класс ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [класс SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **Важные API-интерфейсы**: [Класс ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView-класс](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Пример шаблона основных и подробных данных](images/HIGSecOne_MasterDetail.png)
 
@@ -93,16 +93,16 @@ ms.locfileid: "8940643"
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
 В следующих примерах показана реализация шаблона основных и подробных данных с помощью адаптивных макетов, а также демонстрируется привязывание данных к статическим, веб-ресурсам и ресурсам базы данных. 
-- [Пример основных и подробных данных](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
-- [Пример основных и подробных данных и пример элемента выбора](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Пример основных и подробных данных в Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
-- [Пример базы данных заказов клиента](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
+- [Образец «основной/подробности»](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
+- [Основной/подробности, а также пример выбора](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Образец Windows шаблона Studio «основной/подробности»](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
+- [Образец базы данных заказов клиента](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [Пример средства чтения RSS](https://github.com/Microsoft/Windows-appsample-rssreader)
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
 - [Списки](lists.md)
 - [Поиск](search.md)
-- [Панель приложения и панель команд](app-bars.md)
+- [Приложения и командной панели](app-bars.md)
 - [Класс ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
 - [Класс SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)

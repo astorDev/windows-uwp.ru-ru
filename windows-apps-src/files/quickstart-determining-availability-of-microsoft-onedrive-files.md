@@ -1,36 +1,36 @@
 ---
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
 title: Определение доступности файлов Microsoft OneDrive
-description: Определите доступность файла MicrosoftOneDrive с помощью свойства StorageFile.IsAvailable.
+description: Определите доступность файла Microsoft OneDrive с помощью свойства StorageFile.IsAvailable.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 26eb371e767f0c1e7f3d5855cf68728958c0cda3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044997"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608939"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>Определение доступности файлов Microsoft OneDrive
 
 
 **Важные API**
 
--   [**Класс FileIO**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
+-   [**Класс файловый ввод-вывод**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
 -   [**Класс StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)
 -   [**Свойство StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
 
 Определите доступность файла Microsoft OneDrive с помощью свойства [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx).
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
--   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)**
+-   **Понять асинхронного программирования для приложений универсальной платформы Windows (UWP)**
 
     Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://msdn.microsoft.com/library/windows/apps/Mt187334).
 
--   **Объявление характеристик приложений**
+-   **Объявления capabilty приложения**
 
     См. раздел [Разрешения на доступ к файлам](file-access-permissions.md).
 
@@ -38,9 +38,9 @@ ms.locfileid: "9044997"
 
 Пользователи могут отмечать файлы OneDrive как "доступные автономно" (по умолчанию) и как "только в сети". Благодаря этому пользователи могут перемещать большие файлы (например, изображения или видео) в свое хранилище OneDrive, отмечать их как «только в сети» и тем самым экономить место на диске. (На локальном диске будет храниться только файл, содержащий метаданные.)
 
-[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) позволяет определить, доступен ли файл в настоящий момент. Значения свойства **StorageFile.IsAvailable** в различных сценариях перечислены в следующей таблице.
+[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx), используется для определения, является ли файл в настоящее время недоступно. Значения свойства **StorageFile.IsAvailable** в различных сценариях перечислены в следующей таблице.
 
-| Тип файла                              | В сети | Сеть с лимитным тарифным планом        | Вне сети |
+| Тип файла                              | Online | Сеть с лимитным тарифным планом        | Вне сети |
 |-------------------------------------------|--------|------------------------|---------|
 | Локальный файл                                | True   | True                   | True    |
 | Файл OneDrive с отметкой "доступен автономно" | True   | True                   | True    |

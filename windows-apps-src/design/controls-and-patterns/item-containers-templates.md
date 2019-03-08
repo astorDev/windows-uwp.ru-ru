@@ -1,11 +1,11 @@
 ---
-Description: Use templates to modify the look of items in ListView or GridView controls.
+Description: Используйте шаблоны для изменения внешнего вида элементов в элементах управления ListView и GridView.
 title: Контейнеры и шаблоны элементов
 label: Item containers and templates
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, uwp
 ms.assetid: d8eb818d-b62e-4314-a612-f29142dbd93f
 pm-contact: predavid
 design-contact: kimsea
@@ -13,11 +13,11 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dcf0176e20e498f8c6744a542010b5197689b8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947826"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639939"
 ---
 # <a name="item-containers-and-templates"></a>Контейнеры и шаблоны элементов
 
@@ -25,7 +25,7 @@ ms.locfileid: "8947826"
 
 Элементы управления **ListView** и **GridView** управляют расположением своих элементов (горизонтально, вертикально, обтекание и так далее) и взаимодействием пользователя с этими элементами, но не тем, как отдельные элементы отображаются на экране. Визуализацией элементов управляют контейнеры элементов. При добавлении элементов в представление списка они автоматически помещаются в контейнер. По умолчанию для ListView используется контейнер элементов [ListViewItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listviewitem.aspx); а для GridView — [GridViewItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridviewitem.aspx).
 
-> **Важные API-интерфейсы**: [класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [свойство ItemTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx), [свойство ItemContainerStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx)
+> **Важные API-интерфейсы**: [Класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [свойство ItemTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx), [свойства ItemContainerStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx)
 
 
 > [!NOTE]
@@ -73,7 +73,7 @@ ms.locfileid: "8947826"
 </ListView>
 ```
  
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - Мы предполагаем, что вы умеете пользоваться элементами управления представления списка. Подробнее см. в статье [ListView и GridView](listview-and-gridview.md).
 - Мы также предполагаем, что вы знакомы со стилями и шаблонами элементов управления и, среди прочего, умеете использовать стили в качестве встроенных элементов или ресурсов. Подробнее см. в разделах [Настройка стиля элементов управления](xaml-styles.md) и [Шаблоны элементов управления](control-templates.md).
@@ -260,9 +260,9 @@ namespace ColorsListApp
 
 ### <a name="performance-considerations"></a>Вопросы производительности
 
-Шаблоны данных— это основной способ определения внешнего вида представления списка. Они могут значительно влиять на производительность, если список содержит много элементов. 
+Шаблоны данных — это основной способ определения внешнего вида представления списка. Они могут значительно влиять на производительность, если список содержит много элементов. 
 
-Для каждого элемента в представлении списка создается экземпляр каждого элемента XAML в шаблоне данных. Например, шаблон сетки в предыдущем примере содержит 10 элементов XAML (1 элемент Grid, 1 элемент Rectangle, 3 элемента Border, 5 элементов TextBlock). Представление GridView, в котором отображается 20 элементов с помощью данного шаблона данных, создает не менее 200 элементов (20*10=200). Сокращение количества элементов в шаблоне данных может значительно сократить общее количество элементов, созданных для представления списка. Подробнее см. в разделе [Оптимизация пользовательского интерфейса ListView и GridView: сокращение числа элементов на каждый элемент](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview#element-reduction-per-item).
+Для каждого элемента в представлении списка создается экземпляр каждого элемента XAML в шаблоне данных. Например, шаблон сетки в предыдущем примере содержит 10 элементов XAML (1 элемент Grid, 1 элемент Rectangle, 3 элемента Border, 5 элементов TextBlock). Представление GridView, в котором отображается 20 элементов с помощью данного шаблона данных, создает не менее 200 элементов (20*10=200). Сокращение количества элементов в шаблоне данных может значительно сократить общее количество элементов, созданных для представления списка. Дополнительные сведения см. в разделе [оптимизации ListView и GridView пользовательского интерфейса: Сокращение числа элемента каждого элемента](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview#element-reduction-per-item).
 
  Обратим внимание на этот раздел шаблона данных сетки. Рассмотрим несколько факторов сокращения числа элементов.
 
@@ -333,7 +333,7 @@ namespace ColorsListApp
 > [!NOTE]
 > Стили по умолчанию ListViewItem и GridViewItem задают большое количество свойств в ListViewItemPresenter. Следует всегда начинать с копии стиля по умолчанию и изменять только необходимые свойства. В противном случае визуальные элементы могут отображаться не так, как ожидается, так как некоторые свойства будут настроены неверно.
 
-**Создание копии шаблона по умолчанию в Visual Studio**
+**Чтобы создать копию шаблона по умолчанию в Visual Studio**
  
 1. Откройте панель "Структура документа" (**Представление > Windows (другие) > Структура документа**).
 2. Выберите элемент списка или сетки для изменения. В этом примере изменяется элемент `colorsGridView`.
@@ -404,8 +404,8 @@ namespace ColorsListApp
 
 Вы можете установить свойство [CheckMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode.aspx), чтобы указать, следует ли отображать флажок в стиле наложения или встроенном стиле.
 
-- **Inline**. Этот стиль отображает флажок слева от содержимого, при этом фон контейнера элемента закрашивается для обозначения выделения. Это стиль по умолчанию для ListView.
-- **Overlay**. Этот стиль отображает флажок над содержимым, при этом закрашивается только рамка контейнера элемента для обозначения выделения. Это стиль по умолчанию для GridView.
+- **Встроенный**: Этот стиль показывает флажок слева от содержимого, а также цвета фона для указания выбора контейнера элементов. Это стиль по умолчанию для ListView.
+- **Наложение**: Этот стиль показывает поле на основе содержимого, а также цвета границы только для указания выбора контейнера элементов. Это стиль по умолчанию для GridView.
 
 В этой таблице показаны визуальные элементы по умолчанию, используемые для обозначения выделения.
 
@@ -426,17 +426,17 @@ namespace ColorsListApp
 В этой таблице показаны визуальные состояния "Общее" и "Выделение" для ListViewItem, а также кисти, используемые для отрисовки визуальных элементов каждого состояния. На изображениях показан результат применения кистей к визуальным стилям выделения в режиме наложения и встроенном режиме.
 
 > [!NOTE]
-> В этой таблице измененные значения цветов кистей— это встроенные именованные цвета, причем цвета выделены, чтобы подчеркнуть место их применения в шаблоне. Это не цвета по умолчанию для визуальных состояний. При изменении цветов по умолчанию в приложении следует использовать ресурсы кистей для изменения значений цветов, как сделано в шаблоне по умолчанию.
+> В этой таблице измененные значения цветов кистей — это встроенные именованные цвета, причем цвета выделены, чтобы подчеркнуть место их применения в шаблоне. Это не цвета по умолчанию для визуальных состояний. При изменении цветов по умолчанию в приложении следует использовать ресурсы кистей для изменения значений цветов, как сделано в шаблоне по умолчанию.
 
 Название состояния/кисти | Встроенный стиль | Стиль наложения
 ------------|--------------|--------------
-<b>Normal</b><ul><li><b>CheckBoxBrush="Red"</b></li></ul> | ![Выделение элемента во встроенном режиме: обычное](images/listview-item-normal.png) | ![Выделение элемента в режиме наложения: обычное](images/gridview-item-normal.png)
+<b>Норм.</b><ul><li><b>CheckBoxBrush = «Red»</b></li></ul> | ![Выделение элемента во встроенном режиме: обычное](images/listview-item-normal.png) | ![Выделение элемента в режиме наложения: обычное](images/gridview-item-normal.png)
 <b>PointerOver</b><ul><li><b>PointerOverForeground="DarkOrange"</b></li><li><b>PointerOverBackground="MistyRose"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Выделение элемента во встроенном режиме: наведение указателя](images/listview-item-pointerover.png) | ![Выделение элемента в режиме наложения: наведение указателя](images/gridview-item-pointerover.png)
-<b>Pressed</b><ul><li><b>PressedBackground="LightCyan"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![Выделение элемента во встроенном режиме: нажатие](images/listview-item-pressed.png) | ![Выделение элемента в режиме наложения: нажатие](images/gridview-item-pressed.png)
-<b>Selected</b><ul><li><b>SelectedForeground="Navy"</b></li><li><b>SelectedBackground="Khaki"</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red" (только встроенный режим)</li></ul> | ![Выделение элемента во встроенном режиме: выделение](images/listview-item-selected.png) | ![Выделение элемента в режиме наложения: выделение](images/gridview-item-selected.png)
-<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground="Lavender"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (только режим наложения)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (только встроенный режим)</li></ul> | ![Выделение элемента во встроенном режиме: наведение указателя и выделение](images/listview-item-pointeroverselected.png) | ![Выделение элемента в режиме наложения: наведение указателя и выделение](images/gridview-item-pointeroverselected.png)
+<b>Нажата</b><ul><li><b>PressedBackground="LightCyan"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![Выделение элемента во встроенном режиме: нажатие](images/listview-item-pressed.png) | ![Выделение элемента в режиме наложения: нажатие](images/gridview-item-pressed.png)
+<b>Выбранные</b><ul><li><b>SelectedForeground="Navy"</b></li><li><b>SelectedBackground="Khaki"</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red" (только встроенный режим)</li></ul> | ![Выделение элемента во встроенном режиме: выделение](images/listview-item-selected.png) | ![Выделение элемента в режиме наложения: выделение](images/gridview-item-selected.png)
+<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground = «Лиловые»</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (только режим наложения)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (только встроенный режим)</li></ul> | ![Выделение элемента во встроенном режиме: наведение указателя и выделение](images/listview-item-pointeroverselected.png) | ![Выделение элемента в режиме наложения: наведение указателя и выделение](images/gridview-item-pointeroverselected.png)
 <b>PressedSelected</b><ul><li><b>SelectedPressedBackground="MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (только режим наложения)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (только встроенный режим)</li></ul> | ![Выделение элемента во встроенном режиме: нажатие и выделение](images/listview-item-pressedselected.png) | ![Выделение элемента в режиме наложения: нажатие и выделение](images/gridview-item-pressedselected.png)
-<b>Focused</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Выделение элемента во встроенном режиме: в фокусе](images/listview-item-focused.png) | ![Выделение элемента в режиме наложения: в фокусе](images/gridview-item-focused.png)
+<b>С фокусом ввода</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Выделение элемента во встроенном режиме: в фокусе](images/listview-item-focused.png) | ![Выделение элемента в режиме наложения: в фокусе](images/gridview-item-focused.png)
 
 ListViewItemPresenter имеет другие свойства кисти для заполнителей данных и состояний перетаскивания. При использовании добавочной загрузки или перетаскивания в представлении списка следует решить, нужно ли изменять и эти дополнительные свойства кисти. Полный список изменяемых свойств см. в разделе класса ListViewItemPresenter. 
 
@@ -451,14 +451,14 @@ ListViewItemPresenter имеет другие свойства кисти для
 
 Для настройки расширенного шаблона XAML вам потребуется создать его копию в приложении и привязать свойство **ItemContainerStyle** к копии.
 
-**Копирование расширенного шаблона**
+**Чтобы скопировать развернутого шаблона**
 1. Установите свойству ItemContainerStyle значение, показанное здесь для ListView или GridView.
     ```xaml
     <ListView ItemContainerStyle="{StaticResource ListViewItemExpanded}"/>
     <GridView ItemContainerStyle="{StaticResource GridViewItemExpanded}"/>
     ```
 2. На панели свойств Visual Studio раскройте раздел "Прочее" и найдите свойство ItemContainerStyle. (Убедитесь, что выбран класс ListView или GridView.)
-3. Нажмите метку свойства ItemContainerStyle. (Это небольшое окно рядом с TextBox. Оно зеленого цвета, то есть настроено на StaticResource.) Откроется меню свойства.
+3. Нажмите метку свойства ItemContainerStyle. (Это небольшое окно рядом с TextBox. Его coloreed зеленый Показать, что он становится равным StaticResource.) Откроется меню свойств.
 4. В меню свойств нажмите **Преобразовать в новый ресурс**. 
     
     ![Меню свойств Visual Studio](images/listview-convert-resource-vs.png)

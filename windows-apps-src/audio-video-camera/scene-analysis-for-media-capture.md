@@ -4,14 +4,14 @@ description: В данной статье рассказывается о том
 title: Эффекты для анализа кадров камеры
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3359c3e7d7841e68dd00dc318eb1de9f1418df06
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047346"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635829"
 ---
 # <a name="effects-for-analyzing-camera-frames"></a>Эффекты для анализа кадров камеры
 
@@ -25,7 +25,7 @@ ms.locfileid: "9047346"
 
 Если эффект рекомендует использовать технологию HDR, то ее можно применить указанными ниже способами.
 
--   Класс [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) позволяет захватывать фотографии с помощью встроенного в ОСWindows алгоритма обработки изображений по технологии HDR. Дополнительные сведения см. в статье [Захват фотографий с использованием технологии High Dynamic Range (HDR)](high-dynamic-range-hdr-photo-capture.md).
+-   Класс [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) позволяет захватывать фотографии с помощью встроенного в ОС Windows алгоритма обработки изображений по технологии HDR. Дополнительные сведения см. в статье [Захват фотографий с использованием технологии High Dynamic Range (HDR)](high-dynamic-range-hdr-photo-capture.md).
 
 -   Используйте [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680) для захвата видео с помощью алгоритма обработки HDR, встроенного в систему Windows. Дополнительные сведения см. в статье [Доступ к элементам управления видеозахватом на устройстве](capture-device-controls-for-video-capture.md).
 
@@ -45,7 +45,7 @@ ms.locfileid: "9047346"
 
 В своем приложении после инициализации объекта **MediaCapture** создайте новый экземпляр класса [**SceneAnalysisEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948903).
 
-Зарегистрируйте эффект для устройства захвата, вызвав метод [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) в объекте **MediaCapture**, предоставив **SceneAnalysisEffectDefinition** и указав тип [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640), чтобы показать, что необходимо применить эффект к потоку предварительного просмотра видео, а не к потоку захвата. **AddVideoEffectAsync** возвращает экземпляр добавленного эффекта. Так как этот метод можно использовать для эффектов различных типов, необходимо привести возвращенный экземпляр к объекту [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902).
+Зарегистрируйте эффект для устройства захвата, вызвав метод [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) в объекте **MediaCapture**, предоставив **SceneAnalysisEffectDefinition** и указав тип [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640), чтобы показать, что необходимо применить эффект к потоку предварительного просмотра видео, а не к потоку захвата. Метод **AddVideoEffectAsync** возвращает экземпляр добавленного эффекта. Так как этот метод можно использовать для эффектов различных типов, необходимо привести возвращенный экземпляр к объекту [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902).
 
 Чтобы получить результаты анализа сцены, необходимо зарегистрировать обработчик события [**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920).
 
@@ -55,7 +55,7 @@ ms.locfileid: "9047346"
 
 ### <a name="implement-the-sceneanalyzed-event-handler"></a>Реализация обработчика события SceneAnalyzed
 
-Результаты анализа сцены возвращаются в обработчике события **SceneAnalyzed**. У объекта [**SceneAnalyzedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948922), переданного в обработчик, имеется объект [**SceneAnalysisEffectFrame**](https://msdn.microsoft.com/library/windows/apps/dn948907), у которого, в свою очередь, имеется объект [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830). Свойство [**Certainty**](https://msdn.microsoft.com/library/windows/apps/dn948833) выходных данных High Dynamic Range имеет значение от0 до1,0. Значение 0указывает на то, что с помощью обработки HDR не удастся улучшить результат захвата, а значение 1,0указывает на то, что удастся. Вы можете выбрать пороговую точку, в которой необходимо использовать алгоритм HDR, или отобразить результаты для пользователя и предоставить ему возможность принять такое решение.
+Результаты анализа сцены возвращаются в обработчике события **SceneAnalyzed**. У объекта [**SceneAnalyzedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948922), переданного в обработчик, имеется объект [**SceneAnalysisEffectFrame**](https://msdn.microsoft.com/library/windows/apps/dn948907), у которого, в свою очередь, имеется объект [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830). Свойство [**Certainty**](https://msdn.microsoft.com/library/windows/apps/dn948833) выходных данных High Dynamic Range имеет значение от 0 до 1,0. Значение 0 указывает на то, что с помощью обработки HDR не удастся улучшить результат захвата, а значение 1,0 указывает на то, что удастся. Вы можете выбрать пороговую точку, в которой необходимо использовать алгоритм HDR, или отобразить результаты для пользователя и предоставить ему возможность принять такое решение.
 
 [!code-cs[SceneAnalyzed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalyzed)]
 
@@ -85,7 +85,7 @@ ms.locfileid: "9047346"
 
 В своем приложении после инициализации объекта **MediaCapture** создайте новый экземпляр класса [**FaceDetectionEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948778). Настройте свойство [**DetectionMode**](https://msdn.microsoft.com/library/windows/apps/dn948781), чтобы указать, что для вас имеет больший приоритет, скорость обработки или точность распознавания лиц. Настройте свойство [**SynchronousDetectionEnabled**](https://msdn.microsoft.com/library/windows/apps/dn948786), чтобы указать, что не следует задерживать входящие кадры в ожидании завершения процесса обнаружения лиц, так как это может привести к рывкам изображения при предварительном просмотре.
 
-Зарегистрируйте эффект для устройства захвата, вызвав метод [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) в объекте **MediaCapture**, предоставив **FaceDetectionEffectDefinition** и указав тип [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640), чтобы показать, что необходимо применить эффект к потоку предварительного просмотра видео, а не к потоку захвата. **AddVideoEffectAsync** возвращает экземпляр добавленного эффекта. Так как этот метод можно использовать для эффектов различных типов, необходимо привести возвращенный экземпляр к объекту [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776).
+Зарегистрируйте эффект для устройства захвата, вызвав метод [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) в объекте **MediaCapture**, предоставив **FaceDetectionEffectDefinition** и указав тип [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640), чтобы показать, что необходимо применить эффект к потоку предварительного просмотра видео, а не к потоку захвата. Метод **AddVideoEffectAsync** возвращает экземпляр добавленного эффекта. Так как этот метод можно использовать для эффектов различных типов, необходимо привести возвращенный экземпляр к объекту [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776).
 
 Чтобы включить или выключить эффект, настройте свойство [**FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818). Укажите, как часто эффект должен анализировать кадры, настроив свойство [**FaceDetectionEffect.DesiredDetectionInterval**](https://msdn.microsoft.com/library/windows/apps/dn948814). Оба этих свойства можно настроить в процессе захвата мультимедиа.
 
@@ -109,14 +109,14 @@ ms.locfileid: "9047346"
 
 ### <a name="check-for-focus-and-exposure-support-for-detected-faces"></a>Проверка поддержки корректировки фокусировки и экспозиции на основании данных, полученных от функции обнаружения лиц
 
-Не все устройства имеют устройство захвата, которое может корректировать фокусировку и экспозицию на основании данных, полученных от функции обнаружения лиц. Так как функция обнаружения лиц потребляет ресурсы устройства, то, возможно, вам потребуется включать функцию распознавания лиц только на устройствах, которые могут использовать ее для улучшения захвата. Чтобы проверить, доступна ли функция оптимизации захвата на основе функции обнаружения лиц, получите класс [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) для инициализированного объекта [MediaCapture](capture-photos-and-video-with-mediacapture.md), а затем— класс контроллера видеоустройства [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064). Убедитесь, что свойство [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) поддерживает не менее одной области. Затем проверьте, присвоено ли свойству [**AutoExposureSupported**](https://msdn.microsoft.com/library/windows/apps/dn279065) или свойству [**AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) значение true. Если эти условия выполняются, это означает, что устройство может использовать функцию обнаружения лиц для корректировки параметров захвата.
+Не все устройства имеют устройство захвата, которое может корректировать фокусировку и экспозицию на основании данных, полученных от функции обнаружения лиц. Так как функция обнаружения лиц потребляет ресурсы устройства, то, возможно, вам потребуется включать функцию распознавания лиц только на устройствах, которые могут использовать ее для улучшения захвата. Чтобы проверить, доступна ли функция оптимизации захвата на основе функции обнаружения лиц, получите класс [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) для инициализированного объекта [MediaCapture](capture-photos-and-video-with-mediacapture.md), а затем — класс контроллера видеоустройства [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064). Убедитесь, что свойство [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) поддерживает не менее одной области. Затем проверьте, присвоено ли свойству [**AutoExposureSupported**](https://msdn.microsoft.com/library/windows/apps/dn279065) или свойству [**AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) значение true. Если эти условия выполняются, это означает, что устройство может использовать функцию обнаружения лиц для корректировки параметров захвата.
 
 [!code-cs[AreFaceFocusAndExposureSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAreFaceFocusAndExposureSupported)]
 
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
-* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

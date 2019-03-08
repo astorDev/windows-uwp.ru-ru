@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c872d289c67161e414671d3d509401f0539a7675
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941480"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631449"
 ---
 # <a name="streaming-resources-features-tiers"></a>Уровни функций для потоковых ресурсов
 
@@ -37,13 +37,13 @@ Direct3D поддерживает три уровня возможностей, 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Статья</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="tier-1.md">Уровень 1</a></p></td>
+<td align="left"><p><a href="tier-1.md">Уровня 1</a></p></td>
 <td align="left"><p>В этом разделе описывается поддержка 1-го уровня.</p></td>
 </tr>
 <tr class="even">
@@ -59,10 +59,10 @@ Direct3D поддерживает три уровня возможностей, 
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Потоковые ресурсы](streaming-resources.md)
+[Потоковую передачу ресурсов](streaming-resources.md)
 
  
 

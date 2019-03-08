@@ -1,5 +1,5 @@
 ---
-Description: The toggle switch represents a physical switch that allows users to turn things on or off.
+Description: Элемент управления Toggle Switch имитирует физический переключатель, позволяющий пользователям включать и выключать что-либо.
 title: Руководство по элементам управления Toggle Switch
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
@@ -13,19 +13,19 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: a23a7a7da9605c0ffb5a537c75d63e3f06705881
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036966"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625469"
 ---
 # <a name="toggle-switches"></a>Тумблеры
 
-Элемент управления toggle switch имитирует физический переключатель, позволяющий пользователям включать и выключать что-либо подобно переключателю. С помощью элементов управления переключателя пользователи могут выбрать один из взаимоисключающих вариантов выбора (например, "включено/выключено"). Результат выбора применяется сразу же.
+Переключатель представляет физического коммутатора, который позволяет пользователю включить или отключить, например выключатель света. С помощью элементов управления переключателя пользователи могут выбрать один из взаимоисключающих вариантов выбора (например, "включено/выключено"). Результат выбора применяется сразу же.
 
 Чтобы создать элемент управления переключателем, используйте [класс ToggleSwitch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch).
 
-> **Важные API-интерфейсы**: [класс ToggleSwitch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch), [свойство IsOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [событие Toggled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> **Важные API-интерфейсы**: [Класс ToggleSwitch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch), [свойство IsOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [Toggled событий](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -37,7 +37,7 @@ ms.locfileid: "9036966"
 
 Чтобы облегчить понимание переключателя, пометьте его одним или двумя словами, предпочтительно существительными, описывающими функции, которыми он управляет. Например, "Wi-Fi" или "Kitchen lights." 
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -46,7 +46,7 @@ ms.locfileid: "9036966"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы открыть приложение и увидеть <a href="xamlcontrolsgallery:/item/ToggleSwitch">ToggleSwitch</a> или <a href="xamlcontrolsgallery:/item/ToggleButton">ToggleButton</a> в действии.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -67,7 +67,7 @@ ms.locfileid: "9036966"
 - Используйте флажок, когда пользователю необходимо выполнить дополнительные действия, чтобы изменения вступили в силу. Например, если пользователю необходимо нажать кнопку "Отправить" или "Далее", чтобы применить изменения, используйте флажок.
 - Используйте флажки, когда пользователь может выбрать несколько элементов, которые связаны с одним и тем же параметром или функцией.
 
-## <a name="toggle-switches-in-the-windows-ui"></a>Переключатели в пользовательском Интерфейсе Windows
+## <a name="toggle-switches-in-the-windows-ui"></a>Переключение параметров в пользовательском Интерфейсе Windows
 
 На этих изображениях показано, как пользовательский интерфейс Windows использует переключатели. Ниже показано, как переключатели используются на экране параметров смарт-хранилища:
 
@@ -173,9 +173,9 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 
-- [Класс ToggleSwitch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)
+- [Элемент управления ToggleSwitch-класс](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)
 - [Переключатели](radio-button.md)
-- [Тумблеры](toggles.md)
+- [Переключить коммутаторов](toggles.md)
 - [Флажки](checkbox.md)

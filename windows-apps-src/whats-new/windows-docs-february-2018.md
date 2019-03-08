@@ -1,22 +1,22 @@
 ---
-title: Что нового в документации Windows в феврале 2018г.— разработка приложений UWP
-description: Новые возможности, видео и руководства для разработчиков добавлены в документацию для разработчиков Windows 10 в феврале 2018г.
+title: Что нового в документации Windows в феврале 2018 г. — разработка приложений UWP
+description: Новые возможности, видео и руководства для разработчиков добавлены в документацию для разработчиков Windows 10 в феврале 2018 г.
 keywords: новые возможности, обновления, компоненты, руководство разработчика, Windows 10, февраль
 ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115841"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632869"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Что нового в документации для разработчиков Windows в феврале 2018г.
+# <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Что нового в документации для разработчиков Windows в феврале 2018 г.
 
 Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. В январе стали доступны следующие обзоры функций, руководства для разработчиков и видео, содержащие новые и обновленные сведения для разработчиков Windows.
 
-[Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md), либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+[Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
 
 ## <a name="features"></a>Возможности
@@ -69,7 +69,7 @@ ms.locfileid: "9115841"
 
 ### <a name="creating-3d-app-launchers-for-windows-mixed-reality"></a>Создание средства запуска трехмерных приложений для Windows Mixed Reality
 
-Средства запуска трехмерных приложений— это уникальный способ, с помощью которого пользователи могут насладиться объемным представлением вашего приложения в своей домашней среде Mixed Reality. [Посмотрите это видео](https://www.youtube.com/watch?v=TxIslHsEXno), чтобы узнать, как подготовить трехмерную модель и назначить ее в качестве средства запуска вашего приложения, а затем [ознакомьтесь с документацией для разработчика](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers) и [изучите наши рекомендации по проектированию](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance) для получения дополнительных сведений.
+Средства запуска трехмерных приложений — это уникальный способ, с помощью которого пользователи могут насладиться объемным представлением вашего приложения в своей домашней среде Mixed Reality. [Посмотрите это видео](https://www.youtube.com/watch?v=TxIslHsEXno), чтобы узнать, как подготовить трехмерную модель и назначить ее в качестве средства запуска вашего приложения, а затем [ознакомьтесь с документацией для разработчика](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers) и [изучите наши рекомендации по проектированию](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance) для получения дополнительных сведений.
 
 ### <a name="motion-controller-tracking"></a>Отслеживание контроллера движений
 

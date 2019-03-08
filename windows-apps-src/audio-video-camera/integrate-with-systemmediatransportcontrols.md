@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c89a1901d15d00c7c102157c8f44d6ab96272ef0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919776"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617909"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>Интеграция с системными элементами управления транспортировкой мультимедиа
 
-В этой статье показано, как взаимодействовать с системными элементами управления транспортировкой мультимедиа (SMTC). SMTC— это набор элементов управления, общих для всех устройств с Windows 10 и предоставляющих пользователям единый способ управления воспроизведением мультимедиа во всех выполняемых приложениях, использующих [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) для воспроизведения.
+В этой статье показано, как взаимодействовать с системными элементами управления транспортировкой мультимедиа (SMTC). SMTC — это набор элементов управления, общих для всех устройств с Windows 10 и предоставляющих пользователям единый способ управления воспроизведением мультимедиа во всех выполняемых приложениях, использующих [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) для воспроизведения.
 
 Полный пример интеграции с SMTC см. в [примере системных элементов управления транспортировкой мультимедиа на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls).
                     
@@ -75,11 +75,11 @@ ms.locfileid: "8919776"
 
 
 
-## <a name="related-topics"></a>Связанные статьи
+## <a name="related-topics"></a>Статьи по теме
 * [Воспроизведение мультимедиа](media-playback.md)
-* [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Ручное управление системными элементами управления транспортировкой мультимедиа](system-media-transport-controls.md)
-* [Пример системных элементов управления транспортировкой мультимедиа на GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
+* [Воспроизведение аудио и видео с MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [Ручное управление мультимедиа транспорта системных элементов управления](system-media-transport-controls.md)
+* [Пример элементов управления мультимедиа указанное системы на github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
  
 
  

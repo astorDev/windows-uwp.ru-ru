@@ -1,25 +1,25 @@
 ---
-title: Типы освещения
+title: Типы света
 description: Свойство типа освещения определяет, какой тип источника света вы используете. В Direct3D существует три типа источников света — точечные, прожекторные и направленные.
 ms.assetid: 57748CAF-6F08-4D1D-9ED6-8FAA8C5FE314
 keywords:
-- Типы освещения
+- Типы света
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1815f0956fbc175fec5ca892dbeeec92b2f939ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926802"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594699"
 ---
-# <a name="light-types"></a>Типы освещения
+# <a name="light-types"></a>Типы света
 
 
 Свойство типа освещения определяет, какой тип источника света вы используете. В Direct3D существует три типа источников света — точечные, прожекторные и направленные. Каждый тип по-разному освещает объекты в сцене и вносит различные объемы вычислительной нагрузки.
 
-## <a name="span-idpointlightspanspan-idpointlightspanspan-idpointlightspanpoint-light"></a><span id="Point_Light"></span><span id="point_light"></span><span id="POINT_LIGHT"></span>Точечный источник света
+## <a name="span-idpointlightspanspan-idpointlightspanspan-idpointlightspanpoint-light"></a><span id="Point_Light"></span><span id="point_light"></span><span id="POINT_LIGHT"></span>Точечный свет
 
 
 Точечные источники света имеют цвет и расположение в сцене, но не имеют определенного направления. Они излучают свет равномерно во всех направлениях, как показано на следующем рисунке.
@@ -28,12 +28,12 @@ ms.locfileid: "8926802"
 
 Хорошим примером точечного источника света является лампа накаливания. Точечные источники света обладают свойствами затухания и дальности действия и освещают сетку по принципу вершина за вершиной. Во время освещения Direct3D использует расположение точечного источника света в пространстве и координаты освещаемых вершин, чтобы рассчитать вектор направленности освещения и расстояние, которое свет преодолевает. Оба этих параметра используются вместе с нормалью вершины, чтобы вычислить вклад этого источника света в освещенность определенной поверхности.
 
-## <a name="span-iddirectionallightspanspan-iddirectionallightspanspan-iddirectionallightspandirectional-light"></a><span id="Directional_Light"></span><span id="directional_light"></span><span id="DIRECTIONAL_LIGHT"></span>Направленный источник света
+## <a name="span-iddirectionallightspanspan-iddirectionallightspanspan-iddirectionallightspandirectional-light"></a><span id="Directional_Light"></span><span id="directional_light"></span><span id="DIRECTIONAL_LIGHT"></span>Направленный свет
 
 
 Направленные источники света имеют только цвет и направление и не имеют расположения. Они излучают параллельный свет. Это означает, что весь излучаемый направленными источниками свет проходит через сцену в одном направлении. Представить себе направленный источник света можно как очень сильно удаленный источник света, такой как солнце. Направленные источники света не имеют свойств затухания и дальности действия, поэтому при расчете цветов вершин в качестве коэффициентов Direct3D использует только заданные вами свойства направления и цвета. Из-за небольшого количества коэффициентов освещения эти источники света являются наименее сложными в вычислениях.
 
-## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>Прожекторные источники света
+## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>SpotLight
 
 
 Прожекторные источники света имеют свойства цвета, расположения и направления, в котором они светят. Свет, излучаемый прожекторным источником, состоит из яркого внутреннего конуса и более крупного внешнего конуса, а интенсивность света уменьшается от одного к другому, как показано на следующем рисунке.
@@ -76,7 +76,7 @@ ms.locfileid: "8926802"
 
 Влияние различных значений ослабления на фактическое освещение довольно умеренное, и небольшое снижение производительности вызывается при расчете кривой для значений ослабления, отличных от 1,0. По этим причинам это значение обычно устанавливается равным 1,0.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Источники света и материалы](lights-and-materials.md)

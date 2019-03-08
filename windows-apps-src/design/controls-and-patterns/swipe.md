@@ -3,30 +3,30 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
 doc-status: Published
-Description: Swipe commanding is a touch accelerator for context menus.
-title: Прокрутка (сдвиг)
+Description: Проведите по экрану команды представляют accelerator сенсорного ввода для контекстных меню.
+title: Swipe
 label: Swipe
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d575eb25d9a013aa999cf304db6d83faeb87765
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037326"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626659"
 ---
-# <a name="swipe"></a>Прокрутка (сдвиг)
+# <a name="swipe"></a>Swipe
 
 Команды прокрутки представляют собой ускорение действий в контекстных меню и позволяют пользователям устройств с сенсорным вводом легко получать доступ к частым действиям без необходимости изменения состояния в приложении.
 
-> **Важные API-интерфейсы**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **Важные API-интерфейсы**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [класса ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![Execute и Reveal в светлой теме](images/LightThemeSwipe.png)
 
-## <a name="is-this-the-right-control"></a>Выбор подходящего элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Команды прокрутки экономят место. Они полезны в случаях, когда пользователю необходимо выполнить одно и то же действие с несколькими элементами подряд. Также с помощью этих команд можно выполнять "быстрые действия" с элементами, для которых не требуется полное всплывающее окно или изменение состояния, в рамках одной страницы.
 
@@ -37,7 +37,7 @@ ms.locfileid: "9037326"
 - Сохранение или загрузка
 - Ответ
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -46,7 +46,7 @@ ms.locfileid: "9037326"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/SwipeControl">открыть приложение и увидеть SwipeControl в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -59,7 +59,7 @@ ms.locfileid: "9037326"
 
 ## <a name="how-does-swipe-work"></a>Как работают команды прокрутки?
 
-Командный интерфейс прокрутки UWP имеет два режима: [Показ](/uwp/api/windows.ui.xaml.controls.swipemode) и [Выполнение](/uwp/api/windows.ui.xaml.controls.swipemode). Он также поддерживает четыре разных направления прокрутки: вверх, вниз, влево и вправо.
+Команды считывание универсальной платформы Windows имеет два режима: [Показать](/uwp/api/windows.ui.xaml.controls.swipemode) и [выполнение](/uwp/api/windows.ui.xaml.controls.swipemode). Он также поддерживает четыре разных направления прокрутки: вверх, вниз, влево и вправо.
 
 ### <a name="reveal-mode"></a>Режим показа
 
@@ -96,7 +96,7 @@ ms.locfileid: "9037326"
 Команды прокрутки содержат два компонента, которые необходимо определить:
 
 - [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol) служит оболочкой для содержимого. В коллекции, например в ListView, этот компонент находится в пределах элемента DataTemplate.
-- Элементы меню прокрутки, которые являются одним или несколькими объектами [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), размещены в контейнерах направления элемента управления прокрутки: [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems) или [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
+- Пункты меню прокрутки, которые один или несколько [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem) объекты размещены в контейнерах направления прокрутки элемента управления: [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems), или [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
 
 Содержимое прокрутки можно встроить или определить в разделе "Ресурсы" страницы или приложения.
 
@@ -182,7 +182,7 @@ ms.locfileid: "9037326"
 
 ## <a name="handle-an-invoked-swipe-command"></a>Обработка к вызванной команде прокрутки
 
-Чтобы выполнить действие с командной прокрутки, необходимо обработать событие [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked). (Дополнительные сведения о том, как пользователь может вызвать команду, см. в разделе _Как работают команды прокрутки?_ выше в этой статье.) Как правило, команда прокрутки выполняется в элементе управления ListView или сценарии со списком. В этом случае, когда команда вызывается, необходимо выполнить действие над перетаскиваемым элементом.
+Чтобы выполнить действие с командной прокрутки, необходимо обработать событие [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked). (Дополнительные сведения о том, как пользователь может вызвать команду, просмотрите _как работает проведите по экрану?_ разделе этой статьи.) Как правило команда жеста перетаскивания — в ListView или сценарий, подобный список. В этом случае, когда команда вызывается, необходимо выполнить действие над перетаскиваемым элементом.
 
 Ниже описано, как обрабатывать событие Invoked элемента прокрутки _delete_ (удалить), созданного ранее.
 
@@ -207,12 +207,12 @@ ms.locfileid: "9037326"
 
 В этом конкретном случае происходит удаление элемента из списка, поэтому окончательное визуальное состояние сдвинутого элемента не является важным. Однако в ситуациях, когда вы просто хотите выполнить действие и затем снова свернуть команду прокрутки, можно задать свойству [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) одно из значений перечисления [SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked).
 
-- **Auto (автоматически)**
+- **Автоматически**
   - В режиме выполнения открытый элемент прокрутки останется открытым при его вызове.
   - В режиме показа открытый элемент прокрутки будет свернут при его вызове.
-- **Close (закрыть)**
+- **Закрыть**
   - При вызове элемента команда прокрутки всегда будет сворачиваться и возвращаться в стандартное состояние независимо от режима.
-- **RemainOpen (оставаться открытым)**
+- **RemainOpen**
   - При вызове элемента команда прокрутки всегда будет оставаться открытой независимо от режима.
 
 В примере ниже элемент прокрутки _reply_ (ответ) настроен на закрытие после его вызова.
@@ -237,8 +237,8 @@ ms.locfileid: "9037326"
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Связанные статьи
 
-- [Представление списка и сетки](listview-and-gridview.md)
-- [Контейнеры и шаблоны элементов](item-containers-templates.md)
-- [Обновление путем оттягивания](pull-to-refresh.md)
+- [Представление списка и представление сетки](listview-and-gridview.md)
+- [Контейнеры элементов и шаблонов](item-containers-templates.md)
+- [Потяните, чтобы обновить](pull-to-refresh.md)

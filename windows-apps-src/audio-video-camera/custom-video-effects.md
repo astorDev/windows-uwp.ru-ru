@@ -1,5 +1,5 @@
 ---
-Description: This article describes how to create a Windows Runtime component that implements the IBasicVideoEffect interface to allow you to create custom effects for video streams.
+Description: В этой статье описано, как создать компонент среды выполнения Windows, реализующий интерфейс IBasicVideoEffect, который позволяет создавать пользовательские эффекты для видеопотоков.
 MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -10,11 +10,11 @@ keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e48febb3fb49a35fe256e58cf7c80b4abe93267
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045573"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623089"
 ---
 # <a name="custom-video-effects"></a>Пользовательские видеоэффекты
 
@@ -28,14 +28,14 @@ ms.locfileid: "9045573"
 
 Пользовательский видеоэффект определяется в классе, реализующем интерфейс [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788). Этот класс невозможно включить непосредственно в проект приложения. Вместо этого необходимо использовать компонент среды выполнения Windows для размещения вашего класса видеоэффекта.
 
-**Добавление компонента среды выполнения Windows для вашего видеоэффекта**
+**Добавление компонента среды выполнения Windows для вашего видео эффекта**
 
 1.  Открыв свое решение в Microsoft Visual Studio, перейдите в меню **Файл** и выберите пункт **Добавить-&gt;Новый проект**.
 2.  Выберите тип проекта **Компонент среды выполнения Windows (универсальное приложение)**.
 3.  Для соответствия этому примеру задайте проекту название *VideoEffectComponent*. Это название будет использоваться в коде далее.
 4.  Нажмите кнопку **ОК**.
 5.  Шаблон проекта создает класс под названием Class1.cs. В **Обозревателе решений** щелкните правой кнопкой мыши по значку для Class1.cs и выберите **Переименовать**.
-6.  Переименуйте файл в *ExampleVideoEffect.cs*. Visual Studio отобразит уведомление с вопросом о том, не следует ли обновить все упоминания с использованием нового имени. Щелкните **Да**.
+6.  Переименуйте файл в *ExampleVideoEffect.cs*. Visual Studio отобразит уведомление с вопросом о том, не следует ли обновить все упоминания с использованием нового имени. нажмите кнопку **Да**.
 7.  Откройте **ExampleVideoEffect.cs** и дополните определение класса для реализации интерфейса [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788).
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
@@ -166,12 +166,12 @@ ms.locfileid: "9045573"
 
 Выполните следующие действия, чтобы добавить пакет Win2D NuGet в проект, созданный согласно описанию в разделе **Добавление пользовательского эффекта в приложение** в начале этой статьи.
 
-**Добавление пакета Win2D NuGet в проект эффекта**
+**Чтобы добавить пакет Win2D NuGet в проект эффект**
 
 1.  В **обозревателе решений** щелкните правой кнопкой мыши по проекту **VideoEffectComponent** и выберите **Управление пакетами NuGet**.
 2.  В верхней части окна выберите вкладку **Обзор**.
 3.  В поле поиска введите **Win2D**.
-4.  Выберите **Win2D.uwp**, а затем— **Установить** в области справа.
+4.  Выберите **Win2D.uwp**, а затем — **Установить** в области справа.
 5.  В диалоговом окне **Просмотр изменений** отобразится назначенный для установки пакет. Нажмите кнопку **ОК**.
 6.  Примите условия лицензии пакета.
 
@@ -239,7 +239,7 @@ ms.locfileid: "9045573"
 
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Простой доступ к просмотру камеры](simple-camera-preview-access.md)
-* [Создание и редактирование композиций мультимедиа](media-compositions-and-editing.md)
+* [Доступ к предварительной версии простой камеры](simple-camera-preview-access.md)
+* [Создание и редактирование мультимедиа](media-compositions-and-editing.md)
 * [Документация по Win2D](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Воспроизведение мультимедиа](media-playback.md)

@@ -4,18 +4,18 @@ title: Bluetooth RFCOMM
 description: В этой статье приводится обзор протокола Bluetooth RFCOMM в приложениях на базе универсальной платформы Windows (UWP), а также пример кода для отправки и получения файла.
 ms.date: 07/19/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 27adf5bb39a06e24b7d76e272ceb8dcf6348b57e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943842"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615629"
 ---
 # <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 
@@ -26,7 +26,7 @@ ms.locfileid: "8943842"
 
 В этой статье приводится обзор протокола Bluetooth RFCOMM в приложениях на базе универсальной платформы Windows (UWP), а также пример кода для отправки и получения файла.
 
-## <a name="overview"></a>Описание
+## <a name="overview"></a>Обзор
 
 API в пространстве имен [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) основываются на существующих шаблонах для Windows.Devices, включая [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) и [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654). Возможности чтения и записи данных позволяют использовать [**установленные шаблоны потоков данных**](https://msdn.microsoft.com/library/windows/apps/BR208119) и объекты в [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791). Атрибуты протокола обнаружения сервисов (SDP) имеют значение и ожидаемый тип. Однако в некоторых распространенных устройствах атрибуты SDP реализованы неправильно, и значение не соответствует ожидаемому типу. Кроме того, во многих случаях использования RFCOMM дополнительные атрибуты SDP вовсе не требуются. Поэтому этот API предоставляет доступ к данным SDP до синтаксического анализа, из которых разработчики могут получить необходимую информацию.
 
@@ -40,7 +40,7 @@ API в пространстве имен [**Windows.Devices.Bluetooth.Rfcomm**](
 
 Основной сценарий при отправке файла — подключение к парному устройству на базе нужной службы. Этот сценарий включает в себя следующие шаги:
 
--   Используйте функции **RfcommDeviceService.GetDeviceSelector\***, чтобы создать запрос AQS, который можно использовать для перечисления экземпляров парных устройств нужной службы.
+-   Используйте **RfcommDeviceService.GetDeviceSelector\***  функций, которые помогают создавать запрос AQS, который может использоваться для перечисления пару экземпляры данной службы.
 -   Выберите одно из перечисленных устройств, создайте класс [**RfcommDeviceService**](https://msdn.microsoft.com/library/windows/apps/Dn263463) и при необходимости прочитайте атрибуты SDP (с помощью [**установленных средств, облегчающих работу с данными**](https://msdn.microsoft.com/library/windows/apps/BR208119) для синтаксического анализа данных атрибута).
 -   Создайте сокет и используйте свойства [**RfcommDeviceService.ConnectionHostName**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname.aspx) и [**RfcommDeviceService.ConnectionServiceName**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename.aspx) для запуска асинхронной операции подключения к службе удаленного устройства с помощью метода [**StreamSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701504) с соответствующими параметрами.
 -   Следуйте установленным шаблонам потоков данных для считывания блоков данных из файла и их отправки с помощью [**StreamSocket.OutputStream**](https://msdn.microsoft.com/library/windows/apps/BR226920) сокета на устройство.

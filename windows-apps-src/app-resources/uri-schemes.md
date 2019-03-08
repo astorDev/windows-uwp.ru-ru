@@ -1,5 +1,5 @@
 ---
-Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
+Description: Существует несколько схем URI (универсального кода ресурсов), которые можно использовать для формирования ссылок на файлы приложения, получаемые из пакета приложения, папок данных приложения или облака. Можно также использовать схему URI для обозначения строк, загружаемых из файлов ресурсов (.resw) приложения.
 title: Схемы URI
 template: detail.hbs
 ms.date: 10/16/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
 ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048351"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632059"
 ---
 # <a name="uri-schemes"></a>Схемы URI
 
@@ -251,9 +251,9 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 Дополнительные сведения и примеры см. в разделах [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md) и [Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
-Компонент пути схемы `ms-resource`, как и стандартные URI, учитывает регистр. Тем не менее, базовый извлечение делает [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) с *ignoreCase* значение `true`.
+Компонент пути схемы `ms-resource`, как и стандартные URI, учитывает регистр. Однако базовый извлечения выполняет [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) с *ignoreCase* присвоено `true`.
 
-Нормализованная форма URI поддерживает регистр и декодирует (используя символ "%", за которым следуют двузначный шестнадцатеричный символ) незарезервированные символы RFC 3986. Символы ?, #, /, * и ” (символ кавычки), представляющие такие данные в пути, как имена файлов или папок, должны кодироваться. Все закодированные символы перед получением декодируются. Таким образом, чтобы получить строковый ресурс из файла ресурсов с именем `Hello#World.resw`, используйте этот URI.
+Нормализованная форма URI поддерживает регистр и декодирует (используя символ "%", за которым следуют двузначный шестнадцатеричный символ) незарезервированные символы RFC 3986. Символы ?, #, /, * и ” (символ кавычки), представляющие такие данные в пути, как имена файлов или папок, должны кодироваться. Все закодированные символы перед получением декодируются. Таким образом, чтобы получить строковый ресурс из файла ресурсов с именем `Hello#World.resw`, использовать этот URI.
 
 ```xml
 ms-resource:///Hello%23World/String1
@@ -267,10 +267,10 @@ ms-resource:///Hello%23World/String1
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Универсальный код ресурса (URI): общий синтаксис](https://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [Универсальный код ресурса (URI): Базовый синтаксис](https://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [Создание пакетов приложений](../packaging/index.md)
-* [Ссылки на изображения и другие ресурсы из кода и разметки XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
+* [Ссылаться на изображения и другие ресурсы из XAML-разметки и кода](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md)
-* [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md)
+* [Локализация строк в манифесте пакета интерфейса пользователя и приложения](localize-strings-ui-manifest.md)
 * [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/jj552947)
-* [Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
+* [Поддержка уведомлений плиток и всплывающих уведомлений для языка, масштаба и высокой контрастности](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

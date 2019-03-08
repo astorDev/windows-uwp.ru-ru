@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d680f7d4a3510f66cba74d1c8b30d8883b07369a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926064"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627209"
 ---
 # <a name="dynamic-adaptive-streaming-over-http-dash-profile-support"></a>Поддержка профиля Dynamic Adaptive Streaming over HTTP (DASH)
 
@@ -19,7 +19,7 @@ ms.locfileid: "8926064"
 ## <a name="supported-dash-profiles"></a>Поддерживаемые профили DASH
 В следующей таблице перечислены профили DASH, которые поддерживаются для приложений UWP.
 
-|Тег | Тип манифеста | Примечания|Июльский выпуск Windows 10|Windows 10 (версия 1511)|Windows 10 (версия 1607) |Windows 10 (версия 1607) |Windows 10 (версия 1703)|
+|Tag | Тип манифеста | Заметки|Июльский выпуск Windows 10|Windows 10 (версия 1511)|Windows 10 (версия 1607) |Windows 10 (версия 1607) |Windows 10 (версия 1703)|
 |----------------|------|-------|-----------|--------------|---------|-------|--------|
 |urn:mpeg&#58;dash:profile:isoff-live:2011 | Статический |     |Поддерживается            |  Поддерживается              | Поддерживается        |Поддерживается| Поддерживается|
 |urn:mpeg&#58;dash:profile:isoff-main:2011 |        | Наилучший | Поддерживается            |  Поддерживается              | Поддерживается        |Поддерживается| Поддерживается|
@@ -35,7 +35,7 @@ ms.locfileid: "8926064"
 * urn:mpeg&#58;dash:profile:mp2t-simple:2011
 
 
-## <a name="related-topics"></a>Еще по теме:
+## <a name="related-topics"></a>Статьи по теме
 
 * [Воспроизведение мультимедиа](media-playback.md)
 * [Адаптивная потоковая передача](adaptive-streaming.md)

@@ -6,14 +6,14 @@ ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 14cb42e0bd0f1bac307a9dfc1ac188d8b11d8cb8
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115801"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610329"
 ---
 # <a name="symbologies"></a>Символики
-В этой статье приведены примеры штрихкодов для каждой из символик, поддерживаемых программным декодером штрихкодов в Windows 10, в том числе UPC/EAN, Code 39, Code 128, Interleaved 2 of 5, Databar Omnidirectional, Databar Stacked, QR Code и GS1DWCode.
+Этот раздел содержит пример штрих-коды для каждого из symbologies, поддерживаемых декодер штрих-кода программного обеспечения, который поставляется с Windows 10, включая: UPC/EAN, код 39, а 128, чередуются 2, 5, Всенаправленные Гистограмма, гистограмма с накоплением, QR-код и GS1DWCode.
 
 ## <a name="1d-symbologies"></a>Одномерные символики
 

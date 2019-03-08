@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 287079bf7195ebcadc3543d9369a0567f197b10c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923623"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622939"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Создание, редактирование и сохранение точечных рисунков
 
@@ -19,13 +19,13 @@ ms.locfileid: "8923623"
 
 В этой статье объясняется, как загрузить и сохранить файлы изображений с помощью [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) и [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206), а также как использовать объект [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) для представления точечных рисунков.
 
-Класс **SoftwareBitmap**— это универсальный API, который можно создать из нескольких источников, включая файлы изображений, объекты [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259), поверхности Direct3D и код. **SoftwareBitmap** позволяет легко преобразовывать различные форматы пикселей в режимы альфа-канала и наоборот, а также получить доступ на низком уровне к пиксельным данным. Кроме того, **SoftwareBitmap**— это распространенный интерфейс, который используется различными функциями Windows, включая следующие.
+Класс **SoftwareBitmap** — это универсальный API, который можно создать из нескольких источников, включая файлы изображений, объекты [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259), поверхности Direct3D и код. **SoftwareBitmap** позволяет легко преобразовывать различные форматы пикселей в режимы альфа-канала и наоборот, а также получить доступ на низком уровне к пиксельным данным. Кроме того, **SoftwareBitmap** — это распространенный интерфейс, который используется различными функциями Windows, включая следующие.
 
--   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) позволяет получить кадры, захваченные с камеры в виде **SoftwareBitmap**.
+-   [**CapturedFrame** ](https://msdn.microsoft.com/library/windows/apps/dn278725) позволит вам получить кадры, захваченные камеры как **SoftwareBitmap**.
 
--   [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) позволяет получить представление **SoftwareBitmap** элемента **VideoFrame**.
+-   [**VideoFrame** ](https://msdn.microsoft.com/library/windows/apps/dn930917) позволит вам получить **SoftwareBitmap** представление **VideoFrame**.
 
--   [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) позволяет обнаруживать лица в **SoftwareBitmap**.
+-   [**FaceDetector** ](https://msdn.microsoft.com/library/windows/apps/dn974129) позволяет обнаружить лица в **SoftwareBitmap**.
 
 В примере кода в этой статье используется API из следующих пространств имен.
 
@@ -47,7 +47,7 @@ ms.locfileid: "8923623"
 
 [!code-cs[PickOutputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOutputFile)]
 
-Вызовите метод [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) объекта **StorageFile**, чтобы получить поток произвольного доступа, в который будет записано изображение. Вызовите статический метод [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211), чтобы получить экземпляр класса [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) для указанного потока. Первый параметр **CreateAsync**— это идентификатор GUID, представляющий кодек, который необходимо использовать для кодирования изображения. **BitmapEncoder** — класс, который предоставляет свойство, содержащее идентификатор для каждого кодека, поддерживаемого кодировщиком, например [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
+Вызовите метод [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) объекта **StorageFile**, чтобы получить поток произвольного доступа, в который будет записано изображение. Вызовите статический метод [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211), чтобы получить экземпляр класса [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) для указанного потока. Первый параметр **CreateAsync** — это идентификатор GUID, представляющий кодек, который необходимо использовать для кодирования изображения. **BitmapEncoder** — класс, который предоставляет свойство, содержащее идентификатор для каждого кодека, поддерживаемого кодировщиком, например [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
 
 Используйте метод [**SetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887337), чтобы задать изображение для кодирования. Вы можете задать значения свойства [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) для применения основных преобразований изображения во время кодирования. Свойство [**IsThumbnailGenerated**](https://msdn.microsoft.com/library/windows/apps/br226225) определяет, создал ли кодировщик эскиз. Обратите внимание, что не все форматы файлов поддерживают эскизы, поэтому при использовании этой функции может возникнуть ошибка о недопустимой операции, если эскизы не поддерживаются.
 
@@ -124,7 +124,7 @@ ms.locfileid: "8923623"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Справочник по параметрам BitmapEncoder](bitmapencoder-options-reference.md)
-* [Метаданные изображения](image-metadata.md)
+* [Метаданные изображений](image-metadata.md)
  
 
  

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e342094509dd5d8fb06657d147ac6468a5f8cd6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926053"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618109"
 ---
 # <a name="media-compositions-and-editing"></a>Создание и редактирование мультимедийных композиций
 
@@ -74,7 +74,7 @@ ms.locfileid: "8926053"
 
 -   Перед вызовом [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) член **MediaComposition** должен содержать по крайней мере один клип мультимедиа, иначе возвращенный объект будет пустым.
 
--   Временная шкала **MediaElement**, отражающая изменения в композиции, автоматически не обновляется. Рекомендуется вызывать **GeneratePreviewMediaStreamSource** и задавать свойство **Source** для **MediaPlayerElement** каждый раз, когда в композицию вносится набор изменений и необходимо обновить пользовательский интерфейс.
+-   Временная шкала **MediaElement**, отражающая изменения в композиции, автоматически не обновляется. Рекомендуется вызвать оба **GeneratePreviewMediaStreamSource** и задайте **MediaPlayerElement** **источника** свойство каждый раз, чтобы внести ряд изменений композиции и необходимо обновить пользовательский Интерфейс.
 
 Когда пользователь покидает страницу, рекомендуется присвоить объекту **MediaStreamSource** и свойству [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) элемента **MediaPlayerElement** значение NULL, чтобы освободить связанные ресурсы.
 
@@ -90,7 +90,7 @@ ms.locfileid: "8926053"
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
--   [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) позволяет указать приоритет скорости перекодировки в зависимости от точности обрезки соседних клипов мультимедиа. **Fast** приводит к более быстрой перекодировке с меньшей точностью обрезки, **Precise** — к более медленной перекодировке с более точной обрезкой.
+-   [  **MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) позволяет указать приоритет скорости перекодировки в зависимости от точности обрезки соседних клипов мультимедиа. **Fast** приводит к более быстрой перекодировке с меньшей точностью обрезки, **Precise** — к более медленной перекодировке с более точной обрезкой.
 
 ## <a name="trim-a-video-clip"></a>Обрезка видеоклипа
 
@@ -109,7 +109,7 @@ ms.locfileid: "8926053"
 
 [!code-cs[AddBackgroundAudioTrack](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddBackgroundAudioTrack)]
 
--   **MediaComposition** поддерживает фоновые аудиодорожки в формате MP3, WAV и FLAC.
+-   Объект **MediaComposition** поддерживает фоновые звуковых дорожек в следующих форматах: MP3, WAV, FLAC
 
 -   Фоновая аудиодорожка
 

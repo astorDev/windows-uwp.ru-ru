@@ -6,15 +6,15 @@ ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c76f0da8c3ac1d50ccd2d328dd321df9aa9bd3e
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117724"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624629"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Создание одностраничного веб-приложения с серверной частью на основе API REST
 
-**Создание размещенного веб-приложения для Microsoft Store с помощью популярных веб-технологий создания приложений на стороне клиента и сервера**
+**Создание размещенных веб-приложения для Microsoft Store с помощью популярных fullstack веб-технологий**
 
 ![Простая игра для тренировки памяти в виде одностраничного веб-приложения](images/fullstack.png)
 
@@ -22,13 +22,13 @@ ms.locfileid: "9117724"
 
 Мы будем использовать некоторые из самых популярных веб-технологий, в том числе среду выполнения [Node.js](https://nodejs.org/en/) и [Express](https://expressjs.com/) для разработки серверной части, инфраструктуру пользовательского интерфейса [Bootstrap](https://getbootstrap.com/), обработчик шаблонов [Pug](https://www.npmjs.com/package/pug) и [Swagger](https://swagger.io/tools/) для создания API RESTful. Вы также получите опыт работы с [порталом Azure](https://ms.portal.azure.com/) для размещения в облаке и работы с редактором [Visual Studio Code](https://code.visualstudio.com/).
 
-## <a name="prerequisites"></a>Что вам понадобится
+## <a name="prerequisites"></a>Предварительные условия
 
 Если эти ресурсы еще отсутствуют на вашем компьютере, перейдите по этим ссылкам для скачивания:
 
  - [Node.js](https://nodejs.org/en/download/) - убедитесь, что вы выбрали этот параметр, чтобы добавить элемент Node к параметру PATH.
 
- - [Генератор Express](https://expressjs.com/en/starter/generator.html) - после установки Node установите Express, запустив `npm install express-generator -g`
+ - [Экспресс-генератор](https://expressjs.com/en/starter/generator.html)— после установки узел, установите Express, выполнив команду `npm install express-generator -g`
 
  - [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -36,11 +36,11 @@ ms.locfileid: "9117724"
 
 Если вы решите пропустить (или отложить) часть, посвященную Azure, просто пропустите последние разделы частей I и II, в которых рассматривается размещение на Azure и упаковка приложения для Microsoft Store. Служба API и веб-приложение, которое вы создадите, будет по-прежнему работать локально (на `http://localhost:8000` и `http://localhost:3000` соответственно) на вашем компьютере.
 
-## <a name="part-i-build-a-rest-api-backend"></a>Часть I: сборка серверной части API REST
+## <a name="part-i-build-a-rest-api-backend"></a>Часть i. Создание серверной части REST API
 
 Сначала мы создадим API простой игры для развития памяти, чтобы включить наше игровое веб-приложение для развития памяти. Мы будем использовать [Swagger](https://swagger.io/) для определения API и создания кода формирования шаблонов и веб-интерфейса пользователя для ручного тестирования.
 
-Если вы хотите пропустить эту часть и перейти прямо к разделу [Часть II: сборка одностраничного веб-приложения](#part-ii-build-a-single-page-web-application), вот [законченный код для части I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Следуйте инструкциям в разделе *СВЕДЕНИЯ*, чтобы получить код и запустить его локально или см. раздел *5. Размещение службы API в Azure и включение CORS*, чтобы запустить приложение из Azure.
+Если вы хотите пропустить эту часть и перейти непосредственно к [часть II: Создание одностраничных веб-приложения](#part-ii-build-a-single-page-web-application), вот [завершения кода для первой части](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Выполните *README* инструкции, чтобы получить код вверх и локально запущен, или см. в разделе *5. Размещение вашей службы API в Azure и включить CORS* запустить его из Azure.
 
 ### <a name="game-overview"></a>Обзор игры
 
@@ -80,7 +80,7 @@ ms.locfileid: "9117724"
 
 | Параметр | Описание |
 |-----------|-------------|
-| целое число *размер* |Количество совпадающих пар перемешиваются случайным образом и помещаются на игровое "поле". Пример. `http://memorygameapisample/new?size=2`|
+| целое число *размер* |Количество совпадающих пар перемешиваются случайным образом и помещаются на игровое "поле". Пример: `http://memorygameapisample/new?size=2`|
 
 | Ответ | Описание |
 |----------|-------------|
@@ -91,25 +91,25 @@ ms.locfileid: "9117724"
 #### <a name="get-game"></a>GET /game
 Получает текущее состояние поля игры для развития памяти.
 
-*Нет параметров*
+*Без параметров*
 
 | Ответ | Описание |
 |----------|-------------|
-| 200 OK | Возвращает JSON-массив карточных объектов. Каждая карта имеет свойство **cleared**, показывающее, было ли уже найдено ее соответствие. Одинаковые карты также сообщают свое **значение**. Пример. `[{"cleared":"false"},{"cleared":"false"},{"cleared":"true","value":1},{"cleared":"true","value":1}]`|
+| 200 OK | Возвращает JSON-массив карточных объектов. Каждая карта имеет свойство **cleared**, показывающее, было ли уже найдено ее соответствие. Одинаковые карты также сообщают свое **значение**. Пример: `[{"cleared":"false"},{"cleared":"false"},{"cleared":"true","value":1},{"cleared":"true","value":1}]`|
 
 #### <a name="put-guess"></a>PUT /guess
 Определяет карту, которую необходимо открыть, и проверяет ее соответствие ранее открытой карте.
 
 | Параметр | Описание |
 |-----------|-------------|
-| целое число *карта* | Идентификатор карты (индекс в массиве игрового поля) для отображения. Каждое полное "угадывание" состоит из двух указанных карт (то есть двух вызовов к **/guess** с допустимыми и уникальными значениями *карт*). Пример. `http://memorygameapisample/guess?card=0`|
+| целое число *карта* | Идентификатор карты (индекс в массиве игрового поля) для отображения. Каждое полное "угадывание" состоит из двух указанных карт (то есть двух вызовов к **/guess** с допустимыми и уникальными значениями *карт*). Пример: `http://memorygameapisample/guess?card=0`|
 
 | Ответ | Описание |
 |----------|-------------|
-| 200 OK | Возвращает JSON с **идентификатором** и **значением** указанной карты. Пример. `[{"id":0,"value":1}]`|
+| 200 OK | Возвращает JSON с **идентификатором** и **значением** указанной карты. Пример: `[{"id":0,"value":1}]`|
 | 400 ОШИБОЧНЫЙ ЗАПРОС |  Ошибка с указанной картой. Просмотрите тело ответа HTTP для получения дополнительных сведений.|
 
-### <a name="1-spec-out-the-api-and-generate-code-stubs"></a>1. Выделите API и создайте заглушки кода
+### <a name="1-spec-out-the-api-and-generate-code-stubs"></a>1. Спецификация API и создавать заглушки кода
 
 Мы будем использовать [Swagger](https://swagger.io/) для преобразования структуры API игры для развития памяти в работающий код сервера Node.js. Вот как можно определить наши [API-интерфейсы игры для развития памяти как метаданные Swagger](https://github.com/Microsoft/Windows-tutorials-web/blob/master/Single-Page-App-with-REST-API/backend/api.json). Мы будем использовать это для создания заглушек кода сервера.
 
@@ -144,7 +144,7 @@ ms.locfileid: "9117724"
 
     Теперь запустите VS Code и выберите элементы **Файл** > **Открыть папку...** и перейдите в каталог MemoryGameAPI. Это сервер API Node.js, который вы только что создали! Он использует популярную платформу веб-приложения [ExpressJS](https://expressjs.com/en/4x/api.html) для структурирования и запуска проекта.
 
-### <a name="2-customize-the-server-code-and-setup-debugging"></a>2. Настройка серверного кода и отладка установки
+### <a name="2-customize-the-server-code-and-setup-debugging"></a>2. Настройка серверного кода и отладки программы установки
 
 Файл *server.js* в корне проекта действует как "основная" функция сервера. Откройте его в VS Code и скопируйте в него следующие данные. Строки, измененные из созданного кода, содержат комментарии с дальнейшим объяснением.
 
@@ -211,7 +211,7 @@ Server.listen(port, function () {  // Starts server with our modfied port settin
 
 Теперь нажмите клавишу F5 и откройте браузер на странице [https://localhost:8000](https://localhost:8000). Эта страница должна открыться на пользовательском интерфейсе Swagger для нашего API игры для развития памяти, а оттуда можно развернуть сведения и поля ввода для каждого из методов. Можно даже попробовать вызвать API, хотя их ответы будут содержать только макетированные данные (предоставляемые модулем [Swagmock](https://www.npmjs.com/package/swagmock)). Пришло время добавить логику игры, чтобы сделать эти API реальными.
 
-### <a name="3-set-up-your-route-handlers"></a>3. Настройка обработчиков маршрута
+### <a name="3-set-up-your-route-handlers"></a>3. Настройте свои обработчики маршрутов
 
 Файл Swagger (config\swagger.json) предписывает нашему серверу как обрабатывать различные запросы клиента HTTP путем сопоставления каждого пути URL-адреса, которые он определяет для файла обработчика (в \handlers), а также каждого метода, определенного для этого пути (например, **GET**, **POST**) для `operationId` (функция) в рамках этого файла обработчика.
 
@@ -270,11 +270,11 @@ for (var i=0; i < board.length; i++){
 
 С этим изменением метод **GET /game** возвращает все значения карт (в том числе те, которые еще не были удалены). Это полезный отладочный прием для сохранения на месте, пока вы создаете клиентскую часть игры для развития памяти.
 
-### <a name="5-optional-host-your-api-service-on-azure-and-enable-cors"></a>5. (Необязательно) Разместите свою службу API в Azure и включите CORS
+### <a name="5-optional-host-your-api-service-on-azure-and-enable-cors"></a>5. (Необязательно) Размещение вашей службы API в Azure и включение CORS
 
 Документы Azure помогут выполнить эти действия:
 
- - [Регистрация нового *приложения API* в портале Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
+ - [Регистрация нового *приложения API* с помощью портала Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
  - [Настройка развертывания Git для вашего приложения API](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git) и
  - [Развертывание кода приложения API в Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
 
@@ -288,13 +288,13 @@ for (var i=0; i < board.length; i++){
 
 Ниже перечислены некоторые полезные ресурсы для дальнейшей работы.
 
- - [Расширенная отладка Node.js с помощью Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
+ - [Дополнительно Node.js, отладка с помощью Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Документация Azure Web + Mobile](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
+ - [Azure Интернет + Мобильные документы](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
 
- - [Документация Azure DocumentDB](https://docs.microsoft.com/en-us/azure/documentdb/index)
+ - [Документация по Azure DocumentDB](https://docs.microsoft.com/en-us/azure/documentdb/index)
 
-## <a name="part-ii-build-a-single-page-web-application"></a>Часть II: Сборка одностраничного веб-приложения
+## <a name="part-ii-build-a-single-page-web-application"></a>Часть II: Создание одностраничных веб-приложения
 
 После того, как вы создали (или [загрузили](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) [серверную часть API REST](#part-i-build-a-rest-api-backend) из части I, вы готовы приступить к разработке клиентской части одностраничной игры для развития памяти с помощью [Node](https://nodejs.org/en/), [Express](https://expressjs.com/) и [Bootstrap ](https://getbootstrap.com/).
 
@@ -345,7 +345,7 @@ for (var i=0; i < board.length; i++){
 
 7. Чтобы обновить приложение для отображения нового заголовка, остановите приложение, нажав **CTRL + C**, **Y** в командной строке, а затем перезапустите его с помощью команды `npm start`.
 
-### <a name="2-add-client-side-game-logic-code"></a>2. Добавление кода логики игры со стороны клиента
+### <a name="2-add-client-side-game-logic-code"></a>2. Добавьте код, логику игры на стороне клиента
 Вы можете найти файлы, необходимые для этой части учебника, в папке [Пуск](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/frontend/Start). Если вы запутаетесь, готовый код доступен в папке [Final](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/frontend/Final). 
 
 1. Скопируйте файл scripts.js, который находится внутри папки [Start](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/frontend/Start), и вставьте его в memory\public\javascripts. Этот файл содержит всю игровую логику, необходимую для запуска игры, в том числе:
@@ -464,14 +464,14 @@ for (var i=0; i < board.length; i++){
 > [!TIP] 
 > Если вы используете Visual Studio Code, выберите все строки кода, который вы хотите раскомментировать, и нажмите клавишу Crtl + K, U
 
-Здесь мы используем [`jQuery.ajax()`](https://api.jquery.com/jQuery.ajax/) и метод **PUT** [`/guess`](#part-i-build-a-rest-api-backend), созданный в части I. 
+Здесь мы используем [ `jQuery.ajax()` ](https://api.jquery.com/jQuery.ajax/) и **ПОМЕСТИТЬ** [ `/guess` ](#part-i-build-a-rest-api-backend) метод, созданный в первой части. 
 
 Этот код выполняется в следующем порядке.
 
-* `id` первой карты, выбранной пользователем, добавляется как первое значение в массив selectedCards[]: `selectedCards[0]` 
+* `id` Карты выбрал пользователь добавляется как первое значение в массив selectedCards []: `selectedCards[0]` 
 * Значение (`id`) в `selectedCards[0]` передается на сервер с помощью метода [`/guess`](#part-i-build-a-rest-api-backend)
 * Сервер отвечает, возвращая значение `value` этой карты (целое число)
-* [Значок глифа Bootstrap](https://getbootstrap.com/components/) добавляется на рубашку карты, чей `id` — `selectedCards[0]`
+* Объект [начальной загрузки glyphicon](https://getbootstrap.com/components/) добавляется в конец карточки, `id` — `selectedCards[0]`
 * Параметр `value` первой карты (от сервера) сохраняется в массиве `selectedCardsValues[]` : `selectedCardsValues[0]`. 
 
 Второй ход пользователя следует той же логике. Если идентификаторы карт, которые выбрал пользователь, совпадают (например, `selectedCards[0] == selectedCards[1]`), карты также совпадают! Класс CSS `.matched` добавляется к совпадающим картам (окрашивая их в зеленый цвет) и карты остаются перевернутыми.
@@ -537,13 +537,13 @@ body
     ```
 
 > [!TIP] 
-> Помните: Pug учитывает пробелы. Убедитесь, что все ваши отступы поставлены верно!
+> Помните: Pug — пробел конфиденциальные. Убедитесь, что все ваши отступы поставлены верно!
 
-### <a name="4-use-bootstraps-grid-system-to-create-a-responsive-layout"></a>4. Использование системы сетки Bootstrap для создания динамического макета
+### <a name="4-use-bootstraps-grid-system-to-create-a-responsive-layout"></a>4. Использовать система сетки начальной загрузки Чтобы создать гибкий макет
 [Система сетки](https://getbootstrap.com/css/#grid) Bootstrap — это гибкая система сетки, которая масштабирует сетку по мере изменения окна просмотра устройства. Карты в этой игре используют предопределенные классы системы сетки Bootstrap для макета, в том числе:
-* `.container-fluid`: задает гибкий контейнер для сетки
-* `.row-fluid`: задает гибкие строки
-* `.col-xs-3`: задает количество столбцов
+* `.container-fluid`: указывает гибкий контейнер для сетки
+* `.row-fluid`: задает плавность строки
+* `.col-xs-3`: Указывает количество столбцов
 
 Система сетки Bootstrap позволяет системе сетки свернуться в один столбец по вертикали, как если вы бы смотрели на меню навигации на мобильном устройстве.  Тем не менее, так как нам нужно, чтобы в нашей игре всегда были столбцы, мы используем предопределенный класс `.col-xs-3`, который постоянно поддерживает сетку в горизонтальном положении. 
 
@@ -572,7 +572,7 @@ body
                 script restoreGame();
     ```
 
-### <a name="5-add-a-card-flip-animation-with-css-transforms"></a>5. Добавление анимации переворота карты с помощью преобразований CSS
+### <a name="5-add-a-card-flip-animation-with-css-transforms"></a>5. Добавить анимацию карты пролистывание с преобразует CSS
 Замените файл style.css в memory\public\stylesheets на файл style.css из папки "Пуск".
 
 Добавление движения переворота с помощью [преобразований CSS](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/css/transforms) предоставляет картам реалистичное трехмерное движение переворота. Карты в игре создаются с помощью следующей HTML-структуры и программно добавляются на игровое поле (в функции `drawGameBoard()` показано ранее).
@@ -592,7 +592,7 @@ body
     perspective: 1000px; 
     ```
 
-2. Теперь добавьте следующие свойства к классу `.cards` в style.css. `.cards` `div` является элементом, который фактически будет осуществлять анимацию переворота, отображая лицевую или оборотную сторону карты. 
+2. Теперь добавьте следующие свойства к классу `.cards` в style.css. `.cards` `div` Является элементом, который фактически будет выполнять транспонирования анимации, показывающий передней или задней карточки. 
 
     ``` css
     transform-style: preserve-3d;
@@ -615,10 +615,10 @@ body
 
     Теперь, когда пользователь нажимает на карту, она поворачивается на 180 градусов.
 
-### <a name="6-test-and-play"></a>6. Тестирование и игра
+### <a name="6-test-and-play"></a>6. Теста и воспроизвести
 Поздравляем! Вы завершили создание веб-приложения! Давайте протестируем его. 
 
-1. Откройте командную строку в каталоге памяти и введите следующую команду: `npm start`
+1. Откройте командную строку в вашем каталоге памяти и введите следующую команду: `npm start`
 
 2. В браузере перейдите на страницу [https://localhost:3000/](https://localhost:3000/) и играйте в игру!
 
@@ -626,11 +626,11 @@ body
 
     Можно также сравнить ваш код с кодом, предоставленным в папке "Final".
 
-4. Чтобы остановить игру, в командной строке введите: **Ctrl + C**, **Y**. 
+4. Чтобы остановить игры, в командной строке введите: **CTRL + C**, **Y**. 
 
 ### <a name="going-further"></a>Дальнейшая работа
 
-Теперь вы можете развернуть ваше приложение в Azure (или любой другой облачной службе размещения) для тестирования на разных форм-факторах устройств, например мобильных устройствах, планшетах и настольных компьютерах. (Не забудьте провести тестирование также в других браузерах!) Когда ваше приложение будет готово для рабочей среды, вы сможете легко упаковать его как *размещенное веб-приложение* (HWA) для *универсальной платформы Windows* (UWP) и распространять его через Microsoft Store.
+Теперь вы можете развернуть ваше приложение в Azure (или любой другой облачной службе размещения) для тестирования на разных форм-факторах устройств, например мобильных устройствах, планшетах и настольных компьютерах. (Не забыли тестирование в различных браузерах слишком!) Когда приложение будет готово для рабочей среды, вы можете легко упаковать его как *размещенные веб-приложения* (HWA) для *универсальной платформы Windows* (UWP) и распространить их из Microsoft Store.
 
 Ниже приведены основные шаги для публикации в Microsoft Store.
 
@@ -640,8 +640,8 @@ body
 
 Ниже перечислены некоторые полезные ресурсы для дальнейшей работы.
 
- - [Развертывание проекта по разработке приложений на веб-сайты Azure](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
+ - [Развертывание проекта приложения в веб-сайтах Azure](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
  - [Преобразование веб-приложения в приложение универсальной платформы Windows (UWP)](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
 
- - [Публикация приложений для Windows](https://developer.microsoft.com/en-us/store/publish-apps)
+ - [Публикация приложений Windows](https://developer.microsoft.com/en-us/store/publish-apps)

@@ -1,53 +1,53 @@
 ---
-title: Сведения об устройстве Xbox портала Справочник по API
-description: Узнайте, как получить доступ к данным устройства Xbox.
+title: Справка по API для сведений об Xbox на портале устройств
+description: Узнайте, как получить доступ к сведениям об устройстве Xbox.
 ms.date: 11/072017
 ms.topic: article
-keywords: Windows 10, uwp, xbox, портала устройств
+keywords: Windows 10, универсальной платформы Windows, xbox, портал устройств
 ms.localizationpriority: medium
 ms.openlocfilehash: 85c2c139aa8064e1f0769064b95eeb531086b8c1
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115984"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617499"
 ---
-# <a name="xbox-info-api-reference"></a>Справочник по API сведения Xbox   
-Можно получить доступ к Xbox One сведения об устройстве, с помощью этого API.
+# <a name="xbox-info-api-reference"></a>Справка по API для сведений об Xbox   
+Доступ к сведениям об устройстве Xbox One можно получить с помощью API.
 
 ## <a name="get-xbox-one-device-information"></a>Получение сведений об устройстве Xbox One
 
 **Запрос**
 
-Вы можете получить сведения об устройстве о консоли Xbox One.
+Вы можете получить сведения об устройстве Xbox One.
 
-Метод      | URI запроса
+Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
 GET | /ext/xbox/info
 <br />
-**Параметры универсального кода ресурса (URI)**
+**Параметры URI**
 
 - Нет
 
 **Заголовки запроса**
 
-- None (Нет)
+- Нет
 
-**Тело запроса**
+**Текст запроса**
 
 - Нет
 
 **Ответ**   
 Объект JSON с перечисленными ниже полями.
 
-* OsVersion - (строка) — версия операционной системы.
-* OsEdition - (String) в версии операционной системы, такие как «Март 2017 г.» или «март 2017 г. QFE 1".
-* ConsoleId - код (строки) консоли.
-* DeviceId - (строки) консоли Xbox Live устройства идентификатор.
-* Серийный номер - (строка) консоли серийный номер.
-* DevMode - режима текущего разработчика (строки) консоли, например «None» или «Коммерческие».
-* ConsoleType - типа (строки) консоли, например «Xbox One» или «Xbox One S».
-* DevkitCertificateExpirationTime - (Number) — время UTC в секундах, когда истечет срок действия сертификата комплект средств для разработчика консоли.
+* OsVersion (String) — версия ОС.
+* OsEdition (String) — выпуск ОС, например "March 2017" или "March 2017 QFE 1".
+* ConsoleId (String) — ИД консоли.
+* DeviceId (String) — ИД устройства Xbox Live консоли.
+* SerialNumber (String) — серийный номер консоли.
+* DevMode (String): текущий режим разработчика консоли, например "None" или "Retail".
+* ConsoleType (String): тип консоли, например "Xbox One" или "Xbox One S".
+* DevkitCertificateExpirationTime (Number): время UTC в секундах, по истечении которого истекает срок действия сертификата на пакет средств разработчика для консоли.
 
 **Код состояния**
 
@@ -60,6 +60,6 @@ GET | /ext/xbox/info
 5XX | Коды ошибок
 
 <br />
-**Доступные семейства устройств**
+**Семейств доступных устройств**
 
 * Windows Xbox

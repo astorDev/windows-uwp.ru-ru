@@ -6,20 +6,20 @@ ms.topic: article
 keywords: windows 10, uwp, файл, свойства
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ae884ca5424f50a7a835bc55602b5aa7c54096d
-ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9060058"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630239"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>Быстрый доступ к свойствам файлов в UWP 
 
 Узнайте, как быстро получить список файлов и их свойств из библиотеки для использования этих свойств в приложении.  
 
-Предварительные требования 
-- **Асинхронное программирование для приложений универсальной платформы Windows (UWP)**  рассказывается, как для написания асинхронных приложений на C# или Visual Basic, см. в разделе [вызов асинхронных API в C# или Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).     Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
-- **Разрешения на доступ к библиотекам**  Коду в этих примерах требуется возможность **picturesLibrary** , но вашего расположения файла может потребоваться другая возможность либо никаких возможностей вообще. Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). 
-- **Простое перечисление файлов**  В этом примере используется [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) для настройки нескольких расширенных свойств перечисления. Подробные инструкции о том, как получить простой список файлов для небольшого каталога, см. в разделе [Перечисление файлов и папок и адресация им запросов](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
+Предварительные условия 
+- **Асинхронное программирование для приложений универсальной платформы Windows (UWP)**   рассказывается, как написание асинхронных приложений C# или Visual Basic, см. в разделе [вызов асинхронных API в C# или Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).     Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
+- **Разрешение на доступ к библиотекам**   код в этих примерах требует **picturesLibrary** возможность, но расположение файла может потребоваться различными возможностями, или отсутствует возможность вообще. Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). 
+- **Перечисление простого**    в этом примере используется [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) задать несколько дополнительных перечисления свойств. Подробные инструкции о том, как получить простой список файлов для небольшого каталога, см. в разделе [Перечисление файлов и папок и адресация им запросов](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
 
 ## <a name="usage"></a>Использование  
 Многим приложениям требуется отобразить список свойств группы файлов, но не всегда требуется напрямую взаимодействовать с файлами. Например, музыкальное приложение воспроизводит (открывает) по одному файлу за раз, но ему требуются свойства всех файлов в папке, чтобы можно было отобразить очередь композиций или чтобы пользователь мог выбрать действительный файл для воспроизведения. 
@@ -44,7 +44,7 @@ ms.locfileid: "9060058"
 В нашем примере для этого используется метод [StorageFileQueryResult.GetFilesAsync(UInt32 StartIndex, UInt32 maxNumberOfItems)](https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult.getfilesasync), позволяющий извлекать не более 100 файлов за раз. Затем приложение обрабатывает файлы и позволяет операционной системе освободить память. Благодаря этой технике ограничивается максимальный объем памяти приложения и обеспечивается сохранение быстрой реакции системы. Потребуется скорректировать количество файлов, возвращаемых в вашем сценарии, но чтобы система быстро отвечала на запросы всех пользователей, не рекомендуется извлекать более 500 файлов за раз.
 
 
-**Пример.**  
+**Пример**  
 ```csharp
 StorageFolder folderToEnumerate = KnownFolders.PicturesLibrary; 
 // Check if the folder is indexed before doing anything. 
@@ -109,14 +109,14 @@ while (images.Count != 0 || index < 10000) 
 ```
 
 ### <a name="results"></a>Результаты 
-Полученные файлы StorageFile содержат только запрошенные свойства, но возвращаются в 10 раз быстрее по сравнению с другими вариантами IndexerOptions.Приложение в любом случае может запросить доступ к свойствам, которые не включены в запрос, однако при открытии файла и извлечении этих свойств снижается производительность.  
+Полученные файлы StorageFile содержат только запрошенные свойства, но возвращаются в 10 раз быстрее по сравнению с другими вариантами IndexerOptions. Приложение в любом случае может запросить доступ к свойствам, которые не включены в запрос, однако при открытии файла и извлечении этих свойств снижается производительность.  
 
 ## <a name="adding-folders-to-libraries"></a>Добавление папок в библиотеки 
 Приложения могут потребовать от пользователя добавления расположения в индекс, используя метод [StorageLibrary.RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibrary.RequestAddFolderAsync). Как только расположение будет включено в индекс, оно автоматически проиндексируется, и приложения смогут использовать эту технику для перечисления файлов.
  
-## <a name="see-also"></a>См. также:
-[Справочные материалы по API QueryOptions](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
-[Перечисление файлов и папок и адресация им запросов](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
-[Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
+## <a name="see-also"></a>См. также
+[Справочник по API QueryOptions](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
+[Перечисления и запросов файлов и папок](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
+[Разрешения доступа](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
  
  

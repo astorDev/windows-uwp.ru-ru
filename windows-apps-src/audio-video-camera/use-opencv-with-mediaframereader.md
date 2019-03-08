@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
 ms.openlocfilehash: d72a8d3fcaf337973f585ab19370140cd80f3826
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047469"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640179"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Использование библиотеки компьютерного зрения с открытым исходным кодом (OpenCV) с MediaFrameReader
 
@@ -28,7 +28,7 @@ ms.locfileid: "9047469"
 
 Помимо этих статей, чтобы просмотреть и скачать полный рабочий пример сценария, описанного в этой статье, см. раздел [Пример кадров камеры + OpenCV](https://go.microsoft.com/fwlink/?linkid=854003) в репозитории универсальных примеров Windows на GitHub.
 
-Для начала разработки быстро, вы можете включить библиотеку OpenCV в проект приложения UWP с помощью пакетов NuGet, но эти пакеты не может пройти процесс certficication приложения, при отправке приложения в Store, поэтому рекомендуется загрузить OpenCV Библиотека исходный код и сборки двоичных файлов самостоятельно перед отправкой своего приложения. Сведения по разработке с помощью OpenCV можно найти на сайте [https://opencv.org](https://opencv.org)
+Чтобы приступить к разработке быстро, можно включить библиотеку OpenCV в проекте приложения универсальной платформы Windows с помощью пакетов NuGet, но эти пакеты не может передать в процессе certficication приложения, при отправке приложения Store, поэтому рекомендуется загрузить opencv по адресу Библиотека исходного кода и сборки двоичных файлов самостоятельно перед отправкой приложения. Сведения по разработке с помощью OpenCV можно найти на сайте [https://opencv.org](https://opencv.org)
 
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>Реализация компонента среды выполнения Windows с собственным кодом OpenCVHelper
@@ -50,7 +50,7 @@ ms.locfileid: "9047469"
 [!code-cs[OpenCVInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVInitMediaCapture)]
 
 ## <a name="initialize-the-mediaframereader"></a>Инициализация MediaFrameReader
-Затем создайте [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) для источника RGB-кадров, полученного на предыдущем шаге. Для сохранения хорошей частоты кадров, возможно, потребуется обрабатывать кадры с более низким разрешением по сравнению с разрешением камеры. В этом примере приведен необязательный аргумент **[BitmapSize](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapsize)** метода **[MediaCapture.CreateFrameReaderAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync)** для создания запроса на изменение размера кадров, предоставляемых средством чтения кадров, до значения 640x480 пикселей.
+Затем создайте [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) для источника RGB-кадров, полученного на предыдущем шаге. Для сохранения хорошей частоты кадров, возможно, потребуется обрабатывать кадры с более низким разрешением по сравнению с разрешением камеры. В этом примере приведен необязательный аргумент **[BitmapSize](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapsize)** метода **[MediaCapture.CreateFrameReaderAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync)** для создания запроса на изменение размера кадров, предоставляемых средством чтения кадров, до значения 640 x 480 пикселей.
 
 После создания средства чтения кадров зарегистрируйте обработчик для события **[FrameArrived](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.FrameArrived)**. Затем создайте новый объект **[SoftwareBitmapSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource)**, который вспомогательный класс **FrameRenderer** будет использовать для предоставления обработанных изображений. Затем вызовите конструктор для **FrameRenderer**. Инициализируйте экземпляр класса **OpenCVHelper**, определенный в компоненте среды выполнения Windows OpenCVBridge. Этот вспомогательный класс используется в обработчике **FrameArrived** для обработки каждого кадра. Наконец, запустите средство чтения кадров вызовом метода **[StartAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.StartAsync)**.
 
@@ -65,11 +65,11 @@ ms.locfileid: "9047469"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
-* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Обработка кадров мультимедиа с помощью MediaFrameReader](process-media-frames-with-mediaframereader.md)
-* [Обработка программных точечных рисунков с помощью OpenCV](process-software-bitmaps-with-opencv.md)
+* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Обработка мультимедиа кадров с MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [Точечные рисунки процесса программного обеспечения с OpenCV](process-software-bitmaps-with-opencv.md)
 * [Пример кадров камеры](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [Пример кадров камеры и OpenCV](https://go.microsoft.com/fwlink/?linkid=854003)
+* [Кадры камеры и образец OpenCV](https://go.microsoft.com/fwlink/?linkid=854003)
  
 
  

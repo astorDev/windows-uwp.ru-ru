@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f0d6fd8f194a3c9c98fb969034cab5a3e9e2f0de
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934463"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619629"
 ---
 # <a name="xnull-markup-extension"></a>Расширение разметки {x:Null}
 
@@ -24,15 +24,15 @@ ms.locfileid: "8934463"
 <object property="{x:Null}" .../>
 ```
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Замечания
 
 **null** представляет собой ключевое слово пустой ссылки для C# и C++. Ключевым словом Microsoft Visual Basic для пустой ссылки является **Nothing**.
 
 Исходное значение по умолчанию может отличаться у различных свойств зависимостей, и это не обязательно будет значение **null**. Кроме того, многие свойства зависимостей не будут принимать **null** в качестве значения (ни через разметку, ни через код) из-за своей внутренней реализации. В таких случаях установка значения атрибута XAML при помощи **{x:Null}** может привести к исключению средства синтаксического анализа.
 
-Некоторые типы среды выполнения Windows допускают значения NULL. В тех случаях, когда для типов, допускающих значение NULL, еще не установлено значение **null** по умолчанию, вы можете задать значение **null** в XAML при помощи **{x:Null}**. При использовании расширений компонента VisualC ++ (C + +/ CX), типы, допускающие значение NULL, представлены как [**Platform::IBox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx). При использовании языков Microsoft .NET типы, допускающие значение NULL, представлены как [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx).
+Некоторые типы среды выполнения Windows допускают значения NULL. В тех случаях, когда для типов, допускающих значение NULL, еще не установлено значение **null** по умолчанию, вы можете задать значение **null** в XAML при помощи **{x:Null}**. При использовании расширения компонентов Visual C++ (C + +/ CX), допускающие значение NULL типы представлены как [ **Platform::IBox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx). При использовании языков Microsoft .NET типы, допускающие значение NULL, представлены как [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx).
 
-## <a name="related-topics"></a>Ссылки по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [**Допускающий значение NULL<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)
 * [**IReference<T>**](https://msdn.microsoft.com/library/windows/apps/br225864)

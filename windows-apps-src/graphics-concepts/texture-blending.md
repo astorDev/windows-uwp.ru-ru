@@ -1,27 +1,27 @@
 ---
-title: Наложение текстур
+title: Наложение текстуры
 description: Direct3D может накладывать на примитивы до восьми текстур за один проход.
 ms.assetid: 9AD388FA-B2B9-44A9-B73E-EDBD7357ACFB
 keywords:
-- Наложение текстур
+- Наложение текстуры
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c40c7d3bd080bd927fc52cb7f740e1dc4a6358c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8948006"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620809"
 ---
-# <a name="texture-blending"></a>Наложение текстур
+# <a name="texture-blending"></a>Наложение текстуры
 
 
 Direct3D может накладывать на примитивы до восьми текстур за один проход. Использование множественного наложения текстур способно значительно увеличить частоту кадров приложения Direct3D. Приложения используют множественное наложение текстур для нанесения текстур, теней, зеркального освещения, рассеянного освещения и других специальных эффектов за один проход.
 
 Чтобы использовать наложение текстур, приложению необходимо сначала проверить, поддерживает ли оно оборудованием пользователя.
 
-## <a name="span-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespantexture-stages-and-the-texture-blending-cascade"></a><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>Шаги текстурирования и каскад наложения текстур
+## <a name="span-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespantexture-stages-and-the-texture-blending-cascade"></a><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>Этапы текстуры и текстуры, наложения cascade
 
 
 Direct3D поддерживает однопроходное наложение нескольких текстур посредством использования шагов текстурирования. Шаг текстурирования получает два аргумента и выполняет с ними операцию наложения, передавая результат для дальнейшей обработки или растеризации. Шаг текстурирования можно изобразить, как показано на следующем рисунке.
@@ -30,7 +30,7 @@ Direct3D поддерживает однопроходное наложение 
 
 Как показано на схеме выше, на шаге текстурирования происходит наложение двух аргументов с помощью определенного оператора. Среди типичных операций — простая модуляция или добавления цветовых или альфа-компонентов аргументов. При этом поддерживается более двух десятков операций. Аргументами для шага текстурирования могут являться связанные текстуры, обработанный цвет или альфа-канал (обработка происходит во время заливки Гуро), произвольный цвет и альфа-канал или результат предыдущего шага текстурирования.
 
-**Примечание**  Direct3D отличает цветов и наложением альфа-каналов. Приложения задают операции и аргументы наложения цвета и альфа-канала по отдельности, и результаты этих параметров не зависят друг от друга.
+**Примечание**    Direct3D, являющийся отличительным признаком смешения из альфа-смешения цветов. Приложения задают операции и аргументы наложения цвета и альфа-канала по отдельности, и результаты этих параметров не зависят друг от друга.
 
  
 
@@ -54,17 +54,17 @@ Direct3D поддерживает однопроходное наложение 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Статья</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="blending-stages.md">Этапы наложения</a></p></td>
-<td align="left"><p>Этап наложения — это набор операций с текстурой и их аргументов, определяющих, как смешиваются текстуры.</p></td>
+<td align="left"><p>Этап наложения — это набор операций с текстурами и их аргументов, определяющих наложение текстур.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="multipass-texture-blending.md">Многопроходное наложение текстуры</a></p></td>
+<td align="left"><p><a href="multipass-texture-blending.md">Наложения текстуры многопроходный</a></p></td>
 <td align="left"><p>Приложения Direct3D могут создавать различные специальные эффекты путем применения различных текстур к примитиву в процессе многопроходной отрисовки. Общий термин для этого — <em>многопроходное наложение текстуры</em>. Обычно многопроходное наложение текстуры используется для эмуляции эффектов сложных моделей освещения и затенения путем применения нескольких цветов из нескольких различных текстур. Одно такое приложение называется <em>Сопоставление освещения</em>.</p></td>
 </tr>
 </tbody>
@@ -72,7 +72,7 @@ Direct3D поддерживает однопроходное наложение 
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Текстуры](textures.md)

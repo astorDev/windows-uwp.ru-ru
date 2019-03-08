@@ -1,23 +1,23 @@
 ---
-title: 'Пошаговое руководство: перенос из Direct3D9 в DirectX11 и UWP'
-description: Это упражнение по переносу научит вас переносить простую структуру отрисовки из Direct3D9 в Direct3D11 и универсальную платформу Windows (UWP).
+title: 'Пошаговое руководство: перенос из Direct3D 9 в DirectX 11 и UWP'
+description: Это упражнение по переносу научит вас переносить простую структуру прорисовки из Direct3D 9 в Direct3D 11 и универсальную платформу Windows (UWP).
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx, перенос, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: c7569c6b2f041f5535e0eabe934a91da86b60b9a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944713"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634229"
 ---
-# <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>Пошаговое руководство: перенос простого приложения Direct3D 9 в DirectX 11 и UWP
+# <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>Пошаговое руководство: Порт простое приложение Direct3D 9 в DirectX 11 и универсальной платформы Windows (UWP)
 
 
 
-Из этого упражнения вы узнаете, как перенести простую платформу отрисовки из Direct3D9 на Direct3D11 и универсальную платформу Windows (UWP).
+Это упражнение по переносу научит вас переносить простую структуру прорисовки из Direct3D 9 в Direct3D 11 и универсальную платформу Windows (UWP).
 ## 
 <table>
 <colgroup>
@@ -26,21 +26,21 @@ ms.locfileid: "8944713"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Тема</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md">Инициализация Direct3D 11</a></p></td>
+<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md">Инициализировать Direct3D 11</a></p></td>
 <td align="left"><p>Здесь показано, как перенести код инициализации Direct3D 9 в Direct3D 11, в том числе как получить дескрипторы и контекст устройства Direct3D, а также как использовать DXGI для создания цепочки буферов.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-2--rendering.md">Преобразование инфраструктуры отрисовки</a></p></td>
+<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-2--rendering.md">Преобразовать платформу для отображения</a></p></td>
 <td align="left"><p>Здесь показано, как перенести простую инфраструктуру отрисовки с Direct3D 9 на Direct3D 11, включая перенос геометрических буферов, компиляцию и загрузку программ-шейдеров на языке HLSL, а также реализацию цепочки отрисовки в Direct3D 11.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">Портирование игрового цикла</a></p></td>
+<td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">Порт цикл игры</a></p></td>
 <td align="left"><p>Здесь показано, как реализовать окно для игрового приложения UWP и перенести игровой цикл, включая создание интерфейса <a href="https://msdn.microsoft.com/library/windows/apps/hh700478"><strong>IFrameworkView</strong></a> для управления полноэкранным <a href="https://msdn.microsoft.com/library/windows/apps/br208225"><strong>CoreWindow</strong></a>.</p></td>
 </tr>
 </tbody>
@@ -48,7 +48,7 @@ ms.locfileid: "8944713"
 
  
 
-В этой статье подробно разобраны две ветви кода, выполняющие одну и ту же базовую задачу обработки графики: отображение вращающегося куба с затененными вершинами. В обоих случаях код включает следующий процесс.
+В этом разделе подробно разобраны две ветви кода, выполняющие одну и ту же базовую задачу обработки графики: отображение вращающегося куба с затененными вершинами. В обоих случаях код включает следующий процесс.
 
 1.  Создание устройства Direct3D и цепочки буферов.
 2.  Создание буфера вершин и буфера индексов для отображения цветной кубической сетки.
@@ -56,7 +56,7 @@ ms.locfileid: "8944713"
 4.  Реализация цепи отрисовки и отображение отрисованного куба на экране.
 5.  Создание окна, запуск основного цикла и обработка оконных сообщений.
 
-По завершении этого пошагового руководства вы получите представление о следующих основных различиях между Direct3D9 и Direct3D11:
+По завершении этого пошагового руководства вы получите представление о следующих основных различиях между Direct3D 9 и Direct3D 11:
 
 -   Разделение устройства, контекста устройства и графической инфраструктуры.
 -   Процесс компиляции шейдеров и загрузки их байт-кода во время выполнения.
@@ -65,19 +65,19 @@ ms.locfileid: "8944713"
 
 Обратите внимание, что пошаговое руководство использует [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) для простоты и не описывает межпрограммное взаимодействие XAML.
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
 
-Вам нужно [подготовить среду для разработки игр UWP с использованием DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Шаблон пока не нужен, но потребуется Microsoft Visual Studio2015, чтобы загрузить примеры кода для этого пошагового руководства.
+Вам нужно [подготовить среду для разработки игр UWP с использованием DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Не требуется шаблон еще, но вам потребуется Microsoft Visual Studio 2015 для загрузки примеры кода для этого пошагового руководства.
 
-Чтобы лучше понять принципы программирования для DirectX11 и UWP, которые демонстрируются в этом руководстве, ознакомьтесь с разделом [Принципы и аспекты переноса](porting-considerations.md).
+Чтобы лучше понять принципы программирования для DirectX 11 и UWP, которые демонстрируются в этом руководстве, ознакомьтесь с разделом [Принципы и аспекты переноса](porting-considerations.md).
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>Статьи по теме
 
 **Direct3D**
 
-* [Создание шейдеров HLSL в Direct3D9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
-* [Шаблоны проектов игр DirectX](user-interface.md)
+* [Создание шейдеров HLSL в Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Шаблоны проекта игр DirectX](user-interface.md)
 
 **Microsoft Store**
 

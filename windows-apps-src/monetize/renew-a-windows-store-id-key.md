@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, API коллекции Microsoft Store, API покупок Microsoft Store, ключ Microsoft Store, обновление
 ms.localizationpriority: medium
 ms.openlocfilehash: fd4d7ce26e12f7ff939ced8d456390b97d0c8a0d
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116040"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620489"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>Обновление ключа идентификатора Microsoft Store
 
 
 Используйте этот метод, чтобы обновить ключ Microsoft Store. При [генерации ключа идентификатора Microsoft Store](view-and-grant-products-from-a-service.md#step-4) ключ действителен в течение 90 дней. После истечения срока действия ключа его можно использовать для создания нового ключа с помощью данного метода.
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
 
 Для использования этого метода вам понадобится:
@@ -32,27 +32,27 @@ ms.locfileid: "9116040"
 
 ### <a name="request-syntax"></a>Синтаксис запроса
 
-| Тип ключа    | Метод | URI запроса                                              |
+| Тип ключа    | Метод | Универсальный код ресурса (URI) запроса                                              |
 |-------------|--------|----------------------------------------------------------|
 | Коллекции | POST   | ```https://collections.mp.microsoft.com/v6.0/b2b/keys/renew``` |
-| Покупка    | POST   | ```https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew```    |
+| Приобретение    | POST   | ```https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew```    |
 
 
 ### <a name="request-header"></a>Заголовок запроса
 
 | Заголовок         | Тип   | Описание                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Host           | Строка | Должен иметь значение **collections.mp.microsoft.com** или **purchase.mp.microsoft.com**.           |
-| Content-Length | Число | Длина текста запроса.                                                                       |
+| Hyper-V           | Строка | Должен иметь значение **collections.mp.microsoft.com** или **purchase.mp.microsoft.com**.           |
+| Content-Length | number | Длина текста запроса.                                                                       |
 | Content-Type   | Строка | Указывает тип запросов и ответов. На данный момент единственным поддерживаемым значением является **application/json**. |
 
 
 ### <a name="request-body"></a>Тело запроса
 
-| Параметр     | Тип   | Описание                       | Обязательный |
+| Параметр     | Тип   | Описание                       | Обязательно |
 |---------------|--------|-----------------------------------|----------|
-| serviceTicket | строка | Маркер доступа Azure AD.        | Да      |
-| key           | строка | Ключ идентификатора Microsoft Store с истекшим сроком действия. | Да       |
+| serviceTicket | Строка | Маркер доступа Azure AD.        | Да      |
+| key           | Строка | Ключ идентификатора Microsoft Store с истекшим сроком действия. | Да       |
 
 
 ### <a name="request-example"></a>Пример запроса
@@ -76,7 +76,7 @@ Host: collections.mp.microsoft.com
 
 | Параметр | Тип   | Описание                                                                                                            |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|
-| key       | строка | Обновленный ключ Microsoft Store, который можно использовать при последующих вызовах API-интерфейсов коллекций Microsoft Store или API покупок. |
+| key       | Строка | Обновленный ключ Microsoft Store, который можно использовать при последующих вызовах API-интерфейсов коллекций Microsoft Store или API покупок. |
 
 
 ### <a name="response-example"></a>Пример ответа
@@ -101,14 +101,14 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 | Код | Ошибка        | Внутренний код ошибки           | Описание   |
 |------|--------------|----------------------------|---------------|
-| 401  | Unauthorized | AuthenticationTokenInvalid | Маркер доступа Azure AD недействителен. В некоторых случаях сведения об ошибке ServiceError содержат больше информации, например если истек срок действия маркера или отсутствует утверждение *appid*. |
-| 401  | Unauthorized | InconsistentClientId       | Утверждение *clientId* в ключе идентификатора Microsoft Store и утверждение *appid* в маркере доступа Azure AD не совпадают.                                                                     |
+| 401  | Недостаточно прав | AuthenticationTokenInvalid | Маркер доступа Azure AD недействителен. В некоторых случаях сведения об ошибке ServiceError содержат больше информации, например если истек срок действия маркера или отсутствует утверждение *appid*. |
+| 401  | Недостаточно прав | InconsistentClientId       | Утверждение *clientId* в ключе идентификатора Microsoft Store и утверждение *appid* в маркере доступа Azure AD не совпадают.                                                                     |
 
 
 ## <a name="related-topics"></a>Статьи по теме
 
 
-* [Управление правами на продукты из службы](view-and-grant-products-from-a-service.md)
-* [Запрос продуктов](query-for-products.md)
-* [Объявление потребляемого продукта в качестве выполненного](report-consumable-products-as-fulfilled.md)
-* [Предоставление бесплатных продуктов](grant-free-products.md)
+* [Управление прав продукта из службы](view-and-grant-products-from-a-service.md)
+* [Запрос для продуктов](query-for-products.md)
+* [Сообщить о готовых к использованию продуктов, что выполнен](report-consumable-products-as-fulfilled.md)
+* [Предоставьте бесплатные продукты](grant-free-products.md)

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e08447c575e99178e503e99eb651cd5e225a898
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921993"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607779"
 ---
 # <a name="tile-pool-resizing"></a>Изменение размера пула плиток
 
@@ -27,10 +27,10 @@ ms.locfileid: "8921993"
 
 Процесс уменьшения (и удаления сопоставлений) не всегда непосредственно приводит к экономии памяти. Освобождение памяти зависит от того, насколько детально базовое распределение драйвером дисплея памяти для пула плиток. Если уменьшения пула достаточно, чтобы выделенная драйвером дисплея память перестала использоваться, драйвер может ее освободить. Если пул плиток увеличился, уменьшение его до предыдущего размера (и соответствующее удаление или переназначение сопоставлений плиток) с большей вероятностью приведет к экономии памяти, хотя и не гарантируется, если размеры в точности не соответствуют размерам базового распределения, выбранным драйвером дисплея.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Сопоставления в пуле плиток](mappings-are-into-a-tile-pool.md)
+[Сопоставления являются в пул плитки](mappings-are-into-a-tile-pool.md)
 
  
 

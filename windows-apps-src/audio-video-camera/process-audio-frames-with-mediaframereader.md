@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058775"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598589"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Обработка аудиокадров с помощью MediaFrameReader
 
@@ -26,9 +26,9 @@ ms.locfileid: "9058775"
 ## <a name="setting-up-your-project"></a>Настройка проекта
 Процесс получения аудиокадров во многом похож на получение других типов кадров мультимедиа. Как и в любом приложении, использующем **MediaCapture**, перед попыткой получить доступ к камере вам необходимо объявить, что ваше приложение использует возможность *webcam*. Если ваше приложение получает данные от звукового устройства, рекомендуется также объявить возможность устройства *microphone*. 
 
-**Добавление возможностей в манифест приложения**
+**Добавления возможностей в манифесте приложения**
 
-1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest** в **Обозревателе решений**.
+1.  В Microsoft Visual Studio откройте конструктор манифеста приложения, дважды щелкнув элемент **package.appxmanifest**в **Обозревателе решений**.
 2.  Перейдите на вкладку **Возможности**.
 3.  Выставьте флажок для пункта **Веб-камера** и поле для параметра **Микрофон**.
 4.  Для доступа к библиотеке изображений и видео установите флажки **Библиотека изображений** и **Библиотека видео**.
@@ -41,7 +41,7 @@ ms.locfileid: "9058775"
 
 После вызова метода [**MediaCapture.InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) можно получить список доступных источников кадров мультимедиа с помощью свойства [**FrameSources**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.framesources). В этом примере запрос Linq используется для выбора всех источников кадров, в которых [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo), описывающий источник кадров, содержит свойство [**MediaStreamType**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.mediastreamtype) со значением **Audio**, что указывает на, что источник мультимедиа создает звуковые данные.
 
-Если запрос возвращает один или несколько источников кадров, вы можете просмотреть свойство [**CurrentFormat**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.currentformat), чтобы узнать, поддерживает ли источник требуемый формат звука (в данном примере— аудио без сжатия). Проверьте свойство [**AudioEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframeformat.audioencodingproperties), чтобы убедиться, что источник поддерживает требуемое кодирование.
+Если запрос возвращает один или несколько источников кадров, вы можете просмотреть свойство [**CurrentFormat**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.currentformat), чтобы узнать, поддерживает ли источник требуемый формат звука (в данном примере — аудио без сжатия). Проверьте свойство [**AudioEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframeformat.audioencodingproperties), чтобы убедиться, что источник поддерживает требуемое кодирование.
 
 [!code-cs[InitAudioFrameSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitAudioFrameSource)]
 
@@ -76,11 +76,11 @@ ms.locfileid: "9058775"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Обработка кадров мультимедиа с помощью MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [Обработка мультимедиа кадров с MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Камера](camera.md)
-* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Пример кадров камеры](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [Звуковые графы](audio-graphs.md)
+* [Аудио диаграмм](audio-graphs.md)
  
 
 

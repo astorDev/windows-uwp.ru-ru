@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, uwp, C#, Visual Basic, асинхронный
 ms.localizationpriority: medium
 ms.openlocfilehash: 899af2ffd26419d4c8906d703d6708d202f8c150
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940950"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632619"
 ---
-# <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>Вызов асинхронных API в C# и VisualBasic
+# <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>Вызов асинхронных API в C# и Visual Basic
 
 
 
-Универсальная платформа Windows (UWP) включает много асинхронных API, позволяющих вашему приложению сохранить способность отвечать, когда выполняется работа, требующая много времени. В этом разделе описывается применение асинхронных методов UWP при программировании на языках C# или Microsoft Visual Basic.
+Универсальная платформа Windows (UWP) включает много асинхронных API, позволяющих вашему приложению сохранить способность отвечать, когда выполняется работа, требующая много времени. В этом разделе описывается применение асинхронных методов UWP при программировании на языках C# или Microsoft Visual Basic.
 
 При применении асинхронных API-интерфейсов приложению не требуется ждать завершения трудоемких операций. Например, приложение, скачивающее информацию из Интернета, может ожидать получения данных несколько секунд. Если информация получается синхронным методом, приложение блокируется до момента возврата данных методом. Приложение при этом не отвечает на действия пользователя и кажется зависшим, что может встревожить пользователя. Благодаря асинхронным API, предоставляемым UWP, приложение сохраняет способность отвечать на запросы пользователя при выполнении длительных операций.
 
@@ -38,7 +38,7 @@ ms.locfileid: "8940950"
 
 Есть несколько важных замечаний о приведенном выше примере. Во-первых, в строке `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` используется оператор **await** вместе с вызовом асинхронного метода [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460). Можно представить себе, что оператор **await** сообщает компилятору о том, что вы вызываете асинхронный метод, в результате чего компилятор выполняет дополнительную работу за вас. Во-вторых, объявление обработчика событий включает ключевое слово **async**. Это ключевое слово необходимо включить в объявление любого метода, в котором используется оператор **await**.
 
-В этом разделе мы не будем углубляться в детали того, что компилятор делает с оператором **await**. Однако давайте изучим, что делает приложение асинхронным и способным отвечать на запросы. Рассмотрим, что происходит при использовании синхронного кода. Например, предположим, что есть синхронный метод `SyndicationClient.RetrieveFeed`. (Такого метода нет, но представим, что он существует.) Если ваше приложение включает строку `SyndicationFeed feed = client.RetrieveFeed(feedUri)` вместо `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`, выполнение приложения останавливается, пока не будет доступно возвращаемое значение `RetrieveFeed`. А пока приложение ожидает завершения выполнения метода, оно не может реагировать на другие события, например на еще одно событие [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737). Тоесть приложение будет блокировано, пока метод `RetrieveFeed` не вернет значение.
+В этом разделе мы не будем углубляться в детали того, что компилятор делает с оператором **await**. Однако давайте изучим, что делает приложение асинхронным и способным отвечать на запросы. Рассмотрим, что происходит при использовании синхронного кода. Например, предположим, что есть синхронный метод `SyndicationClient.RetrieveFeed`. (Нет такого метода, но представьте, что имеется). Если в приложении строке `SyndicationFeed feed = client.RetrieveFeed(feedUri)`, а не `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`, бы остановить выполнение приложения до возвращаемое значение `RetrieveFeed` доступен. А пока приложение ожидает завершения выполнения метода, оно не может реагировать на другие события, например на еще одно событие [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737). То есть приложение будет блокировано, пока метод `RetrieveFeed` не вернет значение.
 
 Однако если вызывать `client.RetrieveFeedAsync`, данный метод инициирует извлечение и немедленно возвращает значение. При использовании оператора **await** с методом [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) приложение временно завершает работу обработчика событий. Затем оно может обрабатывать любые другие события, пока **RetrieveFeedAsync** выполняется асинхронно. Это позволяет приложению сохранить способность реагировать на действия пользователя. Когда метод **RetrieveFeedAsync** завершает работу и становится доступен [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485), приложение повторно запускает обработчик событий с момента его закрытия после `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` и завершает оставшуюся часть метода.
 
@@ -66,7 +66,7 @@ ms.locfileid: "8940950"
 | [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation&lt;StorageFile&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
 | [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)                                                                                                           | **void**                                          |
 | [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx)                                                                   | **void**                                          |
-| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120), пользовательский класс результатов, который реализует **IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
+| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120), приводит к пользовательский класс, реализующий **IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
 
  
 
@@ -79,9 +79,9 @@ ms.locfileid: "8940950"
 
 Когда асинхронные методы вызывают другие асинхронные методы, любой асинхронный метод, приводящий к вызову исключения, распространяется на внешние методы. Это означает, что в самый внешний метод можно поместить блок **try/catch**, чтобы перехватывать ошибки для вложенных асинхронных методов. Это аналогично перехвату исключений для синхронных методов. Однако вы не можете использовать **await** в блоке **catch**.
 
-**Совет**начиная с C# в Microsoft Visual Studio2005, можно использовать **await** в блоке **catch** .
+**Совет**  начиная с C# в Microsoft Visual Studio 2005, можно использовать **await** в **catch** блока.
 
-## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
+## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
 
 Здесь показан простейший способ вызова асинхронного метода, когда асинхронные API вызываются в обработчике событий. Этот способ также применим, когда асинхронный метод вызывается в переопределенном методе, который возвращает **void** или **Sub** в Visual Basic.
 

@@ -1,17 +1,17 @@
 ---
 title: Компаньон режима разработчика Xbox
-description: Содержит сведения о приложении "Компаньон режима разработчика Xbox".
+description: Содержит сведения о приложении Компаньон режима разработчика Xbox.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ed84f232-ddb5-4ba1-bf1c-578e8df47602
 ms.localizationpriority: medium
 ms.openlocfilehash: b04272c99d9062be2eaea27aa5b107e6078872f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940749"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616829"
 ---
 # <a name="xbox-dev-mode-companion"></a>Компаньон режима разработчика Xbox
 
@@ -33,15 +33,15 @@ ms.locfileid: "8940749"
 * Включать и выключать консоль.
 * Производить отключение.
 
-## <a name="input"></a>Ввод
+## <a name="input"></a>Input
 Чтобы отправлять через приложение на консоль команды ввода, можно подключить к компьютеру контроллер Xbox One.   
     
 Также можно использовать клавиши ВВОД, ESCAPE и клавиши со стрелками на клавиатуре для навигации по интерфейсу консоли и в приложениях, поддерживающих навигацию с помощью клавиатуры. Полное сопоставление клавиатуры представлено на странице справки.   
    
 Наконец, для отправки текста на консоль можно вводить его с помощью клавиатуры в текстовых полях.   
 
-## <a name="help"></a>Справка
+## <a name="help"></a>Help
 Страницу справки можно открыть, щелкнув значок «?» в диалоговом окне подключения или панели команд.
 
 ## <a name="see-also"></a>См. также
-- [UWP на Xbox One](index.md)
+- [Приложения UWP для Xbox One](index.md)

@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 63a77048bed3ad27f2040a672d93380d0250f9aa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929852"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641099"
 ---
 # <a name="output-merger-om-stage"></a>Этап слияния и вывода (OM)
 
 
 На этапе слияния вывода выходные данные различных типов (значения пиксельного шейдера, информация о глубине и наборе элементов) объединяются с содержимым целевого объекта отрисовки и буферов глубины и набора элементов для создания окончательного результата конвейера.
 
-## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>Назначение и способы использования
+## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>Назначения и использования
 
 
 Этап слияния и вывода (OM) — это последняя стадия определения видимых пикселей (с проверкой трафарета глубины) и смешиванием окончательных цветов пикселей.
@@ -31,7 +31,7 @@ ms.locfileid: "8929852"
 -   содержимое целевых объектов отрисовки;
 -   содержимое буферов трафарета глубины.
 
-### <a name="span-idblending-overviewspanspan-idblending-overviewspanspan-idblending-overviewspanblending-overview"></a><span id="Blending-overview"></span><span id="blending-overview"></span><span id="BLENDING-OVERVIEW"></span>Обзор смешения
+### <a name="span-idblending-overviewspanspan-idblending-overviewspanspan-idblending-overviewspanblending-overview"></a><span id="Blending-overview"></span><span id="blending-overview"></span><span id="BLENDING-OVERVIEW"></span>Обзор наложения
 
 Во время смешения одно или несколько значений пикселей объединяются для получения окончательного цвета. На следующей схеме показан процесс смешения пиксельных данных.
 
@@ -43,7 +43,7 @@ ms.locfileid: "8929852"
 
 При использовании целевых объектов отрисовки sRGB среда выполнения преобразует цвет объекта в линейное пространство перед смешением. Среда выполнения преобразует окончательное значение в пространство sRGB перед его сохранением в целевом объекте прорисовки.
 
-### <a name="span-iddual-source-color-blendingspanspan-iddual-source-color-blendingspanspan-iddual-source-color-blendingspandual-source-color-blending"></a><span id="Dual-source-color-blending"></span><span id="dual-source-color-blending"></span><span id="DUAL-SOURCE-COLOR-BLENDING"></span>Смешение цветов с двумя источниками
+### <a name="span-iddual-source-color-blendingspanspan-iddual-source-color-blendingspanspan-iddual-source-color-blendingspandual-source-color-blending"></a><span id="Dual-source-color-blending"></span><span id="dual-source-color-blending"></span><span id="DUAL-SOURCE-COLOR-BLENDING"></span>Наложение цвета Dual источника
 
 Эта функция позволяет этапу слияния и вывода одновременно использовать оба выхода пиксельного шейдера (о0 и o1) как входные данные для операции смешения с одним целевым объектом отрисовки в слоте 0. К допустимым операциям смешения относятся добавление, вычитание и revsubtract. Уравнение смешения и маска записи выходных данных определяют, какие компоненты выводит пиксельный шейдер. Дополнительные компоненты игнорируются.
 
@@ -65,7 +65,7 @@ ms.locfileid: "8929852"
 
 Только один буфер глубины трафарета может быть активен в заданный момент времени. Все связанные ресурсов должны соответствовать (по размеру и габаритам) представление глубины трафарета. Это не означает, что размер ресурса должен совпадать — совпадать должен только размер представления.
 
-### <a name="span-idsample-maskspanspan-idsample-maskspanspan-idsample-maskspansample-mask-overview"></a><span id="Sample-Mask"></span><span id="sample-mask"></span><span id="SAMPLE-MASK"></span>Обзор маски дискретизации
+### <a name="span-idsample-maskspanspan-idsample-maskspanspan-idsample-maskspansample-mask-overview"></a><span id="Sample-Mask"></span><span id="sample-mask"></span><span id="SAMPLE-MASK"></span>Общие сведения о примере для маски
 
 Маска дискретизации — это 32-разрядная маска покрытия, которая определяет какие образцы обновляются в активных целевых объектах прорисовки. Допускается только одна маска дискретизации. Сопоставление разрядов маски дискретизации с образцами в ресурсе определяется пользователем. Для отрисовки с n-дискретизацией используются первые n разрядов (от LSB) маски дискретизации (максимальное количество разрядов — 32).
 
@@ -82,13 +82,13 @@ ms.locfileid: "8929852"
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Выходные данные
 
 
-### <a name="span-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanoutput-write-mask-overview"></a><span id="Output-write-mask-overview"></span><span id="output-write-mask-overview"></span><span id="OUTPUT-WRITE-MASK-OVERVIEW"></span>Обзор маски записи выходных данных
+### <a name="span-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanspan-idoutput-write-mask-overviewspanoutput-write-mask-overview"></a><span id="Output-write-mask-overview"></span><span id="output-write-mask-overview"></span><span id="OUTPUT-WRITE-MASK-OVERVIEW"></span>Общие сведения о маски записи выходных данных
 
 Маска записи выходных данных используется для управления тем, какие данные можно записать в целевой объекте прорисовки для каждого компонента.
 
-### <a name="span-idmultiple-render-targets-overviewspanspan-idmultiple-render-targets-overviewspanspan-idmultiple-render-targets-overviewspanmultiple-render-targets-overview"></a><span id="Multiple-render-targets-overview"></span><span id="multiple-render-targets-overview"></span><span id="MULTIPLE-RENDER-TARGETS-OVERVIEW"></span>Обзор множества целевых объектов отрисовки
+### <a name="span-idmultiple-render-targets-overviewspanspan-idmultiple-render-targets-overviewspanspan-idmultiple-render-targets-overviewspanmultiple-render-targets-overview"></a><span id="Multiple-render-targets-overview"></span><span id="multiple-render-targets-overview"></span><span id="MULTIPLE-RENDER-TARGETS-OVERVIEW"></span>Общие сведения о нескольких целевых объектов отрисовки
 
-Пиксельный шейдер можно использовать для отображения как минимум восьми отдельных целевых объектов отрисовки, все которые должны быть одного типа (буфер, Texture1D, Texture1DArray и т. д.). Кроме того, все целевые объекты отрисовки должны быть одного размера по всем измерениям (ширина, высота, глубина, размер массива, число выборок). У каждого целевого объекта отрисовки может быть разный формат данных.
+Пиксельный шейдер можно использовать для отображения как минимум восьми отдельных целевых объектов отрисовки, все которые должны быть одного типа (буфер, Texture1D, Texture1DArray и т. д.). Кроме того, все целевые объекты отрисовки должны быть одного размера по всем измерениям (ширина, высота, глубина, размер массива, число выборок). Каждая однобуферная прорисовка может иметь свой формат данных.
 
 Вы можете использовать любое сочетание слотов целевых объектов отрисовки (до восьми). Однако представление ресурса невозможно привязать к нескольким слотам целевых объектов отрисовки одновременно. Представление можно использовать повторно, если ресурсы не применяются одновременно.
 
@@ -102,24 +102,24 @@ ms.locfileid: "8929852"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Статья</th>
+<th align="left">Раздел</th>
 <th align="left">Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="configuring-depth-stencil-functionality.md">Настройка функции трафарета глубины</a></p></td>
-<td align="left"><p>В этом разделе рассматривается настройка буфера трафарета глубины и состояния трафарета глубины для этапа слияния и вывода.</p></td>
+<td align="left"><p><a href="configuring-depth-stencil-functionality.md">Настройка функций трафарета глубины</a></p></td>
+<td align="left"><p>В этом разделе приводится пошаговая инструкция по настройке буфера трафарета глубины и рассматривается состояние трафарета глубины для стадии слияния вывода.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Графический конвейер](graphics-pipeline.md)
+[Графического конвейера](graphics-pipeline.md)
 
  
 

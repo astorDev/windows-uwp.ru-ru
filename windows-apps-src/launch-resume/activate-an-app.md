@@ -12,19 +12,19 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: a75136f26aa6cfa330e4118e6709b0b4d4be4054
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929355"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626599"
 ---
 # <a name="handle-app-activation"></a>Обработка активации приложения
 
-Узнайте, как обрабатывать активацию приложения путем переопределения метода [**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) .
+Узнайте, как выполнять активацию приложения путем переопределения [ **Application.OnLaunched** ](/uwp/api/windows.ui.xaml.application.onlaunched) метод.
 
 ## <a name="override-the-launch-handler"></a>Переопределение обработчика запуска
 
-При активации приложения, для какой-либо причине, система отправляет событие [**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) . Список типов активации см. в перечислении [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693).
+При активации приложения, для какой-либо причине, система отправляет [ **CoreApplicationView.Activated** ](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) событий. Список типов активации см. в перечислении [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693).
 
 Класс [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) определяет методы, которые можно переопределить для обработки различных типов активации. Некоторые типы активации имеют специальный метод, который можно переопределить. Для других типов активации необходимо переопределить метод [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330).
 
@@ -40,7 +40,7 @@ ms.locfileid: "8929355"
 Переопределите метод [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335). Этот метод вызывается при каждом запуске приложения пользователем. Параметр [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) содержит предыдущее состояние приложения и аргументы активации.
 
 > [!NOTE]
-> В Windows запуск приостановленного приложения из меню "Пуск" плитки или из списка приложений не вызывайте этот метод.
+> В Windows запуска приостановленного приложения из начала списка плитки или приложение не вызывает этот метод.
 
 ```csharp
 using System;
@@ -187,7 +187,7 @@ void App::EnsurePageCreatedAndActivate()
 
 ## <a name="restore-application-data-if-app-was-suspended-then-terminated"></a>Восстановление данных приложения, если его работа была приостановлена, а затем завершена
 
-Когда пользователь переключается на приложение, которое завершило работу, система отправляет событие [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), свойству [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) которого задано значение **Launch**, а свойству [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729)— значение **Terminated** или **ClosedByUser**. Приложение должно загрузить свои сохраненные данные и обновить отображаемое содержимое.
+Когда пользователь переключается на приложение, которое завершило работу, система отправляет событие [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), свойству [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) которого задано значение **Launch**, а свойству [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) — значение **Terminated** или **ClosedByUser**. Приложение должно загрузить свои сохраненные данные и обновить отображаемое содержимое.
 
 ```csharp
 async protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -261,17 +261,17 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 Если для свойства [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) задано значение **NotRunning**, это означает, что приложению не удалось успешно сохранить свои данные и поэтому оно вынуждено начать работу с состояния первоначального запуска.
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Замечания
 
 > [!NOTE]
-> Приложения могут пропустить инициализацию, если содержимое уже задано в текущем окне. Можно проверить свойство [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) , чтобы определить, было ли приложение запущено с основной или вспомогательной плитки и на основе этих данных решить, следует ли заново или возобновлении работы приложения.
+> Приложения могут пропустить инициализацию, если содержимое уже задано в текущем окне. Вы можете проверить [ **LaunchActivatedEventArgs.TileId** ](https://msdn.microsoft.com/library/windows/apps/br224736) свойства, чтобы определить ли приложение было запущено из первичной или вторичной плитки и, на основе этой информации решить, должна ли вы предоставляют новый или возобновления работы приложения.
 
 ## <a name="important-apis"></a>Важные API
 * [Windows.ApplicationModel.Activation](https://msdn.microsoft.com/library/windows/apps/br224766)
 * [Windows.UI.Xaml.Application](https://msdn.microsoft.com/library/windows/apps/br242324)
 
-## <a name="related-topics"></a>Связанные темы
-* [Обработка приостановки работы приложения](suspend-an-app.md)
-* [Обработка возобновления работы приложения](resume-an-app.md)
-* [Руководство по приостановке и возобновлению работы приложения](https://msdn.microsoft.com/library/windows/apps/hh465088)
+## <a name="related-topics"></a>Статьи по теме
+* [Приостановить приложение дескриптор](suspend-an-app.md)
+* [Дескриптор возобновлении приложения](resume-an-app.md)
+* [Рекомендации для приложения, приостановка и возобновление](https://msdn.microsoft.com/library/windows/apps/hh465088)
 * [Жизненный цикл приложения](app-lifecycle.md)

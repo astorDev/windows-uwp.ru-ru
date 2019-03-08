@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e17b9ddd5833899a83e24d24c74f9c620a28f5c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943530"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617639"
 ---
 # <a name="receive-data"></a>Получение данных
 
@@ -105,7 +105,7 @@ shareOperation.ReportCompleted();
 
 Если пользователь выбирает ваше приложение для получения содержимого, рекомендуется создать объект [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink). Объект **QuickLink** является своеобразным ярлыком, который облегчает для пользователей отправку данных вашему приложению. Например, можно создать объект **QuickLink**, открывающий новое сообщение электронной почты, в котором уже указан адрес электронной почты друга.
 
-У объекта **QuickLink** должен быть заголовок, значок и идентификатор. Название (например, "Написать маме") и значок появляются, когда пользователь касается чудо-кнопки «Поделиться». Идентификатор — это элемент, который ваше приложение использует для доступа к любой пользовательской информации, такой как адрес электронной почты или учетные данные для входа. Когда ваше приложение создает объект **QuickLink**, оно возвращает **QuickLink** системе путем вызова [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted).
+Объект **QuickLink** должен иметь название, значок и идентификатор. Название (например, «Написать маме») и значок появляются, когда пользователь касается чудо-кнопки «Поделиться». Идентификатор — это элемент, который ваше приложение использует для доступа к любой пользовательской информации, такой как адрес электронной почты или учетные данные для входа. Когда ваше приложение создает объект **QuickLink**, оно возвращает **QuickLink** системе путем вызова [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted).
 
 **QuickLink** не хранит никаких данных. Он содержит только идентификатор, который, будучи выбранным, отправляется вашему приложению. Ваше приложение отвечает за хранение идентификатора **QuickLink** и соответствующих пользовательских данных. Когда пользователь касается элемента **QuickLink**, вы можете получить его идентификатор с помощью свойства [**QuickLinkId**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.QuickLinkId).
 

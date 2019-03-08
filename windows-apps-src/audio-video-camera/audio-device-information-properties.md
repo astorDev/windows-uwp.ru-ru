@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 443bcc3c0280aca85de31d8c9f3704302432cb76
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925881"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627179"
 ---
 # <a name="audio-device-information-properties"></a>Свойства сведений о звуковых устройствах
 
@@ -22,15 +22,15 @@ ms.locfileid: "8925881"
 |------------------------------------------------------------|------------|------------------------------------------------------|
 |**System.Devices.AudioDevice.Microphone.SensitivityInDbfs**|Double|Определяет чувствительность микрофона в децибелах относительно полной шкалы (dBFS).|
 |**System.Devices.AudioDevice.Microphone.SignalToNoiseRatioInDb**|Double|Определяет отношения сигнал-шум (SNR) микрофона, измеренное в децибелах (дБ).|
-|**System.Devices.AudioDevice.SpeechProcessingSupported**|Логическое|Указывает, поддерживает ли звуковое устройство обработку речи.|
-|**System.Devices.AudioDevice.RawProcessingSupported**|Логическое|Указывает, поддерживает ли звуковое устройство обработку необработанных данных.|
+|**System.Devices.AudioDevice.SpeechProcessingSupported**|Boolean (Логическое)|Указывает, поддерживает ли звуковое устройство обработку речи.|
+|**System.Devices.AudioDevice.RawProcessingSupported**|Boolean (Логическое)|Указывает, поддерживает ли звуковое устройство обработку необработанных данных.|
 |**System.Devices.MicrophoneArray.Geometry**|неподписанный символ[]|Геометрические данные для набора микрофонов.|
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Статьи по теме
 
-* [Перечисление устройств](../devices-sensors/enumerate-devices.md)
-* [Свойства сведений об устройствах](../devices-sensors/device-information-properties.md)
-* [Создание средства выбора устройств](../devices-sensors/build-a-device-selector.md)
+* [Функции перечисления устройств](../devices-sensors/enumerate-devices.md)
+* [Свойства сведений об устройстве](../devices-sensors/device-information-properties.md)
+* [Создание селектора устройства](../devices-sensors/build-a-device-selector.md)
 * [Воспроизведение мультимедиа](media-playback.md)
 
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, установщик приложений, AppInstaller, загрузка неопубликованных приложений, связанный набор, дополнительные пакеты, веб-сервер Azure
 ms.localizationpriority: medium
 ms.openlocfilehash: 074a8e9941d4314bb35c28b0ee296e9d86fa23a5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929691"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608799"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>Установка приложения UWP из веб-приложения Azure
 
@@ -18,14 +18,14 @@ ms.locfileid: "8929691"
 
 В этом разделе описаны действия по настройке веб-сервера Azure для размещения пакетов приложений UWP и использованию приложения "Установщик приложений" для установки пакетов приложений.
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
 Для успешного выполнения действий в этом руководстве необходимо следующее:
  
 1. Подписка Microsoft Azure 
 2. Пакет приложения UWP — пакет приложения, который вы будете распространять
 
-Необязательно: [Стартовый проект](https://github.com/AppInstaller/MySampleWebApp) на GitHub. Это полезно в том случае, если у вас нет пакета приложения или веб-страницы для работы, но вы все равно хотите узнать, как использовать эту функцию.
+Дополнительно [Начальный проект](https://github.com/AppInstaller/MySampleWebApp) на сайте GitHub. Это полезно в том случае, если у вас нет пакета приложения или веб-страницы для работы, но вы все равно хотите узнать, как использовать эту функцию.
 
 ### <a name="step-1---get-an-azure-subscription"></a>Шаг 1. Получение подписки Azure
 Для получения подписки Azure посетите [страницу учетной записи Azure](https://azure.microsoft.com/free/). В рамках этого учебника можно использовать бесплатное членство.

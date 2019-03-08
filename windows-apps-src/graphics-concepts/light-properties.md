@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 86b8627461251a5d43762facc18c8a414a117fc9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941411"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604129"
 ---
 # <a name="light-properties"></a>Свойства света
 
@@ -21,14 +21,14 @@ ms.locfileid: "8941411"
 
 Свойства расположения, дальности действия и затухания определяют положение источника света в пространстве и поведение излучаемого им светового потока на расстоянии.
 
-## <a name="span-idlightattenuationspanspan-idlightattenuationspanspan-idlightattenuationspanlight-attenuation"></a><span id="Light_Attenuation"></span><span id="light_attenuation"></span><span id="LIGHT_ATTENUATION"></span>Затухание света
+## <a name="span-idlightattenuationspanspan-idlightattenuationspanspan-idlightattenuationspanlight-attenuation"></a><span id="Light_Attenuation"></span><span id="light_attenuation"></span><span id="LIGHT_ATTENUATION"></span>Ослабление света
 
 
-Затухание определяет, как интенсивность света снижается по мере удаления от источника к максимальному расстоянию, заданному в свойстве дальности действия. Для описания затухания освещения иногда используются три значения с плавающей запятой: Attenuation0, Attenuation1 и Attenuation2. Эти значения с плавающей запятой могут меняться от 0,0 до бесконечности, тем самым определяя затухание света. Некоторые приложения задают члену Attenuation1 значение 1,0, а другие — 0,0, что определяет интенсивность света, изменяющуюся в пропорции 1 / D, где D — расстояние от источника света до вершины. Максимальная интенсивность света достигается в его источнике, и затем она уменьшается до значения 1 / (дальность действия) по мере удаления от источника.
+Затухание определяет, как интенсивность света снижается по мере удаления от источника к максимальному расстоянию, заданному в свойстве дальности действия. Три значения с плавающей точкой иногда используются для представления ослабление света: Attenuation0 Attenuation1 и Attenuation2. Эти значения с плавающей запятой могут меняться от 0,0 до бесконечности, тем самым определяя затухание света. Некоторые приложения задают члену Attenuation1 значение 1,0, а другие — 0,0, что определяет интенсивность света, изменяющуюся в пропорции 1 / D, где D — расстояние от источника света до вершины. Максимальная интенсивность света достигается в его источнике, и затем она уменьшается до значения 1 / (дальность действия) по мере удаления от источника.
 
-Однако чаще всего приложения задают члену Attenuation0 значение 0,0, члену Attenuation1 — постоянное значение, а члену Attenuation2 — 0,0; при этом путем изменения этих значений можно создавать разнообразные эффекты освещения. Для получения более сложных эффектов затухания можно комбинировать различные значения затухания. Также можно задать значения за пределами стандартного диапазона, чтобы создать еще более необычные эффекты затухания. Однако отрицательные значения затухания не допускаются. См. [Коэффициент затухания и узкой направленности света](attenuation-and-spotlight-factor.md).
+Однако чаще всего приложения задают члену Attenuation0 значение 0,0, члену Attenuation1 — постоянное значение, а члену Attenuation2 — 0,0; при этом путем изменения этих значений можно создавать разнообразные эффекты освещения. Для получения более сложных эффектов затухания можно комбинировать различные значения затухания. Также можно задать значения за пределами стандартного диапазона, чтобы создать еще более необычные эффекты затухания. Однако отрицательные значения затухания не допускаются. См. раздел [Коэффициент затухания и вспышки](attenuation-and-spotlight-factor.md).
 
-## <a name="span-idlightcolorspanspan-idlightcolorspanspan-idlightcolorspanlight-color"></a><span id="Light_Color"></span><span id="light_color"></span><span id="LIGHT_COLOR"></span>Цвет освещения
+## <a name="span-idlightcolorspanspan-idlightcolorspanspan-idlightcolorspanlight-color"></a><span id="Light_Color"></span><span id="light_color"></span><span id="LIGHT_COLOR"></span>Светлый цвет
 
 
 Источники света в Direct3D излучают три цвета, которые используются независимо друг от друга в расчетах освещения системы: рассеянный цвет, фоновый цвет и отраженный цвет. Каждый из них интегрирован в модуль освещения Direct3D, взаимодействует с другими компонентами из текущего материала и создает окончательный цвет, используемый во время отрисовки. Рассеянный цвет взаимодействует со свойством рассеивающей отражающей способности текущего материала, отраженный цвет — со свойством зеркальной отражающей способности материала и т. д. Подробные сведения о том, как эти цвета применяются в Direct3D, см. в разделе [Математические аспекты освещения](mathematics-of-lighting.md).
@@ -47,7 +47,7 @@ ms.locfileid: "8941411"
 
 Значение дымки всегда поступает только из альфа-канала отраженного цвета.
 
-## <a name="span-idlightdirectionspanspan-idlightdirectionspanspan-idlightdirectionspanlight-direction"></a><span id="Light_Direction"></span><span id="light_direction"></span><span id="LIGHT_DIRECTION"></span>Направленность света
+## <a name="span-idlightdirectionspanspan-idlightdirectionspanspan-idlightdirectionspanlight-direction"></a><span id="Light_Direction"></span><span id="light_direction"></span><span id="LIGHT_DIRECTION"></span>Направление света
 
 
 Свойство направленности света определяет направление, в котором испускаемый объектом свет проходит через пространство. Направление используется только для направленных и прожекторных источников света и задается вектором.
@@ -56,17 +56,17 @@ ms.locfileid: "8941411"
 
 Несмотря на то что нормализация векторов направленности света не требуется, не забывайте задавать им какую-либо величину. Другими словами, не используйте вектор направленности &lt;0,0,0&gt;.
 
-## <a name="span-idlightpositionspanspan-idlightpositionspanspan-idlightpositionspanlight-position"></a><span id="Light_Position"></span><span id="light_position"></span><span id="LIGHT_POSITION"></span>Расположение источника света
+## <a name="span-idlightpositionspanspan-idlightpositionspanspan-idlightpositionspanlight-position"></a><span id="Light_Position"></span><span id="light_position"></span><span id="LIGHT_POSITION"></span>Источник света
 
 
 Расположение источника света описывается с помощью векторной конструкции. Считается, что координаты X, Y и Z находятся в пространстве мира. Направленные источники света — это единственный тип источников, не использующих свойство расположения.
 
-## <a name="span-idlightrangespanspan-idlightrangespanspan-idlightrangespanlight-range"></a><span id="Light_Range"></span><span id="light_range"></span><span id="LIGHT_RANGE"></span>Дальность действия источника света
+## <a name="span-idlightrangespanspan-idlightrangespanspan-idlightrangespanlight-range"></a><span id="Light_Range"></span><span id="light_range"></span><span id="LIGHT_RANGE"></span>Диапазон света
 
 
 Свойство дальности действия источника света определяет расстояние в пространстве мира, после которого объекты сцены перестают получать свет, излучаемый этим источником. Направленные источники света не используют свойство дальности действия.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Источники света и материалы](lights-and-materials.md)

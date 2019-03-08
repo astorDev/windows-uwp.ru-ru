@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, сеть, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
 ms.openlocfilehash: 8af1f478bc466719eef3c5e19d055ac6073a0b11
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045410"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615419"
 ---
 # <a name="websockets"></a>WebSockets
 Протокол WebSockets предоставляет механизм быстрого и безопасного двустороннего взаимодействия между клиентом и сервером через HTTP(S) и поддерживает и UTF-8, и двоичные сообщения.
@@ -22,7 +22,7 @@ ms.locfileid: "9045410"
 
 **Примечание**. Клиент не может использовать WebSocket для передачи данных, если сервер не использует протокол WebSocket. Если сервер не поддерживает WebSocket, вам придется использовать другой метод передачи данных.
 
-Универсальная платформа Windows (UWP) поддерживает использование WebSocket как клиентами, так и серверами. Пространство имен [**Windows.Networking.Sockets**](/uwp/api/windows.networking.sockets) определяет два класса WebSocket для использования клиентами&mdash;[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) и [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket). Вот сравнение этих двух классов WebSocket.
+Универсальная платформа Windows (UWP) поддерживает использование WebSocket как клиентами, так и серверами. Пространство имен [**Windows.Networking.Sockets**](/uwp/api/windows.networking.sockets) определяет два класса WebSocket для использования клиентами &mdash; [**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) и [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket). Вот сравнение этих двух классов WebSocket.
 
 | [MessageWebSocket](/uwp/api/windows.networking.sockets.messagewebsocket) | [StreamWebSocket](/uwp/api/windows.networking.sockets.streamwebsocket) |
 | - | - |
@@ -34,12 +34,12 @@ ms.locfileid: "9045410"
 ## <a name="secure-your-connection-with-tlsssl"></a>Защита подключения с помощью TLS/SSL
 В большинстве случаев необходимо использовать безопасное соединение WebSocket, чтобы зашифровать отправляемые и получаемые данные. Это также увеличивает шансы успешного подключения, так как многие посредники, такие как брандмауэры и прокси-серверы, отклоняют незашифрованные подключения WebSocket. [Протокол WebSocket](https://tools.ietf.org/html/rfc6455#section-3) определяет эти две схемы URI.
 
-| Схема URI | Назначение |
+| Схема URI | Описание |
 | - | - |
 | wss: | Используется для защищенных соединений, которые должны быть зашифрованы. |
 | ws: | Используется для незашифрованных соединений. |
 
-Чтобы зашифровать соединение WebSocket, воспользуйтесь схемой URI `wss:`. Вот пример.
+Чтобы зашифровать соединение WebSocket, воспользуйтесь схемой URI `wss:`. Рассмотрим пример.
 
 ```csharp
 protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -67,9 +67,9 @@ IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
 ```
 
 ## <a name="use-messagewebsocket-to-connect"></a>Использование сокета MessageWebSocket для подключения
-[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) позволяет одной операцией прочитать/записать все сообщение WebSocket. Следовательно, его можно использовать, если сообщения небольшие. Этот класс поддерживает двоичные сообщения и сообщения в кодировке UTF-8.
+[**MessageWebSocket** ](/uwp/api/windows.networking.sockets.messagewebsocket) позволяет всего сообщения WebSocket для чтения или записи в рамках одной операции. Следовательно, его можно использовать, если сообщения небольшие. Этот класс поддерживает двоичные сообщения и сообщения в кодировке UTF-8.
 
-В примере кода ниже эхо-сервер WebSocket.org&mdash; это служба, которая возвращает отправителю любое отправленное ей сообщение.
+В примере кода ниже эхо-сервер WebSocket.org &mdash; это служба, которая возвращает отправителю любое отправленное ей сообщение.
 
 ```csharp
 private Windows.Networking.Sockets.MessageWebSocket messageWebSocket;
@@ -303,9 +303,9 @@ private:
 **Примечание**. **DataWriter** становится владельцем потока вывода. Когда **DataWriter** выходит за пределы области, если к нему прикреплен поток вывода, **DataWriter** освобождает поток вывода. После этого все последующие попытки использовать поток вывода будут неудачными со значением HRESULT 0x80000013. Однако можно вызвать метод [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream), чтобы отсоединить поток вывода от **DataWriter** и вернуть владение потоком событию **MessageWebSocket**.
 
 ## <a name="use-streamwebsocket-to-connect"></a>Использование StreamWebSocket для подключения
-[**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket) позволяет считывать части сообщения при каждой операции чтения. Следовательно, он подходит для передачи очень больших файлов (например, фото или видео). Этот класс поддерживает только двоичные сообщения.
+[**StreamWebSocket** ](/uwp/api/windows.networking.sockets.streamwebsocket) разрешены разделы сообщения для чтения с каждой операции чтения. Следовательно, он подходит для передачи очень больших файлов (например, фото или видео). Этот класс поддерживает только двоичные сообщения.
 
-В примере кода ниже эхо-сервер WebSocket.org&mdash; это служба, которая возвращает отправителю любое отправленное ей сообщение.
+В примере кода ниже эхо-сервер WebSocket.org &mdash; это служба, которая возвращает отправителю любое отправленное ей сообщение.
 
 ```csharp
 private Windows.Networking.Sockets.StreamWebSocket streamWebSocket;
@@ -603,14 +603,14 @@ streamWebSocket->Control->NoDelay = false;
 auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
 ```
 
-**Примечание**. Не пытайтесь изменить свойство элемента управления *после* вызова **ConnectAsync**. Единственное исключение из этого правила— [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType).
+**Примечание**. Не пытайтесь изменить свойство элемента управления *после* вызова **ConnectAsync**. Единственное исключение из этого правила — [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType).
 
 ## <a name="websocket-information-classes"></a>Классы информации WebSocket
-[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) и [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket) имеют соответствующий класс, который обеспечивает дополнительную информацию об объекте.
+[**MessageWebSocket** ](/uwp/api/windows.networking.sockets.messagewebsocket) и [ **StreamWebSocket** ](/uwp/api/windows.networking.sockets.streamwebsocket) иметь соответствующий класс, предоставляющий дополнительные сведения об объекте.
 
-[**MessageWebSocketInformation**](/uwp/api/windows.networking.sockets.messagewebsocketinformation) предоставляет информацию о **MessageWebSocket**, и вы извлекаете его экземпляр с помощью свойства [**MessageWebSocket.Information**](/uwp/api/windows.networking.sockets.messagewebsocket.Information).
+[**MessageWebSocketInformation** ](/uwp/api/windows.networking.sockets.messagewebsocketinformation) содержатся сведения о **MessageWebSocket**, и получить его с помощью экземпляра [ **MessageWebSocket.Information** ](/uwp/api/windows.networking.sockets.messagewebsocket.Information) свойство.
 
-[**StreamWebSocketInformation**](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation) предоставляет информацию о **StreamWebSocket**, и вы извлекаете его экземпляр с помощью свойства  [**StreamWebSocket.Information**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.Information).
+[**StreamWebSocketInformation** ](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation) содержатся сведения о **StreamWebSocket**, и получить его с помощью экземпляра [ **StreamWebSocket.Information** ](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.Information) свойство.
 
 Обратите внимание, что свойства в этих классах информации доступны только для чтения, но их можно использовать для извлечения информации в любой момент в течение срока жизни объекта веб-сокета.
 
@@ -622,9 +622,9 @@ auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref ne
 Для ошибок при проверке параметров можно использовать также **HRESULT** из исключения, чтобы получить более подробные сведения об ошибке. Возможные значения **HRESULT** перечислены в `Winerror.h`, который находится в вашей установке SDK (например, в папке `C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared`). Для многих ошибок при проверке параметров возвращаемым **HRESULT** является **E_INVALIDARG**.
 
 ## <a name="setting-timeouts-on-websocket-operations"></a>Назначение времени ожидания при выполнении операций с WebSocket
-Классы **MessageWebSocket** и **StreamWebSocket** используют внутреннюю системную службу для отправки запросов клиента WebSocket и получения откликов от сервера. Время ожидания, используемое для операции подключения WebSocket, по умолчанию составляет 60секунд. Если HTTP-сервер, поддерживающий WebSocket, не отвечает или не может ответить на запрос подключения WebSocket (он временно недоступен или блокируется в результате отказа сети), внутренняя системная служба ожидает заданные по умолчанию 60секунд, а затем возвращает ошибку. Эта ошибка вызывает исключение в методе WebSocket **ConnectAsync**. Время ожидания, используемое по умолчанию для операций отправки и получения после установления подключения WebSocket, составляет 30секунд.
+Классы **MessageWebSocket** и **StreamWebSocket** используют внутреннюю системную службу для отправки запросов клиента WebSocket и получения откликов от сервера. Время ожидания, используемое для операции подключения WebSocket, по умолчанию составляет 60 секунд. Если HTTP-сервер, поддерживающий WebSocket, не отвечает или не может ответить на запрос подключения WebSocket (он временно недоступен или блокируется в результате отказа сети), внутренняя системная служба ожидает заданные по умолчанию 60 секунд, а затем возвращает ошибку. Эта ошибка вызывает исключение в методе WebSocket **ConnectAsync**. Время ожидания, используемое по умолчанию для операций отправки и получения после установления подключения WebSocket, составляет 30 секунд.
 
-Если запрос имени HTTP-сервера в URI возвращает несколько IP-адресов, то перед завершением с ошибкой внутренняя системная служба проверяет до 5 IP-адресов для сайта, по умолчанию ожидая ответа по каждому адресу в течение 60секунд. Следовательно, ваше приложение может ждать несколько минут, пытаясь подключиться к нескольким IP-адресам, прежде чем обработает исключение. Пользователю в этом случае может показаться, что приложение не работает. 
+Если запрос имени HTTP-сервера в URI возвращает несколько IP-адресов, то перед завершением с ошибкой внутренняя системная служба проверяет до 5 IP-адресов для сайта, по умолчанию ожидая ответа по каждому адресу в течение 60 секунд. Следовательно, ваше приложение может ждать несколько минут, пытаясь подключиться к нескольким IP-адресам, прежде чем обработает исключение. Пользователю в этом случае может показаться, что приложение не работает. 
 
 Чтобы ускорить реакцию приложения и свести эти проблемы к минимуму, можно задать более короткое время ожидания для запросов на подключение. Время ожидания задается одинаково для **MessageWebSocket** и **StreamWebSocket**.
 

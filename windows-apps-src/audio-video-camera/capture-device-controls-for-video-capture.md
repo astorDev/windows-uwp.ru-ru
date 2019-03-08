@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f144ef398fc55e79d2f0190c61214cdf1aa93b68
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924082"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607659"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>Ручные элементы управления для видеозахвата на камере
 
@@ -51,7 +51,7 @@ ms.locfileid: "8924082"
 ## <a name="temporal-denoising"></a>Временное шумоподавление
 Начиная с Windows 10 версии 1803 вы можете включить временное шумоподавление для видео на устройствах, которые его поддерживают. Эта функция объединяет данные из нескольких смежных кадров в режиме реального времени для получения видеокадров без шумов.
 
-[**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) позволяет приложению определить, поддерживается ли временное шумоподавление на текущем устройстве, и, если да, какие режимы шумоподавления поддерживаются. Доступны следующие режимы шумоподавления: [**Off**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode), [**On**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode) и [**Auto**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode). Устройство может не поддерживать все режимы, но каждое устройство должно поддерживать режим **Auto** или **On** и **Off**.
+[  **VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) позволяет приложению определить, поддерживается ли временное шумоподавление на текущем устройстве, и, если да, какие режимы шумоподавления поддерживаются. Доступные режимы denoising [ **Off**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode), [ **на**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode), и [ **автоматически** ](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode). Устройства могут не поддерживать все режимы, но все устройства должен поддерживать **автоматически** или **на** и **Off**.
 
 В следующем примере представлен простой пользовательский интерфейс для предоставления переключателей, которые позволяют пользователю переключаться между режимами шумоподавления.
 
@@ -87,8 +87,8 @@ ms.locfileid: "8924082"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
-* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Обработка кадров мультимедиа с помощью MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Обработка мультимедиа кадров с MediaFrameReader](process-media-frames-with-mediaframereader.md)
 *  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, игры, directx, ресурсы, изображения
 ms.localizationpriority: medium
 ms.openlocfilehash: b650f77627e02427b2861a2e6d0df7d1fc86831a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937068"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628369"
 ---
 # <a name="set-up-directx-resources-and-display-an-image"></a>Настройка ресурсов DirectX и отображение изображения
 
@@ -19,20 +19,20 @@ ms.locfileid: "8937068"
 
 В этом разделе мы покажем, как создать устройство Direct3D, цепочку буферов и представление целевого объекта обработки, а также как представить обработанное изображение для отображения.
 
-**Цель:** настройка ресурсов DirectX в приложении универсальной платформы Windows (UWP) на языке C++ и отображение одного цвета.
+**Цель:** Чтобы настроить ресурсы DirectX в приложении C++ универсальной платформы Windows (UWP) и для отображения сплошным цветом.
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 
 
 Предполагается, что вы знакомы с C++. Также вы должны быть знакомы с основными принципами программирования графики.
 
-**Время выполнения:** 20 минут.
+**Время завершения:** 20 минут.
 
-## <a name="instructions"></a>Инструкции
+## <a name="instructions"></a>Инструкция
 
-### <a name="1-declaring-direct3d-interface-variables-with-comptr"></a>1. Объявление переменных интерфейса Direct3D с помощью ComPtr
+### <a name="1-declaring-direct3d-interface-variables-with-comptr"></a>1. Объявление переменных интерфейс Direct3D, с объектом ComPtr
 
-Мы объявляем переменные интерфейса Direct3D по шаблону [смарт-указателя](https://msdn.microsoft.com/library/windows/apps/hh279674.aspx) ComPtr из библиотеки шаблонов C++ для среды выполнения Windows (WRL), поэтому можно безопасно управлять временем существования этих переменных. В таком случае мы можем использовать эти переменные, чтобы получить доступ к классу [**ComPtr class**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) и его членам. Пример.
+Мы объявляем переменные интерфейса Direct3D по шаблону [смарт-указателя](https://msdn.microsoft.com/library/windows/apps/hh279674.aspx) ComPtr из библиотеки шаблонов C++ для среды выполнения Windows (WRL), поэтому можно безопасно управлять временем существования этих переменных. В таком случае мы можем использовать эти переменные, чтобы получить доступ к классу [**ComPtr class**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) и его членам. Например:
 
 ```cpp
     ComPtr<ID3D11RenderTargetView> m_renderTargetView;
@@ -43,13 +43,13 @@ ms.locfileid: "8937068"
         );
 ```
 
-Если вы объявите [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) с помощью ComPtr, то сможете затем использовать метод **GetAddressOf** шаблона ComPtr, чтобы передать адрес указателя на **ID3D11RenderTargetView** (**ID3D11RenderTargetView) методу [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464). **OMSetRenderTargets** привязывает однобуферную прорисовку к [стадии слияния вывода](https://msdn.microsoft.com/library/windows/desktop/bb205120), чтобы указать однобуферную прорисовку в качестве цели вывода.
+При объявлении [ **ID3D11RenderTargetView** ](https://msdn.microsoft.com/library/windows/desktop/ff476582) с объектом ComPtr, можно использовать в ComPtr **GetAddressOf** метод, чтобы получить адрес указателя на  **ID3D11RenderTargetView** (\*\*ID3D11RenderTargetView) для передачи [ **ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464). Метод **OMSetRenderTargets** привязывает однобуферную прорисовку к [стадии слияния вывода](https://msdn.microsoft.com/library/windows/desktop/bb205120), чтобы указать однобуферную прорисовку в качестве цели вывода.
 
 После запуска образец приложения инициализируется, загружается и затем готов к выполнению.
 
-### <a name="2-creating-the-direct3d-device"></a>2. Создание устройства Direct3D
+### <a name="2-creating-the-direct3d-device"></a>2. Создания устройства Direct3D
 
-Чтобы использовать API Direct3D для обработки сцены, необходимо сначала создать устройство Direct3D, представляющее видеоадаптер. Чтобы создать устройство Direct3D, необходимо вызвать функцию [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082). Мы определяем уровни с9.1 по11.1 в массиве значений [**D3D\_FEATURE\_LEVEL**](https://msdn.microsoft.com/library/windows/desktop/ff476329). Direct3D по порядку проходит через массив и возвращает высший уровень поддерживаемого компонента. Таким образом, чтобы получить наивысший доступный уровень компонента, мы перечисляем записи массива **D3D\_FEATURE\_LEVEL** от высшего к низшему. Чтобы ресурсы Direct3D могли взаимодействовать с Direct2D, мы передаем флаг [**D3D11\_CREATE\_DEVICE\_BGRA\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_BGRA_SUPPORT) параметру *Флаги*. Если мы используем отладочную сборку, мы также передаем флаг [**D3D11\_CREATE\_DEVICE\_DEBUG**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_DEBUG). Дополнительные сведения о приложениях отладки см. в разделе [Отладка приложений с помощью уровня отладки](https://msdn.microsoft.com/library/windows/desktop/jj200584).
+Чтобы использовать API Direct3D для обработки сцены, необходимо сначала создать устройство Direct3D, представляющее видеоадаптер. Чтобы создать устройство Direct3D, необходимо вызвать функцию [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082). Мы указываем уровней 9.1 через 11.1 в массиве [ **D3D\_ФУНКЦИЯ\_уровень** ](https://msdn.microsoft.com/library/windows/desktop/ff476329) значения. Direct3D по порядку проходит через массив и возвращает высший уровень поддерживаемого компонента. Таким образом, чтобы получить наивысший уровень возможностей, перечислены **D3D\_ФУНКЦИЯ\_уровень** массива записей от самого высокого до самого низкого. Мы передаем [ **D3D11\_создать\_устройства\_BGRA\_поддержки** ](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_BGRA_SUPPORT) флаг *флаги* параметр, чтобы установить Ресурсы Direct3D взаимодействовать с Direct2D. Если мы используем отладочной сборки, мы передаем [ **D3D11\_создать\_устройства\_Отладка** ](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_DEBUG) флаг. Дополнительные сведения о приложениях отладки см. в разделе [Отладка приложений с помощью уровня отладки](https://msdn.microsoft.com/library/windows/desktop/jj200584).
 
 Мы получаем устройство Direct3D 11.1 ([**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)) и контекст устройства ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) с помощью запроса устройства Direct3D 11 и его контекста, возвращаемые [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082).
 
@@ -104,7 +104,7 @@ ms.locfileid: "8937068"
 
 ### <a name="3-creating-the-swap-chain"></a>3. Создание цепочки буферов
 
-Затем мы создаем цепочку буферов, используемую устройством для визуализации и отображения. Для описания цепочки буферов мы объявляем и инициализируем структуру [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528). Затем мы настраиваем цепочку буферов на основе модели отражений (то есть цепочку буферов, в которой член **SwapEffect** имеет значение [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077#DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL)) и присваиваем члену **Формат** значение [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM). Мы присваиваем члену **Count** структуры [**DXGI\_SAMPLE\_DESC**](https://msdn.microsoft.com/library/windows/desktop/bb173072), указанной членом **SampleDesc**, значение 1, а члену **Quality** структуры **DXGI\_SAMPLE\_DESC** — 0, так как модель переворота не поддерживает сглаживание нескольких примеров (Microsoft Active Accessibility). Мы присваиваем члену **BufferCount** значение 2, и поэтому цепочки буферов могут использовать кадровый буфер для предоставления видеоадаптеру и задний буфер для однобуферной прорисовки.
+Затем мы создаем цепочку буферов, используемую устройством для визуализации и отображения. Мы объявить и инициализировать [ **DXGI\_ЗАМЕНЫ\_ЦЕПОЧКИ\_DESC1** ](https://msdn.microsoft.com/library/windows/desktop/hh404528) структуры для описания цепочки буферов. Затем мы устанавливаем цепочки буферов, как отразить модель (то есть цепочку буферов с [ **DXGI\_ЗАМЕНЫ\_эффект\_ПЕРЕВЕРНУТЬ\_SEQUENTIAL** ](https://msdn.microsoft.com/library/windows/desktop/bb173077#DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL) значение, заданное в **SwapEffect** член) и задайте **формат** члена [ **DXGI\_ФОРМАТ\_B8G8R8A8\_UNORM** ](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM). Мы устанавливаем **число** членом [ **DXGI\_пример\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/bb173072) структуру, в которой **SampleDesc** член Указывает значение 1 и **качества** членом **DXGI\_пример\_DESC** до нуля, так как отразить модель не поддерживает несколько пример сглаживания (MSAA). Мы присваиваем члену **BufferCount** значение 2, и поэтому цепочки буферов могут использовать кадровый буфер для предоставления видеоадаптеру и задний буфер для однобуферной прорисовки.
 
 Мы получаем базовое устройство DXGI, опрашивая устройство Direct3D 11.1. Чтобы свести к минимуму потребление энергии, что важно для устройств, работающих от аккумулятора, например ноутбуков и планшетов, необходимо вызвать метод [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334), указав 1 как максимальное количество кадров заднего буфера, которое DXGI может поместить в очередь. Благодаря этому приложение обрабатывается только после выдержки интервала между кадрами.
 
@@ -177,9 +177,9 @@ ms.locfileid: "8937068"
                 );
 ```
 
-### <a name="4-creating-the-render-target-view"></a>4. Создание представления однобуферной обработки
+### <a name="4-creating-the-render-target-view"></a>4. Создание представления целевого объекта отрисовки
 
-Для преобразования графики для просмотра в окне мы должны создать представление однобуферной обработки. Мы вызываем метод [**IDXGISwapChain::GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb174570), чтобы получить задний буфер цепочки буферов и использовать его при создании представления однобуферной прорисовки. Мы указываем задний буфер в качестве 2D-текстуры ([**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)). Чтобы создать представление однобуферной прорисовки, мы вызываем метод [**ID3D11Device::CreateRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476517) с задним буфером цепочки буферов. Мы должны задать отрисовку всего основного окна, указав порт представления ([**D3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476260)) в качестве полного размера заднего буфера цепочки буферов. Мы используем порт представления в обращении к методу [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) для связывания порта представления и [стадии растеризатора](https://msdn.microsoft.com/library/windows/desktop/bb205125) конвейера. Стадия растеризатора преобразует векторную информацию в растровое изображение. В данном случае преобразование нам не нужно, так как мы просто отображаем сплошной цвет.
+Для преобразования графики для просмотра в окне мы должны создать представление однобуферной обработки. Мы вызываем метод [**IDXGISwapChain::GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb174570), чтобы получить задний буфер цепочки буферов и использовать его при создании представления однобуферной прорисовки. Мы указываем задний буфер в качестве 2D-текстуры ([**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)). Чтобы создать представление однобуферной прорисовки, мы вызываем метод [**ID3D11Device::CreateRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476517) с задним буфером цепочки буферов. Мы должны указать для рисования в окно «основные», указав порта просмотра ([**D3D11\_ПРОСМОТРА**](https://msdn.microsoft.com/library/windows/desktop/ff476260)) как полный размер заднего буфера цепочки буферов. Мы используем порт представления в обращении к методу [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) для связывания порта представления и [стадии растеризатора](https://msdn.microsoft.com/library/windows/desktop/bb205125) конвейера. Стадия растеризатора преобразует векторную информацию в растровое изображение. В данном случае преобразование нам не нужно, так как мы просто отображаем сплошной цвет.
 
 ```cpp
         // Once the swap chain is created, create a render target view.  This will
@@ -217,15 +217,15 @@ ms.locfileid: "8937068"
         m_d3dDeviceContext->RSSetViewports(1, &viewport);
 ```
 
-### <a name="5-presenting-the-rendered-image"></a>5. Представление обработанного изображения
+### <a name="5-presenting-the-rendered-image"></a>5. Представления подготовленного изображения
 
 Для непрерывной обработки и вывода сцены на экран мы воспользуемся бесконечным циклом.
 
 В этом примере мы вызываем следующие методы:
 
-1.  [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) — чтобы указать однобуферную прорисовку в качестве цели вывода.
-2.  [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) — чтобы очистить однобуферную прорисовку до сплошного цвета.
-3.  [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) — чтобы представить отрисованное изображение в окне.
+1.  [**ID3D11DeviceContext::OMSetRenderTargets** ](https://msdn.microsoft.com/library/windows/desktop/ff476464) для указания целевого объекта отрисовки как назначение выходных данных.
+2.  [**ID3D11DeviceContext::ClearRenderTargetView** ](https://msdn.microsoft.com/library/windows/desktop/ff476388) снимите целевого объекта отрисовки сплошным цветом.
+3.  [**IDXGISwapChain::Present** ](https://msdn.microsoft.com/library/windows/desktop/bb174576) для представления подготовленного изображения в окно.
 
 Так как мы ранее определили максимальное значение задержки кадра как 1, Windows обычно замедляет цикл обработки до частоты обновления экрана, как правило, около 60 Гц. Windows замедляет цикл отрисовки, переводя приложение в спящий режим при вызове метода [**Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576). Windows переводит приложение в спящий режим до обновления экрана.
 
@@ -259,9 +259,9 @@ ms.locfileid: "8937068"
         }
 ```
 
-### <a name="6-resizing-the-app-window-and-the-swap-chains-buffer"></a>6. Изменение размеров окна приложения и буфера цепочки буферов
+### <a name="6-resizing-the-app-window-and-the-swap-chains-buffer"></a>6. Изменение размера окна приложения и буфера цепочки буферов
 
-Если изменяется размер окна приложения, приложение должно изменить размеры буферов цепочки буферов, повторно создать представление однобуферной обработки, а затем представить преобразованное изображение с измененными размерами. Чтобы изменить размеры буферов цепочки буферов, мы вызываем метод [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). В этом вызове мы оставляем количество и формат буферов без изменений (параметр *BufferCount* со значением "два" и параметр *NewFormat* со значением [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM)). Мы делаем размер заднего буфера цепочки буферов таким же, как измененный размер окна. Изменив размеры буферов цепочки буферов, мы создаем новую однобуферную прорисовку и представляем новое обработанное изображение, как при его инициализации.
+Если изменяется размер окна приложения, приложение должно изменить размеры буферов цепочки буферов, повторно создать представление однобуферной обработки, а затем представить преобразованное изображение с измененными размерами. Чтобы изменить размеры буферов цепочки буферов, мы вызываем метод [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). В этом вызове оставить количество буферов и формат буферов без изменений ( *BufferCount* два параметра и *NewFormat* параметр [ **DXGI\_ ФОРМАТИРОВАТЬ\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM)). Мы делаем размер заднего буфера цепочки буферов таким же, как измененный размер окна. Изменив размеры буферов цепочки буферов, мы создаем новую однобуферную прорисовку и представляем новое обработанное изображение, как при его инициализации.
 
 ```cpp
             // If the swap chain already exists, resize it.
@@ -276,14 +276,14 @@ ms.locfileid: "8937068"
                 );
 ```
 
-## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
+## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
 
 
 Мы создали устройство Direct3D, цепочку буферов и представление целевого объекта обработки, а также представили обработанное изображение для отображения.
 
 Теперь мы также нарисуем на экране треугольник.
 
-[Создание шейдеров и рисование примитивов](creating-shaders-and-drawing-primitives.md)
+[Создание шейдеров и графических примитивов](creating-shaders-and-drawing-primitives.md)
 
  
 

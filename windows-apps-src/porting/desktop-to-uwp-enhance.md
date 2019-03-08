@@ -1,5 +1,5 @@
 ---
-Description: Enhance your desktop application for Windows 10 users by using Universal Windows Platform (UWP) APIs.
+Description: Улучшить своего настольного приложения для пользователей Windows 10 с помощью универсальной Windows API платформы (UWP).
 Search.Product: eADQiWindows 10XVcnh
 title: Улучшение классического приложения для Windows 10
 ms.date: 10/15/2018
@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e06de7d33604981e0055d9d57f774d280753db2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051057"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628039"
 ---
-# <a name="enhance-your-desktop-application-for-windows-10"></a>Улучшите свое классическое приложение для Windows 10
+# <a name="enhance-your-desktop-application-for-windows-10"></a>Улучшение классического приложения для Windows 10
 
-API среды выполнения Windows можно использовать для добавления современных видов взаимодействия, активирующихся для пользователей Windows 10.
+Добавлять современные возможности, которые немного лучше для пользователей Windows 10 можно использовать API среды выполнения Windows.
 
 Сначала настройте свой проект. Затем добавьте возможности Windows 10. Можно создавать отдельные версии для пользователей Windows 10 либо распространять абсолютно одинаковые двоичные файлы для всех пользователей независимо от того, какой версией Windows они пользуются.
 
@@ -23,7 +23,7 @@ API среды выполнения Windows можно использовать 
 
 Необходимо внести некоторые изменения в проект, чтобы использовать API-интерфейсы UWP.
 
-### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>Изменение проекта .NET для использования API среды выполнения Windows
+### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>Измените проект .NET, чтобы использовать API среды выполнения Windows
 
 Откройте диалоговое окно **Диспетчера ссылок**, нажмите кнопку **Обзор**, а затем выберите **Все файлы**.
 
@@ -31,47 +31,47 @@ API среды выполнения Windows можно использовать 
 
 Затем добавьте ссылку на эти файлы.
 
-|Файл|Расположение|
+|Файл|Location|
 |--|--|
 |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*версия sdk*>\Windows.Foundation.UniversalApiContract\<*версия*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*версия sdk*>\Windows.Foundation.FoundationContract\<*версия*>|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
+|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
 
 В окне **Свойства** установите в поле **Копировать локально** каждого файла *.winmd* значение **False**.
 
 ![поле копирования локальных файлов](images/desktop-to-uwp/copy-local-field.png)
 
-### <a name="modify-a-c-project-to-use-windows-runtime-apis"></a>Изменение проекта C++ для использования API среды выполнения Windows
+### <a name="modify-a-c-project-to-use-windows-runtime-apis"></a>Измените проект C++, чтобы использовать API среды выполнения Windows
 
-Использование [C + +/ WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) использование API среды выполнения Windows. C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows.
+Используйте [C + +/ WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) для работы с API среды выполнения Windows. C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows.
 
-Настройка проекта для C + +/ WinRT, см. в разделе [Изменение проекта приложения рабочего стола Windows для добавления C + +/ WinRT поддержки](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
+Чтобы настроить проект для C + +/ WinRT, см. в разделе [изменить проект приложения Windows Desktop Добавление C + +/ WinRT поддержка](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 ## <a name="add-windows-10-experiences"></a>Добавление возможностей Windows 10
 
 Теперь все готово для добавления современных видов взаимодействия, которые активируются, когда пользователь запускает ваше приложение в Windows 10. Используйте этот процесс разработки.
 
-:white_check_mark: **Сначала определите, какие возможности вы хотите добавить**
+:white_check_mark: **Во-первых решите, какие возможности вы хотите добавить**
 
-Выбор огромен. Например можно упростить процесс оформления покупки с помощью API-интерфейсов монетизации либо привлечь внимание к вашему приложению, когда у вас есть нечто заслуживающее внимания для совместного использования, например новую фотографию, добавленную другим пользователем.
+Выбор огромен. Например можно упростить порядок последовательности покупки с помощью финансовых API-интерфейсы или внимания к приложению при наличии нечто интересное для совместного использования, такие как новые изображения, другой пользователь опубликовал.
 
-![Всплывающее уведомление](images/desktop-to-uwp/toast.png)
+![Всплывающее](images/desktop-to-uwp/toast.png)
 
-Даже если пользователи не обращают внимания на ваше сообщение или закрывают его, они могут снова увидеть его в центре уведомлений, а затем щелкнуть по сообщению, чтобы открыть приложение. Это увеличивает объем взаимодействия с приложением и обеспечивает настройки приложения глубоко интеграции с операционной системой. Мы покажем код для реализации этой возможности чуть позже.
+Даже если пользователи не обращают внимания на ваше сообщение или закрывают его, они могут снова увидеть его в центре уведомлений, а затем щелкнуть по сообщению, чтобы открыть приложение. Это увеличивает взаимодействия с вашим приложением и полевых условиях настройки приложения отображаются интегрирована в операционную систему. Мы покажем код для реализации этой возможности чуть позже.
 
 Посетите наш [Центр разработчиков](https://developer.microsoft.com/windows), чтобы найти и другие идеи.
 
-:white_check_mark: **Решите, заняться ли улучшением или расширением возможностей**
+:white_check_mark: **Решить, следует ли для улучшения или расширения**
 
 Вам часто будут встречаться термины "улучшить" и "расширить", поэтому сейчас мы поясним, какой именно смысл мы вкладываем в эти слова.
 
-Мы используем термин «улучшить» для описания API среды выполнения Windows, которые можно вызывать непосредственно из классического приложения. При выборе возможности, предлагаемой в Windows 10, определите API-интерфейсы, которые вам необходимы для ее реализации, а затем проверьте, входит ли такой API в этот [список](desktop-to-uwp-supported-api.md). Это список API-интерфейсов, которые можно вызывать непосредственно из классического приложения. Если выбранный вами API не входит в этот список, это обосновано тем, что функции, связанные с этим API, могут работать только в рамках процесса UWP. Зачастую в их число входят API-интерфейсы, которые отображают современные элементы пользовательского интерфейса, например элемент управления картой UWP или запрос безопасности Windows Hello.
+Мы используем термин «повышения» для описания API среды выполнения Windows, которые можно вызывать непосредственно из своего настольного приложения. При выборе возможности, предлагаемой в Windows 10, определите API-интерфейсы, которые вам необходимы для ее реализации, а затем проверьте, входит ли такой API в этот [список](desktop-to-uwp-supported-api.md). Это список API-интерфейсов, которые можно вызывать непосредственно из классического приложения. Если выбранный вами API не входит в этот список, это обосновано тем, что функции, связанные с этим API, могут работать только в рамках процесса UWP. Зачастую в их число входят API-интерфейсы, которые отображают современные элементы пользовательского интерфейса, например элемент управления картой UWP или запрос безопасности Windows Hello.
 
 Необходимо отметить, что если вы хотите включить эти возможности в приложение, просто "расширьте" свое приложение, добавив в решение проект UWP. Проект классического приложения по-прежнему является точкой входа для вашего приложения, но проект UWP предоставляет доступ ко всем API-интерфейсам, которые не входят в этот [список](desktop-to-uwp-supported-api.md). Классические приложения могут взаимодействовать с процессами UWP с помощью службы приложения, и мы приведем множество рекомендаций по способам настройки этой функции. Если вы хотите добавить возможность, для которой требуется проект UWP, см. раздел [Расширение с помощью UWP](desktop-to-uwp-extend.md).
 
-:white_check_mark: **Примеры контрактов API**
+:white_check_mark: **Справочник по API контрактов**
 
 Если вы можете вызывать API непосредственно из классического приложения, откройте браузер и найдите справочный раздел для этого API-интерфейса.
 В сводных сведениях по этому API-интерфейсу вы найдете таблицу, в которой приводится описание контракта API для этого API. Пример такой таблицы приведен ниже.
@@ -80,7 +80,7 @@ API среды выполнения Windows можно использовать 
 
 Если у вас есть классическое приложение на основе .NET, добавьте ссылку на этот контракт API и присвойте свойству **Копировать локально** этого файла значение **False**. Если у вас есть проект на основе C++, добавьте в свои **Дополнительные каталоги включаемых файлов** путь к папке, содержащей этот контракт.
 
-:white_check_mark: **Вызов API-интерфейсов для добавления возможности**
+:white_check_mark: **Вызов API-интерфейсы для добавления работы**
 
 Ниже приведен код, используемый для отображения окна уведомлений, которое мы рассмотрели ранее. Эти API-интерфейсы внесены в [список](desktop-to-uwp-supported-api.md), так что вы можете добавить этот код в свое классическое приложение и запустить его прямо сейчас.
 
@@ -150,7 +150,7 @@ void UWP::ShowToast()
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>Поддержка установочных баз Windows XP, Windows Vista и Windows 7 и Windows 8
 
-Можно модернизировать приложение для Windows 10, не создавая новую ветвь и не поддерживая раздельные базы кода.
+Вы можете модернизировать приложения для Windows 10 без необходимости создавать новую ветвь и поддерживать отдельные базы кода.
 
 Если вы хотите создать отдельные двоичные файлы для пользователей Windows 10, используйте условную компиляцию. Если вы предпочитаете создать один набор двоичных файлов, которые развертываются для всех пользователей Windows, используйте проверки во время выполнения.
 
@@ -164,7 +164,7 @@ void UWP::ShowToast()
 
 ![Конфигурация сборки](images/desktop-to-uwp/build-config.png)
 
-Для этой конфигурации сборки создайте константу для определения кода, который будет вызывать API среды выполнения Windows.  
+Для этой конфигурации создайте константу, чтобы определить код, который вызывает API среды выполнения Windows.  
 
 Для проектов на основе .NET эта константа называется **Константой условной компиляции**.
 
@@ -203,7 +203,7 @@ void UWP::ShowToast()
 
 Можно скомпилировать один набор двоичных файлов для всех пользователей Windows независимо от того, какой версией Windows они пользуются. Приложение вызывает API среды выполнения Windows только в том случае, если пользователь работает ваше приложение как упакованное приложение в Windows 10.
 
-Для добавления проверок во время выполнения кода проще всего установить этот пакет Nuget: [Вспомогательные элементы моста для рабочего стола](https://www.nuget.org/packages/DesktopBridge.Helpers/) , а затем воспользоваться ``IsRunningAsUWP()`` метод для отсеивания всего кода, который будет вызывать API среды выполнения Windows. Дополнительные сведения см. в этой записи блога: [Мост для классических приложений — определение контекста приложения](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
+Для добавления проверки времени выполнения в код проще установить этот пакет Nuget: [Вспомогательные функции моста для классических](https://www.nuget.org/packages/DesktopBridge.Helpers/) , а затем использовать ``IsRunningAsUWP()`` метод к шлюзу off весь код, который вызывает API среды выполнения Windows. см. в записи блога для получения дополнительных сведений: [Мост для классических приложений — определить контекст приложения](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
 
 ## <a name="related-video"></a>Видео по теме
 
@@ -211,19 +211,19 @@ void UWP::ShowToast()
 
 ## <a name="related-samples"></a>Примеры по теме
 
-* [Пример кода "Hello World"](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/HelloWorldSample)
-* [Вспомогательная плитка](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
+* [Пример Hello World](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/HelloWorldSample)
+* [Вторичная плитка](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [Пример API Store](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/StoreSample)
-* [Приложение WinForms, реализующее UWP UpdateTask](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
-* [Примеры для преобразования классических приложений в приложения UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+* [Приложение WinForms, реализующее UpdateTask универсальной платформы Windows](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
+* [Мост классическое приложение для примеров на UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
 ## <a name="support-and-feedback"></a>Поддержка и отзывы
 
-**Поиск ответов на вопросы**
+**Найдите ответы на ваши вопросы**
 
 Есть вопросы? Задайте их на Stack Overflow. Наша команда следит за этими [тегами](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Вы также можете задать нам вопросы [здесь](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
 
-**Оставьте отзыв или предложите новые возможности для реализации**
+**Отправить отзыв или предложения по функциям**
 
 См. раздел [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)

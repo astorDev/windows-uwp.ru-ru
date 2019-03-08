@@ -5,11 +5,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
 ms.openlocfilehash: fb68b4bbd1b751591e9f336efe5dad3c22b3bf92
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937203"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618309"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>Автоматизация запуска приложений UWP для Windows 10
 
@@ -50,7 +50,7 @@ ms.locfileid: "8937203"
 
 Объект Uri содержит методы анализа строки URI в этом формате. Дополнительные сведения см. в разделе [Класс Uri (MSDN)](https://msdn.microsoft.com/library/windows/apps/windows.foundation.uri.aspx). 
 
-Примеры:
+Примеры
 
   ```
   >start bingnews:
@@ -211,5 +211,5 @@ void OnActivated(IActivatedEventArgs^ args)
 В целом, можно использовать различные методы для запуска приложения UWP. В зависимости от требований и вариантов использования определенные методы могут быть более удобны. 
 
 ## <a name="see-also"></a>См. также
-- [UWP на Xbox One](index.md)
+- [Приложения UWP для Xbox One](index.md)
 

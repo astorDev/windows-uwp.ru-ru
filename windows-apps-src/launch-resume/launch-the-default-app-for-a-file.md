@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f8e59ae5fb20ce8e1a900f7c1415a699715215e0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925026"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594529"
 ---
 # <a name="launch-the-default-app-for-a-file"></a>Запуск приложения по умолчанию для файла
 
@@ -33,12 +33,12 @@ ms.locfileid: "8925026"
 
 Windows предоставляет несколько вариантов для запуска обработчика файла по умолчанию. Они описаны на диаграмме и в следующих разделах.
 
-| Вариант | Метод | Описание |
+| Параметр | Метод | Описание |
 |--------|--------|-------------|
 | Запуск по умолчанию | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | Запуск указанного файла с помощью обработчика по умолчанию. |
-| Запуск через пункт меню «Открыть с помощью» | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Запуск указанного файла, позволяющий пользователю выбрать обработчик в диалоговом окне «Открыть с помощью». |
+| Запуск через пункт меню "Открыть с помощью" | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Запуск указанного файла, позволяющий пользователю выбрать обработчик в диалоговом окне «Открыть с помощью». |
 | Запуск с помощью рекомендованного резервного приложения | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Запуск указанного файла с помощью обработчика по умолчанию. Если в системе не установлен обработчик, следует порекомендовать пользователю приложение в Магазине. |
-| Запуск с использованием заданного представления оставшегося пространства | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (только для Windows) | Запуск указанного файла с помощью обработчика по умолчанию. Укажите значение параметра, позволяющее остаться на экране после запуска, и запросите конкретный размер окна. [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) не поддерживается на данном семействе устройств. |
+| Запуск с использованием заданного представления оставшегося пространства | [**LaunchFileAsync (IStorageFile, LauncherOptions)** ](https://msdn.microsoft.com/library/windows/apps/hh701465) (только для Windows) | Запуск указанного файла с помощью обработчика по умолчанию. Укажите значение параметра, позволяющее остаться на экране после запуска, и запросите конкретный размер окна. [**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314) не поддерживается в семействе версий мобильных устройств. |
 
 ### <a name="default-launch"></a>Запуск по умолчанию
 
@@ -287,12 +287,12 @@ void MainPage::DefaultLaunch()
 }
 ```
 
-**Запуск с помощью рекомендованного резервного приложения**
+**Запустить с резервной рекомендуемые приложения**
 
 В некоторых случаях у пользователя может быть не установлено приложение для обработки запускаемого файла. Тогда по умолчанию Windows предоставит пользователю ссылку для поиска подходящего приложения в Магазине. Если вы при этом хотите порекомендовать пользователю конкретное приложение, вы можете передать рекомендацию вместе с запускаемым файлом. Для этого вызовите метод [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465), указав в качестве значения параметра [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) имя семейства пакета приложения Магазина, которое вы рекомендуете. Затем задайте для параметра [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) имя этого приложения. Windows будет использовать эту информацию, чтобы заменить общий параметр (поиск приложения в Магазине) конкретным параметром (приобретение рекомендованного приложения в Магазине).
 
 > [!NOTE]
-> Необходимо задать оба этих варианта рекомендовать приложение. Настройка одного параметра без другого приведет к ошибке.
+> Необходимо задать оба этих варианта, чтобы рекомендовать приложения. Настройка одного параметра без другого приведет к ошибке.
 
 ![Диалоговое окно «Открыть с помощью» для запуска файла CONTOSO. Поскольку для формата CONTOSO на компьютере не установлен обработчик, диалоговое окно содержит параметр со значком Магазина и текстом, направляющим пользователя к правильному приложению в Магазине. Диалоговое окно также содержит ссылку "Дополнительные параметры".](images/howdoyouwanttoopen.png)
 
@@ -437,9 +437,9 @@ void MainPage::DefaultLaunch()
 Исходные приложения, вызывающие [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461), могут запрашивать разрешение остаться на экране после запуска файла. По умолчанию Windows пытается поровну поделить все доступное пространство между исходным приложением и конечным приложением, обрабатывающим файл. Исходные приложения могут использовать свойство [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), чтобы сообщить операционной системе, что для окна приложения требуется больше или меньше доступного пространства. **DesiredRemainingView** также используется, чтобы сообщить системе, что исходному приложению не нужно оставаться на экране после запуска файла и что его пространство можно полностью занять конечным приложением. Это свойство указывает только предпочтительный размер окна для вызывающего приложения. Оно не задает условия для других приложений, которые могут находиться на экране в это же время.
 
 > [!NOTE]
-> Windows учитывает множество различных факторов при определении исходного приложения окончательного размера окна, например, таких как параметры исходного приложения, количество приложений на экране, ориентация экрана и т. д. Задав [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), вы не гарантируете конкретного поведения окон для исходного приложения.
+> Windows учитывает несколько факторов при определении исходного приложения конечного размера окна, например, из исходного приложения предпочтений, количество приложений на экране, ориентацию экрана и т. д. Задав [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), вы не гарантируете конкретного поведения окон для исходного приложения.
 
-**Семейство мобильных устройств:** [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) не поддерживается в семействе мобильных устройств.
+**Семейства мобильных устройств:  **[**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314) не поддерживается в семействе версий мобильных устройств.
 
 ```csharp
 async void DefaultLaunch()
@@ -540,7 +540,7 @@ void MainPage::DefaultLaunch()
 }
 ```
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Замечания
 
 Ваше приложение не может выбрать запускаемое приложение. Пользователь сам определяет, какое приложение запустить. Пользователь может выбрать приложение универсальной платформы Windows (UWP) или классическое приложение для Windows.
 
@@ -557,11 +557,11 @@ void MainPage::DefaultLaunch()
 * [Запуск приложения по умолчанию для URI](launch-default-app.md)
 * [Обработка активации файла](handle-file-activation.md)
 
-### <a name="guidelines"></a>Руководства
+### <a name="guidelines"></a>Руководство
 
-* [Руководство по типам файлов и URI](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [Рекомендации для типов файлов и URI](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-### <a name="reference"></a>Справочник
+### <a name="reference"></a>Справочные материалы
 
 * [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
 * [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)

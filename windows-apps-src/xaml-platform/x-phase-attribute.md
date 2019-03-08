@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6def088b3e7f6410f12d1b2e411bcb547c90a09a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918565"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613289"
 ---
 # <a name="xphase-attribute"></a>Атрибут x:Phase
 
@@ -30,15 +30,15 @@ ms.locfileid: "8918565"
 
 | Термин | Описание |
 |------|-------------|
-| PhaseValue | Номер, обозначающий этап, на котором обрабатывается элемент. Значение по умолчанию:0. | 
+| PhaseValue | Номер, обозначающий этап, на котором обрабатывается элемент. Значение по умолчанию — 0. | 
 
-## <a name="remarks"></a>Примечания.
+## <a name="remarks"></a>Замечания
 
 Когда список быстро сдвигается с помощью касания или колесика мыши, то, в зависимости от сложности шаблона данных, отрисовка его элементов может выполняться медленнее, чем прокручивается список. Это в первую очередь касается переносных устройств с энергоэффективными процессорами, например телефонов или планшетов.
 
 Фазирование дает возможность выполнять постепенную отрисовку шаблона данных способом, при котором в содержимом выделяются приоритетные части, поступающие в обработку первыми. Благодаря этому при быстром сдвиге для каждого элемента списка отображается определенная часть содержимого, а остальное обрабатывается в зависимости от запаса времени.
 
-## <a name="example"></a>Пример.
+## <a name="example"></a>Пример
 
 ```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
@@ -79,5 +79,5 @@ ms.locfileid: "8918565"
 
 Фазирование затрагивает только привязки [{x:Bind}](x-bind-markup-extension.md) и не касается привязок [{Binding}](binding-markup-extension.md).
 
-Фазирование применяется только в тех случаях, когда для отрисовки шаблона элемента используется элемент управления с поддержкой фазирования. Для Windows10, то есть [**элементы управления ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). Фазирование не применяется к шаблонам данных, задействованным в других элементах управления или сценариях (например, [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) или разделы [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)). В этих случаях привязка к данным сразу выполняется для всех элементов пользовательского интерфейса.
+Фазирование применяется только в тех случаях, когда для отрисовки шаблона элемента используется элемент управления с поддержкой фазирования. Для Windows 10, это означает [ **ListView** ](https://msdn.microsoft.com/library/windows/apps/br242878) и [ **GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). Фазирование не применяется к шаблонам данных, задействованным в других элементах управления или сценариях (например, [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) или разделы [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)). В этих случаях привязка к данным сразу выполняется для всех элементов пользовательского интерфейса.
 

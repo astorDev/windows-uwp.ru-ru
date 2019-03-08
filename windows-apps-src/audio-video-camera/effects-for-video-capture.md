@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e9960e66c6bcdd7105e201d48e2317de4a39a19a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947516"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636629"
 ---
 # <a name="effects-for-video-capture"></a>Эффекты для видеозахвата
 
@@ -87,7 +87,7 @@ ms.locfileid: "8947516"
 
 ### <a name="handle-the-video-stabilization-effect-being-disabled"></a>Обработка отключения эффекта стабилизации видео
 
-Система может автоматически отключать эффект стабилизации видео, если поток пикселей слишком высок и эффект не может с ним справиться либо работает медленно. В этом случае вызывается событие EnabledChanged. Экземпляр **VideoStabilizationEffect** в параметре *sender* показывает новое состояние эффекта: включен или выключен. [**VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) имеет значение [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981), показывающее, по какой причине включен или выключен эффект. Обратите внимание, что это событие также вызывается при включении или выключении эффекта программным способом. В этом случае причина будет указана как **Programmatic**.
+Система может автоматически отключать эффект стабилизации видео, если поток пикселей слишком высок и эффект не может с ним справиться либо работает медленно. В этом случае вызывается событие EnabledChanged. Экземпляр **VideoStabilizationEffect** в параметре *sender* показывает новое состояние эффекта: включен или выключен. [  **VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) имеет значение [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981), показывающее, по какой причине включен или выключен эффект. Обратите внимание, что это событие также вызывается при включении или выключении эффекта программным способом. В этом случае причина будет указана как **Programmatic**.
 
 Как правило, это событие используется для того, чтобы настроить в пользовательском интерфейсе приложения отображение текущего состояния стабилизации видео.
 
@@ -102,7 +102,7 @@ ms.locfileid: "8947516"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Камера](camera.md)
-* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

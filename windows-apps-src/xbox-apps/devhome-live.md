@@ -1,29 +1,29 @@
 ---
 ms.assetid: 4c03e06b-c12c-f64f-c53f-b38716101822
-title: Xbox Live страницы (главную страницу)
-description: Предоставляет сведения о странице Xbox Live главную страницу приложения для Xbox One.
+title: Страница Xbox Live (главная страница разработчика)
+description: Содержит сведения о странице Xbox Live в приложении Dev Home для Xbox One.
 ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-live.html
 ms.localizationpriority: medium
 ms.openlocfilehash: c72137b8419526b65dc3c6cb75a511a7a6f50a82
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944650"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622539"
 ---
-# <a name="xbox-live-page-dev-home"></a>Xbox Live страницы (главную страницу)
+# <a name="xbox-live-page-dev-home"></a>Страница Xbox Live (главная страница разработчика)
    
   
-Страницу главную страницу разработчика в **Xbox Live** завладеть многопользовательских информацией и отображает текущее состояние службы Xbox Live.   
- ![Xbox Live главную страницу](images/devhome_live.png)   
+Страница **Xbox Live** на главной странице разработчика собирает многопользовательские сведения и отображает текущее состояние службы Xbox Live.   
+ ![Xbox Live разработки домашней страницы](images/devhome_live.png)   
   
 Страница **Xbox Live** содержит следующие области:   
  
    *  [XBTrace (advancedmp)](#ID4EPB)  
-   *  [Статус Xbox Live](#ID4E3B)  
+   *  [Состояние Xbox Live](#ID4E3B)  
 
  
 <a id="ID4EPB"></a>
@@ -33,7 +33,7 @@ ms.locfileid: "8944650"
 ## <a name="xbtrace-advancedmp"></a>XBTrace (advancedmp)  
    
   
-На странице **XBTrace (advancedmp)** запускается или останавливается захвата многопользовательских трассировки. Он также позволяет захватывать моментальный снимок текущего состояния многопользовательской игры.   
+Страница **XBTrace (advancedmp)** запускает или останавливает захват многопользовательской трассировки. Также можно записывать снимок текущего состояния многопользовательского режима.   
   
 <a id="ID4E3B"></a>
 
@@ -42,13 +42,13 @@ ms.locfileid: "8944650"
 ## <a name="xbox-live-status"></a>Статус Xbox Live  
    
   
-**Статус Xbox Live** панель отображает состояние канал с Xbox Live о службе или сбоях.   
+На панели **Состояние Xbox Live** отображается канал состояния от Xbox Live со сведениями о проблемах со службой или сбоях в работе.   
   
 <a id="ID4EPC"></a>
 
    
 
 ## <a name="see-also"></a>См. также  
- [Главная страница разработчика на консоли (Dev Home)](dev-home.md)
+ [Домашняя разработчика на консоль (Dev Home)](dev-home.md)
 
   

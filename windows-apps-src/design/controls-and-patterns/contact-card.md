@@ -1,26 +1,26 @@
 ---
-Description: A button gives the user a way to trigger an immediate action.
+Description: Кнопка предоставляет пользователю возможность вызвать немедленное действие.
 title: Карточка контакта
 ms.date: 03/07/2018
 ms.topic: article
-keywords: Windows10, UWP
+keywords: windows 10, uwp
 pm-contact: kele
 design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a3108e21455086e2742987db1d7125c733f6e2
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117604"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638829"
 ---
 # <a name="contact-card"></a>Карточка контакта
 
 Карточка контакта отображает контактные данные, такие как имя, номер телефона и адрес [Контакта](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (механизм, который UWP использует для представления пользователей и компаний).  Карточка контакта также позволяет пользователю редактировать контактные данные. Можно выбрать, какую карточку следует отобразить: компактную карточку контакта или полную карточку контакта, которая содержит дополнительные сведения.
 
-> **Важные API-интерфейсы**: [метод ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [метод ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_), [метод IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [класс Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **Важные API-интерфейсы**: [Метод ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [метод ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_), [метод IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [класс](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 Существует два способа отображения карточки контакта:  
 * В качестве стандартной карточки контакта, которая отображается во всплывающем элементе, который исчезает, то есть карточка контакта исчезает, когда пользователь щелкает вне ее области. 
@@ -38,7 +38,7 @@ ms.locfileid: "9117604"
 </figure>
 
 
-## <a name="is-this-the-right-control"></a>Выбор подходящего элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте карточку контакта, если требуется отобразить контактные данные для контакта. Если вам необходимо отобразить только имя контакта и изображение, используйте [элемент управления аватаром пользователя](person-picture.md). 
 
@@ -179,7 +179,7 @@ private void onUserClickShowContactCard()
 
 
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Связанные статьи
 - [Контакты и календарь](/windows/uwp/contacts-and-calendar/)
-- [Пример карт контакта](https://go.microsoft.com/fwlink/p/?LinkId=624040)
-- [Элемент управления "Аватар пользователя"](/windows/uwp/controls-and-patterns/person-picture/)
+- [Пример карточки контакта](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+- [Пользователи управления изображения](/windows/uwp/controls-and-patterns/person-picture/)

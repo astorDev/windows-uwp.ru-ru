@@ -7,21 +7,21 @@ ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927408"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626489"
 ---
 # <a name="send-email"></a>Отправка сообщения электронной почты
 
 В данной статье рассказывается, как запустить диалоговое окно составления электронного письма, с помощью которого пользователь может отправить электронное письмо. Перед отображением диалогового окна вы можете заполнить поля сообщения значениями по умолчанию. Сообщение не будет отправлено до тех пор, пока пользователь не нажмет кнопку отправки.
 
-**В этой статье:**
+**В этой статье**
 
--   [Запуск диалогового окна составления электронного письма](#launch-the-compose-email-dialog)
+-   [Открыть диалоговое окно создания сообщения электронной почты](#launch-the-compose-email-dialog)
 -   [Сводка и дальнейшие действия](#summary-and-next-steps)
--   [Еще по теме](#related-topics)
+-   [Связанные разделы](#related-topics)
 
 ## <a name="launch-the-compose-email-dialog"></a>Запуск диалогового окна составления электронного письма
 
@@ -47,16 +47,16 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> Вложения, добавляемых в сообщение электронной почты с использованием класса [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) будут отображаться только в приложение "Почта". Если пользователи имеют другие программы Почта, настроенный в качестве своей программы почты по умолчанию, то составления появится окно без вложения. Это известная проблема.
+> Вложения, добавленные в сообщение электронной почты с помощью [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) класс будет отображаться только в приложение "Почта". Если пользователи используют другие программы электронной почты настроен в качестве этих программах по умолчанию, то compose появится окно без вложений. Это известная проблема.
 
-## <a name="summary-and-next-steps"></a>Сводка и дальнейшие действия
+## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
 
 В данной статье рассказано, как запустить диалоговое окно составления электронного письма. Сведения о том, как выбрать контакты-получатели электронного письма, см. в статье [Выбор контактов](selecting-contacts.md). См. [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) для выбора файла в качестве вложения в сообщение.
 
-## <a name="related-topics"></a>Еще по теме
+## <a name="related-topics"></a>Статьи по теме
 
 * [Выбор контактов](selecting-contacts.md)
-* [Как продолжить работу приложения для Windows Phone после вызова средства выбора файлов](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [Как для продолжения после вызова средства выбора файлов для приложения Windows Phone](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
  
 
  

@@ -6,18 +6,18 @@ ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, взаимодействие, ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: a33a52cd8c18b312dc9e020a4c4ba518c33b0dd9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932900"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639949"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Взаимодействие между C++/WinRT и интерфейсом ABI
 
-В этом разделе показано, как выполнять преобразование между двоичного интерфейса приложений SDK (ABI) и [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) объектов. Эти техники можно использовать для взаимодействия между кодом, который использует эти два способа программирования с помощью среды выполнения Windows, или для постепенного переноса кода с ABI на C++/WinRT.
+В этом разделе показано, как выполнять преобразование между двоичный интерфейс пакета SDK для приложений (ABI) и [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) объектов. Эти техники можно использовать для взаимодействия между кодом, который использует эти два способа программирования с помощью среды выполнения Windows, или для постепенного переноса кода с ABI на C++/WinRT.
 
 ## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>Что такое ABI среды выполнения Windows и что такое типы ABI?
-Класс среды выполнения Windows (класс среды выполнения)— это, на самом деле, абстракция. Такая абстракция определяет двоичный интерфейс (двоичный интерфейс приложения или ABI), позволяющий различным языкам программирования взаимодействовать с объектом. Независимо от языка программирования, взаимодействие клиентского кода с объектом среды выполнения Windows происходит на самом низком уровне, при этом языковые конструкции клиента преобразуются в вызовы ABI объекта.
+Класс среды выполнения Windows (класс среды выполнения) — это, на самом деле, абстракция. Такая абстракция определяет двоичный интерфейс (двоичный интерфейс приложения или ABI), позволяющий различным языкам программирования взаимодействовать с объектом. Независимо от языка программирования, взаимодействие клиентского кода с объектом среды выполнения Windows происходит на самом низком уровне, при этом языковые конструкции клиента преобразуются в вызовы ABI объекта.
 
 Заголовки пакета Windows SDK в папке "%WindowsSdkDir%Include\10.0.17134.0\winrt" (при необходимости измените номер версии пакета SDK на используемый), представляют собой файлы заголовков ABI среды выполнения Windows. Они были созданы с помощью компилятора MIDL. Вот пример включения одного из таких заголовков.
 
@@ -244,13 +244,13 @@ int main()
 ```
 
 ## <a name="important-apis"></a>Важные API
-* [Функция AddRef](https://msdn.microsoft.com/library/windows/desktop/ms691379)
-* [Функция QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [функция WinRT::attach_abi](/uwp/cpp-ref-for-winrt/attach-abi)
-* [Шаблон структуры winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
-* [функция WinRT::copy_from_abi](/uwp/cpp-ref-for-winrt/copy-from-abi)
-* [функция WinRT::copy_to_abi](/uwp/cpp-ref-for-winrt/copy-to-abi)
-* [функция WinRT::detach_abi](/uwp/cpp-ref-for-winrt/detach-abi)
-* [функция winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
-* [Функция-член winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
-* [Функция-член winrt::Windows::Foundation::IUnknown::try_as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
+* [AddRef-функция](https://msdn.microsoft.com/library/windows/desktop/ms691379)
+* [QueryInterface-функция](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [winrt::attach_abi function](/uwp/cpp-ref-for-winrt/attach-abi)
+* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
+* [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)
+* [winrt::copy_to_abi function](/uwp/cpp-ref-for-winrt/copy-to-abi)
+* [winrt::detach_abi function](/uwp/cpp-ref-for-winrt/detach-abi)
+* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
+* [WinRT::Windows::Foundation::IUnknown:: как функция-член](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [функция-член WinRT::Windows::Foundation::IUnknown::try_as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 85d1c41fc10f509f3872fb1e4a0af5fa1e1e7c30
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924764"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631399"
 ---
 # <a name="primitive-topologies"></a>Топологии примитивов
 
@@ -24,17 +24,17 @@ Direct3D поддерживает несколько топологий прим
 
 Поддерживаются следующие базовые топологии примитивов (или типы примитивов):
 
--   [списки точек;](point-lists.md)
--   [Списки линий](line-lists.md)
--   [Ломаные](line-strips.md)
--   [Списки треугольников](triangle-lists.md)
--   [полосы треугольников.](triangle-strips.md)
+-   [Списки точки](point-lists.md)
+-   [Списки строки](line-lists.md)
+-   [Строка ленты](line-strips.md)
+-   [Списки треугольник](triangle-lists.md)
+-   [Лент треугольника](triangle-strips.md)
 
 Сведения о визуализации каждого типа примитива см. на схеме ниже в разделе [Направление поворота и передние позиции вершин](#winding-direction-and-leading-vertex-positions).
 
 На [этапе сборщика входных данных (IA)](input-assembler-stage--ia-.md) данные из буферов вершин и индексов считываются, объединяются в эти примитивы и передаются в оставшиеся стадии конвейера.
 
-## <a name="span-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanprimitive-adjacency"></a><span id="Primitive_Adjacency"></span><span id="primitive_adjacency"></span><span id="PRIMITIVE_ADJACENCY"></span>Соседство примитивов
+## <a name="span-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanprimitive-adjacency"></a><span id="Primitive_Adjacency"></span><span id="primitive_adjacency"></span><span id="PRIMITIVE_ADJACENCY"></span>Смежных примитивов
 
 
 Все типы примитивов Direct3D (за исключением списка точек) доступны в двух версиях: один тип примитива с соседством и один тип примитива без соседства. Примитивы с соседством содержат некоторые окружающие вершин, а примитивы без соседство содержат только вершины целевого примитива. Например, у примитива списка линий есть соответствующий примитив списка линий с соседством.
@@ -43,7 +43,7 @@ Direct3D поддерживает несколько топологий прим
 
 Например, предположим, что вы хотите нарисовать список треугольников с соседством. Список треугольников, содержащий 36 вершин (с соседством), даст 6 завершенных примитивов. Примитивы с соседством (за исключением ломаных) содержат ровно два раза больше вершин, чем эквивалентный примитив без соседства, где каждая дополнительная вершина является соседней.
 
-## <a name="span-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwinding-direction-and-leading-vertex-positionsspanwinding-direction-and-leading-vertex-positions"></a><span id="Winding_Direction_and_Leading_Vertex_Positions"></span><span id="winding_direction_and_leading_vertex_positions"></span><span id="WINDING_DIRECTION_AND_LEADING_VERTEX_POSITIONS"></span><span id="winding-direction-and-leading-vertex-positions"></span>Направление поворота и передние позиции вершин
+## <a name="span-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwinding-direction-and-leading-vertex-positionsspanwinding-direction-and-leading-vertex-positions"></a><span id="Winding_Direction_and_Leading_Vertex_Positions"></span><span id="winding_direction_and_leading_vertex_positions"></span><span id="WINDING_DIRECTION_AND_LEADING_VERTEX_POSITIONS"></span><span id="winding-direction-and-leading-vertex-positions"></span>Задние направление и ведущие позиции вершин
 
 
 Как показано на следующем рисунке, передняя вершина — это первая несмежная вершина в примитиве. Для типа примитива может быть задано несколько начальных вершин, если каждая из них используется для различных примитивов.
@@ -66,7 +66,7 @@ Direct3D поддерживает несколько топологий прим
 
  
 
-## <a name="span-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>Создание нескольких полос
+## <a name="span-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>Создание нескольких полосковых линий
 
 
 Вы можете создать несколько полос с помощью вырезания полос. Вы можете вырезать полосы, явно вызвав HLSL-функцию [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) или вставив специальное значение индекса в буфер индексов. Это значение –1, т. е. 0xffffffff для 32-разрядных индексы или 0xffff для 16-разрядные индексов.
@@ -75,12 +75,12 @@ Direct3D поддерживает несколько топологий прим
 
 Дополнительные сведения о создании нескольких полос см. в разделе [Этап шейдера геометрии (GS)](geometry-shader-stage--gs-.md).
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Этап сборщика входных данных](input-assembler-stage--ia-.md)
+[Сборщик входных данных (IA) рабочей области](input-assembler-stage--ia-.md)
 
-[Графический конвейер](graphics-pipeline.md)
+[Графического конвейера](graphics-pipeline.md)
 
  
 

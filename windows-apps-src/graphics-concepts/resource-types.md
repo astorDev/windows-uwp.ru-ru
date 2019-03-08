@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4138fd7275f7e1f9addb7685ff0846e756701003
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942930"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661989"
 ---
 # <a name="resource-types"></a>Типы ресурсов
 
@@ -38,7 +38,7 @@ ms.locfileid: "8942930"
 <td align="left"><p>Полное указание типа при создании ресурса.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>Не типизированный</p></td>
+<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>Определения типов данных</p></td>
 <td align="left"><p>Тип указывается полностью, когда ресурс привязывается к конвейеру.</p></td>
 </tr>
 </tbody>
@@ -46,7 +46,7 @@ ms.locfileid: "8942930"
 
  
 
-## <a name="span-idbufferresourcesspanspan-idbufferresourcesspanspan-idbufferresourcesspanspan-idbuffer-resourcesspanbuffer-resources"></a><span id="Buffer_Resources"></span><span id="buffer_resources"></span><span id="BUFFER_RESOURCES"></span><span id="buffer-resources"></span>Буферные ресурсы
+## <a name="span-idbufferresourcesspanspan-idbufferresourcesspanspan-idbufferresourcesspanspan-idbuffer-resourcesspanbuffer-resources"></a><span id="Buffer_Resources"></span><span id="buffer_resources"></span><span id="BUFFER_RESOURCES"></span><span id="buffer-resources"></span>Буферных ресурсов
 
 
 Буферный ресурс — это коллекция полностью типизированных данных. Сам буфер содержит элементы. Элемент состоит из 1–4 компонентов. Примеры типов элементов данных: упакованное значение данных (например, R8G8B8A8), 8-разрядное целое число, четыре 32-разрядных числа с плавающей точкой. Эти типы используются для хранения таких данных, как позиционный вектор, вектор нормали, координата текстуры в буфере вершин, индекс в буфере индексов или состояние устройства.
@@ -112,27 +112,27 @@ ms.locfileid: "8942930"
 
 Пример объявления буфера констант в шейдере см. в разделе [Константы шейдера (DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581).
 
-## <a name="span-idtextureresourcesspanspan-idtextureresourcesspanspan-idtextureresourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>Ресурсы текстур
+## <a name="span-idtextureresourcesspanspan-idtextureresourcesspanspan-idtextureresourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>Текстурными ресурсами
 
 
-Текстурный ресурс — это структурированный набор данных, предназначенный для хранения текселей. В отличие от буферов текстуры можно фильтровать по дискретизаторам текстур во время их считывания блоками шейдера. Тип текстуры влияет на способ ее фильтрации. Тексель представляет собой наименьший элемент текстуры, который может использоваться конвейером для чтения или записи. Каждый тексель содержит от 1 до 4 компонентов в одном из форматов DXGI (см. раздел [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)).
+Текстурный ресурс — это структурированный набор данных, предназначенный для хранения текселей. В отличие от буферов текстуры можно фильтровать по дискретизаторам текстур во время их считывания блоками шейдера. Тип текстуры влияет на способ ее фильтрации. Тексель представляет собой наименьший элемент текстуры, который может использоваться конвейером для чтения или записи. Каждый текселя содержит от 1 до 4 компоненты, расположенные в одном из форматов DXGI (см. в разделе [ **DXGI\_ФОРМАТ**](https://msdn.microsoft.com/library/windows/desktop/bb173059)).
 
 Текстуры создаются как структурированные ресурсы, чтобы их размер был известен. Однако каждая текстура может быть типизированной или не иметь типа при создании ресурса, если тип полностью задается с помощью представления при привязке текстуры к конвейеру.
 
--   [Типы текстур](#texture-types)
--   [Подресурсы](#subresources)
--   [Строгая и нестрогая типизация](#typed)
+-   [Типы текстуры](#texture-types)
+-   [Вспомогательных ресурсов](#subresources)
+-   [Надежный vs. Слабая типизация](#typed)
 
-### <a name="span-idtexturetypesspanspan-idtexturetypesspanspan-idtexturetypesspanspan-idtexture-typesspantexture-types"></a><span id="Texture_Types"></span><span id="texture_types"></span><span id="TEXTURE_TYPES"></span><span id="texture-types"></span>Типы текстур
+### <a name="span-idtexturetypesspanspan-idtexturetypesspanspan-idtexturetypesspanspan-idtexture-typesspantexture-types"></a><span id="Texture_Types"></span><span id="texture_types"></span><span id="TEXTURE_TYPES"></span><span id="texture-types"></span>Типы текстуры
 
-Существует несколько типов текстур: одно-, двух-, и трехмерный; каждый из них может быть создан с использованием MIP-карт и без них. Direct3D также поддерживает массивы текстур и текстуры с множественной дискретизацией.
+Существует несколько типов текстур. 1 D, двухмерные, 3D, каждый из которых могут создаваться с или без MIP-карты. Direct3D также поддерживает массивы текстур и текстуры с множественной дискретизацией.
 
--   [Одномерная текстура](#texture1d-resource)
--   [Массив одномерных текстуры](#texture1d-array-resource)
--   [Двухмерная текстура и массив двухмерных текстур](#texture2d-resource)
--   [Трехмерная текстура](#texture3d-resource)
+-   [Одномерные текстуры](#texture1d-resource)
+-   [Массив одномерных текстур](#texture1d-array-resource)
+-   [Массив двухмерных текстур и двухмерных текстур](#texture2d-resource)
+-   [3D-текстуры](#texture3d-resource)
 
-### <a name="span-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1d-resourcespan1d-texture"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>Одномерная текстура
+### <a name="span-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1d-resourcespan1d-texture"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>Одномерные текстуры
 
 Одномерная текстура в самом простом своем виде содержит данные текстуры, к которым можно обращаться по одной координате текстуры; ее можно отобразить как массив текселей, как показано на следующем рисунке.
 
@@ -144,7 +144,7 @@ ms.locfileid: "8942930"
 
 Уровень MIP-карты — это текстура, которая меньше вышестоящего уровня на число, соответствующее степени двух. Самый верхний уровень содержит наиболее больше всего деталей, а для каждого последующего уровня детализация уменьшается. Для одномерной MIP-1карты наименьший уровень содержит один тексель. Различные уровни определяются с помощью индекса LOD (уровень детализации). Вы можете можно использовать LOD для доступа к более мелким текстурам при отрисовке геометрических фигур, которые далеко от камеры.
 
-### <a name="span-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1d-array-resourcespan1d-texture-array"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>Массив одномерных текстуры
+### <a name="span-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1d-array-resourcespan1d-texture-array"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>Массив одномерных текстур
 
 В Direct3D 10 также есть новая структура данных для массива текстур. Массив одномерных текстур концептуально выглядит как на следующем рисунке.
 
@@ -154,7 +154,7 @@ ms.locfileid: "8942930"
 
 Все массивы текстур в Direct3D однородные, это означает, что у каждой текстуры в массиве должна быть одинаковый формат данных и размер (в том числе ширина текстуры и количество уровней MIP). Вы можете создавать массивы текстур различных размеров при условии, что все текстуры в отдельном массиве соответствуют друг другу по размеру.
 
-### <a name="span-idtexture2dresourcespanspan-idtexture2dresourcespanspan-idtexture2dresourcespanspan-idtexture2d-resourcespan2d-texture-and-2d-texture-array"></a><span id="Texture2D_Resource"></span><span id="texture2d_resource"></span><span id="TEXTURE2D_RESOURCE"></span><span id="texture2d-resource"></span>Двухмерная текстура и массив двухмерных текстур
+### <a name="span-idtexture2dresourcespanspan-idtexture2dresourcespanspan-idtexture2dresourcespanspan-idtexture2d-resourcespan2d-texture-and-2d-texture-array"></a><span id="Texture2D_Resource"></span><span id="texture2d_resource"></span><span id="TEXTURE2D_RESOURCE"></span><span id="texture2d-resource"></span>Массив двухмерных текстур и двухмерных текстур
 
 Ресурс Texture2D содержит двухмерную сетку текселей. На каждый тексель указывает вектор u, v. Поскольку это текстурный ресурс, он может содержать уровни MIP и подресурсы. Полностью заполненный ресурс двухмерных текстур соответствует изображению на следующем рисунке.
 
@@ -168,7 +168,7 @@ ms.locfileid: "8942930"
 
 Этот массив текстур содержит три текстуры; каждая текстура имеет размер 3 x 5 и два уровня MIP.
 
-### <a name="span-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanusing-a-texture2darray-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>Использование Texture2DArray как куба текстур
+### <a name="span-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanusing-a-texture2darray-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>С помощью массивы Texture2DArray виде куба текстуры
 
 Куб текстур — это массив двухмерных текстур, содержащий 6 текстур, по одной на каждую грань куба. Полностью заполненный куб текстур выглядит, как изображение на следующем рисунке.
 
@@ -176,7 +176,7 @@ ms.locfileid: "8942930"
 
 Чтение массива двухмерных текстур, содержащего 6 текстур, может производиться из шейдеров со встроенными функциями карт куба, после их привязки к конвейеру с представлением кубической текстуры. Обращение к кубам текстур производится из шейдера с трехмерным вектором, направленным от центра куба текстур.
 
-### <a name="span-idtexture3dresourcespanspan-idtexture3dresourcespanspan-idtexture3dresourcespanspan-idtexture3d-resourcespan3d-texture"></a><span id="Texture3D_Resource"></span><span id="texture3d_resource"></span><span id="TEXTURE3D_RESOURCE"></span><span id="texture3d-resource"></span>Трехмерная текстура
+### <a name="span-idtexture3dresourcespanspan-idtexture3dresourcespanspan-idtexture3dresourcespanspan-idtexture3d-resourcespan3d-texture"></a><span id="Texture3D_Resource"></span><span id="texture3d_resource"></span><span id="TEXTURE3D_RESOURCE"></span><span id="texture3d-resource"></span>3D-текстуры
 
 Ресурс Texture3D (или объемная текстура) содержит трехмерный объем текселей. Поскольку это ресурс текстуры, он может содержать уровни MIP. Полностью заполненная трехмерная текстура выглядит, как изображение на следующем рисунке.
 
@@ -186,7 +186,7 @@ ms.locfileid: "8942930"
 
 Понятие массива трехмерных текстур не существует, соответственно, подресурс трехмерной текстуры — это один уровень MIP-карты.
 
-### <a name="span-idsubresourcesspanspan-idsubresourcesspanspan-idsubresourcesspansubresources"></a><span id="Subresources"></span><span id="subresources"></span><span id="SUBRESOURCES"></span>Подресурсы
+### <a name="span-idsubresourcesspanspan-idsubresourcesspanspan-idsubresourcesspansubresources"></a><span id="Subresources"></span><span id="subresources"></span><span id="SUBRESOURCES"></span>Вспомогательных ресурсов
 
 Direct3D API ссылается на все ресурсы или подмножества ресурсов. Указание часть ресурсов, в Direct3D введен термин *подресурс*, который означает подмножество ресурса.
 
@@ -204,7 +204,7 @@ Direct3D API ссылается на все ресурсы или подмнож
 
 ![иллюстрация начинающегося с нуля индекса подресурса](images/d3d10-resource-texture1darray-sub-indexing.png)
 
-### <a name="span-idselectingsubresourcesspanspan-idselectingsubresourcesspanspan-idselectingsubresourcesspanselecting-subresources"></a><span id="Selecting_Subresources"></span><span id="selecting_subresources"></span><span id="SELECTING_SUBRESOURCES"></span>Выбор подресурсов
+### <a name="span-idselectingsubresourcesspanspan-idselectingsubresourcesspanspan-idselectingsubresourcesspanselecting-subresources"></a><span id="Selecting_Subresources"></span><span id="selecting_subresources"></span><span id="SELECTING_SUBRESOURCES"></span>Выбрав вспомогательных ресурсов
 
 Некоторые API обращаются к ресурсу целиком, а другие — только к части ресурса. Последние API обычно используют описание представления для указаниях нужных подресурсов.
 
@@ -222,13 +222,13 @@ Direct3D API ссылается на все ресурсы или подмнож
 
 ![иллюстрация среза MIP](images/d3d10-resource-mip-slice.png)
 
-### <a name="span-idselectingasinglesubresourcespanspan-idselectingasinglesubresourcespanspan-idselectingasinglesubresourcespanselecting-a-single-subresource"></a><span id="Selecting_a_Single_Subresource"></span><span id="selecting_a_single_subresource"></span><span id="SELECTING_A_SINGLE_SUBRESOURCE"></span>Выбор одного подресурса
+### <a name="span-idselectingasinglesubresourcespanspan-idselectingasinglesubresourcespanspan-idselectingasinglesubresourcespanselecting-a-single-subresource"></a><span id="Selecting_a_Single_Subresource"></span><span id="selecting_a_single_subresource"></span><span id="SELECTING_A_SINGLE_SUBRESOURCE"></span>Выбрав один Подресурса
 
 Эти два типа срезов можно использовать для выбора одного подресурса, как показано на следующем рисунке.
 
 ![иллюстрация выбора подресурса с помощью среза массива и среза MIP](images/d3d10-resource-subresources-1.png)
 
-### <a name="span-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanselecting-multiple-subresources"></a><span id="Selecting_Multiple_Subresources"></span><span id="selecting_multiple_subresources"></span><span id="SELECTING_MULTIPLE_SUBRESOURCES"></span>Выбор нескольких подресурсов
+### <a name="span-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanselecting-multiple-subresources"></a><span id="Selecting_Multiple_Subresources"></span><span id="selecting_multiple_subresources"></span><span id="SELECTING_MULTIPLE_SUBRESOURCES"></span>Выбрав несколько вспомогательных ресурсов
 
 Или можно использовать эти два типа срезов с количеством уровней MIP-карты или числом текстур, чтобы выбрать несколько подресурсов.
 
@@ -236,7 +236,7 @@ Direct3D API ссылается на все ресурсы или подмнож
 
 Независимо от типа текстуры (с MIP-картами или без, с массивом текстур или без) часто существуют вспомогательные функции для вычисления индекса конкретного подресурса.
 
-### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Строгая и нестрогая типизация
+### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Надежный vs. Слабая типизация
 
 При создании полностью типизированного ресурса он может использовать только тот формат, с которым был создан. Это позволяет среде выполнения оптимизировать доступ, особенно если ресурс создается с флагами, указывающими, что приложение не может его сопоставить. Ресурсы, создаваемые с помощью определенного типа, не могут интерпретироваться с помощью механизма представления.
 
@@ -246,7 +246,7 @@ Direct3D API ссылается на все ресурсы или подмнож
 
 Один ресурс можно привязать к нескольким этапам конвейера, если у каждой из них есть уникального представление, которое полностью квалифицирует форматы в каждом расположении. Например, ресурс, созданный в формате без типа, можно одновременно использовать как тип FLOAT и UINT в разных местах в конвейере.
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Ресурсы](resources.md)

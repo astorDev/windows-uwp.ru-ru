@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 499d361bddbecef50ee8cdf44b56530a98cfccd1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936124"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627589"
 ---
 # <a name="rasterizer-rs-stage"></a>Этап средства программной прорисовки (RS)
 
 
 Средство программной прорисовки обрезает примитивы, которых нет в представлении, готовит их для [этапа шейдера пикселей](pixel-shader-stage--ps-.md) и определяет, как вызывать эти шейдеры. На этапе средства программной прорисовки векторные данные (состоящие из фигур или примитивов) преобразуются в растровое изображение (состоящее из пикселей) для отображения трехмерной графики в режиме реального времени.
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Назначение и способы использования
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Назначения и использования
 
 
 Во время растеризации каждый примитив преобразуется в пиксели, а значения для вершин интерполируются для каждого примитива. Растеризация заключается в обрезке вершин в усеченной пирамиде обзора за счет деления на z для получения перспективы, сопоставления примитивов с двухмерным окном просмотра и определением способа вызова шейдера пикселей. Хотя использовать шейдер пикселей необязательно, на этапе средства программной прорисовки всегда выполняется обрезка, деление перспективы для преобразования точек в однородное пространство и сопоставление вершин с окном просмотра.
@@ -42,12 +42,12 @@ ms.locfileid: "8936124"
 
 Использовать этап шейдера пикселей (PS) необязательно. Данные с этапа средства программной прорисовки могут напрямую передаваться на [этап слияния и вывода (OM)](output-merger-stage--om-.md).
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Статьи по теме
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
 [Правила растеризации](rasterization-rules.md)
 
-[Графический конвейер](graphics-pipeline.md)
+[Графического конвейера](graphics-pipeline.md)
 
  
 
