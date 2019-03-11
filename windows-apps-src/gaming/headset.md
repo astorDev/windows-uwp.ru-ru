@@ -1,30 +1,30 @@
 ---
 title: Гарнитура
-description: Используйте API Windows.Gaming.Input гарнитуры для обнаружения гарнитур, записи голоса игрока и воспроизведения звука.
+description: Используйте API-интерфейсы Windows.Gaming.Input гарнитуры для обнаружения гарнитур, записи голоса игрока и воспроизведения звука.
 ms.assetid: 021CCA26-D339-4C8B-B084-0D499BD83ABE
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, гарнитура
 ms.localizationpriority: medium
 ms.openlocfilehash: b3de68cc59c9928a52eba5caeb840e9e825eecf0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933895"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627959"
 ---
 # <a name="headset"></a>Гарнитура
 
-На этой странице приведены основные принципы программирования для гарнитур с помощью API-интерфейсов [Windows.Gaming.Input.Headset][гарнитуры] и связанных API для универсальной платформы Windows (UWP).
+На этой странице приведены основные принципы программирования для гарнитур с помощью API-интерфейсов [Windows.Gaming.Input.Headset][гарнитура] и связанных API для универсальной платформы Windows (UWP).
 
-Прочитав эту страницу, вы узнаете:
+Изучив информацию на этой странице, вы узнаете:
 * Как получить доступ к гарнитуре, подключенной к устройству навигации или ввода.
 * Как определить, что гарнитура была подключена или отключена.
 
 
 ## <a name="headset-overview"></a>Обзор гарнитуры
 
-Гарнитуры— это устройства захвата и воспроизведения звука, которые чаще всего используются для связи с другими игроками в онлайн-играх, однако некоторые модели могут также использоваться в игровом процессе или другим оригинальным образом. Поддержка гарнитур в приложениях UWP для Windows 10 и Xbox реализована с помощью пространства имен [Windows.Gaming.Input][].
+Гарнитуры — это устройства захвата и воспроизведения звука, которые чаще всего используются для связи с другими игроками в онлайн-играх, однако некоторые модели могут также использоваться в игровом процессе или другим оригинальным образом. Поддержка гарнитур в приложениях UWP для Windows 10 и Xbox реализована с помощью пространства имен [Windows.Gaming.Input][].
 
 
 ## <a name="detect-and-track-headsets"></a>Обнаружение и отслеживание гарнитур
@@ -63,7 +63,7 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 ## <a name="using-the-headset"></a>Использование гарнитуры
 
-Класс [Headset][] состоит из двух строк, представляющих идентификаторы конечной точки XAudio— один для записи звука (запись с микрофона гарнитуры) и другой для обработки звука (воспроизведения через наушник гарнитуры).
+Класс [Гарнитура][] состоит из двух строк, представляющих идентификаторы конечной точки XAudio — один для записи звука (запись с микрофона гарнитуры) и другой для обработки звука (воспроизведения через наушник гарнитуры).
 
 Инструкции по работе с XAudio в этом разделе не приводятся. Дополнительные сведения см. в разделе [Руководство по программированию для XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415737.aspx) и [Справочник по API XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415899.aspx).
 
@@ -73,4 +73,4 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 [igamecontroller.headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headset.aspx
 [igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
 [igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
-[headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
+[Гарнитура]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
