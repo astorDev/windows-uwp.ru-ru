@@ -1,7 +1,7 @@
 ---
-description: Оптимизируйте свое приложение для ввода с помощью пера, Surface Dial и других способов ввода.
+description: 'Оптимизируйте свое приложение для ввода с помощью пера, Surface Dial и других способов ввода.'
 title: Методы ввода и взаимодействие
-keywords: входные данные приложения, настройка приложения UWP
+keywords: 'входные данные приложения, настройка приложения UWP'
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
@@ -9,12 +9,6 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f66d808cafcc6fba89cebde352d191335068925
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918982"
 ---
 # <a name="input-and-interactions"></a>Методы ввода и взаимодействие
 
@@ -40,7 +34,7 @@ ms.locfileid: "8918982"
                         </div>
                     </div>  -->
                     <div class="cardText">
-                        <h3><a href="input-primer.md">Краткий обзор методов ввода</a></h3>
+                        <h3><a href="input-primer.md">Азбука методов ввода</a></h3>
                         <p>Ознакомьтесь с каждым типом устройства ввода, его поведением, возможностями и ограничениями в сочетании с определенными форм-факторами.</p>
                     </div>
                 </div>
@@ -59,7 +53,7 @@ ms.locfileid: "8918982"
                         </div>
                     </div> -->
                     <div class="cardText">
-                        <h3><a href="gaze-interactions.md">НОВИНКА! Ввод взглядом</a></h3>
+                        <h3><a href="gaze-interactions.md">Новая функция! Ввод взглядом</a></h3>
                         <p>Отслеживайте взгляд пользователя в зависимости от расположения и движения глаз и головы.</p>
                     </div>
                 </div>
@@ -80,8 +74,8 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
             <div style="display:block" class="cardPadding">
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
-                        <h3>Ввод</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">Определение устройств ввода</a></p>
+                        <h3>Input</h3>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">Распознавание устройств ввода</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">Указатель</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">Перо и Windows Ink</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">Сенсорный ввод</a></p>
@@ -92,7 +86,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                         <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">Несколько типов ввода</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/input-injection">Вставка ввода</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/custom-text-input">Ввод пользовательского текста</a></p>                        
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/custom-text-input">Пользовательский ввод текста</a></p>                        
                     </div>
                 </div>
             </div>
@@ -103,7 +97,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
             <div style="display:block" class="cardPadding">
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
-                        <h3>Взаимодействие</h3>
+                        <h3>Взаимодействия</h3>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/drag-and-drop">Перетаскивание</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-panning">Сдвиг</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-rotation">Поворот</a></p>
@@ -121,7 +115,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Голосовые функции и искусственный интеллект</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/speech-interactions">Голосовые функции</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/speech-interactions">Речь</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/cortana-interactions">Кортана</a></p>  
                     </div>
                 </div>

@@ -1,22 +1,16 @@
 ---
 layout: LandingPage
-Description: See how to publish your Windows apps to the Microsoft Store.
+Description: Сведения о способах публикации приложений для Windows в Microsoft Store.
 title: Публикация приложений для Windows
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, uwp, публикация, публиковать, продажи, продавать, распространять, распространение, магазин, информационная панель
+keywords: 'windows 10, uwp, publishing, publish, selling, sell, distribute, distributing, store, dashboard'
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b9d78014b2416cae7d387261ec1732b1f8932ad
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
-ms.translationtype: MT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980312"
 ---
 # <a name="publish-windows-apps-and-games"></a>Публикация приложений и игр для Windows  
  
-Можно использовать [Центр партнеров](https://partner.microsoft.com/dashboard) для публикации своих приложений и игр в Microsoft Store. <a href="//developer.microsoft.com/store/register">Зарегистрируйтесь прямо сейчас!</a>
+Для публикации приложений и игр в Microsoft Store можно использовать [Центр партнеров](https://partner.microsoft.com/dashboard). <a href="//developer.microsoft.com/store/register">Зарегистрируйтесь сегодня!</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>
@@ -55,7 +49,7 @@ ms.locfileid: "8980312"
                     <p>Настройте доступность своего приложения с помощью элементов управления ценами для рынка, распространением, видимостью, распродажами, а также других параметров.</p>
                     <ul>
                         <li><a href="define-pricing-and-market-selection.md">Выбор рынков</a></li>
-                        <li><a href="set-and-schedule-app-pricing.md">Настройка и планирование цены </a></li>
+                        <li><a href="set-and-schedule-app-pricing.md">Настройка и планирование цены</a></li>
                         <li><a href="configure-precise-release-scheduling.md">Настройка точных дат выпуска</a></li>
                         <li><a href="set-app-pricing-and-availability.md">Все параметры доступности</a></li>
                     </ul>
@@ -79,7 +73,7 @@ ms.locfileid: "8980312"
                         <ul>
                             <li><a href="create-app-store-listings.md">Обзор описания в Store</a></li>
                             <li><a href="app-screenshots-and-images.md">Снимки экрана, изображения и трейлеры</a></li>
-                              <li><a href="import-and-export-store-listings.md">Пакетное управление описаниями </a></li>
+                              <li><a href="import-and-export-store-listings.md">Пакетное управление описаниями</a></li>
                         </ul>
                     </div>
                 </div>
@@ -119,9 +113,9 @@ ms.locfileid: "8980312"
                 </div>
                 <div class="cardText">
                     <h3>Продвижение приложений</h3>   
-                    <p><a href="create-an-ad-campaign-for-your-app.md">Создание рекламных кампаний</a></p>
+                    <p><a href="create-an-ad-campaign-for-your-app.md">Создание маркетинговых кампаний</a></p>
                     <p><a href="generate-promotional-codes.md">Создание промокодов</a></p>
-                    <p><a href="put-apps-and-add-ons-on-sale.md">Предложение цены продажи</a></p>
+                    <p><a href="put-apps-and-add-ons-on-sale.md">Предложение реализационной цены</a></p>
                 </div>
             </div>
         </div>
@@ -197,7 +191,7 @@ ms.locfileid: "8980312"
                     </div>
                 </div>
                 <div class="cardText">
-                    <h3>Тестирование стратегий</h3>
+                    <h3>Стратегии тестирования</h3>
                     <p><a href="beta-testing-and-targeted-distribution.md">Бета-тестирование и целевое распространение</a></p>
                     <p><a href="choose-visibility-options.md#audience">Частная аудитория</a></p>
                     <p><a href="package-flights.md">Тестовые пакеты</a></p>

@@ -1,13 +1,11 @@
 ---
 layout: HubPage
-hide_bc: True
-title: "Документация по Windows"
-description: "Найдите документацию для разработчиков, оборудования и ИТ-специалистов, которая поможет вам создавать и поддерживать решения для Windows."
-ms.openlocfilehash: 3837a3649acd5b9656c3d1b76973fca9f26ba740
-ms.sourcegitcommit: d6cf700ed2771c7a88f32972abdd0e192ae71b73
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2017
+hide_bc: true
+ms.prod: windows
+title: Документация по Windows
+description: 'Найдите документацию для разработчиков, оборудования и ИТ-специалистов, которая поможет вам создавать и поддерживать решения для Windows.'
+ms.technology: hub
+localizationpriority: medium
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -49,7 +47,7 @@ ms.lasthandoff: 07/14/2017
               </a>
           </li>
           <li>
-              <a href="https://mva.microsoft.com/">
+              <a href="/learn/browse/?roles=developer&products=windows">
                   <div class="cardSize">
                       <div class="cardPadding">
                           <div class="card">
@@ -59,7 +57,7 @@ ms.lasthandoff: 07/14/2017
                                   </div>
                               </div>
                               <div class="cardText">
-                                  <h3>Изучить Виртуальную академию Майкрософт</h3>
+                                  <h3>Обзор Microsoft Learn</h3>
                               </div>
                           </div>
                       </div>
@@ -76,181 +74,146 @@ ms.lasthandoff: 07/14/2017
             <ul id="developer">
                 <li>
                     <a href="#developer-all">все</a>
-                    <ul id="developer-all" class="cardsF">
-                        <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-1.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>Приложения UWP</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/apps/getstarted">Начало работы</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/apps/design">Оформление</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/develop">Разработка</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://msdn.microsoft.com/windows/uwp/publish/index">Публикация</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">Монетизация</a>
-                                            </p>
-                                            <p>
-                                                <a href="/uwp/">Справочник по API</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <ul id="developer-all" class="cardsC">
+<li>
+                            <div class="container intro">
+                                <p>Сборка для Windows 10</p>
                             </div>
                         </li>
                         <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-2.svg" alt="" />
+                            <a href="https://docs.microsoft.com/windows/uwp/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-uwp.svg" alt="" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>Рабочий стол</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/getstarted">Начало работы</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/design">Оформление</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/develop">Разработка</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/app-compatibility">Совместимость</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/test-deploy">Тестирование и развертывание</a>
-                                            </p>
+                                            <div class="cardText">
+                                                <h3>Приложения UWP</h3>
+                                                <p>Создавайте приложения для любых устройств с Windows — компьютеров, телефонов, Xbox One, HoloLens и т. д. — и публикуйте их в Microsoft Store. </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-3.svg" alt="" />
+                            <a href="https://docs.microsoft.com/en-us/windows/desktop">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-desktop.svg" alt="" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>Игры</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/games/uwp">UWP</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/games/xbox/xboxlive">Xbox Live</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/games/support">Поддержка</a>
-                                            </p>
+                                            <div class="cardText">
+                                                <h3>Классические приложения</h3>
+                                                <p>Получите инструменты, узнайте, какая технология наилучшим образом подходит для вас, а также узнайте, как разрабатывать классические приложения на выбранной вами платформе.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-4.svg" alt="" />
+                            <a href="https://developer.microsoft.com/games">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-games.svg" alt="" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>Интернет вещей</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/Docs">Документы</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/Downloads">Загрузки</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/samples">Примеры</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/iot/Community">Сообщество</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://www.windowsforiotdevices.com/">Использование в коммерческих целях</a>
-                                            </p>
+                                            <div class="cardText">
+                                                <h3>Игры</h3>
+                                                <p>Создавайте игры UWP для устройств с Windows 10 — компьютеров, консолей Xbox и устройств смешанной реальности.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-5.svg" alt="" />
+                            <a href="https://docs.microsoft.com/windows/iot-core/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-iot.svg" alt="" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>Смешанная реальность</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/mixed-reality/academy">Академия</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/mixed-reality/development">Разработка</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/mixed-reality/design">Оформление</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/mixed-reality/community">Сообщество и поддержка</a>
-                                            </p>
+                                            <div class="cardText">
+                                                <h3>Windows IoT</h3>
+                                                <p>Узнайте о разработке на основе Windows 10 IoT Базовая. Операционная система, созданная для Интернета вещей.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>                            
-                        <li>
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="/media/hubs/windows/win_developer-6.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>Edge</h3>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/microsoft-edge/platform/documentation/">Документы для Microsoft Edge</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/microsoft-edge/tools/">Средства</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/microsoft-edge/testdrive/">Демонстрационные примеры</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </a>
                         </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/windows/mixed-reality">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-mixed-reality.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Смешанная реальность</h3>
+                                                <p>Научитесь создавать смешанную реальность для HoloLens и иммерсивных гарнитур.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/microsoft-edge/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-edge.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Интернет</h3>
+                                                <p>Создавайте возможности, опираясь на Microsoft Edge и последние веб-стандарты.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/windows/ai/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/windows-ai.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>ИИ Windows</h3>
+                                                <p>Создание интеллектуальных приложений для Windows и устройств с Windows.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                       <li>
                     </ul>
                 </li>
             </ul>
@@ -305,7 +268,7 @@ ms.lasthandoff: 07/14/2017
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/windows-hardware/drivers/develop/">
+                            <a href="https://docs.microsoft.com/windows-hardware/drivers/index">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -316,7 +279,7 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Разработка</h3>
-                                                <p>Создавайте, тестируйте и развертывайте драйверы.</p>
+                                                <p>Используйте комплект разработки драйверов для Windows (WDK) для разработки, тестирования и развертывания драйверов.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -415,7 +378,7 @@ ms.lasthandoff: 07/14/2017
                             </div>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/windows-server/windows-server-2016">
+                            <a href="https://docs.microsoft.com/windows-server/index">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -425,8 +388,8 @@ ms.lasthandoff: 07/14/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Windows Server 2016</h3>
-                                                <p>Узнайте, как спланировать, развернуть, защитить и масштабировать Windows Server 2016.</p>
+                                                <h3>Windows Server 2019 и Windows Server 2016</h3>
+                                                <p>Узнайте, как спланировать, развернуть, защитить и масштабировать Windows Server 2019 и Windows Server 2016.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -464,7 +427,7 @@ ms.lasthandoff: 07/14/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Windows для образовательных учреждений</h3>
-                                                <p>Узнайте, как использовать Windows 10 для образовательных учреждений в учебных заведениях.</p>
+                                                <p>Узнайте, как использовать Windows 10 для образовательных учреждений в школах.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -482,8 +445,8 @@ ms.lasthandoff: 07/14/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Магазин Майкрософт для бизнеса</h3>
-                                                <p>Узнайте, как находить, приобретать, распространять приложения для вашей организации и управлять ими в Магазине Майкрософт для бизнеса.</p>
+                                                <h3>Microsoft Store для бизнеса</h3>
+                                                <p>Узнайте, как находить, приобретать, распространять приложения для вашей организации и управлять ими в Microsoft Store для бизнеса.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -501,8 +464,27 @@ ms.lasthandoff: 07/14/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Магазин Майкрософт для образовательных учреждений</h3>
-                                                <p>Узнайте, как находить, приобретать, распространять приложения для вашего учебного заведения и управлять ими в Магазине Майкрософт для образовательных учреждений.</p>
+                                                <h3>Microsoft Store для образования</h3>
+                                                <p>Узнайте, как находить, приобретать, распространять приложения для вашего учебного заведения и управлять ими в Microsoft Store для образования.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/en-us/windows/privacy">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/illustrations/dynamics-gdpr-center.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Конфиденциальность Windows</h3>
+                                                <p>Узнайте о конфиденциальности в Windows и подготовьтесь к реализации требований Общего регламента по защите данных (GDPR).</p>
                                             </div>
                                         </div>
                                     </div>

@@ -24,7 +24,7 @@ items:
 - name: Отправка приложений
   href: ../publish/app-submissions.md
   items:
-  - name: Настройки цен и доступности приложений
+  - name: Настройки цен и доступности
     href: ../publish/set-app-pricing-and-availability.md
     items:
     - name: Выбор определенных стран
@@ -35,7 +35,7 @@ items:
       href: ../publish/configure-precise-release-scheduling.md
     - name: Настройка и планирование цены приложения
       href: ../publish/set-and-schedule-app-pricing.md
-    - name: Параметры организационного лицензирования
+    - name: Параметры корпоративного лицензирования
       href: ../publish/organizational-licensing.md
   - name: Ввод свойств приложения
     href: ../publish/enter-app-properties.md
@@ -51,7 +51,7 @@ items:
     items:
     - name: Доступность семейства устройств
       href: ../publish/device-family-availability.md
-    - name: Требования к пакету приложения
+    - name: Требования к пакетам приложения
       href: ../publish/app-package-requirements.md
     - name: Нумерация версий пакета
       href: ../publish/package-version-numbering.md
@@ -59,16 +59,16 @@ items:
       href: ../publish/supported-languages.md
     - name: Руководство по управлению пакетами приложения
       href: ../publish/guidance-for-app-package-management.md
-  - name: Создание описаний приложения в Store
+  - name: Создание описаний приложения в Магазине
     href: ../publish/create-app-store-listings.md
     items:
-    - name: Создание эффективного описания приложения
+    - name: Создание отличного описания приложения
       href: ../publish/write-a-great-app-description.md
     - name: Снимки экрана, изображения и трейлеры приложения
       href: ../publish/app-screenshots-and-images.md
-    - name: Импорт и экспорт описаний в Магазине
+    - name: Импорт и экспорт описаний в Store
       href: ../publish/import-and-export-store-listings.md
-    - name: Создание описаний в Store для определенной платформы
+    - name: Создание описаний в Магазине для определенной платформы
       href: ../publish/create-platform-specific-store-listings.md
   - name: Параметры управления отправкой
     href: ../publish/manage-submission-options.md
@@ -99,7 +99,7 @@ items:
     href: ../publish/enter-add-on-properties.md
   - name: Настройки цен и доступности надстройки
     href: ../publish/set-add-on-pricing-and-availability.md
-  - name: Создание описания надстройки в Store
+  - name: Создание описания надстройки в Магазине
     href: ../publish/create-add-on-store-listings.md
 - name: Реклама в приложении
   href: ../publish/in-app-ads.md
@@ -117,12 +117,12 @@ items:
   items:
   - name: Создание промокодов
     href: ../publish/generate-promotional-codes.md
-  - name: Создание рекламной кампании для вашего приложения
+  - name: Создание рекламной кампании для своего приложения
     href: ../publish/create-an-ad-campaign-for-your-app.md
     items:
     - name: Управление рекламной кампанией
       href: ../publish/managing-your-ad-campaign.md
-    - name: О собственных объявлениях
+    - name: О собственной рекламе
       href: ../publish/about-house-ads.md
     - name: О рекламе от сообщества
       href: ../publish/about-community-ads.md
@@ -136,7 +136,7 @@ items:
     href: ../publish/app-marketing-guidelines.md
   - name: Ссылка на ваше приложение
     href: ../publish/link-to-your-app.md
-  - name: Повышение популярности своего приложения
+  - name: Повысьте популярность своего приложения
     href: ../publish/make-your-app-easier-to-promote.md
 - name: Привлечение клиентов
   href: ../publish/engage-with-your-customers.md
@@ -148,11 +148,11 @@ items:
       href: ../publish/create-customer-segments.md
     - name: Создание групп известных пользователей
       href: ../publish/create-known-user-groups.md
-  - name: Ответ на оценки пользователей
+  - name: Реакция на оценки пользователей
     href: ../publish/respond-to-customer-reviews.md
   - name: Реакция на отзывы пользователей
     href: ../publish/respond-to-customer-feedback.md
-  - name: Отправка уведомлений пользователям вашего приложения
+  - name: Отправка уведомлений пользователям приложения
     href: ../publish/send-push-notifications-to-your-apps-customers.md
   - name: Использование целевых предложений
     href: ../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
@@ -169,11 +169,11 @@ items:
     href: ../publish/health-report.md
   - name: Отчет "Оценки"
     href: ../publish/ratings-report.md
-  - name: Отчет "Отзывы"
+  - name: Отчет "Рецензии"
     href: ../publish/reviews-report.md
-  - name: Отчет "Отзывы"
+  - name: Отчет об отзывах
     href: ../publish/feedback-report.md
-  - name: Аналитический отчет Xbox
+  - name: Аналитический отчет для Xbox
     href: ../publish/xbox-analytics-report.md
   - name: Аналитический отчет
     href: ../publish/insights-report.md
@@ -200,21 +200,21 @@ items:
     href: ../publish/mobile-operator-billing.md
   - name: Сведения об НДС
     href: ../publish/vat-info.md
-- name: Политики и правила поведения Store
+- name: Политики Microsoft Store и правила поведения
   href: https://docs.microsoft.com/legal/windows/agreements/store-policies-and-code-of-conduct
   items:
-  - name: Политики Microsoft Store
+  - name: Политики для Microsoft Store
     href: https://docs.microsoft.com/legal/windows/agreements/store-policies
     items:
     - name: Журнал изменений
       href: https://docs.microsoft.com/legal/windows/agreements/store-policies-change-history
-  - name: Качество приложений
+  - name: Качество приложения
     href: https://docs.microsoft.com/legal/windows/agreements/store-app-quality
   - name: Правила поведения для разработчиков
     href: https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct
 ms.openlocfilehash: d44affff4838b8799bfd2e82e4f57058d60e657b
-ms.sourcegitcommit: b9ee49402db7a8999cade1c5cf7f7b6ac4d783db
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042474"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582984"

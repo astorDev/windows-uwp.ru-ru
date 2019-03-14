@@ -1,5 +1,5 @@
 items:
-- name: Основы проектирования
+- name: Основы оформления
   items:
   - name: Обзор
     href: basics/index.md
@@ -23,9 +23,9 @@ items:
     items:
     - name: Создание пользовательского интерфейса
       href: basics/xaml-basics-ui.md
-    - name: Создание адаптивных макетов
+    - name: Создание адаптивного макета
       href: basics/xaml-basics-adaptive-layout.md
-    - name: Стиль элемент управления
+    - name: Стиль элемента управления
       href: basics/xaml-basics-style.md
 - name: Макет
   items:
@@ -33,7 +33,7 @@ items:
     href: layout/index.md
   - name: Макет страницы
     href: layout/page-layout.md
-  - name: Размеры экрана и точки прерывания
+  - name: Размеры экрана и точки останова
     href: layout/screen-sizes-and-breakpoints-for-responsive-design.md
   - name: Методы создания отзывчивого дизайна
     href: layout/responsive-design.md
@@ -41,7 +41,7 @@ items:
     href: layout/layouts-with-xaml.md
   - name: Отображение нескольких представлений
     href: layout/show-multiple-views.md
-  - name: Выравнивание, поля и заполнение
+  - name: Выравнивание, поля и отбивка
     href: layout/alignment-margin-padding.md
   - name: Панели макета
     items:
@@ -51,7 +51,7 @@ items:
       href: layout/grid-tutorial.md
     - name: Комбинированный режим
       href: controls-and-patterns/split-view.md
-    - name: Настраиваемые панели
+    - name: Пользовательские панели
       href: layout/custom-panels-overview.md
     - name: 'Пример настраиваемой панели: BoxPanel'
       href: layout/boxpanel-example-custom-panel.md
@@ -65,8 +65,10 @@ items:
   items:
   - name: Обзор
     href: controls-and-patterns/index.md
-  - name: Введение в элементы управления и события
+  - name: Введение в работу с элементами управления и событиями
     href: controls-and-patterns/controls-and-events-intro.md
+  - name: Введение в систему команд
+    href: controls-and-patterns/commanding.md
   - name: Указатель элементов управления по функциям
     href: controls-and-patterns/controls-by-function.md
   - name: Базовый ввод
@@ -75,7 +77,7 @@ items:
       href: controls-and-patterns/buttons.md
     - name: Флажок
       href: controls-and-patterns/checkbox.md
-    - name: Поле со списком
+    - name: поле со списком;
       href: controls-and-patterns/combo-box.md
     - name: Гиперссылки
       href: controls-and-patterns/hyperlinks.md
@@ -104,15 +106,15 @@ items:
         href: controls-and-patterns/item-templates-gridview.md
     - name: Перевернутые списки
       href: controls-and-patterns/inverted-lists.md
-    - name: Обновление путем перетаскивания
+    - name: Обновление путем оттягивания
       href: controls-and-patterns/pull-to-refresh.md
     - name: Вложенные элементы пользовательского интерфейса
       href: controls-and-patterns/nested-ui.md
     - name: Командный интерфейс коллекции
       href: controls-and-patterns/collection-commanding.md
-    - name: Прокрутка (сдвиг)
+    - name: Swipe
       href: controls-and-patterns/swipe.md
-    - name: Представление в виде дерева (иерархическое представление)
+    - name: Представление в виде дерева
       href: controls-and-patterns/tree-view.md
   - name: Диалоговые окна и всплывающие элементы
     items:
@@ -154,7 +156,7 @@ items:
       href: controls-and-patterns/navigationview.md
     - name: Сводка
       href: controls-and-patterns/pivot.md
-  - name: Люди
+  - name: People
     items:
     - name: Карточка контакта
       href: controls-and-patterns/contact-card.md
@@ -172,7 +174,7 @@ items:
       href: controls-and-patterns/calendar-view.md
     - name: Управляющий элемент выбора даты
       href: controls-and-patterns/date-picker.md
-    - name: Выбор времени
+    - name: Управляющий элемент выбора времени
       href: controls-and-patterns/time-picker.md
   - name: Прокрутка
     items:
@@ -186,7 +188,7 @@ items:
     items:
     - name: Ход выполнения
       href: controls-and-patterns/progress-controls.md
-    - name: Подсказка
+    - name: Всплывающая подсказка
       href: controls-and-patterns/tooltips.md
   - name: Текст
     items:
@@ -200,7 +202,7 @@ items:
       href: controls-and-patterns/rich-text-block.md
     - name: Текстовое поле
       href: controls-and-patterns/text-box.md
-    - name: Поле с форматом
+    - name: Блок форматируемого текста
       href: controls-and-patterns/rich-edit-box.md
     - name: Поле ввода пароля
       href: controls-and-patterns/password-box.md
@@ -216,13 +218,13 @@ items:
     href: style/index.md
   - name: Цвет
     href: style/color.md
-  - name: Оформление текста
+  - name: Шрифтовое оформление
     href: style/typography.md
   - name: Значки
     items:
     - name: Обзор
       href: style/icons.md
-    - name: Значки и логотипы приложений
+    - name: Значки приложений и логотипы
       href: style/app-icons-and-logos.md
     - name: Значки Segoe MDL2
       href: style/segoe-ui-symbol-font.md
@@ -288,7 +290,7 @@ items:
         href: shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md
       - name: Классические приложения
         href: shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md
-    - name: Содержимое плиток
+    - name: Содержимое плитки
       href: shell/tiles-and-notifications/create-adaptive-tiles.md
     - name: Схема содержимого плитки
       href: shell/tiles-and-notifications/tile-schema.md
@@ -298,9 +300,9 @@ items:
       href: shell/tiles-and-notifications/sending-a-local-tile-notification.md
     - name: Уведомления на отслеживаемых плитках
       href: shell/tiles-and-notifications/chaseable-tile-notifications.md
-    - name: API для работы с основными плитками
+    - name: Интерфейсы API для работы с основными плитками
       href: shell/tiles-and-notifications/primary-tile-apis.md
-    - name: Плитки, поддержка всплывающих уведомлений для языка, масштаба, контрастности
+    - name: Плитка, поддержка всплывающих уведомлений для языка, масштаба, контрастности
       href: shell/tiles-and-notifications/tile-toast-language-scale-contrast.md
   - name: Закрепление приложения на панели задач
     href: shell/pin-to-taskbar.md
@@ -310,7 +312,7 @@ items:
     items:
     - name: Всплывающие уведомления
       items:
-      - name: Руководство по взаимодействию с пользователем
+      - name: Руководство по проектированию взаимодействия с пользователем
         href: shell/tiles-and-notifications/toast-ux-guidance.md
       - name: Содержимое всплывающего уведомления
         href: shell/tiles-and-notifications/adaptive-interactive-toasts.md
@@ -322,9 +324,9 @@ items:
         - name: Классические приложения
           href: shell/tiles-and-notifications/toast-desktop-apps.md
           items:
-          - name: Приложения на C#
+          - name: Приложения C#
             href: shell/tiles-and-notifications/send-local-toast-desktop.md
-          - name: Приложения C++ WRL
+          - name: Приложения C++/WRL
             href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
       - name: Настраиваемый звук
         href: shell/tiles-and-notifications/custom-audio-on-toasts.md
@@ -332,7 +334,7 @@ items:
         href: shell/tiles-and-notifications/toast-progress-bar.md
       - name: Ожидание обновления
         href: shell/tiles-and-notifications/toast-pending-update.md
-      - name: Пользовательские отметки времени
+      - name: Пользовательские метки времени
         href: shell/tiles-and-notifications/custom-timestamps-on-toasts.md
       - name: Коллекции
         href: shell/tiles-and-notifications/toast-collections.md
@@ -398,9 +400,9 @@ items:
       href: input/access-keys.md
     - name: Сочетания клавиш
       href: input/keyboard-accelerators.md
-    - name: Перемещение фокуса с помощью клавиатуры, геймпада, пульта дистанционного управления и средств специальных возможностей
+    - name: Перемещение фокуса с помощью клавиатуры, игрового планшета, пульта дистанционного управления и средств специальных возможностей
       href: input/focus-navigation.md
-    - name: Перемещение фокуса программным путем
+    - name: Программное перемещение фокуса
       href: input/focus-navigation-programmatic.md
     - name: События клавиатуры
       href: input/keyboard-events.md
@@ -469,7 +471,7 @@ items:
     href: input/guidelines-for-rotation.md
   - name: Выделение текста и изображений
     href: input/guidelines-for-textselection.md
-  - name: Таргетинг
+  - name: Нацеливание
     href: input/guidelines-for-targeting.md
   - name: Визуальная обратная связь
     href: input/guidelines-for-visualfeedback.md
@@ -520,7 +522,7 @@ items:
   - name: Параметры приложения
     href: app-settings/app-settings-and-data.md
     items:
-    - name: Требования
+    - name: Руководство
       href: app-settings/guidelines-for-app-settings.md
     - name: Хранение и извлечение параметров и данных приложения
       href: app-settings/store-and-retrieve-app-data.md
@@ -549,7 +551,7 @@ items:
       href: globalizing/use-mat.md
     - name: Вопросы и ответы и руководство по диагностике набора средств для многоязычных приложений версии 4.0
       href: globalizing/mat-faq-troubleshooting.md
-    - name: Подготовка приложения к изменению японской эры
+    - name: Подготовка приложения к изменению японского летосчисления
       href: globalizing/japanese-era-change.md
   - name: Руководство по справке для приложений
     href: in-app-help/guidelines-for-app-help.md
@@ -562,9 +564,9 @@ items:
       href: in-app-help/external-help.md
 - name: Наборы инструментов для проектирования
   href: downloads/index.md
-ms.openlocfilehash: af1472f7650982783ac08da2c73ebb5046401f3c
-ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
+ms.openlocfilehash: b6430ee5f121d672282513fa524a50e7788f404c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004570"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583591"

@@ -1,5 +1,5 @@
 items:
-- name: Документы
+- name: Docs
   tocHref: /
   topicHref: /
   items:
@@ -11,7 +11,7 @@ items:
       tocHref: /windows/uwp/
       topicHref: /windows/uwp/index
       items:
-      - name: Новые возможности
+      - name: Что нового
         tocHref: /windows/uwp/whats-new/
         topicHref: /windows/uwp/whats-new/windows-10-version-latest
       - name: Начало работы
@@ -21,13 +21,13 @@ items:
         tocHref: /windows/uwp/design/
         topicHref: /windows/uwp/design/basics/index
         items:
-        - name: Основы проектирования
+        - name: Основы оформления
           tocHref: /windows/uwp/design/basics/
           topicHref: /windows/uwp/design/basics/index
-        - name: Основы проектирования
+        - name: Основы оформления
           tocHref: /windows/uwp/design/fluent-design-system/
           topicHref: /windows/uwp/design/basics/index
-        - name: Структура
+        - name: Макет
           tocHref: /windows/uwp/design/layout/
           topicHref: /windows/uwp/design/layout/index
         - name: Стиль
@@ -52,7 +52,7 @@ items:
           - name: Специальные возможности
             tocHref: /windows/uwp/design/accessibility/
             topicHref: /windows/uwp/design/accessibility/accessibility
-          - name: Параметры приложений и данные
+          - name: Параметры и данные приложения
             tocHref: /windows/uwp/design/app-settings/
             topicHref: /windows/uwp/design/app-settings/app-settings-and-data
           - name: Глобализация и локализация
@@ -71,7 +71,7 @@ items:
         - name: Ресурсы приложения
           tocHref: /windows/uwp/app-resources/
           topicHref: /windows/uwp/app-resources/index
-        - name: Обмен данными между приложениями
+        - name: Связь между приложениями
           tocHref: /windows/uwp/app-to-app/
           topicHref: /windows/uwp/app-to-app/index
         - name: Звук, видео и камера
@@ -86,7 +86,7 @@ items:
         - name: Привязка данных
           tocHref: /windows/uwp/data-binding/
           topicHref: /windows/uwp/data-binding/index
-        - name: Средства отладки, тестирования и повышения производительности
+        - name: Отладка, тестирование и производительность
           tocHref: /windows/uwp/debug-test-perf/
           topicHref: /windows/uwp/debug-test-perf/index
         - name: Образовательные приложения
@@ -119,13 +119,13 @@ items:
         - name: Монетизация, привлечение и службы Store
           tocHref: /windows/uwp/monetize/
           topicHref: /windows/uwp/monetize/index
-        - name: Сети и веб-службы
+        - name: Сеть и веб-службы
           tocHref: /windows/uwp/networking/
           topicHref: /windows/uwp/networking/index
         - name: Создание пакетов приложений
           tocHref: /windows/uwp/packaging/
           topicHref: /windows/uwp/packaging/index
-        - name: Перенос приложений в Windows10
+        - name: Перенос приложений в Windows 10
           tocHref: /windows/uwp/porting/
           topicHref: /windows/uwp/porting/index
         - name: Безопасность
@@ -143,7 +143,7 @@ items:
         - name: Платформа XAML
           tocHref: /windows/uwp/xaml-platform/
           topicHref: /windows/uwp/xaml-platform/index
-        - name: Справочные материалы по API
+        - name: Справочник по API
           tocHref: /windows/uwp/api/
           topicHref: https://docs.microsoft.com/en-us/uwp/
         - name: Windows как услуга
@@ -159,13 +159,13 @@ items:
         tocHref: /windows/uwp/gaming/
         topicHref: /windows/uwp/gaming/e2e
         items:
-        - name: UWP на Xbox One
+        - name: Приложения UWP для Xbox One
           tocHref: /windows/uwp/xbox-apps/
           topicHref: /windows/uwp/xbox-apps/index
         - name: Программирование игр
           tocHref: /windows/uwp/gaming/
           topicHref: /windows/uwp/gaming/index
-        - name: Программирование в DirectX
+        - name: Программирование для DirectX
           tocHref: /windows/uwp/directx-programming/
           topicHref: /windows/uwp/directx-programming/index
         - name: Обучающее руководство по графике Direct3D
@@ -178,8 +178,8 @@ items:
         tocHref: /windows/uwp/publish/
         topicHref: /windows/uwp/publish/index
 ms.openlocfilehash: 1d79038daa4f2a50dd287da879fa8153ca3fb118
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962506"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583133"

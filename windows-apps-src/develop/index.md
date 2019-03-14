@@ -1,15 +1,15 @@
 ---
-description: 'Узнайте, как разрабатывать приложения UWP.'
+description: 'Узнайте, как разработать приложение UWP.'
 title: Разработка приложений UWP
 layout: LandingPage
-keywords: uwp разработки потоков async платформы Обзор портала приложения разрабатывать разработчиков
+keywords: приложение uwp разработка потоки асинхронный платформа обзор портал разработка разработчики
 ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
 ---
 <div> 
 <h1>Разработка приложений UWP</h1>
-<p>Статьи с инструкциями и код для создания приложений UWP для Windows 10. </p> 
+<p>Практические руководства и код для создания приложений UWP для Windows 10. </p> 
 </div>
 
 <ul class="panelContent cardsH" style="margin-left: 1px">
@@ -24,8 +24,8 @@ ms.localizationpriority: medium
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Обзор на универсальную платформу Windows</h3>
-                        <p>Описание какие UWP, как это работает, и предоставляет функции.</p>
+                        <h3>Обзор универсальной платформы Windows</h3>
+                        <p>Объяснение того, что такое универсальная платформа Windows и какие функции она предлагает.</p>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@ ms.localizationpriority: medium
                     </div>                
                     <div class="cardText">
                         <h3>Руководство по портированию</h3>
-                        <p>Перенесите существующие Windows Forms, WPF, Android или iOS приложения UWP. </p>
+                        <p>Перенесите имеющееся приложение Windows Forms, WPF, Android или iOS на универсальную платформу Windows. </p>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@ ms.localizationpriority: medium
     </li>                 
 </ul>
 
-## <a name="api-reference"></a>Справочные материалы по API
+## <a name="api-reference"></a>Справочник по API
 
 <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
@@ -62,8 +62,8 @@ ms.localizationpriority: medium
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Пространство имен универсальной платформы Windows</h3>
-                        <p>Классы, структуры, интерфейсы, методы, свойства и события, которые составляют среды выполнения Windows, упорядоченные по пространства имен.</p>
+                        <h3>Пространства имен универсальной платформы Windows (UWP)</h3>
+                        <p>Классы, структуры, интерфейсы, методы, свойства и события, которые составляют среду выполнения Windows, упорядоченные по пространствам имен.</p>
                     </div>
                 </div>
             </div>
@@ -76,8 +76,8 @@ ms.localizationpriority: medium
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Схемы для UWP</h3>
-                        <p>Файл и спецификации схем XML для приложений универсальной платформы Windows (UWP). </p>
+                        <h3>Схемы для универсальной платформы Windows</h3>
+                        <p>Спецификации файлов и схем XML для приложений универсальной платформы Windows (UWP). </p>
                     </div>
                 </div>
             </div>
@@ -109,8 +109,8 @@ ms.localizationpriority: medium
             <div style="display:block" class="cardPadding">
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
-                        <h3>Пользовательский Интерфейс приложения</h3>
-                        <p><a href="https://developer.microsoft.com/windows/apps/design">Элементы управления, макет, оформления текста, анимации, удобство использования и проектирование пользовательского интерфейса см. в разделе проектирование и пользовательский Интерфейс.</a></p>
+                        <h3>Пользовательский интерфейс приложения</h3>
+                        <p><a href="https://developer.microsoft.com/windows/apps/design">Элементы управления, макет, оформление, анимация, удобство использования и проектирование пользовательского интерфейса описываются в разделе "Оформление и пользовательский интерфейс".</a></p>
                     </div>
                 </div>
             </div>
@@ -122,8 +122,8 @@ ms.localizationpriority: medium
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Связь</h3>
-                        <p><a style="display:block" href="/windows/uwp/app-to-app/">Обмен данными между приложениями</a></p>
-                        <p><a style="display:block" href="/windows/uwp/networking/">Сети и веб-службы</a></p>
+                        <p><a style="display:block" href="/windows/uwp/app-to-app/">Связь между приложениями</a></p>
+                        <p><a style="display:block" href="/windows/uwp/networking/">Сетевые и веб-службы</a></p>
                     </div>
                 </div>
             </div>
@@ -185,7 +185,7 @@ ms.localizationpriority: medium
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>Пользователи и места</h3>
-                        <p style="display:block"><a href="/windows/uwp/contacts-and-calendar/">Контакты, Близкие люди и Календарь</a></p>
+                        <p style="display:block"><a href="/windows/uwp/contacts-and-calendar/">"Контакты", "Близкие люди" и "Календарь"</a></p>
                         <p style="display:block"><a href="/windows/uwp/maps-and-location/">Карты и расположение</a></p>
                     </div>
                 </div>
@@ -201,12 +201,12 @@ ms.localizationpriority: medium
                         <p style="display:block"><a href="/windows/uwp/contacts-and-calendar/">Обзор</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/enable-device-capabilities">Включение возможностей устройств</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/pair-devices">Связывание устройств</a></p>
-                        <p style="display:block"><a href="/windows/uwp/devices-sensors/point-of-service">POS-устройства</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/point-of-service">POS-терминал</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/sensors">Датчики</a></p>
-                        <p style="display:block"><a href="/windows/uwp/devices-sensors/printing-and-scanning">Printing</a></p>
-                        <p style="display:block"><a href="/windows/uwp/devices-sensors/3d-printing">Трехмерной печати</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/printing-and-scanning">Вывод на печать</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/3d-printing">Трехмерная печать</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/nfc">NFC</a></p>
-                        <p style="display:block"><a href="/windows/uwp/devices-sensors/get-battery-info">Сведения о батареи</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/get-battery-info">Сведения об аккумуляторе</a></p>
                     </div>
                 </div>
             </div>
@@ -219,14 +219,14 @@ ms.localizationpriority: medium
                     <div style="display:block" class="cardText">
                         <h3>Перенос</h3>
                         <p style="display:block"><a href="/windows/uwp/porting/">Обзор</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">WindowsPhone Silverlight в UWP</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Среда выполнения Windows 8.x в UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">Переход с Windows Phone Silverlight на UWP</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Переход со среды выполнения Windows 8.x на UWP</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">Мост для классических приложений</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-migrate">Совместное использование кода классическими приложениями и приложениями UWP</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/android-ios-uwp-map">Сопоставление концепций для разработчиков iOS и Android</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/android-ios-uwp-map">Сопоставление понятий для разработчиков Android и iOS</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/ios-to-uwp-root">Переход с iOS на UWP</a></p>
                         <p style="display:block"><a href="/microsoft-edge/progressive-web-apps">Преобразование веб-приложения в приложение PWA</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/apps-on-arm">Windows10 на архитектуре ARM</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/apps-on-arm">Windows 10 на архитектуре ARM</a></p>
                     </div>
                 </div>
             </div>
@@ -248,7 +248,7 @@ ms.localizationpriority: medium
 </ul>
 
 
- ## <a name="samples-and-tools"></a>Примеры и средства
+ ## <a name="samples-and-tools"></a>Примеры и инструменты
 
  <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
@@ -263,7 +263,7 @@ ms.localizationpriority: medium
                     </div>
                     <div class="cardText">
                         <h3>Примеры</h3>
-                        <p> Сведения о создании качественных приложений для Windows при помощи экспериментов с помощью этих примеров. В этих примерах показано, как работают функции и помочь вам быстрое создание приложения UWP.</p>
+                        <p> Узнайте, как создавать отличные приложения для Windows, экспериментируя с приведенными примерами. Эти примеры показывают, как работают функции, и помогают быстро приступить к созданию собственных приложений UWP.</p>
                     </div>
                 </div>
             </div>
@@ -282,7 +282,7 @@ ms.localizationpriority: medium
                     </div>                
                     <div class="cardText">
                         <h3>Средства разработчика</h3>
-                        <p>Получение Visual Studio 2017, Windows 10 SDK и другие средства разработчика.</p>
+                        <p>Получите Visual Studio 2017, пакет SDK для Windows 10 и другие инструменты разработки.</p>
                     </div>
                 </div>
             </div>

@@ -19,9 +19,9 @@ items:
       href: ../gaming/monetization-for-games.md
     - name: Утверждение концепций
       href: ../gaming/concept-approval.md
-    - name: Создание пакета игры
+    - name: Упаковка игры
       href: ../gaming/package-your-windows-store-directx-game.md
-  - name: Программирование UWP
+  - name: Программирование для UWP
     href: ../gaming/uwp-programming.md
     items:
     - name: Звук для игр
@@ -33,34 +33,34 @@ items:
         href: ../gaming/manage-game-broadcasting.md
       - name: Запись звука, видео, снимков экрана и метаданных из игры
         href: ../gaming/capture-game-audio-video-screenshots-and-metadata.md
-    - name: Устройства ввода для игр
+    - name: Ввод данных в играх
       href: ../gaming/input-for-games.md
       items:
       - name: Геймпад и вибрации
         href: ../gaming/gamepad-and-vibration.md
       - name: Аркадный джойстик
         href: ../gaming/arcade-stick.md
-      - name: Гоночный руль и обратная связь по усилию
+      - name: Гоночный руль и принудительная обратная связь
         href: ../gaming/racing-wheel-and-force-feedback.md
       - name: Рукоятка управления полетом
         href: ../gaming/flight-stick.md
-      - name: Необработанное игровое устройство управления
+      - name: Исходное игровое устройство управления
         href: ../gaming/raw-game-controller.md
       - name: Гарнитура
         href: ../gaming/headset.md
       - name: Контроллер навигации по пользовательскому интерфейсу
         href: ../gaming/ui-navigation-controller.md
-      - name: Рекомендации по использованию устройств ввода для игр
+      - name: Способы ввода данных в играх
         href: ../gaming/input-practices-for-games.md
       - name: Данные реестра для игровых устройств управления
         href: ../gaming/registry-data-for-game-controllers.md
-    - name: Отсутствующие API-интерфейсы .NET в Unity и UWP
+    - name: Отсутствуют интерфейсы API .NET в Unity и UWP
       href: ../gaming/missing-dot-net-apis-in-unity-and-uwp.md
     - name: Поддержка сети в играх
       href: ../gaming/work-with-networking-in-your-directx-game.md
-  - name: Видеоролики о разработке игр
+  - name: Видео о разработке игр
     href: ../gaming/game-development-videos.md
-- name: Программирование в DirectX
+- name: Программирование для DirectX
   href: ../gaming/directx-programming.md
   items:
   - name: Начало работы
@@ -68,7 +68,7 @@ items:
     items:
     - name: Объект приложения
       href: ../gaming/about-the-uwp-user-interface-and-directx.md
-    - name: Шаблоны проектов и средства
+    - name: Шаблоны проектов и инструменты
       href: ../gaming/prepare-your-dev-environment-for-windows-store-directx-game-development.md
       items:
       - name: Шаблоны проектов игр
@@ -112,7 +112,7 @@ items:
         href: ../gaming/tutorial--adding-sound.md
       - name: Расширение игры
         href: ../gaming/tutorial-resources.md
-    - name: Marble Maze
+    - name: Игра Marble Maze
       href: ../gaming/developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md
       items:
       - name: Основы
@@ -123,7 +123,7 @@ items:
         href: ../gaming/adding-visual-content-to-the-marble-maze-sample.md
       - name: Добавление средств ввода и взаимодействия
         href: ../gaming/adding-input-and-interactivity-to-the-marble-maze-sample.md
-      - name: Добавление аудиозаписей
+      - name: Добавление звука
         href: ../gaming/adding-audio-to-the-marble-maze-sample.md
   - name: Концепции графики Direct3D
     href: ../graphics-concepts/index.md
@@ -450,7 +450,7 @@ items:
         href: ../gaming/complete-code-for-basicreaderwriter.md
       - name: DDSTextureLoader
         href: ../gaming/complete-code-for-ddstextureloader.md
-  - name: Добавление функций
+  - name: Добавление компонентов
     href: ../gaming/directx-add-features.md
     items:
     - name: Взаимодействие DirectX и XAML
@@ -484,10 +484,10 @@ items:
   - name: Портирование из DirectX 9 в UWP
     href: ../gaming/porting-your-directx-9-game-to-windows-store.md
     items:
-    - name: Переход с DirectX9 на DirectX11.1
+    - name: Переход с DirectX 9 на DirectX 11.1
       href: ../gaming/porting-considerations.md
       items:
-      - name: Планирование переноса
+      - name: Планирование портирования
         href: ../gaming/plan-your-directx-port.md
       - name: Основные различия
         href: ../gaming/understand-direct3d-11-1-concepts.md
@@ -496,7 +496,7 @@ items:
     - name: Простое пошаговое руководство
       href: ../gaming/walkthrough--simple-port-from-direct3d-9-to-11-1.md
       items:
-      - name: Инициализация Direct3D11
+      - name: Инициализация Direct3D 11
         href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md
       - name: Преобразование инфраструктуры отрисовки
         href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-2--rendering.md
@@ -515,13 +515,13 @@ items:
         href: ../gaming/target-a-range-of-hardware.md
     - name: Вопросы и ответы
       href: ../gaming/directx-porting-faq.md
-  - name: Перенос из OpenGL в Direct3D
+  - name: Портирование из OpenGL в Direct3D
     href: ../gaming/port-from-opengl-es-2-0-to-directx-11-1.md
     items:
     - name: Сопоставление OpenGL с Direct3D
       href: ../gaming/map-concepts-and-infrastructure.md
       items:
-      - name: Планирование переноса
+      - name: Планирование портирования
         href: ../gaming/compare-opengl-es-2-0-api-design-to-directx.md
       - name: EGL и DXGI
         href: ../gaming/moving-from-egl-to-dxgi.md
@@ -545,16 +545,16 @@ items:
       items:
       - name: Переход с GLSL на HLSL
         href: ../gaming/glsl-to-hlsl-reference.md
-- name: UWP на Xbox One
+- name: Приложения UWP для Xbox One
   href: ../xbox-apps/index.md
   items:
   - name: Начало работы
     href: ../xbox-apps/getting-started.md
-  - name: Новые возможности
+  - name: Что нового
     href: ../xbox-apps/whats-new.md
-  - name: Активация режима разработчика на консоли Xbox One
+  - name: Активация режима разработчика Xbox One
     href: ../xbox-apps/devkit-activation.md
-  - name: Отключение режима разработчика на консоли Xbox One
+  - name: Отключение режима разработчика в Xbox One
     href: ../xbox-apps/devkit-deactivation.md
   - name: Настройка среды разработки
     href: ../xbox-apps/development-environment-setup.md
@@ -564,19 +564,19 @@ items:
     href: ../xbox-apps/known-issues.md
   - name: Вопросы и ответы
     href: ../xbox-apps/frequently-asked-questions.md
-  - name: Средства
+  - name: Инструменты
     href: ../xbox-apps/introduction-to-xbox-tools.md
     items:
-    - name: Главная страница разработчика
+    - name: Dev Home
       href: ../xbox-apps/dev-home.md
       items:
       - name: Домашняя страница
         href: ../xbox-apps/devhome-home.md
-      - name: Страница Xbox Live
+      - name: Страница "Xbox Live"
         href: ../xbox-apps/devhome-live.md
       - name: Страница параметров
         href: ../xbox-apps/devhome-settings.md
-      - name: Страница записи мультимедиа
+      - name: Страница "Запись мультимедиа"
         href: ../xbox-apps/devhome-capture.md
       - name: Страница "Сетевое взаимодействие"
         href: ../xbox-apps/devhome-networking.md
@@ -597,7 +597,7 @@ items:
       href: ../xbox-apps/turn-off-overscan.md
   - name: Распределение системных ресурсов
     href: ../xbox-apps/system-resource-allocation.md
-  - name: Введение в многопользовательские приложения
+  - name: Вводные сведения о многопользовательских приложениях
     href: ../xbox-apps/multi-user-applications.md
   - name: Перенос существующих игр на Xbox
     href: ../xbox-apps/development-lanes-landing.md
@@ -608,7 +608,7 @@ items:
       href: ../xbox-apps/development-lanes-unity.md
     - name: HTML/JS
       href: ../xbox-apps/development-lanes-html.md
-  - name: API REST портала устройств Xbox
+  - name: REST API портала устройств Xbox
     href: ../xbox-apps/reference.md
     items:
     - name: /api/app/packagemanager/register
@@ -644,8 +644,8 @@ items:
 - name: Xbox Live
   href: ../xbox-live/TOC.md
 ms.openlocfilehash: 0d44f8286586f3019864097357051e43fa88fbae
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962586"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583626"

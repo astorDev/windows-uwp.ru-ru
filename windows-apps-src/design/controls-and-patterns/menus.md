@@ -1,5 +1,5 @@
 ---
-Description: Menus and context menus display a list of commands or options when the user requests them.
+Description: В меню и контекстных меню отображается список команд или параметров, когда пользователь запрашивает их.
 title: Меню и контекстные меню
 label: Menus and context menus
 template: detail.hbs
@@ -14,45 +14,45 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 194e8578244fee72d0f122ee96caaf22bf2b8807
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058695"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610489"
 ---
 # <a name="menus-and-context-menus"></a>Меню и контекстные меню
 
-В меню и контекстных меню отображается список команд или параметров, когда пользователь запрашивает их. Используйте всплывающий элемент меню для отображения одного, встроенного меню. Используйте меню для отображения набор меню в горизонтальной строке, обычно в верхней части окна приложения. Каждое меню может иметь пунктов меню и подменю.
+В меню и контекстных меню отображается список команд или параметров, когда пользователь запрашивает их. Для отображения одного, встроенного меню, используйте всплывающее меню. Используйте строку меню, чтобы показать набор меню в горизонтальной строке, обычно в верхней части окна приложения. Каждое меню могут иметь элементы меню и подменю.
 
 ![Пример типичного контекстного меню](images/contextmenu_rs2_icons.png)
 
-| **Получить библиотеку пользовательского интерфейса Windows** |
+| **Получение библиотеки пользовательского интерфейса Windows** |
 | - |
-| Этот элемент управления не включен в библиотеки пользовательского интерфейса Windows, пакет NuGet, содержащий новые элементы управления и функции пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке см. в разделе [Общие сведения о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| Этот элемент управления входит в состав библиотеки пользовательского интерфейса Windows, пакет NuGet, который содержит новые элементы управления и компоненты пользовательского интерфейса для приложений универсальной платформы Windows. Дополнительные сведения, включая инструкции по установке, см. в разделе [Общие сведения о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
-| **API-интерфейсы платформы** | **API библиотеки пользовательского интерфейса Windows** |
+| **API-интерфейсов платформы** | **Windows API-интерфейсов библиотеки пользовательского интерфейса** |
 | - | - |
-| [Класс MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [класс в строке](/uwp/api/windows.ui.xaml.controls.menubar), [свойство ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [свойство FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) | [Класс строки меню](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [Класс MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [класс MenuBar](/uwp/api/windows.ui.xaml.controls.menubar), [свойство ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout свойство](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) | [Класс MenuBar](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Меню и контекстные меню экономят место, упорядочивая команды и скрывая их до востребования. Если определенная команда используется часто, и имеется достаточно свободного места, вы можете разместить ее на отдельном элементе, а не в меню, чтобы для ее использования пользователям не приходилось открывать меню.
 
-Меню и контекстные меню предназначены для упорядочения команд; для отображения произвольного содержимого, например уведомления и подтверждения запроса, используйте [диалоговое окно или всплывающий элемент](dialogs.md).
+Меню и контекстные меню являются для организации команд; Чтобы отобразить произвольное содержимое, например запрос уведомления или подтверждения, используйте [диалогового или всплывающего меню](dialogs.md).
 
-### <a name="menubar-vs-menuflyout"></a>В строке и MenuFlyout
+### <a name="menubar-vs-menuflyout"></a>Vs в строке меню. MenuFlyout
 
-Для отображения меню во всплывающем элементе присоединенного к элементу пользовательского интерфейса на холсте, используйте элемент управления MenuFlyout для размещения своих элементов меню. Вы можете вызывать всплывающее меню, как обычный меню или контекстного меню. Всплывающее меню размещается одного меню верхнего уровня (и дополнительных дочерних меню).
+Чтобы отобразить меню со всплывающим окном, присоединенного к элементу пользовательского интерфейса на холсте, используйте элемент управления MenuFlyout для размещения пунктах меню. Вы можете вызывать всплывающее меню, как обычное меню или в качестве контекстного меню. Всплывающее меню размещается в едином меню верхнего уровня (и необязательно подменю).
 
-Для отображения набора нескольких меню верхнего уровня в горизонтальной строке, используйте строку меню. Обычно располагаются в строке меню в верхней части окна приложения.
+Чтобы отобразить набор нескольких меню верхнего уровня в горизонтальной строке, используйте строку меню. Вы обычно размещается в строке меню в верхней части окна приложения.
 
-### <a name="menubar-vs-commandbar"></a>В строке и CommandBar
+### <a name="menubar-vs-commandbar"></a>Vs в строке меню. CommandBar
 
-В строке и CommandBar оба представления поверхностей, которые можно использовать для предоставления пользователям команд. В строке предоставляет быстрый и простой способ отображения набор команд для приложений, которые могут потребоваться дополнительные организации или группы, чем позволяет CommandBar.
+Строка меню и панели команд обе они представляют области, которые можно использовать для представления команд пользователям. Строки меню предоставляет простой и быстрый способ предоставления набора команд для приложений, которые могут понадобиться дополнительные организации или группы, чем позволяет среда CommandBar.
 
-Также можно использовать в строке вместе с CommandBar. Используйте строки меню для предоставления большую часть команды и CommandBar для выделения наиболее часто используемых команд.
+Строке меню также можно использовать в сочетании с панели команд. Позволяет указать основная часть команды и CommandBar, чтобы выделить наиболее часто используемых команд в строке меню.
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -61,7 +61,7 @@ ms.locfileid: "9058695"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/MenuFlyout">открыть приложение и увидеть MenuFlyout в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -70,14 +70,14 @@ ms.locfileid: "9058695"
 
 ## <a name="menus-vs-context-menus"></a>Сравнение меню и контекстных меню
 
-Меню и контекстные меню похожи на виду и возможному. На самом деле можно использовать тот же элемент управления, [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030), для их создания. Разница в том, как разрешить пользователю доступ к нему.
+Меню и контекстные меню схожи в том, как они выглядят и что они могут содержать. На самом деле, можно использовать тот же элемент управления [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030), для их создания. Разница заключается в том, как пользователю предоставляется возможность доступа к нему.
 
 Когда следует использовать меню или контекстное меню?
 
 - Если главным элементом является кнопка или другой элемент команды, основная задача которого состоит в предоставлении дополнительных команд, используйте меню.
 - Если главным элементом является другой тип элемента с иной основной задачей (такой как представление текста или изображения), используйте контекстное меню.
 
-Например используйте меню элемента "Button" для предоставления фильтрованию параметры для списка. В этом случае основное назначение элемента управления кнопки— предоставление доступа к меню.
+Например используйте меню на кнопке для обеспечения фильтрации и сортировки для списка. В этом случае основное назначение элемента управления кнопки — предоставление доступа к меню.
 
 ![Пример меню в "Почте"](images/Mail_Menu.png)
 
@@ -90,7 +90,7 @@ ms.locfileid: "9058695"
 - обладают одной точкой входа (например, меню "Файл" в верхней части экрана), которая отображается постоянно;
 - обычно прикреплены к кнопке или родительскому элементу меню;
 - вызываются левым щелчком мыши (или эквивалентным действием, например нажатием пальцем);
-- Связанный с элементом посредством его свойств [всплывающий элемент](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) или [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) или сгруппированы в строке меню в верхней части окна приложения.
+- Связанные с элементом с помощью его [всплывающего меню](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) или [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) свойства, или сгруппированы в строке меню в верхней части окна приложения.
 
 ### <a name="context-menus"></a>Контекстные меню
 
@@ -103,8 +103,8 @@ ms.locfileid: "9058695"
 Рассмотрите возможность предоставления значков элементов меню для:
 
 - Наиболее часто используемые элементы.
-- Элементы меню, значок которых является стандартным или хорошо известным.
-- Элементы меню, значок которых хорошо иллюстрирует предназначение команды.
+- Элементы меню, значок standard или известное.
+- Элементы меню, значок также показано, что делает команда.
 
 Вы не обязаны предоставлять значки для команд без стандартных зрительных образов. Загадочные значки бесполезны, создают визуальные помехи и не позволяют пользователям сосредоточиться на важных меню.
 
@@ -126,19 +126,19 @@ ms.locfileid: "9058695"
 ````
 
 > [!TIP]
-> Размер значков в MenuFlyoutItem составляет 16 x 16 пикселей. Если вы используете SymbolIcon, FontIcon или PathIcon, значок автоматически масштабируется до правильного размера без потери качества. При использовании BitmapIcon убедитесь, что ваше средство равно 16x16 пикселей.  
+> Размер значка в MenuFlyoutItem — 16x16px. Если вы используете SymbolIcon, FontIcon или PathIcon, значок автоматически масштабируется до требуемых размеров без потери точности. При использовании BitmapIcon убедитесь, что ваше средство равно 16x16 пикселей.  
 
-## <a name="create-a-menu-flyout-or-a-context-menu"></a>Создание всплывающего меню или контекстного меню
+## <a name="create-a-menu-flyout-or-a-context-menu"></a>Создать всплывающее меню или контекстного меню
 
-Чтобы создать всплывающее меню или контекстного меню, используйте [класс MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030). Чтобы задать содержимое меню, необходимо добавить объекты [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) и [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) в элемент MenuFlyout.
+Чтобы создать всплывающее меню или контекстного меню, используйте [MenuFlyout класс](https://msdn.microsoft.com/library/windows/apps/dn299030). Чтобы задать содержимое меню, необходимо добавить объекты [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) и [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) в элемент MenuFlyout.
 
 Эти объекты предназначены для:
 
-- [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)— выполнения немедленного действия;
-- [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx)— включения или отключения параметра;
-- [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)— визуального разделения элементов меню.
+- [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx) — выполнения немедленного действия;
+- [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) — включения или отключения параметра;
+- [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) — визуального разделения элементов меню.
 
-В этом примере создается [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) и использует свойство [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) , доступное для большинства элементов управления, чтобы показать MenuFlyout как контекстного меню.
+В этом примере создается [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) и использует [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) свойства, свойства, доступные для большинства элементов управления, чтобы показать MenuFlyout в качестве контекстного меню.
 
 ````xaml
 <Rectangle
@@ -206,25 +206,25 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-### <a name="light-dismiss"></a>С исчезновением
+### <a name="light-dismiss"></a>Индикатор отклонить
 
-Элементы управления с исчезновением, такие как меню, контекстные меню и другие всплывающие элементы, захватывают фокус клавиатуры или геймпада внутри промежуточного пользовательского интерфейса, пока не будут закрыты. Для предоставления визуальной подсказки по этому поведению элементы управления с исчезновением на Xbox отображают наложение, затемняющее видимость вне области действия пользовательского интерфейса. Это поведение можно изменить с помощью свойства [LightDismissOverlayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx). По умолчанию промежуточные элементы пользовательского интерфейса отображают наложение с исчезновением на Xbox (**Auto**), но не на других семействах устройств, хотя приложения могут принудительно устанавливать наложению постоянное значение **Вкл. ** или **Выкл.**.
+Элементы управления с исчезновением, такие как меню, контекстные меню и другие всплывающие элементы, захватывают фокус клавиатуры или геймпада внутри промежуточного пользовательского интерфейса, пока не будут закрыты. Для предоставления визуальной подсказки по этому поведению элементы управления с исчезновением на Xbox отображают наложение, затемняющее видимость вне области действия пользовательского интерфейса. Это поведение можно изменить с помощью свойства [LightDismissOverlayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx). По умолчанию промежуточные элементы пользовательского интерфейса отображают наложение с исчезновением на Xbox (**Auto**), но не на других семействах устройств, хотя приложения могут принудительно устанавливать наложению постоянное значение **Вкл** или **Выкл**.
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode="Off" />
 ```
 
-## <a name="create-a-menu-bar"></a>Создать меню
+## <a name="create-a-menu-bar"></a>Создать строку меню
 
 > [!IMPORTANT]
-> В строке требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии или [Библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> Строка меню требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии, или [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-Используйте те же элементы для создания меню в строке меню как всплывающее меню. Тем не менее вместо группирование объектов MenuFlyoutItem в MenuFlyout, можно сгруппировать необходимые процедуры в элементе MenuBarItem. Каждый MenuBarItem добавляется в строке меню верхнего уровня.
+Используйте те же элементы для создания меню в строке меню, как показано всплывающее меню. Тем не менее вместо MenuFlyoutItem объектов в MenuFlyout группирования, можно сгруппировать их в элементе MenuBarItem. Каждый MenuBarItem добавляется к строке меню, как меню верхнего уровня.
 
-![Пример панели меню](images/menu-bar-submenu.png)
+![Пример строки меню](images/menu-bar-submenu.png)
 
 > [!NOTE]
-> В этом примере показано, как только для создания со структурой пользовательского интерфейса, но не показывать реализации всех команд.
+> В этом примере показано, как только для создания структуры пользовательского интерфейса, но не содержит реализации всех команд.
 
 ```xaml
 <MenuBar>
@@ -256,9 +256,9 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
-- [Пример контекстного меню на XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
+- [Пример XAML контекстное меню](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
 
-## <a name="related-articles"></a>Смежные разделы
+## <a name="related-articles"></a>Связанные статьи
 
 - [Класс MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)
-- [Класс строки меню](/uwp/api/Windows.UI.Xaml.Controls.MenuBar)
+- [Класс MenuBar](/uwp/api/Windows.UI.Xaml.Controls.MenuBar)

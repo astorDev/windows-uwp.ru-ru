@@ -1,6 +1,6 @@
 ---
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
-title: Всплывающий элемент управления
+Description: Диалоговые окна и всплывающие элементы используются для временного отображения элементов пользовательского интерфейса по запросу пользователя, либо если происходит нечто, требующее уведомления или подтверждения.
+title: Элементы управления всплывающего меню
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
@@ -12,11 +12,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 52de0933bf51adaae6b0923868e12eb92ced4a1a
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037136"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625019"
 ---
 # <a name="flyouts"></a>Всплывающие элементы
 
@@ -24,15 +24,15 @@ ms.locfileid: "9037136"
 
 ![Контекстное меню размещается внутри всплывающего элемента](../images/flyout-nested.png)
 
-> **Важные API -интерфейсы**: [класс Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **Важные API-интерфейсы**: [Класс всплывающего меню](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
-## <a name="is-this-the-right-control"></a>Выбор подходящего элемента управления
+## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 * Не используйте всплывающий элемент вместо [подсказки](../tooltips.md) или [контекстного меню](../menus.md). Используйте подсказку, чтобы вывести краткое описание, которое исчезает через определенное время. Для контекстных действий, связанных с элементом пользовательского интерфейса, например копированием или вставкой, используйте контекстное меню.
 
-Рекомендации по использованию всплывающий элемент и когда следует использовать диалоговое окно (аналогичного элемента управления), см. в разделе [диалоговые окна и всплывающие элементы](index.md). 
+Рекомендации по использованию всплывающего меню и когда следует использовать диалоговое окно (аналогичного элемента управления), см. в разделе [диалоговые окна и всплывающие окна](index.md). 
 
-## <a name="examples"></a>Примеры.
+## <a name="examples"></a>Примеры
 
 <table>
 <th align="left">Галерея элементов управления XAML<th>
@@ -41,17 +41,17 @@ ms.locfileid: "9037136"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы открыть приложение и увидеть <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> или <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> в действии.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-##  <a name="how-to-create-a-flyout"></a>Создание всплывающего элемента
+##  <a name="how-to-create-a-flyout"></a>Создание всплывающего меню
 
 
-Всплывающие элементы связаны с определенными элементами управления. Вы можете использовать свойство [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) для указания места отображения всплывающего элемента: вверху, слева, внизу, справа или в центре. Если выбрать [полный режим размещения](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), приложение растягивает всплывающий элемент или размещает его в центре окна приложения. Некоторые элементы управления, например [Button](/uwp/api/Windows.UI.Xaml.Controls.Button), содержат свойство [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout), которое можно использовать для привязки всплывающего элемента или [контекстного меню](../menus.md).
+Всплывающие элементы связаны с определенными элементами управления. Можно использовать [размещения](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) свойство, чтобы указать, где отображается всплывающее окно: TOP, Left, нижней, справа или Full. Если выбрать [полный режим размещения](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), приложение растягивает всплывающий элемент или размещает его в центре окна приложения. Некоторые элементы управления, например [Button](/uwp/api/Windows.UI.Xaml.Controls.Button), содержат свойство [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout), которое можно использовать для привязки всплывающего элемента или [контекстного меню](../menus.md).
 
 В этом примере создается простой всплывающий элемент, в котором отображается текст при нажатии кнопки.
 ````xaml
@@ -145,9 +145,9 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 </Flyout>
 ````
 
-## <a name="styling-flyouts-for-10-foot-experiences"></a>Всплывающие элементы стиля для большом расстоянии
+## <a name="styling-flyouts-for-10-foot-experiences"></a>Задание стиля всплывающие окна для работы в самом общем 10
 
-Элементы управления с исчезновением, например всплывающий элемент, захватывают фокус клавиатуры или геймпада внутри промежуточного пользовательского интерфейса, пока не будут закрыты. Для предоставления визуальной подсказки по этому поведению элементы управления с исчезновением на Xbox отображают наложение, затемняющее контрастность и видимость вне области действия пользовательского интерфейса. Это поведение можно изменить с помощью нового свойства [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode). По умолчанию всплывающие элементы пользовательского интерфейса отображают наложение с исчезновением на Xbox, но не на других семействах устройств, хотя приложения могут принудительно устанавливать наложению постоянное значение **Вкл.** или **Выкл.**.
+Элементы управления с исчезновением, например всплывающий элемент, захватывают фокус клавиатуры или геймпада внутри промежуточного пользовательского интерфейса, пока не будут закрыты. Для предоставления визуальной подсказки по этому поведению элементы управления с исчезновением на Xbox отображают наложение, затемняющее контрастность и видимость вне области действия пользовательского интерфейса. Это поведение можно изменить с помощью нового свойства [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode). По умолчанию всплывающие элементы пользовательского интерфейса отображают наложение с исчезновением на Xbox, но не на других семействах устройств, хотя приложения могут принудительно устанавливать наложению постоянное значение **Вкл** или **Выкл**.
 
 ![Всплывающий элемент с наложением яркости](../images/flyout-smoke.png)
 
@@ -212,8 +212,8 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-articles"></a>Еще по теме
+## <a name="related-articles"></a>Связанные статьи
 - [Подсказки](../tooltips.md)
-- [Меню и контекстное меню](../menus.md)
-- [Класс Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+- [Меню и контекстного меню](../menus.md)
+- [Класс всплывающего меню](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 - [Класс ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)

@@ -1,23 +1,17 @@
 ---
 author: mijacobs
 layout: LandingPage
-description: Универсальная платформа Windows (UWP) позволяет создавать приложения для любых устройств с Windows — компьютеров, телефонов, Xbox One, HoloLens и т. д. — и публиковать их в Магазине.
-title: Документация по UWP— разработчики приложений UWP | Документы Майкрософт
+description: 'Универсальная платформа Windows (UWP) позволяет создавать приложения для любых устройств с Windows — компьютеров, телефонов, Xbox One, HoloLens и т. д. — и публиковать их в Store.'
+title: "Документация по UWP\_— разработчики приложений UWP\_| Документация Майкрософт"
 ms.topic: landing-page
 ms.author: mijacobs
 ms.date: 08/4/2017
-keywords: windows uwp, универсальная платформа windows, API среды выполнения Windows, windows api, справочник windows api, winrt api, справочник по windows api, uwp api, справочник по uwp api, разработка для uwp, проектирование uwp, публикация uwp
+keywords: 'windows uwp, universal windows platform, Windows Runtime APIs, windows api, windows api ref, winrt api, windows api reference, uwp api, uwp api reference, develop uwp, design uwp, publish uwp'
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: ce1923fa071344a848b4b0c4fab1ed6da6da48f7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047153"
 ---
 # <a name="universal-windows-platform-documentation"></a>Документация по универсальной платформе Windows
-Универсальная платформа Windows (UWP) позволяет создавать приложения для любых устройств с Windows — компьютеров, телефонов, Xbox One, HoloLens и т. д. — и публиковать их в Microsoft Store.
+Универсальная платформа Windows (UWP) позволяет создавать приложения для любых устройств с Windows (компьютеров, телефонов, Xbox One, HoloLens и т. д.) и публиковать их в Microsoft Store.
 
 <ul class="panelContent cardsF">
     <li>
@@ -30,15 +24,15 @@ ms.locfileid: "9047153"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Новые возможности</h3>
+                        <h3>Что нового</h3>
                         <p>
-                            <a href="whats-new/windows-10-version-latest.md">Новые API-интерфейсы и возможности</a>
+                            <a href="whats-new/windows-10-version-latest.md">Новые интерфейсы API и возможности</a>
                         </p>
                         <p>
                             <a href="whats-new/windows-docs-latest.md">Что нового в документации</a>
                         </p>
                         <p>
-                            <a href="whats-new/experimental-apis.md">Экспериментальные API-интерфейсы</a>
+                            <a href="whats-new/experimental-apis.md">Экспериментальные интерфейсы API</a>
                         </p>
                     </div>
                 </div>
@@ -116,13 +110,13 @@ ms.locfileid: "9047153"
                             <a href="enterprise/index.md">Корпоративные приложения</a>
                         </p>
                         <p>
-                            <a href="packaging/index.md">Создание пакетов приложений</a>
+                            <a href="packaging/index.md">Пакеты приложений</a>
                         </p>
                         <p>
-                            <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Набор средств сообщества UWP</a>
+                            <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Набор инструментов сообщества Windows</a>
                         </p>
                         <p>
-                            <a href="porting/index.md">Перенос приложений в Windows10</a>
+                            <a href="porting/index.md">Перенос приложений в Windows 10</a>
                         </p>
                         <p>
                             <a href="winrt-components/index.md">Компоненты среды выполнения Windows</a>
@@ -131,7 +125,7 @@ ms.locfileid: "9047153"
                             <a href="apps-for-education/index.md">Образовательные приложения</a>
                         </p>
                         <p>
-                            <a href="porting/apps-on-arm.md">Windows10 на архитектуре ARM</a>
+                            <a href="porting/apps-on-arm.md">Windows 10 на архитектуре ARM</a>
                         </p>
                     </div>
                 </div>
@@ -150,16 +144,16 @@ ms.locfileid: "9047153"
                     <div class="cardText">
                         <h3>Разработка игр</h3>
                         <p>
-                            <a href="gaming/e2e.md">Руководство по разработке игр для Windows 10</a>
+                            <a href="gaming/e2e.md">Руководство по разработке игр для Windows 10</a>
                         </p>
                         <p>
                             <a href="gaming/index.md">Программирование игр</a>
                         </p>
                         <p>
-                            <a href="gaming/directx-programming.md">Программирование в DirectX</a>
+                            <a href="gaming/directx-programming.md">Программирование для DirectX</a>
                         </p>
                         <p>
-                            <a href="xbox-apps/index.md">UWP на Xbox One</a>
+                            <a href="xbox-apps/index.md">Приложения UWP для Xbox One</a>
                         </p>
                         <p>
                             <a href="xbox-live/index.md">Xbox Live</a>
@@ -193,7 +187,7 @@ ms.locfileid: "9047153"
                             <a href="publish/create-your-app-by-reserving-a-name.md">Резервирование имени</a>
                         </p>
                         <p>
-                            <a href="publish/set-app-pricing-and-availability.md">Настройки цен и доступности приложений</a>
+                            <a href="publish/set-app-pricing-and-availability.md">Настройка цен и доступности приложений</a>
                         </p>
                     </div>
                 </div>
@@ -210,12 +204,12 @@ ms.locfileid: "9047153"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>API reference (Справочник по API)</h3>
+                        <h3>Справочник по API</h3>
                         <p>
-                            <a href="//docs.microsoft.com/uwp/">API-интерфейсы универсальной платформы Windows</a>
+                            <a href="//docs.microsoft.com/uwp/">Интерфейсы API универсальной платформы Windows</a>
                         </p>
                         <p>
-                            <a href="//docs.microsoft.com/uwp/API">Пространство имен универсальной платформы Windows</a>
+                            <a href="//docs.microsoft.com/uwp/API">Пространства имен универсальной платформы Windows (UWP)</a>
                         </p>
                         <p>
                             <a href="//docs.microsoft.com/uwp/extension-sdks">Пакеты SDK расширения</a>
@@ -240,13 +234,13 @@ ms.locfileid: "9047153"
                     <div class="cardText">
                         <h3>Дополнительные ссылки</h3>
                         <p>
-                            <a href="//docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">API Win32 и COM для приложений UWP</a>
+                            <a href="//docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">Интерфейсы API Win32 и COM для приложений UWP</a>
                         </p>
                         <p>
                             <a href="//msdn.microsoft.com/library/windows/apps/mt185501.aspx">Платформа .NET для приложений UWP</a>
                         </p>
                         <p>
-                            <a href="//msdn.microsoft.com/library/windows/apps/mt691886.aspx">API-интерфейсы Microsoft Store Services SDK</a>
+                            <a href="//msdn.microsoft.com/library/windows/apps/mt691886.aspx">Интерфейсы API Microsoft Store Services SDK</a>
                         </p>
                         <p>
                             <a href="//docs.microsoft.com/uwp/extension-sdks">Пакеты SDK расширения семейства устройств и контракты API</a>
@@ -271,7 +265,7 @@ ms.locfileid: "9047153"
                     <div class="cardText">
                         <h3>Сообщество и поддержка</h3>
                         <p>
-                            <a href="https://twitter.com/WindowsDocs">@WindowsDocsв Twitter</a>
+                            <a href="https://twitter.com/WindowsDocs">@WindowsDocs в Twitter</a>
                         </p>
                         <p>
                             <a href="https://aka.ms/OneDevMinute">OneDevMinute на YouTube</a>

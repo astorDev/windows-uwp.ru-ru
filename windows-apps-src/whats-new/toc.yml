@@ -1,61 +1,61 @@
 items:
-- name: Новые возможности для разработчиков в Windows 10, сборка 17763
+- name: Новые возможности для разработчиков в Windows 10, сборка 17763
   href: ../whats-new/windows-10-build-17763.md
   items:
-  - name: Добавления API в Windows10, сборка 17763
+  - name: Обновления API в Windows 10, сборка 17763
     href: ../whats-new/windows-10-build-17763-api-diff.md
-- name: Что нового в документации для Windows, январь 2019г.
+- name: Что нового в документации для Windows, январь 2019 г.
   href: ../whats-new/windows-docs-january-2019.md
   items:
-  - name: Что нового в документации для Windows, сентябрь 2018г.
+  - name: Что нового в документации для Windows, сентябрь 2018 г.
     href: ../whats-new/windows-docs-september-2018.md
-  - name: Что нового в документации для Windows, август 2018г.
+  - name: Что нового в документации для Windows, август 2018 г.
     href: ../whats-new/windows-docs-august-2018.md
-  - name: Что нового в документации для Windows, июль 2018г.
+  - name: Что нового в документации для Windows, июль 2018 г.
     href: ../whats-new/windows-docs-july-2018.md
-  - name: Что нового в документации для Windows, май 2018 г.
+  - name: Что нового в документации для Windows, май 2018 г.
     href: ../whats-new/windows-docs-may-2018.md
-  - name: Что нового в документации для Windows, февраль 2018 г.
+  - name: Что нового в документации для Windows, февраль 2018 г.
     href: ../whats-new/windows-docs-february-2018.md
-  - name: Что нового в документации для Windows, декабрь 2017 г.
+  - name: Что нового в документации для Windows, декабрь 2017 г.
     href: ../whats-new/windows-docs-december-2017.md
-  - name: Что нового в документации для Windows, сентябрь 2017г.
+  - name: Что нового в документации для Windows, сентябрь 2017 г.
     href: ../whats-new/windows-docs-september-2017.md
-  - name: Что нового в документации для Windows, август 2017г.
+  - name: Что нового в документации для Windows, август 2017 г.
     href: ../whats-new/windows-docs-august-2017.md
-  - name: Что нового в документации для Windows, июль 2017г.
+  - name: Что нового в документации для Windows, июль 2017 г.
     href: ../whats-new/windows-docs-july-2017.md
-- name: Предыдущие версии Windows 10
+- name: Предыдущие версии Windows 10
   items:
-  - name: Новые возможности для разработчиков в Windows 10, сборка 17134
+  - name: Новые возможности для разработчиков в Windows 10, сборка 17134
     href: ../whats-new/windows-10-build-17134.md
     items:
-    - name: Добавления API в Windows10, сборка 17134
+    - name: Обновления API в Windows 10, сборка 17134
       href: ../whats-new/windows-10-build-17134-api-diff.md
-  - name: Новые возможности для разработчиков в Windows 10, сборка 16299
+  - name: Новые возможности для разработчиков в Windows 10, сборка 16299
     href: ../whats-new/windows-10-build-16299.md
     items:
-    - name: Добавления API в Windows10, сборка 16299
+    - name: Добавления API в Windows 10, сборка 16299
       href: ../whats-new/windows-10-build-16299-api-diff.md
-  - name: Что нового в Windows 10, сборка 15063
+  - name: Что нового в Windows 10, сборка 15063
     href: ../whats-new/windows-10-build-15063.md
     items:
-    - name: Добавления API в Windows10, сборка 15063
+    - name: Добавления API в Windows 10, сборка 15063
       href: ../whats-new/windows-10-build-15063-api-diff.md
-  - name: Что нового в Windows 10, сборка 14393
+  - name: Что нового в Windows 10, сборка 14393
     href: ../whats-new/windows-10-build-14393.md
     items:
-    - name: Добавления API в Windows10, сборка 14393
+    - name: Добавления API в Windows 10, сборка 14393
       href: ../whats-new/windows-10-build-14393-api-diff.md
-  - name: Что нового в Windows 10, сборка 10586
+  - name: Что нового в Windows 10, сборка 10586
     href: ../whats-new/windows-10-build-10586.md
-  - name: Что нового в Windows 10, сборка 10240
+  - name: Что нового в Windows 10, сборка 10240
     href: ../whats-new/windows-10-build-10240.md
-- name: Экспериментальные API-интерфейсы
+- name: Экспериментальные интерфейсы API
   href: ../whats-new/experimental-apis.md
 ms.openlocfilehash: 136c6bd34dd3358d3f089aa06a664029a446b368
-ms.sourcegitcommit: cfdc854fede8e586202523cdb59d3d0a2f5b4b36
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "9013943"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582992"
