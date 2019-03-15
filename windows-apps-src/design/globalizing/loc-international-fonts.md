@@ -38,7 +38,7 @@ ms.locfileid: "57601139"
 | Центральнокурдский (арабский) | ku-ARAB-IQ | Segoe UI |
 | Чероки (чероки) | chr-CHER-US | Gadugi |
 | Китайский (упрощенное письмо) | zh-CN | MS YaHei UI |
-| Китайский (традиционное письмо, Гонконг) | zh-HK | MS JhengHei UI |
+| Китайский (традиционное письмо,  Гонконг, САР) | zh-HK | MS JhengHei UI |
 | Китайский (традиционное письмо, Тайвань) | zh-TW | MS JhengHei UI |
 | Хорватский | hr-HR | Segoe UI |
 | Чешский | cs-CZ | Segoe UI |

@@ -233,7 +233,7 @@ ms.locfileid: "57595569"
 <tr class="even">
 <td align="left"><b>HomeAddressCountry</b></td>
 <td align="left"><p>Необязательно.</p>
-<p>Страна проживания.</p></td>
+<p>Страна или регион проживания.</p></td>
 
 </tr>
 <tr class="odd">
@@ -335,7 +335,7 @@ ms.locfileid: "57595569"
 <tr class="odd">
 <td align="left"><b>WorkAddressCountry</b></td>
 <td align="left"><p>Необязательно.</p>
-<p>Страна рабочего адреса.</p></td>
+<p>Страна или регион рабочего адреса.</p></td>
 </tr>
 
 <tr class="even">
