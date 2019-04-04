@@ -1,11 +1,17 @@
 ---
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-description: 'В этом разделе приведены статьи, в которых содержатся сведения о платформе XAML для приложений универсальной платформы Windows (UWP).'
+description: В этом разделе приведены статьи, в которых содержатся сведения о платформе XAML для приложений универсальной платформы Windows (UWP).
 title: Платформа XAML
 ms.date: 02/08/2017
 ms.topic: article
-keywords: "windows\_10, uwp"
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: b725a823f31309c2419bcdc5095a78994d1929c0
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583441"
 ---
 # <a name="xaml-platform"></a>Платформа XAML
 

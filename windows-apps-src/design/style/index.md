@@ -1,12 +1,18 @@
 ---
-description: 'Научитесь использовать цвета, оформление и значки для индивидуализации приложения UWP с помощью руководства по стилю UWP.'
-keywords: 'руководство по стилю uwp, руководство по проектированию, шрифтовое оформление, движение, звук, движение, разработка приложений'
+description: Научитесь использовать цвета, оформление и значки для индивидуализации приложения UWP с помощью руководства по стилю UWP.
+keywords: руководство по стилю uwp, руководство по проектированию, шрифтовое оформление, движение, звук, движение, разработка приложений
 title: Стиль приложений UWP
 ms.date: 08/10/2017
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: 1d313e35b7d1ab3ebe72bd3a073323fe8782098a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583776"
 ---
 # <a name="style-for-uwp-apps"></a>Стиль приложений UWP
 

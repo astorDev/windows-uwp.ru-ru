@@ -1,15 +1,20 @@
 ---
 layout: LandingPage
-description: 'Эта страница содержит информацию о том, как приступить к разработке приложений UWP для платформ ARM64 и Win32.'
-title: "Windows\_10 на архитектуре ARM"
+description: Эта страница содержит информацию о том, как приступить к разработке приложений UWP для платформ ARM64 и Win32.
+title: Windows 10 на архитектуре ARM
 author: msatranjr
 ms.author: misatran
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.topic: article
-keywords: 'Windows 10 на ARM, ARM, разработка приложений Win32 и ARM64, разработка драйверов ARM64'
+keywords: Windows 10 на ARM, ARM, разработка приложений Win32 и ARM64, разработка драйверов ARM64
+ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583360"
 ---
-
 # <a name="windows-10-on-arm"></a>Windows 10 на архитектуре ARM
 Windows 10 выполняется на компьютерах, использующих процессоры ARM. Эта страница содержит дополнительные сведения об этой платформе и о том, как приступить к разработке приложений для нее. Мы также рекомендуем вам оставить отзыв с помощью ссылок в нижней части страницы.
 

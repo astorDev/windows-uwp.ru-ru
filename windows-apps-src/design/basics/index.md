@@ -1,10 +1,16 @@
 ---
-description: 'Научитесь проектировать и писать код для приложения UWP, с которым удобно работать и которое прекрасно выглядит на различных устройствах и экранах разного размера.'
+description: Научитесь проектировать и писать код для приложения UWP, с которым удобно работать и которое прекрасно выглядит на различных устройствах и экранах разного размера.
 title: Основы оформления
-keywords: 'макет приложения uwp, универсальная платформа Windows, проектирование приложений, интерфейс'
+keywords: макет приложения uwp, универсальная платформа Windows, проектирование приложений, интерфейс
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
+ms.openlocfilehash: 6afaada45c3f332085135212be39e43bb1c3fe8f
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583149"
 ---
 # <a name="design-basics-for-uwp-apps"></a>Основы проектирования приложений UWP
 

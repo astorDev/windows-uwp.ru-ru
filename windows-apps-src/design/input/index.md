@@ -1,7 +1,7 @@
 ---
-description: 'Оптимизируйте свое приложение для ввода с помощью пера, Surface Dial и других способов ввода.'
+description: Оптимизируйте свое приложение для ввода с помощью пера, Surface Dial и других способов ввода.
 title: Методы ввода и взаимодействие
-keywords: 'входные данные приложения, настройка приложения UWP'
+keywords: входные данные приложения, настройка приложения UWP
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
@@ -9,6 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
+ms.openlocfilehash: 4f66d808cafcc6fba89cebde352d191335068925
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583104"
 ---
 # <a name="input-and-interactions"></a>Методы ввода и взаимодействие
 

@@ -1,6 +1,6 @@
 ---
-description: 'Узнайте, как сделать ваше приложение доступным для людей во всем мире.'
-keywords: 'специальные возможности приложений uwp, глобализация, приложения с конструированием, требования к приложению со специальными возможностями'
+description: Узнайте, как сделать ваше приложение доступным для людей во всем мире.
+keywords: специальные возможности приложений uwp, глобализация, приложения с конструированием, требования к приложению со специальными возможностями
 title: Удобство использования в приложениях UWP — разработка приложений для Windows
 layout: LandingPage
 template: detail.hbs
@@ -8,6 +8,12 @@ ms.date: 10/18/2017
 ms.topic: landing-page
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
+ms.openlocfilehash: f218df3b4118508049023218b64e6c7321fbbda9
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583261"
 ---
 # <a name="usability-for-uwp-apps"></a>Удобство использования приложений UWP
 

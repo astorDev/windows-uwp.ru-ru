@@ -1,11 +1,17 @@
 ---
 title: Программирование игр
-description: 'Универсальная платформа Windows (UWP) открывает новые возможности создания, распространения и монетизации игр. Узнайте о том, как приступить к созданию новой игры или перенести существующую игру.'
+description: Универсальная платформа Windows (UWP) открывает новые возможности создания, распространения и монетизации игр. Узнайте о том, как приступить к созданию новой игры или перенести существующую игру.
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ms.date: 06/13/2017
 ms.topic: article
-keywords: 'windows 10, uwp, игры, directx'
+keywords: windows 10, uwp, игры, directx
 ms.localizationpriority: medium
+ms.openlocfilehash: 2dddead7dcc2eedbe4e32fa4bfd749bed60ba796
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583301"
 ---
 # <a name="game-programming"></a>Программирование игр
 

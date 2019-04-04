@@ -1,11 +1,17 @@
 ---
 title: Разработка приложений для образовательных учреждений.
-description: 'В этом разделе перечислены ресурсы по универсальным приложениям для Windows, которые помогут вам в создании образовательных приложений для платформы Windows 10.'
+description: В этом разделе перечислены ресурсы по универсальным приложениям для Windows, которые помогут вам в создании образовательных приложений для платформы Windows 10.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'Windows 10, uwp, образование'
+keywords: Windows 10, uwp, образование
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
+ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583426"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Разработка образовательных универсальных приложений для Windows
 ![Снимок экрана приложения для тестирования](images/take-a-test-screen-small.png)

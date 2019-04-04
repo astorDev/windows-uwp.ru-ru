@@ -1,12 +1,18 @@
 ---
 title: Глоссарий графических терминов Direct3D
-description: 'Определения графических терминов, используемых Microsoft Direct3D.'
+description: Определения графических терминов, используемых Microsoft Direct3D.
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
-  - Глоссарий графических терминов Direct3D
+- Глоссарий графических терминов Direct3D
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
+ms.openlocfilehash: 3cb6a2466ea201c9b5047f7eb159477a0d584429
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583288"
 ---
 # <a name="direct3d-graphics-glossary"></a>Глоссарий графических терминов Direct3D.
 

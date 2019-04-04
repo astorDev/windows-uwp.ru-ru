@@ -1,12 +1,18 @@
 ---
 description: Получите новейшие загружаемые файлы и инструменты для создания макета пользовательского интерфейса приложений UWP и проектирования элементов управления.
-keywords: 'макет приложения uwp, пользовательский интерфейс, макеты пользовательского интерфейса, загрузки, инструменты uwp'
+keywords: макет приложения uwp, пользовательский интерфейс, макеты пользовательского интерфейса, загрузки, инструменты uwp
 title: Наборы средств для проектирования и примеры приложений UWP
 ms.date: 10/11/2018
 ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: cbe17d8e7093a15c66e482acd935974bc57074ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583606"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Наборы средств для проектирования и примеры приложений UWP
  

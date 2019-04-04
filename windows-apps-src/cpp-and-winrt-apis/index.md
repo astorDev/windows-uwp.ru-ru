@@ -1,10 +1,16 @@
 ---
-description: "C++/WinRT\_— это современная, полностью соответствующая стандартам проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков."
+description: C++/WinRT — это современная, полностью соответствующая стандартам проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков.
 title: C++/WinRT
 ms.date: 05/14/2018
 ms.topic: article
-keywords: 'Windows 10, UWP, стандартный, c++, cpp, winrt, проекция'
+keywords: Windows 10, UWP, стандартный, c++, cpp, winrt, проекция
 ms.localizationpriority: medium
+ms.openlocfilehash: 664fd22fc954403776e1becc31563a06d5fdd15b
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583077"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 

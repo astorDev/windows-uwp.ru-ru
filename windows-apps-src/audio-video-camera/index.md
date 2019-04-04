@@ -1,11 +1,17 @@
 ---
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
-description: 'В этом разделе содержатся сведения о создании приложений для универсальной платформы Windows (UWP), которые записывают, воспроизводят или редактируют фотографии, видео или аудио.'
-title: 'Звук, видео и камера'
+description: В этом разделе содержатся сведения о создании приложений для универсальной платформы Windows (UWP), которые записывают, воспроизводят или редактируют фотографии, видео или аудио.
+title: Звук, видео и камера
 ms.date: 02/08/2017
 ms.topic: article
-keywords: "Windows\_10, uwp"
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: 6aecc5b9a43d6cb00b42b1535a196afd8a138af9
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583053"
 ---
 # <a name="audio-video-and-camera"></a>Звук, видео и камера
 

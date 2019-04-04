@@ -1,11 +1,17 @@
 ---
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
-description: 'Пакеты Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK и Microsoft Store предоставляют множество функций, позволяющих извлекать финансовую прибыль из своих приложений и получать клиентов в процессе взаимодействия с пользователями.'
-title: 'Монетизация, привлечение и службы Store'
+description: Пакеты Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK и Microsoft Store предоставляют множество функций, позволяющих извлекать финансовую прибыль из своих приложений и получать клиентов в процессе взаимодействия с пользователями.
+title: Монетизация, привлечение и службы Store
 ms.date: 11/29/2017
 ms.topic: article
-keywords: "windows\_10, uwp, monetize, engage, promote, Store services"
+keywords: windows 10, uwp, monetize, engage, promote, Store services
 ms.localizationpriority: medium
+ms.openlocfilehash: 747dbf7951a9db20bb8a1063757b88320fcc3f43
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583401"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Монетизация, привлечение и службы Store
 

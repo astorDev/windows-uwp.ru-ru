@@ -4,8 +4,14 @@ description: В следующей схеме представлен обзор 
 title: Функции корпоративного уровня
 ms.date: 08/30/2018
 ms.topic: article
-keywords: "Windows\_10, uwp"
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: fae4d5b57ac5cfb5c47fca1a2f3476cd16a56534
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583200"
 ---
 # <a name="enterprise"></a>Функции корпоративного уровня
 

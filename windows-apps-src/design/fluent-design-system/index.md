@@ -1,11 +1,17 @@
 ---
 description: Изучите систему проектирования Fluent Design и способы ее интеграции в приложения.
 title: Система Fluent Design для Windows
-keywords: 'структура приложения uwp, универсальная платформа windows, проектирование приложений, интерфейс, система fluent design'
+keywords: структура приложения uwp, универсальная платформа windows, проектирование приложений, интерфейс, система fluent design
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: e8a650fcb1edfcd937ed6e42dacc4473627d853f
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583376"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Система Fluent Design для разработчиков приложений для Windows
 

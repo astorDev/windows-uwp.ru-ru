@@ -1,11 +1,17 @@
 ---
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
-title: 'Файлы, папки и библиотеки'
-description: 'Узнайте о параметрах приложения для чтения и записи, о средствах выбора файлов и папок, а также о специальных расположениях песочниц, например о библиотеках видео и музыки.'
+title: Файлы, папки и библиотеки
+description: Узнайте о параметрах приложения для чтения и записи, о средствах выбора файлов и папок, а также о специальных расположениях песочниц, например о библиотеках видео и музыки.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: "Windows\_10, uwp"
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: 01efd2cfd88143f99bf9058e8140308eb6afe458
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583368"
 ---
  # <a name="files-folders-and-libraries"></a>Файлы, папки и библиотеки
 

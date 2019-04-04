@@ -4,8 +4,14 @@ title: Привязка данных
 description: Привязка данных обеспечивает отображение данных в пользовательском интерфейсе приложения и (дополнительно) синхронизацию с этими данными.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: "Windows\_10, uwp"
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: eb9283e336cb13d733098c139edc36d1216b2727
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583466"
 ---
 # <a name="data-binding"></a>Привязка данных
 

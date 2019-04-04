@@ -1,13 +1,19 @@
 ---
-Description: 'Узнайте, как использовать плитки, индикаторы событий, всплывающие и простые уведомления, чтобы предоставлять точки входа в свои приложения и держать пользователей в курсе последних событий.'
-title: 'Плитки, индикаторы событий и уведомления'
+Description: Узнайте, как использовать плитки, индикаторы событий, всплывающие и простые уведомления, чтобы предоставлять точки входа в свои приложения и держать пользователей в курсе последних событий.
+title: Плитки, индикаторы событий и уведомления
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
-label: 'Tiles, badges, and notifications'
+label: Tiles, badges, and notifications
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: "Windows\_10, uwp"
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: 8a87fe2bbff1768da43d6cb366b173077555270f
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583386"
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>Плитки, индикаторы событий и уведомления для приложений UWP
  

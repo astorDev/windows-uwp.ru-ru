@@ -4,8 +4,14 @@ title: Доступ к данным
 description: В этом разделе описывается хранение данных на устройстве в частной базе данных и использование объектно-реляционного отображения в приложениях универсальной платформы Windows (UWP).
 ms.date: 11/13/2017
 ms.topic: article
-keywords: 'windows 10, uwp, данные, база данных, реляционная, таблицы, sqlite'
+keywords: windows 10, uwp, данные, база данных, реляционная, таблицы, sqlite
 ms.localizationpriority: medium
+ms.openlocfilehash: eb5adbdd3ae12d039d934e8d0cbe468ae5c1187c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583309"
 ---
 # <a name="data-access"></a>Доступ к данным
 

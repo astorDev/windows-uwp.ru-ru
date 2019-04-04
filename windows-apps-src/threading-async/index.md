@@ -4,8 +4,14 @@ title: Потоки и асинхронное программирование
 description: Потоки и асинхронное программирование позволяют приложению выполнять задачи асинхронно параллельными потоками.
 ms.date: 05/14/2018
 ms.topic: article
-keywords: "windows\_10, uwp, asynchronous, threads, threading"
+keywords: windows 10, uwp, asynchronous, threads, threading
 ms.localizationpriority: medium
+ms.openlocfilehash: 22c151b90be30b39da7decd9a0ce3109e29b7fb7
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583192"
 ---
 # <a name="threading-and-async-programming"></a>Потоки и асинхронное программирование
 Потоки и асинхронное программирование позволяют приложению выполнять задачи асинхронно параллельными потоками.

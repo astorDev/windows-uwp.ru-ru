@@ -1,11 +1,17 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
-description: 'В этом разделе описан способ совместного использования данных приложениями универсальной платформы Windows (UWP), в том числе использования контракта отправки данных, копирования и вставки, а также перетаскивания.'
+description: В этом разделе описан способ совместного использования данных приложениями универсальной платформы Windows (UWP), в том числе использования контракта отправки данных, копирования и вставки, а также перетаскивания.
 title: Связь между приложениями
 ms.date: 02/08/2017
 ms.topic: article
-keywords: "Windows\_10, uwp"
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: 9dfd86d53805573d002984aaf33ba5f1bf17241c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583096"
 ---
 # <a name="app-to-app-communication"></a>Связь между приложениями
 

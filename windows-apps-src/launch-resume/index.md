@@ -1,11 +1,17 @@
 ---
-title: 'Запуск, возобновление и фоновые задачи'
-description: 'В этом разделе описано, что происходит при запуске, приостановке, возобновлении и завершении работы приложения универсальной платформы Windows (UWP).'
+title: Запуск, возобновление и фоновые задачи
+description: В этом разделе описано, что происходит при запуске, приостановке, возобновлении и завершении работы приложения универсальной платформы Windows (UWP).
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 ms.date: 10/04/2017
 ms.topic: article
-keywords: 'Windows 10, uwp, фоновая задача, служба приложений, подключенные устройства, удаленные системы'
+keywords: Windows 10, uwp, фоновая задача, служба приложений, подключенные устройства, удаленные системы
 ms.localizationpriority: medium
+ms.openlocfilehash: d12113329381c6602edf87a11fc1cc6b822dab4e
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583531"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>Запуск, возобновление и фоновые задачи
 

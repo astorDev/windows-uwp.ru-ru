@@ -1,11 +1,17 @@
 ---
 ms.assetid: 0b891f63-02fa-4c30-b307-9fbcccac5caa
-title: 'Устройства, датчики и питание'
-description: 'Чтобы обеспечить лучшее взаимодействие с пользователями, возможно, потребуется интегрировать в приложение внешние устройства или датчики.'
+title: Устройства, датчики и питание
+description: Чтобы обеспечить лучшее взаимодействие с пользователями, возможно, потребуется интегрировать в приложение внешние устройства или датчики.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: "Windows\_10, uwp"
+keywords: Windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: 06dd8355cd0afd3889c0db2c337c93b5fbedf0fa
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583349"
 ---
 # <a name="devices-sensors-and-power"></a>Устройства, датчики и питание
 

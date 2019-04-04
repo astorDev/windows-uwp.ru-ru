@@ -1,17 +1,23 @@
 ---
-Description: 'Содержательные, хорошо спроектированные эффекты движения оживляют приложение и делают его более профессиональным и тщательно проработанным. Помогите пользователям сориентироваться в изменениях контекста, применяя визуальные переходы.'
+Description: Содержательные, хорошо спроектированные эффекты движения оживляют приложение и делают его более профессиональным и тщательно проработанным. Помогите пользователям сориентироваться в изменениях контекста, применяя визуальные переходы.
 title: Движение и анимация в приложениях UWP
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: "Windows\_10, uwp"
+keywords: Windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583451"
 ---
 # <a name="motion-for-uwp-apps"></a>Движение в приложениях UWP
 
