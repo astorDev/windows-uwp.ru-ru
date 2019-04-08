@@ -80,10 +80,10 @@ winrt::check_bool(::SetEvent(h.get()));
 
 Поскольку API-интерфейсы Windows сообщают об ошибках во время выполнению с помощью различных типов возвращаемых значений, в дополнение к **winrt::check_bool** используется ряд других полезных вспомогательных функций для проверки значений и создания исключений.
 
-- [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult). Проверяет, представляет ли код HRESULT ошибку, и, если это так, вызывает **winrt::throw_hresult**.
-- [**winrt::check_nt**](/uwp/cpp-ref-for-winrt/error-handling/check-nt). Проверяет, представляет ли код ошибку, и, если это так, вызывает **winrt::throw_hresult**.
-- [**winrt::check_pointer**](/uwp/cpp-ref-for-winrt/error-handling/check-pointer). Проверяет, имеет ли указатель значение NULL, и, если это так, вызывает **winrt::throw_last_error**.
-- [**winrt::check_win32**](/uwp/cpp-ref-for-winrt/error-handling/check-win32). Проверяет, представляет ли код ошибку, и, если это так, вызывает **winrt::throw_hresult**.
+- [**WinRT::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult). Проверяет, представляет ли код HRESULT ошибку, и, если это так, вызывает **winrt::throw_hresult**.
+- [**WinRT::check_nt**](/uwp/cpp-ref-for-winrt/error-handling/check-nt). Проверяет, представляет ли код ошибку, и, если это так, вызывает **winrt::throw_hresult**.
+- [**WinRT::check_pointer**](/uwp/cpp-ref-for-winrt/error-handling/check-pointer). Проверяет, имеет ли указатель значение NULL, и, если это так, вызывает **winrt::throw_last_error**.
+- [**WinRT::check_win32**](/uwp/cpp-ref-for-winrt/error-handling/check-win32). Проверяет, представляет ли код ошибку, и, если это так, вызывает **winrt::throw_hresult**.
 
 Вы можете использовать эти вспомогательные функции для стандартных типов кода возврата или можете реагировать на любые ошибки и вызывать [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) или [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult). 
 
@@ -125,15 +125,15 @@ WINRT_VERIFY_(TRUE, ::CloseHandle(value));
 
 ## <a name="important-apis"></a>Важные API
 * [Шаблон функции WinRT::check_bool](/uwp/cpp-ref-for-winrt/error-handling/check-bool)
-* [winrt::check_hresult function](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
+* [функция WinRT::check_hresult](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
 * [Шаблон функции WinRT::check_nt](/uwp/cpp-ref-for-winrt/error-handling/check-nt)
-* [winrt::check_pointer function template](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)
+* [Шаблон функции WinRT::check_pointer](/uwp/cpp-ref-for-winrt/error-handling/check-pointer)
 * [Шаблон функции WinRT::check_win32](/uwp/cpp-ref-for-winrt/error-handling/check-win32)
 * [Структура WinRT::Handle](/uwp/cpp-ref-for-winrt/handle)
 * [Структура WinRT::hresult_error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 * [функция WinRT::throw_hresult](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)
 * [функция WinRT::throw_last_error](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error)
-* [winrt::to_hresult function](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
+* [функция WinRT::to_hresult](/uwp/cpp-ref-for-winrt/error-handling/to-hresult)
 
 ## <a name="related-topics"></a>Статьи по теме
 * [Ошибки и обработка исключений (современный C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)

@@ -10,7 +10,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e8425232512650d5c80bf6fee9745b261aee8d9
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646059"
@@ -20,7 +20,7 @@ ms.locfileid: "57646059"
 
 При определении цели касания в Windows используется вся контактная область каждого пальца, обнаруженная сенсорным дигитайзером. Более крупный и сложный набор данных ввода, сообщаемый дигитайзером, используется для повышения точности при определении намеченного пользователем (или наиболее вероятного) целевого объекта.
 
-> **Важные API-интерфейсы**: [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **Важные API**: [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 В этом разделе описано использование геометрии контакта для цели касания и приводятся рекомендации для целей касания в приложениях UWP.
 

@@ -81,6 +81,6 @@ ms.locfileid: "57634229"
 
 **Microsoft Store**
 
-* [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+* [**Microsoft::wrl:: comptr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 * [**Оператор дескриптора объекта (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
 

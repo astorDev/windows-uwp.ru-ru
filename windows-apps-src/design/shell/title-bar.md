@@ -20,7 +20,7 @@ ms.locfileid: "57648819"
 
 Если приложение выполняется в окне рабочего стола, можно настроить заголовки окон с учетом индивидуальных особенностей приложения. API-интерфейсы для настройки заголовка окна позволяют указать цвета элементов заголовка окна или расширить содержимое приложения до области заголовка окна и получить над ним полный контроль.
 
-> **Важные API-интерфейсы**: [Свойство ApplicationView.TitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [класс ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [CoreApplicationViewTitleBar-класс](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **Важные API**: [Свойство ApplicationView.TitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [класс ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [CoreApplicationViewTitleBar-класс](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>Степень настройки заголовка окна
 

@@ -1,5 +1,5 @@
 ---
-description: C + +/ WinRT предоставляет функции и базовые классы, которые сэкономить много времени и усилий, если вы хотите реализовать и (или) передавать коллекции.
+description: C++/WinRT предоставляет функции и базовые классы, которые позволяют сэкономить много времени и усилий, если требуется реализовать и (или) передавать коллекции.
 title: Создание коллекций с помощью C++/WinRT
 ms.date: 10/03/2018
 ms.topic: article
@@ -259,7 +259,7 @@ private:
 };
 ```
 
-### <a name="winrtmapviewbaseuwpcpp-ref-for-winrtmap-view-base"></a>[winrt::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
+### <a name="winrtmapviewbaseuwpcpp-ref-for-winrtmap-view-base"></a>[WinRT::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
 
 ```cppwinrt
 struct MyMapView :
@@ -278,7 +278,7 @@ private:
 };
 ```
 
-### <a name="winrtmapbaseuwpcpp-ref-for-winrtmap-base"></a>[winrt::map_base](/uwp/cpp-ref-for-winrt/map-base)
+### <a name="winrtmapbaseuwpcpp-ref-for-winrtmap-base"></a>[WinRT::map_base](/uwp/cpp-ref-for-winrt/map-base)
 
 ```cppwinrt
 struct MyMap :
@@ -342,5 +342,5 @@ private:
 * [Структура шаблона WinRT::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Значение категории и ссылки на них](cpp-value-categories.md)
-* [XAML элементов элемента управления; Привязка к C + +/ WinRT коллекции](binding-collection.md)
+* [Категории значений и ссылки на них](cpp-value-categories.md)
+* [Элементы управления XAML; привязка к коллекции C++/WinRT](binding-collection.md)

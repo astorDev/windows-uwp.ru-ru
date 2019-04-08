@@ -126,4 +126,4 @@ C#пользователи: При написании пользовательс
 * [События (руководство по программированию на C#)](https://msdn.microsoft.com/library/awbftdfh.aspx)
 * [.NET для Обзор приложений универсальной платформы Windows](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [.NET для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
-* [Пошаговое руководство. Создание простого компонента среды выполнения Windows и вызов его из JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [Пошаговое руководство: Создание простого компонента среды выполнения Windows и вызов его из JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

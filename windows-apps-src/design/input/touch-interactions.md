@@ -22,7 +22,7 @@ ms.locfileid: "57649239"
 
 Однако имейте в виду, что пользовательский интерфейс, оптимизированный для сенсорного ввода, не всегда будет лучше традиционного интерфейса. И тот и другой имеют свои достоинства и недостатки в технологии и применении. Переходя к преимущественно сенсорному интерфейсу, важно понимать основные различия между сенсорным вводом (в том числе сенсорной панелью) и вводом с помощью пера, мыши и клавиатуры.
 
-> **Важные API-интерфейсы**: [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
+> **Важные API**: [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [ **Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
 
 
 Многие устройства оснащены мультисенсорными экранами, которые поддерживают использование одного или нескольких пальцев (либо сенсорных контактов) для ввода данных. Сенсорные контакты и их перемещение интерпретируются как сенсорные жесты и манипуляции для поддержки различных видов взаимодействия с пользователем.

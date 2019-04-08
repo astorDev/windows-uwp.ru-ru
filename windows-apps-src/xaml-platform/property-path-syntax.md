@@ -111,7 +111,7 @@ ms.locfileid: "57632369"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Привязка данных в глубину](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [Выполнена его раскадровка анимации](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [Расширение разметки {binding}](binding-markup-extension.md)
 * [**propertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)

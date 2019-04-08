@@ -169,7 +169,7 @@ ms.locfileid: "57634139"
 
 * [Календарь, Дата и время элементов управления](../controls-and-patterns/date-and-time.md)
 * [Сведения о языках профиля пользователя и языки манифеста приложения](manage-language-and-region.md)
-* [Настроить ресурсы для языка, масштабирование, высокая контрастность и квалификаторов](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Адаптация ресурсов с учетом языка, масштаба, высокой контрастности и других квалификаторов](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>Примеры
 

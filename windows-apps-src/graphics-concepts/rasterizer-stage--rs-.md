@@ -47,7 +47,7 @@ ms.locfileid: "57627589"
 
 [Правила растеризации](rasterization-rules.md)
 
-[Графического конвейера](graphics-pipeline.md)
+[Графический конвейер](graphics-pipeline.md)
 
  
 

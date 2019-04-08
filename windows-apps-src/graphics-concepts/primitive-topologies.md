@@ -80,7 +80,7 @@ Direct3D поддерживает несколько топологий прим
 
 [Сборщик входных данных (IA) рабочей области](input-assembler-stage--ia-.md)
 
-[Графического конвейера](graphics-pipeline.md)
+[Графический конвейер](graphics-pipeline.md)
 
  
 

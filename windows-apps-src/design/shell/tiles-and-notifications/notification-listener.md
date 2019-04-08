@@ -23,7 +23,7 @@ ms.locfileid: "57649619"
 > **Требует обновления Годовщина**: Вы должны быть предназначены SDK 14393 и выполняться сборка 14393 или более поздней версии, чтобы использовать прослушиватель уведомлений.
 
 
-> **Важные API-интерфейсы**: [Класс UserNotificationListener](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger-класс](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **Важные API**: [Класс UserNotificationListener](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger-класс](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
 ## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>Включите прослушиватель, добавив функцию пользовательских уведомлений 

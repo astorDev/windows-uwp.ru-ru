@@ -107,7 +107,7 @@ ms.locfileid: "57632529"
 
 | Синтаксис |
 |--------|
-| `H ` _x_ <br/> - или - <br/>`h ` _x_ |
+| `H ` _X_ <br/> - или - <br/>`h ` _X_ |
 
 | Термин | Описание |
 |------|-------------|
@@ -131,7 +131,7 @@ ms.locfileid: "57632529"
 
 | Синтаксис |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - или - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1* *controlPoint2* *конечной точки* <br/> - или - <br/> `c ` *controlPoint1* *controlPoint2* *конечной точки* |
 
 | Термин | Описание |
 |------|-------------|

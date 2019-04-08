@@ -50,7 +50,7 @@ ms.locfileid: "57637029"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Буферов глубины и шаблона](depth-and-stencil-buffers.md)
+[Буферы глубины и трафаретов](depth-and-stencil-buffers.md)
 
  
 

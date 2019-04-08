@@ -8,12 +8,12 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d8729826c2f372b3d3b5607ce828aaf515e47f3d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57643989"
 ---
-# <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Учебник. Поддержка Surface Dial (и других устройств с колесиком) в приложении UWP
+# <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Руководство: Поддержка Surface Dial (и других устройств с колесиком) в приложении UWP
 
 ![Снимок экрана: Surface Dial с поверхности Studio](images/radialcontroller/dial-pen-studio-600px.png)  
 *Surface Dial с Surface Studio и ручкой Surface* (доступны для приобретения в [магазине Майкрософт](https://aka.ms/purchasesurfacedial)).
