@@ -459,6 +459,6 @@ namespace MyAppService
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Преобразовать службу приложений для запуска в том же процессе, как его приложение узла](convert-app-service-in-process.md)
+* [Преобразование службы приложений для запуска в одном процессе с ведущим приложением](convert-app-service-in-process.md)
 * [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md)
 * [Пример кода для приложения службы (C#, C++ и VB)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)

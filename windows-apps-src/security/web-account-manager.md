@@ -3,7 +3,7 @@ title: Диспетчер учетных веб-записей
 description: В этой статье описан метод использования AccountsSettingsPane для подключения приложения универсальной платформы Windows (UWP) к внешним поставщикам удостоверений, например Microsoft или Facebook, с помощью API диспетчера учетных веб-записей для Windows 10.
 ms.date: 12/06/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасность
+keywords: windows 10, uwp, security
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: a0a16ac9a2d810f7f4cbe2be403713b5cec4997b
@@ -428,7 +428,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 [Класс AccountsSettingsPane](https://msdn.microsoft.com/library/windows/apps/windows.ui.applicationsettings.accountssettingspane)
 
-[Веб-брокер проверки подлинности](web-authentication-broker.md)
+[Брокер веб-аутентификации](web-authentication-broker.md)
 
 [Пример учетной записи службы управления Web](https://go.microsoft.com/fwlink/p/?LinkId=620621)
 

@@ -7,7 +7,7 @@ keywords: windows 10, uwp, рекламные объявления, реклам
 ms.localizationpriority: medium
 ms.openlocfilehash: 89e9df87cd214d3d03f25c674ec80a73fedf53d6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57628069"
@@ -131,5 +131,5 @@ ms.locfileid: "57628069"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Рекомендации по собственного рекламы](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)
-* [Реклама в приложениях](../publish/in-app-ads.md)
+* [Реклама в приложении](../publish/in-app-ads.md)
 * [Настройка единиц измерения ad для приложения](set-up-ad-units-in-your-app.md)

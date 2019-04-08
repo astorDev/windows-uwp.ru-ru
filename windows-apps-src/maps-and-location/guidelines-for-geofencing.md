@@ -128,7 +128,7 @@ function onVisibilityChanged() {
 
 
 * [Настройка геозоны](https://msdn.microsoft.com/library/windows/apps/mt219702)
-* [Получение текущего расположения](https://msdn.microsoft.com/library/windows/apps/mt219698)
+* [Получение сведений о текущем расположении](https://msdn.microsoft.com/library/windows/apps/mt219698)
 * [Пример расположения UWP (geolocation)](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 

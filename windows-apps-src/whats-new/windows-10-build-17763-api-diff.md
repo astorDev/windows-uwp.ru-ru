@@ -1473,7 +1473,7 @@ IScrollAnchorProvider <br> IScrollAnchorProvider.CurrentAnchor <br> IScrollAncho
 
 #### <a name="menubarhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsmenubar"></a>[Строка меню](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menubar)
 
-Строка меню <br> MenuBar.Items <br> MenuBar.ItemsProperty <br> MenuBar. #ctor
+MenuBar <br> MenuBar.Items <br> MenuBar.ItemsProperty <br> MenuBar. #ctor
 
 #### <a name="menubaritemhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsmenubaritem"></a>[MenuBarItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menubaritem)
 

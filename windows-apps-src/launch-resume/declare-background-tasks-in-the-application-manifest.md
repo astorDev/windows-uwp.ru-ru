@@ -234,6 +234,6 @@ ms.locfileid: "57615679"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Отладить фоновую задачу](debug-a-background-task.md)
-* [Зарегистрировать фоновую задачу](register-a-background-task.md)
+* [Отладка фоновой задачи](debug-a-background-task.md)
+* [Регистрация фоновой задачи](register-a-background-task.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)

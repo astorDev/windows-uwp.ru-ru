@@ -26,7 +26,7 @@ ms.locfileid: "57656999"
 |[/ ext/fiddler](wdp-fiddler-api.md)| Включение и отключение трассировки сети Fiddler. |
 |[/Ext/httpmonitor/Sessions](wdp-httpMonitor-api.md)| Получение трафика HTTP от приложения в фокусе на Xbox. |
 |[/ ext/networkcredential](uwp-networkcredentials-api.md)| Добавление, удаление или обновление сетевых учетных данных. |
-|[/ext/remoteinput](uwp-remoteinput-api.md)| Удаленная отправка данных ввода с клавиатуры, мыши или контроллера на Xbox. |
+|[/ ext/remoteinput](uwp-remoteinput-api.md)| Удаленная отправка данных ввода с клавиатуры, мыши или контроллера на Xbox. |
 |[/Ext/remoteinput/Controllers](uwp-remoteinput-controllers-api.md)| Получите число подключенных физических контроллеров или отключите все физические контроллеры. |
 |[Снимок экрана/ext /](wdp-media-capture-api.md)| Захватывает представление экрана, отображаемого в данный момент на консоли, в формате PNG. |
 |[/ ext/параметры](wdp-xboxsettings-api.md)| Предоставляет доступ к параметрам разработчика Xbox One. |
@@ -38,4 +38,4 @@ ms.locfileid: "57656999"
 ## <a name="see-also"></a>См. также
 
 - [Приложения UWP для Xbox One](index.md)
-- [Windows Device Portal](../debug-test-perf/device-portal.md)
+- [Портал устройств Windows](../debug-test-perf/device-portal.md)

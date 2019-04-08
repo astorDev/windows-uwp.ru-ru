@@ -21,7 +21,7 @@ ms.locfileid: "57635179"
 
 Используйте анимацию всплывающих элементов, чтобы отобразить или скрыть всплывающий пользовательский интерфейс для всплывающих элементов или для настраиваемых всплывающих элементов пользовательского интерфейса. Всплывающие элементы представляют собой контейнеры, появляющиеся над содержимым приложения и закрывающиеся, если пользователь нажимает на область вне всплывающего элемента или щелкает ее.
 
-> **Важные API-интерфейсы**: [**Класс PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210383), [ **PopupThemeTransition-класс**](https://msdn.microsoft.com/library/windows/apps/hh969172)
+> **Важные API**: [**Класс PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210383), [ **PopupThemeTransition-класс**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения

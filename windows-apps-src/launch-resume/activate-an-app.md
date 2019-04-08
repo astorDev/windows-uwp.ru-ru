@@ -271,7 +271,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 * [Windows.UI.Xaml.Application](https://msdn.microsoft.com/library/windows/apps/br242324)
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Приостановить приложение дескриптор](suspend-an-app.md)
-* [Дескриптор возобновлении приложения](resume-an-app.md)
+* [Обработка приостановки работы приложения](suspend-an-app.md)
+* [Обработка возобновления работы приложения](resume-an-app.md)
 * [Рекомендации для приложения, приостановка и возобновление](https://msdn.microsoft.com/library/windows/apps/hh465088)
 * [Жизненный цикл приложения](app-lifecycle.md)

@@ -36,8 +36,8 @@ ms.locfileid: "57628039"
 |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Program файлы (x86) \Windows Kits\10\References\<*версия пакета sdk*> \Windows.Foundation.UniversalApiContract\<*версии*>|
+|Windows.Foundation.FoundationContract.winmd|C:\Program файлы (x86) \Windows Kits\10\References\<*версия пакета sdk*> \Windows.Foundation.FoundationContract\<*версии*>|
 
 В окне **Свойства** установите в поле **Копировать локально** каждого файла *.winmd* значение **False**.
 

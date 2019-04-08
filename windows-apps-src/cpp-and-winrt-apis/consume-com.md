@@ -1,5 +1,5 @@
 ---
-description: В этом разделе используется полный пример кода Direct2D, чтобы показать, как использовать C + +/ WinRT COM-классов и интерфейсов.
+description: В этом разделе приведен полный пример кода Direct2D, чтобы показать, как использовать классы и интерфейсы COM с помощью C++/WinRT.
 title: Использование COM-компонентов с помощью C++/WinRT
 ms.date: 07/23/2018
 ms.topic: article
@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, standard, c ++, cpp, winrt, COM, компонента
 ms.localizationpriority: medium
 ms.openlocfilehash: 129477689e12de2634b422a0fc4487b283e3bf03
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57644809"
@@ -18,7 +18,7 @@ ms.locfileid: "57644809"
 
 В конце этого раздела вы найдете список полный исходный код минимального приложения Direct2D. Мы поднимите выдержки из этого кода и использовать их для демонстрации использования COM-компонентов, с помощью C + +/ WinRT, используя различные средства C + +/ WinRT библиотеки.
 
-## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a>COM smart pointers ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
+## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a>Интеллектуальные указатели COM ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
 При программировании с помощью COM, работа напрямую с интерфейсами, а не с объектами (которые также true незаметно для API среды выполнения Windows, которые являются развитием службы COM). Чтобы вызвать функцию класс COM, например, активации класса, получить интерфейс обратно, а затем вызывать функции в этом интерфейсе. Чтобы оценить состояние объекта, у вас доступа его элементов данных напрямую. Вместо этого вызовите функции метода доступа и мутатора в интерфейсе.
 
@@ -78,7 +78,7 @@ DWriteCreateFactory(
     reinterpret_cast<IUnknown**>(dwriteFactory2.put()));
 ```
 
-## <a name="re-seat-a-winrtcomptr"></a>Re-seat a **winrt::com_ptr**
+## <a name="re-seat-a-winrtcomptr"></a>Повторно рабочих мест **winrt::com_ptr**
 
 > [!IMPORTANT]
 > Если у вас есть [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr) , уже установлен (его внутренней необработанный указатель уже задан целевой объект) и вы хотите повторно рабочих мест, чтобы она указывала на другой объект, то необходимо сначала назначить `nullptr` к нему&mdash;как показано в следующем примере кода. Если этого не сделать, затем уже — сидели **com_ptr** рисующий проблему для вашего внимания (при вызове [ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) или [ **com_ptr:: put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)), утверждая, что его внутренний указатель не равен null.
@@ -483,6 +483,6 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 Как видите, C + +/ WinRT предоставляет поддержку для реализации и вызов COM-интерфейсов. Для использования COM-типы, такие как BSTR и VARIANT, всегда есть возможность использовать их в их исходном виде (а также соответствующие API-интерфейсы). Кроме того, можно использовать оболочек, предоставляемых платформой, такие как [Active Template Library (ATL)](/cpp/atl/active-template-library-atl-concepts), или с помощью компилятора Visual C++ [поддержки модели COM](/cpp/cpp/compiler-com-support), и даже собственных оболочек.
 
 ## <a name="important-apis"></a>Важные API
-* [winrt::check_hresult function](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
-* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
+* [функция WinRT::check_hresult](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
+* [Структура шаблона WinRT::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
 * [Структура WinRT::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)

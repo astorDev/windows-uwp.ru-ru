@@ -46,9 +46,9 @@ ms.locfileid: "57640189"
 
 | Формат блочного сжатия | Формат DXGI                                                                           | Эквивалентный формат в Direct3D 9                               | Байт в блоке 4×4 пикселя |
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------------|---------------------------|
-| BC1                      | DXGI\_ФОРМАТ\_BC1\_UNORM, DXGI\_ФОРМАТ\_BC1\_UNORM\_SRGB, DXGI\_ФОРМАТ\_BC1\_TYPELESS | D3DFMT\_DXT1, FourCC="DXT1"                                | 8                         |
-| BC2                      | DXGI\_ФОРМАТ\_BC2\_UNORM, DXGI\_ФОРМАТ\_BC2\_UNORM\_SRGB, DXGI\_ФОРМАТ\_BC2\_TYPELESS | D3DFMT\_DXT2\*, FourCC="DXT2", D3DFMT\_DXT3, FourCC="DXT3" | 16                        |
-| BC3                      | DXGI\_ФОРМАТ\_BC3\_UNORM, DXGI\_ФОРМАТ\_BC3\_UNORM\_SRGB, DXGI\_ФОРМАТ\_BC3\_TYPELESS | D3DFMT\_DXT4\*, FourCC="DXT4", D3DFMT\_DXT5, FourCC="DXT5" | 16                        |
+| BC1                      | DXGI\_ФОРМАТ\_BC1\_UNORM, DXGI\_ФОРМАТ\_BC1\_UNORM\_SRGB, DXGI\_ФОРМАТ\_BC1\_TYPELESS | D3DFMT\_DXT1, FourCC = «DXT1»                                | 8                         |
+| BC2                      | DXGI\_ФОРМАТ\_BC2\_UNORM, DXGI\_ФОРМАТ\_BC2\_UNORM\_SRGB, DXGI\_ФОРМАТ\_BC2\_TYPELESS | D3DFMT\_DXT2\*, FourCC = «DXT2», D3DFMT\_DXT3, FourCC = «DXT3» | 16                        |
+| BC3                      | DXGI\_ФОРМАТ\_BC3\_UNORM, DXGI\_ФОРМАТ\_BC3\_UNORM\_SRGB, DXGI\_ФОРМАТ\_BC3\_TYPELESS | D3DFMT\_DXT4\*, FourCC = «DXT4», D3DFMT\_DXT5, FourCC = «DXT5» | 16                        |
 
  
 

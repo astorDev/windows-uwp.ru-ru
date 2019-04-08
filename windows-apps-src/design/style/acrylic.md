@@ -23,7 +23,7 @@ ms.locfileid: "57624199"
 
 Acrylic — это разновидность [кисть](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush) , создающий полупрозрачных текстур. Акрил можно применять к поверхностям приложений, чтобы добавить эффект глубины и установить визуальную иерархию.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **Важные API-интерфейсы**: [Класс AcrylicBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush), [фоновых свойство](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
+> **Важные API**: [Класс AcrylicBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush), [фоновых свойство](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::

@@ -21,7 +21,7 @@ ms.locfileid: "57647729"
 
 Используйте анимацию перемещения для перемещения элементов в новое положение.
 
-> **Важные API-интерфейсы**: [**Класс RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210421), [ **RepositionThemeTransition-класс**](https://msdn.microsoft.com/library/windows/apps/br210429)
+> **Важные API**: [**Класс RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210421), [ **RepositionThemeTransition-класс**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
 

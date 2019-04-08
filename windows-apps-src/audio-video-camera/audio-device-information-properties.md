@@ -28,7 +28,7 @@ ms.locfileid: "57627179"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Функции перечисления устройств](../devices-sensors/enumerate-devices.md)
+* [Перечисление устройств](../devices-sensors/enumerate-devices.md)
 * [Свойства сведений об устройстве](../devices-sensors/device-information-properties.md)
 * [Создание селектора устройства](../devices-sensors/build-a-device-selector.md)
 * [Воспроизведение мультимедиа](media-playback.md)

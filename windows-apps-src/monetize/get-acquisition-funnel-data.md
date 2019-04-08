@@ -62,7 +62,7 @@ ms.locfileid: "57646199"
 | campaignId | Строка идентификатора для [пользовательской кампании по продвижению приложения](../publish/create-a-custom-app-promotion-campaign.md), связанной с этим приобретением. |
 | market | Строка, содержащая код страны по стандарту ISO 3166 для рынка, на котором произошла покупка |
 | deviceType | Одна из следующих строк, указывающая тип устройства, на котором совершено приобретение:<ul><li><strong>ПК</strong></li><li><strong>Телефон</strong></li><li><strong>Консоль</strong></li><li><strong>Интернета вещей</strong></li><li><strong>Holographic</strong></li><li><strong>Неизвестный</strong></li></ul> |
-| ageGroup | Одна из следующих строк, указывающая возрастную группу пользователя, совершившего приобретение:<ul><li><strong>0 – 17</strong></li><li><strong>18 – 24</strong></li><li><strong>25 – 34</strong></li><li><strong>35 – 49</strong></li><li><strong>50 или более</strong></li><li><strong>Неизвестный</strong></li></ul> |
+| ageGroup | Одна из следующих строк, указывающая возрастную группу пользователя, совершившего приобретение:<ul><li><strong>0 — 17</strong></li><li><strong>18 – 24</strong></li><li><strong>25 – 34</strong></li><li><strong>35 до 49</strong></li><li><strong>50 или более</strong></li><li><strong>Неизвестный</strong></li></ul> |
 | gender | Одна из следующих строк, указывающая пол пользователя, совершившего приобретение:<ul><li><strong>M</strong></li><li><strong>F</strong></li><li><strong>Неизвестный</strong></li></ul> |
 
 

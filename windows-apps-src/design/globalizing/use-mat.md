@@ -8,7 +8,7 @@ keywords: windows 10, uwp, глобализация, локализуемост�
 ms.localizationpriority: medium
 ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610119"
@@ -162,7 +162,7 @@ ms.locfileid: "57610119"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Локализация строк в манифесте пакета интерфейса пользователя и приложения](../../app-resources/localize-strings-ui-manifest.md)
+* [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](../../app-resources/localize-strings-ui-manifest.md)
 * [Глобализация и локализация](globalizing-portal.md)
 * [Рекомендации по глобализации](guidelines-and-checklist-for-globalizing-your-app.md)
 * [Сделать локализуемые приложения](prepare-your-app-for-localization.md)

@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, ресурс, изображение, средств�
 ms.localizationpriority: medium
 ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57632059"
@@ -271,6 +271,6 @@ ms-resource:///Hello%23World/String1
 * [Создание пакетов приложений](../packaging/index.md)
 * [Ссылаться на изображения и другие ресурсы из XAML-разметки и кода](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md)
-* [Локализация строк в манифесте пакета интерфейса пользователя и приложения](localize-strings-ui-manifest.md)
+* [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md)
 * [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/jj552947)
 * [Поддержка уведомлений плиток и всплывающих уведомлений для языка, масштаба и высокой контрастности](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

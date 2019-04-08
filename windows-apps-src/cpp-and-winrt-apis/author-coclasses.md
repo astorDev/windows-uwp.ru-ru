@@ -1,5 +1,5 @@
 ---
-description: C + +/ WinRT может помочь в разработке классических компонентов COM, так же, как он помогает вам создавать классы среды выполнения Windows.
+description: C++/WinRT можно использовать для разработки классических компонентов COM, так как эта проекция языка помогает создавать классы среды выполнения Windows.
 title: Создание COM-компонентов с помощью C++/WinRT
 ms.date: 09/06/2018
 ms.topic: article
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: e6b77f8be6c75070336ad48f0c6471fc0a824a4c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57616569"
@@ -530,6 +530,6 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 * [Структура шаблона WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Создавать интерфейсы API с использованием C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
-* [Использующих компоненты СОМ с использованием C + +/ WinRT](consume-com.md)
-* [Отправка локального всплывающее уведомление](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)
+* [Создание интерфейсов API с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [Использование компонентов COM с помощью C++/WinRT](consume-com.md)
+* [Отправка локального всплывающего уведомления](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

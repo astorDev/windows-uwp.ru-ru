@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекц
 ms.localizationpriority: medium
 ms.openlocfilehash: a33a52cd8c18b312dc9e020a4c4ba518c33b0dd9
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639949"
@@ -246,11 +246,11 @@ int main()
 ## <a name="important-apis"></a>Важные API
 * [AddRef-функция](https://msdn.microsoft.com/library/windows/desktop/ms691379)
 * [QueryInterface-функция](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt::attach_abi function](/uwp/cpp-ref-for-winrt/attach-abi)
-* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)
-* [winrt::copy_to_abi function](/uwp/cpp-ref-for-winrt/copy-to-abi)
-* [winrt::detach_abi function](/uwp/cpp-ref-for-winrt/detach-abi)
-* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
+* [функция WinRT::attach_abi](/uwp/cpp-ref-for-winrt/attach-abi)
+* [Структура шаблона WinRT::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
+* [функция WinRT::copy_from_abi](/uwp/cpp-ref-for-winrt/copy-from-abi)
+* [функция WinRT::copy_to_abi](/uwp/cpp-ref-for-winrt/copy-to-abi)
+* [функция WinRT::detach_abi](/uwp/cpp-ref-for-winrt/detach-abi)
+* [функция WinRT::get_abi](/uwp/cpp-ref-for-winrt/get-abi)
 * [WinRT::Windows::Foundation::IUnknown:: как функция-член](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [функция-член WinRT::Windows::Foundation::IUnknown::try_as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)

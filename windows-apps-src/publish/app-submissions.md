@@ -97,7 +97,7 @@ ms.locfileid: "57643289"
 | **Логотипы Store**               | Рекомендуется; требуется для некоторых версий ОС | [Логотипы Store](app-screenshots-and-images.md#store-logos)             |
 | **Трейлеров**                  | Необязательный                                    | [Трейлеров](app-screenshots-and-images.md#trailers)                | 
 | **Образ Windows 10 и Xbox (art Super hero 16:9)**     | Рекомендуем        | [Windows 10 и Xbox изображение (art Super hero 16:9)
-](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Образы Xbox**     | Требуется для правильное отображение, если вы публикуете Xbox        | [Xbox образы
 ] (# приложений — снимки экрана и images.md xbox образов) |
 | **Дополнительные поля**  | Необязательный                                    | [Дополнительные поля](create-app-store-listings.md#supplemental-fields) 

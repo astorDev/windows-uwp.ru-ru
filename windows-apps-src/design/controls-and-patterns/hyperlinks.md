@@ -25,7 +25,7 @@ ms.locfileid: "57606479"
 
 Гиперссылки используются для перехода в другую часть приложения, в другое приложение либо по указанному универсальному коду ресурса (URI) в отдельном приложении браузера. Существует два способа добавления гиперссылки в приложение XAML: текстовый элемент **гиперссылки** и элемент управления **HyperlinkButton**.
 
-> **Важные API-интерфейсы**: [Текстовый элемент HyperLink](https://msdn.microsoft.com/library/windows/apps/dn279356), [HyperlinkButton управления](https://msdn.microsoft.com/library/windows/apps/br242739)
+> **Важные API**: [Текстовый элемент HyperLink](https://msdn.microsoft.com/library/windows/apps/dn279356), [HyperlinkButton управления](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 ![Кнопка с гиперссылкой](images/controls/hyperlink-button.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "57606479"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/HyperlinkButton">открыть приложение и увидеть HyperlinkButton в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>

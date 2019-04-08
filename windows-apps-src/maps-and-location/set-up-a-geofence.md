@@ -22,7 +22,7 @@ ms.locfileid: "57606129"
 
 **Подсказка.** Чтобы получить дополнительные сведения о доступе к данным о расположении в приложении, загрузите следующий пример из [репозитория Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
--   [Образец карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Пример карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>Включение функции определения расположения
 
@@ -481,6 +481,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Пример географического положения UWP](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Пример определения географического положения UWP](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [Рекомендации по проектированию для географическое зонирование](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [Рекомендации по проектированию для приложений с поддержкой местоположения](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Рекомендации по разработке приложений, учитывающих данные о расположении](https://msdn.microsoft.com/library/windows/apps/hh465148)

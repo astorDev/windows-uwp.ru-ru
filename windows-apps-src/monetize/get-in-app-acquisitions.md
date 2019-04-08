@@ -71,7 +71,7 @@ ms.locfileid: "57650989"
 | Поля        |  Описание        |
 |---------------|-----------------|
 | acquisitionType | Одна из следующих строк:<ul><li><strong>бесплатно</strong></li><li><strong>Пробная версия</strong></li><li><strong>Платные</strong></li><li><strong>Код акции</strong></li><li><strong>Iap</strong></li></ul> |
-| ageGroup | Одна из следующих строк:<ul><li><strong>меньше, чем 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>больше, чем 55</strong></li><li><strong>Неизвестный</strong></li></ul> |
+| ageGroup | Одна из следующих строк:<ul><li><strong>меньше, чем 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44 55</strong></li><li><strong>больше, чем 55</strong></li><li><strong>Неизвестный</strong></li></ul> |
 | storeClient | Одна из следующих строк:<ul><li><strong>Windows Phone Store (клиент)</strong></li><li><strong>Microsoft Store (клиент)</strong></li><li><strong>Microsoft Store (веб)</strong></li><li><strong>Закупка организациями</strong></li><li><strong>Другие</strong></li></ul> |
 | gender | Одна из следующих строк:<ul><li><strong>m</strong></li><li><strong>F</strong></li><li><strong>Неизвестный</strong></li></ul> |
 | market | Строка, содержащая код страны по стандарту ISO 3166 для рынка, на котором произошла покупка |

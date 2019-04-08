@@ -19,7 +19,7 @@ ms.locfileid: "57606259"
 
 Узнайте, как записать и распознать длительный непрерывный речевой ввод.
 
-> **Важные API-интерфейсы**: [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896), [ **ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
+> **Важные API**: [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896), [ **ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
 
 В разделе [Распознавание речи](speech-recognition.md) вы узнали, как записать и распознать относительно короткий речевой ввод с помощью методов [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) или [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) объекта [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), например при составлении сообщения SMS или вопроса.
 

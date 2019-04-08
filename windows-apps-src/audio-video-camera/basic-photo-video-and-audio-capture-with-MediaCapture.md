@@ -163,6 +163,6 @@ ms.locfileid: "57618399"
 
 * [Захват фото и видео со встроенной камерой Windows пользовательского интерфейса](capture-photos-and-video-with-cameracaptureui.md)
 * [Обработка ориентации устройства с MediaCapture](handle-device-orientation-with-mediacapture.md)
-* [Создавать, изменять и сохранять точечных рисунков](imaging.md)
+* [Создание, редактирование и сохранение точечных рисунков](imaging.md)
 * [Файлы, папки и библиотеки](https://msdn.microsoft.com/windows/uwp/files/index)
 

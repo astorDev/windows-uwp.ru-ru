@@ -197,6 +197,6 @@ if (req.RequestUri.LocalPath.ToLower().Contains("/www/")) {
 
 ## <a name="related-topics"></a>Статьи по теме
 * [Общие сведения о Windows Device Portal](device-portal.md)
-* [Создавать и использовать службу приложений](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [Создание и использование службы приложений](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
 
 

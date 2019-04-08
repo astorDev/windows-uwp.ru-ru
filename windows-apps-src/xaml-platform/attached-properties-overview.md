@@ -129,7 +129,7 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 
 ## <a name="related-topics"></a>Статьи по теме
 
-- [Настраиваемые присоединенные свойства](custom-attached-properties.md)
+- [Пользовательские присоединенные свойства](custom-attached-properties.md)
 - [Общие сведения о свойствах зависимостей](dependency-properties-overview.md)
 - [Определение макетов с помощью XAML](https://msdn.microsoft.com/library/windows/apps/mt228350)
 - [Краткое руководство. Перевод ресурсов пользовательского интерфейса](https://msdn.microsoft.com/library/windows/apps/hh943060)

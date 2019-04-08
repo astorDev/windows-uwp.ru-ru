@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекц
 ms.localizationpriority: medium
 ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57630749"
@@ -210,10 +210,10 @@ HRESULT __stdcall DllCanUnloadNow(void)
 ```
 
 ## <a name="important-apis"></a>Важные API
-* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
+* [Структура шаблона WinRT::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
 * [Структура WinRT::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Введение в C + +/ WinRT](intro-to-using-cpp-with-winrt.md)
-* [Переместить в C + +/ WinRT в C + +/ CX](move-to-winrt-from-cx.md)
-* [Библиотека шаблонов C++ среды выполнения Windows (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)
+* [Введение в C++/WinRT](intro-to-using-cpp-with-winrt.md)
+* [Переход на C++/WinRT из C++/CX](move-to-winrt-from-cx.md)
+* [Библиотека шаблонов C++ для среды выполнения Windows (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)

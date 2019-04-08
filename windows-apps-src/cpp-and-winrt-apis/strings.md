@@ -7,7 +7,7 @@ keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекц
 ms.localizationpriority: medium
 ms.openlocfilehash: 9572d9ba8b96d245b783535e159acbae9043ea3e
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57649639"
@@ -173,5 +173,5 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 
 ## <a name="important-apis"></a>Важные API
 * [Структура WinRT::hstring](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt::to_hstring function](/uwp/cpp-ref-for-winrt/to-hstring)
+* [функция WinRT::to_hstring](/uwp/cpp-ref-for-winrt/to-hstring)
 * [функция WinRT::to_string](/uwp/cpp-ref-for-winrt/to-string)

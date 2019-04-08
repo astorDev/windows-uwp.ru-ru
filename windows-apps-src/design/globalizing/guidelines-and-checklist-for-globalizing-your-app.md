@@ -48,7 +48,7 @@ ms.locfileid: "57648249"
 * [Сведения о языках профиля пользователя и языки манифеста приложения](manage-language-and-region.md)
 * [Теги языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Ресурсы приложения и система управления ресурсами](../../app-resources/index.md)
-* [Как система управления ресурсами соответствует тегам языка](../../app-resources/how-rms-matches-lang-tags.md)
+* [Как система управления ресурсами сопоставляет языковые теги](../../app-resources/how-rms-matches-lang-tags.md)
 * [Настройка макета и шрифтов, добавление поддержки написания справа налево](adjust-layout-and-fonts--and-support-rtl.md)
 * [Международные шрифты](loc-international-fonts.md)
 * [Сделать локализуемые приложения](prepare-your-app-for-localization.md)

@@ -30,7 +30,7 @@ ms.locfileid: "57636369"
 
 В этой статье представлены рекомендации по проектированию, описаны возможности и приведены примеры каждого шаблона списка.
 
-> **Важные API-интерфейсы**: [Класс ListView](https://msdn.microsoft.com/library/windows/apps/br242878), [класс GridView](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox-класс](https://msdn.microsoft.com/library/windows/apps/br209348)
+> **Важные API**: [Класс ListView](https://msdn.microsoft.com/library/windows/apps/br242878), [класс GridView](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox-класс](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 > <div id="main">

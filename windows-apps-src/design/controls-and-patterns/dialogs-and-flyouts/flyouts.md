@@ -24,7 +24,7 @@ ms.locfileid: "57625019"
 
 ![Контекстное меню размещается внутри всплывающего элемента](../images/flyout-nested.png)
 
-> **Важные API-интерфейсы**: [Класс всплывающего меню](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **Важные API**: [Класс всплывающего меню](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -35,20 +35,20 @@ ms.locfileid: "57625019"
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы открыть приложение и увидеть <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> или <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> в действии.</p>
+    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, щелкните здесь, чтобы открыть его и увидеть <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> или <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> в действии.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-##  <a name="how-to-create-a-flyout"></a>Создание всплывающего меню
+##  <a name="how-to-create-a-flyout"></a>Как создать всплывающий элемент
 
 
 Всплывающие элементы связаны с определенными элементами управления. Можно использовать [размещения](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) свойство, чтобы указать, где отображается всплывающее окно: TOP, Left, нижней, справа или Full. Если выбрать [полный режим размещения](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), приложение растягивает всплывающий элемент или размещает его в центре окна приложения. Некоторые элементы управления, например [Button](/uwp/api/Windows.UI.Xaml.Controls.Button), содержат свойство [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout), которое можно использовать для привязки всплывающего элемента или [контекстного меню](../menus.md).

@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проеци
 ms.localizationpriority: medium
 ms.openlocfilehash: 193d821b44722e150f38da7430504f5d528770a4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602429"
@@ -240,4 +240,4 @@ winrt::hstring f(ListView listview)
 ## <a name="related-topics"></a>Статьи по теме
 * [Создание событий в C + +/ WinRT](author-events.md)
 * [Параллелизм и асинхронные операции с использованием C + +/ WinRT](concurrency.md)
-* [Сильные и слабые ссылки в C + +/ WinRT](weak-references.md)
+* [Сильные и слабые ссылки в C++/WinRT](weak-references.md)

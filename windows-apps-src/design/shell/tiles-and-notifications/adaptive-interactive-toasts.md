@@ -19,7 +19,7 @@ ms.locfileid: "57596829"
 
 Создавайте гибкие уведомления с текстом, изображениями и элементами управления с помощью адаптивных и интерактивных всплывающих уведомлений.
 
-> **Важные API-интерфейсы**: [Пакет nuget UWP Community Toolkit уведомления](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **Важные API**: [пакет NuGet уведомлений набора средств сообщества UWP](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
 > Устаревшие шаблоны из Windows 8.1 и Windows Phone 8.1, см. в разделе [каталоге шаблонов всплывающих уведомлений прежних версий](https://msdn.microsoft.com/library/windows/apps/hh761494).

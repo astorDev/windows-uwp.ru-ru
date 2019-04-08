@@ -38,7 +38,7 @@ ms.locfileid: "57658369"
 |[MS люди.](#people-app-uri-scheme) | Приложение «Люди» |
 |[MS фотографий:](#photos-app-uri-scheme) | Приложение "Фотографии" |
 |[MS параметры:](#settings-app-uri-scheme) | Приложение "Параметры" |
-|[ms-store:](#store-app-uri-scheme)  | Приложение «Магазин» |
+|[MS-store:](#store-app-uri-scheme)  | Приложение «Магазин» |
 |[MS-tonepicker:](#tone-picker-uri-scheme) | Средство выбора звуковых сигналов |
 |[MS-yellowpage:](#nearby-numbers-app-uri-scheme) | Приложения «Телефоны мест по соседству» |
 |[msnweather:](#weather-app-uri-scheme) | Прогноз погоды |

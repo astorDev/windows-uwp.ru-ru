@@ -250,5 +250,5 @@ ms.locfileid: "57646569"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Создание компонентов среды выполнения Windows на C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 * [Winmdexp.exe (средство экспорта метаданных среды выполнения Windows)](https://msdn.microsoft.com/library/hh925576.aspx)

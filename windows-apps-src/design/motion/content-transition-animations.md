@@ -23,7 +23,7 @@ ms.locfileid: "57649809"
 
 Анимация переходов содержимого используется для изменения содержимого области экрана, при котором фон или контейнер остаются неизменными. Появляется новое содержимое. Если существует содержимое, которое необходимо заменить, оно исчезает.
 
-> **Важные API-интерфейсы**: [**Класс ContentThemeTransition (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
+> **Важные API**: [**Класс ContentThemeTransition (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
 

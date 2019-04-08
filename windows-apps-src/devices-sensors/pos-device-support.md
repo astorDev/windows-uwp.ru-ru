@@ -29,23 +29,23 @@ ms.locfileid: "57663099"
 | Код          | Reader™ 1021                   | 2D         | USB          | Handheld     | HID POS сканера           |
 | Код          | Reader™ 1421                   | 2D         | USB          | Handheld     | HID POS сканера           |
 | Код          | Reader™ 5000                   | 2D         | USB          | Презентации | HID POS сканера           |
-| Honeywell     | Происхождения 7580g                  | 2D         | USB          | Презентации | HID POS сканера           |
-| Honeywell     | Granit 198Xi                   | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Granit 191Xi                   | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | N5680                          | 2D         | Внутренний     | Component    | HID POS сканера           |
-| Honeywell     | N3680                          | 2D         | Внутренний     | Component    | HID POS сканера           |
-| Honeywell     | Орбиты 7190g                    | 2D         | USB          | Презентации | HID POS сканера           |
-| Honeywell     | Stratos 2700                   | 2D         | USB          | В счетчике   | HID POS сканера           |
-| Honeywell     | Voyager 1200g                  | 1D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Voyager 1202g                  | 1D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Voyager 1202-bf                | 1D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Voyager 145Xg                  | 1D / 2D ¹   | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Voyager 1602g                  | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Xenon 1900g                    | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Xenon 1902g                    | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Xenon 1902g-bf                 | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Xenon 1900h                    | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Xenon 1902h                    | 2D         | USB          | Handheld     | HID POS сканера           |
+| Компания Honeywell     | Происхождения 7580g                  | 2D         | USB          | Презентации | HID POS сканера           |
+| Компания Honeywell     | Granit 198Xi                   | 2D         | USB          | Handheld     | HID POS сканера           |
+| Компания Honeywell     | Granit 191Xi                   | 2D         | USB          | Handheld     | HID POS сканера           |
+| Компания Honeywell     | N5680                          | 2D         | Внутренний     | Component    | HID POS сканера           |
+| Компания Honeywell     | N3680                          | 2D         | Внутренний     | Component    | HID POS сканера           |
+| Компания Honeywell     | Орбиты 7190g                    | 2D         | USB          | Презентации | HID POS сканера           |
+| Компания Honeywell     | Stratos 2700                   | 2D         | USB          | В счетчике   | HID POS сканера           |
+| Компания Honeywell     | Voyager 1200g                  | 1D         | USB          | Handheld     | HID POS сканера           |
+| Компания Honeywell     | Voyager 1202g                  | 1D         | USB          | Handheld     | HID POS сканера           |
+| Компания Honeywell     | Voyager 1202-bf                | 1D         | USB          | Handheld     | HID POS сканера           |
+| Компания Honeywell     | Voyager 145Xg                  | 1D / 2D ¹   | USB          | Handheld     | HID POS сканера           |
+| Компания Honeywell     | Voyager 1602g                  | 2D         | USB          | Handheld     | HID POS сканера           |
+| Компания Honeywell     | Xenon 1900g                    | 2D         | USB          | Handheld     | HID POS сканера           |
+| Компания Honeywell     | Xenon 1902g                    | 2D         | USB          | Handheld     | HID POS сканера           |
+| Компания Honeywell     | Xenon 1902g-bf                 | 2D         | USB          | Handheld     | HID POS сканера           |
+| Компания Honeywell     | Xenon 1900h                    | 2D         | USB          | Handheld     | HID POS сканера           |
+| Компания Honeywell     | Xenon 1902h                    | 2D         | USB          | Handheld     | HID POS сканера           |
 | HP            | Сканер штрихкодов значение (HR2150) | 2D         | USB          | Handheld     | HID POS сканера           |
 | Intermec      | SG20                           | 2D         | USB          | Handheld     | HID POS сканера           |
 | Socket Mobile | CHS 7Ci                        | 1D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
@@ -85,10 +85,10 @@ ms.locfileid: "57663099"
 | Птица       | EF400 | Windows Mobile   |
 | Птица       | EF500 | Windows Mobile   |
 | Птица       | EF500R | Windows Mobile   |
-| Honeywell      | CT50   | Windows Mobile   |
-| Honeywell      | D75e | Windows Mobile   |
+| Компания Honeywell      | CT50   | Windows Mobile   |
+| Компания Honeywell      | D75e | Windows Mobile   |
 | Janam          | XT2      | Windows Mobile   |
-| Panasonic      | FZ-E1 | Windows Mobile   |
+| Panasonic      | FZ E1 | Windows Mobile   |
 | Panasonic      | FZ F1 |Windows Mobile   |
 | PointMobile    | PM80 | Windows Mobile   |
 | Zebra          | TC700j | Windows Mobile   |

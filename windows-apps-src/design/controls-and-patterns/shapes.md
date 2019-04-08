@@ -17,7 +17,7 @@ ms.locfileid: "57610679"
 
 Узнайте, как рисовать фигуры — эллипсы, прямоугольники, многоугольники и пути. При помощи класса [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) в пользовательском интерфейсе XAML можно применять довольно сложный язык для рисования на основе векторов, например рисовать кривые Безье.
 
-> **Важные API-интерфейсы**: [Класс Path](/uwp/api/Windows.UI.Xaml.Shapes.Path), [пространства имен Windows.UI.Xaml.Shapes](/uwp/api/Windows.UI.Xaml.Shapes), [пространство имен Windows.UI.Xaml.Media](/uwp/api/Windows.UI.Xaml.Media)
+> **Важные API**: [Класс Path](/uwp/api/Windows.UI.Xaml.Shapes.Path), [пространства имен Windows.UI.Xaml.Shapes](/uwp/api/Windows.UI.Xaml.Shapes), [пространство имен Windows.UI.Xaml.Media](/uwp/api/Windows.UI.Xaml.Media)
 
 
 Два набора классов определить область пространства в пользовательском Интерфейсе XAML: [**Фигуры** ](/uwp/api/Windows.UI.Xaml.Shapes.Shape) классы и [ **Geometry** ](/uwp/api/Windows.UI.Xaml.Media.Geometry) классы. Главное различие между этими классами заключается в том, что у класса **Shape** имеется связанная с ним кисть, и он может быть отрисован на экране, а класс **Geometry** просто определяет область и не отрисовывается на экране, если не содержит сведений для другого свойства пользовательского интерфейса. Объект **Shape** можно представить как элемент [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), граница которого определена объектом **Geometry**. В этом разделе содержатся в основном сведения о классах **Shape**.

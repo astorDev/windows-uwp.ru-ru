@@ -121,11 +121,11 @@ town = Redmond
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Образец карты универсальной платформы Windows](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Пример приложения UWP трафика](https://go.microsoft.com/fwlink/p/?LinkId=619982)
-* [Рекомендации по проектированию для карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Видео: Использование карты и расположение между телефоном, планшетом и ПК в приложениях Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Центр разработчиков Bing Maps](https://www.bingmapsportal.com/)
+* [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Пример приложения UWP для работы с трафиком](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Видео: использование карт и расположений в приложениях для Windows на телефонах, планшетах и компьютерах](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [**MapLocationFinder** класса](https://msdn.microsoft.com/library/windows/apps/dn627550)
 * [**FindLocationsAsync** метод](https://msdn.microsoft.com/library/windows/apps/dn636925)
 * [**FindLocationsAtAsync** метод](https://msdn.microsoft.com/library/windows/apps/dn636928)

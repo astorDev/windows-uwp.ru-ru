@@ -11,7 +11,7 @@ doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a3108e21455086e2742987db1d7125c733f6e2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57638829"
@@ -20,7 +20,7 @@ ms.locfileid: "57638829"
 
 Карточка контакта отображает контактные данные, такие как имя, номер телефона и адрес [Контакта](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (механизм, который UWP использует для представления пользователей и компаний).  Карточка контакта также позволяет пользователю редактировать контактные данные. Можно выбрать, какую карточку следует отобразить: компактную карточку контакта или полную карточку контакта, которая содержит дополнительные сведения.
 
-> **Важные API-интерфейсы**: [Метод ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [метод ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_), [метод IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [класс](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **Важные API**: [Метод ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [метод ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_), [метод IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [класс](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 Существует два способа отображения карточки контакта:  
 * В качестве стандартной карточки контакта, которая отображается во всплывающем элементе, который исчезает, то есть карточка контакта исчезает, когда пользователь щелкает вне ее области. 

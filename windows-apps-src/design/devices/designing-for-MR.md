@@ -15,7 +15,7 @@ doc-status: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: b988859422a80b31d94a133e36631b078ac7c14e
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610499"
@@ -105,7 +105,7 @@ ms.locfileid: "57610499"
 * Двухмерное приложение автоматически получает [панель приложения](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box), которая позволяет пользователю перемещать и масштабировать приложение в виртуальной среде. Размер представления можно изменять по вертикали или пропорционально.
 
 
-## <a name="2d-app-design-considerations-uiux"></a>Рекомендации по проектированию 2D приложения: UI/UX
+## <a name="2d-app-design-considerations-uiux"></a>Рекомендации по проектированию 2D приложения: ПОЛЬЗОВАТЕЛЬСКОГО ИНТЕРФЕЙСА
 
 * Элементы управления XAML, которые реализуют [систему проектирования Fluent Design](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/), например [представление навигации](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) и эффекты, такие как [акрил](https://docs.microsoft.com/windows/uwp/design/style/acrylic), особенно хорошо работают в двухмерных приложениях смешанной реальности.
 

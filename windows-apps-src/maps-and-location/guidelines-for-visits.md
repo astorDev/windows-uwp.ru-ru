@@ -269,6 +269,6 @@ private async void RegisterBackgroundTask(object sender, RoutedEventArgs e) {
 После этого ваше приложение сможет регистрировать фоновую задачу обработки посещений, а эта задача будет активироваться каждый раз, когда устройство заносит в журнал изменение состояния, связанного с посещением. Потребуется заполнить логику в классе фоновой задачи, чтобы определить, что делать с этими сведениями об изменении состояния.
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Создание и регистрация вне процесса фоновой задачи](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [Создание и регистрация внепроцессной фоновой задачи](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
 * [Получение местоположения пользователя](get-location.md)
 * [Пространство имен Windows.Devices.Geolocation](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)

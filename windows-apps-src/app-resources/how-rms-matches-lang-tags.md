@@ -188,7 +188,7 @@ ms.locfileid: "57659149"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Как система управления ресурсами соответствует и выбирает ресурсы](how-rms-matches-and-chooses-resources.md)
+* [Как система управления ресурсами сопоставляет и выбирает ресурсы](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Сведения о языках профиля пользователя и языки манифеста приложения](../design/globalizing/manage-language-and-region.md)
 * [Композиция географических регионах (континентальный) макрос, географических областях и выбранные экономические и другие критерии](https://go.microsoft.com/fwlink/p/?LinkId=247929)

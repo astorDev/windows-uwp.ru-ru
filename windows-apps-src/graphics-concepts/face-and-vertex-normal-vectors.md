@@ -88,7 +88,7 @@ Direct3D использует единичные нормали вершин д�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Системы координат и geometry](coordinate-systems-and-geometry.md)
+[Системы координат и геометрия](coordinate-systems-and-geometry.md)
 
  
 

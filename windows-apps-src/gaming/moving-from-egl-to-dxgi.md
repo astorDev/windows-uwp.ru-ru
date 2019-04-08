@@ -22,7 +22,7 @@ ms.locfileid: "57606369"
 
 -   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
 -   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)
--   [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
+-   [**Объект CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
 
 Программный интерфейс DirectX для работы с графикой (DXGI) и несколько API Direct3D выполняют ту же роль, что и EGL. Этот раздел помогает разобраться в DXGI и Direct3D 11 с точки зрения EGL.
 

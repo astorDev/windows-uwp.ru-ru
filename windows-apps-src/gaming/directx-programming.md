@@ -30,7 +30,7 @@ ms.locfileid: "57608849"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="directx-getting-started.md">Приступая к работе</a></p></td>
+<td align="left"><p><a href="directx-getting-started.md">Начало работы</a></p></td>
 <td align="left"><p>Введение в программирование в DirectX.</p></td>
 </tr>
 <tr class="even">

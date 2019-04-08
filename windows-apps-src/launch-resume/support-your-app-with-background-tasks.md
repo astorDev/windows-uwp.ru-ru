@@ -163,8 +163,8 @@ ms.locfileid: "57618029"
 
 Фоновые задачи могут передавать в приложение сообщения о ходе выполнения, завершении или отмене с помощью событий и локального хранилища. Кроме того, можно перехватывать исключения, поступающие от фоновой задачи, и управлять ее регистрацией в процессе обновления приложения. См. также:
 
-[Обработка отменена фоновой задачи](handle-a-cancelled-background-task.md)  
-[Отслеживать ход выполнения задач в фоновом режиме и завершения](monitor-background-task-progress-and-completion.md)
+[Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)  
+[Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
 
 Проверьте регистрацию вашей фоновой задачи во время запуска приложения. Убедитесь, что разгруппированные фоновые задачи вашего приложения присутствуют в BackgroundTaskBuilder.AllTasks. Повторно зарегистрируйте те, которые не отображаются. Отмените регистрацию всех задач, которые больше не нужны. Это гарантирует, что все регистрации фоновых задач являются актуальными при каждом запуске приложения.
 
@@ -177,23 +177,23 @@ ms.locfileid: "57618029"
 **Руководство по соответствующим фоновым задачи**
 
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Доступ датчиков и устройств из фоновой задачи](access-sensors-and-devices-from-a-background-task.md)
-* [Создание и регистрация в процесс фоновой задачи](create-and-register-an-inproc-background-task.md)
-* [Создание и регистрация вне процесса фоновой задачи](create-and-register-a-background-task.md)
+* [Доступ к датчикам и устройствам из фоновой задачи](access-sensors-and-devices-from-a-background-task.md)
+* [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)
+* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 * [Преобразовать вне процесса фоновой задачи в фоновом режиме в процессе задачу](convert-out-of-process-background-task.md)
-* [Отладить фоновую задачу](debug-a-background-task.md)
-* [Объявите фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
-* [Регистрация задачи группы фона](group-background-tasks.md)
-* [Обработка отменена фоновой задачи](handle-a-cancelled-background-task.md)
+* [Отладка фоновой задачи](debug-a-background-task.md)
+* [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
+* [Регистрация фоновых задач группы](group-background-tasks.md)
+* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
 * [Активация приостановки, возобновления и фоновых событий для приложений универсальной платформы Windows (при отладке)](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
-* [Отслеживать ход выполнения задач в фоновом режиме и завершения](monitor-background-task-progress-and-completion.md)
+* [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
 * [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [Зарегистрировать фоновую задачу](register-a-background-task.md)
-* [Реакция на системные события с фоновыми задачами](respond-to-system-events-with-background-tasks.md)
-* [Выполнять фоновую задачу по таймеру](run-a-background-task-on-a-timer-.md)
+* [Регистрация фоновой задачи](register-a-background-task.md)
+* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
+* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
 * [Запустить в фоновом режиме при обновлении приложения универсальной платформы Windows](run-a-background-task-during-updatetask.md)
-* [Запустить в фоновом режиме в течение неопределенного срока](run-in-the-background-indefinetly.md)
-* [Задайте условия для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
+* [Выполнение в фоновом режиме в течение неограниченного срока](run-in-the-background-indefinetly.md)
+* [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
 * [Активация фоновой задачи из приложения](trigger-background-task-from-app.md)
 * [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)

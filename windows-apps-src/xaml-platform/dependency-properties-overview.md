@@ -202,9 +202,9 @@ public bool IsSpinning
 
 ### <a name="conceptual-material"></a>Теоретический материал
 
-- [Пользовательские свойства взаимозависимости](custom-dependency-properties.md)
+- [Пользовательские свойства зависимостей](custom-dependency-properties.md)
 - [Общие сведения о присоединенных свойствах](attached-properties-overview.md)
-- [Привязка данных в глубину](https://msdn.microsoft.com/library/windows/apps/mt210946)
+- [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946)
 - [Выполнена его раскадровка анимации](https://msdn.microsoft.com/library/windows/apps/mt187354)
 - [Создание компонентов среды выполнения Windows](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 - [Пример пользовательских и настраиваемых элементов управления XAML](https://go.microsoft.com/fwlink/p/?linkid=238581)

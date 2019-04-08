@@ -145,7 +145,7 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 ### <a name="tasks"></a>Задачи
 
 * [Запуск приложения по умолчанию для файла](launch-the-default-app-for-a-file.md)
-* [Выполнять активацию URI](handle-uri-activation.md)
+* [Активация обработки URI](handle-uri-activation.md)
 
 ### <a name="guidelines"></a>Руководство
 

@@ -64,8 +64,8 @@ ms.locfileid: "57640279"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Реклама в приложениях](in-app-ads.md)
-* [Отображения рекламы в вашем приложении с помощью Microsoft Advertising SDK](../monetize/display-ads-in-your-app.md)
+* [Реклама в приложении](in-app-ads.md)
+* [Показ рекламы в приложении с помощью Microsoft Advertising SDK](../monetize/display-ads-in-your-app.md)
 * [Оптимизация зависит единицы ad](../monetize/optimize-ad-unit-viewability.md)
 
 

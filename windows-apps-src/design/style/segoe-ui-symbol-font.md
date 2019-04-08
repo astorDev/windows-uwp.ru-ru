@@ -22,7 +22,7 @@ ms.locfileid: "57649059"
 
 В этой статье перечислены значки, доступные в шрифте Segoe MDL2 Assets. 
 
-> **Важные API-интерфейсы**: [**Символ перечисления**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [ **FontIcon-класс**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **Важные API**: [**Символ перечисления**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [ **FontIcon-класс**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>Сведения о шрифте Segoe MDL2 Assets
 

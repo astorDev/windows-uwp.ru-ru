@@ -20,7 +20,7 @@ ms.locfileid: "57612509"
 
 В этой статье описывается выделение и обработка текста, изображений и элементов управления, а также представлены рекомендации по взаимодействию с пользователем, которые следует учитывать при использовании этих механизмов в приложениях.
 
-> **Важные API-интерфейсы**: [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **Важные API**: [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
  
 
 

@@ -88,7 +88,7 @@ ms.locfileid: "57601479"
 * [Настроить ресурсы для языка, масштаба и квалификаторов](../../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Руководство по работе с ресурсами плиток и значков](app-assets.md).
 * [Глобализация и локализация](../../globalizing/globalizing-portal.md)
-* [Локализация строк в манифесте пакета интерфейса пользователя и приложения](../../../app-resources/localize-strings-ui-manifest.md)
+* [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](../../../app-resources/localize-strings-ui-manifest.md)
 * [Ссылаться на изображения и другие ресурсы из XAML-разметки и кода](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
 * [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
 * [Плитка схемы](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)

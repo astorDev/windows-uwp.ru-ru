@@ -26,7 +26,7 @@ ms.locfileid: "57620349"
 *Панель* — это объект, который определяет поведение макета для содержащихся в нем дочерних элементов при работе системы макетов XAML и отрисовке пользовательского интерфейса вашего приложения. 
 
 
-> **Важные API-интерфейсы**: [**Панель**](https://msdn.microsoft.com/library/windows/apps/br227511), [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), [ **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
+> **Важные API**: [**Панель**](https://msdn.microsoft.com/library/windows/apps/br227511), [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), [ **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
 
 Вы можете определить настраиваемые панели для макета XAML, создав пользовательский класс, производный от класса [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511). Поведение для вашей панели предоставляется путем переопределения методов [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) и [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), обеспечивающих логику, которая измеряет и упорядочивает дочерние элементы.
 

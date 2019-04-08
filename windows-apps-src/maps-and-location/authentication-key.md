@@ -22,7 +22,7 @@ ms.locfileid: "57649559"
 
 **Совет** Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте следующий пример из [репозитория универсальных примеров для Windows](https://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
--   [Образец карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Пример карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="get-a-key"></a>Получение ключа
 
@@ -89,8 +89,8 @@ ms.locfileid: "57649559"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Центр разработчиков Bing Maps](https://www.bingmapsportal.com/)
-* [Образец карты универсальной платформы Windows](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Рекомендации по проектированию для карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Видео с Build 2015: Использование карты и расположение между телефоном, планшетом и ПК в приложениях Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Пример приложения UWP трафика](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Видео с конференции Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и компьютерах](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Пример приложения UWP для работы с трафиком](https://go.microsoft.com/fwlink/p/?LinkId=619982)

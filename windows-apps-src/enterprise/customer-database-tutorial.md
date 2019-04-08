@@ -1,5 +1,5 @@
 ---
-title: Создание приложения базы данных клиента
+title: создание приложения базы данных клиентов
 description: Создание приложения базы данных клиента и узнайте, как реализовать базовые функции приложения.
 keywords: Корпоративный, руководства, клиент, данных, создание проверкой подлинности delete, REST, чтение, обновление
 ms.date: 05/07/2018
@@ -7,12 +7,12 @@ ms.topic: article
 ms.localizationpriority: med
 ms.openlocfilehash: 9c09e0fb73e42fd8a3d0c70bbb5396be32624387
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57623249"
 ---
-# <a name="tutorial-create-a-customer-database-application"></a>Учебник. Создание приложения базы данных клиента
+# <a name="tutorial-create-a-customer-database-application"></a>Руководство: создание приложения базы данных клиентов
 
 В этом руководстве создается простое приложение для управления список клиентов. При этом в нем представлена подборка основные понятия для корпоративных приложений на универсальной платформы Windows. Вы научитесь выполнять следующие действия:
 

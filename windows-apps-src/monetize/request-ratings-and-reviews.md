@@ -155,5 +155,5 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Отправлять запросы к Store](send-requests-to-the-store.md)
-* [Запустите приложение Microsoft Store](../launch-resume/launch-store-app.md)
+* [Запуск приложения Microsoft Store](../launch-resume/launch-store-app.md)
 * [Отчет "Рецензии"](../publish/reviews-report.md)

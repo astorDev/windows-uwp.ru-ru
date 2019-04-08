@@ -96,6 +96,6 @@ ms.locfileid: "57656189"
 
 [Этап средства слияния (OM) вывода](output-merger-stage--om-.md)
 
-[Графического конвейера](graphics-pipeline.md)
+[Графический конвейер](graphics-pipeline.md)
 
 [Этап средства слияния вывода](https://msdn.microsoft.com/library/windows/desktop/bb205120)

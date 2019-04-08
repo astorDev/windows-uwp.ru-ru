@@ -170,6 +170,6 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 * [Действия пользователя (рим проекта docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Адаптивная карты](https://docs.microsoft.com/adaptive-cards/)
 * [Визуализатор адаптивной карты, примеры](https://adaptivecards.io/)
-* [Выполнять активацию URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+* [Активация обработки URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Привлекательные со своими клиентами на любой платформе, с помощью Microsoft Graph, канал активности и адаптивной карты](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

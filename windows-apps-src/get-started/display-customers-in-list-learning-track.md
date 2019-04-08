@@ -177,7 +177,7 @@ public class Customer : INotifyPropertyChanged
 
 | Раздел | Описание |
 |-------|----------------|
-| [Привязка данных в глубину](../data-binding/data-binding-in-depth.md) | Общий обзор принципов привязки данных |
+| [Подробно о привязке данных](../data-binding/data-binding-in-depth.md) | Общий обзор принципов привязки данных |
 | [Общие сведения о привязке данных](../data-binding/data-binding-quickstart.md) | Подробные концептуальные сведения о привязке данных. |
 | [Представление списка](../design/controls-and-patterns/listview-and-gridview.md) | Сведения о создании и настройке элемента управления ListView, в том числе о реализации **DataTemplate** |
 

@@ -113,20 +113,20 @@ sealed partial class App : Application
 **Подробные для фоновой задачи разделы**
 
 * [Преобразовать вне процесса фоновой задачи в фоновом режиме в процессе задачу](convert-out-of-process-background-task.md)
-* [Создание и регистрация вне процесса фоновой задачи](create-and-register-a-background-task.md)
+* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 * [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [Реакция на системные события с фоновыми задачами](respond-to-system-events-with-background-tasks.md)
-* [Зарегистрировать фоновую задачу](register-a-background-task.md)
-* [Задайте условия для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
+* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
+* [Регистрация фоновой задачи](register-a-background-task.md)
+* [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)
-* [Обработка отменена фоновой задачи](handle-a-cancelled-background-task.md)
-* [Отслеживать ход выполнения задач в фоновом режиме и завершения](monitor-background-task-progress-and-completion.md)
-* [Выполнять фоновую задачу по таймеру](run-a-background-task-on-a-timer-.md)
+* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
+* [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
+* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
 
 **Руководство по фоновым задачи**
 
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Отладить фоновую задачу](debug-a-background-task.md)
+* [Отладка фоновой задачи](debug-a-background-task.md)
 * [Активация приостановки, возобновления и фоновых событий для приложений универсальной платформы Windows (при отладке)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
 **Справочник по API фоновой задачи**

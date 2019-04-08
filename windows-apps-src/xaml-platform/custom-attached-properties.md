@@ -302,5 +302,5 @@ protected override Size ArrangeOverride(Size finalSize)
 
 * [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833)
 * [Общие сведения о присоединенных свойствах](attached-properties-overview.md)
-* [Пользовательские свойства взаимозависимости](custom-dependency-properties.md)
+* [Пользовательские свойства зависимостей](custom-dependency-properties.md)
 * [Обзор языка XAML](xaml-overview.md)

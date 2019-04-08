@@ -22,7 +22,7 @@ ms.locfileid: "57626659"
 
 Команды прокрутки представляют собой ускорение действий в контекстных меню и позволяют пользователям устройств с сенсорным вводом легко получать доступ к частым действиям без необходимости изменения состояния в приложении.
 
-> **Важные API-интерфейсы**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [класса ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **Важные API**: [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [класса ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![Execute и Reveal в светлой теме](images/LightThemeSwipe.png)
 
@@ -46,7 +46,7 @@ ms.locfileid: "57626659"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/SwipeControl">открыть приложение и увидеть SwipeControl в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>

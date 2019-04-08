@@ -207,7 +207,7 @@ ms.locfileid: "57618959"
 
     Чтобы включить режим разработчика, присвойте этому параметру типа DWORD значение 1:
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   **HKLM\\программного обеспечения\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
 **Включите устройство с помощью PowerShell**
 

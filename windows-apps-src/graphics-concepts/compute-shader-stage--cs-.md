@@ -26,9 +26,9 @@ ms.locfileid: "57613279"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Вычисления конвейера](compute-pipeline.md)
+[Конвейер вычислений](compute-pipeline.md)
 
-[Графического конвейера](graphics-pipeline.md)
+[Графический конвейер](graphics-pipeline.md)
 
  
 

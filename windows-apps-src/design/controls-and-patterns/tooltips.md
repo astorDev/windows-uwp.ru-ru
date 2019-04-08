@@ -25,7 +25,7 @@ ms.locfileid: "57613669"
 
 ![Подсказка](images/controls/tool-tip.png)
 
-> **Важные API-интерфейсы**: [Класс подсказки](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [класс ToolTipService](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+> **Важные API**: [Класс подсказки](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [класс ToolTipService](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -63,7 +63,7 @@ ms.locfileid: "57613669"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/ToolTip">открыть приложение и увидеть ToolTip в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>

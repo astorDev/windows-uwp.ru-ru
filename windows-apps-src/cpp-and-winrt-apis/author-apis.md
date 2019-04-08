@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проеци
 ms.localizationpriority: medium
 ms.openlocfilehash: e4ca6946df327dbe6697a71d1050e6401ed531fe
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57626669"
@@ -393,15 +393,15 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 До внесения изменений, описанных выше (для передачи параметра конструктора базовому классу), компилятор пометит конструктор укажет на отсутствие подходящего конструктора по умолчанию, доступного для типа под названием (в данном случае) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;**. Фактически, это базовый класс базового класса вашего типа реализации.
 
 ## <a name="important-apis"></a>Важные API
-* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::com_ptr::copy_from function](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
+* [Структура шаблона WinRT::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
+* [функция WinRT::com_ptr::copy_from](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
 * [Шаблон функции WinRT::from_abi](/uwp/cpp-ref-for-winrt/from-abi)
-* [winrt::get_self function template](/uwp/cpp-ref-for-winrt/get-self)
+* [Шаблон функции WinRT::get_self](/uwp/cpp-ref-for-winrt/get-self)
 * [Структура шаблона WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
 * [Шаблон функции WinRT::make](/uwp/cpp-ref-for-winrt/make)
 * [Шаблон функции WinRT::make_self](/uwp/cpp-ref-for-winrt/make-self)
 * [WinRT::Windows::Foundation::IUnknown:: как функция](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Использование API-интерфейсов с использованием C + +/ WinRT](consume-apis.md)
-* [Элементы управления XAML; Привязка к C + +/ WinRT-свойство](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
+* [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

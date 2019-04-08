@@ -8,14 +8,14 @@ keywords: windows 10, uwp, приложение для демонстрации 
 ms.localizationpriority: medium
 ms.openlocfilehash: b66435dd7c94762874461b48e19e9a60224f287b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57596759"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>Добавление функции demo (RDX) розничной торговли в приложение
 
-Включает режим Демонстрация розничной торговли в приложении Windows, поэтому клиенты, которые опробовать компьютерами и устройствами на продажу floor можно перейти непосредственно к.
+Включите режим демонстрации в розничных магазинах в свое приложение для Windows, чтобы клиенты, выбирая компьютеры и устройства в торговом зале, могли сразу же использовать ваше предложение.
 
 Когда клиенты находятся в розничном магазине, они хотят иметь возможность испытать демонстрации компьютеров и устройств. Они часто тратят значительную часть своего времени, начав с приложениями с помощью [розничной торговли — Демонстрация качества (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience).
 

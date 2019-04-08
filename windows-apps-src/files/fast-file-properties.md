@@ -17,7 +17,7 @@ ms.locfileid: "57630239"
 Узнайте, как быстро получить список файлов и их свойств из библиотеки для использования этих свойств в приложении.  
 
 Предварительные условия 
-- **Асинхронное программирование для приложений универсальной платформы Windows (UWP)**   рассказывается, как написание асинхронных приложений C# или Visual Basic, см. в разделе [вызов асинхронных API в C# или Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).     Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
+- **Асинхронное программирование для приложений универсальной платформы Windows (UWP)**   рассказывается, как написание асинхронных приложений C# или Visual Basic, см. в разделе [вызов асинхронных API в C# или Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
 - **Разрешение на доступ к библиотекам**   код в этих примерах требует **picturesLibrary** возможность, но расположение файла может потребоваться различными возможностями, или отсутствует возможность вообще. Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). 
 - **Перечисление простого**    в этом примере используется [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) задать несколько дополнительных перечисления свойств. Подробные инструкции о том, как получить простой список файлов для небольшого каталога, см. в разделе [Перечисление файлов и папок и адресация им запросов](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
 
@@ -116,7 +116,7 @@ while (images.Count != 0 || index < 10000) 
  
 ## <a name="see-also"></a>См. также
 [Справочник по API QueryOptions](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
-[Перечисления и запросов файлов и папок](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
-[Разрешения доступа](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
+[Перечисление и запрос файлов и папок](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
+[Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
  
  

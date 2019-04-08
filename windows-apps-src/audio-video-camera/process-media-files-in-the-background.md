@@ -23,7 +23,7 @@ ms.locfileid: "57611909"
 
 Дополнительные сведения о различных функциях универсального приложения для Windows, применяемых в этом примере, см. в следующих статьях:
 
--   [Перекодировка медиафайлов](transcode-media-files.md)
+-   [Перекодирование файлов мультимедиа](transcode-media-files.md)
 -   [Запуск возобновления и фоновых задачах](https://msdn.microsoft.com/library/windows/apps/mt227652)
 -   [Значки плитки и уведомления](https://msdn.microsoft.com/library/windows/apps/mt185606)
 

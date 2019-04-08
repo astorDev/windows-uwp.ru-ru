@@ -383,7 +383,7 @@ using namespace Windows::Web::Http;
 * [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)
 * [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)
 * [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)
-* [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692)
+* [**Windows::Web::http**](https://msdn.microsoft.com/library/windows/apps/dn279692)
 * [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 
 **Примеры**

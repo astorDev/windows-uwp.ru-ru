@@ -23,7 +23,7 @@ ms.locfileid: "57648539"
 
 Когда пользователь использует символ амперсанд (@) перед записью в RichEditBox, отображается список людей и/или мест, соответствующих записи. Затем, например, когда пользователь выбирает место, ContentLink для этого места вставляется в текст. Когда пользователь вызывает ссылку на содержимое из RichEditBox, отображается всплывающий элемент с картой и дополнительными сведениями о месте.
 
-> **Важные API-интерфейсы**: [Класс ContentLink](/uwp/api/windows.ui.xaml.documents.contentlink), [класс ContentLinkInfo](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange-класс](/uwp/api/windows.ui.text.richedittextrange)
+> **Важные API**: [Класс ContentLink](/uwp/api/windows.ui.xaml.documents.contentlink), [класс ContentLinkInfo](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange-класс](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
 > Интерфейсы API для ссылки на материалы о распределены на следующие пространства имен: Windows.UI.Xaml.Controls Windows.UI.Xaml.Documents и Windows.UI.Text.

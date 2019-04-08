@@ -8,12 +8,12 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bc28a4b1cb8afd70ef68a2e297b51ad0a5a0fc5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57661919"
 ---
-# <a name="tutorial-support-ink-in-your-uwp-app"></a>Учебник. Поддержка рукописного ввода в приложении UWP
+# <a name="tutorial-support-ink-in-your-uwp-app"></a>Руководство: Поддержка рукописного ввода в приложении UWP
 
 ![Перо Surface](images/ink/ink-hero-small.png)  
 *Ручка Surface* (доступна для приобретения в [Магазине Microsoft](https://aka.ms/purchasesurfacepen)).
