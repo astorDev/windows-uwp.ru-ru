@@ -22,7 +22,7 @@ ms.locfileid: "57605459"
 
 Используйте анимацию перетаскивания, когда пользователь перемещает объекты, например передвигает элемент в списке или размещает один элемент выше другого.
 
-> **Важные API-интерфейсы**: [**Класс DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
+> **Важные API**: [**Класс DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения

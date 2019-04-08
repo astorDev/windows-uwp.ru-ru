@@ -463,4 +463,4 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Создание связанного набора и дополнительные пакеты](optional-packages.md)
+* [Разработка дополнительных пакетов и связанных наборов](optional-packages.md)

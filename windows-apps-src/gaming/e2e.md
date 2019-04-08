@@ -8,7 +8,7 @@ keywords: windows 10, uwp, игры, разработка игр
 ms.localizationpriority: medium
 ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57652329"
@@ -186,7 +186,7 @@ ms.locfileid: "57652329"
     </tr>
     <tr>
         <td>Примеры графики Direct3D 11</td>
-        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
+        <td><a href="https://github.com/walbourn/directx-sdk-samples">Примеры для пакета sdk DirectX</a></td>
     </tr>
     <tr>
         <td>Пример игры Direct3D 11 от первого лица</td>
@@ -428,7 +428,7 @@ DirectX 12 работает быстрее и эффективнее любой 
         <td><a href="directx-programming.md">Программирование DirectX</a></td>
     </tr>
     <tr>
-        <td>Учебник. Как создать игру DirectX для универсальной платформы Windows</td>
+        <td>Руководство: Как создать игру DirectX для универсальной платформы Windows</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">Создание простой игры UWP c использованием DirectX</a></td>
     </tr>
     <tr>
@@ -874,7 +874,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Перенос приложения для Windows 8 на универсальную платформу Windows</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238322">Переместить из среды выполнения Windows 8.x в UWP</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238322">Переход от среды выполнения Windows 8.x к UWP</a></td>
     </tr>
     <tr>
         <td>Перенос приложения для Windows 8 на универсальную платформу Windows (видео)</td>
@@ -1130,7 +1130,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Руководство по карте пользовательского интерфейса</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">Советы и рекомендации: UI Map</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">Советы и рекомендации: Карты пользовательского интерфейса</a></td>
     </tr>
 </table>
 
@@ -1183,7 +1183,7 @@ BabylonJS — это комплексная платформа JavaScript для
         <td><a href="directx-programming.md">Программирование DirectX</a></td>
     </tr>
     <tr>
-        <td>Учебник. Как создать игру DirectX для универсальной платформы Windows</td>
+        <td>Руководство: Как создать игру DirectX для универсальной платформы Windows</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">Создание простой игры UWP c использованием DirectX</a></td>
     </tr>
     <tr>
@@ -1343,7 +1343,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Приложение Windows 10 для интерактивной разработки шаблонов живых плиток</td>
-        <td><a href="https://www.microsoft.com/store/apps/9nblggh5xsl1">Визуализатор уведомления</a></td>
+        <td><a href="https://www.microsoft.com/store/apps/9nblggh5xsl1">Визуализатор уведомлений</a></td>
     </tr>
     <tr>
         <td>Расширение генератора плиток UWP для Visual Studio</td>
@@ -1375,7 +1375,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Дополнительные сведения и отправки</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">Надстройка отправок</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">Отправка надстроек</a></td>
     </tr>
     <tr>
         <td>Монитор надстройки продаж и демографические данные вашей игры</td>
@@ -1563,7 +1563,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Создание дополнительных пакетов, например DLC для игр</td>
-        <td><a href="../packaging/optional-packages.md">Создание связанного набора и дополнительные пакеты</a></td>
+        <td><a href="../packaging/optional-packages.md">Разработка дополнительных пакетов и связанных наборов</a></td>
     </tr>
     <tr>
         <td>Создание пакета игры UWP</td>
@@ -1607,7 +1607,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Правила публикации приложений в Microsoft Store</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/dn764944">Политики Microsoft Store</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/dn764944">Политики для Microsoft Store</a></td>
     </tr>
     <tr>
         <td>Способы предотвращения некоторых распространенных проблем сертификации приложений</td>

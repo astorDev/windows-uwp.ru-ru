@@ -24,7 +24,7 @@ ms.locfileid: "57616209"
 
 Узнайте, как использовать кадр и страницы, чтобы включить базовую одноранговую навигацию в приложении. 
 
-> **Важные API-интерфейсы**: [**Windows.UI.Xaml.Controls.Frame** ](https://msdn.microsoft.com/library/windows/apps/br242682) класс, [ **Windows.UI.Xaml.Controls.Page** ](https://msdn.microsoft.com/library/windows/apps/br227503) класс, [ **Windows.UI.Xaml.Navigation** ](https://msdn.microsoft.com/library/windows/apps/br243300) пространства имен
+> **Важные API**: [**Windows.UI.Xaml.Controls.Frame** ](https://msdn.microsoft.com/library/windows/apps/br242682) класс, [ **Windows.UI.Xaml.Controls.Page** ](https://msdn.microsoft.com/library/windows/apps/br227503) класс, [ **Windows.UI.Xaml.Navigation** ](https://msdn.microsoft.com/library/windows/apps/br243300) пространства имен
 
 ![навигация между одноранговыми элементами](images/peertopeer.png)
 

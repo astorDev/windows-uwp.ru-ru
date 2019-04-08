@@ -95,4 +95,4 @@ namespace BackgroundTasks
 
 ## <a name="see-also"></a>См. также
 
-[Создание и регистрация вне процесса фоновой задачи](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+[Создание и регистрация внепроцессной фоновой задачи](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)

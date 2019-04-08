@@ -4,7 +4,7 @@ title: API JavaScript для приложения "Тестирование".
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 ms.date: 08/08/2018
 ms.topic: article
-keywords: Windows 10, uwp, для образовательных учреждений
+keywords: Windows 10, uwp, образование
 ms.localizationpriority: medium
 ms.openlocfilehash: bee8a04e3b4d57caf7da3e21f2be3c789d83be90
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

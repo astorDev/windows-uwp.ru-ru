@@ -7,7 +7,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57589989"
@@ -131,5 +131,5 @@ ms.locfileid: "57589989"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Покупки из приложений и пробные версии](in-app-purchases-and-trials.md)
+* [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
 * [Получите сведения о продукте для приложения и надстройки](get-product-info-for-apps-and-add-ons.md)

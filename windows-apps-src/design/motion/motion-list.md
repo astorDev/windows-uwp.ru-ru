@@ -21,7 +21,7 @@ ms.locfileid: "57642839"
 
 Анимации списка позволяют вставлять или удалять один или несколько элементов коллекции, например в фотоальбоме или результатах поиска.
 
-> **Важные API-интерфейсы**: [**Класс AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
+> **Важные API**: [**Класс AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения

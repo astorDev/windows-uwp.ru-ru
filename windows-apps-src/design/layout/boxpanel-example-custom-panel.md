@@ -25,7 +25,7 @@ ms.locfileid: "57620129"
 
 Информация о написании кода для пользовательского класса [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) путем реализации методов [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) и [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730), а также использования свойства [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514). 
 
-> **Важные API-интерфейсы**: [**Панель**](https://msdn.microsoft.com/library/windows/apps/br227511), [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711),[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 
+> **Важные API**: [**Панель**](https://msdn.microsoft.com/library/windows/apps/br227511), [ **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711),[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 
 
 В данном примере кода показана реализация пользовательской панели, но не рассматриваются подробно понятия макета, которые влияют на настройку панели для различных сценариев макета. Дополнительную информацию об этих понятиях макета и их применимости к вашему конкретному сценарию макета см. в статье [Обзор пользовательских панелей XAML](custom-panels-overview.md).
 

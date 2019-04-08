@@ -169,7 +169,7 @@ ms.locfileid: "57627079"
 
 Подробнее о значениях [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411) и синтаксисе XAML: [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411).
 
-### <a name="fillbehaviorstop"></a>**FillBehavior="Stop"**
+### <a name="fillbehaviorstop"></a>**FillBehavior = «Stop»**
 
 По умолчанию, когда анимация заканчивается, она оставляет значение свойства как окончательное значение **To** или измененное значение **By**, даже после того как ее длительность превышена. Однако если вы задаете значение свойства [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) как [**FillBehavior.Stop**](https://msdn.microsoft.com/library/windows/apps/BR210306), значение анимированного значения возвращается в любое значение, которое присутствовало до применения анимации, или, точнее, в текущее действительное значение, что определено системой свойств зависимостей (подробнее об этом отличии: [Общие сведения о свойствах зависимостей](https://msdn.microsoft.com/library/windows/apps/Mt185583)).
 

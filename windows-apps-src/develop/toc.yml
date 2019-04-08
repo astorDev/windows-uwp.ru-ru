@@ -1326,19 +1326,19 @@ items:
     - name: Знакомство с UWP для разработчиков iOS
       href: ../porting/getting-started-with-uwp-for-ios-developers.md
       items:
-      - name: 'Приступая к работе: создание проекта'
+      - name: 'Приступая к работе: Создание проекта'
         href: ../porting/getting-started-creating-a-project.md
       - name: 'Приступая к работе: Выбор языка программирования'
         href: ../porting/getting-started-choosing-a-programming-language.md
-      - name: 'Приступая к работе: введение в Visual Studio'
+      - name: 'Приступая к работе: Введение в Visual Studio'
         href: ../porting/getting-started-getting-around-in-visual-studio.md
       - name: 'Приступая к работе: общие элементы управления'
         href: ../porting/getting-started-common-controls.md
-      - name: 'Приступая к работе: навигация'
+      - name: 'Приступая к работе: Навигация'
         href: ../porting/getting-started-navigation.md
-      - name: 'Приступая к работе: анимация'
+      - name: 'Приступая к работе: Анимация'
         href: ../porting/getting-started-animation.md
-      - name: 'Приступая к работе: что делать дальше?'
+      - name: 'Приступая к работе: Что делать дальше?'
         href: ../porting/getting-started-what-next.md
     - name: Установка Windows 10 на Mac
       href: ../porting/setting-up-your-mac-with-windows-10.md

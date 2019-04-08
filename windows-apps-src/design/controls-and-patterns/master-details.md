@@ -21,7 +21,7 @@ ms.locfileid: "57601259"
 
 В шаблоне основных и подробных есть главная панель (обычно с [представлением списка](lists.md)) и область сведений для содержимого. Если выбрать элемент в главном списке, область сведений обновляется. Этот шаблон часто используется для работы с электронной почтой и адресными книгами.
 
-> **Важные API-интерфейсы**: [Класс ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView-класс](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **Важные API**: [Класс ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView-класс](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Пример шаблона основных и подробных данных](images/HIGSecOne_MasterDetail.png)
 

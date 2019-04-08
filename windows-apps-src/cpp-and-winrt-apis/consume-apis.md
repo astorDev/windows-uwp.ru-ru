@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, стандартная c++, cpp, winrt, проеци�
 ms.localizationpriority: medium
 ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57645149"
@@ -259,12 +259,12 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 * [Интерфейс QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [Функция RoActivateInstance](https://msdn.microsoft.com/library/br224646)
 * [Класс Windows::Foundation::URI](/uwp/api/windows.foundation.uri)
-* [winrt::get_activation_factory function template](/uwp/cpp-ref-for-winrt/get-activation-factory)
+* [Шаблон функции WinRT::get_activation_factory](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [Шаблон функции WinRT::make](/uwp/cpp-ref-for-winrt/make)
 * [Структура WinRT::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>Статьи по теме
 * [Создание событий в C + +/ WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [Взаимодействия между C + +/ WinRT и ABI](interop-winrt-abi.md)
-* [Введение в C + +/ WinRT](intro-to-using-cpp-with-winrt.md)
-* [Элементы управления XAML; Привязка к C + +/ WinRT-свойство](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [Взаимодействие между C++/WinRT и интерфейсом ABI](interop-winrt-abi.md)
+* [Введение в C++/WinRT](intro-to-using-cpp-with-winrt.md)
+* [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

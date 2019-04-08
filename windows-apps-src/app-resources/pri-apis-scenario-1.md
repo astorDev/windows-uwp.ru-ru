@@ -234,4 +234,4 @@ MrmResourceIndexerHandle indexer;
 * [Ресурс Package, индексирование ссылки (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Ресурс Package индексирования API-интерфейсы (PRI) и пользовательских систем сборки](pri-apis-custom-build-systems.md)
+* [Интерфейсы API индексирования ресурсов пакета (PRI) и пользовательские системы сборки](pri-apis-custom-build-systems.md)

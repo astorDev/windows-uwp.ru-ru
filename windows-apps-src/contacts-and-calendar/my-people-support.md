@@ -249,10 +249,10 @@ async Task PinMultipleContacts(Contact[] contacts)
 **Примечание.** 
 
 ## <a name="see-also"></a>См. также
-+ [Мои человек используют](my-people-sharing.md)
++ [Публикации близких людей](my-people-sharing.md)
 + [Мои notificatons людей](my-people-notifications.md)
 + [Видео на Channel 9 о добавлении поддержку Мои людей в приложение](https://channel9.msdn.com/Events/Build/2017/P4056)
 + [Мой пример интеграции людей](https://aka.ms/mypeoplebuild2017)
 + [Обратитесь в службу примере карты](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [Документации по классу PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [Подключение приложения к действиям на карточку контакта](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [Подключение приложения к действиям в карточке контакта](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

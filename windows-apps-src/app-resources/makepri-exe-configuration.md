@@ -296,5 +296,5 @@ MakePri.exe добавляет значение `targetOsVersion` в файл д
 
 * [Компиляция ресурсов вручную с помощью MakePri.exe](compile-resources-manually-with-makepri.md)
 * [Параметры командной строки MakePri.exe&mdash;createconfig команды](makepri-exe-command-options.md#createconfig-command)
-* [Настроить ресурсы для языка, масштабирование, высокая контрастность и квалификаторов](tailor-resources-lang-scale-contrast.md)
+* [Адаптация ресурсов с учетом языка, масштаба, высокой контрастности и других квалификаторов](tailor-resources-lang-scale-contrast.md)
 * [Система управления ресурсами&mdash;ResourceContext](resource-management-system.md#resourcecontext)

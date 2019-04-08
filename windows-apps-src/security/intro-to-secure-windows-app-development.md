@@ -4,7 +4,7 @@ description: В этой вводной статье помогает прило
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасность
+keywords: windows 10, uwp, security
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c3c57653899ce7d849eec72ad36f14f7806652c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
@@ -464,17 +464,17 @@ public void SampleReusableHash()
 -   [Проверка подлинности и удостоверение пользователя](authentication-and-user-identity.md)
 -   [Windows Hello](microsoft-passport.md)
 -   [Хранилище учетных данных](credential-locker.md)
--   [Веб-брокер проверки подлинности](web-authentication-broker.md)
+-   [Брокер веб-аутентификации](web-authentication-broker.md)
 -   [Биометрические данные отпечатков пальцев](fingerprint-biometrics.md)
 -   [Смарт-карты](smart-cards.md)
 -   [Общих сертификатов](share-certificates.md)
--   [Криптография](cryptography.md)
+-   [Шифрование](cryptography.md)
 -   [Сертификаты](certificates.md)
 -   [Криптографические ключи](cryptographic-keys.md)
 -   [Защита данных](data-protection.md)
--   [Макинтоши, хэши и подписи](macs-hashes-and-signatures.md)
--   [Экспортные ограничения на криптографии](export-restrictions-on-cryptography.md)
--   [Общие задачи криптографии](common-cryptography-tasks.md)
+-   [Коды аутентификации сообщений, хэши и подписи](macs-hashes-and-signatures.md)
+-   [Ограничения на экспорт шифрования](export-restrictions-on-cryptography.md)
+-   [Общие задачи шифрования](common-cryptography-tasks.md)
 
 ### <a name="62-code-samples"></a>6.2. Примеры кода
 

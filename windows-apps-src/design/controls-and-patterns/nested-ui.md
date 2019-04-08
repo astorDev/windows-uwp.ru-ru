@@ -26,7 +26,7 @@ ms.locfileid: "57661309"
 
 Вложенные элементы интерфейса можно использовать для предоставления пользователю дополнительных параметров, ускоряющих выполнение важных действий. Однако чем больше действий предоставляется, тем сложнее становится пользовательский интерфейс. Выбирать этот шаблон пользовательского интерфейса следует с особым вниманием. В это статье представлены рекомендации, которые помогут вам составит лучший план действий для вашего пользовательского интерфейса.
 
-> **Важные API-интерфейсы**: [Класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+> **Важные API**: [Класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 В этой статье мы рассмотрим создание вложенных элементов пользовательского интерфейса в элементах [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) и [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Хотя в этом разделе не рассматриваются другие варианты вложенных элементов интерфейса, данные концепции универсальны. Перед началом вам следует ознакомиться с общими рекомендациями по использованию элементов управления ListView или GridView в пользовательском интерфейсе. Эти рекомендации можно найти в статьях [Списки](lists.md) и [Представления списка и сетки](listview-and-gridview.md).
 

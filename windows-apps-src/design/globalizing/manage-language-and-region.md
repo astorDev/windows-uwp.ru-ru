@@ -210,10 +210,10 @@ ms.locfileid: "57605579"
 ## <a name="related-topics"></a>Статьи по теме
 * [Тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Реестр подтегов языка IANA](https://go.microsoft.com/fwlink/p/?linkid=227303)
-* [Настроить ресурсы для языка, масштабирование, высокая контрастность и квалификаторов](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Адаптация ресурсов с учетом языка, масштаба, высокой контрастности и других квалификаторов](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Поддерживаемые языки](../../publish/supported-languages.md)
 * [Глобализация форматирования даты, времени и номеров](use-global-ready-formats.md)
-* [Как система управления ресурсами соответствует тегам языка](../../app-resources/how-rms-matches-lang-tags.md)
+* [Как система управления ресурсами сопоставляет языковые теги](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## <a name="samples"></a>Примеры
 * [Ресурсы приложения и примеры локализации](https://go.microsoft.com/fwlink/p/?linkid=231501)

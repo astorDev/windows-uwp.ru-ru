@@ -286,4 +286,4 @@ ms.locfileid: "57606889"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Политики Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Политики для Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)

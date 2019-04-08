@@ -23,7 +23,7 @@ ms.locfileid: "57646469"
 
 Элемент управления "Комбинированный режим" содержит разворачиваемую и сворачиваемую панель, а также область содержимого.
 
-> **Важные API-интерфейсы**: [Класс SplitView](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **Важные API**: [Класс SplitView](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 Вот пример использования SplitView в Microsoft Edge для отображения Центра.
 
@@ -63,7 +63,7 @@ ms.locfileid: "57646469"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/SplitView">открыть приложение и увидеть SplitView в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>

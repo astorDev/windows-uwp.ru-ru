@@ -16,7 +16,7 @@ ms.locfileid: "57595049"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Журнал навигации и навигация в обратном направлении для приложений UWP
 
-> **Важные API-интерфейсы**: [Событие BackRequested](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [класс SystemNavigationManager](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
+> **Важные API**: [Событие BackRequested](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [класс SystemNavigationManager](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 Универсальная платформа Windows (UWP) обеспечивает единообразие навигации в обратном направлении в виде системы возврата на предыдущий уровень, позволяя пользователю перемещаться по журналу навигации в приложении и, в зависимости от устройства, из приложения в приложение.
 
@@ -263,7 +263,7 @@ bool App::On_BackRequested()
 
 - **Телефона или планшета**: Кнопки возврата оборудования или программного обеспечения всегда является отсутствует на мобильных устройствах и планшета, но мы рекомендуем рисования в приложении кнопки "Назад" для ясности.
 - **Рабочий стол и узловых**: Нарисуйте "Назад" в приложении в левом верхнем углу пользовательского интерфейса приложения.
-- **Xbox/TV**: Не рисования кнопки возврата, для добавит ненужные элементы пользовательского интерфейса. Вместо этого для обратной навигации используйте кнопку B на геймпаде.
+- **Xbox и Телевизионных**: Не рисования кнопки возврата, для добавит ненужные элементы пользовательского интерфейса. Вместо этого для обратной навигации используйте кнопку B на геймпаде.
 
 Если ваше приложение будет выполняться на нескольких устройствах, [создайте пользовательский визуальный триггер для Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox) для переключения состояния видимости кнопки. Элемент управления NavigationView будет автоматически переключать состояние видимости кнопки "Назад", если ваше приложение работает на консоли Xbox. 
 

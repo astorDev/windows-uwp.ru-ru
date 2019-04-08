@@ -20,7 +20,7 @@ ms.locfileid: "57663799"
 Используйте анимацию указателя, чтобы предоставить пользователям визуальный отклик на касание или щелчок элемента. Анимация нажатия указателя слегка уменьшает и наклоняет нажатый элемент и воспроизводится при первом касании элемента. Анимация поднятия указателя, которая возвращает элемент в исходное положение, воспроизводится, когда пользователь отпускает указатель.
 
 
-> **Важные API-интерфейсы**: [**Класс PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/hh969168), [ **PointerDownThemeAnimation-класс**](https://msdn.microsoft.com/library/windows/apps/hh969164)
+> **Важные API**: [**Класс PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/hh969168), [ **PointerDownThemeAnimation-класс**](https://msdn.microsoft.com/library/windows/apps/hh969164)
 
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения

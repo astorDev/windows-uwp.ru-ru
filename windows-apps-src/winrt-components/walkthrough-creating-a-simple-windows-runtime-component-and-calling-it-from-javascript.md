@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b177a7741cae0fe786d095c26a6be08ec598bcbb
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57604479"
@@ -737,4 +737,4 @@ btnCancel.addEventListener("click", asyncCancel, false);
 
 * [.NET для Обзор приложений универсальной платформы Windows](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [.NET для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
-* [Пошаговое руководство. Создание простого компонента среды выполнения Windows и вызов его из JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [Пошаговое руководство: Создание простого компонента среды выполнения Windows и вызов его из JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

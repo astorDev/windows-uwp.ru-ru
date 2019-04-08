@@ -88,6 +88,6 @@ ms.locfileid: "57612939"
 
 [Подключенных приложений и устройств (проект рим) Обзор](connected-apps-and-devices.md)  
 [Запуск удаленного приложения](launch-a-remote-app.md)  
-[Создавать и использовать службу приложений](how-to-create-and-consume-an-app-service.md)  
+[Создание и использование службы приложений](how-to-create-and-consume-an-app-service.md)  
 [Удаленный Справочник по API системы](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [Пример удаленных систем](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)

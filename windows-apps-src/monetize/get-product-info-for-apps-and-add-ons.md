@@ -8,7 +8,7 @@ keywords: windows 10, uwp, покупки из приложения, IAP, над
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b923764c6374e403d2652db715f65a80c48bacf
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57623099"
@@ -83,7 +83,7 @@ ms.locfileid: "57623099"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Покупки из приложений и пробные версии](in-app-purchases-and-trials.md)
+* [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
 * [Получить сведения о лицензии для приложений и надстроек](get-license-info-for-apps-and-add-ons.md)
 * [Включить покупки из приложений, приложений и надстроек](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [Включить покупки готовых к использованию надстройки](enable-consumable-add-on-purchases.md)

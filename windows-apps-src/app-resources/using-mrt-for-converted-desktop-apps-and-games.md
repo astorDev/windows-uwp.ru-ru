@@ -7,7 +7,7 @@ keywords: windows 10, uwp, mrt, pri. ресурсы, игры, centennial, deskt
 ms.localizationpriority: medium
 ms.openlocfilehash: 287c22cbd50f1b69f505bbddd445740fe9422c31
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57597019"
@@ -787,4 +787,4 @@ makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.app
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Настроить ресурсы для языка, масштабирование, высокая контрастность и квалификаторов](tailor-resources-lang-scale-contrast.md)
+* [Адаптация ресурсов с учетом языка, масштаба, высокой контрастности и других квалификаторов](tailor-resources-lang-scale-contrast.md)

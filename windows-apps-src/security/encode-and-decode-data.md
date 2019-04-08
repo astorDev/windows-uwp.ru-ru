@@ -4,7 +4,7 @@ description: В этом примере кода показано, как код
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, безопасность
+keywords: windows 10, uwp, security
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c4e694dca3c84c7e94e513d8bb10a3f405bbc86
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

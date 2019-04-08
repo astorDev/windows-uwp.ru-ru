@@ -279,7 +279,7 @@ toastCompletedEventHandler: function (event) {
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>Создание идентификаторов GUID для интерфейсов компонента (C# и другие языки .NET)
 
-В строке меню выберите "Средства &gt; Создать GUID". В диалоговом окне выберите значение 5. \[Guid(“xxxxxxxx-xxxx...xxxx)\]. Нажмите кнопку "Создать GUID", а затем кнопку "Копировать".
+В строке меню выберите "Средства &gt; Создать GUID". В диалоговом окне выберите значение 5. \[Идентификатор GUID ("xxxxxxxx-xxxx... xxxx)\]. Нажмите кнопку "Создать GUID", а затем кнопку "Копировать".
 
 ![средство создания GUID](./images/guidgeneratortool.png)
 
@@ -422,4 +422,4 @@ MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToaster,0xE976784C,0xAADE,0x4EA
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Создание компонентов среды выполнения Windows в C++](creating-windows-runtime-components-in-cpp.md)
+* [Создание компонентов среды выполнения Windows на C++](creating-windows-runtime-components-in-cpp.md)

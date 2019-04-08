@@ -42,5 +42,5 @@ ms.locfileid: "57635789"
 
 ### <a name="related-topics"></a>Статьи по теме
 
-* [Реклама в приложениях](in-app-ads.md)
+* [Реклама в приложении](in-app-ads.md)
 * [Создайте рекламную кампанию для своего приложения](create-an-ad-campaign-for-your-app.md)

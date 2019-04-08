@@ -23,7 +23,7 @@ ms.locfileid: "57659259"
 
 Обновление путем оттягивания позволяет пользователю потянуть список данных вниз, чтобы получить дополнительные данные. Эта функция широко используется на устройствах с сенсорным экраном. Вы можете использовать представленные в этом разделе API-интерфейсы для реализации запроса на обновление путем оттягивания в своем приложении.
 
-> **Важные API-интерфейсы**: [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
+> **Важные API**: [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
 
 ![Изображение "Обновление путем оттягивания"](images/Pull-To-Refresh.gif)
 

@@ -53,7 +53,7 @@ Model-View-ViewModel (MVVM) — это шаблон проектирования
 
 ### <a name="topics"></a>Разделы
 
-[Привязка данных в глубину](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)  
+[Подробно о привязке данных](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)  
 [расширение разметки {x: Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)  
 
 ### <a name="samples"></a>Примеры

@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, ресурс, изображение, средств�
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592029"
@@ -196,7 +196,7 @@ private void RefreshUIImages()
 
 ## <a name="related-topics"></a>Статьи по теме
 * [Настроить ресурсы для языка, масштаба и квалификаторов](tailor-resources-lang-scale-contrast.md)
-* [Локализация строк в манифесте пакета интерфейса пользователя и приложения](localize-strings-ui-manifest.md)
+* [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md)
 * [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md)
 * [Плиток и всплывающих уведомлений поддержка языка, масштаба и высокой контрастности](tile-toast-language-scale-contrast.md)
 * [Локализуемые элементы манифеста](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)

@@ -124,13 +124,13 @@ storagelibrarychangetrackertrigger <br> storagelibrarychangetrackertrigger.stora
 
 tetheringentitlementchecktrigger <br> tetheringentitlementchecktrigger.tetheringentitlementchecktrigger
 
-### <a name="windowsapplicationmodelcallsproviderhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcallsprovider"></a>[windows.applicationmodel.calls.provider](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.provider)
+### <a name="windowsapplicationmodelcallsproviderhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcallsprovider"></a>[Windows.applicationmodel.Calls.Provider](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.provider)
 
 #### <a name="phonecalloriginmanagerhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcallsproviderphonecalloriginmanager"></a>[phonecalloriginmanager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.provider.phonecalloriginmanager)
 
 phonecalloriginmanager
 
-### <a name="windowsapplicationmodelcallshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcalls"></a>[windows.applicationmodel.calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls)
+### <a name="windowsapplicationmodelcallshttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcalls"></a>[Windows.applicationmodel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls)
 
 #### <a name="voipcallcoordinatorhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcallsvoipcallcoordinator"></a>[voipcallcoordinator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls.voipcallcoordinator)
 
@@ -140,7 +140,7 @@ voipcallcoordinator.requestnewappinitiatedcall <br> voipcallcoordinator.requestn
 
 voipphonecall.notifycallaccepted
 
-### <a name="windowsapplicationmodelcorehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcore"></a>[windows.applicationmodel.core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core)
+### <a name="windowsapplicationmodelcorehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcore"></a>[Windows.applicationmodel.Core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core)
 
 #### <a name="applistentryhttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelcoreapplistentry"></a>[applistentry](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.applistentry)
 
@@ -226,7 +226,7 @@ packageinstallprogress
 
 ## <a name="windowsdevices"></a>windows.devices
 
-### <a name="windowsdevicesbluetoothhttpsdocsmicrosoftcomuwpapiwindowsdevicesbluetooth"></a>[windows.devices.bluetooth](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth)
+### <a name="windowsdevicesbluetoothhttpsdocsmicrosoftcomuwpapiwindowsdevicesbluetooth"></a>[Windows.Devices.Bluetooth](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth)
 
 #### <a name="bluetoothadapterhttpsdocsmicrosoftcomuwpapiwindowsdevicesbluetoothbluetoothadapter"></a>[bluetoothadapter](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothadapter)
 
@@ -316,7 +316,7 @@ gazepointpreview <br> gazepointpreview.eyegazeposition <br> gazepointpreview.hea
 
 windows.devices.input.preview
 
-### <a name="windowsdevicespointofserviceproviderhttpsdocsmicrosoftcomuwpapiwindowsdevicespointofserviceprovider"></a>[windows.devices.pointofservice.provider](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider)
+### <a name="windowsdevicespointofserviceproviderhttpsdocsmicrosoftcomuwpapiwindowsdevicespointofserviceprovider"></a>[Windows.Devices.pointofservice.Provider](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider)
 
 #### <a name="barcodescannerdisablescannerrequesthttpsdocsmicrosoftcomuwpapiwindowsdevicespointofserviceproviderbarcodescannerdisablescannerrequest"></a>[barcodescannerdisablescannerrequest](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.provider.barcodescannerdisablescannerrequest)
 
@@ -402,7 +402,7 @@ barcodesymbologyattributesbuilder <br> barcodesymbologyattributesbuilder.barcode
 
 windows.devices.pointofservice.provider
 
-### <a name="windowsdevicespointofservicehttpsdocsmicrosoftcomuwpapiwindowsdevicespointofservice"></a>[windows.devices.pointofservice](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice)
+### <a name="windowsdevicespointofservicehttpsdocsmicrosoftcomuwpapiwindowsdevicespointofservice"></a>[Windows.Devices.pointofservice](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice)
 
 #### <a name="barcodescannerreporthttpsdocsmicrosoftcomuwpapiwindowsdevicespointofservicebarcodescannerreport"></a>[barcodescannerreport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)
 
@@ -872,7 +872,7 @@ downloadoperation.makecurrentintransfergroup
 
 uploadoperation.makecurrentintransfergroup
 
-### <a name="windowsnetworkingconnectivityhttpsdocsmicrosoftcomuwpapiwindowsnetworkingconnectivity"></a>[windows.networking.connectivity](https://docs.microsoft.com/uwp/api/windows.networking.connectivity)
+### <a name="windowsnetworkingconnectivityhttpsdocsmicrosoftcomuwpapiwindowsnetworkingconnectivity"></a>[Windows.Networking.Connectivity](https://docs.microsoft.com/uwp/api/windows.networking.connectivity)
 
 #### <a name="cellularapncontexthttpsdocsmicrosoftcomuwpapiwindowsnetworkingconnectivitycellularapncontext"></a>[cellularapncontext](https://docs.microsoft.com/uwp/api/windows.networking.connectivity.cellularapncontext)
 
@@ -1058,7 +1058,7 @@ voipphonecall.notifycallaccepted
 
 ## <a name="windowssecurity"></a>windows.security
 
-### <a name="windowssecurityauthenticationwebcorehttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebcore"></a>[windows.security.authentication.web.core](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
+### <a name="windowssecurityauthenticationwebcorehttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebcore"></a>[Windows.Security.Authentication.Web.Core](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 
 #### <a name="findallaccountsresulthttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebcorefindallaccountsresult"></a>[findallaccountsresult](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.findallaccountsresult)
 
@@ -1072,7 +1072,7 @@ findallwebaccountsstatus
 
 webauthenticationcoremanager.findallaccountsasync <br> webauthenticationcoremanager.findallaccountsasync <br> webauthenticationcoremanager.findsystemaccountproviderasync <br> webauthenticationcoremanager.findsystemaccountproviderasync <br> webauthenticationcoremanager.findsystemaccountproviderasync
 
-### <a name="windowssecurityauthenticationwebproviderhttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebprovider"></a>[windows.security.authentication.web.provider](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.provider)
+### <a name="windowssecurityauthenticationwebproviderhttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebprovider"></a>[Windows.Security.Authentication.Web.Provider](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.provider)
 
 #### <a name="webprovidertokenrequesthttpsdocsmicrosoftcomuwpapiwindowssecurityauthenticationwebproviderwebprovidertokenrequest"></a>[webprovidertokenrequest](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.provider.webprovidertokenrequest)
 
@@ -1086,7 +1086,7 @@ webaccountprovider.issystemprovider
 
 ## <a name="windowsservices"></a>windows.services
 
-### <a name="windowsservicesmapshttpsdocsmicrosoftcomuwpapiwindowsservicesmaps"></a>[windows.services.maps](https://docs.microsoft.com/uwp/api/windows.services.maps)
+### <a name="windowsservicesmapshttpsdocsmicrosoftcomuwpapiwindowsservicesmaps"></a>[Windows.Services.Maps](https://docs.microsoft.com/uwp/api/windows.services.maps)
 
 #### <a name="maproutedrivingoptionshttpsdocsmicrosoftcomuwpapiwindowsservicesmapsmaproutedrivingoptions"></a>[maproutedrivingoptions](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutedrivingoptions)
 
@@ -1156,7 +1156,7 @@ storeuninstallstorepackagestatus
 
 ## <a name="windowsstorage"></a>windows.storage
 
-### <a name="windowsstoragefilepropertieshttpsdocsmicrosoftcomuwpapiwindowsstoragefileproperties"></a>[windows.storage.fileproperties](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties)
+### <a name="windowsstoragefilepropertieshttpsdocsmicrosoftcomuwpapiwindowsstoragefileproperties"></a>[Windows.Storage.fileproperties](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties)
 
 #### <a name="windowshttpsdocsmicrosoftcomuwpapiwindowsstoragefilepropertieswindows"></a>[Windows](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.windows)
 
@@ -1222,7 +1222,7 @@ storagefolder.trygetchangetracker
 
 ## <a name="windowssystem"></a>windows.system
 
-### <a name="windowssystemdiagnosticsdeviceportalhttpsdocsmicrosoftcomuwpapiwindowssystemdiagnosticsdeviceportal"></a>[windows.system.diagnostics.deviceportal](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal)
+### <a name="windowssystemdiagnosticsdeviceportalhttpsdocsmicrosoftcomuwpapiwindowssystemdiagnosticsdeviceportal"></a>[Windows.System.Diagnostics.deviceportal](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal)
 
 #### <a name="deviceportalconnectionhttpsdocsmicrosoftcomuwpapiwindowssystemdiagnosticsdeviceportaldeviceportalconnection"></a>[deviceportalconnection](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection)
 
@@ -1254,7 +1254,7 @@ windows.system.inventory
 
 analyticsinfo.getsystempropertiesasync
 
-### <a name="windowssystemremotesystemshttpsdocsmicrosoftcomuwpapiwindowssystemremotesystems"></a>[windows.system.remotesystems](https://docs.microsoft.com/uwp/api/windows.system.remotesystems)
+### <a name="windowssystemremotesystemshttpsdocsmicrosoftcomuwpapiwindowssystemremotesystems"></a>[Windows.System.remotesystems](https://docs.microsoft.com/uwp/api/windows.system.remotesystems)
 
 #### <a name="remotesystemhttpsdocsmicrosoftcomuwpapiwindowssystemremotesystemsremotesystem"></a>[remotesystem](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem)
 
@@ -1276,7 +1276,7 @@ remotesystemwatcher.enumerationcompleted
 
 remotesystemwatchererror
 
-### <a name="windowssystemuserprofilehttpsdocsmicrosoftcomuwpapiwindowssystemuserprofile"></a>[windows.system.userprofile](https://docs.microsoft.com/uwp/api/windows.system.userprofile)
+### <a name="windowssystemuserprofilehttpsdocsmicrosoftcomuwpapiwindowssystemuserprofile"></a>[Windows.System.USERPROFILE](https://docs.microsoft.com/uwp/api/windows.system.userprofile)
 
 #### <a name="globalizationpreferenceshttpsdocsmicrosoftcomuwpapiwindowssystemuserprofileglobalizationpreferences"></a>[globalizationpreferences](https://docs.microsoft.com/uwp/api/windows.system.userprofile.globalizationpreferences)
 
@@ -1578,7 +1578,7 @@ automationelementidentifiers.headinglevelproperty
 
 automationproperties.getheadinglevel <br> automationproperties.headinglevelproperty <br> automationproperties.setheadinglevel
 
-### <a name="windowsuixamlcontrolsmapshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsmaps"></a>[windows.ui.xaml.controls.maps](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps)
+### <a name="windowsuixamlcontrolsmapshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsmaps"></a>[Windows.UI.XAML.Controls.Maps](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps)
 
 #### <a name="mapcontrolhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsmapsmapcontrol"></a>[mapcontrol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol)
 
@@ -1588,7 +1588,7 @@ mapcontrol.region <br> mapcontrol.regionproperty
 
 mapelement.isenabled <br> mapelement.isenabledproperty
 
-### <a name="windowsuixamlcontrolsprimitiveshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsprimitives"></a>[windows.ui.xaml.controls.primitives](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives)
+### <a name="windowsuixamlcontrolsprimitiveshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsprimitives"></a>[Windows.UI.XAML.Controls.Primitives](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives)
 
 #### <a name="appbarbuttontemplatesettingshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsprimitivesappbarbuttontemplatesettings"></a>[appbarbuttontemplatesettings](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.appbarbuttontemplatesettings)
 
@@ -1602,7 +1602,7 @@ appbartogglebuttontemplatesettings <br> appbartogglebuttontemplatesettings.keybo
 
 menuflyoutitemtemplatesettings <br> menuflyoutitemtemplatesettings.keyboardacceleratortextminwidth
 
-### <a name="windowsuixamlcontrolshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrols"></a>[windows.ui.xaml.controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
+### <a name="windowsuixamlcontrolshttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrols"></a>[Windows.UI.XAML.Controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 
 #### <a name="appbarbuttonhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsappbarbutton"></a>[appbarbutton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)
 
@@ -1796,7 +1796,7 @@ keyboardacceleratorplacementmode
 
 losingfocuseventargs.trycancel <br> losingfocuseventargs.trysetnewfocusedelement
 
-### <a name="windowsuixamlmediahttpsdocsmicrosoftcomuwpapiwindowsuixamlmedia"></a>[windows.ui.xaml.media](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media)
+### <a name="windowsuixamlmediahttpsdocsmicrosoftcomuwpapiwindowsuixamlmedia"></a>[Windows.UI.XAML.Media](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media)
 
 #### <a name="compositiontargethttpsdocsmicrosoftcomuwpapiwindowsuixamlmediacompositiontarget"></a>[CompositionTarget](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.compositiontarget)
 

@@ -23,7 +23,7 @@ ms.locfileid: "57624829"
 
 Индикатор хода выполнения внутри всплывающее уведомление может быть либо «indeterminate» (без определенного значения, анимированный точки обозначают происходит операция) или «определенный» (определенного процента от панели заполняется, например 60%).
 
-> **Важные API-интерфейсы**: [Класс NotificationData](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata), [метод ToastNotifier.Update](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update), [ToastNotification-класс](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+> **Важные API**: [Класс NotificationData](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata), [метод ToastNotifier.Update](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update), [ToastNotification-класс](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
 > [!NOTE]
 > Только настольные компьютеры поддерживают индикаторы выполнения во всплывающих уведомлениях. На других устройствах индикатор выполнения удаляется из уведомления.

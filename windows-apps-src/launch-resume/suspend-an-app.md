@@ -149,8 +149,8 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Жизненный цикл приложения](app-lifecycle.md)
-* [Выполнять активацию приложения](activate-an-app.md)
-* [Дескриптор возобновлении приложения](resume-an-app.md)
+* [Обработка активации приложения](activate-an-app.md)
+* [Обработка возобновления работы приложения](resume-an-app.md)
 * [Рекомендации по UX для запуска, приостановки и возобновления](https://msdn.microsoft.com/library/windows/apps/dn611862)
 * [Расширенное выполнение](run-minimized-with-extended-execution.md)
 

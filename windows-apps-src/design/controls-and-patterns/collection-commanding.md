@@ -25,7 +25,7 @@ ms.locfileid: "57658599"
 
 Многие приложения содержат коллекции содержимого в виде списков, сеток и деревьев, которыми пользователи могут управлять. Например, пользователи могут удалять, переименовать, отмечать или обновлять элементы. В этой статье показано, как использовать контекстно-зависимые команды для реализации такого рода действий способом, который предоставляет наилучшее взаимодействие для всех типов ввода.  
 
-> **Важные API-интерфейсы**: [Интерфейс ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [свойство UIElement.ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [интерфейс INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **Важные API**: [Интерфейс ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [свойство UIElement.ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [интерфейс INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![Используйте различные методы ввода для выполнения команды Favorite](images/ContextualCommand_AddFavorites.png)
 

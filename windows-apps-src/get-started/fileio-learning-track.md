@@ -127,22 +127,22 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 |-------|----------------|
 | [Пространство имен Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) | Справочные документы по API. |
 | [Файлы, папки и библиотеки](https://docs.microsoft.com/windows/uwp/files/) | Концептуальные документы. |
-| [Создание, запись и чтение данных из файла](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | Описание создания, чтения и записи текста, двоичных данных и потоков. |
+| [Создание, запись и чтение файла](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | Описание создания, чтения и записи текста, двоичных данных и потоков. |
 | [Начало работы хранение данных приложения локально](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | Помимо рекомендаций для хранения локальных данных здесь также описывается назначение папок LocalSettings и LocalCache. |
 | [Приступая к работе с перемещаемые данные приложений](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | Серия из двух частей, посвященная использованию перемещаемых данных приложения. |
 | [Рекомендации для перемещаемых данных приложения](https://msdn.microsoft.com/library/windows/apps/hh465094) | Следуйте этим рекомендациям для перемещаемых данных при проектировании приложения. |
 | [Хранение и извлечение параметров и прочих данных приложения](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | Общие сведения о различных хранилищах+ данных приложений, таких как локальные, перемещаемые и временные папки. В разделе [Перемещаемые данные](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data) представлены инструкции и дополнительные сведения о записи данных, которые перемещаются между устройствами. |
-| [Разрешения доступа](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | Сведения о расположениях в файловой системе, доступных вашему приложению. |
-| [Открыть с помощью средства выбора файлов и папок](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | Здесь описывается, как получить доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. |
+| [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | Сведения о расположениях в файловой системе, доступных вашему приложению. |
+| [Открытие файлов и папок с помощью средства выбора](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | Здесь описывается, как получить доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. |
 | [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams) | Типы, используемые для чтения и записи потоков. |
-| [Файлы и папки в библиотеках музыка, изображения и видео](https://docs.microsoft.com/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries) | Здесь описывается, как удалить папки из библиотек, получить список папок в библиотеке и найти сохраненные фотографии, музыку и видео. |
+| [Файлы и папки в библиотеках музыки, изображений и видео](https://docs.microsoft.com/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries) | Здесь описывается, как удалить папки из библиотек, получить список папок в библиотеке и найти сохраненные фотографии, музыку и видео. |
 
 ## <a name="useful-code-samples"></a>Полезные примеры кода
 
 | Пример кода | Описание |
 |-----------------|---------------|
 | [Пример данных приложения](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | Здесь показано, как хранить и извлекать данные, связанные с отдельным пользователем, с помощью API-интерфейсов данных приложения. |
-| [Образец доступа к файлу](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Здесь показано, как создавать, читать, копировать и удалять файл. |
-| [Образец средства выбора файла](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Здесь показано, как получить доступ к файлам и папкам, позволяя пользователю выбирать их с помощью пользовательского интерфейса, и как сохранить файл, чтобы пользователь мог указывать имя, тип и расположение файла. |
+| [Пример доступа к файлу](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Здесь показано, как создавать, читать, копировать и удалять файл. |
+| [Пример средства выбора файлов](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Здесь показано, как получить доступ к файлам и папкам, позволяя пользователю выбирать их с помощью пользовательского интерфейса, и как сохранить файл, чтобы пользователь мог указывать имя, тип и расположение файла. |
 | [Пример в формате JSON](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | В этой статье показано, как кодировать и декодировать объекты, массивы, строки, числа и логические значения JSON с помощью [пространства имен Windows.Data.Json](https://docs.microsoft.com/uwp/api/Windows.Data.Json). |
 | [Дополнительные примеры кода](https://developer.microsoft.com//windows/samples) | Выберите **Файлы, папки и библиотеки** в раскрывающемся списке категорий. |

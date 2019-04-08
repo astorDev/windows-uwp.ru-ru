@@ -124,7 +124,7 @@ ms.locfileid: "57634979"
 | **Microsoft.Xna.Framework. \***  пространства имен, [библиотеки классов XNA Framework](https://go.microsoft.com/fwlink/p/?LinkId=263769), [содержимого библиотеки классов конвейера](https://go.microsoft.com/fwlink/p/?LinkId=263770) | Нет прямого эквивалента. Обычно используется [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) и C++. См. разделы [Разработка игр](https://msdn.microsoft.com/library/windows/apps/hh452744) и [Взаимодействие DirectX и XAML](https://msdn.microsoft.com/library/windows/apps/hh825871). |
 | Класс **Microsoft.Xna.Framework.Audio.Microphone** | [**MediaCapture** ](https://msdn.microsoft.com/library/windows/apps/br241124) класса |
 | Класс **Microsoft.Xna.Framework.Audio.SoundEffect** | [**MediaElement** ](https://msdn.microsoft.com/library/windows/apps/br242926) класса |
-| Пространство имен **Microsoft.Xna.Framework.GamerServices** | (WPS = **Windows.Phone.System**) <br/> [**WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) namespace |
+| Пространство имен **Microsoft.Xna.Framework.GamerServices** | (WPS = **Windows.Phone.System**) <br/> [**WPS. UserProfile.GameServices.Core** ](https://msdn.microsoft.com/library/windows/apps/jj207609) пространства имен |
 | Класс **Microsoft.Xna.Framework.GamerServices.Guide** | Нет прямого эквивалента |
 | Класс **Microsoft.Xna.Framework.Input.GamePad** | [**HardwareButtons** ](https://msdn.microsoft.com/library/windows/apps/jj207557) класса |
 | Класс **Microsoft.Xna.Framework.Input.Touch.TouchPanel** | [**GestureRecognizer** ](https://msdn.microsoft.com/library/windows/apps/br241937) класса |

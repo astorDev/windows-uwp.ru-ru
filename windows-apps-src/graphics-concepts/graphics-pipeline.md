@@ -70,4 +70,4 @@ ms.locfileid: "57605439"
 
 - [Руководство по обучения графики Direct3D](index.md)
 
-- [Вычисления конвейера](compute-pipeline.md)
+- [Конвейер вычислений](compute-pipeline.md)

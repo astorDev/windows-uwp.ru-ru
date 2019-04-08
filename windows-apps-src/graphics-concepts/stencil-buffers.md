@@ -9,7 +9,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 285e4a70062c57c957530aa1e548c22c4cf7711e
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57629469"
@@ -104,7 +104,7 @@ Direct3D выполняет попиксельный тест содержимо
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Буферов глубины и шаблона](depth-and-stencil-buffers.md)
+[Буферы глубины и трафаретов](depth-and-stencil-buffers.md)
 
  
 

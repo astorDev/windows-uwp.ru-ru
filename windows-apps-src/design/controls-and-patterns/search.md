@@ -24,7 +24,7 @@ ms.locfileid: "57631009"
 
 Поиск — это один из лучших способов обнаружения содержимого в вашем приложении. Рекомендации в этой статье охватывают элементы работы поиска, области поиска, реализацию и примеры поиска в контексте.
 
-> **Важные API-интерфейсы**: [Класс AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/dn633874)
+> **Важные API**: [Класс AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
 ## <a name="elements-of-the-search-experience"></a>Элементы работы поиска
 

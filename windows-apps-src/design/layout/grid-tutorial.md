@@ -14,11 +14,11 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646539"
 ---
-# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Учебник. Использование сетки и StackPanel для создания простой прогноз погоды
+# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Руководство: Использование сетки и StackPanel для создания простой прогноз погоды
 
 Используйте XAML для создания макетов простого погодного приложения с помощью элементов **Grid** и **StackPanel**. С помощью этих инструментов можно создать визуально привлекательные приложения, которые хорошо работают на любом устройстве с Windows 10. Работа с этим учебным материалом занимает 10–20 минут.
 
-> **Важные API-интерфейсы**: [Grid-класс](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [класс StackPanel](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **Важные API**: [Grid-класс](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [класс StackPanel](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>Предварительные условия
 - Windows 10 и Microsoft Visual Studio 2015 или более поздней версии. (Новейшие Visual Studio рекомендуется для текущей разработки и обеспечения безопасности обновления) [Щелкните здесь, чтобы узнать, как выполнить настройки с помощью Visual Studio](../../get-started/get-set-up.md).

@@ -10,7 +10,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f631f3178b4af4fe1c1d2d8b27e8ae6ac25c6ad1
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57617209"
@@ -20,7 +20,7 @@ ms.locfileid: "57617209"
 
 В этой статье описывается новый интерфейс Windows для реализации функции поворота, а также даются рекомендации по взаимодействию с пользователем, которые необходимо учитывать при использовании этого нового механизма взаимодействия в приложениях UWP.
 
-> **Важные API-интерфейсы**: [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **Важные API**: [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 ## <a name="dos-and-donts"></a>Рекомендации
 

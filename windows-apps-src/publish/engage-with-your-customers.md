@@ -16,7 +16,7 @@ ms.locfileid: "57643119"
 
 [Центр партнеров](https://partner.microsoft.com/dashboard) предусмотрены возможности для привлечения клиентов диска и уровень удовлетворенности. Узнайте, как использовать уведомления, целевых предложений, реагирование на обзоры и отзывы и многое другое.
 
--   [Создание группы клиентов](create-customer-groups.md)
+-   [Создание групп пользователей](create-customer-groups.md)
 -   [Ответы на отзывы клиентов](respond-to-customer-reviews.md)
 -   [Ответ на отзывы клиентов](respond-to-customer-feedback.md)
 -   [Отправлять уведомления пользователям вашего приложения](send-push-notifications-to-your-apps-customers.md)

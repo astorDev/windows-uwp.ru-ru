@@ -9,7 +9,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602329"
@@ -18,7 +18,7 @@ ms.locfileid: "57602329"
 
 Вы можете имитировать и автоматизировать ввод данных пользователем с устройств, таких как клавиатура, мышь, сенсорный экран, перо и контроллер, в приложениях UWP.
 
-> **Важные API-интерфейсы**: [**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
+> **Важные API**: [**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
 
 ## <a name="overview"></a>Обзор
 

@@ -22,7 +22,7 @@ ms.locfileid: "57654479"
 
 Палитра используется для просмотра и выбрать цвета. По умолчанию он позволяет пользователю перемещаться по цветов на спектр цветов или задать цвет в текстовые поля, красный, зеленый, синий (RGB), значение насыщенности оттенок (HSV) или шестнадцатеричном формате.
 
-> **Важные API-интерфейсы**: [Класс ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [свойство цвета](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [ColorChanged событий](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
+> **Важные API**: [Класс ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [свойство цвета](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [ColorChanged событий](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ![Палитра по умолчанию](images/color-picker-default.png)
 
@@ -42,7 +42,7 @@ ms.locfileid: "57654479"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/ColorPicker">открыть приложение и увидеть ColorPicker в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>

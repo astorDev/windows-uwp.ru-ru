@@ -569,7 +569,7 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Пример встреч API](https://go.microsoft.com/fwlink/p/?linkid=309836)
+* [Пример API встреч](https://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  

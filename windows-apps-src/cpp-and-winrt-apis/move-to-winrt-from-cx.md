@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекц
 ms.localizationpriority: medium
 ms.openlocfilehash: fe988bffbf024308fb5d43da7ed538e5330b58de
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57635079"
@@ -281,10 +281,10 @@ C++/CX предоставляет несколько типов данных в 
 
 | C++/CX | C++/WinRT |
 | ---- | ---- |
-| **Platform::Agile\^** | [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
+| **Platform::Agile\^** | [**WinRT::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
 | **Platform::Array\^** | См. в разделе [порт **Platform::Array\^**](#port-platformarray) |
-| **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
-| **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
+| **Platform::Exception\^** | [**WinRT::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
+| **Platform::InvalidArgumentException\^** | [**WinRT::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
 | **Platform::Object\^** | **WinRT::Windows::Foundation::IInspectable** |
 | **Platform::String\^** | [**WinRT::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
@@ -327,19 +327,19 @@ C++/WinRT предоставляет эти классы исключений.
 
 | Тип исключения | Базовый класс | HRESULT |
 | ---- | ---- | ---- |
-| [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) | | Вызовите метод [**hresult_error::to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresulterrortoabi-function) |
-| [**winrt::hresult_access_denied**](/uwp/cpp-ref-for-winrt/error-handling/hresult-access-denied) | **winrt::hresult_error** | E_ACCESSDENIED |
-| [**WinRT::hresult_canceled**](/uwp/cpp-ref-for-winrt/error-handling/hresult-canceled) | **winrt::hresult_error** | ERROR_CANCELLED |
-| [**winrt::hresult_changed_state**](/uwp/cpp-ref-for-winrt/error-handling/hresult-changed-state) | **winrt::hresult_error** | E_CHANGED_STATE |
-| [**WinRT::hresult_class_not_available**](/uwp/cpp-ref-for-winrt/error-handling/hresult-class-not-available) | **winrt::hresult_error** | CLASS_E_CLASSNOTAVAILABLE |
-| [**winrt::hresult_illegal_delegate_assignment**](/uwp/cpp-ref-for-winrt/error-handling/hresult-illegal-delegate-assignment) | **winrt::hresult_error** | E_ILLEGAL_DELEGATE_ASSIGNMENT |
-| [**WinRT::hresult_illegal_method_call**](/uwp/cpp-ref-for-winrt/error-handling/hresult-illegal-method-call) | **winrt::hresult_error** | E_ILLEGAL_METHOD_CALL |
-| [**winrt::hresult_illegal_state_change**](/uwp/cpp-ref-for-winrt/error-handling/hresult-illegal-state-change) | **winrt::hresult_error** | E_ILLEGAL_STATE_CHANGE |
-| [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) | **winrt::hresult_error** | E_INVALIDARG |
-| [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) | **winrt::hresult_error** | E_NOINTERFACE |
-| [**winrt::hresult_not_implemented**](/uwp/cpp-ref-for-winrt/error-handling/hresult-not-implemented) | **winrt::hresult_error** | E_NOTIMPL |
-| [**WinRT::hresult_out_of_bounds**](/uwp/cpp-ref-for-winrt/error-handling/hresult-out-of-bounds) | **winrt::hresult_error** | E_BOUNDS |
-| [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/error-handling/hresult-wrong-thread) | **winrt::hresult_error** | RPC_E_WRONG_THREAD |
+| [**WinRT::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) | | Вызовите метод [**hresult_error::to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresulterrortoabi-function) |
+| [**WinRT::hresult_access_denied**](/uwp/cpp-ref-for-winrt/error-handling/hresult-access-denied) | **WinRT::hresult_error** | E_ACCESSDENIED |
+| [**WinRT::hresult_canceled**](/uwp/cpp-ref-for-winrt/error-handling/hresult-canceled) | **WinRT::hresult_error** | ERROR_CANCELLED |
+| [**WinRT::hresult_changed_state**](/uwp/cpp-ref-for-winrt/error-handling/hresult-changed-state) | **WinRT::hresult_error** | E_CHANGED_STATE |
+| [**WinRT::hresult_class_not_available**](/uwp/cpp-ref-for-winrt/error-handling/hresult-class-not-available) | **WinRT::hresult_error** | CLASS_E_CLASSNOTAVAILABLE |
+| [**WinRT::hresult_illegal_delegate_assignment**](/uwp/cpp-ref-for-winrt/error-handling/hresult-illegal-delegate-assignment) | **WinRT::hresult_error** | E_ILLEGAL_DELEGATE_ASSIGNMENT |
+| [**WinRT::hresult_illegal_method_call**](/uwp/cpp-ref-for-winrt/error-handling/hresult-illegal-method-call) | **WinRT::hresult_error** | E_ILLEGAL_METHOD_CALL |
+| [**WinRT::hresult_illegal_state_change**](/uwp/cpp-ref-for-winrt/error-handling/hresult-illegal-state-change) | **WinRT::hresult_error** | E_ILLEGAL_STATE_CHANGE |
+| [**WinRT::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) | **WinRT::hresult_error** | E_INVALIDARG |
+| [**WinRT::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) | **WinRT::hresult_error** | E_NOINTERFACE |
+| [**WinRT::hresult_not_implemented**](/uwp/cpp-ref-for-winrt/error-handling/hresult-not-implemented) | **WinRT::hresult_error** | E_NOTIMPL |
+| [**WinRT::hresult_out_of_bounds**](/uwp/cpp-ref-for-winrt/error-handling/hresult-out-of-bounds) | **WinRT::hresult_error** | E_BOUNDS |
+| [**WinRT::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/error-handling/hresult-wrong-thread) | **WinRT::hresult_error** | RPC_E_WRONG_THREAD |
 
 Обратите внимание, что каждый класс (через базовый класс **hresult_error**) предоставляет функцию [**to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresulterrortoabi-function), которая возвращает HRESULT ошибки, и функцию [**message**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresulterrormessage-function), которая возвращает строковое представление HRESULT.
 
@@ -418,15 +418,15 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 * [Структура шаблона WinRT::Delegate](/uwp/cpp-ref-for-winrt/delegate)
 * [Структура WinRT::hresult_error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 * [Структура WinRT::hstring](/uwp/cpp-ref-for-winrt/hstring)
-* [пространство имен WinRT](/uwp/cpp-ref-for-winrt/winrt)
+* [Пространство имен WinRT](/uwp/cpp-ref-for-winrt/winrt)
 
 ## <a name="related-topics"></a>Статьи по теме
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Создание событий в C + +/ WinRT](author-events.md)
 * [Параллелизм и асинхронные операции с использованием C + +/ WinRT](concurrency.md)
-* [Использование API-интерфейсов с использованием C + +/ WinRT](consume-apis.md)
+* [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
 * [Обработка событий с помощью делегатов в C + +/ WinRT](handle-events.md)
-* [Взаимодействия между C + +/ WinRT и C + +/ CX](interop-winrt-cx.md)
+* [Взаимодействие между C++/WinRT и C++/CX](interop-winrt-cx.md)
 * [Справочник по Microsoft интерфейс определения языка 3.0](/uwp/midl-3)
-* [Переместить в C + +/ WinRT из WRL](move-to-winrt-from-wrl.md)
+* [Переход на C++/WinRT с WRL](move-to-winrt-from-wrl.md)
 * [Строка, обработка в C + +/ WinRT](strings.md)

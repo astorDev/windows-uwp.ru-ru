@@ -39,7 +39,7 @@ ms.locfileid: "57605929"
 * Обработка активации переднего плана
 * Обработка активации фона
 
-> **Важные API-интерфейсы**: [Класс ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs-класс](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **Важные API**: [Класс ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs-класс](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
 ## <a name="prerequisites"></a>Предварительные условия

@@ -7,7 +7,7 @@ keywords: Windows 10, UWP, стандартная, c++, cpp, winrt, проекц
 ms.localizationpriority: medium
 ms.openlocfilehash: ace1c276b878d07f5750483740dfe90ed8cb6211
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57644489"
@@ -283,6 +283,6 @@ logCallback(L"Hello, World!");
 Обратите внимание, что эти рекомендации не обязательно применимы при конструировании внутренним API. Хотя внутренние API часто станет общедоступным со временем.
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Создавать интерфейсы API с использованием C + +/ WinRT](author-apis.md)
-* [Использование API-интерфейсов с использованием C + +/ WinRT](consume-apis.md)
+* [Создание интерфейсов API с помощью C++/WinRT](author-apis.md)
+* [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
 * [Обработка событий с помощью делегатов в C + +/ WinRT](handle-events.md)

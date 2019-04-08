@@ -8,7 +8,7 @@ keywords: windows 10, uwp, игры, настройка, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57608709"
@@ -38,7 +38,7 @@ ms.locfileid: "57608709"
 В этом учебнике используется шаблон под названием **Приложение DirectX 11 (универсальное приложение Windows)**. 
 
 Порядок создания игрового проекта DirectX 11 в Visual Studio:
-1.  Выберите **файл...** &gt; **Новый** &gt; **проекта...** 
+1.  Выберите **файл...** &gt; **Новый** &gt; **проекта...**
 2.  В левой области выберите **установленные** &gt; **шаблоны** &gt; **Visual C++** &gt; **универсальной Windows**
 3.  На центральной панели выберите **Приложение DirectX 11 (универсальное приложение Windows)**.
 4.  Выберите имя для проекта игры и нажмите **ОК**.

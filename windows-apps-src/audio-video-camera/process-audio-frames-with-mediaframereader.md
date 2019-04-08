@@ -80,7 +80,7 @@ ms.locfileid: "57598589"
 * [Камера](camera.md)
 * [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Пример кадров камеры](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [Аудио диаграмм](audio-graphs.md)
+* [Звуковые графы](audio-graphs.md)
  
 
 

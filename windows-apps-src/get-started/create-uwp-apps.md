@@ -50,7 +50,7 @@ ms.locfileid: "57658239"
 **Просмотр видео**
 
 * [Академия Microsoft virtual academy](https://mva.microsoft.com/training-topics/c-app-development#!level=Beginner&lang=1033)
-* [LinkedIn Learning](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
+* [Учебный курс LinkedIn Learning](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
 
 ## <a name="using-the-docs"></a>Использование документации
 

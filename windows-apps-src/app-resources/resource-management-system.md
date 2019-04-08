@@ -62,9 +62,9 @@ API [**StorageFile**](/uwp/api/Windows.Storage.StorageFile?branch=live) проз
 
 ## <a name="important-apis"></a>Важные API
 * [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader?branch=live)
-* [ResourceManager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)
+* [Диспетчер ресурсов](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)
 * [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Локализация строк в манифесте пакета интерфейса пользователя и приложения](localize-strings-ui-manifest.md)
-* [Загрузка изображений и ресурсы, предназначенные специально для масштабирования, темы, высокая контрастность и другим пользователям](images-tailored-for-scale-theme-contrast.md)
+* [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md)
+* [Загрузка изображений и ресурсов, адаптированных по масштабу, теме, высокой контрастности и другим аспектам](images-tailored-for-scale-theme-contrast.md)

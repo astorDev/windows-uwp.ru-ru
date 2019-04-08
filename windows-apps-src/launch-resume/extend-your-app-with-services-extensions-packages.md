@@ -100,12 +100,12 @@ ms.locfileid: "57590679"
 
 ## <a name="see-also"></a>См. также
 
-[Создавать и использовать службу приложений](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
+[Создание и использование службы приложений](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
 [Введение в пакеты ресурсов](../packaging/asset-packages.md)  
 [При создании пакета с макетом упаковки](../packaging/packaging-layout.md)  
-[Создание связанного набора и дополнительные пакеты](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)  
+[Разработка дополнительных пакетов и связанных наборов](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)  
 [Разработка с использованием пакеты ресурсов и свертывание пакета](../packaging/package-folding.md)  
-[Установки потоковой передачи приложения универсальной платформы Windows](https://docs.microsoft.com/windows/uwp/packaging/streaming-install)  
+[Потоковая установка приложений UWP](https://docs.microsoft.com/windows/uwp/packaging/streaming-install)  
 [Пакеты приложений неструктурированных наборов](../packaging/flat-bundles.md)  
 [Пространство имен Windows.ApplicationModel.AppService](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService)  
 [Пространство имен Windows.ApplicationModel.Extensions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)  

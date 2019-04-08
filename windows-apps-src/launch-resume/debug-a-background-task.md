@@ -105,10 +105,10 @@ ms.locfileid: "57599209"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Создание и регистрация вне процесса фоновой задачи](create-and-register-a-background-task.md)
-* [Создание и регистрация в процесс фоновой задачи](create-and-register-an-inproc-background-task.md)
-* [Зарегистрировать фоновую задачу](register-a-background-task.md)
-* [Объявите фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
+* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
+* [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)
+* [Регистрация фоновой задачи](register-a-background-task.md)
+* [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 * [Активация приостановки, возобновления и фоновых событий в приложениях универсальной платформы Windows](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [Анализ качества кода приложений для универсальной платформы Windows с помощью функций анализа кода Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)

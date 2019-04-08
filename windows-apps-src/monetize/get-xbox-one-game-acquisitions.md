@@ -8,7 +8,7 @@ keywords: windows 10, uwp, службы Store, API аналитики для Mic
 ms.localizationpriority: medium
 ms.openlocfilehash: 348430f7ceee66a9c4e82f258a70e57d8f344943
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57590549"
@@ -90,7 +90,7 @@ Authorization: Bearer <your access token>
 | applicationId       | Строка | Код продукта для игры на Xbox One, для которой запрашиваются данные о покупках. |
 | applicationName     | Строка | Отображаемое имя игры.       |
 | acquisitionType     | Строка | Одна из следующих строк, указывающих тип приобретения:<ul><li><strong>бесплатно</strong></li><li><strong>Пробная версия</strong></li><li><strong>Платные</strong></li><li><strong>Код акции</strong></li><li><strong>Iap</strong></li><li><strong>Подписка Iap</strong></li><li><strong>Частные аудитории</strong></li><li><strong>Pre заказа</strong></li><li><strong>Xbox Game Pass</strong> (или <strong>Game Pass</strong> при запросе данных до 23 марта 2018 г.)</li><li><strong>диск</strong></li><li><strong>Предоплаченные кода</strong></li><li><strong>Оплата за Pre заказа</strong></li><li><strong>Отмененный заказ Pre</strong></li><li><strong>Невыполненных заказов Pre</strong></li></ul>    |
-| age                 | Строка | Одна из следующих строк, указывающая возрастную группу пользователя, совершившего приобретение:<ul><li><strong>меньше, чем 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>больше, чем 55</strong></li><li><strong>Неизвестный</strong></li></ul>     |
+| age                 | Строка | Одна из следующих строк, указывающая возрастную группу пользователя, совершившего приобретение:<ul><li><strong>меньше, чем 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44 55</strong></li><li><strong>больше, чем 55</strong></li><li><strong>Неизвестный</strong></li></ul>     |
 | deviceType          | Строка | Одна из следующих строк, указывающая тип устройства, на котором было выполнено приобретение:<ul><li><strong>ПК</strong></li><li><strong>Телефон</strong></li><li><strong>Консоль</strong></li><li><strong>Интернета вещей</strong></li><li><strong>Сервер</strong></li><li><strong>Планшета</strong></li><li><strong>Holographic</strong></li><li><strong>Неизвестный</strong></li></ul>  |
 | gender              | Строка | Одна из следующих строк, указывающая пол пользователя, совершившего приобретение:<ul><li><strong>m</strong></li><li><strong>F</strong></li><li><strong>Неизвестный</strong></li></ul>     |
 | market              | Строка | Код страны по стандарту ISO 3166 для рынка, на котором произошла покупка  |

@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, покупки из приложения, IAP, кви
 ms.localizationpriority: medium
 ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57605729"

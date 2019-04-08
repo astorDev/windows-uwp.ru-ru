@@ -121,7 +121,7 @@ ms.locfileid: "57603879"
 Поздравляем, вы успешно создали и развернули первое приложение UWP на Xbox!
 
 ## <a name="see-also"></a>См. также
-- [Режим одного разработчика Xbox активации](devkit-activation.md)  
+- [Активация режима разработчика Xbox One](devkit-activation.md)  
 - [Загружаемые файлы и инструменты для Windows 10](https://dev.windows.com/downloads)  
 - [Программа предварительной оценки Windows](https://go.microsoft.com/fwlink/?LinkId=780552)  
 - [Введение в средства Xbox One](introduction-to-xbox-tools.md) 

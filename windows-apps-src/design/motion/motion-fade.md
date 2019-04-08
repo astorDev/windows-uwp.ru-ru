@@ -21,7 +21,7 @@ ms.locfileid: "57620419"
 
 Анимация угасания используется для ввода элементов в поле зрения и вывода из него. Двумя распространенными анимациями исчезания являются плавное увеличение и плавное уменьшение.
 
-> **Важные API-интерфейсы**: [**Класс FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298), [ **FadeOutThemeAnimation-класс**](https://msdn.microsoft.com/library/windows/apps/br210302)
+> **Важные API**: [**Класс FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298), [ **FadeOutThemeAnimation-класс**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения

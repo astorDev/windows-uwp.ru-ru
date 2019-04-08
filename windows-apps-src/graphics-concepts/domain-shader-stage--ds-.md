@@ -9,7 +9,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bbde90d848d3bc8fb18a5ecf370c85121adc02f6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57620499"
@@ -61,7 +61,7 @@ void main( out    MyDSOutput result,
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Графического конвейера](graphics-pipeline.md)
+[Графический конвейер](graphics-pipeline.md)
 
  
 

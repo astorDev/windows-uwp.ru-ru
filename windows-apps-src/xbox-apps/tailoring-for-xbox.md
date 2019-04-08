@@ -58,10 +58,10 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 Следующие презентации на канале [Channel 9](https://channel9.msdn.com/) являются источником полезной информации о создании великолепных приложений для Xbox.
 
-- [Разработка отличных универсальной Windows платформы (UWP) приложений для Xbox](https://channel9.msdn.com/Events/Build/2016/B883)
-- [Адаптировать приложения для Xbox One и ТВ](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [Разработка UWP 1: Создание адаптивного пользовательского интерфейса](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [Веб-приложений за его пределами браузера: Кросс платформенных соответствует Cross устройства](https://channel9.msdn.com/Events/Build/2016/B888)
+- [Building Great Universal Windows Platform (UWP) Apps for Xbox](https://channel9.msdn.com/Events/Build/2016/B883) (Создание отличных приложений универсальной платформы Windows (UWP) для Xbox)
+- [Adapt Your App for Xbox One and TV](https://channel9.msdn.com/Events/Build/2016/T651-R1) (Адаптация приложения для Xbox One и телевизоров)
+- [UWP Development 1: Building an Adaptive UI](https://channel9.msdn.com/Events/Build/2016/L724-R1) (Разработка UWP 1. Создание адаптивного пользовательского интерфейса)
+- [Web Apps Beyond the Browser: Cross-Platform Meets Cross Device](https://channel9.msdn.com/Events/Build/2016/B888) (Веб-приложения не только для браузеров. Различные платформы и устройства)
 
 ## <a name="app-dev-on-xbox"></a>Разработка приложения на Xbox
 
@@ -74,4 +74,4 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 - [Приложения UWP для Xbox One](index.md)
 - [Проектирование для Xbox и телевизора](../design/devices/designing-for-tv.md)
-- [Прогрессивное веб-приложений для Xbox One](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)
+- [Progressive Web Apps for Xbox One](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations) (Прогрессивные веб-приложения для Xbox One)

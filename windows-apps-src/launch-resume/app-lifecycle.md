@@ -77,7 +77,7 @@ Windows 10 версии 1607, появились два больше состо�
 
 [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)  
 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)  
-[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)[**OnFileSavePickerActivated** ](https://msdn.microsoft.com/library/windows/apps/hh701801)  
+[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)  
 [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)  
 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)
 
@@ -215,10 +215,10 @@ Windows 10 версии 1607, появились два больше состо�
 
 * [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694)
 * [Рекомендации для приложения, приостановка и возобновление](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [Обрабатывать предварительный запуск приложения](handle-app-prelaunch.md)
-* [Выполнять активацию приложения](activate-an-app.md)
-* [Приостановить приложение дескриптор](suspend-an-app.md)
-* [Дескриптор возобновлении приложения](resume-an-app.md)
+* [Обработка предварительного запуска приложения](handle-app-prelaunch.md)
+* [Обработка активации приложения](activate-an-app.md)
+* [Обработка приостановки работы приложения](suspend-an-app.md)
+* [Обработка возобновления работы приложения](resume-an-app.md)
 * [Фоновое действие с одной моделью процесса](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 

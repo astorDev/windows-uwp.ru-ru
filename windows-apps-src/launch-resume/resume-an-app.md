@@ -127,5 +127,5 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Жизненный цикл приложения](app-lifecycle.md)
-* [Выполнять активацию приложения](activate-an-app.md)
-* [Приостановить приложение дескриптор](suspend-an-app.md)
+* [Обработка активации приложения](activate-an-app.md)
+* [Обработка приостановки работы приложения](suspend-an-app.md)

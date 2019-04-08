@@ -22,7 +22,7 @@ ms.locfileid: "57604099"
 > [!IMPORTANT]
 > **Требуется Fall Creators Update**: Вы должны быть предназначены SDK 16299 и выполняться сборка 16299 или более поздней, чтобы воспользоваться панелью задач API-интерфейсы.
 
-> **Важные API-интерфейсы**: [Класс TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
+> **Важные API**: [Класс TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>Когда следует попросить пользователя закрепить приложение на панели задач? 

@@ -63,6 +63,6 @@ ms.locfileid: "57613229"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Создание и регистрация вне процесса фоновой задачи](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
+* [Создание и регистрация внепроцессной фоновой задачи](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [Планирование производительности](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
 

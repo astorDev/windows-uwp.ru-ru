@@ -1,7 +1,7 @@
 ---
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Комплект сертификации приложений для Windows
-description: Чтобы предоставить шансы можно опубликовать в Microsoft Store для приложения или получения сертификата Windows, проверить и протестировать на локальном компьютере до их отправки на сертификацию. В этой статье показано, как установить и запустить комплект сертификации приложений для Windows.
+description: Чтобы максимально повысить шансы вашего приложения на публикацию в Microsoft Store или получение статуса "Сертифицировано для Windows", проверьте и протестируйте приложение локально, прежде чем отправлять его на сертификацию. В этой статье показано, как установить и запустить комплект сертификации приложений для Windows.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, сертификации приложений
@@ -93,7 +93,7 @@ ms.locfileid: "57597439"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Тесты набора сертификации приложений Windows](windows-app-certification-kit-tests.md)
-* [Политики Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Политики для Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  
 
  

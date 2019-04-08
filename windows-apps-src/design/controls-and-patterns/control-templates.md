@@ -22,7 +22,7 @@ ms.locfileid: "57613519"
 
 Вы можете настроить визуальную структуру и визуальное поведение элемента управления, создав шаблон элемента управления в среде XAML. У элементов управления много свойств, таких как [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395), [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) и [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404), которые можно задать, чтобы указать различные аспекты вида элемента управления. Однако настройка этих свойств позволяет вносить ограниченные изменения. Вы можете указать дополнительные настройки, создав шаблон с помощью класса [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). Здесь мы покажем, как создать **ControlTemplate** для настройки вида элемента управления [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316).
 
-> **Важные API-интерфейсы**: [**Класс шаблона элемента управления**](https://msdn.microsoft.com/library/windows/apps/br209391), [ **Control.Template свойство**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
+> **Важные API**: [**Класс шаблона элемента управления**](https://msdn.microsoft.com/library/windows/apps/br209391), [ **Control.Template свойство**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
 
 ## <a name="custom-control-template-example"></a>Пример пользовательского шаблона элемента управления
 

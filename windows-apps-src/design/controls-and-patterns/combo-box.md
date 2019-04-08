@@ -23,7 +23,7 @@ ms.locfileid: "57618629"
 
 При закрытии поле со списком, он отображает текущее выделение или является пустым, если выбранный элемент отсутствует. Когда пользователь разворачивает поле со списком, он отображает список выбираемых элементов.
 
-> **Важные API-интерфейсы**: [ComboBox-класс](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [свойство IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [свойство Text](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted событий](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+> **Важные API**: [ComboBox-класс](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [свойство IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [свойство Text](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted событий](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 Поле со списком в состоянии compact с заголовком.
 
@@ -45,7 +45,7 @@ ms.locfileid: "57618629"
 <td>
     <p>Если у вас есть <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong> приложения. Щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/ComboBox">откройте приложение и поле со списком в действии см. в разделе</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>

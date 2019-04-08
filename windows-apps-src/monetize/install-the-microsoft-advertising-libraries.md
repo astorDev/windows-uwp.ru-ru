@@ -8,7 +8,7 @@ keywords: windows 10, uwp, реклама, рекламные объявлени
 ms.localizationpriority: medium
 ms.openlocfilehash: 121accdfc8996c609c616838f645f19e2377c7c5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57658039"

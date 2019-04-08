@@ -154,4 +154,4 @@ ms.locfileid: "57653219"
 - [Плитки для приложений универсальной платформы Windows](../design/shell/tiles-and-notifications/creating-tiles.md)
 - [Обзор служб push-уведомлений Windows (WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
 - [Приложение визуализатора уведомления](https://www.microsoft.com/store/apps/9nblggh5xsl1)
-- [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() method](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)
+- [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | метод registerNotificationChannelAsync()](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)

@@ -74,7 +74,7 @@ ms.locfileid: "57662879"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Покупки из приложений и пробные версии](in-app-purchases-and-trials.md)
+* [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
 * [Получите сведения о продукте для приложения и надстройки](get-product-info-for-apps-and-add-ons.md)
 * [Получить сведения о лицензии для приложений и надстроек](get-license-info-for-apps-and-add-ons.md)
 * [Включить покупки из приложений, приложений и надстроек](enable-in-app-purchases-of-apps-and-add-ons.md)

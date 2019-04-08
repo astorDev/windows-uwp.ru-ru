@@ -100,5 +100,5 @@ ms.locfileid: "57608869"
 ***ScrapyardPhoenix (универсальное приложение для Windows)*** — проект, к которому следует добавлять ссылки (например, Xbox Live SDK).
 
 ## <a name="see-also"></a>См. также
-- [Перенос существующих игры для Xbox](development-lanes-landing.md)
+- [Перенос имеющихся игр на Xbox](development-lanes-landing.md)
 - [Приложения UWP для Xbox One](index.md)

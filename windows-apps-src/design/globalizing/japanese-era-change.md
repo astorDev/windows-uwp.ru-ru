@@ -29,7 +29,7 @@ ms.locfileid: "57617659"
 1. Перейдите в раздел **Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese\Eras**.
 2. Выберите **Изменить > Создать > Строковое значение** и присвойте ему имя **2019 05 01**.
 3. Щелкните раздел правой кнопкой мыши и выберите **Изменить**.
-4. В **значение** введите **?？\_？\_??????\_?** (для простоты можно скопировать и вставить значение отсюда).
+4. В **значение** введите **??\_?\_?????? \_?** (для простоты можно скопировать и вставить значение отсюда).
 
 Дополнительные сведения о формате этих разделов рееста см. в статье [Работа с эрами японского календаря](https://docs.microsoft.com/windows/desktop/Intl/era-handling-for-the-japanese-calendar).
 
@@ -69,7 +69,7 @@ ms.locfileid: "57617659"
 
 ## <a name="test-your-application"></a>Тестирование приложения
 
-Теперь проверьте, как ваше приложение обрабатывает новую эру. Проверьте места, где отображается дата, например метки времени и управляющие элементы выбора даты. Убедитесь в правильности эру до 1 мая 2019 г. (Хэйсэй, 平成) и после (?？).
+Теперь проверьте, как ваше приложение обрабатывает новую эру. Проверьте места, где отображается дата, например метки времени и управляющие элементы выбора даты. Убедитесь в правильности эру до 1 мая 2019 г. (Хэйсэй, 平成) и после (?(?).
 
 ### <a name="gannen-"></a>*Ганнэн* (元年)
 
@@ -120,7 +120,7 @@ ms.locfileid: "57617659"
 
 ### <a name="win32"></a>Win32
 
-* [datetimeapi.h header](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
+* [Заголовок datetimeapi.h](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
     * [Функция GetDateFormatA](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformata)
     * [Функция GetDateFormatEx](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatex)
     * [Функция GetDateFormatW](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatw)

@@ -97,7 +97,7 @@ Authorization: Bearer <your access token>
 | appType          | Строка |  Тип продукта, для которого запрашиваются данные о конверсиях. Для этого метода единственным поддерживаемым значением является **App**.            |
 | customCampaignId           | Строка |  Строка идентификатора для [пользовательской кампании по продвижению приложения](../publish/create-a-custom-app-promotion-campaign.md), связанной с этим приложением.   |
 | referrerUriDomain           | Строка |  Указывает домен, на котором было активировано описание приложения с идентификатором настраиваемой кампании по продвижению приложения.   |
-| channelType           | Строка |  Одно из следующих строковых значений, определяющих канал конверсии:<ul><li><strong>CustomCampaignId</strong></li><li><strong>Трафик Store</strong></li><li><strong>Другие</strong></li></ul>    |
+| channelType           | Строка |  Одно из следующих строковых значений, определяющих канал конверсии:<ul><li><strong>customCampaignId</strong></li><li><strong>Трафик Store</strong></li><li><strong>Другие</strong></li></ul>    |
 | storeClient         | Строка | Версия Магазина, в котором произведена конверсия. На данный момент единственным поддерживаемым значением является **SFC**.    |
 | deviceType          | Строка | Одна из следующих строк:<ul><li><strong>ПК</strong></li><li><strong>Телефон</strong></li><li><strong>Консоль</strong></li><li><strong>Интернета вещей</strong></li><li><strong>Holographic</strong></li><li><strong>Неизвестный</strong></li></ul>            |
 | market              | Строка | Код страны по стандарту ISO 3166 для рынка, на котором произошла конверсия.    |

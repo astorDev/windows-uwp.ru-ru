@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, фоновую задачу
 ms.localizationpriority: medium
 ms.openlocfilehash: af8e45e13eb89185e346c3c8e8cd5303da399471
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57658739"
@@ -91,18 +91,18 @@ ms.locfileid: "57658739"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
-* [Создание и регистрация вне процесса фоновой задачи](create-and-register-a-background-task.md)
-* [Объявите фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
+* [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
+* [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [Обработка отменена фоновой задачи](handle-a-cancelled-background-task.md)
-* [Отслеживать ход выполнения задач в фоновом режиме и завершения](monitor-background-task-progress-and-completion.md)
-* [Зарегистрировать фоновую задачу](register-a-background-task.md)
-* [Реакция на системные события с фоновыми задачами](respond-to-system-events-with-background-tasks.md)
-* [Задайте условия для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
+* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
+* [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
+* [Регистрация фоновой задачи](register-a-background-task.md)
+* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
+* [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
 * [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)
-* [Выполнять фоновую задачу по таймеру](run-a-background-task-on-a-timer-.md)
-* [Отладить фоновую задачу](debug-a-background-task.md)
+* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
+* [Отладка фоновой задачи](debug-a-background-task.md)
 * [Активация приостановки, возобновления и фоновых событий для приложений универсальной платформы Windows (при отладке)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
  

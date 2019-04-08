@@ -20,7 +20,7 @@ ms.locfileid: "57638529"
 
 Определение устройств ввода, подключенных к устройству с универсальной платформой Windows (UWP), а также их возможностей и атрибутов.
 
-> **Важные API-интерфейсы**: [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **Важные API**: [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
 ## <a name="retrieve-mouse-properties"></a>Получение свойств мыши
 

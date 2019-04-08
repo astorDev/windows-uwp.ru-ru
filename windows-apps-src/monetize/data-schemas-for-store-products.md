@@ -7,7 +7,7 @@ keywords: windows 10, uwp, ExtendedJsonData, продукты Store, схема
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f51f0fffae3fa8e9a54214f78aa93fe39eab080
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57656109"
@@ -71,7 +71,7 @@ ms.locfileid: "57656109"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Покупки из приложений и пробные версии](in-app-purchases-and-trials.md)
+* [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
 * [Получите сведения о продукте для приложения и надстройки](get-product-info-for-apps-and-add-ons.md)
 * [Получить сведения о лицензии для приложений и надстроек](get-license-info-for-apps-and-add-ons.md)
 * [Включить покупки из приложений, приложений и надстроек](enable-in-app-purchases-of-apps-and-add-ons.md)

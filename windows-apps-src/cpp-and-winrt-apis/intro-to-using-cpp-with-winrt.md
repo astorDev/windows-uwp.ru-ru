@@ -7,7 +7,7 @@ keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекц
 ms.localizationpriority: medium
 ms.openlocfilehash: 883463f291864016ebc32f2d510936452c931366
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57649699"
@@ -124,12 +124,12 @@ Surface поддержка конструктора XAML в Visual Studio для
 
 ## <a name="important-apis"></a>Важные API
 * [Структура WinRT::hstring](/uwp/cpp-ref-for-winrt/hstring)
-* [пространство имен WinRT](/uwp/cpp-ref-for-winrt/winrt)
+* [Пространство имен WinRT](/uwp/cpp-ref-for-winrt/winrt)
 
 ## <a name="related-topics"></a>Статьи по теме
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [C + +/ WinRT Visual Studio расширения (VSIX)](https://aka.ms/cppwinrt/vsix)
-* [Начало работы с C + +/ WinRT](get-started.md)
-* [Стандартные типы данных C++ и C + +/ WinRT](std-cpp-data-types.md)
+* [Начало работы с C++/WinRT](get-started.md)
+* [Стандартные типы данных C++ и C++/WinRT](std-cpp-data-types.md)
 * [Строка, обработка в C + +/ WinRT](strings.md)
 * [Windows API-интерфейсов универсальной платформы Windows](https://docs.microsoft.com/uwp/api/)

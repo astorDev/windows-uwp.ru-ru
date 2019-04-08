@@ -10,7 +10,7 @@ keywords: windows 10, uwp, отслеживаемые плитки, живые �
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592649"
@@ -24,7 +24,7 @@ ms.locfileid: "57592649"
 > **Требует обновления Годовщина**: Для использования уведомлений chaseable плитки с помощью C#, C++ или VB-универсальной платформы Windows приложения, должен быть предназначен для пакета SDK для 14393 и выполняться сборка 14393 или более поздней версии. Для приложений UWP на основе JavaScript необходимо выбрать целевой пакет SDK 17134 и использовать сборку 17134 или более поздней версии. 
 
 
-> **Важные API-интерфейсы**: [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo class](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **Важные API**: [Свойство LaunchActivatedEventArgs.TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo-класс](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## <a name="how-it-works"></a>Принцип работы
@@ -178,5 +178,5 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [Свойство LaunchActivatedEventArgs.TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
 - [Класс TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

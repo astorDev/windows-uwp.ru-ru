@@ -70,7 +70,7 @@ ms.locfileid: "57616379"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Потоковую передачу ресурсов](streaming-resources.md)
+[Потоковые ресурсы](streaming-resources.md)
 
  
 

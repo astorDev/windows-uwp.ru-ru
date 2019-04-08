@@ -19,7 +19,7 @@ ms.locfileid: "57640789"
 
 Используйте визуальную обратную связь, чтобы показать пользователю, что его взаимодействие с приложением обнаружено, интерпретировано и обработано. Визуальная обратная связь поможет пользователю и вдохновит его на дальнейшие действия. Она указывает на успешное взаимодействие, что повышает у пользователя чувство уверенности. Кроме того, визуальная обратная связь транслирует состояние системы и снижает количество ошибок.
 
-> **Важные API-интерфейсы**:  [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
+> **Важные API**:  [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
 
 ## <a name="recommendations"></a>Рекомендации
 

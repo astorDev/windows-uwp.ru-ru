@@ -20,7 +20,7 @@ ms.locfileid: "57593839"
 
 Узнайте, как выбрать установленный язык для распознавания речи.
 
-> **Важные API-интерфейсы**: [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251), [ **SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250), [ **языка**](https://msdn.microsoft.com/library/windows/apps/br206804)
+> **Важные API**: [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251), [ **SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250), [ **языка**](https://msdn.microsoft.com/library/windows/apps/br206804)
 
 
 Здесь мы перечисляем языки, установленные в системе, определяем язык, используемый по умолчанию, и выбираем другой язык для распознавания.

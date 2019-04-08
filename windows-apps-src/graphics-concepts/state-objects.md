@@ -60,7 +60,7 @@ ms.locfileid: "57596089"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Связанные разделы
 
 
-[Графического конвейера](graphics-pipeline.md)
+[Графический конвейер](graphics-pipeline.md)
 
 [Представления](views.md)
 

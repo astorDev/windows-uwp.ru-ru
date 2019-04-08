@@ -78,7 +78,7 @@ ms.locfileid: "57661809"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Краткое руководство. Шаблоны элементов управления](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-* [Привязка данных в глубину](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
 * [Обзор языка XAML](xaml-overview.md)
 * [Общие сведения о свойствах зависимостей](dependency-properties-overview.md)

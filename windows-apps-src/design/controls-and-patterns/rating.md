@@ -21,7 +21,7 @@ ms.locfileid: "57644929"
 
 Элемент управления "Оценка" позволяет пользователям просматривать и ставить оценки, отражающие степень удовлетворенности содержимым и службами. Пользователи могут взаимодействовать с элементом управления оценками с помощью сенсорного ввода, пера, мыши, игрового контроллера или клавиатуры. В следующем руководстве показано, как использовать функции управления оценками, чтобы обеспечить гибкость и возможность настройки.
 
-> **Важные API-интерфейсы**: [Класс RatingControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> **Важные API**: [Класс RatingControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ![Пример элемента управления "Оценка"](images/rating_rs2_doc_ratings_intro.png)
 
@@ -34,7 +34,7 @@ ms.locfileid: "57644929"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/RatingControl">открыть приложение и увидеть RatingControl в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>

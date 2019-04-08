@@ -12,7 +12,7 @@ dev_langs:
 - cpp
 ms.openlocfilehash: 9df6eef44d45db37e17610d6a5333f3a387b5cf6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592169"
@@ -447,20 +447,20 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 
 **Подробные для фоновой задачи разделы**
 
-* [Реакция на системные события с фоновыми задачами](respond-to-system-events-with-background-tasks.md)
-* [Зарегистрировать фоновую задачу](register-a-background-task.md)
-* [Задайте условия для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
+* [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
+* [Регистрация фоновой задачи](register-a-background-task.md)
+* [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
 * [Использование триггера обслуживания](use-a-maintenance-trigger.md)
-* [Обработка отменена фоновой задачи](handle-a-cancelled-background-task.md)
-* [Отслеживать ход выполнения задач в фоновом режиме и завершения](monitor-background-task-progress-and-completion.md)
-* [Выполнять фоновую задачу по таймеру](run-a-background-task-on-a-timer-.md)
+* [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
+* [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
+* [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
 * [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
 * [Преобразовать вне процесса фоновой задачи в фоновом режиме в процессе задачу](convert-out-of-process-background-task.md)  
 
 **Руководство по фоновым задачи**
 
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Отладить фоновую задачу](debug-a-background-task.md)
+* [Отладка фоновой задачи](debug-a-background-task.md)
 * [Активация приостановки, возобновления и фоновых событий для приложений универсальной платформы Windows (при отладке)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
 **Справочник по API фоновой задачи**

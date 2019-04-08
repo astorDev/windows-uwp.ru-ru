@@ -478,7 +478,7 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ### <a name="providing-authentication-credentials-to-a-web-service"></a>Предоставление веб-службе учетных данных для проверки подлинности
 Сетевые API, позволяющие приложениям взаимодействовать с защищенными веб-службами, предоставляют собственные методы инициализации клиента или формирования заголовка запроса с учетными данными для проверки подлинности на сервере и прокси-сервере. Для каждого метода задается объект [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061), указывающий имя пользователя, пароль и ресурс, для которого используются эти учетные данные. Ниже представлена таблица соответствия этих API.
 
-| **Протокол WebSocket** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
+| **WebSockets** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
 |-------------------------|----------------------------------------------------------------------------------------------------------|
 |  | [**MessageWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226847) |
 |  | [**StreamWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226928) |

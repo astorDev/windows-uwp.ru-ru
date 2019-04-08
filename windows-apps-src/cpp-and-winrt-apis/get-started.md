@@ -7,7 +7,7 @@ keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекц
 ms.localizationpriority: medium
 ms.openlocfilehash: c0d11a8718f61666d6285d8a1c91b48992044b22
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602239"
@@ -166,8 +166,8 @@ C + +/ WinRT проекция зависит от некоторых (не яв�
 
 ## <a name="related-topics"></a>Статьи по теме
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Обработка ошибок с помощью C + +/ WinRT](error-handling.md)
-* [Взаимодействия между C + +/ WinRT и C + +/ CX](interop-winrt-cx.md)
-* [Взаимодействия между C + +/ WinRT и ABI](interop-winrt-abi.md)
-* [Переместить в C + +/ WinRT в C + +/ CX](move-to-winrt-from-cx.md)
+* [Обработка ошибок в C++/WinRT](error-handling.md)
+* [Взаимодействие между C++/WinRT и C++/CX](interop-winrt-cx.md)
+* [Взаимодействие между C++/WinRT и интерфейсом ABI](interop-winrt-abi.md)
+* [Переход на C++/WinRT из C++/CX](move-to-winrt-from-cx.md)
 * [Строка, обработка в C + +/ WinRT](strings.md)

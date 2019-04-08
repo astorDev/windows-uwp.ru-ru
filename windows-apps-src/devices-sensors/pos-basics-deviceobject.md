@@ -47,4 +47,4 @@ ms.locfileid: "57596879"
 > Дополнительные сведения о жизненном цикле приложения универсальной платформы Windows (для Windows 10) см. в следующих разделах:
 > - [Жизненный цикл приложения 10 универсальных Windows платформы Windows (UWP)](../launch-resume/app-lifecycle.md)
 > - [Приостановка дескриптор приложения](../launch-resume/suspend-an-app.md)
-> - [Дескриптор возобновлении приложения](../launch-resume/resume-an-app.md)
+> - [Обработка возобновления работы приложения](../launch-resume/resume-an-app.md)

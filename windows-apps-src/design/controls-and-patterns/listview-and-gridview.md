@@ -14,7 +14,7 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efbdaef0fbcbe076133be1c491f7ed173c01257
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57653579"
@@ -23,7 +23,7 @@ ms.locfileid: "57653579"
 
 Большая часть приложений отображает наборы данных, такие как коллекции изображений или набор сообщений электронной почты, и управляет ими. Платформа пользовательского интерфейса XAML предоставляет элементы управления ListView и GridView, упрощающие отображение данных и управление ими в приложении.  
 
-> **Важные API-интерфейсы**: [Класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [свойство ItemsSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx), [элементы свойства](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
+> **Важные API**: [Класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), [свойство ItemsSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx), [элементы свойства](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
 
 Элементы управления ListView и GridView являются производными от класса ListViewBase, поэтому они имеют аналогичные функции, но отображают данные по-другому. В этой статье вся информация об элементе управления ListView актуальна для обоих элементов управления (ListView и GridView), если не указано иное. Когда упоминаются классы ListView или ListViewItem, нужно помнить, что префикс "List" может быть заменен префиксом "Grid" для соответствующего эквивалента сетки (GridView или GridViewItem). 
 
@@ -48,7 +48,7 @@ ListView отображает данные в одном столбце и уп�
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы открыть приложение и увидеть <a href="xamlcontrolsgallery:/item/ListView">ListView</a> или <a href="xamlcontrolsgallery:/item/GridView">GridView</a> в действии.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получение коллекции элементов управления XAML приложения (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>

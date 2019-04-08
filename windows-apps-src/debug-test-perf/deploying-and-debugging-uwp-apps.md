@@ -242,5 +242,5 @@ plmdebug /enableDebug [PackageFullName] ""C:\Program Files\Debugging Tools for W
 Полный список всех команд WinDbg см. в разделе [Команды отладчика](https://msdn.microsoft.com/library/ff540507).
 
 ## <a name="related-topics"></a>Статьи по теме
-- [Средства тестирования и отладки для управления временем жизни процесса (PLM)](testing-debugging-plm.md)
+- [Средства тестирования и отладки для управления жизненным циклом процесса (PLM)](testing-debugging-plm.md)
 - [Средства отладки, тестирования и повышения производительности](index.md)
