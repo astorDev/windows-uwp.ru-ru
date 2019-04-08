@@ -124,6 +124,6 @@ else
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## <a name="related-topics"></a>Статьи по теме
-* [Локализация строк в манифесте пакета интерфейса пользователя и приложения](../../app-resources/localize-strings-ui-manifest.md)
+* [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](../../app-resources/localize-strings-ui-manifest.md)
 * [Настроить ресурсы для языка, масштаба и квалификаторов](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [Сведения о языках профиля пользователя и языки манифеста приложения](manage-language-and-region.md)

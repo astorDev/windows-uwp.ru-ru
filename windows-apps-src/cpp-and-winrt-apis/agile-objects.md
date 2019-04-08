@@ -7,7 +7,7 @@ keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекц
 ms.localizationpriority: medium
 ms.openlocfilehash: 2481396d9348250e14ebfc2d1f940b663b405f77
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639669"
@@ -120,7 +120,7 @@ winrt::hstring message{ nonagile_obj_again.Message() };
 * [Структура шаблона WinRT::agile_ref](/uwp/cpp-ref-for-winrt/agile-ref)
 * [Структура шаблона WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
 * [Шаблон функции WinRT::make_agile](/uwp/cpp-ref-for-winrt/make-agile)
-* [winrt::non_agile marker struct](/uwp/cpp-ref-for-winrt/non-agile)
+* [Структура маркера WinRT::non_agile](/uwp/cpp-ref-for-winrt/non-agile)
 * [WinRT::Windows::Foundation::IUnknown:: как функция](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [функция WinRT::Windows::Foundation::IUnknown::try_as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
 

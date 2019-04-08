@@ -65,7 +65,7 @@ ms.locfileid: "57617929"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Обзор языка XAML](xaml-overview.md)
-* [Привязка данных в глубину](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [Расширение разметки {binding}](binding-markup-extension.md)
 * [**Привязки**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)

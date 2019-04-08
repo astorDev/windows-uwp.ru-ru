@@ -22,7 +22,7 @@ ms.locfileid: "57618199"
 
 В подключенных анимации элемент отображается на «continue» между двумя представлениями во время изменения в содержимое пользовательского интерфейса, в движении по экрану с места в представлении источника в место назначения в новое представление. Это обычное содержимое между представлениями, создавая эффект привлекательных и динамических в процессе перехода.
 
-> **Важные API-интерфейсы**:  [Класс ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService-класс](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+> **Важные API**:  [Класс ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService-класс](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 ## <a name="see-it-in-action"></a>Подключенная анимация в действии
 

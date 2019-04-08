@@ -46,7 +46,7 @@ API CodecQuery является членом пространства имен *
 
 * [Воспроизведение мультимедиа](media-playback.md)
 * [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Перекодировка медиафайлов](transcode-media-files.md)
+* [Перекодирование файлов мультимедиа](transcode-media-files.md)
 * [Поддерживаемые кодеки](supported-codecs.md)
  
 

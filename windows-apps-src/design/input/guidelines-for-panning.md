@@ -20,7 +20,7 @@ ms.locfileid: "57625119"
 
 Сдвиг или прокрутка обеспечивают пользователю навигацию в рамках единого представления, позволяя просматривать содержимое, которое выходит за пределы окна просмотра. Примеры представлений включают структуру папок компьютера, библиотеку документов или фотоальбом.
 
-> **Важные API-интерфейсы**: [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **Важные API**: [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
 ## <a name="dos-and-donts"></a>Рекомендации

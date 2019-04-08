@@ -23,7 +23,7 @@ ms.locfileid: "57645849"
 > [!NOTE]
 > Формат ISF — наиболее компактное постоянное представление рукописного ввода. Он может быть встроен в двоичный формат документа, например GIF-файл, или помещен непосредственно в буфер обмена.
 
-> **Важные API-интерфейсы**: [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **Важные API**: [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 ## <a name="save-ink-strokes-to-a-file"></a>Сохранение росчерков пера в файл
 

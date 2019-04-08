@@ -17,7 +17,7 @@ ms.locfileid: "57634869"
 
 Объекты [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) применяются для рисования внутреннего наполнения и контуров фигур XAML, текста и частей элементов управления, чтобы рисуемый объект был виден в пользовательском интерфейсе. Так какие же кисти доступны и как ими пользоваться?
 
-> **Важные API-интерфейсы**:  [Класс Brush](/uwp/api/Windows.UI.Xaml.Media.Brush)
+> **Важные API**:  [Класс Brush](/uwp/api/Windows.UI.Xaml.Media.Brush)
 
 ## <a name="introduction-to-brushes"></a>Знакомство с кистями
 

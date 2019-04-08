@@ -183,8 +183,8 @@ ms.locfileid: "57626989"
 ## <a name="related-topics"></a>Статьи по теме
 
 - [Рекомендации по глобализации](guidelines-and-checklist-for-globalizing-your-app.md)
-- [Локализация строк в манифесте пакета интерфейса пользователя и приложения](../../app-resources/localize-strings-ui-manifest.md)
-- [Настроить ресурсы для языка, масштабирование, высокая контрастность и квалификаторов](../../app-resources/tailor-resources-lang-scale-contrast.md)
+- [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](../../app-resources/localize-strings-ui-manifest.md)
+- [Адаптация ресурсов с учетом языка, масштаба, высокой контрастности и других квалификаторов](../../app-resources/tailor-resources-lang-scale-contrast.md)
 - [Настройка макета и шрифтов, добавление поддержки написания справа налево](adjust-layout-and-fonts--and-support-rtl.md)
 - [События изменения обновления образов в ответ на значение квалификатора](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 

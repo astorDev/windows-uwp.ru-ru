@@ -69,7 +69,7 @@ ms.locfileid: "57615809"
 |----------------------|--------|-------------------|----------|
 | identityType         | Строка | Укажите строковое значение **b2b**.    | Да      |
 | identityValue        | Строка | [Ключ идентификатора Microsoft Store](view-and-grant-products-from-a-service.md#step-4), представляющий удостоверение пользователя, для которого потребляемый продукт необходимо объявить в качестве выполненного.      | Да      |
-| localTicketReference | Строка | Запрошенный идентификатор для возвращаемого ответа. Мы рекомендуем использовать то же значение, что *userId*[утверждения](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) в Microsoft Store идентификатор ключа.   | Да      |
+| localTicketReference | Строка | Запрошенный идентификатор для возвращаемого ответа. Мы рекомендуем использовать то же значение, что *userId*[утверждения](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) в Microsoft Store идентификатор ключа. | Да      |
 
 
 ### <a name="request-examples"></a>Примеры запросов

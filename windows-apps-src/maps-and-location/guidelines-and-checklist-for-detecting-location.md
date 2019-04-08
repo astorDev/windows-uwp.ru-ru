@@ -162,7 +162,7 @@ ms.locfileid: "57624479"
 ## <a name="related-topics"></a>Статьи по теме
 
 * [Настройка геозоны](https://msdn.microsoft.com/library/windows/apps/mt219702)
-* [Получение текущего расположения](https://msdn.microsoft.com/library/windows/apps/mt219698)
+* [Получение сведений о текущем расположении](https://msdn.microsoft.com/library/windows/apps/mt219698)
 * [Отображение карты с двухмерной, 3D и Streetside представления](https://msdn.microsoft.com/library/windows/apps/mt219695)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
 * [Пример расположения UWP (geolocation)](https://go.microsoft.com/fwlink/p/?linkid=533278)

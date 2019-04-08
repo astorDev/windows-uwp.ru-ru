@@ -77,7 +77,7 @@ ms.locfileid: "57657139"
 
 ## <a name="see-also"></a>См. также
 
-* [Приступаем к написанию кода](create-uwp-apps.md)
+* [Приступить к программированию](create-uwp-apps.md)
 * [Что такое приложение UWP?](universal-application-platform-guide.md)
 * [Подготовка](get-set-up.md)
 * [Регистрация учетной записи Windows](sign-up.md)

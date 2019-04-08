@@ -21,7 +21,7 @@ ms.locfileid: "57638709"
 
 API-интерфейсы основного текста в пространстве имен [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) активируют приложение универсальной платформы Windows (UWP) для получения ввода текста из любой текстовой службы, поддерживаемой устройствами с Windows. API очень похожи на API [инфраструктуры текстовых служб](https://msdn.microsoft.com/library/windows/desktop/ms629032) в этом приложении в том, что приложению не требуются подробные данные текстовых служб. Это позволяет приложению получать текст на любом языке и с помощью любого типа ввода, например клавиатуры, речи или пера.
 
-> **Важные API-интерфейсы**: [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238), [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
+> **Важные API**: [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238), [ **CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 ## <a name="why-use-core-text-apis"></a>Зачем использовать API основного текста?
 
@@ -56,8 +56,8 @@ API-интерфейсы основного текста в пространст
 
 | Поле                  | Тип данных                                                                 | Описание                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| **StartCaretPosition** | **Номер** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | Начальное положение диапазона — это ACP непосредственно перед первым символом. |
-| **EndCaretPosition**   | **Номер** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | Конечное положение диапазона — это ACP непосредственно после последнего символа.     |
+| **StartCaretPosition** | **Номер** \[JavaScript\] | **System.Int32** \[.NET\] | **Int32** \[C++\] | Начальное положение диапазона — это ACP непосредственно перед первым символом. |
+| **EndCaretPosition**   | **Номер** \[JavaScript\] | **System.Int32** \[.NET\] | **Int32** \[C++\] | Конечное положение диапазона — это ACP непосредственно после последнего символа.     |
 
  
 
@@ -99,7 +99,7 @@ API-интерфейсы основного текста в пространст
 ![Пример текстового потока диаграммы](images/coretext/stream-3.png) при вводе «d», [ **TextUpdating** ](https://msdn.microsoft.com/library/windows/apps/dn958176) события со следующими [ **CoreTextTextUpdatingEventArgs** ](https://msdn.microsoft.com/library/windows/apps/dn958229) данных:
 
 -   [**Диапазон**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
--   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
+-   [**Текст** ](https://msdn.microsoft.com/library/windows/apps/dn958236) = «d»
 -   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
 В вашем элементе управления редактированием примените указанные изменения и установите для параметра [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) значение **Succeeded**. Далее описано состояние элемента управления после применения изменений.

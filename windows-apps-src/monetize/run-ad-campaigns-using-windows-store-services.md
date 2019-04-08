@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, API рекламных акций Microsoft Store, р
 ms.localizationpriority: medium
 ms.openlocfilehash: 58325074a2f59dcd146a9534054b302b3ce9956b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57619149"
