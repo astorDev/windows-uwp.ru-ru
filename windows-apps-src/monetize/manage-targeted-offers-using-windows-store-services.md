@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, службы Store, API целевых предложений Microsoft Store, целевые предложения
 ms.localizationpriority: medium
-ms.openlocfilehash: bcf270bd56d17936ef404adbc3663034b58e7a2c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3ea4adac82692e80d652523d05a7ba0b901db300
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615689"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334402"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>Управление целевыми предложениями с помощью служб Магазина
 
@@ -33,7 +33,7 @@ API целевых предложений представляет собой п
 
 Чтобы получить маркер MSA, используйте класс [WebAuthenticationCoreManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) для запроса маркера с помощью области ```devcenter_implicit.basic,wl.basic```. В приведенном ниже примере показано, как это сделать. В этом примере приведен фрагмент из [полного примера](#code-example), и он требует **использования** инструкций, которые содержатся в полном примере.
 
-[!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
+[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
 
 Дополнительные сведения о получении маркеров MSA см. в разделе [Диспетчер учетных записей в Интернете](../security/web-account-manager.md).
 
@@ -47,7 +47,7 @@ API целевых предложений представляет собой п
 
 В примере ниже показано, как получить целевые предложения для текущего пользователя. Этот пример представляет собой фрагмент [полного примера](#code-example). Он требует библиотеку [Json.NET](https://www.newtonsoft.com/json) от Newtonsoft, а также дополнительные классы и инструкции **using**, которые содержатся в полном примере.
 
-[!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
+[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
 
 <span id="code-example" />
 
@@ -61,9 +61,9 @@ API целевых предложений представляет собой п
 
 Для этого примера требуется библиотека [Json.NET](https://www.newtonsoft.com/json) от Newtonsoft. В примере эта библиотека используется для сериализации и десериализации данных формата JSON.
 
-[!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
+[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Использовать целевых предложений для достижения максимального уровня взаимодействия и преобразования](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)
 * [Получение целевых предложений](get-targeted-offers.md)

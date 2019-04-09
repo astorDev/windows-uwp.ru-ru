@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, uwp, standard, c ++, cpp, winrt, проекции, автор, COM, компонент
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e6b77f8be6c75070336ad48f0c6471fc0a824a4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 27c55e94a4e11bbbf550c21fd61ee384c8b21f9c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616569"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244360"
 ---
 # <a name="author-com-components-with-cwinrt"></a>Создание COM-компонентов с помощью C++/WinRT
 
-[C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) помогут вам создавать классической модели объектов компонента (COM) компонентов (или компонентные классы), так же, как он помогает вам создавать классы среды выполнения Windows. Ниже приведен простой иллюстрации, на которой вы можете проверить работу, если вставьте код в `pch.h` и `main.cpp` нового **консольное приложение Windows (C + +/ WinRT)** проекта.
+[C++/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) помогут вам создавать классической модели объектов компонента (COM) компонентов (или компонентные классы), так же, как он помогает вам создавать классы среды выполнения Windows. Ниже приведен простой иллюстрации, на которой вы можете проверить работу, если вставьте код в `pch.h` и `main.cpp` нового **Visual C++**   >  **Windows Desktop**  >  **Консольное приложение Windows (C++/WinRT)** проекта.
 
 ```cppwinrt
 // pch.h
@@ -64,19 +64,19 @@ int main()
 }
 ```
 
-Также см. в разделе [использовать COM-компонентов с использованием C + +/ WinRT](consume-com.md).
+Также см. в разделе [использовать COM-компонентов с C++/WinRT](consume-com.md).
 
 ## <a name="a-more-realistic-and-interesting-example"></a>Это пример более реалистичных и интересных
 
-В оставшейся части этого раздела описывается создание проекта минимальной консольного приложения, использующего C + +/ WinRT реализовать базовый coclass (COM-компонент или COM-класса) и фабрики класса. Пример приложения показано, как обеспечить всплывающее уведомление с кнопкой обратного вызова и компонентного класса (который реализует **INotificationActivationCallback** COM-интерфейс) позволяет приложению быть запущен и вызывается снова, когда пользователь нажимает эту кнопку на тост.
+В оставшейся части этого раздела описывается создание проекта минимальной консольного приложения, использующего C++/WinRT реализовать базовый coclass (COM-компонент или COM-класса) и фабрики класса. Пример приложения показано, как обеспечить всплывающее уведомление с кнопкой обратного вызова и компонентного класса (который реализует **INotificationActivationCallback** COM-интерфейс) позволяет приложению быть запущен и вызывается снова, когда пользователь нажимает эту кнопку на тост.
 
-Дополнительные сведения, относящиеся к функциональной области всплывающих уведомлений можно найти в [отправки локального всплывающего уведомления](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast). Ни один из примеров кода в этом разделе документации использовать C + +/ WinRT, однако таким образом мы рекомендуем, что вы предпочитаете код, показанный в этом разделе.
+Дополнительные сведения, относящиеся к функциональной области всплывающих уведомлений можно найти в [отправки локального всплывающего уведомления](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast). Ни один из примеров кода в этом разделе Использование документации C++/WinRT, однако таким образом мы рекомендуем, что вы предпочитаете код, показанный в этом разделе.
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>Создайте проект консольного приложения Windows (ToastAndCallback)
 
-Начните с создания нового проекта в Microsoft Visual Studio. Создание **Visual C++** > **Windows Desktop** > **консольное приложение Windows (C + +/ WinRT)** проект и назовите его  *ToastAndCallback*.
+Начните с создания нового проекта в Microsoft Visual Studio. Создание **Visual C++**   >  **Windows Desktop** > **консольное приложение Windows (C++/WinRT)** проект и назовите его  *ToastAndCallback*.
 
-Откройте `pch.h`и добавьте `#include <unknwn.h>` перед включает C + +/ WinRT заголовки.
+Откройте `pch.h`и добавьте `#include <unknwn.h>` перед включает для любого C++/WinRT заголовки. Ниже приведен результат; Вы можете заменить содержимое вашей `pch.h` с вхождением.
 
 ```cppwinrt
 // pch.h
@@ -85,9 +85,16 @@ int main()
 #include <winrt/Windows.Foundation.h>
 ```
 
-Откройте `main.cpp`и удалить с помощью директив, которые создает шаблон проекта. Вместо них вставьте следующий код (который дает нам библиотек, заголовки и имена типов, которые нам нужно).
+Откройте `main.cpp`и удалить с помощью директив, которые создает шаблон проекта. Вместо них вставьте следующий код (который дает нам библиотек, заголовки и имена типов, которые нам нужно). Ниже приведен результат; Вы можете заменить содержимое вашего `main.cpp` с вхождением (мы также удалили его из `main` в списке ниже, так как мы будем заменять эту функцию более поздней версии).
 
 ```cppwinrt
+// main.cpp : Defines the entry point for the console application.
+//
+
+#include "pch.h"
+
+#pragma comment(lib, "advapi32")
+#pragma comment(lib, "ole32")
 #pragma comment(lib, "shell32")
 
 #include <iomanip>
@@ -102,11 +109,15 @@ int main()
 using namespace winrt;
 using namespace Windows::Data::Xml::Dom;
 using namespace Windows::UI::Notifications;
+
+int main() { }
 ```
+
+Сборка проекта не еще; После после завершения добавления кода, вам будет предложено создать и запустить.
 
 ## <a name="implement-the-coclass-and-class-factory"></a>Реализуется фабрика как компонентный класс и класс
 
-В C + +/ WinRT, реализации компонентных классов и фабрик классов путем наследования от [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) базовая структура. Сразу после трех-директивы using показанный выше (и перед `main`), вставьте этот код для реализации компонента всплывающее уведомление COM активатор.
+В C++/WinRT, реализации компонентных классов и фабрик классов путем наследования от [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) базовая структура. Сразу после трех-директивы using показанный выше (и перед `main`), вставьте этот код для реализации компонента всплывающее уведомление COM активатор.
 
 ```cppwinrt
 static constexpr GUID callback_guid // BAF2FA85-E121-4CC9-A942-CE335B6F917F
@@ -162,7 +173,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-Реализация компонентного класса выше используется тот же шаблон, представленный в [API-интерфейсы автора с использованием C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Таким образом можно использовать ту же методику для реализации COM-интерфейсов, а также интерфейсы среды выполнения Windows. COM-компонентов и классов среды выполнения Windows предоставлять свои функции через интерфейс. Каждый интерфейс COM в конечном счете является производным от [ **интерфейса IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509) интерфейс. Среда выполнения Windows основана на COM&mdash;одно различие, что интерфейсы среды выполнения Windows в конечном счете являются производными от [ **интерфейс IInspectable** ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (и **IInspectable**  является производным от **IUnknown**).
+Реализация компонентного класса выше используется тот же шаблон, представленный в [автор API с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Таким образом можно использовать ту же методику для реализации COM-интерфейсов, а также интерфейсы среды выполнения Windows. COM-компонентов и классов среды выполнения Windows предоставлять свои функции через интерфейс. Каждый интерфейс COM в конечном счете является производным от [ **интерфейса IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509) интерфейс. Среда выполнения Windows основана на COM&mdash;одно различие, что интерфейсы среды выполнения Windows в конечном счете являются производными от [ **интерфейс IInspectable** ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (и **IInspectable**  является производным от **IUnknown**).
 
 В компонентном классе, в приведенном выше коде, мы реализуем **INotificationActivationCallback::Activate** метод, который является функция, которая вызывается, когда пользователь нажимает кнопку обратного вызова на всплывающее уведомление. Но перед вызовом этой функции, необходимо создать экземпляр компонентного класса, и это задача из **IClassFactory::CreateInstance** функции.
 
@@ -176,7 +187,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 
 ## <a name="add-helper-types-and-functions"></a>Добавить вспомогательные типы и функции
 
-На этом этапе мы добавим некоторые вспомогательные типы и функции, сделанные в остальной части кода использование. В этом случае перед `main`, добавьте следующий код.
+На этом этапе мы добавим некоторые вспомогательные типы и функции, сделанные в остальной части кода использование. В этом случае непосредственно перед `main`, добавьте следующий код.
 
 ```cppwinrt
 struct prop_variant : PROPVARIANT
@@ -248,7 +259,7 @@ std::wstring get_shortcut_path()
 
 ## <a name="implement-the-remaining-functions-and-the-wmain-entry-point-function"></a>Реализовать остальные функции и функцию точки входа wmain
 
-Шаблон проекта создает `main` функции для вас. Удаление, `main` функции и вместо него вставьте этот код со списком, который включает код для регистрации вашей компонентного класса, а затем для доставки всплывающие из обратного вызова приложения.
+Удалить вашей `main` функции и вместо него вставьте этот код со списком, который включает код для регистрации вашей компонентного класса, а затем для доставки всплывающие из обратного вызова приложения.
 
 ```cppwinrt
 void register_callback()
@@ -345,6 +356,7 @@ void create_toast()
     ToastNotification toast{ xml };
     ToastNotifier notifier{ ToastNotificationManager::CreateToastNotifier(this_app_name) };
     notifier.Show(toast);
+    ::Sleep(50); // Give the callback chance to display.
 }
 
 void LaunchedNormally(HANDLE, INPUT_RECORD &, DWORD &);
@@ -376,7 +388,7 @@ void LaunchedNormally(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD & event
     try
     {
         bool runningAsAdmin{ ::IsUserAnAdmin() == TRUE };
-        std::wcout << this_app_name << L" is running" << (runningAsAdmin ? L" (Administrator)." : L".") << std::endl;
+        std::wcout << this_app_name << L" is running" << (runningAsAdmin ? L" (administrator)." : L" (NOT as administrator).") << std::endl;
 
         if (runningAsAdmin)
         {
@@ -408,7 +420,9 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ## <a name="how-to-test-the-example-application"></a>Проверка примера приложения
 
-Постройте приложение и запустите его хотя бы один раз учетные данные администратора, чтобы вызвать регистрации и другие настройки, выполнение кода. Ли вы используете его от имени администратора, а затем нажмите 'T' заставить всплывающее уведомление для отображения. Вы также можете щелкнуть **обратный вызов ToastAndCallback** кнопку напрямую от всплывающее уведомление, которое всплывает, или из центра поддержки и приложение запустится, компонентный класс создан и  **INotificationActivationCallback::Activate** метод, выполняемый.
+Постройте приложение и запустите его хотя бы один раз на вызвать регистрации и другие программы установки, код для запуска в качестве администратора. Для этого рекомендуется запустить Visual Studio от имени администратора, а затем запустим приложение из Visual Studio. Щелкните правой кнопкой мыши Visual Studio на панели задач, для отображения списка переходов, щелкните правой кнопкой мыши Visual Studio на списке переходов и нажмите кнопку **Запуск от имени администратора**. Примите запрос и затем открыть проект. При запуске приложения отображается сообщение, указывающее, является ли приложение выполняется с правами администратора. Если это не так, затем регистрации и другие установки не будет работать. Этой регистрации и другие настройки должен выполняться по крайней мере один раз в порядке, для правильной работы приложения.
+
+Независимо от того, имеется ли приложение выполняется с правами администратора, нажмите клавишу 'T' заставить всплывающее уведомление для отображения. Вы также можете щелкнуть **обратный вызов ToastAndCallback** кнопку напрямую от всплывающее уведомление, которое всплывает, или из центра поддержки и приложение запустится, компонентный класс создан и  **INotificationActivationCallback::Activate** метод, выполняемый.
 
 ## <a name="in-process-com-server"></a>Внутрипроцессный сервер COM
 
@@ -420,13 +434,13 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 Можно начать задачу создания внутрипроцессного COM-сервера, создав новый проект в Microsoft Visual Studio. Создание **Visual C++** > **Windows Desktop** > **библиотеки динамической компоновки (DLL)** проекта.
 
-Чтобы добавить C + +/ WinRT поддержка в новый проект, выполните действия, описанные в [изменить проект приложения Windows Desktop Добавление C + +/ WinRT поддержка](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
+Чтобы добавить C++/WinRT поддержка в новый проект, выполните действия, описанные в [изменить проект приложения Windows Desktop, чтобы добавить C++поддержки /WinRT](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 ### <a name="implement-the-coclass-class-factory-and-in-proc-server-exports"></a>Реализации компонентного класса, фабрика класса и экспорты внутрипроцессный сервер
 
 Откройте `dllmain.cpp`и добавьте в него листинг кода, показано ниже.
 
-Если у вас уже есть библиотеку DLL, реализующую C + +/ классы среды выполнения Windows WinRT, вы уже можете получить **DllCanUnloadNow** показанную ниже функцию. Если вы хотите добавить компонентных классов для библиотеки DLL, то можно добавить **DllGetClassObject** функции.
+Если у вас уже есть библиотеку DLL, реализующую C++классы среды выполнения Windows WinRT, вы уже можете получить **DllCanUnloadNow** показанную ниже функцию. Если вы хотите добавить компонентных классов для библиотеки DLL, то можно добавить **DllGetClassObject** функции.
 
 При отсутствии существующих [библиотеки шаблонов C++ (WRL) среды выполнения Windows](/cpp/windows/windows-runtime-cpp-template-library-wrl) частей кода, что вы хотите сохраняется совместимость с, а затем WRL можно удалить из кода, показанного.
 
@@ -511,9 +525,9 @@ HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** r
 
 ### <a name="support-for-weak-references"></a>Поддержка слабые ссылки
 
-Также см. в разделе [Weak ссылок в C + +/ WinRT](weak-references.md#weak-references-in-cwinrt).
+Также см. в разделе [Weak ссылок в C++/WinRT](weak-references.md#weak-references-in-cwinrt).
 
-C + +/ WinRT (в частности, [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) базовая структура шаблона) реализует [ **IWeakReferenceSource** ](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource) для вас Если вашей Введите реализует [ **IInspectable** ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (или любой интерфейс, который является производным от **IInspectable**).
+C++/ WinRT (в частности, [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) базовая структура шаблона) реализует [ **IWeakReferenceSource** ](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource) для вас Если вашей Введите реализует [ **IInspectable** ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (или любой интерфейс, который является производным от **IInspectable**).
 
 Это обусловлено **IWeakReferenceSource** и [ **IWeakReference** ](/windows/desktop/api/weakreference/nn-weakreference-iweakreference) предназначены для типов среды выполнения Windows. Таким образом, можно включить поддержку слабых ссылок для вашей coclass путем простого добавления **winrt::Windows::Foundation::IInspectable** (или интерфейс, который является производным от **IInspectable**) для вашей реализации.
 
@@ -526,10 +540,10 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 
 ## <a name="important-apis"></a>Важные API
 * [Интерфейс IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
-* [Интерфейс IUnknown](https://msdn.microsoft.com/library/windows/desktop/ms680509)
-* [Структура шаблона WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
+* [Интерфейс IUnknown interface](https://msdn.microsoft.com/library/windows/desktop/ms680509)
+* [Шаблон структуры winrt::implements](/uwp/cpp-ref-for-winrt/implements)
 
-## <a name="related-topics"></a>Статьи по теме
-* [Создание интерфейсов API с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
-* [Использование компонентов COM с помощью C++/WinRT](consume-com.md)
+## <a name="related-topics"></a>См. также
+* [Создание API-интерфейсов с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [Использование COM-компонентов с помощью C++/WinRT](consume-com.md)
 * [Отправка локального всплывающего уведомления](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

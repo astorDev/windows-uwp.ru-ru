@@ -7,20 +7,18 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a420ed5ed8f498eb9c900cbacb1b766c4a01214
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 62ad93fa480f0515c4ed6df2d73a745454197ac6
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599289"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291642"
 ---
 # <a name="triangle-strips"></a>Полосы треугольников
-
 
 Полоса треугольников — это ряд соединенных треугольников. Поскольку треугольники соединены, приложению не нужно постоянно указывать все три вершины для каждого треугольника. Например, для определения следующей полосы треугольников достаточно семи вершин.
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Пример
-
 
 ![иллюстрация полосы треугольников с семью вершинами](images/tristrip.png)
 
@@ -34,7 +32,7 @@ ms.locfileid: "57599289"
 
 В следующем коде показано, как создать вершины для такой полосы треугольников.
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
 float x,y,z;
@@ -53,7 +51,7 @@ CUSTOMVERTEX Vertices[] =
 
 В примере кода ниже показано, как отрисовать эту полосу треугольников в Direct3D.
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to a device interface.

@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e898b0552a9485cd15079a37940a2151e4bc9f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9cc696746de837c4883ae4a9ee8ebcf42cb78b12
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590739"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822889"
 ---
 # <a name="keyboard-accelerators"></a>Ускорители клавиатуры
 
@@ -618,12 +618,9 @@ public class MyListView : ListView
 
 ## <a name="related-articles"></a>Связанные статьи
 
-* [Взаимодействия пользователей с клавиатурой](keyboard-interactions.md)
-* [Ключи доступа](access-keys.md)
+- [Взаимодействия пользователей с клавиатурой](keyboard-interactions.md)
+- [Ключи доступа](access-keys.md)
 
-**Примеры**
-* [Галерея элементов управления XAML (также называемые XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+### <a name="samples"></a>Примеры
 
-
- 
-
+- [Галерея элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery)

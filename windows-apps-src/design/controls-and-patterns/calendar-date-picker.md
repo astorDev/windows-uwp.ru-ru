@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 94d50554baf412c7329521df68eb19f58340387f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c899334b43353fbc69c3080cfd329df0ef9e0797
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658659"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913974"
 ---
 # <a name="calendar-date-picker"></a>Управляющий элемент выбора даты в календаре
 
@@ -44,7 +44,7 @@ ms.locfileid: "57658659"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/CalendarDatePicker">открыть приложение и увидеть CalendarDatePicker в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -91,7 +91,7 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 Можно обработать событие [DateChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) так, чтобы получать уведомление при изменении значения Date.
 
 > [!NOTE]
-Важные сведения о значениях даты см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи "Элементы управления датой и временем".
+> Важные сведения о значениях даты см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи "Элементы управления датой и временем".
 
 ### <a name="setting-a-header-and-placeholder-text"></a>Настройка текста заголовка и замещающего текста
 
@@ -112,5 +112,5 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 
 - [Элементы управления датой и временем](date-and-time.md)
 - [Представление календаря](calendar-view.md)
-- [Выбор даты](date-picker.md)
-- [Выбор времени](time-picker.md)
+- [Управляющий элемент выбора даты](date-picker.md)
+- [Управляющий элемент выбора времени](time-picker.md)

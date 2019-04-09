@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 84a08d480070e4a23147679dd9b5dda1f8c9cca1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3f59d86a03abdeb097ab60e1961d7869669875eb
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605499"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291590"
 ---
 # <a name="point-lists"></a>Списки точек
-
 
 Список точек — это коллекция вершин, которые отображаются в виде изолированных точек. Ваше приложение может использовать списки точки в трехмерных сценах для получения звездных полей или пунктирных линий на поверхности многоугольника.
 
@@ -30,7 +29,7 @@ ms.locfileid: "57605499"
 
 Следующий код показывает, как создать вершины для такого списка точек.
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -49,7 +48,7 @@ CUSTOMVERTEX Vertices[] =
 
 В примере кода ниже показано, как отрисовать этот список точек в Direct3D.
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to an IDirect3DDevice interface.

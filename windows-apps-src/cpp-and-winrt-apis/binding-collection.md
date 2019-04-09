@@ -5,16 +5,16 @@ ms.date: 10/03/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, коллекция
 ms.localizationpriority: medium
-ms.openlocfilehash: c3551ebcc59ebfe426b0be8d5bd20f7578517a25
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c4bf1805b16d869e7a29c49e8fe53c01cf469132
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649209"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921670"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>Элементы управления XAML; привязка к коллекции C++/WinRT
 
-Коллекция, которая может быть эффективно привязана к элементам управления XAML, называется *отслеживаемой*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя* . В этом разделе показан способ реализации наблюдаемых наборов в [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), и как выполнить привязку XAML элементов элемента управления к ним.
+Коллекция, которая может быть эффективно привязана к элементам управления XAML, называется *отслеживаемой*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя* . В этом разделе показан способ реализации наблюдаемых наборов в [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), и как выполнить привязку XAML элементов элемента управления к ним.
 
 Это пошаговое руководство основано на проекте, созданном в разделе [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md), и дополняет понятия, рассмотренные в этом разделе.
 
@@ -25,7 +25,7 @@ ms.locfileid: "57649209"
 Если класс среды выполнения, представляющий коллекцию, вызывает событие [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) при добавлении или удалении из него элементов, значит этот класс среды выполнения представляет собой отслеживаемую коллекцию. Элементы управления XAML могут привязываться к этим событиям и обрабатывать их путем получения обновленной коллекции и последующего самообновления для показа текущих элементов.
 
 > [!NOTE]
-> Сведения об установке и использовании C + +/ WinRT Visual Studio Extension (VSIX) (который поддерживает шаблон проекта) см. в разделе [поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Сведения об установке и использовании C++WinRT Visual Studio Extension (VSIX) и пакет NuGet (которые вместе обеспечивают шаблон проекта и поддержка сборки), см. в разделе [поддержка Visual Studio C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>Добавление коллекции **BookSkus** в **BookstoreViewModel**
 
@@ -121,9 +121,9 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 Выполните сборку и запуск проекта. Нажмите кнопку, чтобы запустить обработчик события **Click**. Мы увидели, что реализация **Append** вызывает событие, чтобы сообщить пользовательскому интерфейсу о том, что коллекция изменилась; а **ListBox** повторно запрашивает коллекцию, чтобы обновить свое собственное значение **Items**. Так же, как и раньше, меняется название одной из книг; и это изменение отражается как на кнопке, так и в списке.
 
 ## <a name="important-apis"></a>Важные API
-* [IObservableVector&lt;T&gt;:: VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
-* [Шаблон функции WinRT::make](/uwp/cpp-ref-for-winrt/make)
+* [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
+* [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
 
-## <a name="related-topics"></a>Статьи по теме
-* [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
-* [Создание интерфейсов API с помощью C++/WinRT](author-apis.md)
+## <a name="related-topics"></a>См. также
+* [Использование API-интерфейсов с помощью C++/WinRT](consume-apis.md)
+* [Создание API-интерфейсов с помощью C++/WinRT](author-apis.md)

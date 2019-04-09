@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5d66d717d77d2797e8a483871b8d3369befb5b6b
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632059"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320587"
 ---
 # <a name="uri-schemes"></a>Схемы URI
 
@@ -98,9 +98,11 @@ ms-appx:///images/logo.png
 
 Приведенный выше URI фактически может получить файл в пакете текущего приложения с помощью следующего физического имени файла.
 
-```
+<blockquote>
+<pre>
 \Images\fr-FR\logo.scale-100_contrast-white.png
-```
+</blockquote>
+</pre>
 
 Естественно, можно также получить тот же физический файл путем обращения к нему напрямую с полным именем.
 
@@ -265,7 +267,7 @@ ms-resource:///Hello%23World/String1
 
 Разработчики определенных компонентов, находящихся в слое выше этого анализа URI, могут выбрать удобное для них использование параметров запроса.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Универсальный код ресурса (URI): Базовый синтаксис](https://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [Создание пакетов приложений](../packaging/index.md)

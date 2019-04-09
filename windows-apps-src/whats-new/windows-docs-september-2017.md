@@ -5,12 +5,12 @@ keywords: новые возможности, обновления, компон�
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a296cc877279292f73b591a86ede9136b0d9758
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0ae5001e907d7d38cbf05fd6863b192337fe365f
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645199"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162890"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Что нового в документации для разработчиков Windows в сентябре 2017 г.
 
@@ -20,11 +20,11 @@ ms.locfileid: "57645199"
 
 [Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/your-first-app.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
-## <a name="features"></a>Возможности
+## <a name="features"></a>Компоненты
 
 ### <a name="xbox-live-creators-program"></a>Программа Xbox Live Creators Program
 
-Программа Xbox Live Creators Program уже работает и позволяет вам легко создавать и публиковать UWP-игры, которые можно запускать как на компьютерах с Windows 10, так и на консолях Xbox One. Дополнительные сведения см. в разделе [Начало работы с программой Xbox Live Creators](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
+Программа Xbox Live Creators Program уже работает и позволяет вам легко создавать и публиковать UWP-игры, которые можно запускать как на компьютерах с Windows 10, так и на консолях Xbox One. Дополнительные сведения см. в разделе [Начало работы с программой Xbox Live Creators](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## <a name="developer-guidance"></a>Руководство для разработчиков
 

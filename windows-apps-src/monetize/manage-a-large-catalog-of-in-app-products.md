@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, покупки из приложения, IAP, надстройки, каталог, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 2335e09253570d09c33422d2f5ba4179697e4ea7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6b6c799c0bbf05e113bfc3d28816c6600d678f18
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637359"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334722"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>Управление большим каталогом внутренних продуктов приложения
 
@@ -24,7 +24,7 @@ ms.locfileid: "57637359"
 
 Магазин будет использовать идентификатор *offerId* из запроса на покупку только в итоговом классе [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392). Этот процесс напрямую не меняет информацию, изначально указанную при [выставлении внутреннего продукта приложения в Магазине](../publish/add-on-submissions.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 -   В этом разделе рассказывается о поддержке представления нескольких предложений для продажи из приложения с использованием одной продуктовой позиции, выставленной в Магазине. Чтобы ознакомиться с покупками из приложения, см. статью [Поддержка покупок внутренних продуктов приложения](enable-in-app-product-purchases.md), из которой вы узнаете о лицензировании и о том, как правильно вносить покупки из приложения в список Магазина.
 -   Когда вы создадите код для продаж из приложения и будете проверять его в первый раз, используйте объект [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) вместо объекта [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). В этом случае вы сможете проверить логику лицензирования путем имитации обращения к серверу лицензирования вместо вызова реального сервера. Чтобы сделать это, необходимо настроить файл с именем WindowsStoreProxy.xml в папку % userprofile %\\AppData\\локального\\пакетов\\&lt;имя пакета&gt;\\LocalState\\ Microsoft\\Windows Store\\ApiData. Имитатор Microsoft Visual Studio создает этот файл при первом запуске приложения. Также можно загрузить собственный его вариант во время выполнения. Дополнительные сведения см. в разделе [Использование файла WindowsStoreProxy.xml с CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
@@ -35,7 +35,7 @@ ms.locfileid: "57637359"
 Запрос на покупку для конкретного продукта в большом каталоге обрабатывается во многом так же, как любой другой запрос на покупку в приложении. Когда ваше приложение вызывает новую перегрузку метода [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync), оно предоставляет идентификатор *OfferId* и объект [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263390) с уже указанным наименованием внутреннего продукта приложения.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#MakePurchaseRequest)]
+[!code-csharp[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#MakePurchaseRequest)]
 
 ## <a name="report-fulfillment-of-the-in-app-offer"></a>Сообщение о выполнении продажи из приложения
 
@@ -46,9 +46,9 @@ ms.locfileid: "57637359"
 Приведенный ниже код демонстрирует вызов функции выполнения и шаблон сообщения пользовательского интерфейса, в который вставлена информация о конкретном предложении. Поскольку эта информация отсутствует, в примере используются данные из [ListingInformation](https://msdn.microsoft.com/library/windows/apps/br225163) продуктовой позиции.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#ReportFulfillment)]
+[!code-csharp[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#ReportFulfillment)]
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Поддержка покупки внутренних продуктов приложений](enable-in-app-product-purchases.md)
 * [Поддержка покупки потребляемых внутренних продуктов приложений](enable-consumable-in-app-product-purchases.md)

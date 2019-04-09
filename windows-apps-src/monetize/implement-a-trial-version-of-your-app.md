@@ -6,12 +6,12 @@ keywords: windows 10, uwp, пробная версия, покупки из пр
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 796266565965a62d3f168b48893d62e1cdd7df44
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 49d57f32961726507c0114aed648787dd7f6bd1f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646169"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334712"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>Внедрение пробной версии приложения
 
@@ -57,7 +57,7 @@ ms.locfileid: "57646169"
 
 Не забудьте объяснить, как будет работать ваше приложение во время и после бесплатного пробного периода, чтобы поведение приложения не стало неожиданностью для клиентов. Дополнительные сведения об описании приложения см. в разделе [Создание описаний приложений](https://msdn.microsoft.com/library/windows/apps/mt148529).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для этого примера необходимо выполнение следующих предварительных условий:
 * Создан проект Visual Studio для приложения универсальной платформы Windows (UWP), предназначенный для **Windows 10 Anniversary Edition (10.0; сборка 14393)** и более поздних выпусков.
@@ -78,11 +78,11 @@ ms.locfileid: "57646169"
 Если пользователь купил приложение, рекомендуется сообщить ему об изменении состояния лицензирования. При необходимости попросите пользователя перезапустить приложение. Перевод приложения в новое состояние лицензирования должен быть максимально комфортным для пользователя.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ImplementTrial](./code/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs#ImplementTrial)]
+[!code-csharp[ImplementTrial](./code/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs#ImplementTrial)]
 
 Полный пример приложения см. в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
 * [Получите сведения о продукте для приложения и надстройки](get-product-info-for-apps-and-add-ons.md)

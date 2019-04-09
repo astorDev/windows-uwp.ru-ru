@@ -5,26 +5,26 @@ ms.date: 07/18/2018
 ms.topic: article
 keywords: Windows 10, UWP, стандартная, c++, cpp, winrt, проекция, создание, событие
 ms.localizationpriority: medium
-ms.openlocfilehash: ace1c276b878d07f5750483740dfe90ed8cb6211
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5c410d209972a0221928548901f79bd599c67eae
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644489"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921700"
 ---
 # <a name="author-events-in-cwinrt"></a>Создание событий в C++/WinRT
 
 В этом разделе показано, как создать компонент среды выполнения Windows, который содержит класс среды выполнения, представляющий банковский счет, который вызывает событие при списании с баланса. В нем также показано базовое приложение, которое использует класс среды выполнения банковского счета, вызывает функцию для изменения баланса и обрабатывает все возникающие события.
 
 > [!NOTE]
-> Сведения об установке и использовании [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio Extension (VSIX) (который поддерживает шаблон проекта) см. в разделе [поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Сведения об установке и использовании [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio Extension (VSIX) и пакет NuGet (которые вместе обеспечивают шаблон проекта и поддержка сборки), см. в разделе [поддержка Visual Studio C++/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 > [!IMPORTANT]
 > Основные понятия и термины, которые помогают понять, как использовать и создавать классы среды выполнения с помощью C++/WinRT, см. в разделах [Использование API-интерфейсов в C++/WinRT](consume-apis.md) и [Создание API-интерфейсов в C++/WinRT ](author-apis.md).
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>Создание компонента среды выполнения Windows (BankAccountWRC)
 
-Начните с создания нового проекта в Microsoft Visual Studio. Создание **Visual C++** > **универсальной Windows** > **компонента среды выполнения Windows (C + +/ WinRT)** проект и назовите его  *BankAccountWRC* (для «банк компонента среды выполнения Windows»).
+Начните с создания нового проекта в Microsoft Visual Studio. Создание **Visual C++**   >  **универсальной Windows** > **компонента среды выполнения Windows (C++/WinRT)** проект и назовите его  *BankAccountWRC* (для «банк компонента среды выполнения Windows»).
 
 Созданный проект содержит файл с именем `Class.idl`. Переименуйте этот файл `BankAccount.idl` (Переименование `.idl` файл автоматически переименовывает зависимой `.h` и `.cpp` файлы слишком). Замените содержимое файла `BankAccount.idl` со списком ниже.
 
@@ -97,7 +97,7 @@ namespace winrt::BankAccountWRC::implementation
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>Создайте приложение основных компонентов (BankAccountCoreApp) для тестирования компонента среды выполнения Windows.
 
-Теперь создайте новый проект (в вашем решении `BankAccountWRC` или в новом). Создание **Visual C++** > **универсальной Windows** > **приложения Core (C + +/ WinRT)** проект и назовите его *BankAccountCoreApp* .
+Теперь создайте новый проект (в вашем решении `BankAccountWRC` или в новом). Создание **Visual C++**   >  **универсальной Windows** > **приложения Core (C++/WinRT)** проект и назовите его  *BankAccountCoreApp*.
 
 Добавить ссылку и перейдите к `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (или добавьте ссылку проекта на проект, в том случае, если есть проект, в том же решении). Нажмите кнопку **Добавить**, а затем кнопку **OK**. Теперь выполните сборку BankAccountCoreApp. Маловероятно, что появится сообщение об ошибке, полезные данные файла `readme.txt` не существует, удалите этот файл из проекта компонента среды выполнения Windows, перестройте его, а затем перестройте BankAccountCoreApp.
 
@@ -244,7 +244,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 ## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>Параметризованные делегаты, простой сигналов и обратные вызовы в проекте
 
-Если событие используется только для внутреннего использования в C + +/ WinRT проекта (не для всех двоичных файлов), а затем по-прежнему использовать [ **winrt::event** ](/uwp/cpp-ref-for-winrt/event) структуры шаблона, но параметризовать его с использованием C + +/ WinRT в не Windows-Runtime [ **winrt::delegate&lt;... T&gt;**  ](/uwp/cpp-ref-for-winrt/delegate) шаблон структуры, делегат эффективных и подсчетом ссылок. Он поддерживает любое число параметров, и они не ограничены типами среды выполнения Windows.
+Если событие используется только внутренним образом в вашей C++/WinRT проекта (не для всех двоичных файлов), а затем по-прежнему использовать [ **winrt::event** ](/uwp/cpp-ref-for-winrt/event) структуры шаблона, но параметризовать с C++/WinRT элемента не Windows-Runtime [ **winrt::delegate&lt;... T&gt;**  ](/uwp/cpp-ref-for-winrt/delegate) шаблон структуры, делегат эффективных и подсчетом ссылок. Он поддерживает любое число параметров, и они не ограничены типами среды выполнения Windows.
 
 В приведенном ниже примере сначала показано делегата, подпись, которая не принимает никаких параметров (по существу простого сигнала), а затем одно, который принимает строку.
 
@@ -272,7 +272,7 @@ logCallback = [](std::wstring const& message) { std::wcout << message.c_str() <<
 logCallback(L"Hello, World!");
 ```
 
-Если вы переносите из C + +/ CX базы кода, где события и делегаты используются внутри проекта, затем **winrt::delegate** поможет вам выполнить репликацию этого шаблона в C + +/ WinRT.
+Если вы переносите из C++/CX базы кода, где события и делегаты используются внутри проекта, затем **winrt::delegate** поможет вам выполнить репликацию этого шаблона в C++/WinRT.
 
 ## <a name="design-guidelines"></a>Рекомендации по проектированию
 
@@ -282,7 +282,7 @@ logCallback(L"Hello, World!");
 
 Обратите внимание, что эти рекомендации не обязательно применимы при конструировании внутренним API. Хотя внутренние API часто станет общедоступным со временем.
 
-## <a name="related-topics"></a>Статьи по теме
-* [Создание интерфейсов API с помощью C++/WinRT](author-apis.md)
-* [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
-* [Обработка событий с помощью делегатов в C + +/ WinRT](handle-events.md)
+## <a name="related-topics"></a>См. также
+* [Создание API-интерфейсов с помощью C++/WinRT](author-apis.md)
+* [Использование API-интерфейсов с помощью C++/WinRT](consume-apis.md)
+* [Обработка событий с помощью делегатов в C++/WinRT](handle-events.md)

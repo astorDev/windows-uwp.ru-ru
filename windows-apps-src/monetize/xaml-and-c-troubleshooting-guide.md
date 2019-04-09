@@ -6,12 +6,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, AdControl, устранение неполадок, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 94af97e1e678c6ee92aaa731057c5f67185e25c5
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615919"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334662"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>Руководство по устранению неполадок в XAML и C#
 
@@ -171,7 +171,7 @@ ms.locfileid: "57615919"
 2.  Убедитесь, что создан экземпляр элемента **AdControl**. Если экземпляр элемента **AdControl** не создан, он будет недоступен.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
 3.  Проверьте идентификаторы приложения и рекламного блока. Эти идентификаторы должны совпадать с Идентификатором приложения и идентификатор единицы ad, полученный в центре партнеров. Дополнительные сведения см. в разделе [Настройка блоков рекламы в приложении](set-up-ad-units-in-your-app.md#live-ad-units).
 
@@ -236,7 +236,7 @@ ms.locfileid: "57615919"
     Эти код C# получает сообщение об ошибке и отображает его в элементе **TextBlock**.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
 
     Наиболее распространенная ошибка, в следствие которой появляется "черный ящик", это — "Реклама недоступна". Эта ошибка означает, что для возврата по запросу реклама недоступна.
 
@@ -253,7 +253,7 @@ ms.locfileid: "57615919"
     В следующем примере показан вызов метода **Refresh**.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
+    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
 
 3.  Элемент **AdControl** работает нормально. Иногда одна и та же реклама может отображаться несколько раз подряд, в результате чего может показаться, что рекламные блоки не обновляются.
 

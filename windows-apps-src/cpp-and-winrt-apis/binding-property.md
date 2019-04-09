@@ -5,15 +5,15 @@ ms.date: 08/21/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, свойство
 ms.localizationpriority: medium
-ms.openlocfilehash: 4033327fa51b0801583a518a0dea055f59e57fc8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9bdbfef54b799f8dff23ad739007cec9fef98af8
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616629"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921730"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Элементы управления XAML; привязка к свойству C++/WinRT
-Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя* . В этом разделе показано, как реализовать наблюдаемые свойства в [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)и как привязать элементы управления XAML к ним.
+Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя* . В этом разделе показано, как реализовать наблюдаемые свойства в [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)и как привязать элементы управления XAML к ним.
 
 > [!IMPORTANT]
 > Основные понятия и термины, которые помогают понять, как использовать и создавать классы среды выполнения с помощью C++/WinRT, см. в разделах [Использование API-интерфейсов в C++/WinRT](consume-apis.md) и [Создание API-интерфейсов в C++/WinRT ](author-apis.md).
@@ -24,10 +24,10 @@ ms.locfileid: "57616629"
 Текстовый элемент или элемент управления XAML может привязываться к этим событиям и обрабатывать их путем получения обновленных значений и последующего самообновления для показа новых значений.
 
 > [!NOTE]
-> Сведения об установке и использовании C + +/ WinRT Visual Studio Extension (VSIX) (который поддерживает шаблон проекта) см. в разделе [поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Сведения об установке и использовании C++WinRT Visual Studio Extension (VSIX) и пакет NuGet (которые вместе обеспечивают шаблон проекта и поддержка сборки), см. в разделе [поддержка Visual Studio C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## <a name="create-a-blank-app-bookstore"></a>Создайте пустое приложение (Bookstore)
-Начните с создания нового проекта в Microsoft Visual Studio. Создание **Visual C++** > **универсальной Windows** > **пустое приложение (C + +/ WinRT)** проект и назовите его *Bookstore*.
+Начните с создания нового проекта в Microsoft Visual Studio. Создание **Visual C++**   >  **универсальной Windows** > **пустое приложение (C++/WinRT)** проект и назовите его  *Bookstore*.
 
 Мы создадим нового класс, представляющий книгу, которая имеет отслеживаемое свойство названия. Класс создается и используется в рамках одной и той же единицы компиляции. Однако мы хотим иметь возможность привязывать этот класс из XAML, поэтому это будет класс среды выполнения. Кроме того, мы применим C++/WinRT для его создания и использования.
 
@@ -53,7 +53,7 @@ namespace Bookstore
 
 Сохраните файл и выполните сборку проекта. Во время сборки запускается инструмент `midl.exe` для создания файла метаданных среды выполнения Windows (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`), описывающего класс среды выполнения. Затем запускается средство `cppwinrt.exe` для создания файлов исходного кода для поддержки создания и использования вашего класса среды выполнения. Эти файлы включают заглушки для начала реализации класса среды выполнения **BookSku**, объявленного в вашем IDL. Это заглушки `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` и `BookSku.cpp`.
 
-Щелкните правой кнопкой мыши узел проекта и нажмите кнопку **открыть папку в проводнике**. Это открывает папку проекта в проводнике. Существует, скопируйте файлы заглушки `BookSku.h` и `BookSku.cpp` из `\Bookstore\Bookstore\Generated Files\sources\` папку и в папку проекта, который является `\Bookstore\Bookstore\`. В **Обозревателе решений**убедитесь, что функция **Показать все файлы** включена. Щелкните правой кнопкой мыши скопированные файлы заглушек и выберите **Включить в проект**.
+Щелкните правой кнопкой мыши узел проекта и нажмите кнопку **открыть папку в проводнике**. Это открывает папку проекта в проводнике. Существует, скопируйте файлы заглушки `BookSku.h` и `BookSku.cpp` из `\Bookstore\Bookstore\Generated Files\sources\` папку и в папку проекта, который является `\Bookstore\Bookstore\`. В **обозревателе решений**, выберите узел проекта, убедитесь, что **Показать все файлы** изменяется на противоположное. Щелкните правой кнопкой мыши скопированные файлы заглушек и выберите **Включить в проект**.
 
 ## <a name="implement-booksku"></a>Реализуйте **BookSku**
 Теперь давайте откроем `\Bookstore\Bookstore\BookSku.h` и `BookSku.cpp` и реализуем класс среды выполнения. В `BookSku.h` добавьте конструктор, который принимает [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring), частный член для хранения строки названия и еще один — для события, которое мы будем вызывать при изменении названия. После внесения этих изменений в `BookSku.h` выглядит следующим образом.
@@ -273,13 +273,13 @@ namespace winrt::Bookstore::implementation
 
 Выполните сборку и запуск проекта. Нажмите кнопку, чтобы запустить обработчик события **Click**. Этот обработчик вызывает функция мутатора названия книги; этот мутатор вызывает событие, чтобы сообщить пользовательскому интерфейсу о том, что свойство **Title** изменилось; а кнопка повторно запрашивает значение этого свойства, чтобы обновить свое собственное значение **Content**.
 
-## <a name="using-the-binding-markup-extension-with-cwinrt"></a>С помощью расширения разметки {Binding} с использованием C + +/ WinRT
-В настоящее время окончательной версии C + +/ WinRT, чтобы иметь возможность использовать расширение разметки {Binding}, необходимо реализовать [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) и [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) интерфейсов.
+## <a name="using-the-binding-markup-extension-with-cwinrt"></a>С помощью расширения разметки {Binding} с C++/WinRT
+В настоящее время окончательной версии из C++/WinRT, чтобы иметь возможность использовать расширение разметки {Binding}, необходимо реализовать [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) и [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) интерфейсы.
 
 ## <a name="important-apis"></a>Важные API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
-* [Шаблон функции WinRT::make](/uwp/cpp-ref-for-winrt/make)
+* [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
 
-## <a name="related-topics"></a>Статьи по теме
-* [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
-* [Создание интерфейсов API с помощью C++/WinRT](author-apis.md)
+## <a name="related-topics"></a>См. также
+* [Использование API-интерфейсов с помощью C++/WinRT](consume-apis.md)
+* [Создание API-интерфейсов с помощью C++/WinRT](author-apis.md)

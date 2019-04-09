@@ -6,12 +6,12 @@ keywords: UWP, потребляемые, надстройки, покупки и
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5588558eff3e9c9b2954f0726995765a2862c43b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e3673db795e3edc2a7c9d83a3ba1036ad8feb659
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57655649"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334572"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>Поддержка покупки продуктов из приложения
 
@@ -20,7 +20,7 @@ ms.locfileid: "57655649"
 > [!IMPORTANT]
 > В этой статье показано, как использовать элементы пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) для включения покупок потребляемых продуктов в приложении. Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). **Windows.Services.Store** пространство имен поддерживает последние надстройки типы, например управляемые Store пригодных для использования надстроек и подписки и должна быть совместима с типами будущих продуктов и функций, поддерживаемых партнера Центр и Store. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Дополнительные сведения о включении возможности покупки потребляемых продуктов из приложения с помощью пространства имен **Windows.Services.Store** см. в [этой статье](enable-consumable-add-on-purchases.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 -   В этом разделе рассказывается о покупках потребляемых внутренних продуктов приложения и отчетах об исполнении сделок в ваших приложениях. Чтобы ознакомиться с продуктами из приложения, см. статью [Поддержка покупок продуктов из приложения](enable-in-app-product-purchases.md), из которой вы узнаете о лицензировании и о том, как правильно вносить продукты из приложения в список Магазина.
 -   Когда вы создадите код для продаж внутренних продуктов приложения и будете проверять его в первый раз, используйте объект [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) вместо объекта [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp). В этом случае вы сможете проверить логику лицензирования путем имитации обращения к серверу лицензирования вместо вызова реального сервера. Чтобы сделать это, необходимо настроить файл с именем WindowsStoreProxy.xml в папку % userprofile %\\AppData\\локального\\пакетов\\&lt;имя пакета&gt;\\LocalState\\ Microsoft\\Windows Store\\ApiData. Имитатор Microsoft Visual Studio создает этот файл при первом запуске приложения. Также можно загрузить собственный его вариант во время выполнения. Дополнительные сведения см. в разделе [Использование файла WindowsStoreProxy.xml с CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
@@ -33,7 +33,7 @@ ms.locfileid: "57655649"
 В следующем примере показан запрос на покупку потребляемого товара из приложения. В комментариях к коду указано, когда ваше приложение должно осуществить свою часть сделки по приобретению потребляемого внутреннего продукта приложения в двух разных сценариях — при успешном запросе и в случае сбоя запроса, из-за того что предыдущая покупка того же товара не выполнена.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#MakePurchaseRequest)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#MakePurchaseRequest)]
 
 ## <a name="step-2-tracking-local-fulfillment-of-the-consumable"></a>Шаг 2. Отслеживание локального выполнение машинные команды
 
@@ -45,7 +45,7 @@ ms.locfileid: "57655649"
 Пример ниже демонстрирует, как использовать свойства [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) вызова [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) из предыдущего этапа, чтобы указать, что покупка товара выполнена. Для сохранения сведений о товаре в месте, на которое впоследствии можно будет сослаться, чтобы подтвердить, что приложение выполнило свою часть сделки, используется коллекция.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GrantFeatureLocally)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GrantFeatureLocally)]
 
 Следующий пример показывает, как использовать массив из предыдущего примера, чтобы получить доступ к паре кодов продукта и транзакции, которые в дальнейшем будут использоваться в отчетах о сделке для Магазина.
 
@@ -53,7 +53,7 @@ ms.locfileid: "57655649"
 > Независимо от способа отслеживания и подтверждения сделки ваше приложение должно продемонстрировать добросовестность и доказать, что клиент получил тот товар, за который заплатил.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#IsLocallyFulfilled)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#IsLocallyFulfilled)]
 
 ## <a name="step-3-reporting-product-fulfillment-to-the-store"></a>Шаг 3. Reporting реализации продукта к Store
 
@@ -63,7 +63,7 @@ ms.locfileid: "57655649"
 > Если информация о выполненной покупке потребляемого внутреннего продукта приложения не будет передана в Магазин, пользователь не сможет снова купить тот же товар до поступления отчета о выполнении предыдущей сделки.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#ReportFulfillment)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#ReportFulfillment)]
 
 ## <a name="step-4-identifying-unfulfilled-purchases"></a>Шаг 4. Определение невыполненной покупки
 
@@ -72,9 +72,9 @@ ms.locfileid: "57655649"
 Пример ниже показывает, как можно использовать [GetUnfulfilledConsumablesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getunfulfilledconsumablesasync) для перечисления потребляемых товаров и как приложение может последовательно проходить по этому списку, чтобы завершить свою часть сделки.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GetUnfulfilledConsumables)]
+[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GetUnfulfilledConsumables)]
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Поддержка покупки внутренних продуктов приложений](enable-in-app-product-purchases.md)
 * [Пример Store (демонстрирует пробные версии и покупки из приложений)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)

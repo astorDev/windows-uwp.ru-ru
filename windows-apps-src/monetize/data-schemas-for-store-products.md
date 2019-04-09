@@ -5,12 +5,12 @@ ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10, uwp, ExtendedJsonData, продукты Store, схема
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f51f0fffae3fa8e9a54214f78aa93fe39eab080
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 344052c18178a121fd9c8d133bdd1abe5a4ad886
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656109"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334844"
 ---
 # <a name="data-schemas-for-store-products"></a>Схемы данных для продуктов из Магазина
 
@@ -33,11 +33,11 @@ ms.locfileid: "57656109"
 
 ## <a name="schema-for-storeproduct-storesku-storeavailability-and-storecollectiondata"></a>Схема для StoreProduct, StoreSku, StoreAvailability и StoreCollectionData
 
-Следующая схема содержит строку в формате JSON, возвращаемую свойством [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData). Свойства [StoreSku.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.ExtendedJsonData), [StoreAvailability.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.ExtendedJsonData) и [StoreCollectionData.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storecollectiondata.ExtendedJsonData) возвращают только те части этой схемы, которые определены в разделах пути ```DisplaySkuAvailabilities\Sku```, ```DisplaySkuAvailabilities\Availabilities``` и ```DisplaySkuAvailabilities\Sku\CollectionData```, соответственно.
+Следующая схема содержит строку в формате JSON, возвращаемую свойством [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData). Свойства [StoreSku.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.ExtendedJsonData), [StoreAvailability.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.ExtendedJsonData) и [StoreCollectionData.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storecollectiondata.ExtendedJsonData) возвращают только те части этой схемы, которые определены в разделах пути `DisplaySkuAvailabilities\Sku`, `DisplaySkuAvailabilities\Availabilities` и `DisplaySkuAvailabilities\Sku\CollectionData`, соответственно.
 
 Пример строки формата JSON, возвращаемой свойством [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData), см. [в этом разделе](#product-example).
 
-[!code[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json#L1-L729)]
+[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json#L1-L729)]
 
 <span id="product-example" />
 
@@ -45,15 +45,15 @@ ms.locfileid: "57656109"
 
 В следующем примере показана строка формата JSON, возвращенная свойством [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) для приложения.
 
-[!code[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json#L1-L268)]
+[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json#L1-L268)]
 
 ## <a name="schema-for-storeapplicense-and-storelicense"></a>Схема для StoreAppLicense и StoreLicense
 
-Следующая схема содержит строку в формате JSON, возвращаемую свойством [StoreAppLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData). Свойство [StoreLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense.ExtendedJsonData) возвращает только те части схемы, которые определены в разделе пути ```productAddOns```.
+Следующая схема содержит строку в формате JSON, возвращаемую свойством [StoreAppLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData). Свойство [StoreLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense.ExtendedJsonData) возвращает только те части схемы, которые определены в разделе пути `productAddOns`.
 
 Пример строки формата JSON, возвращаемой свойством [StoreAppLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData), см. [в этом разделе](#license-example).
 
-[!code[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json#L1-L80)]
+[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json#L1-L80)]
 
 <span id="license-example" />
 
@@ -61,15 +61,15 @@ ms.locfileid: "57656109"
 
 В следующем примере показана строка формата JSON, возвращенная свойством [StoreAppLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) для приложения.
 
-[!code[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json#L1-L28)]
+[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json#L1-L28)]
 
 ## <a name="schema-for-storepurchaseproperties"></a>Схема для StorePurchaseProperties
 
 Следующая схема содержит строку в формате JSON, возвращаемую свойством [StorePurchaseProperties.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storepurchaseproperties.ExtendedJsonData).
 
-[!code[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json#L1-L12)]
+[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json#L1-L12)]
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
 * [Получите сведения о продукте для приложения и надстройки](get-product-info-for-apps-and-add-ons.md)

@@ -5,14 +5,14 @@ keywords: Корпоративный, руководства, клиент, да
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: med
-ms.openlocfilehash: 9c09e0fb73e42fd8a3d0c70bbb5396be32624387
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7bd3a180762c3ef06d7c24ae001fb2c7fb7fc55e
+ms.sourcegitcommit: 6df46d7d5b5522805eab11a9c0e07754f28673c6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623249"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58808302"
 ---
-# <a name="tutorial-create-a-customer-database-application"></a>Руководство: создание приложения базы данных клиентов
+# <a name="tutorial-create-a-customer-database-application"></a>Учебник. создание приложения базы данных клиентов
 
 В этом руководстве создается простое приложение для управления список клиентов. При этом в нем представлена подборка основные понятия для корпоративных приложений на универсальной платформы Windows. Вы научитесь выполнять следующие действия:
 
@@ -24,7 +24,7 @@ ms.locfileid: "57623249"
 
 ![На главную страницу работающее приложение](images/customer-database-tutorial/customer-list.png)
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>предварительные требования
 
 * [Убедитесь, что у вас есть последнюю версию Visual Studio и пакета SDK для Windows 10](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * [Клонируйте или скачайте пример руководство по базам данных клиента](https://aka.ms/customer-database-tutorial)
@@ -247,7 +247,7 @@ ms.locfileid: "57623249"
         get => _newCustomer;
         set
         {
-            if {_newCustomer != value}
+            if (_newCustomer != value)
             {
                 _newCustomer = value;
                 OnPropertyChanged();
@@ -447,7 +447,7 @@ ms.locfileid: "57623249"
 * Свяжите приложение с Microsoft Store.
 * Скопировать [проект службы](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoService) в свое приложение и развернуть его в Azure.
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Проверка подлинности
 
 Вам необходимо будет создать кнопку, чтобы запустить последовательность проверки подлинности и на отдельной странице для сбора сведений о пользователе или контекстного меню. После создания, необходимо предоставить код, который запрашивает учетные данные и использует его для получения маркера доступа. В образце базы данных заказов клиента создает оболочку для вызовов Microsoft Graph с **WebAccountManager** библиотеки для получения токена и проверку подлинности в учетную запись AAD.
 

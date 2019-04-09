@@ -6,12 +6,12 @@ keywords: Windows 10, UWP, пробная версия, покупка из пр
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 36d7ada6567db95609203f8f163b78631e141b4f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 38590282a95e29ab240486e9c4a3f9cb9afe229c
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57655569"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335102"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Исключение или ограничение функций в пробной версии
 
@@ -20,7 +20,7 @@ ms.locfileid: "57655569"
 > [!IMPORTANT]
 > В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) для включения функции пробного периода. Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). **Windows.Services.Store** пространство имен поддерживает последние надстройки типы, например управляемые Store пригодных для использования надстроек и подписки и должна быть совместима с типами будущих продуктов и функций, поддерживаемых партнера Центр и Store. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Дополнительные сведения о реализации функции пробного периода с помощью пространства имен **Windows.Services.Store** см. в [этой статье](implement-a-trial-version-of-your-app.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Приложение для Windows, в которое предполагается добавить компоненты для продажи.
 
@@ -66,12 +66,12 @@ ms.locfileid: "57655569"
 На данный момент вы получите смоделированные сведения о лицензии с использованием [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) вместо [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). Перед отправкой окончательной версии приложения в **Магазин** необходимо заменить все ссылки **CurrentAppSimulator** в коде на **CurrentApp**.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
 
 Затем добавьте обработчик событий для получения уведомлений об изменении лицензии во время работы приложения. Лицензия приложения может изменяться — например, после окончания пробного периода или при покупке пользователем приложения в Магазине.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
 
 ## <a name="step-3-code-the-features-in-conditional-blocks"></a>Шаг 3. Возможности в условных блоков кода
 
@@ -80,7 +80,7 @@ ms.locfileid: "57655569"
 В следующем примере показано, как оценить состояние лицензии приложения и провести соответствующее включение или выключение функции.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
 
 ## <a name="step-4-get-an-apps-trial-expiration-date"></a>Шаг 4. Получение даты срока действия пробной версии приложения
 
@@ -89,7 +89,7 @@ ms.locfileid: "57655569"
 В этом примере приводится код функции, получающей дату окончания срока пробной версии приложения. Если лицензия еще действует, отображайте дату истечения пробного периода и количество оставшихся до нее дней.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
 
 ## <a name="step-5-test-the-features-using-simulated-calls-to-the-license-api"></a>Шаг 5. Протестировать функции с помощью имитации вызовов API лицензии
 
@@ -105,7 +105,7 @@ ms.locfileid: "57655569"
 > Приложение, отправляемое в Store, должно использовать объект **CurrentApp**, иначе оно не пройдет сертификацию.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
+[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
 
 ## <a name="step-7-describe-how-the-free-trial-works-to-your-customers"></a>Шаг 7. Описывают, как бесплатная пробная версия работает с заказчиками
 
@@ -113,7 +113,7 @@ ms.locfileid: "57655569"
 
 Дополнительные сведения об описании приложения см. в разделе [Создание описаний приложений](https://msdn.microsoft.com/library/windows/apps/mt148529).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Пример Store (демонстрирует пробные версии и покупки из приложений)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [Набор приложений цены и доступность](https://msdn.microsoft.com/library/windows/apps/mt148548)

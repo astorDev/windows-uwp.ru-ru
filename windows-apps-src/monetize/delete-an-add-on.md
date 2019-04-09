@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, надстройка, удаление, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 837cbc19268a88be986068f4a5e60002a1eb55e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5540dfbdc185eae405b2cdde7f18faee0efd0cac
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657619"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334625"
 ---
 # <a name="delete-an-add-on"></a>Удаление надстройки
 
 Используйте этот метод в интерфейсе API отправки Microsoft Store для удаления надстройки (также известная как app продукта или IAP) для приложения, зарегистрированный для вашей учетной записи центра партнеров.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для использования этого метода сначала необходимо сделать следующее:
 
@@ -30,21 +30,21 @@ ms.locfileid: "57657619"
 
 | Метод | Универсальный код ресурса (URI) запроса                                                      |
 |--------|------------------------------------------------------------------|
-| DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}``` |
+| DELETE    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}` |
 
 
 ### <a name="request-header"></a>Заголовок запроса
 
-| Заголовок        | Тип   | Описание                                                                 |
+| Header        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
+| Authorization | строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | Строка | Обязательный. Код продукта в Магазине для надстройки, которую требуется удалить. Идентификатор Store доступен в центре партнеров.  |
+| id | строка | Обязательный. Код продукта в Магазине для надстройки, которую требуется удалить. Идентификатор Store доступен в центре партнеров.  |
 
 
 ### <a name="request-body"></a>Тело запроса
@@ -56,7 +56,7 @@ ms.locfileid: "57657619"
 
 В следующем примере показано, как удалить надстройку.
 
-```
+```json
 DELETE https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -76,7 +76,7 @@ Authorization: Bearer <your access token>
 | 409  | Указанная надстройка был найден, но его не удалось удалить в ее текущем состоянии или надстройка использует возможности центра партнеров, [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Получение всех надстроек](get-all-add-ons.md)

@@ -5,12 +5,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, элемент управления рекламой, собственная реклама
 ms.localizationpriority: medium
-ms.openlocfilehash: 89e9df87cd214d3d03f25c674ec80a73fedf53d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4cb77f7f2622a06334ee35ec61e18b3b01f98bdb
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628069"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335022"
 ---
 # <a name="native-ads"></a>Собственные объявления
 
@@ -21,7 +21,7 @@ ms.locfileid: "57628069"
 > [!NOTE]
 > Собственные объявления в настоящее время поддерживаются только для приложений UWP на основе XAML для Windows 10. Поддержка для приложений UWP, написанных на HTML и JavaScript, намечена в последующих выпусках Microsoft Advertising SDK.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Установка [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) с помощью Visual Studio 2015 или более поздней версии Visual Studio. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
 
@@ -43,21 +43,21 @@ ms.locfileid: "57628069"
 
 4. В соответствующий файл с кодом в вашем приложении (например, в файл MainPage.xaml.cs или в файл с кодом для другой страницы) добавьте следующие ссылки на пространство имен.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
 
 5.  В соответствующем месте вашего приложения (например, в ```MainPage``` или на другой странице) объявите объект [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) и несколько строковых полей, которые будут представлять собой идентификатор приложения и идентификатор группы объявлений вашей собственной рекламы. Следующий код присваивает полям `myAppId` и `myAdUnitId`[тестовые значения](set-up-ad-units-in-your-app.md#test-ad-units) для собственной рекламы.
     > [!NOTE]
     > Каждый элемент **NativeAdsManagerV2** имеет соответствующую *группу объявлений*, используемую нашими службами для передачи рекламы элементу управления собственной рекламой, и каждая группа объявлений состоит из *идентификатора группы объявлений* и *идентификатора приложения*. На этих этапах вы задаете тестовые значения идентификатора группы объявлений и идентификатора приложения для своего элемента управления. Эти тестовые значения можно использовать только в тестовой версии приложения. Прежде чем публиковать приложение Store, необходимо [заменить эти тестовые значения значениями динамической](#release) из центра партнеров.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
 6.  В коде, который выполняется при запуске (например, в конструкторе для страницы), создайте объект **NativeAdsManagerV2** и привяжите обработчики событий к событиям **AdReady** и **ErrorOccurred** этого объекта.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
 
 7.  Когда вы будете готовы показать собственную рекламу, вызовите метод **RequestAd** для получения рекламы.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
 
 8.  Когда собственная реклама готова для вашего приложения, вызывается ваш обработчик событий [AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.adready), и объект [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2), представляющий собственную рекламу передается параметру *e*. Используйте свойства **NativeAdV2**, чтобы получить все элементы собственной рекламы и отобразить их на странице. Не забудьте также вызвать метод **RegisterAdContainer**, чтобы зарегистрировать элемент пользовательского интерфейса, который действует как контейнер для собственной рекламы. Это требуется для правильного подсчета показов рекламных объявлений и нажатий по ним.
     > [!NOTE]
@@ -93,11 +93,11 @@ ms.locfileid: "57628069"
 
     В следующем примере кода показан обработчик событий **AdReady**, который отображает каждый элемент собственной рекламы в элементах управления в **StackPanel**, а затем вызывает метод **RegisterAdContainer**, чтобы зарегистрировать **StackPanel**. В этом коде предполагается, что он запускается из файла кода программной части для страницы, которая содержит **StackPanel**.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
 
 9.  Определите обработчик событий для события **ErrorOccurred** для обработки ошибок, связанных со встроенной рекламой. Следующий пример записывает сведения об ошибке в окно **вывода** Visual Studio во время тестирования.
 
-    [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
+    [!code-csharp[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
 
 10.  Скомпилируйте и запустите приложение, чтобы увидеть его с тестовым объявлением.
 
@@ -128,7 +128,7 @@ ms.locfileid: "57628069"
 > [!IMPORTANT]
 > Одну группу объявлений можно использовать только в одном приложении. Если использовать одну группу объявлений в нескольких приложениях, объявления для этой группы объявлений предоставляться не будут.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Рекомендации по собственного рекламы](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)
 * [Реклама в приложении](../publish/in-app-ads.md)

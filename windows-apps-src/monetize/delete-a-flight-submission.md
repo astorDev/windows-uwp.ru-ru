@@ -6,18 +6,18 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправка тестового пакета, удалить, тестовый пакет
 ms.localizationpriority: medium
-ms.openlocfilehash: 1222c730f4e7819037ee42fc0897cf2924586b25
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 32f0aa1af140f17275e9023ac345e05412a56212
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651059"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335142"
 ---
 # <a name="delete-a-package-flight-submission"></a>Удаление отправки тестового пакета
 
 Используйте этот метод в API отправки в Microsoft Store, чтобы удалить существующую отправку тестового пакета.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для использования этого метода сначала необходимо сделать следующее:
 
@@ -30,23 +30,23 @@ ms.locfileid: "57651059"
 
 | Метод | Универсальный код ресурса (URI) запроса                                                      |
 |--------|------------------------------------------------------------------|
-| DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/flights/{flightId}/submissions/{submissionId}``` |
+| DELETE    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/flights/{flightId}/submissions/{submissionId}` |
 
 
 ### <a name="request-header"></a>Заголовок запроса
 
-| Заголовок        | Тип   | Описание                                                                 |
+| Header        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
+| Authorization | строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | Строка | Обязательный. Код продукта в Магазине, принадлежащий приложению, которое содержит отправку тестового пакета для удаления. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| flightId | Строка | Обязательный. Идентификатор тестового пакета, содержащего отправку, которую необходимо удалить. Этот идентификатор добавляется в данные ответов для запросов на [создание тестового пакета](create-a-flight.md) и [получение тестовых пакетов для приложения](get-flights-for-an-app.md). Для рейсов, который был создан в центре партнеров этот идентификатор также доступен в URL-адрес для страницы рейсов в центре партнеров.  |
-| submissionId | Строка | Обязательный. Идентификатор отправки для удаления. Этот идентификатор добавляется в данные ответов для запросов на [создание тестового пакета](create-a-flight-submission.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.  |
+| applicationId | строка | Обязательный. Код продукта в Магазине, принадлежащий приложению, которое содержит отправку тестового пакета для удаления. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| flightId | строка | Обязательный. Идентификатор тестового пакета, содержащего отправку, которую необходимо удалить. Этот идентификатор добавляется в данные ответов для запросов на [создание тестового пакета](create-a-flight.md) и [получение тестовых пакетов для приложения](get-flights-for-an-app.md). Для рейсов, который был создан в центре партнеров этот идентификатор также доступен в URL-адрес для страницы рейсов в центре партнеров.  |
+| submissionId | строка | Обязательный. Идентификатор отправки для удаления. Этот идентификатор добавляется в данные ответов для запросов на [создание тестового пакета](create-a-flight-submission.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.  |
 
 
 ### <a name="request-body"></a>Тело запроса
@@ -58,7 +58,7 @@ ms.locfileid: "57651059"
 
 В следующем примере показано, как удалить отправку тестового пакета.
 
-```
+```json
 DELETE https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -78,7 +78,7 @@ Authorization: Bearer <your access token>
 | 409  | Обнаружен указанный отправки, но его не удалось удалить в ее текущем состоянии или приложение использует функцию центра партнеров, которая [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Управление отправкой пакета рейсов](manage-flight-submissions.md)

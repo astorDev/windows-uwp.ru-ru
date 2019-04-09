@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, глобализация, локализуемость, локализация
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c6dc07ff35cdd90deaddff06f89aa585aa63156a
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610119"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335032"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Использование набора средств для многоязычных приложений версии 4.0
 
@@ -93,9 +93,7 @@ ms.locfileid: "57610119"
 
 В следующем примере текста "Hello, World!" псевдоперевод увеличивает занимаемое им место на экране приблизительно на 30 % и применяет трекер ресурса.
 
-```
-"Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"
-```
+`"Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"`
 
 ### <a name="step-6-translate-your-app-into-selected-languages"></a>Шаг 6. Перевод приложения на выбранные языки
 
@@ -160,7 +158,7 @@ ms.locfileid: "57610119"
 
 Перед началом сертификации для Microsoft Store вам необходимо убрать файл `<project-name>.qps-ploc.xlf` из проекта. Псевдоязык используется для обнаружения потенциальных проблем или ошибок, связанных с возможностями локализации, но не является допустимым языком Microsoft Store. Если этот файл не будет удален, приложение не пройдет сертификацию для Microsoft Store.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](../../app-resources/localize-strings-ui-manifest.md)
 * [Глобализация и локализация](globalizing-portal.md)

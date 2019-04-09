@@ -6,14 +6,14 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610029"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244390"
 ---
-# <a name="typography"></a>Шрифтовое оформление
+# <a name="typography"></a>Оформление
 
 ![главное изображение](images/header-typography.svg)
 
@@ -72,7 +72,7 @@ ms.locfileid: "57610029"
 
 Набор шрифтов UWP определяет важные отношения между начертаниями шрифтов на странице, помогая пользователям легко читать содержимое. Все размеры указываются в эффективных пикселях и оптимизированы для приложений UWP, работающих на всех устройствах.
 
-![Набор шрифтов](images/type/type-ramp.svg)
+![Набор шрифтов](images/type/type-ramp.png)
 
 ### <a name="using-the-type-ramp"></a>Использование набора шрифтов
 
@@ -171,7 +171,7 @@ Segoe UI — это наш шрифт для иврита, английског�
 <tr class="header">
 <th align="left">Семейство шрифтов</th>
 <th align="left">Стили</th>
-<th align="left">Заметки</th>
+<th align="left">Примечания</th>
 </tr>
 </thead>
 <tbody>
@@ -244,7 +244,7 @@ Segoe UI — это наш шрифт для иврита, английског�
 <tr class="header">
 <th align="left">Семейство шрифтов</th>
 <th align="left">Стили</th>
-<th align="left">Заметки</th>
+<th align="left">Примечания</th>
 </tr>
 </thead>
 <tbody>
@@ -272,7 +272,7 @@ Segoe UI — это наш шрифт для иврита, английског�
 <tr class="even">
 <td style="font-family: Selawik;">Selawik</td>
 <td align="left">Обычный, полусветлый, светлый, полужирный, плотный</td>
-<td align="left">Шрифт с открытым кодом, метрически совместимый с Segoe UI; предназначен для приложений на других платформах, в состав которых не входит шрифт Segoe UI. <a href="https://github.com/Microsoft/Selawik">Получите Selawik на сайте GitHub.</a></td>
+<td align="left">Шрифт с открытым кодом, метрически совместимый с Segoe UI; предназначен для приложений на других платформах, в состав которых не входит шрифт Segoe UI. <a href="https://github.com/Microsoft/Selawik">Шрифт Selawik можно получить на GitHub.</a></td>
 </tr>
 
 </tbody>
@@ -287,7 +287,7 @@ Segoe UI — это наш шрифт для иврита, английског�
 <tr class="header">
 <th align="left">Семейство шрифтов</th>
 <th align="left">Стили</th>
-<th align="left">Заметки</th>
+<th align="left">Примечания</th>
 </tr>
 </thead>
 <tbody>
@@ -323,7 +323,7 @@ Segoe UI — это наш шрифт для иврита, английског�
 <tr class="header">
 <th align="left">Семейство шрифтов</th>
 <th align="left">Стили</th>
-<th align="left">Заметки</th>
+<th align="left">Примечания</th>
 </tr>
 </thead>
 <tbody>
@@ -348,6 +348,6 @@ Segoe UI — это наш шрифт для иврита, английског�
 ## <a name="related-articles"></a>Связанные статьи
 
 * [Текстовые элементы управления](../controls-and-patterns/text-controls.md)
-* [Ресурсы XAML темы](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
+* [Ресурсы темы XAML](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [Стили XAML](../controls-and-patterns/xaml-styles.md)
-* [Microsoft Typography](https://docs.microsoft.com/typography/)
+* [Шрифтовое оформление Майкрософт](https://docs.microsoft.com/typography/)

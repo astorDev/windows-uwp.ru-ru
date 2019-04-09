@@ -9,18 +9,18 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a3108e21455086e2742987db1d7125c733f6e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4c227629ace1f3fdbb2af8582401f9273cf11c2e
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638829"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913984"
 ---
 # <a name="contact-card"></a>Карточка контакта
 
-Карточка контакта отображает контактные данные, такие как имя, номер телефона и адрес [Контакта](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (механизм, который UWP использует для представления пользователей и компаний).  Карточка контакта также позволяет пользователю редактировать контактные данные. Можно выбрать, какую карточку следует отобразить: компактную карточку контакта или полную карточку контакта, которая содержит дополнительные сведения.
+Карточка контакта отображает контактные данные, такие как имя, номер телефона и адрес [Контакта](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (механизм, который UWP использует для представления пользователей и компаний).  Карточка контакта также позволяет пользователю редактировать контактные данные. Можно выбрать, какую карточку следует отобразить: компактную карточку контакта или полную карточку контакта, которая содержит дополнительные сведения.
 
-> **Важные API**: [Метод ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [метод ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_), [метод IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [класс](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **Важные API**: [Метод ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [метод ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard), [метод IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [класс](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 Существует два способа отображения карточки контакта:  
 * В качестве стандартной карточки контакта, которая отображается во всплывающем элементе, который исчезает, то есть карточка контакта исчезает, когда пользователь щелкает вне ее области. 
@@ -146,7 +146,7 @@ private void OnUserClickShowContactCard(object sender, RoutedEventArgs e)
 
 ## <a name="show-a-full-contact-card"></a>Отображение полной карточки контакта
 
-Чтобы отобразить полную карточку контакта, вызовите метод [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_) вместо метода [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard).
+Чтобы отобразить полную карточку контакта, вызовите метод [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard) вместо метода [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard).
 
 ```csharp
 private void onUserClickShowContactCard() 
@@ -181,5 +181,5 @@ private void onUserClickShowContactCard()
 
 ## <a name="related-articles"></a>Связанные статьи
 - [Контакты и календарь](/windows/uwp/contacts-and-calendar/)
-- [Пример карточки контакта](https://go.microsoft.com/fwlink/p/?LinkId=624040)
-- [Пользователи управления изображения](/windows/uwp/controls-and-patterns/person-picture/)
+- [Пример карт контакта](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+- [Элемент управления "Аватар пользователя"](/windows/uwp/controls-and-patterns/person-picture/)

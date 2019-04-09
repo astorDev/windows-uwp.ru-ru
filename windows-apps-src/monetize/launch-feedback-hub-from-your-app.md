@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, центр отзывов, запуск
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f5d5c12deed9fffc3d2515529aa5bba5fbffc47
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bfce2ed245a3bf4e9b1c8b1a70c8de905d7034a3
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631839"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334804"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>Запуск Центра отзывов из приложения
 
@@ -48,13 +48,13 @@ ms.locfileid: "57631839"
 
     Если это свойство возвращает значение **true**, сделайте элемент управления видимым. В следующем примере кода показано, как это сделать для [кнопки](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
 
-    [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
+    [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
       > [!NOTE]
       > Хотя в настоящее время Центр отзывов не поддерживается на устройствах Xbox, свойство **IsSupported** возвращает значение **true** на устройствах Xbox под управлением Windows 10 версии 10.0.14271 или более поздней. Это известная проблема, которая будет устранена в следующей версии пакета Microsoft Store Services SDK.  
 
 8. В обработчике событий, который запускается, когда пользователь щелкает элемент управления, получите объект [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) и вызовите метод [LaunchAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync), чтобы открыть приложение Центр отзывов. У этого метода есть две перегруженные версии: одна без параметров и другая версия, которая принимает словарь пар «ключ-значение», содержащий метаданные, которые нужно связать с отзывом. В следующем примере показано, как запустить Центр отзывов в обработчике событий [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) элемента управления [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button).
 
-    [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
+    [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
 
 ## <a name="design-recommendations-for-your-feedback-ui"></a>Рекомендации по оформлению пользовательского интерфейса отзывов
 
@@ -74,6 +74,6 @@ ms.locfileid: "57631839"
 * **Во всплывающем элементе на основе событий**. Это полезно, если вам требуется задать пользователям вопрос перед запуском Центра отзывов о Windows. Например, после использования определенной функции в приложении вы можете задать вопрос о ней. Если пользователь решает ответить на него, приложение запускает Центр отзывов.
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Отчет об отзывах](../publish/feedback-report.md)

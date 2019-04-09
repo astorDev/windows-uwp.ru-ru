@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, фиксация отправки надстройки, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: efab4412486566ae817eb66e78f5407533a30d5b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c748d2e8544a27e8cca58fd8aa96154319f77b47
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608219"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334614"
 ---
 # <a name="commit-an-add-on-submission"></a>Подтверждение отправки надстройки
 
@@ -19,7 +19,7 @@ ms.locfileid: "57608219"
 
 Дополнительные сведения о роли операции фиксации в процессе отправки надстройки с помощью API отправки Microsoft Store см. в разделе [Управление отправками надстроек](manage-add-on-submissions.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для использования этого метода сначала необходимо сделать следующее:
 
@@ -33,22 +33,22 @@ ms.locfileid: "57608219"
 
 | Метод | Универсальный код ресурса (URI) запроса                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}/commit``` |
+| ПОМЕСТИТЬ    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}/commit` |
 
 
 ### <a name="request-header"></a>Заголовок запроса
 
-| Заголовок        | Тип   | Описание                                                                 |
+| Header        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
+| Authorization | строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | Строка | Обязательный. Код продукта в Магазине, принадлежащий надстройке, которая содержит отправку для фиксации. Идентификатор Store доступен в центре партнеров, и она включена в данные ответа для запросов к [получение всех надстроек](get-all-add-ons.md) и [создать надстройку](create-an-add-on.md). |
-| submissionId | Строка | Обязательный. Идентификатор отправки, которую необходимо зафиксировать. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки надстройки](create-an-add-on-submission.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.  |
+| inAppProductId | строка | Обязательный. Код продукта в Магазине, принадлежащий надстройке, которая содержит отправку для фиксации. Идентификатор Store доступен в центре партнеров, и она включена в данные ответа для запросов к [получение всех надстроек](get-all-add-ons.md) и [создать надстройку](create-an-add-on.md). |
+| submissionId | строка | Обязательный. Идентификатор отправки, которую необходимо зафиксировать. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки надстройки](create-an-add-on-submission.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.  |
 
 
 ### <a name="request-body"></a>Тело запроса
@@ -59,7 +59,7 @@ ms.locfileid: "57608219"
 
 В следующем примере показано, как выполнять фиксацию отправки надстройки.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621230023/commit HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -78,8 +78,7 @@ Authorization: Bearer <your access token>
 
 | Значение      | Тип   | Описание                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | Строка  | Состояние отправки. Может принимать одно из следующих значений. <ul><li>Нет</li><li>Canceled (Отменено)</li><li>PendingCommit (Ожидание фиксации)</li><li>CommitStarted (Фиксация запущена)</li><li>CommitFailed (Сбой фиксации)</li><li>PendingPublication (Ожидание публикации)</li><li>Publishing (Выполняется публикация)</li><li>Published (Опубликовано)</li><li>PublishFailed (Сбой публикации)</li><li>PreProcessing (Предварительная обработка)</li><li>PreProcessingFailed (Сбой предварительной обработки)</li><li>Certification (Сертификация)</li><li>CertificationFailed (Сбой сертификации)</li><li>Выпуск</li><li>ReleaseFailed (Сбой выпуска)</li></ul>  |
-
+| status           | строка  | Состояние отправки. Может принимать одно из следующих значений. <ul><li>Нет</li><li>Canceled (Отменено)</li><li>PendingCommit (Ожидание фиксации)</li><li>CommitStarted (Фиксация запущена)</li><li>CommitFailed (Сбой фиксации)</li><li>PendingPublication (Ожидание публикации)</li><li>Publishing (Выполняется публикация)</li><li>Published (Опубликовано)</li><li>PublishFailed (Сбой публикации)</li><li>PreProcessing (Предварительная обработка)</li><li>PreProcessingFailed (Сбой предварительной обработки)</li><li>Certification (Сертификация)</li><li>CertificationFailed (Сбой сертификации)</li><li>Выпуск</li><li>ReleaseFailed (Сбой выпуска)</li></ul>  |
 
 ## <a name="error-codes"></a>Коды ошибок
 
@@ -91,8 +90,7 @@ Authorization: Bearer <your access token>
 | 404  | Не удалось найти указанную отправку. |
 | 409  | Обнаружен указанный отправки, но его не удалось зафиксировать в ее текущем состоянии или надстройка использует возможности центра партнеров, [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
 
-
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Получить отправки надстройки](get-an-add-on-submission.md)

@@ -5,16 +5,16 @@ ms.date: 10/20/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, гибкий, объект, гибкость, IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 2481396d9348250e14ebfc2d1f940b663b405f77
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0b390161a4eb2c4f38fed9bce226c5a5e92c5ad8
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639669"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291784"
 ---
-# <a name="agile-objects-in-cwinrt"></a>Объекты в C + +/ WinRT
+# <a name="agile-objects-in-cwinrt"></a>Объекты в C++/WinRT
 
-В подавляющем большинстве случаев экземпляр класса среды выполнения Windows может осуществляться из любого потока (так же, как можно чаще стандартными объектами C++). Такой класс среды выполнения Windows — *agile*. Только небольшое количество классов среды выполнения Windows, входящие в состав Windows, не являются гибкими, но при их использовании необходимо принять во внимание их потоковая модель и поведение маршалинга (маршалинг передача данных через границу подразделения). Это хороший по умолчанию для каждого объекта среды выполнения Windows, быть гибкими, чтобы собственные [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) типы являются гибкими по умолчанию.
+В подавляющем большинстве случаев экземпляр класса среды выполнения Windows может осуществляться из любого потока (так же, как можно чаще стандартными объектами C++). Такой класс среды выполнения Windows — *agile*. Только небольшое количество классов среды выполнения Windows, входящие в состав Windows, не являются гибкими, но при их использовании необходимо принять во внимание их потоковая модель и поведение маршалинга (маршалинг передача данных через границу подразделения). Это хороший по умолчанию для каждого объекта среды выполнения Windows, быть гибкими, чтобы собственные [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) типы являются гибкими по умолчанию.
 
 Однако можно отказаться. Возможно веские основания требовать объект типа находятся, например, в заданной однопотоковое подразделение. Обычно это связано с требованиями повторного входа. Но все чаще даже API пользовательского интерфейса предоставляют гибкие объекты. Как правило, гибкость является самым простым и производительным вариантом. Кроме того, при реализации фабрики активации, она должна быть гибкой даже если соответствующий класс среды выполнения таковым не является.
 
@@ -23,7 +23,7 @@ ms.locfileid: "57639669"
 
 ## <a name="code-examples"></a>Примеры кода
 
-Чтобы продемонстрировать давайте используем пример реализации класса среды выполнения как C + +/ WinRT поддерживает гибкость.
+Чтобы продемонстрировать давайте используем пример реализации класса среды выполнения как C++/WinRT поддерживает гибкость.
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -46,7 +46,7 @@ winrt::com_ptr<MyType> myimpl{ winrt::make_self<MyType>() };
 winrt::com_ptr<IAgileObject> iagileobject{ myimpl.as<IAgileObject>() };
 ```
 
-Вместо обработки исключения можно вызвать [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function).
+Вместо обработки исключения можно вызвать [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function).
 
 ```cppwinrt
 winrt::com_ptr<IAgileObject> iagileobject{ myimpl.try_as<IAgileObject>() };
@@ -111,19 +111,19 @@ NonAgileType nonagile_obj_again{ agile.get() };
 winrt::hstring message{ nonagile_obj_again.Message() };
 ```
 
-Вызов [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agilerefget-function) возвращает прокси, который можно безопасно использовать в контексте потока, в котором вызывается **get**.
+Вызов [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-function) возвращает прокси, который можно безопасно использовать в контексте потока, в котором вызывается **get**.
 
 ## <a name="important-apis"></a>Важные API
 
 * [Интерфейс IAgileObject](https://msdn.microsoft.com/library/windows/desktop/hh802476)
-* [IMarshal-интерфейс](https://docs.microsoft.com/previous-versions/windows/embedded/ms887993)
+* [IMarshal-интерфейс](/windows/desktop/api/objidl/nn-objidl-imarshal)
 * [Структура шаблона WinRT::agile_ref](/uwp/cpp-ref-for-winrt/agile-ref)
 * [Структура шаблона WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
 * [Шаблон функции WinRT::make_agile](/uwp/cpp-ref-for-winrt/make-agile)
-* [Структура маркера WinRT::non_agile](/uwp/cpp-ref-for-winrt/non-agile)
+* [winrt::non_agile marker struct](/uwp/cpp-ref-for-winrt/non-agile)
 * [WinRT::Windows::Foundation::IUnknown:: как функция](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
-* [функция WinRT::Windows::Foundation::IUnknown::try_as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
+* [функция WinRT::Windows::Foundation::IUnknown::try_as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Понимание и использование потоковой модели COM](https://msdn.microsoft.com/library/ms809971)

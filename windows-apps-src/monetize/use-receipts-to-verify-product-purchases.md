@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, покупки из приложения, IAP, квитанции, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6cae88e57a61e6d4e982f1eac7e65582861ef5d2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605729"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335012"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Проверка покупок продуктов с помощью квитанций
 
@@ -92,7 +92,7 @@ ms.locfileid: "57605729"
 Пример процедуры валидации приведен ниже. Этот код выполняется в консольном приложении .NET Framework, которое содержит ссылку на сборку **System.Security**.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
+[!code-csharp[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
 
 <span id="receipt-descriptions" />
 
@@ -129,7 +129,7 @@ ms.locfileid: "57605729"
 
 |  Атрибут  |  Описание   |
 |-------------|-------------------|
-|  **Идентификатор**  |    Идентифицирует покупку.           |
+|  **Id**  |    Идентифицирует покупку.           |
 |  **Идентификатор приложения**  |     Значение имени семейства пакетов, используемое ОС для приложения.           |
 |  **Тип лицензии**  |    **Полная**, если пользователь приобрел полную версию приложения. **Пробная**, если пользователь загрузил пробную версию приложения.           |  
 |  **PurchaseDate**  |    Дата приобретения приложения.          |  |
@@ -144,7 +144,7 @@ ms.locfileid: "57605729"
 
 |  Атрибут  |  Описание   |
 |-------------|-------------------|
-|  **Идентификатор**  |    Идентифицирует покупку.           |
+|  **Id**  |    Идентифицирует покупку.           |
 |  **Идентификатор приложения**  |     Определяет приложение, через которое пользователь совершил покупку.           |
 |  **ProductId**  |     Определяет приобретенный продукт.           |
 |  **productType**  |    Определяет тип продукта. В настоящее время поддерживает только значение **Durable**.          |  

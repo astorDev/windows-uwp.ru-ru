@@ -4,12 +4,12 @@ description: Узнайте, как осуществлять доступ к HTT
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 8b8828b060e0401e7938517e497bae20e1234baf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1e7c07c92c1671cd9051393586e1e8562fa756d0
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645679"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244100"
 ---
 # <a name="http-monitor-api-reference"></a>Справочник по API для мониторинга HTTP   
 Трафик HTTP в режиме реального времени доступен для приложения в фокусе через этот API, если на консоли Xbox был включен монитор HTTP (для этого нужно установить соответствующий флажок в Dev Home).
@@ -23,8 +23,8 @@ ms.locfileid: "57645679"
 Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
 GET | /ext/httpmonitor/sessions
-<br />
-**Параметры URI**
+
+**Параметры универсального кода ресурса (URI)**
 
 - Нет
 
@@ -32,7 +32,7 @@ GET | /ext/httpmonitor/sessions
 
 - Нет
 
-**Текст запроса**
+**Тело запроса**
 
 - Нет
 
@@ -52,6 +52,7 @@ GET | /ext/httpmonitor/sessions
 5XX | Коды ошибок
 
 ## <a name="get-http-traffic-from-the-focused-app"></a>Получение трафика HTTP от приложения в фокусе
+
 **Запрос**
 
 Вы можете получать трафик HTTP от приложения в фокусе на Xbox (кроме системных приложений) в режиме реального времени, если монитор HTTP включен в Dev Home.
@@ -59,8 +60,8 @@ GET | /ext/httpmonitor/sessions
 Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
 WebSocket | /ext/httpmonitor/sessions
-<br />
-**Параметры URI**
+
+**Параметры универсального кода ресурса (URI)**
 
 - Нет
 
@@ -68,7 +69,7 @@ WebSocket | /ext/httpmonitor/sessions
 
 - Нет
 
-**Текст запроса**
+**Тело запроса**
 
 - Нет
 
@@ -98,7 +99,7 @@ WebSocket | /ext/httpmonitor/sessions
 403 | Монитор HTTP отключен, его необходимо включить в Dev Home
 5XX | Коды ошибок
 
-<br />
-**Семейств доступных устройств**
+
+**Доступные семейства устройств**
 
 * Windows Xbox

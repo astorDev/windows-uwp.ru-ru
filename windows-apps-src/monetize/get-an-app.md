@@ -6,18 +6,18 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, приложение
 ms.localizationpriority: medium
-ms.openlocfilehash: ccb5473f85cba08c170af2334b0894a11e27a15a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c6f4a4cb86bb5cf23e84e75ad99750dd6cff9539
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590519"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334543"
 ---
 # <a name="get-an-app"></a>Получение приложения
 
 Используйте этот метод в интерфейсе API отправки Microsoft Store для получения сведений о определенное приложение, которое регистрируется для учетной записи центра партнеров.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для использования этого метода сначала необходимо сделать следующее:
 
@@ -30,21 +30,21 @@ ms.locfileid: "57590519"
 
 | Метод | Универсальный код ресурса (URI) запроса                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}` |
 
 
 ### <a name="request-header"></a>Заголовок запроса
 
-| Заголовок        | Тип   | Описание                                                                 |
+| Header        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
+| Authorization | строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | Строка | Обязательный. Код продукта в Магазине для приложения, которое требуется получить. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | строка | Обязательный. Код продукта в Магазине для приложения, которое требуется получить. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 
 
 ### <a name="request-body"></a>Тело запроса
@@ -55,7 +55,7 @@ ms.locfileid: "57590519"
 
 В следующем примере показано, как получить сведения о приложении с кодом продукта в Store 9NBLGGH4R315.
 
-```
+```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -94,7 +94,7 @@ Authorization: Bearer <your access token>
 | 409  | Приложение использует функцию центра партнеров, которая [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Получить все приложения](get-all-apps.md)

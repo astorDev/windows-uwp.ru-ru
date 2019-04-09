@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 285e4a70062c57c957530aa1e548c22c4cf7711e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bd59c1d32b4f09b58b7e78281e468fbb00a777d9
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629469"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291882"
 ---
 # <a name="stencil-buffers"></a>Буферы трафаретов
-
 
 *Буфер трафарета* используется для применения маски к пикселям в изображении для создания специальных эффектов. Маска определяет рисуется пиксель или нет. Специальные эффекты включают компоновку, перевод изображений, растворение, затемнение и вытеснение, контуры и силуэты, а также двусторонний трафарет. Некоторые из наиболее распространенных эффектов показаны ниже.
 
@@ -25,7 +24,6 @@ ms.locfileid: "57629469"
 
 ## <a name="span-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanhow-the-stencil-buffer-works"></a><span id="How_the_Stencil_Buffer_Works"></span><span id="how_the_stencil_buffer_works"></span><span id="HOW_THE_STENCIL_BUFFER_WORKS"></span>Как работает буфер шаблона
 
-
 Direct3D выполняет попиксельный тест содержимого буфера трафарета. Для каждого пикселя на целевой поверхности выполняется тест с использованием соответствующего значения из буфера трафарета, контрольного значения буфера и значения маски буфера. В тестовых проходах Direct3D выполняет действие. Тест проводится в несколько шагов.
 
 1.  Выполняется побитовая операция AND над контрольным значением трафарета и маской трафарета.
@@ -34,7 +32,7 @@ Direct3D выполняет попиксельный тест содержимо
 
 Описанные выше шаги показаны в следующей строчке кода:
 
-```
+```cpp
 (StencilRef & StencilMask) CompFunc (StencilBufferValue & StencilMask)
 ```
 

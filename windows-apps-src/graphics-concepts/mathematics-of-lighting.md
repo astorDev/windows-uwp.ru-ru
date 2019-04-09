@@ -7,22 +7,21 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a65a3532fe401f31fbf0da656aff1a141fa71a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d21f60694c55edacc7a5723e7ed470c37af992ab
+ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636309"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58618431"
 ---
 # <a name="mathematics-of-lighting"></a>Математические аспекты освещения
-
 
 Модель освещения в Direct3D включает в себя фоновое, рассеянное, отраженное и излучаемое освещение. Это обеспечивает достаточную гибкость для решения широкого спектра вопросов освещения. Общая сумма света в сцене называется *глобальной освещенностью*.
 
 Глобальная освещенность вычисляется следующим образом:
 
-```
-Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive Light 
+```cpp
+global_illumination = ambient_lighting + diffuse_lighting + specular_lighting + emissive_lighting;
 ```
 
 [Фоновое освещение](ambient-lighting.md) — это постоянное освещение. Внешнее освещение является константой во всех направлениях и окрашивает все пиксели объекта одинаково. Вычислить такое освещение очень быстро, однако объекты выглядят плоскими и нереалистичными.

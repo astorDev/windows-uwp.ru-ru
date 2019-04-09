@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание надстройки, внутренний продукт приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8465dc7a42961a20fcd33ba8d43c71e2d73727ff
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b358eecd1799e76573cf6d254a80e7a7971bc123
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651039"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334172"
 ---
 # <a name="create-an-add-on"></a>Создание надстройки
 
@@ -20,7 +20,7 @@ ms.locfileid: "57651039"
 > [!NOTE]
 > При использовании этого метода выполняется создание надстройки без отправок. Руководство по созданию отправки для надстройки см. в описании методов в разделе [Управление отправками надстроек](manage-add-on-submissions.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для использования этого метода сначала необходимо сделать следующее:
 
@@ -33,14 +33,14 @@ ms.locfileid: "57651039"
 
 | Метод | Универсальный код ресурса (URI) запроса                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
+| ПОМЕСТИТЬ    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts` |
 
 
 ### <a name="request-header"></a>Заголовок запроса
 
-| Заголовок        | Тип   | Описание                                                                 |
+| Header        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
+| Authorization | строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
 
 
 ### <a name="request-body"></a>Тело запроса
@@ -50,15 +50,15 @@ ms.locfileid: "57651039"
 |  Параметр  |  Тип  |  Описание  |  Обязательно  |
 |------|------|------|------|
 |  applicationIds  |  Массив  |  Массив, содержащий код продукта в Магазине для приложения, с которым связана эта надстройка. Этот массив поддерживает только один элемент.   |  Да  |
-|  productId  |  Строка  |  Код продукта этой надстройки. Этот идентификатор можно использовать в коде для установки ссылки на надстройку. Дополнительные сведения см. в разделе [Установка типа и кода продукта](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id).  |  Да  |
-|  productType  |  Строка  |  Тип продукта этой надстройки. Поддерживаются следующие значения: **Устойчивые** и **готовых к использованию**.  |  Да  |
+|  productId  |  строка  |  Код продукта этой надстройки. Этот идентификатор можно использовать в коде для установки ссылки на надстройку. Дополнительные сведения см. в разделе [Установка типа и кода продукта](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id).  |  Да  |
+|  productType  |  строка  |  Тип продукта этой надстройки. Поддерживаются следующие значения: **Устойчивые** и **готовых к использованию**.  |  Да  |
 
 
 ### <a name="request-example"></a>Пример запроса
 
 В следующем примере кода показано, как создать новую надстройку потребляемого типа для приложения.
 
-```syntax
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1Q...
 Content-Type: application/json
@@ -100,7 +100,7 @@ Content-Type: application/json
 | 409  | Не удалось создать надстройку из-за текущего состояния или надстройка использует возможности центра партнеров, [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Управление отправкой надстройки](manage-add-on-submissions.md)

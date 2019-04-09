@@ -5,16 +5,16 @@ ms.date: 01/10/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: e4ca6946df327dbe6697a71d1050e6401ed531fe
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 05997549b5f1c0d13b12d47e0bb180d54617dcf2
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626669"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921720"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание API-интерфейсов с помощью C++/WinRT
 
-В этом разделе показано, как создавать [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API-интерфейсов с помощью [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) базовая структура, прямо или косвенно. Синонимами для *создавать* в данном контексте являются понятия *производить* и *реализовывать*. В этом разделе рассматриваются следующие сценарии реализации интерфейсов API на C++/WinRT в указанном порядке.
+В этом разделе показано, как создавать [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API-интерфейсов с помощью [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) базовая структура, прямо или косвенно. Синонимами для *создавать* в данном контексте являются понятия *производить* и *реализовывать*. В этом разделе рассматриваются следующие сценарии реализации интерфейсов API на C++/WinRT в указанном порядке.
 
 - Вы *не* разрабатываете класс среды выполнения Windows; а просто реализуете один или нескольких интерфейсов среды выполнения Windows для локального использования в вашем приложении. В этом случае вы создаете производный класс непосредственно от **winrt::implements** и реализуете функции.
 - Вы *создаете* класс среды выполнения. Возможно, вы разрабатываете компонент для использования в приложении. А возможно, вы создаете тип для использования из пользовательского интерфейса XAML, и в этом случае вы одновременно реализуете и используете класс среды выполнения в рамках одной и той же единицы компиляции. В этих случаях вы позволяете инструментам создавать для вас классы, производные от **winrt::implements** .
@@ -28,9 +28,9 @@ ms.locfileid: "57626669"
 В самом простом сценарии вы реализуете интерфейс среды выполнения Windows для локального использования. Вам не нужен класс среды выполнения; а нужен обычный класс C++. Например, возможно, что вы создаете приложение на основе [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication).
 
 > [!NOTE]
-> Сведения об установке и использовании C + +/ WinRT Visual Studio Extension (VSIX) (который поддерживает шаблон проекта) см. в разделе [поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Сведения об установке и использовании C++WinRT Visual Studio Extension (VSIX) и пакет NuGet (которые вместе обеспечивают шаблон проекта и поддержка сборки), см. в разделе [поддержка Visual Studio C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-В Visual Studio **Visual C++** > **универсальной Windows** > **приложения Core (C + +/ WinRT)** шаблон проекта иллюстрирует **CoreApplication** шаблон. Шаблон начинается с передачи реализации [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) в [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run).
+В Visual Studio **Visual C++**   >  **универсальной Windows** > **приложения Core (C++/WinRT)** иллюстрирует шаблон проекта **CoreApplication** шаблон. Шаблон начинается с передачи реализации [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) в [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run).
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -258,7 +258,7 @@ IStringable istringable = winrt::make<MyType>();
 > [!NOTE]
 > Однако если вы ссылаетесь на тип из пользовательского интерфейса XAML, то в одном проекте будут и тип реализации, и тип проекции. В этом случае **сделать** возвращает экземпляр типа прогнозируемые. Пример кода для этого сценария см. в разделе [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
-Мы можем использовать `istringable` (в примере выше) только для вызова членов интерфейса **IStringable**. Но интерфейс C++/WinRT (представляющий собой проецируемый интерфейс) является производным от [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). Таким образом, можно вызвать [ **IUnknown::as** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (или [ **IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) на нем для запроса других проецируемых типов или интерфейсов, которые вы можете также используйте или возврата.
+Мы можем использовать `istringable` (в примере выше) только для вызова членов интерфейса **IStringable**. Но интерфейс C++/WinRT (представляющий собой проецируемый интерфейс) является производным от [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). Таким образом, можно вызвать [ **IUnknown::as** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (или [ **IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) на нем для запроса других проецируемых типов или интерфейсов, которые вы можете также используйте или возврата.
 
 ```cppwinrt
 istringable.ToString();
@@ -294,7 +294,7 @@ void ImplFromIClosable(IClosable const& from)
 }
 ```
 
-Однако только исходный объект интерфейса сохраняет ссылку. Если *вы* хотите сохранить его, можно вызвать [**com_ptr::copy_from**](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function).
+Однако только исходный объект интерфейса сохраняет ссылку. Если *вы* хотите сохранить его, можно вызвать [**com_ptr::copy_from**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function).
 
 ```cppwinrt
 winrt::com_ptr<MyType> impl;
@@ -393,15 +393,15 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 До внесения изменений, описанных выше (для передачи параметра конструктора базовому классу), компилятор пометит конструктор укажет на отсутствие подходящего конструктора по умолчанию, доступного для типа под названием (в данном случае) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;**. Фактически, это базовый класс базового класса вашего типа реализации.
 
 ## <a name="important-apis"></a>Важные API
-* [Структура шаблона WinRT::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
-* [функция WinRT::com_ptr::copy_from](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
-* [Шаблон функции WinRT::from_abi](/uwp/cpp-ref-for-winrt/from-abi)
-* [Шаблон функции WinRT::get_self](/uwp/cpp-ref-for-winrt/get-self)
-* [Структура шаблона WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
-* [Шаблон функции WinRT::make](/uwp/cpp-ref-for-winrt/make)
-* [Шаблон функции WinRT::make_self](/uwp/cpp-ref-for-winrt/make-self)
-* [WinRT::Windows::Foundation::IUnknown:: как функция](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [Шаблон структуры winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
+* [winrt::com_ptr::copy_from function](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function)
+* [Шаблон функции winrt::from_abi](/uwp/cpp-ref-for-winrt/from-abi)
+* [winrt::get_self function template](/uwp/cpp-ref-for-winrt/get-self)
+* [Шаблон структуры winrt::implements](/uwp/cpp-ref-for-winrt/implements)
+* [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
+* [Шаблон функции winrt::make_self](/uwp/cpp-ref-for-winrt/make-self)
+* [Функция winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
-## <a name="related-topics"></a>Статьи по теме
-* [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
+## <a name="related-topics"></a>См. также
+* [Использование API-интерфейсов с помощью C++/WinRT](consume-apis.md)
 * [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

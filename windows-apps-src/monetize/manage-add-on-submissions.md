@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправки надстроек, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 45fc2274ac22eee4a4c249397f25c1b0405cb856
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d3bf92e308d42b9dd93539ebbe44525067f23b6f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647219"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335132"
 ---
 # <a name="manage-add-on-submissions"></a>Управление отправками надстроек
 
@@ -51,7 +51,7 @@ API отправки в Microsoft Store предоставляет методы,
 <td align="left"><a href="get-status-for-an-add-on-submission.md">Получение состояния существующего представления надстройки</a></td>
 </tr>
 <tr>
-<td align="left">POST</td>
+<td align="left">ПОМЕСТИТЬ</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions</td>
 <td align="left"><a href="create-an-add-on-submission.md">Создание новой отправки надстройки</a></td>
 </tr>
@@ -61,7 +61,7 @@ API отправки в Microsoft Store предоставляет методы,
 <td align="left"><a href="update-an-add-on-submission.md">Обновление существующего отправки надстройки</a></td>
 </tr>
 <tr>
-<td align="left">POST</td>
+<td align="left">ПОМЕСТИТЬ</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit</td>
 <td align="left"><a href="commit-an-add-on-submission.md">Зафиксировать отправки новых или обновленных надстройки</a></td>
 </tr>
@@ -85,7 +85,7 @@ API отправки в Microsoft Store предоставляет методы,
 
 3. Выполните следующий метод в API отправки в Microsoft Store. Этот метод создает новую выполняющуюся отправку, которая является копией последней опубликованной отправки. Дополнительные сведения см. в разделе [Создание отправки надстройки](create-an-add-on-submission.md).
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
     ```
 
@@ -98,7 +98,7 @@ API отправки в Microsoft Store предоставляет методы,
 
 5. Обновите данные [отправки надстройки](#add-on-submission-object), внеся все необходимые для новой отправки изменения, затем выполните следующий метод для обновления отправки. Дополнительные сведения см. в разделе [Обновление отправки надстройки](update-an-add-on-submission.md).
 
-    ```
+    ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
     ```
       > [!NOTE]
@@ -121,13 +121,13 @@ API отправки в Microsoft Store предоставляет методы,
 
 5. Подтвердите отправку, выполнив следующий метод. Это оповещает центра партнеров, вы закончите заявку и что обновлений теперь должна применяться к учетной записи. Дополнительные сведения см. в разделе [Подтверждение отправки надстройки](commit-an-add-on-submission.md).
 
-    ```
+    ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
     ```
 
 6. Проверьте состояние подтверждения, выполнив следующий метод. Дополнительные сведения см. в разделе [Получение состоянии отправки надстройки](get-status-for-an-add-on-submission.md).
 
-    ```
+    ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
     ```
 
@@ -230,20 +230,20 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Значение      | Тип   | Описание        |
 |------------|--------|----------------------|
-| id            | Строка  | Идентификатор отправки. Этот идентификатор доступен в данных ответа на запросы на [создание отправки надстройки](create-an-add-on-submission.md), [получение всех надстроек](get-all-add-ons.md) и [получение определенной надстройки](get-an-add-on.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.  |
-| contentType           | Строка  |  [Тип содержимого](../publish/enter-add-on-properties.md#content-type), которое предоставляется в надстройке. Может принимать одно из следующих значений. <ul><li>NotSet (Не задано)</li><li>BookDownload (Загрузка книги)</li><li>EMagazine (Электронный журнал)</li><li>ENewspaper (Электронная газета)</li><li>MusicDownload (Загрузка музыки)</li><li>MusicStream (Потоковая передача музыки)</li><li>OnlineDataStorage (Сетевое хранилище данных)</li><li>VideoDownload (Загрузка видео)</li><li>VideoStream (Потоковая передача видео)</li><li>Asp</li><li>OnlineDownload (Загрузка по Интернету)</li></ul> |  
+| id            | строка  | Идентификатор отправки. Этот идентификатор доступен в данных ответа на запросы на [создание отправки надстройки](create-an-add-on-submission.md), [получение всех надстроек](get-all-add-ons.md) и [получение определенной надстройки](get-an-add-on.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.  |
+| contentType           | строка  |  [Тип содержимого](../publish/enter-add-on-properties.md#content-type), которое предоставляется в надстройке. Может принимать одно из следующих значений. <ul><li>NotSet (Не задано)</li><li>BookDownload (Загрузка книги)</li><li>EMagazine (Электронный журнал)</li><li>ENewspaper (Электронная газета)</li><li>MusicDownload (Загрузка музыки)</li><li>MusicStream (Потоковая передача музыки)</li><li>OnlineDataStorage (Сетевое хранилище данных)</li><li>VideoDownload (Загрузка видео)</li><li>VideoStream (Потоковая передача видео)</li><li>Asp</li><li>OnlineDownload (Загрузка по Интернету)</li></ul> |  
 | keywords           | Массив  | Массив строк, содержащих до 10 [ключевых слов](../publish/enter-add-on-properties.md#keywords) для надстройки. Приложение может запрашивать надстройки с помощью этих ключевых слов.   |
-| lifetime           | Строка  |  Время существования надстройки. Может принимать одно из следующих значений. <ul><li>Forever (Навсегда)</li><li>OneDay (Один день)</li><li>ThreeDays (3 дня)</li><li>FiveDays (5 дней)</li><li>OneWeek (Одна неделя)</li><li>TwoWeeks (Две недели)</li><li>OneMonth (Один месяц)</li><li>TwoMonths (Два месяца)</li><li>ThreeMonths (Три месяца)</li><li>SixMonths (Шесть месяцев)</li><li>OneYear (Один год)</li></ul> |
+| lifetime           | строка  |  Время существования надстройки. Может принимать одно из следующих значений. <ul><li>Forever (Навсегда)</li><li>OneDay (Один день)</li><li>ThreeDays (3 дня)</li><li>FiveDays (5 дней)</li><li>OneWeek (Одна неделя)</li><li>TwoWeeks (Две недели)</li><li>OneMonth (Один месяц)</li><li>TwoMonths (Два месяца)</li><li>ThreeMonths (Три месяца)</li><li>SixMonths (Шесть месяцев)</li><li>OneYear (Один год)</li></ul> |
 | listings           | Объект  |  Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — объект [ресурса описания](#listing-object), содержащий информацию для описании надстройки.  |
 | pricing           | Объект  | [Ресурс цены](#pricing-object), содержащий сведения о цене надстройки.   |
-| targetPublishMode           | Строка  | Режим публикации для отправки. Может принимать одно из следующих значений. <ul><li>Immediate (Незамедлительно)</li><li>Manual (Вручную)</li><li>SpecificDate (Указанная дата)</li></ul> |
-| targetPublishDate           | Строка  | Дата публикации отправки в формате ISO 8601, если для *targetPublishMode* задано значение SpecificDate.  |
-| tag           | Строка  |  [Настраиваемые данные разработчика](../publish/enter-add-on-properties.md#custom-developer-data) для надстройки (ранее эта информация называлась *tag*).   |
-| visibility  | Строка  |  Видимость надстройки. Может принимать одно из следующих значений. <ul><li>Hidden (Скрыто)</li><li>Public (Общее)</li><li>Private (Частное)</li><li>NotSet (Не задано)</li></ul>  |
-| status  | Строка  |  Состояние отправки. Может принимать одно из следующих значений. <ul><li>Нет</li><li>Canceled (Отменено)</li><li>PendingCommit (Ожидание фиксации)</li><li>CommitStarted (Фиксация запущена)</li><li>CommitFailed (Сбой фиксации)</li><li>PendingPublication (Ожидание публикации)</li><li>Publishing (Выполняется публикация)</li><li>Published (Опубликовано)</li><li>PublishFailed (Сбой публикации)</li><li>PreProcessing (Предварительная обработка)</li><li>PreProcessingFailed (Сбой предварительной обработки)</li><li>Certification (Сертификация)</li><li>CertificationFailed (Сбой сертификации)</li><li>Выпуск</li><li>ReleaseFailed (Сбой выпуска)</li></ul>   |
+| targetPublishMode           | строка  | Режим публикации для отправки. Может принимать одно из следующих значений. <ul><li>Immediate (Незамедлительно)</li><li>Manual (Вручную)</li><li>SpecificDate (Указанная дата)</li></ul> |
+| targetPublishDate           | строка  | Дата публикации отправки в формате ISO 8601, если для *targetPublishMode* задано значение SpecificDate.  |
+| tag           | строка  |  [Настраиваемые данные разработчика](../publish/enter-add-on-properties.md#custom-developer-data) для надстройки (ранее эта информация называлась *tag*).   |
+| visibility  | строка  |  Видимость надстройки. Может принимать одно из следующих значений. <ul><li>Hidden (Скрыто)</li><li>Public (Общее)</li><li>Private (Частное)</li><li>NotSet (Не задано)</li></ul>  |
+| status  | строка  |  Состояние отправки. Может принимать одно из следующих значений. <ul><li>Нет</li><li>Canceled (Отменено)</li><li>PendingCommit (Ожидание фиксации)</li><li>CommitStarted (Фиксация запущена)</li><li>CommitFailed (Сбой фиксации)</li><li>PendingPublication (Ожидание публикации)</li><li>Publishing (Выполняется публикация)</li><li>Published (Опубликовано)</li><li>PublishFailed (Сбой публикации)</li><li>PreProcessing (Предварительная обработка)</li><li>PreProcessingFailed (Сбой предварительной обработки)</li><li>Certification (Сертификация)</li><li>CertificationFailed (Сбой сертификации)</li><li>Выпуск</li><li>ReleaseFailed (Сбой выпуска)</li></ul>   |
 | statusDetails           | Объект  |  [Ресурс сведений о состоянии](#status-details-object), который содержит дополнительные сведения о состоянии отправки, включая сведения об ошибках. |
-| fileUploadUrl           | Строка  | URI подписанного URL-адреса (SAS) для передачи пакетов для отправки. При добавлении новых пакетов для отправки выложите ZIP-архив, содержащий пакеты, по этому URI. Дополнительные сведения см. в разделе [Создание отправки надстройки](#create-an-add-on-submission).  |
-| friendlyName  | Строка  |  Понятное имя подписки, как показано в центре партнеров. Это значение создается при создании отправки.  |
+| fileUploadUrl           | строка  | URI подписанного URL-адреса (SAS) для передачи пакетов для отправки. При добавлении новых пакетов для отправки выложите ZIP-архив, содержащий пакеты, по этому URI. Дополнительные сведения см. в разделе [Создание отправки надстройки](#create-an-add-on-submission).  |
+| friendlyName  | строка  |  Понятное имя подписки, как показано в центре партнеров. Это значение создается при создании отправки.  |
 
 <span id="listing-object" />
 
@@ -253,9 +253,9 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Значение           | Тип    | Описание       |
 |-----------------|---------|------|
-|  Описание               |    Строка     |   Описание для описания надстройки.   |     
+|  description               |    строка     |   Описание для описания надстройки.   |     
 |  Значок               |   Объект      |[Ресурс значка](#icon-object), содержащий данные для значка описания надстройки.    |
-|  title               |     Строка    |   Заголовок для описания надстройки.   |  
+|  title               |     строка    |   Заголовок для описания надстройки.   |  
 
 <span id="icon-object" />
 
@@ -265,8 +265,8 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Значение           | Тип    | Описание     |
 |-----------------|---------|------|
-|  fileName               |    Строка     |   Имя файла значка в ZIP-архиве, который был передан для отправки. Значок должен представлять собой PNG-файл размером 300 x 300 пикселей.   |     
-|  fileStatus               |   Строка      |  Состояние файла значка. Может принимать одно из следующих значений. <ul><li>Нет</li><li>PendingUpload (Ожидает передачи)</li><li>Uploaded (Передан)</li><li>PendingDelete (Ожидает удаления)</li></ul>   |
+|  fileName               |    строка     |   Имя файла значка в ZIP-архиве, который был передан для отправки. Значок должен представлять собой PNG-файл размером 300 x 300 пикселей.   |     
+|  fileStatus               |   строка      |  Состояние файла значка. Может принимать одно из следующих значений. <ul><li>Нет</li><li>PendingUpload (Ожидает передачи)</li><li>Uploaded (Передан)</li><li>PendingDelete (Ожидает удаления)</li></ul>   |
 
 <span id="pricing-object" />
 
@@ -278,7 +278,7 @@ API отправки в Microsoft Store предоставляет методы,
 |-----------------|---------|------|
 |  marketSpecificPricings               |    Объект     |  Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на вашу надстройку для определенных рынков](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices). Любые элементы этого словаря переопределяют базовую цену, заданную значением *priceId* для указанного рынка.     |     
 |  sales               |   Массив      |  **Не рекомендуется**. Массив [ресурсов продажи](#sale-object), содержащих сведения о продажах для надстройки.     |     
-|  priceId               |   Строка      |  [Ценовая категория](#price-tiers), указывающая [базовую цену](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price) для надстройки.    |    
+|  priceId               |   строка      |  [Ценовая категория](#price-tiers), указывающая [базовую цену](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price) для надстройки.    |    
 |  isAdvancedPricingModel               |   Логический      |  Если **true**, ваша учетная запись разработчика имеет доступ к расширенному набору ценовых категорий от 0,99 долл. США до 1999,99 долл. США. Если **false**, ваша учетная запись разработчика имеет доступ к стандартному набору ценовых категорий от 0,99 долл. США до 999,99 долл. США. Дополнительные сведения о разных категориях см. в разделе [Ценовые категории](#price-tiers).<br/><br/>**Примечание**.&nbsp;&nbsp;Данное поле предназначено только для чтения.   |
 
 
@@ -297,10 +297,10 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Значение           | Тип    | Описание           |
 |-----------------|---------|------|
-|  name               |    Строка     |   Имя продажи.    |     
-|  basePriceId               |   Строка      |  [Ценовая категория](#price-tiers), используемая для базовой цены продажи.    |     
-|  startDate               |   Строка      |   Дата начала для продажи в формате ISO 8601.  |     
-|  endDate               |   Строка      |  Дата окончания для продажи в формате ISO 8601.      |     
+|  name               |    строка     |   Имя продажи.    |     
+|  basePriceId               |   строка      |  [Ценовая категория](#price-tiers), используемая для базовой цены продажи.    |     
+|  startDate               |   строка      |   Дата начала для продажи в формате ISO 8601.  |     
+|  endDate               |   строка      |  Дата окончания для продажи в формате ISO 8601.      |     
 |  marketSpecificPricings               |   Объект      |   Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на вашу надстройку для определенных рынков](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-pricess). Любые элементы этого словаря переопределяют базовую цену, заданную значением *basePriceId* для указанного рынка.    |
 
 <span id="status-details-object" />
@@ -323,8 +323,8 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Значение           | Тип    | Описание    |
 |-----------------|---------|------|
-|  code               |    Строка     |   [Код состояния отправки](#submission-status-code), описывающий тип ошибки или предупреждения.   |     
-|  details               |     Строка    |  Сообщение с дополнительными сведениями о проблеме.     |
+|  code               |    строка     |   [Код состояния отправки](#submission-status-code), описывающий тип ошибки или предупреждения.   |     
+|  подробности               |     строка    |  Сообщение с дополнительными сведениями о проблеме.     |
 
 <span id="certification-report-object" />
 
@@ -334,10 +334,10 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Значение           | Тип    | Описание               |
 |-----------------|---------|------|
-|     date            |    Строка     |  Дата и время создания отчета, в формате ISO 8601.    |
-|     reportUrl            |    Строка     |  URL-адрес, по которому можно получить доступ к отчету.    |
+|     date            |    строка     |  Дата и время создания отчета, в формате ISO 8601.    |
+|     reportUrl            |    строка     |  URL-адрес, по которому можно получить доступ к отчету.    |
 
-## <a name="enums"></a>Перечисления
+## <a name="enums"></a>перечислениям;
 
 Эти методы используют следующие перечисления.
 
@@ -379,7 +379,7 @@ API отправки в Microsoft Store предоставляет методы,
 
 <span/>
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Управление надстройками с помощью API отправки Microsoft Store](manage-add-ons.md)

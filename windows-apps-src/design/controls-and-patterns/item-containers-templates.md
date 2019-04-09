@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dcf0176e20e498f8c6744a542010b5197689b8a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 5b628c4d473c2a74eb63a17c12b17ade43c11964
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639939"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244420"
 ---
 # <a name="item-containers-and-templates"></a>Контейнеры и шаблоны элементов
 
@@ -54,7 +54,7 @@ ms.locfileid: "57639939"
                 <Image Source="Assets/placeholder.png" Width="44" Height="44"
                        HorizontalAlignment="Left"/>
                 <TextBlock Text="{x:Bind}" Foreground="Black"
-                           FontSize="15" Grid.Column="1"
+                           FontSize="14" Grid.Column="1"
                            VerticalAlignment="Center"
                            Padding="0,0,54,0"/>
             </Grid>
@@ -73,7 +73,7 @@ ms.locfileid: "57639939"
 </ListView>
 ```
  
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Мы предполагаем, что вы умеете пользоваться элементами управления представления списка. Подробнее см. в статье [ListView и GridView](listview-and-gridview.md).
 - Мы также предполагаем, что вы знакомы со стилями и шаблонами элементов управления и, среди прочего, умеете использовать стили в качестве встроенных элементов или ресурсов. Подробнее см. в разделах [Настройка стиля элементов управления](xaml-styles.md) и [Шаблоны элементов управления](control-templates.md).
@@ -333,7 +333,7 @@ namespace ColorsListApp
 > [!NOTE]
 > Стили по умолчанию ListViewItem и GridViewItem задают большое количество свойств в ListViewItemPresenter. Следует всегда начинать с копии стиля по умолчанию и изменять только необходимые свойства. В противном случае визуальные элементы могут отображаться не так, как ожидается, так как некоторые свойства будут настроены неверно.
 
-**Чтобы создать копию шаблона по умолчанию в Visual Studio**
+**Создание копии шаблона по умолчанию в Visual Studio**
  
 1. Откройте панель "Структура документа" (**Представление > Windows (другие) > Структура документа**).
 2. Выберите элемент списка или сетки для изменения. В этом примере изменяется элемент `colorsGridView`.
@@ -430,13 +430,13 @@ namespace ColorsListApp
 
 Название состояния/кисти | Встроенный стиль | Стиль наложения
 ------------|--------------|--------------
-<b>Норм.</b><ul><li><b>CheckBoxBrush = «Red»</b></li></ul> | ![Выделение элемента во встроенном режиме: обычное](images/listview-item-normal.png) | ![Выделение элемента в режиме наложения: обычное](images/gridview-item-normal.png)
-<b>PointerOver</b><ul><li><b>PointerOverForeground = «DarkOrange»</b></li><li><b>PointerOverBackground = «MistyRose»</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Выделение элемента во встроенном режиме: наведение указателя](images/listview-item-pointerover.png) | ![Выделение элемента в режиме наложения: наведение указателя](images/gridview-item-pointerover.png)
-<b>Нажата</b><ul><li><b>PressedBackground = «LightCyan»</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![Выделение элемента во встроенном режиме: нажатие](images/listview-item-pressed.png) | ![Выделение элемента в режиме наложения: нажатие](images/gridview-item-pressed.png)
-<b>Выбранные</b><ul><li><b>SelectedForeground = «ВМФ»</b></li><li><b>SelectedBackground = «Хаки»</b></li><li><b>CheckBrush = «Green»</b></li><li>CheckBoxBrush="Red" (только встроенный режим)</li></ul> | ![Выделение элемента во встроенном режиме: выделение](images/listview-item-selected.png) | ![Выделение элемента в режиме наложения: выделение](images/gridview-item-selected.png)
-<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground = «Лиловые»</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (только режим наложения)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (только встроенный режим)</li></ul> | ![Выделение элемента во встроенном режиме: наведение указателя и выделение](images/listview-item-pointeroverselected.png) | ![Выделение элемента в режиме наложения: наведение указателя и выделение](images/gridview-item-pointeroverselected.png)
-<b>PressedSelected</b><ul><li><b>SelectedPressedBackground = «MediumTurquoise»</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (только режим наложения)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (только встроенный режим)</li></ul> | ![Выделение элемента во встроенном режиме: нажатие и выделение](images/listview-item-pressedselected.png) | ![Выделение элемента в режиме наложения: нажатие и выделение](images/gridview-item-pressedselected.png)
-<b>С фокусом ввода</b><ul><li><b>FocusBorderBrush = «Crimson»</b></li><li><b>FocusSecondaryBorderBrush = «Золотая»</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Выделение элемента во встроенном режиме: в фокусе](images/listview-item-focused.png) | ![Выделение элемента в режиме наложения: в фокусе](images/gridview-item-focused.png)
+<b>Обычный</b><ul><li><b>CheckBoxBrush="Red"</b></li></ul> | ![Выделение элемента во встроенном режиме: обычное](images/listview-item-normal.png) | ![Выделение элемента в режиме наложения: обычное](images/gridview-item-normal.png)
+<b>PointerOver</b><ul><li><b>PointerOverForeground="DarkOrange"</b></li><li><b>PointerOverBackground="MistyRose"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Выделение элемента во встроенном режиме: наведение указателя](images/listview-item-pointerover.png) | ![Выделение элемента в режиме наложения: наведение указателя](images/gridview-item-pointerover.png)
+<b>Pressed</b><ul><li><b>PressedBackground="LightCyan"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![Выделение элемента во встроенном режиме: нажатие](images/listview-item-pressed.png) | ![Выделение элемента в режиме наложения: нажатие](images/gridview-item-pressed.png)
+<b>Selected</b><ul><li><b>SelectedForeground="Navy"</b></li><li><b>SelectedBackground="Khaki"</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red" (только встроенный режим)</li></ul> | ![Выделение элемента во встроенном режиме: выделение](images/listview-item-selected.png) | ![Выделение элемента в режиме наложения: выделение](images/gridview-item-selected.png)
+<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground="Lavender"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (только режим наложения)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (только встроенный режим)</li></ul> | ![Выделение элемента во встроенном режиме: наведение указателя и выделение](images/listview-item-pointeroverselected.png) | ![Выделение элемента в режиме наложения: наведение указателя и выделение](images/gridview-item-pointeroverselected.png)
+<b>PressedSelected</b><ul><li><b>SelectedPressedBackground="MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (только режим наложения)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (только встроенный режим)</li></ul> | ![Выделение элемента во встроенном режиме: нажатие и выделение](images/listview-item-pressedselected.png) | ![Выделение элемента в режиме наложения: нажатие и выделение](images/gridview-item-pressedselected.png)
+<b>Focused</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Выделение элемента во встроенном режиме: в фокусе](images/listview-item-focused.png) | ![Выделение элемента в режиме наложения: в фокусе](images/gridview-item-focused.png)
 
 ListViewItemPresenter имеет другие свойства кисти для заполнителей данных и состояний перетаскивания. При использовании добавочной загрузки или перетаскивания в представлении списка следует решить, нужно ли изменять и эти дополнительные свойства кисти. Полный список изменяемых свойств см. в разделе класса ListViewItemPresenter. 
 
@@ -451,7 +451,7 @@ ListViewItemPresenter имеет другие свойства кисти для
 
 Для настройки расширенного шаблона XAML вам потребуется создать его копию в приложении и привязать свойство **ItemContainerStyle** к копии.
 
-**Чтобы скопировать развернутого шаблона**
+**Копирование расширенного шаблона**
 1. Установите свойству ItemContainerStyle значение, показанное здесь для ListView или GridView.
     ```xaml
     <ListView ItemContainerStyle="{StaticResource ListViewItemExpanded}"/>

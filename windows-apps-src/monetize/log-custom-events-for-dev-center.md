@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK, журналы событий
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: d7b338fd3b34d530ad365b0377d6b6c6c65398b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 368e2fb7b3c6d78f68235b829e088d79b5673cf2
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604239"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334762"
 ---
 # <a name="log-custom-events-for-partner-center"></a>Ведение журнала пользовательских событий для Центра партнеров
 
@@ -22,7 +22,7 @@ ms.locfileid: "57604239"
 > [!NOTE]
 > Пользовательские события, которые запротоколированы центр партнеров не связанных с [события Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), и они не отображаются в **средство просмотра событий**.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед просмотром настраиваемого протоколирования событий в **отчет об использовании** для вашего приложения в центре партнеров, приложения должны быть опубликованы в Store.
 
@@ -39,15 +39,15 @@ ms.locfileid: "57604239"
 5. В списке пакетов SDK установите флажок рядом с пунктом **Microsoft Engagement Framework** и нажмите кнопку **ОК**.
 
 6. Добавьте следующий оператор в верхнюю часть каждого файла кода, где требуется регистрировать пользовательские события.
-    [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
+    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
 
 7. В каждом разделе своего кода, где требуется регистрировать пользовательские события, получите объект [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log), а затем вызовите метод [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log). Передайте строку пользовательского события в метод.
-    [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
+    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
 
     > [!NOTE]
     > Загрузка [отчета об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) может занять много времени, если ваше приложение регистрирует много пользовательских событий с длинными именами. Мы рекомендуем использовать краткие имена для пользовательских событий. 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Отчет об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
 * [Метод log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)

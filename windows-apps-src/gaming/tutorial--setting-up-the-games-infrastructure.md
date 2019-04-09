@@ -6,18 +6,18 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, настройка, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 789b235220e5d22b85f7b3038d5d468729439501
+ms.sourcegitcommit: 7a3d28472901edbe4ecdde7e1a01a505ee5bc028
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608709"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58658770"
 ---
 # <a name="set-up-the-game-project"></a>Настройка проекта игры
 
 В этой статье рассматривается создание простой игры UWP на базе DirectX с использованием шаблонов, имеющихся в Visual Studio. Первым шагом сборки вашей игры является настройка проекта в Microsoft Visual Studio, позволяющая свести к минимуму работу по созданию инфраструктуры кода. Узнайте, как сэкономить время, выбрав правильный шаблон и настроив проект специально для разработки игры.
 
-## <a name="objectives"></a>Задачи
+## <a name="objectives"></a>Цели
 
 * Создать в Visual Studio проект игры на базе Direct3D с использованием шаблона
 * Определить главную точку входа игры путем изучения исходных файлов **App**
@@ -89,9 +89,9 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-В этом методе создается экземпляр поставщика представлений Direct3D из фабрики поставщиков представлений (**Direct3DApplicationSource**, определенной в **App.h**), а затем передается singleton-объекту приложения путем вызова ([**CoreApplication::Run**](https://msdn.microsoft.com/library/windows/apps/hh700469)). Это означает, что начальная точка вашей игры находится в реализации метода [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505), в данном случае **App::Run**. 
+Этот метод создает экземпляр поставщика представление Direct3D из фабрики поставщика представление (**Direct3DApplicationSource**, определенный в `App.h`) и передает его единственного экземпляра приложения путем вызова [  **CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run). Методы класса представления framework (который является **приложения** в этом примере класс) вызываются в порядке **инициализировать**-**SetWindow** - **Нагрузки**-**OnActivated**-**запуска**-**отменить инициализацию**. Вызов **CoreApplication::Run** запускает этот lifycycle. Основной цикл игры находится в теле реализации [ **IFrameworkView::Run** метод](/uwp/api/windows.applicationmodel.core.iframeworkview.run), и в этом случае он имеет **App::Run**.
 
-Прокрутите вниз, чтобы найти метод **App::Run** в **App.cpp**. Вот соответствующий код.
+Прокрутите вниз, чтобы найти метод **App::Run** в **App.cpp**. Ниже приведен код.
 
 ```cpp
 //This method is called after the window becomes active.
@@ -146,14 +146,14 @@ void App::Run()
 | DeviceResources.h/.cpp       | Общие                 | Определяет объект класса, который управляет всеми [ресурсами устройства](tutorial--assembling-the-rendering-pipeline.md#resource) DirectX. Также включает в себя интерфейс для приложения, которому принадлежат DeviceResources для уведомления при потере или создании устройства.                                                |
 | DirectXHelper.h              | Общие                 | Реализует методы, в том числе **DX::ThrowIfFailed**, **ReadDataAsync** и ** ConvertDipsToPixels. **DX::ThrowIfFailed** преобразовывает значения ошибок HRESULT, возвращаемые API Win32 DirectX, в исключения среды выполнения Windows. Используйте этот метод, чтобы устанавливать точки прерывания для отладки ошибок DirectX. Подробнее: [ThrowIfFailed](https://github.com/Microsoft/DirectXTK/wiki/ThrowIfFailed). **ReadDataAsync** асинхронно считывает данные из двоичного файла. **ConvertDipsToPixels** преобразовывает длину в аппаратно независимых пикселях (DIP) в длину в физических пикселях. |
 | StepTimer.h                  | Общие                 | Определяет высокоточный таймер для игр или интерактивных приложений с прорисовкой.   |
-| Sample3DSceneRenderer.h/.cpp | Содержимое                | Определяет объект класса для создания экземпляра базового контейнера отрисовки. Создает базовую реализацию отрисовщика, которая соединяет цепочку буферов Direct3D и графический адаптер с вашей игрой UWP с использование DirectX.   |
-| SampleFPSTextRenderer.h/.cpp | Содержимое                | Определяет объект класса для отрисовки текущего значения кадров в нижнем правому углу экрана с помощью Direct2D и DirectWrite.  |
-| SamplePixelShader.hlsl       | Содержимое                | Содержит код высокоуровнего языка шейдера (HLSL) для базового построителя текстуры.                                            |
-| SampleVertexShader.hlsl      | Содержимое                | Содержит код высокоуровнего языка шейдера (HLSL) для базового вершинного шейдера.                                           |
-| ShaderStructures.h           | Содержимое                | Содержит структуры шейдера, которые можно использовать для отправки матриц MVP и повершинных данных в вершинный шейдер.  |
+| Sample3DSceneRenderer.h/.cpp | Content                | Определяет объект класса для создания экземпляра базового контейнера отрисовки. Создает базовую реализацию отрисовщика, которая соединяет цепочку буферов Direct3D и графический адаптер с вашей игрой UWP с использование DirectX.   |
+| SampleFPSTextRenderer.h/.cpp | Content                | Определяет объект класса для отрисовки текущего значения кадров в нижнем правому углу экрана с помощью Direct2D и DirectWrite.  |
+| SamplePixelShader.hlsl       | Content                | Содержит код высокоуровнего языка шейдера (HLSL) для базового построителя текстуры.                                            |
+| SampleVertexShader.hlsl      | Content                | Содержит код высокоуровнего языка шейдера (HLSL) для базового вершинного шейдера.                                           |
+| ShaderStructures.h           | Content                | Содержит структуры шейдера, которые можно использовать для отправки матриц MVP и повершинных данных в вершинный шейдер.  |
 | pch.h/.cpp                   | Основной блок                   | Содержит все системные включения Windows для интерфейсов API, используемых приложением Direct3D, в том числе API для DirectX 11.| 
 
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Следующие шаги
 
 На этом этапе вы знаете, как создать проект игры UWP на базе DirectX с использованием шаблона **Приложение DirectX 11 (универсальное приложение Windows)**, а также ознакомились с некоторыми компонентами и файлами, содержащимися в этом проекте.
 

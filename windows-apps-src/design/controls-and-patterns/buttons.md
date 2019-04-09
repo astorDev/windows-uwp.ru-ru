@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f585d278d9420865c895d4e20fa1730196d9f0cd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 286b278d0c41edfbc5c008f31e5a8e28fa30f93a
+ms.sourcegitcommit: aeebfe35330aa471d22121957d9b510f6ebacbcf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593029"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58901642"
 ---
 # <a name="buttons"></a>Кнопки
 
@@ -30,7 +30,7 @@ ms.locfileid: "57593029"
 
 Элемент управления | Описание
 ------- | -----------
-[Button](/uwp/api/windows.ui.xaml.controls.button) | Инициирует действие немедленно. Может использоваться с событием Click, или привязка команды.
+[Кнопка](/uwp/api/windows.ui.xaml.controls.button) | Инициирует действие немедленно. Может использоваться с событием Click, или привязка команды.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Кнопка, которая порождает событие Click постоянно в том случае, когда в нажатом состоянии.
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Объект кнопки, стилем как гиперссылка, используемый для навигации. Подробнее см. на странице [Гиперссылки](hyperlinks.md).
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Кнопка с шеврон, чтобы открыть вложенное всплывающего меню.
@@ -67,7 +67,7 @@ ms.locfileid: "57593029"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/Button">открыть приложение и увидеть Button в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -140,7 +140,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 <table>
 <tr>
-<td> <b>Необходимо исправить.</b><br> Кнопки со переполняющим текстом. </td>
+<td> <b>Необходимо исправить:</b><br> Кнопки со переполняющим текстом. </td>
 <td> <img src="images/button-wraptext.png"/> </td>
 </tr>
 <tr>
@@ -211,7 +211,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 Объект [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) — это кнопка, показывающий шеврона качестве визуального индикатора, что у него есть вложенные всплывающего меню, который содержит дополнительные параметры. Он действует так же, как стандартной кнопки с помощью всплывающего меню; отличается только внешний вид.
 
-Разворачивающейся кнопки наследует событие Click, но обычно она не используется. Вместо этого свойство всплывающий элемент используется для присоединения всплывающего меню и выполнять действия, используя пункты меню во всплывающем элементе. Всплывающее окно открывается автоматически при нажатии кнопки.
+Разворачивающейся кнопки наследует событие Click, но обычно она не используется. Вместо этого свойство всплывающий элемент используется для присоединения всплывающего меню и выполнять действия, используя пункты меню во всплывающем элементе. Всплывающее окно открывается автоматически при нажатии кнопки. Не забудьте указать [размещения](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) свойство вашей всплывающего меню, чтобы обеспечить нужное размещение по отношению к кнопке. Алгоритм размещения по умолчанию, могут не предоставлять предполагаемого размещение во всех ситуациях.
 
 > [!TIP]
 > Дополнительные сведения о всплывающих списков, см. в разделе [меню и контекстные меню](menus.md).
@@ -224,7 +224,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ```xaml
 <DropDownButton ToolTipService.ToolTip="Alignment">
-    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8E4;"/>
+    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="14" Text="&#xE8E4;"/>
     <DropDownButton.Flyout>
         <MenuFlyout Placement="BottomEdgeAlignedLeft">
             <MenuFlyoutItem Text="Left" Icon="AlignLeft" Tag="left"
@@ -284,6 +284,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 ### <a name="example---split-button"></a>Пример — Разворачивающаяся кнопка
 
 В этом примере показано, как создать Разворачивающаяся кнопка, которая позволяет изменить цвет переднего плана для выбранного текста в RichEditBox. (Дополнительные сведения и код, см. в разделе [Rich edit поле](rich-edit-box.md)).
+Разделить использует раскрывающейся кнопки [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) как значение по умолчанию для его [размещения](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) свойство. Не может переопределить это значение.
 
 ![Разворачивающаяся кнопка для выбора цвета переднего плана](images/split-button-rtb.png)
 
@@ -292,7 +293,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
              Click="BrushButtonClick">
     <Border x:Name="SelectedColorBorder" Width="20" Height="20"/>
     <SplitButton.Flyout>
-        <Flyout x:Name="BrushFlyout" Placement="BottomEdgeAlignedLeft">
+        <Flyout x:Name="BrushFlyout">
             <!-- Set SingleSelectionFollowsFocus="False"
                  so that keyboard navigation works correctly. -->
             <GridView ItemsSource="{x:Bind ColorOptions}" 
@@ -380,7 +381,7 @@ public sealed partial class MainPage : Page
 Чтобы включить или отключить возможность, когда возможность имеет несколько вариантов, которые пользователь может выбрать из обычно используется разворачивающуюся кнопку переключателя. Например в редактор документов, она может быть использована для выключать списков, хотя раскрывающийся список позволяет выбрать стиль списка.
 
 > [!NOTE]
-> При вызове сенсорными функциями, разворачивающаяся кнопка ведет себя как разворачивающейся кнопки. С другими методами ввода пользователь может вызвать либо половину кнопки отдельно. Сенсорными функциями половин кнопки вызова всплывающего меню. Таким образом необходимо включить параметр в содержимое всплывающего меню в выключатель, включить или отключить.
+> При вызове нажатием кнопки-переключателя разбиения ведет себя как разворачивающейся кнопки. Другие методы ввода пользователь может переключать и отдельно вызвать эти две части кнопки. Сенсорными функциями половин кнопки вызова всплывающего меню. Таким образом необходимо включить параметр в содержимое всплывающего меню в выключатель, включить или отключить.
 
 ### <a name="differences-with-togglebutton"></a>Различия с помощью ToggleButton
 
@@ -393,6 +394,7 @@ public sealed partial class MainPage : Page
 ### <a name="example---toggle-split-button"></a>Пример — переключение Разворачивающаяся кнопка
 
 Следующий пример показывает, как переключатель Разворачивающаяся кнопка может использоваться для включения форматирования или отключение списка и изменить стиль списка, в RichEditBox. (Дополнительные сведения и код, см. в разделе [Rich edit поле](rich-edit-box.md)).
+Переключить разделить использует раскрывающейся кнопки [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) как значение по умолчанию для его [размещения](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) свойство. Не может переопределить это значение.
 
 ![Разворачивающуюся кнопку переключателя для выбора стилей "список"](images/toggle-split-button-open.png)
 
@@ -401,9 +403,9 @@ public sealed partial class MainPage : Page
                    ToolTipService.ToolTip="List style"
                    Click="ListButton_Click"
                    IsCheckedChanged="ListStyleButton_IsCheckedChanged">
-    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8FD;"/>
+    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="14" Text="&#xE8FD;"/>
     <ToggleSplitButton.Flyout>
-        <Flyout Placement="BottomEdgeAlignedLeft">
+        <Flyout>
             <ListView x:Name="ListStylesListView"
                       SelectionChanged="ListStylesListView_SelectionChanged" 
                       SingleSelectionFollowsFocus="False">
@@ -533,7 +535,7 @@ private void ApplyListStyle(string listStyle)
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [Класс кнопки](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+- [Класс Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
 - [Переключатели](radio-button.md)
 - [Флажки](checkbox.md)
-- [Переключить коммутаторов](toggles.md)
+- [Тумблеры](toggles.md)
