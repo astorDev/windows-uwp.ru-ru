@@ -2,16 +2,16 @@
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Справка по базовому API портала устройств
 description: Узнайте о базовых API-интерфейсах REST портала устройств Windows, которые можно использовать для доступа к данным и программного управления устройством.
-ms.date: 03/22/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: Windows 10, uwp, портал устройств
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f541a27a96b88b37d3f32b98246ba0ccbe2c8cf
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 58ae7d83c0889131313d136c13048b83a861f601
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/08/2019
-ms.locfileid: "59067859"
+ms.locfileid: "59244140"
 ---
 # <a name="device-portal-core-api-reference"></a>Справка по базовому API портала устройств
 
@@ -2803,7 +2803,8 @@ ms.locfileid: "59067859"
 | SecondayDNS | (**требуется** Если *PrimaryDNS* не равно null) статический дополнительный DNS-сервер для задания. |
 
 Для ясности, чтобы установить интерфейс DHCP, сериализации просто `AdapterName` по сети:
-```
+
+```json
 {
     "AdapterName":"{82F86C1B-2BAE-41E3-B08D-786CA44FEED7}"
 }
