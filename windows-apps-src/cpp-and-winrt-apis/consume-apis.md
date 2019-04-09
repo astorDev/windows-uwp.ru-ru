@@ -5,16 +5,16 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная c++, cpp, winrt, проецируемый, проекция, реализация, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 545ce8c5e18a9cc1016f4bf09e5d062b5b31b5a6
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645149"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921710"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Использование API-интерфейсов с помощью C++/WinRT
 
-В этом разделе показано, как использовать [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API, ли они являются частью Windows, реализуемый компонента независимого поставщика или реализовать самостоятельно.
+В этом разделе показано, как использовать [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API, ли они являются частью Windows, реализуемый компонента независимого поставщика или реализовать самостоятельно.
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>Если API находится в пространстве имен Windows
 Это наиболее распространенный случай, в котором вы будете использовать API среды выполнения Windows. Для каждого типа в пространстве имен Windows, указанного в метаданных, C++/WinRT определяет подходящий для C++ эквивалент (называемый *проецируемым типом*). Проецируемый тип имеет то же полное доменное имя, что и тип в Windows, но он размещается в пространстве имен C++ **winrt** с использованием синтаксиса C++. Например, [**Windows::Foundation:: URI**](/uwp/api/windows.foundation.uri) проецируется в C++/WinRT как **winrt::Windows::Foundation::Uri**.
@@ -141,7 +141,7 @@ lookup.insert_or_assign(2, value);
 Этот раздел применим, если вы создали компонент самостоятельно или получили его от поставщика.
 
 > [!NOTE]
-> Сведения об установке и использовании C + +/ WinRT Visual Studio Extension (VSIX) (который поддерживает шаблон проекта) см. в разделе [поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Сведения об установке и использовании C++WinRT Visual Studio Extension (VSIX) и пакет NuGet (которые вместе обеспечивают шаблон проекта и поддержка сборки), см. в разделе [поддержка Visual Studio C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 В проекте приложения создайте ссылку на файл метаданных среды выполнения Windows (`.winmd`) компонента среды выполнения Windows и выполните сборку. Во время сборки средство `cppwinrt.exe` создает стандартную библиотеку C++, которая полностью описывает &mdash; или *проецирует* &mdash; поверхность API для компонента. Другими словами, созданная библиотека содержит проецируемые типы для компонента.
 
@@ -259,12 +259,12 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 * [Интерфейс QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [Функция RoActivateInstance](https://msdn.microsoft.com/library/br224646)
 * [Класс Windows::Foundation::URI](/uwp/api/windows.foundation.uri)
-* [Шаблон функции WinRT::get_activation_factory](/uwp/cpp-ref-for-winrt/get-activation-factory)
-* [Шаблон функции WinRT::make](/uwp/cpp-ref-for-winrt/make)
-* [Структура WinRT::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [Шаблон функции winrt::get_activation_factory](/uwp/cpp-ref-for-winrt/get-activation-factory)
+* [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
+* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
-## <a name="related-topics"></a>Статьи по теме
-* [Создание событий в C + +/ WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
+## <a name="related-topics"></a>См. также
+* [Создание событий в C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
 * [Взаимодействие между C++/WinRT и интерфейсом ABI](interop-winrt-abi.md)
 * [Введение в C++/WinRT](intro-to-using-cpp-with-winrt.md)
 * [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

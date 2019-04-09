@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 869f0ac2b255c0dee231828f6d9064a917668821
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d17a79c14e981ab0c2c0414074aff17c90a0b478
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646379"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291632"
 ---
 # <a name="line-strips"></a>Ломаные
-
 
 Ломаная — это примитив, состоящий из соединенных отрезков. Приложение может использовать ломаные линии для создания незамкнутых многоугольников. Замкнутый многоугольник — это многоугольник, последняя вершина которого соединяется отрезком с его первой вершиной. Если приложение создает многоугольники на основе ломаных, вершины могут находиться в разных плоскостях.
 
@@ -28,7 +27,7 @@ ms.locfileid: "57646379"
 
 Следующий код показывает, как создать вершины для такой ломаной линии.
 
-```
+```cpp
 struct CUSTOMVERTEX
 {
     float x,y,z;
@@ -47,7 +46,7 @@ CUSTOMVERTEX Vertices[] =
 
 В примере кода ниже показано, как отрисовать ломаную линию в Direct3D.
 
-```
+```cpp
 //
 // It is assumed that d3dDevice is a valid
 // pointer to an IDirect3DDevice interface.

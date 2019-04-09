@@ -5,36 +5,36 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, вопросы и ответы, вопросы и ответы
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd051ffe3af9e18370666f5c6c772b7f188e54a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 70aedf4034ce433b0aa529375799cf45a18ca3e0
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635579"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291892"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
-Ответы на вопросы, которые вы обычно имеют о разработке и использовании API среды выполнения Windows с [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+Ответы на вопросы, которые вы обычно имеют о разработке и использовании API среды выполнения Windows с [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 > [!NOTE]
 > Если ваш вопрос связан с сообщением об ошибке, которое вы увидели, см. также раздел [Устранение неполадок C++/WinRT](troubleshooting.md).
 
-## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>Как Перенацелить C + +/ WinRT проекта до более поздней версии пакета SDK для Windows?
-См. в разделе [как изменить целевую платформу C + +/ WinRT проекта до более поздней версии пакета SDK Windows](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
+## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>Как Перенацелить моей C++/WinRT проекта до более поздней версии пакета SDK для Windows?
+См. в разделе [как изменить целевую платформу на C++/WinRT проекта до более поздней версии пакета SDK Windows](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Почему не будет компилироваться новый проект? Я использую Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет SDK версии 17134
-Если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и определение целевых объектов пакет Windows SDK версии 10.0.17134.0 (Windows 10 версии 1803), затем только что созданный C + +/ WinRT проект может не компилироваться с ошибкой "*ошибки C3861: «from_abi»: Идентификатор не найден*«и других ошибок, происходящих в *base.h*. Решением является более поздней версии (лучше соответствует стандарту) либо целевой версии пакета SDK для Windows, или задать свойство проекта **C/C++** > **языка** > **режим совместимости: Не** (Кроме того, если **/ permissive-** отображается в свойстве проекта **C/C++** > **командной строки** под **Дополнительные параметры** , удалите его).
+Если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и определение целевых объектов пакет Windows SDK версии 10.0.17134.0 (Windows 10 версии 1803), затем вновь созданный объект C++/проект WinRT может не компилироваться с ошибкой "*ошибки C3861: «from_abi»: Идентификатор не найден*«и других ошибок, происходящих в *base.h*. Решением является более поздней версии (лучше соответствует стандарту) либо целевой версии пакета SDK для Windows, или задать свойство проекта **C/C++** > **языка** > **режим совместимости: Не** (Кроме того, если **/ permissive-** отображается в свойстве проекта **C/C++** > **командной строки** под **Дополнительные параметры** , удалите его).
 
-## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>Как устранить ошибки построения «C + +/ WinRT VSIX не обеспечивает поддержку построения проекта.  Добавьте ссылку на пакет Microsoft.Windows.CppWinRT Nuget»?
+## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>Как устранить ошибки построения « C++WinRT VSIX больше не обеспечивает поддержку построения проекта.  Добавьте ссылку на пакет Microsoft.Windows.CppWinRT Nuget»?
 Установка **Microsoft.Windows.CppWinRT** пакет NuGet в проект. Дополнительные сведения см. в разделе [более ранних версиях расширение VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
 
-## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>Каковы требования к C + +/ WinRT Visual Studio Extension (VSIX)?
-Версия 1.0.190128.4 расширения VSIX и более поздних версий, см. в разделе [поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). Для других версий см. в разделе [более ранних версиях расширение VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
+## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>Каковы требования к C++WinRT Visual Studio Extension (VSIX)?
+Версия 1.0.190128.4 расширения VSIX и более поздних версий, см. в разделе [поддержка Visual Studio C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). Для других версий см. в разделе [более ранних версиях расширение VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
 
 ## <a name="whats-a-runtime-class"></a>Что такое *класс среды выполнения*?
 Класс среды выполнения — это тип, который можно активировать и использовать через современные интерфейсы COM, обычно через границы исполняемого файла. Тем не менее, класс среды выполнения может также использоваться в единице компиляции, которая его реализует. Класс среды выполнения объявляется в языке описания интерфейса (IDL) и может реализоваться в стандартной версии C++ с использованием C++/WinRT.
 
 ## <a name="what-do-the-projected-type-and-the-implementation-type-mean"></a>Что означают понятия *тип проекции* и *тип реализации*?
-Если вы лишь *используете* класс среды выполнения Windows (класс среды выполнения), то вы имеете дело с *типом проекции*. C++/WinRT представляет собой *языковую проекцию*, поэтому типы проекции являются частью среды выполнения Windows, которая *проецируется* в C++ с помощью C++/WinRT. Дополнительные сведения см. в разделе [использовать API-интерфейсы с использованием C + +/ WinRT](consume-apis.md).
+Если вы лишь *используете* класс среды выполнения Windows (класс среды выполнения), то вы имеете дело с *типом проекции*. C++/WinRT представляет собой *языковую проекцию*, поэтому типы проекции являются частью среды выполнения Windows, которая *проецируется* в C++ с помощью C++/WinRT. Дополнительные сведения см. в разделе [использовать API-интерфейсы с C++/WinRT](consume-apis.md).
 
 *Тип реализации* содержит реализацию класса среды выполнения, поэтому он доступен только в проекте, который реализует класс среды выполнения. При работе в проекте, который реализует классы среды выполнения (проекте компонента среды выполнения Windows или проекте, использующем пользовательский интерфейс XAML), очень важно понимать различия между вашим типом реализации класса среды выполнения и типом проекции, представляющим класс среды выполнения, проецируемый в C++/WinRT. Дополнительные сведения см. в разделе [Создание API-интерфейсов в C++/WinRT](author-apis.md).
 
@@ -63,7 +63,7 @@ ms.locfileid: "57635579"
 
 Перейдите на [страницу загрузки LLVM](https://releases.llvm.org/download.html), найдите пункт **Скачать LLVM 6.0.0** > **Стандартные двоичные файлы** и скачайте **Clang для Windows (64-разрядная версия)**. Во время установки добавьте LLVM в системную переменную PATH, чтобы вызывать библиотеку из командной строки. В целях этого эксперимента можно пропустить любые ошибки "Не удалось найти каталог цепочки инструментов MSBuild" и "Не удалось установить интеграцию MSVC", если они отображаются. Существует множество способов вызова LLVM/Clang, в примере ниже показан только один из них.
 
-```
+```cmd
 C:\ExperimentWithLLVMClang>type main.cpp
 // main.cpp
 #pragma comment(lib, "windowsapp")
@@ -90,7 +90,7 @@ windows.com
 
 Поскольку C++/WinRT использует функции стандарта C++ 17, вам потребуется использовать все флаги компилятора, необходимые для обеспечения такой поддержки. Эти флаги в разных компиляторах отличаются.
 
-Visual Studio — это средство разработки, которое мы поддерживаем и рекомендуем для C++/WinRT. См. в разделе [поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+Visual Studio — это средство разработки, которое мы поддерживаем и рекомендуем для C++/WinRT. См. в разделе [поддержка Visual Studio C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>Почему функция только для чтения, созданный реализации отсутствует `const` квалификатор?
 При объявлении свойства только для чтения в [MIDL 3.0](/uwp/midl-3/), можно ожидать `cppwinrt.exe` средство для создания в реализации функции, `const`-полное (const функция обрабатывает *этот* указатель как const).
@@ -119,17 +119,17 @@ int main()
 }
 ```
 
-Для вызова **ToString** выше, **перейти к объявлению** команды в Visual Studio показывает, что проекции среды выполнения Windows **IStringable::ToString** в C + +/ WinRT выглядит следующим образом.
+Для вызова **ToString** выше, **перейти к объявлению** команды в Visual Studio показывает, что проекции среды выполнения Windows **IStringable::ToString** в C++/WinRT выглядит следующим образом.
 
-```
+```cppwinrt
 winrt::hstring ToString() const;
 ```
 
 Функции в проекции являются const независимо от способа определения их реализации. На самом деле проекции вызывает двоичный интерфейс приложений (ABI), сумм, подлежащих вызов через указатель интерфейса СОМ. Единственным указано, что планируемую **ToString** взаимодействует с этого указателя интерфейса COM; и он, разумеется, нет необходимости, измените этот указатель, чтобы функция объявлена как константа. Это дает гарантию того, что он не меняется ничего о **IStringable** справочник, в котором вы вызываете через и гарантирует, что можно вызвать **ToString** даже с константная ссылка на  **IStringable**.
 
-Понимать, что эти примеры `const` являются подробностями реализации C + +/ WinRT проекции и реализации; они составляют Гигиена кода для вашего удобства. Не существует такого понятия, как `const` на COM, ни ABI среды выполнения Windows (для функций-членов).
+Понимать, что эти примеры `const` являются подробностями реализации C++/WinRT проекции и реализации; они составляют Гигиена кода для вашего удобства. Не существует такого понятия, как `const` на COM, ни ABI среды выполнения Windows (для функций-членов).
 
-## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>У вас есть рекомендации для уменьшения размера кода для C + +/ WinRT двоичные файлы?
+## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>У вас есть рекомендации для уменьшения размера кода для C++/WinRT двоичные файлы?
 При работе с объектами среды выполнения Windows, следует избегать показано ниже, поскольку она может иметь негативное влияние на приложение, вызывая дополнительные двоичный код, чем необходимо создать шаблон кодирования.
 
 ```cppwinrt
@@ -147,10 +147,10 @@ a.e();
 a.f();
 ```
 
-Рекомендуемый шаблон, приведенный выше применяется не только к C + +/ WinRT, но для всех языковых проекций среды выполнения Windows.
+Рекомендуемый шаблон, приведенный выше применяется не только к C++/WinRT, но для всех языковых проекций среды выполнения Windows.
 
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>Как превратить строку в тип&mdash;для навигации, например?
-В конце [пример кода навигации представление](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (который является главным образом в C#), имеется C + +/ WinRT фрагмент кода, показывающий, как это сделать.
+В конце [пример кода навигации представление](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (который является главным образом в C#), существует C++/WinRT фрагмент кода, показывающий, как это сделать.
 
 > [!NOTE]
 > Если в этом разделе не ответить на ваш вопрос, то может оказаться справки, посвященной [сообщества разработчиков Visual Studio C++](https://developercommunity.visualstudio.com/spaces/62/index.html), или с помощью [ `c++-winrt` тег на сайте Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, обработка ошибок, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: fe01a01dc97b67c339d015a260288176a5ba57da
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c0b8389d2319a670dd314417726b24e98378cd49
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642149"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334473"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>Пошаговое руководство по обработке ошибок XAML/C#
 
@@ -68,11 +68,11 @@ ms.locfileid: "57642149"
     }
     ```
 
-4.  Сборка и запуск проекта. После запуска приложения отобразится сообщение, похожее на отображаемое в окне **вывода** в Visual Studio.
-    ```
+4.  Постройте и запустите проект. После запуска приложения отобразится сообщение, похожее на отображаемое в окне **вывода** в Visual Studio.
+    ```json
     AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
     ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Примеры рекламы на GitHub](https://aka.ms/githubads)

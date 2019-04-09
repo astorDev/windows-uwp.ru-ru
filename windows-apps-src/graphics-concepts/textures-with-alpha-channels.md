@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 88d150383d2be219e7f382e0e690771acbc9d2ee
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1a75c854d413f4681960c890691d99dd2529cc97
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651479"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291692"
 ---
 # <a name="textures-with-alpha-channels"></a>Текстуры с альфа-каналами
-
 
 Существует два способа кодирования карт текстур с более сложной прозрачностью. В каждом случае блок, описывающий прозрачность, предшествует 64-разрядному блоку, который уже был описан. Прозрачность представляется либо в виде точечного рисунка 4x4 с 4 битами на пиксель (явная кодировка) или с меньшим количеством битов и линейной интерполяцией, которая аналогична тому, что используется в кодировании цвета.
 
@@ -25,8 +24,6 @@ ms.locfileid: "57651479"
 |--------------|-----------------------------------|
 | 3:0          | Блок прозрачности                |
 | 7:4          | Вышеописанный 64-разрядный блок |
-
- 
 
 ## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>Кодирование явные текстуры
 
@@ -98,7 +95,7 @@ ms.locfileid: "57651479"
 
 Следующий пример кода иллюстрирует этот алгоритм.
 
-```
+```cpp
 // 8-alpha or 6-alpha block?    
 if (alpha_0 > alpha_1) {    
     // 8-alpha block:  derive the other six alphas.    

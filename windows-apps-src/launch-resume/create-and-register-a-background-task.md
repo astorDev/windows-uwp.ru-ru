@@ -2,7 +2,7 @@
 title: Создание и регистрация внепроцессной фоновой задачи
 description: Создайте класс фоновой задачи, выполняемой вне процесса, и зарегистрируйте его для выполнения, когда приложение не работает на переднем плане.
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
-ms.date: 07/02/2018
+ms.date: 2/27/2019
 ms.topic: article
 keywords: Windows 10, uwp, фоновую задачу
 ms.localizationpriority: medium
@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 9df6eef44d45db37e17610d6a5333f3a387b5cf6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1420b41ef48123e302b546c45669a75545927d89
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592169"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240052"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>Создание и регистрация внепроцессной фоновой задачи
 
@@ -150,7 +150,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 BackgroundTaskDeferral _deferral; // Note: defined at class scope so that we can mark it complete inside the OnCancel() callback if we choose to support cancellation
 public async void Run(IBackgroundTaskInstance taskInstance)
 {
-    _deferral = taskInstance.GetDeferral()
+    _deferral = taskInstance.GetDeferral();
     //
     // TODO: Insert code to start one or more asynchronous methods using the
     //       await keyword, for example:
@@ -200,7 +200,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 ```
 
 > [!NOTE]
-> В C# асинхронные методы вашей фоновой задачи можно вызвать с помощью ключевых слов **async/await**. В C + +/ CX, аналогичный результат достигается путем с использованием цепочки задач.
+> В C# асинхронные методы вашей фоновой задачи можно вызвать с помощью ключевых слов **async/await**. В C++/CX, аналогичный результат достигается путем с использованием цепочки задач.
 
 Подробнее о шаблонах асинхронных операций см. в разделе [Асинхронное программирование](https://msdn.microsoft.com/library/windows/apps/mt187335). Дополнительные примеры использования задержек для предотвращения преждевременной остановки фоновой задачи см. в [примере фоновой задачи](https://go.microsoft.com/fwlink/p/?LinkId=618666).
 
@@ -443,9 +443,9 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 
 В статьях ниже можно найти справочник по API, концептуальное руководство по фоновым задачам и подробные инструкции по созданию приложений, использующих фоновые задачи.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
-**Подробные для фоновой задачи разделы**
+**Учебные статьи с подробными сведениями о фоновых задачах**
 
 * [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
 * [Регистрация фоновой задачи](register-a-background-task.md)
@@ -455,14 +455,14 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 * [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
 * [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)
 * [Создание и регистрация внутрипроцессной фоновой задачи](create-and-register-an-inproc-background-task.md)
-* [Преобразовать вне процесса фоновой задачи в фоновом режиме в процессе задачу](convert-out-of-process-background-task.md)  
+* [Преобразование фоновой задачи, выполняемой вне процесса, в фоновую задачу внутри процесса](convert-out-of-process-background-task.md)  
 
-**Руководство по фоновым задачи**
+**Руководство по фоновым задачам**
 
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 * [Отладка фоновой задачи](debug-a-background-task.md)
-* [Активация приостановки, возобновления и фоновых событий для приложений универсальной платформы Windows (при отладке)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Вызов событий приостановки, возобновления и фоновых событий в приложениях UWP (во время отладки)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
-**Справочник по API фоновой задачи**
+**Справочник по API для фоновых задач**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)

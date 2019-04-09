@@ -6,16 +6,16 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fce4ed3f32c0207e55b37a765b4d48d234343e38
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: f1f147d98b8d88e912cc9fec40d5e29c34748167
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625039"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291902"
 ---
 # <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a>Пошаговое руководство: Создание компонента среды выполнения Windows на C++/CX и его вызов из JavaScript или C#
 > [!NOTE]
-> В этом разделе представлена вспомогательная информация для поддержки приложений на C++/CX. Однако в новых приложениях мы рекомендуем использовать [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md). C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows. Чтобы узнать, как создать компонент среды выполнения Windows, с помощью C + +/ WinRT, см. в разделе [создавать события в C + +/ WinRT](../cpp-and-winrt-apis/author-events.md).
+> В этом разделе представлена вспомогательная информация для поддержки приложений на C++/CX. Однако в новых приложениях мы рекомендуем использовать [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md). C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows. Чтобы узнать, как создать компонент среды выполнения Windows с помощью C++/WinRT, см. в разделе [создавать события в C++/WinRT](../cpp-and-winrt-apis/author-events.md).
 
 В этом пошаговом руководстве описан процесс создания базового компонента среды выполнения Windows, являющегося библиотекой DLL, которую можно вызвать из JavaScript, C# или Visual Basic. Прежде чем приступить к изучению этого пошагового руководства, убедитесь, что вы знакомы с такими понятиями, как абстрактный двоичный интерфейс (ABI), ссылочные классы и расширения компонентов Visual C++, которые упрощают работу со ссылочными классами. Дополнительные сведения см. в статье [Создание компонентов среды выполнения Windows в C++](creating-windows-runtime-components-in-cpp.md) и [Справочник по языку Visual C++ (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
 
@@ -421,7 +421,7 @@ function ButtonClear_Click() {
 }
 ```
 
-Добавьте код для добавления прослушивателей событий, заменив существующий вызов WinJS.UI.processAll в app.onactivated в файле default.js следующим кодом, который реализует регистрацию событий в блоке then. Подробное описание этой процедуры см. в разделе Создание приложения «Hello World» (JavaScript).
+Добавьте код для добавления прослушивателей событий, заменив существующий вызов WinJS.UI.processAll в app.onactivated в файле default.js следующим кодом, который реализует регистрацию событий в блоке then. Подробное описание это, см. в разделе [Создание приложения «Hello, World» (JS)](/windows/uwp/get-started/create-a-hello-world-app-js-uwp).
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {
@@ -609,5 +609,5 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 
 При удалении проекта компонента среды выполнения Windows C++ из решения необходимо также вручную удалить ссылку на проект из проекта JavaScript. Невыполнение этого требования приведет к невозможности последующей отладки и сборки. При необходимости можно добавить ссылку на сборку в библиотеку DLL.
 
-## <a name="related-topics"></a>Статьи по теме
-* [Создание компонентов среды выполнения Windows в C + +/ CX](creating-windows-runtime-components-in-cpp.md)
+## <a name="related-topics"></a>См. также
+* [Создание компонентов среды выполнения Windows в C++/CX](creating-windows-runtime-components-in-cpp.md)

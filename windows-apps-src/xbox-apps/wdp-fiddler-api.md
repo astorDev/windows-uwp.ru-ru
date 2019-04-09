@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4cbdae1084f96901e90f8237d71bd59bf2d4c592
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603339"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59240022"
 ---
 # <a name="fiddler-settings-api-reference"></a>Справочник по API параметров Fiddler   
 В комплекте средств разработки можно включать и отключать трассировку сети Fiddler с помощью API REST.
@@ -25,8 +25,9 @@ ms.locfileid: "57603339"
 Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
 GET | /ext/fiddler
-<br />
-**Параметры URI**
+
+
+**Параметры универсального кода ресурса (URI)**
 
 - Нет
 
@@ -34,7 +35,7 @@ GET | /ext/fiddler
 
 - Нет
 
-**Текст запроса**   
+**Тело запроса**   
 
 - Нет
 
@@ -48,7 +49,7 @@ GET | /ext/fiddler
 
 Код состояния HTTP      | Описание
 :------     | :-----
-200 | Успешно
+200 | Success
 4XX | Коды ошибок
 5XX | Коды ошибок
 
@@ -60,9 +61,9 @@ GET | /ext/fiddler
 
 Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
-POST | /ext/fiddler
-<br />
-**Параметры URI**
+ПОМЕСТИТЬ | /ext/fiddler
+
+**Параметры универсального кода ресурса (URI)**
 
 В запросе URI можно указать следующие дополнительные параметры.
 
@@ -71,13 +72,13 @@ POST | /ext/fiddler
 | proxyAddress       | IP-адрес или имя устройства, на котором запущен Fiddler |
 | proxyPort          | Порт, который Fiddler использует для отслеживания трафика. Стандартный порт — 8888. |
 | updateCert (необязательный параметр)| Значение логического типа, которое показывает, предоставляется ли корневой сертификат Fiddler. Оно должно иметь значение true (истина), если Fiddler никогда не настраивался в этом комплекте средств разработки или настраивался для другого узла.  |
-<br>
+
 
 **Заголовки запроса**
 
 - Нет
 
-**Текст запроса**
+**Тело запроса**
 
 - Отсутствует, если параметр updateCert имеет значение false (ложь) или не указан. В противном случае это многокомпонентный HTTP-текст, содержащий файл FiddlerRoot.cer.
 
@@ -104,8 +105,8 @@ POST | /ext/fiddler
 Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
 DELETE | /ext/fiddler
-<br />
-**Параметры URI**
+
+**Параметры универсального кода ресурса (URI)**
 
 - Нет
 
@@ -113,7 +114,7 @@ DELETE | /ext/fiddler
 
 - Нет
 
-**Текст запроса**   
+**Тело запроса**   
 
 - Нет
 
@@ -131,11 +132,11 @@ DELETE | /ext/fiddler
 4XX | Коды ошибок
 5XX | Коды ошибок
 
-<br />
-**Семейств доступных устройств**
+
+**Доступные семейства устройств**
 
 * Windows Xbox
 
 ## <a name="see-also"></a>См. также
-- [Настройка Fiddler для универсальной платформы Windows на Xbox](uwp-fiddler.md)
+- [Настройка Fiddler для UWP в Xbox](uwp-fiddler.md)
 

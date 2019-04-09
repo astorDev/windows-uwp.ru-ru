@@ -1,23 +1,23 @@
 ---
 Description: Отчет по аналитике Xbox в центре партнеров показывает статистику как участие клиентов с помощью функций Xbox в ваш продукт.
 title: Аналитический отчет Xbox
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, аналитика xbox, аналитика xbox live, статистика xbox
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: fe44c4bc8a4e2843d0158bfce730f322a67cbfa7
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607449"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334852"
 ---
 # <a name="xbox-analytics-report"></a>Аналитический отчет Xbox
 
 **Xbox analytics** отчет в [центра партнеров](https://partner.microsoft.com/dashboard) показывает статистические данные о том, как ваши клиенты реагируют на функции в игре для Xbox. Также он содержит сведения о работоспособности службы, чтобы помочь в устранении ошибок клиента.
 
 > [!IMPORTANT]
-> Этот отчет доступен только при публикации игры для Xbox или игры, в которой используются службы Xbox Live. Чтобы сделать это, вы должны проходить через [утверждение концепции](../gaming/concept-approval.md), включая игры, опубликованные корпорацией [партнеров Майкрософт](../xbox-live/developer-program-overview.md#microsoft-partners) и игр, отправляемых посредством [ ID@Xbox программы](../xbox-live/developer-program-overview.md#id). Публиковать игры через [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) не отображаются в настоящее время в этом отчете.
+> Этот отчет доступен только при публикации игры для Xbox или игры, в которой используются службы Xbox Live. Чтобы сделать это, вы должны проходить через [утверждение концепции](../gaming/concept-approval.md), включая игры, опубликованные корпорацией [партнеров Майкрософт](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#microsoft-partners) и игр, отправляемых посредством [ ID@Xbox программы](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#id). Публиковать игры через [Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) не отображаются в настоящее время в этом отчете.
 
 Можно просмотреть **Xbox analytics** отчета в меню навигации слева для игры, развернув **анализ** и выбрав **Xbox analytics**.  Эти данные можно просмотреть в центре партнеров или [скачать отчет](download-analytic-reports.md) для автономного просмотра.
 

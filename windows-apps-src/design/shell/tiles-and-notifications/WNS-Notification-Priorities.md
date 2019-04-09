@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, WinRT API, WNS
 localizationpriority: medium
-ms.openlocfilehash: 2c297a04786c6fbf1eb0600e63a04a6d88585864
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2719c3228c95075eb2a940d12b6c91049b67f524
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648709"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291792"
 ---
 # <a name="wns-notification-priorities"></a>Приоритеты уведомления WNS
 Установив приоритет уведомления с простой заголовок сообщения WNS POST, можно управлять как уведомления доставляются в ситуациях конфиденциальных батареи.
@@ -69,7 +69,6 @@ Windows не знает, какие уведомления важны для л�
 
 Исключение приложения в Экономия заряда, пользователей необходимо перейти к «Батареи использования по App» в параметрах и установите флажок «Разрешить приложение для выполнения фоновых задач». Этот выбор пользователя освобождает приложение от Экономия заряда для высокий, средний и низкий приоритет уведомления. Можно также вызвать [BackgroundExecutionManager API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_) программно запрашивать разрешение пользователя.  
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 - [Обзор служб push-уведомлений Windows (WNS)](windows-push-notification-services--wns--overview.md)
 - [Запрашивает разрешение на выполнение в фоновом режиме](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)
-- 

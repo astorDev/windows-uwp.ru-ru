@@ -6,25 +6,25 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 3f92c8fd-4096-4972-97da-01ae5db6423c
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a27d13f7ceedd14a84d5b4b4aa1233445037a1f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7dcd4c6c39a983ab11bfacd391bfa78942601258
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640769"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244060"
 ---
 # <a name="media-capture-api-reference"></a>Справочник по API записи мультимедиа #
 
-**Запрос**
+## <a name="request"></a>Запрос
 
 Вы можете записать представление текущего экрана в формате PNG с помощью следующего формата запросов.
 
 | Метод        | Универсальный код ресурса (URI) запроса     | 
 | ------------- |-----------------|
 | GET           | /ext/screenshot |
-<br>
 
-**Параметры URI**
+
+**Параметры универсального кода ресурса (URI)**
 
 В запросе URI можно указать следующие дополнительные параметры.
 
@@ -32,17 +32,16 @@ ms.locfileid: "57640769"
 | Параметр универсального кода ресурса (URI)      | Описание     | 
 | ------------------ |-----------------|
 | download (необязательный)| Логическое значение, указывающее, следует ли установить заголовки ответа HTTP, чтобы хост-браузер скачал снимок экрана как вложение, а не показал его.  |
-<br>
 
 **Заголовки запроса**
 
 * Нет
 
-**Текст запроса**
+**Тело запроса**
 
 * Нет
 
-###<a name="response"></a>Ответ ###
+## <a name="response"></a>Ответ
 
 **Код состояния**
 
@@ -54,7 +53,7 @@ ms.locfileid: "57640769"
 | 5XX                | Коды ошибок для непредвиденных сбоев |
 <br>
 
-**Семейств доступных устройств**
+**Доступные семейства устройств**
 
 * Windows Xbox
 

@@ -2,16 +2,16 @@
 Description: Вы можете использовать тестовые пакеты для распространения пакетов среди ограниченных групп тестировщиков.
 title: Тестовые пакеты
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
-ms.date: 10/31/2018
+ms.date: 03/07/2019
 ms.topic: article
 keywords: ОС Windows 10, UWP, фокус-тестирование
 ms.localizationpriority: medium
-ms.openlocfilehash: 568fbff28d6c57acb6214bf274becc9cbc7f8830
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2070d1312df8f840c2368600197ca2bd7c506cdc
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610169"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244300"
 ---
 # <a name="package-flights"></a>Тестовые пакеты
 
@@ -70,7 +70,7 @@ ms.locfileid: "57610169"
 
 ## <a name="configure-additional-package-flight-options"></a>Настройка дополнительных параметров тестового пакета
 
-По умолчанию тестовый пакет будет опубликован и станет доступным для тестовой группы сразу после завершения процесса сертификации. Если вам требуется изменить [дату публикации](set-app-pricing-and-availability.md#publish-date) или добавить [Заметки по сертификации](notes-for-certification.md), это можно сделать в разделе **Параметры тестового пакета**. Нажмите **Сохранить**, чтобы вернуться на страницу обзора тестового пакета. 
+По умолчанию тестовый пакет будет опубликован и станет доступным для тестовой группы сразу после завершения процесса сертификации. Если вы хотите изменить [Дата публикации](set-app-pricing-and-availability.md#publish-date), можно сделать в **черный параметры** раздел. Нажмите **Сохранить**, чтобы вернуться на страницу обзора тестового пакета. 
 
 
 ## <a name="submit-your-package-flight-to-the-store"></a>Отправка тестового пакета в Магазин

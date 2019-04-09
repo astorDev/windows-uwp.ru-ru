@@ -2,17 +2,17 @@
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Используйте API анализа Microsoft Store для программного извлечения данных аналитики для приложений, зарегистрированных для организации с вашего разрешения или разрешения '' s учетной записи центра партнеров Windows.
 title: Доступ к аналитическим данным с помощью служб Магазина
-ms.date: 06/04/2018
+ms.date: 03/06/2019
 ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 72e0941bb42a2a507af652758432ce51212c1042
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ab3e223c99a13e4520d5bc603454881803a3cb64
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592659"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334862"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Доступ к аналитическим данным с помощью служб Магазина
 
@@ -54,7 +54,7 @@ ms.locfileid: "57592659"
 
 Для получения маркера доступа следуйте инструкциям в разделе [Вызовы между службами с помощью учетных данных клиентов](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/), чтобы отправить HTTP-запрос POST в конечную точку ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Ниже приведен пример запроса.
 
-```
+```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
@@ -75,13 +75,19 @@ grant_type=client_credentials
 
 После получения маркера доступа Azure AD вы можете вызвать API аналитики для Microsoft Store. Необходимо передать токен доступа в заголовок **Authorization** каждого метода.
 
-### <a name="methods-for-uwp-apps"></a>Методы для приложений UWP
+### <a name="methods-for-uwp-apps-and-games"></a>Методы для игр и приложений универсальной платформы Windows
+Для приобретения приложений и игр и приобретение надстроек, доступны следующие методы: 
+
+* [Получение данных ввод в эксплуатацию для игр и приложений](acquisitions-data.md)
+* [Получение данных приобретения надстройки для игр и приложений](add-on-acquisitions-data.md)
+
+### <a name="methods-for-uwp-apps"></a>Методы для приложений UWP 
 
 Следующие методы analytics доступны для приложений универсальной платформы Windows в центре партнеров.
 
 | Сценарий       | Методы      |
 |---------------|--------------------|
-| Ввод в эксплуатацию, преобразования, Установка и использование |  <ul><li>[Получить приобретения приложений](get-app-acquisitions.md)</li><li>[Получить данные воронки приобретения приложений](get-acquisition-funnel-data.md)</li><li>[Получить приложение преобразования каналом](get-app-conversions-by-channel.md)</li><li>[Получить приобретение надстройки](get-in-app-acquisitions.md)</li><li>[Получить подписку приобретение надстройки](get-subscription-acquisitions.md)</li><li>[Получить надстройку преобразования каналом](get-add-on-conversions-by-channel.md)</li><li>[Получить установки приложений](get-app-installs.md)</li><li>[Получение ежедневного использования приложения](get-app-usage-daily.md)</li><li>[Получение ежемесячного использования приложения](get-app-usage-monthly.md)</li></ul> |
+| Ввод в эксплуатацию, преобразования, Установка и использование |  <ul><li>[Получить приобретения приложений](get-app-acquisitions.md) (устаревший)</li><li>[Получить данные воронки приобретения приложений](get-acquisition-funnel-data.md) (устаревший)</li><li>[Получить приложение преобразования каналом](get-app-conversions-by-channel.md)</li><li>[Получить приобретение надстройки](get-in-app-acquisitions.md)</li><li>[Получить подписку приобретение надстройки](get-subscription-acquisitions.md)</li><li>[Получить надстройку преобразования каналом](get-add-on-conversions-by-channel.md)</li><li>[Получить установки приложений](get-app-installs.md)</li><li>[Получение ежедневного использования приложения](get-app-usage-daily.md)</li><li>[Получение ежемесячного использования приложения](get-app-usage-monthly.md)</li></ul> |
 | Ошибки приложения | <ul><li>[Получить данные отчетов об ошибках](get-error-reporting-data.md)</li><li>[Подробные сведения для ошибки в приложении](get-details-for-an-error-in-your-app.md)</li><li>[Получить трассировку стека для ошибки в приложении](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[Загрузите CAB-файл для ошибки в приложении](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
 | Дополнительная информация | <ul><li>[Получение данных insights для приложения](get-insights-data-for-your-app.md)</li></ul>  |
 | Оценки и отзывы | <ul><li>[Получение оценок приложения](get-app-ratings.md)</li><li>[Получение проверки приложения](get-app-reviews.md)</li></ul> |
@@ -100,7 +106,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-xbox-live-services"></a>Методы для служб Xbox Live
 
-Доступны следующие дополнительные методы для использования учетными записями разработчиков в играх, использующих [службы Xbox Live](../xbox-live/developer-program-overview.md).
+Доступны следующие дополнительные методы для использования учетными записями разработчиков в играх, использующих [службы Xbox Live](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md).
 
 | Сценарий       | Методы      |
 |---------------|--------------------|
@@ -126,7 +132,7 @@ grant_type=client_credentials
 В следующем примере кода показано, как получить маркер доступа Azure AD и вызвать API аналитики для Microsoft Store из консольного приложения C#. Чтобы использовать этот пример кода, назначьте переменным *tenantId*, *clientId*, *clientSecret* и *appID* соответствующие вашему сценарию значения. В этом примере для десериализации данных JSON, возвращаемых API аналитики для Microsoft Store, требуется [пакет Json.NET](https://www.newtonsoft.com/json).
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
+[!code-csharp[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
 
 ## <a name="error-responses"></a>Ошибочные ответы
 

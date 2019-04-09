@@ -2,16 +2,16 @@
 Description: Можно отправлять приложения Microsoft Store в более чем 100 языках.
 title: Поддерживаемые языки
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
-ms.date: 02/20/2019
+ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 716a6e86e03feb6edcbc5cde5aa37d0282df6aca
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657759"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244290"
 ---
 # <a name="supported-languages"></a>Поддерживаемые языки
 
@@ -35,7 +35,7 @@ ms.locfileid: "57657759"
 | Амхарский               | am, am-et                                                                                                                                                                                             |
 | Армянский              | hy, hy-am                                                                                                                                                                                             |
 | Ассамский              | as, as-in                                                                                                                                                                                             |
-| Азербайджанский           | az, az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
+| Азербайджанский           | AZ арабские, az Арабская az az-cyrl "," az-cyrl-az "," az-latn "," az-latn-az                                                                                                                                     |
 | Баскский (Баскония)       | eu, eu-es                                                                                                                                                                                             |
 | Белорусский            | be, be-by                                                                                                                                                                                             |
 | Бенгальский                | bn, bn-bd, bn-in                                                                                                                                                                                      |

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
-ms.openlocfilehash: d05528ecf4408a7e7483b909b75722037c6528b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8f04514962cf0684daa99ee75d4c4da73c785735
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645699"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244090"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Справочник по API-интерфейсу песочницы Xbox Live   
 Вы можете получить и настроить песочницу Xbox Live с помощью этого API REST.
@@ -25,8 +25,8 @@ ms.locfileid: "57645699"
 Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
 GET | /ext/xboxlive/sandbox
-<br />
-**Параметры URI**
+
+**Параметры универсального кода ресурса (URI)**
 
 - Нет
 
@@ -34,7 +34,7 @@ GET | /ext/xboxlive/sandbox
 
 - Нет
 
-**Текст запроса**
+**Тело запроса**
 
 - Нет
 
@@ -61,8 +61,8 @@ Sandbox (String) — текущая песочница устройства.
 Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
 PUT | /ext/xboxlive/sandbox
-<br />
-**Параметры URI**
+
+**Параметры универсального кода ресурса (URI)**
 
 - Нет
 
@@ -70,7 +70,7 @@ PUT | /ext/xboxlive/sandbox
 
 - Нет
 
-**Текст запроса**   
+**Тело запроса**   
 Текст запроса — это объект JSON, содержащий следующие поля.   
 Sandbox (String) — новое значение песочницы устройства.
 
@@ -87,8 +87,7 @@ Sandbox (String) — текущая песочница устройства.
 4XX | Коды ошибок
 5XX | Коды ошибок
 
-<br />
-**Семейств доступных устройств**
+**Доступные семейства устройств**
 
 * Windows Xbox
 

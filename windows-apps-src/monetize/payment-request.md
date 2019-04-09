@@ -4,17 +4,17 @@ title: Упрощение платежей с помощью API запроса 
 ms.date: 09/26/2017
 ms.topic: article
 keywords: Windows 10, uwp, запрос платежа
-ms.openlocfilehash: e5fb5cead7833b8cc213c6633cae6cee0da3466b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 36078c65d6762c8ed477a3a1342f3b6a0acaaa6f
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607869"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334592"
 ---
 # <a name="simplify-payments-with-the-payment-request-api"></a>Упрощение платежей с помощью API запроса платежей
 API запроса оплаты для приложений UWP основан на [спецификации W3C оплаты запроса API](https://w3c.github.io/browser-payment-api/). Он дает возможность оптимизировать процесс подсчета стоимости покупок в приложениях UWP. Пользователям может ускорить посредством извлечения с помощью варианты оплаты и доставки адреса уже сохранен со своей учетной записью Майкрософт. Вы сможете повысить скорость преобразования и снизить риск нарушения безопасности данных, так как данные об оплате размечается. Начиная с Windows 10 Creators Update, пользователи могут использовать свои варианты сохраненного оплаты для оплаты легко разных областей в приложениях универсальной платформы Windows.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 Перед началом использования API запроса оплаты, существует несколько моментов, которые необходимо сделать или следует учитывать.
 
 ### <a name="getting-a-merchant-id"></a>Получение ИД продавца
@@ -30,37 +30,37 @@ API запроса оплаты можно использовать только
 > [!Note]
 > Замените **продавца идентификатор из продавца портала** текст с продавца идентификатор, который был получен из центра продавца.
 
-[!code-cs[SnippetEnumerate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetEnumerate)]
+[!code-csharp[SnippetEnumerate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetEnumerate)]
 
 ### <a name="2-pull-the-payment-details-together"></a>2. Объединяют сведения об оплате. 
 
 Эти сведения отображаются для пользователя в приложении оплаты. 
 
-[!code-cs[SnippetDisplayItems](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDisplayItems)]
+[!code-csharp[SnippetDisplayItems](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDisplayItems)]
 
 ### <a name="3-include-the-sales-tax"></a>3. Включить налог с продаж. 
 
 > [!Important]
 > API не добавлять элементы или вычислить налог для вас. Помните, что отличаться налоговые ставки. Для ясности мы используем гипотетической 9.5% налоговой ставки.
 
-[!code-cs[SnippetTaxes](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetTaxes)]
+[!code-csharp[SnippetTaxes](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetTaxes)]
 
 ### <a name="4-optional--add-discounts-or-other-modifiers-to-the-total"></a>4. (Необязательно)  Добавьте другие модификаторы или скидки в общей сумме. 
 
 Ниже приведен пример добавления скидка на конкретных кредитной картой Contoso отображаемым элементам. (*Contoso* — это вымышленное имя.)
 
-[!code-cs[SnippetDiscountRate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDiscountRate)]
+[!code-csharp[SnippetDiscountRate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetDiscountRate)]
 
 ### <a name="5-assemble-all-the-payment-details"></a>5. Соберите все сведения об оплате.
 
-[!code-cs[SnippetAggregate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetAggregate)]
-[!code-cs[SnippetPaymentOptions](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetPaymentOptions)]
+[!code-csharp[SnippetAggregate](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetAggregate)]
+[!code-csharp[SnippetPaymentOptions](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetPaymentOptions)]
 
 ### <a name="6-submit-the-payment-request"></a>6. Запрос оплаты. 
 
 Вызовите **SubmitPaymentRequestAsync** метод, чтобы отправить запрос оплаты. Откроется приложение оплаты, параметрами для доступных оплаты.
 
-[!code-cs[SnippetSubmit](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetSubmit)]
+[!code-csharp[SnippetSubmit](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetSubmit)]
 
 Пользователю предлагается выполнить вход с использованием учетной записи Майкрософт.
 
@@ -70,7 +70,7 @@ API запроса оплаты можно использовать только
 
 Приложение ожидает коснитесь **платить**, затем завершает порядок.
 
-[!code-cs[SnippetComplete](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetComplete)]
+[!code-csharp[SnippetComplete](./code/PaymentsApiSample/PaymentsApiSample/MainPage.xaml.cs#SnippetComplete)]
 
 После завершения платежа пользователю предоставляется **подтверждения заказа** экрана.
 

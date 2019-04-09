@@ -6,15 +6,14 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a6d39a78ba73dcb598f209ea48c4b131e375ab6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7748ff7d5acf8a94c92e2b51953299131910d63e
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594809"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320577"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>Подписание пакета приложения с помощью SignTool
-
 
 **SignTool** — это средство командной строки, используемое для цифровой подписи пакета приложения или пакета приложений с помощью сертификата. Сертификат может быть создан пользователем (для тестирования) или выдан компанией (для распространения). Подписывание пакета приложения дает пользователю средство проверки отсутствия изменений в данных приложения после его подписи, при этом также подтверждается подлинность пользователя или компании, подписавшего пакет. **SignTool** может подписать зашифрованные и незашифрованные пакеты приложения и пакеты приложений.
 
@@ -23,7 +22,7 @@ ms.locfileid: "57594809"
 
 Дополнительные сведения о подписи кода и сертификатах в целом см. в разделе [Знакомство с процессом подписания кода](https://msdn.microsoft.com/library/windows/desktop/aa380259.aspx#introduction_to_code_signing).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 - **Упакованного приложения**  
     Подробнее о ручном создании пакета приложения, [создания пакета приложения с помощью средства MakeAppx.exe](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool). 
 
@@ -32,8 +31,8 @@ ms.locfileid: "57594809"
 
 - **SignTool.exe**  
     В зависимости от пути установки пакета SDK **SignTool** может находиться в следующих расположениях на компьютере с Windows 10:
-    - x86: C:\Program файлы (x86) \Windows Kits\10\bin\x86\SignTool.exe
-    - x64: C:\Program файлы (x86) \Windows Kits\10\bin\x64\SignTool.exe
+    - x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
+    - x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>Применение SignTool
 
@@ -43,7 +42,8 @@ ms.locfileid: "57594809"
 При использовании **SignTool** для подписи пакета приложения или пакета приложений, хэш-алгоритм, применяемый в **SignTool**, должен совпадать с алгоритмом, использованном для упаковки приложения. Например, если вы применили **MakeAppx.exe** для создания пакета приложения с параметрами по умолчанию, то необходимо выбрать SHA256 в **SignTool**, поскольку это алгоритм, по умолчанию используемый в **MakeAppx.exe**.
 
 Чтобы узнать, какой алгоритм хэширования применялся при упаковке приложения, извлеките содержимое пакета и изучите файл AppxBlockMap.xml. Инструкции по распаковке/извлечению пакета приложения см. в разделе [Извлечение файлов из пакета приложения или пакета приложений](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool#extract-files-from-a-package-or-bundle). Хэш-метод указан в элементе BlockMap и имеет следующий формат:
-```
+
+```xml
 <BlockMap xmlns="http://schemas.microsoft.com/appx/2010/blockmap" 
 HashMethod="http://www.w3.org/2001/04/xmlenc#sha256">
 ```
@@ -65,34 +65,42 @@ HashMethod="http://www.w3.org/2001/04/xmlenc#sha256">
 Если у вас есть все необходимые компоненты и вы определили, какой хэш-алгоритм применялся для упаковки приложения, то вы готовы подписать его. 
 
 Общий синтаксис командной строки при подписи пакета с помощью **SignTool** таков:
-```
+
+```syntax
 SignTool sign [options] <filename(s)>
 ```
 
 Сертификат, используемый для подписания приложения, должен быть либо PFX-файлом либо установлен в хранилище сертификатов.
 
 Чтобы подписать пакет приложения с помощью сертификата из PFX-файла, примените следующий синтаксис:
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.appx
 ```
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.msix
 ```
+
 Обратите внимание, что параметр `/a` позволяет **SignTool** автоматически выбрать наиболее подходящий сертификат.
 
 Если ваш сертификат не является PFX-файлом, используйте следующий синтаксис:
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.appx
 ```
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.msix
 ```
 
 Кроме того, вы можете указать хэш SHA1 нужного сертификата вместо &lt;Имя сертификата&gt;, с помощью следующего синтаксиса:
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.appx
 ```
-```
+
+```syntax
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ```
 
@@ -103,7 +111,7 @@ SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ## <a name="common-errors-and-troubleshooting"></a>Распространенные ошибки и их устранение
 Наиболее распространенные типы ошибок при использовании **SignTool** являются внутренними и обычно выглядят примерно так:
 
-```
+```syntax
 SignTool Error: An unexpected internal error has occurred.
 Error information: "Error: SignerSign() failed." (-2147024885 / 0x8007000B) 
 ```
@@ -111,7 +119,8 @@ Error information: "Error: SignerSign() failed." (-2147024885 / 0x8007000B)
 Если код ошибки начинается с 0x8008, например 0x80080206 (APPX_E_CORRUPT_CONTENT), подписываемый пакет не является допустимым. При появлении такого типа ошибки, необходимо перестроить пакет и запустить **SignTool** еще раз.
 
 В инструменте **SignTool** есть параметр отладки для показа ошибок с сертификатом и их фильтрации. Чтобы использовать функцию отладки, поместите параметр `/debug` сразу после `sign`, а затем полную команду **SignTool**.
-```
+
+```syntax
 SignTool sign /debug [options]
 ``` 
 

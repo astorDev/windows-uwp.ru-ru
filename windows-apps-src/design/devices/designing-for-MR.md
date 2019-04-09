@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: b988859422a80b31d94a133e36631b078ac7c14e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: df81348dee781d1c329562d558ed8df30fd40bc5
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610499"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244120"
 ---
 # <a name="designing-for-mixed-reality"></a>Проектирование для смешанной реальности
 
@@ -105,7 +105,7 @@ ms.locfileid: "57610499"
 * Двухмерное приложение автоматически получает [панель приложения](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box), которая позволяет пользователю перемещать и масштабировать приложение в виртуальной среде. Размер представления можно изменять по вертикали или пропорционально.
 
 
-## <a name="2d-app-design-considerations-uiux"></a>Рекомендации по проектированию 2D приложения: ПОЛЬЗОВАТЕЛЬСКОГО ИНТЕРФЕЙСА
+## <a name="2d-app-design-considerations-uiux"></a>Рекомендации по проектированию 2D приложения: UI/UX
 
 * Элементы управления XAML, которые реализуют [систему проектирования Fluent Design](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/), например [представление навигации](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) и эффекты, такие как [акрил](https://docs.microsoft.com/windows/uwp/design/style/acrylic), особенно хорошо работают в двухмерных приложениях смешанной реальности.
 
@@ -151,7 +151,7 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
             {
                 // Running on desktop
                 textBlock.Text = "I'm running on the desktop.";
-                textBlock.FontSize = 16;
+                textBlock.FontSize = 14;
             }
 
 ```
@@ -163,8 +163,8 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 ## <a name="related-articles"></a>Связанные статьи
 
 
-* [Текущие ограничения для приложений с помощью API-интерфейсы из оболочки](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
-* [Создание двухмерных приложений](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
+* [Текущие ограничения для приложений, использующие API из оболочки](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
+* [Сборка двухмерных приложений](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens: Создание двухмерных Uwp для Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
 * [Условный XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
 

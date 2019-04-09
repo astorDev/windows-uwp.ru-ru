@@ -5,29 +5,29 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, взаимодействие, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: a33a52cd8c18b312dc9e020a4c4ba518c33b0dd9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3eee6b75d3ea86c183293ffc27289e9cae2929ce
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639949"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291682"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Взаимодействие между C++/WinRT и интерфейсом ABI
 
-В этом разделе показано, как выполнять преобразование между двоичный интерфейс пакета SDK для приложений (ABI) и [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) объектов. Эти техники можно использовать для взаимодействия между кодом, который использует эти два способа программирования с помощью среды выполнения Windows, или для постепенного переноса кода с ABI на C++/WinRT.
+В этом разделе показано, как выполнять преобразование между двоичный интерфейс пакета SDK для приложений (ABI) и [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) объектов. Эти техники можно использовать для взаимодействия между кодом, который использует эти два способа программирования с помощью среды выполнения Windows, или для постепенного переноса кода с ABI на C++/WinRT.
 
 ## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>Что такое ABI среды выполнения Windows и что такое типы ABI?
 Класс среды выполнения Windows (класс среды выполнения) — это, на самом деле, абстракция. Такая абстракция определяет двоичный интерфейс (двоичный интерфейс приложения или ABI), позволяющий различным языкам программирования взаимодействовать с объектом. Независимо от языка программирования, взаимодействие клиентского кода с объектом среды выполнения Windows происходит на самом низком уровне, при этом языковые конструкции клиента преобразуются в вызовы ABI объекта.
 
 Заголовки пакета Windows SDK в папке "%WindowsSdkDir%Include\10.0.17134.0\winrt" (при необходимости измените номер версии пакета SDK на используемый), представляют собой файлы заголовков ABI среды выполнения Windows. Они были созданы с помощью компилятора MIDL. Вот пример включения одного из таких заголовков.
 
-```
+```cpp
 #include <windows.foundation.h>
 ```
 
 А вот упрощенный пример одного из типов ABI, которые можно найти в этом конкретном заголовке SDK. Обратите внимание, что пространство имен **ABI**, **Windows::Foundation** и все остальные пространства имен Windows объявляются заголовками SDK внутри пространства имен **ABI**.
 
-```
+```cpp
 namespace ABI::Windows::Foundation
 {
     IUriRuntimeClass : public IInspectable
@@ -51,7 +51,7 @@ namespace ABI::Windows::Foundation
 
 А вот (из этого заголовка) упрощенный эквивалент C++/WinRT типа ABI, который мы только что видели.
 
-```
+```cppwinrt
 namespace winrt::Windows::Foundation
 {
     struct Uri : IUriRuntimeClass, ...
@@ -67,7 +67,7 @@ namespace winrt::Windows::Foundation
 Этот раздел предназначен для тех случаев, когда вам требуется взаимодействие с кодом, который работает на уровне двоичного интерфейса приложения (ABI), и необходимо портировать этот код.
 
 ## <a name="converting-to-and-from-abi-types-in-code"></a>Преобразование в типы ABI и обратно в коде
-Для безопасности и простоты для преобразования в обоих направлениях можно использовать [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr), [**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function) и [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function). Вот пример кода (на основе шаблона проекта **Консольное приложение**), который также показывает, как использовать псевдонимы пространств имен для различных островов, чтобы справиться с конфликтами пространств имен между проекцией C++/WinRT и ABI.
+Для безопасности и простоты для преобразования в обоих направлениях можно использовать [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr), [**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptras-function) и [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function). Вот пример кода (на основе шаблона проекта **Консольное приложение**), который также показывает, как использовать псевдонимы пространств имен для различных островов, чтобы справиться с конфликтами пространств имен между проекцией C++/WinRT и ABI.
 
 ```cppwinrt
 // pch.h
@@ -175,7 +175,7 @@ T convert_from_abi(::IUnknown* from)
 
 Эта функция просто вызывает [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521), чтобы запросить интерфейс по умолчанию запрошенного типа C++/WinRT.
 
-Как мы выяснили, вспомогательная функция не требуется для преобразования объекта C++/WinRT в эквивалентный указатель интерфейса ABI. Просто используйте функцию-член [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (или [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) для запроса нужного интерфейса. Функции **as** и **try_as** возвращают объект [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr), в который упакован запрошенный тип ABI.
+Как мы выяснили, вспомогательная функция не требуется для преобразования объекта C++/WinRT в эквивалентный указатель интерфейса ABI. Просто используйте функцию-член [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (или [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) для запроса нужного интерфейса. Функции **as** и **try_as** возвращают объект [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr), в который упакован запрошенный тип ABI.
 
 ## <a name="code-example-using-convertfromabi"></a>Пример кода, использующий convert_from_abi
 Ниже приведен пример кода, показывающий работу этой вспомогательной функции на практике.
@@ -246,11 +246,11 @@ int main()
 ## <a name="important-apis"></a>Важные API
 * [AddRef-функция](https://msdn.microsoft.com/library/windows/desktop/ms691379)
 * [QueryInterface-функция](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [функция WinRT::attach_abi](/uwp/cpp-ref-for-winrt/attach-abi)
-* [Структура шаблона WinRT::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
-* [функция WinRT::copy_from_abi](/uwp/cpp-ref-for-winrt/copy-from-abi)
-* [функция WinRT::copy_to_abi](/uwp/cpp-ref-for-winrt/copy-to-abi)
-* [функция WinRT::detach_abi](/uwp/cpp-ref-for-winrt/detach-abi)
-* [функция WinRT::get_abi](/uwp/cpp-ref-for-winrt/get-abi)
+* [winrt::attach_abi function](/uwp/cpp-ref-for-winrt/attach-abi)
+* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
+* [winrt::copy_from_abi function](/uwp/cpp-ref-for-winrt/copy-from-abi)
+* [winrt::copy_to_abi function](/uwp/cpp-ref-for-winrt/copy-to-abi)
+* [winrt::detach_abi function](/uwp/cpp-ref-for-winrt/detach-abi)
+* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
 * [WinRT::Windows::Foundation::IUnknown:: как функция-член](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
-* [функция-член WinRT::Windows::Foundation::IUnknown::try_as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
+* [функция-член WinRT::Windows::Foundation::IUnknown::try_as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)

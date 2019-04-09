@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, реклама, элемент управления рекламой, межстраничные
 ms.localizationpriority: medium
-ms.openlocfilehash: 9abf761aa141ef3d0c19d6d5401b6815542d4172
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 6283c4d69a511e4dd4aa342b547c18624952be29
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603919"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335122"
 ---
 # <a name="interstitial-ads"></a>Межстраничные объявления
 
@@ -34,7 +34,7 @@ ms.locfileid: "57603919"
 > [!NOTE]
 > API для межстраничных объявлений не обрабатывает никакие элементы пользовательского интерфейса, кроме как во время воспроизведения. См. [передовые практики размещения промежуточной рекламы](ui-and-user-experience-guidelines.md#interstitialbestpractices10), чтобы получить информацию о рекомендуемых и нерекомендуемых действиях при добавлении промежуточной рекламы в приложение.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установка [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) с помощью Visual Studio 2015 или более поздней версии Visual Studio. Инструкции по установке см. в [этой статье](install-the-microsoft-advertising-libraries.md).
 
@@ -66,22 +66,22 @@ ms.locfileid: "57603919"
 
 3.  В соответствующий файл с кодом в вашем приложении (например, в файл MainPage.xaml.cs или в файл с кодом для другой страницы) добавьте следующую ссылку на пространство имен.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
 
 4.  В соответствующем месте вашего приложения (например, в ```MainPage``` или на другой странице) объявите объект [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) и несколько строковых полей, которые будут представлять собой идентификатор приложения и идентификатор рекламного блока вашей промежуточной рекламы. Следующий код присваивает полям `myAppId` и `myAdUnitId`[тестовые значения](set-up-ad-units-in-your-app.md#test-ad-units) для межстраничных объявлений.
 
     > [!NOTE]
     > Каждый элемент **InterstitialAd** имеет соответствующую *группу объявлений*, используемую нашими службами для передачи рекламы этому элементу управления, и каждая группа объявлений состоит из *идентификатора группы объявлений* и *идентификатора приложения*. На этих этапах вы задаете тестовые значения идентификатора группы объявлений и идентификатора приложения для своего элемента управления. Эти тестовые значения можно использовать только в тестовой версии приложения. Прежде чем публиковать приложение Store, необходимо [заменить эти тестовые значения значениями динамической](#release) из центра партнеров.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
 
 5.  В коде, который выполняется при запуске (например, в конструкторе для страницы), создайте объект **InterstitialAd** и привяжите обработчики событий к событиям этого объекта.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
 
 6.  Если вы хотите показать *вставки видео* ad: Примерно через 30 – 60 секунд, прежде чем выполнить ad, используйте [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) метод выполнять упреждающую выборку в ad. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **AdType.Video** для этого типа рекламы.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
 
     Если вы хотите показать *вставки баннер* ad: Примерно через 5 – 8 секунд, прежде чем выполнить ad, используйте [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) метод выполнять упреждающую выборку в ad. Этого времени будет достаточно для того, чтобы запросить и подготовить рекламное объявление до его отображения. Не забудьте указать **AdType.Display** для этого типа рекламы.
 
@@ -91,11 +91,11 @@ ms.locfileid: "57603919"
 
 6.  Проверьте место в вашем коде, где должна отображаться межстраничная видеореклама или баннер. Убедитесь, что реклама **InterstitialAd** готова к отображению, а затем отобразите ее, используя метод [Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show).
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
 
 7.  Определите обработчики событий для объекта **InterstitialAd**.
 
-    [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
+    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
 
 8.  Создайте и протестируйте приложение, чтобы убедиться, что в нем отображается реклама.
 
@@ -234,7 +234,7 @@ ms.locfileid: "57603919"
 > [!IMPORTANT]
 > Одну группу объявлений можно использовать только в одном приложении. Если использовать одну группу объявлений в нескольких приложениях, объявления для этой группы объявлений предоставляться не будут.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Рекомендации для вставки рекламы](ui-and-user-experience-guidelines.md#interstitialbestpractices10)
 * [В коде вставки adC#](interstitial-ad-sample-code-in-c.md)

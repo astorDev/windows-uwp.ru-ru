@@ -6,15 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание отправки надстройки, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: cbb093576badf5cd84b132cfb139db9da7d31991
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661709"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334932"
 ---
 # <a name="create-an-add-on-submission"></a>Создание отправки надстройки
-
 
 Используйте этот метод в интерфейсе API отправки Microsoft Store для создания новой отправки надстройки (также известная как app продукта или IAP) для приложения, зарегистрированный для вашей учетной записи центра партнеров. После успешного создания новой отправки с помощью этого метода [обновите отправку](update-an-add-on-submission.md), чтобы внести любые необходимые изменения в данные отправки, а затем [зафиксируйте отправку](commit-an-add-on-submission.md) для внедрения и публикации.
 
@@ -23,7 +22,7 @@ ms.locfileid: "57661709"
 > [!NOTE]
 > При использовании этого метода выполняется создание отправки для имеющейся надстройки. Чтобы создать надстройку, используйте метод [Создание надстройки](create-an-add-on.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для использования этого метода сначала необходимо сделать следующее:
 
@@ -37,22 +36,19 @@ ms.locfileid: "57661709"
 
 | Метод | Универсальный код ресурса (URI) запроса                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions``` |
-
+| ПОМЕСТИТЬ    | `https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions` |
 
 ### <a name="request-header"></a>Заголовок запроса
 
-| Заголовок        | Тип   | Описание                                                                 |
+| Header        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
-
+| Authorization | строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | Строка | Обязательный. Код продукта в Магазине для надстройки, для которой необходимо создать отправку. Идентификатор Store доступен в центре партнеров, и она включена в данные ответа для запросов к [создать надстройку](create-an-add-on.md) или [получение сведений о надстройка](get-all-add-ons.md).  |
-
+| inAppProductId | строка | Обязательный. Код продукта в Магазине для надстройки, для которой необходимо создать отправку. Идентификатор Store доступен в центре партнеров, и она включена в данные ответа для запросов к [создать надстройку](create-an-add-on.md) или [получение сведений о надстройка](get-all-add-ons.md).  |
 
 ### <a name="request-body"></a>Тело запроса
 
@@ -62,7 +58,7 @@ ms.locfileid: "57661709"
 
 В следующем примере кода показано, как создать новую отправку для надстройки.
 
-```
+```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
@@ -153,8 +149,7 @@ Authorization: Bearer <your access token>
 | 400  | Не удалось создать отправку. Недопустимый запрос. |
 | 409  | Не удалось создать отправки из-за текущего состояния приложения или приложение использует функцию центра партнеров, которая [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
-
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Управление отправкой надстройки](manage-add-on-submissions.md)

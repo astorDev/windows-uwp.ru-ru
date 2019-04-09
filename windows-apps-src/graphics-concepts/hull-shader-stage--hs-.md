@@ -7,15 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ec132ccb3099f7b5c9f4763a2b276bf6270da859
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601059"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291652"
 ---
 # <a name="hull-shader-hs-stage"></a>Этап шейдера поверхностей (HS)
-
 
 Этап шейдера поверхностей (HS) — один из этапов тесселяции, на котором одна поверхность модели фактически разбивается на множество треугольников. На этапе шейдера поверхностей (HS) генерируется участок геометрии (и константы участка), соответствующий каждому входному участку (четырехугольнику, треугольнику или линии). Шейдер поверхностей вызывается единожды для каждого участка и преобразует входные контрольные точки, определяющие поверхность низкого порядка, в контрольные точки, формирующие участок. Он также выполняет некоторые вычисления для каждого участка, чтобы предоставить данные для [этапа тесселяции (TS)](tessellator-stage--ts-.md) и [этапа шейдера доменов (DS)](domain-shader-stage--ds-.md).
 
@@ -52,7 +51,7 @@ ms.locfileid: "57601059"
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Пример
 
 
-```
+```hlsl
 [patchsize(12)]
 [patchconstantfunc(MyPatchConstantFunc)]
 MyOutPoint main(uint Id : SV_ControlPointID,

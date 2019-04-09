@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 3d516343798b7d8c221a5af12210a4897a3124a9
+ms.sourcegitcommit: 358abe22243da4592c30e18d6fc322778f091c8d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636099"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58362954"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Основы проектирования навигации для приложений UWP
 
@@ -197,6 +197,21 @@ ms.locfileid: "57636099"
 
 :::row:::
     :::column:::
+         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+        :::column span="2":::
+    [**PIVOT**](../controls-and-patterns/pivot.md)
+    
+    Аналогичную [представления навигации](../controls-and-patterns/navigationview.md), но с дополнительной поддержкой сенсорного ввода и поведение навигации немного отличается.
+    
+    Использование pivot при:-приложение, чтобы разрешить касания считывания между категориями
+        - Требуется, чтобы параметры навигации для infintely карусель
+        - Нет необходимости широкие возможности контроля над поведение перехода между категориями
+
+:::row-end:::
+
+:::row:::
+    :::column:::
         ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
@@ -207,9 +222,9 @@ ms.locfileid: "57636099"
         - Страницы располагаются на верхнем уровне.
         - Много элементов навигации (более чем 5)
         - Предполагается, что пользователи не будут часто переключаться между страницами.
-        
-:::row-end:::
 
+:::row-end:::
+        
 :::row:::
     :::column:::
         ![Master details image](images/nav/thumbnail-master-detail.svg)

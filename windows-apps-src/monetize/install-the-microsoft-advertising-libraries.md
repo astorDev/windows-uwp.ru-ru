@@ -6,12 +6,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, реклама, рекламные объявления, установка, SDK, рекламная библиотека
 ms.localizationpriority: medium
-ms.openlocfilehash: 121accdfc8996c609c616838f645f19e2377c7c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: baf70cc6df7b0683f3dc362436c63eb1e688e678
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658039"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334702"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Установить пакет Microsoft Advertising SDK
 
@@ -29,7 +29,7 @@ ms.locfileid: "57658039"
 1.  Закройте все экземпляры Visual Studio.
 
 2. Если вы ранее устанавливали какую-либо из предыдущих версий пакетов Microsoft Advertising SDK, Universal Ad Client SDK, расширения Ad Mediator или Microsoft Store Engagement and Monetization SDK, теперь необходимо удалить эти версии пакетов SDK. Другой вариант: откройте окно **командной строки** и выполните эти команды для удаления всех более ранних версий пакетов рекламных SDK, которые могли быть установлены вместе с Visual Studio, но, возможно, не отображаются в списке установленных программ на компьютере:
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -52,7 +52,7 @@ ms.locfileid: "57658039"
 1.  Закройте все экземпляры Visual Studio.
 
 2.  Если вы ранее устанавливали какую-либо из предыдущих версий пакетов Microsoft Advertising SDK, Universal Ad Client SDK, расширения Ad Mediator или Microsoft Store Engagement and Monetization SDK, теперь необходимо удалить эти версии пакетов SDK. Другой вариант: откройте окно **командной строки** и выполните эти команды для удаления всех более ранних версий пакетов рекламных SDK, которые могли быть установлены вместе с Visual Studio, но, возможно, не отображаются в списке установленных программ на компьютере:
-    ```
+    ```console
     MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
     MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
@@ -66,7 +66,7 @@ ms.locfileid: "57658039"
 
 5. В поле поиска введите **Microsoft.Advertising.XAML** (для проектов на XAML) или **Microsoft.Advertising.JS** (для проектов на JavaScript и HTML) и установите соответствующий пакет. Когда установка пакета завершится, сохраните решение.
     > [!NOTE]
-    > Если в окне **Вывод** содержится ошибка *Install-Package*, указывающая, что заданный путь слишком длинный, вам может потребоваться настроить NuGet, чтобы извлечь пакеты в альтернативное расположение с более коротким путем, чем расположение по умолчанию. Для этого добавьте значение ```repositoryPath``` в файл nuget.config на компьютере и задайте ему более короткий путь к папке, куда можно извлечь пакеты NuGet. Дополнительные сведения см. в [этой статье](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) в документации NuGet. Кроме того можно попробовать переместить проект Visual Studio в другую папку с более коротким путем.
+    > Если в окне **Вывод** содержится ошибка *Install-Package*, указывающая, что заданный путь слишком длинный, вам может потребоваться настроить NuGet, чтобы извлечь пакеты в альтернативное расположение с более коротким путем, чем расположение по умолчанию. Для этого добавьте значение `repositoryPath` в файл nuget.config на компьютере и задайте ему более короткий путь к папке, куда можно извлечь пакеты NuGet. Дополнительные сведения см. в [этой статье](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) в документации NuGet. Кроме того можно попробовать переместить проект Visual Studio в другую папку с более коротким путем.
 
 6. Закройте решение и снова откройте его.
 

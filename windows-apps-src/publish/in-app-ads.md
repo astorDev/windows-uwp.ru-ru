@@ -2,16 +2,16 @@
 Description: Если приложение отображает рекламных объявлений с помощью Microsoft Advertising SDK, страница в приложении ads центра партнеров в управлении использованием рекламы.
 title: Реклама в приложении
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
-ms.date: 10/31/2018
+ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cfdc4bd81a96d3bbdb2dd369cbdd0444ca22ea4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 4b8fc913818d5abe3317582cc18d5cb676a7a2fe
+ms.sourcegitcommit: 9f23bc9265c13f7ccedbc826261ceed2aff5ab83
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658029"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58417060"
 ---
 # <a name="in-app-ads"></a>Реклама в приложении
 
@@ -117,7 +117,7 @@ ms.locfileid: "57658029"
 | Outbrain |  Выберите этот вариант, чтобы показывать объявления от сети [Outbrain](https://www.outbrain.com/). |  Баннеры, межстраничные баннеры  |
 | Revcontent |  Выберите этот вариант, чтобы показывать объявления от сети [Revcontent](https://www.revcontent.com/). |  Баннер, собственный  |
 | Smaato |  Выберите этот вариант, чтобы показывать объявления от сети [Smaato](https://www.smaato.com/). |  Баннеры  |
-| smartclip |  Выберите этот вариант, чтобы показывать объявления от сети [smartclip](https://www.smartclip.com/). |  Межстраничная видеореклама  |
+| smartclip |  Выберите этот вариант, чтобы показывать объявления от сети [smartclip](http://www.smartclip.com/). |  Межстраничная видеореклама  |
 | SpotX |  Выберите этот вариант, чтобы показывать объявления от сети [SpotX](https://www.spotx.tv/). |  Межстраничная видеореклама  |
 | Taboola |  Выберите этот вариант, чтобы показывать объявления от сети [Taboola](https://www.taboola.com/). |  Баннеры  |
 | Undertone | Выберите этот параметр, чтобы обслуживать ads из [Undertone](https://www.undertone.com/). | Баннер вставки |

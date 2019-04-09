@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
-ms.openlocfilehash: 963c73bb7667ced5bbe9e33fef0cac561fe1183a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a8d94f43edbdc3ec410ae7f878b38d41cddf5145
+ms.sourcegitcommit: f15cf141c299bde9cb19965d8be5198d7f85adf8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591549"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58358609"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>Создание сертификата для подписания пакета
 
@@ -21,7 +21,7 @@ ms.locfileid: "57591549"
 > [!IMPORTANT] 
 > Если для разработки приложения использовали Visual Studio, рекомендуется применить мастер Visual Studio, чтобы импортировать сертификат и подписать пакет приложения. Дополнительные сведения см. в разделе [Упаковка приложения UWP с помощью Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Упакованные или работе приложения**  
 Приложение, содержащее файл AppxManifest.xml. При создании сертификата, который будет использоваться для подписывания окончательного пакета приложений, потребуется сослаться на этот файл манифеста. Сведения о том, как вручную упаковать приложение, см. в разделе [Создание пакета приложений с помощью инструмента MakeAppx.exe](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
@@ -31,37 +31,51 @@ ms.locfileid: "57591549"
 
 ## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
 
-Самозаверяющий сертификат полезен для тестирования приложения, прежде чем вы будете готовы опубликовать его в магазине. Выполните описанные в этом разделе действия,чтобы создать самозаверяющий сертификат.
+Самозаверяющий сертификат удобен для тестирования приложения, прежде чем вы будете готовы опубликовать его в Store. Выполните шаги, описанные в этом разделе, чтобы создать самозаверяющий сертификат.
 
 ### <a name="determine-the-subject-of-your-packaged-app"></a>Определение субъекта вашего упакованного приложения  
 
 Чтобы использовать сертификат для подписывания пакета приложений, значение в поле сертификата "Субъект" **должно** совпадать с данными в разделе "Издатель" манифеста вашего приложения.
 
 Например, раздел "Идентификатор" файла AppxManifest.xml вашего приложения должен выглядеть примерно следующим образом:
-```
+
+```xml
   <Identity Name="Contoso.AssetTracker" 
     Version="1.0.0.0" 
     Publisher="CN=Contoso Software, O=Contoso Corporation, C=US"/>
 ```
 
-"Издатель" в данном случае — "CN=Contoso Software, O=Contoso Corporation, C=US", и именно его следует использовать для создания сертификата. 
+"Издатель" в данном случае — "CN=Contoso Software, O=Contoso Corporation, C=US", и именно его следует использовать для создания сертификата.
 
 ### <a name="use-new-selfsignedcertificate-to-create-a-certificate"></a>Использование командлета **New-SelfSignedCertificate** для создания сертификата
+
 Используйте командлет PowerShell **New-SelfSignedCertificate** для создания самозаверяющего сертификата. Командлет **New-SelfSignedCertificate** имеет несколько параметров для настройки, однако в этой статье мы сконцентрируемся на создании простого сертификата, который будет работать вместе с **SignTool**. Дополнительные примеры и варианты использования этого командлета см. в статье [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/New-SelfSignedCertificate).
 
 Основываясь на файле AppxManifest.xml из предыдущего примера, используйте следующий синтаксис для создания сертификата. В строке с повышенными привилегиями PowerShell:
+
+```powershell
+New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\LocalMachine\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
 ```
-New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
-```
+
+Обратите внимание на следующее о некоторых из параметров:
+
+- **KeyUsage**: Этот параметр определяет, что сертификат может использоваться для. Самозаверяющий сертификат, этот параметр задается **DigitalSignature**.
+
+- **TextExtension**: Этот параметр включает параметры для следующих расширений:
+
+  - Расширенное использование ключа (EKU): Это расширение указывает дополнительных целей, для которых может использоваться сертифицированного открытого ключа. Самозаверяющий сертификат, этот параметр должен включать строка расширения **«2.5.29.37={text}1.3.6.1.5.5.7.3.3»**, который указывает, что сертификат будет использоваться для подписывания кода.
+
+  - Основные ограничения: Это расширение указывает, является ли сертификат центра сертификации (ЦС). Самозаверяющий сертификат, этот параметр должен включать строка расширения **«2.5.29.19={text}»**, который указывает, что сертификат является конечную сущность (не ЦС).
 
 После выполнения этой команды сертификат будет добавлен в локальное хранилище сертификатов, как указано в параметре "-CertStoreLocation". В результате выполнения команды будет также создается отпечаток сертификата.  
 
-**Примечание**  
 Сертификат можно просмотреть в окне PowerShell, выполнив следующие команды:
-```
+
+```powershell
 Set-Location Cert:\LocalMachine\My
 Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 ```
+
 Это позволит отобразить все сертификаты в вашем локальном хранилище.
 
 ## <a name="export-a-certificate"></a>Экспорт сертификата 
@@ -70,18 +84,21 @@ Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 
 При использовании командлета **Export-PfxCertificate** следует либо создать и использовать пароль, либо с помощью параметра "-ProtectTo" указать, какие пользователи или группы могут осуществлять доступ к файлу без пароля. Обратите внимание, что если вы не используете параметр "-Password" или "-ProtectTo", отобразится ошибка.
 
-- **Использование паролей**
-```
+### <a name="password-usage"></a>Использование пароля
+
+```powershell
 $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
 Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
-- **Использование ProtectTo**
-```
+### <a name="protectto-usage"></a>Использование ProtectTo
+
+```powershell
 Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
 После создания и экспорт сертификата вы готовы подписать пакет приложений с помощью **SignTool**. Следующий шаг в процессе упаковки вручную описан в разделе [Подпись пакета приложения с использованием инструмента SignTool](https://msdn.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool).
 
-## <a name="security-considerations"></a>Вопросы обеспечения безопасности 
+## <a name="security-considerations"></a>Замечания по безопасности
+
 Добавив сертификат в [хранилища сертификатов локальной машины](https://msdn.microsoft.com/windows/hardware/drivers/install/local-machine-and-current-user-certificate-stores), вы меняете доверие сертификатов всех пользователей на компьютере. Рекомендуется удалить эти сертификаты, когда они больше не требуется, чтобы их невозможно было использовать для нарушения доверия системы.

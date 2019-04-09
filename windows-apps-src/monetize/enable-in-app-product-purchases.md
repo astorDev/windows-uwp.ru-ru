@@ -6,12 +6,12 @@ keywords: UWP, надстройки, покупки из приложения, I
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a203ef79fc6ebb45107cd9ac9d79cadf330f7a5d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9be40d78e00e583988ba8c6b318e7a8941d7f971
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604369"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334982"
 ---
 # <a name="enable-in-app-product-purchases"></a>Поддержка покупки продуктов из приложения
 
@@ -23,7 +23,7 @@ ms.locfileid: "57604369"
 > [!NOTE]
 > Внутренние продукты приложения не могут предлагаться в пробной версии. Пользователи пробной версии приложения смогут купить внутренний продукт приложения, только если приобретут полную версию этого приложения.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 -   Приложение для Windows, в которое предполагается добавить компоненты для продажи.
 -   Когда вы создадите код для продаж внутренних продуктов приложения и будете проверять его в первый раз, используйте объект [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) вместо объекта [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). В этом случае вы сможете проверить логику лицензирования путем имитации обращения к серверу лицензирования вместо вызова реального сервера. Чтобы сделать это, необходимо настроить файл с именем WindowsStoreProxy.xml в папку % userprofile %\\AppData\\локального\\пакетов\\&lt;имя пакета&gt;\\LocalState\\ Microsoft\\Windows Store\\ApiData. Имитатор Microsoft Visual Studio создает этот файл при первом запуске приложения. Также можно загрузить собственный его вариант во время выполнения. Дополнительные сведения см. в разделе [Использование файла WindowsStoreProxy.xml с CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
@@ -34,7 +34,7 @@ ms.locfileid: "57604369"
 Во время инициализации приложения получите для него объект [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) путем инициализации [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) или [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766), чтобы включить покупки внутренних продуктов приложения.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
+[!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
 
 ## <a name="step-2-add-the-in-app-offers-to-your-app"></a>Шаг 2. Добавление предложения в приложении в приложение
 
@@ -61,7 +61,7 @@ ms.locfileid: "57604369"
     Вот пример кода для возможности продукта под названием **featureName** в условном блоке лицензирования. Строка **featureName** — это маркер, однозначно определяющий этот продукт в приложении и в Магазине.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
+    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
 
 3.  **Добавление пользовательского интерфейса покупку для этой функции**
 
@@ -70,7 +70,7 @@ ms.locfileid: "57604369"
     В следующем примере показано, как проверить, есть ли у пользователя продукт, предлагаемый для продажи из приложения, и если нет, отобразить диалоговое окно покупки. Замените комментарий "показать диалоговое окно покупки" своим кодом для вызова диалогового окна (например, страницы с понятной кнопкой "Купить это приложение") .
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
+    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
 
 ## <a name="step-3-change-the-test-code-to-the-final-calls"></a>Шаг 3. Изменение кода теста, чтобы последний вызовы
 
@@ -83,13 +83,13 @@ ms.locfileid: "57604369"
   > [!NOTE]
   > Токен предложение в приложения, используемого в коде должен соответствовать [идентификатор продукта](../publish/set-your-add-on-product-id.md#product-id) значение, указываемое для соответствующей надстройки в центре партнеров.
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
 Если вы хотите предоставить пользователям возможность покупать потребляемые товары из приложения (элементы, которые можно приобрести, использовать, а затем по желанию приобрести еще раз), перейдите к разделу [Поддержка покупок потребляемых внутренних продуктов приложения](enable-consumable-in-app-product-purchases.md).
 
 Если вам нужны квитанции для подтверждения совершения пользователем покупки из приложения, ознакомьтесь с разделом [Проверка покупок продуктов с помощью квитанций](use-receipts-to-verify-product-purchases.md).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Поддержка покупки потребляемых внутренних продуктов приложений](enable-consumable-in-app-product-purchases.md)

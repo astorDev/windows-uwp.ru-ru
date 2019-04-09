@@ -6,12 +6,12 @@ ms.date: 01/25/2018
 ms.topic: article
 keywords: Windows 10, uwp, игры, Приступая к работе
 localizationpriority: medium
-ms.openlocfilehash: f818837a6f8703721520a8be8c0ed9b062cf797a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 596d0b1eb371fec98825b23a214683421e388506
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653559"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162659"
 ---
 # <a name="getting-started"></a>Начало работы
 
@@ -54,7 +54,7 @@ ms.locfileid: "57653559"
 
 Если требуется разработать игру Xbox или использовать в игре для Xbox Live пополнена join либо [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) или [ ID@Xbox ](https://www.xbox.com/Developers/id) программы. 
 
-Дополнительные сведения о функциях, Xbox Live, которые доступны для каждой из программ, см. в разделе [таблицы компонентов](../xbox-live/developer-program-overview.md#feature-table). Дополнительные сведения см. в разделе [программы для разработчиков](e2e.md#developer-programs).
+Дополнительные сведения о функциях, Xbox Live, которые доступны для каждой из программ, см. в разделе [таблицы компонентов](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#feature-table). Дополнительные сведения см. в разделе [программы для разработчиков](e2e.md#developer-programs).
 
 > [!Note]
 > Xbox Live Creators Program доступна для всех разработчиков. **Любой пользователь** можно опубликовать в игру на Xbox. Чтобы сделать заголовок части, которая Xbox Live Creators Program, необходимо просто включите этот параметр, из центра партнеров. Дополнительные сведения о регистрации для учетной записи центра партнеров, см. в разделе [шаг 5](#step-5-sign-up-for-a-partner-center-account) ниже.

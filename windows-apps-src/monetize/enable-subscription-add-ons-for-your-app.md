@@ -5,12 +5,12 @@ keywords: windows 10, uwp, подписки, надстройки, покупк�
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: b937ca61110452e233061179c398cae0d047686e
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589989"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335062"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Включение надстроек с подпиской для приложения
 
@@ -88,14 +88,14 @@ ms.locfileid: "57589989"
 4. Наконец, код вызывает метод [**RequestPurchaseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) для запроса приобретения подписки. Если доступна пробная версия подписки, она будет предложена пользователю для приобретения. В противном случае будет предложена полная версия подписки.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
+[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
 
 ### <a name="get-info-about-subscription-add-ons-for-the-current-app"></a>Получение информации о надстройках с подпиской для текущего приложения
 
 В этом примере кода показано, как получить сведения обо всех надстройках с подпиской, доступных в вашем приложении. Чтобы получить эти сведения, сначала используйте метод [**GetAssociatedStoreProductsAsync**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync), чтобы получить коллекцию объектов [**StoreProduct**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct), представляющих каждую из доступных надстроек для приложения. Затем получите [**StoreSku**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) для каждого продукта и используйте свойства [**IsSubscription**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.IsSubscription) и [**SubscriptionInfo**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.SubscriptionInfo) для доступа к сведениям о подписке.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
+[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
 
 <span id="manage-subscriptions" />
 
@@ -129,7 +129,7 @@ ms.locfileid: "57589989"
 * [Продажи](../publish/put-apps-and-add-ons-on-sale.md) и [рекламные коды](../publish/generate-promotional-codes.md) для надстроек с подпиской в настоящее время не поддерживаются.
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md)
 * [Получите сведения о продукте для приложения и надстройки](get-product-info-for-apps-and-add-ons.md)

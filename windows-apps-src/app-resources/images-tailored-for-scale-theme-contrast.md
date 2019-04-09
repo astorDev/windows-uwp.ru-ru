@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 57f8d7d57c016c015d01e80b07fc0e2c0260ef7f
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592029"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320617"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Загрузка изображений и ресурсов, адаптированных по масштабированию, теме, высокой контрастности и другим аспектам
 Приложение может загружать файлы ресурсов изображений (или другие файлы ресурсов), адаптированные по контексту [коэффициента масштабирования дисплея](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), темы, высокой контрастности и другим аспектам. На эти изображения можно ссылаться из императивного кода или разметки XAML, например в виде свойства **Source** объекта **Image**. Они также могут появляться в исходном файле манифеста пакета приложения (файле `Package.appxmanifest`) — например, в качестве значения для App Icon на вкладке Visual Assets в конструкторе манифеста Visual Studio — или на плитке и всплывающих уведомлениях. Используя квалификаторы в именах файлов изображений при необходимости динамической их загрузке с помощью [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), можно обеспечить загрузку наиболее подходящего файла изображения, который наилучшим образом соответствует параметрам среды выполнения пользователя для масштабирования дисплея, темы, высокой контрастности, языку и другим аспектам.
@@ -23,21 +23,27 @@ ms.locfileid: "57592029"
 ## <a name="qualify-an-image-resource-for-scale-theme-and-contrast"></a>Квалификация ресурса изображения по масштабу, теме и контрастности
 По умолчанию для квалификатора `scale` используется значение `scale-100`. Таким образом, эти два варианта эквивалентны (они предоставляют изображение в масштабе 100, то есть с коэффициентом масштабирования 1).
 
-```
+<blockquote>
+<pre>
 \Assets\Images\logo.png
 \Assets\Images\logo.scale-100.png
-```
+</pre>
+</blockquote>
+
 
 Можно использовать квалификаторы в именах папок вместо имен файлов. Это более подходящий метод, если у вас есть несколько файлов ресурсов для каждого квалификатора. Для наглядности ниже приведены еще два варианта, эквивалентные приведенным выше.
 
-```
+<blockquote>
+<pre>
 \Assets\Images\logo.png
 \Assets\Images\scale-100\logo.png
-```
+</pre>
+</blockquote>
 
 Далее приведен пример того, как можно предоставлять варианты ресурсов изображений — с именем `/Assets/Images/logo.png` — для различных параметров масштабирования дисплея, темы и высокой контрастности. В этом примере используется именование папки.
 
-```
+<blockquote>
+<pre>
 \Assets\Images\contrast-standard\theme-dark
     \scale-100\logo.png
     \scale-200\logo.png
@@ -47,7 +53,8 @@ ms.locfileid: "57592029"
 \Assets\Images\contrast-high
     \scale-100\logo.png
     \scale-200\logo.png
-```
+</pre>
+</blockquote>
 
 ## <a name="reference-an-image-or-other-asset-from-xaml-markup-and-code"></a>Ссылки на изображения и другие ресурсы из кода и разметки XAML
 Именем — или идентификатором — ресурса изображения является его путь и имя файла без каких-либо квалификаторов. Если вы назовете папки или файлы как в любом из примеров в предыдущем разделе, у вас будет один ресурс изображений, а его имя (как абсолютный путь) будет `/Assets/Images/logo.png`. Вот как использовать это имя в разметке XAML.
@@ -83,7 +90,8 @@ this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 
 Обратите внимание, как в кодах URI в этом примере за схемой (`ms-appx` или `ms-appx-web`) следует `://`, а далее указан абсолютный путь. В абсолютном пути начальный символ `/` обеспечивает его интерпретацию из корневого каталога пакета.
 
-**Примечание**. Схемы URI `ms-resource` (для [строковых ресурсов](localize-strings-ui-manifest.md)) и `ms-appx(-web)` (для изображений и других ресурсов) производят автоматическое сопоставление квалификаторов для обнаружения наиболее подходящего в текущем контексте ресурса. Схема URI `ms-appdata` (которая используется для загрузки данных приложения) не выполняет никакое автоматическое сопоставление, но вы можете реагировать на содержимое [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) и явно загружать соответствующие ресурсы из данных приложения, используя полное имя физического файла в URI. Подробнее о данных приложения: [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md). Веб-схемы URI (например, `http`, `https` и `ftp`) также не выполняют автоматическое сопоставление. Сведения о том, что делать в этом случае, см. в разделе [Размещение и загрузка изображений в облаке](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
+> [!NOTE]
+> `ms-resource` (Для [строковые ресурсы](localize-strings-ui-manifest.md)) и `ms-appx(-web)` (для изображений и других ресурсов) схемы URI сопоставления автоматического квалификатор для поиска ресурсов, который лучше всего подходит для текущего контекста. Схема URI `ms-appdata` (которая используется для загрузки данных приложения) не выполняет никакое автоматическое сопоставление, но вы можете реагировать на содержимое [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) и явно загружать соответствующие ресурсы из данных приложения, используя полное имя физического файла в URI. Подробнее о данных приложения: [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md). Веб-схемы URI (например, `http`, `https` и `ftp`) также не выполняют автоматическое сопоставление. Сведения о том, что делать в этом случае, см. в разделе [Размещение и загрузка изображений в облаке](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
 
 Абсолютные пути удобны, если файлы изображений остаются там, где они находятся в структуре проекта. Если вы хотите иметь возможность перемещать файл изображения, но следите за тем, чтобы он оставался в том же расположении относительно ссылающегося на него файла разметки XAML, то вместо абсолютного пути вам может потребоваться использовать путь, который задается относительно файла, содержащего разметку. Если применяется такой способ, использовать схему URI не требуется. В этом случае вы по-прежнему сможете использовать преимущества автоматического сопоставления квалификаторов, но только потому, что используете относительный путь в разметке XAML.
 
@@ -96,23 +104,29 @@ this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ## <a name="qualify-an-image-resource-for-targetsize"></a>Квалификация ресурса изображения по targetsize
 Можно использовать квалификаторы `scale` и `targetsize` для различных вариантов одного ресурса изображения, но нельзя использовать оба этих квалификатора для одного варианта ресурса. Также необходимо задать хотя бы один вариант без квалификатора `TargetSize`. Этот вариант должен либо определять значение для `scale`, либо разрешать использовать по умолчанию `scale-100`. Таким образом, эти два варианта ресурса `/Assets/Square44x44Logo.png` являются допустимыми.
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.scale-200.png
 \Assets\Square44x44Logo.targetsize-24.png
-```
+</pre>
+</blockquote>
 
 И эти два варианта допустимы. 
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.png // defaults to scale-100
 \Assets\Square44x44Logo.targetsize-24.png
-```
+</pre>
+</blockquote>
 
 Но этот вариант недопустим.
 
-```
+<blockquote>
+<pre>
 \Assets\Square44x44Logo.scale-200_targetsize-24.png
-```
+</pre>
+</blockquote>
 
 ## <a name="refer-to-an-image-file-from-your-app-package-manifest"></a>Ссылка на файл изображения из манифеста пакета приложения
 Если вы назовете папки или файлы как в любом из двух допустимых примеров в предыдущем разделе, у вас будет один ресурс изображения со значком приложения, а его имя (как относительный путь) будет `Assets\Square44x44Logo.png`. В манифесте пакета приложения просто приведите ссылку на ресурс по имени. Нет необходимости использовать какую-либо схему URI.
@@ -194,7 +208,7 @@ private void RefreshUIImages()
 * [ResourceContext.SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [Настроить ресурсы для языка, масштаба и квалификаторов](tailor-resources-lang-scale-contrast.md)
 * [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md)
 * [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md)

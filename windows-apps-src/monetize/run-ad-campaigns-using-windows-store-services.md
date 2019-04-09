@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, API рекламных акций Microsoft Store, рекламные кампании
 ms.localizationpriority: medium
-ms.openlocfilehash: 58325074a2f59dcd146a9534054b302b3ce9956b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e9b88c2aa4c16564d8b2708f54ed25e5d284b4c0
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619149"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334872"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Проведение рекламных кампаний с помощью служб Магазина
 
@@ -102,9 +102,9 @@ grant_type=client_credentials
 
 В следующем примере кода показано, как получить маркер доступа Azure AD и вызвать API промоакций Microsoft Store из консольного приложения C#. Чтобы использовать этот пример кода, назначьте переменным *tenantId*, *clientId*, *clientSecret* и *appID* соответствующие вашему сценарию значения. Для этого примера требуется [пакет Json.NET](https://www.newtonsoft.com/json) от Newtonsoft для десериализации JSON-данных, возвращаемых API промоакций Microsoft Store.
 
-[!code-cs[PromotionsApi](./code/StoreServicesExamples_Promotions/cs/Program.cs#PromotionsApiExample)]
+[!code-csharp[PromotionsApi](./code/StoreServicesExamples_Promotions/cs/Program.cs#PromotionsApiExample)]
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Управление рекламных кампаний](manage-ad-campaigns.md)
 * [Управление доставки строк для рекламных кампаний](manage-delivery-lines-for-ad-campaigns.md)

@@ -7,12 +7,12 @@ keywords: устройство, дигитайзер, ввод, взаимоде
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 2699917beed9330dd2044704f19b3c25256c3ca8
+ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602329"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343243"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Имитация ввода данных пользователем с помощью внедрения ввода
 
@@ -169,11 +169,11 @@ ms.locfileid: "57602329"
     
     В этом фрагменте кода мы объявляем глобальные объекты и прослушиватели событий указателя ([AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)) в области ввода мыши, которые могут быть отмечены как обработанные в событиях нажатия кнопок.
 
-    Объект [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) представляет виртуальное устройство ввода для отправки данных ввода.
+    Объект [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) представляет виртуальное устройство ввода для отправки данных ввода.
 
     В обработчике `ContainerInput_PointerPressed` мы вызываем функцию внедрения сенсорного ввода.
 
-    В обработчике `ContainerInput_PointerReleased` мы вызываем функцию UninitializeTouchInjection, чтобы завершить работу объекта [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector).
+    В обработчике `ContainerInput_PointerReleased` мы вызываем функцию UninitializeTouchInjection, чтобы завершить работу объекта [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector).
 
     ```csharp
     public sealed partial class MainPage : Page
@@ -250,7 +250,7 @@ ms.locfileid: "57602329"
     ```
 3. Вот функция внедрение сенсорного ввода.
 
-    Сначала мы вызываем функцию [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) для создания экземпляра объекта [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector).
+    Сначала мы вызываем функцию [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) для создания экземпляра объекта [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector).
 
     Затем мы вызываем [InitializeTouchInjection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection), где для [InjectedInputVisualizationMode](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode) указано значение `Default`.
 

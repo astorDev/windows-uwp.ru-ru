@@ -1,23 +1,23 @@
 ---
 description: В этом разделе показано, как регистрировать и отзывать делегаты обработки событий с помощью C++/WinRT.
 title: Обработка событий с помощью делегатов в C++/WinRT
-ms.date: 05/07/2018
+ms.date: 03/04/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, маркер, событие, делегат
 ms.localizationpriority: medium
-ms.openlocfilehash: 193d821b44722e150f38da7430504f5d528770a4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c647168f44ffbfc4d753700a87825b5ca7b28544
+ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602429"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921680"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Обработка событий с помощью делегатов в C++/WinRT
 
-В этом разделе показано, как для регистрации и отмены обработки событий делегатов, использующих [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Вы можете обрабатывать события с помощью любого стандартного подобного функции объекта C++.
+В этом разделе показано, как для регистрации и отмены обработки событий делегатов, использующих [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Вы можете обрабатывать события с помощью любого стандартного подобного функции объекта C++.
 
 > [!NOTE]
-> Сведения об установке и использовании C + +/ WinRT Visual Studio Extension (VSIX) (который предоставляет поддержка шаблонов проекта, а также C + +/ WinRT MSBuild свойства и целевые объекты) см. в разделе [поддержка Visual Studio для C + +/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Сведения об установке и использовании C++WinRT Visual Studio Extension (VSIX) и пакет NuGet (которые вместе обеспечивают шаблон проекта и поддержка сборки), см. в разделе [поддержка Visual Studio C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>Регистрация делегата для обработки события
 
@@ -51,7 +51,7 @@ MainPage::MainPage()
 > [!IMPORTANT]
 > При регистрации делегата, приведенном выше примере кода передает необработанного *это* указатель (с указанием текущего объекта). Чтобы узнать, как можно установить со строгим или слабую ссылку на текущий объект, см. в разделе **при использовании функции-члена в качестве делегата** подраздел в разделе [безопасного доступа к *это* указатель с помощью делегата, обрабатывающего события](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
-Существуют другие способы создания **RoutedEventHandler**. Ниже приведен блока синтаксиса, взятый из раздела документации для [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (выберите *C++/WinRT* из раскрывающегося списка **Language** на странице). Обратите внимание на различные конструкторы: один принимает лямбда-функцию; другой — свободную функцию, а третий (который мы использовали выше) принимает объект и указатель на функцию-член.
+Существуют другие способы создания **RoutedEventHandler**. Ниже приведен синтаксис блока, взятое из раздел документации для [ **RoutedEventHandler** ](/uwp/api/windows.ui.xaml.routedeventhandler) (выберите  *C++/WinRT* из **языка** раскрывающееся меню в правом верхнем углу веб-страницы). Обратите внимание на различные конструкторы: один принимает лямбда-функцию; другой — свободную функцию, а третий (который мы использовали выше) принимает объект и указатель на функцию-член.
 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
@@ -67,7 +67,25 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 
 Также полезно ознакомиться с синтаксисом оператора вызова функции. Вы узнаете, какими должны быть параметры делегата. Как видно, в этом случае синтаксис оператора вызова функции соответствует параметра нашего **MainPage::ClickHandler**.
 
-Если вы не делаете большого объема работы в своем обработчике событий, можно использовать лямбда-функцию вместо функции-члена. И снова, это может быть неочевидно из примера кода, представленного ниже, но делегат **RoutedEventHandler** создается из лямбда-функции, которая в свою очередь должна соответствовать синтаксису оператора вызова функции.
+> [!NOTE]
+> Любое указанное событие чтобы понять аспекты своего делегата, а также параметры этого делегата, см. в статье первый раздел документации для самого события. Давайте [UIElement.KeyDown событий](/uwp/api/windows.ui.xaml.uielement.keydown) в качестве примера. Посетите этот раздел и выберите  *C++/WinRT* из **языка** раскрывающегося списка. В блоке синтаксиса в начале этого раздела вы увидите следующее.
+> 
+> ```cppwinrt
+> // Register
+> event_token KeyDown(KeyEventHandler const& handler) const;
+> ```
+>
+> Что info указывает, что **UIElement.KeyDown** событий (раздел, мы готовим выпуск) с типом делегата **KeyEventHandler**, так как этот тип, который передается при регистрации делегата события этого типа. Итак, теперь перейдите по ссылке на тему, [KeyEventHandler делегат](/uwp/api/windows.ui.xaml.input.keyeventhandler) типа. Здесь блок синтаксис содержит оператор вызова функции. И, как упоминалось выше, сообщающее, что должны быть параметры делегата.
+> 
+> ```cppwinrt
+> void operator()(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+> ```
+>
+>  Как вы видите, делегат должен объявляться вступили **IInspectable** как отправителя и экземпляр [KeyRoutedEventArgs класс](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) как аргументы.
+>
+> Чтобы воспользоваться другой пример, давайте взглянем на [Popup.Closed событий](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed). Его тип делегата — [EventHandler\<IInspectable\>](/uwp/api/windows.foundation.eventhandler). Таким образом, вступят в делегате **IInspectable** как отправителя, а другой **IInspectable** (так как это **EventHandler**параметр типа) как аргументы.
+
+Если вы не делаете большого объема работы в своем обработчике событий, можно использовать лямбда-функцию вместо функции-члена. Опять же, он может оказаться сложной в примере кода ниже, но **RoutedEventHandler** делегат состоит из лямбда-функции, которая, опять же, должна соответствует синтаксису оператор вызова функции, который рассматривался выше.
 
 ```cppwinrt
 MainPage::MainPage()
@@ -122,7 +140,7 @@ private:
 };
 ```
 
-Вместо строгую ссылку, как показано в примере выше, можно хранить слабую ссылку на кнопку (см. в разделе [сильного и слабого узлов ссылок в C + +/ WinRT](weak-references.md)).
+Вместо строгую ссылку, как показано в примере выше, можно хранить слабую ссылку на кнопку (см. в разделе [сильные и слабые ссылки в C++/WinRT](weak-references.md)).
 
 Кроме того, при регистрации делегата, можно указать **winrt::auto_revoke** (которое является значением типа [ **winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) для запроса событий revoker ( Тип [ **winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)). Revoker событий содержит слабую ссылку на источник события (объект, вызывающий событие) для вас. Вы можете вручную отозвать событие, вызвав функцию-член **event_revoker::revoke**; но объект отзыва события вызывает эту функцию автоматически при выходе за пределы области действия. Функция **revoke** проверяет, существует ли источник события, и, если это так, отзывает ваш делегат. В этом примере нет необходимости хранить источник событий, а также не требуется деструктор.
 
@@ -230,14 +248,14 @@ winrt::hstring f(ListView listview)
 
 ## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>Безопасного доступа к *это* указатель с помощью делегата, обрабатывающего события
 
-Если вы обрабатываете события с помощью функции-члена объекта или из внутри лямбда-функции внутри функции-члена объекта затем вам нужно подумать о относительного времени существования получателя событий (объект, обрабатывающий событие) и источник события (объект порождает событие). Дополнительные сведения и примеры кода см. в разделе [сильного и слабого узлов ссылок в C + +/ WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+Если вы обрабатываете события с помощью функции-члена объекта или из внутри лямбда-функции внутри функции-члена объекта затем вам нужно подумать о относительного времени существования получателя событий (объект, обрабатывающий событие) и источник события (объект порождает событие). Дополнительные сведения и примеры кода см. в разделе [сильные и слабые ссылки в C++/WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
 ## <a name="important-apis"></a>Важные API
 * [Структура маркера WinRT::auto_revoke_t](/uwp/cpp-ref-for-winrt/auto-revoke-t)
-* [функция WinRT::Implements::get_weak](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
-* [функция WinRT::Implements::get_strong](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
+* [Функция winrt::implements::get_weak](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
+* [Функция winrt::implements::get_strong](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
-## <a name="related-topics"></a>Статьи по теме
-* [Создание событий в C + +/ WinRT](author-events.md)
-* [Параллелизм и асинхронные операции с использованием C + +/ WinRT](concurrency.md)
+## <a name="related-topics"></a>См. также
+* [Создание событий в C++/WinRT](author-events.md)
+* [Параллельная обработка и асинхронные операции с помощью C++/WinRT](concurrency.md)
 * [Сильные и слабые ссылки в C++/WinRT](weak-references.md)

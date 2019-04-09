@@ -6,15 +6,14 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e5ba10b8f0480f4d996840df26817e324111d8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: c2f2638e93ecbe346cc5dccb503d94d926ddcdae
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613119"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58335152"
 ---
 # <a name="create-and-manage-submissions"></a>Создание отправок и управление ими
-
 
 Используйте *API отправки Microsoft Store* авиарейсов для программно запроса и создания отправки для приложений, надстроек и пакетов для вашего разрешения или разрешения центра партнеров учетной записи организации. Этот API-интерфейс удобно использовать, если под вашей учетной записью выполняется управление большим количеством приложений или надстроек и вам необходимо оптимизировать процесс отправки для этих ресурсов. Для проверки подлинности вызовов из приложения или службы в этом интерфейсе используется служба Azure Active Directory (Azure AD).
 
@@ -82,7 +81,7 @@ ms.locfileid: "57613119"
 
 Для получения маркера доступа следуйте инструкциям в разделе [Вызовы между службами с помощью учетных данных клиентов](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/), чтобы отправить HTTP-запрос POST в конечную точку ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Ниже приведен пример запроса.
 
-```
+```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
@@ -133,9 +132,9 @@ grant_type=client_credentials
 
 Дополнительные сведения см. на нашей [странице StoreBroker на сайте GitHub](https://aka.ms/storebroker).
 
-## <a name="troubleshooting"></a>Поиск и устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
-| Проблема      | Разрешение                                          |
+| Проблемы      | Разрешение                                          |
 |---------------|---------------------------------------------|
 | После вызова API отправки в Microsoft Store из PowerShell данные ответа для API повреждаются при их преобразовании из формата JSON в объект PowerShell с помощью командлета [ConvertFrom-Json](https://technet.microsoft.com/library/hh849898.aspx) и обратно в формат JSON с помощью командлета [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx). |  По умолчанию параметру *-Depth* для командлета [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) задано значение 2 уровней объектов, которое является слишком плоским для большинства объектов JSON, возвращаемых API отправки в Microsoft Store. При вызове командлета [ConvertTo Json](https://technet.microsoft.com/library/hh849922.aspx) задайте параметру *-Depth* более высокое значение (например, 20). |
 
@@ -146,7 +145,7 @@ grant_type=client_credentials
 * Задайте вопрос на наших [форумах](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit).
 * Посетите наш [страница службы технической поддержки](https://developer.microsoft.com/windows/support) и запросить один из вариантов оказания поддержки для центра партнеров. Если вам будет предложено выбрать тип проблемы и категорию, выберите **Отправка и сертификация приложения** и **Отправка приложения** соответственно.  
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Получение данных приложения](get-app-data.md)
 * [Управление отправкой приложения](manage-app-submissions.md)

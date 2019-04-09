@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 397c1d3a1502eaa352bf66b1bbf24e3fa39beff2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 0a772c0ec6aad2c0d6a099b54eb4c6faa413cc7b
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593059"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913944"
 ---
 # <a name="item-templates-for-list-view"></a>Шаблоны элементов для представления списка
 
@@ -19,13 +19,13 @@ ms.locfileid: "57593059"
 Чтобы продемонстрировать привязку данных, эти шаблоны должны быть привязаны **ListViewItems** к классу пример записи из [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md).
 
 > [!NOTE] 
-В настоящее время если тип **DataTemplate** содержит несколько элементов управления (например, больше, чем один элемент **TextBlock**), специальное имя по умолчанию для программ чтения с экрана берется из свойства .ToString() элемента. Для удобства можно задать имя [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) в корневом элементе шаблона **DataTemplate**. Дополнительные сведения о специальных возможностях см. в разделе [Обзор специальных возможностей](../accessibility/accessibility-overview.md).
+> В настоящее время если тип **DataTemplate** содержит несколько элементов управления (например, больше, чем один элемент **TextBlock**), специальное имя по умолчанию для программ чтения с экрана берется из свойства .ToString() элемента. Для удобства можно задать имя [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) в корневом элементе шаблона **DataTemplate**. Дополнительные сведения о специальных возможностях см. в разделе [Обзор специальных возможностей](../accessibility/accessibility-overview.md).
 
 ## <a name="single-line-list-item"></a>Однострочный элемент списка
 Этот шаблон используется для отображения списка элементов, состоящих из изображения и одной текстовой строки.
 
-![Пример элемента списка в одной строке](images/listitems/singlelineexample.png)
-![одной строки элемента списка](images/listitems/singlelineicon.png)
+![пример однострочного элемента списка](images/listitems/singlelineexample.png)
+![однострочный элемент списка](images/listitems/singlelineicon.png)
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
     <ListView.ItemTemplate>
@@ -42,8 +42,8 @@ ms.locfileid: "57593059"
 ## <a name="double-line-list-item"></a>Двухстрочный элемент списка 
 Этот шаблон используется для отображения списка элементов, состоящих из изображения и двух текстовых строк.
 
-![двойная линия элемента списка с примером значок](images/listitems/doublelineexample.png) 
-![элемента списка двойная линия со значком](images/listitems/doublelineicon.png)
+![пример двухстрочного элемента списка со значком](images/listitems/doublelineexample.png) 
+![двухстрочный элемент списка со значком](images/listitems/doublelineicon.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -68,8 +68,8 @@ ms.locfileid: "57593059"
 ## <a name="triple-line-list-item"></a>Трехстрочный элемент списка
 Этот шаблон используется для отображения списка элементов, состоящих из изображения и трех текстовых строк.
 
-![Пример элемента списка тройной строки](images/listitems/triplelineexample.png)
-![три строки элемента списка](images/listitems/tripleline.png)
+![пример трехстрочного элемента списка](images/listitems/triplelineexample.png)
+![трехстрочный элемент списка](images/listitems/tripleline.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -131,6 +131,6 @@ ms.locfileid: "57593059"
 ## <a name="related-articles"></a>Связанные статьи
 - [Класс ListView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
 - [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md)
-- [Общие сведения о Accessibililty](../accessibility/accessibility-overview.md)
-- [Пример ListView и GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Обзор специальных возможностей](../accessibility/accessibility-overview.md)
+- [Пример элементов ListView и GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Эскизы](../../files/thumbnails.md)

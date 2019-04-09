@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, игры, разработка игр
 ms.localizationpriority: medium
-ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ca3ed91d7250425b9a77fb09820a53952c8f3cfc
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57652329"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162739"
 ---
 # <a name="windows-10-game-development-guide"></a>Руководство по разработке игр для Windows 10
 
@@ -50,7 +50,7 @@ ms.locfileid: "57652329"
     </colgroup>
     <tr>
         <td>Главный портал Центра разработки для Windows</td>
-        <td><a href="https://dev.windows.com">Центр разработчиков Windows</a></td>
+        <td><a href="https://dev.windows.com">Центр разработки для Windows</a></td>
     </tr>
     <tr>
         <td>Разработка приложений для Windows</td>
@@ -86,7 +86,7 @@ ms.locfileid: "57652329"
     </tr>
     <tr>
         <td>Документация по Xbox Live</td>
-        <td><a href="../xbox-live/index.md">Руководство разработчика Xbox Live</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/">Руководство разработчика Xbox Live</a></td>
     </tr>
     <tr>
         <td>Документация для разработчиков по Xbox One (XGD)</td>
@@ -186,7 +186,7 @@ ms.locfileid: "57652329"
     </tr>
     <tr>
         <td>Примеры графики Direct3D 11</td>
-        <td><a href="https://github.com/walbourn/directx-sdk-samples">Примеры для пакета sdk DirectX</a></td>
+        <td><a href="https://github.com/walbourn/directx-sdk-samples">directx-sdk-samples</a></td>
     </tr>
     <tr>
         <td>Пример игры Direct3D 11 от первого лица</td>
@@ -428,7 +428,7 @@ DirectX 12 работает быстрее и эффективнее любой 
         <td><a href="directx-programming.md">Программирование DirectX</a></td>
     </tr>
     <tr>
-        <td>Руководство: Как создать игру DirectX для универсальной платформы Windows</td>
+        <td>Учебник. Как создать игру DirectX для универсальной платформы Windows</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">Создание простой игры UWP c использованием DirectX</a></td>
     </tr>
     <tr>
@@ -517,7 +517,7 @@ C++/CX — это высокопроизводительный язык небо
     </colgroup>
     <tr>
         <td>Обзоры и справочник по C++/CX</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/hh699871.aspx">Справочник по языку C++ (C + +/ CX)</a></td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/hh699871.aspx">Visual C++ Справочник по языку (C++/CX)</a></td>
     </tr>
     <tr>
         <td>Справочник и руководство по программированию для Visual C++</td>
@@ -1018,7 +1018,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Использование существующего кода C++ для разработки игр UWP</td>
-        <td><a href="https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app">Инструкции: Использование существующего кода C++ в приложении UWP</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app">Практическое руководство. Использование существующего кода C++ в приложении UWP</a></td>
     </tr>
     <tr>
         <td>API-интерфейсы UWP для API-интерфейсов Win32 и COM</td>
@@ -1103,7 +1103,7 @@ BabylonJS — это комплексная платформа JavaScript для
 </table>
  
 
-#### <a name="typography"></a>Шрифтовое оформление
+#### <a name="typography"></a>Оформление
 
 Правильное применение оформления текста улучшает многие аспекты игры, в частности макет пользовательского интерфейса, навигацию, читаемость, атмосферу, фирменный стиль и погружение игрока.
 
@@ -1130,7 +1130,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Руководство по карте пользовательского интерфейса</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">Советы и рекомендации: Карты пользовательского интерфейса</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">Советы и рекомендации: UI Map</a></td>
     </tr>
 </table>
 
@@ -1183,7 +1183,7 @@ BabylonJS — это комплексная платформа JavaScript для
         <td><a href="directx-programming.md">Программирование DirectX</a></td>
     </tr>
     <tr>
-        <td>Руководство: Как создать игру DirectX для универсальной платформы Windows</td>
+        <td>Учебник. Как создать игру DirectX для универсальной платформы Windows</td>
         <td><a href="tutorial--create-your-first-uwp-directx-game.md">Создание простой игры UWP c использованием DirectX</a></td>
     </tr>
     <tr>
@@ -1742,7 +1742,7 @@ BabylonJS — это комплексная платформа JavaScript для
 Xbox Live — это высококлассная игровая сеть, которая объединяет миллионы игроков по всему миру. Разработчики получают доступ к функциям Xbox Live, способным обеспечить органический рост аудитории игры — например, присутствию на Xbox Live, спискам лидеров, облачным сохранениям, центрам игр, клубам, командным чатам, DVR для игр, и др.
 
 > [!Note]
-> Если вы хотите создавать игры с поддержкой Xbox Live, вам доступно несколько вариантов. Сведения о различных приложений см. в разделе [Обзор программ для разработчиков](../xbox-live/developer-program-overview.md).
+> Если вы хотите создавать игры с поддержкой Xbox Live, вам доступно несколько вариантов. Сведения о различных приложений см. в разделе [Обзор программ для разработчиков](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview).
 
 <table>
     <colgroup>
@@ -1751,19 +1751,19 @@ Xbox Live — это высококлассная игровая сеть, ко�
     </colgroup>
     <tr>
         <td>Обзор Xbox Live</td>
-        <td><a href="../xbox-live/index.md">Руководство разработчика Xbox Live</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/index.md">Руководство разработчика Xbox Live</a></td>
     </tr>
     <tr>
         <td>Описание функций, доступных в разных программах</td>
-        <td><a href="../xbox-live/developer-program-overview.md#feature-table">Обзор программы для разработчиков. Таблицы компонентов</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">Обзор программы для разработчиков. Таблицы компонентов</a></td>
     </tr>
     <tr>
         <td>Ссылки на полезные ресурсы для разработки игр для Xbox Live</td>
-        <td><a href="../xbox-live/xbox-live-resources.md">Ресурсы, Xbox Live</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/xbox-live-resources.md">Ресурсы, Xbox Live</a></td>
     </tr>
     <tr>
         <td>Получение данных от служб Xbox Live</td>
-        <td><a href="../xbox-live/introduction-to-xbox-live-apis.md">Введение в Xbox Live API-интерфейсов</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/introduction-to-xbox-live-apis.md">Введение в Xbox Live API-интерфейсов</a></td>
     </tr>
 </table>
 
@@ -1777,23 +1777,23 @@ Xbox Live — это высококлассная игровая сеть, ко�
     </colgroup>
     <tr>
         <td>Обзор</td>
-        <td><a href="../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Начало работы с Xbox Live Creators Program</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md">Начало работы с Xbox Live Creators Program</a></td>
     </tr>
     <tr>
         <td>Добавление Xbox Live в игру</td>
-        <td><a href="../xbox-live/get-started-with-creators/creators-step-by-step-guide.md">Пошаговое руководство по интеграции Xbox Live Creators Program</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/creators-step-by-step-guide.md">Пошаговое руководство по интеграции Xbox Live Creators Program</a></td>
     </tr>
     <tr>
         <td>Добавление Xbox Live в игру UWP, созданную с помощью Unity</td>
-        <td><a href="../xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">Приступайте к разработке title Xbox Live Creators Program игровое ядро Unity</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/develop-creators-title-with-unity.md">Приступайте к разработке title Xbox Live Creators Program игровое ядро Unity</a></td>
     </tr>
     <tr>
         <td>Создание песочницы для разработки</td>
-        <td><a href="../xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Общие сведения о "песочницы" Xbox Live</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md">Общие сведения о "песочницы" Xbox Live</a></td>
     </tr>
     <tr>
         <td>Настройка учетных записей для тестирования</td>
-        <td><a href="../xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">Авторизация учетных записей на Xbox Live в тестовой среде</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md">Авторизация учетных записей на Xbox Live в тестовой среде</a></td>
     </tr>
     <tr>
         <td>Примеры для Xbox Live Creators Program</td>
@@ -1814,19 +1814,19 @@ Xbox Live — это высококлассная игровая сеть, ко�
     </colgroup>
     <tr>
         <td>Обзор</td>
-        <td><a href="../xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">Начало работы с Xbox Live в качестве управляемого участника или разработчик идентификатор</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md">Начало работы с Xbox Live в качестве управляемого участника или разработчик идентификатор</a></td>
     </tr>
     <tr>
         <td>Добавление Xbox Live в игру</td>
-        <td><a href="../xbox-live/get-started-with-partner/partners-step-by-step-guide.md">Пошаговое руководство по интеграции Xbox Live для управляемых партнеров и идентификатор членов</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partners-step-by-step-guide.md">Пошаговое руководство по интеграции Xbox Live для управляемых партнеров и идентификатор членов</a></td>
     </tr>
     <tr>
         <td>Добавление Xbox Live в игру UWP, созданную с помощью Unity</td>
-        <td><a href="../xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">Добавление Xbox Live поддержки к Unity для универсальной платформы Windows с помощью сценариев серверной части IL2CPP для управляемых партнеров и идентификатор</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md">Добавление Xbox Live поддержки к Unity для универсальной платформы Windows с помощью сценариев серверной части IL2CPP для управляемых партнеров и идентификатор</a></td>
     </tr>
     <tr>
         <td>Создание песочницы для разработки</td>
-        <td><a href="../xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">Расширенные Xbox Live "песочницы"</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md">Расширенные Xbox Live "песочницы"</a></td>
     </tr>
     <tr>
         <td>Требования к играм, использующим Xbox Live (GDN)</td>

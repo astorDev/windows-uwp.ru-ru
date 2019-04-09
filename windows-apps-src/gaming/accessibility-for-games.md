@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: windows 10, uwp, специальные возможности, игры
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1d9d25fc63dd2fbb8d258fdaee692ccdfdc911
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 38060d0a6bead360ef8a682902a433670c79b495
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592939"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162782"
 ---
 #  <a name="making-games-accessible"></a>Создание игр со специальными возможностями
 
@@ -196,7 +196,7 @@ ms.locfileid: "57592939"
 
 Так люди, которые играют на устройстве без микрофона, все равно смогут общаться с теми, у кого есть возможность говорить. Они смогут вводить текст в окно чата, и эти сообщения будут преобразовываться в речь. Это также даст возможность людям, которые не очень хорошо слышат, читать транскрибированные текстовые сообщения от человека, с которым они разговаривают в чате.
 
-Для разработчиков, участвующих в программе ID@Xbox и программе управляемых партнеров, функции преобразования текста в речь и речи в текст доступны в составе [специальных возможностей Game Chat 2](../xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) в службе Xbox Live. Дополнительные сведения см. в разделе [Общие сведения о Game Chat 2](../xbox-live/multiplayer/chat/game-chat-2-overview.md).
+Для разработчиков, участвующих в программе ID@Xbox и программе управляемых партнеров, функции преобразования текста в речь и речи в текст доступны в составе [специальных возможностей Game Chat 2](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/using-game-chat-2.md#accessibility) в службе Xbox Live. Дополнительные сведения см. в разделе [Общие сведения о Game Chat 2](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/game-chat-2-overview.md).
 
 ### <a name="sound-feedback"></a>Звуковая обратная связь
 
@@ -268,7 +268,7 @@ ms.locfileid: "57592939"
 * [Внедрение инноваций для все следующие программы:](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
 * [Epilepsy foundation](https://www.epilepsy.com/)
 
-## <a name="related-links"></a>Дополнительные ссылки
+## <a name="related-links"></a>Связанные ссылки
 * [Инклюзивные разработки](https://www.microsoft.com/design/inclusive)
 * [Центр разработки специальных возможностей корпорации Майкрософт](https://developer.microsoft.com/windows/accessible-apps)
 * [Разработка приложений универсальной платформы Windows со специальными возможностями](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)

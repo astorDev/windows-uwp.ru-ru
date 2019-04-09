@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 691ce1cc0c49154142a52f329af6f2a1df4ae027
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: d07a90ce34e9b4613eed6782338cbd889d7935c9
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591529"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58081876"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Гибкие макеты в XAML
 
@@ -61,7 +61,7 @@ Column_4 | **2**\* | После вычисления значений ширин
         <ColumnDefinition Width="44"/>
         <ColumnDefinition Width="2*"/>
     </Grid.ColumnDefinitions>
-    <TextBlock Text="Column 1 sizes to its conent." FontSize="24"/>
+    <TextBlock Text="Column 1 sizes to its content." FontSize="24"/>
 </Grid>
 ```
 
@@ -391,7 +391,7 @@ else
 
 Вы также можете использовать другие критерии, чтобы определить, на какую страницу перейти. Дополнительные примеры см. в примере [Несколько специально разработанных представлений](https://go.microsoft.com/fwlink/p/?LinkId=620636), в котором используется функция [**GetIntegratedDisplaySize**](https://msdn.microsoft.com/library/windows/apps/xaml/dn904185.aspx) для проверки физического размера встроенного дисплея.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 - [Учебник. Создание адаптивной макетов](../basics/xaml-basics-adaptive-layout.md)
 - [Пример приемов скорость реагирования (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)
 - [Пример состояния триггеров (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)

@@ -2,16 +2,16 @@
 Description: Управление и просмотреть подробные сведения, связанные с каждого из ваших приложений в центре партнеров, а также указать службы, такие как A / B, тестирование и сопоставляет.
 title: Управление приложениями и службы
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
-ms.date: 10/31/2018
+ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6261a7cce86c82b4865d7ca1d68c082cba9ccca
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: ba28fb49accc213f570e470142e259c08122b704
+ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610009"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58334582"
 ---
 # <a name="app-management-and-services"></a>Управление приложениями и службы
 
@@ -27,7 +27,7 @@ ms.locfileid: "57610009"
 
 Если вы публикуете игру, вы можете включить [Xbox Live Creators Program](https://xbox.com/developers/creators-program) на этой странице. Это позволяет начать настройку и тестирование возможностей Xbox Live и последующей публикации игры для Xbox Live Creators Program.
 
-Дополнительные сведения см. в разделе [приступить к работе с Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) и [создавать новый заголовок Xbox Live Creators Program и публиковать в тестовую среду](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
+Дополнительные сведения см. в разделе [приступить к работе с Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) и [создавать новый заголовок Xbox Live Creators Program и публиковать в тестовую среду](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title).
 
 ## <a name="experimentation"></a>Эксперименты
 

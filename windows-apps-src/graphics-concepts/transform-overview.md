@@ -6,15 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a01814729e38668e05201b4b7c8876dc150c488e
+ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640149"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58291772"
 ---
 # <a name="transform-overview"></a>Обзор преобразований
-
 
 Большая часть низкоуровневых математических вычислений в 3D-графике приходится на матричные преобразования.
 
@@ -63,7 +62,7 @@ ms.locfileid: "57640149"
 
 На C++ в Direct3D матрицы объявляются в виде двумерного массива, с использованием матричной структуры. В следующем примере показано, как инициализировать структуру [**D3DMATRIX**](https://msdn.microsoft.com/library/windows/desktop/bb172573), которая будет играть роль матрицы пропорционального масштабирования (коэффициент масштабирования "s").
 
-```
+```cpp
 D3DMATRIX scale = {
     5.0f,            0.0f,            0.0f,            0.0f,
     0.0f,            5.0f,            0.0f,            0.0f,
@@ -81,7 +80,7 @@ D3DMATRIX scale = {
 
 Матрицу параллельного переноса можно вручную создать в C++. В следующем примере показан исходный код для функции, которая создает матрицу для параллельного переноса вершин.
 
-```
+```cpp
 D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
     D3DXMATRIX ret;
 
@@ -121,7 +120,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 
 В следующем коде показана функция для обработки поворота вокруг оси X.
 
-```
+```cpp
     // Inputs are a pointer to a matrix (pOut) and an angle in radians.
     float sin, cos;
     sincosf(angle, &sin, &cos);  // Determine sin and cos of angle

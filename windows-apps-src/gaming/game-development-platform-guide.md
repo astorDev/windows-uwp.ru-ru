@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, технологии, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 53616e572be6051d096c095f9587c498b769a6af
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1c5c6bb9bc2dadc89811c18c0aa844b899e52cf1
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623309"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58162709"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>Технологии игр для приложений UWP
 
@@ -323,7 +323,7 @@ ms.locfileid: "57623309"
 
 [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) дает разработчику возможность интегрировать Xbox Live в свои игры на универсальной платформы Windows и публикации на Xbox One и Windows 10. Интегрируйте социальные возможности Xbox Live, такие как вход в систему, сведения о присутствии, списки лидеров и т. д., в вашу игру с минимальными усилиями. Социальные функции Xbox Live помогают органичным образом расширить вашу аудиторию, сообщая о вашей игре более чем 55 миллионам активных пользователей.
 
-Если вы хотите получить доступ к еще большим возможностям Xbox Live, находиться в основном магазине Xbox One или получать специальную маркетинговую поддержку и поддержку при разработке, примите участие в программе [ID@Xbox](https://www.xbox.com/developers/id). Сведения о функциях, доступных в программах Xbox Live Creators Program и ID@Xbox, см. в разделе [Таблица функций](../xbox-live/developer-program-overview.md#feature-table).
+Если вы хотите получить доступ к еще большим возможностям Xbox Live, находиться в основном магазине Xbox One или получать специальную маркетинговую поддержку и поддержку при разработке, примите участие в программе [ID@Xbox](https://www.xbox.com/developers/id). Сведения о функциях, доступных в программах Xbox Live Creators Program и ID@Xbox, см. в разделе [Таблица функций](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#feature-table).
 
 Дополнительные сведения см. разделе [Добавление Xbox Live в игру](e2e.md#adding-xbox-live-to-your-game).
 

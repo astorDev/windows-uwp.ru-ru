@@ -2,16 +2,16 @@
 title: Данные реестра для игровых устройств управления
 description: Узнайте о данных, которые можно добавить в реестр компьютера, чтобы игровые устройства управления можно было использовать в играх UWP.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.date: 06/25/2018
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp, игры, ввод, реестр, настройка
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5578faeb5a35ae909e590741de759c2597b9c7ed
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633609"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244400"
 ---
 # <a name="registry-data-for-game-controllers"></a>Данные реестра для игровых устройств управления
 
@@ -33,7 +33,7 @@ ms.locfileid: "57633609"
         <th>Имя</th>
         <th>Тип</th>
         <th>Требуется?</th>
-        <th>Сведения</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>Отключено</td>
@@ -66,7 +66,7 @@ ms.locfileid: "57633609"
     <tr>
         <th>Подраздел</th>
         <th>Требуется?</th>
-        <th>Сведения</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>Меню</td>
@@ -78,7 +78,7 @@ ms.locfileid: "57633609"
         <td>Да</td>
     </tr>
     <tr>
-        <td>A</td>
+        <td>Объект</td>
         <td>Да</td>
     </tr>
     <tr>
@@ -179,7 +179,7 @@ ms.locfileid: "57633609"
     <tr>
         <th>Подраздел</th>
         <th>Требуется?</th>
-        <th>Сведения</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>PreviousGear</td>
@@ -338,7 +338,7 @@ ms.locfileid: "57633609"
     <tr>
         <th>Подраздел</th>
         <th>Требуется?</th>
-        <th>Сведения</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>Action1</td>
@@ -399,7 +399,7 @@ ms.locfileid: "57633609"
     <tr>
         <th>Подраздел</th>
         <th>Требуется?</th>
-        <th>Сведения</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>FirePrimary</td>
@@ -442,7 +442,7 @@ ms.locfileid: "57633609"
     <tr>
         <th>Подраздел</th>
         <th>Требуется?</th>
-        <th>Сведения</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>Меню</td>
@@ -555,14 +555,14 @@ ms.locfileid: "57633609"
 
 <table>
     <tr>
-        <th>Источник</th>
+        <th>Исходный код</th>
         <th>Значение</th>
         <th>Тип значения</th>
         <th>Требуется?</th>
         <th>Сведения о значении</th>
     </tr>
     <tr>
-        <td>Button</td>
+        <td>Кнопка</td>
         <td>ButtonIndex</td>
         <td>DWORD</td>
         <td>Да</td>
@@ -597,7 +597,7 @@ ms.locfileid: "57633609"
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Переключатель</td>
+        <td rowspan="3" style="vertical-align: middle;">Параметр</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Да</td>
@@ -610,13 +610,13 @@ ms.locfileid: "57633609"
         <td>
             <p>Указывает положение переключателя, в котором сопоставленная кнопка сообщит о нажатии. Значением положений может быть одна из этих строк:</p>
             <ul>
-                <li>Вверх</li> 
+                <li>Вверх</li>
                 <li>UpRight</li>
-                <li>Вправо</li>
+                <li>Справа</li>
                 <li>DownRight</li>
                 <li>Вниз</li>
                 <li>DownLeft</li>
-                <li>Влево</li>
+                <li>Слева</li>
                 <li>UpLeft</li>
             </ul>
         </td>
@@ -635,14 +635,14 @@ ms.locfileid: "57633609"
 
 <table>
     <tr>
-        <th>Источник</th>
+        <th>Исходный код</th>
         <th>Значение</th>
         <th>Тип значения</th>
         <th>Требуется?</th>
         <th>Сведения о значении</th>
     </tr>
     <tr>
-        <td rowspan="2" style="vertical-align: middle;">Button</td>
+        <td rowspan="2" style="vertical-align: middle;">Кнопка</td>
         <td>MaxValueButtonIndex</td>
         <td>DWORD</td>
         <td>Да</td>
@@ -713,7 +713,7 @@ ms.locfileid: "57633609"
         <td>Указывает, что сопоставленное значение оси следует инвертировать перед возвратом.</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Переключатель</td>
+        <td rowspan="3" style="vertical-align: middle;">Параметр</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Да</td>
@@ -728,11 +728,11 @@ ms.locfileid: "57633609"
             <ul>
                 <li>Вверх</li>
                 <li>UpRight</li>
-                <li>Вправо</li>
+                <li>Справа</li>
                 <li>DownRight</li>
                 <li>Вниз</li>
                 <li>DownLeft</li>
-                <li>Влево</li>
+                <li>Слева</li>
                 <li>UpLeft</li>
             </ul>
             <p>Указывает положение переключателя, в котором сопоставленное значение оси отображается как равное 1,0. Противоположное направление <b>MaxValueSwitchPosition</b> считается равным 0,0. Например, если значение <b>MaxValueSwitchPosition</b> равно <b>Up</b>, значение оси преобразуется, как показано ниже:</p>
@@ -806,13 +806,13 @@ ms.locfileid: "57633609"
 
 <table>
     <tr>
-        <th>Источник</th>
+        <th>Исходный код</th>
         <th>Значение</th>
         <th>Тип значения</th>
         <th>Сведения о значении</th>
     </tr>
     <tr>
-        <td rowspan="10" style="vertical-align: middle;">Button</td>
+        <td rowspan="10" style="vertical-align: middle;">Кнопка</td>
         <td>ButtonCount</td>
         <td>DWORD</td>
         <td>2, 4 или 8</td>
@@ -820,7 +820,7 @@ ms.locfileid: "57633609"
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>, <b>FourWay</b>, или <b>EightWay</b>
+        <td><b>TwoWay</b>, <b>FourWay</b> или <b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -898,7 +898,7 @@ ms.locfileid: "57633609"
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Переключатель</td>
+        <td rowspan="3" style="vertical-align: middle;">Параметр</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Индекс в массиве переключателей <b>RawGameController</b>.
@@ -926,7 +926,7 @@ ms.locfileid: "57633609"
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td>Вправо</td>
+                    <td>Справа</td>
                     <td>1</td>
                     <td>2</td>
                 </tr>
@@ -946,7 +946,7 @@ ms.locfileid: "57633609"
                     <td>7</td>
                 </tr>
                 <tr>
-                    <td>Влево</td>
+                    <td>Слева</td>
                     <td>5</td>
                     <td>6</td>
                 </tr>
@@ -1121,10 +1121,10 @@ RightBumper         // Index 9
 
 ### <a name="switch-labels"></a>Метки переключателей
 
-Раздел **Switches** сопоставляет положения переключателей с метками. Для значений используется следующее соглашение об именовании: чтобы получить метку положения переключателя с индексом *x* в массиве переключателей **RawGameController**, добавьте эти значения в подраздел **Switches**: 
+Раздел **Switches** сопоставляет положения переключателей с метками. Для значений используется следующее соглашение об именовании: чтобы получить метку положения переключателя с индексом *x* в массиве переключателей **RawGameController**, добавьте эти значения в подраздел **Switches**:
 
-* SwitchxUp 
-* SwitchxUpRight 
+* SwitchxUp
+* SwitchxUpRight
 * SwitchxRight
 * SwitchxDownRight
 * SwitchxDown
@@ -1132,7 +1132,7 @@ RightBumper         // Index 9
 * SwitchxUpLeft
 * SwitchxLeft
 
-В следующей таблице привет пример набора меток для положения 4-позиционного переключателя, которые отображаются с индексом 0 в **RawGameController**: 
+В следующей таблице привет пример набора меток для положения 4-позиционного переключателя, которые отображаются с индексом 0 в **RawGameController**:
 
 <table>
     <tr>
@@ -1232,7 +1232,7 @@ RightBumper         // Index 9
 
 Вот приведен пример сопоставлений и значений в файле реестра для универсального элемента управления **RacingWheel**:
 
-```
+```text
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GameInput\Devices\1234567800010004]
@@ -1349,4 +1349,4 @@ Windows Registry Editor Version 5.00
 
 * [Пространство имен Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 * [Пространство имен Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
-* [Файлы INF](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)
+* [INF-файлы](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

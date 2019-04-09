@@ -1,17 +1,17 @@
 ---
 description: Средства и методы отладки и тестирования работы приложений с управлением жизненным циклом процесса.
 title: Средства тестирования и отладки для управления жизненным циклом процесса (PLM)
-ms.date: 02/08/2017
+ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b3e37d4de3a346e0f29909727a46d3b31f9d59d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 94cbad6e497ea2f5b36a07a6b039bfc293175c4c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608499"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244350"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>Средства тестирования и отладки для управления жизненным циклом процесса (PLM)
 
@@ -25,11 +25,11 @@ ms.locfileid: "57608499"
 
 ## <a name="the-plmdebug-tool"></a>Средство PLMDebug
 
-PLMDebug.exe — это программа командной строки, которая позволяет управлять состоянием PLM пакета приложения и поставляется в составе Windows SDK. После установки средство по умолчанию располагается в папке *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64*. 
+PLMDebug.exe — это программа командной строки, которая позволяет управлять состоянием PLM пакета приложения и поставляется в составе Windows SDK. После установки средство по умолчанию располагается в папке *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64*.
 
 PLMDebug также позволяет отключить PLM для любого установленного пакета приложения, что необходимо для некоторых отладчиков. После отключения PLM служба брокера среды выполнения не сможет завершить работу приложения, чтобы вы могли его отладить. Чтобы отключить PLM, используйте параметр **/enableDebug**, указав после него *полное имя пакета* приложения UWP (короткое имя, имя семейства пакета или AUMID пакета не подходят):
 
-```
+```cmd
 plmdebug /enableDebug [PackageFullName]
 ```
 
@@ -41,7 +41,7 @@ plmdebug /enableDebug [PackageFullName]
 
 Вы можете обойти это ограничение, написав скрипт или средство, которое отслеживает процесс игры, после чего оболочка запускает VSJITDebugger.exe, передавая PID приложения UWP. В следующем примере кода C# показан простой подход для решений этой задачи.
 
-```
+```cs
 using System.Diagnostics;
 
 namespace VSJITLauncher
@@ -76,13 +76,15 @@ namespace VSJITLauncher
 
 Пример использования в сочетании с PLMDebug:
 
-```
+```cmd
 plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg "\"C:\VSJITLauncher.exe\" Game"
 ```
+
 где `Game` — имя процесса, а `279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg` — полное имя пакета приложения UWP.
 
 Обратите внимание, что каждый вызов **/enableDebug** следует позже присоединить к другому вызову PLMDebug с помощью параметра **/disableDebug**. Кроме того, путь к отладчику должен быть абсолютным (относительные пути не поддерживаются).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
+
 - [Развертывание и отладка приложений UWP](deploying-and-debugging-uwp-apps.md)
-- [Средства отладки, тестирования и повышения производительности](index.md)
+- [Отладка, тестирование и производительность](index.md)

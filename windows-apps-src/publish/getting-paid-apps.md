@@ -2,16 +2,16 @@
 Description: Узнайте о получения платежей для приложений, дополнительные компоненты (в нем продукты) и рекламу прибыль.
 title: Получение платежей
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.date: 10/31/2018
+ms.date: 03/05/2019
 ms.topic: article
 keywords: windows 10, uwp, платежи, продажа приложений, доход от приложения, выплата, плата store, удержание платежей, процент
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d59519e23955b53b32d2178e37e75f195fd54eb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 293f24122129e56fbb1521a0d3dd7e2ff51e4923
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596499"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244110"
 ---
 # <a name="getting-paid"></a>Получение платежей
 Вот некоторые важные сведения о получении оплаты для приложения, надстройки и прибыль рекламы.
@@ -23,7 +23,7 @@ ms.locfileid: "57596499"
 
 При [регистрации учетной записи разработчика](https://go.microsoft.com/fwlink/p/?LinkID=615100) вы принимаете [соглашение с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). В этом соглашении описываются отношения между вами и корпорацией Майкрософт, касающиеся продажи приложений в Microsoft Store, в том числе оговаривается комиссия Microsoft Store, взимаемая корпорацией Майкрософт за каждую продажу.
 
-В большинстве случаев комиссия Магазина составляют 30 %. Суммы комиссии официально определены в [соглашении с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Всегда обращайтесь к этому документу, если у вас возникают вопросы.
+Суммы комиссии официально определены в [соглашении с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Всегда обращайтесь к этому документу, если у вас возникают вопросы.
 
 Комиссия Store применяется ко всем продажам, проводимым через Microsoft Store, в том числе к надстройкам.
 

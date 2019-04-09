@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: afda713e4a3d0ae30a4ee1ad9e9308d835062108
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: a39faf77237596179486eb6c1a0a59a40049155c
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640029"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58914014"
 ---
 # <a name="media-player"></a>Проигрыватель мультимедиа
 
@@ -43,7 +43,7 @@ ms.locfileid: "57640029"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы открыть приложение и увидеть <a href="xamlcontrolsgallery:/item/MediaPlayerElement">MediaPlayerElement</a> или <a href="xamlcontrolsgallery:/item/MediaPlayer">MediaPlayer</a> в действии.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -87,7 +87,7 @@ ms.locfileid: "57640029"
 
 ![Пример элементов управления MTC на телефоне, две строки](images/controls/mtc_double_inprod.png)
 
-**Передача носителя системы элементов управления**
+**Системные элементы управления передачей мультимедиа**
 
 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) автоматически интегрируется с системными элементами управления транспортировкой мультимедиа. Системные элементы управления транспортировкой мультимедиа открываются при нажатии клавиши на мультимедийном оборудовании, например, клавиш мультимедиа на клавиатуре. Дополнительные сведения см. в разделе [SystemMediaTransportControls](https://msdn.microsoft.com/library/windows/apps/dn278677).
 
@@ -173,7 +173,7 @@ private void LoadEmbeddedAppFile()
 
 [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) не требует специальных возможностей для доступа к файлам в локальной файловой системе, таким как папки **Музыка** или **Видео** пользователя, поскольку пользователь может полностью контролировать, к какому файлу выполняется доступ. С точки зрения безопасности и конфиденциальности лучше свести к минимуму число возможностей, используемых приложением.
 
-**Чтобы открыть локальный носитель, с помощью FileOpenPicker**
+**Открытие локального мультимедиа с помощью FileOpenPicker**
 
 1.  Вызовите [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847), чтобы пользователь мог выбрать файл мультимедиа.
 
@@ -246,7 +246,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 
 > **Примечание.**&nbsp;&nbsp; Если для объекта [MediaPlayerElement.IsFullWindow](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) задано значение true и воспроизводится мультимедиа, дисплей не отключается автоматически.
 
-**Чтобы сохранять активность на экране**
+**Поддержание активности экрана**
 
 1.  Создайте глобальную переменную [DisplayRequest](https://msdn.microsoft.com/library/windows/apps/br241816). Инициализируйте ее значением NULL.
 ```csharp
@@ -259,8 +259,9 @@ private DisplayRequest appDisplayRequest = null;
 3.  Вызовите метод [RequestRelease](https://msdn.microsoft.com/library/windows/apps/br241819), чтобы отменить запрос дисплея, если воспроизведение остановлено, приостановлено или прервано из-за ошибки воспроизведения. Если у вашего приложения больше нет активных запросов дисплея, Windows уменьшает яркость дисплея (и затем отключает его), чтобы увеличить время работы батареи, когда устройством не пользуются.
 
     Каждый объект [MediaPlayerElement.MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) имеет объект [PlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) типа [MediaPlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.aspx), который контролирует различные аспекты воспроизведения мультимедиа, такие как [PlaybackRate](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx), [PlaybackState](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstate.aspx) и [Position](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx). Здесь используется событие [PlaybackStateChanged](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstatechanged.aspx) в объекте [MediaPlayer.PlaybackSession](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx), чтобы обнаруживать ситуации, когда нужно отменить запрос дисплея. Затем с помощью свойства [NaturalVideoHeight](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.naturalvideoheight.aspx) определите тип воспроизводимого файла (аудио или видео) и поддерживайте экран активным, только если воспроизводится видео.
+
     ```xaml
-<MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
+    <MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
     ```
 
     ```csharp

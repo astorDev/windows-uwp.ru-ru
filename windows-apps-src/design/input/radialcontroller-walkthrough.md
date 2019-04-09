@@ -3,17 +3,17 @@ ms.assetid: ''
 title: Поддержка Surface Dial (и других устройств с колесиком) в приложении UWP
 description: Пошаговое руководство по добавлению поддержки для Surface Dial (и других устройств с колесиком) в приложении UWP.
 keywords: dial, радиальный, учебник
-ms.date: 01/25/2018
+ms.date: 03/11/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d8729826c2f372b3d3b5607ce828aaf515e47f3d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 1c8042bbe3ad8a37802b592e4e638a7c42e79a6d
+ms.sourcegitcommit: 99271798fe53d9768fc52b21366de05268cadcb0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57643989"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58221470"
 ---
-# <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Руководство: Поддержка Surface Dial (и других устройств с колесиком) в приложении UWP
+# <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Учебник. Поддержка Surface Dial (и других устройств с колесиком) в приложении UWP
 
 ![Снимок экрана: Surface Dial с поверхности Studio](images/radialcontroller/dial-pen-studio-600px.png)  
 *Surface Dial с Surface Studio и ручкой Surface* (доступны для приобретения в [магазине Майкрософт](https://aka.ms/purchasesurfacedial)).
@@ -38,7 +38,7 @@ Dial поддерживает три основных жеста.
 - Поверните, чтобы выделить пункт меню (если меню активно) или изменить текущее действие в приложении (если меню не активно).
 - Щелкните, чтобы выбрать выделенный пункт меню (если меню активно) или вызвать команду в приложении (если меню не активно).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Компьютер (или виртуальная машина) под управлением Windows 10 Creators Update или более поздней версии
 * [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
@@ -612,3 +612,35 @@ Surface Dial и другие устройства с колесиком могу
 ## <a name="summary"></a>Сводка
 
 Поздравляем, Вы завершили *получить руководстве по началу работы: Поддерживает Surface Dial (и другие устройства колесика) в приложении UWP*! Мы показали вам базовый код, необходимый для поддержки устройств с колесиком в приложениях UWP, а также способы предоставления некоторых сложных примеров взаимодействия с пользователем, которые поддерживаются API-интерфейсами **RadialController**.
+
+## <a name="related-articles"></a>Связанные статьи
+
+[Surface Dial взаимодействия](windows-wheel-interactions.md)
+
+### <a name="api-reference"></a>Справочник по API
+
+- [**RadialController** класса](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
+- [**RadialControllerButtonClickedEventArgs** класса](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
+- [**RadialControllerConfiguration** класса](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerConfiguration) 
+- [**RadialControllerControlAcquiredEventArgs** класса](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
+- [**RadialControllerMenu** класса](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenu) 
+- [**RadialControllerMenuItem** класса](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) 
+- [**RadialControllerRotationChangedEventArgs** класса](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
+- [**RadialControllerScreenContact** класса](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact) 
+- [**RadialControllerScreenContactContinuedEventArgs** класса](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
+- [**RadialControllerScreenContactStartedEventArgs** класса](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
+- [**RadialControllerMenuKnownIcon** enum](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuKnownIcon) 
+- [**RadialControllerSystemMenuItemKind** enum](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
+
+### <a name="samples"></a>Примеры
+
+#### <a name="topic-samples"></a>Примеры в разделе
+
+[Настройки RadialController](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
+
+#### <a name="other-samples"></a>Другие примеры
+[Пример книги выделение цветом](https://github.com/Microsoft/Windows-appsample-coloringbook)
+
+[Примеры универсальной платформы Windows (C# и C++)](https://go.microsoft.com/fwlink/?linkid=832713)
+
+[Классического образца рабочего стола Windows](https://aka.ms/radialcontrollerclassicsample)

@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, WinRT API, WNS
 localizationpriority: medium
-ms.openlocfilehash: ba8630a2e877345adeac7eb443dd3e418d3ed277
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: bf224b6c0997ce8af86ab2919a1d0513f619a8a3
+ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639529"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59067829"
 ---
 # <a name="alternate-push-channels-using-webpush-and-vapid-in-uwp"></a>Каналы альтернативный Push-уведомлений с помощью Webpush и VAPID в универсальной платформы Windows 
 Начиная с Fall Creators Update, приложений универсальной платформы Windows можно использовать web Push-уведомлений с помощью VAPID проверки подлинности для отправки Push-уведомлений.  
@@ -45,7 +45,7 @@ private async void AppCreateVAPIDChannelAsync(string appChannelId, IBuffer appli
     //               The resulting key is an uncompressed point in ANSI X9.62 format             
     // ChannelId is an app provided value for it to identify the channel later.  
     // case of this app it is from the set { "Football", "News", "Baseball" } 
-    PushNotificationChannel webChannel = await PushNotificationChannelManager.Current.CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId); 
+    PushNotificationChannel webChannel = await PushNotificationChannelManager.GetDefault().CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId); 
  
     //Save the channel  
     AppUpdateChannelMapping(appChannelId, webChannel); 
@@ -105,9 +105,9 @@ protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
 
 Если вы хотите использовать другой тип шифрования, ключом является использование необработанного. Свойство Headers. Он содержит все заголовки шифрования, которые были включены в запрос POST для Push-сервера. После этого приложение может использовать ключи для расшифровки сообщения.  
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 - [Типы каналов уведомлений](channel-types.md)
-- [Службы Push-уведомлений Windows (WNS)](windows-push-notification-services--wns--overview.md)
+- [Службы push-уведомлений Windows (WNS)](windows-push-notification-services--wns--overview.md)
 - [Класс PushNotificationChannel](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannel)
 - [Класс PushNotificationChannelManager](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager)
 

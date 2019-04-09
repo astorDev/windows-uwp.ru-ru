@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 1e2c8b7d9fb7bdc61595296a137c4448cadf52d3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: f1cc576bbc7fe7fc326d86072e22b7a385cfeb8b
+ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629269"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913954"
 ---
 # <a name="item-templates-for-grid-view"></a>Шаблоны элементов для представления сетки
 
@@ -19,7 +19,7 @@ ms.locfileid: "57629269"
 Чтобы продемонстрировать привязку данных, эти шаблоны должны быть привязаны **GridViewItems** к классу пример записи из [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md).
 
 > [!NOTE] 
-В настоящее время если тип **DataTemplate** содержит несколько элементов управления (например, больше, чем один элемент **TextBlock**), специальное имя по умолчанию для программ чтения с экрана берется из свойства .ToString() элемента. Для удобства можно задать имя [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) в корневом элементе шаблона **DataTemplate**. Дополнительные сведения о специальных возможностях см. в разделе [Обзор специальных возможностей](../accessibility/accessibility-overview.md).
+> В настоящее время если тип **DataTemplate** содержит несколько элементов управления (например, больше, чем один элемент **TextBlock**), специальное имя по умолчанию для программ чтения с экрана берется из свойства .ToString() элемента. Для удобства можно задать имя [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) в корневом элементе шаблона **DataTemplate**. Дополнительные сведения о специальных возможностях см. в разделе [Обзор специальных возможностей](../accessibility/accessibility-overview.md).
 
 ## <a name="icon-and-text"></a>Значок и текст
 Эти шаблоны используются для отображения коллекции приложений в сетке со значком и текстом.
@@ -158,6 +158,6 @@ ms.locfileid: "57629269"
 ## <a name="related-articles"></a>Связанные статьи
 - [Класс GridView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md)
-- [Общие сведения о Accessibililty](../accessibility/accessibility-overview.md)
-- [Пример ListView и GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Обзор специальных возможностей](../accessibility/accessibility-overview.md)
+- [Пример элементов ListView и GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Эскизы](../../files/thumbnails.md)

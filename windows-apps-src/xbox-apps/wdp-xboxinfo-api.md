@@ -5,27 +5,27 @@ ms.date: 11/072017
 ms.topic: article
 keywords: Windows 10, универсальной платформы Windows, xbox, портал устройств
 ms.localizationpriority: medium
-ms.openlocfilehash: 85c2c139aa8064e1f0769064b95eeb531086b8c1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 7aa8b11bc439266d36fbb27a7eaa7b07e924a17c
+ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617499"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59244040"
 ---
 # <a name="xbox-info-api-reference"></a>Справка по API для сведений об Xbox   
 Доступ к сведениям об устройстве Xbox One можно получить с помощью API.
 
 ## <a name="get-xbox-one-device-information"></a>Получение сведений об устройстве Xbox One
 
-**Запрос**
+## <a name="request"></a>Запрос
 
 Вы можете получить сведения об устройстве Xbox One.
 
 Метод      | Универсальный код ресурса (URI) запроса
 :------     | :-----
 GET | /ext/xbox/info
-<br />
-**Параметры URI**
+
+**Параметры универсального кода ресурса (URI)**
 
 - Нет
 
@@ -33,11 +33,11 @@ GET | /ext/xbox/info
 
 - Нет
 
-**Текст запроса**
+**Тело запроса**
 
 - Нет
 
-**Ответ**   
+## <a name="response"></a>Ответ
 Объект JSON с перечисленными ниже полями.
 
 * OsVersion (String) — версия ОС.
@@ -59,7 +59,6 @@ GET | /ext/xbox/info
 4XX | Коды ошибок
 5XX | Коды ошибок
 
-<br />
-**Семейств доступных устройств**
+**Доступные семейства устройств**
 
 * Windows Xbox

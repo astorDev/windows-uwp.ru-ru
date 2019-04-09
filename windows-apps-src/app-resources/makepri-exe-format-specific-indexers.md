@@ -6,12 +6,12 @@ ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: e07c0b2730da258126465fbeea917b32ef9d23e6
+ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645879"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320607"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Индексаторы для конкретных форматов MakePri.exe
 
@@ -284,12 +284,14 @@ MakePri.exe пропускает некоторые элементы файла 
 
 Файл `.resfiles` — это текстовый файл, который содержит плоский список путей к файлу. Файл `.resfiles` может содержать комментарии вида "//". Рассмотрим пример.
 
-```
+<blockquote>
+<pre>
 Strings\component1\fr\elements.resjson
 Images\logo.scale-100.png
 Images\logo.scale-140.png
 Images\logo.scale-180.png
-```
+</pre>
+</blockquote>
 
 ## <a name="resjson"></a>ResJSON
 
@@ -395,7 +397,7 @@ Images\logo.scale-180.png
 
 Атрибут `initialPath` помещает все ресурсы по исходному пути, который задается в начале имени ресурса. Обычно этот индексатор применяется при индексации ресурсов библиотек классов. Значение по умолчанию — blank.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Компиляция ресурсов вручную с помощью MakePri.exe](compile-resources-manually-with-makepri.md)
 * [Параметры командной строки MakePri.exe](makepri-exe-command-options.md)
