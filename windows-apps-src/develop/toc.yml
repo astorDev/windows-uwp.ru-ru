@@ -1,4 +1,6 @@
 items:
+- name: Обзор
+  href: index.md
 - name: Типы приложений
   items:
   - name: Образовательные приложения
@@ -482,15 +484,19 @@ items:
       - name: Доступ к аналитическим данным
         href: ../monetize/access-analytics-data-using-windows-store-services.md
         items:
+        - name: Получение данных о приобретении игр и приложений
+          href: ../monetize/acquisitions-data.md
+        - name: Получение данных о приобретении надстроек для игр и приложений
+          href: ../monetize/add-on-acquisitions-data.md
         - name: Приложения UWP
           items:
           - name: Получение сведений о покупках и установках
             items:
-            - name: Получение сведений о приобретениях приложения
+            - name: Получение сведений о приобретении приложения (прежних версий)
               href: ../monetize/get-app-acquisitions.md
             - name: Получение сведений об установках приложения
               href: ../monetize/get-app-installs.md
-            - name: Получение данных воронки приобретений приложения
+            - name: Получение данных воронки приобретения приложения (прежних версий)
               href: ../monetize/get-acquisition-funnel-data.md
             - name: Получение преобразований приложения по каналу
               href: ../monetize/get-app-conversions-by-channel.md
@@ -762,23 +768,6 @@ items:
       items:
       - name: Дополнительные пакеты с исполняемым кодом
         href: ../packaging/optional-packages-with-executable-code.md
-    - name: Установка приложений UWP с помощью Установщика приложений
-      href: ../packaging/appinstaller-root.md
-      items:
-      - name: Создание файла Установщика приложений в Visual Studio
-        href: ../packaging/create-appinstallerfile-vs.md
-      - name: Установка приложений UWP с веб-страницы
-        href: ../packaging/installing-UWP-apps-web.md
-      - name: Установка связанного набора с помощью файла Установщика приложений
-        href: ../packaging/install-related-set.md
-      - name: Устранение неполадок при установке с помощью файла Установщика приложений
-        href: ../packaging/troubleshoot-appinstaller-issues.md
-      - name: Установка приложения UWP из веб-приложения Azure
-        href: ../packaging/web-install-azure.md
-      - name: Установка приложения UWP с сервера IIS
-        href: ../packaging/web-install-iis.md
-      - name: Размещение пакетов приложение UWP в AWS для веб-установки
-        href: ../packaging/web-install-aws.md
     - name: Установка приложений с помощью средства WinAppDeployCmd.exe
       href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
     - name: Объявления возможностей приложения
@@ -949,11 +938,20 @@ items:
       href: ../composition/composition-native-interop.md
     - name: Адаптация пользовательского интерфейса
       href: ../composition/composition-tailoring.md
-    - name: Использование библиотеки XAML
+    - name: Использование UWP XAML
       href: ../composition/using-the-visual-layer-with-xaml.md
       items:
       - name: Освещение XAML
         href: ../composition/xaml-lighting.md
+    - name: Модернизация классических приложений
+      href: ../composition/visual-layer-in-desktop-apps.md
+      items:
+      - name: С помощью WPF
+        href: ../composition/using-the-visual-layer-with-wpf.md
+      - name: С помощью Windows Forms
+        href: ../composition/using-the-visual-layer-with-windows-forms.md
+      - name: С помощью Win32
+        href: ../composition/using-the-visual-layer-with-win32.md
   - name: Windows как услуга
     href: ../updates-and-versions/application-development-for-windows-as-a-service.md
   - name: Компоненты среды выполнения Windows
@@ -1515,9 +1513,9 @@ items:
       href: ../threading-async/use-a-timer-to-submit-a-work-item.md
     - name: Использование объектов среды выполнения Windows в многопоточной среде
       href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-ms.openlocfilehash: e9c39734eb066058d549ed8c36ad73b2c2c6a5e1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 36d2fba58373cd35321c7787856b782b1291b12d
+ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583701"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57822939"
