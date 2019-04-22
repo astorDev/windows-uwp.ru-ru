@@ -76,8 +76,8 @@ ms.locfileid: "57596809"
 
 | Параметр | Тип   | Описание          | Обязательно |
 |-----------|--------|----------------------|----------|
-| productId | Строка | [Код [продукта](in-app-purchases-and-trials.md#products-skus-and-availabilities) в Store](in-app-purchases-and-trials.md#store-ids) в каталоге Microsoft Store. Пример кода продукта в Магазине: 9NBLGGH42CFD. | Да      |
-| skuID     | Строка | [Код [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) продукта в Store](in-app-purchases-and-trials.md#store-ids) в каталоге Microsoft Store. Пример кода продукта в Магазине для номера SKU: 0010.       | Да      |
+| productId | Строка | Код [продукта](in-app-purchases-and-trials.md#products-skus-and-availabilities) в [Store](in-app-purchases-and-trials.md#store-ids) в каталоге Microsoft Store. Пример кода продукта в Магазине: 9NBLGGH42CFD. | Да      |
+| skuID     | Строка | Код [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) продукта в [Store](in-app-purchases-and-trials.md#store-ids) в каталоге Microsoft Store. Пример кода продукта в Магазине для номера SKU: 0010.       | Да      |
 
 
 ### <a name="request-example"></a>Пример запроса
