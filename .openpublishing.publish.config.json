@@ -33,11 +33,11 @@
     }
   ],
   "notification_subscribers": [
-    "v-nidolc@microsoft.com"
+    "v-mikmat@microsoft.com"
   ],
   "branches_to_filter": [
     "live",
-    "live-sxs"
+    "master"
   ],
   "git_repository_url_open_to_public_contributors": "",
   "continue_with_document_error": true,
@@ -74,7 +74,3 @@
   "need_generate_pdf": false,
   "need_generate_intellisense": false
 }
-
-
-
-
