@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 716a6e86e03feb6edcbc5cde5aa37d0282df6aca
 ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/08/2019
 ms.locfileid: "59244290"
@@ -36,7 +36,7 @@ ms.locfileid: "59244290"
 | Армянский              | hy, hy-am                                                                                                                                                                                             |
 | Ассамский              | as, as-in                                                                                                                                                                                             |
 | Азербайджанский           | AZ арабские, az Арабская az az-cyrl "," az-cyrl-az "," az-latn "," az-latn-az                                                                                                                                     |
-| Баскский (Баскония)       | eu, eu-es                                                                                                                                                                                             |
+| Баскский       | eu, eu-es                                                                                                                                                                                             |
 | Белорусский            | be, be-by                                                                                                                                                                                             |
 | Бенгальский                | bn, bn-bd, bn-in                                                                                                                                                                                      |
 | Боснийский               | bs, bs-cyrl, bs-cyrl-ba, bs-latn, bs-latn-ba                                                                                                                                                          |

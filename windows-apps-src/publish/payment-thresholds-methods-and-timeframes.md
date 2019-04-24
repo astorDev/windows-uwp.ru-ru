@@ -8,7 +8,7 @@ ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f837674ff9af123c7535e3aea00b632b8b35bfc
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610669"
@@ -469,7 +469,7 @@ ms.locfileid: "57610669"
     <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Гонконг (САР)</td>
+    <td>Гонконг, САР</td>
     <td>25 долл. США</td>
     <td>ACH/SEPA</td>
     <td>25 долл. США</td>
@@ -952,7 +952,7 @@ ms.locfileid: "57610669"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Тайвань (Китай)</td>
+    <td>Тайвань</td>
     <td>200 долл. США</td>
     <td>Банковский перевод</td>
     <td>25 долл. США</td>
@@ -1531,7 +1531,7 @@ ms.locfileid: "57610669"
     <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Гонконг (САР)</td>
+    <td>Гонконг, САР</td>
     <td>50 долл. США</td>
     <td>ACH/SEPA</td>
     <td>50 долл. США</td>
@@ -2014,7 +2014,7 @@ ms.locfileid: "57610669"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Тайвань (Китай)</td>
+    <td>Тайвань</td>
     <td>50 долл. США</td>
     <td>Банковский перевод</td>
     <td>50 долл. США</td>
@@ -2586,7 +2586,7 @@ ms.locfileid: "57610669"
     <td>Н/Д</td>
   </tr>
    <tr>
-    <td>Гонконг (САР)</td>
+    <td>Гонконг, САР</td>
     <td>25 долл. США</td>
     <td>ACH/SEPA</td>
     <td>25 долл. США</td>
@@ -3062,7 +3062,7 @@ ms.locfileid: "57610669"
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>Тайвань (Китай)</td>
+    <td>Тайвань</td>
     <td>200 долл. США</td>
     <td>Банковский перевод</td>
     <td>25 долл. США</td>
@@ -3598,7 +3598,7 @@ ms.locfileid: "57610669"
     <td>Н/Д</td>
   </tr>
   <tr>
-    <td>Гонконг (САР)</td>
+    <td>Гонконг, САР</td>
     <td>25 долл. США</td>
     <td>ACH/SEPA</td>
     <td>25 долл. США</td>
@@ -4053,7 +4053,7 @@ ms.locfileid: "57610669"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Тайвань (Китай)</td>
+    <td>Тайвань</td>
     <td>200 долл. США</td>
     <td>Банковский перевод</td>
     <td>25 долл. США</td>

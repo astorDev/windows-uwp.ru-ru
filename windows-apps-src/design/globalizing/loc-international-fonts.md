@@ -8,7 +8,7 @@ keywords: windows 10, uwp, глобализация, локализуемост�
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57601139"
@@ -30,7 +30,7 @@ ms.locfileid: "57601139"
 | Азербайджанский (латиница) | az-Latn-AZ | Segoe UI |
 | Бенгальский (Бангладеш) | bn-BD | Nirmala UI |
 | Бенгальский (Индия) | bn-IN | Nirmala UI |
-| Баскский (Баскония) | eu-ES | Segoe UI |
+| Баскский | eu-ES | Segoe UI |
 | Белорусский | be-BY | Segoe UI |
 | Боснийский (латиница) | bs-Latn-BA | Segoe UI |
 | Болгарский | bg-BG | Segoe UI |

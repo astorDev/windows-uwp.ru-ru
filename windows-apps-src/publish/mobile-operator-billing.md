@@ -8,7 +8,7 @@ keywords: windows 10, uwp, мобильные операторы, мобильн
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f23e40abfb269e2b52e9dc5b66c2486da071c9b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57591839"
@@ -47,7 +47,7 @@ Microsoft Store предлагает выставление счетов моб�
 | Испания           | Orange                           |
 | Швеция          | Telenor, 3                       |
 | Швейцария     | Swisscom, Sunrise                |
-| Тайвань (Китай)          | FarEasTone                       |
+| Тайвань          | FarEasTone                       |
 | Турция          | Turkcell                         |
 | Объединенные Арабские Эмираты | Etisalat                    |
 | США   | Sprint, Verizon                  |
