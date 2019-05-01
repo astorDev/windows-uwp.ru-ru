@@ -1,17 +1,18 @@
 ---
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
 title: Подготовка портала устройств с использованием пользовательского сертификата SSL
-description: НеОпределено
-ms.date: 4/8/2019
+description: Сведения о подготовке Windows Device Portal настраиваемого сертификата для использования в связи по протоколу HTTPS.
+ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, uwp, портал устройств
 ms.localizationpriority: medium
-ms.openlocfilehash: cbe813a58124b1cd80f352ae11e9dcff59b21da4
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.custom: 19H1
+ms.openlocfilehash: ce4e45bc23f4efb636618bb4891b9d6e9d207490
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244340"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63774147"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>Подготовка портала устройств с использованием пользовательского сертификата SSL
 

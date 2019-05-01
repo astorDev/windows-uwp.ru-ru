@@ -2,16 +2,17 @@
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
 title: Кисти композиции
 description: Кисть заполняет пространство объекта класса Visual своими выводимыми данными. Разные кисти имеют различные типы выводимых данных.
-ms.date: 02/08/2017
+ms.date: 04/19/2019
 ms.topic: article
+ms.custom: 19H1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eb0d48cee4fe6698ec371c882c913affa5af7729
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d51bc945c721ae15889dece8f84959f9a78192bc
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644889"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63790518"
 ---
 # <a name="composition-brushes"></a>Кисти композиции
 Все, что отображается на экране в приложении UWP, отображается, поскольку нарисовано с помощью кисти. Кисти позволяют рисовать объекты пользовательского интерфейса с содержимым, начиная с простых сплошных цветов в изображениях и рисунках до цепочек сложных эффектов. В этом разделе представлены понятия, связанные с CompositionBrush.
@@ -20,10 +21,11 @@ ms.locfileid: "57644889"
 
 При работе с использованием визуального уровня необходимо использовать CompositionBrush для рисования области [SpriteVisual](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual).
 
--   [Предварительные требования](./composition-brushes.md#prerequisites)
+-   [Предварительные условия](./composition-brushes.md#prerequisites)
 -   [Рисование с CompositionBrush](./composition-brushes.md#paint-with-a-compositionbrush)
     -   [Закраска сплошным цветом](./composition-brushes.md#paint-with-a-solid-color)
-    -   [Рисование с линейным градиентом](./composition-brushes.md#paint-with-a-linear-gradient)
+    -   [Рисование с линейным градиентом](./composition-brushes.md#paint-with-a-linear-gradient) 
+    -   [Рисование с применением радиального градиента](./composition-brushes.md#paint-with-a-radial-gradient)
     -   [Рисование с изображением](./composition-brushes.md#paint-with-an-image)
     -   [Рисование с нестандартных операций рисования](./composition-brushes.md#paint-with-a-custom-drawing)
     -   [Рисование с видео](./composition-brushes.md#paint-with-a-video)
@@ -35,7 +37,7 @@ ms.locfileid: "57644889"
 -   [С помощью vs кисть XAML. CompositionBrush](./composition-brushes.md#using-a-xaml-brush-vs-compositionbrush)
 -   [Связанные разделы](./composition-brushes.md#related-topics)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Материал данного раздела предполагает, что вы знакомы со структурой базового приложения композиции, которая описана в разделе [Обзор визуального уровня](visual-layer.md).
 
 ## <a name="paint-with-a-compositionbrush"></a>Рисование с помощью CompositionBrush
@@ -44,13 +46,14 @@ ms.locfileid: "57644889"
 
 |Класс                                   |Подробности                                         |Представлено в|
 |-------------------------------------|---------------------------------------------------------|--------------------------------------|
-|[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)         |Заполняет область сплошным цветом                        |Ноябрьское обновление Windows 10 (пакет SDK 10586)|
-|[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)       |Заполняет область содержимым [ICompositionSurface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.ICompositionSurface)|Ноябрьское обновление Windows 10 (пакет SDK 10586)|
-|[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)        |Заполняет область содержимым эффекта композиции |Ноябрьское обновление Windows 10 (пакет SDK 10586)|
-|[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)          |Изображает визуальный элемент с помощью CompositionBrush с маской непрозрачности |Юбилейное обновление Windows 10 (14393 в пакет SDK)
-|[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)      |Заполняет область с помощью CompositionBrush с использованием растягивания NineGrid |Юбилейное обновление Windows 10 SDK (14393)
-|[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)|Заполняет область линейным градиентом                    |Осеннее обновление Windows 10 Creators Update (Insider Preview SDK)
-|[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)     |Заполняет область, производя выборку фоновых пикселей либо из приложения, либо из пикселей непосредственно за окном приложения на рабочем столе. Используется в качестве входных данных для другого инструмента CompositionBrush, например CompositionEffectBrush | Юбилейное обновление Windows 10 (SDK 14393)
+|[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)         |Заполняет область сплошным цветом                        |Windows 10 версии 1511 (SDK 10586)|
+|[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)       |Заполняет область содержимым [ICompositionSurface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.ICompositionSurface)|Windows 10 версии 1511 (SDK 10586)|
+|[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)        |Заполняет область содержимым эффекта композиции |Windows 10 версии 1511 (SDK 10586)|
+|[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)          |Изображает визуальный элемент с помощью CompositionBrush с маской непрозрачности |Windows 10 версии 1607 (SDK 14393)
+|[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)      |Заполняет область с помощью CompositionBrush с использованием растягивания NineGrid |Windows 10 версии 1607 (SDK 14393)
+|[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)|Заполняет область линейным градиентом                    |Windows 10 версии 1709 (SDK 16299)
+|[CompositionRadialGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionradialgradientbrush)|Закрашивает область с применением радиального градиента                    |Windows 10, версия 1903 года (пакет SDK для предварительной версии программы предварительной оценки)
+|[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)     |Заполняет область, производя выборку фоновых пикселей либо из приложения, либо из пикселей непосредственно за окном приложения на рабочем столе. Используется в качестве входных данных для другого инструмента CompositionBrush, например CompositionEffectBrush | Windows 10 версии 1607 (SDK 14393)
 
 ### <a name="paint-with-a-solid-color"></a>Рисование сплошным цветом
 
@@ -105,6 +108,29 @@ _redyellowBrush.ColorStops.Add(_compositor.CreateColorGradientStop(1, Colors.Yel
 _gradientVisual = _compositor.CreateSpriteVisual();
 _gradientVisual.Brush = _redyellowBrush;
 _gradientVisual.Size = new Vector2(156, 156);
+```
+
+### <a name="paint-with-a-radial-gradient"></a>Рисование с применением радиального градиента
+
+Объект [CompositionRadialGradientBrush](/uwp/api/windows.ui.composition.compositionradialgradientbrush) закрашивает область с применением радиального градиента. Радиальный градиент сочетает несколько цветов с градиентом, начиная с центра эллипса и заканчивая радиус эллипса. GradientStop-объекты используются для определения цвета и их расположение в градиенте.
+
+Следующие иллюстрации и код показывает SpriteVisual, закрашивается с использованием RadialGradientBrush с 2 GradientStops.
+
+![CompositionRadialGradientBrush](images/radial-gradient-brush.png)
+
+```cs
+Compositor _compositor;
+SpriteVisual _gradientVisual;
+CompositionRadialGradientBrush RGBrush;
+
+_compositor = Window.Current.Compositor;
+
+RGBrush = _compositor.CreateRadialGradientBrush();
+RGBrush.ColorStops.Add(_compositor.CreateColorGradientStop(0, Colors.Aquamarine));
+RGBrush.ColorStops.Add(_compositor.CreateColorGradientStop(1, Colors.DeepPink));
+_gradientVisual = _compositor.CreateSpriteVisual();
+_gradientVisual.Brush = RGBrush;
+_gradientVisual.Size = new Vector2(200, 200);
 ```
 
 ### <a name="paint-with-an-image"></a>Рисование с помощью изображения

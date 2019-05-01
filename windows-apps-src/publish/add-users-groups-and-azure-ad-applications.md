@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, универсальной платформы Windows, приложения azure ad, aad, пользователя, группы, несколько пользователей, несколькими пользователями
 ms.localizationpriority: medium
-ms.openlocfilehash: 326bb547ac5b0d31f5112d7d5737ddad0d592dd5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ddbe47d94e17db0d272aedcff56df95fccf3434d
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610129"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63787289"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>Добавление пользователей, группы и приложения Azure AD для вашей учетной записи центра партнеров
 

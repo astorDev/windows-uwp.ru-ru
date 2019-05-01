@@ -2,16 +2,17 @@
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: Связывание устройств
 description: Некоторые устройства необходимо связать, прежде чем их можно будет использовать. Пространство имен Windows.Devices.Enumeration поддерживает три разных способа связывания устройств.
-ms.date: 02/08/2017
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bb5c156dc29f8229db9e4cb215fe462b4be6af6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: 19H1
+ms.openlocfilehash: 6f59a23f08abbd5edeb9d68be476fb29bd8aab2e
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653389"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63813619"
 ---
 # <a name="pair-devices"></a>Связывание устройств
 
@@ -57,6 +58,8 @@ ms.locfileid: "57653389"
 Для поддержки пользовательского связывания вам необходимо создать обработчик для события [**PairingRequested**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairingrequested.aspx). Этот обработчик должен учитывать все различные значения [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808), которые могут использоваться в сценарии пользовательского связывания. Соответствующее действие будет зависеть от значения **DevicePairingKinds**, предоставляемого в числе аргументов события.
 
 Важно помнить о том, что пользовательское связывание всегда является операцией на уровне системы. Из-за этого при работе на настольном компьютере или в Windows Phone перед началом связывания на экране всегда будет отображаться диалоговое окно системы. Это связано с тем, что для обеих этих платформ требуется согласие пользователя. Поскольку это диалоговое окно создается автоматически, вам не нужно будет создавать собственное диалоговое окно при выборе [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808)**ConfirmOnly** во время работы на этих платформах. Для другого **DevicePairingKinds** необходимо будет выполнить специальную обработку в зависимости от конкретного значения **DevicePairingKinds**. См. пример обработки пользовательского связывания для разных значений **DevicePairingKinds**.
+
+Начиная с Windows 10, версия 1903, новый **DevicePairingKinds** поддерживается, **ProvidePasswordCredential**. Это значение означает, что приложение должно запросить имя пользователя и пароль от пользователя для проверки подлинности связанное устройство. Чтобы в этом случае вызовите [ **AcceptWithPasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepairingrequestedeventargs.acceptwithpasswordcredential?branch=release-19h1#Windows_Devices_Enumeration_DevicePairingRequestedEventArgs_AcceptWithPasswordCredential_Windows_Security_Credentials_PasswordCredential_) метод аргументов события из **PairingRequested** обработчик событий для приема сопряжение. Передайте [ **PasswordCredential** ](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordcredential) объект, инкапсулирующий имя пользователя и пароль в качестве параметра. Обратите внимание, что имя пользователя и пароль для удаленного устройства отличаются от и часто не совпадает учетные данные для локально вошедшего пользователя.
 
 ## <a name="unpairing"></a>Отмена связывания
 

@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправки приложений
 ms.localizationpriority: medium
-ms.openlocfilehash: fa5b5a62348a36f7758468a86e19b744cdde8754
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 474abc2ec43b7f8eab408bd75cca33653d27d932
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335091"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63789679"
 ---
 # <a name="manage-app-submissions"></a>Управление отправками приложений
 

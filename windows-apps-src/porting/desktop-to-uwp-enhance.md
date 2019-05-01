@@ -2,16 +2,17 @@
 Description: Улучшить своего настольного приложения для пользователей Windows 10 с помощью универсальной Windows API платформы (UWP).
 Search.Product: eADQiWindows 10XVcnh
 title: Улучшение классического приложения для Windows 10
-ms.date: 10/15/2018
+ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e06de7d33604981e0055d9d57f774d280753db2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: 19H1
+ms.openlocfilehash: 55e91c96b7a978f0c90365073aa655553d4a658a
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628039"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63805703"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Улучшение классического приложения для Windows 10
 
@@ -36,8 +37,9 @@ ms.locfileid: "57628039"
 |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
 |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Program файлы (x86) \Windows Kits\10\References\<*версия пакета sdk*> \Windows.Foundation.UniversalApiContract\<*версии*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Program файлы (x86) \Windows Kits\10\References\<*версия пакета sdk*> \Windows.Foundation.FoundationContract\<*версии*>|
+|Windows.winmd|C:\Program файлы (x86) \Windows Kits\10\UnionMetadata\\<*версия пакета sdk*> \Facade|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
+|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
 
 В окне **Свойства** установите в поле **Копировать локально** каждого файла *.winmd* значение **False**.
 
@@ -45,9 +47,9 @@ ms.locfileid: "57628039"
 
 ### <a name="modify-a-c-project-to-use-windows-runtime-apis"></a>Измените проект C++, чтобы использовать API среды выполнения Windows
 
-Используйте [C + +/ WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) для работы с API среды выполнения Windows. C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows.
+Используйте [ C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) для работы с API среды выполнения Windows. C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows.
 
-Чтобы настроить проект для C + +/ WinRT, см. в разделе [изменить проект приложения Windows Desktop Добавление C + +/ WinRT поддержка](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
+Чтобы настроить проект для C++/WinRT, см. в разделе [изменить проект приложения Windows Desktop, чтобы добавить C++поддержки /WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 ## <a name="add-windows-10-experiences"></a>Добавление возможностей Windows 10
 

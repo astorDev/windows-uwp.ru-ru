@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, удержание публикации, дата публикации, отправка отправки для публикации, утверждение ограниченных возможностей
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fb075a4d8766f4f9bfc352160c6a1f5d99d9a0e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c2548ddd35fc50f62727d986d2d934d2346eb7b5
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611749"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63827636"
 ---
 # <a name="manage-submission-options"></a>Параметры управления отправкой
 

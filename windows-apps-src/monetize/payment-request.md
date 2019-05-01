@@ -4,17 +4,17 @@ title: Упрощение платежей с помощью API запроса 
 ms.date: 09/26/2017
 ms.topic: article
 keywords: Windows 10, uwp, запрос платежа
-ms.openlocfilehash: 36078c65d6762c8ed477a3a1342f3b6a0acaaa6f
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: a40b8265e3445319bd7baa530df0f9e9eaae0f31
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334592"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63804482"
 ---
 # <a name="simplify-payments-with-the-payment-request-api"></a>Упрощение платежей с помощью API запроса платежей
 API запроса оплаты для приложений UWP основан на [спецификации W3C оплаты запроса API](https://w3c.github.io/browser-payment-api/). Он дает возможность оптимизировать процесс подсчета стоимости покупок в приложениях UWP. Пользователям может ускорить посредством извлечения с помощью варианты оплаты и доставки адреса уже сохранен со своей учетной записью Майкрософт. Вы сможете повысить скорость преобразования и снизить риск нарушения безопасности данных, так как данные об оплате размечается. Начиная с Windows 10 Creators Update, пользователи могут использовать свои варианты сохраненного оплаты для оплаты легко разных областей в приложениях универсальной платформы Windows.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Перед началом использования API запроса оплаты, существует несколько моментов, которые необходимо сделать или следует учитывать.
 
 ### <a name="getting-a-merchant-id"></a>Получение ИД продавца

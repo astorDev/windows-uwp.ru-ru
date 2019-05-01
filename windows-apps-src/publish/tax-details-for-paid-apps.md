@@ -6,12 +6,12 @@ ms.date: 03/05/2019
 ms.topic: article
 keywords: windows 10, uwp, налоги, налоги на приложение, налоговые требования, расширение торговли, ставка налога
 ms.localizationpriority: medium
-ms.openlocfilehash: b0dca42fdc9229cf9d235fbb810f92774ec6f4de
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
-ms.translationtype: HT
+ms.openlocfilehash: 82f10abe57d9d5542286183180012b26478f88cf
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58136662"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63788156"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>Сведения о налогах для разработчиков приложений и игр Windows и издателей Azure Marketplace
 

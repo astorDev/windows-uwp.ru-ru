@@ -7,12 +7,12 @@ ms.date: 01/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, фоновую задачу
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c087bac5e166a22098482e5ffe213e3bdce9d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0148be96d9c5994d2fe16e7a0adedee16c8469de
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650539"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63816892"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Обновление живой плитки из фоновой задачи
 
@@ -253,7 +253,7 @@ namespace ContosoApp
 8.  Для остановки отладки нажмите клавиши SHIFT+F5 или выберите элемент **Debug &gt; Stop Debugging** (Отладка &gt; Остановить отладку).
 9.  Вернитесь к плитке приложения на начальном экране. Через несколько секунд на плитке вашего приложения появится уведомление.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
