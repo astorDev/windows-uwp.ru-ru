@@ -7,12 +7,12 @@ keywords: устройство, дигитайзер, ввод, взаимоде
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2699917beed9330dd2044704f19b3c25256c3ca8
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 2ff3150d4c1ed713451669b8918906141daa9659
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343243"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065235"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Имитация ввода данных пользователем с помощью внедрения ввода
 
@@ -50,7 +50,8 @@ ms.locfileid: "58343243"
 1. Сначала мы настраиваем пользовательский интерфейс (MainPage.xaml).
 
     У нас есть две области сетки (одна для мыши и другая для введенного сенсорного ввода), в каждой из которых по четыре кнопки.
-       > [!NOTE] The Grid background must be assigned a value (`Transparent`, in this case), otherwise pointer events are not detected.
+      > [!NOTE] 
+      > Фоновая сетка должно быть назначено значение (`Transparent`, в данном случае), в противном случае указатель события не обнаружены.
 
     При обнаружении щелчков мышью в области ввода соответствующее событие сенсорного ввода добавляется в область внедрения ввода. Нажатия кнопок из внедренного ввода отображаются в области заголовка.
 

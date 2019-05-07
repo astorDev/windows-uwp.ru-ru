@@ -6,16 +6,16 @@ ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e8a650fcb1edfcd937ed6e42dacc4473627d853f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b832ffab065882cfad12f7c45a3fae1c9d608ab4
+ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583376"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65065392"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Система Fluent Design для разработчиков приложений для Windows
 
-![Заголовок Fluent Design](images/fluentdesign-app-header.jpg)
+![Заголовок Fluent Design](../images/ficon-2x.png)
 
 ## <a name="introduction"></a>Введение
 
