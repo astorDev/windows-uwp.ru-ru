@@ -11,16 +11,31 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5b9a0719e4967f9d527d2b2565818a0dea1be0a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b736a10a7284e3cc9aa193e082dc654e908afe40
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645269"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444179"
 ---
 # <a name="timing-and-easing"></a>Согласование по времени и реалистичная анимация
 
-В то время как движение основано на законах физики реального мира, мы работаем с цифровой средой, которую пользователи хотят видеть быстрой и производительной. 
+В то время как движение основано на законах физики реального мира, мы работаем с цифровой средой, которую пользователи хотят видеть быстрой и производительной.
+
+## <a name="examples"></a>Примеры
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>Если у вас есть <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong> приложения. Щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/EasingFunction">откройте приложение и увидеть в действии функции плавности</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="how-fluent-motion-uses-time"></a>Как в плавном движении Fluent используется время
 
@@ -40,8 +55,8 @@ ms.locfileid: "57645269"
 
 :::row:::
     :::column:::
-        Use for objects or pages that are exiting the scene or closing.
-        Allows for very quick directional feedback of exiting UI where timing does not impede upon framerate to achieve a smooth animation.
+Используйте для объектов или выход из сцены или закрытие страниц.
+Позволяет получить очень быструю направленную обратную связь о выходе из пользовательского интерфейса, когда согласование по времени не сказывается на частоте кадров, в результате чего достигается плавная анимация.
     :::column-end:::
     :::column:::
         ![150ms motion](images/150msAlt.gif)
@@ -52,8 +67,8 @@ ms.locfileid: "57645269"
 
 :::row:::
     :::column:::
-        Use for objects or pages that are entering the scene or opening.
-        Allows a reasonable amount of time to celebrate content as it enters the scene.
+Используйте для объектов или введя сцены или открытие страниц.
+Предоставляет достаточное количество времени для ознакомления с содержимым, входящим в сцену.
     :::column-end:::
     :::column:::
         ![300ms motion](images/300ms.gif)
@@ -64,7 +79,7 @@ ms.locfileid: "57645269"
 
 :::row:::
     :::column:::
-        Use for objects which are translating across a single scene or multiple scenes. 
+Используйте для объектов, на которых выполняется преобразование между одной сценой или сцены. 
     :::column-end:::
     :::column:::
         ![500ms motion](images/500ms.gif)
@@ -87,10 +102,10 @@ ms.locfileid: "57645269"
 
 :::row:::
     :::column:::
-        Use for UI or objects that are exiting the scene.
+Используется для пользовательского интерфейса или объекты, на которые выполняется выход из сцены.
 
-        Objects become powered and gain momentum until they reach escape velocity.
-        The resulting feel is that the object is trying its hardest to get out of the user's way and make room for new content to come in.
+Объекты становятся на платформе и получить momentum после достижения скорости escape.
+Итоговый интерфейс — это объект пытается его самая сложная выйти способом пользователя и освободить место для нового содержимого в.
     :::column-end:::
     :::column:::
         ![accelerate easing](images/accelEase.gif)
@@ -126,12 +141,12 @@ _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 
 :::row:::
     :::column:::
-        Use for objects or UI entering the scene, either navigating or spawning.
+Используйте для объектов или пользовательского интерфейса ввода в сцену, перехода или создании процесса.
 
-        Once on-scene, the object is met with extreme friction, which slows the object to rest.
-        The resulting feel is that the object traveled from a long distance away and entered at an extreme velocity, or is quickly returning to a rest state.
+Когда на сцене, объект сталкивается с extreme сопротивление, что снизит объекта для rest.
+Итоговый вид — что объекта от далеко от и введенные extreme скоростью или быстро вернуть в состояние rest.
 
-        Even if it's preceded by a moment of unresponsiveness, the velocity of the incoming object has the effect of feeling fast and responsive.
+Даже если ему предшествует некоторое время остается, скорость входящего объекта приводит к испытываешь, быстрый и отвечает на запросы.
     :::column-end:::
     :::column:::
         ![decelerate easing](images/decelEase.gif)
@@ -167,10 +182,10 @@ _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 
 :::row:::
     :::column:::
-        This is the baseline easing for any animated parameter change inside of the system.
-        Use standard easing for objects that change from state to state on-screen, such as a simple position change. Also, use it for objects morphing in-scene, like an object that grows.
+Это базовые показатели, любом изменении анимированных параметр внутри системы для реалистичной анимации.
+Используйте стандартную реалистичную анимацию применительно к объектам, которые изменяются от состояния к состоянию на экране (например, простое изменение положения). Также используйте ее для объектов, изменяющих форму в сцене (например, увеличение размеров объекта).
 
-        The resulting feel is that objects changing state from A to B are overcoming, and taken over by, natural forces.
+Итоговый вид — объекты, изменения состояния от A до B проверенными, что выполняемое над, заставляет естественного.
     :::column-end:::
     :::column:::
         ![standard easing](images/standardEase.gif)

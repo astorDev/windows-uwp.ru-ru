@@ -8,12 +8,12 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 81da1e769ab171e47a4f4046e8ec7e7c84ecf2d1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 183a5433553ff6fdfcb09f6960f6a642f2c8bc08
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630359"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444147"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>Анимация элементов XAML с помощью композиции анимаций
 
@@ -30,6 +30,22 @@ ms.locfileid: "57630359"
 
 > [!NOTE]
 > Чтобы использовать эти свойства на UIElement, требуемой версии проекта универсальной платформы Windows необходимо 1809 или более поздней версии. Дополнительные сведения о настройке версия проекта см. в разделе [адаптивные приложения версии](../../debug-test-perf/version-adaptive-apps.md).
+
+## <a name="examples"></a>Примеры
+
+<table>
+<th align="left">Галерея элементов управления XAML<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>Если у вас есть <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong> приложения. Щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/XamlCompInterop">откройте приложение и анимации взаимодействия в действии см. в разделе</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="new-rendering-properties-replace-old-rendering-properties"></a>Новые свойства отрисовки Замените старый свойства рендеринга
 
@@ -127,7 +143,7 @@ animation.Target = "Scale";
 destinationButton.StartAnimation(animation);
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 - [Выполнена его раскадровка анимации](storyboarded-animations.md)
 - [Использование на визуальном уровне с XAML](../../composition/using-the-visual-layer-with-xaml.md)

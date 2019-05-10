@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 719a150c6750116a368d59fff9600fcf65bf8f61
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 953a92cdb8cc3168a2cbeae9a1f3610f771c6339
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590689"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444190"
 ---
 # <a name="parallax"></a>Параллакс
 
@@ -30,7 +30,7 @@ ms.locfileid: "57590689"
 <table>
 <th align="left">Галерея элементов управления XAML<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/ParallaxView">открыть приложение и увидеть ParallaxView в действии</a>.</p>
     <ul>
@@ -47,7 +47,7 @@ ms.locfileid: "57590689"
 
 ## <a name="how-it-works-in-a-user-interface"></a>Как это работает в пользовательском интерфейсе
 
-В пользовательском интерфейсе можно создать эффекта параллакса, перемещая различные объекты с разной скоростью при горизонтальной или вертикальной прокрутке. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> Чтобы продемонстрировать, давайте взглянем на два уровня содержимого "," список "и" фонового изображения.  Список размещается поверх фонового изображения, создавая ощущение, что список находится ближе к зрителю.  Для достижения эффекта параллакса нужно, чтобы объект, расположенный ближе к нам, двигался "быстрее" расположенного дальше.  Когда пользователь прокручивает интерфейс, список перемещается быстрее относительно фонового изображения, что создает иллюзию глубины.
+В пользовательском интерфейсе можно создать эффекта параллакса, перемещая различные объекты с разной скоростью при горизонтальной или вертикальной прокрутке. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> Чтобы продемонстрировать это, давайте рассмотрим пример с двумя уровнями содержимого: списком и фоновым изображением.  Список размещается поверх фонового изображения, создавая ощущение, что список находится ближе к зрителю.  Для достижения эффекта параллакса нужно, чтобы объект, расположенный ближе к нам, двигался "быстрее" расположенного дальше.  Когда пользователь прокручивает интерфейс, список перемещается быстрее относительно фонового изображения, что создает иллюзию глубины.
 
  ![Пример эффекта фокусировки со списком и фоновым изображением](images/_Parallax_v2.gif)
 
@@ -118,10 +118,6 @@ ParallaxView автоматически подстраивает размер и
 - Используйте параллакс для списков с фоновым изображением.
 - Можно использовать эффект параллакса в ListViewItems, если там содержится изображение.
 - Не используйте его везде, злоупотребление может ослабить впечатление.
-
-## <a name="get-the-sample-code"></a>Получить пример кода
-
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
 ## <a name="related-articles"></a>Связанные статьи
 

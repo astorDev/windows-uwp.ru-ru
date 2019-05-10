@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a205fb151d1c9e6614dc97ccde639e43720aa8a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 901aa1fa5c37c18a815e5e70becdf15001ed74c4
+ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618199"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65444238"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>Подключенная анимация для приложений UWP
 
@@ -24,7 +24,22 @@ ms.locfileid: "57618199"
 
 > **Важные API**:  [Класс ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService-класс](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
-## <a name="see-it-in-action"></a>Подключенная анимация в действии
+
+## <a name="examples"></a>Примеры
+
+<table>
+<th align="left">Галерея элементов управления XAML<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>Если у вас есть <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong> приложения. Щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/ConnectedAnimation">откройте приложение и увидеть подключенные анимации в действии</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 В этом коротком видеоролике приложение использует подключенные анимации для анимации элемента изображения по мере его «» в заголовке следующей страницы. Этот эффект помогает сохранить контекст пользователя во время перехода.
 
@@ -318,10 +333,6 @@ void OnNavigatedTo(NavigationEventArgs e)
 - Используйте [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration) для резервного перехода.
 - Не ждите, на сетевые запросы или других долго выполняющихся асинхронных операций между Подготовка и запуск подключенные анимации. Может потребоваться предварительно загрузить данные, необходимые для выполнения перехода, или использовать изображение-заполнитель с низким разрешением во время загрузки в представлении назначения изображения с высоким разрешением.
 - Используйте [SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) для предотвращения анимации перехода в **кадра** при использовании **ConnectedAnimationService**, так как подключенные анимации не рассчитаны на могут использоваться одновременно с переходами навигации по умолчанию. Дополнительную информацию об использовании переходов навигации см. [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition).
-
-## <a name="download-the-code-samples"></a>Загрузка примеров кода
-
-См. [примеры подключенной анимации](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/ConnectedAnimationSample) в коллекции примеров [WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs).
 
 ## <a name="related-articles"></a>Связанные статьи
 
