@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e4657c9dfb651c1e7f6bb4e2cafdc49d0a11237b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 291c2a922e2b2df7111da8bfc6aefb57b87e84bb
+ms.sourcegitcommit: 4bad5f9427e7db27b57bedc6d7df19077c62e8c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630569"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535189"
 ---
 # <a name="my-people-notifications"></a>Уведомления близких людей
 
@@ -68,7 +68,7 @@ experienceType=”shoulderTap”
 Кроме того, узел всплывающего уведомления верхнего уровня должен содержать параметр **hint-people** для указания контакта-отправителя. Этот параметр может принимать значения:
 
 + **Адрес электронной почты** 
-    + Например: mailto:johndoe@mydomain.com
+    + Например: ` mailto:johndoe@mydomain.com `
 + **Номер телефона** 
     + Например: tel:888-888-8888
 + **Удаленный идентификатор** 
