@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, анимация
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d2c965bcfbf81efe73ce8aff93cdb8b31163fbd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 89b393120657b7c02ccfe10ce6aca16be80118aa
+ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653849"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852264"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a>Пользовательские взаимодействия с манипуляциями, выполняемые с помощью InteractionTracker
 
 В этой статье рассматривается, как использовать API InteractionTracker для создания пользовательских взаимодействий с манипуляциями.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Подразумевается, что вы знакомы с понятиями, которые рассматриваются в этих статьях:
 
@@ -151,7 +151,7 @@ private void InteractionTrackerSetup(Compositor compositor, Visual hitTestRoot)
     tracker.MinPosition = new Vector3(-1000f);
     tracker.MaxPosition = new Vector3(1000f);
 
-    // #3 Setup the VisualInteractionSourc
+    // #3 Setup the VisualInteractionSource
     var source = VisualInteractionSource.Create(hitTestRoot);
 
     // #4 Set the properties for the VisualInteractionSource

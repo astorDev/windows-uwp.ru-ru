@@ -1,16 +1,16 @@
 ---
 title: Приложения с адаптивным к версии кодом
 description: Узнайте, как воспользоваться новыми API, при этом сохраняя совместимость с предыдущими версиями
-ms.date: 09/17/2018
+ms.date: 05/17/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 435bbdbfaaf1bec90fa1ee2d598b4a3fe78d3789
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 579f92cc51ed5f9eeea522d81cfdb030f85ef0da
+ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631659"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852275"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Адаптивные приложения версии: Использовать новые интерфейсы API, сохраняя совместимость с предыдущими версиями
 
@@ -48,7 +48,7 @@ ms.locfileid: "57631659"
 
 В следующей таблице для справки представлены номера сборки для каждого SDK.
 
-| Понятное имя | Версия | Сборка ОС/SDK |
+| Понятное имя | Version | Сборка ОС/SDK |
 | ---- | ---- | ---- |
 | RTM | 1507 | 10240 |
 | Ноябрьское обновление | 1511 | 10586 |
@@ -57,6 +57,7 @@ ms.locfileid: "57631659"
 | Fall Creators Update | 1709 | 16299 |
 | Обновление за апрель 2018 г. | 1803 | 17134 |
 | Октября 2018 с обновлением | 1809 | 17763 |
+| Обновление мая 2019 г. | 1903 | 18362 |
 
 Вы можете скачать все выпущенные версии SDK из [архива Windows SDK и эмулятора](https://developer.microsoft.com/downloads/sdk-archive). Последнюю версию Windows Insider Preview SDK можно скачать в разделе для разработчиков сайта [Windows Insider](https://insider.windows.com/Home/BuildWithWindows).
 
