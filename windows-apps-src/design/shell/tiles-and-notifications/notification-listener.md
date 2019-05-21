@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, прослушиватель уведомлений, usernotificationlistener, документация, уведомления о доступе
 ms.localizationpriority: medium
-ms.openlocfilehash: de1032eb3d0d364a62beff0a1af8f84240c11d87
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d6c18740cbba0ea037440300edbe2d7ba4fd116e
+ms.sourcegitcommit: 1d04910a6bbfcaa985d2074caf8f898c35eab7ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649619"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933159"
 ---
 # <a name="notification-listener-access-all-notifications"></a>Прослушиватель уведомлений: Доступ к все уведомления
 
@@ -277,17 +277,17 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>Событие переднего плана для добавленных/удаленных уведомлений
 
 > [!IMPORTANT] 
-> Известные проблемы: Событие основной приведут циклов ЦП на последних версиях Windows и ранее не работал раньше. НЕ используйте это событие переднего плана. В следующем обновлении для Windows это будет исправлено.
+> Известные проблемы: В сборках, прежде чем создавать 17763 / октября 2018 Update / 1809 версии событие основной вызовет цикл ЦП и (или) не работает. Если вам нужна поддержка этих более ранних сборках, вместо этого используйте фоновую задачу.
 
-Вместо использования событий переднего плана, использовать код, показанный ранее, для [модель одного процесса](../../../launch-resume/create-and-register-an-inproc-background-task.md) фоновой задачи. Фоновая задача также позволяют получать уведомления об изменении обоих при закрытых или выполняемые приложения.
+Также можно прослушивать уведомления из обработчика событий в памяти...
 
 ```csharp
-// Subscribe to foreground event (DON'T USE THIS)
+// Subscribe to foreground event
 listener.NotificationChanged += Listener_NotificationChanged;
  
 private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
 {
-    // NOTE: This event WILL CAUSE CPU LOOPS, DO NOT USE. Use the background task instead.
+    // Your code for handling the notification
 }
 ```
 
