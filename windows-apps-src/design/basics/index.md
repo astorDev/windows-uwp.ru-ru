@@ -5,12 +5,12 @@ keywords: макет приложения uwp, универсальная пла
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 03e30aa091a04e16ee84f38832dc962d34659e1b
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 78462d5d29ebcc31792aa46da7657c57fb960e13
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065427"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984112"
 ---
 # <a name="design-basics-for-uwp-apps"></a>Основы проектирования приложений UWP
 
@@ -24,7 +24,7 @@ ms.locfileid: "65065427"
 
 Введение в функции UWP и рекомендации по созданию приложений, которые будут прекрасно смотреться на всех типах устройств под управлением Windows.
 
-[**Система Fluent Design**](../fluent-design-system/index.md)
+[**Система Fluent Design**](/windows/apps/fluent-design-system)
 
 Система Fluent Design представляет наши цели и принципы создания адаптивных, привлекательных и красивых пользовательских интерфейсов.
 
