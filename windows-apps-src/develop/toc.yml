@@ -1,1521 +1,1469 @@
-items:
 - name: Обзор
   href: index.md
 - name: Типы приложений
   items:
-  - name: Образовательные приложения
-    href: ../apps-for-education/index.md
-    items:
-    - name: Тестирование API
-      href: ../apps-for-education/take-a-test-api.md
-  - name: Корпоративные приложения
-    href: ../enterprise/index.md
-    items:
-    - name: Windows Information Protection (WIP)
-      href: ../enterprise/wip-hub.md
+    - name: Образовательные приложения
+      href: ../apps-for-education/index.md
       items:
-      - name: Руководство разработчика WIP
-        href: ../enterprise/wip-dev-guide.md
-    - name: Общее корпоративное хранилище
-      href: ../enterprise/enterprise-shared-storage.md
-    - name: 'Руководство: создание приложения базы данных клиентов'
-      href: ../enterprise/customer-database-tutorial.md
+        - name: Тестирование API
+          href: ../apps-for-education/take-a-test-api.md
+    - name: Корпоративные приложения
+      href: ../enterprise/index.md
       items:
-      - name: Структура обучающего приложения базы данных клиентов
-        href: ../enterprise/customer-database-app-structure.md
-  - name: Прогрессивные веб-приложения
-    href: /microsoft-edge/progressive-web-apps
-- name: Звук, видео и камера
+        - name: Windows Information Protection (WIP)
+          href: ../enterprise/wip-hub.md
+          items:
+            - name: Руководство разработчика WIP
+              href: ../enterprise/wip-dev-guide.md
+        - name: Общее корпоративное хранилище
+          href: ../enterprise/enterprise-shared-storage.md
+        - name: 'Руководство: создание приложения базы данных клиентов'
+          href: ../enterprise/customer-database-tutorial.md
+          items:
+            - name: Структура обучающего приложения базы данных клиентов
+              href: ../enterprise/customer-database-app-structure.md
+    - name: Прогрессивные веб-приложения
+      href: /microsoft-edge/progressive-web-apps
+- name: 'Звук, видео и камера'
   href: ../audio-video-camera/index.md
   items:
-  - name: Камера
-    href: ../audio-video-camera/camera.md
-    items:
-    - name: Фото- и видеосъемка с использованием встроенного пользовательского интерфейса камеры в Windows
-      href: ../audio-video-camera/capture-photos-and-video-with-cameracaptureui.md
-    - name: Отображение просмотра камеры
-      href: ../audio-video-camera/simple-camera-preview-access.md
-    - name: Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture
-      href: ../audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md
-    - name: Функции пользовательского интерфейса камеры для мобильных устройств
-      href: ../audio-video-camera/camera-ui-features-for-mobile-devices.md
-    - name: Обработка ориентации устройства и экрана с помощью MediaCapture
-      href: ../audio-video-camera/handle-device-orientation-with-mediacapture.md
-    - name: Обнаружение и выбор возможностей камеры с помощью профилей камеры
-      href: ../audio-video-camera/camera-profiles.md
-    - name: Установка формата, разрешения и частоты кадров для MediaCapture
-      href: ../audio-video-camera/set-media-encoding-properties.md
-    - name: HDR и фотосъемка при слабом освещении
-      href: ../audio-video-camera/high-dynamic-range-hdr-photo-capture.md
-    - name: Ручные элементы управления фото- и видеозахватом на камере
-      href: ../audio-video-camera/capture-device-controls-for-photo-and-video-capture.md
-    - name: Ручные элементы управления для видеозахвата на камере
-      href: ../audio-video-camera/capture-device-controls-for-video-capture.md
-    - name: Эффект стабилизации видео для видеозахвата
-      href: ../audio-video-camera/effects-for-video-capture.md
-    - name: Анализ сцен для MediaCapture
-      href: ../audio-video-camera/scene-analysis-for-media-capture.md
-    - name: Съемка последовательности фотографий с помощью VariablePhotoSequence
-      href: ../audio-video-camera/variable-photo-sequence.md
-    - name: Обработка кадров мультимедиа с помощью MediaFrameReader
-      href: ../audio-video-camera/process-media-frames-with-mediaframereader.md
+    - name: Камера
+      href: ../audio-video-camera/camera.md
       items:
-      - name: Обработка аудиокадров с помощью MediaFrameReader
-        href: ../audio-video-camera/use-opencv-with-mediaframereader.md
-      - name: Использование OpenCV с MediaFrameReader
-        href: ../audio-video-camera/use-opencv-with-mediaframereader.md
-    - name: Запись данных из нескольких источников с помощью класса MediaFrameSourceGroup
-      href: ../audio-video-camera/capture-from-multiple-sources-simultaneously.md
-    - name: Получение кадра предварительного просмотра
-      href: ../audio-video-camera/get-a-preview-frame.md
-  - name: Воспроизведение мультимедиа
-    href: ../audio-video-camera/media-playback.md
-    items:
-    - name: Воспроизведение аудио и видео с помощью MediaPlayer
-      href: ../audio-video-camera/play-audio-and-video-with-mediaplayer.md
-    - name: Элементы, списки воспроизведения и звуковые дорожки мультимедиа
-      href: ../audio-video-camera/media-playback-with-mediasource.md
-    - name: Интеграция с системными элементами управления транспортировкой мультимедиа
-      href: ../audio-video-camera/integrate-with-systemmediatransportcontrols.md
+        - name: Фото- и видеосъемка с использованием встроенного пользовательского интерфейса камеры в Windows
+          href: ../audio-video-camera/capture-photos-and-video-with-cameracaptureui.md
+        - name: Отображение просмотра камеры
+          href: ../audio-video-camera/simple-camera-preview-access.md
+        - name: 'Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture'
+          href: ../audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md
+        - name: Функции пользовательского интерфейса камеры для мобильных устройств
+          href: ../audio-video-camera/camera-ui-features-for-mobile-devices.md
+        - name: Обработка ориентации устройства и экрана с помощью MediaCapture
+          href: ../audio-video-camera/handle-device-orientation-with-mediacapture.md
+        - name: Обнаружение и выбор возможностей камеры с помощью профилей камеры
+          href: ../audio-video-camera/camera-profiles.md
+        - name: 'Установка формата, разрешения и частоты кадров для MediaCapture'
+          href: ../audio-video-camera/set-media-encoding-properties.md
+        - name: HDR и фотосъемка при слабом освещении
+          href: ../audio-video-camera/high-dynamic-range-hdr-photo-capture.md
+        - name: Ручные элементы управления фото- и видеозахватом на камере
+          href: ../audio-video-camera/capture-device-controls-for-photo-and-video-capture.md
+        - name: Ручные элементы управления для видеозахвата на камере
+          href: ../audio-video-camera/capture-device-controls-for-video-capture.md
+        - name: Эффект стабилизации видео для видеозахвата
+          href: ../audio-video-camera/effects-for-video-capture.md
+        - name: Анализ сцен для MediaCapture
+          href: ../audio-video-camera/scene-analysis-for-media-capture.md
+        - name: Съемка последовательности фотографий с помощью VariablePhotoSequence
+          href: ../audio-video-camera/variable-photo-sequence.md
+        - name: Обработка кадров мультимедиа с помощью MediaFrameReader
+          href: ../audio-video-camera/process-media-frames-with-mediaframereader.md
+          items:
+            - name: Обработка аудиокадров с помощью MediaFrameReader
+              href: ../audio-video-camera/use-opencv-with-mediaframereader.md
+            - name: Использование OpenCV с MediaFrameReader
+              href: ../audio-video-camera/use-opencv-with-mediaframereader.md
+        - name: Запись данных из нескольких источников с помощью класса MediaFrameSourceGroup
+          href: ../audio-video-camera/capture-from-multiple-sources-simultaneously.md
+        - name: Подключение к удаленным камерам
+          href: ../audio-video-camera/connect-to-remote-cameras.md
+        - name: Получение кадра предварительного просмотра
+          href: ../audio-video-camera/get-a-preview-frame.md
+    - name: Воспроизведение мультимедиа
+      href: ../audio-video-camera/media-playback.md
       items:
-      - name: Ручное управление системными элементами управления воспроизведением мультимедиа
-        href: ../audio-video-camera/system-media-transport-controls.md
-    - name: Поддерживаемые системой синхронизированные подсказки метаданных
-      href: ../audio-video-camera/system-supported-metadata-cues.md
-    - name: Создание, планирование и управление перерывами при воспроизведении мультимедиа
-      href: ../audio-video-camera/create-schedule-and-manage-media-breaks.md
-    - name: Воспроизведение мультимедиа в фоновом режиме
-      href: ../audio-video-camera/background-audio.md
+        - name: Воспроизведение аудио и видео с помощью MediaPlayer
+          href: ../audio-video-camera/play-audio-and-video-with-mediaplayer.md
+        - name: 'Элементы, списки воспроизведения и звуковые дорожки мультимедиа'
+          href: ../audio-video-camera/media-playback-with-mediasource.md
+        - name: Интеграция с системными элементами управления транспортировкой мультимедиа
+          href: ../audio-video-camera/integrate-with-systemmediatransportcontrols.md
+          items:
+            - name: Ручное управление системными элементами управления воспроизведением мультимедиа
+              href: ../audio-video-camera/system-media-transport-controls.md
+        - name: Поддерживаемые системой синхронизированные подсказки метаданных
+          href: ../audio-video-camera/system-supported-metadata-cues.md
+        - name: 'Создание, планирование и управление перерывами при воспроизведении мультимедиа'
+          href: ../audio-video-camera/create-schedule-and-manage-media-breaks.md
+        - name: Воспроизведение мультимедиа в фоновом режиме
+          href: ../audio-video-camera/background-audio.md
+          items:
+            - name: Традиционное воспроизведение мультимедиа в фоновом режиме
+              href: ../audio-video-camera/legacy-background-media-playback.md
+        - name: Адаптивная потоковая передача
+          href: ../audio-video-camera/adaptive-streaming.md
+          items:
+            - name: Поддержка тега HLS
+              href: ../audio-video-camera/hls-tag-support.md
+            - name: Поддержка профиля DASH
+              href: ../audio-video-camera/dash-profile-support.md
+        - name: Трансляция мультимедиа
+          href: ../audio-video-camera/media-casting.md
+        - name: PlayReady DRM
+          href: ../audio-video-camera/playready-client-sdk.md
+          items:
+            - name: Аппаратное управление цифровыми правами (DRM)
+              href: ../audio-video-camera/hardware-drm.md
+            - name: Адаптивная потоковая передача с защитой PlayReady
+              href: ../audio-video-camera/adaptive-streaming-with-playready.md
+        - name: Расширение зашифрованного мультимедиа PlayReady
+          href: ../audio-video-camera/playready-encrypted-media-extension.md
+    - name: Обнаружение лиц на изображениях или в видео
+      href: ../audio-video-camera/detect-and-track-faces-in-an-image.md
+    - name: Пользовательские видеоэффекты
+      href: ../audio-video-camera/custom-video-effects.md
+    - name: Пользовательские звуковые эффекты
+      href: ../audio-video-camera/custom-audio-effects.md
+    - name: Создание и редактирование мультимедийных композиций
+      href: ../audio-video-camera/media-compositions-and-editing.md
+    - name: Свойства сведений о звуковых устройствах
+      href: ../audio-video-camera/audio-device-information-properties.md
+    - name: Обнаружение изменения состояния звука и реагирование на него
+      href: ../audio-video-camera/detect-and-respond-to-audio-state-changes.md
+    - name: 'Создание, редактирование и сохранение точечных рисунков'
+      href: ../audio-video-camera/imaging.md
       items:
-      - name: Традиционное воспроизведение мультимедиа в фоновом режиме
-        href: ../audio-video-camera/legacy-background-media-playback.md
-    - name: Адаптивная потоковая передача
-      href: ../audio-video-camera/adaptive-streaming.md
-      items:
-      - name: Поддержка тега HLS
-        href: ../audio-video-camera/hls-tag-support.md
-      - name: Поддержка профиля DASH
-        href: ../audio-video-camera/dash-profile-support.md
-    - name: Трансляция мультимедиа
-      href: ../audio-video-camera/media-casting.md
-    - name: PlayReady DRM
-      href: ../audio-video-camera/playready-client-sdk.md
-      items:
-      - name: Аппаратное управление цифровыми правами (DRM)
-        href: ../audio-video-camera/hardware-drm.md
-      - name: Адаптивная потоковая передача с защитой PlayReady
-        href: ../audio-video-camera/adaptive-streaming-with-playready.md
-    - name: Расширение зашифрованного мультимедиа PlayReady
-      href: ../audio-video-camera/playready-encrypted-media-extension.md
-  - name: Обнаружение лиц на изображениях или в видео
-    href: ../audio-video-camera/detect-and-track-faces-in-an-image.md
-  - name: Пользовательские видеоэффекты
-    href: ../audio-video-camera/custom-video-effects.md
-  - name: Пользовательские звуковые эффекты
-    href: ../audio-video-camera/custom-audio-effects.md
-  - name: Создание и редактирование мультимедийных композиций
-    href: ../audio-video-camera/media-compositions-and-editing.md
-  - name: Свойства сведений о звуковых устройствах
-    href: ../audio-video-camera/audio-device-information-properties.md
-  - name: Обнаружение изменения состояния звука и реагирование на него
-    href: ../audio-video-camera/detect-and-respond-to-audio-state-changes.md
-  - name: Создание, редактирование и сохранение точечных рисунков
-    href: ../audio-video-camera/imaging.md
-    items:
-    - name: Обработка точечных рисунков с помощью OpenCV
-      href: ../audio-video-camera/process-software-bitmaps-with-opencv.md
-    - name: Обработка точечных рисунков с помощью API LowLightFusion
-      href: ../audio-video-camera/process-bitmaps-low-light-fusion.md
-    - name: Справочник по параметрам BitmapEncoder
-      href: ../audio-video-camera/bitmapencoder-options-reference.md
-    - name: Метаданные изображения
-      href: ../audio-video-camera/image-metadata.md
-  - name: Перекодирование файлов мультимедиа
-    href: ../audio-video-camera/transcode-media-files.md
-  - name: Обработка файлов мультимедиа в фоновом режиме
-    href: ../audio-video-camera/process-media-files-in-the-background.md
-  - name: Звуковые графы
-    href: ../audio-video-camera/audio-graphs.md
-  - name: MIDI
-    href: ../audio-video-camera/midi.md
-  - name: Импорт мультимедиа с устройства
-    href: ../audio-video-camera/import-media-from-a-device.md
-  - name: Независимый от камеры фонарик
-    href: ../audio-video-camera/camera-independent-flashlight.md
-  - name: Поддерживаемые кодеки
-    href: ../audio-video-camera/supported-codecs.md
-  - name: Запрос установленных кодеков
-    href: ../audio-video-camera/codec-query.md
-  - name: Снимок экрана
-    href: ../audio-video-camera/screen-capture.md
+        - name: Обработка точечных рисунков с помощью OpenCV
+          href: ../audio-video-camera/process-software-bitmaps-with-opencv.md
+        - name: Обработка точечных рисунков с помощью API LowLightFusion
+          href: ../audio-video-camera/process-bitmaps-low-light-fusion.md
+        - name: Справочник по параметрам BitmapEncoder
+          href: ../audio-video-camera/bitmapencoder-options-reference.md
+        - name: Метаданные изображения
+          href: ../audio-video-camera/image-metadata.md
+    - name: Перекодирование файлов мультимедиа
+      href: ../audio-video-camera/transcode-media-files.md
+    - name: Обработка файлов мультимедиа в фоновом режиме
+      href: ../audio-video-camera/process-media-files-in-the-background.md
+    - name: Звуковые графы
+      href: ../audio-video-camera/audio-graphs.md
+    - name: MIDI
+      href: ../audio-video-camera/midi.md
+    - name: Импорт мультимедиа с устройства
+      href: ../audio-video-camera/import-media-from-a-device.md
+    - name: Независимый от камеры фонарик
+      href: ../audio-video-camera/camera-independent-flashlight.md
+    - name: Поддерживаемые кодеки
+      href: ../audio-video-camera/supported-codecs.md
+    - name: Запрос установленных кодеков
+      href: ../audio-video-camera/codec-query.md
+    - name: Снимок экрана
+      href: ../audio-video-camera/screen-capture.md
 - name: Связь
   items:
-  - name: Связь между приложениями
-    href: ../app-to-app/index.md
-    items:
-    - name: Предоставление общего доступа к данным
-      href: ../app-to-app/share-data.md
-    - name: Получение данных
-      href: ../app-to-app/receive-data.md
-    - name: Копирование и вставка
-      href: ../app-to-app/copy-and-paste.md
-  - name: Сеть и веб-службы
-    href: ../networking/index.md
-    items:
-    - name: Основы работы с сетями
-      href: ../networking/networking-basics.md
-    - name: Какую сетевую технологию выбрать?
-      href: ../networking/which-networking-technology.md
-    - name: Передача данных по сети в фоновом режиме
-      href: ../networking/network-communications-in-the-background.md
-    - name: Сокеты
-      href: ../networking/sockets.md
-    - name: WebSockets
-      href: ../networking/websockets.md
-    - name: HttpClient
-      href: ../networking/httpclient.md
-    - name: Каналы RSS и Atom
-      href: ../networking/web-feeds.md
-    - name: Фоновая передача данных
-      href: ../networking/background-transfers.md
+    - name: Связь между приложениями
+      href: ../app-to-app/index.md
+      items:
+        - name: Предоставление общего доступа к данным
+          href: ../app-to-app/share-data.md
+        - name: Получение данных
+          href: ../app-to-app/receive-data.md
+        - name: Копирование и вставка
+          href: ../app-to-app/copy-and-paste.md
+    - name: Сеть и веб-службы
+      href: ../networking/index.md
+      items:
+        - name: Основы работы с сетями
+          href: ../networking/networking-basics.md
+        - name: Какую сетевую технологию выбрать?
+          href: ../networking/which-networking-technology.md
+        - name: Передача данных по сети в фоновом режиме
+          href: ../networking/network-communications-in-the-background.md
+        - name: Сокеты
+          href: ../networking/sockets.md
+        - name: WebSockets
+          href: ../networking/websockets.md
+        - name: HttpClient
+          href: ../networking/httpclient.md
+        - name: Каналы RSS и Atom
+          href: ../networking/web-feeds.md
+        - name: Фоновая передача данных
+          href: ../networking/background-transfers.md
 - name: Данные и файлы
   items:
-  - name: Ресурсы приложения
-    href: ../app-resources/index.md
-    items:
-    - name: Система управления ресурсами
-      href: ../app-resources/resource-management-system.md
-    - name: Как RMS сопоставляет и выбирает ресурсы
-      href: ../app-resources/how-rms-matches-and-chooses-resources.md
-    - name: Как RMS сопоставляет языковые теги
-      href: ../app-resources/how-rms-matches-lang-tags.md
-    - name: Адаптация ресурсов с учетом языка, масштаба, контрастности и пр.
-      href: ../app-resources/tailor-resources-lang-scale-contrast.md
-    - name: Локализация строк в манифесте пакета приложения и интерфейсе пользователя
-      href: ../app-resources/localize-strings-ui-manifest.md
-    - name: Загрузка изображений; ресурсы, адаптированные по масштабу, теме, контрастности и пр.
-      href: ../app-resources/images-tailored-for-scale-theme-contrast.md
-    - name: Схемы URI
-      href: ../app-resources/uri-schemes.md
-    - name: Указание ресурсов по умолчанию, которые используются в приложении
-      href: ../app-resources/specify-default-resources-installed.md
-    - name: Добавление ресурсов в пакет приложения, а не в пакет ресурсов
-      href: ../app-resources/build-resources-into-app-package.md
-    - name: Интерфейсы API PRI и пользовательские системы сборки
-      href: ../app-resources/pri-apis-custom-build-systems.md
+    - name: Ресурсы приложения
+      href: ../app-resources/index.md
       items:
-      - name: Сценарий 1 (интерфейсы API PRI)
-        href: ../app-resources/pri-apis-scenario-1.md
-    - name: Компиляция ресурсов вручную с помощью MakePri.exe
-      href: ../app-resources/compile-resources-manually-with-makepri.md
-    - name: Параметры командной строки MakePRI.exe
-      href: ../app-resources/makepri-exe-command-options.md
-    - name: Файл конфигурации MakePri.exe
-      href: ../app-resources/makepri-exe-configuration.md
-    - name: Индексаторы для конкретных форматов MakePri.exe
-      href: ../app-resources/makepri-exe-format-specific-indexers.md
-    - name: Перенос устаревших ресурсов
-      href: ../app-resources/using-mrt-for-converted-desktop-apps-and-games.md
-  - name: Доступ к данным
-    href: ../data-access/index.md
-    items:
-    - name: Использование базы данных SQLite
-      href: ../data-access/sqlite-databases.md
-    - name: Использование базы данных SQL Server
-      href: ../data-access/sql-server-databases.md
-  - name: Привязка данных
-    href: ../data-binding/index.md
-    items:
-    - name: Общие сведения о привязке данных
-      href: ../data-binding/data-binding-quickstart.md
-    - name: Подробно о привязке данных
-      href: ../data-binding/data-binding-in-depth.md
-    - name: Функции в x:Bind
-      href: ../data-binding/function-bindings.md
-    - name: 'Руководство: создание привязок данных'
-      href: ../data-binding/xaml-basics-data-binding.md
-    - name: Демонстрационные данные в рабочей области конструирования и демонстрационные данные для создания прототипов
-      href: ../data-binding/displaying-data-in-the-designer.md
-    - name: Привязка к иерархическим данным и создание представления основных и подробных данных
-      href: ../data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md
-    - name: Привязка данных и MVVM
-      href: ../data-binding/data-binding-and-mvvm.md
-  - name: Файлы, папки и библиотеки
-    href: ../files/index.md
-    items:
-    - name: Перечисление и запрос файлов и папок
-      href: ../files/quickstart-listing-files-and-folders.md
-    - name: Создание, запись и чтение файла
-      href: ../files/quickstart-reading-and-writing-files.md
-    - name: Рекомендации по записи в файлы
-      href: ../files/best-practices-for-writing-to-files.md
-    - name: Получение свойств файла
-      href: ../files/quickstart-getting-file-properties.md
-    - name: Открытие файлов и папок с помощью средства выбора
-      href: ../files/quickstart-using-file-and-folder-pickers.md
-    - name: Сохранение файла с помощью средства выбора
-      href: ../files/quickstart-save-a-file-with-a-picker.md
-    - name: Доступ к содержимому домашней группы
-      href: ../files/quickstart-accessing-homegroup-content.md
-    - name: Определение доступности файлов Microsoft OneDrive
-      href: ../files/quickstart-determining-availability-of-microsoft-onedrive-files.md
-    - name: Файлы и папки в библиотеках музыки, изображений и видео
-      href: ../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md
-    - name: Эскизы
-      href: ../files/thumbnails.md
-    - name: Отслеживание недавно использовавшихся файлов и папок
-      href: ../files/how-to-track-recently-used-files-and-folders.md
-    - name: Отслеживание изменений файловой системы в фоновом режиме
-      href: ../files/change-tracking-filesystem.md
-    - name: Доступ к SD-карте
-      href: ../files/access-the-sd-card.md
-    - name: Разрешения на доступ к файлам
-      href: ../files/file-access-permissions.md
-    - name: Быстрый доступ к свойствам файлов в UWP
-      href: ../files/fast-file-properties.md
-  - name: Машинное обучение
-    href: https://docs.microsoft.com/windows/ai/
+        - name: Система управления ресурсами
+          href: ../app-resources/resource-management-system.md
+        - name: Как RMS сопоставляет и выбирает ресурсы
+          href: ../app-resources/how-rms-matches-and-chooses-resources.md
+        - name: Как RMS сопоставляет языковые теги
+          href: ../app-resources/how-rms-matches-lang-tags.md
+        - name: 'Адаптация ресурсов с учетом языка, масштаба, контрастности и пр.'
+          href: ../app-resources/tailor-resources-lang-scale-contrast.md
+        - name: Локализация строк в манифесте пакета приложения и интерфейсе пользователя
+          href: ../app-resources/localize-strings-ui-manifest.md
+        - name: 'Загрузка изображений; ресурсы, адаптированные по масштабу, теме, контрастности и пр.'
+          href: ../app-resources/images-tailored-for-scale-theme-contrast.md
+        - name: Схемы URI
+          href: ../app-resources/uri-schemes.md
+        - name: 'Указание ресурсов по умолчанию, которые используются в приложении'
+          href: ../app-resources/specify-default-resources-installed.md
+        - name: 'Добавление ресурсов в пакет приложения, а не в пакет ресурсов'
+          href: ../app-resources/build-resources-into-app-package.md
+        - name: Интерфейсы API PRI и пользовательские системы сборки
+          href: ../app-resources/pri-apis-custom-build-systems.md
+          items:
+            - name: Сценарий 1 (интерфейсы API PRI)
+              href: ../app-resources/pri-apis-scenario-1.md
+        - name: Компиляция ресурсов вручную с помощью MakePri.exe
+          href: ../app-resources/compile-resources-manually-with-makepri.md
+        - name: Параметры командной строки MakePRI.exe
+          href: ../app-resources/makepri-exe-command-options.md
+        - name: Файл конфигурации MakePri.exe
+          href: ../app-resources/makepri-exe-configuration.md
+        - name: Индексаторы для конкретных форматов MakePri.exe
+          href: ../app-resources/makepri-exe-format-specific-indexers.md
+        - name: Перенос устаревших ресурсов
+          href: ../app-resources/using-mrt-for-converted-desktop-apps-and-games.md
+    - name: Доступ к данным
+      href: ../data-access/index.md
+      items:
+        - name: Использование базы данных SQLite
+          href: ../data-access/sqlite-databases.md
+        - name: Использование базы данных SQL Server
+          href: ../data-access/sql-server-databases.md
+        - name: Использование базы данных MongoDB
+          href: ../data-access/mongo-db-databases.md
+        - name: Использование базы данных MySQL
+          href: ../data-access/mysql-databases.md
+    - name: Привязка данных
+      href: ../data-binding/index.md
+      items:
+        - name: Общие сведения о привязке данных
+          href: ../data-binding/data-binding-quickstart.md
+        - name: Подробно о привязке данных
+          href: ../data-binding/data-binding-in-depth.md
+        - name: 'Функции в x:Bind'
+          href: ../data-binding/function-bindings.md
+        - name: 'Руководство: создание привязок данных'
+          href: ../data-binding/xaml-basics-data-binding.md
+        - name: Демонстрационные данные в рабочей области конструирования и демонстрационные данные для создания прототипов
+          href: ../data-binding/displaying-data-in-the-designer.md
+        - name: Привязка к иерархическим данным и создание представления основных и подробных данных
+          href: ../data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md
+        - name: Привязка данных и MVVM
+          href: ../data-binding/data-binding-and-mvvm.md
+    - name: 'Файлы, папки и библиотеки'
+      href: ../files/index.md
+      items:
+        - name: Перечисление и запрос файлов и папок
+          href: ../files/quickstart-listing-files-and-folders.md
+        - name: 'Создание, запись и чтение файла'
+          href: ../files/quickstart-reading-and-writing-files.md
+        - name: Рекомендации по записи в файлы
+          href: ../files/best-practices-for-writing-to-files.md
+        - name: Получение свойств файла
+          href: ../files/quickstart-getting-file-properties.md
+        - name: Открытие файлов и папок с помощью средства выбора
+          href: ../files/quickstart-using-file-and-folder-pickers.md
+        - name: Сохранение файла с помощью средства выбора
+          href: ../files/quickstart-save-a-file-with-a-picker.md
+        - name: Доступ к содержимому домашней группы
+          href: ../files/quickstart-accessing-homegroup-content.md
+        - name: Определение доступности файлов Microsoft OneDrive
+          href: ../files/quickstart-determining-availability-of-microsoft-onedrive-files.md
+        - name: 'Файлы и папки в библиотеках музыки, изображений и видео'
+          href: ../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md
+        - name: Эскизы
+          href: ../files/thumbnails.md
+        - name: Отслеживание недавно использовавшихся файлов и папок
+          href: ../files/how-to-track-recently-used-files-and-folders.md
+        - name: Отслеживание изменений файловой системы в фоновом режиме
+          href: ../files/change-tracking-filesystem.md
+        - name: Доступ к SD-карте
+          href: ../files/access-the-sd-card.md
+        - name: Разрешения на доступ к файлам
+          href: ../files/file-access-permissions.md
+        - name: Быстрый доступ к свойствам файлов в UWP
+          href: ../files/fast-file-properties.md
+    - name: Машинное обучение
+      href: 'https://docs.microsoft.com/windows/ai/'
 - name: Развертывание
   items:
-  - name: Выбор версии UWP
-    href: ../updates-and-versions/choose-a-uwp-version.md
-  - name: Отладка, тестирование и производительность
-    href: ../debug-test-perf/index.md
-    items:
-    - name: Развертывание и отладка приложений UWP
-      href: ../debug-test-perf/deploying-and-debugging-uwp-apps.md
-    - name: Средства тестирования и отладки для PLM
-      href: ../debug-test-perf/testing-debugging-plm.md
-    - name: Тестирование при помощи эмулятора устройства с Windows 10 (Майкрософт)
-      href: ../debug-test-perf/test-with-the-emulator.md
-    - name: Проверка приложений Surface Hub с использованием Visual Studio
-      href: ../debug-test-perf/test-surface-hub-apps-using-visual-studio.md
-    - name: Развертывание приложения с использованием свободной регистрации файлов
-      href: ../debug-test-perf/loose-file-registration.md
-    - name: Бета-тестирование
-      href: ../debug-test-perf/beta-testing.md
-    - name: Портал устройств Windows
-      href: ../debug-test-perf/device-portal.md
+    - name: Выбор версии UWP
+      href: ../updates-and-versions/choose-a-uwp-version.md
+    - name: 'Отладка, тестирование и производительность'
+      href: ../debug-test-perf/index.md
       items:
-      - name: Портал устройств для ПК
-        href: ../debug-test-perf/device-portal-desktop.md
-      - name: Портал устройств для мобильных устройств
-        href: ../debug-test-perf/device-portal-mobile.md
-      - name: Портал устройств для Xbox
-        href: ../debug-test-perf/device-portal-xbox.md
-      - name: Портал устройств для HoloLens
-        href: ../debug-test-perf/device-portal-hololens.md
-      - name: Основные API портала устройств
-        href: ../debug-test-perf/device-portal-api-core.md
-      - name: Программирование пользовательского подключаемого модуля для портала устройств
-        href: ../debug-test-perf/device-portal-plugin.md
-      - name: Подготовка портала устройств с использованием пользовательского SSL-сертификата
-        href: ../debug-test-perf/device-portal-ssl.md
-    - name: Комплект сертификации приложений для Windows
-      href: ../debug-test-perf/windows-app-certification-kit.md
+        - name: Развертывание и отладка приложений UWP
+          href: ../debug-test-perf/deploying-and-debugging-uwp-apps.md
+        - name: Средства тестирования и отладки для PLM
+          href: ../debug-test-perf/testing-debugging-plm.md
+        - name: "Тестирование при помощи эмулятора устройства с Windows\_10\_(Майкрософт)"
+          href: ../debug-test-perf/test-with-the-emulator.md
+        - name: Проверка приложений Surface Hub с использованием Visual Studio
+          href: ../debug-test-perf/test-surface-hub-apps-using-visual-studio.md
+        - name: Развертывание приложения с использованием свободной регистрации файлов
+          href: ../debug-test-perf/loose-file-registration.md
+        - name: Бета-тестирование
+          href: ../debug-test-perf/beta-testing.md
+        - name: Портал устройств Windows
+          href: ../debug-test-perf/device-portal.md
+          items:
+            - name: Портал устройств для ПК
+              href: ../debug-test-perf/device-portal-desktop.md
+            - name: Портал устройств для мобильных устройств
+              href: ../debug-test-perf/device-portal-mobile.md
+            - name: Портал устройств для HoloLens
+              href: ../debug-test-perf/device-portal-hololens.md
+            - name: Основные API портала устройств
+              href: ../debug-test-perf/device-portal-api-core.md
+            - name: Программирование пользовательского подключаемого модуля для портала устройств
+              href: ../debug-test-perf/device-portal-plugin.md
+            - name: Подготовка портала устройств с использованием пользовательского SSL-сертификата
+              href: ../debug-test-perf/device-portal-ssl.md
+        - name: Комплект сертификации приложений для Windows
+          href: ../debug-test-perf/windows-app-certification-kit.md
+          items:
+            - name: Тесты комплекта сертификации приложений для Windows
+              href: ../debug-test-perf/windows-app-certification-kit-tests.md
+              items:
+                - name: 'Тесты приложения, перенесенного из классического приложения для Windows'
+                  href: ../debug-test-perf/windows-desktop-bridge-app-tests.md
+        - name: Производительность
+          href: ../debug-test-perf/performance-and-xaml-ui.md
+          items:
+            - name: Планирование производительности
+              href: ../debug-test-perf/planning-and-measuring-performance.md
+            - name: Оптимизация фоновой активности
+              href: ../debug-test-perf/optimize-background-activity.md
+            - name: Оптимизация пользовательского интерфейса ListView и GridView
+              href: ../debug-test-perf/optimize-gridview-and-listview.md
+            - name: Виртуализация данных ListView и GridView
+              href: ../debug-test-perf/listview-and-gridview-data-optimization.md
+            - name: Улучшение производительности сборки мусора
+              href: ../debug-test-perf/improve-garbage-collection-performance.md
+            - name: Обеспечение быстрого отклика потока пользовательского интерфейса
+              href: ../debug-test-perf/keep-the-ui-thread-responsive.md
+            - name: Оптимизация разметки XAML
+              href: ../debug-test-perf/optimize-xaml-loading.md
+            - name: Оптимизация макета XAML
+              href: ../debug-test-perf/optimize-your-xaml-layout.md
+            - name: Советы по MVVM и обеспечению производительности языка
+              href: ../debug-test-perf/mvvm-performance-tips.md
+            - name: Рекомендации по повышению производительности запуска приложения
+              href: ../debug-test-perf/best-practices-for-your-app-s-startup-performance.md
+            - name: 'Оптимизация анимаций, мультимедиа и изображений'
+              href: ../debug-test-perf/optimize-animations-and-media.md
+            - name: Оптимизация времени приостановки и возобновления работы
+              href: ../debug-test-perf/optimize-suspend-resume.md
+            - name: Оптимизация доступа к файлам
+              href: ../debug-test-perf/optimize-file-access.md
+            - name: Компоненты среды выполнения Windows и оптимизация межпрограммного взаимодействия
+              href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
+            - name: Инструменты для профилирования и производительности
+              href: ../debug-test-perf/tools-for-profiling-and-performance.md
+        - name: Приложения с адаптивным к версии кодом
+          href: ../debug-test-perf/version-adaptive-apps.md
+          items:
+            - name: Адаптивный к версии код
+              href: ../debug-test-perf/version-adaptive-code.md
+            - name: Условный код XAML
+              href: ../debug-test-perf/conditional-xaml.md
+    - name: 'Монетизация, привлечение и службы Store'
+      href: ../monetize/index.md
       items:
-      - name: Тесты комплекта сертификации приложений для Windows
-        href: ../debug-test-perf/windows-app-certification-kit-tests.md
-        items:
-        - name: Тесты приложения, перенесенного из классического приложения для Windows
-          href: ../debug-test-perf/windows-desktop-bridge-app-tests.md
-    - name: Производительность
-      href: ../debug-test-perf/performance-and-xaml-ui.md
+        - name: Покупки из приложения и пробные версии
+          href: ../monetize/in-app-purchases-and-trials.md
+          items:
+            - name: Получение информации о продукте для приложений и надстроек
+              href: ../monetize/get-product-info-for-apps-and-add-ons.md
+            - name: Получение информации о лицензии для приложений и надстроек
+              href: ../monetize/get-license-info-for-apps-and-add-ons.md
+            - name: Поддержка покупок приложений и надстроек из приложения
+              href: ../monetize/enable-in-app-purchases-of-apps-and-add-ons.md
+            - name: Поддержка покупок потребляемых надстроек
+              href: ../monetize/enable-consumable-add-on-purchases.md
+            - name: Включение надстроек с подпиской для приложения
+              href: ../monetize/enable-subscription-add-ons-for-your-app.md
+            - name: Внедрение пробной версии приложения
+              href: ../monetize/implement-a-trial-version-of-your-app.md
+            - name: Схемы данных для продуктов Store
+              href: ../monetize/data-schemas-for-store-products.md
+            - name: Коды ошибок для операций Store
+              href: ../monetize/error-codes-for-store-operations.md
+            - name: Использование пространства имен Windows.ApplicationModel.Store
+              href: ../monetize/in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md
+              items:
+                - name: Исключение или ограничение функций в пробной версии
+                  href: ../monetize/exclude-or-limit-features-in-a-trial-version-of-your-app.md
+                - name: Поддержка покупки продуктов из приложения
+                  href: ../monetize/enable-in-app-product-purchases.md
+                - name: Поддержка покупки продуктов из приложения
+                  href: ../monetize/enable-consumable-in-app-product-purchases.md
+                - name: Управление большим каталогом внутренних продуктов приложения
+                  href: ../monetize/manage-a-large-catalog-of-in-app-products.md
+                - name: Проверка покупок продуктов с помощью квитанций
+                  href: ../monetize/use-receipts-to-verify-product-purchases.md
+        - name: Показ рекламы в приложении с помощью Microsoft Advertising SDK
+          href: ../monetize/display-ads-in-your-app.md
+          items:
+            - name: Установить пакет Microsoft Advertising SDK
+              href: ../monetize/install-the-microsoft-advertising-libraries.md
+              items:
+                - name: Обновление приложения для использования последних библиотек для баннеров
+                  href: ../monetize/update-your-app-to-the-latest-advertising-libraries.md
+            - name: Реализация рекламы в приложении
+              href: ../monetize/developer-walkthroughs.md
+              items:
+                - name: Рекламные баннеры
+                  href: ../monetize/banner-ads.md
+                  items:
+                    - name: AdControl в XAML и .NET
+                      href: ../monetize/adcontrol-in-xaml-and--net.md
+                    - name: AdControl в HTML 5 и JavaScript
+                      href: ../monetize/adcontrol-in-html-5-and-javascript.md
+                    - name: Поддерживаемые размеры баннеров
+                      href: ../monetize/supported-ad-sizes-for-banner-ads.md
+                - name: Межстраничные объявления
+                  href: ../monetize/interstitial-ads.md
+                  items:
+                    - name: Пример кода промежуточной рекламы в C
+                      href: ../monetize/interstitial-ad-sample-code-in-c.md
+                    - name: Пример кода промежуточной рекламы в JavaScript
+                      href: ../monetize/interstitial-ad-sample-code-in-javascript.md
+                - name: Собственные объявления
+                  href: ../monetize/native-ads.md
+                - name: Показ рекламы в видеосодержимом
+                  href: ../monetize/add-advertisements-to-video-content.md
+            - name: Настройка рекламных блоков в приложении
+              href: ../monetize/set-up-ad-units-in-your-app.md
+            - name: Служба рекламного посредника (Майкрософт)
+              href: ../monetize/ad-mediation-service.md
+            - name: Рекомендации
+              href: ../monetize/best-practices-for-ads-in-apps.md
+              items:
+                - name: Рекомендации по взаимодействию с пользователем и работе с пользовательским интерфейсом
+                  href: ../monetize/ui-and-user-experience-guidelines.md
+                - name: Оптимизация просматриваемости ваших групп объявлений
+                  href: ../monetize/optimize-ad-unit-viewability.md
+                - name: Обработка ошибок рекламы
+                  href: ../monetize/error-handling-with-advertising-libraries.md
+                  items:
+                    - name: 'Пошаговое руководство по обработке ошибок XAML/C#'
+                      href: ../monetize/error-handling-in-xamlc-walkthrough.md
+                    - name: Пошаговое руководство по обработке ошибок в JavaScript
+                      href: ../monetize/error-handling-in-javascript-walkthrough.md
+            - name: Известные проблемы и устранение неполадок
+              href: ../monetize/known-issues-for-the-advertising-libraries.md
+              items:
+                - name: Руководство по устранению неполадок для HTML и JavaScript
+                  href: ../monetize/html-and-javascript-troubleshooting-guide.md
+                - name: 'Руководство по устранению неполадок в XAML и C#'
+                  href: ../monetize/xaml-and-c-troubleshooting-guide.md
+            - name: Заметки о выпуске
+              href: ../monetize/release-notes-for-the-advertising-libraries.md
+            - name: Премиальная программа для издателей рекламы в Windows
+              href: ../monetize/windows-premium-ads-publishers-program.md
+        - name: Привлечение пользователей с помощью Microsoft Store Services SDK
+          href: ../monetize/microsoft-store-services-sdk.md
+          items:
+            - name: Выполнение экспериментов в приложении с использованием A/B-тестирования
+              href: ../monetize/run-app-experiments-with-a-b-testing.md
+              items:
+                - name: Создание экспериментального проекта в Центре партнеров
+                  href: ../monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md
+                - name: Кодирование приложения для экспериментов
+                  href: ../monetize/code-your-experiment-in-your-app.md
+                - name: Определение эксперимента в Центре партнеров
+                  href: ../monetize/define-your-experiment-in-the-dev-center-dashboard.md
+                - name: Управление экспериментом в Центре партнеров
+                  href: ../monetize/manage-your-experiment.md
+                - name: Создание и запуск первого эксперимента
+                  href: ../monetize/create-and-run-your-first-experiment-with-a-b-testing.md
+            - name: Запуск Центра отзывов из приложения
+              href: ../monetize/launch-feedback-hub-from-your-app.md
+            - name: Настройка приложения для получения целевых push-уведомлений
+              href: ../monetize/configure-your-app-to-receive-dev-center-notifications.md
+            - name: Ведение журнала пользовательских событий для Центра партнеров
+              href: ../monetize/log-custom-events-for-dev-center.md
+        - name: Запрос оценок и отзывов
+          href: ../monetize/request-ratings-and-reviews.md
+        - name: Службы Microsoft Store
+          href: ../monetize/using-windows-store-services.md
+          items:
+            - name: Доступ к аналитическим данным
+              href: ../monetize/access-analytics-data-using-windows-store-services.md
+              items:
+                - name: Получение данных о приобретении игр и приложений
+                  href: ../monetize/acquisitions-data.md
+                - name: Получение данных о приобретении надстроек для игр и приложений
+                  href: ../monetize/add-on-acquisitions-data.md
+                - name: Приложения UWP
+                  items:
+                    - name: Получение сведений о покупках и установках
+                      items:
+                        - name: Получение сведений о приобретении приложения (прежних версий)
+                          href: ../monetize/get-app-acquisitions.md
+                        - name: Получение сведений об установках приложения
+                          href: ../monetize/get-app-installs.md
+                        - name: Получение данных воронки приобретения приложения (прежних версий)
+                          href: ../monetize/get-acquisition-funnel-data.md
+                        - name: Получение преобразований приложения по каналу
+                          href: ../monetize/get-app-conversions-by-channel.md
+                        - name: Получение сведений о покупках надстройки
+                          href: ../monetize/get-in-app-acquisitions.md
+                        - name: Получение сведений о приобретениях надстройки с подпиской
+                          href: ../monetize/get-subscription-acquisitions.md
+                        - name: Получение сведений о конверсии надстройки по каналу
+                          href: ../monetize/get-add-on-conversions-by-channel.md
+                    - name: Получение аналитических данных о вашем приложении
+                      href: ../monetize/get-insights-data-for-your-app.md
+                    - name: Получение сведений об оценках приложения
+                      href: ../monetize/get-app-ratings.md
+                    - name: Получение отзывов о приложении
+                      href: ../monetize/get-app-reviews.md
+                    - name: Получение сведений о ежедневном использовании приложения
+                      href: ../monetize/get-app-usage-daily.md
+                    - name: Получение сведений о ежемесячном использовании приложения
+                      href: ../monetize/get-app-usage-monthly.md
+                    - name: Получение данных отчетов об ошибках
+                      href: ../monetize/get-error-reporting-data.md
+                      items:
+                        - name: Получение сведений об ошибке в приложении
+                          href: ../monetize/get-details-for-an-error-in-your-app.md
+                        - name: Получение трассировки стека при возникновении ошибки в приложении
+                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-app.md
+                        - name: Скачивание CAB-файла для ошибки в приложении
+                          href: ../monetize/download-the-cab-file-for-an-error-in-your-app.md
+                    - name: Получение данных об эффективности рекламы
+                      href: ../monetize/get-ad-performance-data.md
+                    - name: Получение данных об эффективности рекламной кампании
+                      href: ../monetize/get-ad-campaign-performance-data.md
+                - name: Классические приложения
+                  items:
+                    - name: Получение данных об установках классического приложения
+                      href: ../monetize/get-desktop-app-installs.md
+                    - name: Получение аналитических данных о классическом приложении
+                      href: ../monetize/get-insights-data-for-your-desktop-app.md
+                    - name: Получение блоков обновлений для классического приложения
+                      href: ../monetize/get-desktop-block-data.md
+                    - name: Получение сведений о блоках обновлений для классического приложения
+                      href: ../monetize/get-desktop-block-data-details.md
+                    - name: Получение данных отчетов об ошибках для классического приложения
+                      href: ../monetize/get-desktop-application-error-reporting-data.md
+                      items:
+                        - name: Получение сведений об ошибке в классическом приложении
+                          href: ../monetize/get-details-for-an-error-in-your-desktop-application.md
+                        - name: Получение трассировки стека при возникновении ошибки в классическом приложении
+                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-desktop-application.md
+                        - name: Скачивание CAB-файла для ошибки в классическом приложении
+                          href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
+                - name: Игры Xbox One и Xbox Live
+                  items:
+                    - name: Получение сведений о покупках игр на Xbox One
+                      href: ../monetize/get-xbox-one-game-acquisitions.md
+                    - name: Получение сведений о приобретениях надстроек для Xbox One
+                      href: ../monetize/get-xbox-one-add-on-acquisitions.md
+                    - name: Получение данных системы отчетов об ошибках для игры Xbox One
+                      href: ../monetize/get-error-reporting-data-for-your-xbox-one-game.md
+                      items:
+                        - name: Получение сведений об ошибке в игре Xbox One
+                          href: ../monetize/get-details-for-an-error-in-your-xbox-one-game.md
+                        - name: Получение трассировки стека при возникновении ошибки в игре Xbox One
+                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md
+                        - name: Скачивание CAB-файла для ошибки в игре Xbox One
+                          href: ../monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md
+                    - name: Получение аналитических данных Xbox Live
+                      href: ../monetize/get-xbox-live-analytics.md
+                      items:
+                        - name: Получение данных о достижениях в Xbox Live
+                          href: ../monetize/get-xbox-live-achievements-data.md
+                        - name: Получение данных работоспособности в Xbox Live
+                          href: ../monetize/get-xbox-live-health-data.md
+                        - name: Получение данных центра игр в Xbox Live
+                          href: ../monetize/get-xbox-live-game-hub-data.md
+                        - name: Получение данных клуба в Xbox Live
+                          href: ../monetize/get-xbox-live-club-data.md
+                        - name: Получение многопользовательских данных в Xbox Live
+                          href: ../monetize/get-xbox-live-multiplayer-data.md
+                        - name: Получение данных параллельного использования Xbox Live
+                          href: ../monetize/get-xbox-live-concurrent-usage-data.md
+            - name: Ответ на отзывы
+              href: ../monetize/respond-to-reviews-using-windows-store-services.md
+              items:
+                - name: Получение сведений об ответах на отзывы
+                  href: ../monetize/get-response-info-for-app-reviews.md
+                - name: Отправка ответов на отзывы
+                  href: ../monetize/submit-responses-to-app-reviews.md
+            - name: Проведение рекламных кампаний
+              href: ../monetize/run-ad-campaigns-using-windows-store-services.md
+              items:
+                - name: Управление рекламными кампаниями
+                  href: ../monetize/manage-ad-campaigns.md
+                - name: Управление строками поставки
+                  href: ../monetize/manage-delivery-lines-for-ad-campaigns.md
+                - name: Управление целевыми профилями
+                  href: ../monetize/manage-targeting-profiles-for-ad-campaigns.md
+                - name: Управление рекламными материалами
+                  href: ../monetize/manage-creatives-for-ad-campaigns.md
+            - name: Создание отправок и управление ими
+              href: ../monetize/create-and-manage-submissions-using-windows-store-services.md
+              items:
+                - name: Получение данных приложения
+                  href: ../monetize/get-app-data.md
+                  items:
+                    - name: Получение всех приложений
+                      href: ../monetize/get-all-apps.md
+                    - name: Получение приложения
+                      href: ../monetize/get-an-app.md
+                    - name: Получение надстроек для приложения
+                      href: ../monetize/get-add-ons-for-an-app.md
+                    - name: Получение тестовых пакетов для приложения
+                      href: ../monetize/get-flights-for-an-app.md
+                - name: Управление отправками приложений
+                  href: ../monetize/manage-app-submissions.md
+                  items:
+                    - name: Получение отправки приложения
+                      href: ../monetize/get-an-app-submission.md
+                    - name: Получение состояния отправки приложения
+                      href: ../monetize/get-status-for-an-app-submission.md
+                    - name: Создание отправки приложения
+                      href: ../monetize/create-an-app-submission.md
+                    - name: Подтверждение отправки приложения
+                      href: ../monetize/commit-an-app-submission.md
+                    - name: Обновление отправки приложения
+                      href: ../monetize/update-an-app-submission.md
+                    - name: Удаление отправки приложения
+                      href: ../monetize/delete-an-app-submission.md
+                    - name: Получение сведений о выпуске для отправки приложения
+                      href: ../monetize/get-package-rollout-info-for-an-app-submission.md
+                    - name: Обновление процента выпуска для отправки приложения
+                      href: ../monetize/update-the-package-rollout-percentage-for-an-app-submission.md
+                    - name: Остановка выпуска для отправки приложения
+                      href: ../monetize/halt-the-package-rollout-for-an-app-submission.md
+                    - name: Завершение выпуска для отправки приложения
+                      href: ../monetize/finalize-the-package-rollout-for-an-app-submission.md
+                - name: Управление надстройками
+                  href: ../monetize/manage-add-ons.md
+                  items:
+                    - name: Получение всех надстроек
+                      href: ../monetize/get-all-add-ons.md
+                    - name: Получение надстройки
+                      href: ../monetize/get-an-add-on.md
+                    - name: Создание надстройки
+                      href: ../monetize/create-an-add-on.md
+                    - name: Удаление надстройки
+                      href: ../monetize/delete-an-add-on.md
+                - name: Управление отправками надстроек
+                  href: ../monetize/manage-add-on-submissions.md
+                  items:
+                    - name: Получение отправки надстройки
+                      href: ../monetize/get-an-add-on-submission.md
+                    - name: Получение состоянии отправки надстройки
+                      href: ../monetize/get-status-for-an-add-on-submission.md
+                    - name: Создание отправки надстройки
+                      href: ../monetize/create-an-add-on-submission.md
+                    - name: Подтверждение отправки надстройки
+                      href: ../monetize/commit-an-add-on-submission.md
+                    - name: Обновление отправки надстройки
+                      href: ../monetize/update-an-add-on-submission.md
+                    - name: Удаление отправки надстройки
+                      href: ../monetize/delete-an-add-on-submission.md
+                - name: Управление тестовыми пакетами
+                  href: ../monetize/manage-flights.md
+                  items:
+                    - name: Получение тестового пакета
+                      href: ../monetize/get-a-flight.md
+                    - name: Создание тестового пакета
+                      href: ../monetize/create-a-flight.md
+                    - name: Удаление тестового пакета
+                      href: ../monetize/delete-a-flight.md
+                - name: Управление отправкой тестового пакета
+                  href: ../monetize/manage-flight-submissions.md
+                  items:
+                    - name: Получение отправки тестового пакета
+                      href: ../monetize/get-a-flight-submission.md
+                    - name: Получение состояния отправки тестового пакета
+                      href: ../monetize/get-status-for-a-flight-submission.md
+                    - name: Создание отправки тестового пакета
+                      href: ../monetize/create-a-flight-submission.md
+                    - name: Подтверждение отправки тестового пакета
+                      href: ../monetize/commit-a-flight-submission.md
+                    - name: Обновление отправки тестового пакета
+                      href: ../monetize/update-a-flight-submission.md
+                    - name: Удаление отправки тестового пакета
+                      href: ../monetize/delete-a-flight-submission.md
+                    - name: Получение сведений о выпуске для отправки тестируемой возможности
+                      href: ../monetize/get-package-rollout-info-for-a-flight-submission.md
+                    - name: Обновление процента выпуска для отправки тестируемой возможности
+                      href: ../monetize/update-the-package-rollout-percentage-for-a-flight-submission.md
+                    - name: Остановка выпуска для отправки тестируемой возможности
+                      href: ../monetize/halt-the-package-rollout-for-a-flight-submission.md
+                    - name: Завершение выпуска для отправки тестируемой возможности
+                      href: ../monetize/finalize-the-package-rollout-for-a-flight-submission.md
+                - name: Примеры кода для API отправки
+                  href: ../monetize/code-examples-for-the-windows-store-submission-api.md
+                  items:
+                    - name: 'Пример на языке C#: отправка приложений, надстроек и тестируемых возможностей'
+                      href: ../monetize/csharp-code-examples-for-the-windows-store-submission-api.md
+                    - name: 'Пример на языке C#: отправка приложения с трейлерами и параметрами игры'
+                      href: ../monetize/csharp-code-examples-for-submissions-game-options-and-trailers.md
+                    - name: 'Пример на языке Java: отправка приложений, надстроек и тестируемых возможностей'
+                      href: ../monetize/java-code-examples-for-the-windows-store-submission-api.md
+                    - name: 'Пример на языке Java: отправка приложения с трейлерами и параметрами игры'
+                      href: ../monetize/java-code-examples-for-submissions-game-options-and-trailers.md
+                    - name: 'Пример на языке Python: отправка приложений, надстроек и тестируемых возможностей'
+                      href: ../monetize/python-code-examples-for-the-windows-store-submission-api.md
+                    - name: 'Пример на языке Python: отправка приложения с трейлерами и параметрами игры'
+                      href: ../monetize/python-code-examples-for-submissions-game-options-and-trailers.md
+            - name: Управление целевыми предложениями
+              href: ../monetize/manage-targeted-offers-using-windows-store-services.md
+              items:
+                - name: Получение целевых предложений
+                  href: ../monetize/get-targeted-offers.md
+            - name: Управление правами на продукты из службы
+              href: ../monetize/view-and-grant-products-from-a-service.md
+              items:
+                - name: Запрос продуктов
+                  href: ../monetize/query-for-products.md
+                - name: Объявление потребляемого продукта в качестве выполненного
+                  href: ../monetize/report-consumable-products-as-fulfilled.md
+                - name: Предоставление бесплатных продуктов
+                  href: ../monetize/grant-free-products.md
+                - name: Получение подписок для пользователя
+                  href: ../monetize/get-subscriptions-for-a-user.md
+                - name: Изменение состояния выставления счетов за подписку для пользователя
+                  href: ../monetize/change-the-billing-state-of-a-subscription-for-a-user.md
+                - name: Обновление ключа идентификатора Microsoft Store
+                  href: ../monetize/renew-a-windows-store-id-key.md
+            - name: API метаданных приложения для рекламных сетей
+              href: ../monetize/app-metadata-api-for-advertising-networks.md
+        - name: Отправка запросов в Store
+          href: ../monetize/send-requests-to-the-store.md
+        - name: Добавление компонентов демонстрации в розничных магазинах (RDX)
+          href: ../monetize/retail-demo-experience.md
+        - name: Упрощение платежей с помощью API запроса платежей
+          href: ../monetize/payment-request.md
+    - name: Создание пакетов приложений
+      href: ../packaging/index.md
       items:
-      - name: Планирование производительности
-        href: ../debug-test-perf/planning-and-measuring-performance.md
-      - name: Оптимизация фоновой активности
-        href: ../debug-test-perf/optimize-background-activity.md
-      - name: Оптимизация пользовательского интерфейса ListView и GridView
-        href: ../debug-test-perf/optimize-gridview-and-listview.md
-      - name: Виртуализация данных ListView и GridView
-        href: ../debug-test-perf/listview-and-gridview-data-optimization.md
-      - name: Улучшение производительности сборки мусора
-        href: ../debug-test-perf/improve-garbage-collection-performance.md
-      - name: Обеспечение быстрого отклика потока пользовательского интерфейса
-        href: ../debug-test-perf/keep-the-ui-thread-responsive.md
-      - name: Оптимизация разметки XAML
-        href: ../debug-test-perf/optimize-xaml-loading.md
-      - name: Оптимизация макета XAML
-        href: ../debug-test-perf/optimize-your-xaml-layout.md
-      - name: Советы по MVVM и обеспечению производительности языка
-        href: ../debug-test-perf/mvvm-performance-tips.md
-      - name: Рекомендации по повышению производительности запуска приложения
-        href: ../debug-test-perf/best-practices-for-your-app-s-startup-performance.md
-      - name: Оптимизация анимаций, мультимедиа и изображений
-        href: ../debug-test-perf/optimize-animations-and-media.md
-      - name: Оптимизация времени приостановки и возобновления работы
-        href: ../debug-test-perf/optimize-suspend-resume.md
-      - name: Оптимизация доступа к файлам
-        href: ../debug-test-perf/optimize-file-access.md
-      - name: Компоненты среды выполнения Windows и оптимизация межпрограммного взаимодействия
-        href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
-      - name: Инструменты для профилирования и производительности
-        href: ../debug-test-perf/tools-for-profiling-and-performance.md
-    - name: Приложения с адаптивным к версии кодом
-      href: ../debug-test-perf/version-adaptive-apps.md
-      items:
-      - name: Адаптивный к версии код
-        href: ../debug-test-perf/version-adaptive-code.md
-      - name: Условный код XAML
-        href: ../debug-test-perf/conditional-xaml.md
-  - name: Монетизация, привлечение и службы Store
-    href: ../monetize/index.md
-    items:
-    - name: Покупки из приложения и пробные версии
-      href: ../monetize/in-app-purchases-and-trials.md
-      items:
-      - name: Получение информации о продукте для приложений и надстроек
-        href: ../monetize/get-product-info-for-apps-and-add-ons.md
-      - name: Получение информации о лицензии для приложений и надстроек
-        href: ../monetize/get-license-info-for-apps-and-add-ons.md
-      - name: Поддержка покупок приложений и надстроек из приложения
-        href: ../monetize/enable-in-app-purchases-of-apps-and-add-ons.md
-      - name: Поддержка покупок потребляемых надстроек
-        href: ../monetize/enable-consumable-add-on-purchases.md
-      - name: Включение надстроек с подпиской для приложения
-        href: ../monetize/enable-subscription-add-ons-for-your-app.md
-      - name: Внедрение пробной версии приложения
-        href: ../monetize/implement-a-trial-version-of-your-app.md
-      - name: Схемы данных для продуктов Store
-        href: ../monetize/data-schemas-for-store-products.md
-      - name: Коды ошибок для операций Store
-        href: ../monetize/error-codes-for-store-operations.md
-      - name: Использование пространства имен Windows.ApplicationModel.Store
-        href: ../monetize/in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md
-        items:
-        - name: Исключение или ограничение функций в пробной версии
-          href: ../monetize/exclude-or-limit-features-in-a-trial-version-of-your-app.md
-        - name: Поддержка покупки продуктов из приложения
-          href: ../monetize/enable-in-app-product-purchases.md
-        - name: Поддержка покупки продуктов из приложения
-          href: ../monetize/enable-consumable-in-app-product-purchases.md
-        - name: Управление большим каталогом внутренних продуктов приложения
-          href: ../monetize/manage-a-large-catalog-of-in-app-products.md
-        - name: Проверка покупок продуктов с помощью квитанций
-          href: ../monetize/use-receipts-to-verify-product-purchases.md
-    - name: Показ рекламы в приложении с помощью Microsoft Advertising SDK
-      href: ../monetize/display-ads-in-your-app.md
-      items:
-      - name: Установить пакет Microsoft Advertising SDK
-        href: ../monetize/install-the-microsoft-advertising-libraries.md
-        items:
-        - name: Обновление приложения для использования последних библиотек для баннеров
-          href: ../monetize/update-your-app-to-the-latest-advertising-libraries.md
-      - name: Реализация рекламы в приложении
-        href: ../monetize/developer-walkthroughs.md
-        items:
-        - name: Рекламные баннеры
-          href: ../monetize/banner-ads.md
+        - name: Упаковка приложения UWP с помощью Visual Studio
+          href: ../packaging/packaging-uwp-apps.md
+        - name: Упаковка приложения вручную
+          href: ../packaging/manual-packaging-root.md
           items:
-          - name: AdControl в XAML и .NET
-            href: ../monetize/adcontrol-in-xaml-and--net.md
-          - name: AdControl в HTML 5 и JavaScript
-            href: ../monetize/adcontrol-in-html-5-and-javascript.md
-          - name: Поддерживаемые размеры баннеров
-            href: ../monetize/supported-ad-sizes-for-banner-ads.md
-        - name: Межстраничные объявления
-          href: ../monetize/interstitial-ads.md
+            - name: Создание пакета приложений с помощью средства MakeAppx.exe
+              href: ../packaging/create-app-package-with-makeappx-tool.md
+            - name: Создание сертификата для подписания пакета
+              href: ../packaging/create-certificate-package-signing.md
+            - name: Подписание пакета приложения с помощью SignTool
+              href: ../packaging/sign-app-package-using-signtool.md
+            - name: Разработка пакетов ресурсов и сворачивание пакета ресурсов
+              href: ../packaging/package-folding.md
+            - name: Пакеты приложений на основе плоских пакетов
+              href: ../packaging/flat-bundles.md
+            - name: Вводные сведения о пакетах ресурсов
+              href: ../packaging/asset-packages.md
+            - name: Создание пакета с использованием макета упаковки
+              href: ../packaging/packaging-layout.md
+        - name: Архитектуры пакетов приложений
+          href: ../packaging/device-architecture.md
+        - name: Потоковая установка приложений UWP
+          href: ../packaging/streaming-install.md
           items:
-          - name: Пример кода промежуточной рекламы в C
-            href: ../monetize/interstitial-ad-sample-code-in-c.md
-          - name: Пример кода промежуточной рекламы в JavaScript
-            href: ../monetize/interstitial-ad-sample-code-in-javascript.md
-        - name: Собственные объявления
-          href: ../monetize/native-ads.md
-        - name: Показ рекламы в видеосодержимом
-          href: ../monetize/add-advertisements-to-video-content.md
-      - name: Настройка рекламных блоков в приложении
-        href: ../monetize/set-up-ad-units-in-your-app.md
-      - name: Служба рекламного посредника (Майкрософт)
-        href: ../monetize/ad-mediation-service.md
-      - name: Рекомендации
-        href: ../monetize/best-practices-for-ads-in-apps.md
-        items:
-        - name: Рекомендации по взаимодействию с пользователем и работе с пользовательским интерфейсом
-          href: ../monetize/ui-and-user-experience-guidelines.md
-        - name: Оптимизация просматриваемости ваших групп объявлений
-          href: ../monetize/optimize-ad-unit-viewability.md
-        - name: Обработка ошибок рекламы
-          href: ../monetize/error-handling-with-advertising-libraries.md
+            - name: Создание и преобразование исходного файла сопоставления группы содержимого
+              href: ../packaging/create-cgm.md
+        - name: Разработка дополнительных пакетов и связанных наборов
+          href: ../packaging/optional-packages.md
           items:
-          - name: Пошаговое руководство по обработке ошибок XAML/C#
-            href: ../monetize/error-handling-in-xamlc-walkthrough.md
-          - name: Пошаговое руководство по обработке ошибок в JavaScript
-            href: ../monetize/error-handling-in-javascript-walkthrough.md
-      - name: Известные проблемы и устранение неполадок
-        href: ../monetize/known-issues-for-the-advertising-libraries.md
-        items:
-        - name: Руководство по устранению неполадок для HTML и JavaScript
-          href: ../monetize/html-and-javascript-troubleshooting-guide.md
-        - name: Руководство по устранению неполадок в XAML и C#
-          href: ../monetize/xaml-and-c-troubleshooting-guide.md
-      - name: Заметки о выпуске
-        href: ../monetize/release-notes-for-the-advertising-libraries.md
-      - name: Премиальная программа для издателей рекламы в Windows
-        href: ../monetize/windows-premium-ads-publishers-program.md
-    - name: Привлечение пользователей с помощью Microsoft Store Services SDK
-      href: ../monetize/microsoft-store-services-sdk.md
-      items:
-      - name: Выполнение экспериментов в приложении с использованием A/B-тестирования
-        href: ../monetize/run-app-experiments-with-a-b-testing.md
-        items:
-        - name: Создание экспериментального проекта в Центре партнеров
-          href: ../monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md
-        - name: Кодирование приложения для экспериментов
-          href: ../monetize/code-your-experiment-in-your-app.md
-        - name: Определение эксперимента в Центре партнеров
-          href: ../monetize/define-your-experiment-in-the-dev-center-dashboard.md
-        - name: Управление экспериментом в Центре партнеров
-          href: ../monetize/manage-your-experiment.md
-        - name: Создание и запуск первого эксперимента
-          href: ../monetize/create-and-run-your-first-experiment-with-a-b-testing.md
-      - name: Запуск Центра отзывов из приложения
-        href: ../monetize/launch-feedback-hub-from-your-app.md
-      - name: Настройка приложения для получения целевых push-уведомлений
-        href: ../monetize/configure-your-app-to-receive-dev-center-notifications.md
-      - name: Ведение журнала пользовательских событий для Центра партнеров
-        href: ../monetize/log-custom-events-for-dev-center.md
-    - name: Запрос оценок и отзывов
-      href: ../monetize/request-ratings-and-reviews.md
-    - name: Службы Microsoft Store
-      href: ../monetize/using-windows-store-services.md
-      items:
-      - name: Доступ к аналитическим данным
-        href: ../monetize/access-analytics-data-using-windows-store-services.md
-        items:
-        - name: Получение данных о приобретении игр и приложений
-          href: ../monetize/acquisitions-data.md
-        - name: Получение данных о приобретении надстроек для игр и приложений
-          href: ../monetize/add-on-acquisitions-data.md
-        - name: Приложения UWP
-          items:
-          - name: Получение сведений о покупках и установках
-            items:
-            - name: Получение сведений о приобретении приложения (прежних версий)
-              href: ../monetize/get-app-acquisitions.md
-            - name: Получение сведений об установках приложения
-              href: ../monetize/get-app-installs.md
-            - name: Получение данных воронки приобретения приложения (прежних версий)
-              href: ../monetize/get-acquisition-funnel-data.md
-            - name: Получение преобразований приложения по каналу
-              href: ../monetize/get-app-conversions-by-channel.md
-            - name: Получение сведений о покупках надстройки
-              href: ../monetize/get-in-app-acquisitions.md
-            - name: Получение сведений о приобретениях надстройки с подпиской
-              href: ../monetize/get-subscription-acquisitions.md
-            - name: Получение сведений о конверсии надстройки по каналу
-              href: ../monetize/get-add-on-conversions-by-channel.md
-          - name: Получение аналитических данных о вашем приложении
-            href: ../monetize/get-insights-data-for-your-app.md
-          - name: Получение сведений об оценках приложения
-            href: ../monetize/get-app-ratings.md
-          - name: Получение отзывов о приложении
-            href: ../monetize/get-app-reviews.md
-          - name: Получение сведений о ежедневном использовании приложения
-            href: ../monetize/get-app-usage-daily.md
-          - name: Получение сведений о ежемесячном использовании приложения
-            href: ../monetize/get-app-usage-monthly.md
-          - name: Получение данных отчетов об ошибках
-            href: ../monetize/get-error-reporting-data.md
-            items:
-            - name: Получение сведений об ошибке в приложении
-              href: ../monetize/get-details-for-an-error-in-your-app.md
-            - name: Получение трассировки стека при возникновении ошибки в приложении
-              href: ../monetize/get-the-stack-trace-for-an-error-in-your-app.md
-            - name: Скачивание CAB-файла для ошибки в приложении
-              href: ../monetize/download-the-cab-file-for-an-error-in-your-app.md
-          - name: Получение данных об эффективности рекламы
-            href: ../monetize/get-ad-performance-data.md
-          - name: Получение данных об эффективности рекламной кампании
-            href: ../monetize/get-ad-campaign-performance-data.md
-        - name: Классические приложения
-          items:
-          - name: Получение данных об установках классического приложения
-            href: ../monetize/get-desktop-app-installs.md
-          - name: Получение аналитических данных о классическом приложении
-            href: ../monetize/get-insights-data-for-your-desktop-app.md
-          - name: Получение блоков обновлений для классического приложения
-            href: ../monetize/get-desktop-block-data.md
-          - name: Получение сведений о блоках обновлений для классического приложения
-            href: ../monetize/get-desktop-block-data-details.md
-          - name: Получение данных отчетов об ошибках для классического приложения
-            href: ../monetize/get-desktop-application-error-reporting-data.md
-            items:
-            - name: Получение сведений об ошибке в классическом приложении
-              href: ../monetize/get-details-for-an-error-in-your-desktop-application.md
-            - name: Получение трассировки стека при возникновении ошибки в классическом приложении
-              href: ../monetize/get-the-stack-trace-for-an-error-in-your-desktop-application.md
-            - name: Скачивание CAB-файла для ошибки в классическом приложении
-              href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
-        - name: Игры Xbox One и Xbox Live
-          items:
-          - name: Получение сведений о покупках игр на Xbox One
-            href: ../monetize/get-xbox-one-game-acquisitions.md
-          - name: Получение сведений о приобретениях надстроек для Xbox One
-            href: ../monetize/get-xbox-one-add-on-acquisitions.md
-          - name: Получение данных системы отчетов об ошибках для игры Xbox One
-            href: ../monetize/get-error-reporting-data-for-your-xbox-one-game.md
-            items:
-            - name: Получение сведений об ошибке в игре Xbox One
-              href: ../monetize/get-details-for-an-error-in-your-xbox-one-game.md
-            - name: Получение трассировки стека при возникновении ошибки в игре Xbox One
-              href: ../monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md
-            - name: Скачивание CAB-файла для ошибки в игре Xbox One
-              href: ../monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md
-          - name: Получение аналитических данных Xbox Live
-            href: ../monetize/get-xbox-live-analytics.md
-            items:
-            - name: Получение данных о достижениях в Xbox Live
-              href: ../monetize/get-xbox-live-achievements-data.md
-            - name: Получение данных работоспособности в Xbox Live
-              href: ../monetize/get-xbox-live-health-data.md
-            - name: Получение данных центра игр в Xbox Live
-              href: ../monetize/get-xbox-live-game-hub-data.md
-            - name: Получение данных клуба в Xbox Live
-              href: ../monetize/get-xbox-live-club-data.md
-            - name: Получение многопользовательских данных в Xbox Live
-              href: ../monetize/get-xbox-live-multiplayer-data.md
-            - name: Получение данных параллельного использования Xbox Live
-              href: ../monetize/get-xbox-live-concurrent-usage-data.md
-      - name: Ответ на отзывы
-        href: ../monetize/respond-to-reviews-using-windows-store-services.md
-        items:
-        - name: Получение сведений об ответах на отзывы
-          href: ../monetize/get-response-info-for-app-reviews.md
-        - name: Отправка ответов на отзывы
-          href: ../monetize/submit-responses-to-app-reviews.md
-      - name: Проведение рекламных кампаний
-        href: ../monetize/run-ad-campaigns-using-windows-store-services.md
-        items:
-        - name: Управление рекламными кампаниями
-          href: ../monetize/manage-ad-campaigns.md
-        - name: Управление строками поставки
-          href: ../monetize/manage-delivery-lines-for-ad-campaigns.md
-        - name: Управление целевыми профилями
-          href: ../monetize/manage-targeting-profiles-for-ad-campaigns.md
-        - name: Управление рекламными материалами
-          href: ../monetize/manage-creatives-for-ad-campaigns.md
-      - name: Создание отправок и управление ими
-        href: ../monetize/create-and-manage-submissions-using-windows-store-services.md
-        items:
-        - name: Получение данных приложения
-          href: ../monetize/get-app-data.md
-          items:
-          - name: Получение всех приложений
-            href: ../monetize/get-all-apps.md
-          - name: Получение приложения
-            href: ../monetize/get-an-app.md
-          - name: Получение надстроек для приложения
-            href: ../monetize/get-add-ons-for-an-app.md
-          - name: Получение тестовых пакетов для приложения
-            href: ../monetize/get-flights-for-an-app.md
-        - name: Управление отправками приложений
-          href: ../monetize/manage-app-submissions.md
-          items:
-          - name: Получение отправки приложения
-            href: ../monetize/get-an-app-submission.md
-          - name: Получение состояния отправки приложения
-            href: ../monetize/get-status-for-an-app-submission.md
-          - name: Создание отправки приложения
-            href: ../monetize/create-an-app-submission.md
-          - name: Подтверждение отправки приложения
-            href: ../monetize/commit-an-app-submission.md
-          - name: Обновление отправки приложения
-            href: ../monetize/update-an-app-submission.md
-          - name: Удаление отправки приложения
-            href: ../monetize/delete-an-app-submission.md
-          - name: Получение сведений о выпуске для отправки приложения
-            href: ../monetize/get-package-rollout-info-for-an-app-submission.md
-          - name: Обновление процента выпуска для отправки приложения
-            href: ../monetize/update-the-package-rollout-percentage-for-an-app-submission.md
-          - name: Остановка выпуска для отправки приложения
-            href: ../monetize/halt-the-package-rollout-for-an-app-submission.md
-          - name: Завершение выпуска для отправки приложения
-            href: ../monetize/finalize-the-package-rollout-for-an-app-submission.md
-        - name: Управление надстройками
-          href: ../monetize/manage-add-ons.md
-          items:
-          - name: Получение всех надстроек
-            href: ../monetize/get-all-add-ons.md
-          - name: Получение надстройки
-            href: ../monetize/get-an-add-on.md
-          - name: Создание надстройки
-            href: ../monetize/create-an-add-on.md
-          - name: Удаление надстройки
-            href: ../monetize/delete-an-add-on.md
-        - name: Управление отправками надстроек
-          href: ../monetize/manage-add-on-submissions.md
-          items:
-          - name: Получение отправки надстройки
-            href: ../monetize/get-an-add-on-submission.md
-          - name: Получение состоянии отправки надстройки
-            href: ../monetize/get-status-for-an-add-on-submission.md
-          - name: Создание отправки надстройки
-            href: ../monetize/create-an-add-on-submission.md
-          - name: Подтверждение отправки надстройки
-            href: ../monetize/commit-an-add-on-submission.md
-          - name: Обновление отправки надстройки
-            href: ../monetize/update-an-add-on-submission.md
-          - name: Удаление отправки надстройки
-            href: ../monetize/delete-an-add-on-submission.md
-        - name: Управление тестовыми пакетами
-          href: ../monetize/manage-flights.md
-          items:
-          - name: Получение тестового пакета
-            href: ../monetize/get-a-flight.md
-          - name: Создание тестового пакета
-            href: ../monetize/create-a-flight.md
-          - name: Удаление тестового пакета
-            href: ../monetize/delete-a-flight.md
-        - name: Управление отправкой тестового пакета
-          href: ../monetize/manage-flight-submissions.md
-          items:
-          - name: Получение отправки тестового пакета
-            href: ../monetize/get-a-flight-submission.md
-          - name: Получение состояния отправки тестового пакета
-            href: ../monetize/get-status-for-a-flight-submission.md
-          - name: Создание отправки тестового пакета
-            href: ../monetize/create-a-flight-submission.md
-          - name: Подтверждение отправки тестового пакета
-            href: ../monetize/commit-a-flight-submission.md
-          - name: Обновление отправки тестового пакета
-            href: ../monetize/update-a-flight-submission.md
-          - name: Удаление отправки тестового пакета
-            href: ../monetize/delete-a-flight-submission.md
-          - name: Получение сведений о выпуске для отправки тестируемой возможности
-            href: ../monetize/get-package-rollout-info-for-a-flight-submission.md
-          - name: Обновление процента выпуска для отправки тестируемой возможности
-            href: ../monetize/update-the-package-rollout-percentage-for-a-flight-submission.md
-          - name: Остановка выпуска для отправки тестируемой возможности
-            href: ../monetize/halt-the-package-rollout-for-a-flight-submission.md
-          - name: Завершение выпуска для отправки тестируемой возможности
-            href: ../monetize/finalize-the-package-rollout-for-a-flight-submission.md
-        - name: Примеры кода для API отправки
-          href: ../monetize/code-examples-for-the-windows-store-submission-api.md
-          items:
-          - name: 'Пример на языке C#: отправка приложений, надстроек и тестируемых возможностей'
-            href: ../monetize/csharp-code-examples-for-the-windows-store-submission-api.md
-          - name: 'Пример на языке C#: отправка приложения с трейлерами и параметрами игры'
-            href: ../monetize/csharp-code-examples-for-submissions-game-options-and-trailers.md
-          - name: 'Пример на языке Java: отправка приложений, надстроек и тестируемых возможностей'
-            href: ../monetize/java-code-examples-for-the-windows-store-submission-api.md
-          - name: 'Пример на языке Java: отправка приложения с трейлерами и параметрами игры'
-            href: ../monetize/java-code-examples-for-submissions-game-options-and-trailers.md
-          - name: 'Пример на языке Python: отправка приложений, надстроек и тестируемых возможностей'
-            href: ../monetize/python-code-examples-for-the-windows-store-submission-api.md
-          - name: 'Пример на языке Python: отправка приложения с трейлерами и параметрами игры'
-            href: ../monetize/python-code-examples-for-submissions-game-options-and-trailers.md
-      - name: Управление целевыми предложениями
-        href: ../monetize/manage-targeted-offers-using-windows-store-services.md
-        items:
-        - name: Получение целевых предложений
-          href: ../monetize/get-targeted-offers.md
-      - name: Управление правами на продукты из службы
-        href: ../monetize/view-and-grant-products-from-a-service.md
-        items:
-        - name: Запрос продуктов
-          href: ../monetize/query-for-products.md
-        - name: Объявление потребляемого продукта в качестве выполненного
-          href: ../monetize/report-consumable-products-as-fulfilled.md
-        - name: Предоставление бесплатных продуктов
-          href: ../monetize/grant-free-products.md
-        - name: Получение подписок для пользователя
-          href: ../monetize/get-subscriptions-for-a-user.md
-        - name: Изменение состояния выставления счетов за подписку для пользователя
-          href: ../monetize/change-the-billing-state-of-a-subscription-for-a-user.md
-        - name: Обновление ключа идентификатора Microsoft Store
-          href: ../monetize/renew-a-windows-store-id-key.md
-      - name: API метаданных приложения для рекламных сетей
-        href: ../monetize/app-metadata-api-for-advertising-networks.md
-    - name: Отправка запросов в Store
-      href: ../monetize/send-requests-to-the-store.md
-    - name: Добавление компонентов демонстрации в розничных магазинах (RDX)
-      href: ../monetize/retail-demo-experience.md
-    - name: Упрощение платежей с помощью API запроса платежей
-      href: ../monetize/payment-request.md
-  - name: Создание пакетов приложений
-    href: ../packaging/index.md
-    items:
-    - name: Упаковка приложения UWP с помощью Visual Studio
-      href: ../packaging/packaging-uwp-apps.md
-    - name: Упаковка приложения вручную
-      href: ../packaging/manual-packaging-root.md
-      items:
-      - name: Создание пакета приложений с помощью средства MakeAppx.exe
-        href: ../packaging/create-app-package-with-makeappx-tool.md
-      - name: Создание сертификата для подписания пакета
-        href: ../packaging/create-certificate-package-signing.md
-      - name: Подписание пакета приложения с помощью SignTool
-        href: ../packaging/sign-app-package-using-signtool.md
-      - name: Разработка пакетов ресурсов и сворачивание пакета ресурсов
-        href: ../packaging/package-folding.md
-      - name: Пакеты приложений на основе плоских пакетов
-        href: ../packaging/flat-bundles.md
-      - name: Вводные сведения о пакетах ресурсов
-        href: ../packaging/asset-packages.md
-      - name: Создание пакета с использованием макета упаковки
-        href: ../packaging/packaging-layout.md
-    - name: Архитектуры пакетов приложений
-      href: ../packaging/device-architecture.md
-    - name: Потоковая установка приложений UWP
-      href: ../packaging/streaming-install.md
-      items:
-      - name: Создание и преобразование исходного файла сопоставления группы содержимого
-        href: ../packaging/create-cgm.md
-    - name: Разработка дополнительных пакетов и связанных наборов
-      href: ../packaging/optional-packages.md
-      items:
-      - name: Дополнительные пакеты с исполняемым кодом
-        href: ../packaging/optional-packages-with-executable-code.md
-    - name: Установка приложений с помощью средства WinAppDeployCmd.exe
-      href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
-    - name: Объявления возможностей приложения
-      href: ../packaging/app-capability-declarations.md
-    - name: Настройка автоматических сборок для приложения UWP
-      href: ../packaging/auto-build-package-uwp-apps.md
-    - name: Скачивание и установка обновлений пакетов из Store
-      href: ../packaging/self-install-package-updates.md
+            - name: Дополнительные пакеты с исполняемым кодом
+              href: ../packaging/optional-packages-with-executable-code.md
+        - name: Установка приложений с помощью средства WinAppDeployCmd.exe
+          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
+        - name: Объявления возможностей приложения
+          href: ../packaging/app-capability-declarations.md
+        - name: Настройка автоматических сборок для приложения UWP
+          href: ../packaging/auto-build-package-uwp-apps.md
+        - name: Скачивание и установка обновлений пакетов из Store
+          href: ../packaging/self-install-package-updates.md
 - name: Платформа
   items:
-  - name: C++/WinRT
-    href: ../cpp-and-winrt-apis/index.md
-    items:
-    - name: Введение
-      href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-    - name: Начало работы
-      href: ../cpp-and-winrt-apis/get-started.md
-    - name: Что нового
-      href: ../cpp-and-winrt-apis/news.md
-    - name: Вопросы и ответы
-      href: ../cpp-and-winrt-apis/faq.md
-    - name: Поиск и устранение неисправностей
-      href: ../cpp-and-winrt-apis/troubleshooting.md
-    - name: Пример приложения Photo Editor
-      href: ../cpp-and-winrt-apis/photo-editor-sample.md
-    - name: Обработка строк
-      href: ../cpp-and-winrt-apis/strings.md
-    - name: Стандартные типы данных C++
-      href: ../cpp-and-winrt-apis/std-cpp-data-types.md
-    - name: Упаковка и распаковка скалярных значений в IInspectable
-      href: ../cpp-and-winrt-apis/boxing.md
-    - name: Использование интерфейсов API
-      href: ../cpp-and-winrt-apis/consume-apis.md
-    - name: Создание интерфейсов API
-      href: ../cpp-and-winrt-apis/author-apis.md
-    - name: Обработка ошибок
-      href: ../cpp-and-winrt-apis/error-handling.md
-    - name: Обработка событий с помощью делегатов
-      href: ../cpp-and-winrt-apis/handle-events.md
-    - name: Создание событий
-      href: ../cpp-and-winrt-apis/author-events.md
-    - name: Коллекции
-      href: ../cpp-and-winrt-apis/collections.md
-    - name: Параллельная обработка и асинхронные операции
-      href: ../cpp-and-winrt-apis/concurrency.md
-    - name: Элементы управления XAML; привязка к свойству
-      href: ../cpp-and-winrt-apis/binding-property.md
-    - name: Элементы управления XAML; привязка к коллекции
-      href: ../cpp-and-winrt-apis/binding-collection.md
-    - name: Создание пользовательских (на основе шаблона) элементов управления XAML
-      href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
-    - name: Использование компонентов COM
-      href: ../cpp-and-winrt-apis/consume-com.md
-    - name: Создание компонентов COM
-      href: ../cpp-and-winrt-apis/author-coclasses.md
-    - name: Переход на C++/WinRT из C++/CX
-      href: ../cpp-and-winrt-apis/move-to-winrt-from-cx.md
-    - name: Взаимодействие с C++/CX
-      href: ../cpp-and-winrt-apis/interop-winrt-cx.md
-    - name: Переход на C++/WinRT с WRL
-      href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
-    - name: Взаимодействие с ABI
-      href: ../cpp-and-winrt-apis/interop-winrt-abi.md
-    - name: Сильные и слабые ссылки
-      href: ../cpp-and-winrt-apis/weak-references.md
-    - name: Гибкие объекты
-      href: ../cpp-and-winrt-apis/agile-objects.md
-    - name: Язык C++
+    - name: C++/WinRT
+      href: ../cpp-and-winrt-apis/index.md
       items:
-      - name: Категории значений и ссылки
-        href: ../cpp-and-winrt-apis/cpp-value-categories.md
-  - name: Безопасность
-    href: ../security/index.md
-    items:
-    - name: Введение в разработку безопасных приложений для Windows
-      href: ../security/intro-to-secure-windows-app-development.md
-    - name: Проверка подлинности и удостоверение пользователя
-      href: ../security/authentication-and-user-identity.md
-      items:
-      - name: Хранилище учетных данных
-        href: ../security/credential-locker.md
-      - name: Биометрия отпечатков пальцев
-        href: ../security/fingerprint-biometrics.md
-      - name: Windows Hello
-        href: ../security/microsoft-passport.md
-        items:
-        - name: Создание приложения для входа Windows Hello
-          href: ../security/microsoft-passport-login.md
-        - name: Создание службы входа Windows Hello
-          href: ../security/microsoft-passport-login-auth-service.md
-      - name: Смарт-карты
-        href: ../security/smart-cards.md
-      - name: Общие сертификаты
-        href: ../security/share-certificates.md
-      - name: Диспетчер учетных веб-записей
-        href: ../security/web-account-manager.md
-      - name: Разблокировка с устройствами-компаньонами
-        href: ../security/companion-device-unlock.md
-      - name: Брокер веб-проверки подлинности
-        href: ../security/web-authentication-broker.md
-    - name: Шифрование
-      href: ../security/cryptography.md
-      items:
-      - name: Сертификаты
-        href: ../security/certificates.md
-      - name: Криптографические ключи
-        href: ../security/cryptographic-keys.md
-      - name: Защита данных
-        href: ../security/data-protection.md
-      - name: Коды проверки подлинности сообщений, хэши и подписи
-        href: ../security/macs-hashes-and-signatures.md
-      - name: Ограничения на экспорт шифрования
-        href: ../security/export-restrictions-on-cryptography.md
-      - name: Общие задачи шифрования
-        href: ../security/common-cryptography-tasks.md
-        items:
-        - name: Создание случайных значений
-          href: ../security/create-random-numbers.md
-        - name: Сравнение буферов
-          href: ../security/compare-buffers.md
-        - name: Преобразования между строками и двоичными данными
-          href: ../security/convert-between-strings-and-binary-data.md
-        - name: Копирование в массивы байтов и из них
-          href: ../security/copy-to-and-from-byte-arrays.md
-        - name: Кодирование и декодирование данных
-          href: ../security/encode-and-decode-data.md
-  - name: Визуальный уровень
-    href: ../composition/visual-layer.md
-    items:
-    - name: Визуальный компонент композиции
-      href: ../composition/composition-visual-tree.md
-    - name: Анимации композиции
-      href: ../composition/composition-animation.md
-      items:
-      - name: Анимации времени
-        href: ../composition/time-animations.md
-      - name: Анимации связей
-        href: ../composition/relation-animations.md
-      - name: Естественные анимации
-        href: ../composition/natural-animations.md
-        items:
-        - name: Пружинные анимации
-          href: ../composition/spring-animations.md
-      - name: Анимации на основе ввода
-        href: ../composition/input-driven-animations.md
-        items:
-        - name: Анимации на основе прокрутки
-          href: ../composition/scroll-input-animations.md
-        - name: Анимации на основе указателей
-          href: ../composition/pointer-input-animations.md
-        - name: Пользовательские манипуляции
-          href: ../composition/interaction-tracker-manipulations.md
+        - name: Введение
+          href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
+        - name: Начало работы
+          href: ../cpp-and-winrt-apis/get-started.md
+        - name: Что нового
+          href: ../cpp-and-winrt-apis/news.md
+        - name: Вопросы и ответы
+          href: ../cpp-and-winrt-apis/faq.md
+        - name: Поиск и устранение неисправностей
+          href: ../cpp-and-winrt-apis/troubleshooting.md
+        - name: Пример приложения Photo Editor
+          href: ../cpp-and-winrt-apis/photo-editor-sample.md
+        - name: Обработка строк
+          href: ../cpp-and-winrt-apis/strings.md
+        - name: Стандартные типы данных C++
+          href: ../cpp-and-winrt-apis/std-cpp-data-types.md
+        - name: Упаковка и распаковка скалярных значений в IInspectable
+          href: ../cpp-and-winrt-apis/boxing.md
+        - name: Использование интерфейсов API
+          href: ../cpp-and-winrt-apis/consume-apis.md
+        - name: Создание интерфейсов API
+          href: ../cpp-and-winrt-apis/author-apis.md
+        - name: Обработка ошибок
+          href: ../cpp-and-winrt-apis/error-handling.md
+        - name: Обработка событий с помощью делегатов
+          href: ../cpp-and-winrt-apis/handle-events.md
+        - name: Создание событий
+          href: ../cpp-and-winrt-apis/author-events.md
+        - name: Коллекции
+          href: ../cpp-and-winrt-apis/collections.md
+        - name: Параллельная обработка и асинхронные операции
+          href: ../cpp-and-winrt-apis/concurrency.md
+        - name: Элементы управления XAML; привязка к свойству
+          href: ../cpp-and-winrt-apis/binding-property.md
+        - name: Элементы управления XAML; привязка к коллекции
+          href: ../cpp-and-winrt-apis/binding-collection.md
+        - name: Создание пользовательских (на основе шаблона) элементов управления XAML
+          href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
+        - name: Использование компонентов COM
+          href: ../cpp-and-winrt-apis/consume-com.md
+        - name: Создание компонентов COM
+          href: ../cpp-and-winrt-apis/author-coclasses.md
+        - name: Переход на C++/WinRT из C++/CX
+          href: ../cpp-and-winrt-apis/move-to-winrt-from-cx.md
+        - name: Взаимодействие с C++/CX
+          href: ../cpp-and-winrt-apis/interop-winrt-cx.md
+        - name: Переход на C++/WinRT с WRL
+          href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+        - name: Взаимодействие с ABI
+          href: ../cpp-and-winrt-apis/interop-winrt-abi.md
+        - name: Сильные и слабые ссылки
+          href: ../cpp-and-winrt-apis/weak-references.md
+        - name: Гибкие объекты
+          href: ../cpp-and-winrt-apis/agile-objects.md
+        - name: Язык C++
           items:
-          - name: Точки прикрепления
-            href: ../composition/inertia-modifiers.md
-          - name: Обновление путем оттягивания
-            href: ../composition/source-modifiers.md
-    - name: Эффекты композиции
-      href: ../composition/composition-effects.md
+            - name: Категории значений и ссылки
+              href: ../cpp-and-winrt-apis/cpp-value-categories.md
+    - name: Безопасность
+      href: ../security/index.md
       items:
-      - name: Тени композиции
-        href: ../composition/composition-shadows.md
-      - name: Освещение композиции
-        href: ../composition/composition-lighting.md
-    - name: Кисти композиции
-      href: ../composition/composition-brushes.md
-    - name: Собственное взаимодействие композиции
-      href: ../composition/composition-native-interop.md
-    - name: Адаптация пользовательского интерфейса
-      href: ../composition/composition-tailoring.md
-    - name: Использование UWP XAML
-      href: ../composition/using-the-visual-layer-with-xaml.md
+        - name: Введение в разработку безопасных приложений для Windows
+          href: ../security/intro-to-secure-windows-app-development.md
+        - name: Проверка подлинности и удостоверение пользователя
+          href: ../security/authentication-and-user-identity.md
+          items:
+            - name: Хранилище учетных данных
+              href: ../security/credential-locker.md
+            - name: Биометрия отпечатков пальцев
+              href: ../security/fingerprint-biometrics.md
+            - name: Windows Hello
+              href: ../security/microsoft-passport.md
+              items:
+                - name: Создание приложения для входа Windows Hello
+                  href: ../security/microsoft-passport-login.md
+                - name: Создание службы входа Windows Hello
+                  href: ../security/microsoft-passport-login-auth-service.md
+            - name: Смарт-карты
+              href: ../security/smart-cards.md
+            - name: Общие сертификаты
+              href: ../security/share-certificates.md
+            - name: Диспетчер учетных веб-записей
+              href: ../security/web-account-manager.md
+            - name: Разблокировка с устройствами-компаньонами
+              href: ../security/companion-device-unlock.md
+            - name: Брокер веб-проверки подлинности
+              href: ../security/web-authentication-broker.md
+        - name: Шифрование
+          href: ../security/cryptography.md
+          items:
+            - name: Сертификаты
+              href: ../security/certificates.md
+            - name: Криптографические ключи
+              href: ../security/cryptographic-keys.md
+            - name: Защита данных
+              href: ../security/data-protection.md
+            - name: 'Коды проверки подлинности сообщений, хэши и подписи'
+              href: ../security/macs-hashes-and-signatures.md
+            - name: Ограничения на экспорт шифрования
+              href: ../security/export-restrictions-on-cryptography.md
+            - name: Общие задачи шифрования
+              href: ../security/common-cryptography-tasks.md
+              items:
+                - name: Создание случайных значений
+                  href: ../security/create-random-numbers.md
+                - name: Сравнение буферов
+                  href: ../security/compare-buffers.md
+                - name: Преобразования между строками и двоичными данными
+                  href: ../security/convert-between-strings-and-binary-data.md
+                - name: Копирование в массивы байтов и из них
+                  href: ../security/copy-to-and-from-byte-arrays.md
+                - name: Кодирование и декодирование данных
+                  href: ../security/encode-and-decode-data.md
+    - name: Визуальный уровень
+      href: ../composition/visual-layer.md
       items:
-      - name: Освещение XAML
-        href: ../composition/xaml-lighting.md
-    - name: Модернизация классических приложений
-      href: ../composition/visual-layer-in-desktop-apps.md
+        - name: Визуальный компонент композиции
+          href: ../composition/composition-visual-tree.md
+        - name: Анимации композиции
+          href: ../composition/composition-animation.md
+          items:
+            - name: Анимации времени
+              href: ../composition/time-animations.md
+            - name: Анимации связей
+              href: ../composition/relation-animations.md
+            - name: Естественные анимации
+              href: ../composition/natural-animations.md
+              items:
+                - name: Пружинные анимации
+                  href: ../composition/spring-animations.md
+            - name: Анимации на основе ввода
+              href: ../composition/input-driven-animations.md
+              items:
+                - name: Анимации на основе прокрутки
+                  href: ../composition/scroll-input-animations.md
+                - name: Анимации на основе указателей
+                  href: ../composition/pointer-input-animations.md
+                - name: Пользовательские манипуляции
+                  href: ../composition/interaction-tracker-manipulations.md
+                  items:
+                    - name: Точки прикрепления
+                      href: ../composition/inertia-modifiers.md
+                    - name: Обновление путем оттягивания
+                      href: ../composition/source-modifiers.md
+        - name: Эффекты композиции
+          href: ../composition/composition-effects.md
+          items:
+            - name: Тени композиции
+              href: ../composition/composition-shadows.md
+            - name: Освещение композиции
+              href: ../composition/composition-lighting.md
+        - name: Кисти композиции
+          href: ../composition/composition-brushes.md
+        - name: Собственное взаимодействие композиции
+          href: ../composition/composition-native-interop.md
+        - name: Адаптация пользовательского интерфейса
+          href: ../composition/composition-tailoring.md
+        - name: Использование UWP XAML
+          href: ../composition/using-the-visual-layer-with-xaml.md
+          items:
+            - name: Освещение XAML
+              href: ../composition/xaml-lighting.md
+    - name: Windows как услуга
+      href: ../updates-and-versions/application-development-for-windows-as-a-service.md
+    - name: Компоненты среды выполнения Windows
+      href: ../winrt-components/index.md
       items:
-      - name: С помощью WPF
-        href: ../composition/using-the-visual-layer-with-wpf.md
-      - name: С помощью Windows Forms
-        href: ../composition/using-the-visual-layer-with-windows-forms.md
-      - name: С помощью Win32
-        href: ../composition/using-the-visual-layer-with-win32.md
-  - name: Windows как услуга
-    href: ../updates-and-versions/application-development-for-windows-as-a-service.md
-  - name: Компоненты среды выполнения Windows
-    href: ../winrt-components/index.md
-    items:
-    - name: Создание компонентов среды выполнения Windows в C++/CX
-      href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-    - name: 'Пошаговое руководство: Базовый компонент среды Windows на C++/CX и его вызов из JavaScript и C#'
-      href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
-    - name: Создание компонентов среды выполнения Windows на языках C# и Visual Basic
-      href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
+        - name: Создание компонентов среды выполнения Windows в C++/CX
+          href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
+        - name: 'Пошаговое руководство: Базовый компонент среды Windows на C++/CX и его вызов из JavaScript и C#'
+          href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
+        - name: 'Создание компонентов среды выполнения Windows на языках C# и Visual Basic'
+          href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
+          items:
+            - name: Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows
+              href: ../winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md
+            - name: Передача массивов компоненту среды выполнения Windows
+              href: ../winrt-components/passing-arrays-to-a-windows-runtime-component.md
+            - name: Диагностика состояний ошибки компонентов среды выполнения Windows
+              href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
+            - name: Распространение управляемого компонента среды выполнения Windows
+              href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
+            - name: Сопоставление типов .NET Framework с типами среды выполнения Windows
+              href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
+        - name: 'Пошаговое руководство: Создание простого компонента среды выполнения Windows и его вызов из JavaScript'
+          href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
+        - name: Создание событий в компонентах среды выполнения Windows
+          href: ../winrt-components/raising-events-in-windows-runtime-components.md
+        - name: 'Компоненты среды выполнения Windows для неопубликованных приложений UWP, выполняемые через посредник'
+          href: ../winrt-components/brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md
+    - name: Платформа XAML
+      href: ../xaml-platform/index.md
       items:
-      - name: Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows
-        href: ../winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md
-      - name: Передача массивов компоненту среды выполнения Windows
-        href: ../winrt-components/passing-arrays-to-a-windows-runtime-component.md
-      - name: Диагностика состояний ошибки компонентов среды выполнения Windows
-        href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
-      - name: Распространение управляемого компонента среды выполнения Windows
-        href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
-      - name: Сопоставление типов .NET Framework с типами среды выполнения Windows
-        href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-    - name: 'Пошаговое руководство: Создание простого компонента среды выполнения Windows и его вызов из JavaScript'
-      href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
-    - name: Создание событий в компонентах среды выполнения Windows
-      href: ../winrt-components/raising-events-in-windows-runtime-components.md
-    - name: Компоненты среды выполнения Windows для неопубликованных приложений UWP, выполняемые через посредник
-      href: ../winrt-components/brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md
-  - name: Платформа XAML
-    href: ../xaml-platform/index.md
-    items:
-    - name: Обзор языка XAML
-      href: ../xaml-platform/xaml-overview.md
-      items:
-      - name: Руководство по синтаксису XAML
-        href: ../xaml-platform/xaml-syntax-guide.md
-        items:
-        - name: Синтаксис Property-path
-          href: ../xaml-platform/property-path-syntax.md
-        - name: Синтаксис команд перемещения и рисования
-          href: ../xaml-platform/move-draw-commands-syntax.md
-      - name: XAML и пустое пространство
-        href: ../xaml-platform/xaml-and-whitespace.md
-      - name: Пространства имен XAML
-        href: ../xaml-platform/xaml-namescopes.md
-      - name: Пространства имен XAML и их сопоставление
-        href: ../xaml-platform/xaml-namespaces-and-namespace-mapping.md
-      - name: Классы параметров шаблона
-        href: ../xaml-platform/template-settings-classes.md
-      - name: Атрибут x:Class
-        href: ../xaml-platform/x-class-attribute.md
-      - name: Атрибут x:DefaultBindMode
-        href: ../xaml-platform/x-defaultbindmode-attribute.md
-      - name: Атрибут x:DeferLoadStrategy
-        href: ../xaml-platform/x-deferloadstrategy-attribute.md
-      - name: Атрибут x:FieldModifier
-        href: ../xaml-platform/x-fieldmodifier-attribute.md
-      - name: Атрибут x:Key
-        href: ../xaml-platform/x-key-attribute.md
-      - name: Атрибут x:Load
-        href: ../xaml-platform/x-load-attribute.md
-      - name: Атрибут x:Name
-        href: ../xaml-platform/x-name-attribute.md
-      - name: Атрибут x:Phase
-        href: ../xaml-platform/x-phase-attribute.md
-      - name: Директива x:Uid
-        href: ../xaml-platform/x-uid-directive.md
-      - name: Расширение разметки x:Bind
-        href: ../xaml-platform/x-bind-markup-extension.md
-      - name: Расширение разметки {Binding}
-        href: ../xaml-platform/binding-markup-extension.md
-      - name: Расширение разметки {x:Null}
-        href: ../xaml-platform/x-null-markup-extension.md
-      - name: Встроенные типы данных в языке XAML
-        href: ../xaml-platform/xaml-intrinsic-data-types.md
-      - name: Расширение разметки {CustomResource}
-        href: ../xaml-platform/customresource-markup-extension.md
-      - name: Расширение разметки {RelativeSource}
-        href: ../xaml-platform/relativesource-markup-extension.md
-      - name: Расширение разметки {StaticResource}
-        href: ../xaml-platform/staticresource-markup-extension.md
-      - name: Расширение разметки {TemplateBinding}
-        href: ../xaml-platform/templatebinding-markup-extension.md
-      - name: Расширение разметки {ThemeResource}
-        href: ../xaml-platform/themeresource-markup-extension.md
-    - name: Общие сведения о свойствах зависимостей
-      href: ../xaml-platform/dependency-properties-overview.md
-    - name: Пользовательские свойства зависимостей
-      href: ../xaml-platform/custom-dependency-properties.md
-    - name: Общие сведения о присоединенных свойствах
-      href: ../xaml-platform/attached-properties-overview.md
-    - name: Пользовательские присоединенные свойства
-      href: ../xaml-platform/custom-attached-properties.md
-    - name: Общие сведения о событиях и перенаправленных событиях
-      href: ../xaml-platform/events-and-routed-events-overview.md
-    - name: Элементы управления UWP в классических приложениях
-      href: ../xaml-platform/xaml-host-controls.md
-      items:
-      - name: Использование API размещения UWP XAML
-        href: ../xaml-platform/using-the-xaml-hosting-api.md
+        - name: Обзор языка XAML
+          href: ../xaml-platform/xaml-overview.md
+          items:
+            - name: Руководство по синтаксису XAML
+              href: ../xaml-platform/xaml-syntax-guide.md
+              items:
+                - name: Синтаксис Property-path
+                  href: ../xaml-platform/property-path-syntax.md
+                - name: Синтаксис команд перемещения и рисования
+                  href: ../xaml-platform/move-draw-commands-syntax.md
+            - name: XAML и пустое пространство
+              href: ../xaml-platform/xaml-and-whitespace.md
+            - name: Пространства имен XAML
+              href: ../xaml-platform/xaml-namescopes.md
+            - name: Пространства имен XAML и их сопоставление
+              href: ../xaml-platform/xaml-namespaces-and-namespace-mapping.md
+            - name: Классы параметров шаблона
+              href: ../xaml-platform/template-settings-classes.md
+            - name: 'Атрибут x:Class'
+              href: ../xaml-platform/x-class-attribute.md
+            - name: 'Атрибут x:DefaultBindMode'
+              href: ../xaml-platform/x-defaultbindmode-attribute.md
+            - name: 'Атрибут x:DeferLoadStrategy'
+              href: ../xaml-platform/x-deferloadstrategy-attribute.md
+            - name: 'Атрибут x:FieldModifier'
+              href: ../xaml-platform/x-fieldmodifier-attribute.md
+            - name: 'Атрибут x:Key'
+              href: ../xaml-platform/x-key-attribute.md
+            - name: 'Атрибут x:Load'
+              href: ../xaml-platform/x-load-attribute.md
+            - name: 'Атрибут x:Name'
+              href: ../xaml-platform/x-name-attribute.md
+            - name: 'Атрибут x:Phase'
+              href: ../xaml-platform/x-phase-attribute.md
+            - name: 'Директива x:Uid'
+              href: ../xaml-platform/x-uid-directive.md
+            - name: 'Расширение разметки x:Bind'
+              href: ../xaml-platform/x-bind-markup-extension.md
+            - name: 'Расширение разметки {Binding}'
+              href: ../xaml-platform/binding-markup-extension.md
+            - name: 'Расширение разметки {x:Null}'
+              href: ../xaml-platform/x-null-markup-extension.md
+            - name: Встроенные типы данных в языке XAML
+              href: ../xaml-platform/xaml-intrinsic-data-types.md
+            - name: 'Расширение разметки {CustomResource}'
+              href: ../xaml-platform/customresource-markup-extension.md
+            - name: 'Расширение разметки {RelativeSource}'
+              href: ../xaml-platform/relativesource-markup-extension.md
+            - name: 'Расширение разметки {StaticResource}'
+              href: ../xaml-platform/staticresource-markup-extension.md
+            - name: 'Расширение разметки {TemplateBinding}'
+              href: ../xaml-platform/templatebinding-markup-extension.md
+            - name: 'Расширение разметки {ThemeResource}'
+              href: ../xaml-platform/themeresource-markup-extension.md
+        - name: Общие сведения о свойствах зависимостей
+          href: ../xaml-platform/dependency-properties-overview.md
+        - name: Пользовательские свойства зависимостей
+          href: ../xaml-platform/custom-dependency-properties.md
+        - name: Общие сведения о присоединенных свойствах
+          href: ../xaml-platform/attached-properties-overview.md
+        - name: Пользовательские присоединенные свойства
+          href: ../xaml-platform/custom-attached-properties.md
+        - name: Общие сведения о событиях и перенаправленных событиях
+          href: ../xaml-platform/events-and-routed-events-overview.md
 - name: Пользователи и места
   items:
-  - name: "\"Контакты\", \"Близкие люди\" и \"Календарь\""
-    href: ../contacts-and-calendar/index.md
-    items:
-    - name: "\"Близкие люди\""
-      href: ../contacts-and-calendar/my-people-support.md
+    - name: '"Контакты", "Близкие люди" и "Календарь"'
+      href: ../contacts-and-calendar/index.md
       items:
-      - name: Публикации близких людей
-        href: ../contacts-and-calendar/my-people-sharing.md
-      - name: Уведомления близких людей
-        href: ../contacts-and-calendar/my-people-notifications.md
-    - name: Выбор контактов
-      href: ../contacts-and-calendar/selecting-contacts.md
-    - name: Отправка сообщения электронной почты
-      href: ../contacts-and-calendar/sending-email.md
-    - name: Отправка SMS-сообщения
-      href: ../contacts-and-calendar/sending-an-sms-message.md
-    - name: Управление встречами
-      href: ../contacts-and-calendar/managing-appointments.md
-    - name: Подключение приложения к действиям в карточках контактов
-      href: ../contacts-and-calendar/integrating-with-contacts.md
-  - name: Карты и расположение
-    href: ../maps-and-location/index.md
-    items:
-    - name: Запрос ключа проверки подлинности
-      href: ../maps-and-location/authentication-key.md
-    - name: Отображение карт
-      href: ../maps-and-location/display-maps.md
-    - name: Отображение объектов
-      href: ../maps-and-location/display-poi.md
-    - name: Отображение дорог и маршрутов
-      href: ../maps-and-location/routes-and-directions.md
-    - name: Наложение мозаичных изображений
-      href: ../maps-and-location/overlay-tiled-images.md
-    - name: Запуск геокодирования
-      href: ../maps-and-location/geocoding.md
-    - name: Получение сведений о текущем расположении
-      href: ../maps-and-location/get-location.md
-    - name: Руководство по разработке приложений, учитывающих данные о расположении
-      href: ../maps-and-location/guidelines-and-checklist-for-detecting-location.md
-    - name: Рекомендации по использованию функции отслеживания посещений
-      href: ../maps-and-location/guidelines-for-visits.md
-    - name: Настройка геозоны
-      href: ../maps-and-location/set-up-a-geofence.md
-    - name: Руководство для разработчиков по созданию геозон
-      href: ../maps-and-location/guidelines-for-geofencing.md
-    - name: Справочник по таблицам стилей карты
-      href: ../maps-and-location/elements-of-map-style-sheet.md
-- name: Периферийные устройства, датчики и питание
+        - name: '"Близкие люди"'
+          href: ../contacts-and-calendar/my-people-support.md
+          items:
+            - name: Публикации близких людей
+              href: ../contacts-and-calendar/my-people-sharing.md
+            - name: Уведомления близких людей
+              href: ../contacts-and-calendar/my-people-notifications.md
+        - name: Выбор контактов
+          href: ../contacts-and-calendar/selecting-contacts.md
+        - name: Отправка сообщения электронной почты
+          href: ../contacts-and-calendar/sending-email.md
+        - name: Отправка SMS-сообщения
+          href: ../contacts-and-calendar/sending-an-sms-message.md
+        - name: Управление встречами
+          href: ../contacts-and-calendar/managing-appointments.md
+        - name: Подключение приложения к действиям в карточках контактов
+          href: ../contacts-and-calendar/integrating-with-contacts.md
+    - name: Карты и расположение
+      href: ../maps-and-location/index.md
+      items:
+        - name: Запрос ключа проверки подлинности
+          href: ../maps-and-location/authentication-key.md
+        - name: Отображение карт
+          href: ../maps-and-location/display-maps.md
+        - name: Отображение объектов
+          href: ../maps-and-location/display-poi.md
+        - name: Отображение дорог и маршрутов
+          href: ../maps-and-location/routes-and-directions.md
+        - name: Наложение мозаичных изображений
+          href: ../maps-and-location/overlay-tiled-images.md
+        - name: Запуск геокодирования
+          href: ../maps-and-location/geocoding.md
+        - name: Получение сведений о текущем расположении
+          href: ../maps-and-location/get-location.md
+        - name: 'Руководство по разработке приложений, учитывающих данные о расположении'
+          href: ../maps-and-location/guidelines-and-checklist-for-detecting-location.md
+        - name: Рекомендации по использованию функции отслеживания посещений
+          href: ../maps-and-location/guidelines-for-visits.md
+        - name: Настройка геозоны
+          href: ../maps-and-location/set-up-a-geofence.md
+        - name: Руководство для разработчиков по созданию геозон
+          href: ../maps-and-location/guidelines-for-geofencing.md
+        - name: Справочник по таблицам стилей карты
+          href: ../maps-and-location/elements-of-map-style-sheet.md
+- name: 'Периферийные устройства, датчики и питание'
   href: ../devices-sensors/index.md
   items:
-  - name: Включение возможностей устройств
-    href: ../devices-sensors/enable-device-capabilities.md
-  - name: Предоставление доступа в пользовательском режиме
-    href: ../devices-sensors/enable-usermode-access.md
-  - name: Перечисление устройств
-    href: ../devices-sensors/enumerate-devices.md
-    items:
-    - name: Создание средства выбора устройств
-      href: ../devices-sensors/build-a-device-selector.md
-    - name: Перечисление устройств по сети
-      href: ../devices-sensors/enumerate-devices-over-a-network.md
-    - name: Свойства сведений об устройствах
-      href: ../devices-sensors/device-information-properties.md
-    - name: Идентификаторы класса службы AEP
-      href: ../devices-sensors/aep-service-class-ids.md
-  - name: Связывание устройств
-    href: ../devices-sensors/pair-devices.md
-  - name: POS-терминал
-    href: ../devices-sensors/point-of-service.md
-    items:
-    - name: Основы
-      href: ../devices-sensors/pos-basics.md
+    - name: Включение возможностей устройств
+      href: ../devices-sensors/enable-device-capabilities.md
+    - name: Предоставление доступа в пользовательском режиме
+      href: ../devices-sensors/enable-usermode-access.md
+    - name: Перечисление устройств
+      href: ../devices-sensors/enumerate-devices.md
       items:
-      - name: Объявление возможностей
-        href: ../devices-sensors/pos-basics-capability.md
-      - name: Перечисление устройств
-        href: ../devices-sensors/pos-basics-enumerating.md
-      - name: Создание объекта устройства
-        href: ../devices-sensors/pos-basics-deviceobject.md
-      - name: Присвоение и включение
-        href: ../devices-sensors/pos-basics-claim.md
-      - name: Общий доступ к периферийным устройствам для других пользователей
-        href: ../devices-sensors/pos-basics-sharing.md
-      - name: Начало работы
-        href: ../devices-sensors/pos-get-started.md
-    - name: Поддержка оборудования
-      href: ../devices-sensors/pos-device-support.md
-    - name: Сканер штрихкодов
-      href: ../devices-sensors/pos-barcodescanner.md
+        - name: Создание средства выбора устройств
+          href: ../devices-sensors/build-a-device-selector.md
+        - name: Перечисление устройств по сети
+          href: ../devices-sensors/enumerate-devices-over-a-network.md
+        - name: Свойства сведений об устройствах
+          href: ../devices-sensors/device-information-properties.md
+        - name: Идентификаторы класса службы AEP
+          href: ../devices-sensors/aep-service-class-ids.md
+    - name: Связывание устройств
+      href: ../devices-sensors/pair-devices.md
+    - name: POS-терминал
+      href: ../devices-sensors/point-of-service.md
       items:
-      - name: Настройка сканера штрихкодов
-        href: ../devices-sensors/pos-barcodescanner-configure.md
-      - name: Использование программного триггера
-        href: ../devices-sensors/pos-barcodescanner-software-trigger.md
-      - name: Работа с символиками
-        href: ../devices-sensors/pos-barcodescanner-symbologies.md
-      - name: Получение и распознавание данных штрихкода
-        href: ../devices-sensors/pos-barcodescanner-scan-data.md
-      - name: Сканер штрихкодов на базе камеры
-        href: ../devices-sensors/pos-camerabarcode.md
-        items:
-        - name: Системные требования
-          href: ../devices-sensors/pos-camerabarcode-system-requirements.md
-        - name: Начало работы
-          href: ../devices-sensors/pos-camerabarcode-get-started.md
-        - name: Размещение предварительного изображения с камеры
-          href: ../devices-sensors/pos-camerabarcode-hosting-preview.md
-        - name: Включение и отключение сканера штрихкодов на базе камеры
-          href: ../devices-sensors/pos-camerabarcode-enable-disable.md
-        - name: Поддерживаемые символики
-          href: ../devices-sensors/pos-camerabarcode-symbologies.md
-    - name: Считыватель магнитных карт
-      href: ../devices-sensors/pos-magnetic-stripe-reader.md
+        - name: Основы
+          href: ../devices-sensors/pos-basics.md
+          items:
+            - name: Объявление возможностей
+              href: ../devices-sensors/pos-basics-capability.md
+            - name: Перечисление устройств
+              href: ../devices-sensors/pos-basics-enumerating.md
+            - name: Создание объекта устройства
+              href: ../devices-sensors/pos-basics-deviceobject.md
+            - name: Присвоение и включение
+              href: ../devices-sensors/pos-basics-claim.md
+            - name: Общий доступ к периферийным устройствам для других пользователей
+              href: ../devices-sensors/pos-basics-sharing.md
+            - name: Начало работы
+              href: ../devices-sensors/pos-get-started.md
+        - name: Поддержка оборудования
+          href: ../devices-sensors/pos-device-support.md
+        - name: Сканер штрихкодов
+          href: ../devices-sensors/pos-barcodescanner.md
+          items:
+            - name: Настройка сканера штрихкодов
+              href: ../devices-sensors/pos-barcodescanner-configure.md
+            - name: Использование программного триггера
+              href: ../devices-sensors/pos-barcodescanner-software-trigger.md
+            - name: Работа с символиками
+              href: ../devices-sensors/pos-barcodescanner-symbologies.md
+            - name: Получение и распознавание данных штрихкода
+              href: ../devices-sensors/pos-barcodescanner-scan-data.md
+            - name: Сканер штрихкодов на базе камеры
+              href: ../devices-sensors/pos-camerabarcode.md
+              items:
+                - name: Системные требования
+                  href: ../devices-sensors/pos-camerabarcode-system-requirements.md
+                - name: Начало работы
+                  href: ../devices-sensors/pos-camerabarcode-get-started.md
+                - name: Размещение предварительного изображения с камеры
+                  href: ../devices-sensors/pos-camerabarcode-hosting-preview.md
+                - name: Включение и отключение сканера штрихкодов на базе камеры
+                  href: ../devices-sensors/pos-camerabarcode-enable-disable.md
+                - name: Поддерживаемые символики
+                  href: ../devices-sensors/pos-camerabarcode-symbologies.md
+        - name: Считыватель магнитных карт
+          href: ../devices-sensors/pos-magnetic-stripe-reader.md
+          items:
+            - name: Получение и распознавание данных магнитных карт
+              href: ../devices-sensors/pos-magnetic-stripe-reader-data.md
+        - name: POSPrinter
+          href: ../devices-sensors/pos-printer.md
+          items:
+            - name: Epson ESC/POS с форматированием
+              href: ../devices-sensors/epson-esc-pos-with-formatting.md
+    - name: Датчики
+      href: ../devices-sensors/sensors.md
       items:
-      - name: Получение и распознавание данных магнитных карт
-        href: ../devices-sensors/pos-magnetic-stripe-reader-data.md
-    - name: POSPrinter
-      href: ../devices-sensors/pos-printer.md
+        - name: Калибровка датчиков
+          href: ../devices-sensors/calibrate-sensors.md
+        - name: Положение датчиков в пространстве
+          href: ../devices-sensors/sensor-orientation.md
+        - name: Использование акселерометра
+          href: ../devices-sensors/use-the-accelerometer.md
+        - name: Использование компаса
+          href: ../devices-sensors/use-the-compass.md
+        - name: Использование гирометра
+          href: ../devices-sensors/use-the-gyrometer.md
+        - name: Использование инклинометра
+          href: ../devices-sensors/use-the-inclinometer.md
+        - name: Использование датчика освещенности
+          href: ../devices-sensors/use-the-light-sensor.md
+        - name: Использование датчика положения в пространстве
+          href: ../devices-sensors/use-the-orientation-sensor.md
+    - name: Bluetooth
+      href: ../devices-sensors/bluetooth.md
       items:
-      - name: Epson ESC/POS с форматированием
-        href: ../devices-sensors/epson-esc-pos-with-formatting.md
-  - name: Датчики
-    href: ../devices-sensors/sensors.md
-    items:
-    - name: Калибровка датчиков
-      href: ../devices-sensors/calibrate-sensors.md
-    - name: Положение датчиков в пространстве
-      href: ../devices-sensors/sensor-orientation.md
-    - name: Использование акселерометра
-      href: ../devices-sensors/use-the-accelerometer.md
-    - name: Использование компаса
-      href: ../devices-sensors/use-the-compass.md
-    - name: Использование гирометра
-      href: ../devices-sensors/use-the-gyrometer.md
-    - name: Использование инклинометра
-      href: ../devices-sensors/use-the-inclinometer.md
-    - name: Использование датчика освещенности
-      href: ../devices-sensors/use-the-light-sensor.md
-    - name: Использование датчика положения в пространстве
-      href: ../devices-sensors/use-the-orientation-sensor.md
-  - name: Bluetooth
-    href: ../devices-sensors/bluetooth.md
-    items:
-    - name: RFCOMM
-      href: ../devices-sensors/send-or-receive-files-with-rfcomm.md
-    - name: Bluetooth с низким энергопотреблением
-      href: ../devices-sensors/bluetooth-low-energy-overview.md
+        - name: RFCOMM
+          href: ../devices-sensors/send-or-receive-files-with-rfcomm.md
+        - name: Bluetooth с низким энергопотреблением
+          href: ../devices-sensors/bluetooth-low-energy-overview.md
+          items:
+            - name: Клиент GATT
+              href: ../devices-sensors/gatt-client.md
+            - name: Сервер GATT
+              href: ../devices-sensors//gatt-server.md
+            - name: Объявления
+              href: ../devices-sensors/ble-beacon.md
+        - name: Вопросы и ответы для Bluetooth-разработчиков
+          href: ../devices-sensors/bluetooth-dev-faq.md
+    - name: Печать и сканирование
+      href: ../devices-sensors/printing-and-scanning.md
       items:
-      - name: Клиент GATT
-        href: ../devices-sensors/gatt-client.md
-      - name: Сервер GATT
-        href: ../devices-sensors//gatt-server.md
-      - name: Объявления
-        href: ../devices-sensors/ble-beacon.md
-    - name: Вопросы и ответы для Bluetooth-разработчиков
-      href: ../devices-sensors/bluetooth-dev-faq.md
-  - name: Печать и сканирование
-    href: ../devices-sensors/printing-and-scanning.md
-    items:
-    - name: Печать из приложения
-      href: ../devices-sensors/print-from-your-app.md
-    - name: Настройка пользовательского интерфейса предварительного просмотра
-      href: ../devices-sensors/customize-the-print-preview-ui.md
-    - name: Создание пользовательского рабочего процесса печати
-      href: ../devices-sensors/print-workflow-customize.md
-    - name: Сканирование из приложения
-      href: ../devices-sensors/scan-from-your-app.md
-  - name: Трехмерная печать
-    href: ../devices-sensors/3d-printing.md
-    items:
-    - name: Трехмерная печать из приложения
-      href: ../devices-sensors/3d-print-from-app.md
-    - name: Создание пакета 3MF
-      href: ../devices-sensors/generate-3mf.md
-  - name: NFC
-    href: ../devices-sensors/nfc.md
-    items:
-    - name: Создание приложения для смарт-карты NFC
-      href: ../devices-sensors/host-card-emulation.md
-  - name: Получение сведений об аккумуляторе
-    href: ../devices-sensors/get-battery-info.md
+        - name: Печать из приложения
+          href: ../devices-sensors/print-from-your-app.md
+        - name: Настройка пользовательского интерфейса предварительного просмотра
+          href: ../devices-sensors/customize-the-print-preview-ui.md
+        - name: Создание пользовательского рабочего процесса печати
+          href: ../devices-sensors/print-workflow-customize.md
+        - name: Сканирование из приложения
+          href: ../devices-sensors/scan-from-your-app.md
+    - name: Трехмерная печать
+      href: ../devices-sensors/3d-printing.md
+      items:
+        - name: Трехмерная печать из приложения
+          href: ../devices-sensors/3d-print-from-app.md
+        - name: Создание пакета 3MF
+          href: ../devices-sensors/generate-3mf.md
+    - name: NFC
+      href: ../devices-sensors/nfc.md
+      items:
+        - name: Создание приложения для смарт-карты NFC
+          href: ../devices-sensors/host-card-emulation.md
+    - name: Получение сведений об аккумуляторе
+      href: ../devices-sensors/get-battery-info.md
 - name: Перенос приложений
   items:
-  - name: Обзор
-    href: ../porting/index.md
-  - name: Переход с Windows Phone Silverlight на UWP
-    href: ../porting/wpsl-to-uwp-root.md
-    items:
-    - name: Сопоставление пространства имен и класса
-      href: ../porting/wpsl-to-uwp-namespace-and-class-mappings.md
-    - name: Перенос проекта
-      href: ../porting/wpsl-to-uwp-porting-to-a-uwp-project.md
-    - name: Поиск и устранение неисправностей
-      href: ../porting/wpsl-to-uwp-troubleshooting.md
-    - name: Перенос XAML и пользовательского интерфейса
-      href: ../porting/wpsl-to-uwp-porting-xaml-and-ui.md
-    - name: Перенос для ввода-вывода, устройств и моделей приложений
-      href: ../porting/wpsl-to-uwp-input-and-sensors.md
-    - name: Перенос уровней бизнеса и данных
-      href: ../porting/wpsl-to-uwp-business-and-data.md
-    - name: Перенос для форм-фактора и взаимодействия с пользователем
-      href: ../porting/wpsl-to-uwp-form-factors-and-ux.md
-    - name: 'Пример: Bookstore1'
-      href: ../porting/wpsl-to-uwp-case-study-bookstore1.md
-    - name: 'Пример: Bookstore2'
-      href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
-  - name: Переход со среды выполнения Windows 8.x на UWP
-    href: ../porting/w8x-to-uwp-root.md
-    items:
-    - name: Перенос проекта
-      href: ../porting/w8x-to-uwp-porting-to-a-uwp-project.md
-    - name: Поиск и устранение неисправностей
-      href: ../porting/w8x-to-uwp-troubleshooting.md
-    - name: Перенос XAML и пользовательского интерфейса
-      href: ../porting/w8x-to-uwp-porting-xaml-and-ui.md
-    - name: Перенос для ввода-вывода, устройств и моделей приложений
-      href: ../porting/w8x-to-uwp-input-and-sensors.md
-    - name: 'Пример: Bookstore1'
-      href: ../porting/w8x-to-uwp-case-study-bookstore1.md
-    - name: 'Пример: Bookstore2'
-      href: ../porting/w8x-to-uwp-case-study-bookstore2.md
-    - name: 'Пример: QuizGame'
-      href: ../porting/w8x-to-uwp-case-study-quizgame.md
-  - name: Упаковка классических приложений
-    href: ../porting/desktop-to-uwp-root.md
-    items:
-    - name: Подготовка приложения к упаковке
-      href: ../porting/desktop-to-uwp-prepare.md
-    - name: Упаковка с помощью Desktop App Converter
-      href: ../porting/desktop-to-uwp-run-desktop-app-converter.md
-    - name: Упаковка с помощью Visual Studio
-      href: ../porting/desktop-to-uwp-packaging-dot-net.md
-    - name: Упаковка вручную
-      href: ../porting/desktop-to-uwp-manual-conversion.md
-    - name: Интеграция с Windows 10
-      href: ../porting/desktop-to-uwp-extensions.md
-    - name: Оптимизация для Windows 10
-      href: ../porting/desktop-to-uwp-enhance.md
+    - name: Обзор
+      href: ../porting/index.md
+    - name: Переход с классических приложений на UWP
+      href: ../porting/desktop-to-uwp-migrate.md
+    - name: Переход со среды выполнения Windows 8.x на UWP
+      href: ../porting/w8x-to-uwp-root.md
       items:
-      - name: Доступные интерфейсы API UWP
-        href: ../porting/desktop-to-uwp-supported-api.md
-      - name: Оптимизация двоичных файлов приложения с помощью собственных образов
-        href: ../porting/desktop-to-uwp-r2r.md
-    - name: Расширение возможностей с помощью UWP
-      href: ../porting/desktop-to-uwp-extend.md
-    - name: Запуск, отладка и тестирование
-      href: ../porting/desktop-to-uwp-debug.md
+        - name: Перенос проекта
+          href: ../porting/w8x-to-uwp-porting-to-a-uwp-project.md
+        - name: Поиск и устранение неисправностей
+          href: ../porting/w8x-to-uwp-troubleshooting.md
+        - name: Перенос XAML и пользовательского интерфейса
+          href: ../porting/w8x-to-uwp-porting-xaml-and-ui.md
+        - name: 'Перенос для ввода-вывода, устройств и моделей приложений'
+          href: ../porting/w8x-to-uwp-input-and-sensors.md
+        - name: 'Пример: Bookstore1'
+          href: ../porting/w8x-to-uwp-case-study-bookstore1.md
+        - name: 'Пример: Bookstore2'
+          href: ../porting/w8x-to-uwp-case-study-bookstore2.md
+        - name: 'Пример: QuizGame'
+          href: ../porting/w8x-to-uwp-case-study-quizgame.md
+    - name: Сопоставление концепции приложений для Windows для разработчиков iOS и Android
+      href: ../porting/android-ios-uwp-map.md
+    - name: Переход с iOS на UWP
+      href: ../porting/ios-to-uwp-root.md
       items:
-      - name: Тестирование для Windows 10 в S-режиме
-        href: ../porting/desktop-to-uwp-test-windows-s.md
-    - name: Применение исправлений среды выполнения
-      href: ../porting/package-support-framework.md
-    - name: Распространение
-      href: ../porting/desktop-to-uwp-distribute.md
-    - name: Как это делается
-      href: ../porting/desktop-to-uwp-behind-the-scenes.md
-    - name: Известные проблемы
-      href: ../porting/desktop-to-uwp-known-issues.md
-  - name: Совместное использование кода классическими приложениями и приложениями UWP
-    href: ../porting/desktop-to-uwp-migrate.md
-  - name: Сопоставление концепции приложений для Windows для разработчиков iOS и Android
-    href: ../porting/android-ios-uwp-map.md
-  - name: Переход с iOS на UWP
-    href: ../porting/ios-to-uwp-root.md
-    items:
-    - name: Выбор подхода к разработке приложений iOS и UWP
-      href: ../porting/selecting-an-approach-to-ios-and-uwp-app-development.md
-    - name: Знакомство с UWP для разработчиков iOS
-      href: ../porting/getting-started-with-uwp-for-ios-developers.md
+        - name: Выбор подхода к разработке приложений iOS и UWP
+          href: ../porting/selecting-an-approach-to-ios-and-uwp-app-development.md
+        - name: Знакомство с UWP для разработчиков iOS
+          href: ../porting/getting-started-with-uwp-for-ios-developers.md
+          items:
+            - name: 'Приступая к работе: Создание проекта'
+              href: ../porting/getting-started-creating-a-project.md
+            - name: 'Приступая к работе: Выбор языка программирования'
+              href: ../porting/getting-started-choosing-a-programming-language.md
+            - name: 'Приступая к работе: Введение в Visual Studio'
+              href: ../porting/getting-started-getting-around-in-visual-studio.md
+            - name: 'Приступая к работе: общие элементы управления'
+              href: ../porting/getting-started-common-controls.md
+            - name: 'Приступая к работе: Навигация'
+              href: ../porting/getting-started-navigation.md
+            - name: 'Приступая к работе: Анимация'
+              href: ../porting/getting-started-animation.md
+            - name: 'Приступая к работе: Что делать дальше?'
+              href: ../porting/getting-started-what-next.md
+        - name: Установка Windows 10 на Mac
+          href: ../porting/setting-up-your-mac-with-windows-10.md
+    - name: "Переход с Windows\_Phone\_Silverlight на UWP"
+      href: ../porting/wpsl-to-uwp-root.md
       items:
-      - name: 'Приступая к работе: Создание проекта'
-        href: ../porting/getting-started-creating-a-project.md
-      - name: 'Приступая к работе: Выбор языка программирования'
-        href: ../porting/getting-started-choosing-a-programming-language.md
-      - name: 'Приступая к работе: Введение в Visual Studio'
-        href: ../porting/getting-started-getting-around-in-visual-studio.md
-      - name: 'Приступая к работе: общие элементы управления'
-        href: ../porting/getting-started-common-controls.md
-      - name: 'Приступая к работе: Навигация'
-        href: ../porting/getting-started-navigation.md
-      - name: 'Приступая к работе: Анимация'
-        href: ../porting/getting-started-animation.md
-      - name: 'Приступая к работе: Что делать дальше?'
-        href: ../porting/getting-started-what-next.md
-    - name: Установка Windows 10 на Mac
-      href: ../porting/setting-up-your-mac-with-windows-10.md
-  - name: Преобразование веб-приложения в приложение PWA в среде Windows 10
-    href: https://docs.microsoft.com/microsoft-edge/progressive-web-apps
-    items:
-    - name: Упаковка приложения для Windows 7 в виде приложения PWA
-      href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-windows7.html
-    - name: Упаковка приложения для iOS в виде приложения PWA
-      href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-ios.html
-    - name: Упаковка приложения для Android в виде приложения PWA
-      href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-android.html
-    - name: Упаковка приложения для MacOS в виде приложения PWA
-      href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-mac.html
-  - name: Windows 10 на архитектуре ARM
-    href: ../porting/apps-on-arm.md
-    items:
-    - name: Принцип работы эмуляции x86 на архитектуре ARM
-      href: ../porting/apps-on-arm-x86-emulation.md
-    - name: Устранение неполадок в классических приложениях x86
-      href: ../porting/apps-on-arm-troubleshooting-x86.md
-    - name: Устранение неполадок в приложениях UWP для ARM
-      href: ../porting/apps-on-arm-troubleshooting-arm32.md
-    - name: Средство устранения неполадок с совместимостью программ на архитектуре ARM
-      href: ../porting/apps-on-arm-program-compat-troubleshooter.md
+        - name: Сопоставление пространства имен и класса
+          href: ../porting/wpsl-to-uwp-namespace-and-class-mappings.md
+        - name: Перенос проекта
+          href: ../porting/wpsl-to-uwp-porting-to-a-uwp-project.md
+        - name: Поиск и устранение неисправностей
+          href: ../porting/wpsl-to-uwp-troubleshooting.md
+        - name: Перенос XAML и пользовательского интерфейса
+          href: ../porting/wpsl-to-uwp-porting-xaml-and-ui.md
+        - name: 'Перенос для ввода-вывода, устройств и моделей приложений'
+          href: ../porting/wpsl-to-uwp-input-and-sensors.md
+        - name: Перенос уровней бизнеса и данных
+          href: ../porting/wpsl-to-uwp-business-and-data.md
+        - name: Перенос для форм-фактора и взаимодействия с пользователем
+          href: ../porting/wpsl-to-uwp-form-factors-and-ux.md
+        - name: 'Пример: Bookstore1'
+          href: ../porting/wpsl-to-uwp-case-study-bookstore1.md
+        - name: 'Пример: Bookstore2'
+          href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
+    - name: Преобразование веб-приложения в приложение PWA в среде Windows 10
+      href: 'https://docs.microsoft.com/microsoft-edge/progressive-web-apps'
+      items:
+        - name: Упаковка приложения для Windows 7 в виде приложения PWA
+          href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-windows7.html'
+        - name: Упаковка приложения для iOS в виде приложения PWA
+          href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-ios.html'
+        - name: Упаковка приложения для Android в виде приложения PWA
+          href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-android.html'
+        - name: Упаковка приложения для MacOS в виде приложения PWA
+          href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-mac.html'
+    - name: "Windows\_10 на архитектуре ARM"
+      href: ../porting/apps-on-arm.md
+      items:
+        - name: Принцип работы эмуляции x86 на архитектуре ARM
+          href: ../porting/apps-on-arm-x86-emulation.md
+        - name: Устранение неполадок в классических приложениях x86
+          href: ../porting/apps-on-arm-troubleshooting-x86.md
+        - name: Устранение неполадок в приложениях UWP для ARM
+          href: ../porting/apps-on-arm-troubleshooting-arm32.md
+        - name: Средство устранения неполадок с совместимостью программ на архитектуре ARM
+          href: ../porting/apps-on-arm-program-compat-troubleshooter.md
 - name: Процессы и потоки
   items:
-  - name: Запуск, возобновление и фоновые задачи
-    href: ../launch-resume/index.md
-    items:
-    - name: Создание консольного приложения для универсальной платформы Windows
-      href: ../launch-resume/console-uwp.md
-    - name: Создание нескольких экземпляров приложения UWP
-      href: ../launch-resume/multi-instance-uwp.md
-    - name: Жизненный цикл приложения
-      href: ../launch-resume/app-lifecycle.md
+    - name: 'Запуск, возобновление и фоновые задачи'
+      href: ../launch-resume/index.md
       items:
-      - name: Обработка предварительного запуска приложения
-        href: ../launch-resume/handle-app-prelaunch.md
-      - name: Обработка активации приложения
-        href: ../launch-resume/activate-an-app.md
-      - name: Обработка приостановки работы приложения
-        href: ../launch-resume/suspend-an-app.md
-      - name: Обработка возобновления работы приложения
-        href: ../launch-resume/resume-an-app.md
-      - name: Освобождение памяти при переходе приложения в фоновый режим
-        href: ../launch-resume/reduce-memory-usage.md
-      - name: Задержка приостановки приложения с помощью расширенного сеанса выполнения
-        href: ../launch-resume/run-minimized-with-extended-execution.md
-    - name: Запуск приложения с помощью URI
-      href: ../launch-resume/launch-app-with-uri.md
+        - name: Создание консольного приложения для универсальной платформы Windows
+          href: ../launch-resume/console-uwp.md
+        - name: Создание нескольких экземпляров приложения UWP
+          href: ../launch-resume/multi-instance-uwp.md
+        - name: Жизненный цикл приложения
+          href: ../launch-resume/app-lifecycle.md
+          items:
+            - name: Обработка предварительного запуска приложения
+              href: ../launch-resume/handle-app-prelaunch.md
+            - name: Обработка активации приложения
+              href: ../launch-resume/activate-an-app.md
+            - name: Обработка приостановки работы приложения
+              href: ../launch-resume/suspend-an-app.md
+            - name: Обработка возобновления работы приложения
+              href: ../launch-resume/resume-an-app.md
+            - name: Освобождение памяти при переходе приложения в фоновый режим
+              href: ../launch-resume/reduce-memory-usage.md
+            - name: Задержка приостановки приложения с помощью расширенного сеанса выполнения
+              href: ../launch-resume/run-minimized-with-extended-execution.md
+        - name: Запуск приложения с помощью URI
+          href: ../launch-resume/launch-app-with-uri.md
+          items:
+            - name: Запуск приложения по умолчанию для URI
+              href: ../launch-resume/launch-default-app.md
+            - name: Обработка активации URI
+              href: ../launch-resume/handle-uri-activation.md
+            - name: Запуск приложения для результатов
+              href: ../launch-resume/how-to-launch-an-app-for-results.md
+            - name: Выбор и сохранение звуковых сигналов с помощью схемы URI ms-tonepicker
+              href: ../launch-resume/launch-ringtone-picker.md
+            - name: Запуск приложения "Параметры" для Windows
+              href: ../launch-resume/launch-settings-app.md
+            - name: Запуск приложения Microsoft Store
+              href: ../launch-resume/launch-store-app.md
+            - name: Запуск приложения "Карты Windows"
+              href: ../launch-resume/launch-maps-app.md
+            - name: Запуск приложения "Люди"
+              href: ../launch-resume/launch-people-apps.md
+            - name: Запуск фрагмента экрана
+              href: ../launch-resume/launch-screen-snipping.md
+            - name: Поддержка привязки приложений к Интернету с помощью обработчиков URI приложения
+              href: ../launch-resume/web-to-app-linking.md
+        - name: Запуск приложения через активацию файла
+          href: ../launch-resume/launch-app-from-file.md
+          items:
+            - name: Запуск приложения по умолчанию для файла
+              href: ../launch-resume/launch-the-default-app-for-a-file.md
+            - name: Обработка активации файла
+              href: ../launch-resume/handle-file-activation.md
+        - name: Запуск приложения с помощью автозапуска
+          href: ../launch-resume/auto-launching-with-autoplay.md
+        - name: Зарезервированные имена файлов и схем URI
+          href: ../launch-resume/reserved-uri-scheme-names.md
+        - name: Использование служб и расширений приложения
+          href: ../launch-resume/app-services.md
+          items:
+            - name: Создание и использование службы приложений
+              href: ../launch-resume/how-to-create-and-consume-an-app-service.md
+            - name: Преобразование службы приложений для ее запуска в одном процессе с ведущим приложением
+              href: ../launch-resume/convert-app-service-in-process.md
+            - name: 'Расширение приложения за счет служб, расширений и пакетов'
+              href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
+            - name: Создание и размещение расширения приложения
+              href: ../launch-resume/how-to-create-an-extension.md
+        - name: Поддержка приложения с помощью фоновых задач
+          href: ../launch-resume/support-your-app-with-background-tasks.md
+          items:
+            - name: Руководство по работе с фоновыми задачами
+              href: ../launch-resume/guidelines-for-background-tasks.md
+            - name: Доступ к датчикам и устройствам из фоновой задачи
+              href: ../launch-resume/access-sensors-and-devices-from-a-background-task.md
+            - name: 'Создание и регистрация фоновой задачи, выполняемой внутри процесса'
+              href: ../launch-resume/create-and-register-an-inproc-background-task.md
+            - name: Создание и регистрация внепроцессной фоновой задачи
+              href: ../launch-resume/create-and-register-a-background-task.md
+            - name: 'Перенос фоновой задачи, выполняемой вне процесса, в фоновую задачу внутри процесса'
+              href: ../launch-resume/convert-out-of-process-background-task.md
+            - name: Отладка фоновой задачи
+              href: ../launch-resume/debug-a-background-task.md
+            - name: Объявление фоновых задач в манифесте приложения
+              href: ../launch-resume/declare-background-tasks-in-the-application-manifest.md
+            - name: Регистрация фоновых задач группы
+              href: ../launch-resume/group-background-tasks.md
+            - name: Обработка отмененной фоновой задачи
+              href: ../launch-resume/handle-a-cancelled-background-task.md
+            - name: Отслеживание хода выполнения и завершения фоновых задач
+              href: ../launch-resume/monitor-background-task-progress-and-completion.md
+            - name: Регистрация фоновой задачи
+              href: ../launch-resume/register-a-background-task.md
+            - name: Реагирование на системные события с помощью фоновых задач
+              href: ../launch-resume/respond-to-system-events-with-background-tasks.md
+            - name: Запуск фоновой задачи по таймеру
+              href: ../launch-resume/run-a-background-task-on-a-timer-.md
+            - name: Запуск фоновой задачи при обновлении приложения UWP
+              href: ../launch-resume/run-a-background-task-during-updatetask.md
+            - name: Выполнение в фоновом режиме в течение неограниченного срока
+              href: ../launch-resume/run-in-the-background-indefinetly.md
+            - name: Задание условий выполнения фоновой задачи
+              href: ../launch-resume/set-conditions-for-running-a-background-task.md
+            - name: Запуск фоновой задачи из приложения
+              href: ../launch-resume/trigger-background-task-from-app.md
+            - name: Обновление живой плитки из фоновой задачи
+              href: ../launch-resume/update-a-live-tile-from-a-background-task.md
+            - name: Использование триггера обслуживания
+              href: ../launch-resume/use-a-maintenance-trigger.md
+        - name: Подключенные приложения и устройства (Project Rome)
+          href: ../launch-resume/connected-apps-and-devices.md
+          items:
+            - name: Обнаружение удаленных устройств
+              href: ../launch-resume/discover-remote-devices.md
+            - name: Запуск приложения на удаленном устройстве
+              href: ../launch-resume/launch-a-remote-app.md
+            - name: Обмен данными с удаленной службой приложений
+              href: ../launch-resume/communicate-with-a-remote-app-service.md
+            - name: Подключение устройств с помощью удаленных сеансов
+              href: ../launch-resume/remote-sessions.md
+            - name: Продолжение активности пользователей даже на разных устройствах
+              href: ../launch-resume/useractivities.md
+            - name: Рекомендации для пользователя
+              href: ../launch-resume/useractivities-best-practices.md
+        - name: Экраны-заставки
+          href: ../launch-resume/splash-screens.md
+          items:
+            - name: Добавление экрана-заставки
+              href: ../launch-resume/add-a-splash-screen.md
+            - name: Более продолжительное отображение экрана-заставки
+              href: ../launch-resume/create-a-customized-splash-screen.md
+    - name: Потоки и асинхронное программирование
+      href: ../threading-async/index.md
       items:
-      - name: Запуск приложения по умолчанию для URI
-        href: ../launch-resume/launch-default-app.md
-      - name: Обработка активации URI
-        href: ../launch-resume/handle-uri-activation.md
-      - name: Запуск приложения для результатов
-        href: ../launch-resume/how-to-launch-an-app-for-results.md
-      - name: Выбор и сохранение звуковых сигналов с помощью схемы URI ms-tonepicker
-        href: ../launch-resume/launch-ringtone-picker.md
-      - name: Запуск приложения "Параметры" для Windows
-        href: ../launch-resume/launch-settings-app.md
-      - name: Запуск приложения Microsoft Store
-        href: ../launch-resume/launch-store-app.md
-      - name: Запуск приложения "Карты Windows"
-        href: ../launch-resume/launch-maps-app.md
-      - name: Запуск приложения "Люди"
-        href: ../launch-resume/launch-people-apps.md
-      - name: Запуск фрагмента экрана
-        href: ../launch-resume/launch-screen-snipping.md
-      - name: Поддержка привязки приложений к Интернету с помощью обработчиков URI приложения
-        href: ../launch-resume/web-to-app-linking.md
-    - name: Запуск приложения через активацию файла
-      href: ../launch-resume/launch-app-from-file.md
-      items:
-      - name: Запуск приложения по умолчанию для файла
-        href: ../launch-resume/launch-the-default-app-for-a-file.md
-      - name: Обработка активации файла
-        href: ../launch-resume/handle-file-activation.md
-    - name: Запуск приложения с помощью автозапуска
-      href: ../launch-resume/auto-launching-with-autoplay.md
-    - name: Зарезервированные имена файлов и схем URI
-      href: ../launch-resume/reserved-uri-scheme-names.md
-    - name: Использование служб и расширений приложения
-      href: ../launch-resume/app-services.md
-      items:
-      - name: Создание и использование службы приложений
-        href: ../launch-resume/how-to-create-and-consume-an-app-service.md
-      - name: Преобразование службы приложений для ее запуска в одном процессе с ведущим приложением
-        href: ../launch-resume/convert-app-service-in-process.md
-      - name: Расширение приложения за счет служб, расширений и пакетов
-        href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
-      - name: Создание и размещение расширения приложения
-        href: ../launch-resume/how-to-create-an-extension.md
-    - name: Поддержка приложения с помощью фоновых задач
-      href: ../launch-resume/support-your-app-with-background-tasks.md
-      items:
-      - name: Руководство по работе с фоновыми задачами
-        href: ../launch-resume/guidelines-for-background-tasks.md
-      - name: Доступ к датчикам и устройствам из фоновой задачи
-        href: ../launch-resume/access-sensors-and-devices-from-a-background-task.md
-      - name: Создание и регистрация фоновой задачи, выполняемой внутри процесса
-        href: ../launch-resume/create-and-register-an-inproc-background-task.md
-      - name: Создание и регистрация внепроцессной фоновой задачи
-        href: ../launch-resume/create-and-register-a-background-task.md
-      - name: Перенос фоновой задачи, выполняемой вне процесса, в фоновую задачу внутри процесса
-        href: ../launch-resume/convert-out-of-process-background-task.md
-      - name: Отладка фоновой задачи
-        href: ../launch-resume/debug-a-background-task.md
-      - name: Объявление фоновых задач в манифесте приложения
-        href: ../launch-resume/declare-background-tasks-in-the-application-manifest.md
-      - name: Регистрация фоновых задач группы
-        href: ../launch-resume/group-background-tasks.md
-      - name: Обработка отмененной фоновой задачи
-        href: ../launch-resume/handle-a-cancelled-background-task.md
-      - name: Отслеживание хода выполнения и завершения фоновых задач
-        href: ../launch-resume/monitor-background-task-progress-and-completion.md
-      - name: Регистрация фоновой задачи
-        href: ../launch-resume/register-a-background-task.md
-      - name: Реагирование на системные события с помощью фоновых задач
-        href: ../launch-resume/respond-to-system-events-with-background-tasks.md
-      - name: Запуск фоновой задачи по таймеру
-        href: ../launch-resume/run-a-background-task-on-a-timer-.md
-      - name: Запуск фоновой задачи при обновлении приложения UWP
-        href: ../launch-resume/run-a-background-task-during-updatetask.md
-      - name: Выполнение в фоновом режиме в течение неограниченного срока
-        href: ../launch-resume/run-in-the-background-indefinetly.md
-      - name: Задание условий выполнения фоновой задачи
-        href: ../launch-resume/set-conditions-for-running-a-background-task.md
-      - name: Запуск фоновой задачи из приложения
-        href: ../launch-resume/trigger-background-task-from-app.md
-      - name: Обновление живой плитки из фоновой задачи
-        href: ../launch-resume/update-a-live-tile-from-a-background-task.md
-      - name: Использование триггера обслуживания
-        href: ../launch-resume/use-a-maintenance-trigger.md
-    - name: Подключенные приложения и устройства (Project Rome)
-      href: ../launch-resume/connected-apps-and-devices.md
-      items:
-      - name: Обнаружение удаленных устройств
-        href: ../launch-resume/discover-remote-devices.md
-      - name: Запуск приложения на удаленном устройстве
-        href: ../launch-resume/launch-a-remote-app.md
-      - name: Обмен данными с удаленной службой приложений
-        href: ../launch-resume/communicate-with-a-remote-app-service.md
-      - name: Подключение устройств с помощью удаленных сеансов
-        href: ../launch-resume/remote-sessions.md
-      - name: Продолжение активности пользователей даже на разных устройствах
-        href: ../launch-resume/useractivities.md
-      - name: Рекомендации для пользователя
-        href: ../launch-resume/useractivities-best-practices.md
-    - name: Экраны-заставки
-      href: ../launch-resume/splash-screens.md
-      items:
-      - name: Добавление экрана-заставки
-        href: ../launch-resume/add-a-splash-screen.md
-      - name: Более продолжительное отображение экрана-заставки
-        href: ../launch-resume/create-a-customized-splash-screen.md
-  - name: Потоки и асинхронное программирование
-    href: ../threading-async/index.md
-    items:
-    - name: Асинхронное программирование (приложения UWP)
-      href: ../threading-async/asynchronous-programming-universal-windows-platform-apps.md
-    - name: Асинхронное программирование на C++/CX (приложения UWP)
-      href: ../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md
-    - name: Рекомендации по использованию пула потоков
-      href: ../threading-async/best-practices-for-using-the-thread-pool.md
-    - name: Вызов асинхронных API в C# и Visual Basic
-      href: ../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md
-    - name: Создание периодического рабочего элемента
-      href: ../threading-async/create-a-periodic-work-item.md
-    - name: Отправка рабочего элемента в пул потоков
-      href: ../threading-async/submit-a-work-item-to-the-thread-pool.md
-    - name: Отправка рабочего элемента по таймеру
-      href: ../threading-async/use-a-timer-to-submit-a-work-item.md
-    - name: Использование объектов среды выполнения Windows в многопоточной среде
-      href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-ms.openlocfilehash: 36d2fba58373cd35321c7787856b782b1291b12d
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57822939"
+        - name: Асинхронное программирование (приложения UWP)
+          href: ../threading-async/asynchronous-programming-universal-windows-platform-apps.md
+        - name: Асинхронное программирование на C++/CX (приложения UWP)
+          href: ../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md
+        - name: Рекомендации по использованию пула потоков
+          href: ../threading-async/best-practices-for-using-the-thread-pool.md
+        - name: 'Вызов асинхронных API в C# и Visual Basic'
+          href: ../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md
+        - name: Создание периодического рабочего элемента
+          href: ../threading-async/create-a-periodic-work-item.md
+        - name: Отправка рабочего элемента в пул потоков
+          href: ../threading-async/submit-a-work-item-to-the-thread-pool.md
+        - name: Отправка рабочего элемента по таймеру
+          href: ../threading-async/use-a-timer-to-submit-a-work-item.md
+        - name: Использование объектов среды выполнения Windows в многопоточной среде
+          href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md

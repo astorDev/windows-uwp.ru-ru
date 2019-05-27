@@ -1,16 +1,16 @@
 ---
 description: Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. В этом разделе показано, как реализовать и использовать отслеживаемое свойство и привязать к нему элемент управления XAML.
 title: Элементы управления XAML; привязка к свойству C++/WinRT
-ms.date: 08/21/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, свойство
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bdbfef54b799f8dff23ad739007cec9fef98af8
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: 2fe5c03eebd2b68e98ae908ea4624471fbd2b3d2
+ms.sourcegitcommit: d23dab1533893b7fe0f01ca6eb273edfac4705e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921730"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65627669"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Элементы управления XAML; привязка к свойству C++/WinRT
 Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя* . В этом разделе показано, как реализовать наблюдаемые свойства в [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)и как привязать элементы управления XAML к ним.
@@ -27,7 +27,7 @@ ms.locfileid: "58921730"
 > Сведения об установке и использовании C++WinRT Visual Studio Extension (VSIX) и пакет NuGet (которые вместе обеспечивают шаблон проекта и поддержка сборки), см. в разделе [поддержка Visual Studio C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## <a name="create-a-blank-app-bookstore"></a>Создайте пустое приложение (Bookstore)
-Начните с создания нового проекта в Microsoft Visual Studio. Создание **Visual C++**   >  **универсальной Windows** > **пустое приложение (C++/WinRT)** проект и назовите его  *Bookstore*.
+Начните с создания нового проекта в Microsoft Visual Studio. Создание **пустое приложение (C++/WinRT)** проект и назовите его *Bookstore*.
 
 Мы создадим нового класс, представляющий книгу, которая имеет отслеживаемое свойство названия. Класс создается и используется в рамках одной и той же единицы компиляции. Однако мы хотим иметь возможность привязывать этот класс из XAML, поэтому это будет класс среды выполнения. Кроме того, мы применим C++/WinRT для его создания и использования.
 
@@ -61,7 +61,6 @@ namespace Bookstore
 ```cppwinrt
 // BookSku.h
 #pragma once
-
 #include "BookSku.g.h"
 
 namespace winrt::Bookstore::implementation
@@ -89,6 +88,7 @@ namespace winrt::Bookstore::implementation
 // BookSku.cpp
 #include "pch.h"
 #include "BookSku.h"
+#include "BookSku.g.cpp"
 
 namespace winrt::Bookstore::implementation
 {
@@ -142,18 +142,17 @@ namespace Bookstore
 }
 ```
 
-Сохраните и выполните сборку. Скопируйте `BookstoreViewModel.h` и `BookstoreViewModel.cpp` из `Generated Files` в папку проекта и добавьте их в проект. Откройте эти файлы и реализовать класс среды выполнения, как показано ниже. Обратите внимание как в `BookstoreViewModel.h`, мы добавим `BookSku.h`, который объявляет тип реализации (**winrt::Bookstore::implementation::BookSku**). И мы восстанавливаете конструктор по умолчанию, удалив `= delete`.
+Сохраните и выполните сборку. Скопируйте `BookstoreViewModel.h` и `BookstoreViewModel.cpp` из `Generated Files\sources` в папку проекта и добавьте их в проект. Откройте эти файлы и реализовать класс среды выполнения, как показано ниже. Обратите внимание как в `BookstoreViewModel.h`, мы добавим `BookSku.h`, который объявляет тип реализации для **BookSku** (который является **winrt::Bookstore::implementation::BookSku**). И мы удаляете `= default` из конструктора по умолчанию.
 
 ```cppwinrt
 // BookstoreViewModel.h
 #pragma once
-
 #include "BookstoreViewModel.g.h"
 #include "BookSku.h"
 
 namespace winrt::Bookstore::implementation
 {
-    struct BookstoreViewModel final : BookstoreViewModelT<BookstoreViewModel>
+    struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
     {
         BookstoreViewModel();
 
@@ -169,6 +168,7 @@ namespace winrt::Bookstore::implementation
 // BookstoreViewModel.cpp
 #include "pch.h"
 #include "BookstoreViewModel.h"
+#include "BookstoreViewModel.g.cpp"
 
 namespace winrt::Bookstore::implementation
 {
@@ -208,9 +208,9 @@ namespace Bookstore
 
 Если опустить include из `BookstoreViewModel.idl` (см. в разделе перечень `MainPage.idl` выше), то появится ошибка **ожидается \< рядом с «MainViewModel»**. Другой совет – убедитесь в том, что все типы остается в том же пространстве имен: пространство имен, которое показано в распечатках кода.
 
-Чтобы устранить эту ошибку, мы ожидаем увидеть, теперь необходимо скопировать заглушки метода доступа для **MainViewModel** свойство из созданных файлов (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` и `MainPage.cpp`) и в `\Bookstore\Bookstore\MainPage.h` и `MainPage.cpp`.
+Чтобы устранить эту ошибку, мы ожидаем увидеть, теперь необходимо скопировать заглушки метода доступа для **MainViewModel** свойство из созданных файлов (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` и `MainPage.cpp`) и в `\Bookstore\Bookstore\MainPage.h` и `MainPage.cpp`. Для этого они описаны далее.
 
-В `\Bookstore\Bookstore\MainPage.h`, включают `BookstoreViewModel.h`, который объявляет тип реализации (**winrt::Bookstore::implementation::BookstoreViewModel**). Добавьте закрытый элемент для хранения модели представления. Обратите внимание, что функция доступа свойства (и член m_mainViewModel) реализуется относительно **Bookstore::BookstoreViewModel**, который является проецируемым типом. Тип реализации находится в один и тот же проект (единицы компиляции) приложения, поэтому мы создаем m_mainViewModel через перегрузку конструктора, который принимает `nullptr_t`. Также удалите **MyProperty** свойство.
+В `\Bookstore\Bookstore\MainPage.h`, включают `BookstoreViewModel.h`, который объявляет тип реализации для **BookstoreViewModel** (который является **winrt::Bookstore::implementation::BookstoreViewModel**). Добавьте закрытый элемент для хранения модели представления. Обратите внимание, что функция метода доступа свойства (и m_mainViewModel член) реализуется терминах проецируемых типов для **BookstoreViewModel** (который является **Bookstore::BookstoreViewModel**). Тип реализации находится в один и тот же проект (единицы компиляции) приложения, поэтому мы создаем m_mainViewModel через перегрузку конструктора, который принимает `nullptr_t`. Также удалите **MyProperty** свойство.
 
 ```cppwinrt
 // MainPage.h
@@ -240,6 +240,7 @@ namespace winrt::Bookstore::implementation
 // MainPage.cpp
 #include "pch.h"
 #include "MainPage.h"
+#include "MainPage.g.cpp"
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;
@@ -278,8 +279,8 @@ namespace winrt::Bookstore::implementation
 
 ## <a name="important-apis"></a>Важные API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
-* [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
+* [Шаблон функции WinRT::make](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>См. также
-* [Использование API-интерфейсов с помощью C++/WinRT](consume-apis.md)
-* [Создание API-интерфейсов с помощью C++/WinRT](author-apis.md)
+* [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
+* [Создание интерфейсов API с помощью C++/WinRT](author-apis.md)

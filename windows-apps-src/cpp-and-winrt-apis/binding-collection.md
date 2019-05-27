@@ -1,22 +1,22 @@
 ---
 description: Коллекция, которая может быть эффективно привязана к элементам управления XAML, называется *отслеживаемой*. В этом разделе показано, как реализовать и использовать отслеживаемую коллекцию и привязать к ней элементы управления XAML.
 title: Элементы управления XAML; привязка к коллекции C++/WinRT
-ms.date: 10/03/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, привязка, коллекция
 ms.localizationpriority: medium
-ms.openlocfilehash: c4bf1805b16d869e7a29c49e8fe53c01cf469132
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: 7669c6536f28d5f979567f5b433dbf614800bec3
+ms.sourcegitcommit: d23dab1533893b7fe0f01ca6eb273edfac4705e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921670"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65627680"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>Элементы управления XAML; привязка к коллекции C++/WinRT
 
 Коллекция, которая может быть эффективно привязана к элементам управления XAML, называется *отслеживаемой*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя* . В этом разделе показан способ реализации наблюдаемых наборов в [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), и как выполнить привязку XAML элементов элемента управления к ним.
 
-Это пошаговое руководство основано на проекте, созданном в разделе [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md), и дополняет понятия, рассмотренные в этом разделе.
+Если вы хотите изучить в этом разделе, то рекомендуется сначала создать проект, который описан в [XAML контролирует; привязка к C++свойство /WinRT](binding-property.md). В этом разделе добавляет дополнительный код для этого проекта, а также добавляет к основными понятиями, приведенными в этом разделе.
 
 > [!IMPORTANT]
 > Основные понятия и термины, которые помогают понять, как использовать и создавать классы среды выполнения с помощью C++/WinRT, см. в разделах [Использование API-интерфейсов в C++/WinRT](consume-apis.md) и [Создание API-интерфейсов в C++/WinRT ](author-apis.md).
@@ -30,9 +30,6 @@ ms.locfileid: "58921670"
 ## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>Добавление коллекции **BookSkus** в **BookstoreViewModel**
 
 В разделе [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md) мы добавили свойство типа **BookSku** к нашей модели главного представления. На этом шаге мы будем использовать [ **winrt::single_threaded_observable_vector** ](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) фабрики шаблона функции, чтобы помочь нам реализовать наблюдаемую коллекцию элементов **BookSku** на же модель представления.
-
-> [!NOTE]
-> Если вы еще не установили пакет Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809) или более поздней версии, затем см. в разделе [при наличии более старую версию пакета SDK Windows](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) пример шаблона наблюдаемый вектор, который можно использовать вместо **winrt::single_threaded_observable_vector**.
 
 Объявите новое свойство в `BookstoreViewModel.idl`.
 
@@ -50,7 +47,7 @@ runtimeclass BookstoreViewModel
 > [!IMPORTANT]
 > Обратите внимание, что в приведенном выше фрагменте MIDL 3.0, тип **BookSkus** свойство [ **IObservableVector** ](/uwp/api/windows.foundation.collections.ivector_t_) из [ **IInspectable** ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). В следующем разделе этой статьи, мы будем привязку элементов источника [ **ListBox** ](/uwp/api/windows.ui.xaml.controls.listbox) для **BookSkus**. Поле со списком — это элемент управления и правильно установить [ **ItemsControl.ItemsSource** ](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) свойство, необходимо присвоить значение типа **IObservableVector** (или **IVector**) из **IInspectable**, или имеет тип взаимодействия, таких как [ **IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
 
-Сохраните и выполните сборку. Скопируйте заглушки доступа из `BookstoreViewModel.h` и `BookstoreViewModel.cpp` в папку `Generated Files` и реализуйте их.
+Сохраните и выполните сборку. Скопируйте заглушки метода доступа из `BookstoreViewModel.h` и `BookstoreViewModel.cpp` в `\Bookstore\Bookstore\Generated Files\sources` папку (Дополнительные сведения см. предыдущий раздел, [XAML контролирует; привязка к C++свойство /WinRT](binding-property.md)). Реализуйте эти заглушки метода доступа следующим образом.
 
 ```cppwinrt
 // BookstoreViewModel.h
@@ -122,8 +119,8 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 
 ## <a name="important-apis"></a>Важные API
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
-* [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
+* [Шаблон функции WinRT::make](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>См. также
-* [Использование API-интерфейсов с помощью C++/WinRT](consume-apis.md)
-* [Создание API-интерфейсов с помощью C++/WinRT](author-apis.md)
+* [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
+* [Создание интерфейсов API с помощью C++/WinRT](author-apis.md)

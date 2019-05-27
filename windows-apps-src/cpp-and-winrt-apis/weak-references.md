@@ -1,17 +1,17 @@
 ---
 description: Среда выполнения Windows — это система с учетом ссылок. В подобной системе очень важно знать о значении сильных и слабых ссылок, а также о различиях между ними.
 title: Слабые ссылки в C++/WinRT
-ms.date: 10/03/2018
+ms.date: 05/16/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартные, c ++, cpp, winrt, проекции, надежный, ненадежным, ссылка
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0e2e40daaf777e36094b698d058f21840b1804c8
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: c9fb112c6f83fa7bd9a3612916efd2527d821c29
+ms.sourcegitcommit: 6c7e1aa3bd396a1ad714e8b77c0800759dc2d8e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291832"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65821074"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Сильные и слабые ссылки в C++/WinRT
 
@@ -19,12 +19,13 @@ ms.locfileid: "58291832"
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>Безопасного доступа к *это* указатель в соподпрограмме членов класса
 
-Кода ниже показан типичный соподпрограммой, которая является функцией-членом класса.
+Кода ниже показан типичный соподпрограммой, которая является функцией-членом класса. Вы можно скопировать и вставить в этом примере в указанные файлы в новом **консольное приложение Windows (C++/WinRT)** проекта.
 
 ```cppwinrt
 // pch.h
 #pragma once
 #include <iostream>
+#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
 // main.cpp : Defines the entry point for the console application.
@@ -101,11 +102,14 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-Так как C++/WinRT объект прямо или косвенно является производным от [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) шаблона, C++/объект WinRT может вызывать его [  **Implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) защищенная функция-член для извлечения строгую ссылку на его *это* указатель. Обратите внимание, что нет необходимости использовать `strong_this` переменной; просто вызова **get_strong** увеличивает ваш счетчик ссылок, а также отслеживает ваш неявное *это* указатель допустимым.
+Объект C++/WinRT класс прямо или косвенно является производным от [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) шаблона. Из-за этого C++/объект WinRT может вызывать его [ **implements.get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) защищенная функция-член для извлечения строгую ссылку на его *это* указатель. Обратите внимание, что нет необходимости использовать `strong_this` переменная в приведенном выше примере кода; просто вызвав **get_strong** шагом C++/WinRT объект, счетчик ссылок и сохраняет его неявное *этот* указатель допустимым.
+
+> [!IMPORTANT]
+> Так как **get_strong** является функцией-членом из **winrt::implements** структуры шаблона, его можно вызвать только из класса, который прямо или косвенно является производным от **winrt::implements**, такие как C++/WinRT класса. Дополнительные сведения о наследование от **winrt::implements**, и примеры, см. в разделе [автор API с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
 
 Это позволяет устранить проблему, имевшийся ранее, когда у нас к шагу 4. Даже если все ссылки на экземпляр класса исчезают, сопрограммы были предприняты никакие меры предосторожности и гарантируя, что его зависимости стабильны.
 
-Если строгую ссылку не подходит, то вместо этого можно вызвать [ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) извлекаемого слабой ссылки *это*. Просто убедитесь, что можно получить строгую ссылку перед доступом к *это*.
+Если строгую ссылку не подходит, то вместо этого можно вызвать [ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) извлекаемого слабой ссылки *это*. Просто убедитесь, что можно получить строгую ссылку перед доступом к *это*. Опять же **get_weak** является функцией-членом из **winrt::implements** структуры шаблона.
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -244,6 +248,9 @@ event_source.Event([this](auto&& ...)
 ### <a name="the-solution"></a>Решение
 
 Решение заключается в том, чтобы записать строгую ссылку. Строгая ссылка *does* увеличивать число ссылок и его *does* сохранения текущего объекта. Вы просто объявите переменную захвата (вызывается `strong_this` в этом примере) и инициализируйте его с помощью вызова [ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), который получает строгую ссылку на наш  *Это* указатель.
+
+> [!IMPORTANT]
+> Так как **get_strong** является функцией-членом из **winrt::implements** структуры шаблона, его можно вызвать только из класса, который прямо или косвенно является производным от **winrt::implements**, такие как C++/WinRT класса. Дополнительные сведения о наследование от **winrt::implements**, и примеры, см. в разделе [автор API с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)

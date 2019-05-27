@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0600e66c672a28683befdb7b0090f5455a28c948
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4731ab089189a8a03656281d1a9a6da6e4d24e89
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624199"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984262"
 ---
 # <a name="acrylic-material"></a>Акриловый материал
 
@@ -38,7 +38,7 @@ Acrylic — это разновидность [кисть](https://docs.microsof
 
 ## <a name="acrylic-and-the-fluent-design-system"></a>Акрил и система проектирования Fluent Design
 
- Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Акрил — это компонент системы проектирования Fluent Design, добавляющий физическую текстуру (материал) и глубину в приложение. Дополнительные сведения см. в разделе [Обзор системы проектирования Fluent Design для UWP](../fluent-design-system/index.md).
+ Система Fluent Design позволяет создавать современные и эффективные пользовательские интерфейсы, которые отличаются яркостью, глубиной, движением, материальностью и масштабированием. Акрил — это компонент системы проектирования Fluent Design, добавляющий физическую текстуру (материал) и глубину в приложение. Дополнительные сведения см. в разделе [Обзор системы проектирования Fluent Design для UWP](/windows/apps/fluent-design-system).
 
  ## <a name="video-summary"></a>Видео с кратким описанием
 
@@ -48,14 +48,14 @@ Acrylic — это разновидность [кисть](https://docs.microsof
 
 :::row:::
     :::column span:::
-        ![Some image](images/XAML-controls-gallery-app-icon.png)
+![Некоторые изображения](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     :::column span="2":::
-        **XAML Controls Gallery**<br>
-        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
+**Галерея элементов управления XAML**<br>
+Если у вас установлено приложение коллекции элементов управления XAML, щелкните <a href="xamlcontrolsgallery:/item/Acrylic">здесь</a> откройте приложение и acrylic в действии см. в разделе.
 
-        <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
-        <a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
+<a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a><br>
+<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a>
     :::column-end:::
 :::row-end:::
 
@@ -73,7 +73,7 @@ Acrylic — это разновидность [кисть](https://docs.microsof
 ## <a name="when-to-use-acrylic"></a>Когда использовать акрил
 
 * Используйте acrylic в приложении для поддержки пользовательского интерфейса, такие как на поверхностях, которые могут пересекаться содержимого при прокрутке или взаимодействовал.
-* Используйте acrylic фона для временных элементов пользовательского интерфейса, такие как контекстные меню, всплывающие окна и светло dimsissable пользовательского интерфейса.<br />С помощью Acrylic в сценариях временных помогает поддерживать визуальные связи с содержимым, который инициировал переходной UI.
+* Используйте acrylic фона для временных элементов пользовательского интерфейса, такие как контекстные меню, всплывающие окна и светло dismissable пользовательского интерфейса.<br />С помощью Acrylic в сценариях временных помогает поддерживать визуальные связи с содержимым, который инициировал переходной UI.
 
 При использовании в приложении acrylic на поверхностях навигации, подумайте насчет расширения содержимое под акриловая панели, чтобы улучшить процесс в приложении. С помощью NavigationView сделает это для вас автоматически. Тем не менее чтобы избежать создания эффекта чередования, старайтесь не помещать несколько кусков акриловая края до края - это может создать нежелательных границе между двумя размытая поверхности. Acrylic — это средство для перевода visual гармонии в разработку, но при использовании неправильно, может привести к визуального шума.
 
@@ -98,7 +98,7 @@ Acrylic — это разновидность [кисть](https://docs.microsof
 
 ![Шаблон приложения электронной почты, с использованием информационных всплывающего меню](images/Mail_TransientContextMenu.png)
 
-Многие из наших элементов управления будет использоваться acrylic по умолчанию. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) схожих элементов управления с dimiss свет всплывающие окна будут использовать одни и временных acrylic при их вызове.
+Многие из наших элементов управления будет использоваться acrylic по умолчанию. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) и схожих элементов управления с свет отклонить всплывающие окна будут использовать временные acrylic при их вызове.
 
 > [!Note]
 > Подготовка акриловая поверхности это интенсивно использующих графический Процессор, который может повысить потребление питания устройства и расходоваться батареи. Акриловая эффекты автоматически отключаются при устройства в режим Экономия заряда, и пользователи могут отключить акриловая эффекты для всех приложений, если они захотят.
@@ -319,7 +319,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ## <a name="dos-and-donts"></a>Возможности и ограничения
 * Используйте акрил в качестве фонового материала для неосновных поверхностей приложения, например для панелей навигации.
 * Расположите акриловую поверхность вдоль хотя бы одного края приложения. Оно будет выглядеть гармоничнее на окружающем фоне, слегка сливаясь с ним.
-* Не помещайте arylic рабочего стола на больших фоновыми приложения — это нарушает логику ментальную модель acrylic используется главным образом для временной поверхности.
+* Не помещайте acrylic рабочего стола на больших фоновыми приложения — это нарушает логику ментальную модель acrylic используется главным образом для временной поверхности.
 * Не размещайте акрил фона и приложения в непосредственной близости, чтобы взгляд не "спотыкался" на стыках.
 * Не размещайте рядом несколько акриловых панелей одинаковых оттенка и прозрачности — это приведет к появлению нежелательного стыка.
 * Не размещайте на акриловых поверхностях текст контрастного цвета.

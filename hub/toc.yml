@@ -1,0 +1,51 @@
+- name: Создание приложений для Windows
+  href: apps/index.md
+  items:
+    - name: Создание классических приложений
+      items:
+        - name: Обзор
+          href: apps/desktop/index.md
+        - name: Выбор платформы для приложения
+          href: apps/desktop/choose-your-platform.md
+    - name: Модернизация классических приложений
+      items:
+        - name: Обзор
+          href: apps/desktop/modernize/index.md
+        - name: Вызов API UWP
+          items:
+            - name: Обзор
+              href: apps/desktop/modernize/desktop-to-uwp-enhance.md
+            - name: Доступные интерфейсы API UWP
+              href: apps/desktop/modernize/desktop-to-uwp-supported-api.md
+        - name: Добавление элементов управления XAML платформы UWP (XAML Islands)
+          items:
+            - name: Обзор
+              href: apps/desktop/modernize/xaml-islands.md
+            - name: Использование API размещения UWP XAML
+              href: apps/desktop/modernize/using-the-xaml-hosting-api.md
+        - name: Использование визуального уровня (Windows.UI.Composition)
+          items:
+            - name: Обзор
+              href: apps/desktop/modernize/visual-layer-in-desktop-apps.md
+            - name: WPF
+              href: apps/desktop/modernize/using-the-visual-layer-with-wpf.md
+            - name: Windows Forms
+              href: apps/desktop/modernize/using-the-visual-layer-with-windows-forms.md
+            - name: Win32
+              href: apps/desktop/modernize/using-the-visual-layer-with-win32.md
+        - name: 'Функции, которым требуется идентификатор пакета'
+          items:
+            - name: Обзор
+              href: apps/desktop/modernize/modernize-packaged-apps.md
+            - name: Интеграция с использованием расширений пакета
+              href: apps/desktop/modernize/desktop-to-uwp-extensions.md
+            - name: Расширение возможностей с помощью компонентов UWP
+              href: apps/desktop/modernize/desktop-to-uwp-extend.md
+            - name: Распространение упакованного приложения
+              href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+    - name: Система Fluent Design
+      href: apps/fluent-design-system.md
+    - name: Специальные возможности
+      href: apps/accessibility.md
+    - name: Функции и технологии
+      href: apps/features-and-technologies.md

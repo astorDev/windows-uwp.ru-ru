@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2089f9fcd54989234b52f95eb3ee9535f9b3ede3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f8e74688d0f7048276b12680237b85663d7e2b81
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603119"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66214737"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>Дополнение к концептуальной документации для UWP
 
@@ -34,7 +34,7 @@ ms.locfileid: "57603119"
 
 ## <a name="internal-contributions"></a>Внутренняя материалов
 
-Если вы являетесь сотрудником корпорации Майкрософт, у вас есть доступ через [частном репозитории содержимого](https://cpubwin.visualstudio.com/_git/windows-uwp). Вы найдете рекомендации по использованию этот репозиторий в [руководства по разработке Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). Документация на новых возможностях должны изменяться с помощью только частного репозитория.
+Если вы являетесь сотрудником корпорации Майкрософт, у вас есть доступ через [частном репозитории содержимого](https://github.com/microsoftdocs/windows-uwp-pr). Вы найдете рекомендации по использованию этот репозиторий в [руководства по разработке Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). Документация на новых возможностях должны изменяться с помощью только частного репозитория.
 
 ### <a name="editing-a-file"></a>Изменение файла
 

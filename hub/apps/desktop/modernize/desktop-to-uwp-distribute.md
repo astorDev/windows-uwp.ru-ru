@@ -5,17 +5,19 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 274f69c71890423d9962efe67cca81646a1e8e68
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 2e1aa424fe038a50a5e29364c7f8246e324dc07c
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984484"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215003"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Распространение упакованные приложения рабочего стола
 
-Если вы решили [пакета вашего приложения в пакете MSIX](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root), можно опубликовать упакованные приложения Microsoft Store или загружать неопубликованные его на одном или нескольких устройствах.
+Если вы решили [пакета вашего приложения в пакете MSIX](/windows/msix/desktop/desktop-to-uwp-root), можно опубликовать упакованные приложения Microsoft Store или загружать неопубликованные его на одном или нескольких устройствах.
 
 > [!NOTE]
 > У вас есть план как пользователи могут перейти на упакованные приложения? Перед распространением ознакомьтесь с разделом [Перевод пользователей на упакованное приложение](#transition-users) данного руководства, чтобы получить несколько идей.
@@ -26,12 +28,12 @@ ms.locfileid: "65984484"
 
 Опубликуйте приложение в Microsoft Store для достижения широчайшее. Кроме того, пользователи организации могут получить приложения для распространения внутри организации через [Microsoft Store для бизнеса](https://www.microsoft.com/business-store).
 
-Если вы планируете публиковать в Microsoft Store, вам будет предложено ответить на несколько дополнительных вопросов в ходе процесса отправки. Это означает, что манифест пакета объявляет возможность с ограниченным доступом под названием **runFullTrust**, и мы должны утвердить использование этой возможности приложением. Дополнительные сведения об этом требовании здесь: [Ограниченные возможности](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
+Если вы планируете публиковать в Microsoft Store, вам будет предложено ответить на несколько дополнительных вопросов в ходе процесса отправки. Это означает, что манифест пакета объявляет возможность с ограниченным доступом под названием **runFullTrust**, и мы должны утвердить использование этой возможности приложением. Дополнительные сведения об этом требовании здесь: [Ограниченные возможности](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
 Регистрация приложения перед отправкой Store не требуется.
 
 >[!IMPORTANT]
-> Если вы планируете опубликовать приложение в Microsoft Store, убедитесь, что приложение правильно работает на устройствах под управлением Windows 10 S. Это обязательное требование Store. См. статью [Тестирование приложения для Windows на Windows 10 S](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s).
+> Если вы планируете опубликовать приложение в Microsoft Store, убедитесь, что приложение правильно работает на устройствах под управлением Windows 10 S. Это обязательное требование Store. См. статью [Тестирование приложения для Windows на Windows 10 S](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
 
 <a id="side-load" />
 
@@ -43,7 +45,7 @@ ms.locfileid: "65984484"
 
 Чтобы распространять приложения с другими устройствами без его помещения в Store, вы должны получить сертификат, подписать приложение с помощью этого сертификата, а затем загружать неопубликованные приложения на этих устройствах.
 
-Вы можете [создать сертификат](/windows/uwp/packaging/create-certificate-package-signing.md) или получить его от известного поставщика, такого как [Verisign](https://www.verisign.com/).
+Вы можете [создать сертификат](/windows/uwp/packaging/create-certificate-package-signing) или получить его от известного поставщика, такого как [Verisign](https://www.verisign.com/).
 
 Если вы планируете распространять приложения на устройствах под управлением Windows 10 S, приложение должно быть подписаны Microsoft Store, поэтому вы должны пройти процесс отправки Store, чтобы иметь возможность распространения приложения на этих устройствах.
 
@@ -52,9 +54,9 @@ ms.locfileid: "65984484"
 > [!IMPORTANT]
 > Убедитесь, что имя издателя на сертификате совпадает с именем издателя вашего приложения.
 
-Чтобы подписать приложение с помощью сертификата, см. в разделе [подписи пакета приложения с помощью SignTool](/windows/uwp/packaging/sign-app-package-using-signtool.md).
+Чтобы подписать приложение с помощью сертификата, см. в разделе [подписи пакета приложения с помощью SignTool](/windows/uwp/packaging/sign-app-package-using-signtool).
 
-Загрузка неопубликованного приложения на другие устройства, см. в разделе [неопубликованные бизнес-приложений в Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10).
+Загрузка неопубликованного приложения на другие устройства, см. в разделе [неопубликованные бизнес-приложений в Windows 10](/windows/application-management/sideload-apps-in-windows-10).
 
 **Просмотр видео**
 

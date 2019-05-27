@@ -3,13 +3,16 @@ title: Специальные возможности в Windows 10
 description: Эта страница предоставляет информацию о вас приступить к разработке приложений Windows со специальными возможностями.
 ms.topic: article
 ms.date: 04/03/2019
+ms.localizationpriority: medium
+ms.author: kbridge
+author: Karl-Bridge-Microsoft
 keywords: Специальные возможности в Windows 10, специальные возможности, приложений доступны win32, создания приложений универсальной платформы Windows со специальными возможностями, создание приложений со специальными возможностями WPF, создание приложений со специальными возможностями WinForms
-ms.openlocfilehash: 2b9a6ad9157d08a802e589368a9baba592356437
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: b818b99ebf896b2d2de219d2eedbfd101f3a5caa
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984524"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66214997"
 ---
 # <a name="accessibility-in-windows-10"></a>Специальные возможности в Windows 10
 

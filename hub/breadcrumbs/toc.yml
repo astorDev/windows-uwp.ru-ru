@@ -1,0 +1,18 @@
+- name: Docs
+  tocHref: /
+  topicHref: /
+  items:
+    - name: Windows
+      tocHref: /windows/
+      topicHref: /windows/
+      items:
+        - name: Приложения
+          tocHref: /windows/apps/
+          topicHref: /windows/apps/
+          items:
+            - name: Создание классических приложений
+              tocHref: /windows/apps/desktop/
+              topicHref: /windows/apps/desktop/
+            - name: Модернизация классических приложений
+              tocHref: /windows/apps/desktop/modernize/
+              topicHref: /windows/apps/desktop/modernize/

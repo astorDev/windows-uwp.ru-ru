@@ -1,16 +1,16 @@
 ---
 description: В этом разделе показано, как создавать API-интерфейсы C++/ WinRT, используя базовую структуру **winrt::implements** прямо или косвенно.
 title: Создание API-интерфейсов с помощью C++/WinRT
-ms.date: 01/10/2019
+ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 05997549b5f1c0d13b12d47e0bb180d54617dcf2
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: 526c6fba76539a5d43231c29479621478b2dde59
+ms.sourcegitcommit: 6c7e1aa3bd396a1ad714e8b77c0800759dc2d8e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921720"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65821080"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание API-интерфейсов с помощью C++/WinRT
 
@@ -116,7 +116,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 using namespace Windows::ApplicationModel::Core;
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(App{});
+    CoreApplication::Run(winrt::make<App>());
 }
 ```
 
@@ -155,8 +155,8 @@ namespace winrt::MyProject::implementation
     {
         MyRuntimeClass() = default;
 
-        hstring Name();
-        void Name(hstring const& value);
+        winrt::hstring Name();
+        void Name(winrt::hstring const& value);
     };
 }
 
@@ -393,15 +393,15 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 До внесения изменений, описанных выше (для передачи параметра конструктора базовому классу), компилятор пометит конструктор укажет на отсутствие подходящего конструктора по умолчанию, доступного для типа под названием (в данном случае) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;**. Фактически, это базовый класс базового класса вашего типа реализации.
 
 ## <a name="important-apis"></a>Важные API
-* [Шаблон структуры winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
+* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::com_ptr::copy_from function](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function)
-* [Шаблон функции winrt::from_abi](/uwp/cpp-ref-for-winrt/from-abi)
+* [Шаблон функции WinRT::from_abi](/uwp/cpp-ref-for-winrt/from-abi)
 * [winrt::get_self function template](/uwp/cpp-ref-for-winrt/get-self)
-* [Шаблон структуры winrt::implements](/uwp/cpp-ref-for-winrt/implements)
-* [Шаблон функции winrt::make](/uwp/cpp-ref-for-winrt/make)
-* [Шаблон функции winrt::make_self](/uwp/cpp-ref-for-winrt/make-self)
-* [Функция winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [Структура шаблона WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
+* [Шаблон функции WinRT::make](/uwp/cpp-ref-for-winrt/make)
+* [Шаблон функции WinRT::make_self](/uwp/cpp-ref-for-winrt/make-self)
+* [WinRT::Windows::Foundation::IUnknown:: как функция](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>См. также
-* [Использование API-интерфейсов с помощью C++/WinRT](consume-apis.md)
+* [Использование интерфейсов API с помощью C++/WinRT](consume-apis.md)
 * [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

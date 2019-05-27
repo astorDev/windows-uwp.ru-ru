@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 176009cb3a2fb14eb5071d48d59a0b807d4c81d6
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 464aa35aa8362049042ad23a6816c4de21b25634
+ms.sourcegitcommit: 559d3387d5929431212d147d9e085895e162916a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63770361"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66184519"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Добавление поддержки приложений для веб-сайтов, использующих обработчики URI приложений
 
@@ -76,7 +76,7 @@ Windows установит https-соединение с вашим сайтом
 | **\***       | Представляет любую подстроку      |
 | **?**        | Представляет единичный символ |
 
-Например, при использовании приведенного в примере выше кода `"excludePaths" : [ "/news/*", "/blog/*" ]` ваше приложение будет поддерживать все пути, начинающиеся с адреса вашего сайта (например, msn.com) **кроме** адресов в разделах `/news/` и `/blog/`. **msn.com/weather.html** будет поддерживаться, а ****msn.com/news/topnews.html**** — нет.
+Например, при использовании приведенного в примере выше кода `"excludePaths" : [ "/news/*", "/blog/*" ]` ваше приложение будет поддерживать все пути, начинающиеся с адреса вашего сайта (например, msn.com) **кроме** адресов в разделах `/news/` и `/blog/`. **MSN.com/Weather.HTML** будут поддерживаться, но не **msn.com/news/topnews.html**.
 
 ### <a name="multiple-apps"></a>Несколько приложений
 

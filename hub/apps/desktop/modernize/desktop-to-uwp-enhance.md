@@ -4,14 +4,16 @@ title: Использовать API универсальной платформ�
 ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
+ms.author: mcleans
+author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: eb0cee26ee65c029af3f0385f44630afa057b29f
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 22aefb58dc06a35ed3a10338eb585aa6c49e55fc
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984664"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215104"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>Вызов API универсальной платформы Windows в приложениях для настольных систем
 

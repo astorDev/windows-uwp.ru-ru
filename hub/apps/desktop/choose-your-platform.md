@@ -1,17 +1,20 @@
 ---
 Description: Если вы хотите создать новое классическое приложение, первое решение, внесенные является необходимость использования Win32 и COM API или .NET.
 ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
-title: Выберите платформу приложения
+title: Выбор платформы для приложения
 ms.topic: article
 ms.date: 03/18/2019
-ms.openlocfilehash: 960dda5e4cb7e8edc1edf7ce2e81da8306555f1c
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.author: mcleans
+author: mcleanbyron
+ms.localizationpriority: medium
+ms.openlocfilehash: 5ece6c5eea6cc05a966a7eae4cd16958dddee4d4
+ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984494"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66215041"
 ---
-# <a name="choose-your-app-platform"></a>Выберите платформу приложения
+# <a name="choose-your-app-platform"></a>Выбор платформы для приложения
 
 Вы хотите создать новый классическое приложение для компьютеров под управлением Windows, первое решение, внесенные при платформу, на которой приложение для использования. Windows предоставляет четыре платформы основного приложения, каждый из которых свои сильные стороны:
 

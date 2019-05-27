@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bcceb8d44b6d92cab05a9c077531b3fe1b05c79
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5de4b51687e152ef5d25a583f949cdd108f2f029
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651759"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984212"
 ---
 # <a name="reveal-focus"></a>Показать фокус
 
@@ -168,7 +168,7 @@ ms.locfileid: "57651759"
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>Показать фокус и Fluent Design System
 
-Показать, что фокус является компонентом Fluent Design System, который добавляет свет в приложение. Дополнительные сведения о системе проектирования Fluent Design и ее других компонентах см. в [обзоре системы проектирования Fluent Design для UWP](../fluent-design-system/index.md).
+Показать, что фокус является компонентом Fluent Design System, который добавляет свет в приложение. Дополнительные сведения о системе проектирования Fluent Design и ее других компонентах см. в [обзоре системы проектирования Fluent Design для UWP](/windows/apps/fluent-design-system).
 
 ## <a name="related-articles"></a>Связанные статьи
 

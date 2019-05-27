@@ -1,17 +1,17 @@
 ---
 description: Новости и изменения в C++/WinRT.
 title: Новые возможности C++/WinRT
-ms.date: 04/02/2019
+ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, standard, c ++, cpp, winrt, проекции, новости, что его новые
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8ee10450a7a346c1ae032240aaecc65e7f87822d
-ms.sourcegitcommit: 940645c705865ba9635ccae2da9d917420faf608
+ms.openlocfilehash: b84736e41e039d350a849c55fead008cbab5fdea
+ms.sourcegitcommit: bc64db47b6ff326f15cac15fc2cfd709fa7f877b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58812613"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65626214"
 ---
 # <a name="whats-new-in-cwinrt"></a>Новые возможности C++/WinRT
 
@@ -28,7 +28,7 @@ ms.locfileid: "58812613"
 
 - `cppwinrt.exe` Средство теперь входит в пакет Microsoft.Windows.CppWinRT NuGet, и это средство создает заголовки платформенный проекции для каждого проекта по требованию. Следовательно `cppwinrt.exe` средства больше не зависит от пакета SDK для Windows (хотя, по-прежнему поставляется с пакетом SDK для обеспечения совместимости).
 - `cppwinrt.exe` Создает проекцию заголовков в каждой конкретной платформы или конфигурации промежуточных папку ($IntDir) для включения параллельных сборок.
-- C++Поддержка построения /WinRT (свойства и целевые объекты) теперь полностью задокументирован, в случае, если вы хотите вручную настроить файлы проекта. См. в разделе [пакет NuGet Microsoft.Windows.CppWinRT](https://github.com/Microsoft/xlang/tree/user/sjones/cppwinrt_nuget/src/package/nuget).
+- C++Поддержка построения /WinRT (свойства и целевые объекты) теперь полностью задокументирован, в случае, если вы хотите вручную настроить файлы проекта. См. в разделе [пакет NuGet Microsoft.Windows.CppWinRT](https://github.com/Microsoft/xlang/blob/master/src/package/cppwinrt/nuget/readme.md).
 - Прочие исправления ошибок были внесены.
 
 ### <a name="changes-to-cwinrt-for-version-20"></a>Изменения в C++/WinRT для версии 2.0
@@ -261,7 +261,7 @@ struct MainPage : PageT<MainPage>
 
 ## <a name="news-and-changes-in-windows-sdk-version-100177630-windows-10-version-1809"></a>Новости и изменения, в пакете Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809)
 
-В следующей таблице содержит новости и примет [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) в общем доступе последнюю версию пакета SDK для Windows, которая представляет собой 10.0.17763.0 (Windows 10, версия 1809). Эти изменения могут также присутствовать в более поздних версиях Insider Preview пакета SDK.
+В следующей таблице содержит новости и изменения для C++/WinRT в пакете Windows SDK версии 10.0.17763.0 (Windows 10, версия 1809).
 
 | Новые и измененные функции | Дополнительные сведения |
 | - | - |

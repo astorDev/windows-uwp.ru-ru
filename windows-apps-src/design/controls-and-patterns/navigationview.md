@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4ba3a45701d82ad0b43591469bf390190ec18db0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1a396377eb332052ae7f238a23865f2b7dc0aa16
+ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642229"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984185"
 ---
 # <a name="navigation-view"></a>Представление навигации
 
@@ -65,7 +65,7 @@ NavigationView является элементом управления адап
 
 :::row:::
     :::column:::
-    ### <a name="top"></a>Первые
+    ### <a name="top"></a>TOP
     Области находится выше содержимое.</br>
     `PaneDisplayMode="Top"`
     :::column-end:::
@@ -83,7 +83,7 @@ NavigationView является элементом управления адап
 
 :::row:::
     :::column:::
-    ### <a name="left"></a>Влево
+    ### <a name="left"></a>Слева
     Разворачивается и располагаться слева содержимого области.</br>
     `PaneDisplayMode="Left"`
     :::column-end:::
@@ -226,7 +226,7 @@ _Макет навигации слева_
     :::column-end:::
 :::row-end:::
 
-### <a name="header"></a>Заголовок
+### <a name="header"></a>Header
 
 Можно добавить заголовок страницы, установив [заголовок](/uwp/api/windows.ui.xaml.controls.navigationview.header) свойство.
 
@@ -237,7 +237,7 @@ _Заголовок представления навигации_
 
 Заголовок отображается каждый раз, когда NavigationView находится в режиме минимальной отображения. Вы можете скрыть заголовок в других режимах, используемых для окон большей ширины. Чтобы скрыть заголовок, установите [AlwaysShowHeader](/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader) свойства **false**.
 
-### <a name="content"></a>Содержимое
+### <a name="content"></a>Content
 
 ![Пример области содержимого представления навигации](images/nav-content.png)<br/>
 _Содержимое представления навигации_
@@ -250,7 +250,7 @@ _Содержимое представления навигации_
 
 По умолчанию представления навигации автоматически изменяет режим отображения, ее исходя объема доступного пространства на экране к нему. [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) и [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) свойства указывают точки останова, в которых изменяется режим отображения. Можно изменить эти значения для настройки поведения Адаптивная регулировка режима.
 
-### <a name="default"></a>По умолчанию
+### <a name="default"></a>Значение по умолчанию
 
 Если PaneDisplayMode присвоено значение по умолчанию **автоматически**, адаптивное поведение — Показать:
 
@@ -624,7 +624,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 }
 ```
 
-Ниже приведен [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/index) версии **NavView_ItemInvoked** обработчик из C# приведенном выше примере кода. Метод в C + +/ WinRT обработчика включает в себя вы сначала хранения (в теге [ **NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) полное имя типа страницы, к которому требуется перейти. В обработчике, распаковки-преобразования этого значения, превратить его в [ **Windows::UI::Xaml::Interop::TypeName** ](/uwp/api/windows.ui.xaml.interop.typename) и использовать, чтобы перейти к странице назначения. Нет необходимости для сопоставления переменной с именем `_pages` , встречающегося в C# пример; и вы сможете создать модульные тесты, подтверждающее, что значения внутри тегов являются допустимого типа. Также см. в разделе [упаковке и распаковке скалярные значения для IInspectable с использованием C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+Ниже приведен [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index) версии **NavView_ItemInvoked** обработчик из C# приведенном выше примере кода. Метод в C++/WinRT обработчика включает в себя вы сначала хранения (в теге [ **NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) полное имя типа страницы, к которому требуется перейти. В обработчике, распаковки-преобразования этого значения, превратить его в [ **Windows::UI::Xaml::Interop::TypeName** ](/uwp/api/windows.ui.xaml.interop.typename) и использовать, чтобы перейти к странице назначения. Нет необходимости для сопоставления переменной с именем `_pages` , встречающегося в C# пример; и вы сможете создать модульные тесты, подтверждающее, что значения внутри тегов являются допустимого типа. Также см. в разделе [упаковке и распаковке скалярные значения для IInspectable с C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* sender */, Windows::UI::Xaml::Controls::NavigationViewItemInvokedEventArgs const & args)
@@ -658,9 +658,9 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 
 | Режим отображения | Темы ресурсов |
 | ------------ | -------------- |
-| Влево | NavigationViewExpandedPaneBackground |
+| Слева | NavigationViewExpandedPaneBackground |
 | LeftCompact<br/>LeftMinimal | NavigationViewDefaultPaneBackground |
-| Первые | NavigationViewTopPaneBackground |
+| TOP | NavigationViewTopPaneBackground |
 
 В этом примере показано, как переопределить ресурсы темы в файле App.xaml. При переопределении ресурсы темы, всегда необходимо обеспечивать словари ресурсов «Default» и «Высокая контрастность» как минимум и словари для «Светлая» и «Темный» ресурсы при необходимости. Дополнительные сведения см. в разделе [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries).
 
@@ -710,9 +710,9 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 </Application>
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 - [Класс NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 - [Основные и подробные данные](master-details.md)
 - [Основы навигации](../basics/navigation-basics.md)
-- [Fluent разработка для универсальной платформы Windows Обзор](../fluent-design-system/index.md)
+- [Fluent разработка для универсальной платформы Windows Обзор](/windows/apps/fluent-design-system)
