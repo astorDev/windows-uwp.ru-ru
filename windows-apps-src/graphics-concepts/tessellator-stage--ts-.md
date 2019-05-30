@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7768d63405281d3155affc6c9f09c62568761718
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b8960d9723460fcbb8cec71da0998958cac8a6e8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607399"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370944"
 ---
 # <a name="tessellator-ts-stage"></a>Этап тесселятора (TS)
 
@@ -52,7 +52,7 @@ ms.locfileid: "57607399"
 
 Графический конвейер Direct3D реализует аппаратную тесселяцию, что переводит работу с ЦП на GPU. Это может дать очень существенный прирост производительности, если в приложение реализуется большое число морфинговых целей и/или более сложные модели деформации/скиннинга.
 
-Тесселятор — это этап фиксированной функции, который инициализируется привязкой [шейдера поверхности](hull-shader-stage--hs-.md) к конвейеру. (см. в разделе [How To: Инициализировать этап тесселяции](https://msdn.microsoft.com/library/windows/desktop/ff476341)). Назначение этапа тесселятора подразделить домен (четырехугольник, треугольник или линию ) на большое число меньших объектов (треугольников, точек или линий). Тесселятор разбивает канонический домен в нормализованной (ноль к единице) системе координат. Например, домен четырехугольника тесселируется в единичный квадрат.
+Тесселятор — это этап фиксированной функции, который инициализируется привязкой [шейдера поверхности](hull-shader-stage--hs-.md) к конвейеру. (см. в разделе [How To: Инициализировать этап тесселяции](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-advanced-stages-tessellator-initialize)). Назначение этапа тесселятора подразделить домен (четырехугольник, треугольник или линию ) на большое число меньших объектов (треугольников, точек или линий). Тесселятор разбивает канонический домен в нормализованной (ноль к единице) системе координат. Например, домен четырехугольника тесселируется в единичный квадрат.
 
 ### <a name="span-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>Этапы, на этапе тесселяции (TS)
 
@@ -63,7 +63,7 @@ ms.locfileid: "57607399"
 
     | Тип секционирования | Диапазон                       |
     |----------------------|-----------------------------|
-    | Доли\_нечетное      | \[1... 63\]                  |
+    | Доли\_нечетное      | \[1...63\]                  |
     | Доли\_даже     | Диапазон TessFactor: \[2..64\] |
     | целое число              | Диапазон TessFactor: \[1..64\] |
     | Pow2                 | Диапазон TessFactor: \[1..64\] |

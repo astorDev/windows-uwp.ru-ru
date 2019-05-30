@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 48cea8c1a3a3c35a53a3376c48e3192c94caf709
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f5605c115c409771ce8dc9ddfeb1a4922e04aece
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620779"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372847"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>Приступая к работе: Выбор языка программирования
 
 
 ## <a name="choosing-a-programming-language"></a>Выбор языка программирования
 
-Прежде чем продолжить, необходимо узнать, какие языки программирования можно выбрать при создании приложений универсальной платформы Windows (UWP). В пошаговых руководствах этой статьи используется язык C#, однако для создания приложений UWP вы можете использовать один или несколько других языков программирования (см. [Языки, средства и платформы](https://msdn.microsoft.com/library/windows/apps/dn465799)).
+Прежде чем продолжить, необходимо узнать, какие языки программирования можно выбрать при создании приложений универсальной платформы Windows (UWP). В пошаговых руководствах этой статьи используется язык C#, однако для создания приложений UWP вы можете использовать один или несколько других языков программирования (см. [Языки, средства и платформы](https://docs.microsoft.com/previous-versions/windows/apps/dn465799(v=win.10))).
 
 Для разработки можно использовать языки C++, C#, Microsoft Visual Basic и JavaScript. JavaScript использует разметку HTML5 для макета пользовательского интерфейса, а другие языки для описания пользовательских интерфейсов используют разметку *XAML*.
 
@@ -30,9 +30,9 @@ ms.locfileid: "57620779"
 
 **Примечание**  для приложений, использующих 3D-графики, OpenGL и OpenGL ES стандарты недоступны в собственном коде для приложений универсальной платформы Windows. Если вы не желаете переписывать код OpenGL ES в Microsoft DirectX, возможно, вам будет интересно узнать о проекте **Angle**. Angle — это текущий проект, предназначенный для преобразования OpenGL в DirectX путем перевода вызовов API OpenGL в вызовы API DirectX. Подробнее см. в следующих разделах:
 -   [угол](https://code.google.com/p/angleproject/)
--   [Создание первого приложения универсальной платформы Windows с использованием DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [Создание первого приложения универсальной платформы Windows с использованием DirectX](https://docs.microsoft.com/previous-versions/windows/apps/br229580(v=win.10))
 -   [Примеры приложений для универсальной платформы Windows, которые используют DirectX](https://go.microsoft.com/fwlink/p/?LinkId=263603)
--   [Где находится DirectX SDK?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
+-   [Где находится DirectX SDK?](https://docs.microsoft.com/windows/desktop/directx-sdk--august-2009-)
 
 ## <a name="giving-c-a-go"></a>Попробуйте C#
 

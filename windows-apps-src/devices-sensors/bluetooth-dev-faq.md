@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cc1bafb90b20083d55a622873dea7be5efbf5b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 72e45f8ef0f5684b3a712056eb367975f8e6103a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633489"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370352"
 ---
 # <a name="bluetooth-developer-faq"></a>Вопросы и ответы для Bluetooth-разработчиков
 
@@ -63,7 +63,7 @@ ms.locfileid: "57633489"
 
 Это не требуется для классических устройств Bluetooth RFCOMM. Начиная с выпуска 1607 Windows 10 вы можете просто запросить ближайшие устройства и подключиться к ним. Эта функция показана в обновленном [примере чата RFCOMM](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat). 
 
-**(14393 и более ранние версии)** Эта функция недоступна для устройств Bluetooth Low Energy (клиент GATT), поэтому вам по-прежнему потребуется связать устройство на странице параметров или с помощью API-интерфейсов [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx), чтобы получить доступ к ним.
+**(14393 и более ранние версии)** Эта функция недоступна для устройств Bluetooth Low Energy (клиент GATT), поэтому вам по-прежнему потребуется связать устройство на странице параметров или с помощью API-интерфейсов [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration), чтобы получить доступ к ним.
 
 **(15030 и более поздние версии)** Связывание устройств Bluetooth больше не требуется. Используйте новые API Async, такие как GetGattServicesAsync и GetCharacteristicsAsync, для запроса текущего состояния удаленного устройства. Дополнительные сведения см. в [документации клиента](gatt-client.md). 
 
@@ -77,7 +77,7 @@ ms.locfileid: "57633489"
 ## <a name="can-i-access-these-apis-from-win32"></a>Можно ли получить доступ к этим API с Win32?
 
 Да, все эти API должны работать. В этой публикации блога описан способ вызова [API Windows из приложений для настольных компьютеров](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/). 
-## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>Должна ли поддерживаться эта функция на *-Вставить здесь SKU-*?
+## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>Должна ли поддерживаться эта функция на *-Вставить здесь SKU-* ?
 
 **Bluetooth LE**: Да, все функции в OneCore и должен быть доступен на самой последней устройств с работает Bluetooth с НИЗКИМ стека. 
 > Одно предостережение. Периферийные роль зависит от аппаратного обеспечения и некоторые выпуски Windows Server не поддерживают Bluetooth. 

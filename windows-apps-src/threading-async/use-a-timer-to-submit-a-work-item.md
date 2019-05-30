@@ -6,28 +6,28 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, таймер, потоки
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ee5142997e3d4824152adf6d0b26bccb8a30f7f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7a1a7a161734a142b5f1399798394494d05c6a49
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613309"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371513"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>Отправка рабочего элемента по таймеру
 
 
 <b>Важные API</b>
 
--   [**Пространство имен Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/BR208383)
--   [**Пространство имен Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/BR229642)
+-   [**Пространство имен Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+-   [**Пространство имен Windows.System.Threading**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
 
 Узнайте, как создать рабочий элемент, который выполняется после истечения времени таймера.
 
 ## <a name="create-a-single-shot-timer"></a>Создание однократного таймера
 
-Чтобы создать таймер для рабочего элемента, используйте метод [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921). Определите лямбда-выражение, соответствующее заданию, и используйте параметр *delay*, чтобы указать, как долго пулу потоков нужно ждать, прежде чем назначить рабочий элемент доступному потоку. Задержка определена с использованием структуры [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996).
+Чтобы создать таймер для рабочего элемента, используйте метод [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer). Определите лямбда-выражение, соответствующее заданию, и используйте параметр *delay*, чтобы указать, как долго пулу потоков нужно ждать, прежде чем назначить рабочий элемент доступному потоку. Задержка определена с использованием структуры [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan).
 
-> **Примечание**  можно использовать [ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317) доступ к пользовательскому Интерфейсу и отображает ход выполнения задания из рабочего элемента.
+> **Примечание**  можно использовать [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) доступ к пользовательскому Интерфейсу и отображает ход выполнения задания из рабочего элемента.
 
 В следующем примере создается рабочий элемент, который запускается через три минуты:
 
@@ -87,7 +87,7 @@ ms.locfileid: "57613309"
 
 ## <a name="provide-a-completion-handler"></a>Предоставление обработчика завершения
 
-Если требуется, обрабатывайте отмену и завершение рабочего элемента с помощью обработчика [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Чтобы указать дополнительное лямбда-выражение, используйте перегрузку [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921). Это выполняется, когда таймер отменяется или когда рабочий элемент завершается.
+Если требуется, обрабатывайте отмену и завершение рабочего элемента с помощью обработчика [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler). Чтобы указать дополнительное лямбда-выражение, используйте перегрузку [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer). Это выполняется, когда таймер отменяется или когда рабочий элемент завершается.
 
 В следующем примере создается таймер, который отправляет рабочий элемент и вызывает метод, когда рабочий элемент завершается или происходит отмена таймера:
 
@@ -207,7 +207,7 @@ ms.locfileid: "57613309"
 
 ## <a name="cancel-the-timer"></a>Отмена таймера
 
-Если таймер еще отсчитывает время, а рабочий элемент больше не нужен, вызовите [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588). Таймер отменяется, и рабочий элемент не отправляется в пул потоков.
+Если таймер еще отсчитывает время, а рабочий элемент больше не нужен, вызовите [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel). Таймер отменяется, и рабочий элемент не отправляется в пул потоков.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -217,15 +217,15 @@ ms.locfileid: "57613309"
 > DelayTimer->Cancel();
 > ```
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
-Приложения универсальной платформы Windows (UWP) не могут использовать **Thread.Sleep**, поскольку это может привести к блокированию потока пользовательского интерфейса. Вместо этого для создания рабочего элемента вы можете использовать метод [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587); в результате задача, выполняемая рабочим элементом, будет отложена без блокировки потока пользовательского интерфейса.
+Приложения универсальной платформы Windows (UWP) не могут использовать **Thread.Sleep**, поскольку это может привести к блокированию потока пользовательского интерфейса. Вместо этого для создания рабочего элемента вы можете использовать метод [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer); в результате задача, выполняемая рабочим элементом, будет отложена без блокировки потока пользовательского интерфейса.
 
 Полный образец кода, демонстрирующего рабочие элементы, рабочие элементы таймеров и периодические рабочие элементы, см. на странице [образца пула потоков](https://go.microsoft.com/fwlink/p/?linkid=255387). В образце кода, первоначально был написан для Windows 8.1, но код можно использовать повторно в Windows 10.
 
 Дополнительные сведения о повторяющихся таймерах см. в разделе [Создание периодического рабочего элемента](create-a-periodic-work-item.md).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)

@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, первое приложение, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: 433536673efb9d2f17d822599051030b219ed02f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d9a7f0302dfdc9f9fa980f0fe93a3371328f9e5c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642159"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367437"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Создание приложения "Hello, world" (XAML)
 
@@ -19,7 +19,7 @@ ms.locfileid: "57642159"
 
 В этом разделе вы научитесь выполнять следующие действия.
 
--   Создайте новый **Visual Studio 2017** проектом, нацеленным **Windows 10** и **UWP**.
+-   Создайте новый **Visual Studio** проектом, нацеленным **Windows 10** и **UWP**.
 -   Писать код XAML, чтобы изменить пользовательский интерфейс на начальной странице.
 -   Запускать проект на локальном компьютере в Visual Studio.
 -   Использовать объект SpeechSynthesizer, чтобы добавить в приложение голосовую функцию, активируемую нажатием кнопки.
@@ -42,7 +42,7 @@ ms.locfileid: "57642159"
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>Шаг 1. Создайте новый проект в Visual Studio.
 
-1.  Запустите Visual Studio 2017.
+1.  Запустите Visual Studio.
 
 2.  Из **файл** меню, выберите **Создать > проект** открыть *новый проект* диалоговое окно.
 
@@ -76,7 +76,7 @@ ms.locfileid: "57642159"
 
 Для просмотра и изменения файла проекта дважды щелкните файл в **Обозревателе решений**. Разверните XAML-файл так же, как и папку, чтобы увидеть соответствующий файл кода. XAML-файлы открываются в разделенном представлении, в котором отображается как поверхность конструктора, так и редактор XAML.
 > [!NOTE]
-> Что такое XAML? Расширяемый язык разметки для приложений (Extensible Application Markup Language, XAML) — это язык, который используется для определения пользовательского интерфейса приложения. Код на нем можно писать вручную или создавать с помощью средств разработки Visual Studio. В XAML-файле есть файл кода программной части .xaml.cs, содержащий логику приложения. Совместно XAML и код программной части образуют полный класс. Дополнительные сведения см. в разделе [Обзор языка XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+> Что такое XAML? Расширяемый язык разметки для приложений (Extensible Application Markup Language, XAML) — это язык, который используется для определения пользовательского интерфейса приложения. Код на нем можно писать вручную или создавать с помощью средств разработки Visual Studio. В XAML-файле есть файл кода программной части .xaml.cs, содержащий логику приложения. Совместно XAML и код программной части образуют полный класс. Дополнительные сведения см. в разделе [Обзор языка XAML](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview).
 
 *Файл app.XAML и App.xaml.cs*
 
@@ -89,7 +89,7 @@ ms.locfileid: "57642159"
 
 -   В файле MainPage.xaml определяется пользовательский интерфейс приложения. Добавлять элементы можно непосредственно с помощью разметки XAML или с помощью инструментов конструктора, предоставляемых Visual Studio.
 -   MainPage.xaml.cs — это страница с кодом программной части для MainPage.xaml. Здесь вы добавляете логику приложения и обработчики событий.
--   Вместе эти два файла формируют новый класс, называемый `MainPage`, наследующий от [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503) в пространстве имен `HelloWorld`.
+-   Вместе эти два файла формируют новый класс, называемый `MainPage`, наследующий от [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) в пространстве имен `HelloWorld`.
 
 *Package.appxmanifest*
 -   Файл манифеста, в котором описывается ваше приложение: его имя, описание, плитка, начальная страница и т. д.
@@ -226,7 +226,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ### <a name="what-did-we-just-do"></a>Что нам удалось сделать?
 
-В этом коде используются некоторые API-интерфейсы Windows для создания объекта синтеза речи, которому передается определенный текст для его озвучивания. Дополнительные сведения по использованию объекта SpeechSynthesis см. в документации по[Пространству имен SpeechSynthesis](https://msdn.microsoft.com/library/windows/apps/windows.media.speechsynthesis.aspx).
+В этом коде используются некоторые API-интерфейсы Windows для создания объекта синтеза речи, которому передается определенный текст для его озвучивания. Дополнительные сведения по использованию объекта SpeechSynthesis см. в документации по[Пространству имен SpeechSynthesis](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis).
 
 Если вы запустите приложение и нажмете кнопку, ваш компьютер (или телефон) воспроизведет фразу "Hello, World!".
 

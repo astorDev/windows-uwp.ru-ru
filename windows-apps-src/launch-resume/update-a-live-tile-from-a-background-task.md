@@ -7,19 +7,19 @@ ms.date: 01/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, фоновую задачу
 ms.localizationpriority: medium
-ms.openlocfilehash: 0148be96d9c5994d2fe16e7a0adedee16c8469de
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 280f2253fda7de816ee753798dcab754d58ae847
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63816892"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370554"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Обновление живой плитки из фоновой задачи
 
 **Важные API**
 
--   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Используйте фоновую задачу для обновления живой плитки вашего приложения свежим содержимым.
 
@@ -39,7 +39,7 @@ ms.locfileid: "63816892"
 ## <a name="implement-the-background-task"></a>Реализация фоновой задачи
 
 
-Реализуйте интерфейс [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), чтобы создать класс, который обновляет живую плитку вашего приложения. Фоновая работа осуществляется в методе Запустить. В этом случае задача получает канал синдикации для блогов MSDN. Чтобы задача преждевременно не закрылась, пока выполняется асинхронный код, получите отсрочку.
+Реализуйте интерфейс [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask), чтобы создать класс, который обновляет живую плитку вашего приложения. Фоновая работа осуществляется в методе Запустить. В этом случае задача получает канал синдикации для блогов MSDN. Чтобы задача преждевременно не закрылась, пока выполняется асинхронный код, получите отсрочку.
 
 1.  В обозревателе решений переименуйте автоматически генерируемый файл, Class1.cs, в BlogFeedBackgroundTask.cs.
 2.  В BlogFeedBackgroundTask.cs замените автоматически генерируемый код кодом заглушки для класса **BlogFeedBackgroundTask**.
@@ -159,7 +159,7 @@ namespace BackgroundTasks
 ## <a name="register-the-background-task"></a>Регистрация фоновой задачи
 
 
-Создайте [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768), чтобы зарегистрировать свою задачу.
+Создайте [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder), чтобы зарегистрировать свою задачу.
 
 > **Примечание**  начиная с Windows 8.1, параметры регистрации фоновой задачи проверяются во время регистрации. Если какие-либо из параметров регистрации недопустимы, возвращается ошибка. Если фоновая задача не прошла регистрацию, приложение должно выполнить соответствующее действие — например, применить условный оператор для проверки наличия ошибок регистрации и затем повторить попытку регистрации с другими значениями параметров.
  
@@ -256,11 +256,11 @@ namespace ContosoApp
 ## <a name="related-topics"></a>См. также
 
 
-* [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
-* [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)
-* [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)
+* [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+* [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager)
+* [**TileNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)
 * [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md)
-* [Контрольный список по плиткам и эмблемам](https://msdn.microsoft.com/library/windows/apps/hh465403)
+* [Контрольный список по плиткам и эмблемам](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
 
  
 

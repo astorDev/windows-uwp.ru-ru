@@ -6,25 +6,25 @@ keywords: windows 10, uwp, пробная версия, покупки из пр
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 49d57f32961726507c0114aed648787dd7f6bd1f
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 47affd7e54bcaad21949cb56916de27dd3bf260b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334712"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371063"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>Внедрение пробной версии приложения
 
 Если вы [настроить приложение в качестве бесплатной пробной версии в центре партнеров](../publish/set-app-pricing-and-availability.md#free-trial) таким образом, клиенты могут использовать приложения бесплатно во время пробного периода, могут побудить своих заказчиков обновить до полной версии приложения, за исключением или ограничивая некоторые возможности в течение пробного периода. До начала программирования решите, какие функции лучше ограничить, и сделайте так, чтобы они были доступны только после покупки полной лицензии. Вы можете также включить такие компоненты, как баннеры или водяные знаки, которые будут отображаться только во время испытательного срока, пока пользователь не купит приложение.
 
-В этой статье описывается, как использовать члены класса [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), чтобы определить, есть ли у пользователя лицензия на пробную версию приложения, и получать уведомления в случае изменения состояния лицензии во время работы приложения. 
+В этой статье описывается, как использовать члены класса [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) в пространстве имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store), чтобы определить, есть ли у пользователя лицензия на пробную версию приложения, и получать уведомления в случае изменения состояния лицензии во время работы приложения. 
 
 > [!NOTE]
-> Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx), а не пространство имен **Windows.Services.Store**. Дополнительные сведения см. в [этой статье](exclude-or-limit-features-in-a-trial-version-of-your-app.md).
+> Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Если приложение предназначено для предыдущих версий Windows 10, необходимо использовать пространство имен [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store), а не пространство имен **Windows.Services.Store**. Дополнительные сведения см. в [этой статье](exclude-or-limit-features-in-a-trial-version-of-your-app.md).
 
 ## <a name="guidelines-for-implementing-a-trial-version"></a>Рекомендации по реализации пробной версии
 
-Текущее состояние лицензии приложения хранится в свойствах класса [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx). Обычно функции, которые зависят от состояния лицензии, помещают в условный блок. Как это сделать, будет показано на следующем этапе. Разрабатывая эти функции, убедитесь, что они будут работать во всех состояниях лицензии.
+Текущее состояние лицензии приложения хранится в свойствах класса [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense). Обычно функции, которые зависят от состояния лицензии, помещают в условный блок. Как это сделать, будет показано на следующем этапе. Разрабатывая эти функции, убедитесь, что они будут работать во всех состояниях лицензии.
 
 Решите, каким образом вы будете обрабатывать изменения в лицензии приложения во время его работы. Ваше приложение может быть полнофункциональным, но в отличие от купленного иметь рекламные баннеры. Вы также можете запретить некоторые функции или регулярно показывать сообщения с предложением купить приложение.
 
@@ -55,25 +55,25 @@ ms.locfileid: "58334712"
     -   Поблагодарить клиента за покупку или отобразить сообщение.
     -   Без предупреждения включить возможности, доступные в полной лицензионной версии (или отключить уведомления об использовании пробной версии).
 
-Не забудьте объяснить, как будет работать ваше приложение во время и после бесплатного пробного периода, чтобы поведение приложения не стало неожиданностью для клиентов. Дополнительные сведения об описании приложения см. в разделе [Создание описаний приложений](https://msdn.microsoft.com/library/windows/apps/mt148529).
+Не забудьте объяснить, как будет работать ваше приложение во время и после бесплатного пробного периода, чтобы поведение приложения не стало неожиданностью для клиентов. Дополнительные сведения об описании приложения см. в разделе [Создание описаний приложений](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для этого примера необходимо выполнение следующих предварительных условий:
 * Создан проект Visual Studio для приложения универсальной платформы Windows (UWP), предназначенный для **Windows 10 Anniversary Edition (10.0; сборка 14393)** и более поздних выпусков.
-* Вы создали приложение в центре партнеров, настроенный в качестве [бесплатной пробной версии](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) с и без временных ограничений это приложение публикуется в Store. При необходимости можно настроить приложение, чтобы его нельзя было найти в Магазине, пока вы его тестируете. Подробнее см. в нашем [руководстве по тестированию](in-app-purchases-and-trials.md#testing).
+* Вы создали приложение в центре партнеров, настроенный в качестве [бесплатной пробной версии](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) с и без временных ограничений это приложение публикуется в Store. При необходимости можно настроить приложение, чтобы его нельзя было найти в Магазине, пока вы его тестируете. Подробнее см. в нашем [руководстве по тестированию](in-app-purchases-and-trials.md#testing).
 
 В коде из этого примера предполагается следующее:
-* Код выполняется в контексте страницы [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx), которая содержит [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) с именем ```workingProgressRing``` и [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) с именем ```textBlock```. Эти объекты используются для индикации выполнения асинхронной операции и отображения выводимых сообщений, соответственно.
+* Код выполняется в контексте страницы [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page), которая содержит [ProgressRing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring) с именем ```workingProgressRing``` и [TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock) с именем ```textBlock```. Эти объекты используются для индикации выполнения асинхронной операции и отображения выводимых сообщений, соответственно.
 * Файл кода содержит оператор **using** для пространства имен **Windows.Services.Store**.
 * Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Подробнее см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md#api_intro).
 
 > [!NOTE]
-> Если у вас есть классическое приложение, которое использует [мост для классических приложений](https://developer.microsoft.com/windows/bridges/desktop), вам может потребоваться добавить дополнительный код, не показанный в этом примере, для настройки объекта [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Дополнительные сведения см. в разделе [Использование класса StoreContext в классическом приложение, в котором применяется мост для настольных компьютеров](in-app-purchases-and-trials.md#desktop).
+> Если у вас есть классическое приложение, которое использует [мост для классических приложений](https://developer.microsoft.com/windows/bridges/desktop), вам может потребоваться добавить дополнительный код, не показанный в этом примере, для настройки объекта [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext). Дополнительные сведения см. в разделе [Использование класса StoreContext в классическом приложение, в котором применяется мост для настольных компьютеров](in-app-purchases-and-trials.md#desktop).
 
 ## <a name="code-example"></a>Пример кода
 
-При инициализации приложения получите для приложения объект [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) и обрабатывайте событие [OfflineLicensesChanged](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.offlinelicenseschanged) для получения уведомлений об изменении лицензии во время работы приложения. Например, лицензия приложения может измениться, если закончился пробный период или пользователь приобрел приложение в Магазине. При изменении лицензии получите новую лицензию и соответственно включите или отключите функции приложения.
+При инициализации приложения получите для приложения объект [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense) и обрабатывайте событие [OfflineLicensesChanged](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.offlinelicenseschanged) для получения уведомлений об изменении лицензии во время работы приложения. Например, лицензия приложения может измениться, если закончился пробный период или пользователь приобрел приложение в Магазине. При изменении лицензии получите новую лицензию и соответственно включите или отключите функции приложения.
 
 Если пользователь купил приложение, рекомендуется сообщить ему об изменении состояния лицензирования. При необходимости попросите пользователя перезапустить приложение. Перевод приложения в новое состояние лицензирования должен быть максимально комфортным для пользователя.
 

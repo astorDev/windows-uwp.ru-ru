@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, игры, directx, пакет
 ms.localizationpriority: medium
-ms.openlocfilehash: 631ba2c278c72f406a0fdd8a6d6d8d8a14c9eb05
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 27ea422982ce991de20e67649bc0925a60547cd8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635409"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368317"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>Создание пакета игры DirectX универсальной платформы Windows (UWP)
 
@@ -22,7 +22,7 @@ ms.locfileid: "57635409"
 -   Пакеты приложения содержат исполняемые файлы и библиотеки для конкретных платформ. Обычно игра UWP включает до трех пакетов приложения: по одному для архитектур ЦП x86, x64 и ARM. В этот пакет приложения должны быть включены все данные и код, относящиеся к соответствующей аппаратной платформе. Пакет приложения должен также включать все основные ресурсы, позволяющие запустить игру с базовым уровнем качества и производительности.
 -   Пакеты ресурсов содержат дополнительные или расширенные данные, которые не зависят от платформы, например ресурсы игры (текстуры, сетки, звук и текст). У игры UWP может быть один или несколько пакетов ресурсов, включая пакеты для ресурсов и текстур высокого разрешения, ресурсов для уровня компонентов DirectX 11+ или ресурсов, которые требуются для определенного языка.
 
-Дополнительные сведения о наборах приложения и пакетах приложения можно прочесть в разделе [Определение ресурсов приложения](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).
+Дополнительные сведения о наборах приложения и пакетах приложения можно прочесть в разделе [Определение ресурсов приложения](https://docs.microsoft.com/previous-versions/windows/apps/hh965321(v=win.10)).
 
 Хотя все содержимое можно поместить в пакеты приложения, это неэффективно и делать этого не следует. Зачем копировать один и тот же большой файл текстур для каждой из трех платформ, особенно если речь идет о платформе ARM, где он может вовсе не использоваться? Стоит подумать о том, как свести к минимуму объем данных, скачиваемых клиентом, чтобы он мог раньше начать игру, сэкономить место на устройстве и избежать возможных затрат на оплату трафика.
 
@@ -83,7 +83,7 @@ ms.locfileid: "57635409"
 
      
 
--   Используйте API в [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) и [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039), чтобы указать и загрузить ресурсы с определенными языковым стандартом для своего приложения. Используйте также ссылки на ресурсы, которые не включают определенный языковой стандарт, поскольку эти API определяют правильный языковой стандарт на основе параметров пользователя и затем извлекают подходящий ресурс для пользователя.
+-   Используйте API в [**Windows.ApplicationModel.Resources**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources) и [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core), чтобы указать и загрузить ресурсы с определенными языковым стандартом для своего приложения. Используйте также ссылки на ресурсы, которые не включают определенный языковой стандарт, поскольку эти API определяют правильный языковой стандарт на основе параметров пользователя и затем извлекают подходящий ресурс для пользователя.
 -   В Microsoft Visual Studio 2015 выберите **Store на "->" ПРОЕКТ "->" Создать пакет приложения...**  и создайте пакет.
 
 ## <a name="defining-scaling-factor-resource-packs"></a>Определение пакетов ресурсов для коэффициентов масштабирования
@@ -100,7 +100,7 @@ Windows 10 предоставляет три коэффициенты масшт
 
      
 
--   Используйте API в [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) для загрузки ресурсов. Ссылки на ресурсы должны быть обобщенными (без суффиксов), без конкретных вариантов масштаба. Система извлечет соответствующий ресурс для дисплея и параметров пользователя.
+-   Используйте API в [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) для загрузки ресурсов. Ссылки на ресурсы должны быть обобщенными (без суффиксов), без конкретных вариантов масштаба. Система извлечет соответствующий ресурс для дисплея и параметров пользователя.
 -   В Visual Studio 2015 выберите **Store на "->" ПРОЕКТ "->" Создать пакет приложения...**  и создайте пакет.
 
 ## <a name="defining-directx-feature-level-resource-packs"></a>Определение пакетов ресурсов для функциональных уровней DirectX
@@ -110,7 +110,7 @@ Windows 10 предоставляет три коэффициенты масшт
 
 Ваш пакет app базовых показателей следует использовать форматы сжатия текстур базовых показателей: BC1, BC2 или BC3. Эти форматы могут быть пригодными для любых устройств UWP, от простейших платформ ARM до специализированных рабочих станций с несколькими GPU и мультимедийных компьютеров.
 
-Поддержка форматов текстур на уровне компонентов DirectX 10 или выше должна быть добавлена в пакет ресурсов для экономии места на локальном диске и пропускной способности скачивания. Это позволяет воспользоваться более современными схемами сжатия для уровня 11 (например, BC6H и BC7). (Дополнительные сведения см. в разделе [сжатие блока текстуры в Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh308955).) Эти форматы они более эффективны для активов текстур с высоким разрешением, поддерживаемых современных графических процессоров и с их помощью улучшает внешний вид, производительность и требования к дисковому пространству вашей игры на современных платформах.
+Поддержка форматов текстур на уровне компонентов DirectX 10 или выше должна быть добавлена в пакет ресурсов для экономии места на локальном диске и пропускной способности скачивания. Это позволяет воспользоваться более современными схемами сжатия для уровня 11 (например, BC6H и BC7). (Дополнительные сведения см. в разделе [сжатие блока текстуры в Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/texture-block-compression-in-direct3d-11).) Эти форматы они более эффективны для активов текстур с высоким разрешением, поддерживаемых современных графических процессоров и с их помощью улучшает внешний вид, производительность и требования к дисковому пространству вашей игры на современных платформах.
 
 | Функциональный уровень DirectX | Поддерживаемое сжатие текстур |
 |-----------------------|-------------------------------|
@@ -163,7 +163,7 @@ Windows 10 предоставляет три коэффициенты масшт
     );
     ```
 
--   Используйте API в [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) для загрузки ресурсов. Ссылки на ресурсы должны быть обобщенными (без суффиксов), без уровня компонентов. Однако в отличие от языка и масштаба, система не определяет автоматически оптимальный уровень компонентов для определенного экрана. Это должны определить вы сами на основе логики кода. После этого используйте API, чтобы информировать ОС о предпочитаемом уровне компонентов. Тогда система сможет извлечь подходящий ресурс на основе этого предпочтения. Вот пример кода, который показывает, как сообщить приложению о текущем уровне компонентов DirectX для платформы:
+-   Используйте API в [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) для загрузки ресурсов. Ссылки на ресурсы должны быть обобщенными (без суффиксов), без уровня компонентов. Однако в отличие от языка и масштаба, система не определяет автоматически оптимальный уровень компонентов для определенного экрана. Это должны определить вы сами на основе логики кода. После этого используйте API, чтобы информировать ОС о предпочитаемом уровне компонентов. Тогда система сможет извлечь подходящий ресурс на основе этого предпочтения. Вот пример кода, который показывает, как сообщить приложению о текущем уровне компонентов DirectX для платформы:
     
     ```cpp
     // Set the current UI thread's MRT ResourceContext's DXFeatureLevel with the right DXFL. 
@@ -191,7 +191,7 @@ Windows 10 предоставляет три коэффициенты масшт
 
      
 
--   Теперь используйте [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078), чтобы найти файл, соответствующий текущему уровню компонентов DirectX. **ResourceManager** возвращает элемент [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/br206089), запрашиваемый в методе [**ResourceMap::GetValue**](https://msdn.microsoft.com/library/windows/apps/br206098) (или [**ResourceMap::TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj655438)) и предоставленный объект [**ResourceContext**](https://msdn.microsoft.com/library/windows/apps/br206064). В результате этого возвращается [**ResourceCandidate**](https://msdn.microsoft.com/library/windows/apps/br206051), который максимально соответствует уровню компонентов DirectX, указанному путем вызова [**SetGlobalQualifierValue**](https://msdn.microsoft.com/library/windows/apps/mt622101).
+-   Теперь используйте [**ResourceManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager), чтобы найти файл, соответствующий текущему уровню компонентов DirectX. **ResourceManager** возвращает элемент [**ResourceMap**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap), запрашиваемый в методе [**ResourceMap::GetValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap.getvalue) (или [**ResourceMap::TryGetValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap.trygetvalue)) и предоставленный объект [**ResourceContext**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext). В результате этого возвращается [**ResourceCandidate**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceCandidate), который максимально соответствует уровню компонентов DirectX, указанному путем вызова [**SetGlobalQualifierValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue).
     
     ```cpp
     // An explicit ResourceContext is needed to match the DirectX feature level for the display on which the current view is presented.
@@ -213,12 +213,12 @@ Windows 10 предоставляет три коэффициенты масшт
 -   В Visual Studio 2015 выберите **Store на "->" ПРОЕКТ "->" Создать пакет приложения...**  и создайте пакет.
 -   Убедитесь, что вы включили пакеты приложений в настройках манифеста package.appxmanifest.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
-* [Определение ресурсов приложения](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
-* [Создание пакетов приложений](https://msdn.microsoft.com/library/windows/apps/mt270969)
-* [Упаковщик приложений (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
+* [Определение ресурсов приложения](https://docs.microsoft.com/previous-versions/windows/apps/hh965321(v=win.10))
+* [Создание пакетов приложений](https://docs.microsoft.com/windows/uwp/packaging/index)
+* [Упаковщик приложений (MakeAppx.exe)](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)
 
  
 

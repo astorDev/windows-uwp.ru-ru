@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fe63c527-8f06-43a5-868f-de909f5664b3
 ms.localizationpriority: medium
-ms.openlocfilehash: aff65e5f1b4771cbb33bc8b8219224042b7bf7e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 27810fb850a54b70e620f06ea033b7c362792bfc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660689"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372962"
 ---
 # <a name="whats-new-for-developers-in-the-latest-update-of-uwp-on-xbox-one"></a>Новые возможности последнего обновления UWP на Xbox One для разработчиков
 
@@ -21,7 +21,7 @@ ms.locfileid: "57660689"
 Xbox больше не поддерживает разработку приложений x86 или их отправку в магазин.
 
 ## <a name="apps-can-now-support-navigating-back-to-the-previous-app"></a>Приложения теперь поддерживают переход к предыдущему приложению 
-Приложения UWP на Xbox One теперь поддерживают переход к предыдущему приложению. Для этого подпишитесь на событие [**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893595) и установите для свойства **Handled** значение **false** в обработчике событий.
+Приложения UWP на Xbox One теперь поддерживают переход к предыдущему приложению. Для этого подпишитесь на событие [**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager) и установите для свойства **Handled** значение **false** в обработчике событий.
 
 > [!NOTE]
 > Для обеспечения совместимости эта функция доступна только в приложениях, созданных с помощью самого последнего выпуска UWP на Xbox One. 

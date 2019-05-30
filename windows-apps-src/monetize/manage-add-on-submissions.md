@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправки надстроек, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: d3bf92e308d42b9dd93539ebbe44525067f23b6f
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e6e75483ca6c01958a4b8bda2c5c3bb60e764eff
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335132"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372484"
 ---
 # <a name="manage-add-on-submissions"></a>Управление отправками надстроек
 
@@ -94,7 +94,7 @@ API отправки в Microsoft Store предоставляет методы,
     > [!NOTE]
     > URI SAS предоставляет доступ к защищенному ресурсу в хранилище Azure без необходимости в использовании ключей учетной записи. Справочные сведения о URI SAS и их использования с хранилищем BLOB-объектов Azure, см. в разделе [Shared Access Signatures, Part 1: Общие сведения о модели SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) и [Shared Access Signatures, Part 2: Создание и использование SAS в хранилище BLOB-объектов](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
-4. При добавлении новых значков для отправки [подготовьте значки](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon) и добавьте их в ZIP-архив.
+4. При добавлении новых значков для отправки [подготовьте значки](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions) и добавьте их в ZIP-архив.
 
 5. Обновите данные [отправки надстройки](#add-on-submission-object), внеся все необходимые для новой отправки изменения, затем выполните следующий метод для обновления отправки. Дополнительные сведения см. в разделе [Обновление отправки надстройки](update-an-add-on-submission.md).
 
@@ -110,7 +110,7 @@ API отправки в Microsoft Store предоставляет методы,
     * [Пакет SDK для Java хранилища Azure](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-    В следующем фрагменте кода на C# показано, как передать ZIP-архив в хранилище BLOB-объектов Azure с помощью класса [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) клиентской библиотеки службы хранилища Azure для .NET. В этом примере кода предполагается, что ZIP-архив уже был записан в потоковый объект.
+    В следующем фрагменте кода на C# показано, как передать ZIP-архив в хранилище BLOB-объектов Azure с помощью класса [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob?redirectedfrom=MSDN) клиентской библиотеки службы хранилища Azure для .NET. В этом примере кода предполагается, что ZIP-архив уже был записан в потоковый объект.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -276,9 +276,9 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Значение           | Тип    | Описание    |
 |-----------------|---------|------|
-|  marketSpecificPricings               |    Объект     |  Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на вашу надстройку для определенных рынков](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices). Любые элементы этого словаря переопределяют базовую цену, заданную значением *priceId* для указанного рынка.     |     
+|  marketSpecificPricings               |    Объект     |  Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на вашу надстройку для определенных рынков](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability). Любые элементы этого словаря переопределяют базовую цену, заданную значением *priceId* для указанного рынка.     |     
 |  sales               |   Массив      |  **Не рекомендуется**. Массив [ресурсов продажи](#sale-object), содержащих сведения о продажах для надстройки.     |     
-|  priceId               |   строка      |  [Ценовая категория](#price-tiers), указывающая [базовую цену](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price) для надстройки.    |    
+|  priceId               |   строка      |  [Ценовая категория](#price-tiers), указывающая [базовую цену](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability) для надстройки.    |    
 |  isAdvancedPricingModel               |   Логический      |  Если **true**, ваша учетная запись разработчика имеет доступ к расширенному набору ценовых категорий от 0,99 долл. США до 1999,99 долл. США. Если **false**, ваша учетная запись разработчика имеет доступ к стандартному набору ценовых категорий от 0,99 долл. США до 999,99 долл. США. Дополнительные сведения о разных категориях см. в разделе [Ценовые категории](#price-tiers).<br/><br/>**Примечание**.&nbsp;&nbsp;Данное поле предназначено только для чтения.   |
 
 
@@ -301,7 +301,7 @@ API отправки в Microsoft Store предоставляет методы,
 |  basePriceId               |   строка      |  [Ценовая категория](#price-tiers), используемая для базовой цены продажи.    |     
 |  startDate               |   строка      |   Дата начала для продажи в формате ISO 8601.  |     
 |  endDate               |   строка      |  Дата окончания для продажи в формате ISO 8601.      |     
-|  marketSpecificPricings               |   Объект      |   Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на вашу надстройку для определенных рынков](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-pricess). Любые элементы этого словаря переопределяют базовую цену, заданную значением *basePriceId* для указанного рынка.    |
+|  marketSpecificPricings               |   Объект      |   Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на вашу надстройку для определенных рынков](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability). Любые элементы этого словаря переопределяют базовую цену, заданную значением *basePriceId* для указанного рынка.    |
 
 <span id="status-details-object" />
 
@@ -352,7 +352,7 @@ API отправки в Microsoft Store предоставляет методы,
 |  Base               |   Ценовая категория не задана; используется базовая цена для надстройки.      |     
 |  NotAvailable              |   Надстройка недоступна в указанном регионе.    |     
 |  Free              |   Настройка бесплатна.    |    
-|  Tier*xxxx*               |   Строка, указывающая ценовую категорию надстройки в формате **Tier<em>xxxx</em>**. В настоящее время поддерживаются следующие ценовые категории.<br/><br/><ul><li>Если значение *isAdvancedPricingModel*[ценового ресурса](#pricing-object) — **true**, для вашей учетной записи доступны такие ценовые категории: **Tier1012** - **Tier1424**.</li><li>Если значение *isAdvancedPricingModel*[ценового ресурса](#pricing-object) — **false**, для вашей учетной записи доступны такие ценовые категории: **Tier2** - **Tier96**.</li></ul>Для просмотра полной таблице уровней цены, доступные для вашей учетной записи разработчика, включая местные цены, которые связаны с каждого уровня, перейдите к **цены и доступность** страницы для любого приложения отправки в Partner Center и нажмите кнопку **Просмотр таблицы** ссылку в **рынки и пользовательские цены** раздел (для некоторых учетных записей разработчиков ссылка имеется в **цены** раздел).     |
+|  Tier*xxxx*               |   Строка, указывающая ценовую категорию надстройки в формате **Tier<em>xxxx</em>** . В настоящее время поддерживаются следующие ценовые категории.<br/><br/><ul><li>Если значение *isAdvancedPricingModel*[ценового ресурса](#pricing-object) — **true**, для вашей учетной записи доступны такие ценовые категории: **Tier1012** - **Tier1424**.</li><li>Если значение *isAdvancedPricingModel*[ценового ресурса](#pricing-object) — **false**, для вашей учетной записи доступны такие ценовые категории: **Tier2** - **Tier96**.</li></ul>Для просмотра полной таблице уровней цены, доступные для вашей учетной записи разработчика, включая местные цены, которые связаны с каждого уровня, перейдите к **цены и доступность** страницы для любого приложения отправки в Partner Center и нажмите кнопку **Просмотр таблицы** ссылку в **рынки и пользовательские цены** раздел (для некоторых учетных записей разработчиков ссылка имеется в **цены** раздел).     |
 
 <span id="submission-status-code" />
 
@@ -383,4 +383,4 @@ API отправки в Microsoft Store предоставляет методы,
 
 * [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Управление надстройками с помощью API отправки Microsoft Store](manage-add-ons.md)
-* [Отправка надстройки в центре партнеров](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)
+* [Отправка надстройки в центре партнеров](https://docs.microsoft.com/windows/uwp/publish/iap-submissions)

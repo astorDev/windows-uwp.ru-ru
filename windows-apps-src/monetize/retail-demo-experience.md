@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp, приложение для демонстрации в розничных магазинах
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b1323f048c1b420a2cf0b239cd9f1a9fb63ff7
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 4c9f31da8e2509c41715a13fbc0bb0322782340a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334882"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366524"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>Добавление функции demo (RDX) розничной торговли в приложение
 
@@ -45,11 +45,11 @@ ms.locfileid: "58334882"
 
 RDX с поддержкой приложений, не соответствующий требованиям этих важных удаляется со всех устройств Демонстрация розничной торговли — как можно скорее.
 
-* **Больше не спрашивать персональных данных (PII)**. Сюда входят сведения о входе, сведения учетной записи Майкрософт или обратитесь в службу сведения.
+* **Больше не спрашивать персональных данных (PII)** . Сюда входят сведения о входе, сведения учетной записи Майкрософт или обратитесь в службу сведения.
 
 * **Возможность работы без ошибок**. Ваше приложение должно работать без ошибок. Кроме того, на демонстрационных устройствах не должны выводиться никакие всплывающие или иные уведомления об ошибках. Ошибки отрицательно отражения в приложении, сам, свой бренд, торговой марки устройства, изготовителя устройства и корпорации Майкрософт марки.
 
-* **Платные приложения должен иметь режим пробной версии**. Приложение либо должно быть бесплатной или включать [режиме пробной версии](https://msdn.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app). Покупатели вряд ли захотят оплачивать работу с приложением в магазине.
+* **Платные приложения должен иметь режим пробной версии**. Приложение либо должно быть бесплатной или включать [режиме пробной версии](https://docs.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app). Покупатели вряд ли захотят оплачивать работу с приложением в магазине.
 
 ### <a name="high-priority-requirements"></a>Требования к высоким приоритетом
 
@@ -359,7 +359,7 @@ namespace MyCompany.MyApp
 
 ## <a name="related-links"></a>Связанные ссылки
 
-* [Store и извлечения данных приложения](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [Как создать и использовать службу приложений](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-* [Локализация содержимого приложения](https://msdn.microsoft.com/windows/uwp/globalizing/globalizing-portal)
+* [Store и извлечения данных приложения](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [Как создать и использовать службу приложений](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [Локализация содержимого приложения](https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal)
 * [Демонстрация розничной торговли (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)

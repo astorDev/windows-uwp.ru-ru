@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание отправки приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 5563b8281a713b57f98c48ae04153b19062f2f12
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e899b203a21f8c29c9c95973871881cc618b5d55
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334942"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371223"
 ---
 # <a name="create-an-app-submission"></a>Создание отправки приложения
 
@@ -25,7 +25,7 @@ ms.locfileid: "58334942"
 
 * Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
 * [Получите маркер доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), который будет использоваться в заголовке запроса этого метода. После получения токена доступа у вас будет 60 минут, чтобы использовать его до окончания его срока действия. После истечения срока действия токена можно получить новый токен.
-* Убедитесь, что приложение уже содержит не менее одной отправки, для которой указаны сведения [возрастной категории](https://msdn.microsoft.com/windows/uwp/publish/age-ratings).
+* Убедитесь, что приложение уже содержит не менее одной отправки, для которой указаны сведения [возрастной категории](https://docs.microsoft.com/windows/uwp/publish/age-ratings).
 
 ## <a name="request"></a>Запрос
 
@@ -45,7 +45,7 @@ ms.locfileid: "58334942"
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | строка | Обязательный. Код продукта в Магазине для приложения, для которого необходимо создать отправку. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | строка | Обязательный. Код продукта в Магазине для приложения, для которого необходимо создать отправку. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 
 ### <a name="request-body"></a>Тело запроса
 

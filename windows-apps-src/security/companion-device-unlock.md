@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, security
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: fb1ff6431b3ccf609b7362db819569c2f6cebc48
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ddadde2502e8512ba38dc30c6ac24d22631d62c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657019"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372647"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Разблокировка Windows с помощью устройств-компаньонов (IoT) для Windows Hello
 
@@ -50,7 +50,7 @@ ms.locfileid: "57657019"
 
 Условия успешной интеграции с платформой сопутствующих устройств для Windows Hello:
 
-- Наличие приложения [универсальной платформы Windows (UWP)](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) для устройства-компаньона Windows Hello, скачанного из Магазина приложений для Windows. 
+- Наличие приложения [универсальной платформы Windows (UWP)](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) для устройства-компаньона Windows Hello, скачанного из Магазина приложений для Windows. 
 - Возможность создать два 256-битных ключа HMAC на устройстве-компаньоне Windows Hello и сформировать код HMAC с его помощью (с использованием алгоритма SHA-256).
 - Верно настроенные параметры безопасности на настольном компьютере с Windows 10. Этот PIN-код потребуется службе проверки подлинности устройств-компаньонов, чтобы выполнить настройку, прежде чем к ней будет подключено устройство-компаньон Windows Hello. Пользователям необходимо задать PIN-код в разделе "Параметры" > "Учетные записи" > "Параметры входа".
 
@@ -346,7 +346,7 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Проверка подлинности
 
 Проверка подлинности требует двух вызовов API к службе проверки подлинности помощник по поиску: StartAuthenticationAsync и FinishAuthencationAsync.
 

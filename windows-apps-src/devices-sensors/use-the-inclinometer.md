@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd617c3c08cdcb7815010648c6036a5f39ee3ab
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 15ea49ea0e8e334158000248caf26f662ee5bd35
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623809"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369647"
 ---
 # <a name="use-the-inclinometer"></a>Использование инклинометра
 
 
 **Важные API**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**инклинометра**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**инклинометра**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)
 
 **Пример**
 
@@ -29,7 +29,7 @@ ms.locfileid: "57623809"
 
 В некоторых трехмерных играх инклинометр используется в качестве устройства ввода. Простой пример — авиационный тренажер, в котором три оси инклинометра (X, Y и Z) сопоставлены командам управления рулем высоты, элероном и рулем направления самолета.
 
- ## <a name="prerequisites"></a>Предварительные условия
+ ## <a name="prerequisites"></a>предварительные требования
 
 Вы должны быть знакомы с расширяемого приложения разметки языка (XAML), Microsoft Visual C#и события.
 
@@ -41,7 +41,7 @@ ms.locfileid: "57623809"
 
 ###  <a name="instructions"></a>Инструкция
 
--   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
+-   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#** .
 
 -   Откройте файл проекта MainPage.xaml.cs и замените существующий код следующим.
 

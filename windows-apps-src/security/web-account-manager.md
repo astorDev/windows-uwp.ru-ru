@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, security
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: a0a16ac9a2d810f7f4cbe2be403713b5cec4997b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f20179b03461f2b7746cc6d0f4330bbf45c10427
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641029"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371957"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
@@ -76,7 +76,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 Панель пуста, поскольку система предоставляет лишь оболочку пользовательского интерфейса, — разработчику необходимо программно добавить в панель поставщиков удостоверений. 
 
 > [!TIP]
-> При необходимости можно использовать **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** вместо  **[Показать](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**, возвращающий  **[ IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**, чтобы запросить состояние операции. 
+> При необходимости можно использовать **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** вместо  **[Показать](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** , возвращающий  **[ IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** , чтобы запросить состояние операции. 
 
 ## <a name="register-for-accountcommandsrequested"></a>Регистрация AccountCommandsRequested
 
@@ -174,7 +174,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 В этом примере мы передаем строку "wl.basic" параметру _scope_. Scope (область) представляет собой тип информации, которую вы запрашиваете у поставщика о конкретном пользователе. Некоторые области предоставляют доступ только к базовой информации пользователя, такой как имя и адрес электронной почты, в то время как другие области могут предоставлять доступ к конфиденциальной информации, например фотографиям пользователя или папке "Входящие". Как правило, приложение должно использовать область с минимальными разрешениями для реализации своих функций. Поставщики услуг предоставляют документацию, описывающую области, которые необходимо указать для получения токенов, используемых соответствующими службами. 
 
-* Сведения об областях Office 365 и Outlook.com см.в разделе [Аутентификация API Office 365 и Outlook.com с использованием конечной точки аутентификации версии 2.0](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2). 
+* Сведения об областях Office 365 и Outlook.com см.в разделе [Аутентификация API Office 365 и Outlook.com с использованием конечной точки аутентификации версии 2.0](https://developer.microsoft.com/graph/docs/concepts/auth_overview). 
 * Сведения об областях OneDrive см. в разделе [Аутентификация OneDrive и вход в систему](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]
@@ -214,7 +214,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 > [!NOTE]
 > Если вы получаете ошибку при запросе маркера, убедитесь, что ваше приложение связано со Store, как описано в шаге 1. Ваше приложение не сможет получить маркер, если вы пропустили этот шаг. 
 
-После получения маркера можно использовать его для вызова API вашего поставщика. В следующем коде мы вызываем [API Microsoft Live информации о пользователе](https://msdn.microsoft.com/library/hh826533.aspx), чтобы получить основную информацию о пользователе и отобразить ее в пользовательском интерфейсе. Обратите внимание, что в большинстве случаев рекомендуется хранить полученный однажды токен и использовать его в отдельном методе.
+После получения маркера можно использовать его для вызова API вашего поставщика. В следующем коде мы вызываем [API Microsoft Live информации о пользователе](https://docs.microsoft.com/office/), чтобы получить основную информацию о пользователе и отобразить ее в пользовательском интерфейсе. Обратите внимание, что в большинстве случаев рекомендуется хранить полученный однажды токен и использовать его в отдельном методе.
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -250,7 +250,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 Маркеры полезны для мгновенного получения сведений о пользователе, но как правило имеют различный срок действия. Маркеры учетной записи Майкрософт, например, действительны в течение всего нескольких часов. К счастью, повторно отображать **AccountsSettingsPane** каждый раз, когда истекает срок действия маркера, не требуется. Пользователю достаточно разрешить доступ вашему приложению лишь однажды, после чего вы сможете хранить сведения об учетной записи для последующего использования. 
 
-Для этого используйте класс **[WebAccount](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount)**. Класс **WebAccount** возвращается тем же методом, который используется для запроса токена:
+Для этого используйте класс **[WebAccount](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount)** . Класс **WebAccount** возвращается тем же методом, который используется для запроса токена:
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -398,7 +398,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 На AccountsSettingsPane можно добавлять пользовательские команды, которые отображаются в виде ссылок под списком поддерживаемых WebAccountProviders. Пользовательские команды прекрасно подходят для выполнения простых задач, связанных с учетной записью пользователя, таких как отображение политики конфиденциальности или переход на страницу поддержки пользователей, столкнувшихся с проблемами. 
 
-Пример: 
+Ниже приведен пример: 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -422,11 +422,11 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 ## <a name="see-also"></a>См. также
 
-[Пространство имен Windows.Security.Authentication.Web.Core](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.core.aspx)
+[Пространство имен Windows.Security.Authentication.Web.Core](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 
-[Пространство имен Windows.Security.Credentials](https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.aspx)
+[Пространство имен Windows.Security.Credentials](https://docs.microsoft.com/uwp/api/windows.security.credentials)
 
-[Класс AccountsSettingsPane](https://msdn.microsoft.com/library/windows/apps/windows.ui.applicationsettings.accountssettingspane)
+[Класс AccountsSettingsPane](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane)
 
 [Брокер веб-аутентификации](web-authentication-broker.md)
 

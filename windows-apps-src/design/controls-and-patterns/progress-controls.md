@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a162d992390e8fc7d05d52303ec292fcf8e920a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a409c4b940ad0e194428981f536823d880e56302
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634429"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364491"
 ---
 # <a name="progress-controls"></a>Элементы управления «Ход выполнения»
 
@@ -25,7 +25,7 @@ ms.locfileid: "57634429"
 
 Элемент управления "Ход выполнения" служит для уведомления пользователя о том, что выполняется длительная операция. Это может означать, что пользователь не сможет взаимодействовать с приложением, когда индикатор выполнения отображается. Также в зависимости от того, какой индикатор используется, он может отображать время ожидания.
 
-> **Важные API**: [Класс элемента управления ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx), [свойство IsIndeterminate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx), [класс ProgressRing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx), [свойство IsActive](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+> **Важные API**: [Класс элемента управления ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [свойство IsIndeterminate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [класс ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [свойство IsActive](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 ## <a name="types-of-progress"></a>Типы хода выполнения
 
@@ -187,9 +187,9 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [Класс элемента управления ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529)
-- [Класс ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538)
+- [Класс элемента управления ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
+- [Класс ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
 
 **Разработчикам (XAML)**
-- [Добавление элементов управления хода выполнения](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
+- [Добавление элементов управления хода выполнения](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
 - [Создание пользовательских Неопределенный индикатор для Windows Phone](https://go.microsoft.com/fwlink/p/?LinkID=392426)

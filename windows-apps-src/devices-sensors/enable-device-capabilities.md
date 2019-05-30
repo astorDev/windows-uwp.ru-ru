@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e1a2884cd3db458685ebdd393c31aed88ee36a35
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cd8c493333c2c35dee5ead064f9d002701cc1148
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590909"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370222"
 ---
 # <a name="enable-device-capabilities"></a>Включение возможностей устройств
 
@@ -22,23 +22,23 @@ ms.locfileid: "57590909"
 ## <a name="specify-the-device-capabilities-your-app-will-use"></a>Указание возможностей устройств, которые будет использовать приложение
 
 
-Приложения для Windows требуют, чтобы в манифесте пакета приложения было указано, что используются определенные типы устройств. Большинство возможностей можно объявить в Visual Studio с помощью [конструктора манифеста](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx) или добавить вручную, как описано в разделе об [определении возможностей устройств в манифесте пакета вручную](https://msdn.microsoft.com/library/windows/apps/Dn263092). В этом учебнике предполагается, что вы пользуетесь конструктором манифеста.
+Приложения для Windows требуют, чтобы в манифесте пакета приложения было указано, что используются определенные типы устройств. Большинство возможностей можно объявить в Visual Studio с помощью [конструктора манифеста](https://docs.microsoft.com/previous-versions/br230259(v=vs.140)) или добавить вручную, как описано в разделе об [определении возможностей устройств в манифесте пакета вручную](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest). В этом учебнике предполагается, что вы пользуетесь конструктором манифеста.
 
 **Примечание**    некоторых типов устройств, таких как принтеры, сканеры и датчиков, нет необходимости объявлять в манифест пакета приложения.
 
 -   Дважды щелкните файл манифеста пакета **Package.appxmanifest** в обозревателе решений Visual Studio.
 -   Откройте вкладку **Возможности**.
--   Выберите возможности устройств, используемые вашим приложением. Если в конструкторе манифестов нет нужной возможности, добавьте ее вручную. Дополнительные сведения см. в статье [Определение возможностей устройств в манифесте пакета](https://msdn.microsoft.com/library/windows/apps/Dn263092).
+-   Выберите возможности устройств, используемые вашим приложением. Если в конструкторе манифестов нет нужной возможности, добавьте ее вручную. Дополнительные сведения см. в статье [Определение возможностей устройств в манифесте пакета](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest).
 
 | Возможность устройства | Конструктор манифестов | Описание |
 |-------------------|-------------------|-------------|    
-| AllJoyn | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Все приложения и устройства с поддержкой Joyn в сети смогут обнаруживать и взаимодействовать друг с другом. Все приложения, имеющие доступ к API в пространстве имен [**Windows.Devices.AllJoyn**](https://msdn.microsoft.com/library/windows/apps/Dn894971), должны использовать эту возможность. |
+| AllJoyn | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Все приложения и устройства с поддержкой Joyn в сети смогут обнаруживать и взаимодействовать друг с другом. Все приложения, имеющие доступ к API в пространстве имен [**Windows.Devices.AllJoyn**](https://docs.microsoft.com/uwp/api/Windows.Devices.AllJoyn), должны использовать эту возможность. |
 | Блокированные сообщения чата | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложение сможет читать сообщения SMS и MMS, заблокированные приложением-фильтром спама. |
 | Доступ к сообщениям чата | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложение сможет читать и удалять текстовые сообщения. Приложения также смогут хранить сообщения чата в хранилище системных данных. |
 | Создание кода | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложение сможет динамически создавать код. |
 | Корпоративная проверка подлинности | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Эта возможность зависит от политики Microsoft Store. Приложение сможет подключаться к ресурсам корпоративной интрасети, для доступа к которым требуются учетные данные домена. Обычно большинству приложений не нужна эта возможность. | 
 | Интернет (клиент) | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложения получат исходящий доступ к Интернету и сетям в общественных местах, например аэропортах и кафе. Например, к интрасетям, которые пользователь определил как общедоступные. Эту возможность следует использовать для большинства приложений, которым требуется доступ к Интернету. |
-| Интернет (клиент и сервер) | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложения получат входящий и исходящий доступ к Интернету и сетям в общественных местах, например аэропортах и кафе. Это расширенный вариант возможности **Интернет (клиент)**. Когда эта возможность включена, использование возможности **Интернет (клиент)** не требуется. Входящий доступ к критическим портам всегда блокируется. |
+| Интернет (клиент и сервер) | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложения получат входящий и исходящий доступ к Интернету и сетям в общественных местах, например аэропортах и кафе. Это расширенный вариант возможности **Интернет (клиент)** . Когда эта возможность включена, использование возможности **Интернет (клиент)** не требуется. Входящий доступ к критическим портам всегда блокируется. |
 | Location| ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложение получит доступ к текущему местоположению. Определяется специальным оборудованием (например, датчиком GPS в компьютере) или на основе сведений о доступных сетях. | 
 | Микрофон | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Предоставляет доступ к звуковому каналу микрофона. Это позволяет приложению вести запись с подключенных микрофонов. | 
 | Библиотека музыки | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложение сможет добавлять, изменять и удалять файлы в **библиотеке музыки** на локальном компьютере и компьютерах **домашней группы**. | 
@@ -50,14 +50,14 @@ ms.locfileid: "57590909"
 | Близкое взаимодействие | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Предоставляет возможность подключения устройств бесконтактного взаимодействия к компьютеру с помощью радиочастотной связи ближнего действия (NFC). Бесконтактное взаимодействие может использоваться для отправки файлов или связи с приложением на устройстве поблизости. | 
 | Съемные носители | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложение сможет добавлять, изменять и удалять файлы на съемных запоминающих устройствах. Приложение получит доступ только к тем типам файлов на съемном носителе, которые определены в манифесте с помощью объявления **Сопоставление типов файлов**. Приложение не получит доступ к съемным носителям на компьютерах **домашней группы**. | 
 | Совместные сертификаты пользователя | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Эта возможность зависит от политики Microsoft Store. Приложение получит доступ к сертификатам программного обеспечения и оборудования, например сертификатам смарт-карт, для проверки удостоверения пользователя. При вызове связанных API во время выполнения пользователь должен выполнить определенное действие (вставить карту, выбрать сертификат и т. д.). Эта возможность не требуется, если приложение включает закрытый сертификат через объявление сертификатов **Certificates**. | 
-| Сведения об учетной записи пользователя | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложение получит доступ к имени и изображению пользователя. Эта возможность требуется для доступа к некоторым API в пространстве имен [**Windows.System.UserProfile**](https://msdn.microsoft.com/library/windows/apps/BR241881). | 
+| Сведения об учетной записи пользователя | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложение получит доступ к имени и изображению пользователя. Эта возможность требуется для доступа к некоторым API в пространстве имен [**Windows.System.UserProfile**](https://docs.microsoft.com/uwp/api/Windows.System.UserProfile). | 
 | Библиотека видео | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложение сможет добавлять, изменять и удалять файлы в **библиотеке видео** на локальном компьютере и компьютерах **домашней группы**. | 
-| Звонки VOIP | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Предоставляет приложениям доступ к вызову API по протоколу VoIP в пространстве имен [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266). | 
+| Звонки VOIP | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Предоставляет приложениям доступ к вызову API по протоколу VoIP в пространстве имен [**Windows.ApplicationModel.Calls**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Calls). | 
 | Webcam | ![Доступна в конструкторе манифестов](images/ap-tools.png) | Приложение получит доступ к встроенной камере или видеопотоку подключенной веб-камеры. Это позволяет приложению записывать моментальные снимки и видеоролики. | 
 | USB | | Предоставляет доступ к пользовательским USB-устройствам. Для этой возможности необходимы дочерние элементы. Эта возможность не поддерживается в Windows Phone. | 
-| Устройство HID | | Предоставляет доступ к устройствам HID. Для этой возможности необходимы дочерние элементы. Подробнее: [Определение возможностей устройств для HID](https://msdn.microsoft.com/library/windows/apps/Dn263091). | 
-| Bluetooth GATT | | Предоставляет доступ к устройствам Bluetooth с низким энергопотреблением посредством набора основных служб, а также характеристик и дескрипторов. Для этой возможности необходимы дочерние элементы. Подробнее: [Определение возможностей устройств для Bluetooth](https://msdn.microsoft.com/library/windows/apps/Dn263090). | 
-| Bluetooth RFCOMM |  | Предоставляет доступ к API, поддерживающим транспорт BR/EDR, а также позволяет приложению UWP пользоваться устройством, в котором реализован профиль SPP. Для этой возможности необходимы дочерние элементы. Подробнее: [Определение возможностей устройств для Bluetooth](https://msdn.microsoft.com/library/windows/apps/Dn263090). |
+| Устройство HID | | Предоставляет доступ к устройствам HID. Для этой возможности необходимы дочерние элементы. Подробнее: [Определение возможностей устройств для HID](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-hid). | 
+| Bluetooth GATT | | Предоставляет доступ к устройствам Bluetooth с низким энергопотреблением посредством набора основных служб, а также характеристик и дескрипторов. Для этой возможности необходимы дочерние элементы. Подробнее: [Определение возможностей устройств для Bluetooth](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-bluetooth). | 
+| Bluetooth RFCOMM |  | Предоставляет доступ к API, поддерживающим транспорт BR/EDR, а также позволяет приложению UWP пользоваться устройством, в котором реализован профиль SPP. Для этой возможности необходимы дочерние элементы. Подробнее: [Определение возможностей устройств для Bluetooth](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-bluetooth). |
 
 ## <a name="use-the-windows-runtime-api-for-communicating-with-your-device"></a>Используйте API среды выполнения Windows для связи со своим устройством
 
@@ -65,15 +65,15 @@ ms.locfileid: "57590909"
 
 | Возможность устройства        | API             | 
 |--------------------------|-----------------|
-| AllJoyn                  | [**Windows.Devices.AllJoyn**](https://msdn.microsoft.com/library/windows/apps/Dn894971) | 
-| Блокированные сообщения чата    | [**Windows.ApplicationModel.CommunicationBlocking**](https://msdn.microsoft.com/library/windows/apps/Dn974207) | 
-| Location                 | Дополнительные сведения об этом см. в статье [Обзор карт и местоположения](https://msdn.microsoft.com/library/windows/apps/Mt219699). | 
-| Телефонный звонок               | [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) | 
-| Сведения об учетной записи пользователя | [**Windows.System.UserProfile**](https://msdn.microsoft.com/library/windows/apps/BR241881) | 
-| Звонки VOIP             | [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) | 
-| USB                      | [**Windows.Devices.Usb**](https://msdn.microsoft.com/library/windows/apps/Dn278466) | 
-| HID                      | [**Windows.Devices.HumanInterfaceDevice**](https://msdn.microsoft.com/library/windows/apps/Dn264174) | 
-| Bluetooth GATT           | [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) | 
-| Bluetooth RFCOMM         | [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) | 
-| POS-терминал         | [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) |
+| AllJoyn                  | [**Windows.Devices.AllJoyn**](https://docs.microsoft.com/uwp/api/Windows.Devices.AllJoyn) | 
+| Блокированные сообщения чата    | [**Windows.ApplicationModel.CommunicationBlocking**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.CommunicationBlocking) | 
+| Location                 | Дополнительные сведения об этом см. в статье [Обзор карт и местоположения](https://docs.microsoft.com/windows/uwp/maps-and-location/index). | 
+| Телефонный звонок               | [**Windows.ApplicationModel.Calls**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Calls) | 
+| Сведения об учетной записи пользователя | [**Windows.System.UserProfile**](https://docs.microsoft.com/uwp/api/Windows.System.UserProfile) | 
+| Звонки VOIP             | [**Windows.ApplicationModel.Calls**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Calls) | 
+| USB                      | [**Windows.Devices.Usb**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb) | 
+| HID                      | [**Windows.Devices.HumanInterfaceDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.HumanInterfaceDevice) | 
+| Bluetooth GATT           | [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) | 
+| Bluetooth RFCOMM         | [**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm) | 
+| POS-терминал         | [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) |
 

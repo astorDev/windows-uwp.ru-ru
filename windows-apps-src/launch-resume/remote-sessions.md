@@ -6,12 +6,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: устройства Windows 10, универсальной платформы Windows, подключенных удаленных систем, Рим, рим проекта
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd23603df1f1c3fac151da2aea2f8435b3ee423
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4787b6c14408dc8ee35e26764caafc5b6e7fbdc9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633419"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371878"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>Подключение устройств с помощью удаленных сеансов
 
@@ -57,7 +57,7 @@ using Windows.System.RemoteSystems;
 
 ## <a name="create-a-remote-session"></a>Создание удаленного сеанса
 
-Для создания экземпляра удаленного сеанса необходимо начать с объекта **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)**. Используйте следующую платформу для создания нового сеанса и обработки запросов на присоединение от других устройств.
+Для создания экземпляра удаленного сеанса необходимо начать с объекта **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** . Используйте следующую платформу для создания нового сеанса и обработки запросов на присоединение от других устройств.
 
 ```csharp
 public async void CreateSession() {
@@ -107,7 +107,7 @@ public async void CreateSession() {
 
 Если требуется исключить общедоступное обнаружение удаленного сеанса, его можно сделать доступным только по приглашению. Только устройства, получившие приглашение, смогут отправлять запросы на присоединение. 
 
-Эта процедура практически идентична указанной выше, но при создании экземпляра **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** следует передать настроенный объект **[RemoteSystemSessionOptions](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.RemoteSystemSessionOptions)**.
+Эта процедура практически идентична указанной выше, но при создании экземпляра **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** следует передать настроенный объект **[RemoteSystemSessionOptions](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.RemoteSystemSessionOptions)** .
 
 ```csharp
 // define the session options with the invite-only designation
@@ -156,7 +156,7 @@ public void DiscoverSessions() {
 }
 ```
 
-При получении экземпляра **[RemoteSystemSessionInfo](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioninfo)** его можно использовать, чтобы отправить устройству, управляющему соответствующим сеансом, запрос на присоединение. Принятый запрос на присоединение асинхронно вернет объект **[RemoteSystemSessionJoinResult](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionjoinresult)**, содержащий ссылку на соответствующий сеанс.
+При получении экземпляра **[RemoteSystemSessionInfo](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioninfo)** его можно использовать, чтобы отправить устройству, управляющему соответствующим сеансом, запрос на присоединение. Принятый запрос на присоединение асинхронно вернет объект **[RemoteSystemSessionJoinResult](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionjoinresult)** , содержащий ссылку на соответствующий сеанс.
 
 ```csharp
 public async void JoinSession(RemoteSystemSessionInfo sessionInfo) {
@@ -189,13 +189,13 @@ public async void JoinSession(RemoteSystemSessionInfo sessionInfo) {
 }
 ```
 
-Устройство может присоединиться к нескольким сеансам одновременно. По этой причине следует отделить функции присоединения от фактического взаимодействия с каждым сеансом. Если в приложении есть ссылка на экземпляр **[RemoteSystemSession](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession)**, через этот сеанс можно обмениваться данными.
+Устройство может присоединиться к нескольким сеансам одновременно. По этой причине следует отделить функции присоединения от фактического взаимодействия с каждым сеансом. Если в приложении есть ссылка на экземпляр **[RemoteSystemSession](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession)** , через этот сеанс можно обмениваться данными.
 
 ## <a name="share-messages-and-data-through-a-remote-session"></a>Обмен сообщениями и данными через удаленный сеанс
 
 ### <a name="receive-messages"></a>Получение сообщений
 
-Обмениваться сообщениями и данными с другими участвующими в сеансе устройствами можно с помощью экземпляра **[RemoteSystemSessionMessageChannel](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)**, который представляет единый канал обмена данными для всего сеанса. Сразу после инициализации он начинает прослушивать входящие сообщения.
+Обмениваться сообщениями и данными с другими участвующими в сеансе устройствами можно с помощью экземпляра **[RemoteSystemSessionMessageChannel](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)** , который представляет единый канал обмена данными для всего сеанса. Сразу после инициализации он начинает прослушивать входящие сообщения.
 
 >[!NOTE]
 >При отправке и получении сообщения необходимо сериализовывать и десериализовывать из массивов байтов. Эти возможности включены в следующие примеры, но могут быть реализованы отдельно для дополнительной модульности кода. Пример такой реализации см. в [примере приложения](https://github.com/microsoft/Windows-appsample-remote-system-sessions)).
@@ -320,6 +320,6 @@ public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messa
 }
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [Подключенные приложения и устройства (рим проекта)](connected-apps-and-devices.md)
-* [Удаленный Справочник по API системы](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+* [Удаленный Справочник по API системы](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)

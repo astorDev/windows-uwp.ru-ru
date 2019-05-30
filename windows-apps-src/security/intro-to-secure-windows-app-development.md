@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c3c57653899ce7d849eec72ad36f14f7806652c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ee386199fbee7d2f9b839d6b1805c6181e4d70a9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606519"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371396"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>Введение в разработку безопасных приложений для Windows
 
@@ -81,17 +81,17 @@ ms.locfileid: "57606519"
 
 Пользователи получают полный контроль над своим удостоверением на этих платформах, но приложения с согласия пользователя могут запрашивать маркер у поставщика после того, как пользователь прошел проверку подлинности. Данный механизм может использоваться для авторизации пользователей, прошедших проверку подлинности.
 
-Брокер веб-проверки подлинности в Windows 10 предоставляет набор API и инфраструктуру, с помощью которых приложения могут использовать такие виды протоколов проверки подлинности и авторизации, как OAuth и OpenID. Приложения могут запускать операции проверки подлинности с помощью API [**WebAuthenticationBroker**](https://msdn.microsoft.com/library/windows/apps/br227025), получая в результате возврат [**WebAuthenticationResult**](https://msdn.microsoft.com/library/windows/apps/br227038). Обзор коммуникационного процесса представлен на следующем рисунке.
+Брокер веб-проверки подлинности в Windows 10 предоставляет набор API и инфраструктуру, с помощью которых приложения могут использовать такие виды протоколов проверки подлинности и авторизации, как OAuth и OpenID. Приложения могут запускать операции проверки подлинности с помощью API [**WebAuthenticationBroker**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker), получая в результате возврат [**WebAuthenticationResult**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationResult). Обзор коммуникационного процесса представлен на следующем рисунке.
 
 ![Процесс WAB](images/secure-wab.png)
 
-Приложение действует как брокер, начиная проверку подлинности с помощью поставщика удостоверений через [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) в приложении. После того как поставщик удостоверений провел проверку подлинности пользователя, он возвращает маркер в приложение, который можно использовать, чтобы запросить сведения о пользователе от поставщика удостоверений. В целях безопасности, приложение должно быть зарегистрировано у поставщика удостоверений, прежде чем оно сможет выступать посредником в процедурах проверки подлинности для поставщика удостоверений. Эти этапы регистрации отличаются в зависимости от поставщика.
+Приложение действует как брокер, начиная проверку подлинности с помощью поставщика удостоверений через [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) в приложении. После того как поставщик удостоверений провел проверку подлинности пользователя, он возвращает маркер в приложение, который можно использовать, чтобы запросить сведения о пользователе от поставщика удостоверений. В целях безопасности, приложение должно быть зарегистрировано у поставщика удостоверений, прежде чем оно сможет выступать посредником в процедурах проверки подлинности для поставщика удостоверений. Эти этапы регистрации отличаются в зависимости от поставщика.
 
-Вот общий процесс, используемый для вызова API [**WebAuthenticationBroker**](https://msdn.microsoft.com/library/windows/apps/br227025) для связи с поставщиком.
+Вот общий процесс, используемый для вызова API [**WebAuthenticationBroker**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) для связи с поставщиком.
 
 -   Создайте строки запроса, которые будут отправляться поставщику удостоверений. Количество строк и данные в каждой строке отличаются для каждой веб-службы, но обычно включают в себя две строки URI, в каждой из которых содержится URL-адрес: один – для запроса проверки подлинности, который необходимо отправить, а другой – для перенаправления пользователя после выполнения авторизации.
--   Передавая строки запроса, вызовите [**WebAuthenticationBroker.AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) и ожидайте ответа от поставщика удостоверений.
--   После получения ответа вызовите [**WebAuthenticationResult.ResponseStatus**](https://msdn.microsoft.com/library/windows/apps/br227041), чтобы получить информацию о состоянии.
+-   Передавая строки запроса, вызовите [**WebAuthenticationBroker.AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) и ожидайте ответа от поставщика удостоверений.
+-   После получения ответа вызовите [**WebAuthenticationResult.ResponseStatus**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationresult.responsestatus), чтобы получить информацию о состоянии.
 -   Если взаимодействие успешно, обработайте строку ответа, возвращенную поставщиком удостоверений. Если взаимодействие неуспешно, обработайте ошибку.
 
 Если взаимодействие успешно, обработайте строку ответа, возвращенную поставщиком удостоверений. Если взаимодействие неуспешно, обработайте ошибку.
@@ -175,7 +175,7 @@ Windows Hello — это не просто замена традиционных
 
 В собираемых вами сведениях о регистрации может содержаться значительно больше идентифицирующих данных, чем включено в этот простой сценарий. Например, если ваше приложение получает доступ к защищенной службе, в частности для банковских операций, вам необходимо будет запросить подтверждение личности и другие данные в контексте процесса регистрации. После выполнения всех условий, открытый ключ этого пользователя будет сохранен на внутреннем сервере и будет использоваться для проверки в следующий раз, когда пользователь будет использовать данную службу.
 
-Дополнительные сведения о Windows Hello см. в разделе [Руководство по Windows Hello](https://msdn.microsoft.com/library/mt589441) и [Руководство по Windows Hello для разработчиков](microsoft-passport.md).
+Дополнительные сведения о Windows Hello см. в разделе [Руководство по Windows Hello](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-passport-guide) и [Руководство по Windows Hello для разработчиков](microsoft-passport.md).
 
 ## <a name="3-data-in-flight-security-methods"></a>3. Методы безопасности для данных в процессе передачи
 
@@ -214,7 +214,7 @@ Windows Hello — это не просто замена традиционных
 
 Чтобы лучше контролировать логику проверки, для проверки сертификатов, возвращенных сервером в ответ на запрос HTTPS, доступны API. Учтите, что данный метод требует отправки и проверки ответа, поэтому убедитесь, что вы добавили это действие в качестве проверки до фактической отправки конфиденциальной информации в запросе.
 
-Следующий код C# иллюстрирует этот способ закрепления SSL. Метод **ValidateSSLRoot** использует класс [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) для выполнения HTTP-запроса. Когда клиент отправляет ответ, он использует коллекцию [**RequestMessage.TransportInformation.ServerIntermediateCertificates**](https://msdn.microsoft.com/library/windows/apps/dn279681), чтобы проверить сертификаты, возвращаемые сервером. Клиент может затем проверить всю цепочку сертификатов с отпечатками, которые он включил. Этот метод требует, чтобы отпечатки сертификатов были обновлены в приложении после того, как срок действия сертификата сервера истечет и будет возобновлен.
+Следующий код C# иллюстрирует этот способ закрепления SSL. Метод **ValidateSSLRoot** использует класс [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) для выполнения HTTP-запроса. Когда клиент отправляет ответ, он использует коллекцию [**RequestMessage.TransportInformation.ServerIntermediateCertificates**](https://docs.microsoft.com/uwp/api/windows.web.http.httptransportinformation.serverintermediatecertificates), чтобы проверить сертификаты, возвращаемые сервером. Клиент может затем проверить всю цепочку сертификатов с отпечатками, которые он включил. Этот метод требует, чтобы отпечатки сертификатов были обновлены в приложении после того, как срок действия сертификата сервера истечет и будет возобновлен.
 
 ```cs
 private async Task ValidateSSLRoot()
@@ -286,7 +286,7 @@ private bool ValidateCertificates(IReadOnlyList<Certificate> certs)
 
 Традиционно, у Windows никогда не было определения для приложения. Наиболее часто так называли исполняемый файл (.exe), но в определение никогда не входили установка, сохранение состояния, длина выполнения, управление версиями, интеграция операционной системы или взаимодействие между приложениями. Модель универсальной платформы Windows определяет модель приложения, в которую входят установка, среда выполнения, управление ресурсами, обновления, модель данных и удаление.
 
-Windows 10 приложения выполняются в контейнере, это означает, что они ограниченные привилегии по умолчанию (Дополнительные привилегии может запросить и от пользователя). Например, если приложению нужно получить доступ к файлам в системе, то должно использоваться средство выбора файлов из пространства имен [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928), чтобы разрешить пользователю выбрать файл (прямой доступ к файлам невозможен). Другой пример: если приложению необходимо получить доступ к данным о местоположении пользователя, ему следует объявить возможность определения местоположения устройства, предложив пользователю в момент скачивания, чтобы это приложение запрашивало доступ к данным о местоположении пользователя. Кроме этого, когда приложению необходимо получить доступ к данным о местоположении пользователя в первый раз, пользователю отобразится дополнительный запрос на продолжение с запросом на разрешение на доступ к данным.
+Windows 10 приложения выполняются в контейнере, это означает, что они ограниченные привилегии по умолчанию (Дополнительные привилегии может запросить и от пользователя). Например, если приложению нужно получить доступ к файлам в системе, то должно использоваться средство выбора файлов из пространства имен [**Windows.Storage.Pickers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers), чтобы разрешить пользователю выбрать файл (прямой доступ к файлам невозможен). Другой пример: если приложению необходимо получить доступ к данным о местоположении пользователя, ему следует объявить возможность определения местоположения устройства, предложив пользователю в момент скачивания, чтобы это приложение запрашивало доступ к данным о местоположении пользователя. Кроме этого, когда приложению необходимо получить доступ к данным о местоположении пользователя в первый раз, пользователю отобразится дополнительный запрос на продолжение с запросом на разрешение на доступ к данным.
 
 Обратите внимание, что данная модель приложений играет роль "тюрьмы" для приложений. Это означает, что к ним нельзя получить внешний доступ, но это не "замок", доступ к которому нельзя получить снаружи (приложения с правами администратора могут по-прежнему получать доступ изнутри). Device Guard в Windows 10, который позволяет огранизациям и ИТ-отделам определить, какие приложения (Win32) можно выполнять, может в дальнейшем помочь ограничить доступ.
 
@@ -301,14 +301,14 @@ Windows 10 приложения выполняются в контейнере, 
 
 Приложения для Windows, которые получают доступ к прошедшим проверку подлинности службам, нередко предоставляют пользователям возможность сохранять учетные данные на локальном устройстве. Это удобно для пользователей. После того, как они введут имя пользователя и пароль, приложение автоматически использует их при последующих запусках данного приложения. Так как это может стать проблемой безопасности, если злоумышленник получит доступ к этим хранящимся данным, Windows 10 предоставляет приложениям Windows возможность сохранять учетные данные пользователя в защищенном хранилище учетных данных. Приложение вызывает API хранилища учетных данных для хранения и извлечения учетных данных из хранилища, а не сохраняет их в контейнере хранилища приложения. Хранилище учетных данных управляется операционной системой, но такой доступ ограничен до приложения, которое хранит их, тем самым предоставляя безопасно управляемое решение для хранения учетных данных.
 
-Когда пользователь предоставляет учетные данные для хранения, приложение получает ссылку на хранилище учетных данных с помощью объекта [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) в пространстве имен [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089). Затем он создает объект [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061), содержащий идентификатор для приложения Windows, имя пользователя и пароль. Это передается методу [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231) для хранения учетных данных в хранилище. Это показано в следующем примере кода C#.
+Когда пользователь предоставляет учетные данные для хранения, приложение получает ссылку на хранилище учетных данных с помощью объекта [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) в пространстве имен [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials). Затем он создает объект [**PasswordCredential**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordCredential), содержащий идентификатор для приложения Windows, имя пользователя и пароль. Это передается методу [**PasswordVault.Add**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.add) для хранения учетных данных в хранилище. Это показано в следующем примере кода C#.
 
 ```cs
 var vault = new PasswordVault();
 vault.Add(new PasswordCredential("My App", username, password));
 ```
 
-В следующем примере кода C# приложение запрашивает все учетные данные, соответствующие приложению, вызвав метод [**FindAllByResource**](https://msdn.microsoft.com/library/windows/apps/br227083) объекта [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081). Если возвращается несколько результатов, он предлагает пользователю ввести имя пользователя. Если учетные данные не находятся в хранилище, приложение дает пользователю возможность их выбрать. После этого пользователь заходит на сервер с помощью учетных данных.
+В следующем примере кода C# приложение запрашивает все учетные данные, соответствующие приложению, вызвав метод [**FindAllByResource**](https://docs.microsoft.com/uwp/api/windows.security.credentials.passwordvault.findallbyresource) объекта [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault). Если возвращается несколько результатов, он предлагает пользователю ввести имя пользователя. Если учетные данные не находятся в хранилище, приложение дает пользователю возможность их выбрать. После этого пользователь заходит на сервер с помощью учетных данных.
 
 ```cs
 private string resourceName = "My App";
@@ -374,7 +374,7 @@ private PasswordCredential GetCredentialFromLocker()
 
 Единственным ответом на это является асимметричное шифрование, при котором используется пара открытых и закрытых ключей. Открытый ключ свободно раздается любому, кто желает зашифровать сообщение. Закрытый ключ всегда хранится в секрете, чтобы только вы могли его использовать для расшифровки данных. Распространенной технологией, позволяющей обнаруживать открытый ключ, является использование цифровых сертификатов, также называемых просто сертификаты. Сертификат содержит сведения об открытом ключе в дополнение к сведениям о пользователе или сервере (например, имени, издателе, адресе электронной почты и стране).
 
-Для реализации симметричного и ассиметричного шифрования в приложениях UWP разработчики приложений для Windows могут использовать классы [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) и [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478). Кроме того, класс [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) можно использовать для шифрования и расшифровки данных, подписи содержимого и проверки цифровых подписей. Приложения также могут использовать класс [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) в пространстве имен [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) для шифрования и расшифровки данных, хранящихся локально.
+Для реализации симметричного и ассиметричного шифрования в приложениях UWP разработчики приложений для Windows могут использовать классы [**SymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) и [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider). Кроме того, класс [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) можно использовать для шифрования и расшифровки данных, подписи содержимого и проверки цифровых подписей. Приложения также могут использовать класс [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) в пространстве имен [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) для шифрования и расшифровки данных, хранящихся локально.
 
 ## <a name="432-detecting-message-tampering-macs-hashes-and-signatures"></a>4.3.2 Выявление несанкционированных изменений сообщений (коды проверки подлинности сообщения (MAC), хэши и подписи)
 
@@ -390,14 +390,14 @@ MAC-коды позволяют проверить сообщения описа
 
 ![Подтверждение MAC](images/secure-macs.png)
 
-Приложения Windows могут реализовывать проверку сообщений с помощью MAC, вызывая класс [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) для создания ключа и класс [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) для выполнения алгоритма шифрования MAC.
+Приложения Windows могут реализовывать проверку сообщений с помощью MAC, вызывая класс [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) для создания ключа и класс [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) для выполнения алгоритма шифрования MAC.
 
 ## <a name="433-using-hashes"></a>4.3.3 Использование хэшей
 
 
 Функция хэширования — это криптографический алгоритм, который преобразовывает блок данных произвольной длины в двоичную строку фиксированной длины, называемую значением хэша. Существует целое семейство хэш-функций, которые могут выполнить это.
 
-Значение хэша можно использовать вместо кода MAC в сценарии передачи сообщений, описанном выше. Отправитель отправляет значение хэша и сообщение, а получатель наследует собственное значение хэша из значения хэша и сообщения отправителя и сравнивает оба значения хэша. Приложения, работающие в Windows 10, могут вызывать класс [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) для перечисления доступных алгоритмов хэширования и выполнения одного из них. Класс [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) представляет собой значение хэша. Метод [**CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) можно использовать для повторного хэширования различных данных без необходимости заново создавать объект для каждого случая применения. Метод Append класса **CryptographicHash** добавляет новые данные в буфер для хэширования. Этот процесс полностью показан в следующем примере кода на C#.
+Значение хэша можно использовать вместо кода MAC в сценарии передачи сообщений, описанном выше. Отправитель отправляет значение хэша и сообщение, а получатель наследует собственное значение хэша из значения хэша и сообщения отправителя и сравнивает оба значения хэша. Приложения, работающие в Windows 10, могут вызывать класс [**HashAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) для перечисления доступных алгоритмов хэширования и выполнения одного из них. Класс [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) представляет собой значение хэша. Метод [**CryptographicHash.GetValueAndReset**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) можно использовать для повторного хэширования различных данных без необходимости заново создавать объект для каждого случая применения. Метод Append класса **CryptographicHash** добавляет новые данные в буфер для хэширования. Этот процесс полностью показан в следующем примере кода на C#.
 
 ```cs
 public void SampleReusableHash()
@@ -445,7 +445,7 @@ public void SampleReusableHash()
 
 Алгоритмы хэширования очень быстрые, поэтому значение хэша можно быстро получить даже из больших сообщений. Полученное значение хэша имеет произвольную длину и может быть короче полного сообщения, поэтому использование открытого и закрытого ключей для шифрования и расшифровки только дайджеста, а не всего сообщения является оптимизацией.
 
-Подробнее см. в статьях [Цифровые подписи](https://msdn.microsoft.com/library/windows/desktop/aa381977), [Коды проверки подлинности сообщений, хэши и подписи](macs-hashes-and-signatures.md) и [Шифрование](cryptography.md).
+Подробнее см. в статьях [Цифровые подписи](https://docs.microsoft.com/windows/desktop/SecCrypto/digital-signatures), [Коды проверки подлинности сообщений, хэши и подписи](macs-hashes-and-signatures.md) и [Шифрование](cryptography.md).
 
 ## <a name="5-summary"></a>5. Резюме
 
@@ -489,16 +489,16 @@ public void SampleReusableHash()
 
 ### <a name="63-api-reference"></a>6.3. Справочник по API
 
--   [**Windows.Security.Authentication.OnlineId**](https://msdn.microsoft.com/library/windows/apps/hh701371)
--   [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044)
--   [**Windows.Security.Authentication.Web.Core**](https://msdn.microsoft.com/library/windows/apps/dn921967)
--   [**Windows.Security.Authentication.Web.Provider**](https://msdn.microsoft.com/library/windows/apps/dn921965)
--   [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089)
--   [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089)
--   [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356)
--   [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404)
--   [**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476)
--   [**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547)
--   [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585)
--   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://msdn.microsoft.com/library/windows/apps/hh701506)
--   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
+-   [**Windows.Security.Authentication.OnlineId**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.OnlineId)
+-   [**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web)
+-   [**Windows.Security.Authentication.Web.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Core)
+-   [**Windows.Security.Authentication.Web.Provider**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.Provider)
+-   [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
+-   [**Windows.Security.Credentials**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials)
+-   [**Windows.Security.Credentials.UI**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI)
+-   [**Windows.Security.Cryptography**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography)
+-   [**Windows.Security.Cryptography.Certificates**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates)
+-   [**Windows.Security.Cryptography.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core)
+-   [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection)
+-   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Security.ExchangeActiveSyncProvisioning)
+-   [**Windows.Security.EnterpriseData**](https://docs.microsoft.com/uwp/api/Windows.Security.EnterpriseData)

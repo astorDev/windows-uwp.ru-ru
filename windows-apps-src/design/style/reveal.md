@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6a4fef72206058874edf845d5fbbe0768c53ec
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 5cb076de6cd9c44280bf7030a59c645f601487bd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984224"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370434"
 ---
 # <a name="reveal-highlight"></a>Отобразить выделение
 
@@ -288,7 +288,7 @@ ms.locfileid: "65984224"
 
 - [Класс RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
 - [Acrylic](acrylic.md)
-- [Эффекты композиции](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [Эффекты композиции](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Fluent разработка для универсальной платформы Windows](/windows/apps/fluent-design-system)
 - [В системе обработки и анализа: Fluent Design and глубины](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [В системе обработки и анализа: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

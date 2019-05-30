@@ -6,27 +6,27 @@ keywords: Windows 10, UWP, пробная версия, покупка из пр
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38590282a95e29ab240486e9c4a3f9cb9afe229c
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 868f9f5742122df861f5c7c62bc147372307033f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335102"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371806"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Исключение или ограничение функций в пробной версии
 
 Если вы разрешаете пользователям бесплатно пользоваться вашим приложением в течение испытательного срока, можно привлечь их к обновлению до полной версии приложения путем удаления или ограничения некоторых функций в течение пробного периода. До начала программирования решите, какие функции лучше ограничить, и сделайте так, чтобы они были доступны только после покупки полной лицензии. Вы можете также включить такие компоненты, как баннеры или водяные знаки, которые будут отображаться только во время испытательного срока, пока пользователь не купит приложение.
 
 > [!IMPORTANT]
-> В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) для включения функции пробного периода. Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). **Windows.Services.Store** пространство имен поддерживает последние надстройки типы, например управляемые Store пригодных для использования надстроек и подписки и должна быть совместима с типами будущих продуктов и функций, поддерживаемых партнера Центр и Store. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Дополнительные сведения о реализации функции пробного периода с помощью пространства имен **Windows.Services.Store** см. в [этой статье](implement-a-trial-version-of-your-app.md).
+> В этой статье показано, как использовать члены пространства имен [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) для включения функции пробного периода. Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store). **Windows.Services.Store** пространство имен поддерживает последние надстройки типы, например управляемые Store пригодных для использования надстроек и подписки и должна быть совместима с типами будущих продуктов и функций, поддерживаемых партнера Центр и Store. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Дополнительные сведения о реализации функции пробного периода с помощью пространства имен **Windows.Services.Store** см. в [этой статье](implement-a-trial-version-of-your-app.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Приложение для Windows, в которое предполагается добавить компоненты для продажи.
 
 ## <a name="step-1-pick-the-features-you-want-to-enable-or-disable-during-the-trial-period"></a>Шаг 1. Выберите возможности, которые вы хотите включить или отключить в течение пробного периода
 
-Текущее состояние лицензии вашего приложения можно узнать из свойств класса [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157). Обычно функции, которые зависят от состояния лицензии, помещают в условный блок. Как это сделать, будет показано на следующем этапе. Разрабатывая эти функции, убедитесь, что они будут работать во всех состояниях лицензии.
+Текущее состояние лицензии вашего приложения можно узнать из свойств класса [LicenseInformation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.LicenseInformation). Обычно функции, которые зависят от состояния лицензии, помещают в условный блок. Как это сделать, будет показано на следующем этапе. Разрабатывая эти функции, убедитесь, что они будут работать во всех состояниях лицензии.
 
 Решите, каким образом вы будете обрабатывать изменения в лицензии приложения во время его работы. Ваше приложение может быть полнофункциональным, но в отличие от купленного иметь рекламные баннеры. Вы также можете запретить некоторые функции или регулярно показывать сообщения с предложением купить приложение.
 
@@ -61,9 +61,9 @@ ms.locfileid: "58335102"
 
 ## <a name="step-2-initialize-the-license-info"></a>Шаг 2. Инициализировать сведения о лицензии
 
-При инициализации приложения получите для него объект [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157), как показано в следующем примере. Будем считать, что **licenseInformation** является глобальной переменной или полем типа **LicenseInformation**.
+При инициализации приложения получите для него объект [LicenseInformation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.LicenseInformation), как показано в следующем примере. Будем считать, что **licenseInformation** является глобальной переменной или полем типа **LicenseInformation**.
 
-На данный момент вы получите смоделированные сведения о лицензии с использованием [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) вместо [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). Перед отправкой окончательной версии приложения в **Магазин** необходимо заменить все ссылки **CurrentAppSimulator** в коде на **CurrentApp**.
+На данный момент вы получите смоделированные сведения о лицензии с использованием [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) вместо [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp). Перед отправкой окончательной версии приложения в **Магазин** необходимо заменить все ссылки **CurrentAppSimulator** в коде на **CurrentApp**.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
@@ -111,14 +111,14 @@ ms.locfileid: "58335102"
 
 Не забудьте объяснить, как будет работать ваше приложение во время и после бесплатного пробного периода, чтобы поведение приложения не стало неожиданностью для клиентов.
 
-Дополнительные сведения об описании приложения см. в разделе [Создание описаний приложений](https://msdn.microsoft.com/library/windows/apps/mt148529).
+Дополнительные сведения об описании приложения см. в разделе [Создание описаний приложений](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions).
 
 ## <a name="related-topics"></a>См. также
 
 * [Пример Store (демонстрирует пробные версии и покупки из приложений)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-* [Набор приложений цены и доступность](https://msdn.microsoft.com/library/windows/apps/mt148548)
-* [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765)
-* [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766)
+* [Набор приложений цены и доступность](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)
+* [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp)
+* [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator)
  
 
  

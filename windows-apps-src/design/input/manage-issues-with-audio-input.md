@@ -8,29 +8,29 @@ keywords: речь, голос, распознавание речи, естес�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d2c80fd30d158f0890ed70311cdf83dce2058e5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: aef21bc72c7458aecc3ea8f0a3cae275a22d9f08
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644909"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365606"
 ---
 # <a name="manage-issues-with-audio-input"></a>Решение проблем голосового ввода
 
 
 Узнайте, как решать проблемы с точностью распознавания речи, связанные с качеством голосового ввода.
 
-> **Важные API**: [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), [ **RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243), [ **SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
+> **Важные API**: [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), [ **RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading), [ **SpeechRecognitionAudioProblem**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
 
 
 ## <a name="assess-audio-input-quality"></a>Оценка качества голосового ввода
 
 
-Если распознавание речи включено, используйте событие [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) в распознавателе речи, чтобы определить, могут ли одна или несколько звуковых проблем мешать речевому вводу. Аргумент события ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) предоставляет свойство [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431), в котором описываются обнаруженные проблемы голосового ввода.
+Если распознавание речи включено, используйте событие [**RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading) в распознавателе речи, чтобы определить, могут ли одна или несколько звуковых проблем мешать речевому вводу. Аргумент события ([**SpeechRecognitionQualityDegradingEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs)) предоставляет свойство [**Problem**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionqualitydegradingeventargs.problem), в котором описываются обнаруженные проблемы голосового ввода.
 
 На распознавание может повлиять чрезмерный фоновый шум, отключенный микрофон, а также громкость или скорость говорящего.
 
-Здесь мы настраиваем распознаватель речи и начинаем прослушивание события [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243).
+Здесь мы настраиваем распознаватель речи и начинаем прослушивание события [**RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading).
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -65,9 +65,9 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 ## <a name="manage-the-speech-recognition-experience"></a>Управление распознаванием речи
 
 
-Используйте описание, предоставленное свойством [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431), чтобы обеспечить улучшенные условия для распознавания.
+Используйте описание, предоставленное свойством [**Problem**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionqualitydegradingeventargs.problem), чтобы обеспечить улучшенные условия для распознавания.
 
-Здесь мы создаем обработчик события [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243), который отслеживает низкий уровень громкости. Затем мы используем объект [**SpeechSynthesizer**](https://msdn.microsoft.com/library/windows/apps/dn298152), чтобы попросить пользователя говорить громче.
+Здесь мы создаем обработчик события [**RecognitionQualityDegrading**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading), который отслеживает низкий уровень громкости. Затем мы используем объект [**SpeechSynthesizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechSynthesis.SpeechSynthesizer), чтобы попросить пользователя говорить громче.
 
 ```CSharp
 private async void speechRecognizer_RecognitionQualityDegrading(

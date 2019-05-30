@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ca332b73aba067c2ae003d458e8d0d97c7a7e3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 228fec1571ab3f9c01b4a8dd4084e19bc28dbfe7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642839"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366745"
 ---
 # <a name="add-and-delete-animations"></a>Анимации добавления и удаления
 
@@ -21,7 +21,7 @@ ms.locfileid: "57642839"
 
 Анимации списка позволяют вставлять или удалять один или несколько элементов коллекции, например в фотоальбоме или результатах поиска.
 
-> **Важные API**: [**Класс AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
+> **Важные API**: [**Класс AddDeleteThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition.)
 
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
@@ -38,10 +38,10 @@ ms.locfileid: "57642839"
 
 ## <a name="related-articles"></a>Связанные статьи
 
-* [Общие сведения об анимации](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Анимация список добавления и удаления](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
-* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**Класс AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
+* [Общие сведения об анимации](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Анимация список добавления и удаления](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
+* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**Класс AddDeleteThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition.)
 
  
 

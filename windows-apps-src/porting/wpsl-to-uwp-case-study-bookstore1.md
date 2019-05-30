@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b9f8de488ad0baea1de9aea5c911f2519385d25
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 02337d02472b7215f0fb9be47419caf52420e0f2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653869"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372408"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight для универсальной платформы Windows пример использования: Bookstore1
 
 
-В этом разделе представлен пример использования переноса очень простое приложение Windows Phone Silverlight в приложении 10 универсальных Windows платформы Windows (UWP). С Windows 10, можно создать пакет одним приложением, клиентам можно устанавливать на широкий спектр устройств, и это, что мы перейдем в этом практическом. См. раздел [Руководство по приложениям UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
+В этом разделе представлен пример использования переноса очень простое приложение Windows Phone Silverlight в приложении 10 универсальных Windows платформы Windows (UWP). С Windows 10, можно создать пакет одним приложением, клиентам можно устанавливать на широкий спектр устройств, и это, что мы перейдем в этом практическом. См. раздел [Руководство по приложениям UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
 Приложение, которое мы будем портировать, состоит из элемента **ListBox**, привязанного к модели представления. Модель представления содержит список книг, в котором отображается заголовок, имя автора и обложка книги. У изображений обложки книги **Действие при сборке** установлено на **Содержимое**, а **Копировать в выходной каталог** установлено на **Не копировать**.
 
@@ -87,7 +87,7 @@ ms.locfileid: "57653869"
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-Чтобы установить эти стили, можно просто ввести их в редактор разметки или использовать средства XAML в Visual Studio и установить их не введя ни единого знака. Чтобы сделать это, щелкнуть правой кнопкой мыши **TextBlock** и нажмите кнопку **изменить стиль** &gt; **применить ресурс**. Чтобы сделать с помощью **TextBlock**s в шаблоне элемента, щелкните правой кнопкой мыши **ListBox** и нажмите кнопку **Правка дополнительных шаблонов** &gt; **изменить Созданных элементов (ItemTemplate)**.
+Чтобы установить эти стили, можно просто ввести их в редактор разметки или использовать средства XAML в Visual Studio и установить их не введя ни единого знака. Чтобы сделать это, щелкнуть правой кнопкой мыши **TextBlock** и нажмите кнопку **изменить стиль** &gt; **применить ресурс**. Чтобы сделать с помощью **TextBlock**s в шаблоне элемента, щелкните правой кнопкой мыши **ListBox** и нажмите кнопку **Правка дополнительных шаблонов** &gt; **изменить Созданных элементов (ItemTemplate)** .
 
 За элементами присутствует на 80% непрозрачный белый фон, так как стиль по умолчанию элемента управления **ListBox** устанавливает фон для системного ресурса `ListBoxBackgroundThemeBrush`. Установите для параметра `Background="Transparent"` значение **ListBox**, чтобы очистить этот фон. Чтобы выровнять **TextBlock** по левому краю в шаблоне элементов, отредактируйте его еще раз выше описанным способом и установите для **Margin** значение `"9.6,0"` на обоих **TextBlock**.
 
@@ -104,7 +104,7 @@ ms.locfileid: "57653869"
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-В Bookstore1Universal мы используем ms-appx [Схема URI](https://msdn.microsoft.com/library/windows/apps/jj655406). Чтобы сохранить остальную часть кода такой же, можно использовать другую перегрузку конструктора **System.Uri**, чтобы поместить схему URI ms-appx в базовый URI и добавить в него оставшуюся часть пути. Пример.
+В Bookstore1Universal мы используем ms-appx [Схема URI](https://docs.microsoft.com/previous-versions/windows/apps/jj655406(v=win.10)). Чтобы сохранить остальную часть кода такой же, можно использовать другую перегрузку конструктора **System.Uri**, чтобы поместить схему URI ms-appx в базовый URI и добавить в него оставшуюся часть пути. Пример.
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
