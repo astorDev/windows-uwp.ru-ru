@@ -8,12 +8,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c4f8de32be13f9de776a1c2d0ba0f6af2797329
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2848b22c69960075297546d401689d4c51c637aa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602679"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361932"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Хранение и извлечение параметров и прочих данных приложения
 
@@ -35,9 +35,9 @@ ms.locfileid: "57602679"
     -   **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
     -   **Логическое значение**
     -   **Char16**, **String**
-    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576), [ **TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
-    -   **GUID**, [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995), [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
-    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588): Набор параметров связанных приложений, которые необходимо сериализовать и десериализовать атомарным образом. Чтобы с легкостью управлять обновлениями взаимозависимых параметров, выполняемыми как одна неделимая операция, используйте композитные параметры. Система обеспечивает целостность композитных параметров при параллельном доступе и перемещении. Композитные параметры оптимизированы для малых объемов данных и могут привести к значительному снижению производительности, если использовать их для крупных наборов данных.
+    -   [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime), [ **TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
+    -   **GUID**, [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size), [**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
+    -   [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue): Набор параметров связанных приложений, которые необходимо сериализовать и десериализовать атомарным образом. Чтобы с легкостью управлять обновлениями взаимозависимых параметров, выполняемыми как одна неделимая операция, используйте композитные параметры. Система обеспечивает целостность композитных параметров при параллельном доступе и перемещении. Композитные параметры оптимизированы для малых объемов данных и могут привести к значительному снижению производительности, если использовать их для крупных наборов данных.
 -   **Файлы**
 
     Файлы используют для хранения двоичных данных либо для включения собственных настраиваемых сериализованных типов.
@@ -56,7 +56,7 @@ ms.locfileid: "57602679"
 
 ### <a name="retrieve-the-local-app-data-store"></a>Извлечение локального хранилища данных приложения
 
-Прежде чем получить возможность чтения или записи локальных данных приложения, необходимо извлечь локальное хранилище данных приложения. Для извлечения локального хранилища данных приложения используйте свойство [**ApplicationData.LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622), чтобы получить локальные параметры приложения в виде объекта [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599). Используйте свойство [**ApplicationData.LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) для загрузки файлов в объект [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230). Используйте свойство [**ApplicationData.LocalCacheFolder**](https://msdn.microsoft.com/library/windows/apps/dn633825), чтобы получить папку в локальном хранилище данных приложения, в которой можно сохранить файлы, которые не включены в резервную копию и копию для восстановления.
+Прежде чем получить возможность чтения или записи локальных данных приложения, необходимо извлечь локальное хранилище данных приложения. Для извлечения локального хранилища данных приложения используйте свойство [**ApplicationData.LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings), чтобы получить локальные параметры приложения в виде объекта [**ApplicationDataContainer**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataContainer). Используйте свойство [**ApplicationData.LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) для загрузки файлов в объект [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder). Используйте свойство [**ApplicationData.LocalCacheFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localcachefolder), чтобы получить папку в локальном хранилище данных приложения, в которой можно сохранить файлы, которые не включены в резервную копию и копию для восстановления.
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -67,7 +67,7 @@ Windows.Storage.StorageFolder localFolder =
 
 ### <a name="create-and-retrieve-a-simple-local-setting"></a>Создание и извлечение простого локального параметра
 
-Для создания или записи параметра используйте свойство [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) для получения доступа к параметрам в контейнере `localSettings`, полученном на предыдущем этапе. В следующем примере создается параметр с именем `exampleSetting`.
+Для создания или записи параметра используйте свойство [**ApplicationDataContainer.Values**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.values) для получения доступа к параметрам в контейнере `localSettings`, полученном на предыдущем этапе. В следующем примере создается параметр с именем `exampleSetting`.
 
 ```CSharp
 // Simple setting
@@ -75,7 +75,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values["exampleSetting"] = "Hello Windows";
 ```
 
-Для извлечения параметра используйте то же свойство [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615), которое использовалось для создания этого параметра. В этом примере показано, как извлечь только что созданный параметр.
+Для извлечения параметра используйте то же свойство [**ApplicationDataContainer.Values**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.values), которое использовалось для создания этого параметра. В этом примере показано, как извлечь только что созданный параметр.
 
 ```CSharp
 // Simple setting
@@ -84,7 +84,7 @@ Object value = localSettings.Values["exampleSetting"];
 
 ### <a name="create-and-retrieve-a-local-composite-value"></a>Создание и извлечение локального составного значения
 
-Для создания или записи составного значения создайте объект [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588). В следующем примере составной параметр с именем `exampleCompositeSetting` создается и добавляется в контейнер `localSettings`.
+Для создания или записи составного значения создайте объект [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue). В следующем примере составной параметр с именем `exampleCompositeSetting` создается и добавляется в контейнер `localSettings`.
 
 ```CSharp
 // Composite setting
@@ -117,7 +117,7 @@ else
 
 ### <a name="create-and-read-a-local-file"></a>Создание и чтение локального файла
 
-Для создания и обновления файла в локальном хранилище данных приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) и [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). В следующем примере создается файл с именем `dataFile.txt` в контейнере `localFolder` и в этот файл записываются текущие дата и время. Значение **ReplaceExisting** из перечисления [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) показывает, что, если файл уже существует, его следует заменить.
+Для создания и обновления файла в локальном хранилище данных приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.CreateFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) и [**Windows.Storage.FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync). В следующем примере создается файл с именем `dataFile.txt` в контейнере `localFolder` и в этот файл записываются текущие дата и время. Значение **ReplaceExisting** из перечисления [**CreationCollisionOption**](https://docs.microsoft.com/uwp/api/Windows.Storage.CreationCollisionOption) показывает, что, если файл уже существует, его следует заменить.
 
 ```csharp
 async void WriteTimestamp()
@@ -131,7 +131,7 @@ async void WriteTimestamp()
 }
 ```
 
-Для открытия и чтения файла в локальном хранилище данных приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) и [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). В следующем примере открывается файл `dataFile.txt`, созданный на предыдущем шаге, и из него считывается дата. Подробные сведения о загрузке файловых ресурсов из различных расположений см. в разделе [Загрузка файловых ресурсов](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+Для открытия и чтения файла в локальном хранилище данных приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) и [**Windows.Storage.FileIO.ReadTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.readtextasync). В следующем примере открывается файл `dataFile.txt`, созданный на предыдущем шаге, и из него считывается дата. Подробные сведения о загрузке файловых ресурсов из различных расположений см. в разделе [Загрузка файловых ресурсов](https://docs.microsoft.com/previous-versions/windows/apps/hh965322(v=win.10)).
 
 ```csharp
 async void ReadTimestamp()
@@ -154,7 +154,7 @@ async void ReadTimestamp()
 
 Если в приложении используются перемещаемые данные, то пользователи с легкостью смогут синхронизировать данные приложения на нескольких устройствах. Если пользователь устанавливает приложение на несколько устройств, ОС следит за своевременной синхронизацией данных приложения, тем самым уменьшая объем работ по настройке приложения, которые пользователь должен выполнить на втором устройстве. Кроме того, использование перемещаемых данных позволяет пользователю продолжить выполнение задачи, например составление списка, с того самого места, на котором он остановился, даже если работа выполнялась на другом устройстве. Когда перемещаемые данные обновляются, ОС реплицирует их в облаке и синхронизирует данные с другими устройствами, на которых установлено приложение.
 
-ОС ограничивает объем данных приложения, которые каждое приложение может отнести к перемещаемым. См. раздел [**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625). Если приложение достигает указанного предельного значения, то никакие данные приложения не будут реплицироваться в облаке до тех пор, пока общий объем перемещаемых данных приложения снова не окажется меньше предельного значения. По этой причине рекомендуется использовать перемещаемые данные только для предпочтений пользователей, ссылок и небольших файлов данных.
+ОС ограничивает объем данных приложения, которые каждое приложение может отнести к перемещаемым. См. раздел [**ApplicationData.RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota). Если приложение достигает указанного предельного значения, то никакие данные приложения не будут реплицироваться в облаке до тех пор, пока общий объем перемещаемых данных приложения снова не окажется меньше предельного значения. По этой причине рекомендуется использовать перемещаемые данные только для предпочтений пользователей, ссылок и небольших файлов данных.
 
 Перемещаемые данные приложения доступны в облаке до тех пор, пока пользователь обращается к ним с каких-либо устройств в течение заданного интервала времени. Если пользователь не запускает приложение дольше этого временного интервала, то его перемещаемые данные удаляются из облака. Если пользователь удаляет приложение, его перемещаемые данные не удаляются из облака автоматически, они сохраняются. Если пользователь повторно устанавливает приложение в течение указанного временного интервала, то перемещаемые данные синхронизируются с данными, сохраненными в облаке.
 
@@ -162,11 +162,11 @@ async void ReadTimestamp()
 
 -   Используйте перемещение данных для пользовательских предпочтений и настроек, ссылок и небольших файлов данных. Например, используйте перемещаемые данные, чтобы сохранить настройку цвета фона на всех своих устройствах.
 -   Используйте перемещение данных, чтобы предоставить пользователям возможность продолжать работу над задачей на разных устройствах. Например, перемещайте такие данные приложения, как содержимое черновика сообщения электронной почты или последнюю просматриваемую страницу в средстве просмотра.
--   Обрабатывайте событие [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620), обновляя данные приложения. Это событие возникает сразу после завершения синхронизации данных приложения из облака.
+-   Обрабатывайте событие [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged), обновляя данные приложения. Это событие возникает сразу после завершения синхронизации данных приложения из облака.
 -   Перемещайте ссылки на содержимое вместо необработанных данных. Например, перемещайте URL-адрес вместо содержимого статьи в сети.
--   Для важных зависящих от времени настроек используйте параметр *HighPriority*, связанный с [**RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624).
+-   Для важных зависящих от времени настроек используйте параметр *HighPriority*, связанный с [**RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings).
 -   Не перемещайте данные приложения, относящиеся к устройству. Некоторая информация, например путь к локальному файловому ресурсу, имеет смысл только на локальном уровне. Если вы перемещаете локальные данные, убедитесь, что приложение может проверять, является ли эта информация действительной на втором устройстве.
--   Не перемещайте большие наборы данных приложения. Существует предел объема данных, который может перемещать приложение; значение этого максимума можно получить с помощью свойства [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625). Если в приложении достигается этот предел, перемещение данных становится невозможным до тех пор, пока объем данных в хранилище приложения не станет меньше предельного. При проектировании приложения рекомендуется рассмотреть способ установки ограничения для данных большего размера, чтобы не превышать заданный предел. Например, если для каждого сохранения состояния игры требуется 10 КБ, приложение может позволить пользователю выполнять сохранение не более 10 раз.
+-   Не перемещайте большие наборы данных приложения. Существует предел объема данных, который может перемещать приложение; значение этого максимума можно получить с помощью свойства [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota). Если в приложении достигается этот предел, перемещение данных становится невозможным до тех пор, пока объем данных в хранилище приложения не станет меньше предельного. При проектировании приложения рекомендуется рассмотреть способ установки ограничения для данных большего размера, чтобы не превышать заданный предел. Например, если для каждого сохранения состояния игры требуется 10 КБ, приложение может позволить пользователю выполнять сохранение не более 10 раз.
 -   Не используйте перемещение для данных, которые нуждаются в мгновенной синхронизации. Windows не гарантирует мгновенную синхронизацию. Перемещение может существенно задерживаться, если пользователь вышел из сети или используется сеть с высокой задержкой. Убедитесь, что ваш пользовательский интерфейс не зависит от мгновенной синхронизации.
 -   Не используйте перемещаемые часто изменяющиеся данные. Например, если ваше приложение отслеживает часто меняющуюся информацию, такую как позиция при воспроизведении композиции, не сохраняйте эти данные как перемещаемые. Вместо этого выберите реже меняющееся представление, которое при этом обеспечивает хорошее взаимодействие, например представление текущей композиции.
 
@@ -174,7 +174,7 @@ async void ReadTimestamp()
 
 Любой пользователь может воспользоваться преимуществами перемещения данных приложения, если он использует учетную запись Майкрософт для входа на своем устройстве. Однако пользователи и администраторы групповой политики могут в любое время отключить перемещение данных приложения на устройстве. Если пользователь решил не использовать учетную запись Майкрософт или отключает возможности перемещаемых данных, она по-прежнему будут иметь возможность использовать ваше приложение, но данные приложения будут локальными для каждого устройства.
 
-Данные, сохраненные в [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081), перемещаются только в том случае, если пользователь присвоил своему устройству статус доверенного. Если устройство не является доверенным, данные, сохраненные в этом хранилище, не будут перемещаться.
+Данные, сохраненные в [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault), перемещаются только в том случае, если пользователь присвоил своему устройству статус доверенного. Если устройство не является доверенным, данные, сохраненные в этом хранилище, не будут перемещаться.
 
 ### <a name="conflict-resolution"></a>Устранение конфликтов
 
@@ -198,7 +198,7 @@ async void ReadTimestamp()
 
 Разработчики могут заблокировать свое устройство, чтобы запустить синхронизацию перемещаемых данных приложения. Если создается впечатление, что данные приложения не перемещаются в течение определенного времени, убедитесь в следующем:
 
--   размер перемещаемых данных не превышает установленный предел (дополнительную информацию см. в разделе [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625));
+-   размер перемещаемых данных не превышает установленный предел (дополнительную информацию см. в разделе [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota));
 -   ваши файлы закрыты и выпущены надлежащим образом;
 -   есть минимум два устройства с приложениями одной и той же версии.
 
@@ -209,7 +209,7 @@ async void ReadTimestamp()
 
 1.  Регистрация для получения уведомлений об изменении перемещаемых данных.
 
-    Событие [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) уведомляет об изменении перемещаемых данных. В следующем примере `DataChangeHandler` определяется как обработчик изменений перемещаемых данных.
+    Событие [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) уведомляет об изменении перемещаемых данных. В следующем примере `DataChangeHandler` определяется как обработчик изменений перемещаемых данных.
 
 ```csharp
 void InitHandlers()
@@ -226,7 +226,7 @@ void InitHandlers()
 
 2.  Получение контейнеров для параметров и файлов приложения.
 
-    Используйте свойство [**ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624) для получения параметров, а свойство [**ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) для получения файлов.
+    Используйте свойство [**ApplicationData.RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) для получения параметров, а свойство [**ApplicationData.RoamingFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder) для получения файлов.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer roamingSettings = 
@@ -237,7 +237,7 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 
 ### <a name="create-and-retrieve-roaming-settings"></a>Создание и извлечение параметров перемещения
 
-Используйте свойство [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) для доступа к параметрам в контейнере `roamingSettings`, полученном в предыдущем разделе. В следующем примере создается простой параметр с именем `exampleSetting` и составное значение `composite`.
+Используйте свойство [**ApplicationDataContainer.Values**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.values) для доступа к параметрам в контейнере `roamingSettings`, полученном в предыдущем разделе. В следующем примере создается простой параметр с именем `exampleSetting` и составное значение `composite`.
 
 ```csharp
 // Simple setting
@@ -281,7 +281,7 @@ else
 
 ### <a name="create-and-retrieve-roaming-files"></a>Создайте и восстановление перемещаемых файлов
 
-Для создания и обновления файла в хранилище данных перемещаемого приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) и [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). В следующем примере создается файл с именем `dataFile.txt` в контейнере `roamingFolder` и в этот файл записываются текущие дата и время. Значение **ReplaceExisting** из перечисления [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) показывает, что, если файл уже существует, его следует заменить.
+Для создания и обновления файла в хранилище данных перемещаемого приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.CreateFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) и [**Windows.Storage.FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync). В следующем примере создается файл с именем `dataFile.txt` в контейнере `roamingFolder` и в этот файл записываются текущие дата и время. Значение **ReplaceExisting** из перечисления [**CreationCollisionOption**](https://docs.microsoft.com/uwp/api/Windows.Storage.CreationCollisionOption) показывает, что, если файл уже существует, его следует заменить.
 
 ```csharp
 async void WriteTimestamp()
@@ -295,7 +295,7 @@ async void WriteTimestamp()
 }
 ```
 
-Для открытия и чтения файла в хранилище данных перемещаемого приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) и [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). В следующем примере открывается файл `dataFile.txt`, созданный в предыдущем разделе, и из него считывается дата. Подробные сведения о загрузке файловых ресурсов из различных расположений см. в разделе [Загрузка файловых ресурсов](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+Для открытия и чтения файла в хранилище данных перемещаемого приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) и [**Windows.Storage.FileIO.ReadTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.readtextasync). В следующем примере открывается файл `dataFile.txt`, созданный в предыдущем разделе, и из него считывается дата. Подробные сведения о загрузке файловых ресурсов из различных расположений см. в разделе [Загрузка файловых ресурсов](https://docs.microsoft.com/previous-versions/windows/apps/hh965322(v=win.10)).
 
 ```csharp
 async void ReadTimestamp()
@@ -317,11 +317,11 @@ async void ReadTimestamp()
 ## <a name="temporary-app-data"></a>Временные данные приложения
 
 
-Хранилище временных данных приложения действует подобно кэшу. Его файлы не перемещаются и могут быть удалены в любое время. Задача обслуживания системы может автоматически удалить данные, сохраненные в этом месте хранения в любое время. Кроме того, пользователь может удалить файлы из хранилища временных файлов с помощью средства очистки диска. Временные данные приложения могут использоваться для хранения временной информации в течение сеанса приложения. Нет никакой гарантии, что эти данные сохранятся после того, как сеанс приложения будет завершен, потому что система может при необходимости освободить занимаемое ими место. Местоположение определяется свойством [**temporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629).
+Хранилище временных данных приложения действует подобно кэшу. Его файлы не перемещаются и могут быть удалены в любое время. Задача обслуживания системы может автоматически удалить данные, сохраненные в этом месте хранения в любое время. Кроме того, пользователь может удалить файлы из хранилища временных файлов с помощью средства очистки диска. Временные данные приложения могут использоваться для хранения временной информации в течение сеанса приложения. Нет никакой гарантии, что эти данные сохранятся после того, как сеанс приложения будет завершен, потому что система может при необходимости освободить занимаемое ими место. Местоположение определяется свойством [**temporaryFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder).
 
 ### <a name="retrieve-the-temporary-data-container"></a>Восстановление контейнера временных данных
 
-Используйте свойство [**ApplicationData.TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) для получения файлов. Переменная `temporaryFolder` из этого шага используется на следующих шагах.
+Используйте свойство [**ApplicationData.TemporaryFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) для получения файлов. Переменная `temporaryFolder` из этого шага используется на следующих шагах.
 
 ```csharp
 Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.TemporaryFolder;
@@ -329,7 +329,7 @@ Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.Temporar
 
 ### <a name="create-and-read-temporary-files"></a>Создание и чтение временных файлов
 
-Для создания и обновления файла в хранилище временных данных приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) и [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). В следующем примере создается файл с именем `dataFile.txt` в контейнере `temporaryFolder` и в этот файл записываются текущие дата и время. Значение **ReplaceExisting** из перечисления [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) показывает, что, если файл уже существует, его следует заменить.
+Для создания и обновления файла в хранилище временных данных приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.CreateFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) и [**Windows.Storage.FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync). В следующем примере создается файл с именем `dataFile.txt` в контейнере `temporaryFolder` и в этот файл записываются текущие дата и время. Значение **ReplaceExisting** из перечисления [**CreationCollisionOption**](https://docs.microsoft.com/uwp/api/Windows.Storage.CreationCollisionOption) показывает, что, если файл уже существует, его следует заменить.
 
 
 ```csharp
@@ -344,7 +344,7 @@ async void WriteTimestamp()
 }
 ```
 
-Для открытия и чтения файла в хранилище временных данных приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) и [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). В следующем примере открывается файл `dataFile.txt`, созданный на предыдущем шаге, и из него считывается дата. Подробные сведения о загрузке файловых ресурсов из различных расположений см. в разделе [Загрузка файловых ресурсов](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+Для открытия и чтения файла в хранилище временных данных приложения используйте файловые API, например, [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) и [**Windows.Storage.FileIO.ReadTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.readtextasync). В следующем примере открывается файл `dataFile.txt`, созданный на предыдущем шаге, и из него считывается дата. Подробные сведения о загрузке файловых ресурсов из различных расположений см. в разделе [Загрузка файловых ресурсов](https://docs.microsoft.com/previous-versions/windows/apps/hh965322(v=win.10)).
 
 ```csharp
 async void ReadTimestamp()
@@ -365,9 +365,9 @@ async void ReadTimestamp()
 ## <a name="organize-app-data-with-containers"></a>Упорядочение данных приложения с помощью контейнеров
 
 
-Для упорядочения параметров и файлов данных приложения необходимо создать контейнеры (представленные объектами [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599)) вместо того, чтобы работать непосредственно с каталогами. Контейнеры можно добавлять в хранилища локальных, перемещаемых и временных данных приложения. Контейнеры могут иметь до 32 уровней вложенности.
+Для упорядочения параметров и файлов данных приложения необходимо создать контейнеры (представленные объектами [**ApplicationDataContainer**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataContainer)) вместо того, чтобы работать непосредственно с каталогами. Контейнеры можно добавлять в хранилища локальных, перемещаемых и временных данных приложения. Контейнеры могут иметь до 32 уровней вложенности.
 
-Для создания контейнера параметров вызовите метод [**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611). В следующем примере создается контейнер локальных параметров с именем `exampleContainer` и добавляется параметр с именем `exampleSetting`. Значение **Always** из перечисления [**ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) показывает, что, если контейнер не существует, он создается.
+Для создания контейнера параметров вызовите метод [**ApplicationDataContainer.CreateContainer**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.createcontainer). В следующем примере создается контейнер локальных параметров с именем `exampleContainer` и добавляется параметр с именем `exampleSetting`. Значение **Always** из перечисления [**ApplicationDataCreateDisposition**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCreateDisposition) показывает, что, если контейнер не существует, он создается.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -388,7 +388,7 @@ if (localSettings.Containers.ContainsKey("exampleContainer"))
 ## <a name="delete-app-settings-and-containers"></a>Удаление параметров и контейнеров приложения
 
 
-Для удаления простого параметра, который больше не требуется для вашего приложения, используйте метод [**ApplicationDataContainerSettings.Remove**](https://msdn.microsoft.com/library/windows/apps/br241608). В этом примере выполняется удаление ранее созданного локального параметра `exampleSetting`.
+Для удаления простого параметра, который больше не требуется для вашего приложения, используйте метод [**ApplicationDataContainerSettings.Remove**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainersettings.remove). В этом примере выполняется удаление ранее созданного локального параметра `exampleSetting`.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -401,7 +401,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values.Remove("exampleSetting");
 ```
 
-Для удаления составного параметра используйте метод [**ApplicationDataCompositeValue.Remove**](https://msdn.microsoft.com/library/windows/apps/br241597). В этом примере удаляется локальный составной параметр `exampleCompositeSetting`, созданный в примере выше.
+Для удаления составного параметра используйте метод [**ApplicationDataCompositeValue.Remove**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacompositevalue.remove). В этом примере удаляется локальный составной параметр `exampleCompositeSetting`, созданный в примере выше.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -414,7 +414,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values.Remove("exampleCompositeSetting");
 ```
 
-Для удаления контейнера вызовите метод [**ApplicationDataContainer.DeleteContainer**](https://msdn.microsoft.com/library/windows/apps/br241612). В этом примере удаляется ранее созданный контейнер локальных параметров `exampleContainer`.
+Для удаления контейнера вызовите метод [**ApplicationDataContainer.DeleteContainer**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.deletecontainer). В этом примере удаляется ранее созданный контейнер локальных параметров `exampleContainer`.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -430,12 +430,12 @@ localSettings.DeleteContainer("exampleContainer");
 ## <a name="versioning-your-app-data"></a>Управление версиями данных приложения
 
 
-При желании вы можете назначить версию для данных приложения. Это позволит вам создать следующую версию приложения, которая при изменении формата данных не вызовет проблем совместимости с предыдущей версией приложения. Приложение проверит версию данных приложения в хранилище данных и в случае, если версия окажется более ранней, чем ожидалось, обновит данные приложения до нового формата и изменит их версию. Подробнее см. в описании свойства[ **Application.Version**](https://msdn.microsoft.com/library/windows/apps/br241630) и метода [**ApplicationData.SetVersionAsync**](https://msdn.microsoft.com/library/windows/apps/hh701429).
+При желании вы можете назначить версию для данных приложения. Это позволит вам создать следующую версию приложения, которая при изменении формата данных не вызовет проблем совместимости с предыдущей версией приложения. Приложение проверит версию данных приложения в хранилище данных и в случае, если версия окажется более ранней, чем ожидалось, обновит данные приложения до нового формата и изменит их версию. Подробнее см. в описании свойства[ **Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) и метода [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.).
 
 ## <a name="related-articles"></a>Связанные статьи
 
-* [**Windows.Storage.ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587)
-* [**Windows.Storage.ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624)
-* [**Windows.Storage.ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623)
-* [**Windows.Storage.ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)
-* [**Windows.Storage.ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)
+* [**Windows.Storage.ApplicationData**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData)
+* [**Windows.Storage.ApplicationData.RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)
+* [**Windows.Storage.ApplicationData.RoamingFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder)
+* [**Windows.Storage.ApplicationData.RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)
+* [**Windows.Storage.ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue)

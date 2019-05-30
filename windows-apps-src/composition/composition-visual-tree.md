@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b1c0b78ca45d98428f38518b337b5889f595c49
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d6d150f2f882348bffb36dd2918f0f61ea1586c7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602439"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360489"
 ---
 # <a name="composition-visual"></a>Визуальный компонент композиции
 
@@ -21,11 +21,11 @@ ms.locfileid: "57602439"
 
 Визуальная древовидная структура включает три типа объектов класса Visual, а также базовый класс кисти с несколькими подклассами, которые влияют на содержимое визуального объекта.
 
-- [**Visual** ](https://msdn.microsoft.com/library/windows/apps/Dn706858) — базовый объект, большинство свойств являются здесь и наследоваться от других визуальных объектов.
-- [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) — является производным от [ **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)и добавляет возможность создания дочерних элементов.
-- [**SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) — является производным от [ **ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) и добавляет возможность сопоставить кисти, что визуальный элемент можно построить пикселей, включая изображения, эффекты или надежную Цвет.
+- [**Visual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) — базовый объект, большинство свойств являются здесь и наследоваться от других визуальных объектов.
+- [**ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) — является производным от [ **Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual)и добавляет возможность создания дочерних элементов.
+- [**SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) — является производным от [ **ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) и добавляет возможность сопоставить кисти, что визуальный элемент можно построить пикселей, включая изображения, эффекты или надежную Цвет.
 
-Контент и эффекты можно применить к объекту SpriteVisuals при помощи [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) и его подклассам, в том числе [**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush),[**CompositionSurfaceBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) и [**CompositionEffectBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush). Дополнительные сведения о кистях см. в статье [**Обзор CompositionBrush**](https://docs.microsoft.com/windows/uwp/composition/composition-brushes).
+Контент и эффекты можно применить к объекту SpriteVisuals при помощи [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) и его подклассам, в том числе [**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush),[**CompositionSurfaceBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) и [**CompositionEffectBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush). Дополнительные сведения о кистях см. в статье [**Обзор CompositionBrush**](https://docs.microsoft.com/windows/uwp/composition/composition-brushes).
 
 ## <a name="the-compositionvisual-sample"></a>Пример CompositionVisual
 
@@ -44,7 +44,7 @@ ms.locfileid: "57602439"
 
 ## <a name="creating-a-compositor"></a>Создание компоновщика
 
-Вы можете с легкостью создать объект [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) и сохранить его в переменной для использования в качестве фабрики. В следующем фрагменте кода показано создание нового объекта **Compositor**.
+Вы можете с легкостью создать объект [**Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) и сохранить его в переменной для использования в качестве фабрики. В следующем фрагменте кода показано создание нового объекта **Compositor**.
 
 ```cs
 _compositor = new Compositor();
@@ -52,18 +52,18 @@ _compositor = new Compositor();
 
 ## <a name="creating-a-spritevisual-and-colorbrush"></a>Создание объектов SpriteVisual и ColorBrush
 
-С помощью компоновщика [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) можно при необходимости с легкостью создавать такие объекты, как [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) и [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399).
+С помощью компоновщика [**Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) можно при необходимости с легкостью создавать такие объекты, как [**SpriteVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) и [**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush).
 
 ```cs
 var visual = _compositor.CreateSpriteVisual();
 visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
 ```
 
-Это всего несколько строк кода, он демонстрирует это мощная концепция: [**SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) объекты являются основой система эффектов. **SpriteVisual** обеспечивает гибкость при использовании и комбинировании цветов, изображений и создаваемых эффектов. **SpriteVisual** является единственным типом визуального объекта, с помощью которого можно заполнить двумерный прямоугольник содержимым кисти, в данном случае — сплошным цветом.
+Это всего несколько строк кода, он демонстрирует это мощная концепция: [**SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) объекты являются основой система эффектов. **SpriteVisual** обеспечивает гибкость при использовании и комбинировании цветов, изображений и создаваемых эффектов. **SpriteVisual** является единственным типом визуального объекта, с помощью которого можно заполнить двумерный прямоугольник содержимым кисти, в данном случае — сплошным цветом.
 
 ## <a name="clipping-a-visual"></a>Обрезка объекта класса Visual
 
-[  **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) также можно использовать для обрезки объектов класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858). Ниже приведен фрагмент примера, в котором [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) используется для усечения каждой стороны визуального объекта.
+[  **Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) также можно использовать для обрезки объектов класса [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual). Ниже приведен фрагмент примера, в котором [**InsetClip**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.InsetClip) используется для усечения каждой стороны визуального объекта.
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -74,11 +74,11 @@ clip.BottomInset = 1.0f;
 _currentVisual.Clip = clip;
 ```
 
-Как и другие объекты в API, объект [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) позволяет анимировать свои свойства.
+Как и другие объекты в API, объект [**InsetClip**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.InsetClip) позволяет анимировать свои свойства.
 
 ## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Вращение картинки
 
-К объекту класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) можно применить поворот. Обратите внимание, что свойство [**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) поддерживает значения как в радианах, так и в градусах. По умолчанию используются значения в радианах, но их можно указать и в градусах, как показано в следующем фрагменте кода.
+К объекту класса [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) можно применить поворот. Обратите внимание, что свойство [**RotationAngle**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visual.rotationangle) поддерживает значения как в радианах, так и в градусах. По умолчанию используются значения в радианах, но их можно указать и в градусах, как показано в следующем фрагменте кода.
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
@@ -94,13 +94,13 @@ Rotation (Поворот) — это лишь один из компоненто
 visual.Opacity = 0.8f;
 ```
 
-Как и поворот, свойство [**Opacity**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.opacity) может быть анимировано.
+Как и поворот, свойство [**Opacity**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visual.opacity) может быть анимировано.
 
 ## <a name="changing-the-visuals-position-in-the-collection"></a>Изменение положения объекта класса Visual в коллекции
 
-API композиции позволяет изменить положение объекта класса Visual в коллекции [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection) несколькими способами. Его можно разместить над другим объектом Visual с помощью [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertabove), разместить ниже с помощью [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertbelow), переместить вверх с помощью [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertattop) или вниз с помощью [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertatbottom).
+API композиции позволяет изменить положение объекта класса Visual в коллекции [**VisualCollection**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection) несколькими способами. Его можно разместить над другим объектом Visual с помощью [**InsertAbove**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertabove), разместить ниже с помощью [**InsertBelow**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertbelow), переместить вверх с помощью [**InsertAtTop**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertattop) или вниз с помощью [**InsertAtBottom**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertatbottom).
 
-В этом примере объект класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), на который нажимает пользователь, перемещается наверх.
+В этом примере объект класса [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual), на который нажимает пользователь, перемещается наверх.
 
 ```cs
 parent.Children.InsertAtTop(_currentVisual);
@@ -108,7 +108,7 @@ parent.Children.InsertAtTop(_currentVisual);
 
 ## <a name="full-example"></a>Полный пример
 
-В полном примере все описанные выше принципы используются совместно для построения и просмотра простого дерева объектов класса [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) для изменения уровня прозрачности без использования XAML, WWA или DirectX. В следующем примере показано, как создаются и добавляются дочерние объекты класса **Visual** и как меняются свойства.
+В полном примере все описанные выше принципы используются совместно для построения и просмотра простого дерева объектов класса [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) для изменения уровня прозрачности без использования XAML, WWA или DirectX. В следующем примере показано, как создаются и добавляются дочерние объекты класса **Visual** и как меняются свойства.
 
 ```cs
 using System;

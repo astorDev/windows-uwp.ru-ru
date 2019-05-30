@@ -1,21 +1,21 @@
 ---
 description: C++/WinRT можно использовать для разработки классических компонентов COM, так как эта проекция языка помогает создавать классы среды выполнения Windows.
 title: Создание COM-компонентов с помощью C++/WinRT
-ms.date: 09/06/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, standard, c ++, cpp, winrt, проекции, автор, COM, компонент
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 27c55e94a4e11bbbf550c21fd61ee384c8b21f9c
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 3badcd59155bc4bb5ef8d9e29271b853c245c24e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244360"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360315"
 ---
 # <a name="author-com-components-with-cwinrt"></a>Создание COM-компонентов с помощью C++/WinRT
 
-[C++/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) помогут вам создавать классической модели объектов компонента (COM) компонентов (или компонентные классы), так же, как он помогает вам создавать классы среды выполнения Windows. Ниже приведен простой иллюстрации, на которой вы можете проверить работу, если вставьте код в `pch.h` и `main.cpp` нового **Visual C++**   >  **Windows Desktop**  >  **Консольное приложение Windows (C++/WinRT)** проекта.
+[C++/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) помогут вам создавать классической модели объектов компонента (COM) компонентов (или компонентные классы), так же, как он помогает вам создавать классы среды выполнения Windows. Ниже приведен простой иллюстрации, на которой вы можете проверить работу, если вставьте код в `pch.h` и `main.cpp` нового **консольное приложение Windows (C++/WinRT)** проекта.
 
 ```cppwinrt
 // pch.h
@@ -74,7 +74,7 @@ int main()
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>Создайте проект консольного приложения Windows (ToastAndCallback)
 
-Начните с создания нового проекта в Microsoft Visual Studio. Создание **Visual C++**   >  **Windows Desktop** > **консольное приложение Windows (C++/WinRT)** проект и назовите его  *ToastAndCallback*.
+Начните с создания нового проекта в Microsoft Visual Studio. Создание **консольное приложение Windows (C++/WinRT)** проект и назовите его *ToastAndCallback*.
 
 Откройте `pch.h`и добавьте `#include <unknwn.h>` перед включает для любого C++/WinRT заголовки. Ниже приведен результат; Вы можете заменить содержимое вашей `pch.h` с вхождением.
 
@@ -89,7 +89,6 @@ int main()
 
 ```cppwinrt
 // main.cpp : Defines the entry point for the console application.
-//
 
 #include "pch.h"
 
@@ -173,7 +172,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-Реализация компонентного класса выше используется тот же шаблон, представленный в [автор API с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Таким образом можно использовать ту же методику для реализации COM-интерфейсов, а также интерфейсы среды выполнения Windows. COM-компонентов и классов среды выполнения Windows предоставлять свои функции через интерфейс. Каждый интерфейс COM в конечном счете является производным от [ **интерфейса IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509) интерфейс. Среда выполнения Windows основана на COM&mdash;одно различие, что интерфейсы среды выполнения Windows в конечном счете являются производными от [ **интерфейс IInspectable** ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (и **IInspectable**  является производным от **IUnknown**).
+Реализация компонентного класса выше используется тот же шаблон, представленный в [автор API с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Таким образом можно использовать ту же методику для реализации COM-интерфейсов, а также интерфейсы среды выполнения Windows. COM-компонентов и классов среды выполнения Windows предоставлять свои функции через интерфейс. Каждый интерфейс COM в конечном счете является производным от [ **интерфейса IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) интерфейс. Среда выполнения Windows основана на COM&mdash;одно различие, что интерфейсы среды выполнения Windows в конечном счете являются производными от [ **интерфейс IInspectable** ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (и **IInspectable**  является производным от **IUnknown**).
 
 В компонентном классе, в приведенном выше коде, мы реализуем **INotificationActivationCallback::Activate** метод, который является функция, которая вызывается, когда пользователь нажимает кнопку обратного вызова на всплывающее уведомление. Но перед вызовом этой функции, необходимо создать экземпляр компонентного класса, и это задача из **IClassFactory::CreateInstance** функции.
 
@@ -432,7 +431,7 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ### <a name="create-a-dynamic-link-library-dll-project"></a>Создайте проект библиотеки динамической компоновки (DLL)
 
-Можно начать задачу создания внутрипроцессного COM-сервера, создав новый проект в Microsoft Visual Studio. Создание **Visual C++** > **Windows Desktop** > **библиотеки динамической компоновки (DLL)** проекта.
+Можно начать задачу создания внутрипроцессного COM-сервера, создав новый проект в Microsoft Visual Studio. Создание **Visual C++**  > **Windows Desktop** > **библиотеки динамической компоновки (DLL)** проекта.
 
 Чтобы добавить C++/WinRT поддержка в новый проект, выполните действия, описанные в [изменить проект приложения Windows Desktop, чтобы добавить C++поддержки /WinRT](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
@@ -540,10 +539,10 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 
 ## <a name="important-apis"></a>Важные API
 * [Интерфейс IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
-* [Интерфейс IUnknown interface](https://msdn.microsoft.com/library/windows/desktop/ms680509)
-* [Шаблон структуры winrt::implements](/uwp/cpp-ref-for-winrt/implements)
+* [Интерфейс IUnknown](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
+* [Структура шаблона WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
 
 ## <a name="related-topics"></a>См. также
-* [Создание API-интерфейсов с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
-* [Использование COM-компонентов с помощью C++/WinRT](consume-com.md)
+* [Создание интерфейсов API с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [Использование компонентов COM с помощью C++/WinRT](consume-com.md)
 * [Отправка локального всплывающего уведомления](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d51bc945c721ae15889dece8f84959f9a78192bc
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 41d3a84de1aa9e7440d5396775bd66d9c9e09d41
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63790518"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361523"
 ---
 # <a name="composition-brushes"></a>Кисти композиции
 Все, что отображается на экране в приложении UWP, отображается, поскольку нарисовано с помощью кисти. Кисти позволяют рисовать объекты пользовательского интерфейса с содержимым, начиная с простых сплошных цветов в изображениях и рисунках до цепочек сложных эффектов. В этом разделе представлены понятия, связанные с CompositionBrush.
@@ -37,7 +37,7 @@ ms.locfileid: "63790518"
 -   [С помощью vs кисть XAML. CompositionBrush](./composition-brushes.md#using-a-xaml-brush-vs-compositionbrush)
 -   [Связанные разделы](./composition-brushes.md#related-topics)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Материал данного раздела предполагает, что вы знакомы со структурой базового приложения композиции, которая описана в разделе [Обзор визуального уровня](visual-layer.md).
 
 ## <a name="paint-with-a-compositionbrush"></a>Рисование с помощью CompositionBrush
@@ -460,17 +460,17 @@ _containerVisual.Children.InsertAtTop(_backdropVisual);
 
 |Сценарий                                                                   | UIElement на XAML                                                                                                |Composition SpriteVisual
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------
-|Заполнение области сплошным цветом                                             |[SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962)                                |[CompositionColorBrush](https://msdn.microsoft.com/library/windows/apps/Mt589399)
-|Заполнение области анимированным цветом                                          |[SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962)                                |[CompositionColorBrush](https://msdn.microsoft.com/library/windows/apps/Mt589399)
-|Заполнение области статичным градиентом                                       |[LinearGradientBrush](https://msdn.microsoft.com/library/windows/apps/BR210108)                            |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)
+|Заполнение области сплошным цветом                                             |[SolidColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)                                |[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)
+|Заполнение области анимированным цветом                                          |[SolidColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)                                |[CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)
+|Заполнение области статичным градиентом                                       |[LinearGradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush)                            |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)
 |Заполнение области анимированными ограничениями градиента                                 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)                                                                                 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)
-|Заполнение области изображением                                                |[ImageBrush](https://msdn.microsoft.com/library/windows/apps/BR210101)                                     |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415)
-|Заполнение области веб-страницей                                               |[WebViewBrush](https://msdn.microsoft.com/library/windows/apps/BR227703)                                   |Н/Д
+|Заполнение области изображением                                                |[ImageBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush)                                     |[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush)
+|Заполнение области веб-страницей                                               |[WebViewBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush)                                   |Н/Д
 |Заполнение области изображением с использованием растягивания NineGrid                         |[Элемент управления изображения](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)                   |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
 |Заполнение области анимацией с использованием растягивания NineGrid                               |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)                                                                                       |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
-|Заполнение области цепочкой буферов                                             |[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) со взаимодействием с цепочкой буферов
-|Заполнение области видеосодержимым                                                 |[MediaElement](https://msdn.microsoft.com/library/windows/apps/mt187272.aspx)                                                                                                  |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) со взаимодействием с медиа
-|Заполнение области пользовательским двумерным рисунком                                       |[CanvasControl](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm) из Win2D                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) со взаимодействием с Win2D
+|Заполнение области цепочкой буферов                                             |[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)                                                                                                 |[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) со взаимодействием с цепочкой буферов
+|Заполнение области видеосодержимым                                                 |[MediaElement](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/media-playback)                                                                                                  |[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) со взаимодействием с медиа
+|Заполнение области пользовательским двумерным рисунком                                       |[CanvasControl](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm) из Win2D                                                                                                 |[CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) со взаимодействием с Win2D
 |Заполнение области неанимированной маской                                       |Используйте [фигуры](https://docs.microsoft.com/windows/uwp/graphics/drawing-shapes) XAML для определения маски   |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
 |Заполнение области анимированной маской                                        |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)                                                                                           |[CompositionMaskBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionMaskBrush)
 |Заполнение области анимированным эффектом фильтра                               |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)                                                                                         |[CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush)

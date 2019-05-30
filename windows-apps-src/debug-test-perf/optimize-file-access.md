@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cacd915530bb599936730ec404a6e524fef0105d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bc42fecf0a29784c8abe6e61a328d6e5024cc532
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597269"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362270"
 ---
 # <a name="optimize-file-access"></a>Оптимизация доступа к файлам
 
 
 Создайте приложения универсальной платформы Windows (UWP), получающие эффективный доступ к файловой системе, избегая проблем с производительностью, связанных с задержкой диска и тактами запоминания данных в памяти и центральном процессоре.
 
-Когда нужен доступ к большой коллекции файлов и требуется узнать значения свойств, отличающихся от типичных свойств Name, FileType или Path, получите к ним доступ, создав [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) и вызвав [**SetPropertyPrefetch**](https://msdn.microsoft.com/library/windows/apps/hh973319). Метод **SetPropertyPrefetch** способен радикально улучшить производительность приложений, показывающих коллекцию элементов, полученных из файловой системы (например, коллекцию изображений). В следующих примерах показан ряд методов доступа к нескольким файлам.
+Когда нужен доступ к большой коллекции файлов и требуется узнать значения свойств, отличающихся от типичных свойств Name, FileType или Path, получите к ним доступ, создав [**QueryOptions**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) и вызвав [**SetPropertyPrefetch**](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch). Метод **SetPropertyPrefetch** способен радикально улучшить производительность приложений, показывающих коллекцию элементов, полученных из файловой системы (например, коллекцию изображений). В следующих примерах показан ряд методов доступа к нескольким файлам.
 
-В первом примере применяется метод [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) для извлечения сведений об именах для набора файлов. Такой подход обеспечивает высокое быстродействие, поскольку предоставляется доступ лишь к свойству Name.
+В первом примере применяется метод [**Windows.Storage.StorageFolder.GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) для извлечения сведений об именах для набора файлов. Такой подход обеспечивает высокое быстродействие, поскольку предоставляется доступ лишь к свойству Name.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -44,7 +44,7 @@ ms.locfileid: "57597269"
 > Next i
 > ```
 
-Во втором примере применяется метод [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273), а затем извлекаются свойства изображения для каждого файла. Этот подход отличается низким быстродействием.
+Во втором примере применяется метод [**Windows.Storage.StorageFolder.GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync), а затем извлекаются свойства изображения для каждого файла. Этот подход отличается низким быстродействием.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -70,7 +70,7 @@ ms.locfileid: "57597269"
 > Next i
 > ```
 
-В третьем примере получение сведений о наборе файлов выполняется с помощью метода [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995). Такой подход позволяет достичь значительно лучшей производительности, чем в предыдущем примере.
+В третьем примере получение сведений о наборе файлов выполняется с помощью метода [**QueryOptions**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions). Такой подход позволяет достичь значительно лучшей производительности, чем в предыдущем примере.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -133,7 +133,7 @@ ms.locfileid: "57597269"
 
 ### <a name="buffering-between-uwp-and-net-streams"></a>Буферизация между потоками UWP и .NET
 
-Существует много сценариев, когда вам может понадобиться преобразовать поток UWP (например, [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) или [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) в поток .NET ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). Например, это может пригодиться, когда вы пишете приложение UWP и хотите использовать уже существующий код .NET, который работает в потоках с файловой системой UWP. Чтобы это было возможным, API-интерфейсы .NET для приложений универсальной платформы Windows предоставляет методы расширения, которые дают возможность преобразование между типами потока .NET и универсальной платформы Windows. Подробнее см. в разделе [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
+Существует много сценариев, когда вам может понадобиться преобразовать поток UWP (например, [**Windows.Storage.Streams.IInputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IInputStream) или [**IOutputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IOutputStream)) в поток .NET ([**System.IO.Stream**](https://docs.microsoft.com/dotnet/api/system.io.stream?redirectedfrom=MSDN)). Например, это может пригодиться, когда вы пишете приложение UWP и хотите использовать уже существующий код .NET, который работает в потоках с файловой системой UWP. Чтобы это было возможным, API-интерфейсы .NET для приложений универсальной платформы Windows предоставляет методы расширения, которые дают возможность преобразование между типами потока .NET и универсальной платформы Windows. Подробнее см. в разделе [**WindowsRuntimeStreamExtensions**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN).
 
 Во время преобразования потока UWP в поток .NET вы создаете адаптер для основного потока UWP. При некоторых условиях требуются затраты времени, связанные с применением методов на потоках UWP. Это может повлиять на скорость вашего приложения, особенно в сценариях, где необходимо выполнять много маленьких и частых операций чтения или записи.
 
@@ -194,7 +194,7 @@ ms.locfileid: "57597269"
 
 ### <a name="working-with-large-data-sets"></a>Работа с большими наборами данных
 
-При чтении или записи больших наборов данных вы можете увеличить пропускную способность чтения или записи, предоставив буфер большого размера для методов расширения [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx), [**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) и [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx). Это обеспечит адаптеру потоков внутренний буфер большего размера. Например, при передаче потока из большого файла в синтаксический анализатор XML анализатор может последовательно выполнить много маленьких операций чтения из потока. Большой буфер может снизить количество обращений к основному потоку UWP и повысить производительность.
+При чтении или записи больших наборов данных вы можете увеличить пропускную способность чтения или записи, предоставив буфер большого размера для методов расширения [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN), [**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN) и [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN). Это обеспечит адаптеру потоков внутренний буфер большего размера. Например, при передаче потока из большого файла в синтаксический анализатор XML анализатор может последовательно выполнить много маленьких операций чтения из потока. Большой буфер может снизить количество обращений к основному потоку UWP и повысить производительность.
 
 > **Примечание**    следует соблюдать осторожность при параметр размера буфера, который больше, чем приблизительно 80 КБ, так как это может привести к фрагментации в куче сборщика мусора (см. в разделе [производительности сборки мусора](improve-garbage-collection-performance.md) ). В следующем примере кода создается управляемый адаптер потоков с буфером размером 81 920 байт.
 
@@ -208,7 +208,7 @@ Stream managedStream = nativeStream.AsStreamForRead(bufferSize: 81920);
 Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 ```
 
-Методы [**Stream.CopyTo**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copyto.aspx) и [**CopyToAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copytoasync.aspx) также выделяют локальный буфер для копирования между потоками. Как и с методом расширения [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx), вы можете получить оптимальную производительность для больших копий потоков, переопределив размер буфера по умолчанию. В следующем примере кода показано изменение размера буфера по умолчанию для вызова **CopyToAsync**.
+Методы [**Stream.CopyTo**](https://docs.microsoft.com/dotnet/api/system.io.stream.copyto?redirectedfrom=MSDN#overloads) и [**CopyToAsync**](https://docs.microsoft.com/dotnet/api/system.io.stream.copytoasync?redirectedfrom=MSDN#overloads) также выделяют локальный буфер для копирования между потоками. Как и с методом расширения [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN), вы можете получить оптимальную производительность для больших копий потоков, переопределив размер буфера по умолчанию. В следующем примере кода показано изменение размера буфера по умолчанию для вызова **CopyToAsync**.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -236,6 +236,6 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 Вам также может понадобиться избегать буферизации, если вы хотите выполнять операции чтения и записи с небольшой задержкой и не хотите выполнять чтение большими блоками из основного потока UWP. Например, вам может понадобиться выполнять чтение и запись с небольшой задержкой, если вы используете поток для передачи данных по сети.
 
-В приложении чата для отправки и получения сообщений вы можете использовать поток через сетевой интерфейс. В этом случае вам необходимо отправлять сообщения по мере готовности, а не ждать заполнения буфера. Если вы зададите размер буфера, равный 0, когда вызываете методы расширения [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx), [**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) и [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx), то адаптер не будет выделять буфер, и все вызовы будут напрямую влиять на основной поток UWP.
+В приложении чата для отправки и получения сообщений вы можете использовать поток через сетевой интерфейс. В этом случае вам необходимо отправлять сообщения по мере готовности, а не ждать заполнения буфера. Если вы зададите размер буфера, равный 0, когда вызываете методы расширения [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN), [**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN) и [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN), то адаптер не будет выделять буфер, и все вызовы будут напрямую влиять на основной поток UWP.
 
 

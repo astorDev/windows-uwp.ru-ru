@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: fea636f78f4430d5bf8917c1ed720faeac7c4017
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 78f6fe36fb8955b6234cdf3cb42e4db02a602f4a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651739"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364349"
 ---
 # <a name="rich-edit-box"></a>Блок форматируемого текста
 
@@ -24,7 +24,7 @@ ms.locfileid: "57651739"
 
 Элемент управления RichEditBox можно использовать для ввода и правки документов в формате RTF, содержащих форматированный текст, изображения и гиперссылки. Элемент управления RichEditBox можно сделать доступным только для чтения, задав для его свойства IsReadOnly значение **true**.
 
-> **Важные API**: [Класс RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [свойством документа](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx), [свойство IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx), [IsSpellCheckEnabled свойство](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
+> **Важные API**: [Класс RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [свойством документа](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document), [свойство IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled свойство](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -58,9 +58,9 @@ ms.locfileid: "57651739"
 
 ## <a name="create-a-rich-edit-box"></a>Создание поля с форматом
 
-По умолчанию элемент управления RichEditBox поддерживает проверку орфографии. Чтобы отключить функцию проверки орфографии, задайте для свойства [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) значение **false**. Более подробные сведения см. в статье [Инструкции по проверке орфографии](text-controls.md).
+По умолчанию элемент управления RichEditBox поддерживает проверку орфографии. Чтобы отключить функцию проверки орфографии, задайте для свойства [IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) значение **false**. Более подробные сведения см. в статье [Инструкции по проверке орфографии](text-controls.md).
 
-Свойство [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) элемента RichEditBox используется для получения его содержимого. Содержимое RichEditBox — это объект [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx), в отличие от элемента управления RichTextBlock, использующего объекты [Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) в качестве своего содержимого. С помощью интерфейса ITextDocument можно загрузить и сохранить документ в потоке, получить фрагменты текста, выделить текст, отменить и повторить изменения, задать атрибуты форматирования по умолчанию и т. д.
+Свойство [Document](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document) элемента RichEditBox используется для получения его содержимого. Содержимое RichEditBox — это объект [Windows.UI.Text.ITextDocument](https://docs.microsoft.com/windows/desktop/api/tom/nn-tom-itextdocument), в отличие от элемента управления RichTextBlock, использующего объекты [Windows.UI.Xaml.Documents.Block](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Block) в качестве своего содержимого. С помощью интерфейса ITextDocument можно загрузить и сохранить документ в потоке, получить фрагменты текста, выделить текст, отменить и повторить изменения, задать атрибуты форматирования по умолчанию и т. д.
 
 В этом примере показано, как редактировать, загружать и сохранять файл в формате RTF в элементе управления RichEditBox.
 
@@ -205,7 +205,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 Чтобы упростить пользователям ввод данных с помощью сенсорной клавиатуры или панели функционального ввода, можно настроить тип вводимых данных элемента управления для ввода текста, чтобы он соответствовал типу данных, которые должен вводить пользователь. Раскладка клавиатуры по умолчанию обычно подходит для работы с документами RTF.
 
-Дополнительные сведения об использовании типов вводимых данных см. в разделе [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://msdn.microsoft.com/library/windows/apps/mt280229).
+Дополнительные сведения об использовании типов вводимых данных см. в разделе [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard).
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
 
@@ -226,5 +226,5 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - [Рекомендации для проверки орфографии](text-controls.md)
 - [Добавление поиска](search.md)
 - [Рекомендации для ввода текста](text-controls.md)
-- [Класс TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [Класс Windows.UI.Xaml.Controls PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [Класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Класс Windows.UI.Xaml.Controls PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)

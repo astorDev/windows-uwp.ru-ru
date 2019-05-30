@@ -1,16 +1,16 @@
 ---
 description: В этом разделе приведен полный пример кода Direct2D, чтобы показать, как использовать классы и интерфейсы COM с помощью C++/WinRT.
 title: Использование COM-компонентов с помощью C++/WinRT
-ms.date: 07/23/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, standard, c ++, cpp, winrt, COM, компонента, класс, интерфейс
 ms.localizationpriority: medium
-ms.openlocfilehash: 16425fd6d296a4abd4ed62c0c64cd23ef1f88891
-ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.openlocfilehash: dc4acd288496d83d5d91f1bdf206be19fe2fbb06
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58618411"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361149"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Использование COM-компонентов с помощью C++/WinRT
 
@@ -30,7 +30,7 @@ ms.locfileid: "58618411"
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-В приведенном выше коде показан способ объявления неинициализированный смарт-указатель [ **ID2D1Factory1** ](https://msdn.microsoft.com/library/Hh404596) COM-интерфейса. Интеллектуальный указатель не инициализирован, поэтому он еще не указывает на **ID2D1Factory1** интерфейс, принадлежащих любой реальный объект (он не указывает на интерфейс вообще). Но у него есть возможность сделать это; и (будьте интеллектуального указателя) имеет возможность через ссылку COM, инвентаризации для управления временем жизни объекта-владельца интерфейса, который он указывает, а на носителе, на который вы вызываете функции в этом интерфейсе.
+В приведенном выше коде показан способ объявления неинициализированный смарт-указатель [ **ID2D1Factory1** ](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1factory1) COM-интерфейса. Интеллектуальный указатель не инициализирован, поэтому он еще не указывает на **ID2D1Factory1** интерфейс, принадлежащих любой реальный объект (он не указывает на интерфейс вообще). Но у него есть возможность сделать это; и (будьте интеллектуального указателя) имеет возможность через ссылку COM, инвентаризации для управления временем жизни объекта-владельца интерфейса, который он указывает, а на носителе, на который вы вызываете функции в этом интерфейсе.
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>Функции COM, возвращающие указатель интерфейса, как **void**
 
@@ -46,7 +46,7 @@ D2D1CreateFactory(
 );
 ```
 
-Приведенный выше вызовы [ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory) функции, которая возвращает **ID2D1Factory1** указателя интерфейса с помощью последнего параметра, который имеет **void \* \***  типа. Многие функции COM возвращают **void\*\***. Для таких функций, используйте [ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) как показано.
+Приведенный выше вызовы [ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory) функции, которая возвращает **ID2D1Factory1** указателя интерфейса с помощью последнего параметра, который имеет **void \* \***  типа. Многие функции COM возвращают **void\*\*** . Для таких функций, используйте [ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) как показано.
 
 ## <a name="com-functions-that-return-a-specific-interface-pointer"></a>Функции COM, возвращающие указатель определенного интерфейса
 
@@ -72,7 +72,7 @@ D2D1CreateFactory(
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a>Функции COM, возвращающие указатель интерфейса, как **IUnknown**
 
-[ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) функция возвращает указатель на интерфейс фабрики DirectWrite с помощью последнего параметра, который имеет [ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)типа. Такие функции, используйте [ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function), но повторно интерпретируемая приведения, чтобы **IUnknown**.
+[ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) функция возвращает указатель на интерфейс фабрики DirectWrite с помощью последнего параметра, который имеет [ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)типа. Такие функции, используйте [ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function), но повторно интерпретируемая приведения, чтобы **IUnknown**.
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -169,7 +169,7 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>Полный исходный код список минимального приложения Direct2D
 
-Если вы хотите собрать и запустить этот образец исходного кода, а затем во-первых, в Visual Studio, создать новый **приложения Core (C++/WinRT)**. `Direct2D` является разумным имя для проекта, но можно присвоить файлу имя, но следует. Откройте `App.cpp`, удалить все его содержимое и вставьте в списке ниже.
+Если вы хотите собрать и запустить этот образец исходного кода, а затем во-первых, в Visual Studio, создать новый **приложения Core (C++/WinRT)** . `Direct2D` является разумным имя для проекта, но можно присвоить файлу имя, но следует. Откройте `App.cpp`, удалить все его содержимое и вставьте в списке ниже.
 
 ```cppwinrt
 #include "pch.h"
@@ -477,7 +477,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(App());
+    CoreApplication::Run(winrt::make<App>());
 }
 ```
 

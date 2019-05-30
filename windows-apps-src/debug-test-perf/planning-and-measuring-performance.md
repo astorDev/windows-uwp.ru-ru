@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bfe034ed697661c81b2f01b67fafeee1941832d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b6177e565e98c725326122fefad7c7ee23948b49
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640319"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359790"
 ---
 # <a name="planning-for-performance"></a>Планирование производительности
 
@@ -27,7 +27,7 @@ ms.locfileid: "57640319"
 
 Лучше задать начальную цель и пересмотреть ее позже, чем не иметь никакой цели. Цели, связанные с производительностью вашего приложения, должны быть конкретными и измеримыми. Они делятся на три категории: сколько времени уходит у пользователей или у приложения на выполнение задач (время); частота и непрерывность, с которой приложение перерисовывается в ответ на взаимодействие с пользователем (динамичность); и насколько экономно они расходуют системные ресурсы, в том числе заряд батареи (эффективность).
 
-## <a name="time"></a>Время
+## <a name="time"></a>Time
 
 Оцените допустимые диапазоны затраченного времени (*классы взаимодействия*), необходимое пользователям для выполнения своих задач в приложении. Присвойте каждому классу взаимодействия метку, данные о восприятии пользователем, а также идеальную и максимальную продолжительность. Ниже приведены некоторые предположения.
 
@@ -82,15 +82,15 @@ ms.locfileid: "57640319"
 **ПОЛЬЗОВАТЕЛЬСКИЙ ИНТЕРФЕЙС**
 
 -   Максимально увеличьте время анализа и загрузки и повысьте эффективность работы всех страниц пользовательского интерфейса приложения (особенно начальной страницы) с памятью путем [оптимизации разметки XAML](optimize-xaml-loading.md). Одним словом, отложите загрузку пользовательского интерфейса и кода, пока они не понадобятся.
--   Создайте элементы одинакового размера для [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) и [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) и используйте как можно больше [методов оптимизации ListView и GridView](optimize-gridview-and-listview.md).
+-   Создайте элементы одинакового размера для [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) и [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) и используйте как можно больше [методов оптимизации ListView и GridView](optimize-gridview-and-listview.md).
 -   Объявите пользовательский интерфейс в форме разметки, которую сможет загружать и повторно использовать по частям платформа, вместо того, чтобы создать императивно в коде.
 -   Отложите создание элементов пользовательского интерфейса до тех пор, пока они не понадобятся пользователю. См. атрибут [**x:Load**](../xaml-platform/x-load-attribute.md).
--   По возможности используйте переходы и анимации темы вместо раскадрованных анимаций. Дополнительные сведения см. в разделе [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/Mt187350). Помните, что для раскадрованных анимаций требуются постоянные обновления экрана, и сохраняйте ЦП и графический конвейер в активном состоянии. Для экономии батареи не воспроизводите анимации, если пользователь не взаимодействует с приложением.
--   Изображения должны загружаться такого размера, который подходит для отображения в том представлении, в котором вы их выводите, с помощью метода [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210).
+-   По возможности используйте переходы и анимации темы вместо раскадрованных анимаций. Дополнительные сведения см. в разделе [Обзор анимаций](https://docs.microsoft.com/windows/uwp/graphics/animations-overview). Помните, что для раскадрованных анимаций требуются постоянные обновления экрана, и сохраняйте ЦП и графический конвейер в активном состоянии. Для экономии батареи не воспроизводите анимации, если пользователь не взаимодействует с приложением.
+-   Изображения должны загружаться такого размера, который подходит для отображения в том представлении, в котором вы их выводите, с помощью метода [**GetThumbnailAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync).
 
 **ЦП, памяти и питания**
 
--   Запланируйте работы с низким приоритетом на соответствующих потоках и/или ядрах. См. раздел [Асинхронное программирование](https://msdn.microsoft.com/library/windows/apps/Mt187335), свойство [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR209054) и класс [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211).
+-   Запланируйте работы с низким приоритетом на соответствующих потоках и/или ядрах. См. раздел [Асинхронное программирование](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps), свойство [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.dispatcher) и класс [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher).
 -   Сведите к минимуму используемый приложением объем памяти, освободив объемные ресурсы (такие как файлы мультимедиа) при приостановке работы.
 -   Сведите к минимуму рабочий набор кода.
 -   Избегайте утечек памяти за счет отмены регистрации обработчиков событий и снятия ссылок на элементы пользовательского интерфейса, где это только возможно.
@@ -98,29 +98,29 @@ ms.locfileid: "57640319"
 
 **Доступ к данным**
 
--   По возможности выполняйте предварительную загрузку содержимого. Об автоматической предварительной загрузке см. в описании класса [**ContentPrefetcher**](https://msdn.microsoft.com/library/windows/apps/Dn279042). О предварительной загрузке вручную см. в описании пространства имен [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/BR224847) и класса [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Hh700517).
--   По возможности поместите в кэш содержимое, доступ к которому является ресурсоемким. См. свойства [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/BR241621) и [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622).
+-   По возможности выполняйте предварительную загрузку содержимого. Об автоматической предварительной загрузке см. в описании класса [**ContentPrefetcher**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.ContentPrefetcher). О предварительной загрузке вручную см. в описании пространства имен [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background) и класса [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger).
+-   По возможности поместите в кэш содержимое, доступ к которому является ресурсоемким. См. свойства [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) и [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings).
 -   Для промахов в кэше как можно быстрее отобразите замещающий пользовательский интерфейс, указывающий на то, что приложение все еще загружает содержимое. Переход от заполнителя к динамическому содержимому должен выполняться способом, который не мешает работе пользователя. Например, не следует изменять позицию содержимого при движении пальцем или указателем мыши, когда загружается динамическое содержимое.
 
 **Запуск приложения и возобновление**
 
--   Откладывание экрана-заставки приложения и предотвращение его ненужного расширения. Дополнительные сведения см. в разделе [Создание быстрого и гибкого взаимодействия при запуске приложения](https://go.microsoft.com/fwlink/p/?LinkId=317595) и [Более продолжительное отображение экрана-заставки](https://msdn.microsoft.com/library/windows/apps/Mt187309).
+-   Откладывание экрана-заставки приложения и предотвращение его ненужного расширения. Дополнительные сведения см. в разделе [Создание быстрого и гибкого взаимодействия при запуске приложения](https://go.microsoft.com/fwlink/p/?LinkId=317595) и [Более продолжительное отображение экрана-заставки](https://docs.microsoft.com/windows/uwp/launch-resume/create-a-customized-splash-screen).
 -   Отключайте анимации, которые срабатывают сразу после закрытия экрана-заставки, поскольку во время запуска приложения они вызывают ощущение задержки.
 
 **Адаптивного пользовательского интерфейса и ориентации**
 
--   Используйте класс [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021).
+-   Используйте класс [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager).
 -   Немедленное завершение только необходимой работы. Операции, для которых требуется интенсивная работа приложения, можно отложить. У вашего приложения будет от 200 до 800 миллисекунд для завершения работы, прежде чем пользователь увидит пользовательский интерфейс приложения в состоянии обрезки.
 
 После того как планирование обеспечения производительности завершено, можно приступать к написанию кода приложения.
 
 ## <a name="instrument-for-performance"></a>Средства для обеспечения производительности
 
-По ходу написания кода приложения вы можете добавить код для записи сообщений и событий в определенных точках исполнения приложения. Затем при тестировании приложения можно использовать такие средства профилирования, как Windows Performance Recorder и Windows Performance Analyzer (оба входят в [набор средств для оценки производительности Windows](https://msdn.microsoft.com/library/windows/apps/xaml/hh162945.aspx)), для создания и просмотра отчетов о производительности приложения. В таком отчете можно искать сообщения и события, упрощающие анализ результатов отчета.
+По ходу написания кода приложения вы можете добавить код для записи сообщений и событий в определенных точках исполнения приложения. Затем при тестировании приложения можно использовать такие средства профилирования, как Windows Performance Recorder и Windows Performance Analyzer (оба входят в [набор средств для оценки производительности Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))), для создания и просмотра отчетов о производительности приложения. В таком отчете можно искать сообщения и события, упрощающие анализ результатов отчета.
 
-Универсальная платформа для Windows (UWP) предоставляет API ведения журналов, подкрепляемые [трассировкой событий Windows (ETW)](https://msdn.microsoft.com/library/windows/desktop/Bb968803). Вместе они предлагают широкие возможности по ведению журналов и трассировке событий. Эти API, входящие в пространство имен [**Windows.Foundation.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/BR206677), включают классы [**FileLoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264138), [**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/Dn264195), [**LoggingChannel**](https://msdn.microsoft.com/library/windows/apps/Dn264202) и [**LoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264217).
+Универсальная платформа для Windows (UWP) предоставляет API ведения журналов, подкрепляемые [трассировкой событий Windows (ETW)](https://docs.microsoft.com/windows/desktop/ETW/event-tracing-portal). Вместе они предлагают широкие возможности по ведению журналов и трассировке событий. Эти API, входящие в пространство имен [**Windows.Foundation.Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics), включают классы [**FileLoggingSession**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession), [**LoggingActivity**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingActivity), [**LoggingChannel**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel) и [**LoggingSession**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingSession).
 
-Чтобы записать сообщение в определенную точку отчета, когда приложение работает, создайте объект **LoggingChannel** и затем вызовите метод [**LogMessage**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.diagnostics.loggingchannel.logmessage.aspx) этого объекта, вот так.
+Чтобы записать сообщение в определенную точку отчета, когда приложение работает, создайте объект **LoggingChannel** и затем вызовите метод [**LogMessage**](https://docs.microsoft.com/uwp/api/windows.foundation.diagnostics.loggingchannel.logmessage) этого объекта, вот так.
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -133,7 +133,7 @@ myLoggingChannel.LogMessage(LoggingLevel.Information, "Here' s my logged message
 // ...
 ```
 
-Чтобы записывать события запуска и остановки на протяжении периода времени, когда приложение работает, создайте объект **LoggingActivity** и затем вызовите конструктор [**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.diagnostics.loggingactivity.loggingactivity.aspx) этого объекта, вот так.
+Чтобы записывать события запуска и остановки на протяжении периода времени, когда приложение работает, создайте объект **LoggingActivity** и затем вызовите конструктор [**LoggingActivity**](https://docs.microsoft.com/uwp/api/windows.foundation.diagnostics.loggingactivity.loggingactivity) этого объекта, вот так.
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -171,13 +171,13 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
     -   Запустите приложение несколько раз, чтобы устранить случайные факторы тестирования и обеспечить согласованные результаты.
 -   Тестирование устройств с малой мощностью. Устройства пользователей могут быть значительно менее мощными, чем компьютер разработки. Windows была разработана с учетом применения на маломощных мобильных устройствах. Приложения, работающие на платформе, должны обеспечить нормальную производительность на этих устройствах. Для правильной постановки задачи лучше сразу принять допущение, что маломощное устройство медленнее настольного компьютера примерно в четыре раза.
 -   Использование сочетания средств, таких как Microsoft Visual Studio и Windows Performance Analyzer, для измерения производительности приложения. Приложение Visual Studio служит для предоставления анализа, уделяющего основное внимание приложению, такого как анализ привязок исходного кода. Windows Performance Analyzer служит для предоставления анализа, уделяющего основное внимание системе, включая предоставление информации о системе, сведений о событиях сенсорной манипуляции, операциях дискового ввода-вывода и нагрузке на графический процессор. Оба средства предоставляют запись и экспорт трассировок и могут заново открывать общедоступные трассировки и трассировки после окончания.
--   Перед отправкой приложения Store сертификацию, не забудьте включить в планов тестирования производительности тестовые случаи, как описано в разделе «Производительность tests» [комплект сертификации приложений для Windows проверяет](windows-app-certification-kit-tests.md) и в в разделе «Производительность и стабильность» из [тестовых случаев для приложения универсальной платформы Windows](https://msdn.microsoft.com/library/windows/apps/Dn275879).
+-   Перед отправкой приложения Store сертификацию, не забудьте включить в планов тестирования производительности тестовые случаи, как описано в разделе «Производительность tests» [комплект сертификации приложений для Windows проверяет](windows-app-certification-kit-tests.md) и в в разделе «Производительность и стабильность» из [тестовых случаев для приложения универсальной платформы Windows](https://docs.microsoft.com/previous-versions/windows/apps/dn275879(v=win.10)).
 
 Дополнительные сведения см. в следующих ресурсах и средствах профилирования.
 
--   [Анализатор производительности Windows](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx)
--   [Windows Performance Toolkit](https://msdn.microsoft.com/library/windows/apps/xaml/hh162945.aspx)
--   [Анализ производительности с помощью средств диагностики Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh696636.aspx)
+-   [Анализатор производительности Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
+-   [Windows Performance Toolkit](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
+-   [Анализ производительности с помощью средств диагностики Visual Studio](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015)
 -   Мероприятие //build/ [Производительность XAML](https://channel9.msdn.com/Events/Build/2015/3-698)
 -   Мероприятие //build/ [Новые средства XAML в Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
 

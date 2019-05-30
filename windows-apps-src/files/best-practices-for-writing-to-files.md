@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e0fcb903bd272bd10d434a27d41e6e4558a624ea
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: a6a1d93b1deaad084ff25db946199b678b35703c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334902"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369513"
 ---
 # <a name="best-practices-for-writing-to-files"></a>Рекомендации по записи в файлы
 
@@ -192,7 +192,7 @@ else
 
 ### <a name="synchronize-access-to-the-file"></a>Синхронизировать доступ к файлу
 
-[Параллельному программированию в блоге .NET](https://blogs.msdn.microsoft.com/pfxteam/) является превосходным ресурсом для рекомендации, касающиеся параллельного программирования. В частности [блога о AsyncReaderWriterLock](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) описывается Ведение монопольный доступ к файлу для записи, предоставляя параллельный доступ для чтения. Следует помнить, что при сериализации, операций ввода-вывода будет влиять на производительность.
+[Параллельному программированию в блоге .NET](https://devblogs.microsoft.com/pfxteam/) является превосходным ресурсом для рекомендации, касающиеся параллельного программирования. В частности [блога о AsyncReaderWriterLock](https://devblogs.microsoft.com/pfxteam/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) описывается Ведение монопольный доступ к файлу для записи, предоставляя параллельный доступ для чтения. Следует помнить, что при сериализации, операций ввода-вывода будет влиять на производительность.
 
 ## <a name="see-also"></a>См. также
 

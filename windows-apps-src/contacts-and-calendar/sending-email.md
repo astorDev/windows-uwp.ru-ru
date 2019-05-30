@@ -6,12 +6,12 @@ keywords: контакты, электронное письмо, отправк�
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 524e1f12c3da0d9d06e73d84e08e2d54efde9a7e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626489"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361221"
 ---
 # <a name="send-email"></a>Отправка сообщения электронной почты
 
@@ -25,7 +25,7 @@ ms.locfileid: "57626489"
 
 ## <a name="launch-the-compose-email-dialog"></a>Запуск диалогового окна составления электронного письма
 
-Создайте объект [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) и укажите данные, которые необходимо предварительно внести в поля диалогового окна составления электронного письма. Чтобы отобразить диалоговое окно, вызовите метод [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269).
+Создайте объект [**EmailMessage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Email.EmailMessage) и укажите данные, которые необходимо предварительно внести в поля диалогового окна составления электронного письма. Чтобы отобразить диалоговое окно, вызовите метод [**ShowComposeNewEmailAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailmanager.showcomposenewemailasync).
 
 ``` cs
 private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,
@@ -51,12 +51,12 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 ## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
 
-В данной статье рассказано, как запустить диалоговое окно составления электронного письма. Сведения о том, как выбрать контакты-получатели электронного письма, см. в статье [Выбор контактов](selecting-contacts.md). См. [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) для выбора файла в качестве вложения в сообщение.
+В данной статье рассказано, как запустить диалоговое окно составления электронного письма. Сведения о том, как выбрать контакты-получатели электронного письма, см. в статье [Выбор контактов](selecting-contacts.md). См. [**PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) для выбора файла в качестве вложения в сообщение.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Выбор контактов](selecting-contacts.md)
-* [Как для продолжения после вызова средства выбора файлов для приложения Windows Phone](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [Как для продолжения после вызова средства выбора файлов для приложения Windows Phone](https://docs.microsoft.com/previous-versions/windows/apps/dn614994(v=win.10))
  
 
  

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: начало работы, uwp, windows 10, обучающий курс, файлы, ввод-вывод файлов, чтение файла, запись файла, создание файла, запись текста, чтение текста
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e0abc146820ca27ee83662ba5f8b79a1daf90bab
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5480638e201dca8a5eb5363d7a5944422c626f67
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662509"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366892"
 ---
 # <a name="work-with-files"></a>Работа с файлами
 
@@ -130,7 +130,7 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 | [Создание, запись и чтение файла](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | Описание создания, чтения и записи текста, двоичных данных и потоков. |
 | [Начало работы хранение данных приложения локально](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | Помимо рекомендаций для хранения локальных данных здесь также описывается назначение папок LocalSettings и LocalCache. |
 | [Приступая к работе с перемещаемые данные приложений](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | Серия из двух частей, посвященная использованию перемещаемых данных приложения. |
-| [Рекомендации для перемещаемых данных приложения](https://msdn.microsoft.com/library/windows/apps/hh465094) | Следуйте этим рекомендациям для перемещаемых данных при проектировании приложения. |
+| [Рекомендации для перемещаемых данных приложения](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | Следуйте этим рекомендациям для перемещаемых данных при проектировании приложения. |
 | [Хранение и извлечение параметров и прочих данных приложения](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | Общие сведения о различных хранилищах+ данных приложений, таких как локальные, перемещаемые и временные папки. В разделе [Перемещаемые данные](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data) представлены инструкции и дополнительные сведения о записи данных, которые перемещаются между устройствами. |
 | [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | Сведения о расположениях в файловой системе, доступных вашему приложению. |
 | [Открытие файлов и папок с помощью средства выбора](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | Здесь описывается, как получить доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. |

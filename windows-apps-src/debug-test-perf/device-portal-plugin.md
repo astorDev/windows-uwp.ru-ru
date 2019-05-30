@@ -6,12 +6,12 @@ ms.date: 03/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, портал устройств
 ms.localizationpriority: medium
-ms.openlocfilehash: d9e11445d77434320c8842608bf8183a078c0660
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: debc4572a26db9e849dd31f17b114f15aa9ef055
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644469"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362493"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Написание пользовательского подключаемого модуля для портала устройств
 
@@ -75,7 +75,7 @@ ms.locfileid: "57644469"
 ```
 
 > [!NOTE]
-> Возможность "devicePortalProvider" ограничена ("rescap"), это означает, что необходимо получить предварительное разрешение из Магазина, чтобы приложение можно было там опубликовать. Однако это не помешает тестированию приложения локально путем загрузки неопубликованных приложений. Дополнительные сведения об ограниченных возможностях см. в разделе [Объявления возможностей приложения](https://msdn.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities).
+> Возможность "devicePortalProvider" ограничена ("rescap"), это означает, что необходимо получить предварительное разрешение из Магазина, чтобы приложение можно было там опубликовать. Однако это не помешает тестированию приложения локально путем загрузки неопубликованных приложений. Дополнительные сведения об ограниченных возможностях см. в разделе [Объявления возможностей приложения](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
 ## <a name="set-up-your-background-task-and-winrt-component"></a>Настройка фоновых задач и компонентов WinRT
 Для настройки подключения портала устройства приложение необходимо подключить к службе приложения через службу портала устройства с экземпляром портала устройства, запущенного в приложении. Для этого добавьте новый компонент WinRT в приложение с помощью класса, который реализует [**IBackgroundTask**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.ibackgroundtask).
@@ -195,7 +195,7 @@ if (req.RequestUri.LocalPath.ToLower().Contains("/www/")) {
 5.  Отключите портал устройств, а затем снова включите его, чтобы он нашел ваше приложение (это необходимо только при изменении манифеста приложения — в остальное время можно просто повторно развертывать и пропускать этот шаг). 
 6.  В браузере перейдите к пространству имен поставщика, также следует ввести точку останова.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [Общие сведения о Windows Device Portal](device-portal.md)
 * [Создание и использование службы приложений](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
 

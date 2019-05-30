@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4607280fd031fa556bfc5d1c719f4b4e1aeb928e
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 7c61f6580039b9fe3da915491acd84c939088370
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984098"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361388"
 ---
 # <a name="visual-layer"></a>Визуальный уровень
 
@@ -38,7 +38,7 @@ ms.locfileid: "65984098"
 
 ### <a name="content"></a>Content
 
-Размещение содержимого, его преобразование и доступ к нему обеспечивает система анимации и эффектов с использованием визуальных элементов. В основе иерархии классов находится класс [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) — упрощенный прокси-сервер с гибким потоком в процессе приложения для визуального состояния в компоновщике. Вложенные классы визуального элемента включают  [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) для дочерних элементов создавать деревья визуальных элементов и [ **SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) , содержит содержимое и может быть окрашен либо сплошным цветом, пользовательских эффектов рисуемого содержимого или визуального элемента. Вместе эти типы Visual составляют визуальную древовидную структуру для двумерного пользовательского интерфейса и позволяют создавать наиболее видимые элементы FrameworkElements XAML.
+Размещение содержимого, его преобразование и доступ к нему обеспечивает система анимации и эффектов с использованием визуальных элементов. В основе иерархии классов находится класс [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) — упрощенный прокси-сервер с гибким потоком в процессе приложения для визуального состояния в компоновщике. Вложенные классы визуального элемента включают  [**ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) для дочерних элементов создавать деревья визуальных элементов и [ **SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) , содержит содержимое и может быть окрашен либо сплошным цветом, пользовательских эффектов рисуемого содержимого или визуального элемента. Вместе эти типы Visual составляют визуальную древовидную структуру для двумерного пользовательского интерфейса и позволяют создавать наиболее видимые элементы FrameworkElements XAML.
 
 Дополнительные сведения см. в обзоре [визуальных объектов композиции](composition-visual-tree.md).
 
@@ -58,7 +58,7 @@ ms.locfileid: "65984098"
 
 ### <a name="working-with-your-xaml-uwp-app"></a>Работа с приложением UWP XAML.
 
-Получить доступ к визуальному элементу, созданному платформой XAML, и к поддержке видимого элемента FrameworkElement можно с помощью класса [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) в [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908). Обратите внимание, что визуальные элементы, созданные для вас платформой, имеют определенные ограничения, касающиеся настройки. Это связано с тем, что платформа управляет смещением, преобразованием и временем жизни. Однако можно создавать собственные визуальные элементы и вкладывать их в существующий элемент XAML через ElementCompositionPreview или путем добавления в существующий ContainerVisual в визуальной древовидной структуре.
+Получить доступ к визуальному элементу, созданному платформой XAML, и к поддержке видимого элемента FrameworkElement можно с помощью класса [**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) в [**Windows.UI.Xaml.Hosting**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting). Обратите внимание, что визуальные элементы, созданные для вас платформой, имеют определенные ограничения, касающиеся настройки. Это связано с тем, что платформа управляет смещением, преобразованием и временем жизни. Однако можно создавать собственные визуальные элементы и вкладывать их в существующий элемент XAML через ElementCompositionPreview или путем добавления в существующий ContainerVisual в визуальной древовидной структуре.
 
 Дополнительные сведения см. в обзоре [использования визуального уровня с помощью XAML](using-the-visual-layer-with-xaml.md).
 
@@ -66,11 +66,11 @@ ms.locfileid: "65984098"
 
 Чтобы улучшить представление и функциональные возможности в WPF, Windows Forms, можно использовать визуальном уровне и C++ классических приложений Win32. Вы можете перенести Острова содержимого для использования на визуальном уровне и остальная часть пользовательского интерфейса в его существующую платформу. Это означает, что можно внести существенные обновления и улучшения пользовательского интерфейса приложения без необходимости вносить значительные изменения в существующий код базового.
 
-Дополнительные сведения см. в разделе [модернизировать классического приложения с на визуальном уровне](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps).
+Дополнительные сведения см. в статье [Using the Visual layer in desktop apps](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps) (Использование визуального уровня в классических приложениях).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [**Полную справочную документацию по API**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+* [**Полную справочную документацию по API**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 * Расширенные примеры пользовательского интерфейса и композиции в [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs)
 * [Коллекция примеров Windows.UI.Composition](https://aka.ms/winuiapp)
 * [@windowsui Веб-канал Twitter ](https://twitter.com/windowsui)

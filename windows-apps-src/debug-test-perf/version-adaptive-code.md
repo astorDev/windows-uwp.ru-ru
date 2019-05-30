@@ -6,22 +6,22 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
-ms.openlocfilehash: d62ce9abd84a0769a2393db169b8198d3d9f6cec
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f542c76d879881af296351ce51a803aa9986ecbb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616409"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359712"
 ---
 # <a name="version-adaptive-code"></a>Адаптивный к версии код
 
-Написание адаптивного кода аналогично созданию [адаптивного пользовательского интерфейса](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml). Вы можете спроектировать базовый интерфейс для самого небольшого экрана, а затем перемещать и добавлять элементы, если вы обнаружите, что приложение работает на устройстве с большим экраном. Для создания адаптивного кода вы пишите базовый код для самой ранней версии ОС и добавляете дополнительные функции, если обнаруживаете, что приложение работает в более поздней версии ОС, где эти функции доступны.
+Написание адаптивного кода аналогично созданию [адаптивного пользовательского интерфейса](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml). Вы можете спроектировать базовый интерфейс для самого небольшого экрана, а затем перемещать и добавлять элементы, если вы обнаружите, что приложение работает на устройстве с большим экраном. Для создания адаптивного кода вы пишите базовый код для самой ранней версии ОС и добавляете дополнительные функции, если обнаруживаете, что приложение работает в более поздней версии ОС, где эти функции доступны.
 
 Важные справочные сведения об ApiInformation, контрактах API и настройке Visual Studio доступны в разделе [Адаптивные к версии приложения](version-adaptive-apps.md).
 
 ### <a name="runtime-api-checks"></a>Проверки API во время выполнения
 
-Используйте класс [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) в своем коде в условном выражении, чтобы проверить наличие API-интерфейса, который вы хотите вызвать. Это условие оценивается при каждом запуске приложения, но оно будет **истинным** только на устройствах, где этот API-интерфейс присутствует и, следовательно, доступен. Это позволяет писать адаптивный к версии код, чтобы создавать приложения, использующие API, доступные только в определенных версиях ОС.
+Используйте класс [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) в своем коде в условном выражении, чтобы проверить наличие API-интерфейса, который вы хотите вызвать. Это условие оценивается при каждом запуске приложения, но оно будет **истинным** только на устройствах, где этот API-интерфейс присутствует и, следовательно, доступен. Это позволяет писать адаптивный к версии код, чтобы создавать приложения, использующие API, доступные только в определенных версиях ОС.
 
 Рассмотрим конкретные примеры использования новых функций в Windows Insider Preview. Общий обзор использования класса **ApiInformation** см. в [Общие сведения о семействах устройств](https://docs.microsoft.com/en-us/uwp/extension-sdks/device-families-overview#writing-code) и записи блога [Динамическое определение компонентов с контрактами API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
 
@@ -34,7 +34,7 @@ ms.locfileid: "57616409"
 
 Это нужно сделать, если вы используете:
 - новый API, которому требуется возможность, недоступна в более ранней версии. Вам необходимо увеличить минимальную версию до той, которая поддерживает эту возможность. Подробнее см. в разделе [Объявления характеристик приложения](../packaging/app-capability-declarations.md);
-- любые новые ключи ресурсов, добавленные в generic.xaml и недоступные в предыдущей версии. Версия файла generic.xaml, используемого во время выполнения, определяется по версии ОС устройства. Невозможно использовать проверки API во время выполнения, чтобы определить наличие ресурсов XAML. Поэтому необходимо использовать только ключи ресурсов, которые доступны в минимальной версии, поддерживаемой приложением, иначе в нем возникнет сбой из-за исключения [XAMLParseException](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.markup.xamlparseexception.aspx) во время выполнения.
+- любые новые ключи ресурсов, добавленные в generic.xaml и недоступные в предыдущей версии. Версия файла generic.xaml, используемого во время выполнения, определяется по версии ОС устройства. Невозможно использовать проверки API во время выполнения, чтобы определить наличие ресурсов XAML. Поэтому необходимо использовать только ключи ресурсов, которые доступны в минимальной версии, поддерживаемой приложением, иначе в нем возникнет сбой из-за исключения [XAMLParseException](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlparseexception) во время выполнения.
 
 ### <a name="adaptive-code-options"></a>Варианты адаптивного кода
 
@@ -73,9 +73,9 @@ ms.locfileid: "57616409"
 
 ### <a name="example-1-new-enum-value"></a>Пример 1: Новое значение перечисления
 
-Windows 10 версии 1607 добавляет новое значение для [InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.inputscopenamevalue.aspx) перечисления: **ChatWithoutEmoji**. Поведение этого типа вводимых данных совпадает с типом **Chat** (проверка правописания, автозаполнение, автоматическое применение заглавных букв), но он сопоставляет с сенсорной клавиатурой без кнопки смайлика. Это полезно, если вы создаете собственное средство выбора смайликов и хотите отключить встроенную кнопку смайлика на сенсорной клавиатуре. 
+Windows 10 версии 1607 добавляет новое значение для [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue) перечисления: **ChatWithoutEmoji**. Поведение этого типа вводимых данных совпадает с типом **Chat** (проверка правописания, автозаполнение, автоматическое применение заглавных букв), но он сопоставляет с сенсорной клавиатурой без кнопки смайлика. Это полезно, если вы создаете собственное средство выбора смайликов и хотите отключить встроенную кнопку смайлика на сенсорной клавиатуре. 
 
-В этом примере показано, как проверить, доступно ли значение перечисления **ChatWithoutEmoji**, и задать свойство [InputScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.inputscope.aspx) элемента **TextBox**, если это так. Если значение отсутствует в системе, где запущено приложение, для **InputScope** задается значение **Chat**. Показанный код можно разместить в конструкторе Page или обработчике событий Page.Loaded.
+В этом примере показано, как проверить, доступно ли значение перечисления **ChatWithoutEmoji**, и задать свойство [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) элемента **TextBox**, если это так. Если значение отсутствует в системе, где запущено приложение, для **InputScope** задается значение **Chat**. Показанный код можно разместить в конструкторе Page или обработчике событий Page.Loaded.
 
 > [!TIP]
 > При проверке API используйте статические строки, а не полагайтесь на возможности языка .NET, иначе приложение может попытаться обратиться к неопределенному типу, что приведет к сбою во время выполнения.
@@ -156,20 +156,20 @@ private void messageBox_Loaded(object sender, RoutedEventArgs e)
 
 ### <a name="example-2-new-control"></a>Пример 2: Новый элемент управления
 
-В новой версии Windows обычно предоставляются новые элементы управления на поверхности API платформы UWP, которые реализуют новые возможности. Чтобы использовать новый элемент управления используйте метод [ApiInformation.IsTypePresent](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx).
+В новой версии Windows обычно предоставляются новые элементы управления на поверхности API платформы UWP, которые реализуют новые возможности. Чтобы использовать новый элемент управления используйте метод [ApiInformation.IsTypePresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent).
 
-В Windows 10 версии 1607 появился новый элемент управления мультимедиа [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). Он основан на классе [MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx), поэтому предоставляет такие функции, как привязка к фоновому звуку, а также использует архитектурные улучшения стека функций мультимедиа.
+В Windows 10 версии 1607 появился новый элемент управления мультимедиа [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement). Он основан на классе [MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer), поэтому предоставляет такие функции, как привязка к фоновому звуку, а также использует архитектурные улучшения стека функций мультимедиа.
 
-Однако если приложение выполняется на устройстве с версией Windows 10 более ранней, чем 1607, необходимо использовать элемент [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx) вместо нового элемента управления **MediaPlayerElement**. Вы можете использовать метод [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx), чтобы проверить наличие элемента управления MediaPlayerElement во время выполнения, и загрузить подходящий элемент.
+Однако если приложение выполняется на устройстве с версией Windows 10 более ранней, чем 1607, необходимо использовать элемент [**MediaElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement) вместо нового элемента управления **MediaPlayerElement**. Вы можете использовать метод [**ApiInformation.IsTypePresent**](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent), чтобы проверить наличие элемента управления MediaPlayerElement во время выполнения, и загрузить подходящий элемент.
 
-В этом примере показано, как создать приложение, которое использует новый элемент MediaPlayerElement или старый элемент MediaElement в зависимости от того, имеется доступен ли тип MediaPlayerElement. В коде используйте класс [UserControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol.aspx), чтобы разбить элементы управления, их интерфейс и код на компоненты и переключаться между ними зависимости от версии ОС. Кроме того, можно использовать настраиваемый элемент управления, который предоставляет дополнительные функции, но это выходит за рамки данного простого примера.
+В этом примере показано, как создать приложение, которое использует новый элемент MediaPlayerElement или старый элемент MediaElement в зависимости от того, имеется доступен ли тип MediaPlayerElement. В коде используйте класс [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol), чтобы разбить элементы управления, их интерфейс и код на компоненты и переключаться между ними зависимости от версии ОС. Кроме того, можно использовать настраиваемый элемент управления, который предоставляет дополнительные функции, но это выходит за рамки данного простого примера.
  
 **MediaPlayerUserControl** 
 
 `MediaPlayerUserControl` инкапсулирует элемент **MediaPlayerElement** и несколько кнопок, которые используются для перехода по мультимедиа кадр за кадром. UserControl позволяет обрабатывать эти элементы управления как единый объект и упрощает переключение на MediaElement в старых системах. Этот пользовательский элемент управления следует использовать только в системах, где MediaPlayerElement поддерживается, поэтому в коде внутри этого элемента управления проверки ApiInformation не выполняются.
 
 > [!NOTE]
-> Для упрощения этого примера кнопки перехода по кадрам размещаются вне проигрывателя мультимедиа. Для улучшения взаимодействия с пользователем необходимо добавить в MediaTransportControls собственные кнопки. Подробнее см. в разделе [Пользовательские элементы управления транспортировкой](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls). 
+> Для упрощения этого примера кнопки перехода по кадрам размещаются вне проигрывателя мультимедиа. Для улучшения взаимодействия с пользователем необходимо добавить в MediaTransportControls собственные кнопки. Подробнее см. в разделе [Пользовательские элементы управления транспортировкой](https://docs.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls). 
 
 **XAML**
 ```xaml
@@ -305,7 +305,7 @@ public MainPage()
 
 ### <a name="example-1-new-property"></a>Пример 1: Новое свойство
 
-Первый шаг настройки расширяемого триггера состояния — создание подкласса для класса [StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx), чтобы создать пользовательский триггер, который будет активироваться в зависимости от присутствия API. В этом примере показан триггер, который активируется, если наличие свойства соответствует переменной `_isPresent`, заданной в XAML.
+Первый шаг настройки расширяемого триггера состояния — создание подкласса для класса [StateTriggerBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.statetriggerbase), чтобы создать пользовательский триггер, который будет активироваться в зависимости от присутствия API. В этом примере показан триггер, который активируется, если наличие свойства соответствует переменной `_isPresent`, заданной в XAML.
 
 **C#**
 ```csharp
@@ -339,7 +339,7 @@ class IsPropertyPresentTrigger : StateTriggerBase
 
 Следующий шаг — настройка триггера визуального состояния в XAML, чтобы получить два различных визуальных состояния в зависимости от присутствия API. 
 
-В Windows 10 версии 1607 добавлено новое свойство для класса [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx), [AllowFocusOnInteraction](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.allowfocusoninteraction.aspx), которое определяет, получает ли элемент управления фокус, когда пользователь взаимодействует с ним. Это удобно, если вам нужно удерживать фокус на текстовом поле для ввода данных (и продолжать показывать сенсорную клавиатуру), когда пользователь нажимает кнопку.
+В Windows 10 версии 1607 добавлено новое свойство для класса [FrameworkElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement), [AllowFocusOnInteraction](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.allowfocusoninteraction), которое определяет, получает ли элемент управления фокус, когда пользователь взаимодействует с ним. Это удобно, если вам нужно удерживать фокус на текстовом поле для ввода данных (и продолжать показывать сенсорную клавиатуру), когда пользователь нажимает кнопку.
 
 Триггер в этом примере проверяет, доступно ли свойство. Если свойство присутствует, для свойства **AllowFocusOnInteraction** кнопки задается значение **false**; если свойство отсутствует, то кнопка сохраняет первоначальное состояние. В пример включен элемент TextBox, чтобы упростить просмотр действия этого свойства при запуске кода.
 

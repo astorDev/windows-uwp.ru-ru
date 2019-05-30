@@ -5,12 +5,12 @@ ms.date: 6/1/2018
 ms.topic: article
 keywords: Windows 10, uwp, портал устройств, диспетчер приложения, развертывания, пакет sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 928c07bd23228f0fefd78be6019a0d116b2e6e4b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: adc944f3e84e2ea7ba3dacd2021bc2e141bf8cdd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635429"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362320"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>Развертывание приложения через свободную регистрацию файлов 
 
@@ -34,7 +34,7 @@ ms.locfileid: "57635429"
 Windows предоставляет несколько средств разработчика для регистрации макеты свободный файл на локальных и удаленных устройств. Можно выбрать из `WinDeployAppCmd` (средства SDK Windows), Windows Device Portal, PowerShell, и [Visual Studio](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#register-layout-from-network). Ниже будут рассмотрены как зарегистрировать свободные файлы, с помощью этих средств. Но во-первых, убедитесь, что после установки:
 
 - Все устройства должны быть в Windows 10 Creators Update (сборки 14965) или более поздней версии.
-- Вам потребуется включить [режим разработчика](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) и [обнаружения](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#device-discovery) на всех устройствах.
+- Вам потребуется включить [режим разработчика](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) и [обнаружения](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#device-discovery) на всех устройствах.
 
 > [!IMPORTANT]
 > Свободный файл регистрации доступна только на устройствах, поддерживающих протокол сетевой общей папки SMB: Рабочий стол и Xbox. 
@@ -77,7 +77,7 @@ Windows Device Portal доступна на всех устройствах Wind
 Add-AppxPackage -Register <path to manifest file>
 ```
 
-## <a name="troubleshooting"></a>Поиск и устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="mapped-network-drives"></a>Сопоставленные сетевые диски
 В настоящее время сопоставленные сетевые диски не поддерживаются для регистрации свободного файла. Ссылаться на подключенный диск с полным путем к сетевой папке.

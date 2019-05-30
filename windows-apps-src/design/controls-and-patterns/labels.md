@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4345daf5b879fed7ba9805e4a448c473299031d7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5996fb15c0d7302c7360c2e45613f0da2720d415
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654149"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364644"
 ---
 # <a name="labels"></a>Метки
 
@@ -24,9 +24,9 @@ ms.locfileid: "57654149"
 
 Метка — это имя или название элемента управления или группы связанных элементов.
 
-> **Важные API**: Свойство Header [класс TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
+> **Важные API**: Свойство Header [класс TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
-В XAML встроенное свойство заголовка, с помощью которого задаются метки, доступно во многих элементах управления. Для элементов управления, не имеющих свойства заголовка, а также для того, чтобы присвоить метку группе элементов управления, можно использовать [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652).
+В XAML встроенное свойство заголовка, с помощью которого задаются метки, доступно во многих элементах управления. Для элементов управления, не имеющих свойства заголовка, а также для того, чтобы присвоить метку группе элементов управления, можно использовать [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
 
 ![Снимок экрана, иллюстрирующий стандартный элемент управления «Метка»](images/label-standard.png)
 
@@ -41,17 +41,17 @@ ms.locfileid: "57654149"
 ## <a name="get-the-sample-code"></a>Получить пример кода
 * [Пример основы пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [Текстовые элементы управления](text-controls.md)
-* [Свойство TextBox.Header](https://msdn.microsoft.com/library/windows/apps/dn252861)
-* [Свойство PasswordBox.Header](https://msdn.microsoft.com/library/windows/apps/dn299051)
-* [Свойство ToggleSwitch.Header](https://msdn.microsoft.com/library/windows/apps/br209713)
-* [Свойство DatePicker.Header](https://msdn.microsoft.com/library/windows/apps/dn279460)
-* [Свойство TimePicker.Header](https://msdn.microsoft.com/library/windows/apps/dn299286)
-* [Свойство Slider.Header](https://msdn.microsoft.com/library/windows/apps/dn252829)
-* [Свойство ComboBox.Header](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [Свойство RichEditBox.Header](https://msdn.microsoft.com/library/windows/apps/dn252726)
-* [Класс TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
+* [Свойство TextBox.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header)
+* [Свойство PasswordBox.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.header)
+* [Свойство ToggleSwitch.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.header)
+* [Свойство DatePicker.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.header)
+* [Свойство TimePicker.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.header)
+* [Свойство Slider.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider.header)
+* [Свойство ComboBox.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox.header)
+* [Свойство RichEditBox.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.header)
+* [Класс TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
  
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f0a53d0f725c134bbb7adecaa956000a53235b0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9c48cd52d69d13b61f059894cc0dbea89eecf913
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57600909"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360868"
 ---
 # <a name="hardware-drm"></a>Аппаратное управление цифровыми правами (DRM)
 
@@ -89,18 +89,18 @@ mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectio
 
 В данном разделе рассказывается, как определить тип аппаратного управления цифровыми правами, поддерживаемого в системе.
 
-Чтобы узнать, поддерживает ли система определенный компонент аппаратного управления цифровыми правами, можно использовать метод [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441). Например:
+Чтобы узнать, поддерживает ли система определенный компонент аппаратного управления цифровыми правами, можно использовать метод [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware). Пример:
 
 ```csharp
 bool isFeatureSupported = PlayReadyStatics.CheckSupportedHardware(PlayReadyHardwareDRMFeatures.HEVC);
 ```
 
-Перечисление [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) содержит допустимый список значений компонентов аппаратного управления цифровыми правами, которые можно запросить. Чтобы определить, поддерживается ли аппаратное управление цифровыми правами, воспользуйтесь членом **HardwareDRM** в очереди. Чтобы определить, поддерживает ли оборудование кодек High Efficiency Video Coding (HEVC)/H.265, воспользуйтесь членом **HEVC** в очереди.
+Перечисление [**PlayReadyHardwareDRMFeatures**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) содержит допустимый список значений компонентов аппаратного управления цифровыми правами, которые можно запросить. Чтобы определить, поддерживается ли аппаратное управление цифровыми правами, воспользуйтесь членом **HardwareDRM** в очереди. Чтобы определить, поддерживает ли оборудование кодек High Efficiency Video Coding (HEVC)/H.265, воспользуйтесь членом **HEVC** в очереди.
 
-Кроме того, чтобы получить сведения об уровне безопасности сертификата клиента и определить, поддерживается ли аппаратное управление цифровыми правами, вы можете воспользоваться свойством [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx). Если возвращенное значение уровня защиты сертификата клиента меньше 3000, то либо клиент не индивидуализирован или не подготовлен к работе (в этом случае свойство возвратит значение 0), либо аппаратное управление цифровыми правами не используется (в этом случае это свойство возвратит значение, меньшее 3000).
+Кроме того, чтобы получить сведения об уровне безопасности сертификата клиента и определить, поддерживается ли аппаратное управление цифровыми правами, вы можете воспользоваться свойством [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel). Если возвращенное значение уровня защиты сертификата клиента меньше 3000, то либо клиент не индивидуализирован или не подготовлен к работе (в этом случае свойство возвратит значение 0), либо аппаратное управление цифровыми правами не используется (в этом случае это свойство возвратит значение, меньшее 3000).
 
 ### <a name="detecting-support-for-aes128cbc-hardware-drm"></a>Обнаружение поддержки аппаратного управления цифровыми правами DRM AES128CBC
-Начиная с Windows 10 версии 1709 вы можете определить поддержку аппаратного шифрования AES128CBC на устройстве, вызывая метод **[PlayReadyStatics.CheckSupportedHardware](https://msdn.microsoft.com/library/windows/apps/dn986441)** и указывая значение перечисления [**PlayReadyHardwareDRMFeatures.Aes128Cbc**](https://msdn.microsoft.com/library/windows/apps/dn986265). В предыдущих версиях Windows 10 указание этого значения приводит к вызову исключения. Поэтому вам следует проверить наличие значения перечисления, вызвав метод **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** и указав основную версию контракта 5 перед вызовом метода **CheckSupportedHardware**.
+Начиная с Windows 10 версии 1709 вы можете определить поддержку аппаратного шифрования AES128CBC на устройстве, вызывая метод **[PlayReadyStatics.CheckSupportedHardware](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware)** и указывая значение перечисления [**PlayReadyHardwareDRMFeatures.Aes128Cbc**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures). В предыдущих версиях Windows 10 указание этого значения приводит к вызову исключения. Поэтому вам следует проверить наличие значения перечисления, вызвав метод **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** и указав основную версию контракта 5 перед вызовом метода **CheckSupportedHardware**.
 
 ```csharp
 bool supportsAes128Cbc = ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 5);

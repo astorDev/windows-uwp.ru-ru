@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ea8d387becaef171175fd5e91bfc3a1402e79faa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: da18981a2be03c40e15df666f58d60ac91b6f130
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616619"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360768"
 ---
 # <a name="legacy-background-media-playback"></a>Традиционное воспроизведение мультимедиа в фоновом режиме
 
@@ -23,14 +23,14 @@ ms.locfileid: "57616619"
 
 ## <a name="background-audio-architecture"></a>Архитектура фонового звука
 
-Приложение, отвечающее за воспроизведение в фоновом режиме, выполняет два процесса. Первый процесс — это основное приложение, содержащее пользовательский интерфейс приложения и клиентскую логику, которые выполняются на переднем плане. Второй процесс — задача воспроизведения в фоновом режиме, которая реализует интерфейс [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), как и все фоновые задачи приложений UWP. Фоновая задача содержит логику воспроизведения в фоновом режиме и фоновые службы. Фоновая задача взаимодействует с системой с помощью системных элементов управления транспортировкой мультимедийных данных.
+Приложение, отвечающее за воспроизведение в фоновом режиме, выполняет два процесса. Первый процесс — это основное приложение, содержащее пользовательский интерфейс приложения и клиентскую логику, которые выполняются на переднем плане. Второй процесс — задача воспроизведения в фоновом режиме, которая реализует интерфейс [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask), как и все фоновые задачи приложений UWP. Фоновая задача содержит логику воспроизведения в фоновом режиме и фоновые службы. Фоновая задача взаимодействует с системой с помощью системных элементов управления транспортировкой мультимедийных данных.
 
 На следующей схеме представлен обзор разработанной системы.
 
 ![Архитектура фонового звука в Windows 10](images/backround-audio-architecture-win10.png)
 ## <a name="mediaplayer"></a>MediaPlayer
 
-Пространство имен [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) включает интерфейсы API, используемые для воспроизведения звука в фоновом режиме. У каждого приложения есть один экземпляр класса [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535), обеспечивающий воспроизведение. Ваше приложение для воспроизведения звука в фоновом режиме вызывает методы и устанавливает свойства для класса **MediaPlayer**, чтобы задать текущую дорожку, начать воспроизведение, выполнить приостановку, перемотку вперед или назад и т. д. Доступ к экземпляру объекта проигрывателя мультимедиа всегда обеспечивается с помощью свойства [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528).
+Пространство имен [**Windows.Media.Playback**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback) включает интерфейсы API, используемые для воспроизведения звука в фоновом режиме. У каждого приложения есть один экземпляр класса [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer), обеспечивающий воспроизведение. Ваше приложение для воспроизведения звука в фоновом режиме вызывает методы и устанавливает свойства для класса **MediaPlayer**, чтобы задать текущую дорожку, начать воспроизведение, выполнить приостановку, перемотку вперед или назад и т. д. Доступ к экземпляру объекта проигрывателя мультимедиа всегда обеспечивается с помощью свойства [**BackgroundMediaPlayer.Current**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.current).
 
 ## <a name="mediaplayer-proxy-and-stub"></a>Прокси-сервер и заглушка MediaPlayer
 
@@ -38,35 +38,35 @@ ms.locfileid: "57616619"
 
 Когда вы получаете доступ к свойству **BackgroundMediaPlayer.Current** из приложения переднего плана, возвращенный экземпляр **MediaPlayer** фактически представляет собой прокси-сервер, который обменивается данными с заглушкой в фоновом процессе. Эта заглушка взаимодействует с фактическим экземпляром **MediaPlayer**, который также размещен в фоновом процессе.
 
-Как процесс переднего плана, так и фоновый процесс могут получать доступ к большинству свойств экземпляра **MediaPlayer**. Исключение составляют свойства [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) и [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635), доступные только из фонового процесса. Приложение переднего плана и фоновый процесс могут получать уведомления о событиях, связанных с мультимедиа, таки как [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/dn652609), [**MediaEnded**](https://msdn.microsoft.com/library/windows/apps/dn652603) и [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/dn652606).
+Как процесс переднего плана, так и фоновый процесс могут получать доступ к большинству свойств экземпляра **MediaPlayer**. Исключение составляют свойства [**MediaPlayer.Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source) и [**MediaPlayer.SystemMediaTransportControls**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.systemmediatransportcontrols), доступные только из фонового процесса. Приложение переднего плана и фоновый процесс могут получать уведомления о событиях, связанных с мультимедиа, таки как [**MediaOpened**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.mediaopened), [**MediaEnded**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.mediaended) и [**MediaFailed**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.mediafailed).
 
 ## <a name="playback-lists"></a>Списки воспроизведения
 
-Распространенный сценарий для приложений фонового звука — воспроизведение нескольких элементов в строке. Этот сценарий легче всего реализовать в фоновом процессе с помощью объекта [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955), который можно установить в качестве источника для класса **MediaPlayer**, назначив его свойству [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010).
+Распространенный сценарий для приложений фонового звука — воспроизведение нескольких элементов в строке. Этот сценарий легче всего реализовать в фоновом процессе с помощью объекта [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList), который можно установить в качестве источника для класса **MediaPlayer**, назначив его свойству [**MediaPlayer.Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source).
 
 Доступ к объекту **MediaPlaybackList** невозможно получить из процесса переднего плана, который задан в фоновом процессе.
 
 ## <a name="system-media-transport-controls"></a>Системные элементы управления транспортом мультимедиа
 
-Пользователь может управлять воспроизведением звука, не используя непосредственно пользовательский интерфейс приложения, с помощью таких средств, как устройства Bluetooth, SmartGlass и системные элементы управления транспортировкой мультимедийных данных. Ваша фоновая задача использует класс [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) для подписки на эти системные события, инициализированные пользователем.
+Пользователь может управлять воспроизведением звука, не используя непосредственно пользовательский интерфейс приложения, с помощью таких средств, как устройства Bluetooth, SmartGlass и системные элементы управления транспортировкой мультимедийных данных. Ваша фоновая задача использует класс [**SystemMediaTransportControls**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls) для подписки на эти системные события, инициализированные пользователем.
 
-Чтобы получить экземпляр **SystemMediaTransportControls** из фонового процесса, используйте свойство [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635). Приложения переднего плана получают экземпляр класса путем вызова метода [**SystemMediaTransportControls.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708), но при этом возвращается только экземпляр переднего плана, не связанный с фоновой задачей.
+Чтобы получить экземпляр **SystemMediaTransportControls** из фонового процесса, используйте свойство [**MediaPlayer.SystemMediaTransportControls**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.systemmediatransportcontrols). Приложения переднего плана получают экземпляр класса путем вызова метода [**SystemMediaTransportControls.GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.getforcurrentview), но при этом возвращается только экземпляр переднего плана, не связанный с фоновой задачей.
 
 ## <a name="sending-messages-between-tasks"></a>Отправка сообщений между задачами
 
 Иногда возникает необходимость установить связь между двумя процессами приложения фонового звука. Например, может потребоваться, чтобы фоновая задача уведомляла задачу переднего плана, что начинается проигрывание новой дорожки, и отправляла в задачу переднего плана название новой песни для отображения на экране.
 
-Простой механизм связи позволяет вызывать события как в процессе переднего плана, так и в фоновом процессе. Каждый из методов [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) и [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) вызывает события в соответствующем процессе. Сообщения можно получить путем подписки на события [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) и [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531).
+Простой механизм связи позволяет вызывать события как в процессе переднего плана, так и в фоновом процессе. Каждый из методов [**SendMessageToForeground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.sendmessagetoforeground) и [**SendMessageToBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.sendmessagetobackground) вызывает события в соответствующем процессе. Сообщения можно получить путем подписки на события [**MessageReceivedFromBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfrombackground) и [**MessageReceivedFromForeground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfromforeground).
 
-Данные можно передавать в качестве аргумента методам отправки сообщений, которые затем передаются в обработчики событий полученных сообщений. Передавайте данные с помощью класса [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131). Этот класс представляет собой словарь, содержащий строку в качестве ключа и другие типы значений в качестве значений. Вы можете передавать простые типы значений, такие как целые числа, строки и логические значения.
+Данные можно передавать в качестве аргумента методам отправки сообщений, которые затем передаются в обработчики событий полученных сообщений. Передавайте данные с помощью класса [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet). Этот класс представляет собой словарь, содержащий строку в качестве ключа и другие типы значений в качестве значений. Вы можете передавать простые типы значений, такие как целые числа, строки и логические значения.
 
 ## <a name="background-task-life-cycle"></a>Время существования фоновой задачи
 
 Время существования фоновой задачи тесно связано с текущим состоянием воспроизведения приложения. Например, когда пользователь приостанавливает воспроизведение звука, система может завершить или отменить работу вашего приложения в зависимости от обстоятельств. Если звук не будет воспроизводиться в течение некоторого времени, система может автоматически завершить работу фоновой задачи.
 
-Метод [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) вызывается, когда приложение в первый раз получает доступ к свойству [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) из кода, выполняемого в приложении переднего плана, либо когда вы регистрируете обработчик события [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) в зависимости от того, что происходит раньше. Рекомендуется зарегистрировать обработчик полученного сообщения, прежде чем вызывать свойство **BackgroundMediaPlayer.Current** в первый раз, чтобы приложение переднего плана не пропустило сообщения, отправленные из фонового процесса.
+Метод [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) вызывается, когда приложение в первый раз получает доступ к свойству [**BackgroundMediaPlayer.Current**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.current) из кода, выполняемого в приложении переднего плана, либо когда вы регистрируете обработчик события [**MessageReceivedFromBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfrombackground) в зависимости от того, что происходит раньше. Рекомендуется зарегистрировать обработчик полученного сообщения, прежде чем вызывать свойство **BackgroundMediaPlayer.Current** в первый раз, чтобы приложение переднего плана не пропустило сообщения, отправленные из фонового процесса.
 
-Чтобы поддерживать активность фоновой задачи, ваше приложение должно запросить класс [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) из метода **Run** и вызвать метод [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504), когда экземпляр задачи получает события [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) или [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788). Не используйте цикл или ожидание в методе **Run**, так как это ведет к потреблению ресурсов и может вызвать прерывание выполнения вашего приложения в фоновом режиме.
+Чтобы поддерживать активность фоновой задачи, ваше приложение должно запросить класс [**BackgroundTaskDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral) из метода **Run** и вызвать метод [**BackgroundTaskDeferral.Complete**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskdeferral.complete), когда экземпляр задачи получает события [**Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) или [**Completed**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.completed). Не используйте цикл или ожидание в методе **Run**, так как это ведет к потреблению ресурсов и может вызвать прерывание выполнения вашего приложения в фоновом режиме.
 
 Ваша фоновая задача получает событие **Completed**, когда завершается метод **Run** и не запрашивается отсрочка выполнения. В некоторых случаях, когда ваше приложение получает событие **Canceled**, за ним может следовать событие **Completed**. Ваша задача может получить событие **Canceled** даже при выполнении метода **Run**, поэтому обязательно отслеживайте такую возможность синхронного захвата.
 
@@ -114,7 +114,7 @@ ms.locfileid: "57616619"
 
 В следующей таблице перечислены политики, применяемые к устройствам определенных типов.
 
-| Вспомогательная политика             | Настольный компьютер  | Мобильные устройства   | Другое    |
+| Вспомогательная политика             | Настольный компьютер  | Мобильный   | Другое    |
 |------------------------|----------|----------|----------|
 | **Исключительные права**        | Отключено | Enabled  | Enabled  |
 | **Время ожидания бездействия** | Отключено | Enabled  | Отключено |

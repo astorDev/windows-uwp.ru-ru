@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, ввод, пример
 ms.localizationpriority: medium
-ms.openlocfilehash: d545f696a93bfa8416e1a772ecc015867a3615c2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8daada2424dfc7a1bbe0a227449911f1fbb3b34d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611819"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369184"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Добавление средств ввода и взаимодействия в пример Marble Maze
 
@@ -28,7 +28,7 @@ ms.locfileid: "57611819"
 
 -   По возможности обеспечьте поддержку нескольких устройств ввода, чтобы ваша игра могла предоставить пользователям более широкий диапазон параметров и возможностей. Хотя использование игрового устройства управления и датчика не является обязательным, мы настоятельно рекомендуем их, чтобы улучшить взаимодействие с пользователем. Мы создали API-интерфейсы игровых устройств управления и датчиков, чтобы облегчить вам интеграцию этих устройств ввода.
 
--   Чтобы инициализировать сенсорный ввод, необходимо зарегистрироваться на события окна при активации, освобождении и перемещении указателя. Чтобы инициализировать акселерометр, создайте объект [Windows::Devices::Sensors::Accelerometer](https://msdn.microsoft.com/library/windows/apps/br225687) при инициализации приложения. Контроллер Xbox не требует инициализации.
+-   Чтобы инициализировать сенсорный ввод, необходимо зарегистрироваться на события окна при активации, освобождении и перемещении указателя. Чтобы инициализировать акселерометр, создайте объект [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) при инициализации приложения. Контроллер Xbox не требует инициализации.
 
 -   Если игрок один, подумайте, не стоит ли объединить ввод со всех возможных контроллеров Xbox. При этом вам не придется отслеживать, какой ввод поступает от какого контроллера. Или можно просто отслеживать ввод только с последнего добавленного контроллера, как в этом примере.
 
@@ -56,7 +56,7 @@ Marble Maze поддерживает стандартный контроллер
 ## <a name="initializing-input-devices"></a>Инициализация устройств ввода
 
 
-Контроллер Xbox не требует инициализации. Чтобы инициализировать сенсорный ввод, необходимо зарегистрироваться на события окна, такие как активация (например, когда игрок нажимает кнопку мыши или касается экрана), освобождение или перемещение указателя. Чтобы инициализировать акселерометр, необходимо создать объект [Windows::Devices::Sensors::Accelerometer](https://msdn.microsoft.com/library/windows/apps/br225687) при инициализации приложения.
+Контроллер Xbox не требует инициализации. Чтобы инициализировать сенсорный ввод, необходимо зарегистрироваться на события окна, такие как активация (например, когда игрок нажимает кнопку мыши или касается экрана), освобождение или перемещение указателя. Чтобы инициализировать акселерометр, необходимо создать объект [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) при инициализации приложения.
 
 В следующем примере показано, как метод **App::SetWindow** регистрируется на события указателя [Windows::UI::Core::CoreWindow::PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerPressed), [Windows::UI::Core::CoreWindow::PointerReleased](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerReleased) и [Windows::UI::Core::CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerMoved). Эти события регистрируются во время инициализации приложения и до начала игрового цикла.
 
@@ -490,7 +490,7 @@ for (TouchMap::const_iterator iter = m_touches.cbegin();
 
 ### <a name="processing-accelerometer-input"></a>Обработка ввода акселерометра
 
-Для обработки ввода акселерометра метод **MarbleMazeMain::Update** вызывает метод [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](https://msdn.microsoft.com/library/windows/apps/br225699). Этот метод возвращает объект [Windows::Devices::Sensors::AccelerometerReading](https://msdn.microsoft.com/library/windows/apps/br225688), который представляет показания акселерометра. В свойствах **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** и **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** хранится ускорение силы тяжести по осям X и Y соответственно.
+Для обработки ввода акселерометра метод **MarbleMazeMain::Update** вызывает метод [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer.getcurrentreading). Этот метод возвращает объект [Windows::Devices::Sensors::AccelerometerReading](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.AccelerometerReading), который представляет показания акселерометра. В свойствах **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** и **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** хранится ускорение силы тяжести по осям X и Y соответственно.
 
 Следующий пример показывает, как метод **MarbleMazeMain::Update** опрашивает акселерометр и обновляет объединенные значения ввода. Когда вы наклоняете устройство, сила тяжести заставляет шарик двигаться быстрее.
 
@@ -548,7 +548,7 @@ if ((oppositeSquared + adjacentSquared) > m_deadzoneSquared)
 
  
 
-После обработки ввода метод **MarbleMazeMain::Update** создает вектор, который представляет влияние наклона лабиринта на шарик. Следующий пример показывает, как Marble Maze использует функцию [XMVector3Normalize](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.geometric.xmvector3normalize) для создания нормализованного вектора силы тяжести. Переменная **maxTilt** ограничивает величину наклона лабиринта и не дает ему упасть набок.
+После обработки ввода метод **MarbleMazeMain::Update** создает вектор, который представляет влияние наклона лабиринта на шарик. Следующий пример показывает, как Marble Maze использует функцию [XMVector3Normalize](https://docs.microsoft.com/windows/desktop/api/directxmath/nf-directxmath-xmvector3normalize) для создания нормализованного вектора силы тяжести. Переменная **maxTilt** ограничивает величину наклона лабиринта и не дает ему упасть набок.
 
 ```cpp
 const float maxTilt = 1.0f / 8.0f;
@@ -605,12 +605,12 @@ if (marblePosition.z >= resetDepth)
 
 Этот раздел не описывает принципы работы моделирования физической среды. Подробнее о них можно узнать из файлов **Physics.h** и **Physics.cpp** в исходном коде Marble Maze.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 
 Прочитайте раздел [Добавление звука в пример Marble Maze](adding-audio-to-the-marble-maze-sample.md), чтобы получить представление о рекомендациях, которым стоит следовать при работе со звуком. В документе описывается, как Marble Maze использует Microsoft Media Foundation и XAudio2 для загрузки, микширования и воспроизведения звуковых ресурсов.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Добавление аудио в пример Marble Maze](adding-audio-to-the-marble-maze-sample.md)

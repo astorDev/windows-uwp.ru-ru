@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ebf54e062ef2388562cc970a2f124f0ce1f978c7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b07ab7fa6b65e16f39d9e2a77a677d33d3c70254
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653829"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360513"
 ---
 # <a name="composition-effects"></a>Эффекты композиции
 
-API [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) позволяют применять эффекты в режиме реального времени к изображениям и пользовательскому интерфейсу, поддерживающему свойства анимации эффектов. В этом обзоре мы рассмотрим доступные функциональные возможности, позволяющие применять эффекты к визуальным элементам композиции.
+API [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition) позволяют применять эффекты в режиме реального времени к изображениям и пользовательскому интерфейсу, поддерживающему свойства анимации эффектов. В этом обзоре мы рассмотрим доступные функциональные возможности, позволяющие применять эффекты к визуальным элементам композиции.
 
-Чтобы обеспечить совместимость с [универсальной платформой Windows (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) для тех разработчиков, которые описывают эффекты в своих приложениях, эффекты композиции используют интерфейс IGraphicsEffect Win2D для описания эффектов с помощью пространства имен [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm).
+Чтобы обеспечить совместимость с [универсальной платформой Windows (UWP)](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp) для тех разработчиков, которые описывают эффекты в своих приложениях, эффекты композиции используют интерфейс IGraphicsEffect Win2D для описания эффектов с помощью пространства имен [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm).
 
 Эффекты кисти используются для заливки областей приложения с помощью наложения эффектов на группу имеющихся изображений. API-интерфейсы эффектов композиции Windows 10 ориентированы на использование спрайтовых визуальных элементов. Объекты SpriteVisual обеспечивают гибкость и взаимодействие при создании цветов, изображений и эффектов. SpriteVisual — это тип визуальных элементов композиции, которые могут закрашивать двумерный прямоугольник с помощью кисти. Визуальный элемент определяет границы прямоугольника, а кисть определяет пиксели, используемые для его закрашивания.
 
@@ -238,7 +238,7 @@ LoadImage(surfaceBrush);
 ## <a name="more-information"></a>Дополнительные сведения
 
 - [Майкрософт — композиции GitHub](https://github.com/Microsoft/composition)
-- [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+- [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 - [Композиции Windows team в Twitter](https://twitter.com/wincomposition)
 - [Общие сведения о композиции](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
 - [Основные сведения о визуальном дереве](composition-visual-tree.md)

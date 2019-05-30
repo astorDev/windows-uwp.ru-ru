@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e0c709261b08231fa82af615d5398fd66648d4e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7381d8d99f47a69ba7398366762a7dbb4088e04a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646469"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364180"
 ---
 # <a name="split-view-control"></a>Элемент управления "Комбинированный режим"
 
 Элемент управления "Комбинированный режим" содержит разворачиваемую и сворачиваемую панель, а также область содержимого.
 
-> **Важные API**: [Класс SplitView](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **Важные API**: [Класс SplitView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)
 
 Вот пример использования SplitView в Microsoft Edge для отображения Центра.
 
@@ -97,7 +97,7 @@ ms.locfileid: "57646469"
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 - [Шаблон панели навигации](navigationview.md)
 - [Представление списка](lists.md)
 - [Основные и подробные данные](master-details.md)

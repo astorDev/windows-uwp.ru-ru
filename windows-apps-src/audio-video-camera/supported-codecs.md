@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 02d8c67c92a070fbeaaab81ef6c5145dec90e411
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 92511c1f5b7ad8991900d80d4ec52659d6e74f88
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631359"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361405"
 ---
 # <a name="supported-codecs"></a>Поддерживаемые кодеки
 
@@ -339,7 +339,7 @@ ms.locfileid: "57631359"
 
  
 
-### <a name="mobile"></a>Мобильные устройства
+### <a name="mobile"></a>Мобильный
 
 <table>
 <colgroup>
@@ -1812,7 +1812,7 @@ ms.locfileid: "57631359"
 
  
 
-### <a name="mobile"></a>Мобильные устройства
+### <a name="mobile"></a>Мобильный
 
 <table>
 <colgroup>
@@ -2757,4 +2757,4 @@ ms.locfileid: "57631359"
 <sup>2</sup> Поддерживаются изображения DNG со встроенным предварительным просмотром, отличным от формата RAW.  
 <sup>3</sup> Поддерживаются только некоторые форматы RAW камер.  
 
-Дополнительные сведения о кодеках изображений см. в разделе [Собственные кодеки WIC](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx).
+Дополнительные сведения о кодеках изображений см. в разделе [Собственные кодеки WIC](https://docs.microsoft.com/windows/desktop/wic/native-wic-codecs).

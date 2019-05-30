@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c598868610e42e0f2ad64ef2d4fedfb48c4d91e9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ad304d22fd1c519f7364ac69882eeaac9fa1a5c7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598619"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360713"
 ---
 # <a name="playready-encrypted-media-extension"></a>Расширение зашифрованного мультимедиа PlayReady
 
@@ -72,7 +72,7 @@ ms.locfileid: "57598619"
 Иногда некоторое содержимое не поддерживается аппаратным управлением цифровыми правами. Содержимое Cocktail никогда не поддерживается аппаратным управлением цифровыми правами. Если необходимо воспроизводить содержимое Cocktail, следует выключить аппаратное управление цифровыми правами. Некоторые виды аппаратного управления цифровыми правами поддерживают стандарт HEVC, а другие — нет. Если необходимо воспроизвести содержимое в формате HEVC, а аппаратное управление цифровыми правами не поддерживает его, можно выключить аппаратное управление цифровыми правами.
 
 > [!NOTE]
-> Чтобы определить, поддерживается ли содержимое в формате HEVC, после создания экземпляра `com.microsoft.playready` воспользуйтесь методом [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441).
+> Чтобы определить, поддерживается ли содержимое в формате HEVC, после создания экземпляра `com.microsoft.playready` воспользуйтесь методом [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware).
 
 ## <a name="add-secure-stop-to-your-web-app"></a>Добавление безопасной остановки в веб-приложение
 

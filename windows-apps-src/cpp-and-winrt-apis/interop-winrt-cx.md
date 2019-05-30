@@ -5,21 +5,21 @@ ms.date: 10/09/2018
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, перенос, взаимодействие, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 558f3fa75e7dd599927a9d2ace256bf1feb98e77
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5394443b4832864e5b46bfbf917c04f0af6d8a19
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621649"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360221"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>Взаимодействие между C++/WinRT и C++/CX
 
-Стратегии постепенно перенос кода в вашей [C + +/ CX](/cpp/cppcx/visual-c-language-reference-c-cx) проект [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) рассматриваются в [переместить в C + +/ WinRT в C + +/ CX](move-to-winrt-from-cx.md).
+Стратегии постепенно перенос кода в вашей [ C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) проект [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) рассматриваются в [переместить C++/WinRT из C++/CX](move-to-winrt-from-cx.md).
 
-В этом разделе показано две вспомогательные функции, которые можно использовать для преобразования между C + +/ CX и C + +/ WinRT объектов внутри одного проекта. Их можно использовать для взаимодействия между кодом, который использует два языковых проекций, или можно использовать функции, как перенести код из C + +/ CX для C + +/ WinRT.
+В этом разделе показано две вспомогательные функции, которые можно использовать для преобразования между C++/CX и C++/WinRT объектов внутри одного проекта. Их можно использовать для взаимодействия между кодом, который использует два языковых проекций, или можно использовать функции, как перенести код из C++/CX для C++/WinRT.
 
 ## <a name="fromcx-and-tocx-functions"></a>функции from_cx и to_cx
-Вспомогательная функция ниже преобразует объект C++/CX в эквивалентный объект C++/WinRT. Она автоматически приводит объект C++/CX к его базовому указателю интерфейса [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509). Затем она вызывает [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) для этого указателя, чтобы запросить интерфейс по умолчанию для объекта C++/WinRT. **QueryInterface** — это эквивалент расширения safe_cast C++/CX в двоичном интерфейсе приложения (ABI) среды выполнения Windows. Функция [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) возвращает адрес базового указателя интерфейса **IUnknown** объекта C++/WinRT, чтобы для него можно было задать другое значение.
+Вспомогательная функция ниже преобразует объект C++/CX в эквивалентный объект C++/WinRT. Она автоматически приводит объект C++/CX к его базовому указателю интерфейса [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown). Затем она вызывает [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) для этого указателя, чтобы запросить интерфейс по умолчанию для объекта C++/WinRT. **QueryInterface** — это эквивалент расширения safe_cast C++/CX в двоичном интерфейсе приложения (ABI) среды выполнения Windows. Функция [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) возвращает адрес базового указателя интерфейса **IUnknown** объекта C++/WinRT, чтобы для него можно было задать другое значение.
 
 ```cppwinrt
 template <typename T>
@@ -47,12 +47,12 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 
 ## <a name="example-project-showing-the-two-helper-functions-in-use"></a>Пример проекта, показывающий используется две вспомогательные функции
 
-Чтобы воспроизвести простым способом, сценарий постепенно переноса кода в C + +/ CX проекта на C + +/ WinRT, можно начать с создания нового проекта в Visual Studio, с помощью одного из C + +/ WinRT шаблоны проектов (см. в разделе [поддержка Visual Studio для C + +/ WinRT ](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
+Чтобы воспроизвести простым способом, сценарий постепенно переноса кода в C++/CX проект, чтобы C++/WinRT, можно начать с создания нового проекта в Visual Studio, с помощью одного из C++/WinRT шаблоны проектов (см. в разделе [Visual Studio Поддержка C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
 
-Этот пример проекта также показывает, как использовать псевдонимы пространств имен для разных острова кода, чтобы иметь дело с в противном случае потенциальные конфликты имен между C + +/ WinRT проекции и C + +/ CX проекции.
+Этот пример проекта также показывает, как использовать псевдонимы пространств имен для разных острова кода, чтобы иметь дело с в противном случае потенциальные конфликты имен между C++/WinRT проекции и C++/CX проекции.
 
-- Создание **Visual C++** \> **универсальной Windows** > **приложения Core (C + +/ WinRT)** проекта.
-- В свойствах проекта **C/C++** \> **Общие** \> **использовать расширение среды выполнения Windows** \> **Да (/ZW)** . Это включает поддержку проектов для C + +/ CX.
+- Создание **Visual C++**  \> **универсальной Windows** > **приложения Core (C++/WinRT)** проекта.
+- В свойствах проекта **C/C++** \> **Общие** \> **использовать расширение среды выполнения Windows** \> **Да (/ZW)** . Это включает поддержку проектов для C++/CX.
 - Замените содержимое файла `App.cpp` с помощью кода ниже.
 
 ```cppwinrt
@@ -253,11 +253,11 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## <a name="important-apis"></a>Важные API
-* [Интерфейс IUnknown](https://msdn.microsoft.com/library/windows/desktop/ms680509)
-* [QueryInterface-функция](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [функция WinRT::get_abi](/uwp/cpp-ref-for-winrt/get-abi)
+* [Интерфейс IUnknown](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
+* [QueryInterface-функция](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
 * [функция WinRT::put_abi](/uwp/cpp-ref-for-winrt/put-abi)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Переход на C++/WinRT из C++/CX](move-to-winrt-from-cx.md)

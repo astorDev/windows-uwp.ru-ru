@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 37bcf2ff6eee6c272339fdc997ee7bbb046f85e9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e25b20943d73b303ea4aa674b8978f1517fcf15a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654089"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359682"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>Компоненты и оптимизация взаимодействия UWP
 
@@ -46,7 +46,7 @@ ms.locfileid: "57654089"
 
 ### <a name="consider-using-net-for-uwp-apps"></a>Использование .NET для приложений UWP
 
-В ряде случаев задачу можно выполнить, используя для приложений UWP либо универсальную платформу Windows (UWP), либо .NET. Лучше не использовать вместе типы .NET и UWP. Старайтесь использовать либо те, либо другие. Например, можно проанализировать поток xml, используя тип [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/BR206173) (тип UWP) или тип [**System.Xml.XmlReader**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.xmlreader.aspx) (тип .NET). Используйте API той же самой технологии, что и поток. Например, для считывания xml из [**MemoryStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.memorystream.aspx) используйте тип **System.Xml.XmlReader**, так как оба типа являются типами .NET. При считывании из файла используйте тип **Windows.Data.Xml.Dom.XmlDocument**, так как API файла и **XmlDocument** являются компонентами UWP.
+В ряде случаев задачу можно выполнить, используя для приложений UWP либо универсальную платформу Windows (UWP), либо .NET. Лучше не использовать вместе типы .NET и UWP. Старайтесь использовать либо те, либо другие. Например, можно проанализировать поток xml, используя тип [**Windows.Data.Xml.Dom.XmlDocument**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDocument) (тип UWP) или тип [**System.Xml.XmlReader**](https://docs.microsoft.com/dotnet/api/system.xml.xmlreader?redirectedfrom=MSDN) (тип .NET). Используйте API той же самой технологии, что и поток. Например, для считывания xml из [**MemoryStream**](https://docs.microsoft.com/dotnet/api/system.io.memorystream?redirectedfrom=MSDN) используйте тип **System.Xml.XmlReader**, так как оба типа являются типами .NET. При считывании из файла используйте тип **Windows.Data.Xml.Dom.XmlDocument**, так как API файла и **XmlDocument** являются компонентами UWP.
 
 ### <a name="copy-window-runtime-objects-to-net-types"></a>Копирование объектов среды выполнения Windows в типы .NET
 
@@ -76,11 +76,11 @@ ms.locfileid: "57654089"
 
 ![Переходы межпрограммного взаимодействия не должны занимать большую часть времени выполнения программы.](images/interop-transitions.png)
 
-Приведенные в разделе [**.NET for Windows apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) типы не влияют на производительность при использовании в языках C# или Visual Basic. Исходя из практического опыта, можно предположить, что типы в пространствах имен, которые начинаются со слова "Windows.", являются типами UWP, а типы в пространствах имен, которые начинаются со слова "System.", — типами .NET. Следует учитывать, что даже простое использование типов UWP, например выделение или доступ к свойству, влечет за собой издержки взаимодействия.
+Приведенные в разделе [ **.NET for Windows apps**](https://dotnet.microsoft.com/apps/desktop) типы не влияют на производительность при использовании в языках C# или Visual Basic. Исходя из практического опыта, можно предположить, что типы в пространствах имен, которые начинаются со слова "Windows.", являются типами UWP, а типы в пространствах имен, которые начинаются со слова "System.", — типами .NET. Следует учитывать, что даже простое использование типов UWP, например выделение или доступ к свойству, влечет за собой издержки взаимодействия.
 
 Прежде чем оптимизировать эти издержки, выполните измерение своего приложения и определите, занимает ли межпрограммное взаимодействие большую часть времени выполнения приложения. Анализируя производительность своего приложения при помощи Visual Studio, вы можете легко определить верхнюю границу издержек межпрограммного взаимодействия, используя представление **Функции** и проверив инклюзивное время, затрачиваемое на методы, которые вызываются в UWP.
 
-Если приложение работает медленно из-за издержек взаимодействия, можно повысить производительность за счет снижения количества вызовов API UWP в активно используемых ветвях кода. Например, игровой движок, выполняющий множество физических вычислений для постоянного запроса положения и размеров [**UIElements**](https://msdn.microsoft.com/library/windows/apps/BR208911), может сэкономить время за счет хранения требуемой информации из **UIElements** в локальных переменных, выполнения вычислений с этими кэшированными значениями и возвращения конечного результата в **UIElements**. Еще один пример: если доступ к коллекции трудно реализовать с помощью кода на языках C# или Visual Basic, то более эффективным будет использование коллекции из пространства имен [**System.Collections**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.aspx), а не [**Windows.Foundation.Collections**](https://msdn.microsoft.com/library/windows/apps/BR206657). Можно также попробовать скомбинировать вызовы компонентов UWP — например, при помощи API [**Windows.Storage.BulkAccess**](https://msdn.microsoft.com/library/windows/apps/BR207676).
+Если приложение работает медленно из-за издержек взаимодействия, можно повысить производительность за счет снижения количества вызовов API UWP в активно используемых ветвях кода. Например, игровой движок, выполняющий множество физических вычислений для постоянного запроса положения и размеров [**UIElements**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), может сэкономить время за счет хранения требуемой информации из **UIElements** в локальных переменных, выполнения вычислений с этими кэшированными значениями и возвращения конечного результата в **UIElements**. Еще один пример: если доступ к коллекции трудно реализовать с помощью кода на языках C# или Visual Basic, то более эффективным будет использование коллекции из пространства имен [**System.Collections**](https://docs.microsoft.com/dotnet/api/system.collections?redirectedfrom=MSDN), а не [**Windows.Foundation.Collections**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections). Можно также попробовать скомбинировать вызовы компонентов UWP — например, при помощи API [**Windows.Storage.BulkAccess**](https://docs.microsoft.com/uwp/api/Windows.Storage.BulkAccess).
 
 ### <a name="building-a-uwp-component"></a>Создание компонента UWP
 

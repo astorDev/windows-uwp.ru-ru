@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, контакты, карточка контакта, аннотация
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a3485635a49b1690116e7cb271435e63bee2151
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 506f0d2c778a934c3f8861493f4a512a39fe66fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616439"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360457"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>Подключение приложения к действиям в карточках контактов
 
@@ -181,13 +181,13 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 ## <a name="perform-operations-when-users-select-your-app-in-a-contact-card"></a>Выполнение операций при выборе приложения пользователем в карточке контакта
 
-Переопределите метод [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) в файле **App.cs** и переведите пользователя на страницу в приложении. В [примере интеграции с карточкой контакта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) показан один из способов сделать это.
+Переопределите метод [Application.OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) в файле **App.cs** и переведите пользователя на страницу в приложении. В [примере интеграции с карточкой контакта](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) показан один из способов сделать это.
 
-В коде файла страницы переопределите метод [Page.OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx). Карточка контакта передает этому методу название операции и идентификатор пользователя.
+В коде файла страницы переопределите метод [Page.OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto). Карточка контакта передает этому методу название операции и идентификатор пользователя.
 
-Начать видео или аудио, см. в этом примере: [Пример VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Полноценный API можно найти в пространстве имен [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
+Начать видео или аудио, см. в этом примере: [Пример VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Полноценный API можно найти в пространстве имен [WIndows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls).
 
-Способ упрощения обмена сообщениями см. в пространстве имен [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.aspx).
+Способ упрощения обмена сообщениями см. в пространстве имен [Windows.ApplicationModel.Chat](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat).
 
 Вы также можете запустить другое приложение. Вот что делает этот код.
 

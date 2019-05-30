@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c1c9b75599efe4566bc1783f68ff9752510d1d99
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4bebd214f5f634e501f7a79bc57cc306f1b559e7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640569"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359199"
 ---
 # <a name="share-data"></a>Предоставление общего доступа к данным
 
@@ -20,11 +20,11 @@ ms.locfileid: "57640569"
 
 ## <a name="set-up-an-event-handler"></a>Настройка обработчика событий
 
-Добавьте обработчик событий [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested), который будет срабатывать при каждом вызове функции общего доступа пользователем. Это может происходить, когда пользователь касается элемента управления в приложении (например, кнопки или команды на панели приложения), или автоматически в определенном сценарии (если, например, пользователь заканчивает уровень и получает рекордный результат).
+Добавьте обработчик событий [**DataRequested**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested), который будет срабатывать при каждом вызове функции общего доступа пользователем. Это может происходить, когда пользователь касается элемента управления в приложении (например, кнопки или команды на панели приложения), или автоматически в определенном сценарии (если, например, пользователь заканчивает уровень и получает рекордный результат).
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
-При возникновении события [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) приложение получает объект [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest). Этот объект содержит объект [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage), который можно использовать, чтобы предоставить содержимое, которым пользователь хочет поделиться. Вы должны указать название и данные, к которым необходимо предоставить общий доступ. Описание необязательно, но рекомендуется.
+При возникновении события [**DataRequested**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) приложение получает объект [**DataRequest**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest). Этот объект содержит объект [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage), который можно использовать, чтобы предоставить содержимое, которым пользователь хочет поделиться. Вы должны указать название и данные, к которым необходимо предоставить общий доступ. Описание необязательно, но рекомендуется.
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
@@ -40,13 +40,13 @@ ms.locfileid: "57640569"
 -   Файлы
 -   Пользовательские данные, определенные разработчиком
 
-Объект [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) может содержать один или несколько указанных форматов в любом сочетании. В примере ниже показано, как предоставить общий доступ к тексту.
+Объект [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) может содержать один или несколько указанных форматов в любом сочетании. В примере ниже показано, как предоставить общий доступ к тексту.
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
 ## <a name="set-properties"></a>Задание свойств
 
-При подготовке данных пакета к совместному использованию можно установить ряд свойств, дающих дополнительную информацию о содержимом, предназначенном для общего доступа. Благодаря этим свойствам конечное приложение может улучшить взаимодействие с пользователем. Например, предоставление описания может быть полезным, если пользователь предоставляет общий доступ более чем одному приложению. Добавление эскиза при совместном использовании рисунка или ссылки на веб-страницу устанавливает визуальную связь с пользователем. Подробнее об этом см. в разделе [**DataPackagePropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet).
+При подготовке данных пакета к совместному использованию можно установить ряд свойств, дающих дополнительную информацию о содержимом, предназначенном для общего доступа. Благодаря этим свойствам конечное приложение может улучшить взаимодействие с пользователем. Например, предоставление описания может быть полезным, если пользователь предоставляет общий доступ более чем одному приложению. Добавление эскиза при совместном использовании рисунка или ссылки на веб-страницу устанавливает визуальную связь с пользователем. Подробнее об этом см. в разделе [**DataPackagePropertySet**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet).
 
 Все свойства, кроме заголовка, не являются обязательными. Свойство заголовка является обязательным и должно быть задано.
 
@@ -54,7 +54,7 @@ ms.locfileid: "57640569"
 
 ## <a name="launch-the-share-ui"></a>Запуск пользовательского интерфейса общего доступа
 
-Пользовательский интерфейс для общего доступа предоставляется системой. Чтобы запустить его, вызовите метод [**ShowShareUI**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI).
+Пользовательский интерфейс для общего доступа предоставляется системой. Чтобы запустить его, вызовите метод [**ShowShareUI**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui).
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
@@ -66,7 +66,7 @@ ms.locfileid: "57640569"
 
 Готовить данные для общего доступа сразу не всегда целесообразно. Например, если ваше приложение поддерживает отправку большого файла изображения в нескольких различных графических форматах, то создавать все эти изображения до того, как пользователь сделает свой выбор, малоэффективно.
 
-Чтобы решить эту проблему, [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) может содержать делегат – функцию, которая вызывается, когда принимающее приложение запрашивает данные. Рекомендуется использовать делегат, когда пользователь хочет предоставить общий доступ к ресурсоемким данным.
+Чтобы решить эту проблему, [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) может содержать делегат – функцию, которая вызывается, когда принимающее приложение запрашивает данные. Рекомендуется использовать делегат, когда пользователь хочет предоставить общий доступ к ресурсоемким данным.
 
 <!-- For some reason, this snippet was inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -97,11 +97,11 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
 * [Связь между приложениями](index.md)
 * [Получение данных](receive-data.md)
-* [DataPackage](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx)
-* [DataPackagePropertySet](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackagepropertyset.aspx)
-* [DataRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.aspx)
-* [DataRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx)
-* [FailWithDisplayText](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext.aspx)
-* [ShowShareUi](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx)
+* [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)
+* [DataPackagePropertySet](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackagepropertyset)
+* [DataRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datarequest)
+* [DataRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested)
+* [FailWithDisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext)
+* [ShowShareUi](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui)
  
 

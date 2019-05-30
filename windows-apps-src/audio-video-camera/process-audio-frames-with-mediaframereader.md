@@ -6,16 +6,16 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 60abc29ad4f9e16dc9d37e99f94c9f30039c0087
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598589"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360702"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Обработка аудиокадров с помощью MediaFrameReader
 
-В этой статье показано, как использовать класс [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) и [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) для аудиоданных от источника кадров мультимедиа. Сведения об использовании **MediaFrameReader** для получения данных изображений, таких как цветная, инфракрасная камера или камера глубины, см. в разделе [Обработка кадров мультимедиа с помощью MediaFrameReader](process-media-frames-with-mediaframereader.md). Эта статья содержит общие сведения о шаблоне использования средства чтения кадров и описание некоторых дополнительных возможностей класса **MediaFrameReader**, таких как использование **MediaFrameSourceGroup** для получения кадров от нескольких источников в одно и то же время. 
+В этой статье показано, как использовать класс [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) и [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) для аудиоданных от источника кадров мультимедиа. Сведения об использовании **MediaFrameReader** для получения данных изображений, таких как цветная, инфракрасная камера или камера глубины, см. в разделе [Обработка кадров мультимедиа с помощью MediaFrameReader](process-media-frames-with-mediaframereader.md). Эта статья содержит общие сведения о шаблоне использования средства чтения кадров и описание некоторых дополнительных возможностей класса **MediaFrameReader**, таких как использование **MediaFrameSourceGroup** для получения кадров от нескольких источников в одно и то же время. 
 
 > [!NOTE] 
 > Описанные в этой статье функции доступны, только начиная c Windows 10 версии 1803.
@@ -37,7 +37,7 @@ ms.locfileid: "57598589"
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>Выбор источников кадров и групп источников кадров
 
-Первым шагом при захвате аудиокадров — инициализация объекта [**MediaFrameSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource), представляющего источник звуковых данных, такой как микрофон или другое устройство для записи звука. Для этого необходимо создать новый экземпляр объекта [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). В этом примере единственным параметром инициализации для **MediaCapture** является параметр [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode), который указывается, что мы хотим осуществить потоковую передачу звука с устройства записи. 
+Первым шагом при захвате аудиокадров — инициализация объекта [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource), представляющего источник звуковых данных, такой как микрофон или другое устройство для записи звука. Для этого необходимо создать новый экземпляр объекта [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture). В этом примере единственным параметром инициализации для **MediaCapture** является параметр [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode), который указывается, что мы хотим осуществить потоковую передачу звука с устройства записи. 
 
 После вызова метода [**MediaCapture.InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync) можно получить список доступных источников кадров мультимедиа с помощью свойства [**FrameSources**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.framesources). В этом примере запрос Linq используется для выбора всех источников кадров, в которых [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo), описывающий источник кадров, содержит свойство [**MediaStreamType**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.mediastreamtype) со значением **Audio**, что указывает на, что источник мультимедиа создает звуковые данные.
 
@@ -74,7 +74,7 @@ ms.locfileid: "57598589"
 
 Вы можете использовать объект [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) для передачи аудиоданных, записанных источником кадров мультимедиа объекту [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph). Передайте кадр в методу [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) объекта [**AudioFrameInputNode**](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeinputnode). Дополнительные сведения об использовании аудиографов для записи, обработки и смешивания звуковых сигналов см. в разделе [Звуковые графы](audio-graphs.md).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Обработка мультимедиа кадров с MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Камера](camera.md)

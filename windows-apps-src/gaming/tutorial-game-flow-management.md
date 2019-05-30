@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 37deaabe2586391b0f0c93359133f10830558539
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4e4d8f43893b5f2a9a58c2eb6209ecb7d8dd1c21
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608859"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367584"
 ---
 # <a name="game-flow-management"></a>Управление потоком игры
 
@@ -283,13 +283,13 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 <tbody>
 <tr class="odd">
 <td align="left">OnActivated</td>
-<td align="left">Обрабатывает <a href="https://msdn.microsoft.com/library/windows/apps/br225018"><strong>CoreApplicationView::Activated</strong></a>. Игровое приложение было выведено на передний план, поэтому активировано главное окно.</td>
+<td align="left">Обрабатывает <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated"><strong>CoreApplicationView::Activated</strong></a>. Игровое приложение было выведено на передний план, поэтому активировано главное окно.</td>
 </tr>
 <tr class="even">
 <td align="left">OnDpiChanged</td>
 <td align="left">Обрабатывает <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>. Разрешение экрана было изменено, и игровое приложение соответствующим образом перераспределяет ресурсы.
 <div class="alert">
-<strong>Примечание</strong> <a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>CoreWindow</strong> </a> координаты указываются в частные интерфейсы (аппаратно-независимых пикселях) для <a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">Direct2D</a>. В результате необходимо передать в Direct2D уведомление об изменениях разрешения для правильного отображения любых двумерных ресурсов или примитивов.
+<strong>Примечание</strong> <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow"><strong>CoreWindow</strong> </a> координаты указываются в частные интерфейсы (аппаратно-независимых пикселях) для <a href="https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-overview">Direct2D</a>. В результате необходимо передать в Direct2D уведомление об изменениях разрешения для правильного отображения любых двумерных ресурсов или примитивов.
 </div>
 <div>
 </div></td>
@@ -304,32 +304,32 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 </tr>
 <tr class="odd">
 <td align="left">OnResuming</td>
-<td align="left">Обрабатывает <a href="https://msdn.microsoft.com/library/windows/apps/br205859"><strong>CoreApplication::Resuming</strong></a>. Игровое приложение восстанавливает игру из состояния приостановки.</td>
+<td align="left">Обрабатывает <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming"><strong>CoreApplication::Resuming</strong></a>. Игровое приложение восстанавливает игру из состояния приостановки.</td>
 </tr>
 <tr class="even">
 <td align="left">OnSuspending</td>
-<td align="left">Обрабатывает <a href="https://msdn.microsoft.com/library/windows/apps/br205860"><strong>CoreApplication::Suspending</strong></a>. Игровое приложение сохраняет свое состояние на диск. У него есть 5 секунд, чтобы сохранить состояние в хранилище.</td>
+<td align="left">Обрабатывает <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending"><strong>CoreApplication::Suspending</strong></a>. Игровое приложение сохраняет свое состояние на диск. У него есть 5 секунд, чтобы сохранить состояние в хранилище.</td>
 </tr>
 <tr class="odd">
 <td align="left">OnVisibilityChanged</td>
-<td align="left">Обрабатывает <a href="https://msdn.microsoft.com/library/windows/apps/hh701591"><strong>CoreWindow::VisibilityChanged</strong></a>. Игровое приложение изменило видимость и стало видимым или невидимым из-за того, что отобразилось другое приложение.</td>
+<td align="left">Обрабатывает <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.visibilitychanged"><strong>CoreWindow::VisibilityChanged</strong></a>. Игровое приложение изменило видимость и стало видимым или невидимым из-за того, что отобразилось другое приложение.</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowActivationChanged</td>
-<td align="left">Обрабатывает <a href="https://msdn.microsoft.com/library/windows/apps/br208255"><strong>CoreWindow::Activated</strong></a>. Главное окно игрового приложения было деактивировано или активировано, поэтому оно должно удалить фокус и приостановить игру или восстановить фокус. В обоих случаях наложение показывает, что игра приостановлена.</td>
+<td align="left">Обрабатывает <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.activated"><strong>CoreWindow::Activated</strong></a>. Главное окно игрового приложения было деактивировано или активировано, поэтому оно должно удалить фокус и приостановить игру или восстановить фокус. В обоих случаях наложение показывает, что игра приостановлена.</td>
 </tr>
 <tr class="odd">
 <td align="left">OnWindowClosed</td>
-<td align="left">Обрабатывает <a href="https://msdn.microsoft.com/library/windows/apps/br208261"><strong>CoreWindow::Closed</strong></a>. Игровое приложение закрывает главное окно и приостанавливает игру.</td>
+<td align="left">Обрабатывает <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.closed"><strong>CoreWindow::Closed</strong></a>. Игровое приложение закрывает главное окно и приостанавливает игру.</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowSizeChanged</td>
-<td align="left">Обрабатывает <a href="https://msdn.microsoft.com/library/windows/apps/br208283"><strong>CoreWindow::SizeChanged</strong></a>. Игровое приложение перераспределяет графические ресурсы и наложение, чтобы подстроиться под изменение размера, а затем обновляет целевой объект прорисовки.</td>
+<td align="left">Обрабатывает <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.sizechanged"><strong>CoreWindow::SizeChanged</strong></a>. Игровое приложение перераспределяет графические ресурсы и наложение, чтобы подстроиться под изменение размера, а затем обновляет целевой объект прорисовки.</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом разделе мы рассмотрели, как выполняется управление общим потоком игры с помощью состояний игры, и отметили, что игра состоит из нескольких различных конечных автоматов. Также мы узнали, как обновлять пользовательский интерфейс и управлять обработчиками основных событий приложений. Теперь мы готовы подробно рассмотреть цикл отрисовки, игру и ее механику.
  

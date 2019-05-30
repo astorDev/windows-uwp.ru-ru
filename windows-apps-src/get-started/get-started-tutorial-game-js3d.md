@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c7d40765e0d12e3543f198aebd5acd15ed3aff3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2e1eba68d1046892a67d779d353fd9b2e6bf224e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595499"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366945"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Создание 3D-игры на языке JavaScript с использованием библиотеки three.js
 
@@ -1084,7 +1084,7 @@ function lockChange() {
 Теперь у вас есть приложение UWP, можно опубликовать его в Microsoft Store, (при условии, что имеют улучшенную сначала!) Для этого нужно выполнить несколько шагов.
 
 1.  [Зарегистрируйтесь](https://developer.microsoft.com/store/register) в качестве разработчика приложений для Windows.
-2.  Заполните [контрольный список](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) для отправки приложения.
-3.  Отправьте приложение на [сертификацию](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process).
+2.  Заполните [контрольный список](https://docs.microsoft.com/windows/uwp/publish/app-submissions) для отправки приложения.
+3.  Отправьте приложение на [сертификацию](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
 Дополнительные сведения см. в разделе [публикации приложения UWP](https://developer.microsoft.com/store/publish-apps).
 

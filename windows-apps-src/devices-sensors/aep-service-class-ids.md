@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08a186e0a8e7293b139f756b69966cd8d4b49c92
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1e4b4c89fff2854c36bd76cc680197fad1aa8dff
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598219"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370406"
 ---
 # <a name="aep-service-class-ids"></a>Идентификаторы класса службы AEP
 
@@ -23,7 +23,7 @@ ms.locfileid: "57598219"
 
 Службы конечной точки связи (AEP) предоставляют программный контракт для служб, поддерживаемых устройством по определенному протоколу. У некоторых из этих служб имеются установленные идентификаторы, которые следует использовать при обращении к ним. Эти контракты определяются с помощью свойства **System.Devices.AepService.ServiceClassId**. В этом разделе перечислены некоторые распространенные идентификаторы класса службы AEP. Идентификаторы класса службы AEP также можно применять к протоколам с настраиваемыми идентификаторами класса.
 
-Разработчикам приложений следует использовать фильтры расширенного синтаксиса запросов (AQS) на основе идентификатора класса, чтобы ограничить количество запросов к службам AEP, которые они планируют использовать. Таким образом, результаты запросов будут поступать только от необходимых служб, что значительно увеличит производительность, время работы от батареи и качество обслуживания устройства. Например, приложение может применять эти идентификаторы класса службы, чтобы использовать устройство в качестве обработчика синхронизации Miracast или мультимедиа DLNA. Дополнительные сведения о взаимодействии устройств и служб см. в разделе [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991).
+Разработчикам приложений следует использовать фильтры расширенного синтаксиса запросов (AQS) на основе идентификатора класса, чтобы ограничить количество запросов к службам AEP, которые они планируют использовать. Таким образом, результаты запросов будут поступать только от необходимых служб, что значительно увеличит производительность, время работы от батареи и качество обслуживания устройства. Например, приложение может применять эти идентификаторы класса службы, чтобы использовать устройство в качестве обработчика синхронизации Miracast или мультимедиа DLNA. Дополнительные сведения о взаимодействии устройств и служб см. в разделе [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind).
 
 ## <a name="bluetooth-and-bluetooth-le-services"></a>Bluetooth и службы Bluetooth с низким энергопотреблением
 
@@ -72,7 +72,7 @@ ms.locfileid: "57598219"
 
  
 
-Более полный список доступных служб Bluetooth см. на страницах о протоколе и службах Bluetooth [здесь](https://go.microsoft.com/fwlink/p/?LinkID=619586) и [здесь](https://go.microsoft.com/fwlink/p/?LinkID=619587). Вы также можете использовать API [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571), чтобы получить доступ к некоторым распространенным службам GATT.
+Более полный список доступных служб Bluetooth см. на страницах о протоколе и службах Bluetooth [здесь](https://go.microsoft.com/fwlink/p/?LinkID=619586) и [здесь](https://go.microsoft.com/fwlink/p/?LinkID=619587). Вы также можете использовать API [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids), чтобы получить доступ к некоторым распространенным службам GATT.
 
 ## <a name="custom-bluetooth-le-services"></a>Настраиваемые службы Bluetooth с низким энергопотреблением
 
@@ -118,7 +118,7 @@ ms.locfileid: "57598219"
 
 ## <a name="aqs-sample"></a>Пример AQS
 
-Этот код AQS фильтрует все UPnP-объекты **AssociationEndpointService**, которые поддерживают DIAL. В этом случае свойству [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) присваивается значение **AsssociationEndpointService**.
+Этот код AQS фильтрует все UPnP-объекты **AssociationEndpointService**, которые поддерживают DIAL. В этом случае свойству [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) присваивается значение **AsssociationEndpointService**.
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND

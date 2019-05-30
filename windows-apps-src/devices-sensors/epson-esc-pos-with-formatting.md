@@ -6,32 +6,32 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c17fb7de151308e41a2e613d86a9c0413c7517e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0731f551afaa2420451521b186515255c3724c36
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649119"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370144"
 ---
 # <a name="epson-escpos-with-formatting"></a>Epson ESC/POS с форматированием
 
 
 **Важные API**
 
--   [**PointofService принтера**](https://msdn.microsoft.com/library/windows/apps/Mt426652)
--   [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
+-   [**PointofService принтера**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)
+-   [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)
 
 Узнайте, как использовать командный язык ESC/POS для форматирования текста (например, изменения начертания на полужирное или увеличения размера символов в два раза) для принтера точки обслуживания.
 
 ## <a name="escpos-usage"></a>Использование ESC/POS
 
-Точка обслуживания Windows обеспечивает использование различных принтеров, включая несколько принтеров серии TM марки Epson (полный список поддерживаемых принтеров см. на странице [Принтер PointofService](https://msdn.microsoft.com/library/windows/apps/Mt426652)). Windows поддерживает печать с помощью командного языка принтера ESC/POS, который предоставляет эффективные и функциональные команды для взаимодействия с вашим принтером.
+Точка обслуживания Windows обеспечивает использование различных принтеров, включая несколько принтеров серии TM марки Epson (полный список поддерживаемых принтеров см. на странице [Принтер PointofService](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)). Windows поддерживает печать с помощью командного языка принтера ESC/POS, который предоставляет эффективные и функциональные команды для взаимодействия с вашим принтером.
 
 ESC/POS — это система управления, созданная Epson и используемая во многих системах принтеров POS с целью исключения несовместимых наборов команд путем обеспечения универсальной применимости. Большинство современных принтеров поддерживают ESC/POS.
 
 Все команды начинаются с символа ESC (ASCII 27, HEX 1B) или GS (ASCII 29, HEX 1D), после которого следует другой символ, указывающий команду. Обычный текст, разделенный разрывами строк, просто отправляется на принтер.
 
-В [**Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) большинство этих функций используется с помощью метода **Print()** или **PrintLine()**. Но для получения определенного форматирования или отправки определенных команд необходимо воспользоваться командами ESC/POS, созданными в виде строки и отправленными на принтер.
+В [**Windows PointOfService API**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) большинство этих функций используется с помощью метода **Print()** или **PrintLine()** . Но для получения определенного форматирования или отправки определенных команд необходимо воспользоваться командами ESC/POS, созданными в виде строки и отправленными на принтер.
 
 ## <a name="example-using-bold-and-double-size-characters"></a>Пример использования полужирных символов и символов двойного размера
 
@@ -59,4 +59,4 @@ printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 printJob.ExecuteAsync();
 ```
 
-Подробнее об ESC/POS, в том числе о доступных командах, см. в разделе [Epson ESC/POS — вопросы и ответы](https://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). Подробнее о [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) и всех доступных функциях см. в статье [Принтер PointofService](https://msdn.microsoft.com/library/windows/apps/Mt426652) на сайте MSDN.
+Подробнее об ESC/POS, в том числе о доступных командах, см. в разделе [Epson ESC/POS — вопросы и ответы](https://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). Подробнее о [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) и всех доступных функциях см. в статье [Принтер PointofService](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) на сайте MSDN.

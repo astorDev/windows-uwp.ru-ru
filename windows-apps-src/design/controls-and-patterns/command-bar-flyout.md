@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cb87bea001492e39a0f60b96f884db70b5bd28ad
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d5774b5301f7e8ce0616df72cfbf4fc81d0d0cf7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592529"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363248"
 ---
 # <a name="command-bar-flyout"></a>Всплывающее меню панели команд
 
@@ -153,7 +153,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 ### <a name="app-bar-buttons"></a>Кнопки панели приложения
 
-Можно заполнить PrimaryCommands и SecondaryCommands непосредственно с [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx), и [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) элементов управления.
+Можно заполнить PrimaryCommands и SecondaryCommands непосредственно с [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton), и [AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) элементов управления.
 
 Кнопки панели приложения характеризуются значком и текстовой меткой. Эти элементы управления оптимизированы для использования в панели команд, и их внешний вид меняется в зависимости от того, отображается ли элемент управления в панели команд или в меню переполнения.
 
@@ -384,7 +384,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 В этой таблице показаны команды, которые включены в TextCommandBarFlyout и в случае, когда они отображаются.
 
-| Команда | Показано... |
+| Command | Показано... |
 | ------- | -------- |
 | Bold | Если текстовый элемент управления не только для чтения (RichEditBox только). |
 | Italic | Если текстовый элемент управления не только для чтения (RichEditBox только). |
@@ -411,4 +411,4 @@ TextCommandBarFlyout невозможно настроить и автомати
 ## <a name="related-articles"></a>Связанные статьи
 
 - [Основы проектирования команд в приложениях UWP](../basics/commanding-basics.md)
-- [Класс CommandBar](https://msdn.microsoft.com/library/windows/apps/dn279427)
+- [Класс CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

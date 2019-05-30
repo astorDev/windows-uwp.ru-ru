@@ -5,18 +5,18 @@ keywords: XAML, UWP, начало работы
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a1eacc42720e7bce4290476676b0864fbd8a3694
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592959"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361224"
 ---
-# <a name="tutorial-create-custom-styles"></a>Руководство: Создание пользовательских стилей
+# <a name="tutorial-create-custom-styles"></a>Учебник. Создание пользовательских стилей
 
 В этом учебнике показано, как настроить пользовательский интерфейс приложения XAML. Внимание! В этом учебнике может быть задействован единорог. А может и не быть. (Будет!)  
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 * [Visual Studio 2017 и пакета SDK для Windows 10 (10.0.15063.468 или более поздней версии)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>Часть 0. Получите код
@@ -60,7 +60,8 @@ ms.locfileid: "57592959"
 
     В [пространстве имен Windows.XAML.Ui.Shapes](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) доступно на выбор семь фигур. Среди фигур есть эллипс, прямоугольник и элемент "Путь", с помощью которого можно создать любую фигуру — даже единорога! 
     
-    <!-- TODO reduce size --> ![Единорога](../basics/images/xaml-basics/unicorn.png)
+    <!-- TODO reduce size -->
+    ![Единорога](../basics/images/xaml-basics/unicorn.png)
     
     > **Ознакомиться с ней:** [Рисования фигур](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) статья содержит все, что нужно знать о фигурах XAML. 
     
@@ -179,7 +180,7 @@ ms.locfileid: "57592959"
 
 Одно из преимуществ стилей XAML заключается в том, что их использование может кардинально сократить объем кода, который требуется написать, а также значительно упростить процесс обновления внешнего вида приложения.
 
-Чтобы определить стиль, необходимо добавить элемент [Style](https://msdn.microsoft.com/library/windows/apps/br208849) в свойство [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) элемента, содержащего элемент управления, который требуется оформить.  Если добавить стиль в свойство **Page.Resources**, стили будут доступны для всей страницы. Если добавить стиль в свойство **Application.Resources** в файле App.xaml, стиль будет доступен всему приложению.
+Чтобы определить стиль, необходимо добавить элемент [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) в свойство [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) элемента, содержащего элемент управления, который требуется оформить.  Если добавить стиль в свойство **Page.Resources**, стили будут доступны для всей страницы. Если добавить стиль в свойство **Application.Resources** в файле App.xaml, стиль будет доступен всему приложению.
 
 Можно создавать именованные и общие стили. Именованный стиль должен быть явным образом применен к конкретным элементам управления, а общий стиль применяется к любому элементу управления, который соответствует указанному атрибуту **TargetType**. 
 
@@ -337,7 +338,8 @@ ms.locfileid: "57592959"
 
 6. Скомпилируйте и запустите приложение. Теперь оно выглядит... так же. Но вы должны чувствовать невероятное удовлетворение от создания рационального и удобного в обслуживании кода.
 
-<!-- TODO add new start/end points --> Поздравляем, Вы завершили часть 2.
+<!-- TODO add new start/end points -->
+Поздравляем, вы завершили часть 2.
 
 
 ## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>Часть 3. Использование шаблона элемента управления, чтобы сделать затейливого "ползунок"
@@ -858,4 +860,5 @@ ms.locfileid: "57592959"
     
     Как видно, внесенные изменения улучшили расположение многоугольника: теперь его нижняя часть выровнена относительно нижней части бегунка ползунка.
     
-<!-- TODO correct folder --> Поздравляем, вы изучили руководства. Если вы столкнулись с проблемами или хотите ознакомиться с окончательным решением, готовый пример можно найти в [репозитории примеров приложений UWP](https://github.com/Microsoft/Windows-universal-samples).
+<!-- TODO correct folder -->
+Поздравляем, вы завершили изучение учебника. Если вы столкнулись с проблемами или хотите ознакомиться с окончательным решением, готовый пример можно найти в [репозитории примеров приложений UWP](https://github.com/Microsoft/Windows-universal-samples).

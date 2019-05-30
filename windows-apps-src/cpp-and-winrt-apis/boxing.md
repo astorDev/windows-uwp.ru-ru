@@ -1,24 +1,24 @@
 ---
 description: Скалярное значение необходимо поместить в объект ссылочного класса перед его передачей в функцию, которая ожидает **IInspectable**. Этот процесс называют *упаковкой* значения.
 title: Упаковка-преобразование и распаковка-преобразование скалярных значений в IInspectable с помощью C++/WinRT
-ms.date: 04/10/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, упаковка, скалярное, значение
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c86d1ac8ce83ea092ce0e2730ea0e9d4a201b94
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1bd69e07f2285b6c05581a60ddbaf4b394d0b6d0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639679"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361196"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Упаковка-преобразование и распаковка-преобразование скалярных значений в IInspectable с помощью C++/WinRT
  
-[  **Интерфейс IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) — это корневой интерфейс любого класса среды выполнения Windows (WinRT). Эта идея аналогична тому, что в корне каждого COM-интерфейса и класса находится [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509), а **System.Object** находится в корне каждого класса [Common Type System](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system).
+[  **Интерфейс IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) — это корневой интерфейс любого класса среды выполнения Windows (WinRT). Эта идея аналогична тому, что в корне каждого COM-интерфейса и класса находится [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown), а **System.Object** находится в корне каждого класса [Common Type System](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system).
 
 Другими словами, функции, которая ожидает **IInspectable**, можно передать экземпляр любого класса среды выполнения. Однако такой функции нельзя напрямую передать скалярное значение, например числовое или текстовое. Вместо этого скалярное значение необходимо поместить в объект ссылочного класса. Этот процесс называют *упаковкой* значения.
 
-[C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) предоставляет [ **winrt::box_value** ](/uwp/cpp-ref-for-winrt/box-value) функцию, которая принимает скалярное значение и возвращает значение, упакованных в **IInspectable**. Для распаковки **IInspectable** обратно в скалярное значение существуют функции [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) и [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or).
+[C++/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) предоставляет [ **winrt::box_value** ](/uwp/cpp-ref-for-winrt/box-value) функцию, которая принимает скалярное значение и возвращает значение, упакованных в **IInspectable**. Для распаковки **IInspectable** обратно в скалярное значение существуют функции [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) и [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or).
 
 ## <a name="examples-of-boxing-a-value"></a>Примеры упаковки значения
 Функция доступа [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) возвращает[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring), которое является скалярным значением. Мы можете упаковать это значение **hstring** и передать его функции, ожидающей **IInspectable**, следующим образом.

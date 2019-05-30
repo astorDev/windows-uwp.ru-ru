@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36cd006b4608d82999281ebd407fd32e168ae38b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f87ecf0c3c90976295d85c1a995f1de091491974
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650469"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359180"
 ---
 # <a name="adaptive-streaming-with-playready"></a>Адаптивная потоковая передача с защитой PlayReady
 
@@ -63,9 +63,9 @@ private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 
 ## <a name="setting-up-the-mediaprotectionmanager"></a>Настройка MediaProtectionManager
 
-Чтобы добавить защиту содержимого PlayReady в приложение UWP, необходимо настроить объект [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040). Для этого нужно инициализировать объект [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912).
+Чтобы добавить защиту содержимого PlayReady в приложение UWP, необходимо настроить объект [MediaProtectionManager](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.MediaProtectionManager). Для этого нужно инициализировать объект [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource).
 
-Следующий код настраивает объект [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040):
+Следующий код настраивает объект [MediaProtectionManager](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.MediaProtectionManager):
 
 ```csharp
 private void SetUpProtectionManager(ref MediaElement mediaElement)
@@ -100,7 +100,7 @@ private void SetUpProtectionManager(ref MediaElement mediaElement)
 
 Этот код можно просто скопировать в приложение, поскольку он необходим для настройки защиты содержимого.
 
-Событие [ComponentLoadFailed](https://msdn.microsoft.com/library/windows/apps/br207041) инициируется при ошибке загрузки двоичных данных. Нам нужно добавить обработчик этого события, которое сообщает о том, что загрузка не завершена:
+Событие [ComponentLoadFailed](https://docs.microsoft.com/uwp/api/windows.media.protection.mediaprotectionmanager.componentloadfailed) инициируется при ошибке загрузки двоичных данных. Нам нужно добавить обработчик этого события, которое сообщает о том, что загрузка не завершена:
 
 ```csharp
 private void ProtectionManager_ComponentLoadFailed(
@@ -111,7 +111,7 @@ private void ProtectionManager_ComponentLoadFailed(
 }
 ```
 
-Также необходимо обработчик события [ServiceRequested](https://msdn.microsoft.com/library/windows/apps/br207045), которое активируется при запросе службы. Этот код проверяет тип запроса и реагирует соответствующим образом:
+Также необходимо обработчик события [ServiceRequested](https://docs.microsoft.com/uwp/api/windows.media.protection.mediaprotectionmanager.servicerequested), которое активируется при запросе службы. Этот код проверяет тип запроса и реагирует соответствующим образом:
 
 ```csharp
 private async void ProtectionManager_ServiceRequested(
@@ -192,7 +192,7 @@ async void ProActiveIndivRequest()
 
 ## <a name="license-acquisition-service-requests"></a>Запросы на обслуживание для получения лицензии
 
-Если запросом был [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285), мы вызываем списке функцию ниже, чтобы запросить и получить лицензию PlayReady. Мы сообщаем объекту **MediaProtectionServiceCompletion**, который мы передали, был ли запрос выполнен успешно или нет, и завершаем запрос:
+Если запросом был [PlayReadyLicenseAcquisitionServiceRequest](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyLicenseAcquisitionServiceRequest), мы вызываем списке функцию ниже, чтобы запросить и получить лицензию PlayReady. Мы сообщаем объекту **MediaProtectionServiceCompletion**, который мы передали, был ли запрос выполнен успешно или нет, и завершаем запрос:
 
 ```csharp
 async void LicenseAcquisitionRequest(
@@ -274,7 +274,7 @@ async void LicenseAcquisitionRequest(
 
 ## <a name="initializing-the-adaptivemediasource"></a>Инициализация AdaptiveMediaSource
 
-Наконец, вам потребуется функция для инициализации объекта [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912), созданного на основе заданных [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) и [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926). **Uri** — это ссылка на файл мультимедиа (HLS или DASH), а элемент **MediaElement** должен быть определен в коде XAML.
+Наконец, вам потребуется функция для инициализации объекта [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource), созданного на основе заданных [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) и [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). **Uri** — это ссылка на файл мультимедиа (HLS или DASH), а элемент **MediaElement** должен быть определен в коде XAML.
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)

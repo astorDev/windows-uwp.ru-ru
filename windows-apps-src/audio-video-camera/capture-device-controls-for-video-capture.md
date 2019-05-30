@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f503910a46254f4e885dd2ded1d43b975d78f84e
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: d20f2d372354cf7bbfa596318f165c424f08c8ee
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244320"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66358862"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>Ручные элементы управления для видеозахвата на камере
 
@@ -21,7 +21,7 @@ ms.locfileid: "59244320"
 
 Описанные в ней элементы управления видеоустройством добавляются в приложение с помощью одного и того же шаблона. Для начала проверьте, поддерживается ли элемент управления на устройстве, на котором выполняется приложение. Если это так, установите для элемента управления нужный режим. Как правило, если элемент управления не поддерживается на текущем устройстве, необходимо отключить или скрыть элемент пользовательского интерфейса, который позволяет пользователю включать соответствующую функцию.
 
-Все API элементов управления устройства, описанные в этой статье, входят в пространство имен [**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902).
+Все API элементов управления устройства, описанные в этой статье, входят в пространство имен [**Windows.Media.Devices**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices).
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
@@ -30,21 +30,21 @@ ms.locfileid: "59244320"
 
 ## <a name="hdr-video"></a>Видео HDR
 
-Функция расширенного динамического диапазона (HDR) для видео позволяет применять к видеопотоку устройства захвата обработку HDR. Чтобы определить, поддерживается ли видео HDR, проверьте свойство [**HdrVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926682).
+Функция расширенного динамического диапазона (HDR) для видео позволяет применять к видеопотоку устройства захвата обработку HDR. Чтобы определить, поддерживается ли видео HDR, проверьте свойство [**HdrVideoControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.hdrvideocontrol.supported).
 
-Элемент управления видео HDR работает в трех режимах "Включен", "Отключен" и "Автоматический режим". Устройство в динамическом режиме определяет, улучшит ли обработка видео HDR захват мультимедиа, и, если это так, включает функцию HDR. Чтобы определить, поддерживается ли на текущем устройстве определенный режим, проверьте, доступен ли он в коллекции [**HdrVideoControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926683).
+Элемент управления видео HDR работает в трех режимах "Включен", "Отключен" и "Автоматический режим". Устройство в динамическом режиме определяет, улучшит ли обработка видео HDR захват мультимедиа, и, если это так, включает функцию HDR. Чтобы определить, поддерживается ли на текущем устройстве определенный режим, проверьте, доступен ли он в коллекции [**HdrVideoControl.SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.hdrvideocontrol.supportedmodes).
 
-Чтобы включить или отключить обработку видео HDR, переведите свойство [**HdrVideoControl.Mode**](https://msdn.microsoft.com/library/windows/apps/dn926681) в нужный режим.
+Чтобы включить или отключить обработку видео HDR, переведите свойство [**HdrVideoControl.Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.hdrvideocontrol.mode) в нужный режим.
 
 [!code-cs[SetHdrVideoMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetHdrVideoMode)]
 
 ## <a name="exposure-priority"></a>Приоритет выдержки
 
-Если включен элемент [**ExposurePriorityVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926644), он оценивает кадры видео с устройства захвата, чтобы определить, записывается ли видео при низкой освещенности. Если это так, элемент управления снижает частоту кадров захватываемого видео, чтобы увеличить выдержку каждого кадра и улучшить визуальное качество видео.
+Если включен элемент [**ExposurePriorityVideoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ExposurePriorityVideoControl), он оценивает кадры видео с устройства захвата, чтобы определить, записывается ли видео при низкой освещенности. Если это так, элемент управления снижает частоту кадров захватываемого видео, чтобы увеличить выдержку каждого кадра и улучшить визуальное качество видео.
 
-Чтобы определить, поддерживается ли на текущем устройстве элемент управления приоритетом выдержки, проверьте свойство [**ExposurePriorityVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926647).
+Чтобы определить, поддерживается ли на текущем устройстве элемент управления приоритетом выдержки, проверьте свойство [**ExposurePriorityVideoControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurepriorityvideocontrol.supported).
 
-Чтобы включить или отключить этот элемент управления, переведите свойство [**ExposurePriorityVideoControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926646) в нужный режим.
+Чтобы включить или отключить этот элемент управления, переведите свойство [**ExposurePriorityVideoControl.Enabled**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurepriorityvideocontrol.enabled) в нужный режим.
 
 [!code-cs[EnableExposurePriority](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
 
@@ -87,8 +87,8 @@ ms.locfileid: "59244320"
 ## <a name="related-topics"></a>См. также
 
 * [Камера](camera.md)
-* [Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Обработка кадров мультимедиа с помощью MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Обработка мультимедиа кадров с MediaFrameReader](process-media-frames-with-mediaframereader.md)
 *  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
 

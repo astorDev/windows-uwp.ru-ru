@@ -6,32 +6,32 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 09ddb212cd84b9754c35adccdf6e60ad96a4f94f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5d45c907215f21977b0a59acede5a8314d6ed168
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662769"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369324"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>Открытие файлов и папок с помощью средства выбора
 
 **Важные API**
 
--   [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)
--   [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)
--   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
+-   [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)
+-   [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker)
+-   [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)
 
-Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Для получения доступа к файлам можно использовать классы [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) и [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), а для получения доступа к папкам — класс [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881).
+Получите доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. Для получения доступа к файлам можно использовать классы [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) и [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker), а для получения доступа к папкам — класс [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker).
 
 > [!NOTE]
 > Полный пример см. в разделе [образец средства выбора файла](https://go.microsoft.com/fwlink/p/?linkid=619994).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 
 -   **Понять асинхронного программирования для приложений универсальной платформы Windows (UWP)**
 
-    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Разрешения на доступ к папке**
 
@@ -55,9 +55,9 @@ ms.locfileid: "57662769"
 ## <a name="how-pickers-work"></a>Как работают средства выбора
 
 
-Используя средство выбора, ваше приложение может получать доступ к файлам и папкам в системе пользователя, просматривать и сохранять их. Ваше приложение получает эти выбранные элементы в виде объектов [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) и [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), с которыми потом можно работать.
+Используя средство выбора, ваше приложение может получать доступ к файлам и папкам в системе пользователя, просматривать и сохранять их. Ваше приложение получает эти выбранные элементы в виде объектов [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) и [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder), с которыми потом можно работать.
 
-Средство выбора использует единый унифицированный интерфейс для обеспечения пользователю возможности выбора файлов и папок из файловой системы либо из других приложений. Файлы, выбранные из других приложений, воспринимаются как файлы из файловой системы: они возвращаются как объекты [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). В целом ваше приложение может работать с ними так же, как с другими объектами. Другие приложения обеспечивают доступ к файлам за счет участия в контрактах средства выбора файлов. Сведения о настройке вашего приложения для предоставления другим приложениям файлов, места сохранения или обновлений файлов см. в разделе [Взаимодействие с контрактами "Средство выбора файлов"](https://msdn.microsoft.com/library/windows/apps/hh465192).
+Средство выбора использует единый унифицированный интерфейс для обеспечения пользователю возможности выбора файлов и папок из файловой системы либо из других приложений. Файлы, выбранные из других приложений, воспринимаются как файлы из файловой системы: они возвращаются как объекты [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile). В целом ваше приложение может работать с ними так же, как с другими объектами. Другие приложения обеспечивают доступ к файлам за счет участия в контрактах средства выбора файлов. Сведения о настройке вашего приложения для предоставления другим приложениям файлов, места сохранения или обновлений файлов см. в разделе [Взаимодействие с контрактами "Средство выбора файлов"](https://docs.microsoft.com/previous-versions/windows/apps/hh465192(v=win.10)).
 
 Например, вы можете вызывать средство выбора файлов в своем приложении, чтобы пользователь имел возможность открыть необходимый файл. За счет этого ваше приложение становится вызывающим приложением. Средство выбора файлов взаимодействует с системой и/или другими приложениями, обеспечивая пользователю возможность поиска и выбора определенного файла. Когда пользователь выбирает файл, средство выбора файлов возвращает этот файл в ваше приложение. Ниже показан процесс, который имеет место при выборе пользователем файла из другого приложения, например OneDrive.
 
@@ -103,13 +103,13 @@ else
     ```
     Задайте свойства объекта «средство выбора файлов», соответствующие вашим пользователям и приложению.
 
-    В этом примере создает подробные и visual отображение изображений в удобном месте, которое пользователь может выбрать из, задав три свойства: [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855), [ **SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854), и [ **FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850).
+    В этом примере создает подробные и visual отображение изображений в удобном месте, которое пользователь может выбрать из, задав три свойства: [**ViewMode**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode), [ **SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation), и [ **FileTypeFilter**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter).
 
-    -   Установка [ **ViewMode** ](https://msdn.microsoft.com/library/windows/apps/br207855) для [ **PickerViewMode** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) **эскиз** форматированного текста, создает значение перечисления визуальное отображение с помощью эскизов изображений для представления файлы в средстве выбора файлов. Выполните это, чтобы выбрать визуальные файлы, например фотографии или видео. В других случаях воспользуйтесь [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list). Гипотетическое почтовое приложение с функциями **Прикрепить изображение или видео** и **Прикрепить документ** установит свойство **ViewMode**, соответствующее функции, прежде чем отобразить средство выбора файлов.
+    -   Установка [ **ViewMode** ](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode) для [ **PickerViewMode** ](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode) **эскиз** форматированного текста, создает значение перечисления визуальное отображение с помощью эскизов изображений для представления файлы в средстве выбора файлов. Выполните это, чтобы выбрать визуальные файлы, например фотографии или видео. В других случаях воспользуйтесь [**PickerViewMode.List**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode). Гипотетическое почтовое приложение с функциями **Прикрепить изображение или видео** и **Прикрепить документ** установит свойство **ViewMode**, соответствующее функции, прежде чем отобразить средство выбора файлов.
 
-    -   Выбор библиотеки «Изображения» в качестве значения для параметра [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) с помощью [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) позволяет пользователю начать работу в расположении вероятного нахождения изображений. Присвойте свойство **SuggestedStartLocation** расположению, подходящему для типа выбранных файлов, например «Музыка», «Изображения», «Видео» или «Документы». Из начального расположения пользователь может перейти в другие расположения.
+    -   Выбор библиотеки «Изображения» в качестве значения для параметра [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) с помощью [**PickerLocationId.PicturesLibrary**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerLocationId) позволяет пользователю начать работу в расположении вероятного нахождения изображений. Присвойте свойство **SuggestedStartLocation** расположению, подходящему для типа выбранных файлов, например «Музыка», «Изображения», «Видео» или «Документы». Из начального расположения пользователь может перейти в другие расположения.
 
-    -   Использование [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) для указания типов файлов сохраняет внимание пользователя на выборе соответствующих файлов. Чтобы заменить предыдущие типы файлов в **FileTypeFilter** новыми записями, используйте вместо метода [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834) метод [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844).
+    -   Использование [**FileTypeFilter**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter) для указания типов файлов сохраняет внимание пользователя на выборе соответствующих файлов. Чтобы заменить предыдущие типы файлов в **FileTypeFilter** новыми записями, используйте вместо метода [**Add**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileextensionvector.append) метод [**ReplaceAll**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileextensionvector.replaceall).
 
 2.  **Показать FileOpenPicker**
 
@@ -173,4 +173,4 @@ else
 ```
 
 > [!TIP]
-> Каждый раз, когда ваше приложение получает доступ к файлу или папке через средство выбора, добавляйте этот файл или папку в свойство [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) или [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) приложения для отслеживания. Подробнее об использовании этих списков см. в разделе [Отслеживание последних использованных файлов и папок](how-to-track-recently-used-files-and-folders.md).
+> Каждый раз, когда ваше приложение получает доступ к файлу или папке через средство выбора, добавляйте этот файл или папку в свойство [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) или [**MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) приложения для отслеживания. Подробнее об использовании этих списков см. в разделе [Отслеживание последних использованных файлов и папок](how-to-track-recently-used-files-and-folders.md).

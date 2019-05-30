@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: устройства Windows 10, универсальной платформы Windows, подключенных удаленных систем, Рим, рим проекта
 ms.localizationpriority: medium
-ms.openlocfilehash: 7788cb546eddf77292210b5b1e8268239504a843
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 665a40cf69b7518643390abddc3895be07c63c5c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592139"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366197"
 ---
 # <a name="discover-remote-devices"></a>Обнаружение удаленных устройств
 Ваше приложение может использовать беспроводную сеть, Bluetooth и облачное подключение для обнаружения устройств с Windows, вход с которых выполнен с той же учетной записью Майкрософт, что и у обнаруживающего устройства. Обнаружение удаленных устройств возможно без установки на них какого-либо специального программного обеспечения.
@@ -20,7 +20,7 @@ ms.locfileid: "57592139"
 > В этом руководстве предполагается, что вы уже получили доступ к функции удаленных систем, выполнив шаги раздела [Запуск удаленного приложения](launch-a-remote-app.md).
 
 ## <a name="filter-the-set-of-discoverable-devices"></a>Фильтрация набора устройств, доступных для обнаружения
-Набор доступных для обнаружения устройств можно ограничить, используя [**RemoteSystemWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher) с фильтрами. Фильтры могут определять тип обнаружения (подключение близкого радиуса действия или локальная сеть или облачное подключение), типа устройства (компьютер, мобильное устройство, Xbox, Hub и Holographic) и состояние доступности (состояние доступности устройства для использования функций удаленной системы).
+Набор доступных для обнаружения устройств можно ограничить, используя [**RemoteSystemWatcher**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystemWatcher) с фильтрами. Фильтры могут определять тип обнаружения (подключение близкого радиуса действия или локальная сеть или облачное подключение), типа устройства (компьютер, мобильное устройство, Xbox, Hub и Holographic) и состояние доступности (состояние доступности устройства для использования функций удаленной системы).
 
 Объекты фильтра должны быть созданы до или во время инициализации объекта **RemoteSystemWatcher**, поскольку они передаются как параметры в его конструктор. Следующий код создает фильтры каждого доступного типа, затем добавляет их в список.
 
@@ -31,24 +31,24 @@ ms.locfileid: "57592139"
 
 > [!NOTE]
 > Значение фильтра "proximal" не гарантирует степень физической близости. Для сценариев, которым требуется надежная физическая близость, используйте значение [**RemoteSystemDiscoveryType.SpatiallyProximal**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) в своем фильтре. В настоящее время этот фильтр допускает только устройства, которые обнаружены с помощью Bluetooth. Так как новые механизмы обнаружения и протоколы, которые гарантируют физическую близость, поддерживаются, они также будут включены здесь.  
-Имеется также свойство в [ **RemoteSystem** ](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) класс, который указывает, располагается ли обнаружено устройство, на самом деле внутри физического местонахождения: [**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity).
+Имеется также свойство в [ **RemoteSystem** ](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem) класс, который указывает, располагается ли обнаружено устройство, на самом деле внутри физического местонахождения: [**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity).
 
 > [!NOTE]
 > Если требуется обнаруживать устройства по локальной сети (определяется фильтром выбора типа обнаружения), в вашей сети необходимо использовать профиль «частная» или «доменная». Устройство не будет обнаруживать другие устройства в «общедоступной» сети.
 
-После создания списка объектов [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) его можно передать в конструктор объекта **RemoteSystemWatcher**.
+После создания списка объектов [**IRemoteSystemFilter**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.IRemoteSystemFilter) его можно передать в конструктор объекта **RemoteSystemWatcher**.
 
 [!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
 
-При вызове метода [**Start**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.Start) этого наблюдателя он инициирует событие [**RemoteSystemAdded**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.RemoteSystemAdded) только в случае обнаружения устройства, которое соответствует всем указанным ниже критериям.
+При вызове метода [**Start**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemwatcher.start) этого наблюдателя он инициирует событие [**RemoteSystemAdded**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemwatcher.remotesystemadded) только в случае обнаружения устройства, которое соответствует всем указанным ниже критериям.
 * Оно может быть обнаружено с помощью подключения близкого радиуса действия
 * Это компьютер или телефон
 * Оно классифицируется как доступное
 
-С этого момента процедура обработки событий, извлечения объектов [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) и подключения к удаленным устройствам полностью совпадает с процедурой из раздела [Запуск удаленного приложения](launch-a-remote-app.md). Если коротко, объекты **RemoteSystem** хранятся в виде свойств объектов [**RemoteSystemAddedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs), которые передаются с каждым событием **RemoteSystemAdded**.
+С этого момента процедура обработки событий, извлечения объектов [**RemoteSystem**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem) и подключения к удаленным устройствам полностью совпадает с процедурой из раздела [Запуск удаленного приложения](launch-a-remote-app.md). Если коротко, объекты **RemoteSystem** хранятся в виде свойств объектов [**RemoteSystemAddedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs), которые передаются с каждым событием **RemoteSystemAdded**.
 
 ## <a name="discover-devices-by-address-input"></a>Обнаружение устройств путем ввода адреса
-Некоторые устройства могут быть не связаны с пользователем или могут не обнаруживаться сканированием, но с ними все равно можно установить связь, если обнаруживающее приложение использует прямой адрес. Класс [**HostName**](https://msdn.microsoft.com/library/windows/apps/windows.networking.hostname.aspx) используется для представления адреса удаленного устройства. Он часто хранится в виде IP-адреса, но допускается также ряд других форматов (см. раздел [**Конструктор HostName**](https://msdn.microsoft.com/library/windows/apps/br207118.aspx)).
+Некоторые устройства могут быть не связаны с пользователем или могут не обнаруживаться сканированием, но с ними все равно можно установить связь, если обнаруживающее приложение использует прямой адрес. Класс [**HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname) используется для представления адреса удаленного устройства. Он часто хранится в виде IP-адреса, но допускается также ряд других форматов (см. раздел [**Конструктор HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname.)).
 
 Объект **RemoteSystem** извлекается, если указан действительный объект **HostName**. Если сведения об адресе неправильные, возвращается ссылка на объект `null`.
 
@@ -92,8 +92,8 @@ if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anony
 
 ![страница параметров общих возможностей](images/shared-experiences-settings.png)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [Подключенные приложения и устройства (рим проекта)](connected-apps-and-devices.md)
 * [Запуск удаленного приложения](launch-a-remote-app.md)
-* [Удаленный Справочник по API системы](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+* [Удаленный Справочник по API системы](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)
 * [Пример удаленных систем](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)

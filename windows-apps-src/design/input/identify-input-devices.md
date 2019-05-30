@@ -8,30 +8,30 @@ keywords: устройство, дигитайзер, ввод, взаимоде
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d37a830ffd0735d69046aa7e9495cfe6fa943f97
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 982f787aaef05dabdc356af906e80b28085b5a2d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638529"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363385"
 ---
 # <a name="identify-input-devices"></a>Определение устройств ввода
 
 
 Определение устройств ввода, подключенных к устройству с универсальной платформой Windows (UWP), а также их возможностей и атрибутов.
 
-> **Важные API**: [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **Важные API**: [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 ## <a name="retrieve-mouse-properties"></a>Получение свойств мыши
 
 
-В пространстве имен [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) содержится класс [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626), который используется для получения свойств одной подключенной мыши или нескольких. Просто создайте новый объект **MouseCapabilities** и получите необходимые вам свойства.
+В пространстве имен [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) содержится класс [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities), который используется для получения свойств одной подключенной мыши или нескольких. Просто создайте новый объект **MouseCapabilities** и получите необходимые вам свойства.
 
 **Примечание**  значения, возвращаемые свойства, рассматриваемые здесь основаны на все обнаруженные мыши: Логические свойства возвращают ненулевое значение, если хотя бы один мыши поддерживает конкретной функции, а числовые свойства вернуть максимальное значение, представляемое любой один мыши.
 
  
 
-В следующем коде для отображения свойств и значений отдельной мыши используются последовательности элементов [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
+В следующем коде для отображения свойств и значений отдельной мыши используются последовательности элементов [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
 
 ```CSharp
 private void GetMouseProperties()
@@ -48,9 +48,9 @@ private void GetMouseProperties()
 ## <a name="retrieve-keyboard-properties"></a>Получение свойств клавиатуры
 
 
-В пространстве имен [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) содержится класс [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623), используемый для загрузки данных о том, подключена ли клавиатура. Просто создайте новый объект **KeyboardCapabilities** и получите свойство [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625).
+В пространстве имен [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) содержится класс [**KeyboardCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.KeyboardCapabilities), используемый для загрузки данных о том, подключена ли клавиатура. Просто создайте новый объект **KeyboardCapabilities** и получите свойство [**KeyboardPresent**](https://docs.microsoft.com/uwp/api/windows.devices.input.keyboardcapabilities.keyboardpresent).
 
-В следующем коде для отображения свойства и значения клавиатуры используется элемент [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
+В следующем коде для отображения свойства и значения клавиатуры используется элемент [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
 
 ```CSharp
 private void GetKeyboardProperties()
@@ -63,13 +63,13 @@ private void GetKeyboardProperties()
 ## <a name="retrieve-touch-properties"></a>Получение свойств устройства сенсорного ввода
 
 
-В пространстве имен [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) содержится класс [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644), используемый для получения данных о том, подключены ли сенсорные дигитайзеры. Просто создайте новый объект **TouchCapabilities** и получите необходимые вам свойства.
+В пространстве имен [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) содержится класс [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities), используемый для получения данных о том, подключены ли сенсорные дигитайзеры. Просто создайте новый объект **TouchCapabilities** и получите необходимые вам свойства.
 
 **Примечание**  значения, возвращаемые свойства, рассматриваемые здесь основаны на всех обнаруженных сенсорных дигитайзеров: Логические свойства возвращают ненулевое значение, если хотя бы один дигитайзера поддерживает конкретной функции, а числовые свойства вернуть максимальное значение, представляемое любой один дигитайзера.
 
  
 
-В следующем коде для отображения свойств и значений отдельного устройства сенсорного ввода используются последовательности элементов [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
+В следующем коде для отображения свойств и значений отдельного устройства сенсорного ввода используются последовательности элементов [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
 
 ```CSharp
 private void GetTouchProperties()
@@ -83,7 +83,7 @@ private void GetTouchProperties()
 ## <a name="retrieve-pointer-properties"></a>Получение свойств указателя
 
 
-В пространстве имен [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) содержится класс [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633), используемый для получения данных о том, поддерживают ли какие-либо из обнаруженных устройств ввод указателем (устройство сенсорного ввода, сенсорная панель, мышь или перо). Просто создайте новый объект **PointerDevice** и получите необходимые вам свойства.
+В пространстве имен [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) содержится класс [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice), используемый для получения данных о том, поддерживают ли какие-либо из обнаруженных устройств ввод указателем (устройство сенсорного ввода, сенсорная панель, мышь или перо). Просто создайте новый объект **PointerDevice** и получите необходимые вам свойства.
 
 **Примечание**  значения, возвращаемые свойства, рассматриваемые здесь основаны на всех устройствах, обнаруженных указателя: Логические свойства возвращают ненулевое значение, если хотя бы одно устройство поддерживает конкретной функции, а числовые свойства вернуть максимальное значение, представляемое любого устройства один указатель.
 

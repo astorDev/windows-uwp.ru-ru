@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a51705b1e74508d89328ce5ace3d7fd869aa0940
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1b8e03683d38b382d74bd6defbf7732578878960
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606399"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362841"
 ---
 # <a name="date-picker"></a>Управляющий элемент выбора даты
 
@@ -26,7 +26,7 @@ ms.locfileid: "57606399"
 
 Элемент выбора даты — это стандартизованный способ, позволяющий пользователям выбирать локализованное значение даты с помощью сенсорного ввода, мыши или клавиатуры. 
 
-> **Важные API**: [Класс DatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx), [Дата, свойство](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
+> **Важные API**: [Класс DatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [Дата, свойство](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.date)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -71,7 +71,7 @@ birthDatePicker.Header = "Date of birth";
 
 ![Пример элемента выбора даты](images/date-picker-closed.png)
 
-> **Примечание.**&nbsp;&nbsp;Важные сведения о значениях даты см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи "Элементы управления датой и временем".
+> **Примечание.** &nbsp;&nbsp;Важные сведения о значениях даты см. в разделе [Значения DateTime и Calendar](date-and-time.md#datetime-and-calendar-values) статьи "Элементы управления датой и временем".
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 

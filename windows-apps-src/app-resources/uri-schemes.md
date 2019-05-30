@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d66d717d77d2797e8a483871b8d3369befb5b6b
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: f199d70fc9194f211533820a7b23e20de929752d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320587"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359342"
 ---
 # <a name="uri-schemes"></a>Схемы URI
 
@@ -249,11 +249,11 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 ### <a name="path-ms-resource"></a>Путь (ms-resource)
 
-Путь определяет иерархическое расположение поддерева [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) (см. раздел [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/jj552947)) и подраздел [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) в нем. Обычно путь соответствует имени файлов ресурса (без расширения .resw) и идентификатору строкового ресурса в этом файле.
+Путь определяет иерархическое расположение поддерева [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) (см. раздел [Система управления ресурсами](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))) и подраздел [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) в нем. Обычно путь соответствует имени файлов ресурса (без расширения .resw) и идентификатору строкового ресурса в этом файле.
 
 Дополнительные сведения и примеры см. в разделах [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md) и [Поддержка плитки и всплывающих уведомлений для языка, масштаба и высокой контрастности](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
-Компонент пути схемы `ms-resource`, как и стандартные URI, учитывает регистр. Однако базовый извлечения выполняет [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) с *ignoreCase* присвоено `true`.
+Компонент пути схемы `ms-resource`, как и стандартные URI, учитывает регистр. Однако базовый извлечения выполняет [CompareStringOrdinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) с *ignoreCase* присвоено `true`.
 
 Нормализованная форма URI поддерживает регистр и декодирует (используя символ "%", за которым следуют двузначный шестнадцатеричный символ) незарезервированные символы RFC 3986. Символы ?, #, /, * и ” (символ кавычки), представляющие такие данные в пути, как имена файлов или папок, должны кодироваться. Все закодированные символы перед получением декодируются. Таким образом, чтобы получить строковый ресурс из файла ресурсов с именем `Hello#World.resw`, использовать этот URI.
 
@@ -274,5 +274,5 @@ ms-resource:///Hello%23World/String1
 * [Ссылаться на изображения и другие ресурсы из XAML-разметки и кода](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Хранение и извлечение параметров и прочих данных приложения](../design/app-settings/store-and-retrieve-app-data.md)
 * [Локализация строк в манифесте пакета приложения и интерфейсе пользователя](localize-strings-ui-manifest.md)
-* [Система управления ресурсами](https://msdn.microsoft.com/library/windows/apps/jj552947)
+* [Система управления ресурсами](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
 * [Поддержка уведомлений плиток и всплывающих уведомлений для языка, масштаба и высокой контрастности](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

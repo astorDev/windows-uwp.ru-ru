@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, настройка, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 789b235220e5d22b85f7b3038d5d468729439501
-ms.sourcegitcommit: 7a3d28472901edbe4ecdde7e1a01a505ee5bc028
+ms.openlocfilehash: ca91926ec374015eeb88be6d89d3e1741d8b9c6d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58658770"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367687"
 ---
 # <a name="set-up-the-game-project"></a>Настройка проекта игры
 
@@ -35,12 +35,12 @@ ms.locfileid: "58658770"
 
 Шаблон Visual Studio — это набор параметров и файлов кода, которые рассчитаны на определенный тип приложений и основаны на выбранном языке программирования и технологии. В Microsoft Visual Studio 2017 вы найдете несколько шаблонов, которые могут значительно упростить разработки приложений для игр и графики. Без шаблона вам придется самостоятельно разработать большую часть кода для отрисовки основной графики и структуры отображения, что может оказаться слишком сложной задачей для начинающего разработчика игр.
 
-В этом учебнике используется шаблон под названием **Приложение DirectX 11 (универсальное приложение Windows)**. 
+В этом учебнике используется шаблон под названием **Приложение DirectX 11 (универсальное приложение Windows)** . 
 
 Порядок создания игрового проекта DirectX 11 в Visual Studio:
 1.  Выберите **файл...** &gt; **Новый** &gt; **проекта...**
 2.  В левой области выберите **установленные** &gt; **шаблоны** &gt; **Visual C++** &gt; **универсальной Windows**
-3.  На центральной панели выберите **Приложение DirectX 11 (универсальное приложение Windows)**.
+3.  На центральной панели выберите **Приложение DirectX 11 (универсальное приложение Windows)** .
 4.  Выберите имя для проекта игры и нажмите **ОК**.
 
 ![Снимок экрана, показывающий, как выбрать шаблон DirectX 11 для создания нового проекта игры](images/simple-dx-game-setup-new-project.png)
@@ -53,7 +53,7 @@ ms.locfileid: "58658770"
 
 ### <a name="inspect-apph"></a>Изучите файл **App.h**.
 
-Давайте быстро взглянуть на 5 методы **файле App.h** &mdash; [ **инициализировать**](https://msdn.microsoft.com/library/windows/apps/hh700495), [ **SetWindow** ](https://msdn.microsoft.com/library/windows/apps/hh700509), [ **Нагрузки**](https://msdn.microsoft.com/library/windows/apps/hh700501), [ **запуска**](https://msdn.microsoft.com/library/windows/apps/hh700505), и [ **отменить инициализацию** ](https://msdn.microsoft.com/library/windows/apps/hh700523) при реализации [ **IFrameworkView** ](https://msdn.microsoft.com/library/windows/apps/hh700469) интерфейс, определяющий поставщик представления. Эти методы запускаются singleton-объектом приложения, который создается при запуске игры, загружает ресурсы приложения, а также подключает соответствующие обработчики событий.
+Давайте быстро взглянуть на 5 методы **файле App.h** &mdash; [ **инициализировать**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize), [ **SetWindow** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow), [ **Нагрузки**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load), [ **запуска**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run), и [ **отменить инициализацию** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize) при реализации [ **IFrameworkView** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.run) интерфейс, определяющий поставщик представления. Эти методы запускаются singleton-объектом приложения, который создается при запуске игры, загружает ресурсы приложения, а также подключает соответствующие обработчики событий.
 
 ```cpp
     // Main entry point for our app. Connects the app with the Windows shell and handle application lifecycle events.
@@ -129,13 +129,13 @@ void App::Run()
 
 ![Снимок экрана редактора манифеста package.appx.](images/simple-dx-game-setup-app-manifest.png)
 
-Подробнее о файле **package.appxmanifest** и упаковке см. в разделе [Конструктор манифестов](https://msdn.microsoft.com/library/windows/apps/br230259.aspx). А теперь откройте вкладку **Возможности** и посмотрите на имеющиеся параметры.
+Подробнее о файле **package.appxmanifest** и упаковке см. в разделе [Конструктор манифестов](https://docs.microsoft.com/previous-versions/br230259(v=vs.140)). А теперь откройте вкладку **Возможности** и посмотрите на имеющиеся параметры.
 
 ![Снимок экрана с возможностями по умолчанию для приложения Direct3D.](images/simple-dx-game-setup-capabilities.png)
 
 Если вы не выберете необходимые возможности для игры, например доступ к **Интернету** для использования глобальной таблицы рекордов, вы не сможете получить доступ к соответствующим ресурсам и функциям. При создании новой игры не забудьте выбрать возможности, которые необходимы для ее работы.
 
-Теперь посмотрим на остальные файлы в составе шаблона **Приложение DirectX 11 (универсальные приложения для Windows)**.
+Теперь посмотрим на остальные файлы в составе шаблона **Приложение DirectX 11 (универсальные приложения для Windows)** .
 
 ## <a name="review-the-included-libraries-and-headers"></a>Изучение включенных библиотек и заголовков
 
@@ -155,7 +155,7 @@ void App::Run()
 
 ### <a name="next-steps"></a>Следующие шаги
 
-На этом этапе вы знаете, как создать проект игры UWP на базе DirectX с использованием шаблона **Приложение DirectX 11 (универсальное приложение Windows)**, а также ознакомились с некоторыми компонентами и файлами, содержащимися в этом проекте.
+На этом этапе вы знаете, как создать проект игры UWP на базе DirectX с использованием шаблона **Приложение DirectX 11 (универсальное приложение Windows)** , а также ознакомились с некоторыми компонентами и файлами, содержащимися в этом проекте.
 
 Следующий раздел — это [Определение структуры игры UWP](tutorial--building-the-games-uwp-app-framework.md). Мы рассмотрим, как в этой игре используются и расширяются многие из концепций и компонентов, предусмотренных в шаблоне.
 

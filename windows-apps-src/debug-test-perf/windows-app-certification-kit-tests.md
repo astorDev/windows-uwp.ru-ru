@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, сертификации приложений
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb7cb68b57e3d9b30a25237a63410d3bfa319b3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0a7cf1e89c91f9ad53777aa21af1d43e070c4fc8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645089"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362233"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Тесты комплекта сертификации приложений для Windows
 
@@ -34,7 +34,7 @@ ms.locfileid: "57645089"
 
 Мы проверяем устойчивость и стабильность приложения с помощью сертификационного тестирования.
 
-Для запуска приложений комплект сертификации приложений для Windows вызывает метод [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903). Чтобы метод **ActivateApplication** запустил приложение, должен быть включен контроль учетных записей, а разрешение экрана должно быть не менее 1024x768 или 768x1024. Если одно из этих условий не выполнено, приложение не пройдет этот тест.
+Для запуска приложений комплект сертификации приложений для Windows вызывает метод [**IApplicationActivationManager::ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication). Чтобы метод **ActivateApplication** запустил приложение, должен быть включен контроль учетных записей, а разрешение экрана должно быть не менее 1024x768 или 768x1024. Если одно из этих условий не выполнено, приложение не пройдет этот тест.
 
 ### <a name="corrective-actions"></a>Корректирующие действия
 
@@ -42,10 +42,10 @@ ms.locfileid: "57645089"
 
 Убедитесь, что вы запускаете тест на компьютере с достаточно большим разрешением экрана.
 
-Если ваше приложение не запускается, а тестовая платформа соответствует предварительным требованиям [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903), можно диагностировать проблему, просмотрев журнал событий активации. Чтобы найти эти записи в журнале событий, сделайте следующее.
+Если ваше приложение не запускается, а тестовая платформа соответствует предварительным требованиям [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication), можно диагностировать проблему, просмотрев журнал событий активации. Чтобы найти эти записи в журнале событий, сделайте следующее.
 
 1.  Откройте eventvwr.exe и перейдите к приложению и журнал служб\\Microsoft\\Windows\\папки Immersive-оболочки.
-2.  Фильтровать представление для отображения ИД событий: от 5900 до 6000.
+2.  Фильтровать представление для отображения ИД событий: 5900-6000.
 3.  Проверьте в журнале записи, которые могут объяснить невозможность запуска приложения.
 
 Устраните неполадки в проблемном файле, выявите и устраните проблему. Выполните повторную сборку приложения и повторите тестирование. Проверьте, нет ли в папке журнала в установочной папке комплекта сертификации приложений для Windows файла дампа памяти, который можно использовать при отладке приложения.
@@ -64,7 +64,7 @@ ms.locfileid: "57645089"
 
 ### <a name="corrective-action"></a>Корректирующее действие
 
-Приложения должны использовать вспомогательные функции Version API для проверки. Дополнительные сведения см. в разделе [Версия операционной системы](https://msdn.microsoft.com/library/windows/desktop/ms724832).
+Приложения должны использовать вспомогательные функции Version API для проверки. Дополнительные сведения см. в разделе [Версия операционной системы](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version).
 
 ## <a name="background-tasks-cancellation-handler-validation"></a>Проверка обработчика отмены фоновых задач
 
@@ -80,7 +80,7 @@ ms.locfileid: "57645089"
 
 ### <a name="corrective-action"></a>Корректирующее действие
 
-Добавьте обработчик отмены в приложение. Дополнительные сведения см. в разделе [Поддержка приложения с помощью фоновых задач](https://msdn.microsoft.com/library/windows/apps/Mt299103).
+Добавьте обработчик отмены в приложение. Дополнительные сведения см. в разделе [Поддержка приложения с помощью фоновых задач](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
 ## <a name="app-count"></a>Количество приложений
 
@@ -110,7 +110,7 @@ ms.locfileid: "57645089"
 
 ### <a name="test-details"></a>Сведения о тесте
 
-Проверяет манифест приложения, чтобы подтвердить правильность его содержимого в соответствии с разделом [Требования к пакетам приложений](https://msdn.microsoft.com/library/windows/apps/Mt148525).
+Проверяет манифест приложения, чтобы подтвердить правильность его содержимого в соответствии с разделом [Требования к пакетам приложений](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
 
 -   **Расширения файлов и протоколов**
 
@@ -124,11 +124,11 @@ ms.locfileid: "57645089"
 
 -   **Проверка межпроцессного взаимодействия (IPC)**
 
-    Этот тест принудительно установлено требование, приложений универсальной платформы Windows не взаимодействуют вне контейнера приложения для настольных систем компонентов. Межпроцессное взаимодействие предназначено только для параллельно загружаемых приложений. Приложения, в которых задан атрибут [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) с именем "DesktopApplicationPath", не пройдут этот тест.
+    Этот тест принудительно установлено требование, приложений универсальной платформы Windows не взаимодействуют вне контейнера приложения для настольных систем компонентов. Межпроцессное взаимодействие предназначено только для параллельно загружаемых приложений. Приложения, в которых задан атрибут [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) с именем "DesktopApplicationPath", не пройдут этот тест.
 
 ### <a name="corrective-action"></a>Корректирующее действие
 
-Проверьте манифест приложения на соответствие требованиям, описанным в разделе [Требования к пакетам приложений](https://msdn.microsoft.com/library/windows/apps/Mt148525).
+Проверьте манифест приложения на соответствие требованиям, описанным в разделе [Требования к пакетам приложений](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
 
 ## <a name="windows-security-features-test"></a>Проверка средств безопасности Windows
 
@@ -224,11 +224,11 @@ ms.locfileid: "57645089"
 
 **Комплект сертификации приложений для Windows сообщение об ошибке:** SharedSectionsCheck тест не пройден.
 
-Двоичные файлы с записываемыми разделами, помеченными как общие, представляют угрозу безопасности. Без необходимости не выполняйте сборку приложений с общими записываемыми разделами. Используйте [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) или [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761), чтобы создать правильно защищенный объект общей памяти.
+Двоичные файлы с записываемыми разделами, помеченными как общие, представляют угрозу безопасности. Без необходимости не выполняйте сборку приложений с общими записываемыми разделами. Используйте [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) или [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile), чтобы создать правильно защищенный объект общей памяти.
 
 **Что делать, если приложение не пройдет проверку**
 
-Удалите из приложения все общие разделы и создайте объекты общей памяти, вызвав [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) или [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) с соответствующими атрибутами безопасности, а затем снова выполните сборку приложения.
+Удалите из приложения все общие разделы и создайте объекты общей памяти, вызвав [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) или [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) с соответствующими атрибутами безопасности, а затем снова выполните сборку приложения.
 
 **"Примечания"**
 
@@ -315,9 +315,9 @@ The AppContainerCheck проверяет, установлен ли бит **app
 
 Убедитесь, что приложение скомпилировано в виде сборки выпуска, а не отладочной сборки.
 
-> **Примечание**  отладочную сборку приложения будет пройти этот тест, даже если приложение использует только [API-интерфейсы для приложений универсальной платформы Windows](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+> **Примечание**  отладочную сборку приложения будет пройти этот тест, даже если приложение использует только [API-интерфейсы для приложений универсальной платформы Windows](https://docs.microsoft.com/uwp/).
 
-Просмотрите сообщения об ошибках для определения API, не используется приложение использует [API для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+Просмотрите сообщения об ошибках для определения API, не используется приложение использует [API для приложений UWP](https://docs.microsoft.com/uwp/).
 
 > **Примечание**  приложений C++, которые встроены в конфигурации отладки будет пройти этот тест, даже если конфигурация использует только API-интерфейсы из пакета Windows SDK для приложений универсальной платформы Windows. См. в разделе, [альтернативы интерфейсов API Windows в приложениях UWP](https://go.microsoft.com/fwlink/p/?LinkID=244022) Дополнительные сведения.
 
@@ -412,7 +412,7 @@ The AppContainerCheck проверяет, установлен ли бит **app
 <tr><td>
 <p>Изображение должно определять как минимум один вариант без квалификатора TargetSize. Оно должно определять квалификатор Scale или оставлять квалификаторы Scale и TargetSize неопределенными, что по умолчанию означает значение Scale-100.</p>
 </td><td>
-<p>Дополнительные сведения см. в разделах <a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">Гибкое оформление 101 для приложений UWP</a> и <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Руководство по ресурсам приложений</a>.</p>
+<p>Дополнительные сведения см. в разделах <a href="https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Гибкое оформление 101 для приложений UWP</a> и <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Руководство по ресурсам приложений</a>.</p>
 </td></tr>
 <tr><td>
 <p>В пакете отсутствует файл resources.pri.</p>
@@ -434,7 +434,7 @@ The AppContainerCheck проверяет, установлен ли бит **app
 <tr><td>
 <p>Строка {string} не удовлетворяет ограничению по длине в {number} символов.</p>
 </td><td>
-<p>См. раздел <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">Требования к пакетам приложения</a>.</p>
+<p>См. раздел <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">Требования к пакетам приложения</a>.</p>
 <p>В фактическом сообщении строка {string} заменяется строкой с ошибкой, а {number} — это максимальная длина.</p>
 </td></tr>
 <tr><td>
@@ -447,12 +447,12 @@ The AppContainerCheck проверяет, установлен ли бит **app
 <tr><td>
 <p>Строка должна быть непустой (длина больше нуля)</p>
 </td><td>
-<p>Дополнительные сведения см. в разделе <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">Требования к пакетам приложения</a>.</p>
+<p>Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">Требования к пакетам приложения</a>.</p>
 </td></tr>
 <tr><td>
 <p>В файле resources.pri не указываются ресурсы по умолчанию.</p>
 </td><td>
-<p>Дополнительные сведения см. в разделе <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Рекомендации по ресурсам приложений</a>.</p>
+<p>Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Рекомендации по ресурсам приложений</a>.</p>
 <p>В конфигурации сборки по умолчанию при генерации наборов Visual Studio включает в пакет приложения только ресурсы изображений scale-200. Другие ресурсы помещаются в пакет ресурсов. Вам необходимо либо включить ресурсы изображений scale-200, либо настроить проект таким образом, чтобы он включал имеющиеся ресурсы.</p>
 </td></tr>
 <tr><td>
@@ -551,15 +551,15 @@ Microsoft Store требуется уровень 9 признаков всех 
 
 ### <a name="background"></a>Фон
 
-Если приложение не вызывает метод [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) на устройстве Direct3D, то приложение не будет освобождать память, выделенную для предыдущих трехмерных операций. Это повышает риск его завершения из-за нехватки системной памяти.
+Если приложение не вызывает метод [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) на устройстве Direct3D, то приложение не будет освобождать память, выделенную для предыдущих трехмерных операций. Это повышает риск его завершения из-за нехватки системной памяти.
 
 ### <a name="test-details"></a>Сведения о тесте
 
-Проверяет приложения на соответствие требованиям D3D и позволяет убедиться, что приложения вызывают новый API [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) после обратного вызова приостановки.
+Проверяет приложения на соответствие требованиям D3D и позволяет убедиться, что приложения вызывают новый API [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) после обратного вызова приостановки.
 
 ### <a name="corrective-action"></a>Корректирующее действие
 
-Приложение должно вызывать API [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) в интерфейсе [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) перед каждой приостановкой.
+Приложение должно вызывать API [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) в интерфейсе [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) перед каждой приостановкой.
 
 ## <a name="app-capabilities-test"></a>Проверка возможностей приложения
 
@@ -665,8 +665,8 @@ Microsoft Store требуется уровень 9 признаков всех 
 Измените код JavaScript фоновой задачи, задав правильный вызов оператора Close().
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Тесты приложения мост для классических приложений Windows](windows-desktop-bridge-app-tests.md)
-* [Политики для Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Политики для Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies)
  

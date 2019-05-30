@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 06af6241bdd75efdd3ff71e02f74252d60540669
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f94fcdf33267ab352f5cdc274e07373952b0939b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653659"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362158"
 ---
 # <a name="optimize-suspendresume"></a>Оптимизация времени приостановки и возобновления работы
 
@@ -54,17 +54,17 @@ ms.locfileid: "57653659"
 
 ### <a name="serialize-only-when-necessary"></a>Выполняйте сериализацию только в случае необходимости
 
-Во время приостановки многие приложения выполняют сериализацию всех своих данных. Однако если вам нужно сохранить только небольшой объем параметров приложения, лучше всего использовать для этого хранилище [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622), а не выполнять сериализацию данных. Используйте сериализацию для больших объемов данных и данных, не являющихся параметрами приложения.
+Во время приостановки многие приложения выполняют сериализацию всех своих данных. Однако если вам нужно сохранить только небольшой объем параметров приложения, лучше всего использовать для этого хранилище [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings), а не выполнять сериализацию данных. Используйте сериализацию для больших объемов данных и данных, не являющихся параметрами приложения.
 
 Если вы выполняете сериализацию данных, следует избегать повторной сериализации, если они не изменились. В этом случае приложение тратит дополнительное время на сериализацию и сохранение данных, плюс дополнительное время при возобновлении работы — на их чтение и десериализацию. Поэтому рекомендуется, чтобы приложение проверяло, изменились ли данные, и проводило сериализацию и десериализацию только измененных данных. Хорошим способом организовать этот процесс является периодическая фоновая сериализация данных после их изменения. При использовании этой методики все, что требует сериализации во время приостановки, уже сохранено, поэтому приостановка приложения выполняется быстро.
 
 ### <a name="serializing-data-in-c-and-visual-basic"></a>Сериализация данных в C# и Visual Basic
 
-Для приложений .NET существуют следующие классы, реализующие технологии сериализации: [**System.Xml.Serialization.XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx), [**System.Runtime.Serialization.DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) и [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx).
+Для приложений .NET существуют следующие классы, реализующие технологии сериализации: [**System.Xml.Serialization.XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer?redirectedfrom=MSDN), [**System.Runtime.Serialization.DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer?redirectedfrom=MSDN) и [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer?redirectedfrom=MSDN).
 
-С точки зрения производительности рекомендуется использование класса [**XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx). **XmlSerializer** требует минимальных времени сериализации и десериализации и используемого объема памяти. **XmlSerializer** мало зависит от .NET Framework. Это означает, что для использования **XmlSerializer** потребуется загружать меньшее (по сравнению с другими технологиями сериализации) количество модулей в ваше приложение.
+С точки зрения производительности рекомендуется использование класса [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer?redirectedfrom=MSDN). **XmlSerializer** требует минимальных времени сериализации и десериализации и используемого объема памяти. **XmlSerializer** мало зависит от .NET Framework. Это означает, что для использования **XmlSerializer** потребуется загружать меньшее (по сравнению с другими технологиями сериализации) количество модулей в ваше приложение.
 
-[**DataContractSerializer** ](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) упрощает для сериализации пользовательских классов, несмотря на то, что он имеет больше влияние на производительность, чем **XmlSerializer**. Перейти на использование последнего класса стоит, если вам нужна оптимальная производительность. Вообще не стоит использовать больше одного класса сериализации и лучше всего использовать класс **XmlSerializer**, если вам не нужны возможности других классов сериализации.
+[**DataContractSerializer** ](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer?redirectedfrom=MSDN) упрощает для сериализации пользовательских классов, несмотря на то, что он имеет больше влияние на производительность, чем **XmlSerializer**. Перейти на использование последнего класса стоит, если вам нужна оптимальная производительность. Вообще не стоит использовать больше одного класса сериализации и лучше всего использовать класс **XmlSerializer**, если вам не нужны возможности других классов сериализации.
 
 ### <a name="reduce-memory-footprint"></a>Уменьшение используемого объема памяти
 
@@ -81,11 +81,11 @@ ms.locfileid: "57653659"
 
 Работа приостановленного приложения может быть продолжена, если пользователь выводит его окно на передний план или система выходит из состояния пониженного энергопотребления. Когда работа приложения возобновляется из состояния "приостановлено", возобновление происходит с момента приостановки. Даже если выполнение приложения было приостановлено на продолжительный период, данные приложения не теряются, поскольку они были сохранены в памяти.
 
-Большинству приложений не требуется обрабатывать событие [**Resuming**](https://msdn.microsoft.com/library/windows/apps/BR205859). После возобновления работы переменные и объекты приложения будут находиться в том же самом состоянии, в котором они были во время приостановки приложения. Обрабатывайте событие **Resuming**, только если необходимо обновить данные или объекты, которые могли измениться за время приостановки и возобновления работы приложения: содержимое (например, обновление данных канала), сетевые подключения, которые могли потерять актуальность, или если необходимо произвести переподключение к устройству (например, к веб-камере).
+Большинству приложений не требуется обрабатывать событие [**Resuming**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming). После возобновления работы переменные и объекты приложения будут находиться в том же самом состоянии, в котором они были во время приостановки приложения. Обрабатывайте событие **Resuming**, только если необходимо обновить данные или объекты, которые могли измениться за время приостановки и возобновления работы приложения: содержимое (например, обновление данных канала), сетевые подключения, которые могли потерять актуальность, или если необходимо произвести переподключение к устройству (например, к веб-камере).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
-* [Рекомендации для приложения, приостановка и возобновление](https://msdn.microsoft.com/library/windows/apps/Hh465088)
+* [Рекомендации для приложения, приостановка и возобновление](https://docs.microsoft.com/windows/uwp/launch-resume/index)
  
 
  

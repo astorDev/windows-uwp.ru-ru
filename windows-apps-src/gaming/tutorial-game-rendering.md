@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, отрисовка
 ms.localizationpriority: medium
-ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2b44558232247de969f22d5767a16d921cfbf252
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610509"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367573"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>Платформу для отображения II: Отрисовки игр
 
@@ -37,7 +37,7 @@ ms.locfileid: "57610509"
 Обработчик отвечает за создание и поддержание всех объектов D3D11 и D2D, используемых для создания визуальных элементов игры. Класс __GameRenderer__ — обработчик для этого примера игры и он спроектирован с учетом потребностей отрисовки этой игры.
 
 Ниже перечислены некоторые основные понятия, которые можно использовать, чтобы спроектировать обработчик для вашей игры:
-* Так как API Direct3D 11 определены как API-интерфейсы [COM](https://msdn.microsoft.com/library/windows/desktop/ms694363.aspx), необходимо предоставить ссылки [ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) на объекты, определяемые этими API. Эти объекты автоматически освобождаются, когда последняя ссылка выходит за пределы области при завершении работы приложения. Дополнительные сведения см. в статье [ComPtr](https://github.com/Microsoft/DirectXTK/wiki/ComPtr). Пример этих объектов: буферы констант, объекты шейдера — [вершинный шейдер](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders), [пиксельный шейдер](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders) и объекты ресурсов шейдеров.
+* Так как API Direct3D 11 определены как API-интерфейсы [COM](https://docs.microsoft.com/windows/desktop/com/the-component-object-model), необходимо предоставить ссылки [ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) на объекты, определяемые этими API. Эти объекты автоматически освобождаются, когда последняя ссылка выходит за пределы области при завершении работы приложения. Дополнительные сведения см. в статье [ComPtr](https://github.com/Microsoft/DirectXTK/wiki/ComPtr). Пример этих объектов: буферы констант, объекты шейдера — [вершинный шейдер](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders), [пиксельный шейдер](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders) и объекты ресурсов шейдеров.
 * Буферы констант определяются в этом классе для хранения различных данных, необходимых для отрисовки.
     * Используйте несколько буферов констант с различной частотой обновления для уменьшения количества данных, которые необходимо посылать GPU для каждого кадра. В этом примере константы разделяются по разным буферам на основании частоты их обновления. Это лучшая методика программирования в Direct3D. 
     * В этом примере игры определены 4 буфера констант.
@@ -46,7 +46,7 @@ ms.locfileid: "57610509"
         3. __m\_constantBufferChangesEveryFrame__ содержит матрица просмотра. Эта матрица зависит от положения камеры и направления взгляда (перпендикулярно проекции) и изменяется только один раз за каждый кадр в методе __Render__. Это было описано ранее в __платформу для отображения инструкции: Общие сведения о подготовке к просмотру__в разделе [ __GameRenderer::Render__ метод](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
         4. __m\_constantBufferChangesEveryPrim__ содержит свойства матрицы и материал модели каждый примитив. Матрица модели преобразует вершины из локальных координат в мировые. Эти константы являются специфическими для каждого примитива и обновляются при каждом вызове метода рисования. Это было описано ранее в __платформу для отображения инструкции: Общие сведения о подготовке к просмотру__в разделе [примитивов отрисовки](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering).
 * В этом классе также определяются объекты ресурсов шейдеров, которые содержат текстуры для примитивов.
-    * Некоторые текстуры являются предопределенными ([DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991.aspx) — это формат файла, который может использоваться для хранения сжатых и несжатых текстур. Текстуры DDS используются для стен и пола мира, а также сферы боеприпасов).
+    * Некоторые текстуры являются предопределенными ([DDS](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide) — это формат файла, который может использоваться для хранения сжатых и несжатых текстур. Текстуры DDS используются для стен и пола мира, а также сферы боеприпасов).
     * В этот пример, являются объекты ресурсов шейдера: __m\_sphereTexture__, __m\_cylinderTexture__, __m\_ceilingTexture__, __m\_floorTexture__, __m\_wallsTexture__.
 * Объекты шейдера определены в этом классе для расчета наших примитивов и текстур. 
     * В этот пример, шейдер объекты являются __m\_vertexShader__, __m\_vertexShaderFlat__, и __m\_pixelShader__, __m\_pixelShaderFlat__.
@@ -155,7 +155,7 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 
 ## <a name="create-and-load-directx-graphic-resources"></a>Создание и загрузка графических ресурсов DirectX
 
-В нашем примере игры (и в шаблоне Visual Studio для __приложения DirectX 11 (Universal Windows)__) создание и загрузка ресурсов игры реализуются с помощью этих двух методов, которые вызываются из конструктора __GameRenderer__:
+В нашем примере игры (и в шаблоне Visual Studio для __приложения DirectX 11 (Universal Windows)__ ) создание и загрузка ресурсов игры реализуются с помощью этих двух методов, которые вызываются из конструктора __GameRenderer__:
 
 * [__CreateDeviceDependentResources__](#createdevicedependentresources-method)
 * [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method)
@@ -646,6 +646,6 @@ void GameRenderer::CreateWindowSizeDependentResources()
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Это базовый процесс реализации графической платформы отрисовки игры. Чем больше ваша игра, тем больше абстракций потребуется применить для обработки иерархии типов объектов и поведения анимации. Потребуется реализовать более сложные методы для загрузки и управления активами, такими как сетки и текстуры. Теперь посмотрим, как [добавить пользовательский интерфейс](tutorial--adding-a-user-interface.md).

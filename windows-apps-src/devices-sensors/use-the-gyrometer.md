@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 940f82e5e4cff30a2756c32c80d2f3ab02ae440a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e7ee2cac1ae53ca59b8ec60d917e39a737a049ad
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660509"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369628"
 ---
 # <a name="use-the-gyrometer"></a>Использование гирометра
 
 
 **Важные API**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**гирометр**](https://msdn.microsoft.com/library/windows/apps/BR225718)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**гирометр**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
 **Пример**
 
@@ -29,7 +29,7 @@ ms.locfileid: "57660509"
 
 Гирометры используются как игровые контроллеры в дополнение к акселерометрам. Акселерометр измеряет линейное перемещение, тогда как гирометр измеряет угловую скорость или вращательное движение.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вы должны быть знакомы с расширяемого приложения разметки языка (XAML), Microsoft Visual C#и события.
 
@@ -41,7 +41,7 @@ ms.locfileid: "57660509"
 
 ###  <a name="instructions"></a>Инструкция
 
--   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
+-   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#** .
 
 -   Откройте файл проекта MainPage.xaml.cs и замените существующий код следующим.
 
@@ -178,6 +178,6 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
         <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/>
 ```
 
- ## <a name="related-topics"></a>Статьи по теме
+ ## <a name="related-topics"></a>См. также
 
 * [Пример Гирометр](https://go.microsoft.com/fwlink/p/?linkid=241379)

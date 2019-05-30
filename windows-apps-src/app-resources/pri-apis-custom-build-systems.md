@@ -6,15 +6,15 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 617812415d3dcd00ec24d5f55971ae311265b61d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b300630ff4a9b6735cb7891444da4333532735c1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598519"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359380"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>API-интерфейсы индексирования ресурсов пакета (PRI) и пользовательские системы сборки
-С помощью [API-интерфейсов индексирования ресурсов пакета (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690) можно создать настраиваемую систему сборки для ресурсов приложения UWP. Система сборка сможет создавать файлы индекса ресурсов пакета (PRI), управлять версиями и создавать дампы файлов (в формате XML) пакетов (PRI) любого уровня сложности, требуемого приложению UWP. Если вы используете систему сборки, которая применяет средство командной строки MakePri.exe (см. раздел [Компиляция ресурсов вручную с помощью MakePri.exe](makepri-exe-command-options.md)), то для повышения производительности и улучшения управления рекомендуется вызывать API-интерфейсы PRI вместо MakePri.exe.
+С помощью [API-интерфейсов индексирования ресурсов пакета (PRI)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference) можно создать настраиваемую систему сборки для ресурсов приложения UWP. Система сборка сможет создавать файлы индекса ресурсов пакета (PRI), управлять версиями и создавать дампы файлов (в формате XML) пакетов (PRI) любого уровня сложности, требуемого приложению UWP. Если вы используете систему сборки, которая применяет средство командной строки MakePri.exe (см. раздел [Компиляция ресурсов вручную с помощью MakePri.exe](makepri-exe-command-options.md)), то для повышения производительности и улучшения управления рекомендуется вызывать API-интерфейсы PRI вместо MakePri.exe.
 
 API-интерфейсы PRI появились в Windows SDK для Windows 10 версии 1803. API-интерфейсы принимает вид интерфейсов Win32 для Windows, то есть вы можете вызывать их несколькими способами. Их можно вызывать напрямую из приложения Win32 или их помощью [метода вызова платформы](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live) из приложения .NET или даже приложения UWP.
 
@@ -31,9 +31,9 @@ API-интерфейсы PRI появились в Windows SDK для Windows 10
 |[Сценарий 1. Создания файла PRI, из строковых ресурсов и файлов ресурсов](pri-apis-scenario-1.md)|В этом сценарии мы создаем новое приложение для нашей системы сборки. Мы создадим индексатор ресурсов и добавим в него строки и другие типы ресурсов. Затем мы создадим PRI-файл и его дамп.|
 
 ## <a name="important-apis"></a>Важные API
-* [Ресурс Package, индексирование ссылки (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690)
+* [Ресурс Package, индексирование ссылки (PRI)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [Компиляция ресурсов вручную с помощью MakePri.exe](makepri-exe-command-options.md)
 * [Использование неуправляемых функций DLL](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live)
 * [Система управления ресурсами](resource-management-system.md)

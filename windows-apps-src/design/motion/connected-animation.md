@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e7c026d336507b1a82badba770ac3bb50e19f8
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: d1d459ab10614ddf9186275b1a6b66e8fa5703ec
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984117"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364962"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>Подключенная анимация для приложений UWP
 
@@ -63,7 +63,7 @@ ms.locfileid: "65984117"
 
 ## <a name="when-to-use-connected-animation"></a>Сценарии использования подключенной анимации
 
-Подключенные анимации обычно используются при переходе на другую страницу, хотя их можно применять при любой смене контента в пользовательском интерфейсе, если нужно сохранить контекст пользователя. Рекомендуем использовать подключенную анимацию вместо [эффекта винта в переходах навигации](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx), если исходное и целевое представления содержат общее изображение или другой элемент пользовательского интерфейса.
+Подключенные анимации обычно используются при переходе на другую страницу, хотя их можно применять при любой смене контента в пользовательском интерфейсе, если нужно сохранить контекст пользователя. Рекомендуем использовать подключенную анимацию вместо [эффекта винта в переходах навигации](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition), если исходное и целевое представления содержат общее изображение или другой элемент пользовательского интерфейса.
 
 ## <a name="configure-connected-animation"></a>Настройка подключенных анимации
 

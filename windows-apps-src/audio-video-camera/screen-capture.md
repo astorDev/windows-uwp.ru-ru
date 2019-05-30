@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, снимок экрана
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bbe52de6e148ff86f492ee2c490e5dda388ffa1
-ms.sourcegitcommit: 703f23f0cd2037997b6540335d32d344d5604974
+ms.openlocfilehash: 5d61e5bb8e5f00a2ac5743ed1a91c470f455c9c6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58867890"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361453"
 ---
 # <a name="screen-capture"></a>Снимок экрана
 
@@ -216,15 +216,15 @@ End Sub
 
 Кроме того, вы можете вручную извлекать кадры с помощью метода **Direct3D11CaptureFramePool.TryGetNextFrame**, пока не получите все нужные кадры.
 
-Объект **Direct3D11CaptureFrame** содержит свойства **размер содержимого**, **Surface** и **SystemRelativeTime**. **SystemRelativeTime** — это  время QPC ([QueryPerformanceCounter](https://msdn.microsoft.com/library/windows/desktop/ms644904)), которое можно использовать для синхронизации с другими элементами мультимедиа.
+Объект **Direct3D11CaptureFrame** содержит свойства **размер содержимого**, **Surface** и **SystemRelativeTime**. **SystemRelativeTime** — это  время QPC ([QueryPerformanceCounter](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)), которое можно использовать для синхронизации с другими элементами мультимедиа.
 
 ## <a name="processing-capture-frames"></a>Обработка кадров захвата
 
-Каждый кадр **Direct3D11CaptureFramePool** извлекается при вызове **TryGetNextFrame** и возвращается в соответствии с временем жизни объекта **Direct3D11CaptureFrame**. Для собственных приложений освобождения объекта **Direct3D11CaptureFrame** достаточно для возврата кадра в пул. Для управляемых приложений рекомендуется использовать метод **Direct3D11CaptureFrame.Dispose** (**Close** на C++). **Direct3D11CaptureFrame** реализует интерфейс [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable), который проецируется как [IDisposable](https://msdn.microsoft.com/library/system.idisposable.aspx) для вызывающих объектов C#.
+Каждый кадр **Direct3D11CaptureFramePool** извлекается при вызове **TryGetNextFrame** и возвращается в соответствии с временем жизни объекта **Direct3D11CaptureFrame**. Для собственных приложений освобождения объекта **Direct3D11CaptureFrame** достаточно для возврата кадра в пул. Для управляемых приложений рекомендуется использовать метод **Direct3D11CaptureFrame.Dispose** (**Close** на C++). **Direct3D11CaptureFrame** реализует интерфейс [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable), который проецируется как [IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable?redirectedfrom=MSDN) для вызывающих объектов C#.
 
 Приложения не должны сохранять ссылки на объекты **Direct3D11CaptureFrame** и не должны сохранять ссылки на базовую поверхность Direct3D после возврата кадра.
 
-При обработке кадра приложениям рекомендуется получать блокировку [ID3D11Multithread](https://msdn.microsoft.com/library/windows/desktop/mt644886) на устройстве, которое связано с объектом **Direct3D11CaptureFramePool**.
+При обработке кадра приложениям рекомендуется получать блокировку [ID3D11Multithread](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) на устройстве, которое связано с объектом **Direct3D11CaptureFramePool**.
 
 Размер базовой поверхности Direct3D всегда равен размеру, указанному при создании (или повторном создании) **Direct3D11CaptureFramePool**. Если содержимое больше кадра, оно обрезается по размеру кадра. Если содержимое меньше кадра, остальная часть кадра содержит неопределенные данные. Приложениям рекомендуется копировать прямоугольник с помощью свойства **ContentSize** для этого кадра **Direct3D11CaptureFrame**, чтобы не отображать неопределенное содержимое.
 

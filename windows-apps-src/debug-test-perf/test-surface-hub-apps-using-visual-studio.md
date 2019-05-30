@@ -6,12 +6,12 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: db481fac1bdcb9e79762f52aee48574e987c4cbb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8a846aab77fad6f087057fe930d11ac781ed7171
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601019"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362200"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Проверка приложений Surface Hub с использованием Visual Studio
 Имитатор Visual Studio предоставляет среду для проектирования, разработки, отладки и тестирования приложений универсальной платформы Windows (UWP), включая приложения, созданные для Microsoft Surface Hub. Симулятор не использует тот же пользовательский интерфейс в качестве Surface Hub, но он удобен для тестирования выглядит и ведет себя с помощью Surface Hub размер и разрешение экрана приложения.
@@ -90,7 +90,7 @@ ms.locfileid: "57601019"
 3. Выберите пункт **Режим разработчика** и примите подсказку.
 
 ### <a name="deploy-your-app-from-visual-studio"></a>Развертывание приложения из Visual Studio
-Как правило, Дополнительные сведения о процессе развертывания см. в разделе [развертывание и отладка приложений UWP](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
+Как правило, Дополнительные сведения о процессе развертывания см. в разделе [развертывание и отладка приложений UWP](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
 
    > [!NOTE]
    > Этой функции требуется Visual Studio 2015 с обновлением 1 или более поздней версии, но мы рекомендуем использовать последнюю самую свежую версию Visual Studio. В актуальном состоянии экземпляра Visual Studio будет gibe вы все последние разработки и обновления для системы безопасности.

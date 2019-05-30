@@ -1,19 +1,19 @@
 ---
 title: Использование базы данных SQL Server в приложении UWP
 description: Использование базы данных SQL Server в приложении UWP.
-ms.date: 11/13/2017
+ms.date: 3/28/2019
 ms.topic: article
 keywords: windows 10, uwp, SQL Server, база данных
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe215a593293ff91afb7f71a830512ac365093f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f8986f14872d4e5de2c45bba264de6619ef07141
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621159"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360152"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Использование базы данных SQL Server в приложении UWP
-Ваше приложение может подключаться напрямую к базе данных SQL Server и затем хранить и извлекать данные с помощью классов в пространстве имен [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx).
+Ваше приложение может подключаться напрямую к базе данных SQL Server и затем хранить и извлекать данные с помощью классов в пространстве имен [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN).
 
 В этом руководстве мы расскажем вам об одном способе выполнения этой задачи. Если вы установите пример базы данных [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) поверх экземпляра SQL Server, а затем используете эти фрагменты кода, у вас получится базовый пользовательский интерфейс, демонстрирующий продукты из примера базы данных Northwind.
 
@@ -50,7 +50,7 @@ ms.locfileid: "57621159"
 : пять: Заполнение пользовательского интерфейса с продуктами.
 
 >[!NOTE]
-> В этом разделе показан один из способов организации кода доступа к данным. Его задачей является показать пример того, как можно использовать [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) для хранения данных в базе данных SQL Server и их извлечения. Код можно организовывать любым образом, который лучше всего подходит для проекта вашего приложения.
+> В этом разделе показан один из способов организации кода доступа к данным. Его задачей является показать пример того, как можно использовать [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) для хранения данных в базе данных SQL Server и их извлечения. Код можно организовывать любым образом, который лучше всего подходит для проекта вашего приложения.
 
 ### <a name="add-a-connection-string"></a>Добавление строки подключения
 
@@ -77,7 +77,7 @@ sealed partial class App : Application
 
 ### <a name="create-a-class-to-hold-product-data"></a>Создание класса для хранения данных продукта
 
-Мы создадим класс, реализующий событие [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged.aspx), чтобы можно было привязать атрибуты в пользовательском интерфейсе XAML к свойствам этого класса.
+Мы создадим класс, реализующий событие [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN), чтобы можно было привязать атрибуты в пользовательском интерфейсе XAML к свойствам этого класса.
 
 ```csharp
 public class Product : INotifyPropertyChanged
@@ -106,7 +106,7 @@ public class Product : INotifyPropertyChanged
 
 ### <a name="retrieve-products-from-the-sql-server-database"></a>Получение продуктов из базы данных SQL Server
 
-Создайте метод, который будет получать продукты из примера базы данных Northwind и возвращать их в качестве коллекции [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) экземпляров ``Product``.
+Создайте метод, который будет получать продукты из примера базы данных Northwind и возвращать их в качестве коллекции [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) экземпляров ``Product``.
 
 ```csharp
 public ObservableCollection<Product> GetProducts(string connectionString)
@@ -208,7 +208,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### <a name="show-products-in-the-listview"></a>Отображение продуктов в ListView
 
-Откройте файл **MainPage.xaml.cs** и добавьте код в конструктор класса ``MainPage``, который задает свойство **ItemSource** в [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) для [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) экземпляров ``Product``.
+Откройте файл **MainPage.xaml.cs** и добавьте код в конструктор класса ``MainPage``, который задает свойство **ItemSource** в [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) для [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) экземпляров ``Product``.
 
 ```csharp
 public MainPage()
@@ -222,7 +222,7 @@ public MainPage()
 
 ![Продукты Northwind](images/products-northwind.png)
 
-Изучите пространство имен [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx), чтобы узнать, что еще можно сделать с данными в базе данных SQL Server.
+Изучите пространство имен [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN), чтобы узнать, что еще можно сделать с данными в базе данных SQL Server.
 
 ## <a name="trouble-connecting-to-your-database"></a>Проблемы с подключением к базе данных?
 
@@ -234,7 +234,7 @@ public MainPage()
 
 ![Служба обозревателя SQL Server](images/sql-browser-service.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 **Использовать базу данных недоступно: для хранения данных на устройстве пользователя**
 

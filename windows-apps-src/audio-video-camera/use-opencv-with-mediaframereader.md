@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: d72a8d3fcaf337973f585ab19370140cd80f3826
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5aee0ed5969d87cd5a9d8ef7a621b383d4078d38
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640179"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360584"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Использование библиотеки компьютерного зрения с открытым исходным кодом (OpenCV) с MediaFrameReader
 
-В этой статье рассказывается, как использовать библиотеку компьютерного зрения с открытым исходным кодом (OpenCV), библиотеку собственного кода, которая предоставляет широкий набор алгоритмов обработки изображений с классом [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader), который может считывать мультимедиа-кадры из нескольких источников одновременно. В примере кода в этой статье рассматривается создание простого приложения, которое получает кадры с цветной камеры, размывает каждый кадр, используя библиотеку OpenCV, и затем отображает обработанное изображение в элементе управления XAML **Image**. 
+В этой статье рассказывается, как использовать библиотеку компьютерного зрения с открытым исходным кодом (OpenCV), библиотеку собственного кода, которая предоставляет широкий набор алгоритмов обработки изображений с классом [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader), который может считывать мультимедиа-кадры из нескольких источников одновременно. В примере кода в этой статье рассматривается создание простого приложения, которое получает кадры с цветной камеры, размывает каждый кадр, используя библиотеку OpenCV, и затем отображает обработанное изображение в элементе управления XAML **Image**. 
 
 >[!NOTE]
 >OpenCV.Win.Core и OpenCV.Win. ImgProc не обновляются регулярно, но по-прежнему рекомендуются для создания OpenCVHelper, как описано на этой странице.
@@ -35,7 +35,7 @@ ms.locfileid: "57640179"
 Выполните действия, описанные в разделе [Обработка программных точечных рисунков с помощью OpenCV](process-software-bitmaps-with-opencv.md), для создания вспомогательного компонента среды выполнения Windows OpenCV и добавьте ссылку на проект компонента в ваше решение для приложения UWP.
 
 ## <a name="find-available-frame-source-groups"></a>Поиск доступных групп источников кадров
-Во-первых, вам потребуется найти группу источников мультимедиа-кадров, из которой будут поступать мультимедиа-кадры. Получите список доступных групп источников на текущем устройстве, вызвав метод **[MediaFrameSourceGroup.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.FindAllAsync)**. Затем выберите группы источников, которые предоставляют типы датчиков, необходимые для сценария работы вашего приложения. В этом примере нам нужна просто группа источников, предоставляющая кадры с RGB-камеры.
+Во-первых, вам потребуется найти группу источников мультимедиа-кадров, из которой будут поступать мультимедиа-кадры. Получите список доступных групп источников на текущем устройстве, вызвав метод **[MediaFrameSourceGroup.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.FindAllAsync)** . Затем выберите группы источников, которые предоставляют типы датчиков, необходимые для сценария работы вашего приложения. В этом примере нам нужна просто группа источников, предоставляющая кадры с RGB-камеры.
 
 [!code-cs[OpenCVFrameSourceGroups](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameSourceGroups)]
 
@@ -45,24 +45,24 @@ ms.locfileid: "57640179"
 > [!NOTE] 
 > Прием, используемый компонентом OpenCVHelper, подробно описан в разделе [Обработка программных точечных рисунков с помощью OpenCV](process-software-bitmaps-with-opencv.md), и он требует, чтобы данные изображения находились в памяти ЦП, а не в памяти графического процессора. Поэтому следует задать **MemoryPreference.CPU** в поле **[MemoryPreference](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.MemoryPreference)** объекта **MediaCaptureInitializationSettings**.
 
-После инициализации объекта **MediaCapture** получите ссылку на источник RGB-кадров, обратившись к свойству **[MediaCapture.FrameSources](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.FrameSources)**.
+После инициализации объекта **MediaCapture** получите ссылку на источник RGB-кадров, обратившись к свойству **[MediaCapture.FrameSources](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.FrameSources)** .
 
 [!code-cs[OpenCVInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVInitMediaCapture)]
 
 ## <a name="initialize-the-mediaframereader"></a>Инициализация MediaFrameReader
-Затем создайте [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) для источника RGB-кадров, полученного на предыдущем шаге. Для сохранения хорошей частоты кадров, возможно, потребуется обрабатывать кадры с более низким разрешением по сравнению с разрешением камеры. В этом примере приведен необязательный аргумент **[BitmapSize](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapsize)** метода **[MediaCapture.CreateFrameReaderAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync)** для создания запроса на изменение размера кадров, предоставляемых средством чтения кадров, до значения 640 x 480 пикселей.
+Затем создайте [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) для источника RGB-кадров, полученного на предыдущем шаге. Для сохранения хорошей частоты кадров, возможно, потребуется обрабатывать кадры с более низким разрешением по сравнению с разрешением камеры. В этом примере приведен необязательный аргумент **[BitmapSize](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapsize)** метода **[MediaCapture.CreateFrameReaderAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync)** для создания запроса на изменение размера кадров, предоставляемых средством чтения кадров, до значения 640 x 480 пикселей.
 
-После создания средства чтения кадров зарегистрируйте обработчик для события **[FrameArrived](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.FrameArrived)**. Затем создайте новый объект **[SoftwareBitmapSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource)**, который вспомогательный класс **FrameRenderer** будет использовать для предоставления обработанных изображений. Затем вызовите конструктор для **FrameRenderer**. Инициализируйте экземпляр класса **OpenCVHelper**, определенный в компоненте среды выполнения Windows OpenCVBridge. Этот вспомогательный класс используется в обработчике **FrameArrived** для обработки каждого кадра. Наконец, запустите средство чтения кадров вызовом метода **[StartAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.StartAsync)**.
+После создания средства чтения кадров зарегистрируйте обработчик для события **[FrameArrived](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.FrameArrived)** . Затем создайте новый объект **[SoftwareBitmapSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource)** , который вспомогательный класс **FrameRenderer** будет использовать для предоставления обработанных изображений. Затем вызовите конструктор для **FrameRenderer**. Инициализируйте экземпляр класса **OpenCVHelper**, определенный в компоненте среды выполнения Windows OpenCVBridge. Этот вспомогательный класс используется в обработчике **FrameArrived** для обработки каждого кадра. Наконец, запустите средство чтения кадров вызовом метода **[StartAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.StartAsync)** .
 
 [!code-cs[OpenCVFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameReader)]
 
 
 ## <a name="handle-the-framearrived-event"></a>Обработка события FrameArrived
-Событие **FrameArrived** создается при поступлении каждого нового кадра из средства чтения кадров. Вызовите метод **[TryAcquireLatestFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.TryAcquireLatestFrame)** для получения кадра, если он существует. Получите **SoftwareBitmap** из **[MediaFrameReference](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference)**. Обратите внимание, что класс **CVHelper**, используемый в этом примере, требует, чтобы изображения использовали формат пикселей BRGA8 с предварительным умножением альфа-канала. Если кадр, переданный данному событию, имеет другой формат, преобразуйте **SoftwareBitmap** в правильный формат. Затем создайте **SoftwareBitmap** для использования в качестве целевого объекта операции размытия. Свойства источника изображения используются в качестве аргументов для конструктора в целях создания точечного рисунка соответствующего формата. Вызовите метод **Blur** вспомогательного класса для обработки кадра. Наконец, передайте полученное из операции размытия изображение в **PresentSoftwareBitmap**, метод вспомогательного класса **FrameRenderer**, который отображает изображение в элементе управления XAML **Image**, с которым он инициализирован.
+Событие **FrameArrived** создается при поступлении каждого нового кадра из средства чтения кадров. Вызовите метод **[TryAcquireLatestFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.TryAcquireLatestFrame)** для получения кадра, если он существует. Получите **SoftwareBitmap** из **[MediaFrameReference](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference)** . Обратите внимание, что класс **CVHelper**, используемый в этом примере, требует, чтобы изображения использовали формат пикселей BRGA8 с предварительным умножением альфа-канала. Если кадр, переданный данному событию, имеет другой формат, преобразуйте **SoftwareBitmap** в правильный формат. Затем создайте **SoftwareBitmap** для использования в качестве целевого объекта операции размытия. Свойства источника изображения используются в качестве аргументов для конструктора в целях создания точечного рисунка соответствующего формата. Вызовите метод **Blur** вспомогательного класса для обработки кадра. Наконец, передайте полученное из операции размытия изображение в **PresentSoftwareBitmap**, метод вспомогательного класса **FrameRenderer**, который отображает изображение в элементе управления XAML **Image**, с которым он инициализирован.
 
 [!code-cs[OpenCVFrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameArrived)]
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Камера](camera.md)
 * [Основные фото, видео и аудио захвата с MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

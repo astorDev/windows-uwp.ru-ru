@@ -6,12 +6,12 @@ ms.date: 04/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, метаданные, подсказки, голосовые функции, глава
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b3753e92524e300252930f48433f91e175353c9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 92f8826729bb2374b87267d27b961d74eb72e928
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635859"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360553"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>Поддерживаемые системой синхронизированные подсказки метаданных
 В этой статье описано, как использовать несколько форматов синхронизированных метаданных, которые можно внедрять в файлы или потоки мультимедиа. Приложения UWP можно регистрировать для событий, вызываемых конвейером мультимедиа во время воспроизведения при обнаружении этих подсказок метаданных. С помощью класса [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) приложения могут реализовывать собственные пользовательские подсказки метаданных, но в этой статье рассматриваются несколько стандартов метаданных, которые автоматически определяются конвейером мультимедиа, в том числе:
@@ -24,7 +24,7 @@ ms.locfileid: "57635859"
 * Поля emsg фрагментированного файла MP4
 
 
-В этой статье используются понятия, описанные в статье [Элементы, списки воспроизведения и звуковые дорожки мультимедиа](media-playback-with-mediasource.md). Они включают основы работы с классами [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource), [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem) и [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580), а также общие рекомендации по использованию синхронизированных метаданных в приложении.
+В этой статье используются понятия, описанные в статье [Элементы, списки воспроизведения и звуковые дорожки мультимедиа](media-playback-with-mediasource.md). Они включают основы работы с классами [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource), [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem) и [**TimedMetadataTrack**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.TimedMetadataTrack), а также общие рекомендации по использованию синхронизированных метаданных в приложении.
 
 Базовые шаги по реализации одинаковы для всех разнообразных типов синхронизированных метаданных, описанных в этой статье:
 
@@ -172,14 +172,14 @@ ms.locfileid: "57635859"
 [!code-cs[RegisterMetadataHandlerForEmsgCues](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetRegisterMetadataHandlerForEmsgCues)]
 
 
-В обработчике для события **CueEntered** приведите подсказку данных, содержащуюся в свойстве **Cue**[**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs), к [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue).  Убедитесь, что значение объекта **DataCue** — не NULL. Свойства поля emsg предоставляются конвейером мультимедиа как настраиваемые свойства в коллекции [**Properties**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Properties) объекта DataCue. В этом примере выполняется попытка извлечь несколько различных значений свойств с помощью метода **[TryGetValue](https://docs.microsoft.com/uwp/api/windows.foundation.collections.propertyset.trygetvalue)**. Если этот метод возвращает значение NULL, это означает, что запрошенное свойство отсутствует в поле emsg, поэтому устанавливается значение по умолчанию.
+В обработчике для события **CueEntered** приведите подсказку данных, содержащуюся в свойстве **Cue**[**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs), к [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue).  Убедитесь, что значение объекта **DataCue** — не NULL. Свойства поля emsg предоставляются конвейером мультимедиа как настраиваемые свойства в коллекции [**Properties**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Properties) объекта DataCue. В этом примере выполняется попытка извлечь несколько различных значений свойств с помощью метода **[TryGetValue](https://docs.microsoft.com/uwp/api/windows.foundation.collections.propertyset.trygetvalue)** . Если этот метод возвращает значение NULL, это означает, что запрошенное свойство отсутствует в поле emsg, поэтому устанавливается значение по умолчанию.
 
 В следующей части примера демонстрируется сценарий запуска воспроизведения рекламы. Это происходит, когда в свойстве *scheme_id_uri*, полученного на предыдущем шаге, указано значение "urn:scte:scte35:2013:xml" (см. [http://dashif.org/identifiers/event-schemes/](https://dashif.org/identifiers/event-schemes/)). Обратите внимание, что согласно стандарту рекомендуется отправлять этот emsg несколько раз для обеспечения избыточности, поэтому в данном примере поддерживается список идентификаторов emsg, которые уже были обработаны, и обрабатывает только новые сообщения. Создайте новый **DataReader** для считывания данных подсказок, вызвав [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer), и задайте кодировку UTF-8, установив свойство [**UnicodeEncoding**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.UnicodeEncoding), а затем считайте данные. В этом примере полезные данные сообщения записываются в отладочные данные. Реальное приложение использовало бы полезные данные для планирования воспроизведения рекламного объявления.
 
 [!code-cs[EmsgCueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetEmsgCueEntered)]
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Воспроизведение мультимедиа](media-playback.md)
 * [Элементы мультимедиа, списки воспроизведения и дорожек](media-playback-with-mediasource.md)

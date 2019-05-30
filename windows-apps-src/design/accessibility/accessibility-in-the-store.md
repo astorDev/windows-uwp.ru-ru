@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a9991cd4a0a3fce630b1c7be64650c79daf74e6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8f00bb9449d9e48518d16e08fa6b6665eecd2f85
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597409"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359737"
 ---
 # <a name="accessibility-in-the-store"></a>Специальные возможности в Магазине  
 
@@ -40,12 +40,12 @@ ms.locfileid: "57597409"
     * применять сочетания клавиш для вызова основных функций приложения.
     * применять жесты экранного диктора вместо клавиш TAB и клавиш со стрелками на устройствах без клавиатуры.
 * Добавили в пользовательский интерфейс приложения визуальные специальные возможности: минимальный коэффициент контрастности текста составляет 4,5:1, цвет не является единственным способом передачи информации и т. д.
-* Воспользовались средствами проверки специальных возможностей, например [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) и [**UIAVerify**](https://msdn.microsoft.com/library/windows/desktop/Hh920986), чтобы проверить, как реализованы специальные возможности, и устранили все ошибки с уровнем приоритета 1, о которых стало известно с помощью этих средств.
+* Воспользовались средствами проверки специальных возможностей, например [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) и [**UIAVerify**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-automation-verify), чтобы проверить, как реализованы специальные возможности, и устранили все ошибки с уровнем приоритета 1, о которых стало известно с помощью этих средств.
 * Проверили ключевые сценарии своей программы от начала до конца, использовав экранный диктор, экранную лупу, экранную клавиатуру, тему с высокой контрастностью и настроив параметры разрешения экрана.
 
 Обзор этих процедур и ссылки на ресурсы, с помощью которых их можно выполнить, см. в статье [Контрольный список для использования специальных возможностей](accessibility-checklist.md).
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Статьи по теме    
+## <a name="related-topics"></a>См. также    
 * [Специальные возможности](accessibility.md) 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx, перенос, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: c7569c6b2f041f5535e0eabe934a91da86b60b9a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5d4aef73b9b28d631a492436ff90761541134220
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634229"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367427"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>Пошаговое руководство: Порт простое приложение Direct3D 9 в DirectX 11 и универсальной платформы Windows (UWP)
 
@@ -41,7 +41,7 @@ ms.locfileid: "57634229"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">Порт цикл игры</a></p></td>
-<td align="left"><p>Здесь показано, как реализовать окно для игрового приложения UWP и перенести игровой цикл, включая создание интерфейса <a href="https://msdn.microsoft.com/library/windows/apps/hh700478"><strong>IFrameworkView</strong></a> для управления полноэкранным <a href="https://msdn.microsoft.com/library/windows/apps/br208225"><strong>CoreWindow</strong></a>.</p></td>
+<td align="left"><p>Здесь показано, как реализовать окно для игрового приложения UWP и перенести игровой цикл, включая создание интерфейса <a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>IFrameworkView</strong></a> для управления полноэкранным <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -61,26 +61,26 @@ ms.locfileid: "57634229"
 -   Разделение устройства, контекста устройства и графической инфраструктуры.
 -   Процесс компиляции шейдеров и загрузки их байт-кода во время выполнения.
 -   Настройка данных по каждой вершине для этапа сборщика входных данных (IA).
--   Использование [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) для создания представления CoreWindow.
+-   Использование [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) для создания представления CoreWindow.
 
-Обратите внимание, что пошаговое руководство использует [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) для простоты и не описывает межпрограммное взаимодействие XAML.
+Обратите внимание, что пошаговое руководство использует [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) для простоты и не описывает межпрограммное взаимодействие XAML.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 
 Вам нужно [подготовить среду для разработки игр UWP с использованием DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Не требуется шаблон еще, но вам потребуется Microsoft Visual Studio 2015 для загрузки примеры кода для этого пошагового руководства.
 
 Чтобы лучше понять принципы программирования для DirectX 11 и UWP, которые демонстрируются в этом руководстве, ознакомьтесь с разделом [Принципы и аспекты переноса](porting-considerations.md).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 **Direct3D**
 
-* [Создание шейдеров HLSL в Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Создание шейдеров HLSL в Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
 * [Шаблоны проекта игр DirectX](user-interface.md)
 
 **Microsoft Store**
 
-* [**Microsoft::wrl:: comptr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
-* [**Оператор дескриптора объекта (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
+* [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class)
+* [**Оператор дескриптора объекта (^)** ](https://docs.microsoft.com/cpp/windows/handle-to-object-operator-hat-cpp-component-extensions)
 

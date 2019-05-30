@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, игры, мыши, ввод
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
-ms.openlocfilehash: 71985841e6c0fa764201c179fb12408581823e5e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1d36d81aa3f4e0124f79cf8c736b715eb91590d0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639659"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368196"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a>Относительное перемещение мыши и CoreWindow
 
@@ -39,7 +39,7 @@ ms.locfileid: "57639659"
 ## <a name="handling-relative-mouse-movement"></a>Обработка относительных значений перемещения мыши
 
 
-Чтобы получить доступ к относительным значениям перемещения мыши, выполните регистрацию события [MouseDevice::MouseMoved](https://msdn.microsoft.com/library/windows/apps/xaml/windows.devices.input.mousedevice.mousemoved.aspx), как показано ниже.
+Чтобы получить доступ к относительным значениям перемещения мыши, выполните регистрацию события [MouseDevice::MouseMoved](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved), как показано ниже.
 
 
 ```cpp
@@ -85,18 +85,18 @@ void MoveLookController::OnMouseMoved(
 
 ```
 
-Обработчик событий **OnMouseMoved** в данном примере кода выполняет преобразование для просмотра в зависимости от перемещений мыши. Положение указателя мыши передается в обработчик в качестве объекта [MouseEventArgs](https://msdn.microsoft.com/library/windows/apps/xaml/windows.devices.input.mouseeventargs.aspx). 
+Обработчик событий **OnMouseMoved** в данном примере кода выполняет преобразование для просмотра в зависимости от перемещений мыши. Положение указателя мыши передается в обработчик в качестве объекта [MouseEventArgs](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseEventArgs). 
 
-Пропускайте обработку данных об абсолютном положении мыши от события [CoreWindow::PointerMoved](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.core.corewindow.pointermoved.aspx), если ваше приложение переходит в режим обработки относительных значений перемещения мыши. При этом пропускайте эти данные, только если событие **CoreWindow::PointerMoved** наступило в результате ввода с помощью мыши (а не сенсорного ввода). Курсор скрыт, потому что для свойства [CoreWindow::PointerCursor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) установлено значение **nullptr**. 
+Пропускайте обработку данных об абсолютном положении мыши от события [CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved), если ваше приложение переходит в режим обработки относительных значений перемещения мыши. При этом пропускайте эти данные, только если событие **CoreWindow::PointerMoved** наступило в результате ввода с помощью мыши (а не сенсорного ввода). Курсор скрыт, потому что для свойства [CoreWindow::PointerCursor](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) установлено значение **nullptr**. 
 
 ## <a name="returning-to-absolute-mouse-movement"></a>Возвращение в режим обработки абсолютных значений перемещения мыши
 
-Когда приложение выходит из режима относительного управления трехмерным объектом или пространством и более не использует относительные значения перемещения мыши (например, при возвращении в экран меню), вернитесь к обычной обработке абсолютных значений перемещения мыши. Теперь нужно прекратить чтение относительных данных о положении мыши, перезапустить обработку обычных событий мыши (и указателя) и установить для [CoreWindow::PointerCursor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) значение, отличное от null. 
+Когда приложение выходит из режима относительного управления трехмерным объектом или пространством и более не использует относительные значения перемещения мыши (например, при возвращении в экран меню), вернитесь к обычной обработке абсолютных значений перемещения мыши. Теперь нужно прекратить чтение относительных данных о положении мыши, перезапустить обработку обычных событий мыши (и указателя) и установить для [CoreWindow::PointerCursor](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) значение, отличное от null. 
 
 > **Примечание**  
 Когда приложение находится в режиме относительного управления трехмерным объектом или пространством (обрабатывает относительные значения перемещения мыши при отключенном курсоре), с помощью мыши невозможно вызывать элементы пользовательского интерфейса, расположенные по краям, например чудо-кнопки, кнопку "Назад" или панель приложения. Поэтому важно предусмотреть способ выхода из данного режима, например с помощью клавиши **ESC**.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Перемещение внешний вид элементов управления для игр](tutorial--adding-move-look-controls-to-your-directx-game.md) 
 * [Сенсорных элементов управления для игр](tutorial--adding-touch-controls-to-your-directx-game.md)

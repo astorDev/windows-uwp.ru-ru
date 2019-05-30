@@ -6,22 +6,22 @@ keywords: контакты, выбор, выбор одного контакта
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c44f05b5d67fe094859ea0eacfb57c0012004d14
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: facad25446dca286ac150e59d0418c2dd8bfc896
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606799"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361270"
 ---
 # <a name="select-contacts"></a>Выбор контактов
 
 
 
-Пространство имен [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) позволяет выбирать контакты несколькими способами. В этой статье описано, как выбрать один или несколько контактов, и показано, как настроить окно выбора контактов, чтобы получать только необходимые вашему приложению сведения о контактах.
+Пространство имен [**Windows.ApplicationModel.Contacts**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts) позволяет выбирать контакты несколькими способами. В этой статье описано, как выбрать один или несколько контактов, и показано, как настроить окно выбора контактов, чтобы получать только необходимые вашему приложению сведения о контактах.
 
 ## <a name="set-up-the-contact-picker"></a>Настройка окна выбора контактов
 
-Создайте экземпляр [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) и назначьте его переменной.
+Создайте экземпляр [**Windows.ApplicationModel.Contacts.ContactPicker**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactPicker) и назначьте его переменной.
 
 ```cs
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
@@ -29,15 +29,15 @@ var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 
 ## <a name="set-the-selection-mode-optional"></a>Настройка режима выбора (необязательно)
 
-По умолчанию окно выбора контактов извлекает все доступные данные о контактах, выбранных пользователем. Свойство [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) позволяет настроить окно выбора контактов так, чтобы получать только поля данных, необходимые вашему приложению. Этот способ использования окна выбора контактов более эффективен, если нужна только часть доступных сведений контакта.
+По умолчанию окно выбора контактов извлекает все доступные данные о контактах, выбранных пользователем. Свойство [**SelectionMode**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.selectionmode) позволяет настроить окно выбора контактов так, чтобы получать только поля данных, необходимые вашему приложению. Этот способ использования окна выбора контактов более эффективен, если нужна только часть доступных сведений контакта.
 
-Сначала задайте свойство [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) для параметра **Поля**:
+Сначала задайте свойство [**SelectionMode**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.selectionmode) для параметра **Поля**:
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-Затем при помощи свойства [**DesiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) укажите поля, которые должно извлекать окно выбора контактов. В примере ниже показано, как настроить окно выбора контактов для извлечения адресов электронной почты.
+Затем при помощи свойства [**DesiredFieldsWithContactFieldType**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) укажите поля, которые должно извлекать окно выбора контактов. В примере ниже показано, как настроить окно выбора контактов для извлечения адресов электронной почты.
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
@@ -49,7 +49,7 @@ contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Con
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-Если вы хотите, чтобы пользователь выбрал один или несколько контактов, используйте [**PickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync).
+Если вы хотите, чтобы пользователь выбрал один или несколько контактов, используйте [**PickContactsAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpicker.pickcontactsasync).
 
 ```cs
 public IList<Contact> contacts;
@@ -60,7 +60,7 @@ contacts = await contactPicker.PickContactsAsync();
 
 Когда окно выбора возвращает данные, проверьте, выбрал ли пользователь какие-либо контакты. Если да, обработайте сведения о контактах.
 
-В данном примере показано, как обработать один контакт. Здесь мы извлекаем имя контакта и копируем его в элемент управления [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) с именем *OutputName*.
+В данном примере показано, как обработать один контакт. Здесь мы извлекаем имя контакта и копируем его в элемент управления [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) с именем *OutputName*.
 
 ```cs
 if (contact != null)
@@ -167,7 +167,7 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 
 ## <a name="complete-example-multiple-contacts"></a>Полный пример (несколько контактов)
 
-В данном примере окно выбора контактов получает несколько контактов, а затем добавляет контакты в элемент управления [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) с именем `OutputContacts`.
+В данном примере окно выбора контактов получает несколько контактов, а затем добавляет контакты в элемент управления [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) с именем `OutputContacts`.
 
 ```cs
 MainPage rootPage = MainPage.Current;

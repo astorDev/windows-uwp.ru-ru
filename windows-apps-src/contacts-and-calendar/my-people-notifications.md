@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 291c2a922e2b2df7111da8bfc6aefb57b87e84bb
-ms.sourcegitcommit: 4bad5f9427e7db27b57bedc6d7df19077c62e8c3
+ms.openlocfilehash: d4150e7296badd3d31a9aacc7becd3d849f6affd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535189"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360423"
 ---
 # <a name="my-people-notifications"></a>Уведомления близких людей
 
@@ -126,7 +126,7 @@ experienceType=”shoulderTap”
 ![уведомление Spritesheet](images/pizza-notification-small.gif)
 
 ## <a name="starting-the-notification"></a>Запуск уведомления
-Для запуска уведомления "Близкие люди" необходимо преобразовать шаблон всплывающего уведомления в объект [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx). Когда вы определили всплывающее уведомление в XML-файле (здесь это content.xml), используйте следующий код на C#, чтобы запустить его:
+Для запуска уведомления "Близкие люди" необходимо преобразовать шаблон всплывающего уведомления в объект [XmlDocument](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument). Когда вы определили всплывающее уведомление в XML-файле (здесь это content.xml), используйте следующий код на C#, чтобы запустить его:
 
 ```CSharp
 string xmlText = File.ReadAllText("content.xml");

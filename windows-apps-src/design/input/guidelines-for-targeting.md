@@ -8,12 +8,12 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c05b6686d31606a9510b1433339dc8829a52893
-ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
+ms.openlocfilehash: 34f8d15b971cc9ed286471010a21d1b44b84af13
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59247182"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363468"
 ---
 # <a name="guidelines-for-touch-targets"></a>Рекомендации для целевых объектов сенсорного ввода
 
@@ -25,7 +25,7 @@ ms.locfileid: "59247182"
 
 В этом разделе мы описывают такое поведение по умолчанию, чтобы получить возможность проектировать приложения для максимального удобства использования, с помощью элементов управления платформы и пользовательских элементов управления (приложения требуется их).
 
-> **Важные API**: [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **Важные API**: [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="fluent-standard-sizing"></a>Fluent стандартные изменения размера
 
@@ -79,12 +79,12 @@ Compact изменения размера могут применяться на
 
 - [Введение в проектирование приложений UWP](../basics/design-and-ui-intro.md)
 - [Размер элемента управления и плотность](../style/spacing.md)
-- [Выравнивание, поле и заполнение](../layout/alignment-margin-padding.md)
+- [Выравнивание, margin, padding](../layout/alignment-margin-padding.md)
 
 ### <a name="samples"></a>Примеры
 
-- [Пример базового ввода](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [Пример ввода с малой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [Базовый пример входной привязки](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [Пример входной привязки для низкой задержкой](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 - [Пример режима взаимодействия с пользователем](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 - [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
@@ -93,8 +93,8 @@ Compact изменения размера могут применяться на
 - [Входные данные: Пример события ввода пользовательского XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
 - [Входные данные: Пример возможности устройства](https://go.microsoft.com/fwlink/p/?linkid=231530)
 - [Входные данные: Пример проверки попадания сенсорного ввода](https://go.microsoft.com/fwlink/p/?linkid=231590)
-- [Пример прокрутки, сдвига и масштабирования на XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+- [XAML прокрутки, сдвига и масштабирования примера](https://go.microsoft.com/fwlink/p/?linkid=251717)
 - [Входные данные: Пример упрощенного рукописного ввода](https://go.microsoft.com/fwlink/p/?linkid=246570)
 - [Входные данные: Пример жесты Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
 - [Входные данные: Манипуляции и образец жестов (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-- [Пример сенсорного ввода в DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+- [Пример входной привязки для сенсорного ввода DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)

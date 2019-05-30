@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b58eb4b6e3f3f02bb1f72fcba9da3710f08a72da
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c37ceb63a5d9d9f83d3f1ebca0b0584f1092b7f6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649009"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359579"
 ---
 # <a name="high-contrast-themes"></a>Темы с высокой контрастностью  
 
@@ -39,14 +39,14 @@ Windows поддерживает темы с высокой контрастно
 
 Если цвет `#E6E6E6` задан в самом элементе (см. первый пример), этот цвет фона будет использоваться во всех темах сетки. Если пользователь переключается на черную тему с высокой контрастностью, ожидается, что у приложения будет черный фон. Поскольку `#E6E6E6` почти белый, некоторые пользователи не смогут взаимодействовать с вашим приложением.
 
-Во втором примере [**расширение разметки {ThemeResource}**](../../xaml-platform/themeresource-markup-extension.md) используется для ссылки на цвет в коллекции [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.themedictionaries.aspx), которая представляет собой выделенное свойство элемента [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794). **ThemeDictionaries** позволяет XAML автоматически менять для вас цвета с учетом текущей темы пользователя.
+Во втором примере [**расширение разметки {ThemeResource}** ](../../xaml-platform/themeresource-markup-extension.md) используется для ссылки на цвет в коллекции [**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries), которая представляет собой выделенное свойство элемента [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary). **ThemeDictionaries** позволяет XAML автоматически менять для вас цвета с учетом текущей темы пользователя.
 
 ## <a name="theme-dictionaries"></a>Словари тем
 
 Если необходимо изменить цвет, заданный в системе по умолчанию, создайте для приложения коллекцию ThemeDictionaries.
 
 1. Начните с создания надлежащих элементов подключения, если они еще не созданы. В файле App.xaml создайте коллекцию **ThemeDictionaries** и включите в нее (как минимум) элементы **Default** и **HighContrast**.
-2. В разделе **Default** создайте тот тип инструмента [Brush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx), который вам необходим; чаще всего это **SolidColorBrush**. Задайте ему имя *x:Key*, указывающее его предназначение.
+2. В разделе **Default** создайте тот тип инструмента [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush), который вам необходим; чаще всего это **SolidColorBrush**. Задайте ему имя *x:Key*, указывающее его предназначение.
 3. Назначьте ему требуемое значение цвета **Color**.
 4. Скопируйте этот инструмент **Brush** в **HighContrast**.
 
@@ -95,7 +95,7 @@ Windows поддерживает темы с высокой контрастно
 
 Каждый ресурс **SystemColor*Color** представляет собой переменную, которая автоматически обновляет цвет, когда пользователь меняет высококонтрастные темы. Ниже приведены рекомендации о том, где и когда использовать каждый ресурс.
 
-Ресурс | Использование |
+Resource | Использование |
 |--------|-------|
 **SystemColorWindowTextColor** | Основной текст, заголовки, списки; любой текст, с которым невозможно осуществлять взаимодействие |
 | **SystemColorHotlightColor** | Гиперссылки |
@@ -167,7 +167,7 @@ Windows поддерживает темы с высокой контрастно
 
 ## <a name="list-items"></a>Элементы списка
 
-В режиме высокой контрастности для элементов в [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) при наведении, нажатии или выборе используется фон **SystemColorHighlightColor**. Сложные элементы списка содержат ошибку, когда содержимое элемента списка не меняет цвет при наведении на элемент, нажатии или выборе элемента. В результате прочитать элемент невозможно.
+В режиме высокой контрастности для элементов в [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) при наведении, нажатии или выборе используется фон **SystemColorHighlightColor**. Сложные элементы списка содержат ошибку, когда содержимое элемента списка не меняет цвет при наведении на элемент, нажатии или выборе элемента. В результате прочитать элемент невозможно.
 
 ![Простой список в светлой теме и черной теме высокой контрастности](images/high-contrast-list1.png)
 
@@ -176,7 +176,7 @@ Windows поддерживает темы с высокой контрастно
 
 ### <a name="list-items-with-colored-text"></a>Элементы списка с цветным текстом
 
-Одно из затруднений — настройка параметра TextBlock.Foreground в элементе [DataTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) представления списка. Это обычно делается, чтобы установить визуальную иерархию. Свойство Foreground настраивается в элементе [ListViewItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx), а элемент TextBlocks в шаблоне DataTemplate наследует правильный цвет фона при наведении на элемент, нажатии или выборе элемента. Однако при настройке параметра Foreground наследование нарушается.
+Одно из затруднений — настройка параметра TextBlock.Foreground в элементе [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) представления списка. Это обычно делается, чтобы установить визуальную иерархию. Свойство Foreground настраивается в элементе [ListViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewitem), а элемент TextBlocks в шаблоне DataTemplate наследует правильный цвет фона при наведении на элемент, нажатии или выборе элемента. Однако при настройке параметра Foreground наследование нарушается.
 
 ![Сложный список в светлой теме и черной теме высокой контрастности](images/high-contrast-list2.png)
 
@@ -228,14 +228,14 @@ Windows поддерживает темы с высокой контрастно
 
 ## <a name="detecting-high-contrast"></a>Обнаружение высокой контрастности
 
-Можно программным способом проверить, является ли текущая тема темой с высокой контрастностью, воспользовавшись элементами класса [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237).
+Можно программным способом проверить, является ли текущая тема темой с высокой контрастностью, воспользовавшись элементами класса [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings).
 
 > [!NOTE]
 > Убедитесь, что конструктор **AccessibilitySettings** вызывается из области, в которой приложение инициализировано и уже отображает содержимое.
 
-## <a name="related-topics"></a>Статьи по теме  
+## <a name="related-topics"></a>См. также  
 * [Специальные возможности](accessibility.md)
 * [Пример контрастности и параметры пользовательского интерфейса](https://go.microsoft.com/fwlink/p/?linkid=231539)
 * [XAML примера специальных возможностей](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Пример высокой контрастности XAML](https://go.microsoft.com/fwlink/p/?linkid=254993)
-* [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)
+* [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)

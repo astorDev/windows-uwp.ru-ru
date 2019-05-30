@@ -10,12 +10,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: a984e30bbdc569522b04d328087775aa9e8ce2bc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3fc54662b29255b73e972bcfb0fa4b6bb2dcf968
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648539"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363061"
 ---
 # <a name="content-links-in-text-controls"></a>Ссылки на содержимое в элементах управления текстом
 
@@ -44,7 +44,7 @@ ms.locfileid: "57648539"
 
 Отличия в использовании, отображении и поведении подробно описаны в следующих разделах. Эта таблица содержит краткое сравнение основных различий между ссылкой на содержимое в элементе RichEditBox и текстовом блоке.
 
-| Функция   | Элемент управления RichEditBox | Текстовый блок |
+| Компонент   | Элемент управления RichEditBox | Текстовый блок |
 | --------- | ----------- | ---------- |
 | Использование | Экземпляр ContentLinkInfo | Текстовый элемент ContentLink |
 | Cursor (Курсор) | Определяется типом ссылки на содержимое; изменение невозможно | Определяется свойством Cursor; значение **null** по умолчанию |
@@ -303,7 +303,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!TIP]
-> При использовании ContentLink в текстовом элементе управления в XAML разместите содержимое в контейнере [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) и примените атрибут `xml:space="preserve"` к Span для сохранения пробела между ContentLink и другими элементами.
+> При использовании ContentLink в текстовом элементе управления в XAML разместите содержимое в контейнере [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) и примените атрибут `xml:space="preserve"` к Span для сохранения пробела между ContentLink и другими элементами.
 
 ## <a name="examples"></a>Примеры
 

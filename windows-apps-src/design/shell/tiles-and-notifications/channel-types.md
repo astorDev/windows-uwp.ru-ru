@@ -5,12 +5,12 @@ ms.date: 07/07/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d010816b1ba4c9941aea7bdcdb4bd4c50038aca6
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 72bad5bff8092e63a73cc1e32f4424b70867d245
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59067839"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366033"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>Выбор правильного типа канала push-уведомлений
 
@@ -38,10 +38,10 @@ ms.locfileid: "59067839"
 
 ### <a name="what-do-primary-channels-enable"></a>Какие возможности предоставляют основные каналы?
 
--   **Отправка обновлений плитки или индикатора событий основной плитке.** Если пользователь закрепил вашу плитку на начальном экране, вы сможете воспользоваться этим. Отправляйте обновления с полезной информацией или напоминания о работе с приложением. 
+-   **Отправка плитки или значок обновления основной плитки.** Если пользователь закрепил вашу плитку на начальном экране, вы сможете воспользоваться этим. Отправляйте обновления с полезной информацией или напоминания о работе с приложением. 
 -   **Отправка всплывающих уведомлений.** Всплывающие уведомления позволяют немедленно показать нужную информацию пользователю. Они закрашиваются оболочкой поверх большинства приложений и динамически отображаются в центре уведомлений, чтобы пользователь мог вернуться и просмотреть их позже. 
--   **Отправка необработанных уведомлений для инициализации фоновой задачи.** Иногда требуется выполнить некоторые действия от имени пользователя в зависимости от уведомления. Необработанные уведомления позволяют выполнять фоновые задачи вашего приложения. 
--   **Шифрование сообщений в процессе передачи обеспечивается Windows с помощью TLS.** Сообщения шифруются при передаче в WNS и на устройство пользователя.  
+-   **Отправка необработанных уведомлений для запуска фоновой задачи.** Иногда требуется выполнить некоторые действия от имени пользователя в зависимости от уведомления. Необработанные уведомления позволяют выполнять фоновые задачи вашего приложения. 
+-   **Шифрование сообщений во время передачи, предоставляемых Windows, с помощью протокола TLS.** Сообщения шифруются при передаче в WNS и на устройство пользователя.  
 
 ### <a name="limitations-of-primary-channels"></a>Ограничения основных каналов
 
@@ -108,12 +108,12 @@ PushNotificationChannel webChannel =
 
 <tr class="header">
 <th align="left"><b>Тип</b></th>
-<th align="left"><b>Всплывающее уведомление?</b></th>
-<th align="left"><b>Обновление плитки и индикатора событий?</b></th>
-<th align="left"><b>Необработанные уведомления?</b></th>
-<th align="left"><b>Проверка подлинности</b></th>
+<th align="left"><b>Отправить всплывающее уведомление?</b></th>
+<th align="left"><b>Push-уведомлений плитки и эмблемы?</b></th>
+<th align="left"><b>Push-уведомления raw?</b></th>
+<th align="left"><b>Authentication</b></th>
 <th align="left"><b>API</b></th>
-<th align="left"><b>Требуется регистрация в Магазине?</b></th>
+<th align="left"><b>Необходима регистрация Store?</b></th>
 <th align="left"><b>Каналы</b></th>
 <th align="left"><b>Шифрование</b></th>
 </tr>
@@ -167,11 +167,11 @@ PushNotificationChannel webChannel =
 
 * [Отправка локального уведомления на плитке](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [Адаптивные и интерактивные всплывающие уведомления](../tiles-and-notifications/adaptive-interactive-toasts.md)
-* [Краткое руководство. Отправка Push-уведомление](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [Обновление индикатора событий с помощью push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [Запрос, создание и сохранение канала уведомлений](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [Перехват уведомлений для выполняемых приложений ](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [Проверка подлинности с помощью службы push-уведомлений Windows (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [Заголовки запроса и ответа службы push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [Руководство и контрольный список для push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Краткое руководство. Отправка Push-уведомление](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [Как обновить эмблему через Push-уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
+* [Запрос, создание и сохранение канала уведомлений с помощью](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [Как перехватить уведомления для запуска приложений](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
+* [Способ проверки подлинности с помощью Windows Push Notification Service (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [Push-уведомления службы: заголовки запросов и ответов](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [Контрольный список для Push-уведомлений](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 * [Необработанные уведомления](raw-notification-overview.md)

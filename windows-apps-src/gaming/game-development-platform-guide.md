@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, технологии, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c5c6bb9bc2dadc89811c18c0aa844b899e52cf1
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: ba15a4f965dc582a8bd4eaeca211367ea1fcb5cb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162709"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368693"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>Технологии игр для приложений UWP
 
@@ -47,7 +47,7 @@ ms.locfileid: "58162709"
 ## <a name="getting-started-with-directx-game-project-templates"></a>Начало работы с шаблонами проектов игр DirectX
 
 
-После настройки среды разработки можно использовать один из шаблонов проектов, связанных с DirectX, для создания игры UWP на базе DirectX. В Visual Studio 2015 есть три шаблона, которые можно использовать при создании проектов для UWP и DirectX, **приложений для DirectX 11 (универсальных приложений для Windows)**, **приложений для DirectX 12 (универсальных приложений для Windows)** и **приложений для DirectX 11 и XAML (универсальных приложений для Windows)**. Дополнительные сведения см. в статье [Создание проекта игры для универсальной платформы Windows и DirectX на основе шаблона](user-interface.md).
+После настройки среды разработки можно использовать один из шаблонов проектов, связанных с DirectX, для создания игры UWP на базе DirectX. В Visual Studio 2015 есть три шаблона, которые можно использовать при создании проектов для UWP и DirectX, **приложений для DirectX 11 (универсальных приложений для Windows)** , **приложений для DirectX 12 (универсальных приложений для Windows)** и **приложений для DirectX 11 и XAML (универсальных приложений для Windows)** . Дополнительные сведения см. в статье [Создание проекта игры для универсальной платформы Windows и DirectX на основе шаблона](user-interface.md).
 
 ## <a name="windows-10-apis"></a>API Windows 10
 
@@ -58,7 +58,7 @@ ms.locfileid: "58162709"
 
 ![Технологии платформы игр](images/gameplatformtechnologies.png)
 
--   Трехмерная графика: Windows 10 поддерживает два набора API для работы с трехмерной графикой, Direct3D 11 и [Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/dn899121). Оба эти API позволяют создавать трехмерную и двумерную графику. Direct3D 11 и Direct3D 12 не используются совместно, но и тот, и другой интерфейс можно использовать с любыми API в группе двумерной графики и пользовательского интерфейса. Дополнительные сведения об использовании этих API графики в игре см. в статье [Простая трехмерная графика для игр DirectX](an-introduction-to-3d-graphics-with-directx.md).
+-   Трехмерная графика: Windows 10 поддерживает два набора API для работы с трехмерной графикой, Direct3D 11 и [Direct3D 12](https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-programming-guide). Оба эти API позволяют создавать трехмерную и двумерную графику. Direct3D 11 и Direct3D 12 не используются совместно, но и тот, и другой интерфейс можно использовать с любыми API в группе двумерной графики и пользовательского интерфейса. Дополнительные сведения об использовании этих API графики в игре см. в статье [Простая трехмерная графика для игр DirectX](an-introduction-to-3d-graphics-with-directx.md).
 
     <table>
     <colgroup>
@@ -78,7 +78,7 @@ ms.locfileid: "58162709"
     <p><strong>Варианты использования</strong></p>
     <p>Используйте Direct3D 12, когда необходимо достигнуть максимальной производительности вашей игры и при этом производительность зависит от ресурсов ЦП.</p>
     <p><strong>Дополнительные сведения</strong></p>
-    <p>См. документацию по <a href="https://msdn.microsoft.com/library/windows/desktop/dn899121">Direct3d 12</a>.</p></td>
+    <p>См. документацию по <a href="https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-programming-guide">Direct3d 12</a>.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Direct3D 11</td>
@@ -86,7 +86,7 @@ ms.locfileid: "58162709"
     <p><strong>Варианты использования</strong></p>
     <p>Используйте Direct3D 11, если у вас есть код для Direct3D 11, производительность ваших игр не зависит от ресурсов ЦП или вы не хотите заниматься управлением ресурсами.</p>
     <p><strong>Дополнительные сведения</strong></p>
-    <p>См. документацию по <a href="https://msdn.microsoft.com/library/windows/desktop/ff476080">Direct3D 11</a>.</p></td>
+    <p>См. документацию по <a href="https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11">Direct3D 11</a>.</p></td>
     </tr>
     </tbody>
     </table>
@@ -113,7 +113,7 @@ ms.locfileid: "58162709"
     <p><strong>Варианты использования</strong></p>
     <p>Direct2D можно использовать вместо Direct3D, чтобы реализовать графику в чисто двумерных играх, например играх с горизонтальной прокруткой или настольных играх. Кроме того, его можно использовать совместно с Direct3D, чтобы упростить создание двумерной графики в трехмерных играх, например для пользовательского интерфейса или отображения уведомлений.</p>
     <p><strong>Дополнительные сведения</strong></p>
-    <p>См. документацию по <a href="https://msdn.microsoft.com/library/windows/desktop/dd370990">Direct2D</a>.</p></td>
+    <p>См. документацию по <a href="https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal">Direct2D</a>.</p></td>
     </tr>
     <tr class="even">
     <td align="left">DirectWrite</td>
@@ -121,7 +121,7 @@ ms.locfileid: "58162709"
     <p><strong>Варианты использования</strong></p>
     <p></p>
     <p><strong>Дополнительные сведения</strong></p>
-    <p>См. документацию по <a href="https://msdn.microsoft.com/library/windows/desktop/dd368038">DirectWrite</a>.</p></td>
+    <p>См. документацию по <a href="https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal">DirectWrite</a>.</p></td>
     </tr>
     <tr class="odd">
     <td align="left">DirectComposition</td>
@@ -129,7 +129,7 @@ ms.locfileid: "58162709"
     <p><strong>Варианты использования</strong></p>
     <p>DirectComposition предназначен для упрощения формирования визуальных элементов и создания анимированных переходов. Если для игры необходимы сложные пользовательские интерфейсы, можно использовать компонент DirectComposition, чтобы упростить создание пользовательского интерфейса и управление им.</p>
     <p><strong>Дополнительные сведения</strong></p>
-    <p>См. документацию по <a href="https://msdn.microsoft.com/library/windows/desktop/hh437371">DirectComposition</a>.</p></td>
+    <p>См. документацию по <a href="https://docs.microsoft.com/windows/desktop/directcomp/directcomposition-portal">DirectComposition</a>.</p></td>
     </tr>
     </tbody>
     </table>
@@ -156,7 +156,7 @@ ms.locfileid: "58162709"
     <p><strong>Варианты использования</strong></p>
     <p>Используйте XAudio2, если в вашей игре необходимо воспроизводить звук с минимальными дополнительными временными затратами и задержками.</p>
     <p><strong>Дополнительные сведения</strong></p>
-    <p>См. документацию по <a href="https://msdn.microsoft.com/library/windows/desktop/hh405049">XAudio2</a>.</p></td>
+    <p>См. документацию по <a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal">XAudio2</a>.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Media Foundation</td>
@@ -164,7 +164,7 @@ ms.locfileid: "58162709"
     <p><strong>Варианты использования</strong></p>
     <p>Компонент Media Foundation особенно полезен для кинематографических сцен или неинтерактивных компонентов вашей игры. Кроме того, Media Foundation удобно использовать для декодирования звуковых файлов, воспроизводимых с помощью XAudio2.</p>
     <p><strong>Дополнительные сведения</strong></p>
-    <p>См. обзор <a href="https://msdn.microsoft.com/library/windows/desktop/ms694197">Microsoft Media Foundation</a>.</p></td>
+    <p>См. обзор <a href="https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk">Microsoft Media Foundation</a>.</p></td>
     </tr>
     </tbody>
     </table>
@@ -191,7 +191,7 @@ ms.locfileid: "58162709"
     <p><strong>Варианты использования</strong></p>
     <p>Если в вашей игре необходимо получать данные с игровых устройств управления и у вас есть код для XInput, вы можете продолжать использовать XInput. Компонент XInput заменен компонентом Windows.Gaming.Input для UWP. Если вы пишете новый код для ввода данных, используйте Windows.Gaming.Input вместо XInput.</p>
     <p><strong>Дополнительные сведения</strong></p>
-    <p>См. документацию по <a href="https://msdn.microsoft.com/library/windows/desktop/hh405053">XInput</a>.</p></td>
+    <p>См. документацию по <a href="https://docs.microsoft.com/windows/desktop/xinput/xinput-game-controller-apis-portal">XInput</a>.</p></td>
     </tr>
     <tr class="even">
     <td align="left">Windows.Gaming.Input</td>
@@ -207,7 +207,7 @@ ms.locfileid: "58162709"
     <p><strong>Варианты использования</strong></p>
     <p>Если в вашей игре необходимо поддерживать ввод данных с игрового устройства управления, не используя существующий код XInput, или если вы хотите использовать одно из перечисленных выше преимуществ, следует применять Windows.Gaming.Input.</p>
     <p><strong>Дополнительные сведения</strong></p>
-    <p>См. документацию по <a href="https://msdn.microsoft.com/library/windows/apps/dn707817">Windows.Gaming.Input</a>.</p></td>
+    <p>См. документацию по <a href="https://docs.microsoft.com/uwp/api/Windows.Gaming.Input">Windows.Gaming.Input</a>.</p></td>
     </tr>
     <tr class="odd">
     <td align="left">Windows.UI.Core.CoreWindow</td>
@@ -242,7 +242,7 @@ ms.locfileid: "58162709"
     <p><strong>Варианты использования</strong></p>
     <p>Компонент DirectXMath упрощает выполнение стандартных математических операций, но не является обязательным.</p>
     <p><strong>Дополнительные сведения</strong></p>
-    <p>См. документацию по <a href="https://msdn.microsoft.com/library/windows/desktop/hh437833">DirectXMath</a>.</p></td>
+    <p>См. документацию по <a href="https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal">DirectXMath</a>.</p></td>
     </tr>
     </tbody>
     </table>

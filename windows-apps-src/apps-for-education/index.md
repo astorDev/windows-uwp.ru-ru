@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, образование
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8c2333d960ba91b1d1c3d3030481108407909594
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583426"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359209"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Разработка образовательных универсальных приложений для Windows
 ![Снимок экрана приложения для тестирования](images/take-a-test-screen-small.png)
@@ -38,7 +38,7 @@ ms.locfileid: "57583426"
 
 
 ### <a name="microsoft-store"></a>Microsoft Store
-Довольно часто образовательные приложения выпускаются для определенной организации с особыми условиями. Сведения об этом можно найти в разделе [Распространение бизнес-приложений для предприятий](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises).
+Довольно часто образовательные приложения выпускаются для определенной организации с особыми условиями. Сведения об этом можно найти в разделе [Распространение бизнес-приложений для предприятий](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises).
 
 ## <a name="related-topics"></a>Связанные разделы
 - [Windows 10 для образовательных учреждений](https://technet.microsoft.com/edu/windows/index) в ИТ-центре Windows

@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 43639ac22c07501da89e29419a226a8a3ce8af48
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d41590914fb66cb8061298f77f24e5efcdd03bf5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613069"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364629"
 ---
 # <a name="password-box"></a>Поле ввода пароля
 
@@ -25,7 +25,7 @@ ms.locfileid: "57613069"
 
 Поле ввода пароля — это текстовое поле, в котором вводимые символы скрыты в целях безопасности. Поле ввода пароля внешне похоже на текстовое поле с той разницей, что в нем вместо вводимого текста отображаются подстановочные символы. Вы можете выбрать необходимый знак заполнителя.
 
-> **Важные API**: [Класс PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx), [свойство пароля](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx), [PasswordChar-свойство](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx), [свойство PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx), [PasswordChanged событий](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
+> **Важные API**: [Класс PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox), [свойство пароля](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password), [PasswordChar-свойство](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [свойство PasswordRevealMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged событий](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
 
 По умолчанию поле ввода пароля предоставляет пользователю возможность просмотреть свой пароль, удерживая кнопку показа. Можно отключить кнопку показа либо предоставить альтернативный механизм отображения пароля, например флажок.
 
@@ -67,7 +67,7 @@ ms.locfileid: "57613069"
 
 ## <a name="create-a-password-box"></a>Создание поля ввода пароля
 
-Используйте свойство [Password](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx), чтобы получить или задать содержимое элемента PasswordBox. Это можно сделать в обработчике для события [PasswordChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx), чтобы выполнять проверку, пока пользователь вводит пароль. Или можно использовать другое событие, например кнопку [Щелкните](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx), чтобы выполнять проверку после того, как пользователь завершит ввод текста.
+Используйте свойство [Password](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password), чтобы получить или задать содержимое элемента PasswordBox. Это можно сделать в обработчике для события [PasswordChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged), чтобы выполнять проверку, пока пользователь вводит пароль. Или можно использовать другое событие, например кнопку [Щелкните](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), чтобы выполнять проверку после того, как пользователь завершит ввод текста.
 
 Ниже приведен фрагмент кода XAML для поля ввода пароля, демонстрирующий внешний вид элемента PasswordBox по умолчанию. При вводе пароля программа проверяет, не вводит ли пользователь буквально слово Password (Пароль). Если это так, то на экране будет отображено соответствующее сообщение.
 
@@ -99,7 +99,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ### <a name="password-character"></a>Знак пароля
 
-Знак, используемый для маскировки пароля, можно изменить, задав свойство [PasswordChar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx). Здесь маркер по умолчанию заменяется звездочкой.
+Знак, используемый для маскировки пароля, можно изменить, задав свойство [PasswordChar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar). Здесь маркер по умолчанию заменяется звездочкой.
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" PasswordChar="*"/>
@@ -111,7 +111,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ### <a name="headers-and-placeholder-text"></a>Заголовки и подстановочный текст
 
-Свойства [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.header.aspx) и [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.placeholdertext.aspx) можно использовать, чтобы предоставить контекст для элемента PasswordBox. Это особенно полезно при наличии нескольких полей, например в форме для изменения пароля.
+Свойства [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.header) и [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.placeholdertext) можно использовать, чтобы предоставить контекст для элемента PasswordBox. Это особенно полезно при наличии нескольких полей, например в форме для изменения пароля.
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" Header="Password" PlaceholderText="Enter your password"/>
@@ -121,7 +121,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ### <a name="maximum-length"></a>Максимальная длина
 
-Укажите максимальное количество вводимых символов с помощью свойства [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.maxlength.aspx). Свойства для указания минимальной длины не существует, но вы можете проверить длину пароля и выполнить любую другую проверку в коде приложения.
+Укажите максимальное количество вводимых символов с помощью свойства [MaxLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.maxlength). Свойства для указания минимальной длины не существует, но вы можете проверить длину пароля и выполнить любую другую проверку в коде приложения.
 
 ## <a name="password-reveal-mode"></a>Режим показа пароля
 
@@ -133,19 +133,19 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 По умолчанию кнопка показа пароля (или кнопка «Подсмотреть») отображается. Пользователь должен удерживать эту кнопку для просмотра пароля, чтобы поддерживать высокий уровень безопасности.
 
-Значение свойства [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) — не единственный фактор, который определяет видимость кнопки показа пароля. Среди других факторов: отображается ли элемент управления над минимальной шириной, имеет ли PasswordBox фокус и содержит ли поле ввода текста хотя бы один символ. Кнопка показа пароля отображается, только когда поле PasswordBox получает фокус в первый раз и в него вводится символ. Если PasswordBox теряет фокус, а затем вновь получает его, кнопка показа не отображается, пока пароль не очистят и не начнут вводить заново.
+Значение свойства [PasswordRevealMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) — не единственный фактор, который определяет видимость кнопки показа пароля. Среди других факторов: отображается ли элемент управления над минимальной шириной, имеет ли PasswordBox фокус и содержит ли поле ввода текста хотя бы один символ. Кнопка показа пароля отображается, только когда поле PasswordBox получает фокус в первый раз и в него вводится символ. Если PasswordBox теряет фокус, а затем вновь получает его, кнопка показа не отображается, пока пароль не очистят и не начнут вводить заново.
 
-> **Внимание!**&nbsp;&nbsp;До Windows 10 кнопка показа пароля не отображалась по умолчанию. Если в вашем приложении необходимо всегда скрывать пароль, установите для параметра PasswordRevealMode значение Hidden.
+> **Внимание!** &nbsp;&nbsp;До Windows 10 кнопка показа пароля не отображалась по умолчанию. Если в вашем приложении необходимо всегда скрывать пароль, установите для параметра PasswordRevealMode значение Hidden.
 
 ### <a name="hidden-and-visible-modes"></a>Режимы Hidden и Visible
 
-Другие значения перечисления [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordrevealmode.aspx) — **Hidden** и **Visible** — скрывают кнопку показа пароля и позволяют программно управлять видимостью пароля.
+Другие значения перечисления [PasswordRevealMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode) — **Hidden** и **Visible** — скрывают кнопку показа пароля и позволяют программно управлять видимостью пароля.
 
 Чтобы пароль был всегда скрыт, установите для параметра PasswordRevealMode значение Hidden. Если вам не нужно, чтобы пароль был всегда скрыт, можно предоставить настраиваемый пользовательский интерфейс, чтобы пользователь мог переключать PasswordRevealMode между Hidden и Visible.
 
-В предыдущих версиях Windows Phone элемент PasswordBox использовал флажок для переключения видимости пароля. Можно создать аналогичный пользовательский интерфейс для своего приложения, как показано в следующем примере. Чтобы позволить пользователю переключать режимы, можно использовать и другие элементы управления, например [ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx).
+В предыдущих версиях Windows Phone элемент PasswordBox использовал флажок для переключения видимости пароля. Можно создать аналогичный пользовательский интерфейс для своего приложения, как показано в следующем примере. Чтобы позволить пользователю переключать режимы, можно использовать и другие элементы управления, например [ToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton).
 
-В этом примере показано, как использовать [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx), чтобы позволить пользователю переключать режим показа элемента PasswordBox.
+В этом примере показано, как использовать [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox), чтобы позволить пользователю переключать режим показа элемента PasswordBox.
 
 ```xaml
 <StackPanel Width="200">
@@ -179,7 +179,7 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 Чтобы упростить пользователям ввод данных с помощью сенсорной клавиатуры или панели функционального ввода, можно настроить тип вводимых данных элемента управления для ввода текста, чтобы он соответствовал типу данных, которые должен вводить пользователь. PasswordBox поддерживает только значения типа вводимых данных **Password** и **NumericPin**. Любое другое значение будет проигнорировано.
 
-Дополнительные сведения об использовании типов вводимых данных см. в разделе [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://msdn.microsoft.com/library/windows/apps/mt280229).
+Дополнительные сведения об использовании типов вводимых данных см. в разделе [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard).
 
 ## <a name="recommendations"></a>Рекомендации
 
@@ -199,8 +199,8 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 [Текстовые элементы управления](text-controls.md)
 
 - [Рекомендации для проверки орфографии](text-controls.md)
-- [Добавление поиска](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [Добавление поиска](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
 - [Рекомендации для ввода текста](text-controls.md)
-- [Класс TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [Класс Windows.UI.Xaml.Controls PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [Класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Класс Windows.UI.Xaml.Controls PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 321f8efc1475bc153102f3f8157cd2d094b37077
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 71150df50a7c7e01293d4ec638f520239124e7cd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630139"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359408"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 Дополнительные сведения о преимуществах локализации приложений см. в разделе [Глобализация и локализация](../design/globalizing/globalizing-portal.md).
@@ -282,15 +282,15 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 Платформенный пакет может обращаться к собственным ресурсам с использованием абсолютного идентификатора ресурса (URI). См. также раздел [Схемы URI](uri-schemes.md).
 
 ## <a name="important-apis"></a>Важные API
-* [ApplicationModel.Resources.ResourceLoader](https://msdn.microsoft.com/library/windows/apps/br206014)
+* [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
 * [ResourceContext.SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [Перенос XAML и пользовательского интерфейса](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
 * [Директива x: Uid](../xaml-platform/x-uid-directive.md)
 * [Вложенные свойства](../xaml-platform/attached-properties-overview.md)
 * [Локализуемые элементы манифеста](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [Тег языка BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Настроить ресурсы для языка, масштаба и квалификаторов](tailor-resources-lang-scale-contrast.md)
-* [Загрузка строковых ресурсов](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)
+* [Загрузка строковых ресурсов](https://docs.microsoft.com/previous-versions/windows/apps/hh965323(v=win.10))

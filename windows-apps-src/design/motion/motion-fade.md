@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d3fee78f3608466f588a79d2811f1464e27a0ab
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3d8642e911a3ad4275e0a7a0f147ca9d70f415b0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620419"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366789"
 ---
 # <a name="fade-animations"></a>Анимации исчезания
 
@@ -21,7 +21,7 @@ ms.locfileid: "57620419"
 
 Анимация угасания используется для ввода элементов в поле зрения и вывода из него. Двумя распространенными анимациями исчезания являются плавное увеличение и плавное уменьшение.
 
-> **Важные API**: [**Класс FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298), [ **FadeOutThemeAnimation-класс**](https://msdn.microsoft.com/library/windows/apps/br210302)
+> **Важные API**: [**Класс FadeInThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation), [ **FadeOutThemeAnimation-класс**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
@@ -34,11 +34,11 @@ ms.locfileid: "57620419"
 -   Исчезание — это тонкий способ удалить элемент.
 ## <a name="related-articles"></a>Связанные статьи
 
-* [Общие сведения об анимации](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Анимация затухание](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**Класс FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298)
-* [**Класс FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210302)
+* [Общие сведения об анимации](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Анимация затухание](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
+* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**Класс FadeInThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)
+* [**Класс FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 
  
 

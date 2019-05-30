@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e508feb8a530f29b40d5a3839df573cb2ce89896
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 60d713efd9deeffa0856a5d1dbc92688c229288e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634399"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363581"
 ---
 # <a name="drag-and-drop"></a>Перетаскивание
 
 Перетаскивание является интуитивно понятным способом передачи данных в приложении или между приложениями на компьютере с Windows. Перетаскивание дает пользователю возможность перемещать данные между приложениями или внутри приложения с помощью стандартного жеста ("нажатие-удержание-сдвиг" с помощью пальца или "нажатие-сдвиг" с помощью мыши или пера).
 
-> **Важные API**: [Свойство CanDrag](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag), [свойства AllowDrop свойство](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) 
+> **Важные API**: [Свойство CanDrag](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag), [свойства AllowDrop свойство](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) 
 
 Источник перетаскивания, который является приложением или областью, в которой запускается жест перетаскивания, предоставляет данные для передачи путем заполнения объекта пакета данных, который может содержать стандартные форматы данных, включая текст, RTF, HTML, точечные рисунки, элементы хранилища или пользовательские форматы данных. Источник также обозначает тип операций, которые он поддерживает: копировать, переместить или ссылка. При освобождении указателя выполняется перетаскивание. Место переноса, которое является приложением или областью под указателем, обрабатывает пакет данных и возвращает тип выполненной операции.
 
@@ -37,11 +37,11 @@ ms.locfileid: "57634399"
 
 ## <a name="enable-dragging"></a>Включение перетаскивания
 
-Чтобы включить возможность перетаскивания элемента, задайте его свойству [**CanDrag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag) значение **true**. Это сделает элемент — и элементы, которые он содержит в случае использования коллекций, например, ListView — перетаскиваемым.
+Чтобы включить возможность перетаскивания элемента, задайте его свойству [**CanDrag**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag) значение **true**. Это сделает элемент — и элементы, которые он содержит в случае использования коллекций, например, ListView — перетаскиваемым.
 
 Определите, какие элементы будут поддерживать перетаскивание. Пользователям не требуется перетаскивать все содержимое в вашем приложении; только определенные элементы, такие как изображения и текст. 
 
-Вот как задать свойство [**CanDrag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag).
+Вот как задать свойство [**CanDrag**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag).
 
 [!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
 
@@ -50,27 +50,27 @@ ms.locfileid: "57634399"
 ## <a name="construct-a-data-package"></a>Создание пакета данных 
 
 В большинстве случаев система будет создавать пакет данных за вас. Система автоматически обрабатывает:
-* образы,
-* Текст 
+* Изображений
+* Text 
 
 При работе с другим содержимым необходимо обработать события **DragStarted** и **DragCompleted** и использовать их для создания собственного пакета данных [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage).
 
 ## <a name="enable-dropping"></a>Включение отпускания
 
-Следующая разметка демонстрирует, как сделать перетаскивание доступным для конкретной области приложения, используя [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) в XAML. Если пользователь попытается отпустить перетаскиваемое содержимое в другом месте, система не позволит сделать это. Если вы хотите, чтобы пользователи могли использовать перетаскивание в любом месте вашего приложения, установите весь фон в качестве места переноса.
+Следующая разметка демонстрирует, как сделать перетаскивание доступным для конкретной области приложения, используя [**AllowDrop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) в XAML. Если пользователь попытается отпустить перетаскиваемое содержимое в другом месте, система не позволит сделать это. Если вы хотите, чтобы пользователи могли использовать перетаскивание в любом месте вашего приложения, установите весь фон в качестве места переноса.
 
 [!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
 
 
 ## <a name="handle-the-dragover-event"></a>Обработка события DragOver
 
-Событие [**DragOver**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.DragOver) возникает, когда пользователь перетаскивает элемент в приложении, но еще не завершил этот процесс. В этом обработчике необходимо с помощью свойства [**AcceptedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.AcceptedOperation) выбрать, какой вид операции будет поддерживать ваше приложение. Наиболее распространено копирование.
+Событие [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover) возникает, когда пользователь перетаскивает элемент в приложении, но еще не завершил этот процесс. В этом обработчике необходимо с помощью свойства [**AcceptedOperation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation) выбрать, какой вид операции будет поддерживать ваше приложение. Наиболее распространено копирование.
 
 [!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
 
 ## <a name="process-the-drop-event"></a>Обработка завершения перетаскивания
 
-Событие [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) возникает, когда пользователь отпускает элементы в допустимой области приложения. Обработайте их с помощью свойства [**DataView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DataView).
+Событие [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop) возникает, когда пользователь отпускает элементы в допустимой области приложения. Обработайте их с помощью свойства [**DataView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.dataview).
 
 Для простоты в примере ниже предположим, что пользователь перетащил одну фотографию напрямую. На самом деле пользователи могут перетаскивать несколько элементов разных форматов одновременно. Ваше приложение должно обрабатывать эту возможность, проверяя, какие типы файлов были перемещены перетаскиванием и сколько файлов существует, и обрабатывать каждый из них соответствующим образом. Вам также необходимо решить, следует ли уведомить пользователей, если они пытаются сделать что-то, что ваше приложение не поддерживает.
 
@@ -78,13 +78,13 @@ ms.locfileid: "57634399"
 
 ## <a name="customize-the-ui"></a>Настройка пользовательского интерфейса
 
-Система предоставляет пользовательский интерфейс по умолчанию для перетаскивания. Также можно настроить различные области пользовательского интерфейса, например пользовательские заголовки и глифы, или вообще отключить отображение пользовательского интерфейса. Чтобы настроить пользовательский интерфейс, используйте свойство [**DragEventArgs.DragUIOverride**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DragUIOverride).
+Система предоставляет пользовательский интерфейс по умолчанию для перетаскивания. Также можно настроить различные области пользовательского интерфейса, например пользовательские заголовки и глифы, или вообще отключить отображение пользовательского интерфейса. Чтобы настроить пользовательский интерфейс, используйте свойство [**DragEventArgs.DragUIOverride**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.draguioverride).
 
 [!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
 
 ## <a name="open-a-context-menu-on-an-item-you-can-drag-with-touch"></a>Открытие контекстного меню на элементе, который можно перетаскивать с помощью сенсорного управления
 
-При использовании сенсорного управления перетаскивание [**UIElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement) и открытие его контекстного меню выполняются аналогичными сенсорными жестами, каждый из которых начинается с нажатия и удерживания. Вот как система различает эти два действия над элементами в вашем приложении, поддерживающими оба действия: 
+При использовании сенсорного управления перетаскивание [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) и открытие его контекстного меню выполняются аналогичными сенсорными жестами, каждый из которых начинается с нажатия и удерживания. Вот как система различает эти два действия над элементами в вашем приложении, поддерживающими оба действия: 
 
 * Если пользователь нажмет и будет удерживать элемент и начнет перетаскивать его в пределах 500 миллисекунд, элемент перетаскивается, а контекстное меню не отображается. 
 * Если пользователь нажмет и будет удерживать элемент, но не начнет перетаскивать его в течение 500 миллисекунд, открывается контекстное меню. 
@@ -92,9 +92,9 @@ ms.locfileid: "57634399"
 
 ## <a name="designate-an-item-in-a-listview-or-gridview-as-a-folder"></a>Обозначение элемента в ListView или GridView в качестве папки
 
-Вы можете указать [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ListViewItem) или [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridViewItem) как папку. Это особенно удобно в сценариях TreeView и проводника. Для этого явно задайте свойству [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) значение **True** для этого элемента. 
+Вы можете указать [**ListViewItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) или [**GridViewItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) как папку. Это особенно удобно в сценариях TreeView и проводника. Для этого явно задайте свойству [**AllowDrop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) значение **True** для этого элемента. 
 
-Система автоматически отобразит соответствующие анимации перетаскивания в папку в противоположность элементу, не являющемся папкой. Код вашего приложения должен продолжать обрабатывать событие [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) элемента папки (а также элемента, не являющегося папкой), чтобы обновить источник данных и добавить перетаскиваемый элемент в целевую папку.
+Система автоматически отобразит соответствующие анимации перетаскивания в папку в противоположность элементу, не являющемся папкой. Код вашего приложения должен продолжать обрабатывать событие [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop) элемента папки (а также элемента, не являющегося папкой), чтобы обновить источник данных и добавить перетаскиваемый элемент в целевую папку.
 
 ## <a name="implementing-custom-drag-and-drop"></a>Реализация пользовательской функции перетаскивания
 
@@ -112,11 +112,11 @@ ms.locfileid: "57634399"
 ## <a name="see-also"></a>См. также
 
 * [Связь между приложениями](index.md)
-* [Свойства AllowDrop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx)
-* [CanDrag](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx)
-* [DragOver](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx)
-* [AcceptedOperation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.acceptedoperation.aspx)
-* [DataView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.dataview.aspx)
-* [DragUIOverride](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
-* [DROP](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
-* [IsDragSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isdragsource.aspx)
+* [Свойства AllowDrop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop)
+* [CanDrag](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag)
+* [DragOver](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
+* [AcceptedOperation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation)
+* [DataView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.dataview)
+* [DragUIOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.draguioverride)
+* [DROP](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+* [IsDragSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isdragsource)

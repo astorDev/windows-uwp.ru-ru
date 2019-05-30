@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f01aec2a0dc6010eab53122d69e64c57fe4f5c3d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 841903f9bc998af5ead2a3486c500487cb070855
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589929"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364295"
 ---
 # <a name="sliders"></a>Ползунки
 
@@ -25,7 +25,7 @@ ms.locfileid: "57589929"
 
 Ползунок – это элемент управления, который позволяет пользователю выбирать значение из диапазона путем перемещения бегунка по дорожке.
 
-> **Важные API**: [Класс Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx), [значение свойства](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx), [событию ValueChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+> **Важные API**: [Класс Slider](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider), [значение свойства](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [событию ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ![Элемент управления "Ползунок"](images/controls/slider.png)
 
@@ -100,7 +100,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-Получить и задать значение ползунка можно из свойства [Value](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx). Обеспечить ответ на изменения значения можно путем привязки к свойству Value или обработки события [ValueChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx).
+Получить и задать значение ползунка можно из свойства [Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value). Обеспечить ответ на изменения значения можно путем привязки к свойству Value или обработки события [ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged).
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -190,6 +190,6 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 - [Переключить коммутаторов](toggles.md)
-- [Класс Slider](https://msdn.microsoft.com/library/windows/apps/br209614)
+- [Класс Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)

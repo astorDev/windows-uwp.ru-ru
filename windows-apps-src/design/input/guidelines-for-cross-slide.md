@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d402bca61fc271b6d1e2e972cca280693f9ce3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 36ebabbfd8f7e5f40e31be44d6dc7e4483a199ee
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658129"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363705"
 ---
 # <a name="guidelines-for-cross-slide"></a>Руководство по скольжению по диагонали
 
@@ -20,9 +20,9 @@ ms.locfileid: "57658129"
 
 **Важные API**
 
--   [**CrossSliding**](https://msdn.microsoft.com/library/windows/apps/br241942)
--   [**CrossSlideThresholds**](https://msdn.microsoft.com/library/windows/apps/br241941)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+-   [**CrossSliding**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
+-   [**CrossSlideThresholds**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
+-   [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 Используйте скольжение по диагонали для поддержки выделения с помощью жеста прокрутки и перетаскивания (перемещения) с помощью жеста перетаскивания.
 
@@ -54,7 +54,7 @@ ms.locfileid: "57658129"
 
 Ниже приведены некоторые рекомендации по добавлению в приложение функции скольжения по диагонали.
 
-Используйте скольжение по диагонали для списков и коллекций, которые прокручиваются в одном направлении. Подробнее: [Добавление элементов управления ListView](https://msdn.microsoft.com/library/windows/apps/hh465382).
+Используйте скольжение по диагонали для списков и коллекций, которые прокручиваются в одном направлении. Подробнее: [Добавление элементов управления ListView](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10)).
 
 **Примечание**  в случаях, где может быть панорамировании окна области содержимого в двух направлениях, таких как веб-браузерами или e читателей, нажатие и удерживание синхронизированного взаимодействия следует использовать для вызова контекстного меню для объектов, таких как изображения и гиперссылки.
 

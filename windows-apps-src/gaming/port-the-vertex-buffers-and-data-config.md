@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, перенос, буферы вершин, данные, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c961a8852fb1e03e4e86209f62bda821b980f8c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8445339d442fb740e9e2aba5e9d1cb0388c746ef
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592819"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368244"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>Перенос данных и буферов вершин
 
@@ -20,9 +20,9 @@ ms.locfileid: "57592819"
 
 **Важные API**
 
--   [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)
--   [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)
--   [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588)
+-   [**ID3DDevice::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)
+-   [**ID3DDeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers)
+-   [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetindexbuffer)
 
 На этом шаге вы определите буферы вершин, которые будут содержать ваши сетки, и буферы индексов, которые позволят шейдерам обходить вершины в указанном порядке.
 
@@ -130,7 +130,7 @@ typedef struct
 
 В Direct3D необходимо предоставить макет входных данных, чтобы описать структуру данных вершин в буфере вершин, перед созданием буфера, а не перед рисованием геометрии. Для этого используется макет входных данных, соответствующий макету данных индивидуальных вершин в памяти. Очень важно делать это аккуратно!
 
-Здесь создаются описание входных данных как массив [ **D3D11\_ВХОДНОЙ\_элемент\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180) структуры.
+Здесь создаются описание входных данных как массив [ **D3D11\_ВХОДНОЙ\_элемент\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) структуры.
 
 Direct3D: Определите описание входной макет.
 
@@ -151,11 +151,11 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 ```
 
-Это описание входных данных определяет вершину как пару 3-координатных векторов: один трехмерный вектор для сохранения позиции вершины в координатах модели и второй трехмерный вектор для сохранения RGB-значения цвета, соответствующего вершине. В данном случае используется 3x32-битовый формат с плавающей точкой, элементы которого представляются в коде как `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. При любой обработке данных, которые будут использоваться шейдером, необходимо использовать библиотеку [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574), обеспечивающую правильную упаковку и выравнивание данных. (Например, используйте [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) или [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) для данных векторов и [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) для матриц.)
+Это описание входных данных определяет вершину как пару 3-координатных векторов: один трехмерный вектор для сохранения позиции вершины в координатах модели и второй трехмерный вектор для сохранения RGB-значения цвета, соответствующего вершине. В данном случае используется 3x32-битовый формат с плавающей точкой, элементы которого представляются в коде как `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. При любой обработке данных, которые будут использоваться шейдером, необходимо использовать библиотеку [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/ovw-xnamath-reference), обеспечивающую правильную упаковку и выравнивание данных. (Например, используйте [**XMFLOAT3**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3) или [**XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) для данных векторов и [**XMFLOAT4X4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4x4) для матриц.)
 
-Список всех возможных форматов, см. в разделе [ **DXGI\_ФОРМАТ**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+Список всех возможных форматов, см. в разделе [ **DXGI\_ФОРМАТ**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format).
 
-Когда макет входных данных для вершин определен, вы создаете объект макета. В следующем коде, его, чтобы написать **m\_inputLayout**, переменной типа **ComPtr** (который указывает на объект типа [ **ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)). **fileData** содержит компилированный объект вершинного шейдера из предыдущего шага, [Перенос шейдеров](port-the-shader-config.md).
+Когда макет входных данных для вершин определен, вы создаете объект макета. В следующем коде, его, чтобы написать **m\_inputLayout**, переменной типа **ComPtr** (который указывает на объект типа [ **ID3D11InputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout)). **fileData** содержит компилированный объект вершинного шейдера из предыдущего шага, [Перенос шейдеров](port-the-shader-config.md).
 
 Direct3D: Создайте входной макет, используемый буфера вершин.
 
@@ -188,11 +188,11 @@ glBindBuffer(GL_ARRAY_BUFFER, renderer->vertexBuffer);
 glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX) * CUBE_VERTICES, renderer->vertices, GL_STATIC_DRAW);   
 ```
 
-В Direct3D, доступный для шейдера буферы представляются в виде [ **D3D11\_SUBRESOURCE\_данных** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) структуры. Чтобы привязать расположение этого буфера объекта шейдера, необходимо создать CD3D11\_БУФЕРА\_структура DESC для каждого буфера с [ **ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)и задайте Буфер контекста устройства Direct3D путем вызова метода set относящимся к типу буфера, такие как [ **ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
+В Direct3D, доступный для шейдера буферы представляются в виде [ **D3D11\_SUBRESOURCE\_данных** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) структуры. Чтобы привязать расположение этого буфера объекта шейдера, необходимо создать CD3D11\_БУФЕРА\_структура DESC для каждого буфера с [ **ID3DDevice::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)и задайте Буфер контекста устройства Direct3D путем вызова метода set относящимся к типу буфера, такие как [ **ID3DDeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers).
 
 При установке буфера необходимо задать шаг по индексу (размер данных элемента для отдельной вершины) и смещение (место, где фактически начинается массив данных вершины) от начала буфера.
 
-Обратите внимание на то, что мы назначим указатель на **vertexIndices** массив **pSysMem** поле [ **D3D11\_SUBRESOURCE\_данных** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) структуры. Если это сделать неправильно, сетка будет поврежденной или пустой!
+Обратите внимание на то, что мы назначим указатель на **vertexIndices** массив **pSysMem** поле [ **D3D11\_SUBRESOURCE\_данных** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) структуры. Если это сделать неправильно, сетка будет поврежденной или пустой!
 
 Direct3D: Создайте и настройте буфера вершин
 
@@ -248,7 +248,7 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glDrawElements (GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 ```
 
-Процесс в Direct3D выполняется похожим образом, хотя и несколько более дидактически. Предоставьте буфер индексов как подчиненный ресурс Direct3D в [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385), созданный при настройке Direct3D. Для этого вызывается [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) с настроенным подчиненным ресурсом, как в следующем примере. (Опять же, обратите внимание, что необходимо назначить указатель на **cubeIndices** массив **pSysMem** поле [ **D3D11\_SUBRESOURCE\_данных** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) структуры.)
+Процесс в Direct3D выполняется похожим образом, хотя и несколько более дидактически. Предоставьте буфер индексов как подчиненный ресурс Direct3D в [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext), созданный при настройке Direct3D. Для этого вызывается [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetindexbuffer) с настроенным подчиненным ресурсом, как в следующем примере. (Опять же, обратите внимание, что необходимо назначить указатель на **cubeIndices** массив **pSysMem** поле [ **D3D11\_SUBRESOURCE\_данных** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) структуры.)
 
 Direct3D: Создание буфера индекса.
 
@@ -274,7 +274,7 @@ m_d3dContext->IASetIndexBuffer(
   0);
 ```
 
-Далее мы будем рисовать треугольники с помощью вызова [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (или [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) для неиндексированных вершин), как в следующем примере. (Для получения более подробных сведений перейдите к разделу [Рисование на экране](draw-to-the-screen.md).)
+Далее мы будем рисовать треугольники с помощью вызова [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) (или [**ID3D11DeviceContext::Draw**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw) для неиндексированных вершин), как в следующем примере. (Для получения более подробных сведений перейдите к разделу [Рисование на экране](draw-to-the-screen.md).)
 
 Direct3D: Нарисуйте индексированных вершины.
 
@@ -299,11 +299,11 @@ m_d3dContext->DrawIndexed(
 
 [Перенос GLSL](port-the-glsl.md)
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
-При структуризации Direct3D отдельно записывайте код, который вызывает методы для [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379), в метод, который вызывается каждый раз, когда требуется заново создавать ресурсы устройства. В шаблоне проекта Direct3D этот код находится в методах **CreateDeviceResource** объекта обработчика. С другой стороны, код, обновляющий контекст устройства ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), помещается в метод **Render**, поскольку именно здесь вы конструируете стадии шейдера и привязываете данные.
+При структуризации Direct3D отдельно записывайте код, который вызывает методы для [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device), в метод, который вызывается каждый раз, когда требуется заново создавать ресурсы устройства. В шаблоне проекта Direct3D этот код находится в методах **CreateDeviceResource** объекта обработчика. С другой стороны, код, обновляющий контекст устройства ([**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)), помещается в метод **Render**, поскольку именно здесь вы конструируете стадии шейдера и привязываете данные.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Практическое: порт простой модуль подготовки отчетов OpenGL ES 2.0 на Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)

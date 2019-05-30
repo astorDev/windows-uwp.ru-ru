@@ -8,12 +8,12 @@ ms.date: 01/24/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d81957c379bd948a50d08b980ff20debc6c223c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28a1bd46646deae8f6e6519d72295d42ce2766db
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611269"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359558"
 ---
 # <a name="landmarks-and-headings"></a>Ориентиры и заголовки
 
@@ -33,7 +33,7 @@ ms.locfileid: "57611269"
 
 Приложение "Параметры" будет доступно без ориентиров и заголовков, однако они повышают удобство его использования. Пользователь средства чтения с экрана можно легко и быстро получить к группе (ориентиров) они должны, а затем быстро получить вложенные группы (заголовок) также. 
 
-Используйте [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) для настройки элемента пользовательского интерфейса в качестве необходимого [типа ориентира](https://msdn.microsoft.com/library/windows/desktop/mt759299). Этот элемент пользовательского интерфейса с ориентиром будет содержать все другие элементы пользовательского интерфейса, которые связаны с этим ориентиром. 
+Используйте [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) для настройки элемента пользовательского интерфейса в качестве необходимого [типа ориентира](https://docs.microsoft.com/windows/desktop/WinAuto/landmark-type-identifiers). Этот элемент пользовательского интерфейса с ориентиром будет содержать все другие элементы пользовательского интерфейса, которые связаны с этим ориентиром. 
 
 Используйте [AutomationProperties.LocalizedLandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) для задания имени ориентиру. При выборе предварительно определенных типов ориентиров, таких как "основной" или "навигационный", эти имена будут использоваться в качестве имени ориентира. Однако при выборе настраиваемого типа ориентира необходимо задать имя ориентиру через это свойство. Это свойство также можно использовать для переопределения имен по умолчанию для ненастраиваемых типов ориентиров. 
 

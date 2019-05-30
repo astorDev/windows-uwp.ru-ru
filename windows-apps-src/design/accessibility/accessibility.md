@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f9cdfb8a20e273d5d9e5819fc1e28aba97e4296
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 157d0c2ef640f4059d532c26956419e7b3fd3cb4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611699"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362112"
 ---
 # <a name="accessibility"></a>Специальные возможности  
 
@@ -43,6 +43,6 @@ ms.locfileid: "57611699"
 | [Настраиваемые одноранговые классы автоматизации](custom-automation-peers.md) | Здесь описана концепция одноранговых элементов для модели автоматизации пользовательского интерфейса, а также способы реализации поддержки автоматизации для вашего собственного настраиваемого класса пользовательского интерфейса. |
 | [Шаблоны элементов управления и интерфейсы](control-patterns-and-interfaces.md) | Здесь перечислены шаблоны элементов управления модели автоматизации пользовательского интерфейса Майкрософт, классы, которыми пользуются клиенты для доступа к ним, и интерфейсы, которыми пользуются поставщики для их реализации. |
 
-## <a name="related-topics"></a>Статьи по теме  
-* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
+## <a name="related-topics"></a>См. также  
+* [**Windows.UI.Xaml.Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation) 
 * [Начало работы с экранного диктора](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)

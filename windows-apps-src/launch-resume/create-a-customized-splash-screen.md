@@ -6,32 +6,32 @@ ms.date: 02/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bed81def33eedb79619b49ff698a3f45f31bdb62
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bbc0c7c695a99354ee389118087773440b60fb20
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615899"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366284"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>Более продолжительное отображение экрана-заставки
 
 **Важные API**
 
--   [SplashScreen-класс](https://msdn.microsoft.com/library/windows/apps/br224763)
--   [Событие Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055)
--   [Метод Application.OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335)
+-   [SplashScreen-класс](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen)
+-   [Событие Window.SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged)
+-   [Метод Application.OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)
 
 Увеличьте длительность отображения экрана-заставки, создав и использовав расширенный экран-заставку для приложения. Этот расширенный экран имитирует экран-заставку, отображаемый при запуске приложения, но его можно настраивать. Если вы хотите показывать информацию о загрузке в реальном времени или дать приложению дополнительное время на подготовку начального пользовательского интерфейса, расширенный экран-заставка позволит определить взаимодействие с пользователем при запуске.
 
 > [!NOTE]
-> Фраза «расширенные экрана-заставки» в этом разделе относится к экрана-заставки, которая остается на экране в течение продолжительного периода времени. Это не значит, подкласс, производный от [экран-заставка](https://msdn.microsoft.com/library/windows/apps/br224763) класса.
+> Фраза «расширенные экрана-заставки» в этом разделе относится к экрана-заставки, которая остается на экране в течение продолжительного периода времени. Это не значит, подкласс, производный от [экран-заставка](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) класса.
 
 Убедитесь, что ваш расширенный экран-заставка точно имитирует экран-заставку, отображаемый по умолчанию. Для этого следуйте приведенным ниже рекомендациям.
 
 -   Страница расширенного экрана-заставки должна использовать изображение размером 620 x 300 пикселей, соответствующее изображению, которое указано для экрана-заставки в манифесте приложения (изображение экрана-заставки вашего приложения). В Microsoft Visual Studio 2015, параметры экрана заставки, хранятся в **экран-заставка** раздел **визуальные активы** вкладку в манифесте приложения (файл Package.appxmanifest).
 -   Расширенный экран-заставка должен использовать цвет фона, соответствующий цвету фона, который указан для экрана-заставки в манифесте приложения (фон экрана-заставки вашего приложения).
--   Код должен использовать [экран-заставка](https://msdn.microsoft.com/library/windows/apps/br224763) класс позволяет помещать изображение экрана-заставки приложения на одном экране координирует как экрана-заставки по умолчанию.
--   Ваш код должен реагировать на события изменения размера окна (например, если повернуть экран или приложение перемещается рядом с другим приложением на экране) с помощью [экран-заставка](https://msdn.microsoft.com/library/windows/apps/br224763) класс изменение положения элементов на экране расширенной заставки.
+-   Код должен использовать [экран-заставка](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) класс позволяет помещать изображение экрана-заставки приложения на одном экране координирует как экрана-заставки по умолчанию.
+-   Ваш код должен реагировать на события изменения размера окна (например, если повернуть экран или приложение перемещается рядом с другим приложением на экране) с помощью [экран-заставка](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) класс изменение положения элементов на экране расширенной заставки.
 
 Чтобы создать расширенный экран-заставку, имитирующий экран-заставку, который отображается по умолчанию, используйте процедуру, описанную ниже.
 
@@ -53,12 +53,12 @@ ms.locfileid: "57615899"
 
 В файле ExtendedSplash.xaml:
 
--   Изменение [фона](https://msdn.microsoft.com/library/windows/apps/br209396) свойство по умолчанию [сетки](https://msdn.microsoft.com/library/windows/apps/br242704) элемента в соответствии с цвет фона, задайте для экрана-заставки приложения в манифесте приложения (в **визуальные активы**раздела файла Package.appxmanifest). Светло-серого является цвет экрана-заставки по умолчанию (шестнадцатеричное значение \#464646). Обратите внимание, что этот элемент **Grid** предоставляется по умолчанию при создании новой **пустой страницы**. Не нужно обязательно использовать **Grid**, — это просто удобная основа для создания расширенного экрана-заставки.
--   Добавить [холст](https://msdn.microsoft.com/library/windows/apps/br209267) элемент [сетки](https://msdn.microsoft.com/library/windows/apps/br242704). **Canvas** используется для размещения изображения расширенного экрана-заставки.
--   Добавить [изображение](https://msdn.microsoft.com/library/windows/apps/br242752) элемент [холст](https://msdn.microsoft.com/library/windows/apps/br209267). Используйте для расширенного экрана-заставки то же изображение размером 600 x 320 пикселей, которое вы выбрали для экрана-заставки, отображаемого по умолчанию.
--   (Необязательно) Добавьте элемент управления «Ход выполнения», который покажет пользователям, что ваше приложение загружается. В этом разделе добавляет [ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538), а не определенный или неопределенным [ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529).
+-   Изменение [фона](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.backgroundproperty) свойство по умолчанию [сетки](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) элемента в соответствии с цвет фона, задайте для экрана-заставки приложения в манифесте приложения (в **визуальные активы**раздела файла Package.appxmanifest). Светло-серого является цвет экрана-заставки по умолчанию (шестнадцатеричное значение \#464646). Обратите внимание, что этот элемент **Grid** предоставляется по умолчанию при создании новой **пустой страницы**. Не нужно обязательно использовать **Grid**, — это просто удобная основа для создания расширенного экрана-заставки.
+-   Добавить [холст](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) элемент [сетки](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid). **Canvas** используется для размещения изображения расширенного экрана-заставки.
+-   Добавить [изображение](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) элемент [холст](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas). Используйте для расширенного экрана-заставки то же изображение размером 600 x 320 пикселей, которое вы выбрали для экрана-заставки, отображаемого по умолчанию.
+-   (Необязательно) Добавьте элемент управления «Ход выполнения», который покажет пользователям, что ваше приложение загружается. В этом разделе добавляет [ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), а не определенный или неопределенным [ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar).
 
-В следующем примере демонстрируется [сетки](https://msdn.microsoft.com/library/windows/apps/br242704) с следующие изменения и дополнения.
+В следующем примере демонстрируется [сетки](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) с следующие изменения и дополнения.
 
 ```xaml
     <Grid Background="#464646">
@@ -70,7 +70,7 @@ ms.locfileid: "57615899"
 ```
 
 > [!NOTE]
-> В этом примере задает ширину [ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538) до 20 пикселей. Можно вручную задать для ширины значение, подходящее для вашего приложения, но элемент управления не будет выполнять отрисовку при ширине меньше 20 пикселей.
+> В этом примере задает ширину [ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) до 20 пикселей. Можно вручную задать для ширины значение, подходящее для вашего приложения, но элемент управления не будет выполнять отрисовку при ширине меньше 20 пикселей.
 
 ## <a name="essential-code-for-an-extended-splash-screen-class"></a>Базовый код для класса расширенного экрана-заставки
 
@@ -81,7 +81,7 @@ ms.locfileid: "57615899"
 
 1.  **Добавьте необходимые пространства имен**
 
-    Вам потребуется добавить следующие пространства имен для **ExtendedSplash.xaml.cs** для доступа к [экран-заставка](https://msdn.microsoft.com/library/windows/apps/br224763) класс, [Rect](https://docs.microsoft.com/uwp/api/windows.foundation.rect) структуры и [ Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055) события.
+    Вам потребуется добавить следующие пространства имен для **ExtendedSplash.xaml.cs** для доступа к [экран-заставка](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) класс, [Rect](https://docs.microsoft.com/uwp/api/windows.foundation.rect) структуры и [ Window.SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged) события.
 
     ```cs
     using Windows.ApplicationModel.Activation;
@@ -105,7 +105,7 @@ ms.locfileid: "57615899"
     }
     ```
 
-    Эти переменные класса используются несколькими методами. В переменной `splashImageRect` хранятся координаты, в которых система показывает изображение экрана-заставки для приложения. `splash` Переменной хранилищ [экран-заставка](https://msdn.microsoft.com/library/windows/apps/br224763) объекта и `dismissed` отслеживаются в переменной, независимо от того, имеется ли на экране-заставке, которое отображается в системе были отключены.
+    Эти переменные класса используются несколькими методами. В переменной `splashImageRect` хранятся координаты, в которых система показывает изображение экрана-заставки для приложения. `splash` Переменной хранилищ [экран-заставка](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) объекта и `dismissed` отслеживаются в переменной, независимо от того, имеется ли на экране-заставке, которое отображается в системе были отключены.
 
 3.  **Определение конструктора для вашего класса, который правильно определяет положение изображения**
 
@@ -139,7 +139,7 @@ ms.locfileid: "57615899"
     }
     ```
 
-    Убедитесь, что для регистрации вашей [Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055) обработчик (`ExtendedSplash_OnResize` в примере) в конструкторе класса, чтобы приложение помещает изображение правильно в качестве расширенных заставки.
+    Убедитесь, что для регистрации вашей [Window.SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged) обработчик (`ExtendedSplash_OnResize` в примере) в конструкторе класса, чтобы приложение помещает изображение правильно в качестве расширенных заставки.
 
 4.  **Определите метод класса для размещения изображения в качестве расширенных заставки**
 
@@ -157,7 +157,7 @@ ms.locfileid: "57615899"
 
 5.  **(Необязательно) Определение метода класса для размещения элемента управления хода выполнения в качестве расширенных заставки**
 
-    Если вы решили добавить [ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538) на экране расширенной заставки, расположите его относительно изображение экрана-заставки. Добавьте следующий код в файл ExtendedSplash.xaml.cs, чтобы расположить **ProgressRing** по центру на 32 пикселя ниже изображения.
+    Если вы решили добавить [ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) на экране расширенной заставки, расположите его относительно изображение экрана-заставки. Добавьте следующий код в файл ExtendedSplash.xaml.cs, чтобы расположить **ProgressRing** по центру на 32 пикселя ниже изображения.
 
     ```cs
     void PositionRing()
@@ -169,7 +169,7 @@ ms.locfileid: "57615899"
 
 6.  **Внутри класса определите обработчик для события отклонено**
 
-    В ExtendedSplash.xaml.cs, отвечать при [SplashScreen.Dismissed](https://msdn.microsoft.com/library/windows/apps/br224764) событием, задав `dismissed` переменной класса значение true. Если ваше приложение предусматривает операции настройки, добавьте их в этот обработчик событий.
+    В ExtendedSplash.xaml.cs, отвечать при [SplashScreen.Dismissed](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.splashscreen.dismissed) событием, задав `dismissed` переменной класса значение true. Если ваше приложение предусматривает операции настройки, добавьте их в этот обработчик событий.
 
     ```cs
     // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
@@ -195,7 +195,7 @@ ms.locfileid: "57615899"
 
 7.  **Внутри класса определите обработчик событий Window.SizeChanged**
 
-    Подготовьте расширенный экран-заставку к изменению положения его элементов, если пользователь изменит размер окна. Этот код реагирует при [Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055) событие происходит путем записи новые координаты и расположения изображения. Если вы добавили на экран-заставку элемент управления «Ход выполнения», также измените его положение внутри этого обработчика событий.
+    Подготовьте расширенный экран-заставку к изменению положения его элементов, если пользователь изменит размер окна. Этот код реагирует при [Window.SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.sizechanged) событие происходит путем записи новые координаты и расположения изображения. Если вы добавили на экран-заставку элемент управления «Ход выполнения», также измените его положение внутри этого обработчика событий.
 
     ```cs
     void ExtendedSplash_OnResize(Object sender, WindowSizeChangedEventArgs e)
@@ -214,13 +214,13 @@ ms.locfileid: "57615899"
     ```
 
     > [!NOTE]
-    > Прежде чем пытаться получить расположение образа убедитесь, что переменная класса (`splash`) содержит допустимое [экран-заставка](https://msdn.microsoft.com/library/windows/apps/br224763) объекта, как показано в примере.
+    > Прежде чем пытаться получить расположение образа убедитесь, что переменная класса (`splash`) содержит допустимое [экран-заставка](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) объекта, как показано в примере.
 
      
 
 8.  **(Необязательно) Добавьте метод класса, чтобы восстановить состояние сохраненный сеанс**
 
-    Код, добавляемый [OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335) метод на шаге 4: [Измените обработчик активации запуска](#modify-the-launch-activation-handler) приложение для отображения расширенных заставку при запуске. Чтобы консолидировать все методы, связанные с запуск приложений в вашем классе расширенных заставка экрана, можно рассмотреть добавление метода в файл ExtendedSplash.xaml.cs для восстановления состояния приложения.
+    Код, добавляемый [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) метод на шаге 4: [Измените обработчик активации запуска](#modify-the-launch-activation-handler) приложение для отображения расширенных заставку при запуске. Чтобы консолидировать все методы, связанные с запуск приложений в вашем классе расширенных заставка экрана, можно рассмотреть добавление метода в файл ExtendedSplash.xaml.cs для восстановления состояния приложения.
 
     ```cs
     void RestoreState(bool loadState)
@@ -232,14 +232,14 @@ ms.locfileid: "57615899"
     }
     ```
 
-    При изменении обработчик запуска активации в App.xaml.cs, необходимо также установить `loadstate` значение true, если предыдущий [ApplicationExecutionState](https://msdn.microsoft.com/library/windows/apps/br224694) вашего приложения был **Terminated**. В этом случае метод `RestoreState` восстанавливает предыдущее состояние приложения. Обзор запуска, приостановки и завершения приложения см. в статье [Жизненный цикл приложения](app-lifecycle.md).
+    При изменении обработчик запуска активации в App.xaml.cs, необходимо также установить `loadstate` значение true, если предыдущий [ApplicationExecutionState](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ApplicationExecutionState) вашего приложения был **Terminated**. В этом случае метод `RestoreState` восстанавливает предыдущее состояние приложения. Обзор запуска, приостановки и завершения приложения см. в статье [Жизненный цикл приложения](app-lifecycle.md).
 
 ## <a name="modify-the-launch-activation-handler"></a>Измените обработчик события активации запуска
 
 
-При запуске приложения система передает информацию об экране-заставке обработчику событий активации запуска приложения. Эту информацию можно использовать, чтобы правильно расположить изображение на странице расширенного экрана-заставки. Можно получить эту информацию экрана заставки из активации аргументы события, которые передаются в приложение [OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335) обработчик (см. в разделе `args` переменной в следующем коде).
+При запуске приложения система передает информацию об экране-заставке обработчику событий активации запуска приложения. Эту информацию можно использовать, чтобы правильно расположить изображение на странице расширенного экрана-заставки. Можно получить эту информацию экрана заставки из активации аргументы события, которые передаются в приложение [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) обработчик (см. в разделе `args` переменной в следующем коде).
 
-Если вы уже не переопределены [OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335) обработчик для своего приложения, см. в разделе [жизненный цикл приложений](app-lifecycle.md) вы научитесь обрабатывать события активации.
+Если вы уже не переопределены [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) обработчик для своего приложения, см. в разделе [жизненный цикл приложений](app-lifecycle.md) вы научитесь обрабатывать события активации.
 
 Добавьте в файл App.xaml.cs следующий код для создания и отображения расширенного экрана-заставки.
 
@@ -261,7 +261,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 Приведенный ниже немного отличается от фрагменты, приведенные на предыдущих шагах.
 -   ExtendedSplash.xaml включает кнопку `DismissSplash`. При нажатии этой кнопки обработчик событий `DismissSplashButton_Click` вызывает метод `DismissExtendedSplash`. В приложении вызовите `DismissExtendedSplash`, когда приложение закончит загрузку ресурсов или инициализацию пользовательского интерфейса.
--   Это приложение также использует шаблон проекта приложения UWP, который использует [кадра](https://msdn.microsoft.com/library/windows/apps/br242682) навигации. Таким образом, в файле App.xaml.cs обработчик активации запуска ([OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335)) определяет `rootFrame` и использует его для задания содержимого окна приложения.
+-   Это приложение также использует шаблон проекта приложения UWP, который использует [кадра](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) навигации. Таким образом, в файле App.xaml.cs обработчик активации запуска ([OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)) определяет `rootFrame` и использует его для задания содержимого окна приложения.
 
 ### <a name="extendedsplashxaml"></a>ExtendedSplash.xaml
 
@@ -417,11 +417,11 @@ namespace SplashScreenExample
 }
 ```
 
-### <a name="appxamlcs"></a>App.XAML.cs
+### <a name="appxamlcs"></a>App.xaml.cs
 
 Этот проект был создан с помощью приложения UWP **пустое приложение (XAML)** шаблона проекта в Visual Studio. Оба обработчика событий, `OnNavigationFailed` и `OnSuspending`, создаются автоматически, и их не нужно менять для реализации расширенного экрана-заставки. В этом разделе меняется только `OnLaunched`.
 
-Если вы не использовали шаблон проекта для приложения, см. шаг 4: [Измените обработчик активации запуска](#modify-the-launch-activation-handler) пример измененного `OnLaunched` , которые не используют [кадра](https://msdn.microsoft.com/library/windows/apps/br242682) навигации.
+Если вы не использовали шаблон проекта для приложения, см. шаг 4: [Измените обработчик активации запуска](#modify-the-launch-activation-handler) пример измененного `OnLaunched` , которые не используют [кадра](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) навигации.
 
 ```cs
 using System;
@@ -538,17 +538,17 @@ namespace SplashScreenExample
 }
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Жизненный цикл приложения](app-lifecycle.md)
 
 **Reference**
 
-* [Пространство имен Windows.ApplicationModel.Activation](https://msdn.microsoft.com/library/windows/apps/br224766)
-* [Класс Windows.ApplicationModel.Activation.SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763)
-* [Свойство Windows.ApplicationModel.Activation.SplashScreen.ImageLocation](https://msdn.microsoft.com/library/windows/apps/br224765)
-* [Событие Windows.ApplicationModel.Core.CoreApplicationView.Activated](https://msdn.microsoft.com/library/windows/apps/br225018)
+* [Пространство имен Windows.ApplicationModel.Activation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation)
+* [Класс Windows.ApplicationModel.Activation.SplashScreen](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen)
+* [Свойство Windows.ApplicationModel.Activation.SplashScreen.ImageLocation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.splashscreen.imagelocation)
+* [Событие Windows.ApplicationModel.Core.CoreApplicationView.Activated](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)
 
  
 

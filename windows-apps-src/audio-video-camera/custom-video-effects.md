@@ -9,34 +9,34 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e48febb3fb49a35fe256e58cf7c80b4abe93267
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5d1aa710485d38f20433e842b3d6418f911252e2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623089"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361810"
 ---
 # <a name="custom-video-effects"></a>Пользовательские видеоэффекты
 
 
 
 
-В этой статье описано, как создать компонент среды выполнения Windows, реализующий интерфейс [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) для создания пользовательских эффектов для видеопотоков. Пользовательские эффекты можно использовать с несколькими различными API среды выполнения Windows, включая [[MediaCapture]](https://msdn.microsoft.com/library/windows/apps/br241124), который предоставляет доступ к камере устройства, и [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), который позволяет создавать сложные композиции из мультимедийных клипов.
+В этой статье описано, как создать компонент среды выполнения Windows, реализующий интерфейс [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect) для создания пользовательских эффектов для видеопотоков. Пользовательские эффекты можно использовать с несколькими различными API среды выполнения Windows, включая [[MediaCapture]](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), который предоставляет доступ к камере устройства, и [**MediaComposition**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaComposition), который позволяет создавать сложные композиции из мультимедийных клипов.
 
 ## <a name="add-a-custom-effect-to-your-app"></a>Добавление пользовательского эффекта в приложение
 
 
-Пользовательский видеоэффект определяется в классе, реализующем интерфейс [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788). Этот класс невозможно включить непосредственно в проект приложения. Вместо этого необходимо использовать компонент среды выполнения Windows для размещения вашего класса видеоэффекта.
+Пользовательский видеоэффект определяется в классе, реализующем интерфейс [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect). Этот класс невозможно включить непосредственно в проект приложения. Вместо этого необходимо использовать компонент среды выполнения Windows для размещения вашего класса видеоэффекта.
 
 **Добавление компонента среды выполнения Windows для вашего видео эффекта**
 
 1.  Открыв свое решение в Microsoft Visual Studio, перейдите в меню **Файл** и выберите пункт **Добавить-&gt;Новый проект**.
-2.  Выберите тип проекта **Компонент среды выполнения Windows (универсальное приложение)**.
+2.  Выберите тип проекта **Компонент среды выполнения Windows (универсальное приложение)** .
 3.  Для соответствия этому примеру задайте проекту название *VideoEffectComponent*. Это название будет использоваться в коде далее.
 4.  Нажмите кнопку **ОК**.
 5.  Шаблон проекта создает класс под названием Class1.cs. В **Обозревателе решений** щелкните правой кнопкой мыши по значку для Class1.cs и выберите **Переименовать**.
 6.  Переименуйте файл в *ExampleVideoEffect.cs*. Visual Studio отобразит уведомление с вопросом о том, не следует ли обновить все упоминания с использованием нового имени. нажмите кнопку **Да**.
-7.  Откройте **ExampleVideoEffect.cs** и дополните определение класса для реализации интерфейса [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788).
+7.  Откройте **ExampleVideoEffect.cs** и дополните определение класса для реализации интерфейса [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect).
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
 
@@ -49,18 +49,18 @@ ms.locfileid: "57623089"
 ## <a name="implement-the-ibasicvideoeffect-interface-using-software-processing"></a>Реализация интерфейса IBasicVideoEffect путем программной обработки
 
 
-Ваш видеоэффект должен реализовывать все методы и свойства интерфейса [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788). Этот раздел содержит простую пошаговую реализацию этого интерфейса, для которой используется программная обработка.
+Ваш видеоэффект должен реализовывать все методы и свойства интерфейса [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect). Этот раздел содержит простую пошаговую реализацию этого интерфейса, для которой используется программная обработка.
 
 ### <a name="close-method"></a>Метод Close
 
-Система вызывает метод [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) для вашего класса, когда соответствующий эффект должен будет завершить работу. Этот метод следует использовать для утилизации всех созданных вами ресурсов. Аргументом этого метода является [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason), и он позволяет узнать, был ли эффект закрыт в нормальном режиме либо произошла ошибка, либо эффект не поддерживает необходимый формат кодирования.
+Система вызывает метод [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.close) для вашего класса, когда соответствующий эффект должен будет завершить работу. Этот метод следует использовать для утилизации всех созданных вами ресурсов. Аргументом этого метода является [**MediaEffectClosedReason**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaEffectClosedReason), и он позволяет узнать, был ли эффект закрыт в нормальном режиме либо произошла ошибка, либо эффект не поддерживает необходимый формат кодирования.
 
 [!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
 
 
 ### <a name="discardqueuedframes-method"></a>Метод DiscardQueuedFrames
 
-Метод [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) вызывается, когда ваш эффект необходимо сбросить. Типовой сценарий такой ситуации — ваш эффект хранит ранее обработанные кадры для использования в обработке текущего кадра. При вызове этого метода необходимо утилизировать набор предыдущих сохраненных вами кадров. Этот метод можно использовать для сброса любого состояния, связанного с предыдущими кадрами, а не только с накопленными видеокадрами.
+Метод [**DiscardQueuedFrames**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.discardqueuedframes) вызывается, когда ваш эффект необходимо сбросить. Типовой сценарий такой ситуации — ваш эффект хранит ранее обработанные кадры для использования в обработке текущего кадра. При вызове этого метода необходимо утилизировать набор предыдущих сохраненных вами кадров. Этот метод можно использовать для сброса любого состояния, связанного с предыдущими кадрами, а не только с накопленными видеокадрами.
 
 
 [!code-cs[DiscardQueuedFrames](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetDiscardQueuedFrames)]
@@ -69,55 +69,55 @@ ms.locfileid: "57623089"
 
 ### <a name="isreadonly-property"></a>Свойство IsReadOnly
 
-Свойство [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) позволяет системе узнать, будет ли ваш эффект записывать данные в выходной поток эффекта. Если ваше приложение не изменяет видеокадры, например применяется эффект, который только анализирует видеокадры, этому свойству следует задать значение true, и это позволит системе эффективно копировать поток ввода кадров в поток вывода кадров за вас.
+Свойство [**IsReadOnly**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.isreadonly) позволяет системе узнать, будет ли ваш эффект записывать данные в выходной поток эффекта. Если ваше приложение не изменяет видеокадры, например применяется эффект, который только анализирует видеокадры, этому свойству следует задать значение true, и это позволит системе эффективно копировать поток ввода кадров в поток вывода кадров за вас.
 
 > [!TIP]
-> Если свойству [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) задано значение true, система копирует кадр ввода в кадр вывода перед вызовом [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794). Присвоение свойству **IsReadOnly** значения true не лишает вас возможности производить запись в кадры вывода эффекта в методе **ProcessFrame**.
+> Если свойству [**IsReadOnly**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.isreadonly) задано значение true, система копирует кадр ввода в кадр вывода перед вызовом [**ProcessFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.processframe). Присвоение свойству **IsReadOnly** значения true не лишает вас возможности производить запись в кадры вывода эффекта в методе **ProcessFrame**.
 
 
 [!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)]
 
 ### <a name="setencodingproperties-method"></a>Метод SetEncodingProperties
 
-Система вызывает [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) на эффекте, чтобы предоставить вам информацию о свойствах кодирования для видеопотока, на котором работает эффект. Этот метод также предоставляет ссылку на устройство Direct3D, используемое для аппаратной отрисовки. Использование такого устройства показано в примере аппаратной обработки ниже в этой статье.
+Система вызывает [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties.windows) на эффекте, чтобы предоставить вам информацию о свойствах кодирования для видеопотока, на котором работает эффект. Этот метод также предоставляет ссылку на устройство Direct3D, используемое для аппаратной отрисовки. Использование такого устройства показано в примере аппаратной обработки ниже в этой статье.
 
 [!code-cs[SetEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetEncodingProperties)]
 
 
 ### <a name="supportedencodingproperties-property"></a>Свойство SupportedEncodingProperties
 
-Система проверяет свойство [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799), чтобы определить, какие свойства кодирования поддерживаются вашим эффектом. Обратите внимание, что если потребитель вашего эффекта не может кодировать видео с использованием указанных вами свойств, он вызовет метод [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) на вашем эффекте и удалит этот эффект из видеоконвейера.
+Система проверяет свойство [**SupportedEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedencodingproperties), чтобы определить, какие свойства кодирования поддерживаются вашим эффектом. Обратите внимание, что если потребитель вашего эффекта не может кодировать видео с использованием указанных вами свойств, он вызовет метод [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.close) на вашем эффекте и удалит этот эффект из видеоконвейера.
 
 
 [!code-cs[SupportedEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedEncodingProperties)]
 
 
 > [!NOTE] 
-> Если вы вернете пустой список объектов [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) при вызове **SupportedEncodingProperties**, система по умолчанию перейдет на кодирование ARGB32.
+> Если вы вернете пустой список объектов [**VideoEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties) при вызове **SupportedEncodingProperties**, система по умолчанию перейдет на кодирование ARGB32.
 
  
 
 ### <a name="supportedmemorytypes-property"></a>Свойство SupportedMemoryTypes
 
-Система проверяет свойство [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801), чтобы определить, будет ли ваш эффект получать доступ к видеокадрам в программной памяти или в аппаратной памяти (GPU). Если вы вернете [**MediaMemoryTypes.Cpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), вашему эффекту будут передаваться кадры ввода и вывода, содержащие данные изображений в объектах [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358). Если вы вернете **MediaMemoryTypes.Gpu**, вашему эффекту будут передаваться кадры ввода и вывода, содержащие данные изображений в объектах [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505).
+Система проверяет свойство [**SupportedMemoryTypes**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes), чтобы определить, будет ли ваш эффект получать доступ к видеокадрам в программной памяти или в аппаратной памяти (GPU). Если вы вернете [**MediaMemoryTypes.Cpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaMemoryTypes), вашему эффекту будут передаваться кадры ввода и вывода, содержащие данные изображений в объектах [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap). Если вы вернете **MediaMemoryTypes.Gpu**, вашему эффекту будут передаваться кадры ввода и вывода, содержащие данные изображений в объектах [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface).
 
 [!code-cs[SupportedMemoryTypes](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedMemoryTypes)]
 
 
 > [!NOTE]
-> Если вы укажете [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), система будет использовать память либо GPU, либо системы, в зависимости от того, какой вариант будет эффективнее для конвейера. При использовании этого значения необходимо провести проверку в методе [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794), чтобы узнать, содержит ли передаваемый методу объект [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) или [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) какие-либо данные, и затем соответствующим образом обработать кадр.
+> Если вы укажете [**MediaMemoryTypes.GpuAndCpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaMemoryTypes), система будет использовать память либо GPU, либо системы, в зависимости от того, какой вариант будет эффективнее для конвейера. При использовании этого значения необходимо провести проверку в методе [**ProcessFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.processframe), чтобы узнать, содержит ли передаваемый методу объект [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) или [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) какие-либо данные, и затем соответствующим образом обработать кадр.
 
  
 
 ### <a name="timeindependent-property"></a>Свойство TimeIndependent
 
-Свойство [**TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) позволяет системе узнать, не требуется ли вашему эффекту однородная синхронизация. Если установлено значение true, система может использовать оптимизации, которые улучшают работу эффекта.
+Свойство [**TimeIndependent**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.timeindependent) позволяет системе узнать, не требуется ли вашему эффекту однородная синхронизация. Если установлено значение true, система может использовать оптимизации, которые улучшают работу эффекта.
 
 [!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
 
 ### <a name="setproperties-method"></a>Метод SetProperties
 
-Метод [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) позволяет использующему ваш эффект приложению настраивать параметры эффекта. Свойства передаются в виде сопоставления имен свойств и значений [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054).
+Метод [**SetProperties**](https://docs.microsoft.com/uwp/api/windows.media.imediaextension.setproperties) позволяет использующему ваш эффект приложению настраивать параметры эффекта. Свойства передаются в виде сопоставления имен свойств и значений [**IPropertySet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IPropertySet).
 
 
 [!code-cs[SetProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetProperties)]
@@ -130,9 +130,9 @@ ms.locfileid: "57623089"
 
 ### <a name="processframe-method"></a>Метод ProcessFrame
 
-Именно в методе [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) ваш эффект изменяет данные изображения видеопотока. Метод вызывается один раз на кадр, и ему передается объект [**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826). Этот объект содержит входной объект [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917), содержащий входящий кадр, который требуется обработать, и выходной объект **VideoFrame**, в который вы записываете данные изображения, которые затем будут переданы остальным компонентам видеоконвейера. Каждый из этих объектов **VideoFrame** объектов имеет свойство [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) и свойство [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920), но то, какое из этих двух свойств можно использовать, определяется значением, возвращаемым из свойства [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801).
+Именно в методе [**ProcessFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) ваш эффект изменяет данные изображения видеопотока. Метод вызывается один раз на кадр, и ему передается объект [**ProcessVideoFrameContext**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.ProcessVideoFrameContext). Этот объект содержит входной объект [**VideoFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.VideoFrame), содержащий входящий кадр, который требуется обработать, и выходной объект **VideoFrame**, в который вы записываете данные изображения, которые затем будут переданы остальным компонентам видеоконвейера. Каждый из этих объектов **VideoFrame** объектов имеет свойство [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.videoframe.softwarebitmap) и свойство [**Direct3DSurface**](https://docs.microsoft.com/uwp/api/windows.media.videoframe.direct3dsurface), но то, какое из этих двух свойств можно использовать, определяется значением, возвращаемым из свойства [**SupportedMemoryTypes**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes).
 
-В этом примере показана простая реализация метода **ProcessFrame** с использованием программной обработки. Дополнительные сведения о работе с объектами [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) см. в разделе [Обработка изображений](imaging.md). Пример реализации **ProcessFrame** с помощью аппаратной обработки приводится далее в этой статье.
+В этом примере показана простая реализация метода **ProcessFrame** с использованием программной обработки. Дополнительные сведения о работе с объектами [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) см. в разделе [Обработка изображений](imaging.md). Пример реализации **ProcessFrame** с помощью аппаратной обработки приводится далее в этой статье.
 
 Для доступа к буферу данных **SoftwareBitmap** требуется COM-взаимодействие, поэтому необходимо включить пространство имен **System.Runtime.InteropServices** в файл класса вашего эффекта.
 
@@ -152,9 +152,9 @@ ms.locfileid: "57623089"
 
  
 
-Теперь вы можете добавить реализацию метода **ProcessFrame**. Сначала этот метод получает объект [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) от программных растровых изображений и ввода, и вывода. Обратите внимание, что кадр вывода открывается для записи, а кадр ввода — для чтения. Далее выполняется получение [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671) для каждого буфера путем вызова [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046). Затем производится получение фактических данных буфера путем преобразования объектов **IMemoryBufferReference** в описанный выше интерфейс COM-взаимодействия **IMemoryByteAccess** и последующего вызова **GetBuffer**.
+Теперь вы можете добавить реализацию метода **ProcessFrame**. Сначала этот метод получает объект [**BitmapBuffer**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapBuffer) от программных растровых изображений и ввода, и вывода. Обратите внимание, что кадр вывода открывается для записи, а кадр ввода — для чтения. Далее выполняется получение [**IMemoryBufferReference**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IMemoryBufferReference) для каждого буфера путем вызова [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference). Затем производится получение фактических данных буфера путем преобразования объектов **IMemoryBufferReference** в описанный выше интерфейс COM-взаимодействия **IMemoryByteAccess** и последующего вызова **GetBuffer**.
 
-Теперь, когда буферы данных получены, можно выполнять чтение из буфера ввода и запись в буфер вывода. Компоновку буфера можно получить путем вызова [**GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330), что предоставит информацию о ширине, шаге и начальном смещении буфера. Параметр бит на пиксель определяется свойствами кодирования, ранее заданными с помощью метода [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884). Информация о формате буфера используется для поиска индекса ввода в буфер для каждого пикселя. Значение пикселей из исходного буфера копируется в целевой буфер, а значения цвета при этом умножаются свойством FadeValue, заданным для этого эффекта, чтобы уменьшить яркость на указанную величину.
+Теперь, когда буферы данных получены, можно выполнять чтение из буфера ввода и запись в буфер вывода. Компоновку буфера можно получить путем вызова [**GetPlaneDescription**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription), что предоставит информацию о ширине, шаге и начальном смещении буфера. Параметр бит на пиксель определяется свойствами кодирования, ранее заданными с помощью метода [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties.windows). Информация о формате буфера используется для поиска индекса ввода в буфер для каждого пикселя. Значение пикселей из исходного буфера копируется в целевой буфер, а значения цвета при этом умножаются свойством FadeValue, заданным для этого эффекта, чтобы уменьшить яркость на указанную величину.
 
 [!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
 
@@ -180,31 +180,31 @@ ms.locfileid: "57623089"
 [!code-cs[UsingWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetUsingWin2D)]
 
 
-Поскольку этот эффект будет использовать память GPU для работы с данными изображений, следует возвращать [**MediaMemoryTypes.Gpu**](https://msdn.microsoft.com/library/windows/apps/dn764822) из свойства [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801).
+Поскольку этот эффект будет использовать память GPU для работы с данными изображений, следует возвращать [**MediaMemoryTypes.Gpu**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaMemoryTypes) из свойства [**SupportedMemoryTypes**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes).
 
 [!code-cs[SupportedMemoryTypesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedMemoryTypesWin2D)]
 
 
-Установите свойства кодирования, которые ваш эффект будет поддерживать с использованием свойства [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799). При работе с Win2D следует использовать кодирование ARGB32.
+Установите свойства кодирования, которые ваш эффект будет поддерживать с использованием свойства [**SupportedEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedencodingproperties). При работе с Win2D следует использовать кодирование ARGB32.
 
 [!code-cs[SupportedEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedEncodingPropertiesWin2D)]
 
 
-Используйте метод [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) для создания нового объекта Win2D **CanvasDevice** из объекта [**IDirect3DDevice**](https://msdn.microsoft.com/library/windows/apps/dn895092), переданного в метод.
+Используйте метод [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties.windows) для создания нового объекта Win2D **CanvasDevice** из объекта [**IDirect3DDevice**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice), переданного в метод.
 
 [!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
 
 
-Реализация [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) идентична предыдущему примеру с программной обработкой. В данном примере используется свойство **BlurAmount** для настройки эффекта размытия Win2D.
+Реализация [**SetProperties**](https://docs.microsoft.com/uwp/api/windows.media.imediaextension.setproperties) идентична предыдущему примеру с программной обработкой. В данном примере используется свойство **BlurAmount** для настройки эффекта размытия Win2D.
 
 [!code-cs[SetPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetPropertiesWin2D)]
 
 [!code-cs[BlurAmountWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetBlurAmountWin2D)]
 
 
-Последним шагом является реализация метода [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794), который действительно обрабатывает данные изображения.
+Последним шагом является реализация метода [**ProcessFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.processframe), который действительно обрабатывает данные изображения.
 
-С помощью интерфейсов API Win2D создается **CanvasBitmap** из свойства [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) кадра ввода. **CanvasRenderTarget** создается из свойства **Direct3DSurface** кадра вывода, а **CanvasDrawingSession** создается из этого целевого объекта прорисовки. Новый эффект Win2D **GaussianBlurEffect** инициализируется с помощью свойства **BlurAmount**, которое наш эффект предоставляет посредством [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986). В завершение вызывается метод **CanvasDrawingSession.DrawImage** для отображения растрового изображения ввода в целевом объекте прорисовки с использованием эффекта размытия.
+С помощью интерфейсов API Win2D создается **CanvasBitmap** из свойства [**Direct3DSurface**](https://docs.microsoft.com/uwp/api/windows.media.videoframe.direct3dsurface) кадра ввода. **CanvasRenderTarget** создается из свойства **Direct3DSurface** кадра вывода, а **CanvasDrawingSession** создается из этого целевого объекта прорисовки. Новый эффект Win2D **GaussianBlurEffect** инициализируется с помощью свойства **BlurAmount**, которое наш эффект предоставляет посредством [**SetProperties**](https://docs.microsoft.com/uwp/api/windows.media.imediaextension.setproperties). В завершение вызывается метод **CanvasDrawingSession.DrawImage** для отображения растрового изображения ввода в целевом объекте прорисовки с использованием эффекта размытия.
 
 [!code-cs[ProcessFrameWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetProcessFrameWin2D)]
 
@@ -220,11 +220,11 @@ ms.locfileid: "57623089"
 
 ### <a name="add-your-custom-effect-to-a-camera-video-stream"></a>Добавьте ваш пользовательский эффект к потоку видеокамеры
 
-Выполнив инструкции из статьи [Удобный доступ к предварительному просмотру на камере](simple-camera-preview-access.md), можно настроить простой поток предварительного просмотра с камеры. Выполнение этих шагов позволит создать инициализированный объект [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124), который используется для доступа к видеопотоку камеры.
+Выполнив инструкции из статьи [Удобный доступ к предварительному просмотру на камере](simple-camera-preview-access.md), можно настроить простой поток предварительного просмотра с камеры. Выполнение этих шагов позволит создать инициализированный объект [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), который используется для доступа к видеопотоку камеры.
 
-Чтобы добавить настраиваемый видеоэффект в тот же поток камеры, сначала создайте новый объект [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055), передав пространство имен и имя класса для соответствующего эффекта. Затем вызовите метод [**AddVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn878035) объекта **MediaCapture**, чтобы добавить эффект в указанный поток. В этом примере значение параметра [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) используется, чтобы указать, что эффект необходимо добавить в поток предварительного просмотра. Если приложение поддерживает видеофиксацию, для добавления эффекта в поток фиксации можно воспользоваться параметром **MediaStreamType.VideoRecord**. **AddVideoEffect** возвращает объект [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985), который представляет пользовательский эффект. Для настройки конфигурации нужного эффекта можно воспользоваться методом SetProperties.
+Чтобы добавить настраиваемый видеоэффект в тот же поток камеры, сначала создайте новый объект [**VideoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.VideoEffectDefinition), передав пространство имен и имя класса для соответствующего эффекта. Затем вызовите метод [**AddVideoEffect**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync) объекта **MediaCapture**, чтобы добавить эффект в указанный поток. В этом примере значение параметра [**MediaStreamType.VideoPreview**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType) используется, чтобы указать, что эффект необходимо добавить в поток предварительного просмотра. Если приложение поддерживает видеофиксацию, для добавления эффекта в поток фиксации можно воспользоваться параметром **MediaStreamType.VideoRecord**. **AddVideoEffect** возвращает объект [**IMediaExtension**](https://docs.microsoft.com/uwp/api/Windows.Media.IMediaExtension), который представляет пользовательский эффект. Для настройки конфигурации нужного эффекта можно воспользоваться методом SetProperties.
 
-После добавления эффекта вызывается [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) для запуска потока предварительного просмотра.
+После добавления эффекта вызывается [**StartPreviewAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.startpreviewasync) для запуска потока предварительного просмотра.
 
 [!code-cs[AddVideoEffectAsync](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddVideoEffectAsync)]
 
@@ -232,13 +232,13 @@ ms.locfileid: "57623089"
 
 ### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>Добавление настраиваемого эффекта в клип с помощью MediaComposition
 
-Общие инструкции по созданию мультимедийных композиций из видеоклипов см. в разделе [Мультимедийные композиции и редактирование](media-compositions-and-editing.md). В следующем фрагменте кода показано создание простой мультимедийной композиции с использованием настраиваемого видеоэффекта. Объект [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) создается вызовом метода [**CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607), который передает видеофайл, созданный пользователем с помощью средства [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), а клип добавляется в новый объект [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646). Затем создается новый объект [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055), который передает пространство имен и имя класса вашего эффекта конструктору. Наконец. определение эффекта добавляется в коллекцию [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) объекта **MediaClip**.
+Общие инструкции по созданию мультимедийных композиций из видеоклипов см. в разделе [Мультимедийные композиции и редактирование](media-compositions-and-editing.md). В следующем фрагменте кода показано создание простой мультимедийной композиции с использованием настраиваемого видеоэффекта. Объект [**MediaClip**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaClip) создается вызовом метода [**CreateFromFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync), который передает видеофайл, созданный пользователем с помощью средства [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker), а клип добавляется в новый объект [**MediaComposition**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaComposition). Затем создается новый объект [**VideoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.VideoEffectDefinition), который передает пространство имен и имя класса вашего эффекта конструктору. Наконец. определение эффекта добавляется в коллекцию [**VideoEffectDefinitions**](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.videoeffectdefinitions) объекта **MediaClip**.
 
 
 [!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [Доступ к предварительной версии простой камеры](simple-camera-preview-access.md)
 * [Создание и редактирование мультимедиа](media-compositions-and-editing.md)
 * [Документация по Win2D](https://go.microsoft.com/fwlink/p/?LinkId=519078)

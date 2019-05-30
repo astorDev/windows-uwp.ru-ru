@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d, буферы, однородности, атрибуты вершин
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a1db1890e47257412a7e2ee8e08c40164d0d927
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9d79a4573438aec49d4aa1b828c90e72c04150de
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656249"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368157"
 ---
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>Сравнение атрибутов буферов, однородностей и вершин OpenGL ES 2.0 с Direct3D
 
@@ -20,9 +20,9 @@ ms.locfileid: "57656249"
 
 **Важные API**
 
--   [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
--   [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512)
--   [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454)
+-   [**ID3D11Device1::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)
+-   [**ID3D11Device1::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout)
+-   [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout)
 
 В процессе переноса в Direct3D 11 из OpenGL ES 2.0 необходимо изменить синтаксис и поведение API для передачи данных между приложением и программами-шейдерами.
 
@@ -33,10 +33,10 @@ ms.locfileid: "57656249"
 | OpenGL ES 2.0             | Direct3D 11                                                                                                                                                                         |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Однородный элемент                   | Поле буфера констант (**cbuffer**)                                                                                                                                                |
-| Атрибут                 | Поле элемента буфера вершин, обозначенное в макете входных данных и отмеченное с помощью конкретной семантики HLSL                                                                                |
-| Объект буфера             | буфер; См. в разделе [ **D3D11\_SUBRESOURCE\_данных** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) и [ **D3D11\_БУФЕРА\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092)и для определения общего использования буфера. |
-| Объект буфера кадров (FBO) | Целевые объекты обработчика (см. [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) с [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635))                                       |
-| Задний буфер               | Цепочка буферов с поверхностью из «заднего буфера» (см. [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) с присоединением [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343))                       |
+| атрибут                 | Поле элемента буфера вершин, обозначенное в макете входных данных и отмеченное с помощью конкретной семантики HLSL                                                                                |
+| Объект буфера             | буфер; См. в разделе [ **D3D11\_SUBRESOURCE\_данных** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) и [ **D3D11\_БУФЕРА\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)и для определения общего использования буфера. |
+| Объект буфера кадров (FBO) | Целевые объекты обработчика (см. [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) с [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d))                                       |
+| Задний буфер               | Цепочка буферов с поверхностью из «заднего буфера» (см. [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1) с присоединением [**IDXGISurface1**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface1))                       |
 
  
 
@@ -73,9 +73,9 @@ glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int) * CUBE_INDICES, renderer->vert
 
 В Direct3D 11 элементы данных буферов рассматриваются как «подчиненные ресурсы». В их число могут входить как отдельные элементы данных вершин, так и текстуры с MIP-картами.
 
--   Заполнение [ **D3D11\_SUBRESOURCE\_данных** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) структуру с конфигурацией для элемента данных буфера.
--   Заполнение [ **D3D11\_БУФЕРА\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) структуры в зависимости от размера отдельных элементов в буфере, а также тип буфера.
--   Вызовите [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575) с этими двумя структурами.
+-   Заполнение [ **D3D11\_SUBRESOURCE\_данных** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) структуру с конфигурацией для элемента данных буфера.
+-   Заполнение [ **D3D11\_БУФЕРА\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) структуры в зависимости от размера отдельных элементов в буфере, а также тип буфера.
+-   Вызовите [**ID3D11Device1::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) с этими двумя структурами.
 
 Direct3D 11: Создание и заполнение буфера вершин и буфер индексов.
 
@@ -106,7 +106,7 @@ m_d3dDevice->CreateBuffer(
     
 ```
 
-Доступные для записи построители текстуры или карты, такие как буфер кадров, могут создаваться как объекты [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635). Их можно привязать как ресурсы к [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) или [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628), которые после отрисовки могут соответственно отображаться с привязанной цепочкой буферов или передаваться в шейдер.
+Доступные для записи построители текстуры или карты, такие как буфер кадров, могут создаваться как объекты [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d). Их можно привязать как ресурсы к [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) или [**ID3D11ShaderResourceView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11shaderresourceview), которые после отрисовки могут соответственно отображаться с привязанной цепочкой буферов или передаваться в шейдер.
 
 Direct3D 11: Создание объекта буфера кадров.
 
@@ -147,7 +147,7 @@ Open GL ES 2.0: Универсальный код объявления GLSL
 uniform mat4 u_mvpMatrix;
 ```
 
-Direct3D обозначает данные однородных элементов как "буферы констант", которые — аналогично однородным элементам — содержат постоянные данные, передаваемые в отдельные шейдеры. Как и для буферов однородных элементов, важно упаковать данные буферов констант в памяти соответственно способу, который ожидается шейдером для их интерпретации. С помощью DirectXMath типов (таких как [ **XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)) вместо типов платформы (такие как **float\***  или **float\[4\]** ) обеспечивает выравнивание элемента соответствующими данными.
+Direct3D обозначает данные однородных элементов как "буферы констант", которые — аналогично однородным элементам — содержат постоянные данные, передаваемые в отдельные шейдеры. Как и для буферов однородных элементов, важно упаковать данные буферов констант в памяти соответственно способу, который ожидается шейдером для их интерпретации. С помощью DirectXMath типов (таких как [ **XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4)) вместо типов платформы (такие как **float\***  или **float\[4\]** ) обеспечивает выравнивание элемента соответствующими данными.
 
 Буферы констант должны иметь сопоставление с регистром GPU, который используется для ссылки на эти данные в GPU. Данные упаковываются в расположении регистра согласно макету буфера.
 
@@ -224,7 +224,7 @@ attribute vec4 a_position;
 attribute vec4 a_color;                     
 ```
 
-В некоторых случаях тот же процесс используется для Direct3D. Вместо атрибутов предоставляются данные вершин в буферах входных данных, которые включают буферы вершин и соответствующие буферы индексов. Однако поскольку в Direct3D нет объявления "attribute" (атрибут), необходимо указать макет входных данных, который объявляет отдельные компоненты элементов данных в буфере вершин, и семантику HLSL, которая указывает, где и как эти компоненты интерпретируются вершинным шейдером. Семантика HLSL требует, чтобы вы определили использование каждого компонента с помощью конкретной строки, которая информирует модуль шейдера о его предназначении. Например, данные позиции вершины отмечаются как POSITION, данные нормали отмечаются как NORMAL, а данные цвета вершины отмечаются как COLOR. (Других этапов шейдера также требуют определенной семантики и семантике у различных интерпретаций, в зависимости от этапа шейдера.) Дополнительные сведения о семантике HLSL. в статье [порта конвейер шейдера](change-your-shader-loading-code.md) и [HLSL семантику](https://msdn.microsoft.com/library/windows/desktop/bb205574).
+В некоторых случаях тот же процесс используется для Direct3D. Вместо атрибутов предоставляются данные вершин в буферах входных данных, которые включают буферы вершин и соответствующие буферы индексов. Однако поскольку в Direct3D нет объявления "attribute" (атрибут), необходимо указать макет входных данных, который объявляет отдельные компоненты элементов данных в буфере вершин, и семантику HLSL, которая указывает, где и как эти компоненты интерпретируются вершинным шейдером. Семантика HLSL требует, чтобы вы определили использование каждого компонента с помощью конкретной строки, которая информирует модуль шейдера о его предназначении. Например, данные позиции вершины отмечаются как POSITION, данные нормали отмечаются как NORMAL, а данные цвета вершины отмечаются как COLOR. (Других этапов шейдера также требуют определенной семантики и семантике у различных интерпретаций, в зависимости от этапа шейдера.) Дополнительные сведения о семантике HLSL. в статье [порта конвейер шейдера](change-your-shader-loading-code.md) и [HLSL семантику](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps).
 
 Объединенный процесс установки буферов вершин и индексов и задания макета входных данных называют стадией "сборки входных данных" (IA) в конвейере графики Direct3D.
 
@@ -255,7 +255,7 @@ m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 -   Позиция вершины представлена в основной памяти как XMFLOAT3, то есть как ориентированный массив из трех 32-разрядных значений с плавающей точкой для координат (x, y, z).
 -   Значение цвета вершины представлено в основной памяти как XMFLOAT4, то есть как ориентированный массив из четырех 32-разрядных значений с плавающей точкой для цвета (RGBA).
 
-Вы назначаете семантику для каждого элемента и тип формата. Затем описание передается в [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512). Макет входных данных используется при вызове [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454), когда вы настраиваете сборку входных данных в нашем методе обработки.
+Вы назначаете семантику для каждого элемента и тип формата. Затем описание передается в [**ID3D11Device1::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout). Макет входных данных используется при вызове [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout), когда вы настраиваете сборку входных данных в нашем методе обработки.
 
 Direct3D 11: Входной макет с определенной семантики описания
 

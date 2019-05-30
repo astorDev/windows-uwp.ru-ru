@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, игры, DirectX, загрузка, растеризация, mesh-объект, точечный рисунок, двумерный, трехмерный
 ms.localizationpriority: medium
-ms.openlocfilehash: afd08d62182bd0980f43ce1c4578c1181f8a6d2f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 942a775fca262903b1ee72831b4eae6612d25786
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613749"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368867"
 ---
 # <a name="fundamentals-of-directx-programming"></a>Основы программирования на DirectX
 
@@ -42,7 +42,7 @@ ms.locfileid: "57613749"
 <td align="left"><p>Создание двумерной графики с помощью DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/windows/uwp/graphics-concepts/index">Руководство по обучения графики Direct3D</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/graphics-concepts/index">Руководство по обучения графики Direct3D</a></p></td>
 <td align="left"><p>Пояснение концепций графики Direct3D.</p></td>
 </tr>
 <tr class="odd">

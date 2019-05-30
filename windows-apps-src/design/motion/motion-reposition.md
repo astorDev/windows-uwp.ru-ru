@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e2a96169f44802c62f341029b9bc1c5eb7e31de
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4c743f68a5cbfd493f9d384166b62cbd494884ee
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647729"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366042"
 ---
 # <a name="reposition-animations"></a>Анимации перемещения
 
@@ -21,7 +21,7 @@ ms.locfileid: "57647729"
 
 Используйте анимацию перемещения для перемещения элементов в новое положение.
 
-> **Важные API**: [**Класс RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210421), [ **RepositionThemeTransition-класс**](https://msdn.microsoft.com/library/windows/apps/br210429)
+> **Важные API**: [**Класс RepositionThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation), [ **RepositionThemeTransition-класс**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
 
@@ -31,11 +31,11 @@ ms.locfileid: "57647729"
 
 ## <a name="related-articles"></a>Связанные статьи
 
-* [Общие сведения об анимации](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Анимация изменяет положение](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
-* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**Класс RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210421)
-* [**Класс RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210429)
+* [Общие сведения об анимации](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Анимация изменяет положение](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
+* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**Класс RepositionThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation)
+* [**Класс RepositionThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
 
 
  
