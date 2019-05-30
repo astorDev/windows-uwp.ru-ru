@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 51c2435c8edeac2431198b7b5f3d9b1a307b5b78
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4aeba58af61cffa33626c64cebcbade272af109b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648849"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368605"
 ---
 # <a name="how-to-activate-an-app-directx-and-c"></a>Активация приложения (DirectX и C++)
 
@@ -22,9 +22,9 @@ ms.locfileid: "57648849"
 ## <a name="register-the-app-activation-event-handler"></a>Регистрация обработчика события активации приложения
 
 
-Сначала зарегистрируйтесь для обработки события [**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), которое возникает при запуске и инициализации приложения операционной системой.
+Сначала зарегистрируйтесь для обработки события [**CoreApplicationView::Activated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated), которое возникает при запуске и инициализации приложения операционной системой.
 
-Добавьте этот код в реализацию метода [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) вашего поставщика представлений (в примере он называется **MyViewProvider**):
+Добавьте этот код в реализацию метода [**IFrameworkView::Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize) вашего поставщика представлений (в примере он называется **MyViewProvider**):
 
 ```cpp
 void App::Initialize(CoreApplicationView^ applicationView)
@@ -42,7 +42,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 ## <a name="activate-the-corewindow-instance-for-the-app"></a>Активация экземпляра CoreWindow для приложения
 
 
-При запуске приложения необходимо получить ссылку на [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) для приложения. **CoreWindow** содержит диспетчер сообщений о событиях окон, который ваше приложение использует для обработки событий окон. Получите ссылку с помощью обратного вызова для события активации приложения. Для этого необходимо вызвать [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589). Получив ссылку, активируйте главное окно приложения, вызвав [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254).
+При запуске приложения необходимо получить ссылку на [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) для приложения. **CoreWindow** содержит диспетчер сообщений о событиях окон, который ваше приложение использует для обработки событий окон. Получите ссылку с помощью обратного вызова для события активации приложения. Для этого необходимо вызвать [**CoreWindow::GetForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.getforcurrentthread). Получив ссылку, активируйте главное окно приложения, вызвав [**CoreWindow::Activate**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.activate).
 
 ```cpp
 void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^ args)
@@ -55,7 +55,7 @@ void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^
 ## <a name="start-processing-event-message-for-the-main-app-window"></a>Запуск обработки сообщения о событии для главного окна приложения
 
 
-Обратные вызовы происходят при обработке сообщений о событии диспетчером [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) для окна приложения [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Обратный вызов не будет запущен, если вы не вызовете [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) из основного цикла вашего приложения (реализованного в методе поставщика представлений [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)).
+Обратные вызовы происходят при обработке сообщений о событии диспетчером [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) для окна приложения [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). Обратный вызов не будет запущен, если вы не вызовете [**CoreDispatcher::ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) из основного цикла вашего приложения (реализованного в методе поставщика представлений [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run)).
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -82,7 +82,7 @@ void App::Run()
 }
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Приостановка приложения (DirectX и C++)](how-to-suspend-an-app-directx-and-cpp.md)

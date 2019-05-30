@@ -6,12 +6,12 @@ ms.topic: article
 keywords: начало работы, uwp, windows 10, обучающий курс, параметры, сохранение параметров, загрузка параметров
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4aa56bf24d2dfa1fd4ae1947a5b0edf7f312ea2f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 490dd8f0f3841fae089626ec9c283d54cc0d8cd9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614639"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370489"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>Загрузка и сохранение параметров в приложении UWP
 
@@ -86,7 +86,7 @@ if (composite != null)
 
 | API | Описание |
 |------|---------------|
-| [ApplicationData.LocalSettings](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.temporaryfolder) | Получает контейнер параметров приложения из локального хранилища данных приложения. |
+| [ApplicationData.LocalSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) | Получает контейнер параметров приложения из локального хранилища данных приложения. |
 | [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | Получает контейнер параметров приложения из перемещаемого хранилища данных приложения. |
 | [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | Контейнер для параметров приложения, который поддерживает создание, удаление, перечисление и обход иерархии контейнеров. |
 | [Пространство имен Windows.UI.ApplicationSettings](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Содержит классы, которые вы будете использовать для определения параметров приложения, отображающихся на панели параметров оболочки Windows. |

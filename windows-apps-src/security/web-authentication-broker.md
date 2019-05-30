@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: 473b7ef9f4efacbbe78e1fdb5563695f8211bca8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c8130c6a8e4d8441fdf8ff60c702bd1ae30bae6e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606749"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372266"
 ---
 # <a name="web-authentication-broker"></a>Брокер веб-проверки подлинности
 
 
 
 
-В этой статье описывается, как подключить ваше приложение универсальной платформы Windows (UWP) к поставщику сетевых удостоверений, использующему такие протоколы проверки подлинности, как OpenID или OAuth, например, Facebook, Twitter, Flickr, Instagram, и т. д. Метод [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) отправляет запрос поставщику сетевых удостоверений и получает маркер доступа, описывающий ресурсы поставщика, к которым имеет доступ приложение.
+В этой статье описывается, как подключить ваше приложение универсальной платформы Windows (UWP) к поставщику сетевых удостоверений, использующему такие протоколы проверки подлинности, как OpenID или OAuth, например, Facebook, Twitter, Flickr, Instagram, и т. д. Метод [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) отправляет запрос поставщику сетевых удостоверений и получает маркер доступа, описывающий ресурсы поставщика, к которым имеет доступ приложение.
 
 >[!NOTE]
 >Чтобы получить полный рабочий примера кода, клонируйте [репозиторий WebAuthenticationBroker на GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620622).
@@ -35,7 +35,7 @@ ms.locfileid: "57606749"
 
 URI запроса состоит из адреса, по которому поставщику отправляется запрос проверки подлинности, и другой необходимой информации (например, идентификатора приложения или секретных данных), а также URI перенаправления, по которому переходит пользователь, завершивший проверку подлинности, и ожидаемого типа ответа. Вы можете выяснить у поставщика, какие именно параметры необходимы.
 
-URI запроса отправляется как параметр *requestUri* метода [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066). Это должен быть безопасный адрес (который начинается с `https://`).
+URI запроса отправляется как параметр *requestUri* метода [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync). Это должен быть безопасный адрес (который начинается с `https://`).
 
 В следующем примере показано, как составляется URI запроса.
 
@@ -50,7 +50,7 @@ System.Uri endURI = new System.Uri(endURL);
 ## <a name="connect-to-the-online-provider"></a>Подключение к поставщику
 
 
-Для подключения к поставщику сетевых удостоверений и получения маркера доступа вызывается метод [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066). В этом методе в качестве параметра *requestUri* берется URI, созданный на предыдущем шаге, а в качестве параметра *callbackUri* — URI, выбранный для перенаправления пользователя.
+Для подключения к поставщику сетевых удостоверений и получения маркера доступа вызывается метод [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync). В этом методе в качестве параметра *requestUri* берется URI, созданный на предыдущем шаге, а в качестве параметра *callbackUri* — URI, выбранный для перенаправления пользователя.
 
 ```cs
 string result;
@@ -87,14 +87,14 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->Помимо [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) пространство имен [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) включает метод [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425). Не вызывайте этот метод. Он предназначен для приложений, предназначенных только для Windows Phone 8.1 и является устаревшим, начиная с Windows 10.
+>Помимо [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) пространство имен [**Windows.Security.Authentication.Web**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web) включает метод [**AuthenticateAndContinue**](https://docs.microsoft.com/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods). Не вызывайте этот метод. Он предназначен для приложений, предназначенных только для Windows Phone 8.1 и является устаревшим, начиная с Windows 10.
 
 ## <a name="connecting-with-single-sign-on-sso"></a>Подключение с единым входом
 
 
-По умолчанию брокер веб-проверки подлинности не разрешает сохранять файлы cookie. Из-за этого даже в том случае, когда пользователь приложения указывает, что не хочет выходить из приложения (например, установив флажок в диалоговом окне входа в систему поставщика), ему придется выполнять вход каждый раз при обращении к ресурсам данного поставщика. Чтобы выполнить вход с помощью единого входа, ваш поставщик сетевых удостоверений должен включить единый вход для брокера веб-проверки подлинности, а ваше приложение должно вызвать перегруженный метод [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068), где не применяется параметр *callbackUri* parameter. Это позволит брокеру веб-проверки подлинности хранить сохраненные файлы cookie, чтобы для будущих вызовов проверки подлинности, совершаемых тем же приложением, пользователю не требовалось выполнять повторный вход (пользователь фактически остается в системе до истечения срока действия маркера доступа).
+По умолчанию брокер веб-проверки подлинности не разрешает сохранять файлы cookie. Из-за этого даже в том случае, когда пользователь приложения указывает, что не хочет выходить из приложения (например, установив флажок в диалоговом окне входа в систему поставщика), ему придется выполнять вход каждый раз при обращении к ресурсам данного поставщика. Чтобы выполнить вход с помощью единого входа, ваш поставщик сетевых удостоверений должен включить единый вход для брокера веб-проверки подлинности, а ваше приложение должно вызвать перегруженный метод [**AuthenticateAsync**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync), где не применяется параметр *callbackUri* parameter. Это позволит брокеру веб-проверки подлинности хранить сохраненные файлы cookie, чтобы для будущих вызовов проверки подлинности, совершаемых тем же приложением, пользователю не требовалось выполнять повторный вход (пользователь фактически остается в системе до истечения срока действия маркера доступа).
 
-В целях поддержки единого входа поставщик должен разрешить вам зарегистрировать URI перенаправления в форме `ms-app://<appSID>`, где `<appSID>` — это идентификатор безопасности для вашего приложения. Идентификатор безопасности приложения можно найти на странице разработчика вашего приложения или путем вызова метода [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069).
+В целях поддержки единого входа поставщик должен разрешить вам зарегистрировать URI перенаправления в форме `ms-app://<appSID>`, где `<appSID>` — это идентификатор безопасности для вашего приложения. Идентификатор безопасности приложения можно найти на странице разработчика вашего приложения или путем вызова метода [**GetCurrentApplicationCallbackUri**](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.getcurrentapplicationcallbackuri).
 
 ```cs
 string result;

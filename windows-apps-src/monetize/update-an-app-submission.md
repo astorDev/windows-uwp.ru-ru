@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, отправка приложения, обновление
 ms.localizationpriority: medium
-ms.openlocfilehash: b61508edf2ebc2ab155110189fe67df63e2bab30
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 77c033ff09d56448f42d1f8084265ac0aa5d5212
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634619"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371432"
 ---
 # <a name="update-an-app-submission"></a>Обновление отправки приложения
 
@@ -19,7 +19,7 @@ ms.locfileid: "57634619"
 
 Дополнительные сведения об использовании этого метода в процессе создания отправки приложения с помощью API отправки Microsoft Store см. в разделе [Управление отправками приложений](manage-app-submissions.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для использования этого метода сначала необходимо сделать следующее:
 
@@ -38,17 +38,17 @@ ms.locfileid: "57634619"
 
 ### <a name="request-header"></a>Заголовок запроса
 
-| Заголовок        | Тип   | Описание                                                                 |
+| Header        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | Строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
+| Authorization | строка | Обязательный. Маркер доступа Azure AD в форме **носителя** &lt; *маркера*&gt;. |
 
 
 ### <a name="request-parameters"></a>Параметры запроса
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | Строка | Обязательный. Код продукта в Магазине для приложения, отправку которого необходимо обновить. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | Строка | Обязательный. Идентификатор отправки для обновления. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки приложения](create-an-app-submission.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.  |
+| applicationId | строка | Обязательный. Код продукта в Магазине для приложения, отправку которого необходимо обновить. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| submissionId | строка | Обязательный. Идентификатор отправки для обновления. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки приложения](create-an-app-submission.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.  |
 
 
 ### <a name="request-body"></a>Тело запроса
@@ -57,25 +57,25 @@ ms.locfileid: "57634619"
 
 | Значение      | Тип   | Описание                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| applicationCategory           | Строка  |   Строка, указывающая [категорию или подкатегорию](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) для вашего приложения. Категории и подкатегории объединяются в одну строку с помощью символа подчеркивания "_", например **BooksAndReference_EReader**.      |  
+| applicationCategory           | строка  |   Строка, указывающая [категорию или подкатегорию](https://docs.microsoft.com/windows/uwp/publish/category-and-subcategory-table) для вашего приложения. Категории и подкатегории объединяются в одну строку с помощью символа подчеркивания "_", например **BooksAndReference_EReader**.      |  
 | pricing           |  Объект  | Объект, содержащий сведения о цене приложения. Дополнительные сведения см. в разделе [Ресурс Pricing](manage-app-submissions.md#pricing-object).       |   
-| visibility           |  Строка  |  Видимость приложения. Может принимать одно из следующих значений. <ul><li>Hidden (Скрыто)</li><li>Public (Общее)</li><li>Private (Частное)</li><li>NotSet (Не задано)</li></ul>       |   
-| targetPublishMode           | Строка  | Режим публикации для отправки. Может принимать одно из следующих значений. <ul><li>Immediate (Незамедлительно)</li><li>Manual (Вручную)</li><li>SpecificDate (Указанная дата)</li></ul> |
-| targetPublishDate           | Строка  | Дата публикации отправки в формате ISO 8601, если для *targetPublishMode* задано значение SpecificDate.  |  
+| visibility           |  строка  |  Видимость приложения. Может принимать одно из следующих значений. <ul><li>Hidden (Скрыто)</li><li>Public (Общее)</li><li>Private (Частное)</li><li>NotSet (Не задано)</li></ul>       |   
+| targetPublishMode           | строка  | Режим публикации для отправки. Может принимать одно из следующих значений. <ul><li>Immediate (Незамедлительно)</li><li>Manual (Вручную)</li><li>SpecificDate (Указанная дата)</li></ul> |
+| targetPublishDate           | строка  | Дата публикации отправки в формате ISO 8601, если для *targetPublishMode* задано значение SpecificDate.  |  
 | listings           |   Объект  |  Словарь пар "ключ-значение", где каждый ключ является кодом страны, а каждое значение — объект [ресурса Listing](manage-app-submissions.md#listing-object), содержащий данные описания приложения.       |   
-| hardwarePreferences           |  Массив  |   Массив строк, определяющих [предпочтения оборудования](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences) для приложения. Может принимать одно из следующих значений. <ul><li>Сенсорный ввод</li><li>Клавиатура</li><li>Мышь</li><li>Камера</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony (Телефония)</li></ul>     |   
-| automaticBackupEnabled           |  Логический  |   Указывает, может ли Windows включать данные этого приложения в автоматические резервные копии, записываемые в OneDrive. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).   |   
-| canInstallOnRemovableMedia           |  Логический  |   Указывает, могут ли клиенты устанавливать приложение на съемный носитель. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
+| hardwarePreferences           |  Массив  |   Массив строк, определяющих [предпочтения оборудования](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties) для приложения. Может принимать одно из следующих значений. <ul><li>Сенсорный ввод</li><li>Клавиатура</li><li>Мышь</li><li>Камера</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony (Телефония)</li></ul>     |   
+| automaticBackupEnabled           |  Логический  |   Указывает, может ли Windows включать данные этого приложения в автоматические резервные копии, записываемые в OneDrive. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).   |   
+| canInstallOnRemovableMedia           |  Логический  |   Указывает, могут ли клиенты устанавливать приложение на съемный носитель. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | isGameDvrEnabled           |  Логический |   Указывает, включена ли для приложения функция DVR для игр.    |   
 | gamingOptions           |  Объект |   Массив, содержащий один [ресурс параметров игры](manage-app-submissions.md#gaming-options-object), который определяет относящиеся к игре параметры для приложения.     |   
-| hasExternalInAppProducts           |     Логический          |   Указывает, позволяет ли приложение пользователям делать покупки без использования коммерческой системы Microsoft Store. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
-| meetAccessibilityGuidelines           |    Логический           |  Указывает, проверено ли приложение на соответствие рекомендациям по специальным возможностям. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).      |   
-| notesForCertification           |  Строка  |   Содержит [заметки по сертификации](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) приложения.    |    
+| hasExternalInAppProducts           |     Логический          |   Указывает, позволяет ли приложение пользователям делать покупки без использования коммерческой системы Microsoft Store. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).     |   
+| meetAccessibilityGuidelines           |    Логический           |  Указывает, проверено ли приложение на соответствие рекомендациям по специальным возможностям. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).      |   
+| notesForCertification           |  строка  |   Содержит [заметки по сертификации](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification) приложения.    |    
 | applicationPackages           |   Массив  | Содержит объекты, предоставляющие сведения о каждом пакете в отправке. Дополнительные сведения см. в разделе [Пакет приложения](manage-app-submissions.md#application-package-object). При вызове этого метода для обновления отправки приложения в теле запроса должны присутствовать только значения *fileName*, *fileStatus*, *minimumDirectXVersion* и *minimumSystemRam* этих объектов. Другие значения заполняются с помощью центра партнеров.   |    
 | packageDeliveryOptions    | Объект  | Содержит параметры постепенного выпуска пакета и обязательного обновления для отправки. Подробнее см. в разделе [Объект параметров доставки пакета](manage-app-submissions.md#package-delivery-options-object).  |
-| enterpriseLicensing           |  Строка  |  Одно из значений, связанных с [корпоративным лицензированием](manage-app-submissions.md#enterprise-licensing), указывающих на поведение приложения в отношении корпоративного лицензирования.  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  Логический   |  Указывает, разрешено ли Майкрософт [делать приложение доступным для будущих семейств устройств Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
-| allowTargetFutureDeviceFamilies           | Логический   |  Указывает, может ли приложение [быть предназначено для будущих семейств устройств Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).     |   
+| enterpriseLicensing           |  строка  |  Одно из значений, связанных с [корпоративным лицензированием](manage-app-submissions.md#enterprise-licensing), указывающих на поведение приложения в отношении корпоративного лицензирования.  |    
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  Логический   |  Указывает, разрешено ли Майкрософт [делать приложение доступным для будущих семейств устройств Windows 10](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability).    |    
+| allowTargetFutureDeviceFamilies           | Логический   |  Указывает, может ли приложение [быть предназначено для будущих семейств устройств Windows 10](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability).     |   
 | trailers           |  Массив |   Массив, содержащий до [ресурсов трейлеров](manage-app-submissions.md#trailer-object), представляющие видеотрейлеры для описания приложения.   |   
 
 
@@ -297,7 +297,7 @@ Content-Type: application/json
 | 409  | Не удалось обновить отправки из-за текущего состояния приложения или приложение использует функцию центра партнеров, которая [в настоящее время не поддерживается API отправки Microsoft Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Получить Отправка приложения](get-an-app-submission.md)

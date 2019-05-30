@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 3dprinting трехмерной печати
 ms.localizationpriority: medium
-ms.openlocfilehash: 4013341a3e4e44d6ac2df66d58d4114313573d2a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 712efde0293edff6134309ac2d6d9105413a2877
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57652249"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370427"
 ---
 # <a name="3d-printing-from-your-app"></a>Трехмерная печать из приложения
 
 **Важные API**
 
--   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/dn998169)
+-   [**Windows.Graphics.Printing3D**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D)
 
 Узнайте, как добавить функцию трехмерной печати в универсальное приложение для Windows. В этом разделе рассматривается, как загрузить трехмерные геометрические данные в приложение и открыть диалоговое окно трехмерной печати после того, как вы убедитесь, что ваша трехмерная модель пригодна для печати и выполнена нужном формате. Работающий пример этих процедур см. в статье [Пример трехмерной печати UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting).
 
@@ -27,7 +27,7 @@ ms.locfileid: "57652249"
 ## <a name="setup"></a>Установка
 
 
-Добавьте пространство имен [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/dn998169) в класс приложения, где требуется реализовать возможности трехмерной печати.
+Добавьте пространство имен [**Windows.Graphics.Printing3D**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D) в класс приложения, где требуется реализовать возможности трехмерной печати.
 
 [!code-cs[3DPrintNamespace](./code/3dprinthowto/cs/MainPage.xaml.cs#Snippet3DPrintNamespace)]
 
@@ -35,7 +35,7 @@ ms.locfileid: "57652249"
 
 [!code-cs[OtherNamespaces](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOtherNamespaces)]
 
-Затем добавьте в класс некоторые полезные поля-члены. Объявите объект [**Print3DTask**](https://msdn.microsoft.com/library/windows/apps/dn998044), представляющий задачу печати, которую требуется передать драйверу печати. Объявите объект [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) для хранения исходного файла трехмерных данных, которые будут загружаться в приложение. Объявите объект [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/dn998063), представляющий готовую для печати трехмерную модель со всеми необходимыми метаданными.
+Затем добавьте в класс некоторые полезные поля-члены. Объявите объект [**Print3DTask**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DTask), представляющий задачу печати, которую требуется передать драйверу печати. Объявите объект [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) для хранения исходного файла трехмерных данных, которые будут загружаться в приложение. Объявите объект [**Printing3D3MFPackage**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Printing3D3MFPackage), представляющий готовую для печати трехмерную модель со всеми необходимыми метаданными.
 
 [!code-cs[DeclareVars](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeclareVars)]
 
@@ -56,7 +56,7 @@ ms.locfileid: "57652249"
 
 Методы, с помощью которых ваше приложение получает трехмерные геометрические данные, будут варьироваться. Приложение может извлечь трехмерные данные из сканирования, скачать данные модели с веб-ресурса или создать трехмерную сетку программным способом с помощью математических формул или пользовательского ввода. Для простоты в этом примере мы загрузим файл с трехмерными данными (любого из нескольких распространенных типов файлов) в память программы памяти устройства. [Библиотека моделей 3D Builder](https://developer.microsoft.com/windows/hardware/3d-builder-model-library) предоставляет разнообразные модели, которые легко можно загрузить на устройство.
 
-В методе `OnLoadClick` используйте класс [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) для загрузки отдельного файла в память приложения.
+В методе `OnLoadClick` используйте класс [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) для загрузки отдельного файла в память приложения.
 
 [!code-cs[FileLoad](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileLoad)]
 
@@ -65,7 +65,7 @@ ms.locfileid: "57652249"
 На этом этапе можно загрузить файл данных 3D в памяти приложения. Однако геометрические данные 3D могут быть представлены в самых разных форматах, не все из которых подходят для трехмерной печати. В Windows 10 используется тип файла в формате создания 3D (.3mf) для всех задач трехмерной печати.
 
 > [!NOTE]  
-> Тип файлов 3MF поддерживает в том числе функциональные возможности, не описанные в этом руководстве. Подробнее о типе файлов 3MF и функциональных возможностях, предоставляемых производителям и потребителям трехмерных продуктов, см. в [спецификации 3MF](https://3mf.io/what-is-3mf/3mf-specification/). Чтобы узнать, как использовать эти возможности с помощью API-интерфейсов Windows 10, ознакомьтесь с учебником [Создание пакета 3MF](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf).
+> Тип файлов 3MF поддерживает в том числе функциональные возможности, не описанные в этом руководстве. Подробнее о типе файлов 3MF и функциональных возможностях, предоставляемых производителям и потребителям трехмерных продуктов, см. в [спецификации 3MF](https://3mf.io/what-is-3mf/3mf-specification/). Чтобы узнать, как использовать эти возможности с помощью API-интерфейсов Windows 10, ознакомьтесь с учебником [Создание пакета 3MF](https://docs.microsoft.com/windows/uwp/devices-sensors/generate-3mf).
 
 Приложение [3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) может открывать файлы наиболее распространенных 3D-форматов и сохранять их в виде 3MF-файлов. В этом примере, где тип файла может варьироваться, простейшим решением будет открыть приложение 3D Builder и предложить пользователю сохранить импортированные данные в виде 3MF-файла, а затем заново загрузить их.
 
@@ -78,26 +78,26 @@ ms.locfileid: "57652249"
 
 Не все данные трехмерной модели можно напечатать, даже в 3MF-файле. Чтобы принтер мог правильно определить, какое пространство заполнять, а какое — оставлять пустым, печатаемые модели должны представлять собой цельную бесшовную структуру, иметь обращенные наружу нормали к поверхности и разностороннюю геометрию. С этим могут возникать самые разные проблемы, и обнаружить их в сложных формах весьма затруднительно. К счастью, современные программные решения отлично справляются с задачей преобразования необработанных геометрических данных в доступные для печати трехмерные фигуры. Этот процесс называется *восстановлением* модели и выполняется методом `OnFixClick`.
 
-Необходимо преобразовать файл трехмерных данных, чтобы реализовать интерфейс [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731), который затем можно использовать для создания объекта [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/mt203679).
+Необходимо преобразовать файл трехмерных данных, чтобы реализовать интерфейс [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream), который затем можно использовать для создания объекта [**Printing3DModel**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Printing3DModel).
 
 [!code-cs[RepairModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRepairModel)]
 
-Все ошибки в объекте **Printing3DModel** теперь устранены, он доступен для печати. Воспользуйтесь методом [**SaveModelToPackageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.savemodeltopackageasync), чтобы назначить модель объекту **Printing3D3MFPackage**, объявленному при создании класса.
+Все ошибки в объекте **Printing3DModel** теперь устранены, он доступен для печати. Воспользуйтесь методом [**SaveModelToPackageAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3d3mfpackage.savemodeltopackageasync), чтобы назначить модель объекту **Printing3D3MFPackage**, объявленному при создании класса.
 
 [!code-cs[SaveModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSaveModel)]
 
 ## <a name="execute-printing-task-create-a-taskrequested-handler"></a>Выполнение задачи печати: создание обработчика TaskRequested
 
 
-В дальнейшем, когда пользователю отображается диалоговое окно трехмерной печати и пользователь решает начать печать, приложению потребуется передать нужные параметры в конвейер трехмерной печати. API трехмерной печати вызывает событие **[TaskRequested](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DManager.TaskRequested)**. Необходимо написать метод для правильной обработки этого события. Как всегда метод обработчика должен иметь тот же тип, как его событие: **TaskRequested** событие имеет параметры [ **Print3DManager** ](https://msdn.microsoft.com/library/windows/apps/dn998029) (ссылка на свой объект отправителя) и [  **Print3DTaskRequestedEventArgs** ](https://msdn.microsoft.com/library/windows/apps/dn998051) объект, который содержит большинство необходимую информацию.
+В дальнейшем, когда пользователю отображается диалоговое окно трехмерной печати и пользователь решает начать печать, приложению потребуется передать нужные параметры в конвейер трехмерной печати. API трехмерной печати вызывает событие **[TaskRequested](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DManager.TaskRequested)** . Необходимо написать метод для правильной обработки этого события. Как всегда метод обработчика должен иметь тот же тип, как его событие: **TaskRequested** событие имеет параметры [ **Print3DManager** ](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DManager) (ссылка на свой объект отправителя) и [  **Print3DTaskRequestedEventArgs** ](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs) объект, который содержит большинство необходимую информацию.
 
 [!code-cs[MyTaskTitle](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)]
 
-Основное назначение этого метода — использовать параметр *args* для отправки пакета **Printing3D3MFPackage** по конвейеру. **Print3DTaskRequestedEventArgs** тип имеет одно свойство: [**Запросить**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequestedeventargs.request.aspx). Оно имеет тип [**Print3DTaskRequest**](https://msdn.microsoft.com/library/windows/apps/dn998050) и представляет один запрос задания печати. Его метод [**CreateTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequest.createtask.aspx) позволяет программе отправлять корректную информацию для вашего задания печати и возвращает ссылку на объект **Print3DTask**, который был отправлен по конвейеру трехмерной печати.
+Основное назначение этого метода — использовать параметр *args* для отправки пакета **Printing3D3MFPackage** по конвейеру. **Print3DTaskRequestedEventArgs** тип имеет одно свойство: [**Запросить**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.print3dtaskrequestedeventargs.request). Оно имеет тип [**Print3DTaskRequest**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DTaskRequest) и представляет один запрос задания печати. Его метод [**CreateTask**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.print3dtaskrequest.createtask) позволяет программе отправлять корректную информацию для вашего задания печати и возвращает ссылку на объект **Print3DTask**, который был отправлен по конвейеру трехмерной печати.
 
-**CreateTask** имеет следующие входные параметры: string для имени задания печати, string для идентификатора используемого принтера и делегат [**Print3DTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedhandler.aspx). Делегат вызывается автоматически при создании события **3DTaskSourceRequested** (за это отвечает API). Важно отметить, что это делегат вызывается, когда инициируется задание печати, и отвечает за предоставление правильного пакета трехмерной печати.
+**CreateTask** имеет следующие входные параметры: string для имени задания печати, string для идентификатора используемого принтера и делегат [**Print3DTaskSourceRequestedHandler**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.print3dtasksourcerequestedhandler). Делегат вызывается автоматически при создании события **3DTaskSourceRequested** (за это отвечает API). Важно отметить, что это делегат вызывается, когда инициируется задание печати, и отвечает за предоставление правильного пакета трехмерной печати.
 
-**Print3DTaskSourceRequestedHandler** принимает один параметр — объект [**Print3DTaskSourceRequestedArgs**](https://msdn.microsoft.com/library/windows/apps/dn998056), предоставляющий данные для отправки. Один открытый метод этого класса — [**SetSource**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedargs.setsource.aspx) — принимает печатаемый пакет. Реализуйте делегат **Print3DTaskSourceRequestedHandler** следующим образом.
+**Print3DTaskSourceRequestedHandler** принимает один параметр — объект [**Print3DTaskSourceRequestedArgs**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DTaskSourceRequestedArgs), предоставляющий данные для отправки. Один открытый метод этого класса — [**SetSource**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.print3dtasksourcerequestedargs.setsource) — принимает печатаемый пакет. Реализуйте делегат **Print3DTaskSourceRequestedHandler** следующим образом.
 
 [!code-cs[SourceHandler](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSourceHandler)]
 
@@ -121,7 +121,7 @@ ms.locfileid: "57652249"
 
 [!code-cs[RegisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRegisterMyTaskRequested)]
 
-После регистрации обработчика событий **TaskRequested** можно вызвать метод [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dmanager.showprintuiasync.aspx), который выведет диалоговое окно трехмерной печати в окне текущего приложения.
+После регистрации обработчика событий **TaskRequested** можно вызвать метод [**ShowPrintUIAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.print3dmanager.showprintuiasync), который выведет диалоговое окно трехмерной печати в окне текущего приложения.
 
 [!code-cs[ShowDialog](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetShowDialog)]
 
@@ -129,9 +129,9 @@ ms.locfileid: "57652249"
 
 [!code-cs[DeregisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeregisterMyTaskRequested)]
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
-[Создание пакета 3MF](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)  
+[Создание пакета 3MF](https://docs.microsoft.com/windows/uwp/devices-sensors/generate-3mf)  
 [Трехмерной печати образец универсальной платформы Windows](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 

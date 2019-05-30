@@ -5,12 +5,12 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10 s, постоянно подключенный, приложения ARM32 в ARM, windows 10 в ARM, устранение неполадок
 ms.localizationpriority: medium
-ms.openlocfilehash: 3431b12fc6f6b6ba2d870400ec4f6684f8290a61
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: ddf28627838ebc8cb2df620c398f3803c026cb17
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63815277"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366836"
 ---
 # <a name="troubleshooting-arm-uwp-apps"></a>Устранение неполадок ARM приложений универсальной платформы Windows
 
@@ -33,7 +33,7 @@ ms.locfileid: "63815277"
 
 Эти проблемы можно устранить,: удаление недоступна зависимостей и перестроение приложения с помощью последних версий Microsoft Visual Studio и пакета SDK для универсальной платформы Windows; или в качестве последнего средства удаления приложение ARM из Microsoft Store чтобы x86 версии приложения (если доступно) загружается на ПК пользователей.
 
-Дополнительные сведения об API .NET, доступных для приложений UWP, см. в разделе [.NET для приложений UWP](https://msdn.microsoft.com/library/windows/apps/mt185501.aspx)
+Дополнительные сведения об API .NET, доступных для приложений UWP, см. в разделе [.NET для приложений UWP](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 
 ### <a name="compiling-an-app-with-an-older-version-of-visual-studio-and-sdk"></a>Компиляция приложения с более старой версией Visual Studio и SDK
 Если возникнут проблемы, воспользуйтесь для компиляции приложения последними версиями Microsoft Visual Studio и Windows SDK. В приложениях, скомпилированных с помощью более ранней версии Visual Studio и SDK, могут возникать проблемы, устраненные в более поздних версиях.

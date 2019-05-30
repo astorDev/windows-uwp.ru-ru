@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, поток, пул потоков
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c004feabf561c5a94fadba858762bf683c9ff0e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a498f685e7a810d19e2f1eb63ae112dd02587b84
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628049"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370697"
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>Рекомендации по использованию пула потоков
 
@@ -26,9 +26,9 @@ ms.locfileid: "57628049"
 
 -   Создавать кратковременные и независимые рабочие элементы. Рабочие элементы выполняются асинхронно и могут отправляться в пул из очереди в любом порядке.
 
--   Обновления обработки в поток пользовательского интерфейса с помощью [**Windows.UI.Core.CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211).
+-   Обновления обработки в поток пользовательского интерфейса с помощью [**Windows.UI.Core.CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher).
 
--   Используйте [**ThreadPoolTimer.CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) вместо функции **Sleep**.
+-   Используйте [**ThreadPoolTimer.CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) вместо функции **Sleep**.
 
 -   Использовать пул потоков вместо того, чтобы создавать собственную систему управления потоками. Пул потоков работает на уровне ОС с расширенными функциями и оптимизирован для динамического масштабирования согласно ресурсам устройства и событиям в рамках процесса и в системе.
 
@@ -43,13 +43,13 @@ ms.locfileid: "57628049"
 
 -   Отправлять периодические рабочие элементы, выполнение которых занимает больше времени, чем указано в параметре *period*.
 
--   Отправлять обновления пользовательского интерфейса (кроме всплывающих и обычных уведомлений) из рабочего элемента, отправленного из фоновой задаче. Вместо этого нужно использовать обработчики хода выполнения и завершения фоновой задачи — например, [**IBackgroundTaskInstance.Progress**](https://msdn.microsoft.com/library/windows/apps/BR224800).
+-   Отправлять обновления пользовательского интерфейса (кроме всплывающих и обычных уведомлений) из рабочего элемента, отправленного из фоновой задаче. Вместо этого нужно использовать обработчики хода выполнения и завершения фоновой задачи — например, [**IBackgroundTaskInstance.Progress**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress).
 
 -   При использовании обработчиков рабочих элементов, использующих ключевое слово **async**, помните о том, что рабочий элемент пула потоков может быть настроен на состояние выполнения до выполнения всего кода в обработчике. Код после ключевого слова **await** в обработчике может выполняться после настройки рабочего элемента на состояние завершения.
 
 -   Выполнять предварительно выделенный рабочий элемент более одного раза без повторной инициализации. [Создание периодического рабочего элемента](create-a-periodic-work-item.md)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Создание периодического рабочего элемента](create-a-periodic-work-item.md)

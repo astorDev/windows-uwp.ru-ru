@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, надстройки, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 51c940fffde3c770f397999e566570410528a1e8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8e06f8e915466f116692c63df5c53c2a0f97447f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617829"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372492"
 ---
 # <a name="manage-add-ons"></a>Управление надстройками
 
@@ -44,7 +44,7 @@ ms.locfileid: "57617829"
 <td align="left"><a href="get-an-add-on.md">Возвращение конкретной надстройки</a></td>
 </tr>
 <tr>
-<td align="left">POST</td>
+<td align="left">ПОМЕСТИТЬ</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
 <td align="left"><a href="create-an-add-on.md">Создать надстройку</a></td>
 </tr>
@@ -56,7 +56,7 @@ ms.locfileid: "57617829"
 </tbody>
 </table>
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store, прежде чем использовать любой из этих методов.
 
@@ -100,9 +100,9 @@ ms.locfileid: "57617829"
 | Значение      | Тип   | Описание        |
 |------------|--------|--------------|
 | Приложения      | Массив  | Массив, содержащий один [ресурс приложения](#application-object), который представляет приложение, с которым связана эта надстройка. Этот массив поддерживает только один элемент.  |
-| id | Строка  | Код продукта в Магазине для этой надстройки. Это значение предоставляется Магазином. Пример кода продукта в Магазине: 9NBLGGH4TNMP.  |
-| productId | Строка  | Код продукта этой надстройки. Это идентификатор, предоставленный разработчиком при создании надстройки. Дополнительные сведения см. в разделе [Установка типа и кода продукта](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id). |
-| productType | Строка  | Тип продукта этой надстройки. Поддерживаются следующие значения: **Устойчивые** и **готовых к использованию**.  |
+| id | строка  | Код продукта в Магазине для этой надстройки. Это значение предоставляется Магазином. Пример кода продукта в Магазине: 9NBLGGH4TNMP.  |
+| productId | строка  | Код продукта этой надстройки. Это идентификатор, предоставленный разработчиком при создании надстройки. Дополнительные сведения см. в разделе [Установка типа и кода продукта](https://docs.microsoft.com/windows/uwp/publish/set-your-iap-product-id). |
+| productType | строка  | Тип продукта этой надстройки. Поддерживаются следующие значения: **Устойчивые** и **готовых к использованию**.  |
 | lastPublishedInAppProductSubmission       | Объект | [Ресурс отправки](#submission-object), который предоставляет сведения о последней опубликованной отправке для надстройки.         |
 | pendingInAppProductSubmission        | Объект  |  [Ресурс отправки](#submission-object), который предоставляет сведения о текущей ожидающей отправке для надстройки.  |   |
 
@@ -130,8 +130,8 @@ ms.locfileid: "57617829"
 
 | Значение           | Тип    | Описание        |
 |-----------------|---------|-----------|
-| value            | Объект  |  Объект, содержащий следующие значения: <br/><br/> <ul><li>*id*. Код продукта в Магазине для приложения. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</li><li>*resourceLocation*. Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для приложения.</li></ul>   |
-| totalCount   | int  | Количество объектов приложения в массиве *applications* тела ответа.                                                                                                                                                 |
+| value            | Объект  |  Объект, содержащий следующие значения: <br/><br/> <ul><li>*id*. Код продукта в Магазине для приложения. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).</li><li>*resourceLocation*. Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для приложения.</li></ul>   |
+| totalCount   | ssNoversion  | Количество объектов приложения в массиве *applications* тела ответа.                                                                                                                                                 |
 
 <span id="submission-object" />
 
@@ -152,12 +152,12 @@ ms.locfileid: "57617829"
 
 | Значение           | Тип    | Описание     |
 |-----------------|---------|------------------|
-| id            | Строка  | Идентификатор отправки.    |
-| resourceLocation   | Строка  | Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для отправки.     |
+| id            | строка  | Идентификатор отправки.    |
+| resourceLocation   | строка  | Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для отправки.     |
  
 <span/>
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Управление отправкой надстройки с помощью API отправки Microsoft Store](manage-add-on-submissions.md)

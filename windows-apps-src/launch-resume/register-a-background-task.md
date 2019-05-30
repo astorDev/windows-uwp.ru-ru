@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, фоновую задачу
 ms.localizationpriority: medium
-ms.openlocfilehash: e586e85e15202e0186afe481ec18b32c2f480712
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 087f60ae3a16ad4cd38137d692fe079ce6c58bf4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660789"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371746"
 ---
 # <a name="register-a-background-task"></a>Регистрация фоновой задачи
 
 
 **Важные API**
 
--   [**Класс BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)
--   [**Класс BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**Класс SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
+-   [**Класс BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)
+-   [**Класс BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**Класс SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
 
 Сведения о создании функции, которую можно многократно использовать для безопасной регистрации большинства фоновых задач.
 
@@ -30,13 +30,13 @@ ms.locfileid: "57660789"
 
 **Примечание**  
 
-Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
+Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) перед регистрацией любых типов фоновых триггеров.
 
-Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
+Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess), а затем — метод [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
 ## <a name="define-the-method-signature-and-return-type"></a>Определение подписи и типа возвращаемых данных метода
 
-Этот метод принимает точку входа задачи, имя задачи, предварительно построенный триггер фоновой задачи и (необязательно) условие [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) для фоновой задачи. Этот метод возвращает объект [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).
+Этот метод принимает точку входа задачи, имя задачи, предварительно построенный триггер фоновой задачи и (необязательно) условие [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition) для фоновой задачи. Этот метод возвращает объект [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration).
 
 > [!Important]
 > `taskEntryPoint` -для фоновых задач, выполняющиеся вне процесса, это должен быть создан как имя пространства имен "." и имя класса, содержащего класс фона. Строка обрабатывается с учетом регистра.  Например, если имеется пространство имен "MyBackgroundTasks" и класс "BackgroundTask1", содержащий код вашего класса фоновой задачи, строка для `taskEntryPoint` имела бы вид "MyBackgroundTasks.BackgroundTask1".
@@ -72,11 +72,11 @@ ms.locfileid: "57660789"
 
 Проверьте, не зарегистрирована ли уже задача. Это важно проверить, потому что при многократной регистрации задачи она будет выполняться несколько раз при каждом срабатывании триггера, что может привести к избыточному потреблению ресурсов ЦП и непредсказуемому поведению.
 
-Для проверки наличия существующих регистраций можно запросить свойство [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) и выполнить итерацию по результату. Проверьте имя каждого экземпляра: если оно совпадает с именем регистрируемой задачи, следует прервать цикл и установить переменную флага, чтобы вашему коду удалось выбрать другой путь в следующем шаге.
+Для проверки наличия существующих регистраций можно запросить свойство [**BackgroundTaskRegistration.AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) и выполнить итерацию по результату. Проверьте имя каждого экземпляра: если оно совпадает с именем регистрируемой задачи, следует прервать цикл и установить переменную флага, чтобы вашему коду удалось выбрать другой путь в следующем шаге.
 
 > **Примечание**  использовать имена фоновой задачи, которые уникальны для приложения. Убедитесь, что каждая фоновая задача имеет уникальное имя.
 
-Следующий код регистрирует фоновую задачу с использованием триггера [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838), который мы создали в последнем шаге:
+Следующий код регистрирует фоновую задачу с использованием триггера [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger), который мы создали в последнем шаге:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -145,7 +145,7 @@ ms.locfileid: "57660789"
 
 Проверьте, не найдена ли задача в списке существующих регистраций фоновых задач. Если да, верните этот экземпляр задачи.
 
-Затем зарегистрируйте задачу с использованием нового объекта [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Этот код должен проверить, имеет ли параметр условия значение NULL, и, если нет, добавить условие к объекту регистрации. Верните объект [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786), возвращенный методом [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772).
+Затем зарегистрируйте задачу с использованием нового объекта [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder). Этот код должен проверить, имеет ли параметр условия значение NULL, и, если нет, добавить условие к объекту регистрации. Верните объект [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration), возвращенный методом [**BackgroundTaskBuilder.Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register).
 
 > **Примечание**  параметры регистрации фоновой задачи проверяются во время регистрации. Если какие-либо из параметров регистрации недопустимы, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
 > **Примечание**. Если вы регистрируете фоновую задачу, которая выполняется в том же процессе, что и приложение, отправьте `String.Empty` или `null` для параметра `taskEntryPoint`.
@@ -373,7 +373,7 @@ ms.locfileid: "57660789"
 > }
 > ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
 * [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)

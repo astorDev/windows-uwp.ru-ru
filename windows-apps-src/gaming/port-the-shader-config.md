@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, порт, шейдер, direct3d, opengl
 ms.localizationpriority: medium
-ms.openlocfilehash: f061d31ca779cb4c6cbe76f163e190996a6985cb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b800a32149011376e1d97e0da44d32c733ddfb93
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618749"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368237"
 ---
 # <a name="port-the-shader-objects"></a>Перенос объектов шейдеров
 
@@ -20,8 +20,8 @@ ms.locfileid: "57618749"
 
 **Важные API**
 
--   [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)
--   [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)
+-   [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device)
+-   [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)
 
 При переносе простого обработчика из OpenGL ES 2.0 прежде всего следует задать эквивалентные объекты вершинного шейдера и шейдера фрагментов в Direct3D 11 и убедиться, что основная программа может связываться с объектами шейдера после их компиляции.
 
@@ -29,7 +29,7 @@ ms.locfileid: "57618749"
 
  
 
-Как и в OpenGL ES 2.0, компилированные шейдеры в Direct3D должны быть связаны с контекстом рисования. Однако в Direct3D нет понятия объекта программы-шейдера как таковой. Вместо этого вы должны напрямую назначить шейдеры в [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385). Этот шаг следует за процессом создания и привязки объектов шейдера в OpenGL ES 2.0 и предоставляет вам возможности соответствующих API в Direct3D.
+Как и в OpenGL ES 2.0, компилированные шейдеры в Direct3D должны быть связаны с контекстом рисования. Однако в Direct3D нет понятия объекта программы-шейдера как таковой. Вместо этого вы должны напрямую назначить шейдеры в [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext). Этот шаг следует за процессом создания и привязки объектов шейдера в OpenGL ES 2.0 и предоставляет вам возможности соответствующих API в Direct3D.
 
 <a name="instructions"></a>Инструкция
 ------------
@@ -168,7 +168,7 @@ GLuint __cdecl LoadShaderProgram (const char *vertShaderSrcStr, const char *frag
 glUseProgram(renderer->programObject);
 ```
 
-В Direct3D нет понятия объекта программы-шейдера. Вместо этого шейдеры создаются, когда вызывается один из методов создания шейдеров в интерфейсе [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) (такой как [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) или [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)). Чтобы задать шейдеры для текущего контекста рисования, мы предоставляем их для текущего [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) с помощью метода установки шейдера, такого как [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) для вершинного шейдера или [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) для шейдера фрагментов.
+В Direct3D нет понятия объекта программы-шейдера. Вместо этого шейдеры создаются, когда вызывается один из методов создания шейдеров в интерфейсе [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device) (такой как [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) или [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)). Чтобы задать шейдеры для текущего контекста рисования, мы предоставляем их для текущего [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) с помощью метода установки шейдера, такого как [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) для вершинного шейдера или [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) для шейдера фрагментов.
 
 Direct3D 11: Задайте шейдеров для рисования контекст графического устройства.
 
@@ -227,7 +227,7 @@ renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 
 В Direct3D отсутствуют понятия "атрибута" или "однородного элемента" в том же смысле (по крайней мере, отсутствует такой синтаксис). Вместо этого имеются буферы констант, представленные как подчиненные ресурсы Direct3D, то есть ресурсы, которые совместно используются основной программой и программами-шейдерами. Некоторые из этих подчиненных ресурсов, такие как позиции вершин и цвета, описываются семантикой HLSL. Дополнительные сведения о связи буферов констант и семантики HLSL с понятиями OpenGL ES 2.0 см. в разделе [Перенос объектов буферов кадра, однородных элементов и атрибутов](porting-uniforms-and-attributes.md).
 
-При переносе этого процесса в Direct3D мы преобразуем однородный элемент в буфер констант Direct3D (cbuffer) и назначаем его регистру для подстановки с помощью семантики HLSL **register**. Два атрибута вершины обрабатываются как входные элементы на стадиях конвейера шейдера. Им также назначается [семантика HLSL](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION и COLOR0), поставляющая информацию для шейдеров. Построитель текстуры принимает SV\_ПОЗИЦИИ с SV\_ префикс, что это значение системы, сформированное GPU. (В данном случае это положение пикселя, созданные в процессе преобразования сканирования.) VertexShaderInput и PixelShaderInput не объявляются как константа помещает в буфер, поскольку первое из них будет использоваться для определения буфера вершин (см. в разделе [порта буферы вершин и данных](port-the-vertex-buffers-and-data-config.md)), и данные для второго формируется в результате Предыдущий этап конвейера, что в данном случае является вершинный построитель текстуры.
+При переносе этого процесса в Direct3D мы преобразуем однородный элемент в буфер констант Direct3D (cbuffer) и назначаем его регистру для подстановки с помощью семантики HLSL **register**. Два атрибута вершины обрабатываются как входные элементы на стадиях конвейера шейдера. Им также назначается [семантика HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps) (POSITION и COLOR0), поставляющая информацию для шейдеров. Построитель текстуры принимает SV\_ПОЗИЦИИ с SV\_ префикс, что это значение системы, сформированное GPU. (В данном случае это положение пикселя, созданные в процессе преобразования сканирования.) VertexShaderInput и PixelShaderInput не объявляются как константа помещает в буфер, поскольку первое из них будет использоваться для определения буфера вершин (см. в разделе [порта буферы вершин и данных](port-the-vertex-buffers-and-data-config.md)), и данные для второго формируется в результате Предыдущий этап конвейера, что в данном случае является вершинный построитель текстуры.
 
 Direct3D: Определения HLSL для постоянные буферы и данные вершин
 
@@ -275,7 +275,7 @@ struct VertexPositionColor
 
 Использовать DirectXMath XM\* типы для константу буфер элементов, так как они обеспечивают правильное упаковки и выравнивания содержимого, если они отправляются в конвейер построителя текстуры. Если вы используете стандартные типы с плавающей точкой и массивы платформы Windows, вы должны выполнить упаковку и выравнивание самостоятельно.
 
-Чтобы привязать буфер констант, создать описание макета как [ **CD3D11\_БУФЕРА\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/jj151620) структуры и передать его в [ **ID3DDevice:: CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501). Затем в своем методе обработки передайте буфер констант в [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) перед рисованием.
+Чтобы привязать буфер констант, создать описание макета как [ **CD3D11\_БУФЕРА\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-cd3d11_buffer_desc) структуры и передать его в [ **ID3DDevice:: CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer). Затем в своем методе обработки передайте буфер констант в [**ID3D11DeviceContext::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) перед рисованием.
 
 Direct3D 11: Привязать буфер констант
 
@@ -305,7 +305,7 @@ m_d3dContext->UpdateSubresource(
 ---------
 
 [Перенос данных и буферов вершин](port-the-vertex-buffers-and-data-config.md)
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 [Практическое: порт простой модуль подготовки отчетов OpenGL ES 2.0 на Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)

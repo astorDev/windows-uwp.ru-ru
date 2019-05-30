@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: 47a4ceef2603d7b0178431c93fb6c271b24c506a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5498480e0dbe2c8be96d92df766b15676a3e6b7b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599229"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371936"
 ---
 # <a name="smart-cards"></a>Смарт-карты
 
@@ -28,7 +28,7 @@ ms.locfileid: "57599229"
 ## <a name="access-connected-card-readers-and-smart-cards"></a>Доступ к подключенным устройствам чтения карт и смарт-картам
 
 
-Вы можете запросить наличие устройств чтения и подключенных смарт-карт, передав код устройства (заданный в [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393)) методу [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890). Для доступа к смарт-картам, подключенным к возвращенному устройству чтения, вызовите метод [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887).
+Вы можете запросить наличие устройств чтения и подключенных смарт-карт, передав код устройства (заданный в [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)) методу [**SmartCardReader.FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardreader.fromidasync). Для доступа к смарт-картам, подключенным к возвращенному устройству чтения, вызовите метод [**SmartCardReader.FindAllCardsAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardreader.findallcardsasync).
 
 ```cs
 string selector = SmartCardReader.GetDeviceSelector();
@@ -48,7 +48,7 @@ foreach (DeviceInformation device in devices)
 }
 ```
 
-Вы также должны разрешить приложению просматривать события [**CardAdded**](https://msdn.microsoft.com/library/windows/apps/dn263866), реализовав метод для обработки реакции приложения на вставку карты.
+Вы также должны разрешить приложению просматривать события [**CardAdded**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardreader.cardadded), реализовав метод для обработки реакции приложения на вставку карты.
 
 ```cs
 private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
@@ -57,16 +57,16 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 }
 ```
 
-Затем каждый возвращенный объект [**SmartCard**](https://msdn.microsoft.com/library/windows/apps/dn297565) можно передать в объект [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) для доступа к методам, которые позволяют приложению обращаться к карте и настраивать ее конфигурацию.
+Затем каждый возвращенный объект [**SmartCard**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCard) можно передать в объект [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning) для доступа к методам, которые позволяют приложению обращаться к карте и настраивать ее конфигурацию.
 
 ## <a name="create-a-virtual-smart-card"></a>Создание виртуальной смарт-карты
 
 
-Перед созданием виртуальной смарт-карты с помощью [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) приложение должно указать понятное имя, ключ администратора и экземпляр [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642). Понятное имя обычно вводится в приложение, а само приложение должно предоставить ключ администратора и создать экземпляр текущей версии **SmartCardPinPolicy**, а затем передать все три значения в [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830).
+Перед созданием виртуальной смарт-карты с помощью [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning) приложение должно указать понятное имя, ключ администратора и экземпляр [**SmartCardPinPolicy**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardPinPolicy). Понятное имя обычно вводится в приложение, а само приложение должно предоставить ключ администратора и создать экземпляр текущей версии **SmartCardPinPolicy**, а затем передать все три значения в [**RequestVirtualSmartCardCreationAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync).
 
-1.  Создайте новый экземпляр [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642).
-2.  Создайте ключ администратора, вызвав метод [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) со значением ключа администратора, предоставленным службой или средством управления.
-3.  Передайте эти значения вместе со строкой *FriendlyNameText* в [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830).
+1.  Создайте новый экземпляр [**SmartCardPinPolicy**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardPinPolicy).
+2.  Создайте ключ администратора, вызвав метод [**CryptographicBuffer.GenerateRandom**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.cryptographicbuffer.generaterandom) со значением ключа администратора, предоставленным службой или средством управления.
+3.  Передайте эти значения вместе со строкой *FriendlyNameText* в [**RequestVirtualSmartCardCreationAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync).
 
 ```cs
 SmartCardPinPolicy pinPolicy = new SmartCardPinPolicy();
@@ -81,7 +81,7 @@ SmartCardProvisioning provisioning = await
           pinPolicy);
 ```
 
-Когда метод [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) вернет связанный объект [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801), виртуальная смарт-карта будет создана и готова к использованию.
+Когда метод [**RequestVirtualSmartCardCreationAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync) вернет связанный объект [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning), виртуальная смарт-карта будет создана и готова к использованию.
 
 ## <a name="handle-authentication-challenges"></a>Обработка запросов проверки подлинности
 
@@ -115,11 +115,11 @@ static class ChallengeResponseAlgorithm
 
 Мы определили логику для запросов проверки подлинности и можем связаться с устройством чтения для доступа к смарт-карте или получить доступ к виртуальной смарт-карте для проверки подлинности.
 
-1.  Для начала запроса вызовите метод [**GetChallengeContextAsync**](https://msdn.microsoft.com/library/windows/apps/dn263811) из объекта [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801), связанного со смарт-картой. Будет создан экземпляр [**SmartCardChallengeContext**](https://msdn.microsoft.com/library/windows/apps/dn297570), который содержит значение [**Challenge**](https://msdn.microsoft.com/library/windows/apps/dn297578) для карты.
+1.  Для начала запроса вызовите метод [**GetChallengeContextAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.getchallengecontextasync) из объекта [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning), связанного со смарт-картой. Будет создан экземпляр [**SmartCardChallengeContext**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardChallengeContext), который содержит значение [**Challenge**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardchallengecontext.challenge) для карты.
 
 2.  Затем передайте значение запроса карты и ключ администратора, предоставленный службой или средством управления, в **ChallengeResponseAlgorithm** , определенный в предыдущем примере.
 
-3.  [**VerifyResponseAsync** ](https://msdn.microsoft.com/library/windows/apps/dn297627) вернет **true** при успешном выполнении проверки.
+3.  [**VerifyResponseAsync** ](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardchallengecontext.verifyresponseasync) вернет **true** при успешном выполнении проверки.
 
 ```cs
 bool verifyResult = false;
@@ -143,8 +143,8 @@ using (SmartCardChallengeContext context =
 
 Чтобы изменить ПИН-код, связанный со смарт-картой, сделайте следующее.
 
-1.  Обратитесь к карте и создайте связанный объект [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801).
-2.  Вызовите метод [**RequestPinChangeAsync**](https://msdn.microsoft.com/library/windows/apps/dn263823), чтобы показать пользователю интерфейс для выполнения этой операции.
+1.  Обратитесь к карте и создайте связанный объект [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning).
+2.  Вызовите метод [**RequestPinChangeAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestpinchangeasync), чтобы показать пользователю интерфейс для выполнения этой операции.
 3.  Если ПИН-код успешно изменен, этот вызов возвращает значение **true**.
 
 ```cs
@@ -156,10 +156,10 @@ bool result = await provisioning.RequestPinChangeAsync();
 
 Чтобы запросить сброс ПИН-кода, сделайте следующее.
 
-1.  Вызовите метод [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) для запуска операции. В этот вызов входит метод [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701), который представляет смарт-карту, и запрос на сброс ПИН-кода.
-2.  [**SmartCardPinResetHandler** ](https://msdn.microsoft.com/library/windows/apps/dn297701) сведения, наши **ChallengeResponseAlgorithm**заключен в [ **SmartCardPinResetDeferral** ](https://msdn.microsoft.com/library/windows/apps/dn297693) вызов, использует для сравнения значения запрос карты и ключ администратора, предоставляемые службы или средства управления для аутентификации запроса.
+1.  Вызовите метод [**RequestPinResetAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestpinresetasync) для запуска операции. В этот вызов входит метод [**SmartCardPinResetHandler**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardpinresethandler), который представляет смарт-карту, и запрос на сброс ПИН-кода.
+2.  [**SmartCardPinResetHandler** ](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardpinresethandler) сведения, наши **ChallengeResponseAlgorithm**заключен в [ **SmartCardPinResetDeferral** ](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardPinResetDeferral) вызов, использует для сравнения значения запрос карты и ключ администратора, предоставляемые службы или средства управления для аутентификации запроса.
 
-3.  Если запрос выполняется успешно, то вызов [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) завершается, и возвращается значение **true**, если ПИН-код успешно сброшен.
+3.  Если запрос выполняется успешно, то вызов [**RequestPinResetAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestpinresetasync) завершается, и возвращается значение **true**, если ПИН-код успешно сброшен.
 
 ```cs
 SmartCardProvisioning provisioning =
@@ -190,7 +190,7 @@ bool result = await provisioning.RequestPinResetAsync(
 ## <a name="remove-a-smart-card-or-virtual-smart-card"></a>Удаление смарт-карты или виртуальной смарт-карты
 
 
-При удалении физической смарт-карты создается событие [**CardRemoved**](https://msdn.microsoft.com/library/windows/apps/dn263875).
+При удалении физической смарт-карты создается событие [**CardRemoved**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardreader.cardremoved).
 
 Свяжите создание этого события в устройстве чтения карт с методом, который определяет реакцию приложения на удаление карты или устройства чтения, в качестве обработчика событий. Такой реакцией может быть простое уведомление пользователя об удалении карты.
 
@@ -199,7 +199,7 @@ reader = card.Reader;
 reader.CardRemoved += HandleCardRemoved;
 ```
 
-Удаление виртуальной смарт-карты обрабатывается в программном коде. Сначала запрашивается карта, а затем вызывается метод [**RequestVirtualSmartCardDeletionAsync**](https://msdn.microsoft.com/library/windows/apps/dn263850) из возвращенного объекта [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801).
+Удаление виртуальной смарт-карты обрабатывается в программном коде. Сначала запрашивается карта, а затем вызывается метод [**RequestVirtualSmartCardDeletionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcarddeletionasync) из возвращенного объекта [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning).
 
 ```cs
 bool result = await SmartCardProvisioning

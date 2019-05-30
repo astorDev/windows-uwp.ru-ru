@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, выпуск пакета, отправка приложения, обновление, процент
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 ms.localizationpriority: medium
-ms.openlocfilehash: 175f4e562d7c91580e7783f6328b73f06a80095e
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: d9f9f1f352db4da27370eae6a4a68e4a8c5310c7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335042"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371401"
 ---
 # <a name="update-the-rollout-percentage-for-an-app-submission"></a>Обновление процента выпуска для отправки приложения
 
@@ -48,7 +48,7 @@ ms.locfileid: "58335042"
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | строка | Обязательный. Код продукта в Магазине для приложения, содержащего отправку, для которой требуется изменить процент выпуска пакета. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | строка | Обязательный. Код продукта в Магазине для приложения, содержащего отправку, для которой требуется изменить процент выпуска пакета. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | строка | Обязательный. Идентификатор отправки с процентом выпуска пакета, который требуется изменить. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки приложения](create-an-app-submission.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.   |
 | percentage  |  float  |  Обязательный. Процент пользователей, которые получат постепенно выпускаемый пакет.  |
 

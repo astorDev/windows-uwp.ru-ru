@@ -7,24 +7,24 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fb0e5aee9e7b3e57ebf0ebeaf3d035180e52c65b
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 1a0c632089c8c4cf84ecf6df99935671423b51a6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63817512"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370808"
 ---
 # <a name="launch-the-windows-settings-app"></a>Запуск приложения "Параметры" для Windows
 
 **Важные API**
 
--   [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)
--   [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
--   [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
+-   [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
+-   [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
+-   [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
 Узнайте, как запустить приложение «Параметры» для Windows. В этом разделе описывается **ms параметры:** Схема URI. Используйте эту схему URI для запуска приложения "Параметры" для Windows на определенных страницах параметров.
 
-Запуск приложения «Параметры» — важная составляющая создания приложения, учитывающего требования конфиденциальности. Если ваше приложение не может получить доступ к конфиденциальному ресурсу, рекомендуется предоставить пользователю удобную ссылку на параметры конфиденциальности для этого ресурса. Дополнительные сведения см. в статье [Руководство по приложениям, учитывающим конфиденциальность](https://msdn.microsoft.com/library/windows/apps/hh768223).
+Запуск приложения «Параметры» — важная составляющая создания приложения, учитывающего требования конфиденциальности. Если ваше приложение не может получить доступ к конфиденциальному ресурсу, рекомендуется предоставить пользователю удобную ссылку на параметры конфиденциальности для этого ресурса. Дополнительные сведения см. в статье [Руководство по приложениям, учитывающим конфиденциальность](https://docs.microsoft.com/windows/uwp/security/index).
 
 ## <a name="how-to-launch-the-settings-app"></a>Запуск приложения «Параметры»
 
@@ -44,7 +44,7 @@ ms.locfileid: "63817512"
 </TextBlock>
 ```
 
-Либо ваше приложение может вызвать метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476), чтобы запустить приложение **Параметры**. В этом примере показано, как запустить страницу параметров конфиденциальности для камеры с помощью URI `ms-settings:privacy-webcam`.
+Либо ваше приложение может вызвать метод [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync), чтобы запустить приложение **Параметры**. В этом примере показано, как запустить страницу параметров конфиденциальности для камеры с помощью URI `ms-settings:privacy-webcam`.
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
@@ -217,7 +217,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Панель задач | ms-settings:taskbar |
 | Темы | ms-settings:themes |
 
-## <a name="phone"></a>Телефон
+## <a name="phone"></a>Phone
 
 |Страница параметров| URI |
 |-------------|-----|
@@ -290,14 +290,14 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Messaging | ms-settings:messaging |
 | Многозадачность | ms-settings:multitasking |
 | Параметры ночного света | ms-settings:nightlight |
-| Телефон | ms-settings:phone-defaultapps |
+| Phone | ms-settings:phone-defaultapps |
 | Проецирование на этот компьютер | ms-settings:project |
 | Общие возможности | ms-settings:crossdevice |
 | Режим планшета | ms-settings:tabletmode |
 | Панель задач | ms-settings:taskbar |
 | Уведомления и действия | ms-settings:notifications |
 | Удаленный рабочий стол | ms-settings:remotedesktop |
-| Телефон | MS-параметры: phone (**устаревшими в Windows 10, версия 1809 и более поздние версии**) |
+| Phone | MS-параметры: phone (**устаревшими в Windows 10, версия 1809 и более поздние версии**) |
 | Питание и спящий режим | ms-settings:powersleep |
 | Звук | ms-settings:sound |
 | Хранилище | ms-settings:storagesense |

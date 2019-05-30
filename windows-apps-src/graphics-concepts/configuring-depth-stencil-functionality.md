@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 98cb6c62248fbf273a9d7ca1ef0d1d82293122eb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cd23938387b40c8ce268c65209d1fb11d5da529c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656189"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370633"
 ---
 # <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>Настройка функций трафарета глубины
 
@@ -24,7 +24,7 @@ ms.locfileid: "57656189"
 ## <a name="span-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespancreate-depth-stencil-state"></a><span id="Create_Depth_Stencil_State"></span><span id="create_depth_stencil_state"></span><span id="CREATE_DEPTH_STENCIL_STATE"></span>Создать состояние трафарета глубины
 
 
-Состояние трафарета глубины сообщает стадии средства слияния вывода способ выполнения [проверки трафарета глубины](https://msdn.microsoft.com/library/windows/desktop/bb205120). Проверка трафарета глубины позволяет определить, нужно ли рисовать тот или иной пиксель.
+Состояние трафарета глубины сообщает стадии средства слияния вывода способ выполнения [проверки трафарета глубины](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage). Проверка трафарета глубины позволяет определить, нужно ли рисовать тот или иной пиксель.
 
 ## <a name="span-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanbind-depth-stencil-data-to-the-om-stage"></a><span id="Bind_Depth_Stencil_to_the_OM_Stage"></span><span id="bind_depth_stencil_to_the_om_stage"></span><span id="BIND_DEPTH_STENCIL_TO_THE_OM_STAGE"></span>Привязка данных трафарета глубины в рабочую область OM
 
@@ -77,7 +77,7 @@ ms.locfileid: "57656189"
 
 Если маска трафарета имеет те же размеры и форму, что и примитив, который вы отрисовываете, на полученном изображении на месте примитива будет отверстие. Затем приложение может заполнить это отверстие черным, создавая силуэт примитива.
 
-### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspantwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span>Двухсторонний шаблон
+### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwo-sided-stenciltwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span><span id="two-sided-stencil">Двухсторонний шаблон
 
 Теневые тома используются для рисования теней с использованием буфера трафарета. Приложение вычисляет теневые тома, переданные геометрией ограждения, вычисляя края силуэта и вытягивая их от света в набор трехмерных томов. Затем эти тома дважды отрисовываются в буфер трафарета.
 
@@ -98,4 +98,4 @@ ms.locfileid: "57656189"
 
 [Графический конвейер](graphics-pipeline.md)
 
-[Этап средства слияния вывода](https://msdn.microsoft.com/library/windows/desktop/bb205120)
+[Этап средства слияния вывода](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)

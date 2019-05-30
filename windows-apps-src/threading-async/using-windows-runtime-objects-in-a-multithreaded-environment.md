@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows 10, uwp, таймер, потоки
 ms.localizationpriority: medium
-ms.openlocfilehash: f11207a774b1ffcebde95e316634592020e6ed49
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3afa1720ede9728e9cc25af434a431300faf26d6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631219"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371210"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Использование объектов среды выполнения Windows в многопоточной среде
 В статье рассматривается, как .NET Framework обрабатывает вызовы из кода C# и Visual Basic к объектам, предоставляемым средой выполнения Windows или компонентами этой среды.
@@ -20,7 +20,7 @@ ms.locfileid: "57631219"
 
 Везде, где возможно, среда CLR обрабатывает объекты из других источников, например из среды выполнения Windows, как объекты .NET Framework.
 
-- Если объект реализует интерфейс [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx) или имеет атрибут [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) с типом [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023), среда CLR рассматривает его как гибкий.
+- Если объект реализует интерфейс [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) или имеет атрибут [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) с типом [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023), среда CLR рассматривает его как гибкий.
 
 - Если среда CLR может маршалировать вызов из потока, где он был произведен, к контексту потока целевого объекта, это происходит прозрачно.
 
@@ -34,7 +34,7 @@ ms.locfileid: "57631219"
 > [!NOTE]
 >  Гибкость не подразумевает потокобезопасность. Как в среде выполнения Windows, так и в .NET Framework большинство классов не являются потокобезопасными, поскольку потокобезопасность снижает производительность, а большинство объектов никогда не используются сразу несколькими потоками. Более эффективно синхронизировать доступ к отдельным объектам (или использовать потокобезопасные классы) только при необходимости.
 
-При создании компонента среды выполнения Windows значения по умолчанию можно переопределить. См. статьи об интерфейсах [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) и [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx).
+При создании компонента среды выполнения Windows значения по умолчанию можно переопределить. См. статьи об интерфейсах [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) и [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject).
 
 ## <a name="objects-from-the-windows-runtime"></a>Объекты из среды выполнения Windows
 Большинство классов в среде выполнения Windows являются гибкими, и среда CLR обрабатывает их как гибкие. В документации к этим классам среди атрибутов классов указан MarshalingBehaviorAttribute(Agile). Однако члены некоторых из этих гибких классов, например элементы управления XAML, создают исключения, если они не вызываются в потоке пользовательского интерфейса. Например, следующий код пытается использовать фоновый поток для задания свойства кнопки, которую нажали. Свойство кнопки [Content](https://go.microsoft.com/fwlink/p/?LinkId=256025) вызывает исключение.

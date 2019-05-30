@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: 6517241826d06b63fd88b45237552acffbdc62da
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 78b14023f61dd3f8c27bc31f5876407ff0ed0366
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651239"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371207"
 ---
 # <a name="macs-hashes-and-signatures"></a>Коды проверки подлинности сообщений, хэши и подписи
 
@@ -34,11 +34,11 @@ ms.locfileid: "57651239"
 
 Использование кода проверки подлинности сообщения позволяет убедиться только в том, что исходное сообщение не было изменено, а использование общего секретного ключа — убедиться, что хэш сообщения подписан человеком, имеющим доступ к этому закрытому ключу.
 
-Для перечисления доступных алгоритмов получения кода проверки подлинности сообщения и генерации симметричного ключа можно использовать [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530). Для выполнения шифрования и генерации кода проверки подлинности сообщения можно использовать статические методы класса [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490).
+Для перечисления доступных алгоритмов получения кода проверки подлинности сообщения и генерации симметричного ключа можно использовать [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider). Для выполнения шифрования и генерации кода проверки подлинности сообщения можно использовать статические методы класса [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine).
 
 Цифровые подписи являются эквивалентом открытого ключа для кодов проверки подлинности сообщений (MAC) с закрытым ключом. Для проверки неизменности передаваемого сообщения коды проверки подлинности сообщений используют закрытые ключи, в то время как цифровые подписи — закрытый и открытый ключи в паре.
 
-В этом примере кода показано, как использовать класс [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530), чтобы создать хэш-код проверки подлинности сообщения (HMAC).
+В этом примере кода показано, как использовать класс [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider), чтобы создать хэш-код проверки подлинности сообщения (HMAC).
 
 ```cs
 using Windows.Security.Cryptography;
@@ -137,11 +137,11 @@ namespace SampleMacAlgorithmProvider
 
 Заметьте: Юлия послала незашифрованное сообщение. Только хэш был зашифрован. Эта процедура позволяет убедиться только в том, что исходное сообщение не было изменено. А использование открытого ключа Юлии показывает, что хэш сообщения был подписан кем-то, имеющим доступ к ее закрытому ключу, предположительно самой Юлией.
 
-Можно использовать класс [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) для перечисления доступных алгоритмов хэширования и создания значения [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498).
+Можно использовать класс [**HashAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) для перечисления доступных алгоритмов хэширования и создания значения [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash).
 
 Цифровые подписи являются эквивалентом открытого ключа для кодов проверки подлинности сообщений (MAC) с закрытым ключом. Разница между ними в том, что MAC-коды используют закрытые ключи, для того чтобы получатель мог проверить, не было ли сообщение изменено при передаче, а в цифровых подписях для этого используются пары из открытого и закрытого ключей.
 
-Объект [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) можно использовать для повторного хэширования различных данных без необходимости заново создавать объект для каждого случая применения. Метод [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) добавляет новые данные для хэширования в буфер. Метод [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) хэширует данные и сбрасывает параметры объекта для следующего использования. Процедура показана в следующем примере.
+Объект [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) можно использовать для повторного хэширования различных данных без необходимости заново создавать объект для каждого случая применения. Метод [**Append**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.append) добавляет новые данные для хэширования в буфер. Метод [**GetValueAndReset**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) хэширует данные и сбрасывает параметры объекта для следующего использования. Процедура показана в следующем примере.
 
 ```cs
 public void SampleReusableHash()
@@ -191,4 +191,4 @@ public void SampleReusableHash()
 
 Подписывание сообщений дает возможность убедиться только в том, что исходное сообщение не было изменено. А использование открытого ключа отправителя показывает, что хэш сообщения был подписан кем-то, имеющим доступ к закрытому ключу.
 
-Для перечисления доступных алгоритмов подписи, а также для формирования или импорта пары ключей можно использовать объект [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478). Для подписывания сообщения или проверки подписи можно использовать статические методы класса [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498).
+Для перечисления доступных алгоритмов подписи, а также для формирования или импорта пары ключей можно использовать объект [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider). Для подписывания сообщения или проверки подписи можно использовать статические методы класса [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash).

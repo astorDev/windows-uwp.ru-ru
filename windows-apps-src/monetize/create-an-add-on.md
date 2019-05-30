@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание надстройки, внутренний продукт приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: b358eecd1799e76573cf6d254a80e7a7971bc123
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 00eb1a865631ce51cfa065d27ed00b44c66a6757
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334172"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371259"
 ---
 # <a name="create-an-add-on"></a>Создание надстройки
 
@@ -50,7 +50,7 @@ ms.locfileid: "58334172"
 |  Параметр  |  Тип  |  Описание  |  Обязательно  |
 |------|------|------|------|
 |  applicationIds  |  Массив  |  Массив, содержащий код продукта в Магазине для приложения, с которым связана эта надстройка. Этот массив поддерживает только один элемент.   |  Да  |
-|  productId  |  строка  |  Код продукта этой надстройки. Этот идентификатор можно использовать в коде для установки ссылки на надстройку. Дополнительные сведения см. в разделе [Установка типа и кода продукта](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id).  |  Да  |
+|  productId  |  строка  |  Код продукта этой надстройки. Этот идентификатор можно использовать в коде для установки ссылки на надстройку. Дополнительные сведения см. в разделе [Установка типа и кода продукта](https://docs.microsoft.com/windows/uwp/publish/set-your-iap-product-id).  |  Да  |
 |  productType  |  строка  |  Тип продукта этой надстройки. Поддерживаются следующие значения: **Устойчивые** и **готовых к использованию**.  |  Да  |
 
 

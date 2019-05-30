@@ -5,12 +5,12 @@ ms.date: 04/21/2017
 ms.topic: article
 keywords: Windows 10, uwp, update, фоновая задача, updatetask, фоновой задачи
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cd7d4494340d1c5e617361f2e3d750b35ebabb9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3683595926f20fdd9f9af5929db65396b0001bcc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603529"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371478"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Запуск фоновой задачи при обновлении приложения UWP
 
@@ -26,8 +26,8 @@ ms.locfileid: "57603529"
 
 - Добавление проекта компонента среды выполнения Windows в ваше решение.
 - Создание ссылки из этого приложения на компонент.
-- Создание открытого, запечатанного класса в компоненте, который реализует [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794).
-- Реализация метода [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811), который является обязательной точкой входа, которая вызывается при запуске задачи обновления. Если вы собираетесь выполнять асинхронные вызовы из фоновой задачи, в статье [Создание и регистрация внепроцессной фоновой задачи](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) объясняется, как использовать задержку в вашем методе **Run**.
+- Создание открытого, запечатанного класса в компоненте, который реализует [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask).
+- Реализация метода [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.), который является обязательной точкой входа, которая вызывается при запуске задачи обновления. Если вы собираетесь выполнять асинхронные вызовы из фоновой задачи, в статье [Создание и регистрация внепроцессной фоновой задачи](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) объясняется, как использовать задержку в вашем методе **Run**.
 
 Вам не нужно зарегистрировать эту фоновую задачу (в разделе «Зарегистрировать фоновую задачу для запуска» **Создание и регистрация out-of-process фоновую задачу** раздел) для использования задачи обновления. Это основная причина для использования задачу обновления, так как вам не нужно добавлять никакой код в приложение для регистрации задачи, и у приложения нет запуск по крайней мере один раз перед обновлением для регистрации фоновой задачи.
 

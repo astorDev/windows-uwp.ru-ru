@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, фиксация отправки приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e44f5672c817f9e1ab00df341a2fd78b23f2944
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 36c645303a86bc28f12fa8e31b8a83653c167664
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334152"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371997"
 ---
 # <a name="commit-an-app-submission"></a>Подтверждение отправки приложения
 
@@ -19,7 +19,7 @@ ms.locfileid: "58334152"
 
 Дополнительные сведения о роли операции фиксации в процессе отправки приложения с помощью API отправки Microsoft Store см. в разделе [Управление отправками приложений](manage-app-submissions.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для использования этого метода сначала необходимо сделать следующее:
 
@@ -47,7 +47,7 @@ ms.locfileid: "58334152"
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | строка | Обязательный. Код продукта в Магазине, принадлежащий приложению, которое содержит отправку для фиксации. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | строка | Обязательный. Код продукта в Магазине, принадлежащий приложению, которое содержит отправку для фиксации. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | строка | Обязательный. Идентификатор отправки, которую необходимо зафиксировать. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки приложения](create-an-app-submission.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.  |
 
 ### <a name="request-body"></a>Тело запроса

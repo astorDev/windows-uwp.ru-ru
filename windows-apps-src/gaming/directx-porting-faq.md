@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: d2f883e62cf7c61560295673cf48cf891befed91
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2452d4bfcce01dfc86e44c9f57a82baa6beb8ce7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662619"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368796"
 ---
 # <a name="directx-11-porting-faq"></a>Вопросы и ответы по переносу на DirectX 11
 
@@ -33,11 +33,11 @@ Direct3D 11 значительно обновлен по сравнению с 
 ##  <a name="do-i-have-to-update-my-game-timer-for-uwp"></a>Нужно ли обновлять таймер игры для UWP?
 
 
-[**QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904), вместе с [ **QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905), по-прежнему является лучшим способом для реализации в игру таймер для приложений универсальной платформы Windows.
+[**QueryPerformanceCounter**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter), вместе с [ **QueryPerformanceFrequency**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancefrequency), по-прежнему является лучшим способом для реализации в игру таймер для приложений универсальной платформы Windows.
 
 Помните о нюансе относительно таймеров и жизненного цикла приложения UWP. Приостановка и возобновление отличаются от перезапуска классического приложения, так как игра возобновляется с того момента, на котором была приостановлена. Если прошло длительное время, например несколько недель, некоторые реализации таймеров могут работать некорректно. Вы можете использовать события жизненного цикла приложения, чтобы сбросить таймер при возобновлении игры.
 
-Игры, которые по-прежнему используют инструкцию RDTSC, необходимо обновить. См. раздел [Расписание игры и многоядерный процессор](https://msdn.microsoft.com/library/windows/desktop/ee417693).
+Игры, которые по-прежнему используют инструкцию RDTSC, необходимо обновить. См. раздел [Расписание игры и многоядерный процессор](https://docs.microsoft.com/windows/desktop/DxTechArts/game-timing-and-multicore-processors).
 
 ## <a name="my-game-code-is-based-on-d3dx-and-dxut-is-there-anything-available-that-can-help-me-migrate-my-code"></a>Код моей игры основан на D3DX и DXUT. Есть ли какие-либо способы переноса моего кода?
 
@@ -54,8 +54,8 @@ Direct3D 11 значительно обновлен по сравнению с 
 
 Существует два пути API для загрузки изображений.
 
--   Конвейер содержимого преобразует изображения в DDS-файлы, используемые в качестве ресурсов текстур Direct3D. См. раздел [Использование трехмерных ресурсов в игре или приложении](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx).
--   Для загрузки изображений в различных форматах можно использовать [Компонент обработки изображений Windows](https://msdn.microsoft.com/library/windows/desktop/ee719902). Его также можно применять для точечных рисунков Direct2D и ресурсов текстур Direct3D.
+-   Конвейер содержимого преобразует изображения в DDS-файлы, используемые в качестве ресурсов текстур Direct3D. См. раздел [Использование трехмерных ресурсов в игре или приложении](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
+-   Для загрузки изображений в различных форматах можно использовать [Компонент обработки изображений Windows](https://docs.microsoft.com/windows/desktop/wic/-wic-lh). Его также можно применять для точечных рисунков Direct2D и ресурсов текстур Direct3D.
 
 Также можно воспользоваться средствами загрузки DDSTextureLoader и WICTextureLoader из [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929) или [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926).
 
@@ -69,7 +69,7 @@ Direct3D 11 значительно обновлен по сравнению с 
 
 Подавляющее большинство компонентов пакета Windows SDK уже включены в поддерживаемые версии ОС или не имеют компонента DLL (например, DirectXMath). Все компоненты API Direct3D, которые могут использовать приложения UWP, будут доступны для вашей игры, и вам не понадобится распространять их.
 
-Классические приложения Win32 по-прежнему используют DirectSetup, поэтому если вы также обновляете классическую версию вашей игры, см. раздел [Развертывание Direct3D 11 для разработчиков игр](https://msdn.microsoft.com/library/windows/desktop/ee416644).
+Классические приложения Win32 по-прежнему используют DirectSetup, поэтому если вы также обновляете классическую версию вашей игры, см. раздел [Развертывание Direct3D 11 для разработчиков игр](https://docs.microsoft.com/windows/desktop/direct3darticles/direct3d11-deployment).
 
 ## <a name="is-there-any-way-i-can-update-my-desktop-code-to-directx-11-before-moving-away-from-effects"></a>Есть ли способ обновить код для рабочего стола до DirectX 11 перед прекращением использования эффектов?
 
@@ -81,47 +81,47 @@ Direct3D 11 значительно обновлен по сравнению с 
 
 Да.
 
--   См. раздел [Преобразование в Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb204851).
--   Убедитесь, что в вашей игре нет остатков фиксированного конвейера. См. раздел [Устаревшие компоненты](https://msdn.microsoft.com/library/windows/desktop/cc308047).
+-   См. раздел [Преобразование в Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3d9/converting-to-directx-9).
+-   Убедитесь, что в вашей игре нет остатков фиксированного конвейера. См. раздел [Устаревшие компоненты](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-programming-guide-api-features-deprecated).
 -   Затем выполните путь переноса DirectX 9. [Порт из D3D 9 для универсальной платформы Windows](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
 ##  <a name="can-i-port-my-directx-10-or-11-game-to-uwp"></a>Можно ли портировать игру с DirectX 10 или 11 на UWP?
 
 
-Классические игры с DirectX 10.x и 11 легко портируются на UWP. См. раздел [Миграция в Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476190).
+Классические игры с DirectX 10.x и 11 легко портируются на UWP. См. раздел [Миграция в Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-programming-guide-migrating).
 
 ## <a name="how-do-i-choose-the-right-display-device-in-a-multi-monitor-system"></a>Как выбрать правильный монитор в системе с несколькими мониторами?
 
 
-Пользователь определяет, на каком экране будет отображаться ваше приложение. Позвольте Windows предоставить правильный адаптер, вызвав [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) со значением первого параметра **nullptr**. Затем получите [**интерфейс IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) устройства, вызовите [**GetAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174531) и используйте адаптер DXGI, чтобы создать цепочку буферов.
+Пользователь определяет, на каком экране будет отображаться ваше приложение. Позвольте Windows предоставить правильный адаптер, вызвав [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) со значением первого параметра **nullptr**. Затем получите [**интерфейс IDXGIDevice**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgidevice) устройства, вызовите [**GetAdapter**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-getadapter) и используйте адаптер DXGI, чтобы создать цепочку буферов.
 
 ## <a name="how-do-i-turn-on-antialiasing"></a>Как включить сглаживание?
 
 
-Сглаживание (множественная дискретизация) включено, когда вы создаете устройство Direct3D. Перечислить, вызвав мультисэмплинга поддержки [ **CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499), затем определите мультисэмплинга параметры [ **DXGI\_пример\_Структура DESC** ](https://msdn.microsoft.com/library/windows/desktop/bb173072) при вызове [ **CreateSurface**](https://msdn.microsoft.com/library/windows/desktop/bb174530).
+Сглаживание (множественная дискретизация) включено, когда вы создаете устройство Direct3D. Перечислить, вызвав мультисэмплинга поддержки [ **CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels), затем определите мультисэмплинга параметры [ **DXGI\_пример\_Структура DESC** ](https://docs.microsoft.com/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc) при вызове [ **CreateSurface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-createsurface).
 
 ## <a name="my-game-renders-using-multithreading-andor-deferred-rendering-what-do-i-need-to-know-for-direct3d-11"></a>При прорисовке моей игры используется многопоточность и (или) отложенная прорисовка. Что мне нужно знать, чтобы использовать Direct3D 11?
 
 
-Для начала посетите страницу [Введение в многопоточность в Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476891). Список ключевых отличий см. в разделе [Разница между потоками в различных версиях Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476890). Обратите внимание, что отложенная прорисовка использует *отложенный контекст* устройства вместо *немедленного контекста*.
+Для начала посетите страницу [Введение в многопоточность в Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro). Список ключевых отличий см. в разделе [Разница между потоками в различных версиях Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-differences). Обратите внимание, что отложенная прорисовка использует *отложенный контекст* устройства вместо *немедленного контекста*.
 
 ## <a name="where-can-i-read-more-about-the-programmable-pipeline-since-direct3d-9"></a>Где можно найти дополнительную информацию о программируемом конвейере начиная с Direct3D 9?
 
 
 Просмотрите следующие разделы.
 
--   [Руководство по программированию для HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509635)
--   [Direct3D 10, часто задаваемые вопросы](https://msdn.microsoft.com/library/windows/desktop/ee416643)
+-   [Руководство по программированию для HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-pguide)
+-   [Direct3D 10, часто задаваемые вопросы](https://docs.microsoft.com/windows/desktop/DxTechArts/direct3d10-frequently-asked-questions)
 
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>Что использовать для моделей вместо формата файлов .x?
 
 
-Хотя у нас нет официальной замены формата файлов .x, во многих примерах использован формат SDKMesh. Visual Studio также включает [конвейер содержимого](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx), который компилирует несколько популярных форматов в CMO-файлы, которые можно загрузить с кодом из начального набора Visual Studio 3D или с помощью [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929).
+Хотя у нас нет официальной замены формата файлов .x, во многих примерах использован формат SDKMesh. Visual Studio также включает [конвейер содержимого](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015), который компилирует несколько популярных форматов в CMO-файлы, которые можно загрузить с кодом из начального набора Visual Studio 3D или с помощью [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929).
 
 ## <a name="how-do-i-debug-my-shaders"></a>Как реализовать отладку шейдеров?
 
 
-Microsoft Visual Studio 2015 включает в себя средства диагностики графики DirectX. См. раздел [Отладка графики DirectX](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
+Microsoft Visual Studio 2015 включает в себя средства диагностики графики DirectX. См. раздел [Отладка графики DirectX](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>Какая функция в Direct3D 11 эквивалентна функции *x*?
 

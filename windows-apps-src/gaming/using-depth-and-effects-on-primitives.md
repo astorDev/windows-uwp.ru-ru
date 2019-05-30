@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, глубина, эффекты, примитивы, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 02911338da858e3718235736cee7969a7bdebae2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 63af04475e897dfade3afec91b2a0fa0d9790f84
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646589"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367505"
 ---
 # <a name="use-depth-and-effects-on-primitives"></a>Применение глубины и эффектов к примитивам
 
@@ -21,7 +21,7 @@ ms.locfileid: "57646589"
 
 **Цель:** Чтобы создать трехмерный объект и применить базовые вершин освещения и его выделение цветом в него.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 
 Предполагается, что вы знакомы с C++. Также вы должны быть знакомы с основными принципами программирования графики.
@@ -34,7 +34,7 @@ ms.locfileid: "57646589"
 ------------
 ### <a name="1-defining-cube-variables"></a>1. Определение переменных куба
 
-Сначала потребуется определить структуры **SimpleCubeVertex** и **ConstantBuffer** для куба. Эти структуры определяют положения и цвета вершин для куба, а также метод его просмотра. Мы объявляем [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) и [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) с [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) и объявляем экземпляр **ConstantBuffer**.
+Сначала потребуется определить структуры **SimpleCubeVertex** и **ConstantBuffer** для куба. Эти структуры определяют положения и цвета вершин для куба, а также метод его просмотра. Мы объявляем [**ID3D11DepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilview) и [**ID3D11Buffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer) с [**ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class) и объявляем экземпляр **ConstantBuffer**.
 
 ```cpp
 struct SimpleCubeVertex
@@ -66,7 +66,7 @@ private:
 
 ### <a name="2-creating-a-depth-stencil-view"></a>2. Создание представления трафарета глубины
 
-Помимо представления однобуферной обработки мы создаем представление "глубина-трафарет". Представление "глубина-трафарет" позволяет Direct3D эффективно рисовать объекты, расположенные ближе к камере, на фоне объектов, расположенных дальше от камеры. Перед созданием представления для буфера трафарета глубины необходимо создать этот буфер. Мы заполним [ **D3D11\_TEXTURE2D\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476253) для описания трафарета глубины буфера и затем вызвать [ **ID3D11Device::CreateTexture2D**  ](https://msdn.microsoft.com/library/windows/desktop/ff476521) создать буфер трафарета глубины. Чтобы создать представление трафарета глубины, мы заполним [ **D3D11\_ГЛУБИНА\_ТРАФАРЕТА\_ПРЕДСТАВЛЕНИЕ\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476112) для описания представление трафарета глубины и передать Просмотр описания трафарета глубины и буфер трафарета глубины для [ **ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507).
+Помимо представления однобуферной обработки мы создаем представление "глубина-трафарет". Представление "глубина-трафарет" позволяет Direct3D эффективно рисовать объекты, расположенные ближе к камере, на фоне объектов, расположенных дальше от камеры. Перед созданием представления для буфера трафарета глубины необходимо создать этот буфер. Мы заполним [ **D3D11\_TEXTURE2D\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_texture2d_desc) для описания трафарета глубины буфера и затем вызвать [ **ID3D11Device::CreateTexture2D**  ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createtexture2d) создать буфер трафарета глубины. Чтобы создать представление трафарета глубины, мы заполним [ **D3D11\_ГЛУБИНА\_ТРАФАРЕТА\_ПРЕДСТАВЛЕНИЕ\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_view_desc) для описания представление трафарета глубины и передать Просмотр описания трафарета глубины и буфер трафарета глубины для [ **ID3D11Device::CreateDepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createdepthstencilview).
 
 ```cpp
         // Once the render target view is created, create a depth stencil view.  This
@@ -148,15 +148,15 @@ private:
 
 В этом приложении мы создадим более сложные шейдеры вершин и пикселей, чем в предыдущем курсе ( [Создание шейдеров и рисование примитивов](creating-shaders-and-drawing-primitives.md)). Вершинный шейдер приложения преобразует положение каждой вершины в пространство проекции и передает цвет вершины в построитель текстуры.
 
-Массив приложения [ **D3D11\_ввода\_элемент\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180) структур, которые описывают структуру код шейдера вершин состоит из двух элементов макета: один элемент Определяет позицию вершины и другой элемент определяет цвет.
+Массив приложения [ **D3D11\_ввода\_элемент\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) структур, которые описывают структуру код шейдера вершин состоит из двух элементов макета: один элемент Определяет позицию вершины и другой элемент определяет цвет.
 
 Чтобы определить вращающийся по орбите куб, мы создадим буфер вершин, буфер индексов и буфер констант.
 
 **Для определения куба орбитальный**
 
 1.  Сначала определим куб. Каждой вершине, помимо положения, назначается цвет. Это позволяет пиксельному построителю текстуры задавать различный цвет для каждой поверхности, чтобы упростить различение поверхностей.
-2.  Далее мы опишем буферы вершин и индексов ([**D3D11\_БУФЕРА\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) и [ **D3D11\_SUBRESOURCE\_Данных**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) с помощью определения куба. Для каждого буфера однократно вызывается метод [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501).
-3.  Теперь создадим буфера констант ([**D3D11\_БУФЕРА\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) для передачи матрицы модели, представления и проекции в шейдер вершин. Буфер констант мы сможем использовать позже для вращения куба и применения к нему перспективной проекции. Для создания буфера констант вызываем метод [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501).
+2.  Далее мы опишем буферы вершин и индексов ([**D3D11\_БУФЕРА\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) и [ **D3D11\_SUBRESOURCE\_Данных**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) с помощью определения куба. Для каждого буфера однократно вызывается метод [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer).
+3.  Теперь создадим буфера констант ([**D3D11\_БУФЕРА\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)) для передачи матрицы модели, представления и проекции в шейдер вершин. Буфер констант мы сможем использовать позже для вращения куба и применения к нему перспективной проекции. Для создания буфера констант вызываем метод [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer).
 4.  Затем определяем преобразование представления, соответствующее положению камеры X = 0, Y = 1, Z = 2.
 5.  Наконец, мы объявляем переменную *degree*, которая будет использоваться для анимации куба (поворот в каждом кадре).
 
@@ -336,20 +336,20 @@ private:
 
 ### <a name="5-rotating-and-drawing-the-cube-and-presenting-the-rendered-image"></a>5. Поворот и Рисование куба и представляя подготовленного изображения
 
-Для непрерывной обработки и вывода сцены на экран мы воспользуемся бесконечным циклом. Вызываем встроенную функцию **rotationY** (BasicMath.h) с величиной поворота, чтобы установить значения, позволяющие вращать матрицу модели куба вокруг оси Y. Затем вызываем [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) для обновления буфера констант и вращения модели куба. Вызываем [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464), чтобы указать однобуферную прорисовку в качестве цели вывода. В этом вызове **OMSetRenderTargets** мы передаем представление "глубина-трафарет". Вызываем метод [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) для очистки целевого объекта отрисовки до сплошного синего цвета, а метод [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) – для очистки буфера глубины.
+Для непрерывной обработки и вывода сцены на экран мы воспользуемся бесконечным циклом. Вызываем встроенную функцию **rotationY** (BasicMath.h) с величиной поворота, чтобы установить значения, позволяющие вращать матрицу модели куба вокруг оси Y. Затем вызываем [**ID3D11DeviceContext::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) для обновления буфера констант и вращения модели куба. Вызываем [**ID3D11DeviceContext::OMSetRenderTargets**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets), чтобы указать однобуферную прорисовку в качестве цели вывода. В этом вызове **OMSetRenderTargets** мы передаем представление "глубина-трафарет". Вызываем метод [**ID3D11DeviceContext::ClearRenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview) для очистки целевого объекта отрисовки до сплошного синего цвета, а метод [**ID3D11DeviceContext::ClearDepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-cleardepthstencilview) – для очистки буфера глубины.
 
 В бесконечном цикле мы рисуем куб на синей поверхности.
 
 **Для рисования куба**
 
-1.  Сначала мы вызываем метод [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454), чтобы описать способ потоковой передачи данных буфера вершин на этап входной сборки.
-2.  Далее вызываем [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) и [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453), чтобы связать буферы индексов и вершин с этапом входной сборки.
-3.  Затем мы вызываем [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455) с [ **D3D11\_ПРИМИТИВНЫЙ\_ТОПОЛОГИИ\_ TRIANGLESTRIP** ](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) значение для указания на этапе сборщик входных данных для интерпретации данных вершин как ленты треугольника.
-4.  Затем вызывается метод [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) для инициализации стадии вершинного шейдера и метод [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) для инициализации построителя текстур с кодом построителя текстур.
-5.  Затем вызываем метод [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491), чтобы установить буфер констант, используемый на стадии конвейера вершинного шейдера.
-6.  Наконец, вызываем [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409), чтобы нарисовать куб и передать его в конвейер отрисовки.
+1.  Сначала мы вызываем метод [**ID3D11DeviceContext::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout), чтобы описать способ потоковой передачи данных буфера вершин на этап входной сборки.
+2.  Далее вызываем [**ID3D11DeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) и [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer), чтобы связать буферы индексов и вершин с этапом входной сборки.
+3.  Затем мы вызываем [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) с [ **D3D11\_ПРИМИТИВНЫЙ\_ТОПОЛОГИИ\_ TRIANGLESTRIP** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) значение для указания на этапе сборщик входных данных для интерпретации данных вершин как ленты треугольника.
+4.  Затем вызывается метод [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) для инициализации стадии вершинного шейдера и метод [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) для инициализации построителя текстур с кодом построителя текстур.
+5.  Затем вызываем метод [**ID3D11DeviceContext::VSSetConstantBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers), чтобы установить буфер констант, используемый на стадии конвейера вершинного шейдера.
+6.  Наконец, вызываем [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed), чтобы нарисовать куб и передать его в конвейер отрисовки.
 
-Мы вызываем метод [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576), чтобы представить отрисованное изображение в окне.
+Мы вызываем метод [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present), чтобы представить отрисованное изображение в окне.
 
 ```cpp
             // Update the constant buffer to rotate the cube model.

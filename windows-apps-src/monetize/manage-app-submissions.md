@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправки приложений
 ms.localizationpriority: medium
-ms.openlocfilehash: 474abc2ec43b7f8eab408bd75cca33653d27d932
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 65e8599a73a196ebb72fe3cc45ea984f82057741
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63789679"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371500"
 ---
 # <a name="manage-app-submissions"></a>Управление отправками приложений
 
@@ -85,7 +85,7 @@ API отправки в Microsoft Store предоставляет методы,
 
 1. Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store.
     > [!NOTE]
-    > Убедитесь, что приложение уже содержит не менее одной завершенной отправки, для которой указаны сведения [возрастной категории](https://msdn.microsoft.com/windows/uwp/publish/age-ratings).
+    > Убедитесь, что приложение уже содержит не менее одной завершенной отправки, для которой указаны сведения [возрастной категории](https://docs.microsoft.com/windows/uwp/publish/age-ratings).
 
 2. [Получение токена доступа Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Этот маркер доступа необходимо передавать методам из API отправки в Microsoft Store. После получения токена доступа у вас будет 60 минут, чтобы использовать его до окончания его срока действия. После истечения срока действия токена можно получить новый токен.
 
@@ -100,7 +100,7 @@ API отправки в Microsoft Store предоставляет методы,
     > [!NOTE]
     > URI SAS предоставляет доступ к защищенному ресурсу в хранилище Azure без необходимости в использовании ключей учетной записи. Справочные сведения о URI SAS и их использования с хранилищем BLOB-объектов Azure, см. в разделе [Shared Access Signatures, Part 1: Общие сведения о модели SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) и [Shared Access Signatures, Part 2: Создание и использование SAS в хранилище BLOB-объектов](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
-4. При добавлении новых пакетов, изображений для описания и файлов трейлеров для отправки [подготовьте пакеты приложения](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements) и [подготовьте снимки экранов, изображения и трейлеры](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images). Добавьте все эти файлы в ZIP-архив.
+4. При добавлении новых пакетов, изображений для описания и файлов трейлеров для отправки [подготовьте пакеты приложения](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) и [подготовьте снимки экранов, изображения и трейлеры](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images). Добавьте все эти файлы в ZIP-архив.
 
 5. Проверьте [отправку приложения](#app-submission-object), внеся все необходимые для новой отправки изменения, затем выполните следующий метод для [обновления отправки приложения](update-an-app-submission.md).
 
@@ -116,7 +116,7 @@ API отправки в Microsoft Store предоставляет методы,
     * [Пакет SDK для Java хранилища Azure](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-    В следующем фрагменте кода на C# показано, как передать ZIP-архив в хранилище BLOB-объектов Azure с помощью класса [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) клиентской библиотеки службы хранилища Azure для .NET. В этом примере кода предполагается, что ZIP-архив уже был записан в потоковый объект.
+    В следующем фрагменте кода на C# показано, как передать ZIP-архив в хранилище BLOB-объектов Azure с помощью класса [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob?redirectedfrom=MSDN) клиентской библиотеки службы хранилища Azure для .NET. В этом примере кода предполагается, что ZIP-архив уже был записан в потоковый объект.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -338,28 +338,28 @@ API отправки в Microsoft Store предоставляет методы,
 | Значение      | Тип   | Описание      |
 |------------|--------|-------------------|
 | id            | строка  | Идентификатор отправки. Этот идентификатор доступен в данных ответа на запросы на [создание отправки приложения](create-an-app-submission.md), [получение всех приложений](get-all-apps.md) и [получение определенного приложения](get-an-app.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.  |
-| applicationCategory           | строка  |   Строка, указывающая [категорию или подкатегорию](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) для вашего приложения. Категории и подкатегории объединяются в одну строку с помощью символа подчеркивания "_", например **BooksAndReference_EReader**.      |  
+| applicationCategory           | строка  |   Строка, указывающая [категорию или подкатегорию](https://docs.microsoft.com/windows/uwp/publish/category-and-subcategory-table) для вашего приложения. Категории и подкатегории объединяются в одну строку с помощью символа подчеркивания "_", например **BooksAndReference_EReader**.      |  
 | pricing           |  Объект  | [Ресурс цены](#pricing-object), содержащий сведения о цене приложения.        |   
 | visibility           |  строка  |  Видимость приложения. Может принимать одно из следующих значений. <ul><li>Hidden (Скрыто)</li><li>Public (Общее)</li><li>Private (Частное)</li><li>NotSet (Не задано)</li></ul>       |   
 | targetPublishMode           | строка  | Режим публикации для отправки. Может принимать одно из следующих значений. <ul><li>Immediate (Незамедлительно)</li><li>Manual (Вручную)</li><li>SpecificDate (Указанная дата)</li></ul> |
 | targetPublishDate           | строка  | Дата публикации отправки в формате ISO 8601, если для *targetPublishMode* задано значение SpecificDate.  |  
 | listings           |   Объект  |  Словарь пар "ключ-значение", где каждый ключ является кодом страны, а каждое значение — объектом [ресурса описания](#listing-object), содержащим данные описания приложения.       |   
-| hardwarePreferences           |  Массив  |   Массив строк, определяющих [предпочтения оборудования](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences) для приложения. Может принимать одно из следующих значений. <ul><li>Сенсорный ввод</li><li>Клавиатура</li><li>Мышь</li><li>Камера</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony (Телефония)</li></ul>     |   
-| automaticBackupEnabled           |  Логический  |   Указывает, может ли Windows включать данные этого приложения в автоматические резервные копии, записываемые в OneDrive. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).   |   
-| canInstallOnRemovableMedia           |  Логический  |   Указывает, могут ли клиенты устанавливать приложение на съемный носитель. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
+| hardwarePreferences           |  Массив  |   Массив строк, определяющих [предпочтения оборудования](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties) для приложения. Может принимать одно из следующих значений. <ul><li>Сенсорный ввод</li><li>Клавиатура</li><li>Мышь</li><li>Камера</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony (Телефония)</li></ul>     |   
+| automaticBackupEnabled           |  Логический  |   Указывает, может ли Windows включать данные этого приложения в автоматические резервные копии, записываемые в OneDrive. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).   |   
+| canInstallOnRemovableMedia           |  Логический  |   Указывает, могут ли клиенты устанавливать приложение на съемный носитель. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | isGameDvrEnabled           |  Логический |   Указывает, включена ли для приложения функция DVR для игр.    |   
 | gamingOptions           |  Массив |   Массив, содержащий один [ресурс параметров игры](#gaming-options-object), который определяет относящиеся к игре параметры для приложения.     |   
-| hasExternalInAppProducts           |     Логический          |   Указывает, позволяет ли приложение пользователям делать покупки без использования коммерческой системы Microsoft Store. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
-| meetAccessibilityGuidelines           |    Логический           |  Указывает, проверено ли приложение на соответствие рекомендациям по специальным возможностям. Подробные сведения см. в разделе [Объявления приложений](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).      |   
-| notesForCertification           |  строка  |   Содержит [заметки по сертификации](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) приложения.    |    
+| hasExternalInAppProducts           |     Логический          |   Указывает, позволяет ли приложение пользователям делать покупки без использования коммерческой системы Microsoft Store. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).     |   
+| meetAccessibilityGuidelines           |    Логический           |  Указывает, проверено ли приложение на соответствие рекомендациям по специальным возможностям. Подробные сведения см. в разделе [Объявления приложений](https://docs.microsoft.com/windows/uwp/publish/app-declarations).      |   
+| notesForCertification           |  строка  |   Содержит [заметки по сертификации](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification) приложения.    |    
 | status           |   строка  |  Состояние отправки. Может принимать одно из следующих значений. <ul><li>Нет</li><li>Canceled (Отменено)</li><li>PendingCommit (Ожидание фиксации)</li><li>CommitStarted (Фиксация запущена)</li><li>CommitFailed (Сбой фиксации)</li><li>PendingPublication (Ожидание публикации)</li><li>Publishing (Выполняется публикация)</li><li>Published (Опубликовано)</li><li>PublishFailed (Сбой публикации)</li><li>PreProcessing (Предварительная обработка)</li><li>PreProcessingFailed (Сбой предварительной обработки)</li><li>Certification (Сертификация)</li><li>CertificationFailed (Сбой сертификации)</li><li>Выпуск</li><li>ReleaseFailed (Сбой выпуска)</li></ul>      |    
 | statusDetails           |   Объект  | [Ресурс сведений о состоянии](#status-details-object), который содержит дополнительные сведения о состоянии отправки, включая сведения об ошибках.       |    
 | fileUploadUrl           |   строка  | URI подписанного URL-адреса (SAS) для передачи пакетов для отправки. При добавлении новых пакетов, изображений описания или файлов трейлеров для отправки выложите ZIP-архив, содержащий пакеты и изображения, по этому URI. Дополнительную информацию см. в разделе [Создание отправки приложения](#create-an-app-submission).       |    
 | applicationPackages           |   Массив  | Массив [ресурсов пакета приложения](#application-package-object), предоставляющий сведения о каждом пакете в отправке |    
 | packageDeliveryOptions    | Объект  | [Ресурс параметров доставки пакета](#package-delivery-options-object), который содержит постепенный выпуск пакета и обязательные параметры обновления для отправки.  |
 | enterpriseLicensing           |  строка  |  Одно из значений, связанных с [корпоративным лицензированием](#enterprise-licensing), указывающих на поведение приложения в отношении корпоративного лицензирования.  |    
-| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  Логический   |  Указывает, разрешено ли Майкрософт [делать приложение доступным для будущих семейств устройств Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
-| allowTargetFutureDeviceFamilies           | Объект   |  Словарь пар "ключ-значение", в котором каждый ключ представляет собой [семейство устройств Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families), а каждое значение является логическим значением, которое указывает, разрешено ли нацеливание приложения на указанное семейство устройств.     |    
+| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  Логический   |  Указывает, разрешено ли Майкрософт [делать приложение доступным для будущих семейств устройств Windows 10](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability).    |    
+| allowTargetFutureDeviceFamilies           | Объект   |  Словарь пар "ключ-значение", в котором каждый ключ представляет собой [семейство устройств Windows 10](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability), а каждое значение является логическим значением, которое указывает, разрешено ли нацеливание приложения на указанное семейство устройств.     |    
 | friendlyName           |   строка  |  Понятное имя подписки, как показано в центре партнеров. Это значение создается при создании отправки.       |  
 | trailers           |  Массив |   Массив, содержащий до 15 [ресурсов трейлеров](#trailer-object), представляющие видеотрейлеры для описания приложения.<br/><br/>   |  
 
@@ -373,9 +373,9 @@ API отправки в Microsoft Store предоставляет методы,
 | Значение           | Тип    | Описание        |
 |-----------------|---------|------|
 |  trialPeriod               |    строка     |  Строка, указывающая срок действия пробной версии приложения. Может принимать одно из следующих значений. <ul><li>NoFreeTrial (Нет пробного периода)</li><li>OneDay (Один день)</li><li>TrialNeverExpires (Бессрочный пробный период)</li><li>SevenDays (7 дней)</li><li>FifteenDays (15 дней)</li><li>ThirtyDays (30 дней)</li></ul>    |
-|  marketSpecificPricings               |    Объект     |  Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на ваше приложение для определенных рынков](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices). Любые элементы этого словаря переопределяют базовую цену, заданную значением *priceId* для указанного рынка.      |     
+|  marketSpecificPricings               |    Объект     |  Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на ваше приложение для определенных рынков](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection). Любые элементы этого словаря переопределяют базовую цену, заданную значением *priceId* для указанного рынка.      |     
 |  sales               |   Массив      |  **Не рекомендуется**. Массив [ресурсов продажи](#sale-object), содержащих сведения о продажах для приложения.   |     
-|  priceId               |   строка      |  [Ценовая категория](#price-tiers), указывающая [базовую цену](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price) для приложения.   |     
+|  priceId               |   строка      |  [Ценовая категория](#price-tiers), указывающая [базовую цену](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection) для приложения.   |     
 |  isAdvancedPricingModel               |   Логический      |  Если **true**, ваша учетная запись разработчика имеет доступ к расширенному набору ценовых категорий от 0,99 долл. США до 1999,99 долл. США. Если **false**, ваша учетная запись разработчика имеет доступ к стандартному набору ценовых категорий от 0,99 долл. США до 999,99 долл. США. Дополнительные сведения о разных категориях см. в разделе [Ценовые категории](#price-tiers).<br/><br/>**Примечание**.&nbsp;&nbsp;Данное поле предназначено только для чтения.   |
 
 
@@ -398,7 +398,7 @@ API отправки в Microsoft Store предоставляет методы,
 |  basePriceId               |   строка      |  [Ценовая категория](#price-tiers), используемая для базовой цены продажи.    |     
 |  startDate               |   строка      |   Дата начала для продажи в формате ISO 8601.  |     
 |  endDate               |   строка      |  Дата окончания для продажи в формате ISO 8601.      |     
-|  marketSpecificPricings               |   Объект      |   Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на ваше приложение для определенных рынков](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices). Любые элементы этого словаря переопределяют базовую цену, заданную значением *basePriceId* для указанного рынка.    |
+|  marketSpecificPricings               |   Объект      |   Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на ваше приложение для определенных рынков](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection). Любые элементы этого словаря переопределяют базовую цену, заданную значением *basePriceId* для указанного рынка.    |
 
 
 <span id="listing-object" />
@@ -420,15 +420,15 @@ API отправки в Microsoft Store предоставляет методы,
 
 | Значение           | Тип    | Описание       |
 |-----------------|---------|------|
-|  copyrightAndTrademarkInfo                |   строка      |  Необязательные [сведения об авторских правах и (или) товарных знаках](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info).  |
-|  keywords                |  Массив       |  Массив [ключевых слов](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords), способствующих появлению вашего приложения в результатах поиска.    |
-|  licenseTerms                |    строка     | Необязательные [условия лицензионного соглашения](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) для вашего приложения.     |
+|  copyrightAndTrademarkInfo                |   строка      |  Необязательные [сведения об авторских правах и (или) товарных знаках](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions).  |
+|  keywords                |  Массив       |  Массив [ключевых слов](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions), способствующих появлению вашего приложения в результатах поиска.    |
+|  licenseTerms                |    строка     | Необязательные [условия лицензионного соглашения](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) для вашего приложения.     |
 |  privacyPolicy                |   строка      |   Это значение устарело. Чтобы задать или изменить URL-адрес политики конфиденциальности для вашего приложения, которую необходимо выполнить это [свойства](../publish/enter-app-properties.md#privacy-policy-url) страницы в центре партнеров. Это значение можно исключить из вызовов к API отправки. Если это значение задано, оно будет игнорироваться.       |
 |  supportContact                |   строка      |  Это значение устарело. Чтобы задать или изменить поддержки контактные URL-адрес или адрес электронной почты для вашего приложения, которую необходимо выполнить это [свойства](../publish/enter-app-properties.md#support-contact-info) страницы в центре партнеров. Это значение можно исключить из вызовов к API отправки. Если это значение задано, оно будет игнорироваться.        |
 |  websiteUrl                |   строка      |  Это значение устарело. Чтобы задать или изменить URL-адрес веб-страницы для вашего приложения, которую необходимо выполнить это [свойства](../publish/enter-app-properties.md#website) страницы в центре партнеров. Это значение можно исключить из вызовов к API отправки. Если это значение задано, оно будет игнорироваться.      |    
-|  description               |    строка     |   [Описание](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description) для описания приложения.   |     
-|  features               |    Массив     |  Массив размером до 20 строк со списком [функций](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features) вашего приложения.     |
-|  releaseNotes               |  строка       |  [Заметки о выпуске](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes) для вашего приложения.    |
+|  description               |    строка     |   [Описание](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) для описания приложения.   |     
+|  features               |    Массив     |  Массив размером до 20 строк со списком [функций](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) вашего приложения.     |
+|  releaseNotes               |  строка       |  [Заметки о выпуске](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions) для вашего приложения.    |
 |  images               |   Массив      |  Массив ресурсов [изображений и значков](#image-object) для описания приложения.  |
 |  recommendedHardware               |   Массив      |  Массив размером до 11 строк со списком [рекомендуемой конфигурации оборудования](../publish/create-app-store-listings.md#additional-information) для вашего приложения.     |
 |  minimumHardware               |     строка    |  Массив размером до 11 строк со списком [минимальной конфигурации оборудования](../publish/create-app-store-listings.md#additional-information) для вашего приложения.    |  
@@ -572,10 +572,10 @@ API отправки в Microsoft Store предоставляет методы,
 | fileName   |   строка      |  Имя пакета.    |  
 | fileStatus    | строка    |  Состояние пакета. Может принимать одно из следующих значений. <ul><li>Нет</li><li>PendingUpload (Ожидает передачи)</li><li>Uploaded (Передан)</li><li>PendingDelete (Ожидает удаления)</li></ul>    |  
 | id    |  строка   |  Идентификатор, который уникально идентифицирует пакет. Это значение предоставляется с помощью центра партнеров.   |     
-| version    |  строка   |  Версия пакета приложения. Дополнительные сведения см. в разделе [Нумерация версий пакета](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
+| version    |  строка   |  Версия пакета приложения. Дополнительные сведения см. в разделе [Нумерация версий пакета](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
 | architecture    |  строка   |  Архитектура пакета (например, ARM).   |     
-| languages    | Массив    |  Массив кодов языков, которые поддерживает приложение. Дополнительные сведения см. в разделе [Поддерживаемые языки](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
-| capabilities    |  Массив   |  Массив возможностей, необходимых для этого пакета. Дополнительные сведения о возможностях см. в разделе [Объявления возможностей приложения](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
+| languages    | Массив    |  Массив кодов языков, которые поддерживает приложение. Дополнительные сведения см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
+| capabilities    |  Массив   |  Массив возможностей, необходимых для этого пакета. Дополнительные сведения о возможностях см. в разделе [Объявления возможностей приложения](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
 | minimumDirectXVersion    |  строка   |  Минимальная версия DirectX, поддерживаемая пакетом приложения. Может задаваться только для приложений, предназначенных для Windows 8.x. Для приложений, предназначенных для других версий ОС, это значение должно присутствовать при вызове метода [обновления отправки приложения](update-an-app-submission.md), но указанное значение игнорируется. Может принимать одно из следующих значений. <ul><li>Нет</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
 | minimumSystemRam    | строка    |  Минимальный объем ОЗУ, необходимый для пакета приложения. Может задаваться только для приложений, предназначенных для Windows 8.x. Для приложений, предназначенных для других версий ОС, это значение должно присутствовать при вызове метода [обновления отправки приложения](update-an-app-submission.md), но указанное значение игнорируется. Может принимать одно из следующих значений. <ul><li>Нет</li><li>Memory2GB</li></ul>   |       
 | targetDeviceFamilies    | Массив    |  Массив строк, представляющих семейства устройств, для которых предназначен пакет. Это значение используется только для пакетов, предназначенных для Windows 10; для пакетов, предназначенных для предыдущих выпусков, это значение равно **None**. В настоящее время поддерживаются следующие строки семейств устройств для пакетов Windows 10, где *{0}* представляет собой строку версии Windows 10, например 10.0.10240.0, 10.0.10586.0 или 10.0.14393.0: <ul><li>Windows.Universal min version *{0}*</li><li>Windows.Desktop min version *{0}*</li><li>Windows.Mobile min version *{0}*</li><li>Windows.Xbox min version *{0}*</li><li>Windows.Holographic min version *{0}*</li></ul>   |    
@@ -678,7 +678,7 @@ API отправки в Microsoft Store предоставляет методы,
 |  id               |    строка     |   Идентификатор для трейлера. Это значение предоставляется с помощью центра партнеров.   |
 |  videoFileName               |    строка     |    Имя файла видеотрейлера в ZIP-архиве, который содержит файлы для отправки.    |     
 |  videoFileId               |   строка      |  Идентификатор файла видеотрейлера. Это значение предоставляется с помощью центра партнеров.   |     
-|  trailerAssets               |   Объект      |  Словарь пар "ключ-значение", где каждый ключ является кодом языка, а каждое значение — [набором ресурсов трейлера](#trailer-assets-object), содержащим относящиеся к языковым стандартам ресурсы для трейлера. Дополнительные сведения о кодах поддерживаемых языков см. в разделе [Поддерживаемые языки](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
+|  trailerAssets               |   Объект      |  Словарь пар "ключ-значение", где каждый ключ является кодом языка, а каждое значение — [набором ресурсов трейлера](#trailer-assets-object), содержащим относящиеся к языковым стандартам ресурсы для трейлера. Дополнительные сведения о кодах поддерживаемых языков см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
 
 > [!NOTE]
 > Ресурс *trailers* был добавлен в мае 2017 г. после первого выпуска API отправки в Microsoft Store для разработчиков. Если вы создали отправку для приложения с помощью API отправки до появления этого ресурса и эта отправка все еще выполняется, этот ресурс будет иметь значение null для отправок приложения, пока вы успешно не выполните отправку или не удалите ее. Если ресурс *trailers* недоступен для отправок приложения, поле *hasAdvancedListingPermission* в [ресурсе Application](get-app-data.md#application_object), возвращаемом методом [получения приложения](get-an-app.md), будет иметь значение false.
@@ -724,14 +724,14 @@ API отправки в Microsoft Store предоставляет методы,
 |  Base               |   Ценовая категория не задана; используется базовая цена для приложения.      |     
 |  NotAvailable              |   Приложение недоступно в указанном регионе.    |     
 |  Free              |   Бесплатное приложение.    |    
-|  Tier*xxx*               |   Строка, указывающая ценовую категорию приложения в формате **Tier<em>xxxx</em>**. В настоящее время поддерживаются следующие ценовые категории.<br/><br/><ul><li>Если значение *isAdvancedPricingModel*[ценового ресурса](#pricing-object) — **true**, для вашей учетной записи доступны такие ценовые категории: **Tier1012** - **Tier1424**.</li><li>Если значение *isAdvancedPricingModel*[ценового ресурса](#pricing-object) — **false**, для вашей учетной записи доступны такие ценовые категории: **Tier2** - **Tier96**.</li></ul>Для просмотра полной таблице уровней цены, доступные для вашей учетной записи разработчика, включая местные цены, которые связаны с каждого уровня, перейдите к **цены и доступность** страницы для любого приложения отправки в Partner Center и нажмите кнопку **Просмотр таблицы** ссылку в **рынки и пользовательские цены** раздел (для некоторых учетных записей разработчиков ссылка имеется в **цены** раздел).    |
+|  Tier*xxx*               |   Строка, указывающая ценовую категорию приложения в формате **Tier<em>xxxx</em>** . В настоящее время поддерживаются следующие ценовые категории.<br/><br/><ul><li>Если значение *isAdvancedPricingModel*[ценового ресурса](#pricing-object) — **true**, для вашей учетной записи доступны такие ценовые категории: **Tier1012** - **Tier1424**.</li><li>Если значение *isAdvancedPricingModel*[ценового ресурса](#pricing-object) — **false**, для вашей учетной записи доступны такие ценовые категории: **Tier2** - **Tier96**.</li></ul>Для просмотра полной таблице уровней цены, доступные для вашей учетной записи разработчика, включая местные цены, которые связаны с каждого уровня, перейдите к **цены и доступность** страницы для любого приложения отправки в Partner Center и нажмите кнопку **Просмотр таблицы** ссылку в **рынки и пользовательские цены** раздел (для некоторых учетных записей разработчиков ссылка имеется в **цены** раздел).    |
 
 
 <span id="enterprise-licensing" />
 
 ### <a name="enterprise-licensing-values"></a>Значения корпоративного лицензирования
 
-Следующие значения представляют поведение корпоративного лицензирования для приложения. Дополнительные сведения об этих параметрах см. в разделе [Параметры корпоративного лицензирования](https://msdn.microsoft.com/windows/uwp/publish/organizational-licensing).
+Следующие значения представляют поведение корпоративного лицензирования для приложения. Дополнительные сведения об этих параметрах см. в разделе [Параметры корпоративного лицензирования](https://docs.microsoft.com/windows/uwp/publish/organizational-licensing).
 
 > [!NOTE]
 > Хотя параметры корпоративного лицензирования можно настроить для отправки приложения с помощью API отправки, этот API нельзя использовать для публикации отправок [для приобретения в больших объемах через Microsoft Store для бизнеса и Microsoft Store для образования](../publish/organizational-licensing.md). Чтобы опубликовать отправки в Microsoft Store для бизнеса и Microsoft Store для образования, необходимо использовать центр партнеров.
@@ -773,4 +773,4 @@ API отправки в Microsoft Store предоставляет методы,
 
 * [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Получение данных приложений с помощью API отправки Microsoft Store](get-app-data.md)
-* [Отправки приложений в центре партнеров](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
+* [Отправки приложений в центре партнеров](https://docs.microsoft.com/windows/uwp/publish/app-submissions)

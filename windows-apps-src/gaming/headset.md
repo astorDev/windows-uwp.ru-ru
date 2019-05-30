@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, гарнитура
 ms.localizationpriority: medium
-ms.openlocfilehash: b3de68cc59c9928a52eba5caeb840e9e825eecf0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 73815fb3f1b732537e9f08932639a1eccd7ed1b0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627959"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368627"
 ---
 # <a name="headset"></a>Гарнитура
 
@@ -65,7 +65,7 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 Класс [Гарнитура][] состоит из двух строк, представляющих идентификаторы конечной точки XAudio — один для записи звука (запись с микрофона гарнитуры) и другой для обработки звука (воспроизведения через наушник гарнитуры).
 
-Инструкции по работе с XAudio в этом разделе не приводятся. Дополнительные сведения см. в разделе [Руководство по программированию для XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415737.aspx) и [Справочник по API XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415899.aspx).
+Инструкции по работе с XAudio в этом разделе не приводятся. Дополнительные сведения см. в разделе [Руководство по программированию для XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide) и [Справочник по API XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/programming-reference).
 
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx

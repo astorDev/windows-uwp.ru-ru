@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ce91b47d2846f945a0e4a15f705491ab22e9dea
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: 9d6a3b1eb64c89f231d0334a3cbe8e58d11c58ae
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291672"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370956"
 ---
 # <a name="rectangles"></a>Прямоугольники
 
@@ -21,7 +21,7 @@ ms.locfileid: "58291672"
 ## <a name="span-idboundingrectanglesspanspan-idboundingrectanglesspanspan-idboundingrectanglesspanbounding-rectangles"></a><span id="Bounding_rectangles"></span><span id="bounding_rectangles"></span><span id="BOUNDING_RECTANGLES"></span>Ограничивающих прямоугольников
 
 
-Большинство приложений используют структуру [**RECT**](https://msdn.microsoft.com/library/windows/desktop/dd162897) (или преобразованный с помощью typedef псевдоним) для передачи сведений об ограничивающем прямоугольнике, который необходимо использовать при копировании битового блока на экран или при обнаружении попаданий. В C++ структура **RECT** содержит следующее определение.
+Большинство приложений используют структуру [**RECT**](https://docs.microsoft.com/previous-versions//dd162897(v=vs.85)) (или преобразованный с помощью typedef псевдоним) для передачи сведений об ограничивающем прямоугольнике, который необходимо использовать при копировании битового блока на экран или при обнаружении попаданий. В C++ структура **RECT** содержит следующее определение.
 
 ```cpp
 typedef struct tagRECT { 

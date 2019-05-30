@@ -6,16 +6,16 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, звуки
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d5a976ef65bee5efc3329afc98bf198d094b037
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 945270247b8a288554e1910ac1c6f8e5c1ec1619
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589939"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367844"
 ---
 # <a name="add-sound"></a>Добавление звука
 
-В этом разделе мы создадим простой обработчик звука с помощью [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API-интерфейсы. Если вы не знакомы с __XAudio2__, мы включили Краткое введение в разделе [понятия аудио](#audio-concepts).
+В этом разделе мы создадим простой обработчик звука с помощью [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction) API-интерфейсы. Если вы не знакомы с __XAudio2__, мы включили Краткое введение в разделе [понятия аудио](#audio-concepts).
 
 >[!Note]
 >Если вы еще не скачали последний код для игры из этого примера, перейдите в раздел [Пример игры Direct3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Этот пример является частью большой коллекции примеров функций UWP. Указания по скачиванию этого примера приводятся в разделе [Получение примеров UWP из GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
@@ -129,10 +129,10 @@ void Simple3DGame::Initialize(
 
 ## <a name="create-and-initialize-the-audio-resources"></a>Создание и инициализация звуковые ресурсы
 
-* Используйте [XAudio2Create](https://msdn.microsoft.com/library/windows/desktop/ee419212), XAudio2 API, для создания двух объектов XAudio2, определяющие модули Музыка и звук в силу. Этот метод возвращает указатель на объект [IXAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415908) говорится в интерфейс, управляющий все аудио, аудио, обработка потоков, graph голосовой и многое другое.
-* После модули были созданы, с помощью [IXAudio2::CreateMasteringVoice](https://msdn.microsoft.com/library/windows/desktop/hh405048) Создание голос Отработка навыков в службах для каждого объекта звуковой ядра.
+* Используйте [XAudio2Create](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-xaudio2create), XAudio2 API, для создания двух объектов XAudio2, определяющие модули Музыка и звук в силу. Этот метод возвращает указатель на объект [IXAudio2](https://docs.microsoft.com/windows/desktop/api/xaudio2/nn-xaudio2-ixaudio2) говорится в интерфейс, управляющий все аудио, аудио, обработка потоков, graph голосовой и многое другое.
+* После модули были созданы, с помощью [IXAudio2::CreateMasteringVoice](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2-createmasteringvoice) Создание голос Отработка навыков в службах для каждого объекта звуковой ядра.
 
-Дополнительные сведения см. в статье [как: Инициализировать XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx).
+Дополнительные сведения см. в статье [как: Инициализировать XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--initialize-xaudio2).
 
 ### <a name="audiocreatedeviceindependentresources-method"></a>Метод Audio::CreateDeviceIndependentResources
 
@@ -172,29 +172,29 @@ void Audio::CreateDeviceIndependentResources()
 
 ### <a name="mediareaderloadmedia-method"></a>Метод MediaReader::LoadMedia
 
-Данный метод использует API [Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) для считывания звукового файла в формате WAV в виде буфера импульсно-кодовой модуляции (ИКМ).
+Данный метод использует API [Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk) для считывания звукового файла в формате WAV в виде буфера импульсно-кодовой модуляции (ИКМ).
 
 #### <a name="set-up-the-source-reader"></a>Настройте исходный модуль чтения
 
-1. Используйте [MFCreateSourceReaderFromURL](https://msdn.microsoft.com/library/windows/desktop/dd388110) создания носителя для чтения источника ([IMFSourceReader](https://msdn.microsoft.com/library/windows/desktop/dd374655)).
-2. Используйте [MFCreateMediaType](https://msdn.microsoft.com/library/windows/desktop/ms693861) создать тип носителя ([IMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms704850)) объекта (_mediaType_). Он представляет описание формат мультимедиа. 
+1. Используйте [MFCreateSourceReaderFromURL](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-mfcreatesourcereaderfromurl) создания носителя для чтения источника ([IMFSourceReader](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nn-mfreadwrite-imfsourcereader)).
+2. Используйте [MFCreateMediaType](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreatemediatype) создать тип носителя ([IMFMediaType](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediatype)) объекта (_mediaType_). Он представляет описание формат мультимедиа. 
 3. Указать, что _mediaType_декодировать выходных данных является PCM аудио, который является звуковая строго, __XAudio2__ можно использовать.
-4. Задает тип носителя декодированный выходной для чтения источника путем вызова [IMFSourceReader::SetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374667.aspx).
+4. Задает тип носителя декодированный выходной для чтения источника путем вызова [IMFSourceReader::SetCurrentMediaType](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-setcurrentmediatype).
 
-Узнать больше о почему мы используем исходный модуль чтения, см. в статье [исходный модуль чтения](https://msdn.microsoft.com/library/windows/desktop/dd940436.aspx).
+Узнать больше о почему мы используем исходный модуль чтения, см. в статье [исходный модуль чтения](https://docs.microsoft.com/windows/desktop/medfound/source-reader).
 
 #### <a name="describe-the-data-format-of-the-audio-stream"></a>Описание формата данных аудиопотока
 
-1. Используйте [IMFSourceReader::GetCurrentMediaType](https://msdn.microsoft.com/library/windows/desktop/dd374660) для получения текущего типа мультимедиа для потока.
-2. Используйте [IMFMediaType::MFCreateWaveFormatExFromMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms702177) для преобразования текущей звуковой тип мультимедиа, [WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799) буфера, используя результаты предыдущих операции в качестве входных данных. Эта структура задает формат данных аудиопотока wave, который используется после загрузки звука. 
+1. Используйте [IMFSourceReader::GetCurrentMediaType](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-getcurrentmediatype) для получения текущего типа мультимедиа для потока.
+2. Используйте [IMFMediaType::MFCreateWaveFormatExFromMFMediaType](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreatewaveformatexfrommfmediatype) для преобразования текущей звуковой тип мультимедиа, [WAVEFORMATEX](https://docs.microsoft.com/windows/desktop/api/mmreg/ns-mmreg-twaveformatex) буфера, используя результаты предыдущих операции в качестве входных данных. Эта структура задает формат данных аудиопотока wave, который используется после загрузки звука. 
 
-__WAVEFORMATEX__ формат может использоваться для описания буфере PCM. По сравнению с [WAVEFORMATEXTENSIBLE](https://msdn.microsoft.com/library/windows/hardware/ff538802) структуры, он может использоваться только для описания подмножество форматов звуковой волны. Дополнительные сведения о различиях между __WAVEFORMATEX__ и __WAVEFORMATEXTENSIBLE__, см. в разделе [расширяемый дескрипторы волновой формат](https://docs.microsoft.com/windows-hardware/drivers/audio/extensible-wave-format-descriptors).
+__WAVEFORMATEX__ формат может использоваться для описания буфере PCM. По сравнению с [WAVEFORMATEXTENSIBLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible) структуры, он может использоваться только для описания подмножество форматов звуковой волны. Дополнительные сведения о различиях между __WAVEFORMATEX__ и __WAVEFORMATEXTENSIBLE__, см. в разделе [расширяемый дескрипторы волновой формат](https://docs.microsoft.com/windows-hardware/drivers/audio/extensible-wave-format-descriptors).
 
 #### <a name="read-the-audio-stream"></a>Чтение аудиопотока
 
-1.  Получить длительность, в секундах, аудиопотока путем вызова [IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) и затем преобразует длительность в байтах.
-2.  Чтение звуковой файл в виде потока путем вызова [IMFSourceReader::ReadSample](https://msdn.microsoft.com/library/windows/desktop/dd374665). __ReadSample__ считывает следующий образец из источник мультимедиа.
-3.  Используйте [IMFSample::ConvertToContiguousBuffer](https://msdn.microsoft.com/library/windows/desktop/ms698917.aspx) скопировать содержимое буфера аудио образца (_пример_) в массив (_mediaBuffer_).
+1.  Получить длительность, в секундах, аудиопотока путем вызова [IMFSourceReader::GetPresentationAttribute](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-getpresentationattribute) и затем преобразует длительность в байтах.
+2.  Чтение звуковой файл в виде потока путем вызова [IMFSourceReader::ReadSample](https://docs.microsoft.com/windows/desktop/api/mfreadwrite/nf-mfreadwrite-imfsourcereader-readsample). __ReadSample__ считывает следующий образец из источник мультимедиа.
+3.  Используйте [IMFSample::ConvertToContiguousBuffer](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfsample-converttocontiguousbuffer) скопировать содержимое буфера аудио образца (_пример_) в массив (_mediaBuffer_).
 
 ```cpp
 Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
@@ -342,8 +342,8 @@ void SoundEffect::Initialize(
 ### <a name="soundeffectplaysound-method"></a>Метод SoundEffect::PlaySound
 
 * Использует исходный объект голосовой **m\_sourceVoice** для начала воспроизведения звуковых данных буфера **m\_soundData**
-* Создает [XAUDIO2\_БУФЕРА](https://msdn.microsoft.com/library/windows/desktop/ee419228), к которой она предоставляет ссылку на буфер звуковых данных, а затем отправляет его с помощью вызова [IXAudio2SourceVoice::SubmitSourceBuffer](https://msdn.microsoft.com/library/windows/desktop/ee418473). 
-* С помощью звуковые данные в очередь, **SoundEffect::PlaySound** начинается воспроизведение путем вызова [IXAudio2SourceVoice::Start](https://msdn.microsoft.com/library/windows/desktop/ee418471).
+* Создает [XAUDIO2\_БУФЕРА](https://docs.microsoft.com/windows/desktop/api/xaudio2/ns-xaudio2-xaudio2_buffer), к которой она предоставляет ссылку на буфер звуковых данных, а затем отправляет его с помощью вызова [IXAudio2SourceVoice::SubmitSourceBuffer](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2sourcevoice-submitsourcebuffer). 
+* С помощью звуковые данные в очередь, **SoundEffect::PlaySound** начинается воспроизведение путем вызова [IXAudio2SourceVoice::Start](https://docs.microsoft.com/windows/desktop/api/xaudio2/nf-xaudio2-ixaudio2sourcevoice-start).
 
 ```cpp
 void SoundEffect::PlaySound(_In_ float volume)
@@ -451,15 +451,15 @@ void Simple3DGame::UpdateDynamics()
 #pragma endregion
 }
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Мы рассмотрели UWP framework, графики, элементы управления, пользовательский интерфейс и аудио игры Windows 10. В следующей части этого учебника [расширение пример игры](tutorial-resources.md), описываются другие параметры, которые могут использоваться при разработке игры.
 
 ## <a name="audio-concepts"></a>Основные понятия аудио
 
-Для разработки игр для Windows 10 используйте XAudio2 версии 2.9. Эта версия поставляется вместе с Windows 10. Дополнительные сведения см. в статье [XAudio2 версии](https://msdn.microsoft.com/library/windows/desktop/ee415802.aspx).
+Для разработки игр для Windows 10 используйте XAudio2 версии 2.9. Эта версия поставляется вместе с Windows 10. Дополнительные сведения см. в статье [XAudio2 версии](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-versions).
 
-__AudioX2__ — это низкоуровневый API, который предоставляет обработки сигнала и смешивания foundation. Дополнительные сведения см. в разделе [XAudio2 основные понятия](https://msdn.microsoft.com/library/windows/desktop/ee415764.aspx).
+__AudioX2__ — это низкоуровневый API, который предоставляет обработки сигнала и смешивания foundation. Дополнительные сведения см. в разделе [XAudio2 основные понятия](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-key-concepts).
 
 ### <a name="xaudio2-voices"></a>Голоса XAudio2
 
@@ -473,13 +473,13 @@ __AudioX2__ — это низкоуровневый API, который пред
 
 ### <a name="audio-graph"></a>Аудио graph
 
-Аудио graph — это коллекция [XAudio2 голоса](/windows/desktop/xaudio2/xaudio2-voices). Аудио начинается с одной стороны графа аудио в голоса источника, при необходимости проходит через один или несколько submix голоса и заканчивается управление образами голос. Граф аудио будет содержать голос источника для каждого воспроизведение звука, ноль или более submix голоса и один Отработка навыков в службах голоса. Простейший аудио графа и получить необходимый минимум для слышите в XAudio2, — это единый источник голос вывод непосредственно для управления образами голос. Дополнительные сведения см. в статье [графы аудио](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx).
+Аудио graph — это коллекция [XAudio2 голоса](/windows/desktop/xaudio2/xaudio2-voices). Аудио начинается с одной стороны графа аудио в голоса источника, при необходимости проходит через один или несколько submix голоса и заканчивается управление образами голос. Граф аудио будет содержать голос источника для каждого воспроизведение звука, ноль или более submix голоса и один Отработка навыков в службах голоса. Простейший аудио графа и получить необходимый минимум для слышите в XAudio2, — это единый источник голос вывод непосредственно для управления образами голос. Дополнительные сведения см. в статье [графы аудио](https://docs.microsoft.com/windows/desktop/xaudio2/audio-graphs).
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
-* [Инструкции: Инициализировать XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779.aspx)
-* [Инструкции: Загрузка файлов звуковые данные в XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
-* [Инструкции: Воспроизведение звука с XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415787.aspx)
+* [Практическое руководство. Инициализировать XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--initialize-xaudio2)
+* [Практическое руководство. Загрузка файлов звуковые данные в XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
+* [Практическое руководство. Воспроизведение звука с XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--play-a-sound-with-xaudio2)
 
 ## <a name="key-audio-h-files"></a>Ключа аудио h-файлов
 

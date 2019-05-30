@@ -5,19 +5,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 551f8b925ffd56950ba893da7b81fefb4579f558
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f59ae45486ee72f9d901898f6b03674e6b3e299c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635139"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370092"
 ---
 # <a name="bluetooth-gatt-server"></a>Сервер Bluetooth GATT
 
 
 **Важные API**
-- [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
-- [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
+- [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
+- [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 
 В этой статье описываются API-интерфейсы сервера Bluetooth Generic Attribute (GATT) для приложений универсальной платформы Windows (UWP) и приводится пример кода для основных задач сервера GATT. 
@@ -40,7 +40,7 @@ ms.locfileid: "57635139"
 Каждая служба, характеристика и дескриптор имеет свой уникальный 128-битный идентификатор UUID.
 > Ко всем API-интерфейсам Windows применяется термин GUID, но в стандарте Bluetooth этот идентификатор определяется как UUID. В нашем случае эти два термина взаимозаменяемы, поэтому мы будем использовать термин UUID. 
 
-Если атрибут является стандартным и определяется профилем Bluetooth SIG, у него также будет короткий 16-битный идентификатор (например, атрибут Battery Level имеет UUID 0000**2A19**-0000-1000-8000-00805F9B34FB, а его короткий идентификатор выглядит как 0x2A19). Эти стандартные идентификаторы UUID описаны в статьях [GattServiceUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids.aspx) и [GattCharacteristicUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids.aspx).
+Если атрибут является стандартным и определяется профилем Bluetooth SIG, у него также будет короткий 16-битный идентификатор (например, атрибут Battery Level имеет UUID 0000**2A19**-0000-1000-8000-00805F9B34FB, а его короткий идентификатор выглядит как 0x2A19). Эти стандартные идентификаторы UUID описаны в статьях [GattServiceUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids) и [GattCharacteristicUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids).
 
 Если ваше приложение реализует собственную службу, необходимо создать пользовательский UUID. Это легко сделать в Visual Studio с помощью команды Tools (Инструменты) -> CreateGuid (используйте вариант 5, чтобы получить идентификатор в формате "xxxxxxxx-xxxx-... xxxx"). Этот UUID можно использовать для объявления новых локальных служб, характеристик или дескрипторов.
 

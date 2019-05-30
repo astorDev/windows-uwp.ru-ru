@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b64ddadd0e543930fa72d0c44a6cacf0a873df89
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: db2e444b9f13ba41127b362483774c92d45f1f77
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656309"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372757"
 ---
 # <a name="which-networking-technology"></a>Какую сетевую технологию выбрать?
 
@@ -22,7 +22,7 @@ ms.locfileid: "57656309"
 
 Используйте [Сокеты](sockets.md), если необходимо использовать собственный протокол при подключении к другому устройству.
 
-Две реализации сокетов доступны для разработчиков универсальной платформы Windows (UWP): [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960), и [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673). Если вы создаете новый код, предпочтительнее использовать Windows.Networking.Sockets из-за современного API, предназначенного для использования разработчиками UWP. Если вы используете кроссплатформенные библиотеки сети или другой существующий код Winsock, либо предпочитаете API Winsock, то вам подойдет этот вариант.
+Две реализации сокетов доступны для разработчиков универсальной платформы Windows (UWP): [**Windows.Networking.Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets), и [Winsock](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2). Если вы создаете новый код, предпочтительнее использовать Windows.Networking.Sockets из-за современного API, предназначенного для использования разработчиками UWP. Если вы используете кроссплатформенные библиотеки сети или другой существующий код Winsock, либо предпочитаете API Winsock, то вам подойдет этот вариант.
 
 ### <a name="when-to-use-sockets"></a>Когда следует использовать сокеты
 
@@ -32,12 +32,12 @@ ms.locfileid: "57656309"
 
 ### <a name="when-not-to-use-sockets"></a>Когда не следует использовать сокеты
 
--   Не реализуйте собственный стек протокола HTTP(S) с использованием сокетов. Используйте [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639).
--   Если соединения WebSocket (классы [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) и [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) ) соответствуют вашим требованиям в отношении связи (TCP к/от веб-сервера), возможно, лучше использовать их, чем тратить свое время и ресурсы, реализуя аналогичные функции с сокетами.
+-   Не реализуйте собственный стек протокола HTTP(S) с использованием сокетов. Используйте [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient).
+-   Если соединения WebSocket (классы [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) и [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) ) соответствуют вашим требованиям в отношении связи (TCP к/от веб-сервера), возможно, лучше использовать их, чем тратить свое время и ресурсы, реализуя аналогичные функции с сокетами.
 
 ## <a name="websockets"></a>Websockets
 
-Протокол [WebSockets](websockets.md) определяет механизм быстрого и безопасного двустороннего взаимодействия между клиентом и сервером через Интернет. Данные передаются мгновенно с помощью полнодуплексного подключения через единственный сокет, при этом обе конечные точки могут отправлять и получать сообщения в реальном времени. Соединения WebSocket отлично подходят для использования в играх в реальном времени, предусматривающих мгновенные уведомления социальных сетей и отображение свежей информации (например, статистика игры), для чего требуется безопасная и быстрая передача данных. Разработчики UWP могут использовать классы [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) и [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) для подключения к серверам, поддерживающим протокол Websocket.
+Протокол [WebSockets](websockets.md) определяет механизм быстрого и безопасного двустороннего взаимодействия между клиентом и сервером через Интернет. Данные передаются мгновенно с помощью полнодуплексного подключения через единственный сокет, при этом обе конечные точки могут отправлять и получать сообщения в реальном времени. Соединения WebSocket отлично подходят для использования в играх в реальном времени, предусматривающих мгновенные уведомления социальных сетей и отображение свежей информации (например, статистика игры), для чего требуется безопасная и быстрая передача данных. Разработчики UWP могут использовать классы [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) и [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) для подключения к серверам, поддерживающим протокол Websocket.
 
 ### <a name="when-to-use-websockets"></a>Когда следует использовать Websockets
 
@@ -50,13 +50,13 @@ ms.locfileid: "57656309"
 
 ## <a name="httpclient"></a>HttpClient
 
-Используйте [HttpClient](httpclient.md) (и остальные API пространства имен [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) ) при использовании HTTP(S) для связи с веб-службой или веб-сервером.
+Используйте [HttpClient](httpclient.md) (и остальные API пространства имен [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) ) при использовании HTTP(S) для связи с веб-службой или веб-сервером.
 
 ### <a name="when-to-use-httpclient"></a>Когда следует использовать HttpClient
 
 -   При использовании HTTP(S) для связи с веб-службами.
 -   При загрузке или скачивании небольшого количества файлов малого объема.
--   Если соединения WebSocket (классы [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) и [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842)) соответствуют вашим требованиям в отношении связи (TCP к/от веб-сервера), а рассматриваемый веб-сервер поддерживает соединения WebSocket, возможно, лучше использовать их, чем тратить свое время и ресурсы, реализуя аналогичные функции с HttpClient.
+-   Если соединения WebSocket (классы [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) и [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket)) соответствуют вашим требованиям в отношении связи (TCP к/от веб-сервера), а рассматриваемый веб-сервер поддерживает соединения WebSocket, возможно, лучше использовать их, чем тратить свое время и ресурсы, реализуя аналогичные функции с HttpClient.
 -   Когда вы выполняете потоковую передачу содержимого через сеть.
 
 ### <a name="when-not-to-use-httpclient"></a>Когда не следует использовать HttpClient
@@ -80,50 +80,50 @@ ms.locfileid: "57656309"
 
 ### <a name="when-not-to-use-background-transfers"></a>Когда не следует использовать фоновую передачу данных
 
--   Если вы перемещаете небольшое количество файлов малого объема и не собираетесь выполнять постобработку после завершения передачи данных, рекомендуется использовать методы PUT или POST [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) .
--   Если нужно выполнить потоковую передачу данных и использовать их локально при их поступлении, используйте [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639).
+-   Если вы перемещаете небольшое количество файлов малого объема и не собираетесь выполнять постобработку после завершения передачи данных, рекомендуется использовать методы PUT или POST [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) .
+-   Если нужно выполнить потоковую передачу данных и использовать их локально при их поступлении, используйте [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient).
 
 ## <a name="additional-network-related-technologies"></a>Дополнительные технологии, касающиеся сетей
 
 ### <a name="connection-quality"></a>Качество подключения
 
-API [**Windows.Networking.Connectivity**](https://msdn.microsoft.com/library/windows/apps/br207308) позволяет получать доступ к данным о сетевом подключении, расходах и использовании. Дополнительные сведения об использовании этого API см. в разделе [Доступ к состоянию сетевого подключения и управление стоимостью сетевого подключения](https://msdn.microsoft.com/library/windows/apps/hh452983)
+API [**Windows.Networking.Connectivity**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity) позволяет получать доступ к данным о сетевом подключении, расходах и использовании. Дополнительные сведения об использовании этого API см. в разделе [Доступ к состоянию сетевого подключения и управление стоимостью сетевого подключения](https://docs.microsoft.com/previous-versions/windows/apps/hh452983(v=win.10))
 
 ### <a name="dns-service-discovery"></a>Обнаружение служб DNS
 
-API [**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) позволяет сообщать о сетевой службе другим устройствам в сети по протоколу DNS-SD, описанному в документе [RFC 2782](https://go.microsoft.com/fwlink/?LinkId=524158) организации IETF.
+API [**Windows.Networking.ServiceDiscovery.Dnssd**](https://docs.microsoft.com/uwp/api/Windows.Networking.ServiceDiscovery.Dnssd) позволяет сообщать о сетевой службе другим устройствам в сети по протоколу DNS-SD, описанному в документе [RFC 2782](https://go.microsoft.com/fwlink/?LinkId=524158) организации IETF.
 
 ### <a name="communicating-over-bluetooth"></a>Обмен данными по Bluetooth
 
-Помимо всего прочего, API [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/dn263413) позволяет использовать Bluetooth для подключения к другим устройствам и передачи данных. Подробную информацию см. в разделе [Отправка и получение файлов с помощью RFCOMM](https://msdn.microsoft.com/library/windows/apps/mt270289).
+Помимо всего прочего, API [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth) позволяет использовать Bluetooth для подключения к другим устройствам и передачи данных. Подробную информацию см. в разделе [Отправка и получение файлов с помощью RFCOMM](https://docs.microsoft.com/windows/uwp/devices-sensors/send-or-receive-files-with-rfcomm).
 
 ### <a name="push-notifications-wns"></a>Push-уведомления (WNS)
 
-API [**Windows.Networking.PushNotifications**](https://msdn.microsoft.com/library/windows/apps/br241307) позволяет использовать службу уведомлений Windows (WNS) для получения push-уведомлений по сети. Дополнительную информацию об использовании этого API см. в [обзоре служб push-уведомлений Windows (WNS)](https://msdn.microsoft.com/library/windows/apps/mt187203)
+API [**Windows.Networking.PushNotifications**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications) позволяет использовать службу уведомлений Windows (WNS) для получения push-уведомлений по сети. Дополнительную информацию об использовании этого API см. в [обзоре служб push-уведомлений Windows (WNS)](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 
 ### <a name="near-field-communications"></a>Технологии связи ближнего действия (NFC)
 
-API [**Windows.Networking.Proximity**](https://msdn.microsoft.com/library/windows/apps/br241250) позволяет использовать технологии связи ближнего действия для приложений, поддерживающих функции бесконтактного взаимодействия или касания, для упрощения передачи данных. Дополнительные сведения об использовании этого API см. в разделе [Поддержка бесконтактного взаимодействия и касания](https://msdn.microsoft.com/library/windows/apps/hh465229).
+API [**Windows.Networking.Proximity**](https://docs.microsoft.com/uwp/api/Windows.Networking.Proximity) позволяет использовать технологии связи ближнего действия для приложений, поддерживающих функции бесконтактного взаимодействия или касания, для упрощения передачи данных. Дополнительные сведения об использовании этого API см. в разделе [Поддержка бесконтактного взаимодействия и касания](https://docs.microsoft.com/previous-versions/windows/apps/hh465229(v=win.10)).
 
 ### <a name="rssatom-feeds"></a>Каналы RSS и Atom
 
-API [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) позволяет управлять веб-каналом в форматах RSS и Atom. Дополнительные сведения об использовании этого API см. в разделе [Каналы RSS и Atom](web-feeds.md).
+API [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) позволяет управлять веб-каналом в форматах RSS и Atom. Дополнительные сведения об использовании этого API см. в разделе [Каналы RSS и Atom](web-feeds.md).
 
 ### <a name="wi-fi-enumeration-and-connection-control"></a>Перечисление подключений Wi-Fi и управление подключением
 
-API [**Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/dn975224) позволяет перечислять Wi-Fi-адаптеры, искать доступные сети Wi-Fi и подключать адаптер к сети.
+API [**Windows.Devices.WiFi**](https://docs.microsoft.com/uwp/api/Windows.Devices.WiFi) позволяет перечислять Wi-Fi-адаптеры, искать доступные сети Wi-Fi и подключать адаптер к сети.
 
 ### <a name="radio-control"></a>Радиоуправление
 
-API [**Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/dn996447) позволяет находить и управлять радиосвязью на локальном устройстве, включая Wi-Fi и Bluetooth.
+API [**Windows.Devices.Radios**](https://docs.microsoft.com/uwp/api/Windows.Devices.Radios) позволяет находить и управлять радиосвязью на локальном устройстве, включая Wi-Fi и Bluetooth.
 
 ### <a name="wi-fi-direct"></a>Wi-Fi Direct
 
-API [**Windows.Devices.WiFiDirect**](https://msdn.microsoft.com/library/windows/apps/dn297687) позволяет подключаться и взаимодействовать с другими локальными устройствами с помощью Wi-Fi Direct для создания специальных локальных беспроводных сетей.
+API [**Windows.Devices.WiFiDirect**](https://docs.microsoft.com/uwp/api/Windows.Devices.WiFiDirect) позволяет подключаться и взаимодействовать с другими локальными устройствами с помощью Wi-Fi Direct для создания специальных локальных беспроводных сетей.
 
 ### <a name="wi-fi-direct-services"></a>Службы Wi-Fi Direct
 
-API [**Windows.Devices.WiFiDirect.Services**](https://msdn.microsoft.com/library/windows/apps/dn996481) позволяет предоставлять доступ к службам Wi-Fi Direct и подключаться к ним. Принцип работы служб Wi-Fi Direct заключается в том, что одно устройство в динамической сети Wi-Fi Direct (поставщик услуги) предлагает различные функции для другого устройства (заказчика услуги) через соединение Wi-Fi Direct.
+API [**Windows.Devices.WiFiDirect.Services**](https://docs.microsoft.com/uwp/api/Windows.Devices.WiFiDirect.Services) позволяет предоставлять доступ к службам Wi-Fi Direct и подключаться к ним. Принцип работы служб Wi-Fi Direct заключается в том, что одно устройство в динамической сети Wi-Fi Direct (поставщик услуги) предлагает различные функции для другого устройства (заказчика услуги) через соединение Wi-Fi Direct.
 
 ### <a name="mobile-operators"></a>Мобильные операторы
 
@@ -131,9 +131,9 @@ Windows 10 предоставляет широкий разработчика а
 
 ### <a name="network-operations"></a>Сетевые операции
 
-API [**Windows.Networking.NetworkOperators**](https://msdn.microsoft.com/library/windows/apps/br241148) предназначен, в первую очередь, для настройки конфигурации телефонов и подготовки их к эксплуатации. В связи с этим разрешение на использование функций, позволяющих контролировать эти процессы, имеют исключительно производители устройств и поставщики телекоммуникационных услуг.
+API [**Windows.Networking.NetworkOperators**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators) предназначен, в первую очередь, для настройки конфигурации телефонов и подготовки их к эксплуатации. В связи с этим разрешение на использование функций, позволяющих контролировать эти процессы, имеют исключительно производители устройств и поставщики телекоммуникационных услуг.
 
 ### <a name="sms"></a>SMS
 
-Пространство имен [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) воспринимает SMS и другие связанные сообщения как низкоуровневые объекты. Оно предназначено для мобильных операторов для обеспечения функции отправки SMS из приложений и управляется с помощью функции, которая не будет доступна большинству разработчиков приложений. Если вы создаете приложения для обработки сообщений, вам необходимо использовать API [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321), поскольку он предназначен для работы не только с SMS-сообщениями, но и с сообщениями из других источников, например, из приложений для переписки в реальном времени, что обеспечивает гораздо больше возможностей для чатов и обмена сообщениями.
+Пространство имен [**Windows.Devices.Sms**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sms) воспринимает SMS и другие связанные сообщения как низкоуровневые объекты. Оно предназначено для мобильных операторов для обеспечения функции отправки SMS из приложений и управляется с помощью функции, которая не будет доступна большинству разработчиков приложений. Если вы создаете приложения для обработки сообщений, вам необходимо использовать API [**Windows.ApplicationModel.Chat**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Chat), поскольку он предназначен для работы не только с SMS-сообщениями, но и с сообщениями из других источников, например, из приложений для переписки в реальном времени, что обеспечивает гораздо больше возможностей для чатов и обмена сообщениями.
 

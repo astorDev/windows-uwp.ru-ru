@@ -5,12 +5,12 @@ ms.date: 07/06/2018
 ms.topic: article
 keywords: триггер фоновой задачи, фоновой задачи
 ms.localizationpriority: medium
-ms.openlocfilehash: 02e4bf3d7977c9bdd675f264a37e608a5082ef4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d5d163d36b51e414a403986d1fdd73db7925cc0b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608099"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371892"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Запуск фоновой задачи в приложении
 
@@ -56,7 +56,7 @@ ApplicationTrigger ^ _AppTrigger = ref new ApplicationTrigger();
 
 Можно создать условие фоновой задачи, чтобы контролировать время запуска задачи. Условие запрещает фоновую задачу, пока не будет выполнено. См. также: [Задание условий для выполнения фоновой задачи](set-conditions-for-running-a-background-task.md).
 
-В этом примере условие имеет значение **InternetAvailable** таким образом, чтобы после запуска, задание выполняется только после подключения к Интернету. Список возможных условий см. в статье [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+В этом примере условие имеет значение **InternetAvailable** таким образом, чтобы после запуска, задание выполняется только после подключения к Интернету. Список возможных условий см. в статье [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -75,7 +75,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 ##  <a name="call-requestaccessasync"></a>Вызов RequestAccessAsync()
 
-Перед регистрацией **ApplicationTrigger** фоновой задачи, вызовите [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) для определения уровня фоновой активности позволяет пользователю, так как пользователь отключил фоновой активности для вашего приложения. В разделе [оптимизировать фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о том, как пользователи могут управлять параметрами для фоновой активности.
+Перед регистрацией **ApplicationTrigger** фоновой задачи, вызовите [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) для определения уровня фоновой активности позволяет пользователю, так как пользователь отключил фоновой активности для вашего приложения. В разделе [оптимизировать фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о том, как пользователи могут управлять параметрами для фоновой активности.
 
 ```csharp
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -132,20 +132,20 @@ var result = await _AppTrigger.RequestAsync();
 
 ## <a name="manage-resources-for-your-background-task"></a>Управление ресурсами для фоновой задачи
 
-Используйте метод [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx), чтобы определить, принял ли пользователь решение ограничить фоновую активность вашего приложения. Следите за расходом заряда батареи и запускайте приложения в фоновом режиме только тогда, когда необходимо завершить интересующее пользователя действие. В разделе [оптимизировать фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о том, как пользователи могут управлять параметрами для фоновой активности.  
+Используйте метод [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager), чтобы определить, принял ли пользователь решение ограничить фоновую активность вашего приложения. Следите за расходом заряда батареи и запускайте приложения в фоновом режиме только тогда, когда необходимо завершить интересующее пользователя действие. В разделе [оптимизировать фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) Дополнительные сведения о том, как пользователи могут управлять параметрами для фоновой активности.  
 
-- Память: Настройка использования памяти и энергии приложения крайне важно убедиться, что операционная система позволит запускать задание фона. Используйте [API-интерфейсы управления памятью](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx), чтобы узнать, сколько памяти потребляет ваше фоновое задание. Чем больше памяти потребляет ваше фоновое задание, тем сложнее операционной системе поддерживать его выполнение, когда другое приложение работает на переднем плане. Пользователь полностью контролирует все фоновые действия, которые может выполнять ваше приложение, и видит, как ваше приложение влияет на расход заряда батареи.  
+- Память: Настройка использования памяти и энергии приложения крайне важно убедиться, что операционная система позволит запускать задание фона. Используйте [API-интерфейсы управления памятью](https://docs.microsoft.com/uwp/api/windows.system.memorymanager), чтобы узнать, сколько памяти потребляет ваше фоновое задание. Чем больше памяти потребляет ваше фоновое задание, тем сложнее операционной системе поддерживать его выполнение, когда другое приложение работает на переднем плане. Пользователь полностью контролирует все фоновые действия, которые может выполнять ваше приложение, и видит, как ваше приложение влияет на расход заряда батареи.  
 - Время ЦП: Фоновые задачи ограничены объемом физическое время использования им получить зависимости от типа триггера. Фоновые задачи, инициируемые триггер приложения ограничены около 10 минут.
 
 Сведения об ограничениях ресурсов для фоновых задач см. в статье [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md).
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
 Начиная с Windows 10, он больше не необходимости добавить в приложение на экран блокировки, чтобы использовать фоновые задачи.
 
-Фоновая задача будет запускаться только с помощью **ApplicationTrigger**, если сначала вызвано [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
+Фоновая задача будет запускаться только с помощью **ApplicationTrigger**, если сначала вызвано [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
 * [Пример кода для задач фона](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)

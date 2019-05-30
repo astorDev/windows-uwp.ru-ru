@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4138fd7275f7e1f9addb7685ff0846e756701003
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9712b4498b03460568d20d4c8e27172ad5c14360
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661989"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362207"
 ---
 # <a name="resource-types"></a>Типы ресурсов
 
@@ -110,12 +110,12 @@ ms.locfileid: "57661989"
 
 Буфер констант можно использовать для хранения результатов этапа вывода потока.
 
-Пример объявления буфера констант в шейдере см. в разделе [Константы шейдера (DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581).
+Пример объявления буфера констант в шейдере см. в разделе [Константы шейдера (DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants).
 
 ## <a name="span-idtextureresourcesspanspan-idtextureresourcesspanspan-idtextureresourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>Текстурными ресурсами
 
 
-Текстурный ресурс — это структурированный набор данных, предназначенный для хранения текселей. В отличие от буферов текстуры можно фильтровать по дискретизаторам текстур во время их считывания блоками шейдера. Тип текстуры влияет на способ ее фильтрации. Тексель представляет собой наименьший элемент текстуры, который может использоваться конвейером для чтения или записи. Каждый текселя содержит от 1 до 4 компоненты, расположенные в одном из форматов DXGI (см. в разделе [ **DXGI\_ФОРМАТ**](https://msdn.microsoft.com/library/windows/desktop/bb173059)).
+Текстурный ресурс — это структурированный набор данных, предназначенный для хранения текселей. В отличие от буферов текстуры можно фильтровать по дискретизаторам текстур во время их считывания блоками шейдера. Тип текстуры влияет на способ ее фильтрации. Тексель представляет собой наименьший элемент текстуры, который может использоваться конвейером для чтения или записи. Каждый текселя содержит от 1 до 4 компоненты, расположенные в одном из форматов DXGI (см. в разделе [ **DXGI\_ФОРМАТ**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)).
 
 Текстуры создаются как структурированные ресурсы, чтобы их размер был известен. Однако каждая текстура может быть типизированной или не иметь типа при создании ресурса, если тип полностью задается с помощью представления при привязке текстуры к конвейеру.
 

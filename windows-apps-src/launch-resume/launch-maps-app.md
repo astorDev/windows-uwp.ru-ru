@@ -6,25 +6,25 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 021e3142a4e94f762cc48dbc86905dcf0b658772
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 20a57e4bbd4784d67fc711f78d6c59493c5b435f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645239"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371728"
 ---
 # <a name="launch-the-windows-maps-app"></a>Запуск приложения "Карты Windows"
 
 
 
 
-Узнайте, как запустить приложение "Карты Windows" из вашего приложения. Здесь описывается, **bingmaps:, *ms диск to:, ms стека to:**  и **ms-settings:** Универсальный код ресурса (URI) схемы. Используйте эти схемы URI, чтобы запустить приложение «Карты Windows» для определенных карт, маршрутов и результатов поиска или чтобы скачать автономные карты в приложении «Параметры».
+Узнайте, как запустить приложение "Карты Windows" из вашего приложения. Здесь описывается, **bingmaps:, *ms диск to:, ms стека to:* * и **ms-settings:** Универсальный код ресурса (URI) схемы. Используйте эти схемы URI, чтобы запустить приложение «Карты Windows» для определенных карт, маршрутов и результатов поиска или чтобы скачать автономные карты в приложении «Параметры».
 
 **Совет.** Чтобы получить дополнительные сведения о запуске приложения «Карты Windows» из вашего приложения, скачайте документ [Пример карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977) из [репозитория Windows-universal-samples](https://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
 ## <a name="introducing-uris"></a>Знакомство с URI
 
-Схемы URI позволяют открывать приложения, щелкнув гиперссылку (или программным способом в вашем приложении). Точно так же, как создается новое сообщение с помощью **mailto:** или открывается веб-браузер с помощью **http:**, можно открыть приложение «Карты Windows» с помощью **bingmaps:**, **ms-drive-to:** и **ms-walk-to:**.
+Схемы URI позволяют открывать приложения, щелкнув гиперссылку (или программным способом в вашем приложении). Точно так же, как создается новое сообщение с помощью **mailto:** или открывается веб-браузер с помощью **http:** , можно открыть приложение «Карты Windows» с помощью **bingmaps:** , **ms-drive-to:** и **ms-walk-to:** .
 
 -   **Bingmaps:** URI предоставляет карты для расположения, результаты поиска, направления и трафика.
 -   **Ms диск to:** Код URI предоставляет свою очередь, включение направления движения от текущего местоположения.
@@ -51,7 +51,7 @@ ms.locfileid: "57645239"
 ## <a name="launch-a-uri-from-your-app"></a>Запуск URI из вашего приложения
 
 
-Чтобы запустить приложение Windows карты из приложения, вызовите [ **LaunchUriAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701476) метод с **bingmaps:**, **ms диск to:**, или  **MS стека to:** URI. Следующий пример запускает тот же URI из предыдущего примера. Подробнее о запуске приложений с помощью схем URI см. в разделе [Запуск приложения по умолчанию для универсального кода ресурса (URI)](launch-default-app.md).
+Чтобы запустить приложение Windows карты из приложения, вызовите [ **LaunchUriAsync** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) метод с **bingmaps:** , **ms диск to:** , или  **MS стека to:** URI. Следующий пример запускает тот же URI из предыдущего примера. Подробнее о запуске приложений с помощью схем URI см. в разделе [Запуск приложения по умолчанию для универсального кода ресурса (URI)](launch-default-app.md).
 
 ```cs
 // Center on New York City
@@ -63,7 +63,7 @@ launcherOptions.TargetApplicationPackageFamilyName = "Microsoft.WindowsMaps_8wek
 var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherOptions);
 ```
 
-В этом примере класс [**LauncherOptions**](https://msdn.microsoft.com/library/windows/apps/hh701435) используется для запуска приложения «Карты Windows».
+В этом примере класс [**LauncherOptions**](https://docs.microsoft.com/uwp/api/Windows.System.LauncherOptions) используется для запуска приложения «Карты Windows».
 
 ## <a name="display-known-locations"></a>Отображение известных местоположений
 
@@ -194,7 +194,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <tr class="even">
 <td align="left"><p><b>bb</b></p></td>
 <td align="left"><p>Ограничивающий прямоугольник</p></td>
-<td align="left"><p>bb = "bb=" southlatitude "_" westlongitude "~" northlatitude "_" eastlongitude</p>
+<td align="left"><p>bb = "bb=" southlatitude " _" westlongitude "~" northlatitude "_ " eastlongitude</p>
 <p>southlatitude = degreeslat</p>
 <p>northlatitude = degreeslat</p>
 <p>westlongitude = degreeslon</p>
@@ -211,7 +211,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>where</b></p></td>
 <td align="left"><p>Location</p></td>
 <td align="left"><p>where = "where=" whereval</p>
-<p>whereval = 1 *( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "*" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
+<p>whereval = 1 *( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "* " / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
 <p>Пример.</p>
 <p>where=1600%20Pennsylvania%20Ave,%20Washington,%20DC</p></td>
 <td align="left"><p>Поисковый запрос определенного местоположения, ориентира или места.</p></td>
@@ -323,7 +323,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
 <td align="left"><p>Указывает начало и конец маршрута, отображаемого на карте, разделенные тильдой (<b>~</b>). Каждый из пунктов определяется широтой и долготой, необязательным заголовком или идентификатором адреса.</p>
 <p>Полный маршрут содержит ровно два пункта. Например, маршрут с двумя точками определяется <code>rtp="A"~"B"</code>.</p>
-<p>Кроме того, можно определить неполный маршрут. Например, вы можете задать только начало маршрута с помощью <code>rtp="A"~</code> В этом случае отображается панель ввода маршрутов, в которой указанный пункт находится в поле **Из:**, а фокус находится в поле **Куда:**.</p>
+<p>Кроме того, можно определить неполный маршрут. Например, вы можете задать только начало маршрута с помощью <code>rtp="A"~</code> В этом случае отображается панель ввода маршрутов, в которой указанный пункт находится в поле **Из:** , а фокус находится в поле **Куда:** .</p>
 <p>Если указан только конец маршрута, как в случае с <code>rtp=~"B"</code>, отображается панель маршрутов, в которой указанный пункт находится в поле **Куда**. Если доступно точное текущее местоположение, оно заполняется из поля **Из** с фокусом.</p>
 <p>Неполный маршрут не рисуется на карте.</p>
 <p>Используйте в сочетании с параметром **mode**, чтобы указать режим транспорта (на автомобиле, на общественном транспорте или пешеходный маршрут). Если **mode** не указан, маршруты будут доступны в пользовательском режиме выбора транспорта.</p>
@@ -365,7 +365,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>Пример.</p>
 <p>collection=name.My%20Trip%20Stops~point.36.116584_-115.176753_Las%20Vegas~point.37.8268_-122.4798_Golden%20Gate%20Bridge</p></td>
 <td align="left"><p>Коллекция точек, добавляемых на карту и в список. Коллекции точек можно присвоить имя с помощью параметра name. Точка определяется с использованием широты, долготы и необязательного заголовка.</p>
-<p>Отделяйте имя и несколько точек тильдами (**~**).</p>
+<p>Отделяйте имя и несколько точек тильдами ( **~** ).</p>
 <p>Если указанный элемент содержит тильду, она должна быть закодирована как <code>%7E</code>. Если параметры центральной точки и масштаба не используются, коллекция определяет наилучшее представление карты.</p>
 
 <p>**Важно!** Если указанный элемент содержит символ подчеркивания, он должен быть закодирован как %255F.</p></td>

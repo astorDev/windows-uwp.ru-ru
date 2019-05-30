@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: de4d8fc797efe2a0dde7340f42208a97bccf0b10
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 98251ecba05dd27cbe3112a94b6cfcd36440d380
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645109"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371232"
 ---
 # <a name="create-a-windows-hello-login-service"></a>Создание службы входа Windows Hello
 
@@ -51,7 +51,7 @@ ms.locfileid: "57645109"
     }
     ```
 
-    Возможно, вы заметили закомментированный список PassportDevices. Это изменение следует внести в существующую модель пользователя в текущей реализации. Список PassportDevices будет содержать deviceID, открытый ключ, созданный в Windows Hello, и класс [**KeyCredentialAttestationResult**](https://msdn.microsoft.com/library/windows/apps/dn973034). В этом практическом занятии вам потребуется реализовать keyAttestationResult, поскольку аттестация ключа предоставляется Windows Hello только на устройствах с микросхемой доверенного платформенного модуля (TPM). Класс **KeyCredentialAttestationResult** представляет собой комбинацию нескольких свойств и должен быть разделен для сохранения свойств в базе данных и их загрузки из базы данных.
+    Возможно, вы заметили закомментированный список PassportDevices. Это изменение следует внести в существующую модель пользователя в текущей реализации. Список PassportDevices будет содержать deviceID, открытый ключ, созданный в Windows Hello, и класс [**KeyCredentialAttestationResult**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredentialAttestationResult). В этом практическом занятии вам потребуется реализовать keyAttestationResult, поскольку аттестация ключа предоставляется Windows Hello только на устройствах с микросхемой доверенного платформенного модуля (TPM). Класс **KeyCredentialAttestationResult** представляет собой комбинацию нескольких свойств и должен быть разделен для сохранения свойств в базе данных и их загрузки из базы данных.
 
 -   Создайте новый класс под названием "PassportDevice.cs" в папке AuthService. Это модель для устройств Windows Hello, упомянутая ранее. Измените определение класса на общий (public) и добавьте следующие свойства.
 
@@ -1171,7 +1171,7 @@ ms.locfileid: "57645109"
 
 Мы оставили аспекты реализации проверки подлинности на стороне службы и сервера на ваше усмотрение в качестве упражнения. Ожидается, что у большинства из вас уже есть системы, которые необходимо перенести, чтобы начать работу с Windows Hello, и у каждой из них есть свои особенности.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Windows Hello](microsoft-passport.md)
 * [Приложение Windows Hello входа](microsoft-passport-login.md)

@@ -6,21 +6,21 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4426cbc2e2d3c6e7d980b0733b6deb5178025abb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 407c76c41d4a8620e2168e8e03dd2a3e24d73b61
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624099"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369575"
 ---
 # <a name="use-the-orientation-sensor"></a>Использование датчика положения в пространстве
 
 
 **Важные API**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
--   [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)
+-   [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation)
 
 **Примеры**
 
@@ -29,20 +29,20 @@ ms.locfileid: "57624099"
 
 Узнайте, как использовать датчики положения в пространстве для определения ориентации устройства.
 
-Существует два типа API-интерфейсы включенных в датчик ориентации [ **Windows.Devices.Sensors** ](https://msdn.microsoft.com/library/windows/apps/BR206408) пространство имен: [**OrientationSensor** ](https://msdn.microsoft.com/library/windows/apps/BR206371) и [ **SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399). Хотя оба этих датчика – датчики положения в пространстве, данный термин многозначен, и датчики используются для совершенно разных целей. Но так как оба этих датчика – датчики положения в пространстве, оба они описаны в этой статье.
+Существует два типа API-интерфейсы включенных в датчик ориентации [ **Windows.Devices.Sensors** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) пространство имен: [**OrientationSensor** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) и [ **SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation). Хотя оба этих датчика – датчики положения в пространстве, данный термин многозначен, и датчики используются для совершенно разных целей. Но так как оба этих датчика – датчики положения в пространстве, оба они описаны в этой статье.
 
-API [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) используется трехмерными приложениями, в которых есть кватернион и матрица поворота. Кватернион проще всего можно воспринимать как поворот точки \[x, y, z\] о произвольной оси (противопоставляется матрицу поворота, который представляет повороты вокруг трем осям). Математика кватернионов довольно экзотична, так как использует геометрические свойства комплексных чисел и математические свойства мнимых чисел, но работать с ними просто, и их поддерживают различные программные платформы, например DirectX. Сложное трехмерное приложение может использовать датчик положения в пространстве для выравнивания перспективы пользователя. Этот датчик группирует данные от акселерометра, гирометра и компаса.
+API [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) используется трехмерными приложениями, в которых есть кватернион и матрица поворота. Кватернион проще всего можно воспринимать как поворот точки \[x, y, z\] о произвольной оси (противопоставляется матрицу поворота, который представляет повороты вокруг трем осям). Математика кватернионов довольно экзотична, так как использует геометрические свойства комплексных чисел и математические свойства мнимых чисел, но работать с ними просто, и их поддерживают различные программные платформы, например DirectX. Сложное трехмерное приложение может использовать датчик положения в пространстве для выравнивания перспективы пользователя. Этот датчик группирует данные от акселерометра, гирометра и компаса.
 
-API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) используется, чтобы определять текущую ориентацию устройства относительно таких определений, как книжная вверх, книжная вниз, альбомная влево и альбомная вправо. Он также может обнаружить поворот устройства лицевой стороной вниз или вверх. А не возвращает свойства, такие как «Книжная вверх» или «Альбомная слева», этот датчик возвращает значение поворота: «Не было повернуто», «Rotated90DegreesCounterclockwise» и т. д. В следующей таблице представлены свойства ориентации и соответствующие им показания датчика.
+API [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation) используется, чтобы определять текущую ориентацию устройства относительно таких определений, как книжная вверх, книжная вниз, альбомная влево и альбомная вправо. Он также может обнаружить поворот устройства лицевой стороной вниз или вверх. А не возвращает свойства, такие как «Книжная вверх» или «Альбомная слева», этот датчик возвращает значение поворота: «Не было повернуто», «Rotated90DegreesCounterclockwise» и т. д. В следующей таблице представлены свойства ориентации и соответствующие им показания датчика.
 
-| Ориентация     | Соответствующие показания датчика      |
+| Orientation     | Соответствующие показания датчика      |
 |-----------------|-----------------------------------|
 | Книжная вверх     | NotRotated                        |
 | Альбомная влево  | Rotated90DegreesCounterclockwise  |
 | Книжная вниз   | Rotated180DegreesCounterclockwise |
 | Альбомная вправо | Rotated270DegreesCounterclockwise |
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Вы должны быть знакомы с расширяемого приложения разметки языка (XAML), Microsoft Visual C#и события.
 
@@ -54,7 +54,7 @@ API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR20
 
 ###  <a name="instructions"></a>Инструкция
 
--   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
+-   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#** .
 
 -   Откройте файл проекта MainPage.xaml.cs и замените существующий код следующим.
 
@@ -216,7 +216,7 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 
 ### <a name="instructions"></a>Инструкция
 
--   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
+-   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#** .
 
 -   Откройте файл проекта MainPage.xaml.cs и замените существующий код следующим.
 

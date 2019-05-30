@@ -5,12 +5,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fa0f12779ad56d57c92f667443644851dc3d5e5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d85051aabdb7631c5bdb84e08d6d10a0f70d6ede
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629369"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372297"
 ---
 # <a name="xload-attribute"></a>Атрибут x:Load
 
@@ -21,7 +21,7 @@ ms.locfileid: "57629369"
 Пояснение по поводу заполнителя: запись отложенных элементов с помощью платформы XAML прибавляет около 600 байт к объему использования памяти для каждого элемента с атрибутом x:Load. Поэтому можно злоупотребить этим атрибутом в степени, в которой реально уменьшается ваша производительность. Мы рекомендуем использовать его только в элементах, которые нужно скрыть. Если x:Load используется в контейнере, то ресурсы затрачиваются только на элемент с атрибутом x:Load.
 
 > [!IMPORTANT]
-> Атрибут x: Load доступна, начиная с Windows 10 версии 1703 (Creator Update). Для использования атрибута x:Load минимальная версия, указанная в вашем проекте Visual Studio, должна равняться *Windows 10 Creators Update (10.0, сборка 15063)*.
+> Атрибут x: Load доступна, начиная с Windows 10 версии 1703 (Creator Update). Для использования атрибута x:Load минимальная версия, указанная в вашем проекте Visual Studio, должна равняться *Windows 10 Creators Update (10.0, сборка 15063)* .
 
 ## <a name="xaml-attribute-usage"></a>Использование атрибутов XAML
 
@@ -36,16 +36,16 @@ ms.locfileid: "57629369"
 Предусмотрено несколько различных способов загрузки элементов:
 
 - Используйте выражение [x:Bind](x-bind-markup-extension.md), чтобы указать состояние загрузки. Выражение должно возвращать значение **true** для загрузки и **false** — для выгрузки элемента.
-- Вызовите [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) с именем, которое вы определили в элементе.
-- Вызовите [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) с именем, которое вы определили в элементе.
-- В [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) используйте анимацию [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) или **Storyboard**, которая использует элемент x:Load.
+- Вызовите [**FindName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.findname) с именем, которое вы определили в элементе.
+- Вызовите [**GetTemplateChild**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.gettemplatechild) с именем, которое вы определили в элементе.
+- В [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) используйте анимацию [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) или **Storyboard**, которая использует элемент x:Load.
 - Используйте выгруженный элемент в любой анимации **Storyboard**.
 
 > ПРИМЕЧАНИЕ. После начала создания экземпляра элемента, он создается в потоке пользовательского интерфейса, поэтому это может привести к пользовательского интерфейса и задержкам, если слишком много будет создано за один раз.
 
 Когда отложенный элемент создается с помощью одного из описанных ранее способов, происходит несколько событий:
 
-- Инициируется событие [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) для элемента.
+- Инициируется событие [**Loaded**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.loaded) для элемента.
 - Задается поле для x:Name.
 - Вычисляются все привязки x: Bind для элемента.
 - Если вы зарегистрировались для получения уведомлений об изменении свойств, содержащих отложенные элементы, создается уведомление.
@@ -67,21 +67,21 @@ ms.locfileid: "57629369"
 Предусмотрены следующие ограничения по использованию **x:Load**:
 
 - Необходимо определить [x: Name](x-name-attribute.md) для элемента, поскольку должен быть способ поиска элемента в более поздней версии.
-- Атрибут x:Load может использоваться только для типов, наследованных от классов [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) или [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
-- Атрибут x:Load не может использоваться для корневых элементов в классах [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), [**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) или [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
-- Атрибут x:Load не может использоваться для элементов в классе [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
-- Атрибут x:Load не может использоваться на свободной странице XAML, загруженной с помощью метода [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).
+- Атрибут x:Load может использоваться только для типов, наследованных от классов [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) или [**FlyoutBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase).
+- Атрибут x:Load не может использоваться для корневых элементов в классах [**Page**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page), [**UserControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) или [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate).
+- Атрибут x:Load не может использоваться для элементов в классе [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary).
+- Атрибут x:Load не может использоваться на свободной странице XAML, загруженной с помощью метода [**XamlReader.Load**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlreader.load).
 - Перемещение родительского элемента приведет к удалению всех элементов, которые не были загружены.
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
 Вы можете использовать атрибут x:Load для вложенных элементов, но они должны быть реализованы из крайнего элемента.  При попытке реализовать дочерний элемент перед реализацией родительского, будет инициализировано исключение.
 
-Обычно мы рекомендуем откладывать элементы, которые не отображаются в первом кадре. Для того чтобы найти кандидатов для откладывания, лучше всего искать элементы, создаваемые со свернутым [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992). Кроме того, элементы для откладывания можно найти в пользовательском интерфейсе, который активируется в результате взаимодействия с пользователем.
+Обычно мы рекомендуем откладывать элементы, которые не отображаются в первом кадре. Для того чтобы найти кандидатов для откладывания, лучше всего искать элементы, создаваемые со свернутым [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility). Кроме того, элементы для откладывания можно найти в пользовательском интерфейсе, который активируется в результате взаимодействия с пользователем.
 
-С осторожностью откладывайте элементы в классе [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878): это уменьшает время запуска, но может также сократить производительность сдвига в зависимости от того, что создается в данный момент. Если вам необходимо увеличить производительность сдвига, см. документацию о [расширении разметки {x:Bind}](x-bind-markup-extension.md) и [атрибуте x:Phase](x-phase-attribute.md).
+С осторожностью откладывайте элементы в классе [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView): это уменьшает время запуска, но может также сократить производительность сдвига в зависимости от того, что создается в данный момент. Если вам необходимо увеличить производительность сдвига, см. документацию о [расширении разметки {x:Bind}](x-bind-markup-extension.md) и [атрибуте x:Phase](x-phase-attribute.md).
 
-Если [атрибут x:Phase](x-phase-attribute.md) используется в сочетании с **x:Load**, то, когда реализуется элемент или дерево элементов, привязки применяются до текущего этапа, включая его. Этап, определенный для **x:Phase**, не влияет и не изменяет состояние загрузки элемента. Когда элемент списка используется повторно в процессе сдвига, реализованные элементы будут вести себя так же, как другие активные элементы, и скомпилированные привязки (привязки **{x:Bind}**) будут обрабатываться с использованием тех же правил, включая фазирование.
+Если [атрибут x:Phase](x-phase-attribute.md) используется в сочетании с **x:Load**, то, когда реализуется элемент или дерево элементов, привязки применяются до текущего этапа, включая его. Этап, определенный для **x:Phase**, не влияет и не изменяет состояние загрузки элемента. Когда элемент списка используется повторно в процессе сдвига, реализованные элементы будут вести себя так же, как другие активные элементы, и скомпилированные привязки (привязки **{x:Bind}** ) будут обрабатываться с использованием тех же правил, включая фазирование.
 
 Общая рекомендация заключается в том, что следует измерять производительность приложения до и после выполнения операций, чтобы убедиться в наличии требуемой производительности.
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e0354b0e727e84d562bf63779e74be72f87198f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f5b44e60e3490f39a91724bf038aa8066de11bf0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632179"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370892"
 ---
 # <a name="the-need-for-streaming-resources"></a>Потребность в потоковых ресурсах
 
@@ -33,7 +33,7 @@ ms.locfileid: "57632179"
 
 Для [буфера](introduction-to-buffers.md) весь буфер является вложенным ресурсом.
 
-Для [текстуры](textures.md), (например, [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525)), каждый уровень MIP является вложенным ресурсом; для массива текстур (например, [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526)) каждый уровень MIP определенного фрагмента массива является вложенным ресурсом. Графическая система лишь предоставляет возможность управлять сопоставлениями выделения памяти на этом уровне вложенных ресурсов. В контексте потоковых ресурсов под «сопоставлением» понимается обеспечение доступности данных для графического процессора.
+Для [текстуры](textures.md), (например, [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)), каждый уровень MIP является вложенным ресурсом; для массива текстур (например, [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)) каждый уровень MIP определенного фрагмента массива является вложенным ресурсом. Графическая система лишь предоставляет возможность управлять сопоставлениями выделения памяти на этом уровне вложенных ресурсов. В контексте потоковых ресурсов под «сопоставлением» понимается обеспечение доступности данных для графического процессора.
 
 ## <a name="span-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanspan-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanspan-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanwithout-tiling-cant-access-only-a-small-portion-of-mipmap-chain"></a><span id="Without_tiling__can_t_access_only_a_small_portion_of_mipmap_chain"></span><span id="without_tiling__can_t_access_only_a_small_portion_of_mipmap_chain"></span><span id="WITHOUT_TILING__CAN_T_ACCESS_ONLY_A_SMALL_PORTION_OF_MIPMAP_CHAIN"></span>Без заполнения, невозможно получить доступ к только небольшую часть цепочку MIP-карт
 
@@ -47,7 +47,7 @@ ms.locfileid: "57632179"
 
 Программная подкачка может использоваться для разбиения поверхности на плитки, размер которых достаточно мал для обработки оборудованием.
 
-Direct3D поддерживает поверхности [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) размером до 16 384 пикселей по заданной стороне. Изображение, размером 16 384 пкс в ширину, 16 384 в высоту и 4 байтами на пиксель потребляет 1 ГБ видеопамяти (и добавление MIP-карт удваивает это значение). На практике редко возникает необходимость использовать в одной операции отрисовки весь 1 ГБ памяти.
+Direct3D поддерживает поверхности [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) размером до 16 384 пикселей по заданной стороне. Изображение, размером 16 384 пкс в ширину, 16 384 в высоту и 4 байтами на пиксель потребляет 1 ГБ видеопамяти (и добавление MIP-карт удваивает это значение). На практике редко возникает необходимость использовать в одной операции отрисовки весь 1 ГБ памяти.
 
 Некоторые разработчики игр создают модели поверхностей ландшафтов размером плоть до 128 на 128 тыс. пикселей. На существующих графических процессорах это становится возможным благодаря разбиению поверхности на плитки, которые достаточно малы для обработки оборудованием. Приложение должно определить, какие плитки могут потребоваться, и загрузить их в кэш текстур графического процессора — систему программной подкачки.
 

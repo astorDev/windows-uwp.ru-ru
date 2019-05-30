@@ -6,12 +6,12 @@ ms.date: 09/20/2017
 ms.topic: article
 keywords: Windows 10, uwp, маршрут, карта, расположение, направления
 ms.localizationpriority: medium
-ms.openlocfilehash: 218ca052a3e525a1f7cfc2ce18542a5a30c61e5e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 196cb4801436e8094dae4ead363ff86cc746034e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646689"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371694"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>Отображение маршрутов и направлений на карте
 
@@ -21,7 +21,7 @@ ms.locfileid: "57646689"
 
 >[!Note]
 >Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте [пример карты универсальной платформы Windows (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977).
->Если работа с картами является второстепенной функцией приложения, то рекомендуется использовать приложение "Карты Windows". Вы можете использовать `bingmaps:`, `ms-drive-to:`и схемы URI `ms-walk-to:` для запуска приложения «Карты Windows» с определенными картами и маршрутами. Дополнительные сведения см. в разделе [Запуск приложения «Карты Windows»](https://msdn.microsoft.com/library/windows/apps/mt228341).
+>Если работа с картами является второстепенной функцией приложения, то рекомендуется использовать приложение "Карты Windows". Вы можете использовать `bingmaps:`, `ms-drive-to:`и схемы URI `ms-walk-to:` для запуска приложения «Карты Windows» с определенными картами и маршрутами. Дополнительные сведения см. в разделе [Запуск приложения «Карты Windows»](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
 
  
 ## <a name="an-intro-to-maproutefinder-results"></a>Общие сведения о результатах MapRouteFinder
@@ -29,15 +29,15 @@ ms.locfileid: "57646689"
 
 Классы маршрутов и направлений связаны следующим образом.
 
-* Класс [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) использует методы, позволяющие получать маршруты и направления. Эти методы возвращают [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939).
+* Класс [**MapRouteFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinder) использует методы, позволяющие получать маршруты и направления. Эти методы возвращают [**MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult).
 
-* [  **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) содержит объект [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937). Получите доступ к этому объекту через свойство [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) класса **MapRouteFinderResult**.
+* [  **MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult) содержит объект [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute). Получите доступ к этому объекту через свойство [**Route**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinderresult.route) класса **MapRouteFinderResult**.
 
-* [  **MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) содержит коллекцию объектов [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955). Получите доступ к этой коллекции с помощью свойства [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) класса **MapRoute**.
+* [  **MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) содержит коллекцию объектов [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg). Получите доступ к этой коллекции с помощью свойства [**Legs**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproute.legs) класса **MapRoute**.
 
-* Каждый [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) содержит коллекцию объектов [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961). Получите доступ к этой коллекции с помощью свойства [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) класса **MapRouteLeg**.
+* Каждый [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) содержит коллекцию объектов [**MapRouteManeuver**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteManeuver). Получите доступ к этой коллекции с помощью свойства [**Maneuvers**](https://docs.microsoft.com/uwp/api/windows.services.maps.maprouteleg.maneuvers) класса **MapRouteLeg**.
 
-Получите маршрут и направления, чтобы добраться до места пешком или на машине, вызвав методы класса [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938). Например, [**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943) или [**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953).
+Получите маршрут и направления, чтобы добраться до места пешком или на машине, вызвав методы класса [**MapRouteFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinder). Например, [**GetDrivingRouteAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder.getdrivingrouteasync) или [**GetWalkingRouteAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder.getwalkingrouteasync).
 
 При запросе маршрута можно указать следующее:
 
@@ -53,9 +53,9 @@ ms.locfileid: "57646689"
 
 ## <a name="display-directions"></a>Отображение маршрутов
 
-В объекте [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) содержится объект [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937), доступ к которому можно получить с помощью свойства [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940).
+В объекте [**MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult) содержится объект [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute), доступ к которому можно получить с помощью свойства [**Route**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinderresult.route).
 
-Созданный класс [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) имеет свойства, показывающие время прохождения маршрута и его длину, а также содержит коллекцию объектов [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955), составляющих отрезки маршрута. Каждый объект **MapRouteLeg** содержит коллекцию объектов [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961). В объекте **MapRouteManeuver** содержатся направления, доступ к которым можно получить с помощью свойства [**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964).
+Созданный класс [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) имеет свойства, показывающие время прохождения маршрута и его длину, а также содержит коллекцию объектов [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg), составляющих отрезки маршрута. Каждый объект **MapRouteLeg** содержит коллекцию объектов [**MapRouteManeuver**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteManeuver). В объекте **MapRouteManeuver** содержатся направления, доступ к которым можно получить с помощью свойства [**InstructionText**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutemaneuver.instructiontext).
 
 >[!IMPORTANT]
 >Прежде чем использовать службы карт, необходимо указать ключ проверки подлинности карт. Дополнительные сведения см. в статье [Запрос ключа проверки подлинности карт](authentication-key.md).
@@ -138,7 +138,7 @@ You have reached your destination.
 ## <a name="display-routes"></a>Отображение маршрутов
 
 
-Чтобы отобразить [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) в [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), постройте [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) с **MapRoute**. Затем добавьте **MapRouteView** в коллекцию [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) элемента **MapControl**.
+Чтобы отобразить [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) в [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl), постройте [**MapRouteView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView) с **MapRoute**. Затем добавьте **MapRouteView** в коллекцию [**Routes**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes) элемента **MapControl**.
 
 >[!IMPORTANT]
 >Прежде чем использовать службы карт или элемент управления картой, необходимо указать ключ проверки подлинности карт. Дополнительные сведения см. в статье [Запрос ключа проверки подлинности карт](authentication-key.md).
@@ -190,7 +190,7 @@ private async void ShowRouteOnMap()
 }
 ```
 
-В этом примере показан следующий элемент управления [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) с именем **MapWithRoute**.
+В этом примере показан следующий элемент управления [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) с именем **MapWithRoute**.
 
 ![Отображение карты с маршрутом](images/routeonmap.png)
 
@@ -239,10 +239,10 @@ private async void ShowRouteOnMap()
 }
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Руководство по разработке карт](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Видео с конференции Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и компьютерах](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Пример приложения UWP для работы с трафиком](https://go.microsoft.com/fwlink/p/?LinkId=619982)

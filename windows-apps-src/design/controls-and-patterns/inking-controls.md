@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: fcbed8400b31616f92f20aa3a64a4dd8603dc7b0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0eb5a03a2a6de8624e8b414fa31c6eec51c04bbc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650899"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364893"
 ---
 # <a name="inking-controls"></a>Элементы управления рукописным вводом
 
 
 
-Существует два различных элементов управления, предназначенных для упрощения рукописного ввода в приложениях универсальной платформы Windows (UWP). [InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) и [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
+Существует два различных элементов управления, предназначенных для упрощения рукописного ввода в приложениях универсальной платформы Windows (UWP). [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) и [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 Элемент управления InkCanvas отображает ввод с помощью пера в виде росчерка пера (используя параметры цвета и толщины штриха по умолчанию) или росчерка стирания. Этот элемент управления представляет собой прозрачное наложение, которое не содержит никаких встроенных элементов пользовательского интерфейса для изменения свойств росчерка пера по умолчанию.
 
@@ -35,7 +35,7 @@ ms.locfileid: "57650899"
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-> **Важные API**: [Класс InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx), [класс InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx), [класс InkPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx), [Windows.UI.Input.Inking](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **Важные API**: [Класс InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [класс InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [класс InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -47,7 +47,7 @@ InkCanvas позволяет включить в приложении базов
 Свяжите элементы управления InkCanvas и InkToolbar, чтобы предоставить пользователям интерфейс для активации функций рукописного ввода и настройки основных свойств пера, таких как размер штриха, цвет и форма кончика пера.
 
 > [!NOTE] 
-> Для более детальной настройки отображения росчерков пера с помощью элемента управления InkCanvas воспользуйтесь объектом [InkPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx).
+> Для более детальной настройки отображения росчерков пера с помощью элемента управления InkCanvas воспользуйтесь объектом [InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter).
 
 ## <a name="examples"></a>Примеры
 

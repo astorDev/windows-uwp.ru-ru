@@ -6,19 +6,19 @@ keywords: UWP, потребляемые, надстройки, покупки и
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e3673db795e3edc2a7c9d83a3ba1036ad8feb659
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 81c37e915b0efa320b1a2f359c873356ed83b6ba
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334572"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371825"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>Поддержка покупки продуктов из приложения
 
 Предоставьте пользователям возможность покупки из приложения потребляемых внутренних продуктов приложения (товаров, которые можно покупать, использовать и покупать снова) через Магазин. Покупка из приложения — удобный и надежный способ приобрести товар. Это особенно удобно при покупке виртуальной валюты для игр (например, золота или монет), которую можно потом использовать в процессе игры.
 
 > [!IMPORTANT]
-> В этой статье показано, как использовать элементы пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) для включения покупок потребляемых продуктов в приложении. Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). **Windows.Services.Store** пространство имен поддерживает последние надстройки типы, например управляемые Store пригодных для использования надстроек и подписки и должна быть совместима с типами будущих продуктов и функций, поддерживаемых партнера Центр и Store. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Дополнительные сведения о включении возможности покупки потребляемых продуктов из приложения с помощью пространства имен **Windows.Services.Store** см. в [этой статье](enable-consumable-add-on-purchases.md).
+> В этой статье показано, как использовать элементы пространства имен [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) для включения покупок потребляемых продуктов в приложении. Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store). **Windows.Services.Store** пространство имен поддерживает последние надстройки типы, например управляемые Store пригодных для использования надстроек и подписки и должна быть совместима с типами будущих продуктов и функций, поддерживаемых партнера Центр и Store. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Дополнительные сведения о включении возможности покупки потребляемых продуктов из приложения с помощью пространства имен **Windows.Services.Store** см. в [этой статье](enable-consumable-add-on-purchases.md).
 
 ## <a name="prerequisites"></a>предварительные требования
 
@@ -42,7 +42,7 @@ ms.locfileid: "58334572"
 > [!IMPORTANT]
 > Ваше приложение отвечает за то, чтобы предоставить Магазину точный отчет об исполнении сделки. Это необходимо, чтобы сделка была честной и надежной.
 
-Пример ниже демонстрирует, как использовать свойства [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) вызова [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) из предыдущего этапа, чтобы указать, что покупка товара выполнена. Для сохранения сведений о товаре в месте, на которое впоследствии можно будет сослаться, чтобы подтвердить, что приложение выполнило свою часть сделки, используется коллекция.
+Пример ниже демонстрирует, как использовать свойства [PurchaseResults](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.PurchaseResults) вызова [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) из предыдущего этапа, чтобы указать, что покупка товара выполнена. Для сохранения сведений о товаре в месте, на которое впоследствии можно будет сослаться, чтобы подтвердить, что приложение выполнило свою часть сделки, используется коллекция.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GrantFeatureLocally)]
@@ -78,7 +78,7 @@ ms.locfileid: "58334572"
 
 * [Поддержка покупки внутренних продуктов приложений](enable-in-app-product-purchases.md)
 * [Пример Store (демонстрирует пробные версии и покупки из приложений)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-* [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/br225197)
+* [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)
  
 
  

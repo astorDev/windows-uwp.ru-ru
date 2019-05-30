@@ -6,12 +6,12 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: Windows 10, uwp, фоновую задачу
 ms.localizationpriority: medium
-ms.openlocfilehash: 71026762933267e1cad9a1cd9b6581eed1dadbb8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 73d279ca0afe67fa6c7d2240fb62c91d1ab3c4c3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618029"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370575"
 ---
 # <a name="support-your-app-with-background-tasks"></a>Поддержка приложения с помощью фоновых задач
 
@@ -20,7 +20,7 @@ ms.locfileid: "57618029"
 
 ## <a name="playing-media-in-the-background"></a>Воспроизведение мультимедиа в фоновом режиме
 
-Начиная c Windows 10 версии 1607, воспроизведение звука в фоновом режиме стало значительно проще. См. дополнительные сведения в разделе [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio).
+Начиная c Windows 10 версии 1607, воспроизведение звука в фоновом режиме стало значительно проще. См. дополнительные сведения в разделе [Воспроизведение мультимедиа в фоновом режиме](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio).
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>Фоновые задачи внутри и вне процесса
 
@@ -33,7 +33,7 @@ ms.locfileid: "57618029"
 
 Фоновые задачи, которые выполняются вне процесса, являются более устойчивыми, поскольку фоновый процесс не может прекратить работу приложения, если что-то пойдет не так. Но устойчивость достигается за счет большей сложности при управлении межпроцессным взаимодействием между приложением и фоновой задачей.
 
-Выполняемые вне процесса фоновые задачи реализуются как облегченные классы, которые реализуют интерфейс [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), который ОС выполняет в виде отдельного процесса (backgroundtaskhost.exe). Зарегистрируйте фоновую задачу с помощью класса [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Имя класса используется для указания точки входа при регистрации фоновой задачи.
+Выполняемые вне процесса фоновые задачи реализуются как облегченные классы, которые реализуют интерфейс [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask), который ОС выполняет в виде отдельного процесса (backgroundtaskhost.exe). Зарегистрируйте фоновую задачу с помощью класса [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder). Имя класса используется для указания точки входа при регистрации фоновой задачи.
 
 В Windows 10 версии 1607 можно включить фоновую активность, не создавая фоновой задачи. Вместо этого код фоновой задачи можно выполнять прямо внутри процесса приложения переднего плана.
 
@@ -46,7 +46,7 @@ ms.locfileid: "57618029"
 
 ## <a name="background-tasks-for-system-events"></a>Фоновые задачи для системных событий
 
-Ваше приложение может отвечать на события, создаваемые системой, регистрируя фоновую задачу с помощью класса [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838). Оно может использовать любые из нижеперечисленных триггеров системных событий (определенных в [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839)).
+Ваше приложение может отвечать на события, создаваемые системой, регистрируя фоновую задачу с помощью класса [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger). Оно может использовать любые из нижеперечисленных триггеров системных событий (определенных в [**SystemTriggerType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)).
 
 | Имя триггера                     | Описание                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
@@ -60,7 +60,7 @@ ms.locfileid: "57618029"
 
 ## <a name="conditions-for-background-tasks"></a>Условия для фоновых задач
 
-Добавив условие, вы сможете контролировать выполнение фоновой задачи даже после ее запуска. При активации фоновая задача не будет выполняться, пока не будут соблюдены все условия. Можно использовать следующие условия (представленные перечислением [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)).
+Добавив условие, вы сможете контролировать выполнение фоновой задачи даже после ее запуска. При активации фоновая задача не будет выполняться, пока не будут соблюдены все условия. Можно использовать следующие условия (представленные перечислением [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)).
 
 | Имя условия           | Описание                       |
 |--------------------------|-----------------------------------|
@@ -86,21 +86,21 @@ ms.locfileid: "57618029"
 
 | Триггер в реальном времени  | Описание |
 |--------------------|-------------|
-| **Канал управления** | Фоновые задачи могут поддерживать подключение и получать сообщения по каналу управления, используя класс [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Если приложение ожидает передачи данных из сокета, можно использовать посредник сокетов вместо **ControlChannelTrigger**. Узнать больше об использовании посредника сокетов можно в разделе [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). **ControlChannelTrigger** не поддерживается в Windows Phone. |
-| **Таймера** | Фоновые задачи могут выполняться через каждые 15 минут, и их можно настроить на выполнение в определенное время, используя [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). См. также: [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md). |
-| **Push-уведомление** | Фоновые задачи реагируют на [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), чтобы получать необработанные push-уведомления. |
+| **Канал управления** | Фоновые задачи могут поддерживать подключение и получать сообщения по каналу управления, используя класс [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger). Если приложение ожидает передачи данных из сокета, можно использовать посредник сокетов вместо **ControlChannelTrigger**. Узнать больше об использовании посредника сокетов можно в разделе [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger). **ControlChannelTrigger** не поддерживается в Windows Phone. |
+| **Таймера** | Фоновые задачи могут выполняться через каждые 15 минут, и их можно настроить на выполнение в определенное время, используя [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger). См. также: [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md). |
+| **Push-уведомление** | Фоновые задачи реагируют на [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger), чтобы получать необработанные push-уведомления. |
 
 **Примечание**  
 
-Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
+Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) перед регистрацией любых типов фоновых триггеров.
 
-Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
+Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess), а затем — метод [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
-**Ограничения на количество экземпляров триггера:** Существуют ограничения на количество вхождений некоторые триггеры, которые могут регистрировать приложение. Приложение может зарегистрировать триггеры [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) и [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396) только один раз на экземпляр приложения. Если приложение переходит за этот предел, регистрация вызовет исключение.
+**Ограничения на количество экземпляров триггера:** Существуют ограничения на количество вхождений некоторые триггеры, которые могут регистрировать приложение. Приложение может зарегистрировать триггеры [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) и [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396) только один раз на экземпляр приложения. Если приложение переходит за этот предел, регистрация вызовет исключение.
 
 ## <a name="system-event-triggers"></a>Триггеры системных событий
 
-Перечисление [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) представляет следующие триггеры системных событий:
+Перечисление [**SystemTriggerType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) представляет следующие триггеры системных событий:
 
 | Имя триггера            | Описание                                                       |
 |-------------------------|-------------------------------------------------------------------|
@@ -128,11 +128,11 @@ ms.locfileid: "57618029"
 
 Из-за ограничений на ресурсы для устройств с небольшим объемом памяти фоновые задачи приложений могут иметь ограничение на использование памяти, определяющее максимальный объем памяти, который может использовать фоновая задача. Если фоновая задача попытается выполнить операцию, которая превысит это ограничение, операция завершится ошибкой и может вызвать исключение "Недостаточно памяти", которое задача сможет обработать. Если задача не обрабатывает исключение "Недостаточно памяти" или тип операции не вызывает такое исключение, задача будет немедленно остановлена.  
 
-Вы можете использовать API [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831), чтобы запросить текущий объем и ограничение используемой памяти, а также чтобы отслеживать использование памяти фоновой задачей.
+Вы можете использовать API [**MemoryManager**](https://docs.microsoft.com/uwp/api/Windows.System.MemoryManager), чтобы запросить текущий объем и ограничение используемой памяти, а также чтобы отслеживать использование памяти фоновой задачей.
 
 ### <a name="per-device-limit-for-apps-with-background-tasks-for-low-memory-devices"></a>Ограничения «на устройство» для приложений с фоновыми задачами для устройств с небольшим объемом памяти
 
-Для устройств с малым объемом памяти существует ограничение на количество приложений, которые устанавливаются на устройство и используют фоновые задачи одновременно. Если превысить это количество, произойдет сбой вызова [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485), необходимого для регистрации всех фоновых задач.
+Для устройств с малым объемом памяти существует ограничение на количество приложений, которые устанавливаются на устройство и используют фоновые задачи одновременно. Если превысить это количество, произойдет сбой вызова [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync), необходимого для регистрации всех фоновых задач.
 
 ### <a name="battery-saver"></a>Экономия заряда аккумулятора
 
@@ -142,9 +142,9 @@ ms.locfileid: "57618029"
 
 ## <a name="background-task-resource-guarantees-for-real-time-communication"></a>Ресурс фоновой задачи гарантирует связь в реальном времени
 
-Чтобы исключить помехи для функций связи в реальном времени из-за выделения квот ресурсов, каждая выполняющаяся фоновая задача, использующая [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) и [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), получает гарантированные объемы ресурсов ЦП. Квоты ресурсов остаются такими, как упоминалось выше, и сохраняются постоянными для этих фоновых задач.
+Чтобы исключить помехи для функций связи в реальном времени из-за выделения квот ресурсов, каждая выполняющаяся фоновая задача, использующая [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) и [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger), получает гарантированные объемы ресурсов ЦП. Квоты ресурсов остаются такими, как упоминалось выше, и сохраняются постоянными для этих фоновых задач.
 
-Приложению не нужно специально что-то делать, чтобы получать гарантированные квоты ресурсов для фоновых задач [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) и [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543). Система всегда рассматривает их как критически важные фоновые задачи.
+Приложению не нужно специально что-то делать, чтобы получать гарантированные квоты ресурсов для фоновых задач [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) и [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger). Система всегда рассматривает их как критически важные фоновые задачи.
 
 ## <a name="maintenance-trigger"></a>Триггер обслуживания
 
@@ -152,12 +152,12 @@ ms.locfileid: "57618029"
 
 ## <a name="background-tasks-for-sensors-and-devices"></a>Фоновые задачи для датчиков и устройств
 
-Ваше приложение может получать доступ к датчикам и периферийным устройствам из фоновой задачи с помощью класса [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Этот триггер можно использовать для продолжительных операций, таких как синхронизация данных или мониторинг. В отличие от задач для системных событий задачу **DeviceUseTrigger** можно инициировать только во время работы приложения на переднем плане, и для нее невозможно установить какие-либо условия.
+Ваше приложение может получать доступ к датчикам и периферийным устройствам из фоновой задачи с помощью класса [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger). Этот триггер можно использовать для продолжительных операций, таких как синхронизация данных или мониторинг. В отличие от задач для системных событий задачу **DeviceUseTrigger** можно инициировать только во время работы приложения на переднем плане, и для нее невозможно установить какие-либо условия.
 
 > [!IMPORTANT]
 > Триггеры **DeviceUseTrigger** и **DeviceServicingTrigger** невозможно использовать с фоновыми задачами, выполняемыми внутри процесса.
 
-Некоторые критические операции с устройством, например длительные обновления встроенного ПО, не могут выполняться с помощью класса [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Такие операции могут выполняться только на компьютере и только привилегированным приложением, которое использует [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). *Привилегированным* называется приложение, которому изготовитель устройства разрешил выполнять эти операции. Метаданные устройства позволяют указать, какое приложение (при его наличии) было назначено в качестве привилегированного приложения на устройстве. Дополнительные сведения см. в разделе [синхронизации устройства и обновления для приложений Microsoft Store для устройств](https://go.microsoft.com/fwlink/p/?LinkId=306619)
+Некоторые критические операции с устройством, например длительные обновления встроенного ПО, не могут выполняться с помощью класса [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger). Такие операции могут выполняться только на компьютере и только привилегированным приложением, которое использует [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger). *Привилегированным* называется приложение, которому изготовитель устройства разрешил выполнять эти операции. Метаданные устройства позволяют указать, какое приложение (при его наличии) было назначено в качестве привилегированного приложения на устройстве. Дополнительные сведения см. в разделе [синхронизации устройства и обновления для приложений Microsoft Store для устройств](https://go.microsoft.com/fwlink/p/?LinkId=306619)
 
 ## <a name="managing-background-tasks"></a>Управление фоновыми задачами
 
@@ -168,7 +168,7 @@ ms.locfileid: "57618029"
 
 Проверьте регистрацию вашей фоновой задачи во время запуска приложения. Убедитесь, что разгруппированные фоновые задачи вашего приложения присутствуют в BackgroundTaskBuilder.AllTasks. Повторно зарегистрируйте те, которые не отображаются. Отмените регистрацию всех задач, которые больше не нужны. Это гарантирует, что все регистрации фоновых задач являются актуальными при каждом запуске приложения.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 **Схематическое руководство для многозадачности в Windows 10**
 
@@ -187,7 +187,7 @@ ms.locfileid: "57618029"
 * [Обработка отмененной фоновой задачи](handle-a-cancelled-background-task.md)
 * [Активация приостановки, возобновления и фоновых событий для приложений универсальной платформы Windows (при отладке)](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)
-* [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [Воспроизведение мультимедиа в фоновом режиме](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Регистрация фоновой задачи](register-a-background-task.md)
 * [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
 * [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)

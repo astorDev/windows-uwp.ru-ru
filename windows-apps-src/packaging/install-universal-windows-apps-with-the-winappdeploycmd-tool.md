@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 479c4410384613b22ba86bc976a360125bb73c3a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 06107691a4551ae2af05e63c1db810485273dc9b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632809"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372816"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Установка приложений с помощью средства WinAppDeployCmd.exe
 
@@ -20,7 +20,7 @@ ms.locfileid: "57632809"
 
 Необходимо просто запустить средство WinAppDeployCmd из командной строки или файл сценария установки пакета SDK Windows 10. При установке приложения с помощью WinAppDeployCmd.exe, этот механизм использует файл.appx/.msix или AppxManifest (для свободных файлов) для загрузки неопубликованных приложений на устройстве Windows 10. Эта команда не устанавливает сертификат, необходимый вашему приложению. Для запуска приложения, устройства с Windows 10 должен быть в режиме разработчика или уже иметь установленный сертификат.
 
-Для развертывания на мобильных устройствах необходимо сначала создать пакет. Дополнительные сведения см. [здесь](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+Для развертывания на мобильных устройствах необходимо сначала создать пакет. Дополнительные сведения см. [здесь](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
 **WinAppDeployCmd.exe** средство находится на Компьютере под управлением Windows 10: **C:\\Program Files (x86)\\комплекты Windows\\10\\bin\\&lt;версия пакета SDK&gt;\\x86\\WinAppDeployCmd.exe** () на основе пути установки для пакета SDK). 
 > [!NOTE]

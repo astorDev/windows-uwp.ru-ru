@@ -6,12 +6,12 @@ ms.date: 11/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 26324637fdf54b48fa441d28065bf437fbf74b26
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 673f774c4d686726b59ff4e52e356ec0bc319379
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583144"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370765"
 ---
 # <a name="networking-and-web-services"></a>Сеть и веб-службы
 
@@ -24,6 +24,6 @@ ms.locfileid: "57583144"
 | [Передача данных по сети в фоновом режиме](network-communications-in-the-background.md) | Чтобы продолжить сетевое взаимодействие, пока оно не в фоновом режиме, приложение может использовать фоновые задачи и посредник сокетов или триггеры канала управления. |
 | [Сокеты](sockets.md) | Сокеты — это технология передачи данных низкого уровня, на основе которой реализованы многие сетевые протоколы. UWP предоставляет классы сокетов TCP и UDP для клиент-серверных или одноранговых приложений, если устанавливаются долгосрочные подключения или установленное подключение не требуется. |
 | [WebSockets](websockets.md) | Протокол WebSocket предоставляет механизм быстрого и безопасного двустороннего взаимодействия между клиентом и сервером через HTTP(S) и поддерживает и UTF-8, и двоичные сообщения. |
-| [HttpClient](httpclient.md) | Для отправки и получения данных по протоколам HTTP 2.0 и HTTP 1.1. используйте API пространства имен [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692). |
-| [Веб-каналы RSS и Atom](web-feeds.md) | Получайте или создавайте самое свежее и популярное веб-содержимое с помощью сводных веб-каналов, созданных по стандартам RSS и Atom с помощью компонентов в пространстве имен [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632). |
+| [HttpClient](httpclient.md) | Для отправки и получения данных по протоколам HTTP 2.0 и HTTP 1.1. используйте API пространства имен [Windows.Web.Http](https://docs.microsoft.com/uwp/api/Windows.Web.Http). |
+| [Веб-каналы RSS и Atom](web-feeds.md) | Получайте или создавайте самое свежее и популярное веб-содержимое с помощью сводных веб-каналов, созданных по стандартам RSS и Atom с помощью компонентов в пространстве имен [Windows.Web.Syndication](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication). |
 | [Фоновая передача данных](background-transfers.md) | Используйте фоновую передачу данных API, чтобы надежно копировать файлы по сети. |

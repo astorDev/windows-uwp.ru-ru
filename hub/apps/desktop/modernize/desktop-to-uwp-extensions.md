@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 063106362a36aa32d0874be15dd589b5fb573409
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 291c16d14428f8c6476b12fbadf00f84c26a4235
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214950"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359483"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Интеграция упакованные приложения рабочего стола с Windows 10 и UWP
 
@@ -99,7 +99,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 Можно убедиться в том, что пользователи открывать нового упакованные приложения по умолчанию для определенных типов файлов, вместо открытия настольной версии приложения.
 
-Для этого укажите [программный идентификатор (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) каждого приложения, из которого необходимо наследовать сопоставления файлов.
+Для этого укажите [программный идентификатор (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) каждого приложения, из которого необходимо наследовать сопоставления файлов.
 
 #### <a name="xml-namespaces"></a>Пространства имен XML
 
@@ -123,8 +123,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Имя |Описание |
 |-------|-------------|
 |Category |Всегда ``windows.fileTypeAssociation``.
-|Имя |Уникальный идентификатор для вашего приложения. Этот идентификатор предназначен для внутреннего использования и применяется для генерации хэшированного [программного идентификатора (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx), ассоциированного с вашим сопоставлением типов файлов. Вы можете использовать этот идентификатор для контроля изменений в будущих версиях своего приложения. |
-|MigrationProgId |[Программный идентификатор (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) , описывающий приложение, компонент и версии приложения рабочего стола, из которого требуется выполнить наследование сопоставления файлов.|
+|Имя |Уникальный идентификатор для вашего приложения. Этот идентификатор предназначен для внутреннего использования и применяется для генерации хэшированного [программного идентификатора (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids), ассоциированного с вашим сопоставлением типов файлов. Вы можете использовать этот идентификатор для контроля изменений в будущих версиях своего приложения. |
+|MigrationProgId |[Программный идентификатор (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) , описывающий приложение, компонент и версии приложения рабочего стола, из которого требуется выполнить наследование сопоставления файлов.|
 
 #### <a name="example"></a>Пример
 
@@ -182,7 +182,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Имя |Описание |
 |-------|-------------|
 |Category |Всегда ``windows.fileTypeAssociation``.
-|Имя |Уникальный идентификатор для вашего приложения. Этот идентификатор предназначен для внутреннего использования и применяется для генерации хэшированного [программного идентификатора (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx), ассоциированного с вашим сопоставлением типов файлов. Вы можете использовать этот идентификатор для контроля изменений в будущих версиях своего приложения.   |
+|Имя |Уникальный идентификатор для вашего приложения. Этот идентификатор предназначен для внутреннего использования и применяется для генерации хэшированного [программного идентификатора (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids), ассоциированного с вашим сопоставлением типов файлов. Вы можете использовать этот идентификатор для контроля изменений в будущих версиях своего приложения.   |
 |FileType |Расширение файла, поддерживаемое вашим приложением. |
 
 #### <a name="example"></a>Пример
@@ -410,7 +410,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 
 Используйте расширение для идентификации этих папок. Так система сможет найти и загрузить файлы, которые вы там разместите. Представьте, что это расширение — замена переменной среды _%PATH%_ .
 
-Если не использовать это расширение, система выполнит поиск графа зависимости пакетов для этого процесса, корневую папку пакета и системный каталог ( _%SystemRoot%\system32_) в указанном порядке. Дополнительные сведения см. в разделе [Порядок поиска приложений для Windows](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps).
+Если не использовать это расширение, система выполнит поиск графа зависимости пакетов для этого процесса, корневую папку пакета и системный каталог ( _%SystemRoot%\system32_) в указанном порядке. Дополнительные сведения см. в разделе [Порядок поиска приложений для Windows](https://docs.microsoft.com/windows/desktop/Dlls/dynamic-link-library-search-order).
 
 Каждый пакет может содержать только одно из этих расширений. Это означает, что одно из них можно добавить в главный пакет, а затем добавить по одному к каждому из [необязательных пакетов и связанных наборов](https://docs.microsoft.com/windows/uwp/packaging/optional-packages).
 
@@ -673,7 +673,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 В проводнике пользователей смогут группировать эти файлы с помощью данного поля. Компоненты системы также используют это поле для различных целей, например индексации.
 
-Дополнительную информацию о поле **Kind** и его возможных значениях см. в разделе [Использование имен Kind](https://msdn.microsoft.com/library/windows/desktop/cc144136.aspx).
+Дополнительную информацию о поле **Kind** и его возможных значениях см. в разделе [Использование имен Kind](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names).
 
 #### <a name="xml-namespaces"></a>Пространства имен XML
 
@@ -702,7 +702,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |Category |Всегда ``windows.fileTypeAssociation``.
 |Имя |Уникальный идентификатор для вашего приложения. |
 |FileType |Соответствующие расширения файлов. |
-|value |Допустимое [значение Kind](https://msdn.microsoft.com/en-us/library/windows/desktop/cc144136.aspx#kind_hierarchy). |
+|value |Допустимое [значение Kind](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names). |
 
 #### <a name="example"></a>Пример
 
@@ -1069,8 +1069,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |DropTargetHandler |Идентификатор класса приложения, которое реализует [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) интерфейс. Файлы со съемного носителя передаются методу [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) вашей реализации [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017).  |
 |Параметры |Не требуется реализовывать интерфейс [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) для всех событий содержимого. Для любого из событий содержимого можно указать параметры командной строки вместо реализации интерфейса [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017). Для этих событий автозапуска будет запустить приложение с помощью этих параметров командной строки. Можно проанализировать эти параметры в коде инициализации приложения, чтобы определить, было ли оно запущено с помощью автозапуска, а затем предоставить пользовательскую реализацию. |
 |DeviceEvent |Имя события устройства, при котором ``ActionDisplayName``и ``ProviderDisplayName`` отправляют запрос пользователям. Событие устройства создается, если устройство подключено к ПК. События устройства начинаются со строки ``WPD`` и их можно найти [здесь](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference). |
-|HWEventHandler |Идентификатор класса приложения, которое реализует [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) интерфейс. |
-|InitCmdLine |Параметр строки, который требуется передать в метод [Initialize](https://msdn.microsoft.com/en-us/library/windows/desktop/bb775495.aspx) интерфейса [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx). |
+|HWEventHandler |Идентификатор класса приложения, которое реализует [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) интерфейс. |
+|InitCmdLine |Параметр строки, который требуется передать в метод [Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) интерфейса [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler). |
 
 ### <a name="example"></a>Пример
 
@@ -1101,14 +1101,14 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 Если приложение открыто, если пользователи устанавливают обновления к нему, закрытия приложения.
 
-Если это приложение перезагрузки после обновления завершения, вызовите [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) функции в каждый процесс, который требуется перезапустить.
+Если это приложение перезагрузки после обновления завершения, вызовите [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) функции в каждый процесс, который требуется перезапустить.
 
-Получает каждого активного окна в приложении [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx) сообщения. На этом этапе приложение может вызвать [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) функцию еще раз, чтобы при необходимости обновите командной строки.
+Получает каждого активного окна в приложении [WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession) сообщения. На этом этапе приложение может вызвать [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) функцию еще раз, чтобы при необходимости обновите командной строки.
 
-При получении каждого активного окна в приложении [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) сообщения, приложения следует сохранить данные и завершить работу.
+При получении каждого активного окна в приложении [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) сообщения, приложения следует сохранить данные и завершить работу.
 
 >[!NOTE]
-Active windows также получают [WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx) сообщений в случае, если приложение не обрабатывает [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) сообщения.
+Active windows также получают [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) сообщений в случае, если приложение не обрабатывает [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) сообщения.
 
 На этом этапе приложение должно закрыть собственный процессы 30 секунд или платформы принудительно завершает их.
 

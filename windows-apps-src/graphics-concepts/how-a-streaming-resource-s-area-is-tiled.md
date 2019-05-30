@@ -9,12 +9,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7251d4595a3e87a8629d6e717bb4f52e5b7c35fe
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28fac411ad814167dcef3b02424c866bd3453344
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615369"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370597"
 ---
 # <a name="how-a-streaming-resources-area-is-tiled"></a>Размещение плиток в области потокового ресурса
 
@@ -46,11 +46,11 @@ ms.locfileid: "57615369"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="texture2d-and-texture2darray-subresource-tiling.md">Texture2D и массивы Texture2DArray динамическое разделение подресурсов</a></p></td>
-<td align="left"><p>В таблицах ниже показано, как размещаются на плитках вложенные ресурсы <a href="https://msdn.microsoft.com/library/windows/desktop/ff471525"><strong>Texture2D</strong></a> и <a href="https://msdn.microsoft.com/library/windows/desktop/ff471526"><strong>Texture2DArray</strong></a>.</p></td>
+<td align="left"><p>В таблицах ниже показано, как размещаются на плитках вложенные ресурсы <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d"><strong>Texture2D</strong></a> и <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray"><strong>Texture2DArray</strong></a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="texture3d-subresource-tiling.md">Динамическое разделение подресурсов Texture3D</a></p></td>
-<td align="left"><p>В этой таблице показано, как размещаются на плитках вложенные ресурсы <a href="https://msdn.microsoft.com/library/windows/desktop/ff471562"><strong>Texture3D</strong></a>.</p></td>
+<td align="left"><p>В этой таблице показано, как размещаются на плитках вложенные ресурсы <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d"><strong>Texture3D</strong></a>.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="buffer-tiling.md">Мозаичное заполнение буфера</a></p></td>

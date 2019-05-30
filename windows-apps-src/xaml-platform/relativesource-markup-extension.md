@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 26cde97f82e6962d530721f1e0230138e5917016
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 716ca61fc9925846377157d215ca3326191915b7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617929"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371140"
 ---
 # <a name="relativesource-markup-extension"></a>Расширение разметки {RelativeSource}
 
@@ -38,18 +38,18 @@ ms.locfileid: "57617929"
 
 | Термин | Описание |
 |------|-------------|
-| {RelativeSource Self} | Создает значение [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) для <strong>Self</strong>. В качестве источника этой привязки следует использовать целевой элемент. Это полезно для привязки одного из свойств элемента к другому свойству того же элемента. |
-| {RelativeSource TemplatedParent} | Создает элемент [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391), который служит источником этой привязки. Это полезно для применения информации времени выполнения к привязкам на уровне шаблонов. | 
+| {RelativeSource Self} | Создает значение [<strong>Mode</strong>](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.relativesource.mode) для <strong>Self</strong>. В качестве источника этой привязки следует использовать целевой элемент. Это полезно для привязки одного из свойств элемента к другому свойству того же элемента. |
+| {RelativeSource TemplatedParent} | Создает элемент [<strong>ControlTemplate</strong>](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate), который служит источником этой привязки. Это полезно для применения информации времени выполнения к привязкам на уровне шаблонов. | 
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
-Класс [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) может задать [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) как атрибут элемента объекта **Binding** или как компонент в расширении разметки [{Binding}](binding-markup-extension.md). Именно по этой причине отображаются два различных синтаксиса XAML.
+Класс [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) может задать [**Binding.RelativeSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.relativesource) как атрибут элемента объекта **Binding** или как компонент в расширении разметки [{Binding}](binding-markup-extension.md). Именно по этой причине отображаются два различных синтаксиса XAML.
 
-**RelativeSource** аналогичен [расширению разметки {Binding}](binding-markup-extension.md).  Схожесть заключается в том, что расширение разметки может возвращать свои экземпляры, поддерживая конструкцию на основе строки, которая, таким образом, передает аргумент конструктору. В этом случае передаваемый аргумент — это значение [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915).
+**RelativeSource** аналогичен [расширению разметки {Binding}](binding-markup-extension.md).  Схожесть заключается в том, что расширение разметки может возвращать свои экземпляры, поддерживая конструкцию на основе строки, которая, таким образом, передает аргумент конструктору. В этом случае передаваемый аргумент — это значение [**Mode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.relativesource.mode).
 
-Режим **Self** полезен для привязки одного свойства элемента к другому свойству того же элемента; это вариант привязки [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828), не требующей именования элемента и установки для него ссылки на себя самого. Если нужно привязать одно свойство элемента к другому свойству того же элемента, эти свойства либо должны быть одного типа, либо на их привязке необходимо использовать [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) для преобразования значений. Например, можно использовать [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) как источник для [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) без преобразования, но чтобы использовать [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) в качестве источника для [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006), понадобится преобразователь.
+Режим **Self** полезен для привязки одного свойства элемента к другому свойству того же элемента; это вариант привязки [**ElementName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.elementname), не требующей именования элемента и установки для него ссылки на себя самого. Если нужно привязать одно свойство элемента к другому свойству того же элемента, эти свойства либо должны быть одного типа, либо на их привязке необходимо использовать [**Converter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter) для преобразования значений. Например, можно использовать [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) как источник для [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) без преобразования, но чтобы использовать [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) в качестве источника для [**Visibility**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Visibility), понадобится преобразователь.
 
-Рассмотрим пример. [  **Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) использует [расширение разметки {Binding}](binding-markup-extension.md), чтобы значения [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) и [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) всегда были равны и при отрисовке отображался квадрат. Только значение Height является фиксированным. Для этого объекта **Rectangle** значение [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) по умолчанию равно **null**, а не **this**. Таким образом, чтобы установить источник контекста данных как объект (и включить привязку к другим его свойствам), используется аргумент `RelativeSource={RelativeSource Self}` в качестве расширения разметки {Binding}.
+Рассмотрим пример. [  **Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) использует [расширение разметки {Binding}](binding-markup-extension.md), чтобы значения [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) и [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) всегда были равны и при отрисовке отображался квадрат. Только значение Height является фиксированным. Для этого объекта **Rectangle** значение [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) по умолчанию равно **null**, а не **this**. Таким образом, чтобы установить источник контекста данных как объект (и включить привязку к другим его свойствам), используется аргумент `RelativeSource={RelativeSource Self}` в качестве расширения разметки {Binding}.
 
 ```XML
 <Rectangle
@@ -58,15 +58,15 @@ ms.locfileid: "57617929"
 />
 ```
 
-Также `RelativeSource={RelativeSource Self}` можно использовать, чтобы задать для свойства [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) объекта самого себя.  Например, может появиться этот прием в некоторых примерах SDK где [ **страницы** ](https://msdn.microsoft.com/library/windows/apps/br227503) класс расширен с настраиваемое свойство, которое уже предоставляет модель представления готовые к использованию для свои собственные привязки данных Например: `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
+Также `RelativeSource={RelativeSource Self}` можно использовать, чтобы задать для свойства [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) объекта самого себя.  Например, может появиться этот прием в некоторых примерах SDK где [ **страницы** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) класс расширен с настраиваемое свойство, которое уже предоставляет модель представления готовые к использованию для свои собственные привязки данных Например: `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**Примечание**  использование XAML для **RelativeSource** информацию только об использовании, для которого предназначен: задание значения для [ **Binding.RelativeSource** ](https://msdn.microsoft.com/library/windows/apps/br209831)в XAML как часть выражения привязки. Теоретически возможны и другие способы задания свойства, значением которого является [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
+**Примечание**  использование XAML для **RelativeSource** информацию только об использовании, для которого предназначен: задание значения для [ **Binding.RelativeSource** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.relativesource)в XAML как часть выражения привязки. Теоретически возможны и другие способы задания свойства, значением которого является [**RelativeSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.RelativeSource).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Обзор языка XAML](xaml-overview.md)
-* [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Подробно о привязке данных](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
 * [Расширение разметки {binding}](binding-markup-extension.md)
-* [**Привязки**](https://msdn.microsoft.com/library/windows/apps/br209820)
-* [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)
+* [**Привязки**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
+* [**RelativeSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.RelativeSource)
 

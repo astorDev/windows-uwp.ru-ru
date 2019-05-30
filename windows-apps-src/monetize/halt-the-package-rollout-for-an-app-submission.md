@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, выпуск пакета, отправка приложения, остановка
 ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
 ms.localizationpriority: medium
-ms.openlocfilehash: 5262089a2eab57ff84f399637fd98e58ec3e13ed
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 00588b91db2a2536ca7c0a1a5e6748c26b3eb2fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334672"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372055"
 ---
 # <a name="halt-the-rollout-for-an-app-submission"></a>Остановка выпуска для отправки приложения
 
@@ -51,7 +51,7 @@ ms.locfileid: "58334672"
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | строка | Обязательный. Код продукта в Магазине для приложения, содержащего отправку с выпуском пакета, который требуется остановить. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | строка | Обязательный. Код продукта в Магазине для приложения, содержащего отправку с выпуском пакета, который требуется остановить. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | строка | Обязательный. Идентификатор отправки с выпуском пакета, который необходимо остановить. Этот идентификатор добавляется в данные ответов для запросов на [создание отправки приложения](create-an-app-submission.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.  |
 
 

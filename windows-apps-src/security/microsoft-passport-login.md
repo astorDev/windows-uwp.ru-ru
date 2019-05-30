@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: 8319d4a0975e209edea7cb70b22910e8124f16c1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 72b7f168c9f4e812b1cfb459ebea91f61a988122
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593979"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371306"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Создание приложения для входа с использованием Windows Hello
 
@@ -415,7 +415,7 @@ ms.locfileid: "57593979"
     }
     ```
 
--   Вы могли заметить закомментированный код, который ссылается на метод в MicrosoftPassportHelper. В файле MicrosoftPassportHelper.cs добавьте новый метод CreatePassportKeyAsync. Этот метод использует API Windows Hello в [**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043). После вызова [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) будет создан ключ Passport, связанный с *accountId* и локальным компьютером. Обратите внимание на комментарии в операторе switch, если вас интересует реализация этого сценария.
+-   Вы могли заметить закомментированный код, который ссылается на метод в MicrosoftPassportHelper. В файле MicrosoftPassportHelper.cs добавьте новый метод CreatePassportKeyAsync. Этот метод использует API Windows Hello в [**KeyCredentialManager**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredentialManager). После вызова [**RequestCreateAsync**](https://docs.microsoft.com/previous-versions/windows/dn973048(v=win.10)) будет создан ключ Passport, связанный с *accountId* и локальным компьютером. Обратите внимание на комментарии в операторе switch, если вас интересует реализация этого сценария.
 
     ```cs
     /// <summary>
@@ -624,7 +624,7 @@ ms.locfileid: "57593979"
 
     ![Экран приветствия Windows Hello](images/passport-login-9.png)
 
--   В папке Views создайте пустую страницу UserSelection.xaml и добавьте следующий код XAML для определения пользовательского интерфейса. Она будет содержать элемент [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878), отображающий всех пользователей в локальном списке учетных записей, и кнопку, которая позволяет перейти на страницу входа и добавить другую учетную запись.
+-   В папке Views создайте пустую страницу UserSelection.xaml и добавьте следующий код XAML для определения пользовательского интерфейса. Она будет содержать элемент [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), отображающий всех пользователей в локальном списке учетных записей, и кнопку, которая позволяет перейти на страницу входа и добавить другую учетную запись.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -963,7 +963,7 @@ ms.locfileid: "57593979"
 
 В этом практическом занятии вы узнали, как использовать новый API Windows Hello для проверки подлинности существующих пользователей и создания новых пользователей. Теперь вы можете упростить работу с вашими приложениями, так как пользователям не придется запоминать пароли, и при этом будете уверенны, что приложение по-прежнему защищено механизмом проверки подлинности. Windows 10 использует новую технологию проверки подлинности Windows Hello для обеспечения возможности входа в систему с помощью биометрических данных.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Windows Hello](microsoft-passport.md)
 * [Служба Windows Hello входа](microsoft-passport-login-auth-service.md)

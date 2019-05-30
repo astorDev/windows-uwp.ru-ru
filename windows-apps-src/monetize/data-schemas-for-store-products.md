@@ -5,18 +5,18 @@ ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10, uwp, ExtendedJsonData, продукты Store, схема
 ms.localizationpriority: medium
-ms.openlocfilehash: 344052c18178a121fd9c8d133bdd1abe5a4ad886
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 77f63ce409a576b3c873d95df0d2e8d0f0933808
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334844"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372533"
 ---
 # <a name="data-schemas-for-store-products"></a>Схемы данных для продуктов из Магазина
 
-При отправке в Магазин какого-либо продукта, например приложения или надстройки, Магазин поддерживает полный набор данных для продукта и его лицензий. В коде вашего приложения вы может программным способом получить доступ к некоторым из этих данных с помощью свойств в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Например, вы можете получить описание и цену текущего приложения или надстройки для текущего приложения с помощью свойств [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) и [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price).
+При отправке в Магазин какого-либо продукта, например приложения или надстройки, Магазин поддерживает полный набор данных для продукта и его лицензий. В коде вашего приложения вы может программным способом получить доступ к некоторым из этих данных с помощью свойств в пространстве имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store). Например, вы можете получить описание и цену текущего приложения или надстройки для текущего приложения с помощью свойств [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) и [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price).
 
-Тем не менее, значительная часть данных для продуктов в Магазине не обеспечивает доступ с помощью предопределенных свойств в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Чтобы получить доступ ко всем данным продукта в коде, вместо этого можно использовать следующие общие свойства:
+Тем не менее, значительная часть данных для продуктов в Магазине не обеспечивает доступ с помощью предопределенных свойств в пространстве имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store). Чтобы получить доступ ко всем данным продукта в коде, вместо этого можно использовать следующие общие свойства:
 
 * [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData)
 * [StoreSku.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.ExtendedJsonData)

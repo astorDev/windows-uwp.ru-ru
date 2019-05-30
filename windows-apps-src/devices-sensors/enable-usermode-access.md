@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 442b3b9328212a5115384b5175b519b76286dd28
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f41bf9f56b63f59844bec976e9d6e5e3d650b271
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620309"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370274"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Предоставление доступа в пользовательском режиме к GPIO, I2C и SPI
 
@@ -41,7 +41,7 @@ Device(RHPX)
 * _CID — совместимый ИД. Должен иметь вид MSFT8000.
 * _UID — уникальный ИД. Установите значение 1.
 
-Затем объявляем ресурсы GPIO и SPB, которые должны быть предоставлены пользовательскому режиму. Порядок объявления ресурсов важен, потому что индексированные ресурсы используются для связи свойств с ресурсами. Если предоставлено несколько шин I2C или SPI, первая объявленная шина считается шиной по умолчанию для этого типа и представляет собой экземпляр, возвращаемый методами `GetDefaultAsync()`[Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) и [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx).
+Затем объявляем ресурсы GPIO и SPB, которые должны быть предоставлены пользовательскому режиму. Порядок объявления ресурсов важен, потому что индексированные ресурсы используются для связи свойств с ресурсами. Если предоставлено несколько шин I2C или SPI, первая объявленная шина считается шиной по умолчанию для этого типа и представляет собой экземпляр, возвращаемый методами `GetDefaultAsync()`[Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) и [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller).
 
 ### <a name="spi"></a>SPI
 
@@ -156,7 +156,7 @@ Package(2) { "bus-SPI-SPI1", Package() { 2 }},
 #### <a name="spi-driver-requirements"></a>Требования драйвера SPI
 
 * Необходимо использовать `SpbCx` или быть совместимым с SpbCx
-* Передача [тестов MITT SPI](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
+* Передача [тестов MITT SPI](https://docs.microsoft.com/windows-hardware/drivers/spb/spi-tests-in-mitt)
 * Поддержка тактовой частоты 400 МГц
 * Поддержка 8-битной длины данных
 * Должен поддерживать все режимы SPI: 0, 1, 2, 3
@@ -201,7 +201,7 @@ Package(2) { "bus-I2C-I2C1", Package() { 3 }},
 #### <a name="i2c-driver-requirements"></a>Требования драйвера I2C
 
 * Необходимо использовать SpbCx или быть совместимым с SpbCx
-* Передача [тестов MITT I2C](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx)
+* Передача [тестов MITT I2C](https://docs.microsoft.com/windows-hardware/drivers/spb/run-mitt-tests-for-an-i2c-controller-)
 * Поддержка 7-битной адресации
 * Поддержка тактовой частоты 100 кГц
 * Поддержка тактовой частоты 400 кГц
@@ -228,7 +228,7 @@ GpioInt(Edge, ActiveBoth, Shared, PullUp, 0, “\\_SB.GPI0”,) { 5 }
 
 Следующие требования необходимо соблюдать при объявлении контактов GPIO:
 
-* Поддерживаются только контроллеры GPIO с сопоставлением памяти. Контроллеры GPIO с интерфейсами в I2C/SPI не поддерживаются. Драйвер контроллера — это контроллер с сопоставлением памяти, если он задает флаг [MemoryMappedController](https://msdn.microsoft.com/library/windows/hardware/hh439449.aspx) в структуре [CLIENT_CONTROLLER_BASIC_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/hh439358.aspx) в ответ на обратный вызов [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx).
+* Поддерживаются только контроллеры GPIO с сопоставлением памяти. Контроллеры GPIO с интерфейсами в I2C/SPI не поддерживаются. Драйвер контроллера — это контроллер с сопоставлением памяти, если он задает флаг [MemoryMappedController](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_controller_attribute_flags) в структуре [CLIENT_CONTROLLER_BASIC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information) в ответ на обратный вызов [CLIENT_QueryControllerBasicInformation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information).
 * Каждый контакт требует обоих ресурсов: GpioIO и GpioInt. Ресурс GpioInt должен немедленно следовать за ресурсом GpioIO и иметь тот же номер контакта.
 * Ресурсы GPIO нужно упорядочить по увеличению номера контакта.
 * Каждый ресурс GpioIO и GpioInt должен содержать ровно один номер контакта в списке контактов.
@@ -282,7 +282,7 @@ Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 },
 Package (2) { “GPIO-PinCount”, 54 },
 ```
 
-Свойство **PinCount** должно соответствовать значению, возвращаемому свойству **TotalPins** в обратном вызове [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) драйвера `GpioClx`.
+Свойство **PinCount** должно соответствовать значению, возвращаемому свойству **TotalPins** в обратном вызове [CLIENT_QueryControllerBasicInformation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) драйвера `GpioClx`.
 
 Выберите схему нумерации, которая более всего соответствует существующей опубликованной документации для вашей платы. Так, Raspberry Pi использует естественную нумерацию, потому что на многих существующих диаграммах вывода используются номера контактов BCM2835. MinnowBoardMax использует последовательную нумерацию, потому что существующих диаграмм вывода не так много, а последовательная нумерация упрощает работу разработчиков, потому что лишь 10 контактов из 200 используются для вывода. Решение об использовании последовательной или естественной нумерации контактов должно избавить разработчиков от путаницы.
 
@@ -331,9 +331,9 @@ Package(2) { "bus-UART-UART2", Package() { 2 }},
 
 Мультиплексирование контактов — это возможность использовать один и тот же физический контакт в разных целях. Несколько других чиповых периферийных устройств, таких как контроллер I2C, контроллер SPI и контроллер GPIO, можно перенаправить на тот же физический контакт в SOC. Модуль мультиплексирования контролирует активность функций контакта в конкретный момент. Как правило, встроенное ПО отвечает за назначение функций при загрузке и назначение остается статическим на протяжении всего сеанса загрузки. Мультиплексирование контактов во время выполнения добавляет возможность перенастройки назначений функций контактов во время выполнения. Предоставление пользователям возможности выбрать функцию контакта во время выполнения ускоряет разработку, потому что пользователи могут быстро перенастроить контакты платы, и обеспечивает аппаратную поддержку более широкого диапазона сфер применения по сравнению со статической конфигурацией.
 
-Пользователи могут пользоваться поддержкой мультиплексирования для GPIO, I2C, SPI и UART, не создавая дополнительный код. Когда пользователь открывает GPIO или шину с использованием [OpenPin()](https://msdn.microsoft.com/library/dn960157.aspx) или [FromIdAsync()](https://msdn.microsoft.com/windows.devices.i2c.i2cdevice.fromidasync), соответствующие физические контакты автоматически мультиплексируются для запрошенной функции. Если контакты уже используются другой функцией, вызов OpenPin() или FromIdAsync() завершится ошибкой. Когда пользователь закрывает устройство, удаляя объект [GpioPin](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.gpiopin.aspx), [I2cDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2cdevice.aspx), [SpiDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spidevice.aspx) или [SerialDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.serialdevice.aspx), контакты снова становятся свободными, что позволяет в дальнейшем использовать их для других функций.
+Пользователи могут пользоваться поддержкой мультиплексирования для GPIO, I2C, SPI и UART, не создавая дополнительный код. Когда пользователь открывает GPIO или шину с использованием [OpenPin()](https://docs.microsoft.com/uwp/api/windows.devices.gpio.gpiocontroller.openpin) или [FromIdAsync()](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2cdevice.fromidasync), соответствующие физические контакты автоматически мультиплексируются для запрошенной функции. Если контакты уже используются другой функцией, вызов OpenPin() или FromIdAsync() завершится ошибкой. Когда пользователь закрывает устройство, удаляя объект [GpioPin](https://docs.microsoft.com/uwp/api/windows.devices.gpio.gpiopin), [I2cDevice](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2cdevice), [SpiDevice](https://docs.microsoft.com/uwp/api/windows.devices.spi.spidevice) или [SerialDevice](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication.serialdevice), контакты снова становятся свободными, что позволяет в дальнейшем использовать их для других функций.
 
-В Windows реализована встроенная поддержка мультиплексирования контактов на платформах [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439515.aspx), [SpbCx](https://msdn.microsoft.com/library/windows/hardware/hh406203.aspx) и [SerCx](https://msdn.microsoft.com/library/windows/hardware/dn265349.aspx). Эти платформы взаимодействуют, чтобы автоматически переключать контакт на нужную функцию, когда осуществляется доступ к контакту или шине GPIO. Доступ к контактам осуществляется произвольно с целью предотвращения конфликтов между несколькими клиентами. В дополнение к этой встроенной поддержке интерфейсы и протоколы для мультиплексирования контактов являются универсальными и могут быть расширены для обеспечения поддержки дополнительных устройств и сценариев.
+В Windows реализована встроенная поддержка мультиплексирования контактов на платформах [GpioClx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index), [SpbCx](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension) и [SerCx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index). Эти платформы взаимодействуют, чтобы автоматически переключать контакт на нужную функцию, когда осуществляется доступ к контакту или шине GPIO. Доступ к контактам осуществляется произвольно с целью предотвращения конфликтов между несколькими клиентами. В дополнение к этой встроенной поддержке интерфейсы и протоколы для мультиплексирования контактов являются универсальными и могут быть расширены для обеспечения поддержки дополнительных устройств и сценариев.
 
 В этом документе сначала описываются базовые интерфейсы и протоколы, участвующие в мультиплексировании контактов, а затем описывается добавление поддержки мультиплексирования контактов в драйверах контроллера GpioClx, SpbCx и SerCx.
 
@@ -353,8 +353,8 @@ Package(2) { "bus-UART-UART2", Package() { 2 }},
 
 ![Взаимодействие клиент-сервер в процессе мультиплексирования контактов](images/usermode-access-diagram-1.png)
 
-1. Клиент получает ресурсы MsftFunctionConfig от встроенного ПО ACPI в ходе обратного вызова [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx).
-2. Клиент использует вспомогательную функцию центра ресурсов `RESOURCE_HUB_CREATE_PATH_FROM_ID()` для создания пути из кода ресурса, который открывает дескриптор для пути (с помощью [ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx), [IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) или [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx)).
+1. Клиент получает ресурсы MsftFunctionConfig от встроенного ПО ACPI в ходе обратного вызова [EvtDevicePrepareHardware()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware).
+2. Клиент использует вспомогательную функцию центра ресурсов `RESOURCE_HUB_CREATE_PATH_FROM_ID()` для создания пути из кода ресурса, который открывает дескриптор для пути (с помощью [ZwCreateFile()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile), [IoGetDeviceObjectPointer()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer) или [WdfIoTargetOpen()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)).
 3. Сервер извлекает ИД центра ресурсов из пути файла, используя вспомогательные функции центра ресурсов `RESOURCE_HUB_ID_FROM_FILE_NAME()`, а затем запрашивает дескриптор ресурса в центре ресурсов.
 4. Сервер выполняет арбитраж общего доступа для каждого контакта в дескрипторе и выполняет запрос IRP_MJ_CREATE.
 5. Клиент выпускает запрос *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* на полученном дескрипторе.
@@ -369,7 +369,7 @@ Package(2) { "bus-UART-UART2", Package() { 2 }},
 
 #### <a name="parsing-resources"></a>Анализ ресурсов
 
-Драйвер WDF получает ресурсы `MsftFunctionConfig()` в рамках процедуры [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx). Ресурсы MsftFunctionConfig можно идентифицировать по следующим полям.
+Драйвер WDF получает ресурсы `MsftFunctionConfig()` в рамках процедуры [EvtDevicePrepareHardware()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware). Ресурсы MsftFunctionConfig можно идентифицировать по следующим полям.
 
 ```cpp
 CM_PARTIAL_RESOURCE_DESCRIPTOR::Type = CmResourceTypeConnection
@@ -504,7 +504,7 @@ NTSTATUS AcquireFunctionConfigResource (
 }
 ```
 
-Драйвер сохраняет WDFIOTARGET в одной из контекстных областей, чтобы впоследствии закрыть его. Когда драйвер готов освободить конфигурацию мультиплексирования, он закрывает дескриптор ресурса, вызывая метод [WdfObjectDelete()](https://msdn.microsoft.com/library/windows/hardware/ff548734.aspx) или [WdfIoTargetClose()](https://msdn.microsoft.com/library/windows/hardware/ff548586.aspx), если планируется использовать WDFIOTARGET повторно.
+Драйвер сохраняет WDFIOTARGET в одной из контекстных областей, чтобы впоследствии закрыть его. Когда драйвер готов освободить конфигурацию мультиплексирования, он закрывает дескриптор ресурса, вызывая метод [WdfObjectDelete()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete) или [WdfIoTargetClose()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetclose), если планируется использовать WDFIOTARGET повторно.
 
 ```cpp
     WdfObjectDelete(resourceHandle);
@@ -532,7 +532,7 @@ NTSTATUS AcquireFunctionConfigResource (
 
 Если происходит сбой арбитража общего доступа, запрос необходимо обработать с помощью *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE*. Если арбитраж общего доступа выполняется успешно, запрос обрабатывается с помощью *STATUS_SUCCESS*.
 
-Обратите внимание, что режим общего доступа входящих запросов должен быть получен из дескриптора MsftFunctionConfig, а не из [IrpSp->Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx).
+Обратите внимание, что режим общего доступа входящих запросов должен быть получен из дескриптора MsftFunctionConfig, а не из [IrpSp->Parameters.Create.ShareAccess](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create).
 
 #### <a name="handling-ioctlgpiocommitfunctionconfigpins-requests"></a>Обработка запросов IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS
 
@@ -614,7 +614,7 @@ Device(I2C1)
 * CLIENT_ConnectFunctionConfigPins — вызывается `GpioClx`, чтобы отдать драйверу мини-портов команду применить заданную конфигурацию мультиплексирования.
 * CLIENT_DisconnectFunctionConfigPins — вызывается `GpioClx`, чтобы отдать драйверу мини-портов команду отменить заданную конфигурацию мультиплексирования.
 
-См. описание этих процедур в разделе [Функции обратного вызова события GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439464.aspx).
+См. описание этих процедур в разделе [Функции обратного вызова события GpioClx](https://docs.microsoft.com/previous-versions//hh439464(v=vs.85)).
 
 Помимо двух этих новых DDI необходимо проверить существующие DDI на совместимость с мультиплексированием контактов.
 
@@ -633,11 +633,11 @@ Device(I2C1)
 
 Во время инициализации устройства платформы `SpbCx` и `SerCx` выполняют синтаксический разбор всех ресурсов `MsftFunctionConfig()`, предоставленных устройству в качестве аппаратных. Затем SpbCx/SerCx по требованию приобретают и предоставляют ресурсы мультиплексирования контактов.
 
-`SpbCx` применяет конфигурацию muxing ПИН-код в его *IRP_MJ_CREATE* обработчик, перед вызовом драйвер клиента [EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) обратного вызова. Если применить конфигурацию мультиплексирования не удается, обратный вызов `EvtSpbTargetConnect()` драйвера контроллера выполнен не будет. Таким образом драйвер контроллера SPB может предположить, что контакты мультиплексируются в функцию к моменту вызова `EvtSpbTargetConnect()`.
+`SpbCx` применяет конфигурацию muxing ПИН-код в его *IRP_MJ_CREATE* обработчик, перед вызовом драйвер клиента [EvtSpbTargetConnect()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect) обратного вызова. Если применить конфигурацию мультиплексирования не удается, обратный вызов `EvtSpbTargetConnect()` драйвера контроллера выполнен не будет. Таким образом драйвер контроллера SPB может предположить, что контакты мультиплексируются в функцию к моменту вызова `EvtSpbTargetConnect()`.
 
-`SpbCx` Возвращает настройки muxing ПИН-кода в его *IRP_MJ_CLOSE* обработчик, сразу после вызова драйвер контроллера [EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) обратного вызова. В результате получается, что контакты мультиплексируются для функции SPB всякий раз, когда периферийный драйвер открывает дескриптор драйверу контроллера SPB и отменяют мультиплексирование, когда периферийный драйвер закрывает дескриптор.
+`SpbCx` Возвращает настройки muxing ПИН-кода в его *IRP_MJ_CLOSE* обработчик, сразу после вызова драйвер контроллера [EvtSpbTargetDisconnect()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect) обратного вызова. В результате получается, что контакты мультиплексируются для функции SPB всякий раз, когда периферийный драйвер открывает дескриптор драйверу контроллера SPB и отменяют мультиплексирование, когда периферийный драйвер закрывает дескриптор.
 
-`SerCx` ведет себя точно так же. `SerCx` Получает все `MsftFunctionConfig()` ресурсы в его *IRP_MJ_CREATE* обработчик непосредственно перед вызовом драйвер контроллера [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) обратного вызова и освобождает все ресурсы в его IRP_MJ_CLOSE обработчик, сразу после вызова драйвер контроллера [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) обратного вызова.
+`SerCx` ведет себя точно так же. `SerCx` Получает все `MsftFunctionConfig()` ресурсы в его *IRP_MJ_CREATE* обработчик непосредственно перед вызовом драйвер контроллера [EvtSerCx2FileOpen()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) обратного вызова и освобождает все ресурсы в его IRP_MJ_CLOSE обработчик, сразу после вызова драйвер контроллера [EvtSerCx2FileClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) обратного вызова.
 
 Условие динамического мультиплексирования контакта для драйверов контроллера `SerCx` и `SpbCx` заключается в том, что они должны нормально обрабатывать отмену мультиплексирования контактов из функции SPB/UART. Драйверы контроллера должны исходить из того, что мультиплексирование контактов не выполняется до вызова `EvtSpbTargetConnect()` или `EvtSerCx2FileOpen()`. Контакты не обязательно мультиплексируются для функции SPB/UART во время следующих обратных вызовов. Следующий список не является исчерпывающим: в нем представлены наиболее распространенные процедуры PNP, реализуемые драйверами контроллеров.
 
@@ -800,7 +800,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 Используйте следующие примеры, чтобы проверить работу устройств из UWP.
 
-| Пример | Link |
+| Пример | Ссылка |
 |------|------|
 | IoT-GPIO | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-GPIO |
 | IoT-I2C | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-I2C |
@@ -835,7 +835,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 ## <a name="resources"></a>Ресурсы
 
-| Destination | Link |
+| Назначение | Ссылка |
 |-------------|------|
 | Спецификация ACPI 5.0 | http://acpi.info/spec.htm |
 | Asl.exe (Microsoft ASL Compiler) | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |

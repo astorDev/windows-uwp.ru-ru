@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store, создание отправки тестируемой возможности
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c7a60de3440106e446f6c3e896cd747741e4db2
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: b6474c566795043a435e70b2b41d4f5b59280c15
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334692"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371980"
 ---
 # <a name="create-a-package-flight-submission"></a>Создание отправки тестового пакета
 
@@ -50,7 +50,7 @@ ms.locfileid: "58334692"
 
 | Имя        | Тип   | Описание                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | строка | Обязательный. Код продукта в Магазине для приложения, отправку тестового пакета которого необходимо создать. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | строка | Обязательный. Код продукта в Магазине для приложения, отправку тестового пакета которого необходимо создать. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | flightId | строка | Обязательный. Идентификатор тестового пакета, для которого необходимо добавить отправку. Этот идентификатор добавляется в данные ответов для запросов на [создание тестового пакета](create-a-flight.md) и [получение тестовых пакетов для приложения](get-flights-for-an-app.md).  |
 
 

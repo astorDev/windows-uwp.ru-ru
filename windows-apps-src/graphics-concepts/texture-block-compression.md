@@ -7,21 +7,21 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dec33768eff90b9bd35a3ea60f3158fce663345e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a8d88ad4db56b40490f2fc4d034b1569eb0850ba
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640189"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370927"
 ---
 # <a name="texture-block-compression"></a>Сжатие блока текстуры
 
 
 В Direct3D 11 расширена поддержка сжатия блоков для текстур и теперь она включает алгоритмы BC6H и BC7. BC6H поддерживает исходные данные цвета из высокодинамичного диапазона, а BC7 обеспечивает качество сжатия выше среднего с меньшим количеством артефактов для стандартных исходных данных RGB.
 
-Более подробные сведения о поддержке алгоритма блочного сжатия в версиях до Direct3D 11 включая поддержку форматов BC1–BC5 см. в статье [Блочное сжатие (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb694531).
+Более подробные сведения о поддержке алгоритма блочного сжатия в версиях до Direct3D 11 включая поддержку форматов BC1–BC5 см. в статье [Блочное сжатие (Direct3D 10)](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-block-compression).
 
-**Примечание о форматах файлов:  ** Для хранения данных сжатые текстуры форматов сжатия текстур BC6H и BC7 использовать формат DDS. Дополнительные сведения см. в статье [Руководство по программированию для DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991).
+**Примечание о форматах файлов:  ** Для хранения данных сжатые текстуры форматов сжатия текстур BC6H и BC7 использовать формат DDS. Дополнительные сведения см. в статье [Руководство по программированию для DDS](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide).
 
 ## <a name="span-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanblock-compression-formats-supported-in-direct3d-11"></a><span id="Block_Compression_Formats_Supported_in_Direct3D_11"></span><span id="block_compression_formats_supported_in_direct3d_11"></span><span id="BLOCK_COMPRESSION_FORMATS_SUPPORTED_IN_DIRECT3D_11"></span>Блокировать форматов сжатия, поддерживаемые в Direct3D 11
 
@@ -46,9 +46,9 @@ ms.locfileid: "57640189"
 
 | Формат блочного сжатия | Формат DXGI                                                                           | Эквивалентный формат в Direct3D 9                               | Байт в блоке 4×4 пикселя |
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------------|---------------------------|
-| BC1                      | DXGI\_ФОРМАТ\_BC1\_UNORM, DXGI\_ФОРМАТ\_BC1\_UNORM\_SRGB, DXGI\_ФОРМАТ\_BC1\_TYPELESS | D3DFMT\_DXT1, FourCC = «DXT1»                                | 8                         |
-| BC2                      | DXGI\_ФОРМАТ\_BC2\_UNORM, DXGI\_ФОРМАТ\_BC2\_UNORM\_SRGB, DXGI\_ФОРМАТ\_BC2\_TYPELESS | D3DFMT\_DXT2\*, FourCC = «DXT2», D3DFMT\_DXT3, FourCC = «DXT3» | 16                        |
-| BC3                      | DXGI\_ФОРМАТ\_BC3\_UNORM, DXGI\_ФОРМАТ\_BC3\_UNORM\_SRGB, DXGI\_ФОРМАТ\_BC3\_TYPELESS | D3DFMT\_DXT4\*, FourCC = «DXT4», D3DFMT\_DXT5, FourCC = «DXT5» | 16                        |
+| BC1                      | DXGI\_ФОРМАТ\_BC1\_UNORM, DXGI\_ФОРМАТ\_BC1\_UNORM\_SRGB, DXGI\_ФОРМАТ\_BC1\_TYPELESS | D3DFMT\_DXT1, FourCC="DXT1"                                | 8                         |
+| BC2                      | DXGI\_ФОРМАТ\_BC2\_UNORM, DXGI\_ФОРМАТ\_BC2\_UNORM\_SRGB, DXGI\_ФОРМАТ\_BC2\_TYPELESS | D3DFMT\_DXT2\*, FourCC="DXT2", D3DFMT\_DXT3, FourCC="DXT3" | 16                        |
+| BC3                      | DXGI\_ФОРМАТ\_BC3\_UNORM, DXGI\_ФОРМАТ\_BC3\_UNORM\_SRGB, DXGI\_ФОРМАТ\_BC3\_TYPELESS | D3DFMT\_DXT4\*, FourCC="DXT4", D3DFMT\_DXT5, FourCC="DXT5" | 16                        |
 
  
 
@@ -67,7 +67,7 @@ ms.locfileid: "57640189"
 ## <a name="span-idbc6hformatspanspan-idbc6hformatspanspan-idbc6hformatspanbc6h-format"></a><span id="BC6H_Format"></span><span id="bc6h_format"></span><span id="BC6H_FORMAT"></span>Формат BC6H
 
 
-Дополнительные сведения об этом формате см. в документации по [формату BC6H](https://msdn.microsoft.com/library/windows/desktop/hh308952).
+Дополнительные сведения об этом формате см. в документации по [формату BC6H](https://docs.microsoft.com/windows/desktop/direct3d11/bc6h-format).
 
 | Формат блочного сжатия | Формат DXGI                                                                      | Эквивалентный формат в Direct3D 9 | Байт в блоке 4×4 пикселя |
 |--------------------------|----------------------------------------------------------------------------------|------------------------------|---------------------------|
@@ -80,7 +80,7 @@ ms.locfileid: "57640189"
 ## <a name="span-idbc7formatspanspan-idbc7formatspanspan-idbc7formatspanbc7-format"></a><span id="BC7_Format"></span><span id="bc7_format"></span><span id="BC7_FORMAT"></span>Формат BC7
 
 
-Дополнительные сведения об этом формате см. в документации по [формату BC7](https://msdn.microsoft.com/library/windows/desktop/hh308953).
+Дополнительные сведения об этом формате см. в документации по [формату BC7](https://docs.microsoft.com/windows/desktop/direct3d11/bc7-format).
 
 | Формат блочного сжатия | Формат DXGI                                                                           | Эквивалентный формат в Direct3D 9 | Байт в блоке 4×4 пикселя |
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------|---------------------------|
@@ -95,7 +95,7 @@ ms.locfileid: "57640189"
 
 [Приложения](appendix.md)
 
-[Текстуры](https://msdn.microsoft.com/library/windows/desktop/ff476902)
+[Текстуры](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
 
  
 

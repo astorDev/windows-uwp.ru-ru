@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8edb38b8ae91d836e283a8eb37830850bf504db4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: aa672c99dc83e7955c4d4f91b5bc34620c48ed01
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661309"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364552"
 ---
 # <a name="nested-ui-in-list-items"></a>Вложенные элементы интерфейса в элементах списка
 
@@ -26,9 +26,9 @@ ms.locfileid: "57661309"
 
 Вложенные элементы интерфейса можно использовать для предоставления пользователю дополнительных параметров, ускоряющих выполнение важных действий. Однако чем больше действий предоставляется, тем сложнее становится пользовательский интерфейс. Выбирать этот шаблон пользовательского интерфейса следует с особым вниманием. В это статье представлены рекомендации, которые помогут вам составит лучший план действий для вашего пользовательского интерфейса.
 
-> **Важные API**: [Класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [класс GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+> **Важные API**: [Класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [класс GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
 
-В этой статье мы рассмотрим создание вложенных элементов пользовательского интерфейса в элементах [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) и [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Хотя в этом разделе не рассматриваются другие варианты вложенных элементов интерфейса, данные концепции универсальны. Перед началом вам следует ознакомиться с общими рекомендациями по использованию элементов управления ListView или GridView в пользовательском интерфейсе. Эти рекомендации можно найти в статьях [Списки](lists.md) и [Представления списка и сетки](listview-and-gridview.md).
+В этой статье мы рассмотрим создание вложенных элементов пользовательского интерфейса в элементах [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) и [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview). Хотя в этом разделе не рассматриваются другие варианты вложенных элементов интерфейса, данные концепции универсальны. Перед началом вам следует ознакомиться с общими рекомендациями по использованию элементов управления ListView или GridView в пользовательском интерфейсе. Эти рекомендации можно найти в статьях [Списки](lists.md) и [Представления списка и сетки](listview-and-gridview.md).
 
 В этой статье используются термины *список*, *элемент списка* и *вложенный элемент пользовательского интерфейса* согласно указанным определениям:
 - *Список* обозначает коллекцию элементов, содержащихся в представлении списка или сетки.
@@ -37,7 +37,7 @@ ms.locfileid: "57661309"
 
 ![Части вложенных элементов пользовательского интерфейса](images/nested-ui-example-1.png)
 
-> Примечание.&nbsp;&nbsp; Элементы ListView и GridView наследуют от класса [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), поэтому они обладают идентичными функциями, но отображают данные по-разному. В этой статье вся информация о списках актуальна для обоих элементов управления (ListView и GridView).
+> Примечание.&nbsp;&nbsp; Элементы ListView и GridView наследуют от класса [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase), поэтому они обладают идентичными функциями, но отображают данные по-разному. В этой статье вся информация о списках актуальна для обоих элементов управления (ListView и GridView).
 
 ## <a name="primary-and-secondary-actions"></a>Основные и дополнительные действия
 
@@ -137,7 +137,7 @@ ms.locfileid: "57661309"
 - нажатие клавиши TAB при фокусе на элементе пользовательского интерфейса слева от элемента списка перемещает фокус на элемент **A**;
 - нажатие клавиш SHIFT+TAB при фокусе на элементе пользовательского интерфейса справа от элемента списка перемещает фокус на элемент **C**.
 
-Чтобы создать такой пользовательский интерфейс, установите свойству [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) значение **true** в списке. [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) может иметь любое значение.
+Чтобы создать такой пользовательский интерфейс, установите свойству [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) значение **true** в списке. [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) может иметь любое значение.
 
 Код для реализации этого интерфейса см. в разделе [Пример](#example) данной статьи.
 
@@ -151,9 +151,9 @@ ms.locfileid: "57661309"
 
 
 Чтобы создать такой пользовательский интерфейс, установите следующие свойства в вашем списке:
-- свойству [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) задайте значение **None**;
-- свойству [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) задайте значение **false**;
-- свойству [IsFocusEngagementEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isfocusengagementenabled.aspx) задайте значение **true**.
+- свойству [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) задайте значение **None**;
+- свойству [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) задайте значение **false**;
+- свойству [IsFocusEngagementEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isfocusengagementenabled) задайте значение **true**.
 
 ```xaml
 <ListView SelectionMode="None" IsItemClickEnabled="False" >

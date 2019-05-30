@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0b8ffbebdca920bc6cc584dd735062a364d1d9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fad621eb9b6ef9ef863240644ae0fa46d41baacc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627939"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371604"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Среда выполнения Windows 8.x в UWP пример использования: Bookstore1
 
 
-В этом разделе представлен пример использования переноса очень простое приложение Uwp 8.1 приложение 10 универсальных Windows платформы Windows (UWP). Приложение Uwp 8.1 — это приложения, создает один пакет приложения для Windows 8.1 и другого пакета приложения для Windows Phone 8.1. С Windows 10, можно создать пакет одним приложением, клиентам можно устанавливать на широкий спектр устройств, и это, что мы перейдем в этом практическом. См. раздел [Руководство по приложениям UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
+В этом разделе представлен пример использования переноса очень простое приложение Uwp 8.1 приложение 10 универсальных Windows платформы Windows (UWP). Приложение Uwp 8.1 — это приложения, создает один пакет приложения для Windows 8.1 и другого пакета приложения для Windows Phone 8.1. С Windows 10, можно создать пакет одним приложением, клиентам можно устанавливать на широкий спектр устройств, и это, что мы перейдем в этом практическом. См. раздел [Руководство по приложениям UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
 Приложение, которое мы будем портировать, состоит из элемента **ListBox**, привязанного к модели представления. Модель представления содержит список книг, в котором отображается заголовок, имя автора и обложка книги. У изображений обложки книги **Действие при сборке** установлено на **Содержимое**, а **Копировать в выходной каталог** установлено на **Не копировать**.
 

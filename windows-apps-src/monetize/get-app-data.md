@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, данные приложения
 ms.localizationpriority: medium
-ms.openlocfilehash: 23e392e2064a2a48089d1efadd1461c146e0d343
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cfbe8df46f51b41ccdd840f609caf2c593735e1f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598899"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372138"
 ---
 # <a name="get-app-data"></a>Получение данных приложения
 
@@ -26,7 +26,7 @@ ms.locfileid: "57598899"
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [Получение надстроек для приложения](get-add-ons-for-an-app.md)         |
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [Получить пакет авиарейсов для приложения](get-flights-for-an-app.md) |
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Если вы еще не сделали этого, выполните все [необходимые условия](create-and-manage-submissions-using-windows-store-services.md#prerequisites) для API отправки в Microsoft Store, прежде чем использовать любой из этих методов.
 
@@ -64,12 +64,12 @@ ms.locfileid: "57598899"
 
 | Значение           | Тип    | Описание       |
 |-----------------|---------|---------------------|
-| id            | Строка  | Код продукта в Магазине для приложения. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
-| primaryName   | Строка  | Основное имя приложения.      |
-| packageFamilyName | Строка  | Имя семейства пакетов для приложения.      |
-| packageIdentityName          | Строка  | Имя идентификации пакета для приложения.                       |
-| publisherName       | Строка  | Идентификатор издателя Windows, который связан с приложением. Это соответствует **пакета/удостоверений/издатель** значение, которое появляется на [удостоверения приложения](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) страницу приложения в центре партнеров.       |
-| firstPublishedDate      | Строка  | Дата первой публикации приложения в формате ISO 8601.   |
+| id            | строка  | Код продукта в Магазине для приложения. Подробнее о коде продукта в Магазине см. в статье [Просмотр сведений об идентификации приложений](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
+| primaryName   | строка  | Основное имя приложения.      |
+| packageFamilyName | строка  | Имя семейства пакетов для приложения.      |
+| packageIdentityName          | строка  | Имя идентификации пакета для приложения.                       |
+| publisherName       | строка  | Идентификатор издателя Windows, который связан с приложением. Это соответствует **пакета/удостоверений/издатель** значение, которое появляется на [удостоверения приложения](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details) страницу приложения в центре партнеров.       |
+| firstPublishedDate      | строка  | Дата первой публикации приложения в формате ISO 8601.   |
 | lastPublishedApplicationSubmission       | Объект | [Ресурс отправки](#submission_object), который предоставляет сведения о последней опубликованной отправке для приложения.    |
 | pendingApplicationSubmission        | Объект  |  [Ресурс отправки](#submission_object), который предоставляет сведения о текущей ожидающей отправке для приложения.   |   
 | hasAdvancedListingPermission        | Логический  |  Указывает, можно ли настроить [gamingOptions](manage-app-submissions.md#gaming-options-object) или [trailers](manage-app-submissions.md#trailer-object) для отправки для приложения. Это значение равно true для отправок, созданных после мая 2017 г. |  |
@@ -91,7 +91,7 @@ ms.locfileid: "57598899"
 
 | Значение           | Тип    | Описание         |
 |-----------------|---------|----------------------|
-| inAppProductId            | Строка  | Код продукта в Магазине для этой надстройки. Это значение предоставляется Магазином. Пример кода продукта в Магазине: 9NBLGGH4TNMP.   |
+| inAppProductId            | строка  | Код продукта в Магазине для этой надстройки. Это значение предоставляется Магазином. Пример кода продукта в Магазине: 9NBLGGH4TNMP.   |
 
 
 <span id="flight-object" />
@@ -123,12 +123,12 @@ ms.locfileid: "57598899"
 
 | Значение           | Тип    | Описание           |
 |-----------------|---------|------------------------|
-| flightId            | Строка  | Идентификатор для тестового пакета. Это значение предоставляется путем центра партнеров.  |
-| friendlyName           | Строка  | Имя тестового пакета, указанное разработчиком.   |
+| flightId            | строка  | Идентификатор для тестового пакета. Это значение предоставляется путем центра партнеров.  |
+| friendlyName           | строка  | Имя тестового пакета, указанное разработчиком.   |
 | lastPublishedFlightSubmission       | Объект | [Ресурс отправки](#submission_object), который предоставляет сведения о последней опубликованной отправке для тестового пакета.   |
 | pendingFlightSubmission        | Объект  |  [Ресурс отправки](#submission_object), который предоставляет сведения о текущей ожидающей отправке для тестового пакета.  |    
-| groupIds           | Массив  | Массив строк, содержащий идентификаторы тестовых групп, которые связаны с тестовым пакетом. Дополнительные сведения о тестовых группах см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
-| rankHigherThan           | Строка  | Понятное имя тестового пакета, приоритет которого на единицу ниже приоритета текущего тестового пакета. Дополнительные сведения о задании приоритетов тестовых групп см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
+| groupIds           | Массив  | Массив строк, содержащий идентификаторы тестовых групп, которые связаны с тестовым пакетом. Дополнительные сведения о тестовых группах см. в разделе [Тестовые пакеты](https://docs.microsoft.com/windows/uwp/publish/package-flights).   |
+| rankHigherThan           | строка  | Понятное имя тестового пакета, приоритет которого на единицу ниже приоритета текущего тестового пакета. Дополнительные сведения о задании приоритетов тестовых групп см. в разделе [Тестовые пакеты](https://docs.microsoft.com/windows/uwp/publish/package-flights).  |
 
 
 <span id="submission_object" />
@@ -150,11 +150,11 @@ ms.locfileid: "57598899"
 
 | Значение              | Тип   | Описание               |
 |--------------------|--------|---------------------------|
-| id                 | Строка | Идентификатор отправки. |
-| resourceLocation   | Строка | Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для отправки. |
+| id                 | строка | Идентификатор отправки. |
+| resourceLocation   | строка | Относительный путь, который можно добавить к базовому URI запроса ```https://manage.devcenter.microsoft.com/v1.0/my/```, чтобы получить полные данные для отправки. |
 
  
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание и управление отправкой, с помощью служб Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Управление отправки приложений, с помощью API отправки Microsoft Store](manage-app-submissions.md)

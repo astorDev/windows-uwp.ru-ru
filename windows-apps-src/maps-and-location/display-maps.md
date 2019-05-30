@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, карта, расположение, элемент управления картой, представления карты
 ms.localizationpriority: medium
-ms.openlocfilehash: 41d44f75c80e10123c21fc310bff46371ede0fca
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8c026fa0762e25421414ac66fc614625c0df6cd7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641179"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371900"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside
 
@@ -90,11 +90,11 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 Используйте элемент управления картой, если нужно показать карту в приложении, которое позволяет пользователям просматривать сведения, зависящие от приложения или общие географические сведения. Наличие элемента управления картой в вашем приложении означает, что пользователям не нужно выходить из вашего приложения для получения соответствующих сведений.
 
 > [!NOTE]
->Если ничего опасного в выходе пользователей за пределы вашего приложения нет, рассмотрите возможность использования приложения Карты Windows для предоставления этих сведений. Ваше приложение может использовать приложение Карты Windows для отображения определенных карт, маршрутов и результатов поиска. Дополнительные сведения см. в разделе [Запуск приложения «Карты Windows»](https://msdn.microsoft.com/library/windows/apps/mt228341).
+>Если ничего опасного в выходе пользователей за пределы вашего приложения нет, рассмотрите возможность использования приложения Карты Windows для предоставления этих сведений. Ваше приложение может использовать приложение Карты Windows для отображения определенных карт, маршрутов и результатов поиска. Дополнительные сведения см. в разделе [Запуск приложения «Карты Windows»](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
 
 ### <a name="add-a-map-control-to-your-app"></a>Добавление элемента управления с картой в приложение
 
-Карту можно отображать на странице XAML, добавив класс [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Для использования **MapControl** необходимо объявить пространство имен [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) на странице XAML или в коде. Если перетащить элемент управления с панели элементов, объявление пространства имен будет добавлено автоматически. Если вы добавляете **MapControl** на страницу XAML вручную, придется вручную добавить и объявление пространства имен в верхнюю часть страницы.
+Карту можно отображать на странице XAML, добавив класс [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl). Для использования **MapControl** необходимо объявить пространство имен [**Windows.UI.Xaml.Controls.Maps**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps) на странице XAML или в коде. Если перетащить элемент управления с панели элементов, объявление пространства имен будет добавлено автоматически. Если вы добавляете **MapControl** на страницу XAML вручную, придется вручную добавить и объявление пространства имен в верхнюю часть страницы.
 
 В примере ниже показано, как отобразить базовый элемент управления картой и настроить карту для отображения элементов управления масштабом и наклоном в дополнение к функции приема сенсорного ввода.
 
@@ -137,17 +137,17 @@ pageGrid.Children.Add(MapControl2);
 
 ### <a name="get-and-set-a-maps-authentication-key"></a>Получение и установка ключа проверки подлинности карт
 
-Прежде чем использовать класс [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) и службы карт, необходимо в качестве значения свойства [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) указать ключ проверки подлинности карт. В предыдущих примерах замените код `EnterYourAuthenticationKeyHere` ключом, полученным из [Центра разработки Карт Bing](https://www.bingmapsportal.com/). Текст **предупреждение: Не указан MapServiceToken** продолжает появляться под элементом управления, пока вы не укажете ключ проверки подлинности карты. Дополнительные сведения о получении и установке ключа проверки подлинности карт см. в статье [Запрос ключа проверки подлинности карт](authentication-key.md).
+Прежде чем использовать класс [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) и службы карт, необходимо в качестве значения свойства [**MapServiceToken**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken) указать ключ проверки подлинности карт. В предыдущих примерах замените код `EnterYourAuthenticationKeyHere` ключом, полученным из [Центра разработки Карт Bing](https://www.bingmapsportal.com/). Текст **предупреждение: Не указан MapServiceToken** продолжает появляться под элементом управления, пока вы не укажете ключ проверки подлинности карты. Дополнительные сведения о получении и установке ключа проверки подлинности карт см. в статье [Запрос ключа проверки подлинности карт](authentication-key.md).
 
 ## <a name="set-the-location-of-a-map"></a>Задайте местоположение для карты
 Направьте карту на любое местоположение, которое требуется использовать, или текущее расположение пользователя.  
 
 ### <a name="set-a-starting-location-for-the-map"></a>Задайте начальное расположение для карты
 
-Укажите расположение, которое должно отображаться на карте, задав свойство [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) класса [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) в коде или путем привязки свойства в разметке XAML. В примере ниже показано, как отобразить карту, в центре которой расположен город Сиэтл.
+Укажите расположение, которое должно отображаться на карте, задав свойство [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center) класса [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) в коде или путем привязки свойства в разметке XAML. В примере ниже показано, как отобразить карту, в центре которой расположен город Сиэтл.
 
 > [!NOTE]
-> Так как строку невозможно преобразовать в класс [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675), то, соответственно, невозможно задать значение для свойства [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) в разметке XAML, если вы не используете привязку данных. (Это ограничение также применяется к вложенному свойству [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264).)
+> Так как строку невозможно преобразовать в класс [**Geopoint**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), то, соответственно, невозможно задать значение для свойства [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center) в разметке XAML, если вы не используете привязку данных. (Это ограничение также применяется к вложенному свойству [**MapControl.Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.setlocation).)
 
  
 ```csharp
@@ -168,9 +168,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ### <a name="set-the-current-location-of-the-map"></a>Настройте карту в соответствии с текущим местоположением
 
-Перед тем как приложение сможет получить доступ к сведениям о местоположении пользователя, оно должно вызвать метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152). В этот момент ваше приложение должно находиться на переднем плане, а из потока пользовательского интерфейса должен быть вызван метод **RequestAccessAsync**. До тех пор пока пользователь не предоставит вашему приложению разрешение на доступ к данным о местоположении, приложение не сможет использовать такие данные.
+Перед тем как приложение сможет получить доступ к сведениям о местоположении пользователя, оно должно вызвать метод [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync). В этот момент ваше приложение должно находиться на переднем плане, а из потока пользовательского интерфейса должен быть вызван метод **RequestAccessAsync**. До тех пор пока пользователь не предоставит вашему приложению разрешение на доступ к данным о местоположении, приложение не сможет использовать такие данные.
 
-С помощью метода [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) класса [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) получите текущее местоположение устройства (если доступна функция определения местоположения). Чтобы получить соответствующий класс [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675), используйте свойство [**Point**](https://msdn.microsoft.com/library/windows/apps/dn263665) геокоординаты геоположения. Дополнительные сведения см. в статье [Получение сведений о текущем местоположении](get-location.md).
+С помощью метода [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) класса [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) получите текущее местоположение устройства (если доступна функция определения местоположения). Чтобы получить соответствующий класс [**Geopoint**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), используйте свойство [**Point**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geocoordinate.point) геокоординаты геоположения. Дополнительные сведения см. в статье [Получение сведений о текущем местоположении](get-location.md).
 
 ```csharp
 // Set your current location.
@@ -200,15 +200,15 @@ switch (accessStatus)
 }
 ```
 
-При отображении расположения устройства на карте рекомендуем отображать рисунки и задавать масштаб на основе точности данных о расположении. Дополнительные сведения см. в статье [Руководство по приложениям с определением местонахождения](https://msdn.microsoft.com/library/windows/apps/hh465148).
+При отображении расположения устройства на карте рекомендуем отображать рисунки и задавать масштаб на основе точности данных о расположении. Дополнительные сведения см. в статье [Руководство по приложениям с определением местонахождения](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location).
 
 ### <a name="change-the-location-of-the-map"></a>Изменение расположения на карте
 
-Чтобы изменить расположение, отображаемое на двумерной карте, вызовите одну из перегрузок метода [**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060). Используйте этот метод для определения новых значений для [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005), [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068), [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019), и [**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044). Кроме того, можно настроить использование дополнительной анимации при изменениях представления с помощью константы из перечисления [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002).
+Чтобы изменить расположение, отображаемое на двумерной карте, вызовите одну из перегрузок метода [**TrySetViewAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.trysetviewasync). Используйте этот метод для определения новых значений для [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center), [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel), [**Heading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.heading), и [**Pitch**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.pitch). Кроме того, можно настроить использование дополнительной анимации при изменениях представления с помощью константы из перечисления [**MapAnimationKind**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapAnimationKind).
 
-Чтобы изменить расположение на трехмерной карте, используйте метод [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296). Дополнительные сведения см. в статье [Отображение трехмерных гибридных представлений](#3Dviews).
+Чтобы изменить расположение на трехмерной карте, используйте метод [**TrySetSceneAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.trysetsceneasync). Дополнительные сведения см. в статье [Отображение трехмерных гибридных представлений](#3Dviews).
 
-Вызовите метод [**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065), чтобы отобразить содержимое [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) на карте. Например, с помощью этого метода можно отобразить на карте маршрут или часть маршрута. Подробности см. в разделе [Отображение маршрутов и направлений на карте](routes-and-directions.md).
+Вызовите метод [**TrySetViewBoundsAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.trysetviewboundsasync), чтобы отобразить содержимое [**GeoboundingBox**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.GeoboundingBox) на карте. Например, с помощью этого метода можно отобразить на карте маршрут или часть маршрута. Подробности см. в разделе [Отображение маршрутов и направлений на карте](routes-and-directions.md).
 
 ## <a name="change-the-appearance-of-a-map"></a>Изменение внешнего вида карты
 
@@ -284,26 +284,26 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 
 Приближение, отдаление, поворот и наклон камеры карты для получения именно того угла, который необходим для вашего эффекта. Попробуйте использовать следующие свойства.
 
--   Установите географическую точку как **центр** карты, задав соответствующее значение для свойства [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005).
--   Установите **масштаб карты**, присвоив значение свойству [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) от 1 до 20.
--   Установите **вращение** карты, задав свойство [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019), для которого 0 или 360 градусов обозначают север, 90 — восток, 180 — юг и 270 — запад.
--   Установите **наклон** карты, присвоив значение свойству [**DesiredPitch**](https://msdn.microsoft.com/library/windows/apps/dn637012) от 0 до 65 градусов.
+-   Установите географическую точку как **центр** карты, задав соответствующее значение для свойства [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center).
+-   Установите **масштаб карты**, присвоив значение свойству [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) от 1 до 20.
+-   Установите **вращение** карты, задав свойство [**Heading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.heading), для которого 0 или 360 градусов обозначают север, 90 — восток, 180 — юг и 270 — запад.
+-   Установите **наклон** карты, присвоив значение свойству [**DesiredPitch**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.desiredpitch) от 0 до 65 градусов.
 
 ## <a name="show-and-hide-map-features"></a>Показ и сокрытие элементов карты
 
-Показывайте или скрывайте элементы карты, такие как дороги и ориентиры, путем установки значений следующих свойств объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+Показывайте или скрывайте элементы карты, такие как дороги и ориентиры, путем установки значений следующих свойств объекта [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
 
-* Отобразите **здания и ориентиры** на карте, включив или отключив свойство [**LandmarksVisible**](https://msdn.microsoft.com/library/windows/apps/dn637023).
+* Отобразите **здания и ориентиры** на карте, включив или отключив свойство [**LandmarksVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.landmarksvisible).
 
   > [!NOTE]
   > Можно показать или скрыть здания, но вы не можете предотвратить их появление в трехмерном виде.  
 
-* Чтобы показать на карте **объекты для пешеходов**, например надземные переходы, включите или отключите свойство [**PedestrianFeaturesVisible**](https://msdn.microsoft.com/library/windows/apps/dn637042).
-* Чтобы показать на карте **пробки**, включите или отключите свойство [**TrafficFlowVisible**](https://msdn.microsoft.com/library/windows/apps/dn637055).
-* Чтобы указать, необходимо ли отображать **водяной знак** на карте, присвойте свойству [**WatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn637066) значение одной из констант [**MapWatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn610749).
-* Чтобы показать на карте **маршруты для движения пешком или на автомобиле**, добавьте [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) в коллекцию [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) элемента управления картой. Подробности и примеры см. в разделе [Отображение маршрутов и направлений на карте](routes-and-directions.md).
+* Чтобы показать на карте **объекты для пешеходов**, например надземные переходы, включите или отключите свойство [**PedestrianFeaturesVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.pedestrianfeaturesvisible).
+* Чтобы показать на карте **пробки**, включите или отключите свойство [**TrafficFlowVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.trafficflowvisible).
+* Чтобы указать, необходимо ли отображать **водяной знак** на карте, присвойте свойству [**WatermarkMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.watermarkmode) значение одной из констант [**MapWatermarkMode**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapWatermarkMode).
+* Чтобы показать на карте **маршруты для движения пешком или на автомобиле**, добавьте [**MapRouteView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView) в коллекцию [**Routes**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes) элемента управления картой. Подробности и примеры см. в разделе [Отображение маршрутов и направлений на карте](routes-and-directions.md).
 
-Сведения о том, как отображать вешки, фигуры и элементы управления XAML в объекте [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), см. в статье [Отображение объектов на карте](display-poi.md).
+Сведения о том, как отображать вешки, фигуры и элементы управления XAML в объекте [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl), см. в статье [Отображение объектов на карте](display-poi.md).
 
 ## <a name="display-streetside-views"></a>Отображение представлений Streetside
 
@@ -316,10 +316,10 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 
 Чтобы отобразить представление Streetside, выполните указанные ниже действия.
 
-1.  Проверьте свойство [**IsStreetsideSupported**](https://msdn.microsoft.com/library/windows/apps/dn974271), чтобы узнать, поддерживаются ли представления Streetside на устройстве.
-2.  Если представление Streetside поддерживается, создайте класс [**StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360) возле указанного местоположения, вызвав метод [**FindNearbyAsync**](https://msdn.microsoft.com/library/windows/apps/dn974361).
-3.  Чтобы узнать, обнаружена ли ближайшая панорама, проверьте, имеет ли класс [**StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360) значение null.
-4.  Если ближайшая панорама обнаружена, создайте объект [**StreetsideExperience**](https://msdn.microsoft.com/library/windows/apps/dn974356) для свойства [**CustomExperience**](https://msdn.microsoft.com/library/windows/apps/dn974263) элемента управления картой.
+1.  Проверьте свойство [**IsStreetsideSupported**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.isstreetsidesupported), чтобы узнать, поддерживаются ли представления Streetside на устройстве.
+2.  Если представление Streetside поддерживается, создайте класс [**StreetsidePanorama**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.StreetsidePanorama) возле указанного местоположения, вызвав метод [**FindNearbyAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.streetsidepanorama.findnearbyasync).
+3.  Чтобы узнать, обнаружена ли ближайшая панорама, проверьте, имеет ли класс [**StreetsidePanorama**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.StreetsidePanorama) значение null.
+4.  Если ближайшая панорама обнаружена, создайте объект [**StreetsideExperience**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.streetsideexperience.) для свойства [**CustomExperience**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.customexperience) элемента управления картой.
 
 В этом примере показано, как отображать представление Streetside, аналогичное предыдущему изображению.
 
@@ -365,20 +365,20 @@ private async void showStreetsideView()
 ## <a name="display-aerial-3d-views"></a>Отображение трехмерных гибридных представлений
 
 
-Задайте трехмерную перспективу карты с помощью класса [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329). Сцена карты представляет трехмерное представление, отображаемое на карте. Класс [**MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) представляет положение камеры, отображающей такое представление.
+Задайте трехмерную перспективу карты с помощью класса [**MapScene**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapScene). Сцена карты представляет трехмерное представление, отображаемое на карте. Класс [**MapCamera**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapCamera) представляет положение камеры, отображающей такое представление.
 
 ![Схема расположения MapCamera для расположения сцены карты](images/mapcontrol-techdiagram.png)
 
-Чтобы здания и другие объекты на карте отображались в трехмерном представлении, задайте для свойства [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) элемента управления картой значение [**MapStyle.Aerial3DWithRoads**](https://msdn.microsoft.com/library/windows/apps/dn637127). Это пример трехмерного представления со стилем **Aerial3DWithRoads**.
+Чтобы здания и другие объекты на карте отображались в трехмерном представлении, задайте для свойства [**Style**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.style) элемента управления картой значение [**MapStyle.Aerial3DWithRoads**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapStyle). Это пример трехмерного представления со стилем **Aerial3DWithRoads**.
 
 ![Пример трехмерного представления карты.](images/only3d-730width.png)
 
 Чтобы отобразить трехмерное представление, выполните указанные ниже действия.
 
-1.  Проверьте свойство [**Is3DSupported**](https://msdn.microsoft.com/library/windows/apps/dn974265), чтобы узнать, поддерживаются ли трехмерные представления на устройстве.
-2.  Если трехмерные представления поддерживаются, задайте для свойства [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) элемента управления картой значение [**MapStyle.Aerial3DWithRoads**](https://msdn.microsoft.com/library/windows/apps/dn637127).
-3.  Создайте объект [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) с помощью одного из множества методов **CreateFrom**, например [**CreateFromLocationAndRadius**](https://msdn.microsoft.com/library/windows/apps/dn974336) и [**CreateFromCamera**](https://msdn.microsoft.com/library/windows/apps/dn974334).
-4.  Вызовите метод [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296), чтобы отобразить трехмерное представление. Кроме того, можно настроить использование дополнительной анимации при изменениях представления с помощью константы из перечисления [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002).
+1.  Проверьте свойство [**Is3DSupported**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.is3dsupported), чтобы узнать, поддерживаются ли трехмерные представления на устройстве.
+2.  Если трехмерные представления поддерживаются, задайте для свойства [**Style**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.style) элемента управления картой значение [**MapStyle.Aerial3DWithRoads**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapStyle).
+3.  Создайте объект [**MapScene**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapScene) с помощью одного из множества методов **CreateFrom**, например [**CreateFromLocationAndRadius**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapscene.createfromlocationandradius) и [**CreateFromCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapscene.createfromcamera).
+4.  Вызовите метод [**TrySetSceneAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.trysetsceneasync), чтобы отобразить трехмерное представление. Кроме того, можно настроить использование дополнительной анимации при изменениях представления с помощью константы из перечисления [**MapAnimationKind**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapAnimationKind).
 
 В данном примере показано, как отображать трехмерное представление.
 
@@ -419,30 +419,30 @@ private async void display3DLocation()
 ## <a name="get-info-about-locations"></a>Получении информации о местоположениях
 
 
-Чтобы получить информацию о местоположениях на карте, вызовите указанные ниже методы объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+Чтобы получить информацию о местоположениях на карте, вызовите указанные ниже методы объекта [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
 
--   [**TryGetLocationFromOffset** ](https://msdn.microsoft.com/library/windows/apps/dn637016) метода — Get географическое расположение, соответствующее заданной точки в окне просмотра элемента управления картой.
--   [**GetOffsetFromLocation** ](https://msdn.microsoft.com/library/windows/apps/dn637018) метода — Get точка в области просмотра, соответствующее географическое расположение указанного элемента управления картой.
--   [**IsLocationInView** ](https://msdn.microsoft.com/library/windows/apps/dn637022) метод — определить, является ли указанный географическое расположение видимой в данный момент в окне просмотра элемента управления картой.
--   [**FindMapElementsAtOffset** ](https://msdn.microsoft.com/library/windows/apps/dn637014) метода — Get элементы на карте, расположенный в указанной точке в окне просмотра элемента управления картой.
+-   [**TryGetLocationFromOffset** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.getlocationfromoffset) метода — Get географическое расположение, соответствующее заданной точки в окне просмотра элемента управления картой.
+-   [**GetOffsetFromLocation** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.getoffsetfromlocation) метода — Get точка в области просмотра, соответствующее географическое расположение указанного элемента управления картой.
+-   [**IsLocationInView** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.islocationinview) метод — определить, является ли указанный географическое расположение видимой в данный момент в окне просмотра элемента управления картой.
+-   [**FindMapElementsAtOffset** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.findmapelementsatoffset) метода — Get элементы на карте, расположенный в указанной точке в окне просмотра элемента управления картой.
 
 ## <a name="handle-interaction-and-changes"></a>Обработка взаимодействия и изменений
 
 
-Чтобы обработать жесты ввода пользователя на карте, необходимо обработать указанные ниже события объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Получите информацию о географическом положении на карте и физическом положении в окне просмотра, где был выполнен жест, проверив значения свойств [**Location**](https://msdn.microsoft.com/library/windows/apps/dn637091) и [**Position**](https://msdn.microsoft.com/library/windows/apps/dn637093) класса [**MapInputEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637090).
+Чтобы обработать жесты ввода пользователя на карте, необходимо обработать указанные ниже события объекта [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl). Получите информацию о географическом положении на карте и физическом положении в окне просмотра, где был выполнен жест, проверив значения свойств [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapinputeventargs.location) и [**Position**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapinputeventargs.position) класса [**MapInputEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapInputEventArgs).
 
--   [**MapTapped**](https://msdn.microsoft.com/library/windows/apps/dn637038)
--   [**MapDoubleTapped**](https://msdn.microsoft.com/library/windows/apps/dn637032)
--   [**MapHolding**](https://msdn.microsoft.com/library/windows/apps/dn637035)
+-   [**MapTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.maptapped)
+-   [**MapDoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapdoubletapped)
+-   [**MapHolding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapholding)
 
-Определите, загружена карта или только загружается, с помощью обработки события [**LoadingStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn637028) элемента управления.
+Определите, загружена карта или только загружается, с помощью обработки события [**LoadingStatusChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.loadingstatuschanged) элемента управления.
 
-Чтобы обработать изменения, которые происходят при изменении пользователем или приложением параметров карты, необходимо обработать указанные ниже события объекта [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). [Руководства по картам](https://msdn.microsoft.com/library/windows/apps/dn596102)
+Чтобы обработать изменения, которые происходят при изменении пользователем или приложением параметров карты, необходимо обработать указанные ниже события объекта [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl). [Руководства по картам](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 
--   [**CenterChanged**](https://msdn.microsoft.com/library/windows/apps/dn637006)
--   [**HeadingChanged**](https://msdn.microsoft.com/library/windows/apps/dn637020)
--   [**PitchChanged**](https://msdn.microsoft.com/library/windows/apps/dn637045)
--   [**ZoomLevelChanged**](https://msdn.microsoft.com/library/windows/apps/dn637069)
+-   [**CenterChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.centerchanged)
+-   [**HeadingChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.headingchanged)
+-   [**PitchChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.pitchchanged)
+-   [**ZoomLevelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevelchanged)
 
 ## <a name="best-practice-recommendations"></a>Рекомендации
 
@@ -450,15 +450,15 @@ private async void display3DLocation()
 
 -   Если карта используется только для представления статического, информационного представления, то более подходящим будет использование карты меньшего размера. Если вы будете использовать статическую карту меньшего размера, задайте ее размеры на основании удобства использования. Используйте небольшой размер, чтобы сэкономить место на экране, но достаточный, чтобы отобразить нужную информацию.
 
--   Укажите достопримечательности на карте, используя [**map elements**](https://msdn.microsoft.com/library/windows/apps/dn637034). Любые дополнительные сведения могут быть отображены в качестве прозрачного наложения пользовательского интерфейса на карту.
+-   Укажите достопримечательности на карте, используя [**map elements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapelementsproperty). Любые дополнительные сведения могут быть отображены в качестве прозрачного наложения пользовательского интерфейса на карту.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Получение сведений о текущем расположении](get-location.md)
-* [Рекомендации по разработке приложений, учитывающих данные о расположении](https://msdn.microsoft.com/library/windows/apps/hh465148)
-* [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Рекомендации по разработке приложений, учитывающих данные о расположении](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)
+* [Руководство по разработке карт](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Видео с конференции Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и компьютерах](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Пример приложения UWP для работы с трафиком](https://go.microsoft.com/fwlink/p/?LinkId=619982)
-* [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)
+* [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)

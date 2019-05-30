@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ef98f3f4a9d20e836d5f9bddbc111a232f864bf5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dc9d71f6f02ec62fdf96161c397f7d2d7363b506
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602619"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372513"
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Сопоставление типов .NET Framework с типами среды выполнения Windows
 
 
 
-В следующей таблице перечислены установленные в .NET Framework сопоставления между типами универсальной платформы Windows (UWP) и типами .NET Framework. В универсальном приложении для Windows, написанном с использованием управляемого кода, IntelliSense отображает тип .NET Framework вместо типа UWP. Например, если метод среды выполнения Windows принимает параметр типа IVector&lt;string&gt;, IntelliSense отображает параметр типа IList&lt;string&gt;. Аналогичным образом в компоненте среды выполнения Windows, написанном с использованием управляемого кода, в сигнатурах членов используются типы .NET Framework. Когда [средство экспорта метаданных среды выполнения Windows (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) создает компонент среды выполнения Windows, тип .NET Framework становится соответствующим типом UWP.
+В следующей таблице перечислены установленные в .NET Framework сопоставления между типами универсальной платформы Windows (UWP) и типами .NET Framework. В универсальном приложении для Windows, написанном с использованием управляемого кода, IntelliSense отображает тип .NET Framework вместо типа UWP. Например, если метод среды выполнения Windows принимает параметр типа IVector&lt;string&gt;, IntelliSense отображает параметр типа IList&lt;string&gt;. Аналогичным образом в компоненте среды выполнения Windows, написанном с использованием управляемого кода, в сигнатурах членов используются типы .NET Framework. Когда [средство экспорта метаданных среды выполнения Windows (Winmdexp.exe)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) создает компонент среды выполнения Windows, тип .NET Framework становится соответствующим типом UWP.
 
 ## <a name="mapping-tables"></a>Таблицы соответствия
 
@@ -61,7 +61,7 @@ ms.locfileid: "57602619"
 
 | Пространство имен                           | Тип               | Сборка .NET Framework                   |
 |-------------------------------------|--------------------|-------------------------------------------|
-| Windows.UI                          | Цвет              | System.Runtime.WindowsRuntime.dll         |
+| Windows.UI                          | Color              | System.Runtime.WindowsRuntime.dll         |
 | Windows.Foundation                  | отчетов              | System.Runtime.WindowsRuntime.dll         |
 | Windows.Foundation                  | Rect               | System.Runtime.WindowsRuntime.dll         |
 | Windows.Foundation                  | Размер               | System.Runtime.WindowsRuntime.dll         |
@@ -81,6 +81,6 @@ ms.locfileid: "57602619"
 
  
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

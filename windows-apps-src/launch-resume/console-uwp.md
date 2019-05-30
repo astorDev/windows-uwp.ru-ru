@@ -5,18 +5,18 @@ keywords: консоль uwp
 ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 111ef4d5e8830485a5de3b44d69826df256d1c4d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c2dba15d78301c84f4064bcd6548d44e3c17beb2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592109"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366355"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>Создание консольного приложения для универсальной платформы Windows
 
-В этом разделе описывается создание [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) или C + +/ CX универсальной платформы Windows (UWP) консольное приложение.
+В этом разделе описывается создание [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) или C++/CX консольное приложение универсальной платформы Windows (UWP).
 
-Начиная с Windows 10 версии 1803, можно написать C + +/ WinRT или C + +/ CX UWP консольных приложений, работающих в окне консоли, таких как окно консоли DOS или PowerShell. Консольные приложения использовать окно консоли для ввода и вывода и можно использовать [универсальная среда выполнения C](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference) функции, такие как **printf** и **getchar**. Консольные приложения UWP могут публиковаться в Microsoft Store. Им выделяется запись в списке приложений и основная плитка, которую можно закрепить в меню «Пуск». Консольные приложения универсальной платформы Windows можно запустить из меню «Пуск», хотя обычно будет запускать их из командной строки.
+Начиная с Windows 10 версии 1803, можно написать C++/WinRT или C++/CX UWP консольных приложений, работающих в окне консоли, таких как окно консоли DOS или PowerShell. Консольные приложения использовать окно консоли для ввода и вывода и можно использовать [универсальная среда выполнения C](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference) функции, такие как **printf** и **getchar**. Консольные приложения UWP могут публиковаться в Microsoft Store. Им выделяется запись в списке приложений и основная плитка, которую можно закрепить в меню «Пуск». Консольные приложения универсальной платформы Windows можно запустить из меню «Пуск», хотя обычно будет запускать их из командной строки.
 
 Чтобы просмотреть его в действие, вот видео о создании консольного приложения универсальной платформы Windows.
 
@@ -24,7 +24,7 @@ ms.locfileid: "57592109"
 
 ## <a name="use-a-uwp-console-app-template"></a>Используйте шаблон консольного приложения UWP 
 
-Чтобы создать консольное приложение UWP, сначала установите **Шаблоны проектов консольного приложения (универсального)**, доступные в [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal). Установленные шаблоны будут доступны в разделе **новый проект** > **установленные** > **другие языки**  >  **Visual C++** > **Windows Universal** как **консольного приложения C + +/ WinRT (универсальной Windows)** и **консольного приложения C + +/ CX (универсальной Windows )**.
+Чтобы создать консольное приложение UWP, сначала установите **Шаблоны проектов консольного приложения (универсального)** , доступные в [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal). Установленные шаблоны будут доступны в разделе **новый проект** > **установленные** > **другие языки**  >  **Visual C++**   >  **Windows Universal** как **консольное приложение C++/WinRT (универсальной Windows)** и **консольное приложение C++/CX (универсальной Windows)** .
 
 ## <a name="add-your-code-to-main"></a>Добавьте свой код в main()
 
@@ -60,7 +60,7 @@ int __cdecl main()
 
 Консольное приложение UWP может получать доступ к файловой системе из каталога, в котором оно выполняется, и к нижестоящим элементам. Это возможно, поскольку шаблон добавляет расширение [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) в файл Package.appxmanifest вашего приложения. Это расширение также позволяет пользователю вводить имя приложения в окне консоли, чтобы запустить приложение. Приложение не требуется указывать в системном пути для запуска.
 
-Можно предоставить обширный доступ к файловой системе консольному приложению UWP, добавив ограниченную возможность `broadFileSystemAccess`, как описано в разделе [Права доступа к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). Эта возможность работает с API-интерфейсами в пространстве [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346).
+Можно предоставить обширный доступ к файловой системе консольному приложению UWP, добавив ограниченную возможность `broadFileSystemAccess`, как описано в разделе [Права доступа к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). Эта возможность работает с API-интерфейсами в пространстве [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage).
 
 Одновременно могут выполняться несколько экземпляров консольного приложения UWP, поскольку шаблон добавляет возможность [SupportsMultipleInstances](multi-instance-uwp.md) в файл Package.appxmanifest вашего приложения.
 
@@ -99,7 +99,7 @@ int __cdecl main()
 
 ## <a name="additional-considerations-for-uwp-console-apps"></a>Дополнительные рекомендации для консольных приложений UWP
 
-- Только C + +/ WinRT и C + +/ CX UWP приложения может быть консольных приложений.
+- Только C++/WinRT и C++/CX приложений универсальной платформы Windows может быть консольных приложений.
 - Консольные приложения UWP должны быть предназначены для проектов для настольных ПК или Интернета вещей.
 - Консольные приложения UWP не может создать окно. Они не могут использовать MessageBox(), или Location() или другие API, создать окно по любой причине, такие как запросы согласия пользователя.
 - Консольные приложения UWP не могут использовать фоновые задачи и не могут выступать в качестве фоновой задачи.

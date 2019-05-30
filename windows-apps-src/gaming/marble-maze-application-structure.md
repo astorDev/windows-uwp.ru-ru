@@ -6,19 +6,19 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, пример, directx, структура
 ms.localizationpriority: medium
-ms.openlocfilehash: 55b933db7f9b26de2caa3877bde445f96c08d561
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a04e6714772d9b17c281f81ad93582d1fb691c9b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653729"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368504"
 ---
 # <a name="marble-maze-application-structure"></a>Структура приложения Marble Maze
 
 
 
 
-Структура приложения универсальной платформы Windows (UWP) на DirectX отличается от обычного классического приложения. Вместо работы с такими типами дескрипторов, как [HWND](https://msdn.microsoft.com/library/windows/desktop/aa383751), и функциями, подобными [CreateWindow](https://msdn.microsoft.com/library/windows/desktop/ms632679), среда выполнения Windows предоставляет такие интерфейсы, как [Windows::UI::Core::ICoreWindow](https://msdn.microsoft.com/library/windows/apps/br208296), благодаря чему вы можете разрабатывать приложения UWP более современным объектно-ориентированным образом. В этом разделе документации показана структура программного кода приложения Marble Maze.
+Структура приложения универсальной платформы Windows (UWP) на DirectX отличается от обычного классического приложения. Вместо работы с такими типами дескрипторов, как [HWND](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types), и функциями, подобными [CreateWindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa), среда выполнения Windows предоставляет такие интерфейсы, как [Windows::UI::Core::ICoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow), благодаря чему вы можете разрабатывать приложения UWP более современным объектно-ориентированным образом. В этом разделе документации показана структура программного кода приложения Marble Maze.
 
 > [!NOTE]
 > Пример кода, соответствующего этому документу, см. в [примере игры DirectX Marble Maze](https://go.microsoft.com/fwlink/?LinkId=624011).
@@ -79,7 +79,7 @@ ms.locfileid: "57653729"
 ##  <a name="application-life-cycle"></a>Жизненный цикл приложения
 
 
-В Marble Maze применяется типичный жизненный цикл приложения UWP. Дополнительные сведения о жизненном цикле приложения UWP см. в разделе [Жизненный цикл приложения](https://msdn.microsoft.com/library/windows/apps/mt243287).
+В Marble Maze применяется типичный жизненный цикл приложения UWP. Дополнительные сведения о жизненном цикле приложения UWP см. в разделе [Жизненный цикл приложения](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).
 
 Во время инициализации игры UWP обычно инициализируются компоненты времени выполнения, такие как Direct3D, Direct2D и используемые библиотеки ввода, звука и физики. Также загружаются игровые ресурсы, которые необходимы перед началом игры. Такая инициализация выполняется один раз за игровой сеанс.
 
@@ -240,7 +240,7 @@ case GameState::InGamePaused:
 -   Оно реагирует на уведомления о приостановке, сохраняя свое состояние в постоянном хранилище.
 -   Оно реагирует на уведомления о возобновлении, загружая свое состояние из постоянного хранилища. Оно также загружает предыдущее состояние во время запуска.
 
-Для поддержки приостановки и возобновления в Marble Maze определяется класс **PersistentState**. (См. файлы **PersistentState.h** и **PersistentState.cpp**). Этот класс использует интерфейс [Windows::Foundation::Collections::IPropertySet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IPropertySet) для чтения и записи свойств. Класс **PersistentState** предоставляет методы, которые считывают примитивные типы данных (например, **bool**, **int**, **float**, [XMFLOAT3](https://msdn.microsoft.com/library/windows/desktop/ee419475), и [Platform::String](https://docs.microsoft.com/cpp/cppcx/platform-string-class)) из резервного хранилища и записывают их в резервное хранилище.
+Для поддержки приостановки и возобновления в Marble Maze определяется класс **PersistentState**. (См. файлы **PersistentState.h** и **PersistentState.cpp**). Этот класс использует интерфейс [Windows::Foundation::Collections::IPropertySet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IPropertySet) для чтения и записи свойств. Класс **PersistentState** предоставляет методы, которые считывают примитивные типы данных (например, **bool**, **int**, **float**, [XMFLOAT3](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3), и [Platform::String](https://docs.microsoft.com/cpp/cppcx/platform-string-class)) из резервного хранилища и записывают их в резервное хранилище.
 
 ```cpp
 ref class PersistentState
@@ -414,14 +414,14 @@ void MarbleMazeMain::LoadState()
 > [!IMPORTANT]
 > В Marble Maze нет различия между начальным запуском (без предшествующего события приостановки) и возобновлением после приостановки. Так рекомендуется делать во всех приложениях UWP.
 
-Подробнее о данных приложения: [Хранение и извлечение параметров и прочих данных приложения](https://msdn.microsoft.com/library/windows/apps/mt299098).
+Подробнее о данных приложения: [Хранение и извлечение параметров и прочих данных приложения](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
 
-##  <a name="next-steps"></a>Дальнейшие действия
+##  <a name="next-steps"></a>Следующие шаги
 
 
 Ознакомьтесь с разделом [Добавление визуального содержимого в пример Marble Maze](adding-visual-content-to-the-marble-maze-sample.md), чтобы изучить основные моменты, о которых нужно помнить при работе с визуальными ресурсами.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Добавление визуального содержимого в пример Marble Maze](adding-visual-content-to-the-marble-maze-sample.md)
 * [Основные сведения о примере marble Maze](marble-maze-sample-fundamentals.md)

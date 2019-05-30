@@ -6,12 +6,12 @@ ms.date: 04/04/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e73452cdcb02798d4ebd225b48272ab77c40fef9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fc5fca95ca475444792fb0209a936bdfc64cb3c6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604449"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372351"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>Скачивание и установка обновлений пакетов из Store
 
@@ -30,10 +30,10 @@ ms.locfileid: "57604449"
 
 В коде из этого примера предполагается следующее:
 
-* Код выполняется в контексте [страницы](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx).
-* **Страница** содержит панель [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) с именем ```downloadProgressBar``` для предоставления состояния операции загрузки.
+* Код выполняется в контексте [страницы](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page).
+* **Страница** содержит панель [ProgressBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar) с именем ```downloadProgressBar``` для предоставления состояния операции загрузки.
 * Файл кода имеет заявление **using** для пространств имен **Windows.Services.Store**, **Windows.Threading.Tasks** и **Windows.UI.Popups**.
-* Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Для [многопользовательского приложения](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) используйте метод [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User), чтобы получить объект **StoreContext**, а не метод [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault).
+* Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Для [многопользовательского приложения](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) используйте метод [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User), чтобы получить объект **StoreContext**, а не метод [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault).
 
 ```csharp
 private StoreContext context = null;
@@ -99,7 +99,7 @@ public async Task DownloadAndInstallAllUpdatesAsync()
 
 В коде из этого примера предполагается следующее:
 * В файле кода используются оператор **using** для пространств имен **Windows.Services.Store** и **System.Threading.Tasks**.
-* Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Для [многопользовательского приложения](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) используйте метод [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User), чтобы получить объект **StoreContext**, а не метод [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault).
+* Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Для [многопользовательского приложения](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) используйте метод [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User), чтобы получить объект **StoreContext**, а не метод [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault).
 
 > [!NOTE]
 > Методы **IsNowAGoodTimeToRestartApp**, **RetryDownloadAndInstallLater** и **RetryInstallLater**, вызываемые в коде в этом примере, являются методами-заполнителями, которые реализуются по мере надобности в соответствии со структурой вашего приложения.
@@ -330,7 +330,7 @@ private void HandleMandatoryPackageError()
 
 В следующем примере кода показан вызов метода [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync). В коде из этого примера предполагается следующее:
 * В файле кода используются оператор **using** для пространств имен **Windows.Services.Store** и **System.Threading.Tasks**.
-* Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Для [многопользовательского приложения](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) используйте метод [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User), чтобы получить объект **StoreContext**, а не метод [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault).
+* Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Для [многопользовательского приложения](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) используйте метод [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User), чтобы получить объект **StoreContext**, а не метод [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault).
 
 ```csharp
 public async Task UninstallPackage(Windows.ApplicationModel.Package package)
@@ -373,7 +373,7 @@ public async Task UninstallPackage(Windows.ApplicationModel.Package package)
 
 В следующем примере кода показано, как вызывать метод [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync), чтобы получить список текущих обновлений пакета для текущего приложения и извлечь сведения о статусе для каждого пакета. В коде из этого примера предполагается следующее:
 * В файле кода используются оператор **using** для пространств имен **Windows.Services.Store** и **System.Threading.Tasks**.
-* Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Для [многопользовательского приложения](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) используйте метод [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User), чтобы получить объект **StoreContext**, а не метод [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault).
+* Приложение — однопользовательское и выполняется только в контексте пользователя, запустившего его. Для [многопользовательского приложения](https://docs.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) используйте метод [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User), чтобы получить объект **StoreContext**, а не метод [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault).
 
 > [!NOTE]
 > Методы **MarkUpdateInProgressInUI**, **RemoveItemFromUI**, **MarkInstallCompleteInUI**, **MarkInstallErrorInUI** и **MarkInstallPausedInUI**, вызываемые в коде в этом примере, — это методы-местозаполнители, которые предназначены для реализации по мере надобности в соответствии с конструкцией вашего приложения.
@@ -461,6 +461,6 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 }
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Разработка дополнительных пакетов и связанных наборов](optional-packages.md)

@@ -6,32 +6,32 @@ keywords: UWP, надстройки, покупки из приложения, I
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9be40d78e00e583988ba8c6b318e7a8941d7f971
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 44cc0674e98c2fdf1bf8ecd2fbf6f859dfe25e62
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334982"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371849"
 ---
 # <a name="enable-in-app-product-purchases"></a>Поддержка покупки продуктов из приложения
 
 Независимо от того, является ли ваше приложение бесплатным или нет, вы можете продавать содержимое, другие приложения или новые функциональные возможности (например, разблокирование следующего уровня игры) прямо из приложения. В этом разделе рассказывается о том, как предоставить возможность совершать такие покупки.
 
 > [!IMPORTANT]
-> В этой статье показано, как использовать элементы пространства имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) для включения покупок продуктов в приложении. Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). **Windows.Services.Store** пространство имен поддерживает последние надстройки типы, например управляемые Store пригодных для использования надстроек и подписки и должна быть совместима с типами будущих продуктов и функций, поддерживаемых партнера Центр и Store. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Дополнительные сведения о включении возможности покупки продуктов из приложения с помощью пространства имен **Windows.Services.Store** см. в [этой статье](enable-in-app-purchases-of-apps-and-add-ons.md).
+> В этой статье показано, как использовать элементы пространства имен [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) для включения покупок продуктов в приложении. Это пространство имен больше не дополняется новыми функциями, и мы рекомендуем вместо него использовать пространство имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store). **Windows.Services.Store** пространство имен поддерживает последние надстройки типы, например управляемые Store пригодных для использования надстроек и подписки и должна быть совместима с типами будущих продуктов и функций, поддерживаемых партнера Центр и Store. Пространство имен **Windows.Services.Store** впервые появилось в Windows 10 версии 1607 и может использоваться только в проектах, предназначенных для **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздней версии в Visual Studio. Дополнительные сведения о включении возможности покупки продуктов из приложения с помощью пространства имен **Windows.Services.Store** см. в [этой статье](enable-in-app-purchases-of-apps-and-add-ons.md).
 
 > [!NOTE]
 > Внутренние продукты приложения не могут предлагаться в пробной версии. Пользователи пробной версии приложения смогут купить внутренний продукт приложения, только если приобретут полную версию этого приложения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 -   Приложение для Windows, в которое предполагается добавить компоненты для продажи.
--   Когда вы создадите код для продаж внутренних продуктов приложения и будете проверять его в первый раз, используйте объект [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) вместо объекта [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). В этом случае вы сможете проверить логику лицензирования путем имитации обращения к серверу лицензирования вместо вызова реального сервера. Чтобы сделать это, необходимо настроить файл с именем WindowsStoreProxy.xml в папку % userprofile %\\AppData\\локального\\пакетов\\&lt;имя пакета&gt;\\LocalState\\ Microsoft\\Windows Store\\ApiData. Имитатор Microsoft Visual Studio создает этот файл при первом запуске приложения. Также можно загрузить собственный его вариант во время выполнения. Дополнительные сведения см. в разделе [Использование файла WindowsStoreProxy.xml с CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
+-   Когда вы создадите код для продаж внутренних продуктов приложения и будете проверять его в первый раз, используйте объект [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) вместо объекта [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp). В этом случае вы сможете проверить логику лицензирования путем имитации обращения к серверу лицензирования вместо вызова реального сервера. Чтобы сделать это, необходимо настроить файл с именем WindowsStoreProxy.xml в папку % userprofile %\\AppData\\локального\\пакетов\\&lt;имя пакета&gt;\\LocalState\\ Microsoft\\Windows Store\\ApiData. Имитатор Microsoft Visual Studio создает этот файл при первом запуске приложения. Также можно загрузить собственный его вариант во время выполнения. Дополнительные сведения см. в разделе [Использование файла WindowsStoreProxy.xml с CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
 -   В этом разделе также приведены ссылки на примеры кода из статьи [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store). Этот пример дает отличную возможность поэкспериментировать с разными вариантами монетизации, доступными для приложений универсальной платформы Windows (UWP).
 
 ## <a name="step-1-initialize-the-license-info-for-your-app"></a>Шаг 1. Инициализировать сведения о лицензии для вашего приложения
 
-Во время инициализации приложения получите для него объект [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) путем инициализации [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) или [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766), чтобы включить покупки внутренних продуктов приложения.
+Во время инициализации приложения получите для него объект [LicenseInformation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) путем инициализации [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) или [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator), чтобы включить покупки внутренних продуктов приложения.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
@@ -74,7 +74,7 @@ ms.locfileid: "58334982"
 
 ## <a name="step-3-change-the-test-code-to-the-final-calls"></a>Шаг 3. Изменение кода теста, чтобы последний вызовы
 
-Это просто: замените в коде приложения все ссылки на [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) ссылками на [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). Файл WindowsStoreProxy.xml больше не нужен, поэтому удалите его из пути приложения (хотя его можно сохранить для справки до следующего этапа настройки продажи из приложения).
+Это просто: замените в коде приложения все ссылки на [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) ссылками на [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp). Файл WindowsStoreProxy.xml больше не нужен, поэтому удалите его из пути приложения (хотя его можно сохранить для справки до следующего этапа настройки продажи из приложения).
 
 ## <a name="step-4-configure-the-in-app-product-offer-in-the-store"></a>Шаг 4. Настройка предложения продуктов в приложении в Store
 

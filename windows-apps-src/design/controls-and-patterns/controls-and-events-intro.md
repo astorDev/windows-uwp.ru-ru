@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ff3f89887235fc9c8d9d7afbbdea3d79bace810
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 671f33cf106eabf11b317b00d5c2a6cd9abcf3d0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630799"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363040"
 ---
 # <a name="intro-to-controls-and-patterns"></a>Введение в работу с элементами управления и шаблонами
 
 В разработке приложений UWP *элемент управления* — это элемент пользовательского интерфейса, отображающий содержимое или обеспечивающий взаимодействие. Пользовательский интерфейс приложения, используемый для отображения и ввода данных пользователем, создается с помощью элементов управления, таких как кнопки, текстовые поля и поля со списком.
 
-> **Важные API**: [Пространство имен Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **Важные API**: [Пространство имен Windows.UI.Xaml.Controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 
 *Шаблон* — это макет для изменения элемента управления или объединения нескольких элементов управления, позволяющий получить что-то новое. Например [основной/подробности](master-details.md) шаблон — это способ, который можно использовать [SplitView](split-view.md) управления для переходов приложения. Аналогичным образом, можно настроить шаблон из [NavigationView](navigationview.md) управления для реализации шаблона вкладки.
 
@@ -141,10 +141,10 @@ private void Button_Click(object sender, RoutedEventArgs e)
 Button1.Click += new RoutedEventHandler(Button_Click);
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 -   [Указатель элементов управления по функциям](controls-by-function.md)
--   [Пространство имен Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+-   [Пространство имен Windows.UI.Xaml.Controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 -   [Макет](../layout/index.md)
 -   [Стиль](../style/index.md)
 -   [Удобство использования](../usability/index.md)

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae76111f6feefa0bb63fd18516e033050cc06fc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3aeb30fca8e9fbad21f274162aab3106afcf2e45
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589889"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370843"
 ---
 # <a name="tier-1"></a>Уровень 1
 
@@ -52,7 +52,7 @@ ms.locfileid: "57589889"
 
 Чтобы переключаться между ссылки на плитки в пуле плитки с помощью [буфера](introduction-to-buffers.md) ресурса для ссылки на одной плитки с помощью [текстуры](introduction-to-textures.md) ресурсов, наоборот, последние обновления сопоставлений плитки или копирование плитки сопоставлений, определяющий сопоставления для этих плитки для одного измерения ресурсов должно быть плитки пула (буфера и текстуры\*) как измерение ресурсов, который будет использоваться для доступа к плитки. В противном случае поведение не определено, включая вероятность сброса устройства.
 
-Так, например, недопустимо обновлять сопоставления плиток, чтобы определить сопоставления плиток для буфера, а затем обновлять сопоставления тех же плиток в пуле плиток через ресурс [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525), после чего осуществлять доступ к плиткам через буфер. Обходные операции должны либо переопределить сопоставления плиток для ресурса при переключении между буфером и текстурой (или наоборот) или просто никогда не использовать совместно в одном пуле плитки буфера ресурсов и буфера текстур.
+Так, например, недопустимо обновлять сопоставления плиток, чтобы определить сопоставления плиток для буфера, а затем обновлять сопоставления тех же плиток в пуле плиток через ресурс [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d), после чего осуществлять доступ к плиткам через буфер. Обходные операции должны либо переопределить сопоставления плиток для ресурса при переключении между буфером и текстурой (или наоборот) или просто никогда не использовать совместно в одном пуле плитки буфера ресурсов и буфера текстур.
 
 ### <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>Фильтрация сокращения Min/Max
 

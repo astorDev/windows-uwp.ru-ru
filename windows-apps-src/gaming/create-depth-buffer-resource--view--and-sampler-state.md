@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, direct3d, буфер глубины
 ms.localizationpriority: medium
-ms.openlocfilehash: f5ce1ec522a194111e175e41f82c4275cda4fbf5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dfd45f620addcf7a3f6292ed2257bdfccc862cd3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613699"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368890"
 ---
 # <a name="create-depth-buffer-device-resources"></a>Создание ресурсов устройства для буфера глубины
 
@@ -38,7 +38,7 @@ ms.locfileid: "57613699"
 ## <a name="check-feature-support"></a>Проверка поддержки функции
 
 
-Прежде чем создавать карты глубины, вызовите [ **CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497) метод на устройство Direct3D, запросите **D3D11\_ФУНКЦИЯ\_D3D9\_ ТЕНЬ\_поддержки**и предоставить [ **D3D11\_ФУНКЦИЯ\_данных\_D3D9\_ТЕНЕВОГО\_поддержки** ](https://msdn.microsoft.com/library/windows/desktop/jj247569) структуры.
+Прежде чем создавать карты глубины, вызовите [ **CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) метод на устройство Direct3D, запросите **D3D11\_ФУНКЦИЯ\_D3D9\_ ТЕНЬ\_поддержки**и предоставить [ **D3D11\_ФУНКЦИЯ\_данных\_D3D9\_ТЕНЕВОГО\_поддержки** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_d3d9_shadow_support) структуры.
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -82,7 +82,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-Затем создайте представления ресурсов. Задайте нулевое значение для MIP-среза в представлении трафарета глубины и значение 1 для уровней MIP в представлении ресурса шейдера. Оба имеют измерение текстуры TEXTURE2D, и оба должны использовать соответствующий [ **DXGI\_ФОРМАТ**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+Затем создайте представления ресурсов. Задайте нулевое значение для MIP-среза в представлении трафарета глубины и значение 1 для уровней MIP в представлении ресурса шейдера. Оба имеют измерение текстуры TEXTURE2D, и оба должны использовать соответствующий [ **DXGI\_ФОРМАТ**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format).
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;

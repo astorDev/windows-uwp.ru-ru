@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1b0c272af5939deba73ff7a07797207d7caaa4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e3b6ab53e5e9f0b36e6bdeb047b48766cda7a2a5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651009"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372393"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>Windows Phone Silverlight для универсальной платформы Windows пример использования: Bookstore2
 
@@ -58,7 +58,7 @@ ms.locfileid: "57651009"
 -   Измените "clr-namespace" на "using" в остальных объявлениях префикса пространства имен.
 -   Удалите `SupportedOrientations="Portrait"` и `Orientation="Portrait"`, а затем настройте **книжную** ориентацию в манифесте пакета приложения в новом проекте.
 -   Удалите `shell:SystemTray.IsVisible="True"`.
--   Типы преобразователей элемента списка переходов (которые присутствуют в разметке как ресурсы) перемещены в пространство имен [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818). Таким образом, добавьте объявление префикса пространства имен Windows\_пользовательского интерфейса\_Xaml\_элементов управления\_примитивы и сопоставить его с **Windows.UI.Xaml.Controls.Primitives**. Для ресурсов преобразователя элемента списка переходов измените префикс с `phone:` на `Windows_UI_Xaml_Controls_Primitives:`.
+-   Типы преобразователей элемента списка переходов (которые присутствуют в разметке как ресурсы) перемещены в пространство имен [**Windows.UI.Xaml.Controls.Primitives**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives). Таким образом, добавьте объявление префикса пространства имен Windows\_пользовательского интерфейса\_Xaml\_элементов управления\_примитивы и сопоставить его с **Windows.UI.Xaml.Controls.Primitives**. Для ресурсов преобразователя элемента списка переходов измените префикс с `phone:` на `Windows_UI_Xaml_Controls_Primitives:`.
 -   Как и в примере [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), замените все ссылки на стиль `PhoneTextExtraLargeStyle` **TextBlock** ссылкой на `SubtitleTextBlockStyle`, замените `PhoneTextSubtleStyle` на `SubtitleTextBlockStyle`, `PhoneTextNormalStyle` на `CaptionTextBlockStyle`, а `PhoneTextTitle1Style` на `HeaderTextBlockStyle`.
 -   Существует одно исключение в `BookTemplate`. Стиль второго элемента **TextBlock** должен ссылаться на `CaptionTextBlockStyle`.
 -   Удалите атрибут FontFamily из **TextBlock** в `AuthorGroupHeaderTemplate` и настройте фон **Border** для ссылки на `SystemControlBackgroundAccentBrush` вместо `PhoneAccentBrush`.
@@ -67,7 +67,7 @@ ms.locfileid: "57651009"
 ## <a name="replacing-the-longlistselector"></a>Замена LongListSelector
 
 
-Для замены **LongListSelector** элементом управления [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) нужно выполнить несколько действий. Рассмотрим их подробнее. Класс **LongListSelector** привязывается непосредственно к сгруппированному источнику данных, но **SemanticZoom** содержит элементы управления [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) или [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705), которые косвенно привязываются к данным через адаптер [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833). Класс **CollectionViewSource** должен быть размещен в разметке как ресурс, поэтому сначала добавим его в разметку в файле MainPage.xaml внутри `<Page.Resources>`.
+Для замены **LongListSelector** элементом управления [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) нужно выполнить несколько действий. Рассмотрим их подробнее. Класс **LongListSelector** привязывается непосредственно к сгруппированному источнику данных, но **SemanticZoom** содержит элементы управления [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) или [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), которые косвенно привязываются к данным через адаптер [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource). Класс **CollectionViewSource** должен быть размещен в разметке как ресурс, поэтому сначала добавим его в разметку в файле MainPage.xaml внутри `<Page.Resources>`.
 
 ```xml
     <CollectionViewSource
@@ -142,7 +142,7 @@ ms.locfileid: "57651009"
 
 Перед выбором адаптивного элемента диспетчера визуальных состояний нам предварительно необходимо создать широкое состояние. Это означает добавление некоторых новых визуальных элементов и шаблонов в нашу разметку. В описанных ниже действиях указано, как это сделать. С помощью соглашений об именах для визуальных элементов и шаблонов мы включим слово "wide" в имена всех элементов или шаблонов, предназначенных для широкого состояния. Если элемент или шаблон не содержат слова "wide", тогда можно предположить, что он предназначен для узкого состояния, которое является состоянием по умолчанию и значения свойств которого задаются как локальные значения в визуальных элементах на странице. Только значения свойства для широкого состояния устанавливаются через реальное визуальное состояние в разметке.
 
--   Создайте копию элемента управления [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) в разметке и задайте значение `x:Name="narrowSeZo"` на копии. В оригинале настройте `x:Name="wideSeZo"` и также задайте значение `Visibility="Collapsed"`, чтобы широкий элемент не отображался по умолчанию.
+-   Создайте копию элемента управления [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) в разметке и задайте значение `x:Name="narrowSeZo"` на копии. В оригинале настройте `x:Name="wideSeZo"` и также задайте значение `Visibility="Collapsed"`, чтобы широкий элемент не отображался по умолчанию.
 -   В `wideSeZo` измените объекты **ListView** на **GridView** в представлении с уменьшенным и увеличенным масштабом.
 -   Создайте копии этих трех ресурсов `AuthorGroupHeaderTemplate`, `ZoomedOutAuthorTemplate` и `BookTemplate` и добавьте слово `Wide` к ключам копий. Также обновите элемент `wideSeZo`, чтобы он ссылался на ключи этих новых ресурсов.
 -   Замените содержимое `AuthorGroupHeaderTemplateWide` на `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`.
@@ -220,7 +220,7 @@ ms.locfileid: "57651009"
 
 -   В `AuthorGroupHeaderTemplate` установите для элемента `Foreground="White"` значение **TextBlock**, чтобы обеспечить правильное отображение на мобильных устройствах.
 -   Добавьте `FontWeight="SemiBold"` к **TextBlock** в `AuthorGroupHeaderTemplate` и `ZoomedOutAuthorTemplate`.
--   В `narrowSeZo`заголовки групп и авторы в представлении с уменьшенным масштабом выровнены по левому краю, а не растянуты, поэтому давайте работать с этим. Мы создадим свойство [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841) для увеличенного представления со свойством [**HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417), для которого задано значение `Stretch`. Мы также создадим свойство [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817) для уменьшенного представления, содержащее тот же класс [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817). Вот как это выглядит.
+-   В `narrowSeZo`заголовки групп и авторы в представлении с уменьшенным масштабом выровнены по левому краю, а не растянуты, поэтому давайте работать с этим. Мы создадим свойство [**HeaderContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.groupstyle.headercontainerstyle) для увеличенного представления со свойством [**HorizontalContentAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment), для которого задано значение `Stretch`. Мы также создадим свойство [**ItemContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) для уменьшенного представления, содержащее тот же класс [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter). Вот как это выглядит.
 
 ```xml
    <Style x:Key="AuthorGroupHeaderContainerStyle" TargetType="ListViewHeaderItem">
@@ -272,7 +272,7 @@ ms.locfileid: "57651009"
 
 Когда мы привязываем свойство **CollectionViewSource.Source** к Authors, мы просто сообщаем, что каждый класс Author — это группа *неких элементов*. Класс **CollectionViewSource** определяет, что представляет собой Author. В данном случае это группа BookSku. Этот подход работает, но он не универсальный. Как быть, если Author должен *одновременно* быть группой BookSku *и* группой адресов, где данный автор жил? Author не может *быть* двумя этими группами одновременно. Однако *у* Author может быть любое количество групп. Это и есть решение: используйте шаблон *has-a-group* вместо шаблона *is-a-group*, который мы применяем сейчас, или в дополнение к нему. Вот как это сделать.
 
--   Измените класс Author, чтобы он не наследовался от **List&lt;T&gt;**.
+-   Измените класс Author, чтобы он не наследовался от **List&lt;T&gt;** .
 -   Добавьте для этого поля 
 -   Добавьте это свойство в 
 -   Конечно, мы можем повторить два указанные выше действия, чтобы добавить любое количество групп в класс Author.

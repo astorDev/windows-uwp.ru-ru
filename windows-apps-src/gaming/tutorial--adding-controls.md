@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, элементы управления, ввод
 ms.localizationpriority: medium
-ms.openlocfilehash: 369aa076184f79aa1e43c3aac11706982a6be268
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ff7088ec4062973d0b9d1ff6d20d7992e4135c3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595419"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367957"
 ---
 # <a name="add-controls"></a>Добавление элементов управления
 
@@ -43,11 +43,11 @@ ms.locfileid: "57595419"
 
 Событие | Описание
 :------ | :-------
-[**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) | Нажата (или удерживается) левая или правая кнопка мыши, либо произошло касание сенсорного экрана.
-[**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) |Мышь переместилась, или провели по сенсорному экрану.
-[**CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) |Левая кнопка мыши была отпущена, или предмет, касавшийся сенсорного экрана, поднялся.
-[**CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275) |Указатель вышел за пределы главного окна.
-[**Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) | Мышь переместилась на определенное расстояние. Обратите внимание, что нас интересуют приращения перемещения мыши, а не текущие координаты X-Y.
+[**CoreWindow::PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) | Нажата (или удерживается) левая или правая кнопка мыши, либо произошло касание сенсорного экрана.
+[**CoreWindow::PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) |Мышь переместилась, или провели по сенсорному экрану.
+[**CoreWindow::PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) |Левая кнопка мыши была отпущена, или предмет, касавшийся сенсорного экрана, поднялся.
+[**CoreWindow::PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerexited) |Указатель вышел за пределы главного окна.
+[**Windows::Devices::Input::MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) | Мышь переместилась на определенное расстояние. Обратите внимание, что нас интересуют приращения перемещения мыши, а не текущие координаты X-Y.
 
 
 Эти обработчики событий устанавливаются и начинают прослушивание ввода пользователя, как только **MoveLookController** инициализируется в окне приложения.
@@ -84,7 +84,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 Состояние | Описание
 :----- | :-------
-**Нет** | Инициализированное состояние контроллера. Весь ввод игнорируется, поскольку игра еще не ожидает никакого ввода контроллера.
+**None** | Инициализированное состояние контроллера. Весь ввод игнорируется, поскольку игра еще не ожидает никакого ввода контроллера.
 **WaitForInput** | Контроллер ожидает, что игрок подтвердит сообщение от игры нажатием левой кнопкой мыши, событием касания или нажатием кнопки меню на геймпаде.
 **Active** | Контроллер находится в режиме активного игрового процесса.
 
@@ -105,7 +105,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 
 В состоянии **Active** отслеживается весь ввод указателя, причем разным действиям указателя соответствуют разные идентификаторы указателя.
-После того как было получено событие [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278), **MoveLookController** получает задаваемое окном значение идентификатора указателя. Идентификатор указателя представляет собой особый вид ввода. Например, при использовании устройства с мультисенсорной технологией можно одновременно совершать несколько активных действий ввода. Идентификаторы используются для отслеживания типа ввода данных игроком. Если событие произошло в прямоугольнике движения сенсорного экрана, назначается идентификатор указателя для отслеживания всех событий указателя в прямоугольнике движения. Другие события указателя в прямоугольнике огня отслеживаются отдельно с помощью отдельного идентификатора указателя.
+После того как было получено событие [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed), **MoveLookController** получает задаваемое окном значение идентификатора указателя. Идентификатор указателя представляет собой особый вид ввода. Например, при использовании устройства с мультисенсорной технологией можно одновременно совершать несколько активных действий ввода. Идентификаторы используются для отслеживания типа ввода данных игроком. Если событие произошло в прямоугольнике движения сенсорного экрана, назначается идентификатор указателя для отслеживания всех событий указателя в прямоугольнике движения. Другие события указателя в прямоугольнике огня отслеживаются отдельно с помощью отдельного идентификатора указателя.
 
 
 > [!NOTE]
@@ -113,7 +113,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 
 Когда события указателя соотнесены с конкретным игровым действием, обновляются данные, которые объект **MoveLookController** передает основному циклу игры.
 
-При вызове [ **обновление** ](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1005-L1096) метод в пример игры обрабатывает входные данные и обновляет переменные направление скорость и внешний вид (**m\_скорости** и **m\_значение свойства lookdirection —**), которое затем получает цикл игры, вызвав открытый [ **скорости** ](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L906-L909) и [ **Значение свойства lookdirection —** ](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L913-L923) методы.
+При вызове [ **обновление** ](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1005-L1096) метод в пример игры обрабатывает входные данные и обновляет переменные направление скорость и внешний вид (**m\_скорости** и **m\_значение свойства lookdirection —** ), которое затем получает цикл игры, вызвав открытый [ **скорости** ](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L906-L909) и [ **Значение свойства lookdirection —** ](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L913-L923) методы.
 
 > [!NOTE]
 > Подробнее о методе [**Update**](#the-update-method) речь пойдет дальше на этой странице.
@@ -160,7 +160,7 @@ bool MoveLookController::IsFiring()
 
 Если обнаружено перемещение мыши, необходимо использовать это перемещение для определения нового угла поворота и наклона камеры. Для этого необходимо создать относительные элементы управления мышью, с помощью которых относительное расстояние перемещения мыши рассчитывается как разница между начальной и конечной точками перемещения (в отличие от регистрации абсолютных координат перемещения по осям x-y).
 
-Для этого мы получаем приращение по оси X (движение по горизонтали) и приращение по оси Y (движение по вертикали) с помощью полей [**MouseDelta::X**](https://msdn.microsoft.com/library/windows/apps/hh758353) и **MouseDelta::Y** объекта аргумента [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://msdn.microsoft.com/library/windows/apps/hh758358), возвращаемого событием [**MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356).
+Для этого мы получаем приращение по оси X (движение по горизонтали) и приращение по оси Y (движение по вертикали) с помощью полей [**MouseDelta::X**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) и **MouseDelta::Y** объекта аргумента [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta), возвращаемого событием [**MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved).
 
 ```cpp
 void MoveLookController::OnMouseMoved(
@@ -220,8 +220,8 @@ void MoveLookController::OnMouseMoved(
 
 **MoveLookController** проверяет идентификатор указателя, чтобы определить, где произошло событие, и предпринимает одно из следующих действий:
 
--   Если событие [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) произошло в прямоугольнике движения или огня, обновляет положение указателя для контроллера.
--   Если событие [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) произошло в любой другой точке оставшейся части экрана (определенной как управление камерой), вычисляет изменение углов наклона и поворота вектора направления камеры.
+-   Если событие [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) произошло в прямоугольнике движения или огня, обновляет положение указателя для контроллера.
+-   Если событие [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) произошло в любой другой точке оставшейся части экрана (определенной как управление камерой), вычисляет изменение углов наклона и поворота вектора направления камеры.
 
 
 После того как сенсорные элементы реализованы, прямоугольники, которые мы ранее нарисовали с помощью Direct2D, будут указывать игрокам, где находятся зоны движения, огня и обзора.
@@ -401,7 +401,7 @@ window->PointerReleased +=
 
 В данном случае **MoveLookController** назначает идентификатор указателя для указателя, который вызвал событие, конкретной переменной, которая соответствует зоне управления обзором. В случае сенсорного ввода, в области Вид **m\_lookPointerID** переменной присваивается идентификатор указателя, инициировавший событие. Логическая переменная, **m\_lookInUse**, также установите, чтобы указать, что элемент управления имеет не еще были выпущены.
 
-Теперь давайте рассмотрим, как в образце игры обрабатывается событие [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) на сенсорном экране.
+Теперь давайте рассмотрим, как в образце игры обрабатывается событие [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) на сенсорном экране.
 
 
 В методе **MoveLookController::OnPointerMoved** мы проверяем, какой идентификатор указателя назначен этому событию. Если это **m_lookPointerID**, мы вычисляем изменение положения указателя.
@@ -435,9 +435,9 @@ window->PointerReleased +=
 
 
 
-Последнее, что мы рассмотрим, — это как в примере игры обрабатывается событие [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) на сенсорном экране.
+Последнее, что мы рассмотрим, — это как в примере игры обрабатывается событие [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) на сенсорном экране.
 После того как пользователь завершил сенсорный жест и поднял палец с экрана, вызывается событие [**MoveLookController::OnPointerReleased**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L441-L500).
-Если идентификатор указателя, который вызвал событие [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279), является идентификатором зафиксированного ранее указателя движения, **MoveLookController** устанавливает скорость равной `0`, поскольку пользователь больше не касается зоны управления обзором.
+Если идентификатор указателя, который вызвал событие [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased), является идентификатором зафиксированного ранее указателя движения, **MoveLookController** устанавливает скорость равной `0`, поскольку пользователь больше не касается зоны управления обзором.
 
 ```cpp
     else if (pointerID == m_lookPointerID)
@@ -459,7 +459,7 @@ window->PointerReleased +=
 Ввод данных пользователем | Действие
 :------- | :--------
 W | Переместить игрока вперед
-A | Переместить игрока влево
+Объект | Переместить игрока влево
 S | Переместить игрока назад
 D | Переместить игрока вправо
 X | Переместить камеру вверх
@@ -469,7 +469,7 @@ P | Приостановить игру
 Левая кнопка мыши | Выстрелить шариком
 
 
-Для использования клавиатуры в примере игры регистрируется два новых события — [**CoreWindow::KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271) и [**CoreWindow::KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270) — в методе [**MoveLookController::InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88). Эти события обрабатывают нажатие и отпускание клавиши.
+Для использования клавиатуры в примере игры регистрируется два новых события — [**CoreWindow::KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup) и [**CoreWindow::KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown) — в методе [**MoveLookController::InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88). Эти события обрабатывают нажатие и отпускание клавиши.
 
 ```cpp
 window->KeyDown +=
@@ -810,7 +810,7 @@ void MoveLookController::Update()
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Итак, элементы управления добавлены. Для создания иммерсивной игры не хватает еще одной вещи — звука!
 Музыка и звуковые эффекты очень важны для любой игры, поэтому следующее, что мы рассмотрим, — это [добавление звука](tutorial--adding-sound.md).

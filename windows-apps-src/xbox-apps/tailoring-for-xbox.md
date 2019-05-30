@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e273b1b3bb84929005cfbe4a205397fa298ea1c8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3c1a67936a403edc718ca5a38e7bcb8af02e042f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657129"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372087"
 ---
 # <a name="xbox-best-practices"></a>Рекомендации для Xbox
 
@@ -30,7 +30,7 @@ ms.locfileid: "57657129"
 
 ### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*Выполните действия.* Интеграция с классом SystemMediaTransportControls
 
-Пользователи Xbox хотят управлять мультимедийными приложениями с помощью пульта дистанционного управления Xbox, Кортаны (особенно с использованием голосовых команд «Воспроизведение» и «Пауза») и Xbox SmartGlass. Чтобы получить эти функции бесплатно, ваше приложение должно использовать класс [SystemMediaTransportControls](https://msdn.microsoft.com/library/windows/apps/windows.media.systemmediatransportcontrols.aspx), который автоматически включается в элементы управления мультимедиа Xbox. Если ваше приложение содержит пользовательские элементы управления мультимедиа, обеспечьте интеграцию с классом **SystemMediaTransportControls** для предоставления пользователям этих возможностей. Если вы создаете приложение для воспроизведения музыки в фоновом режиме, обеспечьте интеграцию с классом **SystemMediaTransportControls**, чтобы элементы управления фоновой музыкой во вкладке многозадачности Xbox работали правильно.
+Пользователи Xbox хотят управлять мультимедийными приложениями с помощью пульта дистанционного управления Xbox, Кортаны (особенно с использованием голосовых команд «Воспроизведение» и «Пауза») и Xbox SmartGlass. Чтобы получить эти функции бесплатно, ваше приложение должно использовать класс [SystemMediaTransportControls](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols), который автоматически включается в элементы управления мультимедиа Xbox. Если ваше приложение содержит пользовательские элементы управления мультимедиа, обеспечьте интеграцию с классом **SystemMediaTransportControls** для предоставления пользователям этих возможностей. Если вы создаете приложение для воспроизведения музыки в фоновом режиме, обеспечьте интеграцию с классом **SystemMediaTransportControls**, чтобы элементы управления фоновой музыкой во вкладке многозадачности Xbox работали правильно.
 
 <!-- ### *Do:* Use adaptive UI to account for snapped apps
 One of the unique features of Xbox One is that users can snap apps such as Cortana next to any other app, so your app should respond gracefully when it runs in *fill mode*. Implement [adaptive UI](../get-started/universal-application-platform-guide.md#design-adaptive-ui-with-adaptive-panels) and make sure to test your app during development by snapping an app next to it. -->

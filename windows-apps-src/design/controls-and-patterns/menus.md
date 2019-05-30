@@ -3,8 +3,9 @@ Description: В меню и контекстных меню отображает
 title: Меню и контекстные меню
 label: Menus and context menus
 template: detail.hbs
-ms.date: 01/08/2019
+ms.date: 04/19/2019
 ms.topic: article
+ms.custom: RS5, 19H1
 keywords: windows 10, uwp
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
 pm-contact: yulikl
@@ -12,13 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.custom: RS5
-ms.openlocfilehash: d3ea8e2bff2455340a1183dbe5c1840fdb599d46
-ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
+ms.openlocfilehash: 10e91e8098f232d2875c802567674c9feacb2af9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59247192"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364620"
 ---
 # <a name="menus-and-context-menus"></a>Меню и контекстные меню
 
@@ -32,7 +32,7 @@ ms.locfileid: "59247192"
 
 | **API-интерфейсов платформы** | **Windows API-интерфейсов библиотеки пользовательского интерфейса** |
 | - | - |
-| [Класс MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [класс MenuBar](/uwp/api/windows.ui.xaml.controls.menubar), [свойство ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout свойство](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) | [Класс MenuBar](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [Класс MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [класс MenuBar](/uwp/api/windows.ui.xaml.controls.menubar), [свойство ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout свойство](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [Класс MenuBar](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -61,7 +61,7 @@ ms.locfileid: "59247192"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/MenuFlyout">открыть приложение и увидеть MenuFlyout в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -70,7 +70,7 @@ ms.locfileid: "59247192"
 
 ## <a name="menus-vs-context-menus"></a>Сравнение меню и контекстных меню
 
-Меню и контекстные меню схожи в том, как они выглядят и что они могут содержать. На самом деле, можно использовать тот же элемент управления [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030), для их создания. Разница заключается в том, как пользователю предоставляется возможность доступа к нему.
+Меню и контекстные меню схожи в том, как они выглядят и что они могут содержать. На самом деле, можно использовать тот же элемент управления [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout), для их создания. Разница заключается в том, как пользователю предоставляется возможность доступа к нему.
 
 Когда следует использовать меню или контекстное меню?
 
@@ -90,13 +90,13 @@ ms.locfileid: "59247192"
 - обладают одной точкой входа (например, меню "Файл" в верхней части экрана), которая отображается постоянно;
 - обычно прикреплены к кнопке или родительскому элементу меню;
 - вызываются левым щелчком мыши (или эквивалентным действием, например нажатием пальцем);
-- Связанные с элементом с помощью его [всплывающего меню](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) или [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) свойства, или сгруппированы в строке меню в верхней части окна приложения.
+- Связанные с элементом с помощью его [всплывающего меню](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) или [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) свойства, или сгруппированы в строке меню в верхней части окна приложения.
 
 ### <a name="context-menus"></a>Контекстные меню
 
 - Подключаются к одному элементу и отображают вспомогательные команды.
 - Вызываются правым щелчком мыши (или эквивалентным действием, например нажатием и удерживанием пальцем);
-- связаны с элементом посредством его свойства [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx).
+- связаны с элементом посредством его свойства [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout).
 
 ## <a name="icons"></a>Значки
 
@@ -140,7 +140,7 @@ ms.locfileid: "59247192"
 - [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)— переключение между элементами меню взаимоисключающими.
 - [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyoutseparator) — визуального разделения элементов меню.
 
-В этом примере создается [MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) и использует [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) свойства, свойства, доступные для большинства элементов управления, чтобы показать MenuFlyout в качестве контекстного меню.
+В этом примере создается [MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) и использует [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) свойства, свойства, доступные для большинства элементов управления, чтобы показать MenuFlyout в качестве контекстного меню.
 
 ````xaml
 <Rectangle
@@ -171,7 +171,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-Следующий пример почти идентичен, но вместо использования свойства [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) для отображения [класса MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) как контекстного меню в нем используется свойство [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) для его отображения как меню.
+Следующий пример почти идентичен, но вместо использования свойства [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) для отображения [класса MenuFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menuflyout) как контекстного меню в нем используется свойство [FlyoutBase.ShowAttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) для его отображения как меню.
 
 ````xaml
 <Rectangle
@@ -210,7 +210,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ### <a name="light-dismiss"></a>Индикатор отклонить
 
-Индикатор отклонить элементы управления, такие как меню, контекстные меню и другие всплывающие окна, ловушки фокус клавиатуры и игровой внутри переходной UI до закрытия. Для предоставления визуальной подсказки по этому поведению элементы управления с исчезновением на Xbox отображают наложение, затемняющее видимость вне области действия пользовательского интерфейса. Это поведение можно изменить с помощью свойства [LightDismissOverlayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx). По умолчанию переходных UI будет рисовать света отклонить наложения на Xbox (**автоматически**), но не других семейств устройств. Вы можете принудительно наложения для обеспечения постоянной **на** или всегда **Off**.
+Индикатор отклонить элементы управления, такие как меню, контекстные меню и другие всплывающие окна, ловушки фокус клавиатуры и игровой внутри переходной UI до закрытия. Для предоставления визуальной подсказки по этому поведению элементы управления с исчезновением на Xbox отображают наложение, затемняющее видимость вне области действия пользовательского интерфейса. Это поведение можно изменить с помощью свойства [LightDismissOverlayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode). По умолчанию переходных UI будет рисовать света отклонить наложения на Xbox (**автоматически**), но не других семейств устройств. Вы можете принудительно наложения для обеспечения постоянной **на** или всегда **Off**.
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode="Off" />
@@ -269,7 +269,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
 - [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
-- [Пример контекстного меню на XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
+- [Пример XAML контекстное меню](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
 
 ## <a name="related-articles"></a>Связанные статьи
 

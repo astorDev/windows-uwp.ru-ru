@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 ms.topic: article
 keywords: windows 10, uwp, карта, расположение, функция определения местоположения
 ms.localizationpriority: medium
-ms.openlocfilehash: b3582aa8ed406a25eb704f2f86f8ed272bea2c63
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7f57af61c13b6c8d9658b444bff83098cbbbac2c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627329"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371939"
 ---
 # <a name="get-the-users-location"></a>Получение местоположения пользователя
 
@@ -40,11 +40,11 @@ ms.locfileid: "57627329"
 ## <a name="get-the-current-location"></a>Получение текущего местоположения
 
 
-В этом разделе представлены сведения о том, как определить географическое положение пользователя с помощью API в пространстве имен [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603).
+В этом разделе представлены сведения о том, как определить географическое положение пользователя с помощью API в пространстве имен [**Windows.Devices.Geolocation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation).
 
 ### <a name="step-1-request-access-to-the-users-location"></a>Шаг 1. Запросить доступ к расположению пользователя
 
-Если приложение имеет возможности грубое расположения (см. Примечание), необходимо запросить доступ к расположению пользователя с помощью [ **RequestAccessAsync** ](https://msdn.microsoft.com/library/windows/apps/dn859152) метод, прежде чем пытаться получить доступ к расположению. Метод **RequestAccessAsync** необходимо вызвать из потока пользовательского интерфейса, а ваше приложение должно находиться на переднем плане. Приложение нельзя будет получить доступ к сведения о расположении пользователя, пока пользователь предоставляет разрешение на приложение.\*
+Если приложение имеет возможности грубое расположения (см. Примечание), необходимо запросить доступ к расположению пользователя с помощью [ **RequestAccessAsync** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) метод, прежде чем пытаться получить доступ к расположению. Метод **RequestAccessAsync** необходимо вызвать из потока пользовательского интерфейса, а ваше приложение должно находиться на переднем плане. Приложение нельзя будет получить доступ к сведения о расположении пользователя, пока пользователь предоставляет разрешение на приложение.\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -54,13 +54,13 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 
 
-Метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) запрашивает у пользователя разрешение на доступ к данным о местоположении. Каждое приложение запрашивает у пользователя доступ только один раз. После того как пользователь в первый раз предоставил или запретил доступ, этот метод больше не запрашивает его у пользователя. Чтобы помочь пользователю изменять разрешения на доступ к данным о местоположении после первоначального решения, рекомендуется предоставить ссылку на параметры местоположения, как показано далее в этом разделе.
+Метод [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) запрашивает у пользователя разрешение на доступ к данным о местоположении. Каждое приложение запрашивает у пользователя доступ только один раз. После того как пользователь в первый раз предоставил или запретил доступ, этот метод больше не запрашивает его у пользователя. Чтобы помочь пользователю изменять разрешения на доступ к данным о местоположении после первоначального решения, рекомендуется предоставить ссылку на параметры местоположения, как показано далее в этом разделе.
 
->Примечание.  Возможность грубое расположения позволяет приложению получить опции намеренно скрытый (неточный) без получения явного разрешения пользователя (параметр расположение всей системы должен по-прежнему быть **на**, но при этом). Чтобы узнать, как использовать грубое расположение в приложении, см. в разделе [ **AllowFallbackToConsentlessPositions** ](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) метод в [ **Geolocator** ](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx)класса.
+>Примечание.  Возможность грубое расположения позволяет приложению получить опции намеренно скрытый (неточный) без получения явного разрешения пользователя (параметр расположение всей системы должен по-прежнему быть **на**, но при этом). Чтобы узнать, как использовать грубое расположение в приложении, см. в разделе [ **AllowFallbackToConsentlessPositions** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions) метод в [ **Geolocator** ](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator)класса.
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>Шаг 2. Получить из местоположения пользователя и выполнить регистрацию для изменений в разрешения расположения
 
-Метод [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) выполняет однократное считывание текущего местоположения. В этом примере оператор **switch** используется с **accessStatus** (из предыдущего примера), за счет чего действует, только когда доступ к сведениям о местоположении пользователя разрешен. Если доступ к местоположению пользователя разрешен, код создает объект [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534), регистрирует изменения в разрешениях на доступ к данным о местоположении и запрашивает местоположение пользователя.
+Метод [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) выполняет однократное считывание текущего местоположения. В этом примере оператор **switch** используется с **accessStatus** (из предыдущего примера), за счет чего действует, только когда доступ к сведениям о местоположении пользователя разрешен. Если доступ к местоположению пользователя разрешен, код создает объект [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator), регистрирует изменения в разрешениях на доступ к данным о местоположении и запрашивает местоположение пользователя.
 
 ```csharp
 switch (accessStatus)
@@ -96,7 +96,7 @@ switch (accessStatus)
 
 ### <a name="step-3-handle-changes-in-location-permissions"></a>Шаг 3. Обрабатывать изменения в разрешения расположения
 
-Объект [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) запускает событие [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) для указания того, что местоположение пользователя изменилось. Это событие передает данные о соответствующем состоянии через свойство аргумента **Status** (типа [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599)). Обратите внимание, что этот метод не вызывается из потока пользовательского интерфейса и объект [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) фактически вызывает изменения пользовательского интерфейса.
+Объект [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) запускает событие [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) для указания того, что местоположение пользователя изменилось. Это событие передает данные о соответствующем состоянии через свойство аргумента **Status** (типа [**PositionStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.PositionStatus)). Обратите внимание, что этот метод не вызывается из потока пользовательского интерфейса и объект [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) фактически вызывает изменения пользовательского интерфейса.
 
 ```csharp
 using Windows.UI.Core;
@@ -165,18 +165,18 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
 ## <a name="respond-to-location-updates"></a>Реакция на изменение местоположения
 
 
-В этом разделе описывается, как использовать событие [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540), чтобы получать обновления данных о местоположении пользователя в течение времени. Поскольку пользователь может в любое время отменить доступ к сведениям о местоположении, важно вызывать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) и использовать событие [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542), как указано в предыдущем разделе.
+В этом разделе описывается, как использовать событие [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged), чтобы получать обновления данных о местоположении пользователя в течение времени. Поскольку пользователь может в любое время отменить доступ к сведениям о местоположении, важно вызывать [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) и использовать событие [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged), как указано в предыдущем разделе.
 
-В этом разделе предполагается, что вы уже включили определение местоположения и вызвали [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) из потока пользовательского интерфейса вашего приложения, выполняющегося на переднем плане.
+В этом разделе предполагается, что вы уже включили определение местоположения и вызвали [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) из потока пользовательского интерфейса вашего приложения, выполняющегося на переднем плане.
 
 ### <a name="step-1-define-the-report-interval-and-register-for-location-updates"></a>Шаг 1. Определить интервал между отчетами и зарегистрировать для получения обновлений расположений
 
-В этом примере оператор **switch** используется с **accessStatus** (из предыдущего примера), за счет чего действует, только когда доступ к сведениям о местоположении пользователя разрешен. Если доступ к местоположению пользователя разрешен, код создает объект [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534), указывающий тип отслеживания, и регистрируется для обновления данных о местоположении.
+В этом примере оператор **switch** используется с **accessStatus** (из предыдущего примера), за счет чего действует, только когда доступ к сведениям о местоположении пользователя разрешен. Если доступ к местоположению пользователя разрешен, код создает объект [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator), указывающий тип отслеживания, и регистрируется для обновления данных о местоположении.
 
-Объект [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) может инициировать событие [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) на основе изменения положения (отслеживание на основе расстояния) или времени (периодическое отслеживание).
+Объект [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) может инициировать событие [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) на основе изменения положения (отслеживание на основе расстояния) или времени (периодическое отслеживание).
 
--   Для отслеживания на основе расстояния задайте свойство [**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539).
--   Для периодического отслеживания задайте свойство [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541).
+-   Для отслеживания на основе расстояния задайте свойство [**MovementThreshold**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.movementthreshold).
+-   Для периодического отслеживания задайте свойство [**ReportInterval**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.reportinterval).
 
 Если не задано ни одно, ни другое свойство, положение будет возвращаться каждую секунду (эквивалентно `ReportInterval = 1000`). Здесь используется интервал отчетов, равный 2 секундам (`ReportInterval = 2000`).
 ```csharp
@@ -216,7 +216,7 @@ switch (accessStatus)
 
 ### <a name="step-2-handle-location-updates"></a>Шаг 2. Обработка обновлений расположение
 
-Объект [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) инициирует событие [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) для указания, что местоположение пользователя изменилось или прошло время, в зависимости от настроек. Это событие передает данные о соответствующем местоположении через свойство аргумента **Position** (типа [**Geoposition**](https://msdn.microsoft.com/library/windows/apps/br225543)). В этом примере показано, что метод не вызывается из потока пользовательского интерфейса и объект [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) фактически вызывает изменения пользовательского интерфейса.
+Объект [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) инициирует событие [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) для указания, что местоположение пользователя изменилось или прошло время, в зависимости от настроек. Это событие передает данные о соответствующем местоположении через свойство аргумента **Position** (типа [**Geoposition**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geoposition)). В этом примере показано, что метод не вызывается из потока пользовательского интерфейса и объект [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) фактически вызывает изменения пользовательского интерфейса.
 
 ```csharp
 using Windows.UI.Core;
@@ -248,7 +248,7 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 </TextBlock>
 ```
 
-Ваше приложение также может вызвать метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476), чтобы запустить приложение **Параметры** из кода. Дополнительные сведения см. в разделе [Запуск приложения "Параметры" в Windows](https://msdn.microsoft.com/library/windows/apps/mt228342).
+Ваше приложение также может вызвать метод [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync), чтобы запустить приложение **Параметры** из кода. Дополнительные сведения см. в разделе [Запуск приложения "Параметры" в Windows](https://docs.microsoft.com/windows/uwp/launch-resume/launch-settings-app).
 
 ```csharp
 using Windows.System;
@@ -265,8 +265,8 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 -   Параметр **Местоположение** служб определения местоположения **включен**
 -   В разделе **Выберите приложения, которым будет разрешено использовать данные о вашем местоположении** для вашего приложения установлено значение **Вкл.**
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Пример определения географического положения UWP](https://go.microsoft.com/fwlink/p/?linkid=533278)
-* [Рекомендации по проектированию для географическое зонирование](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [Рекомендации по разработке приложений, учитывающих данные о расположении](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [Рекомендации по проектированию для географическое зонирование](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
+* [Рекомендации по разработке приложений, учитывающих данные о расположении](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)

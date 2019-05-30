@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c12acd2148c8c85d69354a71c016d7a7230e590b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 07707160846f3d63c7d0c097fb7b84def08be9e7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605459"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366693"
 ---
 # <a name="drag-animations"></a>Анимации перетаскивания
 
@@ -22,7 +22,7 @@ ms.locfileid: "57605459"
 
 Используйте анимацию перетаскивания, когда пользователь перемещает объекты, например передвигает элемент в списке или размещает один элемент выше другого.
 
-> **Важные API**: [**Класс DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
+> **Важные API**: [**Класс DragItemThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation.)
 
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
@@ -57,12 +57,12 @@ ms.locfileid: "57605459"
 ## <a name="related-articles"></a>Связанные статьи
 
 **Для разработчиков**
-* [Общие сведения об анимации](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Анимация и перетащите последовательностей](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
-* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**Класс DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
-* [**Класс DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243186)
-* [**Класс DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243180)
+* [Общие сведения об анимации](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Анимация и перетащите последовательностей](https://docs.microsoft.com/previous-versions/windows/apps/jj649427(v=win.10))
+* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**Класс DragItemThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation.)
+* [**Класс DropTargetItemThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.droptargetitemthemeanimation.)
+* [**Класс DragOverThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation.)
 
 
  

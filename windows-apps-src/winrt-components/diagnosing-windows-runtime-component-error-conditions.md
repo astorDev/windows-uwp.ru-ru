@@ -6,26 +6,26 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4733edba06b7042c436918e882556f86dfa00071
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 72a7a7d4bbe6987781c538a7276bf3942f10cf5b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646569"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372207"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>Диагностика состояний ошибки компонентов среды выполнения Windows
 
 
 
 
-В этой статье приведены дополнительные сведения об ограничениях, которые применяются к компонентам среды выполнения Windows, написанным с использованием управляемого кода. Эти сведения расширяют информацию, которая предоставляется в сообщениях об ошибке, отправляемых средством [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx), и дополняют сведения об ограничениях, представленные в разделе [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+В этой статье приведены дополнительные сведения об ограничениях, которые применяются к компонентам среды выполнения Windows, написанным с использованием управляемого кода. Эти сведения расширяют информацию, которая предоставляется в сообщениях об ошибке, отправляемых средством [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool), и дополняют сведения об ограничениях, представленные в разделе [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 Эта статья не охватывает все ошибки. Описанные здесь ошибки группируются по общим категориям, а каждая категория содержит таблицу связанных сообщений об ошибках. Выполняйте поиск текста сообщения (опустив конкретные значения, заменяемые заполнителями) или номера сообщения. Если вам не удается найти здесь необходимую информацию, помогите нам улучшить качество документации, отправив отзыв с помощью кнопки в конце этой статьи. Включите в отзыв сообщение об ошибке. Кроме того, вы можете зарегистрировать ошибку на веб-сайте Microsoft Connect.
 
 ## <a name="error-message-for-implementing-async-interface-provides-incorrect-type"></a>При реализации асинхронного интерфейса сообщение об ошибке содержит неверный тип
 
 
-Управляемые компоненты среды выполнения Windows не могут реализовывать интерфейсы универсальной платформы Windows (UWP), представляющие асинхронные действия или операции ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx) или [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). Вместо этого в .NET Framework есть класс [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) для создания асинхронных операций в компонентах среды выполнения Windows. В сообщении об ошибке, отображаемом в Winmdexp.exe при попытке реализовать асинхронный интерфейс, по ошибке указывается прежнее имя класса — AsyncInfoFactory. Платформа .NET Framework больше не содержит класс AsyncInfoFactory.
+Управляемые компоненты среды выполнения Windows не могут реализовывать интерфейсы универсальной платформы Windows (UWP), представляющие асинхронные действия или операции ([IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction), [IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions//br205784(v=vs.85)), [IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_) или [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)). Вместо этого в .NET Framework есть класс [AsyncInfo](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN) для создания асинхронных операций в компонентах среды выполнения Windows. В сообщении об ошибке, отображаемом в Winmdexp.exe при попытке реализовать асинхронный интерфейс, по ошибке указывается прежнее имя класса — AsyncInfoFactory. Платформа .NET Framework больше не содержит класс AsyncInfoFactory.
 
 | Номер ошибки | Текст сообщения|       
 |--------------|-------------|
@@ -124,13 +124,13 @@ ms.locfileid: "57646569"
 
 Открытый интерфейс компонента должен предоставлять только типы UWP. Однако платформа .NET Framework предоставляет сопоставления для нескольких часто используемых типов, незначительно отличающихся в .NET Framework и UWP. Это позволяет разработчикам .NET Framework работать со знакомыми типами вместо изучения новых. Вы можете использовать эти сопоставленные типы .NET Framework в открытом интерфейсе компонента. Ознакомьтесь с подразделами «Объявление типов в компонентах среды выполнения Windows» и «Передача типов универсальной платформы Windows в управляемый код» в разделах [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)и [Сопоставление типов .NET Framework с типами среды выполнения Windows](net-framework-mappings-of-windows-runtime-types.md).
 
-Многие из этих сопоставлений являются интерфейсами. Например, интерфейс [IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) соответствует интерфейсу UPW [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx). При использовании List&lt;string&gt; (`List(Of String)` в Visual Basic) вместо IList&lt;string&gt; в качестве типа параметра Winmdexp.exe предоставляет список альтернативных вариантов, который включает все сопоставленные интерфейсы, реализованные типом List&lt;T&gt;. При использовании вложенных универсальных типов, таких как List&lt;Dictionary&lt;int, string&gt;&gt; (List(Of Dictionary(Of Integer, String)) в Visual Basic), Winmdexp.exe предлагает варианты для каждого уровня вложения. Эти списки могут быть довольно длинными.
+Многие из этих сопоставлений являются интерфейсами. Например, интерфейс [IList&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1?redirectedfrom=MSDN) соответствует интерфейсу UPW [IVector&lt;T&gt;](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVector_T_). При использовании List&lt;string&gt; (`List(Of String)` в Visual Basic) вместо IList&lt;string&gt; в качестве типа параметра Winmdexp.exe предоставляет список альтернативных вариантов, который включает все сопоставленные интерфейсы, реализованные типом List&lt;T&gt;. При использовании вложенных универсальных типов, таких как List&lt;Dictionary&lt;int, string&gt;&gt; (List(Of Dictionary(Of Integer, String)) в Visual Basic), Winmdexp.exe предлагает варианты для каждого уровня вложения. Эти списки могут быть довольно длинными.
 
 Как правило, наиболее подходящим является ближайший к типу интерфейс. Например, для Dictionary&lt;int, string&gt; самым подходящим, вероятнее всего, является интерфейс IDictionary&lt;int, string&gt;.
 
 > **Важные**  JavaScript используется интерфейс, занимающий первую позицию в список интерфейсов, реализуемых управляемым типом. Например, если в код JavaScript возвращается тип Dictionary&lt;int, string&gt;, он отображается как IDictionary&lt;int, string&gt; независимо от того, какой интерфейс указан в качестве типа возвращаемого значения. Это означает, что если первый интерфейс не включает член, который отображается в последующих интерфейсах, этот член не будет видимым в JavaScript.
 
-> **Внимание**  Избегайте использования неуниверсального [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) и [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) интерфейсы, если компонент будет использоваться в коде JavaScript. Эти интерфейсы сопоставляются с [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) и [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx), соответственно. Они поддерживают привязку для элементов управления XAML и невидимы в коде JavaScript. JavaScript выдает ошибку во время выполнения «Не удается вызвать функцию 'X', так как ее подпись недопустима».
+> **Внимание**  Избегайте использования неуниверсального [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN) и [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable?redirectedfrom=MSDN) интерфейсы, если компонент будет использоваться в коде JavaScript. Эти интерфейсы сопоставляются с [IBindableVector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindablevector) и [IBindableIterator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.interop.ibindableiterator), соответственно. Они поддерживают привязку для элементов управления XAML и невидимы в коде JavaScript. JavaScript выдает ошибку во время выполнения «Не удается вызвать функцию 'X', так как ее подпись недопустима».
 
  
 
@@ -200,7 +200,7 @@ ms.locfileid: "57646569"
 ## <a name="array-parameters-must-specify-whether-array-contents-are-readable-or-writable"></a>Параметры массива должны определять, доступно ли содержимое массива для чтения или записи
 
 
-В UWP параметры должны быть доступны только для чтения или только для записи. Параметры нельзя пометить модификатором **ref** (**ByRef** без атрибута [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) в Visual Basic). Это относится к содержимому массивов, поэтому параметры массивов должны указывать, доступно ли содержимое массива только для чтения или только для записи. Направление четко определено для параметров **out** (параметр **ByRef** с атрибутом OutAttribute в Visual Basic), но параметры массивов, передаваемые по значению (ByVal в Visual Basic), должны быть помечены. Ознакомьтесь с разделом [Передача массивов в компонент среды выполнения Windows](passing-arrays-to-a-windows-runtime-component.md).
+В UWP параметры должны быть доступны только для чтения или только для записи. Параметры нельзя пометить модификатором **ref** (**ByRef** без атрибута [OutAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.outattribute?redirectedfrom=MSDN) в Visual Basic). Это относится к содержимому массивов, поэтому параметры массивов должны указывать, доступно ли содержимое массива только для чтения или только для записи. Направление четко определено для параметров **out** (параметр **ByRef** с атрибутом OutAttribute в Visual Basic), но параметры массивов, передаваемые по значению (ByVal в Visual Basic), должны быть помечены. Ознакомьтесь с разделом [Передача массивов в компонент среды выполнения Windows](passing-arrays-to-a-windows-runtime-component.md).
 
 | Номер ошибки | Текст сообщения         |
 |--------------|----------------------|
@@ -238,7 +238,7 @@ ms.locfileid: "57646569"
 
 > **Примечание**  Если изменить имя возвращаемого значения, а новое имя конфликтует с именем другого параметра, возникает ошибка WME1091.
 
-Код JavaScript может получить доступ к выходным параметрам метода (в том числе к возвращаемому значению) по имени. Пример можно найти в описании атрибута [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx).
+Код JavaScript может получить доступ к выходным параметрам метода (в том числе к возвращаемому значению) по имени. Пример можно найти в описании атрибута [ReturnValueNameAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.returnvaluenameattribute?redirectedfrom=MSDN).
 
 | Номер ошибки | Текст сообщения |
 |--------------|--------------|
@@ -248,7 +248,7 @@ ms.locfileid: "57646569"
 **Примечание**  имя по умолчанию — «returnValue» для доступа к свойствам и «value» для всех других методов.
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Winmdexp.exe (средство экспорта метаданных среды выполнения Windows)](https://msdn.microsoft.com/library/hh925576.aspx)
+* [Winmdexp.exe (средство экспорта метаданных среды выполнения Windows)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool)

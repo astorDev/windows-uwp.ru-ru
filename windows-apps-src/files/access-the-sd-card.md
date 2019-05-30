@@ -6,12 +6,12 @@ ms.date: 03/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sd card, storage
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef97ed489f2dc35aece83821633a583dfba77e2
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
-ms.translationtype: HT
+ms.openlocfilehash: 4573e0959cf9d4af9b3cef8ffbbce14847a9e521
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63800228"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369496"
 ---
 # <a name="access-the-sd-card"></a>Доступ к SD-карте
 
@@ -23,7 +23,7 @@ ms.locfileid: "63800228"
 
 Для сохранения файлов и доступа к файлам на дополнительной SD-карте используются следующие методы.
 - Средства выбора файлов.
-- Интерфейсы API [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346).
+- Интерфейсы API [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage).
 
 ## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>Доступные и недоступные объекты на SD-карте
 
@@ -36,7 +36,7 @@ ms.locfileid: "63800228"
 
 - Приложение не видит системные папки и содержащиеся в них файлы и не может к ним обращаться.
 - Приложение не может видеть файлы, помеченные атрибутом "Скрытый". Обычно атрибут "Скрытый" снижает риск случайного удаления данных.
-- Приложение не видит библиотеку документов и не может обращаться к ней с помощью свойства [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152). Однако доступ к библиотеке документов на SD-карте можно получить, выполнив проход по файловой системе.
+- Приложение не видит библиотеку документов и не может обращаться к ней с помощью свойства [**KnownFolders.DocumentsLibrary**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.documentslibrary). Однако доступ к библиотеке документов на SD-карте можно получить, выполнив проход по файловой системе.
 
 ## <a name="security-and-privacy-considerations"></a>Вопросы безопасности и конфиденциальности
 
@@ -45,7 +45,7 @@ ms.locfileid: "63800228"
 - Пока SD-карта находится в устройстве, файлы доступны другим приложениям, в которых зарегистрирована обработка файлов такого типа.
 - Когда SD-карта удаляется из устройства и открывается с компьютера, файлы отображаются в проводнике и доступны другим приложениям.
 
-Когда установленное на SD-карте приложение сохраняет файлы в свою папку [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621), эти файлы шифруются и становятся недоступны другим приложениям.
+Когда установленное на SD-карте приложение сохраняет файлы в свою папку [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder), эти файлы шифруются и становятся недоступны другим приложениям.
 
 ## <a name="requirements-for-accessing-files-on-the-sd-card"></a>Требования для доступа к файлам на SD-карте
 
@@ -62,9 +62,9 @@ ms.locfileid: "63800228"
 
 ### <a name="getting-a-reference-to-the-sd-card"></a>Получение ссылки на SD-карту
 
-Папка [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) служит логическим корнем [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) для набора съемных устройств, которые подключены к устройству в данный момент. Если присутствует SD-карта, то первая (и единственная) подпапка **StorageFolder** в папке **KnownFolders.RemovableDevices** представляет эту SD-карту.
+Папка [**KnownFolders.RemovableDevices**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) служит логическим корнем [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) для набора съемных устройств, которые подключены к устройству в данный момент. Если присутствует SD-карта, то первая (и единственная) подпапка **StorageFolder** в папке **KnownFolders.RemovableDevices** представляет эту SD-карту.
 
-Чтобы определить наличие SD-карты и получить ссылку на нее в виде объекта [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230), используйте код следующего вида.
+Чтобы определить наличие SD-карты и получить ссылку на нее в виде объекта [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder), используйте код следующего вида.
 
 ```csharp
 using Windows.Storage;
@@ -90,16 +90,16 @@ else
 
 ### <a name="querying-the-contents-of-the-sd-card"></a>Запрос содержимого SD-карты
 
-SD-карта может содержать множество папок и файлов, которые не распознаются системой как известные папки и которые нельзя запрашивать по расположению из [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151). Для поиска файлов приложение должно перечислить содержимое карты, выполнив рекурсивный проход по файловой системе. Используйте запросы [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) и [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) для эффективного получения содержимого SD-карты.
+SD-карта может содержать множество папок и файлов, которые не распознаются системой как известные папки и которые нельзя запрашивать по расположению из [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders). Для поиска файлов приложение должно перечислить содержимое карты, выполнив рекурсивный проход по файловой системе. Используйте запросы [**GetFilesAsync (CommonFileQuery.DefaultQuery)** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) и [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync) для эффективного получения содержимого SD-карты.
 
 Рекомендуется выполнять просмотр SD-карты с помощью фонового потока. SD-карта может содержать много гигабайт данных.
 
 Приложение также может запросить пользователя выбрать определенные папки с помощью средства выбора папок.
 
-При получении доступа к файловой системе на SD-карте по пути, который вы получили из свойства [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158), следующие методы работают следующим образом.
+При получении доступа к файловой системе на SD-карте по пути, который вы получили из свойства [**KnownFolders.RemovableDevices**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices), следующие методы работают следующим образом.
 
--   Метод [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) возвращает объединение расширений файлов, зарегистрированных для обработки, и расширений файлов, связанных с любыми указанными возможностями библиотеки мультимедиа.
--   Если вы не выполнили регистрацию для обработки расширений файлов, к которым вы пытаетесь получить доступ, происходит сбой метода [**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206).
+-   Метод [**GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) возвращает объединение расширений файлов, зарегистрированных для обработки, и расширений файлов, связанных с любыми указанными возможностями библиотеки мультимедиа.
+-   Если вы не выполнили регистрацию для обработки расширений файлов, к которым вы пытаетесь получить доступ, происходит сбой метода [**GetFileFromPathAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync).
 
 ## <a name="identifying-the-individual-sd-card"></a>Определение отдельной SD-карты
 
