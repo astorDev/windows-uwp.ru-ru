@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ff4e7d01d907112558993f52c8a214c91f7d499
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0aac8f82f4dd6a40f5672af8c000905cfa9c747e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610459"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365641"
 ---
 # <a name="keyboard-events"></a>События клавиатуры
 
@@ -27,21 +27,21 @@ ms.locfileid: "57610459"
 
 | Событие                                      | Описание                    |
 |--------------------------------------------|--------------------------------|
-| [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) | Происходит, когда клавиша нажата.  |
-| [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)     | Происходит, когда клавиша отпущена. |
+| [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) | Происходит, когда клавиша нажата.  |
+| [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)     | Происходит, когда клавиша отпущена. |
 
 > [!IMPORTANT]
-> Некоторые элементы управления среды выполнения Windows обрабатывают события ввода внутренне. В этом случае может показаться, что событие ввода не происходит, поскольку прослушиватель событий не вызывает связанный обработчик. Обычно это подмножество клавиш обрабатывается обработчиком классов для обеспечения встроенной поддержки базовых специальных возможностей клавиатуры. Например, класс [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) переопределяет события [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) для клавиш ПРОБЕЛ и ВВОД (а также [**OnPointerPressed**](https://msdn.microsoft.com/library/windows/apps/hh967989)) и перенаправляет их в событие [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) элемента управления. Если нажатие клавиши обрабатывается классом элемента управления, события [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) и [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) не вызываются.  
-> Это предоставляет эквивалентную встроенную клавиатуру для вызова кнопки, что похоже на касание пальцем или щелчок мышью. Клавиши, отличные от клавиш ПРОБЕЛ и ВВОД, вызывают события [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) и [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942). Дополнительные сведения об обработке событий на базе класса можно найти в статье [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584) (в частности, в разделе "Обработчики событий ввода в элементах управления").
+> Некоторые элементы управления среды выполнения Windows обрабатывают события ввода внутренне. В этом случае может показаться, что событие ввода не происходит, поскольку прослушиватель событий не вызывает связанный обработчик. Обычно это подмножество клавиш обрабатывается обработчиком классов для обеспечения встроенной поддержки базовых специальных возможностей клавиатуры. Например, класс [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) переопределяет события [**OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown) для клавиш ПРОБЕЛ и ВВОД (а также [**OnPointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onpointerpressed)) и перенаправляет их в событие [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) элемента управления. Если нажатие клавиши обрабатывается классом элемента управления, события [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) и [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) не вызываются.  
+> Это предоставляет эквивалентную встроенную клавиатуру для вызова кнопки, что похоже на касание пальцем или щелчок мышью. Клавиши, отличные от клавиш ПРОБЕЛ и ВВОД, вызывают события [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) и [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup). Дополнительные сведения об обработке событий на базе класса можно найти в статье [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview) (в частности, в разделе "Обработчики событий ввода в элементах управления").
 
 
 Элементы пользовательского интерфейса создают события клавиатуры только после получения фокуса ввода. Отдельный элемент управления получает фокус, когда пользователь щелкает этот элемент или касается его непосредственно в макете либо переходит на него с помощью клавиши Tab по последовательности табуляции в пределах области размещения содержимого.
 
-Также можно принудительно установить фокус, вызвав метод [**Focus**](https://msdn.microsoft.com/library/windows/apps/hh702161) элемента управления. Это необходимо при реализации сочетаний клавиш, поскольку по умолчанию фокус клавиатуры не устанавливается при загрузке пользовательского интерфейса. Дополнительные сведения см. в разделе **Пример использования сочетания клавиш** далее в этой теме.
+Также можно принудительно установить фокус, вызвав метод [**Focus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.focus) элемента управления. Это необходимо при реализации сочетаний клавиш, поскольку по умолчанию фокус клавиатуры не устанавливается при загрузке пользовательского интерфейса. Дополнительные сведения см. в разделе **Пример использования сочетания клавиш** далее в этой теме.
 
-Для того чтобы элемент управления получил фокус, он должен быть включенным, видимым, а его свойства [**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/br209422) и [**HitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) должны иметь значение **true**. Для большинства элементов управления это состояние по умолчанию. При наличии у элемента управления фокуса ввода он может вызывать события клавиатурного ввода и реагировать на них, как описано далее в этой теме. Также вы можете реагировать на получение или потерю фокуса элементом управления, обрабатывая события [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) и [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943).
+Для того чтобы элемент управления получил фокус, он должен быть включенным, видимым, а его свойства [**IsTabStop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istabstop) и [**HitTestVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.ishittestvisible) должны иметь значение **true**. Для большинства элементов управления это состояние по умолчанию. При наличии у элемента управления фокуса ввода он может вызывать события клавиатурного ввода и реагировать на них, как описано далее в этой теме. Также вы можете реагировать на получение или потерю фокуса элементом управления, обрабатывая события [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) и [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus).
 
-По умолчанию последовательность табуляции для элементов управления аналогична порядку, в котором они указаны в XAML (Extensible Application Markup Language). Однако этот порядок можно изменить с помощью свойства [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461). Дополнительные сведения см. в разделе [Реализация специальных возможностей клавиатуры](https://msdn.microsoft.com/library/windows/apps/hh868161).
+По умолчанию последовательность табуляции для элементов управления аналогична порядку, в котором они указаны в XAML (Extensible Application Markup Language). Однако этот порядок можно изменить с помощью свойства [**TabIndex**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.tabindex). Дополнительные сведения см. в разделе [Реализация специальных возможностей клавиатуры](https://docs.microsoft.com/previous-versions/windows/apps/hh868161(v=win.10)).
 
 ## <a name="keyboard-event-handlers"></a>Обработчики событий клавиатуры
 
@@ -49,12 +49,12 @@ ms.locfileid: "57610459"
 Обработчик событий ввода реализует делегат, который предоставляет следующие сведения:
 
 -   Отправитель события. Отправитель сообщает, к какому объекту присоединен обработчик событий.
--   Данные события. Для событий клавиатуры эти данные представляют собой экземпляр [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072). Делегатом для обработчиков является [**KeyEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227904). Наиболее значимыми свойствами **KeyRoutedEventArgs** в большинстве сценариев использования обработчиков являются [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) и, возможно, [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075).
--   [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810). Поскольку события клавиатуры являются перенаправленными событиями, данные события включают **OriginalSource**. Если вы намеренно разрешаете восходящую маршрутизацию событий в дереве объектов, проблемы более вероятны с **OriginalSource**, а не с отправителем. Однако это зависит от разработки. Дополнительные сведения о возможности использования **OriginalSource** вместо отправителя см. в разделе "Перенаправленные события клавиатуры" этой статьи или в статье [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584).
+-   Данные события. Для событий клавиатуры эти данные представляют собой экземпляр [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs). Делегатом для обработчиков является [**KeyEventHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyeventhandler). Наиболее значимыми свойствами **KeyRoutedEventArgs** в большинстве сценариев использования обработчиков являются [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) и, возможно, [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus).
+-   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource). Поскольку события клавиатуры являются перенаправленными событиями, данные события включают **OriginalSource**. Если вы намеренно разрешаете восходящую маршрутизацию событий в дереве объектов, проблемы более вероятны с **OriginalSource**, а не с отправителем. Однако это зависит от разработки. Дополнительные сведения о возможности использования **OriginalSource** вместо отправителя см. в разделе "Перенаправленные события клавиатуры" этой статьи или в статье [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 ### <a name="attaching-a-keyboard-event-handler"></a>Присоединение обработчика событий клавиатуры
 
-Функции обработчика событий клавиатуры можно прикрепить к любому объекту, включающему это событие в качестве члена. К таким объектам относятся и любые производные классы [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). В следующем примере XAML показано, как присоединять обработчики для события [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) элемента [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704).
+Функции обработчика событий клавиатуры можно прикрепить к любому объекту, включающему это событие в качестве члена. К таким объектам относятся и любые производные классы [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement). В следующем примере XAML показано, как присоединять обработчики для события [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) элемента [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid).
 
 ```xaml
 <Grid KeyUp="Grid_KeyUp">
@@ -62,11 +62,11 @@ ms.locfileid: "57610459"
 </Grid>
 ```
 
-Кроме того, обработчик событий можно прикрепить и в коде. Дополнительные сведения см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584).
+Кроме того, обработчик событий можно прикрепить и в коде. Дополнительные сведения см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 ### <a name="defining-a-keyboard-event-handler"></a>Определение обработчика событий клавиатуры
 
-В следующем примере показано неполное определение обработчика событий [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942), прикрепленного в предыдущем примере.
+В следующем примере показано неполное определение обработчика событий [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup), прикрепленного в предыдущем примере.
 
 ```csharp
 void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
@@ -92,22 +92,22 @@ void MyProject::MainPage::Grid_KeyUp(
 
 ### <a name="using-keyroutedeventargs"></a>Использование KeyRoutedEventArgs
 
-Все события клавиатуры используют [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) для указания данных события. Объект **KeyRoutedEventArgs** содержит следующие свойства.
+Все события клавиатуры используют [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) для указания данных события. Объект **KeyRoutedEventArgs** содержит следующие свойства.
 
--   [**Ключ**](https://msdn.microsoft.com/library/windows/apps/hh943074)
--   [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075)
--   [**Обработано**](https://msdn.microsoft.com/library/windows/apps/hh943073)
--   [**OriginalSource** ](https://msdn.microsoft.com/library/windows/apps/br208810) (наследуется от [ **RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809))
+-   [**Ключ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+-   [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
+-   [**Обработано**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
+-   [**OriginalSource** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (наследуется от [ **RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
 
-### <a name="key"></a>Раздел
+### <a name="key"></a>Ключ
 
-Событие [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) создается, когда нажата клавиша. Подобным образом событие [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) создается, когда клавиша отпущена. Обычно прослушивание событий выполняется для обработки определенного значения клавиши. Чтобы определить, какая клавиша нажата или отпущена, проверьте значение [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) в данных события. **Key** возвращает значение [**VirtualKey**](https://msdn.microsoft.com/library/windows/apps/br241812). Перечисление **VirtualKey** содержит все поддерживаемые клавиши.
+Событие [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) создается, когда нажата клавиша. Подобным образом событие [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) создается, когда клавиша отпущена. Обычно прослушивание событий выполняется для обработки определенного значения клавиши. Чтобы определить, какая клавиша нажата или отпущена, проверьте значение [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) в данных события. **Key** возвращает значение [**VirtualKey**](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKey). Перечисление **VirtualKey** содержит все поддерживаемые клавиши.
 
 ### <a name="modifier-keys"></a>Клавиши-модификаторы
 
 Клавиши-модификаторы — это такие клавиши, как CTRL или SHIFT, которые пользователи обычно нажимают в сочетании с другими клавишами. В вашем приложении такие сочетания могут использоваться для вызова различных команд.
 
-Чтобы обнаружить сочетание клавиш, используйте код в обработчиках событий [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) и [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942). Затем вы можете отследить, какие из интересующих вас клавиш-модификаторов нажаты. Если событие клавиатуры связано не с клавишей-модификатором, можно проверить, не нажата ли одновременно клавиша-модификатор.
+Чтобы обнаружить сочетание клавиш, используйте код в обработчиках событий [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) и [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup). Затем вы можете отследить, какие из интересующих вас клавиш-модификаторов нажаты. Если событие клавиатуры связано не с клавишей-модификатором, можно проверить, не нажата ли одновременно клавиша-модификатор.
 
 > [!NOTE]
 > Клавиша ALT представлена значением **VirtualKey.Menu**.
@@ -117,7 +117,7 @@ void MyProject::MainPage::Grid_KeyUp(
 ### <a name="shortcut-keys-example"></a>Пример использования сочетаний клавиш
 
 
-В следующем примере показано, как реализовать сочетания клавиш. В этом примере пользователь может управлять воспроизведением мультимедиа с помощью кнопок "Воспроизведение", "Пауза" или "Остановка" либо клавиш Ctrl+P, Ctrl+A и Ctrl+S. XAML-код кнопки отображает сочетания клавиш с помощью всплывающих подсказок и свойств [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081) в подписях кнопок. Такое самодокументирование важно для повышения удобства вашего приложения и его доступности для людей с ограниченными возможностями. Дополнительную информацию см. в статье [Специальные возможности клавиатуры](https://msdn.microsoft.com/library/windows/apps/mt244347).
+В следующем примере показано, как реализовать сочетания клавиш. В этом примере пользователь может управлять воспроизведением мультимедиа с помощью кнопок "Воспроизведение", "Пауза" или "Остановка" либо клавиш Ctrl+P, Ctrl+A и Ctrl+S. XAML-код кнопки отображает сочетания клавиш с помощью всплывающих подсказок и свойств [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) в подписях кнопок. Такое самодокументирование важно для повышения удобства вашего приложения и его доступности для людей с ограниченными возможностями. Дополнительную информацию см. в статье [Специальные возможности клавиатуры](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility).
 
 Обратите также внимание, что страница при загрузке устанавливает фокус ввода на себя. Без этого действия никакой элемент управления не получает первоначальный фокус ввода, и приложение не вызывает событие ввода до тех пор, пока пользователь вручную не установит фокус ввода (например, перейдя с помощью клавиши TAB или щелкнув элемент управления).
 
@@ -275,18 +275,18 @@ End Sub
 ```
 
 > [!NOTE]
-> Параметр [**AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/hh759762) или [**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/hh759763) в XAML предоставляет строковые сведения, которые регистрируют сочетание клавиш для вызова определенного действия. Эти сведения записываются клиентами автоматизации пользовательского интерфейса Майкрософт, например экранным диктором, и, как правило, предоставляются пользователю напрямую.
+> Параметр [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey?view=netframework-4.8) или [**AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) в XAML предоставляет строковые сведения, которые регистрируют сочетание клавиш для вызова определенного действия. Эти сведения записываются клиентами автоматизации пользовательского интерфейса Майкрософт, например экранным диктором, и, как правило, предоставляются пользователю напрямую.
 >
-> Параметр **AutomationProperties.AcceleratorKey** или **AutomationProperties.AccessKey** не имеет собственных действий. Но вам все равно нужно подключить обработчики для событий [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) или [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942), чтобы фактически реализовать применение сочетания клавиш в вашем приложении. Подчеркивание клавиши доступа не предоставляется автоматически. Вы должны явным образом подчеркнуть текст, относящийся к определенной назначенной клавише в качестве встроенного форматирования [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982), если вы хотите, чтобы подчеркнутый текст отображался в пользовательском интерфейсе.
+> Параметр **AutomationProperties.AcceleratorKey** или **AutomationProperties.AccessKey** не имеет собственных действий. Но вам все равно нужно подключить обработчики для событий [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) или [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup), чтобы фактически реализовать применение сочетания клавиш в вашем приложении. Подчеркивание клавиши доступа не предоставляется автоматически. Вы должны явным образом подчеркнуть текст, относящийся к определенной назначенной клавише в качестве встроенного форматирования [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline), если вы хотите, чтобы подчеркнутый текст отображался в пользовательском интерфейсе.
 
  
 
 ## <a name="keyboard-routed-events"></a>Перенаправленные события клавиатуры
 
 
-Некоторые события являются перенаправленными, включая [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) и [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942). Перенаправленные события используют стратегию восходящей маршрутизации. Стратегия восходящего перенаправления означает, что событие происходит из дочернего объекта, а затем направляется по последующим родительским объектам в дереве объектов. Это предоставляет еще одну возможность обработки того же события и взаимодействия с его данными.
+Некоторые события являются перенаправленными, включая [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) и [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup). Перенаправленные события используют стратегию восходящей маршрутизации. Стратегия восходящего перенаправления означает, что событие происходит из дочернего объекта, а затем направляется по последующим родительским объектам в дереве объектов. Это предоставляет еще одну возможность обработки того же события и взаимодействия с его данными.
 
-Рассмотрим следующий пример кода XAML, в котором обрабатываются события [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) для объекта [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) и двух объектов [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). В этом случае, если отпустить клавишу во время удержания фокуса любым из объектов **Button**, будет вызвано событие **KeyUp**. Затем событие передается родительскому объекту **Canvas**.
+Рассмотрим следующий пример кода XAML, в котором обрабатываются события [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) для объекта [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) и двух объектов [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button). В этом случае, если отпустить клавишу во время удержания фокуса любым из объектов **Button**, будет вызвано событие **KeyUp**. Затем событие передается родительскому объекту **Canvas**.
 
 ```xaml
 <StackPanel KeyUp="StackPanel_KeyUp">
@@ -296,7 +296,7 @@ End Sub
 </StackPanel>
 ```
 
-В следующем примере показана реализация обработчика событий [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) для соответствующего содержимого XAML из предыдущего примера.
+В следующем примере показана реализация обработчика событий [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) для соответствующего содержимого XAML из предыдущего примера.
 
 ```csharp
 void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
@@ -307,23 +307,23 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 }
 ```
 
-Обратите внимание на использование свойства [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) в предыдущем обработчике. Здесь **OriginalSource** сообщает об объекте, вызвавшем событие. Этим объектом не может быть [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635), поскольку **StackPanel** не является элементом управления и не может содержать фокус. Событие могло быть вызвано только одной из двух кнопок внутри **StackPanel**, но какой именно? Определить исходный объект текущего события, если оно обрабатывается на уровне родительского объекта, позволяет свойство **OriginalSource**.
+Обратите внимание на использование свойства [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) в предыдущем обработчике. Здесь **OriginalSource** сообщает об объекте, вызвавшем событие. Этим объектом не может быть [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel), поскольку **StackPanel** не является элементом управления и не может содержать фокус. Событие могло быть вызвано только одной из двух кнопок внутри **StackPanel**, но какой именно? Определить исходный объект текущего события, если оно обрабатывается на уровне родительского объекта, позволяет свойство **OriginalSource**.
 
 ### <a name="the-handled-property-in-event-data"></a>Свойство Handled в данных события
 
-В зависимости от выбранной стратегии обработки событий для реакции на восходящее событие можно использовать только один обработчик событий. Например, если имеется особый обработчик [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942), прикрепленный к одному из элементов управления [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), у него в первую очередь будет возможность обработать данное событие. В этом случае не нужно, чтобы событие было также обработано родительской панелью. Для данного сценария можно воспользоваться свойством [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) в данных события.
+В зависимости от выбранной стратегии обработки событий для реакции на восходящее событие можно использовать только один обработчик событий. Например, если имеется особый обработчик [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup), прикрепленный к одному из элементов управления [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), у него в первую очередь будет возможность обработать данное событие. В этом случае не нужно, чтобы событие было также обработано родительской панелью. Для данного сценария можно воспользоваться свойством [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) в данных события.
 
-Цель свойства [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) в классе данных перенаправленного события – сообщить о том, что другой ранее зарегистрированный обработчик на маршруте события уже был задействован. Это влияет на поведение системы перенаправленных событий. При установке для **Handled** значения **true** в обработчике событий перенаправление этого события прекращается и оно не передается последующим родительским элементам.
+Цель свойства [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) в классе данных перенаправленного события – сообщить о том, что другой ранее зарегистрированный обработчик на маршруте события уже был задействован. Это влияет на поведение системы перенаправленных событий. При установке для **Handled** значения **true** в обработчике событий перенаправление этого события прекращается и оно не передается последующим родительским элементам.
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>AddHandler и уже обработанные события клавиатуры
 
-Для присоединения обработчиков, которые могут реагировать на события, уже отмеченные как обработанные, можно использовать специальную методику. Этот метод использует [ **AddHandler** ](https://msdn.microsoft.com/library/windows/apps/hh702399) метод, чтобы зарегистрировать обработчик, а не с помощью атрибутов XAML или особый синтаксис для добавления обработчиков, такие как += в C\#.
+Для присоединения обработчиков, которые могут реагировать на события, уже отмеченные как обработанные, можно использовать специальную методику. Этот метод использует [ **AddHandler** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) метод, чтобы зарегистрировать обработчик, а не с помощью атрибутов XAML или особый синтаксис для добавления обработчиков, такие как += в C\#.
 
-Обычным ограничением для этой методики является то, что API **AddHandler** принимает параметр типа [**RoutedEvent**](https://msdn.microsoft.com/library/windows/apps/br208808), который идентифицирует рассматриваемое перенаправленное событие. Идентификатор **RoutedEvent** предоставляется не всеми перенаправленными событиями, и это соображение влияет на то, какие перенаправленные события все же могут быть обработаны в случае [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073). События [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) и [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) имеют идентификаторы перенаправленных событий ([**KeyDownEvent**](https://msdn.microsoft.com/library/windows/apps/hh702416) и [**KeyUpEvent**](https://msdn.microsoft.com/library/windows/apps/hh702418)) в [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). Однако другие события, например [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706), не имеют идентификаторов перенаправленных событий, и поэтому для них нельзя использовать методику **AddHandler**.
+Обычным ограничением для этой методики является то, что API **AddHandler** принимает параметр типа [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent), который идентифицирует рассматриваемое перенаправленное событие. Идентификатор **RoutedEvent** предоставляется не всеми перенаправленными событиями, и это соображение влияет на то, какие перенаправленные события все же могут быть обработаны в случае [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled). События [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) и [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) имеют идентификаторы перенаправленных событий ([**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) и [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent)) в [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement). Однако другие события, например [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged), не имеют идентификаторов перенаправленных событий, и поэтому для них нельзя использовать методику **AddHandler**.
 
 ### <a name="overriding-keyboard-events-and-behavior"></a>Переопределение событий и поведения клавиатуры
 
-Вы можете переопределить основные события для определенных элементов управления (таких как [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)) для обеспечения согласованного перемещения фокуса для различных устройств ввода, в том числе клавиатуры и игрового контроллера.
+Вы можете переопределить основные события для определенных элементов управления (таких как [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)) для обеспечения согласованного перемещения фокуса для различных устройств ввода, в том числе клавиатуры и игрового контроллера.
 
 В следующем примере мы подкласса элемента управления и переопределения поведения KeyDown, перемещение фокуса к элементу GridView содержимого при нажатии любой клавиши Стрелка.
 
@@ -345,27 +345,27 @@ public class CustomGridView : GridView
 ```
 
 > [!NOTE]
-> Если GridView используется только для макета, рассмотрите возможность использования других элементов управления, таких как [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl) с [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsWrapGrid).
+> Если GridView используется только для макета, рассмотрите возможность использования других элементов управления, таких как [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) с [**ItemsWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid).
 
 ## <a name="commanding"></a>Командные элементы
 
 Небольшое количество элементов пользовательского интерфейса предоставляет встроенную поддержку команд. В командах используются связанные с вводом перенаправленные события в базовой реализации. Это позволяет обрабатывать соответствующий ввод в пользовательском интерфейсе, например определенное действие указателя или нажатие определенного сочетания клавиш, путем вызова единого обработчика команды.
 
-Если для элемента пользовательского интерфейса доступен командный интерфейс, рекомендуем использовать соответствующие API командного интерфейса вместо любых дискретных событий ввода. Подробнее: [**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740).
+Если для элемента пользовательского интерфейса доступен командный интерфейс, рекомендуем использовать соответствующие API командного интерфейса вместо любых дискретных событий ввода. Подробнее: [**ButtonBase.Command**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command).
 
-Также можно реализовать [**ICommand**](https://msdn.microsoft.com/library/windows/apps/br227885) для инкапсуляции функциональных возможностей команд, вызываемых из обычных обработчиков событий. Это позволяет использовать команды даже при отсутствии свойства **Command**.
+Также можно реализовать [**ICommand**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) для инкапсуляции функциональных возможностей команд, вызываемых из обычных обработчиков событий. Это позволяет использовать команды даже при отсутствии свойства **Command**.
 
 ## <a name="text-input-and-controls"></a>Ввод текста и элементы управления
 
-Некоторые элементы управления реагируют на события клавиатуры собственной обработкой. Например, [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) – элемент управления, предназначенный для захвата и дальнейшего визуального представления текста, введенного с помощью клавиатуры. В нем используются [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) и [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) с собственной логикой перехвата нажатий клавиш, а затем инициируется собственное событие [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706), если текст был изменен.
+Некоторые элементы управления реагируют на события клавиатуры собственной обработкой. Например, [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) – элемент управления, предназначенный для захвата и дальнейшего визуального представления текста, введенного с помощью клавиатуры. В нем используются [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) и [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) с собственной логикой перехвата нажатий клавиш, а затем инициируется собственное событие [**TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged), если текст был изменен.
 
-Вы по-прежнему можете добавлять обработчики для [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) и [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) в [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) или любой связанный элемент управления, предназначенный для обработки текстового ввода. Однако элемент управления может быть разработан так, что будет отвечать не на все значения клавиш, направляемые ему через события клавиш. Для каждого элемента управления задается своя реакция.
+Вы по-прежнему можете добавлять обработчики для [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) и [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) в [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) или любой связанный элемент управления, предназначенный для обработки текстового ввода. Однако элемент управления может быть разработан так, что будет отвечать не на все значения клавиш, направляемые ему через события клавиш. Для каждого элемента управления задается своя реакция.
 
-Например, [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736) (базовый класс для [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)) обрабатывает [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) таким образом, что он может проверять клавиши ПРОБЕЛ или ВВОД. **ButtonBase** считает **KeyUp** эквивалентом нажатию левой кнопки мыши в целях инициации события [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737). Эта обработка события выполняется, когда **ButtonBase** переопределяет виртуальный метод [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983). При реализации он устанавливает [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) на **true**. В результате получается, что любой родительский элемент кнопки, прослушивающий событие клавиши, при нажатии клавиши ПРОБЕЛ не получит уже обработанное событие для своих обработчиков.
+Например, [**ButtonBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) (базовый класс для [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)) обрабатывает [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) таким образом, что он может проверять клавиши ПРОБЕЛ или ВВОД. **ButtonBase** считает **KeyUp** эквивалентом нажатию левой кнопки мыши в целях инициации события [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). Эта обработка события выполняется, когда **ButtonBase** переопределяет виртуальный метод [**OnKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup). При реализации он устанавливает [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) на **true**. В результате получается, что любой родительский элемент кнопки, прослушивающий событие клавиши, при нажатии клавиши ПРОБЕЛ не получит уже обработанное событие для своих обработчиков.
 
-Еще один пример – [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683). Некоторые клавиши, такие как клавиши со стрелками, не рассматриваются объектом **TextBox** как текстовые, а относятся к специальным реакциям пользовательского интерфейса элементов управления. **TextBox** отмечает эти случаи событий как обработанные.
+Еще один пример – [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Некоторые клавиши, такие как клавиши со стрелками, не рассматриваются объектом **TextBox** как текстовые, а относятся к специальным реакциям пользовательского интерфейса элементов управления. **TextBox** отмечает эти случаи событий как обработанные.
 
-Пользовательские элементы управления могут реализовывать собственные аналогичные реакции для событий клавиш путем переопределения [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) / [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983). Если пользовательский элемент управления обрабатывает определенные сочетания клавиш либо реагирует как элемент управления или фокус аналогично сценарию, описанному для [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683), следует применить эту логику к собственным переопределениям **OnKeyDown** / **OnKeyUp**.
+Пользовательские элементы управления могут реализовывать собственные аналогичные реакции для событий клавиш путем переопределения [**OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown) / [**OnKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup). Если пользовательский элемент управления обрабатывает определенные сочетания клавиш либо реагирует как элемент управления или фокус аналогично сценарию, описанному для [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), следует применить эту логику к собственным переопределениям **OnKeyDown** / **OnKeyUp**.
 
 ## <a name="the-touch-keyboard"></a>Сенсорная клавиатура
 
@@ -375,9 +375,9 @@ public class CustomGridView : GridView
 
 При создании пользовательского элемента управления, требующего текстового ввода и не происходящего от стандартного элемента управления текстовым вводом, можно добавить поддержку сенсорной клавиатуры, реализовав нужные шаблоны элементов управления автоматизацией пользовательского интерфейса. Подробнее см. в разделе [Пример сенсорной клавиатуры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard).
 
-Нажатия клавиш на сенсорной клавиатуре вызывают события [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) и [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) так же, как и нажатия клавиш на аппаратной клавиатуре. Однако сенсорная клавиатура не вызывает событий ввода для сочетаний клавиш Ctrl+A, Ctrl+Z, Ctrl+X, Ctrl+C и Ctrl+V, которые зарезервированы для обработки текста в элементе управления вводом.
+Нажатия клавиш на сенсорной клавиатуре вызывают события [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) и [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) так же, как и нажатия клавиш на аппаратной клавиатуре. Однако сенсорная клавиатура не вызывает событий ввода для сочетаний клавиш Ctrl+A, Ctrl+Z, Ctrl+X, Ctrl+C и Ctrl+V, которые зарезервированы для обработки текста в элементе управления вводом.
 
-Пользователи могут вводить данные в вашем приложении гораздо быстрее и проще, если настроить тип вводимых данных элемента управления текстом на соответствие типу данных, которые пользователь должен вводить. Тип вводимых данных предоставляет подсказку о типе ожидаемого текстового ввода с помощью элемента управления, таким образом система может предоставить специальную раскладку сенсорной клавиатуры в соответствии с типом ввода. Например, если текстовое поле используется только для ввода 4-значного ПИН-кода, установите для свойства [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) значение [**Number**](https://msdn.microsoft.com/library/windows/apps/hh702028). Это сообщает системе, что нужно отобразить раскладку цифровой клавиатуры, благодаря чему пользователю будет проще вводить ПИН-код. Дополнительную информацию можно найти в статье [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://msdn.microsoft.com/library/windows/apps/mt280229).
+Пользователи могут вводить данные в вашем приложении гораздо быстрее и проще, если настроить тип вводимых данных элемента управления текстом на соответствие типу данных, которые пользователь должен вводить. Тип вводимых данных предоставляет подсказку о типе ожидаемого текстового ввода с помощью элемента управления, таким образом система может предоставить специальную раскладку сенсорной клавиатуры в соответствии с типом ввода. Например, если текстовое поле используется только для ввода 4-значного ПИН-кода, установите для свойства [**InputScope**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) значение [**Number**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue). Это сообщает системе, что нужно отобразить раскладку цифровой клавиатуры, благодаря чему пользователю будет проще вводить ПИН-код. Дополнительную информацию можно найти в статье [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard).
 
 ## <a name="related-articles"></a>Связанные статьи
 
@@ -387,7 +387,7 @@ public class CustomGridView : GridView
 * [Ответ на наличие сенсорной клавиатуры](respond-to-the-presence-of-the-touch-keyboard.md)
 
 **Проектировщикам**
-* [Рекомендации по проектированию взаимодействия с помощью клавиатуры](https://msdn.microsoft.com/library/windows/apps/hh972345)
+* [Рекомендации по проектированию взаимодействия с помощью клавиатуры](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 
 **Примеры**
 * [Пример сенсорной клавиатуры](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)

@@ -6,25 +6,25 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c5c8b99ec3646d1eebbb922557f97c9e9304ed4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d80cb18fc502df5f6d51d2b7bdc719e860730534
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658369"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370882"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Запуск приложения по умолчанию для URI
 
 
 **Важные API**
 
-- [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)
-- [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
-- [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
+- [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
+- [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
+- [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
 Узнайте, как запускать приложение по умолчанию для универсального кода ресурса (URI). Универсальные коды ресурсов (URI) позволяют запустить приложение, чтобы выполнить определенную задачу. В этом разделе также приводится обзор множества схем URI, встроенных в Windows. Вы также можете запустить собственные схемы URI. Дополнительные сведения о регистрации собственной схемы URI и обработке активации URI см. в разделе [Обработка активации URI](handle-uri-activation.md).
 
-Схемы URI позволяют открывать приложения, щелкая гиперссылки. Таким же образом можно создать электронное сообщение с помощью **mailto:** или открыть веб-браузер по умолчанию с помощью **http:**.
+Схемы URI позволяют открывать приложения, щелкая гиперссылки. Таким же образом можно создать электронное сообщение с помощью **mailto:** или открыть веб-браузер по умолчанию с помощью **http:** .
 
 В этом разделе описываются указанные ниже схемы URI, встроенные в Windows:
 
@@ -38,7 +38,7 @@ ms.locfileid: "57658369"
 |[MS люди.](#people-app-uri-scheme) | Приложение «Люди» |
 |[MS фотографий:](#photos-app-uri-scheme) | Приложение "Фотографии" |
 |[MS параметры:](#settings-app-uri-scheme) | Приложение "Параметры" |
-|[MS-store:](#store-app-uri-scheme)  | Приложение «Магазин» |
+|[ms-store:](#store-app-uri-scheme)  | Приложение «Магазин» |
 |[MS-tonepicker:](#tone-picker-uri-scheme) | Средство выбора звуковых сигналов |
 |[MS-yellowpage:](#nearby-numbers-app-uri-scheme) | Приложения «Телефоны мест по соседству» |
 |[msnweather:](#weather-app-uri-scheme) | Прогноз погоды |
@@ -54,9 +54,9 @@ ms.locfileid: "57658369"
 
 ### <a name="call-launchuriasync-to-launch-a-uri"></a>Вызов метода LaunchUriAsync для запуска URI
 
-Используйте метод [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) для запуска URI. При вызове этого метода ваше приложение должно быть приложением переднего плана, то есть быть видимым пользователю. Это требование обеспечивает контроль пользователя над ситуацией. Для соблюдения этого требования убедитесь, что все запуски URI напрямую связаны с пользовательским интерфейсом вашего приложения. Чтобы запустить URI, пользователь всегда должен выполнить какое-либо действие. Если вы попытаетесь запустить URI, когда приложение не находится на переднем плане, запуск завершится ошибкой, и будет выполнен обратный вызов для ошибки.
+Используйте метод [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) для запуска URI. При вызове этого метода ваше приложение должно быть приложением переднего плана, то есть быть видимым пользователю. Это требование обеспечивает контроль пользователя над ситуацией. Для соблюдения этого требования убедитесь, что все запуски URI напрямую связаны с пользовательским интерфейсом вашего приложения. Чтобы запустить URI, пользователь всегда должен выполнить какое-либо действие. Если вы попытаетесь запустить URI, когда приложение не находится на переднем плане, запуск завершится ошибкой, и будет выполнен обратный вызов для ошибки.
 
-Сначала создайте объект [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/system.uri.aspx) для представления URI, а затем передайте его методу [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). С помощью возвращаемого результата узнайте, был ли вызов выполнен успешно, как показано в следующем примере.
+Сначала создайте объект [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) для представления URI, а затем передайте его методу [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync). С помощью возвращаемого результата узнайте, был ли вызов выполнен успешно, как показано в следующем примере.
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -82,7 +82,7 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 
 ![Диалоговое окно предупреждения с перекрытием на фоне неактивного приложения. Диалоговое окно, запрашивающее у пользователя подтверждение переключения между приложениями, с кнопками «Да» и «Нет» в правой нижней части. Выбрана кнопка «Нет».](images/warningdialog.png)
 
-Если вы хотите, чтобы этот запрос выполнялся постоянно, используйте свойство [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442), чтобы указать, что операционная система должна вывести на экран предупреждение.
+Если вы хотите, чтобы этот запрос выполнялся постоянно, используйте свойство [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.treatasuntrusted), чтобы указать, что операционная система должна вывести на экран предупреждение.
 
 ```cs
 // The URI to launch
@@ -102,7 +102,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriBing, promptOption
 
 Кроме того, рекомендации полезны при регистрации нескольких приложений для обработки схемы URI. Порекомендовав конкретное приложение, Windows откроет это приложение, при условии что оно уже установлено.
 
-Чтобы порекомендовать приложение, вызовите метод [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701484), указав в качестве значения параметра [**LauncherOptions.preferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) имя семейства пакета приложения Магазина, которое вы рекомендуете. Операционная система будет использовать эту информацию, чтобы заменить общий параметр (поиск приложения в Магазине) конкретным параметром (приобретение рекомендованного приложения в Магазине).
+Чтобы порекомендовать приложение, вызовите метод [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.), указав в качестве значения параметра [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) имя семейства пакета приложения Магазина, которое вы рекомендуете. Операционная система будет использовать эту информацию, чтобы заменить общий параметр (поиск приложения в Магазине) конкретным параметром (приобретение рекомендованного приложения в Магазине).
 
 ```cs
 // Set the recommended app
@@ -117,9 +117,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="set-remaining-view-preference"></a>Настройка представления оставшегося пространства
 
-Исходные приложения, вызывающие [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476), могут запрашивать разрешение остаться на экране после запуска URI. По умолчанию Windows пытается поровну поделить все доступное пространство между исходным приложением и конечным приложением, обрабатывающим URI. Исходные приложения могут использовать свойство [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), чтобы сообщить операционной системе, что для окна приложения требуется больше или меньше доступного пространства. При помощи **DesiredRemainingView** также можно указать, что исходному приложению не нужно оставаться на экране после запуска URI и что его пространство можно полностью занять конечным приложением. Это свойство указывает только предпочтительный размер окна для вызывающего приложения. Оно не задает условия для других приложений, которые могут находиться на экране в это же время.
+Исходные приложения, вызывающие [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync), могут запрашивать разрешение остаться на экране после запуска URI. По умолчанию Windows пытается поровну поделить все доступное пространство между исходным приложением и конечным приложением, обрабатывающим URI. Исходные приложения могут использовать свойство [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview), чтобы сообщить операционной системе, что для окна приложения требуется больше или меньше доступного пространства. При помощи **DesiredRemainingView** также можно указать, что исходному приложению не нужно оставаться на экране после запуска URI и что его пространство можно полностью занять конечным приложением. Это свойство указывает только предпочтительный размер окна для вызывающего приложения. Оно не задает условия для других приложений, которые могут находиться на экране в это же время.
 
-**Примечание**  Windows учитывает несколько факторов при определении исходного приложения конечного размера окна, например, из исходного приложения предпочтений, количество приложений на экране, ориентацию экрана и т. д. Задав [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), вы не гарантируете конкретного поведения окон для исходного приложения.
+**Примечание**  Windows учитывает несколько факторов при определении исходного приложения конечного размера окна, например, из исходного приложения предпочтений, количество приложений на экране, ориентацию экрана и т. д. Задав [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview), вы не гарантируете конкретного поведения окон для исходного приложения.
 
 ```cs
 // Set the desired remaining view.
@@ -161,13 +161,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="maps-app-uri-schemes"></a>Схемы URI приложения «Карты»
 
-Используйте **bingmaps:**, **ms диск to:**, и **ms стека для:** URI схемы для [запустите приложение Windows сопоставляет](launch-maps-app.md) определенной карты, направления и результаты поиска. Например, следующий URI открывает приложение «Карты Windows» и отображает карту, в центре которой расположен Нью-Йорк.
+Используйте **bingmaps:** , **ms диск to:** , и **ms стека для:** URI схемы для [запустите приложение Windows сопоставляет](launch-maps-app.md) определенной карты, направления и результаты поиска. Например, следующий URI открывает приложение «Карты Windows» и отображает карту, в центре которой расположен Нью-Йорк.
 
 `bingmaps:?cp=40.726966~-74.006076`
 
 ![Пример приложения Карты Windows.](images/mapnyc.png)
 
-Дополнительные сведения см. в разделе [Запуск приложения «Карты Windows»](launch-maps-app.md). Подробнее об использовании элемента управления картой в приложении описано в статье [Отображение карт с двухмерными и трехмерными представлениями, а также с представлениями Streetside](https://msdn.microsoft.com/library/windows/apps/mt219695).
+Дополнительные сведения см. в разделе [Запуск приложения «Карты Windows»](launch-maps-app.md). Подробнее об использовании элемента управления картой в приложении описано в статье [Отображение карт с двухмерными и трехмерными представлениями, а также с представлениями Streetside](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps).
 
 ### <a name="messaging-app-uri-scheme"></a>Схема URI приложения «Сообщения»
 
@@ -189,7 +189,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 |------------|---------|
 | ms-tonepicker: | Выбор мелодий звонка, сигналов будильника и системных звуковых сигналов. |
 
-Параметры передаются в API LaunchURI через [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx). Подробнее см. раздел [Выбор и сохранение звуковых сигналов с помощью схемы URI ms-tonepicker](launch-ringtone-picker.md).
+Параметры передаются в API LaunchURI через [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset). Подробнее см. раздел [Выбор и сохранение звуковых сигналов с помощью схемы URI ms-tonepicker](launch-ringtone-picker.md).
 
 ### <a name="nearby-numbers-app-uri-scheme"></a>Схема URI приложения «Телефоны мест по соседству»
 
@@ -206,7 +206,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="photos-app-uri-scheme"></a>Схема URI приложения «Фотографии»
 
-Используйте **фотографии ms:** Схема URI, чтобы запустить приложение фотографии для просмотра изображения или редактировать видео. Например:  
+Используйте **фотографии ms:** Схема URI, чтобы запустить приложение фотографии для просмотра изображения или редактировать видео. Пример:  
 Просмотр изображения: `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
 Или редактировать видео: `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
 
@@ -228,7 +228,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ![Параметры конфиденциальности камеры.](images/privacyawarenesssettingsapp.png)
 
-Дополнительные сведения см. в разделе: [Запуск приложения «Параметры» для Windows](launch-settings-app.md) и [Руководство по приложениям, учитывающим требования конфиденциальности](https://msdn.microsoft.com/library/windows/apps/hh768223).
+Дополнительные сведения см. в разделе: [Запуск приложения «Параметры» для Windows](launch-settings-app.md) и [Руководство по приложениям, учитывающим требования конфиденциальности](https://docs.microsoft.com/windows/uwp/security/index).
 
 ### <a name="store-app-uri-scheme"></a>Схема URI приложения «Магазин»
 

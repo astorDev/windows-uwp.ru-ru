@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: feef520614e1cc6076e6abc388fe419fe61d3a92
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: a02d562b73f61094f820e74a213614d80c4fb5e1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343253"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365847"
 ---
 # <a name="mouse-interactions"></a>Взаимодействие с помощью мыши
 
@@ -145,7 +145,7 @@ ms.locfileid: "58343253"
 
 Для указателя мыши предусмотрен набор стандартных курсоров. Они указывают на основное действие элемента.
 
-С каждым из стандартных указателей сопоставлено изображение по умолчанию. Пользователь или приложение могут в любое время замещать изображение по умолчанию любым другим стандартным курсором. Изображение курсора можно выбрать с помощью функции [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
+С каждым из стандартных указателей сопоставлено изображение по умолчанию. Пользователь или приложение могут в любое время замещать изображение по умолчанию любым другим стандартным курсором. Изображение курсора можно выбрать с помощью функции [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor).
 
 Если требуется настроить курсор мыши:
 

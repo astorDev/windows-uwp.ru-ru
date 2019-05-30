@@ -5,25 +5,25 @@ keywords: DirectX, XAML
 ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cb1c9f9cf6cbc6cce0c5d4547ed503bb9a06e56
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 39fc465a38aa31e86d5c6162c4b333517c9efb4d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660119"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367693"
 ---
 # <a name="extend-the-game-sample"></a>Расширение образца игры
 
 Итак, вы уже знакомы с основными компонентами трехмерной игры универсальной платформы Windows (UWP) на базе DirectX. Вы можете настроить структуру игры, включая поставщик представлений и конвейер визуализации, а также реализовать основной цикл игры. Вы также можете создать базовое наложение пользовательского интерфейса, добавить звуки и реализовать элементы управления. Вы практически готовы к созданию своей собственной игры, но если вам нужна дополнительная информация и помощь, воспользуйтесь ресурсами ниже.
 
--   [Графика и игры на основе DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)
--   [Direct3D 11 Обзор](https://msdn.microsoft.com/library/windows/desktop/ff476345)
--   [Direct3D 11 ссылки](https://msdn.microsoft.com/library/windows/desktop/ff476147)
+-   [Графика и игры на основе DirectX](https://docs.microsoft.com/windows/desktop/directx)
+-   [Direct3D 11 Обзор](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews)
+-   [Direct3D 11 ссылки](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-graphics-reference)
 
 ## <a name="using-xaml-for-the-overlay"></a>Использование XAML для создания наложения
 
 
-Мы еще не рассматривали подробно такую альтернативу, как создание наложения с помощью XAML вместо [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990). С точки зрения рисования элементов пользовательского интерфейса XAML обеспечивает ряд преимуществ по сравнению с Direct2D. Самым важным преимуществом является, поэтому включение внешний вид Windows 10 в игры DirectX более удобным. Поскольку большое число общих элементов, стилей и функций, присущих приложениям UWP, интегрировано в модель XAML, задача разработчиков игр значительно облегчается. Если вы разрабатываете для своей игры сложный пользовательский интерфейс, советуем вам использовать XAML вместо Direct2D.
+Мы еще не рассматривали подробно такую альтернативу, как создание наложения с помощью XAML вместо [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal). С точки зрения рисования элементов пользовательского интерфейса XAML обеспечивает ряд преимуществ по сравнению с Direct2D. Самым важным преимуществом является, поэтому включение внешний вид Windows 10 в игры DirectX более удобным. Поскольку большое число общих элементов, стилей и функций, присущих приложениям UWP, интегрировано в модель XAML, задача разработчиков игр значительно облегчается. Если вы разрабатываете для своей игры сложный пользовательский интерфейс, советуем вам использовать XAML вместо Direct2D.
 
 Используя XAML, можно сделать игру с интерфейсом, похожим на интерфейс на базе Direct2D, который мы создали раньше.
 
@@ -35,10 +35,10 @@ ms.locfileid: "57660119"
 
 Несмотря на схожий конечный результат, между реализацией интерфейсов на базе Direct2D и XAML существует ряд различий.
 
-Функция | XAML| Direct2D
+Компонент | XAML| Direct2D
 :----------|:----------- | :-----------
-Определение наложения | Определяется в XAML-файле (`\*.xaml`). Как только вы разберетесь в XAML, создавать и конфигурировать сложные наложения будет проще, чем при использовании Direct2D.| Определяется в виде коллекции примитивов Direct2D и строк [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038), вручную помещаемых и записываемых в целевой буфер Direct2D. 
-Элементы пользовательского интерфейса | Элементы пользовательского интерфейса на языке XAML происходят от стандартных элементов, входящих в состав API среды выполнения Windows на языке XAML, включая [**Windows::UI::Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) и [**Windows::UI::Xaml::Controls**](https://msdn.microsoft.com/library/windows/apps/br227716). Код, обрабатывающий поведение элементов пользовательского интерфейса на языке XAML, определен в файле кода программной части Main.xaml.cpp. | Простые фигуры можно рисовать как прямоугольники и эллипсы.
+Определение наложения | Определяется в XAML-файле (`\*.xaml`). Как только вы разберетесь в XAML, создавать и конфигурировать сложные наложения будет проще, чем при использовании Direct2D.| Определяется в виде коллекции примитивов Direct2D и строк [DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal), вручную помещаемых и записываемых в целевой буфер Direct2D. 
+Элементы пользовательского интерфейса | Элементы пользовательского интерфейса на языке XAML происходят от стандартных элементов, входящих в состав API среды выполнения Windows на языке XAML, включая [**Windows::UI::Xaml**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml) и [**Windows::UI::Xaml::Controls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls). Код, обрабатывающий поведение элементов пользовательского интерфейса на языке XAML, определен в файле кода программной части Main.xaml.cpp. | Простые фигуры можно рисовать как прямоугольники и эллипсы.
 Изменение размеров окон | События изменения размеров и состояния представления обрабатываются естественным образом, и наложение трансформируется в соответствии с ними | Необходимо вручную указывать, как будут перерисовываться компоненты наложения.
 
 
@@ -78,7 +78,7 @@ void App::OnLaunched(_In_ LaunchActivatedEventArgs^ /* args */)
 ```
 
 
-Чтобы привязать настроенную цепочку буферов к экземпляру [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel), определенному разметкой XAML, необходимо получить указатель на базовую реализацию интерфейса [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/dn302143) и вызвать для него метод [**ISwapChainPanelNative::SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144), передав ему настроенную цепочку буферов. 
+Чтобы привязать настроенную цепочку буферов к экземпляру [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel), определенному разметкой XAML, необходимо получить указатель на базовую реализацию интерфейса [**ISwapChainPanelNative**](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative) и вызвать для него метод [**ISwapChainPanelNative::SetSwapChain**](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain), передав ему настроенную цепочку буферов. 
 
 Следующий фрагмент кода из примера [**DX::DeviceResources::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/Common/DeviceResources.cpp#L218-L521) демонстрирует, как это делается для взаимодействия DirectX/XAML:
 

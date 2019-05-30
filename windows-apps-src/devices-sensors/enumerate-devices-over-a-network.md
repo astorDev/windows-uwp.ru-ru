@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2011bf0ed1e0f1536c0863729ee99415059641a6
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: e5773a77ccb98a75363184bcb17a6e3282e00932
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63772774"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370188"
 ---
 # <a name="enumerate-devices-over-a-network"></a>Перечисление устройств по сети
 
@@ -22,13 +22,13 @@ ms.locfileid: "63772774"
 
 - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
-Помимо обнаружения локально подключенных устройств вы можете использовать интерфейсы API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) для перечисления устройств по беспроводным и сетевым протоколам.
+Помимо обнаружения локально подключенных устройств вы можете использовать интерфейсы API [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) для перечисления устройств по беспроводным и сетевым протоколам.
 
 ## <a name="enumerating-devices-over-networked-or-wireless-protocols"></a>Перечисление устройств по сетевым или беспроводным протоколам
 
-Иногда вам необходимо перечислить устройства, которые не подключены локально и могут быть обнаружены только по протоколам проводной или беспроводной сети. Для этого у API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) есть три различных типа объектов устройства: **AssociationEndpoint** (AEP), **AssociationEndpointContainer** (контейнер AEP) и **AssociationEndpointService** (служба AEP). Вместе данные типы называют объектами AEP.
+Иногда вам необходимо перечислить устройства, которые не подключены локально и могут быть обнаружены только по протоколам проводной или беспроводной сети. Для этого у API [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) есть три различных типа объектов устройства: **AssociationEndpoint** (AEP), **AssociationEndpointContainer** (контейнер AEP) и **AssociationEndpointService** (служба AEP). Вместе данные типы называют объектами AEP.
 
-Некоторые API устройства предоставляют строку средства выбора, которую можно использовать для перечисления доступных объектов AEP. К ним могут относиться связанные и не связанные с системой устройства. Для некоторых устройств связывание может не потребоваться. Эти API устройств могут попытаться связать устройство, если связывание необходимо для взаимодействия с ним. Примером API, которые используют этот шаблон, служит Wi-Fi Direct. Если эти API устройства не связывают устройство автоматически, можно выполнить сопряжение с помощью объекта [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/Mt168396), доступного в [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/Dn705960).
+Некоторые API устройства предоставляют строку средства выбора, которую можно использовать для перечисления доступных объектов AEP. К ним могут относиться связанные и не связанные с системой устройства. Для некоторых устройств связывание может не потребоваться. Эти API устройств могут попытаться связать устройство, если связывание необходимо для взаимодействия с ним. Примером API, которые используют этот шаблон, служит Wi-Fi Direct. Если эти API устройства не связывают устройство автоматически, можно выполнить сопряжение с помощью объекта [**DeviceInformationPairing**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing), доступного в [**DeviceInformation.Pairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing).
 
 Однако в некоторых случаях может потребоваться вручную обнаружить устройства без заданной строки средства выбора. Например, вы можете просто собрать информацию об устройствах AEP без взаимодействия с ними или получить больше объектов AEP, чем можно обнаружить с помощью заданной строки средства выбора. В этом случае вы сами создадите строку средства выбора и используете ее, следуя инструкциям в разделе [Создание средства выбора устройств](build-a-device-selector.md).
 
@@ -55,26 +55,26 @@ ms.locfileid: "63772774"
 
 У каждого типа AEP есть свойство, которое можно использовать, чтобы ограничить перечисление определенным протоколом. Не забудьте, что в AQS-фильтре можно использовать оператор OR, чтобы сгруппировать несколько протоколов. Ниже приведено несколько примеров строк AQS-фильтра, показывающих, как запросить наличие устройств AEP.
 
-Эта AQS-строка запрашивает все UPnP-объекты **AssociationEndpoint**, когда [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) имеет значение **AsssociationEndpoint**.
+Эта AQS-строка запрашивает все UPnP-объекты **AssociationEndpoint**, когда [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) имеет значение **AsssociationEndpoint**.
 
 ``` syntax
 System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
-Эта AQS-строка запрашивает все UPnP-объекты и WSD-объекты **AssociationEndpoint**, когда [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) имеет значение **AsssociationEndpoint**.
+Эта AQS-строка запрашивает все UPnP-объекты и WSD-объекты **AssociationEndpoint**, когда [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) имеет значение **AsssociationEndpoint**.
 
 ``` syntax
 System.Devices.Aep.ProtocolId:="{782232aa-a2f9-4993-971b-aedc551346b0}" OR
 System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
-Эта AQS-строка запрашивает все UPnP-объекты **AssociationEndpointService**, когда [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) имеет значение **AsssociationEndpointService**.
+Эта AQS-строка запрашивает все UPnP-объекты **AssociationEndpointService**, когда [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) имеет значение **AsssociationEndpointService**.
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
-Эта AQS-строка запрашивает объекты **AssociationEndpointContainer**, у которых [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) имеет значение **AssociationEndpointContainer**, но находит их только в том случае, если перечисление выполняется по протоколу UPnP. Обычно неэффективно перечислять контейнеры, которые поступают только из одного протокола. Однако это может быть полезно, если нужно ограничить фильтр протоколами, по которым можно обнаружить ваше устройство.
+Эта AQS-строка запрашивает объекты **AssociationEndpointContainer**, у которых [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) имеет значение **AssociationEndpointContainer**, но находит их только в том случае, если перечисление выполняется по протоколу UPnP. Обычно неэффективно перечислять контейнеры, которые поступают только из одного протокола. Однако это может быть полезно, если нужно ограничить фильтр протоколами, по которым можно обнаружить ваше устройство.
 
 ``` syntax
 System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64}"

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e07ac565fe2e223b2fb33573ad083edfdfbc888a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fd7071092a66f46a81095a5cb6aff8b623a774a5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610209"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366627"
 ---
 # <a name="edge-based-ui-animations"></a>Элементы анимации пользовательского интерфейса с использованием края
 
@@ -23,7 +23,7 @@ ms.locfileid: "57610209"
 
 Анимации с использованием края показывают или скрывают элементы пользовательского интерфейса, которые возникают у края экрана. Действия отображения и скрытия могут вызываться либо пользователем, либо приложением. Пользовательский интерфейс может перекрывать приложение либо становиться частью основной поверхности приложения. Если пользовательский интерфейс становится частью поверхности приложения, возможно, потребуется соответствующим образом изменить размер остальной части приложения.
 
-> **Важные API**: [**Класс EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+> **Важные API**: [**Класс EdgeUIThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
@@ -45,13 +45,13 @@ ms.locfileid: "57610209"
 
 
 **Для разработчиков**
-* [Общие сведения об анимации](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Анимация на границе пользовательского интерфейса](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**Класс EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
-* [**Класс PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh969160)
-* [Анимация затухание](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [Анимация изменяет положение](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [Общие сведения об анимации](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Анимация на границе пользовательского интерфейса](https://docs.microsoft.com/previous-versions/windows/apps/jj649428(v=win.10))
+* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**Класс EdgeUIThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+* [**Класс PaneThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
+* [Анимация затухание](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
+* [Анимация изменяет положение](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
 
  
 

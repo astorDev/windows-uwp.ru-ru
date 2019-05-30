@@ -6,21 +6,21 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: windows 10, uwp, упаковка
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c429c3c88b0ae23cb518a59cab2e5a3c4f380a2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d90307560c315741751a5ab58ccdf0eaf35d97fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658199"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372796"
 ---
 # <a name="manual-app-packaging"></a>Упаковка приложений вручную
 
 Если вы хотите создать и подписать пакет приложения, но не используете Visual Studio для разработки приложения, вам нужно использовать средства для упаковки приложений вручную.
 
 > [!IMPORTANT] 
-> Если для разработки приложения использовали Visual Studio, рекомендуется применять мастер Visual Studio для создания и подписывания пакета приложения. Дополнительные сведения см. в разделе [Упаковка приложения UWP с помощью Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+> Если для разработки приложения использовали Visual Studio, рекомендуется применять мастер Visual Studio для создания и подписывания пакета приложения. Дополнительные сведения см. в разделе [Упаковка приложения UWP с помощью Visual Studio](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-## <a name="purpose"></a>Описание
+## <a name="purpose"></a>Цель
 
 Этот раздел содержит статьи об упаковке приложений универсальной платформы Windows (UWP) вручную или ссылки на них.
 

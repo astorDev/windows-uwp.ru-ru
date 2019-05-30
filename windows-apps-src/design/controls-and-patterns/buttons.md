@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 286b278d0c41edfbc5c008f31e5a8e28fa30f93a
-ms.sourcegitcommit: aeebfe35330aa471d22121957d9b510f6ebacbcf
+ms.openlocfilehash: 210431928c5dd7c5d5dfb99855322f1560e91dd7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58901642"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363233"
 ---
 # <a name="buttons"></a>Кнопки
 
@@ -30,7 +30,7 @@ ms.locfileid: "58901642"
 
 Элемент управления | Описание
 ------- | -----------
-[Кнопка](/uwp/api/windows.ui.xaml.controls.button) | Инициирует действие немедленно. Может использоваться с событием Click, или привязка команды.
+[Button](/uwp/api/windows.ui.xaml.controls.button) | Инициирует действие немедленно. Может использоваться с событием Click, или привязка команды.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Кнопка, которая порождает событие Click постоянно в том случае, когда в нажатом состоянии.
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Объект кнопки, стилем как гиперссылка, используемый для навигации. Подробнее см. на странице [Гиперссылки](hyperlinks.md).
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Кнопка с шеврон, чтобы открыть вложенное всплывающего меню.
@@ -67,7 +67,7 @@ ms.locfileid: "58901642"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/Button">открыть приложение и увидеть Button в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Скачать приложение галереи элементов управления XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -120,16 +120,16 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 ### <a name="button-interaction"></a>Взаимодействие с кнопкой
 
-Если коснуться кнопки пальцем или стилусом либо навести на нее указатель и нажать левую кнопку мыши, кнопка вызывает событие [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx). Если для кнопки предусмотрен фокус клавиатуры, при нажатии клавиши ВВОД или ПРОБЕЛ также происходит вызов события "Click".
+Если коснуться кнопки пальцем или стилусом либо навести на нее указатель и нажать левую кнопку мыши, кнопка вызывает событие [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). Если для кнопки предусмотрен фокус клавиатуры, при нажатии клавиши ВВОД или ПРОБЕЛ также происходит вызов события "Click".
 
-Как правило, нельзя обрабатывать низкоуровневые события [PointerPressed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) с помощью элемента "Button", поскольку для него предусмотрено поведение "Click". Дополнительные сведения см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx).
+Как правило, нельзя обрабатывать низкоуровневые события [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) с помощью элемента "Button", поскольку для него предусмотрено поведение "Click". Дополнительные сведения см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 Можно выбирать порядок вызова кнопкой события "Click" путем изменения свойства [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode). Значением ClickMode по умолчанию является **Release**, однако режиму кнопки ClickMode можно задать значения **Hover** или **Press**. Если для параметра ClickMode выбрано значение **Hover**, событие "Click" невозможно вызвать нажатием клавиши или касанием.
 
 
 ### <a name="button-content"></a>Содержимое кнопки
 
-Кнопка представляет собой [ContentControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Ее свойство содержимого XAML — [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), благодаря чему возможно использование подобного синтаксиса для XAML: `<Button>A button's content</Button>`. В качестве содержимого кнопки можно задать любой объект. Если содержимым является класс [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), он обрабатывается для просмотра в кнопке. Если содержимым является другой тип объекта, в кнопке отображается его строковое представление.
+Кнопка представляет собой [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl). Ее свойство содержимого XAML — [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content), благодаря чему возможно использование подобного синтаксиса для XAML: `<Button>A button's content</Button>`. В качестве содержимого кнопки можно задать любой объект. Если содержимым является класс [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), он обрабатывается для просмотра в кнопке. Если содержимым является другой тип объекта, в кнопке отображается его строковое представление.
 
 Содержимое кнопки обычно представляет собой текст. Ниже приведены рекомендации по проектированию для кнопок с текстовым содержимым:
 -   Используйте краткий, конкретный, не требующий разъяснений текст, который четко описывает действие, выполняемое кнопкой. Обычно текст надписи на кнопке состоит из одного слова — как правило, глагола.
@@ -140,7 +140,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 <table>
 <tr>
-<td> <b>Необходимо исправить:</b><br> Кнопки со переполняющим текстом. </td>
+<td> <b>Необходимо исправить.</b><br> Кнопки со переполняющим текстом. </td>
 <td> <img src="images/button-wraptext.png"/> </td>
 </tr>
 <tr>
@@ -175,7 +175,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-repeat-button"></a>Создание кнопки повтора
 
-[RepeatButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) — это кнопка, при нажатии которой события [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) повторяются до тех пор, пока она не будет отпущена. Задайте свойство [Delay](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx), чтобы указать время задержки после нажатия кнопки, по прошествии которого начнется повторение действия щелчка. Задайте свойство [Interval](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx), чтобы указать время между повторениями действия щелчка. Время для обоих свойств указывается в миллисекундах.
+[RepeatButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) — это кнопка, при нажатии которой события [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) повторяются до тех пор, пока она не будет отпущена. Задайте свойство [Delay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.delay), чтобы указать время задержки после нажатия кнопки, по прошествии которого начнется повторение действия щелчка. Задайте свойство [Interval](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.interval), чтобы указать время между повторениями действия щелчка. Время для обоих свойств указывается в миллисекундах.
 
 В следующем примере показаны два элемента управления RepeatButton, чьи соответствующие события "Click" используются для увеличения и уменьшения значения, приведенного в блоке текста.
 
@@ -268,7 +268,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 > SplitButton требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии, или [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-Объект [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) состоит из двух частей, которые могут быть вызваны отдельно. Одной из частей ведет себя как стандартной кнопки и вызывает немедленное действие. Другая часть вызывает, содержащий дополнительные параметры, которые пользователь может выбрать из всплывающего меню.
+Объект [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) состоит из двух частей, которые могут быть вызваны отдельно. Одна часть представляет собой стандартную кнопку, которая вызывает немедленное действие. Другая часть позволяет вызывать всплывающий элемент с дополнительными параметрами, которые пользователь может выбрать.
 
 > [!NOTE]
 > При вызове сенсорными функциями, разворачивающаяся кнопка ведет себя как раскрывающейся кнопки; половин кнопки вызова всплывающего меню. С другими методами ввода пользователь может вызвать либо половину кнопки отдельно.
@@ -376,7 +376,7 @@ public sealed partial class MainPage : Page
 
 > ToggleSplitButton требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии, или [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-Объект [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) состоит из двух частей, которые могут быть вызваны отдельно. Одной из частей ведет себя как выключатель, который может быть включен или выключен. Другая часть вызывает, содержащий дополнительные параметры, которые пользователь может выбрать из всплывающего меню.
+Объект [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) состоит из двух частей, которые могут быть вызваны отдельно. Одна часть выполняет функцию переключателя. Другая часть позволяет вызывать всплывающий элемент с дополнительными параметрами, которые пользователь может выбрать.
 
 Чтобы включить или отключить возможность, когда возможность имеет несколько вариантов, которые пользователь может выбрать из обычно используется разворачивающуюся кнопку переключателя. Например в редактор документов, она может быть использована для выключать списков, хотя раскрывающийся список позволяет выбрать стиль списка.
 
@@ -535,7 +535,7 @@ private void ApplyListStyle(string listStyle)
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [Класс Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+- [Класс кнопки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)
 - [Переключатели](radio-button.md)
 - [Флажки](checkbox.md)
-- [Тумблеры](toggles.md)
+- [Переключить коммутаторов](toggles.md)

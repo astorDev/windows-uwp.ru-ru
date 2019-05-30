@@ -6,23 +6,23 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK, журналы событий
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: 368e2fb7b3c6d78f68235b829e088d79b5673cf2
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e45b14daf6951142cb0d0ed8714e981eb6a55628
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334762"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371043"
 ---
 # <a name="log-custom-events-for-partner-center"></a>Ведение журнала пользовательских событий для Центра партнеров
 
-[Отчет об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) в центре партнеров позволяет получить сведения о пользовательских событиях, определенных в приложении универсальной платформы Windows (UWP). Пользовательское событие — это произвольная строка, представляющая событие или активность в вашем приложении. Например, игра может определять пользовательские события с именем *firstLevelPassed*, *secondLevelPassed* и т. д., которые регистрируются при прохождении пользователем каждого уровня в игре.
+[Отчет об использовании](https://docs.microsoft.com/windows/uwp/publish/usage-report) в центре партнеров позволяет получить сведения о пользовательских событиях, определенных в приложении универсальной платформы Windows (UWP). Пользовательское событие — это произвольная строка, представляющая событие или активность в вашем приложении. Например, игра может определять пользовательские события с именем *firstLevelPassed*, *secondLevelPassed* и т. д., которые регистрируются при прохождении пользователем каждого уровня в игре.
 
-Для регистрации пользовательского события из вашего приложения передайте строку пользовательского события методу [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log), предоставляемому пакетом Microsoft Store Services SDK. Вы можете просмотреть общее вхождений для пользовательских событий в **пользовательские события** раздел [отчет об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) в центре партнеров.
+Для регистрации пользовательского события из вашего приложения передайте строку пользовательского события методу [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log), предоставляемому пакетом Microsoft Store Services SDK. Вы можете просмотреть общее вхождений для пользовательских событий в **пользовательские события** раздел [отчет об использовании](https://docs.microsoft.com/windows/uwp/publish/usage-report) в центре партнеров.
 
 > [!NOTE]
-> Пользовательские события, которые запротоколированы центр партнеров не связанных с [события Windows](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), и они не отображаются в **средство просмотра событий**.
+> Пользовательские события, которые запротоколированы центр партнеров не связанных с [события Windows](https://docs.microsoft.com/windows/desktop/Events/windows-events), и они не отображаются в **средство просмотра событий**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед просмотром настраиваемого протоколирования событий в **отчет об использовании** для вашего приложения в центре партнеров, приложения должны быть опубликованы в Store.
 
@@ -45,10 +45,10 @@ ms.locfileid: "58334762"
     [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
 
     > [!NOTE]
-    > Загрузка [отчета об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report) может занять много времени, если ваше приложение регистрирует много пользовательских событий с длинными именами. Мы рекомендуем использовать краткие имена для пользовательских событий. 
+    > Загрузка [отчета об использовании](https://docs.microsoft.com/windows/uwp/publish/usage-report) может занять много времени, если ваше приложение регистрирует много пользовательских событий с длинными именами. Мы рекомендуем использовать краткие имена для пользовательских событий. 
 
 ## <a name="related-topics"></a>См. также
 
-* [Отчет об использовании](https://msdn.microsoft.com/windows/uwp/publish/usage-report)
+* [Отчет об использовании](https://docs.microsoft.com/windows/uwp/publish/usage-report)
 * [Метод log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)
-* [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
+* [Microsoft Store Services SDK](https://docs.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

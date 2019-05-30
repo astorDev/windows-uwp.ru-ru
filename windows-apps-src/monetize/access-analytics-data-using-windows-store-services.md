@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ab3e223c99a13e4520d5bc603454881803a3cb64
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 14a1b73a2c82beea746d40c25bfa18ddf6171203
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334862"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372002"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Доступ к аналитическим данным с помощью служб Магазина
 
@@ -95,7 +95,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-desktop-applications"></a>Методы для классических приложений
 
-Для учетных записей разработчиков, которые связаны с [программой для разработчиков классических приложений для Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504), доступны следующие методы аналитики.
+Для учетных записей разработчиков, которые связаны с [программой для разработчиков классических приложений для Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program), доступны следующие методы аналитики.
 
 | Сценарий       | Методы      |
 |---------------|--------------------|
@@ -125,7 +125,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-hardware-and-drivers"></a>Методы для оборудования и драйверов
 
-Учетные записи разработчика, которые принадлежат [программы панели мониторинга Windows hardware](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) имеют доступ к дополнительный набор методов для извлечения данных аналитики для оборудования и драйверов. Дополнительные сведения см. в разделе [панель мониторинга оборудования API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
+Учетные записи разработчика, которые принадлежат [программы панели мониторинга Windows hardware](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) имеют доступ к дополнительный набор методов для извлечения данных аналитики для оборудования и драйверов. Дополнительные сведения см. в разделе [панель мониторинга оборудования API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## <a name="code-example"></a>Пример кода
 

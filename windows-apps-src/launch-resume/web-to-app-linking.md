@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 464aa35aa8362049042ad23a6816c4de21b25634
-ms.sourcegitcommit: 559d3387d5929431212d147d9e085895e162916a
+ms.openlocfilehash: c638eb843528cc17a3f02233ef5f238264eb58a0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66184519"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370518"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Добавление поддержки приложений для веб-сайтов, использующих обработчики URI приложений
 
@@ -100,7 +100,7 @@ Windows установит https-соединение с вашим сайтом
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>Обработка ссылок на активацию для привязки ссылки к содержимому
 
-Перейдите к файлу **App.xaml.cs** в вашем проекте Visual Studio и добавьте обработку связанного содержимого в разделе **OnActivated()**. В следующем примере страница, открываемая в приложении, зависит от URI:
+Перейдите к файлу **App.xaml.cs** в вашем проекте Visual Studio и добавьте обработку связанного содержимого в разделе **OnActivated()** . В следующем примере страница, открываемая в приложении, зависит от URI:
 
 ``` CS
 protected override void OnActivated(IActivatedEventArgs e)
@@ -179,7 +179,7 @@ Keyname: `ForceValidation` Значение: `1`
 
 Убедитесь, что ваше приложение закрыто. Нажмите **клавишу Windows + R**, чтобы открыть диалоговое окно **Выполнить**, и вставьте ссылку в этом окне. Вместо браузера должно запуститься ваше приложение.
 
-Кроме того, можно протестировать приложение, запустив его из другого приложения с помощью API [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx). Можно также использовать этот API для тестирования на телефонах.
+Кроме того, можно протестировать приложение, запустив его из другого приложения с помощью API [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync). Можно также использовать этот API для тестирования на телефонах.
 
 Если вы хотите отслеживать логику активации протокола, установите точку останова в обработчике событий **OnActivated**.
 
@@ -191,11 +191,11 @@ Keyname: `ForceValidation` Значение: `1`
 - Файл JSON должен быть размещен на https-сервере.
 - Если вам нужно изменить пути, которые вы хотите поддерживать, можно повторно опубликовать JSON-файл, не переиздавая приложение. Пользователи увидят изменения через 1-8 дней.
 - Все неопубликованные приложения с AppUriHandlers будут иметь проверенные ссылки для данного узла при установке. Для проверки функциональности не требуется передавать JSON-файл на сайт.
-- Эта функция работает во всех случаях, когда ваше приложение является приложением UWP и запускается с помощью [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) или является приложением для настольной версии Windows и запускается с помощью [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). Если URL-адрес совпадает с зарегистрированным обработчиком URI приложения, вместо браузера будет запущено приложение.
+- Эта функция работает во всех случаях, когда ваше приложение является приложением UWP и запускается с помощью [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) или является приложением для настольной версии Windows и запускается с помощью [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). Если URL-адрес совпадает с зарегистрированным обработчиком URI приложения, вместо браузера будет запущено приложение.
 
 ## <a name="see-also"></a>См. также
 
 [Пример проекта веб-приложения](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
-[Регистрация windows.protocol](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
-[Активация обработки URI](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+[Регистрация windows.protocol](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)
+[Активация обработки URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 [Пример привязки запуска](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) показывает, как использовать API LaunchUriAsync().

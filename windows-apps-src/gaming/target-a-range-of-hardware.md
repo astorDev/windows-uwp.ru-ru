@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, карты теней, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: d0e661065f86ac173a6ce323281c80fc964d0a4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1087a063fa19bea716b86143c10097711cef9205
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646369"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367899"
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>Поддержка карт теней на различном оборудовании
 
@@ -108,7 +108,7 @@ return float4(input.color * (light + shadow), 1.f);
 ## <a name="shadow-buffer-size"></a>Размер буфера теней
 
 
-Крупные карты теней выглядят менее угловато, но занимают больше графической памяти. Попробуйте в своей игре карты теней разных размеров и сравните результаты на разных устройствах с разными размерами экранов. Чтобы добиться лучшего результата при меньшей загрузке графической памяти, попробуйте применить оптимизацию, например реализовать каскадные карты теней. См. раздел [Распространенные методики улучшения карт глубины теней](https://msdn.microsoft.com/library/windows/desktop/ee416324).
+Крупные карты теней выглядят менее угловато, но занимают больше графической памяти. Попробуйте в своей игре карты теней разных размеров и сравните результаты на разных устройствах с разными размерами экранов. Чтобы добиться лучшего результата при меньшей загрузке графической памяти, попробуйте применить оптимизацию, например реализовать каскадные карты теней. См. раздел [Распространенные методики улучшения карт глубины теней](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps).
 
 ## <a name="shadow-buffer-depth"></a>Глубина буфера теней
 

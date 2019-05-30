@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, игры, разработка игр
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3ed91d7250425b9a77fb09820a53952c8f3cfc
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 6729711a424bfdcf9af2da92d60f12a066500256
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162739"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368787"
 ---
 # <a name="windows-10-game-development-guide"></a>Руководство по разработке игр для Windows 10
 
@@ -58,7 +58,7 @@ ms.locfileid: "58162739"
     </tr>
     <tr>
         <td>Разработка приложений универсальной платформы Windows</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt244352">Практические руководства для приложений Windows 10</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/">Практические руководства для приложений Windows 10</a></td>
     </tr>
     <tr>
         <td>Инструкции к играм для UWP</td>
@@ -66,7 +66,7 @@ ms.locfileid: "58162739"
     </tr>
     <tr>
         <td>Справочник и обзоры по DirectX</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/ee663274">Графика и игры на основе DirectX</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/directx">Графика и игры на основе DirectX</a></td>
     </tr>
     <tr>
         <td>Azure для игр</td>
@@ -78,7 +78,7 @@ ms.locfileid: "58162739"
     </tr>
     <tr>
         <td>Приложения UWP для Xbox One</td>
-        <td><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">Создание приложений UWP на Xbox One</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/index">Создание приложений UWP на Xbox One</a></td>
     </tr>
     <tr>
         <td>UWP для HoloLens</td>
@@ -115,7 +115,7 @@ ms.locfileid: "58162739"
 
 #### <a name="xbox-live-creators-program"></a>Программа Xbox Live Creators Program
 
-Программа Xbox Live Creators Program позволяет любому желающему интегрировать Xbox Live в свою игру и опубликовать ее для Xbox One и Windows 10. Процесс сертификации максимально упрощен, и никакого утверждения концепции за пределами стандартной [политики Microsoft Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx) не предусмотрено.
+Программа Xbox Live Creators Program позволяет любому желающему интегрировать Xbox Live в свою игру и опубликовать ее для Xbox One и Windows 10. Процесс сертификации максимально упрощен, и никакого утверждения концепции за пределами стандартной [политики Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies) не предусмотрено.
 
 В рамках Creators Program вы можете развертывать, проектировать и публиковать свои игры без специального комплекта для разработчиков, используя только оборудование, доступное в розничной продаже. Для начала работы скачайте [приложение Dev Mode Activation](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation) на Xbox One.
 
@@ -302,31 +302,31 @@ ms.locfileid: "58162739"
     </tr>
     <tr>
         <td>Блог группы разработчиков Visual Studio</td>
-        <td><a href="https://blogs.msdn.com/b/visualstudio/">Блог Visual Studio</a></td>
+        <td><a href="https://devblogs.microsoft.com/visualstudio/">Блог Visual Studio</a></td>
     </tr>
     <tr>
         <td>Блоги о средствах разработчика Visual Studio</td>
-        <td><a href="https://blogs.msdn.com/b/developer-tools/">Блоги средств разработчика</a></td>
+        <td><a href="https://devblogs.microsoft.com/">Блоги средств разработчика</a></td>
     </tr>
     <tr>
         <td>Блог о средствах разработчика Somasegar</td>
-        <td><a href="https://blogs.msdn.com/b/somasegar/">Блог Сомасегара</a></td>
+        <td><a href="https://devblogs.microsoft.com/somasegar/">Блог Сомасегара</a></td>
     </tr>
     <tr>
         <td>Блог разработчиков DirectX</td>
-        <td><a href="https://blogs.msdn.com/b/directx">Блог разработчиков DirectX</a></td>
+        <td><a href="https://devblogs.microsoft.com/directx/">Блог разработчиков DirectX</a></td>
     </tr>
     <tr>
         <td>Введение в DirectX 12 (запись в блоге)</td>
-        <td><a href="https://blogs.msdn.com/b/directx/archive/2014/03/20/directx-12.aspx">DirectX 12</a></td>
+        <td><a href="https://devblogs.microsoft.com/directx/directx-12/">DirectX 12</a></td>
     </tr>
     <tr>
         <td>Блог группы разработчиков средств Visual C++</td>
-        <td><a href="https://blogs.msdn.com/b/vcblog/">Блог команды разработчиков Visual C++</a></td>
+        <td><a href="https://devblogs.microsoft.com/cppblog/">Блог команды разработчиков Visual C++</a></td>
     </tr>
     <tr>
         <td>Блог группы PIX</td>
-        <td><a href="https://blogs.msdn.microsoft.com/pix/">Настройка производительности и отладка игр DirectX 12 на Windows и Xbox</a></td>
+        <td><a href="https://devblogs.microsoft.com/pix/">Настройка производительности и отладка игр DirectX 12 на Windows и Xbox</a></td>
     </tr>
     <tr>
         <td>Блог группы развертывания универсальных приложений для Windows</td>
@@ -390,15 +390,15 @@ ms.locfileid: "58162739"
     </colgroup>
     <tr>
         <td>Создание игры с поддержкой специальных возможностей</td>
-        <td><a href="https://msdn.microsoft.com/windows/uwp/gaming/accessibility-for-games">Специальные возможности для игр</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/gaming/accessibility-for-games">Специальные возможности для игр</a></td>
     </tr>
     <tr>
         <td>Создание игр с помощью облака</td>
-        <td><a href="https://msdn.microsoft.com/windows/uwp/gaming/cloud-for-games">Облако для игр</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/gaming/cloud-for-games">Облако для игр</a></td>
     </tr>
     <tr>
         <td>Монетизация игры</td>
-        <td><a href="https://msdn.microsoft.com/windows/uwp/gaming/monetization-for-games">Монетизацию для игр</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/gaming/monetization-for-games">Монетизацию для игр</a></td>
     </tr>
 </table>
 
@@ -433,11 +433,11 @@ DirectX 12 работает быстрее и эффективнее любой 
     </tr>
     <tr>
         <td>Обзоры и справочник по DirectX</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/ee663274">Графика и игры на основе DirectX</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/directx">Графика и игры на основе DirectX</a></td>
     </tr>
     <tr>
         <td>Справочник и руководство по программированию для Direct3D 12</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn903821">Direct3D 12 графики</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Direct3D 12 графики</a></td>
     </tr>
     <tr>
         <td>Видео о разработке графики и DirectX 12 (канал YouTube)</td>
@@ -457,11 +457,11 @@ XAML — это простой в использовании декларати�
     </colgroup>
     <tr>
         <td>Обзор платформы XAML</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt228259">Платформа XAML</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/index">Платформа XAML</a></td>
     </tr>
     <tr>
         <td>Пользовательский интерфейс и элементы управления XAML</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt228348">Элементы управления, макеты и текст</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/design/basics/">Элементы управления, макеты и текст</a></td>
     </tr>
 </table>
  
@@ -477,7 +477,7 @@ HyperText Markup Language (HTML) — это общий язык разметки
     </colgroup>
     <tr>
         <td>Сведения о HTML5 и объектной модели документов</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/br212882.aspx">Справочник по HTML и DOM</a></td>
+        <td><a href="https://developer.mozilla.org/en-US/docs/Web">Справочник по HTML и DOM</a></td>
     </tr>
     <tr>
         <td>Рекомендации W3C по HTML5</td>
@@ -497,7 +497,7 @@ Microsoft DirectX Graphics Infrastructure (DXGI) обеспечивает меж
     </colgroup>
     <tr>
         <td>Руководство и справочник по программированию DirectX Graphics Infrastructure</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/hh404534">DXGI</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dx-graphics-dxgi">DXGI</a></td>
     </tr>
     <tr>
         <td>Сочетание DirectX и XAML</td>
@@ -517,7 +517,7 @@ C++/CX — это высокопроизводительный язык небо
     </colgroup>
     <tr>
         <td>Обзоры и справочник по C++/CX</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/hh699871.aspx">Visual C++ Справочник по языку (C++/CX)</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Visual C++ Справочник по языку (C++/CX)</a></td>
     </tr>
     <tr>
         <td>Справочник и руководство по программированию для Visual C++</td>
@@ -537,7 +537,7 @@ C# (произносится «Си-шарп») — это современны�
     </colgroup>
     <tr>
         <td>Справочник и руководство по программированию для C#</td>
-        <td><a href="https://msdn.microsoft.com/library/kx37x362.aspx">Справочник по языку C#</a></td>
+        <td><a href="https://docs.microsoft.com/dotnet/articles/csharp/csharp">Справочник по языку C#</a></td>
     </tr>
 </table>
  
@@ -555,7 +555,7 @@ JavaScript — это динамический язык сценариев, ко
     </colgroup>
     <tr>
         <td>Справочник по JavaScript и среде выполнения Windows</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/jj613794">Справочник по JavaScript</a></td>
+        <td><a href="https://docs.microsoft.com/scripting/javascript/javascript-language-reference">Справочник по JavaScript</a></td>
     </tr>
 </table>
 
@@ -591,15 +591,15 @@ Direct3D 11.3 — это низкоуровневый графический AP
     </colgroup>
     <tr>
         <td>Выбор Direct3D 12 или Direct3D 11</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn899228">Что такое Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/what-is-directx-12-">Что такое Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Общие сведения о Direct3D 11</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/ff476080">Direct3D 11 графики</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11">Direct3D 11 графики</a></td>
     </tr>
     <tr>
         <td>Обзор Direct3D 11 на 12</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn913195">Direct3D 11 на 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-11-on-12">Direct3D 11 на 12</a></td>
     </tr>
 </table>
 
@@ -874,7 +874,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Перенос приложения для Windows 8 на универсальную платформу Windows</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238322">Переход от среды выполнения Windows 8.x к UWP</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-root">Переход от среды выполнения Windows 8.x к UWP</a></td>
     </tr>
     <tr>
         <td>Перенос приложения для Windows 8 на универсальную платформу Windows (видео)</td>
@@ -882,11 +882,11 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Перенос приложения iOS на универсальную платформу Windows</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238320">Переход с iOS на UWP</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/porting/ios-to-uwp-root">Переход с iOS на UWP</a></td>
     </tr>
     <tr>
         <td>Перенос приложения Silverlight на универсальную платформу Windows</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt238323">Переход с Windows Phone Silverlight на UWP</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/porting/wpsl-to-uwp-root">Переход с Windows Phone Silverlight на UWP</a></td>
     </tr>
     <tr>
         <td>Перенос приложения с XAML или Silverlight на универсальную платформу Windows (видео)</td>
@@ -902,7 +902,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Перенос из Direct3D 11 в Direct3D 12</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/mt431709">Перенос приложений из Direct3D 11, чтобы Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/porting-from-direct3d-11-to-direct3d-12">Перенос приложений из Direct3D 11, чтобы Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Перенос из OpenGL ES в Direct3D 11</td>
@@ -914,7 +914,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Эквиваленты классических API для Windows в UWP</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/hh464945">Альтернативы API Windows в Windows, универсальных приложений платформы (UWP)</a></td>
+        <td><a href="https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">Альтернативы API Windows в Windows, универсальных приложений платформы (UWP)</a></td>
     </tr>
 </table>
 
@@ -937,11 +937,11 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Знакомство с приложениями универсальной платформы Windows (UWP)</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/dn726767">Что такое универсальной Windows приложение платформы?</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp">Что такое универсальной Windows приложение платформы?</a></td>
     </tr>
     <tr>
         <td>Обзор UWP</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/dn894631">Руководство по приложениям UWP</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Руководство по приложениям UWP</a></td>
     </tr>
 </table>
  
@@ -961,7 +961,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Подготовка к разработке для UWP</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/dn726766">Подготовка</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/get-started/get-set-up">Подготовка</a></td>
     </tr>
 </table>
 
@@ -995,7 +995,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Обзор сетевого программирования в UWP</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt280378">Сетевые и веб-службы</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/networking/index">Сетевые и веб-службы</a></td>
     </tr>
     <tr>
         <td>Применение Windows.Web.HTTP и Windows.Networking.Sockets в играх</td>
@@ -1003,7 +1003,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Концепции асинхронного программирования в UWP</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt187335">Асинхронное программирование</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">Асинхронное программирование</a></td>
     </tr>
 </table>
 
@@ -1026,11 +1026,11 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Неподдерживаемые функции CRT в UWP</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/jj606124.aspx">Функции CRT не поддерживаются в приложениях универсальной платформы Windows</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">Функции CRT не поддерживаются в приложениях универсальной платформы Windows</a></td>
     </tr>
     <tr>
         <td>Альтернативы API Windows</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt592894.aspx">Альтернативы API Windows в Windows, универсальных приложений платформы (UWP)</a></td>
+        <td><a href="https://docs.microsoft.com/uwp/win32-and-com/alternatives-to-windows-apis-uwp">Альтернативы API Windows в Windows, универсальных приложений платформы (UWP)</a></td>
     </tr>
 </table>
  
@@ -1046,11 +1046,11 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Обработка переходов между этапами жизненного цикла приложения</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt243287">Жизненный цикл приложения</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle">Жизненный цикл приложения</a></td>
     </tr>
     <tr>
         <td>Использование Microsoft Visual Studio для активации переходов между этапами приложения</td>
-        <td><a href="https://msdn.microsoft.com/library/hh974425.aspx">Активация приостановки, возобновления и фоновых событий для приложений UWP в Visual Studio</a></td>
+        <td><a href="https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015">Активация приостановки, возобновления и фоновых событий для приложений UWP в Visual Studio</a></td>
     </tr>
 </table>
  
@@ -1074,7 +1074,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Проектирование этапов жизненного цикла приложения</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/dn611862">Рекомендации по UX для запуска, приостановки и возобновления</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/launch-resume/index">Рекомендации по UX для запуска, приостановки и возобновления</a></td>
     </tr>
     <tr>
         <td>Проектирование приложения UWP для Xbox One и телевизоров</td>
@@ -1145,11 +1145,11 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>API-интерфейсы XAudio2</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/hh405049.aspx">Руководство по программированию и справочник по API для XAudio2</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal">Руководство по программированию и справочник по API для XAudio2</a></td>
     </tr>
     <tr>
         <td>Создание межплатформенных объектов для обработки звука</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/ee415735.aspx">Общие сведения о XAPO</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xapo-overview">Общие сведения о XAPO</a></td>
     </tr>
     <tr>
         <td>Введение в понятия обработки звука</td>
@@ -1157,7 +1157,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Обзор Windows Sonic</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/mt807491.aspx">Пространственные звука</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/CoreAudio/spatial-sound">Пространственный звук</a></td>
     </tr>
     <tr>
         <td>Примеры пространственного звучания Windows Sonic</td>
@@ -1196,11 +1196,11 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Обзоры и справочник по DirectX</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/ee663274">Графика и игры на основе DirectX</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/directx">Графика и игры на основе DirectX</a></td>
     </tr>
     <tr>
         <td>Справочник и руководство по программированию для Direct3D 12</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn903821">Direct3D 12 графики</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Direct3D 12 графики</a></td>
     </tr>
     <tr>
         <td>Основы DirectX 12 (видео)</td>
@@ -1219,27 +1219,27 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Настройка среды для программирования</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn899120.aspx">Настройки программирования среды Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directx-12-programming-environment-set-up">Настройки программирования среды Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Создание базового компонента</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn859356.aspx">Создание базового компонента Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/creating-a-basic-direct3d-12-component">Создание базового компонента Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Изменения в Direct3D 12</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn899194.aspx">Важные изменения, миграция с Direct3D 11 на Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/important-changes-from-directx-11-to-directx-12">Важные изменения, миграция с Direct3D 11 на Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Перенос из Direct3D 11 в Direct3D 12</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/mt431709.aspx">Перенос приложений из Direct3D 11, чтобы Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/porting-from-direct3d-11-to-direct3d-12">Перенос приложений из Direct3D 11, чтобы Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Понятия привязки ресурсов (сопроводительный дескриптор, таблица дескрипторов, куча дескрипторов и корневая подпись) </td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn899206.aspx">Привязка ресурсов в Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/resource-binding">Привязка ресурсов в Direct3D 12</a></td>
     </tr>
     <tr>
         <td>Управление памятью</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn899198.aspx">Управление памятью в Direct3D 12</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/memory-management">Управление памятью в Direct3D 12</a></td>
     </tr>
 </table>
  
@@ -1327,7 +1327,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Разработка плиток и индикаторов событий</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt185606">Плитки, индикаторы событий и уведомления</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications">Плитки, индикаторы событий и уведомления</a></td>
     </tr>
     <tr>
         <td>Примеры живых плиток и уведомлений</td>
@@ -1335,11 +1335,11 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Шаблоны адаптивных плиток (запись в блоге)</td>
-        <td><a href="https://blogs.msdn.com/b/tiles_and_toasts/archive/2015/06/30/adaptive-tile-templates-schema-and-documentation.aspx">Шаблоны адаптивной плитку - схемы и документация</a></td>
+        <td><a href="https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/06/30/adaptive-tile-templates-schema-and-documentation/">Шаблоны адаптивной плитку - схемы и документация</a></td>
     </tr>
     <tr>
         <td>Проектирование плиток и индикаторов событий</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/hh465403">Руководство по плиткам и индикаторам событий</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles">Руководство по плиткам и индикаторам событий</a></td>
     </tr>
     <tr>
         <td>Приложение Windows 10 для интерактивной разработки шаблонов живых плиток</td>
@@ -1347,7 +1347,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Расширение генератора плиток UWP для Visual Studio</td>
-        <td><a href="https://visualstudiogallery.msdn.microsoft.com/09611e90-f3e8-44b7-9c83-18dba8275bb2">Средство для создания всех необходимых плиток, с помощью одного образа</a></td>
+        <td><a href="https://marketplace.visualstudio.com/vsgallery/09611e90-f3e8-44b7-9c83-18dba8275bb2">Средство для создания всех необходимых плиток, с помощью одного образа</a></td>
     </tr>
     <tr>
         <td>Расширение генератора плиток UWP для Visual Studio (запись в блоге)</td>
@@ -1367,19 +1367,19 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Устойчивые надстройки</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt219684">Поддержка покупки внутренних продуктов приложений</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases">Поддержка покупки внутренних продуктов приложений</a></td>
     </tr>
     <tr>
         <td>Готовых к использованию надстройки</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt219683">Поддержка покупки потребляемых внутренних продуктов приложений</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/monetize/enable-consumable-in-app-product-purchases">Поддержка покупки потребляемых внутренних продуктов приложений</a></td>
     </tr>
     <tr>
         <td>Дополнительные сведения и отправки</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">Отправка надстроек</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/iap-submissions">Отправка надстроек</a></td>
     </tr>
     <tr>
         <td>Монитор надстройки продаж и демографические данные вашей игры</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">Отчет о приобретении надстроек</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/iap-acquisitions-report">Отчет о приобретении надстроек</a></td>
     </tr>
 </table>
  
@@ -1401,11 +1401,11 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Получение типа консоли Xbox с использованием сведений об игровом устройстве</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/mt825235">Сведения об устройстве игры</a></td>
+        <td><a href="https://docs.microsoft.com/previous-versions/windows/desktop/gamingdvcinfo/gaming-device-information-portal">Сведения об устройстве игры</a></td>
     </tr>
     <tr>
         <td>Повышение производительности за счет эксклюзивного или приоритетного доступа к аппаратным ресурсам с помощью API-интерфейсов режима игры</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/mt808808">Режим игры</a></td>
+        <td><a href="https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal">Режим игры</a></td>
     </tr>
     <tr>
         <td>Получить набор средств для оценки производительности Windows (WPT) из Windows 10 SDK</td>
@@ -1444,7 +1444,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>PIX в Windows</td>
-        <td><a href="https://blogs.msdn.microsoft.com/pix/2017/01/17/introducing-pix-on-windows-beta/">Настройка производительности и средство отладки для DirectX 12 в Windows</a></td>
+        <td><a href="https://devblogs.microsoft.com/pix/introducing-pix-on-windows-beta/">Настройка производительности и средство отладки для DirectX 12 в Windows</a></td>
     </tr>
     <tr>
         <td>Средства отладки и проверки для разработки на базе D3D12 (видео)</td>
@@ -1464,7 +1464,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Руководство по программированию для Direct3D 12</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn903821">Direct3D 12 руководство по программированию</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics">Direct3D 12 руководство по программированию</a></td>
     </tr>
     <tr>
         <td>Сочетание DirectX и XAML</td>
@@ -1507,7 +1507,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Подготовка игры для мирового рынка</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt186453.aspx">Рекомендации при разработке для широкой аудитории</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal">Рекомендации при разработке для широкой аудитории</a></td>
     </tr>
     <tr>
         <td>Объединение языков, культур и технологий</td>
@@ -1583,11 +1583,11 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Цифровая подпись файлов с помощью SignTool</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/aa387764">Подписи файлов и проверки подписей в файлах с использованием SignTool</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/SecCrypto/signtool">Подписи файлов и проверки подписей в файлах с использованием SignTool</a></td>
     </tr>    
     <tr>
         <td>Отправка игры и управление версиями</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148542">Отправить пакеты приложения</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/upload-app-packages">Отправить пакеты приложения</a></td>
     </tr>
 </table>
 
@@ -1603,15 +1603,15 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Соглашение с разработчиком приложения Microsoft Store</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/hh694058">Соглашение с разработчиком приложений</a></td>
+        <td><a href="https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement">Соглашение с разработчиком приложений</a></td>
     </tr>
     <tr>
         <td>Правила публикации приложений в Microsoft Store</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/dn764944">Политики для Microsoft Store</a></td>
+        <td><a href="https://docs.microsoft.com/legal/windows/agreements/store-policies">Политики для Microsoft Store</a></td>
     </tr>
     <tr>
         <td>Способы предотвращения некоторых распространенных проблем сертификации приложений</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/jj657968">Избегайте распространенных ошибок сертификации</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/avoid-common-certification-failures">Избегайте распространенных ошибок сертификации</a></td>
     </tr>
 </table>
  
@@ -1627,7 +1627,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Схема манифеста Магазина</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt617335">Схемы StoreManifest (Windows 10)</a></td>
+        <td><a href="https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root">Схемы StoreManifest (Windows 10)</a></td>
     </tr>
 </table>
  
@@ -1646,7 +1646,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Аналитики центра партнеров</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148522">Анализ производительности приложений</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Анализ производительности приложений</a></td>
     </tr>
     <tr>
         <td>Получение информации о том, как клиенты взаимодействуют с функциями Xbox в вашей игре</td>
@@ -1654,7 +1654,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Ответ на отзывы клиентов</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148546">Ответы на отзывы клиентов</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/respond-to-customer-reviews">Ответы на отзывы клиентов</a></td>
     </tr>
     <tr>
         <td>Способы рекламирования игры</td>
@@ -1728,11 +1728,11 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Обновление и управление версиями игры</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt188602">Нумерация версий пакета</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/package-version-numbering">Нумерация версий пакета</a></td>
     </tr>
     <tr>
         <td>Руководство по управлению пакетами игры</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt188602">Рекомендации для управления пакетами приложений</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/package-version-numbering">Рекомендации для управления пакетами приложений</a></td>
     </tr>
 </table>
 

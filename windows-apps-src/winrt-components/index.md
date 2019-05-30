@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c018c890f8fcab2cb0c778c8c91840911f158c9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3e9dde8027077bb822cc0659c8b9970ae5aded67
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583213"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372527"
 ---
 # <a name="windows-runtime-components"></a>Компоненты среды выполнения Windows
 Компоненты среды выполнения Windows представляют собой автономные объекты, которые позволяют создавать экземпляры и могут быть использованы в любом языке, включая C#, Visual Basic, JavaScript и C++.
@@ -21,7 +21,7 @@ ms.locfileid: "57583213"
 | Раздел | Описание |
 |-------|-------------|
 | [Создание компонентов среды выполнения Windows на C++](creating-windows-runtime-components-in-cpp.md) | В этой статье описывается использование C++/CX для создания компонента среды выполнения Windows, представляющего собой компонент, который можно вызывать из универсального приложения для Windows, созданного с помощью C#, Visual Basic, C++ или JavaScript. |
-| [Пошаговое руководство: создание базового компонента среды выполнения Windows на C++/CX и его вызов из JavaScript или C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md) | В этом пошаговом руководстве описан процесс создания базового компонента среды выполнения Windows, являющегося библиотекой DLL, которую можно вызвать из JavaScript, C# или Visual Basic. Прежде чем приступить к изучению этого пошагового руководства, убедитесь, что вы знакомы с такими понятиями, как абстрактный двоичный интерфейс (ABI), ссылочные классы и расширения компонентов Visual C++, которые упрощают работу со ссылочными классами. Дополнительные сведения см. в статье [Создание компонентов среды выполнения Windows в C++](creating-windows-runtime-components-in-cpp.md) и [Справочник по языку Visual C++ (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx). |
+| [Пошаговое руководство: создание базового компонента среды выполнения Windows на C++/CX и его вызов из JavaScript или C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md) | В этом пошаговом руководстве описан процесс создания базового компонента среды выполнения Windows, являющегося библиотекой DLL, которую можно вызвать из JavaScript, C# или Visual Basic. Прежде чем приступить к изучению этого пошагового руководства, убедитесь, что вы знакомы с такими понятиями, как абстрактный двоичный интерфейс (ABI), ссылочные классы и расширения компонентов Visual C++, которые упрощают работу со ссылочными классами. Дополнительные сведения см. в статье [Создание компонентов среды выполнения Windows в C++](creating-windows-runtime-components-in-cpp.md) и [Справочник по языку Visual C++ (C++/CX)](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx). |
 | [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) | Начиная с .NET Framework 4.5 можно создавать собственные типы среды выполнения Windows, упакованные в компонент среды выполнения Windows, с помощью управляемого кода. Этот компонент можно использовать в приложениях универсальной платформы Windows (UWP), написанных на C++, JavaScript, Visual Basic или C#. В данном разделе описываются правила создания компонента и рассматриваются некоторые аспекты поддержки среды выполнения Windows в .NET Framework. Как правило, такая поддержка разрабатывается таким образом, чтобы быть прозрачной для разработчиков .NET Framework. Однако при создании компонента, использующего JavaScript или C++, следует учитывать различия в том, как эти языки поддерживают среду выполнения Windows. |
 | [Пошаговое руководство: создание простого компонента среды выполнения Windows и его вызов из JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) | В этом пошаговом руководстве описан процесс использования платформы .NET Framework с Visual Basic или C# для создания собственных типов среды выполнения Windows, упакованных в компонент среды выполнения Windows, а также процедура вызова компонента из универсального приложения для Windows, собранного для Windows с использованием JavaScript. |
 | [Создание событий в компонентах среды выполнения Windows](raising-events-in-windows-runtime-components.md) | Если ваш компонент среды выполнения Windows вызывает событие типа делегата, определенного пользователем, в фоновом (рабочем) потоке и вы хотите, чтобы среда JavaScript могла получить его, можно реализовать и вызвать событие одним из следующих способов. | 

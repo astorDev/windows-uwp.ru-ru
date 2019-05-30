@@ -6,12 +6,12 @@ ms.date: 06/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e04170fb8952ecd5802b6190816d44012f56d8a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f9dba57d8e75ba105a2154be5add5b101a4a6aa4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661439"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369337"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>Файлы и папки в библиотеках музыки, изображений и видео
 
@@ -19,12 +19,12 @@ ms.locfileid: "57661439"
 
 Библиотека — это виртуальная коллекция папок, которая содержит известную папку по умолчанию и все другие папки, добавленные пользователем в библиотеку с помощью вашего приложения или одного из встроенных приложений. Например, библиотека изображений содержит известную папку изображений по умолчанию. Пользователь может добавлять папки в библиотеку изображений или удалить их из нее с помощью вашего приложения или встроенного приложения "Фотографии".
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 
 -   **Понять асинхронного программирования для приложений универсальной платформы Windows (UWP)**
 
-    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Разрешения на доступ к папке**
 
@@ -42,11 +42,11 @@ ms.locfileid: "57661439"
 > Обязательно объявите соответствующую возможность. Дополнительные сведения см. в статье [Объявление возможностей приложений](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
  
 
-Чтобы получить ссылку на библиотеку музыки, изображений или видео, вызовите метод [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725). Предоставьте соответствующее значение из перечисления [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399).
+Чтобы получить ссылку на библиотеку музыки, изображений или видео, вызовите метод [**StorageLibrary.GetLibraryAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.getlibraryasync). Предоставьте соответствующее значение из перечисления [**KnownLibraryId**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownLibraryId).
 
--   [**KnownLibraryId.Music**](https://msdn.microsoft.com/library/windows/apps/br227155)
--   [**KnownLibraryId.Pictures**](https://msdn.microsoft.com/library/windows/apps/br227156)
--   [**KnownLibraryId.Videos**](https://msdn.microsoft.com/library/windows/apps/br227159)
+-   [**KnownLibraryId.Music**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary)
+-   [**KnownLibraryId.Pictures**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary)
+-   [**KnownLibraryId.Videos**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary)
 
 ```cs
 var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Pictures);
@@ -55,7 +55,7 @@ var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.St
 ## <a name="get-the-list-of-folders-in-a-library"></a>Получение списка папок в библиотеке
 
 
-Чтобы получить список папок, получите значение свойства [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724).
+Чтобы получить список папок, получите значение свойства [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders).
 
 ```cs
 using Windows.Foundation.Collections;
@@ -65,7 +65,7 @@ IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.F
 ## <a name="get-the-folder-in-a-library-where-new-files-are-saved-by-default"></a>Получение папки в библиотеке, в котором новые файлы сохраняются по умолчанию
 
 
-Чтобы получить папку в библиотеке, в которую по умолчанию сохраняются новые файлы, получите значение свойства [**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728).
+Чтобы получить папку в библиотеке, в которую по умолчанию сохраняются новые файлы, получите значение свойства [**StorageLibrary.SaveFolder**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.savefolder).
 
 ```cs
 Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
@@ -73,7 +73,7 @@ Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 
 ## <a name="add-an-existing-folder-to-a-library"></a>Добавление существующей папки в библиотеку
 
-Чтобы добавить папку в библиотеку, вызовите [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726). Рассмотрим в качестве примера библиотеку изображений. Вызов этого метода отображает для пользователя средство выбора папок с кнопкой **Добавить эту папку в библиотеку изображений**. Если пользователь выбирает папку, то она остается в исходном расположении на диске и становится элементом в свойстве [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) (и во встроенном приложении «Фотографии»), но папка не отображается как дочерний элемент папки «Изображения» в проводнике.
+Чтобы добавить папку в библиотеку, вызовите [**StorageLibrary.RequestAddFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestaddfolderasync). Рассмотрим в качестве примера библиотеку изображений. Вызов этого метода отображает для пользователя средство выбора папок с кнопкой **Добавить эту папку в библиотеку изображений**. Если пользователь выбирает папку, то она остается в исходном расположении на диске и становится элементом в свойстве [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) (и во встроенном приложении «Фотографии»), но папка не отображается как дочерний элемент папки «Изображения» в проводнике.
 
 
 ```cs
@@ -82,11 +82,11 @@ Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync
 
 ## <a name="remove-a-folder-from-a-library"></a>Удаление папки из библиотеки
 
-Чтобы удалить папку из библиотеки, вызовите метод [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) и укажите папку, которую нужно удалить. Можно использовать элемент управления [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) и [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) (или подобный ему), чтобы пользователь мог выбрать папку для удаления.
+Чтобы удалить папку из библиотеки, вызовите метод [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) и укажите папку, которую нужно удалить. Можно использовать элемент управления [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) и [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) (или подобный ему), чтобы пользователь мог выбрать папку для удаления.
 
-При вызове [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) пользователь увидит диалоговое окно подтверждения, указывающее, что эта папка «больше не будет отображаться в библиотеке изображений, но не будет удалена». Это означает, что папка остается в исходном расположении на диске, удаляется из свойства [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) и больше не будет включена во встроенное приложение «Фотографии».
+При вызове [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) пользователь увидит диалоговое окно подтверждения, указывающее, что эта папка «больше не будет отображаться в библиотеке изображений, но не будет удалена». Это означает, что папка остается в исходном расположении на диске, удаляется из свойства [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) и больше не будет включена во встроенное приложение «Фотографии».
 
-В следующем примере предполагается, что пользователь выбрал папку для удаления из элемента управления [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) с именем **lvPictureFolders**.
+В следующем примере предполагается, что пользователь выбрал папку для удаления из элемента управления [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) с именем **lvPictureFolders**.
 
 
 ```cs
@@ -96,7 +96,7 @@ bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ## <a name="get-notified-of-changes-to-the-list-of-folders-in-a-library"></a>Получение уведомлений об изменениях списка папок в библиотеке
 
 
-Для получения уведомлений об изменениях в списке папок в библиотеке зарегистрируйте обработчик для события [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) библиотеки.
+Для получения уведомлений об изменениях в списке папок в библиотеке зарегистрируйте обработчик для события [**StorageLibrary.DefinitionChanged**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.definitionchanged) библиотеки.
 
 
 ```cs
@@ -158,7 +158,7 @@ private async void getSongs()
 
 Пользователи могут выбрать хранение файлов на дополнительной SD-карте по умолчанию. Приложения же могут запретить хранение файлов на SD-карте. В результате библиотеки мультимедиа могут храниться и во внутреннем хранилище устройства, и на SD-карте.
 
-Для обработки этой возможности не нужно писать дополнительный код. Методы в пространстве имен [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346), запрашивающие известные папки, прозрачно сочетают результаты запросов из обоих расположений. Чтобы получить эти комбинированные результаты, нет необходимости указывать возможность **removableStorage** в файле манифеста приложения.
+Для обработки этой возможности не нужно писать дополнительный код. Методы в пространстве имен [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage), запрашивающие известные папки, прозрачно сочетают результаты запросов из обоих расположений. Чтобы получить эти комбинированные результаты, нет необходимости указывать возможность **removableStorage** в файле манифеста приложения.
 
 Рассмотрите состояние хранилища устройства, показанное на следующем изображении.
 
@@ -175,7 +175,7 @@ private async void getSongs()
 
 **Открытие фото в приложение, которое скопировал его**
 
-Если вы хотите предоставить пользователю возможность открыть фотографию позже в том приложении, с помощью которого она снята, вы можете сохранить **CreatorAppId** с метаданными фотографии с помощью кода, похожего на приведенный в следующем примере. В этом примере **testPhoto** представляет объект [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
+Если вы хотите предоставить пользователю возможность открыть фотографию позже в том приложении, с помощью которого она снята, вы можете сохранить **CreatorAppId** с метаданными фотографии с помощью кода, похожего на приведенный в следующем примере. В этом примере **testPhoto** представляет объект [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile).
 
 ```cs
 IDictionary<string, object> propertiesToSave = new Dictionary<string, object>();

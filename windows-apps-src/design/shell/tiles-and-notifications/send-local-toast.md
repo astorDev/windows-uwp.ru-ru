@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, отправка всплывающих уведомлений, уведомления, отправка уведомлений, всплывающие уведомления, руководство, краткое руководство, начало работы, пример кода, пошаговое руководство
 ms.localizationpriority: medium
-ms.openlocfilehash: 410e8121aecfe13805586c9287f62444f80a1b1b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4c8def5d1a220fe0458dd5c244d875b991b2b76c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605929"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365933"
 ---
 # <a name="send-a-local-toast-notification"></a>Отправка локального всплывающего уведомления
 
@@ -42,7 +42,7 @@ ms.locfileid: "57605929"
 > **Важные API**: [Класс ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs-класс](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы полностью понять этот раздел, изучите инструкции ниже...
 
@@ -54,7 +54,7 @@ ms.locfileid: "57605929"
 > В отличие от Windows 8 или 8.1, вам больше не нужно объявлять в манифесте приложения, что ваше приложение способно отображать всплывающие уведомления. Все приложения способны отправлять и отображать всплывающие уведомления.
 
 > [!NOTE]
-> **Приложения Windows 8 и 8.1**: Используйте [архивная документация](https://msdn.microsoft.com/library/windows/apps/xaml/hh868254.aspx).
+> **Приложения Windows 8 и 8.1**: Используйте [архивная документация](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10)).
 
 
 ## <a name="install-nuget-packages"></a>Установка пакетов NuGet
@@ -238,7 +238,7 @@ toast.ExpirationTime = DateTime.Now.AddDays(2);
 
 Если вы хотите удалить или заменить уведомление, которое вы отправляете программным способом, необходимо использовать свойство Tag (и при необходимости свойство Group) для предоставления первичного ключа для уведомления. Затем можно использовать этот ключ в будущем для удаления или замены уведомления.
 
-Чтобы просмотреть дополнительные сведения о замене или удалении уже доставленных всплывающие уведомления, см. в разделе [краткое руководство: Управление всплывающие уведомления центра поддержки (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx).
+Чтобы просмотреть дополнительные сведения о замене или удалении уже доставленных всплывающие уведомления, см. в разделе [краткое руководство: Управление всплывающие уведомления центра поддержки (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
 Tag и Group объединены в качестве составного первичного ключа. Группа — более универсальным идентификатором, где можно назначать группы, такие как «wallPosts», «messages», «friendRequests» и т. д. И затем тег должен однозначно определять в уведомлении из группы. С помощью универсальной группы вы можете удалить все уведомления из группы с помощью [RemoveGroup API ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
@@ -270,7 +270,7 @@ Windows автоматически удалит уведомление, если
 3. Приложение открывает беседу, а затем удаляет все всплывающие уведомления для этой беседы (с помощью [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) в группе приложения для этой беседы)
 4. Центр уведомлений пользователя теперь правильно отражает состояние уведомления, так как слева в центре уведомлений нет устаревших уведомлений для этой беседы.
 
-Дополнительные сведения о очистки всех уведомлений или удаление специальных уведомлений, см. в разделе [краткое руководство: Управление всплывающие уведомления центра поддержки (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/dn631260.aspx).
+Дополнительные сведения о очистки всех уведомлений или удаление специальных уведомлений, см. в разделе [краткое руководство: Управление всплывающие уведомления центра поддержки (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10)).
 
 
 ## <a name="handling-activation"></a>Обработка активации

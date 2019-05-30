@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, отрисовка, сцена, тестирование глубины, direct3d, тени
 ms.localizationpriority: medium
-ms.openlocfilehash: 237da82ef51466ae2460c3be27486091bf4066f3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d1c2c4e5d45b28c318085f4ce257b587f23f1426
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630459"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368100"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>Прорисовка сцены с тестированием глубины
 
@@ -67,7 +67,7 @@ PixelShaderInput main(VertexShaderInput input)
 ## <a name="test-whether-the-position-is-in-the-light-frustum"></a>Проверка нахождения в усеченном световом конусе
 
 
-Сначала проверим, находится для пиксель в усеченном световом конусе, нормализовав координаты X и Y. Если оба они находятся в диапазоне \[0, 1\] возможно для пикселя в тени. В противном случае проверку глубины можно пропустить. Шейдер может быстро выполнить эту проверку, вызвав метод [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) и сравнив результат с исходным значением.
+Сначала проверим, находится для пиксель в усеченном световом конусе, нормализовав координаты X и Y. Если оба они находятся в диапазоне \[0, 1\] возможно для пикселя в тени. В противном случае проверку глубины можно пропустить. Шейдер может быстро выполнить эту проверку, вызвав метод [Saturate](https://docs.microsoft.com/windows/desktop/direct3dhlsl/saturate) и сравнив результат с исходным значением.
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.
@@ -89,7 +89,7 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 ## <a name="depth-test-against-the-shadow-map"></a>Проверка глубины по карте теней
 
 
-Используйте функцию сравнения образцов ([SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696) или [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) для проверки глубины пикселя в световом пространстве по карте глубин. Рассчитайте нормализованное значение глубины светового пространства, которым является `z / w`, и передайте значение функции сравнения. Поскольку мы используем сравнительный тест LessOrEqual в образце, встроенная функция возвращает ноль при успешном тесте. Это означает, что пиксель в тени.
+Используйте функцию сравнения образцов ([SampleCmp](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmp) или [SampleCmpLevelZero](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero)) для проверки глубины пикселя в световом пространстве по карте глубин. Рассчитайте нормализованное значение глубины светового пространства, которым является `z / w`, и передайте значение функции сравнения. Поскольку мы используем сравнительный тест LessOrEqual в образце, встроенная функция возвращает ноль при успешном тесте. Это означает, что пиксель в тени.
 
 ```cpp
 // Use an offset value to mitigate shadow artifacts due to imprecise 

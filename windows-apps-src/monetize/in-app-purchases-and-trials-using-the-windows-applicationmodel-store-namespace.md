@@ -6,27 +6,27 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: uwp, покупки из приложения, IAP, надстройки, пробные версии, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 96260b0fb2aa0818dd6df52f88bd0c63d56c35b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7053f75ee4081de18fe004d4af905afe5e00587b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628539"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361903"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Покупки из приложения и пробные версии, использующие пространство имен Windows.ApplicationModel.Store
 
-Вы можете использовать элементы в пространстве имен [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) для добавления функций совершения покупок из приложения и пробных версий в ваше приложение универсальной платформы Windows (UWP), чтобы получать доход от приложения. Эти API также предоставляют доступ к лицензионной информации вашего приложения.
+Вы можете использовать элементы в пространстве имен [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) для добавления функций совершения покупок из приложения и пробных версий в ваше приложение универсальной платформы Windows (UWP), чтобы получать доход от приложения. Эти API также предоставляют доступ к лицензионной информации вашего приложения.
 
 Статьи в этом разделе содержат подробные руководства и примеры кода для использования элементов в пространстве имен **Windows.ApplicationModel.Store** для нескольких распространенных сценариев. Обзор базовых концепций, связанных с покупками из приложения в приложениях UWP, см. в разделе [Покупки из приложения и пробные версии](in-app-purchases-and-trials.md). Полный пример, в котором показано внедрение пробных версий и покупок из приложения с использованием пространства имен **Windows.ApplicationModel.Store**, доступен в разделе [Пример для Магазина](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
 > [!IMPORTANT]
-> Пространство имен **Windows.ApplicationModel.Store** больше не обновляется с добавлением новых функций. Если проект приложения ориентирован на **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздние версии в Visual Studio (то есть, вы ориентируете приложение на Windows 10 версии 1607 и более поздние версии), рекомендуется вместо этого использовать пространство имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Подробнее см. в разделе [Покупки из приложения и пробные версии](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). **Windows.ApplicationModel.Store** пространства имен не поддерживается в приложениях для настольных систем Windows, использующих [моста для классических](https://developer.microsoft.com/windows/bridges/desktop) или в приложениях или играх, использующих изолированной среды для разработки в центре партнеров (для Пример, это происходит для любого игру, которая интегрируется с Xbox Live). Эти продукты должны использовать для реализации покупок из приложения и пробных версий пространство имен **Windows.Services.Store**.
+> Пространство имен **Windows.ApplicationModel.Store** больше не обновляется с добавлением новых функций. Если проект приложения ориентирован на **Windows 10 Anniversary Edition (10.0; сборка 14393)** или более поздние версии в Visual Studio (то есть, вы ориентируете приложение на Windows 10 версии 1607 и более поздние версии), рекомендуется вместо этого использовать пространство имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store). Подробнее см. в разделе [Покупки из приложения и пробные версии](https://docs.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials). **Windows.ApplicationModel.Store** пространства имен не поддерживается в приложениях для настольных систем Windows, использующих [моста для классических](https://developer.microsoft.com/windows/bridges/desktop) или в приложениях или играх, использующих изолированной среды для разработки в центре партнеров (для Пример, это происходит для любого игру, которая интегрируется с Xbox Live). Эти продукты должны использовать для реализации покупок из приложения и пробных версий пространство имен **Windows.Services.Store**.
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>Начало работы с классами CurrentApp и CurrentAppSimulator
 
-Главной точкой входа в пространство имен **Windows.ApplicationModel.Store** является класс [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx). Этот класс предоставляет статические свойства и методы, которые можно использовать, чтобы получить сведения о текущем приложении и его доступных надстройках, получить лицензионные сведения о текущем приложении или его надстройках, приобрести приложение или надстройку для текущего пользователя и решить другие задачи.
+Главной точкой входа в пространство имен **Windows.ApplicationModel.Store** является класс [CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp). Этот класс предоставляет статические свойства и методы, которые можно использовать, чтобы получить сведения о текущем приложении и его доступных надстройках, получить лицензионные сведения о текущем приложении или его надстройках, приобрести приложение или надстройку для текущего пользователя и решить другие задачи.
 
-Класс [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) получает свои данные из Microsoft Store, поэтому для успешного использования этого класса в своем приложении вам потребуется учетная запись разработчика, а приложение должно быть опубликовано в Store. Перед отправкой приложения в Магазин вы можете протестировать код при помощи смоделированной версии этого класса с именем [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx). После тестирования приложения и перед его отправкой в Microsoft Store необходимо заменить экземпляры **CurrentAppSimulator** на **CurrentApp**. Ваше приложение не пройдет сертификацию, если оно использует **CurrentAppSimulator**.
+Класс [CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp) получает свои данные из Microsoft Store, поэтому для успешного использования этого класса в своем приложении вам потребуется учетная запись разработчика, а приложение должно быть опубликовано в Store. Перед отправкой приложения в Магазин вы можете протестировать код при помощи смоделированной версии этого класса с именем [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator). После тестирования приложения и перед его отправкой в Microsoft Store необходимо заменить экземпляры **CurrentAppSimulator** на **CurrentApp**. Ваше приложение не пройдет сертификацию, если оно использует **CurrentAppSimulator**.
 
 При использовании **CurrentAppSimulator** начальное состояние лицензирования и внутренних продуктов вашего приложения описано в локальном файле с именем WindowsStoreProxy.xml на вашем компьютере разработчика. Подробнее об этом файле см. в разделе [Использование файла WindowsStoreProxy.xml с CurrentAppSimulator](#proxy).
 
@@ -360,7 +360,7 @@ ms.locfileid: "57628539"
 |  [ListingInformation](#listinginformation)  |    Да        |  1  |  Содержит данные из описания приложения.            |
 |  [LicenseInformation](#licenseinformation)  |     Да       |   1    |   Описывает лицензии, доступные для этого приложения и его надстроек длительного использования.     |
 |  [ConsumableInformation](#consumableinformation)  |      Нет      |   0 или 1   |   Описывает потребляемые надстройки, доступные для этого приложения.      |
-|  [Моделирование](#simulation)  |     Нет       |      0 или 1      |   Описывает поведение вызовов различных методов [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) в приложении во время тестирования.    |
+|  [Моделирование](#simulation)  |     Нет       |      0 или 1      |   Описывает поведение вызовов различных методов [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator) в приложении во время тестирования.    |
 
 <span id="listinginformation" />
 
@@ -401,7 +401,7 @@ ms.locfileid: "57628539"
 
 |  Элемент  |  Обязательно  |  Количество  | Описание   |
 |-------------|------------|--------|--------|
-|  **Название**  |    Да   |  1   |   Имя приложения в этой стране/регионе.        |
+|  **Name**  |    Да   |  1   |   Имя приложения в этой стране/регионе.        |
 |  **Описание**  |    Да  |  1   |      Описание приложения в этой стране/регионе.       |
 |  **Цена**  |    Да  |  1   |     Цена приложения в этой стране/регионе.        |
 |  **CurrencySymbol**  |    Да  |  1   |     Обозначение денежной единицы, используемой в этой стране/регионе.        |
@@ -411,7 +411,7 @@ ms.locfileid: "57628539"
 
 |  Атрибут  |  Обязательно  |  Описание   |
 |-------------|------------|----------------|
-|  **XML: lang**  |    Да        |     Указывает страну/регион, к которым применимы данные о рынке.          |  |
+|  **xml:lang**  |    Да        |     Указывает страну/регион, к которым применимы данные о рынке.          |  |
 
 <span id="product-child-of-listinginformation"/>
 
@@ -437,7 +437,7 @@ ms.locfileid: "57628539"
 
 |  Элемент  |  Обязательно  |  Количество  | Описание   |
 |-------------|------------|--------|--------|
-|  **Название**  |    Да   |  1   |   Имя надстройки в этой стране/регионе.        |
+|  **Name**  |    Да   |  1   |   Имя надстройки в этой стране/регионе.        |
 |  **Цена**  |    Да  |  1   |     Цена надстройки в этой стране/регионе.        |
 |  **CurrencySymbol**  |    Да  |  1   |     Обозначение денежной единицы, используемой в этой стране/регионе.        |
 |  **currencyCode**  |    Нет  |  0 или 1      |      Код валюты, используемой в этой стране/регионе.         |  
@@ -450,7 +450,7 @@ ms.locfileid: "57628539"
 
 |  Атрибут  |  Обязательно  |  Описание   |
 |-------------|------------|----------------|
-|  **XML: lang**  |    Да        |     Указывает страну/регион, к которым применимы данные о рынке.          |  |
+|  **xml:lang**  |    Да        |     Указывает страну/регион, к которым применимы данные о рынке.          |  |
 
 <span id="licenseinformation"/>
 
@@ -512,7 +512,7 @@ ms.locfileid: "57628539"
 
 #### <a name="simulation-element"></a>Элемент Simulation
 
-Этот элемент описывает поведение вызовов различных методов [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) в приложении во время тестирования. **Simulation** является необязательным дочерним элементом элемента **CurrentApp** и содержит ноль или больше элементов [DefaultResponse](#defaultresponse).
+Этот элемент описывает поведение вызовов различных методов [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator) в приложении во время тестирования. **Simulation** является необязательным дочерним элементом элемента **CurrentApp** и содержит ноль или больше элементов [DefaultResponse](#defaultresponse).
 
 **Simulation** содержит следующие атрибуты.
 

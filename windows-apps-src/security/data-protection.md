@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c93527a2ee738a3e6b0f4e9b9d2a1343158441b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 15feb86677cd70774a99fe4046d817c71fc71f90
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608269"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372582"
 ---
 # <a name="data-protection"></a>Защита данных
 
 
 
-В этой статье описано, как использовать класс [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) в пространстве имен [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) для шифрования и расшифровки цифровых данных в приложении UWP.
+В этой статье описано, как использовать класс [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) в пространстве имен [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) для шифрования и расшифровки цифровых данных в приложении UWP.
 
 Вы можете использовать API защиты данных различными способами:
 
@@ -26,12 +26,12 @@ ms.locfileid: "57608269"
 -   Чтобы защитить данные с помощью симметричного ключа. Этот способ, например, подходит для защиты данных в субъекту недоменных приложения как Live ID.
 -   Чтобы защитить данные для учетных данных (пароль), используемых при входе на веб-сайт.
 
-Чтобы защитить данные при создании объекта [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559), нужно указать дескриптор защиты, прежде чем вызывать [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) или [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564). В следующем примере показаны возможные дескрипторы защиты.
+Чтобы защитить данные при создании объекта [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider), нужно указать дескриптор защиты, прежде чем вызывать [**ProtectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) или [**ProtectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync). В следующем примере показаны возможные дескрипторы защиты.
 
 ## <a name="protecting-static-data"></a>Защита статических данных
 
 
-В примере ниже показано, как использовать методы [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) и [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) для асинхронной защиты статических данных в идентификаторе безопасности текущего пользователя.
+В примере ниже показано, как использовать методы [**ProtectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) и [**UnprotectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectasync) для асинхронной защиты статических данных в идентификаторе безопасности текущего пользователя.
 
 ```cs
 using Windows.Security.Cryptography;
@@ -116,7 +116,7 @@ namespace SampleProtectAsync
 ## <a name="protecting-stream-data"></a>Защита потоковых данных
 
 
-В примере ниже показано, как использовать методы [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) и [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) для асинхронной защиты потоковых данных в идентификаторе безопасности текущего пользователя.
+В примере ниже показано, как использовать методы [**ProtectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync) и [**UnprotectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectstreamasync) для асинхронной защиты потоковых данных в идентификаторе безопасности текущего пользователя.
 
 ```cs
 using Windows.Security.Cryptography;

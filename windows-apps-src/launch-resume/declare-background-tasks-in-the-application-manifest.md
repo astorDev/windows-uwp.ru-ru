@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, фоновую задачу
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b30cd39a4440a1ade1ea0dda5a35d3f7c15f963
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 471c2851f72027c364fdd0c9c295c8c9babe17c5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615679"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366185"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Объявление фоновых задач в манифесте приложения
 
@@ -20,8 +20,8 @@ ms.locfileid: "57615679"
 
 **Важные API**
 
--   [**BackgroundTasks схемы**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
+-   [**BackgroundTasks схемы**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 Вы можете разрешить использование фоновых задач, объявив их как расширения в манифесте приложения.
 
@@ -90,7 +90,7 @@ ms.locfileid: "57615679"
 
 2.  Измените список атрибута Type элемента Task, указав в нем тип регистрации задач, используемый с этой фоновой задачей. Если фоновая задача зарегистрирована с несколькими типами триггеров, добавьте дополнительные элементы Task и атрибуты Type для каждого из них.
 
-    **Примечание**  убедитесь, что в список всех типов триггеров, на который вы используете или фоновой задачи не будут регистрироваться в типы необъявленный триггеров ( [ **зарегистрировать** ](https://msdn.microsoft.com/library/windows/apps/br224772) будет метод Сбой и создает исключение).
+    **Примечание**  убедитесь, что в список всех типов триггеров, на который вы используете или фоновой задачи не будут регистрироваться в типы необъявленный триггеров ( [ **зарегистрировать** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) будет метод Сбой и создает исключение).
 
     Этот пример фрагмента показывает использование триггеров системных событий и push-уведомлений:
 
@@ -171,7 +171,7 @@ ms.locfileid: "57615679"
 </Extensions>
 ```
 
-Когда вы указываете **EntryPoint**, приложение получает обратный вызов для указанного метода, когда срабатывает триггер. Если вы не указываете **EntryPoint**, приложение получает обратный вызов через [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).  Дополнительные сведения см. в разделе [Создание и регистрация фоновой задачи в процессе](create-and-register-an-inproc-background-task.md).
+Когда вы указываете **EntryPoint**, приложение получает обратный вызов для указанного метода, когда срабатывает триггер. Если вы не указываете **EntryPoint**, приложение получает обратный вызов через [OnBackgroundActivated()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated).  Дополнительные сведения см. в разделе [Создание и регистрация фоновой задачи в процессе](create-and-register-an-inproc-background-task.md).
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>Укажите, где фоновая задача выполняется, с помощью атрибута ResourceGroup.
 
@@ -232,7 +232,7 @@ ms.locfileid: "57615679"
 > [!NOTE]
 > Вы не можете задать `ResourceGroup` или `ServerName` в сочетании с `SupportsMultipleInstances`.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Отладка фоновой задачи](debug-a-background-task.md)
 * [Регистрация фоновой задачи](register-a-background-task.md)

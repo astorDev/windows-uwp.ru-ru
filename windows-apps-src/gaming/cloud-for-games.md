@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: windows 10, uwp, игры, облачные службы
 ms.localizationpriority: medium
-ms.openlocfilehash: 5781d8f8606f68360018cfa17d5cfe5719ed31a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 15a7e3bed746a31ce2d8f458045cdd1126b71b8c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57637689"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368995"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Использование облачных служб при разработке игр UWP
 
@@ -91,7 +91,7 @@ ms.locfileid: "57637689"
             <ul>
                 <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=06m52s">Создание игр с помощью Service Fabric: Возраст игра MMO Восхождение (видео)</a>
                 <li><a href="https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s">Управление компонентами игры как микрослужбы с помощью Azure Service Fabric (видео)</a> 
-                <li><a href="https://channel9.msdn.com/Shows/Azure-Friday/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Интервью с разработчиками Age of Ascent (видео)</a>
+                <li><a href="/Blogs/Azure/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Интервью с разработчиками Age of Ascent (видео)</a>
             </ul>
         </td>
     </tr>
@@ -111,7 +111,7 @@ ms.locfileid: "57637689"
         </td>
     </tr>
     <tr>
-        <td><a href="https://www.crimecoast.com/">Группа пикселей</a></td>
+        <td><a href="https://www.crimecoast.com/">Pixel Squad</a></td>
         <td>Компания Pixel Squad разработала игру <b>Crime Coast</b> на базе игрового движка Unity с применением платформы Azure. <b>Crime Coast</b> — это социальная игра в жанре стратегии, доступная на платформах Android, iOS и Windows. В игре использовались следующие технологии: хранилище больших двоичных объектов Azure, управляемый кэш Redis для Azure, виртуальные машины IIS с балансировкой нагрузки и центр уведомлений Майкрософт. Узнайте, как компания управляла масштабированием игры и наплывами игроков при одновременном подключении 5000 игроков.
         </td>
         <td>
@@ -166,7 +166,7 @@ ms.locfileid: "57637689"
 | Создание игры в рамках модели "инфраструктура как услуга" (IaaS)      | Размещение игры на виртуальных машинах в облаке       | [Виртуальные машины Azure](https://azure.microsoft.com/services/virtual-machines/) | Возможность масштабирования от 1 экземпляра виртуальной машины до тысяч экземпляров в качестве игровых серверов, а также встроенные средства виртуализации сети и балансировки нагрузки; обеспечение однородности гибридной облачной среды и локальных систем           |
 | Использование модели "платформа как услуга" (PaaS) для создания веб-приложений или мобильных игр            | Размещение игры на управляемой платформе                | [Служба приложений Azure](https://azure.microsoft.com/services/app-service/) | Модель "платформа как услуга" для создания веб-сайтов или мобильных игр (виртуальные машины Azure с ПО промежуточного слоя, средствами разработки, базовой инфраструктурой приложений и средствами управления базами данных)   |
 | Высокодоступная масштабируемая многоуровневая облачная игра с расширенным контролем над ОС (платформа как услуга)        | Размещение игры на управляемой платформе                | [Облачная служба Azure](https://azure.microsoft.com/services/app-service/) | Модель "платформа как услуга" разработана для поддержки масштабируемых, надежных и экономичных в эксплуатации приложений   |
-| Балансировка нагрузки в различных регионах для повышения производительности и доступности | Маршрутизация входящих запросов на игру. Может выступать в качестве первого уровня балансировки нагрузки.       | [Диспетчер трафика Azure](https://azure.microsoft.com/en-us/services/traffic-manager/) | Предоставляет несколько вариантов автоматической отработки отказа и возможность распределения трафика равномерно или с пропорциональными значениями. Обеспечивает полную совместимость локальных и облачных систем. |
+| Балансировка нагрузки в различных регионах для повышения производительности и доступности | Маршрутизация входящих запросов на игру. Может выступать в качестве первого уровня балансировки нагрузки.       | [Azure Traffic Manager](https://azure.microsoft.com/en-us/services/traffic-manager/) | Предоставляет несколько вариантов автоматической отработки отказа и возможность распределения трафика равномерно или с пропорциональными значениями. Обеспечивает полную совместимость локальных и облачных систем. |
 | Облачное хранилище для игровых данных       | Хранение актуальных игровых данных в облаке и их отправка на клиентские устройства | [Хранилище больших двоичных объектов](https://azure.microsoft.com/services/storage/blobs/)| Отсутствие ограничений на типы хранимых файлов; хранилище объектов для больших объемов неструктурированных данных, таких как изображения, аудиозаписи, видеоматериалы и др.  |
 | Хранилище таблиц для временного хранения данных| Таблицы для временного хранения игровых транзакций (изменений игровых состояний) | [Хранилище таблиц Azure](https://azure.microsoft.com/services/storage/tables/)| Возможность хранения игровых данных в формате гибкой схемы в соответствии с требованиями игры |
 | Добавление в очередь игровых транзакций/запросов| Обработка игровых транзакций в виде очереди | [Хранилище очередей Azure](https://azure.microsoft.com/services/storage/queues/)| Хранилища очередей обрабатывают неожиданные пики трафика и предотвращают перегрузку серверов в случае внезапного увеличения потока запросов в игре.   |
@@ -199,7 +199,7 @@ ms.locfileid: "57637689"
 ## <a name="learning-resources"></a>Ресурсы для обучения
 
 * Build 2016: [CodeLabs &mdash; используйте службу приложений Microsoft Azure и Microsoft SQL Azure серверной части, чтобы сохранить счет игры в Unity](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* Build 2017: [Предоставление мирового класса game интерфейсы, с помощью Microsoft Azure: Уроки из названия, например Halo, Hitman и Walking Dead (видео)](https://channel9.msdn.com/Events/Build/2017/P4062)
+* //build 2017: [Предоставление мирового класса game интерфейсы, с помощью Microsoft Azure: Уроки из названия, например Halo, Hitman и Walking Dead (видео)](https://channel9.msdn.com/Events/Build/2017/P4062)
 * Многократно используемый набор стандартных блоков, проекты, служб и рекомендации, обеспечивает поддержку распространенных рабочих нагрузок игр с помощью Azure на GitHub: [Стандартные блоки для игр в Azure](https://github.com/MicrosoftDX/nether)
 * [Службы игр в Azure (видео)](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
 
@@ -219,9 +219,9 @@ ms.locfileid: "57637689"
 
 Мы постоянно внедряем инновации и добавляем новые функциональные возможности. Подробнее см. на странице [Features](https://playfab.com/features/); тарифы можно узнать на странице [Simple pricing that scales with you](https://playfab.com/pricing/).
 
-## <a name="related-links"></a>Дополнительные ссылки
+## <a name="related-links"></a>Связанные ссылки
 
-* [Руководство по разработке игр для Windows 10](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
+* [Руководство по разработке игр для Windows 10](https://docs.microsoft.com/windows/uwp/gaming/e2e)
 * [Azure для игр](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Майкрософт для Стартапов](https://startups.microsoft.com)

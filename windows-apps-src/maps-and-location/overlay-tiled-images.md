@@ -6,12 +6,12 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: Windows 10, uwp, карта, расположение, изображения, наложение
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c2f07a364980b67a34a519eb5dd8b4da1a18f0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e9b4d439958e6cfbf0845aaf5bcd31644ff39432
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663089"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371685"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>Наложение мозаичных изображений на карту
 
@@ -23,11 +23,11 @@ ms.locfileid: "57663089"
 
 ## <a name="tiled-image-overview"></a>Общие сведения о мозаичном изображении
 
-Службы карт, например Карты Nokia и Карты Bing, нарезают карты на квадратные плитки для быстрого восстановления и отображения. Эти плитки имеют размер 256 пикселей на 256 пикселей и предварительно обрабатываются на нескольких уровнях детализации. Многие сторонние службы также предоставляют данные на основе карт, порезанные на плитки. Используйте источники плиточных данных для получения сторонних плиток или создания собственных пользовательских плиток и наложите их на карту, которая отображается в [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+Службы карт, например Карты Nokia и Карты Bing, нарезают карты на квадратные плитки для быстрого восстановления и отображения. Эти плитки имеют размер 256 пикселей на 256 пикселей и предварительно обрабатываются на нескольких уровнях детализации. Многие сторонние службы также предоставляют данные на основе карт, порезанные на плитки. Используйте источники плиточных данных для получения сторонних плиток или создания собственных пользовательских плиток и наложите их на карту, которая отображается в [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
 
-**Важные**    при использовании источников плитки, не нужно писать код для запроса или для размещения отдельных плиток. [  **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) запрашивает плитки по мере необходимости. Каждый запрос задает координаты X и Y и масштаб для отдельной плитки. Можно просто задать формат универсального кода ресурса (URI) или имя файла, которые будут использоваться для получения плиток, в свойстве **UriFormatString**. То есть, вы вставляете заменяемые параметры в базовый универсальный код ресурса (URI) или имя файла, чтобы указать, где нужно передать координаты X и Y, а также масштаб для каждой плитки.
+**Важные**    при использовании источников плитки, не нужно писать код для запроса или для размещения отдельных плиток. [  **MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) запрашивает плитки по мере необходимости. Каждый запрос задает координаты X и Y и масштаб для отдельной плитки. Можно просто задать формат универсального кода ресурса (URI) или имя файла, которые будут использоваться для получения плиток, в свойстве **UriFormatString**. То есть, вы вставляете заменяемые параметры в базовый универсальный код ресурса (URI) или имя файла, чтобы указать, где нужно передать координаты X и Y, а также масштаб для каждой плитки.
 
-Вот пример свойства [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) для [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986), в котором показаны заменяемые параметры для координат X и Y и масштаба.
+Вот пример свойства [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) для [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource), в котором показаны заменяемые параметры для координат X и Y и масштаба.
 
 ```syntax
 http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
@@ -39,39 +39,39 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
 ### <a name="overlay-tiles-from-a-tile-source"></a>Наложение плиток из источника плиточных данных
 
-Наложите плиточные изображения из источника плиточных данных на карту с помощью [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
+Наложите плиточные изображения из источника плиточных данных на карту с помощью [**MapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource).
 
-1.  Создайте экземпляр одного из трех классов источника плиточных данных, производный от [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
+1.  Создайте экземпляр одного из трех классов источника плиточных данных, производный от [**MapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource).
 
-    -   [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)
-    -   [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)
-    -   [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983)
+    -   [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)
+    -   [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource)
+    -   [**CustomMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource)
 
     Настройте **UriFormatString** для запросов плиток путем вставки заменяемых параметров в базовый универсальный код ресурса (URI) или имя файла.
 
-    Следующий пример создает экземпляр [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). В этом примере задано значение [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) в конструкторе **HttpMapTileDataSource**.
+    Следующий пример создает экземпляр [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource). В этом примере задано значение [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) в конструкторе **HttpMapTileDataSource**.
 
     ```csharp
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
           "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
 
-2.  Создайте экземпляр и настройте [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144). Задайте [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141), настроенный на предыдущем шаге как [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) для **MapTileSource**.
+2.  Создайте экземпляр и настройте [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource). Задайте [**MapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource), настроенный на предыдущем шаге как [**DataSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.datasource) для **MapTileSource**.
 
-    В следующем примере [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) указано в конструкторе [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
+    В следующем примере [**DataSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.datasource) указано в конструкторе [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource).
 
     ```csharp
         MapTileSource tileSource = new MapTileSource(dataSource);
     ```
 
-    Можно ограничить условия, при которых отображаются плитки, с помощью свойств [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
+    Можно ограничить условия, при которых отображаются плитки, с помощью свойств [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource).
 
-    -   Отображайте плитки только в определенной географической зоне, указав значение для свойства [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147).
-    -   Отображайте плитки только при определенном уровне детализации, указав значения для свойства [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171).
+    -   Отображайте плитки только в определенной географической зоне, указав значение для свойства [**Bounds**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.bounds).
+    -   Отображайте плитки только при определенном уровне детализации, указав значения для свойства [**ZoomLevelRange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.zoomlevelrange).
 
-    При необходимости настройте другие свойства для [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144), которые влияют на загрузку или отображение плиток, например [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157), [**AllowOverstretch**](https://msdn.microsoft.com/library/windows/apps/dn637145), [**IsRetryEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637153) и [**IsTransparencyEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637155).
+    При необходимости настройте другие свойства для [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource), которые влияют на загрузку или отображение плиток, например [**Layer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.layer), [**AllowOverstretch**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.allowoverstretch), [**IsRetryEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.isretryenabled) и [**IsTransparencyEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.istransparencyenabled).
 
-3.  Добавьте [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) в коллекцию [**TileSources**](https://msdn.microsoft.com/library/windows/apps/dn637053) элемента [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+3.  Добавьте [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) в коллекцию [**TileSources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.tilesources) элемента [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
 
     ```csharp
          MapControl1.TileSources.Add(tileSource);
@@ -80,20 +80,20 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 ## <a name="overlay-tiles-from-a-web-service"></a>Наложение плиток из веб-службы
 
 
-Наложите плиточные изображения из веб-службы с помощью [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
+Наложите плиточные изображения из веб-службы с помощью [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource).
 
-1.  Создайте экземпляр [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
-2.  Укажите формат универсального кода ресурса (URI), который веб-служба ожидает в качестве значения свойства [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992). Чтобы создать это значение, вставьте заменяемые параметры в базовый универсальный код ресурса (URI). Например, в следующем примере кода значение свойства **UriFormatString** является таким:
+1.  Создайте экземпляр [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource).
+2.  Укажите формат универсального кода ресурса (URI), который веб-служба ожидает в качестве значения свойства [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring). Чтобы создать это значение, вставьте заменяемые параметры в базовый универсальный код ресурса (URI). Например, в следующем примере кода значение свойства **UriFormatString** является таким:
 
     ``` syntax
     http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    Веб-служба должна поддерживать универсальный код ресурса (URI), который содержит заменяемые параметры {x}, {y} и {zoomlevel}. Большинство веб-служб (например, Nokia, Bing и Google) поддерживают URI такого формата. Если веб-служба требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#customuri) далее в данной статье.
+    Веб-служба должна поддерживать универсальный код ресурса (URI), который содержит заменяемые параметры {x}, {y} и {zoomlevel}. Большинство веб-служб (например, Nokia, Bing и Google) поддерживают URI такого формата. Если веб-служба требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.urirequested). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#customuri) далее в данной статье.
 
 3.  Затем выполните оставшиеся шаги, описанные ранее в разделе [Общие сведения о мозаичных изображениях](#tileintro).
 
-В следующем примере показано наложение плиток из вымышленной веб-службы на карту Северной Америки. Значение для [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) указано в конструкторе [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). В этом примере плитки отображаются только внутри географических границ, заданных необязательным свойством [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147).
+В следующем примере показано наложение плиток из вымышленной веб-службы на карту Северной Америки. Значение для [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) указано в конструкторе [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource). В этом примере плитки отображаются только внутри географических границ, заданных необязательным свойством [**Bounds**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.bounds).
 
 ```csharp
 private void AddHttpMapTileSource()
@@ -167,16 +167,16 @@ void MainPage::AddHttpMapTileSource()
 ## <a name="overlay-tiles-from-local-storage"></a>Наложение плиток из локального хранилища
 
 
-Наложите плиточные изображения, хранящиеся как файлы в локальном хранилище, с помощью [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). Обычно такие файлы упаковываются и распространяются вместе с приложением.
+Наложите плиточные изображения, хранящиеся как файлы в локальном хранилище, с помощью [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource). Обычно такие файлы упаковываются и распространяются вместе с приложением.
 
-1.  Создайте экземпляр [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
-2.  Задайте формат имен файлов в качестве значения свойства [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998). Чтобы создать это значение, вставьте заменяемые параметры в базовое имя файла. Например, в следующем примере кода значение свойства [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) является таким:
+1.  Создайте экземпляр [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource).
+2.  Задайте формат имен файлов в качестве значения свойства [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring). Чтобы создать это значение, вставьте заменяемые параметры в базовое имя файла. Например, в следующем примере кода значение свойства [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) является таким:
 
     ``` syntax
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    Если формат имен файлов требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#customuri) далее в данной статье.
+    Если формат имен файлов требует дополнительных аргументов, которые недоступны со свойством [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring), следует создать пользовательский универсальный код ресурса (URI). Создайте и верните универсальный код ресурса (URI) путем обработки события [**UriRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.urirequested). Подробнее см. в разделе [Указание пользовательского универсального кода ресурса (URI)](#customuri) далее в данной статье.
 
 3.  Затем выполните оставшиеся шаги, описанные ранее в разделе [Общие сведения о мозаичных изображениях](#tileintro).
 
@@ -185,15 +185,15 @@ void MainPage::AddHttpMapTileSource()
 | Uri | Дополнительные сведения |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | ms-appx:/// | Указывает на корневой каталог папки установки приложения. |
-|  | Это расположение, на которое ссылается свойство [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681). |
+|  | Это расположение, на которое ссылается свойство [Package.InstalledLocation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.installedlocation). |
 | ms-appdata:///local | Указывает на корневой каталог локального хранилища приложения. |
-|  | Это расположение, на которое ссылается свойство [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621). |
+|  | Это расположение, на которое ссылается свойство [ApplicationData.LocalFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder). |
 | ms-appdata:///temp | Указывает на временную папку приложения. |
-|  | Это расположение, на которое ссылается свойство [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629). |
+|  | Это расположение, на которое ссылается свойство [ApplicationData.TemporaryFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder). |
 
  
 
-В следующем примере плитки, хранящиеся в виде файлов в установочной папке приложения, загружаются с помощью протокола `ms-appx:///`. Значение для [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) указано в конструкторе [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). В этом примере плитки отображаются, только если масштаб карты находится в диапазоне, заданном с помощью необязательного свойства [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171).
+В следующем примере плитки, хранящиеся в виде файлов в установочной папке приложения, загружаются с помощью протокола `ms-appx:///`. Значение для [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) указано в конструкторе [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource). В этом примере плитки отображаются, только если масштаб карты находится в диапазоне, заданном с помощью необязательного свойства [**ZoomLevelRange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.zoomlevelrange).
 
 ```csharp
         void AddLocalMapTileSource()
@@ -219,10 +219,10 @@ void MainPage::AddHttpMapTileSource()
 
 ## <a name="provide-a-custom-uri"></a>Указание пользовательского универсального кода ресурса (URI)
 
-Если заменяемых параметров, доступных со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) класса [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) или со свойством [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) класса [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994), недостаточно для получения плиток, следует создать пользовательский универсальный код ресурса (URI). Создайте и верните пользовательский универсальный код ресурса (URI), предоставив пользовательский обработчик для события **UriRequested**. Событие **UriRequested** вызывается для каждой отдельной плитки.
+Если заменяемых параметров, доступных со свойством [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) класса [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) или со свойством [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) класса [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource), недостаточно для получения плиток, следует создать пользовательский универсальный код ресурса (URI). Создайте и верните пользовательский универсальный код ресурса (URI), предоставив пользовательский обработчик для события **UriRequested**. Событие **UriRequested** вызывается для каждой отдельной плитки.
 
-1.  Для создания пользовательского универсального кода ресурса (URI) объедините в пользовательском обработчике для события **UriRequested** необходимые пользовательские аргументы со свойствами [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744) и [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) класса [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177).
-2.  Верните пользовательский универсальный код ресурса (URI) в свойстве [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) класса [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173), который содержится в свойстве [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) класса [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177).
+1.  Для создания пользовательского универсального кода ресурса (URI) объедините в пользовательском обработчике для события **UriRequested** необходимые пользовательские аргументы со свойствами [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.x), [**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.y) и [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.zoomlevel) класса [**MapTileUriRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs).
+2.  Верните пользовательский универсальный код ресурса (URI) в свойстве [**Uri**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequest.uri) класса [**MapTileUriRequest**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequest), который содержится в свойстве [**Request**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.request) класса [**MapTileUriRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs).
 
 В следующем примере показано, как предоставить пользовательский универсальный код ресурса (URI) путем создания пользовательского обработчика для события **UriRequested**. В этом примере также показано, как реализовать шаблон откладывания, если необходимо выполнить действие асинхронно для создания пользовательского универсального кода ресурса (URI).
 
@@ -264,14 +264,14 @@ using System.Threading.Tasks;
 
 ## <a name="overlay-tiles-from-a-custom-source"></a>Наложение плиток из пользовательского источника
 
-Наложение пользовательских плиток с помощью [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983). Создайте плитки программным образом в памяти на лету или напишите собственный код для загрузки имеющихся плиток из другого источника.
+Наложение пользовательских плиток с помощью [**CustomMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource). Создайте плитки программным образом в памяти на лету или напишите собственный код для загрузки имеющихся плиток из другого источника.
 
-Для создания или загрузки пользовательских плиток укажите пользовательский обработчик для события [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984). Событие **BitmapRequested** вызывается для каждой отдельной плитки.
+Для создания или загрузки пользовательских плиток укажите пользовательский обработчик для события [**BitmapRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.custommaptiledatasource.bitmaprequested). Событие **BitmapRequested** вызывается для каждой отдельной плитки.
 
-1.  Для создания или получения пользовательской плитки объедините в пользовательском обработчике для события [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) необходимые пользовательские аргументы со свойствами [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) и [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) класса [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132).
-2.  Верните пользовательскую плитку в свойстве [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) класса [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128), который содержится в свойстве [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) класса [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Свойство **PixelData** имеет тип [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664).
+1.  Для создания или получения пользовательской плитки объедините в пользовательском обработчике для события [**BitmapRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.custommaptiledatasource.bitmaprequested) необходимые пользовательские аргументы со свойствами [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.x), [**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.y) и [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.zoomlevel) класса [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs).
+2.  Верните пользовательскую плитку в свойстве [**PixelData**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequest.pixeldata) класса [**MapTileBitmapRequest**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest), который содержится в свойстве [**Request**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.request) класса [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs). Свойство **PixelData** имеет тип [**IRandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStreamReference).
 
-В следующем примере показано, как предоставить пользовательские плитки путем создания пользовательского обработчика для события **BitmapRequested**. В этом примере создаются идентичные красные частично непрозрачные плитки. В этом примере игнорируются свойства [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) и [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) класса [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Несмотря на то, что это не реальный пример, в нем показано, как можно создавать пользовательские плитки в памяти на лету. В этом примере также показано, как реализовать шаблон откладывания, если необходимо выполнить действие асинхронно для создания настраиваемой плитки.
+В следующем примере показано, как предоставить пользовательские плитки путем создания пользовательского обработчика для события **BitmapRequested**. В этом примере создаются идентичные красные частично непрозрачные плитки. В этом примере игнорируются свойства [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.x), [**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.y) и [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.zoomlevel) класса [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs). Несмотря на то, что это не реальный пример, в нем показано, как можно создавать пользовательские плитки в памяти на лету. В этом примере также показано, как реализовать шаблон откладывания, если необходимо выполнить действие асинхронно для создания настраиваемой плитки.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -415,13 +415,13 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
 
 Чтобы полностью заменить карту по умолчанию сторонними или пользовательскими плитками, выполните следующие действия.
 
--   Укажите [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** в качестве значения свойства [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) для [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
--   Укажите [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** в качестве значения свойства [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) для [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+-   Укажите [**MapTileLayer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileLayer).**BackgroundReplacement** в качестве значения свойства [**Layer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.layer) для [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource).
+-   Укажите [**MapStyle**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapStyle).**None** в качестве значения свойства [**Style**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.style) для [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Руководство по разработке карт](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Видео с конференции Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и компьютерах](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Пример приложения UWP для работы с трафиком](https://go.microsoft.com/fwlink/p/?LinkId=619982)

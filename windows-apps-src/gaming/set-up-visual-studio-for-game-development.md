@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, игры, visual studio, инструменты, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f4ff471ae4c45761a1c1dad5819e97c8245746a1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653479"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368133"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>Средства Visual Studio для программирования игр
 
@@ -43,7 +43,7 @@ ms.locfileid: "57653479"
 
 Можно создавать [файлы настройки сборки](#build-customizations-for-3d-assets) для преобразования этих файлов в формат DDS на этапе сборки.
 
-Дополнительные сведения об этом см. в разделе [Работа с текстурами и изображениями](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx).
+Дополнительные сведения об этом см. в разделе [Работа с текстурами и изображениями](https://docs.microsoft.com/visualstudio/designers/working-with-textures-and-images?view=vs-2015).
 
 > **Примечание**  редактор изображений не предназначен для замены для образа возможности редактирования приложения, но подходит для многих простой просмотр и изменение сценариев.
 
@@ -62,7 +62,7 @@ ms.locfileid: "57653479"
 
 ![чайник](images/modeleditor.png)
 
-Дополнительные сведения см. в разделе [Работа с трехмерными моделями](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx).
+Дополнительные сведения см. в разделе [Работа с трехмерными моделями](https://docs.microsoft.com/visualstudio/designers/working-with-3-d-models?view=vs-2015).
 
 > **Примечание**  в редакторе модели не предназначен для замены для редактирования приложения возможности модели, но подходит для многих простой просмотр и изменение сценариев.
 
@@ -109,20 +109,20 @@ float3 LambertLighting(
 }
 ```
 
-Дополнительные сведения об этом см. в разделе [Работа с шейдерами](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx).
+Дополнительные сведения об этом см. в разделе [Работа с шейдерами](https://docs.microsoft.com/visualstudio/designers/working-with-shaders?view=vs-2015).
 
 ## <a name="build-customizations-for-3d-assets"></a>Настройка сборки для трехмерных ресурсов
 
 
 В проект можно добавлять настройки сборки, чтобы среда Visual Studio преобразовывала ресурсы в пригодные для использования форматы. После этого вы можете загружать ресурсы в ваше приложение и работать с ними, создавая и заполняя ресурсы DirectX, как и в любом другом приложении на базе DirectX.
 
-Чтобы добавить настройку сборки, щелкните проект правой кнопкой мыши в **обозревателе решений** и выберите **Настройки сборки...**. В проект можно добавить следующие типы настроек сборки.
+Чтобы добавить настройку сборки, щелкните проект правой кнопкой мыши в **обозревателе решений** и выберите **Настройки сборки...** . В проект можно добавить следующие типы настроек сборки.
 
 -   Конвейер содержимого изображения принимает на входе файлы изображений и выводит файлы в формате DDS.
 -   Конвейер содержимого сетки принимает на входе файлы сетки (например, в формате FBX) и выводит файлы в формате CMO.
 -   Конвейер содержимого шейдеров принимает на входе DGSL-файлы из редактора шейдеров Visual Studio и выводит файл в формате CSO.
 
-Дополнительные сведения об этом см. в разделе [Использование трехмерных ресурсов в игре или приложении](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx).
+Дополнительные сведения об этом см. в разделе [Использование трехмерных ресурсов в игре или приложении](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
 
 ## <a name="debugging-directx-graphics"></a>Отладка графики DirectX
 
@@ -139,7 +139,7 @@ float3 LambertLighting(
 -   Ограниченная поддержка Direct2D.
 -   Требования операционной системы и пакета SDK.
 
-Дополнительные сведения об этом см. в разделе [Отладка графики DirectX](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
+Дополнительные сведения об этом см. в разделе [Отладка графики DirectX](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
 
 
  

@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0812e4655b8d817f4318f6bd87f7578ee09d635e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cdf361bfd993ce93e2c3b9eec4e66cb1417e36f8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621429"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364134"
 ---
 # <a name="text-controls"></a>Текстовые элементы управления
 
@@ -25,7 +25,7 @@ ms.locfileid: "57621429"
 - Для отображения текста, доступного только для чтения, применяются элементы управления [TextBlock](text-block.md) и [RichTextBlock](rich-text-block.md).
 - Ниже приведены элементы управления для ввода и редактирования текста. [Текстовое поле](text-box.md), [RichEditBox](rich-edit-box.md), [AutoSuggestBox](auto-suggest-box.md), и [PasswordBox](password-box.md).
 
-> **Важные API**: [Класс TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [класс RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [класс TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [класс RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [AutoSuggestBox класс](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [Класс PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
+> **Важные API**: [Класс TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [класс RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [класс RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [AutoSuggestBox класс](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [Класс PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -35,17 +35,17 @@ ms.locfileid: "57621429"
 
 Для отображения в приложении текста «только для чтения», как правило, используется **TextBlock**. Его можно использовать для отображения однострочного или многострочного текста, строковых гиперссылок и текста с полужирным шрифтом, курсивом или подчеркиванием.
 
-Элемент TextBlock обычно проще использовать, и он обеспечивает лучшую отрисовку текста по сравнению с элементом RichTextBlock, поэтому он предпочтителен для текста пользовательского интерфейса в большинстве приложений. Вы можете легко получить доступ к тексту и использовать его из элемента TextBlock в приложении, получив значение свойства [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx).
+Элемент TextBlock обычно проще использовать, и он обеспечивает лучшую отрисовку текста по сравнению с элементом RichTextBlock, поэтому он предпочтителен для текста пользовательского интерфейса в большинстве приложений. Вы можете легко получить доступ к тексту и использовать его из элемента TextBlock в приложении, получив значение свойства [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text).
 
 Кроме того, он предоставляет множество таких же параметров форматирования для настройки отрисовки текста. Хотя в текст можно поместить разрывы строк, элемент TextBlock разработан для отображения одного абзаца и не поддерживает отступ текста.
 
 Используйте **RichTextBlock**, если вам требуется поддержка нескольких абзацев, разметка текста с несколькими столбцами или другие сложные текстовые макеты либо встроенные элементы пользовательского интерфейса, например изображения. RichTextBlock предоставляет несколько функций для сложного текстового макета.
 
-Свойство содержимого RichTextBlock представляет собой свойство [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx), которое поддерживает текст на основе абзаца с помощью элемента [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx). У него нет свойства **Text**, которое можно использовать для удобного доступа к текстовому содержимому элементов управления в приложении.  
+Свойство содержимого RichTextBlock представляет собой свойство [Blocks](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.blocks), которое поддерживает текст на основе абзаца с помощью элемента [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph). У него нет свойства **Text**, которое можно использовать для удобного доступа к текстовому содержимому элементов управления в приложении.  
 
 ### <a name="text-input"></a>Текстовый ввод
 
-Используйте элемент управления **TextBox**, чтобы позволить пользователю вводить и редактировать неформатированный текст, в частности, в форме. С помощью свойства [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) можно получить и задать текст в элементе управления TextBox.
+Используйте элемент управления **TextBox**, чтобы позволить пользователю вводить и редактировать неформатированный текст, в частности, в форме. С помощью свойства [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) можно получить и задать текст в элементе управления TextBox.
 
 Вы можете сделать элемент TextBox предназначенным только для чтения, но это должно быть временным, условным состоянием. Если текст не редактируется, попробуйте использовать элемент TextBlock.
 
@@ -64,7 +64,7 @@ ms.locfileid: "57621429"
 -   **Это позволяет эффективно перечислять все допустимые значения?** Если да, возможно, стоит использовать один из элементов управления выбора, например [флажок](checkbox.md), [раскрывающийся список](lists.md), поле со списком, [кнопку-переключатель](radio-button.md), [ползунок](slider.md), [переключатель](toggles.md), [средство выбора даты](date-and-time.md) или средство выбора времени.
 -   **Существует довольно небольшой набор допустимых значений?** Если нет, возможно, следует использовать [раскрывающийся список](lists.md) или поле со списком (особенно если длина значений превышает несколько символов).
 -   **Допустимые данные полностью произвольные? Или допустимые данные ограничивается только формат (ограничением длины или символьные типы)?** Если да, используйте элемент управления текстовым вводом. Вы можете ограничить число вводимых символов, а также проверить формат в коде приложения.
--   **Значение представляет тип данных, который имеет специализированные общего элемента управления?** используйте этот элемент вместо элемента управления для ввода обычного текста. Например, чтобы принять ввод данных, вместо элемента управления текстовым вводом используйте [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681).
+-   **Значение представляет тип данных, который имеет специализированные общего элемента управления?** используйте этот элемент вместо элемента управления для ввода обычного текста. Например, чтобы принять ввод данных, вместо элемента управления текстовым вводом используйте [DatePicker](https://docs.microsoft.com/previous-versions/windows/apps/br211681(v=win.10)).
 -   Для строго числовых данных:
     -   **Значение вводится приблизительное и/или относительно другое количество на одной странице?** Если да, используйте элемент управления [ползунок](slider.md).
     -   **Целесообразно ли пользователь Мгновенная обратная связь при последствия изменения параметра?** Если да, используйте элемент управления [ползунок](slider.md), возможно, вместе с сопутствующими элементами управления.
@@ -135,12 +135,12 @@ ms.locfileid: "57621429"
 
 Сенсорная клавиатура позволяет вводить текст, если приложение выполняется на устройстве с сенсорным экраном. Сенсорная клавиатура появляется, когда пользователь касается редактируемого поля ввода, например, TextBox или RichEditBox. Пользователи могут вводить данные в вашем приложении гораздо быстрее и проще, если настроить тип вводимых данных элемента управления текстом на соответствие типу данных, которые пользователь должен вводить. Тип вводимых данных предоставляет системе подсказку о типе текстового ввода, ожидаемого элементом управления. Благодаря этому система может отобразить специальную раскладку сенсорной клавиатуры в соответствии с используемым типом ввода.
 
-Например, если текстовое поле используется только для ввода 4-значного PIN-кода, установите для свойства [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) значение **Number**. Это сообщает системе, что нужно отобразить раскладку цифровой клавиатуры, благодаря чему пользователю проще вводить PIN-код.
+Например, если текстовое поле используется только для ввода 4-значного PIN-кода, установите для свойства [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) значение **Number**. Это сообщает системе, что нужно отобразить раскладку цифровой клавиатуры, благодаря чему пользователю проще вводить PIN-код.
 
 >Важно.  
 >Тип вводимых данных не вызывает выполнение проверки ввода, а также не препятствует пользователю вводить любые данные через аппаратную клавиатуру или другое устройство ввода. При необходимости вы по-прежнему несете ответственность за проверку вводимых данных в коде.
 
-Дополнительные сведения можно найти в статье [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://msdn.microsoft.com/library/windows/apps/mt280229).
+Дополнительные сведения можно найти в статье [Использование типа вводимых данных для изменения сенсорной клавиатуры](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard).
 
 ## <a name="color-fonts"></a>Шрифты цвета
 
@@ -158,7 +158,7 @@ ms.locfileid: "57621429"
 
 ![Блок текста с цветным шрифтом](images/text-block-color-fonts.png)
 
-Подробные сведения см. в свойстве [IsColorFontEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx).
+Подробные сведения см. в свойстве [IsColorFontEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.iscolorfontenabled).
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>Инструкции по разделителям строк и абзацев
 
@@ -203,9 +203,9 @@ ms.locfileid: "57621429"
 **Проектировщикам**
 - [Рекомендации по шрифтовому оформлению](../style/typography.md)
 - [Список значков Segoe MDL2 и рекомендации](../style/segoe-ui-symbol-font.md)
-- [Добавление поиска](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [Добавление поиска](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
 
 **Разработчикам (XAML)**
-- [Класс TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [Класс Windows.UI.Xaml.Controls PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length.aspx)
+- [Класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Класс Windows.UI.Xaml.Controls PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [Свойство String.Length](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)

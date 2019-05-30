@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx, объемные тени, буферы глубины, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 2feecb3080efefb2f9625fd8b66c5b722ad02a45
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2ce0cbd310ea89c5fa7b5c68033402f559768a24
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622279"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368512"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>Пошаговое руководство: Реализуйте тома с помощью буферов глубины в Direct3D 11
 
@@ -65,23 +65,23 @@ Windows 8 adde функции сравнения d глубины на функ�
 
 После выполнения данного пошагового руководства, необходимо ознакомиться с тем, как реализовать метод тома простой совместимы с тенью в Direct3D 11, которая совместима с функциональный уровень 9\_1 и более поздних версий.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 
 Вам нужно [подготовить среду для разработки игр универсальной платформы Windows (UWP) с использованием DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Не требуется шаблон еще, но вам потребуется Microsoft Visual Studio 2015 для создания в образце кода в этом пошаговом руководстве.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 **Direct3D**
 
-* [Создание шейдеров HLSL в Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Создание шейдеров HLSL в Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
 * [Создание нового проекта DirectX 11 для универсальной платформы Windows](user-interface.md)
 
 **Тени, сопоставление технические статьи**
 
-* [Распространенные способы оптимизации карты глубины тени](https://msdn.microsoft.com/library/windows/desktop/ee416324)
-* [Карты каскадного теней](https://msdn.microsoft.com/library/windows/desktop/ee416307)
+* [Распространенные способы оптимизации карты глубины тени](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)
+* [Карты каскадного теней](https://docs.microsoft.com/windows/desktop/DxTechArts/cascaded-shadow-maps)
 
  
 

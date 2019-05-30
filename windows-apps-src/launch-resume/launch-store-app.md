@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cda37ee9964a3e7e02f4e4ce3829a8b55e823692
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fd0e7137f31a8f1620f7937b52efe1ca84a6b99a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660899"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370787"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Запуск приложения Microsoft Store
 
 
 
-В этом разделе описывается **ms-windows-store:** Схема URI. Приложение может использовать эту схему URI, чтобы запустить приложение Microsoft Store для определенных страниц в хранилище с помощью [ **LaunchUriAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701476) метод.
+В этом разделе описывается **ms-windows-store:** Схема URI. Приложение может использовать эту схему URI, чтобы запустить приложение Microsoft Store для определенных страниц в хранилище с помощью [ **LaunchUriAsync** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) метод.
 
 В этом примере показано, как открыть Microsoft Store на странице игры.
 
@@ -25,7 +25,7 @@ ms.locfileid: "57660899"
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));
 ```
 
-## <a name="ms-windows-store-uri-scheme-reference"></a>MS-windows-store: Схема URI-ссылка
+## <a name="ms-windows-store-uri-scheme-reference"></a>ms-windows-store: Схема URI-ссылка
 
 <table>
 <tr><th>Описание</th><th></th><th>Схема URI</th></tr>
@@ -41,7 +41,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">Запускает страницу сведений о продукте (PDP). <p>Идентификатор Store рекомендуется для клиентов в Windows 10 и будет работать на всех версиях ОС, но более ранних способов выполнения этого действия (например: PFN) все еще поддерживается.</p>
-<p>Эти значения можно найти в <a href="https://partner.microsoft.com/dashboard">центра партнеров</a> на <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">удостоверения приложения</a> странице в разделе управления приложения для каждого приложения.</p>
+<p>Эти значения можно найти в <a href="https://partner.microsoft.com/dashboard">центра партнеров</a> на <a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">удостоверения приложения</a> странице в разделе управления приложения для каждого приложения.</p>
 </td>
 <td>
 Код продукта в Store <p>(рекомендуется)</p>

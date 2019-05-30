@@ -8,19 +8,19 @@ keywords: клавиатура, текст, ввод, взаимодействи
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9679e6e658e7fa1eb50b41331e7e59ec2115fc14
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fc227904e57577a30eb2d171a060fb69d39b71f0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612509"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363501"
 ---
 # <a name="selecting-text-and-images"></a>Выделение текста и изображений
 
 
 В этой статье описывается выделение и обработка текста, изображений и элементов управления, а также представлены рекомендации по взаимодействию с пользователем, которые следует учитывать при использовании этих механизмов в приложениях.
 
-> **Важные API**: [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **Важные API**: [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input), [ **Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
  
 
 
@@ -109,7 +109,7 @@ Windows распознает два возможных состояния для
 
 
 **Для разработчиков**
-* [Настраиваемые взаимодействия с пользователем](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [Настраиваемые взаимодействия с пользователем](https://developer.microsoft.com/windows/design/inputs-devices)
 
 **Примеры**
 * [Базовый пример входной привязки](https://go.microsoft.com/fwlink/p/?LinkID=620302)

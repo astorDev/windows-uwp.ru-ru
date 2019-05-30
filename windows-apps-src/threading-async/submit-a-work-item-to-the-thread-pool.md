@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, потоки, пул потоков
 ms.localizationpriority: medium
-ms.openlocfilehash: 423f0efa9118f581d6e768a815dd2550801aa87e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ff47115c228e3cf6530e12aa4686c88660f16fcd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658019"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371552"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Отправка рабочего элемента в пул потоков
 
@@ -19,19 +19,19 @@ ms.locfileid: "57658019"
 
 <b>Важные API</b>
 
--   [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)
--   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
+-   [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)
+-   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)
 
 Узнайте, как выполнить работу в отдельном потоке, отправив рабочий элемент в пул потоков. Используйте этот способ для поддержки реагирующих элементов пользовательского интерфейса при выполнении работы, требующей заметного количества времени, и параллельного выполнения нескольких задач.
 
 ## <a name="create-and-submit-the-work-item"></a>Создание и отправка рабочего элемента
 
-Создайте рабочий элемент, вызвав [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593). Предоставьте делегат, выполняющий работу (можно использовать лямбда-функцию или функцию-делегат). Обратите внимание, что функция **RunAsync** возвращает объект [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580). Сохраните его для использования на следующем шаге.
+Создайте рабочий элемент, вызвав [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync). Предоставьте делегат, выполняющий работу (можно использовать лямбда-функцию или функцию-делегат). Обратите внимание, что функция **RunAsync** возвращает объект [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction). Сохраните его для использования на следующем шаге.
 
-Доступны три версии функции [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593), поэтому вы можете при необходимости задать приоритет рабочего элемента и контролировать, выполняется ли он параллельно с другими рабочими элементами.
+Доступны три версии функции [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync), поэтому вы можете при необходимости задать приоритет рабочего элемента и контролировать, выполняется ли он параллельно с другими рабочими элементами.
 
 >[!NOTE]
->Используйте [ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317) для доступа в потоке пользовательского интерфейса и отображает ход выполнения задания из рабочего элемента.
+>Используйте [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) для доступа в потоке пользовательского интерфейса и отображает ход выполнения задания из рабочего элемента.
 
 В примере ниже создается рабочий элемент и предоставляется лямбда-функция для выполнения работы.
 
@@ -269,13 +269,13 @@ auto asyncAction = ThreadPool::RunAsync(workItem);
 m_workItem = asyncAction;
 ```
 
-После вызова [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) рабочий элемент помещается в очередь пулом потоков и выполняется, когда становится доступным поток. Рабочие элементы в пуле потоков выполняются асинхронно и в любом порядке, поэтому обеспечьте независимое функционирование своих рабочих элементов.
+После вызова [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) рабочий элемент помещается в очередь пулом потоков и выполняется, когда становится доступным поток. Рабочие элементы в пуле потоков выполняются асинхронно и в любом порядке, поэтому обеспечьте независимое функционирование своих рабочих элементов.
 
-Обратите внимание, что рабочий элемент проверяет значение свойства [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) и завершает работу при отмене рабочего элемента.
+Обратите внимание, что рабочий элемент проверяет значение свойства [**IAsyncInfo.Status**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncinfo.status) и завершает работу при отмене рабочего элемента.
 
 ## <a name="handle-work-item-completion"></a>Обработка завершения рабочего элемента
 
-Предоставьте обработчик завершения, задав свойство [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) рабочего элемента. Предоставьте делегат (можно использовать лямбда-функцию или функцию-делегат) для обработки завершения рабочего элемента. Например, используйте [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) для доступа к потоку пользовательского интерфейса и отображения результатов.
+Предоставьте обработчик завершения, задав свойство [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) рабочего элемента. Предоставьте делегат (можно использовать лямбда-функцию или функцию-делегат) для обработки завершения рабочего элемента. Например, используйте [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) для доступа к потоку пользовательского интерфейса и отображения результатов.
 
 В следующем примере пользовательский интерфейс обновляется на основе результатов выполнения рабочего элемента, отправленного на шаге 1:
 
@@ -352,7 +352,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 Дополнительные сведения, загрузив код из этого краткого руководства в [Создание ThreadPool рабочий элемент образца](https://go.microsoft.com/fwlink/p/?LinkID=328569) для Windows 8.1, а также повторно использовать исходный код в win\_приложения unap Windows 10.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Отправка рабочего элемента в пул потоков](submit-a-work-item-to-the-thread-pool.md)
 * [Рекомендации по использованию пула потоков](best-practices-for-using-the-thread-pool.md)

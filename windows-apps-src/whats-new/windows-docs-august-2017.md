@@ -5,12 +5,12 @@ keywords: новые возможности, обновления, компон�
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: edf81f0474855c868ea1fb50afa683523aedcd07
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 53bd11950d30e3924d6d196e911fa05208d0f5ec
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614869"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371908"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>Что нового в документации для разработчиков Windows в августе 2017 г.
 
@@ -18,7 +18,7 @@ ms.locfileid: "57614869"
 
 [Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/your-first-app.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
-## <a name="features"></a>Возможности
+## <a name="features"></a>Компоненты
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
@@ -32,7 +32,7 @@ ms.locfileid: "57614869"
 
 ### <a name="game-mode"></a>Режим игры
 
-API-интерфейсы [режима игры](https://msdn.microsoft.com/library/windows/desktop/mt808808) для универсальной платформы Windows (UWP) позволяют создавать оптимизированные игровые среды, используя режим игры в Windows 10. Эти API находятся в заголовке **&lt;expandedresources.h&gt;**.
+API-интерфейсы [режима игры](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) для универсальной платформы Windows (UWP) позволяют создавать оптимизированные игровые среды, используя режим игры в Windows 10. Эти API находятся в заголовке **&lt;expandedresources.h&gt;** .
 
 ![Режим игры](images/game-mode.png)
 
@@ -45,7 +45,7 @@ API-интерфейсы [режима игры](https://msdn.microsoft.com/libr
 
 ### <a name="data-schemas-for-store-products"></a>Схемы данных для продуктов из Магазина
 
-Мы добавили статью [Схемы данных для продуктов из Магазина](../monetize/data-schemas-for-store-products.md). В этой статье вы найдете схемы данных, связанных с Магазином, доступные для нескольких объектов в пространстве имен [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), включая [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) и [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
+Мы добавили статью [Схемы данных для продуктов из Магазина](../monetize/data-schemas-for-store-products.md). В этой статье вы найдете схемы данных, связанных с Магазином, доступные для нескольких объектов в пространстве имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store), включая [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) и [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
 
 ### <a name="desktop-bridge"></a>Мост для классических приложений
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3b5e230270b46b7cb2709d4bfa06c4c51d0224
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5893719e43314eb15c684948a31de5a025a926fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598159"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370830"
 ---
 # <a name="vertex-shader-vs-stage"></a>Этап шейдера вершин (VS)
 
@@ -29,7 +29,7 @@ ms.locfileid: "57598159"
 -   морфинга;
 -   повершинного освещения.
 
-Этап шейдера вершин представляет собой этап программируемого шейдера; на схеме [графического конвейера](graphics-pipeline.md) он показан в виде блока с закругленными углами. Этот этап шейдера основывается на [общем ядре шейдеров](https://msdn.microsoft.com/library/windows/desktop/bb509580) модели 4.0.
+Этап шейдера вершин представляет собой этап программируемого шейдера; на схеме [графического конвейера](graphics-pipeline.md) он показан в виде блока с закругленными углами. Этот этап шейдера основывается на [общем ядре шейдеров](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core) модели 4.0.
 
 Этап шейдера вершин (VS) обрабатывает вершины, полученные от сборщика входных данных. Шейдеры вершин всегда работают с одной входной вершиной и создают одну выходную вершину. Для выполнения конвейера этап шейдера вершин должен всегда быть активен. Если изменение или преобразование вершин не требуется, необходимо создать сквозной шейдер вершин и установить его в конвейере.
 
@@ -39,7 +39,7 @@ ms.locfileid: "57598159"
 
 Шейдеры вершин всегда выполняются над всеми вершинами, включая смежные вершины во входных топологиях примитивов со смежностью. Число раз выполнения шейдера вершин можно запросить у ЦП с помощью статистики конвейера VSInvocations.
 
-Вершинный построитель текстуры можно выполнять нагрузки дискретизации текстур операции и где производные пространство экрана не являются обязательными (использование встроенных функций HLSL: [Пример (объект текстуры DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509695), [SampleCmpLevelZero (объект текстуры DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509697), и [SampleGrad (объект текстуры DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509698)).
+Вершинный построитель текстуры можно выполнять нагрузки дискретизации текстур операции и где производные пространство экрана не являются обязательными (использование встроенных функций HLSL: [Пример (объект текстуры DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-sample), [SampleCmpLevelZero (объект текстуры DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero), и [SampleGrad (объект текстуры DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplegrad)).
 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Входные данные
 

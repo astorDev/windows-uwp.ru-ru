@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: клавиатура, специальные возможности, навигация, фокус, текст, ввод, взаимодействия с пользователем
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: e44b7cf5a61a795e52490f6d603aea0bcf87bea2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 192c016dfa61f39074d99bccf58ff9371f16d16f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658299"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365430"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Реакция на наличие сенсорной клавиатуры
 
@@ -66,7 +66,7 @@ ms.locfileid: "57658299"
 
     ![Форма с сенсорной клавиатурой и без нее](images/touch-keyboard-pan1.png)
 
-    В ряде случаев некоторые элементы пользовательского интерфейса должны присутствовать на экране постоянно. При разработке пользовательского интерфейса следите за тем, чтобы элементы управления формы находились в области панорамирования, а важные элементы пользовательского интерфейса были статичными. Например:
+    В ряде случаев некоторые элементы пользовательского интерфейса должны присутствовать на экране постоянно. При разработке пользовательского интерфейса следите за тем, чтобы элементы управления формы находились в области панорамирования, а важные элементы пользовательского интерфейса были статичными. Пример:
 
     ![Форма, содержащая области, которые всегда должны быть в поле зрения](images/touch-keyboard-pan2.png)
 
@@ -211,8 +211,8 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 ## <a name="related-articles"></a>Связанные статьи
 
 - [Взаимодействия пользователей с клавиатурой](keyboard-interactions.md)
-- [Специальные возможности клавиатуры](https://msdn.microsoft.com/library/windows/apps/mt244347)
-- [Настраиваемые одноранговые классы автоматизации](https://msdn.microsoft.com/library/windows/apps/mt297667)
+- [Специальные возможности клавиатуры](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
+- [Настраиваемые одноранговые классы автоматизации](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)
 
 **Примеры**
 

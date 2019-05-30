@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cae075b0d71925eb35ac2362aef291994b29801
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 9544988837d44f42d963b268a2ce3d37cce83952
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244410"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364111"
 ---
 # <a name="xaml-theme-resources"></a>Ресурсы темы XAML
 
@@ -42,13 +42,13 @@ ms.locfileid: "59244410"
 
 Следуйте данным рекомендациям, чтобы определить и использовать собственные настраиваемые ресурсы темы.
 
-- Определить словари для тем Light и Dark в дополнение к словарю HighContrast. Хотя можно создать словарь [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) с основным значением Default, предпочтительнее использовать явные параметры Light, Dark и HighContrast.
+- Определить словари для тем Light и Dark в дополнение к словарю HighContrast. Хотя можно создать словарь [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) с основным значением Default, предпочтительнее использовать явные параметры Light, Dark и HighContrast.
 
 - Используйте [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) в: Стили, методы задания, управления, шаблоны, методы задания свойств и анимации.
 
-- Не используйте [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) в определениях ресурсов в словарях [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807). Вместо этого используйте [расширение разметки {StaticResource}](../../xaml-platform/staticresource-markup-extension.md).
+- Не используйте [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) в определениях ресурсов в словарях [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Вместо этого используйте [расширение разметки {StaticResource}](../../xaml-platform/staticresource-markup-extension.md).
 
-    ИСКЛЮЧЕНИЕ: Можно использовать [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) для ссылок на ресурсы, которые являются независимыми в тему приложения в вашей [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807). Примерами таких ресурсов являются ресурсы цветов элементов, такие как `SystemAccentColor`, или ресурсы системных цветов, которые обычно имеют префиксы SystemColor, такие как `SystemColorButtonFaceColor`.
+    ИСКЛЮЧЕНИЕ: Можно использовать [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) для ссылок на ресурсы, которые являются независимыми в тему приложения в вашей [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Примерами таких ресурсов являются ресурсы цветов элементов, такие как `SystemAccentColor`, или ресурсы системных цветов, которые обычно имеют префиксы SystemColor, такие как `SystemColorButtonFaceColor`.
 
 > [!CAUTION]
 > Если вы не будете следовать этим рекомендациям, вы можете столкнуться с непредвиденным поведением, связанным с темами в приложении. Дополнительные сведения см. в разделе [Устранение неполадок с ресурсами тем](#troubleshooting-theme-resources).
@@ -155,18 +155,18 @@ ms.locfileid: "59244410"
 |-------------------------------|--------------------------------|--------------------------|-----------------|
 | SystemColorButtonFaceColor    | **Текст на кнопке** (фон)   | Фон               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **Текст на кнопке** (передний план)   | Передний план               | \#FF000000      |
-| SystemColorGrayTextColor      | **Отключенный текст**              | Отключено                 | \#FF6D6D6D      |
+| SystemColorGrayTextColor      | **Выключенный текст**              | Отключено                 | \#FF6D6D6D      |
 | SystemColorHighlightColor     | **Выделенный текст** (фон) | Выделить                | \#FF3399FF      |
 | SystemColorHighlightTextColor | **Выделенный текст** (передний план) | HighlightAlt             | \#FFFFFFFF      |
 | SystemColorHotlightColor      | **Гиперссылки**                 | Hyperlink                | \#FF0066CC      |
 | SystemColorWindowColor        | **Фон**                 | PageBackground           | \#FFFFFFFF      |
-| SystemColorWindowTextColor    | **Текста**                       | PageText                 | \#FF000000      |
+| SystemColorWindowTextColor    | **Text**                       | PageText                 | \#FF000000      |
 
 Windows предоставляет разные тем с высокой контрастностью и позволяет пользователю задавать определенные цвета для параметров высокой контрастности в Центре специальных возможностей, как показано ниже. Поэтому предоставить окончательный список значений высококонтрастных цветов невозможно.
 
 ![Пользовательский интерфейс параметров высокой контрастности Windows](images/high-contrast-settings.png)
 
-Дополнительные сведения о поддержке тем с высокой контрастностью см. в разделе [Темы с высокой контрастностью](https://msdn.microsoft.com/library/windows/apps/mt244346).
+Дополнительные сведения о поддержке тем с высокой контрастностью см. в разделе [Темы с высокой контрастностью](https://docs.microsoft.com/windows/uwp/accessibility/high-contrast-themes).
 
 ### <a name="system-accent-color"></a>Цветовая тема системы
 
@@ -206,11 +206,11 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ## <a name="the-xaml-type-ramp"></a>Набор шрифтов XAML
 
-Файл themeresources.xaml определяет несколько ресурсов, определяющих стиль [Style](https://msdn.microsoft.com/library/windows/apps/br208849), который можно применить к контейнерам текста в вашем пользовательском интерфейсе, в частности для [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) или [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565). Эти стили не являются неявными стандартными стилями. Они предоставляются, чтобы упростить создание определений пользовательского интерфейса XAML, соответствующих *набору шрифтов Windows*, указанному в документе [Руководство по шрифтам](../style/typography.md).
+Файл themeresources.xaml определяет несколько ресурсов, определяющих стиль [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style), который можно применить к контейнерам текста в вашем пользовательском интерфейсе, в частности для [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) или [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock). Эти стили не являются неявными стандартными стилями. Они предоставляются, чтобы упростить создание определений пользовательского интерфейса XAML, соответствующих *набору шрифтов Windows*, указанному в документе [Руководство по шрифтам](../style/typography.md).
 
-Эти стили предназначены для атрибутов текста, которые вы хотите применить ко всему контейнеру текста. Если вам нужно, чтобы стили применялись только к отдельным частям текста, следует задать атрибуты для элементов текста в контейнере, например [Run](https://msdn.microsoft.com/library/windows/apps/br209959) в [TextBlock.Inlines](https://msdn.microsoft.com/library/windows/apps/br209668) или [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503) в [RichTextBlock.Blocks](https://msdn.microsoft.com/library/windows/apps/br244347).
+Эти стили предназначены для атрибутов текста, которые вы хотите применить ко всему контейнеру текста. Если вам нужно, чтобы стили применялись только к отдельным частям текста, следует задать атрибуты для элементов текста в контейнере, например [Run](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Run) в [TextBlock.Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines) или [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph) в [RichTextBlock.Blocks](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.blocks).
 
-При применении к [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) стили выглядят таким образом:
+При применении к [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) стили выглядят таким образом:
 
 ![Стили текстовых блоков](../style/images/type/text-block-type-ramp.svg)
 
@@ -228,9 +228,9 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 
-**TargetType**: [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
+**TargetType**: [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
-Предоставляет общие свойства для всех других стилей контейнеров [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652).
+Предоставляет общие свойства для всех других стилей контейнеров [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock).
 
 ```XAML
 <!-- Usage -->
@@ -338,9 +338,9 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
-**TargetType**: [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)
+**TargetType**: [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
 
-Предоставляет общие свойства для всех других стилей контейнеров [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565).
+Предоставляет общие свойства для всех других стилей контейнеров [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock).
 
 ```XAML
 <!-- Usage -->
@@ -375,21 +375,21 @@ For many examples of how the brushes are used in the XAML control templates, see
 </Style>
 ```
 
-**Примечание**.  [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) стили не весь текст ramp стили, [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) связано с тем, главным образом объект документа на основе блоков модели для **RichTextBlock** упрощает проще настроить атрибуты на отдельных текстовых элементов. Кроме того, параметр [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676), использующий свойство XAML-содержимого, описывает ситуацию, где отсутствуют элементы текста, к которым нужно применить стиль, поэтому стиль необходимо применить к контейнеру. Это не является проблемой для **RichTextBlock**, так как его текстовое содержимое всегда должно находиться в определенных элементах текста, таких как [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503). Именно в них вы можете применить стили XAML для заголовка страницы, подзаголовка страницы и аналогичных определений из таблицы шрифтов.
+**Примечание**.  [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) стили не весь текст ramp стили, [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) связано с тем, главным образом объект документа на основе блоков модели для **RichTextBlock** упрощает проще настроить атрибуты на отдельных текстовых элементов. Кроме того, параметр [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), использующий свойство XAML-содержимого, описывает ситуацию, где отсутствуют элементы текста, к которым нужно применить стиль, поэтому стиль необходимо применить к контейнеру. Это не является проблемой для **RichTextBlock**, так как его текстовое содержимое всегда должно находиться в определенных элементах текста, таких как [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph). Именно в них вы можете применить стили XAML для заголовка страницы, подзаголовка страницы и аналогичных определений из таблицы шрифтов.
 
 ## <a name="miscellaneous-named-styles"></a>Различные именованные стили
 
-Существует дополнительный набор определений [Style](https://msdn.microsoft.com/library/windows/apps/br208849) с ключами, которые можно применить, чтобы стиль кнопки [Button](https://msdn.microsoft.com/library/windows/apps/br209265) отличался от стандартного неявного стиля.
+Существует дополнительный набор определений [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) с ключами, которые можно применить, чтобы стиль кнопки [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) отличался от стандартного неявного стиля.
 
 ### <a name="textblockbuttonstyle"></a>TextBlockButtonStyle
 
-**TargetType**: [ButtonBase](https://msdn.microsoft.com/library/windows/apps/br227736)
+**TargetType**: [ButtonBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
 
-Примените этот стиль к [Button](https://msdn.microsoft.com/library/windows/apps/br209265), если необходимо отобразить текст, который должен нажать пользователь для выполнения действия. Стиль текста будет соответствовать цветовой схеме и выделять его как интерактивный элемент. Кроме того, для удобной работы текстом будут доступны прямоугольники фокуса. В отличие от неявного стиля [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/br242739), при использовании **TextBlockButtonStyle** текст не подчеркивается.
+Примените этот стиль к [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), если необходимо отобразить текст, который должен нажать пользователь для выполнения действия. Стиль текста будет соответствовать цветовой схеме и выделять его как интерактивный элемент. Кроме того, для удобной работы текстом будут доступны прямоугольники фокуса. В отличие от неявного стиля [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton), при использовании **TextBlockButtonStyle** текст не подчеркивается.
 
 Кроме того, этот шаблон определяет, что стиль представленного текста должен использовать **SystemControlHyperlinkBaseMediumBrush** (для состояния PointerOver), **SystemControlHighlightBaseMediumLowBrush** (для состояния Pressed) и **SystemControlDisabledBaseLowBrush** (для состояния Disabled).
 
-Вот пример кнопки [Button](https://msdn.microsoft.com/library/windows/apps/br209265) с примененным к ней ресурсом **TextBlockButtonStyle**.
+Вот пример кнопки [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) с примененным к ней ресурсом **TextBlockButtonStyle**.
 
 ```XAML
 <Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}"
@@ -402,11 +402,11 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-Этот стиль [Style](https://msdn.microsoft.com/library/windows/apps/br208849) предоставляет полный шаблон для элемента управления [Button](https://msdn.microsoft.com/library/windows/apps/br209265), который может использоваться как кнопка навигации "Назад" для приложения навигации. Размер по умолчанию: 40 x 40 пикселей. Для настройки стиля можно либо явным образом задать [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [FontSize](https://msdn.microsoft.com/library/windows/apps/br209406) и другие свойства кнопки **Button**, либо создать производный стиль, используя [BasedOn](https://msdn.microsoft.com/library/windows/apps/br208852).
+Этот стиль [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) предоставляет полный шаблон для элемента управления [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), который может использоваться как кнопка навигации "Назад" для приложения навигации. Размер по умолчанию: 40 x 40 пикселей. Для настройки стиля можно либо явным образом задать [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize) и другие свойства кнопки **Button**, либо создать производный стиль, используя [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon).
 
-Вот пример кнопки [Button](https://msdn.microsoft.com/library/windows/apps/br209265) с примененным к ней ресурсом **NavigationBackButtonNormalStyle**.
+Вот пример кнопки [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) с примененным к ней ресурсом **NavigationBackButtonNormalStyle**.
 
 ```XAML
 <Button Style="{StaticResource NavigationBackButtonNormalStyle}" />
@@ -418,11 +418,11 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-Этот стиль [Style](https://msdn.microsoft.com/library/windows/apps/br208849) предоставляет полный шаблон для элемента управления [Button](https://msdn.microsoft.com/library/windows/apps/br209265), который может использоваться как кнопка навигации "Назад" для приложения навигации. Он похож на стиль **NavigationBackButtonNormalStyle**, но его размер составляет 30 x 30 пикселей.
+Этот стиль [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) предоставляет полный шаблон для элемента управления [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), который может использоваться как кнопка навигации "Назад" для приложения навигации. Он похож на стиль **NavigationBackButtonNormalStyle**, но его размер составляет 30 x 30 пикселей.
 
-Вот пример кнопки [Button](https://msdn.microsoft.com/library/windows/apps/br209265) с примененным к ней ресурсом **NavigationBackButtonSmallStyle**.
+Вот пример кнопки [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) с примененным к ней ресурсом **NavigationBackButtonSmallStyle**.
 
 ```XAML
 <Button Style="{StaticResource NavigationBackButtonSmallStyle}" />
@@ -452,7 +452,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 </ResourceDictionary>
 ```
 
-Интуитивно всё выглядит правильно. Необходимо изменить цвет, на который указывает `myBrush`, при использовании высокой контрастности, но для случаев, когда высокая контрастность не используется, применяйте [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md), чтобы убедиться, что точки `myBrush` используют правильный цвет темы. Если в приложении никогда не устанавливается [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/dn298515) для элементов в визуальном дереве темы, все должно работать правильно. Однако в приложении сразу возникнут проблемы, если вы начнете изменять темы различных частей визуального дерева.
+Интуитивно всё выглядит правильно. Необходимо изменить цвет, на который указывает `myBrush`, при использовании высокой контрастности, но для случаев, когда высокая контрастность не используется, применяйте [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md), чтобы убедиться, что точки `myBrush` используют правильный цвет темы. Если в приложении никогда не устанавливается [FrameworkElement.RequestedTheme](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.requestedtheme) для элементов в визуальном дереве темы, все должно работать правильно. Однако в приложении сразу возникнут проблемы, если вы начнете изменять темы различных частей визуального дерева.
 
 Проблема возникает, поскольку кисти являются общими ресурсами, в отличие от большинства других типов XAML. Если у вас есть 2 элемента в поддеревьях XAML с разными темами, но которые ссылаются на один и тот же ресурс кисти, то когда платформа проходит по каждому поддереву, чтобы обновить выражения [расширения разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md), изменения, которые вы внесли в общий ресурс кисти, отображаются и в другом поддереве, хотя это не было запланированным результатом ваших действий.
 
@@ -475,7 +475,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 </ResourceDictionary>
 ```
 
-Однако проблема повторится в случае ссылок на эти ресурсы в унаследованных свойствах, например [Foreground](https://msdn.microsoft.com/library/windows/apps/br209414). Ваш шаблон пользовательского элемента управления может задать цвет переднего плана элемента, используя [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md), но когда платформа будет передавать значение унаследованного элемента дочерним элементам, она предоставит прямую ссылку на ресурс, который был разрешен выражением расширения разметки {ThemeResource}. Это приводит к возникновению проблем, когда платформа обрабатывает изменения темы, проходя по визуальному дереву элемента управления. Она заново анализирует выражение расширения разметки {ThemeResource}, чтобы получить новый ресурс кисти, но еще не передает ссылку на него дочерним элементам элемента управления; это происходит позже, например во время следующего измерения.
+Однако проблема повторится в случае ссылок на эти ресурсы в унаследованных свойствах, например [Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground). Ваш шаблон пользовательского элемента управления может задать цвет переднего плана элемента, используя [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md), но когда платформа будет передавать значение унаследованного элемента дочерним элементам, она предоставит прямую ссылку на ресурс, который был разрешен выражением расширения разметки {ThemeResource}. Это приводит к возникновению проблем, когда платформа обрабатывает изменения темы, проходя по визуальному дереву элемента управления. Она заново анализирует выражение расширения разметки {ThemeResource}, чтобы получить новый ресурс кисти, но еще не передает ссылку на него дочерним элементам элемента управления; это происходит позже, например во время следующего измерения.
 
 В результате после прохода визуального дерева элемента управления в ответ на изменение темы платформа проходит дочерние элементы и обновляет все выражения [расширения разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md), установленные для них или для объектов, заданных в их свойствах. Именно в этот момент возникает проблема. Платформа проходит ресурс кисти и, поскольку цвет ее задается с помощью расширения разметки {ThemeResource}, происходит повторный анализ.
 

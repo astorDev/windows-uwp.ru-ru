@@ -1,16 +1,16 @@
 ---
 description: Гибкий объект — это объект, доступ к которому может осуществляться из любого потока. Типы C++/WinRT являются гибкими по умолчанию, но вы можете это отключить.
 title: Гибкие объекты в C++/WinRT
-ms.date: 10/20/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, гибкий, объект, гибкость, IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b390161a4eb2c4f38fed9bce226c5a5e92c5ad8
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: 82dff619e6fa3934f69b93090bee90de6359ca07
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291784"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360333"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Объекты в C++/WinRT
 
@@ -19,7 +19,7 @@ ms.locfileid: "58291784"
 Однако можно отказаться. Возможно веские основания требовать объект типа находятся, например, в заданной однопотоковое подразделение. Обычно это связано с требованиями повторного входа. Но все чаще даже API пользовательского интерфейса предоставляют гибкие объекты. Как правило, гибкость является самым простым и производительным вариантом. Кроме того, при реализации фабрики активации, она должна быть гибкой даже если соответствующий класс среды выполнения таковым не является.
 
 > [!NOTE]
-> Среда выполнения Windows основана от модели COM. С точки зрения модели COM гибкий класс регистрируется с помощью `ThreadingModel` = *Both*. Дополнительные сведения о потоковой модели и подразделения COM, см. в разделе [Understanding and Using COM Threading Models](https://msdn.microsoft.com/library/ms809971).
+> Среда выполнения Windows основана от модели COM. С точки зрения модели COM гибкий класс регистрируется с помощью `ThreadingModel` = *Both*. Дополнительные сведения о потоковой модели и подразделения COM, см. в разделе [Understanding and Using COM Threading Models](/previous-versions/ms809971(v=msdn.10)).
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -37,7 +37,7 @@ struct MyType : winrt::implements<MyType, IStringable>
 };
 ```
 
-Так как мы не отказались от гибкости, эта реализация является гибкой. Базовая структура [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) реализует [**IAgileObject**](https://msdn.microsoft.com/library/windows/desktop/hh802476) и [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal). Реализация **IMarshal** использует **CoCreateFreeThreadedMarshaler** для поддержки устаревшего кода, в котором нет сведений о **IAgileObject**.
+Так как мы не отказались от гибкости, эта реализация является гибкой. Базовая структура [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) реализует [**IAgileObject**](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) и [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal). Реализация **IMarshal** использует **CoCreateFreeThreadedMarshaler** для поддержки устаревшего кода, в котором нет сведений о **IAgileObject**.
 
 Этот код проверяет объект на гибкость. Вызов [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) создает исключение, если `myimpl` не является гибким.
 
@@ -115,7 +115,7 @@ winrt::hstring message{ nonagile_obj_again.Message() };
 
 ## <a name="important-apis"></a>Важные API
 
-* [Интерфейс IAgileObject](https://msdn.microsoft.com/library/windows/desktop/hh802476)
+* [Интерфейс IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject)
 * [IMarshal-интерфейс](/windows/desktop/api/objidl/nn-objidl-imarshal)
 * [Структура шаблона WinRT::agile_ref](/uwp/cpp-ref-for-winrt/agile-ref)
 * [Структура шаблона WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
@@ -126,4 +126,4 @@ winrt::hstring message{ nonagile_obj_again.Message() };
 
 ## <a name="related-topics"></a>См. также
 
-* [Понимание и использование потоковой модели COM](https://msdn.microsoft.com/library/ms809971)
+* [Понимание и использование потоковой модели COM](/previous-versions/ms809971(v=msdn.10))

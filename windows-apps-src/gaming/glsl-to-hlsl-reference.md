@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, glsl, hlsl, opengl, directx, шейдеры
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f468584d995de40ff14df1527ab1df8275c36a8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 60ab16566b6e86fe458dbd4a896c354d978994b6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611169"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368707"
 ---
 # <a name="glsl-to-hlsl-reference"></a>Справочные материалы по переносу с GLSL на HLSL
 
@@ -63,7 +63,7 @@ GLSL и HLSL отличаются в следующем.
 </tr>
 <tr class="even">
 <td align="left">Компиляция шейдера интегрирована в графический API</td>
-<td align="left">Компилятор HLSL <a href="https://msdn.microsoft.com/library/windows/desktop/bb509633">компилирует шейдер</a> в промежуточное двоичное представление, прежде чем Direct3D передает его драйверу.
+<td align="left">Компилятор HLSL <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-part1">компилирует шейдер</a> в промежуточное двоичное представление, прежде чем Direct3D передает его драйверу.
 <div class="alert">
 <strong>Примечание</strong>  это двоичное представление находится независимых оборудования. Оно обычно компилируется во время сборки приложения, а не во время его выполнения.
 </div>
@@ -84,17 +84,17 @@ GLSL и HLSL отличаются в следующем.
 </tr>
 <tr class="odd">
 <td align="left">texture2D [функция]</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb509695">texture.Sample</a> [тип_данных.функция]</td>
+<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-sample">texture.Sample</a> [тип_данных.функция]</td>
 </tr>
 <tr class="even">
 <td align="left">sampler2D [тип_данных]</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471525">Texture2D</a> [тип_данных]</td>
+<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a> [тип_данных]</td>
 </tr>
 <tr class="odd">
 <td align="left">Развернутые по строкам матрицы (по умолчанию)</td>
 <td align="left">Развернутые по столбцам матрицы (по умолчанию)
 <div class="alert">
-<strong>Примечание</strong>    используйте <strong>row_major</strong> модификатор типа изменение макета для одной переменной. Подробнее см. <a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">Синтаксис переменной</a>. Вы также можете указать флажок компилятора или псевдокомментарий, чтобы изменить глобальное значение по умолчанию.
+<strong>Примечание</strong>    используйте <strong>row_major</strong> модификатор типа изменение макета для одной переменной. Подробнее см. <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax">Синтаксис переменной</a>. Вы также можете указать флажок компилятора или псевдокомментарий, чтобы изменить глобальное значение по умолчанию.
 </div>
 <div>
  
@@ -113,7 +113,7 @@ GLSL и HLSL отличаются в следующем.
 
  
 
-В GLSL вы представляете значительную часть состояния OpenGL в виде предопределенных глобальных переменных. Например, с помощью GLSL, использовать **gl\_позиции** переменную для указания позиции вершин и **gl\_FragColor** переменную, чтобы указать цвет фрагмента. В HLSL вы явно передаете состояние Direct3D из кода приложения в шейдер. Например, при использовании Direct3D и HLSL данные, введенные в вершинный шейдер, должны соответствовать формату данных в буфере вершины, а структура буфера констант в коде приложения должна соответствовать структуре буфера констант ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) в коде шейдера.
+В GLSL вы представляете значительную часть состояния OpenGL в виде предопределенных глобальных переменных. Например, с помощью GLSL, использовать **gl\_позиции** переменную для указания позиции вершин и **gl\_FragColor** переменную, чтобы указать цвет фрагмента. В HLSL вы явно передаете состояние Direct3D из кода приложения в шейдер. Например, при использовании Direct3D и HLSL данные, введенные в вершинный шейдер, должны соответствовать формату данных в буфере вершины, а структура буфера констант в коде приложения должна соответствовать структуре буфера констант ([cbuffer](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)) в коде шейдера.
 
 ## <a name="porting-glsl-variables-to-hlsl"></a>Перенос переменных GLSL в HLSL
 
@@ -137,7 +137,7 @@ GLSL и HLSL отличаются в следующем.
 <p>Вы передаете неизменную переменную из кода приложения в вершинный шейдер и (или) шейдер фрагмента. Вы должны передать значения всех неизменных переменных перед отрисовкой какого-либо треугольника с помощью этих шейдеров, чтобы их значения остались теми же во время отрисовки треугольной сетки. Эти значения не меняются. Некоторые неизменные значения устанавливаются для всего кадра, другие — для одной конкретной пары вершина-пиксель.</p>
 <p>Неизменные переменные индивидуальны для полигона.</p></td>
 <td align="left"><p>Используйте буфер констант.</p>
-<p>См. в разделе <a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">как: Создание буфера констант</a> и <a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">константы построителей текстур</a>.</p></td>
+<p>См. в разделе <a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to">как: Создание буфера констант</a> и <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants">константы построителей текстур</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>изменения</strong></p>
@@ -147,8 +147,8 @@ GLSL и HLSL отличаются в следующем.
 <tr class="odd">
 <td align="left"><p><strong>Атрибут</strong></p>
 <p>Атрибут является частью описания вершины, которое вы передаете из кода приложения только в вершинный шейдер. В отличие от неизменного значения вы устанавливаете значение каждого атрибута для каждой вершины, что, в свою очередь, позволяет всем вершинам иметь разные значения. Переменные атрибутов индивидуальны для вершин.</p></td>
-<td align="left"><p>Определите буфер вершины в коде приложения Direct3D и обеспечьте его соответствие входным данным вершины, определенным в вершинном шейдере. При желании определите буфер индексов. См. в разделе <a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">как: Создание буфера вершин</a> и <a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">как: Создать буфер индекса</a>.</p>
-<p>Создайте макет входных данных в коде приложения Direct3D и обеспечьте соответствие семантических значений семантическим значениям входных данных вершины. См. раздел <a href="https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout">Создание входного макета</a>.</p></td>
+<td align="left"><p>Определите буфер вершины в коде приложения Direct3D и обеспечьте его соответствие входным данным вершины, определенным в вершинном шейдере. При желании определите буфер индексов. См. в разделе <a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-vertex-how-to">как: Создание буфера вершин</a> и <a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-index-how-to">как: Создать буфер индекса</a>.</p>
+<p>Создайте макет входных данных в коде приложения Direct3D и обеспечьте соответствие семантических значений семантическим значениям входных данных вершины. См. раздел <a href="https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started">Создание входного макета</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>const</strong></p>
@@ -162,7 +162,7 @@ GLSL и HLSL отличаются в следующем.
 
 В GLSL переменные без модификаторов являются лишь простыми глобальными переменными, частными для каждого шейдера.
 
-Когда вы передаете данные текстурам ([Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) в HLSL) и их соответствующим дискретизаторам ([SamplerState](https://msdn.microsoft.com/library/windows/desktop/bb509644) в HLSL), вы обычно объявляете их как глобальные переменные в построителе текстуры.
+Когда вы передаете данные текстурам ([Texture2D](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) в HLSL) и их соответствующим дискретизаторам ([SamplerState](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-sampler) в HLSL), вы обычно объявляете их как глобальные переменные в построителе текстуры.
 
 ## <a name="porting-glsl-types-to-hlsl"></a>Перенос типов GLSL в HLSL
 
@@ -185,7 +185,7 @@ GLSL и HLSL отличаются в следующем.
 <td align="left">скалярные типы: float, int, bool</td>
 <td align="left"><p>скалярные типы: float, int, bool</p>
 <p>также uint, double</p>
-<p>Подробнее: <a href="https://msdn.microsoft.com/library/windows/desktop/bb509646">Скалярные типы</a>.</p></td>
+<p>Подробнее: <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">Скалярные типы</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>векторные типы</p>
@@ -207,8 +207,8 @@ GLSL и HLSL отличаются в следующем.
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>Подробнее см. в разделах <a href="https://msdn.microsoft.com/library/windows/desktop/bb509707">Тип вектора</a> и <a href="https://msdn.microsoft.com/library/windows/desktop/bb509568">Ключевые слова</a>.</p>
-<p>тип вектора также можно определить, как float4 (typedef vector &lt;float, 4&gt; vector;). Дополнительные сведения см. в разделе <a href="https://msdn.microsoft.com/library/windows/desktop/bb509702">Определяемый пользователем тип</a>.</p></td>
+<p>Подробнее см. в разделах <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-vector">Тип вектора</a> и <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-appendix-keywords">Ключевые слова</a>.</p>
+<p>тип вектора также можно определить, как float4 (typedef vector &lt;float, 4&gt; vector;). Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">Определяемый пользователем тип</a>.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>тип матрицы</p>
@@ -231,9 +231,9 @@ GLSL и HLSL отличаются в следующем.
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>Вы также можете воспользоваться <a href="https://msdn.microsoft.com/library/windows/desktop/bb509623">типом матрицы</a>, чтобы определить матрицу.</p>
+<p>Вы также можете воспользоваться <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-matrix">типом матрицы</a>, чтобы определить матрицу.</p>
 <p>Например: matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>тип матрицы также можно определить как float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;). Дополнительные сведения см. в разделе <a href="https://msdn.microsoft.com/library/windows/desktop/bb509702">Определяемый пользователем тип</a>.</p></td>
+<p>тип матрицы также можно определить как float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;). Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">Определяемый пользователем тип</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Квалификатор точности для числа с плавающей запятой, целого числа, дискретизатора</p>
@@ -254,18 +254,18 @@ GLSL и HLSL отличаются в следующем.
 <p>Минимальное значение с фиксированной запятой и знаком на 2,8 бита (2 бита целого числа и 8 бит дробного компонента). 8-разрядный дробный компонент может включать 1, чтобы дать полный суммарный диапазон от –2 до 2.</p></li>
 <li>min16int: минимум 16-разрядное знаковое целое число</li>
 <li><p>min12int: минимум 12-разрядное знаковое целое число</p>
-<p>Этот тип для 10Level9 (<a href="https://msdn.microsoft.com/library/windows/desktop/ff476876">уровни функций 9_x</a>), где целые числа представлены числами с плавающей точкой. Это точность, которую вы можете получить, когда эмулируете целое число с помощью 16-разрядного числа с плавающей точкой.</p></li>
+<p>Этот тип для 10Level9 (<a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">уровни функций 9_x</a>), где целые числа представлены числами с плавающей точкой. Это точность, которую вы можете получить, когда эмулируете целое число с помощью 16-разрядного числа с плавающей точкой.</p></li>
 <li>min16uint: минимум 16-разрядное целое число без знака</li>
 </ul>
-<p>Подробнее см. в разделах <a href="https://msdn.microsoft.com/library/windows/desktop/bb509646">Скалярные типы</a> и <a href="https://msdn.microsoft.com/library/windows/desktop/hh968108">Использование минимальной точности HLSL</a>.</p></td>
+<p>Подробнее см. в разделах <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">Скалярные типы</a> и <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/using-hlsl-minimum-precision">Использование минимальной точности HLSL</a>.</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471525">Texture2D</a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a></td>
 </tr>
 <tr class="even">
 <td align="left">samplerCube</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb509700">TextureCube</a></td>
+<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-type">TextureCube</a></td>
 </tr>
 </tbody>
 </table>
@@ -380,7 +380,7 @@ GLSL и HLSL отличаются в следующем.
 
  
 
-Вы используете семантику, чтобы указать положение, цвет и прочие сведения для входных данных вершинного шейдера и построителя текстуры. Значения семантики в макете входных данных должны соответствовать входным данным вершинного шейдера. Например, см. раздел [Примеры переноса переменных GLSL в HLSL](#examples-of-porting-glsl-variables-to-hlsl). Подробнее о семантике HLSL: [Семантика](https://msdn.microsoft.com/library/windows/desktop/bb509647).
+Вы используете семантику, чтобы указать положение, цвет и прочие сведения для входных данных вершинного шейдера и построителя текстуры. Значения семантики в макете входных данных должны соответствовать входным данным вершинного шейдера. Например, см. раздел [Примеры переноса переменных GLSL в HLSL](#examples-of-porting-glsl-variables-to-hlsl). Подробнее о семантике HLSL: [Семантика](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics).
 
 ## <a name="examples-of-porting-glsl-variables-to-hlsl"></a>Пример переноса переменных GLSL в HLSL
 
@@ -433,7 +433,7 @@ gl_FragColor = vec4(colorVarying, 1.0);
 
 ### <a name="constant-buffers-and-data-transfers-in-hlsl"></a>Буферы констант и передача данных в HLSL
 
-Вот пример передачи данных вершинному шейдеру HLSL, которые затем направляются построителю текстуры. В коде приложения определите вершину и буфер констант. Затем в коде вершинного шейдера определите буфер констант как [cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581) и сохраните индивидуальные данные вершины и входные данные построителя текстуры. Здесь мы используем структуры, называемые **VertexShaderInput** и **PixelShaderInput**.
+Вот пример передачи данных вершинному шейдеру HLSL, которые затем направляются построителю текстуры. В коде приложения определите вершину и буфер констант. Затем в коде вершинного шейдера определите буфер констант как [cbuffer](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants) и сохраните индивидуальные данные вершины и входные данные построителя текстуры. Здесь мы используем структуры, называемые **VertexShaderInput** и **PixelShaderInput**.
 
 Код приложения Direct3D
 
@@ -559,7 +559,7 @@ m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST
 m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Перенос с OpenGL ES 2.0 на Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md)

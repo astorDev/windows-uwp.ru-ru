@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: caf0e8e63716f6ba140ef9346257687f0e7293bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5c6eb22fbe0488fa9a36160ce9e704d10727e4c9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631009"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364474"
 ---
 # <a name="search-and-find-in-page"></a>Поиск и функция "найти на странице"
 
@@ -24,7 +24,7 @@ ms.locfileid: "57631009"
 
 Поиск — это один из лучших способов обнаружения содержимого в вашем приложении. Рекомендации в этой статье охватывают элементы работы поиска, области поиска, реализацию и примеры поиска в контексте.
 
-> **Важные API**: [Класс AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/dn633874)
+> **Важные API**: [Класс AutoSuggestBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
 
 ## <a name="elements-of-the-search-experience"></a>Элементы работы поиска
 

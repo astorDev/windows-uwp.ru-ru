@@ -10,18 +10,18 @@ dev_langs:
 - vb
 - cppcx
 - cppwinrt
-ms.openlocfilehash: 7d66eaa77f86deffd59ebc81360ccb8183afd7d6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9e13138ca634c075eba0c9b1331f6af4176de1eb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654539"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360431"
 ---
 # <a name="xaml-lighting"></a>Освещение XAML
 
 [**CompositionLight** ](/uwp/api/Windows.UI.Composition.CompositionLight) объекты используются в сочетании с [ **SceneLightingEffect** ](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) для имитации динамического освещения и отражательную.
 
-Освещение можно применять к [**объектам класса Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) и объектам XAML [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement).
+Освещение можно применять к [**объектам класса Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) и объектам XAML [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement).
 
 ## <a name="applying-lights-to-xaml-uielements"></a>Применение освещения к XAML UIElements
 
@@ -460,7 +460,7 @@ Platform::String^ OrangeSpotLight::GetId()
 Затем можно применить этот индикатор XAML UIElement или кисти умения для оживления их. Этот пример различных возможных использований.
 
 > [!Important]
-> Для [C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), удалите два вхождения `local:OrangeSpotLight.IsTarget="True"` из следующей разметкой. Вложенные свойства уже заданы в коде.
+> Для [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), удалите два вхождения `local:OrangeSpotLight.IsTarget="True"` из следующей разметкой. Вложенные свойства уже заданы в коде.
 
 ```xaml
 <StackPanel Width="100">

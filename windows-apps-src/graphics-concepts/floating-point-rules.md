@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de5ba146c8241598527dd268d604fcc9bb97d6d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a29fbe49e45b819ddf4ffc3172445996d3622360
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662359"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370620"
 ---
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>Правила с плавающей запятой
 
@@ -59,7 +59,7 @@ Direct3D поддерживает несколько представлений 
 -   Если входными данными для операции является не число, выходными данными обязательно будет не число. Но точный битовый шаблон не числа не обязательно должен оставаться неизменным (если только выполняемая операция не является инструкцией перемещения необработанных данных, при которой данные не изменяются.)
 -   Операции минимизации или максимизации, в которых только один операнд является не числом, возвращают другой операнд в качестве результата (вопреки рассмотренным ранее правилам сравнения). Это правило IEEE 754R.
 
-    Согласно спецификации IEEE-754R для операций минимизации и максимизации с плавающей точкой, если одна из частей входных данных для минимизации или максимизации является значением в виде несигнального не числа (QNaN), результатом операции будет второй параметр. Например:
+    Согласно спецификации IEEE-754R для операций минимизации и максимизации с плавающей точкой, если одна из частей входных данных для минимизации или максимизации является значением в виде несигнального не числа (QNaN), результатом операции будет второй параметр. Пример:
 
     ```ManagedCPlusPlus
     min(x,QNaN) == min(QNaN,x) == x (same for max)
@@ -82,13 +82,13 @@ Direct3D поддерживает несколько представлений 
 -   x +/ -0,0f всегда выдает x (за исключением сброса к денормализованному числу). Но -0 + 0 = +0.
 -   Совмещенные операции (например, mad, dp3) выдают не менее точные результаты, чем худшее возможное последовательное упорядочение вычисления несовмещенного расширения операции. Определение худшего возможного упорядочения, в целях допуска, не является фиксированным определением для данной совмещенной операции. Оно зависит от конкретных значений входных данных. Для каждого отдельного этапа несовмещенного расширения разрешен допуск в 1 ULP (для любых инструкций, вызываемых Direct3D с допуском больше 1 ULP, разрешен больший допуск).
 -   Совмещенные операции следуют тем же правилам относительно не чисел, что и несовмещенные операции.
--   Допуск для sqrt и rcp составляет 1 ULP. Для инструкций обратного числа шейдера и обратного квадратного корня, [**rcp**](https://msdn.microsoft.com/library/windows/desktop/hh447205) и [**rsq**](https://msdn.microsoft.com/library/windows/desktop/hh447221), действует особое требование со сниженной точностью.
+-   Допуск для sqrt и rcp составляет 1 ULP. Для инструкций обратного числа шейдера и обратного квадратного корня, [**rcp**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh447205(v=vs.85)) и [**rsq**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/rsq--sm4---asm-), действует особое требование со сниженной точностью.
 -   Умножение и деление выполняются на 32-разрядном уровне точности с плавающей точкой (точность до 0,5 ULP при умножении, 1 ULP при получении обратного числа). При прямой реализации x/y точность результатов должна быть выше, чем при двухшаговом методе, или идентична ему.
 
 ## <a name="span-iddoubleprec64bitspanspan-iddoubleprec64bitspan64-bit-double-precision-floating-point-rules"></a><span id="double_prec_64_bit"></span><span id="DOUBLE_PREC_64_BIT"></span>64-разрядных (двойная точность) с плавающей точкой правила
 
 
-Драйверы оборудования и дисплея могут поддерживать операции с плавающей точкой двойной точности. Для указания поддержки, при вызове [ **ID3D11Device::CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497) с [ **D3D11\_ФУНКЦИЯ\_ДУБЛЕРОВ** ](https://msdn.microsoft.com/library/windows/desktop/ff476124#d3d11-feature-doubles), наборы драйверов **DoublePrecisionFloatShaderOps** из [ **D3D11\_ФУНКЦИЯ\_данных\_ДУБЛЕРОВ** ](https://msdn.microsoft.com/library/windows/desktop/ff476127) значение true. В этом случае драйвер и оборудование должны поддерживать все инструкции с плавающей точкой двойной точности.
+Драйверы оборудования и дисплея могут поддерживать операции с плавающей точкой двойной точности. Для указания поддержки, при вызове [ **ID3D11Device::CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) с [ **D3D11\_ФУНКЦИЯ\_ДУБЛЕРОВ** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_feature), наборы драйверов **DoublePrecisionFloatShaderOps** из [ **D3D11\_ФУНКЦИЯ\_данных\_ДУБЛЕРОВ** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_doubles) значение true. В этом случае драйвер и оборудование должны поддерживать все инструкции с плавающей точкой двойной точности.
 
 Инструкции двойной точности соответствуют требованиям к поведению IEEE 754R.
 
@@ -148,9 +148,9 @@ Direct3D также поддерживает 11-разрядные 10-разря
 
 [Приложения](appendix.md)
 
-[Ресурсы](https://msdn.microsoft.com/library/windows/desktop/ff476894)
+[Ресурсы](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources)
 
-[Текстуры](https://msdn.microsoft.com/library/windows/desktop/ff476902)
+[Текстуры](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
 
  
 

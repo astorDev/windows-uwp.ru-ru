@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 06c42cff51852f7d0456d533af60455d7d1b9caf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 07d94f5b11acfe14bf55392c5cbf2c1b7bcfbeef
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613899"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369389"
 ---
 # <a name="accessing-homegroup-content"></a>Доступ к содержимому домашней группы
 
@@ -19,15 +19,15 @@ ms.locfileid: "57613899"
 
 **Важные API**
 
--   [**Класс Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151)
+-   [**Класс Windows.Storage.KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)
 
 Получайте доступ к содержимому в папке домашней группы пользователя, включая изображения, музыку и видео.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 -   **Понять асинхронного программирования для приложений универсальной платформы Windows (UWP)**
 
-    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Объявления capabilty приложения**
 
@@ -50,7 +50,7 @@ ms.locfileid: "57613899"
 
 1.  **Создание и настройка средства выбора файлов**
 
-    Используйте [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), чтобы создать средство выбора файлов, и задайте для его свойства [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) значение [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890). Также вы можете задать другие свойства, актуальные для ваших пользователей и приложения. Указания по настройке средства выбора файлов см. в разделе [Руководство и контрольный список для средств выбора файлов](https://msdn.microsoft.com/library/windows/apps/hh465182).
+    Используйте [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker), чтобы создать средство выбора файлов, и задайте для его свойства [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) значение [**PickerLocationId.HomeGroup**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerLocationId). Также вы можете задать другие свойства, актуальные для ваших пользователей и приложения. Указания по настройке средства выбора файлов см. в разделе [Руководство и контрольный список для средств выбора файлов](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers).
 
     Этот пример создает средство выбора файлов, которое открывает файлы любого типа в домашней папке и отображает их в виде эскизов:
     ```cs
@@ -63,7 +63,7 @@ ms.locfileid: "57613899"
 
 2.  **Отображение средства выбора файлов и обработать выбранный файл.**
 
-    После создания и настройки средства выбора файлов пользователь может выбрать один файл, вызвав [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), или несколько файлов, вызвав [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851).
+    После создания и настройки средства выбора файлов пользователь может выбрать один файл, вызвав [**FileOpenPicker.PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync), или несколько файлов, вызвав [**FileOpenPicker.PickMultipleFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync).
 
     Этот пример отображает средство выбора файлов, чтобы позволить пользователю выбрать один файл.
     ```cs
@@ -85,7 +85,7 @@ ms.locfileid: "57613899"
 
 1.  **Получение термина запроса от пользователя.**
 
-    Вот термин запроса, который пользователь ввел в элемент управления [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683), называемый `searchQueryTextBox`:
+    Вот термин запроса, который пользователь ввел в элемент управления [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), называемый `searchQueryTextBox`:
     ```cs
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
@@ -128,7 +128,7 @@ ms.locfileid: "57613899"
 
 1.  **Получение коллекции пользователей домашней группы.**
 
-    Каждая из папок первого уровня в домашней группе представляет отдельного пользователя домашней группы. Поэтому, чтобы получить коллекцию пользователей домашней группы, вызовите [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) и получите папки домашней группы верхнего уровня.
+    Каждая из папок первого уровня в домашней группе представляет отдельного пользователя домашней группы. Поэтому, чтобы получить коллекцию пользователей домашней группы, вызовите [**GetFoldersAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync) и получите папки домашней группы верхнего уровня.
     ```cs
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders =
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
@@ -173,7 +173,7 @@ ms.locfileid: "57613899"
 
 1.  **Включите MediaElement в свое приложение.**
 
-    [  **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) позволяет воспроизводить звук и видео в приложении. Дополнительные сведения о воспроизведении звука и видео см. в разделах [Создание пользовательских элементов управления транспортировкой](https://msdn.microsoft.com/library/windows/apps/mt187271) и [Звук, видео и камера](https://msdn.microsoft.com/library/windows/apps/mt203788).
+    [  **MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) позволяет воспроизводить звук и видео в приложении. Дополнительные сведения о воспроизведении звука и видео см. в разделах [Создание пользовательских элементов управления транспортировкой](https://docs.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls) и [Звук, видео и камера](https://docs.microsoft.com/windows/uwp/audio-video-camera/index).
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
@@ -193,7 +193,7 @@ ms.locfileid: "57613899"
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **Откройте файл выбора пользователя для доступа на чтение и файловый поток в качестве источника для** [ **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), и затем воспроизводить файл.
+3.  **Откройте файл выбора пользователя для доступа на чтение и файловый поток в качестве источника для** [ **MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement), и затем воспроизводить файл.
     ```cs
     if (file != null)
     {

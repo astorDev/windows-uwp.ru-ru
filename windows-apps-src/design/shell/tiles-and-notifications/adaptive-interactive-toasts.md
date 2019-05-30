@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, всплывающие уведомления, интерактивные всплывающие уведомления, адаптивные всплывающие уведомления, содержимое всплывающего уведомления, полезные данных во всплывающем уведомлении
 ms.localizationpriority: medium
-ms.openlocfilehash: a75e39dfcddbef5bb5c37c2a253a46a7b9cc9577
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 75e5ea7e83a1a274b90b14588f7d809a4aa91269
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596829"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366869"
 ---
 # <a name="toast-content"></a>Содержимое всплывающего уведомления
 
@@ -22,7 +22,7 @@ ms.locfileid: "57596829"
 > **Важные API**: [пакет NuGet уведомлений набора средств сообщества UWP](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Устаревшие шаблоны из Windows 8.1 и Windows Phone 8.1, см. в разделе [каталоге шаблонов всплывающих уведомлений прежних версий](https://msdn.microsoft.com/library/windows/apps/hh761494).
+> Устаревшие шаблоны из Windows 8.1 и Windows Phone 8.1, см. в разделе [каталоге шаблонов всплывающих уведомлений прежних версий](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
 
 
 ## <a name="getting-started"></a>Начало работы
@@ -877,7 +877,7 @@ ToastContent content = new ToastContent()
 ## <a name="handling-activation"></a>Обработка активации
 Чтобы узнать, как для обработки активации всплывающих уведомлений (нажатия всплывающего уведомления или кнопок на всплывающего уведомления), в разделе [отправить локального всплывающих](send-local-toast.md).
  
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Отправить Локальная активация всплывающее уведомление и дескриптора](send-local-toast.md)
 * [Библиотека уведомлений на сайте GitHub (часть UWP Community Toolkit)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, тестируемая возможность, тестовый пакет
 ms.localizationpriority: medium
-ms.openlocfilehash: e4f96d503d52abe71cff6fcdd1295c862e551e09
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 3a02a299682610cd516067acefc795df9512a268
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334392"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371765"
 ---
 # <a name="get-a-package-flight"></a>Получение тестового пакета
 
@@ -92,8 +92,8 @@ Authorization: Bearer <your access token>
 | friendlyName           | строка  | Имя тестового пакета, указанное разработчиком.   |  
 | lastPublishedFlightSubmission       | Объект | Объект, который предоставляет сведения о последней опубликованной отправке для тестового пакета. Дополнительные сведения см. ниже в разделе [Объект отправки](#submission_object).  |
 | pendingFlightSubmission        | Объект  |  Объект, который предоставляет сведения о текущей ожидающей отправке для тестового пакета. Дополнительные сведения см. ниже в разделе [Объект отправки](#submission_object).  |   
-| groupIds           | Массив  | Массив строк, содержащий идентификаторы тестовых групп, которые связаны с тестовым пакетом. Дополнительные сведения о тестовых группах см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
-| rankHigherThan           | строка  | Понятное имя тестового пакета, приоритет которого на единицу ниже приоритета текущего тестового пакета. Дополнительные сведения о задании приоритетов тестовых групп см. в разделе [Тестовые пакеты](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
+| groupIds           | Массив  | Массив строк, содержащий идентификаторы тестовых групп, которые связаны с тестовым пакетом. Дополнительные сведения о тестовых группах см. в разделе [Тестовые пакеты](https://docs.microsoft.com/windows/uwp/publish/package-flights).   |
+| rankHigherThan           | строка  | Понятное имя тестового пакета, приоритет которого на единицу ниже приоритета текущего тестового пакета. Дополнительные сведения о задании приоритетов тестовых групп см. в разделе [Тестовые пакеты](https://docs.microsoft.com/windows/uwp/publish/package-flights).  |
 
 
 <span id="submission_object" />

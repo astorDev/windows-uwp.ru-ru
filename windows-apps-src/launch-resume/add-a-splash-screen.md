@@ -6,12 +6,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 882ee548754b9fa498697a8d75a12a23f86fc9de
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 956e4050e3077ac827cf8107470698b42878a5e1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616889"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370876"
 ---
 # <a name="add-a-splash-screen"></a>Добавление экрана-заставки
 
@@ -29,7 +29,7 @@ ms.locfileid: "57616889"
 
     ![снимок экрана с окном Package.appxmanifest в Visual Studio 2017](images/appmanifest.png)
 
-    Если открыть файл Package.appxmanifest в текстовом редакторе, [**элемент SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) отобразится в качестве дочернего для [**элемента VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471). Ниже показано, как разметка экрана-заставки, используемого по умолчанию, в файле манифеста выглядит в текстовом редакторе.
+    Если открыть файл Package.appxmanifest в текстовом редакторе, [**элемент SplashScreen**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen) отобразится в качестве дочернего для [**элемента VisualElements**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements). Ниже показано, как разметка экрана-заставки, используемого по умолчанию, в файле манифеста выглядит в текстовом редакторе.
 
     ```xml
     <uap:SplashScreen Image="Assets\SplashScreen.png" />
@@ -43,14 +43,14 @@ ms.locfileid: "57616889"
 
     **Важные**  изображение экрана-заставки, выборе должны быть 1152 x 1920 пикселей которого — оптимальный размер 2,4 раза коэффициент масштабирования. Если это единственный ресурс, который вы предоставляете, то он будет масштабироваться в сторону уменьшения для коэффициентов масштабирования 1,4x и 1x.
 
-6. В поле **Цвет фона** в разделе **Экран-заставка** задайте цвет фона, отображаемый вместе с изображением экрана-заставки. Можно ввести имя цвета или "\#" и шестнадцатеричное значение цвета. Список названий доступных цветов см. в [**элементе SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467). Задавать цвет фона экрана-заставки не обязательно. Если не указать цвет для приложения универсальной платформы Windows, цвет фона экрана-заставки по умолчанию используется светло-серый цвет (шестнадцатеричное значение \#464646). Такой же цвет задан по умолчанию для фона элемента **Плитка** (см. поле **Цвет фона** раздела **Изображения и логотипы на плитках** на вкладке **Визуальные ресурсы**). Если вы не укажете цвет для Windows Phone или установите для него значение "прозрачный", цвет фона экрана-заставки будет прозрачен.
+6. В поле **Цвет фона** в разделе **Экран-заставка** задайте цвет фона, отображаемый вместе с изображением экрана-заставки. Можно ввести имя цвета или "\#" и шестнадцатеричное значение цвета. Список названий доступных цветов см. в [**элементе SplashScreen**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen). Задавать цвет фона экрана-заставки не обязательно. Если не указать цвет для приложения универсальной платформы Windows, цвет фона экрана-заставки по умолчанию используется светло-серый цвет (шестнадцатеричное значение \#464646). Такой же цвет задан по умолчанию для фона элемента **Плитка** (см. поле **Цвет фона** раздела **Изображения и логотипы на плитках** на вкладке **Визуальные ресурсы**). Если вы не укажете цвет для Windows Phone или установите для него значение "прозрачный", цвет фона экрана-заставки будет прозрачен.
 
 ## <a name="summary-and-next-steps"></a>Краткая сводка и дальнейшие действия
 
 Если ваше приложение загружается медленно, рекомендуется добавить расширенный экран-заставку. Пошаговое руководство см. в статье [Создание настраиваемого экрана-заставки](create-a-customized-splash-screen.md).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Создание пользовательского экрана-заставки](create-a-customized-splash-screen.md)
-* [Справочник по схемам манифеста пакета: Элемент экрана-заставки](https://msdn.microsoft.com/library/windows/apps/br211467)
-* [Класс Windows.ApplicationModel.Activation.SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763)
+* [Справочник по схемам манифеста пакета: Элемент экрана-заставки](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen)
+* [Класс Windows.ApplicationModel.Activation.SplashScreen](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen)

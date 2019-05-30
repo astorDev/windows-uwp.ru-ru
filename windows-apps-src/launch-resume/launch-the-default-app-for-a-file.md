@@ -6,28 +6,28 @@ ms.date: 07/05/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f8e59ae5fb20ce8e1a900f7c1415a699715215e0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 475c7b98e33b78ac3bea4ddecc8414a8e3aa07b3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594529"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370799"
 ---
 # <a name="launch-the-default-app-for-a-file"></a>Запуск приложения по умолчанию для файла
 
 **Важные API**
 
--   [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
+-   [**Windows.System.Launcher.LaunchFileAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.)
 
-Узнайте, как запускать приложение по умолчанию для файла. Многим приложениям необходимо работать с файлами, которые они не могут обрабатывать самостоятельно. Например, почтовые приложения получают файлы разных типов, и им требуется способ запуска этих файлов в обработчиках по умолчанию. Далее показано, как использовать API [**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801), чтобы запустить обработчик по умолчанию для файла, который приложение не может обработать самостоятельно.
+Узнайте, как запускать приложение по умолчанию для файла. Многим приложениям необходимо работать с файлами, которые они не могут обрабатывать самостоятельно. Например, почтовые приложения получают файлы разных типов, и им требуется способ запуска этих файлов в обработчиках по умолчанию. Далее показано, как использовать API [**Windows.System.Launcher**](https://docs.microsoft.com/uwp/api/Windows.System.Launcher), чтобы запустить обработчик по умолчанию для файла, который приложение не может обработать самостоятельно.
 
 ## <a name="get-the-file-object"></a>Получение объекта файла
 
-Сначала получите объект [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) для данного файла.
+Сначала получите объект [**Windows.Storage.StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) для данного файла.
 
-Если файл включен в пакет вашего приложения, можно использовать свойство [**Package.InstalledLocation**](https://msdn.microsoft.com/library/windows/apps/br224681) для получения объекта [**Windows.Storage.StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) и метод [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) для получения объекта [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
+Если файл включен в пакет вашего приложения, можно использовать свойство [**Package.InstalledLocation**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.installedlocation) для получения объекта [**Windows.Storage.StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) и метод [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync) для получения объекта [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile).
 
-Если файл находится в известной папке, можно использовать свойства класса [**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) для получения [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) и метод [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) для получения объекта [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
+Если файл находится в известной папке, можно использовать свойства класса [**Windows.Storage.KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) для получения [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) и метод [**GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync) для получения объекта [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile).
 
 ## <a name="launch-the-file"></a>Запуск файла
 
@@ -35,14 +35,14 @@ Windows предоставляет несколько вариантов для 
 
 | Параметр | Метод | Описание |
 |--------|--------|-------------|
-| Запуск по умолчанию | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | Запуск указанного файла с помощью обработчика по умолчанию. |
-| Запуск через пункт меню "Открыть с помощью" | [**LaunchFileAsync (IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Запуск указанного файла, позволяющий пользователю выбрать обработчик в диалоговом окне «Открыть с помощью». |
-| Запуск с помощью рекомендованного резервного приложения | [**LaunchFileAsync (IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Запуск указанного файла с помощью обработчика по умолчанию. Если в системе не установлен обработчик, следует порекомендовать пользователю приложение в Магазине. |
-| Запуск с использованием заданного представления оставшегося пространства | [**LaunchFileAsync (IStorageFile, LauncherOptions)** ](https://msdn.microsoft.com/library/windows/apps/hh701465) (только для Windows) | Запуск указанного файла с помощью обработчика по умолчанию. Укажите значение параметра, позволяющее остаться на экране после запуска, и запросите конкретный размер окна. [**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314) не поддерживается в семействе версий мобильных устройств. |
+| Запуск по умолчанию | [**LaunchFileAsync(IStorageFile)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchfileasync) | Запуск указанного файла с помощью обработчика по умолчанию. |
+| Запуск через пункт меню "Открыть с помощью" | [**LaunchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) | Запуск указанного файла, позволяющий пользователю выбрать обработчик в диалоговом окне «Открыть с помощью». |
+| Запуск с помощью рекомендованного резервного приложения | [**LaunchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) | Запуск указанного файла с помощью обработчика по умолчанию. Если в системе не установлен обработчик, следует порекомендовать пользователю приложение в Магазине. |
+| Запуск с использованием заданного представления оставшегося пространства | [**LaunchFileAsync (IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) (только для Windows) | Запуск указанного файла с помощью обработчика по умолчанию. Укажите значение параметра, позволяющее остаться на экране после запуска, и запросите конкретный размер окна. [**LauncherOptions.DesiredRemainingView** ](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) не поддерживается в семействе версий мобильных устройств. |
 
 ### <a name="default-launch"></a>Запуск по умолчанию
 
-Чтобы запустить приложение по умолчанию, вызовите метод [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471). В следующем примере используется метод [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) для запуска файла изображения test.png, который включен в пакет приложения.
+Чтобы запустить приложение по умолчанию, вызовите метод [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchfileasync). В следующем примере используется метод [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync) для запуска файла изображения test.png, который включен в пакет приложения.
 
 ```csharp
 async void DefaultLaunch()
@@ -155,7 +155,7 @@ void MainPage::DefaultLaunch()
 
 ### <a name="open-with-launch"></a>Запуск через пункт меню "Открыть с помощью"
 
-Вызовите метод [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) с заданным для параметра [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) значением **true**, чтобы запустить приложение, которое пользователь выбирает в диалоговом окне **Открыть с помощью**.
+Вызовите метод [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.) с заданным для параметра [**LauncherOptions.DisplayApplicationPicker**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.displayapplicationpicker) значением **true**, чтобы запустить приложение, которое пользователь выбирает в диалоговом окне **Открыть с помощью**.
 
 Если пользователь хочет выбрать приложение для определенного файла, отличное от приложения по умолчанию, рекомендуется использовать диалоговое окно **Открыть с помощью**. Например, когда ваше приложение разрешает пользователю запускать файл изображения, по умолчанию наиболее вероятным обработчиком будет средство просмотра изображений. Иногда пользователю нужно не просто посмотреть изображение, но и отредактировать его. В таком случае используйте параметр **Открыть с помощью** наряду с альтернативной командой на панели приложения **AppBar** или в контекстном меню, чтобы пользователь мог вызвать диалоговое окно **Открыть с помощью** и выбрать приложение для редактирования.
 
@@ -289,7 +289,7 @@ void MainPage::DefaultLaunch()
 
 **Запустить с резервной рекомендуемые приложения**
 
-В некоторых случаях у пользователя может быть не установлено приложение для обработки запускаемого файла. Тогда по умолчанию Windows предоставит пользователю ссылку для поиска подходящего приложения в Магазине. Если вы при этом хотите порекомендовать пользователю конкретное приложение, вы можете передать рекомендацию вместе с запускаемым файлом. Для этого вызовите метод [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465), указав в качестве значения параметра [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) имя семейства пакета приложения Магазина, которое вы рекомендуете. Затем задайте для параметра [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) имя этого приложения. Windows будет использовать эту информацию, чтобы заменить общий параметр (поиск приложения в Магазине) конкретным параметром (приобретение рекомендованного приложения в Магазине).
+В некоторых случаях у пользователя может быть не установлено приложение для обработки запускаемого файла. Тогда по умолчанию Windows предоставит пользователю ссылку для поиска подходящего приложения в Магазине. Если вы при этом хотите порекомендовать пользователю конкретное приложение, вы можете передать рекомендацию вместе с запускаемым файлом. Для этого вызовите метод [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.), указав в качестве значения параметра [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) имя семейства пакета приложения Магазина, которое вы рекомендуете. Затем задайте для параметра [**LauncherOptions.PreferredApplicationDisplayName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationdisplayname) имя этого приложения. Windows будет использовать эту информацию, чтобы заменить общий параметр (поиск приложения в Магазине) конкретным параметром (приобретение рекомендованного приложения в Магазине).
 
 > [!NOTE]
 > Необходимо задать оба этих варианта, чтобы рекомендовать приложения. Настройка одного параметра без другого приведет к ошибке.
@@ -434,12 +434,12 @@ void MainPage::DefaultLaunch()
 
 ### <a name="launch-with-a-desired-remaining-view-windows-only"></a>Запуск с использованием требуемого представления оставшегося пространства (только для Windows)
 
-Исходные приложения, вызывающие [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461), могут запрашивать разрешение остаться на экране после запуска файла. По умолчанию Windows пытается поровну поделить все доступное пространство между исходным приложением и конечным приложением, обрабатывающим файл. Исходные приложения могут использовать свойство [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), чтобы сообщить операционной системе, что для окна приложения требуется больше или меньше доступного пространства. **DesiredRemainingView** также используется, чтобы сообщить системе, что исходному приложению не нужно оставаться на экране после запуска файла и что его пространство можно полностью занять конечным приложением. Это свойство указывает только предпочтительный размер окна для вызывающего приложения. Оно не задает условия для других приложений, которые могут находиться на экране в это же время.
+Исходные приложения, вызывающие [**LaunchFileAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.), могут запрашивать разрешение остаться на экране после запуска файла. По умолчанию Windows пытается поровну поделить все доступное пространство между исходным приложением и конечным приложением, обрабатывающим файл. Исходные приложения могут использовать свойство [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview), чтобы сообщить операционной системе, что для окна приложения требуется больше или меньше доступного пространства. **DesiredRemainingView** также используется, чтобы сообщить системе, что исходному приложению не нужно оставаться на экране после запуска файла и что его пространство можно полностью занять конечным приложением. Это свойство указывает только предпочтительный размер окна для вызывающего приложения. Оно не задает условия для других приложений, которые могут находиться на экране в это же время.
 
 > [!NOTE]
-> Windows учитывает несколько факторов при определении исходного приложения конечного размера окна, например, из исходного приложения предпочтений, количество приложений на экране, ориентацию экрана и т. д. Задав [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), вы не гарантируете конкретного поведения окон для исходного приложения.
+> Windows учитывает несколько факторов при определении исходного приложения конечного размера окна, например, из исходного приложения предпочтений, количество приложений на экране, ориентацию экрана и т. д. Задав [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview), вы не гарантируете конкретного поведения окон для исходного приложения.
 
-**Семейства мобильных устройств:  **[**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314) не поддерживается в семействе версий мобильных устройств.
+**Семейства мобильных устройств:  **[**LauncherOptions.DesiredRemainingView** ](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview) не поддерживается в семействе версий мобильных устройств.
 
 ```csharp
 async void DefaultLaunch()
@@ -540,7 +540,7 @@ void MainPage::DefaultLaunch()
 }
 ```
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
 Ваше приложение не может выбрать запускаемое приложение. Пользователь сам определяет, какое приложение запустить. Пользователь может выбрать приложение универсальной платформы Windows (UWP) или классическое приложение для Windows.
 
@@ -550,7 +550,7 @@ void MainPage::DefaultLaunch()
 
 Если вы попытаетесь запустить файл ограниченного типа, запуск завершится ошибкой, и будет выполнен обратный вызов для ошибки. Если ваше приложение обрабатывает разные типы файлов и вы считаете такую ошибку вероятной, рекомендуется предоставить пользователю резервный вариант действий. Например, можно позволить пользователю сохранить файл на рабочем столе и открыть его с рабочего стола.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 ### <a name="tasks"></a>Задачи
 
@@ -559,9 +559,9 @@ void MainPage::DefaultLaunch()
 
 ### <a name="guidelines"></a>Руководство
 
-* [Рекомендации для типов файлов и URI](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [Рекомендации для типов файлов и URI](https://docs.microsoft.com/windows/uwp/files/index)
 
-### <a name="reference"></a>Справочные материалы
+### <a name="reference"></a>Ссылка
 
-* [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
-* [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
+* [**Windows.Storage.StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)
+* [**Windows.System.Launcher.LaunchFileAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.)

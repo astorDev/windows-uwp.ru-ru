@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, мост для классических приложений, вспомогательные плитки, закрепить, закрепление, краткое руководство, пример кода, пример, secondarytile, классическое приложение, win32, winforms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e713f37cd5e5fbf4b2771e76fb7e132b5976629
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7ca6471122ee1870a94ef0834a5eed8f83a4d4a7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57609629"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362619"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>Закрепление вспомогательных плиток из классических приложений
 
@@ -34,7 +34,7 @@ ms.locfileid: "57609629"
 
 ## <a name="enable-access-to-iinitializewithwindow-interface"></a>Предоставление доступа к интерфейсу IInitializeWithWindow
 
-Если приложение написано на управляемом языке, например C# или Visual Basic, объявите интерфейс IInitializeWithWindow в коде приложения с атрибутом [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) и Guid, как показано в следующем примере кода на C#. В этом примере предполагается, что файл кода имеет оператор using для пространства имен System.Runtime.InteropServices.
+Если приложение написано на управляемом языке, например C# или Visual Basic, объявите интерфейс IInitializeWithWindow в коде приложения с атрибутом [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute?redirectedfrom=MSDN) и Guid, как показано в следующем примере кода на C#. В этом примере предполагается, что файл кода имеет оператор using для пространства имен System.Runtime.InteropServices.
 
 ```csharp
 [ComImport]
@@ -66,7 +66,7 @@ SecondaryTile tile = new SecondaryTile(
 
 ## <a name="assign-the-window-handle"></a>Назначение дескриптора окна
 
-Этот этап необходим для классических приложений. Приведите объект к типу объекта [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx). Затем вызовите метод [IInitializeWithWindow.Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) и передайте дескриптор окна, которое вы хотите сделать владельцем любых модального диалогового окна. В следующем примере кода на C# показана передача дескриптора главного окна приложения методу.
+Этот этап необходим для классических приложений. Приведите объект к типу объекта [IInitializeWithWindow](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow). Затем вызовите метод [IInitializeWithWindow.Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) и передайте дескриптор окна, которое вы хотите сделать владельцем любых модального диалогового окна. В следующем примере кода на C# показана передача дескриптора главного окна приложения методу.
 
 ```csharp
 // Assign the window handle

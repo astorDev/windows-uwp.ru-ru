@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Подготовка устройства к разработке
 description: Настройте свое устройство Windows 10 для разработки и отладки.
 keywords: Начало работы Лицензия разработчика Visual Studio, лицензия разработчика подготовка устройства
-ms.date: 05/30/2018
+ms.date: 4/9/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 90ff8e8c0d11e58d251e9c2f5bfb00f3b8aedf1a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f927d8bce1e59ba9a8ed9b0f3f08ce3575c6d7bd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618959"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367018"
 ---
 # <a name="enable-your-device-for-development"></a>Подготовка устройства к разработке
 
@@ -93,11 +93,11 @@ ms.locfileid: "57618959"
 Дополнительные сведения о портале устройств см. в разделе [Обзор портала устройства с Windows](../debug-test-perf/device-portal.md).
 
 Конкретные инструкции по настройке устройства см. в следующих разделах:
-- [Портал устройств для рабочего стола](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
+- [Портал устройств для рабочего стола](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
 - [Портал устройств для HoloLens](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
 - [Портал устройств для IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Портал устройств для мобильных устройств](../debug-test-perf/device-portal-mobile.md)
-- [Портал устройств для Xbox](../debug-test-perf/device-portal-xbox.md)
+- [Портал устройств для Xbox](../xbox-apps/device-portal-xbox.md)
 
 Если у вас возникают проблемы с включением режима разработчика или порталом устройств, посетите форум [Известные проблемы](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) для поиска способов устранения этих проблем или изучите раздел [Сбой установки пакета режима разработчика](#failure-to-install-developer-mode-package), чтобы получить дополнительные сведений и узнать больше о том, какие обновления WSUS помогут разблокировать пакет режима разработчика.
 
@@ -128,12 +128,12 @@ ms.locfileid: "57618959"
  Для семейства настольных устройств на странице параметров **Для разработчиков** имеются ссылки на параметры, которые можно использовать для оптимизации компьютера под задачи разработки. Для каждого параметра можно установить флажок и нажать кнопку **Применить** или нажать ссылку **Показать параметры**, чтобы открыть страницу параметров для этого варианта.
 
 
-## <a name="notes"></a>Заметки
+## <a name="notes"></a>Примечания
 В ранних версиях Windows 10 Mobile параметр "Аварийные дампы" был задан предварительно в меню "Параметры разработчика".  Он был перемещен на [портала устройств](../debug-test-perf/device-portal.md), чтобы его можно было использовать удаленно, а не просто по USB.  
 
 Существует ряд средств, которые вы можете использовать для развертывания приложения с компьютера с Windows 10 на мобильном устройстве с Windows 10. Оба устройства должны быть подключены к одной подсети с помощью проводного или беспроводного подключения или соединены друг с другом через USB. При использовании любого из указанных способов будет установлен только пакет приложения (.appx/.appxbundle); сертификаты установлены не будут.
 
--   Используйте средство развертывания приложений для Windows 10 (WinAppDeployCmd). Узнайте больше о [средстве WinAppDeployCmd](https://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
+-   Используйте средство развертывания приложений для Windows 10 (WinAppDeployCmd). Узнайте больше о [средстве WinAppDeployCmd](https://docs.microsoft.com/previous-versions/windows/apps/mt203806(v=vs.140)).
 -   Вы можете использовать [портал устройств](../debug-test-perf/device-portal.md) для развертывания из браузера на мобильном устройстве с Windows 10 версии 1511 или более поздней версии. Используйте страницу **[Приложения](../debug-test-perf/device-portal.md#apps-manager)** портала устройств для отправки пакета приложения (APPX-файл) и установки его на устройство.
 
 ## <a name="failure-to-install-developer-mode-package"></a>Сбой установки пакета режима разработчика
@@ -207,7 +207,7 @@ ms.locfileid: "57618959"
 
     Чтобы включить режим разработчика, присвойте этому параметру типа DWORD значение 1:
 
-    -   **HKLM\\программного обеспечения\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
 **Включите устройство с помощью PowerShell**
 

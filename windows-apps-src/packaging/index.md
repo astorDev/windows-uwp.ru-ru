@@ -6,12 +6,12 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp, packaging
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eb0fa1eef5b859de561407a91215d5b75624030
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 5d18f67ca9088c227052a2222f798cadff6df75c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58173010"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372822"
 ---
 # <a name="packaging-apps"></a>Создание пакетов приложений
 
@@ -31,5 +31,5 @@ ms.locfileid: "58173010"
 | [Установка приложений Windows 10 с помощью Установщика приложений](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root) | Установщик приложений позволяет устанавливать приложения Windows 10, дважды щелкнув по пакету приложения. |
 | [Установка приложений с помощью средства WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows Application Deployment (WinAppDeployCmd.exe) — это программа командной строки, которая используется для развертывания приложения UWP с компьютера под управлением Windows 10 на любое устройство с операционной системой Windows 10 Mobile. Это средство можно использовать для развертывания пакета приложения, если мобильное устройство с операционной системой Windows 10 Mobile подключено через USB или доступно в одной подсети, без необходимости использования Microsoft Visual Studio или отдельного решения для данного приложения. В этой статье описывается, как устанавливать приложения UWP с помощью этого средства. |
 | [Настройка автоматических сборок для приложения UWP](auto-build-package-uwp-apps.md) | Если вы хотите упаковать свое приложение в рамках процесса автоматического построения, в этом разделе показано, как использовать для этого Visual Studio Team Services (VSTS). |
-| [Объявления возможностей приложения](app-capability-declarations.md) | В [манифесте пакета](https://msdn.microsoft.com/library/windows/apps/BR211474) вашего приложения UWP должны быть объявлены возможности для получения доступа к определенным API или ресурсам, например, изображениям и музыке, или устройствам, таким как камера или микрофон. |
+| [Объявления возможностей приложения](app-capability-declarations.md) | В [манифесте пакета](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) вашего приложения UWP должны быть объявлены возможности для получения доступа к определенным API или ресурсам, например, изображениям и музыке, или устройствам, таким как камера или микрофон. |
 | [Скачивание и установка обновлений пакетов из Store](self-install-package-updates.md) | Приложение UWP может программно проверять наличие обновлений пакета и устанавливать эти обновления. Приложение может также запрашивать пакеты, которые были помечены как обязательные в Центре партнеров, и отключать функциональные возможности, пока обязательное обновление не будет установлено.  |

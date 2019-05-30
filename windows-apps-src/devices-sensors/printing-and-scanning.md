@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, печать, 3dprinting трехмерной печати
 ms.localizationpriority: medium
-ms.openlocfilehash: 99272c4e9ffd461901b4b2f2d2aa93b416a1b100
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 763fbc1c3cb7e969b2e932ded7cf32d7447a6e98
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605619"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369810"
 ---
 # <a name="printing-and-scanning"></a>Печать и сканирование
 
@@ -25,9 +25,9 @@ ms.locfileid: "57605619"
 | [Настройка печати рабочего процесса](print-workflow-customize.md) | В этом разделе рассматривается, как создать собственные рабочие процессы печати, соответствующие потребностям вашей организации.  |
 | [Сканирование из приложения](scan-from-your-app.md) | Узнайте, как сканировать содержимое из приложения с помощью планшетного сканера, сканера с модулем подачи или автоматически настраиваемого источника сканирования.|
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
-* [Рекомендации по проектированию для печати](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [Рекомендации по проектированию для печати](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
 * [Видео с Build 2015: Разработка приложений, осуществляющие печать в Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [Пример печати UWP](https://go.microsoft.com/fwlink/p/?LinkId=619984)
  

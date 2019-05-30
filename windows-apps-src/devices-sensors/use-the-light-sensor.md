@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aeb60d67f0cdee77772797816e45fdd9bdc41b4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 04d75d4c854a407fd733c6ecdfb3cabac84faef6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623619"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369599"
 ---
 # <a name="use-the-light-sensor"></a>Использование датчика освещенности
 
 
 **Важные API**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**LightSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.LightSensor)
 
 **Пример**
 
@@ -29,7 +29,7 @@ ms.locfileid: "57623619"
 
 Датчик освещенности — это один из типов датчиков, которые позволяют приложению реагировать на изменение условий окружающей пользователя среды.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Вы должны быть знакомы с расширяемого приложения разметки языка (XAML), Microsoft Visual C#и события.
 
@@ -41,7 +41,7 @@ ms.locfileid: "57623619"
 
 ###  <a name="instructions"></a>Инструкция
 
--   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
+-   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#** .
 
 -   Откройте файл BlankPage.xaml.cs вашего проекта и замените существующий код следующим:
 

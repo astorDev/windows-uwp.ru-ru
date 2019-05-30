@@ -7,17 +7,17 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6efe7aa27721f519ba93052abf2d0e8189f58941
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 87d4be69d9a7869f5331d30225e93a22ad9e959c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622319"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371255"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>С помощью системных значений
 
 
-Создаваемые системой значения генерируются [этапом сборщика входных данных (IA)](input-assembler-stage--ia-.md) (на основе заданной пользователем [семантики](https://msdn.microsoft.com/library/windows/desktop/bb509647) входных данных) в целях повышения эффективности операций шейдера. Благодаря прикреплению определенных данных, таких как идентификатор экземпляра (видимый [этапу шейдера вершин (VS)](vertex-shader-stage--vs-.md)), идентификатор вершины (видимый VS) или идентификатор примитива (видимый [этапу шейдера геометрии (GS)](geometry-shader-stage--gs-.md)/[этапу построителя текстуры (PS)](pixel-shader-stage--ps-.md)), последующий этап шейдера может искать эти системные значения для оптимизации обработки на этом этапе.
+Создаваемые системой значения генерируются [этапом сборщика входных данных (IA)](input-assembler-stage--ia-.md) (на основе заданной пользователем [семантики](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) входных данных) в целях повышения эффективности операций шейдера. Благодаря прикреплению определенных данных, таких как идентификатор экземпляра (видимый [этапу шейдера вершин (VS)](vertex-shader-stage--vs-.md)), идентификатор вершины (видимый VS) или идентификатор примитива (видимый [этапу шейдера геометрии (GS)](geometry-shader-stage--gs-.md)/[этапу построителя текстуры (PS)](pixel-shader-stage--ps-.md)), последующий этап шейдера может искать эти системные значения для оптимизации обработки на этом этапе.
 
 Например, этап VS может искать идентификатор экземпляра для получения дополнительных повершинных данных для шейдера или для выполнения других операций; этапы GS и PS могут использовать идентификатор примитива, чтобы аналогичным образом получить попримитивные данные.
 

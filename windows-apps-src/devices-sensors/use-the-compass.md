@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f8c1cc6e17d95f55cc97af7695c12b374edcaaa8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2c7fadaf902b4aa543234bc8d43fbc1595a54219
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632889"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369684"
 ---
 # <a name="use-the-compass"></a>Использование компаса
 
 
 **Важные API**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Компас**](https://msdn.microsoft.com/library/windows/apps/BR225705)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Компас**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)
 
 **Пример**
 
@@ -29,7 +29,7 @@ ms.locfileid: "57632889"
 
 Текущее направление определяется по отношению к магнитному (истинному) северу. Навигационные приложения используют компас, чтобы определить, в каком направлении обращено устройство, а затем поворачивают карту соответствующим образом.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Вы должны быть знакомы с расширяемого приложения разметки языка (XAML), Microsoft Visual C#и события.
 
@@ -41,7 +41,7 @@ ms.locfileid: "57632889"
 
 ### <a name="instructions"></a>Инструкция
 
--   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#**.
+-   Для создания нового проекта выберите **Пустое приложение (универсальное приложение Windows)** из шаблонов проектов **Visual C#** .
 
 -   Откройте файл проекта MainPage.xaml.cs и замените существующий код следующим.
 

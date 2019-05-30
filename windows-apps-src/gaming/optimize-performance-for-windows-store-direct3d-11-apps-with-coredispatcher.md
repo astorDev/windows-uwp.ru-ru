@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx, задержка ввода
 ms.localizationpriority: medium
-ms.openlocfilehash: 537dd6e9d3f300666a0692b66f422ce00dd68460
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a74e2e24810dee058aa166800091af91d55cdef4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601749"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368450"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>Минимизация задержки ввода в играх DirectX универсальной платформы Windows (UWP)
 
@@ -65,7 +65,7 @@ ms.locfileid: "57601749"
 
 В первой итерации игры изображение на экране обновляется только тогда, когда пользователь перемещает кусочки пазла. Пользователь может перетаскивать кусочки, а может выбирать их, а затем касаться того места, куда их следует положить. Во втором случае кусочки перемещаются в нужное место мгновенно, без какой-либо анимации или эффектов.
 
-В коде заложен однопотоковый цикл внутри метода [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505), использующего **CoreProcessEventsOption::ProcessOneAndAllPending**. При этом все доступные в настоящее время события отправляются в очередь. Если событий нет, цикл ждет, пока они не появятся.
+В коде заложен однопотоковый цикл внутри метода [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run), использующего **CoreProcessEventsOption::ProcessOneAndAllPending**. При этом все доступные в настоящее время события отправляются в очередь. Если событий нет, цикл ждет, пока они не появятся.
 
 ``` syntax
 void App::Run()
@@ -96,7 +96,7 @@ void App::Run()
 
 Во второй итерации игра выглядит несколько иначе: после того как пользователь выбирает кусочек пазла, а затем касается места, перемещение кусочка сопровождается анимацией от начальной точки до конечной.
 
-В коде также заложен однопотоковый цикл, использующий **ProcessOneAndAllPending** для отправки событий ввода в очередь. Разница в том, что в процессе анимации цикл меняется и использует **CoreProcessEventsOption::ProcessAllIfPresent**, чтобы не ждать новых событий ввода. Если событий нет, [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) немедленно возвращается, за счет чего приложение может отображать следующий кадр анимации. По завершении анимации цикл вновь переключается на **ProcessOneAndAllPending**, чтобы ограничить обновление экрана.
+В коде также заложен однопотоковый цикл, использующий **ProcessOneAndAllPending** для отправки событий ввода в очередь. Разница в том, что в процессе анимации цикл меняется и использует **CoreProcessEventsOption::ProcessAllIfPresent**, чтобы не ждать новых событий ввода. Если событий нет, [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) немедленно возвращается, за счет чего приложение может отображать следующий кадр анимации. По завершении анимации цикл вновь переключается на **ProcessOneAndAllPending**, чтобы ограничить обновление экрана.
 
 ``` syntax
 void App::Run()
@@ -182,7 +182,7 @@ void App::Run()
 
 В некоторых играх есть возможность игнорировать задержку ввода, существующую в сценарии 3, или компенсировать ее. Однако если задержка ввода критична для получения ожидаемого впечатления от игры и адекватной обратной связи, при отрисовке с частотой 60 кадров в секунду игры должны обрабатывать ввод в отдельном потоке.
 
-В четвертой итерации игра строится на сценарии 3, разделяя обработку ввода и отрисовку графики из цикла на отдельные потоки. Благодаря разделению потоков обработка ввода не задерживается выводом графики, хотя код при этом усложняется. В сценарии 4 поток ввода вызывает [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) с [**CoreProcessEventsOption::ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217), который ждет новые события и распределяет все доступные. Это длится до тех пор, пока окно не будет закрыто или пока игра не вызовет [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260).
+В четвертой итерации игра строится на сценарии 3, разделяя обработку ввода и отрисовку графики из цикла на отдельные потоки. Благодаря разделению потоков обработка ввода не задерживается выводом графики, хотя код при этом усложняется. В сценарии 4 поток ввода вызывает [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) с [**CoreProcessEventsOption::ProcessUntilQuit**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreProcessEventsOption), который ждет новые события и распределяет все доступные. Это длится до тех пор, пока окно не будет закрыто или пока игра не вызовет [**CoreWindow::Close**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.close).
 
 ``` syntax
 void App::Run()
@@ -233,7 +233,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-**DirectX 11 и XAML-приложения (универсальной Windows)** шаблона в Microsoft Visual Studio 2015 цикл игры разделяется на несколько потоков таким же образом. С помощью объекта [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) он запускает поток обработки ввода, а также создает поток отрисовки независимо от потока пользовательского интерфейса XAML. Подробности об этих шаблонах см. в статье [Создание проекта игры универсальной платформы Windows и DirectX на основе шаблона](user-interface.md).
+**DirectX 11 и XAML-приложения (универсальной Windows)** шаблона в Microsoft Visual Studio 2015 цикл игры разделяется на несколько потоков таким же образом. С помощью объекта [**Windows::UI::Core::CoreIndependentInputSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreIndependentInputSource) он запускает поток обработки ввода, а также создает поток отрисовки независимо от потока пользовательского интерфейса XAML. Подробности об этих шаблонах см. в статье [Создание проекта игры универсальной платформы Windows и DirectX на основе шаблона](user-interface.md).
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>Дополнительные способы сокращения задержки ввода
 

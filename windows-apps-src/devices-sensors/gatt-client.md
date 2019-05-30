@@ -5,20 +5,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ae656b473a4dd5999588057b0ec970645703eec
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 35488417497ac157969ff2641fbeaa0d4bb02591
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635089"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370123"
 ---
 # <a name="bluetooth-gatt-client"></a>Клиент Bluetooth GATT
 
 
 **Важные API**
 
--   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
--   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
+-   [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
+-   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 В этой статье описывается использование API-интерфейсов клиента Bluetooth Generic Attribute (GATT) для приложений универсальной платформы Windows (UWP) и приводится пример кода для основных задач клиента GATT.
 - Отправка запросов для ближайших устройств
@@ -28,7 +28,7 @@ ms.locfileid: "57635089"
 - Подписка на уведомления об изменении значения характеристики
 
 ## <a name="overview"></a>Обзор
-С помощью API-интерфейсов в пространстве имен [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) разработчики получают доступ к устройствам Bluetooth с низким энергопотреблением. Функции устройств Bluetooth с низким энергопотреблением доступны через набор:
+С помощью API-интерфейсов в пространстве имен [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) разработчики получают доступ к устройствам Bluetooth с низким энергопотреблением. Функции устройств Bluetooth с низким энергопотреблением доступны через набор:
 
 -   Службы
 -   характеристик;
@@ -51,9 +51,9 @@ API-интерфейсы Bluetooth GATT для устройств с низки�
 - DeviceWatcher в Windows.Devices.Enumeration
 - AdvertisementWatcher в Windows.Devices.Bluetooth.Advertisement
 
-Второй метод подробно рассматривается в документации по классу [Advertisement](ble-beacon.md), поэтому здесь упоминается только основной принцип — поиск адресов ближайших устройств Bluetooth, соответствующих критериям конкретного [фильтра объявления](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter.aspx). Когда адрес найден, можно вызвать [BluetoothLEDevice.FromBluetoothAddressAsync](https://msdn.microsoft.com/en-us/library/windows/apps/mt608819.aspx) для получения ссылки на устройство. 
+Второй метод подробно рассматривается в документации по классу [Advertisement](ble-beacon.md), поэтому здесь упоминается только основной принцип — поиск адресов ближайших устройств Bluetooth, соответствующих критериям конкретного [фильтра объявления](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter). Когда адрес найден, можно вызвать [BluetoothLEDevice.FromBluetoothAddressAsync](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice.frombluetoothaddressasync) для получения ссылки на устройство. 
 
-Вернемся к методу DeviceWatcher. Устройство Bluetooth с низким энергопотреблением ничем не отличается от любых других устройств в Windows. Запрос к этому устройству можно отправить с помощью [API-интерфейсов перечисления](https://msdn.microsoft.com/library/windows/apps/BR225459). Используйте класс [DeviceWatcher](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher), чтобы передать строку запроса с указанием искомых устройств: 
+Вернемся к методу DeviceWatcher. Устройство Bluetooth с низким энергопотреблением ничем не отличается от любых других устройств в Windows. Запрос к этому устройству можно отправить с помощью [API-интерфейсов перечисления](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration). Используйте класс [DeviceWatcher](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher), чтобы передать строку запроса с указанием искомых устройств: 
 
 ```csharp
 // Query for extra properties you want returned
@@ -78,10 +78,10 @@ deviceWatcher.Stopped += DeviceWatcher_Stopped;
 // Start the watcher.
 deviceWatcher.Start();
 ```
-После запуска DeviceWatcher вы получите [DeviceInformation](https://msdn.microsoft.com/library/windows/apps/br225393) для каждого устройства, соответствующего критериям запроса, в обработчике события [Added](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.added) для соответствующих устройств. Чтобы получить более полное представление о методе DeviceWatcher, см. полный пример кода [на Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing). 
+После запуска DeviceWatcher вы получите [DeviceInformation](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) для каждого устройства, соответствующего критериям запроса, в обработчике события [Added](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added) для соответствующих устройств. Чтобы получить более полное представление о методе DeviceWatcher, см. полный пример кода [на Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing). 
 
 ## <a name="connecting-to-the-device"></a>Подключение к устройству
-После обнаружения нужного устройства используйте [DeviceInformation.Id](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.id), чтобы получить объект BluetoothLEDevice для соответствующего устройства: 
+После обнаружения нужного устройства используйте [DeviceInformation.Id](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id), чтобы получить объект BluetoothLEDevice для соответствующего устройства: 
 
 ```csharp
 async void ConnectDevice(DeviceInformation deviceInfo)
@@ -168,7 +168,7 @@ if (result.Status == GattCommunicationStatus.Success)
     // Successfully wrote to device
 }
 ```
-> **Совет**. Ознакомьтесь с помощью [DataReader](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datareader.aspx) и [DataWriter](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datawriter.aspx). Их функциональные возможности незаменимы в операциях с необработанными буферами, которые передаются многими API-интерфейсами Bluetooth. 
+> **Совет**. Ознакомьтесь с помощью [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) и [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter). Их функциональные возможности незаменимы в операциях с необработанными буферами, которые передаются многими API-интерфейсами Bluetooth. 
 ## <a name="subscribing-for-notifications"></a>Подписка на уведомления
 
 Проверьте свойства характеристики и убедитесь, что характеристика поддерживает операцию Indicate или Notify. 

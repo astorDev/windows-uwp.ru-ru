@@ -6,32 +6,32 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c0eb2b6e668baec9f5ad1ef859b7213f20748beb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 97ad2485abab0bd4733699bc4ffcf29e17a22844
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601629"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369439"
 ---
 # <a name="track-recently-used-files-and-folders"></a>Отслеживание недавно использовавшихся файлов и папок
 
 **Важные API**
 
-- [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458)
-- [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369)
+- [**MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist)
+- [**FileOpenPicker**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-fileopenpicker)
 
 Отслеживайте файлы, к которым часто обращается пользователь, добавляя их в список недавно использованных файлов (MRU). Платформа управляет списком MRU, сортируя элементы по времени последнего доступа к ним и удаляя самые старые элементы списка, имеющего ограничение в 25 элементов. Каждое приложение имеет собственный список MRU.
 
-Список MRU вашего приложения представлен классом [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475), полученным из статического свойства [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458). Элементы MRU хранятся в виде объектов [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129). Поэтому в список можно добавлять и объекты [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (то есть файлы), и объекты [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) (то есть папки).
+Список MRU вашего приложения представлен классом [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList), полученным из статического свойства [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist). Элементы MRU хранятся в виде объектов [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem). Поэтому в список можно добавлять и объекты [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) (то есть файлы), и объекты [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) (то есть папки).
 
 > [!NOTE]
 > Полные примеры см. в разделе [образец средства выбора файла](https://go.microsoft.com/fwlink/p/?linkid=619994) и [файла доступ к образцу](https://go.microsoft.com/fwlink/p/?linkid=619995).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 -   **Понять асинхронного программирования для приложений универсальной платформы Windows (UWP)**
 
-    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Разрешения на доступ к папке**
 
@@ -52,18 +52,18 @@ ms.locfileid: "57601629"
     string mruToken = mru.Add(file, "profile pic");
     ```
 
-    [**StorageItemMostRecentlyUsedList.Add** ](https://msdn.microsoft.com/library/windows/apps/br207476) перегружен. В примере используется [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481), поэтому можно сопоставить метаданные с файлом. Указание метаданных позволяет записать назначение элемента, например "изображение профиля". Кроме того, вы можете добавить файл в список MRU и без метаданных, вызвав метод [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). При добавлении элемента в список MRU метод возвращает уникальную идентификационную строку, так называемый маркер, который используется для извлечения элемента.
+    [**StorageItemMostRecentlyUsedList.Add** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) перегружен. В примере используется [**Add(IStorageItem, String)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add), поэтому можно сопоставить метаданные с файлом. Указание метаданных позволяет записать назначение элемента, например "изображение профиля". Кроме того, вы можете добавить файл в список MRU и без метаданных, вызвав метод [**Add(IStorageItem)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add). При добавлении элемента в список MRU метод возвращает уникальную идентификационную строку, так называемый маркер, который используется для извлечения элемента.
 
 > [!TIP]
-> Чтобы извлечь элемент из списка MRU, вам потребуется маркер, потому сохраните его. Подробные сведения о данных приложения см. в статье [Управление данными приложения](https://msdn.microsoft.com/library/windows/apps/hh465109).
+> Чтобы извлечь элемент из списка MRU, вам потребуется маркер, потому сохраните его. Подробные сведения о данных приложения см. в статье [Управление данными приложения](https://docs.microsoft.com/previous-versions/windows/apps/hh465109(v=win.10)).
 
 ## <a name="use-a-token-to-retrieve-an-item-from-the-mru"></a>Использование маркера для извлечения элемента из списка MRU
 
 Для извлечения элемента используйте наиболее подходящий метод.
 
--   Файл извлекается как [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) с помощью метода [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br207486).
--   Папка извлекается как [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) с помощью метода [**GetFolderAsync**](https://msdn.microsoft.com/library/windows/apps/br207489).
--   Общий интерфейс [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129), который может представлять как файл, так и папку, извлекается с помощью метода [**GetItemAsync**](https://msdn.microsoft.com/library/windows/apps/br207492).
+-   Файл извлекается как [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) с помощью метода [**GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfileasync).
+-   Папка извлекается как [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) с помощью метода [**GetFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfolderasync).
+-   Общий интерфейс [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem), который может представлять как файл, так и папку, извлекается с помощью метода [**GetItemAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getitemasync).
 
 Вот как вернуть только что добавленный файл:
 
@@ -83,7 +83,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 }
 ```
 
-Класс [**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) позволяет выполнять итерацию записей в MRU. Эти записи — структуры [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348), которые содержат маркер и метаданные элемента.
+Класс [**AccessListEntryView**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.AccessListEntryView) позволяет выполнять итерацию записей в MRU. Эти записи — структуры [**AccessListEntry**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.AccessListEntry), которые содержат маркер и метаданные элемента.
 
 ## <a name="removing-items-from-the-mru-when-its-full"></a>Удаление элементов из списка MRU при его заполнении
 
@@ -91,9 +91,9 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 ## <a name="future-access-list"></a>Список дальнейшего доступа
 
-Помимо списка MRU ваше приложение также имеет список дальнейшего доступа. Выбирая файлы и папки, пользователь предоставляет вашему приложению разрешение на доступ к элементам, к которым невозможно получить доступ иным способом. Когда вы добавляете эти элементы в список дальнейшего доступа, то сохраняете разрешение на случай, когда приложению понадобится получить доступ к элементам позже. Список дальнейшего доступа приложения представлен классом [**StorageItemAccessList**](https://msdn.microsoft.com/library/windows/apps/br207459), полученным из статического свойства [**StorageApplicationPermissions.FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457).
+Помимо списка MRU ваше приложение также имеет список дальнейшего доступа. Выбирая файлы и папки, пользователь предоставляет вашему приложению разрешение на доступ к элементам, к которым невозможно получить доступ иным способом. Когда вы добавляете эти элементы в список дальнейшего доступа, то сохраняете разрешение на случай, когда приложению понадобится получить доступ к элементам позже. Список дальнейшего доступа приложения представлен классом [**StorageItemAccessList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemAccessList), полученным из статического свойства [**StorageApplicationPermissions.FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist).
 
 Когда пользователь выбирает элемент, вы можете добавить его в список дальнейшего доступа, а также в список MRU.
 
--   В списке [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) может содержаться до 1000 элементов. Помните: он может содержать как папки, так и файлы, т. е. множество папок.
--   Платформа не удаляет элементы из списка [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) самостоятельно. Если достигнут предел в 1000 элементов, вы не можете добавить следующий элемент, пока не освободите место с помощью метода [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497).
+-   В списке [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) может содержаться до 1000 элементов. Помните: он может содержать как папки, так и файлы, т. е. множество папок.
+-   Платформа не удаляет элементы из списка [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) самостоятельно. Если достигнут предел в 1000 элементов, вы не можете добавить следующий элемент, пока не освободите место с помощью метода [**Remove**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.remove).

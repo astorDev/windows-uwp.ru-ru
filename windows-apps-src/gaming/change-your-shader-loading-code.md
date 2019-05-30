@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d, конвейер шейдеров
 ms.localizationpriority: medium
-ms.openlocfilehash: f02b365175909b5038e5eb117f12851be9f14e3a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8793ef8b44df1ca1d93133383666434f525f2d07
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653699"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368974"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>Сравнение конвейера шейдеров OpenGL ES 2.0 с Direct3D
 
@@ -20,36 +20,36 @@ ms.locfileid: "57653699"
 
 **Важные API**
 
--   [Сборщик входных данных рабочей области](https://msdn.microsoft.com/library/windows/desktop/bb205116)
--   [Уровень построителя текстур вершин](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage)
--   [Уровень построителя текстур пикселей](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage)
+-   [Сборщик входных данных рабочей области](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage)
+-   [Уровень построителя текстур вершин](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85))
+-   [Уровень построителя текстур пикселей](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85))
 
-Концептуально конвейер шейдеров Direct3D 11 очень похож на таковой в OpenGL ES 2.0. Однако в терминах проектного решения API главными компонентами для создания и управления стадиями шейдеров являются части двух основных интерфейсов, [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) и [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). В этом разделе делается попытка сопоставить общие шаблоны API конвейера шейдеров OpenGL ES 2.0 с их эквивалентами Direct3D 11 в этих интерфейсах.
+Концептуально конвейер шейдеров Direct3D 11 очень похож на таковой в OpenGL ES 2.0. Однако в терминах проектного решения API главными компонентами для создания и управления стадиями шейдеров являются части двух основных интерфейсов, [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) и [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1). В этом разделе делается попытка сопоставить общие шаблоны API конвейера шейдеров OpenGL ES 2.0 с их эквивалентами Direct3D 11 в этих интерфейсах.
 
 ## <a name="reviewing-the-direct3d-11-shader-pipeline"></a>Обзор конвейера шейдеров Direct3D 11
 
 
-Объекты шейдера создаются с помощью методов в интерфейсе шейдера [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575), таких как [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) и [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513).
+Объекты шейдера создаются с помощью методов в интерфейсе шейдера [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1), таких как [**ID3D11Device1::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) и [**ID3D11Device1::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader).
 
-Конвейер графики Direct3D 11, который управляется экземплярами интерфейса [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598), имеет следующие стадии.
+Конвейер графики Direct3D 11, который управляется экземплярами интерфейса [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1), имеет следующие стадии.
 
--   [Стадия сборщика входных данных](https://msdn.microsoft.com/library/windows/desktop/bb205116). На стадии сборщика входных данных конвейеру поставляются данные (треугольники, линии и точки). [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598) методы, поддерживающие этот этап должны иметь префикс «IA».
--   [Стадия вершинного шейдера](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage). На стадии вершинного шейдера обрабатываются вершины, обычно с выполнением таких операций, как преобразования, скиннинг и освещение. Вершинный шейдер всегда принимает одну входную вершину и создает одну выходную вершину. [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598) методы, поддерживающие этот этап должны иметь префикс «VS».
--   [Стадия потокового вывода](https://msdn.microsoft.com/library/windows/desktop/bb205121). На стадии потокового вывода поток данных примитивов из конвейера направляется в память на своем пути к средству прорисовки. Поток данных может быть выходным или передаваться в средство программной прорисовки. Поток данных, выведенный в память, можно снова вернуть в конвейер как входные данные или обратно считать из ЦП. [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598) методы, поддерживающие этот этап должны иметь префикс «Т».
--   [Стадия средства программной прорисовки](https://msdn.microsoft.com/library/windows/desktop/bb205125). Средство программной прорисовки обрезает примитивы, готовит их для построителя текстуры и определяет, как вызывать построители текстуры. Вы можете отключить растеризации, указывая конвейера имеется не шейдер пикселей (значение NULL с этап шейдера пикселей [ **ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472)) и отключение глубины и тестирование (набор элементов Задайте значение FALSE в DepthEnable и StencilEnable [ **D3D11\_ГЛУБИНА\_ТРАФАРЕТА\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476110)). После отключения не будут обновляться связанные с растеризацией счетчики конвейера.
--   [Стадия построителя текстуры](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage). На стадии построителя текстуры принимаются интерполированные данные для примитива и генерируются данные для пикселей, такие как цвет. [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598) методы, поддерживающие этот этап должны иметь префикс «PS».
--   [Стадия слияния вывода](https://msdn.microsoft.com/library/windows/desktop/bb205120). На стадии слияния вывода выходные данные различных типов (значения построителя текстуры, информация о глубине и наборе элементов) объединяются с содержимым целевого объекта отрисовки и буферов глубины и набора элементов для создания окончательного результата конвейера. [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598) методы, поддерживающие этот этап должны иметь префикс «OM».
+-   [Стадия сборщика входных данных](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage). На стадии сборщика входных данных конвейеру поставляются данные (треугольники, линии и точки). [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) методы, поддерживающие этот этап должны иметь префикс «IA».
+-   [Стадия вершинного шейдера](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85)). На стадии вершинного шейдера обрабатываются вершины, обычно с выполнением таких операций, как преобразования, скиннинг и освещение. Вершинный шейдер всегда принимает одну входную вершину и создает одну выходную вершину. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) методы, поддерживающие этот этап должны иметь префикс «VS».
+-   [Стадия потокового вывода](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-stream-stage). На стадии потокового вывода поток данных примитивов из конвейера направляется в память на своем пути к средству прорисовки. Поток данных может быть выходным или передаваться в средство программной прорисовки. Поток данных, выведенный в память, можно снова вернуть в конвейер как входные данные или обратно считать из ЦП. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) методы, поддерживающие этот этап должны иметь префикс «Т».
+-   [Стадия средства программной прорисовки](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage). Средство программной прорисовки обрезает примитивы, готовит их для построителя текстуры и определяет, как вызывать построители текстуры. Вы можете отключить растеризации, указывая конвейера имеется не шейдер пикселей (значение NULL с этап шейдера пикселей [ **ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader)) и отключение глубины и тестирование (набор элементов Задайте значение FALSE в DepthEnable и StencilEnable [ **D3D11\_ГЛУБИНА\_ТРАФАРЕТА\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_desc)). После отключения не будут обновляться связанные с растеризацией счетчики конвейера.
+-   [Стадия построителя текстуры](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85)). На стадии построителя текстуры принимаются интерполированные данные для примитива и генерируются данные для пикселей, такие как цвет. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) методы, поддерживающие этот этап должны иметь префикс «PS».
+-   [Стадия слияния вывода](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage). На стадии слияния вывода выходные данные различных типов (значения построителя текстуры, информация о глубине и наборе элементов) объединяются с содержимым целевого объекта отрисовки и буферов глубины и набора элементов для создания окончательного результата конвейера. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) методы, поддерживающие этот этап должны иметь префикс «OM».
 
-(Существуют также стадии для шейдеров геометрии, шейдеров поверхности, тесселяторов и шейдеров областей, но у них нет аналогов в OpenGL ES 2.0, поэтому здесь мы их обсуждать не будем.) Полный перечень методов для этих стадий см. на справочных страницах [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) и [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). **ID3D11DeviceContext1** является расширением **ID3D11DeviceContext** для Direct3D 11.
+(Существуют также стадии для шейдеров геометрии, шейдеров поверхности, тесселяторов и шейдеров областей, но у них нет аналогов в OpenGL ES 2.0, поэтому здесь мы их обсуждать не будем.) Полный перечень методов для этих стадий см. на справочных страницах [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) и [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1). **ID3D11DeviceContext1** является расширением **ID3D11DeviceContext** для Direct3D 11.
 
 ## <a name="creating-a-shader"></a>Создание шейдера
 
 
-В Direct3D ресурсы шейдера не создаются до компиляции и их загрузки. Ресурсы создаются, когда загружается HLSL. Таким образом, отсутствии непосредственно аналогично функции для glCreateShader, который создает ресурс шейдера инициализированный определенного типа (например GL\_ВЕРШИН\_ШЕЙДЕРА или GL\_ФРАГМЕНТ\_ШЕЙДЕРА). Вместо этого шейдеры создаются после загрузки HLSL с конкретными функциями, такими как [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) и [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513), которые принимают тип и компилированный HLSL в качестве параметров.
+В Direct3D ресурсы шейдера не создаются до компиляции и их загрузки. Ресурсы создаются, когда загружается HLSL. Таким образом, отсутствии непосредственно аналогично функции для glCreateShader, который создает ресурс шейдера инициализированный определенного типа (например GL\_ВЕРШИН\_ШЕЙДЕРА или GL\_ФРАГМЕНТ\_ШЕЙДЕРА). Вместо этого шейдеры создаются после загрузки HLSL с конкретными функциями, такими как [**ID3D11Device1::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) и [**ID3D11Device1::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader), которые принимают тип и компилированный HLSL в качестве параметров.
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                                             |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glCreateShader | Вызовите [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) и [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) после успешной загрузки компилированного объекта шейдера (CSO), передавая их в этот объект CSO как буфер. |
+| glCreateShader | Вызовите [**ID3D11Device1::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) и [**ID3D11Device1::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) после успешной загрузки компилированного объекта шейдера (CSO), передавая их в этот объект CSO как буфер. |
 
  
 
@@ -72,25 +72,25 @@ ms.locfileid: "57653699"
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                                                                                                           |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ShaderSource  | Вызовите [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) и [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) после успешной загрузки компилированного объекта шейдера. |
+| ShaderSource  | Вызовите [**ID3D11Device1::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) и [**ID3D11Device1::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) после успешной загрузки компилированного объекта шейдера. |
 
  
 
 ## <a name="setting-up-the-pipeline"></a>Настройка конвейера
 
 
-В OpenGL ES 2.0 есть объект "программа-шейдер", который содержит несколько шейдеров для выполнения. Отдельные шейдеры подключены к объекту программы-шейдера. Однако в Direct3D 11 вы работаете непосредственно с контекстом отрисовки ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) и создаете шейдеры в нем.
+В OpenGL ES 2.0 есть объект "программа-шейдер", который содержит несколько шейдеров для выполнения. Отдельные шейдеры подключены к объекту программы-шейдера. Однако в Direct3D 11 вы работаете непосредственно с контекстом отрисовки ([**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)) и создаете шейдеры в нем.
 
 | OpenGL ES 2.0   | Direct3D 11                                                                                   |
 |-----------------|-----------------------------------------------------------------------------------------------|
 | glCreateProgram | Н/д. Direct3D 11 не использует абстракцию объекта программы-шейдера.                          |
 | glLinkProgram   | Н/д. Direct3D 11 не использует абстракцию объекта программы-шейдера.                          |
 | glUseProgram    | Н/д. Direct3D 11 не использует абстракцию объекта программы-шейдера.                          |
-| glGetProgramiv  | Используйте созданную вами ссылку на [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598). |
+| glGetProgramiv  | Используйте созданную вами ссылку на [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1). |
 
  
 
-Создайте экземпляр [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) и [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/dn280493) с помощью статического метода [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082).
+Создайте экземпляр [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) и [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nn-d3d11_2-id3d11device2) с помощью статического метода [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice).
 
 ``` syntax
 Microsoft::WRL::ComPtr<ID3D11Device1>          m_d3dDevice;
@@ -115,7 +115,7 @@ D3D11CreateDevice(
 ## <a name="setting-the-viewports"></a>Установка окон просмотра
 
 
-Установка окна просмотра Direct3D 11 очень похожа на установку окна просмотра в OpenGL ES 2.0. В Direct3D 11, вызовите [ **ID3D11DeviceContext::RSSetViewports** ](https://msdn.microsoft.com/library/windows/desktop/ff476480) с настроенного [ **CD3D11\_ПРОСМОТРА**](https://msdn.microsoft.com/library/windows/desktop/jj151722).
+Установка окна просмотра Direct3D 11 очень похожа на установку окна просмотра в OpenGL ES 2.0. В Direct3D 11, вызовите [ **ID3D11DeviceContext::RSSetViewports** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports) с настроенного [ **CD3D11\_ПРОСМОТРА**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj151722(v=vs.85)).
 
 Direct3D 11: Настройка окна просмотра.
 
@@ -131,33 +131,33 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| glViewport    | [**CD3D11\_ПРОСМОТРА**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [ **ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
+| glViewport    | [**CD3D11\_VIEWPORT**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/jj151722(v=vs.85)), [**ID3D11DeviceContext::RSSetViewports**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports) |
 
  
 
 ## <a name="configuring-the-vertex-shaders"></a>Настройка вершинных шейдеров
 
 
-Настройка вершинного шейдера в Direct3D 11 выполняется, когда шейдер загружен. Универсальные объекты передаются как буферы констант с помощью [**ID3D11DeviceContext1::VSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446795).
+Настройка вершинного шейдера в Direct3D 11 выполняется, когда шейдер загружен. Универсальные объекты передаются как буферы констант с помощью [**ID3D11DeviceContext1::VSSetConstantBuffers1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-vssetconstantbuffers1).
 
 | OpenGL ES 2.0                    | Direct3D 11                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
-| glAttachShader                   | [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524)                       |
-| glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476489)                       |
-| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::VSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446793). |
+| glAttachShader                   | [**ID3D11Device1::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader)                       |
+| glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vsgetshader)                       |
+| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::VSGetConstantBuffers1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-vsgetconstantbuffers1). |
 
  
 
 ## <a name="configuring-the-pixel-shaders"></a>Настройка построителей текстуры
 
 
-Настройка построителя текстуры в Direct3D 11 выполняется, когда шейдер загружен. Универсальные объекты передаются как буферы констант с помощью [**ID3D11DeviceContext1::PSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404649).
+Настройка построителя текстуры в Direct3D 11 выполняется, когда шейдер загружен. Универсальные объекты передаются как буферы констант с помощью [**ID3D11DeviceContext1::PSSetConstantBuffers1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-pssetconstantbuffers1).
 
 | OpenGL ES 2.0                    | Direct3D 11                                                                                               |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
-| glAttachShader                   | [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)                         |
-| glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
-| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645). |
+| glAttachShader                   | [**ID3D11Device1::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)                         |
+| glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-psgetshader)                       |
+| glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-psgetconstantbuffers1). |
 
  
 
@@ -168,8 +168,8 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                         |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407), [ **ID3D11DeviceContext1::DrawIndexed** ](https://msdn.microsoft.com/library/windows/desktop/ff476409) (или других Draw\* методы [  **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385)). |
-| eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797)                                                                                                                                                                              |
+| glDrawElements | [**ID3D11DeviceContext1::Draw**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw), [ **ID3D11DeviceContext1::DrawIndexed** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) (или других Draw\* методы [  **ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)). |
+| eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1)                                                                                                                                                                              |
 
  
 
@@ -190,7 +190,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 ## <a name="porting-the-opengl-intrinsics-to-hlsl-semantics"></a>Перенос встроенных элементов OpenGL в семантику HLSL
 
 
-Семантика Direct3D 11 HLSL представляет строки, которые аналогично универсальным именам и именам атрибутов используются для идентификации значения, передаваемого между приложением и программой-шейдером. Хотя можно использовать любые из возможных строк, рекомендуется использовать строки, указывающие на использование, такие как POSITION или COLOR. Вы назначаете такую семантику при построении буфера констант или макета входного буфера. Можно также добавлять к семантике цифру от 0 до 7, чтобы использовать отдельные регистры для сходных значений. Например: ЦВЕТ2 COLOR0 COLOR1...
+Семантика Direct3D 11 HLSL представляет строки, которые аналогично универсальным именам и именам атрибутов используются для идентификации значения, передаваемого между приложением и программой-шейдером. Хотя можно использовать любые из возможных строк, рекомендуется использовать строки, указывающие на использование, такие как POSITION или COLOR. Вы назначаете такую семантику при построении буфера констант или макета входного буфера. Можно также добавлять к семантике цифру от 0 до 7, чтобы использовать отдельные регистры для сходных значений. Пример: ЦВЕТ2 COLOR0 COLOR1...
 
 Семантики, начинаются с префикса «SV\_"являются семантику системных значений, созданных программой шейдера; их нельзя изменять само (запущенной на ЦП) приложение. Обычно они содержат значения, которые являются входными или выходными для другой стадии шейдера в конвейере графики или полностью генерируются ЦП.
 
@@ -241,7 +241,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 В данном случае SV\_целевым ОБЪЕКТОМ является расположение целевого объекта отрисовки, записываемый цвет пикселя (определяется как вектор с четырьмя значениями с плавающей запятой), когда шейдер завершает выполнение.
 
-Подробнее об использовании семантики с Direct3D: [Семантики HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509647).
+Подробнее об использовании семантики с Direct3D: [Семантики HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics).
 
  
 

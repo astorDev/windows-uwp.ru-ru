@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, центр отзывов, запуск
 ms.localizationpriority: medium
-ms.openlocfilehash: bfce2ed245a3bf4e9b1c8b1a70c8de905d7034a3
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 4190c8af5c8cb7db6b80b1149dff631a8454015b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334804"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371071"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>Запуск Центра отзывов из приложения
 
@@ -20,7 +20,7 @@ ms.locfileid: "58334804"
 Чтобы запустить Центр отзывов из вашего приложения, используйте API-интерфейс в пакете [Microsoft Store Services SDK](https://aka.ms/store-em-sdk). Мы рекомендуем применять этот API для запуска Центра отзывов из элемента интерфейса в приложении, который соответствует нашим рекомендациям по оформлению.
 
 > [!NOTE]
-> Центр отзывов доступен только на устройствах под управлением версии 10.0.14271 или более поздней версии ОС Windows 10, основанной на настольном и мобильном [семействах устройств](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families). Мы рекомендуем показывать элемент управления отзывами в приложении, только если Центр отзывов доступен на устройстве пользователя. В этом разделе представлен пример кода, позволяющий реализовать это.
+> Центр отзывов доступен только на устройствах под управлением версии 10.0.14271 или более поздней версии ОС Windows 10, основанной на настольном и мобильном [семействах устройств](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). Мы рекомендуем показывать элемент управления отзывами в приложении, только если Центр отзывов доступен на устройстве пользователя. В этом разделе представлен пример кода, позволяющий реализовать это.
 
 ## <a name="how-to-launch-feedback-hub-from-your-app"></a>Запуск Центра отзывов из приложения
 
@@ -44,9 +44,9 @@ ms.locfileid: "58334804"
     <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
     ```
 
-7. В коде инициализации страницы приложения, на которой размещен элемент управления отзывами, используйте статический метод [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) класса [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher), чтобы определить, доступен ли Центр отзывов на устройстве пользователя. Центр отзывов доступен только на устройствах под управлением версии 10.0.14271 или более поздней версии ОС Windows 10, основанной на настольном и мобильном [семействах устройств](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families).
+7. В коде инициализации страницы приложения, на которой размещен элемент управления отзывами, используйте статический метод [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) класса [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher), чтобы определить, доступен ли Центр отзывов на устройстве пользователя. Центр отзывов доступен только на устройствах под управлением версии 10.0.14271 или более поздней версии ОС Windows 10, основанной на настольном и мобильном [семействах устройств](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
-    Если это свойство возвращает значение **true**, сделайте элемент управления видимым. В следующем примере кода показано, как это сделать для [кнопки](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
+    Если это свойство возвращает значение **true**, сделайте элемент управления видимым. В следующем примере кода показано, как это сделать для [кнопки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button).
 
     [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
       > [!NOTE]

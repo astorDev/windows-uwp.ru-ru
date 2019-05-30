@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b9535cd8c2dd82b0c209919080df9a88bb80ccc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 33244391ca9f2ffcba21adacccebf2e9b1d73419
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612779"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363363"
 ---
 # <a name="toast-content-xml-schema"></a>Схема XML содержимого всплывающего уведомления
 
@@ -79,15 +79,15 @@ scenario?
 
 lang?
 
--   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 baseUri?
 
--   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 addImageQuery?
 
--   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 **Атрибуты в &lt;привязки&gt;**
 
@@ -99,27 +99,27 @@ template?
 
 lang?
 
--   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 baseUri?
 
--   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 addImageQuery?
 
--   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 **Атрибуты в &lt;текста&gt;**
 
 lang?
 
--   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230847).
+-   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
 
 **Атрибуты в &lt;образа&gt;**
 
 src
 
--   Дополнительные сведения об этом обязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230844).
+-   Дополнительные сведения об этом обязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image).
 
 placement?
 
@@ -131,11 +131,11 @@ placement?
 
 alt?
 
--   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230844).
+-   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image).
 
 addImageQuery?
 
--   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230844).
+-   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image).
 
 hint-crop?
 
@@ -148,15 +148,15 @@ hint-crop?
 
 src?
 
--   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230842).
+-   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio).
 
 loop?
 
--   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230842).
+-   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio).
 
 silent?
 
--   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://msdn.microsoft.com/library/windows/apps/br230842).
+-   Дополнительные сведения об этом необязательном атрибуте см. в [данной статье о схеме элементов](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio).
 
 ## <a name="schemas-ltactiongt"></a>Схемы: &lt;action&gt;
 

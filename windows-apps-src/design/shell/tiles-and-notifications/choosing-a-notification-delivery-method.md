@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 503f7baad0d91f4e7c29010145ecb162f98bc81c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b1ea41a509b1673b7c4f5812d34db93dd6b0c93e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606289"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365947"
 ---
 # <a name="choose-a-notification-delivery-method"></a>Выбор способа доставки уведомлений
 
@@ -153,17 +153,17 @@ Push-уведомления идеально подходят для случа�
 Дополнительные сведения см. в следующих разделах:
 
 -   [Обзор служб push-уведомлений Windows (WNS)](windows-push-notification-services--wns--overview.md)
--   [Рекомендации по Push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh761462)
+-   [Рекомендации по Push-уведомлений](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 -   [Примеры кода для универсальной платформы Windows (UWP) уведомления](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Отправка локального уведомления на плитке](sending-a-local-tile-notification.md)
 * [Отправка локального всплывающего уведомления](send-local-toast.md)
-* [Рекомендации по Push-уведомлений](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [Руководство по всплывающим уведомлениям](https://msdn.microsoft.com/library/windows/apps/hh465391)
+* [Рекомендации по Push-уведомлений](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [Руководство по всплывающим уведомлениям](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 * [Обзор периодических уведомлений](periodic-notification-overview.md)
 * [Обзор служб push-уведомлений Windows (WNS)](windows-push-notification-services--wns--overview.md)
 * [Уведомления универсальной платформы Windows (UWP) примеры кода с GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)

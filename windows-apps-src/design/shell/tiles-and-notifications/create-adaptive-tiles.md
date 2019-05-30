@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 524cc15dbb7a3264d8476210f727508ea41ace87
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 08a7ca0b08a9df57d3c496f33f963fcd9d0ebfe2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639609"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367065"
 ---
 # <a name="create-adaptive-tiles"></a>Создание адаптивных плиток
 
 Шаблоны адаптивной плитку — это новая функция в Windows 10, что позволяет создавать собственные содержимое уведомлений плитки, на любом языке разметки простым и гибким, адаптирующий для экранов разной плотности. В этой статье рассказывается, как создать адаптивные живые плитки для вашего приложения универсальной платформы Windows (UWP). Полный список адаптивных элементов и атрибутов см. в разделе [Схема адаптивных плиток](../tiles-and-notifications/tile-schema.md).
 
-(Если вы хотите, можно по-прежнему использовать существующие шаблоны из [каталог шаблонов плиток Windows 8](https://msdn.microsoft.com/library/windows/apps/hh761491) при проектировании уведомлений для Windows 10.)
+(Если вы хотите, можно по-прежнему использовать существующие шаблоны из [каталог шаблонов плиток Windows 8](https://docs.microsoft.com/previous-versions/windows/apps/hh761491(v=win.10)) при проектировании уведомлений для Windows 10.)
 
 
 ## <a name="getting-started"></a>Начало работы
@@ -284,7 +284,7 @@ TileContent content = new TileContent()
 
  
 
-## <a name="display-name"></a>Отображаемое имя
+## <a name="display-name"></a>`Display name`
 
 
 Вы можете переопределить отображаемое имя уведомления, введя собственную текстовую строку в атрибуте **displayName**. Как и с фирменной символикой, вы можете задать атрибут в элементе [TileVisual](../tiles-and-notifications/tile-schema.md#tilevisual), который влияет на все полезные данные уведомления, или в элементе [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding), который применяется к отдельным плиткам.
@@ -335,7 +335,7 @@ TileContent content = new TileContent()
 
 ![отображаемое имя адаптивной плитки](images/adaptive-tiles-displayname.png)
 
-## <a name="text"></a>Текст
+## <a name="text"></a>Text
 
 
 Для отображения текста используется элемент [AdaptiveText](../tiles-and-notifications/tile-schema.md#adaptivetext). Можно использовать подсказки, чтобы изменить способ отображения текста.
@@ -414,7 +414,7 @@ new AdaptiveText()
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;Указание текста в стиле =»\*"/&gt; | Высота шрифта               | Насыщенность шрифта |
+| &lt;text hint-style="\*" /&gt; | Высота шрифта               | Насыщенность шрифта |
 | подпись                        | 12 эффективных пикселей (epx) | Обычный     |
 | body                           | 15 epx                    | Обычный     |
 | base                           | 15 epx                    | Плотный    |
@@ -787,7 +787,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 
 ![пример плитки погоды](images/adaptive-tiles-weathertile.png)
 
-## <a name="images"></a>образы,
+## <a name="images"></a>Изображений
 
 
 Элемент &lt;image&gt; используется для показа изображений на уведомлении плитки. Изображения можно разместить вместе с содержимым плитки (по умолчанию), как фоновое изображение за содержимым или как всплывающее изображение, которое анимируется в верхней части уведомления.
@@ -1389,7 +1389,7 @@ TileWide = new TileBinding()
 }
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [Схема содержимого плитки](../tiles-and-notifications/tile-schema.md)
 * [Отправка локального уведомления на плитке](sending-a-local-tile-notification.md)
 * [Специальные шаблоны плиток](special-tile-templates-catalog.md)

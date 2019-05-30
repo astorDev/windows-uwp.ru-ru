@@ -6,12 +6,12 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: windows 10, uwp, рекламные объявления, баннер, управление рекламой, межстраничная
 ms.localizationpriority: medium
-ms.openlocfilehash: 84ed7f5f1eb65f06a47e92de962777ca9d3c50c7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ef3050e2583674bf6cd5a601dbde1500f6b457e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658499"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372554"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Показ рекламы в приложении с помощью Microsoft Advertising SDK
 
@@ -48,7 +48,7 @@ ms.locfileid: "57658499"
     <br/>
     <a href="best-practices-for-ads-in-apps.md">Советы и рекомендации</a>
     <br/>
-    <a href="https://msdn.microsoft.com/en-us/library/windows/apps/mt691884.aspx">Справочник по API</a>
+    <a href="https://docs.microsoft.com/uwp/api/overview/advertising">Справочник по API</a>
     </td>
 </tr>
 </tbody>
@@ -108,7 +108,7 @@ Microsoft Advertising SDK предоставляет несколько разл
 
 Дополнительные сведения по использованию Microsoft Advertising SDK можно найти на следующих ресурсах.
 
-|  Задача    | Ресурс |               
+|  Задача    | Resource |               
 |----------|-------|
 | Сообщить об ошибке или получить техническую поддержку по вопросам рекламы     | Посетите [страницу поддержки](https://developer.microsoft.com/en-us/windows/support) и выберите **Реклама в приложениях**.        |
 | Получить поддержку сообщества     | Посетите [форум](https://go.microsoft.com/fwlink/p/?LinkId=401266).       |
@@ -119,7 +119,7 @@ Microsoft Advertising SDK предоставляет несколько разл
 
 Для приложений для Windows 8.1 и Windows Phone 8.x предусмотрен [Microsoft Advertising SDK для Windows и Windows Phone 8.x](https://aka.ms/store-8-sdk). Дополнительные сведения об использовании этого SDK для показа рекламы в приложениях для Windows 8.1 и Windows Phone 8.x см. в [этой статье](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10)).
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)
 * [Отчет о результативности рекламы](../publish/advertising-performance-report.md)

@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, ключ проверки подлинности карт, элемент управления картой
 ms.localizationpriority: medium
-ms.openlocfilehash: 620566036dc5aa9357d10e60ec92067ba0faf130
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8f62ecfab5bd8d09092e5264831327b8c63666bc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649559"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370515"
 ---
 # <a name="request-a-maps-authentication-key"></a>Запрос ключа проверки подлинности карт
 
 
 
 
-Ваше [приложение Universal Windows](https://msdn.microsoft.com/library/windows/apps/dn894631) должно пройти проверку подлинности, прежде чем оно сможет использовать [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) и службы карт в пространстве имен [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979). Для проверки подлинности приложения необходимо указать ключ проверки подлинности карт. В этом разделе описано, как запросить ключ проверки подлинности карт из [центра разработки Карт Bing](https://www.bingmapsportal.com/) и добавить его в приложение.
+Ваше [приложение Universal Windows](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) должно пройти проверку подлинности, прежде чем оно сможет использовать [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) и службы карт в пространстве имен [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps). Для проверки подлинности приложения необходимо указать ключ проверки подлинности карт. В этом разделе описано, как запросить ключ проверки подлинности карт из [центра разработки Карт Bing](https://www.bingmapsportal.com/) и добавить его в приложение.
 
 **Совет** Чтобы получить дополнительные сведения об использовании карт в приложении, скачайте следующий пример из [репозитория универсальных примеров для Windows](https://go.microsoft.com/fwlink/p/?LinkId=619979) на веб-сайте GitHub.
 
@@ -59,11 +59,11 @@ ms.locfileid: "57649559"
 ## <a name="add-the-key-to-your-app"></a>Добавление ключа в приложение
 
 
-Ключ проверки подлинности карт требуется для использования [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) и служб карт ([**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979)) в универсальном приложении для Windows. Добавляйте его в объекты элемента управления картой и служб карт по обстоятельствам.
+Ключ проверки подлинности карт требуется для использования [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) и служб карт ([**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)) в универсальном приложении для Windows. Добавляйте его в объекты элемента управления картой и служб карт по обстоятельствам.
 
 ### <a name="to-add-the-key-to-a-map-control"></a>Вот как добавить ключ в элемент управления картой
 
-Для проверки подлинности [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) установите свойство [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) для значения ключа проверки подлинности. Это свойство можно задать в коде или в разметке XAML, в зависимости от ваших предпочтений. Дополнительные сведения об использовании **MapControl** см. в статье [Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside](display-maps.md).
+Для проверки подлинности [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) установите свойство [**MapServiceToken**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken) для значения ключа проверки подлинности. Это свойство можно задать в коде или в разметке XAML, в зависимости от ваших предпочтений. Дополнительные сведения об использовании **MapControl** см. в статье [Отображение карт с помощью двумерных и трехмерных представлений, а также с помощью представлений Streetside](display-maps.md).
 
 -   В этом примере для **MapServiceToken** устанавливается значение ключа проверки подлинности в коде.
 
@@ -79,7 +79,7 @@ ms.locfileid: "57649559"
 
 ### <a name="to-add-the-key-to-map-services"></a>Вот как добавить ключ в службы карт
 
-Для использования служб в пространстве имен [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) установите для свойства [**ServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn636977) значение ключа проверки подлинности. Дополнительные сведения об использовании служб карт см.: в разделах [Отображение дорог и направлений](routes-and-directions.md) и [Выполнение геокодирования и обратного геокодирования](geocoding.md).
+Для использования служб в пространстве имен [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) установите для свойства [**ServiceToken**](https://docs.microsoft.com/uwp/api/windows.services.maps.mapservice.servicetoken) значение ключа проверки подлинности. Дополнительные сведения об использовании служб карт см.: в разделах [Отображение дорог и направлений](routes-and-directions.md) и [Выполнение геокодирования и обратного геокодирования](geocoding.md).
 
 -   В этом примере для **ServiceToken** устанавливается значение ключа проверки подлинности в коде.
 
@@ -87,10 +87,10 @@ ms.locfileid: "57649559"
     MapService.ServiceToken = "abcdef-abcdefghijklmno";
     ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [Пример карты UWP](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Руководство по разработке карт](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Руководство по разработке карт](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
 * [Видео с конференции Build 2015: использование карт и расположений в приложениях для Windows на телефонах, планшетах и компьютерах](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Пример приложения UWP для работы с трафиком](https://go.microsoft.com/fwlink/p/?LinkId=619982)

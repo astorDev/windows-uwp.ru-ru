@@ -7,35 +7,35 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 00d6c16ecaa64abf7d83154fdb864671dbff3eae
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: db8a368f6cd9e0b6d38fb16d81dbc31a0f8a615f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57643489"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370598"
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>Экспозиция потоковых ресурсов HLSL
 
 
-Для поддержки потоковых ресурсов в [модели шейдера 5](https://msdn.microsoft.com/library/windows/desktop/ff471356) требуется определенный синтаксис HLSL.
+Для поддержки потоковых ресурсов в [модели шейдера 5](https://docs.microsoft.com/windows/desktop/direct3dhlsl/d3d11-graphics-reference-sm5) требуется определенный синтаксис HLSL.
 
 Синтаксис HLSL модели шейдера 5 разрешен только на устройствах с поддержкой потоковых ресурсов. Каждый соответствующий метод HLSL для потоковых ресурсов в следующей таблице принимает один (feedback) или два (сначала clamp, а затем feedback) дополнительных необязательных параметра. Например, метод **Sample** выглядит так:
 
 **Пример (дискретизатора, расположение \[, смещение \[, выполняют приведение \[, отзыв\] \] \])**
 
-Пример метода **Sample** — [**Texture2D.Sample(S,float,int,float,uint)**](https://msdn.microsoft.com/library/windows/desktop/dn393787).
+Пример метода **Sample** — [**Texture2D.Sample(S,float,int,float,uint)** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/t2darray-sample-s-float-int-float-uint-).
 
 Параметры offset, clamp и feedback необязательны. Необходимо указать все необязательные параметры вплоть до требуемого в соответствии с правилами C++ касательно аргументов функций по умолчанию. Например, если требуется состояние feedback, необходимо явным образом предоставить параметры offset и clamp методу **Sample**, даже если логически они не нужны.
 
 Параметр clamp — скалярное значение с плавающей точкой. Литеральное значение clamp=0.0f указывает, что операция прикрепления не выполнена.
 
-Параметр feedback — это переменная **uint**, которую можно передать встроенной функции опроса доступа к памяти [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083). Значение параметра feedback нельзя изменять или интерпретировать. Но компилятор не предоставляет средств расширенного анализа и диагностики для обнаружения изменений значения.
+Параметр feedback — это переменная **uint**, которую можно передать встроенной функции опроса доступа к памяти [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped). Значение параметра feedback нельзя изменять или интерпретировать. Но компилятор не предоставляет средств расширенного анализа и диагностики для обнаружения изменений значения.
 
-Вот синтаксис [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083):
+Вот синтаксис [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped):
 
 **bool CheckAccessFullyMapped (в целое число без знака FeedbackVar);**
 
-[**CheckAccessFullyMapped** ](https://msdn.microsoft.com/library/windows/desktop/dn292083) интерпретирует значение *FeedbackVar* и возвращает значение true, если все данные сопоставленные в ресурсе, в противном случае — **CheckAccessFullyMapped**возвращает значение false.
+[**CheckAccessFullyMapped** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) интерпретирует значение *FeedbackVar* и возвращает значение true, если все данные сопоставленные в ресурсе, в противном случае — **CheckAccessFullyMapped**возвращает значение false.
 
 Если параметр clamp или feedback присутствует, компилятор выдает вариант базовой инструкции. Например, выборка потокового ресурса приводит к созданию инструкции `sample_cl_s`.
 
@@ -56,7 +56,7 @@ ms.locfileid: "57643489"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471359">Объекты HLSL</a> </th>
+<th align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/d3d11-graphics-reference-sm5-objects">Объекты HLSL</a> </th>
 <th align="left">Встроенные методы с параметром feedback (*) — также с параметром clamp</th>
 </tr>
 </thead>

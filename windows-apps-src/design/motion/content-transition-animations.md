@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 096cc0aaa9b0580eb6b45328a3243ba75d82f202
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5ec8778f590ba9b50c67209eaf4b80e2cbed2f16
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649809"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364812"
 ---
 # <a name="content-transition-animations"></a>Анимации переходов содержимого
 
@@ -23,7 +23,7 @@ ms.locfileid: "57649809"
 
 Анимация переходов содержимого используется для изменения содержимого области экрана, при котором фон или контейнер остаются неизменными. Появляется новое содержимое. Если существует содержимое, которое необходимо заменить, оно исчезает.
 
-> **Важные API**: [**Класс ContentThemeTransition (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
+> **Важные API**: [**Класс ContentThemeTransition (XAML)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.)
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
 
@@ -41,10 +41,10 @@ ms.locfileid: "57649809"
 ## <a name="related-articles"></a>Связанные статьи
 
 **Разработчикам (XAML)**
-* [Общие сведения об анимации](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Анимация содержимого переходы](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
-* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**Класс ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243104)
+* [Общие сведения об анимации](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
+* [Анимация содержимого переходы](https://docs.microsoft.com/previous-versions/windows/apps/jj649426(v=win.10))
+* [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [**Класс ContentThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.)
 
  
 

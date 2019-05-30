@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, сетка, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b5aa00b5beb7c80a903fbf17d432f73f16561a2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595649"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368987"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>Создание и отображение базовой сетки
 
@@ -28,9 +28,9 @@ ms.locfileid: "57595649"
 
 ### <a name="technologies"></a>Технологии
 
--   [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh769064)
+-   [Direct3D](https://docs.microsoft.com/windows/desktop/getting-started-with-direct3d)
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>предварительные требования
 
 -   Основные сведения о линейной алгебре и трехмерных системах координат
 -   Visual Studio 2015 или более поздней версии Direct3D шаблона
@@ -77,7 +77,7 @@ SimpleCubeVertex cubeVertices[] =
 
 ### <a name="step-2-set-up-the-input-layout"></a>Шаг 2. Настройка входной макет
 
-Теперь вершины записаны в память. Но ваше графическое устройство имеет свою собственную память, и для доступа к ней вы используете Direct3D. Для передачи данных вершин в графическое устройство на обработку необходимо объявить, как именно расположены данные вершин, чтобы графическое устройство могло интерпретировать их при получении этих данных из игры. Для этого используется [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575).
+Теперь вершины записаны в память. Но ваше графическое устройство имеет свою собственную память, и для доступа к ней вы используете Direct3D. Для передачи данных вершин в графическое устройство на обработку необходимо объявить, как именно расположены данные вершин, чтобы графическое устройство могло интерпретировать их при получении этих данных из игры. Для этого используется [**ID3D11InputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout).
 
 Объявите и настройте входной макет для буфера вершин.
 
@@ -110,17 +110,17 @@ m_d3dDevice->CreateInputLayout(
 
     Значения **COLOR** обычно возвращаются в виде четырехкомпонентного значения RGBA по завершении работы конвейера шейдера. В этом примере в конвейере шейдера для всех пикселей вы будете задавать альфа-фактору «А» значение 1,0 (максимальная прозрачность).
 
-Полный список форматов, см. в разделе [ **DXGI\_ФОРМАТ**](https://msdn.microsoft.com/library/windows/desktop/bb173059). Полный список семантик HLSL приведен здесь: [Семантики](https://msdn.microsoft.com/library/windows/desktop/bb509647).
+Полный список форматов, см. в разделе [ **DXGI\_ФОРМАТ**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format). Полный список семантик HLSL приведен здесь: [Семантики](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics).
 
-Вызовите [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) и создайте входной макет на устройстве Direct3D. А теперь необходимо создать буфер, в котором будут храниться данные.
+Вызовите [**ID3D11Device::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) и создайте входной макет на устройстве Direct3D. А теперь необходимо создать буфер, в котором будут храниться данные.
 
 ### <a name="step-3-populate-the-vertex-buffers"></a>Шаг 3. Заполните буферы вершин
 
 Буферы вершин содержат списки вершин каждого из треугольников сетки. В этом списке каждая вершина должна быть уникальной. В нашем примере имеются 8 вершин куба. Вершинный шейдер работает на графическом устройстве, считывает данные из буфера вершин и интерпретирует их на основе входного макета, заданного в предыдущем шаге.
 
-В следующем примере вы дадите для буфера описание и предоставите подресурс, которые сообщают Direct3D сведения о физическом сопоставлении данных вершин и способе их обработки в памяти графического устройства. Это необходимо, поскольку вы используете универсальный буфер [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351), который может содержать что угодно. [ **D3D11\_БУФЕРА\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) и [ **D3D11\_SUBRESOURCE\_данных** ](https://msdn.microsoft.com/library/windows/desktop/ff476220)структуры передаются убедитесь, что Direct3D понимает макета физической памяти буфера, включая размер каждого элемента вершин в буфере, а также максимальный размер списка вершин. Кроме того, здесь вы можете управлять доступом к памяти буфера и просмотром его содержимого, но эта информация выходит за рамки данного учебника.
+В следующем примере вы дадите для буфера описание и предоставите подресурс, которые сообщают Direct3D сведения о физическом сопоставлении данных вершин и способе их обработки в памяти графического устройства. Это необходимо, поскольку вы используете универсальный буфер [**ID3D11Buffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer), который может содержать что угодно. [ **D3D11\_БУФЕРА\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) и [ **D3D11\_SUBRESOURCE\_данных** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)структуры передаются убедитесь, что Direct3D понимает макета физической памяти буфера, включая размер каждого элемента вершин в буфере, а также максимальный размер списка вершин. Кроме того, здесь вы можете управлять доступом к памяти буфера и просмотром его содержимого, но эта информация выходит за рамки данного учебника.
 
-После настройки буфера следует вызвать [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501), чтобы фактически создать его. Очевидно, что для нескольких объектов необходимо создать буферы для каждой уникальной модели.
+После настройки буфера следует вызвать [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer), чтобы фактически создать его. Очевидно, что для нескольких объектов необходимо создать буферы для каждой уникальной модели.
 
 Объявите и создайте буфер вершин.
 
@@ -187,9 +187,9 @@ unsigned short cubeIndices[] =
     0, 4, 7 };
 ```
 
-Тридцать шесть индексных элементов в буфере — это слишком много, если у вас всего 8 вершин. Если вы решили исключить некоторые из избыточных данных и использовать тип списка различных вершин, таких как полоса или вентилятора, необходимо указать этот тип при предоставлении определенного [ **D3D11\_ПРИМИТИВНЫЙ\_ТОПОЛОГИИ** ](https://msdn.microsoft.com/library/windows/desktop/ff476189) значение [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://msdn.microsoft.com/library/windows/desktop/ff476455) метод.
+Тридцать шесть индексных элементов в буфере — это слишком много, если у вас всего 8 вершин. Если вы решили исключить некоторые из избыточных данных и использовать тип списка различных вершин, таких как полоса или вентилятора, необходимо указать этот тип при предоставлении определенного [ **D3D11\_ПРИМИТИВНЫЙ\_ТОПОЛОГИИ** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) значение [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) метод.
 
-Дополнительные сведения о других технологиях составления списков индексов см. в разделе [Топологии примитивов](https://msdn.microsoft.com/library/windows/desktop/bb205124).
+Дополнительные сведения о других технологиях составления списков индексов см. в разделе [Топологии примитивов](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-primitive-topologies).
 
 ### <a name="step-5-create-a-constant-buffer-for-your-transformation-matrices"></a>Шаг 5. Создание буфера констант для матрицы преобразования
 
@@ -289,7 +289,7 @@ m_constantBufferData.projection = DirectX::XMFLOAT4X4(
             );
 ```
 
-Настройте буферы вершин и индексов в [ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476149), а также используемую топологию.
+Настройте буферы вершин и индексов в [ID3D11DeviceContext](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-graphics-reference-10level9-context), а также используемую топологию.
 
 ```cpp
 // Set the vertex and index buffers, and specify the way they define geometry.
@@ -412,7 +412,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 ### <a name="step-8-rasterizing-and-displaying-the-mesh"></a>Шаг 8. Растеризации и отображение сетки
 
-Запустим конвейер. Это легко: вызовите [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565).
+Запустим конвейер. Это легко: вызовите [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexed).
 
 Нарисуйте куб.
 
@@ -438,13 +438,13 @@ m_swapChain->Present(1, 0);
 
 Все готово! Для сцен, наполненных моделями, используйте несколько буферов вершин и индексов. У вас даже могут быть разные шейдеры для разных типов моделей. Помните, что у каждой модели своя система координат, и вам необходимо преобразовать их в общую реальную систему координат, используя при этом матрицы, определенные вами в буфере констант.
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Примечания
 
 В данном разделе описывается создание и отображение простых геометрических объектов, которые вы создаете самостоятельно. Дополнительные сведения о загрузке более сложной геометрии из файла и ее преобразовании в характерный для данного образца формат объекта буфера вершин (VBO) см. в разделе [Загрузка ресурсов в игре DirectX](load-a-game-asset.md).  
 
  
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 
 * [Загрузка ресурсов в игре для DirectX](load-a-game-asset.md)

@@ -6,12 +6,12 @@ ms.date: 10/04/2017
 ms.topic: article
 keywords: Windows 10, uwp, фоновая задача, служба приложений, подключенные устройства, удаленные системы
 ms.localizationpriority: medium
-ms.openlocfilehash: d12113329381c6602edf87a11fc1cc6b822dab4e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 79f3f1d28294527d6987540a159baa31d663db4c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583531"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371725"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>Запуск, возобновление и фоновые задачи
 
@@ -95,7 +95,7 @@ ms.locfileid: "57583531"
 | Раздел | Описание |
 |-------|-------------|
 | [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)                                       | Убедитесь, что ваше приложение отвечает требованиям, необходимым для выполнения фоновых задач. |
-| [Доступ к датчикам и устройствам из фоновой задачи](access-sensors-and-devices-from-a-background-task.md)   | [ **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) позволяет приложению UWP получать доступ к датчикам и периферийным устройствам в фоновом режиме даже тогда, когда приложение переднего плана приостановлено. |
+| [Доступ к датчикам и устройствам из фоновой задачи](access-sensors-and-devices-from-a-background-task.md)   | [ **DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) позволяет приложению UWP получать доступ к датчикам и периферийным устройствам в фоновом режиме даже тогда, когда приложение переднего плана приостановлено. |
 | [Создание и регистрация фоновой задачи, выполняемой внутри процесса](create-and-register-an-inproc-background-task.md)       | Создание и регистрация фоновой задачи, которая запускается в том же процессе, что и приложение переднего плана. |
 | [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)           | Создание и регистрация фоновой задачи, которая запускается в виде отдельного процесса из вашего приложения, и регистрация ее для выполнения, когда приложение находится не на переднем плане. |
 | [Перенос фоновой задачи, выполняемой вне процесса, в фоновую задачу внутри процесса](convert-out-of-process-background-task.md) | Узнайте, как преобразовать выполняемую вне процесса фоновую задачу в фоновую задачу внутри процесса, выполняемую в том же процессе, что и ваше приложение переднего плана.|
@@ -106,14 +106,14 @@ ms.locfileid: "57583531"
 | [Отслеживание хода выполнения и завершения фоновых задач](monitor-background-task-progress-and-completion.md)       | Узнайте, как ваше приложение распознает ход выполнения и завершение фоновой задачи. |
 | [Оптимизация фоновой активности](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) |Узнайте, как снизить потребление энергии в фоновом режиме и как взаимодействовать с параметрами пользователя для фоновых задач. |
 | [Регистрация фоновой задачи](register-a-background-task.md)                                                 | Сведения о создании функции, которую можно многократно использовать для безопасной регистрации большинства фоновых задач. |
-| [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)         | Узнайте, как создавать фоновые задачи, отвечающие на события [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839). |
+| [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)         | Узнайте, как создавать фоновые задачи, отвечающие на события [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType). |
 | [Запуск фоновой задачи по таймеру](run-a-background-task-on-a-timer-.md)                                    | Узнайте, как запланировать однократное выполнение фоновой задачи или периодически запускать фоновую задачу. |
 | [Выполнение в фоновом режиме в течение неограниченного срока](run-in-the-background-indefinetly.md)                                    | Используйте возможность для выполнения фоновой задачи или расширенного сеанса выполнения в фоновом режиме в течение неограниченного срока. |
 | [Запуск фоновой задачи в приложении](trigger-background-task-from-app.md) | Узнайте, как использовать [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) для активации фоновой задачи в приложении.|
 | [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)             | Узнайте, как задать условия, которые управляют запуском выполнения фоновой задачи. |
-| [Передача данных в фоновом режиме](https://msdn.microsoft.com/library/windows/apps/mt280377)                 | Используйте фоновую передачу данных API для копирования файлов в фоновом режиме. |
+| [Передача данных в фоновом режиме](https://docs.microsoft.com/windows/uwp/networking/background-transfers)                 | Используйте фоновую передачу данных API для копирования файлов в фоновом режиме. |
 | [Обновление живой плитки из фоновой задачи](update-a-live-tile-from-a-background-task.md)                   | Используйте фоновую задачу для обновления живой плитки вашего приложения свежим содержимым. |
-| [Использование триггера обслуживания](use-a-maintenance-trigger.md)                                                   | Узнайте, как использовать класс [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) для выполнения облегченного кода в фоновом режиме, когда устройство подключено к сети. |
+| [Использование триггера обслуживания](use-a-maintenance-trigger.md)                                                   | Узнайте, как использовать класс [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) для выполнения облегченного кода в фоновом режиме, когда устройство подключено к сети. |
 
 ## <a name="remote-systems"></a>Удаленные системы
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, сенсорный ввод, элементы управления, directx, ввод
 ms.localizationpriority: medium
-ms.openlocfilehash: e8892219b485d320bb77f90ac0d172e8e2403392
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b1f683f2d357057e33f3daa613e1b027a83776af
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618739"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367759"
 ---
 # <a name="touch-controls-for-games"></a>Сенсорные элементы управления для игр
 
@@ -25,7 +25,7 @@ ms.locfileid: "57618739"
 
  
 
-## <a name="objectives"></a>Задачи
+## <a name="objectives"></a>Цели
 
 
 -   Создайте простой сенсорный элемент управления перетаскиванием для панорамирования камеры, привязанной к фиксированной плоскости, в игре DirectX.
@@ -119,7 +119,7 @@ public:
 
 Наконец, мы используем следующие методы и свойства для инициализации, доступа и обновления данных о состоянии контроллера камеры.
 
--   **Initialize** — обработчик событий, который наше приложение вызывает для инициализации элементов управления и подключения их к объекту [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), который описывает окно отображения.
+-   **Initialize** — обработчик событий, который наше приложение вызывает для инициализации элементов управления и подключения их к объекту [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow), который описывает окно отображения.
 -   **SetPosition** — метод, который приложение вызывает, чтобы задать координаты (x, y и z) ваших элементов управления в пространстве сцены. Обратите внимание, что координата z в данном руководстве везде равна 0.
 -   **получить\_позиции** является свойством, которое обращается к наше приложение, чтобы получить текущее положение камеры в пространстве сцены. Используйте это свойство для сообщения приложению текущего положения камеры.
 -   **получить\_FixedLookPoint** — это свойство, которое обращается к нашему приложению для получения текущей точки, к которому направлена камера контроллера. В этом примере она стандартно привязана к плоскости x-y.
@@ -134,15 +134,15 @@ public:
 
 Диспетчер событий среды выполнения Windows предоставляет три события, нужные для управления нашим приложением:
 
--   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
--   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
--   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
+-   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
 
-Эти события реализуются по типу [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Предполагается, что у вас есть объект **CoreWindow** для работы с этим типом. Подробнее см. в статье [Настройка приложения UWP на языке C++ для отображения представления DirectX](https://msdn.microsoft.com/library/windows/apps/hh465077).
+Эти события реализуются по типу [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). Предполагается, что у вас есть объект **CoreWindow** для работы с этим типом. Подробнее см. в статье [Настройка приложения UWP на языке C++ для отображения представления DirectX](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10)).
 
 Когда наше приложение запущено, и происходят эти события, обработчики обновляют данные о состоянии контроллера камеры, определенные в закрытых полях.
 
-Сначала заполним обработчики событий указателя касания. В первом обработчике событий, **OnPointerPressed**, мы получаем координаты x-y указателя от [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), который управляет нашим дисплеем, когда пользователь касается экрана или щелкает мышью.
+Сначала заполним обработчики событий указателя касания. В первом обработчике событий, **OnPointerPressed**, мы получаем координаты x-y указателя от [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow), который управляет нашим дисплеем, когда пользователь касается экрана или щелкает мышью.
 
 **OnPointerPressed**
 
@@ -190,7 +190,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-Наконец, нам нужно деактивировать реакцию панорамирования камеры, когда пользователь перестает прикасаться к экрану. Мы используем **OnPointerReleased**, который вызывается, когда [ **PointerReleased** ](https://msdn.microsoft.com/library/windows/apps/br208279) инициируется, чтобы задать **m\_panInUse** значение false и отключить перемещение сдвиг камеры и указатель на идентификатор присвоено значение 0.
+Наконец, нам нужно деактивировать реакцию панорамирования камеры, когда пользователь перестает прикасаться к экрану. Мы используем **OnPointerReleased**, который вызывается, когда [ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) инициируется, чтобы задать **m\_panInUse** значение false и отключить перемещение сдвиг камеры и указатель на идентификатор присвоено значение 0.
 
 **OnPointerReleased**
 
@@ -239,7 +239,7 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-В качестве параметра **Initialize** принимает ссылку на экземпляр приложения [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) и регистрирует обработчики событий, созданные для соответствующих событий **CoreWindow**.
+В качестве параметра **Initialize** принимает ссылку на экземпляр приложения [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) и регистрирует обработчики событий, созданные для соответствующих событий **CoreWindow**.
 
 ## <a name="getting-and-setting-the-position-of-the-camera-controller"></a>Получение и настройка положения контроллера камеры
 

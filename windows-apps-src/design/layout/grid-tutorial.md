@@ -7,26 +7,26 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b221220d417df5b70927984ac65eff93fae54a4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2ad32f67dc8cfaf90b96523429bb0ac4b6722abb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646539"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365079"
 ---
-# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Руководство: Использование сетки и StackPanel для создания простой прогноз погоды
+# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Учебник. Использование сетки и StackPanel для создания простой прогноз погоды
 
 Используйте XAML для создания макетов простого погодного приложения с помощью элементов **Grid** и **StackPanel**. С помощью этих инструментов можно создать визуально привлекательные приложения, которые хорошо работают на любом устройстве с Windows 10. Работа с этим учебным материалом занимает 10–20 минут.
 
 > **Важные API**: [Grid-класс](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [класс StackPanel](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 - Windows 10 и Microsoft Visual Studio 2015 или более поздней версии. (Новейшие Visual Studio рекомендуется для текущей разработки и обеспечения безопасности обновления) [Щелкните здесь, чтобы узнать, как выполнить настройки с помощью Visual Studio](../../get-started/get-set-up.md).
-- Сведения о том, как создать базовое приложение "Hello World" с помощью XAML и C#. [Щелкните здесь, чтобы узнать, как создать приложение "Hello World"](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal), если у вас его еще нет.
+- Сведения о том, как создать базовое приложение "Hello World" с помощью XAML и C#. [Щелкните здесь, чтобы узнать, как создать приложение "Hello World"](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal), если у вас его еще нет.
 
 ## <a name="step-1-create-a-blank-app"></a>Шаг 1. Создайте пустое приложение
 1. В меню Visual Studio выберите **Файл** > **Новый проект**.
-2. На левой панели диалогового окна **Новый проект** выберите **Visual C#** > **Windows** > **Universal** или **Visual C++** > **Windows** > **Universal**.
+2. На левой панели диалогового окна **Новый проект** выберите **Visual C#**  > **Windows** > **Universal** или **Visual C++**  > **Windows** > **Universal**.
 3. На центральной панели выберите **Пустое приложение**.
 4. В поле **Имя** введите **WeatherPanel** и нажмите **ОК**.
 5. Чтобы запустить программу, выберите **Отладка** > **Начать отладку** в меню или нажмите клавишу F5.
@@ -51,7 +51,7 @@ ms.locfileid: "57646539"
 
 Новый элемент **Grid** создает набор строк и столбцов, определяя таким образом макет интерфейса приложения. Первый столбец имеет **ширины** из «3\*«, а второй — «5\*«, деления горизонтальный интервал между двумя столбцами коэффициент 3:5. Таким же образом, две строки имеют **высота** из «2\*«и»\*"соответственно, поэтому **сетки** выделяет два раза больше пространства для первой строки, что и для второй («\*» совпадает со значением «1\*»). Эти соотношения сохраняются даже при изменении размера окна или смене устройства.
 
-Узнать о других методах определения размера строк и столбцов можно узнать в разделе [Определение макетов с помощью XAML](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties).
+Узнать о других методах определения размера строк и столбцов можно узнать в разделе [Определение макетов с помощью XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
 
 Если запустить приложение на этом этапе, вы увидите только пустую страницу, так как ни в одной области элемента **Grid** нет содержимого. Чтобы отобразить элемент **Grid** можно придать ему цвет.
 
@@ -120,6 +120,6 @@ ms.locfileid: "57646539"
 При желании вы можете поэкспериментировать с макетом выше и изучить различные способы представления данных о погоде.
 
 ## <a name="related-articles"></a>Связанные статьи
-Введение в проектирование макетов приложений UWP см. в разделе [Введение в проектирование приложений UWP](https://msdn.microsoft.com/windows/uwp/layout/design-and-ui-intro)
+Введение в проектирование макетов приложений UWP см. в разделе [Введение в проектирование приложений UWP](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)
 
-Сведения о создании гибких макетов, адаптирующихся к разным размерам экрана, см. в разделе [Определение макетов страниц с помощью XAML](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)
+Сведения о создании гибких макетов, адаптирующихся к разным размерам экрана, см. в разделе [Определение макетов страниц с помощью XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)

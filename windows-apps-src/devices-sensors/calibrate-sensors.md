@@ -6,26 +6,26 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a93d59a00630c240e74049a9fd98d50f285b0dd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 21e902daac01d8ed2645625320dec27bf7805fba
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634679"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370313"
 ---
 # <a name="calibrate-sensors"></a>Калибровка датчиков
 
 
 **Важные API**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Windows.Devices.Sensors.Custom**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
 
-Датчикам устройства, которые работают на основе магнитометра (компас, датчик наклона и датчик ориентации), может потребоваться калибровка из-за воздействия на них факторов окружающей среды. Перечисление [**MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) может помочь определить необходимые действия, когда устройство требует калибровки.
+Датчикам устройства, которые работают на основе магнитометра (компас, датчик наклона и датчик ориентации), может потребоваться калибровка из-за воздействия на них факторов окружающей среды. Перечисление [**MagnetometerAccuracy**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.MagnetometerAccuracy) может помочь определить необходимые действия, когда устройство требует калибровки.
 
 ## <a name="when-to-calibrate-the-magnetometer"></a>Когда калибровать магнитометр
 
-Перечисление [**MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) включает четыре значения, которые помогают определить, нуждается ли в калибровке устройство, на котором работает ваше приложение. Если устройство нуждается в калибровке, необходимо дать пользователю знать об этом. Однако не следует напоминать о необходимости калибровки слишком часто. Мы рекомендуем делать это не чаще, чем раз в 10 минут.
+Перечисление [**MagnetometerAccuracy**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.MagnetometerAccuracy) включает четыре значения, которые помогают определить, нуждается ли в калибровке устройство, на котором работает ваше приложение. Если устройство нуждается в калибровке, необходимо дать пользователю знать об этом. Однако не следует напоминать о необходимости калибровки слишком часто. Мы рекомендуем делать это не чаще, чем раз в 10 минут.
 
 | Значение           | Описание    |
 | ----------------- | ------------------- |

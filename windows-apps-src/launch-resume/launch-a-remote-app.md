@@ -6,12 +6,12 @@ ms.topic: article
 keywords: устройства Windows 10, универсальной платформы Windows, подключенных удаленных систем, Рим, рим проекта
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a67816195105572d9f690599b9a880ece90c98
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ac4a5783250f3bd21cb8a3b96a579715830e687d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658419"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371716"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>Запуск приложения на удаленном устройстве
 
@@ -62,7 +62,7 @@ ms.locfileid: "57658419"
 
 ## <a name="launch-an-app-on-a-remote-device"></a>Запуск приложения на удаленном устройстве
 
-Запустите приложение удаленно, указав устройство, к которому требуется подключиться, в API [**RemoteLauncher.LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher.launchuriasync.aspx). Для этого метода существует три перегрузки. В самой простой из них, используемой в этом примере, указывается универсальный код ресурса (URI), с помощью которого активируется приложение на удаленном устройстве. В этом примере с помощью URI открывается приложение "Карты" на удаленной системе с трехмерным представлением башни Спейс-Нидл.
+Запустите приложение удаленно, указав устройство, к которому требуется подключиться, в API [**RemoteLauncher.LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotelauncher.launchuriasync). Для этого метода существует три перегрузки. В самой простой из них, используемой в этом примере, указывается универсальный код ресурса (URI), с помощью которого активируется приложение на удаленном устройстве. В этом примере с помощью URI открывается приложение "Карты" на удаленной системе с трехмерным представлением башни Спейс-Нидл.
 
 Другие перегрузки **RemoteLauncher.LaunchUriAsync** позволяют указывать такие параметры, как URI веб-сайта для проверки невозможности запуска подходящего приложения, способного обработать этот URI, на удаленном устройстве, и необязательный список имен семейства пакетов, который можно использовать для запуска этого URI на удаленном устройстве. Вы также можете предоставить данные в виде пар "ключ-значение". Вы можете передать данные приложению, которое запускается, чтобы предоставить контекст для удаленного приложения, например название песни, которую требуется воспроизвести, и текущее расположение воспроизведения при передаче воспроизведения с одного устройства на другое.
 
@@ -70,11 +70,11 @@ ms.locfileid: "57658419"
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
 
-Объект [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelaunchuristatus.aspx), возвращаемый методом **RemoteLauncher.LaunchUriAsync()**, содержит сведения об успешном удаленном запуске или причинах его сбоя.
+Объект [**RemoteLaunchUriStatus**](https://docs.microsoft.com/uwp/api/windows.system.remotelaunchuristatus), возвращаемый методом **RemoteLauncher.LaunchUriAsync()** , содержит сведения об успешном удаленном запуске или причинах его сбоя.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
-[Удаленный Справочник по API системы](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[Удаленный Справочник по API системы](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)  
 [Подключенных приложений и устройств (проект рим) Обзор](connected-apps-and-devices.md)  
 [Обнаружение удаленных устройств](discover-remote-devices.md)  
 [Пример удаленных систем](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) демонстрирует, как обнаружить удаленную систему, запустить приложение в удаленной системе и использовать службы приложений для передачи сообщений между приложениями, работающими в двух системах.

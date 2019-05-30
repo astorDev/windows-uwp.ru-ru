@@ -6,27 +6,27 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cdad8f3405420e0548974c734ad23bfd44f2c6b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8278e02de4d0f9a0efa301051a57bf59bce8d520
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648829"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363303"
 ---
 # <a name="sockets"></a>Сокеты
 Сокеты — это технология передачи данных низкого уровня, на основе которой реализованы многие сетевые протоколы. UWP предоставляет классы сокетов TCP и UDP для клиент-серверных или одноранговых приложений, если устанавливаются долгосрочные подключения или установленное подключение не требуется.
 
-В этом разделе основное внимание уделяется использованию классов сокетов универсальной платформы Windows (UWP), которые находятся в пространстве имен [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets). Кроме того, [сокеты Windows 2 (WinSock)](https://msdn.microsoft.com/library/windows/desktop/ms740673) можно использовать в приложении UWP.
+В этом разделе основное внимание уделяется использованию классов сокетов универсальной платформы Windows (UWP), которые находятся в пространстве имен [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets). Кроме того, [сокеты Windows 2 (WinSock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2) можно использовать в приложении UWP.
 
 > [!NOTE]
-> Как последствие [сетевой изоляции](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx) WIndows запрещает установку подключения сокета (Sockets или WinSock) между двумя приложениями UWP, работающими на одном компьютере, через локальный петлевой адрес (127.0.0.0) либо путем явного указания локального IP-адреса. Дополнительные сведения о механизмах, с помощью которых приложения UWP могут взаимодействовать друг с другом, см. в разделе [Связь между приложениями](/windows/uwp/app-to-app/index).
+> Как последствие [сетевой изоляции](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)) WIndows запрещает установку подключения сокета (Sockets или WinSock) между двумя приложениями UWP, работающими на одном компьютере, через локальный петлевой адрес (127.0.0.0) либо путем явного указания локального IP-адреса. Дополнительные сведения о механизмах, с помощью которых приложения UWP могут взаимодействовать друг с другом, см. в разделе [Связь между приложениями](/windows/uwp/app-to-app/index).
 
 ## <a name="build-a-basic-tcp-socket-client-and-server"></a>Создание базового клиента и сервера сокета TCP
 Для постоянных подключений сокет протокола TCP обеспечивает в сети низкоуровневую двунаправленную передачу данных. Сокеты TCP широко используются большинством сетевых протоколов в Интернете. Чтобы продемонстрировать базовые операции TCP, пример кода ниже показывает отправку и получение данных объектами [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) и [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) через TCP с целью формирования эхо-клиента и сервера.
 
 Чтобы начать с минимального количества составляющих&mdash;и обойти на данный момент программы сетевой изоляции,&mdash;создайте новый проект и поместите код клиента и код сервера (см. ниже) в один проект.
 
-Потребуется [объявить возможность приложения](../packaging/app-capability-declarations.md) в своем проекте. Откройте исходный файл манифеста пакета приложения (файл `Package.appxmanifest`) и на вкладке "Возможности" проверьте **Частные сети (клиент и сервер)**. Вот как это выглядит в разметке `Package.appxmanifest`.
+Потребуется [объявить возможность приложения](../packaging/app-capability-declarations.md) в своем проекте. Откройте исходный файл манифеста пакета приложения (файл `Package.appxmanifest`) и на вкладке "Возможности" проверьте **Частные сети (клиент и сервер)** . Вот как это выглядит в разметке `Package.appxmanifest`.
 
 ```xml
 <Capability Name="privateNetworkClientServer" />
@@ -555,7 +555,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 ## <a name="build-a-basic-udp-socket-client-and-server"></a>Создание базового клиента и сервера сокета UDP
 Сокет протокола UDP схож с сокетом TCP в том плане, что он обеспечивает низкоуровневую передачу данных по сети в любом направлении. Однако если сокет TCP подходит для постоянных подключений, сокет UDP подходит для сценариев, где установленное подключение не требуется. Поскольку сокеты UDP не поддерживают соединение на обеих конечных точках, они предоставляют быстрый и простой способ сетевого подключения между удаленными компьютерами. Однако сокеты UDP не обеспечивают целостность сетевых пакетов или их передачу удаленному адресату. Поэтому необходимо создать приложение с учетом этой особенности. Примеры приложений, использующих сокеты UDP: локальные клиенты обнаружения сети и локальные клиенты чатов.
 
-Чтобы продемонстрировать базовые операции UDP, пример кода ниже показывает класс [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket), который используется для отправки и получения данных через UDP с целью формирования эхо-клиента и сервера. Создайте новый проект и поместите код клиента и сервера ниже в один проект. Как и в случае с сокетом TCP, необходимо объявить возможность приложения **Частные сети (клиент и сервер)**.
+Чтобы продемонстрировать базовые операции UDP, пример кода ниже показывает класс [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket), который используется для отправки и получения данных через UDP с целью формирования эхо-клиента и сервера. Создайте новый проект и поместите код клиента и сервера ниже в один проект. Как и в случае с сокетом TCP, необходимо объявить возможность приложения **Частные сети (клиент и сервер)** .
 
 ### <a name="an-echo-client-and-server-using-udp-sockets"></a>Создание эхо-клиента и эко-сервера с использованием сокетов UDP
 Создайте сокет [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket), который будет выполнять роль эхо-сервера, привяжите его к определенному номеру порта, слушайте входящее сообщение UDP и передайте его обратно. Событие [**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived) создается, когда сокет получает сообщение.
@@ -1377,11 +1377,11 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 * [StreamSocketListenerConnectionReceivedEventArgs](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs)
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 * [Связь между приложениями](/windows/uwp/app-to-app/index)
-* [Параллелизм и асинхронные операции с использованием C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [Как задать сетевые возможности](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
-* [Windows Sockets (Winsock) 2](https://msdn.microsoft.com/library/windows/desktop/ms740673)
+* [Параллелизм и асинхронные операции с C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [Как задать сетевые возможности](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
+* [Windows Sockets (Winsock) 2](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## <a name="samples"></a>Примеры
 * [Пример StreamSocket](https://go.microsoft.com/fwlink/p/?LinkId=620609)

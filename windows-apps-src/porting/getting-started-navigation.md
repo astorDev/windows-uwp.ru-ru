@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 682a743e45626939242af963fba47ca82a13a90e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: de9c5261afb7b76b2409599c9c1f88814d1dd6a1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636599"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371780"
 ---
 # <a name="getting-started-navigation"></a>Приступая к работе: Навигация
 
@@ -20,9 +20,9 @@ ms.locfileid: "57636599"
 
 iOS предоставляет класс **UINavigationController**, чтобы помочь в создании навигации в приложении: вы можете использовать представления push и pop для создания иерархии **UIViewControllers**, определяющей ваше приложение.
 
-Напротив приложение Windows 10, содержащее несколько представлений занимает больше подхода веб узла навигации. Вы можете представить своих пользователей, которые переходят между «страницами» приложения по мере нажатия элементов управления. Подробнее см. в разделе [Основы проектирования навигации](https://msdn.microsoft.com/library/windows/apps/dn958438).
+Напротив приложение Windows 10, содержащее несколько представлений занимает больше подхода веб узла навигации. Вы можете представить своих пользователей, которые переходят между «страницами» приложения по мере нажатия элементов управления. Подробнее см. в разделе [Основы проектирования навигации](https://docs.microsoft.com/windows/uwp/layout/navigation-basics).
 
-Одним из способов управления Навигация в приложении Windows 10 является использование [ **кадра** ](https://msdn.microsoft.com/library/windows/apps/br242682) класса. Эти возможности описаны в указанном ниже пошаговом руководстве.
+Одним из способов управления Навигация в приложении Windows 10 является использование [ **кадра** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) класса. Эти возможности описаны в указанном ниже пошаговом руководстве.
 
 Продолжим работу с решением, которую вы начали ранее. Откройте файл **MainPage.xaml** и добавьте кнопку в **представление конструирования**. Задайте для свойства кнопки **Content** значение "Go To Page" вместо "Button". Затем создайте обработчик для события кнопки **Click**, как показано на следующем рисунке. Если вы не помните, как это делать, обратитесь к пошаговому руководству в предыдущем разделе (совет: дважды щелкните кнопку в **представлении конструирования**).
 
@@ -64,9 +64,9 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 Теперь запустите программу. Нажмите кнопку "Go To Page", чтобы перейти на другую страницу, а затем нажмите кнопку со стрелкой назад, чтобы вернуться на предыдущую страницу.
 
-Для управления навигацией по страницам используется класс [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682). Как **UINavigationController** класс в iOS использует **pushViewController** и **popViewController** методы, **кадра** класса для Приложения универсальной платформы Windows предоставляют [ **Navigate** ](https://msdn.microsoft.com/library/windows/apps/br242694) и [ **GoBack** ](https://msdn.microsoft.com/library/windows/apps/dn996568) методы. Класс **Frame** также содержит метод под названием [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), который выполняет то, что вы ожидаете.
+Для управления навигацией по страницам используется класс [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame). Как **UINavigationController** класс в iOS использует **pushViewController** и **popViewController** методы, **кадра** класса для Приложения универсальной платформы Windows предоставляют [ **Navigate** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) и [ **GoBack** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) методы. Класс **Frame** также содержит метод под названием [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward), который выполняет то, что вы ожидаете.
 
-В этом пошаговом руководстве при каждом переходе на страницу создается новый экземпляр BlankPage. (Предыдущий экземпляр будет автоматически освобожден (*высвобожден*). Если вы не хотите, чтобы при каждом переходе на страницу создавался новый экземпляр, добавьте этот код в конструктор класса BlankPage в файле BlankPage.xaml.cs. Он включает режим [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506).
+В этом пошаговом руководстве при каждом переходе на страницу создается новый экземпляр BlankPage. (Предыдущий экземпляр будет автоматически освобожден (*высвобожден*). Если вы не хотите, чтобы при каждом переходе на страницу создавался новый экземпляр, добавьте этот код в конструктор класса BlankPage в файле BlankPage.xaml.cs. Он включает режим [**NavigationCacheMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode).
 
 ```csharp
 public BlankPage()
@@ -77,11 +77,11 @@ public BlankPage()
 }
 ```
 
-Для указания числа кэшируемых страниц в журнале навигации вы также можете получить или задать свойство [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) класса **Frame**.
+Для указания числа кэшируемых страниц в журнале навигации вы также можете получить или задать свойство [**CacheSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.cachesize) класса **Frame**.
 
-Подробнее о навигации см. в разделах [Навигация](https://msdn.microsoft.com/library/windows/apps/mt187344) и [Пример анимаций персонализации на XAML](https://go.microsoft.com/fwlink/p/?LinkID=242401).
+Подробнее о навигации см. в разделах [Навигация](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) и [Пример анимаций персонализации на XAML](https://go.microsoft.com/fwlink/p/?LinkID=242401).
 
-**Примечание**  сведения о навигации для приложений универсальной платформы Windows, с помощью JavaScript и HTML, см. в разделе [краткое руководство: Использование одностраничной навигации](https://msdn.microsoft.com/library/windows/apps/hh452768).
+**Примечание**  сведения о навигации для приложений универсальной платформы Windows, с помощью JavaScript и HTML, см. в разделе [краткое руководство: Использование одностраничной навигации](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10)).
  
 ### <a name="next-step"></a>Дальнейшие действия
 

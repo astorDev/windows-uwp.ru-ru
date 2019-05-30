@@ -9,25 +9,25 @@ template: detail.hbs
 keywords: клавиатура, специальные возможности, навигация, фокус, текст, ввод, взаимодействие с пользователем
 ms.date: 02/08/2017
 ms.topic: article
-ms.openlocfilehash: 1350c6e0eae057386fb721a358f71acb19c4efc1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c522e21c45a3edd08a14b081cc227a83f19a3ea0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591769"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365357"
 ---
 # <a name="use-input-scope-to-change-the-touch-keyboard"></a>Использование типа вводимых данных для изменения сенсорной клавиатуры
 
 Чтобы упростить пользователям ввод данных с помощью сенсорной клавиатуры или панели функционального ввода, можно настроить тип вводимых данных элемента управления для ввода текста, чтобы он соответствовал типу данных, которые должен вводить пользователь.
 
 ### <a name="important-apis"></a>Важные API
-- [InputScope](https://msdn.microsoft.com/library/windows/apps/hh702632)
-- [inputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)
+- [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope)
+- [inputScopeNameValue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)
 
 
-Сенсорная клавиатура позволяет вводить текст, если приложение выполняется на устройстве с сенсорным экраном. Сенсорная клавиатура появляется, когда пользователь касается редактируемого поля ввода, например, **[TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)** или **[RichEditBox](https://msdn.microsoft.com/library/windows/apps/br227548)**. Пользователи могут вводить данные в вашем приложении гораздо быстрее и проще, если настроить *тип вводимых данных* элемента управления текстом на соответствие типу данных, которые пользователь должен вводить. Тип вводимых данных предоставляет системе подсказку о типе текстового ввода, ожидаемого элементом управления. Благодаря этому система может отобразить специальную раскладку сенсорной клавиатуры в соответствии с используемым типом ввода.
+Сенсорная клавиатура позволяет вводить текст, если приложение выполняется на устройстве с сенсорным экраном. Сенсорная клавиатура появляется, когда пользователь касается редактируемого поля ввода, например, **[TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)** или **[RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)** . Пользователи могут вводить данные в вашем приложении гораздо быстрее и проще, если настроить *тип вводимых данных* элемента управления текстом на соответствие типу данных, которые пользователь должен вводить. Тип вводимых данных предоставляет системе подсказку о типе текстового ввода, ожидаемого элементом управления. Благодаря этому система может отобразить специальную раскладку сенсорной клавиатуры в соответствии с используемым типом ввода.
 
-Например, если текстовое поле используется только для ввода 4-значного ПИН-кода, установите для свойства [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) значение **Number**. Это сообщает системе, что нужно отобразить раскладку цифровой клавиатуры, благодаря чему пользователю проще вводить PIN-код.
+Например, если текстовое поле используется только для ввода 4-значного ПИН-кода, установите для свойства [**InputScope**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) значение **Number**. Это сообщает системе, что нужно отобразить раскладку цифровой клавиатуры, благодаря чему пользователю проще вводить PIN-код.
 
 > [!IMPORTANT]
 > - Эти сведения применимы только к панели функционального ввода. Они неприменимы к аппаратным клавиатурам или экранной клавиатуре, доступной в параметрах специальных возможностей Windows.
@@ -35,19 +35,19 @@ ms.locfileid: "57591769"
 
 ## <a name="changing-the-input-scope-of-a-text-control"></a>Изменение типа вводимых данных для элемента управления текстом
 
-Типы вводимых данных, доступные вашему приложению, представляют собой члены перечисления **[InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/hh702028)**. Вы можете задать для свойства **InputScope** объекта **[TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)** или **[RichEditBox](https://msdn.microsoft.com/library/windows/apps/br227548)** одно из указанных ниже значений.
+Типы вводимых данных, доступные вашему приложению, представляют собой члены перечисления **[InputScopeNameValue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)** . Вы можете задать для свойства **InputScope** объекта **[TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)** или **[RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)** одно из указанных ниже значений.
 
 > [!IMPORTANT]
-> **[InputScope](https://msdn.microsoft.com/library/windows/apps/dn996570)** свойство **[PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)** поддерживает только **пароль** и  **NumericPin** значения. Любое другое значение будет проигнорировано.
+> **[InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.inputscope)** свойство **[PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)** поддерживает только **пароль** и  **NumericPin** значения. Любое другое значение будет проигнорировано.
 
 В этой процедуре мы изменим тип вводимых данных для нескольких текстовых полей в соответствии с данными, которые предполагается вводить.
 
 **Чтобы изменить область ввода в XAML**
 
 1.  В файле XAML для страницы найдите тег для элемента управления с текстом, который необходимо изменить.
-2.  Добавьте атрибут [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) к тегу и укажите значение [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028), которое соответствует ожидаемым вводимым данным.
+2.  Добавьте атрибут [**InputScope**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) к тегу и укажите значение [**InputScopeNameValue**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue), которое соответствует ожидаемым вводимым данным.
 
-    Вот некоторые текстовые поля, которые могут отображаться в общей форме контакта с клиентом. При заданном [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) для каждого текстового поля отображается сенсорная клавиатура с подходящей раскладкой для данных.
+    Вот некоторые текстовые поля, которые могут отображаться в общей форме контакта с клиентом. При заданном [**InputScope**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) для каждого текстового поля отображается сенсорная клавиатура с подходящей раскладкой для данных.
 
     ```xaml
     <StackPanel Width="300">
@@ -60,37 +60,37 @@ ms.locfileid: "57591769"
 
 **Чтобы изменить область ввода в коде**
 
-1.  В файле XAML для страницы найдите тег для элемента управления с текстом, который необходимо изменить. Если он не установлен, установите [x:Name attribute](https://msdn.microsoft.com/library/windows/apps/mt204788), таким образом вы сможете ссылаться на элемент управления в коде.
+1.  В файле XAML для страницы найдите тег для элемента управления с текстом, который необходимо изменить. Если он не установлен, установите [x:Name attribute](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute), таким образом вы сможете ссылаться на элемент управления в коде.
 
     ```csharp
     <TextBox Header="Telephone Number" x:Name="phoneNumberTextBox"/>
     ```
 
-2.  Создайте экземпляр объекта [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702025).
+2.  Создайте экземпляр объекта [**InputScope**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScope).
 
     ```csharp
     InputScope scope = new InputScope();
     ```
 
-3.  Создайте экземпляр объекта [**InputScopeName**](https://msdn.microsoft.com/library/windows/apps/hh702027).
+3.  Создайте экземпляр объекта [**InputScopeName**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeName).
     
     ```csharp
     InputScopeName scopeName = new InputScopeName();
     ```
 
-4.  Установите для свойства [**NameValue**](https://msdn.microsoft.com/library/windows/apps/hh702032) объекта [**InputScopeName**](https://msdn.microsoft.com/library/windows/apps/hh702027) значение перечисления [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028).
+4.  Установите для свойства [**NameValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopename.namevalue) объекта [**InputScopeName**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeName) значение перечисления [**InputScopeNameValue**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue).
 
     ```csharp
     scopeName.NameValue = InputScopeNameValue.TelephoneNumber;
     ```
 
-5.  Добавьте объект [**InputScopeName**](https://msdn.microsoft.com/library/windows/apps/hh702027) в коллекцию [**Names**](https://msdn.microsoft.com/library/windows/apps/hh702034) объекта [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702025).
+5.  Добавьте объект [**InputScopeName**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeName) в коллекцию [**Names**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope.names) объекта [**InputScope**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScope).
 
     ```csharp
     scope.Names.Add(scopeName);
     ```
 
-6.  Задайте объект [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702025) в качестве значения свойства элемента управления текстом [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632).
+6.  Задайте объект [**InputScope**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScope) в качестве значения свойства элемента управления текстом [**InputScope**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope).
 
     ```csharp
     phoneNumberTextBox.InputScope = scope;
@@ -117,17 +117,17 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 ## <a name="text-prediction-spell-checking-and-auto-correction"></a>Прогнозирование текста, проверка правописания и автозамена
 
-Элементы управления [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) и [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) имеют несколько свойств, которые влияют на поведение панели функционального ввода. Чтобы обеспечить наилучшее взаимодействие с пользователями, важно понимать, как эти свойства влияют на ввод текста с помощью сенсорного ввода.
+Элементы управления [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) и [**RichEditBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) имеют несколько свойств, которые влияют на поведение панели функционального ввода. Чтобы обеспечить наилучшее взаимодействие с пользователями, важно понимать, как эти свойства влияют на ввод текста с помощью сенсорного ввода.
 
--   [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688), если проверка орфографии включена для текстового элемента управления, элемент управления взаимодействует с ядро системы проверки орфографии для выделения слов, которые не распознаются. Можно коснуться слова, чтобы просмотреть список рекомендуемых исправлений. По умолчанию функция проверки правописания включена.
+-   [**IsSpellCheckEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isspellcheckenabled), если проверка орфографии включена для текстового элемента управления, элемент управления взаимодействует с ядро системы проверки орфографии для выделения слов, которые не распознаются. Можно коснуться слова, чтобы просмотреть список рекомендуемых исправлений. По умолчанию функция проверки правописания включена.
 
     Для типа вводимых данных **Default** это свойство также автоматически включает функции написания первого слова предложения с прописной буквы и автозамены слов по мере ввода. Для других типов вводимых данных эти функции автозамены можно выключить. Подробнее см. в таблицах далее в этом разделе.
 
--   [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690)— при включении прогнозирование текста для текстового элемента управления, система выдает список слов, которые могут начинает введите. Вы можете выбрать слово из списка, чтобы не вводить слово целиком. По умолчанию функция прогнозирования текста включена.
+-   [**IsTextPredictionEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled)— при включении прогнозирование текста для текстового элемента управления, система выдает список слов, которые могут начинает введите. Вы можете выбрать слово из списка, чтобы не вводить слово целиком. По умолчанию функция прогнозирования текста включена.
 
-    Прогнозирование текста можно отключить, если тип вводимых данных отличается от **Default**, даже если свойство [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) имеет значение **true**. Подробнее см. в таблицах далее в этом разделе.
+    Прогнозирование текста можно отключить, если тип вводимых данных отличается от **Default**, даже если свойство [**IsTextPredictionEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) имеет значение **true**. Подробнее см. в таблицах далее в этом разделе.
 
--   [**PreventKeyboardDisplayOnProgrammaticFocus**](https://msdn.microsoft.com/library/windows/apps/dn299273)— Если этому свойству присвоено **true**, она предотвращает отображение SIP, когда фокус установлен программно на текстового элемента управления. Вместо этого клавиатура отображается только тогда, когда пользователь взаимодействует с элементом управления.
+-   [**PreventKeyboardDisplayOnProgrammaticFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus)— Если этому свойству присвоено **true**, она предотвращает отображение SIP, когда фокус установлен программно на текстового элемента управления. Вместо этого клавиатура отображается только тогда, когда пользователь взаимодействует с элементом управления.
 
 ## <a name="touch-keyboard-index-for-windows"></a>Индекс сенсорной клавиатуры для Windows
 
@@ -136,7 +136,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 > [!Tip] 
 > Большинство сенсорной клавиатуры между макетом буквы и цифры и символы макет можно переключать, нажав клавишу **& 123** ключ для изменения макета цифры и символы, и нажмите клавишу **abcd** ключа Измените макет является буквой алфавита.
 
-### <a name="default"></a>По умолчанию
+### <a name="default"></a>Значение по умолчанию
 
 `<TextBox InputScope="Default"/>`
 
@@ -162,14 +162,14 @@ Windows по умолчанию сенсорной клавиатуры.
 - Автоматическое применение заглавных букв: всегда отключено
 - Прогнозирование текста: по умолчанию включено, может быть отключено
  
-### <a name="url"></a>URL-адрес
+### <a name="url"></a>url
 
 `<TextBox InputScope="Url"/>`
 
 ![Сенсорная клавиатура Windows для URL-адресов](images/input-scopes/url.png)
 
-- Содержит клавиши **.com** и ![go](images/input-scopes/kbdgokey.png) (Перейти). Нажмите и удерживайте **.com** ключ, чтобы отобразить дополнительные параметры (**.org**, **.net**, суффикс региона и)
-- Включает в себя **:**, **-**, и **/** ключи
+- Содержит клавиши **.com** и ![go](images/input-scopes/kbdgokey.png) (Перейти). Нажмите и удерживайте **.com** ключ, чтобы отобразить дополнительные параметры ( **.org**, **.net**, суффикс региона и)
+- Включает в себя **:** , **-** , и **/** ключи
 - Проверка правописания: по умолчанию отключена, может быть включена
 - Автозамена: по умолчанию отключена, может быть включена
 - Автоматическое применение заглавных букв: по умолчанию отключено, может быть включено
@@ -181,7 +181,7 @@ Windows по умолчанию сенсорной клавиатуры.
 `<TextBox InputScope="EmailSmtpAddress"/>`
 
 ![Сенсорная клавиатура Windows для ввода адресов электронной почты](images/input-scopes/emailsmtpaddress.png)
-- Содержит клавиши **@** и **.com**. Нажмите и удерживайте **.com** ключ, чтобы отобразить дополнительные параметры (**.org**, **.net**, суффикс региона и)
+- Содержит клавиши **@** и **.com**. Нажмите и удерживайте **.com** ключ, чтобы отобразить дополнительные параметры ( **.org**, **.net**, суффикс региона и)
 - Включает в себя **_** и **-** ключи
 - Проверка правописания: по умолчанию отключена, может быть включена
 - Автозамена: по умолчанию отключена, может быть включена
@@ -189,7 +189,7 @@ Windows по умолчанию сенсорной клавиатуры.
 - Прогнозирование текста: по умолчанию отключено, может быть включено
 
 
-### <a name="number"></a>Номер
+### <a name="number"></a>Number
 
 `<TextBox InputScope="Number"/>`
 
@@ -237,7 +237,7 @@ Windows по умолчанию сенсорной клавиатуры.
 
 ![Windows сенсорной клавиатуры для формулы](images/input-scopes/formula.png)
 - Включает в себя **=** ключ
-- Также включает в себя **%**, **$**, и **+** ключи
+- Также включает в себя **%** , **$** , и **+** ключи
 - Проверка правописания: по умолчанию включена, может быть отключена
 - Автозамена: по умолчанию включена, может быть отключена
 - Автоматическое применение заглавных букв: всегда отключено

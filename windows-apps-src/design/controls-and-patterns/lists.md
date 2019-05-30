@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: eb9c600e58be04d8ce967eb119777d6746507fbe
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a574ff858f8eab3fa1984ecd883a786fa0e0f19c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636369"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364724"
 ---
 # <a name="lists"></a>Списки
 
@@ -30,7 +30,7 @@ ms.locfileid: "57636369"
 
 В этой статье представлены рекомендации по проектированию, описаны возможности и приведены примеры каждого шаблона списка.
 
-> **Важные API**: [Класс ListView](https://msdn.microsoft.com/library/windows/apps/br242878), [класс GridView](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox-класс](https://msdn.microsoft.com/library/windows/apps/br209348)
+> **Важные API**: [Класс ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [класс GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [ComboBox-класс](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 
 > <div id="main">
@@ -265,11 +265,11 @@ ms.locfileid: "57636369"
 - [Основные и подробные данные](master-details.md)
 - [Панель навигации](navigationview.md)
 - [Контекстное масштабирование](semantic-zoom.md)
-- [Перетаскивание](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Перетаскивание](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [Эскизы](../../files/thumbnails.md)
 
 **Для разработчиков**
-- [Класс ListView](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [Класс GridView](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [ComboBox-класс](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [ListBox-класс](https://msdn.microsoft.com/library/windows/apps/br242868)
+- [Класс ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [Класс GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [ComboBox-класс](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+- [ListBox-класс](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)

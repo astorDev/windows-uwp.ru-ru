@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d 11, перенос
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b6d06ff168f778c87e46fa399775492a3cebcaa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3c17e0b8ceb5938b7ca224f4a67198929a37a7f4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594219"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368363"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>Перенос простого отрисовщика OpenGL ES 2.0 в Direct3D 11
 
@@ -27,7 +27,7 @@ ms.locfileid: "57594219"
 
 Этот раздел начинается сразу после создания нового проекта DirectX 11. Чтобы узнать, как создавать новые проекты DirectX 11, ознакомьтесь с разделом [Создание нового проекта DirectX 11 для универсальной платформы Windows (UWP)](user-interface.md).
 
-В проекте, созданном на основании любой из этих ссылок, уже подготовлен весь нужный код для инфраструктуры [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476345), что позволяет немедленно начать процесс переноса обработчика из Open GL ES 2.0 в Direct3D 11.
+В проекте, созданном на основании любой из этих ссылок, уже подготовлен весь нужный код для инфраструктуры [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews), что позволяет немедленно начать процесс переноса обработчика из Open GL ES 2.0 в Direct3D 11.
 
 В этом разделе подробно разобраны две ветви кода, выполняющие одну и ту же базовую задачу обработки графики: отображение вращающегося куба с затененными вершинами. В обоих случаях код включает следующий процесс.
 
@@ -89,10 +89,10 @@ typedef struct
 
 ### <a name="technologies"></a>Технологии
 
--   [Microsoft Visual C++](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
+-   [Microsoft Visual C++](https://docs.microsoft.com/previous-versions/60k1461a(v=vs.140))
 -   OpenGL ES 2.0
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 -   Необязательно. Просмотрите раздел [Перенос кода EGL в DXGI и Direct3D](moving-from-egl-to-dxgi.md). Прочитайте этот раздел, чтобы лучше понять графический интерфейс, предоставляемый DirectX.
 

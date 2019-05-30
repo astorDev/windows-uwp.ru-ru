@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 66b61b9db88392c7ca7370f06fb2150deba7c8c3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c00bf23a8539f7ee37974e16586a4477cc6b78bb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606829"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360396"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Использование визуального уровня с помощью XAML
 
@@ -45,12 +45,12 @@ ms.locfileid: "57606829"
 
 ## <a name="the-elementcompositionpreview-class"></a>Класс ElementCompositionPreview
 
-[**ElementCompositionPreview** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx) является статическим классом с функциональными возможностями XAML и визуальный слой взаимодействия. Обзор визуального уровня и его функций см. в разделе [Визуальный уровень](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer). Класс **ElementCompositionPreview** предоставляет следующие методы.
+[**ElementCompositionPreview** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) является статическим классом с функциональными возможностями XAML и визуальный слой взаимодействия. Обзор визуального уровня и его функций см. в разделе [Визуальный уровень](https://docs.microsoft.com/windows/uwp/graphics/visual-layer). Класс **ElementCompositionPreview** предоставляет следующие методы.
 
--   [**GetElementVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Получения визуальный элемент, который используется для отображения этого элемента «выдачи»
--   [**SetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual.aspx): Задает «handin» визуальный элемент, как последний дочерний элемент этого элемента визуального дерева. Этот объект Visual отрисовывается поверх остальных элементов. 
--   [**GetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Получить Visual набора с помощью **SetElementChildVisual**
--   [**GetScrollViewerManipulationPropertySet**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Получить объект, который может использоваться для создания анимации 60 кадров/с на смещение прокрутки в основе **ScrollViewer**
+-   [**GetElementVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Получения визуальный элемент, который используется для отображения этого элемента «выдачи»
+-   [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Задает «handin» визуальный элемент, как последний дочерний элемент этого элемента визуального дерева. Этот объект Visual отрисовывается поверх остальных элементов. 
+-   [**GetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Получить Visual набора с помощью **SetElementChildVisual**
+-   [**GetScrollViewerManipulationPropertySet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Получить объект, который может использоваться для создания анимации 60 кадров/с на смещение прокрутки в основе **ScrollViewer**
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>Примечания относительно ElementCompositionPreview.GetElementVisual
 
@@ -96,7 +96,7 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 ## <a name="getalphamask-methods"></a>Методы **GetAlphaMask**
 
-[**Изображение**](https://msdn.microsoft.com/library/windows/apps/br242752), [ **TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652), и [ **фигуры** ](/uwp/api/Windows.UI.Xaml.Shapes.Shape) каждый из которых реализует метод, вызванный  **GetAlphaMask** , возвращающий **CompositionBrush** представляет изображение в оттенках серого с фигурой элемента. Этот объект **CompositionBrush** может служить входными данными для **DropShadow** композиции, чтобы тень соответствовала форме элемента и не была просто прямоугольной. Это позволяет использовать точные до пикселя основанные на контурах тени для текста, изображений с альфа-каналом и различных фигур. См. раздел *Отбрасывание тени* ниже для ознакомления с примером этого API.
+[**Изображение**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image), [ **TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), и [ **фигуры** ](/uwp/api/Windows.UI.Xaml.Shapes.Shape) каждый из которых реализует метод, вызванный  **GetAlphaMask** , возвращающий **CompositionBrush** представляет изображение в оттенках серого с фигурой элемента. Этот объект **CompositionBrush** может служить входными данными для **DropShadow** композиции, чтобы тень соответствовала форме элемента и не была просто прямоугольной. Это позволяет использовать точные до пикселя основанные на контурах тени для текста, изображений с альфа-каналом и различных фигур. См. раздел *Отбрасывание тени* ниже для ознакомления с примером этого API.
 
 ## <a name="recipes"></a>Рецепты
 
@@ -140,7 +140,7 @@ private void InitializeRepositionAnimation(UIElement repositionTarget)
 }
 ```
 
-### <a name="drop-shadow"></a>Отбрасывание тени
+### <a name="drop-shadow"></a>Тень
 
 Добавление точной до пикселя тени для **UIElement**, например **Ellipse** с картинкой. Поскольку тень требует создания **SpriteVisual** приложением, необходимо создать "принимающий" элемент, который будет содержать **SpriteVisual** с помощью **ElementCompositionPreview.SetElementChildVisual**.
 
@@ -362,8 +362,8 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Наглядное представление слоя](https://msdn.microsoft.com/windows/uwp/composition/visual-layer)
-- [**ElementCompositionPreview** класса](https://msdn.microsoft.com/library/windows/apps/mt608976)
+- [Наглядное представление слоя](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
+- [**ElementCompositionPreview** класса](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
 - Расширенные примеры пользовательского интерфейса и композиции в [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs)
 - [Пример BasicXamlInterop](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
 - [Пример ParallaxingListItems](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

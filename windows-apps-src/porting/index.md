@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d8805f03f8476bcae8404395c27d9d78952f782
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 937d165d9305a3f4909383e872f49fcf08a3115c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984230"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371592"
 ---
 # <a name="porting-apps-to-windows10"></a>Перенос приложений в Windows 10
 
 
 В этом разделе описано, как перенести имеющееся приложение на платформу UWP, где можно будет создать один пакет приложения для Windows 10, который пользователи смогут установить на все типы устройств. В вашем распоряжении будут превосходное аппаратное обеспечение, замечательные возможности получения дохода, современный API, адаптивные элементы управления пользовательским интерфейсом и широкий спектр способов ввода информации, включая мышь, клавиатуру, сенсорные экраны и голосовые команды.
 
-Среда выполнения Windows (WinRT) — это технология, которая позволяет создавать приложения универсальной платформы Windows (UWP). Базовую информацию о приложениях WinRT и UWP см. в разделе [Что такое приложение универсальной платформы Windows (UWP)?](https://msdn.microsoft.com/library/windows/apps/dn726767)
+Среда выполнения Windows (WinRT) — это технология, которая позволяет создавать приложения универсальной платформы Windows (UWP). Базовую информацию о приложениях WinRT и UWP см. в разделе [Что такое приложение универсальной платформы Windows (UWP)?](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp)
 
-Это руководство по переносу описывает различия между используемой технологией вашего приложения и UWP. После того, как вы поймете путь между технологиями, вы можете ознакомиться с остальными материалами в Центре разработки, который является универсальным ресурсом для разработки приложений UWP. Когда вы будете готовы, отличным способом начать знакомство будет раздел [Разработка приложений Магазина](https://msdn.microsoft.com/library/windows/apps/dn726537).
+Это руководство по переносу описывает различия между используемой технологией вашего приложения и UWP. После того, как вы поймете путь между технологиями, вы можете ознакомиться с остальными материалами в Центре разработки, который является универсальным ресурсом для разработки приложений UWP. Когда вы будете готовы, отличным способом начать знакомство будет раздел [Разработка приложений Магазина](https://docs.microsoft.com/previous-versions/windows/apps/dn726537(v=win.10)).
 
 | Раздел | Описание |
 |-------|-------------|
@@ -33,6 +33,6 @@ ms.locfileid: "65984230"
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Move from WPF and Microsoft Silverlight to WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237) (Переход с WPF и Silverlight на WinRT)
-* [Move from Android to WinRT](https://msdn.microsoft.com/library/windows/apps/jj945421) (Переход с Android на WinRT)
-* [Move from the web to WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151) (Переход с Интернета на WinRT)
+* [Move from WPF and Microsoft Silverlight to WinRT](https://docs.microsoft.com/previous-versions/windows/apps/dn263237(v=win.10)) (Переход с WPF и Silverlight на WinRT)
+* [Move from Android to WinRT](https://docs.microsoft.com/previous-versions/windows/apps/jj945421(v=win.10)) (Переход с Android на WinRT)
+* [Move from the web to WinRT](https://docs.microsoft.com/previous-versions/windows/apps/hh465151(v=win.10)) (Переход с Интернета на WinRT)

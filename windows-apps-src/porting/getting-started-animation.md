@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dc5e107fd343798698f5957c26d87a0d3ffe6625
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b30f2e9d08fd36686045523c54180829570cbd2d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608629"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372875"
 ---
 # <a name="getting-started-animation"></a>Приступая к работе: Анимация
 
@@ -124,9 +124,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 ...
 ```
 
-Вы можете изменить этот код XAML вручную или вернуться к Blend, чтобы продолжить работу над кодом. Blend значительно упрощает создание интересных пользовательских интерфейсов, а возможность анимировать их при помощи графического инструмента может существенно сократить время разработки. Дополнительную информацию об анимациях см. в статье [Обзор анимаций](https://msdn.microsoft.com/library/windows/apps/mt187350).
+Вы можете изменить этот код XAML вручную или вернуться к Blend, чтобы продолжить работу над кодом. Blend значительно упрощает создание интересных пользовательских интерфейсов, а возможность анимировать их при помощи графического инструмента может существенно сократить время разработки. Дополнительную информацию об анимациях см. в статье [Обзор анимаций](https://docs.microsoft.com/windows/uwp/graphics/animations-overview).
 
-**Примечание**  сведения об анимации для <span class="legacy-term">приложений универсальной платформы Windows, с помощью JavaScript и HTML</span>, см. в разделе [анимации пользовательского интерфейса (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
+**Примечание**  сведения об анимации для <span class="legacy-term">приложений универсальной платформы Windows, с помощью JavaScript и HTML</span>, см. в разделе [анимации пользовательского интерфейса (HTML)](https://docs.microsoft.com/previous-versions/windows/apps/hh465165(v=win.10)).
 
 ### <a name="next-step"></a>Дальнейшие действия
 

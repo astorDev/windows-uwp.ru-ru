@@ -6,36 +6,36 @@ ms.topic: article
 keywords: Windows 10, uwp, фоновую задачу
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
-ms.openlocfilehash: 50e818059436cf7653bf7ac7b2203b0761b93377
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f37ffe21795fc68ff72b4e6f1de591c96d2f8b90
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615799"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366217"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>Создание и регистрация фоновой задачи, выполняемой внутри процесса
 
 **Важные API**
 
--   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
+-   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
 
 В этом разделе рассказывается, как создать и зарегистрировать фоновую задачу, которая будет выполняться в том же процессе, что и ваше приложение.
 
-Выполняемые внутри процесса фоновые задачи проще реализовать, чем фоновые задачи, выполняемые вне процесса. Однако они менее устойчивы. Сбой выполнения кода в фоновой задаче внутри процесса затронет работу вашего приложения. Также обратите внимание, что триггеры [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) и **IoTStartupTask** нельзя использовать в рамках модели внутри процесса. Запуск фоновой задачи VoIP в приложении также невозможен. Использование этих триггеров и задач все еще поддерживается в рамках модели фоновой задачи, выполняемой вне процесса.
+Выполняемые внутри процесса фоновые задачи проще реализовать, чем фоновые задачи, выполняемые вне процесса. Однако они менее устойчивы. Сбой выполнения кода в фоновой задаче внутри процесса затронет работу вашего приложения. Также обратите внимание, что триггеры [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger), [DeviceServicingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceservicingtrigger) и **IoTStartupTask** нельзя использовать в рамках модели внутри процесса. Запуск фоновой задачи VoIP в приложении также невозможен. Использование этих триггеров и задач все еще поддерживается в рамках модели фоновой задачи, выполняемой вне процесса.
 
 Имейте в виду, что фоновые задачи можно остановить (даже внутри фонового процесса приложения), если время их выполнения выходит за заданные пределы. Для некоторых целей обеспечение устойчивости при выделении работы в фоновую задачу, выполняющуюся в отдельном процессе, по-прежнему является целесообразным. Выделение фоновой работы в задачу, не связанную с приложением переднего плана, может быть лучшим решением, когда для работы не требуется обмен данными с приложением переднего плана.
 
 ## <a name="fundamentals"></a>Основы
 
-Модель с выполнением внутри процесса оптимизирует жизненный цикл приложения с помощью улучшенных уведомлений, когда приложение работает на переднем плане или в фоновом режиме. Из объекта приложения эти переходы доступны два новых события. [**EnteredBackground** ](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) и [ **LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Эти события встраиваются в жизненный цикл приложения на основании состояния видимости вашего приложения. Дополнительные сведения об этих событиях и об их влиянии на жизненный цикл приложения см. в разделе [Жизненный цикл приложения](app-lifecycle.md).
+Модель с выполнением внутри процесса оптимизирует жизненный цикл приложения с помощью улучшенных уведомлений, когда приложение работает на переднем плане или в фоновом режиме. Из объекта приложения эти переходы доступны два новых события. [**EnteredBackground** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) и [ **LeavingBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground). Эти события встраиваются в жизненный цикл приложения на основании состояния видимости вашего приложения. Дополнительные сведения об этих событиях и об их влиянии на жизненный цикл приложения см. в разделе [Жизненный цикл приложения](app-lifecycle.md).
 
 На высоком уровне вы будете управлять событием **EnteredBackground** для запуска вашего кода, который будет выполняться одновременно с выполнением вашего приложения в фоновом режиме, и событием **LeavingBackground**, чтобы знать, когда приложение перемещается на передний план.
 
 ## <a name="register-your-background-task-trigger"></a>Регистрация триггера фоновой задачи
 
-Регистрация фонового действия внутри процесса выполняется практически так же, как и регистрация фонового действия вне процесса. Регистрация всех фоновых триггеров выполняется с помощью класса [BackgroundTaskBuilder](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396). Построитель упрощает процесс регистрации фоновой задачи путем установки всех необходимых значений в одном месте.
+Регистрация фонового действия внутри процесса выполняется практически так же, как и регистрация фонового действия вне процесса. Регистрация всех фоновых триггеров выполняется с помощью класса [BackgroundTaskBuilder](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder?f=255&MSPPError=-2147217396). Построитель упрощает процесс регистрации фоновой задачи путем установки всех необходимых значений в одном месте.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -48,16 +48,16 @@ ms.locfileid: "57615799"
 > ```
 
 > [!NOTE]
-> Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) перед регистрацией любых типов фоновых триггеров.
-> Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), а затем — метод [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
+> Универсальные приложения для Windows должны вызвать [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) перед регистрацией любых типов фоновых триггеров.
+> Чтобы универсальное приложение для Windows продолжало правильно работать после выпуска обновления, необходимо вызвать метод [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess), а затем — метод [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) при запуске приложения после обновления. Дополнительные сведения см. в разделе [Руководство по фоновым задачам](guidelines-for-background-tasks.md).
 
-Для фоновых действий внутри процесса установка значения свойства `TaskEntryPoint.` не выполняется. За счет того, что значение для него не задается, появляется возможность использовать точку входа по умолчанию — новый защищенный метод в объекте Application под названием [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).
+Для фоновых действий внутри процесса установка значения свойства `TaskEntryPoint.` не выполняется. За счет того, что значение для него не задается, появляется возможность использовать точку входа по умолчанию — новый защищенный метод в объекте Application под названием [OnBackgroundActivated()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated).
 
-После регистрации триггера он будет запущен с учетом типа триггера, указанного в методе [SetTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.settrigger.aspx). В примере кода, приведенном выше, используется триггер [TimeTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.timetrigger.aspx), который будет срабатывать через 15 минут после его регистрации.
+После регистрации триггера он будет запущен с учетом типа триггера, указанного в методе [SetTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.settrigger). В примере кода, приведенном выше, используется триггер [TimeTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.timetrigger), который будет срабатывать через 15 минут после его регистрации.
 
 ## <a name="add-a-condition-to-control-when-your-task-will-run-optional"></a>Добавление условия, которое будет контролировать время запуска задачи (необязательно)
 
-Вы можете добавить условие, чтобы контролировать, в какой момент времени после возникновения события триггера запустится ваша задача. Например, если вы не хотите, чтобы задача запускалась в отсутствие пользователя, используйте условие **UserPresent**. Список возможных условий см. в статье [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+Вы можете добавить условие, чтобы контролировать, в какой момент времени после возникновения события триггера запустится ваша задача. Например, если вы не хотите, чтобы задача запускалась в отсутствие пользователя, используйте условие **UserPresent**. Список возможных условий см. в статье [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 Следующий пример кода назначает условие, при котором необходимо присутствие пользователя:
 
@@ -68,7 +68,7 @@ ms.locfileid: "57615799"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>Размещение кода фонового действия в методе OnBackgroundActivated()
 
-Поместите код действия фона в [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) реагировать на триггер фона при его срабатывании. **OnBackgroundActivated** может обрабатываться как [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). Этот метод имеет [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) параметр, который содержит все, **запуска** обеспечивает метод. Например в файле App.xaml.cs:
+Поместите код действия фона в [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) реагировать на триггер фона при его срабатывании. **OnBackgroundActivated** может обрабатываться как [IBackgroundTask.Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run?f=255&MSPPError=-2147217396). Этот метод имеет [BackgroundActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.backgroundactivatedeventargs) параметр, который содержит все, **запуска** обеспечивает метод. Например в файле App.xaml.cs:
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -108,13 +108,13 @@ sealed partial class App : Application
 
 В статьях ниже можно найти справочник по API, концептуальное руководство по фоновым задачам и подробные инструкции по созданию приложений, использующих фоновые задачи.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 **Подробные для фоновой задачи разделы**
 
 * [Преобразовать вне процесса фоновой задачи в фоновом режиме в процессе задачу](convert-out-of-process-background-task.md)
 * [Создание и регистрация внепроцессной фоновой задачи](create-and-register-a-background-task.md)
-* [Воспроизведение мультимедиа в фоновом режиме](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [Воспроизведение мультимедиа в фоновом режиме](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Реагирование на системные события с помощью фоновых задач](respond-to-system-events-with-background-tasks.md)
 * [Регистрация фоновой задачи](register-a-background-task.md)
 * [Задание условий выполнения фоновой задачи](set-conditions-for-running-a-background-task.md)
@@ -131,4 +131,4 @@ sealed partial class App : Application
 
 **Справочник по API фоновой задачи**
 
-* [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
+* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)

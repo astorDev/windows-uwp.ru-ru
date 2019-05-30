@@ -6,12 +6,12 @@ keywords: пример игры DirectX, пример игры, универса
 ms.date: 12/01/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dc602e2dd29231c1e6554d7ef55e9666a373fa31
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c2ee2795410c083a6dd460a8537115dc8d20de31
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642869"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367706"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>Создание простой игры универсальной платформы Windows (UWP) с использованием DirectX
 
@@ -32,7 +32,7 @@ ms.locfileid: "57642869"
 -   Базовое знание линейной алгебры и ньютоновской физики.
 -   Базовое знание терминологии программирования графики.
 -   Базовое знание программирования в Windows.
--   Базовые знания API [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) и [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569).
+-   Базовые знания API [Direct2D](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) и [Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/how-to-use-direct3d-11).
 
 ##  <a name="direct3d-uwp-shooting-game-sample"></a>Пример игры-шутера для UWP с использованием Direct3D
 
@@ -61,5 +61,5 @@ ms.locfileid: "57642869"
 | [Платформу для отображения II: Отрисовки игр](tutorial-game-rendering.md) | Во второй части статьи по отрисовке вы узнаете, как подготовить необходимые данные до момента отрисовки. |
 | [Добавление пользовательского интерфейса](tutorial--adding-a-user-interface.md) | Добавьте простые команды меню и экранные элементы, чтобы обеспечить обратную связь для игрока. |
 | [Добавление элементов управления](tutorial--adding-controls.md) | Добавьте в игру элементы управления перемещением и обзором &mdash;с помощью сенсорного экрана, мыши и игрового устройства управления. |
-| [Добавление звука](tutorial--adding-sound.md) | Узнайте, как создать звуковое сопровождение для игры с помощью API-интерфейсов [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813). |
+| [Добавление звука](tutorial--adding-sound.md) | Узнайте, как создать звуковое сопровождение для игры с помощью API-интерфейсов [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction). |
 | [Расширить пример игры](tutorial-resources.md) | Ресурсы для дальнейшего изучения разработки игр на базе DirectX, включая использование XAML для создания наложений. |

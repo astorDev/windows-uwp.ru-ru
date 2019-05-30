@@ -3,7 +3,7 @@ description: Вы можете создать представление раз�
 title: Представление в виде дерева
 label: Tree view
 template: detail.hbs
-ms.date: 01/03/2019
+ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 pm-contact: predavid
@@ -13,13 +13,13 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.custom: RS5
-ms.openlocfilehash: 7c666d417fb980cab72165681583ac83e9eaca00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: RS5, 19H1
+ms.openlocfilehash: d9f0396558186008430ccf1454e48f5e2194ee0e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628519"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364003"
 ---
 # <a name="treeview"></a>Иерархическое представление (представление в виде дерева)
 
@@ -85,7 +85,7 @@ API TreeView поддерживают следующие компоненты:
 > [!IMPORTANT]
 > ItemsSource и его связанные интерфейсы API, требуется Windows 10, версия 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздней версии, или [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 >
-> ItemsSource является альтернативным механизмом TreeView.RootNodes для помещения содержимого в элементе управления TreeView. В то же время нельзя установить ItemsSource и RootNodes. При использовании ItemsSource, создать узлы автоматически, и они будут доступны из свойства TreeView.RootNodes.
+> ItemsSource является альтернативным механизмом TreeView.RootNodes для помещения содержимого в элементе управления TreeView. В то же время нельзя установить ItemsSource и RootNodes. При использовании ItemsSource, узлы создаются автоматически, и они будут доступны из свойства TreeView.RootNodes.
 
 Вот пример простого иерархического представления, объявленного в XAML. Как правило, узлы добавляются в код, но здесь мы продемонстрируем иерархию XAML, так как это может быть полезно для обеспечения наглядности процесса создания иерархии узлов.
 
@@ -932,5 +932,5 @@ End Sub
 ## <a name="related-articles"></a>Связанные статьи
 
 - [Класс элемента управления TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
-- [Класс ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
+- [Класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
 - [ListView и GridView](listview-and-gridview.md)

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9aa5053d83518c61335807874cd0d31943a60695
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b17220a039612e0b13cd9842800c37c39bf194dd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606479"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362762"
 ---
 # <a name="hyperlinks"></a>Гиперссылки
 
@@ -25,7 +25,7 @@ ms.locfileid: "57606479"
 
 Гиперссылки используются для перехода в другую часть приложения, в другое приложение либо по указанному универсальному коду ресурса (URI) в отдельном приложении браузера. Существует два способа добавления гиперссылки в приложение XAML: текстовый элемент **гиперссылки** и элемент управления **HyperlinkButton**.
 
-> **Важные API**: [Текстовый элемент HyperLink](https://msdn.microsoft.com/library/windows/apps/dn279356), [HyperlinkButton управления](https://msdn.microsoft.com/library/windows/apps/br242739)
+> **Важные API**: [Текстовый элемент HyperLink](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [HyperlinkButton управления](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 
 ![Кнопка с гиперссылкой](images/controls/hyperlink-button.png)
 
@@ -38,7 +38,7 @@ ms.locfileid: "57606479"
 
 -   Используйте текстовый элемент встроенной **гиперссылки** внутри элемента управления текстом. Элемент гиперссылки сочетается с другими текстовыми элементами, и его можно использовать в любом InlineCollection. Используйте текстовую гиперссылку, если нужно, чтобы обтекание текстом осуществлялось автоматически, и если нет необходимости в большом элементе управления. Текст гиперссылки может быть небольшим, и на него бывает трудно попасть, особенно на устройствах с сенсорным экраном.
 -   Для отдельных гиперссылок можно использовать **HyperlinkButton**. HyperlinkButton — это специализированный элемент управления "кнопка", который можно использовать везде, где вы бы добавили кнопку.
--   Используйте элемент **HyperlinkButton** с [Image](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) в качестве содержимого этого элемента, чтобы создать гиперизображение.
+-   Используйте элемент **HyperlinkButton** с [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) в качестве содержимого этого элемента, чтобы создать гиперизображение.
 
 ## <a name="examples"></a>Примеры
 
@@ -58,7 +58,7 @@ ms.locfileid: "57606479"
 
 ## <a name="create-a-hyperlink-text-element"></a>Создание текстового элемента гиперссылки
 
-В этом примере продемонстрировано использование текстового элемента гиперссылки в [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx).
+В этом примере продемонстрировано использование текстового элемента гиперссылки в [TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock).
 
 ```xml
 <StackPanel Width="200">
@@ -73,7 +73,7 @@ ms.locfileid: "57606479"
 
 ![Пример гиперссылки в виде текстового элемента](images/controls_hyperlink-element.png) 
 
-> **Совет.**&nbsp;&nbsp;При использовании гиперссылки в текстовом элементе управления в XAML разместите содержимое в контейнере [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) и примените атрибут `xml:space="preserve"` к Span для сохранения пробела между гиперссылкой и другими элементами.
+> **Совет.** &nbsp;&nbsp;При использовании гиперссылки в текстовом элементе управления в XAML разместите содержимое в контейнере [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) и примените атрибут `xml:space="preserve"` к Span для сохранения пробела между гиперссылкой и другими элементами.
 
 ## <a name="create-a-hyperlinkbutton"></a>Создание HyperlinkButton
 
@@ -116,7 +116,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 > [!NOTE]
 > Идентификатор URI, представленный классом [Windows.Foundation.Uri](/uwp/api/windows.foundation.uri). При программировании с помощью .NET этот класс скрыт и следует использовать класс [System.Uri](https://docs.microsoft.com/dotnet/api/system.uri). Дополнительные сведения см. на страницах справки, посвященных этим классам.
 
-Использовать схемы **http:** или **https:** не обязательно. Можно использовать такие схемы, как **ms-appx:**, **ms-appdata:** или **ms-resources:**, если содержимое ресурса в этих расположениях подходит для загрузки в браузере. Однако, схема **file:**, в частности, блокируется. Подробнее см. в разделе [Схемы URI](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
+Использовать схемы **http:** или **https:** не обязательно. Можно использовать такие схемы, как **ms-appx:** , **ms-appdata:** или **ms-resources:** , если содержимое ресурса в этих расположениях подходит для загрузки в браузере. Однако, схема **file:** , в частности, блокируется. Подробнее см. в разделе [Схемы URI](https://docs.microsoft.com/previous-versions/windows/apps/jj655406(v=win.10)).
 
 Когда пользователь нажимает на гиперссылку, значение свойства NavigateUri передается в обработчик системы для получения типов и схем URI. После этого система запускает приложение, которое зарегистрировано для схемы URI, предоставляемой для NavigateUri.
 
@@ -125,7 +125,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 **Обработка события Click**
 
-Используйте событие Click для действий, отличных от запуска URI в браузере, например для навигации внутри приложения. Например, чтобы загрузить новую страницу приложения вместо открытия браузера, вызовите метод [Frame.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.navigate.aspx) в обработчике события Click для перехода к новой странице приложения. Чтобы внешний абсолютный URI загружался в элементе управления [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx), который также присутствует в приложении, вызовите [WebView.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.navigate.aspx) как часть логики обработчика нажатия.
+Используйте событие Click для действий, отличных от запуска URI в браузере, например для навигации внутри приложения. Например, чтобы загрузить новую страницу приложения вместо открытия браузера, вызовите метод [Frame.Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) в обработчике события Click для перехода к новой странице приложения. Чтобы внешний абсолютный URI загружался в элементе управления [WebView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview), который также присутствует в приложении, вызовите [WebView.Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigate) как часть логики обработчика нажатия.
 
 События Click обычно не обрабатываются, если указывается значение NavigateUri, поскольку они представляют два разных способа использования элемента гиперссылки. Чтобы открыть URI в браузере по умолчанию, если указано значение для NavigateUri, не обрабатывайте событие Click. И наоборот, если нужно обработать событие Click, не задавайте NavigateUri.
 
@@ -136,15 +136,15 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 **Элементы текста гиперссылки**
 
-Чтобы отключить подчеркивание, можно задать свойство [UnderlineStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.hyperlink.underlinestyle.aspx). В таком случае рассмотрите возможность использования [FontWeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontweight.aspx) или [FontStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontstyle.aspx) для выделения текста ссылки.
+Чтобы отключить подчеркивание, можно задать свойство [UnderlineStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.hyperlink.underlinestyle). В таком случае рассмотрите возможность использования [FontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement.fontweight) или [FontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement.fontstyle) для выделения текста ссылки.
 
 **HyperlinkButton** 
 
-По умолчанию элемент HyperlinkButton отображается как подчеркнутый текст, если для значения свойства [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) задать строку.
+По умолчанию элемент HyperlinkButton отображается как подчеркнутый текст, если для значения свойства [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) задать строку.
 
 Текст отображается без подчеркивания в следующих случаях.
-- В качестве значения для свойства Content указано значение [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx), а в TextBlock задано свойство [Text](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.text.aspx).
-- Шаблон HyperlinkButton и имя части шаблона [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) изменились.
+- В качестве значения для свойства Content указано значение [TextBlock](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock), а в TextBlock задано свойство [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text).
+- Шаблон HyperlinkButton и имя части шаблона [ContentPresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentpresenter) изменились.
 
 Если необходимо, чтобы кнопка отображалась как текст без подчеркивания, воспользуйтесь стандартным элементом управления Button и примените встроенный ресурс системы `TextBlockButtonStyle` к его свойству Style.
 
@@ -154,17 +154,17 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 **События ввода**
 
-Поскольку гиперссылки не являются элементами [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx), они не содержат набор событий ввода элементов пользовательского интерфейса, например Tapped, PointerPressed и т.д. Вместо этого гиперссылки содержат собственные события Click, а также неявно указанное поведение системы при загрузке какого-либо URI как элемента NavigateUri. Система обрабатывает все действия ввода, которые должны вызывать действия Hyperlink, и вызывает в ответ событие Click.
+Поскольку гиперссылки не являются элементами [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), они не содержат набор событий ввода элементов пользовательского интерфейса, например Tapped, PointerPressed и т.д. Вместо этого гиперссылки содержат собственные события Click, а также неявно указанное поведение системы при загрузке какого-либо URI как элемента NavigateUri. Система обрабатывает все действия ввода, которые должны вызывать действия Hyperlink, и вызывает в ответ событие Click.
 
 **Содержимое**
 
-Гиперссылка имеет ограничения относительно содержимого, которое существует в его коллекции [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx). В частности, гиперссылка разрешает только [Run](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) и другие типы [Span](/uwp/api/windows.ui.xaml.documents.span), которые не являются другим элементом Hyperlink. [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) не может находиться в коллекции Inlines гиперссылки. Попытка добавления содержимого с ограничениями вызовет исключение недопустимого аргумента или исключение анализа XAML.
+Гиперссылка имеет ограничения относительно содержимого, которое существует в его коллекции [Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span.inlines). В частности, гиперссылка разрешает только [Run](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.run) и другие типы [Span](/uwp/api/windows.ui.xaml.documents.span), которые не являются другим элементом Hyperlink. [InlineUIContainer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.inlineuicontainer) не может находиться в коллекции Inlines гиперссылки. Попытка добавления содержимого с ограничениями вызовет исключение недопустимого аргумента или исключение анализа XAML.
 
 **Поведение гиперссылки и темы и style**
 
-Гиперссылка не наследуется из [Control](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.aspx), поэтому она не содержит свойства [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.style.aspx) или [Template](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.template.aspx). Можно редактировать свойства, унаследованные из [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.aspx), такие как Foreground или FontFamily, чтобы изменить внешний вид гиперссылки, но нельзя использовать общий стиль или шаблон, чтобы применить изменения. Вместо шаблона используйте общие ресурсы для значений свойств гиперссылки, чтобы обеспечить согласованность. Некоторые свойства гиперссылки используют значения по умолчанию из значения расширения разметки {ThemeResource}, предоставляемого системой. Это позволяет изменять внешний вид гиперссылки, если пользователь изменяет системную тему во время выполнения.
+Гиперссылка не наследуется из [Control](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control), поэтому она не содержит свойства [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) или [Template](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template). Можно редактировать свойства, унаследованные из [TextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement), такие как Foreground или FontFamily, чтобы изменить внешний вид гиперссылки, но нельзя использовать общий стиль или шаблон, чтобы применить изменения. Вместо шаблона используйте общие ресурсы для значений свойств гиперссылки, чтобы обеспечить согласованность. Некоторые свойства гиперссылки используют значения по умолчанию из значения расширения разметки {ThemeResource}, предоставляемого системой. Это позволяет изменять внешний вид гиперссылки, если пользователь изменяет системную тему во время выполнения.
 
-По умолчанию для цвета гиперссылки используется цвет элементов системы. Для переопределения этой настройки можно использовать свойство [Foreground](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.foreground.aspx).
+По умолчанию для цвета гиперссылки используется цвет элементов системы. Для переопределения этой настройки можно использовать свойство [Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement.foreground).
 
 ## <a name="recommendations"></a>Рекомендации
 
@@ -183,5 +183,5 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 - [Рекомендации для всплывающих подсказок](tooltips.md)
 
 **Разработчикам (XAML)**
-- [Класс Windows.UI.Xaml.Documents.Hyperlink](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [Класс Windows.UI.Xaml.Controls.HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/br242739)
+- [Класс Windows.UI.Xaml.Documents.Hyperlink](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)
+- [Класс Windows.UI.Xaml.Controls.HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)

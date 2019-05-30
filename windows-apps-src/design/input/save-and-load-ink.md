@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c12e5cb7012ba9ff9a4ed383427e37b79835983
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7eb7f085c5e4daa46cfa6c256ec3938be3c13d82
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645849"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365349"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>Хранение и извлечение данных движения пера Windows Ink
 
@@ -23,17 +23,17 @@ ms.locfileid: "57645849"
 > [!NOTE]
 > Формат ISF — наиболее компактное постоянное представление рукописного ввода. Он может быть встроен в двоичный формат документа, например GIF-файл, или помещен непосредственно в буфер обмена.
 
-> **Важные API**: [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **Важные API**: [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [ **Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="save-ink-strokes-to-a-file"></a>Сохранение росчерков пера в файл
 
-Здесь мы покажем, как сохранить росчерки пера, нарисованные в элементе управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+Здесь мы покажем, как сохранить росчерки пера, нарисованные в элементе управления [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 
 **Загрузить этот образец из [сохранять и загружать штрихов рукописного ввода из файла формата сериализации рукописного ввода (ISF)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  Сначала мы настраиваем пользовательский интерфейс.
 
-    Пользовательский интерфейс включает кнопки «Сохранить», «Загрузить» и «Очистить», а также элемент [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    Пользовательский интерфейс включает кнопки «Сохранить», «Загрузить» и «Очистить», а также элемент [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -63,7 +63,7 @@ ms.locfileid: "57645849"
 
 2.  Затем мы задаем некоторые основные реакции на рукописный ввод.
 
-    Элемент [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) настраивается интерпретировать данные, вводимые пером или мышью, как росчерки пера ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), и объявляются прослушиватели для событий нажатия кнопок.
+    Элемент [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) настраивается интерпретировать данные, вводимые пером или мышью, как росчерки пера ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)), и объявляются прослушиватели для событий нажатия кнопок.
 ```csharp
 public MainPage()
     {
@@ -85,11 +85,11 @@ public MainPage()
 
 3.  Наконец, мы сохраняем рукописный ввод в обработчике событий нажатия кнопки **Сохранить**.
 
-    [  **FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) позволяет пользователю выбрать и файл, и расположение, где будут сохраняться данные рукописного ввода.
+    [  **FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) позволяет пользователю выбрать и файл, и расположение, где будут сохраняться данные рукописного ввода.
 
-    После выбора файла мы открываем поток [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731), для которого установлено значение [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635).
+    После выбора файла мы открываем поток [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream), для которого установлено значение [**ReadWrite**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode).
 
-    Затем мы вызываем [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114), чтобы сериализовать росчерки пера, управляемые элементом [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492), в поток.
+    Затем мы вызываем [**SaveAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.iinkstrokecontainer.saveasync), чтобы сериализовать росчерки пера, управляемые элементом [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer), в поток.
 
 ```csharp
 // Save ink data to a file.
@@ -155,17 +155,17 @@ public MainPage()
 ```
 
 > [!NOTE]
-> GIF — единственный поддерживаемый формат файла для сохранения данных рукописного ввода. Однако метод [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) (демонстрируемый в следующем разделе) поддерживает и дополнительные форматы для обратной совместимости.
+> GIF — единственный поддерживаемый формат файла для сохранения данных рукописного ввода. Однако метод [**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync) (демонстрируемый в следующем разделе) поддерживает и дополнительные форматы для обратной совместимости.
 
 ## <a name="load-ink-strokes-from-a-file"></a>Загрузка росчерков пера из файла
 
-Здесь мы покажем, как загрузить росчерки пера из файла и отобразить их в элементе управления [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+Здесь мы покажем, как загрузить росчерки пера из файла и отобразить их в элементе управления [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 
 **Загрузить этот образец из [сохранять и загружать штрихов рукописного ввода из файла формата сериализации рукописного ввода (ISF)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  Сначала мы настраиваем пользовательский интерфейс.
 
-    Пользовательский интерфейс включает кнопки «Сохранить», «Загрузить» и «Очистить», а также элемент [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    Пользовательский интерфейс включает кнопки «Сохранить», «Загрузить» и «Очистить», а также элемент [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -195,7 +195,7 @@ public MainPage()
 
 2.  Затем мы задаем некоторые основные реакции на рукописный ввод.
 
-    Элемент [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) настраивается интерпретировать данные, вводимые пером или мышью, как росчерки пера ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), и объявляются прослушиватели для событий нажатия кнопок.
+    Элемент [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) настраивается интерпретировать данные, вводимые пером или мышью, как росчерки пера ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)), и объявляются прослушиватели для событий нажатия кнопок.
 ```csharp
 public MainPage()
     {
@@ -217,11 +217,11 @@ public MainPage()
 
 3.  Наконец, мы загружаем рукописный ввод в обработчике событий нажатия кнопки **Загрузить**.
 
-    [  **FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) позволяет пользователю выбрать и файл, и расположение, откуда будут извлекаться сохраненные данные рукописного ввода.
+    [  **FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) позволяет пользователю выбрать и файл, и расположение, откуда будут извлекаться сохраненные данные рукописного ввода.
 
-    После выбора файла мы открываем поток [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731), для которого установлено значение [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635).
+    После выбора файла мы открываем поток [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream), для которого установлено значение [**Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode).
 
-    Затем мы вызываем [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) для чтения, десериализации и загрузки сохраненных росчерков пера в элемент [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Загрузка росчерков в элемент **InkStrokeContainer** приводит к тому, что [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) немедленно выводит их на [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    Затем мы вызываем [**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync) для чтения, десериализации и загрузки сохраненных росчерков пера в элемент [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer). Загрузка росчерков в элемент **InkStrokeContainer** приводит к тому, что [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) немедленно выводит их на [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 
     > [!NOTE]
     > Все существующие штрихи в InkStrokeContainer удаляются перед загрузкой новых.
@@ -260,7 +260,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!NOTE]
-> GIF — единственный поддерживаемый формат файла для сохранения данных рукописного ввода. Тем не менее, метод [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) поддерживает и дополнительные форматы для обратной совместимости.
+> GIF — единственный поддерживаемый формат файла для сохранения данных рукописного ввода. Тем не менее, метод [**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync) поддерживает и дополнительные форматы для обратной совместимости.
 
 | Формат                    | Описание |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -273,7 +273,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 Здесь мы покажем, как использовать буфер обмена для перемещения росчерков пера между приложениями.
 
-Чтобы обеспечить поддержку функции буфера обмена, для встроенных команд вырезания и копирования элемента [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) необходимо выбрать один или несколько росчерков пера.
+Чтобы обеспечить поддержку функции буфера обмена, для встроенных команд вырезания и копирования элемента [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) необходимо выбрать один или несколько росчерков пера.
 
 В этом примере мы добавляем возможность выбора росчерка, когда входные данные изменяются кнопкой пера (или правой кнопкой мыши). Полный пример реализации возможности выбора росчерка см. в подразделе "Передача входных данных для расширенной обработки" раздела [Взаимодействие с помощью пера](pen-and-stylus-interactions.md).
 
@@ -281,7 +281,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 1.  Сначала мы настраиваем пользовательский интерфейс.
 
-    Пользовательский интерфейс включает кнопки «Вырезать», «Копировать», «Вставить» и «Очистить», а также элемент [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) и холст выбора.
+    Пользовательский интерфейс включает кнопки «Вырезать», «Копировать», «Вставить» и «Очистить», а также элемент [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) и холст выбора.
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -317,7 +317,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 2.  Затем мы задаем некоторые основные реакции на рукописный ввод.
 
-    Элемент [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) настраивается интерпретировать данные, вводимые пером или мышью, как росчерки пера ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Кроме того, здесь объявляются прослушиватели для событий нажатия кнопок, а также событий указателя и событий росчерка для функции выбора.
+    Элемент [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) настраивается интерпретировать данные, вводимые пером или мышью, как росчерки пера ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)). Кроме того, здесь объявляются прослушиватели для событий нажатия кнопок, а также событий указателя и событий росчерка для функции выбора.
 
     Полный пример реализации возможности выбора росчерка см. в подразделе "Передача входных данных для расширенной обработки" раздела [Взаимодействие с помощью пера](pen-and-stylus-interactions.md).
 ```csharp
@@ -367,9 +367,9 @@ public MainPage()
 
 3.  Наконец, добавив поддержку возможности выбора росчерка, мы реализуем функцию буфера обмена в обработчиках событий нажатия кнопок **Вырезать**, **Копировать** и **Вставить**.
 
-    Чтобы вырезать, мы сначала вызываем [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232) в объекте [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) элемента [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
+    Чтобы вырезать, мы сначала вызываем [**CopySelectedToClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) в объекте [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) элемента [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter).
 
-    Затем мы вызываем [**DeleteSelected**](https://msdn.microsoft.com/library/windows/apps/br244233), чтобы убрать росчерки с холста рукописного ввода.
+    Затем мы вызываем [**DeleteSelected**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.deleteselected), чтобы убрать росчерки с холста рукописного ввода.
 
     Наконец, мы удаляем все росчерки выбора с холста выбора.
     
@@ -403,7 +403,7 @@ private void btnCut_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-Чтобы выполнить копирование, мы просто вызываем [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232) в объекте [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) элемента [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
+Чтобы выполнить копирование, мы просто вызываем [**CopySelectedToClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) в объекте [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) элемента [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter).
 
 
 ```csharp
@@ -413,9 +413,9 @@ private void btnCopy_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-Чтобы вставить, мы вызываем [**CanPasteFromClipboard**](https://msdn.microsoft.com/library/windows/apps/br208495) для обеспечения того, что содержимое в буфере обмена можно вставить на холст рукописного ввода.
+Чтобы вставить, мы вызываем [**CanPasteFromClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.canpastefromclipboard) для обеспечения того, что содержимое в буфере обмена можно вставить на холст рукописного ввода.
 
-Если это так, мы вызываем [**PasteFromClipboard**](https://msdn.microsoft.com/library/windows/apps/br208503), чтобы вставить росчерки пера в объект [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) элемента [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011), который затем выводит росчерки на холст рукописного ввода.
+Если это так, мы вызываем [**PasteFromClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.pastefromclipboard), чтобы вставить росчерки пера в объект [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) элемента [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter), который затем выводит росчерки на холст рукописного ввода.
 
 ```csharp
 private void btnPaste_Click(object sender, RoutedEventArgs e)

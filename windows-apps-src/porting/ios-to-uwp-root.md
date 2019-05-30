@@ -7,12 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ddcb64aed8205f18b17706e987cbd9981bb8044
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5d3f72e563f6463d55af40acae74d061b5030aa9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57655469"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371611"
 ---
 # <a name="move-from-ios-to-uwp"></a>Переход с iOS на UWP
 
@@ -30,8 +30,8 @@ ms.locfileid: "57655469"
 | [Начало работы с универсальной платформы Windows для разработчиков iOS](getting-started-with-uwp-for-ios-developers.md) | Если вы являетесь разработчиком приложений iOS и планируете разрабатывать приложения для Windows 10, то данные документы послужат отличной отправной точкой. |
 | [Настройка Mac с Windows 10](setting-up-your-mac-with-windows-10.md) | Использование компьютера Mac для разработки приложений для Windows. |
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 **Для дизайнеров и разработчиков**
 * [Создание приложений Windows универсальные для всех устройств Windows](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [Скачать материалы для разработки для приложений UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+* [Скачать материалы для разработки для приложений UWP](https://dev.windows.com/design/assets)

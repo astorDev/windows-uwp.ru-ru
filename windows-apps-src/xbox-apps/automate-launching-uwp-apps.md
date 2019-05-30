@@ -4,12 +4,12 @@ description: Разработчики могут использовать акт
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: fb68b4bbd1b751591e9f336efe5dad3c22b3bf92
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f61fcfcef549295b8f3c9004572a74043a2917a2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618309"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365828"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>Автоматизация запуска приложений UWP для Windows 10
 
@@ -48,7 +48,7 @@ ms.locfileid: "57618309"
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-Объект Uri содержит методы анализа строки URI в этом формате. Дополнительные сведения см. в разделе [Класс Uri (MSDN)](https://msdn.microsoft.com/library/windows/apps/windows.foundation.uri.aspx). 
+Объект Uri содержит методы анализа строки URI в этом формате. Дополнительные сведения см. в разделе [Класс Uri (MSDN)](https://docs.microsoft.com/uwp/api/windows.foundation.uri). 
 
 Примеры
 

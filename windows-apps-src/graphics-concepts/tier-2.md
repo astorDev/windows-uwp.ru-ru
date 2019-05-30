@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f9f9a69c0e30459929d1e31084ea88b3f7ebbd0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c48b02de34bd37acced8ef65859708f31fd78ca2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612889"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370862"
 ---
 # <a name="tier-2"></a>Уровень 2
 
@@ -42,7 +42,7 @@ ms.locfileid: "57612889"
 
 Фильтрация текстур, затрагивающая одновременно плитки с сопоставлением **NULL** и отличным от **NULL** вносит 0 (и значения по умолчанию для отсутствующих компонентов формата) для текселей на плитках **NULL** в общей операции фильтрации. Некоторое раннее оборудование не соответствует этому требованию и возвращает значение 0 (и значение по умолчанию для отсутствующих компонентов формата) для всего результата фильтрации если любые тексели (с ненулевым весом) попадают на плитку **NULL**. Другому оборудованию запрещено не выполнять требование включать все тексели с ненулевым весом в операцию фильтрации.
 
-Обращение к текселям **NULL** приводит к тому, что операция [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) при чтении информации о состоянии текстуры возвращает значение false. Это происходит независимо от того, как результат доступа к текстуре маскируется в шейдере и сколько компонентов включено в формат текстуры (сочетание этих факторов может привести к тому, что в доступе к текстуре нет необходимости).
+Обращение к текселям **NULL** приводит к тому, что операция [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) при чтении информации о состоянии текстуры возвращает значение false. Это происходит независимо от того, как результат доступа к текстуре маскируется в шейдере и сколько компонентов включено в формат текстуры (сочетание этих факторов может привести к тому, что в доступе к текстуре нет необходимости).
 
 ## <a name="span-idalignmentconstraintsspanspan-idalignmentconstraintsspanspan-idalignmentconstraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>Ограничения выравнивания
 

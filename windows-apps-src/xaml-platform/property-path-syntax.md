@@ -6,29 +6,29 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f0f49792a92010f97c8388540fd63c38eed5f75e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 63656fc545596fc045dc536167313c0c8e3f6ad2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632369"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371162"
 ---
 # <a name="property-path-syntax"></a>Синтаксис Property-path
 
 
-Класс [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) и синтаксис строки можно использовать для создания экземпляра значения **PropertyPath** в XAML или в коде. Значения **PropertyPath** используются при привязке данных. Похожий синтаксис используется для нацеливания на анимации раскадровки. В обоих сценариях путь к свойству описывает обход одной или нескольких связей "объект-свойство", которые в конечном счете становятся одним свойством.
+Класс [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) и синтаксис строки можно использовать для создания экземпляра значения **PropertyPath** в XAML или в коде. Значения **PropertyPath** используются при привязке данных. Похожий синтаксис используется для нацеливания на анимации раскадровки. В обоих сценариях путь к свойству описывает обход одной или нескольких связей "объект-свойство", которые в конечном счете становятся одним свойством.
 
-Строку пути к свойству можно задать непосредственно для атрибута в XAML. Тот же синтаксис строки можно использовать для создания [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259), который задает [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) в коде, или для задания цели анимации в коде с помощью [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503). В среде выполнения Windows существуют две отдельные функциональные области, в которых используется путь к свойству: привязка данных и нацеливание на анимацию. При нацеливании на анимацию не создаются базовые значения Синтаксис Property-path в реализации среды выполнения Windows, информация хранится в виде строки, однако принципы обхода «объект-свойство» очень похожи. Во время привязки данных и нацеливания на анимацию путь к свойству оценивается немного по-разному, поэтому ниже приводится описание синтаксиса пути к свойству для обоих случаев.
+Строку пути к свойству можно задать непосредственно для атрибута в XAML. Тот же синтаксис строки можно использовать для создания [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath), который задает [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) в коде, или для задания цели анимации в коде с помощью [**SetTargetProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.settargetproperty). В среде выполнения Windows существуют две отдельные функциональные области, в которых используется путь к свойству: привязка данных и нацеливание на анимацию. При нацеливании на анимацию не создаются базовые значения Синтаксис Property-path в реализации среды выполнения Windows, информация хранится в виде строки, однако принципы обхода «объект-свойство» очень похожи. Во время привязки данных и нацеливания на анимацию путь к свойству оценивается немного по-разному, поэтому ниже приводится описание синтаксиса пути к свойству для обоих случаев.
 
 ## <a name="property-path-for-objects-in-data-binding"></a>Путь к свойству для объектов при привязке данных
 
 В среде выполнения Windows можно выполнить привязку к целевому значению любого свойства зависимостей. Исходное значение свойства для привязки данных необязательно должно быть свойством зависимостей; оно может быть свойством в бизнес-объекте (например, классом, написанным на Microsoft .NET или C++). Либо исходный объект для значения привязки может быть существующим объектом зависимостей, уже определенным приложением. На источник можно ссылаться с помощью простого имени свойства или обхода связей «объект-свойство» в графе бизнес-объекта.
 
-Можно выполнить привязку к отдельному значению свойства или к целевому свойству, в котором содержатся списки или коллекции. Если источником является коллекция или если путь указывает свойство коллекции, механизм привязки данных сопоставляет элементы коллекции источника с целевым объектом привязки, что приводит к такой реакции на событие, как заполнение [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) списком элементов из коллекции источника данных без ожидания конкретных элементов в этой коллекции.
+Можно выполнить привязку к отдельному значению свойства или к целевому свойству, в котором содержатся списки или коллекции. Если источником является коллекция или если путь указывает свойство коллекции, механизм привязки данных сопоставляет элементы коллекции источника с целевым объектом привязки, что приводит к такой реакции на событие, как заполнение [**ListBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox) списком элементов из коллекции источника данных без ожидания конкретных элементов в этой коллекции.
 
 ### <a name="traversing-an-object-graph"></a>Обход графа объекта
 
-Элементом синтаксиса, который обозначает обход связи «объект-свойство» в графе объекта, является символ точки (**.**). Каждая точка в строке пути к свойству обозначает разделение объекта (слева от точки) и свойства этого объекта (справа от точки). Строка проверяется слева направо, что позволяет переходить по нескольким связям "объект-свойство". Рассмотрим пример.
+Элементом синтаксиса, который обозначает обход связи «объект-свойство» в графе объекта, является символ точки ( **.** ). Каждая точка в строке пути к свойству обозначает разделение объекта (слева от точки) и свойства этого объекта (справа от точки). Строка проверяется слева направо, что позволяет переходить по нескольким связям "объект-свойство". Рассмотрим пример.
 
 ``` syntax
 "{Binding Path=Customer.Address.StreetAddress1}"
@@ -36,7 +36,7 @@ ms.locfileid: "57632369"
 
 Вот как оценивается этот путь.
 
-1.  В объекте контекста данных (или объекте [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832), указанном тем же классом [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)) осуществляется поиск свойства с именем Customer.
+1.  В объекте контекста данных (или объекте [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.source), указанном тем же классом [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)) осуществляется поиск свойства с именем Customer.
 2.  В объекте, который является значением свойства Customer, осуществляется поиск свойства с именем Address.
 3.  В объекте, который является значением свойства Address, осуществляется поиск свойства с именем StreetAddress1.
 
@@ -46,7 +46,7 @@ ms.locfileid: "57632369"
 
 -   Все свойства, на которые ссылается путь к свойству, должны быть общедоступными в исходном бизнес-объекте.
 -   Конечное свойство (свойство, которое является последним именованным свойством в пути) должно быть общедоступным и изменяемым; невозможно привязать статические значения.
--   Конечное свойство должно быть доступно для чтения и записи, если этот путь используется в качестве сведений [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) для двусторонней привязки.
+-   Конечное свойство должно быть доступно для чтения и записи, если этот путь используется в качестве сведений [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) для двусторонней привязки.
 
 ### <a name="indexers"></a>Индексаторы
 
@@ -54,11 +54,11 @@ ms.locfileid: "57632369"
 
 Например, рассмотрим бизнес-объект, в котором имеется список Teams (упорядоченный список), у каждого элемента которого имеется словарь Players, в котором каждый игрок определен по фамилии. Путь свойства конкретного проигрыватель второй группы является: «Команды\[1\]. Проигрыватели\[Смит\]«. (Для указания второго элемента в Teams используется значение 1, поскольку список индексирован с нуля.)
 
-**Примечание**  поддержка индексирования для источников данных C++ ограничена; см. в разделе [привязки данных в глубину](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Примечание**  поддержка индексирования для источников данных C++ ограничена; см. в разделе [привязки данных в глубину](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
 
-### <a name="attached-properties"></a>Присоединенные свойства
+### <a name="attached-properties"></a>Вложенные свойства
 
-Пути к свойствам могут включать ссылки на присоединенные свойства. Поскольку определяющее имя присоединенного свойства уже включает точку, любое имя присоединенного свойства необходимо заключить в круглые скобки, чтобы точка не рассматривалась как этап "объект-свойство". Например, строка, указывающая, что необходимо использовать [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) в качестве пути привязки, будет выглядеть так: «(Canvas.ZIndex)». Дополнительные сведения о присоединенных свойствах см. в разделе [Общие сведения о присоединенных свойствах](attached-properties-overview.md).
+Пути к свойствам могут включать ссылки на присоединенные свойства. Поскольку определяющее имя присоединенного свойства уже включает точку, любое имя присоединенного свойства необходимо заключить в круглые скобки, чтобы точка не рассматривалась как этап "объект-свойство". Например, строка, указывающая, что необходимо использовать [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)) в качестве пути привязки, будет выглядеть так: «(Canvas.ZIndex)». Дополнительные сведения о присоединенных свойствах см. в разделе [Общие сведения о присоединенных свойствах](attached-properties-overview.md).
 
 ### <a name="combining-property-path-syntax"></a>Объединение синтаксиса пути к свойству
 
@@ -70,52 +70,52 @@ ms.locfileid: "57632369"
 
 ## <a name="property-path-for-animation-targeting"></a>Путь к свойству для нацеливания на анимацию
 
-Анимации используют нацеливание на свойство зависимостей, в котором значения раскадровки применяются при запуске анимации. Чтобы определить объект, в котором существует свойство, подлежащее анимированию, анимация нацеливается на элемент по имени ([Атрибут x:Name](x-name-attribute.md)). Часто необходимо определить путь к свойству, который начинается с объекта, определенного как [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823), и заканчивается определенным значением свойства зависимостей, в котором должна применяться анимация. Этот путь к свойству используется в качестве значения для [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/hh759824).
+Анимации используют нацеливание на свойство зависимостей, в котором значения раскадровки применяются при запуске анимации. Чтобы определить объект, в котором существует свойство, подлежащее анимированию, анимация нацеливается на элемент по имени ([Атрибут x:Name](x-name-attribute.md)). Часто необходимо определить путь к свойству, который начинается с объекта, определенного как [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8), и заканчивается определенным значением свойства зависимостей, в котором должна применяться анимация. Этот путь к свойству используется в качестве значения для [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)).
 
-Подробнее о том, как задать анимацию в XAML, см. [Раскадровка анимации](https://msdn.microsoft.com/library/windows/apps/mt187354).
+Подробнее о том, как задать анимацию в XAML, см. [Раскадровка анимации](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
 
 ## <a name="simple-targeting"></a>Простое нацеливание
 
-Если анимируется свойство, существующее в самом целевом объекте, и к типу этого свойства можно напрямую применить анимацию (а не к подсвойству значения свойства), можно просто присвоить имя свойству, которое анимируется, без дальнейшей квалификации. Например, если целью является подкласс [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape), такой как [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), и применяется анимированный [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) к свойству [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill), путь к свойству может быть «Fill».
+Если анимируется свойство, существующее в самом целевом объекте, и к типу этого свойства можно напрямую применить анимацию (а не к подсвойству значения свойства), можно просто присвоить имя свойству, которое анимируется, без дальнейшей квалификации. Например, если целью является подкласс [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape), такой как [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), и применяется анимированный [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) к свойству [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill), путь к свойству может быть «Fill».
 
 ## <a name="indirect-property-targeting"></a>Непрямое нацеливание на свойство
 
-Можно анимировать свойство, которое является подсвойством целевого объекта. Другими словами, если существует свойство целевого объекта, которое само является объектом, и этот объект имеет свойства, необходимо определить путь к свойству, который будет объяснять последовательность связей "объект-свойство". При каждом указании объекта, в котором требуется анимировать подсвойство, необходимо заключать имя свойства в круглые скобки и указывать свойство в формате *typename*.*propertyname*. Например, чтобы указать, что требуется значение объекта свойства [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) целевого объекта, необходимо указать (UIElement.RenderTransform) в качестве первого этапа пути к свойству. Это еще не полный путь, поскольку отсутствуют анимации, которые можно применить к значению [**Transform**](https://msdn.microsoft.com/library/windows/apps/br243006) напрямую. Таким образом, в этом примере необходимо завершить путь к свойству так, чтобы конечное свойство было свойством подкласса **Transform**, который можно анимировать с помощью значения **Double**: (UIElement.RenderTransform).(CompositeTransform.TranslateX)
+Можно анимировать свойство, которое является подсвойством целевого объекта. Другими словами, если существует свойство целевого объекта, которое само является объектом, и этот объект имеет свойства, необходимо определить путь к свойству, который будет объяснять последовательность связей "объект-свойство". При каждом указании объекта, в котором требуется анимировать подсвойство, необходимо заключать имя свойства в круглые скобки и указывать свойство в формате *typename*.*propertyname*. Например, чтобы указать, что требуется значение объекта свойства [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) целевого объекта, необходимо указать (UIElement.RenderTransform) в качестве первого этапа пути к свойству. Это еще не полный путь, поскольку отсутствуют анимации, которые можно применить к значению [**Transform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Transform) напрямую. Таким образом, в этом примере необходимо завершить путь к свойству так, чтобы конечное свойство было свойством подкласса **Transform**, который можно анимировать с помощью значения **Double**: (UIElement.RenderTransform).(CompositeTransform.TranslateX)
 
 ## <a name="specifying-a-particular-child-in-a-collection"></a>Указание определенного дочернего элемента в коллекции
 
 Чтобы указать дочерний элемент в свойстве коллекции, можно использовать числовой индексатор. Используйте квадратные скобки "\[\]" символы целочисленное значение индекса. Можно ссылаться только на упорядоченные списки; на словари ссылаться нельзя. Поскольку коллекция не является значением, которое можно анимировать, использование индексатора не может быть конечным свойством в пути к свойству.
 
-Например, чтобы указать, что вы хотите анимировать первый цвет остановить цвет в [ **LinearGradientBrush** ](https://msdn.microsoft.com/library/windows/apps/br210108) , применяемый к элементу управления [ **фона** ](https://msdn.microsoft.com/library/windows/apps/br209395) свойство, это путь к свойству: «(Control.Background). (GradientBrush.GradientStops) \[0\]. () GradientStop.Color)». Обратите внимание, что индексатор не является последним этапом в пути и что последний этап в особенности должен ссылаться на свойство [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) элемента 0 в коллекции, чтобы применить к нему анимированное значение [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723).
+Например, чтобы указать, что вы хотите анимировать первый цвет остановить цвет в [ **LinearGradientBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) , применяемый к элементу управления [ **фона** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background) свойство, это путь к свойству: «(Control.Background). (GradientBrush.GradientStops) \[0\]. () GradientStop.Color)». Обратите внимание, что индексатор не является последним этапом в пути и что последний этап в особенности должен ссылаться на свойство [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) элемента 0 в коллекции, чтобы применить к нему анимированное значение [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color).
 
 ## <a name="animating-an-attached-property"></a>Анимирование присоединенного свойства
 
-Это не частый сценарий, но присоединенное свойство можно анимировать, при условии, что оно имеет значение свойства, которое соответствует типу анимации. Поскольку определяющее имя присоединенного свойства уже включает точку, любое имя присоединенного свойства необходимо заключить в круглые скобки, чтобы точка не рассматривалась как этап "объект-свойство". Например, чтобы указать, что требуется анимировать присоединенное свойство [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) в объекте, используйте путь к свойству (Grid.Row).
+Это не частый сценарий, но присоединенное свойство можно анимировать, при условии, что оно имеет значение свойства, которое соответствует типу анимации. Поскольку определяющее имя присоединенного свойства уже включает точку, любое имя присоединенного свойства необходимо заключить в круглые скобки, чтобы точка не рассматривалась как этап "объект-свойство". Например, чтобы указать, что требуется анимировать присоединенное свойство [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) в объекте, используйте путь к свойству (Grid.Row).
 
-**Примечание**  в этом примере значение [ **Grid.Row** ](https://msdn.microsoft.com/library/windows/apps/hh759795) — **Int32** тип свойства. Его невозможно анимировать с помощью анимации **Double**. Вместо этого необходимо определить [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) с компонентами [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132), где для [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) задано целое число, например 0 или 1.
+**Примечание**  в этом примере значение [ **Grid.Row** ](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) — **Int32** тип свойства. Его невозможно анимировать с помощью анимации **Double**. Вместо этого необходимо определить [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) с компонентами [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame), где для [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) задано целое число, например 0 или 1.
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>Правила для свойств в пути к свойству нацеливания на анимацию
 
--   Предполагаемой начальной точкой пути к свойству является объект, определенный [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823).
+-   Предполагаемой начальной точкой пути к свойству является объект, определенный [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8).
 -   Все объекты и свойства, на которые имеются ссылки, а также путь к свойству должны быть общедоступными.
 -   Конечное свойство (свойство, которое является последним именованным свойством в пути) должно быть общедоступным, доступным для чтения и записи, а также являться свойством зависимостей.
--   Конечное свойство должно иметь тип, который можно анимировать с помощью одного из множества классов типов анимации (анимации [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723), анимации **Double**, анимации [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)).
+-   Конечное свойство должно иметь тип, который можно анимировать с помощью одного из множества классов типов анимации (анимации [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color), анимации **Double**, анимации [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)).
 
 ## <a name="the-propertypath-class"></a>Класс PropertyPath
 
-Класс [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) является базовым типом свойства [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) для сценария привязки.
+Класс [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) является базовым типом свойства [**Binding.Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) для сценария привязки.
 
-В большинстве случаев [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) можно применить в XAML, вообще не используя код. Но в некоторых случаях может потребоваться определить объект **PropertyPath** с помощью кода и назначить его свойству во время выполнения.
+В большинстве случаев [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) можно применить в XAML, вообще не используя код. Но в некоторых случаях может потребоваться определить объект **PropertyPath** с помощью кода и назначить его свойству во время выполнения.
 
-[**PropertyPath** ](https://msdn.microsoft.com/library/windows/apps/br244259) имеет [ **PropertyPath(String)** ](https://msdn.microsoft.com/library/windows/apps/br244261) конструктор и не имеет конструктора по умолчанию. Строка, передаваемая в этот конструктор, является строкой, которая определена с помощью синтаксиса пути к свойству, как указано ранее. Это также та же строка, которая может использоваться для назначения [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) в качестве атрибута XAML. Единственным отличным API класса **PropertyPath** является свойство [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260), которое доступно только для чтения. Это свойство можно использовать в качестве строки конструктора для другого экземпляра **PropertyPath**.
+[**PropertyPath** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) имеет [ **PropertyPath(String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.) конструктор и не имеет конструктора по умолчанию. Строка, передаваемая в этот конструктор, является строкой, которая определена с помощью синтаксиса пути к свойству, как указано ранее. Это также та же строка, которая может использоваться для назначения [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) в качестве атрибута XAML. Единственным отличным API класса **PropertyPath** является свойство [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path), которое доступно только для чтения. Это свойство можно использовать в качестве строки конструктора для другого экземпляра **PropertyPath**.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
-* [Подробно о привязке данных](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [Выполнена его раскадровка анимации](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [Подробно о привязке данных](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
+* [Выполнена его раскадровка анимации](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
 * [Расширение разметки {binding}](binding-markup-extension.md)
-* [**propertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
-* [**Привязки**](https://msdn.microsoft.com/library/windows/apps/br209820)
-* [**Конструктор привязки**](https://msdn.microsoft.com/library/windows/apps/br209825)
-* [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
+* [**propertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)
+* [**Привязки**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
+* [**Конструктор привязки**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.)
+* [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)
 
