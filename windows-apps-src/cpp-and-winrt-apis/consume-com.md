@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, standard, c ++, cpp, winrt, COM, компонента, класс, интерфейс
 ms.localizationpriority: medium
-ms.openlocfilehash: dc4acd288496d83d5d91f1bdf206be19fe2fbb06
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2c36c7b896b4d08240f08e85570110b45e0a9f3c
+ms.sourcegitcommit: ba24a6237355119ef3e36687417f390c8722bd67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361149"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66421260"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Использование COM-компонентов с помощью C++/WinRT
 
@@ -171,6 +171,8 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 Если вы хотите собрать и запустить этот образец исходного кода, а затем во-первых, в Visual Studio, создать новый **приложения Core (C++/WinRT)** . `Direct2D` является разумным имя для проекта, но можно присвоить файлу имя, но следует. Откройте `App.cpp`, удалить все его содержимое и вставьте в списке ниже.
 
+Приведенный ниже код использует [winrt::com_ptr::capture функция](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) где это возможно.
+
 ```cppwinrt
 #include "pch.h"
 #include <d2d1_1.h>
@@ -263,7 +265,7 @@ namespace
         winrt::check_hresult(dxdevice->GetAdapter(adapter.put()));
 
         winrt::com_ptr<IDXGIFactory2> factory;
-        winrt::check_hresult(adapter->GetParent(__uuidof(factory), factory.put_void()));
+        factory.capture(adapter, &IDXGIAdapter::GetParent);
         return factory;
     }
 
@@ -275,7 +277,7 @@ namespace
         WINRT_ASSERT(target);
 
         winrt::com_ptr<IDXGISurface> surface;
-        winrt::check_hresult(swapchain->GetBuffer(0, __uuidof(surface), surface.put_void()));
+        surface.capture(swapchain, &IDXGISwapChain1::GetBuffer, 0);
 
         D2D1_BITMAP_PROPERTIES1 const props{ D2D1::BitmapProperties1(
             D2D1_BITMAP_OPTIONS_TARGET | D2D1_BITMAP_OPTIONS_CANNOT_DRAW,
@@ -483,7 +485,9 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="working-with-com-types-such-as-bstr-and-variant"></a>Работа с COM-типы, такие как BSTR и VARIANT
 
-Как вы видите, C++/WinRT предоставляет поддержку для реализации и вызов COM-интерфейсов. Для использования COM-типы, такие как BSTR и VARIANT, всегда есть возможность использовать их в их исходном виде (а также соответствующие API-интерфейсы). Кроме того, можно использовать оболочек, предоставляемых платформой, такие как [Active Template Library (ATL)](/cpp/atl/active-template-library-atl-concepts), или с помощью компилятора Visual C++ [поддержки модели COM](/cpp/cpp/compiler-com-support), и даже собственных оболочек.
+Как вы видите, C++/WinRT предоставляет поддержку для реализации и вызов COM-интерфейсов. Для использования COM-типы, такие как BSTR и VARIANT, мы рекомендуем использовать оболочек, предоставляемых [библиотеки реализации Windows (ТАМ)](https://github.com/Microsoft/wil), такие как **wil::unique_bstr** и **wil::unique_ Variant** (Управление временем существования ресурсов).
+
+[Будут Получены](https://github.com/Microsoft/wil) заменяет платформы, например Active Template Library (ATL) и визуальный C++ поддержка COM компилятора. И мы рекомендуем по написания собственных оболочек, или с помощью COM-типы, такие как BSTR и VARIANT в их исходном виде (а также соответствующие API-интерфейсы).
 
 ## <a name="important-apis"></a>Важные API
 * [winrt::check_hresult function](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
