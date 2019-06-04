@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 291c16d14428f8c6476b12fbadf00f84c26a4235
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 814d8c04943e32ff4d2f0c81bd847e78becd5ebb
+ms.sourcegitcommit: a4fe508e62827a10471e2359e81e82132dc2ac5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359483"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66468328"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Интеграция упакованные приложения рабочего стола с Windows 10 и UWP
 
@@ -465,6 +465,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 * [Показать содержимое файла в области просмотра проводника](#preview)
 * [Разрешить пользователям проходить группу файлов с помощью типа столбца в проводнике](#enable)
 * [Доступность свойств файла для поиска, индекс, диалоговые окна свойств и в области сведений](#make-file-properties)
+* [Укажите обработчик контекстного меню типов файлов](#context-menu)
 * [Предоставить файлы из облачной службы в проводнике](#cloud-files)
 
 <a id="define" />
@@ -784,6 +785,104 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
             <desktop2:DesktopPropertyHandler Clsid ="20000000-0000-0000-0000-000000000001"/>
           </uap3:FileTypeAssociation>
         </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+```
+
+<a id="context-menu" />
+
+### <a name="specify-a-context-menu-handler-for-a-file-type"></a>Укажите обработчик контекстного меню типов файлов
+
+Если приложение рабочего стола определяет [обработчик контекстного меню](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers), с помощью этого расширения для регистрации обработчика меню.
+
+#### <a name="xml-namespaces"></a>Пространства имен XML
+
+* http://schemas.microsoft.com/appx/manifest/foundation/windows10
+* http://schemas.microsoft.com/appx/manifest/desktop/windows10/4
+
+#### <a name="elements-and-attributes-of-this-extension"></a>Элементы и атрибуты этого расширения
+
+```XML
+<Extensions>
+    <com:Extension Category="windows.comServer">
+        <com:ComServer>
+            <com:SurrogateServer AppId="[AppID]" DisplayName="[DisplayName]">
+                <com:Class Id="[Clsid]" Path="[Path]" ThreadingModel="[Model]"/>
+            </com:SurrogateServer>
+        </com:ComServer>
+    </com:Extension>
+    <desktop4:Extension Category="windows.fileExplorerContextMenus">
+        <desktop4:FileExplorerContextMenus>
+            <desktop4:ItemType Type="[Type]">
+                <desktop4:Verb Id="[ID]" Clsid="[Clsid]" />
+            </desktop4:ItemType>
+        </desktop4:FileExplorerContextMenus>
+    </desktop4:Extension>
+</Extensions>
+```
+
+Поиск ссылки полная схема здесь: [com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) и [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus).
+
+#### <a name="instructions"></a>Инструкция
+
+Чтобы зарегистрировать ваш обработчик контекстного меню, выполните следующие действия.
+
+1. В приложении рабочего стола, реализовать [обработчик контекстного меню](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers) путем реализации [IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) или [IExplorerCommandState](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) интерфейс. Пример, см. в разделе [ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) пример кода. Убедитесь, что вами идентификатора GUID класса для каждого из объектов реализации. Например, следующий код определяет идентификатор класса для реализации [IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand).
+
+    ```cpp
+    class __declspec(uuid("d0c8bceb-28eb-49ae-bc68-454ae84d6264")) CExplorerCommandVerb;
+    ```
+
+2. В манифесте пакета, укажите [com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) расширение приложения, которое регистрирует COM-сервера символов-заместителей в идентификатор класса для реализации обработчика контекстного меню.
+
+    ```xml
+    <com:Extension Category="windows.comServer">
+        <com:ComServer>
+            <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler">
+                <com:Class Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+            </com:SurrogateServer>
+        </com:ComServer>
+    </com:Extension>
+    ```
+
+2. В манифесте пакета, укажите [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) расширение приложения, которое регистрирует свою реализацию обработчика контекстного меню.
+
+    ```xml
+    <desktop4:Extension Category="windows.fileExplorerContextMenus">
+        <desktop4:FileExplorerContextMenus>
+            <desktop4:ItemType Type=".rar">
+                <desktop4:Verb Id="Command1" Clsid="d0c8bceb-28eb-49ae-bc68-454ae84d6264" />
+            </desktop4:ItemType>
+        </desktop4:FileExplorerContextMenus>
+    </desktop4:Extension>
+    ```
+
+#### <a name="example"></a>Пример
+
+```XML
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"
+  IgnorableNamespaces="desktop4">
+  <Applications>
+    <Application>
+      <Extensions>
+        <com:Extension Category="windows.comServer">
+          <com:ComServer>
+            <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler"">
+              <com:Class Id="Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+            </com:SurrogateServer>
+          </com:ComServer>
+        </com:Extension>
+        <desktop4:Extension Category="windows.fileExplorerContextMenus">
+          <desktop4:FileExplorerContextMenus>
+            <desktop4:ItemType Type=".contoso">
+              <desktop4:Verb Id="Command1" Clsid="d0c8bceb-28eb-49ae-bc68-454ae84d6264" />
+            </desktop4:ItemType>
+          </desktop4:FileExplorerContextMenus>
+        </desktop4:Extension>
       </Extensions>
     </Application>
   </Applications>

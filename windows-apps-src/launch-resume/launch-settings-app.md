@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1a0c632089c8c4cf84ecf6df99935671423b51a6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d720b256ae528192d694f98877126a6df087a18e
+ms.sourcegitcommit: 26bd7953ee5c5e625d4ed8f93df0391511c76f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370808"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491137"
 ---
 # <a name="launch-the-windows-settings-app"></a>Запуск приложения "Параметры" для Windows
 
@@ -274,7 +274,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | Описание | ms-settings:about |
 | Дополнительные параметры экрана | ms-settings:display-advanced (доступно только на устройствах, поддерживающих расширенные параметры отображения) |
-| Приложения установки для тома и устройства | MS-параметры: приложения-том |
+| Приложения установки для тома и устройства | MS-параметры: приложения-volume (**добавлен в Windows 10, версия 1903**)|
 | Экономия заряда аккумулятора | ms-settings:batterysaver (доступно только на устройствах с аккумулятором, таких как планшет) |
 | Параметры экономии заряда | ms-settings:batterysaver-settings (доступно только на устройствах с аккумулятором, таких как планшет) |
 | Использование аккумулятора | ms-settings:batterysaver-usagedetails (доступно только на устройствах с аккумулятором, таких как планшет) |

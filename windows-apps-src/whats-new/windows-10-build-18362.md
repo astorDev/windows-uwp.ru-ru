@@ -1,0 +1,110 @@
+---
+title: Что нового в Windows 10 для разработчиков
+description: Windows 10 сборки 18362 и новые средства разработчика предоставляют средства, функции и возможности на базе универсальной платформы Windows.
+keywords: новые возможности, что нового, обновления, обновлений, функции, новые, последние, разработчики Windows 10, 18362, может
+ms.date: 04/19/2019
+ms.topic: article
+ms.localizationpriority: medium
+ms.custom: 19H1
+ms.openlocfilehash: 935d7f787d0cc23965c0fd51747b7687adb80a3f
+ms.sourcegitcommit: a4fe508e62827a10471e2359e81e82132dc2ac5a
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66468312"
+---
+# <a name="whats-new-in-windows-10-for-developers-build-18362"></a>Новые возможности в Windows 10 для разработчиков, сборки 18362
+
+Windows 10 сборки 18362 (также известный как пакет SDK версии 1903), в сочетании с Visual Studio 2019 г., предоставляет средства, функции и интерфейс, чтобы сделать уникальной приложения Windows. [Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+
+В этом разделе приводится подборка новых и улучшенных функций этого выпуска, а также руководств, представляющих интерес для разработчиков. Полный список новых пространств имен, добавляемые в пакет Windows SDK, см. в разделе [18362 изменения API построения Windows 10](windows-10-build-18362-api-diff.md). Дополнительные сведения об основных функциях Windows 10 см. в разделе [Потрясающие возможности Windows 10](https://go.microsoft.com/fwlink/?LinkId=823181).
+
+## <a name="design--ui"></a>Оформление и пользовательский интерфейс
+
+Компонент | Описание
+:------ | :------
+AnimatedVisualPlayer | [AnimatedVisualPlayer](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.animatedvisualplayer) API размещает и управляет воспроизведением файла анимированных визуальных элементов в приложении. Этот API используется для управления и отображения содержимого, например [Lottie](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie) визуальных элементов, которые позволяют отрисовка анимации Adobe AfterEffects, скомпилированных в собственном коде в ваших приложениях.
+CompactDensity | Включение [компактный режим](../design/style/spacing.md) в приложении обеспечивает высокую плотность, содержательные групп элементов управления. Это может помочь в просмотре больших объемов содержимого, увеличения видимого содержимого на странице, или способствовать навигации и взаимодействие, при использовании указателя ввода.
+Элемент управления Repeater элементы | [ItemsRepeater](../design/controls-and-patterns/items-repeater.md) управления можно существо пользовательский интерфейс для отображения коллекции для пользователей. ItemsRepeater не предоставляет комплексное взаимодействии или значение по умолчанию пользовательского интерфейса. Вместо этого это стандартного блока, который можно использовать для создания собственных уникальных приложений на базе веб-коллекции и пользовательских элементов управления.
+Совет по обучению | Объект [преподаванием совет](../design/controls-and-patterns/dialogs-and-flyouts/teaching-tip.md) является частично постоянные и мультимедийного всплывающего меню, предоставляющий контекстную информацию. Можно использовать этот элемент управления о том, о том, и обучение пользователей о новых и важных возможностях.
+Система команд пользовательского интерфейса | С помощью [команд в приложениях универсальной платформы Windows](../design/controls-and-patterns/commanding.md), использовать [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) и [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) классы (а также интерфейс ICommand) для совместного использования и Управление командами между различными типы, независимо от используемого типа устройства и входных данных для элементов управления.
+Библиотека пользовательского интерфейса Windows | Официальный последнюю версию библиотеки пользовательского интерфейса Windows – [WinUI 2.1](https://docs.microsoft.com/uwp/toolkits/winui/release-notes/winui-2.1) — предоставляет активное новые элементы управления XAML для вашего приложения Windows. API-интерфейсы библиотеки WinUI работают в предыдущих версиях Windows 10, поэтому для обеспечения поддержки пользователей, использующих не последние версии ОС, не обязательно добавлять процедуру проверки версии или условный XAML.
+Визуальном уровне в приложениях для настольных систем | Теперь вы можете [использовать UWP визуальном уровне API-интерфейсы в настольных приложениях](../composition/visual-layer-in-desktop-apps.md). Эти API-интерфейсы API переобучения режим высокой производительности, обеспечения графики, эффекты и анимация и являются основой для пользовательского интерфейса на устройствах Windows.
+Глубина трехмерной сцены и тени | Используйте [Z-depth и тень](../design/layout/depth-shadow.md) Создание повышение прав в приложения универсальной платформы Windows. Это новые возможности позволяет пользовательского интерфейса приложения было удобнее проверять, и лучше отражает пользователям сосредоточиться на важных.
+
+## <a name="develop-windows-apps"></a>Разработка приложений для Windows
+
+Компонент | Описание
+:------ | :------
+Интерфейс на наличие вредоносных программ (AMSI) | Узнайте, [как интерфейс сканирования защиты от вредоносных программ (AMSI) помогает защита от вредоносных программ](https://docs.microsoft.com/windows/desktop/amsi/how-amsi-helps), Добро пожаловать в [пример кода](https://docs.microsoft.com/windows/desktop/amsi/dev-audience) вы научитесь реализовать его в свое приложение.
+C++/WinRT 2.0 | Версия 2.0 C++/выпустила WinRT. Ознакомьтесь с [новые возможности C++/WinRT](../cpp-and-winrt-apis/news.md) для полный перечень всех новых изменений и добавлений.
+Выбор платформы | Вы заинтересованы в создании новых настольных приложений? Ознакомьтесь с нашей переработанной [выберите платформу](https://docs.microsoft.com/windows/desktop/choose-your-technology) страницы подробное описание и сравнение платформы UWP, WPF и Windows Forms и Дополнительные сведения об интерфейсе API Win32.
+Грамматики голосового управления агента | [Windows.ApplicationModel.ConversationalAgent](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent) пространства имен служит для добавления цифровых помощи поддерживается платформой Windows агент активации среды выполнения (AAR) в приложение Windows.
+Облачные API файлов | *Облачные API файлов* позволяет [построения модуль синхронизации облака, который поддерживает файлы заполнителя](https://docs.microsoft.com/windows/desktop/cfapi/build-a-cloud-file-sync-engine).
+Direct 3D 12 | [Direct3D 12 отображения](/windows/desktop/direct3d12/direct3d-12-render-passes) может повысить производительность вашего модуля подготовки отчетов, если она основана на плитке отложенный подготовки отчетов на основе (TBDR), наряду с другими методами. Метод помогает вашей визуализации повысить эффективность GPU, позволяя приложению упростить упорядочение требования и зависимости данных подготовки ресурсов. Это уменьшает трафик памяти из памяти вне кристалла.
+Прямой машинного обучения (DirectML) | [DirectML](https://docs.microsoft.com/windows/desktop/direct3d12/dml) — это низкоуровневый API аппаратное ускорение для машинного обучения. Он имеет стандартные (собственного C++, nano COM) программирования интерфейса и рабочего процесса в стиле DirectX 12. Вы можете интегрировать машинного обучения рабочих нагрузок выводов в игре, ядра, по промежуточного слоя, серверной части и другие приложения. DirectML поддерживает все оборудование DirectX 12-совместимой.
+DirectX HLSL | [6.4 модель шейдера HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/hlsl-shader-model-6-4-features-for-direct3d-12) предоставляет новые встроенные функции обучения машины для использования с DirectML.
+Разработка драйверов | Новые аудио, камеры, отображение, сети, были добавлены мобильное широкополосное подключение, печать, датчиков, хранения и Wi-Fi возможности для разработчиков драйверов Windows. Ознакомьтесь с [новые возможности в разработке драйверов](https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development#whats-new-in-windows-10-version-1903-latest) для получения дополнительных сведений.
+Операции файловой системы | Это [руководство с рекомендациями](../files/best-practices-for-writing-to-files.md) помогут вам максимально эффективно использовать Windows.Storage.FileIO и Windows.Storage.PathIO классы для выполнения операций файловой системы ввода-вывода.
+Взаимодействие с помощью геймпада и пульта дистанционного управления | Используйте [взаимодействия игровой и удаленное управление](../design/input/gamepad-and-remote-interactions.md) сборки взаимодействия можно использовать и доступны интерфейсы. С их взаимодействия приложение может быть как интуитивно понятный и простой в использовании из двух метров, так как это из десяти метров.
+Изменение японской эры | Мы предоставляем [эти инструкции](../design/globalizing/japanese-era-change.md) Показать, как обеспечить Windows приложение будет готово для японской эры изменения набора должно выполняться на 1 мая 2019 г. [Эта страница доступна также на японском языке](https://docs.microsoft.com/ja-jp/windows/uwp/design/globalizing/japanese-era-change).
+Открытый код WPF, Windows Forms и WinUI | Платформы WPF, Windows Forms и WinUI UX теперь доступны для публикаций с открытым исходным кодом на сайте GitHub. Дополнительные сведения и ссылки, см. в разделе [построение блоге о приложениях Windows](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97).
+Прогрессивное веб-приложений для Xbox | С помощью [прогрессивное веб-приложений для Xbox One](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations), можно расширить веб-приложение и сделать его доступным как приложение Xbox One через Microsoft Store продолжают по-прежнему использовать свои имеющиеся платформы, CDN и сервера базы данных. В большинстве случаев вы можете упаковать в PWA для Xbox One таким же образом, что для Windows. В этом руководстве будет рассмотрен процесс, а также выделены ключевые различия.
+Project Rome | Пакет SDK проекта рим теперь доступна для iOS и Android. Узнайте, как интегрировать Graph уведомления с каждой платформы: [Android](https://docs.microsoft.com/windows/project-rome/notifications/how-to-guide-for-android) и [iOS](https://docs.microsoft.com/windows/project-rome/notifications/how-to-guide-for-ios).
+Удаленный камеры | Использовать класс DeviceWatcher [подключиться к удаленной камеры](../audio-video-camera/connect-to-remote-cameras.md), и чтение кадров с этих камер в приложении Windows.
+Элементы управления универсальной платформы Windows в настольных приложениях (XAML о-ва) | API-интерфейсы в пакете SDK Windows для размещения элементов управления универсальной платформы Windows в Windows Forms, WPF и C++ Win32, настольных приложений больше не в состоянии предварительной версии. Дополнительные сведения см. в разделе [управления универсальной платформы Windows в настольных приложениях](../xaml-platform/xaml-host-controls.md).
+Visual Studio 2019 г. | Была отпущена 2019 г. Visual Studio, с помощью новейших инструментов и служб для любого разработчика, приложения или платформы. Ознакомьтесь с [новые возможности в Visual Studio 2019](https://docs.microsoft.com/visualstudio/ide/whats-new-visual-studio-2019?view=vs-2019) Чтобы получить последнюю версию и приступить к работе.
+Веб-представления Win32 | Наши [ответы на вопросы о](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs) при использовании веб-представления Microsoft Edge в настольных приложений, а также ссылки на примеры и дополнительные ресурсы можно найти ответы на часто задаваемые вопросы.
+Командная строка Windows | [Новые возможности консоли](https://devblogs.microsoft.com/commandline/new-experimental-console-features/) включают экспериментальный терминалов вкладке с параметрами для прокрутки, форма курсора и курсор цвета. Дополнительные сведения о [блога Windows командной строки средства для разработчиков](https://devblogs.microsoft.com/commandline/).
+Набор средств сообщества Windows | Версии 5.1 Windows Community Toolkit предоставляет обновлениях, интересных для анимации, удаленных устройств, обрезка изображения и специальных возможностей. </br> • Новый [библиотеки Windows Lottie](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie) обеспечивает поддержку анимации высокого качества в Windows 10 (1809) за счет использования Windows.UI.Composition API-интерфейсы и позволяет выполнять потребление [Bodymovin](https://aescripts.com/bodymovin/) JSON-файлы или в оптимизированных для операций, созданные кодом классы для воспроизведения в свои приложения Windows. Воспользуйтесь новым [приложение для просмотра Lottie](https://aka.ms/lottieviewer) из Microsoft Store, чтобы протестировать анимацию и Создание оптимизированного кода для приложений Windows. </br> • Новый [Выбор удаленного устройства](https://docs.microsoft.com/windows/communitytoolkit/controls/remotedevicepicker) пользователь может выбрать устройство (proximally или облаке доступные) запуск приложения на этом устройстве и обмениваться данными со службами приложений на удаленном устройстве. </br> • Новый [ImageCropper управления](https://docs.microsoft.com/windows/communitytoolkit/controls/imagecropper) обрезки интегрируются для выбора изображения профиля или с помощью средства редактирования фотографий. </br> • Кроме того, были внесены улучшения специальных возможностей для элементов управления, [Microsoft.Toolkit.Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32) 6.0 предварительной версии пакета обновления для WPF и WinForms и дополнительные функции, с которыми можно ознакомиться в [заметки о выпуске ](https://github.com/windows-toolkit/WindowsCommunityToolkit/releases/tag/v5.1.0).
+Машинное обучение Windows | Мы модернизировали документация Windows искусственного Интеллекта, разбивая их на три области: Машинного обучения (WinML), Windows, Windows концепции навыки и прямой машинного обучения (DirectML). Ознакомьтесь с новой [целевая страница](https://docs.microsoft.com/windows/ai/) </br> • [ *MLGen* возникнуть](https://docs.microsoft.com/windows/ai/mlgen) изменения в Visual Studio. В Windows 10, версия 1903 и более поздние версии, *mlgen* больше не включается в пакет SDK для Windows 10. Если вы используете Visual STUDIO 2017, следует вместо этого загрузите и установите расширение Visual Studio, [VS 2017 генератор кода Windows машины обучения](https://marketplace.visualstudio.com/items?itemName=WinML.mlgen). Если вы используете Visual Studio 2019 г., следует установить [генератор кода Windows машины обучения](https://marketplace.visualstudio.com/items?itemName=WinML.mlgenv2) расширения. </br> • Мы также рады сообщить о выпуске новая поддержка вес упаковки. Разработчики теперь могут упростить места на диске свои модели машинного Обучения, с помощью средства упаковки вес, предоставляются с помощью [WinMLTools преобразователь](https://docs.microsoft.com/windows/ai/convert-model-winmltools).
+Справочник по консолидации WinRT | Мы добавили полное описание [системы типов WinRT](https://docs.microsoft.com/uwp/winrt-cref/winrt-type-system) и [WinMD-файлов](https://docs.microsoft.com/uwp/winrt-cref/winmd-files), которые обеспечивают дополнительные подробные сведения о определения о структуре API-интерфейсы WinRT.
+Подсистема Windows для Linux (WSL) | [Последние обновления WSL](https://devblogs.microsoft.com/commandline/whats-new-for-wsl-in-windows-10-version-1903/) включают возможность доступа к файлам Linux из Windows, с помощью проводника и некоторые новые команды для wsl.exe и wslconfig.exe.
+Навыки компьютерного зрения Windows | [Навыки концепции Windows](https://docs.microsoft.com/windows/ai/windows-vision-skills) набор интерфейсов API, который позволяет создавать «навыки», как распознавание лиц, и затем упаковать их как пакет NuGet, который может использовать другие приложения, без необходимости включать модель машинного обучения.
+
+## <a name="publish--monetize-windows-apps"></a>Публикация и монетизация приложений для Windows
+
+Компонент | Описание
+ :------ | :------
+MSIX | [Строит MSIX поддержки в Windows 10 1709 и 1803](https://docs.microsoft.com/windows/msix/msix-1709-and-1803-support) описывает MSIX компоненты, которые поддерживаются в версиях до Windows 10, версия 1809.
+Упаковка и развертывание с использованием MSIX | Мы представили несколько [улучшений, связанных с пакетами изменения](https://docs.microsoft.com/windows/msix/modification-package-insider-preview-build-18312) для упрощения настройки пакета в пакет MSIX. Эти усовершенствования включают новый **rescap6:ModificationPackage** элемента в манифесте пакета, возможность переопределить файл в главный пакет с помощью пакета изменения и возможность упаковать файловой системы на основе подключаемого модуля как пакет MSIX изменения.
+Средство упаковки MSIX | • Мы добавили [поддержки для выполнения преобразований на удаленном компьютере](https://docs.microsoft.com/windows/msix/packaging-tool/remote-conversion-setup). Мы также представили [программа предварительной оценки средство упаковки MSIX](https://docs.microsoft.com/windows/msix/packaging-tool/insider-program) ранний доступ к новым возможностям средства. </br> • [MSIX пакета поддержки в 1709 и более поздних версиях](https://docs.microsoft.com/windows/msix/packaging-tool/support-on-1709-and-later) содержит указания по использованию средства упаковки MSIX создавать пакеты специально для Windows 10 версии 1709 и 1803. </br> • [MSIX упаковки среды на Hyper-V быстрое создание](https://docs.microsoft.com/windows/msix/packaging-tool/quick-create-vm) показано, как создать виртуальную среду для проектов упаковки MSIX. </br> • [MSIX пакета пакетов](https://docs.microsoft.com/windows/msix/packaging-tool/bundle-msix-packages) содержит инструкции по созданию пакета пакета, с помощью средства упаковки MSIX. </br> • [Изменения пакетов в Windows 10 версии 1809](https://docs.microsoft.com/windows/msix/modification-package-1809-update) содержит инструкции по созданию 1809 и более поздних версий, с помощью средства упаковки MSIX и MakeApp.exe изменения пакета для версии Windows 10.
+MSIX SDK | [Сборки пакета для использования на разных платформах с помощью пакета SDK MSIX](https://docs.microsoft.com/windows/msix/msix-sdk/sdk-guidance)и узнайте, как указать целевые платформы, для которых хотите пакетов для извлечения.
+
+## <a name="microsoft-learn"></a>Узнайте, Microsoft
+
+Узнайте Microsoft предоставляет новый Практическое обучение и возможности обучения для разработчиков Microsoft.
+
+* Если вы хотите узнать, как разрабатывать приложения Windows, см. статью [наш новый путь обучения](https://docs.microsoft.com/learn/paths/develop-windows10-apps/) для подробным введением платформы, инструменты и как написать свое первое приложение на несколько.
+
+* Хотите научиться добавлять возможности пользовательского интерфейса в приложение Windows? Узнайте, как [Создание пользовательского интерфейса](https://docs.microsoft.com/learn/modules/create-ui-for-windows-10-apps/), [Добавление навигации и мультимедиа в пользовательский интерфейс](https://docs.microsoft.com/learn/modules/enhance-ui-of-windows-10-app/), или [реализовать привязку данных](https://docs.microsoft.com/learn/modules/implement-data-binding-in-windows-10-app/).
+
+* Если вас интересует разработка веб-приложений, см. статью [разработки веб-приложений с помощью Visual Studio Code](https://docs.microsoft.com/learn/modules/develop-web-apps-with-vs-code/) или [создание простого веб-сайта](https://docs.microsoft.com/learn/modules/build-simple-website/).
+
+* Кроме того, вы можете просмотреть [все модули разработчика Windows в Майкрософт сведения](https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module).
+
+## <a name="videos"></a>Видео
+
+### <a name="progressive-web-apps"></a>Прогрессивные веб-приложения
+
+Прогрессивное веб-приложений, веб-сайтов, которые работают как собственные приложения для различных браузеров и самых разнообразных устройствах с Windows 10. [Просмотрите видео](https://youtu.be/ugAewC3308Y) для получения дополнительных сведений, а затем [ознакомьтесь с документацией](https://aka.ms/Windows-PWA) Чтобы приступить к работе.
+
+### <a name="vs-code-series"></a>Серия кода VS
+
+Ознакомьтесь с нашей [новой серии видеороликов по Visual Studio Code](https://www.youtube.com/playlist?list=PLlrxD0HtieHjQX77y-0sWH9IZBTmv1tTx) сведения о возможностях VSCode, способы его использования, и как он был создан.
+
+### <a name="mixed-reality-services"></a>Смешанной реальности служб
+
+HoloLens 2 недавно было объявлено. Ознакомьтесь с этим [серии видеороликов на смешанной реальности](https://www.youtube.com/watch?v=pdB7Ukf3u0I&list=PLlrxD0HtieHjh2Nt2BhcluIZeQg0uBZST) следите за новостями и как можно стать участником и приступить к разработке.
+
+### <a name="one-dev-question"></a>Один вопрос разработки
+
+В серии видео один вопрос разработки привыкшим разработчиков Microsoft охватывают ряд вопросов о разработке Windows, команды языка и региональных параметров и журнал.
+
+* [Рэймонд Чен рассказывает о разработке Windows и журнал](https://www.youtube.com/playlist?list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7)
+
+* [Блоге Ларри Остермана разработки Windows и журнал](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPUkYGpJU0RzvY6PBSEA4K)
+
+* [Аарон Gustafson прогрессивное веб-приложениях](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
+
+* [Крис Heilmann о средстве webhint](https://www.youtube.com/playlist?list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
