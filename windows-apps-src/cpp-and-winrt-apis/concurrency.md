@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, параллелизм, async, асинхронный, асинхронность
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dba97ede63b1bcb85c4ee1807d5558f4c93834a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 910d7a7ca2aaebac6dd462d7104b26a989cf8814
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361212"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721656"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Параллельная обработка и асинхронные операции с помощью C++/WinRT
 
@@ -63,9 +63,6 @@ int main()
 
 ## <a name="write-a-coroutine"></a>Написание сопрограммы
 
-> [!IMPORTANT]
-> Начиная с версии [ C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20), убедитесь, что `#include <winrt/coroutine.h>` каждый раз, когда создавать или использовать в соподпрограмме.
-
 C++/WinRT интегрирует сопрограммы C++ в модель программирования для обеспечения естественного способа совместно ожидать результата. Вы можете создать свою собственную асинхронную операцию среды выполнения Windows путем написания сопрограммы. В следующем примере кода **ProcessFeedAsync** является сопрограммой.
 
 > [!NOTE]
@@ -74,7 +71,6 @@ C++/WinRT интегрирует сопрограммы C++ в модель пр
 ```cppwinrt
 // main.cpp
 #include <iostream>
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 
@@ -121,7 +117,6 @@ int main()
 ```cppwinrt
 // main.cpp
 #include <iostream>
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
 
@@ -161,9 +156,6 @@ int main()
 Если в сопрограмме нет хотя бы одного оператора `co_await`, то, чтобы считаться сопрограммой, в ней должен быть хотя бы один оператор `co_return` или `co_yield`. Возникнут ситуации, в которых ваша сопрограмма может возвращать значение без добавления какой-либо асинхронности и, соответственно, без блокировки и переключения контекста. Вот пример, в котором это производится (при втором и последующих вызовах) с помощью кэширования значения.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 winrt::hstring m_cache;
 
 IAsyncOperation<winrt::hstring> ReadAsync()
@@ -227,9 +219,6 @@ void DoWork(Param const& value);
 Однако здесь могут возникать проблемы при передаче параметра ссылки сопрограмме.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 // NOT the recommended way to pass a value to a coroutine!
 IASyncAction DoWorkAsync(Param const& value)
 {
@@ -266,9 +255,6 @@ IASyncAction DoWorkAsync(Param const value);
 Пул потоков, используемый в реализации, является низкоуровневым [пулом потоков Windows](https://docs.microsoft.com/windows/desktop/ProcThread/thread-pool-api), поэтому он наиболее эффективен.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
 {
     co_await winrt::resume_background(); // Return control; resume on thread pool.
@@ -288,9 +274,6 @@ IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
 Этот сценарий основан на предыдущем. Вы передаете работу в пул потоков, но затем необходимо отображать ход выполнения в пользовательском интерфейсе (UI).
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     co_await winrt::resume_background();
@@ -303,9 +286,6 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 Приведенный выше код выдает исключение [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/error-handling/hresult-wrong-thread), поскольку **TextBlock** должен обновляться из создавшего его потока, а это поток пользовательского интерфейса. Одним из решений является захват контекста потока, в котором изначально была вызвана наша сопрограмма. Чтобы сделать это, следует создать [ **winrt::apartment_context** ](/uwp/cpp-ref-for-winrt/apartment-context) объекта, фоновая работа, а затем `co_await` **apartment_context** переключиться обратно на вызывающий контекст.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     winrt::apartment_context ui_thread; // Capture calling context.
@@ -324,9 +304,6 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 Для более общие решения для обновления пользовательского интерфейса, которая содержит информацию о случаях, где вы будете уверены в том, вызывающий поток, вы можете `co_await` [ **winrt::resume_foreground** ](/uwp/cpp-ref-for-winrt/resume-foreground) функции, чтобы перейти к определенной основной поток. В следующем примере кода мы указываем поток переднего плана, передавая объект-диспетчер, связанный с **TextBlock** (обращаясь к его свойству [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher)). Реализация **winrt::resume_foreground** вызывает [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) на этом объекте-диспетчере для выполнения работы, поступающей далее в сопрограмме.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     co_await winrt::resume_background();
@@ -345,9 +322,6 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 Но если вы `co_await` любой из четырех типов среды выполнения Windows асинхронные операции (**IAsyncXxx**), затем C++/WinRT захватывает контекст вызова в точке вы `co_await`. И гарантирует, что вы еще этого контекста при возобновлении продолжение. C++/ WinRT это достигается путем проверки не только в контексте вызова и, если нет, переключении на него. Если бы в потоке однопотоковое подразделение (STA), прежде чем `co_await`, вы будете на тот же позже; если бы в потоке многопотоковое подразделение (MTA) перед `co_await`, а затем вы сможете на одном, впоследствии.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 IAsyncAction ProcessFeedAsync()
 {
     Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
@@ -362,9 +336,6 @@ IAsyncAction ProcessFeedAsync()
 Можно положиться на это поведение, так как C++/WinRT предоставляет код для этих типов асинхронной операции среды выполнения Windows для адаптации к C++ поддержка языков соподпрограмме (эти элементы кода, называются адаптеров ожидания). Остальные типы awaitable в C++/WinRT — это обычные оболочки пула потоков и/или вспомогательные функции; поэтому их завершения в пуле потоков.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 using namespace std::chrono;
 IAsyncOperation<int> return_123_after_5s()
 {
@@ -380,9 +351,6 @@ IAsyncOperation<int> return_123_after_5s()
 Чтобы сохранить переключений контекста вниз, чтобы как минимум, можно использовать некоторые методы, которые мы уже видели, в этом разделе. Давайте посмотрим, некоторые иллюстрации выполнения. В следующем примере приведен код мы покажем структуры обработчика событий, который вызывает API среды выполнения Windows для загрузки изображения, отпусканием фоновый поток для обработки этого образа и возвращается в поток пользовательского интерфейса для отображения изображения в пользовательском Интерфейсе.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
 {
     // We begin in the UI context.
@@ -408,9 +376,6 @@ IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /
 В этом сценарии есть небольшой фрагмент ineffiency вокруг вызова **StorageFile::OpenAsync**. Отсутствует переключение контекста, необходимые для фонового потока (так, что обработчик может возвращать вызывающей стороне выполнения), на возобновление, после чего C++/WinRT восстанавливает контекст потока пользовательского интерфейса. Но в этом случае необязательно быть в потоке пользовательского интерфейса, пока мы собираемся обновить пользовательский Интерфейс. Дополнительные API среды выполнения Windows, мы вызываем *перед* наш вызов к **winrt::resume_background**, более ненужных туда и обратно контекстных переключений, мы применяем. Решением является не вызвать *любой* API среды выполнения Windows, до этого. Переместить их все в конце **winrt::resume_background**.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
 {
     // We begin in the UI context.
@@ -437,9 +402,6 @@ IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /
 > В следующем примере предоставляется для целей обучения. Чтобы приступить к работе, это основные сведения о том, как await адаптеров рабочий. Если вы хотите использовать этот прием в собственной базе кода, то рекомендуется разработки и тестирования собственных await struct(s) адаптера. Например, можно написать **complete_on_any**, **complete_on_current**, и **complete_on(dispatcher)** . Также попробуйте сделать их шаблоны, которые принимают **IAsyncXxx** тип в качестве параметра шаблона.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 struct no_switch
 {
     no_switch(Windows::Foundation::IAsyncAction const& async) : m_async(async)
@@ -472,9 +434,6 @@ private:
 Чтобы понять, как использовать **без_переключения** await адаптеров, сначала необходимо знать, что при C++ компилятор обнаруживает `co_await` выражение выполняет поиск функций, вызываемых **await_ready**, **await_suspend**, и **await_resume**. C++/Библиотеки WinRT предоставляет эти функции, чтобы получить разумное поведение по умолчанию следующим образом.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 IAsyncAction async{ ProcessFeedAsync() };
 co_await async;
 ```
@@ -482,9 +441,6 @@ co_await async;
 Для использования **без_переключения** await адаптеров, достаточно изменить тип, `co_await` выражение из **IAsyncXxx** для **без_переключения**, следующим образом.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 IAsyncAction async{ ProcessFeedAsync() };
 co_await static_cast<no_switch>(async);
 ```
@@ -504,7 +460,6 @@ co_await static_cast<no_switch>(async);
 
 // MainPage.h
 ...
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Storage.Search.h>
 
@@ -558,7 +513,6 @@ private:
 ```cppwinrt
 // main.cpp
 #include <iostream>
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
 using namespace winrt;
@@ -595,9 +549,6 @@ int main()
 Таким образом другим вариантом является явным образом опроса для отмены из в пределах вашей сопрограммы. Добавьте код в списке ниже в примере выше. В этом примере **ExplicitCancellationAsync** извлекает объект, возвращенный [ **winrt::get_cancellation_token** ](/uwp/cpp-ref-for-winrt/get-cancellation-token) функции и использует его для периодически Проверьте, была ли отменена сопрограммы. До тех пор, пока не отменяется, сопрограммы выполняется в бесконечном цикле; После отмены цикла и функции будут выхода обычным образом. Результат будет одинаковым как предыдущего примера, но здесь выход происходит явным образом и в системе управления.
 
 ```cppwinrt
-...
-#include <winrt/coroutine.h>
-...
 IAsyncAction ExplicitCancellationAsync()
 {
     auto cancellation_token{ co_await winrt::get_cancellation_token() };
@@ -629,7 +580,6 @@ IAsyncAction MainCoroutineAsync()
 ```cppwinrt
 // main.cpp
 #include <iostream>
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
 using namespace winrt;
@@ -681,7 +631,6 @@ int main()
 ```cppwinrt
 // main.cpp
 #include <iostream>
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
 using namespace winrt;
@@ -757,7 +706,6 @@ double pi{ co_await async_op_with_progress };
 
 ```cppwinrt
 // main.cpp
-#include <winrt/coroutine.h>
 #include <winrt/Windows.Foundation.h>
 
 using namespace winrt;

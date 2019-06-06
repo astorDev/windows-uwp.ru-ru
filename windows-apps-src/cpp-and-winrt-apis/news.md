@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, standard, c ++, cpp, winrt, проекции, новости, что его новые
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a84e118d988d8bf6a7d26eba7d5dd009c7ad44f3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 11249335f9d29d37bb0824fa779d3ae151c74799
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360137"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721650"
 ---
 # <a name="whats-new-in-cwinrt"></a>Новые возможности C++/WinRT
 
@@ -160,13 +160,17 @@ C++/ WinRT сам создает этот шаблон для каждого API
 
 `module.g.cpp` Теперь файл также содержит два дополнительных составную вспомогательные методы, с именем **winrt_can_unload_now**, и **winrt_get_activation_factory**. Они были разработаны для крупных проектов, где DLL состоит из несколько библиотек, каждый из которых свои собственные классы среды выполнения. В этом случае необходимо вручную Сшивать DLL **DllGetActivationFactory** и **DllCanUnloadNow**. Эти вспомогательные методы упрощают для вас сделать это, как избежать случайной возникновения ошибки. `cppwinrt.exe` Инструмента `-lib` флаг может также использоваться для предоставления каждого отдельного lib свой собственный заголовок (а не `winrt_xxx`), чтобы каждый lib функции могут по отдельности с именем и таким образом в сочетании однозначно.
 
-#### <a name="new-winrtcoroutineh-header"></a>Новый `winrt/coroutine.h` заголовка
+#### <a name="coroutine-support"></a>Поддержку соподпрограмм
 
-`winrt/coroutine.h` Заголовок — это новый дом для всех C++поддержки сопрограмм /WinRT элемента. Ранее, и эта поддержка размещался в нескольких местах, который мы полагаем, слишком ограничивающим. Так как теперь создаются асинхронные интерфейсы среды выполнения Windows, а не написан вручную, теперь находятся в `winrt/Windows.Foundation.h`. Помимо более понятным и совместимостью, это означает, что сопрограммы вспомогательные функции, такие как [ **resume_foreground** ](/uwp/cpp-ref-for-winrt/resume-foreground) больше не нужно быть приписываются в конец заголовка определенному пространству имен. Вместо этого они могут более естественным образом включать их зависимости. Это Дополнительно позволяет **resume_foreground** для поддержки возобновление не только на заданного [ **Windows::UI::Core::CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher), но она теперь также поддерживает возобновление на заданного [ **Windows::System::DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue). Ранее может быть поддерживается только один; но не оба, так как определение может находиться только в одном пространстве имен.
+Поддержку соподпрограмм добавляется автоматически. Ранее, поддержке и размещался в нескольких местах, который мы полагаем, слишком ограничивающим. А затем временно для версии 2.0, `winrt/coroutine.h` заголовочный файл был необходим, но который больше не используется. Так как теперь создаются асинхронные интерфейсы среды выполнения Windows, а не написан вручную, теперь находятся в `winrt/Windows.Foundation.h`. Помимо более понятным и совместимостью, это означает, что сопрограммы вспомогательные функции, такие как [ **resume_foreground** ](/uwp/cpp-ref-for-winrt/resume-foreground) больше не нужно быть приписываются в конец заголовка определенному пространству имен. Вместо этого они могут более естественным образом включать их зависимости. Это Дополнительно позволяет **resume_foreground** для поддержки возобновление не только на заданного [ **Windows::UI::Core::CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher), но она теперь также поддерживает возобновление на заданного [ **Windows::System::DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue). Ранее может быть поддерживается только один; но не оба, так как определение может находиться только в одном пространстве имен.
 
 Ниже приведен пример **DispatcherQueue** поддержки.
 
 ```cppwinrt
+...
+#include <winrt/Windows.System.h>
+using namespace Windows::System;
+...
 fire_and_forget Async(DispatcherQueueController controller)
 {
     bool queued = co_await resume_foreground(controller.DispatcherQueue());

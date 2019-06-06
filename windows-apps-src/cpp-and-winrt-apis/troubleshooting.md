@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, устранение неполадок, HRESULT, ошибка
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe67fd0593c9c1f605a5d1cc7418c348b6ca9c3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 563545e8a819ab6af5bbc0604c18b4833d76bebb
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360101"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721673"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>Устранение неполадок C++/WinRT
 
@@ -51,7 +51,6 @@ ms.locfileid: "66360101"
 | Компилятор C++ создает "*Ошибка C2039: «IUnknown»: не является членом "\`глобальное пространство имен ''* «. | См. в разделе [как изменить целевую платформу на C++/WinRT проекта до более поздней версии пакета SDK Windows](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 | Компоновщик C++ создает "*Ошибка LNK2019: неразрешенный внешний символ _WINRT_CanUnloadNow@0 на которые ссылается функция _VSDesignerCanUnloadNow@0* " | См. в разделе [как изменить целевую платформу на C++/WinRT проекта до более поздней версии пакета SDK Windows](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 | В процессе сборки создается сообщение об ошибке  *C++WinRT VSIX больше не обеспечивает поддержку построения проекта.  Добавьте ссылку на пакет Microsoft.Windows.CppWinRT Nuget*. | Установка **Microsoft.Windows.CppWinRT** пакет NuGet в проект. Дополнительные сведения см. в разделе [более ранних версиях расширение VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension). |
-| C++ Компилятор выдает сообщение об ошибке, где упоминается *«std::experimental»* , и/или ошибка формы *ошибки C3861: «resume_background»: идентификатор не найден*. | Начиная с версии [ C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20), для поддержки соподпрограмме (включая сопрограммы вспомогательные функции, такие как **winrt::resume_background**, **winrt::resume_foreground**и **winrt::resume_on_signal**), вам потребуется `#include <winrt/coroutine.h>`. |
 | C++ Компоновщик будет создавать *Ошибка LNK2019: неразрешенный внешний символ*, с помощью упоминание исключения *winrt::impl::consume_Windows_Foundation_Collections_IVector*. | Начиная с версии [ C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20), если вы используете, основанном на диапазоне `for` коллекции среды выполнения Windows, то теперь нужно будет `#include <winrt/Windows.Foundation.Collections.h>`. |
 
 > [!NOTE]

@@ -2,16 +2,16 @@
 description: Используйте HttpClient и остаток API пространства имен Windows.Web.Http для отправки и получения данных по протоколам HTTP 2.0 и HTTP 1.1.
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
-ms.date: 02/08/2017
+ms.date: 6/5/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 988cd2fafbb0cd632711dc2eaa5f6a6db8eed7e4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bb098aae346c7a81771262793f5f6a042d62d5a3
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371385"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721609"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -229,6 +229,49 @@ int main()
 Чтобы ПЕРЕДАТЬ содержимое реальных двоичных файлов (а не явных двоичные данные, используемые выше), вы найдете его проще в использовании [HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent) объекта. Конструирует и, в качестве аргумента в его конструктор, передайте значение, возвращенное из вызова [StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync). Этот метод возвращает поток для данных в двоичном файле.
 
 Кроме того, если вы загружаете больших файлов (размером более около 10 МБ), затем мы рекомендуем использовать среды выполнения Windows [фоновой передачи](/uwp/api/windows.networking.backgroundtransfer) API-интерфейсы.
+
+## <a name="post-json-data-over-http"></a>Данные POST JSON по протоколу HTTP
+
+Следующий пример сообщения JSON, в конечную точку, а затем записывает текст ответа.
+
+```cs
+using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using Windows.Storage.Streams;
+using Windows.Web.Http;
+
+private async Task TryPostJsonAsync()
+{
+    try
+    {
+        // Construct the HttpClient and Uri. This endpoint is for test purposes only.
+        HttpClient httpClient = new HttpClient();
+        Uri uri = new Uri("https://www.contoso.com/post");
+
+        // Construct the JSON to post.
+        HttpStringContent content = new HttpStringContent(
+            "{ \"firstName\": \"Eliot\" }",
+            UnicodeEncoding.Utf8,
+            "application/json");
+
+        // Post the JSON and wait for a response.
+        HttpResponseMessage httpResponseMessage = await httpClient.PostAsync(
+            uri,
+            content);
+
+        // Make sure the post succeeded, and write out the response.
+        httpResponseMessage.EnsureSuccessStatusCode();
+        var httpResponseBody = await httpResponseMessage.Content.ReadAsStringAsync();
+        Debug.WriteLine(httpResponseBody);
+    }
+    catch (Exception ex)
+    {
+        // Write out any exceptions.
+        Debug.WriteLine(ex);
+    }
+}
+```
 
 ## <a name="exceptions-in-windowswebhttp"></a>Исключения в Windows.Web.Http
 

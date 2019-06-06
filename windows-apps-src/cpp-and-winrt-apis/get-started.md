@@ -1,40 +1,39 @@
 ---
 description: Чтобы приступить к работе с C++/WinRT, в этой статье описывается простой пример кода.
 title: Начало работы с C++/WinRT
-ms.date: 04/03/2019
+ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, UWP, стандартные, c++, cpp, winrt, проекция, начать, начало, работы
 ms.localizationpriority: medium
-ms.openlocfilehash: 4928540d9b6e7e1c3df67f7c247aa3664618a65c
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: 64104124a6342da3f6963c61bafc871838fd00f6
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921690"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721677"
 ---
 # <a name="get-started-with-cwinrt"></a>Начало работы с C++/WinRT
 
 Которые помогут вам начать работу с с помощью [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), в этом разделе рассматривается простой пример кода на новый основе **консольное приложение Windows (C++/WinRT)** проекта. В этом разделе также показано, как [добавить C++/WinRT поддержки в проект приложения Windows Desktop](#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
-> [!IMPORTANT]
-> Если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и определение целевых объектов пакет Windows SDK версии 10.0.17134.0 (Windows 10 версии 1803), затем вновь созданный объект C++/проект WinRT может не компилироваться с ошибкой "*ошибки C3861: «from_abi»: Идентификатор не найден*«и других ошибок, происходящих в *base.h*. Решением является более поздней версии (лучше соответствует стандарту) либо целевой версии пакета SDK для Windows, или задать свойство проекта **C/C++** > **языка** > **режим совместимости: Не** (Кроме того, если **/ permissive-** отображается в свойстве проекта **C/C++** > **языка** > **командной строки**  под **Дополнительные параметры**, удалите его).
+> [!NOTE]
+> Хотя мы рекомендуем разрабатывать с последними версиями Visual Studio и пакета SDK Windows, если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и определение целевых объектов пакет Windows SDK версии 10.0.17134.0 (Windows 10 версии 1803), затем только что созданный C++/Проект WinRT может не компилироваться с ошибкой "*ошибки C3861: «from_abi»: идентификатор не найден*«и других ошибок, происходящих в *base.h*. Решением является более поздней версии (лучше соответствует стандарту) либо целевой версии пакета SDK для Windows, или задать свойство проекта **C/C++**  > **языка** > **режим совместимости: Не** (Кроме того, если **/ permissive-** отображается в свойстве проекта **C/C++**  > **языка** > **командной строки**  под **Дополнительные параметры**, удалите его).
 
 ## <a name="a-cwinrt-quick-start"></a>Краткое руководство по C++/WinRT
 
 > [!NOTE]
 > Сведения об установке и использовании C++WinRT Visual Studio Extension (VSIX) и пакет NuGet (которые вместе обеспечивают шаблон проекта и поддержка сборки), см. в разделе [поддержка Visual Studio C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-Создайте новый проект **консольного приложение для Windows (C++/WinRT)**.
+Создайте новый проект **консольного приложение для Windows (C++/WinRT)** .
 
 Отредактируйте файлы `pch.h` и `main.cpp` следующим образом.
 
 ```cppwinrt
 // pch.h
-...
-#include <iostream>
+#pragma once
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
-...
+#include <iostream>
 ```
 
 ```cppwinrt
@@ -67,10 +66,12 @@ int main()
 #include <winrt/Windows.Web.Syndication.h>
 ```
 
-Включенные заголовки входят в состав пакета SDK, который находится в папке `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt`. Visual Studio включает этот путь в своем макросе *IncludePath*. Заголовки содержат API-интерфейсы Windows, проецируемые в C++/WinRT. Другими словами, для каждого типа Windows C++/WinRT определяет эквивалентный тип для C++ (*проецируемый тип*). Проецируемый тип имеет то же полное доменное имя, что и тип в Windows, но он размещается в пространстве имен C++ **winrt**. Добавление этих инструкций include в предварительно скомпилированный заголовок сокращает время сборки.
+С параметрами по умолчанию проекта, включенные заголовки берутся из пакета SDK для Windows, в папке`%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt`. Visual Studio включает этот путь в своем макросе *IncludePath*. Но нет строгой зависимости с помощью пакета SDK Windows, так как проект (с помощью `cppwinrt.exe` средство) создает те же заголовки в проекте *$(GeneratedFilesDir)* папки. Если не удается найти в другом месте, или при изменении параметров проекта можно загрузить из этой папки.
+
+Заголовки содержат API-интерфейсы Windows, проецируемые в C++/WinRT. Другими словами, для каждого типа Windows C++/WinRT определяет эквивалентный тип для C++ (*проецируемый тип*). Проецируемый тип имеет то же полное доменное имя, что и тип в Windows, но он размещается в пространстве имен C++ **winrt**. Добавление этих инструкций include в предварительно скомпилированный заголовок сокращает время сборки.
 
 > [!IMPORTANT]
-> Каждый раз, когда вы хотите использовать тип из пространств имен Windows, включайте соответствующий файл заголовков пространства имен C++/ WinRT для Windows, как показано здесь. *Соответствующий* заголовок — это заголовок с таким же именем, как у пространства имен типа. Например, чтобы использовать проекцию C++/WinRT для класса среды выполнения [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset), `#include <winrt/Windows.Foundation.Collections.h>`.
+> Каждый раз, когда вы хотите использовать тип из пространства имен Windows, включения соответствующего C++файл заголовка Windows WinRT пространства имен, как показано выше. *Соответствующий* заголовок — это заголовок с таким же именем, как у пространства имен типа. Например, чтобы использовать проекцию C++/WinRT для класса среды выполнения [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset), `#include <winrt/Windows.Foundation.Collections.h>`. При включении `winrt/Windows.Foundation.Collections.h`, то вы не *также* должны включать `winrt/Windows.Foundation.h`. Каждый C++/WinRT проекции заголовок автоматически включает ее родительского пространства имен заголовка файла; Чтобы не *требуется* явным образом включить его. Хотя если вы это сделаете, ошибки не будет.
 
 ```cppwinrt
 using namespace winrt;
@@ -84,7 +85,7 @@ using namespace Windows::Web::Syndication;
 winrt::init_apartment();
 ```
 
-Вызов **winrt::init_apartment** инициализирует COM (по умолчанию — в многопотоковом подразделении).
+Вызов **winrt::init_apartment** инициализирует поток в среде выполнения Windows; по умолчанию в многопотоковом подразделении. Вызов также инициализирует COM.
 
 ```cppwinrt
 Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
@@ -103,7 +104,7 @@ SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri
 for (const SyndicationItem syndicationItem : syndicationFeed.Items()) { ... }
 ```
 
-[**SyndicationFeed.Items** ](/uwp/api/windows.web.syndication.syndicationfeed.items) представляет собой диапазон, определяемый итераторов, возвращенных **начать** и **окончания** функций (или их постоянное обратного и обратное константа вариантов). По этой причине вы может перечислять **Items** через основанный на диапазоне оператор `for` или с помощью функции шаблона **std::for_each**.
+[**SyndicationFeed.Items** ](/uwp/api/windows.web.syndication.syndicationfeed.items) представляет собой диапазон, определяемый итераторов, возвращенных **начать** и **окончания** функций (или их постоянное обратного и обратное константа вариантов). По этой причине вы может перечислять **Items** через основанный на диапазоне оператор `for` или с помощью функции шаблона **std::for_each**. Каждый раз, когда вы перебор элементов коллекции среды выполнения Windows следующим образом, вам потребуется `#include <winrt/Windows.Foundation.Collections.h>`.
 
 ```cppwinrt
 winrt::hstring titleAsHstring = syndicationItem.Title().Text();
@@ -128,11 +129,11 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 Убедитесь, что вы не зависит от [почему мой новый проект не будет компилироваться?](/windows/uwp/cpp-and-winrt-apis/faq).
 
-Так как C++/WinRT использует функции из C ++ 17 standard, задайте свойство проекта **C /C++** > **языка**  >   **C++ языка Стандартный** для *стандарт ISO C ++ 17 (/ std: c ++ 17)*.
+Так как C++/WinRT использует функции из C ++ 17 standard, задайте свойство проекта **C /C++**  > **языка**  >   **C++ языка Стандартный** для *стандарт ISO C ++ 17 (/ std: c ++ 17)* .
 
 ### <a name="the-precompiled-header"></a>Предкомпилированный заголовок
 
-Шаблон проекта по умолчанию создает предкомпилированного заголовка, с именем, либо `framework.h`, или `stdafx.h`. Чтобы переименовать `pch.h`. Если у вас есть `stdafx.cpp` файл, а затем, чтобы переименовать `pch.cpp`. Установите свойство проекта **C/C++** > **предкомпилированные заголовки** > **файла предкомпилированного заголовка** для *pch.h*.
+Шаблон проекта по умолчанию создает предкомпилированного заголовка, с именем, либо `framework.h`, или `stdafx.h`. Чтобы переименовать `pch.h`. Если у вас есть `stdafx.cpp` файл, а затем, чтобы переименовать `pch.cpp`. Установите свойство проекта **C /C++**  > **предкомпилированные заголовки** > **предкомпилированный заголовок** для *создать (/Yc)* , и **предварительно скомпилированный заголовочный файл** для *pch.h*.
 
 Найти и заменить все `#include "framework.h"` (или `#include "stdafx.h"`) с `#include "pch.h"`.
 
@@ -161,7 +162,7 @@ C++/Проекции языка WinRT зависит от некоторых (н
 ## <a name="important-apis"></a>Важные API
 * [Метод SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [Свойство SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
-* [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
+* [Структура WinRT::hstring](/uwp/cpp-ref-for-winrt/hstring)
 * [Структура WinRT::HRESULT ошибка](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## <a name="related-topics"></a>См. также
@@ -169,5 +170,5 @@ C++/Проекции языка WinRT зависит от некоторых (н
 * [Обработка ошибок в C++/WinRT](error-handling.md)
 * [Взаимодействие между C++/WinRT и C++/CX](interop-winrt-cx.md)
 * [Взаимодействие между C++/WinRT и интерфейсом ABI](interop-winrt-abi.md)
-* [Переход на C++/WinRT с C++/CX](move-to-winrt-from-cx.md)
-* [Обработка строк в C++/WinRT](strings.md)
+* [Переход на C++/WinRT из C++/CX](move-to-winrt-from-cx.md)
+* [Строка, обработка в C++/WinRT](strings.md)

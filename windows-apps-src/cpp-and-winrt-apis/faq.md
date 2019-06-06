@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c ++, cpp, winrt, проекция, вопросы и ответы, вопросы и ответы
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ac7f8e46974b7c12b42f6d6f94052e61902b240
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 914cf884b97d14af523cc61b0fcce719104783ba
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360251"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721685"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на вопросы, которые вы обычно имеют о разработке и использовании API среды выполнения Windows с [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -22,7 +22,7 @@ ms.locfileid: "66360251"
 См. в разделе [как изменить целевую платформу на C++/WinRT проекта до более поздней версии пакета SDK Windows](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
 
 ## <a name="why-wont-my-new-project-compile-now-that-ive-moved-to-cwinrt-20"></a>Почему не будет создать новый проект компилироваться, теперь, когда я повысили C++WinRT 2.0?
-Для полного набора изменений (в том числе критические изменения), см. в разделе [новости и изменения, в C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20). Например, для поддержки сопрограмм (включая сопрограммы вспомогательные функции, такие как **winrt::resume_background**, **winrt::resume_foreground**, и **winrt::resume_on_signal** ), вам потребуется `#include <winrt/coroutine.h>`. Если вы используете, основанном на диапазоне `for` коллекции среды выполнения Windows, то теперь нужно будет `#include <winrt/Windows.Foundation.Collections.h>`.
+Для полного набора изменений (в том числе критические изменения), см. в разделе [новости и изменения, в C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20). Например, если вы используете, основанном на диапазоне `for` коллекции среды выполнения Windows, то теперь нужно будет `#include <winrt/Windows.Foundation.Collections.h>`.
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Почему не будет компилироваться новый проект? Я использую Visual Studio 2017 (версии 15.8.0 или более поздней версии) и пакет SDK версии 17134
 Если вы используете Visual Studio 2017 (версии 15.8.0 или более поздней версии) и определение целевых объектов пакет Windows SDK версии 10.0.17134.0 (Windows 10 версии 1803), затем вновь созданный объект C++/проект WinRT может не компилироваться с ошибкой "*ошибки C3861: «from_abi»: Идентификатор не найден*«и других ошибок, происходящих в *base.h*. Решением является более поздней версии (лучше соответствует стандарту) либо целевой версии пакета SDK для Windows, или задать свойство проекта **C/C++**  > **языка** > **режим совместимости: Не** (Кроме того, если **/ permissive-** отображается в свойстве проекта **C/C++**  > **командной строки** под **Дополнительные параметры** , удалите его).
