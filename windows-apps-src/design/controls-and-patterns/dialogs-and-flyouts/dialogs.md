@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bee954cba446ac7dc7eb41622d9275b3b73af6ee
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1277d9089e900451ac4c537805079ff479f808fa
+ms.sourcegitcommit: f47620e72ff8127fae9b024c70ddced3a5c45d91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621839"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748447"
 ---
 # <a name="dialog-controls"></a>Диалоговые элементы управления
 
@@ -250,9 +250,37 @@ private async void DisplaySubscribeDialog()
 
 > На некоторых платформах кнопка подтверждения размещена справа, а не слева. Так почему рекомендуется поместить ее слева?  Если предполагается, что большинство пользователей — правши и держат телефон в правой руке, им будет удобнее нажимать кнопку подтверждения слева, так как более вероятно, что она будет расположена в пределах досягаемости больших пальцев пользователя. Чтобы нажать кнопки в правой части экрана, пользователю необходимо переместить большой палец в менее удобное положение.
 
+## <a name="contentdialog-in-appwindow-or-xaml-islands"></a>ContentDialog в AppWindow или Xaml о-ва
 
+> ПРИМЕЧАНИЕ. Этот раздел относится только к приложениям, предназначенные для Windows 10, 1903 или более поздней версии. О-ва XAML и AppWindow недоступны в более ранних версиях. Дополнительные сведения об управлении версиями см. в разделе [адаптивные приложения версии](../../../debug-test-perf/version-adaptive-apps.md).
 
+По умолчанию диалоговые окна отображения модального относительно корневого каталога содержимого [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). При использовании ContentDialog внутри либо [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) или [XAML остров](/apps/desktop/modernize/xaml-islands), необходимо вручную задать [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) в диалоговом окне в корне узла XAML.
 
+Для этого свойства ContentDialog XamlRoot значение же XamlRoot как элемент уже в AppWindow или остров XAML, как показано ниже.
+
+```csharp
+private async void DisplayNoWifiDialog()
+{
+    ContentDialog noWifiDialog = new ContentDialog
+    {
+        Title = "No wifi connection",
+        Content = "Check your connection and try again.",
+        CloseButtonText = "Ok"
+    };
+
+    // Use this code to associate the dialog to the appropriate AppWindow by setting
+    // the dialog's XamlRoot to the same XamlRoot as an element that is already present in the AppWindow.
+    if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
+    {
+        noWifiDialog.XamlRoot = elementAlreadyInMyAppWindow.XamlRoot;
+    }
+
+    ContentDialogResult result = await noWifiDialog.ShowAsync();
+}
+```
+
+> [!WARNING]
+> Может существовать только один ContentDialog откройте на поток за раз. Попытка открыть два ContentDialogs вызовет исключение, даже если он пытается открыть в отдельном AppWindows.
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
