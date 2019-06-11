@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bab1d6bd629aa85351e28a907d4b5ad705fb377
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 47011a22353f26361a392690d857bde1fc180c03
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788364"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826105"
 ---
 # <a name="product-declarations"></a>Объявления продукта
 
@@ -21,7 +21,7 @@ ms.locfileid: "63788364"
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>Это приложение позволяет пользователям совершать покупки, но не использует в коммерческую систему Microsoft Store.
 
-Почти все отправки следует оставить этот флажок снят, с момента приложения, которые предоставляют способ покупки элементы, которые являются или могут быть использованы или использовать в приложении необходимо использовать Покупка из приложения Microsoft Store API для создания и отправки надстройки. На [соглашение с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), приложения, которые были созданы и представлены до 29 июня 2015 г., может по-прежнему предлагают функциональные возможности приобретения в приложении без использования Microsoft commerce engine, если как функциональные возможности покупки соответствует [политики Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions). Если это применимо к вашему приложению, необходимо установить этот флажок. В противном случае не устанавливайте его.
+Почти все отправки следует оставить этот флажок снят, с момента приложения, которые предоставляют способ покупки элементы, которые являются или могут быть использованы или использовать в приложении необходимо использовать Покупка из приложения Microsoft Store API для создания и отправки надстройки. На [соглашение с разработчиком приложений](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), приложения, которые были созданы и представлены до 29 июня 2015 г., может по-прежнему предлагают функциональные возможности приобретения в приложении без использования Microsoft commerce engine, если как функциональные возможности покупки соответствует [политики Microsoft Store](store-policies.md#108-financial-transactions). Если это применимо к вашему приложению, необходимо установить этот флажок. В противном случае не устанавливайте его.
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>Это приложение было проверено на соответствие рекомендациям по специальным возможностям.
 

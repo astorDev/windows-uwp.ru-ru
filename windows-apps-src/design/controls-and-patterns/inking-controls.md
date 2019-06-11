@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eb5a03a2a6de8624e8b414fa31c6eec51c04bbc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9b34f88d198ec80c67e5aac7b57001e42fe5c516
+ms.sourcegitcommit: aa5a055e3ff9ee9defc73ed9567196d59f59542a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364893"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66825028"
 ---
 # <a name="inking-controls"></a>Элементы управления рукописным вводом
 
@@ -84,7 +84,7 @@ InkCanvas позволяет включить в приложении базов
 ```
 
 > [!NOTE]
-> Сведения о детальной настройке элемента управления InkCanvas с использованием InkPresenter см. в статье ["Взаимодействие с помощью пера в приложениях UWP"](https://windowsstyleguide/input/pen-and-stylus-interactions/).
+> Подробные настройку InkCanvas, с помощью элемента управления InkPresenter, см. в разделе [«Пера, взаимодействия и рукописного ввода Windows в приложениях универсальной платформы Windows»](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) статьи.
 
 Элементы управления InkToolbar и InkCanvas необходимо использовать вместе. Чтобы включить элемент управления InkToolbar (со всеми встроенными инструментами) в приложение, необходима одна дополнительная строка разметки:
 
@@ -170,6 +170,6 @@ InkCanvas позволяет включить в приложении базов
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [С помощью пера и пера взаимодействий в приложениях UWP](https://windowsstyleguide/input/pen-and-stylus-interactions/)
-- [Распознавания рукописных штрихов](https://windowsstyleguide/input/convert-ink-to-text/)
-- [Store и их извлечение рукописных штрихов](https://windowsstyleguide/input/save-and-load-ink/)
+- [Взаимодействия с помощью пера и рукописного ввода Windows в приложениях UWP](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
+- [Распознать рукописный Windows как текст и фигуры](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
+- [Store и извлечения данных штрихов рукописного ввода Windows](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)
