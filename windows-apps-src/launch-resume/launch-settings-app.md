@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d720b256ae528192d694f98877126a6df087a18e
-ms.sourcegitcommit: 26bd7953ee5c5e625d4ed8f93df0391511c76f23
+ms.openlocfilehash: 9ce2024131035e77e7d8140c047e37979c6ac490
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66491137"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67040138"
 ---
 # <a name="launch-the-windows-settings-app"></a>Запуск приложения "Параметры" для Windows
 
@@ -251,7 +251,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | Уведомления | ms-settings:privacy-notifications |
 | Другие устройства | ms-settings:privacy-customdevices |
 | Изображения | ms-settings:privacy-pictures |
-| Телефонные звонки | MS-параметры: конфиденциальность-звонок (**устаревшими в Windows 10, версия 1809 и более поздние версии**) |
+| Телефонные звонки | MS-параметры: конфиденциальность-phonecalls (**устаревшими в Windows 10, версия 1809 и более поздние версии**) |
 | Радиомодули | ms-settings:privacy-radios |
 | Голосовые функции, рукописный ввод и ввод с клавиатуры |ms-settings:privacy-speechtyping |
 | Задачи | ms-settings:privacy-tasks |
