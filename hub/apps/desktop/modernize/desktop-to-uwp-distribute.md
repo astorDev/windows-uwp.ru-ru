@@ -8,12 +8,12 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1aa424fe038a50a5e29364c7f8246e324dc07c
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 45d298aca60155915900f494654dce8e89fb1ee0
+ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215003"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131904"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Распространение упакованные приложения рабочего стола
 
@@ -57,12 +57,6 @@ ms.locfileid: "66215003"
 Чтобы подписать приложение с помощью сертификата, см. в разделе [подписи пакета приложения с помощью SignTool](/windows/uwp/packaging/sign-app-package-using-signtool).
 
 Загрузка неопубликованного приложения на другие устройства, см. в разделе [неопубликованные бизнес-приложений в Windows 10](/windows/application-management/sideload-apps-in-windows-10).
-
-**Просмотр видео**
-
-|Опубликуйте приложение в Microsoft Store |Распространения корпоративного приложения  |
-|---|---|
-|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Windows-Store-Publication-3cWyG5WhD_5506218965"      width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Distribution-for-Enterprise-Apps-XJ5Hd5WhD_1106218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
 <a id="transition-users" />
 
@@ -167,10 +161,6 @@ private void RemoveDesktopApp()
 
 }
 ```
-
-### <a name="video"></a>Видео
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Transition-Taskbar-Pins-Start-Tiles-File-Type-Associations-and-Protocol-Handlers-MD5mv5WhD_2406218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="next-steps"></a>Следующие шаги
 

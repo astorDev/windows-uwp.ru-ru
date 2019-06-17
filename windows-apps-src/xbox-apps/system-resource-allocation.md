@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
-ms.openlocfilehash: 40cf41df4ccf15206e5855f989bc46c599baa473
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8cc6ca24453be83f5c10cc6c86c508a5a3f99c4c
+ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372068"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131922"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>Системные ресурсы для приложений UWP и игр для Xbox One
 
@@ -24,9 +24,9 @@ ms.locfileid: "66372068"
 Максимальный доступный объем памяти для приложения, работающего в фоновом режиме — 128 МБ. Фоновый режим применяется только к одновременно выполняющимся приложениям, например музыкальным проигрывателям в фоновом режиме.  Работа игр приостанавливается и завершается в фоновом режиме.
 
 Превышение этих ограничений вызовет сбой выделения памяти. Дополнительные сведения об отслеживании использования памяти см. описании [класса MemoryManager](https://docs.microsoft.com/uwp/api/windows.system.memorymanager).
-    
-    > [!NOTE]
-    > When running your app or game from the Visual Studio debugger, these memory constraints do not apply. This limit is only applicable when not running in debugging mode.
+
+> [!NOTE]
+> При запуске приложения или игры из отладчика Visual Studio, эти ограничения памяти не применяются. Это ограничение применяется, только если запуск не выполнен в режиме отладки.
 
 * ЦП
     * Приложения: общее использование 2–4 ядер процессора в зависимости от количества приложений и игр, запущенных в системе.
@@ -46,14 +46,7 @@ ms.locfileid: "66372068"
 
 При **разработке игр** Xbox One, как и другие игровые консоли, — это специализированное оборудование, для реализации полного потенциала которого требуется специальный комплект SDK. Если вы работаете над игрой, которая требует максимального использования возможностей оборудования Xbox One, можно зарегистрироваться в программе [ID@Xbox](https://www.xbox.com/Developers/id), чтобы получить доступ к комплекту разработки Xbox One.
 
-
-Дополнительные сведения о системных ресурсах для приложений UWP на Xbox One см. в первой части этого видео.
-</br>
-</br>
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developing-xbox-one-applications-16860/Video-What-s-Unique--vk0fOPf9C_2006218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
-
 ## <a name="see-also"></a>См. также
 - [Приложения UWP для Xbox One](index.md)
 - [Начало работы с Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/creators-program)
 - [DirectX и универсальной платформы Windows на Xbox One](https://walbourn.github.io/)
-

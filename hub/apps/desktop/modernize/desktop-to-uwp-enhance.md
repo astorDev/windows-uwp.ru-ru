@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 22aefb58dc06a35ed3a10338eb585aa6c49e55fc
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 4846a29e914ffed15e4c3dea938cc51cefd566e0
+ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215104"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131949"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>Вызов API универсальной платформы Windows в приложениях для настольных систем
 
@@ -213,10 +213,6 @@ void UWP::ShowToast()
 Можно скомпилировать один набор двоичных файлов для всех пользователей Windows независимо от того, какой версией Windows они пользуются. Приложение вызывает API среды выполнения Windows только в том случае, если пользователь работает ваше приложение как упакованное приложение в Windows 10.
 
 Для добавления проверки времени выполнения в код проще установить этот пакет Nuget: [Вспомогательные функции моста для классических](https://www.nuget.org/packages/DesktopBridge.Helpers/) , а затем использовать ``IsRunningAsUWP()`` метод к шлюзу off весь код, который вызывает API среды выполнения Windows. см. в записи блога для получения дополнительных сведений: [Мост для классических приложений — определить контекст приложения](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
-
-## <a name="related-video"></a>Видео по теме
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Use-UWP-APIs-in-Your-Code-3d78c6WhD_9506218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="related-samples"></a>Примеры по теме
 
