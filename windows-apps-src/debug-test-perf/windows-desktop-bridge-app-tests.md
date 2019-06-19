@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, сертификации приложений
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f979edbd49699447040880964dd1378bc7c94c0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 38c9a40dbe1a46aa125c76cd1fcc88a84685c8cc
+ms.sourcegitcommit: 280193dfe5a106fc6b4c85df3ac40535547b855c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362075"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67235170"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Тесты приложений моста для классических приложений
 
@@ -30,7 +30,7 @@ ms.locfileid: "66362075"
 При выполнении теста просматриваются все переносимые исполняемые файлы в пакете и их заголовки проверяются на наличие подписи. Рекомендуется, чтобы все переносимые исполняемые файлы имели цифровую подпись. Если какой-либо переносимый исполняемый файл не подписан, будет создано предупреждение.
  
 **Действия по исправлению**  
-Рекомендуется, чтобы в пакете всегда содержались файлы с цифровой подписью. Подробнее об этом см. в статье [Знакомство с процессом подписания кода](https://msdn.microsoft.com/en-us/library/ms537361(v=vs.85).aspx).
+Рекомендуется, чтобы в пакете всегда содержались файлы с цифровой подписью. Подробнее об этом см. в статье [Знакомство с процессом подписания кода](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)).
 
 ### <a name="2-file-association-verbs"></a>2. Файл сопоставления команд 
 **Фон**  
