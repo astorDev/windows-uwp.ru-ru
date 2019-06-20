@@ -8,12 +8,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2848b22c69960075297546d401689d4c51c637aa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dc13b53450c97ffcd3d44b58d564c813344abf0a
+ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361932"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67253058"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Хранение и извлечение параметров и прочих данных приложения
 
@@ -430,7 +430,7 @@ localSettings.DeleteContainer("exampleContainer");
 ## <a name="versioning-your-app-data"></a>Управление версиями данных приложения
 
 
-При желании вы можете назначить версию для данных приложения. Это позволит вам создать следующую версию приложения, которая при изменении формата данных не вызовет проблем совместимости с предыдущей версией приложения. Приложение проверит версию данных приложения в хранилище данных и в случае, если версия окажется более ранней, чем ожидалось, обновит данные приложения до нового формата и изменит их версию. Подробнее см. в описании свойства[ **Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) и метода [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.).
+При желании вы можете назначить версию для данных приложения. Это позволит вам создать следующую версию приложения, которая при изменении формата данных не вызовет проблем совместимости с предыдущей версией приложения. Приложение проверит версию данных приложения в хранилище данных и в случае, если версия окажется более ранней, чем ожидалось, обновит данные приложения до нового формата и изменит их версию. Подробнее см. в описании свойства[ **Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) и метода [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.setversionasync).
 
 ## <a name="related-articles"></a>Связанные статьи
 
