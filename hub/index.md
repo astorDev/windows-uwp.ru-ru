@@ -9,12 +9,12 @@ ms.topic: hub-page
 title: Документация по Windows
 description: Найдите документацию для разработчиков, оборудования и ИТ-специалистов, которая поможет вам создавать и поддерживать решения для Windows.
 localizationpriority: medium
-ms.openlocfilehash: 1e669d07fdfd1f97ddef43a14078033249a2e1d5
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 334689d399b5acb476c9592001e8068abc395659
+ms.sourcegitcommit: 6e60ed2d9ef5f0f7b3dca64fbfd54e24a51034c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65983915"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268471"
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -520,7 +520,7 @@ ms.locfileid: "65983915"
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/surface/">
+                            <a href="https://docs.microsoft.com/surface/get-started">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
