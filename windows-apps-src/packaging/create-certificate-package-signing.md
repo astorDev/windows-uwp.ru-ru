@@ -3,15 +3,15 @@ title: Создание сертификата для подписания па�
 description: Создавайте и экспортируйте сертификат для пакета приложения, подписывая его с использованием инструментов PowerShell.
 ms.date: 09/30/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
-ms.openlocfilehash: 1476410c96900eff7ba4b8d0ad34c9d7b5599434
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1b9a538dc36818c065e790170f693576650f5024
+ms.sourcegitcommit: 34671182c26f5d0825c216a6cededc02b0059a9e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372733"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286930"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>Создание сертификата для подписания пакета
 
@@ -21,7 +21,7 @@ ms.locfileid: "66372733"
 > [!IMPORTANT] 
 > Если для разработки приложения использовали Visual Studio, рекомендуется применить мастер Visual Studio, чтобы импортировать сертификат и подписать пакет приложения. Дополнительные сведения см. в разделе [Упаковка приложения UWP с помощью Visual Studio](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Упакованные или работе приложения**  
 Приложение, содержащее файл AppxManifest.xml. При создании сертификата, который будет использоваться для подписывания окончательного пакета приложений, потребуется сослаться на этот файл манифеста. Сведения о том, как вручную упаковать приложение, см. в разделе [Создание пакета приложений с помощью инструмента MakeAppx.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
@@ -57,7 +57,7 @@ ms.locfileid: "66372733"
 Основываясь на файле AppxManifest.xml из предыдущего примера, используйте следующий синтаксис для создания сертификата. В строке с повышенными привилегиями PowerShell:
 
 ```powershell
-New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\LocalMachine\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
+New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\CurrentUser\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
 ```
 
 Обратите внимание на следующее о некоторых из параметров:
@@ -75,7 +75,7 @@ New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso 
 Сертификат можно просмотреть в окне PowerShell, выполнив следующие команды:
 
 ```powershell
-Set-Location Cert:\LocalMachine\My
+Set-Location Cert:\CurrentUser\My
 Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 ```
 
@@ -91,13 +91,13 @@ Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 
 ```powershell
 $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
-Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
+Export-PfxCertificate -cert "Cert:\CurrentUser\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
 ### <a name="protectto-usage"></a>Использование ProtectTo
 
 ```powershell
-Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
+Export-PfxCertificate -cert Cert:\CurrentUser\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
 После создания и экспорт сертификата вы готовы подписать пакет приложений с помощью **SignTool**. Следующий шаг в процессе упаковки вручную описан в разделе [Подпись пакета приложения с использованием инструмента SignTool](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool).
