@@ -7,18 +7,18 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2c7332a3e1097a8e62576ae5920eb82c2bd5d2a6
-ms.sourcegitcommit: 423ff8f1fd791445e21cca534bcefe407251acf1
+ms.openlocfilehash: 20980562f73bca2087d4c0a6ee049c848404d6a6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251612"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319417"
 ---
 ![Основы оформления](../images/downloads-2x.png)
 
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Наборы средств для проектирования и примеры приложений UWP
  
-Скачиваемые файлы, связанные с проектированием и пользовательским интерфейсом, для приложений UWP и Fluent Design. Дополнительные средства, такие как Visual Studio, можно найти <a href="https://developer.microsoft.com/downloads">на главной странице скачиваемых файлов</a>. 
+Скачиваемые файлы, связанные с проектированием и пользовательским интерфейсом, для приложений UWP и Fluent Design. Дополнительные средства, такие как Visual Studio, можно найти <a href="https://developer.microsoft.com/windows/downloads">на главной странице скачиваемых файлов</a>. 
 
 
 ## <a name="design-toolkits"></a>Наборы инструментов для проектирования
@@ -131,4 +131,4 @@ BuildCast — это полный пример, созданный для дем
 
 ## <a name="want-more-code"></a>Вам нужно больше примеров кода?
 
-Полный список всех наших примеров приложений UWP вы можете найти на странице примеров Windows. <a href="https://developer.microsoft.com/samples">Перейти на портал примеров</a>
+Полный список всех наших примеров приложений UWP вы можете найти на странице примеров Windows. <a href="https://developer.microsoft.com/windows/samples">Перейти на портал примеров</a>

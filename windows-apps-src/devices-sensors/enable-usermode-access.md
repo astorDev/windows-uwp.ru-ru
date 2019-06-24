@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: f41bf9f56b63f59844bec976e9d6e5e3d650b271
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3dbb06f53f760724da312e00f545d799d6a24200
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370274"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321570"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Предоставление доступа в пользовательском режиме к GPIO, I2C и SPI
 
@@ -614,7 +614,7 @@ Device(I2C1)
 * CLIENT_ConnectFunctionConfigPins — вызывается `GpioClx`, чтобы отдать драйверу мини-портов команду применить заданную конфигурацию мультиплексирования.
 * CLIENT_DisconnectFunctionConfigPins — вызывается `GpioClx`, чтобы отдать драйверу мини-портов команду отменить заданную конфигурацию мультиплексирования.
 
-См. описание этих процедур в разделе [Функции обратного вызова события GpioClx](https://docs.microsoft.com/previous-versions//hh439464(v=vs.85)).
+См. описание этих процедур в разделе [Функции обратного вызова события GpioClx](https://docs.microsoft.com/previous-versions/hh439464(v=vs.85)).
 
 Помимо двух этих новых DDI необходимо проверить существующие DDI на совместимость с мультиплексированием контактов.
 

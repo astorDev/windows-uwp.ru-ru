@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, потоки, пул потоков
 ms.localizationpriority: medium
-ms.openlocfilehash: ff47115c228e3cf6530e12aa4686c88660f16fcd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0ff0eca18eeab72dbf0a2f9a539e452a5923392d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371552"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322020"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Отправка рабочего элемента в пул потоков
 
@@ -31,7 +31,7 @@ ms.locfileid: "66371552"
 Доступны три версии функции [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync), поэтому вы можете при необходимости задать приоритет рабочего элемента и контролировать, выполняется ли он параллельно с другими рабочими элементами.
 
 >[!NOTE]
->Используйте [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) для доступа в потоке пользовательского интерфейса и отображает ход выполнения задания из рабочего элемента.
+>Используйте [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) для доступа в потоке пользовательского интерфейса и отображает ход выполнения задания из рабочего элемента.
 
 В примере ниже создается рабочий элемент и предоставляется лямбда-функция для выполнения работы.
 
@@ -195,7 +195,7 @@ const unsigned int n = 9999;
 // A shared pointer to the result.
 // We use a shared pointer to keep the result alive until the
 // thread is done.
-std::shared_ptr<unsigned long> nthPrime = make_shared<unsigned long int>(0);
+std::shared_ptr<unsigned long> nthPrime = std::make_shared<unsigned long int>(0);
 
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
@@ -275,7 +275,7 @@ m_workItem = asyncAction;
 
 ## <a name="handle-work-item-completion"></a>Обработка завершения рабочего элемента
 
-Предоставьте обработчик завершения, задав свойство [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) рабочего элемента. Предоставьте делегат (можно использовать лямбда-функцию или функцию-делегат) для обработки завершения рабочего элемента. Например, используйте [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) для доступа к потоку пользовательского интерфейса и отображения результатов.
+Предоставьте обработчик завершения, задав свойство [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) рабочего элемента. Предоставьте делегат (можно использовать лямбда-функцию или функцию-делегат) для обработки завершения рабочего элемента. Например, используйте [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) для доступа к потоку пользовательского интерфейса и отображения результатов.
 
 В следующем примере пользовательский интерфейс обновляется на основе результатов выполнения рабочего элемента, отправленного на шаге 1:
 

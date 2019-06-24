@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp, Windows Information Protection, корпоративные данные, защита корпоративных данных, edp, грамотные приложения
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: f6938118b3a9041eea27367c3916e94ce34d468e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 42f08127567704b1c8623ac64857cc5afe0ef882
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595479"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321394"
 ---
 # <a name="windows-information-protection-wip"></a>Windows Information Protection (WIP)
 
@@ -42,8 +42,8 @@ WIP вместе с MDM предоставляет организации бол
 ![Жизненный цикл WIP](images/wip-lifecycle.png)
 
 > **Дополнительные сведения о WIP** <br>
-* [Знакомство с Windows Information Protection](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
-* [Защита корпоративных данных с помощью Windows Information Protection (WIP)](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
+* [Знакомство с Windows Information Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
+* [Защита корпоративных данных с помощью Windows Information Protection (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
 
 Если ваше приложение входит в список разрешенных, на все данные, созданные вашим приложением, распространяются ограничения политики. Это означает, что если администраторы отзовут у пользователей права доступа к корпоративным данным, эти пользователи потеряют доступ ко всем данным, созданным в приложении.
 

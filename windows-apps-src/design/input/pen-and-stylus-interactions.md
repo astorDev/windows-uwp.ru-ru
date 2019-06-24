@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ра�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d60c85efe8f0a959ac66ffbd3dc8a05f312d0f2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 427d359676bd064e577ab4f13f7b0a17f61d7e3e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365651"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317167"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Взаимодействие с пером и Windows Ink в приложениях UWP
 
@@ -64,8 +64,7 @@ ms.locfileid: "66365651"
 В этом примере [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) перекрывает фоновое изображение.
 
 > [!NOTE]
-> Объекту класса InkCanvas имеет значение по умолчанию [ **высота** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) и [ **ширины** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width) свойства равна нулю, если он не является дочерним элементом элемента, автоматически размеры его дочерние элементы, такие как [StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel
-) или [сетки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) элементов управления.
+> Объекту класса InkCanvas имеет значение по умолчанию [ **высота** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) и [ **ширины** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width) свойства равна нулю, если он не является дочерним элементом элемента, автоматически размеры его дочерние элементы, такие как [StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel) или [сетки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) элементов управления.
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

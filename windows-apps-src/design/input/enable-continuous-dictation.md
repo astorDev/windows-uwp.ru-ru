@@ -8,12 +8,12 @@ keywords: речь, голос, распознавание речи, естес�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3709a9076ce1d258ce2eca7f97aa1478088a9044
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 646f4ad98e6c914c2318a164629d31ce7b67dab4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363569"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317305"
 ---
 # <a name="continuous-dictation"></a>Непрерывная диктовка
 
@@ -125,7 +125,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  Затем мы проверяем свойство [**Confidence**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence). Если значение уверенности равно [**Medium**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionConfidence) или выше, мы добавляем текст в StringBuilder. Также мы обновляем пользовательский интерфейс по мере сбора ввода.
 
-    **Примечание**   [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) событие фоновый поток, который не может напрямую обновлять пользовательский Интерфейс. Если обработчик должен обновить пользовательский Интерфейс (как \[пример распознавания речи и преобразования текста в РЕЧЬ\] does), необходимо отправлять обновления в поток пользовательского интерфейса через [ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) метод диспетчера.
+    **Примечание**   [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) событие фоновый поток, который не может напрямую обновлять пользовательский Интерфейс. Если обработчик должен обновить пользовательский Интерфейс (как \[пример распознавания речи и преобразования текста в РЕЧЬ\] does), необходимо отправлять обновления в поток пользовательского интерфейса через [ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) метод диспетчера.
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -165,7 +165,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  Обработчик событий проверяет свойства Status, чтобы определить, было ли распознавание успешным. Он также обрабатывает те случаи, когда пользователь перестает говорить. Часто [**TimeoutExceeded**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) считается успешным распознаванием, так как это означает, что пользователь перестал говорить. Вы должны обрабатывать эти случаи в своем коде, обеспечивая удобную работу пользователя.
 
-    **Примечание**   [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) событие фоновый поток, который не может напрямую обновлять пользовательский Интерфейс. Если обработчик должен обновить пользовательский Интерфейс (как \[пример распознавания речи и преобразования текста в РЕЧЬ\] does), необходимо отправлять обновления в поток пользовательского интерфейса через [ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) метод диспетчера.
+    **Примечание**   [ **ResultGenerated** ](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated) событие фоновый поток, который не может напрямую обновлять пользовательский Интерфейс. Если обработчик должен обновить пользовательский Интерфейс (как \[пример распознавания речи и преобразования текста в РЕЧЬ\] does), необходимо отправлять обновления в поток пользовательского интерфейса через [ **RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) метод диспетчера.
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,

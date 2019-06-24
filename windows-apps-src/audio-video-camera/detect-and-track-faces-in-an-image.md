@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f1be694be412bbf0a4e076e8ac5753eefda74c55
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: be6780851c05f59abc373318f0746c8e436b74ac
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360912"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318410"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Обнаружение лиц на изображениях или в видео
 
@@ -45,7 +45,7 @@ ms.locfileid: "66360912"
 
 [!code-cs[Decode](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
 
-В текущей версии класс **FaceDetector** поддерживает только изображения в формате Gray8 или Nv12. Класс **SoftwareBitmap** предоставляет метод [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows), который преобразует точечный рисунок из одного формата в другой. В этом примере исходное изображение преобразовывается в формат пикселей Gray8, если оно еще не в этом формате. При желании для того, чтобы определить во время выполнения, поддерживается ли формат пикселей, можно использовать методы [**GetSupportedBitmapPixelFormats**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.getsupportedbitmappixelformats) и [**IsBitmapPixelFormatSupported**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.isbitmappixelformatsupported) на случай, если набор поддерживаемых форматов будет расширяться в будущих версиях.
+В текущей версии класс **FaceDetector** поддерживает только изображения в формате Gray8 или Nv12. Класс **SoftwareBitmap** предоставляет метод [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert), который преобразует точечный рисунок из одного формата в другой. В этом примере исходное изображение преобразовывается в формат пикселей Gray8, если оно еще не в этом формате. При желании для того, чтобы определить во время выполнения, поддерживается ли формат пикселей, можно использовать методы [**GetSupportedBitmapPixelFormats**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.getsupportedbitmappixelformats) и [**IsBitmapPixelFormatSupported**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.isbitmappixelformatsupported) на случай, если набор поддерживаемых форматов будет расширяться в будущих версиях.
 
 [!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
@@ -91,7 +91,7 @@ ms.locfileid: "66360912"
 
 Как и **FaceDetector**, **FaceTracker** поддерживает ограниченный набор форматов пикселей. В этом примере обнаружение лиц отменяется, если формат предоставленного кадра — не Nv12.
 
-Вызовите [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync), чтобы извлечь список объектов [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace), представляющих лица в кадре. Когда у вас будет список лиц, их можно отображать тем же образом, который описан выше для обнаружения лиц. Обратите внимание, что так как вспомогательный метод отслеживания лиц не вызывается в потоке пользовательского интерфейса, все обновления пользовательского интерфейса необходимо выполнять внутри вызова [**CoredDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows).
+Вызовите [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync), чтобы извлечь список объектов [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace), представляющих лица в кадре. Когда у вас будет список лиц, их можно отображать тем же образом, который описан выше для обнаружения лиц. Обратите внимание, что, так как лицо, отслеживания вспомогательный метод не вызывается в потоке пользовательского интерфейса, необходимо все обновления пользовательского интерфейса в внутри вызова [ **CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync).
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 

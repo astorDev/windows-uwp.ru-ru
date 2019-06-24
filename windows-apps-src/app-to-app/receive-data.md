@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd84d5e0e41f07b53be0c0afce4b881a8a75d59
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4a171df5312d6c4613dfca1215f5ddd948153a8f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359217"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317860"
 ---
 # <a name="receive-data"></a>Получение данных
 
@@ -47,7 +47,7 @@ ms.locfileid: "66359217"
 
 ## <a name="handle-share-activation"></a>Обработка активации общего доступа
 
-Когда пользователь выбирает ваше приложение (обычно из списка доступных приложений-получателей данных в пользовательском интерфейсе общего ресурса), создается событие [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)). Ваше приложение должно обработать это событие, чтобы принять данные, к которым пользователь хочет предоставить общий доступ.
+Когда пользователь выбирает ваше приложение (обычно из списка доступных приложений-получателей данных в пользовательском интерфейсе общего ресурса), создается событие [**OnShareTargetActivated**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_). Ваше приложение должно обработать это событие, чтобы принять данные, к которым пользователь хочет предоставить общий доступ.
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -87,7 +87,7 @@ shareOperation.ReportStarted();
 shareOperation.ReportSubmittedBackgroundTask(); 
 ```
 
-При возникновении сбоя вызовите [**ReportError**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportError(System.String)), чтобы отправить системе сообщение об ошибке. Пользователь увидит это сообщение при проверке состояния общего доступа. В этот момент ваше приложение завершило работу, и общий доступ закрыт. Пользователь должен запустить его снова, чтобы установить общий доступ к содержимому. В зависимости от сценария вы можете счесть некоторые ошибки недостаточно серьезными для завершения общего доступа. В этом случае вы можете не вызывать **ReportError** и продолжать работу с общим доступом.
+При возникновении сбоя вызовите [**ReportError**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation#Windows_ApplicationModel_DataTransfer_ShareTarget_ShareOperation_ReportError_System_String_), чтобы отправить системе сообщение об ошибке. Пользователь увидит это сообщение при проверке состояния общего доступа. В этот момент ваше приложение завершило работу, и общий доступ закрыт. Пользователь должен запустить его снова, чтобы установить общий доступ к содержимому. В зависимости от сценария вы можете счесть некоторые ошибки недостаточно серьезными для завершения общего доступа. В этом случае вы можете не вызывать **ReportError** и продолжать работу с общим доступом.
 
 ```cs
 shareOperation.ReportError("Could not reach the server! Try again later."); 

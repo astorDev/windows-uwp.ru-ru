@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 63656fc545596fc045dc536167313c0c8e3f6ad2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 57532c45bdf6c2b8feb2af1277be74a0f8b2c759
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371162"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320302"
 ---
 # <a name="property-path-syntax"></a>Синтаксис Property-path
 
@@ -58,7 +58,7 @@ ms.locfileid: "66371162"
 
 ### <a name="attached-properties"></a>Вложенные свойства
 
-Пути к свойствам могут включать ссылки на присоединенные свойства. Поскольку определяющее имя присоединенного свойства уже включает точку, любое имя присоединенного свойства необходимо заключить в круглые скобки, чтобы точка не рассматривалась как этап "объект-свойство". Например, строка, указывающая, что необходимо использовать [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)) в качестве пути привязки, будет выглядеть так: «(Canvas.ZIndex)». Дополнительные сведения о присоединенных свойствах см. в разделе [Общие сведения о присоединенных свойствах](attached-properties-overview.md).
+Пути к свойствам могут включать ссылки на присоединенные свойства. Поскольку определяющее имя присоединенного свойства уже включает точку, любое имя присоединенного свойства необходимо заключить в круглые скобки, чтобы точка не рассматривалась как этап "объект-свойство". Например, строка, указывающая, что необходимо использовать [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) в качестве пути привязки, будет выглядеть так: «(Canvas.ZIndex)». Дополнительные сведения о присоединенных свойствах см. в разделе [Общие сведения о присоединенных свойствах](attached-properties-overview.md).
 
 ### <a name="combining-property-path-syntax"></a>Объединение синтаксиса пути к свойству
 
@@ -70,7 +70,7 @@ ms.locfileid: "66371162"
 
 ## <a name="property-path-for-animation-targeting"></a>Путь к свойству для нацеливания на анимацию
 
-Анимации используют нацеливание на свойство зависимостей, в котором значения раскадровки применяются при запуске анимации. Чтобы определить объект, в котором существует свойство, подлежащее анимированию, анимация нацеливается на элемент по имени ([Атрибут x:Name](x-name-attribute.md)). Часто необходимо определить путь к свойству, который начинается с объекта, определенного как [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8), и заканчивается определенным значением свойства зависимостей, в котором должна применяться анимация. Этот путь к свойству используется в качестве значения для [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)).
+Анимации используют нацеливание на свойство зависимостей, в котором значения раскадровки применяются при запуске анимации. Чтобы определить объект, в котором существует свойство, подлежащее анимированию, анимация нацеливается на элемент по имени ([Атрибут x:Name](x-name-attribute.md)). Часто необходимо определить путь к свойству, который начинается с объекта, определенного как [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8), и заканчивается определенным значением свойства зависимостей, в котором должна применяться анимация. Этот путь к свойству используется в качестве значения для [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)).
 
 Подробнее о том, как задать анимацию в XAML, см. [Раскадровка анимации](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
 
@@ -107,7 +107,7 @@ ms.locfileid: "66371162"
 
 В большинстве случаев [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) можно применить в XAML, вообще не используя код. Но в некоторых случаях может потребоваться определить объект **PropertyPath** с помощью кода и назначить его свойству во время выполнения.
 
-[**PropertyPath** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) имеет [ **PropertyPath(String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.) конструктор и не имеет конструктора по умолчанию. Строка, передаваемая в этот конструктор, является строкой, которая определена с помощью синтаксиса пути к свойству, как указано ранее. Это также та же строка, которая может использоваться для назначения [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) в качестве атрибута XAML. Единственным отличным API класса **PropertyPath** является свойство [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path), которое доступно только для чтения. Это свойство можно использовать в качестве строки конструктора для другого экземпляра **PropertyPath**.
+[**PropertyPath** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) имеет [ **PropertyPath(String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.-ctor) конструктор и не имеет конструктора по умолчанию. Строка, передаваемая в этот конструктор, является строкой, которая определена с помощью синтаксиса пути к свойству, как указано ранее. Это также та же строка, которая может использоваться для назначения [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) в качестве атрибута XAML. Единственным отличным API класса **PropertyPath** является свойство [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path), которое доступно только для чтения. Это свойство можно использовать в качестве строки конструктора для другого экземпляра **PropertyPath**.
 
 ## <a name="related-topics"></a>См. также
 
@@ -116,6 +116,6 @@ ms.locfileid: "66371162"
 * [Расширение разметки {binding}](binding-markup-extension.md)
 * [**propertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)
 * [**Привязки**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
-* [**Конструктор привязки**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.)
+* [**Конструктор привязки**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.-ctor)
 * [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)
 

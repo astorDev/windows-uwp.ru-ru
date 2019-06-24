@@ -5,22 +5,22 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live, работоспособность, ошибки пользователя
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a311550541391d9aa5dc035bc73130274dc9e0e
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 052b8befc1540c3c2eae58e406db77e431ce6729
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162910"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321755"
 ---
 # <a name="get-xbox-live-health-data"></a>Получение данных работоспособности в Xbox Live
 
 
-Используйте этот метод в API аналитики для Microsoft Store для получения данных работоспособности для своей [игры с поддержкой Xbox Live](https://docs.microsoft.com/gaming/xbox-live//index.md). Эта информация также доступна в [отчет по аналитике в Xbox](../publish/xbox-analytics-report.md) в центре партнеров.
+Используйте этот метод в API аналитики для Microsoft Store для получения данных работоспособности для своей [игры с поддержкой Xbox Live](https://docs.microsoft.com/gaming/xbox-live/index.md). Эта информация также доступна в [отчет по аналитике в Xbox](../publish/xbox-analytics-report.md) в центре партнеров.
 
 > [!IMPORTANT]
-> Этот метод поддерживает только игры для Xbox или игры, использующие службы Xbox Live. Эти игры, в том числе игры, опубликованные [партнерами Майкрософт](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners), и отправленные в рамках программы [ID@Xbox, должны пройти [процесс утверждения концепции](../gaming/concept-approval.md)](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id). В настоящее время этот метод не поддерживает игры, опубликованные в рамках программы [Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
+> Этот метод поддерживает только игры для Xbox или игры, использующие службы Xbox Live. Эти игры, в том числе игры, опубликованные [партнерами Майкрософт](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners), и отправленные в рамках программы [ID@Xbox, должны пройти [процесс утверждения концепции](../gaming/concept-approval.md)](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id). В настоящее время этот метод не поддерживает игры, опубликованные в рамках программы [Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для использования этого метода сначала необходимо сделать следующее:
 
@@ -73,7 +73,7 @@ Authorization: Bearer <your access token>
 
 | Значение      | Тип   | Описание                  |
 |------------|--------|-------------------------------------------------------|
-| Значение      | Массив  | Массив объектов, содержащий информацию о работоспособности. Дополнительные сведения о данных в каждом объекте см. в следующей таблице.                                                                                                                      |
+| Значение      | array  | Массив объектов, содержащий информацию о работоспособности. Дополнительные сведения о данных в каждом объекте см. в следующей таблице.                                                                                                                      |
 | @nextLink  | строка | При наличии дополнительных страниц данных эта строка содержит универсальный код ресурса (URI), который можно использовать для запроса следующей страницы данных. Например, это значение возвращается в том случае, если параметр **top** запроса имеет значение 10000, но для данного запроса имеется больше 10000 строк данных. |
 | TotalCount | ssNoversion    | Общее количество строк в результирующих данных для запроса.   |
 
@@ -95,8 +95,8 @@ Authorization: Bearer <your access token>
 | Значение      | Тип   | Описание                  |
 |------------|--------|-------------------------------------------------------|
 | служба      | строка  |   Имя службы Xbox Live, к которой относятся данные работоспособности.       |
-| конечная точка      | строка  |   Конечная точка службы Xbox Live, к которой относятся данные работоспособности.        |
-| httpStatusCode      | строка  |  Код статуса HTTP для этого набора данных работоспособности.<p/><p/>**Примечание.**&nbsp;&nbsp;Код состояния **429E** означает, что вызов службы прошел успешно только потому, что [детально настроенное ограничение скорости](https://docs.microsoft.com/gaming/xbox-live//using-xbox-live/best-practices/fine-grained-rate-limiting.md) не использовалось во время вызова. Детально настроенное ограничение скорости может быть принудительно применено в будущем, если службы подвергнется большим нагрузкам, и в этом случае вызов получит [код состояния HTTP 429](https://docs.microsoft.com/gaming/xbox-live//using-xbox-live/best-practices/fine-grained-rate-limiting.md#http-429-response-object).         |
+| endpoint      | строка  |   Конечная точка службы Xbox Live, к которой относятся данные работоспособности.        |
+| httpStatusCode      | строка  |  Код статуса HTTP для этого набора данных работоспособности.<p/><p/>**Примечание.** &nbsp;&nbsp;Код состояния **429E** означает, что вызов службы прошел успешно только потому, что [детально настроенное ограничение скорости](https://docs.microsoft.com/gaming/xbox-live/using-xbox-live/best-practices/fine-grained-rate-limiting.md) не использовалось во время вызова. Детально настроенное ограничение скорости может быть принудительно применено в будущем, если службы подвергнется большим нагрузкам, и в этом случае вызов получит [код состояния HTTP 429](https://docs.microsoft.com/gaming/xbox-live/using-xbox-live/best-practices/fine-grained-rate-limiting.md#http-429-response-object).         |
 | serviceResponses      | number  | Количество ответов службы, возвративших указанный код состояния.         |
 | uniqueDevices      | number  |  Количество уникальных устройства, которые вызвали службу и получили указанный код состояния.       |
 | uniqueUsers      | number  |   Количество уникальных пользователей, которые получили код указанного состояния.       |

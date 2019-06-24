@@ -5,20 +5,20 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, uwp, службы Store, API аналитики для Microsoft Store, аналитика Xbox Live, многопользовательский
 ms.localizationpriority: medium
-ms.openlocfilehash: 58f470abdf7cbf0770bf01dd123a8fdfd2c2cbea
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: b80a9dc8828459e7734370061e960fad64ab7015
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162999"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321767"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a>Получение многопользовательских данных в Xbox Live
 
 
-Используйте этот метод в API аналитики для Microsoft Store для получения многопользовательских данных для своей [игры с поддержкой Xbox Live](https://docs.microsoft.com/gaming/xbox-live//index.md) с разбивкой по дням или месяцам. Эта информация также доступна в [отчет по аналитике в Xbox](../publish/xbox-analytics-report.md) в центре партнеров.
+Используйте этот метод в API аналитики для Microsoft Store для получения многопользовательских данных для своей [игры с поддержкой Xbox Live](https://docs.microsoft.com/gaming/xbox-live/index.md) с разбивкой по дням или месяцам. Эта информация также доступна в [отчет по аналитике в Xbox](../publish/xbox-analytics-report.md) в центре партнеров.
 
 > [!IMPORTANT]
-> Этот метод поддерживает только игры для Xbox или игры, использующие службы Xbox Live. Эти игры, в том числе игры, опубликованные [партнерами Майкрософт](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners), и отправленные в рамках программы [ID@Xbox, должны пройти [процесс утверждения концепции](../gaming/concept-approval.md)](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id). В настоящее время этот метод не поддерживает игры, опубликованные в рамках программы [Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
+> Этот метод поддерживает только игры для Xbox или игры, использующие службы Xbox Live. Эти игры, в том числе игры, опубликованные [партнерами Майкрософт](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners), и отправленные в рамках программы [ID@Xbox, должны пройти [процесс утверждения концепции](../gaming/concept-approval.md)](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id). В настоящее время этот метод не поддерживает игры, опубликованные в рамках программы [Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## <a name="prerequisites"></a>предварительные требования
 
@@ -73,7 +73,7 @@ Authorization: Bearer <your access token>
 
 | Значение      | Тип   | Описание                  |
 |------------|--------|-------------------------------------------------------|
-| Значение      | Массив  | Массив объектов, содержащих многопользовательские данные, где каждый объект представляет собой набор данных для указанного периода в днях или месяцах, сгруппированных времени по заданным значениям **filter** и **groupby**. Дополнительные сведения о данных в каждом объекте см. в разделах [Многопользовательская аналитика по дням](#daily-multiplayer-analytics) и [Многопользовательская аналитика по месяцам](#monthly-multiplayer-analytics).     |
+| Значение      | array  | Массив объектов, содержащих многопользовательские данные, где каждый объект представляет собой набор данных для указанного периода в днях или месяцах, сгруппированных времени по заданным значениям **filter** и **groupby**. Дополнительные сведения о данных в каждом объекте см. в разделах [Многопользовательская аналитика по дням](#daily-multiplayer-analytics) и [Многопользовательская аналитика по месяцам](#monthly-multiplayer-analytics).     |
 | @nextLink  | строка | При наличии дополнительных страниц данных эта строка содержит универсальный код ресурса (URI), который можно использовать для запроса следующей страницы данных. Например, это значение возвращается в том случае, если параметр **top** запроса имеет значение 10000, но для данного запроса имеется больше 10000 строк данных. |
 | TotalCount | ssNoversion    | Общее количество строк в результирующих данных для запроса. |
 

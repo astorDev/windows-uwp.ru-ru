@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
-ms.openlocfilehash: 585289fdc66b8730036f3d14faeafce8c22c09a7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 276a352918e4458e145755bbafad09d4278ec4d7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371361"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322053"
 ---
 # <a name="bring-custom-c-games-to-uwp-on-xbox"></a>Перенос пользовательских игр на C++ для Xbox на UWP
 
 Если вы создаете пользовательскую версию средств разработки C++, Xbox One обеспечивает полную поддержку C++. 
 
-Отрисовка в играх на C++ для универсальной платформы Windows (UWP) осуществляется с помощью DirectX. Подробнее см. в разделе [Графика и игры на основе DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274(v=vs.85).aspx).
+Отрисовка в играх на C++ для универсальной платформы Windows (UWP) осуществляется с помощью DirectX. Подробнее см. в разделе [Графика и игры на основе DirectX](https://docs.microsoft.com/windows/desktop/directx).
 
 Вы можете создавать игры на [C++ с расширениями компонентов](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)(C++/CX) или в [стандартной версии C++](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)(Win32 и COM).
 

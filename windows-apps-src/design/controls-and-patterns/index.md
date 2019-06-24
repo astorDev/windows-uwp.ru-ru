@@ -8,12 +8,12 @@ ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ffed5cdc063a35b4693aa4a9323e2143b69e4fc
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 2ecf82294614114e711483dfdc58cfad36591369
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065350"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319563"
 ---
 # <a name="controls-for-uwp-apps"></a>Элементы управления для приложений UWP 
 
@@ -133,6 +133,6 @@ ms.locfileid: "65065350"
 
 ## <a name="additional-controls"></a>Дополнительные элементы управления
 
-Дополнительные элементы управления для разработки UWP предлагаются такими компаниями, как <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/products/uwp">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> и <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. Эти элементы управления обеспечивают дополнительную поддержку для предприятий и разработчиков .NET путем дополнения стандартных системных элементов управления пользовательскими элементами управления и службами.  
+Дополнительные элементы управления для разработки UWP предлагаются такими компаниями, как <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> и <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. Эти элементы управления обеспечивают дополнительную поддержку для предприятий и разработчиков .NET путем дополнения стандартных системных элементов управления пользовательскими элементами управления и службами.  
 
 Если вы хотите подробнее узнать об этих элементах управления, ознакомьтесь с примером кода <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">базы данных Customer Orders</a> на сайте GitHub. В этом примере используется элемент управления сеткой данных и выполняется проверка вводимых данных средствами Telerik, которые являются частью пользовательского интерфейса для набора UWP. Пользовательский интерфейс для набора UWP — это коллекция из более чем 20 элементов управления, доступная в качестве проекта с открытым исходным кодом в фонде .NET.

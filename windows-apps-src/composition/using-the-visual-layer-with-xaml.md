@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c00bf23a8539f7ee37974e16586a4477cc6b78bb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4d118633d9d0d9b7007c94ec4d5053db34b09e29
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360396"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318047"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Использование визуального уровня с помощью XAML
 
@@ -25,7 +25,7 @@ ms.locfileid: "66360396"
 - Точные до пикселя тени
 
 Эти эффекты и анимации можно применять к существующему содержимому XAML, поэтому вам не придется кардинально менять структуру вашего приложения на XAML, чтобы использовать эти новые функции.
-Анимации макета, тени и эффекты размытия описываются в разделе рецептов ниже. Пример кода с реализацией параллакса см. в разделе [Пример ParallaxingListItems](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems). В [репозитории WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs) также есть ряд других примеров реализации анимаций, теней и эффектов.
+Анимации макета, тени и эффекты размытия описываются в разделе рецептов ниже. Пример кода с реализацией параллакса см. в разделе [Пример ParallaxingListItems](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems). В [репозитории WindowsUIDevLabs](https://github.com/microsoft/WindowsCompositionSamples) также есть ряд других примеров реализации анимаций, теней и эффектов.
 
 ## <a name="the-xamlcompositionbrushbase-class"></a>Класс XamlCompositionBrushBase
 
@@ -364,6 +364,6 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 - [Наглядное представление слоя](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
 - [**ElementCompositionPreview** класса](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
-- Расширенные примеры пользовательского интерфейса и композиции в [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs)
-- [Пример BasicXamlInterop](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
-- [Пример ParallaxingListItems](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)
+- Расширенные примеры пользовательского интерфейса и композиции в [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples)
+- [Пример BasicXamlInterop](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/BasicXamlInterop)
+- [Пример ParallaxingListItems](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems)

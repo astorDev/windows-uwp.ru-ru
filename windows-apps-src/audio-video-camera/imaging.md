@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c61a35f0ad35cf85afcba564eb676aa171b0243
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c25fc09d606c0f143f357dd7f89026fa94b80922
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360835"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318355"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Создание, редактирование и сохранение точечных рисунков
 
@@ -65,7 +65,7 @@ ms.locfileid: "66360835"
 
 [!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
 
-В настоящее время элемент управления **Image** поддерживает только изображения с кодированием BGRA8 и альфа-каналом с предварительным умножением (или без альфа-канала). Перед попыткой отображения изображения убедитесь, что оно имеет правильный формат; если формат неправильный, используйте статический метод [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) объекта **SoftwareBitmap**, чтобы преобразовать изображение в поддерживаемый формат.
+В настоящее время элемент управления **Image** поддерживает только изображения с кодированием BGRA8 и альфа-каналом с предварительным умножением (или без альфа-канала). Перед попыткой отображения изображения убедитесь, что оно имеет правильный формат; если формат неправильный, используйте статический метод [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert) объекта **SoftwareBitmap**, чтобы преобразовать изображение в поддерживаемый формат.
 
 Создайте новый объект [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource). Задайте содержимое исходного объекта, вызвав [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync), передающий **SoftwareBitmap**. Затем вы можете задать свойство [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) элемента управления **Image** для созданного **SoftwareBitmapSource**.
 
@@ -89,7 +89,7 @@ ms.locfileid: "66360835"
 
 [!code-cs[InteropNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetInteropNamespace)]
 
-Инициализируйте COM-интерфейс [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions//mt297505(v=vs.85)), добавив следующий код в ваше пространство имен.
+Инициализируйте COM-интерфейс [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85)), добавив следующий код в ваше пространство имен.
 
 [!code-cs[COMImport](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCOMImport)]
 
@@ -111,7 +111,7 @@ ms.locfileid: "66360835"
 
 ## <a name="convert-a-softwarebitmap-to-a-different-pixel-format"></a>Преобразование SoftwareBitmap в другой формат пикселей
 
-Класс **SoftwareBitmap** предоставляет статический метод [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows), который позволяет легко создать **SoftwareBitmap**, использующий формат пикселей и режим альфа-канала, указанные вами в существующем **SoftwareBitmap**. Обратите внимание, что созданный точечный рисунок содержит отдельную копию данных изображения. Изменения нового точечного рисунка не будут влиять на исходный файл.
+Класс **SoftwareBitmap** предоставляет статический метод [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert), который позволяет легко создать **SoftwareBitmap**, использующий формат пикселей и режим альфа-канала, указанные вами в существующем **SoftwareBitmap**. Обратите внимание, что созданный точечный рисунок содержит отдельную копию данных изображения. Изменения нового точечного рисунка не будут влиять на исходный файл.
 
 [!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08a7ca0b08a9df57d3c496f33f963fcd9d0ebfe2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a3fa029c5046b1c3f20058275aec0ff901706e65
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367065"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320946"
 ---
 # <a name="create-adaptive-tiles"></a>Создание адаптивных плиток
 
@@ -1393,7 +1393,7 @@ TileWide = new TileBinding()
 * [Схема содержимого плитки](../tiles-and-notifications/tile-schema.md)
 * [Отправка локального уведомления на плитке](sending-a-local-tile-notification.md)
 * [Специальные шаблоны плиток](special-tile-templates-catalog.md)
-* [UWP Community Toolkit - уведомления](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [UWP Community Toolkit - уведомления](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
 * [Уведомления Windows на GitHub](https://github.com/WindowsNotifications)
 
  

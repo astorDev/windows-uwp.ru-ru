@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 72e45f8ef0f5684b3a712056eb367975f8e6103a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f61f2a0889cd5a2b2b95063e6009530951b49cbd
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370352"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321606"
 ---
 # <a name="bluetooth-developer-faq"></a>Вопросы и ответы для Bluetooth-разработчиков
 
@@ -82,5 +82,5 @@ ms.locfileid: "66370352"
 **Bluetooth LE**: Да, все функции в OneCore и должен быть доступен на самой последней устройств с работает Bluetooth с НИЗКИМ стека. 
 > Одно предостережение. Периферийные роль зависит от аппаратного обеспечения и некоторые выпуски Windows Server не поддерживают Bluetooth. 
 
-**Bluetooth (Классическая модель) BR/EDR**: Существует несколько вариантов, но в целом, они имеют очень похожа поддержка уровня профиля. См. документацию по [RFCOMM](send-or-receive-files-with-rfcomm.md) и документацию по этим поддерживаемым профилям для [ПК](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles) и [телефона](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)
+**Bluetooth (Классическая модель) BR/EDR**: Существует несколько вариантов, но в целом, они имеют очень похожа поддержка уровня профиля. См. документацию по [RFCOMM](send-or-receive-files-with-rfcomm.md) и документацию по этим поддерживаемым профилям для [ПК](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles) и [телефона](https://support.microsoft.com/products/windows?os=windows-10-mobile)
 

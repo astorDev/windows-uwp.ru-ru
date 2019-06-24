@@ -5,12 +5,12 @@ keywords: активность пользователя, действия пол
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2756231b067176da66c6dbcedf7a1452d5d109f4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ed268dd4ba07604db468ee24e5ea348acf806b39
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641159"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321810"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Продолжение активности пользователей даже на разных устройствах
 
@@ -73,7 +73,7 @@ private async Task GenerateActivityAsync()
 
 После получения или создания **UserActivity** задайте два других обязательных поля: `UserActivity.VisualElements.DisplayText` и `UserActivity.ActivationUri`.
 
-Затем сохраните метаданные **UserActivity**, вызвав [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync), и, наконец, [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), что возвращает [UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession). **UserActivitySession** — это объект, который можно использовать для управления, когда пользователь фактически взаимодействует с **UserActivity**. Например, мы вызываем `Dispose()` для **UserActivitySession**, когда пользователь покидает страницу. В приведенном выше примере мы также вызываем `Dispose()` для `_currentActivity` перед вызовом `CreateSession()`. Это обусловлено тем, что мы сделали `_currentActivity` полем-участником нашей страницы и хотим остановить все выполняемые действия перед запуском нового (обратите внимание: `?` — [условный оператор null](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-conditional-operators), который проверяет на null, прежде чем выполнять доступ к элементу).
+Затем сохраните метаданные **UserActivity**, вызвав [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync), и, наконец, [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), что возвращает [UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession). **UserActivitySession** — это объект, который можно использовать для управления, когда пользователь фактически взаимодействует с **UserActivity**. Например, мы вызываем `Dispose()` для **UserActivitySession**, когда пользователь покидает страницу. В приведенном выше примере мы также вызываем `Dispose()` для `_currentActivity` перед вызовом `CreateSession()`. Это обусловлено тем, что мы сделали `_currentActivity` полем-участником нашей страницы и хотим остановить все выполняемые действия перед запуском нового (обратите внимание: `?` — [условный оператор null](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and-), который проверяет на null, прежде чем выполнять доступ к элементу).
 
 Поскольку в этом случае `ActivationUri` является нестандартной схемой, необходима также регистрация протокола в манифесте приложения. Это делается в XML-файле Package.appmanifest или с помощью конструктора.
 
@@ -149,8 +149,8 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="cross-platform-and-service-to-service-integration"></a>Интеграция между различными платформами и службами
 
-Если ваше приложение работает на разных платформах (например, на Android и iOS) или хранит данные состояния пользователя в облаке, можно опубликовать UserActivities через [Microsoft Graph](https://developer.microsoft.com/graph/).
-После проверки подлинности вашего приложения или службы с помощью учетной записи Майкрософт требуется всего два простых вызова REST для создания объектов [Действие](https://developer.microsoft.com/graph/docs/api-reference/beta/api/projectrome_put_activity) и [Журнал](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/projectrome_historyitem) с использованием тех же данных, что и выше.
+Если ваше приложение работает на разных платформах (например, на Android и iOS) или хранит данные состояния пользователя в облаке, можно опубликовать UserActivities через [Microsoft Graph](https://developer.microsoft.com/graph).
+После проверки подлинности вашего приложения или службы с помощью учетной записи Майкрософт требуется всего два простых вызова REST для создания объектов [Действие](https://docs.microsoft.com/graph/api/resources/projectrome-activity) и [Журнал](https://docs.microsoft.com/graph/api/resources/projectrome-historyitem) с использованием тех же данных, что и выше.
 
 ## <a name="summary"></a>Сводка
 
@@ -158,18 +158,18 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 * Дополнительные сведения о [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Ознакомьтесь с [примером кода](https://github.com/Microsoft/project-rome).
 * Посмотрите [более сложные адаптивные карты](https://adaptivecards.io/).
-* Опубликуйте **UserActivity** с iOS, Android или через веб-службу с помощью [Microsoft Graph](https://developer.microsoft.com/graph/).
+* Опубликуйте **UserActivity** с iOS, Android или через веб-службу с помощью [Microsoft Graph](https://developer.microsoft.com/graph).
 * Узнайте больше о [Project Rome на GitHub](https://github.com/Microsoft/project-rome).
 
 ## <a name="key-apis"></a>Основные API-интерфейсы
 
 * [Пространство имен UserActivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Действия пользователя (рим проекта docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Адаптивная карты](https://docs.microsoft.com/adaptive-cards/)
 * [Визуализатор адаптивной карты, примеры](https://adaptivecards.io/)
 * [Активация обработки URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Привлекательные со своими клиентами на любой платформе, с помощью Microsoft Graph, канал активности и адаптивной карты](https://channel9.msdn.com/Events/Connect/2017/B111)
-* [Microsoft Graph](https://developer.microsoft.com/graph/)
+* [Microsoft Graph](https://developer.microsoft.com/graph)

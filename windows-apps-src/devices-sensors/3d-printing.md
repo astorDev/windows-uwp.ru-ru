@@ -6,19 +6,19 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: Windows 10, uwp, 3dprinting трехмерной печати
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f63ce967c2053da9addc77fba0eb738fff41b44
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6c23dff66ecef87cecb2be5a90fd896be2c59424
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370384"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321687"
 ---
 # <a name="3d-printing"></a>Трехмерная печать
 
 
 В этом разделе описываются методы использования [пространства имен Windows.Graphics.Printing3D](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d) Добавление трехмерной печати функциональных возможностей в приложение универсальной Windows.  
 
-Дополнительные сведения о трехмерной печати в Windows 10, включая ресурсы для партнеров по оборудованию, дискуссионные форумы сообщества и общие сведения о трехмерной печати возможности, см. в разделе [трехмерной печати с Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10) сайта на оборудовании Центр разработчиков.
+Дополнительные сведения о трехмерной печати в Windows 10, включая ресурсы для партнеров по оборудованию, дискуссионные форумы сообщества и общие сведения о трехмерной печати возможности, см. в разделе [трехмерной печати с Windows 10](https://developer.microsoft.com/windows/hardware/3d-print/windows-3d-printing) сайта на оборудовании Центр разработчиков.
 
 | Раздел | Описание |
 |-------|-------------|
@@ -27,7 +27,7 @@ ms.locfileid: "66370384"
 
 ## <a name="related-topics"></a>См. также
 
-* [Трехмерной печати с Windows 10 (Центр разработчиков оборудования)](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)
+* [Трехмерной печати с Windows 10 (Центр разработчиков оборудования)](https://developer.microsoft.com/windows/hardware/3d-print/windows-3d-printing)
 * [Пространство имен Windows.Graphics.Printing3D](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
 * [Пример трехмерной печати](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
 * [Трехмерной печати из Unity образца](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)

@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bcc9a6d89a143d8fd03d73dbd83b832ed9513ee2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9692a8ef21e9f62114b38c6bb5d15199b8c0e04a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644419"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318154"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>Настройка эффекты & сред с помощью пользовательского интерфейса Windows
 
@@ -112,13 +112,13 @@ API можно добавить в существующий код в неско
     }
     ```
 
-Полный пример кода можно найти на [репозиторий Github пользовательского интерфейса Windows](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities).
+Полный пример кода можно найти на [репозиторий Github пользовательского интерфейса Windows](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 15063/CompCapabilities).
 
 ## <a name="fast-vs-slow-effects"></a>Быстрое сравнение медленно эффекты
 
 На основе отзывов из предоставленного [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) и [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) методы в интерфейсе API CompositionCapabilities, приложение может попытаться эффекты дорогих или не поддерживается для замены другие эффекты по своему выбору, оптимизированные для устройства. Некоторые эффекты, гарантированно поддерживают постоянно быть более ресурсоемким чем другие и следует использовать с осторожностью и другие эффекты можно использовать более свободно. Для всех эффектов тем не менее, следует соблюдать осторожность при цепочки и анимации в некоторых сценариях или сочетания может изменить характеристики производительности эффект графа. Ниже приведены некоторые характеристики производительности правило для отдельных эффектов.
 
-- Эффекты, которые заведомо негативно сказаться на высокой производительности приведены — гауссова Размытие, маска тени, BackDropBrush, HostBackDropBrush и слой Visual. Их не рекомендуется использовать для устройств нижний предел [(функция уровень 9.1-9.3)](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)и следует применять с осторожностью на устройствах верхний предел.
+- Эффекты, которые заведомо негативно сказаться на высокой производительности приведены — гауссова Размытие, маска тени, BackDropBrush, HostBackDropBrush и слой Visual. Их не рекомендуется использовать для устройств нижний предел [(функция уровень 9.1-9.3)](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)и следует применять с осторожностью на устройствах верхний предел.
 - Матрицы цветов, определенных BlendModes эффект Blend (яркость, цвет, насыщенность и Hue), включают эффекты влияние на производительность средних SpotLight SceneLightingEffect и (в зависимости от сценария) BorderEffect. Эти эффекты могут работать с определенных сценариях на устройствах нижний предел, но следует соблюдать осторожность при цепочки и анимации. Рекомендуем ограничения использования, до двух или меньше и анимации на основе только переходов.
 - Все другие эффекты влияют на низкую производительность и работает во всех случаях разумным при анимации и создание цепочки.
 

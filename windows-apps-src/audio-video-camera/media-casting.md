@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2318d873a55b4134cf36eda91b57866e14b6b3a7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 50f588caaf36d9a2a74222029e17785663cf3953
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361731"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318297"
 ---
 # <a name="media-casting"></a>Трансляция мультимедиа
 
@@ -66,14 +66,14 @@ ms.locfileid: "66361731"
 
 [!code-xml[CastPickerButton](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetCastPickerButton)]
 
-В обработчике события **Click** для этой кнопки вызовите [**TransformToVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.), чтобы получить преобразование элемента пользовательского интерфейса по отношению к другому элементу. В данном примере преобразованием является положение кнопки средства выбора трансляции относительно визуального корня окна приложения. Вызовите метод [**Show**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevicepicker.show) объекта [**CastingDevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Media.Casting.CastingDevicePicker), чтобы открыть диалоговое окно средства выбора трансляции. Укажите расположение и размеры кнопки средства выбора трансляции, чтобы система могла создать всплывающее диалоговое окно, когда пользователь нажмет на эту кнопку.
+В обработчике события **Click** для этой кнопки вызовите [**TransformToVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transformtovisual), чтобы получить преобразование элемента пользовательского интерфейса по отношению к другому элементу. В данном примере преобразованием является положение кнопки средства выбора трансляции относительно визуального корня окна приложения. Вызовите метод [**Show**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevicepicker.show) объекта [**CastingDevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Media.Casting.CastingDevicePicker), чтобы открыть диалоговое окно средства выбора трансляции. Укажите расположение и размеры кнопки средства выбора трансляции, чтобы система могла создать всплывающее диалоговое окно, когда пользователь нажмет на эту кнопку.
 
 [!code-cs[CastPickerButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastPickerButtonClick)]
 
 В обработчике события **CastingDeviceSelected** вызовите метод [**CreateCastingConnection**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevice.createcastingconnection) свойства [**SelectedCastingDevice**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdeviceselectedeventargs.selectedcastingdevice) аргументов события, которое обозначает выбранное пользователем транслирующее устройство. Зарегистрируйте обработчики для событий [**ErrorOccurred**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.erroroccurred) и [**StateChanged**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.statechanged). Вызовите метод [**RequestStartCastingAsync**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.requeststartcastingasync), чтобы начать трансляцию, передавая результат методу [**GetAsCastingSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaelement.getascastingsource) объекта **MediaPlayer** элемента управления **MediaPlayerElement**, чтобы указать, что транслируемое мультимедиа — это содержимое объекта **MediaPlayer**, связанного с объектом **MediaPlayerElement**.
 
 > [!NOTE] 
-> Подключение к трансляции должно быть инициировано в потоке пользовательского интерфейса. Так как поток пользовательского интерфейса не вызывает **CastingDeviceSelected**, вам необходимо разместить эти вызовы внутри вызова [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows), который вызовет их в потоке пользовательского интерфейса.
+> Подключение к трансляции должно быть инициировано в потоке пользовательского интерфейса. Так как поток пользовательского интерфейса не вызывает **CastingDeviceSelected**, вам необходимо разместить эти вызовы внутри вызова [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync), который вызовет их в потоке пользовательского интерфейса.
 
 [!code-cs[CastingDeviceSelected](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
@@ -112,7 +112,7 @@ ms.locfileid: "66361731"
 
 Событие **Added** наступает, когда наблюдатель обнаруживает новое устройство. В обработчике для этого события создайте новый объект [**CastingDevice**](https://docs.microsoft.com/uwp/api/Windows.Media.Casting.CastingDevice), вызвав метод [**CastingDevice.FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevice.fromidasync) и передав идентификатор обнаруженного транслирующего устройства, который содержится в переданном обработчику объекте **DeviceInformation**.
 
-Добавьте **CastingDevice** в транслирующее устройство **ListBox**, чтобы пользователь мог его выбрать. Из-за шаблона [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate), определенного в XAML, свойство [**FriendlyName**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevice.friendlyname) будет использоваться в качестве текста элемента в списке. Поскольку этот обработчик событий не вызывается из потока пользовательского интерфейса, необходимо обновить пользовательский интерфейс внутри вызова [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows).
+Добавьте **CastingDevice** в транслирующее устройство **ListBox**, чтобы пользователь мог его выбрать. Из-за шаблона [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate), определенного в XAML, свойство [**FriendlyName**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingdevice.friendlyname) будет использоваться в качестве текста элемента в списке. Поскольку этот обработчик событий не вызывается из потока пользовательского интерфейса, необходимо обновить пользовательский интерфейс внутри вызова [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync).
 
 [!code-cs[WatcherAdded](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetWatcherAdded)]
 
@@ -149,7 +149,7 @@ ms.locfileid: "66361731"
 
 [!code-cs[ErrorOccurred](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
 
-Наконец, реализуйте обработчик для кнопки отключения. Остановите трансляцию мультимедиа и отключитесь от транслирующего устройства, вызвав для объекта **CastingConnection** метод [**DisconnectAsync**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.disconnectasync). Этот вызов должен быть отправлен потоку пользовательского интерфейса с помощью вызова [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows).
+Наконец, реализуйте обработчик для кнопки отключения. Остановите трансляцию мультимедиа и отключитесь от транслирующего устройства, вызвав для объекта **CastingConnection** метод [**DisconnectAsync**](https://docs.microsoft.com/uwp/api/windows.media.casting.castingconnection.disconnectasync). Этот вызов должен быть отправлен потоку пользовательского интерфейса с помощью вызова [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync).
 
 [!code-cs[DisconnectButton](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetDisconnectButton)]
 

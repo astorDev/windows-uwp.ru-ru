@@ -5,12 +5,12 @@ ms.date: 10/04/2018
 ms.topic: article
 keywords: Windows 10, универсальной платформы Windows, выберите службу, pos, карт
 ms.localizationpriority: medium
-ms.openlocfilehash: 1805213c7c30ccbc67fb96098f11480703589bb4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 12b88d942e4b5a9c90880f6bd362ba9e7e011186
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651609"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321555"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a>Получение и распознавание данных магнитных карт
 
@@ -24,8 +24,7 @@ ms.locfileid: "57651609"
 * [Событие BankCardDataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): Происходит при проведении bank.
 * [Событие VendorSpecificDataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.vendorspecificdatareceived): Происходит при проведении конкретных поставщиков.
 
-Приложение должно подписаться на события, которые поддерживаются средством чтения магнитной полосы. Можно увидеть, какие типы карт поддерживаются с [MagneticStripeReader.SupportedCardTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes
-).
+Приложение должно подписаться на события, которые поддерживаются средством чтения магнитной полосы. Можно увидеть, какие типы карт поддерживаются с [MagneticStripeReader.SupportedCardTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes).
 
 В следующем коде показано, подписавшись на трех ***DataReceived** события:
 

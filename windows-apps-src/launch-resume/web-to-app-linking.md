@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: c638eb843528cc17a3f02233ef5f238264eb58a0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0d8550d346833559ccea1e8aea4ae73a8c6d4e7c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370518"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318663"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Добавление поддержки приложений для веб-сайтов, использующих обработчики URI приложений
 
@@ -191,7 +191,7 @@ Keyname: `ForceValidation` Значение: `1`
 - Файл JSON должен быть размещен на https-сервере.
 - Если вам нужно изменить пути, которые вы хотите поддерживать, можно повторно опубликовать JSON-файл, не переиздавая приложение. Пользователи увидят изменения через 1-8 дней.
 - Все неопубликованные приложения с AppUriHandlers будут иметь проверенные ссылки для данного узла при установке. Для проверки функциональности не требуется передавать JSON-файл на сайт.
-- Эта функция работает во всех случаях, когда ваше приложение является приложением UWP и запускается с помощью [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) или является приложением для настольной версии Windows и запускается с помощью [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). Если URL-адрес совпадает с зарегистрированным обработчиком URI приложения, вместо браузера будет запущено приложение.
+- Эта функция работает во всех случаях, когда ваше приложение является приложением UWP и запускается с помощью [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) или является приложением для настольной версии Windows и запускается с помощью [ShellExecuteEx](https://docs.microsoft.com/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa). Если URL-адрес совпадает с зарегистрированным обработчиком URI приложения, вместо браузера будет запущено приложение.
 
 ## <a name="see-also"></a>См. также
 

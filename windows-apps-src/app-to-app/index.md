@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dfd86d53805573d002984aaf33ba5f1bf17241c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3a55ea95f5c67a4184e1fd1592c4b6ac3356a75c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583096"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317697"
 ---
 # <a name="app-to-app-communication"></a>Связь между приложениями
 
@@ -36,4 +36,4 @@ ms.locfileid: "57583096"
 | [Перетаскивание](../design/input/drag-and-drop.md) | В этой статье рассказывается, как добавить в приложение UWP возможность перетаскивания. Перетаскивание – это классический и естественный способ взаимодействия с таким содержимым, как изображения и файлы. После реализации перетаскивание работает без проблем во всех направлениях, в том числе из приложения в приложение, из приложения на рабочий стол и с рабочего стола в приложение. |
 
 ## <a name="see-also"></a>См. также
-- [Разработка приложений UWP](https://developer.microsoft.com/windows/develop)
+- [Разработка приложений UWP](https://docs.microsoft.com/windows/uwp/develop/)

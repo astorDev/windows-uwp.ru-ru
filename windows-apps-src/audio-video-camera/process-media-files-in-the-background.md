@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d3530861175c8d9b70683926393b5adfdd59407
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 992648c8c90a8ad62b772d417b2b1beeb6087c53
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361562"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318529"
 ---
 # <a name="process-media-files-in-the-background"></a>Обработка файлов мультимедиа в фоновом режиме
 
@@ -55,7 +55,7 @@ ms.locfileid: "66361562"
 
 [!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
 
-Система вызывает метод [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) фоновой задачи, когда эта задача запускается. Задайте для объекта [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask), передаваемого в метод, соответствующую переменную-член. Зарегистрируйте обработчик для события [**Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled), которое возникает, когда системе нужно завершить работу фоновой задачи. После этого установите для свойства [**Progress**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) нулевое значение.
+Система вызывает метод [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) фоновой задачи, когда эта задача запускается. Задайте для объекта [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask), передаваемого в метод, соответствующую переменную-член. Зарегистрируйте обработчик для события [**Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled), которое возникает, когда системе нужно завершить работу фоновой задачи. После этого установите для свойства [**Progress**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) нулевое значение.
 
 Затем вызовите метод объекта [**GetDeferral**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.getdeferral) фоновой задачи для получения отсроченного объекта. Это сообщает системе, что завершать задачу не нужно, поскольку выполняются асинхронные операции.
 

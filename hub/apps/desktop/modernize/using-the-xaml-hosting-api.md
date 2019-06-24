@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 545e1e1b220de9edf444ca06c3b21140227e8284
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 16f61c1f950583ee0fef7f30b7e17939df7ea538
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215142"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317758"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>С помощью XAML UWP, интерфейс API размещения в приложении для настольных систем
 
@@ -34,7 +34,7 @@ XAML UWP, интерфейс API размещения предоставляет
 
 В этой статье описывается использование XAML UWP, интерфейс API размещения непосредственно в приложении вместо элементов управления, предоставляемые Windows Community Toolkit.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 XAML UWP, интерфейс API размещения имеет следующие предварительные требования:
 
@@ -71,7 +71,7 @@ XAML UWP, интерфейс API размещения включает эти о
 
 ### <a name="c-win32"></a>C++ Win32
 
-[C++Пример Win32](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island). В этом примере демонстрируется полная реализация, на котором размещается пользовательский элемент управления универсальной платформы Windows в работе C++ приложение Win32 (то есть приложение, не встроен в пакет MSIX).
+[C++Пример Win32](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island). В этом примере демонстрируется полная реализация, на котором размещается пользовательский элемент управления универсальной платформы Windows в работе C++ приложение Win32 (то есть приложение, не встроен в пакет MSIX).
 
 ### <a name="wpf-and-windows-forms"></a>WPF и Windows Forms
 
@@ -162,7 +162,7 @@ XAML UWP, интерфейс API размещения включает эти о
 
 Полные примеры, демонстрирующие эти задачи в контексте рабочий пример приложения см. следующие файлы кода:
 
-  * **C++ Win32:** См. в разделе [XamlBridge.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/XamlBridge.cpp) файл [ C++ пример Win32](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
+  * **C++ Win32:** См. в разделе [XamlBridge.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/XamlBridge.cpp) файл [ C++ пример Win32](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
   * **WPF:** См. в разделе [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) и [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) файлы в наборе средств сообщества Windows.  
 
@@ -176,7 +176,7 @@ XAML UWP, интерфейс API размещения включает эти о
 
 Правильно обрабатывать ввод с клавиатуры для каждого остров XAML, приложение должно передать все сообщения Windows с платформой UWP XAML таким образом, чтобы некоторые сообщения могут обрабатываться правильно. Чтобы сделать это, в любом месте с доступом к цикл обработки сообщений приложения, приведите **DesktopWindowXamlSource** объект для каждого XAML-Айленд для **IDesktopWindowXamlSourceNative2** COM-интерфейса. Затем вызовите **PreTranslateMessage** метод этот интерфейс и передайте в текущем сообщении.
 
-  * Объект C++ приложение Win32 может вызвать **PreTranslateMessage** непосредственно в его основной цикл обработки сообщений. Например, см. в разделе [SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L61) файл кода в [ C++ пример Win32](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
+  * Объект C++ приложение Win32 может вызвать **PreTranslateMessage** непосредственно в его основной цикл обработки сообщений. Например, см. в разделе [SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L61) файл кода в [ C++ пример Win32](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
   * Приложения WPF можно вызвать **PreTranslateMessage** из обработчика событий для [ **ComponentDispatcher.ThreadFilterMessage** ](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage?view=netframework-4.7.2) событий. Например, см. в разделе [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) файла в наборе средств сообщества Windows.
 
@@ -202,7 +202,7 @@ XAML UWP, интерфейс API размещения предоставляет
 
 Когда пользователь изменяет размер родительского элемента пользовательского интерфейса, необходимо обрабатывать любые необходимые макета изменения и убедиться, что отображения как предполагается, что элементы управления универсальной платформы Windows. Ниже приведено несколько важных сценариев, которые следует учитывать.
 
-* В C++ приложение Win32, если приложение обрабатывает сообщение WM_SIZE, его можно изменить положение размещенной остров XAML с помощью [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) функции. Например, см. в разделе [SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191) файл кода в [ C++ пример Win32](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
+* В C++ приложение Win32, если приложение обрабатывает сообщение WM_SIZE, его можно изменить положение размещенной остров XAML с помощью [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) функции. Например, см. в разделе [SampleApp.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191) файл кода в [ C++ пример Win32](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
 * Когда родительский элемент пользовательского интерфейса необходимо получить размер прямоугольной области, в соответствии **Windows.UI.Xaml.UIElement** , находящихся на **DesktopWindowXamlSource**, вызовите [ **Мер** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) метод **Windows.UI.Xaml.UIElement**. Пример:
 
@@ -245,11 +245,11 @@ XAML UWP, интерфейс API размещения предоставляет
 2. Вызовите [ **GetXamlType** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider.getxamltype) метод поставщика метаданных корневой при назначении имя типа элемента управления XAML универсальной платформы Windows (это может назначаться в коде во время выполнения, или можно выбрать для этого необходимо включить назначить в окне Properties в Visual Studio).
 
     Примеры см. следующие файлы кода.
-      * **C++ Win32:** См. в разделе [XamlApplication.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup/XamlApplication.cpp) файл кода в [ C++ пример Win32](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
+      * **C++ Win32:** См. в разделе [XamlApplication.cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup/XamlApplication.cpp) файл кода в [ C++ пример Win32](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
       * **WPF и Windows Forms**: См. в разделе [XamlApplication.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/XamlApplication.cs) и [UWPTypeFactory.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/UWPTypeFactory.cs) файлы в наборе средств сообщества Windows кода. Эти файлы являются частью общей реализации **WindowsXamlHost** классы для WPF и Windows Forms, которые помогают продемонстрировать способы использования XAML UWP, размещение API в этих типов приложений.
 
-3. Интегрировать в решение приложения узла исходный код для пользовательского элемента управления XAML UWP, построения пользовательского элемента управления и использовать его в приложении. Инструкции для приложений WPF и Windows Forms, см. в разделе [эти инструкции](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control). Пример для C++ приложение Win32 см. в разделе [Microsoft.UI.Xaml.Markup](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup) и [MyApp](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/MyApp) в проекты [ C++ пример Win32](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island).
+3. Интегрировать в решение приложения узла исходный код для пользовательского элемента управления XAML UWP, построения пользовательского элемента управления и использовать его в приложении. Инструкции для приложений WPF и Windows Forms, см. в разделе [эти инструкции](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control). Пример для C++ приложение Win32 см. в разделе [Microsoft.UI.Xaml.Markup](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/Microsoft.UI.Xaml.Markup) и [MyApp](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island/MyApp) в проекты [ C++ пример Win32](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
@@ -274,4 +274,4 @@ XAML UWP, интерфейс API размещения предоставляет
 ## <a name="related-topics"></a>См. также
 
 * [Элементы управления универсальной платформы Windows в настольных приложениях](xaml-islands.md)
-* [C++Пример Win32 XAML острова](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island)
+* [C++Пример Win32 XAML острова](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)

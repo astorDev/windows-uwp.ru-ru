@@ -4,12 +4,12 @@ description: Эта статья содержит обзор нового API-и
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: 49662d476d6d022ca05d53e9358fc547fda92a32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 693abe68fcc7e4a341d773c6fa1af0d777c60c15
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625669"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322159"
 ---
 # <a name="cpusets-for-game-development"></a>CPUSets для разработки игр
 
@@ -191,7 +191,7 @@ for (size_t i = 0; i < count; ++i)
 API-интерфейс CPUSets, доступный для разработки программного обеспечения UWP, предоставляет значительный объем информации и широкие возможности управления многопотоковыми процессами. По сравнению с предыдущими API-интерфейсами для разработки многопоточного ПО для Windows структура этого API-интерфейса была усложнена и его освоение займет некоторое время, однако благодаря увеличенной гибкости интерфейса можно добиться повышения производительности на целом ряде потребительских ПК и других устройствах.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
-- [Наборы ЦП (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
+- [Наборы ЦП (MSDN)](https://docs.microsoft.com/windows/desktop/ProcThread/cpu-sets)
 - [Пример CPUSets, предоставляемые ATG](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
 - [Приложения UWP для Xbox One](index.md)
 

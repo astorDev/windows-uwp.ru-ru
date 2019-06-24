@@ -5,12 +5,12 @@ ms.date: 05/17/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 579f92cc51ed5f9eeea522d81cfdb030f85ef0da
-ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
+ms.openlocfilehash: b947d0b6cc83dc6bca45efb7103a933e79972e3b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852275"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317454"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Адаптивные приложения версии: Использовать новые интерфейсы API, сохраняя совместимость с предыдущими версиями
 
@@ -59,9 +59,9 @@ ms.locfileid: "65852275"
 | Октября 2018 с обновлением | 1809 | 17763 |
 | Обновление мая 2019 г. | 1903 | 18362 |
 
-Вы можете скачать все выпущенные версии SDK из [архива Windows SDK и эмулятора](https://developer.microsoft.com/downloads/sdk-archive). Последнюю версию Windows Insider Preview SDK можно скачать в разделе для разработчиков сайта [Windows Insider](https://insider.windows.com/Home/BuildWithWindows).
+Вы можете скачать все выпущенные версии SDK из [архива Windows SDK и эмулятора](https://developer.microsoft.com/windows/downloads/sdk-archive). Последнюю версию Windows Insider Preview SDK можно скачать в разделе для разработчиков сайта [Windows Insider](https://insider.windows.com/for-developers/).
 
- Дополнительные сведения об обновлениях Windows 10 см. в разделе [сведения о выпуске Windows 10](https://technet.microsoft.com/windows/release-info). Важные сведения о жизненном цикле поддержки Windows 10, см. в разделе [справочные материалы по Windows жизненного цикла](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
+ Дополнительные сведения об обновлениях Windows 10 см. в разделе [сведения о выпуске Windows 10](https://www.microsoft.com/itpro/windows-10/release-information). Важные сведения о жизненном цикле поддержки Windows 10, см. в разделе [справочные материалы по Windows жизненного цикла](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
 ## <a name="perform-api-checks"></a>Проверки API
 
@@ -90,11 +90,11 @@ ms.locfileid: "65852275"
 
 Во всех версиях Windows 10 можно использовать класс ApiInformation в своем коде в условном выражении, чтобы проверить наличие API-интерфейса, который вы хотите вызвать. В адаптивном коде можно использовать различные методы класса, включая IsTypePresent, IsEventPresent, IsMethodPresent и IsPropertyPresent, чтобы проверить API с нужным уровнем детализации.
 
-Дополнительные сведения и примеры см. в разделе **[Адаптивный к версии код](version-adaptive-code.md)**.
+Дополнительные сведения и примеры см. в разделе **[Адаптивный к версии код](version-adaptive-code.md)** .
 
 Если минимальная версия ваших приложений — сборка 15063 (Creators Update) или выше, для задания свойств и создания экземпляров объектов в разметке без использования кода программной части можно использовать *условный XAML*. Условный XAML обеспечивает возможность использовать метод ApiInformation.IsApiContractPresent в разметке XAML.
 
-Дополнительные сведения и примеры см. в разделе **[Условный XAML](conditional-xaml.md)**.
+Дополнительные сведения и примеры см. в разделе **[Условный XAML](conditional-xaml.md)** .
 
 ## <a name="test-your-version-adaptive-app"></a>Проверка адаптивного к версии приложения
 

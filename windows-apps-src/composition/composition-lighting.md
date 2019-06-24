@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 733ce75942a05482ade88c1510e788f1cbd515d4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c23de238a0004066b44cfe962e2de72216eb7a6d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602209"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318470"
 ---
 # <a name="using-lights-in-windows-ui"></a>С помощью источников света в пользовательском Интерфейсе Windows
 
@@ -63,7 +63,7 @@ Windows.UI.Composition API-интерфейсы позволяют создав�
 _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock.ActualHeight / 2, (float)TextBlock.FontSize);
 ```
 
-См. в полном [Пишущая машинка текст](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/TextShimmer) пример в совместимых образец WindowUIDevLabs для получения дополнительных сведений.
+См. в полном [Пишущая машинка текст](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 14393/TextShimmer) пример в совместимых образец WindowUIDevLabs для получения дополнительных сведений.
 
 ## <a name="restrictions"></a>Ограничения
 
@@ -167,4 +167,4 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 - [CompositionCapabilities API](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities)
 - [Математика освещения](https://docs.microsoft.com/windows/uwp/graphics-concepts/mathematics-of-lighting)
 - [SceneLightingEffect](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects.scenelightingeffect)
-- [Репозиторий GitHub WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs)
+- [Репозиторий GitHub WindowsUIDevLabs](https://github.com/microsoft/WindowsCompositionSamples)

@@ -7,12 +7,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, uwp, уведомления, коллекции, группы, ux, руководство ux, рекомендации, действие, всплывающее уведомление, центр поддержки, noninterruptive, действующие уведомления, прозрачность при использовании уведомлений, определенных действий, управления, организации
 ms.localizationpriority: medium
-ms.openlocfilehash: 878df85db9ab0e33db06a86ddb726f07dc28f013
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 327a2add84343be3b972f7bb1f232298e7ef92ad
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615769"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320732"
 ---
 # <a name="toast-notification-ux-guidance"></a>Руководстве по использованию всплывающих уведомлений UX
 Уведомления являются неотъемлемой частью современной жизни; они помогут пользователям более эффективно и взаимодействовать с приложениями и веб-сайтов, а также последние новости с обновлений. Тем не менее уведомления можно быстро превратить полезно overbearing и вмешивается в том случае, если они не предназначены образом, ориентированное на пользователей. Уведомления, щелкните правой кнопкой мыши, один из его отключения и маловероятно, если они отключены, они будут поддерживаться снова.  Поэтому убедитесь, что уведомления являются подходящее место на экране пользователя и времени, поэтому этот канал взаимодействия можно оставить открытым.
@@ -60,9 +60,9 @@ ms.locfileid: "57615769"
 
 При отправке уведомлений в приложение универсальной платформы Windows уже сегодня, вы можете просмотреть analytics, на что произошло с уведомления в [центра партнеров](https://partner.microsoft.com/dashboard)! Эти данные поставляется бесплатно, при использовании [пакета SDK служб Store](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) или [WNS API-интерфейсы](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview). Эти метрики обеспечит более полную информацию, что происходит с уведомлений на платформе windows, а также как пользователи взаимодействуют с уведомлениями. Доступ к этим данным, выбрав в меню в левой части выполнить охват > уведомления, после чего нужно щелкнуть вкладку «Анализ» в страница "уведомления".  Этот файл находится в той же позиции, которую нужно перейти для отправки уведомлений из центра партнеров.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Содержимое всплывающего](adaptive-interactive-toasts.md)
 * [Необработанные уведомления](raw-notification-overview.md)
 * [Ожидание обновления](toast-pending-update.md)
-* [Библиотека уведомлений на сайте GitHub (часть набора средств сообщества Windows)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Библиотека уведомлений на сайте GitHub (часть набора средств сообщества Windows)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

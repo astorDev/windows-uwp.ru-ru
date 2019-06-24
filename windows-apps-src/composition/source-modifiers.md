@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, анимация
 ms.localizationpriority: medium
-ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 87e4eb90b4801d01ecb85c91b5e64ccc9155d199
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649869"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318098"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>Обновление путем оттягивания с модификаторами источника
 
 В этой статье более подробно рассматривается использование функции SourceModifier в составе InteractionTracker и демонстрируется ее использование путем создания пользовательского элемента управления обновлением путем оттягивания.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>предварительные требования
 
 Подразумевается, что вы знакомы с понятиями, которые рассматриваются в этих статьях:
 
@@ -48,7 +48,7 @@ ms.locfileid: "57649869"
 
 ![Список с обновлением путем оттягивания](images/animation/city-list.gif)
 
-Рабочий код для этого взаимодействия можно найти в [репозитории лабораторных работ по разработке пользовательского интерфейса Window в GitHub](https://github.com/Microsoft/WindowsUIDevLabs). Это пошаговое руководство по созданию такого взаимодействия.
+Рабочий код для этого взаимодействия можно найти в [репозитории лабораторных работ по разработке пользовательского интерфейса Window в GitHub](https://github.com/microsoft/WindowsCompositionSamples). Это пошаговое руководство по созданию такого взаимодействия.
 В коде разметки XAML присутствуют следующие элементы:
 
 ```xaml

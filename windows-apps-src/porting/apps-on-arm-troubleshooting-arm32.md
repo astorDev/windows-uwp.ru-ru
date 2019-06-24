@@ -5,19 +5,19 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10 s, постоянно подключенный, приложения ARM32 в ARM, windows 10 в ARM, устранение неполадок
 ms.localizationpriority: medium
-ms.openlocfilehash: ddf28627838ebc8cb2df620c398f3803c026cb17
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b93a4a3bdf4a6abd12a0df8bfc1871cb38647f63
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366836"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319751"
 ---
 # <a name="troubleshooting-arm-uwp-apps"></a>Устранение неполадок ARM приложений универсальной платформы Windows
 
 Если приложение ARM32 и ARM64 UWP не работает правильно на ARM, Вот некоторые рекомендации, которые помогут вам.
 
 >[!NOTE]
-> Чтобы создать приложение универсальной платформы Windows для скомпилированных в собственном коде платформы ARM64, необходимо иметь Visual Studio 2017 15,9 или более поздней версии. Дополнительные сведения см. в разделе [этой записи блога](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
+> Чтобы создать приложение универсальной платформы Windows для скомпилированных в собственном коде платформы ARM64, необходимо иметь Visual Studio 2017 15,9 или более поздней версии. Дополнительные сведения см. в разделе [этой записи блога](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/).
 
 ## <a name="common-issues"></a>Общие проблемы
 Ниже приведены некоторые распространенные проблемы, следует учитывать при устранении неполадок приложений ARM32 и ARM64.

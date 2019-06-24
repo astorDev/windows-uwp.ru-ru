@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, ориентация экрана, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cb741e8eb87987c51324c5f4e5f2d0f0da23f74
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 84dc81734d945e32d222bdc3e1fe9c7468f078bb
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368012"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321147"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>Поддержка ориентации экрана (DirectX и C++)
 
@@ -368,7 +368,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
 По умолчанию Windows 10 предоставляет короткое, но заметно окно времени для любого приложения, независимо от того, модель приложений или язык, на завершение процесса смены образа. Однако есть вероятность, что когда ваше приложение выполняет вычисление вращения с помощью одного из описанных здесь методов, оно будет завершено задолго до истечения этого периода времени. Вы хотите повернуть время вспять и завершить анимацию вращения, правильно? Тогда настал черед [**CoreWindowResizeManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindowResizeManager).
 
-Пользоваться [**CoreWindowResizeManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindowResizeManager) нужно следующим образом. При создании события [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) вызовите [**CoreWindowResizeManager::GetForCurrentView**](https://docs.microsoft.com/previous-versions//hh404170(v=vs.85)) в обработчике для этого события, чтобы получить экземпляр **CoreWindowResizeManager**, а затем, когда макет для новой ориентации будет завершен и выведен на экран, вызовите [**NotifyLayoutCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindowresizemanager.notifylayoutcompleted), чтобы сообщить Windows о том, что можно выполнить анимацию вращения и отобразить экран приложения.
+Пользоваться [**CoreWindowResizeManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindowResizeManager) нужно следующим образом. При создании события [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) вызовите [**CoreWindowResizeManager::GetForCurrentView**](https://docs.microsoft.com/previous-versions/hh404170(v=vs.85)) в обработчике для этого события, чтобы получить экземпляр **CoreWindowResizeManager**, а затем, когда макет для новой ориентации будет завершен и выведен на экран, вызовите [**NotifyLayoutCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindowresizemanager.notifylayoutcompleted), чтобы сообщить Windows о том, что можно выполнить анимацию вращения и отобразить экран приложения.
 
 Вот как может выглядеть код в вашем обработчике событий для [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged):
 

@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки Microsoft Store
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e7653174eaf31f11341a5c8e21b69ec54a6189
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0a926b9383231e7cec9dc168afe8d0a0b34136a2
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371282"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318594"
 ---
 # <a name="create-and-manage-submissions"></a>Создание отправок и управление ими
 
@@ -136,7 +136,7 @@ grant_type=client_credentials
 
 | Проблемы      | Разрешение                                          |
 |---------------|---------------------------------------------|
-| После вызова API отправки в Microsoft Store из PowerShell данные ответа для API повреждаются при их преобразовании из формата JSON в объект PowerShell с помощью командлета [ConvertFrom-Json](https://technet.microsoft.com/library/hh849898.aspx) и обратно в формат JSON с помощью командлета [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx). |  По умолчанию параметру *-Depth* для командлета [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) задано значение 2 уровней объектов, которое является слишком плоским для большинства объектов JSON, возвращаемых API отправки в Microsoft Store. При вызове командлета [ConvertTo Json](https://technet.microsoft.com/library/hh849922.aspx) задайте параметру *-Depth* более высокое значение (например, 20). |
+| После вызова API отправки в Microsoft Store из PowerShell данные ответа для API повреждаются при их преобразовании из формата JSON в объект PowerShell с помощью командлета [ConvertFrom-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) и обратно в формат JSON с помощью командлета [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json). |  По умолчанию параметру *-Depth* для командлета [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) задано значение 2 уровней объектов, которое является слишком плоским для большинства объектов JSON, возвращаемых API отправки в Microsoft Store. При вызове командлета [ConvertTo Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) задайте параметру *-Depth* более высокое значение (например, 20). |
 
 ## <a name="additional-help"></a>Дополнительная справка
 

@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, рекламные объявления, реклама, руководство, советы и рекомендации
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bb187092158386c503b91973d8d63ce291b4760
-ms.sourcegitcommit: c62b260eecd373e57b19a623bae77e29180e0f3d
+ms.openlocfilehash: cf7f61f427ef0b1a0ff5b6f3b66d02d13d02e4ab
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66565518"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320677"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Рекомендации по пользовательскому интерфейсу и взаимодействию с пользователем для рекламы
 
@@ -25,10 +25,10 @@ ms.locfileid: "66565518"
 Перед ознакомлением с нашими рекомендациями для различных типов рекламы в этой статье сначала ознакомьтесь с общими рекомендациями для повышения прибыли от вашей рекламы.
 
 * [Тщательно планируйте размещение своей рекламы](https://blogs.windows.com/buildingapps/2017/04/10/monetizing-app-advertisement-placement/). См. наше руководство по [оптимизации просматриваемости ваших рекламных блоков](optimize-ad-unit-viewability.md).
-* [Используйте межстраничные баннеры для дублирования промежуточной видеорекламы](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video).
+* [Используйте межстраничные баннеры для дублирования промежуточной видеорекламы](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video/).
 * [Изучайте свою аудиторию, чтобы повысить эффективность целевой рекламы](https://blogs.windows.com/buildingapps/2017/05/17/monetize-app-know-user-serve-better-targeted-ads/).
 * [Используйте последние библиотеки Microsoft Advertising](https://blogs.windows.com/buildingapps/2017/05/22/earn-money-moving-latest-advertising-libraries/).
-* [Задавайте правильные параметры COPPA для вашего приложения](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app).
+* [Задавайте правильные параметры COPPA для вашего приложения](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app/).
 
 
 ## <a name="guidelines-for-banner-ads"></a>Рекомендации для рекламных баннеров
@@ -39,7 +39,7 @@ ms.locfileid: "66565518"
 
 При реализации рекламных баннеров в своем приложении выполняйте следующие рекомендации:
 
-* [Соблюдайте стандарты Некоммерческого партнерства содействия развитию интерактивной рекламы по размерам](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes), которые соответствуют размеру и положению дисплея устройства.
+* [Соблюдайте стандарты Некоммерческого партнерства содействия развитию интерактивной рекламы по размерам](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes/), которые соответствуют размеру и положению дисплея устройства.
 
 * Большую часть пользовательского интерфейса вашего приложения должны составлять функциональные элементы управления и содержимое.
 

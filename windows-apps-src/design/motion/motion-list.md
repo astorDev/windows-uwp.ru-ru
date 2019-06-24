@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 228fec1571ab3f9c01b4a8dd4084e19bc28dbfe7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d0dc449c0134799f3de675fff4bdbbda66046be8
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366745"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317094"
 ---
 # <a name="add-and-delete-animations"></a>Анимации добавления и удаления
 
@@ -21,7 +21,7 @@ ms.locfileid: "66366745"
 
 Анимации списка позволяют вставлять или удалять один или несколько элементов коллекции, например в фотоальбоме или результатах поиска.
 
-> **Важные API**: [**Класс AddDeleteThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition.)
+> **Важные API**: [**Класс AddDeleteThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
@@ -41,7 +41,7 @@ ms.locfileid: "66366745"
 * [Общие сведения об анимации](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
 * [Анимация список добавления и удаления](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
 * [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**Класс AddDeleteThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition.)
+* [**Класс AddDeleteThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
  
 

@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, анимация
 ms.localizationpriority: medium
-ms.openlocfilehash: 118b3f6e306e60d1d8d569f0d58f2d77ea30d9a8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25b0732b7c29653d18f0e018698ab4b6398d402a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635069"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318066"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>Улучшения существующих механизмов взаимодействия ScrollViewer
 
 В этой статье рассказывается, как использовать XAML ScrollViewer и анимации ExpressionAnimation для создания динамичных моделей движения на основе ввода.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Подразумевается, что вы знакомы с понятиями, которые рассматриваются в этих статьях:
 
@@ -61,7 +61,7 @@ ms.locfileid: "57635069"
 
 ## <a name="example"></a>Пример
 
-Посмотрим, как создавался параллакс, упомянутый в примере выше. Весь исходный код для этого приложения можно найти в разделе [Репозиторий лабораторных работ для разработчиков пользовательского интерфейса Window в GitHub](https://github.com/Microsoft/WindowsUIDevLabs).
+Посмотрим, как создавался параллакс, упомянутый в примере выше. Весь исходный код для этого приложения можно найти в разделе [Репозиторий лабораторных работ для разработчиков пользовательского интерфейса Window в GitHub](https://github.com/microsoft/WindowsCompositionSamples).
 
 Сначала нужно получить ссылку на ScrollManipulationPropertySet.
 

@@ -6,12 +6,12 @@ ms.date: 01/29/2018
 ms.topic: article
 keywords: Windows 10, uwp, печать
 ms.localizationpriority: medium
-ms.openlocfilehash: 743df4398792d910626f63900d244ab4da388fb0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1a60def61e974bca493fb932cc0fb8716ba521f0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369818"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321491"
 ---
 # <a name="print-from-your-app"></a>Печать из приложения
 
@@ -137,7 +137,7 @@ async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 
 ## <a name="format-your-apps-content"></a>Форматирование содержимого приложения
 
-При вызове **ShowPrintUIAsync** порождается событие [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597). Обработчик событий **PrintTaskRequested**, показанный на данном этапе, создает класс [**PrintTask**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintTask), вызывая метод [**PrintTaskRequest.CreatePrintTask**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskrequest.createprinttask), и передает заголовок страницы для печати и имя делегата [**PrintTaskSourceRequestedHandler**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.source). Обратите внимание, что в этом примере делегат **PrintTaskSourceRequestedHandler** определен как встроенный. Делегат **PrintTaskSourceRequestedHandler** предоставляет отформатированное содержимое для печати и описан далее.
+При вызове **ShowPrintUIAsync** порождается событие [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress). Обработчик событий **PrintTaskRequested**, показанный на данном этапе, создает класс [**PrintTask**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintTask), вызывая метод [**PrintTaskRequest.CreatePrintTask**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskrequest.createprinttask), и передает заголовок страницы для печати и имя делегата [**PrintTaskSourceRequestedHandler**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.source). Обратите внимание, что в этом примере делегат **PrintTaskSourceRequestedHandler** определен как встроенный. Делегат **PrintTaskSourceRequestedHandler** предоставляет отформатированное содержимое для печати и описан далее.
 
 В этом примере также определяется обработчик завершения для перехвата ошибок. Мы рекомендуем обрабатывать события завершения, так как в этом случае ваше приложение сможет сообщать пользователю о возникновении ошибок и предлагать возможные решения. Аналогично ваше приложение может использовать событие завершения, чтобы указать пользователю дальнейшие шаги, которые он может предпринять после успешного завершения печати.
 
@@ -258,7 +258,7 @@ protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
 | **Напечатать выбранный фрагмент**  | Печатать только содержимое, выбранное пользователем.|
 | **Диапазон печати**      | Отображение поля ввода, в которое пользователь может ввести страницы для печати.|
 
-Для начала измените обработчик событий [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597), добавив код для получения объекта [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails).
+Для начала измените обработчик событий [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress), добавив код для получения объекта [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails).
 
 ```csharp
 PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(printTask.Options);

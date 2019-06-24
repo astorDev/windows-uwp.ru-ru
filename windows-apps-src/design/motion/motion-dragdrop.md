@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 07707160846f3d63c7d0c097fb7b84def08be9e7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d4aa6b0b1a7d0e4d805e43ba308730ee483927aa
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366693"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320902"
 ---
 # <a name="drag-animations"></a>Анимации перетаскивания
 
@@ -22,7 +22,7 @@ ms.locfileid: "66366693"
 
 Используйте анимацию перетаскивания, когда пользователь перемещает объекты, например передвигает элемент в списке или размещает один элемент выше другого.
 
-> **Важные API**: [**Класс DragItemThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation.)
+> **Важные API**: [**Класс DragItemThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
 
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
@@ -60,9 +60,9 @@ ms.locfileid: "66366693"
 * [Общие сведения об анимации](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
 * [Анимация и перетащите последовательностей](https://docs.microsoft.com/previous-versions/windows/apps/jj649427(v=win.10))
 * [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**Класс DragItemThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation.)
-* [**Класс DropTargetItemThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.droptargetitemthemeanimation.)
-* [**Класс DragOverThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation.)
+* [**Класс DragItemThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
+* [**Класс DropTargetItemThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.droptargetitemthemeanimation)
+* [**Класс DragOverThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation)
 
 
  

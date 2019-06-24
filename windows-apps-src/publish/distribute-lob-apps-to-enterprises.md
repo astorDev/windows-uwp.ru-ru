@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, бизнес-приложения, бизнес, корпоративные приложения, store для бизнеса, store для образовательных учреждений, предприятия
 ms.localizationpriority: medium
-ms.openlocfilehash: d44d2b248ddc2bff6ffa91860621fe315fb22c47
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
+ms.openlocfilehash: cf970c1812b4200cea4e4902ad883ef8b0b5e141
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826148"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320000"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Распространение бизнес-приложений для предприятий
 
@@ -71,7 +71,7 @@ ms.locfileid: "66826148"
 После того как вы щелкните **Отправить в Магазин**, запустится процесс сертификации приложения. Как только приложение будет готово, администратор предприятия должен добавить его в свой частный магазин на портале Магазина Майкрософт для бизнеса или Магазина Майкрософт для образовательных учреждений. Затем предприятие сможет развернуть приложение для своих пользователей.
 
 > [!NOTE]
-> Чтобы организация могла получить бизнес-приложение, она должна действовать на [поддерживаемом рынке](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets), [который вы не исключили](define-pricing-and-market-selection.md) при отправке приложения. 
+> Чтобы организация могла получить бизнес-приложение, она должна действовать на [поддерживаемом рынке](https://docs.microsoft.com/windows/whats-new/windows-store-for-business-overview#supported-markets), [который вы не исключили](define-pricing-and-market-selection.md) при отправке приложения. 
 
 Дополнительные сведения см. в разделах [Работа с бизнес-приложениями](https://go.microsoft.com/fwlink/p/?LinkId=698846) и [Распространение приложений с помощью частного магазина](https://go.microsoft.com/fwlink/p/?LinkId=698847).
 

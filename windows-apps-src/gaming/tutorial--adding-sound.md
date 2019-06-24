@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, звуки
 ms.localizationpriority: medium
-ms.openlocfilehash: 945270247b8a288554e1910ac1c6f8e5c1ec1619
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 06c06e1ffe52cae37a000f748076d78ebf6afff4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367844"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318864"
 ---
 # <a name="add-sound"></a>Добавление звука
 
@@ -478,7 +478,7 @@ __AudioX2__ — это низкоуровневый API, который пред
 ### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 * [Практическое руководство. Инициализировать XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--initialize-xaudio2)
-* [Практическое руководство. Загрузка файлов звуковые данные в XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415781(v=vs.85).aspx)
+* [Практическое руководство. Загрузка файлов звуковые данные в XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--load-audio-data-files-in-xaudio2)
 * [Практическое руководство. Воспроизведение звука с XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/how-to--play-a-sound-with-xaudio2)
 
 ## <a name="key-audio-h-files"></a>Ключа аудио h-файлов

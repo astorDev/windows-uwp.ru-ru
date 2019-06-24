@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6850a5d2458c29c81bacc195106af697b37dd23b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dfe6a8b7efd358640e59445c2f8fa9cb49ff6a67
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359896"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317566"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Тестирование при помощи эмулятора устройства с Windows 10 Mobile (Майкрософт)
 
@@ -661,6 +661,6 @@ Push-уведомления несложно протестировать без
 ## <a name="related-topics"></a>См. также
 
 * [Запуск приложений Windows Phone в эмуляторе](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
-* [Архив пакетов SDK для Windows и Windows Phone](https://dev.windows.com/downloads/sdk-archive)
+* [Архив пакетов SDK для Windows и Windows Phone](https://developer.microsoft.com/windows/downloads/sdk-archive)
  
 

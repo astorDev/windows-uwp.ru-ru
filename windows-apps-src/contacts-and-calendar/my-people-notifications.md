@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d4150e7296badd3d31a9aacc7becd3d849f6affd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4cfd970b3ca070218adcea86612016e567df3879
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360423"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318022"
 ---
 # <a name="my-people-notifications"></a>Уведомления близких людей
 
@@ -76,7 +76,7 @@ experienceType=”shoulderTap”
 
 > [!NOTE]
 > Если ваше приложение использует [API ContactStore](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) и свойство [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) для связи контрактов, сохраненных на компьютере, с контрактами, сохраненными удаленно, важно, чтобы значение свойства RemoteId было и стабильным, и уникальным. Это значит, что удаленный идентификатор должен неизменно обозначать одну учетную запись пользователя и содержать уникальный тег, чтобы гарантировать отсутствие конфликтов с удаленными идентификаторами других контактов на компьютере, включая контакты, которыми владеют другие приложения.
-> Если уникальность и стабильность удаленных идентификаторов, используемых вашим приложением, нельзя гарантировать, то можно использовать класс [RemoteIdHelper](https://msdn.microsoft.com/en-us/library/windows/apps/jj207024(v=vs.105).aspx#BKMK_UsingtheRemoteIdHelperclass), показанный ниже в этом разделе, чтобы добавить ко всем вашим удаленным идентификаторам уникальный тег перед добавлением их к системе. Или можно вовсе отказаться от использования свойства RemoteId и создать собственное расширенное свойство, в котором будут храниться удаленные идентификаторы для ваших контактов.
+> Если уникальность и стабильность удаленных идентификаторов, используемых вашим приложением, нельзя гарантировать, то можно использовать класс [RemoteIdHelper](https://docs.microsoft.com/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass), показанный ниже в этом разделе, чтобы добавить ко всем вашим удаленным идентификаторам уникальный тег перед добавлением их к системе. Или можно вовсе отказаться от использования свойства RemoteId и создать собственное расширенное свойство, в котором будут храниться удаленные идентификаторы для ваших контактов.
 
 Помимо второй привязки и полезных данных необходимо включить другие полезные данные в первую привязку для резервного всплывающего уведомления. Оно будет использоваться, если потребуется вернуться к обычному уведомлению (описание приведено в [конце данной статьи](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)).
 

@@ -7,16 +7,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d3f72e563f6463d55af40acae74d061b5030aa9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d66962971844f1983b527c6cea436dba03d63b8b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371611"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322333"
 ---
 # <a name="move-from-ios-to-uwp"></a>Переход с iOS на UWP
 
-Если вы являетесь разработчиком приложений iOS и желаете расширить свою базу пользователей, включив в нее пользователей Windows 10 и универсальной платформы Windows (UWP), для решения этой задачи можно использовать разнообразные инструменты. Подходы к решению этой задачи зависят от типа приложения, с которым вы работаете (игра, стиль жизни, корпоративные и т. д.) и стадии разработки. Так, готовая или почти готовая игра, в которой активно используются технологии OpenGL или Cocos2D, — это идеальный кандидат для [моста Windows для iOS](https://dev.windows.com/bridges/ios), в то время как в работе с кроссплатформенным приложением для малого бизнеса лучше использовать [Xamarin.Forms](https://www.xamarin.com/forms). Если для написания приложения вы использовали кроссплатформенное средство, например Unity, [опубликовать его в Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) будет достаточно просто.
+Если вы являетесь разработчиком приложений iOS и желаете расширить свою базу пользователей, включив в нее пользователей Windows 10 и универсальной платформы Windows (UWP), для решения этой задачи можно использовать разнообразные инструменты. Подходы к решению этой задачи зависят от типа приложения, с которым вы работаете (игра, стиль жизни, корпоративные и т. д.) и стадии разработки. Так, готовая или почти готовая игра, в которой активно используются технологии OpenGL или Cocos2D, — это идеальный кандидат для [моста Windows для iOS](https://developer.microsoft.com/windows/bridges/ios), в то время как в работе с кроссплатформенным приложением для малого бизнеса лучше использовать [Xamarin.Forms](https://docs.microsoft.com/xamarin/xamarin-forms/). Если для написания приложения вы использовали кроссплатформенное средство, например Unity, [опубликовать его в Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) будет достаточно просто.
 
 ## <a name="why-windows"></a>Почему Windows?
 
@@ -34,4 +34,4 @@ ms.locfileid: "66371611"
 
 **Для дизайнеров и разработчиков**
 * [Создание приложений Windows универсальные для всех устройств Windows](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [Скачать материалы для разработки для приложений UWP](https://dev.windows.com/design/assets)
+* [Скачать материалы для разработки для приложений UWP](https://docs.microsoft.com/windows/uwp/design/downloads/index)

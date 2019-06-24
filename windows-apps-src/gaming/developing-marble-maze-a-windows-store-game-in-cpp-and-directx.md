@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, пример, directx, трехмерный
 ms.localizationpriority: medium
-ms.openlocfilehash: f287110584c02a5d7822f6b1d84cd332d4d6199d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 754d1eb535fa2ac2930513981bb7d85a428778e5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368916"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321342"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Разработка Marble Maze — игры UWP — на C++ и DirectX
 
@@ -39,11 +39,11 @@ Marble Maze предусматривает несколько способов �
 
 ![Снимок экрана игры Marble Maze.](images/marblemaze-2.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 
 -   Windows 10 Creators Update
--   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
+-   [Microsoft Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 -   Умение программировать на C++
 -   Знание основ и терминологии DirectX
 -   Знание основ COM

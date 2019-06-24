@@ -9,12 +9,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e0ae94b0f8631c88f48098f8c2f3df000c25252c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e4b919d42cb113c6ec9f2710baec6c9aa1765840
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359427"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317592"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>Интерфейсы API универсальной платформы Windows, доступные в приложениях для настольных систем
 
@@ -50,7 +50,7 @@ ms.locfileid: "66359427"
 
 Ниже приведен полный список API универсальной платформы Windows, поддерживаемых в приложениях для настольных систем. Можно просмотреть [API-интерфейсы поддерживаются только в упакованных приложений](#new) или [API-интерфейсы, поддерживаемые в упакованных приложений и настольных приложений](#both).
 
-Примеры, демонстрирующие использование API-интерфейсов универсальной платформы Windows, см. в разделе [примеры Desktop Bridge](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) и [примеры приложений для универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples) на сайте GitHub. Вы также можете ознакомиться с записью блога "Разработка приложения для Windows" [Вызов API Windows 10 из классического приложения](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
+Примеры, демонстрирующие использование API-интерфейсов универсальной платформы Windows, см. в разделе [примеры Desktop Bridge](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) и [примеры приложений для универсальной платформы Windows (UWP)](https://github.com/Microsoft/Windows-universal-samples) на сайте GitHub. Вы также можете ознакомиться с записью блога "Разработка приложения для Windows" [Вызов API Windows 10 из классического приложения](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
 <a id="new" />
 

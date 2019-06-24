@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d5d4e7b71ea0fcc6f18106ee1d11c3dead1438c7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d25cd3f8a963d85f704e32482475827462ddba58
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360672"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318266"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Воспроизведение аудио и видео с помощью MediaPlayer
 
@@ -161,7 +161,7 @@ ms.locfileid: "66360672"
 
 [!code-cs[CreateSourceWithOpenCompleted](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCreateSourceWithOpenCompleted)]
 
-Обработчик **OpenOperationCompleted** используется как возможность для определения продолжительности содержимого источника мультимедиа. После определения длительности максимальное значение элемента управления **Slider** устанавливается равным общему числу секунд в элементе мультимедиа. Значение задается внутри вызова [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows), чтобы обеспечить выполнение в потоке пользовательского интерфейса.
+Обработчик **OpenOperationCompleted** используется как возможность для определения продолжительности содержимого источника мультимедиа. После определения длительности максимальное значение элемента управления **Slider** устанавливается равным общему числу секунд в элементе мультимедиа. Значение задается внутри вызова [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync), чтобы обеспечить выполнение в потоке пользовательского интерфейса.
 
 [!code-cs[DeclareDuration](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareDuration)]
 

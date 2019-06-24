@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bebd214f5f634e501f7a79bc57cc306f1b559e7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 08dbe9ed7aaa732172d488712aa47d6d3631508a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359199"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317706"
 ---
 # <a name="share-data"></a>Предоставление общего доступа к данным
 
@@ -60,7 +60,7 @@ ms.locfileid: "66359199"
 
 ## <a name="handle-errors"></a>Обработка ошибок
 
-В большинстве случаев предоставление общего доступа к содержимому — линейный процесс. Тем не менее всегда существует вероятность непредвиденных событий. Например, приложению может потребоваться, чтобы пользователь выбрал содержимое для общего доступа, но при этом пользователь ничего не выбирает. Для обработки таких ситуаций используйте метод [**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String)), который отобразит соответствующее сообщение для пользователя, если что-то пойдет не так.
+В большинстве случаев предоставление общего доступа к содержимому — линейный процесс. Тем не менее всегда существует вероятность непредвиденных событий. Например, приложению может потребоваться, чтобы пользователь выбрал содержимое для общего доступа, но при этом пользователь ничего не выбирает. Для обработки таких ситуаций используйте метод [**FailWithDisplayText**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest#Windows_ApplicationModel_DataTransfer_DataRequest_FailWithDisplayText_System_String_), который отобразит соответствующее сообщение для пользователя, если что-то пойдет не так.
 
 ## <a name="delay-share-with-delegates"></a>Задержка общего доступа с помощью делегатов
 

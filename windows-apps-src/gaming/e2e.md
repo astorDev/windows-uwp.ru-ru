@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, игры, разработка игр
 ms.localizationpriority: medium
-ms.openlocfilehash: 6729711a424bfdcf9af2da92d60f12a066500256
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 950f9415e63a31a5204a15f4f72b968535489cfa
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368787"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321246"
 ---
 # <a name="windows-10-game-development-guide"></a>Руководство по разработке игр для Windows 10
 
@@ -50,15 +50,15 @@ ms.locfileid: "66368787"
     </colgroup>
     <tr>
         <td>Главный портал Центра разработки для Windows</td>
-        <td><a href="https://dev.windows.com">Центр разработки для Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows">Центр разработки для Windows</a></td>
     </tr>
     <tr>
         <td>Разработка приложений для Windows</td>
-        <td><a href="https://dev.windows.com/develop">Разработка приложений Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/develop">Разработка приложений Windows</a></td>
     </tr>
     <tr>
         <td>Разработка приложений универсальной платформы Windows</td>
-        <td><a href="https://developer.microsoft.com/windows/apps/">Практические руководства для приложений Windows 10</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps">Практические руководства для приложений Windows 10</a></td>
     </tr>
     <tr>
         <td>Инструкции к играм для UWP</td>
@@ -169,7 +169,7 @@ ms.locfileid: "66368787"
 
 ### <a name="game-samples"></a>Примеры игр
 
-Имеется большое количество примеров игр и приложений для Windows 10, которые помогут вам понять возможности игр для Windows 10 и быстро освоить процесс разработки игр. Постоянно разрабатываются и публикуются новые примеры, поэтому не забывайте периодически проверять обновления на порталах с примерами. Также можно [следить](https://help.github.com/articles/watching-repositories/) за репозиториями GitHub, чтобы получать информацию об изменениях и дополнениях.
+Имеется большое количество примеров игр и приложений для Windows 10, которые помогут вам понять возможности игр для Windows 10 и быстро освоить процесс разработки игр. Постоянно разрабатываются и публикуются новые примеры, поэтому не забывайте периодически проверять обновления на порталах с примерами. Также можно [следить](https://help.github.com/en/articles/watching-and-unwatching-repositories) за репозиториями GitHub, чтобы получать информацию об изменениях и дополнениях.
 
 <table>
     <colgroup>
@@ -306,7 +306,7 @@ ms.locfileid: "66368787"
     </tr>
     <tr>
         <td>Блоги о средствах разработчика Visual Studio</td>
-        <td><a href="https://devblogs.microsoft.com/">Блоги средств разработчика</a></td>
+        <td><a href="https://devblogs.microsoft.com/visualstudio/">Блоги средств разработчика</a></td>
     </tr>
     <tr>
         <td>Блог о средствах разработчика Somasegar</td>
@@ -619,11 +619,11 @@ Direct3D 11.3 — это низкоуровневый графический AP
     </colgroup>
     <tr>
         <td>Мосты UWP</td>
-        <td><a href="https://dev.windows.com/bridges/">Перенести код в Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/bridges">Перенести код в Windows</a></td>
     </tr>
     <tr>
         <td>Мост Windows для iOS</td>
-        <td><a href="https://dev.windows.com/bridges/ios">Переносите свои приложения iOS для Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/bridges/ios">Переносите свои приложения iOS для Windows</a></td>
     </tr>
     <tr>
         <td>Мост Windows для классических приложений (.NET и Win32)</td>
@@ -688,11 +688,11 @@ Unity предоставляет платформу для создания кр
     </colgroup>
     <tr>
         <td>Игровой движок Unity</td>
-        <td><a href="https://unity3d.com/">Unity — игровое ядро</a></td>
+        <td><a href="https://unity.com/">Unity — игровое ядро</a></td>
     </tr>
     <tr>
         <td>Получить Unity</td>
-        <td><a href="https://unity3d.com/get-unity">Получить Unity</a></td>
+        <td><a href="https://store.unity.com/">Получить Unity</a></td>
     </tr>
     <tr>
         <td>Документация Unity для Windows</td>
@@ -756,7 +756,7 @@ Unity предоставляет платформу для создания кр
     </tr>
     <tr>
         <td>Форумы технической поддержки Havok</td>
-        <td><a href="https://support.havok.com">Havok</a></td>
+        <td><a href="https://www.havok.com/">Havok</a></td>
     </tr>
 </table>
  
@@ -957,7 +957,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Начало разработки для UWP</td>
-        <td><a href="https://dev.windows.com/getstarted">Начало работы с приложениями для Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/getstarted">Начало работы с приложениями для Windows</a></td>
     </tr>
     <tr>
         <td>Подготовка к разработке для UWP</td>
@@ -991,7 +991,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Обзор разработки приложений универсальной платформы Windows</td>
-        <td><a href="https://dev.windows.com/develop">Разработка приложений Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/develop">Разработка приложений Windows</a></td>
     </tr>
     <tr>
         <td>Обзор сетевого программирования в UWP</td>
@@ -1347,7 +1347,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Расширение генератора плиток UWP для Visual Studio</td>
-        <td><a href="https://marketplace.visualstudio.com/vsgallery/09611e90-f3e8-44b7-9c83-18dba8275bb2">Средство для создания всех необходимых плиток, с помощью одного образа</a></td>
+        <td><a href="https://marketplace.visualstudio.com/items?itemName=shenchauhan.UWPTileGenerator">Средство для создания всех необходимых плиток, с помощью одного образа</a></td>
     </tr>
     <tr>
         <td>Расширение генератора плиток UWP для Visual Studio (запись в блоге)</td>
@@ -1397,7 +1397,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Тестирование производительности кода</td>
-        <td><a href="https://www.visualstudio.com/team-services/cloud-load-testing/">Облачное нагрузочное тестирование</a></td>
+        <td><a href="https://azure.microsoft.com/services/devops/test-plans/">Облачное нагрузочное тестирование</a></td>
     </tr>
     <tr>
         <td>Получение типа консоли Xbox с использованием сведений об игровом устройстве</td>
@@ -1530,7 +1530,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Публикация приложений в центре партнеров</td>
-        <td><a href="https://dev.windows.com/publish">Публикация приложений Windows</a></td>
+        <td><a href="https://developer.microsoft.com/store/publish-apps">Публикация приложений Windows</a></td>
     </tr>
     <tr>
         <td>Центр партнеров advanced публикации (GDN)</td>
@@ -1658,7 +1658,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Способы рекламирования игры</td>
-        <td><a href="https://dev.windows.com/store-promotion">Продвижение приложений</a></td>
+        <td><a href="https://developer.microsoft.com/store/promote-your-apps">Продвижение приложений</a></td>
     </tr>
 </table>
  
@@ -1692,7 +1692,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </colgroup>
     <tr>
         <td>Анализ поведения игроков с помощью GameAnalytics</td>
-        <td><a href="https://www.gameanalytics.com/">GameAnalytics</a></td>
+        <td><a href="https://gameanalytics.com/">GameAnalytics</a></td>
     </tr>
     <tr>
         <td>Подключение игры UWP к Google Analytics</td>
@@ -1712,7 +1712,7 @@ BabylonJS — это комплексная платформа JavaScript для
     </tr>
     <tr>
         <td>Использование Vungle для добавления видеорекламы в игры</td>
-        <td><a href="https://v.vungle.com/sdk">Получить Windows SDK для Vungle</a></td>
+        <td><a href="https://publisher.vungle.com/sdk/">Получить Windows SDK для Vungle</a></td>
     </tr>
 </table>
  

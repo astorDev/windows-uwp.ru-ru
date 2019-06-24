@@ -5,12 +5,12 @@ keywords: активность пользователя, действия пол
 ms.date: 08/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e98f5d73cf2d1afb26a823ed417c8980d118485c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b2ad2e68c21167df7b0210a04b62e161fd264ab
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589909"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318705"
 ---
 # <a name="user-activities-best-practices"></a>Рекомендации для пользователя
 
@@ -97,11 +97,11 @@ ms.locfileid: "57589909"
 
 * [Пространство имен UserActivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Действия пользователя (рим проекта docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Адаптивная карты](https://docs.microsoft.com/adaptive-cards/)
 * [Визуализатор адаптивной карты, примеры](https://adaptivecards.io/)
 * [Активация обработки URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Привлекательные со своими клиентами на любой платформе, с помощью Microsoft Graph, канал активности и адаптивной карты](https://channel9.msdn.com/Events/Connect/2017/B111)
-* [Microsoft Graph](https://developer.microsoft.com/graph/)
+* [Microsoft Graph](https://developer.microsoft.com/graph)

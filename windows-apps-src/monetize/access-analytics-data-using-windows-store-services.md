@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, службы Store, API аналитики для Microsoft Store
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 14a1b73a2c82beea746d40c25bfa18ddf6171203
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5514ea3a0e416ad2a0b7b75084bc66ad057c1a73
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372002"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320971"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Доступ к аналитическим данным с помощью служб Магазина
 
@@ -106,7 +106,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-xbox-live-services"></a>Методы для служб Xbox Live
 
-Доступны следующие дополнительные методы для использования учетными записями разработчиков в играх, использующих [службы Xbox Live](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md).
+Доступны следующие дополнительные методы для использования учетными записями разработчиков в играх, использующих [службы Xbox Live](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md).
 
 | Сценарий       | Методы      |
 |---------------|--------------------|

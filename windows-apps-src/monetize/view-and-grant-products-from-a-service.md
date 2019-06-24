@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: windows 10, uwp, API коллекции Microsoft Store, API покупки Microsoft Store, просмотр продуктов, предоставление продуктов
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bf85a73cb35044b4be2282c9a13c1e65b836a92
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 184937133b85ae2cac7a21bb6002af70b06d34da
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604009"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319923"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Управление правами на продукты из службы
 
@@ -107,7 +107,7 @@ ms.locfileid: "57604009"
 
 ### <a name="create-the-tokens"></a>Создание маркеров
 
-Чтобы создать маркеры доступа, используйте в своей службе API OAuth 2.0, следуя инструкциям в разделе [Служба обслуживания вызовов с помощью учетных данных клиента](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service) для отправки запроса HTTP POST в конечную точку ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Ниже приведен пример запроса.
+Чтобы создать маркеры доступа, используйте в своей службе API OAuth 2.0, следуя инструкциям в разделе [Служба обслуживания вызовов с помощью учетных данных клиента](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) для отправки запроса HTTP POST в конечную точку ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Ниже приведен пример запроса.
 
 ``` syntax
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -122,7 +122,7 @@ grant_type=client_credentials
 
 Для каждого токена укажите следующие параметры:
 
-* Для *клиента\_идентификатор* и *клиента\_секрет* параметры, укажите идентификатор приложения и секрет клиента для приложения, полученным из [Портал управления azure](https://manage.windowsazure.com). Оба эти параметра являются обязательными для создания маркера доступа с уровнем проверки подлинности, необходимым для API коллекции Microsoft Store или API покупки Microsoft Store.
+* Для *клиента\_идентификатор* и *клиента\_секрет* параметры, укажите идентификатор приложения и секрет клиента для приложения, полученным из [Портал управления azure](https://portal.azure.com/). Оба эти параметра являются обязательными для создания маркера доступа с уровнем проверки подлинности, необходимым для API коллекции Microsoft Store или API покупки Microsoft Store.
 
 * В качестве параметра *resource* укажите один из URI аудиторий, указанных в [предыдущем разделе](#access-tokens), в зависимости от типа создаваемого маркера доступа.
 
@@ -244,7 +244,7 @@ grant_type=client_credentials
 }
 ```
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Запрос для продуктов](query-for-products.md)
 * [Сообщить о готовых к использованию продуктов, что выполнен](report-consumable-products-as-fulfilled.md)

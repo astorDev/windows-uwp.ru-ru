@@ -5,12 +5,12 @@ ms.date: 04/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2de040b31f026818f27a0e345992b9c00945c7a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9b1d663c0d4c4ff86650f015e5e428d6505af156
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365109"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317142"
 ---
 # <a name="layout-panels"></a>Панели макета
 
@@ -133,7 +133,7 @@ ms.locfileid: "66365109"
 
 Объекты располагаются в определенных ячейках макета Grid с помощью присоединенных свойств [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column?view=netframework-4.8) и [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8).
 
-Присоединенные свойства [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v%3Dvs.95)) и [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan?view=netframework-4.8) позволяют распространить содержимое на несколько строк или столбцов.
+Присоединенные свойства [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) и [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan?view=netframework-4.8) позволяют распространить содержимое на несколько строк или столбцов.
 
 В этом примере кода на XAML показано, как создать макет Grid с двумя строками и двумя столбцами.
 
@@ -231,7 +231,7 @@ Column_4 | **2**\* | После вычисления значений ширин
 
 Панель [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) располагает свои дочерние элементы с помощью фиксированных точек координат и не поддерживает гибкие макеты. Эти точки указываются в индивидуальных дочерних элементах заданием присоединенных свойств [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) и [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) для каждого элемента. Родительский объект Canvas считывает значения этих присоединенных свойств со своих дочерних элементов во время этапа упорядочивания макета [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange).
 
-Объекты в Canvas могут перекрываться, когда один объект рисуется поверх другого. По умолчанию Canvas отображает дочерние объекты в порядке, в котором они объявляются. Таким образом, последний дочерний объект отображается сверху (каждый элемент имеет по умолчанию значение z-index, равное 0). То же самое справедливо и для других встроенных панелей. Однако Canvas также поддерживает присоединенное свойство [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)), которое можно задать на каждом из дочерних элементов. Вы можете задать это свойство в коде, чтобы изменять последовательность перекрытия элементов во время выполнения. Элемент с наиболее высоким значением Canvas.ZIndex соответствует последнему элементу, загораживающему все прочие элементы, которые используют то же пространство, или перекрывающему их. Обратите внимание, что учитывается альфа-фактор (прозрачность), поэтому даже если элементы перекрываются, содержимое в зонах перекрытия может смешиваться, если у верхнего элемента альфа-фактор не является максимальной величиной.
+Объекты в Canvas могут перекрываться, когда один объект рисуется поверх другого. По умолчанию Canvas отображает дочерние объекты в порядке, в котором они объявляются. Таким образом, последний дочерний объект отображается сверху (каждый элемент имеет по умолчанию значение z-index, равное 0). То же самое справедливо и для других встроенных панелей. Однако Canvas также поддерживает присоединенное свойство [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)), которое можно задать на каждом из дочерних элементов. Вы можете задать это свойство в коде, чтобы изменять последовательность перекрытия элементов во время выполнения. Элемент с наиболее высоким значением Canvas.ZIndex соответствует последнему элементу, загораживающему все прочие элементы, которые используют то же пространство, или перекрывающему их. Обратите внимание, что учитывается альфа-фактор (прозрачность), поэтому даже если элементы перекрываются, содержимое в зонах перекрытия может смешиваться, если у верхнего элемента альфа-фактор не является максимальной величиной.
 
 Объект Canvas никак не изменяет размер своих дочерних элементов. Каждый элемент должен указывать свой размер.
 

@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e177f4715d549ce3ef64534e0fc28d2fc3a9fe0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: aacf51cc320a0835f906e91806b686a88907640e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359953"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317618"
 ---
 # <a name="optimize-your-xaml-markup"></a>Оптимизация разметки XAML
 
@@ -350,7 +350,7 @@ ListView и его дочерние элементы не загружаются
 
 ### <a name="borders"></a>Границы
 
-Используйте элемент [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.) для рисования границы вокруг объекта. В этом примере объект класса [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) используется в качестве временной границы вокруг объекта класса [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Но все пиксели в центральной ячейке перерисованы.
+Используйте элемент [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border) для рисования границы вокруг объекта. В этом примере объект класса [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) используется в качестве временной границы вокруг объекта класса [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Но все пиксели в центральной ячейке перерисованы.
 
 **Неэффективным.**
 

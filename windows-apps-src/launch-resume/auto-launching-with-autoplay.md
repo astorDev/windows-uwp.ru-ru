@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d1f139ca4cf134ff8515a4da1134da16c338a4a8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1cc13470c1f07d1ee420253c8a147ff7a5c3fc40
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371334"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318769"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Автозапуском функция автозапуска
 
@@ -225,7 +225,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 Вы можете зарегистрировать приложения в качестве вариантов для событий **автозапуска** устройств. События **AutoPlay** устройства возникают при подключении устройства к компьютеру.
 
-В этом разделе показано, как определить приложение в качестве варианта **AutoPlay** при подключении камеры к компьютеру. Регистрирует приложение в качестве обработчика для **WPD\\ImageSourceAutoPlay** событий. Это распространенное событие, которое вызывается системой переносного устройства Windows (WPD) при уведомлении камерами или другими устройствами обработки изображений о том, что они являются источниками изображений (ImageSource), использующими MTP. Подробнее см. в разделе о [переносных устройствах Windows](https://docs.microsoft.com/previous-versions//ff597729(v=vs.85)).
+В этом разделе показано, как определить приложение в качестве варианта **AutoPlay** при подключении камеры к компьютеру. Регистрирует приложение в качестве обработчика для **WPD\\ImageSourceAutoPlay** событий. Это распространенное событие, которое вызывается системой переносного устройства Windows (WPD) при уведомлении камерами или другими устройствами обработки изображений о том, что они являются источниками изображений (ImageSource), использующими MTP. Подробнее см. в разделе о [переносных устройствах Windows](https://docs.microsoft.com/previous-versions/ff597729(v=vs.85)).
 
 **Важные**   [**Windows.Devices.Portable.StorageDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) API-интерфейсы являются частью [семейство настольных устройств](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). Приложения могут использовать эти API-интерфейсы только на устройствах Windows 10 семейства Настольное устройство, например ПК.
 

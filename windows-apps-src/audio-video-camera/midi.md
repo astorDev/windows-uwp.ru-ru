@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2737713030d68dbc19aaad3df767cea103b53f35
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 73806735401f53a73b1051f37c72119b45b574be
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361596"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318293"
 ---
 # <a name="midi"></a>MIDI
 
@@ -73,7 +73,7 @@ ms.locfileid: "66361596"
 -   [**Обновить** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.updated) -возникает при обновлении данные, связанные с существующее устройство.
 -   [**EnumerationCompleted** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.enumerationcompleted) -возникает после завершения его перечисления этого типа запрошенном устройстве наблюдатель.
 
-В обработчике событий для каждого из этих событий вызывается вспомогательный метод **UpdateDevices**, который обновляет **ListBox** с помощью текущего списка устройств. Поскольку **UpdateDevices** обновляет элементы пользовательского интерфейса, а эти обработчики событий не вызываются в потоке пользовательского интерфейса, каждый вызов должен быть заключен в вызов [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows), который запускает указанный код в потоке пользовательского интерфейса.
+В обработчике событий для каждого из этих событий вызывается вспомогательный метод **UpdateDevices**, который обновляет **ListBox** с помощью текущего списка устройств. Поскольку **UpdateDevices** обновляет элементы пользовательского интерфейса, а эти обработчики событий не вызываются в потоке пользовательского интерфейса, каждый вызов должен быть заключен в вызов [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync), который запускает указанный код в потоке пользовательского интерфейса.
 
 [!code-cs[WatcherEventHandlers](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherEventHandlers)]
 

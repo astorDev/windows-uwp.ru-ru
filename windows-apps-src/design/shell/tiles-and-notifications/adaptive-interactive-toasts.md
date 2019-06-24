@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, всплывающие уведомления, интерактивные всплывающие уведомления, адаптивные всплывающие уведомления, содержимое всплывающего уведомления, полезные данных во всплывающем уведомлении
 ms.localizationpriority: medium
-ms.openlocfilehash: 75e5ea7e83a1a274b90b14588f7d809a4aa91269
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7bef6874b7855a321c4e5a9153faa96d432d2dea
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366869"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320932"
 ---
 # <a name="toast-content"></a>Содержимое всплывающего уведомления
 
@@ -228,7 +228,7 @@ new ToastBindingGeneric()
 
 ## <a name="image-size-restrictions"></a>Ограничения на размер изображения
 
-Изображения во всплывающем уведомления могут изображений, могут извлекаться из..
+Изображения во всплывающем уведомления могут изображений, могут извлекаться из.
 
  - http://
  - ms-appx:///
@@ -880,5 +880,5 @@ ToastContent content = new ToastContent()
 ## <a name="related-topics"></a>См. также
 
 * [Отправить Локальная активация всплывающее уведомление и дескриптора](send-local-toast.md)
-* [Библиотека уведомлений на сайте GitHub (часть UWP Community Toolkit)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Библиотека уведомлений на сайте GitHub (часть UWP Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
 * [Поддержка уведомлений плиток и всплывающих уведомлений для языка, масштаба и высокой контрастности](tile-toast-language-scale-contrast.md)

@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 57f8d7d57c016c015d01e80b07fc0e2c0260ef7f
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: f069899da69e4689e21fa578ff7124fbaf453ea3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320617"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317718"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Загрузка изображений и ресурсов, адаптированных по масштабированию, теме, высокой контрастности и другим аспектам
 Приложение может загружать файлы ресурсов изображений (или другие файлы ресурсов), адаптированные по контексту [коэффициента масштабирования дисплея](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), темы, высокой контрастности и другим аспектам. На эти изображения можно ссылаться из императивного кода или разметки XAML, например в виде свойства **Source** объекта **Image**. Они также могут появляться в исходном файле манифеста пакета приложения (файле `Package.appxmanifest`) — например, в качестве значения для App Icon на вкладке Visual Assets в конструкторе манифеста Visual Studio — или на плитке и всплывающих уведомлениях. Используя квалификаторы в именах файлов изображений при необходимости динамической их загрузке с помощью [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), можно обеспечить загрузку наиболее подходящего файла изображения, который наилучшим образом соответствует параметрам среды выполнения пользователя для масштабирования дисплея, темы, высокой контрастности, языку и другим аспектам.
@@ -86,7 +86,7 @@ var storagefile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsy
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
 
-Для любых сценариев, показанных в этих примерах, используйте перегрузку [конструктора Uri](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_), которая выводит [UriKind](https://docs.microsoft.com/en-us/dotnet/api/system.urikind). Укажите допустимый абсолютный URI, включая схему и полномочия, или просто оставьте для полномочий значение по умолчанию для пакета приложения, как показано в примере выше.
+Для любых сценариев, показанных в этих примерах, используйте перегрузку [конструктора Uri](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_), которая выводит [UriKind](https://docs.microsoft.com/dotnet/api/system.urikind?view=netframework-4.8). Укажите допустимый абсолютный URI, включая схему и полномочия, или просто оставьте для полномочий значение по умолчанию для пакета приложения, как показано в примере выше.
 
 Обратите внимание, как в кодах URI в этом примере за схемой (`ms-appx` или `ms-appx-web`) следует `://`, а далее указан абсолютный путь. В абсолютном пути начальный символ `/` обеспечивает его интерпретацию из корневого каталога пакета.
 

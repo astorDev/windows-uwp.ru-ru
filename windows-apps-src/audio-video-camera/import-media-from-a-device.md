@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ec16f9810a0802fc319b3ebac679cc4cb2f8334
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a4302568b398c76198e241aeb37980165e1bb864
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361715"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318366"
 ---
 # <a name="import-media-from-a-device"></a>Импорт мультимедиа с устройства
 
@@ -50,7 +50,7 @@ ms.locfileid: "66361715"
 
 В стандартном сценарии импорта мультимедиа пользователю отображается список доступных для импорта элементов мультимедиа. Количество доступных для выбора файлов мультимедиа может быть достаточно большим, поэтому удобно использовать для их изображения эскизы. По этой причине в этом примере используется три вспомогательных класса для постепенной загрузки записей в элемент управления ListView по мере прокрутки списка пользователем.
 
-* Класс **IncrementalLoadingBase**: реализует элементы [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN), [**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading) и [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged(v=vs.105).aspx), чтобы обеспечить базовое поведение постепенной загрузки.
+* Класс **IncrementalLoadingBase**: реализует элементы [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN), [**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading) и [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?redirectedfrom=MSDN), чтобы обеспечить базовое поведение постепенной загрузки.
 * Класс **GeneratorIncrementalLoadingClass**: предоставляет реализацию базового класса постепенной загрузки.
 * Класс **ImportableItemWrapper**: тонкая оболочка для класса [**PhotoImportItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Import.PhotoImportItem), позволяющая добавлять привязываемое свойство [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) изображения эскиза для каждого импортируемого элемента.
 

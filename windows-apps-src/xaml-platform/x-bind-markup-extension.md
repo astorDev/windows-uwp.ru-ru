@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c32fee5d9cbe5d40b9fe324eb8d6bad6d87eb9b3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4a6f182ab5f34f7bbb99e54626001126b3741522
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371082"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320276"
 ---
 # <a name="xbind-markup-extension"></a>Расширение разметки x:Bind
 
@@ -29,7 +29,7 @@ ms.locfileid: "66371082"
 **Образцы приложений, демонстрирующие {x: Bind}**
 
 -   [Образец {x: Bind}](https://go.microsoft.com/fwlink/p/?linkid=619989)
--   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)
+-   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
 -   [Пример основы пользовательского интерфейса XAML](https://go.microsoft.com/fwlink/p/?linkid=619992)
 
 ## <a name="xaml-attribute-usage"></a>Использование атрибутов XAML

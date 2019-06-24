@@ -5,15 +5,15 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: windows 10, uwp, bluetooth, bluetooth с низким энергопотреблением, низкое энергопотребление, gatt, gap, центральное устройство, периферийное устройство, клиент, сервер, наблюдатель, издатель
 ms.localizationpriority: medium
-ms.openlocfilehash: 1714a4c21852a7582325fc26f7e6a1f0f969126e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3f23bdc658d2a82e3edeefd0a7be471ca9620d33
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57629039"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321615"
 ---
 # <a name="bluetooth-low-energy"></a>Bluetooth с низким энергопотреблением
-Bluetooth с низким энергопотреблением (LE) является спецификацией, определяющей протоколы для обнаружения и обмена данными между энергоэффективными устройствами. Обнаружение устройств выполняется с помощью протокола Generic Access Profile (GAP). После обнаружения обмен данными между устройствами выполняется с помощью протокола Generic Attribute (GATT). В этом разделе содержится краткий обзор Bluetooth с низким потреблением в приложениях UWP. Более подробные сведения о Bluetooth с низким энергопотреблением см. в разделе [Основные характеристики Bluetooth](https://www.bluetooth.com/specifications/bluetooth-core-specification) версии 4.0, где представлена технология Bluetooth с низким энергопотреблением. 
+Bluetooth с низким энергопотреблением (LE) является спецификацией, определяющей протоколы для обнаружения и обмена данными между энергоэффективными устройствами. Обнаружение устройств выполняется с помощью протокола Generic Access Profile (GAP). После обнаружения обмен данными между устройствами выполняется с помощью протокола Generic Attribute (GATT). В этом разделе содержится краткий обзор Bluetooth с низким потреблением в приложениях UWP. Более подробные сведения о Bluetooth с низким энергопотреблением см. в разделе [Основные характеристики Bluetooth](https://www.bluetooth.com/specifications/bluetooth-core-specification/) версии 4.0, где представлена технология Bluetooth с низким энергопотреблением. 
 
 ![Роли Bluetooth с низким энергопотреблением](images/gatt-roles.png)
 
@@ -42,4 +42,4 @@ Bluetooth с низким энергопотреблением (LE) являет
 ## <a name="see-also"></a>См. также
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
 - [Windows.Devices.Bluetooth.Advertisement](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.genericattributeprofile)
-- [Bluetooth основной спецификации](https://www.bluetooth.com/specifications/bluetooth-core-specification)
+- [Bluetooth основной спецификации](https://www.bluetooth.com/specifications/bluetooth-core-specification/)

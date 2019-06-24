@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, directx, шаблоны
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eb36b66cc067111e2749ebd51a05994a011ba01
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 668a41a69c2b7dab338d251d95e23e801fa85cf6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367476"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321141"
 ---
 # <a name="directx-game-project-templates"></a>Шаблоны проектов игр DirectX
 
@@ -19,12 +19,12 @@ ms.locfileid: "66367476"
 
 Шаблоны DirectX и универсальной платформы Windows (UWP) позволяют быстро создать проект в виде начальной точки вашей игры.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 
 Для создания проекта вам потребуется:
 
--   [Скачайте Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio 2015 включает средства для программирования, таких как средства отладки графики. Обзор графических и игровых компонентов и инструментов DirectX можно просмотреть в разделе об [инструментах Visual Studio для разработки игр DirectX](set-up-visual-studio-for-game-development.md).
+-   [Скачайте Microsoft Visual Studio 2015](https://visualstudio.microsoft.com/vs/). Visual Studio 2015 включает средства для программирования, таких как средства отладки графики. Обзор графических и игровых компонентов и инструментов DirectX можно просмотреть в разделе об [инструментах Visual Studio для разработки игр DirectX](set-up-visual-studio-for-game-development.md).
 
 ## <a name="choosing-a-template"></a>Выбор шаблона
 

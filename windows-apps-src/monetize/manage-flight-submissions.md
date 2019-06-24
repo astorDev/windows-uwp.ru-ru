@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправки тестируемых возможностей
 ms.localizationpriority: medium
-ms.openlocfilehash: f89251a8bb19b01e2fbb8e4df104b3c08700d1a3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 11fb2427ece0f0e37fb2a5f2759094d6e04930c8
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371476"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320151"
 ---
 # <a name="manage-package-flight-submissions"></a>Управление отправкой тестового пакета
 
@@ -92,7 +92,7 @@ API отправки в Microsoft Store предоставляет методы,
     Тело ответа содержит ресурс [отправка тестового пакета](#flight-submission-object), включающий в себя идентификатор новой отправки, URI подписанного URL-адреса (Shared Access Signature, SAS) для передачи любых пакетов приложений и изображений описания для отправки в хранилище BLOB-объектов Azure, а также данные для новой отправки (в том числе все описания и информацию о ценах).
 
     > [!NOTE]
-    > URI SAS предоставляет доступ к защищенному ресурсу в хранилище Azure без необходимости в использовании ключей учетной записи. Справочные сведения о URI SAS и их использования с хранилищем BLOB-объектов Azure, см. в разделе [Shared Access Signatures, Part 1: Общие сведения о модели SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) и [Shared Access Signatures, Part 2: Создание и использование SAS в хранилище BLOB-объектов](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+    > URI SAS предоставляет доступ к защищенному ресурсу в хранилище Azure без необходимости в использовании ключей учетной записи. Справочные сведения о URI SAS и их использования с хранилищем BLOB-объектов Azure, см. в разделе [Shared Access Signatures, Part 1: Общие сведения о модели SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/) и [Shared Access Signatures, Part 2: Создание и использование SAS в хранилище BLOB-объектов](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. При добавлении новых пакетов для отправки [подготовьте пакеты](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) и добавьте их в ZIP-архив.
 
@@ -261,7 +261,7 @@ API отправки в Microsoft Store предоставляет методы,
 | flightId           | строка  |  Идентификатор тестового пакета, с которым связана отправка.  |  
 | status           | строка  | Состояние отправки. Может принимать одно из следующих значений. <ul><li>Нет</li><li>Canceled (Отменено)</li><li>PendingCommit (Ожидание фиксации)</li><li>CommitStarted (Фиксация запущена)</li><li>CommitFailed (Сбой фиксации)</li><li>PendingPublication (Ожидание публикации)</li><li>Publishing (Выполняется публикация)</li><li>Published (Опубликовано)</li><li>PublishFailed (Сбой публикации)</li><li>PreProcessing (Предварительная обработка)</li><li>PreProcessingFailed (Сбой предварительной обработки)</li><li>Certification (Сертификация)</li><li>CertificationFailed (Сбой сертификации)</li><li>Выпуск</li><li>ReleaseFailed (Сбой выпуска)</li></ul>   |
 | statusDetails           | Объект  |  [Ресурс сведений о состоянии](#status-details-object), который содержит дополнительные сведения о состоянии отправки, включая сведения об ошибках.  |
-| flightPackages           | Массив  | Содержит [ресурсы тестового пакета](#flight-package-object), которые предоставляют сведения о каждом пакете в отправке.   |
+| flightPackages           | array  | Содержит [ресурсы тестового пакета](#flight-package-object), которые предоставляют сведения о каждом пакете в отправке.   |
 | packageDeliveryOptions    | Объект  | [Ресурс параметров доставки пакета](#package-delivery-options-object), который содержит постепенный выпуск пакета и обязательные параметры обновления для отправки.   |
 | fileUploadUrl           | строка  | URI подписанного URL-адреса (SAS) для передачи пакетов для отправки. При добавлении новых пакетов для отправки выложите ZIP-архив, содержащий пакеты, по этому URI. Дополнительные сведения см. в разделе [Создание отправки тестового пакета](#create-a-package-flight-submission).  |
 | targetPublishMode           | строка  | Режим публикации для отправки. Может принимать одно из следующих значений. <ul><li>Immediate (Незамедлительно)</li><li>Manual (Вручную)</li><li>SpecificDate (Указанная дата)</li></ul> |
@@ -340,8 +340,8 @@ API отправки в Microsoft Store предоставляет методы,
 | id    |  строка   |  Идентификатор, который уникально идентифицирует пакет. Это значение используется в центре партнеров.   |     
 | version    |  строка   |  Версия пакета приложения. Дополнительные сведения см. в разделе [Нумерация версий пакета](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
 | architecture    |  строка   |  Архитектура пакета приложения (например, ARM).   |     
-| languages    | Массив    |  Массив кодов языков, которые поддерживает приложение. Дополнительные сведения см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
-| capabilities    |  Массив   |  Массив возможностей, необходимых для этого пакета. Дополнительные сведения о возможностях см. в разделе [Объявления возможностей приложения](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
+| languages    | array    |  Массив кодов языков, которые поддерживает приложение. Дополнительные сведения см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
+| capabilities    |  array   |  Массив возможностей, необходимых для этого пакета. Дополнительные сведения о возможностях см. в разделе [Объявления возможностей приложения](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
 | minimumDirectXVersion    |  строка   |  Минимальная версия DirectX, поддерживаемая пакетом приложения. Может задаваться только для приложений, предназначенных для Windows 8.x; игнорируется для приложений, предназначенных для других версий. Может принимать одно из следующих значений. <ul><li>Нет</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
 | minimumSystemRam    | строка    |  Минимальный объем ОЗУ, необходимый для пакета приложения. Может задаваться только для приложений, предназначенных для Windows 8.x; игнорируется для приложений, предназначенных для других версий. Может принимать одно из следующих значений. <ul><li>Нет</li><li>Memory2GB</li></ul>   |    
 

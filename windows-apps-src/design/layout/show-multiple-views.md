@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 097ff0bb9e2ac8d36780a692172afb0a7933fdd1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 275dc6ab7cdb310dff817a3e0017568ad2fed80c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364964"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317123"
 ---
 # <a name="show-multiple-views-for-an-app"></a>Отображение нескольких представлений для приложения
 
@@ -83,7 +83,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 3.  В новом потоке заполните окно.
 
-    При помощи метода [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) запланируйте задачу в потоке пользовательского интерфейса для нового представления. Используйте [лямбда-выражение](https://go.microsoft.com/fwlink/p/?LinkId=389615), чтобы передать функцию методу **RunAsync** как аргумент. Результаты работы лямбда-функции влияют на поток нового представления.
+    При помощи метода [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) запланируйте задачу в потоке пользовательского интерфейса для нового представления. Используйте [лямбда-выражение](https://go.microsoft.com/fwlink/p/?LinkId=389615), чтобы передать функцию методу **RunAsync** как аргумент. Результаты работы лямбда-функции влияют на поток нового представления.
 
     В XAML [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) обычно добавляется к свойству [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content)[**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window), а затем выполняется переход **Frame** к [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page), где определено содержимое приложения. Подробнее см. в разделе [Одноранговая навигация между двумя страницами](../basics/navigate-between-two-pages.md).
 
@@ -125,7 +125,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 Другие представления, в том числе все представления, создаваемые по вызову [**CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) в коде приложения, являются дополнительными представлениями. Как главное представление, так и дополнительные представления хранятся в коллекции [**CoreApplication.Views**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.views). Обычно дополнительные представления создаются в ответ на действия пользователя. В некоторых случаях система создает дополнительные представления для приложения.
 
 > [!NOTE]
-> Вы можете использовать функцию *ограниченного доступа* Windows для запуска приложения в [режиме киоска](https://technet.microsoft.com/library/mt219050.aspx). После этого система создает дополнительное представление для представления пользовательского интерфейса приложения поверх экрана блокировки. Приложению не разрешается создавать дополнительные представления, поэтому при попытке отобразить собственное дополнительное представление в режиме киоска возникает исключение.
+> Вы можете использовать функцию *ограниченного доступа* Windows для запуска приложения в [режиме киоска](https://docs.microsoft.com/windows/manage/set-up-a-device-for-anyone-to-use). После этого система создает дополнительное представление для представления пользовательского интерфейса приложения поверх экрана блокировки. Приложению не разрешается создавать дополнительные представления, поэтому при попытке отобразить собственное дополнительное представление в режиме киоска возникает исключение.
 
 ## <a name="switch-from-one-view-to-another"></a>Переключение между представлениями
 

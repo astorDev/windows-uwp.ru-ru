@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 35eed8310b406a960334c90d6c359c0313b2660c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f23d80b4d2796b4d9c86648c09d6bece5e82d482
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358900"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317834"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Фото- и видеосъемка с использованием встроенного пользовательского интерфейса камеры в Windows
 
@@ -36,7 +36,7 @@ ms.locfileid: "66358900"
 > [!NOTE]
 > Обрезка изображения в **CameraCaptureUI** не поддерживается для устройств из семейства мобильных устройств. Значение свойства [**AllowCropping**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureuiphotocapturesettings.allowcropping) игнорируется, если приложение выполняется на этих устройствах.
 
-Вызовите метод [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.) и задайте [**CameraCaptureUIMode.Photo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUIMode), чтобы захватить фотографию. Если захват выполнен успешно, этот метод возвращает экземпляр [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile), содержащий изображение. Если пользователь отменил захват, возвращается объект null.
+Вызовите метод [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.capturefileasync) и задайте [**CameraCaptureUIMode.Photo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUIMode), чтобы захватить фотографию. Если захват выполнен успешно, этот метод возвращает экземпляр [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile), содержащий изображение. Если пользователь отменил захват, возвращается объект null.
 
 [!code-cs[CapturePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCapturePhoto)]
 
@@ -62,7 +62,7 @@ ms.locfileid: "66358900"
 
 [!code-cs[UsingSoftwareBitmapSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmapSource)]
 
-Элементу управления **Image** требуется, чтобы источник изображения был в формате BGRA8 с предварительным умножением альфа-канала или без него, поэтому вызовите статистический метод [**SoftwareBitmap.Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) для создания нового точечного рисунка программного обеспечения в требуемом формате. Затем создайте новый объект [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) и вызовите метод [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync), чтобы присвоить источнику точечный рисунок программного обеспечения. После этого задайте свойство [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) элемента управления **Image**, чтобы отобразить захваченную фотографию в пользовательском интерфейсе.
+Элементу управления **Image** требуется, чтобы источник изображения был в формате BGRA8 с предварительным умножением альфа-канала или без него, поэтому вызовите статистический метод [**SoftwareBitmap.Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) для создания нового точечного рисунка программного обеспечения в требуемом формате. Затем создайте новый объект [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) и вызовите метод [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync), чтобы присвоить источнику точечный рисунок программного обеспечения. После этого задайте свойство [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) элемента управления **Image**, чтобы отобразить захваченную фотографию в пользовательском интерфейсе.
 
 [!code-cs[SetImageSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
 
@@ -70,7 +70,7 @@ ms.locfileid: "66358900"
 
 Чтобы захватить видео, создайте новый объект [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI). С помощью свойства [**VideoSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings) объекта можно указать параметры возвращенного видео, например его формат.
 
-Вызовите метод [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.) и задайте [**Video**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings), чтобы осуществить видеозахват. Если захват выполнен успешно, этот метод возвращает экземпляр [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile), содержащий видео. Если пользователь отменил захват, возвращается объект null.
+Вызовите метод [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.capturefileasync) и задайте [**Video**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings), чтобы осуществить видеозахват. Если захват выполнен успешно, этот метод возвращает экземпляр [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile), содержащий видео. Если пользователь отменил захват, возвращается объект null.
 
 [!code-cs[CaptureVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCaptureVideo)]
 

@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ebc87c685d92fa4dbc1a954e2fc6f0cf549a5554
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 62f603a6ff5aadc1c3e5342db6a7d771f8c37a7b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366069"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320841"
 ---
 # <a name="storyboarded-animations"></a>Раскадрованные анимации
 
@@ -70,7 +70,7 @@ ms.locfileid: "66366069"
 
 ### <a name="targeting-the-dependency-property-to-animate"></a>Выбор свойства зависимостей для анимации
 
-Вы задаете значение для [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)) в анимации. Таким образом определяется, какое именно свойство целевого объекта анимируется.
+Вы задаете значение для [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) в анимации. Таким образом определяется, какое именно свойство целевого объекта анимируется.
 
 Иногда необходимо выбрать свойство, которое не имеет прямого отношения к целевому объекту, но находится в связи между объектом и свойством на более глубоком уровне. Часто это требуется для того, чтобы детализировать набор дополнительных значений объекта и свойства, пока вы не сможете сослаться на тип свойства, который можно анимировать ([**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN), [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)). Это понятие называется *непрямой выбор*, а синтаксис для выбора свойства таким способом называется *путь к свойству*.
 
@@ -101,7 +101,7 @@ ms.locfileid: "66366069"
 
 Вы также можете анимировать присоединенные свойства XAML. Всегда заключайте полное имя присоединенного свойства в круглые скобки, например `(Canvas.Left)`. Подробнее об этом: [Анимирование присоединенных свойств XAML](./storyboarded-animations.md#animating-xaml-attached-properties).
 
-Дополнительную информацию об использовании пути к свойству для анимации см. в разделах [Синтаксис Property-path](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax) или [**Присоединенное свойство Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)).
+Дополнительную информацию об использовании пути к свойству для анимации см. в разделах [Синтаксис Property-path](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax) или [**Присоединенное свойство Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)).
 
 ### <a name="animation-types"></a>Типы анимации
 
@@ -323,7 +323,7 @@ myStoryBoard.Begin()
 
 ## <a name="animating-xaml-attached-properties"></a>Анимирование присоединенных свойств XAML
 
-Этот сценарий не распространен, но вы можете применить анимированное значение к присоединенному свойству XAML. Дополнительную информацию о присоединенных свойствах и об их работе см. в разделе [Общие сведения о присоединенных свойствах](https://docs.microsoft.com/windows/uwp/xaml-platform/attached-properties-overview). Для выбора присоединенного свойства необходим [синтаксис property-path](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax), который содержит имя свойства в круглых скобках. Вы можете анимировать встроенные присоединенные свойства, например [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)), с помощью [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames), который применяет дискретные целочисленные значения. Однако существующее ограничение реализации XAML среды выполнения Windows состоит в том, что вы не можете анимировать пользовательское присоединенное свойство.
+Этот сценарий не распространен, но вы можете применить анимированное значение к присоединенному свойству XAML. Дополнительную информацию о присоединенных свойствах и об их работе см. в разделе [Общие сведения о присоединенных свойствах](https://docs.microsoft.com/windows/uwp/xaml-platform/attached-properties-overview). Для выбора присоединенного свойства необходим [синтаксис property-path](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax), который содержит имя свойства в круглых скобках. Вы можете анимировать встроенные присоединенные свойства, например [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)), с помощью [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames), который применяет дискретные целочисленные значения. Однако существующее ограничение реализации XAML среды выполнения Windows состоит в том, что вы не можете анимировать пользовательское присоединенное свойство.
 
 ## <a name="more-animation-types-and-next-steps-for-learning-about-animating-your-ui"></a>Дополнительные типы анимации и следующие этапы для изучения анимации пользовательского интерфейса
 
@@ -337,7 +337,7 @@ myStoryBoard.Begin()
 * [Выполнена его раскадровка анимации для визуальных состояний](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
 * [Шаблоны элементов управления](https://docs.microsoft.com/windows/uwp/controls-and-patterns/control-templates)
 * [**раскадровки**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
-* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95))
+* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
  
 
  

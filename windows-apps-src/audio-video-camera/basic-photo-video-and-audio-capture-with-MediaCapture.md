@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 21743f588fa26fcab424a67d6befdd720a891688
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 47134c951fe0351966a34b4a58fe657a6aeeb602
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359112"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317572"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Основные принципы фото-, аудио- и видеозахвата с помощью MediaCapture
 
@@ -113,7 +113,7 @@ ms.locfileid: "66359112"
 
 [!code-cs[ResumeRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetResumeRecordingSimple)]
 
-Начиная с Windows 10 версии 1607 вы можете приостановить видеозапись и получить последний кадр, записанный до приостановки. Затем можно накладывать этот кадр в режиме предварительного просмотра камеры пользователь мог, чтобы выровнять камеру с приостановлено кадра, прежде чем возобновлять запись. Метод [**PauseWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) возвращает объект [**MediaCapturePauseResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapturePauseResult). Свойство [**LastFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) — это объект [**VideoFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.VideoFrame), представляющий последний кадр. Чтобы показать кадр в XAML, получите представление кадра в форме класса **SoftwareBitmap**. В данный момент поддерживаются только изображения в формате BGRA8 с предварительно умноженным или пустым альфа-каналом, поэтому вызовите метод [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) при необходимости, чтобы получить правильный формат.  Создайте объект [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) и вызовите метод [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync), чтобы инициализировать его. Наконец настройте свойство **Source** XAML-элемента управления [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image), чтобы показать изображения. Чтобы это сработало, изображение должно быть выровнено с элементом управления **CaptureElement**, а значение непрозрачности должно быть меньше одного. Не забывайте, что изменить интерфейс можно только в потоке пользовательского интерфейса, поэтому этот вызов следует выполнить в пределах [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows).
+Начиная с Windows 10 версии 1607 вы можете приостановить видеозапись и получить последний кадр, записанный до приостановки. Затем можно накладывать этот кадр в режиме предварительного просмотра камеры пользователь мог, чтобы выровнять камеру с приостановлено кадра, прежде чем возобновлять запись. Метод [**PauseWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) возвращает объект [**MediaCapturePauseResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapturePauseResult). Свойство [**LastFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) — это объект [**VideoFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.VideoFrame), представляющий последний кадр. Чтобы показать кадр в XAML, получите представление кадра в форме класса **SoftwareBitmap**. В данный момент поддерживаются только изображения в формате BGRA8 с предварительно умноженным или пустым альфа-каналом, поэтому вызовите метод [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) при необходимости, чтобы получить правильный формат.  Создайте объект [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) и вызовите метод [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync), чтобы инициализировать его. Наконец настройте свойство **Source** XAML-элемента управления [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image), чтобы показать изображения. Чтобы это сработало, изображение должно быть выровнено с элементом управления **CaptureElement**, а значение непрозрачности должно быть меньше одного. Не забывайте, что изменить интерфейс можно только в потоке пользовательского интерфейса, поэтому этот вызов следует выполнить в пределах [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync).
 
 Метод **PauseWithResultAsync** также возвращает длительность записанного в предыдущем сегменте видео, если вам нужно отслеживать общее время записи.
 

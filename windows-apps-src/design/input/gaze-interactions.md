@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77e39b9c7440fab491b3d7ef85baa757d299fff8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3fb07dd9aec475566940dbf98ae6bd1c5f9c1337
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604399"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317330"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>Взаимодействие с помощью взгляда и отслеживание движения глаз в приложениях UWP
 
@@ -66,7 +66,7 @@ ms.locfileid: "57604399"
 
 В этом примере мы покажем, как отслеживать взгляд пользователя в приложении UWP и использовать функцию синхронизации с базовой проверкой попадания, чтобы указать, как пользователи могут удерживать взгляд на определенном элементе.
 
-Маленький эллипс используется для отображения точки взгляда внутри окна просмотра приложения, а элемент управления [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar) из [набора средств сообщества Windows](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/) случайным образом помещается на холсте. При обнаружении фокуса взгляда на индикаторе выполнения, запускается таймер, а индикатор выполнения случайным образом перемещается по холсту, когда индикатор достигает 100 %.
+Маленький эллипс используется для отображения точки взгляда внутри окна просмотра приложения, а элемент управления [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) из [набора средств сообщества Windows](https://docs.microsoft.com/windows/communitytoolkit/) случайным образом помещается на холсте. При обнаружении фокуса взгляда на индикаторе выполнения, запускается таймер, а индикатор выполнения случайным образом перемещается по холсту, когда индикатор достигает 100 %.
 
 ![Пример отслеживания взгляда с таймером](images/gaze/gaze-input-timed2.gif)
 
@@ -405,7 +405,7 @@ ms.locfileid: "57604399"
 
     Мы отображаем и скрываем эллипс отслеживания взгляд в `GazeEntered` и `GazeExited` соответственно.
 
-    В `GazeMoved` мы перемещаем эллипс отслеживания взгляда на основе свойства [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition), предоставленного [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) объекта [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs). Мы также управляем таймером фокусировки взгляд в элементе [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar), который активирует изменения положение индикатора выполнения. Дополнительные сведения см. в описании следующего шага.
+    В `GazeMoved` мы перемещаем эллипс отслеживания взгляда на основе свойства [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition), предоставленного [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) объекта [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs). Мы также управляем таймером фокусировки взгляд в элементе [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar), который активирует изменения положение индикатора выполнения. Дополнительные сведения см. в описании следующего шага.
 
     ```csharp
     /// <summary>
@@ -600,7 +600,7 @@ ms.locfileid: "57604399"
 
 ### <a name="resources"></a>Ресурсы
 
-- [Библиотека Windows Community Toolkit помощи](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
+- [Библиотека Windows Community Toolkit помощи](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
 
 ### <a name="topic-samples"></a>Примеры в разделе
 

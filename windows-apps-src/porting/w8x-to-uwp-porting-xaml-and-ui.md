@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 829755f6ccba7a076096e4a03555458b98a4b670
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5fcc4312cd238279e01e275d2525c9ac8df98190
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372239"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322367"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Перенос XAML среды выполнения Windows 8.x и пользовательского интерфейса в UWP
 
@@ -110,7 +110,7 @@ Uwp 8.1 приложение, работающее в Windows 10 будет со
 | **ListPickerFlyout**, **PickerFlyout**  | **ListPickerFlyout** и **PickerFlyout** являются устаревшими для приложения Windows 10. Для простого всплывающего элемента используйте [**MenuFlyout**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout). Для более сложных элементов используйте [**Flyout**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout). |
 | [**PasswordBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) | [ **PasswordBox.IsPasswordRevealButtonEnabled** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled) свойство является устаревшим в приложении Windows 10, и его установка не оказывает влияния. Используйте [ **PasswordBox.PasswordRevealMode** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) вместо этого, который по умолчанию **Показать** (в котором глиф в виде глаза отображаются, как в приложении среды выполнения Windows 8.x). См. также раздел [Руководство по полям паролей](https://docs.microsoft.com/windows/uwp/controls-and-patterns/password-box). |
 | [**PIVOT**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) | Элемент управления [**Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) теперь универсален; его использование больше не ограничивается мобильными устройствами. |
-| [**Окна поиска**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SearchBox) | Хотя [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox.) реализуется во всех семействах устройств, он не полностью использует свои функции в мобильных устройствах. См. раздел [SearchBox заменен на AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox). |
+| [**Окна поиска**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SearchBox) | Хотя [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox) реализуется во всех семействах устройств, он не полностью использует свои функции в мобильных устройствах. См. раздел [SearchBox заменен на AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox). |
 | **Элемент управления SemanticZoom** | Сведения о **SemanticZoom** см. в разделе [Изменения SemanticZoom](#semanticzoom-changes). |
 | [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)  | Некоторые свойства [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) по умолчанию изменились. [**HorizontalScrollMode** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode) — **автоматически**, [ **VerticalScrollMode** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollmode) — **автоматически**и [ **Параметр ZoomMode** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.zoommode) — **отключено**. Если новые значения по умолчанию не подходят для вашего приложения, вы можете изменить их в стиле и как локальные значения в самом элементе управления.  |
 | [**Текстовое поле**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | В приложении среды выполнения Windows 8.x, проверка орфографии по умолчанию отключены для [ **TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). В приложении Windows Phone Store и в приложении Windows 10 оно включено по умолчанию. |
@@ -118,7 +118,7 @@ Uwp 8.1 приложение, работающее в Windows 10 будет со
 | [**Текстовое поле**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Значение по умолчанию [**TextBox.TextReadingOrder**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.textreadingorder) изменилось с **Default** на **DetectFromContent**. Если это нежелательно, используйте **UseFlowDirection**. Использовать значение **Default** не рекомендуется. |
 | Various | Цвет применяется к приложениям Windows Phone Store и для приложений Windows 10, но не приложений среды выполнения Windows 8.x.  |
 
-Дополнительные сведения об элементах управления приложения UWP см. в разделах [Распределение элементов управления по функциям](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function)[Список элементов управления](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) и [Руководство по элементам управления](https://developer.microsoft.com/windows/design/controls-patterns).
+Дополнительные сведения об элементах управления приложения UWP см. в разделах [Распределение элементов управления по функциям](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function)[Список элементов управления](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) и [Руководство по элементам управления](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/index).
 
 ##  <a name="design-language-in-windows10"></a>Язык проектирования в Windows 10
 
@@ -410,7 +410,7 @@ API-интерфейсы в [ **Windows.Media.PlayTo** ](https://docs.microsoft.
 
 ## <a name="searchbox-deprecated-in-favor-of-autosuggestbox"></a>SearchBox заменен на AutoSuggestBox.
 
-Хотя [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox.) реализуется во всех семействах устройств, он не полностью использует свои функции в мобильных устройствах. Используйте [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) при выполнении любого поиска. Ниже описана типичная реализация поиска с помощью **AutoSuggestBox**.
+Хотя [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox) реализуется во всех семействах устройств, он не полностью использует свои функции в мобильных устройствах. Используйте [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) при выполнении любого поиска. Ниже описана типичная реализация поиска с помощью **AutoSuggestBox**.
 
 Когда пользователь начинает вводить текст, создается событие **TextChanged** с причиной **UserInput**. Затем вы можете заполнить список вариантов текста и выбрать **ItemsSource** элемента [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox). Когда пользователь переходит по списку, создается событие **SuggestionChosen** (если вы задали **TextMemberDisplayPath**, в текстовое поле автоматически вводится указанное свойство). Когда пользователь подтверждает выбор с помощью клавиши Enter, создается событие **QuerySubmitted**, и в этот момент вы можете выполнить соответствующее действие с выбранным вариантом (в данном случае, скорее всего, это будет переход на другую страницу с более подробной информацией об указанном содержимом). Обратите внимание, что свойства **LinguisticDetails** и **Language** элемента **SearchBoxQuerySubmittedEventArgs** больше не поддерживаются (для поддержки этой функции предусмотрены аналогичные API). **KeyModifiers** также больше не поддерживаются.
 

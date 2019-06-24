@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: df81348dee781d1c329562d558ed8df30fd40bc5
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 0e8cee688cbfbda0fe3822017b769560fc0fffe3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244120"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319385"
 ---
 # <a name="designing-for-mixed-reality"></a>Проектирование для смешанной реальности
 
@@ -38,7 +38,7 @@ ms.locfileid: "59244120"
 
 Иммерсивные приложения занимают все пространство видимого пользователю дисплея, размещая его в центре представления, созданного приложением. Например иммерсивная игра может поместить пользователя на поверхность другой планеты, а приложение, представляющее собой туристический путеводитель, может поместить его в обстановку южноамериканской деревни. Для создания иммерсивного приложения требуется трехмерная графика или захваченное стереографическое видео. Иммерсивные приложения часто разрабатываются с помощью игровых движков сторонних производителей, таких как Unity или даже DirectX.
 
-При создании иммерсивного приложения следует посетить [центр разработки Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality) для получения дополнительных сведений.
+При создании иммерсивного приложения следует посетить [центр разработки Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) для получения дополнительных сведений.
 
 Двухмерное приложение выполняется как традиционное плоское окно в представлении пользователя. На устройстве HoloLens это означает, что представление закреплено на стене или в точке пространства гостиной или офиса пользователя в реальном мире. При использовании гарнитуры смешанной реальности приложение закреплено на стене в [смешанной реальности в домашних условиях](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) (иногда называемой *Дом на обрыве*).
 
@@ -82,7 +82,7 @@ ms.locfileid: "59244120"
 * [Ручные жесты](https://developer.microsoft.com/windows/mixed-reality/gestures) (только для HoloLens, используется только для запуска двухмерных приложений);
 * [Поддержка геймпада](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (обе среды);
 * [Устройство Clicker](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (только HoloLens);
-* [Контроллеры движений](https://developer.microsoft.com/windows/mixed-reality/motion_controllers) (только устройства смешанной реальности, показаны выше).
+* [Контроллеры движений](https://docs.microsoft.com/windows/mixed-reality/motion-controllers) (только устройства смешанной реальности, показаны выше).
 
 Эти контроллеры обеспечивают естественное и точное взаимодействие с виртуальными объектами. Некоторые взаимодействия вы получаете без дополнительных затрат. Например HoloLens выберите жест или щелкнув ключ Windows движения контроллера или триггер создает входной ответ, который можно ожидать, опять же, не обладая со стороны пользователя.
 
@@ -98,7 +98,7 @@ ms.locfileid: "59244120"
 
 * Перетаскивание может не работать должным образом при использовании контроллеров движений, геймпадов или жестов. Если в вашем приложении активно используется перетаскивание, необходимо предоставить альтернативный способ поддержки этого действия, такой как отображение диалогового окна для подтверждения перемещения объектов в новое место.
 
-* Учитывайте изменения звука. Если ваше приложение воспроизводит звуковые эффекты, источником звука будет казаться место закрепления вашего приложения в виртуальном мире. По мере того, как пользователь удаляется от приложения, громкость звука будет уменьшаться. Дополнительные сведения см. в статье [Пространственный звук](https://developer.microsoft.com/windows/mixed-reality/spatial_sound).
+* Учитывайте изменения звука. Если ваше приложение воспроизводит звуковые эффекты, источником звука будет казаться место закрепления вашего приложения в виртуальном мире. По мере того, как пользователь удаляется от приложения, громкость звука будет уменьшаться. Дополнительные сведения см. в статье [Пространственный звук](https://docs.microsoft.com/windows/mixed-reality/spatial-sound).
 
 * Учитывайте поле зрения и предоставляйте возможности. Не все устройства предоставляют такое же большое поле зрения, как монитор компьютера. Полные сведения см. в разделе [Голографический кадр](https://developer.microsoft.com/windows/mixed-reality/holographic_frame). Кроме того, пользователь может находиться на определенном расстоянии от работающего приложения. То есть приложение может отображаться закрепленным на стене в другом месте мира (реального или виртуального). Вашем приложению может потребоваться привлечь внимание пользователя или учесть, что не все представление отображается постоянно. Доступны всплывающие уведомления, однако еще одним способом привлечь внимание пользователя может быть воспроизведение звукового или [речевого](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cs/Scenario_SynthesizeText.xaml.cs) оповещения.
 
@@ -163,8 +163,8 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 ## <a name="related-articles"></a>Связанные статьи
 
 
-* [Текущие ограничения для приложений, использующие API из оболочки](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
-* [Сборка двухмерных приложений](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
+* [Текущие ограничения для приложений с помощью API-интерфейсы из оболочки](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
+* [Создание двухмерных приложений](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens: Создание двухмерных Uwp для Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
 * [Условный XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
 

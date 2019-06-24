@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c2f9ff93396562452028990e877d42782cff4ef2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 25e7fdcb4195dcc0dffed7657d41bd02bea8a5c2
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372216"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322302"
 ---
 #  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>Перенос уровней данных и бизнес-Windows Phone Silverlight для универсальной платформы Windows
 
@@ -26,7 +26,7 @@ ms.locfileid: "66372216"
 
 ## <a name="background-processing"></a>Фоновая обработка
 
-Приложения Windows Phone Silverlight можно использовать управляемый **ScheduledTaskAgent** объект для выполнения задачи, пока приложение не находится на переднем плане. Приложение UWP использует класс [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) для создания и регистрации фоновой задачи подобным образом. Вы определяете класс, реализующий работу фоновой задачи. Система выполняет фоновую задачу, периодически вызывая метод [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) вашего класса для выполнения работы. Не забудьте в приложении UWP установить объявление **Фоновые задачи** в манифесте пакета приложения. Дополнительные сведения см. в разделе [Поддержка приложения с помощью фоновых задач](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
+Приложения Windows Phone Silverlight можно использовать управляемый **ScheduledTaskAgent** объект для выполнения задачи, пока приложение не находится на переднем плане. Приложение UWP использует класс [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) для создания и регистрации фоновой задачи подобным образом. Вы определяете класс, реализующий работу фоновой задачи. Система выполняет фоновую задачу, периодически вызывая метод [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) вашего класса для выполнения работы. Не забудьте в приложении UWP установить объявление **Фоновые задачи** в манифесте пакета приложения. Дополнительные сведения см. в разделе [Поддержка приложения с помощью фоновых задач](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
 Для передачи больших объемов данных файлов в фоновом режиме, используется в приложении Windows Phone Silverlight **BackgroundTransferService** класса. В приложении UWP для этого используются API-интерфейсы в пространстве имен [**Windows.Networking.BackgroundTransfer**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer). Данные функции используют аналогичный шаблон начала передачи данных, но новый API обладает улучшенными возможностями и производительностью. Дополнительные сведения см. в разделе [Передача данных в фоновом режиме](https://docs.microsoft.com/previous-versions/windows/apps/hh452975(v=win.10)).
 
@@ -36,9 +36,9 @@ ms.locfileid: "66372216"
 
 Размещение данных и служб приложений в облаке возможны с помощью Azure. См. раздел [Начало работы с мобильными службами](https://go.microsoft.com/fwlink/p/?LinkID=403138). Для решений, которые требуют автономно и данных см. в разделе: [Использование синхронизации автономных данных в мобильных службах](https://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/).
 
-UWP частично поддерживает класс **System.Net.HttpWebRequest**, но класс **System.Net.WebClient** не поддерживается. Рекомендуемая дальновидная альтернатива — класс [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) (или [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx), если необходимо, чтобы код можно было переносить на другие платформы, поддерживающие .NET). Эти API-интерфейсы используют [System.Net.Http.HttpRequestMessage](https://docs.microsoft.com/previous-versions/visualstudio/hh159020(v=vs.118)) для представления запроса HTTP.
+UWP частично поддерживает класс **System.Net.HttpWebRequest**, но класс **System.Net.WebClient** не поддерживается. Рекомендуемая дальновидная альтернатива — класс [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) (или [System.Net.Http.HttpClient](https://docs.microsoft.com/previous-versions/visualstudio/hh193681(v=vs.118)), если необходимо, чтобы код можно было переносить на другие платформы, поддерживающие .NET). Эти API-интерфейсы используют [System.Net.Http.HttpRequestMessage](https://docs.microsoft.com/previous-versions/visualstudio/hh159020(v=vs.118)) для представления запроса HTTP.
 
-Приложения UWP на данный момент не имеют встроенной поддержки обработки больших объемов данных, которая, в частности, требуется в бизнес-приложениях. Однако вы можете настроить использование SQLite для локальных операционных служб баз данных. Подробнее см. в разделе [SQLite](https://marketplace.visualstudio.com/vsgallery/4913e7d5-96c9-4dde-a1a1-69820d615936).
+Приложения UWP на данный момент не имеют встроенной поддержки обработки больших объемов данных, которая, в частности, требуется в бизнес-приложениях. Однако вы можете настроить использование SQLite для локальных операционных служб баз данных. Подробнее см. в разделе [SQLite](https://marketplace.visualstudio.com/items?itemName=SQLiteDevelopmentTeam.SQLiteforUniversalWindowsPlatform).
 
 Передайте абсолютные URI, а не относительные URI, типам среды выполнения Windows. См. раздел [Передача URI в среду выполнения Windows](https://docs.microsoft.com/dotnet/standard/cross-platform/passing-a-uri-to-the-windows-runtime).
 

@@ -7,12 +7,12 @@ ms.date: 05/16/2018
 ms.topic: article
 keywords: Windows 10, uwp, уведомления, коллекций, коллекция, группы уведомлений, группировка уведомлений, группа, упорядочивание, центр уведомлений, всплывающее уведомление
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b6818f876c094298a0a6636faa00efa9a192545
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 71d5edb662b180571aa10f8a7b0ad533cf28a689
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57600689"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320788"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>Группирование всплывающих уведомлений с помощью коллекций
 Коллекции можно использовать для упорядочивания всплывающих уведомлений вашего приложения в центре уведомлений. Коллекции помогают пользователям проще находить сведения в центре уведомлений, а разработчикам — лучше управлять своими уведомлениями.  API-интерфейсы ниже позволяют удалять, создавать и обновлять коллекции уведомлений.
@@ -186,8 +186,8 @@ collectionHistory.Clear();
 ## <a name="other-details"></a>Дополнительные сведения
 Создаваемые вами коллекции всплывающих уведомлений также отражаются в параметрах уведомлений пользователя.  Пользователи могут переключать параметры каждой отдельной коллекции, чтобы включать или отключать эти подгруппы.  При отключении уведомлений на верхнем уровне приложения также отключаются все уведомления коллекций.  Кроме того, каждая коллекция по умолчанию будет отображать 3 уведомления в центре уведомлений, и пользователь сможет развернуть его, чтобы отобразить до 20 уведомлений.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 * [Содержимое всплывающего](adaptive-interactive-toasts.md)
 * [Заголовки всплывающее уведомление](toast-headers.md)
-* [Библиотека уведомлений на сайте GitHub (часть набора средств сообщества Windows)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Библиотека уведомлений на сайте GitHub (часть набора средств сообщества Windows)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

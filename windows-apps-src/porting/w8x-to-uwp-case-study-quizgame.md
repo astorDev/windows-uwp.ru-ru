@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d2d1b2b4e6875730d5a6bfa8dd711e11ac5d049c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 81f50625d3af6728adcc6c377a249410354489dd
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642919"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322356"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Среда выполнения Windows 8.x в UWP пример использования: QuizGame примера приложения
 
@@ -40,7 +40,7 @@ ms.locfileid: "57642919"
 
 [Приложения Windows 10 загрузки QuizGame10](https://go.microsoft.com/fwlink/?linkid=532954). Это состояние приложения сразу после переноса. 
 
-[См. последнюю версию этого примера в GitHub](https://github.com/Microsoft/Windows-appsample-quizgame).
+[См. последнюю версию этого примера в GitHub](https://github.com/microsoft/Windows-appsample-networkhelper).
 
 ## <a name="the-winrt-81-solution"></a>Решение для WinRT 8.1
 
@@ -94,7 +94,7 @@ ms.locfileid: "57642919"
 
 **P2PHelper**
 
--   В решении, создайте новый проект библиотеки классов Windows 10 (**новый проект** &gt; **универсальной Windows** &gt; **библиотека классов (Windows универсальное)**) и назовите его P2PHelper.
+-   В решении, создайте новый проект библиотеки классов Windows 10 (**новый проект** &gt; **универсальной Windows** &gt; **библиотека классов (Windows универсальное)** ) и назовите его P2PHelper.
 -   Удалите файл Class1.cs из нового проекта.
 -   Скопируйте файлы P2PSession.cs, P2PSessionClient.cs и P2PSessionHost.cs в папку нового проекта и добавьте скопированные файлы в новый проект.
 -   Проект будет создан без дальнейших изменений.
@@ -106,7 +106,7 @@ ms.locfileid: "57642919"
 
 **QuizGameHost**
 
--   Создайте новый проект приложения Windows 10 (**добавить** &gt; **новый проект** &gt; **универсальной Windows** &gt; **пустым Приложение (универсальное для Windows)**) и назовите его QuizGameHost.
+-   Создайте новый проект приложения Windows 10 (**добавить** &gt; **новый проект** &gt; **универсальной Windows** &gt; **пустым Приложение (универсальное для Windows)** ) и назовите его QuizGameHost.
 -   Добавьте ссылку на P2PHelper (**добавить ссылку** &gt; **проекты** &gt; **решение** &gt; **P2PHelper**).
 -   В **Обозревателе решений** создайте новую папку для каждой из общих папок на диске. В свою очередь, щелкните правой кнопкой мыши каждую папку, вы только что создали и нажмите кнопку **добавить** &gt; **существующий элемент** и перейдите в папку. Откройте соответствующую общую папку, выберите все файлы и нажмите **Добавить как связь**.
 -   Скопируйте файл MainPage.xaml из \\QuizGame.Windows\\ для \\QuizGameHost\\ и изменить пространство имен для QuizGameHost.
@@ -133,7 +133,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 **QuizGameClient**
 
--   Создайте новый проект приложения Windows 10 (**добавить** &gt; **новый проект** &gt; **универсальной Windows** &gt; **пустым Приложение (универсальное для Windows)**) и назовите его QuizGameClient.
+-   Создайте новый проект приложения Windows 10 (**добавить** &gt; **новый проект** &gt; **универсальной Windows** &gt; **пустым Приложение (универсальное для Windows)** ) и назовите его QuizGameClient.
 -   Добавьте ссылку на P2PHelper (**добавить ссылку** &gt; **проекты** &gt; **решение** &gt; **P2PHelper**).
 -   В **Обозревателе решений** создайте новую папку для каждой из общих папок на диске. В свою очередь, щелкните правой кнопкой мыши каждую папку, вы только что создали и нажмите кнопку **добавить** &gt; **существующий элемент** и перейдите в папку. Откройте соответствующую общую папку, выберите все файлы и нажмите **Добавить как связь**.
 -   Скопируйте файл MainPage.xaml из \\QuizGame.WindowsPhone\\ для \\QuizGameClient\\ и изменить пространство имен для QuizGameClient.

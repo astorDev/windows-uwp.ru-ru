@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, печать
 ms.localizationpriority: medium
-ms.openlocfilehash: 68f8f990209a66a8677afbd1913c95bfd2fce187
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8d13f67ecff5c670707ca1832ea44b85ca8319d9
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370295"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321558"
 ---
 # <a name="customize-the-print-preview-ui"></a>Настройка пользовательского интерфейса предварительного просмотра
 
@@ -54,9 +54,9 @@ ms.locfileid: "66370295"
 
 ### <a name="define-the-options-to-display"></a>Определение параметров для отображения
 
-При загрузке экрана приложения выполняется регистрация для контракта «Печать». Часть этой регистрации включает в себя определение обработчика событий [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597). Код для настройки параметров, отображаемых в пользовательском интерфейсе предварительного просмотра, добавляется в обработчик событий **PrintTaskRequested**.
+При загрузке экрана приложения выполняется регистрация для контракта «Печать». Часть этой регистрации включает в себя определение обработчика событий [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress). Код для настройки параметров, отображаемых в пользовательском интерфейсе предварительного просмотра, добавляется в обработчик событий **PrintTaskRequested**.
 
-Измените обработчик событий [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597), чтобы включить инструкции [**printTask.options**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.options), предназначенные для настройки параметров печати, которые должны отображаться в пользовательском интерфейсе предварительного просмотра. Переопределите обработчик событий **PrintTaskRequested** в дополнительном классе экрана, на котором требуется отображать пользовательский список параметров печати, чтобы включить в него код для определения этих параметров.
+Измените обработчик событий [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress), чтобы включить инструкции [**printTask.options**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.options), предназначенные для настройки параметров печати, которые должны отображаться в пользовательском интерфейсе предварительного просмотра. Переопределите обработчик событий **PrintTaskRequested** в дополнительном классе экрана, на котором требуется отображать пользовательский список параметров печати, чтобы включить в него код для определения этих параметров.
 
 ``` csharp
 protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -109,7 +109,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 
 ## <a name="add-new-print-options"></a>Добавление новых параметров печати
 
-В этом разделе показано, как создать новый параметр печати, определить список значений, поддерживаемых параметром, а затем добавить параметр к пользовательскому интерфейсу предварительного просмотра. Добавьте новый параметр печати в обработчик событий [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597), как и в предыдущем разделе.
+В этом разделе показано, как создать новый параметр печати, определить список значений, поддерживаемых параметром, а затем добавить параметр к пользовательскому интерфейсу предварительного просмотра. Добавьте новый параметр печати в обработчик событий [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress), как и в предыдущем разделе.
 
 Сначала получите объект [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails). Он используется для добавления нового параметра печати к пользовательскому интерфейсу предварительного просмотра. Затем очистите список параметров, отображающихся в пользовательском интерфейсе предварительного просмотра, и добавьте параметры, которые вы хотите показывать пользователю при печати из приложения. После этого создайте новый параметр печати и инициализируйте список значений параметров. Наконец, добавьте новый параметр и назначьте обработчик события **OptionChanged**.
 

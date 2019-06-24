@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 855c629e961df36970886b4076e5091726d07c93
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8d6f77c92efdd5ebe93a32514513747174ab9e9c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372929"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322187"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>Пошаговое руководство: Создание простого компонента среды выполнения Windows и его вызов из JavaScript
 
@@ -557,7 +557,7 @@ events1Button.addEventListener("click", events1, false);
 ## <a name="exposing-asynchronous-operations"></a>Предоставление доступа к асинхронным операциям
 
 
-Платформа .NET Framework содержит богатый набор средств для асинхронной и параллельной обработки, основанных на классе Task и универсальном классе [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1?redirectedfrom=MSDN). Для реализации асинхронной обработки на основе задач в компоненте среды выполнения Windows используйте интерфейсы среды выполнения Windows [IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction), [IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions//br205784(v=vs.85)), [IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/previous-versions//br205802(v=vs.85)) и [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://docs.microsoft.com/previous-versions//br205807(v=vs.85)). (В среде выполнения Windows операции возвращают результаты, а действия — нет).
+Платформа .NET Framework содержит богатый набор средств для асинхронной и параллельной обработки, основанных на классе Task и универсальном классе [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1?redirectedfrom=MSDN). Для реализации асинхронной обработки на основе задач в компоненте среды выполнения Windows используйте интерфейсы среды выполнения Windows [IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction), [IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions/br205784(v=vs.85)), [IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/previous-versions/br205802(v=vs.85)) и [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://docs.microsoft.com/previous-versions/br205807(v=vs.85)). (В среде выполнения Windows операции возвращают результаты, а действия — нет).
 
 В этом разделе демонстрируется отменяемая асинхронная операция, которая информирует о ходе выполнения и возвращает результаты. Метод GetPrimesInRangeAsync использует класс [AsyncInfo](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN) для создания задачи и подключения его функций отмены и хода выполнения к объекту WinJS.Promise. Сначала добавьте метод GetPrimesInRangeAsync в класс Example:
 

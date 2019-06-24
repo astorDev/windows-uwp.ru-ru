@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c61f6580039b9fe3da915491acd84c939088370
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bf9cc4f97cdfcb02eb725b81163f215b22b259e4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361388"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318057"
 ---
 # <a name="visual-layer"></a>Визуальный уровень
 
@@ -71,7 +71,7 @@ ms.locfileid: "66361388"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [**Полную справочную документацию по API**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
-* Расширенные примеры пользовательского интерфейса и композиции в [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs)
+* Расширенные примеры пользовательского интерфейса и композиции в [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples)
 * [Коллекция примеров Windows.UI.Composition](https://aka.ms/winuiapp)
 * [@windowsui Веб-канал Twitter ](https://twitter.com/windowsui)
 * Прочитайте статью MSDN Кенни Керр этот API-интерфейс: [Графика и анимация — переход композиции к версии Windows 10](https://msdn.microsoft.com/magazine/mt590968)

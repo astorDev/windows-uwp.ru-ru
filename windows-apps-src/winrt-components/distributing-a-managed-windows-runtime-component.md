@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e05a1f24e6192d25c80c043cdb4a51e7ac61ec
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b9fcdff5b8648822bb5cc22771daded23f6d52a5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372365"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322233"
 ---
 # <a name="distributing-a-managed-windows-runtime-component"></a>Распространение управляемого компонента среды выполнения Windows
 
@@ -53,7 +53,7 @@ For example: Microsoft.Cpp.Build.dll
 
 **Для создания расширения SDK**
 
-1.  Убедитесь, что установлен пакет SDK для Visual Studio. Пакет SDK для Visual Studio можно скачать на странице [загрузок для Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs).
+1.  Убедитесь, что установлен пакет SDK для Visual Studio. Пакет SDK для Visual Studio можно скачать на странице [загрузок для Visual Studio](https://visualstudio.microsoft.com/downloads/download-visual-studio-vs).
 2.  Создайте новый проект с помощью шаблона "Проект VSIX". Шаблон можно найти в папке Visual C# или Visual Basic в категории "Расширение среды". Этот шаблон устанавливается как часть пакета SDK для Visual Studio. ([Пошаговое руководство: Создание пакета SDK с помощью C# или Visual Basic](https://docs.microsoft.com/visualstudio/extensibility/walkthrough-creating-an-sdk-using-csharp-or-visual-basic?view=vs-2015) или [Пошаговое руководство: Создание пакета SDK с помощью C++](https://docs.microsoft.com/visualstudio/extensibility/walkthrough-creating-an-sdk-using-cpp?view=vs-2015), демонстрируется использование этого шаблона в очень простом сценарии. )
 3.  Определите структуру папок для пакета SDK. Структура папок начинается на корневом уровне проекта VSIX, содержащем папки **References**, **Redist** и **DesignTime**.
 

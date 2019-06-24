@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 23d4a4e0159fc18ac524937326e69d6fbc3a627e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 64a093ddd8a53d72ccb6780b73f280e7b2874612
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370710"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320952"
 ---
 # <a name="launch-an-app-for-results"></a>Запуск приложения для результатов
 
@@ -20,10 +20,10 @@ ms.locfileid: "66370710"
 
 **Важные API**
 
--   [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)
+-   [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync)
 -   [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)
 
-Узнайте, как запустить приложение из другого приложения и обмениваться данными между двумя приложениями. Эта процедура называется *запуском приложения для результатов*. В приведенном примере показано, как запустить приложение для результатов с помощью метода [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows).
+Узнайте, как запустить приложение из другого приложения и обмениваться данными между двумя приложениями. Эта процедура называется *запуском приложения для результатов*. В приведенном примере показано, как запустить приложение для результатов с помощью метода [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync).
 
 Обмен данными нового приложения в приложение API в Windows 10 делают возможным для Windows (и Windows веб-приложениях) для запуска приложения и обмена данными и файлов. Это позволяет выполнять построение смешанных решений из нескольких приложений. С помощью этих новых API сложные задачи, для которых раньше приходилось использовать несколько приложений, теперь можно выполнять без проблем. Например, ваше приложение может запустить приложение социальной сети для выбора контакта или приложение для оформления заказа, чтобы завершить оплату.
 
@@ -36,8 +36,8 @@ ms.locfileid: "66370710"
 
 Атрибут **ReturnResults** в расширении протокола принимает одно из указанных ниже значений.
 
--   **optional** — приложение может запускаться для результатов с помощью метода [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) или не для результатов с помощью метода [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync). Если вы используете ключевое слово **optional**, то запущенное приложение должно определить, было ли оно запущено для результатов. Это можно сделать путем проверки аргумента события [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated). Если свойство аргумента [**IActivatedEventArgs.Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) возвращает перечисление [**ActivationKind.ProtocolForResults**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) или тип аргумента события равен [**ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs), то приложение было запущено с помощью метода **LaunchUriForResultsAsync**.
--   **always** — приложение может быть запущено только для результатов, то есть оно может реагировать только на метод [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows).
+-   **optional** — приложение может запускаться для результатов с помощью метода [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) или не для результатов с помощью метода [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync). Если вы используете ключевое слово **optional**, то запущенное приложение должно определить, было ли оно запущено для результатов. Это можно сделать путем проверки аргумента события [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated). Если свойство аргумента [**IActivatedEventArgs.Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) возвращает перечисление [**ActivationKind.ProtocolForResults**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) или тип аргумента события равен [**ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs), то приложение было запущено с помощью метода **LaunchUriForResultsAsync**.
+-   **always** — приложение может быть запущено только для результатов, то есть оно может реагировать только на метод [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync).
 -   **none** — приложение не может быть запущено для результатов, то есть оно может реагировать только на метод [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync).
 
 В этом примере расширения протокола приложение можно запустить только для результатов. Это упрощает логику в методе **OnActivated**, описанном ниже, так как нам придется обрабатывать только случай запуска для результатов, а не другие возможные способы активации приложения.
@@ -186,7 +186,7 @@ string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ## <a name="remarks"></a>Примечания
 
 
-В примере из этой инструкции представлены основы по запуску приложения для результатов. Следует помнить о том, что новый API [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) позволяет запускать приложение асинхронно и поддерживать связь посредством класса [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet). Объем передаваемых через **ValueSet** данных не может превышать 100 КБ. Если нужно передать больший объем данных, вы можете поделиться файлами, используя класс [**SharedStorageAccessManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager), чтобы создать маркеры файлов, которые можно передавать между приложениями. Например, если у вас есть **ValueSet** с именем `inputData`, вы можете сохранить маркер в файле, которым нужно поделиться с запущенным приложением:
+В примере из этой инструкции представлены основы по запуску приложения для результатов. Следует помнить о том, что новый API [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) позволяет запускать приложение асинхронно и поддерживать связь посредством класса [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet). Объем передаваемых через **ValueSet** данных не может превышать 100 КБ. Если нужно передать больший объем данных, вы можете поделиться файлами, используя класс [**SharedStorageAccessManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager), чтобы создать маркеры файлов, которые можно передавать между приложениями. Например, если у вас есть **ValueSet** с именем `inputData`, вы можете сохранить маркер в файле, которым нужно поделиться с запущенным приложением:
 
 ```cs
 inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
@@ -198,7 +198,7 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 * [**LaunchUri**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
-* [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)
+* [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync)
 * [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)
 
  

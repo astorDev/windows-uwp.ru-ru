@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: cb21573dac0c4cc4fc2d6aa2e2345c56631fde87
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 61525e2a4a088e37184bb93526722e0bf23fbd56
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372764"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319812"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 
@@ -119,7 +119,7 @@ steps:
 
 Вы увидите созданные артефакты в **артефакты** параметр построения «результаты».
 
-![артефакты](images/building-screen6.png)
+![artifacts](images/building-screen6.png)
 
 Так как мы задали `UapAppxPackageBuildMode` аргумент `StoreUpload`, папке артефактов относятся пакеты для отправки в Store (.msixupload/.appxupload). Обратите внимание на то, что можно также отправить регулярных приложения пакета (.msix/.appx) или набор приложений (.msixbundle/.appxbundle/) Store. В этой статье мы будем использовать файл .appxupload.
 
@@ -140,7 +140,7 @@ steps:
 
 ## <a name="related-topics"></a>См. также
 
-- [Создание приложения .NET для Windows](https://www.visualstudio.com/docs/build/get-started/dot-net)
+- [Создание приложения .NET для Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
 - [Упаковка приложений универсальной платформы Windows](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
-- [Загрузка неопубликованных бизнес-приложений в Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
+- [Загрузка неопубликованных бизнес-приложений в Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
 - [Создание сертификата для подписи пакета](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

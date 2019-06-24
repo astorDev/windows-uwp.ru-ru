@@ -4,12 +4,12 @@ description: Разработчики могут использовать акт
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: f61fcfcef549295b8f3c9004572a74043a2917a2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: abc0b40178dc9b7c386342af6a6d85c6fb61945a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365828"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320272"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>Автоматизация запуска приложений UWP для Windows 10
 
@@ -136,7 +136,7 @@ C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.s
 
 ### <a name="launcher-application"></a>Средство запуска приложений
 
-Вы можете создать отдельное приложение, поддерживающее модель COM, которую необходимо использовать для запуска. В следующем примере приводится код C++ для запуска с помощью активации запуска в средстве запуска. С помощью этого кода можно создать объект **ApplicationActivationManager** объект и вызвать **ActivateApplication**, передав ранее найденный AUMID со всеми аргументами. Дополнительные сведения о других параметрах см. в разделе [Метод IApplicationActivationManager::ActivateApplication (MSDN)](https://msdn.microsoft.com/library/windows/desktop/hh706903(v=vs.85).aspx).
+Вы можете создать отдельное приложение, поддерживающее модель COM, которую необходимо использовать для запуска. В следующем примере приводится код C++ для запуска с помощью активации запуска в средстве запуска. С помощью этого кода можно создать объект **ApplicationActivationManager** объект и вызвать **ActivateApplication**, передав ранее найденный AUMID со всеми аргументами. Дополнительные сведения о других параметрах см. в разделе [Метод IApplicationActivationManager::ActivateApplication (MSDN)](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication).
 
 ```
 #include <ShObjIdl.h>

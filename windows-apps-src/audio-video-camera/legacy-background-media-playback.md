@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: da18981a2be03c40e15df666f58d60ac91b6f130
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dee2bcb05b9d30177c68b1beac468ac19f4a1be9
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360768"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318345"
 ---
 # <a name="legacy-background-media-playback"></a>Традиционное воспроизведение мультимедиа в фоновом режиме
 
@@ -64,7 +64,7 @@ ms.locfileid: "66360768"
 
 Время существования фоновой задачи тесно связано с текущим состоянием воспроизведения приложения. Например, когда пользователь приостанавливает воспроизведение звука, система может завершить или отменить работу вашего приложения в зависимости от обстоятельств. Если звук не будет воспроизводиться в течение некоторого времени, система может автоматически завершить работу фоновой задачи.
 
-Метод [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) вызывается, когда приложение в первый раз получает доступ к свойству [**BackgroundMediaPlayer.Current**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.current) из кода, выполняемого в приложении переднего плана, либо когда вы регистрируете обработчик события [**MessageReceivedFromBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfrombackground) в зависимости от того, что происходит раньше. Рекомендуется зарегистрировать обработчик полученного сообщения, прежде чем вызывать свойство **BackgroundMediaPlayer.Current** в первый раз, чтобы приложение переднего плана не пропустило сообщения, отправленные из фонового процесса.
+Метод [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) вызывается, когда приложение в первый раз получает доступ к свойству [**BackgroundMediaPlayer.Current**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.current) из кода, выполняемого в приложении переднего плана, либо когда вы регистрируете обработчик события [**MessageReceivedFromBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfrombackground) в зависимости от того, что происходит раньше. Рекомендуется зарегистрировать обработчик полученного сообщения, прежде чем вызывать свойство **BackgroundMediaPlayer.Current** в первый раз, чтобы приложение переднего плана не пропустило сообщения, отправленные из фонового процесса.
 
 Чтобы поддерживать активность фоновой задачи, ваше приложение должно запросить класс [**BackgroundTaskDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral) из метода **Run** и вызвать метод [**BackgroundTaskDeferral.Complete**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskdeferral.complete), когда экземпляр задачи получает события [**Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) или [**Completed**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.completed). Не используйте цикл или ожидание в методе **Run**, так как это ведет к потреблению ресурсов и может вызвать прерывание выполнения вашего приложения в фоновом режиме.
 

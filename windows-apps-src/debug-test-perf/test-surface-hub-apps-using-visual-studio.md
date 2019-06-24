@@ -6,12 +6,12 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a846aab77fad6f087057fe930d11ac781ed7171
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 37c7f9edbaee008b6e16ef2ca202ff5cbcf39ca2
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362200"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317508"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Проверка приложений Surface Hub с использованием Visual Studio
 Имитатор Visual Studio предоставляет среду для проектирования, разработки, отладки и тестирования приложений универсальной платформы Windows (UWP), включая приложения, созданные для Microsoft Surface Hub. Симулятор не использует тот же пользовательский интерфейс в качестве Surface Hub, но он удобен для тестирования выглядит и ведет себя с помощью Surface Hub размер и разрешение экрана приложения.
@@ -69,7 +69,7 @@ ms.locfileid: "66362200"
     ![Разрешения имитатора Visual Studio](images/vs-simulator-resolutions.png)
 
    > [!TIP]
-   > [Включить режим планшета](https://windows.microsoft.com/windows-10/getstarted-like-a-tablet) для более эффективной имитации опыт Surface Hub.
+   > [Включить режим планшета](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) для более эффективной имитации опыт Surface Hub.
 
 ## <a name="deploy-apps-to-a-surface-hub-device-from-visual-studio"></a>Развертывание приложений на устройстве Surface Hub из Visual Studio
 Ручное развертывание приложения с помощью Surface Hub — это простой процесс.

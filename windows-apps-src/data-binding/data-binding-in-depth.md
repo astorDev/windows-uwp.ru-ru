@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 972556a3d8d46dce11b251fc11d209fa96d3b751
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 150ea5fc9f5e91171f29cc985351856487e91d4a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362591"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318759"
 ---
 # <a name="data-binding-in-depth"></a>Подробно о привязке данных
 
@@ -43,7 +43,7 @@ ms.locfileid: "66362591"
 **Образцы приложений, демонстрирующие {x: Bind}**
 
 -   [{x:Bind}: пример](https://go.microsoft.com/fwlink/p/?linkid=619989).
--   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame).
+-   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper).
 -   [Пример XAML UI Basics](https://go.microsoft.com/fwlink/p/?linkid=619992).
 
 **Образцы приложений, демонстрирующие {Binding}**
@@ -199,7 +199,7 @@ void HostViewModel::PropertyChanged(winrt::event_token const& token) noexcept
 
 Теперь свойство **NextButtonText** доступно для отслеживания. Когда вы создаете одно- или двустороннюю привязку к этому свойству (мы позже покажем, как сделать это), полученный объект привязки подписывается на событие **PropertyChanged**. При возникновении этого события обработчик объекта привязки получает аргумент, содержащий имя свойства, которое изменилось. Именно так объект привязки узнает, к какому значению свойства необходимо перейти для повторного считывания.
 
-Таким образом, чтобы вам не нужно реализовывать шаблон, показанный выше несколько раз, если вы используете C# может просто быть производным от **BindableBase** базовый класс, который вы найдете в [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (в Папка «Общие»). Пример приведен ниже.
+Таким образом, чтобы вам не нужно реализовывать шаблон, показанный выше несколько раз, если вы используете C# может просто быть производным от **BindableBase** базовый класс, который вы найдете в [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) (в Папка «Общие»). Пример приведен ниже.
 
 ```csharp
 public class HostViewModel : BindableBase
@@ -604,7 +604,7 @@ Click="{x:Bind RootFrame.GoForward}"/>
 
 Для обработки события этим способом невозможно использовать перегруженные методы. Кроме того, если метод, который обрабатывает событие, содержит параметры, они должны поддерживать назначение из типов всех соответствующих параметров события. В этом случае метод [**Frame.GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) не перегружен и не содержит параметров (но он оставался бы допустимым, даже если бы принимал два параметра **object**). [**Frame.GoBack** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) перегружен, однако, поэтому мы не может использовать этот метод с помощью этого способа.
 
-Привязка событий похожа на реализацию и использование команд (команда — это свойство, которое возвращает объект, реализующий интерфейс [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand)). С командами можно использовать как [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension), так и [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension). Чтобы приведенный выше шаблон команд не требовалось реализовывать несколько раз, вы можете использовать вспомогательный класс **DelegateCommand**, приведенный в примере [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (в папке "Общие").
+Привязка событий похожа на реализацию и использование команд (команда — это свойство, которое возвращает объект, реализующий интерфейс [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand)). С командами можно использовать как [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension), так и [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension). Чтобы приведенный выше шаблон команд не требовалось реализовывать несколько раз, вы можете использовать вспомогательный класс **DelegateCommand**, приведенный в примере [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) (в папке "Общие").
 
 ## <a name="binding-to-a-collection-of-folders-or-files"></a>Привязка к коллекции папок или файлов
 

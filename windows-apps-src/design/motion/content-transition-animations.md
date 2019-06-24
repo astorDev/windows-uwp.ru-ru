@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ec8778f590ba9b50c67209eaf4b80e2cbed2f16
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7703f2dfac2eed6df1f59b8e1cdfa6371e240eb4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364812"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317103"
 ---
 # <a name="content-transition-animations"></a>Анимации переходов содержимого
 
@@ -23,7 +23,7 @@ ms.locfileid: "66364812"
 
 Анимация переходов содержимого используется для изменения содержимого области экрана, при котором фон или контейнер остаются неизменными. Появляется новое содержимое. Если существует содержимое, которое необходимо заменить, оно исчезает.
 
-> **Важные API**: [**Класс ContentThemeTransition (XAML)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.)
+> **Важные API**: [**Класс ContentThemeTransition (XAML)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
 
@@ -44,7 +44,7 @@ ms.locfileid: "66364812"
 * [Общие сведения об анимации](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
 * [Анимация содержимого переходы](https://docs.microsoft.com/previous-versions/windows/apps/jj649426(v=win.10))
 * [Краткое руководство. Анимация пользовательского интерфейса с помощью библиотеки анимации](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**Класс ContentThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.)
+* [**Класс ContentThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
  
 

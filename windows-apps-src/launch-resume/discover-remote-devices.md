@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: устройства Windows 10, универсальной платформы Windows, подключенных удаленных систем, Рим, рим проекта
 ms.localizationpriority: medium
-ms.openlocfilehash: 665a40cf69b7518643390abddc3895be07c63c5c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 83230e17548f022767dcdde6b17fa9a93d6d9304
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366197"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320967"
 ---
 # <a name="discover-remote-devices"></a>Обнаружение удаленных устройств
 Ваше приложение может использовать беспроводную сеть, Bluetooth и облачное подключение для обнаружения устройств с Windows, вход с которых выполнен с той же учетной записью Майкрософт, что и у обнаруживающего устройства. Обнаружение удаленных устройств возможно без установки на них какого-либо специального программного обеспечения.
@@ -48,7 +48,7 @@ ms.locfileid: "66366197"
 С этого момента процедура обработки событий, извлечения объектов [**RemoteSystem**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem) и подключения к удаленным устройствам полностью совпадает с процедурой из раздела [Запуск удаленного приложения](launch-a-remote-app.md). Если коротко, объекты **RemoteSystem** хранятся в виде свойств объектов [**RemoteSystemAddedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs), которые передаются с каждым событием **RemoteSystemAdded**.
 
 ## <a name="discover-devices-by-address-input"></a>Обнаружение устройств путем ввода адреса
-Некоторые устройства могут быть не связаны с пользователем или могут не обнаруживаться сканированием, но с ними все равно можно установить связь, если обнаруживающее приложение использует прямой адрес. Класс [**HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname) используется для представления адреса удаленного устройства. Он часто хранится в виде IP-адреса, но допускается также ряд других форматов (см. раздел [**Конструктор HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname.)).
+Некоторые устройства могут быть не связаны с пользователем или могут не обнаруживаться сканированием, но с ними все равно можно установить связь, если обнаруживающее приложение использует прямой адрес. Класс [**HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname) используется для представления адреса удаленного устройства. Он часто хранится в виде IP-адреса, но допускается также ряд других форматов (см. раздел [**Конструктор HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname.-ctor)).
 
 Объект **RemoteSystem** извлекается, если указан действительный объект **HostName**. Если сведения об адресе неправильные, возвращается ссылка на объект `null`.
 

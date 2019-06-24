@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, API отправки в Microsoft Store, отправки надстроек, продукт внутри приложения, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: e6e75483ca6c01958a4b8bda2c5c3bb60e764eff
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6a287889f27712d1272dd0a2f8f3d068b376fefe
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372484"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320202"
 ---
 # <a name="manage-add-on-submissions"></a>Управление отправками надстроек
 
@@ -92,7 +92,7 @@ API отправки в Microsoft Store предоставляет методы,
     Тело ответа содержит ресурс [отправки надстройки](#add-on-submission-object), включающий в себя идентификатор и данные новой отправки (в том числе все описания и информацию о ценах), а также URI подписанного URL-адреса (Shared Access Signature, SAS) для передачи любых значков надстроек для отправки в хранилище BLOB-объектов Azure.
 
     > [!NOTE]
-    > URI SAS предоставляет доступ к защищенному ресурсу в хранилище Azure без необходимости в использовании ключей учетной записи. Справочные сведения о URI SAS и их использования с хранилищем BLOB-объектов Azure, см. в разделе [Shared Access Signatures, Part 1: Общие сведения о модели SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) и [Shared Access Signatures, Part 2: Создание и использование SAS в хранилище BLOB-объектов](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+    > URI SAS предоставляет доступ к защищенному ресурсу в хранилище Azure без необходимости в использовании ключей учетной записи. Справочные сведения о URI SAS и их использования с хранилищем BLOB-объектов Azure, см. в разделе [Shared Access Signatures, Part 1: Общие сведения о модели SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/) и [Shared Access Signatures, Part 2: Создание и использование SAS в хранилище BLOB-объектов](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. При добавлении новых значков для отправки [подготовьте значки](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions) и добавьте их в ZIP-архив.
 
@@ -232,7 +232,7 @@ API отправки в Microsoft Store предоставляет методы,
 |------------|--------|----------------------|
 | id            | строка  | Идентификатор отправки. Этот идентификатор доступен в данных ответа на запросы на [создание отправки надстройки](create-an-add-on-submission.md), [получение всех надстроек](get-all-add-ons.md) и [получение определенной надстройки](get-an-add-on.md). Для отправки, который был создан в центре партнеров этот идентификатор также доступна в URL-АДРЕСЕ для отправки страницы в центре партнеров.  |
 | contentType           | строка  |  [Тип содержимого](../publish/enter-add-on-properties.md#content-type), которое предоставляется в надстройке. Может принимать одно из следующих значений. <ul><li>NotSet (Не задано)</li><li>BookDownload (Загрузка книги)</li><li>EMagazine (Электронный журнал)</li><li>ENewspaper (Электронная газета)</li><li>MusicDownload (Загрузка музыки)</li><li>MusicStream (Потоковая передача музыки)</li><li>OnlineDataStorage (Сетевое хранилище данных)</li><li>VideoDownload (Загрузка видео)</li><li>VideoStream (Потоковая передача видео)</li><li>Asp</li><li>OnlineDownload (Загрузка по Интернету)</li></ul> |  
-| keywords           | Массив  | Массив строк, содержащих до 10 [ключевых слов](../publish/enter-add-on-properties.md#keywords) для надстройки. Приложение может запрашивать надстройки с помощью этих ключевых слов.   |
+| keywords           | array  | Массив строк, содержащих до 10 [ключевых слов](../publish/enter-add-on-properties.md#keywords) для надстройки. Приложение может запрашивать надстройки с помощью этих ключевых слов.   |
 | lifetime           | строка  |  Время существования надстройки. Может принимать одно из следующих значений. <ul><li>Forever (Навсегда)</li><li>OneDay (Один день)</li><li>ThreeDays (3 дня)</li><li>FiveDays (5 дней)</li><li>OneWeek (Одна неделя)</li><li>TwoWeeks (Две недели)</li><li>OneMonth (Один месяц)</li><li>TwoMonths (Два месяца)</li><li>ThreeMonths (Три месяца)</li><li>SixMonths (Шесть месяцев)</li><li>OneYear (Один год)</li></ul> |
 | listings           | Объект  |  Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — объект [ресурса описания](#listing-object), содержащий информацию для описании надстройки.  |
 | pricing           | Объект  | [Ресурс цены](#pricing-object), содержащий сведения о цене надстройки.   |
@@ -277,7 +277,7 @@ API отправки в Microsoft Store предоставляет методы,
 | Значение           | Тип    | Описание    |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    Объект     |  Словарь пар "ключ-значение", где каждый ключ представляет собой код страны ISO 3166-1 alpha-2 из двух букв, а каждое значение — [ценовую категорию](#price-tiers). Эти элементы представляют [особые цены на вашу надстройку для определенных рынков](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability). Любые элементы этого словаря переопределяют базовую цену, заданную значением *priceId* для указанного рынка.     |     
-|  sales               |   Массив      |  **Не рекомендуется**. Массив [ресурсов продажи](#sale-object), содержащих сведения о продажах для надстройки.     |     
+|  sales               |   array      |  **Не рекомендуется**. Массив [ресурсов продажи](#sale-object), содержащих сведения о продажах для надстройки.     |     
 |  priceId               |   строка      |  [Ценовая категория](#price-tiers), указывающая [базовую цену](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability) для надстройки.    |    
 |  isAdvancedPricingModel               |   Логический      |  Если **true**, ваша учетная запись разработчика имеет доступ к расширенному набору ценовых категорий от 0,99 долл. США до 1999,99 долл. США. Если **false**, ваша учетная запись разработчика имеет доступ к стандартному набору ценовых категорий от 0,99 долл. США до 999,99 долл. США. Дополнительные сведения о разных категориях см. в разделе [Ценовые категории](#price-tiers).<br/><br/>**Примечание**.&nbsp;&nbsp;Данное поле предназначено только для чтения.   |
 

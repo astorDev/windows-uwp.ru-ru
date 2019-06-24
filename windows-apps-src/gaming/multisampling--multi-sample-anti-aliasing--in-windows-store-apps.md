@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, множественная дискретизация, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: b547e47b7d896ab818349dcc70ee9dc3c7078847
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 976cdfb5f1dc92f693f7296d6e33d7ccc4c4d6e7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368386"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318947"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Мультисэмплинга в Windows, универсальных приложений платформы (UWP)
 
@@ -30,7 +30,7 @@ ms.locfileid: "66368386"
 
 1.  Вызовите [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport), чтобы узнать, какие форматы DXGI можно использовать с множественной дискретизацией. Предоставьте форматы однобуферной прорисовки, которые может использовать ваша игра. Целевой объект разрешения и целевой объект отрисовки необходимо использовать тот же формат, поэтому для обоих [ **D3D11\_ФОРМАТ\_поддержки\_MULTISAMPLE\_RENDERTARGET** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support) и **D3D11\_ФОРМАТ\_поддержки\_MULTISAMPLE\_УСТРАНИТЬ**.
 
-    **Функциональный уровень 9:  ** Несмотря на то, что функция уровня 9 устройств [гарантирует поддержку множественной дискретизацией целевые форматы](https://docs.microsoft.com/previous-versions//ff471324(v=vs.85)), поддержка для целевых объектов мультисэмплинга resolve не гарантируется. Поэтому необходимо выполнить эту проверку перед использованием техники множественной дискретизации, описанной в этом разделе.
+    **Функциональный уровень 9:  ** Несмотря на то, что функция уровня 9 устройств [гарантирует поддержку множественной дискретизацией целевые форматы](https://docs.microsoft.com/previous-versions/ff471324(v=vs.85)), поддержка для целевых объектов мультисэмплинга resolve не гарантируется. Поэтому необходимо выполнить эту проверку перед использованием техники множественной дискретизации, описанной в этом разделе.
 
     Следующий код проверяет мультисэмплинга поддержка DXGI\_значения ФОРМАТА:
 

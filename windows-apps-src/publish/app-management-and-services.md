@@ -6,16 +6,16 @@ ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ba28fb49accc213f570e470142e259c08122b704
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e9567e06f80035bbcf811b5aaeaf8058ffee41a3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334582"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320028"
 ---
 # <a name="app-management-and-services"></a>Управление приложениями и службы
 
-Вы можете управлять и просмотреть подробные сведения, связанные с каждого из ваших приложений в [центра партнеров](https://partner.microsoft.com/dashboard/)и настроить службы, например уведомления, A / B, тестирование, а также сопоставляет.
+Вы можете управлять и просмотреть подробные сведения, связанные с каждого из ваших приложений в [центра партнеров](https://partner.microsoft.com/dashboard)и настроить службы, например уведомления, A / B, тестирование, а также сопоставляет.
 
 При работе с приложением в центре партнеров, вы увидите разделы в левом меню навигации для **служб** и **управления приложениями**. Вы можете развернуть эти разделы, чтобы получить доступ к описанным ниже функциям.
 
@@ -25,7 +25,7 @@ ms.locfileid: "58334582"
 
 ## <a name="xbox-live"></a>Xbox Live
 
-Если вы публикуете игру, вы можете включить [Xbox Live Creators Program](https://xbox.com/developers/creators-program) на этой странице. Это позволяет начать настройку и тестирование возможностей Xbox Live и последующей публикации игры для Xbox Live Creators Program.
+Если вы публикуете игру, вы можете включить [Xbox Live Creators Program](https://www.xbox.com/developers/creators-program) на этой странице. Это позволяет начать настройку и тестирование возможностей Xbox Live и последующей публикации игры для Xbox Live Creators Program.
 
 Дополнительные сведения см. в разделе [приступить к работе с Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) и [создавать новый заголовок Xbox Live Creators Program и публиковать в тестовую среду](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title).
 
@@ -51,7 +51,7 @@ ms.locfileid: "58334582"
 
 Если ваш продукт интегрируется с Azure AD и вызывает API-интерфейсы, либо запросить [приложения или делегированные разрешения](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) , требующие согласия администратора, введите свой идентификатор клиента Azure AD. Это позволяет администраторам, получившие приложение предоставлять согласие предоставить организации по используемому продукту действовать от лица всех пользователей в клиенте.
 
-Дополнительные сведения см. в разделе [запрос на получение согласия для клиента](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
+Дополнительные сведения см. в разделе [запрос на получение согласия для клиента](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#requesting-consent-for-an-entire-tenant).
 
 ## <a name="app-management"></a>Управление приложениями
 

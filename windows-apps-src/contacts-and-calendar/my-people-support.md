@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 58bf8df4551c8bcfc663d2c832bef3a879ff6350
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611539"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317977"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Добавление поддержки функции "Близкие люди" в приложение
 
@@ -29,7 +29,7 @@ ms.locfileid: "57611539"
 
 1. [Объявите поддержку по контракту активации shareTarget в манифесте приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
 2. [Добавление заметок контакты, пользователи могут совместно использовать с помощью вашего приложения.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3.  Реализовать поддержку нескольких экземпляров приложения, запущенных одновременно. Пользователям необходимо взаимодействовать с полной версией приложения при работе с ним на панели контактов.  Они могут даже использовать его на нескольких панелях контактов одновременно.  Для этого приложение должно поддерживать возможность одновременного запуска нескольких представлений. Сведения о том, как это сделать, см. в статье [Отображение нескольких представлений для приложения](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views).
+3.  Реализовать поддержку нескольких экземпляров приложения, запущенных одновременно. Пользователям необходимо взаимодействовать с полной версией приложения при работе с ним на панели контактов.  Они могут даже использовать его на нескольких панелях контактов одновременно.  Для этого приложение должно поддерживать возможность одновременного запуска нескольких представлений. Сведения о том, как это сделать, см. в статье [Отображение нескольких представлений для приложения](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 После реализации этой возможности ваше приложение будет отображаться на панели контактов для указанных контактов.
 
@@ -179,7 +179,7 @@ override protected void OnActivated(IActivatedEventArgs e)
 
 ## <a name="supporting-notification-badging"></a>Поддержка индикаторов для уведомлений
 
-Если вы хотите, чтобы на контактах, закрепленных на панели задач, появлялись индикаторы при получении новых уведомлений, связанных с этим контактом, из вашего приложения, необходимо включить параметр **hint-people** во [всплывающих уведомлениях](https://docs.microsoft.com/en-us/windows/uwp/shell/tiles-and-notifications/adaptive-interactive-toasts) и явные [Уведомления близких людей](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications).
+Если вы хотите, чтобы на контактах, закрепленных на панели задач, появлялись индикаторы при получении новых уведомлений, связанных с этим контактом, из вашего приложения, необходимо включить параметр **hint-people** во [всплывающих уведомлениях](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) и явные [Уведомления близких людей](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications).
 
 ![Индикаторы для уведомлений людей](images/my-people-badging.png)
 

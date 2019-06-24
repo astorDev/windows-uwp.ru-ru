@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp, асинхронный
 ms.localizationpriority: medium
-ms.openlocfilehash: 26378473803b8963c0ca85eb414bae798f9607e4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 63772a4ee9ea98ca6a45dde45b728d4fedd988d7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371569"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320500"
 ---
 # <a name="asynchronous-programming"></a>Асинхронное программирование
 В этом разделе описывается асинхронное программирование в универсальной платформы Windows (UWP) и его представление в C#, Microsoft Visual Basic .NET, C++ и JavaScript.
@@ -71,5 +71,5 @@ ms.locfileid: "66371569"
 
 ## <a name="related-topics"></a>См. также
 * [Вызов асинхронных API в C# или Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
-* [Асинхронное программирование с помощью Async и Await (C# и Visual Basic)](https://msdn.microsoft.com/library/hh191443(vs.110).aspx)
+* [Асинхронное программирование с помощью Async и Await (C# и Visual Basic)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hh191443(v=vs.110))
 * [Функция Реверси примеры: асинхронный код](https://docs.microsoft.com/previous-versions/windows/apps/jj712233(v=win.10))

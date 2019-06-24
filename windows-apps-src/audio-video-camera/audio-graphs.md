@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 75066b566fde3f25ea4feb2ed82358b106ffcf7c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ff067729e71ed4d4a49a082adf9fc754804836a6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359114"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317599"
 ---
 # <a name="audio-graphs"></a>Звуковые графы
 
@@ -48,7 +48,7 @@ API звуковых графов среды выполнения Windows:
 
 ## <a name="audiograph-class"></a>Класс AudioGraph
 
-Класс [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) — это родительский объект всех узлов, которые входят в граф. Этот объект используется для создания экземпляров звуковых узлов всех типов. Создайте экземпляр класса **AudioGraph**. Для этого инициализируйте объект [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings), содержащий параметры конфигурации графа, а затем вызовите метод [**AudioGraph.CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.). Возвращенный класс [**CreateAudioGraphResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.CreateAudioGraphResult) обеспечивает доступ к созданному звуковому графу или возвращает значение ошибки, если звуковой граф не удалось создать.
+Класс [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph) — это родительский объект всех узлов, которые входят в граф. Этот объект используется для создания экземпляров звуковых узлов всех типов. Создайте экземпляр класса **AudioGraph**. Для этого инициализируйте объект [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings), содержащий параметры конфигурации графа, а затем вызовите метод [**AudioGraph.CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createasync). Возвращенный класс [**CreateAudioGraphResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.CreateAudioGraphResult) обеспечивает доступ к созданному звуковому графу или возвращает значение ошибки, если звуковой граф не удалось создать.
 
 [!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
@@ -168,7 +168,7 @@ API звуковых графов среды выполнения Windows:
 -   Поскольку этот метод получает доступ к необработанному буферу, который лежит в основе типов среды выполнения Windows, его необходимо объявить с помощью ключевого слова **unsafe**. Необходимо также настроить проект в Microsoft Visual Studio, чтобы разрешить компиляцию небезопасного кода. Для этого откройте страницу проекта **Свойства**, щелкните страницу свойств **Сборка** и установите флажок **Разрешить небезопасный код**.
 -   Инициализируйте новый экземпляр класса [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame) в пространстве имен **Windows.Media**, передав нужный размер буфера в конструктор. Размер буфера — это число примеров, умноженное на размер каждого примера.
 -   Получите [**AudioBuffer**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioBuffer) аудиокадра, вызвав [**LockBuffer**](https://docs.microsoft.com/uwp/api/windows.media.audioframe.lockbuffer).
--   Получите экземпляр COM-интерфейса [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions//mt297505(v=vs.85)) из звукового буфера путем вызова метода [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference).
+-   Получите экземпляр COM-интерфейса [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85)) из звукового буфера путем вызова метода [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference).
 -   Получите указатель на необработанные данные звукового буфера, вызвав метод [**IMemoryBufferByteAccess.GetBuffer**](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer), и приведите его к типу примеров звуковых данных.
 -   Заполните буфер данными и верните класс [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame) для отправки в звуковой граф.
 
@@ -241,7 +241,7 @@ API звукового графа позволяет добавить звуко
 ## <a name="spatial-audio"></a>Пространственный звук
 Начиная с Windows 10 версии 1607 **AudioGraph** поддерживает пространственный звук, который позволяет указать расположение источника звука (любого узла ввода или субмикширования) в трехмерном пространстве. Можно также указать форму и направление, в котором испущен звук, скорость, которая будет использоваться для доплеровского сдвига звука узла, и определить модель затухания, которая описывает ослабление звука с увеличением расстояния. 
 
-Для создания излучателя вы можете сначала создать форму, с которой звук проецируется из излучателя — коническую или всенаправленную. Класс [**AudioNodeEmitterShape**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioNodeEmitterShape) предоставляет статические методы создания каждой из этих форм. Далее создайте модель затухания. Она определяет, как громкость звука из излучателя снижается при увеличении расстояния от слушателя. Метод [**CreateNatural**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitterdecaymodel.createnatural) создает модель затухания, которая имитирует естественное ослабление звука с помощью модели ослабления звука пропорционально квадрату расстояния. Наконец, создайте объект [**AudioNodeEmitterSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioNodeEmitterSettings). Сейчас он используется только для включения и отключения допплеровского ослабления звука излучателя в зависимости от скорости. Вызовите конструктор [**AudioNodeEmitter**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.), передав созданные объекты инициализации. По умолчанию излучатель помещается в начале координат, но вы можете изменить его положение с помощью свойства [**Position**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.position).
+Для создания излучателя вы можете сначала создать форму, с которой звук проецируется из излучателя — коническую или всенаправленную. Класс [**AudioNodeEmitterShape**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioNodeEmitterShape) предоставляет статические методы создания каждой из этих форм. Далее создайте модель затухания. Она определяет, как громкость звука из излучателя снижается при увеличении расстояния от слушателя. Метод [**CreateNatural**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitterdecaymodel.createnatural) создает модель затухания, которая имитирует естественное ослабление звука с помощью модели ослабления звука пропорционально квадрату расстояния. Наконец, создайте объект [**AudioNodeEmitterSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioNodeEmitterSettings). Сейчас он используется только для включения и отключения допплеровского ослабления звука излучателя в зависимости от скорости. Вызовите конструктор [**AudioNodeEmitter**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.-ctor), передав созданные объекты инициализации. По умолчанию излучатель помещается в начале координат, но вы можете изменить его положение с помощью свойства [**Position**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.position).
 
 > [!NOTE]
 > Излучатели звуковых узлов могут обрабатывать только монофонический звук с частотой дискретизации 48 кГц. Попытка использовать стереофонический звук или звук с другой частотой дискретизации вызовет исключение.

@@ -6,12 +6,12 @@ ms.date: 01/25/2018
 ms.topic: article
 keywords: Windows 10, uwp, игры, Приступая к работе
 localizationpriority: medium
-ms.openlocfilehash: 596d0b1eb371fec98825b23a214683421e388506
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: c0d819322e7e9479772f8ca3d72bbdcdb4d192b8
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162659"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321272"
 ---
 # <a name="getting-started"></a>Начало работы
 
@@ -31,7 +31,7 @@ ms.locfileid: "58162659"
 
 Убедитесь, что у вас установлено на устройстве Windows 10 и последнюю версию обновления.
 
-Установите подходящий интегрированную среду разработки вроде Visual Studio. Visual Studio Community 2017 доступна для бесплатной загрузки. Дополнительные сведения см. в разделе [загрузки Visual Studio](https://www.visualstudio.com/downloads/).
+Установите подходящий интегрированную среду разработки вроде Visual Studio. Visual Studio Community 2017 доступна для бесплатной загрузки. Дополнительные сведения см. в разделе [загрузки Visual Studio](https://visualstudio.microsoft.com/downloads/).
 
 Если вы планируете использовать игровое ядро и другого по промежуточного слоя, см. в разделе [мостов, игровых движков и по промежуточного слоя](e2e.md#bridges-game-engines-and-middleware) статьи [руководство по разработке игр для Windows 10](e2e.md). Сведения о разработке игр Windows и Xbox, с помощью определенного модуля игры нужно будет перейти к документации игровое ядро.
 
@@ -54,7 +54,7 @@ ms.locfileid: "58162659"
 
 Если требуется разработать игру Xbox или использовать в игре для Xbox Live пополнена join либо [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) или [ ID@Xbox ](https://www.xbox.com/Developers/id) программы. 
 
-Дополнительные сведения о функциях, Xbox Live, которые доступны для каждой из программ, см. в разделе [таблицы компонентов](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#feature-table). Дополнительные сведения см. в разделе [программы для разработчиков](e2e.md#developer-programs).
+Дополнительные сведения о функциях, Xbox Live, которые доступны для каждой из программ, см. в разделе [таблицы компонентов](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table). Дополнительные сведения см. в разделе [программы для разработчиков](e2e.md#developer-programs).
 
 > [!Note]
 > Xbox Live Creators Program доступна для всех разработчиков. **Любой пользователь** можно опубликовать в игру на Xbox. Чтобы сделать заголовок части, которая Xbox Live Creators Program, необходимо просто включите этот параметр, из центра партнеров. Дополнительные сведения о регистрации для учетной записи центра партнеров, см. в разделе [шаг 5](#step-5-sign-up-for-a-partner-center-account) ниже.

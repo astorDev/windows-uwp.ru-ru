@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, периодический рабочий элемент, потоки, таймеры
 ms.localizationpriority: medium
-ms.openlocfilehash: cf3a5817e459c7089eafb8f2c38d58b0e8eef03c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8e045c12f96cc9404abb4ba9be395eb49b1ab850
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371564"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322000"
 ---
 # <a name="create-a-periodic-work-item"></a>Создание периодического рабочего элемента
 
@@ -31,7 +31,7 @@ ms.locfileid: "66371564"
 
 > **Примечание**  не рекомендуется указывать значение, равное нулю (или любое значение менее одной миллисекунды) для интервала. Это приведет к тому, что периодический таймер будет вести себя как одиночный.
 
-> **Примечание**  можно использовать [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) доступ к пользовательскому Интерфейсу и отображает ход выполнения задания из рабочего элемента.
+> **Примечание**  можно использовать [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) доступ к пользовательскому Интерфейсу и отображает ход выполнения задания из рабочего элемента.
 
 В следующем фрагменте кода создается рабочий элемент, который запускается каждые 60 секунд.
 

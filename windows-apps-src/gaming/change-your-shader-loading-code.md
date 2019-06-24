@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, opengl, direct3d, конвейер шейдеров
 ms.localizationpriority: medium
-ms.openlocfilehash: 8793ef8b44df1ca1d93133383666434f525f2d07
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fc5e1eb9c261a4397d83c833591f2497521aa1c6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368974"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321383"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>Сравнение конвейера шейдеров OpenGL ES 2.0 с Direct3D
 
@@ -21,8 +21,8 @@ ms.locfileid: "66368974"
 **Важные API**
 
 -   [Сборщик входных данных рабочей области](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage)
--   [Уровень построителя текстур вершин](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85))
--   [Уровень построителя текстур пикселей](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85))
+-   [Уровень построителя текстур вершин](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85))
+-   [Уровень построителя текстур пикселей](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85))
 
 Концептуально конвейер шейдеров Direct3D 11 очень похож на таковой в OpenGL ES 2.0. Однако в терминах проектного решения API главными компонентами для создания и управления стадиями шейдеров являются части двух основных интерфейсов, [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) и [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1). В этом разделе делается попытка сопоставить общие шаблоны API конвейера шейдеров OpenGL ES 2.0 с их эквивалентами Direct3D 11 в этих интерфейсах.
 
@@ -34,10 +34,10 @@ ms.locfileid: "66368974"
 Конвейер графики Direct3D 11, который управляется экземплярами интерфейса [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1), имеет следующие стадии.
 
 -   [Стадия сборщика входных данных](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage). На стадии сборщика входных данных конвейеру поставляются данные (треугольники, линии и точки). [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) методы, поддерживающие этот этап должны иметь префикс «IA».
--   [Стадия вершинного шейдера](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85)). На стадии вершинного шейдера обрабатываются вершины, обычно с выполнением таких операций, как преобразования, скиннинг и освещение. Вершинный шейдер всегда принимает одну входную вершину и создает одну выходную вершину. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) методы, поддерживающие этот этап должны иметь префикс «VS».
+-   [Стадия вершинного шейдера](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)). На стадии вершинного шейдера обрабатываются вершины, обычно с выполнением таких операций, как преобразования, скиннинг и освещение. Вершинный шейдер всегда принимает одну входную вершину и создает одну выходную вершину. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) методы, поддерживающие этот этап должны иметь префикс «VS».
 -   [Стадия потокового вывода](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-stream-stage). На стадии потокового вывода поток данных примитивов из конвейера направляется в память на своем пути к средству прорисовки. Поток данных может быть выходным или передаваться в средство программной прорисовки. Поток данных, выведенный в память, можно снова вернуть в конвейер как входные данные или обратно считать из ЦП. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) методы, поддерживающие этот этап должны иметь префикс «Т».
 -   [Стадия средства программной прорисовки](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage). Средство программной прорисовки обрезает примитивы, готовит их для построителя текстуры и определяет, как вызывать построители текстуры. Вы можете отключить растеризации, указывая конвейера имеется не шейдер пикселей (значение NULL с этап шейдера пикселей [ **ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader)) и отключение глубины и тестирование (набор элементов Задайте значение FALSE в DepthEnable и StencilEnable [ **D3D11\_ГЛУБИНА\_ТРАФАРЕТА\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_desc)). После отключения не будут обновляться связанные с растеризацией счетчики конвейера.
--   [Стадия построителя текстуры](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85)). На стадии построителя текстуры принимаются интерполированные данные для примитива и генерируются данные для пикселей, такие как цвет. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) методы, поддерживающие этот этап должны иметь префикс «PS».
+-   [Стадия построителя текстуры](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)). На стадии построителя текстуры принимаются интерполированные данные для примитива и генерируются данные для пикселей, такие как цвет. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) методы, поддерживающие этот этап должны иметь префикс «PS».
 -   [Стадия слияния вывода](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage). На стадии слияния вывода выходные данные различных типов (значения построителя текстуры, информация о глубине и наборе элементов) объединяются с содержимым целевого объекта отрисовки и буферов глубины и набора элементов для создания окончательного результата конвейера. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) методы, поддерживающие этот этап должны иметь префикс «OM».
 
 (Существуют также стадии для шейдеров геометрии, шейдеров поверхности, тесселяторов и шейдеров областей, но у них нет аналогов в OpenGL ES 2.0, поэтому здесь мы их обсуждать не будем.) Полный перечень методов для этих стадий см. на справочных страницах [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) и [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1). **ID3D11DeviceContext1** является расширением **ID3D11DeviceContext** для Direct3D 11.

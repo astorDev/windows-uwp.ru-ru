@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, таймер, потоки
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a1a7a161734a142b5f1399798394494d05c6a49
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fb375f280c474ce5a23e10977f96659480cdbb53
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371513"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320507"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>Отправка рабочего элемента по таймеру
 
@@ -27,7 +27,7 @@ ms.locfileid: "66371513"
 
 Чтобы создать таймер для рабочего элемента, используйте метод [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer). Определите лямбда-выражение, соответствующее заданию, и используйте параметр *delay*, чтобы указать, как долго пулу потоков нужно ждать, прежде чем назначить рабочий элемент доступному потоку. Задержка определена с использованием структуры [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan).
 
-> **Примечание**  можно использовать [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) доступ к пользовательскому Интерфейсу и отображает ход выполнения задания из рабочего элемента.
+> **Примечание**  можно использовать [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) доступ к пользовательскому Интерфейсу и отображает ход выполнения задания из рабочего элемента.
 
 В следующем примере создается рабочий элемент, который запускается через три минуты:
 

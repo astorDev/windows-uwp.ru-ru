@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98bc1e93c918310b902c70709df1c2cc1b38a238
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e3e29dabf074eab59f6c788c139524f7dc2474df
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360847"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318320"
 ---
 # <a name="audio-video-and-camera"></a>Звук, видео и камера
 
@@ -40,7 +40,7 @@ ms.locfileid: "66360847"
 | [Снимок экрана](screen-capture.md) | Описывается использование пространства имен [Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) для получения снимков экрана дисплея или окна приложения, создания видеопотоков или снимков в рамках формирования интерактивного интерфейса для совместной работы. |
 
 ## <a name="see-also"></a>См. также
-- [Разработка приложений UWP](https://developer.microsoft.com/windows/develop)
+- [Разработка приложений UWP](https://docs.microsoft.com/windows/uwp/develop/)
 
  
 

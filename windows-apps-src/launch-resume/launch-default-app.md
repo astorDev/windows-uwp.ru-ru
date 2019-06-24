@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d80cb18fc502df5f6d51d2b7bdc719e860730534
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8cf682a77f9010f71adc9d6709bb345ac02270e5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370882"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321818"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Запуск приложения по умолчанию для URI
 
@@ -102,7 +102,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriBing, promptOption
 
 Кроме того, рекомендации полезны при регистрации нескольких приложений для обработки схемы URI. Порекомендовав конкретное приложение, Windows откроет это приложение, при условии что оно уже установлено.
 
-Чтобы порекомендовать приложение, вызовите метод [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.), указав в качестве значения параметра [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) имя семейства пакета приложения Магазина, которое вы рекомендуете. Операционная система будет использовать эту информацию, чтобы заменить общий параметр (поиск приложения в Магазине) конкретным параметром (приобретение рекомендованного приложения в Магазине).
+Чтобы порекомендовать приложение, вызовите метод [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)** ](https://docs.microsoft.com/en-us/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_), указав в качестве значения параметра [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) имя семейства пакета приложения Магазина, которое вы рекомендуете. Операционная система будет использовать эту информацию, чтобы заменить общий параметр (поиск приложения в Магазине) конкретным параметром (приобретение рекомендованного приложения в Магазине).
 
 ```cs
 // Set the recommended app

@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af03b32453bcdacb3da95678cf23a988c375f1b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 60be53bfcb351866a0cf124fe4ef6f21ff889f88
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359644"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318964"
 ---
 # <a name="accessibility-testing"></a>Проверка специальных возможностей  
 
@@ -95,7 +95,7 @@ ms.locfileid: "66359644"
 
 ## <a name="verify-your-app-with-display-settings"></a>Проверка приложения с параметрами экрана  
 
-Используя системные параметры отображения, регулирующие количество точек на дюйм, убедитесь в правильности масштабирования пользовательского интерфейса вашего приложения при изменении этого значения. (Некоторые пользователи изменять значения dpi свободен специальных возможностей, доступных из **специальных возможностей** также как и в случае отображения свойств.) При обнаружении любых проблем, выполните [рекомендации по масштабированию макета](https://developer.microsoft.com/windows/design) и предоставить дополнительные ресурсы для разных коэффициенты масштабирования.
+Используя системные параметры отображения, регулирующие количество точек на дюйм, убедитесь в правильности масштабирования пользовательского интерфейса вашего приложения при изменении этого значения. (Некоторые пользователи изменять значения dpi свободен специальных возможностей, доступных из **специальных возможностей** также как и в случае отображения свойств.) При обнаружении любых проблем, выполните [рекомендации по масштабированию макета](https://developer.microsoft.com/windows/apps/design) и предоставить дополнительные ресурсы для разных коэффициенты масштабирования.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -164,4 +164,4 @@ ms.locfileid: "66359644"
 * [Методики, которые не следует использовать](practices-to-avoid.md)
 * [Модель автоматизации пользовательского интерфейса](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
 * [Специальные возможности в Windows](https://go.microsoft.com/fwlink/p/?LinkId=320802)
-* [Начало работы с экранного диктора](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
+* [Начало работы с экранного диктора](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b41069f1ca964f978ba0cff73f5c34a9db133a10
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e0c3802f0b6163ad5f0e179d90148bae543aeab
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649089"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320847"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>Уведомления на индикаторах событий для приложений UWP
 
@@ -60,7 +60,7 @@ ms.locfileid: "57649089"
     <th>XML</th>
 </tr>
 <tr>
-    <td>нет</td>
+    <td>none</td>
     <td>(Индикатор событий не отображается).</td>
     <td>`<badge value="none"/>`</td>
 </tr>
@@ -100,7 +100,7 @@ ms.locfileid: "57649089"
     <td>`<badge value="busy"/>`</td>
 </tr>
 <tr>
-    <td>ошибка</td>
+    <td>error</td>
     <td><img src="images/badges/badge-error.png" alt="Glyph" /></td>
     <td>`<badge value="error"/>`</td>
 </tr>
@@ -196,7 +196,7 @@ private void clearBadge()
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-* [Пример уведомлений](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Демонстрирует, как создавать интерактивные плитки, отправлять обновления индикатора событий и отображать всплывающие уведомления. 
+* [Пример уведомлений](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)<br/> Демонстрирует, как создавать интерактивные плитки, отправлять обновления индикатора событий и отображать всплывающие уведомления. 
 
 ## <a name="related-articles"></a>Связанные статьи
 

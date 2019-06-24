@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b6c6fc7a7e3ddfab70fe289a41bb4d436e9722
-ms.sourcegitcommit: ea15237291ae3ade0bf22e38bd292c3a23947a03
+ms.openlocfilehash: 24878d3c63de7df9c55f48571984b7d60d1ea240
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377315"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320363"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>Компоненты среды выполнения Windows для неопубликованных приложений UWP, выполняемые через посредника
 
@@ -19,7 +19,7 @@ ms.locfileid: "66377315"
 
 ## <a name="introduction"></a>Введение
 
->**Примечание**  пример кода, сопровождающий этот документ можно загрузить для [Visual Studio 2015 и 2017](https://aka.ms/brokeredsample). Шаблон Microsoft Visual Studio для построения через посредника компонентов среды выполнения Windows можно загрузить здесь: [Шаблон Visual Studio 2015, предназначенные для универсальной Windows приложений для Windows 10](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
+>**Примечание**  пример кода, сопровождающий этот документ можно загрузить для [Visual Studio 2015 и 2017](https://aka.ms/brokeredsample). Шаблон Microsoft Visual Studio для построения через посредника компонентов среды выполнения Windows можно загрузить здесь: [Шаблон Visual Studio 2015, предназначенные для универсальной Windows приложений для Windows 10](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 Windows включает в себя новая функция, называемая *через посредника компонентов среды выполнения Windows для неопубликованных приложений*. Термин "IPC" (inter-process communication, межпроцессное взаимодействие) предполагает, что имеющиеся классические программные активы (классический компонент) могут выполняться в отдельном процессе, взаимодействуя при этом с кодом в приложении UWP. Эта модель знакома разработчикам корпоративных систем, так как приложения баз данных и приложения, в которых используются службы NT в Windows, основаны на одной и той же многопроцессной архитектуре.
 
@@ -590,7 +590,7 @@ struct PersonStruct
 
 ## <a name="resources"></a>Ресурсы
 
--   [Управляемый компонент WinRT шаблоны проектов для Windows 10 и Visual STUDIO 2015](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
+-   [Управляемый компонент WinRT шаблоны проектов для Windows 10 и Visual STUDIO 2015](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 -   [Образец NorthwindRT через посредника компонента WinRT](https://go.microsoft.com/fwlink/p/?LinkID=397349)
 

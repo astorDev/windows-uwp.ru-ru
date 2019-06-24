@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ac96354fa1752f655307a5dfd18678233e59c724
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a72a4e7349a5d72b7081873814389c0924ca9308
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372440"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322289"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Перенос Windows Phone Silverlight XAML и пользовательский Интерфейс для универсальной платформы Windows
 
@@ -201,7 +201,7 @@ ms.locfileid: "66372440"
 
 **Примечание**    PointerOver визуальное состояние применима в пользовательские стили и шаблоны в приложениях Windows 10, но не в приложениях Windows Phone Silverlight. Это не единственная причина, почему существующие пользовательские стили и шаблоны могут оказаться пригодными для приложений Windows 10, включая ключи системных ресурсов, вы используете, изменения в наборы использовать визуальные состояния и повысить его производительность стили по умолчанию Windows 10 / шаблоны. Мы рекомендуем изменить новую копию шаблона элемента управления по умолчанию для Windows 10 и затем повторно применить настройку стиля и шаблона.
 
-Дополнительные сведения об элементах управления UWP см. в разделах [Распределение элементов управления по функциям](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function), [Список элементов управления](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) и [Руководство по элементам управления](https://developer.microsoft.com/windows/design/controls-patterns).
+Дополнительные сведения об элементах управления UWP см. в разделах [Распределение элементов управления по функциям](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function), [Список элементов управления](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) и [Руководство по элементам управления](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/index).
 
 ##  <a name="design-language-in-windows10"></a>Язык проектирования в Windows 10
 
@@ -211,7 +211,7 @@ ms.locfileid: "66372440"
 
 Для локализованных строк можно повторно использовать RESX-файл из проекта Windows Phone Silverlight в проекте приложения универсальной платформы Windows. Скопируйте файл, добавьте его в проект и измените его расширение на Resources.resw, чтобы механизм поиска находил его по умолчанию. Установите **Действие при сборке** на **PRIResource**, а **Копировать в выходной каталог** на **Не копировать**. Затем можно использовать строки в разметке, указывая атрибут **x:Uid** в элементах XAML. См. в разделе [краткое руководство: Использование строковых ресурсов](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10)).
 
-Приложения Windows Phone Silverlight используют **CultureInfo** класс для глобализации приложения. Приложения UWP используют современную технологию ресурсов (MRT), которая поддерживает динамическую загрузку ресурсов приложения (локализации, масштабирования и темы) и в среду выполнения и в рабочую область конструирования Visual Studio. Дополнительные сведения см. в разделе [Руководство по файлам, данным и глобализации](https://developer.microsoft.com/windows/design/usability).
+Приложения Windows Phone Silverlight используют **CultureInfo** класс для глобализации приложения. Приложения UWP используют современную технологию ресурсов (MRT), которая поддерживает динамическую загрузку ресурсов приложения (локализации, масштабирования и темы) и в среду выполнения и в рабочую область конструирования Visual Studio. Дополнительные сведения см. в разделе [Руководство по файлам, данным и глобализации](https://docs.microsoft.com/windows/uwp/design/usability/index).
 
 В разделе [**ResourceContext.QualifierValues**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) описывается загрузка ресурсов для определенного семейства устройств с учетом коэффициента выбора ресурсов для семейств устройств.
 

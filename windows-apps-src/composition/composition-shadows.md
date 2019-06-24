@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9541ea1c00d473bc4881a80d8597625592e278f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4a47a5f8ffca1d9ca2ddab05fe0baf2f85977d7f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630839"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318190"
 ---
 # <a name="shadows-in-windows-ui"></a>Shadows в пользовательский Интерфейс Windows
 
@@ -113,9 +113,9 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 Если вы хотите добавить тень для более сложных элементов framework, существует несколько способов взаимодействия с тенями между XAML и композиции:
 
-1. Используйте [DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) доступны в наборе средств сообщества Windows. См. в разделе [DropShadowPanel документации](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel) Дополнительные сведения о том, как использовать его.
+1. Используйте [DropShadowPanel](https://github.com/windows-toolkit/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) доступны в наборе средств сообщества Windows. См. в разделе [DropShadowPanel документации](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel) Дополнительные сведения о том, как использовать его.
 1. Создайте визуальный элемент, чтобы использовать в качестве узла тени & привязать его к XAML буклет Visual.
-1. Использование коллекции примеров композиции [SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon) пользовательский элемент управления CompositionShadow. См. пример для использования.
+1. Использование коллекции примеров композиции [SamplesCommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) пользовательский элемент управления CompositionShadow. См. пример для использования.
 
 ## <a name="performance"></a>Производительность
 
@@ -132,4 +132,4 @@ CompositionDropShadowSourcePolicy.InheritFromVisualContent | Высокий
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 - [Композиция DropShadow API](/uwp/api/Windows.UI.Composition.DropShadow)
-- [Репозиторий GitHub WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs)
+- [Репозиторий GitHub WindowsUIDevLabs](https://github.com/microsoft/WindowsCompositionSamples)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 472e163344c8cc2fdea3dd639383bb1dac84a2f4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0ea4376b36d72da552da7269e691cfacb31fffd6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361591"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318241"
 ---
 # <a name="media-items-playlists-and-tracks"></a>Элементы, списки воспроизведения и звуковые дорожки мультимедиа
 
@@ -96,7 +96,7 @@ ms.locfileid: "66361591"
 
 [!code-xml[VideoComboBox](./code/MediaSource_RS1/cs/MainPage.xaml#SnippetVideoComboBox)]
 
-В обработчике события **VideoTracksChanged** циклически переберите все дорожки в списке [**VideoTracks**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem.videotracks) каждого элемента воспроизведения. Для каждой дорожки создается новый элемент управления [**ComboBoxItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBoxItem). Если у дорожки еще нет метки, она создается из индекса дорожки. Свойству [**Tag**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.tag) поля со списком присваивается значение индекса дорожки. Это позволит идентифицировать свойство позже. Наконец, элемент добавляется в поле со списком. Обратите внимание, что эти операции выполняются внутри вызова [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows), поскольку все изменения пользовательского интерфейса следует осуществлять в потоке пользовательского интерфейса, а это событие создается в другом потоке.
+В обработчике события **VideoTracksChanged** циклически переберите все дорожки в списке [**VideoTracks**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem.videotracks) каждого элемента воспроизведения. Для каждой дорожки создается новый элемент управления [**ComboBoxItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBoxItem). Если у дорожки еще нет метки, она создается из индекса дорожки. Свойству [**Tag**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.tag) поля со списком присваивается значение индекса дорожки. Это позволит идентифицировать свойство позже. Наконец, элемент добавляется в поле со списком. Обратите внимание, что эти операции выполняются внутри вызова [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync), поскольку все изменения пользовательского интерфейса следует осуществлять в потоке пользовательского интерфейса, а это событие создается в другом потоке.
 
 [!code-cs[VideoTracksChanged](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetVideoTracksChanged)]
 
@@ -206,7 +206,7 @@ ms.locfileid: "66361591"
 
 [!code-cs[PlayMediaPlaybackList](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackList)]
 
-В обработчике события **CurrentItemChanged** обновите пользовательский интерфейс, чтобы отобразить воспроизводимый в настоящее время элемент, который можно получить с помощью свойства [**NewItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.newitem) объекта [**CurrentMediaPlaybackItemChangedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs), переданного данному событию. Помните, что если вы обновляете пользовательский интерфейс с помощью этого события, необходимо делать это в рамках вызова [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows), чтобы эти обновления выполнялись в потоке пользовательского интерфейса.
+В обработчике события **CurrentItemChanged** обновите пользовательский интерфейс, чтобы отобразить воспроизводимый в настоящее время элемент, который можно получить с помощью свойства [**NewItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.newitem) объекта [**CurrentMediaPlaybackItemChangedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs), переданного данному событию. Помните, что если вы обновляете пользовательский интерфейс с помощью этого события, необходимо делать это в рамках вызова [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync), чтобы эти обновления выполнялись в потоке пользовательского интерфейса.
 
 Начиная с Windows 10 версии 1703, можно получить значение свойства [CurrentMediaPlaybackItemChangedEventArgs.Reason](https://docs.microsoft.com/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.Reason), которое указывает причину изменения элемента (например, программное переключение элементов приложением, завершение воспроизведения предыдущего элемента или ошибка).
 

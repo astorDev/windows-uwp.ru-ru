@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, security
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: f20179b03461f2b7746cc6d0f4330bbf45c10427
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5c1a7de0e9e6817fc4b0bf1ada113f49e798641e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371957"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320539"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
@@ -192,7 +192,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-В остальной части этой статьи продолжается описание сценария с учетной записью Майкрософт, но код для AAD очень похож на этот пример. Дополнительные сведения о AAD/Graph, включая полный пример в GitHub, см. в [документации Microsoft Graph](https://graph.microsoft.io/docs/platform/get-started).
+В остальной части этой статьи продолжается описание сценария с учетной записью Майкрософт, но код для AAD очень похож на этот пример. Дополнительные сведения о AAD/Graph, включая полный пример в GitHub, см. в [документации Microsoft Graph](https://developer.microsoft.com/graph).
 
 ## <a name="use-the-token"></a>Использование маркера
 

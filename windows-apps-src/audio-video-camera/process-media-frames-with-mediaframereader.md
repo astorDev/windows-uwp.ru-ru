@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e9db0960070c77485fbe8b2f3231f7ce8035b5c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2b77fb147ab614b19993700d5d99572f0247d54e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361485"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318273"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Обработка кадров мультимедиа с помощью MediaFrameReader
 
@@ -93,7 +93,7 @@ ms.locfileid: "66361485"
 ## <a name="set-the-preferred-format-for-the-frame-source"></a>Установка предпочтительного формата для источника кадров
 Для установки предпочтительного формата для источника кадров необходимо получить объект [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource), представляющий этот источник. Этот объект можно получить путем доступа к словарю [**Frames**](https://docs.microsoft.com/previous-versions/windows/apps/phone/jj207578(v=win.10)) инициализированного объекта **MediaCapture**, указав идентификатор источника кадров, который вы хотите использовать. Поэтому мы сохранили объект [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) при выборе группы источников кадров.
 
-Свойство [**MediaFrameSource.SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) содержит список объектов [**MediaFrameFormat**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameFormat), описывающих поддерживаемые источником кадров форматы. Используйте метод расширения Linq **Where** для выбора формата на основе требуемых свойств. В этом примере выбран формат с шириной 1080 пикселей, позволяющий получать кадры в 32-разрядном формате RGB. Метод расширения **FirstOrDefault** выбирает первый элемент в списке. Если выбранный формат — null, запрошенный формат не поддерживается источником кадров. Если формат поддерживается, вы можете запросить использование источником этого формата путем вызова [**SetFormatAsync**](https://developer.microsoft.com/windows/apps/develop).
+Свойство [**MediaFrameSource.SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) содержит список объектов [**MediaFrameFormat**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameFormat), описывающих поддерживаемые источником кадров форматы. Используйте метод расширения Linq **Where** для выбора формата на основе требуемых свойств. В этом примере выбран формат с шириной 1080 пикселей, позволяющий получать кадры в 32-разрядном формате RGB. Метод расширения **FirstOrDefault** выбирает первый элемент в списке. Если выбранный формат — null, запрошенный формат не поддерживается источником кадров. Если формат поддерживается, вы можете запросить использование источником этого формата путем вызова [**SetFormatAsync**](https://docs.microsoft.com/windows/uwp/develop/).
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
@@ -127,11 +127,11 @@ ms.locfileid: "66361485"
 
 Теперь пора реализовать обработчик событий **FrameArrived**. Когда обработчик вызывается, параметр *sender* содержит ссылку на объект **MediaFrameReader**, создавший событие. Вызовите [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) на этом объекте, чтобы попытаться получить новейший кадр. Как видно из названия, **TryAcquireLatestFrame** может не добиться успеха при возвращении кадра. Поэтому, когда вы получаете доступ к свойствам VideoMediaFrame, а затем SoftwareBitmap, обязательно выполняйте проверку на предмет значения null. В этом примере условный оператор null ? используется для получения доступа к **SoftwareBitmap**, а затем полученный объект проверяется на предмет значения null.
 
-Элемент управления **Image** может отображать только изображения в формате BRGA8 с предварительным умножением альфа-канала или без него. Если поступающий кадр не соответствует этому формату, статический метод [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) используется для преобразования программного точечного рисунка в правильный формат.
+Элемент управления **Image** может отображать только изображения в формате BRGA8 с предварительным умножением альфа-канала или без него. Если поступающий кадр не соответствует этому формату, статический метод [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert) используется для преобразования программного точечного рисунка в правильный формат.
 
 Далее метод [**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange?redirectedfrom=MSDN#System_Threading_Interlocked_Exchange__1___0____0_) используется для замены ссылки на поступающий точечный рисунок точечным рисунком из заднего буфера. Этот метод заменяет такие ссылки в атомарной операции, которая является потокобезопасной. После замены старое изображение из заднего буфера, которое теперь находится в переменной *softwareBitmap*, удаляется для высвобождения ресурсов.
 
-Далее объект [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher), связанный с элементом **Image**, используется для создания задачи, которая будет выполняться в потоке пользовательского интерфейса, путем вызова [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows). Поскольку асинхронные задачи будут выполняться в рамках задачи, передаваемое **RunAsync** лямбда-выражение объявляется с использованием ключевого слова *async*.
+Далее объект [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher), связанный с элементом **Image**, используется для создания задачи, которая будет выполняться в потоке пользовательского интерфейса, путем вызова [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync). Поскольку асинхронные задачи будут выполняться в рамках задачи, передаваемое **RunAsync** лямбда-выражение объявляется с использованием ключевого слова *async*.
 
 В рамках задачи переменная *_taskRunning* проверяется, чтобы обеспечить выполнение только одного экземпляра задачи в определенный момент времени. Если задача еще не выполняется, для *_taskRunning* устанавливается значение true, чтобы предотвратить повторный запуск задачи. В цикле *while* производится вызов **Interlocked.Exchange** для копирования из заднего буфера во временный объект **SoftwareBitmap**, пока изображение в заднем буфере не получит значение null. При каждом заполнении временного точечного рисунка свойство **Source** элемента **Image** приводится к типу **SoftwareBitmapSource**, а затем производится вызов [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) для установки источника изображения.
 

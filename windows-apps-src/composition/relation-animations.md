@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, анимация
 ms.localizationpriority: medium
-ms.openlocfilehash: b6fdc59e8a7203a3bb8c6ad79adabd446b884639
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bfed00cf4866d79d4ac3097026cc09c70f9327cd
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597719"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318171"
 ---
 # <a name="relation-based-animations"></a>Анимации на основе связей
 
@@ -55,7 +55,7 @@ Expressions также поддерживают набор ключевых сл
 Существует два варианта создания Expressions в приложении UWP:
 
 1. Создание выражения в виде строки через официальный, общедоступный API.
-1. Создание выражения в типобезопасной объектной модели через инструмент ExpressionBuilder с открытым исходным кодом. См. раздел [Исходный код и документация Github](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/ExpressionBuilder).
+1. Создание выражения в типобезопасной объектной модели через инструмент ExpressionBuilder с открытым исходным кодом. См. раздел [Исходный код и документация Github](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder).
 
 В контексте этого документа выражения Expressions определяются с использованием ExpressionBuilder.
 

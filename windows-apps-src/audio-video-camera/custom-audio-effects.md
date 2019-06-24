@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: f34b2cdbb538d121c1c6182b2c02042d6c0047ed
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6bebf9533ab045822902d44f87f68eec55c11074
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360931"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318575"
 ---
 # <a name="custom-audio-effects"></a>Пользовательские звуковые эффекты
 
@@ -51,7 +51,7 @@ ms.locfileid: "66360931"
 
 ### <a name="setencodingproperties-method"></a>Метод SetEncodingProperties
 
-Система вызывает [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties.windows) на эффекте, чтобы предоставить вам информацию о свойствах кодирования для аудиопотока, на котором работает эффект. Чтобы реализовать эффект эха, в этом примере используется буфер для хранения одной секунды звуковых данных. Этот метод также предоставляет возможность задать размер буфера в зависимости от количества отсчетов в одной секунде аудио, то есть в зависимости от частоты дискретизации, с которой закодирован звук. Эффект задержки также использует счетчик целых чисел для отслеживания текущей позиции в буфере задержки. Так как **SetEncodingProperties** вызывается каждый раз, когда эффект добавляется в звуковой конвейер, это будет подходящим моментом для инициализации этого значения с установкой на 0. Возможно, вам также потребуется сохранить объект **AudioEncodingProperties**, переданный в этот метод, чтобы использовать его в каком-либо другом месте в вашем эффекте.
+Система вызывает [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) на эффекте, чтобы предоставить вам информацию о свойствах кодирования для аудиопотока, на котором работает эффект. Чтобы реализовать эффект эха, в этом примере используется буфер для хранения одной секунды звуковых данных. Этот метод также предоставляет возможность задать размер буфера в зависимости от количества отсчетов в одной секунде аудио, то есть в зависимости от частоты дискретизации, с которой закодирован звук. Эффект задержки также использует счетчик целых чисел для отслеживания текущей позиции в буфере задержки. Так как **SetEncodingProperties** вызывается каждый раз, когда эффект добавляется в звуковой конвейер, это будет подходящим моментом для инициализации этого значения с установкой на 0. Возможно, вам также потребуется сохранить объект **AudioEncodingProperties**, переданный в этот метод, чтобы использовать его в каком-либо другом месте в вашем эффекте.
 
 [!code-cs[DeclareEchoBuffer](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetDeclareEchoBuffer)]
 [!code-cs[SetEncodingProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetEncodingProperties)]
