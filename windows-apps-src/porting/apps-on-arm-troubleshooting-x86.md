@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, постоянно подключенный, эмуляция x86 в ARM, устранение неполадок
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f40c53c70a457057f678cdc227a98fc694e2273
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3c29151ae2823aa70711bf002e8954148cc0861b
+ms.sourcegitcommit: f7e3782e24d46b2043023835c5b59d12d3b4ed4b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319673"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67345672"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>Устранение неполадок в классических приложениях x86
 >[!IMPORTANT]
@@ -47,3 +47,8 @@ ms.locfileid: "67319673"
 
 ## <a name="virtual-machines"></a>Виртуальные машины
 Платформа гипервизора Windows не поддерживается на платформе мобильных ПК Qualcomm Snapdragon 835. Следовательно, запуск виртуальных машин с помощью Hyper-V не сработает. Мы продолжим развивать эти технологии в будущих микросхемах Qualcomm. 
+
+## <a name="dynamic-code-generation"></a>Динамическое создание кода
+X86, классических приложений можно эмулировать в ARM64 системой создания ARM64 инструкции во время выполнения. Это означает, что если x86 приложения на рабочем столе предотвращает динамическое создание кода или изменения в своем процессе, что приложение не поддерживается для запуска в качестве x86 на ARM64. 
+
+Это по устранению рисков безопасности, включить некоторые приложения на их процесс, используя [SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API с помощью `ProcessDynamicCodePolicy` флаг. Для успешного выполнения на ARM64 как x86 процесс, эта политика по устранению рисков придется отключить. 

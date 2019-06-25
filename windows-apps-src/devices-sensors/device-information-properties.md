@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e26908839204c67a4746f602acc08c6776e889c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7223123ef6f71a45acc967aa60feffa1003b66d1
+ms.sourcegitcommit: 58d35b89662d4ad240650933e43fee0b00e9a962
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370257"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67344530"
 ---
 # <a name="device-information-properties"></a>Свойства сведений об устройствах
 
@@ -101,6 +101,15 @@ ms.locfileid: "66370257"
 
  
 
+## <a name="devicepanel-properties"></a>Свойства DevicePanel
+
+| Имя                                            | Тип    | Описание                                                                                                      |
+|-------------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------|
+| **System.Devices.Panel.PanelId**                | Строка  | Идентификатор **DevicePanel** объекта.                                                                    |
+| **System.Devices.Panel.PanelGroup**             | Строка  | Идентификатор родительского **PanelGroup**.                                                                      |
+ 
+ 
+ 
 ## <a name="associationendpoint-properties"></a>Свойства AssociationEndpoint
 
 | Имя                                  | Тип       | Описание                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -155,9 +164,3 @@ ms.locfileid: "66370257"
 | **System.Devices.AepService.ServiceClassId**    | Код GUID    | Удостоверение службы, которую представляет это устройство.                                                             |
 | **System.Devices.AepService.ServiceId**         | Строка  | Удостоверение этой службы. Это также значение [**DeviceInformation.Id**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id). |
 | **System.ItemNameDisplay**                      | Строка  | Наилучшее отображаемое имя для службы.                                                                           |
-
- 
-
- 
-
- 
