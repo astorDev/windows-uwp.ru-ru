@@ -11,18 +11,20 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, WNS, службу уведомлений windows, уведомления, windows, брандмауэра, устранение неполадок, IP-адрес, трафик, enterprise, сеть, IPv4, виртуальный IP-адрес, полное доменное имя, общедоступный IP-адрес
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ed4ad6ed828abda9d487ef96beca9b655c92421
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 23a9b11cd961e03217aba8ca3d1d988447a2f80b
+ms.sourcegitcommit: b0edd3c09f931b9b62f9c2d17037fb58d826174f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366669"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67349858"
 ---
 # <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>Разрешения Windows уведомления трафика через брандмауэры предприятий
 
 ## <a name="background"></a>Фон
 На многих предприятиях использование брандмауэров для блокировки нежелательного трафика сети; к сожалению это может также блокировать важных моментов, таких как взаимодействие со службой уведомлений Windows. Это означает, что все уведомления, отправленный с помощью WNS, будут удалены. Чтобы избежать этого, сетевых администраторов можно добавить в список утвержденных WNS каналов, их список исключений, чтобы разрешить трафик может проходить через брандмауэр, WNS. Ниже приведены дополнительные сведения о том, как и что нужно добавить. 
 
+> [!Note] 
+По состоянию на 6/24/2019 г., клиенты Windows **не** поддержки учетных записей-посредников, подключение к WNS должно быть прямое подключение.
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>Какие сведения должны добавляться в список разрешенных
 Ниже список, содержащий полные доменные имена, виртуальные IP-адреса и IP-адрес диапазоны, используемые службой уведомлений Windows. 
