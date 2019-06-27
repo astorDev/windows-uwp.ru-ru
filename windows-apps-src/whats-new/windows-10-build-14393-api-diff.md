@@ -1,21 +1,21 @@
 ---
 title: Изменения API в Windows 10 версии 1607
 description: Разработчики могут использовать следующий список для определения новых или измененных пространств имен в Windows 10 версии 1607
-keywords: новые возможности, что нового, обновление, обновления, Windows 10, 1607, 14393, anniversary
+keywords: what's new, whats new, update, updates, Windows 10, 1607, 14393, anniversary
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 ms.localizationpriority: medium
 ms.openlocfilehash: fa390123389b20564a94d1e59f9248adcf673061
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66372921"
 ---
-# <a name="new-apis-in-windows-10-build-14393"></a>Новые API в Windows 10 сборки 14393
+# <a name="new-apis-in-windows-10-build-14393"></a>Новые API в Windows 10 (сборка 14393)
 
-В Windows 10 сборки 14393, также известной как Anniversary Update или версия 1607, доступны новые и обновленные API для пространств имен. В этой таблице перечислены пространства имен, которые были добавлены или изменены в этом выпуске.
+В Windows 10 сборки 14393, также известной как Anniversary Update или версия 1607, доступны новые и обновленные пространства имен API. В этой таблице перечислены пространства имен, которые были добавлены или изменены в этом выпуске.
 
 
 **Элемент**
@@ -540,7 +540,7 @@ Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeet
 
 **Элемент**
 
-[Windows.ApplicationModel.Appointments.DataProvider. </br>AppointmentCalendarUpdateMeetingResponseRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarupdatemeetingresponserequesteventargs)
+[Windows.ApplicationModel.Appointments.DataProvider.</br>AppointmentCalendarUpdateMeetingResponseRequestEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.dataprovider.appointmentcalendarupdatemeetingresponserequesteventargs)
 
 **Свойства**
 

@@ -6,14 +6,14 @@ label: Master/details
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d8d8a381c0fce186b39853f57d35c1dce4b8f8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601259"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63773361"
 ---
 # <a name="masterdetails-pattern"></a>Шаблон основных и подробных данных
 
@@ -21,7 +21,7 @@ ms.locfileid: "57601259"
 
 В шаблоне основных и подробных есть главная панель (обычно с [представлением списка](lists.md)) и область сведений для содержимого. Если выбрать элемент в главном списке, область сведений обновляется. Этот шаблон часто используется для работы с электронной почтой и адресными книгами.
 
-> **Важные API**: [Класс ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView-класс](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **Важные API**: [класс ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [класс SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Пример шаблона основных и подробных данных](images/HIGSecOne_MasterDetail.png)
 
@@ -39,7 +39,7 @@ ms.locfileid: "57601259"
 
 | Доступная ширина окна | Рекомендуемый стиль |
 |------------------------|-------------------|
-| 320–640 epx        | Стопкой           |
+| 320 epx-640 epx        | Стопкой           |
 | 641 epx или шире       | Рядом      |
 
  
@@ -53,15 +53,15 @@ ms.locfileid: "57601259"
 
 ### <a name="create-a-stacked-masterdetails-pattern"></a>Создание шаблона основных и подробных данных стопкой
 
-Один из способов создания шаблона основных и подробных данных заключается в использовании отдельных страниц для главной панели и области сведений. Разместите представление основных данных на одной странице, а панель подробных данных на отдельной странице.
+Один из способов создания шаблона основных и подробных данных заключается в использовании отдельных страниц для главной панели и области сведений. Разместите представление основной информации на одной странице, а область подробных сведений на другой отдельной странице.
 
 ![Части основного и подробного представления с расположением стопкой](images/patterns-md-stacked-parts.png)
 
-На странице основных сведений [представление списка](lists.md) хорошо подходит для отображения списков, которые могут содержать изображения и текст. 
+На странице основной информации в [представлении списка](lists.md) удобно размещать списки, которые могут содержать изображения и текст. 
 
-На странице подробных сведений используйте [элемент содержимого](../layout/layout-panels.md), который подходит лучше всего. Если имеется множество отдельных полей, можно использовать макет **Grid** (сетка) для размещения элементов в форме.
+На странице с подробными сведениями целесообразнее всего использовать [элемент содержимого](../layout/layout-panels.md). Если есть много отдельных полей, можно использовать макет **Сетка** для размещения элементов в форме.
 
-Сведения о навигации между страницами см. в разделе [Журнал навигации и навигация в обратном направлении для приложений UWP](../basics/navigation-history-and-backwards-navigation.md).
+Сведения о навигации между страницами см. в статье о [журнале навигации и навигации в обратном направлении для приложений UWP](../basics/navigation-history-and-backwards-navigation.md).
 
 ## <a name="side-by-side-style"></a>Стиль рядом
 
@@ -73,36 +73,36 @@ ms.locfileid: "57601259"
 
 ### <a name="create-a-side-by-side-masterdetails-pattern"></a>Создание шаблона основных и подробных данных рядом
 
-Чтобы создать шаблон основных и подробных данных, размещенных рядом, можно использовать элемент управления [комбинированный режим](split-view.md). Разместите представление основных данных в области комбинированного режима, а представление подробных данных в содержимом комбинированного режима.
+Чтобы создать шаблон основной информации и подробных сведений, размещенных рядом, можно использовать элемент управления [Комбинированный режим](split-view.md). Разместите представление основной информации в области комбинированного режима, а представление подробных сведений в разделе содержимого комбинированного режима.
 
-![части представлений основных и подробных данных в комбинированном режиме](images/patterns_md_splitview_parts.png)
+![части представлений основной информации и подробных сведений в комбинированном режиме](images/patterns_md_splitview_parts.png)
 
 На главной панели элемент управления [Представление списка](lists.md) хорошо подходит для отображения списков, которые могут содержать изображения и текст.
 
-Для содержимого подробных сведений используйте [элемент содержимого](../layout/layout-panels.md), который подходит лучше всего. Если имеется множество отдельных полей, можно использовать макет **Grid** (сетка) для размещения элементов в форме.
+Для подробных сведений используйте [элемент содержимого](../layout/layout-panels.md), который подходит лучше всего. Если есть много отдельных полей, можно использовать макет **Сетка** для размещения элементов в форме.
 
 ## <a name="adaptive-layout"></a>Адаптивный макет
 
-Чтобы реализовать шаблон основных и подробных данных для экрана любого размера, создайте пользовательский интерфейс с быстрым откликом, используя [адаптивный макет](../layout/layouts-with-xaml.md).
+Чтобы реализовать шаблон основной информации и подробных сведений для экрана любого размера, создайте пользовательский интерфейс с быстрым откликом, используя [адаптивный макет](../layout/layouts-with-xaml.md).
 
-![адаптивный макет основных и подробных данных](images/patterns_masterdetail.png)
+![адаптивный макет основной информации и подробных сведений](images/patterns_masterdetail.png)
 
-### <a name="create-an-adaptive-masterdetails-pattern"></a>Создание адаптивного шаблона основных и подробных данных
+### <a name="create-an-adaptive-masterdetails-pattern"></a>Создание адаптивного шаблона основной информации и подробных сведений
 Чтобы создать адаптивный макет, определите разные состояния [**VisualStates**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstate) для пользовательского интерфейса и объявите точки останова для различных состояний с помощью [**AdaptiveTriggers**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-В следующих примерах показана реализация шаблона основных и подробных данных с помощью адаптивных макетов, а также демонстрируется привязывание данных к статическим, веб-ресурсам и ресурсам базы данных. 
-- [Образец «основной/подробности»](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
-- [Основной/подробности, а также пример выбора](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Образец Windows шаблона Studio «основной/подробности»](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
-- [Образец базы данных заказов клиента](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
-- [Пример средства чтения RSS](https://github.com/Microsoft/Windows-appsample-rssreader)
+В приведенных ниже примерах показана реализация шаблона основной информации и подробных сведений с помощью адаптивных макетов, а также демонстрируется привязывание данных к статическим ресурсам, веб-ресурсам и ресурсам базы данных. 
+- [Master/detail sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) (Пример шаблона основной информации и подробных сведений) 
+- [Пример шаблона основной информации и подробных сведений и пример элемента выбора](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Пример шаблона основной информации и подробных сведений в Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
+- [Customers Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) (Пример базы данных Customer Orders)
+- [RSSReader sample](https://github.com/Microsoft/Windows-appsample-rssreader) (Пример средства чтения RSS)
 
 ## <a name="related-articles"></a>Связанные статьи
 
 - [Списки](lists.md)
 - [Поиск](search.md)
-- [Приложения и командной панели](app-bars.md)
-- [Класс ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [Класс SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+- [Панель приложения и панель команд](app-bars.md)
+- [ListView class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView) (Класс ListView)
+- [SplitView class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview) (Класс SplitView)

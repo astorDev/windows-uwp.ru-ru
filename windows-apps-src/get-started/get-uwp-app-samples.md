@@ -3,24 +3,24 @@ title: Получение примеров приложений UWP
 description: Узнайте, как скачать примеры кода UWP с GitHub
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, пример кода, примеры кода
+keywords: windows 10, uwp, sample code, code samples
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598539"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63772255"
 ---
 # <a name="get-uwp-app-samples"></a>Получение примеров приложений UWP
 
-Примеры приложений универсальной платформы Windows (UWP) доступны в репозиториях на GitHub. См. раздел [Примеры](https://developer.microsoft.com/windows/samples "Примеры из Центра разработки") чтобы воспользоваться сгруппированным списком с возможностью поиска, или обратитесь к репозиторию [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Репозиторий примеров приложений универсальной платформы Windows на GitHub"), который содержит примеры, демонстрирующие все функции UWP и шаблоны использования их API.  
-![Пример репозитория GitHub универсальной платформы Windows](images/GitHubUWPSamplesPage.png)
+Примеры приложений универсальной платформы Windows (UWP) доступны в репозиториях на GitHub. См. раздел [Примеры](https://developer.microsoft.com/windows/samples "Примеры из Центра разработки") чтобы воспользоваться сгруппированным списком с возможностью поиска, или обратитесь к репозиторию [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Репозиторий примеров приложений универсальной платформы Windows в GitHub"), который содержит примеры, демонстрирующие все функции UWP и шаблоны использования их API.  
+![Репозиторий примеров UWP в GitHub](images/GitHubUWPSamplesPage.png)
 
 ## <a name="download-the-code"></a>Скачать код
 
-Чтобы скачать примеры, перейдите в [репозиторий](https://github.com/Microsoft/Windows-universal-samples "Репозиторий примеров приложений универсальной платформы Windows на GitHub") и выберите **Клонировать или скачать**, а затем — **Скачать ZIP-файл**. Или просто нажмите [здесь](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "Скачать ZIP-файл с примерами приложений универсальной платформы Windows").
+Чтобы скачать примеры, перейдите в [репозиторий](https://github.com/Microsoft/Windows-universal-samples "Репозиторий примеров приложений универсальной платформы Windows в GitHub") и выберите **Clone or download** (Клонировать или скачать), а затем — **Download ZIP** (Скачать ZIP-файл). Или просто нажмите [здесь](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "Скачать ZIP-файл с примерами приложений универсальной платформы Windows").
 
 В этом ZIP-файле вы всегда найдете актуальные примеры. Учетная запись GitHub для скачивания не требуется. Если выпущено обновление SDK или необходимо получить только последние изменения и добавления, просто скачайте актуальный ZIP-файл.
 
@@ -28,7 +28,7 @@ ms.locfileid: "57598539"
 
 
 > [!NOTE]
-> Для открытия, создания и запуска примеров UWP требуется Visual Studio 2015 или более поздней версии, а также пакет Windows SDK. Вы можете получить бесплатную копию Visual Studio Community с поддержкой разработки приложений UWP [здесь](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Скачать средства разработки для Windows").  
+> Для открытия, создания и запуска примеров UWP требуется Visual Studio 2015 или более поздней версии, а также пакет Windows SDK. Вы можете получить бесплатную копию Visual Studio Community с поддержкой разработки приложений UWP [здесь](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Скачать средства разработки для Windows").  
 >
 > Кроме того, не забудьте распаковать весь архив, а не только отдельные примеры. Все примеры зависят от папки SharedContent в архиве. Примеры функций UWP используют связанные файлы в Visual Studio, чтобы уменьшить дублирование общих файлов, включая файлы шаблонов примеров и ресурсы изображений. Эти общие файлы хранятся в папке SharedContent в корневом каталоге репозитория, а файлы проекта ссылаются на них с помощью ссылок.
 
@@ -45,7 +45,7 @@ ms.locfileid: "57598539"
 
     ![Языковые папки](images/SamplesUnzip3.png)
 
-4.  Выберите язык, который вы хотите использовать, например CS для C\#, и вы увидите файл решения Visual Studio, которое можно открыть в Visual Studio.
+4.  Выберите язык, который требуется использовать, например CS или C\#, и вы увидите файл решения Visual Studio, который можно открыть в Visual Studio.
 
     ![Решение VS](images/SamplesUnzip4.png)
 
