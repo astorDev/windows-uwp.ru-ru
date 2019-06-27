@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: 72b7f168c9f4e812b1cfb459ebea91f61a988122
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 24ae3fb7442ac955b5edf4127dfdf66176c81a43
+ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371306"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67399623"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Создание приложения для входа с использованием Windows Hello
 
@@ -224,10 +224,14 @@ ms.locfileid: "66371306"
     }
     ```
 
--   Вам понадобится способ обработки учетных записей. В этом упражнении нет сервера или базы данных, список пользователей будет сохраняться и загружаться локально. Щелкните правой кнопкой мыши папку Utils и добавьте класс AccountHelper.cs. Измените определение класса на public static. AccountHelper — это статический класс, который будет содержать все необходимые методы для локального сохранения и загрузки списка учетных записей. Для сохранения и загрузки будет использоваться XmlSerializer. Вам также необходимо запомнить сохраненный файл и его расположение. Кроме того, требуется добавить ссылки на дополнительные пространства имен.
+-   Вам понадобится способ обработки учетных записей. В этом упражнении нет сервера или базы данных, список пользователей будет сохраняться и загружаться локально. Щелкните правой кнопкой мыши папку Utils и добавьте класс AccountHelper.cs. Измените определение класса на public static. AccountHelper — это статический класс, который будет содержать все необходимые методы для локального сохранения и загрузки списка учетных записей. Для сохранения и загрузки будет использоваться XmlSerializer. Вам также необходимо запомнить сохраненный файл и его расположение.
     
     ```cs
+    using System;
+    using System.Collections.Generic;
     using System.IO;
+    using System.Text;
+    using System.Threading.Tasks;
     using System.Xml.Serialization;
     using Windows.Storage;
     using PassportLogin.Models;
