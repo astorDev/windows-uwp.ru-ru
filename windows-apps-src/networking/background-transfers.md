@@ -4,13 +4,13 @@ title: Фоновая передача данных
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 ms.date: 03/23/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 00cf409177ae077d5df9739321c4464c2c56843d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66371417"
 ---
 # <a name="background-transfers"></a>Фоновая передача данных
@@ -26,9 +26,9 @@ ms.locfileid: "66371417"
 Когда приложение использует функцию фоновой передачи данных для запуска передачи данных, настройка и инициализация запроса производятся с помощью объектов класса [**BackgroundDownloader**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundDownloader) или [**BackgroundUploader**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundUploader). Каждая операция передачи данных обрабатывается системой отдельно и независимо от вызывающего приложения. Если вы хотите отобразить состояние передачи данных в пользовательском интерфейсе приложения, можно использовать информацию о ходе выполнения, при этом приложение может приостанавливать, возобновлять, отменять передачу данных или даже считывать данные в процессе их передачи. Способ, которым система обрабатывает передачу данных, позволяет разумно использовать электроэнергию и предотвращать проблемы, которые могут возникнуть, когда работа подключенного приложения нарушается такими событиями, как приостановка или завершение работы либо внезапные изменения состояния сети.
 
 > [!NOTE]
-> В связи с ограниченностью ресурсов для каждого приложения приложение не должно создавать более 200 операций передачи (DownloadOperations + UploadOperations) в любой момент времени. Превышение этого количества может привести очередь передач этого приложения в состояние неустранимой ошибки.
+> В связи с ограниченностью ресурсов для каждого приложения приложение не должно создавать более 200 операций передачи (DownloadOperations + UploadOperations) в любой момент времени. Превышение этого количества может привести очередь передач этого приложения в состояние неустранимой ошибки.
 
-При запуске приложения, он должен вызвать [ **AttachAsync** ](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) на всех имеющихся [ **DownloadOperation** ](/uwp/api/windows.networking.backgroundtransfer.downloadoperation) и [  **UploadOperation** ](/uwp/api/windows.networking.backgroundtransfer.uploadoperation) объектов. Этого не делать будет утечка передачи уже завершен и будет со временем бесполезны использования средства для фоновой передачи.
+При запуске приложения оно должно вызвать [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) для всех существующих объектов [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation) и [**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadoperation). Иначе произойдет утечка уже переданных данных и в конечном итоге результативность функции фоновой передачи данных будет сведена к нулю.
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>Выполнение запросов файлов, которые прошли проверку подлинности, с помощью фоновой передачи данных
 Функция передачи данных в фоновом режиме предоставляет методы, поддерживающие базовые учетные данные сервера и прокси-сервера, файлы cookie, а также настраиваемые заголовки HTTP (с помощью метода [**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounduploader.setrequestheader)) для каждой операции передачи.
@@ -40,11 +40,11 @@ ms.locfileid: "66371417"
 
 Хотя функция фоновой передачи данных имеет собственные механизмы обработки изменений состояния сети, существуют другие общие условия сетевого подключения, применимые к приложениям с подключением к сети. Подробности см. в разделе об [использовании информации о доступных сетевых подключениях](https://docs.microsoft.com/previous-versions/windows/apps/hh452983(v=win.10)).
 
-> **Примечание**  для приложений, работающих на мобильных устройствах, имеются функции, позволяющие пользователям отслеживать и ограничивать объем данных, передаваемых на основе типа подключения, перемещаемые состояния, и план данных пользователя. Поэтому на телефоне фоновая передача данных может быть приостановлена несмотря на то, что [**BackgroundTransferCostPolicy**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) сообщает о необходимости ее продолжения.
+> **Примечание.**   В приложения, работающие на мобильных устройствах, можно добавить возможности отслеживания и ограничения объема передаваемых данных в зависимости от типа подключения к сети, нахождения в роуминге и тарифного плана пользователя. Поэтому на телефоне фоновая передача данных может быть приостановлена несмотря на то, что [**BackgroundTransferCostPolicy**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) сообщает о необходимости ее продолжения.
 
 В следующей таблице показано, когда разрешена фоновая передача данных на телефоне для каждого значения [**BackgroundTransferCostPolicy**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) с учетом текущего состояния телефона. Чтобы определить текущее состояние телефона, можно использовать класс [**ConnectionCost**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionCost).
 
-| Состояние устройства                                                                                                                      | UnrestrictedOnly | Значение по умолчанию | Всегда |
+| Состояние устройства                                                                                                                      | UnrestrictedOnly | По умолчанию | Всегда |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
 | Подключение к WiFi                                                                                                                 | Разрешить            | Разрешить   | Разрешить  |
 | Лимитное подключение, не в роуминге, лимит данных не достигнут, настроен на отслеживание расходов по тарифному плану                                                   | Запретить             | Разрешить   | Разрешить  |
@@ -60,7 +60,7 @@ ms.locfileid: "66371417"
 ### <a name="uploading-a-single-file"></a>Отправка одного файла
 Создание отправки начинается с [**BackgroundUploader**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundUploader). Этот класс используется для предоставления методов, которые позволяют приложению настраивать параметры отправки перед созданием итоговой операции [**UploadOperation**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation). В следующем примере показано, как это сделать с необходимыми объектами [**Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) и [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile).
 
-**Определение файла и место назначения для отправки**
+**Определение файла и места назначения отправки**
 
 Прежде чем приступить к созданию [**UploadOperation**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation), нужно определить URI местоположения отправки и файл, который будет отправлен. В следующем примере значение *uriString* заполняется строкой, введенной в пользовательском интерфейсе, а значение *file* определяется объектом [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile), возвращенным в результате операции [**PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync).
 
@@ -85,7 +85,7 @@ promise = upload.startAsync().then(complete, error, progress);
 За вызовом асинхронного метода следует оператор "then", указывающий определенные приложением методы, которые вызываются при возврате результата из асинхронного метода. Подробнее об этой технике программирования см. в разделе об [асинхронном программировании на JavaScript с использованием объектов Promise](https://docs.microsoft.com/previous-versions/windows).
 
 ### <a name="uploading-multiple-files"></a>Отправка нескольких файлов
-**Определение файлов и место назначения для отправки**
+**Определение файлов и места назначения для отправки**
 
 В сценарии, включающем несколько файлов, передаваемых в одной операции [**UploadOperation**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation), процесс начинается обычным способом, указывая необходимый универсальный код ресурса (URI) назначения и сведения о локальном файле. Аналогично примеру из предыдущего раздела, универсальный код ресурса (URI) предоставляется в виде строки пользователем. [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) можно использовать для указания файлов также через пользовательский интерфейс. Однако в этом сценарии приложение должно вызвать метод [**PickMultipleFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync), чтобы разрешить выбор нескольких файлов через пользовательский интерфейс.
 
@@ -110,7 +110,7 @@ function uploadFiles() {
     }
 ```
 
-**Создание объектов для указанных параметров**
+**Создание объектов на основе предоставленных параметров**
 
 В следующих двух примерах используется один метод из примера, **startMultipart**, который вызывался в конце последнего этапа. В целях обучения код в методе, создающем массив объектов [**BackgroundTransferContentPart**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart), отделен от кода, создающего итоговую операцию [**UploadOperation**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation).
 
@@ -130,7 +130,7 @@ function uploadFiles() {
             });
 ```
 
-**Создание и инициализация составной операции**
+**Создание и инициализация операции отправки, состоящей из нескольких этапов**
 
 Когда наш массив contentParts заполнен всеми объектами [**BackgroundTransferContentPart**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart), каждый из которых представляет [**IStorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageFile) для отправки, мы готовы вызвать [**CreateUploadAsync**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounduploader.createuploadasync), используя [**Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) для указания, куда будет направлен запрос.
 
@@ -199,7 +199,7 @@ promise = download.startAsync().then(complete, error, progress);
 1.  Теперь вы можете использовать заполненный список для перезапуска невыполненных операций.
 
 ## <a name="post-processing"></a>Постобработка
-Это новая функция в Windows 10 является возможность запускать код приложения при завершении фоновая передача даже в том случае, когда приложение не выполняется. Например, приложению может потребоваться обновление списка доступных фильмов после завершения скачивания фильма, вместо того, чтобы ваше приложение искало новые фильмы при каждом запуске. Или приложению может потребоваться обработка неудачной передачи файла путем повторения попытки использовать другой сервер или порт. Постобработка вызывается как для успешных, так и для неудачных передач, чтобы ее можно было использовать для реализации логики повтора и пользовательской обработки ошибок.
+Новая функция в Windows 10 — возможность выполнения кода приложения по завершении фоновой передачи данных, даже когда приложение не запущено. Например, приложению может потребоваться обновление списка доступных фильмов после завершения скачивания фильма, вместо того, чтобы ваше приложение искало новые фильмы при каждом запуске. Или приложению может потребоваться обработка неудачной передачи файла путем повторения попытки использовать другой сервер или порт. Постобработка вызывается как для успешных, так и для неудачных передач, чтобы ее можно было использовать для реализации логики повтора и пользовательской обработки ошибок.
 
 Постобработка использует существующую инфраструктуру фоновой задачи. Вы создадите фоновую задачу и свяжете ее с передачами перед началом передачи. Передачи затем выполняются в фоновом режиме и после выполнения ваша фоновая задача вызывается для постобработки.
 
@@ -260,7 +260,7 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 
 -   Если подключение установлено, любой HTTP-запрос отменяется при отсутствии ответа в течение двух минут.
 
-> **Примечание**  в любом случае при условии, что имеется подключение к Интернету, фоновой передачи будет повторять запрос до трех раз автоматически. Если подключение к Интернету не было обнаружено, дополнительные запросы будут ожидать его обнаружения.
+> **Примечание.**   В этих сценариях при подключении к Интернету функция передачи данных в фоновом режиме автоматически повторит отправку запроса до трех раз. Если подключение к Интернету не было обнаружено, дополнительные запросы будут ожидать его обнаружения.
 
 ## <a name="debugging-guidance"></a>Руководство по отладке
 Остановка сеанса отладки в Microsoft Visual Studio сопоставима с закрытием приложения: отправки PUT при этом приостанавливаются, а отправки POST завершаются. Даже в процессе отладки ваше приложение должно перечислить, а затем перезапустить или отменить любые оставшиеся отправки. Например, можно сделать так, чтобы приложение отменяло перечисленные сохранившиеся операции отправки при запуске приложения, если предыдущие операции не имеют значения для данного сеанса отладки.
@@ -282,7 +282,7 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 ## <a name="exceptions-in-windowsnetworkingbackgroundtransfer"></a>Исключения в Windows.Networking.BackgroundTransfer
 Исключение создается, если конструктору для объекта [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) передается неправильная строка универсального кода ресурса (URI).
 
-**.NET:** [ **Windows.Foundation.Uri** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) тип отображается как [ **System.Uri** ](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) в C# и Visual Basic.
+**.NET:** тип [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) отображается в C# и VB как [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN).
 
 В C# и Visual Basic можно избежать этой ошибки, используя класс [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) из платформы .NET 4.5 и один из методов [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate?redirectedfrom=MSDN#overloads), чтобы перед составлением URI проверить строку, полученную от пользователя приложения.
 
@@ -292,7 +292,7 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 
 Ошибка, обнаруженная в асинхронном методе в пространстве имен [**Windows.Networking.backgroundTransfer**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer), возвращается в виде значения **HRESULT**. Метод [**BackgroundTransferError.GetStatus**](https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgroundtransfererror.getstatus) преобразует сетевую ошибку, произошедшую в операции фоновой передачи, в значение перечисления [**WebErrorStatus**](https://docs.microsoft.com/uwp/api/Windows.Web.WebErrorStatus). Большинство значений перечисления **WebErrorStatus** соответствуют ошибке, возвращаемой стандартной операцией клиента HTTP или FTP. Приложение может фильтровать полученные данные по определенному значению перечисления **WebErrorStatus**, чтобы по-разному действовать в зависимости от причины исключения.
 
-Для ошибок при проверке параметров приложение может использовать также **HRESULT** из исключения, чтобы получить более подробные сведения об ошибке, которая вызвала исключение. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Для большинства ошибок проверки параметра **HRESULT** возвращаемый **E\_INVALIDARG**.
+Для ошибок при проверке параметров приложение может использовать также **HRESULT** из исключения, чтобы получить более подробные сведения об ошибке, которая вызвала исключение. Возможные значения **HRESULT** перечислены в файле заголовка *Winerror.h*. Для многих ошибок при проверке параметров **HRESULT** возвращает значение **E\_INVALIDARG**.
 
 ## <a name="important-apis"></a>Важные API
 * [**Windows.Networking.BackgroundTransfer**](/uwp/api/windows.networking.backgroundtransfer)

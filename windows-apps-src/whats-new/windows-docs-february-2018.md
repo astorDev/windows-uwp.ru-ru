@@ -1,18 +1,18 @@
 ---
-title: Что нового в документации Windows в феврале 2018 г. — разработка приложений UWP
-description: Новые возможности, видео и руководства для разработчиков добавлены в документацию для разработчиков Windows 10 в феврале 2018 г.
-keywords: новые возможности, обновления, компоненты, руководство разработчика, Windows 10, февраль
+title: Пополнение документации Windows в феврале 2018 г. — разработка приложений UWP
+description: Новые возможности, видео и руководства для разработчиков добавлены в документацию для разработчиков Windows 10 в феврале 2018 г.
+keywords: what's new, update, features, developer guidance, Windows 10, february
 ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632869"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63780329"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Что нового в документации для разработчиков Windows в феврале 2018 г.
+# <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Пополнение документации для разработчиков Windows в феврале 2018 г.
 
 Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. В январе стали доступны следующие обзоры функций, руководства для разработчиков и видео, содержащие новые и обновленные сведения для разработчиков Windows.
 
@@ -25,52 +25,52 @@ ms.locfileid: "57632869"
 
 Дополните свое приложение адаптивными и интерактивными уведомлениями. Начните с нашего [обновленного руководства по всплывающим уведомлениям](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) и изучите новую информацию по ограничениям размера изображения, индикаторам выполнения и добавлению вариантов входных данных.
 
-[Пользовательские отметки времени](../design/shell/tiles-and-notifications/custom-timestamps-on-toasts.md), [Пользовательское аудио](../design/shell/tiles-and-notifications/custom-audio-on-toasts.md) и [Индикаторы выполнения](../design/shell/tiles-and-notifications/toast-progress-bar.md) позволяют выполнить дополнительную настройку всплывающих уведомлений
+[Пользовательские отметки времени](../design/shell/tiles-and-notifications/custom-timestamps-on-toasts.md), [Пользовательское аудио](../design/shell/tiles-and-notifications/custom-audio-on-toasts.md) и [Индикаторы выполнения](../design/shell/tiles-and-notifications/toast-progress-bar.md) расширяют возможности настройки всплывающих уведомлений.
 
-Расширяйте использование уведомлений на устройствах пользователей, используя [Зеркальное отображение уведомлений](../design/shell/tiles-and-notifications/notification-mirroring.md) и [Универсальное закрытие](../design/shell/tiles-and-notifications/universal-dismiss.md).
+Расширяйте использование уведомлений на устройствах пользователей, используя [зеркальное отображение уведомлений](../design/shell/tiles-and-notifications/notification-mirroring.md) и [универсальное закрытие](../design/shell/tiles-and-notifications/universal-dismiss.md).
 
-Группируйте и организуйте уведомления с помощью параметров [Заголовки всплывающих уведомлений](../design/shell/tiles-and-notifications/toast-headers.md) и [Активация ожидающего установки обновления](../design/shell/tiles-and-notifications/toast-pending-update.md).
+Группируйте и организуйте уведомления с помощью [заголовков всплывающих уведомлений](../design/shell/tiles-and-notifications/toast-headers.md) и [активации ожидающего установки обновления](../design/shell/tiles-and-notifications/toast-pending-update.md).
 
 ![Активация ожидающего установки обновления в действии](../design/shell/tiles-and-notifications/images/toast-pendingupdate.gif)
 
 ### <a name="page-layouts-with-xaml"></a>Макеты страниц с использованием XAML
 
-Мы обновили документы [Макет страницы XAML](../design/layout/layouts-with-xaml.md), добавив новую информацию о гибких макетах и визуальных состояниях. Эти новые средства обеспечивают более полный контроль над тем, как положение элементов в приложении реагирует и адаптируется к доступному видимому пространству.
+Мы обновили документацию [о макете страницы XAML](../design/layout/layouts-with-xaml.md), добавив новую информацию о гибких макетах и визуальных состояниях. Эти новые возможности обеспечивают более полный контроль над тем, как изменяется положение элементов в приложении в зависимости от доступного видимого пространства.
 
 ![Поля и заполнение в макетах страниц XAML](../design/layout/images/xaml-layout-margins-padding.png)
 
 ### <a name="subscription-add-ons-are-now-available-to-all-developers"></a>Надстройки с подпиской теперь доступны всем разработчикам
 
-Создавайте и публикуйте надстройки с подпиской, чтобы продавать цифровые продукты в приложениях и играх (функции приложений и цифровое содержимое) с автоматическими периодами повторного выставления счетов. Дополнительные сведения см. в разделе [Включение надстроек с подпиской для вашего приложения](../monetize/enable-subscription-add-ons-for-your-app.md).
+Создавайте и публикуйте надстройки с подпиской, чтобы продавать цифровые продукты в приложениях и играх (функции приложений или цифровое содержимое) с автоматическим периодическим выставлением счетов. Подробные сведения см. в статье [Enable subscription add-ons for your app](../monetize/enable-subscription-add-ons-for-your-app.md) (Включение надстроек с подпиской для вашего приложения).
 
 ## <a name="developer-guidance"></a>Руководство для разработчиков
 
 ### <a name="design-basics"></a>Основы оформления
 
-[Вводные сведения о проектировании приложений UWP](../design/basics/design-and-ui-intro.md) были дополнены новыми наглядными примерами. Обзор функций универсального проектирования в каждом приложении UWP показывает, как использовать возможности системы проектирования Fluent Design на практике.
+Статья [Introduction to UWP app design](../design/basics/design-and-ui-intro.md) (Введение в проектирование приложений UWP) была дополнена новыми наглядными примерами. В обзоре функций универсального проектирования в каждом приложении UWP описывается, как использовать возможности системы проектирования Fluent Design на практике.
 
-Мы добавили демонстрацию распространенных шаблонов страницы в раздел [Основы проектирования содержимого](../design/basics/content-basics.md) и привели ряд примеров, как можно отображать разные типы содержимого в приложении.
+Мы добавили демонстрацию распространенных шаблонов страниц в статью [Content design basics for UWP apps](../design/basics/content-basics.md) (Основы проектирования содержимого для приложений UWP) и привели ряд примеров, как можно отображать разные типы содержимого в приложении.
 
 ![Иллюстрация шаблона центральной страницы](../design/basics/images/hub.png)
 
 ### <a name="writing-style"></a>Стиль письма
 
-Мы обновили и расширили статью о голосе и тоне, превратив ее в [Руководство по стилю письма](../design/style/writing-style.md). В нем содержится новая информация о принципах создания эффективного текста в приложении и даются рекомендации на основе передовых практик по составлению элементов управления (сообщений об ошибках и диалоговых окон).
+Мы обновили и расширили статью о голосе и тоне, превратив ее в [руководство по стилю письма](../design/style/writing-style.md). В нем содержится новая информация о принципах создания эффективного текста в приложении и даются рекомендации по составлению элементов управления (сообщений об ошибках и диалоговых окон).
 
 ### <a name="getting-started-for-game-development"></a>Начало разработки игр
 
-Хотите разрабатывать игры для Windows 10? На новой странице [Начало разработки игр](../gaming/getting-started.md) приводится полный обзор действий по настройке, регистрации и подготовке игр и приложений к отправке.
+Хотите разрабатывать игры для Windows 10? На новой странице [Начало разработки игр](../gaming/getting-started.md) приводится полный обзор действий по настройке, регистрации и подготовке игр и приложений к отправке.
 
 ## <a name="videos"></a>Видео
 
 ### <a name="xbox-live-creators-program"></a>Программа Xbox Live Creators Program
 
-Программа Xbox Live Creators Program позволяет разработчикам быстро публиковать игры UWP в Xbox One и Windows 10. [Посмотрите видео](https://www.youtube.com/watch?v=zpFfHHBkVq4), чтобы узнать об этой программе, а затем [проверьте эту страницу](https://www.xbox.com/developers/creators-program), чтобы начать.
+Программа Xbox Live Creators Program позволяет разработчикам без задержек публиковать игры UWP для Xbox One и Windows 10. [Посмотрите видео](https://www.youtube.com/watch?v=zpFfHHBkVq4), чтобы узнать больше об этой программе, а затем [перейдите на эту страницу](https://www.xbox.com/developers/creators-program), чтобы начать.
 
-### <a name="creating-3d-app-launchers-for-windows-mixed-reality"></a>Создание средства запуска трехмерных приложений для Windows Mixed Reality
+### <a name="creating-3d-app-launchers-for-windows-mixed-reality"></a>Создание средств запуска трехмерных приложений для Windows Mixed Reality
 
-Средства запуска трехмерных приложений — это уникальный способ, с помощью которого пользователи могут насладиться объемным представлением вашего приложения в своей домашней среде Mixed Reality. [Посмотрите это видео](https://www.youtube.com/watch?v=TxIslHsEXno), чтобы узнать, как подготовить трехмерную модель и назначить ее в качестве средства запуска вашего приложения, а затем [ознакомьтесь с документацией для разработчика](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers) и [изучите наши рекомендации по проектированию](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance) для получения дополнительных сведений.
+Средства запуска трехмерных приложений предоставляют пользователям уникальную возможность насладиться объемным представлением вашего приложения в своей домашней среде Mixed Reality. [Посмотрите это видео](https://www.youtube.com/watch?v=TxIslHsEXno), чтобы узнать, как подготовить трехмерную модель и назначить ее в качестве средства запуска вашего приложения, а затем [изучите документацию для разработчиков](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers) и [наши рекомендации по проектированию](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance).
 
 ### <a name="motion-controller-tracking"></a>Отслеживание контроллера движений
 
-Контроллеры движений в Windows Mixed Reality представляют руки пользователя. [Посмотрите это видео](https://www.youtube.com/watch?v=rkDpRllbLII), чтобы узнать, как работают контроллеры движения в поле зрения гарнитуры смешанной реальности и вне поля зрения, а также [узнайте больше об отслеживании контроллера здесь.](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D)
+Контроллеры движений в Windows Mixed Reality представляют руки пользователя. [Посмотрите это видео](https://www.youtube.com/watch?v=rkDpRllbLII), чтобы узнать, как работают контроллеры движения в поле зрения гарнитуры смешанной реальности и вне его, а также [узнайте больше об отслеживании контроллера](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D).

@@ -1,20 +1,20 @@
 ---
-description: Сокеты — это технология передачи данных низкого уровня, на основе которой реализованы многие сетевые протоколы. UWP предоставляет классы сокетов TCP и UDP для клиент-серверных или одноранговых приложений, если устанавливаются долгосрочные подключения или установленное подключение не требуется.
+description: Сокеты — это технология передачи данных низкого уровня, на основе которой реализованы многие сетевые протоколы. UWP предоставляет классы сокетов TCP и UDP для клиент-серверных или одноранговых приложений, если устанавливаются долгосрочные подключения или установленное подключение не требуется.
 title: Сокеты
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.date: 06/03/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8278e02de4d0f9a0efa301051a57bf59bce8d520
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363303"
 ---
 # <a name="sockets"></a>Сокеты
-Сокеты — это технология передачи данных низкого уровня, на основе которой реализованы многие сетевые протоколы. UWP предоставляет классы сокетов TCP и UDP для клиент-серверных или одноранговых приложений, если устанавливаются долгосрочные подключения или установленное подключение не требуется.
+Сокеты — это технология передачи данных низкого уровня, на основе которой реализованы многие сетевые протоколы. UWP предоставляет классы сокетов TCP и UDP для клиент-серверных или одноранговых приложений, если устанавливаются долгосрочные подключения или установленное подключение не требуется.
 
 В этом разделе основное внимание уделяется использованию классов сокетов универсальной платформы Windows (UWP), которые находятся в пространстве имен [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets). Кроме того, [сокеты Windows 2 (WinSock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2) можно использовать в приложении UWP.
 
@@ -22,19 +22,19 @@ ms.locfileid: "66363303"
 > Как последствие [сетевой изоляции](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)) WIndows запрещает установку подключения сокета (Sockets или WinSock) между двумя приложениями UWP, работающими на одном компьютере, через локальный петлевой адрес (127.0.0.0) либо путем явного указания локального IP-адреса. Дополнительные сведения о механизмах, с помощью которых приложения UWP могут взаимодействовать друг с другом, см. в разделе [Связь между приложениями](/windows/uwp/app-to-app/index).
 
 ## <a name="build-a-basic-tcp-socket-client-and-server"></a>Создание базового клиента и сервера сокета TCP
-Для постоянных подключений сокет протокола TCP обеспечивает в сети низкоуровневую двунаправленную передачу данных. Сокеты TCP широко используются большинством сетевых протоколов в Интернете. Чтобы продемонстрировать базовые операции TCP, пример кода ниже показывает отправку и получение данных объектами [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) и [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) через TCP с целью формирования эхо-клиента и сервера.
+Для постоянных подключений сокет протокола TCP обеспечивает в сети низкоуровневую двунаправленную передачу данных. Сокеты TCP широко используются большинством сетевых протоколов в Интернете. Чтобы продемонстрировать базовые операции TCP, в следующем примере кода реализованы отправка и получение данных через TCP объектами [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) и [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener), на основе которых создаются эхо-клиент и сервер.
 
-Чтобы начать с минимального количества составляющих&mdash;и обойти на данный момент программы сетевой изоляции,&mdash;создайте новый проект и поместите код клиента и код сервера (см. ниже) в один проект.
+Чтобы начать с минимального количества составляющих (и пока не затрагивать проблемы сетевой изоляции), создайте новый проект и поместите код клиента и код сервера (см. ниже) в один проект.
 
-Потребуется [объявить возможность приложения](../packaging/app-capability-declarations.md) в своем проекте. Откройте исходный файл манифеста пакета приложения (файл `Package.appxmanifest`) и на вкладке "Возможности" проверьте **Частные сети (клиент и сервер)** . Вот как это выглядит в разметке `Package.appxmanifest`.
+Потребуется [объявить возможность приложения](../packaging/app-capability-declarations.md) в своем проекте. Откройте исходный файл манифеста пакета приложения (файл `Package.appxmanifest`) и на вкладке "Возможности" установите флажок **Частные сети (клиент и сервер)** . Вот как это выглядит в разметке `Package.appxmanifest`.
 
 ```xml
 <Capability Name="privateNetworkClientServer" />
 ```
 
-Вместо `privateNetworkClientServer` можно объявить `internetClientServer`, если подключение осуществляется по Интернету. И **StreamSocket**, и **StreamSocketListener** необходимо, чтобы была объявлена какая-либо из этих возможностей приложения.
+Вместо `privateNetworkClientServer` можно объявить `internetClientServer`, если подключение осуществляется по Интернету. И **StreamSocket**, и **StreamSocketListener** требуют, чтобы была объявлена одна из этих возможностей приложения.
 
-### <a name="an-echo-client-and-server-using-tcp-sockets"></a>Создание эхо-клиента и эко-сервера с использованием сокетов TCP
+### <a name="an-echo-client-and-server-using-tcp-sockets"></a>Эхо-клиент и сервер на основе сокетов TCP
 Создайте [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) и начните слушать входящие подключения TCP. Событие [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) создается всякий раз, когда клиент устанавливает подключение к прослушивателю **StreamSocketListener**.
 
 Кроме того, создайте сокет [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket), установите подключение к серверу, отправьте запрос и получите ответ.
@@ -505,7 +505,7 @@ private:
 > [!NOTE]
 > Это неприменимо в случае использования сопрограмм C++/WinRT и передачи параметров по значению. Рекомендации по передаче параметров см. в разделе [Параллельная обработка и асинхронные операции с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing).
 
-[  **StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) остается активным, пока в его потоке ввода/вывода выполняются активные операции чтения/записи (рассмотрим для примера [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket), доступ к которому осуществляется в обработчике событий [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived)). При вызове [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (или `ReadAsync/WriteAsync/StoreAsync`) он хранит ссылку на сокет (через поток ввода сокета) до тех пор, пока обработчик событий **Completed** (при наличии) метода **LoadAsync** не завершит выполнение.
+[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) остается активным, пока в его потоке ввода/вывода выполняются активные операции чтения/записи (рассмотрим для примера [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket), доступ к которому осуществляется в обработчике событий [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived)). При вызове [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (или `ReadAsync/WriteAsync/StoreAsync`) он хранит ссылку на сокет (через поток ввода сокета) до тех пор, пока обработчик событий **Completed** (при наличии) метода **LoadAsync** не завершит выполнение.
 
 Библиотека параллельных шаблонов (PPL) не планирует встроенное продолжение задач по умолчанию. Другими словами, добавление задачи продолжения (с `task::then()`) не гарантирует, что задача продолжения будет выполняться во встроенном режиме в качестве завершающего обработчика.
 
@@ -521,9 +521,9 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-С точки зрения **StreamSocket** завершающий обработчик завершит выполнение (и сокет станет готовым к ликвидации) до запуска основной части продолжения. Таким образом, чтобы предотвратить удаление сокета, если вы хотите использовать его в этом продолжении, необходимо ссылаться на сокет напрямую (через захват лямбда-функции) и использовать его, или косвенно (продолжая осуществлять доступ к `args->Socket` внутри продолжения), или обеспечить принудительное выполнение задач продолжения в коде. Увидеть первую технику в действии (захват лямбда-функции) можно в примере [StreamSocket](https://go.microsoft.com/fwlink/p/?LinkId=620609). Код C++/CX в разделе [Создание базового клиента и сервера TCP-сокета](#build-a-basic-tcp-socket-client-and-server) выше использует второй способ — он выводит запрос обратно в качестве ответа и осуществляет доступ к `args->Socket` из одного из продолжений самого глубокого уровня.
+С точки зрения **StreamSocket** завершающий обработчик завершит выполнение (и сокет станет готовым к ликвидации) до запуска основной части продолжения. Таким образом, чтобы предотвратить удаление сокета, если вы хотите использовать его в этом продолжении, необходимо ссылаться на сокет напрямую (через захват лямбда-функции) и использовать его, или косвенно (продолжая осуществлять доступ к `args->Socket` внутри продолжения), или обеспечить принудительное выполнение задач продолжения в коде. Эту первую технику можно наблюдать в действии (захват лямбда-функции) в [примере StreamSocket](https://go.microsoft.com/fwlink/p/?LinkId=620609). Код C++/CX в разделе [Создание базового клиента и сервера TCP-сокета](#build-a-basic-tcp-socket-client-and-server) выше использует второй способ. Он возвращает запрос в качестве ответа и осуществляет доступ к `args->Socket` из одного из продолжений самого глубокого уровня.
 
-Третий способ подходит в тех случаях, когда ответ не выводится обратно. Параметр `task_continuation_context::use_synchronous_execution()` используется для принудительного выполнения основной части продолжения внутри PPL. Вот пример кода, показывающий, как это сделать.
+Третий способ подходит в тех случаях, когда не нужно выводить ответ. Параметр `task_continuation_context::use_synchronous_execution()` используется для принудительного выполнения основной части продолжения внутри PPL. Этот пример кода демонстрирует, как это сделать.
 
 ```cpp
 void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::StreamSocketListener^ sender, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs^ args)
@@ -550,15 +550,15 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-Это поведение применяется ко всем сокетам и классам WebSockets в пространстве имен [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live). Однако в клиентских сценариях сокеты, как правило, сохраняются в переменных-членах, так что эта проблема наиболее актуальна для сценария [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived), как показано выше.
+Это поведение применяется ко всем сокетам и классам WebSockets в пространстве имен [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live). Но для сценариев на стороне клиента сокеты обычно сохраняются в переменных-членах, так что эта проблема наиболее применима для сценария [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived), как описано выше.
 
-## <a name="build-a-basic-udp-socket-client-and-server"></a>Создание базового клиента и сервера сокета UDP
-Сокет протокола UDP схож с сокетом TCP в том плане, что он обеспечивает низкоуровневую передачу данных по сети в любом направлении. Однако если сокет TCP подходит для постоянных подключений, сокет UDP подходит для сценариев, где установленное подключение не требуется. Поскольку сокеты UDP не поддерживают соединение на обеих конечных точках, они предоставляют быстрый и простой способ сетевого подключения между удаленными компьютерами. Однако сокеты UDP не обеспечивают целостность сетевых пакетов или их передачу удаленному адресату. Поэтому необходимо создать приложение с учетом этой особенности. Примеры приложений, использующих сокеты UDP: локальные клиенты обнаружения сети и локальные клиенты чатов.
+## <a name="build-a-basic-udp-socket-client-and-server"></a>Создание простейших клиента и сервера для UDP-сокетов
+Сокет протокола UDP схож с сокетом TCP в том плане, что он обеспечивает низкоуровневую передачу данных по сети в любом направлении. Однако если сокет TCP подходит для постоянных подключений, сокет UDP подходит для сценариев, где установленное подключение не требуется. Поскольку сокеты UDP не поддерживают соединение на обеих конечных точках, они предоставляют быстрый и простой способ сетевого подключения между удаленными компьютерами. Однако сокеты UDP не гарантируют целостность сетевых пакетов и даже их передачу удаленному адресату. Поэтому необходимо учитывать это в приложении. Примеры приложений, использующих сокеты UDP: локальные клиенты обнаружения сети и локальные клиенты чатов.
 
-Чтобы продемонстрировать базовые операции UDP, пример кода ниже показывает класс [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket), который используется для отправки и получения данных через UDP с целью формирования эхо-клиента и сервера. Создайте новый проект и поместите код клиента и сервера ниже в один проект. Как и в случае с сокетом TCP, необходимо объявить возможность приложения **Частные сети (клиент и сервер)** .
+Чтобы продемонстрировать базовые операции UDP, пример кода ниже показывает класс [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket), который используется для отправки и получения данных через UDP с целью формирования эхо-клиента и сервера. Создайте новый проект и поместите представленный ниже код клиента и сервера в один проект. Как и в случае с сокетом TCP, необходимо объявить возможность приложения **Частные сети (клиент и сервер)** .
 
 ### <a name="an-echo-client-and-server-using-udp-sockets"></a>Создание эхо-клиента и эко-сервера с использованием сокетов UDP
-Создайте сокет [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket), который будет выполнять роль эхо-сервера, привяжите его к определенному номеру порта, слушайте входящее сообщение UDP и передайте его обратно. Событие [**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived) создается, когда сокет получает сообщение.
+Создайте сокет [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket), который будет выполнять роль эхо-сервера, привяжите его к определенному номеру порта, получите входящее сообщение UDP и передайте его обратно. Событие [**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived) создается, когда сокет получает сообщение.
 
 Создайте другой сокет **DatagramSocket**, который будет выполнять роль эхо-клиента, привяжите его к определенному номеру порта, отправьте сообщение UDP и получите ответ.
 
@@ -997,14 +997,14 @@ private:
 ```
 
 ## <a name="background-operations-and-the-socket-broker"></a>Фоновые операции и посредник сокета
-Можно использовать посредник сокетов и контролировать триггеры канала, чтобы убедиться, что приложение должным образом получает подключения или данные в сокетах, не находясь на переднем плане. Дополнительные сведения см. в разделе [Сетевые подключения в фоновом режиме](network-communications-in-the-background.md).
+Можно использовать посредник сокетов и контролировать триггеры канала, чтобы убедиться, что приложение должным образом получает подключения или данные в сокетах, не находясь на переднем плане. Дополнительные сведения см. в статье [о сетевом взаимодействии в фоновом режиме](network-communications-in-the-background.md).
 
 ## <a name="batched-sends"></a>Пакетные отправки
-Всякий раз когда вы выполняете запись в поток, связанный с сокетом, происходит переход из режима пользователя (вашего кода) в режим ядра (где хранится сетевой стек). Если записывается много буферов одновременно, повторяющиеся переходы создают значительную нагрузку. Создание пакетов для отправки — способ отправлять несколько буферов данных одновременно, избегая такой нагрузки. Это особенно полезно, если ваше приложение выполняет VoIP, VPN или другие задачи, предполагающие максимально эффективное перемещение больших объемов данных.
+Каждый раз, когда вы выполняется запись в поток, связанный с сокетом, происходит переход из режима пользователя (обычный код) в режим ядра (где работает сетевой стек). Если записывается много буферов одновременно, повторяющиеся переходы создают значительную нагрузку. Чтобы отправлять несколько буферов данных одновременно, избегая такой нагрузки, можно собирать отправляемые данные в пакеты. Это особенно полезно, если ваше приложение поддерживает VoIP, VPN или другие задачи, предполагающие максимально эффективное перемещение больших объемов данных.
 
 В этом разделе показано несколько техник пакетных отправок, которые можно использовать с сокетом [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) или подключенным сокетом [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket).
 
-Чтобы получить общее представление о процессе, рассмотрим, как эффективно отправить большое число буферов. Вот минимальная демонстрация, в которой используется **StreamSocket** .
+Чтобы получить общее представление о процессе, рассмотрим, как эффективно отправить большое число буферов. Вот минимальная демонстрация, в которой используется **StreamSocket**.
 
 ```csharp
 protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -1179,7 +1179,7 @@ private:
     }
 ```
 
-Первый пример использования этой более эффективной техники подходит, только если вы используете C#. Измените `OnNavigatedTo`, чтобы вызвать `BatchedSendsCSharpOnly` вместо `SendMultipleBuffersInefficiently` или `SendMultipleBuffersInefficientlyAsync`.
+Первый пример использует более эффективную технику, но подходит только для C#. Измените `OnNavigatedTo`, чтобы вызвать `BatchedSendsCSharpOnly` вместо `SendMultipleBuffersInefficiently` или `SendMultipleBuffersInefficientlyAsync`.
 
 ```csharp
 // A C#-only technique for batched sends.
@@ -1202,7 +1202,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-Следующий пример подходит для любого языка UWP, не только C#. В его основе — поведение потоков [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) и [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream), объединяющих отправки. Этот метод вызывает [ **FlushAsync** ](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) в этом потоке выходных данных, который, начиная с Windows 10, гарантируется получение результатов только после завершения всех операций в выходной поток.
+Следующий пример подходит для любого языка UWP, а не только для C#. В его основе — поведение потоков [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) и [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream), объединяющих отправки. Эта техника вызывает метод [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) в потоке вывода, который начиная с Windows 10 гарантированно возвращается только после того, как все операции потока вывода завершены.
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -1276,14 +1276,14 @@ private:
 
 -   Вы не можете изменять содержимое экземпляров **IBuffer**, написанных до завершения асинхронной записи.
 -   Шаблон **FlushAsync** работает только на **StreamSocket.OutputStream** и **DatagramSocket.OutputStream**.
--   **FlushAsync** шаблон работает только в Windows 10 и позже.
+-   Шаблон **FlushAsync** работает только в Windows 10 и более поздних версиях.
 -   В других случаях следует использовать [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) вместо шаблона **FlushAsync**.
 
 ## <a name="port-sharing-for-datagramsocket"></a>Совместное использование порта для DatagramSocket
 Можно настроить сокет [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) для совместного существования с другими многоадресными сокетами Win32 или UWP, связанными с тем же адресом/портом. Для этого необходимо задать для [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) значение `true`, прежде чем привязывать или подключать сокет. Доступ к экземпляру **DatagramSocketControl** осуществляется из объекта **DatagramSocket** через свойство [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control).
 
 ## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>Предоставление сертификата клиента с классом StreamSocket
-[**StreamSocket** ](/uwp/api/Windows.Networking.Sockets.StreamSocket) поддерживает использование проверки подлинности сервера, который клиентское приложение обращается к SSL/TLS. В определенных случаях клиентское приложение также должно пройти проверку подлинности на сервере с помощью сертификата клиента SSL/TLS. Можно предоставить клиентский сертификат со свойством [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate), прежде чем привязывать или подключать сокет (его необходимо задать до начала подтверждения протокола SSL/TLS). Доступ к экземпляру **StreamSocketControl** осуществляется из объекта **StreamSocket** через свойство [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control). Если сервер запрашивает сертификат клиента, Windows ответит, воспользовавшись предоставленным клиентским сертификатом.
+Класс [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) поддерживает возможность использования протокола SSL/TLS для проверки подлинности сервера, к которому обращается клиентское приложение. В некоторых случаях клиентское приложение также должно пройти проверку подлинности на сервере с помощью сертификата клиента SSL/TLS. Можно предоставить клиентский сертификат со свойством [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate), прежде чем привязывать или подключать сокет (его необходимо задать до начала подтверждения протокола SSL/TLS). Доступ к экземпляру **StreamSocketControl** осуществляется из объекта **StreamSocket** через свойство [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control). Если сервер запрашивает сертификат клиента, Windows ответит, воспользовавшись предоставленным клиентским сертификатом.
 
 Используйте переопределение метода [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync), которое принимает значение [**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel), как показано в примере минимального кода.
 
@@ -1346,9 +1346,9 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 
 Большинство значений перечисления **SocketErrorStatus** соответствуют ошибке, возвращаемой стандартной операцией с сокетами Windows. Ваше приложение может включать значения перечисления **SocketErrorStatus**, чтобы по-разному действовать в зависимости от причины исключения.
 
-Для ошибок при проверке параметров можно использовать также **HRESULT** из исключения, чтобы получить более подробные сведения об ошибке. Возможные значения **HRESULT** перечислены в `Winerror.h`, который находится в вашей установке SDK (например, в папке `C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared`). Для многих ошибок при проверке параметров возвращаемым **HRESULT** является **E_INVALIDARG**.
+Для ошибок при проверке параметров можно использовать также значение **HRESULT** из исключения, чтобы получить подробные сведения об ошибке. Возможные значения **HRESULT** перечислены в `Winerror.h`, который находится в вашей установке SDK (например, в папке `C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared`). Для многих ошибок при проверке параметров **HRESULT** возвращает значение **E\_INVALIDARG**.
 
-Конструктор [**HostName**](/uwp/api/Windows.Networking.HostName) может создать исключение, если переданная строка не является допустимым именем узла. Например, он содержит недопустимые символы, что вероятно, если имя узла вводится в приложении пользователем. Создайте **HostName** внутри блока try/catch. Так если вызывается исключение, приложение может уведомить об этом пользователя и запросить новое имя узла.
+Конструктор [**HostName**](/uwp/api/Windows.Networking.HostName) может создать исключение, если переданная строка не является допустимым именем узла. Например, он содержит недопустимые символы, что вероятно, если имя узла вводится в приложении пользователем. Создайте **HostName** внутри блока try/catch. В этом случае приложение может сообщить пользователю об ошибке и запросить новое имя узла.
 
 ## <a name="important-apis"></a>Важные API
 * [CertificateQuery](/uwp/api/windows.security.cryptography.certificates.certificatequery)
@@ -1377,11 +1377,11 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 * [StreamSocketListenerConnectionReceivedEventArgs](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs)
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 * [Связь между приложениями](/windows/uwp/app-to-app/index)
-* [Параллелизм и асинхронные операции с C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [Как задать сетевые возможности](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
-* [Windows Sockets (Winsock) 2](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
+* [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [How to set network capabilities](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
+* [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## <a name="samples"></a>Примеры
-* [Пример StreamSocket](https://go.microsoft.com/fwlink/p/?LinkId=620609)
+* [StreamSocket sample](https://go.microsoft.com/fwlink/p/?LinkId=620609)
