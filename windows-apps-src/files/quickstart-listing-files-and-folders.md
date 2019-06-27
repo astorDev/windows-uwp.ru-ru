@@ -4,7 +4,7 @@ title: Перечисление и запрос файлов и папок
 description: Доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения вы также можете создавать запросы файлов и папок.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,37 +12,37 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: b561e08227664f723802ffc0ee3f0e16bc34a5cc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613929"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63810729"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Перечисление и запрос файлов и папок
 
 Доступ к файлам и папкам в таких расположениях, как папка, библиотека, устройство или расположение в сети. Для получения списка файлов и папок из расположения вы также можете создавать запросы файлов и папок.
 
-Рекомендации по сохранению данных приложения универсальной платформы Windows см. в классе [ApplicationData](/uwp/api/windows.storage.applicationdata).
+Рекомендации по сохранению данных приложения UWP приведены в классе [ApplicationData](/uwp/api/windows.storage.applicationdata).
 
 > [!NOTE]
-> Полный пример см. в разделе [пример перечисления папки](https://go.microsoft.com/fwlink/p/?linkid=619993).
+> Полный пример: [Пример перечисления папок](https://go.microsoft.com/fwlink/p/?linkid=619993).
 
 ## <a name="prerequisites"></a>Предварительные условия
 
--   **Понять асинхронного программирования для приложений универсальной платформы Windows (UWP)**
+-   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)** .
 
-    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Чтобы узнать, как написание асинхронных приложений в C + +/ WinRT, см. в разделе [параллелизма и асинхронные операции с использованием C + +/ WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). Чтобы узнать, как написание асинхронных приложений в C + +/ CX, см. в разделе [асинхронное программирование в C + +/ CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Чтобы узнать, как создавать асинхронные приложения с помощью C++/WinRT, ознакомьтесь с разделом [Параллельная обработка и асинхронные операции с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). Чтобы узнать, как создавать асинхронные приложения на C++/CX, ознакомьтесь с разделом [Асинхронное программирование на языке C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
--   **Разрешения на доступ к папке**
+-   **Права доступа к расположению**
 
     Например, коду в этих примерах требуется возможность **picturesLibrary**. Для вашего расположения может потребоваться другая возможность либо вообще не потребоваться никаких возможностей. Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](file-access-permissions.md).
 
 ## <a name="enumerate-files-and-folders-in-a-location"></a>Перечисление файлов и папок в расположении
 
 > [!NOTE]
-> Не забудьте объявить **picturesLibrary** возможностей.
+> Обязательно объявите возможность **picturesLibrary**.
 
-В этом примере мы сначала используем [ **StorageFolder.GetFilesAsync** ](/uwp/api/windows.storage.storagefolder.getfilesasync) метод для получения всех файлов в корневой папке [ **KnownFolders.PicturesLibrary** ](/uwp/api/windows.storage.knownfolders.pictureslibrary) (не в подпапках) и имя каждого файла. Далее, мы используем [ **StorageFolder.GetFoldersAsync** ](/uwp/api/windows.storage.storagefolder.getfoldersasync) метод для получения всех вложенных **PicturesLibrary** и выведите список имен каждой вложенной папки.
+В этом примере мы сначала используем метод [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync), чтобы получить все файлы в корневой папке [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (не во вложенных папках) и перечислить имена всех файлов. Далее мы используем метод [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync), чтобы получить все папки в **PicturesLibrary** и перечислить имена всех вложенных папок.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -177,7 +177,7 @@ Next folder
 > [!NOTE]
 > В языках C# или Visual Basic обязательно вставляйте ключевое слово **async** в объявления всех методов, в которых используется оператор **await**.
 
-Кроме того, можно использовать [ **StorageFolder.GetItemsAsync** ](/uwp/api/windows.storage.storagefolder.getitemsasync) метод, чтобы получить все элементы (файлы и вложенные папки) в определенном месте. В следующем примере используется **GetItemsAsync** метод для получения всех файлов и вложенных папок в корневой папке [ **KnownFolders.PicturesLibrary** ](/uwp/api/windows.storage.knownfolders.pictureslibrary) (не в подпапках). Затем в примере перечисляются имена всех файлов и вложенных папок. Если элемент является вложенной папкой, в примере к имени добавляется `"folder"`.
+Также вы можете использовать метод [**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync), чтобы получить все элементы (как файлы, так и вложенные папки) в определенном расположении. В следующем примере используется метод **GetItemsAsync** для получения всех файлов и вложенных папок в корневой папке [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (не во вложенных папках). Затем в примере перечисляются имена всех файлов и вложенных папок. Если элемент является вложенной папкой, в примере к имени добавляется `"folder"`.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -280,7 +280,7 @@ Next item
 
 ## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>Запрос файлов в расположении и перечисление соответствующих файлов
 
-В этом примере мы запрос для всех файлов в [ **KnownFolders.PicturesLibrary** ](/uwp/api/windows.storage.knownfolders.pictureslibrary) группируются по месяцам, и это время recurses пример по вложенным папкам. Сначала мы вызываем [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) и передаем значение [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) в метод. Благодаря этому получаем объект [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult).
+В этом примере мы запрашиваем все файлы в [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary), сгруппированные по месяцам, и в этот раз пример выполняет рекурсию во вложенные папки. Сначала мы вызываем [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) и передаем значение [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) в метод. Благодаря этому получаем объект [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult).
 
 Затем мы вызываем [**StorageFolderQueryResult.GetFoldersAsync**](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync), который возвращает объекты класса [**StorageFolder**](/uwp/api/windows.storage.storagefolder), представляющие виртуальные папки. В этом случае мы группируем по месяцам, поэтому каждая виртуальная папка представляет группу файлов с одинаковым месяцем.
 

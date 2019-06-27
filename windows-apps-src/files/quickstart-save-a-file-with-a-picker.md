@@ -4,13 +4,13 @@ title: Сохранение файла с помощью средства выб
 description: Чтобы дать пользователям возможность задать имя и расположение, в которое приложение должно сохранить файл, воспользуйтесь средством FileSavePicker.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c1480c17d97cb8b5e227cc44b384f13095bfd469
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369255"
 ---
 # <a name="save-a-file-with-a-picker"></a>Сохранение файла с помощью средства выбора
@@ -23,18 +23,18 @@ ms.locfileid: "66369255"
 Чтобы дать пользователям возможность задать имя и расположение, в которое они хотели бы, чтобы приложение сохранило файл, воспользуйтесь средством [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker).
 
 > [!NOTE]
-> Полный пример см. в разделе [образец средства выбора файла](https://go.microsoft.com/fwlink/p/?linkid=619994).
+> Полный пример: [пример средства выбора файлов](https://go.microsoft.com/fwlink/p/?linkid=619994).
 
  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 
--   **Понять асинхронного программирования для приложений универсальной платформы Windows (UWP)**
+-   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)** .
 
     Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
--   **Разрешения на доступ к папке**
+-   **Права доступа к расположению**
 
     См. раздел [Разрешения на доступ к файлам](file-access-permissions.md).
 
@@ -54,21 +54,21 @@ ms.locfileid: "66369255"
     savePicker.SuggestedFileName = "New Document";
     ```
 
-Задайте свойства объекта средства выбора файлов, соответствующие вашим пользователям и приложению. В этом примере задаются три свойства: [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedstartlocation), [ **FileTypeChoices** ](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.filetypechoices) и [ **предложенное название файла**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedfilename).
+Задайте свойства объекта средства выбора файлов, соответствующие вашим пользователям и приложению. В этом примере задаются три свойства: [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedstartlocation), [**FileTypeChoices**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.filetypechoices) и [**SuggestedFileName**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedfilename).
      
 - Поскольку пользователь сохраняет документ или текстовый файл, пример присваивает [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedstartlocation) локальной папке приложения с помощью [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder). Присвойте свойство [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) расположению, подходящему для типа сохраняемых файлов, например «Музыка», «Изображения», «Видео» или «Документы». Из начального расположения пользователь может перейти в другие расположения.
 
 - Чтобы убедиться, что приложение сможет открыть файл после его сохранения, мы используем [**FileTypeChoices**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.filetypechoices) для указания типов файлов, поддерживаемых примером (документы Microsoft Word и текстовые файлы). Убедитесь, что ваше приложение поддерживает все заданные типы файлов. Пользователи смогут сохранить свой файл как один из указанных типов файлов. Кроме того, они могут изменить тип файла, выбрав другой из указанных типов файлов. Первый тип файла в списке будет выбран по умолчанию. Для управления установите свойство [**DefaultFileExtension**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.defaultfileextension).
 
     > [!NOTE]
-    > Средство выбора файлов также использует тип файла, выбранного для фильтрации файлов отображается, чтобы отображались только типы файлов, которые соответствуют типам выбранных файлов для пользователя.
+    > Средство выбора файлов также использует текущий выбранный тип файла как фильтр отображения. Таким образом отображаются только типы файлов, соответствующие выбранным.
 
 - Чтобы избавить пользователя от лишней работы с клавиатурой, в примере задается [**SuggestedFileName**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedfilename). Сделайте предлагаемое имя файла подходящим для сохраняемого файла. Например, можно предложить имя существующего файла, если оно есть, или первую строку документа, если сохраняемому файлу еще не присвоено имя, как это делается в Word.
 
 > [!NOTE]
-> [**FileSavePicker** ](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) объектов отображения средства выбора файла с помощью [ **PickerViewMode.List** ](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode) режим просмотра.
+>Объекты  [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) отображают средство выбора файлов с помощью режима просмотра [**PickerViewMode.List**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode).
 
-2.  **Показать FileSavePicker и сохраните в выбранный файл**
+2.  **Отобразите FileSavePicker и сохраните выбранный файл.**
 
     Чтобы отобразить средство выбора файлов, вызовите [**PickSaveFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.picksavefileasync). После того как пользователь укажет имя, тип файла и расположение и подтвердит сохранение файла, **PickSaveFileAsync** возвратит объект [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile), представляющий сохраненный файл. Теперь когда вы получили право на чтение и запись в файл, вы можете захватить и обработать его.
 
@@ -104,4 +104,4 @@ ms.locfileid: "66369255"
 В примере проверяется допустимость файла и записывается его собственное имя. См. также [Создание, запись и чтение файла](quickstart-reading-and-writing-files.md).
 
 > [!TIP]
-> Всегда следует выполнять проверку сохраненный файл, чтобы убедиться в том, что он является допустимым, прежде чем выполнять любые операции обработки. Затем можно сохранить содержимое в файл так, как это нужно для вашего приложения, и принять соответствующие меры, если выбранный файл окажется недопустимым.
+> Следует всегда проверять сохраненный файл на допустимость, прежде чем выполнять дальнейшую обработку. Затем можно сохранить содержимое в файл так, как это нужно для вашего приложения, и принять соответствующие меры, если выбранный файл окажется недопустимым.

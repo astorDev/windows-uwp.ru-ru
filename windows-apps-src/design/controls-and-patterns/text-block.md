@@ -6,16 +6,16 @@ label: Text block
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b69bc093fb9aae6e35618949bf6eebe8c36c893
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364172"
 ---
 # <a name="text-block"></a>Блок текста
@@ -24,7 +24,7 @@ ms.locfileid: "66364172"
 
  Блок текста — это основной элемент управления для отображения текста в режиме "только для чтения" в приложениях. Его можно использовать для отображения однострочного или многострочного текста, строковых гиперссылок и текста с полужирным шрифтом, курсивом или подчеркиванием.
  
- > **Важные API**: [Класс TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [свойство Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), [свойства Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
+ > **Важные API**: [класс TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [свойство Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), [свойство Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -37,7 +37,7 @@ ms.locfileid: "66364172"
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -70,7 +70,7 @@ textBlock1.Text = "Hello, world!";
 
 ### <a name="content-model"></a>Модель содержимого
 
-Существует два свойства, которые можно использовать для добавления содержимого в TextBlock. [Текст](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) и [Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines).
+Есть два свойства, которые можно использовать для добавления содержимого в TextBlock: [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) и [Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines).
 
 Наиболее распространенный способ отображения текста — задание свойству Text строкового значения, как показано в предыдущем примере.
 
@@ -88,18 +88,18 @@ textBlock1.Text = "Hello, world!";
 Для размещения текста XAML использует более эффективный программный путь, когда это возможно. Этот быстрый путь уменьшает общее потребление памяти и значительно уменьшает время, которое необходимо ЦП на измерение и размещение текста. Этот быстрый путь используется только для объекта TextBlock, поэтому по возможности следует использовать этот объект вместо объекта RichTextBlock.
 
 В некоторых условиях для отрисовки текста объекту TextBlock приходится использовать более функциональный программный путь, потребляющий больше ресурсов ЦП. Чтобы функция отрисовки текста всегда использовала быстрый путь, при настройке перечисленных здесь свойств соблюдайте указанные ниже рекомендации.
-- [Текст](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text): Самое важное условие является то, что быстрый путь используется только в том случае, если значение текста, явно задав свойство Text, XAML или в коде (как показано в предыдущих примерах). Если настроить текст с помощью коллекции Inlines объекта TextBlock (например, с помощью `<TextBlock>Inline text</TextBlock>`), это быстрый путь будет выключен из-за потенциальной сложности, вызванной использованием нескольких форматов.
-- [CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.characterspacing): Только значение по умолчанию 0 — оптимальный маршрут.
-- [TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming): Только **None**, **CharacterEllipsis**, и **WordEllipsis** значения: быстрого пути. Значение **Clip** выключает быстрый путь.
+- [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text): самое важное условие состоит в том, что быстрый путь используется только тогда, когда вы настраиваете свойство Text, явно указав свойство либо в XAML, либо в коде (как показано в предыдущих примерах). Если настроить текст с помощью коллекции Inlines объекта TextBlock (например, с помощью `<TextBlock>Inline text</TextBlock>`), это быстрый путь будет выключен из-за потенциальной сложности, вызванной использованием нескольких форматов.
+- [CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.characterspacing): быстрому пути соответствует только значение 0, используемое по умолчанию.
+- [TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming): только значения **None**, **CharacterEllipsis** и **WordEllipsis** соответствуют быстрому пути. Значение **Clip** выключает быстрый путь.
 
 > **Примечание.** &nbsp;&nbsp;В версиях Windows, предшествующих Windows 10 версии 1607, дополнительные свойства также влияют на быстрый путь. При запуске приложения в более ранней версии Windows эти условия также приведут к обработке текста по медленному пути. Дополнительные сведения о версиях см. в статье «Адаптивный к версии код».
-- [Оформление](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography): Только значения по умолчанию для различных свойств оформления, быстрого пути.
-- [LineStackingStrategy](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy): Если [LineHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) является не равен 0, **BaselineToBaseline** и **MaxHeight** значения Отключение быстрого пути.
-- [IsTextSelectionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled): Только **false** — оптимальный маршрут. Если задать для этого свойства значение **true**, быстрый путь будет выключен.
+- [Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography): быстрому пути соответствуют только значения по умолчанию для различных свойств Typography.
+- [LineStackingStrategy](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy): если для параметра [LineHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) не установлено значение 0, значения **BaselineToBaseline** и **MaxHeigh**t отключают быстрый путь.
+- [IsTextSelectionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled): Оптимальный маршрут задает только значение **false**. Если задать для этого свойства значение **true**, быстрый путь будет выключен.
 
 Во время отладки для свойства [DebugSettings.IsTextPerformanceVisualizationEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled) можно задать значение **true**, чтобы определить, используется ли быстрый путь для отрисовки текста. Если для этого свойства задано значение true, то текст, отрисовываемый с использованием быстрого пути, будет отображаться ярко-зеленым цветом.
 
->**Совет**&nbsp;&nbsp;эта функция подробное объяснение в этом сеансе из сборки 2015 - [производительности XAML: Методики по достижению максимальной опыт приложение универсальной Windows, созданных с помощью XAML](https://channel9.msdn.com/Events/Build/2015/3-698).
+>**Совет.** &nbsp;&nbsp;Эта функция подробно разъясняется в этой презентации, состоявшейся в рамках Build 2015:[Производительность XAML: методы расширения возможностей универсальных приложений для Windows с помощью XAML](https://channel9.msdn.com/Events/Build/2015/3-698).
 
 
 
@@ -131,7 +131,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ![Текст, отрисованный в режиме отладки](images/text-block-rendering-performance.png)
 
->**Внимание**&nbsp;&nbsp;Цвет текста, для отрисовки которого не используется быстрый путь, не изменяется. Если в вашем приложении есть текст, для которого указан ярко-зеленый цвет, он будет отображаться ярко-зеленым и в более медленном пути отрисовки. Будьте внимательны, чтобы не спутать текст, для которого в приложении установлен зеленый цвет, с текстом, отрисовываемый с использованием быстрого пути, который зеленый из-за параметров отладки.
+>**Внимание!** &nbsp;&nbsp;Цвет текста, для отрисовки которого не используется быстрый путь, не изменяется. Если в вашем приложении есть текст, для которого указан ярко-зеленый цвет, он будет отображаться ярко-зеленым и в более медленном пути отрисовки. Будьте внимательны, чтобы не спутать текст, для которого в приложении установлен зеленый цвет, с текстом, отрисовываемый с использованием быстрого пути, который зеленый из-за параметров отладки.
 
 ## <a name="formatting-text"></a>Форматирование текста
 
@@ -168,7 +168,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ![Текст, отформатированный с помощью запущенных элементов](images/text-block-run-examples.png)
 
-### <a name="typography"></a>Оформление
+### <a name="typography"></a>Шрифтовое оформление
 
 Вложенные свойства класса [Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography) предоставляют доступ к набору типографских свойств Microsoft OpenType. Эти присоединенные свойства можно задать либо в объекте TextBlock, либо в отдельных строковых текстовых элементах. В этих примерах показаны оба действия.
 ```xaml
@@ -190,14 +190,14 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 
 - [Текстовые элементы управления](text-controls.md)
-- [Рекомендации для проверки орфографии](text-controls.md)
+- [Руководство по проверке орфографии](text-controls.md)
 - [Добавление поиска](search.md)
-- [Рекомендации для ввода текста](text-controls.md)
+- [Руководство по текстовому вводу](text-controls.md)
 - [Класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Класс Windows.UI.Xaml.Controls PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

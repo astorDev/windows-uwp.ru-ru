@@ -9,20 +9,20 @@ label: XAML theme resources
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9544988837d44f42d963b268a2ce3d37cce83952
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364111"
 ---
 # <a name="xaml-theme-resources"></a>Ресурсы темы XAML
 
-Ресурсы темы XAML представляют собой набор ресурсов, применяющих различные значения в зависимости от того, какая тема системы активна. Существует 3 темы, которые поддерживает платформа XAML: «Light», «Темной» и «Высокая контрастность».
+Ресурсы темы XAML представляют собой набор ресурсов, применяющих различные значения в зависимости от того, какая тема системы активна. Платформа XAML поддерживает три темы: Light, Dark и HighContrast.
 
-**Предварительные требования**: Предполагается, что вы уже прочитали раздел [Справочники по ResourceDictionary и ресурсу XAML](resourcedictionary-and-xaml-resource-references.md).
+**Предварительные условия**: Предполагается, что вы уже прочитали раздел [Справочники по ResourceDictionary и ресурсу XAML](resourcedictionary-and-xaml-resource-references.md).
 
 ## <a name="theme-resources-v-static-resources"></a>Ресурсы темы и статические ресурсы
 
@@ -34,21 +34,21 @@ ms.locfileid: "66364111"
 
 ## <a name="theme-resources-in-the-resource-dictionary-structure"></a>Ресурсы темы в структуре словаря ресурсов
 
-Каждый ресурс темы является частью XAML-файла themeresources.xaml. В целях разработки themeresources.xaml доступно в \\(Program Files)\\комплекты Windows\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP \\ &lt;Версия пакета SDK&gt;\\общей папки из установки Windows Software Development Kit (SDK). Словари ресурсов в themeresources.xaml также воспроизведены в generic.xaml в том же каталоге.
+Каждый ресурс темы является частью XAML-файла themeresources.xaml. Для целей проектирования файл themeresources.xaml находится в папке \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic, созданной при установке пакета средств разработки программного обеспечения для Windows (SDK). Словари ресурсов в themeresources.xaml также воспроизведены в generic.xaml в том же каталоге.
 
 Среда выполнения Windows не использует эти физические файлы для поиска во время выполнения. Поэтому они специально находятся в папке DesignTime и не копируются в приложения по умолчанию. Вместо этого такие словари ресурсов существуют в памяти как часть самой среды выполнения Windows, и ссылки на ресурсы XAML приложения — на ресурсы темы (или системные ресурсы) — разрешаются там во время выполнения.
 
 ## <a name="guidelines-for-custom-theme-resources"></a>Рекомендации по использованию пользовательских ресурсов темы
 
-Следуйте данным рекомендациям, чтобы определить и использовать собственные настраиваемые ресурсы темы.
+Следуйте данным рекомендациям, чтобы определить и использовать собственные настраиваемые ресурсы темы:
 
 - Определить словари для тем Light и Dark в дополнение к словарю HighContrast. Хотя можно создать словарь [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) с основным значением Default, предпочтительнее использовать явные параметры Light, Dark и HighContrast.
 
-- Используйте [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) в: Стили, методы задания, управления, шаблоны, методы задания свойств и анимации.
+- Используйте [расширение исправления {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) в стилях, методах установки, шаблонах элементов управления, методах определения свойств и анимациях.
 
 - Не используйте [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) в определениях ресурсов в словарях [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Вместо этого используйте [расширение разметки {StaticResource}](../../xaml-platform/staticresource-markup-extension.md).
 
-    ИСКЛЮЧЕНИЕ: Можно использовать [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) для ссылок на ресурсы, которые являются независимыми в тему приложения в вашей [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Примерами таких ресурсов являются ресурсы цветов элементов, такие как `SystemAccentColor`, или ресурсы системных цветов, которые обычно имеют префиксы SystemColor, такие как `SystemColorButtonFaceColor`.
+    ИСКЛЮЧЕНИЕ. Можно использовать [расширение разметки {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md) для ссылки на ресурсы, которые не зависят от темы приложения в словарях [ThemeDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries). Примерами таких ресурсов являются ресурсы цветов элементов, такие как `SystemAccentColor`, или ресурсы системных цветов, которые обычно имеют префиксы SystemColor, такие как `SystemColorButtonFaceColor`.
 
 > [!CAUTION]
 > Если вы не будете следовать этим рекомендациям, вы можете столкнуться с непредвиденным поведением, связанным с темами в приложении. Дополнительные сведения см. в разделе [Устранение неполадок с ресурсами тем](#troubleshooting-theme-resources).
@@ -63,9 +63,9 @@ ms.locfileid: "66364111"
 
 Платформа XAML предоставляет набор именованных ресурсов [Color](/uwp/api/Windows.UI.Color) со значениями, подобранными для тем Light и Dark. Разделы, используемые для ссылки, должны иметь следующий формат имени: `System[Simple Light/Dark Name]Color`.
 
-В этой таблице перечислены ключа, простого имени и строковое представление цвета (с помощью \#формат aarrggbb) для ресурсов «Light» и «Темная», предоставляемый платформой XAML. Этот раздел используется для ссылки на ресурс в приложении. "Простое имя Light/Dark" используется в рамках соглашения об именовании кистей, о котором будет рассказано позже.
+В этой таблице перечислены раздел, простое имя и строковое представление цвета (в формате \#aarrggbb) для ресурсов Light и Dark, предоставляемых платформой XAML. Этот раздел используется для ссылки на ресурс в приложении. "Простое имя Light/Dark" используется в рамках соглашения об именовании кистей, о котором будет рассказано позже.
 
-| Ключ                             | Простое имя Light/Dark | Светлая      | Темная       |
+| Раздел                             | Простое имя Light/Dark | Светлая      | Темная       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -151,16 +151,16 @@ ms.locfileid: "66364111"
 
 В этой таблице перечислены системные цвета, предоставляемые XAML в форме объектов ресурса, полученных из палитры Windows. В столбце "Имя специальной возможности" указана метка цвета в пользовательском интерфейсе параметров Windows. В столбце "Простое имя HighContrast" указано слово-описание того, как данный цвет применяется к общим элементам управления XAML. Оно используется в рамках соглашения о наименовании кистей, о котором мы расскажем позже. В столбце "Первоначальное стандартное значение" указаны значения, которые вы получите, если система вообще не работает с высокой контрастностью.
 
-| Ключ                           | Имя специальной возможности            | Простое имя HighContrast | Первоначальное стандартное значение |
+| Раздел                           | Имя специальной возможности            | Простое имя HighContrast | Первоначальное стандартное значение |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
 | SystemColorButtonFaceColor    | **Текст на кнопке** (фон)   | Фон               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **Текст на кнопке** (передний план)   | Передний план               | \#FF000000      |
-| SystemColorGrayTextColor      | **Выключенный текст**              | Отключено                 | \#FF6D6D6D      |
+| SystemColorGrayTextColor      | **Отключенный текст**              | Отключено                 | \#FF6D6D6D      |
 | SystemColorHighlightColor     | **Выделенный текст** (фон) | Выделить                | \#FF3399FF      |
 | SystemColorHighlightTextColor | **Выделенный текст** (передний план) | HighlightAlt             | \#FFFFFFFF      |
-| SystemColorHotlightColor      | **Гиперссылки**                 | Hyperlink                | \#FF0066CC      |
+| SystemColorHotlightColor      | **Гиперссылки**                 | Гиперссылка                | \#FF0066CC      |
 | SystemColorWindowColor        | **Фон**                 | PageBackground           | \#FFFFFFFF      |
-| SystemColorWindowTextColor    | **Text**                       | PageText                 | \#FF000000      |
+| SystemColorWindowTextColor    | **Текст**                       | PageText                 | \#FF000000      |
 
 Windows предоставляет разные тем с высокой контрастностью и позволяет пользователю задавать определенные цвета для параметров высокой контрастности в Центре специальных возможностей, как показано ниже. Поэтому предоставить окончательный список значений высококонтрастных цветов невозможно.
 
@@ -202,7 +202,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 -->
 
 > [!NOTE]
-> Не все комбинации \[ *имя простой высокой контрастности*\]\[*простое имя света и тени* \] предоставляется как ресурс кисти.
+> Не все сочетания \[*Простого имени HighContrast*\]\[*Простого имени Light/Dark*\] предоставляются как ресурсы кисти.
 
 ## <a name="the-xaml-type-ramp"></a>Набор шрифтов XAML
 
@@ -375,7 +375,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 </Style>
 ```
 
-**Примечание**.  [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) стили не весь текст ramp стили, [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) связано с тем, главным образом объект документа на основе блоков модели для **RichTextBlock** упрощает проще настроить атрибуты на отдельных текстовых элементов. Кроме того, параметр [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), использующий свойство XAML-содержимого, описывает ситуацию, где отсутствуют элементы текста, к которым нужно применить стиль, поэтому стиль необходимо применить к контейнеру. Это не является проблемой для **RichTextBlock**, так как его текстовое содержимое всегда должно находиться в определенных элементах текста, таких как [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph). Именно в них вы можете применить стили XAML для заголовка страницы, подзаголовка страницы и аналогичных определений из таблицы шрифтов.
+**Примечание**.  Стили [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) не содержат всех стилей таблицы шрифтов, которые содержит стиль [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), главным образом потому, что блочная объектная модель документа для **RichTextBlock** упрощает настройку атрибутов в отдельных элементах текста. Кроме того, параметр [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text), использующий свойство XAML-содержимого, описывает ситуацию, где отсутствуют элементы текста, к которым нужно применить стиль, поэтому стиль необходимо применить к контейнеру. Это не является проблемой для **RichTextBlock**, так как его текстовое содержимое всегда должно находиться в определенных элементах текста, таких как [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph). Именно в них вы можете применить стили XAML для заголовка страницы, подзаголовка страницы и аналогичных определений из таблицы шрифтов.
 
 ## <a name="miscellaneous-named-styles"></a>Различные именованные стили
 

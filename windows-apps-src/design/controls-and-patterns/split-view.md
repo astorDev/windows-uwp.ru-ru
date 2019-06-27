@@ -6,17 +6,17 @@ label: Split view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7381d8d99f47a69ba7398366762a7dbb4088e04a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364180"
 ---
 # <a name="split-view-control"></a>Элемент управления "Комбинированный режим"
@@ -32,11 +32,11 @@ ms.locfileid: "66364180"
 
  Область содержимого комбинированного режима всегда является видимой. Панель можно развернуть или свернуть либо оставить открытой; ее можно расположить в левой или правой части окна приложения. Панель можно использовать в четырех режимах.
 
--   **Наложение**
+-   **Overlay**
 
     Панель скрыта до тех пор, пока не будет открыта. После открытия панель перекрывает область содержимого.
 
--   **встроенный**
+-   **Inline**
 
     Панель всегда видима и не перекрывает область содержимого. Доступное пространство экрана делится между областью панели и областью содержимого.
 
@@ -57,7 +57,7 @@ ms.locfileid: "66364180"
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -95,9 +95,9 @@ ms.locfileid: "66364180"
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 - [Шаблон панели навигации](navigationview.md)
 - [Представление списка](lists.md)
 - [Основные и подробные данные](master-details.md)

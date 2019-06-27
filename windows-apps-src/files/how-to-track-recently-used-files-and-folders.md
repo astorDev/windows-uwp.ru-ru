@@ -4,13 +4,13 @@ title: Отслеживание недавно использовавшихся 
 description: Отслеживайте файлы, к которым часто обращается пользователь, добавляя их в список недавно использованных файлов (MRU).
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 97ad2485abab0bd4733699bc4ffcf29e17a22844
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369439"
 ---
 # <a name="track-recently-used-files-and-folders"></a>Отслеживание недавно использовавшихся файлов и папок
@@ -25,15 +25,15 @@ ms.locfileid: "66369439"
 Список MRU вашего приложения представлен классом [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList), полученным из статического свойства [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist). Элементы MRU хранятся в виде объектов [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem). Поэтому в список можно добавлять и объекты [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) (то есть файлы), и объекты [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) (то есть папки).
 
 > [!NOTE]
-> Полные примеры см. в разделе [образец средства выбора файла](https://go.microsoft.com/fwlink/p/?linkid=619994) и [файла доступ к образцу](https://go.microsoft.com/fwlink/p/?linkid=619995).
+> Полные примеры: [пример средства выбора файлов](https://go.microsoft.com/fwlink/p/?linkid=619994) и [пример доступа к файлам](https://go.microsoft.com/fwlink/p/?linkid=619995).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
--   **Понять асинхронного программирования для приложений универсальной платформы Windows (UWP)**
+-   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)** .
 
     Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
--   **Разрешения на доступ к папке**
+-   **Права доступа к расположению**
 
     См. раздел [Разрешения на доступ к файлам](file-access-permissions.md).
 
@@ -52,10 +52,10 @@ ms.locfileid: "66369439"
     string mruToken = mru.Add(file, "profile pic");
     ```
 
-    [**StorageItemMostRecentlyUsedList.Add** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) перегружен. В примере используется [**Add(IStorageItem, String)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add), поэтому можно сопоставить метаданные с файлом. Указание метаданных позволяет записать назначение элемента, например "изображение профиля". Кроме того, вы можете добавить файл в список MRU и без метаданных, вызвав метод [**Add(IStorageItem)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add). При добавлении элемента в список MRU метод возвращает уникальную идентификационную строку, так называемый маркер, который используется для извлечения элемента.
+    [**StorageItemMostRecentlyUsedList.Add**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) перегружается. В примере используется [**Add(IStorageItem, String)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add), поэтому можно сопоставить метаданные с файлом. Указание метаданных позволяет записать назначение элемента, например "изображение профиля". Кроме того, вы можете добавить файл в список MRU и без метаданных, вызвав метод [**Add(IStorageItem)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add). При добавлении элемента в список MRU метод возвращает уникальную идентификационную строку, так называемый маркер, который используется для извлечения элемента.
 
 > [!TIP]
-> Чтобы извлечь элемент из списка MRU, вам потребуется маркер, потому сохраните его. Подробные сведения о данных приложения см. в статье [Управление данными приложения](https://docs.microsoft.com/previous-versions/windows/apps/hh465109(v=win.10)).
+> Чтобы извлечь элемент из списка MRU, вам потребуется маркер, поэтому сохраните его. Подробные сведения о данных приложения см. в статье [Управление данными приложения](https://docs.microsoft.com/previous-versions/windows/apps/hh465109(v=win.10)).
 
 ## <a name="use-a-token-to-retrieve-an-item-from-the-mru"></a>Использование маркера для извлечения элемента из списка MRU
 

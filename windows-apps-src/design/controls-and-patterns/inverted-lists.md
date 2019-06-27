@@ -5,17 +5,17 @@ label: Inverted lists
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 52c1d63d-69c1-48d6-a234-6f39296e4bfd
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: c552109b243688c2618425adce797c4d208eac31
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364778"
 ---
 # <a name="inverted-lists"></a>Перевернутые списки
@@ -24,7 +24,7 @@ ms.locfileid: "66364778"
 
 Вы можете использовать представление списка для отображения беседы в чате с визуально выделенными элементами для представления отправителя/получателя.  Использование разных цветов и горизонтального выравнивания для разделения сообщений отправителя и получателя помогает пользователю быстро ориентироваться в беседе.
 
-> **Важные API**:  [Класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [класс ItemsStackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel), [ItemsUpdatingScrollMode свойство](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode)
+> **Важные API**:  [класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [класс ItemsStackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel), [свойство ItemsUpdatingScrollMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode).
  
 Как правило, вам потребуется представить список таким образом, чтобы он раскрывался снизу вверх, а не наоборот.  При получении нового сообщения и его добавлении в конец списка предыдущие сообщения сдвигаются вверх, чтобы освободить место, обращая внимание пользователя на последнее сообщение.  Но если пользователь прокрутил вверх, чтобы просмотреть предыдущие ответы, получение нового сообщения не должно вызывать визуального смещения, дабы не нарушать концентрацию пользователя.
 
@@ -59,4 +59,4 @@ ms.locfileid: "66364778"
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Образец списка XAML снизу вверх](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBottomUpList)
+- [Пример перевернутого списка в XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBottomUpList)

@@ -4,23 +4,23 @@ title: Рисование фигур
 description: Узнайте, как рисовать фигуры — эллипсы, прямоугольники, многоугольники и пути. При помощи класса Path в пользовательском интерфейсе XAML можно применять довольно сложный язык для рисования на основе векторов, например рисовать кривые Безье.
 ms.date: 11/16/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 06f5ce8ad7576114137adb862f89720e27d3802b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364292"
 ---
 # <a name="draw-shapes"></a>Рисование фигур
 
 Узнайте, как рисовать фигуры — эллипсы, прямоугольники, многоугольники и пути. При помощи класса [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) в пользовательском интерфейсе XAML можно применять довольно сложный язык для рисования на основе векторов, например рисовать кривые Безье.
 
-> **Важные API**: [Класс Path](/uwp/api/Windows.UI.Xaml.Shapes.Path), [пространства имен Windows.UI.Xaml.Shapes](/uwp/api/Windows.UI.Xaml.Shapes), [пространство имен Windows.UI.Xaml.Media](/uwp/api/Windows.UI.Xaml.Media)
+> **Важные API**: [класс Path](/uwp/api/Windows.UI.Xaml.Shapes.Path), [пространство имен Windows.UI.Xaml.Shapes](/uwp/api/Windows.UI.Xaml.Shapes), [пространство имен Windows.UI.Xaml.Media](/uwp/api/Windows.UI.Xaml.Media)
 
 
-Два набора классов определить область пространства в пользовательском Интерфейсе XAML: [**Фигуры** ](/uwp/api/Windows.UI.Xaml.Shapes.Shape) классы и [ **Geometry** ](/uwp/api/Windows.UI.Xaml.Media.Geometry) классы. Главное различие между этими классами заключается в том, что у класса **Shape** имеется связанная с ним кисть, и он может быть отрисован на экране, а класс **Geometry** просто определяет область и не отрисовывается на экране, если не содержит сведений для другого свойства пользовательского интерфейса. Объект **Shape** можно представить как элемент [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), граница которого определена объектом **Geometry**. В этом разделе содержатся в основном сведения о классах **Shape**.
+Область пространства в пользовательском интерфейсе XAML определяется двумя наборами классов: [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) и [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry). Главное различие между этими классами заключается в том, что у класса **Shape** имеется связанная с ним кисть, и он может быть отрисован на экране, а класс **Geometry** просто определяет область и не отрисовывается на экране, если не содержит сведений для другого свойства пользовательского интерфейса. Объект **Shape** можно представить как элемент [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), граница которого определена объектом **Geometry**. В этом разделе содержатся в основном сведения о классах **Shape**.
 
 Классы [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape): [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line), [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse), [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon), [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) и [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path). Класс **Path** интересен тем, что с его помощью можно описать произвольное геометрическое тело, а класс [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) используется для того, чтобы определить части класса **Path**.
 
@@ -63,7 +63,7 @@ layoutRoot.Children.Add(ellipse1);
 
 Набор из 6 элементов [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) входит в состав шаблона элемента управления [**ProgressRing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), а 2 концентрических элемента **Ellipse** являются частью [**RadioButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton).
 
-## <a name="span-idrectanglespanspan-idrectanglespanspan-idrectanglespanrectangle"></a><span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>Прямоугольник
+## <a name="span-idrectanglespanspan-idrectanglespanspan-idrectanglespanrectangle"></a><span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>Rectangle
 
 [  **Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) (прямоугольник) — это фигура с четырьмя сторонами, противоположные стороны которой равны. Чтобы создать обычную фигуру **Rectangle**, укажите значения [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) и [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill).
 
@@ -102,7 +102,7 @@ layoutRoot.Children.Add(rectangle1);
 
 ![Обработанный прямоугольник.](images/shapes-rectangle.jpg)
 
-**Совет**  в некоторых ситуациях для определения пользовательского интерфейса там, где вместо использования [ **прямоугольник**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), [ **границы** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) может быть более подходящим. Если вы хотите создать прямоугольную фигуру вокруг некоторого содержимого, удобнее использовать объект **Border**, так как он может иметь дочернее содержимое и его размеры автоматически настраиваются по размеру содержимого, благодаря чему отпадает необходимость задавать конкретные ширину и высоту прямоугольника, как в случае с **Rectangle**. Объект **Border** можно также создавать с закругленными углами, задав значение свойства [**CornerRadius**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.cornerradius).
+**Совет.**   В некоторых сценариях определения элементов интерфейса вместо объекта [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) удобнее использовать объект [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border). Если вы хотите создать прямоугольную фигуру вокруг некоторого содержимого, удобнее использовать объект **Border**, так как он может иметь дочернее содержимое и его размеры автоматически настраиваются по размеру содержимого, благодаря чему отпадает необходимость задавать конкретные ширину и высоту прямоугольника, как в случае с **Rectangle**. Объект **Border** можно также создавать с закругленными углами, задав значение свойства [**CornerRadius**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.cornerradius).
 
 С другой стороны, объект [**Прямоугольник**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) , вероятно, представляет собой лучший вариант для компоновки элементов управления. Фигура **Rectangle** отображается во множестве шаблонов элементов управления, так как она используется как часть "FocusVisual" для фокусируемых элементов управления. Каждый раз, когда элемент управления находится в визуальном состоянии с фокусом ввода, этот прямоугольник становится видимым, в других состояниях он скрыт.
 
@@ -141,7 +141,7 @@ layoutRoot.Children.Add(polygon1);
 
 ![Обработанный многоугольник.](images/shapes-polygon.jpg)
 
-**Совет**  объект [ **точки** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) значение часто используется как тип в XAML для сценариев, отличных от объявление вершины фигуры. Например, **Point** входит в состав данных событий сенсорного ввода, что позволяет точно определить, где в системе координат произошло действие касания. Подробнее о параметре **Point** и его использовании в XAML или коде см. в справочных статьях по API для [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point).
+**Совет.**   Значение [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) часто используется в качестве типа в XAML для сценариев, в которых не объявляются вершины фигур. Например, **Point** входит в состав данных событий сенсорного ввода, что позволяет точно определить, где в системе координат произошло действие касания. Подробнее о параметре **Point** и его использовании в XAML или коде см. в справочных статьях по API для [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point).
 
 ## <a name="line"></a>Линия
 
@@ -165,11 +165,11 @@ line1.X2 = 400;
 layoutRoot.Children.Add(line1);
 ```
 
-## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Ломаной линии
+## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
 
 Фигура [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) похожа на фигуру [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) тем, что ее граница также определяется набором точек, но последняя точка в **Polyline** не соединяется с первой.
 
-**Примечание**    явно имеется идентичные начальной и конечной точки в [ **точки** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.polyline.points) для [ **ломаной линии** ](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), но также в этом случае вы, вероятно, можно использовать [ **многоугольника** ](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) вместо этого.
+**Примечание.**    Вы можете задать в явном виде одну и ту же точку в качестве начальной и конечной точки в наборе [**Points**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.polyline.points) для получения фигуры [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), но лучше для этого использовать объект [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon).
 
 Если вы задаете параметр [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill) для фигуры [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), свойство **Fill** закрасит внутреннее пространство фигуры даже в том случае, если начальная и конечная точки в наборе [**Points**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.polyline.points) для фигуры **Polyline** не совпадают. Если вы не зададите параметр **Fill**, фигура **Polyline** будет напоминать комбинацию из нескольких отдельных элементов [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line), у которых начальные и конечные точки соседних отрезков линии совпадают.
 
@@ -206,7 +206,7 @@ layoutRoot.Children.Add(polyline1);
 
 ![Обработанная ломаная линия.](images/shapes-polyline.jpg)
 
-## <a name="path"></a>`Path`
+## <a name="path"></a>Путь
 
 Фигура [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) (путь) является наиболее универсальной из всех фигур [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape). С ее помощью можно создать произвольную геометрию. Но эта универсальность порождает сложность. Давайте посмотрим, как создать простую фигуру **Path** на языке XAML.
 
@@ -233,7 +233,7 @@ layoutRoot.Children.Add(polyline1);
 
 ![Обработанный путь.](images/shapes-path.jpg)
 
-В следующем примере показано применение другой вышеупомянутой технологии: [**GeometryGroup**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.geometrygroup) с [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry). В этом примере пользующееся некоторыми из пишущим геометрических типов, которые могут использоваться как часть **PathGeometry**: [**PathFigure** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure) и различные элементы, которые могут быть на сегмент [ **PathFigure.Segments**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments).
+В следующем примере показано применение другой вышеупомянутой технологии: [**GeometryGroup**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.geometrygroup) с [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry). В этом примере применяются некоторые геометрические типы в составе **PathGeometry**: [**PathFigure**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure) и различные элементы, которые могут быть сегментом в [**PathFigure.Segments**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments).
 
 ```xaml
 <Path Stroke="Black" StrokeThickness="1" Fill="#CCCCFF">

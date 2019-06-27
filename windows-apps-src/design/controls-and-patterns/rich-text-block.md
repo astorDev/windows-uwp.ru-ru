@@ -6,16 +6,16 @@ label: Rich text block
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e671c61058ec1c048fbb1b547cc79060a7cd0d0a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364338"
 ---
 # <a name="rich-text-block"></a>Блок форматированного текста
@@ -24,7 +24,7 @@ ms.locfileid: "66364338"
 
 Блоки форматированного текста предоставляют ряд функций для создания расширенного текстового макета, который можно использовать, чтобы обеспечить поддержку абзацев, встроенных элементов пользовательского интерфейса или сложных текстовых макетов.
 
-> **Важные API**: [Класс RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [класс RichTextBlockOverflow](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [абзаца класс](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [класс Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
+> **Важные API**: [класс RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [класс RichTextBlockOverflow](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [класс Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [класс Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography).
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -37,7 +37,7 @@ ms.locfileid: "66364338"
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -132,7 +132,7 @@ RichTextBlock поддерживает следующие функции.
 </Paragraph>
 ```
 
-### <a name="typography"></a>Оформление
+### <a name="typography"></a>Шрифтовое оформление
 
 Вложенные свойства класса [Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography) предоставляют доступ к набору типографских свойств Microsoft OpenType. Эти подключенные свойства можно задать либо в объекте RichTextBlock, либо в отдельных строковых текстовых элементах, как показано здесь.
 
@@ -151,21 +151,21 @@ RichTextBlock поддерживает следующие функции.
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 
 [Текстовые элементы управления](text-controls.md)
 
 **Проектировщикам**
-- [Рекомендации для проверки орфографии](text-controls.md)
+- [Руководство по проверке орфографии](text-controls.md)
 - [Добавление поиска](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
-- [Рекомендации для ввода текста](text-controls.md)
+- [Руководство по текстовому вводу](text-controls.md)
 
 **Разработчикам (XAML)**
 - [Класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Класс Windows.UI.Xaml.Controls PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 
-**Для разработчиков (другое)**
+**Разработчикам (прочее)**
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

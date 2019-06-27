@@ -5,17 +5,17 @@ label: Nested UI in list items
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
 pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: aa672c99dc83e7955c4d4f91b5bc34620c48ed01
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364552"
 ---
 # <a name="nested-ui-in-list-items"></a>Вложенные элементы интерфейса в элементах списка
@@ -26,7 +26,7 @@ ms.locfileid: "66364552"
 
 Вложенные элементы интерфейса можно использовать для предоставления пользователю дополнительных параметров, ускоряющих выполнение важных действий. Однако чем больше действий предоставляется, тем сложнее становится пользовательский интерфейс. Выбирать этот шаблон пользовательского интерфейса следует с особым вниманием. В это статье представлены рекомендации, которые помогут вам составит лучший план действий для вашего пользовательского интерфейса.
 
-> **Важные API**: [Класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [класс GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
+> **Важные API**: [класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [класс GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview).
 
 В этой статье мы рассмотрим создание вложенных элементов пользовательского интерфейса в элементах [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) и [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview). Хотя в этом разделе не рассматриваются другие варианты вложенных элементов интерфейса, данные концепции универсальны. Перед началом вам следует ознакомиться с общими рекомендациями по использованию элементов управления ListView или GridView в пользовательском интерфейсе. Эти рекомендации можно найти в статьях [Списки](lists.md) и [Представления списка и сетки](listview-and-gridview.md).
 
@@ -109,7 +109,7 @@ ms.locfileid: "66364552"
 
 ![Части вложенных элементов пользовательского интерфейса](images/nested-ui-navigation.png)
 
-**Gamepad**
+**Игровой планшет**
 
 При вводе с помощью геймпада предоставьте пользователю следующие возможности:
 
@@ -167,7 +167,7 @@ ms.locfileid: "66364552"
 
 Если элементы списка не выполняют действий, следуйте нашим рекомендациям для обеспечения навигации с помощью геймпада или клавиатуры.
 
-**Gamepad**
+**Игровой планшет**
 
 При вводе с помощью геймпада предоставьте пользователю следующие возможности:
 

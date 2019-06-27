@@ -6,16 +6,16 @@ label: Rich edit box
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 78f6fe36fb8955b6234cdf3cb42e4db02a602f4a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364349"
 ---
 # <a name="rich-edit-box"></a>Блок форматируемого текста
@@ -24,7 +24,7 @@ ms.locfileid: "66364349"
 
 Элемент управления RichEditBox можно использовать для ввода и правки документов в формате RTF, содержащих форматированный текст, изображения и гиперссылки. Элемент управления RichEditBox можно сделать доступным только для чтения, задав для его свойства IsReadOnly значение **true**.
 
-> **Важные API**: [Класс RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [свойством документа](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document), [свойство IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled свойство](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
+> **Важные API**: [класс RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [свойство Document](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document), [свойство IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [свойство IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled).
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -39,7 +39,7 @@ ms.locfileid: "66364349"
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -218,13 +218,13 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 
 - [Текстовые элементы управления](text-controls.md)
-- [Рекомендации для проверки орфографии](text-controls.md)
+- [Руководство по проверке орфографии](text-controls.md)
 - [Добавление поиска](search.md)
-- [Рекомендации для ввода текста](text-controls.md)
+- [Руководство по текстовому вводу](text-controls.md)
 - [Класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Класс Windows.UI.Xaml.Controls PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)

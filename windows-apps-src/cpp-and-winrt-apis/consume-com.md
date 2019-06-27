@@ -1,28 +1,28 @@
 ---
 description: В этом разделе приведен полный пример кода Direct2D, чтобы показать, как использовать классы и интерфейсы COM с помощью C++/WinRT.
-title: Использование COM-компонентов с помощью C++/WinRT
+title: Использование компонентов COM с помощью C++/WinRT
 ms.date: 04/24/2019
 ms.topic: article
-keywords: Windows 10, uwp, standard, c ++, cpp, winrt, COM, компонента, класс, интерфейс
+keywords: windows 10, uwp, standard, c++, cpp, winrt, COM, component, class, interface
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c36c7b896b4d08240f08e85570110b45e0a9f3c
-ms.sourcegitcommit: ba24a6237355119ef3e36687417f390c8722bd67
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66421260"
 ---
-# <a name="consume-com-components-with-cwinrt"></a>Использование COM-компонентов с помощью C++/WinRT
+# <a name="consume-com-components-with-cwinrt"></a>Использование компонентов COM с помощью C++/WinRT
 
-Можно использовать средства класса [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) библиотеки, использующих компоненты СОМ, например высокопроизводительной двумерной и трехмерной графики DirectX API-интерфейсы. C++/ WinRT — это самый простой способ использования DirectX без ущерба для производительности. В этом разделе используется Direct2D пример кода демонстрирует, как использовать C++/WinRT COM-классов и интерфейсов. Можно Конечно, смешивать программирование COM и среду выполнения Windows в одном C++/WinRT проекта.
+Возможности библиотеки [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) можно применять для использования компонентов COM, таких как высокопроизводительная двумерная и трехмерная графика API-интерфейсов DirectX. C++/WinRT — это самый простой способ использовать DirectX без ущерба для производительности. В этой статье приведен пример кода Direct2D, демонстрирующий, как использовать классы и интерфейсы COM с помощью C++/WinRT. Конечно, можно смешивать модели программирования COM и среды выполнения Windows в одном проекте C++/WinRT.
 
-В конце этого раздела вы найдете список полный исходный код минимального приложения Direct2D. Мы поднимите выдержки из этого кода и использовать их для демонстрации способов использования компонентов COM с помощью C++/WinRT, с помощью различных средств C++/WinRT библиотеки.
+В конце этой статьи вы найдете полный список исходного кода минимального приложения Direct2D. Мы возьмем выдержки из этого кода и рассмотрим, как использовать компоненты COM вместе с C++/WinRT, применяя различные средства библиотеки C++/WinRT.
 
-## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a>COM smart pointers ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
+## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a>Интеллектуальные указатели COM ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
-При программировании с помощью COM, работа напрямую с интерфейсами, а не с объектами (которые также true незаметно для API среды выполнения Windows, которые являются развитием службы COM). Чтобы вызвать функцию класс COM, например, активации класса, получить интерфейс обратно, а затем вызывать функции в этом интерфейсе. Чтобы оценить состояние объекта, у вас доступа его элементов данных напрямую. Вместо этого вызовите функции метода доступа и мутатора в интерфейсе.
+Когда вы программируете с помощью COM, вы работаете непосредственно с интерфейсами, а не с объектами (это также верно для API-интерфейсов среды выполнения Windows, которые являются развитием COM). Например, чтобы вызвать функцию в классе COM, вы активируете класс, получите интерфейс обратно, а затем вызовете функции для этого интерфейса. Чтобы получить доступ к состоянию объекта, вы не можете напрямую обращаться к его элементам данных. Вместо этого вы вызываете функцию доступа и функцию-мутатор в интерфейсе.
 
-Точнее, мы говорим о взаимодействии с интерфейсом *указатели*. А для этого мы преимущества существования COM-типа интеллектуального указателя в C++/WinRT&mdash; [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr) типа.
+Если точнее, то мы говорим о взаимодействии с *указателями* интерфейса. И для этого мы воспользуемся указателями COM интеллектуального типа в C++/WinRT (тип [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)).
 
 ```cppwinrt
 #include <d2d1_1.h>
@@ -30,11 +30,11 @@ ms.locfileid: "66421260"
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-В приведенном выше коде показан способ объявления неинициализированный смарт-указатель [ **ID2D1Factory1** ](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1factory1) COM-интерфейса. Интеллектуальный указатель не инициализирован, поэтому он еще не указывает на **ID2D1Factory1** интерфейс, принадлежащих любой реальный объект (он не указывает на интерфейс вообще). Но у него есть возможность сделать это; и (будьте интеллектуального указателя) имеет возможность через ссылку COM, инвентаризации для управления временем жизни объекта-владельца интерфейса, который он указывает, а на носителе, на который вы вызываете функции в этом интерфейсе.
+Приведенный выше код показывает, как объявить неинициализированный интеллектуальный указатель на COM-интерфейс [**ID2D1Factory1**](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1factory1). Интеллектуальный указатель не инициализирован, поэтому он еще не указывает на интерфейс **ID2D1Factory1**, принадлежащий какому-либо реальному объекту (он вообще не указывает на интерфейс). Но у него есть такая возможность. Кроме того, с помощью счетчика ссылок COM он может управлять временем жизни объекта-владельца интерфейса, на который он указывает. Указатель можно использовать как средство для вызова функций в этом интерфейсе.
 
-## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>Функции COM, возвращающие указатель интерфейса, как **void**
+## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>Функции COM, которые возвращают указатель интерфейса с типом **void**
 
-Можно вызвать [ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) основного необработанный указатель функции для записи в неинициализированное смарт-указатель.
+Вы можете вызвать функцию [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) для записи в базовый необработанный указатель неинициализированного интеллектуального указателя.
 
 ```cppwinrt
 D2D1_FACTORY_OPTIONS options{ D2D1_DEBUG_LEVEL_NONE };
@@ -46,11 +46,11 @@ D2D1CreateFactory(
 );
 ```
 
-Приведенный выше вызовы [ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory) функции, которая возвращает **ID2D1Factory1** указателя интерфейса с помощью последнего параметра, который имеет **void \* \***  типа. Многие функции COM возвращают **void\*\*** . Для таких функций, используйте [ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) как показано.
+Приведенный выше код вызывает функцию [**D2D1CreateFactory**](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory), которая возвращает указатель интерфейса **ID2D1Factory1** с помощью своего последнего параметра, который имеет тип **void\*\*** . Многие функции COM возвращают параметры типа **void\*\*** . Для таких функций используйте [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function), как показано.
 
-## <a name="com-functions-that-return-a-specific-interface-pointer"></a>Функции COM, возвращающие указатель определенного интерфейса
+## <a name="com-functions-that-return-a-specific-interface-pointer"></a>Функции COM, которые возвращают определенный указатель интерфейса
 
-[ **D3D11CreateDevice** ](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) возвращает [ **ID3D11Device** ](/windows/desktop/api/d3d11/nn-d3d11-id3d11device) указатель на интерфейс, через его параметр третий из последнего, имеющая **ID3D11Device\* \***  типа. Для функций, которые возвращают указатель определенного интерфейса, используйте [ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function).
+Функция [**D3D11CreateDevice**](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) возвращает указатель интерфейса [**ID3D11Device**](/windows/desktop/api/d3d11/nn-d3d11-id3d11device) с помощью третьего параметра от последнего, который имеет тип **ID3D11Device\*\*** . Для функций, которые возвращают определенный указатель интерфейса, используйте [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function).
 
 ```cppwinrt
 winrt::com_ptr<ID3D11Device> device;
@@ -60,7 +60,7 @@ D3D11CreateDevice(
     ...);
 ```
 
-В примере кода в разделе, прежде чем это показан способ вызова необработанный **D2D1CreateFactory** функции. Но на самом деле, а также при вызове в примере кода для этого раздела **D2D1CreateFactory**, он использует шаблон вспомогательные функции, который создает оболочку для необработанных API и поэтому фактически используется в примере кода [ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function).
+Пример кода в предыдущем разделе показывает, как вызвать необработанную функцию **D2D1CreateFactory**. Но на самом деле, когда пример кода в этой статье вызывает функцию **D2D1CreateFactory**, он применяет шаблон вспомогательной функции, который создает оболочку для необработанного API, и поэтому пример кода фактически использует [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function).
 
 ```cppwinrt
 winrt::com_ptr<ID2D1Factory1> factory;
@@ -70,9 +70,9 @@ D2D1CreateFactory(
     factory.put());
 ```
 
-## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a>Функции COM, возвращающие указатель интерфейса, как **IUnknown**
+## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a>Функции COM, которые возвращают указатель интерфейса с типом **IUnknown**
 
-[ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) функция возвращает указатель на интерфейс фабрики DirectWrite с помощью последнего параметра, который имеет [ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)типа. Такие функции, используйте [ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function), но повторно интерпретируемая приведения, чтобы **IUnknown**.
+Функция [**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) возвращает указатель интерфейса фабрики DirectWrite с помощью последнего параметра с типом [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown). Для такой функции используйте [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function), но повторно интерпретируйте приведение к типу **IUnknown**.
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -81,10 +81,10 @@ DWriteCreateFactory(
     reinterpret_cast<IUnknown**>(dwriteFactory2.put()));
 ```
 
-## <a name="re-seat-a-winrtcomptr"></a>Re-seat a **winrt::com_ptr**
+## <a name="re-seat-a-winrtcomptr"></a>Повторное размещение **winrt::com_ptr**
 
 > [!IMPORTANT]
-> Если у вас есть [ **winrt::com_ptr** ](/uwp/cpp-ref-for-winrt/com-ptr) , уже установлен (его внутренней необработанный указатель уже задан целевой объект) и вы хотите повторно рабочих мест, чтобы она указывала на другой объект, то необходимо сначала назначить `nullptr` к нему&mdash;как показано в следующем примере кода. Если этого не сделать, затем уже — сидели **com_ptr** рисующий проблему для вашего внимания (при вызове [ **com_ptr::put** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function) или [ **com_ptr:: put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)), утверждая, что его внутренний указатель не равен null.
+> Если вы уже разместили [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) (у его внутреннего необработанного указателя уже есть цель) и хотите переместить его, чтобы он указывал на другой объект, сначала нужно присвоить ему `nullptr`, как показано в примере кода ниже. Если вы этого не сделаете, то уже установленный **com_ptr** вызовет проблему (при вызове [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function) или [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function)), утверждая, что его внутренний указатель не равен нулю.
 
 ```cppwinrt
 winrt::com_ptr<ID2D1SolidColorBrush> brush;
@@ -98,9 +98,9 @@ target->CreateSolidColorBrush(
     brush.put()));
 ```
 
-## <a name="handle-hresult-error-codes"></a>Обрабатывает коды ошибок HRESULT
+## <a name="handle-hresult-error-codes"></a>Обработка кодов ошибок HRESULT
 
-Чтобы проверить, возвращается значение HRESULT из COM-функции и исключение в случае, если оно представляет код ошибки, вызовите [ **winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult).
+Чтобы проверить значение HRESULT, возвращенного функцией COM, и вызвать исключение в случае, если это значение представляет код ошибки, вызовите [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult).
 
 ```cppwinrt
 winrt::check_hresult(D2D1CreateFactory(
@@ -110,9 +110,9 @@ winrt::check_hresult(D2D1CreateFactory(
     factory.put_void()));
 ```
 
-## <a name="com-functions-that-take-a-specific-interface-pointer"></a>Функции COM, которые принимают указатель определенного интерфейса
+## <a name="com-functions-that-take-a-specific-interface-pointer"></a>Функции COM, которые принимают определенный указатель интерфейса
 
-Можно вызвать [ **com_ptr::get** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function) функцию для передачи вашей **com_ptr** на функцию, которая принимает определенный интерфейс указатель того же типа.
+Вы можете вызвать функцию [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function), чтобы передать **com_ptr** в функцию, которая принимает определенный указатель интерфейса того же типа.
 
 ```cppwinrt
 ... ExampleFunction(
@@ -125,9 +125,9 @@ winrt::check_hresult(D2D1CreateFactory(
 }
 ```
 
-## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>COM-функций, принимающих **IUnknown** указатель на интерфейс
+## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>Функции COM, которые принимают указатель интерфейса типа **IUnknown**
 
-Можно вызвать [ **winrt::get_unknown** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function) свободная функция для передачи вашей **com_ptr** на функцию, которая принимает **IUnknown** интерфейса указатель.
+Вы можете вызвать свободную функцию [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function), чтобы передать **com_ptr** в функцию, которая принимает указатель интерфейса типа **IUnknown**.
 
 ```cppwinrt
 winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
@@ -136,9 +136,9 @@ winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
     ...));
 ```
 
-## <a name="passing-and-returning-com-smart-pointers"></a>Передача и возврат COM, смарт-указатели
+## <a name="passing-and-returning-com-smart-pointers"></a>Передача и возврат интеллектуальных указателей COM
 
-Функцию, принимающую интеллектуальном указателе COM в виде **winrt::com_ptr** следует делать с постоянной ссылки или по ссылке.
+Функция, принимающая интеллектуальный указатель COM в виде **winrt::com_ptr**, должна делать это с использованием постоянной или обычной ссылки.
 
 ```cppwinrt
 ... GetDxgiFactory(winrt::com_ptr<ID3D11Device> const& device) ...
@@ -146,15 +146,15 @@ winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
 ... CreateDevice(..., winrt::com_ptr<ID3D11Device>& device) ...
 ```
 
-Функция, возвращающая **winrt::com_ptr** следует делать по значению.
+Функция, которая возвращает **winrt:: com_ptr**, должна делать это по значению.
 
 ```cppwinrt
 winrt::com_ptr<ID2D1Factory1> CreateFactory() ...
 ```
 
-## <a name="query-a-com-smart-pointer-for-a-different-interface"></a>Запросить смарт-указатель COM для другой интерфейс
+## <a name="query-a-com-smart-pointer-for-a-different-interface"></a>Запрос интеллектуального указателя COM для другого интерфейса
 
-Можно использовать [ **com_ptr::as** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptras-function) функция для запроса интеллектуальном указателе COM для другой интерфейс. Функция создает исключение, если операция запроса не завершится успешно.
+Вы можете использовать функцию [**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptras-function), чтобы запросить интеллектуальный указатель COM для другого интерфейса. Если завершается неудачно, функция создает исключение.
 
 ```cppwinrt
 void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
@@ -165,13 +165,13 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 }
 ```
 
-Кроме того, с помощью [ **com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrtry_as-function), который возвращает значение, которое можно проверить с `nullptr` чтобы увидеть, является ли запрос выполнен успешно.
+Кроме того, можно использовать функцию [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrtry_as-function), возвращающую значение, которое можно проверить с помощью `nullptr` и определить, успешно ли выполнен запрос.
 
-## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>Полный исходный код список минимального приложения Direct2D
+## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>Полный список исходного кода минимального приложения Direct2D
 
-Если вы хотите собрать и запустить этот образец исходного кода, а затем во-первых, в Visual Studio, создать новый **приложения Core (C++/WinRT)** . `Direct2D` является разумным имя для проекта, но можно присвоить файлу имя, но следует. Откройте `App.cpp`, удалить все его содержимое и вставьте в списке ниже.
+Если вы хотите создать и запустить этот пример исходного кода, сначала в Visual Studio создайте **приложение основных компонентов (C++/WinRT)** . `Direct2D` — подходящее имя для проекта, но вы можете назвать его как угодно. Откройте файл `App.cpp`, удалите все его содержимое и вставьте список ниже.
 
-Приведенный ниже код использует [winrt::com_ptr::capture функция](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) где это возможно.
+В приведенном ниже коде используется функция [winrt::com_ptr::capture](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) там, где это возможно.
 
 ```cppwinrt
 #include "pch.h"
@@ -483,13 +483,13 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 }
 ```
 
-## <a name="working-with-com-types-such-as-bstr-and-variant"></a>Работа с COM-типы, такие как BSTR и VARIANT
+## <a name="working-with-com-types-such-as-bstr-and-variant"></a>Работа с типами COM, такими как BSTR и VARIANT
 
-Как вы видите, C++/WinRT предоставляет поддержку для реализации и вызов COM-интерфейсов. Для использования COM-типы, такие как BSTR и VARIANT, мы рекомендуем использовать оболочек, предоставляемых [библиотеки реализации Windows (ТАМ)](https://github.com/Microsoft/wil), такие как **wil::unique_bstr** и **wil::unique_ Variant** (Управление временем существования ресурсов).
+Как видите, C++/WinRT обеспечивает поддержку как реализации, так и вызова интерфейсов COM. Для таких типов COM, как BSTR и VARIANT, мы рекомендуем использовать оболочки, предоставляемые [библиотеками реализации Windows (WIL)](https://github.com/Microsoft/wil), например **wil::unique_bstr** и **wil::unique_variant** (с управлением временем жизни ресурсов).
 
-[Будут Получены](https://github.com/Microsoft/wil) заменяет платформы, например Active Template Library (ATL) и визуальный C++ поддержка COM компилятора. И мы рекомендуем по написания собственных оболочек, или с помощью COM-типы, такие как BSTR и VARIANT в их исходном виде (а также соответствующие API-интерфейсы).
+[WIL](https://github.com/Microsoft/wil) заменяет платформы, такие как библиотека шаблонных классов ATL, и поддержку COM компиляторами Visual C++. Мы рекомендуем это вместо написания собственных оболочек или использования типов COM, таких как BSTR и VARIANT, в необработанном виде (вместе с соответствующими API-интерфейсами).
 
 ## <a name="important-apis"></a>Важные API
-* [winrt::check_hresult function](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
-* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
-* [Структура WinRT::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [Функция winrt::check_hresult](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
+* [Шаблон структуры winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
+* [Структура winrt::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)

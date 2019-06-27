@@ -7,16 +7,16 @@ label: Password box
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d41590914fb66cb8061298f77f24e5efcdd03bf5
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364629"
 ---
 # <a name="password-box"></a>Поле ввода пароля
@@ -25,7 +25,7 @@ ms.locfileid: "66364629"
 
 Поле ввода пароля — это текстовое поле, в котором вводимые символы скрыты в целях безопасности. Поле ввода пароля внешне похоже на текстовое поле с той разницей, что в нем вместо вводимого текста отображаются подстановочные символы. Вы можете выбрать необходимый знак заполнителя.
 
-> **Важные API**: [Класс PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox), [свойство пароля](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password), [PasswordChar-свойство](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [свойство PasswordRevealMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged событий](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
+> **Важные API**: [класс PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox), [свойство Password](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password), [свойство PasswordChar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [свойство PasswordRevealMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [событие PasswordChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged).
 
 По умолчанию поле ввода пароля предоставляет пользователю возможность просмотреть свой пароль, удерживая кнопку показа. Можно отключить кнопку показа либо предоставить альтернативный механизм отображения пароля, например флажок.
 
@@ -38,7 +38,7 @@ ms.locfileid: "66364629"
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -135,7 +135,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 Значение свойства [PasswordRevealMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) — не единственный фактор, который определяет видимость кнопки показа пароля. Среди других факторов: отображается ли элемент управления над минимальной шириной, имеет ли PasswordBox фокус и содержит ли поле ввода текста хотя бы один символ. Кнопка показа пароля отображается, только когда поле PasswordBox получает фокус в первый раз и в него вводится символ. Если PasswordBox теряет фокус, а затем вновь получает его, кнопка показа не отображается, пока пароль не очистят и не начнут вводить заново.
 
-> **Внимание!** &nbsp;&nbsp;До Windows 10 кнопка показа пароля не отображалась по умолчанию. Если в вашем приложении необходимо всегда скрывать пароль, установите для параметра PasswordRevealMode значение Hidden.
+> **Внимание!** &nbsp;&nbsp;В предшествующих Windows 10 версиях кнопка показа пароля не отображалась по умолчанию. Если в вашем приложении необходимо всегда скрывать пароль, установите для параметра PasswordRevealMode значение Hidden.
 
 ### <a name="hidden-and-visible-modes"></a>Режимы Hidden и Visible
 
@@ -192,15 +192,15 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 
 [Текстовые элементы управления](text-controls.md)
 
-- [Рекомендации для проверки орфографии](text-controls.md)
+- [Руководство по проверке орфографии](text-controls.md)
 - [Добавление поиска](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
-- [Рекомендации для ввода текста](text-controls.md)
+- [Руководство по текстовому вводу](text-controls.md)
 - [Класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Класс Windows.UI.Xaml.Controls PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

@@ -3,43 +3,43 @@ title: Работа с файлами
 description: Узнайте, как работать с файлами на универсальной платформе Windows.
 ms.date: 05/01/2018
 ms.topic: article
-keywords: начало работы, uwp, windows 10, обучающий курс, файлы, ввод-вывод файлов, чтение файла, запись файла, создание файла, запись текста, чтение текста
+keywords: приступая к работе, uwp, windows 10, обучающий курс, файлы, файловый ввод-вывод, чтение файла, запись файла, создание файла, запись текста, чтение текста
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5480638e201dca8a5eb5363d7a5944422c626f67
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66366892"
 ---
 # <a name="work-with-files"></a>Работа с файлами
 
-В этом разделе описывается чтение файлов и запись данные в файлы приложении универсальной платформы Windows (UWP). Здесь представлены основные API-интерфейсы и типы, а также ссылки на дополнительные ресурсы.
+В этом разделе описывается,как приступить к чтению файлов и записи в файлы в приложении универсальной платформы Windows (UWP). Здесь представлены основные интерфейсы API и типы, а также ссылки на дополнительные ресурсы.
 
-Это не учебное пособие. Если вам необходимо полное руководство, см. разделе [Создание, запись и чтение файла](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files), в котором показано, как создавать, читать и записывать файлы, использовать буферы и потоки. Вас также может заинтересовать [пример доступа к файлу](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess), в котором показано, как создавать, читать, записывать, копировать и удалять файл, а также как получать свойства файла и запоминать файлу или папку, чтобы ваше приложение легко могло получить доступ к ним снова.
+Это не руководство. Если вам необходимо полное руководство, ознакомьтесь с разделом [Создание, запись и чтение файла](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files), в котором показано, как создать, считать и записать файл, а также использовать буферы и потоки. Вас также может заинтересовать [пример доступа к файлам](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess), в котором показано, как создать, считать, записать, скопировать и удалить файл, а также как получать свойства файла и запоминать файлу или папку, чтобы ваше приложение легко могло получить доступ к ним снова.
 
-Мы рассмотрим код для записи текста в файл и чтения текста из файла, а также для получения доступа к папкам локальным, перемещаемым и временным папкам приложения.
+Мы рассмотрим код для записи текста в файл и чтения текста из файла, а также для получения доступа к локальным, перемещаемым и временным папкам приложения.
 
 ## <a name="what-do-you-need-to-know"></a>Что необходимо знать?
 
-Ниже приведены основные типы, которые вам нужно знать для чтения текста и записи текста в файл.
+Ниже приведены основные типы, о которых нужно знать для чтения текста и записи текста в файл.
 
 - [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) представляет файл. Этот класс содержит свойства, которые предоставляют сведения о файле, и методы для создания, открытия, копирования, удаления и переименования файлов.
-Возможно, вы привыкли работать со строковыми путями. Существует ряд API-интерфейсов UWP, принимающих строковый путь, однако чаще всего вы будете использовать объект **StorageFile** для представления файла, так как некоторые файлы на платформе UWP могут быть без пути или их путь может быть слишком громоздким. Используйте метод [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) для преобразования строкового пути в объект **StorageFile**. 
+Возможно, вы привыкли работать со строковыми путями. Существует ряд интерфейсов API UWP, принимающих строковый путь, однако чаще всего вы будете использовать объект **StorageFile** для представления файла, так как некоторые файлы на платформе UWP могут быть без пути или их путь может быть слишком громоздким. Используйте метод [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) для преобразования строкового пути в объект **StorageFile**. 
 
-- Класс [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) предоставляет простой способ для чтения и записи текста. Этот класс также может читать и записывать массив байтов или содержимое буфера. Этот класс очень похож на класс [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio). Основное различие заключается в том, что вместо использования строкового пути, как в **PathIO**, они принимает **StorageFile**.
+- Класс [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) предоставляет простой способ для чтения и записи текста. Этот класс также может читать и записывать массив байтов или содержимое буфера. Этот класс очень похож на класс [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio). Основное различие заключается в том, что вместо использования строкового пути, как в **PathIO**, он принимает **StorageFile**.
 - [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) представляет папку (каталог). Этот класс содержит методы для создания файлов, запроса содержимого папки, создания, переименования и удаление папок, а также свойства, которые предоставляют сведения о папке. 
 
 Вот распространенные способы получения **StorageFolder**.
 
 - [Windows.Storage.Pickers.FolderPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.folderpicker) позволяет пользователю перейти к требуемой папке.
 - [Windows.Storage.ApplicationData.Current](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current) предоставляет объект **StorageFolder** для одной из локальных для приложения папок, например локальной, перемещаемой и временной папки.
-- [Windows.Storage.KnownFolders](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders) предоставляет **StorageFolder** для известных библиотеки, таких как "Музыка" и "Изображения".
+- [Windows.Storage.KnownFolders](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders) предоставляет **StorageFolder** для известных библиотек, таких как "Музыка" и "Изображения".
 
 ## <a name="write-text-to-a-file"></a>Запись текста в файл
 
- В рамках этого обзор мы рассмотрим простой сценарий: чтение и запись текста. Начнем с кода, который использует класс **FileIO**, чтобы записать текст в файл.
+ В рамках этого обзора мы рассмотрим простой сценарий: чтение и запись текста. Начнем с кода, который использует класс **FileIO**, чтобы записать текст в файл.
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
@@ -53,15 +53,15 @@ var listOfStrings = new List<string> { "line1", "line2", "line3" };
 await Windows.Storage.FileIO.AppendLinesAsync(file, listOfStrings); // each entry in the list is written to the file on its own line.
 ```
 
-Сначала мы определим, где файл должен быть размещен. `Windows.Storage.ApplicationData.Current.LocalFolder` предоставляет доступ к папке локальных данных, которая создается для приложения, при установке. Дополнительные сведения о папках, доступных вашему приложению, см. в разделе [Доступ к файловой системе](#access-the-file-system).
+Сначала мы определим, где файл должен быть размещен. `Windows.Storage.ApplicationData.Current.LocalFolder` предоставляет доступ к локальной папке данных, которая создается для приложения во время установки. Дополнительные сведения о папках, доступных вашему приложению, см. в разделе [Доступ к файловой системе](#access-the-file-system).
 
 Затем мы используем **StorageFolder** для создания файла (или его открытия, если он уже существует).
 
-Класс **FileIO** предоставляет удобный способ записи текста в файл. `FileIO.WriteTextAsync()` Заменяет все содержимое файла указанный текст. `FileIO.AppendLinesAsync()` Добавляет коллекцию строк в файл--записи одной строки в каждой строке.
+Класс **FileIO** предоставляет удобный способ записи текста в файл. `FileIO.WriteTextAsync()` заменяет все содержимое файла предоставленным текстом. `FileIO.AppendLinesAsync()` добавляет в файл коллекцию строк, записывая по одному строковому значению в каждую строку.
 
 ## <a name="read-text-from-a-file"></a>Чтение текста из файла
 
-Как и при записи в файл, чтение файла начинается с указания его расположения. Мы будем использовать то же расположение, как и в примере выше. Затем мы будем использовать **FileIO** класс чтения его содержимого.
+Как и при записи в файл, чтение файла начинается с указания его расположения. Мы будем использовать то же расположение, что и в примере выше. Затем мы используем класс **FileIO** для чтения содержимого файла.
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
@@ -70,7 +70,7 @@ Windows.Storage.StorageFile file = await storageFolder.GetFileAsync("test.txt");
 string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 ```
 
-Также можно считать каждую строку файла в отдельных строк в коллекции с `IList<string> contents = await Windows.Storage.FileIO.ReadLinesAsync(sampleFile);`
+Вы можете также считывать каждую строку файла в отдельные строки в коллекции с помощью `IList<string> contents = await Windows.Storage.FileIO.ReadLinesAsync(sampleFile);`.
 
 ## <a name="access-the-file-system"></a>Доступ к файловой системе
 
@@ -78,43 +78,43 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 
 ### <a name="app-folders"></a>Папки приложения
 
-При установке приложения универсальной платформы Windows, несколько папок создаются в разделе c:\users\<имя пользователя > \AppData\Local\Packages\<идентификатор пакета приложения > \ для хранения, помимо прочего, локальные, перемещаемые и временных файлов приложения. Приложению не нужно объявлять какие-либо возможности, для доступа к этим папкам, и они недоступны другим приложениям. Эти папки также удаляются при удалении приложения.
+При установке приложение UWP в каталоге c:\users\<<имя пользователя>\AppData\Local\Packages\<<идентификатор пакета приложения>\ создается несколько папок для хранения, помимо прочего, локальных, перемещаемых и временных файлов приложения. Приложению не нужно объявлять какие-либо возможности для доступа к этим папкам, и они недоступны другим приложениям. Эти папки также удаляются при удалении приложения.
 
 Вот некоторые из папок приложения, которые часто используются.
 
-- **LocalState**: Для данных, локальным для текущего устройства. При резервном копировании устройства данные в этом каталоге сохраняются в образе резервной копии в службе OneDrive. Если пользователь сбрасывает или заменяет устройства, эти данные будут восстановлены. Для доступа к этой папке используйте `Windows.Storage.ApplicationData.Current.LocalFolder.`. Сохраните локальные данные, которые не требуется архивировать в OneDrive, в объекте **LocalCacheFolder**, к которому можно обратиться с помощью `Windows.Storage.ApplicationData.Current.LocalCacheFolder`.
+- **LocalState**: для локальных на текущем устройстве данных. При резервном копировании устройства данные в этом каталоге сохраняются в образе резервной копии в службе OneDrive. Если пользователь сбрасывает или заменяет устройство, эти данные будут восстановлены. Для доступа к этой папке используйте `Windows.Storage.ApplicationData.Current.LocalFolder.`. Сохраните локальные данные, которые не требуется архивировать в OneDrive, в объекте **LocalCacheFolder**, к которому можно обратиться с помощью `Windows.Storage.ApplicationData.Current.LocalCacheFolder`.
 
-- **RoamingState**: Для данных, которые должны реплицироваться на всех устройствах, где установлено приложение. Windows ограничивает объем данных, которые будут перемещаться, поэтому сохраняйте здесь только параметры пользователя и небольшие файлы. Для доступа к перемещаемой папке используйте `Windows.Storage.ApplicationData.Current.RoamingFolder`.
+- **RoamingState**: для данных, которые должны реплицироваться на всех устройствах, где установлено приложение. Windows ограничивает объем данных, которые будут перемещаться, поэтому сохраняйте здесь только параметры пользователя и небольшие файлы. Для доступа к перемещаемой папке используйте `Windows.Storage.ApplicationData.Current.RoamingFolder`.
 
-- **TempState**: Для данных, которые могут быть удалены, когда приложение не выполняется. Для доступа к этой папке используйте `Windows.Storage.ApplicationData.Current.TemporaryFolder`.
+- **TempState**: для данных, которые могут быть удалены, когда приложение не выполняется. Для доступа к этой папке используйте `Windows.Storage.ApplicationData.Current.TemporaryFolder`.
 
 ### <a name="access-the-rest-of-the-file-system"></a>Доступ к остальной части файловой системы
 
-Приложение UWP должно объявить свои намерения для доступа к определенной библиотеке пользователя, добавив соответствующую возможность в свой манифест. Затем при установке приложения пользователям предлагается подтвердить, что они разрешили доступ к указанной библиотеке. Если это не так, приложение не устанавливается. Существуют возможности для доступа к библиотекам изображений, видео и музыки. Полный список см. в разделе [Объявление возможностей приложения](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations). Чтобы получить **StorageFolder** для этих библиотек, используйте класс [Windows.Storage.KnownFolders](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders).
+Приложение UWP должно объявить свои намерения для доступа к определенной библиотеке пользователя, добавив соответствующую возможность в свой манифест. Затем при установке приложения пользователям предлагается подтвердить, что они разрешили доступ к указанной библиотеке. Если это не так, приложение не устанавливается. Существуют возможности для доступа к библиотекам изображений, видео и музыки. Полный список доступен в разделе [Объявление возможностей приложения](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations). Чтобы получить **StorageFolder** для этих библиотек, используйте класс [Windows.Storage.KnownFolders](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders).
 
 #### <a name="documents-library"></a>Библиотека документов
 
-Хотя и существует возможность доступа к библиотеке документов пользователя, она ограничена, то есть приложение, которое ее объявит, будет отклонено в Microsoft Store, если не воспользуетесь процессом, чтобы получить специальное разрешение. Оно не предназначено для общего использования. Вместо этого используйте средства выбора файла или папки (см. разделы [Открытие файлов и папок с помощью средства выбора](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) и [Сохранение файла с помощью средства выбора](https://docs.microsoft.com/windows/uwp/files/quickstart-save-a-file-with-a-picker)), позволяющие пользователям перейти к папке или файлу. При переходе пользователей к файлу или папке они неявно разрешают приложению доступа к ним, и система разрешает доступ.
+Хотя и существует возможность доступа к библиотеке документов пользователя, она ограничена, то есть приложение, которое ее объявит, будет отклонено в Microsoft Store, если вы не выполните процедуру получения специального разрешения. Оно не предназначено для общего использования. Вместо этого используйте средства выбора файла или папки (см. разделы [Открытие файлов и папок с помощью средства выбора](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) и [Сохранение файла с помощью средства выбора](https://docs.microsoft.com/windows/uwp/files/quickstart-save-a-file-with-a-picker)), позволяющие пользователям перейти к папке или файлу. При переходе пользователей к файлу или папке они неявно разрешают приложению доступ к ним, и система разрешает доступ.
 
 #### <a name="general-access"></a>Общий доступ
 
 Кроме того, ваше приложение может объявить ограниченную возможность [broadFileSystem](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) в манифесте, которая также должна быть утверждена в Microsoft Store. Затем приложение сможет получить доступ к любому файлу, к которому обращается пользователь, без вмешательства средства выбора файла или папки.
 
-Полный список расположений, которые доступны приложениям, см. в разделе [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions).
+Полный список расположений, которые доступны приложениям, приведен в разделе [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions).
 
-## <a name="useful-apis-and-docs"></a>Полезные API и документы
+## <a name="useful-apis-and-docs"></a>Полезные интерфейсы API и документы
 
-Вот краткое описание API-интерфейсов и другая полезная документация, которая поможет вам начать работу с файлами и папками.
+Ниже приведено краткое описание интерфейсов API и другая полезная документация, которая поможет вам приступить к работе с файлами и папками.
 
 ### <a name="useful-apis"></a>Полезные интерфейсы API
 
 | API | Описание |
 |------|---------------|
-|  [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) | Предоставляет сведения о файле, и методы для создания, открытия, копирования, удаления и переименования файлов. |
-| [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) | Предоставляет сведения о папке, методах для создания файлов и методах для создания, удаления и переименования папок. |
-| [Файловый ввод-вывод](https://docs.microsoft.com/uwp/api/windows.storage.fileio) |  Предоставляет простой способ для чтения и записи текста. Этот класс также может читать и записывать массив байтов или содержимое буфера. |
+|  [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) | Предоставляет сведения о файле и методы для создания, открытия, копирования, удаления и переименования файлов. |
+| [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) | Предоставляет сведения о папке, методы для создания файлов и методы для создания, удаления и переименования папок. |
+| [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) |  Предоставляет простой способ для чтения и записи текста. Этот класс также может читать и записывать массив байтов или содержимое буфера. |
 | [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) | Предоставляет простой способ чтения и записи текста из файла по строковому пути к файлу. Этот класс также может читать и записывать массив байтов или содержимое буфера. |
-| [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) & [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) |  Чтение и запись буферов, байт, целых чисел, идентификаторов GUID, объектов TimeSpan и других данных из потока и в поток. |
+| [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) & [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) |  Чтение буферов, байтов, целых чисел, идентификаторов GUID, объектов TimeSpan и других данных из потока и их запись в поток. |
 | [Windows.Storage.ApplicationData.Current](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current) | Предоставляет доступ к папкам, созданным для приложения, таким как папки локальных, перемещаемых и временных файлов. |
 | [Windows.Storage.Pickers.FolderPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.folderpicker) |  Позволяет пользователю выбрать папку и возвращает ее **StorageFolder**. Этот класс используется, чтобы получить доступ к расположениям, которые по умолчанию приложению недоступны. |
 | [Windows.Storage.Pickers.FileOpenPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker) | Позволяет пользователю выбрать файл и возвращает его **StorageFile**. Этот класс используется, чтобы получить доступ к файлу, который по умолчанию приложению недоступен. |
@@ -125,13 +125,13 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 
 | Раздел | Описание |
 |-------|----------------|
-| [Пространство имен Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) | Справочные документы по API. |
-| [Файлы, папки и библиотеки](https://docs.microsoft.com/windows/uwp/files/) | Концептуальные документы. |
+| [Пространство имен Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) | Справочная документация по API. |
+| [Файлы, папки и библиотеки](https://docs.microsoft.com/windows/uwp/files/) | Концептуальная документация. |
 | [Создание, запись и чтение файла](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | Описание создания, чтения и записи текста, двоичных данных и потоков. |
-| [Начало работы хранение данных приложения локально](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | Помимо рекомендаций для хранения локальных данных здесь также описывается назначение папок LocalSettings и LocalCache. |
-| [Приступая к работе с перемещаемые данные приложений](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | Серия из двух частей, посвященная использованию перемещаемых данных приложения. |
-| [Рекомендации для перемещаемых данных приложения](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | Следуйте этим рекомендациям для перемещаемых данных при проектировании приложения. |
-| [Хранение и извлечение параметров и прочих данных приложения](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | Общие сведения о различных хранилищах+ данных приложений, таких как локальные, перемещаемые и временные папки. В разделе [Перемещаемые данные](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data) представлены инструкции и дополнительные сведения о записи данных, которые перемещаются между устройствами. |
+| [Начало работы с локальным хранением данных приложения](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | Помимо рекомендаций для хранения локальных данных здесь также описывается предназначение папок LocalSettings и LocalCache. |
+| [Начало работы с перемещаемыми данными приложения](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | Цикл из двух частей, посвященный использованию перемещаемых данных приложения. |
+| [Руководство по перемещаемым данным приложения](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | Следуйте этим рекомендациям для перемещаемых данных при проектировании приложения. |
+| [Хранение и извлечение параметров и прочих данных приложения](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | Общие сведения о различных хранилищах данных приложений, таких как локальные, перемещаемые и временные папки. В разделе [Перемещаемые данные](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data) представлены инструкции и дополнительные сведения о записи данных, которые перемещаются между устройствами. |
 | [Разрешения на доступ к файлам](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | Сведения о расположениях в файловой системе, доступных вашему приложению. |
 | [Открытие файлов и папок с помощью средства выбора](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | Здесь описывается, как получить доступ к файлам и папкам, разрешив пользователю взаимодействовать со средством выбора. |
 | [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams) | Типы, используемые для чтения и записи потоков. |
@@ -141,8 +141,8 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 
 | Пример кода | Описание |
 |-----------------|---------------|
-| [Пример данных приложения](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | Здесь показано, как хранить и извлекать данные, связанные с отдельным пользователем, с помощью API-интерфейсов данных приложения. |
-| [Пример доступа к файлу](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Здесь показано, как создавать, читать, копировать и удалять файл. |
+| [Пример данных приложения](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | Здесь показано, как хранить и извлекать данные, связанные с отдельным пользователем, с помощью интерфейсов API данных приложения. |
+| [Пример доступа к файлу](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Здесь показано, как создать, считать, скопировать и удалить файл. |
 | [Пример средства выбора файлов](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Здесь показано, как получить доступ к файлам и папкам, позволяя пользователю выбирать их с помощью пользовательского интерфейса, и как сохранить файл, чтобы пользователь мог указывать имя, тип и расположение файла. |
-| [Пример в формате JSON](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | В этой статье показано, как кодировать и декодировать объекты, массивы, строки, числа и логические значения JSON с помощью [пространства имен Windows.Data.Json](https://docs.microsoft.com/uwp/api/Windows.Data.Json). |
-| [Дополнительные примеры кода](https://developer.microsoft.com//windows/samples) | Выберите **Файлы, папки и библиотеки** в раскрывающемся списке категорий. |
+| [Пример JSON](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | В этой статье показано, как кодировать и декодировать объекты, массивы, строки, числа и логические значения JSON с помощью [пространства имен Windows.Data.Json](https://docs.microsoft.com/uwp/api/Windows.Data.Json). |
+| [Дополнительные примеры кода](https://developer.microsoft.com//windows/samples) | Выберите **Файлы, папки и библиотеки** из раскрывающегося списка категорий. |

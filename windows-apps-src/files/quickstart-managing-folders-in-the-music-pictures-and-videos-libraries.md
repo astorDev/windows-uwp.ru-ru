@@ -4,13 +4,13 @@ title: Файлы и папки в библиотеках музыки, изоб
 description: Добавьте существующие папки музыки, изображений или видео в соответствующие библиотеки. Можно также удалить папки из библиотек, получить список папок в библиотеке и найти сохраненные фотографии, музыку и видео.
 ms.date: 06/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9dba57d8e75ba105a2154be5add5b101a4a6aa4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369337"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>Файлы и папки в библиотеках музыки, изображений и видео
@@ -19,18 +19,18 @@ ms.locfileid: "66369337"
 
 Библиотека — это виртуальная коллекция папок, которая содержит известную папку по умолчанию и все другие папки, добавленные пользователем в библиотеку с помощью вашего приложения или одного из встроенных приложений. Например, библиотека изображений содержит известную папку изображений по умолчанию. Пользователь может добавлять папки в библиотеку изображений или удалить их из нее с помощью вашего приложения или встроенного приложения "Фотографии".
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 
--   **Понять асинхронного программирования для приложений универсальной платформы Windows (UWP)**
+-   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)** .
 
     Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
--   **Разрешения на доступ к папке**
+-   **Права доступа к расположению**
 
     В Visual Studio откройте файл манифеста приложения в Конструкторе манифестов. На странице **Возможности** выберите библиотеки, которыми управляет приложение.
 
-    -   **Фонотека**
+    -   **Библиотека музыки**
     -   **Библиотека изображений**
     -   **Библиотека видео**
 
@@ -39,7 +39,7 @@ ms.locfileid: "66369337"
 ## <a name="get-a-reference-to-a-library"></a>Получение ссылок на библиотеку
 
 > [!NOTE]
-> Обязательно объявите соответствующую возможность. Дополнительные сведения см. в статье [Объявление возможностей приложений](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+> Обязательно объявите соответствующую возможность. Дополнительные сведения см. в статье [Объявление возможностей приложения](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
  
 
 Чтобы получить ссылку на библиотеку музыки, изображений или видео, вызовите метод [**StorageLibrary.GetLibraryAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.getlibraryasync). Предоставьте соответствующее значение из перечисления [**KnownLibraryId**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownLibraryId).
@@ -173,7 +173,7 @@ private async void getSongs()
 
 Папки «Пленка» и «Сохраненные изображения» не поддерживают глубокие запросы.
 
-**Открытие фото в приложение, которое скопировал его**
+**Открытие фотографии в приложении, с помощью которого она снята**
 
 Если вы хотите предоставить пользователю возможность открыть фотографию позже в том приложении, с помощью которого она снята, вы можете сохранить **CreatorAppId** с метаданными фотографии с помощью кода, похожего на приведенный в следующем примере. В этом примере **testPhoto** представляет объект [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile).
 

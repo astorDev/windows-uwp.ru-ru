@@ -6,17 +6,17 @@ label: Scrollbars
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: Abarlow, pagildea
 design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e401e700728e1d481fd2142281fe81524d146f94
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364431"
 ---
 # <a name="scroll-viewer-controls"></a>Элементы управления "Средство прокрутки"
@@ -25,9 +25,9 @@ ms.locfileid: "66364431"
 
 При наличии большего содержимого пользовательского интерфейса, чем можно поместить в область, используйте средство прокрутки.
 
-> **Важные API**: [Класс ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [класс полосы прокрутки](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
+> **Важные API**: [класс ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [класс ScrollBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
 
-Средства прокрутки позволяют содержимому выходить за пределы окна просмотра (видимой области). Пользователи могут добраться до этого содержимого, манипулируя средством прокрутки с помощью сенсорного ввода, колесика мыши, клавиатуры или игрового планшета или с помощью курсора мыши либо пера, для взаимодействия с полосой прокрутки средства прокрутки. На рисунке показано несколько примеров элементов управления средством прокрутки.
+Средства прокрутки позволяют содержимому выходить за пределы окна просмотра (видимой области). Пользователи могут добраться до этого содержимого, манипулируя средством прокрутки с помощью сенсорного ввода, колесика мыши, клавиатуры или игрового планшета, курсора мыши либо пера для взаимодействия с полосой прокрутки средства прокрутки. На рисунке показано несколько примеров элементов управления средством прокрутки.
 
 ![Снимок экрана, иллюстрирующий стандартный элемент управления “Полоса прокрутки”](images/ScrollBar_Standard.jpg)
 
@@ -54,7 +54,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -87,7 +87,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 </Page>
 ```
 
-Этот XAML показано, как включение горизонтальной прокрутки, поместите изображение в средстве прокрутки и масштабирования.
+В этом примере XAML показано, как размещать изображение в средстве прокрутки и включать масштабирование.
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"
@@ -105,7 +105,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 
 Чтобы позволить элементам управления, имеющим в своем составе ScrollViewer, влиять на поведение и свойства, имеющие отношение к ScrollViewer, элемент ScrollViewer определяет несколько подключенных свойств XAML, которые можно настраивать в стилях и использовать в привязках шаблонов. Подробнее о подключенных свойствах см. в разделе [Общие сведения о подключенных свойствах](../../xaml-platform/attached-properties-overview.md).
 
-**XAML ScrollViewer вложенные свойства**
+**Подключенные свойства XAML для ScrollViewer**
 
 ScrollViewer определяет следующие подключенные свойства XAML:
 
@@ -147,9 +147,9 @@ ScrollViewer определяет следующие подключенные с
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 **Разработчикам (XAML)**
 

@@ -1,11 +1,11 @@
 ---
-Description: Использование элементов управления ListView и GridView для отображения и изменения наборов данных, например коллекции образов или несколько сообщений электронной почты.
+Description: Используйте элементы управления ListView и GridView, чтобы отображать наборы данных, например галерею изображений или набор сообщений электронной почты, и выполнять с ними различные действия.
 title: Представления списка и сетки
 label: List view and grid view
 template: detail.hbs
 ms.date: 05/20/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
 pm-contact: predavid
 design-contact: kimsea
@@ -13,17 +13,17 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1664da65beed21dededb481aadd56f793af20f01
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364676"
 ---
 # <a name="list-view-and-grid-view"></a>Представления списка и сетки
 
 Большая часть приложений отображает наборы данных, такие как коллекции изображений или набор сообщений электронной почты, и управляет ими. Платформа пользовательского интерфейса XAML предоставляет элементы управления ListView и GridView, упрощающие отображение данных и управление ими в приложении.  
 
-> **Важные API**: [Класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [класс GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview), [свойство ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [элементы свойства](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
+> **Важные API**: [класс ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [класс GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview), [свойство ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [свойство Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
 
 Элементы управления ListView и GridView являются производными от класса ListViewBase, поэтому они имеют аналогичные функции, но отображают данные по-другому. В этой статье вся информация об элементе управления ListView актуальна для обоих элементов управления (ListView и GridView), если не указано иное. Когда упоминаются классы ListView или ListViewItem, нужно помнить, что префикс "List" может быть заменен префиксом "Grid" для соответствующего эквивалента сетки (GridView или GridViewItem). 
 
@@ -42,7 +42,7 @@ ListView отображает данные в одном столбце и уп�
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -284,19 +284,19 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Можно выбрать и сделать доступными различные способы взаимодействия пользователя с представлением списка. По умолчанию пользователь может выбрать один элемент. Можно изменить свойство [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode), чтобы разрешить выбор нескольких элементов или отключить их выбор. Можно задать свойство [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) так, чтобы пользователь нажатием элемента вызывал действие (наподобие кнопки), а не выбирал элемент.
 
-> **Примечание**.&nbsp;&nbsp;Элементы ListView и GridView используют перечисление [ListViewSelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewselectionmode) для свойств SelectionMode. IsItemClickEnabled по умолчанию имеет значение **False**, поэтому его нужно настроить, чтобы включить режим щелчка.
+> **Примечание.** &nbsp;&nbsp;Элементы ListView и GridView используют перечисление [ListViewSelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewselectionmode) для свойств SelectionMode. IsItemClickEnabled по умолчанию имеет значение **False**, поэтому его нужно настроить, чтобы включить режим щелчка.
 
 В таблице показаны способы взаимодействия пользователя с представлением списка и способы реагирования на это взаимодействие.
 
 Чтобы включить взаимодействие, выполните следующие действия. | Используйте следующие параметры: | Обработайте следующее событие: | Используйте это свойство, чтобы получить выбранный элемент:
 ----------------------------|---------------------|--------------------|--------------------------------------------
-Без взаимодействия | [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) = **None**, [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) = **False** | Н/Д | Н/Д 
+Без взаимодействия | [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) = **None**, [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) = **False** | Нет данных | Нет данных 
 Выбор одного элемента | SelectionMode = **Single**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem), [SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)  
-Выбор нескольких элементов | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [Свойство SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
-Расширенный выбор | SelectionMode = **Extended**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [Свойство SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
-Нажмите | SelectionMode = **None**, IsItemClickEnabled = **True** | [ItemClick](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | Н/Д 
+Выбор нескольких элементов | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
+Расширенный выбор | SelectionMode = **Extended**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
+Нажмите | SelectionMode = **None**, IsItemClickEnabled = **True** | [ItemClick](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | Нет данных 
 
-> **Примечание.** &nbsp;&nbsp;Начиная с Windows 10, можно сделать так, чтобы свойство IsItemClickEnabled вызывало событие ItemClick, если для SelectionMode выбрано значение Single, Multiple или Extended. В этом случае сначала вызывается событие ItemClick, а затем — SelectionChanged. В некоторых случаях, например при переходе на другую страницу в обработчике событий ItemClick, событие SelectionChanged не вызывается, элемент не выделяется.
+> **Примечание.** &nbsp;&nbsp;Начиная с Windows 10, можно сделать так, чтобы свойство IsItemClickEnabled вызывало событие ItemClick, если для SelectionMode выбрано значение Single, Multiple или Extended. В этом случае сначала вызывается событие ItemClick, а затем — SelectionChanged. В некоторых случаях, например при переходе на другую страницу в обработчике событий ItemClick, событие SelectionChanged не вызывается, элемент не выделяется.
 
 Можно задать эти свойства в XAML или в коде. как показано здесь.
 
@@ -519,12 +519,12 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Пример ListView и GridView в XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) — демонстрация элементов управления ListView и GridView.
+- [Пример ListView и GridView в XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) — демонстрация элементов управления ListView и GridView.
 - [Пример перетаскивания в XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlDragAndDrop) — демонстрация перетаскивания с помощью элемента управления ListView.
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 
 - [Списки](lists.md)
-- [Контейнеры элементов и шаблонов](item-containers-templates.md)
+- [Контейнеры и шаблоны элементов](item-containers-templates.md)
 - [Перетаскивание](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)

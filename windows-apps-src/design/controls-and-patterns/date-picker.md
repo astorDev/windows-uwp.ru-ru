@@ -7,17 +7,17 @@ label: Date picker
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e0a7d1732833f8e6fc750f8ee481fa3c1116b50
-ms.sourcegitcommit: 0d6110cd3d868612bee347566f5b85b724cb57df
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66823597"
 ---
 # <a name="date-picker"></a>Управляющий элемент выбора даты
@@ -26,7 +26,7 @@ ms.locfileid: "66823597"
 
 Элемент выбора даты — это стандартизованный способ, позволяющий пользователям выбирать локализованное значение даты с помощью сенсорного ввода, мыши или клавиатуры. 
 
-> **Важные API**: [Класс DatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [Дата, свойство](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.date)
+> **Важные API**: [класс DatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [свойство Date](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.date)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -37,7 +37,7 @@ ms.locfileid: "66823597"
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -75,7 +75,7 @@ birthDatePicker.Header = "Date of birth";
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 

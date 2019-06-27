@@ -1,16 +1,16 @@
 ---
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: Получение свойств файла
-description: Получение свойств &\#8212; верхнего уровня, базовые и расширенные &\#8212; для файла, представленного StorageFile объекта.
+description: Получите свойства&\#8212;верхнего уровня, базовые и расширенные&\#8212;для файла, представленного объектом StorageFile.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 01eda8eefea7e1b3b1102ef154a019e1630e80c2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369308"
 ---
 # <a name="get-file-properties"></a>Получение свойств файла
@@ -24,15 +24,15 @@ ms.locfileid: "66369308"
 Получите свойства — верхнего уровня, базовые и расширенные — для файла, представленного объектом [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile).
 
 > [!NOTE]
-> Полный пример см. в разделе [файла доступ к образцу](https://go.microsoft.com/fwlink/p/?linkid=619995).
+> Полный пример: [пример доступа к файлам](https://go.microsoft.com/fwlink/p/?linkid=619995).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
--   **Понять асинхронного программирования для приложений универсальной платформы Windows (UWP)**
+-   **Общее представление об асинхронном программировании для приложений универсальной платформы Windows (UWP)** .
 
     Описание процесса написания асинхронных приложений на C# или Visual Basic см. в статье [Вызов асинхронных API в C# и Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Сведения о создании асинхронных приложений на C++ см. в статье [Асинхронное программирование на языке C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
--   **Разрешения на доступ к папке**
+-   **Права доступа к расположению**
 
     Например, коду в этих примерах требуется возможность **picturesLibrary**. Для вашего расположения может потребоваться другая возможность либо вообще не потребоваться никаких возможностей. Дополнительную информацию см. в разделе [Разрешения на доступ к файлам](file-access-permissions.md).
 
@@ -88,7 +88,7 @@ foreach (Windows.Storage.StorageFile file in files)
 
 ## <a name="getting-a-files-extended-properties"></a>Получение расширенных свойств файла
 
-Помимо свойств верхнего уровня и базовых свойств, существует много свойств, связанных с содержимым файла. Доступ к этим расширенным свойствам можно получить, вызвав метод [**BasicProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties.retrievepropertiesasync). (Объект [ **BasicProperties** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.BasicProperties) будет получен путем вызова [ **StorageFile.Properties** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.properties) свойство.) Хотя файл верхнего уровня и основные свойства доступны как свойства класса —[**StorageFile** ](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) и **BasicProperties**, соответственно, расширенные свойства получить, передав [IEnumerable](https://go.microsoft.com/fwlink/p/?LinkID=313091) коллекцию [строка](https://go.microsoft.com/fwlink/p/?LinkID=325032) объектов, представляющих имена свойств, которые должны быть получены для  **BasicProperties.RetrievePropertiesAsync** метод. Затем этот метод возвращает коллекцию [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238). После этого каждое расширенное свойство извлекается из коллекции по имени или индексу.
+Помимо свойств верхнего уровня и базовых свойств, существует много свойств, связанных с содержимым файла. Доступ к этим расширенным свойствам можно получить, вызвав метод [**BasicProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties.retrievepropertiesasync). (Объект [**BasicProperties**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.BasicProperties) можно получить путем вызова свойства [**StorageFile.Properties**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.properties).) Доступ к свойствам верхнего уровня и базовым свойствам файла можно получить, обратившись к ним как к свойствам класса ([**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) и **BasicProperties** соответственно). Однако расширенные свойства получают, передавая коллекцию [IEnumerable](https://go.microsoft.com/fwlink/p/?LinkID=313091) объектов [String](https://go.microsoft.com/fwlink/p/?LinkID=325032), представляющих имена свойств, которые должны быть получены методом **BasicProperties.RetrievePropertiesAsync**. Затем этот метод возвращает коллекцию [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238). После этого каждое расширенное свойство извлекается из коллекции по имени или индексу.
 
 Этот пример перечисляет все файлы библиотеки изображений, указывает имена нужных свойств (**DataAccessed** и **FileOwner**) в объекте [List](https://go.microsoft.com/fwlink/p/?LinkID=325246), передает объект [List](https://go.microsoft.com/fwlink/p/?LinkID=325246) в [**BasicProperties.RetrievePropertiesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties.retrievepropertiesasync) для извлечения свойств и затем получает свойства по имени из возвращенного объекта [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238).
 

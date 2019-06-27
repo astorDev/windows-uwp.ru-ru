@@ -1,90 +1,90 @@
 ---
-title: Новые возможности в документации Windows в января 2019 — разработка приложений универсальной платформы Windows
-description: В документации разработчика Windows 10 января 2019 были добавлены новые функции, видео и материалы для разработчиков
-keywords: новые возможности, обновления, функции, материалы для разработчиков, Windows 10 января
+title: Что нового в документации Windows в январе 2019 г. — разработка приложений UWP
+description: В январе 2019 г документация для разработчиков Windows 10 пополнилась описанием новых возможностей, видеоматериалами и руководствами для разработчиков.
+keywords: what's new, update, features, developer guidance, Windows 10, january
 ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: beb80c28866b8f8207f203b70cb504dcd034098d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636579"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63800592"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Новые возможности в документации по Windows Developer в января 2019
+# <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Что нового в документации для разработчиков Windows в январе 2019 г.
 
-Документация для разработчиков Windows непрерывно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. Обзор компонентов, материалы для разработчиков и видеоматериалы были выпущены в январе.
+Документация для разработчиков Windows постоянно обновляется и дополняется информацией о новых функциях, доступных разработчикам на платформе Windows. В январе появились приведенные ниже обзоры функций, руководства для разработчиков и видео.
 
 [Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
 ## <a name="features"></a>Возможности
 
-### <a name="windows-development-on-microsoft-learn"></a>Для разработки приложений Windows в Майкрософт сведения
+### <a name="windows-development-on-microsoft-learn"></a>Разработка приложений Windows в Microsoft Learn
 
-Узнайте Microsoft предоставляет новый Практическое обучение и возможности обучения для разработчиков Microsoft. Если вы хотите узнать, как разрабатывать приложения Windows, см. статью [наш новый путь обучения](https://docs.microsoft.com/learn/paths/develop-windows10-apps/) для подробным введением платформы, инструменты и как написать свое первое приложение на несколько.
+Microsoft Learn предоставляет новые практические возможности обучения и подготовки для разработчиков Microsoft. Если вы хотите узнать, как разрабатывать приложения Windows, см. [нашу новую схему обучения](https://docs.microsoft.com/learn/paths/develop-windows10-apps/) с подробными сведениями о платформе, инструментах и принципах создания приложений.
 
-![Снимок экрана: разработки Windows, учебные материалы](images/windows-learn.png)
+![Изображение схемы обучения разработки приложений Windows](images/windows-learn.png)
 
-### <a name="direct-3d-12"></a>Direct 3D 12
+### <a name="direct-3d-12"></a>Direct3D 12
 
-[Direct3D 12 отображения](/windows/desktop/direct3d12/direct3d-12-render-passes) может повысить производительность вашего модуля подготовки отчетов, если она основана на плитке отложенный подготовки отчетов на основе (TBDR), наряду с другими методами. Метод помогает вашего модуля подготовки отчетов для повышения эффективности GPU приложения упростить отрисовки упорядочивания требования и данных зависимостей ресурсов, и таким образом снижая трафик памяти из памяти вне кристалла.
+[Этапы визуализации Direct3D 12](/windows/desktop/direct3d12/direct3d-12-render-passes) могут повысить производительность визуализации, если в ней, наряду с другими методами, используется принцип отсроченной отрисовки на основе плиток (TBDR). Этот метод помогает повысить эффективность использования графического процессора для отрисовки, позволяя вашему приложению лучше определять требования к порядку отрисовки ресурсов и зависимости данных и за счет этого сокращать трафик данных, поступающих из памяти в память вне микросхемы и в обратном направлении.
 
-### <a name="msix-modification-packages"></a>MSIX изменения пакетов
+### <a name="msix-modification-packages"></a>Пакеты MSIX с модификациями
 
-Windows 10 версии 1809 Улучшенная поддержка [MSIX изменения пакетов](https://docs.microsoft.com/windows/msix/modification-package-1809-update). Изменение пакетов могут включать системного реестра подключаемые модули и связанные настройки, а также позволят приложение, развернутое через MSIX виртуальный реестр и выполняться правильно.
+Windows 10 версии 1809 отличается улучшенной поддержкой [пакетов MSIX с модификациями](https://docs.microsoft.com/windows/msix/modification-package-1809-update). Пакеты с модификациями могут содержать подключаемые модули на основе реестра и связанные с ними настройки, что позволяет приложению, развернутому через MSIX, использовать виртуальный реестр и запускаться надлежащим образом.
 
-![При создании пакета MSIX изменения](images/msix-modification-package.png)
+![Создание пакетов MSIX с модификациями](images/msix-modification-package.png)
 
-### <a name="open-source-of-wpf-windows-forms-and-winui"></a>Открытый код WPF, Windows Forms и WinUI
+### <a name="open-source-of-wpf-windows-forms-and-winui"></a>Открытый исходный код WPF, Windows Forms и WinUI
 
-Платформы WPF, Windows Forms и WinUI UX теперь доступны для публикаций с открытым исходным кодом на сайте GitHub. Дополнительные сведения и ссылки, см. в разделе [построение блоге о приложениях Windows](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97).
+Платформы взаимодействия с пользователем WPF, Windows Forms и WinUI теперь доступны для публикаций с открытым исходным кодом на GitHub. Дополнительные сведения и ссылки см. в [блоге о сборке приложений Windows](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97).
 
-### <a name="progressive-web-apps-for-xbox"></a>Прогрессивное веб-приложений для Xbox
+### <a name="progressive-web-apps-for-xbox"></a>Прогрессивные веб-приложения для Xbox
 
-С помощью [прогрессивное веб-приложений для Xbox One](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations), можно расширить веб-приложение и сделать его доступным как приложение Xbox One через Microsoft Store продолжают по-прежнему использовать свои имеющиеся платформы, CDN и сервера базы данных. В большинстве случаев можно упаковать в PWA для Xbox One таким же образом, что для Windows, однако существуют некоторые ключевые отличия, которые это руководство поможет вам выполнить.
+С помощью [прогрессивных веб-приложений для Xbox One](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations) веб-приложение можно расширить и сделать его доступным как приложение для Xbox One в Microsoft Store, и при этом по-прежнему использовать имеющиеся платформы, CDN и серверную среду. В большинстве случаев пакеты PWA для Xbox One можно создавать таким же образом, как и для Windows, однако есть несколько ключевых отличий, которые будут приведены в этом руководстве.
 
-### <a name="windows-machine-learning"></a>Windows машинного обучения
+### <a name="windows-machine-learning"></a>Машинное обучение Windows
 
-Мы реструктуризации [целевая страница для API-интерфейсов WinML](https://docs.microsoft.com/windows/ai/api-reference)и добавить новую документацию для пользовательского оператора WinML и собственные API-интерфейсы.
+Мы реорганизовали [целевую страницу для программных интерфейсов WinML](https://docs.microsoft.com/windows/ai/api-reference) и добавили новую документацию для пользовательского оператора WinML и собственных программных интерфейсов.
 
-[Обучение модели с PyTorch](https://docs.microsoft.com/windows/ai/train-model-pytorch) содержит рекомендации о том, как обучить модель с помощью платформы PyTorch, локально или в облаке. Затем можно загрузить эту модель в виде файла ONNX и использовать его в приложениях WinML.
+[Обучение модели с помощью PyTorch](https://docs.microsoft.com/windows/ai/train-model-pytorch) — это руководство по обучению модели с использованием платформы PyTorch как локально, так и в облаке. После обучения вы сможете загрузить эту модель в виде ONNX-файла и использовать ее в своих приложениях WinML.
 
-![График WinML](images/winml-graphic.png)
+![Графический объект WinML](images/winml-graphic.png)
 
 ## <a name="developer-guidance"></a>Руководство для разработчиков
 
-### <a name="choose-your-platform"></a>Выберите платформу
+### <a name="choose-your-platform"></a>Выбор платформы
 
-Вы заинтересованы в создании новых настольных приложений? Ознакомьтесь с нашей переработанной [выберите платформу](https://docs.microsoft.com/windows/desktop/choose-your-technology) страницы подробное описание и сравнение платформы UWP, WPF и Windows Forms и Дополнительные сведения об интерфейсе API Win32.
+Если вы заинтересованы в создании новых классических приложений, ознакомьтесь с нашей обновленной страницей[Выбор платформы для приложения](https://docs.microsoft.com/windows/desktop/choose-your-technology). Здесь приведены подробные описания и сравнения платформ UWP, WPF и Windows Forms, а также дополнительные сведения о API Win32.
 
-### <a name="faqs-on-win32-webview"></a>Часто задаваемые вопросы по веб-представления Win32
+### <a name="faqs-on-win32-webview"></a>Часто задаваемые вопросы о Win32 WebView
 
-Наши [ответы на вопросы о](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs) содержатся ответы на часто задаваемые вопросы, при использовании веб-представления Microsoft Edge в настольных приложениях, а также ссылки на образцы кода и дополнительные ресурсы.
+Наш раздел [Вопросы и ответы](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs) содержит ответы на часто задаваемые вопросы, которые возникают при использовании Microsoft Edge WebView в классических приложениях, а также ссылки на образцы кода и дополнительные ресурсы.
 
-### <a name="japanese-era-change"></a>Изменение японской эры
+### <a name="japanese-era-change"></a>Смена эры в Японии
 
-[Подготовка приложения для изменения японской эры](../design/globalizing/japanese-era-change.md) показано, как обеспечить в Windows, приложение будет готово, для японской эры измените набор, чтобы воспользоваться разместить на 1 мая 2019 г. [Эта страница доступна также на японском языке](https://docs.microsoft.com/ja-jp/windows/uwp/design/globalizing/japanese-era-change).
+В статье [Подготовка приложения к смене эры в Японии](../design/globalizing/japanese-era-change.md) показано, как убедиться, что приложение в Windows готово к ряду изменений, связанных со сменой эры в Японии, которая состоится 1 мая 2019 г. [Эта страница доступна также на японском языке](https://docs.microsoft.com/ja-jp/windows/uwp/design/globalizing/japanese-era-change).
 
 ## <a name="videos"></a>Видео
 
 ### <a name="progressive-web-apps"></a>Прогрессивные веб-приложения
 
-Прогрессивное веб-приложений, веб-сайтов, которые работают как собственные приложения для различных браузеров и самых разнообразных устройствах с Windows 10. [Просмотрите видео](https://youtu.be/ugAewC3308Y) для получения дополнительных сведений, а затем [ознакомьтесь с документацией](https://aka.ms/Windows-PWA) Чтобы приступить к работе.
+Прогрессивные веб-приложения — это веб-сайты, которые работают как встроенные приложения в различных браузерах и самых разнообразных устройствах на платформе Windows 10. [Посмотрите видео](https://youtu.be/ugAewC3308Y), чтобы получить дополнительные сведения, а затем [изучите документы](https://aka.ms/Windows-PWA), чтобы начать работу.
 
-### <a name="vs-code-series"></a>Серия кода VS
+### <a name="vs-code-series"></a>Серия обучающих видео по VS Code
 
-Ознакомьтесь с нашей [новой серии видеороликов по Visual Studio Code](https://www.youtube.com/playlist?list=PLlrxD0HtieHjQX77y-0sWH9IZBTmv1tTx) сведения о возможностях VSCode, способы его использования, и как он был создан.
+Ознакомьтесь с [новой серией обучающих видео по Visual Studio Code](https://www.youtube.com/playlist?list=PLlrxD0HtieHjQX77y-0sWH9IZBTmv1tTx), чтобы узнать о возможностях VSCode, способах его использования и создания.
 
-### <a name="one-dev-question"></a>Один вопрос разработки
+### <a name="one-dev-question"></a>One Dev Question
 
-В серии видео один вопрос разработки привыкшим разработчиков Microsoft охватывают ряд вопросов о разработке Windows, команды языка и региональных параметров и журнал. Вот последние вопросы, которые мы выбрали ответ!
+В серии видеороликов One Dev Question опытные разработчики Microsoft отвечают на вопросы, касающиеся разработки Windows, командной культуры и истории. Вот последние вопросы, на которые мы ответили.
 
-Рэймонд Чен:
+Рэймонд Чен (Raymond Chen):
 
-* [Почему у, Program Files и Program Files (x86)?](https://youtu.be/N7o9eJpFYco)
+* [Почему существует Program Files и Program Files (x86)?](https://youtu.be/N7o9eJpFYco)
 
-Блоге Ларри Остермана:
+Ларри Остерман (Larry Osterman):
 
-* [Почему не COM таким уж сложным?](https://youtu.be/-gkXAV-StVA )
-* [Какова первое интервью как корпорации Майкрософт?](https://youtu.be/qRb6otsHG5c)
+* [Почему так сложно использовать модель COM?](https://youtu.be/-gkXAV-StVA )
+* [Каким было ваше первое интервью для корпорации Майкрософт?](https://youtu.be/qRb6otsHG5c)

@@ -1,47 +1,47 @@
 ---
-description: Показать, что фокус находится эффекта освещения, который анимирует границы элементов, способному получать фокус, когда пользователь перемещает фокус клавиатуры или игровой к ним.
-title: Показать фокус
+description: Обозначение фокуса — это световой эффект, анимирующий границу фокусируемого элемента, когда пользователь наводит на него фокус с геймпада или клавиатуры.
+title: Обозначение фокуса
 template: detail.hbs
 ms.date: 03/01/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cb91b37b1d2a6924a80bbe666129343ad778d8e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66370470"
 ---
-# <a name="reveal-focus"></a>Показать фокус
+# <a name="reveal-focus"></a>Обозначение фокуса
 
-![главное изображение](images/header-reveal-focus.svg)
+![Главное изображение](images/header-reveal-focus.svg)
 
-Показывать главным образом нацелено эффекта освещения для [опыт 10 foot](/windows/uwp/design/devices/designing-for-tv), такие как Xbox One и экраны телевизора. Этот эффект анимирует границу элементов для фокусировки, например кнопок, когда пользователь наводит на них фокус с геймпада или клавиатуры. По умолчанию эффект выключен, но включить его очень легко. 
+Обозначение фокуса — это световой эффект для [больших экранов](/windows/uwp/design/devices/designing-for-tv), как в случае телевизора, используемого в паре с Xbox One. Этот эффект анимирует границу элементов для фокусировки, например кнопок, когда пользователь наводит на них фокус с геймпада или клавиатуры. По умолчанию эффект выключен, но включить его не составляет труда. 
 
-(Показать выделите эффект, эффект освещения, который выделяет интерактивные элементы, см. в разделе [Показать выделите статье](/windows/uwp/design/style/reveal).)
+(Описание эффекта подсвечивания, светового эффекта, выделяющего интерактивные элементы, см. [в статье о нем](/windows/uwp/design/style/reveal).)
 
 
-> **Важные API**: [Свойство Application.FocusVisualKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind), [перечисления FocusVisualKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind), [Control.UseSystemFocusVisuals свойство](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
+> **Важные API**: [Application.FocusVisualKind property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind), [FocusVisualKind enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind), [Control.UseSystemFocusVisuals property](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals).
 
 ## <a name="how-it-works"></a>Принцип работы
-Показать сосредоточить внимание на вызовы к элементам с фокусом, добавив анимированных свечение вокруг границы этого элемента:
+Обозначение фокуса привлекает внимание к элементам в фокусе, добавляя анимированное сияние вокруг границы элемента:
 
-![Наглядное представление эффекта отображения](images/traveling-focus-fullscreen-light-rf.gif)
+![Пример обозначения фокуса](images/traveling-focus-fullscreen-light-rf.gif)
 
-Это особенно полезно в сценариях 10 foot, где пользователь может не быть Брельсфорд полный на весь экран Телевизора. 
+Эта функция особо полезна на больших экранах, когда пользователь может не обращать внимание на экран в целом. 
 
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Если у вас есть <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong> приложения. Щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/RevealFocus">откройте приложение и увидеть Показать фокус в действии</a>.</p>
+    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/RevealFocus">открыть приложение и увидеть обозначение фокуса в действии</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
@@ -50,11 +50,11 @@ ms.locfileid: "66370470"
 </tr>
 </table>
 
-## <a name="how-to-use-it"></a>Использование
+## <a name="how-to-use-it"></a>Реализация
 
-Показать, что фокус по умолчанию отключены. Чтобы включить его, выполните следующие действия:
+Обозначение фокуса выключено по умолчанию. Чтобы включить его, сделайте следующее:
 1. В конструкторе приложения вызовите свойство [AnalyticsInfo.VersionInfo.DeviceFamily](/uwp/api/windows.system.profile.analyticsversioninfo.DeviceFamily) и проверьте, является ли текущее семейство устройств `Windows.Xbox`.
-2. Если семейство устройств `Windows.Xbox`, задайте для свойства [Application.FocusVisualKind](/uwp/api/windows.ui.xaml.application.FocusVisualKind) значение `FocusVisualKind.Reveal`. 
+2. Если семейство устройств является `Windows.Xbox`, задайте для свойства [Application.FocusVisualKind](/uwp/api/windows.ui.xaml.application.FocusVisualKind) значение `FocusVisualKind.Reveal`. 
 
 ```csharp
     if(AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Xbox")
@@ -63,26 +63,26 @@ ms.locfileid: "66370470"
     }
 ```
 
-После установки **FocusVisualKind** свойство, система автоматически применяет эффект фокусировки Показать все элементы управления, [UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals) свойству **True** (значение по умолчанию для большинства элементов управления). 
+После того как вы зададите свойство **FocusVisualKind**, система автоматически применит эффект обозначения фокуса ко всем элементам управления, у которых свойство [UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals) имеет значение **True** (значение по умолчанию для большинства элементов управления). 
 
-## <a name="why-isnt-reveal-focus-on-by-default"></a>Почему Показать фокус на по умолчанию? 
-Как вы видите, это довольно легко включать Показать фокус, когда приложение обнаруживает, что он работает под управлением Xbox. Так почему система просто не включит для вас эту функцию? Так как отобразить фокус увеличивает размер фокус визуальный элемент, который может вызвать проблемы с макетом пользовательского интерфейса. В некоторых случаях необходимо настроить эффект Показать фокус, оптимизировать его для своего приложения.
+## <a name="why-isnt-reveal-focus-on-by-default"></a>Почему отображение фокуса по умолчанию отключено? 
+Включить обозначение фокуса достаточно просто, когда приложение обнаруживает, что оно выполняется на Xbox. Так почему бы системе просто не включать эту функцию? Потому что обозначение фокуса увеличивает размер фокусируемого элемента, что может быть неудобно при работе с пользовательским интерфейсом. В некоторых случаях может потребоваться настроить обозначение фокуса, чтобы оптимизировать его для вашего приложения.
 
-## <a name="customizing-reveal-focus"></a>Настройка раскрывают фокус
+## <a name="customizing-reveal-focus"></a>Настройка обозначения фокуса
 
-Показать фокус эффект можно настроить, изменив фокус визуальных свойств для каждого элемента управления: [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush), и [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). Эти свойства позволяют настраивать цвет и толщину прямоугольника фокуса. (Это те же свойства, что используются для создания [визуальных элементов дополнительного выделения фокуса](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals).) 
+Настроить обозначение фокуса можно путем изменения визуальных свойств каждого элемента управления: [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) и [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). Эти свойства позволяют настраивать цвет и толщину границы фокуса. (Это те же свойства, что используются для создания [визуальных элементов дополнительного выделения фокуса](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals).) 
 
-Но прежде чем настройка, полезно немного узнать о компонентах, составляющих Показать фокус.
+Но перед началом пользовательской настройки было бы полезно узнать больше о компонентах, составляющих обозначение фокуса.
 
-Визуальные элементы Показать фокуса по умолчанию, состоит из трех частей: границе основной, дополнительный границы и отображения гало. Основная рамка толщиной **2 пикселя** проходит вдоль *внешней* стороны дополнительной рамки. Дополнительная рамка толщиной **1 пиксель** проходит вдоль *внутренней* стороны основной рамки. Показать фокус свечения толщина пропорционально толщины границы для первичного и запускает *за пределами* первичного границы.
+Визуальные элементы обозначения фокуса по умолчанию состоят из трех частей: основная граница, дополнительная граница и свечение обозначения. Основная рамка толщиной **2 пикселя** проходит вдоль *внешней* стороны дополнительной рамки. Дополнительная рамка толщиной **1 пиксель** проходит вдоль *внутренней* стороны основной рамки. Свечение обозначения фокуса имеет толщину, пропорциональную толщине основной границы и циркулирует с *внешней стороны* основной границы.
 
-Помимо статических элементов визуальные элементы фокуса Показать компонентов анимированных свет, который pulsates на месте остатки и перемещается в направлении фокус при перемещении фокуса.
+Помимо статических элементов, визуальные элементы обозначения фокуса содержат анимированный свет, который пульсирует, если фокус не двигается, и перемещается в направлении перемещения фокуса.
 
-![Показать слои фокус](images/reveal-breakdown.svg)
+![Слои обозначения фокуса](images/reveal-breakdown.svg)
 
 ## <a name="customize-the-border-thickness"></a>Настройка толщины границы
 
-Чтобы изменить толщину разных типов границ элемента управления, воспользуйтесь этими свойствами:
+Чтобы изменить толщину разных типов границ элемента управления, используйте такие свойства:
 
 | Тип границы | Свойство |
 | --- | --- |
@@ -98,7 +98,7 @@ ms.locfileid: "66370470"
 
 ## <a name="customize-the-margin"></a>Настройка поля
 
-Поле — это пространство между визуальными границами элемента управления и началом дополнительной рамки. По умолчанию поле начинается через 1 пиксель от границ элемента управления. Можно изменять расположение поля для каждого элемента управления путем изменения свойства [FocusVisualMargin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualMargin):
+Поле — это пространство между визуальными границами элемента управления и началом дополнительной рамки. По умолчанию ширина поля составляет 1 пиксель. Вы можете изменять ширину поля для каждого элемента управления путем изменения свойства [FocusVisualMargin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualMargin):
 
 ```xaml
 <Button FocusVisualPrimaryThickness="2" FocusVisualSecondaryThickness="1" FocusVisualMargin="-3"/>
@@ -108,7 +108,7 @@ ms.locfileid: "66370470"
 
 ## <a name="customize-the-color"></a>Настройка цвета
 
-Чтобы изменить цвета визуального отображения фокуса, используйте [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) и [FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) свойства.
+Чтобы изменить цвет визуального элемента обозначения фокуса, используйте свойства [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) и [FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush).
 
 | Свойство | Ресурс по умолчанию | Значение ресурса по умолчанию |
 | ---- | ---- | --- | 
@@ -145,12 +145,12 @@ ms.locfileid: "66370470"
 </Application.Resources>
 ```
 
-Дополнительные сведения об изменении цвета визуального элемента фокуса см. в разделе [Цветовая фирменная символика и настройка](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#color-branding--customizing).
+Дополнительные сведения об изменении цвета визуального элемента фокуса см. в разделе о [настройках границ и их цветов](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#color-branding--customizing).
 
 
 ## <a name="show-just-the-glow"></a>Показывать только свечение
 
-Если вы хотите использовать только сияние без основного или дополнительного визуального элемента фокуса, просто задайте для свойства [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) элемента управления значение `Transparent`, а для свойства [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) — значение `0`. В этом случае свечение будет адаптироваться к цвету фона элемента управления, обеспечивая визуальное отсутствие границ. Изменить толщину свечения можно с помощью свойства [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness).
+Если вы хотите использовать только свечение без основного или дополнительного визуального элемента фокуса, просто задайте для свойства [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) элемента управления значение `Transparent`, а для свойства [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) — значение `0`. В этом случае свечение будет адаптироваться к цвету фона элемента управления, обеспечивая визуальное отсутствие границ. Изменить толщину свечения можно с помощью свойства [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness).
 
 ```xaml
 
@@ -163,19 +163,19 @@ ms.locfileid: "66370470"
 
 ## <a name="use-your-own-focus-visuals"></a>Использование собственных визуальных элементов фокуса
 
-Другим способом настройки Показать фокус — отказаться от визуальные элементы фокуса, предоставляемых системой, нарисовав собственные, используя визуальные состояния. Дополнительные сведения приводятся в статье [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895).
+Еще один способ настройки обозначения фокуса  — отказаться от использования системных визуальных элементов фокуса, нарисовав собственные с помощью визуальных состояний. Дополнительные сведения можно почерпнуть из [примера визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895).
 
 
-## <a name="reveal-focus-and-the-fluent-design-system"></a>Показать фокус и Fluent Design System
+## <a name="reveal-focus-and-the-fluent-design-system"></a>Обозначение фокуса и система проектирования Fluent Design
 
-Показать, что фокус является компонентом Fluent Design System, который добавляет свет в приложение. Дополнительные сведения о системе проектирования Fluent Design и ее других компонентах см. в [обзоре системы проектирования Fluent Design для UWP](/windows/apps/fluent-design-system).
+Обозначение фокуса — это компонент системы проектирования Fluent Design, добавляющий свечение в ваше приложение. Дополнительные сведения о системе проектирования Fluent Design и ее компонентах см. в [обзоре системы проектирования Fluent Design для UWP](/windows/apps/fluent-design-system).
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [Отобразить выделение](https://docs.microsoft.com/windows/uwp/design/style/reveal)
+- [Reveal Highlight](https://docs.microsoft.com/windows/uwp/design/style/reveal) (Подсвечивание)
 - [Проектирование для Xbox и телевизора](/windows/uwp/design/devices/designing-for-tv)
-- [Взаимодействия с игровой и удаленного управления](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
+- [Взаимодействие с помощью геймпада и пульта дистанционного управления](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
 - [Пример визуальных элементов фокуса](https://go.microsoft.com/fwlink/p/?LinkID=619895)
-- [Эффекты композиции](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
-- [В системе обработки и анализа: Fluent Design and глубины](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
-- [В системе обработки и анализа: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)
+- [Composition Effects](https://docs.microsoft.com/windows/uwp/graphics/composition-effects) (Эффекты композиции)
+- [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f) (Глубина в Fluent Design)
+- [Science in the System: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f) (Свет в Fluent Design)

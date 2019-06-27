@@ -6,16 +6,16 @@ label: Text box
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2db08cc577a82ddf6973cb33e41f9bdb39fdffde
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364225"
 ---
 # <a name="text-box"></a>Текстовое поле
@@ -24,7 +24,7 @@ ms.locfileid: "66364225"
 
 Элемент TextBox имеет несколько компонентов, которые могут упростить ввод текста. Он поставляется со знакомым, встроенным контекстным меню с поддержкой копирования и вставки текста. Кнопка "Очистить все" позволяет пользователю быстро удалить весь текст, который был введен. В нем также есть функции проверки правописания, встраиваемые и включаемые по умолчанию.
 
-> **Важные API**: [Класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [свойства Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
+> **Важные API**: [Класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [свойство Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text).
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -43,7 +43,7 @@ ms.locfileid: "66364225"
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -207,7 +207,7 @@ rootGrid.Children.Add(textBox);
 
 По умолчанию команды, отображаемые в контекстном меню текстового поля, зависят от состояния текстового поля. Например, если текстовое поле является редактируемым, отображаются следующие команды.
 
-Command | Отображается, когда...
+Команда | Отображается, когда...
 ------- | -------------
 Копировать | текст выделен.
 Вырезать | текст выделен.
@@ -309,14 +309,14 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 
 - [Текстовые элементы управления](text-controls.md)
-- [Рекомендации для проверки орфографии](text-controls.md)
+- [Руководство по проверке орфографии](text-controls.md)
 - [Добавление поиска](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
-- [Рекомендации для ввода текста](text-controls.md)
+- [Руководство по текстовому вводу](text-controls.md)
 - [Класс TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Класс PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [Свойство String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

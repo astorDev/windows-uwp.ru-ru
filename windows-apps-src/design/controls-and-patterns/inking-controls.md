@@ -5,21 +5,21 @@ label: Inking Controls
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b34f88d198ec80c67e5aac7b57001e42fe5c516
-ms.sourcegitcommit: aa5a055e3ff9ee9defc73ed9567196d59f59542a
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66825028"
 ---
 # <a name="inking-controls"></a>Элементы управления рукописным вводом
 
 
 
-Существует два различных элементов управления, предназначенных для упрощения рукописного ввода в приложениях универсальной платформы Windows (UWP). [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) и [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
+В приложениях универсальной платформы Windows (UWP) рукописный ввод контролируется с помощью двух разных элементов управления: [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) и [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 Элемент управления InkCanvas отображает ввод с помощью пера в виде росчерка пера (используя параметры цвета и толщины штриха по умолчанию) или росчерка стирания. Этот элемент управления представляет собой прозрачное наложение, которое не содержит никаких встроенных элементов пользовательского интерфейса для изменения свойств росчерка пера по умолчанию.
 
@@ -35,7 +35,7 @@ ms.locfileid: "66825028"
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-> **Важные API**: [Класс InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [класс InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [класс InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **Важные API**: [класс InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [класс InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [класс InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -52,7 +52,7 @@ InkCanvas позволяет включить в приложении базов
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -73,7 +73,7 @@ InkCanvas позволяет включить в приложении базов
 **Windows Ink Workspace**
 
 Элементы управления InkCanvas и InkToolbar также используются в **Windows Ink Workspace** для **альбома** и **наброска экрана**.  
-![InkToolbar в Windows Ink Workspace](images/ink-tools-ink-workspace.png)
+![Элемент управления InkToolbar в Windows Ink Workspace](images/ink-tools-ink-workspace.png)
 
 ## <a name="create-an-inkcanvas-and-inktoolbar"></a>Создание элементов управления InkCanvas и InkToolbar
 
@@ -84,7 +84,7 @@ InkCanvas позволяет включить в приложении базов
 ```
 
 > [!NOTE]
-> Подробные настройку InkCanvas, с помощью элемента управления InkPresenter, см. в разделе [«Пера, взаимодействия и рукописного ввода Windows в приложениях универсальной платформы Windows»](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) статьи.
+> Сведения о детальной настройке элемента управления InkCanvas с использованием InkPresenter см. в статье [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) (Взаимодействие с помощью пера и Windows Ink в приложениях UWP).
 
 Элементы управления InkToolbar и InkCanvas необходимо использовать вместе. Чтобы включить элемент управления InkToolbar (со всеми встроенными инструментами) в приложение, необходима одна дополнительная строка разметки:
 
@@ -137,7 +137,7 @@ InkCanvas позволяет включить в приложении базов
 - Специальный переключатель — включает или выключает определенную приложением функцию. Если функция включена, она действует вместе с активным инструментом.
 
 > [!NOTE]
-> Изменить порядок отображения встроенных кнопок невозможно. Ниже приведен порядок отображения по умолчанию. Ручка, карандаша, маркера, резинки и линейка. Специальные перья добавляются после последнего пера по умолчанию, кнопки специальных инструментов располагаются между кнопкой последнего пера и кнопкой ластика, а кнопки специальных переключателей — после кнопки линейки (специальные кнопки добавляются в порядке настройки).
+> Изменить порядок отображения встроенных кнопок невозможно. По умолчанию они отображаются в следующем порядке: шариковая ручка, карандаш, маркер, ластик и линейка. Специальные перья добавляются после последнего пера по умолчанию, кнопки специальных инструментов располагаются между кнопкой последнего пера и кнопкой ластика, а кнопки специальных переключателей — после кнопки линейки (специальные кнопки добавляются в порядке настройки).
 
 Элемент управления InkToolbar может являться элементом верхнего уровня, однако обычно он предоставляется с помощью кнопки или команды рукописного ввода. Для оформления значка верхнего уровня рекомендуется использовать глиф EE56 шрифта Segoe MLD2 Assets.
 
@@ -148,7 +148,7 @@ InkCanvas позволяет включить в приложении базов
 Всплывающий элемент отображается, когда пользователь повторно нажимает кнопку активного инструмента. Как только цвет или размер изменен, всплывающий элемент автоматически закрывается и рукописный ввод можно продолжать. Для специальных перьев и инструментов можно использовать всплывающий элемент по умолчанию или указать настраиваемый всплывающий элемент.
 
 Ластик тоже имеет всплывающий элемент с командой **Удалить все рукописные данные**.  
-![InkToolbar с изображением ластика всплывающим меню вызывается](images/ink-tools-erase-all-ink.png)
+![Элемент управления InkToolbar с отображающимся всплывающим элементом ластика](images/ink-tools-erase-all-ink.png)
 
  Сведения о пользовательской настройке и возможностях расширения см. в статье [Пример элемента управления SimpleInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).
 
@@ -165,11 +165,11 @@ InkCanvas позволяет включить в приложении базов
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
 - [В примере использования элемента управления SimpleInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) показано 8 сценариев реализации возможностей настройки и расширения элементов управления InkCanvas и InkToolbar. Каждый сценарий сопровождается базовыми инструкциями по наиболее распространенным ситуациям, в которых используется рукописный ввод, и реализации элементов управления.
-- [Пример ComplexInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) — демонстрация расширенных сценариев рукописного ввода.
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример ComplexInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) — демонстрация расширенных сценариев рукописного ввода.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [Взаимодействия с помощью пера и рукописного ввода Windows в приложениях UWP](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
-- [Распознать рукописный Windows как текст и фигуры](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
-- [Store и извлечения данных штрихов рукописного ввода Windows](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)
+- [Взаимодействие с пером и Windows Ink в приложениях UWP](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
+- [Распознавание росчерков пера Windows Ink как текста и фигур](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
+- [Хранение и извлечение данных движения пера Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)
