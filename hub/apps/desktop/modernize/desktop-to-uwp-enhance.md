@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4846a29e914ffed15e4c3dea938cc51cefd566e0
-ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
+ms.openlocfilehash: 0545ea525b96d3a9310f3a761fd60a644f21baeb
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131949"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414079"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>Вызов API универсальной платформы Windows в приложениях для настольных систем
 
@@ -29,20 +29,46 @@ ms.locfileid: "67131949"
 
 ### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>Измените проект .NET, чтобы использовать API среды выполнения Windows
 
+Для проектов .NET двумя способами:
+
+* Если приложение предназначено для Windows 10 версии 1803 или более поздней версии, можно установить пакет NuGet, который предоставляет все необходимые ссылки.
+* Кроме того можно вручную добавить ссылки.
+
+#### <a name="to-use-the-nuget-option"></a>Чтобы использовать параметр NuGet
+
+1. Убедитесь, что [ссылки на пакеты](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) включены:
+
+    1. В Visual Studio щелкните **Сервис -> Диспетчер пакетов NuGet -> Параметры диспетчера пакетов**.
+    2. Убедитесь, что **PackageReference** выбран для **формата управления пакетами по умолчанию**.
+
+2. Открыв проект в Visual Studio, щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите **управление пакетами NuGet**.
+
+3. В **диспетчер пакетов NuGet** выберите **Обзор** вкладку и выполните поиск `Microsoft.Windows.SDK.Contracts`.
+
+4. После `Microsoft.Windows.SDK.Contracts` найти пакет, в правой части **диспетчер пакетов NuGet** выберите окно **версии** пакета необходимо установить на основе версии Windows 10, вы будете работать:
+
+    * **10.0.18362.xxxx-preview**: Выберите этот параметр для Windows 10, версия 1903 года.
+    * **10.0.17763.xxxx-preview**: Выберите этот параметр для Windows 10, версия 1809.
+    * **10.0.17134.xxxx-preview**: Выберите этот параметр для Windows 10 версии 1803.
+
+5. Нажмите кнопку **Установить**.
+
+#### <a name="to-add-the-required-references-manually"></a>Чтобы добавить необходимые ссылки вручную
+
 1. Откройте диалоговое окно **Диспетчера ссылок**, нажмите кнопку **Обзор**, а затем выберите **Все файлы**.
 
     ![диалоговое окно "добавление ссылки"](images/desktop-to-uwp/browse-references.png)
 
 2. Добавьте ссылку на эти файлы.
 
-  |Файл|Location|
-  |--|--|
-  |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-  |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-  |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-  |Windows.winmd|C:\Program файлы (x86) \Windows Kits\10\UnionMetadata\\<*версия пакета sdk*> \Facade|
-  |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
-  |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
+    |Файл|Location|
+    |--|--|
+    |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |Windows.winmd|C:\Program файлы (x86) \Windows Kits\10\UnionMetadata\\<*версия пакета sdk*> \Facade|
+    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
+    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
 
 3. В окне **Свойства** установите в поле **Копировать локально** каждого файла *.winmd* значение **False**.
 
