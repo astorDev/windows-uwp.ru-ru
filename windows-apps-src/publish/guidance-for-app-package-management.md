@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c75eb1a4b28b015b83557f74957a3370f478a26e
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: f514177ad5de7774e6926165435fd3b2d7b5e1f7
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63790778"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468935"
 ---
 # <a name="guidance-for-app-package-management"></a>Руководство по управлению пакетами приложения
 
@@ -31,7 +31,7 @@ ms.locfileid: "63790778"
 Как правило, более поздние версии ОС могут запускать пакеты, предназначенные для предыдущих версий ОС для того же семейства устройств. Устройства Windows 10 можно запустить все предыдущие поддерживаемые версии операционной системы (для семейства устройств). Устройства Windows 10 desktop запускаются приложения, созданные для Windows 8.1 или Windows 8; Мобильные устройства Windows 10 можно работают приложения, созданные для Windows Phone 8.1, Windows Phone 8 и даже Windows Phone 7.x. Тем не менее клиентов в Windows 10 будет получить только те пакеты, если приложение не включает универсальной платформы Windows пакеты, предназначенные для семейства устройств.
 
 > [!IMPORTANT]
-> Начиная с 31 октября 2018 года новые продукты не может содержать пакеты, предназначенные для Windows 8.x/Windows Phone 8.x или более ранней версии. Дополнительные сведения см. в этом [блога](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/).
+> Начиная с 31 октября 2018 года новые продукты не может содержать пакеты, предназначенные для Windows 8.x/Windows Phone 8.x или более ранней версии. Дополнительные сведения см. в этом [блога](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 
 ## <a name="removing-an-app-from-the-store"></a>Удаление приложения из Магазина

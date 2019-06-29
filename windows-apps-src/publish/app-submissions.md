@@ -6,12 +6,12 @@ keywords: контрольный список, windows, uwp, отправка, �
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 24d3c99636009ebf65f3e24d39d657297b105150
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
+ms.openlocfilehash: 2fe5d44823821208a2384aec9d66037c4da3865f
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826118"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468931"
 ---
 # <a name="app-submissions"></a>Отправка приложений
 
@@ -29,7 +29,7 @@ ms.locfileid: "66826118"
 > В этом разделе документации описывается создание Отправка приложения в центре партнеров. Кроме того, с помощью [API отправки в Microsoft Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) можно автоматизировать отправку надстроек.
 
 > [!IMPORTANT]
-> Начиная с 31 октября 2018 года новые продукты не может содержать пакеты, предназначенные для Windows 8.x/Windows Phone 8.x или более ранней версии. Дополнительные сведения см. в этом [блога](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> Начиная с 31 октября 2018 года новые продукты не может содержать пакеты, предназначенные для Windows 8.x/Windows Phone 8.x или более ранней версии. Дополнительные сведения см. в этом [блога](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 ## <a name="app-submission-checklist"></a>Контрольный список для отправки приложения
 

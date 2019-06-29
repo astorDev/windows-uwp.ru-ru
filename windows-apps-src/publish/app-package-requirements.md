@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, требования к пакету, пакеты, формат пакета, поддерживаемая версия, отправить
 ms.localizationpriority: medium
-ms.openlocfilehash: 6baa25668ec805328fb556f39474d9656bd9f825
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 8502c477e3e1202ecf97c6081f4cd87b4d681081
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787196"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468962"
 ---
 # <a name="app-package-requirements"></a>Требования к пакетам приложения
 
@@ -73,7 +73,7 @@ ms.locfileid: "63787196"
 | Хэши сопоставления блоков     | Алгоритм SHA2-256                                                   |
 
 > [!IMPORTANT]
-> Начиная с 31 октября 2018 года новые продукты не может содержать пакеты, предназначенные для Windows 8.x/Windows Phone 8.x или более ранней версии. Дополнительные сведения см. в этом [блога](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> Начиная с 31 октября 2018 года новые продукты не может содержать пакеты, предназначенные для Windows 8.x/Windows Phone 8.x или более ранней версии. Дополнительные сведения см. в этом [блога](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 ## <a name="supported-versions"></a>Поддерживаемые версии
 

@@ -6,12 +6,12 @@ ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bdcb8132052cd12444c192c93170fb2f8e94113a
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 989aecdd6c33599b38a53b68439dbf0f0d925040
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215223"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468936"
 ---
 # <a name="in-app-ads"></a>Реклама в приложении
 
@@ -21,7 +21,7 @@ ms.locfileid: "66215223"
 * Ранее опубликованные Windows 8.x и Windows Phone 8.x приложений, использующих [Microsoft Advertising SDK для Windows и Windows Phone 8.x](https://aka.ms/store-8-sdk).
 
 > [!IMPORTANT]
-> Начиная с 31 октября 2018 года новые продукты не может содержать пакеты, предназначенные для Windows 8.x/Windows Phone 8.x или более ранней версии. Дополнительные сведения см. в этом [блога](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> Начиная с 31 октября 2018 года новые продукты не может содержать пакеты, предназначенные для Windows 8.x/Windows Phone 8.x или более ранней версии. Дополнительные сведения см. в этом [блога](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 Дополнительные сведения об интеграции этих пакетов SDK с приложениями для показа рекламы см. в разделе [Показ рекламы в приложении с помощью Microsoft Advertising SDK](../monetize/display-ads-in-your-app.md).
 

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: df7c1bbbc77374b8afb4272e1d9618c8294a4b6e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1df93195578c1e7c6fd87ab7403375a1a3dcc825
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591859"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468913"
 ---
 # <a name="resolve-submission-errors"></a>Устранение ошибок отправки
 
@@ -30,7 +30,7 @@ ms.locfileid: "57591859"
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x и более ранних версий
 
 > [!IMPORTANT]
-> Начиная с 31 октября 2018 года новые продукты не может содержать пакеты, предназначенные для Windows Phone 8.x или более ранней версии. Дополнительные сведения см. в этом [блога](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> Начиная с 31 октября 2018 года новые продукты не может содержать пакеты, предназначенные для Windows Phone 8.x или более ранней версии. Дополнительные сведения см. в этом [блога](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 Вы можете увидеть **ошибку 2001** в случае обнаружения проблем с пакетами Windows Phone в процессе предварительной обработки. В большинстве случаев для исправления этой ошибки потребуется перестроить пакет приложения. После этого замените старый пакет на новый на странице отправки [Пакеты](upload-app-packages.md), а затем снова нажмите **Отправить в магазин**.
 

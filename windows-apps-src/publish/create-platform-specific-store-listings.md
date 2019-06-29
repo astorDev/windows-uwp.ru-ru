@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, настройка, описания, описание, более ранние версии
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c14ed3fa7f7f5f7d1b4c80bb8165b3f27e522a
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 2d9a9e86397ca5e85697543f99481b43f438a063
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63777703"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468965"
 ---
 # <a name="create-platform-specific-store-listings"></a>Создание описаний в Магазине для определенной платформы
 
@@ -21,7 +21,7 @@ ms.locfileid: "63777703"
 Клиенты, использующие Windows 10 (включая Xbox) всегда будут видеть значение по умолчанию [листинг Store](create-app-store-listings.md). Вы не увидите вариант для создания платформы Store списки, если вы уже опубликовали приложение с пакетами, которые поддерживают один или несколько более ранних версиях ОС. 
 
 > [!IMPORTANT]
-> Начиная с 31 октября 2018 года новые продукты не может содержать пакеты, предназначенные для Windows 8.x/Windows Phone 8.x или более ранней версии. Дополнительные сведения см. в этом [блога](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> Начиная с 31 октября 2018 года новые продукты не может содержать пакеты, предназначенные для Windows 8.x/Windows Phone 8.x или более ранней версии. Дополнительные сведения см. в этом [блога](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 Специфические для платформы Store списки можно использовать, если требуется указать компоненты, которые отображаются только в одной версии операционной системы, или передать снимки экрана, характерные для конкретной операционной системы (независимо от типа устройства).
 
