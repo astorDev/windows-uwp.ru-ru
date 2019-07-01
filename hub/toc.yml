@@ -43,6 +43,20 @@
               href: apps/desktop/modernize/desktop-to-uwp-extend.md
             - name: Распространение упакованного приложения
               href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+        - name: 'Руководство: Модернизация приложения WPF'
+          items:
+            - name: Обзор
+              href: apps/desktop/modernize/modernize-wpf-tutorial.md
+            - name: "Перенос приложения Contoso Expenses в .NET Core\_3"
+              href: apps/desktop/modernize/modernize-wpf-tutorial-1.md
+            - name: Добавление элемента управления InkCanvas универсальной платформы Windows с помощью XAML Islands
+              href: apps/desktop/modernize/modernize-wpf-tutorial-2.md
+            - name: Добавление элемента управления CalendarView универсальной платформы Windows с помощью XAML Islands
+              href: apps/desktop/modernize/modernize-wpf-tutorial-3.md
+            - name: "Добавление действий пользователей и уведомлений для Windows\_10"
+              href: apps/desktop/modernize/modernize-wpf-tutorial-4.md
+            - name: Упаковка и развертывание с помощью MSIX
+              href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
     - name: Система Fluent Design
       href: apps/fluent-design-system.md
     - name: Специальные возможности

@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 layout: LandingPage
-description: Универсальная платформа Windows (UWP) позволяет создавать приложения для любых устройств с Windows — компьютеров, телефонов, Xbox One, HoloLens и т. д. — и публиковать их в Store.
+description: Универсальная платформа Windows (UWP) позволяет создавать приложения для любых устройств с Windows — компьютеров, Xbox One, HoloLens и т. д. — и публиковать их в Store.
 title: Документация по UWP — разработчики приложений UWP | Документация Майкрософт
 ms.topic: landing-page
 ms.author: mijacobs
@@ -9,12 +9,12 @@ ms.date: 08/04/2017
 keywords: windows uwp, universal windows platform, Windows Runtime APIs, windows api, windows api ref, winrt api, windows api reference, uwp api, uwp api reference, develop uwp, design uwp, publish uwp
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: 7b89ef27fb83ff12fc2d65e622975ca5dd4f1510
-ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
+ms.openlocfilehash: 06a06ca78532a26dd45480e451d9541efe38c496
+ms.sourcegitcommit: e0471306399e11200252361fa36cc8e6a2add31f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131917"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67409975"
 ---
 # <a name="universal-windows-platform-documentation"></a>Документация по универсальной платформе Windows
 
