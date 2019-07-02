@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp, security
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: f653ebe874bfa4d4ad8bb608acf9495f02191de7
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 8bba51627445c553c67b2c02bd66d65486f9caf6
+ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320625"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67498912"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Разблокировка Windows с помощью устройств-компаньонов (IoT) для Windows Hello
 
 Устройство-компаньон Windows Hello — это устройство, которое может взаимодействовать с настольным компьютером Windows 10 для повышения удобства процедуры проверки подлинности пользователя. При работе с платформой сопутствующих устройств для Windows Hello устройство-компаньон открывает широкие возможности использования Windows Hello, даже если функция биометрии недоступна (например, на компьютере с Windows 10 отсутствует камера для проверки подлинности по лицу или устройство для считывания отпечатков пальцев).
 
-> **Примечание** Майкрософт будет скоро перестанут framework устройства Windows Hello companion в будущем и опубликует раньше даты чтобы клиентам было достаточно периоду развертывать альтернативные решения.
+> **Примечание** Майкрософт будут объявлены неподдерживаемыми API для Windows Hello дополнительное устройство framework в первой половине 2020 г.
 
 > **Примечание.** Платформа сопутствующих устройств для Windows Hello — это специальная функция, доступная лишь некоторым разработчикам приложений. Чтобы использовать эту платформу, ваше приложение должно быть особым образом подготовлено к работе корпорацией Майкрософт и содержать ограниченную возможность *secondaryAuthenticationFactor* в своем манифесте. Чтобы получить утверждение, напишите на адрес [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, ключ проверки подлинности карт, элемент управления картой
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f62ecfab5bd8d09092e5264831327b8c63666bc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bb6cf66a6725e8231fac693a81a39bc2f0b15fd2
+ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370515"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67498899"
 ---
 # <a name="request-a-maps-authentication-key"></a>Запрос ключа проверки подлинности карт
 
@@ -48,7 +48,7 @@ ms.locfileid: "66370515"
     -   **Имя приложения:** Имя приложения.
     -   **URL-адрес приложения (необязательно):** URL-адрес приложения.
     -   **Тип ключа:** Выберите **основные** или **Enterprise**.
-    -   **Тип приложения:** Выберите **универсальное приложение Windows** для использования в приложении универсальной Windows.
+    -   **Тип приложения:** Выберите **приложения Windows** для использования в приложении универсальной Windows.
 
     Ниже приведен пример формы.
 

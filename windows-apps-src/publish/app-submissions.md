@@ -6,12 +6,12 @@ keywords: контрольный список, windows, uwp, отправка, �
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe5d44823821208a2384aec9d66037c4da3865f
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 7c535b77c68f4375f70fe344165f96d66a551eaf
+ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468931"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486425"
 ---
 # <a name="app-submissions"></a>Отправка приложений
 
@@ -96,10 +96,8 @@ ms.locfileid: "67468931"
 | **Снимки экрана**               | Обязательный (по крайней мере один снимок экрана; рекомендуется — 4 или более)          | [Снимки экрана](app-screenshots-and-images.md#screenshots)          |
 | **Логотипы Store**               | Рекомендуется; требуется для некоторых версий ОС | [Логотипы Store](app-screenshots-and-images.md#store-logos)             |
 | **Трейлеров**                  | Необязательный                                    | [Трейлеров](app-screenshots-and-images.md#trailers)                | 
-| **Образ Windows 10 и Xbox (art Super hero 16:9)**     | Рекомендуем        | [Windows 10 и Xbox изображение (art Super hero 16:9)
-](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
-| **Образы Xbox**     | Требуется для правильное отображение, если вы публикуете Xbox        | [Xbox образы
-] (# приложений — снимки экрана и images.md xbox образов) |
+| **Образ Windows 10 и Xbox (art Super hero 16:9)**     | Рекомендуем        | [Образ Windows 10 и Xbox (art Super hero 16:9)](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+| **Образы Xbox**     | Требуется для правильное отображение, если вы публикуете Xbox        | [Образы Xbox](app-screenshots-and-images.md#xbox-images) |
 | **Дополнительные поля**  | Необязательный                                    | [Дополнительные поля](create-app-store-listings.md#supplemental-fields) 
 | **Условия поиска**              | Необязательный                                    | [Условия поиска](create-app-store-listings.md#search-terms)         |
 | **Сведения об авторских правах и товарных знаках** | Необязательный                                 | [Сведения об авторских правах и товарных знаках](create-app-store-listings.md#copyright-and-trademark-info) |

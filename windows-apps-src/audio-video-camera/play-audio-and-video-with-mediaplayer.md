@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d25cd3f8a963d85f704e32482475827462ddba58
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3d2d95711196a9bf2ab113527e5fc8f44459dc3d
+ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318266"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486433"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Воспроизведение аудио и видео с помощью MediaPlayer
 
@@ -189,7 +189,7 @@ ms.locfileid: "67318266"
 ## <a name="play-spherical-video-with-mediaplayer"></a>Воспроизведение сферической проекции видео с помощью MediaPlayer
 Начиная с Windows 10 версии 1703, **MediaPlayer** поддерживает равноугольную проекцию для сферического воспроизведения видео. Видео в сферической проекции ничем не отличается от обычного плоского видео в том плане, что **MediaPlayer** выполняет отрисовку видео, если поддерживается кодирование. Если сферическое видео содержит тег метаданных, который указывает, что для видео используется равноугольная проекция, **MediaPlayer** может выполнить отрисовку с учетом указанного поля зрения и ориентации представления. Это позволяет реализовывать такие сценарии, как воспроизведение видео в виртуальной реальности в видеошлеме или панорамирование сферического видео с помощью мыши или клавиатуры.
 
-Чтобы воспроизвести сферическое видео, выполните инструкции по воспроизведению видео, приведенные ранее в этой статье. Дополнительный шаг состоит в регистрации обработчика для события [**MediaPlayer.MediaOpened**])https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened). Это событие позволяет включать параметры воспроизведения сферического видео и управлять ими.
+Чтобы воспроизвести сферическое видео, выполните инструкции по воспроизведению видео, приведенные ранее в этой статье. — Это один дополнительный шаг, чтобы зарегистрировать обработчик для [ **MediaPlayer.MediaOpened** ](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) событий. Это событие позволяет включать параметры воспроизведения сферического видео и управлять ими.
 
 [!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
 

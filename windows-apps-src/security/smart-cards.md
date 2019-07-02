@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
-ms.openlocfilehash: 5498480e0dbe2c8be96d92df766b15676a3e6b7b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ff17facbb22e4e336b302415b0b64d0dffda93e0
+ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371936"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67498889"
 ---
 # <a name="smart-cards"></a>Смарт-карты
 
@@ -82,6 +82,9 @@ SmartCardProvisioning provisioning = await
 ```
 
 Когда метод [**RequestVirtualSmartCardCreationAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync) вернет связанный объект [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning), виртуальная смарт-карта будет создана и готова к использованию.
+
+>[!NOTE]
+>Чтобы создать виртуальную смарт-карту с помощью приложения универсальной платформы Windows, пользователя, запустившего приложение необходимо быть членом группы "Администраторы". Если пользователь не является членом группы "Администраторы", создание виртуальной смарт-карты завершится ошибкой.
 
 ## <a name="handle-authentication-challenges"></a>Обработка запросов проверки подлинности
 
