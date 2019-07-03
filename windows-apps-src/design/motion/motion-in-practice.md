@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bc879e43d7e117a4e61e8b6de4bb5437d126e84b
-ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
+ms.openlocfilehash: 8cf010533d2d62559bb8dc0d214e04ab917e62bd
+ms.sourcegitcommit: d534f81590d881a18d677a648c59913029837a84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67325847"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67535435"
 ---
 # <a name="bringing-it-together"></a>Реализация
 
@@ -26,16 +26,13 @@ ms.locfileid: "67325847"
 
 :::row:::
     :::column:::
-        **Implicit animation**
-        Automatic tween and timing between values in a parameter change to achieve very simple Fluent motion using the standardized values.
+**Неявные анимации** автоматического анимации и времени между значениями в изменение параметра для достижения очень простой Fluent движения с помощью стандартизированных значений.
     :::column-end:::
     :::column:::
-        **Built-in animation**
-        System components, such as common controls and shared motion, are "Fluent by default". Fundamentals have been applied in a manner consistent with their implied usage.
+**Встроенные анимации** компоненты системы, такие как стандартные элементы управления и общие движения, являются «Fluent по умолчанию». Основные принципы были применены в соответствии с их использованием подразумеваемых.
     :::column-end:::
     :::column:::
-        **Custom animation following guidance recommendations**
-        There may be times when the system does not yet provide an exact motion solution for your scenario. In those cases, use the baseline fundamental recommendations as a starting point for your experiences.
+**Пользовательскую анимацию, выполнив инструкции, рекомендации** могут возникнуть ситуации, когда система пока не предоставляет решение точное движения для вашего сценария. В таких случаях следует используйте основные Базовые рекомендации в качестве отправной точки для своим опытом.
     :::column-end:::
 :::row-end:::
 
@@ -45,16 +42,14 @@ ms.locfileid: "67325847"
 
 :::row:::
     :::column:::
-        <b>Direction Forward Out:</b><br>
-        Fade out: 150m; Easing: Default Accelerate
-        <b>Direction Forward In:</b><br>
-        Slide up 150px: 300ms; Easing: Default Decelerate
+<b>Направление вперед ожидания:</b><br>
+Исчезание: 150 МБ; Замедление: По умолчанию ускорить <b>шагом вперед в:</b><br>
+Сдвинуть вверх 150px: учетом 300 мс; Замедление: По умолчанию замедление
     :::column-end:::
     :::column:::
-         <b>Direction Backward Out:</b><br>
-        Slide down 150px: 150ms; Easing: Default Accelerate
-        <b>Direction Backward In:</b><br>
-        Fade in: 300ms; Easing: Default Decelerate
+<b>Направление обратной Out:</b><br>
+Проведите пальцем вниз 150px: 150ms; Замедление: По умолчанию ускорить <b>обратно в направлении:</b><br>
+Появление: учетом 300 мс; Замедление: По умолчанию замедление
     :::column-end:::
 :::row-end:::
 
@@ -64,12 +59,12 @@ ms.locfileid: "67325847"
 
 :::row:::
     :::column:::
-        <b>Direction Expand:</b><br>
-        Grow: 300ms; Easing: Standard
+<b>Разверните направление:</b><br>
+Приращения: учетом 300 мс; Замедление: Standard
     :::column-end:::
     :::column:::
-        <b>Direction Contract:</b><br>
-        Grow: 150ms; Easing: Default Accelerate
+<b>Направление контракт:</b><br>
+Приращения: 150ms; Замедление: Ускорьте по умолчанию
     :::column-end:::
 :::row-end:::
 
