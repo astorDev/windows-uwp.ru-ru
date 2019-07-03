@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dbb06f53f760724da312e00f545d799d6a24200
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 991d86dd61c660553e5b0a3fdbbdec0336c7fb8b
+ms.sourcegitcommit: d63e5a4fd24434068067cae5b8fb3bed4931247e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321570"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67515152"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Предоставление доступа в пользовательском режиме к GPIO, I2C и SPI
 
@@ -268,7 +268,7 @@ InputHighImpedance и OutputCmos поддерживаются практичес
 Windows поддерживает две схемы нумерации контактов:
 
 * Последовательная нумерация контактов: пользователи видят номера 0, 1, 2..., до суммарного числа предоставленных контактов. 0 — это первый ресурс GpioIo, объявленный в ASL, 1 — второй ресурс GpioIo, объявленный в ASL и т. д.
-* Естественная нумерация контактов: пользователи видят номера, заданные дескрипторами GpioIo, например 4, 5, 12, 13, … .
+* Нумерация собственного ПИН-код — пользователи видят номера (pin) указан в дескрипторах GpioIo, например 4, 5, 12, 13,...
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 },
