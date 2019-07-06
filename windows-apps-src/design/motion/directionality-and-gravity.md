@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3cdb20516d4f21933c7770f43701af322e09c886
-ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
+ms.openlocfilehash: 8f1e36f0febeeaac5a12d408d7be8a717f0ab398
+ms.sourcegitcommit: 7c3b88198178d6f6a535f35e1bf8665410d41d92
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67325878"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67569125"
 ---
 # <a name="directionality-and-gravity"></a>Направление и сила притяжения
 
@@ -43,8 +43,8 @@ ms.locfileid: "67325878"
 
 :::row:::
     :::column:::
-        Direction of movement corresponds to physical motion. Just like in nature, objects can move in any world axis - X,Y,Z. This is how we think of the movement of objects on the screen.
-        When you move objects, avoid unnatural collisions. Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.
+Направление перемещения соответствует физического перемещения. Так же, как в природе, объекты могут перемещаться по любой оси — X, Y, Z. Так мы воспринимаем движение объектов на экране.
+При перемещении объектов, избегайте понятном и естественном конфликтов. Имейте в виду, где объекты берутся и перейдите к и всегда поддерживают конструкции более высокого уровня, которые могут использоваться в сцене, таких как направление или макет иерархии прокрутки.
     :::column-end:::
     :::column:::
         ![direction backward in](images/Direction.gif)
@@ -75,8 +75,7 @@ ms.locfileid: "67325878"
 
 :::row:::
     :::column:::
-        **Forward-In**
-        Celebrate content entering the scene in a manner that does not collide with outgoing content. Content decelerates into the scene.
+**Вперед в** отпраздновать содержимое, введя сцены способом, который не пересекается с исходящее содержимое. Содержимое замедляется на сцене.
     :::column-end:::
     :::column:::
         ![direction forward in](images/forwardIN.gif)
@@ -84,8 +83,7 @@ ms.locfileid: "67325878"
 :::row-end:::
 :::row:::
     :::column:::
-        **Forward-Out**
-        Content exits quickly. Objects accelerate off screen.
+**Вперед-Out** содержимое выполняет выход быстро. Объекты ускорения вне экрана.
     :::column-end:::
     :::column:::
         ![direction forward out](images/forwardOUT.gif)
@@ -93,8 +91,7 @@ ms.locfileid: "67325878"
 :::row-end:::
 :::row:::
     :::column:::
-        **Backward-In**
-        Same as Forward-In, but reversed.
+**Назад в** так же, как вперед в, но в обратном порядке.
     :::column-end:::
     :::column:::
         ![direction backward in](images/backwardIN.gif)
@@ -102,8 +99,7 @@ ms.locfileid: "67325878"
 :::row-end:::
 :::row:::
     :::column:::
-        **Backward-Out**
-        Same as Forward-Out, but reversed.
+**Обратная горизонтального** так же, как масштабирование вперед, но в обратном порядке.
     :::column-end:::
     :::column:::
         ![direction backward out](images/backwardOUT.gif)
