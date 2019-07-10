@@ -6,26 +6,26 @@ ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
 ms.openlocfilehash: 0a772c0ec6aad2c0d6a099b54eb4c6faa413cc7b
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913944"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63793932"
 ---
 # <a name="item-templates-for-list-view"></a>Шаблоны элементов для представления списка
 
 В этом разделе вы найдете шаблоны элементов, которые можно использовать вместе с элементом управления [**ListView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView). Используйте эти шаблоны для создания интерфейса приложений стандартных типов. 
 
-Чтобы продемонстрировать привязку данных, эти шаблоны должны быть привязаны **ListViewItems** к классу пример записи из [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md).
+Для демонстрации связывания данных эти шаблоны связывают тип **ListViewItems** с примером класса записи из раздела о [привязке данных](../../data-binding/data-binding-quickstart.md).
 
 > [!NOTE] 
-> В настоящее время если тип **DataTemplate** содержит несколько элементов управления (например, больше, чем один элемент **TextBlock**), специальное имя по умолчанию для программ чтения с экрана берется из свойства .ToString() элемента. Для удобства можно задать имя [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) в корневом элементе шаблона **DataTemplate**. Дополнительные сведения о специальных возможностях см. в разделе [Обзор специальных возможностей](../accessibility/accessibility-overview.md).
+> Если тип **DataTemplate** содержит несколько элементов управления (например, больше, чем один элемент **TextBlock**), специальное имя по умолчанию для средств чтения с экрана можно получить с использованием .ToString() элемента. Для удобства можно задать имя [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) в корневом элементе шаблона **DataTemplate**. См. подробнее о [специальных возможностях](../accessibility/accessibility-overview.md).
 
 ## <a name="single-line-list-item"></a>Однострочный элемент списка
 Этот шаблон используется для отображения списка элементов, состоящих из изображения и одной текстовой строки.
 
-![пример однострочного элемента списка](images/listitems/singlelineexample.png)
-![однострочный элемент списка](images/listitems/singlelineicon.png)
+![Пример однострочного элемента списка](images/listitems/singlelineexample.png)
+![Однострочный элемент списка](images/listitems/singlelineicon.png)
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
     <ListView.ItemTemplate>
@@ -42,8 +42,8 @@ ms.locfileid: "58913944"
 ## <a name="double-line-list-item"></a>Двухстрочный элемент списка 
 Этот шаблон используется для отображения списка элементов, состоящих из изображения и двух текстовых строк.
 
-![пример двухстрочного элемента списка со значком](images/listitems/doublelineexample.png) 
-![двухстрочный элемент списка со значком](images/listitems/doublelineicon.png)
+![Пример двухстрочного элемента списка со значком](images/listitems/doublelineexample.png) 
+![Двухстрочный элемент списка со значком](images/listitems/doublelineicon.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -68,8 +68,8 @@ ms.locfileid: "58913944"
 ## <a name="triple-line-list-item"></a>Трехстрочный элемент списка
 Этот шаблон используется для отображения списка элементов, состоящих из изображения и трех текстовых строк.
 
-![пример трехстрочного элемента списка](images/listitems/triplelineexample.png)
-![трехстрочный элемент списка](images/listitems/tripleline.png)
+![Пример трехстрочного элемента списка](images/listitems/triplelineexample.png)
+![Трехстрочный элемент списка](images/listitems/tripleline.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -86,9 +86,9 @@ ms.locfileid: "58913944"
 ```
 
 ## <a name="table-list-item"></a>Табличный элемент списка
-Этот шаблон используется для отображения списка элементов, состоящих из распределенного по определенным столбцам текста.
+Этот шаблон используется для отображения списка элементов, состоящих из распределенного между определенными столбцами текста.
 
-![пример табличного элемента списка](images/listitems/tablelist.png)
+![Пример табличного элемента списка](images/listitems/tablelist.png)
 ```xaml
 <ListView  ItemsSource="{x:Bind ViewModel.Recordings}">
     <ListView.HeaderTemplate>
@@ -131,6 +131,6 @@ ms.locfileid: "58913944"
 ## <a name="related-articles"></a>Связанные статьи
 - [Класс ListView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
 - [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md)
-- [Обзор специальных возможностей](../accessibility/accessibility-overview.md)
+- [Общие сведения о специальных возможностях](../accessibility/accessibility-overview.md)
 - [Пример элементов ListView и GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Эскизы](../../files/thumbnails.md)

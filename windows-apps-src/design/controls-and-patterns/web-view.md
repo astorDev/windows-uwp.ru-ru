@@ -6,13 +6,13 @@ label: Web view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c996b22395fc8186fb1b6dc786a73fa4a97ecf16
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363986"
 ---
 # <a name="web-view"></a>Представление веб-страницы
@@ -28,7 +28,7 @@ ms.locfileid: "66363986"
 
 ## <a name="create-a-web-view"></a>Создание представления веб-страницы
 
-**Изменение внешнего вида веб-представление**
+**Изменение внешнего вида представления веб-страницы**
 
 [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) не относится к подклассу [Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control), поэтому у него нет шаблона элемента управления. Но можно задать различные свойства для управления некоторыми визуальными аспектами представления веб-страницы.
 - Чтобы ограничить область отображения, задайте свойства [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) и [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height). 
@@ -36,19 +36,19 @@ ms.locfileid: "66363986"
 - Для управления прозрачностью представления веб-страницы задайте свойство [Opacity](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.opacity).
 - Для определения цвета, который необходимо использовать в качестве фона веб-страницы, если содержимое HTML не определяет цвет, задайте свойство [DefaultBackgroundColor](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultbackgroundcolor). 
 
-**Заголовок веб-страницы**
+**Получение заголовка веб-страницы**
 
 Получить заголовок документа HTML, отображаемого в представлении веб-страницы в настоящий момент, можно с помощью свойства [DocumentTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.documenttitle). 
 
-**Входные события и последовательность табуляции**
+**События ввода и порядок вкладок**
 
 Хотя WebView не относится к подклассу "Control", он получает фокус ввода с клавиатуры и участвует в порядке вкладок. Он предоставляет метод [Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.focus), а также события [GotFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) и [LostFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus), но у него отсутствуют свойства, связанные с вкладками. Его положение в последовательности вкладок такое же, как его положение в порядке документа XAML. Последовательность вкладок включает все элементы в содержимом представления веб-страницы, которые могут получать фокус ввода. 
 
-Как показано в таблице событий на странице класса [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView), представление веб-страницы не поддерживает большинство событий пользовательского ввода, унаследованных от [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), таких как [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown), [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) и [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed). Вместо этого вы можете использовать [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync) с функцией JavaScript **eval**, чтобы использовать обработчики событий HTML и **window.external.notify** из обработчика событий HTML для уведомления приложения с помощью [WebView.ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify).
+Как показано в таблице "События" на странице класса [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView), представление веб-страницы не поддерживает большинство событий пользовательского ввода, унаследованных от [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), таких как [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown), [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) и [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed). Вместо этого вы можете использовать [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync) с функцией JavaScript **eval**, чтобы использовать обработчики событий HTML и **window.external.notify** из обработчика событий HTML для уведомления приложения с помощью [WebView.ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify).
 
 ### <a name="navigating-to-content"></a>Переход к содержимому
 
-Веб-представление предоставляет несколько интерфейсов API для основные средства перемещения: [GoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goback), [GoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goforward), [остановить](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.stop), [обновить](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.refresh), [CanGoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoback), и [CanGoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoforward). Вы можете использовать их, чтобы добавить в приложение типовые возможности веб-серфинга. 
+Веб-представление предоставляет несколько API для базовой навигации: [GoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goback), [GoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goforward), [Stop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.stop), [Refresh](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.refresh), [CanGoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoback) и [CanGoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoforward). Вы можете использовать их, чтобы добавить в приложение типовые возможности веб-серфинга. 
 
 Задайте в коде XAML свойство [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.source), чтобы настроить начальное содержимое представления веб-страницы. Анализатор XAML автоматически преобразует строку в [Uri](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri). 
 
@@ -91,7 +91,7 @@ webView1.Navigate("ms-appx-web:///help/about.html");
 
 ### <a name="responding-to-navigation-events"></a>Реакция на события навигации
 
-Элемент управления представлением веб-страницы имеет несколько событий, которые можно использовать, чтобы реагировать на состояния навигации и загрузки содержимого. События происходят в следующем порядке для корневой веб-представление содержимого. [NavigationStarting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationstarting), [ContentLoading](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.contentloading), [DOMContentLoaded](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.domcontentloaded), [NavigationCompleted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationcompleted)
+Элемент управления представлением веб-страницы имеет несколько событий, которые можно использовать, чтобы реагировать на состояния навигации и загрузки содержимого. Для содержимого корневого веб-представления события происходят в следующем порядке: [NavigationStarting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationstarting), [ContentLoading](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.contentloading), [DOMContentLoaded](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.domcontentloaded), [NavigationCompleted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationcompleted)
 
 
 **NavigationStarting** — происходит перед тем, как представление веб-страницы переходит к новому содержимому. Можно отменить навигацию в обработчике для этого события, задав для свойства WebViewNavigationStartingEventArgs.Cancel значение "true". 
@@ -168,15 +168,15 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 
 Ваше приложение может перестать отвечать на действия пользователя, пока выполняются сценарии. Пока представление веб-страницы выполняет сценарий JavaScript, периодически происходит событие [LongRunningScriptDetected](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.longrunningscriptdetected), которое предоставляет возможность прервать сценарий. Чтобы определить, как долго выполняется сценарий, проверьте свойство [ExecutionTime](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime) элемента [WebViewLongRunningScriptDetectedEventArgs](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs). Чтобы остановить сценарий, задайте свойству аргументов событий [StopPageScriptExecution](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution) значение **true**. Остановленный сценарий не будет выполняться снова, пока он не будет перезагружен во время последующего перехода представления веб-страницы. 
 
-Элемент управления представлением веб-страницы не может размещать произвольные типы файлов. При выполнении попытки загрузить содержимое, которое представление веб-страницы не может размещать, происходит событие [UnviewableContentIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unviewablecontentidentified). Вы можете обработать такое событие и уведомить пользователя или использовать класс [Launcher](https://docs.microsoft.com/uwp/api/Windows.System.Launcher), чтобы перенаправить файл во внешний браузер или другое приложение.
+Элемент управления представлением веб-страницы не может размещать произвольные типы файлов. При попытке загрузить содержимое, которое представление веб-страницы не может размещать, происходит событие [UnviewableContentIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unviewablecontentidentified). Вы можете обработать такое событие и уведомить пользователя или использовать класс [Launcher](https://docs.microsoft.com/uwp/api/Windows.System.Launcher), чтобы перенаправить файл во внешний браузер или другое приложение.
 
-Аналогичным образом событие [UnsupportedUriSchemeIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unsupportedurischemeidentified) происходит, когда неподдерживаемая схема URI (например, fbconnect:// или mailto://) вызывается в веб-содержимом. Вы можете обработать это событие для выполнения специального действия, а не разрешать системному обработчику по умолчанию запускать этот URI.
+Аналогично событие [UnsupportedUriSchemeIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unsupportedurischemeidentified) происходит, когда неподдерживаемая схема URI (например, fbconnect:// или mailto://) вызывается в веб-содержимом. Вы можете обработать это событие для выполнения специального действия, а не разрешать системному обработчику по умолчанию запускать этот URI.
 
 Событие [UnsafeContentWarningDisplayingevent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying) возникает, когда представление веб-страницы отображает страницу предупреждения для содержимого, которое фильтр SmartScreen определил как небезопасное. Если пользователь решает продолжить навигацию, последующий переход на страницу не будет отображать предупреждение или вызывать событие.
 
 ### <a name="handling-special-cases-for-web-view-content"></a>Обработка особых случаев для содержимого представления веб-страницы
 
-Вы можете использовать свойство [ContainsFullScreenElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.containsfullscreenelement) и событие [ContainsFullScreenElementChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.containsfullscreenelementchanged), чтобы определять, реагировать и включать полноэкранный интерфейс в веб-содержимом, например воспроизведение видео в полноэкранном режиме. Например, можно использовать событие ContainsFullScreenElementChanged, чтобы изменить размер представления веб-страницы таким образом, чтобы оно полностью заняло представление приложения. Это событие также, как показано в следующем примере, можно использовать для перевода приложения из режима окна в полноэкранный режим, если требуется полноэкранное веб-приложение.
+Свойство [ContainsFullScreenElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.containsfullscreenelement) и событие [ContainsFullScreenElementChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.containsfullscreenelementchanged) можно использовать для обнаружения, ответа и включения полноэкранного режима в веб-содержимом, например, воспроизведение видео в полноэкранном режиме. Например, можно использовать событие ContainsFullScreenElementChanged, чтобы изменить размер представления веб-страницы таким образом, чтобы оно полностью заняло представление приложения. Это событие также, как показано в следующем примере, можно использовать для перевода приложения из режима окна в полноэкранный режим, если требуется полноэкранное веб-приложение.
 
 ```csharp
 // Assume webView is defined in XAML
@@ -197,9 +197,9 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
 }
 ```
 
-Событие [NewWindowRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.newwindowrequested) можно использовать для обработки случаев, в которых размещаемое веб-содержимое отправляет запрос на отображение нового окна, например всплывающего окна. Вы можете использовать другой элемент управления WebView, чтобы отобразить содержимого этого окна.
+Событие [NewWindowRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.newwindowrequested) можно использовать для обработки случаев, в которых размещаемое веб-содержимое отправляет запрос на отображение нового окна, например, всплывающего окна. Вы можете использовать другой элемент управления WebView, чтобы отобразить содержимого этого окна.
 
-Используйте событие [PermissionRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.permissionrequested), чтобы включить веб-функции, которым требуются специальные возможности. Сейчас эти функции включают в себя географическое положение, хранилище IndexedDB, а также звук и видеоизображение пользователя (например, с микрофона или веб-камеры). Если ваше приложение получает доступ к данным о местоположении пользователя или его мультимедиа, вы обязаны объявить эту возможность в манифесте приложения. Например, приложению, использующему географическое положение, нужны следующие объявления возможностей как минимум в файле Package.appxmanifest.
+Используйте событие [PermissionRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.permissionrequested), чтобы включить веб-функции, которые требуют специальных возможностей. Сейчас эти функции включают в себя географическое положение, хранилище IndexedDB, а также звук и видеоизображение пользователя (например, с микрофона или веб-камеры). Если ваше приложение получает доступ к данным о местоположении пользователя или его мультимедиа, вы обязаны объявить эту возможность в манифесте приложения. Например, приложению, использующему географическое положение, нужны следующие объявления возможностей как минимум в файле Package.appxmanifest.
 
 ```xml
   <Capabilities>
@@ -208,7 +208,7 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
   </Capabilities>
 ```
 
-Для включения этих функций, кроме обработки события [PermissionRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.permissionrequested) приложением, пользователь должен будет утвердительно ответить на стандартные системные диалоги для приложений, запрашивающих разрешение на доступ к сведениям о местоположении или мультимедиа.
+В дополнение к приложению, обрабатывающему событие [PermissionRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.permissionrequested), пользователь должен утвердительно ответить на стандартные системные диалоги для приложений, запрашивающих местоположение или возможности мультимедиа, чтобы включить эти функции.
 
 Приведем пример включения приложением географического положения на карте из коллекции Bing.
 
@@ -226,15 +226,15 @@ private void webView_PermissionRequested(WebView sender, WebViewPermissionReques
 }
 ```
 
-Если вашему приложению требуется пользовательский ввод или другие асинхронные операции, чтобы ответить на запрос разрешения, используйте метод [Defer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewpermissionrequest.defer) функции [WebViewPermissionRequest](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewPermissionRequest), чтобы создать событие [WebViewDeferredPermissionRequest](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest), которое может быть выполнено позднее. Подробнее: [WebViewPermissionRequest.Defer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewpermissionrequest.defer). 
+Если вашему приложению требуется пользовательский ввод или другие асинхронные операции, чтобы ответить на запрос разрешения, используйте метод [Defer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewpermissionrequest.defer) функции [WebViewPermissionRequest](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewPermissionRequest), чтобы создать событие [WebViewDeferredPermissionRequest](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest), которое может быть выполнено позднее. См. в разделе [WebViewPermissionRequest.Defer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewpermissionrequest.defer). 
 
-Если требуется, чтобы пользователи безопасно выходили с веб-сайта, размещенного в представлении веб-страницы, или в других случаях, в которых важна безопасность, вызовите статический метод [ClearTemporaryWebDataAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cleartemporarywebdataasync) для очистки всего локально кэшированного содержимого из сеанса представления веб-страницы. Это предотвратит доступ злоумышленников к конфиденциальным данным. 
+Если пользователям необходимо безопасно выйти из веб-сайта, размещенного в веб-представлении, или в других случаях, когда важна безопасность, вызовите статический метод [ClearTeilitaryWebDataAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cleartemporarywebdataasync) для очистки всего локально кэшированного контента из сеанса представления веб-страницы. Это предотвратит доступ злоумышленников к конфиденциальным данным. 
 
 ### <a name="interacting-with-web-view-content"></a>Взаимодействие с содержимым представления веб-страницы
 
-Вы можете взаимодействовать с содержимым представления веб-страницы с помощью метода [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync), чтобы вызвать или внедрить в него сценарий, и события [ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify), чтобы получить сведения от содержимого представления веб-страницы.
+Взаимодействовать с содержимым веб-представления можно используя метод [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync) для вызова или внедрения сценария в содержимое веб-представления, а также событие [ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify) для получения сведений от содержимого представления веб-страницы.
 
-Чтобы вызвать сценарий JavaScript внутри представления веб-страницы, используйте метод [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync). Вызванный сценарий может возвращать только строковые значения. 
+Чтобы вызвать JavaScript внутри представления веб-страницы, используйте метод [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync). Вызванный сценарий может возвращать только строковые значения. 
 
 Например, если содержимое представления веб-страницы с именем `webView1` содержит функцию с именем `setDate`, это составит три параметра, которые вы можете вызвать следующим образом. 
 
@@ -258,7 +258,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 Сценарии в содержимом представления веб-страницы могут использовать событие **window.external.notify** с параметром строки для отправки сведений в ваше приложение. Для получения этих сообщений обработайте событие [ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify). 
 
-Чтобы разрешить внешней веб-странице запускать событие **ScriptNotify** при вызове "window.external.notify", необходимо включить URI этой страницы в раздел **ApplicationContentUriRules** манифеста приложения. (Это можно сделать в Microsoft Visual Studio на вкладке URI содержимого конструктора Package.appxmanifest.) URI в этот список необходимо использовать протокол HTTPS и может содержать подстановочные знаки поддомен (например, `https://*.microsoft.com`), но они не могут содержать подстановочные знаки домена (например, `https://*.com` и `https://*.*`). Требования манифеста не применяются к содержимому, которое поступает из пакета приложения, использует ms-local-stream:// URI или загружается с помощью метода [NavigateToString](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetostring). 
+Чтобы разрешить внешней веб-странице запускать событие **ScriptNotify** при вызове "window.external.notify", необходимо включить URI этой страницы в раздел **ApplicationContentUriRules** манифеста приложения. (Это можно сделать в Microsoft Visual Studio на вкладке URI содержимого конструктора Package.appxmanifest.) URI в этом списке необходимо использовать протокол HTTPS и могут содержать подстановочные знаки поддомена (например, `https://*.microsoft.com`), но они не могут содержать подстановочные знаки домена (например, `https://*.com` и `https://*.*`). Требования манифеста не применяются к содержимому, которое поступает из пакета приложения, использует URI ms-local-stream:// или загружается с помощью метода [NavigateToString](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetostring). 
 
 ### <a name="accessing-the-windows-runtime-in-a-web-view"></a>Доступ к среде выполнения Windows в представлении веб-страницы
 
@@ -276,7 +276,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 }
 ```
 
-Подробнее см. в разделе [WebView.AddWebAllowedObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.addweballowedobject). 
+Дополнительные сведения см. в разделе [WebView.AddWebAllowedObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.addweballowedobject). 
 
 Кроме того, доверенное содержимое JavaScript в представлении веб-страницы может получить разрешение на прямой доступ к API среды выполнения Windows. Это предоставляет мощные собственные функции для веб-приложений, размещенных в представлении веб-страницы. Чтобы реализовать эту функцию, URI для доверенного содержимого должен быть добавлен в список разрешенных URI в ApplicationContentUriRules приложения в Package.appxmanifest, при этом для WindowsRuntimeAccess должно быть специально установлено значение "all". 
 
@@ -296,21 +296,21 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 ### <a name="options-for-web-content-hosting"></a>Параметры для размещения веб-содержимого
 
-Вы можете использовать свойство [WebView.Settings](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.settings) (типа [WebViewSettings](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewSettings)), чтобы включать или отключать JavaScript и IndexedDB. Например, если вы используете представление веб-страницы для отображения исключительно статического содержимого, возможно, вы захотите отключить JavaScript для повышения производительности.
+Свойство [WebView.Settings](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.settings) (типа [WebViewSettings](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewSettings)) можно использовать, чтобы управлять включением JavaScript и IndexedDB. Например, если вы используете представление веб-страницы для отображения исключительно статического содержимого, возможно, вы захотите отключить JavaScript для повышения производительности.
 
 ### <a name="capturing-web-view-content"></a>Захват содержимого представления веб-страницы
 
-Чтобы включить общий доступ к содержимому представления веб-страницы для других приложений, используйте метод [CaptureSelectedContentToDataPackageAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync), который возвращает выбранное содержимое в виде [DataPackage](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage). Это асинхронный метод, поэтому вы должны использовать задержку, чтобы предотвратить возврат вашего обработчика событий [DataRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) до завершения асинхронного вызова. 
+Чтобы включить общий доступ к содержимому представления веб-страницы для других приложений, используйте метод [CaptureSelectedContentToDataPackageAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync), который возвращает выбранное содержимое в виде [DataPackage](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage). Это асинхронный метод, поэтому следует использовать задержку, чтобы предотвратить возврат обработчика событий [DataRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) до завершения асинхронного вызова. 
 
-Чтобы получить изображение предпросмотра текущего содержимого представления веб-страницы, используйте метод [CapturePreviewToStreamAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.capturepreviewtostreamasync). Этот метод создает образ текущей страницы и записывает его в указанный поток. 
+Чтобы получить изображение предварительного просмотра текущего содержимого представления веб-страницы, используйте метод [CapturePreviewToStreamAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.capturepreviewtostreamasync). Этот метод создает образ текущей страницы и записывает его в указанный поток. 
 
 ### <a name="threading-behavior"></a>Поведение потоков
 
-По умолчанию содержимое представления веб-страницы размещается в потоке пользовательского интерфейса на устройствах в семействе настольных устройств и вне потока пользовательского интерфейса на всех других устройствах. Статическое свойство [WebView.DefaultExecutionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultexecutionmode) можно использовать для запроса поведения потока по умолчанию для текущего клиента. При необходимости можно использовать конструктор [WebView(WebViewExecutionMode)](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.), чтобы определить это поведение. 
+По умолчанию содержимое представления веб-страницы размещается в потоке пользовательского интерфейса на устройствах в семействе настольных устройств и вне потока пользовательского интерфейса на всех других устройствах. Статическое свойство [WebView.DefaultExecutionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultexecutionmode) можно использовать для запроса поведения потока по умолчанию для текущего клиента. При необходимости можно использовать конструктор [WebView(WebViewExecutionMode)](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.), чтобы переопределить это поведение. 
 
-> **Примечание.** &nbsp;&nbsp;При размещении содержимого в потоке пользовательского интерфейса на мобильных устройствах могут возникнуть проблемы с производительностью, поэтому убедитесь, что после изменения DefaultExecutionMode вы проверили работу приложения на всех целевых устройствах.
+> **Примечание**&nbsp;&nbsp;При размещении содержимого в потоке пользовательского интерфейса на мобильных устройствах могут возникнуть проблемы с производительностью, поэтому обязательно проверяйте все целевые устройства при изменении DefaultExecutionMode.
 
-Представление веб-страницы, в котором размещается содержимое вне потока пользовательского интерфейса, несовместимо с родительскими элементами управления, которым требуются жесты для распространения вверх от элемента управления представления веб-страницы к родительскому элементу, например [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView), [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) и другие связанные элементы управления. Эти элементы управления не смогут получать жесты, вызванные в представлении веб-страницы вне потока. Кроме того, вывод веб-содержимого вне потока не поддерживается прямо. Вместо этого необходимо выводить элемент с заполнением [WebViewBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush).
+Представление веб-страницы, в котором размещается содержимое вне потока пользовательского интерфейса, несовместимо с родительскими элементами управления, которым требуются жесты для распространения от элемента управления представления веб-страницы к родительскому элементу, например, [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView), [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) и другие связанные элементы управления. Эти элементы управления не смогут получать жесты, вызванные в представлении веб-страницы вне потока. Кроме того, вывод веб-содержимого вне потока напрямую не поддерживается. Вместо этого необходимо выводить элемент с заполнением [WebViewBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush).
 
 ## <a name="recommendations"></a>Рекомендации
 
@@ -321,7 +321,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 * [Класс WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)
  

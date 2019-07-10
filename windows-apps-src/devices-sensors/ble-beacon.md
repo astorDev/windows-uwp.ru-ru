@@ -55,7 +55,7 @@ ms.locfileid: "66370363"
 BluetoothLEAdvertisementPublisher publisher = new BluetoothLEAdvertisementPublisher();
 ```
 
-Затем создайте пользовательский раздел данных. В этом примере используется неназначенное значение **CompanyId***0xFFFE*, а в объявление добавляется текст *Hello World*. 
+Затем создайте пользовательский раздел данных. В этом примере используется неназначенное значение **CompanyId** *0xFFFE*, а в объявление добавляется текст *Hello World*. 
 
 ```csharp
 // Add custom data to the advertisement

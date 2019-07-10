@@ -1,47 +1,47 @@
 ---
-description: Отображает аватар для пользователя, если он доступен; в противном случае отображаются инициалы лица или универсальный глиф.
+description: Отображает аватар для пользователя, если он доступен; в противном случае отображаются инициалы или универсальный глиф.
 title: Элемент управления "Аватар пользователя"
 template: detail.hbs
 label: Parallax View
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: trestar
 design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1897eded4d18a00a3c11cf1926adb1ebec6ae69a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638939"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63791698"
 ---
 # <a name="person-picture-control"></a>Элемент управления "Аватар пользователя"
 
-Элемент управления аватаром пользователя отображает аватар для пользователя, если он доступен; в противном случае отображаются инициалы лица или универсальный глиф. Элемент управления можно использовать для отображения [объекта Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), который управляет контактными данными пользователя, или можно вручную указать контактные данные, такие как отображаемое имя и изображение профиля.  
+Элемент управления аватаром пользователя отображает аватар для пользователя, если он доступен; в противном случае отображаются инициалы или универсальный глиф. Элемент управления можно использовать для отображения [объекта Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), который служит для управления контактными данными пользователя, или можно вручную указать контактные данные, такие как отображаемое имя и изображение профиля.  
 
-> **Важные API**: [Класс PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [класс](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager-класс](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **Важные API**: [класс PersonPicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [класс Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [класс ContactManager](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager).
 
 На этом рисунке показаны два элемента управления аватаром пользователя вместе с двумя элементами [блоков текста](text-block.md), в которых отображаются имена пользователей. 
-![Элемент управления рисунка person](images/person-picture/person-picture_hero.png)
+![Элемент управления "Аватар пользователя"](images/person-picture/person-picture_hero.png)
 
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
-Используйте аватар, когда необходимо представить пользователя и его контактные данные. Вот несколько примеров того, как вы можете использовать элемент управления:
-* Для отображения текущего пользователя
-* Для отображения контактов в адресной книге
-* Для отображения отправителя сообщения 
-* Для отображения контакта в социальных сетях
+Используйте аватар, когда необходимо представить пользователя и его контактные данные. Вот несколько примеров того, как можно использовать элемент управления:
+* для отображения текущего пользователя;
+* для отображения контактов в адресной книге;
+* для отображения отправителя сообщения; 
+* для отображения контакта в социальных сетях.
 
-На рисунке показан person управления "изображения" в список контактов. ![Элемент управления рисунка person](images/person-picture/person-picture-control.png)
+На рисунке показан элемент управления аватаром в списке контактов: ![Элемент управления "Аватар пользователя"](images/person-picture/person-picture-control.png)
 
 ## <a name="examples"></a>Примеры
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -167,7 +167,7 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> Чтобы упростить код, в этом примере создается новый объект Contact. В реальном приложении вы бы позволили пользователю выбрать контакт или использовали бы [ContactManager](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) для запроса списка контактов. Подробнее о получении и управлении контактами см. в [статьях о календаре и контактах](../../contacts-and-calendar/index.md). 
+> Чтобы упростить код, в этом примере создается новый объект Contact. В реальном приложении для запроса списка контактов пользователь выбрал бы контакт или использовал [ContactManager](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager). Подробнее о получении и управлении контактами см. в статье ["Контакты", "Близкие люди" и "Календарь"](../../contacts-and-calendar/index.md). 
 
 ## <a name="determining-which-info-to-display"></a>Определение сведений для отображения
 
@@ -179,15 +179,15 @@ namespace SampleApp
 1. SmallDisplayPicture
 1. Thumbnail
 
-Вы можете изменить выбираемое изображение, установив для свойства PreferSmallImage значение true. Это придает SmallDisplayPicture более высокий приоритет, чем LargeDisplayPicture.
+Также можно изменить выбираемое изображение, установив для свойства PreferSmallImage значение true. Это придает SmallDisplayPicture более высокий приоритет, чем LargeDisplayPicture.
 
 Если изображение не существует, элемент управления отображает имя или инициалы контакта. Если нет данных об имени, этот элемент управления выводит контактные данные, например, электронный адрес или номер телефона. 
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 
 * [Контакты и календарь](../../contacts-and-calendar/index.md)
-* [Пример карточки контакта](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+* [Пример с карточками контактов](https://go.microsoft.com/fwlink/p/?LinkId=624040)

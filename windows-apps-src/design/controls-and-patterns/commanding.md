@@ -1,24 +1,24 @@
 ---
-title: Команд в Windows, универсальных приложений платформы (UWP)
-description: Как использовать классы XamlUICommand и StandardUICommand (а также интерфейс ICommand) для совместного использования и Управление командами в различных типов элементов управления, независимо от устройства и используется тип входных данных.
+title: Использование команд в приложениях универсальной платформы Windows (UWP)
+description: Применение классов XamlUICommand и StandardUICommand (вместе с интерфейсом ICommand) для совместного использования команд и управления ими для различных типов элементов управления, независимо от устройства и типа используемого ввода.
 author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
 ms.date: 03/11/2019
 ms.openlocfilehash: a85a101cd529bf487cbc97b93bb3905f28213c19
-ms.sourcegitcommit: 99271798fe53d9768fc52b21366de05268cadcb0
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58221420"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63793847"
 ---
-# <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Выполнение команд в приложениях универсальной платформы Windows (UWP), с помощью StandardUICommand XamlUICommand и ICommand
+# <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Использование команд в приложениях универсальной платформы Windows (UWP) с помощью классов StandardUICommand, XamlUICommand и ICommand
 
-В этом разделе описывается выполнение команд в приложениях универсальной платформы Windows (UWP). В частности, мы обсудим, как можно использовать [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) и [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) классы (а также интерфейс ICommand), использование и управление через различные типы элементов управления, независимо от того, команды устройства, а также тип входных данных используется.
+В этой статье рассматриваются команды в приложениях универсальной платформы Windows (UWP). В частности, мы обсудим, как с помощью классов [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) и [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) (вместе с интерфейсом ICommand) можно совместно использовать команды и управлять ими для различных типов элементов управления, независимо от устройства и типа используемого ввода.
 
-![Схемы, представляющей распространенным вариантом применения для общих команд: несколько пользовательского интерфейса в областях с помощью команды «Избранное»](images/commanding/generic-commanding.png)
+![Схема, представляющая распространенное использование общей команды: несколько поверхностей пользовательского интерфейса с предпочитаемой командой](images/commanding/generic-commanding.png)
 
-*Команды ресурса через различные элементы управления, независимо от того, устройства и типа входных данных*
+*Обмен командами между различными элементами управления, независимо от устройства и типа ввода*
 
 ## <a name="important-apis"></a>Важные API
 
@@ -32,60 +32,60 @@ ms.locfileid: "58221420"
 
 <!-- A command describes an action but not its implementation (in other words, the what, but not the how). For example, the "Paste" command indicates that the user wants to copy something from the clipboard to a target control, but does not specify how. -->
 
-Команды могут вызываться непосредственно при взаимодействии пользовательского интерфейса, таких как нажатие кнопки или выбора элемента из контекстного меню. Их можно также вызывать косвенно через устройство ввода, таких как сочетания клавиш, жест, распознавания речи или средство автоматизации и специальным возможностям. После вызова команды могут затем обрабатываться элементом управления (Навигация по тексту в элементе управления редактирования), окна (переходов назад) или приложения (выход).
+Команды можно вызвать непосредственно с помощью взаимодействия с пользовательским интерфейсом, например, нажав кнопку или выбрав элемент из контекстного меню. Их также можно вызвать косвенно с помощью устройства ввода, такого как ускоритель клавиатуры, жест, распознавание речи либо средство автоматизации или специальных возможностей. После вызова команда может быть обработана элементом управления (текстовая навигация в элементе управления редактирования), окном (обратная навигация) или приложением (выход).
 
-Команды могут работать с определенным контекстом в приложении, например удаление текста или Отмена действия, или они могут быть бесплатно в контексте, например выключение звука или настройка яркости.
+Команды могут работать с определенным контекстом в вашем приложении, таким как удаление текста или отмена действия, или не зависеть от контекста, например отключение звука или регулировка яркости.
 
-На следующем рисунке показаны два интерфейса команды ( [CommandBar](app-bars.md) и плавающие контекстные [CommandBarFlyout](command-bar-flyout.md)), во многом те же команды.
+На следующем изображении показаны два интерфейса команд ([CommandBar](app-bars.md) и плавающий контекстный [CommandBarFlyout](command-bar-flyout.md)), которые совместно используют много одних и тех же команд.
 
-![Пример команды интерфейса](images/commanding/command-interface-example.png)
+![Пример интерфейса команды](images/commanding/command-interface-example.png)
 
-## <a name="command-interactions"></a>Команда взаимодействия
+## <a name="command-interactions"></a>Взаимодействие команд
 
-Из-за различных устройств, типы входных данных и области пользовательского интерфейса, которые могут повлиять на способ вызова команды мы рекомендуем, предоставление доступа к вашей команды сквозь столько команд максимально. Они могут включать сочетание [считывание](swipe.md), [MenuBar](menus.md), [CommandBar](app-bars.md), [CommandBarFlyout](command-bar-flyout.md)и традиционные [ контекстное меню](menus.md).
+Из-за разнообразия устройств, типов ввода и поверхностей пользовательского интерфейса, которые могут влиять на способ вызова команды, рекомендуется предоставлять ваши команды через как можно большее число командных поверхностей. Это может быть комбинация элементов [Swipe](swipe.md), [MenuBar](menus.md), [CommandBar](app-bars.md), [CommandBarFlyout](command-bar-flyout.md) и традиционного [контекстного меню](menus.md).
 
-**Для критических команд используйте акселераторы конкретного входных данных.** Входной ускорители позволяют пользователю выполнять действия быстрее в зависимости от устройства ввода, которые они используют.
+**Для критически важных команд используйте специальные ускорители ввода.** Ускорители ввода позволяют пользователю выполнять действия быстрее в зависимости от используемого устройства ввода.
 
-Ниже приведены некоторые распространенные входной ускорителей для различных типов входных данных.
+Ниже приведены некоторые распространенные ускорители ввода для различных типов ввода:
 
-- **Указатель** -перо & мыши при наведении указателя мыши кнопки
-- **Клавиатуры** -клавиш (клавиши и сочетания клавиш)
-- **Touch** -проведите по экрану
-- **Touch** -потяните, чтобы обновить данные
+- **Указатель** — кнопки мыши и пера при наведении.
+- **Клавиатура** — сочетания клавиш (клавиши доступа и сочетания клавиш).
+- **Сенсорный ввод** — прокрутка.
+- **Сенсорный ввод** — обновление путем оттягивания.
 
-Необходимо учитывать входной тип и пользователя, необходимые осуществлять доступ к функциональности приложения. Например коллекции (особенно пользователь редактируемой из них) обычно содержат различные команды, выполняемые весьма по-разному в зависимости от устройства ввода.
+Следует учитывать тип ввода и взаимодействие с пользователем, чтобы у вашего приложения были универсально доступные функции. Например, коллекции (особенно редактируемые пользователем) обычно включают в себя множество определенных команд, которые выполняются совершенно по-разному в зависимости от устройства ввода.
 
-Ниже приведены некоторые типичные коллекции команд и способы предоставления этих команд.
+В этой таблице показаны некоторые стандартные команды коллекции и способы их отображения.
 
-| Command          | Не зависит от ввода | Ускоритель мыши | Ускоритель клавиатуры | Ускоритель сенсорного ввода |
+| Команда          | Не зависит от ввода | Ускоритель мыши | Ускоритель клавиатуры | Ускоритель сенсорного ввода |
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
-| Удалить элемент      | Контекстное меню   | Кнопка при наведении      | Клавиша DEL              | Проведите, чтобы удалить   |
-| Отметить элемент        | Контекстное меню   | Кнопка при наведении      | CTRL+SHIFT+G         | Проведите пальцем, чтобы пометить     |
-| Обновление данных     | Контекстное меню   | Н/Д               | Клавиша F5               | Обновление путем оттягивания   |
-| Элемент избранного | Контекстное меню   | Кнопка при наведении      | F, CTRL+S            | Проведите, чтобы добавить к избранному |
+| Удалить элемент      | Контекстное меню   | Кнопка при наведении      | Клавиша DEL              | Провести, чтобы удалить   |
+| Отметить элемент        | Контекстное меню   | Кнопка при наведении      | CTRL+SHIFT+G         | Провести пальцем, чтобы пометить     |
+| Обновить данные     | Контекстное меню   | Нет данных               | Клавиша F5               | Обновление путем оттягивания   |
+| Добавить элемент в избранное | Контекстное меню   | Кнопка при наведении      | F, CTRL+S            | Провести, чтобы добавить к избранному |
 
-**Всегда предоставлять контекстного меню** мы рекомендуем включая все соответствующие команды контекстного меню в традиционных контекстного меню или CommandBarFlyout, так как обе поддерживаются для всех входных типов. Например если команды предоставляется только во время события наведения указателя, он не может использоваться на устройстве только для сенсорного ввода.
+**Всегда предоставляйте контекстное меню**. Мы рекомендуем включать все соответствующие контекстные команды в традиционное контекстное меню или меню CommandBarFlyout, так как они поддерживают все типы ввода. Например, если команда отображается только во время события наведения указателя, ее нельзя использовать на устройстве, работающем только с помощью сенсорного ввода.
 
-## <a name="commands-in-uwp-applications"></a>Команды в приложениях универсальной платформы Windows
+## <a name="commands-in-uwp-applications"></a>Команды в приложениях UWP
 
-Существует несколько способов совместного использования и управления им команд в приложении универсальной платформы Windows. Обработчики событий для стандартных действий, например щелчок, можно определить в коде (это может быть довольно неэффективно, в зависимости от сложности пользовательского интерфейса) и прослушивателя событий для стандартных действий можно привязать к общий обработчик можно привязать элемент управления Свойство Command на реализацию ICommand, который описывает логику команды.
+Есть несколько способов, с помощью которых можно совместно использовать команды и управлять их выполнением в приложении UWP. Вы можете определить обработчики событий для стандартных взаимодействий, таких как щелчок, в коде программной части (это может быть довольно неэффективно, в зависимости от сложности пользовательского интерфейса), привязать прослушиватель событий для стандартных взаимодействий к совместно используемому обработчику или привязать свойство Command элемента управления к реализации ICommand, которая описывает логику команды.
 
-Чтобы обеспечить богатый и полный взаимодействия с пользователями внедряться команды эффективно и с дублированием минимальный код, мы рекомендуем использовать команды привязки функции, описанные в этом разделе (обработки стандартных событий, см. в разделах отдельные события).
+Для обеспечения эффективного всестороннего взаимодействия пользователей с поверхностями команд с минимальным дублированием кода рекомендуется использовать функции привязки команд, описанные в этой статье (стандартную обработку событий см. в отдельных разделах о событиях).
 
-Привязать элемент управления к ресурсу общих команд, вы самостоятельно реализовать интерфейс ICommand, или можно создать команду либо из [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) базового класса или одну из команд платформы определяются [ StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) производного класса.
+Чтобы привязать элемент управления к общему ресурсу команд, можно самостоятельно реализовать интерфейсы ICommand или создать свою команду из базового класса [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) или из одной из команд платформы, определенной производным классом [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand).
 
-- Интерфейс ICommand ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) или [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)) позволяет создавать полностью настраиваемые возможности повторного использования команд в приложении.
-- [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) также предоставляет такую возможность, но упрощает разработку, предоставляя набор свойств встроенной командой, такие как поведение команды, сочетания клавиш (ключ доступа и сочетания клавиш), значок, метку и описание.
-- [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) упрощает работу дальнейшей, позволяя выбрать из набора команд стандартную платформу с стандартные свойства.
+- Интерфейс ICommand ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) или [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)) позволяет создавать в приложении полностью настраиваемые, многократно используемые команды.
+- [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) также предоставляет эту возможность, но упрощает разработку, предоставляя набор встроенных свойств команды, таких как поведение команды, сочетания клавиш (клавиша доступа и клавиша ускорителя), значок, метка и описание.
+- [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) еще больше упрощает ситуацию, позволяя выбирать из набора стандартных команд платформы с предопределенными свойствами.
 
 > [!Important]
-> В приложениях универсальной платформы Windows, команды являются реализациями либо [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) (C++) или [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) (C#) интерфейс, в зависимости от выбранного языковой платформе.
+> В приложениях UWP команды являются реализациями интерфейсов [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) (C++) или [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) (C#), в зависимости от выбранной языковой платформы.
 
-## <a name="command-experiences-using-the-standarduicommand-class"></a>Команда интерфейсы с помощью класса StandardUICommand
+## <a name="command-experiences-using-the-standarduicommand-class"></a>Интерфейсы команд с использованием класса StandardUICommand
 
-Производный от [XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) (производный от [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) для C++ или [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) для C#), [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) класс предоставляет набор стандартных платформенных команд с предварительно определенные свойства, такие как значок, сочетания клавиш и описание.
+Производный от [XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) (производный от [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) для C++ или [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) для C#), класс [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) предоставляет набор стандартных команд платформы с предопределенными свойствами, например значок, ускоритель клавиатуры и описание.
 
-Объект [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) предоставляет способ быстрого и согласованного для определения часто используемых команд, таких как `Save` или `Delete`. Что необходимо сделать всего лишь предоставить функции execute и canExecute.
+[StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) обеспечивает быстрый согласованный способ определения часто используемых команд, например `Save` или `Delete`. Нужно лишь предоставить функции execute и canExecute.
 
 ### <a name="example"></a>Пример
 
@@ -93,18 +93,18 @@ ms.locfileid: "58221420"
 
 *StandardUICommandSample*
 
-| Скачать код для этого примера |
+| Скачайте код для этого примера. |
 | -------------------- |
-| [Пример команд UWP (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip) |
+| [Пример использования команд UWP (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip) |
 
-В этом примере показано, как улучшить базовой [ListView](listview-and-gridview.md) с удалением элемента команды, реализованные посредством [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) класс, одновременно оптимизируя взаимодействие с пользователем для различных типов входных данных с помощью [MenuBar](menus.md), [считывание](swipe.md) элемента управления, кнопки при наведении указателя мыши, и [контекстное меню](menus.md).
+В этом примере мы покажем, как улучшить базовый класс [ListView](listview-and-gridview.md) с помощью команды удаления элемента, реализованной классом [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand). При этом будет оптимизировано взаимодействие с пользователем для различных типов ввода с использованием [MenuBar](menus.md), элемента управления [прокрутки](swipe.md), кнопок при наведении и [контекстного меню](menus.md).
 
 > [!NOTE]
-> В этом примере требуется пакет Microsoft.UI.Xaml.Controls NuGet, часть [библиотека пользовательского интерфейса Microsoft Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> Для этого примера требуется пакет NuGet Microsoft.UI.Xaml.Controls, входящий в [библиотеку пользовательских интерфейсов Microsoft Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-**XAML:**
+**XAML.**
 
-Пример пользовательского интерфейса содержит [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) пять элементов. Операция удаления [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) привязан к [MenuBarItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubaritem), [SwipeItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.swipeitem), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), и [ Меню ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout).
+Пример пользовательского интерфейса включает в себя класс [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) из пяти элементов. Команда удаления [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) привязана к классам [MenuBarItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubaritem), [SwipeItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.swipeitem), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и меню [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout).
 
 ``` xaml
 <Page
@@ -228,9 +228,9 @@ ms.locfileid: "58221420"
 </Page>
 ```
 
-**Кода**
+**Поддерживающий код**
 
-1. Во-первых, определим `ListItemData` класс, который содержит текстовую строку и ICommand для каждой ListViewItem в нашей ListView.
+1. Сначала мы определяем класс `ListItemData`, который содержит текстовую строку и команду ICommand для каждого элемента ListViewItem в классе ListView.
 
 ```csharp
 public class ListItemData
@@ -240,7 +240,7 @@ public class ListItemData
 }
 ```
 
-2. В класс MainPage, мы определяем коллекцию `ListItemData` объектов для [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) из [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). Мы затем заполняет ее исходную коллекцию элементов пять элементов (с текстом и с ними [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) удалить).
+2. В классе MainPage мы определяем коллекцию объектов `ListItemData` для элементов [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) из [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) типа [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). Затем заполним ее начальным набором из пяти элементов (с текстом и связанной командой удаления типа [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)).
 
 ```csharp
 /// <summary>
@@ -284,7 +284,7 @@ private void ListView_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-3. Далее мы определим обработчик ICommand ExecuteRequested, где мы реализуем команды удаления элемента.
+3. Далее мы определяем обработчик ICommand ExecuteRequested, в котором реализуем команду удаления элемента.
 
 ``` csharp
 /// <summary>
@@ -314,7 +314,7 @@ private void DeleteCommand_ExecuteRequested(
 }
 ```
 
-4. Наконец, мы определяем обработчики для различных событий ListView, включая [PointerEntered](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered), [PointerExited](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited), и [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) события. Обработчики событий указателя используются для отображения или скрытия «удалить» для каждого элемента.
+4. Наконец, мы определяем обработчики для различных событий ListView, включая [PointerEntered](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered), [PointerExited](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) и [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Обработчики событий указателя используются для отображения или скрытия кнопки "Удалить" для каждого элемента.
 
 ```csharp
 /// <summary>
@@ -364,11 +364,11 @@ private void ListViewSwipeContainer_PointerExited(
 }
 ```
 
-## <a name="command-experiences-using-the-xamluicommand-class"></a>Команда интерфейсы с помощью класса XamlUICommand
+## <a name="command-experiences-using-the-xamluicommand-class"></a>Интерфейсы команд с использованием класса XamlUICommand
 
-Если вам нужно создать команду, которая не определена, [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) класса, либо требуется больший контроль над внешним видом команды, [XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) класс является производным от [ ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) интерфейс, добавив различные свойства (например, значок, метку, описание и сочетания клавиш), методы и события, можно быстро определить пользовательский Интерфейс и поведение пользовательской команды пользовательского интерфейса.
+Если вам нужно создать команду, которая не определена классом [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand), или вы хотите больше контролировать внешний вид команды, используйте класс [XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand), который является производным от интерфейса [ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand). Он добавляет различные свойства пользовательского интерфейса (например, значок, метку, описание и сочетания клавиш), методы и события для быстрого определения пользовательского интерфейса и поведения настраиваемой команды.
 
-[XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) позволяет указать пользовательский Интерфейс через элемент привязки, такие как значок, описание, метки и сочетания клавиш (ключ доступа и сочетания клавиш), без задания отдельных свойств.
+[XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) позволяет указать пользовательский интерфейс через привязку элемента управления, например значок, метку, описание и сочетания клавиш (клавиша доступа и ускоритель клавиатуры) без настройки отдельных свойств.
 
 ### <a name="example"></a>Пример
 
@@ -376,20 +376,20 @@ private void ListViewSwipeContainer_PointerExited(
 
 *XamlUICommandSample*
 
-| Скачать код для этого примера |
+| Скачайте код для этого примера. |
 | -------------------- |
-| [Пример команд UWP (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip) |
+| [Пример использования команд UWP (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip) |
 
-В этом примере использует функцию удаления предыдущей [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) пример, но показано как [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) класса позволяет определять пользовательские delete команды с собственный значок шрифта метки, сочетания клавиш и описание. Как и [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) примере расширения базового [ListView](listview-and-gridview.md) с удалением элемента команды, реализованные посредством [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) класс, одновременно оптимизируя взаимодействие с пользователем для различных типов входных данных с помощью [MenuBar](menus.md), [считывание](swipe.md) элемента управления, кнопки при наведении указателя мыши, и [контекстное меню](menus.md).
+В этом примере используются общие функции команды Delete из предыдущего примера [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand), но показано, как класс [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) позволяет определить пользовательскую команду удаления с помощью собственного значка шрифта, метки, ускорителя клавиатуры и описания. Как и в примере [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand), мы улучшим базовый класс [ListView](listview-and-gridview.md) с помощью команды удаления элемента, реализованной классом [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand). При этом будет оптимизировано взаимодействие с пользователем для различных типов ввода с использованием [MenuBar](menus.md), элемента управления [прокрутки](swipe.md), кнопок при наведении и [контекстного меню](menus.md).
 
-Многие элементы управления платформы используются свойства XamlUICommand на самом деле, как и в нашем примере StandardUICommand в предыдущем разделе. 
+Многие элементы управления платформы используют свойства XamlUICommand во внутреннем механизме, как и наш пример StandardUICommand в предыдущем разделе. 
 
 > [!NOTE]
-> В этом примере требуется пакет Microsoft.UI.Xaml.Controls NuGet, часть [библиотека пользовательского интерфейса Microsoft Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> Для этого примера требуется пакет NuGet Microsoft.UI.Xaml.Controls, входящий в [библиотеку пользовательских интерфейсов Microsoft Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-**XAML:**
+**XAML.**
 
-Пример пользовательского интерфейса содержит [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) пять элементов. Пользовательский [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) Delete привязан к [MenuBarItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubaritem), [SwipeItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.swipeitem), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), и [ Меню ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout).
+Пример пользовательского интерфейса включает в себя класс [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) из пяти элементов. Настраиваемая команда удаления [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) привязана к классам [MenuBarItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubaritem), [SwipeItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.swipeitem), [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) и меню [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout).
 
 ``` xaml
 <Page
@@ -523,9 +523,9 @@ private void ListViewSwipeContainer_PointerExited(
 </Page>
 ```
 
-**Кода**
+**Поддерживающий код**
 
-1. Во-первых, определим `ListItemData` класс, который содержит текстовую строку и ICommand для каждой ListViewItem в нашей ListView.
+1. Сначала мы определяем класс `ListItemData`, который содержит текстовую строку и команду ICommand для каждого элемента ListViewItem в классе ListView.
 
 ```csharp
 public class ListItemData
@@ -535,7 +535,7 @@ public class ListItemData
 }
 ```
 
-2. В класс MainPage, мы определяем коллекцию `ListItemData` объектов для [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) из [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). Мы затем заполняет ее исходную коллекцию элементов пять элементов (с текстом и с ними [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)).
+2. В классе MainPage мы определяем коллекцию объектов `ListItemData` для элементов [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) из [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) типа [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview). Затем заполним ее начальным набором из пяти элементов (с текстом и связанной командой [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)).
 
 ```csharp
 ObservableCollection<ListItemData> collection = new ObservableCollection<ListItemData>();
@@ -555,7 +555,7 @@ private void ListView_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-3. Далее мы определим обработчик ICommand ExecuteRequested, где мы реализуем команды удаления элемента.
+3. Далее мы определяем обработчик ICommand ExecuteRequested, в котором реализуем команду удаления элемента.
 
 ``` csharp
 private void DeleteCommand_ExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
@@ -578,7 +578,7 @@ private void DeleteCommand_ExecuteRequested(XamlUICommand sender, ExecuteRequest
 }
 ```
 
-4. Наконец, мы определяем обработчики для различных событий ListView, включая [PointerEntered](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered), [PointerExited](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited), и [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) события. Обработчики событий указателя используются для отображения или скрытия «удалить» для каждого элемента.
+4. Наконец, мы определяем обработчики для различных событий ListView, включая [PointerEntered](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered), [PointerExited](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) и [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Обработчики событий указателя используются для отображения или скрытия кнопки "Удалить" для каждого элемента.
 
 ```csharp
 private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -603,30 +603,30 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 }
 ```
 
-## <a name="command-experiences-using-the-icommand-interface"></a>Команда интерфейсы с помощью интерфейса ICommand
+## <a name="command-experiences-using-the-icommand-interface"></a>Интерфейсы команд с использованием интерфейса ICommand
 
-Стандартные элементы управления универсальной платформы Windows (кнопка, список, выбор, календарь, предсказание текста) служат основой для многих общего опыта при работе команды. Полный список типов элементов управления, см. в разделе [элементы управления и шаблоны для приложений универсальной платформы Windows](index.md).
+Стандартные элементы управления UWP (кнопка, список, выбор, календарь, прогнозируемый текст) обеспечивают основу для многих часто используемых интерфейсов команд. Полный список типов элементов управления см. в статье [Элементы управления для приложений UWP](index.md).
 
-Самый простой способ поддержки структурированных команд процесса является определение реализацию интерфейса ICommand ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) для C++ или [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)для C#).  Затем этот экземпляр ICommand можно привязать к элементам управления, например кнопки.
+Основным способом поддержки структурированного интерфейса команд является определение реализации интерфейса ICommand ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) для C++ или [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) для C#).  Затем этот экземпляр ICommand можно связать с такими элементами управления, как кнопки.
 
 > [!NOTE]
-> В некоторых случаях может быть тот же результат, для привязки метода для события щелчка и свойства для свойства IsEnabled.
+> В некоторых случаях такой же эффективной будет привязка метода к событию нажатия кнопки, а свойства — к свойству IsEnabled.
 
 #### <a name="example"></a>Пример
 
-![Пример команды интерфейса](images/commanding/icommand.gif)
+![Пример интерфейса команды](images/commanding/icommand.gif)
 
 *Пример ICommand*
 
-| Скачать код для этого примера |
+| Скачайте код для этого примера. |
 | -------------------- |
-| [Пример команд UWP (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip) |
+| [Пример использования команд UWP (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip) |
 
-В этом примере мы покажем, как одна команда может вызываться с кнопкой нажмите кнопку, сочетания клавиш и поворот колесика мыши.
+В этом базовом примере мы покажем, как можно вызывать одну команду с помощью нажатия кнопки, ускорителя клавиатуры и вращения колесика мыши.
 
-Мы используем два [ListViews](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), один заполняются пять элементов и других пустой и две кнопки, одна для перемещения элементов из ListView слева к ListView справа, а другой — для перемещения элементов справа налево. Каждая кнопка привязан к соответствующей команды (ViewModel.MoveRightCommand и ViewModel.MoveLeftCommand, соответственно) и включенные и отключенные автоматически в зависимости от числа элементов в их связанные ListView.
+Мы используем два класса [ListViews](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), один из которых заполнен пятью элементами, а другой пустой, и две кнопки — одна для перемещения элементов из ListView слева в ListView справа, а другая для перемещения элементов справа налево. Каждая кнопка связана с соответствующей командой (ViewModel.MoveRightCommand и ViewModel.MoveLeftCommand соответственно) и включается и отключается автоматически, в зависимости от количества элементов в классе ListView, связанном с кнопкой.
 
-**Следующий код XAML определяет пользовательский Интерфейс для нашего примера.**
+**Следующий код XAML определяет пользовательский интерфейс для нашего примера.**
 
 ```xaml
 <Page
@@ -736,9 +736,9 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 </Page>
 ```
 
-**Вот кода для предыдущего пользовательского интерфейса.**
+**Ниже приведен поддерживающий код для предыдущего интерфейса.**
 
-В коде программной части мы подключим к нашей модели представления, которая содержит код нашей команды. Кроме того мы определяем обработчик для входных данных из колесико мыши, соединяющей код нашей команды.
+В коде мы подключаемся к нашей модели представления, которая содержит код нашей команды. Кроме того, мы определяем обработчик для ввода с колесика мыши, который также связывает наш командный код.
 
 ```csharp
 using Windows.UI.Xaml;
@@ -799,9 +799,9 @@ namespace UICommand1.View
 }
 ```
 
-**Ниже приведен код из нашей модели представления**
+**Так выглядит код из нашей модели представления.**
 
-Наша модель представления — здесь мы определить сведения о выполнении для двух команд в наше приложение, заполнить один ListView и предоставить преобразователь значений непрозрачности для скрытие и отображение некоторых дополнительный пользовательский Интерфейс на основе количества элементов из каждого ListView.
+Наша модель представления — это то, где мы определяем подробности выполнения для двух команд в нашем приложении, заполняем один класс ListView и предоставляем преобразователь значений непрозрачности для скрытия или отображения определенного дополнительного пользовательского интерфейса на основе количества элементов каждого класса ListView.
 
 ```csharp
 using System;
@@ -979,9 +979,9 @@ namespace UICommand1.ViewModel
 }
 ```
 
-**Наконец Вот наша реализация интерфейса ICommand**
+**Наконец, вот наша реализация интерфейса ICommand.**
 
-Здесь мы определяем команду, которая реализует [ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) интерфейс и просто передает его функции доступными для других объектов.
+Здесь мы определяем команду, которая реализует интерфейс [ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) и просто передает ее функции другим объектам.
 
 ```csharp
 using System;
@@ -1070,36 +1070,36 @@ namespace UICommand1
 
 ## <a name="summary"></a>Сводка
 
-Универсальная платформа Windows предоставляет надежную и гибкую системе команд, которое служит для создания приложений, совместное использование и Управление командами различных типов элементов управления, устройств и типов входных данных.
+Универсальная платформа Windows предоставляет надежную и гибкую систему управления для создания приложений, которые совместно используют команды и управляют ими для разных типов элементов управления, устройств и типов ввода.
 
-При создании команд для приложений универсальной платформы Windows, используйте следующие подходы:
+Используйте следующие подходы при создании команд для ваших приложений UWP:
 
-- Прослушивание и обрабатывать события в XAML и кода программной части
-- Привязка к метод, например щелчок обработки событий
-- Определить свои собственные реализации ICommand
-- Создание объектов XamlUICommand собственными значениями для предварительно определенный набор свойств
-- Создание объектов StandardUICommand с набором заранее определенную платформу свойств и значений
+- Прослушивайте и обрабатывайте события в коде XAML или поддерживающем коде.
+- Выполняйте привязку к методу обработки событий, например к нажатию кнопки.
+- Определяйте свою собственную реализацию ICommand.
+- Создавайте объекты XamlUICommand со своими собственными значениями для предварительно определенного набора свойств.
+- Создавайте объекты StandardUICommand с набором предопределенных свойств и значений платформы.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Полный пример, демонстрирующий [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) и [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) реализации, см. в разделе [коллекции элементов управления XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) образца.
+Полный пример, демонстрирующий реализацию [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) и [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand), приведен в [коллекции элементов управления XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics).
 
 ## <a name="see-also"></a>См. также
 
-[Элементы управления и шаблоны для приложений универсальной платформы Windows](index.md)
+[Элементы управления для приложений UWP](index.md)
 
 ### <a name="samples"></a>Примеры
 
-#### <a name="topic-samples"></a>Примеры в разделе
+#### <a name="topic-samples"></a>Примеры в статье
 
-- [Пример команд UWP (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip)
-- [Пример команд UWP (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip)
-- [Пример команд UWP (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip)
+- [Пример использования команд UWP (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip)
+- [Пример использования команд UWP (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip)
+- [Пример использования команд UWP (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip)
 
 #### <a name="other-samples"></a>Другие примеры
 
-- [Примеры универсальной платформы Windows (C# и C++)](https://go.microsoft.com/fwlink/?linkid=832713)
-- [Галерея элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery)
+- [Примеры для универсальной платформы Windows (C# и C++)](https://go.microsoft.com/fwlink/?linkid=832713)
+- [Коллекция элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 <!---Some context for the following links goes here
 - [link to next logical step for the customer](global-quickstart-template.md)--->

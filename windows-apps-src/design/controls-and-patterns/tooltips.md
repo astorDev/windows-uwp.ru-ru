@@ -6,17 +6,17 @@ label: Tooltips
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dabfee25df08d933fc892c3ed6e46f3cc6f4513
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364024"
 ---
 # <a name="tooltips"></a>Подсказки
@@ -25,7 +25,7 @@ ms.locfileid: "66364024"
 
 ![Подсказка](images/controls/tool-tip.png)
 
-> **Важные API**: [Класс подсказки](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [класс ToolTipService](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
+> **Важные API**: [Класс ToolTip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [класс ToolTipService](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -33,31 +33,31 @@ ms.locfileid: "66364024"
 
 Когда следует использовать всплывающую подсказку? Чтобы определиться, ответьте на вопросы:
 
-- **Следует info, становятся видимыми на основе при наведении указателя мыши?**
+- **Должна ли информация становится видимой на основе наведения указателя?**
     Если нет — используйте другой элемент управления. Отображайте подсказки только как результат действия пользователя и не допускайте их самостоятельного отображения.
 
-- **Имеет ли элемент управления метки?**
+- **У элемента управления есть текстовая метка?**
     Если нет — используйте всплывающую подсказку, чтобы разместить метку. Хорошим тоном в проектировании взаимодействия с пользователем считается ставить метки для большей части элементов управления внутри приложения. Для таких элементов вам не потребуются всплывающие подсказки. Элементам управления панели инструментов и кнопкам, на которых изображены только значки, потребуются всплывающие подсказки.
 
-- **Объект преимущества описание или дополнительной информации?**
+- **Выигрывает ли объект от наличия описания или дополнительной информации?**
     Если да — используйте всплывающую подсказку. Но текст должен быть дополнением, а не обязательной частью, необходимой для выполнения базовых задач. Если текст является обязательной частью, разместите его непосредственно в пользовательском интерфейсе, чтобы пользователям не пришлось его искать.
 
-- **Ошибку, предупреждение или состояние, такое дополнительную информацию?**
+- **Содержит ли дополнительная информация ошибку, предупреждение или статус?**
     Если да — используйте другой элемент интерфейса, например всплывающий элемент.
 
-- **Пользователям нужно взаимодействовать с чаевых?**
+- **Нужно ли пользователям взаимодействовать с этой подсказкой?**
     Если да — используйте другой элемент управления. Пользователи не могу взаимодействовать с подсказками, поскольку при движении указателя мыши они скрываются.
 
-- **Пользователям нужно распечатать дополнительную информацию?**
+- **Нужно ли пользователям распечатывать дополнительную информацию?**
     Если да — используйте другой элемент управления.
 
-- **Пользователям найти советы нежелательные или быстрого?**
+- **Будут ли подсказки раздражать или отвлекать пользователей?**
     Если да — попытайтесь найти другое решение, которым, в том числе, может быть и отсутствие каких-либо действий. Если вы используете подсказки там, где они могут отвлекать, предоставьте пользователям возможность отключить их.
 
 ## <a name="example"></a>Пример
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
@@ -78,13 +78,13 @@ ms.locfileid: "66364024"
 
 [Подсказку](/uwp/api/Windows.UI.Xaml.Controls.ToolTip) необходимо назначить другому элементу пользовательского интерфейса, являющемуся ее владельцем. Класс [ToolTipService](/uwp/api/windows.ui.xaml.controls.tooltipservice) предоставляет статические методы для отображения подсказки.
 
-В XAML используйте присоединенное свойство **ToolTipService.Tooltip**, чтобы присвоить подсказку владельцу.
+Чтобы присвоить подсказку владельцу, в XAML следует использовать присоединенное свойство **ToolTipService.Tooltip**.
 
 ```xaml
 <Button Content="Submit" ToolTipService.ToolTip="Click to submit"/>
 ```
 
-В коде используйте метод [ToolTipService.SetToolTip](/uwp/api/windows.ui.xaml.controls.tooltipservice.settooltip), чтобы присвоить подсказку владельцу.
+Чтобы присвоить подсказку владельцу в коде следует использовать метод [ToolTipService.SetToolTip](/uwp/api/windows.ui.xaml.controls.tooltipservice.settooltip).
 
 ```xaml
 <Button x:Name="submitButton" Content="Submit"/>
@@ -96,7 +96,7 @@ toolTip.Content = "Click to submit";
 ToolTipService.SetToolTip(submitButton, toolTip);
 ```
 
-### <a name="content"></a>Content
+### <a name="content"></a>Содержимое
 
 Можно использовать любой объект в качестве [Содержимого](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) подсказки. Вот пример использования [Изображения](/uwp/api/windows.ui.xaml.controls.image) в подсказке.
 
@@ -112,7 +112,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 По умолчанию подсказка отображается по центру над указателем. Размещение не ограничивается окном приложения, поэтому подсказка может отображаться частично или полностью вне границ окна приложения.
 
-Для широкого корректировки, используйте [размещения](/uwp/api/windows.ui.xaml.controls.tooltip.placement) свойство или **ToolTipService.Placement** вложенное свойство, чтобы указать, должен ли подсказка рисоваться выше, снизу, слева или справа от указателя. Можно задать [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) или [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) свойства, чтобы изменить расстояние между указатель и всплывающей подсказкой. Только один из двух значений смещения, влияет на последней позицией - VerticalOffset при размещении верхней или нижней, HorizontalOffset при размещении остается или вправо.
+Чтобы указать появится ли подсказка выше, ниже, слева или справа от указателя, а также для общей корректировки, следует использовать свойство [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) или присоединенное свойство **ToolTipService.Placement**. Чтобы изменить расстояние между указателем и подсказкой можно задать свойства [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) или [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset). На конечное расположение влияет только одно из двух значений смещения (VerticalOffset — когда Placement находится сверху или снизу или HorizontalOffset — когда Placement находится слева или справа).
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -125,7 +125,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-Подсказка закрывает он ссылается на содержимое, можно изменить его расположение, с помощью нового **PlacementRect** свойство. PlacementRect привязывает положения всплывающей подсказки, а также служит в качестве области, которая не будет скрывать всплывающей подсказки, достаточно места на экране для рисования подсказки за пределами этой области. Можно указать начала координат прямоугольника по отношению к владельцу всплывающей подсказки и высоту и ширину области исключения. [Размещения](/uwp/api/windows.ui.xaml.controls.tooltip.placement) свойства определяются в том случае, если подсказка должна нарисовать выше, снизу, слева или справа от PlacementRect. 
+Если подсказка загораживает содержимое, к которому она относится, то ее точное расположение можно настроить с помощью свойства **PlacementRect**. PlacementRect закрепляет положения ToolTip, а также является областью, которую всплывающая подсказка не будет закрывать, при условии,когда на экране достаточно места для отображения подсказки за пределами этой области. В качестве владельца подсказки вы можете указать источник прямоугольника, а также его высоту и ширину и области исключения. Свойство [Размещение](/uwp/api/windows.ui.xaml.controls.tooltip.placement) используется для определения того, должна ли подсказка появляться вверху, снизу, слева или справа от PlacementRect. 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->
@@ -149,8 +149,8 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [Класс всплывающей подсказки](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip)
+- [ToolTip Class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip) (Класс ToolTip)

@@ -3,25 +3,25 @@ description: Скалярное значение необходимо помес
 title: Упаковка-преобразование и распаковка-преобразование скалярных значений в IInspectable с помощью C++/WinRT
 ms.date: 04/23/2019
 ms.topic: article
-keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проекция, XAML, управление, упаковка, скалярное, значение
+keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, boxing, scalar, value
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bd69e07f2285b6c05581a60ddbaf4b394d0b6d0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66361196"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Упаковка-преобразование и распаковка-преобразование скалярных значений в IInspectable с помощью C++/WinRT
  
-[  **Интерфейс IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) — это корневой интерфейс любого класса среды выполнения Windows (WinRT). Эта идея аналогична тому, что в корне каждого COM-интерфейса и класса находится [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown), а **System.Object** находится в корне каждого класса [Common Type System](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system).
+[**Интерфейс IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) — это корневой интерфейс любого класса среды выполнения Windows (WinRT). Это аналогично тому, что в корне каждого COM-интерфейса и класса находится [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown), а в корне каждого класса [Common Type System](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system) находится **System.Object**.
 
-Другими словами, функции, которая ожидает **IInspectable**, можно передать экземпляр любого класса среды выполнения. Однако такой функции нельзя напрямую передать скалярное значение, например числовое или текстовое. Вместо этого скалярное значение необходимо поместить в объект ссылочного класса. Этот процесс называют *упаковкой* значения.
+Другими словами, функции, которая ожидает **IInspectable**, можно передать экземпляр любого класса среды выполнения. Но такой функции нельзя напрямую передать скалярное значение, например числовое или текстовое. Для этого скалярное значение необходимо поместить в объект ссылочного класса. Этот процесс называют *упаковкой* значения.
 
-[C++/ WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) предоставляет [ **winrt::box_value** ](/uwp/cpp-ref-for-winrt/box-value) функцию, которая принимает скалярное значение и возвращает значение, упакованных в **IInspectable**. Для распаковки **IInspectable** обратно в скалярное значение существуют функции [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) и [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or).
+[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) предоставляет функцию [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value), которая принимает скалярное значение и возвращает значение, упакованное в **IInspectable**. Для распаковки **IInspectable** обратно в скалярное значение используются функции [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) и [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or).
 
 ## <a name="examples-of-boxing-a-value"></a>Примеры упаковки значения
-Функция доступа [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) возвращает[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring), которое является скалярным значением. Мы можете упаковать это значение **hstring** и передать его функции, ожидающей **IInspectable**, следующим образом.
+Функция доступа [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) возвращает[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (скалярное значение). Вы можете упаковать это значение **hstring** и передать его функции, ожидающей **IInspectable**.
 
 ```cppwinrt
 void App::OnLaunched(LaunchActivatedEventArgs const& e)
@@ -32,7 +32,7 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
 }
 ```
 
-Чтобы задать свойство содержимого [**кнопки**](/uwp/api/windows.ui.xaml.controls.button) XAML следует вызвать функцию-мутатор [**Button::Content**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content?) . Чтобы присвоить строковое значение свойству содержимого, можно использовать этот код.
+Чтобы задать свойство содержимого [**Button**](/uwp/api/windows.ui.xaml.controls.button) XAML следует вызвать функцию-мутатор [**Button::Content**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content?). Чтобы присвоить строковое значение свойству содержимого, можно использовать этот код.
 
 ```cppwinrt
 Button().Content(winrt::box_value(L"Clicked"));
@@ -41,7 +41,7 @@ Button().Content(winrt::box_value(L"Clicked"));
 Сначала конструктор преобразования [**hstring**](/uwp/cpp-ref-for-winrt/hstring) преобразует строковый литерал в **hstring**. Затем вызывается перегрузка **winrt::box_value**, которая принимает значение **hstring**.
 
 ## <a name="examples-of-unboxing-an-iinspectable"></a>Примеры распаковки IInspectable
-В ваших собственных функциях, которые ожидают **IInspectable**, можно использовать для распаковки [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) и [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) для распаковки со значением по умолчанию.
+В ваших функциях, которые ожидают **IInspectable**, можно использовать для распаковки [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value), а также [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) для распаковки со значением по умолчанию.
 
 ```cppwinrt
 void Unbox(winrt::Windows::Foundation::IInspectable const& object)
@@ -64,7 +64,7 @@ WINRT_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType:
 
 ## <a name="important-apis"></a>Важные API
 * [Интерфейс IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
-* [Шаблон функции WinRT::box_value](/uwp/cpp-ref-for-winrt/box-value)
-* [Структура WinRT::hstring](/uwp/cpp-ref-for-winrt/hstring)
-* [Шаблон функции WinRT::unbox_value](/uwp/cpp-ref-for-winrt/unbox-value)
-* [Шаблон функции WinRT::unbox_value_or](/uwp/cpp-ref-for-winrt/unbox-value-or)
+* [Шаблон функции winrt::box_value](/uwp/cpp-ref-for-winrt/box-value)
+* [Структура winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
+* [Шаблон функции winrt::unbox_value](/uwp/cpp-ref-for-winrt/unbox-value)
+* [Шаблон функции winrt::unbox_value_or](/uwp/cpp-ref-for-winrt/unbox-value-or)

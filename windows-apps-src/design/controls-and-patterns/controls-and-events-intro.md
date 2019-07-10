@@ -6,13 +6,13 @@ label: Intro to controls and patterns
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 671f33cf106eabf11b317b00d5c2a6cd9abcf3d0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363040"
 ---
 # <a name="intro-to-controls-and-patterns"></a>Введение в работу с элементами управления и шаблонами
@@ -21,7 +21,7 @@ ms.locfileid: "66363040"
 
 > **Важные API**: [Пространство имен Windows.UI.Xaml.Controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 
-*Шаблон* — это макет для изменения элемента управления или объединения нескольких элементов управления, позволяющий получить что-то новое. Например [основной/подробности](master-details.md) шаблон — это способ, который можно использовать [SplitView](split-view.md) управления для переходов приложения. Аналогичным образом, можно настроить шаблон из [NavigationView](navigationview.md) управления для реализации шаблона вкладки.
+*Шаблон* — это макет для изменения элемента управления или объединения нескольких элементов управления, позволяющий получить что-то новое. Например, с помощью шаблона [master/details](master-details.md) можно использовать элемент управления [SplitView](split-view.md) для навигации по приложению. Аналогичным образом, вы можете настроить шаблон элемента управления [NavigationView](navigationview.md), чтобы реализовать шаблон вкладки.
 
 В большинстве случаев элемент управления можно использовать в его исходном виде. Однако элементы управления XAML отделяют функционал приложения от его структуры и внешнего вида, поэтому вы можете вносить изменения разной степени, чтобы элементы управления соответствовали вашим целям. В разделе [Стиль](../style/index.md) приведены инструкции по использованию [Стилей XAML](xaml-styles.md) и [шаблонов элементов управления](control-templates.md) для изменения элемента управления.
 
@@ -141,7 +141,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 Button1.Click += new RoutedEventHandler(Button_Click);
 ```
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Статьи по теме
 
 -   [Указатель элементов управления по функциям](controls-by-function.md)
 -   [Пространство имен Windows.UI.Xaml.Controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)

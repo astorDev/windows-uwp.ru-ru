@@ -6,25 +6,25 @@ ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
 ms.openlocfilehash: f1cc576bbc7fe7fc326d86072e22b7a385cfeb8b
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913954"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63794543"
 ---
 # <a name="item-templates-for-grid-view"></a>Шаблоны элементов для представления сетки
 
 В этом разделе вы найдете шаблоны элементов, которые можно использовать вместе с элементом управления [**GridView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView). Используйте эти шаблоны для создания интерфейса приложений стандартных типов.
 
-Чтобы продемонстрировать привязку данных, эти шаблоны должны быть привязаны **GridViewItems** к классу пример записи из [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md).
+Для демонстрации связывания данных эти шаблоны связывают тип **GridViewItems** с примером класса записи из раздела о [привязке данных](../../data-binding/data-binding-quickstart.md).
 
 > [!NOTE] 
-> В настоящее время если тип **DataTemplate** содержит несколько элементов управления (например, больше, чем один элемент **TextBlock**), специальное имя по умолчанию для программ чтения с экрана берется из свойства .ToString() элемента. Для удобства можно задать имя [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) в корневом элементе шаблона **DataTemplate**. Дополнительные сведения о специальных возможностях см. в разделе [Обзор специальных возможностей](../accessibility/accessibility-overview.md).
+> Если тип **DataTemplate** содержит несколько элементов управления (например, больше, чем один элемент **TextBlock**), специальное имя по умолчанию для средств чтения с экрана можно получить с использованием .ToString() элемента. Для удобства можно задать имя [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) в корневом элементе шаблона **DataTemplate**. См. подробнее о [специальных возможностях](../accessibility/accessibility-overview.md).
 
 ## <a name="icon-and-text"></a>Значок и текст
 Эти шаблоны используются для отображения коллекции приложений в сетке со значком и текстом.
 
-![пример представления сетки с небольшим значком и текстом](images/listitems/icontext.png)
+![Пример представления сетки с небольшим значком и текстом](images/listitems/icontext.png)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -43,7 +43,7 @@ ms.locfileid: "58913954"
 </GridView>
 ```
 
-![пример представления сетки со значком и двухстрочным текстом](images/listitems/icontext2.png)
+![Пример представления сетки со значком и двухстрочным текстом](images/listitems/icontext2.png)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -68,7 +68,7 @@ ms.locfileid: "58913954"
 ## <a name="image-gallery"></a>Галерея изображений
 Этот шаблон используется для отображения коллекции изображений в сетке с режимом множественного выбора.
 
-![структура элементов gridview](images/listitems/gridviewitems.png)
+![Структура элементов gridview](images/listitems/gridviewitems.png)
 ```xaml
 <GridView SelectionMode="Multiple">
     <GridView.ItemTemplate>
@@ -86,7 +86,7 @@ ms.locfileid: "58913954"
 ## <a name="image-and-text"></a>Изображение и текст
 Эти шаблоны используются для отображения медиаколлекции с текстом под ней.
 
-![пример представления gridview с квадратным изображением и текстом](images/listitems/imageandtext.png)
+![Пример представления gridview с квадратным изображением и текстом](images/listitems/imageandtext.png)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -108,7 +108,7 @@ ms.locfileid: "58913954"
 </GridView>
 ```
 
-![пример представления gridview с прямоугольным изображением и текстом](images/listitems/imageandtext2.png)
+![Пример представления gridview с прямоугольным изображением и текстом](images/listitems/imageandtext2.png)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -130,10 +130,10 @@ ms.locfileid: "58913954"
 </GridView>
 ```
 
-## <a name="image-with-text-overlay"></a>изображением с наложением текста
+## <a name="image-with-text-overlay"></a>Изображением с наложением текста
 Этот шаблон используется для отображения медиаколлекции с наложением текста.
 
-![пример представления gridview с изображением и наложением текста](images/listitems/imageoverlay.png)
+![Пример представления gridview с изображением и наложением текста](images/listitems/imageoverlay.png)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -158,6 +158,6 @@ ms.locfileid: "58913954"
 ## <a name="related-articles"></a>Связанные статьи
 - [Класс GridView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView)
 - [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md)
-- [Обзор специальных возможностей](../accessibility/accessibility-overview.md)
+- [Общие сведения о специальных возможностях](../accessibility/accessibility-overview.md)
 - [Пример элементов ListView и GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Эскизы](../../files/thumbnails.md)

@@ -6,17 +6,17 @@ label: Check boxes
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3905ef8786a06d4221ce42511f786927c3173ba6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363166"
 ---
 # <a name="check-boxes"></a>Флажки
@@ -25,7 +25,7 @@ ms.locfileid: "66363166"
 
 Флажок используется для выбора или отмены выбора элементов действий. Его можно использовать для одного элемента или списка из нескольких элементов с возможностью выбора. Элемент управления предусматривает три состояния выделения: "не выбрано", "выбрано" и "не определено". Состояние "не определено" используется, когда в подсписке вариантов есть одновременно состояния "не выбрано" и "выбрано".
 
-> **Важные API**: [Класс флажок](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [Checked событий](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [свойство IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
+> **Важные API**: [CheckBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [Checked event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) и [IsChecked property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
 ![Пример состояний флажка](images/templates-checkbox-states-default.png)
 
@@ -85,11 +85,11 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>Привязка к свойству IsChecked
 
-Используйте свойство [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked), чтобы определять, установлен флажок или снят. Вы можете привязать значение свойства IsChecked к другому двоичному значению. Однако из-за того, что свойство IsChecked имеет логическое значение, [допускающее значение null](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN), для его привязки к логическому значению вам потребуется преобразователь величин.
+Используйте свойство [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked), чтобы определять, установлен ли флажок или снят. Вы можете привязать значение свойства IsChecked к другому двоичному значению. Однако из-за того, что свойство IsChecked имеет логическое значение, [допускающее значение null](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN), для его привязки к логическому значению вам потребуется преобразователь величин.
 
 В этом примере свойство **IsChecked** флажка для принятия условий соглашения привязано к свойству [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) кнопки "Отправить". Кнопка "Отправить" включена, только если пользователь принял условия соглашения.
 
-> Примечание&nbsp;&nbsp;Здесь приводится только относящийся к данному вопросу код. Дополнительные сведения о привязке данных и преобразователях величин можно найти в разделе [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md).
+> Примечание&nbsp;&nbsp;Здесь приводится только соответствующий код. Дополнительные сведения о привязке данных и преобразователях величин можно найти в разделе [Общие сведения о привязке данных](../../data-binding/data-binding-quickstart.md).
 
 ```xaml
 ...
@@ -294,16 +294,16 @@ private void SetCheckedState()
 
     ![Флажок с неопределенным состоянием](images/checkbox4_spicy.png)
 
-    Используйте группы переключателей, есть три варианта: Не острый острый и дополнительных острый.
+    Вместо этого используйте переключатель с тремя вариантами: "Без специй", "Со специями" и "Много специй".
 
-    ![Группы переключателей с три варианта: Не острый острый и дополнительных острый](images/spicyoptions.png)
+    ![Переключатель с тремя вариантами: "Без специй", "Со специями" и "Много специй".](images/spicyoptions.png)
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Образец галереи элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном формате.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [Класс флажок](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
+- [Класс CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
 - [Переключатели](radio-button.md)
-- [Переключатель](toggles.md)
+- [Тумблер](toggles.md)

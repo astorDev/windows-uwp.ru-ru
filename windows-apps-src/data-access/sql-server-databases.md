@@ -1,62 +1,62 @@
 ---
-title: Использование базы данных SQL Server в приложении UWP
-description: Использование базы данных SQL Server в приложении UWP.
+title: Использование базы данных SQL Server в приложении UWP
+description: Использование базы данных SQL Server в приложении UWP.
 ms.date: 3/28/2019
 ms.topic: article
-keywords: windows 10, uwp, SQL Server, база данных
+keywords: windows 10, uwp, SQL Server, database
 ms.localizationpriority: medium
 ms.openlocfilehash: f8986f14872d4e5de2c45bba264de6619ef07141
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66360152"
 ---
-# <a name="use-a-sql-server-database-in-a-uwp-app"></a>Использование базы данных SQL Server в приложении UWP
+# <a name="use-a-sql-server-database-in-a-uwp-app"></a>Использование базы данных SQL Server в приложении UWP
 Ваше приложение может подключаться напрямую к базе данных SQL Server и затем хранить и извлекать данные с помощью классов в пространстве имен [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN).
 
-В этом руководстве мы расскажем вам об одном способе выполнения этой задачи. Если вы установите пример базы данных [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) поверх экземпляра SQL Server, а затем используете эти фрагменты кода, у вас получится базовый пользовательский интерфейс, демонстрирующий продукты из примера базы данных Northwind.
+В данном руководстве приведен один из способов выполнения этой задачи. Если вы установите пример базы данных [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) поверх экземпляра SQL Server, а затем используете эти фрагменты кода, у вас получится базовый пользовательский интерфейс, в котором демонстрируются продукты из примера базы данных Northwind.
 
 ![Продукты Northwind](images/products-northwind.png)
 
 В основе фрагментов кода, представленных в этом руководстве, лежит более [полный пример кода](https://github.com/StefanWickDev/IgniteDemos/tree/master/NorthwindDemo).
 
-## <a name="first-set-up-your-solution"></a>Сначала настройте свое решение.
+## <a name="first-set-up-your-solution"></a>Сначала следует настроить решение
 
-Чтобы подключить свое приложение напрямую к базе данных SQL Server, убедитесь, что минимальная версия вашего проекта поддерживает Fall Creators Update.  Эти сведения можно найти на странице свойств проекта UWP.
+Чтобы подключить приложение напрямую к базе данных SQL Server, убедитесь, что минимальная версия вашего проекта поддерживает Fall Creators Update.  Эти сведения можно найти на странице свойств проекта UWP.
 
-![Минимальная версия Windows SDK](images/min-version-fall-creators.png)
+![Минимальная версия Windows SDK](images/min-version-fall-creators.png)
 
-Откройте файл **Package.appxmanifest** проекта UWP в конструкторе манифестов.
+Откройте файл **Package.appxmanifest** в конструкторе манифестов проекта UWP.
 
-В **возможности** выберите **Корпоративная аутентификация** флажок, если используется проверка подлинности Windows для проверки подлинности SQL Server.
+Если для проверки подлинности SQL Server вы используете проверку подлинности Windows, то на вкладке **Возможности** следует выбрать **Корпоративная проверка подлинности**.
 
 ![Корпоративная проверка подлинности](images/enterprise-authentication.png)
 
 <a id="use-data" />
 
-## <a name="add-and-retrieve-data-in-a-sql-server-database"></a>Добавление данных в базу данных SQL Server и их извлечение
+## <a name="add-and-retrieve-data-in-a-sql-server-database"></a>Добавление данных в базу данных SQL Server и их извлечение
 
-В этом разделе мы выполним следующие действия.
+В этом разделе будут выполнены следующие действия.
 
-: один: Добавьте строку подключения.
+:one: Добавление строки подключения.
 
-: два: Создание класса, содержащего данные о продуктах.
+:two: Создание класса для хранения данных продукта.
 
-: три: Получить продукты из базы данных SQL Server.
+:three: Получение продуктов из базы данных SQL Server.
 
-: четыре: Добавление основной пользовательский интерфейс.
+:four: Добавление базового пользовательского интерфейса.
 
-: пять: Заполнение пользовательского интерфейса с продуктами.
+:five: Заполнение пользовательского интерфейса продуктами.
 
 >[!NOTE]
-> В этом разделе показан один из способов организации кода доступа к данным. Его задачей является показать пример того, как можно использовать [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) для хранения данных в базе данных SQL Server и их извлечения. Код можно организовывать любым образом, который лучше всего подходит для проекта вашего приложения.
+> В этом разделе показан один из способов организации кода доступа к данным. Его задачей является показать пример того, как можно использовать [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) для хранения данных в базе данных SQL Server и их извлечения. Код можно организовывать таким образом, который лучше всего подходит для проекта приложения.
 
 ### <a name="add-a-connection-string"></a>Добавление строки подключения
 
-В файле **App.xaml.cs** добавьте свойство в класс ``App``, который предоставляет другим классам в вашем решении доступ к строке подключения.
+В файле **App.xaml.cs** добавьте свойство в класс ``App``, который предоставляет другим классам в решении доступ к строке подключения.
 
-Строка подключения указывает на базу данных Northwind в экземпляре SQL Server Express.
+Строка подключения указывает на базу данных Northwind в экземпляре SQL Server Express.
 
 ```csharp
 sealed partial class App : Application
@@ -77,7 +77,7 @@ sealed partial class App : Application
 
 ### <a name="create-a-class-to-hold-product-data"></a>Создание класса для хранения данных продукта
 
-Мы создадим класс, реализующий событие [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN), чтобы можно было привязать атрибуты в пользовательском интерфейсе XAML к свойствам этого класса.
+Создадим класс, реализующий событие [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN), чтобы можно было привязать атрибуты в пользовательском интерфейсе XAML к свойствам этого класса.
 
 ```csharp
 public class Product : INotifyPropertyChanged
@@ -104,7 +104,7 @@ public class Product : INotifyPropertyChanged
 }
 ```
 
-### <a name="retrieve-products-from-the-sql-server-database"></a>Получение продуктов из базы данных SQL Server
+### <a name="retrieve-products-from-the-sql-server-database"></a>Получение продуктов из базы данных SQL Server
 
 Создайте метод, который будет получать продукты из примера базы данных Northwind и возвращать их в качестве коллекции [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) экземпляров ``Product``.
 
@@ -222,28 +222,28 @@ public MainPage()
 
 ![Продукты Northwind](images/products-northwind.png)
 
-Изучите пространство имен [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN), чтобы узнать, что еще можно сделать с данными в базе данных SQL Server.
+Чтобы узнать, что еще можно сделать с данными в базе данных SQL Server, изучите пространство имен [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN).
 
 ## <a name="trouble-connecting-to-your-database"></a>Проблемы с подключением к базе данных?
 
-В большинстве случаев необходимо изменить некоторые аспекты конфигурации SQL Server. Если вы можете подключиться к базе данных из другого типа классического приложения, например приложения Windows Forms или WPF, убедитесь, что вы включили TCP/IP для SQL Server. Это можно сделать в консоли **Управление компьютером**.
+В большинстве случаев необходимо изменить некоторые аспекты конфигурации SQL Server. Если вы можете подключиться к базе данных из другого типа классического приложения, например приложения Windows Forms или WPF, убедитесь, что вы включили TCP/IP для SQL Server. Это можно сделать в консоли **Управление компьютером**.
 
 ![Управление компьютерами](images/computer-management.png)
 
-Затем убедитесь в том, что запущена служба обозревателя SQL Server.
+Затем убедитесь в том, что служба обозревателя SQL Server запущена.
 
-![Служба обозревателя SQL Server](images/sql-browser-service.png)
+![Служба обозревателя SQL Server](images/sql-browser-service.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-**Использовать базу данных недоступно: для хранения данных на устройстве пользователя**
+**Использование облегченной базы данных для хранения данных на устройстве пользователя**
 
-См. раздел [Использование базы данных SQLite в приложении UWP](sqlite-databases.md).
+См. статью [Использование базы данных SQLite в приложении UWP](sqlite-databases.md).
 
 **Совместное использование кода между разными приложениями на различных платформах**
 
-См. раздел [Совместное использование кода в классическом приложении и приложении UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
+См. статью о [совместном использовании кода в классическом приложении и приложении UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
 
-**Добавить страницы основной/подробности с серверной части Azure SQL**
+**Добавление страниц с основными и подробными данными с помощью серверов Azure SQL**
 
-См. раздел [Пример базы данных заказов клиентов](https://github.com/Microsoft/Windows-appsample-customers-orders-database).
+См. статью [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) (Пример базы данных заказов клиентов).

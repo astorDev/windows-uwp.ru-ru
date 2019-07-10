@@ -6,27 +6,27 @@ label: Controls by function
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6de5e9d8899a7f270d30438a0563b879ccdab898
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363142"
 ---
 # <a name="controls-by-function"></a>Элементы управления по функциям
 
 Инфраструктура пользовательского интерфейса XAML для Windows предоставляет обширную библиотеку элементов управления, поддерживающих разработку интерфейса. Часть элементов управления имеет визуальное представление, а остальные используются в качестве контейнеров для других элементов управления или содержимого — например, для изображений и мультимедиа. 
 
-Чтобы просмотреть элементы управления интерфейса Windows в действии, скачайте [Пример основных элементов пользовательского интерфейса XAML](https://go.microsoft.com/fwlink/p/?LinkId=619992).
+Чтобы просмотреть элементы управления интерфейса Windows в действии, скачайте [пример основных элементов пользовательского интерфейса XAML](https://go.microsoft.com/fwlink/p/?LinkId=619992).
 
 <table>
-<th align="left">Галерея элементов управления XAML<th>
+<th align="left">XAML Controls Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Если у вас есть <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong> приложения. Щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/NavigationView">откройте приложение и NavigationView в действии см. в разделе</a> </p>
+    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/NavigationView">открыть приложение и увидеть NavigationView в действии</a> </p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
@@ -43,7 +43,7 @@ ms.locfileid: "66363142"
 ### <a name="app-bar"></a>Панель приложения
 Панель инструментов для отображения команд конкретного приложения. См. Панель команд.
 
-Справочные материалы. [Элемент управления AppBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar) 
+Справочные материалы. [AppBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar) 
 
 ### <a name="app-bar-button"></a>Кнопка панели приложения
 Кнопка для отображения команд с использованием стиля панели приложения.
@@ -52,23 +52,23 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [SymbolIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SymbolIcon), [BitmapIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.BitmapIcon), [FontIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FontIcon), [PathIcon](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon) 
 
-Проектирование и Практическое руководство: [Панель приложения и панели команд управления структурой](app-bars.md) 
+Проектирование и инструкции. [Панель команд](app-bars.md) 
 
-Пример кода: [Пример команды XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+Пример кода. [Пример команд XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-separator"></a>Разделитель панели приложения
 Визуально разделяет группы команд на соответствующей панели.
 
 Справочные материалы. [AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) 
 
-Пример кода: [Пример команды XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+Пример кода. [Пример команд XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-toggle-button"></a>Переключатель панели приложения
 Кнопка для переключения команд на соответствующей панели.
 
 Справочные материалы. [AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton) 
 
-Пример кода: [Пример команды XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+Пример кода. [Пример команд XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="command-bar"></a>Панель команд
 Специализированная панель приложения, которая обрабатывает изменение размера кнопок панели приложения.
@@ -82,15 +82,15 @@ ms.locfileid: "66363142"
     <AppBarButton Icon="Play" Label="Play" Click="AppBarButton_Click"/>
 </CommandBar>
 ```
-Справочные материалы. [Панели команд](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 
+Справочные материалы. [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 
 
-Проектирование и Практическое руководство: [Панель приложения и панели команд управления структурой](app-bars.md)
+Проектирование и инструкции. [Панель команд](app-bars.md)
 
-Пример кода: [Пример команды XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+Пример кода. [Пример команд XAML](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="buttons"></a>Кнопки
 
-### <a name="button"></a>Кнопка
+### <a name="button"></a>Button
 Элемент управления, который реагирует на действия пользователя и вызывает событие **Click**.
 
 ![Обычная кнопка](images/controls/button.png)
@@ -102,9 +102,9 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 
 
-Проектирование и Практическое руководство: [Руководство по контролю кнопок](buttons.md) 
+Проектирование и инструкции. [Кнопки](buttons.md) 
 
-### <a name="hyperlink"></a>Hyperlink
+### <a name="hyperlink"></a>Гиперссылка
 См. "Кнопка с гиперссылкой".
 
 ### <a name="hyperlink-button"></a>Кнопка с гиперссылкой
@@ -119,7 +119,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 
 
-Проектирование и Практическое руководство: [Руководство по контролю гиперссылки](hyperlinks.md)
+Проектирование и инструкции. [Гиперссылки](hyperlinks.md)
 
 ### <a name="repeat-button"></a>Кнопка "Повтор"
 Кнопка, при нажатии которой событие **Click** повторяется до тех пор, пока она не будет отпущена. 
@@ -133,7 +133,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [RepeatButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.RepeatButton) 
 
-Проектирование и Практическое руководство: [Руководство по контролю кнопок](buttons.md) 
+Проектирование и инструкции. [Кнопки](buttons.md) 
 
 ## <a name="collectiondata-controls"></a>Элементы управления для коллекций и данных
 
@@ -150,10 +150,10 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) 
 
-Проектирование и Практическое руководство: [Перевернуть руководство по контролю представления](flipview.md) 
+Проектирование и инструкции. [Представление пролистывания](flipview.md) 
 
 ### <a name="grid-view"></a>Представление в виде сетки
-Элемент управления, являющийся коллекцией элементов, которые расположены в строках и столбцах, с вертикальной прокруткой.
+Элемент управления, который является коллекцией элементов, расположенных в строках и столбцах, с вертикальной прокруткой.
 
 ```xaml
 <GridView x:Name="gridView1" SelectionChanged="GridView_SelectionChanged">
@@ -164,9 +164,9 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 
 
-Проектирование и Практическое руководство: [Списки](lists.md) 
+Проектирование и инструкции. [Списки](lists.md) 
 
-Пример кода: [Пример ListView](https://go.microsoft.com/fwlink/p/?LinkId=619900)
+Пример кода. [Пример ListView](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ### <a name="items-control"></a>Элемент управления "Элементы"
 Элемент управления, представляющий коллекцию элементов, которые расположены в пользовательском интерфейсе, указанном в шаблоне данных. 
@@ -175,7 +175,7 @@ ms.locfileid: "66363142"
 <ItemsControl/>
 ```
 
-Справочные материалы. [Элемент управления ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 
+Справочные материалы. [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 
 
 ### <a name="list-view"></a>Представление списка
 Элемент управления, представляющий коллекцию элементов в виде списка с вертикальной прокруткой.
@@ -189,9 +189,9 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 
 
-Проектирование и Практическое руководство: [Списки](lists.md) 
+Проектирование и инструкции. [Списки](lists.md) 
 
-Пример кода: [Пример ListView](https://go.microsoft.com/fwlink/p/?LinkId=619900)
+Пример кода. [Пример ListView](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ## <a name="date-and-time-controls"></a>Элементы управления датой и временем
 
@@ -206,7 +206,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [CalendarDatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker) 
 
-Проектирование и Практическое руководство: [Календарь, Дата и время элементов управления](date-and-time.md)
+Проектирование и инструкции. [Элементы управления календарем, датой и временем](date-and-time.md)
  
 ### <a name="calendar-view"></a>Представление календаря
 Настраиваемое отображение календаря, позволяющее пользователю выбрать одну или несколько дат.
@@ -215,9 +215,9 @@ ms.locfileid: "66363142"
 <CalendarView/>
 ```
 
-Справочные материалы. [Представления календаря](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 
+Справочные материалы. [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 
 
-Проектирование и Практическое руководство: [Календарь, Дата и время элементов управления](date-and-time.md) 
+Проектирование и инструкции. [Элементы управления календарем, датой и временем](date-and-time.md) 
 
 ### <a name="date-picker"></a>Управляющий элемент выбора даты
 Элемент управления, позволяющий пользователю выбрать дату.
@@ -230,7 +230,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [DatePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker) 
 
-Проектирование и Практическое руководство: [Календарь, Дата и время элементов управления](date-and-time.md)
+Проектирование и инструкции. [Элементы управления календарем, датой и временем](date-and-time.md)
  
 ### <a name="time-picker"></a>Управляющий элемент выбора времени
 Элемент управления, позволяющий пользователю установить значение времени.
@@ -243,7 +243,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [TimePicker](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker) 
 
-Проектирование и Практическое руководство: [Календарь, Дата и время элементов управления](date-and-time.md)
+Проектирование и инструкции. [Элементы управления календарем, датой и временем](date-and-time.md)
 
 ## <a name="flyouts"></a>Всплывающие элементы
 
@@ -264,9 +264,9 @@ ms.locfileid: "66363142"
 </Flyout>
 ```
 
-Справочные материалы. [Всплывающий элемент](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout) 
+Справочные материалы. [Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout) 
 
-Проектирование и Практическое руководство: [Всплывающие окна](dialogs-and-flyouts/flyouts.md) 
+Проектирование и инструкции. [Всплывающие элементы](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>Всплывающее меню
 Временно отображает список команд или параметров, относящихся к текущим действиям пользователя.
@@ -286,16 +286,16 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout), [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem), [MenuFlyoutSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutSeparator), [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem) 
 
-Проектирование и Практическое руководство: [Меню и контекстные меню](menus.md) 
+Проектирование и инструкции. [Меню и контекстные меню](menus.md) 
 
-Пример кода: [Пример XAML контекстного меню](https://go.microsoft.com/fwlink/p/?LinkId=620021)
+Пример кода. [Пример контекстного меню на XAML](https://go.microsoft.com/fwlink/p/?LinkId=620021)
 
 ### <a name="popup-menu"></a>Контекстное меню
 Настраиваемое меню с выбранными вами командами.
 
 Справочные материалы. [PopupMenu](https://docs.microsoft.com/uwp/api/Windows.UI.Popups.PopupMenu) 
 
-Проектирование и Практическое руководство: [Диалоговые окна](dialogs-and-flyouts/dialogs.md) 
+Проектирование и инструкции. [Диалоговые элементы управления](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>Всплывающая подсказка
 Всплывающее окно, которое содержит сведения об элементе. 
@@ -307,24 +307,24 @@ ms.locfileid: "66363142"
         ToolTipService.ToolTip="Click to perform action" />
 ```
 
-Справочные материалы. [Подсказка](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [ToolTipService](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTipService) 
+Справочные материалы. [ToolTip](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [ToolTipService](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTipService) 
 
-Проектирование и Практическое руководство: Руководство по всплывающим подсказкам 
+Проектирование и инструкции. Руководство по всплывающим подсказкам 
 
-## <a name="images"></a>Изображений
+## <a name="images"></a>образы,
 
-### <a name="image"></a>Image
+### <a name="image"></a>Изображение
 Элемент управления, представляющий изображение.
 
 ```xaml
 <Image Source="Assets/Logo.png" />
 ```
 
-Справочные материалы. [Изображение](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 
+Справочные материалы. [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 
 
-Проектирование и Практическое руководство: [Образ и ImageBrush](images-imagebrushes.md) 
+Проектирование и инструкции. [Изображения и кисти изображений](images-imagebrushes.md) 
 
-Пример кода: [Пример использования изображений XAML](https://go.microsoft.com/fwlink/p/?linkid=226867)
+Пример кода. [Пример изображений в XAML](https://go.microsoft.com/fwlink/p/?linkid=226867)
 
 ## <a name="graphics-and-ink"></a>Графика и рукописный ввод
 
@@ -337,7 +337,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [InkCanvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 
 
-### <a name="shapes"></a>Фигур
+### <a name="shapes"></a>Фигуры
 Различные графические объекты абстрактного режима отображения, которые можно представить в виде эллипсов, прямоугольников, линий, кривых Безье и т. д.
 
 ![Многоугольник](images/controls/shapes-polygon.png) 
@@ -351,9 +351,9 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [Фигуры](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes.Shape) 
 
-Практическое руководство. [Рисование фигур](../../graphics/drawing-shapes.md) 
+Как... [Рисование фигур](../../graphics/drawing-shapes.md) 
 
-Пример кода: [Пример рисования векторной XAML](https://go.microsoft.com/fwlink/p/?linkid=226866)
+Пример кода. [Пример рисования на основе векторов в языке XAML](https://go.microsoft.com/fwlink/p/?linkid=226866)
 
 ## <a name="layout-controls"></a>Элементы управления для макета
 
@@ -373,7 +373,7 @@ ms.locfileid: "66363142"
 </Border>
 ```
 
-Справочные материалы. [Границы](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)
+Справочные материалы. [Border](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)
 
 ### <a name="canvas"></a>Элемент Canvas
 Панель макета, поддерживающая размещение в абсолютной системе дочерних элементов относительно левого верхнего угла холста.
@@ -389,9 +389,9 @@ ms.locfileid: "66363142"
 </Canvas>
 ```
 
-Справочные материалы. [Холст](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)
+Справочные материалы. [Canvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)
  
-### <a name="grid"></a>Grid
+### <a name="grid"></a>Макет Grid
 Панель макета, упорядочивающая дочерние элементы по горизонтали и вертикали.
 
 ![Панель макета "Сетка"](images/controls/grid.png) 
@@ -413,7 +413,7 @@ ms.locfileid: "66363142"
 </Grid>
 ```
 
-Справочные материалы. [Сетка](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
+Справочные материалы. [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
  
 ### <a name="panning-scroll-viewer"></a>Сдвиг средства прокрутки
 См. "Средство прокрутки".
@@ -435,7 +435,7 @@ ms.locfileid: "66363142"
 ### <a name="scroll-bar"></a>полоса прокрутки;
 См. "Средство прокрутки". (ScrollBar — это элемент ScrollViewer. Он обычно не используется в качестве изолированного элемента управления.)
 
-Справочные материалы. [Полосы прокрутки](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ScrollBar)
+Справочные материалы. [ScrollBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ScrollBar)
  
 ### <a name="scroll-viewer"></a>Средство прокрутки
 Контейнерный элемент управления, позволяющий пользователю сдвигать и масштабировать свое содержимое.
@@ -451,9 +451,9 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)
 
-Проектирование и Практическое руководство: [Прокрутка и панорамирования руководство по элементам управления](scroll-controls.md) 
+Проектирование и инструкции. [Элементы управления "Средство прокрутки"](scroll-controls.md) 
 
-Пример кода: [XAML прокрутки, сдвига и масштабирования примера](https://go.microsoft.com/fwlink/p/?linkid=238577)
+Пример кода. [Пример прокрутки, сдвига и масштабирования на XAML](https://go.microsoft.com/fwlink/p/?linkid=238577)
 
 ### <a name="stack-panel"></a>Панель стека
 Панель макета, упорядочивающая дочерние элементы в одной строке, которую можно расположить по горизонтали или вертикали.
@@ -527,7 +527,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 
 
-Проектирование и Практическое руководство: [Руководство по контролю элемент мультимедиа](media-playback.md)
+Проектирование и инструкции. [Проигрыватель мультимедиа](media-playback.md)
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 Элемент управления, предоставляющий элементы управления воспроизведением для MediaElement.
@@ -540,9 +540,9 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 
 
-Проектирование и Практическое руководство: [Руководство по контролю элемент мультимедиа](media-playback.md) 
+Проектирование и инструкции. [Проигрыватель мультимедиа](media-playback.md) 
 
-Пример кода: [Пример элементов управления мультимедиа транспорта](https://go.microsoft.com/fwlink/p/?LinkId=620023)
+Пример кода. [Элементы управления транспортировкой мультимедиа](https://go.microsoft.com/fwlink/p/?LinkId=620023)
 
 ### <a name="video"></a>Видео
 См. "Элемент мультимедиа".
@@ -551,11 +551,11 @@ ms.locfileid: "66363142"
 
 ### <a name="navigationview"></a>NavigationView
 
-Адаптируемые контейнера и гибкие навигации модель, которая реализует левой панели навигации, верхней панели навигации и вкладок шаблон.
+Адаптируемый контейнер и модель с гибкой навигацией реализованы в левой области навигации, верхней панели навигации и шаблоне вкладок.
 
 Справочные материалы. [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-Проектирование и Практическое руководство: [Руководство по контролю NavigationView](navigationview.md)
+Проектирование и инструкции. [Руководство по элементу управления NavigationView](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
 
@@ -576,7 +576,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [SplitView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView) 
 
-Проектирование и Практическое руководство: [Руководство по контролю разделение представления](split-view.md)
+Проектирование и инструкции. [Элемент управления "Комбинированный режим"](split-view.md)
 
 ### <a name="web-view"></a>Представление веб-страницы
 
@@ -589,9 +589,9 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) 
 
-Проектирование и Практическое руководство: Рекомендации по веб-представления 
+Проектирование и инструкции. Руководство по представлениям веб-страниц 
 
-Пример кода: [Пример элемента управления WebView в XAML](https://go.microsoft.com/fwlink/p/?linkid=238582)
+Пример кода. [Пример элемента управления WebView на XAML](https://go.microsoft.com/fwlink/p/?linkid=238582)
 
 ### <a name="semantic-zoom"></a>Контекстное масштабирование
 
@@ -608,11 +608,11 @@ ms.locfileid: "66363142"
 </SemanticZoom>
 ```
 
-Справочные материалы. [Элемент управления SemanticZoom](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 
+Справочные материалы. [SemanticZoom](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 
 
-Проектирование и Практическое руководство: [Руководство по контролю семантического масштабирования.](semantic-zoom.md)
+Проектирование и инструкции. [Контекстное масштабирование](semantic-zoom.md)
 
-Пример кода: [Группирование XAML GridView и элемент управления SemanticZoom пример](https://go.microsoft.com/fwlink/p/?linkid=226564)
+Пример кода. [Пример группировки GridView и элемент управления SemanticZoom на языке XAML](https://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>Элементы управления «Ход выполнения»
 
@@ -637,7 +637,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar) 
 
-Проектирование и Практическое руководство: [Руководство по элементам управления хода выполнения](progress-controls.md) 
+Проектирование и инструкции. [Элементы управления "Ход выполнения"](progress-controls.md) 
 
 ### <a name="progress-ring"></a>Кольцевой индикатор выполнения
 Элемент управления, отображающий неопределенный ход выполнения задачи в виде кольца. 
@@ -650,7 +650,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) 
 
-Проектирование и Практическое руководство: [Руководство по элементам управления хода выполнения](progress-controls.md) 
+Проектирование и инструкции. [Элементы управления "Ход выполнения"](progress-controls.md) 
 
 ## <a name="text-controls"></a>Текстовые элементы управления
 
@@ -661,9 +661,9 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [AutoSuggestBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
 
-Проектирование и Практическое руководство: [Текстовые элементы управления](text-controls.md), [автозаполнения руководство по контролю поле](auto-suggest-box.md)
+Проектирование и инструкции. [Элементы управления текстом](text-controls.md), [Поле автозаполнения](auto-suggest-box.md)
 
-Пример кода: [Пример AutoSuggestBox миграции](https://go.microsoft.com/fwlink/p/?LinkId=619996)
+Пример кода. [Пример AutoSuggestBox](https://go.microsoft.com/fwlink/p/?LinkId=619996)
 
 ### <a name="multi-line-text-box"></a>Поле многострочного текста
 См. "Текстовое поле".
@@ -680,9 +680,9 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) 
 
-Проектирование и Практическое руководство: [Текстовые элементы управления](text-controls.md), [руководство по контролю поле пароля](password-box.md) 
+Проектирование и инструкции. [Элементы управления текстом](text-controls.md), [Поле ввода пароля](password-box.md) 
 
-Пример кода: [Пример отображения текста XAML](https://go.microsoft.com/fwlink/p/?linkid=238579), [редактирования образец текста XAML](https://go.microsoft.com/fwlink/p/?linkid=251417)
+Пример кода. [Пример отображения текста на языке XAML](https://go.microsoft.com/fwlink/p/?linkid=238579), [Пример редактирования текста на языке XAML](https://go.microsoft.com/fwlink/p/?linkid=251417)
 
 ### <a name="rich-edit-box"></a>Блок форматируемого текста
 Элемент управления, при помощи которого пользователь может редактировать документы в формате RTF, содержащие, например, форматированный текст, гиперссылки и изображения.
@@ -693,9 +693,9 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 
 
-Проектирование и Практическое руководство: [Текстовые элементы управления](text-controls.md), [руководство поле элемента управления "Rich edit"](rich-edit-box.md)
+Проектирование и инструкции. [Элементы управления текстом](text-controls.md), [Блок форматируемого текста](rich-edit-box.md)
 
-Пример кода: [Пример текста XAML](https://go.microsoft.com/fwlink/p/?linkid=238578)
+Пример кода. [Пример отображения текста XAML](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="search-box"></a>Поле поиска
 См. "Поле автозаполнения".
@@ -717,9 +717,9 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 
 
-Проектирование и Практическое руководство: [Текстовые элементы управления](text-controls.md), [руководство по контролю блок текста](text-block.md), [руководство по контролю блок форматированного текста](rich-text-block.md)
+Проектирование и инструкции. [Элементы управления текстом](text-controls.md), [Блок текста](text-block.md), [Блок форматированного текста](rich-text-block.md)
 
-Пример кода: [Пример текста XAML](https://go.microsoft.com/fwlink/p/?linkid=238578)
+Пример кода. [Пример отображения текста XAML](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="text-box"></a>Текстовое поле
 Поле для однострочного или многострочного ввода обычного текста.
@@ -733,9 +733,9 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 
 
-Проектирование и Практическое руководство: [Текстовые элементы управления](text-controls.md), [руководство по контролю текстовое поле](text-box.md) 
+Проектирование и инструкции. [Элементы управления текстом](text-controls.md), [Текстовое поле](text-box.md) 
 
-Пример кода: [Пример текста XAML](https://go.microsoft.com/fwlink/p/?linkid=238578)
+Пример кода. [Пример отображения текста XAML](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ## <a name="selection-controls"></a>Элементы управления выделением
 
@@ -749,9 +749,9 @@ ms.locfileid: "66363142"
           Checked="CheckBox_Checked"/>
 ```
 
-Справочные материалы. [Флажок](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
+Справочные материалы. [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
 
-Проектирование и Практическое руководство: [Руководство по контролю "флажок"](checkbox.md) 
+Проектирование и инструкции. [Флажки](checkbox.md) 
 
 ### <a name="combo-box"></a>поле со списком;
 Раскрывающийся список, в котором пользователь может выбрать нужный элемент.
@@ -769,7 +769,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 
 
-Проектирование и Практическое руководство: [Списки](lists.md) 
+Проектирование и инструкции. [Списки](lists.md) 
 
 ### <a name="list-box"></a>Список
 Элемент управления, представляющий встроенный список, в котором пользователь может выбрать нужный элемент. 
@@ -787,7 +787,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox) 
 
-Проектирование и Практическое руководство: [Списки](lists.md) 
+Проектирование и инструкции. [Списки](lists.md) 
 
 ### <a name="radio-button"></a>Переключатель
 Элемент управления, который позволяет пользователю выбирать нужный параметр из группы. Если переключатели сгруппированы, они являются взаимоисключающими.
@@ -803,11 +803,11 @@ ms.locfileid: "66363142"
              Checked="RadioButton_Checked"/>
 ```
 
-Справочные материалы. [Переключатель "](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton) 
+Справочные материалы. [RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton) 
 
-Проектирование и Практическое руководство: [Руководство по контролю Radio button](radio-button.md)
+Проектирование и инструкции. [Переключатели](radio-button.md)
  
-### <a name="slider"></a>Slider
+### <a name="slider"></a>Ползунок
 Элемент управления, позволяющий пользователю выбирать значение из диапазона путем перемещения элемента управления Thumb по дорожке.
 
 ![Элемент управления "Ползунок"](images/controls/slider.png)
@@ -818,7 +818,7 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 
 
-Проектирование и Практическое руководство: [Руководство по элемента управления "ползунок"](slider.md) 
+Проектирование и инструкции. [Ползунки](slider.md) 
 
 ### <a name="toggle-button"></a>Выключатель
 Кнопка, которая может находиться в одном из двух состояний.
@@ -828,9 +828,9 @@ ms.locfileid: "66363142"
               Checked="ToggleButton_Checked"/>
 ```
 
-Справочные материалы. [Выключатель](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton)
+Справочные материалы. [ToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton)
 
-Проектирование и Практическое руководство: [Руководство по контролю переключателя](toggles.md) 
+Проектирование и инструкции. [Тумблеры](toggles.md) 
 
 ### <a name="toggle-switch"></a>Тумблер
 Переключатель, который может находиться в одном из двух состояний.
@@ -845,4 +845,4 @@ ms.locfileid: "66363142"
 
 Справочные материалы. [ToggleSwitch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToggleSwitch) 
 
-Проектирование и Практическое руководство: [Руководство по контролю переключателя](toggles.md) 
+Проектирование и инструкции. [Тумблеры](toggles.md) 
