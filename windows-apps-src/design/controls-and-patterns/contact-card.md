@@ -3,26 +3,26 @@ Description: Кнопка предоставляет пользователю в
 title: Карточка контакта
 ms.date: 03/07/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 pm-contact: kele
 design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c227629ace1f3fdbb2af8582401f9273cf11c2e
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913984"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63799646"
 ---
 # <a name="contact-card"></a>Карточка контакта
 
-Карточка контакта отображает контактные данные, такие как имя, номер телефона и адрес [Контакта](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (механизм, который UWP использует для представления пользователей и компаний).  Карточка контакта также позволяет пользователю редактировать контактные данные. Можно выбрать, какую карточку следует отобразить: компактную карточку контакта или полную карточку контакта, которая содержит дополнительные сведения.
+Карточка контакта отображает контактные данные, такие как имя, номер телефона и адрес [Контакта](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (механизм, который платформа UWP использует для представления пользователей и компаний).  Карточка контакта также позволяет пользователю редактировать контактные данные. Можно выбрать, какую карточку следует отобразить: компактную карточку контакта или полную карточку контакта, которая содержит дополнительные сведения.
 
-> **Важные API**: [Метод ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [метод ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard), [метод IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [класс](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **Важные API**: [метод ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [метод ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard), [метод IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [класс Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
-Существует два способа отображения карточки контакта:  
+Существуют два способа отображения карточки контакта:  
 * В качестве стандартной карточки контакта, которая отображается во всплывающем элементе, который исчезает, то есть карточка контакта исчезает, когда пользователь щелкает вне ее области. 
 * В качестве полной карточки контакта, которая занимает больше пространства и не исчезает, то есть пользователь должен нажать кнопку **Закрыть**, чтобы она закрылась. 
 
@@ -63,7 +63,7 @@ ms.locfileid: "58913984"
 
 ## <a name="show-a-standard-contact-card"></a>Отображение стандартной карточки контакта
 
-1. Как правило, карточка контакта отображается, когда пользователь щелкает какой-то элемент: кнопку или, возможно, [элемент управления аватаром пользователя](person-picture.md). Мы не хотим скрывать этот элемент. Чтобы он не скрывался, необходимо создать [Rect](/uwp/api/windows.foundation.rect), описывающий расположение и размер элемента. 
+1. Как правило, карточка контакта отображается, когда пользователь щелкает какой-то элемент: кнопку или, возможно, [элемент управления аватаром пользователя](person-picture.md). Нам не нужно скрывать этот элемент. Чтобы он не скрывался, необходимо создать [Rect](/uwp/api/windows.foundation.rect), описывающий расположение и размер элемента. 
 
     Давайте создадим служебную функцию для этого. Мы используем ее позже.
     ```csharp
@@ -78,7 +78,7 @@ ms.locfileid: "58913984"
 
     ```
 
-2. Определите, отображается ли карточка контакта путем вызова метода [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported). Если этот способ не поддерживается, отобразите сообщение об ошибке. (В этом примере предполагается, что карточка контакта будет отображаться в ответ на событие "click" (щелчок))
+2. Определите, отображается ли карточка контакта путем вызова метода [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported). Если этот способ не поддерживается, отобразите сообщение об ошибке. (В этом примере предполагается, что карточка контакта будет отображаться в ответ на событие щелчка.)
     ```csharp
     // Contact and Contact Managers are existing classes 
     private void OnUserClickShowContactCard(object sender, RoutedEventArgs e) 
@@ -88,7 +88,7 @@ ms.locfileid: "58913984"
 
     ```
 
-3. Используйте служебную функцию, которую вы создали в шаге 1, чтобы получить границы элемента управления, который вызвал событие.
+3. Используйте служебную функцию, которую вы создали на шаге 1, чтобы получить границы элемента управления, который активировал событие (чтобы не заслонить его карточкой контакта).
 
     ```csharp
             Rect selectionRect = GetElementRect((FrameworkElement)sender); 
@@ -112,7 +112,7 @@ ms.locfileid: "58913984"
     } 
     ```
 
-Далее представлен полный код примера:
+Далее представлен полный код примера.
 
 ```csharp
 // Gets the rectangle of the element 
@@ -174,12 +174,12 @@ private void onUserClickShowContactCard()
 
 ## <a name="retrieving-real-contacts"></a>Извлечение "настоящих" контактов
 
-В примерах в этой статье выполняется создание простого контакта. В настоящем приложении вам, вероятно, потребуется извлечь существующий контакт. Инструкции и см. в статье [Контакты и календарь](/windows/uwp/contacts-and-calendar/).
+В примерах в этой статье выполняется создание простого контакта. В настоящем приложении вам, вероятно, потребуется извлечь существующий контакт. Инструкции и приведены в статье [Контакты и календарь](/windows/uwp/contacts-and-calendar/).
 
 
 
 
 ## <a name="related-articles"></a>Связанные статьи
 - [Контакты и календарь](/windows/uwp/contacts-and-calendar/)
-- [Пример карт контакта](https://go.microsoft.com/fwlink/p/?LinkId=624040)
+- [Пример с карточками контактов](https://go.microsoft.com/fwlink/p/?LinkId=624040)
 - [Элемент управления "Аватар пользователя"](/windows/uwp/controls-and-patterns/person-picture/)

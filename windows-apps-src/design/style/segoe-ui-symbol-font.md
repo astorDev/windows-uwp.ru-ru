@@ -7,14 +7,14 @@ label: Segoe MDL2 icons
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649059"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63838774"
 ---
 # <a name="segoe-mdl2-icons"></a>Значки Segoe MDL2
 
@@ -22,11 +22,11 @@ ms.locfileid: "57649059"
 
 В этой статье перечислены значки, доступные в шрифте Segoe MDL2 Assets. 
 
-> **Важные API**: [**Символ перечисления**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [ **FontIcon-класс**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **Важные API**: [**перечисления Symbol**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [**класс FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>Сведения о шрифте Segoe MDL2 Assets
 
-С момента выпуска Windows 10 шрифт Segoe MDL2 Assets заменил шрифт для значка Segoe UI Symbol из Windows 8/8.1. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** по-прежнему будут доступны как ресурс «устаревшего», но мы рекомендуем обновить приложение для использования нового **Segoe MDL2 активы**.)
+С момента выпуска Windows 10 шрифт Segoe MDL2 Assets заменил шрифт для значка Segoe UI Symbol из Windows 8/8.1. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** будет по-прежнему доступен как "устаревший ресурс", но рекомендуется обновить свое приложение и использовать новый шрифт **Segoe MDL2 Assets**.)
 
 Большинство значков и элементов управления пользовательского интерфейса, включенных в шрифт **Segoe MDL2 Assets**, сопоставлены с областью личных символов Юникода (PUA). Область личных символов позволяет разработчикам шрифтов присваивать личные значения Юникода глифам, которые не сопоставлены с существующими кодовыми точками. Это полезно при создании символьного шрифта, но вызывает проблемы с взаимодействием. Если шрифт недоступен, глифы не отображаются. Используйте эти глифы, только если можете задать шрифт **Segoe MDL2 Assets** .
 
@@ -43,30 +43,30 @@ ms.locfileid: "57649059"
 Для многих значков также доступны зеркальные формы для использования в языках с направлением письма справа налево, таких как арабский, фарси и иврит.
 
 ## <a name="using-the-icons"></a>Использование значков
-Если вы разрабатываете приложения в C#/VB/C++ и XAML, можно использовать указанный глифов из Segoe MDL2 активов с помощью [символ перечисления](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
+Если вы разрабатываете приложение на C#/VB/C++ и XAML, то можете использовать глифы из Segoe MDL2 Assets с помощью [перечисления Symbol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
 ```
 
-Если вы хотите использовать глиф из шрифта **Segoe MDL2 Assets**, которых нет в перечисления Symbol, то примените класс [**FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon).
+Если вы хотите использовать глиф из шрифта **Segoe MDL2 Assets**, которого нет в перечислениях Symbol, примените класс [**FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon).
 
 ```xaml
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-Можно также использовать статический ресурс `SymbolThemeFontFamily` для доступа к **Segoe MDL2 активы**, вместо указания шрифт по имени:
+Вы также можете использовать статический ресурс `SymbolThemeFontFamily` для доступа к **Segoe MDL2 Assets**, вместо указания шрифта по имени:
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
 
 
 ## <a name="how-do-i-get-this-font"></a>Как получить этот шрифт?
-* В Windows 10: Нет ничего, что вам нужно сделать, шрифт поставляется с Windows.
-* На компьютере Mac вам потребуется загрузить и установить шрифт. <a href="https://aka.ms/SegoeFonts">Шрифты значок Segoe UI и MDL2</a>
+* Для Windows 10: вам ничего не нужно делать, шрифт поставляется вместе с Windows.
+* Для Mac необходимо скачать и установить шрифт: <a href="https://aka.ms/SegoeFonts">Шрифты значков Segoe UI и MDL2</a>
 
 ## <a name="icon-list"></a>Список значков
-Помните, здесь по причине нехватки места показаны не все значки шрифта **Segoe MDL2 Assets** — их гораздо больше. Большая часть значков применяется со специальной целью, и обычно такие значки больше нигде не используются.
+Помните, что шрифт **Segoe MDL2 Assets** содержит намного больше значков, чем мы можем показать здесь. Большая часть значков применяется со специальной целью, и обычно такие значки больше нигде не используются.
 
 
 <table style="background-color: white; color: black">
@@ -270,7 +270,7 @@ ms.locfileid: "57649059"
  </tr>
 <tr><td><img src="images/segoe-mdl/E731.png" width="32" height="32" alt="EMI" /></td>
   <td>E731</td>
-  <td>ЭКРАНЫ</td>
+  <td>EMI</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E734.png" width="32" height="32" alt="FavoriteStar" /></td>
   <td>E734</td>
@@ -282,7 +282,7 @@ ms.locfileid: "57649059"
  </tr>
 <tr><td><img src="images/segoe-mdl/E737.png" width="32" height="32" alt="Favicon" /></td>
   <td>E737</td>
-  <td>Значка</td>
+  <td>Favicon</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E738.png" width="32" height="32" alt="Remove" /></td>
   <td>E738</td>
@@ -2362,7 +2362,7 @@ ms.locfileid: "57649059"
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D5.png" width="32" height="32" alt="CheckList" /></td>
   <td>E9D5</td>
-  <td>Контрольный список</td>
+  <td>CheckList</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D9.png" width="32" height="32" alt="Diagnostic" /></td>
   <td>E9D9</td>
@@ -2370,7 +2370,7 @@ ms.locfileid: "57649059"
  </tr>
 <tr><td><img src="images/segoe-mdl/E9E9.png" width="32" height="32" alt="Equalizer" /></td>
   <td>E9E9</td>
-  <td>Эквалайзер</td>
+  <td>Equalizer</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F3.png" width="32" height="32" alt="Process" /></td>
   <td>E9F3</td>
@@ -2690,7 +2690,7 @@ ms.locfileid: "57649059"
  </tr>
 <tr><td><img src="images/segoe-mdl/EB44.png" width="32" height="32" alt="Radar" /></td>
   <td>EB44</td>
-  <td>Лепестковая диаграмма</td>
+  <td>Radar</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB47.png" width="32" height="32" alt="BusSolid" /></td>
   <td>EB47</td>
@@ -3094,7 +3094,7 @@ ms.locfileid: "57649059"
  </tr>
 <tr><td><img src="images/segoe-mdl/EBE8.png" width="32" height="32" alt="Bug" /></td>
   <td>EBE8</td>
-  <td>Ошибки</td>
+  <td>Bug</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EBFC.png" width="32" height="32" alt="TabletMode" /></td>
   <td>EBFC</td>
@@ -3210,7 +3210,7 @@ ms.locfileid: "57649059"
  </tr>
 <tr><td><img src="images/segoe-mdl/EC32.png" width="32" height="32" alt="Cafe" /></td>
   <td>EC32</td>
-  <td>Кафе</td>
+  <td>Cafe</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EC37.png" width="32" height="32" alt="MobSignal1" /></td>
   <td>EC37</td>
@@ -3438,7 +3438,7 @@ ms.locfileid: "57649059"
  </tr>
 <tr><td><img src="images/segoe-mdl/ECAD.png" width="32" height="32" alt="Calories" /></td>
   <td>ECAD</td>
-  <td>Калорий</td>
+  <td>Calories</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/ECB9.png" width="32" height="32" alt="BandBattery0" /></td>
   <td>ECB9</td>
@@ -3974,11 +3974,11 @@ ms.locfileid: "57649059"
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3B.png" width="32" height="32" alt="Replay" /></td>
   <td>EF3B</td>
-  <td>воспроизведение</td>
+  <td>Replay</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3C.png" width="32" height="32" alt="Eyedropper" /></td>
   <td>EF3C</td>
-  <td>Пипетка</td>
+  <td>Eyedropper</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3D.png" width="32" height="32" alt="LineDisplay" /></td>
   <td>EF3D</td>
@@ -4014,7 +4014,7 @@ ms.locfileid: "57649059"
  </tr>
 <tr><td><img src="images/segoe-mdl/F000.png" width="32" height="32" alt="KnowledgeArticle" /></td>
   <td>F000</td>
-  <td>Объект KnowledgeArticle</td>
+  <td>KnowledgeArticle</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F003.png" width="32" height="32" alt="Relationship" /></td>
   <td>F003</td>
@@ -5166,8 +5166,8 @@ ms.locfileid: "57649059"
 
 ## <a name="related-articles"></a>Связанные статьи
 
-* [Рекомендации для значков](../style/icons.md)
-* [Символ перечисления](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
-* [Класс FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+* [Icons for UWP apps](../style/icons.md) (Значки для приложений UWP)
+* [Symbol Enum](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol) (Перечисление Symbol)
+* [FontIcon class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon) (Класс FontIcon)
 
 
