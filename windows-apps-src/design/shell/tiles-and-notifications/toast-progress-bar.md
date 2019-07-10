@@ -3,16 +3,16 @@ Description: Сведения об использовании индикатор
 title: Индикатор выполнения всплывающего уведомления и привязка данных
 label: Toast progress bar and data binding
 template: detail.hbs
-ms.date: 12/7/2017
+ms.date: 12/07/2017
 ms.topic: article
 keywords: Windows 10, uwp, всплывающее уведомление, индикатор выполнения, индикатор выполнения всплывающего уведомления, привязка данных всплывающего уведомления
 ms.localizationpriority: medium
-ms.openlocfilehash: f955f2a71fed6444c65f9550e1f4fa3baeabe092
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 742270a4cdc6cbbc9eed0879e30b3e7066722f05
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624829"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714103"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Индикатор выполнения всплывающего уведомления и привязка данных
 
@@ -32,7 +32,7 @@ ms.locfileid: "57624829"
 
 <img alt="Toast with progress bar properties labeled" src="images/toast-progressbar-annotated.png" width="626"/>
 
-| Свойство | Тип | Обязательно | Описание |
+| Свойство | Type | Обязательно | Описание |
 |---|---|---|---|
 | **Заголовок** | string или [BindableString](toast-schema.md#bindablestring) | false | Получает или задает необязательную строку заголовка. Поддерживает привязку данных. |
 | **Значение** | double, [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) или [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | Получает или задает значение индикатора хода выполнения. Поддерживает привязку данных. По умолчанию — 0. Значение double в диапазоне от 0,0 до 1,0, `AdaptiveProgressBarValue.Indeterminate` или `new BindableProgressBarValue("myProgressValue")`. |
@@ -220,7 +220,7 @@ public void UpdateProgress()
 - Пользователи могли закрыть ожидающие уведомление о ходе выполнения, так как им не интересны сведения о загрузке, но они по-прежнему хотят получить всплывающее уведомление после завершения операции
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 - [Полный образец кода на GitHub](https://github.com/WindowsNotifications/quickstart-toast-progress-bar)
 - [Содержимое документации всплывающее уведомление](adaptive-interactive-toasts.md)

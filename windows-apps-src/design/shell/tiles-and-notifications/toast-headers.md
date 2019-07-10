@@ -3,16 +3,16 @@ Description: Узнайте, как использовать заголовки 
 title: Заголовки всплывающих уведомлений
 label: Toast headers
 template: detail.hbs
-ms.date: 12/7/2017
+ms.date: 12/07/2017
 ms.topic: article
 keywords: windows 10, uwp, всплывающее уведомление, заголовок, заголовки всплывающих уведомлений, уведомление, групповые всплывающие уведомления, центр уведомлений
 ms.localizationpriority: medium
-ms.openlocfilehash: 361b161b8cf323596a3b07665819300c78f1dcc5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c7d1e3ce0a012d36bea671f87efb8df3a5d49b5f
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612109"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714087"
 ---
 # <a name="toast-headers"></a>Заголовки всплывающих уведомлений
 
@@ -105,7 +105,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 Если щелкнуть заголовок (как и заголовок приложения), уведомления, принадлежащие ему, не будут очищены (ваше приложение должно использовать API-интерфейсы всплывающего уведомления для удаления соответствующих уведомлений).
 
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
 - [Отправить Локальная активация всплывающее уведомление и дескриптора](send-local-toast.md)
 - [Содержимое документации всплывающее уведомление](adaptive-interactive-toasts.md)

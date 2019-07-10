@@ -2,16 +2,16 @@
 title: Данные реестра для игровых устройств управления
 description: Узнайте о данных, которые можно добавить в реестр компьютера, чтобы игровые устройства управления можно было использовать в играх UWP.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.date: 4/8/2019
+ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, игры, ввод, реестр, настройка
 ms.localizationpriority: medium
-ms.openlocfilehash: 5578faeb5a35ae909e590741de759c2597b9c7ed
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 30c1f0d8c9fac09d071d158563c964c6a598e073
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244400"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714053"
 ---
 # <a name="registry-data-for-game-controllers"></a>Данные реестра для игровых устройств управления
 
@@ -31,7 +31,7 @@ ms.locfileid: "59244400"
 <table>
     <tr>
         <th>Имя</th>
-        <th>Тип</th>
+        <th>Type</th>
         <th>Требуется?</th>
         <th>Info</th>
     </tr>
@@ -555,7 +555,7 @@ ms.locfileid: "59244400"
 
 <table>
     <tr>
-        <th>Исходный код</th>
+        <th>Source</th>
         <th>Значение</th>
         <th>Тип значения</th>
         <th>Требуется?</th>
@@ -635,7 +635,7 @@ ms.locfileid: "59244400"
 
 <table>
     <tr>
-        <th>Исходный код</th>
+        <th>Source</th>
         <th>Значение</th>
         <th>Тип значения</th>
         <th>Требуется?</th>
@@ -806,7 +806,7 @@ ms.locfileid: "59244400"
 
 <table>
     <tr>
-        <th>Исходный код</th>
+        <th>Source</th>
         <th>Значение</th>
         <th>Тип значения</th>
         <th>Сведения о значении</th>
@@ -820,7 +820,7 @@ ms.locfileid: "59244400"
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>, <b>FourWay</b> или <b>EightWay</b>
+        <td><b>TwoWay</b>, <b>FourWay</b>, или <b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -1349,4 +1349,4 @@ Windows Registry Editor Version 5.00
 
 * [Пространство имен Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 * [Пространство имен Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
-* [INF-файлы](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)
+* [Файлы INF](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)
