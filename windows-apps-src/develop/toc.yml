@@ -822,6 +822,8 @@
           href: ../cpp-and-winrt-apis/binding-collection.md
         - name: Создание пользовательских (на основе шаблона) элементов управления XAML
           href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
+        - name: Передача параметров в границы интерфейса ABI
+          href: ../cpp-and-winrt-apis/pass-parms-to-abi.md
         - name: Использование компонентов COM
           href: ../cpp-and-winrt-apis/consume-com.md
         - name: Создание компонентов COM
