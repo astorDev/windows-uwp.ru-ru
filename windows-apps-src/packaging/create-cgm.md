@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, сопоставление группы содержимого, потоковая установка, потоковая установка приложений uwp, исходный файл сопоставления группы содержимого
 ms.localizationpriority: medium
-ms.openlocfilehash: 882db0a6a97c5ee203a072156ca3eb82615607bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e25f30a2288f6be76ce108de2056ab6407187de
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647949"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821035"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>Создание и преобразование исходного файла сопоставления группы содержимого
 
@@ -143,7 +143,7 @@ ms.locfileid: "57647949"
 
 ## <a name="convert-sourceappxcontentgroupmapxml-to-appxcontentgroupmapxml"></a>Преобразование SourceAppxContentGroupMap.xml в AppxContentGroupMap.xml
 
-Чтобы преобразовать файл `SourceAppxContentGroupMap.xml` в конечную версию — `AppxContentGroupMap.xml`, — вы можете использовать Visual Studio 2017 либо программу командной строки **MakeAppx.exe**.
+Для преобразования `SourceAppxContentGroupMap.xml` до окончательной версии `AppxContentGroupMap.xml`, можно использовать Visual Studio 2019 или **MakeAppx.exe** средство командной строки.
 
 Для преобразования файла сопоставления группы содержимого с помощью Visual Studio:
 1. Добавьте файл `SourceAppxContentGroupMap.xml` в папку вашего проекта.

@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cfd970b3ca070218adcea86612016e567df3879
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: bd9071eaaea0dd88a3dad06de78eff82b29725ec
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318022"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820229"
 ---
 # <a name="my-people-notifications"></a>Уведомления близких людей
 
@@ -20,7 +20,7 @@ ms.locfileid: "67318022"
 
 ## <a name="requirements"></a>Требования
 
-+ Windows 10 и Microsoft Visual Studio 2017. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 и Microsoft Visual Studio 2019. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Знание основ C# или похожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="how-it-works"></a>Принцип работы

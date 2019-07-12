@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 69facfe9b1cdac408fe1fd63dfa144de072dfdfd
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 480029fd98a302fcc166067cbb383d7e9f8d1829
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468980"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820543"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Гибкие макеты в XAML
 
@@ -46,7 +46,7 @@ ms.locfileid: "67468980"
 
 &nbsp;|&nbsp;|&nbsp;
 ------|------|------
-Column_1 | **Автоматически** | Размер столбца автоматически подстраивается под содержимое.
+Column_1 | **Auto** | Размер столбца автоматически подстраивается под содержимое.
 Column_2 | * | После вычисления значений ширины для столбцов с автоматическим подбором размера этот столбец получает часть оставшейся ширины. Ширина столбца Column_2 будет занимать половину ширины столбца Column_4.
 Column_3 | **44** | Столбец будет иметь ширину 44 пикселя.
 Column_4 | **2**\* | После вычисления значений ширины для столбцов с автоматическим подбором размера этот столбец получает часть оставшейся ширины. Ширина столбца Column_4 будет в два раза больше ширины столбца Column_2.
@@ -207,7 +207,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
                 <VisualState>
                     <VisualState.StateTriggers>
                         <!-- VisualState to be triggered when the
-                             window width is >=720 effective pixels. -->
+                             window width is >=640 effective pixels. -->
                         <AdaptiveTrigger MinWindowWidth="640" />
                     </VisualState.StateTriggers>
 

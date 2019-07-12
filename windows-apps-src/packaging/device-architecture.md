@@ -5,12 +5,12 @@ ms.date: 07/13/2017
 ms.topic: article
 keywords: windows 10, uwp, пакет, архитектура, конфигурация пакета
 ms.localizationpriority: medium
-ms.openlocfilehash: c691605ad121ee1e218bfe7947a9026a46fc5234
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 12de19b78c3aab27a7fbc29dd5e8183de1a0c0be
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319804"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821009"
 ---
 # <a name="app-package-architectures"></a>Типы архитектуры пакетов приложений
 
@@ -44,7 +44,8 @@ ms.locfileid: "67319804"
 Windows 10 на архитектуре ARM включает в себя настольные компьютеры, мобильные устройства и некоторые устройства IoT Core (Raspberry Pi 2, Raspberry Pi 3 и DragonBoard). Windows 10 на настольных компьютерах с архитектурой ARM — это новое пополнение в семействе Windows, поэтому если вы разрабатываете приложения UWP, вам потребуется отправлять пакеты для ARM в Магазин, чтобы обеспечить оптимальную работу на таких компьютерах.
 
 >[!NOTE]
-> Чтобы создать приложение универсальной платформы Windows для скомпилированных в собственном коде платформы ARM64, необходимо иметь Visual Studio 2017 15,9 или более поздней версии. Дополнительные сведения см. в разделе [этой записи блога](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/).
+> Чтобы создать приложение универсальной платформы Windows для скомпилированных в собственном коде платформы ARM64, необходимо иметь 15,9 или более поздней версии Visual Studio 2017 или Visual Studio 2019. Дополнительные сведения см. в разделе [этой записи блога](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
+
 
 Дополнительные сведения см. в разделе [Windows 10 на ARM](../porting/apps-on-arm.md). Посмотрите это обсуждение //Build, чтобы ознакомиться с демонстрацией [Windows 10 на ARM](https://channel9.msdn.com/Events/Build/2017/P4171) и узнать больше о том, как это работает.
 

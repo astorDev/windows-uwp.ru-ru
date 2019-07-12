@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df93195578c1e7c6fd87ab7403375a1a3dcc825
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 8ec2b10b402db7398dad6643355e064c26318170
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468913"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820601"
 ---
 # <a name="resolve-submission-errors"></a>Устранение ошибок отправки
 
@@ -25,7 +25,7 @@ ms.locfileid: "67468913"
 
 ## <a name="desktop-application"></a>Классическое приложение
 
-Если вы планируете отправить пакет, содержащий двоичные файлы Win32 и UWP, убедитесь, что вы создадите этот пакет с помощью проект упаковки Windows, которая доступна в Visual Studio 2017 с обновлением 4. При создании пакета с помощью шаблона проекта универсальной платформы Windows, может не появиться возможность отправки, упаковать Store или загрузки неопубликованных приложений на других компьютерах. Даже если пакет публикуется успешно, могут работать непредвиденным образом на Компьютере пользователя. Дополнительные сведения см. в разделе [упаковать приложение с помощью Visual Studio (мост для классических приложений)]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
+Если вы планируете отправить пакет, содержащий двоичные файлы Win32 и UWP, убедитесь, что вы создадите этот пакет с помощью проект упаковки Windows, которая доступна в Visual Studio 2017 с обновлением 4 и более поздних версий. При создании пакета с помощью шаблона проекта универсальной платформы Windows, может не появиться возможность отправки, упаковать Store или загрузки неопубликованных приложений на других компьютерах. Даже если пакет публикуется успешно, могут работать непредвиденным образом на Компьютере пользователя. Дополнительные сведения см. в разделе [упаковать приложение с помощью Visual Studio (мост для классических приложений)]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x и более ранних версий
 

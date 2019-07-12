@@ -6,12 +6,12 @@ ms.date: 03/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, портал устройств
 ms.localizationpriority: medium
-ms.openlocfilehash: debc4572a26db9e849dd31f17b114f15aa9ef055
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fe1c2130c3fae70f8aa5aa18acee83a6b6247ef5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362493"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820156"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Написание пользовательского подключаемого модуля для портала устройств
 
@@ -22,7 +22,7 @@ ms.locfileid: "66362493"
 ## <a name="create-a-new-uwp-app-project"></a>Создание нового проекта приложения UWP
 В этом пособии для простоты мы создадим универсальное решение.
 
-В Microsoft Visual Studio 2017 создайте новый проект приложения UWP. Выберите команду "Файл" > "Новый проект" и выберите "Шаблоны" > "Visual C#" > "Windows Universal" > "Пустое приложение (Windows Universal)". Назовите его "DevicePortalProvider". Это приложение будет содержать службу приложений. Убедитесь, что выбран пакет Creators Update SDK для поддержки.  Может потребоваться обновить Visual Studio или установить новый SDK — дополнительные сведения см. [здесь](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/). 
+В Microsoft Visual Studio 2019 г. Создайте новый проект приложения универсальной платформы Windows. Перейти к файлу > Создать > проект и выберите пустое приложение (универсальное для Windows) для C#и нажмите кнопку Далее. Настройки диалогового окна нового проекта. Назовите проект «DevicePortalProvider» и нажмите кнопку Создать. Это приложение будет содержать службу приложений. Убедитесь, что выбрано «Windows 10 Creators Update (10.0; Сборка 15063)» для поддержки.  Может потребоваться обновить Visual Studio или установить новый SDK — дополнительные сведения см. [здесь](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/). 
 
 ## <a name="add-the-deviceportalprovider-extension-to-your-packageappxmanifest-file"></a>Добавление расширения devicePortalProvider в файл package.appxmanifest
 Необходимо добавить код в файл *package.appxmanifest*, чтобы приложение стало более функциональным в качестве подключаемого модуля портала устройств. Сначала добавьте следующие определения пространства имен в верхней части файла. Кроме того, добавьте их к атрибуту `IgnorableNamespaces`.

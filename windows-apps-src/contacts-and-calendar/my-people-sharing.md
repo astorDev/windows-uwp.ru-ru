@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d0f6cdf4818743e3b5a3cc7c5a6b13f69f40afa
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f0549aa1e20d8ed787eed550f4a7e7171a812831
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318462"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820191"
 ---
 # <a name="my-people-sharing"></a>Публикации близких людей
 
@@ -20,7 +20,7 @@ ms.locfileid: "67318462"
 
 ## <a name="requirements"></a>Требования
 
-+ Windows 10 и Microsoft Visual Studio 2017. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 и Microsoft Visual Studio 2019. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Знание основ C# или похожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Обзор
@@ -40,7 +40,7 @@ ms.locfileid: "67318462"
 Чтобы объявить поддержку приложением получения данных, откройте приложение в Visual Studio. В **обозревателе решений** щелкните правой кнопкой мыши файл **Package.appxmanifest** и выберите команду **Открыть с помощью**. В меню выберите пункт **Редактор (текстовый) XML** и нажмите кнопку **ОК**. Затем внесите следующие изменения в манифест:
 
 
-**Прежде чем**
+**До**
 ```xml
 <Applications>
     <Application Id="MyApp"

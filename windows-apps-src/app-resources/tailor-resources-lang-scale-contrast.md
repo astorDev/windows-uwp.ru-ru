@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5ba7ddb6ef37b4aa54584602fc890bbabc8998
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: db5ba7fb6e13d2a5aab4b74014458073aa88e7f4
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359345"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820217"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Адаптация ресурсов с учетом языка, масштаба, высокой контрастности и других квалификаторов
 
@@ -61,7 +61,7 @@ ms.locfileid: "66359345"
 
 ## <a name="reference-a-string-or-image-resource-by-name"></a>Ссылка на ресурс строки или изображения по имени
 
-См. разделы [Ссылка на идентификатор строкового ресурса из разметки XAML](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Ссылка на идентификатор строкового ресурса из кода](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code) и [Ссылки на изображения и другие ресурсы из кода и разметки XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
+См. разделы [Ссылка на идентификатор строкового ресурса из разметки XAML](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml), [Ссылка на идентификатор строкового ресурса из кода](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code) и [Ссылки на изображения и другие ресурсы из кода и разметки XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
 
 ## <a name="actual-and-neutral-qualifier-matches"></a>Фактические и нейтральные соответствия квалификаторов
 Нет необходимости предоставлять файл ресурса для *каждого* значения квалификатора. Например, если вам требуется только один визуальный ресурс для высокой контрастности и один — для стандартной, назвать эти ресурсы можно следующим образом.

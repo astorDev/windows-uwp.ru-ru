@@ -6,12 +6,12 @@ keywords: dial, радиальный, учебник
 ms.date: 03/11/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a16b455d692eaf9f73b7dc90200bd0f021025e52
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4cf27f6f9893b3d4cc68c899bf3ff1902320a910
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365659"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820565"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Учебник. Поддержка Surface Dial (и других устройств с колесиком) в приложении UWP
 
@@ -41,7 +41,7 @@ Dial поддерживает три основных жеста.
 ## <a name="prerequisites"></a>предварительные требования
 
 * Компьютер (или виртуальная машина) под управлением Windows 10 Creators Update или более поздней версии
-* [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019 г.](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Устройство с колесиком (в настоящее время только [Surface Dial](https://aka.ms/purchasesurfacedial))
 * Если вы еще не знакомы с разработкой приложений универсальной платформы Windows (UWP) с помощью Visual Studio, изучите следующие разделы, прежде чем использовать этот учебник.  
@@ -641,6 +641,6 @@ Surface Dial и другие устройства с колесиком могу
 #### <a name="other-samples"></a>Другие примеры
 [Пример книги выделение цветом](https://github.com/Microsoft/Windows-appsample-coloringbook)
 
-[Примеры универсальной платформы Windows (C# и C++)](https://go.microsoft.com/fwlink/?linkid=832713)
+[Примеры для универсальной платформы Windows (C# и C++)](https://go.microsoft.com/fwlink/?linkid=832713)
 
 [Классического образца рабочего стола Windows](https://aka.ms/radialcontrollerclassicsample)

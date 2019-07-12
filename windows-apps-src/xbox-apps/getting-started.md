@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c94d27e87853b570268e3a39fe941c817b3eda6a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 19756730177485c6d16ad9a42ff1174eba8ca3b9
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590979"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820312"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Начало разработки приложений UWP на Xbox One
 
@@ -20,20 +20,20 @@ ms.locfileid: "57590979"
 
 Перед началом работы выполните следующие действия.
 -   Настройка ПК с последней версией Windows 10.
-<!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2017.
+<!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2019.
 
     > [!NOTE]
-    > Visual Studio 2017 is required if you are using the Windows 10, build 15063 SDK. -->
+    > Visual Studio 2019 is required if you are using the Windows 10, build 15063 SDK. -->
 
 - Выделите как минимум пять гигабайт свободного места на консоли Xbox One.
 
 ## <a name="setting-up-your-development-pc"></a>Настройка компьютера разработки
 
-1.  Установите Visual Studio 2015 с обновлением 3 или Visual Studio 2017.
+1.  Установите Visual Studio 2015 с обновлением 3, Visual Studio 2017 или Visual Studio 2019.
 
-    При установке Visual Studio 2015 с обновлением 3, убедитесь, что выбран **Custom** установки и выберите **средства разработки универсальных приложений Windows** флажок – это не установить частью по умолчанию. Если вы разработчик на языке C++, обязательно выберите вариант **Выборочная установка** и выберите **C++**.
+    При установке Visual Studio 2015 с обновлением 3, убедитесь, что выбран **Custom** установки и выберите **средства разработки универсальных приложений Windows** флажок – это не установить частью по умолчанию. Если вы разработчик на языке C++, обязательно выберите вариант **Выборочная установка** и выберите **C++** .
 
-    Если устанавливается Visual Studio 2017, убедитесь, что выбрана рабочая нагрузка **Разработка универсальной платформы Windows**. Если вы являетесь разработчиком на C++, в **Сводка** панели справа в разделе **разработки универсальной платформы Windows**, убедитесь, что **средства универсальной платформы Windows C++** флажок. Он не является частью установки по умолчанию.
+    При установке Visual Studio 2017 или Visual Studio 2019 г., убедитесь, что выбран **разработки универсальной платформы Windows** рабочей нагрузки. Если вы являетесь разработчиком на C++, в **Сводка** панели справа в разделе **разработки универсальной платформы Windows**, убедитесь, что **средства универсальной платформы Windows C++** флажок. Он не является частью установки по умолчанию.
 
     Дополнительные сведения см. в разделе [Настройка вашей универсальной платформы Windows в среде разработки Xbox](development-environment-setup.md).
 
@@ -83,6 +83,6 @@ ms.locfileid: "57590979"
 ![Hello World](images/getting-started-hello-world.png)
 
 ## <a name="see-also"></a>См. также  
-- [Часто задаваемые вопросы](frequently-asked-questions.md)  
+- [Вопросы и ответы](frequently-asked-questions.md)  
 - [Известные проблемы с универсальной платформы Windows на программе для разработчиков Xbox](known-issues.md)
 - [Приложения UWP для Xbox One](index.md) 

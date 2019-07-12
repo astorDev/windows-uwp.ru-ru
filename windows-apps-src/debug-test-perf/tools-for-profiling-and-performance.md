@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 15e0d39a4139cad71f51b4edf9aa6f76d60e95d2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4c8514d7936bcc6fb14d9ff6f8fc33cd660438d3
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359767"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820125"
 ---
 # <a name="tools-for-profiling-and-performance"></a>Инструменты для профилирования и производительности
 
@@ -26,4 +26,4 @@ ms.locfileid: "66359767"
 |-----------|-------------|
 | [Анализ производительности приложений универсальной платформы Windows, с помощью средств диагностики Visual Studio](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015) | Показывая, где находится код приложения во время выполнения программы, профилировщики Visual Studio помогут вам найти узкие места производительности в приложениях, функциях и алгоритмах. |
 | [Производительность XAML: Методики по достижению максимальной опыт приложение универсальной Windows, созданных с помощью XAML](https://channel9.msdn.com/Events/Build/2015/3-698) | В этой конференции Microsoft Build вы узнаете о новых компонентах платформы, новых инструментах и методах для существенного увеличения производительности универсальных приложений для Windows, основанных на XAML. |
-| [Новые средства XAML в Visual Studio](https://channel9.msdn.com/Events/Build/2015/2-697) | В этой конференции Microsoft Build вы узнаете о некоторых новых возможностях Visual Studio 2015, включая усовершенствованные функции Blend, средства отладки пользовательского интерфейса и улучшенный редактор XAML. Эти средства также доступны в Visual Studio 2017 |
+| [Новые средства XAML в Visual Studio](https://channel9.msdn.com/Events/Build/2015/2-697) | В этой конференции Microsoft Build вы узнаете о некоторых новых возможностях Visual Studio 2015, включая усовершенствованные функции Blend, средства отладки пользовательского интерфейса и улучшенный редактор XAML. Эти средства также доступны в Visual Studio 2019 г. |

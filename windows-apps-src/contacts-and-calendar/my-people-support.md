@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 58bf8df4551c8bcfc663d2c832bef3a879ff6350
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 67a96b8423d589036ef1c6896f056d097282dc33
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317977"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820225"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Добавление поддержки функции "Близкие люди" в приложение
 
@@ -20,7 +20,7 @@ ms.locfileid: "67317977"
 
 ## <a name="requirements"></a>Требования
 
-+ Windows 10 и Microsoft Visual Studio 2017. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 и Microsoft Visual Studio 2019. Сведения об установке см. в разделе [Настройка Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Знание основ C# или похожих объектно-ориентированных языков программирования. Сведения о начале работы с C# см. в разделе [Создание приложения "Привет, мир"](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Обзор
@@ -37,7 +37,7 @@ ms.locfileid: "67317977"
 
 Чтобы объявить поддержку контракта "Близкие люди", откройте приложение в Visual Studio. В **обозревателе решений** щелкните правой кнопкой мыши файл **Package.appxmanifest** и выберите команду **Открыть с помощью**. В меню выберите пункт **Редактор (текстовый) XML** и нажмите кнопку **ОК**. Внесите следующие изменения в манифест:
 
-**Прежде чем**
+**До**
 
 ```xml
 <Package
@@ -107,7 +107,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 
 По умолчанию приложение отображается на панели контактов только для указанных вами контактов.  Это позволяет избежать путаницы с контактами, с которыми невозможно взаимодействовать с помощью вашего приложения.  Чтобы приложение отображалось для контактов, которые неизвестны вашему приложению (например, чтобы пригласить пользователей добавить эти контакты в свою учетную запись), можно добавить следующий код в манифест:
 
-**Прежде чем**
+**До**
 
 ```Csharp
 <Applications>
@@ -185,7 +185,7 @@ override protected void OnActivated(IActivatedEventArgs e)
 
 Для добавления индикатора контакту узел всплывающего уведомления верхнего уровня должен содержать параметр hint-people для указания контакта-отправителя или связанного контакта. Этот параметр может принимать любое из перечисленных ниже значений.
 + **Адрес электронной почты** 
-    + Например: mailto:johndoe@mydomain.com
+    + Например: [https://support.microsoft.com/en-us/help/172983/explanation-of-the-three-way-handshake-via-tcp-ip](mailto:johndoe@mydomain.com)
 + **Номер телефона** 
     + Например: tel:888-888-8888
 + **Удаленный идентификатор** 

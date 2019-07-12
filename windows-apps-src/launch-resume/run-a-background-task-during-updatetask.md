@@ -5,12 +5,12 @@ ms.date: 04/21/2017
 ms.topic: article
 keywords: Windows 10, uwp, update, фоновая задача, updatetask, фоновой задачи
 ms.localizationpriority: medium
-ms.openlocfilehash: d943623a9978d39fd3930edc07e7524fe1cadf55
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: fa5420b14d3d73f370031eed917e0e7c367c41c7
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321791"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820957"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Запуск фоновой задачи при обновлении приложения UWP
 
@@ -86,12 +86,12 @@ namespace BackgroundTasks
 
 ![обновление версии](images/bump-version.png)
 
-Теперь в Visual Studio 2017 при нажатии клавиши F5 ваше приложение будет обновляться, и система будет активировать компонент UpdateTask в фоновом режиме. Отладчик автоматически назначается фоновый процесс. Ваш останов будет достигнут, и вы можете выполнять свою логику для обновления кода.
+Теперь в Visual Studio 2019 при нажатии клавиши F5, ваше приложение будет обновлено, и система будет активировать компонент UpdateTask в фоновом режиме. Отладчик автоматически назначается фоновый процесс. Ваш останов будет достигнут, и вы можете выполнять свою логику для обновления кода.
 
 Если фоновая задача завершается, можно запустить приложение переднего плана в главном меню Windows в пределах одного и того же сеанса отладки. Отладчик будет автоматически привязан, в этот раз к вашему процессу переднего плана, и вы сможете выполнить посредством логики приложения.
 
 > [!NOTE]
-> Пользователи Visual Studio 2015: Описанные выше шаги применяются к Visual Studio 2017. Если вы используете Visual Studio 2015, можно использовать те же методы для вызова и тестирования UpdateTask, за исключением Visual Studio, к которому это не цепляется. Альтернативная процедура в VS 2015 является настройка [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app), устанавливающего UpdateTask как точку входа, и вызывает триггер выполнения непосредственно из приложения переднего плана.
+> Пользователи Visual Studio 2015: Описанные выше шаги применяются к Visual Studio 2017 или Visual Studio 2019. Если вы используете Visual Studio 2015, можно использовать те же методы для вызова и тестирования UpdateTask, за исключением Visual Studio, к которому это не цепляется. Альтернативная процедура в VS 2015 является настройка [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app), устанавливающего UpdateTask как точку входа, и вызывает триггер выполнения непосредственно из приложения переднего плана.
 
 ## <a name="see-also"></a>См. также
 
