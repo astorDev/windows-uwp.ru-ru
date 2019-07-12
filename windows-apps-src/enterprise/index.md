@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 087192160fd098d63042f3d1ad16fe7a811de337
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: baac4498fcc6dd65d106166f73ca89db89cbfc6b
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321511"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821007"
 ---
 # <a name="enterprise"></a>Функции корпоративного уровня
 
@@ -21,7 +21,7 @@ ms.locfileid: "67321511"
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-Windows Template Studio — это расширение Visual Studio 2017, ускоряющее создание приложений универсальной платформы Windows (UWP) благодаря возможностям мастера. Получаемый проект UWP представляет собой правильно сформированный и удобочитаемый код, который включает в себя последние функции Windows 10, а также реализует проверенные шаблоны и рекомендации.
+Windows Template Studio — это расширение Visual Studio 2017 и Visual Studio 2019, ускоряющее создание приложений универсальной платформы Windows (UWP) благодаря возможностям мастера. Получаемый проект UWP представляет собой правильно сформированный и удобочитаемый код, который включает в себя последние функции Windows 10, а также реализует проверенные шаблоны и рекомендации.
 
 ![Windows Template Studio](images/windows-template-studio.png)
 

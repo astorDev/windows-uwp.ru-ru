@@ -6,12 +6,12 @@ keywords: приложение uwp разработка потоки асинх�
 ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f8390ddafdb20032ea7a96d52534e4dcfaa6bf0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e8302b7245dfda6f49facc1d8dede2da3038aed3
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583336"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820644"
 ---
 <div> 
 <h1>Разработка приложений UWP</h1>
@@ -288,7 +288,7 @@ ms.locfileid: "57583336"
                     </div>                
                     <div class="cardText">
                         <h3>Средства разработчика</h3>
-                        <p>Получите Visual Studio 2017, пакет SDK для Windows 10 и другие инструменты разработки.</p>
+                        <p>Получите Visual Studio 2019, пакет SDK для Windows 10 и другие средства разработчика.</p>
                     </div>
                 </div>
             </div>

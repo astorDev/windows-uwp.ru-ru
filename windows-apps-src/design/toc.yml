@@ -562,6 +562,8 @@
           href: globalizing/use-mat.md
         - name: Вопросы и ответы и руководство по диагностике набора средств для многоязычных приложений версии 4.0
           href: globalizing/mat-faq-troubleshooting.md
+        - name: Использование кодовой страницы UTF-8
+          href: globalizing/use-utf8-code-page.md
         - name: Подготовка приложения к изменению японского летосчисления
           href: globalizing/japanese-era-change.md
     - name: Руководство по справке для приложений
