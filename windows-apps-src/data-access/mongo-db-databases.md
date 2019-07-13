@@ -1,16 +1,16 @@
 ---
 title: Использование базы данных MongoDB в приложении UWP
 description: Используйте базу данных MongoDB в приложении UWP.
-ms.date: 3/28/2019
+ms.date: 03/28/2019
 ms.topic: article
 keywords: windows 10, uwp, MongoDB, database
 ms.localizationpriority: medium
-ms.openlocfilehash: a104993d77828a6383eed39a4ab8c12852533894
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: ea3e630a3bb0b8fc5f7f4168b0b946f115b97446
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63785250"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713998"
 ---
 # <a name="use-a-mongodb-database"></a>Использование базы данных MongoDB
 В этой статье описано, как настроить работу базы данных MongoDB в приложении UWP. Здесь также приведены небольшие фрагменты кода, в которых показано, как с взаимодействовать с базами данных программным способом.

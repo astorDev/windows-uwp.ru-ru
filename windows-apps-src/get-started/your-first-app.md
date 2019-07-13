@@ -6,12 +6,12 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: windows 10, uwp, первое приложение, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e42f627624cb559a84b7da73958f7aa93b0fee2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c6f66d90e96b0dfe941e4311ebf79cd3b9b5f4ae
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564547"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318753"
 ---
 # <a name="create-your-first-app"></a>Создание первого приложения
 
@@ -65,7 +65,7 @@ ms.locfileid: "64564547"
 
 Веб-приложения можно легко упаковать в платформу UWP в виде размещенных веб-приложений, а затем начать их продвижение в Microsoft Store.
 
-* [Размещенные веб-приложения](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
+* [Размещенные веб-приложения](https://developer.microsoft.com/windows/pwa)
 * [Преобразование веб-приложения в приложение UWP](../porting/hwa-create-windows.md)
 
 

@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 54da5ea68dad0bbd2c7f00ae5fc4128f14d1ce43
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0c980acc3b9887dac68712bd65de96e8f3a327a5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362874"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319065"
 ---
 # <a name="calendar-date-and-time-controls"></a>Элементы управления календарем, датой и временем
 
@@ -124,7 +124,7 @@ ms.locfileid: "66362874"
 > **Примечание**&nbsp;&nbsp;Свойствам, которые принимают объекты даты в качестве значений, нельзя присвоить строку атрибута XAML, так как анализатор XAML среды выполнения Windows не содержит логику преобразования строк в даты в виде объектов DateTime или DateTimeOffset. Эти значения обычно задаются в коде. Также можно использовать другой способ — определить дату, которая доступна как объект данных, или дату, доступную в контексте данных. Затем необходимо задать свойство как атрибут XAML, ссылающийся на выражение [расширения разметки \{Binding\}](../../xaml-platform/binding-markup-extension.md), которое может получать доступ к дате как к данным.
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
-* [Пример основных элементов пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [Пример основных элементов пользовательского интерфейса XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
 
 
 ## <a name="related-topics"></a>Статьи по теме

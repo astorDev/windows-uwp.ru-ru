@@ -1,16 +1,16 @@
 ---
 title: Использование базы данных SQL Server в приложении UWP
 description: Использование базы данных SQL Server в приложении UWP.
-ms.date: 3/28/2019
+ms.date: 03/28/2019
 ms.topic: article
 keywords: windows 10, uwp, SQL Server, database
 ms.localizationpriority: medium
-ms.openlocfilehash: f8986f14872d4e5de2c45bba264de6619ef07141
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 487497fd3b715f6d497eb76b8da6a3e60903772a
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360152"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713776"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Использование базы данных SQL Server в приложении UWP
 Ваше приложение может подключаться напрямую к базе данных SQL Server и затем хранить и извлекать данные с помощью классов в пространстве имен [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN).

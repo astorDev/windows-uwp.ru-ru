@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c996b22395fc8186fb1b6dc786a73fa4a97ecf16
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: cad33c0f1b72bbd379be9b8f13ed648231f1a1ca
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363986"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319363"
 ---
 # <a name="web-view"></a>Представление веб-страницы
  
@@ -306,7 +306,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 ### <a name="threading-behavior"></a>Поведение потоков
 
-По умолчанию содержимое представления веб-страницы размещается в потоке пользовательского интерфейса на устройствах в семействе настольных устройств и вне потока пользовательского интерфейса на всех других устройствах. Статическое свойство [WebView.DefaultExecutionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultexecutionmode) можно использовать для запроса поведения потока по умолчанию для текущего клиента. При необходимости можно использовать конструктор [WebView(WebViewExecutionMode)](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.), чтобы переопределить это поведение. 
+По умолчанию содержимое представления веб-страницы размещается в потоке пользовательского интерфейса на устройствах в семействе настольных устройств и вне потока пользовательского интерфейса на всех других устройствах. Статическое свойство [WebView.DefaultExecutionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultexecutionmode) можно использовать для запроса поведения потока по умолчанию для текущего клиента. При необходимости можно использовать конструктор [WebView(WebViewExecutionMode)](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.webview.-ctor#Windows_UI_Xaml_Controls_WebView__ctor_Windows_UI_Xaml_Controls_WebViewExecutionMode_), чтобы переопределить это поведение. 
 
 > **Примечание**&nbsp;&nbsp;При размещении содержимого в потоке пользовательского интерфейса на мобильных устройствах могут возникнуть проблемы с производительностью, поэтому обязательно проверяйте все целевые устройства при изменении DefaultExecutionMode.
 

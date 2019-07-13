@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1277d9089e900451ac4c537805079ff479f808fa
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 67ba9f5c9bc4a5e723eb2696d88804df5300eda0
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66748447"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468989"
 ---
 # <a name="dialog-controls"></a>Диалоговые элементы управления
 
@@ -254,7 +254,7 @@ private async void DisplaySubscribeDialog()
 
 > ПРИМЕЧАНИЕ. Этот раздел относится только к приложениям, предназначенным для Windows 10 версии 1903 или более поздней версии. Объекты AppWindow и XAML Island недоступны в более ранних версиях. Дополнительные сведения об управлении версиями см. в статье [Приложения с адаптивным к версии кодом](../../../debug-test-perf/version-adaptive-apps.md).
 
-По умолчанию диалоговые окна содержимого модально связаны с корневым объектом [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). При использовании ContentDialog в объекте [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) или [XAML Island](/apps/desktop/modernize/xaml-islands) необходимо вручную задать [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) для диалогового окна, указав корень узла XAML.
+По умолчанию диалоговые окна содержимого модально связаны с корневым объектом [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). При использовании ContentDialog в объекте [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) или [XAML Island](/windows/apps/desktop/modernize/xaml-islands) необходимо вручную задать [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) для диалогового окна, указав корень узла XAML.
 
 Для этого задайте для свойства XamlRoot элемента ContentDialog то же значение XamlRoot, что и у элемента, уже заданного в AppWindow или XAML Island, как показано ниже.
 
@@ -284,7 +284,7 @@ private async void DisplayNoWifiDialog()
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 - [Подсказки](../tooltips.md)

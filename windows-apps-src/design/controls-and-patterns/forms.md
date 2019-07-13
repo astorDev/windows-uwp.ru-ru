@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 8a57f13e168a248569bca1beeceed7b4f6c89f69
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: ff071a2a98c533ad7c089b28165f026de00ba68f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63794319"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319095"
 ---
 # <a name="forms"></a>Формы
 Форма — это группа элементов управления, которые собирают данные пользователей и отправляют их. Формы обычно используются для страниц параметров, опросов, создания учетных записей и многого другого. 
@@ -149,7 +149,7 @@ ms.locfileid: "63794319"
 ### <a name="additional-controls"></a>Дополнительные элементы управления 
 Полный список элементов управления UWP см. в [индексе элементов управления по функции](controls-by-function.md).
 
-Более сложные и настраиваемые элементы управления пользовательским интерфейсом можно найти в ресурсах UWP, которые предлагаются такими компаниями, как [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/products/uwp), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) и [ActiPro](https://www.actiprosoftware.com/products/controls/universal).
+Более сложные и настраиваемые элементы управления пользовательским интерфейсом можно найти в ресурсах UWP, которые предлагаются такими компаниями, как [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) и [ActiPro](https://www.actiprosoftware.com/products/controls/universal).
 
 ## <a name="one-column-form-example"></a>Пример формы с одним столбцом
 В этом примере используются Acrylic [образец/подробные сведения](master-details.md) [представление списка](lists.md) и элемент управления[NavigationView](navigationview.md).

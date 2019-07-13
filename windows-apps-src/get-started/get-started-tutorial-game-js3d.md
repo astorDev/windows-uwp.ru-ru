@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1eba68d1046892a67d779d353fd9b2e6bf224e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b4ce91e32b14bdf81b40b24e810e0bd86bcaa99b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366945"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321091"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Создание трехмерной игры на языке JavaScript с использованием библиотеки three.js
 
@@ -1086,5 +1086,5 @@ function lockChange() {
 1.  [Зарегистрируйтесь](https://developer.microsoft.com/store/register) в качестве разработчика приложений для Windows.
 2.  Заполните [контрольный список](https://docs.microsoft.com/windows/uwp/publish/app-submissions) для отправки приложения.
 3.  Отправьте приложение на [сертификацию](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
-Дополнительные сведения см. в разделе [Публикация приложений и игр для Windows](https://developer.microsoft.com/store/publish-apps).
+Дополнительные сведения см. в разделе [Публикация приложений и игр для Windows](https://docs.microsoft.com/windows/uwp/publish/).
 

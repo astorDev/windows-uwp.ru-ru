@@ -6,23 +6,23 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, первое приложение, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a7f0302dfdc9f9fa980f0fe93a3371328f9e5c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 65dfc7b5f9a870f3ccdd5c0c046b996a01c06a00
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66367437"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321209"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Создание приложения "Hello, world" (XAML)
 
 В этом руководстве описано, как с помощью XAML и C# создать простое приложение Hello World, предназначенное для универсальной платформы Windows (UWP) в Windows 10. С помощью одного проекта в Microsoft Visual Studio вы можете создать приложение, работающее на любом устройстве с Windows 10.
 
-В этом разделе вы научитесь выполнять следующие задачи.
+В этом разделе вы научитесь выполнять следующие действия.
 
 -   Создание проекта **Visual Studio**, предназначенного для **Windows 10** и **платформы UWP**.
--   Написание кода XAML для изменения пользовательского интерфейса на начальной странице.
+-   Писать код XAML, чтобы изменить пользовательский интерфейс на начальной странице.
 -   Запуск проекта на локальном компьютере в Visual Studio.
--   Использование SpeechSynthesizer для добавления в приложение голосовой функции, активируемой нажатием кнопки.
+-   Использовать объект SpeechSynthesizer, чтобы добавить в приложение голосовую функцию, активируемую нажатием кнопки.
 
 
 ## <a name="before-you-start"></a>Перед началом работы...
@@ -240,8 +240,8 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 ## <a name="see-also"></a>См. также
 
 * [Ваше первое приложение](your-first-app.md)
-* [Публикация вашего приложения UWP](https://developer.microsoft.com/store/publish-apps)
-* [Практические руководства по разработке приложений UWP](https://developer.microsoft.com/windows/apps/develop)
+* [Публикация вашего приложения UWP](https://docs.microsoft.com/windows/uwp/publish/)
+* [Практические руководства по разработке приложений UWP](https://docs.microsoft.com/windows/uwp/develop/)
 * [Примеры кода для разработчиков UWP](https://developer.microsoft.com/windows/samples)
 * [Что такое универсальное приложение для Windows?](universal-application-platform-guide.md)
 * [Регистрация учетной записи Windows](sign-up.md)

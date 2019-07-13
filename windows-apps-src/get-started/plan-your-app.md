@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 43423bc1475e446fcc0c6ab3f0d65b5a844d19d2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 97407ec48eaac3415980b9313092b21e9532250a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370683"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321111"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>Создание сложного приложения универсальной платформы Windows (UWP)
 
@@ -220,7 +220,7 @@ ms.locfileid: "66370683"
 
 ![Проектирование приложения для ПК и мобильных устройств](images/ux-budgettracker1-md-notablet.png)
 
-Дополнительные сведения о создании приложений для разных размеров экрана см. в статье [Размеры экрана и точки останова для реализации отзывчивого дизайна](https://docs.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
+Дополнительные сведения о создании приложений для разных размеров экрана см. в статье [Размеры экрана и точки останова для реализации отзывчивого дизайна](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
 ## <a name="make-a-good-first-impression"></a>Создание хорошего первого впечатления
 
@@ -238,4 +238,4 @@ ms.locfileid: "66370683"
 
 Прежде чем погрузиться в детальную разработку, проверьте соответствие вашего проекта или прототипа требованиям, рекомендациям и ожиданиям пользователей, чтобы позже вам не пришлось полностью переделывать приложение. Для каждого компонента существуют рекомендации по взаимодействию с пользователем, соблюдение которых поможет довести ваше приложение до совершенства. Также есть требования, которые необходимо соблюсти, чтобы можно было опубликовать приложение в Microsoft Store. Для проверки соответствия техническим требованиям Магазина используйте [комплект сертификации приложений для Windows](https://developer.microsoft.com/windows/develop/app-certification-kit). Кроме того, вы можете использовать средства оценки производительности в Microsoft Visual Studio, чтобы обеспечить самое высокое качество работы пользователя при любом сценарии.
 
-Раздел [подробные рекомендации по взаимодействию с пользователем для приложений UWP](https://developer.microsoft.com/windows/design) поможет вам не упустить важные моменты. С помощью [средств оценки производительности Visual Studio](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015) можно проанализировать производительность каждого сценария приложения.
+Раздел [подробные рекомендации по взаимодействию с пользователем для приложений UWP](https://developer.microsoft.com/windows/apps/design) поможет вам не упустить важные моменты. С помощью [средств оценки производительности Visual Studio](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015) можно проанализировать производительность каждого сценария приложения.

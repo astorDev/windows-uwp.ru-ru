@@ -6,12 +6,12 @@ ms.topic: article
 keywords: приступая к работе, uwp, windows 10, обучающий курс, файлы, файловый ввод-вывод, чтение файла, запись файла, создание файла, запись текста, чтение текста
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5480638e201dca8a5eb5363d7a5944422c626f67
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 29cfeef852f240548f1cd961f73766346da7afa4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366892"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321134"
 ---
 # <a name="work-with-files"></a>Работа с файлами
 
@@ -145,4 +145,4 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 | [Пример доступа к файлу](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Здесь показано, как создать, считать, скопировать и удалить файл. |
 | [Пример средства выбора файлов](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Здесь показано, как получить доступ к файлам и папкам, позволяя пользователю выбирать их с помощью пользовательского интерфейса, и как сохранить файл, чтобы пользователь мог указывать имя, тип и расположение файла. |
 | [Пример JSON](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | В этой статье показано, как кодировать и декодировать объекты, массивы, строки, числа и логические значения JSON с помощью [пространства имен Windows.Data.Json](https://docs.microsoft.com/uwp/api/Windows.Data.Json). |
-| [Дополнительные примеры кода](https://developer.microsoft.com//windows/samples) | Выберите **Файлы, папки и библиотеки** из раскрывающегося списка категорий. |
+| [Дополнительные примеры кода](https://developer.microsoft.com/windows/samples) | Выберите **Файлы, папки и библиотеки** из раскрывающегося списка категорий. |

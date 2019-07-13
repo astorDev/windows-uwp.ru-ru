@@ -5,12 +5,12 @@ keywords: what's new, update, features, developer guidance, Windows 10, july
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22a3a9614a4488791a36f81a3d4dedac572111b4
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4030796e942c76ccf32e04dbf951cac68718a6a5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63780268"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320387"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Дополнение документации для разработчиков Windows в июле 2018 г.
 
@@ -22,7 +22,7 @@ ms.locfileid: "63780268"
 
 ### <a name="progressive-web-apps-on-windows"></a>Прогрессивные веб-приложения в Windows
 
-[Прогрессивные веб-приложения (PWA)](https://developer.microsoft.com/windows/pwa) — это обычные веб-приложения, которые [постепенно дополняются](https://wikipedia.org/wiki/Progressive_enhancement) функциями (например, запуск с главного экрана, поддержка в автономный режиме и push-уведомления), аналогичными доступным в собственных приложениях, на поддерживаемых платформах и в браузерных модулях. В Windows 10 с модулем Microsoft Edge (EdgeHTML) приложения PWA обладают дополнительным преимуществом — запуск [независимо от окна браузера, как у приложений UWP](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features).
+[Прогрессивные веб-приложения (PWA)](https://developer.microsoft.com/windows/pwa) — это обычные веб-приложения, которые [постепенно дополняются](https://www.wikipedia.org/wiki/Progressive_enhancement) функциями (например, запуск с главного экрана, поддержка в автономный режиме и push-уведомления), аналогичными доступным в собственных приложениях, на поддерживаемых платформах и в браузерных модулях. В Windows 10 с модулем Microsoft Edge (EdgeHTML) приложения PWA обладают дополнительным преимуществом — запуск [независимо от окна браузера, как у приложений UWP](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features).
 
 ![Изображение приложения PWA в действии](images/progressive-web-apps.jpg)
 
@@ -48,11 +48,9 @@ ms.locfileid: "63780268"
 
 ### <a name="webvr"></a>WebVR
 
-Мы добавили несколько разделов в [документацию по WebVR ](https://docs.microsoft.com/microsoft-edge/webvr/
-):
+Мы добавили несколько разделов в [документацию по WebVR ](https://docs.microsoft.com/microsoft-edge/webvr/):
 
-* [Что такое WebVR?](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr
-) Здесь объясняется, что такое WebVR, почему его следует использовать и как приступить к разработке с его помощью.
+* [Что такое WebVR?](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr) Здесь объясняется, что такое WebVR, почему его следует использовать и как приступить к разработке с его помощью.
 
 * [WebVR в прогрессивных веб-приложениях](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas). Здесь содержатся сведения о добавлении WebVR для прогрессивных веб-приложений.
 

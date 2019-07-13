@@ -6,12 +6,12 @@ ms.topic: article
 keywords: приступая к работе, uwp, windows 10, обучающий курс, макет, форма
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cd3fb1c294ac81f42bb53c23d307eed49a6708fd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2e64392e1de5f6061b802acc0a2eed81c3e750fb
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564577"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318808"
 ---
 # <a name="create-and-customize-a-form"></a>Создание и настройка формы
 
@@ -182,4 +182,4 @@ ms.locfileid: "64564577"
 | [Руководство по адаптивным макетам](../design/basics/xaml-basics-adaptive-layout.md) | Пошаговое руководство по адаптивным макетам и гибкому дизайну. |
 | [База данных заказов клиентов](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | Посмотрите макеты и формы в действии в корпоративном многостраничном примере. |
 | [Коллекция элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) | Ознакомьтесь с коллекцией элементов управления XAML и способами их реализации. |
-| [Дополнительные примеры кода](https://developer.microsoft.com//windows/samples) | Выберите **Элементы управления, макет и текст** из раскрывающегося списка категорий, чтобы просмотреть соответствующие примеры кода. |
+| [Дополнительные примеры кода](https://developer.microsoft.com/windows/samples) | Выберите **Элементы управления, макет и текст** из раскрывающегося списка категорий, чтобы просмотреть соответствующие примеры кода. |

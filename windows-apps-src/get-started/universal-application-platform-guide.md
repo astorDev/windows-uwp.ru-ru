@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, универсальная
 ms.localizationpriority: medium
-ms.openlocfilehash: 37207d4ce65551a7bdd33d57f72f3fa6a0a6185d
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8b1f6e0e04cdf81512918e0cd3e33ec0f93e2245
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370700"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321003"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Что такое приложение UWP?
 
@@ -121,13 +121,12 @@ Windows помогает ориентировать ваш пользовате�
 
 - Спроектируйте рабочий процесс с помощью раздела [Основы проектирования навигации для приложений UWP](https://docs.microsoft.com/windows/uwp/layout/navigation-basics), чтобы адаптировать мобильные устройства и устройства с маленьким и большим экранами. [Разработайте свой пользовательский интерфейс](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design) для различных размеров и разрешений экрана.
 
-- Подумайте, как вы реализуете прием нескольких типов ввода. Ознакомьтесь с [Руководством по взаимодействию](https://developer.microsoft.com/windows/design/inputs-devices), чтобы узнать, как пользователи могут взаимодействовать с вашим приложением с помощью [Кортаны](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines), [голосовых функций](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions), [распознавания сенсорного ввода](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction), [сенсорной клавиатуры](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) и других возможностей.  Или ознакомьтесь с [руководством по тексту и текстовому вводу](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls), чтобы узнать больше о традиционных способах взаимодействия.
+- Подумайте, как вы реализуете прием нескольких типов ввода. Ознакомьтесь с [Руководством по взаимодействию](https://docs.microsoft.com/windows/uwp/design/layout/index), чтобы узнать, как пользователи могут взаимодействовать с вашим приложением с помощью [Кортаны](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines), [голосовых функций](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions), [распознавания сенсорного ввода](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction), [сенсорной клавиатуры](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) и других возможностей.  Или ознакомьтесь с [руководством по тексту и текстовому вводу](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls), чтобы узнать больше о традиционных способах взаимодействия.
 
 ### <a name="add-services"></a>Добавление служб
 
 - Используйте [облачные службы](https://go.microsoft.com/fwlink/?LinkId=526377), чтобы выполнять синхронизацию между устройствами.
 - Узнайте, как [подключаться к веб-службам](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10)) для улучшения взаимодействия с приложением.
-- Узнайте, как [интегрировать приложение с Кортаной](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382), чтобы оно могло реагировать на голосовые команды.
 - Включите в свой план [push-уведомления](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview) и [покупки из приложений](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases). Эти функции должны работать на всех устройствах.
 
 ### <a name="submit-your-app-to-the-store"></a>Отправьте приложение в Магазин Windows.
@@ -142,7 +141,7 @@ Windows помогает ориентировать ваш пользовате�
 
 - Узнайте, как использовать [действия пользователей](https://blogs.windows.com/buildingapps/2017/12/19/application-engagement-windows-timeline-user-activities/#tHuZ6tLPtCXqYKvw.97) для отображения действий, выполняемых пользователями в вашем приложении, на временной шкале Windows и в функции "Продолжить с места остановки" Кортаны.
 - Узнайте, как использовать [плитки, индикаторы событий и уведомления для приложений UWP](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/).
-- Полный список API-интерфейсов Win32, доступных на приложениях UWP, можно найти в разделах [Наборы API-интерфейсов для приложений UWP](https://docs.microsoft.com/previous-versions//mt186421(v=vs.85)) и [Библиотеки DLL для приложений UWP](https://docs.microsoft.com/previous-versions//mt186422(v=vs.85)).
+- Полный список API-интерфейсов Win32, доступных на приложениях UWP, можно найти в разделах [Наборы API-интерфейсов для приложений UWP](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)) и [Библиотеки DLL для приложений UWP](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)).
 - В статье [Universal Windows apps in .NET](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/) (Универсальные приложения для Windows в .NET) вы найдете общие сведения о написании приложений UWP для .NET.
 - Список типов .NET, которые можно использовать в приложении UWP, см. в статье [Браузер API .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 - [Компиляция приложений с помощью .NET Native](https://docs.microsoft.com/dotnet/framework/net-native/).

@@ -10,18 +10,18 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea4dc1d77c5cf7199d084d4646b5862599a1d54
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dc696c9a57e84e2caade6a2623a72a6048b65621
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63794431"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319100"
 ---
 # <a name="teaching-tip"></a>Совет по обучению
 
 Совет по обучению является частично перманентным и многофункциональным всплывающим элементом, который предоставляет контекстную информацию. Он часто используется для информирования, напоминания пользователям о важных и новых функциях, которые могут улучшить их взаимодействие, а также для обучения пользователей.
 
-**Важные API:** [Класс TeachingTip](https://docs.microsoft.com/en-us/uwp/api/microsoft.ui.xaml.controls.teachingtip)
+**Важные API:** [Класс TeachingTip](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.teachingtip?view=winui-2.2)
 
 Совет по обучению может иметь функцию исчезновения или требовать явного действия для закрытия. Совет по обучению может выбирать определенный элемент пользовательского интерфейса с его конечным фрагментом или же использоваться без конечного фрагмента или цели.
 

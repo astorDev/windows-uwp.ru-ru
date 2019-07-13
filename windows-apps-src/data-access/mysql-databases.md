@@ -1,16 +1,16 @@
 ---
 title: Использование базы данных MySQL в приложении UWP
 description: Использование базы данных MySQL в приложении UWP.
-ms.date: 3/28/2019
+ms.date: 03/28/2019
 ms.topic: article
 keywords: windows 10, uwp, MySQL, database
 ms.localizationpriority: medium
-ms.openlocfilehash: a7708ca082647aef6bbf2261922d2ebd6723923e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: bfed9c0a0c4198095b9be48fe71832bdfca67718
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63785486"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713783"
 ---
 # <a name="use-a-mysql-database"></a>Использование базы данных MySQL
 В этой статье описываются шаги, необходимые для настройки работы базы данных MySQL с приложением UWP. Здесь также приведены небольшие фрагменты кода, в которых показано, как с взаимодействовать с базами данных программным способом.

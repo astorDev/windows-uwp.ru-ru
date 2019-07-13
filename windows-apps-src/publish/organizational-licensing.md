@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, store for business, store for education, organizational, volume licensing, enterprise, education store, business store, volume purchase, bulk
 localizationpriority: high
-ms.openlocfilehash: b7f0ecc1eb7faec39eaad925ccd6c9d501d39749
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8cfa4d4a18112ef1cad793048399d04835ff4633
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63788392"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320576"
 ---
 # <a name="organizational-licensing-options"></a>Параметры корпоративного лицензирования
 
@@ -59,7 +59,7 @@ ms.locfileid: "63788392"
 В настоящее время через учетные записи разработчиков в определенных странах можно предлагать платные приложения для массового приобретения в Microsoft Store для бизнеса. 
 
 > [!NOTE]
-> В некоторых странах цена приложения, указанная в Microsoft Store для бизнеса или Microsoft Store для образования, может отличаться от цены, указанной для розничных покупателей в той же ценовой категории Microsoft Store. Выплата выручки от корпоративных покупок осуществляется так же, как и в случае с частными покупками. Дополнительные сведения см. в разделе [Получение оплаты](getting-paid-apps.md) и [Соглашение с разработчиком приложения](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Список рынков, где доступны Microsoft Store для бизнеса и Microsoft Store для образования, см. в разделе [Supported markets](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets) (Поддерживаемые страны).
+> В некоторых странах цена приложения, указанная в Microsoft Store для бизнеса или Microsoft Store для образования, может отличаться от цены, указанной для розничных покупателей в той же ценовой категории Microsoft Store. Выплата выручки от корпоративных покупок осуществляется так же, как и в случае с частными покупками. Дополнительные сведения см. в разделе [Получение оплаты](getting-paid-apps.md) и [Соглашение с разработчиком приложения](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Список рынков, где доступны Microsoft Store для бизнеса и Microsoft Store для образования, см. в разделе [Supported markets](https://docs.microsoft.com/windows/manage/windows-store-for-business-overview#supported-markets) (Поддерживаемые страны).
 
 Если ваших страны или региона нет в списке ниже, ваши платные приложения в настоящее время не будут доступны в Microsoft Store для бизнеса и Microsoft Store для образования. В этом случае выбранные вами параметры организационного лицензирования для платных приложений могут быть применены позже, поскольку в будущем мы можем добавить другие страны, в которых будет оказываться поддержка отправок с учетных записей разработчиков.
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: приступая к работе, uwp, windows 10, обучающий курс, привязка данных, список
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a949479a021d4f8de592d1991773dd2e31e9769c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c4d339a1eedb798f11d5567be6a48ec2269cf8ac
+ms.sourcegitcommit: 280193dfe5a106fc6b4c85df3ac40535547b855c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564479"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67235155"
 ---
 # <a name="display-customers-in-a-list"></a>Отображение пользователей в виде списка
 
@@ -110,7 +110,7 @@ public sealed partial class MainPage : Page
 
 Если вы изучили предыдущие фрагменты кода, вы знаете, что созданная привязка использует x:Bind и не указывает режим, т. е. она является единовременной привязкой. Если вы хотите изменить клиентов непосредственно в пользовательском интерфейсе, вам необходимо сделать привязку двусторонней, чтобы изменения данных передавались в объекты Customer. Дополнительные сведения см. в статье [Подробно о привязке данных](../data-binding/data-binding-in-depth.md).
 
-Двусторонняя привязка также обновляет пользовательский интерфейс, если источник данных был изменен. Чтобы это работало, необходимо реализовать [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) в источнике и убедиться, что его методы задания свойств вызывают событие **PropertyChanged**. Общепринятая практика заключается в вызове вспомогательного метода, например **OnPropertyChanged**, как показано ниже.
+Двусторонняя привязка также обновляет пользовательский интерфейс, если источник данных был изменен. Чтобы это работало, необходимо реализовать [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) в источнике и убедиться, что его методы задания свойств вызывают событие **PropertyChanged**. Общепринятая практика заключается в вызове вспомогательного метода, например **OnPropertyChanged**, как показано ниже.
 
 ```csharp
 public class Customer : INotifyPropertyChanged
@@ -170,7 +170,7 @@ public class Customer : INotifyPropertyChanged
 | [Binding](../xaml-platform/binding-markup-extension.md) | Документация по старому расширению разметки Binding. |
 | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | Элемент управления пользовательским интерфейсом, отображающий элементы данных в вертикальной стопке. |
 | [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Базовый элемент управления текстом для отображения редактируемого текста в пользовательском интерфейсе. |
-| [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) | Интерфейс для отображения данных, который предоставляет их для привязки данных. |
+| [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) | Интерфейс для отображения данных, который предоставляет их для привязки данных. |
 | [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | Свойство **ItemsSource** этого класса позволяет привязать ListView к источнику данных. |
 
 ### <a name="useful-docs"></a>Полезные документы

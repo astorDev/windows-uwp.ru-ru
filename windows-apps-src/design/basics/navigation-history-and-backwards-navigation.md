@@ -3,16 +3,16 @@ Description: Узнайте, как реализовать навигацию в
 title: Журнал навигации и навигация в обратном направлении (приложения для Windows)
 template: detail.hbs
 op-migration-status: ready
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e3ab6760ed3eff1d284e51205de261796db0fb2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: de2e70a09f75ed5380a47bed225c0689eb029e89
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63799174"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713800"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Журнал навигации и навигация в обратном направлении для приложений UWP
 
@@ -31,7 +31,17 @@ ms.locfileid: "63799174"
 ![Кнопка "Назад" в верхнем левом углу пользовательского интерфейса приложения](images/back-nav/BackEnabled.png)
 
 ```xaml
-<Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Page>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+
+    </Grid>
+</Page>
 ```
 
 Если в верхней части приложения есть [CommandBar](../controls-and-patterns/app-bars.md), элемент управления "Кнопка" в 44 пикселя в высоту будет не совпадать по высоте с кнопками AppBarButtons по 48 пикселей в высоту. Тем не менее, чтобы избежать несогласованности в размере, выровняйте верхнюю часть элемента управления "Кнопка" по внутренней части границ на 48 пикселей.
@@ -39,8 +49,23 @@ ms.locfileid: "63799174"
 ![Кнопка "Назад" на верхней панели команд](images/back-nav/CommandBar.png)
 
 ```xaml
-<Button VerticalAlignment="Top" HorizontalAlignment="Left" 
-Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Page>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <CommandBar>
+            <CommandBar.Content>
+                <Button Style="{StaticResource NavigationBackButtonNormalStyle}" VerticalAlignment="Top"/>
+            </CommandBar.Content>
+        
+            <AppBarButton Icon="Delete" Label="Delete"/>
+            <AppBarButton Icon="Save" Label="Save"/>
+        </CommandBar>
+    </Grid>
+</Page>
 ```
 
 Чтобы свести к минимуму перемещение элементов пользовательского интерфейса в приложении, отобразите отключенную кнопку "Назад" при отсутствии элементов в стеке переходов назад (см. пример кода ниже). Однако, если предполагается, что ваше приложение никогда не будет иметь стека переходов назад, вам вообще не нужно отображать кнопку "Назад".
@@ -287,17 +312,6 @@ bool App::On_BackRequested()
 Если ваше приложение продолжает использовать [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), системный пользовательский интерфейс отобразит кнопку "Назад" системы внутри заголовка окна. (Внешний вид и взаимодействие с пользователем для кнопки "Назад" не изменились по сравнению с предыдущими сборками.)
 
 ![Кнопка "Назад" в заголовке окна](images/nav-back-pc.png)
-
-### <a name="system-back-bar"></a>Системная строка возврата
-
-> [!NOTE]
-> "Системная строка возврата" является только описанием, а не официальным названием.
-
-Системная строка возврата — "полоса", которая размещается между полосой вкладок и областью содержимого приложения. Полоса проходит по ширине приложения, а кнопка "Назад" находится у левой границы. Высота полосы составляет 32 пикселя, чтобы обеспечить подходящий размер для касания кнопки "Назад".
-
-Системная строка возврата отображается динамически в зависимости от видимости кнопки "Назад". Если кнопка "Назад" видна, вставляется системная строка возврата, сдвигая содержимое приложения на 32 пикселя ниже полосы вкладок. Если кнопка "Назад" скрыта, системная строка возврата динамически убирается со сдвигом содержимого приложения на 32 пикселя вверх до полосы вкладок. Чтобы избежать необходимости перемещать пользовательский интерфейс вашего приложения вверх или вниз, мы советуем нарисовать [кнопку "Назад" в приложении](#back-button).
-
-[Изменения заголовка окна](../shell/title-bar.md) будут переноситься и на вкладку приложения, и на системную строку возврата. Если приложение указывает свойства цветов фона и переднего плана с помощью [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), цвета будут применятся к строке вкладок и системной строке возврата.
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>Рекомендации по пользовательской настройке обратной навигации
 

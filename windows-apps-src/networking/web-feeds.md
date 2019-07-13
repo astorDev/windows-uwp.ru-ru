@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d3b4b9b404ab2c0828ea302f0c564ae1c8e7b4
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: bc422f57cdc268ea517aff729a9c3e57c80acf69
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66372786"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320611"
 ---
 # <a name="rssatom-feeds"></a>Каналы RSS и Atom
 
@@ -60,7 +60,7 @@ ms.locfileid: "66372786"
 
 Теперь рассмотрим код, в котором демонстрируется способ извлечения канала и отображения каждого из его отдельных элементов. Прежде чем настроить и отправить запрос, определим несколько переменных для этой операции, а затем инициализируем экземпляр [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient), определяющий методы и свойства, предназначенные для извлечения и отображения канала.
 
-Конструктор [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) создает исключение, если параметр *uriString*, переданный конструктору, не является допустимым URI. Поэтому проверяем *uriString* при помощи блока Try/Catch.
+Конструктор [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_) создает исключение, если параметр *uriString*, переданный конструктору, не является допустимым URI. Поэтому проверяем *uriString* при помощи блока Try/Catch.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -93,13 +93,13 @@ try {
 }
 ```
 
-Теперь настроим запрос путем установки всех необходимых учетных данных сервера (свойство [**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential)), учетных данных прокси-сервера (свойство [**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential)) и заголовков HTTP (метод [**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader)). После настройки основных параметров запроса получаем допустимый объект [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.), созданный с помощью предоставляемой приложением строки URI канала. Затем объект **Uri** передается в функцию [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) для запроса канала.
+Теперь настроим запрос путем установки всех необходимых учетных данных сервера (свойство [**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential)), учетных данных прокси-сервера (свойство [**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential)) и заголовков HTTP (метод [**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader)). После настройки основных параметров запроса получаем допустимый объект [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri), созданный с помощью предоставляемой приложением строки URI канала. Затем объект **Uri** передается в функцию [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) для запроса канала.
 
 Допустим, было возвращено нужное содержимое канала. В этом случае код из примера перебирает каждый элемент канала, вызывая **displayCurrentItem** (который мы определим позже), чтобы отобразить элементы и их содержимое в виде списка с помощью пользовательского интерфейса.
 
 При вызове большинства асинхронных сетевых методов вам следует написать код для обработки исключений. Обработчик исключений может получить подробную информацию о причине исключения, чтобы разобраться в проблеме и принять необходимые меры.
 
-Метод [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) создает исключение, если не удается установить подключение к HTTP-серверу или объект [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) не указывает на действительный AtomPub или RSS-канал. В примере кода Javascript используется функция **onError** для захвата любых исключений и вывода подробной информации об исключении при ошибке.
+Метод [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) создает исключение, если не удается установить подключение к HTTP-серверу или объект [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri) не указывает на действительный AtomPub или RSS-канал. В примере кода Javascript используется функция **onError** для захвата любых исключений и вывода подробной информации об исключении при ошибке.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

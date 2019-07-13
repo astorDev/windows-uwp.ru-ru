@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 61fa4f8afa0404591831be4136c16672503274f2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 59678dc5eca7dec0857cadd9249dd19e25b3430b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362775"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319045"
 ---
 # <a name="images-and-image-brushes"></a>Изображения и кисти изображений
 
@@ -35,7 +35,7 @@ ms.locfileid: "66362775"
 <td>
     <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">галереи элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/Image">открыть приложение и увидеть Image в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
@@ -80,7 +80,7 @@ ms.locfileid: "66362775"
 
 Если не указать значение [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) или [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) для **Image**, то изображение отображается с размерами, задаваемыми **Source**. Определяя значения **Width** и **Height**, вы создаете удерживающую прямоугольную область, в пределах которой отображается изображение. Вы можете выбрать, каким образом изображение будет заполнять удерживающую область, с помощью свойства [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.stretch). Свойство Stretch может принимать следующие значения, определенные в перечислении [Stretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch).
 
--   **Нет**: изображение не растягивается для заполнения отображаемой области. Будьте осторожны при настройке значения Stretch. Если исходное изображение больше заполняемой области, то изображение будет обрезано, а это обычно нежелательно, так как, в отличие от намеренного вырезания [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip), окном просмотра управлять вы не можете.
+-   **Нет**. изображение не растягивается для заполнения отображаемой области. Будьте осторожны при настройке значения Stretch. Если исходное изображение больше заполняемой области, то изображение будет обрезано, а это обычно нежелательно, так как, в отличие от намеренного вырезания [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip), окном просмотра управлять вы не можете.
 -   **Uniform**: масштаб изображения изменяется так, чтобы оно соответствовало размеру отображаемой области. но пропорции изображения сохраняются. Это значение используется по умолчанию.
 -   **UniformToFill**: масштаб изображения изменяется так, чтобы оно полностью заполняло отображаемую область, но исходные пропорции изображения сохраняются.
 -   **Fill**: масштаб изображения изменяется так, чтобы оно соответствовало размеру отображаемой области. Поскольку высота и ширина изображения изменяются независимо друг от друга, его исходные пропорции могут быть нарушены. То есть изображение может быть искажено так, что не сможет полностью заполнить отображаемую область.
@@ -149,13 +149,13 @@ ms.locfileid: "66362775"
 
 Создайте исходные изображения в нескольких рекомендуемых размерах, чтобы ваше приложение хорошо выглядело при масштабировании операционной системой Windows. Указывая **Source** для **Image**, вы можете использовать соглашение об именовании, которое будет автоматически ссылаться на правильный ресурс для текущего масштабирования. Особенности контекста именования и дополнительные сведения описываются в разделе [Краткое руководство: использование файловых и графических ресурсов](https://docs.microsoft.com/previous-versions/windows/apps/hh965325(v=win.10)).
 
-Дополнительные сведения о проектировании масштабирования см. в документе [Руководство по взаимодействию с пользователями — макеты и масштабирование](https://developer.microsoft.com/windows/design).
+Дополнительные сведения о проектировании масштабирования см. в документе [Руководство по взаимодействию с пользователями — макеты и масштабирование](https://developer.microsoft.com/windows/apps/design).
 
 ### <a name="image-and-imagebrush-in-code"></a>Image и ImageBrush в коде
 
 Обычно для определения элементов Image и ImageBrush используется XAML, а не код. Это происходит потому, что данные элементы часто являются выходными элементами средств разработки в рамках определения пользовательского интерфейса XAML.
 
-При определении Image или ImageBrush с помощью кода используйте конструкторы по умолчанию, а затем задайте соответствующее свойство источника ([Image.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) или [ImageBrush.ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)). При задании свойства источника с помощью кода потребуется [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (а не универсальный код ресурса (URI)). Если источником является поток, для инициализации значения используйте метод [SetSourceAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync). Если источником является универсальный код ресурса (URI), который включает в себя содержимое в вашем приложение, использующее схемы **ms-appx** или **ms-resource**, используйте конструктор [BitmapImage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.), который применяет универсальный код ресурса (URI). Также можно рассмотреть вариант обработки события [ImageOpened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened), если существуют некоторые временные проблемы с получением или декодированием источника изображения, при которых может понадобиться отображать альтернативное содержимое до тех пор, пока источник изображения не станет доступным. Пример кода см. в разделе [Пример использования изображений на основе XAML](https://go.microsoft.com/fwlink/p/?linkid=238575).
+При определении Image или ImageBrush с помощью кода используйте конструкторы по умолчанию, а затем задайте соответствующее свойство источника ([Image.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) или [ImageBrush.ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)). При задании свойства источника с помощью кода потребуется [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (а не универсальный код ресурса (URI)). Если источником является поток, для инициализации значения используйте метод [SetSourceAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync). Если источником является универсальный код ресурса (URI), который включает в себя содержимое в вашем приложение, использующее схемы **ms-appx** или **ms-resource**, используйте конструктор [BitmapImage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage), который применяет универсальный код ресурса (URI). Также можно рассмотреть вариант обработки события [ImageOpened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened), если существуют некоторые временные проблемы с получением или декодированием источника изображения, при которых может понадобиться отображать альтернативное содержимое до тех пор, пока источник изображения не станет доступным. Пример кода см. в разделе [Пример использования изображений на основе XAML](https://go.microsoft.com/fwlink/p/?linkid=238575).
 
 > [!NOTE]
 > Если вы установили изображения с помощью кода, вы можете использовать автоматическую обработку для получения доступа к неквалифицированным ресурсам с текущими квалификаторами масштаба и языка либо вы можете использовать [ResourceManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) и [ResourceMap](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) с квалификаторами масштаба и языка для непосредственного получения ресурсов. Подробнее см. в разделе [Система управления ресурсами](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)).

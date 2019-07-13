@@ -5,12 +5,12 @@ keywords: what's new, update, features, developer guidance, Windows 10, february
 ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e02c253e9fe2e3bd25485c8af0429b19a65886cf
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63780329"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320400"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Пополнение документации для разработчиков Windows в феврале 2018 г.
 
@@ -73,4 +73,4 @@ ms.locfileid: "63780329"
 
 ### <a name="motion-controller-tracking"></a>Отслеживание контроллера движений
 
-Контроллеры движений в Windows Mixed Reality представляют руки пользователя. [Посмотрите это видео](https://www.youtube.com/watch?v=rkDpRllbLII), чтобы узнать, как работают контроллеры движения в поле зрения гарнитуры смешанной реальности и вне его, а также [узнайте больше об отслеживании контроллера](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D).
+Контроллеры движений в Windows Mixed Reality представляют руки пользователя. [Посмотрите это видео](https://www.youtube.com/watch?v=rkDpRllbLII), чтобы узнать, как работают контроллеры движения в поле зрения гарнитуры смешанной реальности и вне его, а также [узнайте больше об отслеживании контроллера](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D).

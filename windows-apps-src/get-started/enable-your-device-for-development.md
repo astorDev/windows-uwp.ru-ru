@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Подготовка устройства к разработке
 description: Настройте свое устройство Windows 10 для разработки и отладки.
 keywords: Начало работы Лицензия разработчика Visual Studio, лицензия разработчика подготовка устройства
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f927d8bce1e59ba9a8ed9b0f3f08ce3575c6d7bd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 9c1979f8e8232ee3bfd2e2961307608bf8da7836
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66367018"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714149"
 ---
 # <a name="enable-your-device-for-development"></a>Подготовка устройства к разработке
 
@@ -56,7 +56,7 @@ ms.locfileid: "66367018"
 
 ### <a name="sideload-apps"></a>Загрузка неопубликованных приложений
 
-Параметр "Загрузка неопубликованных приложений" обычно используется компаниями или учебными заведениями, которым необходимо устанавливать пользовательские приложения на управляемых устройствах, не используя Microsoft Store. Этот параметр также может потребоваться пользователям, которые запускают приложения не от корпорации Майкрософт. В этом случае организации обычно применяют политику, отключающую параметр *Приложения UWP*, как показано выше на изображении страницы параметров. Кроме того, организация предоставляет необходимый сертификат и расположение установки для загрузки неопубликованных приложений. Дополнительные сведения см. в статьях TechNet [Загрузка неопубликованных приложений в Windows 10](https://technet.microsoft.com/library/mt269549.aspx) и [Начало работы по развертыванию приложений в Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
+Параметр "Загрузка неопубликованных приложений" обычно используется компаниями или учебными заведениями, которым необходимо устанавливать пользовательские приложения на управляемых устройствах, не используя Microsoft Store. Этот параметр также может потребоваться пользователям, которые запускают приложения не от корпорации Майкрософт. В этом случае организации обычно применяют политику, отключающую параметр *Приложения UWP*, как показано выше на изображении страницы параметров. Кроме того, организация предоставляет необходимый сертификат и расположение установки для загрузки неопубликованных приложений. Дополнительные сведения см. в статьях TechNet [Загрузка неопубликованных приложений в Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) и [Начало работы по развертыванию приложений в Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps).
 
 Сведения, предназначенные для определенных семейств устройств
 
@@ -94,7 +94,7 @@ ms.locfileid: "66367018"
 
 Конкретные инструкции по настройке устройства см. в следующих разделах:
 - [Портал устройств для компьютера](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Портал устройств для HoloLens](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
+- [Портал устройств для HoloLens](https://developer.microsoft.com/mixed-reality)
 - [Портал устройств для Интернета вещей](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Портал устройств для мобильных устройств](../debug-test-perf/device-portal-mobile.md)
 - [Портал устройств для Xbox](../xbox-apps/device-portal-xbox.md)
@@ -238,8 +238,8 @@ ms.locfileid: "66367018"
 ## <a name="see-also"></a>См. также
 
 * [Ваше первое приложение](your-first-app.md)
-* [Публикация вашего приложения UWP](https://developer.microsoft.com/store/publish-apps)
-* [Практические руководства по разработке приложений UWP](https://developer.microsoft.com/windows/apps/develop)
+* [Публикация вашего приложения UWP](https://docs.microsoft.com/windows/uwp/publish/)
+* [Практические руководства по разработке приложений UWP](https://docs.microsoft.com/windows/uwp/develop/)
 * [Примеры кода для разработчиков UWP](https://developer.microsoft.com/windows/samples)
 * [Что такое приложение UWP?](universal-application-platform-guide.md)
 * [Регистрация учетной записи Windows](sign-up.md)
