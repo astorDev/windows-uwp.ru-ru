@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aacf51cc320a0835f906e91806b686a88907640e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f46967cd26f10510e2620229fee0eec13ca7f52a
+ms.sourcegitcommit: 7bbc24d770bf23a8d7e2b234503aad743eb354f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317618"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67852055"
 ---
 # <a name="optimize-your-xaml-markup"></a>Оптимизация разметки XAML
 
@@ -159,7 +159,7 @@ ListView и его дочерние элементы не загружаются
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>ResourceDictionary в UserControl
 
-Определение ResourceDictionary в [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) ведет к снижению производительности. Платформа создает копию такого ResourceDictionary для каждого экземпляра UserControl. Если UserControl используется интенсивно, извлеките ResourceDictionary из UserControl и разместите его на уровне страницы.
+Определение ResourceDictionary в [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) ведет к снижению производительности. Платформа создает копию такого ResourceDictionary для каждого экземпляра UserControl. Если у вас есть элемент управления UserControl, часто используются, затем переместите ResourceDictionary из пользовательского элемента управления и поместить его на уровне страницы.
 
 ### <a name="resource-and-resourcedictionary-scope"></a>Ресурс и область ResourceDictionary
 
