@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 0629201b695f6df6f7f3e2084a73d72b10b82be5
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 478c4a16902329e1dd9267e0339dca0e0dcf3539
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63813611"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321969"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>Разработка приложений для модели "Windows как услуга"
 
@@ -160,4 +160,4 @@ ms.locfileid: "63813611"
 Веб-сайт [Ready for Windows](https://go.microsoft.com/fwlink/?LinkID=780580) — это каталог программного обеспечения, которое поддерживает работу с Windows 10. Он предназначен для ИТ-администраторов, работающих в компаниях и организациях по всему миру, которые рассматривают Windows 10 в качестве среды для развертывания своих решений. ИТ-администраторы могут использовать этот сайт, чтобы проверить, поддерживает ли Windows 10 совместную работу с программным обеспечением, развертываемым в их корпоративной ИТ-инфраструктуре.
 
 ## <a name="related-topics"></a>Статьи по теме
-[Варианты обслуживания Windows 10 для обновлений](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)
+[Варианты обслуживания Windows 10 для обновлений](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)
