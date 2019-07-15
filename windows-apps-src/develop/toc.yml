@@ -840,6 +840,8 @@
           href: ../cpp-and-winrt-apis/weak-references.md
         - name: Гибкие объекты
           href: ../cpp-and-winrt-apis/agile-objects.md
+        - name: Простой пример WinUI для C++/WinRT
+          href: ../cpp-and-winrt-apis/simple-winui-example.md
         - name: Язык C++
           items:
             - name: Категории значений и ссылки
