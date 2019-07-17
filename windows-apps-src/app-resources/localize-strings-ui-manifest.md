@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: 23cd899a196fbe3d28b7156890d65e90ac88cdad
-ms.sourcegitcommit: 9f097438937539f94b6a14a09ee65d30f71da9c6
-ms.translationtype: HT
+ms.openlocfilehash: 6412416fe2d73c4fc313a32fdc2929fff9dc51c4
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68223965"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270087"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 
@@ -303,7 +303,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 1. Используйте [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) вместо [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) при разрешении ресурсы из кода, так как не *текущее представление* в сценариях не упакован. Возникает следующее исключение при вызове метода [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) в сценариях, не упакованных: *Контекстами ресурсов может быть создан в потоках, у которых нет CoreWindow.*
 1. Используйте [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) можно вручную создать файл resources.pri этого приложения.
-    - Выполнить `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of resources.pri`
+    - Выполнить `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`
     - &lt;PRICONFIG&gt; необходимо опустить "&lt;упаковки&gt;" раздела, чтобы все ресурсы объединяются в единый resources.pri файле. Если используется значение по умолчанию [файл конфигурации MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) созданные [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), вам придется удалить "&lt;упаковки&gt;" разделе вручную после его создания.
     - &lt;PRICONFIG&gt; должен содержать все соответствующие индексаторов, необходимые для слияния всех ресурсов в проекте в одном resources.pri файл. Значение по умолчанию [файл конфигурации MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) созданные [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) включает в себя всех индексаторов.
     - Если вы не используете файл конфигурации по умолчанию, убедитесь, что индексатор PRI включен (по умолчанию файл конфигурации для этого просмотрите) для слияния PRIs найти ссылки на проект UWP, ссылки на пакеты NuGet и т. д., которые находятся в корневом каталоге проекта.
