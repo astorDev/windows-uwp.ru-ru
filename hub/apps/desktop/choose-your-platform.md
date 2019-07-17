@@ -7,12 +7,12 @@ ms.date: 03/18/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 996bbaf4dd05ce5b24e536459c6d7d009a53fa19
-ms.sourcegitcommit: f167775291cbc566b72b0859ae6b426d848c5c89
+ms.openlocfilehash: 2a4de1a43e60250e7efc2faf70f3c49e8253beb3
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266408"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141802"
 ---
 # <a name="choose-your-app-platform"></a>Выбор платформы для приложения
 
@@ -36,7 +36,7 @@ ms.locfileid: "66266408"
 
 ## <a name="uwp"></a>UWP
 
-UWP — непревзойденной платформа для игр и приложений Windows 10. Это чрезвычайно гибкие платформы, которая использует разметки XAML для отделения пользовательского интерфейса (представления) от кода (бизнес-логики). UWP подходит для классических приложений, что, требуют усложненный пользовательский Интерфейс, настройки стилей и сценарии графикой. UWP также имеет встроенную поддержку [Fluent Design System](/windows/uwp/design/fluent-design-system/) по умолчанию UX столкнуться и предоставляет доступ к [среды выполнения Windows (WinRT) API-интерфейсы](/windows/uwp/get-started/universal-application-platform-guide#how-the-universal-windows-platform-relates-to-windows-runtime-apis). Используя Fluent, универсальной платформы Windows автоматически поддерживает распространенные методы ввода, например рукописный ввод, сенсорного ввода, игровой, клавиатуры и мыши.
+UWP — непревзойденной платформа для игр и приложений Windows 10. Это чрезвычайно гибкие платформы, которая использует разметки XAML для отделения пользовательского интерфейса (представления) от кода (бизнес-логики). UWP подходит для классических приложений, требующих усложненный пользовательский Интерфейс, настройки стилей и сценарии графикой. UWP также имеет встроенную поддержку [Fluent Design System](/windows/uwp/design/fluent-design-system/) по умолчанию UX столкнуться и предоставляет доступ к [среды выполнения Windows (WinRT) API-интерфейсы](/windows/uwp/get-started/universal-application-platform-guide#how-the-universal-windows-platform-relates-to-windows-runtime-apis). Используя Fluent, универсальной платформы Windows автоматически поддерживает распространенные методы ввода, например рукописный ввод, сенсорного ввода, игровой, клавиатуры и мыши.
 
 Не только служит универсальной платформы Windows для создания настольных приложений для компьютеров под управлением Windows, но универсальной платформы Windows также поддерживается только платформа для приложений Xbox, HoloLens и Surface Hub. UWP является нашей платформы по самому новому, передовых приложений.
 

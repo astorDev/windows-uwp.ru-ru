@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 8ceb314424ae2611e141ef866a84c08e55b0ba2d
-ms.sourcegitcommit: f9a30bfd1e8eab50d0b1db97dd2f650ce66b5d34
+ms.openlocfilehash: 52338ef4d3850b5cf4a2caa0e2d6f93341897285
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67690885"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141820"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Элементы управления XAML UWP узла в классических приложениях (XAML о-ва)
 
@@ -105,7 +105,7 @@ API-интерфейсы, представленные в нижней част�
     ```
 
 > [!NOTE]
-> При добавлении **maxversiontested укажите** манифест приложения в C++ Win32 проекта (с помощью шаблона проекта классического приложения Windows в Visual Studio), может появиться следующее предупреждение построения в проекте: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"` . Это предупреждение указывает, что-то не так в проекте, что его можно пропустить.
+> При добавлении **maxversiontested укажите** элемент манифест приложения, может появиться предупреждение в проекте следующие сборки: `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. Это предупреждение указывает, что-то не так в проекте, что его можно пропустить.
 
 ## <a name="feature-roadmap"></a>Схема компонентов
 

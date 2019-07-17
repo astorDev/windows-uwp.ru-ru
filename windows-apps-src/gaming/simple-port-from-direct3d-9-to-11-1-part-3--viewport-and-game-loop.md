@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, игры, портирование, игровой цикл, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6a17b5e1684fbee21965158295dba123737bd6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9b3a18d9ee63a2ecded07f8b779195d5274b6210
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367915"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141829"
 ---
 # <a name="port-the-game-loop"></a>Портирование игрового цикла
 
@@ -21,7 +21,7 @@ ms.locfileid: "66367915"
 
 -   [Часть 1. Инициализировать Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
 -   [Часть 2. Преобразовать платформу для отображения](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
--   Часть 3. Портирование игрового цикла
+-   Часть 3. Портирование игрового цикла
 
 
 Здесь показано, как реализовать окно для игрового приложения UWP и перенести игровой цикл, включая создание интерфейса [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) для управления полноэкранным [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). [Пошаговое руководство: портирование простого приложения Direct3D 9 на DirectX 11 и UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md), часть 3.
@@ -33,7 +33,7 @@ ms.locfileid: "66367915"
 
 В приложениях UWP все гораздо проще. Вместо того чтобы создавать традиционное окно, в игре Microsoft Store на базе DirectX реализуется интерфейс [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView). Этот интерфейс предназначен для того, чтобы выполнять игры и приложения на базе DirectX непосредственно в объекте [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) внутри контейнера приложения.
 
-> **Примечание**    Windows предоставляет управляемые указатели на ресурсы, такие как исходный объект приложения и [ **CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). См. в разделе [**оператор дескриптора объекта (^)** ]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
+> **Примечание**    Windows предоставляет управляемые указатели на ресурсы, такие как исходный объект приложения и [ **CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). См. в разделе [ **оператор дескриптора объекта (^)** ](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx).
 
  
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 61525e2a4a088e37184bb93526722e0bf23fbd56
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5837674f2cb20710a59eeac0af59498bf28b197e
+ms.sourcegitcommit: a86d0bd1c2f67e5986cac88a98ad4f9e667cfec5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319812"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68229379"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 
@@ -64,11 +64,21 @@ steps:
 
 Шаблон по умолчанию предпринимается попытка подписать пакет с помощью сертификата, указанного в CSPROJ-файл. Если вы хотите подписать свой пакет во время сборки необходимо иметь доступ к закрытому ключу. В противном случае вы можете отключить подписывание, добавив параметр `/p:AppxPackageSigningEnabled=false` для `msbuildArgs` раздел в файле YAML.
 
-## <a name="add-your-project-certificate-to-a-repository"></a>Добавление сертификата проект в репозиторий
+## <a name="add-your-project-certificate-to-the-secure-files-library"></a>Добавить сертификат проекта на библиотеку защищенных файлов
 
-Конвейеры работает с хранилищами Azure репозиториев Git и TFVC. Если вы используете репозиторий Git, добавьте файл сертификата проект в него, чтобы агент сборки мог подписать пакет приложения. Если этого не сделать, репозиторий Git будет игнорировать файл сертификата. Чтобы добавить файл сертификата в репозиторий, щелкните правой кнопкой мыши файл сертификата в **обозревателе решений**и выберите в контекстном меню выберите пункт **добавить файл обрабатывается в систему управления версиями** команды.
+Следует избегать отправки сертификатов в репозиторий, если это возможно, и их игнорирует git по умолчанию. Чтобы управлять безопасной обработки конфиденциальные файлы, такие как сертификаты, поддерживает Azure DevOps [защиты файлов](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops).
 
-![как добавить сертификат](images/building-screen1.png)
+Чтобы отправить сертификат для автоматической сборки:
+
+1. В конвейерах Azure разверните **конвейеры** на панели навигации щелкните **библиотеки**.
+2. Нажмите кнопку **защиты файлов** вкладке и нажмите кнопку **+ защитного файла**.
+
+    ![как отправить защитный файл](images/secure-file1.png)
+
+3. Перейдите к файлу сертификата и нажмите кнопку **ОК**.
+4. После передачи сертификата, выберите его, чтобы просмотреть его свойства. В разделе **конвейера разрешения**, включить **авторизовать для использования в все конвейеры** переключателя.
+
+    ![как отправить защитный файл](images/secure-file2.png)
 
 ## <a name="configure-the-build-solution-build-task"></a>Настройка задачи построения "Сборка решения"
 
@@ -82,7 +92,12 @@ steps:
 | AppxBundle | Всегда | Создает.msixbundle/.appxbundle с файлами.msix/.appx для указана платформа. |
 | UapAppxPackageBuildMode | StoreUpload | Создает файл.msixupload/.appxupload и **_Test** папки для загрузки неопубликованных приложений. |
 | UapAppxPackageBuildMode | CI | Создает файл.msixupload/.appxupload только. |
-| UapAppxPackageBuildMode | SideloadOnly | Создает **_Test** папку для только для корпоративных пользователей |
+| UapAppxPackageBuildMode | SideloadOnly | Создает **_Test** папку для только для корпоративных пользователей. |
+| AppxPackageSigningEnabled | true | Включает Подписание пакета. |
+| PackageCertificateThumbprint | Отпечаток сертификата | Это значение **необходимо** соответствует отпечаток в сертификате подписи, или быть пустой строкой. |
+| PackageCertificateKeyFile | Path | Путь к сертификату для использования. Эти данные извлекаются из метаданных защитного файла. |
+
+### <a name="configure-the-build"></a>Настройка сборки
 
 Если вы хотите создать решение с помощью командной строки или с помощью любой другой системе сборки, запустите MSBuild с этими аргументами.
 
@@ -92,6 +107,41 @@ steps:
 /p:AppxBundlePlatforms="$(Build.BuildPlatform)"
 /p:AppxBundle=Always
 ```
+
+### <a name="configure-package-signing"></a>Настройка подписывания пакета
+
+Для подписи пакета MSIX (или APPX) конвейера необходимо получить сертификат для подписи. Чтобы сделать это, добавьте задачу DownloadSecureFile до VSBuild задачи.
+Это даст вам доступ подписи сертификата через ```signingCert```.
+
+```yml
+- task: DownloadSecureFile@1
+  name: signingCert
+  displayName: 'Download CA certificate'
+  inputs:
+    secureFile: '[Your_Pfx].pfx'
+```
+
+Затем обновите VSBuild задачи для ссылки на сертификат для подписи:
+
+```yml
+- task: VSBuild@1
+  inputs:
+    platform: 'x86'
+    solution: '$(solution)'
+    configuration: '$(buildConfiguration)'
+    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" 
+                  /p:AppxPackageDir="$(appxPackageDir)" 
+                  /p:AppxBundle=Always 
+                  /p:UapAppxPackageBuildMode=StoreUpload 
+                  /p:AppxPackageSigningEnabled=true
+                  /p:PackageCertificateThumbprint="" 
+                  /p:PackageCertificateKeyFile="$(signingCert.secureFilePath)"'
+```
+
+> [!NOTE]
+> Аргумент PackageCertificateThumbprint намеренно задать пустую строку в качестве меры предосторожности. Если отпечаток устанавливается в проекте, но не соответствует подписи сертификата, построение завершится ошибкой с ошибкой: `Certificate does not match supplied signing thumbprint`.
+
+### <a name="review-parameters"></a>Проверьте параметры
 
 Параметры, определенные с помощью `$()` синтаксис переменные, определенные в определении сборки, и создавайте будет изменений в других системах.
 

@@ -1,6 +1,6 @@
 ---
 description: Этот учебник демонстрирует добавление пользовательских интерфейсах XAML UWP, создание MSIX пакеты и другие современные компоненты включить в приложении WPF.
-title: Перенос Contoso расходы приложений в .NET Core 3
+title: Перенос приложения Contoso Expenses в .NET Core 3
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
@@ -8,14 +8,14 @@ author: mcleanbyron
 keywords: Windows 10, универсальной платформы Windows, windows forms, wpf, о-ва xaml
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: e718de7a22873ccf347e60c661f724ce3abdd2cf
-ms.sourcegitcommit: 1eec0e4fd8a5ba82803fdce6e23fcd01b9488523
+ms.openlocfilehash: 6e303e7059edd72fcdeb5455f450e6ece9d58e02
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67420128"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141851"
 ---
-# <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>Часть 1. Перенос Contoso расходы приложений в .NET Core 3
+# <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>Часть 1. Перенос приложения Contoso Expenses в .NET Core 3
 
 Это первая часть учебник, в котором показано, как модернизировать пример классического приложения WPF с именем Contoso расходы. Обзор учебника, предварительные требования и инструкции для загрузки примера приложения, см. в разделе [руководства: Модернизация приложения WPF](modernize-wpf-tutorial.md).
   
@@ -162,7 +162,7 @@ ms.locfileid: "67420128"
 
 5. Поиск `MvvmLightLibsStd10` пакет и установите его. Это .NET Standard версия `MvvmLightLibs` пакета. Для этого пакета автор выбрала для упаковки .NET Standard версии библиотеки в отдельном пакете, чем версия .NET Framework.
 
-    ! Пакет MvvmLightsLibs[](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
+    ![Пакет MvvmLightsLibs](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
 
 6. В **ContosoExpenses.Core** щелкните правой кнопкой мыши проект **зависимости** узел и выберите **добавить ссылку**.
 

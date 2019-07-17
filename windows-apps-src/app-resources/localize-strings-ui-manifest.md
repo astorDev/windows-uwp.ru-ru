@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: b6caf2de67b72c01391d47037150d76500a1cb42
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
-ms.translationtype: MT
+ms.openlocfilehash: 23cd899a196fbe3d28b7156890d65e90ac88cdad
+ms.sourcegitcommit: 9f097438937539f94b6a14a09ee65d30f71da9c6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820304"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68223965"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Локализация строк в манифесте пакета приложения и интерфейсе пользователя
 
@@ -301,23 +301,21 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 Чтобы использовать ресурсы в приложениях, не упаковываются, следует выполнить ряд действий:
 
-1. Для поддержки сценариев не упакован, использовать [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) вместо [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) отсутствует, как не *текущее представление* в сценариях не упакован. Возникает следующее исключение при вызове метода [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) в сценариях, не упакованных: *Контекстами ресурсов может быть создан в потоках, у которых нет CoreWindow.*
+1. Используйте [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) вместо [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) при разрешении ресурсы из кода, так как не *текущее представление* в сценариях не упакован. Возникает следующее исключение при вызове метода [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) в сценариях, не упакованных: *Контекстами ресурсов может быть создан в потоках, у которых нет CoreWindow.*
 1. Используйте [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) можно вручную создать файл resources.pri этого приложения.
     - Выполнить `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /dq <DEFAULTLANGUAGEQUALIFIER> /of resources.pri`
-    - <PRICONFIG> Необходимо опустить "<packaging>" раздела, чтобы все ресурсы объединяются в единый resources.pri файле. Если используется значение по умолчанию [файл конфигурации MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) созданные [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), вам придется удалить "<packaging>" разделе вручную после его создания.
-    - <PRICONFIG> Должен содержать все соответствующие индексаторов, необходимые для слияния всех ресурсов в проекте в одном resources.pri файл. Значение по умолчанию [файл конфигурации MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) созданные [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) включает в себя всех индексаторов.
+    - &lt;PRICONFIG&gt; необходимо опустить "&lt;упаковки&gt;" раздела, чтобы все ресурсы объединяются в единый resources.pri файле. Если используется значение по умолчанию [файл конфигурации MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) созданные [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), вам придется удалить "&lt;упаковки&gt;" разделе вручную после его создания.
+    - &lt;PRICONFIG&gt; должен содержать все соответствующие индексаторов, необходимые для слияния всех ресурсов в проекте в одном resources.pri файл. Значение по умолчанию [файл конфигурации MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) созданные [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) включает в себя всех индексаторов.
     - Если вы не используете файл конфигурации по умолчанию, убедитесь, что индексатор PRI включен (по умолчанию файл конфигурации для этого просмотрите) для слияния PRIs найти ссылки на проект UWP, ссылки на пакеты NuGet и т. д., которые находятся в корневом каталоге проекта.
         > [!NOTE]
-        > Опустив `/IndexName`, и в проекте, не имеющий манифест приложения, автоматически присваивается Имя_индекса/корневое пространство имен файла PRI *приложения*, который среда выполнения понимает для приложений, не упакованных (при этом удаляются Предыдущий жесткие зависимости от идентификатор пакета). Тем не менее можно явно указать корневое пространство имен следующим образом:
-        > - ResourceLoader.GetForViewIndependentUse("ControlName\Resources"). GetStringForUri (новый универсальный код ресурса ("ms-resource :// / ManagedWinRT/ресурсы/заголовок"))
-        > - ResourceLoader.GetForViewIndependentUse("ControlName\Resources").GetStringForUri(new Uri("ms-resource://Application/ManagedWinRT/Resources/Header"))
+        > Опустив `/IndexName`, и в проекте, не имеющий манифест приложения, автоматически присваивается Имя_индекса/корневое пространство имен файла PRI *приложения*, который среда выполнения понимает для приложений, не упакованных (при этом удаляются Предыдущий жесткие зависимости от идентификатор пакета). При указании ресурса URI, ms-resource: вывести / / / ссылки, которые пропускают корневое пространство имен *приложения* как корневое пространство имен для приложения не упаковываются (или можно указать *приложения* явным образом как в ms-resource://Application/).
 1. Скопируйте PRI-файл в выходной каталог сборки из .exe
 1. Запустите .exe 
     > [!NOTE]
     > Система управления ресурсами использует язык системы, а не список предпочитаемый язык пользователя, при разрешении ресурсов на основе языка в приложениях не упакован. Список предпочитаемый язык пользователя используется только для приложений универсальной платформы Windows.
 
 > [!Important]
-> Необходимо вручную повторно PRI-файлы, при изменении содержимого файла ресурсов, таких как postbuild-скрипт, который обрабатывает [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) команды и копирует выходные данные resources.pri каталог .exe.
+> Необходимо вручную перестроить файлов PRI всякий раз, когда ресурсы будут изменены. Мы рекомендуем использовать скрипт после сборки, который обрабатывает [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) команды и копирует выходные данные resources.pri каталог .exe.
 
 ## <a name="important-apis"></a>Важные API
 * [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
