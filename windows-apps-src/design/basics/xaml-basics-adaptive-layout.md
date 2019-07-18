@@ -5,12 +5,12 @@ keywords: XAML, UWP, Getting Started
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b444a11ab032034976d2f1b269bd10a89bf339e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 67d5861e65a85a07cdda486ddb9c9634c388e819
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63798608"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820459"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Руководство: Создание адаптивных макетов
 
@@ -28,7 +28,7 @@ ms.locfileid: "63798608"
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-* Visual Studio 2017: [скачать Visual Studio Community 2017 (бесплатно)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Visual Studio 2019: [скачать Visual Studio Community 2019 (бесплатно)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Пакет SDK для Windows 10 (10.0.15063.468 или более поздней версии):  [скачать последнюю версию Windows SDK (бесплатно)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Эмулятор Windows Mobile: [скачать эмулятор Windows 10 Mobile (бесплатно)](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 
@@ -321,8 +321,8 @@ ms.locfileid: "63798608"
 
 Если у вас возникнут проблемы, дополнительные рекомендации см. в следующих разделах статьи [Responsive layouts with XAML](../layout/layouts-with-xaml.md) (Гибкие макеты на основе XAML).
 
-+ [Визуальные состояния и триггеры состояния](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [Специально разработанные макеты](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
++ [Визуальные состояния и триггеры состояния](https://docs.microsoft.com/windows/uwp/design/layout/layouts-with-xaml#visual-states-and-state-triggers)
++ [Специально разработанные макеты](https://docs.microsoft.com/windows/uwp/design/layout/layouts-with-xaml#tailored-layouts)
 
 Кроме того, если вы хотите узнать больше о процессе создания изначального приложения для редактирования фотографий, ознакомьтесь с этими учебниками по [пользовательским интерфейсам](../basics/xaml-basics-ui.md) и [привязке данных](../../data-binding/xaml-basics-data-binding.md) в XAML.
 

@@ -1,16 +1,16 @@
 ---
 description: Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. В этом разделе показано, как реализовать и использовать отслеживаемое свойство и привязать к нему элемент управления XAML.
 title: Элементы управления XAML; привязка к свойству C++/WinRT
-ms.date: 04/24/2019
+ms.date: 06/21/2019
 ms.topic: article
 keywords: windows 10, uwp, стандартный, c++, cpp, winrt, проекция, XAML, управление, привязка, свойство
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe5c03eebd2b68e98ae908ea4624471fbd2b3d2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 25ce3164ece443c8c1d95bccbc2bfb57e3347a55
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65627669"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717654"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Элементы управления XAML; привязка к свойству C++/WinRT
 Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя*. В этом разделе показано, как реализовывать отслеживаемые свойства в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) и привязывать к ним элементы управления XAML.
@@ -53,7 +53,7 @@ namespace Bookstore
 
 Сохраните файл и выполните сборку проекта. Во время сборки запускается инструмент `midl.exe` для создания файла метаданных среды выполнения Windows (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`), описывающего класс среды выполнения. Затем запускается инструмент `cppwinrt.exe` для создания файлов исходного кода для поддержки создания и использования вашего класса среды выполнения. Эти файлы содержат заглушки для начала реализации класса среды выполнения **BookSku**, объявленного в вашем IDL. Это заглушки `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` и `BookSku.cpp`.
 
-Щелкните правой кнопкой мыши узел проекта и выберите **Открыть папку в проводнике**. После этого в проводнике откроется папка проекта. Теперь скопируйте файлы заглушек `BookSku.h` и `BookSku.cpp` из папки `\Bookstore\Bookstore\Generated Files\sources\` в папку проекта `\Bookstore\Bookstore\`. В **обозревателе решений**, выбрав узел проекта, убедитесь, что включена функция **Показать все файлы**. Щелкните правой кнопкой мыши скопированные файлы заглушек и выберите **Включить в проект**.
+Щелкните правой кнопкой мыши узел проекта и нажмите кнопку **Открыть папку в проводнике**. После этого в проводнике откроется папка проекта. Теперь скопируйте файлы заглушек `BookSku.h` и `BookSku.cpp` из папки `\Bookstore\Bookstore\Generated Files\sources\` в папку проекта `\Bookstore\Bookstore\`. В **обозревателе решений**, выбрав узел проекта, убедитесь, что включена функция **Показать все файлы**. Щелкните правой кнопкой мыши скопированные файлы заглушек и выберите **Включить в проект**.
 
 ## <a name="implement-booksku"></a>Реализуйте **BookSku**
 Теперь давайте откроем `\Bookstore\Bookstore\BookSku.h` и `BookSku.cpp` и реализуем класс среды выполнения. В `BookSku.h` добавьте конструктор, который принимает [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring), частный член для хранения строки названия и еще один — для события, которое мы будем вызывать при изменении названия. После внесения этих изменений `BookSku.h` выглядит следующим образом.
@@ -210,7 +210,7 @@ namespace Bookstore
 
 Чтобы устранить эту ожидаемую ошибку, необходимо скопировать заглушки метода доступа для свойства **MainViewModel** из созданных файлов (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` и `MainPage.cpp`) в `\Bookstore\Bookstore\MainPage.h` и `MainPage.cpp`. Как это сделать, описано далее.
 
-В `\Bookstore\Bookstore\MainPage.h` мы добавьте `BookstoreViewModel.h`, который объявляет тип реализации для **BookstoreViewModel** (то есть **winrt::Bookstore::implementation::BookstoreViewModel**). Добавьте частный член для хранения модели представления. Обратите внимание на то, что функция доступа свойства (и член m_mainViewModel) реализуется как проецируемый тип **BookstoreViewModel**, то есть **Bookstore::BookstoreViewModel**. Тип реализации находится в том же проекте (единице компиляции), что и приложение, поэтому мы создаем m_mainViewModel через перегрузку конструктора, которая принимает `nullptr_t`. Также удалите свойство **MyProperty**.
+В `\Bookstore\Bookstore\MainPage.h` мы добавьте `BookstoreViewModel.h`, который объявляет тип реализации для **BookstoreViewModel** (то есть **winrt::Bookstore::implementation::BookstoreViewModel**). Добавьте частный член для хранения модели представления. Обратите внимание на то, что функция доступа свойства (и член m_mainViewModel) реализуется как проецируемый тип **BookstoreViewModel**, то есть **Bookstore::BookstoreViewModel**. Тип реализации находится в том же проекте (единице компиляции), что и приложение, поэтому мы создаем m_mainViewModel через перегрузку конструктора, которая принимает **std::nullptr_t**. Также удалите свойство **MyProperty**.
 
 ```cppwinrt
 // MainPage.h
@@ -276,6 +276,28 @@ namespace winrt::Bookstore::implementation
 
 ## <a name="using-the-binding-markup-extension-with-cwinrt"></a>Использование расширения разметки {Binding} с C++/WinRT
 Чтобы иметь возможность использовать расширение разметки {Binding} с текущей выпущенной версией C++/WinRT, необходимо реализовать интерфейсы [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) и [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty).
+
+## <a name="element-to-element-binding"></a>Привязка между элементами
+
+Вы можете привязать свойство одного элемента XAML к свойству другого элемента XAML. Вот как это выглядит в разметке:
+
+```xaml
+<TextBox x:Name="myTextBox" />
+<TextBlock Text="{x:Bind myTextBox.Text, Mode=OneWay}" />
+```
+
+Вам потребуется объявить именованную сущность XAML `myTextBox` как свойство только для чтения в своем файле Midl (IDL-файле).
+
+```idl
+// MainPage.idl
+runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+{
+    MainPage();
+    Windows.UI.Xaml.Controls.TextBox myTextBox{ get; };
+}
+```
+
+Вот почему это требуется. Все типы, которые компилятору XAML нужно проверить (включая те, которые используются в [{x: Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)) считываются из метаданных Windows (WinMD). Вам нужно всего лишь добавить свойство только для чтения в файл Midl. Не реализуйте это, так как автоматически созданный код XAML обеспечивает реализацию.
 
 ## <a name="important-apis"></a>Важные API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)

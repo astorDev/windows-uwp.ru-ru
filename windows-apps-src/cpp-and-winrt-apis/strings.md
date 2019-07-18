@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, стандартный, c++, cpp, winrt, проекция, строка
 ms.localizationpriority: medium
-ms.openlocfilehash: d66cdcff8eff8c620d58a5948cbcf081acea2f45
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 004aa3e267bab86527ac3d5c3fe0383ccd4ad904
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360179"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844313"
 ---
 # <a name="string-handling-in-cwinrt"></a>Обработка строк в C++/WinRT
 
@@ -137,6 +137,8 @@ void Print(winrt::hstring const& hstring)
 
 Мы понимаем, что многие библиотеки C++ используют **std::string** и работают только с текстом UTF-8. Для удобства мы предоставляем вспомогательные методы, такие как [**winrt::to_string**](/uwp/cpp-ref-for-winrt/to-string) и [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring), для двустороннего преобразования.
 
+`WINRT_ASSERT` — это макроопределение, которое передается в [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+
 ```cppwinrt
 winrt::hstring w{ L"Hello, World!" };
 
@@ -152,7 +154,7 @@ WINRT_ASSERT(w == L"Hello, World!");
 ## <a name="the-rationale-for-winrthstring-and-winrtparamhstring"></a>Обоснование для **winrt::hstring** и **winrt::param::hstring**
 Среда выполнения Windows реализуется в знаках **wchar_t**, но двоичный интерфейс приложения (ABI) среды выполнения Windows не является подмножеством того, что предоставляют **std::wstring** или **std::wstring_view**. Их использование приведет к значительной неэффективности. Вместо этого C++/WinRT предоставляет **winrt::hstring**, представляющий собой неизменяемую строку, согласованную с базовым [HSTRING](https://docs.microsoft.com/windows/desktop/WinRT/hstring) и реализованную за интерфейсом, аналогичным **std::wstring**. 
 
-Можно заметить, что входные параметры C++/ WinRT, которые логически должны принимать **winrt::hstring**, фактически ожидают **winrt::param::hstring**. Пространство имен **param** содержит набор типов, используемых исключительно для оптимизации входных параметров для естественной привязки к типам стандартной библиотеки C++, а также позволяющих избежать копий и других аспектов, снижающих эффективность. Эти типы не следует использовать напрямую. Если вы хотите использовать оптимизацию для собственных функций, применяйте **std::wstring_view**.
+Можно заметить, что входные параметры C++/ WinRT, которые логически должны принимать **winrt::hstring**, фактически ожидают **winrt::param::hstring**. Пространство имен **param** содержит набор типов, используемых исключительно для оптимизации входных параметров для естественной привязки к типам стандартной библиотеки C++, а также позволяющих избежать копий и других аспектов, снижающих эффективность. Эти типы не следует использовать напрямую. Если вы хотите использовать оптимизацию для собственных функций, применяйте **std::wstring_view**. Также см. статью о [передаче параметров в интерфейс ABI](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi).
 
 Идея состоит в том, что вы можете по большей части игнорировать особенности управления строками среды выполнения Windows и просто эффективно работать с тем, что вам известно. Это важно, учитывая, насколько активно строки используются в среде выполнения Windows.
 
@@ -169,6 +171,22 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
     wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
     ::OutputDebugString(wstringstream.str().c_str());
 }
+```
+
+## <a name="the-correct-way-to-set-a-property"></a>Правильный способ задать свойство
+
+Для установки свойств значение передается в функцию задания. Рассмотрим пример.
+
+```cppwinrt
+// The right way to set the Text property.
+myTextBlock.Text(L"Hello!");
+```
+
+Ниже приведен неправильный код. Компиляция происходит, но все, что выполняется — это изменение значения **winrt::hstring**, возвращаемое функцией получения доступа**Text()** , а затем результаты отклоняются.
+
+```cppwinrt
+// *Not* the right way to set the Text property.
+myTextBlock.Text() = L"Hello!";
 ```
 
 ## <a name="important-apis"></a>Важные API

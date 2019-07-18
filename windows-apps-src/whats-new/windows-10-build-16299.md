@@ -5,18 +5,18 @@ keywords: что нового, новые возможности, обновле
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bf9b6461bb3f1783be2157cde2f89462d0480099
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: bc0172246c14459113ae1952f5db880ecf44e9d9
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66372886"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820985"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Новые возможности для разработчиков в Windows 10, сборка 16299
 
-Сборка 16299 Windows 10 (также известная как Fall Creators Update или версия 1709), в сочетании с Visual Studio 2017 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+Сборка 16299 Windows 10 (также известная как Fall Creators Update или версия 1709), в сочетании с Visual Studio 2019 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
-В этом разделе приводится подборка новых и улучшенных функций этого выпуска, а также руководств, представляющих интерес для разработчиков. Полный список новых пространств имен, добавленных в Windows SDK, см. в разделе [Изменения API в Windows 10, сборка 16299](windows-10-build-16299-api-diff.md). Дополнительные сведения об основных функциях Windows 10 см. в разделе [Потрясающие возможности Windows 10](https://go.microsoft.com/fwlink/?LinkId=823181). Кроме того, в списке [возможностей платформы разработки Windows](https://developer.microsoft.com/windows/platform/features) можно найти краткий обзор прошлых и будущих дополнений к ней.
+В этом разделе приводится подборка новых и улучшенных функций этого выпуска, а также руководств, представляющих интерес для разработчиков. Полный список новых пространств имен, добавленных в Windows SDK, см. в разделе [Изменения API в Windows 10, сборка 16299](windows-10-build-16299-api-diff.md). Дополнительные сведения об основных функциях Windows 10 см. в разделе [Потрясающие возможности Windows 10](https://go.microsoft.com/fwlink/?LinkId=823181). Кроме того, в [списке возможностей платформы разработки Windows](https://developer.microsoft.com/windows/platform/features) можно найти краткий обзор прошлых и будущих дополнений к ней.
 
 ## <a name="design--ui"></a>Оформление и пользовательский интерфейс
 
@@ -31,7 +31,7 @@ ms.locfileid: "66372886"
 Живые плитки | Закрепите [вспомогательные плитки из приложений моста для классических приложений Win32](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md).
 Всплывающие уведомления | Используйте [ожидание обновления](../design/shell/tiles-and-notifications/toast-pending-update.md) для кнопок, чтобы обеспечить многоэтапную интерактивность всплывающих уведомлений.
 Элементы управления пользовательским интерфейсом | Новые элементы управления позволяют легко и быстро создавать привлекательный пользовательский интерфейс. </br>* [Элемент управления "Палитра"](../design/controls-and-patterns/color-picker.md) позволяет пользователям просматривать и выбирать цвета. </br>* [Элемент управления "Представление навигации"](../design/controls-and-patterns/navigationview.md) упрощает добавление навигации верхнего уровня в приложение. </br>* [Элемент управления "Аватар пользователя"](../design/controls-and-patterns/person-picture.md) отображает аватар пользователя. </br>* [Элемент управления "Оценка"](../design/controls-and-patterns/rating.md) позволяет пользователям легко просматривать и ставить оценки, отражающие степень удовлетворенности содержимым и службами.
-Стиль и тон | Мы добавили новые [рекомендации по стилю и тону в приложениях UWP](../design/style/voice-and-tone.md), чтобы дать вам советы по написанию текста для вашего приложения. Независимо от того, что вы разрабатываете, важно использовать доступный, понятный и информативный язык.
+Стиль и тон | Мы добавили новые [рекомендации по стилю и тону в приложениях UWP](../design/style/voice-and-tone.md), где даем советы по написанию текста для вашего приложения. Независимо от того, что вы разрабатываете, важно использовать доступный, понятный и информативный язык.
 
 ## <a name="gaming"></a>Игры
 
@@ -43,7 +43,7 @@ ms.locfileid: "66372886"
 Режим игры | API-интерфейсы [режима игры](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) для универсальной платформы Windows (UWP) позволяют создавать оптимизированные игровые среды, используя режим игры в Windows 10. Эти API находятся в заголовке **&lt;expandedresources.h&gt;** .
 Монитор игры | Класс [GameMonitor](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamemonitor) позволяет приложению получать состояние разрешения монитора игр на устройстве и потенциально предлагать пользователю включить мониторинг игр.
 TruePlay | [TruePlay](https://aka.ms/trueplay) предоставляет разработчикам новый набор инструментов для борьбы с мошенничеством в компьютерных играх. Игры, зарегистрированные в TruePlay, будут выполняться в защищенном процессе, который обеспечивает защиту от определенного класса распространенных атак. API-интерфейсы TruePlay для универсальной платформы Windows (UWP) обеспечивают ограниченное взаимодействие между игрой и системой мониторинга игр на компьютерах с Windows 10. Эти API находятся в заголовке **&lt;gamemonitor.h&gt;** .
-Xbox Live | Мы добавили документацию для разработчиков Xbox Live для игр UWP и XDK (комплект средств для разработчика Xbox). </br>Из [руководства для разработчиков Xbox Live](https://docs.microsoft.com/gaming/xbox-live//index.md) вы узнаете, как использовать API Xbox Live для подключения игры к социальной игровой сети Xbox Live. </br>С помощью [программы Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md) любой разработчик игр UWP сможет разработать и опубликовать игру с поддержкой Xbox Live как для ПК, так и для Xbox One. </br>См. сведения о программах и функциях, доступных разработчикам Xbox Live, в разделе с [обзором программ для разработчиков Xbox Live](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md).
+Xbox Live | Мы добавили документацию для разработчиков Xbox Live для игр UWP и XDK (комплект средств для разработчика Xbox). </br>Из [руководства для разработчиков Xbox Live](https://docs.microsoft.com/gaming/xbox-live/index.md) вы узнаете, как использовать API Xbox Live для подключения игры к социальной игровой сети Xbox Live. </br>С помощью [программы Xbox Live Creators Program](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) любой разработчик игр UWP сможет разработать и опубликовать игру с поддержкой Xbox Live как для ПК, так и для Xbox One. </br>См. сведения о программах и функциях, доступных разработчикам Xbox Live, в разделе с [обзором программ для разработчиков Xbox Live](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md).
 
 ## <a name="develop-windows-apps"></a>Разработка приложений для Windows
 

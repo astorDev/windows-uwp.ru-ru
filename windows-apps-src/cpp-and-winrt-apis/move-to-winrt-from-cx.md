@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fbe10e41da1b330d6f5042bea109a8a0e04f8ad
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d2b92bf5e265c2d596a7fc7eb54b127010cee897
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360161"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717608"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Переход на C++/WinRT из C++/CX
 
@@ -181,7 +181,7 @@ private:
 };
 ```
 
-Перенос одинакового кода в C++/WinRT. Обратите внимание на особенности использования конструктора`nullptr`. Дополнительные сведения об этом конструкторе см. в разделе [Использование API с помощью C++/WinRT](consume-apis.md).
+Перенос одинакового кода в C++/WinRT. Обратите внимание на использование конструктора **std::nullptr_t**. Дополнительные сведения об этом конструкторе см. в разделе [Использование API с помощью C++/WinRT](consume-apis.md#delayed-initialization).
 
 ```cppwinrt
 using namespace winrt::Windows::Storage::Streams;
@@ -365,7 +365,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 ### <a name="port-platformstring-to-winrthstring"></a>Перенесите **Platform::String\^** в **winrt::hstring**
 **Platform::String\^** является эквивалентом типа HSTRING ABI среды выполнения Windows. Для C++/WinRT эквивалентом является [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). Однако с помощью C++/WinRT можно вызывать API среды выполнения Windows, используя типы широких строк стандартной библиотеки C++, такие как **std::wstring**, и/или литералы широких строк. Дополнительные сведения и примеры кода см. в разделе [Обработка строк в C++/WinRT](strings.md).
 
-С помощью C++/CX можно получить доступ к свойству [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data), чтобы получить строку в виде массива **const wchar_t\*** языков группы C (например, чтобы передать ее в **std::wcout**).
+С помощью C++/CX можно получить доступ к свойству [**Platform::String::Data**](https://docs.microsoft.com/cpp/cppcx/platform-string-class?view=vs-2019#data), чтобы получить строку в виде массива **const wchar_t\*** языков группы C (например, чтобы передать ее в **std::wcout**).
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };

@@ -5,12 +5,12 @@ keywords: XAML, UWP, Getting Started
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bae8455f1062b3ad62aeac3807c6c58ae274a1b
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d4da7e661b0a9c1f389ae93fe4da4782629014f4
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63794804"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820525"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Руководство: Создание пользовательского интерфейса
 
@@ -32,18 +32,18 @@ ms.locfileid: "63794804"
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-* Visual Studio 2017: [скачать Visual Studio Community 2017 (бесплатно)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Visual Studio 2019: [скачать Visual Studio Community 2019 (бесплатно)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Пакет SDK для Windows 10 (10.0.15063.468 или более поздней версии):  [скачать последнюю версию Windows SDK (бесплатно)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 
-## <a name="part-0-get-the-starter-code-from-github"></a>Часть 0. Получите начальный код на GitHub
+## <a name="part-0-get-the-starter-code-from-github"></a>Часть 0. Получение начального кода на GitHub
 
 В этом учебнике мы начнем с упрощенной версии примера PhotoLab. 
 
 1. Перейдите в [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). Вы перейдете на страницу GitHub с примером кода. 
-2. Далее необходимо клонировать или скачать пример. Нажмите кнопку **Клонировать или скачать**. Откроется подменю.
+2. Далее необходимо клонировать или скачать пример. Нажмите кнопку **Clone or download** (Клонировать или скачать). Откроется подменю.
     <figure>
         <img src="images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
-        <figcaption>Меню <b>Клонировать или скачать</b> на странице GitHub с примером приложения для обработки фотографий.</figcaption>
+        <figcaption>Меню <b>Clone or download</b> (Клонировать или скачать) на странице GitHub с примером приложения для обработки фотографий.</figcaption>
     </figure>
 
     **Если вы не знакомы с GitHub:**

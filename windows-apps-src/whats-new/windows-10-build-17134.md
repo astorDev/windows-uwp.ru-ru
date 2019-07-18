@@ -5,16 +5,16 @@ keywords: новые возможности, что нового, обновле
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b7fe830e07c1daf95928ab747259cb57aaa7a9f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dc35dc50b8dc523aff5478b3ec19c3daeed9dafb
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66371342"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820453"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Новые возможности для разработчиков в Windows 10, сборка 17134
 
-Сборка 17134 Windows 10 (также известная как April Update или версия 1803), в сочетании с Visual Studio 2017 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
+Сборка 17134 Windows 10 (также известная как April Update или версия 1803), в сочетании с Visual Studio 2019 и обновленным пакетом SDK предоставляет инструменты, функции и возможности для создания удивительных приложений универсальной платформы Windows. [Установив средства и пакет SDK](https://go.microsoft.com/fwlink/?LinkId=821431) в Windows 10, вы можете сразу приступить либо к [созданию нового проекта универсального приложения для Windows](../get-started/create-uwp-apps.md) либо к использованию [существующего кода приложения в ОС Windows](../porting/index.md).
 
 В этом разделе приводится подборка новых и улучшенных функций этого выпуска, а также руководств, представляющих интерес для разработчиков. Полный список новых пространств имен, добавленных в Windows SDK, см. в разделе [Изменения API в Windows 10, сборка 17134](windows-10-build-17134-api-diff.md). Дополнительные сведения об основных функциях Windows 10 см. в разделе [Потрясающие возможности Windows 10](https://go.microsoft.com/fwlink/?LinkId=823181). Кроме того, в [списке возможностей платформы разработки Windows](https://developer.microsoft.com/windows/platform/features) можно найти краткий обзор прошлых и будущих дополнений к ней.
 
@@ -36,7 +36,7 @@ ms.locfileid: "66371342"
 Звук | Благодаря свойству **SpatialAudioMode** XAML теперь поддерживает трехмерный звук. См. сведения о настройке в разделе [Звук](../design/style/sound.md).
 Плитки | [Уведомления на отслеживаемых плитках](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md) теперь поддерживаются в приложениях UWP на базе JavaScript.<br><br>Уведомления дополнительных плиток и эмблем [теперь поддерживаются через мост для классических приложений](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications).
 Представление дерева | Элемент управления [TreeView](../design/controls-and-patterns/tree-view.md) позволяет создать иерархический список с разворачиваемыми и сворачиваемыми узлами, которые содержат вложенные элементы. Его можно использовать для демонстрации структуры папок или вложенных отношений в пользовательском интерфейсе.
-Стиль письма | Мы обновили и расширили статью о голосе и тоне, превратив ее в [Руководство по стилю письма](../design/style/writing-style.md). В нем содержится новая информация о принципах создания эффективного текста в приложении и даются рекомендации по составлению элементов управления (сообщений об ошибках и диалоговых окон).
+Стиль письма | Мы обновили и расширили статью о голосе и тоне, превратив ее в [руководство по стилю письма](../design/style/writing-style.md). В нем содержится новая информация о принципах создания эффективного текста в приложении и даются рекомендации по составлению элементов управления (сообщений об ошибках и диалоговых окон).
 
 ## <a name="gaming"></a>Игры
 Функция | Описание
@@ -102,7 +102,7 @@ API-интерфейсы Windows Mixed Reality | Чтобы поддержать
 
 ### <a name="motion-controller-tracking"></a>Отслеживание контроллера движений
 
-Контроллеры движений в Windows Mixed Reality представляют руки пользователя. [Посмотрите это видео](https://www.youtube.com/watch?v=rkDpRllbLII), чтобы узнать, как работают контроллеры движения в поле зрения гарнитуры смешанной реальности и вне его, а также [узнайте больше об отслеживании контроллера](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D).
+Контроллеры движений в Windows Mixed Reality представляют руки пользователя. [Посмотрите это видео](https://www.youtube.com/watch?v=rkDpRllbLII), чтобы узнать, как работают контроллеры движения в поле зрения гарнитуры смешанной реальности и вне его, а также [узнайте больше об отслеживании контроллера](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D).
 
 ### <a name="package-a-net-app-in-visual-studio"></a>Упаковка приложения .NET с помощью Visual Studio
 

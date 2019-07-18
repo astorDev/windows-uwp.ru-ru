@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная c++, cpp, winrt, проецируемый, проекция, реализация, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: e6bf1e7fb32533aa9d7b865ac7c8afc374290e54
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 88a4c65b20c2fb805baecb8a90498e8e4ec9b229
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360351"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717622"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Использование интерфейсов API с помощью C++/WinRT
 
@@ -79,6 +79,8 @@ int main()
 ## <a name="accessing-members-via-the-object-via-an-interface-or-via-the-abi"></a>Доступ к членам через объект, через интерфейс или с помощью ABI
 С помощью проекции C++/WinRT представление времени выполнения для класса среды выполнения Windows представляет собой не что иное, как лежащие в основе базовые интерфейсы ABI. Но для удобства можно использовать классы в коде так, как задумывалось их автором. Например, можно вызвать метод **ToString** для [**Uri**](/uwp/api/windows.foundation.uri), как если бы он был методом класса (на самом деле, по своей сути это метод отдельного интерфейса **IStringable**).
 
+`WINRT_ASSERT` — это макроопределение, которое передается в [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+
 ```cppwinrt
 Uri contosoUri{ L"http://www.contoso.com" };
 WINRT_ASSERT(contosoUri.ToString() == L"http://www.contoso.com/"); // QueryInterface is called at this point.
@@ -107,15 +109,17 @@ int main()
     winrt::init_apartment();
     Uri contosoUri{ L"http://www.contoso.com" };
 
-    int port = contosoUri.Port(); // Access the Port "property" accessor via C++/WinRT.
+    int port{ contosoUri.Port() }; // Access the Port "property" accessor via C++/WinRT.
 
-    winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri = contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>();
+    winrt::com_ptr<ABI::Windows::Foundation::IUriRuntimeClass> abiUri{
+        contosoUri.as<ABI::Windows::Foundation::IUriRuntimeClass>() };
     HRESULT hr = abiUri->get_Port(&port); // Access the get_Port ABI function.
 }
 ```
 
 ## <a name="delayed-initialization"></a>Отложенная инициализация
-Даже конструктор по умолчанию проецируемого типа вызывает создание опорного объекта среды выполнения Windows. Если вы хотите создать переменную проецируемого типа без создания объекта среды выполнения Windows (чтобы отложить эту работу на более позднее время), это можно сделать. Объявите переменную или поле, используя специальный конструктор C++/WinRT `nullptr_t` для проецируемого типа.
+
+Даже конструктор по умолчанию проецируемого типа вызывает создание опорного объекта среды выполнения Windows. Если вы хотите создать переменную проецируемого типа без создания объекта среды выполнения Windows (чтобы отложить эту работу на более позднее время), это можно сделать. Объявите переменную или поле, используя специальный конструктор C++/WinRT **std::nullptr_t** для типа проекции. Проекция C++/WinRT внедряет этот конструктор в каждый класс среды выполнения.
 
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
@@ -144,7 +148,7 @@ int main()
 }
 ```
 
-Все конструкторы проецируемого типа, *кроме* конструктора `nullptr_t`, приводят к созданию опорного объекта среды выполнения Windows. Конструктор `nullptr_t` является по сути безоперационным. Он ожидает инициализацию проецируемого объекта в более поздний момент. Таким образом, независимо от того, имеет ли класс среды выполнения конструктор или нет, этот способ можно использовать для эффективной отложенной инициализации.
+При использовании конструкторов типа проекции, *кроме* конструктора **std::nullptr_t**, создается базовый объект среды выполнения Windows. Конструктор **std::nullptr_t** по сути является безоперационным. Он ожидает инициализацию проецируемого объекта в более поздний момент. Таким образом, независимо от того, имеет ли класс среды выполнения конструктор или нет, этот способ можно использовать для эффективной отложенной инициализации.
 
 Это соображение влияет на другие места, где вы вызываете конструктор по умолчанию, например, на векторы и карты. Рассмотрим пример кода, для которого вам потребуется проект **Пустое приложение (C++/WinRT)** .
 
@@ -158,6 +162,98 @@ lookup[2] = value;
 ```cppwinrt
 std::map<int, TextBlock> lookup;
 lookup.insert_or_assign(2, value);
+```
+
+### <a name="dont-delay-initialize-by-mistake"></a>Не допускайте ошибку, выполняя инициализацию с задержкой
+
+Следите за тем, чтобы не вызвать конструктор **std::nullptr_t** по ошибке. При разрешении конфликтов компилятор будет отдавать предпочтение ему, а не конструкторам фабрики. Например, рассмотрим такие два определения классов среды выполнения.
+
+```idl
+// GiftBox.idl
+runtimeclass GiftBox
+{
+    GiftBox();
+}
+
+// Gift.idl
+runtimeclass Gift
+{
+    Gift(GiftBox giftBox); // You can create a gift inside a box.
+}
+```
+
+Предположим, мы хотим создать неизолированный объект **Gift** (объект **Gift**, созданный с неинициализированным типом **GiftBox**). Сначала рассмотрим, как *не нужно* это делать. Мы знаем, что существует конструктор **Gift**, который принимает параметр **GiftBox**. Но если мы захотим передать параметру **GiftBox** значение NULL (вызвав конструктор **Gift** с помощью унифицированной инициализации, как мы делаем ниже), мы *не* получим нужный результат.
+
+```cppwinrt
+// These are *not* what you intended. Doing it in one of these two ways
+// actually *doesn't* create the intended backing Windows Runtime Gift object;
+// only an empty smart pointer.
+
+Gift gift{ nullptr };
+auto gift{ Gift(nullptr) };
+```
+
+Мы получим неинициализированный объект **Gift**, а не объект **Gift** с неинициализированным параметром **GiftBox**. Вот как *правильно* это сделать.
+
+```cppwinrt
+// Doing it in one of these two ways creates an initialized
+// Gift with an uninitialized GiftBox.
+
+Gift gift{ GiftBox{ nullptr } };
+auto gift{ Gift(GiftBox{ nullptr }) };
+```
+
+В примере с неправильными действиями при передаче литерала `nullptr` конфликт разрешается в пользу конструктора с задержкой инициализации. Чтобы конфликт разрешился в пользу конструктора фабрики, параметр должен иметь тип **GiftBox**. При этом вы все равно можете передать явный тип **GiftBox** с задержкой инициализации, как показано в примере с правильными действиями.
+
+В следующем примере *также* приведены правильные действия, так как параметр имеет тип GiftBox, а не **std::nullptr_t**.
+
+```cppwinrt
+GiftBox giftBox{ nullptr };
+Gift gift{ giftBox }; // Calls factory constructor.
+```
+
+Путаница возникает только при передаче литерала `nullptr`.
+
+## <a name="dont-copy-construct-by-mistake"></a>Не допускайте ошибку, вызывая конструктор с копированием
+
+Это предупреждение аналогично описанному выше предупреждению в разделе [Не допускайте ошибку, выполняя инициализацию с задержкой](#dont-delay-initialize-by-mistake).
+
+Кроме конструктора с задержкой инициализации, проекция C++/WinRT также внедряет конструктор с копированием в каждый класс среды выполнения. Это конструктор с одним параметром, который принимает тот же тип, который имеет создаваемый объект. Полученный смарт-указатель указывает на тот же базовый объект среды выполнения Windows, на который указывает параметр конструктора. В результате создаются два объекта со смарт-указателями, которые указывают на один базовый объект.
+
+Ниже приведено определение класса среды выполнения, которое мы будем использовать в примерах с кодом.
+
+```idl
+// GiftBox.idl
+runtimeclass GiftBox
+{
+    GiftBox(GiftBox biggerBox); // You can place a box inside a bigger box.
+}
+```
+
+Предположим, мы хотим создать объект **GiftBox** в более крупном объекте **GiftBox**.
+
+```cppwinrt
+GiftBox bigBox{ ... };
+
+// These are *not* what you intended. Doing it in one of these two ways
+// copies bigBox's backing-object-pointer into smallBox.
+// The result is that smallBox == bigBox.
+
+GiftBox smallBox{ bigBox };
+auto smallBox{ GiftBox(bigBox) };
+```
+
+*Правильным* способом будет явно вызвать фабрику активации.
+
+```cppwinrt
+GiftBox bigBox{ ... };
+
+// These two ways call the activation factory explicitly.
+
+GiftBox smallBox{
+    winrt::get_activation_factory<GiftBox, IGiftBoxFactory>().CreateInstance(bigBox) };
+auto smallBox{
+    winrt::get_activation_factory<GiftBox, IGiftBoxFactory>().CreateInstance(bigBox) };
 ```
 
 ## <a name="if-the-api-is-implemented-in-a-windows-runtime-component"></a>Если API-интерфейс реализован в компоненте среды выполнения Windows
@@ -185,7 +281,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ## <a name="if-the-api-is-implemented-in-the-consuming-project"></a>Если API-интерфейс реализован в использующем проекте
 Тип, используемый из пользовательского интерфейса XAML, должен являться классом среды выполнения, даже если он находится в том же проекте, что и XAML.
 
-В этом сценарии создается проецируемый тип из метаданных среды выполнения Windows класса среды выполнения (`.winmd`). Необходимо опять же включить заголовок, но на этот раз проецируемый тип создается через конструктор `nullptr`. Этот конструктор не выполняет инициализацию, поэтому далее необходимо назначить значение экземпляру через вспомогательную функцию [**winrt::make**](/uwp/cpp-ref-for-winrt/make), передав все необходимые аргументы конструктора. Класс среды выполнения, реализованный в том же проекте, что и использующий его код, не обязательно регистрировать, а также необязательно создавать его экземпляр посредством активации среды выполнения Windows/COM.
+В этом сценарии создается проецируемый тип из метаданных среды выполнения Windows класса среды выполнения (`.winmd`). Снова-таки, нам нужно включить заголовок, но на этот раз тип проекции создается через конструктор **std::nullptr_t**. Этот конструктор не выполняет инициализацию, поэтому далее необходимо назначить значение экземпляру через вспомогательную функцию [**winrt::make**](/uwp/cpp-ref-for-winrt/make), передав все необходимые аргументы конструктора. Класс среды выполнения, реализованный в том же проекте, что и использующий его код, не обязательно регистрировать, а также необязательно создавать его экземпляр посредством активации среды выполнения Windows/COM.
 
 Вам потребуется **Пустое приложение (C++/WinRT)** проект для этого примера кода.
 

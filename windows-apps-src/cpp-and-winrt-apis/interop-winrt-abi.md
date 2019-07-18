@@ -5,16 +5,18 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, interop, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: a1745f9ad98ed8dac2e54e17d18467981eafdcec
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d1def649772f94a03d5a1f352dcec1d32c7b0868
+ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360229"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67800579"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Взаимодействие между C++/WinRT и интерфейсом ABI
 
 В этом разделе показано, как выполнять преобразование между объектами двоичного интерфейса приложений SDK (ABI) и [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Эти методики можно использовать для взаимодействия между кодом, который использует эти два способа программирования, и средой выполнения Windows, или для постепенного переноса кода с ABI на C++/WinRT.
+
+В общем случае C++/WinRT предоставляет типы ABI как **void\*** , поэтому файлы заголовков платформы добавлять не нужно.
 
 ## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>Что такое ABI среды выполнения Windows и что такое типы ABI?
 Класс среды выполнения Windows (класс среды выполнения) — это, на самом деле, абстракция. Такая абстракция определяет двоичный интерфейс (двоичный интерфейс приложения или ABI), позволяющий различным языкам программирования взаимодействовать с объектом. Независимо от языка программирования, взаимодействие клиентского кода с объектом среды выполнения Windows происходит на самом низком уровне, при этом языковые конструкции клиента преобразуются в вызовы ABI объекта.
@@ -141,6 +143,8 @@ int main()
 
 Для преобразований самого низкого уровня, которые копируют только адреса, можно использовать вспомогательные функции [**winrt::get_abi**](/uwp/cpp-ref-for-winrt/get-abi), [**winrt::detach_abi**](/uwp/cpp-ref-for-winrt/detach-abi) и [**winrt::attach_abi**](/uwp/cpp-ref-for-winrt/attach-abi).
 
+`WINRT_ASSERT` — это макроопределение, которое передается в [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
+
 ```cppwinrt
     // The code in main() already shown above remains here.
 
@@ -242,6 +246,111 @@ int main()
     WINRT_ASSERT(uri == uri_from_abi);
 }
 ```
+
+## <a name="interoperating-with-abi-com-interface-pointers"></a>Взаимодействие с указателями интерфейса СОМ ABI
+
+Показанный ниже шаблон вспомогательной функции демонстрирует, как скопировать указатель интерфейса COM ABI заданного типа в его эквивалент C++/WinRT, представляющий собой смарт-указатель типа проекции.
+
+```cppwinrt
+template<typename To, typename From>
+To to_winrt(From* ptr)
+{
+    To result{ nullptr };
+    winrt::check_hresult(ptr->QueryInterface(winrt::guid_of<To>(), winrt::put_abi(result)));
+    return result;
+}
+...
+ID2D1Factory1* com_ptr{ ... };
+auto cppwinrt_ptr {to_winrt<winrt::com_ptr<ID2D1Factory1>>(com_ptr)};
+```
+
+Следующий шаблон вспомогательной функции аналогичен предыдущему, за исключением того, что он копирует тип смарт-указателя из [библиотек реализации Windows (WIL)](https://github.com/Microsoft/wil).
+
+```cppwinrt
+template<typename To, typename From, typename ErrorPolicy>
+To to_winrt(wil::com_ptr_t<From, ErrorPolicy> const& ptr)
+{
+    To result{ nullptr };
+    if constexpr (std::is_same_v<typename ErrorPolicy::result, void>)
+    {
+        ptr.query_to(winrt::guid_of<To>(), winrt::put_abi(result));
+    }
+    else
+    {
+        winrt::check_result(ptr.query_to(winrt::guid_of<To>(), winrt::put_abi(result)));
+    }
+    return result;
+}
+```
+
+Ознакомьтесь также со статьей [Использование компонентов COM с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-com).
+
+### <a name="unsafe-interop-with-abi-com-interface-pointers"></a>Небезопасное взаимодействие с указателями интерфейса СОМ ABI
+
+В таблице ниже показаны (наряду с другими операциями) небезопасные преобразования указателя интерфейса COM ABI заданного типа и его эквивалента C++/WinRT, представляющего собой смарт-указатель типа проекции. Предполагается, что в коде используются следующие объявления.
+
+```cppwinrt
+winrt::Sample s;
+ISample* p;
+
+void GetSample(_Out_ ISample** pp);
+```
+
+Также предполагается, что **ISample** — это интерфейс по умолчанию для **Sample**.
+
+Сделать это можно во время компиляции этого кода.
+
+```cppwinrt
+static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISample>);
+```
+
+| Операция | Способ выполнения | Заметки |
+|-|-|-|
+| Извлечение **ISample\*** из **winrt::Sample** | `p = reinterpret_cast<ISample*>(get_abi(s));` | *s* по-прежнему является владельцем объекта. |
+| Отсоединение **ISample\*** от **winrt::Sample** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | *s* больше не является владельцем объекта. |
+| Передача **ISample\*** в новый объект **winrt::Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | *s* становится владельцем объекта. |
+| Указание **ISample\*** в **winrt::Sample** | `*put_abi(s) = p;` | *s* становится владельцем объекта. Высвобождается любой объект, которые ранее принадлежал *s* (происходит при отладке). |
+| Получение **ISample\*** в **winrt::Sample** | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | *s* становится владельцем объекта. Высвобождается любой объект, которые ранее принадлежал *s* (происходит при отладке). |
+| Замена **ISample\*** в **winrt::Sample** | `attach_abi(s, p);` | *s* становится владельцем объекта. Высвобождается объект, который ранее принадлежал *s*. |
+| Копирование **ISample\*** в **winrt::Sample** | `copy_from_abi(s, p);` | *s* создает новую ссылку на объект. Высвобождается объект, который ранее принадлежал *s*. |
+| Копирование **winrt::Sample** в **ISample\*** | `copy_to_abi(s, reinterpret_cast<void*&>(p));` | *p* получает копию объекта. Высвобождается любой объект, который ранее принадлежал *p*. |
+
+## <a name="interoperating-with-the-abis-guid-struct"></a>Взаимодействие со структурой GUID ABI
+
+[**GUID**](/previous-versions/aa373931(v%3Dvs.80)) теперь проецируется как **winrt::guid**. Для API-интерфейсов, которые вы реализуете, необходимо использовать **winrt::guid** для параметров GUID. В противном случае выполняется автоматическое преобразование **winrt::guid** и **GUID**, если добавлено `unknwn.h` (добавлено неявно с помощью <windows.h> или других файлов заголовков) до добавления заголовков C++/WinRT.
+
+Но вы также можете использовать `reinterpret_cast`. Предполагается, что в коде используются следующие объявления.
+
+```cppwinrt
+winrt::guid winrtguid;
+GUID abiguid;
+```
+
+| Преобразование | С добавлением `#include <unknwn.h>` | Без добавления `#include <unknwn.h>` |
+|-|-|-|
+| Из **winrt::guid** в **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
+| Из **GUID** в **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
+
+## <a name="interoperating-with-the-abis-hstring"></a>Взаимодействие с HSTRING ABI
+
+В следующей таблице показано, как выполнять преобразования **winrt::hstring** и [ **HSTRING**](/windows/win32/winrt/hstring), а также другие операции. Предполагается, что в коде используются следующие объявления.
+
+```cppwinrt
+winrt::hstring s;
+HSTRING h;
+
+void GetString(_Out_ HSTRING* value);
+```
+
+| Операция | Способ выполнения | Заметки |
+|-|-|-|
+| Извлечение **HSTRING** из **hstring** | `h = static_cast<HSTRING>(get_abi(s));` | *s* по-прежнему является владельцем строки. |
+| Отсоединение **HSTRING** от **hstring** | `h = reinterpret_cast<HSTRING>(detach_abi(s));` | *s* больше не является владельцем строки. |
+| Указание **HSTRING** в **hstring** | `*put_abi(s) = h;` | *s* становится владельцем строки. Высвобождается любая строка, которая ранее принадлежала *s* (происходит при отладке). |
+| Получение **HSTRING** в **hstring** | `GetString(reinterpret_cast<HSTRING*>(put_abi(s)));` | *s* становится владельцем строки. Высвобождается любая строка, которая ранее принадлежала *s* (происходит при отладке). |
+| Замена **HSTRING** в **hstring** | `attach_abi(s, h);` | *s* становится владельцем строки. Высвобождается строка, которая ранее принадлежала *s*. |
+| Копирование **HSTRING** в **hstring** | `copy_from_abi(s, h);` | *s* создает закрытую копию строки. Высвобождается строка, которая ранее принадлежала *s*. |
+| Копирование **hstring** в **HSTRING** | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | *h* получает копию строки. Высвобождается любая строка, которая ранее принадлежала *h*. |
 
 ## <a name="important-apis"></a>Важные API
 * [IUnknown::AddRef method](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) (Метод IUnknown::AddRef)

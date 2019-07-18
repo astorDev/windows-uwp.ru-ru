@@ -1,16 +1,16 @@
 ---
 description: В этом разделе показаны способы, которыми можно создавать и использовать асинхронные объекты среды выполнения Windows с помощью C++/WinRT.
 title: Параллельные обработка и выполнение асинхронных операций с помощью C++/WinRT
-ms.date: 04/24/2019
+ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
-ms.openlocfilehash: 910d7a7ca2aaebac6dd462d7104b26a989cf8814
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: cbabf38f41ae940f5c92944154638eae7016e043
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721656"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660090"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Параллельные обработка и выполнение асинхронных операций с помощью C++/WinRT
 
@@ -230,12 +230,16 @@ IASyncAction DoWorkAsync(Param const& value)
 }
 ```
 
-В соподпрограмме выполнение происходит синхронно до первой точки приостановки, где управление возвращается вызывающему объекту. К моменту возобновления соподпрограммы с исходным значением, на которое ссылается отсылочный параметр, может случиться что угодно. С точки зрения соподпрограммы у отсылочного параметра неконтролируемый срок существования. Таким образом, в приведенном выше примере мы безопасно можем получить доступ к *value* до вызова `co_await`, но не после него. Мы также не можем безопасно передать *value* в **DoOtherWorkAsync**, если есть малейший риск того, что эта функция в свою очередь приостановится, а затем попытается использовать *value* после возобновления. Чтобы обеспечить безопасное использование параметров после приостановки и возобновления, ваши соподпрограммы должны по умолчанию использовать передачу по значению, чтобы они собирали данные только по значениям и избегали проблем со сроком существования. Ситуации, в которых можно не соблюдать эти указания в связи с уверенностью в безопасности такого подхода, встречаются редко.
+В соподпрограмме выполнение происходит синхронно до первой точки приостановки, где управление возвращается вызывающему объекту. К моменту возобновления соподпрограммы с исходным значением, на которое ссылается отсылочный параметр, может случиться что угодно. С точки зрения соподпрограммы у отсылочного параметра неконтролируемый срок существования. Таким образом, в приведенном выше примере мы безопасно можем получить доступ к *value* до вызова `co_await`, но не после него. Если *value* уничтожается вызывающим объектом, пытающимся получить доступ к внутренней сопрограмме, это приводит к повреждению памяти. Мы также не можем безопасно передать *value* в **DoOtherWorkAsync**, если есть малейший риск того, что эта функция в свою очередь приостановится, а затем попытается использовать *value* после возобновления.
+
+Чтобы обеспечить безопасное использование параметров после приостановки и возобновления, сопрограммы должны по умолчанию использовать передачу по значению. Так данные будут собираться только по значению, предотвращая появление проблем с временем существования. Ситуации, в которых можно не соблюдать эти указания в связи с уверенностью в безопасности такого подхода, встречаются редко.
 
 ```cppwinrt
 // Coroutine
-IASyncAction DoWorkAsync(Param value);
+IASyncAction DoWorkAsync(Param value); // not const&
 ```
+
+При передаче по значению требуется, чтобы аргумент было несложно перемещать или копировать, что характерно для смарт-указателя.
 
 Кроме того, не рекомендуется использовать передачу по значению const (если вы не собираетесь переместить значение). Это никак не влияет на исходное значение, копию которого вы создаете, но явно сообщает намерение и помогает в случае неумышленного изменения копии.
 
@@ -245,6 +249,38 @@ IASyncAction DoWorkAsync(Param const value);
 ```
 
 С дополнительными сведениями можно также ознакомиться в разделе [Стандартные массивы и векторы](std-cpp-data-types.md#standard-arrays-and-vectors), в котором описываются методы передачи стандартного вектора в асинхронный вызываемый элемент.
+
+Если нельзя изменить подпись сопрограммы, но можно изменить реализацию, создайте локальную копию перед первым экземпляром `co_await`.
+
+```cppwinrt
+IASyncAction DoWorkAsync(Param const& value)
+{
+    auto safe_value = value;
+    // It's ok to access both safe_value and value here.
+
+    co_await DoOtherWorkAsync();
+
+    // It's ok to access only safe_value here (not value).
+}
+```
+
+Если `Param` сложно копировать, извлеките только те элементы, которые необходимы перед первым экземпляром `co_await`.
+
+```cppwinrt
+IASyncAction DoWorkAsync(Param const& value)
+{
+    auto safe_data = value.data;
+    // It's ok to access safe_data, value.data, and value here.
+
+    co_await DoOtherWorkAsync();
+
+    // It's ok to access only safe_data here (not value.data, nor value).
+}
+```
+
+## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>Безопасный доступ к указателю *this* в сопрограмме членов класса
+
+См. статью [Сильные и слабые ссылки в C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine).
 
 ## <a name="offloading-work-onto-the-windows-thread-pool"></a>Передача работы в пул потоков Windows
 
@@ -723,6 +759,23 @@ int main()
     // Do other work here.
 }
 ```
+
+**winrt::fire_and_forget** также полезно использовать в качестве возвращаемого типа обработчика событий, когда нужно выполнить асинхронную операцию. См. следующий пример, а также статью [Сильные и слабые ссылки в C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine).
+
+```cppwinrt
+winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, MediaBindingEventArgs args)
+{
+    auto lifetime{ get_strong() }; // Prevent *this* from prematurely being destructed.
+    auto ensure_completion{ unique_deferral(args.GetDeferral()) }; // Take a deferral, and ensure that we complete it.
+
+    auto file{ co_await StorageFile::GetFileFromApplicationUriAsync(Uri(L"ms-appx:///video_file.mp4")) };
+    args.SetStorageFile(file);
+
+    // The destructor of unique_deferral completes the deferral here.
+}
+```
+
+Первому аргументу (*sender*) имя не задано, так как он не используется. Поэтому мы можем оставить его в качестве ссылки. Но обратите внимание, что *args* передается по значению. См. раздел [Передача параметров](#parameter-passing) выше.
 
 ## <a name="important-apis"></a>Важные API
 * [Класс concurrency::task](/cpp/parallel/concrt/reference/task-class)

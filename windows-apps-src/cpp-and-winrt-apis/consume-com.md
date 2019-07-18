@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, COM, component, class, interface
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c36c7b896b4d08240f08e85570110b45e0a9f3c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: bb28ec7afa22f81033bfce2aff530119e53a4b91
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66421260"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660151"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Использование компонентов COM с помощью C++/WinRT
 
@@ -30,7 +30,7 @@ ms.locfileid: "66421260"
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-Приведенный выше код показывает, как объявить неинициализированный интеллектуальный указатель на COM-интерфейс [**ID2D1Factory1**](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1factory1). Интеллектуальный указатель не инициализирован, поэтому он еще не указывает на интерфейс **ID2D1Factory1**, принадлежащий какому-либо реальному объекту (он вообще не указывает на интерфейс). Но у него есть такая возможность. Кроме того, с помощью счетчика ссылок COM он может управлять временем жизни объекта-владельца интерфейса, на который он указывает. Указатель можно использовать как средство для вызова функций в этом интерфейсе.
+Приведенный выше код показывает, как объявить неинициализированный интеллектуальный указатель на COM-интерфейс [**ID2D1Factory1**](/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1factory1). Интеллектуальный указатель не инициализирован, поэтому он еще не указывает на интерфейс **ID2D1Factory1**, принадлежащий какому-либо реальному объекту (он вообще не указывает на интерфейс). Но у него есть такая возможность. Кроме того, с помощью счетчика ссылок COM он может управлять временем жизни объекта-владельца интерфейса, на который он указывает. Указатель можно использовать как средство для вызова функций в этом интерфейсе.
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>Функции COM, которые возвращают указатель интерфейса с типом **void**
 
@@ -72,7 +72,7 @@ D2D1CreateFactory(
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a>Функции COM, которые возвращают указатель интерфейса с типом **IUnknown**
 
-Функция [**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) возвращает указатель интерфейса фабрики DirectWrite с помощью последнего параметра с типом [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown). Для такой функции используйте [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function), но повторно интерпретируйте приведение к типу **IUnknown**.
+Функция [**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) возвращает указатель интерфейса фабрики DirectWrite с помощью последнего параметра с типом [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown). Для такой функции используйте [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function), но повторно интерпретируйте приведение к типу **IUnknown**.
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -171,7 +171,7 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 Если вы хотите создать и запустить этот пример исходного кода, сначала в Visual Studio создайте **приложение основных компонентов (C++/WinRT)** . `Direct2D` — подходящее имя для проекта, но вы можете назвать его как угодно. Откройте файл `App.cpp`, удалите все его содержимое и вставьте список ниже.
 
-В приведенном ниже коде используется функция [winrt::com_ptr::capture](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) там, где это возможно.
+В приведенном ниже коде используется функция [winrt::com_ptr::capture](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) там, где это возможно. `WINRT_ASSERT` — это макроопределение, которое передается в [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros).
 
 ```cppwinrt
 #include "pch.h"
@@ -488,6 +488,55 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 Как видите, C++/WinRT обеспечивает поддержку как реализации, так и вызова интерфейсов COM. Для таких типов COM, как BSTR и VARIANT, мы рекомендуем использовать оболочки, предоставляемые [библиотеками реализации Windows (WIL)](https://github.com/Microsoft/wil), например **wil::unique_bstr** и **wil::unique_variant** (с управлением временем жизни ресурсов).
 
 [WIL](https://github.com/Microsoft/wil) заменяет платформы, такие как библиотека шаблонных классов ATL, и поддержку COM компиляторами Visual C++. Мы рекомендуем это вместо написания собственных оболочек или использования типов COM, таких как BSTR и VARIANT, в необработанном виде (вместе с соответствующими API-интерфейсами).
+
+## <a name="avoiding-namespace-collisions"></a>Предотвращение конфликтов пространств имен
+
+Произвольное использование директив using — распространенная практика в C++/WinRT,&mdash;как показано в коде, приведенном в этомразделе&mdash;. В некоторых случаях это может привести к проблеме, при которой конфликтующие имена импортируются в глобальное пространство имен. Рассмотрим пример.
+
+C++/ WinRT содержит тип с именем [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). При этом COM определяет тип с именем [ **::IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown). Поэтому в проекте C++/WinRT с применением заголовков COM рекомендуем использовать следующий код:
+
+```cppwinrt
+using namespace winrt::Windows::Foundation;
+...
+void MyFunction(IUnknown*); // error C2872:  'IUnknown': ambiguous symbol
+```
+
+Неизвестное имя *IUnknown* вызывает конфликт в глобальном пространстве имен из-за ошибки компилятора при использовании *неоднозначного символа*. Вместо этого вы можете изолировать версию имени C++/WinRT в пространстве имен **winrt**, как показано ниже.
+
+```cppwinrt
+namespace winrt
+{
+    using namespace Windows::Foundation;
+}
+...
+void MyFunctionA(IUnknown*); // Ok.
+void MyFunctionB(winrt::IUnknown const&); // Ok.
+```
+
+Или, если вы сможете использовать `using namespace winrt`, если это удобнее. Для этого достаточно определить глобальную версию *IUnknown*, как показано ниже.
+
+```cppwinrt
+using namespace winrt;
+namespace winrt
+{
+    using namespace Windows::Foundation;
+}
+...
+void MyFunctionA(::IUnknown*); // Ok.
+void MyFunctionB(winrt::IUnknown const&); // Ok.
+```
+
+Это работает с любым пространством имен C++/WinRT.
+
+```cppwinrt
+namespace winrt
+{
+    using namespace Windows::Storage;
+    using namespace Windows::System;
+}
+```
+
+Затем можно ссылаться на **winrt::Windows::Storage::StorageFile**, например, как просто на **winrt::StorageFile**.
 
 ## <a name="important-apis"></a>Важные API
 * [Функция winrt::check_hresult](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)

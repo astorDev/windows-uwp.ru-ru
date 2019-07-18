@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 914cf884b97d14af523cc61b0fcce719104783ba
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 01ff6fb443550287330d6fe503c3d49d81e2142c
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721685"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717643"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Ответы на часто задаваемые вопросы о C++/WinRT
 Ответы на часто возникающие вопросы о разработке и использовании интерфейсов API среды выполнения Windows с помощью [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -54,6 +54,24 @@ ms.locfileid: "66721685"
 ```
 
 Важно разрешить любые возможные ошибки компоновщика, привязав **WindowsApp.lib** вместо альтернативной библиотеки статических ссылок, иначе ваше приложение не пройдет тестирование с помощью [комплекта сертификации приложений для Windows](../debug-test-perf/windows-app-certification-kit.md), используемого Visual Studio и Microsoft Store для проверки отправок (это означает, что ваше приложение не сможет успешно попасть в Microsoft Store).
+
+## <a name="why-am-i-getting-a-class-not-registered-exception"></a>Почему возникает исключение "Класс не зарегистрирован"?
+
+Может возникнуть ситуация, когда при создании класса среды выполнения или попытке получить доступ к статическому члену отображается исключение в среде выполнения со значением HRESULT для REGDB_E_CLASSNOTREGISTERED.
+
+Одной из причин является сбой при загрузке компонента среды выполнения Windows. Убедитесь, что файл метаданных среды выполнения Windows для компонента (`.winmd`) имеет то же имя, что и двоичный файл компонента ( `.dll`), которое также совпадает с именем проекта и именем корневого пространства имен. Кроме того, убедитесь, что метаданные среды выполнения Windows и двоичный файл были правильно скопированы в процессе сборки в папку `Appx` использующего их приложения. Кроме того, убедитесь, что файл приложения `AppxManifest.xml` (также расположенный в папке `Appx`) содержит элемент **&lt;InProcessServer&gt;** , правильно объявляющий активируемый класс и имя двоичного файла.
+
+### <a name="uniform-construction"></a>Универсальное создание
+
+Эта ошибка может возникнуть, если вы пытаетесь создать локально реализуемый экземпляр класса среды выполнения через любые конструкторы типа проекции (а не через конструктор **std::nullptr_t**). Чтобы сделать это, вам нужна функция C++/WinRT 2.0, которая часто называется универсальным созданием. Способ создания локально реализуемого экземпляра среды выполнения, который *не* требует универсального создания, см. в статье [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md).
+
+Если вы *хотите* использовать универсальное создание для новых проектов, вам ничего не нужно делать: оно включено по умолчанию. Для существующего проекта вам нужно включить универсальное создание, настроив средство `cppwinrt.exe`. В Visual Studio задайте для свойства проекта **Общие свойства** > **C++/WinRT** > **Оптимизировано значение** *Да*. Это действие аналогично добавлению `<CppWinRTOptimized>true</CppWinRTOptimized>` в файл проекта. Кроме того, оно аналогично добавлению параметра `-opt[imize]` при вызове `cppwinrt.exe` из командной строки.
+
+При сборке проекта *без* такой настройки ваша итоговая проекция C++/WinRT вызывает [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory) для доступа к конструкторам и статическим членам класса среды выполнения. При этом требуется, чтобы классы были зарегистрированы, а ваш модуль реализовывал точку входа [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)).
+
+При сборке проекта *с* параметром `-opt[imize]` ваш проект будет игнорировать **RoGetActivationFactory** для классов в компоненте. Это позволит вам создавать их (без регистрации) всеми теми же способами, которые доступны вам за пределами компонента.
+
+Для использования функции универсального создания вам также необходимо изменить файл `.cpp` каждой реализации на `#include <Sub/Namespace/ClassName.g.cpp>` после включения файла заголовка реализации.
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>Следует ли реализовывать [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) и если да, то каким образом?
 Если у вас есть класс среды выполнения, который освобождает ресурсы в своем деструкторе, и этот класс среды предназначен для использования извне его единицы компиляции (это компонент среды выполнения Windows, предназначенный для общего использования клиентскими приложениями среды выполнения Windows), рекомендуется также реализовать **IClosable** для поддержки применения вашего класса среды выполнения языками, в которых отсутствует детерминированная финализация. Убедитесь, что ресурсы освобождаются при вызове деструктора, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) или их обоих. **IClosable::Close** можно вызывать произвольное число раз.
@@ -154,6 +172,25 @@ a.f();
 
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>Как превратить строку в какой-либо тип, например для навигации?
 В конце [примера кода представления навигации](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (в основном на C#) приведен фрагмент кода C++/WinRT, показывающий, как это можно сделать.
+
+## <a name="how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try"></a>Как устранить неоднозначности с GetCurrentTime и (или) TRY?
+
+Файл заголовка `winrt/Windows.UI.Xaml.Media.Animation.h` объявляет метод с именем **GetCurrentTime**, а `windows.h` при этом определяет (через `winbase.h`) макрос с именем **GetCurrentTime**. При возникновении конфликта компилятор C++ выдает сообщение *Eror C4002: Too many arguments for function-like macro invocation GetCurrentTime* (Ошибка C4002: слишком много аргументов для вызова подобного функции макроса GetCurrentTime).
+
+Аналогичным образом `winrt/Windows.Globalization.h` объявляет метод с именем **TRY**, а `afx.h` определяет макрос с именем **GetCurrentTime**. При возникновении конфликта компилятор C++ выдает сообщение *Error C2334: unexpected token(s) preceding {; skipping apparent function body* (Ошибка C2334: непредвиденные лексемы перед {; пропуск вероятного тела функции).
+
+Чтобы исправить одну или обе проблемы, вы можете использовать следующий код.
+
+```cppwinrt
+#pragma push_macro("GetCurrentTime")
+#pragma push_macro("TRY")
+#undef GetCurrentTime
+#undef TRY
+#include <winrt/include_your_cppwinrt_headers_here.h>
+#include <winrt/include_your_cppwinrt_headers_here.h>
+#pragma pop_macro("TRY")
+#pragma pop_macro("GetCurrentTime")
+```
 
 > [!NOTE]
 > Если в этой статье вы не нашли ответы на свои вопросы, можете перейти к сообществу разработчиков[Visual Studio C++](https://developercommunity.visualstudio.com/spaces/62/index.html) или воспользоваться тегом [`c++-winrt` на сайте Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

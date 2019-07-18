@@ -5,22 +5,22 @@ keywords: XAML, UWP, Getting Started
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 804f1994e187d3b09ed4dcb2186105cf615f5de0
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361224"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820503"
 ---
 # <a name="tutorial-create-custom-styles"></a>Руководство: Создание пользовательских стилей
 
 В этом учебнике показано, как настроить пользовательский интерфейс приложения XAML. Внимание! В этом учебнике может присутствовать единорог. А может и не присутствовать. (Он будет!)  
 
 ## <a name="prerequisites"></a>Предварительные условия
-* [Visual Studio 2017 и пакет SDK для Windows 10 (10.0.15063.468 или более поздней версии)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019 и пакет SDK для Windows 10 (10.0.15063.468 или более поздней версии)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>Часть 0. Получение кода
-Это практическое занятие начинается в репозитории примера PhotoLab в [папке xaml-basics-starting-points/style/](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). После клонирования или скачивания репозитория проект можно изменить. Для этого откройте файл PhotoLab.sln в Visual Studio 2017.
+Это практическое занятие начинается в репозитории примера PhotoLab в [папке xaml-basics-starting-points/style/](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). После клонирования или скачивания репозитория проект можно изменить. Для этого откройте файл PhotoLab.sln в Visual Studio 2019.
 
 В приложении PhotoLab есть две основные страницы:
 
@@ -54,7 +54,7 @@ ms.locfileid: "66361224"
 
 2. На панели обозревателя решений дважды щелкните файл **DetailPage.xaml**, чтобы открыть его. 
 
-    ![Файл DetailPage.xaml в обозревателе решений Visual Studio 2017.](../basics/images/xaml-basics/style-detail-page-explorer.png)
+    ![Файл DetailPage.xaml в обозревателе решений Visual Studio 2019.](../basics/images/xaml-basics/style-detail-page-explorer.png)
 
 3. Используйте элемент многоугольника, чтобы создать фоновую фигуру для ползунка экспозиции.
 
@@ -63,7 +63,7 @@ ms.locfileid: "66361224"
     <!-- TODO reduce size -->
     ![Единорог](../basics/images/xaml-basics/unicorn.png)
     
-    > **Узнать больше** В статье [Рисование фигур](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) содержится вся необходимая информация о фигурах XAML. 
+    > **Узнать больше** В статье [Рисование фигур](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/shapes) содержится вся необходимая информация о фигурах XAML. 
     
     Нам нужно создать мини-приложение в форме треугольника, чтобы оно напоминало элемент управления громкостью в стереопроигрывателе.
     
