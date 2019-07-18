@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 210431928c5dd7c5d5dfb99855322f1560e91dd7
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8f8d4172389fc2778fda4e335a29b3bae7d90fd0
+ms.sourcegitcommit: 5fcd3a595efd3686009505602c34e10163fd0aa5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363233"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67558762"
 ---
 # <a name="buttons"></a>Кнопки
 
@@ -26,37 +26,39 @@ ms.locfileid: "66363233"
 
 ![Примеры кнопок](images/controls/button.png)
 
-Платформа XAML предоставляет стандартный элемент управления "кнопка", а также несколько специальных таких элементов.
+[Расширяемый язык разметки для приложений XAML](../../xaml-platform/xaml-overview.md) предоставляет стандартный и несколько специализированных элементов управления "Кнопка".
 
 Элемент управления | Описание
 ------- | -----------
-[Button](/uwp/api/windows.ui.xaml.controls.button) | Инициирует немедленное действие. Может использоваться с событием Click кнопки или привязкой команд.
-[RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Кнопка, которая в нажатом состоянии постоянно вызывает событие Click.
-[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Стилизованная под гиперссылку кнопка, которая используется для навигации. Подробнее см. на странице [Гиперссылки](hyperlinks.md).
+[Button](/uwp/api/windows.ui.xaml.controls.button) | Кнопка, инициирующая немедленное действие. Может использоваться в связке со свойством [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) или событием [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command).
+[RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Кнопка, которая в нажатом состоянии постоянно вызывает событие [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click).
+[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Стилизованная под гиперссылку кнопка, которая используется для навигации. См. подробнее о [гиперссылках](hyperlinks.md).
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Кнопка со значком шеврона, которая открывает прикрепленное всплывающее меню.
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | Двухсторонняя кнопка. Одна сторона инициирует действие, а другая открывает меню.
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | Двухсторонняя кнопка переключения. Одна сторона выполняет функцию переключателя, а другая сторона открывает меню.
 
 | **Получение библиотеки пользовательского интерфейса Windows** |
 | - |
-| DropDownButton, SplitButton и ToggleSplitButton являются компонентами библиотеки пользовательского интерфейса Windows — пакета NuGet, в который входят новые элементы управления, а также компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в [обзорной статье о библиотеке пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| **DropDownButton**, **SplitButton** и **ToggleSplitButton** являются компонентами библиотеки пользовательского интерфейса Windows — пакета NuGet, в который входят новые элементы управления, а также компоненты пользовательского интерфейса для приложений UWP. Дополнительные сведения, включая инструкции по установке, см. в описании [библиотеки пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 | **API платформы** | **API библиотеки пользовательского интерфейса Windows** |
 | - | - |
-| [Событие Сlick](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [свойство Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [Класс DropDownButton](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [класс SplitButton](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [класс ToggleSplitButton](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+| [Событие Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)<br/> [Свойство Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [Класс DropDownButton](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)<br/> [Класс SplitButton](/uwp/api/microsoft.ui.xaml.controls.splitbutton)<br/> [Класс ToggleSplitButton](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
-**Кнопка** позволяет пользователю инициировать немедленное действие, например отправить форму.
+Элемент управления **Button** позволяет пользователю инициировать немедленное действие, например отправку формы.
 
-Не используйте кнопку для перехода на другую страницу. Вместо нее используйте кнопку [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton). Подробнее см. на странице [Гиперссылки](hyperlinks.md).
-> Исключение: Для навигации по мастеру используйте кнопки "Назад" и "Вперед". Для других видов навигации на уровень выше или ниже используйте [кнопку "Назад"](../basics/navigation-history-and-backwards-navigation.md).
+Не используйте элемент управления **Button** для перехода на другую страницу. Вместо него используйте элемент управления [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton). См. подробнее о [гиперссылках](hyperlinks.md).
 
-Кнопка **RepeatButton** позволяет пользователю повторно вызвать действие. Например, с помощью этой кнопки можно увеличить или уменьшать значение в счетчике.
+> [!IMPORTANT]
+> Для навигации по мастеру используйте кнопки *Назад* и *Далее*. Для других видов навигации на уровень выше или ниже используйте [кнопку "Назад"](../basics/navigation-history-and-backwards-navigation.md).
 
-Кнопку **DropDownButton** следует использовать при наличии всплывающего меню, содержащего дополнительные варианты. Значок шеврона по умолчанию является визуальным индикатором наличия у кнопки всплывающего меню.
+Элемент управления **RepeatButton** позволяет пользователю повторно активировать действие. Например, с помощью **RepeatButton** можно увеличивать или уменьшать значение в счетчике.
 
-Кнопка **SplitButton** позволяет пользователю инициировать немедленное действие или по отдельности выбирать дополнительные варианты.
+Элемент управления **DropDownButton** можно использовать, если у кнопки есть всплывающее меню с дополнительными вариантами. Значок шеврона по умолчанию является визуальным индикатором наличия у кнопки всплывающего меню.
+
+Элемент управления **SplitButton** позволяет пользователю инициировать немедленное действие или по отдельности выбирать дополнительные варианты.
 
 ## <a name="examples"></a>Примеры
 
@@ -65,16 +67,16 @@ ms.locfileid: "66363233"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">коллекции элементов управления XAML</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/Button">открыть приложение и увидеть кнопку в действии</a>.</p>
+    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/Button">открыть приложение и увидеть кнопку в действии</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-В этом примере используются две кнопки, "Разрешить" и "Блокировать", в диалоговом окне, которое запрашивает доступ к расположению.
+В этом примере используются две кнопки, **Разрешить** и **Блокировать**, в диалоговом окне, которое запрашивает доступ к расположению.
 
 ![Пример кнопок, используемых в диалоговом окне](images/dialogs/dialog_RS2_two_button.png)
 
@@ -99,7 +101,7 @@ subscribeButton.Click += SubscribeButton_Click;
 stackPanel1.Children.Add(subscribeButton);
 ```
 
-Обработайте событие "Click".
+Обработайте событие [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click).
 
 ```csharp
 private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
@@ -120,23 +122,28 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 ### <a name="button-interaction"></a>Взаимодействие с кнопкой
 
-Если коснуться кнопки пальцем или стилусом либо навести на нее указатель и нажать левую кнопку мыши, кнопка вызывает событие [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). Если для кнопки предусмотрен фокус клавиатуры, при нажатии клавиши ВВОД или ПРОБЕЛ также происходит вызов события "Click".
+Если коснуться элемента управления **Button** пальцем или стилусом либо навести на нее указатель и нажать левую кнопку мыши, кнопка вызывает событие [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). Если кнопка находится в фокусе клавиатуры, при нажатии клавиши ВВОД или ПРОБЕЛ также происходит вызов события **Click**.
 
-Как правило, нельзя обрабатывать низкоуровневые события [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) с помощью элемента Button, так как для него предусмотрено поведение Click. Дополнительные сведения см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
+Обрабатывать низкоуровневые события [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) с помощью объекта **Button** обычно нельзя, поскольку для него предусмотрено поведение **Click**. Дополнительные сведения см. в разделе [Общие сведения о событиях и перенаправленных событиях](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
-Можно выбирать порядок вызова события Click путем изменения свойства [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode). Значением ClickMode по умолчанию является **Release**, однако для режима ClickMode кнопки можно задать значения **Hover** или **Press**. Если для параметра ClickMode выбрано значение **Hover**, событие "Click" невозможно вызвать нажатием клавиши или касанием.
+Порядок вызова кнопкой события **Click** можно менять путем изменения свойства [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode). Значением по умолчанию для **ClickMode** является **Release**, но для него также можно задать значения **Hover** или **Press**. Если для **ClickMode** задано значение **Hover**, событие **Click** невозможно вызвать нажатием клавиши или касанием.
 
 
 ### <a name="button-content"></a>Содержимое кнопки
 
-Кнопка представляет собой элемент [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl). Ее свойство содержимого XAML — [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content), благодаря чему возможно использование подобного синтаксиса: `<Button>A button's content</Button>`. В качестве содержимого кнопки можно задать любой объект. Если содержимым является класс [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), он обрабатывается для просмотра в кнопке. Если содержимым является другой тип объекта, в кнопке отображается его строковое представление.
+**Button** является элементом управления содержимым класса [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl). Ее свойство содержимого XAML — [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content), благодаря чему возможно использование подобного синтаксиса: `<Button>A button's content</Button>`. В качестве содержимого кнопки можно задать любой объект. Если содержимым является объект [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), он отображается на кнопке. Если содержимым является другой тип объекта, в кнопке отображается его строковое представление.
 
-Содержимое кнопки обычно представляет собой текст. Ниже приведены рекомендации по дизайну кнопок с текстовым содержимым:
--   Используйте краткий, конкретный, не требующий разъяснений текст, который четко описывает действие, выполняемое кнопкой. Обычно текст надписи на кнопке состоит из одного слова — как правило, глагола.
--   Используйте шрифт, заданный по умолчанию, если в соответствии со стилем торговой марки не требуется использовать другой.
--   При размещении короткого текста избегайте использования узких кнопок. Минимальная ширина кнопки должна составлять 120 пикселей.
+Содержимое кнопки обычно представляет собой текст. При создании этого текста следуйте таким рекомендациям:
+
+-  Используйте краткий, конкретный, не требующий разъяснений текст, который четко описывает действие, выполняемое кнопкой. Обычно текст надписи на кнопке состоит из одного слова, как правило, глагола.
+
+-  Используйте шрифт, заданный по умолчанию, если не требуется использовать другой.
+
+-  При размещении короткого текста избегайте использования узких кнопок. Минимальная ширина кнопки должна составлять 120 пикселей.
+
 - При размещении длинного текста избегайте использования широких кнопок. Длина текста должна составлять не более 26 символов.
--   Если текст надписи на кнопке динамический (то есть он [локализуемый](../globalizing/globalizing-portal.md)), продумайте, каким образом можно изменять размер кнопки и как это повлияет на элементы управления, которые ее окружают.
+
+-  Если текст надписи на кнопке динамический ([локализуемый](../globalizing/globalizing-portal.md)), продумайте, каким образом можно изменять размер кнопки и как это отразится на элементах управления рядом с ней.
 
 <table>
 <tr>
@@ -153,7 +160,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 </tr>
 </table>
 
-Можно также настроить визуальные элементы, составляющие внешний вид кнопки. Например, можно заменить текст значком или использовать значок и текст.
+Можно также настроить визуальные элементы, составляющие внешний вид кнопки. Например, можно заменить текст значком или использовать значок вместе с текстом.
 
 В данном случае класс **StackPanel**, содержащий изображение и текст, задан в качестве содержимого кнопки.
 
@@ -175,9 +182,9 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-repeat-button"></a>Создание кнопки повтора
 
-[RepeatButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) — это кнопка, при нажатии которой события [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) повторяются до тех пор, пока она не будет отпущена. Задайте свойство [Delay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.delay), чтобы указать время задержки после нажатия кнопки, по прошествии которого начнется повторение действия щелчка. Задайте свойство [Interval](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.interval), чтобы указать время между повторениями действия щелчка. Время для обоих свойств указывается в миллисекундах.
+Элемент управления [RepeatButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) — это кнопка, у которой события [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) повторяются до тех пор, пока она нажата. Задайте свойство [Delay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.delay), чтобы указать время задержки для элемента управления **RepeatButton**, по прошествии которого начнется повторение действия щелчка. Задайте свойство [Interval](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.interval), чтобы указать время между повторениями действия щелчка. Время для обоих свойств указывается в миллисекундах.
 
-В следующем примере показаны два элемента управления RepeatButton, чьи соответствующие события "Click" используются для увеличения и уменьшения значения, приведенного в блоке текста.
+В следующем примере показаны два элемента управления **RepeatButton**, у которых события **Click** увеличивают и уменьшают значение в блоке текста.
 
 ```xaml
 <StackPanel>
@@ -207,18 +214,19 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-drop-down-button"></a>Создание раскрывающейся кнопки
 
-> Для создания раскрывающейся кнопки (DropDownButton) требуется Windows 10, версия 1809 ([пакет SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздняя, либо [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> Для создания раскрывающейся кнопки **DropDownButton** требуется [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/) или Windows 10 версии 1809 (пакет SDK 17763) или последующей. Последнюю версию пакета SDK можно скачать [здесь](https://developer.microsoft.com/windows/downloads/windows-10-sdk), а его предыдущие версии — [здесь](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
 
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) — это кнопка, использующая шеврон в качестве визуального индикатора прикрепленного всплывающего меню, которое содержит дополнительные варианты. Она действует как и стандартная кнопка со всплывающим меню, однако ее внешний вид отличается.
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) — это кнопка, использующая шеврон в качестве визуального индикатора прикрепленного всплывающего меню, которое содержит дополнительные варианты. Она действует как и стандартный элемент управления**Button** со всплывающим меню, но ее внешний вид отличается.
 
-Раскрывающаяся кнопка наследует событие Click, но обычно оно не используется. Вместо этого вы используете свойство для присоединения всплывающего меню и вызова действия с помощью команд в этом меню. Всплывающее меню открывается автоматически при нажатии кнопки. Не забудьте задать для всплывающего меню свойство [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement), чтобы разместить меню по отношению к кнопке нужным образом. Алгоритм размещения по умолчанию может не обеспечить предполагаемое размещение во всех ситуациях.
+Раскрывающаяся кнопка наследует событие **Click**, но обычно оно не используется. Вместо этого используется свойство **Flyout** для присоединения всплывающего меню и вызова действий с помощью команд в этом меню. Всплывающее меню открывается автоматически при нажатии кнопки.
+Не забудьте задать для всплывающего меню свойство [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement), чтобы разместить меню по отношению к кнопке нужным образом. Алгоритм размещения по умолчанию может не обеспечить предполагаемое размещение во всех ситуациях.
 
 > [!TIP]
 > Дополнительные сведения о всплывающих меню см. в статье [Меню и контекстные меню](menus.md).
 
 ### <a name="example---drop-down-button"></a>Пример. Раскрывающаяся кнопка
 
-В приведенном здесь примере показано, как создать раскрывающуюся кнопку со всплывающим меню, содержащем команды для выравнивания абзаца в элементе RichEditBox. (Дополнительные сведения и код см. в статье [Блок форматируемого текста](rich-edit-box.md).)
+В приведенном здесь примере показано, как создать раскрывающуюся кнопку со всплывающим меню, которое содержит команды для выравнивания абзаца в элементе управления **RichEditBox**. (Дополнительные сведения и код см. в статье [Блок форматируемого текста](rich-edit-box.md).)
 
 ![Раскрывающаяся кнопка с командами выравнивания](images/drop-down-button-align.png)
 
@@ -266,24 +274,26 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-split-button"></a>Создание разворачивающейся кнопки
 
-> Для создания разворачивающейся кнопки требуется Windows 10, версия 1809 ([пакет SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздняя, либо [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+ > [!IMPORTANT]
+ > Для создания кнопки **SplitButton** требуется [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/) или Windows 10, версия 1809 (пакет SDK 17763) или выше. Последнюю версию пакета SDK можно скачать [здесь](https://developer.microsoft.com/windows/downloads/windows-10-sdk), а его предыдущие версии — [здесь](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
 
-Кнопка [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) состоит из двух частей, которые можно вызывать по отдельности. Одна часть представляет собой стандартную кнопку, которая вызывает немедленное действие. Другая часть позволяет вызывать всплывающий элемент с дополнительными параметрами, которые пользователь может выбрать.
+Элемент управления [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) состоит из двух частей, которые можно вызывать по отдельности. Одна часть представляет собой стандартную кнопку, которая вызывает немедленное действие. Другая часть позволяет вызывать всплывающий элемент с дополнительными параметрами, которые пользователь может выбрать.
 
 > [!NOTE]
 > При вызове действия с помощью касания разворачивающаяся кнопка выполняет функцию раскрывающейся кнопки. Обе стороны кнопки вызывают всплывающее меню. При использовании других методов ввода пользователь может вызвать каждый элемент кнопки отдельно.
 
 Стандартное поведение разворачивающейся кнопки:
 
-- При нажатии одной из сторон кнопки должно обрабатываться событие Click для инициирования варианта, выбранного в раскрывающемся меню.
-- При открытии раскрывающегося списка должен обрабатываться вызов элементов в нем для изменения выбранного варианта, а затем его вызова. Вызов элемента во всплывающем меню играет важную роль, так как событие Click не будет запускаться при касании.
+- При нажатии одной из сторон кнопки обрабатывается событие **Click** для инициирования варианта, выбранного в раскрывающемся меню.
+
+- При открытии раскрывающегося списка должен обрабатываться вызов элементов в нем для изменения выбранного варианта, а затем его вызова. Вызов элемента во всплывающем меню играет важную роль, так как событие **Click** не будет запускаться при касании.
 
 > [!TIP]
-> Существует много способов расположения элементов в раскрывающемся списке и обработки их вызова. Если вы используете ListView или GridView, можно обработать событие SelectionChanged. После этого задайте для параметра [SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus) значение **false**. Эта настройка позволит пользователям переходить по вариантам с помощью клавиатуры без вызова варианта при каждом внесении изменений.
+> Существует много способов расположения элементов в раскрывающемся списке и обработки их вызова. Если вы используете **ListView** или **GridView**, можно обработать событие **SelectionChanged**. После этого задайте для параметра [SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus) значение **false**. Эта настройка позволит пользователям переходить по вариантам с помощью клавиатуры без вызова варианта при каждом внесении изменений.
 
 ### <a name="example---split-button"></a>Пример. Разворачивающаяся кнопка
 
-В приведенном здесь примере показано, как создать разворачивающуюся кнопку для изменения цвета переднего плана выбранного текста в элементе RichEditBox. (Дополнительные сведения и код см. в статье [Блок форматируемого текста](rich-edit-box.md).)
+В приведенном здесь примере показано, как создать разворачивающуюся кнопку для изменения цвета переднего плана выбранного текста в элементе управления **RichEditBox**. (Дополнительные сведения и код см. в статье [Блок форматируемого текста](rich-edit-box.md).)
 Всплывающее меню разворачивающейся кнопки по умолчанию использует для свойства [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) значение [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode). Вы не можете переопределить это значение.
 
 ![Разворачивающаяся кнопка для выбора цвета переднего плана](images/split-button-rtb.png)
@@ -296,7 +306,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
         <Flyout x:Name="BrushFlyout">
             <!-- Set SingleSelectionFollowsFocus="False"
                  so that keyboard navigation works correctly. -->
-            <GridView ItemsSource="{x:Bind ColorOptions}" 
+            <GridView ItemsSource="{x:Bind ColorOptions}"
                       SelectionChanged="BrushSelectionChanged"
                       SingleSelectionFollowsFocus="False"
                       SelectedIndex="0" Padding="0">
@@ -374,27 +384,30 @@ public sealed partial class MainPage : Page
 
 ## <a name="create-a-toggle-split-button"></a>Создание разворачивающейся кнопки с переключателем
 
-> Для создания ToggleSplitButton требуется Windows 10, версия 1809 ([пакет SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) или более поздняя, либо [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> [!NOTE]
+> Для создания разворачивающейся кнопки с переключателем **SplitButton** требуется [библиотека пользовательского интерфейса Windows](https://docs.microsoft.com/uwp/toolkits/winui/) или Windows 10, версия 1809 (пакет SDK 17763) или выше. Последнюю версию пакета SDK можно скачать [здесь](https://developer.microsoft.com/windows/downloads/windows-10-sdk), а его предыдущие версии — [здесь](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
 
-Кнопка [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) состоит из двух частей, которые можно вызывать по отдельности. Одна часть выполняет функцию переключателя. Другая часть позволяет вызывать всплывающий элемент с дополнительными параметрами, которые пользователь может выбрать.
+Элемент управления [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) состоит из двух частей, которые можно вызывать по отдельности. Одна часть выполняет функцию переключателя. Другая часть позволяет вызывать всплывающий элемент с дополнительными параметрами, которые пользователь может выбрать.
 
 Разворачивающаяся кнопка с переключателем обычно используется для активации или деактивации компонента, если компонент содержит множество возможностей, из которых пользователь может выбирать. Например, в редакторе документов она может использоваться для включения или выключения списков, а раскрывающийся список — для выбора стиля списка.
 
 > [!NOTE]
 > При вызове с помощью касания разворачивающаяся кнопка с переключателем работает аналогично раскрывающейся кнопке. При использовании других способов ввода пользователь может переключать и вызывать два элемента кнопки по отдельности. При касании оба элемента кнопки вызывают всплывающее меню. Следовательно, необходимо добавить в содержимое всплывающего меню вариант для включения и выключения кнопки.
 
+
 ### <a name="differences-with-togglebutton"></a>Отличия от кнопки переключения
 
-В отличие от [кнопки переключения](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) (ToggleButton), у разворачивающейся кнопки с переключателем (ToggleSplitButton) нет неопределенного состояния. По этой причине вы должны учитывать следующие различия:
+В отличие от [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) у **ToggleSplitButton** нет неопределенного состояния. По этой причине вы должны учитывать следующие различия:
 
-- Кнопка ToggleSplitButton не обладает свойством **IsThreeState** или событием **Indeterminate**.
-- Свойство [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) принимает **логическое значение** и не **допускает логическое значение NULL**.
-- ToggleSplitButton работает только с событием [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged). Она не поддерживает отдельные события **Checked** и **Unchecked**.
+- У **ToggleSplitButton** нет свойства **IsThreeState** или события **Indeterminate**.
+- Свойство [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) является логическим значением и не **допускает значение NULL<bool>** .
+- **ToggleSplitButton** использует только событие [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged) и не поддерживает отдельные события **Checked** и **Unchecked**.
+
 
 ### <a name="example---toggle-split-button"></a>Пример. Разворачивающаяся кнопка с переключателем
 
-В приведенном здесь примере показано, как разворачивающаяся кнопка с переключателем может использоваться для включения или выключения форматирования списка, а также изменения стиля списка в элементе RichEditBox. (Дополнительные сведения и код см. в статье [Блок форматируемого текста](rich-edit-box.md).)
-Всплывающее меню разворачивающейся кнопки с переключателем по умолчанию использует для свойства [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) значение [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode). Вы не можете переопределить это значение.
+В следующем примере показано, как разворачивающаяся кнопка с переключателем может использоваться для включения или выключения форматирования списка, а также изменения стиля списка в элементе управления **RichEditBox**. (Дополнительные сведения и код см. в статье [Блок форматируемого текста](rich-edit-box.md).)
+Всплывающее меню разворачивающейся кнопки с переключателем использует по умолчанию [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) для свойства [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement). Вы не можете переопределить это значение.
 
 ![Разворачивающаяся кнопка с переключателем для выбора стиля списка](images/toggle-split-button-open.png)
 
@@ -407,7 +420,7 @@ public sealed partial class MainPage : Page
     <ToggleSplitButton.Flyout>
         <Flyout>
             <ListView x:Name="ListStylesListView"
-                      SelectionChanged="ListStylesListView_SelectionChanged" 
+                      SelectionChanged="ListStylesListView_SelectionChanged"
                       SingleSelectionFollowsFocus="False">
                 <StackPanel Tag="bullet" Orientation="Horizontal">
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7C8;"/>
@@ -502,36 +515,43 @@ private void ApplyListStyle(string listStyle)
 ## <a name="recommendations"></a>Рекомендации
 
 - Сделайте так, чтобы назначение и состояние кнопки было понятно пользователю.
+
 - Если для одного решения предусмотрено несколько кнопок (например, в диалоговом окне подтверждения), расположите эти кнопки в таком порядке, где [Выполнить] и [Не выполнять] будут конкретными вариантами ответа на основную команду:
-    - ОК/[Выполнить]/Да
+  - ОК/[Выполнить]/Да
     - [Не выполнять]/Нет
     - Отмена
-- Сделайте одновременно доступными пользователю только одну или две кнопки, например "Принять" и "Отклонить". Если требуется предоставить пользователю больше действий, введите в интерфейс [флажки](checkbox.md) или [переключатели](radio-button.md), с помощью которых пользователь сможет выбрать нужные действия, а затем путем нажатия одной кнопки начать выполнение всех этих действий.
+
+- Сделайте одновременно доступными пользователю только одну или две кнопки, например **Принять** и **Отмена**. Если требуется предоставить пользователю больше действий, введите в интерфейс [флажки](checkbox.md) или [переключатели](radio-button.md), с помощью которых пользователь сможет выбрать нужные действия, а затем путем нажатия одной кнопки начать выполнение всех этих действий.
+
 - Для действия, которое требуется выполнить над множеством страниц вашего приложения, лучше использовать [нижнюю панель приложения](app-bars.md), а не повторять соответствующую кнопку на каждой странице.
 
-### <a name="recommended-single-button-layout"></a>Рекомендуется макет с одной кнопкой
+
+### <a name="recommended-single-button-layout"></a>Рекомендуемый макет с одной кнопкой
 
 Если в макете требуется только одна кнопка, она должна быть выровнена либо по левому, либо по правому краю на основе контекста ее контейнера.
 
-- В диалоговых окнах с одной кнопкой требуется выравнивание кнопки **по правому краю**. Если диалоговое окно содержит только одну кнопку, убедитесь, что она выполняет безопасное, обратимое действие. Если вы используете [ContentDialog](dialogs.md) и укажете одну кнопку, она будет автоматически выровнена по правому краю.
+  - В диалоговых окнах с одной кнопкой требуется выравнивание кнопки **по правому краю**. Если диалоговое окно содержит только одну кнопку, убедитесь, что она выполняет безопасное, обратимое действие. Если вы используете [ContentDialog](dialogs.md) и укажете одну кнопку, она будет автоматически выровнена по правому краю.
 
-![Кнопка в диалоговом окне](images/pushbutton_doc_dialog.png)
+    ![Кнопка в диалоговом окне](images/pushbutton_doc_dialog.png)
 
-- Если кнопка отображается внутри контейнера пользовательского интерфейса (например, во всплывающем уведомлении, всплывающем элементе меню или элементе представления списка), необходимо выровнять кнопку в контейнере **по правому краю**.
+  - Если кнопка отображается внутри контейнера пользовательского интерфейса (например, во всплывающем уведомлении, всплывающем элементе меню или элементе представления списка), необходимо выровнять кнопку в контейнере **по правому краю**.
 
-![Кнопка внутри контейнера](images/pushbutton_doc_container.png)
+    ![Кнопка внутри контейнера](images/pushbutton_doc_container.png)
 
-- На страницах, содержащих одну кнопку (например, кнопку "Применить" в нижней части страницы параметров), необходимо выровнять кнопку **по левому краю**. Это обеспечит соответствие кнопки остальной части содержимого страницы.
+  - На страницах, содержащих одну кнопку (например, кнопку **Применить** в нижней части страницы параметров), необходимо выровнять кнопку **по левому краю**. Это обеспечит соответствие кнопки остальной части содержимого страницы.
 
-![Кнопка на странице](images/pushbutton_doc_page.png)
+    ![Кнопка на странице](images/pushbutton_doc_page.png)
+
 
 ## <a name="back-buttons"></a>Кнопки "Назад"
 
-Кнопка "Назад" — это предоставленный системой элемент пользовательского интерфейса для обратной навигации через обратный стек или журнал навигации пользователя. Вы не обязаны создавать собственную кнопку "Назад", но вы можете выполнить определенные действия, чтобы реализовать хорошие возможности обратной навигации. Дополнительные сведения см. в разделе [Журнал и навигация в обратном направлении](../basics/navigation-history-and-backwards-navigation.md)
+Кнопка "Назад" — это предоставленный системой элемент пользовательского интерфейса для обратной навигации через обратный стек или журнал навигации пользователя. Вы не обязаны создавать собственную кнопку "Назад", но вы можете выполнить определенные действия, чтобы реализовать хорошие возможности обратной навигации. Дополнительные сведения см. в руководству по [журналу навигации и навигации в обратном направлении для приложений UWP](../basics/navigation-history-and-backwards-navigation.md).
+
 
 ## <a name="get-the-sample-code"></a>Получить пример кода
 
-- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
+- [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery). Пример, демонстрирующий работу всех элементов управления XAML в интерактивном формате.
+
 
 ## <a name="related-articles"></a>Связанные статьи
 
