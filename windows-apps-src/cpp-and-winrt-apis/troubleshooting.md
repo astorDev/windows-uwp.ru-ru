@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, troubleshooting, HRESULT, error
 ms.localizationpriority: medium
-ms.openlocfilehash: e53fb74b8287b6aee25ddbdd4563846403ff087e
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: add3875e15ad747422b2e53e5d8f8438b61b3b20
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717552"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270103"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>Устранение неполадок с C++/WinRT
 
@@ -57,7 +57,7 @@ ms.locfileid: "67717552"
 | Компилятор C++ выдает сообщение *winrt::impl::produce&lt;D,I&gt; cannot instantiate abstract class, due to missing GetBindingConnector* (winrt::impl::produce<D,I> не может создать экземпляр абстрактного класса из-за отсутствия GetBindingConnector). | Необходимо добавить `#include <winrt/Windows.UI.Xaml.Markup.h>`. |
 | Компилятор C++ выдает сообщение *Error C2039: promise_type: is not a member of std::experimental::coroutine_traits<void>* (Ошибка C2039: promise_type не является членом std::experimental::coroutine_traits). | Сопрограмма должна возвращать либо объект асинхронной операции, либо **winrt::fire_and_forget**. См. сведения в статье [Параллельная обработка и асинхронные операции с помощью C++/WinRT](concurrency.md). |
 | При работе с проектом появляется сообщение: *Ambiguous access of PopulatePropertyInfoOverride* (Неоднозначный уровень доступа PopulatePropertyInfoOverride). | Эта ошибка может возникать при объявлении одного базового класса в IDL и другого базового класса в разметке XAML. |
-| При первом запуске решения C++/WinRT отображается сообщение *Designtime build failed for project MyProject.vcxproj configuration Debug\|x86. IntelliSense might be unavailable*. (Сбой сборки Designtime для конфигурации Debug\|x86 проекта MyProject.vcxproj. Функция IntelliSense может быть недоступной). | Эта проблема с IntelliSense будет устранена после первого выполнения сборки. |
+| При первом запуске решения C++/WinRT отображается сообщение *Designtime build failed for project MyProject.vcxproj configuration Debug\|x86. IntelliSense might be unavailable*. (Сбой сборки Designtime для конфигурации Debugx86 проекта MyProject.vcxproj. Функция IntelliSense может быть недоступной). | Эта проблема с IntelliSense будет устранена после первого выполнения сборки. |
 | Попытка задать [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t) при регистрации делегата вызывает исключение [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface). | См. раздел о [сбое регистрации автоматически отзываемого делегата](handle-events.md#if-your-auto-revoke-delegate-fails-to-register). |
 
 > [!NOTE]

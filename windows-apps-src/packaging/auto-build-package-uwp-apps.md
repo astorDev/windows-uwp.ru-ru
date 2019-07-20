@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 86e9b15ee71c3ed831a46e369e8feaef8641e714
-ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
+ms.openlocfilehash: de623240e275dda5b6fc4df9afee31e1adf9fd4f
+ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68303581"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340852"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 
@@ -80,13 +80,14 @@ steps:
 
     ![Отправка защищенного файла](images/secure-file2.png)
 
+5. Если сертификат имеет пароль, рекомендуется сохранить пароль в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) а затем связать пароль с [группой переменных](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Для доступа к паролю из конвейера можно использовать переменную.
+
 > [!NOTE]
 > Начиная с Visual Studio 2019, временный сертификат больше не создается в проектах UWP. Чтобы создать или экспортировать сертификаты, используйте командлеты PowerShell, описанные в [этой статье](create-certificate-package-signing.md).
 
 ## <a name="configure-the-build-solution-build-task"></a>Настройка задачи построения "Сборка решения"
 
-Эта задача компилирует любое решение, которое находится в рабочей папке, в двоичные файлы и создает выходной файл пакета приложения.
-Эта задача использует аргументы MSBuild. Вам необходимо указать значение этих аргументов. Руководствуйтесь следующей таблицей.
+Эта задача компилирует любое решение, которое находится в рабочей папке, в двоичные файлы и создает выходной файл пакета приложения. Эта задача использует аргументы MSBuild. Вам необходимо указать значение этих аргументов. Руководствуйтесь следующей таблицей.
 
 |**Аргумент MSBuild**|**Значение**|**Описание**|
 |--------------------|---------|---------------|
@@ -99,6 +100,7 @@ steps:
 | аппкспаккажесигнинженаблед | true | Включает подписывание пакетов. |
 | Соответствующих значению packagecertificatethumbprint | Отпечаток сертификата | Это значение **должно** соответствовать отпечатку в сертификате подписи или быть пустой строкой. |
 | паккажецертификатекэйфиле | Path | Путь к используемому сертификату. Это значение извлекается из метаданных защищенного файла. |
+| паккажецертификатепассворд | Пароль | Пароль для сертификата. Рекомендуется сохранить пароль в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) и связать пароль с [группой переменных](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Можно передать переменную в этот аргумент. |
 
 ### <a name="configure-the-build"></a>Настройка сборки
 
