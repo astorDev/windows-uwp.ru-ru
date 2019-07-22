@@ -1,6 +1,7 @@
 - name: Создание приложений для Windows
-  href: apps/index.md
   items:
+    - name: Обзор
+      href: apps/index.md
     - name: Создание классических приложений
       items:
         - name: Обзор
@@ -63,3 +64,19 @@
       href: apps/accessibility.md
     - name: Функции и технологии
       href: apps/features-and-technologies.md
+- name: Создание решений с помощью Windows
+  items:
+    - name: Разработка с использованием Python
+      items:
+        - name: Обзор
+          href: python/index.md
+        - name: 'Как приступить к работе: инструкции для начинающих'
+          href: python/get-started/python-for-education.md
+        - name: Как приступить к разработке веб-приложений
+          href: python/get-started/python-for-web.md
+        - name: Как приступить к автоматизации
+          href: python/get-started/python-for-scripting.md
+        - name: Вопросы и ответы
+          href: python/faqs.md
+        - name: Ресурсы
+          href: python/resources.md
