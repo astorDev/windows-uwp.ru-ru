@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: Python, Windows 10, Майкрософт, Системное администрирование Python, Автоматизация файлов Python, скрипты Python в Windows, Настройка Python в Windows, среда разработчика Python в Windows, среда разработки Python в Windows, Python с PowerShell, скрипты Python для задачи файловой системы
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 0571d442d17cdac8989df10d7c11f3e762ab6fb6
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.openlocfilehash: b34bf61f4ce4d2157df572cfbbc9337fced6cf2f
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349507"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473669"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Приступая к работе с Python в Windows для написания сценариев и автоматизации
 
@@ -23,10 +23,9 @@ ms.locfileid: "68349507"
 
 ## <a name="set-up-your-development-environment"></a>Настройка среды разработки
 
-При использовании Python для написания скриптов, выполняющих операции файловой системы, рекомендуется [установить Python из Microsoft Store](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). 
+При использовании Python для написания скриптов, выполняющих операции файловой системы, рекомендуется [установить Python из Microsoft Store](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Установка с помощью Microsoft Store использует базовый интерпретатор Python3, но обрабатывает настройки параметров пути для текущего пользователя (без необходимости доступа администратора) в дополнение к автоматическому обновлению.
 
-> [!IMPORTANT]
-> Если вы используете Python в Windows для **разработки веб-приложений**, мы рекомендуем настроить для среды разработки другое. Вместо установки непосредственно в Windows установите Python через подсистему Windows для Linux. Ознакомьтесь с пошаговым руководством в нашем руководстве: Приступите [к работе с Python для разработки веб-приложений в Windows](./python-for-web.md). Если вы новичок в Python, ознакомьтесь с нашим руководством: Начните [использовать Python в Windows для начинающих](./python-for-education.md). <br>В некоторых расширенных сценариях можно загрузить определенный выпуск Python непосредственно из [Python.org](https://www.python.org/downloads/windows/) или установить [другой вариант](https://www.python.org/download/alternatives), например Anaconda, Jython, PyPy, винписон, IronPython и т. д. Это рекомендуется только в том случае, если вы являетесь более сложным программистом Python с определенной причиной выбора альтернативной реализации.
+Если вы используете Python для **разработки веб-приложений** в Windows, рекомендуем использовать другую программу установки, используя подсистему Windows для Linux. Ознакомьтесь с пошаговым руководством в нашем руководстве: Приступите [к работе с Python для разработки веб-приложений в Windows](./python-for-web.md). Если вы новичок в Python, ознакомьтесь с нашим руководством: Начните [использовать Python в Windows для начинающих](./python-for-education.md). В некоторых сложных сценариях (например, при необходимости доступа к установленным файлам Python, создания копий двоичных файлов или непосредственного использования библиотек DLL Python) может потребоваться загрузить определенный выпуск Python непосредственно из [Python.org](https://www.python.org/downloads/) или установить [альтернатива](https://www.python.org/download/alternatives), например Anaconda, Jython, PyPy, Винписон, IronPython и т. д. Это рекомендуется только в том случае, если вы являетесь более сложным программистом Python с определенной причиной выбора альтернативной реализации.
 
 ## <a name="install-python"></a>Установка Python
 

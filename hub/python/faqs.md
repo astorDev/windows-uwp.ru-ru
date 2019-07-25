@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: Python, Windows 10, Microsoft, PIP, копировать. exe, пути к файлам, PYTHONPATH, развертывание Python, упаковка Python
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 4f7f5c325dfd114093e1434259489459a8c78151
-ms.sourcegitcommit: 161eac985af11faaff78797d86343d4fa7d6a05f
+ms.openlocfilehash: fd08061858fc97f1427e94c6a92a4c3a9511967d
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68366729"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473658"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Часто задаваемые вопросы об использовании Python в Windows
 
@@ -29,9 +29,11 @@ ms.locfileid: "68366729"
 
 [Следуйте обсуждению на StackOverflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379).
 
-## <a name="what-is-pyexe"></a>Что такое файл копировать. exe?
+### <a name="what-is-pyexe"></a>Что такое файл копировать. exe?
 
-На компьютере может быть установлено несколько версий Python, так как вы работаете с различными типами проектов Python. Так как все они используют `python` команду, может быть не очевидно, какая из них используется. [Средство запуска копировать. exe](https://docs.python.org/3/using/windows.html#launcher) автоматически выберет последнюю установленную версию Python. Можно также использовать команды, например `py -3.7` , для выбора конкретной версии или `py --list` для просмотра версий, которые можно использовать. **Однако**средство запуска копировать. exe будет работать только при использовании версии Python, установленной из [Python.org](https://www.python.org/downloads/windows/). При установке Python из Microsoft Store `py` команда **не включается**. Для Linux, macOS, WSL и Microsoft Store версии Python следует использовать `python3` команду.
+На компьютере может быть установлено несколько версий Python, так как вы работаете с различными типами проектов Python. Так как все они используют `python` команду, может быть неясно, какая версия Python используется. В качестве стандарта рекомендуется использовать `python3` команду (или `python3.7` выбрать конкретную версию).
+
+[Средство запуска копировать. exe](https://docs.python.org/3/using/windows.html#launcher) автоматически выберет последнюю установленную версию Python. Можно также использовать команды, например `py -3.7` , для выбора конкретной версии или `py --list` для просмотра версий, которые можно использовать. **Однако**средство запуска копировать. exe будет работать только при использовании версии Python, установленной из [Python.org](https://www.python.org/downloads/windows/). При установке Python из Microsoft Store `py` команда **не включается**. Для Linux, macOS, WSL и Microsoft Store версии Python следует использовать `python3` команду (или `python3.7`).
 
 ## <a name="why-dont-file-paths-work-in-python-when-i-copy-paste-them"></a>Почему при копировании в Python не работают пути к файлам?
 

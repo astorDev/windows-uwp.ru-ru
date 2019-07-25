@@ -1,6 +1,6 @@
 ---
 title: Ресурсы для разработки с использованием Python в Windows
-description: Список ресурсов для разработки с использованием Python в Windows.
+description: Список ресурсов по разработке с использованием Python в Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: Python, Microsoft, Windows 10, учебники, онлайн-курсы, блоги, мероприятия
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: ffcb2b280077d96b0405691976e04fc82959cf4c
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.openlocfilehash: a987043735dd433288fd53090cf3623b035fad7d
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349393"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473636"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ресурсы для разработки с использованием Python в Windows
 
@@ -24,6 +24,8 @@ ms.locfileid: "68349393"
 ## <a name="general"></a>Общие
 
 - [Блоги Майкрософт для разработчиков: Python](https://devblogs.microsoft.com/python/): Ознакомьтесь с последними обновлениями о всех вещах Python в корпорации Майкрософт.
+
+- [Подробное руководство по разработке Linux в Windows с помощью WSL и Visual Studio Code](https://devblogs.microsoft.com/commandline/an-in-depth-tutorial-on-linux-development-on-windows-with-wsl-and-visual-studio-code/): Пошаговое руководство по настройке приходится воссоздавать разработки, выполнению приложения Python и отладке.
 
 - [Использование Python в Windows](https://docs.python.org/3/using/windows.html): В этой документации Python.org представлены общие сведения о характере для Windows, о которых следует помнить при использовании Python в Microsoft Windows.
 
