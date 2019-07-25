@@ -816,6 +816,8 @@
           href: ../cpp-and-winrt-apis/collections.md
         - name: Параллельная обработка и асинхронные операции
           href: ../cpp-and-winrt-apis/concurrency.md
+        - name: Более сложные сценарии параллельной обработки и асинхронности
+          href: ../cpp-and-winrt-apis/concurrency-2.md
         - name: Элементы управления XAML; привязка к свойству
           href: ../cpp-and-winrt-apis/binding-property.md
         - name: Элементы управления XAML; привязка к коллекции
