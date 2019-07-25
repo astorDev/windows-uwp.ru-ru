@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c8cc237dec082096eb235237490e4f5d29cc6dd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c655fbf5582ae5abbb3f415e6e0778b9c64ca7fd
+ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364321"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340831"
 ---
 # <a name="semantic-zoom"></a>Контекстное масштабирование
 
@@ -76,7 +76,7 @@ ms.locfileid: "66364321"
 Элемент управления **SemanticZoom** не имеет собственного визуального представления. Это размещающий элемент управления, который управляет переходами между двумя другими элементами управления, позволяющими просматривать содержимое. Как правило, это элементы **ListView** или **GridView**.  Для элементов управления просмотром необходимо задать свойства [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) и [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) объекта SemanticZoom.
 
 Для контекстного масштабирования необходимы три элемента:
-- Сгруппированный источник данных
+- Сгруппированный источник данных (группы задаются определением GroupStyle в масштабированном представлении).
 - Увеличенное представление, в котором отображаются данные на уровне элемента.
 - Уменьшенное представление, в котором отображаются данные уровня группы.
 

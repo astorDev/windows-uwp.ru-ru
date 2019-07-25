@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, news, what's, new
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 537150f6fc000794b11ef9236bfd88469d3f6b19
-ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
+ms.openlocfilehash: 524d0f2d9e428e87187ca27747fbd1c54406d345
+ms.sourcegitcommit: 6cc8b231c1b970112d26a7696cc3e907082ef2be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67800588"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68308440"
 ---
 # <a name="whats-new-in-cwinrt"></a>Что нового в C++/WinRT
 
@@ -28,7 +28,7 @@ ms.locfileid: "67800588"
 
 - Инструмент `cppwinrt.exe` теперь включен в пакет NuGet Microsoft.Windows.CppWinRT. Этот инструмент генерирует заголовки платформенной проекции для каждого проекта по запросу. Таким образом, инструмент `cppwinrt.exe` больше не зависит от пакета SDK для Windows (хотя для обеспечения совместимости инструмент по-прежнему поставляется в составе пакета SDK).
 - Чтобы включить параллельные сборки, `cppwinrt.exe` теперь генерирует заголовки проекции в каждой платформе или конкретной промежуточной папке конфигурации ($IntDir).
-- Поддержка сборки C++/WinRT (реквизитов/целей) теперь полностью задокументирована, на случай, если вы захотите вручную настроить файлы проекта. См. [Пакет NuGet Microsoft.Windows.CppWinRT](https://github.com/Microsoft/xlang/blob/master/src/package/cppwinrt/nuget/readme.md).
+- Поддержка сборки C++/WinRT (реквизитов/целей) теперь полностью задокументирована, на случай, если вы захотите вручную настроить файлы проекта. См. [файл сведений](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) пакета NuGet Microsoft.Windows.CppWinRT.
 - Исправлены многочисленные ошибки.
 
 ### <a name="changes-to-cwinrt-for-version-20"></a>Изменения в C++/WinRT для версии 2.0

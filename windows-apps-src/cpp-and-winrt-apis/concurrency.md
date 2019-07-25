@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
-ms.openlocfilehash: cbabf38f41ae940f5c92944154638eae7016e043
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: f7db1e5810de478f1c6198860100409d79d4f5d5
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660090"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270145"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Параллельные обработка и выполнение асинхронных операций с помощью C++/WinRT
 
@@ -224,13 +224,13 @@ IASyncAction DoWorkAsync(Param const& value)
 {
     // While it's ok to access value here...
 
-    co_await DoOtherWorkAsync();
+    co_await DoOtherWorkAsync(); // (this is the first suspension point)...
 
     // ...accessing value here carries no guarantees of safety.
 }
 ```
 
-В соподпрограмме выполнение происходит синхронно до первой точки приостановки, где управление возвращается вызывающему объекту. К моменту возобновления соподпрограммы с исходным значением, на которое ссылается отсылочный параметр, может случиться что угодно. С точки зрения соподпрограммы у отсылочного параметра неконтролируемый срок существования. Таким образом, в приведенном выше примере мы безопасно можем получить доступ к *value* до вызова `co_await`, но не после него. Если *value* уничтожается вызывающим объектом, пытающимся получить доступ к внутренней сопрограмме, это приводит к повреждению памяти. Мы также не можем безопасно передать *value* в **DoOtherWorkAsync**, если есть малейший риск того, что эта функция в свою очередь приостановится, а затем попытается использовать *value* после возобновления.
+В сопрограмме выполнение происходит синхронно до первой точки приостановки, где управление возвращается вызывающему объекту, и соответствующий фрейм больше не используется. К моменту возобновления соподпрограммы с исходным значением, на которое ссылается отсылочный параметр, может случиться что угодно. С точки зрения соподпрограммы у отсылочного параметра неконтролируемый срок существования. Таким образом, в приведенном выше примере мы безопасно можем получить доступ к *value* до вызова `co_await`, но не после него. Если *value* уничтожается вызывающим объектом, пытающимся получить доступ к внутренней сопрограмме, это приводит к повреждению памяти. Мы также не можем безопасно передать *value* в **DoOtherWorkAsync**, если есть малейший риск того, что эта функция в свою очередь приостановится, а затем попытается использовать *value* после возобновления.
 
 Чтобы обеспечить безопасное использование параметров после приостановки и возобновления, сопрограммы должны по умолчанию использовать передачу по значению. Так данные будут собираться только по значению, предотвращая появление проблем с временем существования. Ситуации, в которых можно не соблюдать эти указания в связи с уверенностью в безопасности такого подхода, встречаются редко.
 
@@ -776,6 +776,68 @@ winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, Medi
 ```
 
 Первому аргументу (*sender*) имя не задано, так как он не используется. Поэтому мы можем оставить его в качестве ссылки. Но обратите внимание, что *args* передается по значению. См. раздел [Передача параметров](#parameter-passing) выше.
+
+## <a name="awaiting-a-kernel-handle"></a>Ожидание дескриптора ядра
+
+C++/WinRT предоставляет класс **resume_on_signal**, который можно использовать для приостановки до тех пор, пока не будет получен сигнал, связанный с событием ядра. За то, чтобы этот дескриптор оставался действительным до получения `co_await resume_on_signal(h)`, отвечает пользователь. Класс **resume_on_signal** сам по себе не может сделать это, так как этот дескриптор может быть утерян даже до запуска **resume_on_signal**, как в первом примере.
+
+```cppwinrt
+IAsyncAction Async(HANDLE event)
+{
+    co_await DoWorkAsync();
+    co_await resume_on_signal(event); // The incoming handle is not valid here.
+}
+```
+
+Входящий дескриптор **HANDLE** действителен только до возвращения функции, которая является сопрограммой и которая возвращается в первую точку приостановки (в этом примере — первый экземпляр `co_await`). Когда ожидающий элемент управления **DoWorkAsync** возвращается вызывающему объекту, вызывающий фрейм становится недействительным, и вы не будете знать, будет ли этот дескриптор допустимым при возобновлении работы сопрограммы.
+
+Технически наша сопрограмма получает свои параметры по значению (см. подробнее о [ передаче параметров](#parameter-passing) выше). Но в этом случае нам нужно перейти к следующему шагу, чтобы вы могли вникнуть в саму *суть* этого руководства, а не просто формально пройти его. Нам нужно передать строгую ссылку (иными словами, владение) вместе с дескриптором. Вот как это сделать.
+
+```cppwinrt
+IAsyncAction Async(winrt::handle event)
+{
+    co_await DoWorkAsync();
+    co_await resume_on_signal(event); // The incoming handle *is* not valid here.
+}
+```
+
+Передача [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle) по значению обеспечивает семантику владения, гарантируя, что дескриптор ядра будет действительным в течение времени существования сопрограммы.
+
+Вот так вы можете вызвать эту сопрограмму.
+
+```cppwinrt
+namespace
+{
+    winrt::handle duplicate(winrt::handle const& other, DWORD access)
+    {
+        winrt::handle result;
+        if (other)
+        {
+            winrt::check_bool(::DuplicateHandle(::GetCurrentProcess(),
+                other.get(), ::GetCurrentProcess(), result.put(), access, FALSE, 0));
+        }
+        return result;
+    }
+
+    winrt::handle make_manual_reset_event(bool initialState = false)
+    {
+        winrt::handle event{ ::CreateEvent(nullptr, true, initialState, nullptr) };
+        winrt::check_bool(static_cast<bool>(event));
+        return event;
+    }
+}
+
+IAsyncAction SampleCaller()
+{
+    handle event{ make_manual_reset_event() };
+    auto async{ Async(duplicate(event)) };
+
+    ::SetEvent(event.get());
+    event.close(); // Our handle is closed, but Async still has a valid handle.
+
+    co_await async; // Will wake up when *event* is signaled.
+}
+```
 
 ## <a name="important-apis"></a>Важные API
 * [Класс concurrency::task](/cpp/parallel/concrt/reference/task-class)

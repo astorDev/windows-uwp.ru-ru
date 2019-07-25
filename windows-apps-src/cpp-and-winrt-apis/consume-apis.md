@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная c++, cpp, winrt, проецируемый, проекция, реализация, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a4c65b20c2fb805baecb8a90498e8e4ec9b229
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: 5a3d4b554fafeb2053e4e6af831c224b5eacd151
+ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717622"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328869"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Использование интерфейсов API с помощью C++/WinRT
 
@@ -119,7 +119,9 @@ int main()
 
 ## <a name="delayed-initialization"></a>Отложенная инициализация
 
-Даже конструктор по умолчанию проецируемого типа вызывает создание опорного объекта среды выполнения Windows. Если вы хотите создать переменную проецируемого типа без создания объекта среды выполнения Windows (чтобы отложить эту работу на более позднее время), это можно сделать. Объявите переменную или поле, используя специальный конструктор C++/WinRT **std::nullptr_t** для типа проекции. Проекция C++/WinRT внедряет этот конструктор в каждый класс среды выполнения.
+В C++/WinRT каждый тип проекции имеет специальный конструктор C++/WinRT **std::nullptr_t**. Наряду с исключением все конструкторы типа проекции, включая конструктор по умолчанию, создают базовый объект среды выполнения Windows и предоставляют смарт-указатель на него. Таким образом, это правило применяется везде, где используется конструктор по умолчанию, например для неинициализированных локальных переменных, неинициализированных глобальных переменных и неинициализированных переменных-членов.
+
+Вы можете создать переменную типа проекции без необходимости создавать базовый объект среды выполнения Windows (чтобы сделать это позже). Объявите переменную или поле с помощью специального конструктора C++/WinRT **std::nullptr_t** (который внедряет проекцию C++/WinRT в каждый класс среды выполнения). Этот специальный конструктор используется с *m_gamerPicBuffer* в приведенном ниже примере кода.
 
 ```cppwinrt
 #include <winrt/Windows.Storage.Streams.h>
@@ -163,6 +165,8 @@ lookup[2] = value;
 std::map<int, TextBlock> lookup;
 lookup.insert_or_assign(2, value);
 ```
+
+См. подробнее о [влиянии конструктора по умолчанию на коллекции](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#how-the-default-constructor-affects-collections).
 
 ### <a name="dont-delay-initialize-by-mistake"></a>Не допускайте ошибку, выполняя инициализацию с задержкой
 
@@ -375,6 +379,66 @@ Uri account = factory.CreateUri(L"http://www.contoso.com");
 auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
 BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
 ```
+
+## <a name="membertype-ambiguities"></a>Неоднозначность членов и типов
+
+Если функция-член имеет то же имя, что и тип, это является неоднозначностью. В C++ правила поиска неквалифицированного имени в функциях-членах таковы, что поиск класса выполняется перед поиском в пространствах имен. Правило *неудавшаяся подстановка — не ошибка* (SFINAE) не применяется (оно применяется во время разрешения перегрузки шаблонов функций). Поэтому, если не удается выполнить подстановку имени, находящегося внутри класса, компилятор не ищет лучшее соответствие, а просто сообщает об ошибке.
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoWork()
+    {
+        // This doesn't compile. You get the error
+        // "'winrt::Windows::Foundation::IUnknown::as':
+        // no matching overloaded function found".
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Style>() };
+    }
+}
+```
+
+В примере выше компилятор считает, что вы передаете [**FrameworkElement.Style()** ](/uwp/api/windows.ui.xaml.frameworkelement.style) (который в C++/WinRT является функцией-членом) в качестве параметра шаблона в [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function). Решение заключается в том, чтобы принудительно интерпретировать имя `Style` как тип [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style).
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoWork()
+    {
+        // One option is to fully-qualify it.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Windows::UI::Xaml::Style>() };
+
+        // Another is to force it to be interpreted as a struct name.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<struct Style>() };
+
+        // If you have "using namespace Windows::UI;", then this is sufficient.
+        auto style{ Application::Current().Resources().
+            Lookup(L"MyStyle").as<Xaml::Style>() };
+
+        // Or you can force it to be resolved in the global namespace (into which
+        // you imported the Windows::UI::Xaml namespace when you did
+        // "using namespace Windows::UI::Xaml;".
+        auto style = Application::Current().Resources().
+            Lookup(L"MyStyle").as<::Style>();
+    }
+}
+```
+
+Правило поиска неквалифицированного имени имеет специальное исключение, если за именем следует `::`. В этом случае функции, переменные и значения перечисления игнорируются. Это позволяет выполнять такие действия.
+
+```cppwinrt
+struct MyPage : Page
+{
+    void DoSomething()
+    {
+        Visibility(Visibility::Collapsed); // No ambiguity here (special exception).
+    }
+}
+```
+
+Вызов `Visibility()` разрешается в имя функции-члена [**UIElement.Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility). В параметре `Visibility::Collapsed` после `Visibility` стоит `::`, поэтому имя метода игнорируется, и компилятор находит класс перечисления.
 
 ## <a name="important-apis"></a>Важные API
 * [Интерфейс QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))

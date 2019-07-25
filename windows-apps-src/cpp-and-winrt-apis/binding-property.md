@@ -5,12 +5,12 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: windows 10, uwp, стандартный, c++, cpp, winrt, проекция, XAML, управление, привязка, свойство
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ce3164ece443c8c1d95bccbc2bfb57e3347a55
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: 5ff15e9b86d90aa14fd56e4e7015e949e2742bf6
+ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717654"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328879"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Элементы управления XAML; привязка к свойству C++/WinRT
 Свойство, которое может быть эффективно привязано к элементу управления XAML, называется *отслеживаемым*. Эта идея основана на шаблоне проектирования программного обеспечения, известном как *шаблон наблюдателя*. В этом разделе показано, как реализовывать отслеживаемые свойства в [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) и привязывать к ним элементы управления XAML.
@@ -127,7 +127,7 @@ namespace winrt::Bookstore::implementation
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>Объявление и реализация **BookstoreViewModel**
 Наша главная страница XAML будет привязываться к модели главного представления. И модель этого представления будет иметь несколько свойств, включая свойство типа **BookSku**. На этом шаге мы объявим и реализуем класс среды выполнения модели главного представления.
 
-Добавьте новый элемент **Файл Midl (.idl)** с именем `BookstoreViewModel.idl`.
+Добавьте новый элемент **Файл Midl (.idl)** с именем `BookstoreViewModel.idl`. Также см. раздел о [разделении классов среды выполнения на файлы Midl (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
 ```idl
 // BookstoreViewModel.idl
@@ -298,6 +298,55 @@ runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
 ```
 
 Вот почему это требуется. Все типы, которые компилятору XAML нужно проверить (включая те, которые используются в [{x: Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)) считываются из метаданных Windows (WinMD). Вам нужно всего лишь добавить свойство только для чтения в файл Midl. Не реализуйте это, так как автоматически созданный код XAML обеспечивает реализацию.
+
+## <a name="consuming-objects-from-xaml-markup"></a>Использование объектов из разметки XAML
+
+Все сущности, используемые при применении [**расширения разметки XAML {x:Bind}** ](/windows/uwp/xaml-platform/x-bind-markup-extension), должны быть общедоступными в IDL. Более того, если разметка XAML содержит ссылку на другой элемент, который также находится в разметке, метод получения для этой разметки должен присутствовать в IDL.
+
+```xaml
+<Page x:Name="MyPage">
+    <StackPanel>
+        <CheckBox x:Name="UseCustomColorCheckBox" Content="Use custom color"
+             Click="UseCustomColorCheckBox_Click" />
+        <Button x:Name="ChangeColorButton" Content="Change color"
+            Click="{x:Bind ChangeColorButton_OnClick}"
+            IsEnabled="{x:Bind UseCustomColorCheckBox.IsChecked.Value, Mode=OneWay}"/>
+    </StackPanel>
+</Page>
+```
+
+Элемент *ChangeColorButton* ссылается на элемент *UseCustomColorCheckBox* с помощью привязки. Поэтому в IDL для этой страницы необходимо объявить свойство только для чтения с именем *UseCustomColorCheckBox*, чтобы это свойство было доступно для привязки.
+
+В делегате обработчика событий щелчков для *UseCustomColorCheckBox* используется классический синтаксис делегата XAML. Поэтому запись в IDL не требуется. Свойство просто должно быть общедоступным в классе реализации. С другой стороны, *ChangeColorButton* также имеет обработчик событий щелчков `{x:Bind}`, который аналогичным образом должен войти в IDL.
+
+```idl
+runtimeclass MyPage : Windows.UI.Xaml.Controls.Page
+{
+    MyPage();
+
+    // These members are consumed by binding.
+    void ChangeColorButton_OnClick();
+    Windows.UI.Xaml.Controls.CheckBox UseCustomColorCheckBox{ get; };
+}
+```
+
+Вам не нужно предоставлять реализацию для свойства **UseCustomColorCheckBox**. Это сделает генератор кода XAML.
+
+### <a name="binding-to-boolean"></a>Привязка к логическому значению
+
+Такую привязку можно установить в режиме диагностики.
+
+<syntaxhighlight lang="xml">
+<TextBlock Text="{Binding CanPair}"/>
+</syntaxhighlight>
+
+В C++/CX значение будет `true` или `false`, а в C++/WinRT — **Windows.Foundation.IReference`1<Boolean>** .
+
+При привязке к логическому значению используйте `x:Bind`.
+
+```xaml
+<TextBlock Text="{x:Bind CanPair}"/>
+```
 
 ## <a name="important-apis"></a>Важные API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)

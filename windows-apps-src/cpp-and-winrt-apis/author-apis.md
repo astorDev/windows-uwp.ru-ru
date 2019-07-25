@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 74d15b517c5ec6547115bc8ffdb44a2b742c68d6
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: e6b1b443a847fd8d7af3ad46d5263fd6ae2675a4
+ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717661"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68328886"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание интерфейсов API с помощью C++/WinRT
 
@@ -126,12 +126,11 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>Если вы создаете класс среды выполнения в компоненте среды выполнения Windows
 
-Если ваш тип упакован в компонент среды выполнения Windows для использования из приложения, он должен представлять собой класс среды выполнения.
+Если ваш тип упакован в компонент среды выполнения Windows для использования из приложения, он должен представлять собой класс среды выполнения. Вам нужно объявить класс среды выполнения в файле языка Microsoft Interface Definition Language (IDL) (.idl) (см. раздел о [разделении классов среды выполнения на файлы Midl (.idl)](#factoring-runtime-classes-into-midl-files-idl)).
 
-> [!TIP]
-> Мы рекомендуем объявлять каждый класс среды выполнения в отдельном файле (.idl) языка описания интерфейса (IDL), чтобы оптимизировать производительность сборки при редактировании файла IDL, а также для обеспечения логического соответствия файла IDL его сгенерированным файлам с исходным кодом. Visual Studio объединяет все полученные файлы `.winmd` в один файл с тем же именем, что у корневого пространства имен. Этот окончательный файл `.winmd` и будет тем, на который будут ссылаться потребители вашего компонента.
+Каждый файл IDL создает файл `.winmd`, которые Visual Studio объединяет в один файл с именем корневого пространства имен. Этот окончательный файл `.winmd` и будет тем, на который будут ссылаться потребители вашего компонента.
 
-Рассмотрим пример.
+Ниже приведен пример объявления класса среды выполнения в файле IDL.
 
 ```idl
 // MyRuntimeClass.idl
@@ -211,6 +210,12 @@ namespace winrt::MyProject
 Пошаговое руководство по реализации интерфейса **INotifyPropertyChanged** в классе среды выполнения см. в разделе [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md).
 
 Процедура использования класса среды выполнения для этого сценария описывается в разделе [Использование API-интерфейсов в C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
+
+## <a name="factoring-runtime-classes-into-midl-files-idl"></a>Разделение классов среды выполнения на файлы Midl (.idl)
+
+Шаблоны проектов и элементов Visual Studio создают отдельный файл IDL для каждого класса среды выполнения. Это позволяет установить логическое соответствие между файлом IDL и созданными им файлами исходного кода.
+
+Но если вы консолидируете все классы среды выполнения проекта в один файл IDL, это может значительно ускорить сборку. Если вам нужно сохранить сложные (или циклические) зависимости инструкций `import` между ними, консолидация может даже требоваться. Кроме того, это может вам упростить подготовку и проверку классов среды выполнения.
 
 ## <a name="runtime-class-constructors"></a>Конструкторы классов среды выполнения
 
@@ -455,6 +460,49 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 | `make_self<T>`|Реализация|Если вы используете тип проекции, возникает ошибка: `'Release': is not a member of any direct or indirect base class of 'T'`.|
 | `name_of<T>`|Проекция|Если вы используете тип реализации, вы получаете преобразованный в строку идентификатор GUID интерфейса по умолчанию.|
 | `weak_ref<T>`|Устройства обоих типов|Если вы используете тип реализации, аргумент конструктора должен быть `com_ptr<T>`.|
+
+## <a name="overriding-base-class-virtual-methods"></a>Переопределение виртуальных методов базового класса
+
+Производный класс может некорректно обрабатывать виртуальные методы, если базовый и производный класс являются определяемыми приложением классами, но виртуальный метод определен в прародительском классе среды выполнения Windows. На практике это происходит при наследовании из классов XAML. Далее этот раздел продолжается с примера в разделе [Производные классы](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#derived-classes).
+
+```cppwinrt
+namespace winrt::MyNamespace::implementation
+{
+    struct BasePage : BasePageT<BasePage>
+    {
+        void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+
+    struct DerivedPage : DerivedPageT<DerivedPage>
+    {
+        void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+}
+```
+
+Иерархия имеет вид [**Windows::UI::Xaml::Controls::Page**](/uwp/api/windows.ui.xaml.controls.page) \<- **BasePage** \<- **DerivedPage**. Метод **BasePage::OnNavigatedFrom** корректно переопределяет [**Page::OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom), но **DerivedPage::OnNavigatedFrom** не переопределяет **BasePage::OnNavigatedFrom**.
+
+Здесь **DerivedPage** повторно использует виртуальную таблицу **IPageOverrides** из **BasePage**, то есть метод **IPageOverrides::OnNavigatedFrom** не переопределяется. Одно из возможных решений заключается в том, что класс **BasePage** должен быть классом шаблона для самого себя, а также иметь реализацию, которая полностью находится в файле заголовка, но это сильно усложняет ситуацию.
+
+В качестве временного решения объявите метод **OnNavigatedFrom** явно виртуальным в базовом классе. Таким образом, если запись виртуальной таблицы для **DerivedPage::IPageOverrides::OnNavigatedFrom** вызывает **BasePage::IPageOverrides::OnNavigatedFrom**, производитель вызывает класс **BasePage::OnNavigatedFrom**, который (из-за своей виртуальности) в итоге вызывает **DerivedPage::OnNavigatedFrom**.
+
+```cppwinrt
+namespace winrt::MyNamespace::implementation
+{
+    struct BasePage : BasePageT<BasePage>
+    {
+        // Note the `virtual` keyword here.
+        virtual void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+
+    struct DerivedPage : DerivedPageT<DerivedPage>
+    {
+        void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+    };
+}
+```
+
+Для этого необходимо, чтобы для всех членов иерархии класса были согласованы возвращаемое значение и типы параметров метода **OnNavigatedFrom**. Если они не согласованы, используйте версию выше в качестве виртуального метода и упакуйте другие варианты.
 
 ## <a name="important-apis"></a>Важные API
 * [шаблон структуры winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
