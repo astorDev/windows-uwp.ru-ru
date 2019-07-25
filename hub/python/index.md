@@ -7,17 +7,17 @@ ms.author: mattwoj
 manager: jken
 ms.topic: landing-page
 ms.date: 07/19/2019
-keywords: Windows, разработка на Python
-ms.openlocfilehash: efaa587578fef891f9b870c9f357f19c5f8e5bb7
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+keywords: windows, разработка python, начало работы с python в windows, python в подсистеме windows для linux, python с wsl, настройка среды разработки для python в windows, IDE для python в Windows, где в windows установлен python, запуск python в windows, python для начинающих в windows
+ms.openlocfilehash: 7711230b141c57135e1cda3f68416f0ed5287eac
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349319"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473652"
 ---
 # <a name="develop-with-python-on-windows"></a>Разработка с использованием Python в Windows
 
-Как для опытных разработчиков, так и для начинающих одну из важнейших ролей играет выбор типа оборудования и среды разработки. Windows значительно повышает качество поддержки разработчиков Python. Инструкции, приведенные в этом руководстве, помогут настроить среду разработки, решить, какую систему устанавливать (собственную ОС Windows или подсистему Windows), а также интегрировать такие средства, как VS Code и Git.
+Как для опытных разработчиков, так и для начинающих программировать на Python одну из важнейших ролей играет выбор типа среды разработки. Инструкции, приведенные в этом руководстве, помогут настроить среду разработки, решить, какую систему устанавливать (собственную ОС Windows или подсистему Windows для Linux), а также интегрировать такие средства, как VS Code и Git. Windows значительно повышает качество поддержки разработчиков Python, и мы бы хотели помочь вам начать работу.
 
 <ul class="cardsK panelContent">
     <li>
