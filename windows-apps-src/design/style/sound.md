@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f04d364aac79ed232f35cbdd8378bc50393d2c74
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d0955e7a018472141b137935c5bc87a9f75a5c6d
+ms.sourcegitcommit: 0c5f81100986cc4b74b54cd1ca2debd283c5b7f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63789061"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68375269"
 ---
 # <a name="sound"></a>Звук
 
@@ -91,7 +91,6 @@ ButtonName.ElementSoundState = ElementSoundMode.Off;
 
 Обычно этот звук воспроизводится, только когда пользователь явно нацеливается на простой элемент управления или часть элемента управления посредством [устройства ввода](../input/index.md).
 
-<SelectButtonClick.mp3 sound clip here>
 
 Чтобы воспроизводить звук при всех событиях элемента управления, вызовите метод Play из **ElementSoundPlayer** и передайте его **ElementSound.Invoke**:
 ```C#
@@ -104,14 +103,10 @@ ElementSoundPlayer.Play(ElementSoundKind.Invoke);
 
 При отображении окна содержимого наложения должен вызываться звук **Show**:
 
-<OverlayIn.mp3 sound clip here>
-
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Show);
 ```
 И наоборот, когда окно содержимого наложения закрывается или исчезает, должен вызываться звук **Hide**:
-
-<OverlayOut.mp3 sound clip here>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Hide);
@@ -124,14 +119,10 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 
 При переходе к представлению или панели, которая считается *следующим элементом* в списке, вызовите:
 
-<PageTransitionRight.mp3 sound clip here>
-
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
 ```
 А при переходе к предыдущему представлению или панели, которая считается *предыдущим элементом*, вызовите:
-
-<PageTransitionLeft.mp3 sound clip here>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
@@ -139,8 +130,6 @@ ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
 ### <a name="back-navigation"></a>Обратная навигация
 
 При переходе с текущей страницы на предыдущую страницу в приложении должен вызываться звук **GoBack**:
-
-<BackButtonClick.mp3 sound clip here>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.GoBack);
@@ -153,8 +142,6 @@ ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 
 Чтобы настроить для элемента управления воспроизведение звука **Focus** при фокусировке на нем, вызовите:
 
-<ElementFocus1.mp3 sound clip here>
-
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Focus);
 ```
@@ -166,5 +153,5 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 
 ## <a name="related-articles"></a>Связанные статьи
 
-* [Проектирование для Xbox и телевизора](https://go.microsoft.com/fwlink/?LinkId=760736)
-* [Документация по классу ElementSoundPlayer](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer)
+* [Проектирование для Xbox и телевизора](/windows/uwp/design/devices/designing-for-tv)
+* [Документация по классу ElementSoundPlayer](/uwp/api/windows.ui.xaml.elementsoundplayer)
