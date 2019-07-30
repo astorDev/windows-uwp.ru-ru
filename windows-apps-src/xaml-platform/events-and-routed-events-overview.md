@@ -1,17 +1,17 @@
 ---
-description: Мы опишем понятие программирования событий в приложении среды выполнения Windows, при использовании C#, Visual Basic или Visual C++ расширения компонентов (C++/CX) как языка программирования и XAML для определения пользовательского интерфейса.
+description: Мы описываем концепцию программирования событий в среда выполнения Windows приложении, при использовании C#Visual Basic или расширений визуальных C++ компонентов (C++/CX) в качестве языка программирования, а также XAML для определения пользовательского интерфейса.
 title: Общие сведения о событиях и перенаправленных событиях
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.date: 07/12/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a26211c8a0e2f51108553e15f25d286346a90299
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9150fd34653e2beeeb8d8c1557cf9f77e95791e3
+ms.sourcegitcommit: e0ae346eadda864dcad1453cd1644668549e66e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371172"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603440"
 ---
 # <a name="events-and-routed-events-overview"></a>Общие сведения о событиях и перенаправленных событиях
 
@@ -19,7 +19,7 @@ ms.locfileid: "66371172"
 - [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)
 - [**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs)
 
-Мы опишем понятие программирования событий в приложении среды выполнения Windows, при использовании C#, Visual Basic или Visual C++ расширения компонентов (C++/CX) как языка программирования и XAML для определения пользовательского интерфейса. Обработчики событий можно назначить при объявлении элементов пользовательского интерфейса в XAML. Можно также добавить обработчики в код. Среда выполнения Windows поддерживает *перенаправленные события*: отдельные события ввода и события данных могут обрабатываться не теми объектами, которые вызвали эти события. Перенаправленные события удобны при определении шаблонов элементов управления или использовании страниц либо контейнеров макета.
+Мы описываем концепцию программирования событий в среда выполнения Windows приложении, при использовании C#Visual Basic или расширений визуальных C++ компонентов (C++/CX) в качестве языка программирования, а также XAML для определения пользовательского интерфейса. Обработчики событий можно назначить при объявлении элементов пользовательского интерфейса в XAML. Можно также добавить обработчики в код. Среда выполнения Windows поддерживает *перенаправленные события*: отдельные события ввода и события данных могут обрабатываться не теми объектами, которые вызвали эти события. Перенаправленные события удобны при определении шаблонов элементов управления или использовании страниц либо контейнеров макета.
 
 ## <a name="events-as-a-programming-concept"></a>События как концепция программирования
 
@@ -27,7 +27,7 @@ ms.locfileid: "66371172"
 
 Если в качестве языка программирования вы используете C#, Visual Basic или C++/CX, пользовательский интерфейс определяется при помощи разметки (XAML). В синтаксисе разметки XAML некоторые принципы присоединения событий, возникших в элементах разметки, к сущностям в коде среды выполнения аналогичны другим веб-технологиям, например ASP.NET или HTML5.
 
-**Примечание**  код, который предоставляет логику выполнения для пользовательского интерфейса, определенные в XAML часто называется *кода* или файл с выделенным кодом. В представлениях решений Microsoft Visual Studio это отношение изображено графически: файл кода программной части является зависимым и вложенным файлом в отличие от страницы XAML, на которую он ссылается.
+**Обратите внимание**  , что код, который предоставляет логику среды выполнения для пользовательского интерфейса, определяемого XAML, часто называется *кодом программной части* или файлом кода программной части. В представлениях решений Microsoft Visual Studio это отношение изображено графически: файл кода программной части является зависимым и вложенным файлом в отличие от страницы XAML, на которую он ссылается.
 
 ## <a name="buttonclick-an-introduction-to-events-and-xaml"></a>Button.Click: введение в события и XAML
 
@@ -80,13 +80,13 @@ void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, W
 
 В этом примере метод `ShowUpdatesButton_Click` основан на делегате [**RoutedEventHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventhandler). Использовать нужно делегат, имя которого указано в синтаксисе для метода [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) на странице справки MSDN.
 
-**Совет**  Visual Studio предоставляет удобный способ именования обработчик событий и определения метода обработчика, при редактировании XAML. Когда вы указываете имя атрибута для события в текстовом редакторе XAML, дождитесь отображения списка Microsoft IntelliSense. После выбора из списка пункта **&lt;Новый обработчик событий&gt;** Microsoft Visual Studio предлагает имя метода, основанное на имени **x:Name** (или имени типа) элемента, имя события и числовой суффикс. Затем вы можете щелкнуть правой кнопкой мыши имя выбранного обработчика событий и выбрать **Перейти к обработчику событий**. При этом осуществляется переход прямо к вставленному определению обработчика событий, как показано в представлении вашего файла кода программной части для страницы XAML в редакторе кода. Обработчик событий уже имеет правильную подпись, включая параметр *sender* и класс данных события, который использует событие. Если же метод обработчика с правильной подписью уже существует в вашем коде программной части, имя этого метода появляется в автоматически заполняющемся раскрывающемся списке вместе с параметром **&lt;Новый обработчик событий&gt;** . Вы также можете нажать клавишу TAB для быстрого вызова вместо того, чтобы щелкать элементы списка IntelliSense.
+**Совет. Visual**Studio предоставляет удобный способ именования обработчика событий и определения метода обработчика при редактировании XAML.   Когда вы указываете имя атрибута для события в текстовом редакторе XAML, дождитесь отображения списка Microsoft IntelliSense. После выбора из списка пункта **&lt;Новый обработчик событий&gt;** Microsoft Visual Studio предлагает имя метода, основанное на имени **x:Name** (или имени типа) элемента, имя события и числовой суффикс. Затем вы можете щелкнуть правой кнопкой мыши имя выбранного обработчика событий и выбрать **Перейти к обработчику событий**. При этом осуществляется переход прямо к вставленному определению обработчика событий, как показано в представлении вашего файла кода программной части для страницы XAML в редакторе кода. Обработчик событий уже имеет правильную подпись, включая параметр *sender* и класс данных события, который использует событие. Если же метод обработчика с правильной подписью уже существует в вашем коде программной части, имя этого метода появляется в автоматически заполняющемся раскрывающемся списке вместе с параметром **&lt;Новый обработчик событий&gt;** . Вы также можете нажать клавишу TAB для быстрого вызова вместо того, чтобы щелкать элементы списка IntelliSense.
 
 ## <a name="defining-an-event-handler"></a>Определение обработчика событий
 
 Для объектов, принадлежащих элементам пользовательского интерфейса и объявленных в XAML, код обработчика события определен в разделяемом классе, который служит кодом программной части для XAML-страницы. Обработчики событий — это методы, которые вы создаете как часть разделяемого класса, который связан с вашим XAML. Эти обработчики событий основаны на делегатах, которые используются конкретным событием. Методы вашего обработчика событий могут быть общими или частными. Закрытый доступ действует, потому что обработчик и экземпляр, созданные XAML, окончательно соединяются в процессе создания кода. В целом мы рекомендуем делать методы обработчиков событий в классе частными.
 
-**Примечание**  обработчики событий для C++ не получить определены в разделяемых классах, они объявлены в заголовке в качестве закрытого члена класса. Действия при сборке для проекта C++ обеспечивают создание кода, поддерживающего систему типов XAML и модели кода программной части для C++.
+**Обратите внимание**  , C++ что обработчики событий для не определяются в разделяемых классах, они объявляются в заголовке как член закрытого класса. Действия при сборке для проекта C++ обеспечивают создание кода, поддерживающего систему типов XAML и модели кода программной части для C++.
 
 ### <a name="the-sender-parameter-and-event-data"></a>Параметр *sender* и данные события
 
@@ -98,7 +98,7 @@ void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, W
 
 ### <a name="event-handlers-that-use-the-async-pattern"></a>Обработчики событий, использующие шаблон **async**
 
-В некоторых случаях вам может потребоваться использовать API, которые используют шаблон **async** внутри обработчика событий. Например, вы можете использовать [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) в [**AppBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar) для отображения средства выбора файлов и взаимодействия с ним. Однако следует помнить, что многие API средств выбора файлов являются асинхронными. Их нужно вызывать в области **async**/awaitable, при этом компилятор применит их. Так что можно сделать, – это добавить **async** ключевое слово для обработчика событий таким образом, что обработчик является теперь **async** **void**. Теперь обработчику событий разрешено выполнять вызовы **async**/awaitable.
+В некоторых случаях вам может потребоваться использовать API, которые используют шаблон **async** внутри обработчика событий. Например, вы можете использовать [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) в [**AppBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar) для отображения средства выбора файлов и взаимодействия с ним. Однако следует помнить, что многие API средств выбора файлов являются асинхронными. Их нужно вызывать в области **async**/awaitable, при этом компилятор применит их. Итак, что можно сделать, добавьте в обработчик событий ключевое слово **Async** , чтобы обработчик стал асинхронным  **void**. Теперь обработчику событий разрешено выполнять вызовы **async**/awaitable.
 
 Пример обработки событий взаимодействия с пользователем с помощью шаблона **async** см. в статье [Доступ к файлам и средства выбора файлов](https://docs.microsoft.com/previous-versions/windows/apps/jj655411(v=win.10)) (входит в цикл [Создание первого приложения среды выполнения Windows на C# или Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10))). См. также [Вызов асинхронных API в C].
 
@@ -127,7 +127,7 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-**Примечание**  существует более многословный синтаксис. В 2005 году в язык программирования C# была добавлена концепция вывода делегата, которая позволяет компилятору выводить новый экземпляр делегата и использовать более ранний простой синтаксис. По функциональности подробный синтаксис идентичен приведенному в предыдущем примере, но явно создает новый экземпляр делегата до его регистрации, не пользуясь, таким образом, преимуществами вывода делегатов. Этот подробный синтаксис не получил широкого распространения, но он все же представлен в некоторых примерах кода.
+**Обратите внимание**  , что существует более подробный синтаксис. В 2005 году в язык программирования C# была добавлена концепция вывода делегата, которая позволяет компилятору выводить новый экземпляр делегата и использовать более ранний простой синтаксис. По функциональности подробный синтаксис идентичен приведенному в предыдущем примере, но явно создает новый экземпляр делегата до его регистрации, не пользуясь, таким образом, преимуществами вывода делегатов. Этот подробный синтаксис не получил широкого распространения, но он все же представлен в некоторых примерах кода.
 
 ```csharp
 void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
@@ -147,9 +147,9 @@ Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As Pointer
 End Sub
 ```
 
-**Примечание**  Visual Studio и область конструктора XAML обычно продвижение методика обработки экземпляра вместо **обрабатывает** ключевое слово. Причина заключается в том, что установка подключения обработчика событий в XAML является частью стандартного рабочего процесса дизайнер-разработчик, а подход с использованием ключевого слова **Handles** несовместим с подключением обработчиков событий в XAML.
+Примечание  . Visual Studio и его поверхность проектирования XAML обычно передают метод обработки экземпляра вместо ключевого слова **Handles** . Причина заключается в том, что установка подключения обработчика событий в XAML является частью стандартного рабочего процесса дизайнер-разработчик, а подход с использованием ключевого слова **Handles** несовместим с подключением обработчиков событий в XAML.
 
-В C++/CX, можно также использовать **+=** синтаксис, однако существует ряд отличий от основной C# формы:
+В C++языке/CX также используется **+=** синтаксис, но существуют отличия от базовой C# формы:
 
 - Вывод делегатов не поддерживается, поэтому для экземпляра делегата необходимо использовать **ref new**.
 - Конструктор делегата имеет два параметра и требует в качестве первого параметра целевой объект. Обычно нужно определить **this**.
@@ -176,9 +176,9 @@ ref new PointerEventHandler(this, &BlankPage::textBlock1_PointerEntered);
 - Пользовательские статические события.
 - Обработчики для перемещения по страницам.
 
-[**FrameworkElement.Unloaded** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.unloaded) или [ **Page.NavigatedFrom** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) являются триггеры возможного события, соответствующий позиции в состоянии управления и объект времени существования таких что их можно использовать для удаления обработчиков для других событий.
+[**FrameworkElement. выгруженные**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.unloaded) или [**Page. навигатедфром**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) — это возможные триггеры событий, которые имеют соответствующие позиции в управлении состоянием и времени существования объектов, так что их можно использовать для удаления обработчиков для других событий.
 
-Например, можно удалить обработчик событий с именем **textBlock1\_PointerEntered** из целевого объекта **textBlock1** с помощью следующего кода.
+Например, можно удалить обработчик событий с именем **\_textblock1 поинтерентеред** из целевого объекта **textblock1** , используя этот код.
 
 ```csharp
 textBlock1.PointerEntered -= textBlock1_PointerEntered;
@@ -196,43 +196,43 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 Среда выполнения Windows c C#, Microsoft Visual Basic или C++/CX поддерживает концепцию перенаправленных событий для набора событий, которые имеются в большинстве элементов пользовательского интерфейса. Эти события выполняются для сценариев ввода и взаимодействия с пользователем и реализованы в базовом классе [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement). Список событий ввода, которые являются перенаправленными:
 
-- [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
-- [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
-- [**ContextCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextcanceled)
-- [**ContextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
-- [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
+- [**брингинтовиеврекуестед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
+- [**чарактеррецеивед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
+- [**контекстканцелед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextcanceled)
+- [**контекстрекуестед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
+- [**даублетаппед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
 - [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
 - [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
 - [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
-- [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
-- [**DROP**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
-- [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
-- [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
-- [**Получение фокуса**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**Удерживая**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
-- [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
+- [**драгстартинг**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
+- [**Тени**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+- [**дропкомплетед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
+- [**жеттингфокус**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
+- [**Фокус**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
+- [**Держит**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**Клавиш**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
 - [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
-- [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
+- [**лосингфокус**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
 - [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus)
 - [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
 - [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)
 - [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
 - [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
 - [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
-- [**NoFocusCandidateFound**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefoundeventargs)
-- [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
-- [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
-- [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)
-- [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)
-- [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)
-- [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
-- [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
-- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**нофокускандидатефаунд**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefoundeventargs)
+- [**поинтерканцелед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
+- [**поинтеркаптурелост**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
+- [**поинтерентеред**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)
+- [**поинтерекситед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)
+- [**поинтермовед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)
+- [**поинтерпрессед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
+- [**поинтеррелеасед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
+- [**поинтервхилчанжед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
 - [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown.md)
-- [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
-- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
-- [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Касание**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**превиевкэйуп**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
+- [**поинтервхилчанжед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**ригхттаппед**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
+- [**Полученные**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
 Перенаправленное событие — это событие, которое можно передать (*перенаправить*) от дочернего объекта к каждому из его родительских объектов в последовательности дерева объектов. Это дерево приблизительно соответствует XAML-структуре пользовательского интерфейса, причем корневой элемент дерева является корневым элементом в XAML. Реальное дерево объектов может отличаться от элементов вложений XAML, так как это дерево объектов не содержит средств языка XAML, например тегов элементов свойств. Перенаправленные события можно представить как *восходящую маршрутизацию событий* от дочерних элементов объекта XAML, которые вызывают событие, к родительскому элементу объекта, который их содержит. Событие и его данные могут обрабатываться несколькими объектами по маршруту события. Если элементы не имеют обработчиков, маршрут потенциально длится до достижения корневого элемента.
 
@@ -246,7 +246,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 В некоторых случаях вас может интересовать не *sender*, а информация о том, к какому из возможных дочерних объектов подведен указатель при запуске события указателя или какой объект пользовательского интерфейса оказывается в фокусе, когда пользователь нажимает клавишу на клавиатуре. В таких случаях используется значение свойства [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource). В каждой точке маршрута **OriginalSource** сообщает информацию о первоначальном объекте, в котором возникло событие, а не об объекте, к которому прикреплен его обработчик. Но для событий ввода [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) этот первоначальный объект часто оказывается объектом, который не виден на уровне страницы определения пользовательского интерфейса XAML. Такой исходный объект может являться шаблонной частью элемента управления. Например, если пользователь подводит указатель мыши к самому краю [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), для большинства событий указателя **OriginalSource** является частью шаблона [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) в [**Template**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template), а не самой **Button**.
 
-**Совет**  восходящая маршрутизация событий ввода особенно полезно в том случае, если вы создаете шаблонного элемента управления. Любому элементу управления, использующему шаблон, пользователь может назначить новый шаблон. При попытке повторно создать рабочий шаблон пользователь может непреднамеренно исключить некоторые обработки событий, объявленные в шаблоне по умолчанию. Тем не менее можно обеспечить обработку событий на уровне элемента управления, прикрепив обработчики в процессе переопределения [**OnApplyTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate) в определении класса. Далее можно перехватывать события ввода, следующие вверх по маршруту к корню элемента управления, в момент создания экземпляра.
+  Передача всплывающего события TIP особенно полезна, если вы создаете шаблонный элемент управления. Любому элементу управления, использующему шаблон, пользователь может назначить новый шаблон. При попытке повторно создать рабочий шаблон пользователь может непреднамеренно исключить некоторые обработки событий, объявленные в шаблоне по умолчанию. Тем не менее можно обеспечить обработку событий на уровне элемента управления, прикрепив обработчики в процессе переопределения [**OnApplyTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate) в определении класса. Далее можно перехватывать события ввода, следующие вверх по маршруту к корню элемента управления, в момент создания экземпляра.
 
 ### <a name="the-handled-property"></a>Свойство **Handled**
 
@@ -258,13 +258,13 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 ##  <a name="input-event-handlers-in-controls"></a>Обработчики событий ввода в элементах управления
 
-Специальные элементы управления среды выполнения Windows иногда неявным образом используют концепцию **Handled** для событий ввода. Может показаться, что событие ввода никогда не происходит, потому что ваш пользовательский код не может обработать его. Например, класс [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) содержит логику, при помощи которой специально обрабатываются обычные события ввода [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed). Это сделано потому, что кнопки порождают событие [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), которое инициируется вводом при помощи мыши, а также другими режимами ввода, например обработкой таких клавиш, как ВВОД, которые могут вызвать срабатывание кнопки, когда она находится в фокусе. В рамках проектирования классов **Button** необработанное событие ввода концептуально обрабатывается, и потребители класса — например, ваш пользовательский код, — могут вместо этого взаимодействовать с соответствующим элементу управления событием **Click**. В разделах, посвященных классам элементов управления в API среды выполнения Windows, часто описывается поведение обработки событий, которое реализуется классом. В некоторых случаях можно изменить это поведение, переопределив методы **On***Event*. Например, вы можете изменить реакцию производного класса [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) на ввод с клавиатуры, переопределив [**Control.OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown).
+Специальные элементы управления среды выполнения Windows иногда неявным образом используют концепцию **Handled** для событий ввода. Может показаться, что событие ввода никогда не происходит, потому что ваш пользовательский код не может обработать его. Например, класс [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) содержит логику, при помощи которой специально обрабатываются обычные события ввода [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed). Это сделано потому, что кнопки порождают событие [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), которое инициируется вводом при помощи мыши, а также другими режимами ввода, например обработкой таких клавиш, как ВВОД, которые могут вызвать срабатывание кнопки, когда она находится в фокусе. В рамках проектирования классов **Button** необработанное событие ввода концептуально обрабатывается, и потребители класса — например, ваш пользовательский код, — могут вместо этого взаимодействовать с соответствующим элементу управления событием **Click**. В разделах, посвященных классам элементов управления в API среды выполнения Windows, часто описывается поведение обработки событий, которое реализуется классом. В некоторых случаях можно изменить это поведение, переопределив методы **On**_Event_. Например, вы можете изменить реакцию производного класса [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) на ввод с клавиатуры, переопределив [**Control.OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown).
 
 ##  <a name="registering-handlers-for-already-handled-routed-events"></a>Регистрация обработчиков для уже обработанных перенаправленных событий
 
 Ранее говорилось, что установка значения **Handled** для параметра **true** отменяет вызов большинства обработчиков. Но метод [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) предоставляет способ, позволяющий прикрепить обработчик, который всегда вызывается для маршрута, даже если другие обработчики на предыдущих этапах маршрута установили значение **true** для **Handled** в общих данных события. Этот способ полезен в том случае, если используемый элемент управления уже обработал событие внутренним образом или вследствие особой логики элемента управления, но вы тем не менее хотите ответить на это событие в экземпляре элемента управления или выше по маршруту. Используйте этот способ с осторожностью, потому что он может вступить в противоречие с назначением **Handled** и, возможно, нарушить механизм взаимодействия элемента управления.
 
-Способ обработки событий при помощи [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) можно использовать только для перенаправленных событий, имеющих соответствующий идентификатор перенаправленного события, так как этот идентификатор является обязательным входным значением для метода **AddHandler**. Список событий, имеющих идентификатор перенаправленного события, можно найти в справочной документации по [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler). Этот список событий почти совпадает со списком, представленным ранее. Исключением является то, что последние два списка: [**Получение фокуса** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) и [ **LostFocus** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus) не иметь идентификатор перенаправленного события, поэтому ее невозможно использовать **AddHandler** для тех.
+Способ обработки событий при помощи [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) можно использовать только для перенаправленных событий, имеющих соответствующий идентификатор перенаправленного события, так как этот идентификатор является обязательным входным значением для метода **AddHandler**. Список событий, имеющих идентификатор перенаправленного события, можно найти в справочной документации по [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler). Этот список событий почти совпадает со списком, представленным ранее. Исключение состоит в том, что последние два в списке: [**Получение**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) и [**потеря**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus) данных не имеют идентификатора перенаправленного события, поэтому для них нельзя использовать **AddHandler** .
 
 ## <a name="routed-events-outside-the-visual-tree"></a>Перенаправленные события вне визуального дерева
 
@@ -275,14 +275,14 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 *Проверка нажатия* определяет, в каком месте пользовательского интерфейса находится элемент и является ли он видимым для ввода с помощью мыши или пера либо для сенсорного ввода. Для сенсорного ввода, а также событий, связанных с взаимодействием, или событий операций, которые являются следствием сенсорного ввода, элемент должен быть видимым для проверки нажатия. В таком случае элемент становится источником события и вызывает событие, сопоставленное с действием. Иначе действие передается любым элементам, находящимся под этим элементом, или родительским элементам в визуальном дереве, способным к взаимодействию с вводом. На проверку попадания влияет несколько факторов, но можно определить, может ли данный элемент вызывать события ввода, проверив его свойство [**IsHitTestVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.ishittestvisible). Это свойство возвращает значение **true**, только если элемент удовлетворяет следующим критериям:
 
 - Для его свойства [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) установлено значение [**Visible**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Visibility).
-- Значение свойства элемента **Background** или **Fill** не равно **null**. Объект **null** [ **кисть** ](/uwp/api/Windows.UI.Xaml.Media.Brush) значение прозрачности результатов и нажмите кнопку невидимости теста. (Чтобы сделать элемент прозрачным, но доступным для проверки нажатия, используйте значение свойства кисти [**Transparent**](https://docs.microsoft.com/uwp/api/windows.ui.colors.transparent), а не **null**.)
+- Значение свойства элемента **Background** или **Fill** не равно **null**. Значение **null** [**кисти**](/uwp/api/Windows.UI.Xaml.Media.Brush) приводит к прозрачности и невидимости проверки попадания. (Чтобы сделать элемент прозрачным, но доступным для проверки нажатия, используйте значение свойства кисти [**Transparent**](https://docs.microsoft.com/uwp/api/windows.ui.colors.transparent), а не **null**.)
 
 **Примечание.**   **Background** и **Fill** не определены элементом [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), а определены различными производными классами, например [**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) и [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape). Но применения кистей, которые вы используете для свойств переднего и заднего планов, одинаковы для проверки нажатия и событий ввода, независимо от того, какой подкласс реализует свойства.
 
 - Если элемент является элементом управления, для его свойства [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) должно быть установлено значение **true**.
 - У элемента в макете должны быть фактические размеры. Элемент, [**ActualHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight) и [**ActualWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) которого равны 0, не вызывает события ввода.
 
-Некоторые элементы управления имеют особые правила для проверки нажатия. Например, [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) не обладает свойством **Background**, но доступен для проверки нажатия в пределах границ его площади. [**Изображение** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) и [ **MediaElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) элементы управления являются тестируемым на нажатие через их измерения прямоугольника, определенного, независимо от того, прозрачное содержимое, такие как альфа-канала в файле мультимедиа Источник файла. [**Веб-представления** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) элементы управления имеют специальные поведение проверки, так как входные данные могут быть обработаны размещенной события сценария HTML и fire нажатия.
+Некоторые элементы управления имеют особые правила для проверки нажатия. Например, [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) не обладает свойством **Background**, но доступен для проверки нажатия в пределах границ его площади. Проверка попадания элементов управления [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) и [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) осуществляется по определенным размерам прямоугольника независимо от прозрачного содержимого, такого как альфа-канал в отображаемом медиа-файле источника данных. Элементы управления [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) имеют особое поведение проверки нажатия, так как входные данные могут обрабатываться размещаемыми HTML и событиями скрипта.
 
 Большинство классов [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) и [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) недоступны для проверки нажатия в фоновом режиме, но могут обрабатывать события ввода, перенаправляемые от элементов, которые они содержат.
 
@@ -311,8 +311,8 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 ## <a name="related-topics"></a>См. также
 
 * [Обзор языка XAML](xaml-overview.md)
-* [Краткое руководство. Реакция на сенсорный ввод](https://docs.microsoft.com/previous-versions/windows/apps/hh465387(v=win.10))
-* [Взаимодействия пользователей с клавиатурой](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
-* [События .NET и делегаты](https://go.microsoft.com/fwlink/p/?linkid=214364)
-* [Создание компонентов среды выполнения Windows](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
+* [Краткое руководство. Сенсорный ввод](https://docs.microsoft.com/previous-versions/windows/apps/hh465387(v=win.10))
+* [Взаимодействие с клавиатурой](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
+* [События и делегаты .NET](https://go.microsoft.com/fwlink/p/?linkid=214364)
+* [Создание компонентов среда выполнения Windows](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
 * [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)
