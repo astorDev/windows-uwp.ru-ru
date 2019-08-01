@@ -738,45 +738,15 @@
         - name: Упрощение платежей с помощью API запроса платежей
           href: ../monetize/payment-request.md
     - name: Создание пакетов приложений
-      href: ../packaging/index.md
       items:
-        - name: Упаковка приложения UWP с помощью Visual Studio
-          href: ../packaging/packaging-uwp-apps.md
-        - name: Упаковка приложения вручную
-          href: ../packaging/manual-packaging-root.md
-          items:
-            - name: Создание пакета приложений с помощью средства MakeAppx.exe
-              href: ../packaging/create-app-package-with-makeappx-tool.md
-            - name: Создание сертификата для подписания пакета
-              href: ../packaging/create-certificate-package-signing.md
-            - name: Подписание пакета приложения с помощью SignTool
-              href: ../packaging/sign-app-package-using-signtool.md
-            - name: Разработка пакетов ресурсов и сворачивание пакета ресурсов
-              href: ../packaging/package-folding.md
-            - name: Пакеты приложений на основе плоских пакетов
-              href: ../packaging/flat-bundles.md
-            - name: Вводные сведения о пакетах ресурсов
-              href: ../packaging/asset-packages.md
-            - name: Создание пакета с использованием макета упаковки
-              href: ../packaging/packaging-layout.md
-        - name: Архитектуры пакетов приложений
-          href: ../packaging/device-architecture.md
-        - name: Потоковая установка приложений UWP
-          href: ../packaging/streaming-install.md
-          items:
-            - name: Создание и преобразование исходного файла сопоставления группы содержимого
-              href: ../packaging/create-cgm.md
-        - name: Разработка дополнительных пакетов и связанных наборов
-          href: ../packaging/optional-packages.md
-          items:
-            - name: Дополнительные пакеты с исполняемым кодом
-              href: ../packaging/optional-packages-with-executable-code.md
-        - name: Установка приложений с помощью средства WinAppDeployCmd.exe
-          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
+        - name: Обзор
+          href: ../packaging/index.md
         - name: Объявления возможностей приложения
           href: ../packaging/app-capability-declarations.md
         - name: Настройка автоматических сборок для приложения UWP
           href: ../packaging/auto-build-package-uwp-apps.md
+        - name: Установка приложений с помощью средства WinAppDeployCmd.exe
+          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
         - name: Скачивание и установка обновлений пакетов из Store
           href: ../packaging/self-install-package-updates.md
 - name: Платформа
