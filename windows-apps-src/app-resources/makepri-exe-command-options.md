@@ -6,23 +6,23 @@ ms.date: 04/10/2018
 ms.topic: article
 keywords: Windows 10, uwp, ресурс, изображение, средство, MRT, квалификатор
 ms.localizationpriority: medium
-ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 24326c19688a0fa6f2300da50e6d13308b79ee2e
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603399"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682471"
 ---
 # <a name="makepriexe-command-line-options"></a>Параметры командной строки MakePRI.exe
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) имеет следующий набор команд: `createconfig`, `dump`, `new`, `resourcepack` и `versioned`. В данном разделе описаны параметры командной строки для их использования.
 
 > [!NOTE]
-> MakePri.exe устанавливается в том случае, если выбран **Windows SDK для приложений универсальной платформы Windows, управляемых** параметр при установке пакета средств разработки программного обеспечения Windows. Он устанавливается в путь `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папки с именами других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> Передаваемые программе MakePRI. exe устанавливается при установке пакета средств разработки программного обеспечения Windows в параметрах **Windows SDK для приложений под управлением UWP** . Он устанавливается по пути `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (а также в папках с именами для других архитектур). Например, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
 ## <a name="getting-help-from-the-command-line"></a>Получение справки из командной строки
 
-Можно запустить `MakePri.exe help` или `MakePri.exe /?` для вывода списка команд, которые можно использовать с MakePri.exe. Можно также выдать `MakePri.exe <command> /?` Чтобы просмотреть сведения о команде и в очень редких случаях, даже `MakePri.exe <command> <option>` Чтобы просмотреть подробные сведения о параметр.
+Можно запустить `MakePri.exe help` или `MakePri.exe /?` просмотреть команды, которые можно использовать с передаваемые программе MakePRI. exe. Кроме того, можно `MakePri.exe <command> /?` выдать сведения о команде и, в редких случаях, даже `MakePri.exe <command> <option>` просмотреть конкретные сведения о параметре.
 
 ## <a name="makepri-commands"></a>Команды MakePri
 
@@ -416,22 +416,22 @@ MakePri может включать сведения, относящиеся к 
 
 **FILEPATH** является токеном, указывающим расположение входного PRI-файла или файла схемы PRI.
 
-## <a name="47indexoptionsio-option"></a>&#47;Параметр IndexOptions(io)
+## <a name="47indexoptionsio-option"></a>&#47;Индексоптионс (IO), параметр
 
-При использовании параметра параметры индекса (/ операций ввода-вывода) с `new`, `resourcepack`, и `versioned` для указания параметров, которые обеспечивают четкий контроль над поведением индексаторы ресурсов. Параметры индекса отключены по умолчанию.
+Параметр параметры индекса (/ИО) используется с `new`параметрами, `resourcepack`и `versioned` для указания параметров, обеспечивающих детальный контроль над поведением индексаторов ресурсов. По умолчанию параметры индекса отключены.
 
 ```console
 /IndexOptions(io) <OPTIONS>
 ```
 
-**Параметры** является разделенный запятыми список, состоящий из следующих параметров.
+**Параметры** — это разделенный запятыми список, состоящий из следующих параметров.
 
-- +/-HiddenFiles(hf). Индекс (+) или игнорировать (-) и папки.
-- +/-LinkedFiles(lf). Индекс (+) или игнорировать (-) связанных файлов и папок.
+- +/-Хидденфилес (HF). Индексировать (+) или игнорировать (-) скрытые файлы и папки.
+- +/-Линкедфилес (LF). Индексирование (+) или игнорирование (-) связанных файлов и папок.
 
 ## <a name="47mappingfilemf-option"></a>&#47;MappingFile(mf) параметр
 
-Используйте параметр файла сопоставления (/mf) с командами `new`, `resourcepack` и `versioned` для создания файла сопоставления. Средство [MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) использует файл сопоставления для создания пакетов приложений.
+Используйте параметр файла сопоставления (/mf) с командами `new`, `resourcepack` и `versioned` для создания файла сопоставления. Средство [MakeAppx.exe](/windows/msix/package/create-app-package-with-makeappx-tool) использует файл сопоставления для создания пакетов приложений.
 
 ```console
 /MappingFile(mf) <MAPPINGFILETYPE>
@@ -501,7 +501,7 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 | Ошибка | Сообщение об ошибке |
 | --------------- | ------------- |
-| Имя выходного файла совпадает с одним из имен пакетов ресурсов в конфигурации. | Недопустимая конфигурация: Имя пакета ресурсов <resource pack name> не может быть таким же, как < outputfilename.pri > выходной файл. |
+| Имя выходного файла совпадает с одним из имен пакетов ресурсов в конфигурации. | Недопустимая конфигурация: Имя <resource pack name> пакета ресурсов не может совпадать с выходным файлом < OutputFilename. PRI >. |
 
 ## <a name="reversemaprm-option"></a>Параметр /ReverseMap(RM)
 
@@ -549,6 +549,6 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 Вместо него используйте атрибут [resources@majorVersion](makepri-exe-configuration.md) в файле конфигурации для указания номера основной версии.
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>См. также
 
-* [MakePri.exe](compile-resources-manually-with-makepri.md)
+* [Передаваемые программе MakePRI. exe](compile-resources-manually-with-makepri.md)

@@ -1,23 +1,23 @@
 ---
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: Скачивание и установка обновлений пакетов из Store
-description: Узнайте, как пометить пакеты как обязательные в центре партнеров и писать код в приложении, чтобы скачать и установить пакет обновления.
+description: Узнайте, как пометить пакеты как обязательные в центре партнеров и написать код в приложении для скачивания и установки обновлений пакетов.
 ms.date: 04/04/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fc5fca95ca475444792fb0209a936bdfc64cb3c6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cb1ac05bdc5dcaaf31074f1b89e5bbb35e4f850d
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372351"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682729"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>Скачивание и установка обновлений пакетов из Store
 
-Начиная с Windows 10 версии 1607, можно использовать методы класса [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) в пространстве имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store), чтобы программным способом проверить наличие обновлений пакета для текущего приложения в Microsoft Store и загрузить и установить обновленные пакеты. Вы также можете запрашивать пакеты, помеченные как обязательные в центре партнеров и отключить функции в приложении, пока не будет установлена обязательное обновление.
+Начиная с Windows 10 версии 1607, можно использовать методы класса [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) в пространстве имен [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store), чтобы программным способом проверить наличие обновлений пакета для текущего приложения в Microsoft Store и загрузить и установить обновленные пакеты. Вы также можете запросить пакеты, которые были помечены как обязательные в центре партнеров, и отключить функциональные возможности в приложении, пока не будет установлено обязательное обновление.
 
-Дополнительные методы [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext), представленные в Windows 10 версии 1803, позволяют скачивать и устанавливать обновления пакетов автоматически (не отображая пользовательский интерфейс уведомления пользователю), удалять [дополнительный пакет](optional-packages.md) и получать информацию о пакетах в очереди на загрузку и установку для вашего приложения.
+Дополнительные методы [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext), представленные в Windows 10 версии 1803, позволяют скачивать и устанавливать обновления пакетов автоматически (не отображая пользовательский интерфейс уведомления пользователю), удалять [дополнительный пакет](/windows/msix/package/optional-packages) и получать информацию о пакетах в очереди на загрузку и установку для вашего приложения.
 
 Эти функции помогают автоматически поддерживать базу пользователей в актуальном состоянии, используя последние версии приложения, дополнительные пакеты и сопутствующие услуги в Store.
 
@@ -26,7 +26,7 @@ ms.locfileid: "66372351"
 В этом примере кода показано, как использовать метод [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync), чтобы обнаружить все доступные обновления пакетов в Store, а затем вызвать метод [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) для загрузки и установки обновлений. При использовании этого метода для загрузки и установки обновлений ОС отображает диалоговое окно с запросом разрешения пользователя, прежде чем загружать обновления.
 
 > [!NOTE]
-> Эти методы поддерживают обязательные и [необязательные пакеты](optional-packages.md) для вашего приложения. Необязательные пакеты полезны для надстроек загружаемого контента (DLC), так как позволяют поделить большое приложение при наличии ограничений на размер или доставить любое дополнительное содержимое отдельно от базового приложения. Для получения разрешения на отправку приложения, использующего дополнительные пакеты (включая надстройки DLC) в Store, см. раздел [Поддержка разработчиков для Windows](https://developer.microsoft.com/windows/support).
+> Эти методы поддерживают обязательные и [необязательные пакеты](/windows/msix/package/optional-packages) для вашего приложения. Необязательные пакеты полезны для надстроек загружаемого контента (DLC), так как позволяют поделить большое приложение при наличии ограничений на размер или доставить любое дополнительное содержимое отдельно от базового приложения. Для получения разрешения на отправку приложения, использующего дополнительные пакеты (включая надстройки DLC) в Store, см. раздел [Поддержка разработчиков для Windows](https://developer.microsoft.com/windows/support).
 
 В коде из этого примера предполагается следующее:
 
@@ -193,14 +193,14 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## <a name="mandatory-package-updates"></a>Обязательные обновления пакета
 
-При создании отправки пакета в центре партнеров для приложение, предназначенное для Windows 10 версии 1607 или более поздней версии, вы можете [пометить пакет как обязательные](../publish/upload-app-packages.md#mandatory-update) дату и время, на котором он становится обязательным. Если это свойство задано и приложение обнаружит, что обновление пакета доступно, приложение может определить, является ли пакет обновлений одинаковым, и изменить его поведение до тех пор, пока обновление не будет установлено (например, приложение может отключить те или иные компоненты).
+При создании отправки пакета в центре партнеров для приложения, предназначенного для Windows 10 версии 1607 или более поздней, можно [пометить пакет как обязательный](../publish/upload-app-packages.md#mandatory-update) , а также дату и время, когда она станет обязательной. Если это свойство задано и приложение обнаружит, что обновление пакета доступно, приложение может определить, является ли пакет обновлений одинаковым, и изменить его поведение до тех пор, пока обновление не будет установлено (например, приложение может отключить те или иные компоненты).
 
 > [!NOTE]
 > Обязательный статус обновления пакета не реализуется Microsoft принудительно, и ОС не предоставляет пользовательский интерфейс, указывающий пользователям, что обязательное обновление приложения необходимо установить. Разработчики должны использовать обязательную настройку, чтобы принудительно реализовать обязательные обновления приложений в своем коде.  
 
 Чтобы пометить отправку пакета как обязательную, выполните следующие действия:
 
-1. Войдите в [центра партнеров](https://partner.microsoft.com/dashboard) и перейдите на страницу обзора для вашего приложения.
+1. Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard) и перейдите на страницу обзора приложения.
 2. Щелкните имя отправки, содержащий пакет обновления, которые вы хотите сделать обязательным.
 3. Перейдите на страницу **Пакеты** для этой отправки. В нижней части страницы выберите **Сделать это обновление обязательным** и выберите день и время, когда пакет станет обязательным. Этот параметр применяется ко всем пакетам UWP в отправке.
 
@@ -326,7 +326,7 @@ private void HandleMandatoryPackageError()
 
 ## <a name="uninstall-optional-packages"></a>Удаление дополнительных пакетов
 
-Начиная с Windows 10 версии 1803 можно использовать методы [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) или [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync), чтобы удалить [дополнительный пакет](optional-packages.md) (включая пакет DLC) для текущего приложения. Например, если у вас есть приложение с содержимым, которое установлено с помощью дополнительных пакетов, можно предоставить пользовательский интерфейс, который позволяет удалять дополнительные пакеты, чтобы освободить место на диске.
+Начиная с Windows 10 версии 1803 можно использовать методы [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) или [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync), чтобы удалить [дополнительный пакет](/windows/msix/package/optional-packages) (включая пакет DLC) для текущего приложения. Например, если у вас есть приложение с содержимым, которое установлено с помощью дополнительных пакетов, можно предоставить пользовательский интерфейс, который позволяет удалять дополнительные пакеты, чтобы освободить место на диске.
 
 В следующем примере кода показан вызов метода [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync). В коде из этого примера предполагается следующее:
 * В файле кода используются оператор **using** для пространств имен **Windows.Services.Store** и **System.Threading.Tasks**.
@@ -463,4 +463,4 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 
 ## <a name="related-topics"></a>См. также
 
-* [Разработка дополнительных пакетов и связанных наборов](optional-packages.md)
+* [Разработка дополнительных пакетов и связанных наборов](/windows/msix/package/optional-packages)

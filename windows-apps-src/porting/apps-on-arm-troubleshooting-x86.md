@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, постоянно подключенный, эмуляция x86 в ARM, устранение неполадок
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c29151ae2823aa70711bf002e8954148cc0861b
-ms.sourcegitcommit: f7e3782e24d46b2043023835c5b59d12d3b4ed4b
+ms.openlocfilehash: 480d9cd6508b149e0d4966bae8835c05d30db7af
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345672"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682744"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>Устранение неполадок в классических приложениях x86
 >[!IMPORTANT]
@@ -21,7 +21,7 @@ ms.locfileid: "67345672"
 |Проблемы|Решение|
 |-----|--------|
 | Приложение использует драйвер, который не предназначен для ARM. | Перекомпилируйте свой драйвер x86 в ARM64. См. раздел [Создание драйверов ARM64 с помощью WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers). |
-| Ваше приложение доступно только для версии x64. | Если выполняется разработка для Microsoft Store, отправьте ARM-версию вашего приложения. Дополнительные сведения см. в разделе [Архитектуры пакета приложения](../packaging/device-architecture.md). Если вы являетесь разработчиком для Win32, мы рекомендуем перекомпилировать приложение для ARM64. Дополнительные сведения см. в разделе [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). |
+| Ваше приложение доступно только для версии x64. | Если выполняется разработка для Microsoft Store, отправьте ARM-версию вашего приложения. Дополнительные сведения см. в разделе [Архитектуры пакета приложения](/windows/msix/package/device-architecture). Если вы являетесь разработчиком для Win32, мы рекомендуем перекомпилировать приложение для ARM64. Дополнительные сведения см. в разделе [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). |
 | Ваше приложение использует версию OpenGL выше 1.1 или требует OpenGL с аппаратным ускорением. | Используйте режим приложения DirectX, если доступно. Приложения x86, использующие DirectX 9, DirectX 10, DirectX 11 и DirectX 12, будут работать в ARM. Дополнительные сведения см. в разделе [Графика и игры DirectX](https://docs.microsoft.com/windows/desktop/directx). |
 | Приложение x86 не работает должным образом. | Попробуйте использовать средство устранения проблем с совместимостью, выполнив следующие инструкции из раздела [Средство устранения проблем с совместимостью программ в ARM](apps-on-arm-program-compat-troubleshooter.md). Некоторые другие действия для устранения неполадок изложены в статье [Устранение неполадок с приложениями x86 в ARM](apps-on-arm-troubleshooting-x86.md). |
 
@@ -49,6 +49,6 @@ ms.locfileid: "67345672"
 Платформа гипервизора Windows не поддерживается на платформе мобильных ПК Qualcomm Snapdragon 835. Следовательно, запуск виртуальных машин с помощью Hyper-V не сработает. Мы продолжим развивать эти технологии в будущих микросхемах Qualcomm. 
 
 ## <a name="dynamic-code-generation"></a>Динамическое создание кода
-X86, классических приложений можно эмулировать в ARM64 системой создания ARM64 инструкции во время выполнения. Это означает, что если x86 приложения на рабочем столе предотвращает динамическое создание кода или изменения в своем процессе, что приложение не поддерживается для запуска в качестве x86 на ARM64. 
+Классическое приложение x86 эмулируется на ARM64 системой, создающей инструкции ARM64 во время выполнения. Это означает, что если классическое приложение x86 не предотвращает создание или изменение динамического кода в процессе, это приложение не может выполняться как x86 в ARM64. 
 
-Это по устранению рисков безопасности, включить некоторые приложения на их процесс, используя [SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API с помощью `ProcessDynamicCodePolicy` флаг. Для успешного выполнения на ARM64 как x86 процесс, эта политика по устранению рисков придется отключить. 
+Это позволяет снизить уровень безопасности. Некоторые приложения позволяют использовать в своем процессе использование API [сетпроцессмитигатионполици](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) с `ProcessDynamicCodePolicy` флагом. Чтобы успешно запуститься в ARM64 как процесс x86, необходимо отключить эту политику защиты. 

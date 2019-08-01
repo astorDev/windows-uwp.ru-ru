@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: de623240e275dda5b6fc4df9afee31e1adf9fd4f
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 838bd9cb790893ea24b57bb2b0bad49aa262fdbc
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340852"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682532"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 
@@ -83,7 +83,7 @@ steps:
 5. Если сертификат имеет пароль, рекомендуется сохранить пароль в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) а затем связать пароль с [группой переменных](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Для доступа к паролю из конвейера можно использовать переменную.
 
 > [!NOTE]
-> Начиная с Visual Studio 2019, временный сертификат больше не создается в проектах UWP. Чтобы создать или экспортировать сертификаты, используйте командлеты PowerShell, описанные в [этой статье](create-certificate-package-signing.md).
+> Начиная с Visual Studio 2019, временный сертификат больше не создается в проектах UWP. Чтобы создать или экспортировать сертификаты, используйте командлеты PowerShell, описанные в [этой статье](/windows/msix/package/create-certificate-package-signing).
 
 ## <a name="configure-the-build-solution-build-task"></a>Настройка задачи построения "Сборка решения"
 
@@ -196,6 +196,6 @@ steps:
 ## <a name="related-topics"></a>См. также
 
 - [Создание приложения .NET для Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
-- [Упаковка приложений UWP](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
+- [Упаковка приложений UWP](/windows/msix/package/packaging-uwp-apps)
 - [БИЗНЕС-приложения загружать неопубликованные в Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
-- [Создание сертификата для подписи пакета](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)
+- [Создание сертификата для подписи пакета](/windows/msix/package/create-certificate-package-signing)
