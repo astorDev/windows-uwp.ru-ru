@@ -39,7 +39,13 @@
     - name: Макеты на основе XAML
       href: layout/layouts-with-xaml.md
     - name: Отображение нескольких представлений
-      href: layout/show-multiple-views.md
+      items:
+        - name: Отображение нескольких представлений
+          href: layout/show-multiple-views.md
+        - name: Использование AppWindow
+          href: layout/app-window.md
+        - name: Использование ApplicationView
+          href: layout/application-view.md
     - name: 'Выравнивание, поля и отбивка'
       href: layout/alignment-margin-padding.md
     - name: Панели
