@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, get, getting, started
 ms.localizationpriority: medium
-ms.openlocfilehash: 64104124a6342da3f6963c61bafc871838fd00f6
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 346877178b4450df5fb0151656d58e203ea0be63
+ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721677"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372738"
 ---
 # <a name="get-started-with-cwinrt"></a>Начало работы с C++/WinRT
 
@@ -158,6 +158,26 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 ```
 
 Теперь вы можете выполнить компиляцию, связать и добавить код C++/WinRT в ваш проект (например, код, подобный тому, который показан в разделе [Краткое руководство по C++/WinRT](#a-cwinrt-quick-start) выше).
+
+## <a name="the-three-main-scenarios-for-cwinrt"></a>Три основных сценария для C++/WinRT
+
+По мере работы с C++/WinRT и ознакомления с остальной частью документации вы, скорее всего, заметите, что есть три основных сценария. Они описаны в следующих разделах.
+
+### <a name="consuming-windows-runtime-apis-and-types"></a>Использование API и типов среды выполнения Windows
+
+Иными словами, это *использование* и *вызовы* API. Например, вы можете выполнять вызовы API для обмена данными по Bluetooth, потоковую передачу и воспроизведение видео, интеграцию с оболочкой Windows и т. д. В C++/WinRT реализована полная поддержка этого сценария. Дополнительные сведения см. в статье [Использование API-интерфейсов с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+
+### <a name="authoring-windows-runtime-apis-and-types"></a>Создание API и типов среды выполнения Windows
+
+Иными словами, это *создание* API и типов. Например, вы можете создавать описанные в разделе выше типы API, графические API, API хранилища и файловой системы, сетевые API и т. д. Дополнительные сведения см. в статье [Создание API-интерфейсов в C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+
+Разработка API с помощью C++/WinRT — это более сложный процесс, чем их использование, так как вам нужно работать с IDL для определения API перед его реализацией. Описание процесса см. в статье [Элементы управления XAML; привязка к свойству C++/WinRT](/windows/uwp/cpp-and-winrt-apis/binding-property).
+
+### <a name="xaml-applications"></a>Приложения XAML
+
+Этот сценарий предполагает создания приложений и элементов управления в пользовательском интерфейсе на основе XAML. Работа с приложением, созданным с использованием XAML, включает процессы использования и разработки. Но так как сегодня XAML является основным средством описания пользовательского интерфейса в Windows, которое оказывает огромное влияние на среду выполнения Windows пропорционально этому, для него предусмотрен отдельный сценарий.
+
+Помните, что XAML лучше всего сочетается с языками программирования, в которых используется рефлексия. В C++/WinRT, чтобы взаимодействовать с XAML, иногда необходимо выполнить некоторую дополнительную работу. Все эти случаи описаны в документации. Лучше всего начать со статей [Элементы управления XAML; привязка к свойству C++/WinRT](/windows/uwp/cpp-and-winrt-apis/binding-property) и [Создание пользовательских (на основе шаблона) элементов управления XAML с помощью C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl).
 
 ## <a name="important-apis"></a>Важные API
 * [Метод SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 25dc7118fcb7d9c6e997fae458ef7846777b1262
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2b0f5918b240bf5c28e49f2ede6f10dbeefcbbfc
+ms.sourcegitcommit: e13f06042a28a8455a211b8693a009098e150cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65983919"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68522089"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Введение в проектирование приложений UWP
 
@@ -47,12 +47,12 @@ UWP помогает автоматически корректировать э�
 
 :::row:::
     :::column span:::
-        The sizes, margins, and positions of UI elements should always be in **multiples of 4 epx** in your UWP apps.
+В приложениях UWP размеры, поля и положения элементов пользовательского интерфейса должны быть **кратны 4 epx**.
 
-        UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
+UWP можно использовать на разных устройствах. Поддерживаются следующие масштабы: 100 %, 125 %, 150 %, 175 %, 200 %, 225 %, 250 %, 300 %, 350 % и 400 %. Базовая единица — это 4, так как это единственное целое число, которое может масштабироваться путем умножения на дробные числа (например, 4 * 1,5 = 6). Благодаря этому все элементы пользовательского интерфейса с целыми пикселями выравниваются и имеют четкие и острые края. Обратите внимание, что это требование не относится к тексту, который может быть любого размера и иметь любое положение.
     :::column-end:::
     :::column:::
-        ![grid](images/4epx.svg)
+![Сетка](images/4epx.svg)
     :::column-end:::
 :::row-end:::
 
@@ -64,21 +64,21 @@ UWP помогает автоматически корректировать э�
 
 :::row:::
     :::column:::
-        When a UWP app is launched on any Windows 10 device, it launches in a [Window](/uwp/api/windows.ui.xaml.window) with a [Frame](/uwp/api/windows.ui.xaml.controls.frame), which can navigate between [Page](/uwp/api/windows.ui.xaml.controls.page) instances.
+Когда приложение UWP запускается на каком-либо устройстве с Windows 10, оно запускается в [окне](/uwp/api/windows.ui.xaml.window) с [кадром](/uwp/api/windows.ui.xaml.controls.frame), в котором возможна навигация между экземплярами [страниц](/uwp/api/windows.ui.xaml.controls.page).
     :::column-end:::
     :::column:::
-        ![Frame](images/frame.svg)
+![Frame](images/frame.svg)
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        You can think of your app's UI as a collection of pages. It's up to you to decide what should go on each page, and the relationships between pages.
+Пользовательский интерфейс приложения можно рассматривать как набор страниц. Вам решать, что появится на каждой странице и как страницы будут связаны между собой.
 
-        To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
+Дополнительные сведения см. в статье об [основах навигации](navigation-basics.md).
     :::column-end:::
     :::column:::
-        ![Frame](images/collection-pages.svg)
+![Frame](images/collection-pages.svg)
     :::column-end:::
 :::row-end:::
 
@@ -116,14 +116,14 @@ UWP помогает автоматически корректировать э�
 
 :::row:::
     :::column:::
-        Your UWP app will interact with the broader Windows experience with tiles and notifications in the Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md).
+Ваше приложение UWP будет взаимодействовать с общим интерфейсом Windows с помощью плиток и уведомлений в [оболочке](../shell/tiles-and-notifications/creating-tiles.md) Windows.
 
-        Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
+Плитки отображаются в меню "Пуск" и при запуске приложения. Они позволяют узнать о содержимом приложения. Их ценность — это содержимое, а также то, насколько искусно и умело они были созданы.
 
-        UWP apps have four tile sizes (small, medium, wide, and large) that can be customized with the app's icon and identity. For guidance on designing tiles for your UWP app, see [Guidelines for tile and icon assets](../shell/tiles-and-notifications/app-assets.md).
+Приложения UWP поддерживают плитки четырех размеров (маленькие, средние, широкие и крупные), которые можно настроить, используя значок приложения и его свойства. Узнайте больше о проектировании плиток для приложений UWP в разделе [Руководство по работе с ресурсами плиток и значков](../shell/tiles-and-notifications/app-assets.md).
     :::column-end:::
     :::column:::
-        ![tiles on start menu](images/shell.svg)
+![Плитки в меню "Пуск"](images/shell.svg)
     :::column-end:::
 :::row-end:::
 
@@ -131,10 +131,10 @@ UWP помогает автоматически корректировать э�
 
 :::row:::
     :::column:::
-        UWP apps rely on smart interactions. You can design around a click interaction without having to know or define whether the click comes from a mouse, a stylus, or a tap of a finger. However, you can also design your apps for [specific input modes](../input/input-primer.md).
+В основе приложений UWP лежит интеллектуальное взаимодействие с пользователем. Вы можете выполнять обработку нажатия и при этом вам будет все равно, осуществляется ли это нажатие с помощью щелчка мыши, пера или прикосновения пальца. Но вы также можете разработать приложения для [определенных режимов ввода](../input/input-primer.md).
     :::column-end:::
     :::column:::
-        ![inputs](images/inputs.svg)
+![Ввод данных](images/inputs.svg)
     :::column-end:::
 :::row-end:::
 

@@ -4,13 +4,13 @@ description: Применение классов XamlUICommand и StandardUIComm
 author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
-ms.date: 03/11/2019
-ms.openlocfilehash: a85a101cd529bf487cbc97b93bb3905f28213c19
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.date: 07/23/2019
+ms.openlocfilehash: 338cae7b6238c3c773f409322600c8bee8c193f5
+ms.sourcegitcommit: 401c8ecaf74eee247f1ed0093028cc6558b4a605
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63793847"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68446372"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Использование команд в приложениях универсальной платформы Windows (UWP) с помощью классов StandardUICommand, XamlUICommand и ICommand
 
@@ -36,9 +36,11 @@ ms.locfileid: "63793847"
 
 Команды могут работать с определенным контекстом в вашем приложении, таким как удаление текста или отмена действия, или не зависеть от контекста, например отключение звука или регулировка яркости.
 
-На следующем изображении показаны два интерфейса команд ([CommandBar](app-bars.md) и плавающий контекстный [CommandBarFlyout](command-bar-flyout.md)), которые совместно используют много одних и тех же команд.
+На следующем изображении показаны два интерфейса команд ([CommandBar](app-bars.md) и плавающий контекстный интерфейс [CommandBarFlyout](command-bar-flyout.md)), которые совместно используют некоторые команды.
 
-![Пример интерфейса команды](images/commanding/command-interface-example.png)
+![Панель команд в Фотографиях (Майкрософт)](images/control-examples/command-bar-photos.png)<br>*Панель команд в Фотографиях (Майкрософт)*
+
+![Контекстное меню в коллекции Фотографий (Майкрософт)](images/ContextMenu_example.png)<br>*Контекстное меню в коллекции Фотографий (Майкрософт)*
 
 ## <a name="command-interactions"></a>Взаимодействие команд
 

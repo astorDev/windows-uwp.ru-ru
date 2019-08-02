@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: b4333d7d1b1b1561a88e92221e846471d7205ea5
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 4c29e8f2f88469dfbf260268682cf18e0399e327
+ms.sourcegitcommit: 81cb0b597bedfed8a54ac8b7e84089ef057fa9e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714040"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68514131"
 ---
 # <a name="treeview"></a>Представление в виде дерева
 
@@ -50,8 +50,12 @@ xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
 
 В коде C# мы также будем использовать псевдоним **muxc** для всех API библиотеки пользовательского интерфейса Windows, которую мы добавили в проект. Мы добавили оператор **using** в верхней части файла:
 
-```cs
+```csharp
 using muxc = Microsoft.UI.Xaml.Controls;
+```
+
+```vb
+Imports muxc = Microsoft.UI.Xaml.Controls
 ```
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
@@ -105,7 +109,7 @@ using muxc = Microsoft.UI.Xaml.Controls;
 <muxc:TreeView>
     <muxc:TreeView.RootNodes>
         <muxc:TreeViewNode Content="Flavors"
-                               IsExpanded="True">
+                           IsExpanded="True">
             <muxc:TreeViewNode.Children>
                 <muxc:TreeViewNode Content="Vanilla"/>
                 <muxc:TreeViewNode Content="Strawberry"/>
@@ -127,7 +131,7 @@ using muxc = Microsoft.UI.Xaml.Controls;
     <muxc:TreeView.ItemTemplate>
         <DataTemplate x:DataType="local:Item">
             <muxc:TreeViewItem ItemsSource="{x:Bind Children}"
-                                   Content="{x:Bind Name}"/>
+                               Content="{x:Bind Name}"/>
         </DataTemplate>
     </muxc:TreeView.ItemTemplate>
 </muxc:TreeView>
@@ -172,11 +176,11 @@ private void InitializeTreeView()
 
 ```vb
 Private Sub InitializeTreeView()
-    Dim rootNode As New TreeViewNode With {.Content = "Flavors", .IsExpanded = True}
+    Dim rootNode As New muxc.TreeViewNode With {.Content = "Flavors", .IsExpanded = True}
     With rootNode.Children
-        .Add(New TreeViewNode With {.Content = "Vanilla"})
-        .Add(New TreeViewNode With {.Content = "Strawberry"})
-        .Add(New TreeViewNode With {.Content = "Chocolate"})
+        .Add(New muxc.TreeViewNode With {.Content = "Vanilla"})
+        .Add(New muxc.TreeViewNode With {.Content = "Strawberry"})
+        .Add(New muxc.TreeViewNode With {.Content = "Chocolate"})
     End With
     sampleTreeView.RootNodes.Add(rootNode)
 End Sub
@@ -212,7 +216,7 @@ pictureNode.Content = picturesFolder;
 
 ```vb
 Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
-Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
+Dim pictureNode As New muxc.TreeViewNode With {.Content = picturesFolder}
 ```
 
 > [!NOTE]
@@ -221,19 +225,48 @@ Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
 Можно предоставить [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate), чтобы указать, как элемент данных должен отображаться в представлении в виде дерева.
 
 > [!NOTE]
-> В Windows 10, версия 1803 необходимо изменить шаблон элемента управления **TreeView** и указать пользовательский шаблон **ItemTemplate**, если ваше содержимое не является строкой. Дополнительные сведения см. в полном примере в конце этой статьи. В более поздних версиях задайте свойство [TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate).
+> В Windows 10 версии 1803 вам нужно изменить шаблон элемента управления **TreeView** и указать пользовательский шаблон **ItemTemplate**, если ваше содержимое не является строкой. В более поздних версиях нужно задать свойство **ItemTemplate**. Дополнительные сведения см. в статье о [TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate).
 
 ### <a name="item-container-style"></a>Стиль контейнера элементов
 
-При использовании **ItemsSource** или **RootNodes** фактические элементы, участвующие в отображении каждого узла (и называемые контейнерами), являются объектами [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem). Стиль контейнера можно задать с помощью свойств [ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview.itemcontainerstyle) или [ItemContainerStyleSelector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview.itemcontainerstyleselector) представления **TreeView**.
+При использовании **ItemsSource** или **RootNodes** фактические элементы, участвующие в отображении каждого узла (и называемые контейнерами), являются объектами [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem). Вы можете изменить свойства **TreeViewItem**, чтобы задать стиль контейнера с помощью следующих свойств **TreeView**: [ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview.itemcontainerstyle) или [ItemContainerStyleSelector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview.itemcontainerstyleselector).
+
+В этом примере показано, как изменить развернутые или свернутые глифы на оранжевые знаки + или -. В шаблоне **TreeViewItem** по умолчанию глифы задаются для использования шрифта `Segoe MDL2 Assets`. Свойство **Setter.Value** можно задать, предоставив значение символа Юникода в формате, используемом XAML, например: `Value="&#xE948;"`.
+
+```xaml
+<muxc:TreeView>
+    <muxc:TreeView.ItemContainerStyle>
+        <Style TargetType="muxc:TreeViewItem">
+            <Setter Property="CollapsedGlyph" Value="&#xE948;"/>
+            <Setter Property="ExpandedGlyph" Value="&#xE949;"/>
+            <Setter Property="GlyphBrush" Value="DarkOrange"/>
+        </Style>
+    </muxc:TreeView.ItemContainerStyle>
+    <muxc:TreeView.RootNodes>
+        <muxc:TreeViewNode Content="Flavors"
+               IsExpanded="True">
+            <muxc:TreeViewNode.Children>
+                <muxc:TreeViewNode Content="Vanilla"/>
+                <muxc:TreeViewNode Content="Strawberry"/>
+                <muxc:TreeViewNode Content="Chocolate"/>
+            </muxc:TreeViewNode.Children>
+        </muxc:TreeViewNode>
+    </muxc:TreeView.RootNodes>
+</muxc:TreeView>
+```
 
 ### <a name="item-template-selectors"></a>Селектор шаблонов элементов
 
-Вы можете задать разные шаблоны данных **DataTemplate** для элементов представления в виде дерева на основе типа элемента. Например, в приложении проводника можно использовать один шаблон данных для папок, а другой для файлов.
+По умолчанию в [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) отображается строковое представление элемента данных для каждого узла. Вы можете задать свойство [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate), чтобы изменить отображаемое представление для всех узлов. Либо можно [использовать ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplateselector), чтобы выбрать другой экземпляр [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) для элементов представления в виде дерева с учетом типа элемента или других заданных критериев.
+
+Например, в приложении проводника можно использовать один шаблон данных для папок, а другой для файлов.
 
 ![Папки и файлы, использующие различные шаблоны данных](images/treeview-icons.png)
 
-Здесь продемонстрирован пример создания и использования селектора шаблонов элементов.
+Здесь продемонстрирован пример создания и использования селектора шаблонов элементов.  Дополнительные сведения см. в статье о классе [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector).
+
+> [!NOTE]
+> Этот код является частью большего примера и не работает отдельно. Весь пример, включая код, который определяет `ExplorerItem`, доступен в репозитории [Xaml-Controls-Gallery](https://github.com/microsoft/Xaml-Controls-Gallery) на сайте GitHub. Файлы [TreeViewPage.xaml](https://github.com/microsoft/Xaml-Controls-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml) и [TreeViewPage.xaml.cs](https://github.com/Microsoft/Xaml-Controls-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml.cs) содержат соответствующий код.
 
 ```xaml
 <Page.Resources>
@@ -284,8 +317,50 @@ public class ExplorerItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-> [!NOTE]
-> Эти фрагменты кода являются частью большего примера и не работают по отдельности. Весь пример доступен в [репозитории Xaml-Controls-Gallery](https://github.com/microsoft/Xaml-Controls-Gallery) на сайте GitHub. Файлы [TreeViewPage.xaml](https://github.com/microsoft/Xaml-Controls-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml) и [TreeViewPage.xaml.cs](https://github.com/Microsoft/Xaml-Controls-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml.cs) содержат соответствующий код.
+Тип объекта, передаваемого в метод [SelectTemplateCore](/uwp/api/windows.ui.xaml.controls.datatemplateselector.selecttemplatecore), зависит от того, как создается представление в виде дерева: с использованием свойства **ItemsSource** или при самостоятельном создании объектов **TreeViewNode** и управлении ими.
+
+- Если свойство **ItemsSource** задано, тип объекта будет соответствовать типу элемента данных. В предыдущем примере показан объект `ExplorerItem`. Его можно использовать после простого приведения к `ExplorerItem`: `var explorerItem = (ExplorerItem)item;`.
+- Если свойство **ItemsSource** не задано, и вы сами управляете узлами представления в виде дерева, объект, переданный в **SelectTemplateCore**, будет таким: **TreeViewNode**. В этом случае элемент данных можно получить из свойства [TreeViewNode.Content](/uwp/api/windows.ui.xaml.controls.treeviewnode.content).
+
+Ниже показано средство выбора шаблона данных из примера [представления библиотеки изображений и музыки в виде дерева](#pictures-and-music-library-tree-view) (см. ниже). Метод **SelectTemplateCore** получает **TreeViewNode** с [StorageFolder](/uwp/api/windows.storage.storagefolder) или [StorageFile](/uwp/api/windows.storage.storagefile) в качестве содержимого. На основе этого содержимого можно получить шаблон по умолчанию или специальный шаблон для папки с музыкой или изображениями, а также музыкальными файлами или файлами изображений.
+
+```csharp
+protected override DataTemplate SelectTemplateCore(object item)
+{
+    var node = (TreeViewNode)item;
+    if (node.Content is StorageFolder)
+    {
+        var content = node.Content as StorageFolder;
+        if (content.DisplayName.StartsWith("Pictures")) return PictureFolderTemplate;
+        if (content.DisplayName.StartsWith("Music")) return MusicFolderTemplate;
+    }
+    else if (node.Content is StorageFile)
+    {
+        var content = node.Content as StorageFile;
+        if (content.ContentType.StartsWith("image")) return PictureItemTemplate;
+        if (content.ContentType.StartsWith("audio")) return MusicItemTemplate;
+    }
+    return DefaultTemplate;
+}
+```
+
+```vb
+Protected Overrides Function SelectTemplateCore(ByVal item As Object) As DataTemplate
+    Dim node = CType(item, muxc.TreeViewNode)
+
+    If TypeOf node.Content Is StorageFolder Then
+        Dim content = TryCast(node.Content, StorageFolder)
+        If content.DisplayName.StartsWith("Pictures") Then Return PictureFolderTemplate
+        If content.DisplayName.StartsWith("Music") Then Return MusicFolderTemplate
+    ElseIf TypeOf node.Content Is StorageFile Then
+        Dim content = TryCast(node.Content, StorageFile)
+        If content.ContentType.StartsWith("image") Then Return PictureItemTemplate
+        If content.ContentType.StartsWith("audio") Then Return MusicItemTemplate
+    End If
+
+    Return DefaultTemplate
+End Function
+```
 
 ## <a name="interacting-with-a-tree-view"></a>Взаимодействие с представлением в виде дерева
 
@@ -316,7 +391,7 @@ public class ExplorerItemTemplateSelector : DataTemplateSelector
 Ниже приведен пример использования этих API. Чтобы ознакомиться с контекстом, включая реализацию **FillTreeNode**, см. полный пример кода в конце этой статьи.
 
 ```csharp
-private void SampleTreeView_Expanding(TreeView sender, TreeViewExpandingEventArgs args)
+private void SampleTreeView_Expanding(muxc.TreeView sender, muxc.TreeViewExpandingEventArgs args)
 {
     if (args.Node.HasUnrealizedChildren)
     {
@@ -326,7 +401,7 @@ private void SampleTreeView_Expanding(TreeView sender, TreeViewExpandingEventArg
 ```
 
 ```vb
-Private Sub SampleTreeView_Expanding(sender As TreeView, args As TreeViewExpandingEventArgs)
+Private Sub SampleTreeView_Expanding(sender As muxc.TreeView, args As muxc.TreeViewExpandingEventArgs)
     If args.Node.HasUnrealizedChildren Then
         FillTreeNode(args.Node)
     End If
@@ -338,7 +413,7 @@ End Sub
 Здесь продемонстрирован пример обработчика событий **Collapsed**.
 
 ```csharp
-private void SampleTreeView_Collapsed(TreeView sender, TreeViewCollapsedEventArgs args)
+private void SampleTreeView_Collapsed(muxc.TreeView sender, muxc.TreeViewCollapsedEventArgs args)
 {
     args.Node.Children.Clear();
     args.Node.HasUnrealizedChildren = true;
@@ -346,7 +421,7 @@ private void SampleTreeView_Collapsed(TreeView sender, TreeViewCollapsedEventArg
 ```
 
 ```vb
-Private Sub SampleTreeView_Collapsed(sender As TreeView, args As TreeViewCollapsedEventArgs)
+Private Sub SampleTreeView_Collapsed(sender As muxc.TreeView, args As muxc.TreeViewCollapsedEventArgs)
     args.Node.Children.Clear()
     args.Node.HasUnrealizedChildren = True
 End Sub
@@ -384,8 +459,8 @@ private void SampleTreeView_ItemInvoked(muxc.TreeView sender, muxc.TreeViewItemI
 ```
 
 ```vb
-Private Sub SampleTreeView_ItemInvoked(sender As TreeView, args As TreeViewItemInvokedEventArgs)
-    Dim node = TryCast(args.InvokedItem, TreeViewNode)
+Private Sub SampleTreeView_ItemInvoked(sender As muxc.TreeView, args As muxc.TreeViewItemInvokedEventArgs)
+    Dim node = TryCast(args.InvokedItem, muxc.TreeViewNode)
     Dim item = TryCast(node.Content, IStorageItem)
     If item IsNot Nothing Then
         FileNameTextBlock.Text = item.Name
@@ -547,7 +622,7 @@ namespace TreeViewTest
 Private Sub OrderButton_Click(sender As Object, e As RoutedEventArgs)
     FlavorList.Text = String.Empty
     ToppingList.Text = String.Empty
-    For Each node As TreeViewNode In DessertTree.SelectedNodes
+    For Each node As muxc.TreeViewNode In DessertTree.SelectedNodes
         If node.Parent.Content?.ToString() = "Flavors" Then
             FlavorList.Text += node.Content & "; "
         ElseIf node.HasChildren = False Then
@@ -557,7 +632,7 @@ Private Sub OrderButton_Click(sender As Object, e As RoutedEventArgs)
 End Sub
 
 Private Sub SelectAllButton_Click(sender As Object, e As RoutedEventArgs)
-    If DessertTree.SelectionMode = TreeViewSelectionMode.Multiple Then
+    If DessertTree.SelectionMode = muxc.TreeViewSelectionMode.Multiple Then
         DessertTree.SelectAll()
     End If
 End Sub
@@ -749,43 +824,68 @@ namespace TreeViewTest
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TreeViewTest"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="TreeViewItemDataTemplate">
             <Grid Height="44">
-                <TextBlock
-                    Text="{Binding Content.DisplayName}"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                <TextBlock Text="{Binding Content.DisplayName}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Style="{ThemeResource BodyTextBlockStyle}"/>
             </Grid>
         </DataTemplate>
 
-        <Style TargetType="TreeView">
-            <Setter Property="IsTabStop" Value="False" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="TreeView">
-                        <TreeViewList x:Name="ListControl"
-                                      ItemTemplate="{StaticResource TreeViewItemDataTemplate}"
-                                      ItemContainerStyle="{StaticResource TreeViewItemStyle}"
-                                      CanDragItems="True"
-                                      AllowDrop="True"
-                                      CanReorderItems="True">
-                            <TreeViewList.ItemContainerTransitions>
-                                <TransitionCollection>
-                                    <ContentThemeTransition />
-                                    <ReorderThemeTransition />
-                                    <EntranceThemeTransition IsStaggeringEnabled="False" />
-                                </TransitionCollection>
-                            </TreeViewList.ItemContainerTransitions>
-                        </TreeViewList>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+        <DataTemplate x:Key="MusicItemDataTemplate">
+            <StackPanel Height="44" Orientation="Horizontal">
+                <SymbolIcon Symbol="Audio" Margin="0,0,4,0"/>
+                <TextBlock Text="{Binding Content.DisplayName}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Style="{ThemeResource BodyTextBlockStyle}"/>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="PictureItemDataTemplate">
+            <StackPanel Height="44" Orientation="Horizontal">
+                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEB9F;"
+                          Margin="0,0,4,0"/>
+                <TextBlock Text="{Binding Content.DisplayName}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Style="{ThemeResource BodyTextBlockStyle}"/>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="MusicFolderDataTemplate">
+            <StackPanel Height="44" Orientation="Horizontal">
+                <SymbolIcon Symbol="MusicInfo" Margin="0,0,4,0"/>
+                <TextBlock Text="{Binding Content.DisplayName}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Style="{ThemeResource BodyTextBlockStyle}"/>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="PictureFolderDataTemplate">
+            <StackPanel Height="44" Orientation="Horizontal">
+                <SymbolIcon Symbol="Pictures" Margin="0,0,4,0"/>
+                <TextBlock Text="{Binding Content.DisplayName}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Style="{ThemeResource BodyTextBlockStyle}"/>
+            </StackPanel>
+        </DataTemplate>
+
+        <local:ExplorerItemTemplateSelector
+            x:Key="ExplorerItemTemplateSelector"
+            DefaultTemplate="{StaticResource TreeViewItemDataTemplate}"
+            MusicItemTemplate="{StaticResource MusicItemDataTemplate}"
+            MusicFolderTemplate="{StaticResource MusicFolderDataTemplate}"
+            PictureItemTemplate="{StaticResource PictureItemDataTemplate}"
+            PictureFolderTemplate="{StaticResource PictureFolderDataTemplate}"/>
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -799,7 +899,8 @@ namespace TreeViewTest
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Button Content="Refresh tree" Click="RefreshButton_Click" Margin="24,12"/>
-                    <TreeView x:Name="sampleTreeView" Grid.Row="1" SelectionMode="Single"
+                    <muxc:TreeView x:Name="sampleTreeView" Grid.Row="1" SelectionMode="Single"
+                              ItemTemplateSelector="{StaticResource ExplorerItemTemplateSelector}"
                               Expanding="SampleTreeView_Expanding"
                               Collapsed="SampleTreeView_Collapsed"
                               ItemInvoked="SampleTreeView_ItemInvoked"/>
@@ -827,6 +928,7 @@ using System.Collections.Generic;
 using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using muxc = Microsoft.UI.Xaml.Controls;
 
 namespace TreeViewTest
 {
@@ -844,7 +946,7 @@ namespace TreeViewTest
             // and the Music library will each be a root node in the tree.
             // Get Pictures library.
             StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
-            TreeViewNode pictureNode = new TreeViewNode();
+            muxc.TreeViewNode pictureNode = new muxc.TreeViewNode();
             pictureNode.Content = picturesFolder;
             pictureNode.IsExpanded = true;
             pictureNode.HasUnrealizedChildren = true;
@@ -853,7 +955,7 @@ namespace TreeViewTest
 
             // Get Music library.
             StorageFolder musicFolder = KnownFolders.MusicLibrary;
-            TreeViewNode musicNode = new TreeViewNode();
+            muxc.TreeViewNode musicNode = new muxc.TreeViewNode();
             musicNode.Content = musicFolder;
             musicNode.IsExpanded = true;
             musicNode.HasUnrealizedChildren = true;
@@ -861,7 +963,7 @@ namespace TreeViewTest
             FillTreeNode(musicNode);
         }
 
-        private async void FillTreeNode(TreeViewNode node)
+        private async void FillTreeNode(muxc.TreeViewNode node)
         {
             // Get the contents of the folder represented by the current tree node.
             // Add each item as a new child node of the node that's being expanded.
@@ -890,7 +992,7 @@ namespace TreeViewTest
 
             foreach (var item in itemsList)
             {
-                var newNode = new TreeViewNode();
+                var newNode = new muxc.TreeViewNode();
                 newNode.Content = item;
 
                 if (item is StorageFolder)
@@ -911,7 +1013,7 @@ namespace TreeViewTest
             node.HasUnrealizedChildren = false;
         }
 
-        private void SampleTreeView_Expanding(TreeView sender, TreeViewExpandingEventArgs args)
+        private void SampleTreeView_Expanding(muxc.TreeView sender, muxc.TreeViewExpandingEventArgs args)
         {
             if (args.Node.HasUnrealizedChildren)
             {
@@ -919,15 +1021,15 @@ namespace TreeViewTest
             }
         }
 
-        private void SampleTreeView_Collapsed(TreeView sender, TreeViewCollapsedEventArgs args)
+        private void SampleTreeView_Collapsed(muxc.TreeView sender, muxc.TreeViewCollapsedEventArgs args)
         {
             args.Node.Children.Clear();
             args.Node.HasUnrealizedChildren = true;
         }
 
-        private void SampleTreeView_ItemInvoked(TreeView sender, TreeViewItemInvokedEventArgs args)
+        private void SampleTreeView_ItemInvoked(muxc.TreeView sender, muxc.TreeViewItemInvokedEventArgs args)
         {
-            var node = args.InvokedItem as TreeViewNode;
+            var node = args.InvokedItem as muxc.TreeViewNode;
 
             if (node.Content is IStorageItem item)
             {
@@ -948,105 +1050,165 @@ namespace TreeViewTest
             InitializeTreeView();
         }
     }
+
+    public class ExplorerItemTemplateSelector : DataTemplateSelector
+    {
+        public DataTemplate DefaultTemplate { get; set; }
+        public DataTemplate MusicItemTemplate { get; set; }
+        public DataTemplate PictureItemTemplate { get; set; }
+        public DataTemplate MusicFolderTemplate { get; set; }
+        public DataTemplate PictureFolderTemplate { get; set; }
+
+        protected override DataTemplate SelectTemplateCore(object item)
+        {
+            var node = (muxc.TreeViewNode)item;
+
+            if (node.Content is StorageFolder)
+            {
+                var content = node.Content as StorageFolder;
+                if (content.DisplayName.StartsWith("Pictures")) return PictureFolderTemplate;
+                if (content.DisplayName.StartsWith("Music")) return MusicFolderTemplate;
+            }
+            else if (node.Content is StorageFile)
+            {
+                var content = node.Content as StorageFile;
+                if (content.ContentType.StartsWith("image")) return PictureItemTemplate;
+                if (content.ContentType.StartsWith("audio")) return MusicItemTemplate;
+
+            }
+            return DefaultTemplate;
+        }
+    }
 }
 ```
 
 ```vb
-Public Sub New()
-    InitializeComponent()
-    InitializeTreeView()
-End Sub
+Public NotInheritable Class MainPage
+    Inherits Page
 
-Private Sub InitializeTreeView()
-    ' A TreeView can have more than 1 root node. The Pictures library
-    ' and the Music library will each be a root node in the tree.
-    ' Get Pictures library.
-    Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
-    Dim pictureNode As New TreeViewNode With {
+    Public Sub New()
+        InitializeComponent()
+        InitializeTreeView()
+    End Sub
+
+    Private Sub InitializeTreeView()
+        ' A TreeView can have more than 1 root node. The Pictures library
+        ' and the Music library will each be a root node in the tree.
+        ' Get Pictures library.
+        Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
+        Dim pictureNode As New muxc.TreeViewNode With {
         .Content = picturesFolder,
         .IsExpanded = True,
         .HasUnrealizedChildren = True
     }
-    sampleTreeView.RootNodes.Add(pictureNode)
-    FillTreeNode(pictureNode)
+        sampleTreeView.RootNodes.Add(pictureNode)
+        FillTreeNode(pictureNode)
 
-    ' Get Music library.
-    Dim musicFolder As StorageFolder = KnownFolders.MusicLibrary
-    Dim musicNode As New TreeViewNode With {
+        ' Get Music library.
+        Dim musicFolder As StorageFolder = KnownFolders.MusicLibrary
+        Dim musicNode As New muxc.TreeViewNode With {
         .Content = musicFolder,
         .IsExpanded = True,
         .HasUnrealizedChildren = True
     }
-    sampleTreeView.RootNodes.Add(musicNode)
-    FillTreeNode(musicNode)
-End Sub
+        sampleTreeView.RootNodes.Add(musicNode)
+        FillTreeNode(musicNode)
+    End Sub
 
-Private Async Sub FillTreeNode(node As TreeViewNode)
-    ' Get the contents of the folder represented by the current tree node.
-    ' Add each item as a new child node of the node that's being expanded.
+    Private Async Sub FillTreeNode(node As muxc.TreeViewNode)
+        ' Get the contents of the folder represented by the current tree node.
+        ' Add each item as a new child node of the node that's being expanded.
 
-    ' Only process the node if it's a folder and has unrealized children.
-    Dim folder As StorageFolder = Nothing
-    If TypeOf node.Content Is StorageFolder AndAlso node.HasUnrealizedChildren Then
-        folder = TryCast(node.Content, StorageFolder)
-    Else
-        ' The node isn't a folder, or it's already been filled.
-        Return
-    End If
+        ' Only process the node if it's a folder and has unrealized children.
+        Dim folder As StorageFolder = Nothing
+        If TypeOf node.Content Is StorageFolder AndAlso node.HasUnrealizedChildren Then
+            folder = TryCast(node.Content, StorageFolder)
+        Else
+            ' The node isn't a folder, or it's already been filled.
+            Return
+        End If
 
-    Dim itemsList As IReadOnlyList(Of IStorageItem) = Await folder.GetItemsAsync()
-    If itemsList.Count = 0 Then
-        ' The item is a folder, but it's empty. Leave HasUnrealizedChildren = true so
-        ' that the chevron appears, but don't try to process children that aren't there.
-        Return
-    End If
+        Dim itemsList As IReadOnlyList(Of IStorageItem) = Await folder.GetItemsAsync()
+        If itemsList.Count = 0 Then
+            ' The item is a folder, but it's empty. Leave HasUnrealizedChildren = true so
+            ' that the chevron appears, but don't try to process children that aren't there.
+            Return
+        End If
 
-    For Each item In itemsList
-        Dim newNode As New TreeViewNode With {
+        For Each item In itemsList
+            Dim newNode As New muxc.TreeViewNode With {
             .Content = item
         }
-        If TypeOf item Is StorageFolder Then
-            ' If the item is a folder, set HasUnrealizedChildren to True.
-            ' This makes the collapsed chevron show up.
-            newNode.HasUnrealizedChildren = True
-        Else
-            ' Item is StorageFile. No processing needed for this scenario.
+            If TypeOf item Is StorageFolder Then
+                ' If the item is a folder, set HasUnrealizedChildren to True.
+                ' This makes the collapsed chevron show up.
+                newNode.HasUnrealizedChildren = True
+            Else
+                ' Item is StorageFile. No processing needed for this scenario.
+            End If
+            node.Children.Add(newNode)
+        Next
+
+        ' Children were just added to this node, so set HasUnrealizedChildren to False.
+        node.HasUnrealizedChildren = False
+    End Sub
+
+    Private Sub SampleTreeView_Expanding(sender As muxc.TreeView, args As muxc.TreeViewExpandingEventArgs)
+        If args.Node.HasUnrealizedChildren Then
+            FillTreeNode(args.Node)
         End If
-        node.Children.Add(newNode)
-    Next
+    End Sub
 
-    ' Children were just added to this node, so set HasUnrealizedChildren to False.
-    node.HasUnrealizedChildren = False
-End Sub
+    Private Sub SampleTreeView_Collapsed(sender As muxc.TreeView, args As muxc.TreeViewCollapsedEventArgs)
+        args.Node.Children.Clear()
+        args.Node.HasUnrealizedChildren = True
+    End Sub
 
-Private Sub SampleTreeView_Expanding(sender As TreeView, args As TreeViewExpandingEventArgs)
-    If args.Node.HasUnrealizedChildren Then
-        FillTreeNode(args.Node)
-    End If
-End Sub
+    Private Sub SampleTreeView_ItemInvoked(sender As muxc.TreeView, args As muxc.TreeViewItemInvokedEventArgs)
+        Dim node = TryCast(args.InvokedItem, muxc.TreeViewNode)
+        Dim item = TryCast(node.Content, IStorageItem)
+        If item IsNot Nothing Then
+            FileNameTextBlock.Text = item.Name
+            FilePathTextBlock.Text = item.Path
+            TreeDepthTextBlock.Text = node.Depth.ToString()
+            If TypeOf node.Content Is StorageFolder Then
+                node.IsExpanded = Not node.IsExpanded
+            End If
+        End If
+    End Sub
 
-Private Sub SampleTreeView_Collapsed(sender As TreeView, args As TreeViewCollapsedEventArgs)
-    args.Node.Children.Clear()
-    args.Node.HasUnrealizedChildren = True
-End Sub
+    Private Sub RefreshButton_Click(sender As Object, e As RoutedEventArgs)
+        sampleTreeView.RootNodes.Clear()
+        InitializeTreeView()
+    End Sub
 
-Private Sub SampleTreeView_ItemInvoked(sender As TreeView, args As TreeViewItemInvokedEventArgs)
-    Dim node = TryCast(args.InvokedItem, TreeViewNode)
-    Dim item = TryCast(node.Content, IStorageItem)
-    If item IsNot Nothing Then
-        FileNameTextBlock.Text = item.Name
-        FilePathTextBlock.Text = item.Path
-        TreeDepthTextBlock.Text = node.Depth.ToString()
+End Class
+
+Public Class ExplorerItemTemplateSelector
+    Inherits DataTemplateSelector
+
+    Public Property DefaultTemplate As DataTemplate
+    Public Property MusicItemTemplate As DataTemplate
+    Public Property PictureItemTemplate As DataTemplate
+    Public Property MusicFolderTemplate As DataTemplate
+    Public Property PictureFolderTemplate As DataTemplate
+
+    Protected Overrides Function SelectTemplateCore(ByVal item As Object) As DataTemplate
+        Dim node = CType(item, muxc.TreeViewNode)
+
         If TypeOf node.Content Is StorageFolder Then
-            node.IsExpanded = Not node.IsExpanded
+            Dim content = TryCast(node.Content, StorageFolder)
+            If content.DisplayName.StartsWith("Pictures") Then Return PictureFolderTemplate
+            If content.DisplayName.StartsWith("Music") Then Return MusicFolderTemplate
+        ElseIf TypeOf node.Content Is StorageFile Then
+            Dim content = TryCast(node.Content, StorageFile)
+            If content.ContentType.StartsWith("image") Then Return PictureItemTemplate
+            If content.ContentType.StartsWith("audio") Then Return MusicItemTemplate
         End If
-    End If
-End Sub
 
-Private Sub RefreshButton_Click(sender As Object, e As RoutedEventArgs)
-    sampleTreeView.RootNodes.Clear()
-    InitializeTreeView()
-End Sub
+        Return DefaultTemplate
+    End Function
+End Class
 ```
 
 ### <a name="drag-and-drop-items-between-tree-views"></a>Операции перетаскивания между представлениями в виде дерева.
@@ -1091,7 +1253,7 @@ End Sub
 </Page>
 ```
 
-```cs
+```csharp
 using System;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml;

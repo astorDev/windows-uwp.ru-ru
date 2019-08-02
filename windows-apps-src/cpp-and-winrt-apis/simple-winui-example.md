@@ -5,16 +5,16 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, Windows UI Library, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: 082e7ca0684495e1f67c2fa79b448866f68a059c
-ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
+ms.openlocfilehash: 5d0066abb2a6eb15f1d31aaf930ed2c0f0faf81a
+ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2019
-ms.locfileid: "67870349"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372717"
 ---
 # <a name="a-simple-cwinrt-windows-ui-library-example"></a>Простой пример библиотеки пользовательского интерфейса Windows для C++/WinRT
 
-Из этого раздела вы узнаете, как добавить простую поддержку библиотеки пользовательского интерфейса Windows (WinUI) в проект C++/WinRT.
+Из этого раздела вы узнаете, как добавить простую поддержку [библиотеки пользовательского интерфейса Windows (WinUI)](https://github.com/Microsoft/microsoft-ui-xaml) в проект C++/WinRT. К слову говоря, сама библиотека пользовательского интерфейса Windows написана на C++/WinRT.
 
 > [!NOTE]
 > Набор средств библиотеки пользовательского интерфейса Windows (WinUI) доступен в виде пакетов NuGet. Их можно добавить в любой существующий или новый проект с помощью Visual Studio, как показано ниже. См. подробнее о настройке и использовании в руководстве по [началу работы с библиотекой пользовательского интерфейса Windows](/uwp/toolkits/winui/getting-started).
@@ -49,7 +49,9 @@ ms.locfileid: "67870349"
 
 ## <a name="edit-mainpageh-and-cpp-as-necessary"></a>Изменение MainPage.h и .cpp (при необходимости)
 
-В `MainPage.h` измените все, что вы включили, чтобы код выглядел следующим образом.
+Когда вы добавляете пакет NuGet в проект C++/WinRT (например, пакет **Microsoft.UI.Xaml**, добавленный ранее) средство создает набор заголовков проекции в папке проекта `\Generated Files\winrt`. Чтобы поместить эти файлы с заголовками в свой проект и чтобы ссылки на эти новые типы работали, нужно включить такие файлы в проект.
+
+Поэтому в `MainPage.h` измените все, что вы включили, чтобы код выглядел, как показано ниже. Если вам нужно использовать WinUI из нескольких страниц XAML, можно перейти к файлу предкомпилированных заголовков (обычно это `pch.h`) и включить в нем требуемые файлы.
 
 ```cppwinrt
 #include "MainPage.g.h"
