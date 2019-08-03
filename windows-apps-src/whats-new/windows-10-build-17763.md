@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d393ee92be8768861da0fb0783372c8bafc6f815
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: faf3cdc1a3fab3bd0332b995c25b081d296a55bb
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821114"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682771"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Новые возможности для разработчиков в Windows 10 (сборка 17763)
 
@@ -83,7 +83,7 @@ WebVR | Мы внесли значительные изменения в [Рук
 MSIX | [MSIX](https://docs.microsoft.com/windows/msix/overview) — это новый формат пакетов приложений Windows для упаковки всех приложений для Windows усовершенствованным способом. В формате MSIX с открытым исходным кодом сохранена функциональность существующих пакетов и одновременно реализованы современные возможности развертывания.
 Средство упаковки MSIX | Новое [средство упаковки MSIX](https://docs.microsoft.com/windows/msix/mpt-overview)) позволяет перепаковать существующие классические приложения в формате MSIX, даже если у вас нет доступа к своему исходному коду. Его можно запустить в командной строке или через интерактивный интерфейс пользователя.
 Поддержка Desktop App Converter для MSIX | Вы можете использовать [Desktop App Converter](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) для вывода пакета MSIX с помощью параметра `-MakeMSIX`.
-Средство поддержки MakeAppx.exe для MSIX | Вы можете использовать инструмент MakeAppx.exe для создания пакета MSIX в приложении UWP или традиционных классических приложениях. Это средство входит в состав пакета SDK Windows 10, и его можно использовать через командную строку или файл сценария. </br> Дополнительные сведения о приложениях UWP см. в разделе [Создание пакета приложения с помощью средства MakeAppx.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool). </br> Дополнительные сведения о классических приложений см. в разделе [Упаковка классического приложения вручную](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion).
+Средство поддержки MakeAppx.exe для MSIX | Вы можете использовать инструмент MakeAppx.exe для создания пакета MSIX в приложении UWP или традиционных классических приложениях. Это средство входит в состав пакета SDK Windows 10, и его можно использовать через командную строку или файл сценария. </br> Дополнительные сведения о приложениях UWP см. в разделе [Создание пакета приложения с помощью средства MakeAppx.exe](/windows/msix/package/create-app-package-with-makeappx-tool). </br> Дополнительные сведения о классических приложений см. в разделе [Упаковка классического приложения вручную](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion).
 Платформа поддержки пакетов | [Платформа поддержки пакетов](https://docs.microsoft.com/windows/msix/package-support-framework-overview) представляет собой набор с открытым исходным кодом, который помогает применять исправления к существующему классическому приложению, когда у вас нет доступа к исходному коду для работы в контейнере MSIX.
 API-интерфейс аналитики для Store | [API аналитики для Microsoft Store](../monetize/access-analytics-data-using-windows-store-services.md) теперь включает следующие новые методы. </br> * [Получение аналитических данных о вашем приложении UWP](../monetize/get-insights-data-for-your-app.md) </br> * [Получение аналитических данных о классическом приложении](../monetize/get-insights-data-for-your-desktop-app.md) </br>* [Получение блоков обновлений для классического приложения](../monetize/get-desktop-block-data.md) </br> * [Получение сведений о блоках обновлений для классического приложения](../monetize/get-desktop-block-data-details.md)
 

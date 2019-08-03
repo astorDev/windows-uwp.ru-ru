@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 58321c6c32536c07d3a56a05ce26b353ec32a982
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e8be583778ccbf47c61466033c58c784c4df4395
+ms.sourcegitcommit: e0ae346eadda864dcad1453cd1644668549e66e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364157"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603419"
 ---
 # <a name="time-picker"></a>Управляющий элемент выбора времени
  
@@ -57,7 +57,7 @@ ms.locfileid: "66364157"
 Этот пример демонстрирует, как создать простой элемент выбора времени с заголовком.
 
 ```xaml
-<TimePicker x:Name=arrivalTimePicker Header="Arrival time"/>
+<TimePicker x:Name="arrivalTimePicker" Header="Arrival time"/>
 ```
 
 ```csharp

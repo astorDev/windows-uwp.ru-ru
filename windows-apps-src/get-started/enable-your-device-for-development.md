@@ -6,12 +6,12 @@ keywords: Начало работы Лицензия разработчика Vi
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c1979f8e8232ee3bfd2e2961307608bf8da7836
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 09f115cad236582ccb0008c2274a7472ed4c0d55
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714149"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682657"
 ---
 # <a name="enable-your-device-for-development"></a>Подготовка устройства к разработке
 
@@ -60,7 +60,7 @@ ms.locfileid: "67714149"
 
 Сведения, предназначенные для определенных семейств устройств
 
--   Для семейства настольных устройств Вы можете установить пакет приложения (APPX-файл) и любой сертификат, необходимый для запуска приложения, выполнив сценарий Windows PowerShell, созданный с использованием пакета (Add-AppDevPackage.ps1). Дополнительные сведения см. в разделе [Формирование пакетов приложений UWP](../packaging/packaging-uwp-apps.md).
+-   Для семейства настольных устройств Вы можете установить пакет приложения (APPX-файл) и любой сертификат, необходимый для запуска приложения, выполнив сценарий Windows PowerShell, созданный с использованием пакета (Add-AppDevPackage.ps1). Дополнительные сведения см. в разделе [Формирование пакетов приложений UWP](/windows/msix/package/packaging-uwp-apps).
 
 -   Для семейства мобильных устройств Если необходимый сертификат уже установлен, вы можете коснуться файла, чтобы установить любой APPX-файл, отправленный вам по электронной почте или на SD-карте.
 
