@@ -5,19 +5,19 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, sample, application, photo, editor
 ms.localizationpriority: medium
-ms.openlocfilehash: bbac9d6a6d08d327bf1bf55de5e86cbb1edd51ea
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 92aff51b6e5ba98d0f5fd157dd3a2dd57e861821
+ms.sourcegitcommit: f8c354def02d5c82d195e4f629e6470110268223
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745192"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68623375"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>Пример приложения C++/WinRT — редактор фотографий
 
 > [!NOTE]
 > Этот пример предназначен и протестирован для использования в Windows 10, версия 1903 (10.0; сборка 18362) и Visual Studio 2019. При желании можно использовать свойства проекта, чтобы настроить проекты для использования в Windows 10, версия 1809 (10.0; сборка 17763), а также открывать примеры в Visual Studio 2017.
 
-Пример приложения можно клонировать или скачать из репозитория с [примером приложения на C++/WinRT (редактор фотографий)](https://github.com/Microsoft/Windows-appsample-photo-editor) на GitHub.
+См. также о клонировании или скачивании примера приложения [Photo Editor C++/WinRT](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/) в коллекции примеров кода.
 
 Редактор фотографий — это пример приложения универсальной платформы Windows (UWP) для демонстрации возможностей разработки с помощью проекции языка [C++/WinRT](intro-to-using-cpp-with-winrt.md). Пример приложения позволяет извлекать фотографии из библиотеки **Pictures**, а затем редактировать выбранное изображение, используя разные фотографические эффекты. В исходном коде примера вы увидите несколько стандартных процедур, таких как [привязка данных](binding-property.md) и [асинхронные действия и операции](concurrency.md), выполняемых с помощью проекции C++/WinRT. Вот некоторые конкретные функции этого примера приложения.
 
