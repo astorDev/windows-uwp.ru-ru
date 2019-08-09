@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: Python, Windows 10, Microsoft, PIP, копировать. exe, пути к файлам, PYTHONPATH, развертывание Python, упаковка Python
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: fd08061858fc97f1427e94c6a92a4c3a9511967d
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: d944e16dc96f78efdece715778a13cd3fb2d9dbd
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473658"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867349"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Часто задаваемые вопросы об использовании Python в Windows
 
@@ -29,11 +29,21 @@ ms.locfileid: "68473658"
 
 [Следуйте обсуждению на StackOverflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379).
 
-### <a name="what-is-pyexe"></a>Что такое файл копировать. exe?
+## <a name="what-is-pyexe"></a>Что такое файл копировать. exe?
 
 На компьютере может быть установлено несколько версий Python, так как вы работаете с различными типами проектов Python. Так как все они используют `python` команду, может быть неясно, какая версия Python используется. В качестве стандарта рекомендуется использовать `python3` команду (или `python3.7` выбрать конкретную версию).
 
 [Средство запуска копировать. exe](https://docs.python.org/3/using/windows.html#launcher) автоматически выберет последнюю установленную версию Python. Можно также использовать команды, например `py -3.7` , для выбора конкретной версии или `py --list` для просмотра версий, которые можно использовать. **Однако**средство запуска копировать. exe будет работать только при использовании версии Python, установленной из [Python.org](https://www.python.org/downloads/windows/). При установке Python из Microsoft Store `py` команда **не включается**. Для Linux, macOS, WSL и Microsoft Store версии Python следует использовать `python3` команду (или `python3.7`).
+
+## <a name="why-does-running-pythonexe-open-the-microsoft-store"></a>Почему при запуске Python. exe открывается Microsoft Store?
+
+Чтобы помочь новым пользователям найти хорошую установку Python, мы добавили ярлык для Windows, который сразу же перейдет к последней версии пакета сообщества, опубликованного в Microsoft Store. Этот пакет можно легко установить без прав администратора и заменит команды по умолчанию `python` и `python3` на реальные.
+
+Если запустить ярлык исполняемого файла с любыми аргументами командной строки, будет возвращен код ошибки, указывающий на то, что Python не установлен. Это необходимо для того, чтобы пакетные файлы и скрипты не открывали приложение магазина, если оно, возможно, не планировалось.
+
+Если вы установили Python с помощью установщиков из [Python.org](https://www.python.org/downloads/windows/) и выбрали параметр "добавить в путь", Новая `python` команда будет иметь приоритет над ярлыком. Обратите внимание, что другие установщики могут добавить `python` с _более низким_ приоритетом, чем встроенное сочетание клавиш.
+
+Вы можете отключить ярлыки, не устанавливая Python, открыв "Управление псевдонимами выполнения приложений", с начала найдите записи Python "установщик приложений" и переключив их в "OFF".
 
 ## <a name="why-dont-file-paths-work-in-python-when-i-copy-paste-them"></a>Почему при копировании в Python не работают пути к файлам?
 

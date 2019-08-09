@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 838bd9cb790893ea24b57bb2b0bad49aa262fdbc
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 9df150d4a8873630a371fa2ad02e8c88bed7f42e
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682532"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867740"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Настройка автоматических сборок для приложения UWP
 
@@ -80,7 +80,7 @@ steps:
 
     ![Отправка защищенного файла](images/secure-file2.png)
 
-5. Если сертификат имеет пароль, рекомендуется сохранить пароль в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) а затем связать пароль с [группой переменных](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Для доступа к паролю из конвейера можно использовать переменную.
+5. Если закрытый ключ в сертификате имеет пароль, рекомендуется сохранить пароль в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) а затем связать пароль с [группой переменных](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Для доступа к паролю из конвейера можно использовать переменную. Обратите внимание, что пароль поддерживается только для закрытого ключа. Использование файла сертификата, защищенного паролем, в настоящее время не поддерживается.
 
 > [!NOTE]
 > Начиная с Visual Studio 2019, временный сертификат больше не создается в проектах UWP. Чтобы создать или экспортировать сертификаты, используйте командлеты PowerShell, описанные в [этой статье](/windows/msix/package/create-certificate-package-signing).
@@ -100,7 +100,7 @@ steps:
 | аппкспаккажесигнинженаблед | true | Включает подписывание пакетов. |
 | Соответствующих значению packagecertificatethumbprint | Отпечаток сертификата | Это значение **должно** соответствовать отпечатку в сертификате подписи или быть пустой строкой. |
 | паккажецертификатекэйфиле | Path | Путь к используемому сертификату. Это значение извлекается из метаданных защищенного файла. |
-| паккажецертификатепассворд | Пароль | Пароль для сертификата. Рекомендуется сохранить пароль в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) и связать пароль с [группой переменных](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Можно передать переменную в этот аргумент. |
+| паккажецертификатепассворд | Пароль | Пароль для закрытого ключа в сертификате. Рекомендуется сохранить пароль в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) и связать пароль с [группой переменных](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Можно передать переменную в этот аргумент. |
 
 ### <a name="configure-the-build"></a>Настройка сборки
 

@@ -1,26 +1,26 @@
 ---
 title: Специальные возможности в Windows 10
-description: Эта страница предоставляет информацию о вас приступить к разработке приложений Windows со специальными возможностями.
+description: На этой странице содержатся сведения, которые помогут приступить к разработке доступных приложений Windows.
 ms.topic: article
 ms.date: 04/03/2019
 ms.localizationpriority: medium
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-keywords: Специальные возможности в Windows 10, специальные возможности, приложений доступны win32, создания приложений универсальной платформы Windows со специальными возможностями, создание приложений со специальными возможностями WPF, создание приложений со специальными возможностями WinForms
-ms.openlocfilehash: b818b99ebf896b2d2de219d2eedbfd101f3a5caa
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+keywords: Специальные возможности в Windows 10, Специальные возможности, создание доступных приложений Win32, создание доступных приложений UWP, создание доступных приложений WPF, создание доступных приложений WinForms
+ms.openlocfilehash: bb82103c030c436655630a37678bbec11e588f61
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214997"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867426"
 ---
 # <a name="accessibility-in-windows-10"></a>Специальные возможности в Windows 10
 
-![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
+![Херо-акцессибилити-бар-смаллер. png](images/hero-accessibility-bar-smaller.png)
 
-Приложений со специальными возможностями предназначены быть включительно, повышение удобства использования для больше людей в качестве возможных, включая те, с ограниченными возможностями, личные настройки, стили определенных рабочих или ситуации в масштабах ограничений (например, обеспечивая тем самым, кулинарные, антибликовым покрытием и т. д.).
+Доступ к специальным приложениям обеспечивается за счет повышения удобства использования для максимально возможного количества людей, включая пользователей с ограниченными возможностями, личные настройки, Специальные стили работы или ограничения на ситуацию (например, движущие, приготовленные и т. д.).
 
-Эта страница содержит сведения о том, как различные платформы разработки для Windows поддерживает специальные возможности для разработчиков, создающих приложения Windows, вспомогательных разработчиков, создающих инструменты, такие как средства чтения с экрана просмотра с увеличением и тестирования программного обеспечения инженеры, создания автоматизированных сценариев для тестирования приложений.
+На этой странице содержатся сведения о том, как различные платформы разработки Windows поддерживают специальные возможности для разработчиков, создающих приложения Windows, разработчиков вспомогательных технологий, таких как средства чтения с экрана и экранные лупы, а также тестирование программного обеспечения. инженеры, создающие автоматизированные сценарии для тестирования приложений.
 
 ## <a name="platform-specific-documentation"></a>Документация для определенных платформ
 
@@ -28,7 +28,7 @@ ms.locfileid: "66214997"
     :::column:::
         ![Universal Windows Platform (UWP)](images/platform-uwp.png)
 
-        ### Universal Windows Platform (UWP)
+        **Universal Windows Platform (UWP)**
 
         Develop accessible apps and tools on the modern platform for Windows 10 applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
 
@@ -43,7 +43,7 @@ ms.locfileid: "66214997"
     :::column:::
         ![Win32 platform apps](images/platform-win32.png)
 
-        ### Win32 platform
+        **Win32 platform**
 
         Develop accessible apps and tools on the original platform for C/C++ Windows applications.
 
@@ -68,7 +68,7 @@ ms.locfileid: "66214997"
     :::column:::
         ![WPF platform](images/platform-wpf.png)
 
-        ### Windows Presentation Foundation (WPF)
+        **Windows Presentation Foundation (WPF)**
 
         Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
 
@@ -91,7 +91,7 @@ ms.locfileid: "66214997"
     :::column:::
         ![Windows Forms platform apps](images/platform-winforms.png)
 
-        ### Windows Forms (WinForms)
+        **Windows Forms (WinForms)**
 
         Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.
 
