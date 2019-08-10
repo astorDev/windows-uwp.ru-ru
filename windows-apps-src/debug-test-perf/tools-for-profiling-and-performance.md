@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c8514d7936bcc6fb14d9ff6f8fc33cd660438d3
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: ae0fc2eca3d32a0e491ef0d8ca00ef22c05eb27f
+ms.sourcegitcommit: 698a86640b365dc1ca772fb6f53ca556dc284ed6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820125"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935766"
 ---
 # <a name="tools-for-profiling-and-performance"></a>Инструменты для профилирования и производительности
 
@@ -24,6 +24,6 @@ ms.locfileid: "67820125"
 
 |           |             |
 |-----------|-------------|
-| [Анализ производительности приложений универсальной платформы Windows, с помощью средств диагностики Visual Studio](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015) | Показывая, где находится код приложения во время выполнения программы, профилировщики Visual Studio помогут вам найти узкие места производительности в приложениях, функциях и алгоритмах. |
-| [Производительность XAML: Методики по достижению максимальной опыт приложение универсальной Windows, созданных с помощью XAML](https://channel9.msdn.com/Events/Build/2015/3-698) | В этой конференции Microsoft Build вы узнаете о новых компонентах платформы, новых инструментах и методах для существенного увеличения производительности универсальных приложений для Windows, основанных на XAML. |
-| [Новые средства XAML в Visual Studio](https://channel9.msdn.com/Events/Build/2015/2-697) | В этой конференции Microsoft Build вы узнаете о некоторых новых возможностях Visual Studio 2015, включая усовершенствованные функции Blend, средства отладки пользовательского интерфейса и улучшенный редактор XAML. Эти средства также доступны в Visual Studio 2019 г. |
+| [Анализ производительности приложений UWP с помощью средств диагностики Visual Studio](https://docs.microsoft.com/visualstudio/profiling/profiling-tools) | Показывая, где находится код приложения во время выполнения программы, профилировщики Visual Studio помогут вам найти узкие места производительности в приложениях, функциях и алгоритмах. |
+| [Производительность XAML: Методы для максимизации работы универсальных приложений Windows, созданных с помощью XAML](https://channel9.msdn.com/Events/Build/2015/3-698) | В этой конференции Microsoft Build вы узнаете о новых компонентах платформы, новых инструментах и методах для существенного увеличения производительности универсальных приложений для Windows, основанных на XAML. |
+| [Новые средства XAML в Visual Studio](https://channel9.msdn.com/Events/Build/2015/2-697) | В этой конференции Microsoft Build вы узнаете о некоторых новых возможностях Visual Studio 2015, включая усовершенствованные функции Blend, средства отладки пользовательского интерфейса и улучшенный редактор XAML. Эти средства также доступны в Visual Studio 2019 |
