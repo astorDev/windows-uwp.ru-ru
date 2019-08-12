@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d542c9809eb939553a851508886e34265f269263
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 43d63b1831766ecdf65fe1c1d7fd15457f728f83
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583317"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867439"
 ---
 # <a name="dialogs-and-flyouts"></a>Диалоговые окна и всплывающие элементы
 
@@ -29,20 +29,20 @@ ms.locfileid: "57583317"
 
 :::row:::
     :::column:::
-        **Dialogs**
-        
-        ![Example of a dialog](../images/dialogs/dialog_RS2_delete_file.png)
+**Диалоговые элементы управления**
 
-        Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.
+![Пример диалогового окна](../images/dialogs/dialog_RS2_delete_file.png)
+
+Диалоговые окна — это модальные наложения пользовательского интерфейса, которые предоставляют контекстную информацию о приложении. Диалоговые окна блокируют взаимодействие с окном приложения, пока пользователь явно не закроет окно. Они часто требуют от пользователя совершения каких-либо действий.
     :::column-end:::
     :::column::: 
-        **Flyouts**
+**Всплывающие элементы**
 
-        ![Example of a flyout](../images/flyout-example2.png)
+![Пример всплывающего элемента](../images/flyout-example2.png)
 
-        A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a secondary control or show more detail about an item.
+Всплывающий элемент — это облегченное всплывающее контекстно-зависимое окно, отображающее элемент пользовательского интерфейса в зависимости от действий пользователя. Он включает логику расположения и размеров и может использоваться для отображения дополнительного элемента управления или отображения дополнительных сведений об элементе.
 
-        Unlike a dialog, a flyout can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
+В отличие от диалогового окна, всплывающий элемент можно быстро закрыть нажатием или щелчком за его пределами, нажатием клавиши Escape или кнопки "Назад", изменением размера окна приложения или ориентации устройства.
     :::column-end:::
 :::row-end:::
 

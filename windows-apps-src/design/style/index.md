@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7d5da19fc9fdab324db2c162a3cb6792fa91f120
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: f7cf1001333c1df2cd7e1906f57444b982814d25
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065373"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867692"
 ---
 # <a name="style-for-uwp-apps"></a>Стиль приложений UWP
 
@@ -22,60 +22,60 @@ ms.locfileid: "65065373"
 
 :::row:::
     :::column:::
-        ![hero image](images/header-color.svg)
-        ### [Color](color.md)
-        Color provides intuitive wayfinding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.
+![Главное изображение](images/header-color.svg)
+### <a name="colorcolormd"></a>[Цвет](color.md)
+Цвета позволяют интуитивно ориентироваться среди различных информационных уровней приложения и служат важнейшим средством усиления модели взаимодействия.
     :::column-end:::
     :::column:::
-        ![hero image](images/header-typography.svg)
-        ### [Typography](typography.md)
-       Основная цель шрифтового оформления как визуального представления языка — это ясность. Стиль шрифтов никогда не должен затмевать эту цель. Следующие рекомендации посвящены использованию оформления для упрощения восприятия содержимого пользователями. 
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![hero image](images/header-icons.svg)
-        ### [Icons](icons.md)
-        Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
-    :::column-end:::
-    :::column:::
-        ![hero image](images/header-acrylic.svg)
-        ### [Acrylic](acrylic.md)
-        Create a sense of depth with acrylic, a brush that creates stunning, translucent surfaces.
+![Главное изображение](images/header-typography.svg)
+### <a name="typographytypographymd"></a>[Оформление текста](typography.md)
+Основная цель шрифтового оформления как визуального представления языка — это ясность. Стиль шрифтов никогда не должен затмевать эту цель. Следующие рекомендации посвящены использованию оформления для упрощения восприятия содержимого пользователями. 
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![hero image](images/header-reveal-highlight.svg)
-        ### [Reveal highlight](reveal.md)
-        Use light to illuminate important elements.
+![Главное изображение](images/header-icons.svg)
+### <a name="iconsiconsmd"></a>[Значки](icons.md)
+Хорошие значки согласуются со шрифтовым оформлением и языком проектирования в целом. В них метафоры не смешиваются — они сообщают только то, что нужно, как можно скорее и проще.
     :::column-end:::
     :::column:::
-        ![hero image](images/header-reveal-focus.svg)
-        ### [Reveal focus](reveal-focus.md)
-        Reveal focus is a lighting effect for 10 foot experiences, such as Xbox One and television screens, and animates the border of focusable elements.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![hero image](images/header-sound.svg)
-        ### [Sound](sound.md)
-        Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
-    :::column-end:::
-    :::column:::
-        ![hero image](images/header-writing-style.gif)
-        ### [Writing style](writing-style.md)
-        Writing style can make a big difference between an awful user experience and a better one.
+![Главное изображение](images/header-acrylic.svg)
+### <a name="acrylicacrylicmd"></a>[Акрил](acrylic.md)
+Привнесите ощущение глубины с помощью акрила — кисти, позволяющей создавать потрясающие полупрозрачные поверхности.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ### [XAML styles](../controls-and-patterns/xaml-styles.md)
-        You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
+![Главное изображение](images/header-reveal-highlight.svg)
+### <a name="reveal-highlightrevealmd"></a>[Эффект подсвечивания](reveal.md)
+Подсветите важные элементы.
+    :::column-end:::
+    :::column:::
+![Главное изображение](images/header-reveal-focus.svg)
+### <a name="reveal-focusreveal-focusmd"></a>[Обозначение фокуса](reveal-focus.md)
+Обозначение фокуса — это световой эффект для больших экранов, как в случае телевизора, используемого вместе с Xbox One. Этот эффект анимирует границу элементов для фокусировки.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+![Главное изображение](images/header-sound.svg)
+### <a name="soundsoundmd"></a>[Звук](sound.md)
+Звук дополняет приложения и придает им необходимый блеск в соответствии со стилем Windows на всех платформах.
+    :::column-end:::
+    :::column:::
+![Главное изображение](images/header-writing-style.gif)
+### <a name="writing-stylewriting-stylemd"></a>[Создание стиля](writing-style.md)
+Стиль письма может определить, станет ли приложение успешным или нет.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+### <a name="xaml-stylescontrols-and-patternsxaml-stylesmd"></a>[Стили XAML](../controls-and-patterns/xaml-styles.md)
+Платформа XAML предоставляет множество способов настройки внешнего вида приложений. С помощью стилей вы можете настраивать свойства элементов управления и многократно использовать эти параметры, чтобы придать единообразный внешний вид нескольким элементам управления.
     :::column-end:::
     :::column:::
     :::column-end:::
