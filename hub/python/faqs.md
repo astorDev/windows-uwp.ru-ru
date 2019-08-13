@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: Python, Windows 10, Microsoft, PIP, копировать. exe, пути к файлам, PYTHONPATH, развертывание Python, упаковка Python
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: d944e16dc96f78efdece715778a13cd3fb2d9dbd
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: f2dbc455578a3fbe79c2558e2ba16c8f82cea522
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867349"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959039"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Часто задаваемые вопросы об использовании Python в Windows
 

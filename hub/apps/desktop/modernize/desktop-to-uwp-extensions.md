@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c47eba0e0f5969e978cde5575cf8ab05e589350e
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 87483c5d34cfb2b0bb266fb3d903e15d1b492187
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682484"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959054"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Интеграция упакованного классического приложения с Windows 10 и UWP
 
@@ -110,7 +110,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-<FileTypeAssociation Name="[AppID]">
+<FileTypeAssociation Name="[Name]">
          <MigrationProgIds>
             <MigrationProgId>"[ProgID]"</MigrationProgId>
         </MigrationProgIds>
@@ -123,7 +123,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Имя |Описание |
 |-------|-------------|
 |Category |Всегда ``windows.fileTypeAssociation``.
-|Имя |Уникальный идентификатор для вашего приложения. Этот идентификатор предназначен для внутреннего использования и применяется для генерации хэшированного [программного идентификатора (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids), ассоциированного с вашим сопоставлением типов файлов. Вы можете использовать этот идентификатор для контроля изменений в будущих версиях своего приложения. |
+|Имя |Имя сопоставления типа файла. Это имя можно использовать для упорядочения и группировки типов файлов. Имя должно содержать все символы нижнего регистра без пробелов. |
 |MigrationProgId |[Программный идентификатор (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) , описывающий приложение, компонент и версию классического приложения, из которого требуется наследовать сопоставления файлов.|
 
 #### <a name="example"></a>Пример
@@ -137,7 +137,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <rescap3:MigrationProgIds>
               <rescap3:MigrationProgId>Foo.Bar.1</rescap3:MigrationProgId>
               <rescap3:MigrationProgId>Foo.Bar.2</rescap3:MigrationProgId>
@@ -169,7 +169,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[file extension]"</FileType>
         </SupportedFileTypes>
@@ -182,7 +182,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Имя |Описание |
 |-------|-------------|
 |Category |Всегда ``windows.fileTypeAssociation``.
-|Имя |Уникальный идентификатор для вашего приложения. Этот идентификатор предназначен для внутреннего использования и применяется для генерации хэшированного [программного идентификатора (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids), ассоциированного с вашим сопоставлением типов файлов. Вы можете использовать этот идентификатор для контроля изменений в будущих версиях своего приложения.   |
+|Имя | Имя сопоставления типа файла. Это имя можно использовать для упорядочения и группировки типов файлов. Имя должно содержать все символы нижнего регистра без пробелов.   |
 |FileType |Расширение файла, поддерживаемое вашим приложением. |
 
 #### <a name="example"></a>Пример
@@ -196,9 +196,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="mediafiles">
             <uap:SupportedFileTypes>
-            <uap:FileType>.txt</uap:FileType>
             <uap:FileType>.avi</uap:FileType>
             </uap:SupportedFileTypes>
           </uap3:FileTypeAssociation>
@@ -231,7 +230,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedVerbs>
            <Verb Id="[ID]" Extended="[Extended]" Parameters="[parameters]">"[verb label]"</Verb>
         </SupportedVerbs>
@@ -244,7 +243,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Имя |Описание |
 |-------|-------------|
 |Category | Всегда ``windows.fileTypeAssociation``.
-|Имя |Уникальный идентификатор для вашего приложения. |
+|Имя |Имя сопоставления типа файла. Это имя можно использовать для упорядочения и группировки типов файлов. Имя должно содержать все символы нижнего регистра без пробелов. |
 |Команда |Имя, которое отображается в контекстном меню проводника. Эта строка может быть локализована с помощью ```ms-resource```.|
 |Id |Уникальный идентификатор команды. Если приложение является приложением UWP, оно передается в приложение как часть аргументов события активации, чтобы он мог правильно управлять выбором пользователя. Если приложение является упакованным приложением с полным доверием, оно получает параметры (см. следующий маркер). |
 |Параметры |Связанный с командой список параметров и значений аргументов. Если приложение является упакованным приложением с полным доверием, эти параметры передаются в приложение как аргументы события при активации приложения. Поведение приложения можно настроить на основе различных команд активации. Если переменная может содержать путь к файлу, заключите значение этого параметра в кавычки. Это позволит избежать проблем, которые возникают в случаях, когда путь содержит пробелы. Если приложение является приложением UWP, передавать параметры нельзя. Вместо этого приложение получит идентификатор Id (см. предыдущий пункт).|
@@ -263,7 +262,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2:SupportedVerbs>
               <uap3:Verb Id="Edit" Parameters="/e &quot;%1&quot;">Edit</uap3:Verb>
               <uap3:Verb Id="Print" Extended="true" Parameters="/p &quot;%1&quot;">Print</uap3:Verb>
@@ -295,7 +294,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]" UseUrl="true" Parameters="%1">
+    <FileTypeAssociation Name="[Name]" UseUrl="true" Parameters="%1">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -308,9 +307,9 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Имя |Описание |
 |-------|-------------|
 |Category |Всегда ``windows.fileTypeAssociation``.
-|Имя |Уникальный идентификатор для вашего приложения. |
+|Имя |Имя сопоставления типа файла. Это имя можно использовать для упорядочения и группировки типов файлов. Имя должно содержать все символы нижнего регистра без пробелов. |
 |UseUrl |Указывает, следует ли открывать файлы непосредственно из целевого URL-адреса. Если это значение не задано, попытки приложения открыть файл с помощью URL-адреса приведут к тому, что система сначала загрузит файл локально. |
-|Параметры |Дополнительные параметры. |
+|Параметры | Необязательные параметры. |
 |FileType |Соответствующие расширения файлов. |
 
 #### <a name="example"></a>Пример
@@ -324,7 +323,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
       <Application>
         <Extensions>
           <uap:Extension Category="windows.fileTypeAssociation">
-            <uap3:FileTypeAssociation Name="documenttypes" UseUrl="true" Parameters="%1">
+            <uap3:FileTypeAssociation Name="myfiletypes" UseUrl="true" Parameters="%1">
               <uap:SupportedFileTypes>
                 <uap:FileType>.txt</uap:FileType>
                 <uap:FileType>.doc</uap:FileType>
@@ -484,7 +483,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]" MultiSelectModel="[SelectionModel]">
+    <FileTypeAssociation Name="[Name]" MultiSelectModel="[SelectionModel]">
         <SupportedVerbs>
             <Verb Id="Edit" MultiSelectModel="[SelectionModel]">Edit</Verb>
         </SupportedVerbs>
@@ -499,7 +498,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |Имя |Описание |
 |-------|-------------|
 |Category |Всегда ``windows.fileTypeAssociation``.
-|Имя |Уникальный идентификатор для вашего приложения. |
+|Имя |Имя сопоставления типа файла. Это имя можно использовать для упорядочения и группировки типов файлов. Имя должно содержать все символы нижнего регистра без пробелов. |
 |MultiSelectModel |См. ниже. |
 |FileType |Соответствующие расширения файлов. |
 
@@ -525,7 +524,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="myapp" MultiSelectModel="Document">
+          <uap3:FileTypeAssociation Name="myfiletypes" MultiSelectModel="Document">
             <uap2:SupportedVerbs>
               <uap3:Verb Id="Edit" MultiSelectModel="Player">Edit</uap3:Verb>
               <uap3:Verb Id="Preview" MultiSelectModel="Document">Preview</uap3:Verb>
@@ -559,7 +558,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -574,7 +573,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |Имя |Описание |
 |-------|-------------|
 |Category |Всегда ``windows.fileTypeAssociation``.
-|Имя |Уникальный идентификатор для вашего приложения. |
+|Имя |Имя сопоставления типа файла. Это имя можно использовать для упорядочения и группировки типов файлов. Имя должно содержать все символы нижнего регистра без пробелов. |
 |FileType |Соответствующие расширения файлов. |
 |Clsid   |Идентификатор класса для вашего приложения. |
 
@@ -591,7 +590,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
             </uap2:SupportedFileTypes>
@@ -622,7 +621,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -636,7 +635,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |Имя |Описание |
 |-------|-------------|
 |Category |Всегда ``windows.fileTypeAssociation``.
-|Имя |Уникальный идентификатор для вашего приложения. |
+|Имя |Имя сопоставления типа файла. Это имя можно использовать для упорядочения и группировки типов файлов. Имя должно содержать все символы нижнего регистра без пробелов. |
 |FileType |Соответствующие расширения файлов. |
 |Clsid   |Идентификатор класса для вашего приложения. |
 
@@ -653,7 +652,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
                 </uap2SupportedFileTypes>
@@ -685,7 +684,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -701,7 +700,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |Имя |Описание |
 |-------|-------------|
 |Category |Всегда ``windows.fileTypeAssociation``.
-|Имя |Уникальный идентификатор для вашего приложения. |
+|Имя |Имя сопоставления типа файла. Это имя можно использовать для упорядочения и группировки типов файлов. Имя должно содержать все символы нижнего регистра без пробелов. |
 |FileType |Соответствующие расширения файлов. |
 |value |Допустимое [значение Kind](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names). |
 
@@ -716,7 +715,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-           <uap:FileTypeAssociation Name="Contoso">
+           <uap:FileTypeAssociation Name="mediafiles">
              <uap:SupportedFileTypes>
                <uap:FileType>.m4a</uap:FileType>
                <uap:FileType>.mta</uap:FileType>
@@ -748,7 +747,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ```XML
 <uap:Extension Category="windows.fileTypeAssociation">
-    <uap:FileTypeAssociation Name="[AppID]">
+    <uap:FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>.bar</FileType>
         </SupportedFileTypes>
@@ -762,7 +761,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 |Имя |Описание |
 |-------|-------------|
 |Category |Всегда ``windows.fileTypeAssociation``.
-|Имя |Уникальный идентификатор для вашего приложения. |
+|Имя |Имя сопоставления типа файла. Это имя можно использовать для упорядочения и группировки типов файлов. Имя должно содержать все символы нижнего регистра без пробелов. |
 |FileType |Соответствующие расширения файлов. |
 |Clsid  |Идентификатор класса для вашего приложения. |
 
@@ -778,7 +777,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
             </uap:SupportedFileTypes>

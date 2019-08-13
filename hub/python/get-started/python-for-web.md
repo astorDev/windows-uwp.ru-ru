@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: Python, Windows 10, Microsoft, Python в Windows, Python Web с WSL, веб-приложение Python с подсистемой Windows для Linux, веб-разработка Python в Windows, приложение Flask в Windows, Django приложение в Windows, Python Web, Flask Web dev в Windows, Django Web dev в Windows, Windows Web Dev с Python, VS Code Python Web Dev, Remote WSL Extension, Ubuntu, WSL, венв, PIP, расширение Microsoft Python, запуск Python в Windows, использование Python в Windows, сборка с помощью Python в Windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: eafe85ac7e954d1a76708b059a191c14526afff8
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: fa6da9f5151d9457aafd255c9d10c91e3d219cee
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473683"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959077"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Приступая к работе с Python для разработки веб-приложений в Windows
 
