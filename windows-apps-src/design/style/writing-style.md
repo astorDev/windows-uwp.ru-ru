@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: aaaf13c455d3d05d5ccfac6b2bd61418f3e8e5bb
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: f5f38fdfb3ba9fd32a6e06ec19cdbfb6c3b09f24
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63820525"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867686"
 ---
 # <a name="writing-style"></a>Стиль письма
 
@@ -41,12 +41,10 @@ ms.locfileid: "63820525"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        Select **filters** to add effects to your image.
+![Рекомендуется](images/do.svg) Выберите **фильтры** для добавления эффектов в изображение.
     :::column-end:::
     :::column:::
-        ![Don't](images/dont.svg)
-        If you want to add visual effects or alterations to your image, select **filters.**
+![Не рекомендуется](images/dont.svg) Если вы хотите добавить визуальные эффекты или изменения в изображение, выберите **фильтры**.
     :::column-end:::
 :::row-end:::
 
@@ -56,12 +54,10 @@ ms.locfileid: "63820525"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        Restart the app to see your changes.
+![Рекомендуется](images/do.svg) Перезапустите приложение, чтобы увидеть изменения.
     :::column-end:::
     :::column:::
-        ![Don't](images/dont.svg)
-        The changes will be applied when the app is restarted.
+![Не рекомендуется](images/dont.svg) Изменения будут применены после перезапуска приложения.
     :::column-end:::
 :::row-end:::
 
@@ -71,12 +67,10 @@ ms.locfileid: "63820525"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        We couldn't upload the picture. If this happens again, try restarting the app. But don't worry — your picture will be waiting when you come back.
+![Рекомендуется](images/do.svg) К сожалению, изображение не удалось отправить. Если это случится снова, попробуйте перезапустить приложение. Не беспокойтесь. Изображение будет на месте, когда вы вернетесь в приложение.
     :::column-end:::
     :::column:::
-        ![Don't](images/dont.svg)
-        An error occured, and we weren't able to upload the picture. Please try again, and if you encounter this problem again, you may need to restart the app. But don't worry — we've saved your work locally, and it'll be waiting for you when you come back.
+![Не рекомендуется](images/dont.svg) Произошла ошибка, и нам не удалось отправить изображение. Повторите попытку. Если проблема не исчезнет, попробуйте перезапустить приложение. Не беспокойтесь. Мы сохранили ваши данные локально, и вы увидите их, когда вернетесь в приложение.
     :::column-end:::
 :::row-end:::
 
@@ -93,8 +87,7 @@ ms.locfileid: "63820525"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        We couldn't save your file to that location.
+![Рекомендуется](images/do.svg) Нам не удалось сохранить файл в этом расположении.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -110,8 +103,7 @@ ms.locfileid: "63820525"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every UWP app, you can build user interfaces (UI) that scale across a range of devices.
+![Рекомендуется](images/do.svg) Руководство по проектированию приложений для универсальной платформы Windows (UWP) — это ресурс, который поможет разрабатывать и создавать прекрасные и тщательно продуманные приложения. С помощью функций, доступных в каждом приложении UWP, вы можете создавать пользовательские интерфейсы, масштабируемые на самых разных устройствах.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -125,8 +117,7 @@ ms.locfileid: "63820525"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        When you're happy with your image, select **save** to add it to your gallery. From there, you'll be able to share it with friends.
+![Рекомендуется](images/do.svg) Если изображение вас устраивает, щелкните **Сохранить**, чтобы добавить его в галерею. Оттуда вы сможете отправить его друзьям.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -140,12 +131,12 @@ ms.locfileid: "63820525"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>You’re not connected.</b>
-        * Check that your network cables are plugged in.
-        * Make sure you're not in airplane mode.
-        * See if your wireless switch is turned on.
-        * Restart your router.
+![Рекомендуется](images/do.svg)
+<b>Вы не подключены</b>.
+* Убедитесь, что сетевые кабели подключены.
+* Убедитесь, что вы отключили режиме "в самолете".
+* Убедитесь, что беспроводной коммутатор включен.
+* Перезапустите маршрутизатор.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -159,11 +150,11 @@ ms.locfileid: "63820525"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>Which part is giving you trouble?</b>
-        * I forgot your password.
-        * It won't accept password.
-        * Someone else might be using my account.
+![Рекомендуется](images/do.svg)
+<b>С каким компонентом у вас возникли проблемы?</b>
+* Я не помню пароль.
+* Пароль не подходит.
+* Возможно, кто-то другой использует мою учетную запись.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -183,12 +174,12 @@ ms.locfileid: "63820525"
 
 :::row:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>You’re not connected.</b>
-        * Check that your network cables are plugged in.
-        * Make sure you're not in airplane mode.
-        * See if your wireless switch is turned on.
-        * Restart your router.
+![Рекомендуется](images/do.svg)
+<b>Вы не подключены</b>.
+* Убедитесь, что сетевые кабели подключены.
+* Убедитесь, что вы отключили режиме "в самолете".
+* Убедитесь, что беспроводной коммутатор включен.
+* Перезапустите маршрутизатор.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -198,16 +189,16 @@ ms.locfileid: "63820525"
 
 :::row:::
     :::column:::
-        Many of the same advice for writing error messages also applies when creating the text for any dialogs in your app. While dialogs are expected by the user, they still interrupt the normal flow of the app, and need to be helpful and concise so the user can get back to what they were doing.
+Многие из рекомендаций по написанию сообщений об ошибках можно применять и при создании сообщений в диалоговых окнах приложения. Хотя диалоговые окна — это стандартный элемент управления, они все-таки отвлекают от работы с приложением. Поэтому содержащиеся в них сообщения должны быть полезными и краткими, чтобы пользователи могли быстро вернуться к своим задачам.
 
-        But most important is the "call and response" between the title of a dialog and its buttons. Make sure that your buttons are clear answers to the question posed by the title, and that their format is consistent across your app.
+Но самое важное — это четкая связь между заголовком диалогового окна и доступными кнопками. Убедитесь, что кнопки предоставляют четкие ответы на вопросы, включенные в заголовок, и что их формат согласован во всем приложении.
     :::column-end:::
     :::column:::
-        ![Do](images/do.svg)
-        <b>Which part is giving you trouble?</b>
-        1. I forgot my password
-        2. It won't accept my password
-        3. Someone else might be using my account
+![Рекомендуется](images/do.svg)
+<b>С каким компонентом у вас возникли проблемы?</b>
+1. Я не помню пароль.
+2. Пароль не подходит.
+3. Возможно, кто-то другой использует мою учетную запись.
     :::column-end:::
 :::row-end:::
 
@@ -215,13 +206,13 @@ ms.locfileid: "63820525"
 
 :::row:::
     :::column:::
-        Text on buttons needs to be concise enough that users can read it all at a glance and clear enough that the button's function is immediately obvious. The longest the text on a button should ever be is a couple short words, and many should be shorter than that.
-        When writing the text for buttons, remember that every button represents an action. Be sure to use the *active voice* in button text, to use words that represent actions rather than reactions.
+Текст на кнопках должен быть достаточно кратким, чтобы пользователи могли быстро его прочитать, и достаточно понятным, чтобы назначение кнопки было очевидным. Самый длинный текст на кнопке должен включать буквально несколько коротких слов, при этом текст на многих кнопках должен быть еще короче.
+При написании текста кнопки помните, что каждая кнопке представляет действие. Обязательно используйте в тексте на кнопке *действительный залог*, а также слова, которые представляют действия, а не реакции.
     :::column-end:::
     :::column:::
-        ![Do](images/do.svg)
-        * Install now
-        * Share
+![Рекомендуется](images/do.svg)
+* Установить сейчас
+* Share
     :::column-end:::
 :::row-end:::
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1d162fcf9a0f1023c58792e8c9f7a0e22fac4440
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63820568"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867758"
 ---
 # <a name="typography"></a>Шрифтовое оформление
 
@@ -25,16 +25,14 @@ ms.locfileid: "63820568"
 
 ![Пример текста с использованием шрифта Segoe UI](images/type/segoe-sample.svg)
 
-Сведения об отображения текста на языках, отличных от английского, или выборе другого шрифта для приложения см. в разделах [Языки](#Languages) и [Шрифты](#Fonts), в которых описываются шрифты, рекомендованные для приложений UWP.
+Сведения об отображения текста на языках, отличных от английского, или выборе другого шрифта для приложения см. в разделах [Языки](#languages) и [Шрифты](#fonts), в которых описываются шрифты, рекомендованные для приложений UWP.
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Pick one font for your UI.
+![Рекомендуется](images/do.svg) Выберите один шрифт пользовательского интерфейса.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Don't mix multiple fonts.
+![Не рекомендуется](images/dont.svg) Не используйте несколько шрифтов сразу.
     :::column-end:::
 :::row-end:::
 
@@ -48,12 +46,10 @@ ms.locfileid: "63820568"
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Follow the UWP [type ramp](#type-ramp) sizing.
+![Рекомендуется](images/do.svg) Соблюдайте размеры [набора шрифтов](#type-ramp) UWP.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use a font size smaller than 12 px.
+![Не рекомендуется](images/dont.svg) Не используйте шрифт размером менее 12 пикселей.
     :::column-end:::
 :::row-end:::
 
@@ -61,10 +57,10 @@ ms.locfileid: "63820568"
 
 :::row:::
     :::column:::
-        Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the UWP type ramp.
+Пользователи полагаются на визуальную иерархию при просмотре страницы, когда заголовки представляют сводку содержимого, а основной текст содержит более подробные сведения. Чтобы создать четкую визуальную иерархию в приложении, используйте набор шрифтов UWP.
     :::column-end:::
     :::column:::
-        ![text block styles](images/type/type-hierarchy.svg)
+![Стили текстовых блоков](images/type/type-hierarchy.svg)
     :::column-end:::
 :::row-end:::
 
@@ -78,10 +74,10 @@ ms.locfileid: "63820568"
 
 :::row:::
     :::column:::
-        You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
+Вы можете получить доступ к уровням набора шрифтов как к [статическим ресурсам](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp) XAML. К стилям применяется соглашение об именовании `*TextBlockStyle`.
     :::column-end:::
     :::column:::
-        ![text block styles](images/type/text-block-type-ramp.svg)
+![Стили текстовых блоков](images/type/text-block-type-ramp.svg)
     :::column-end:::
 :::row-end:::
 
@@ -97,16 +93,14 @@ ms.locfileid: "63820568"
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Use "Body" for most text.
+![Рекомендуется](images/do.svg) Используйте параметр Body для основной части текста.
 
-        Use "Base" for titles when space is constrained.
+Используйте параметр Base для заголовков, если пространство ограничено.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use "Caption" for primary action or any long strings.
+![Не рекомендуется](images/dont.svg) Не используйте параметр Caption для длинных строк или основных действий.
 
-        Use "Header" or "Subheader" if text needs to wrap.
+Используйте параметры Header или Subheader, если текст нужно переносить.
     :::column-end:::
 :::row-end:::
 
@@ -124,12 +118,10 @@ ms.locfileid: "63820568"
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Keep to 50–60 letters per line for ease of reading.
+![Рекомендуется](images/do.svg) Для хорошей читабельности в строке должно быть не более 50–60 символов.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Less than 20 characters or more than 60 characters per line is difficult to read.
+![Не рекомендуется](images/dont.svg) Если символов меньше 20 или больше 60, строку трудно читать.
     :::column-end:::
 :::row-end:::
 
@@ -145,12 +137,10 @@ ms.locfileid: "63820568"
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Clip text, and wrap if multiple lines are enabled.
+![Рекомендуется](images/do.svg) Настройте обрезку текста и его перенос, если включено несколько строк.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use ellipses to avoid visual clutter.
+![Не рекомендуется](images/dont.svg) Не используйте многоточия, чтобы избежать визуального шума.
     :::column-end:::
 :::row-end:::
 

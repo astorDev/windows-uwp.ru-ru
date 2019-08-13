@@ -10,18 +10,18 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fc54662b29255b73e972bcfb0fa4b6bb2dcf968
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
+ms.sourcegitcommit: 81e29e66f0cb1e13c3daa3a239e4dcc4dd674a66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363061"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796713"
 ---
 # <a name="content-links-in-text-controls"></a>Ссылки на содержимое в текстовых элементах управления
 
 Ссылки на содержимое позволяют вставлять в текстовые элементы управления форматированные данные. Благодаря этому пользователь может находить и использовать больше информации о людях и местах, не покидая вашего приложения.
 
-Когда пользователь использует символ амперсанд (@) перед записью в RichEditBox, отображается список людей и/или мест, соответствующих записи. Затем, например, когда пользователь выбирает место, ContentLink для этого места вставляется в текст. Когда пользователь вызывает ссылку на содержимое из RichEditBox, отображается всплывающий элемент с картой и дополнительными сведениями о месте.
+Когда пользователь использует в RichEditBox символ @ в качестве префикса, отображается список людей и (или) мест, соответствующих вводу. Затем, например, когда пользователь выбирает место, ContentLink для этого места вставляется в текст. Когда пользователь вызывает ссылку на содержимое из RichEditBox, отображается всплывающий элемент с картой и дополнительными сведениями о месте.
 
 > **Важные API**: [класс ContentLink](/uwp/api/windows.ui.xaml.documents.contentlink), [класс ContentLinkInfo](/uwp/api/windows.ui.text.contentlinkinfo), [класс RichEditTextRange](/uwp/api/windows.ui.text.richedittextrange)
 

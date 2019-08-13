@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8f8d4172389fc2778fda4e335a29b3bae7d90fd0
-ms.sourcegitcommit: 5fcd3a595efd3686009505602c34e10163fd0aa5
+ms.openlocfilehash: e454bed6dc1a9429fe313e305dc9ba818d86e765
+ms.sourcegitcommit: 802699ce8d21e7fa4639f0b19b1c5b6c46c2c727
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558762"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68835639"
 ---
 # <a name="buttons"></a>Кнопки
 
@@ -36,6 +36,7 @@ ms.locfileid: "67558762"
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Кнопка со значком шеврона, которая открывает прикрепленное всплывающее меню.
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | Двухсторонняя кнопка. Одна сторона инициирует действие, а другая открывает меню.
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | Двухсторонняя кнопка переключения. Одна сторона выполняет функцию переключателя, а другая сторона открывает меню.
+[ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | Кнопка, которая может быть включена или отключена.
 
 | **Получение библиотеки пользовательского интерфейса Windows** |
 | - |
@@ -59,6 +60,8 @@ ms.locfileid: "67558762"
 Элемент управления **DropDownButton** можно использовать, если у кнопки есть всплывающее меню с дополнительными вариантами. Значок шеврона по умолчанию является визуальным индикатором наличия у кнопки всплывающего меню.
 
 Элемент управления **SplitButton** позволяет пользователю инициировать немедленное действие или по отдельности выбирать дополнительные варианты.
+
+Используйте элемент управления **ToggleButton**, чтобы пользователи могли моментально переключаться между двумя взаимоисключающими состояниями, и при этом кнопка лучше всего вписывается в пользовательский интерфейс. Если кнопка не подходит, лучше использовать [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [CheckBox](checkbox.md), [RadioButton](radio-button.md) или [ToggleSwitch](toggles.md).
 
 ## <a name="examples"></a>Примеры
 

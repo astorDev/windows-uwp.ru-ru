@@ -11,12 +11,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ac2bd55d1cea25359c3c609148c7098532d76c46
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8b33fe420e93c9ce78c625ad365ec8dc10e343ad
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63796505"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867458"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>Основы проектирования команд в приложениях UWP
 
@@ -48,52 +48,52 @@ When designing a command interface, the most important decision is choosing what
 
 :::row:::
     :::column:::
-        ![button image](images/commanding/thumbnail-button.svg)
+![Изображение кнопки](images/commanding/thumbnail-button.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Buttons</b>
+<b>Кнопки</b>
 
-        <a href="../controls-and-patterns/buttons.md" style="text-decoration:none">Buttons</a> trigger an immediate action. Examples include sending an email, submitting form data, or confirming an action in a dialog.
+<a href="../controls-and-patterns/buttons.md" style="text-decoration:none">Кнопки</a> активируют немедленное действие, например отправку электронного сообщения, подтверждение действия в диалоговом окне или отправку данных формы.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![list image](images/commanding/thumbnail-list.svg)
+![Изображение списка](images/commanding/thumbnail-list.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Lists</b>
+<b>Списки</b>
 
-        <a href="../controls-and-patterns/lists.md" style="text-decoration:none">Lists</a> present items in a interactive list or a grid. Usually used for many options or display items. Examples include drop-down list, list box, list view and grid view.
+<a href="../controls-and-patterns/lists.md" style="text-decoration:none">Списки</a> представляют элементы в интерактивном перечне или сетке. Обычно они используются для отображения большого числа параметров или элементов, включая раскрывающийся список, поле со списком, представление списка и представление сетки.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![selection control image](images/commanding/thumbnail-selection.svg)
+![Изображение элемента управления выделением](images/commanding/thumbnail-selection.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Selection controls</b>
+<b>Элементы управления выделением</b>
 
-        Lets users choose from a few options, such as when completing a survey or configuring app settings. Examples include <a href="../controls-and-patterns/checkbox.md">check box</a>, <a href="../controls-and-patterns/radio-button.md">radio button</a>, and <a href="../controls-and-patterns/toggles.md">toggle switch</a>.
+Представляют разные варианты на выбор, например при прохождении опроса или настройке параметров приложения, включая <a href="../controls-and-patterns/checkbox.md">флажок</a>, <a href="../controls-and-patterns/radio-button.md">переключатель</a> и <a href="../controls-and-patterns/toggles.md">выключатель</a>.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Calendar  image](images/commanding/thumbnail-calendar.svg)
+![Изображение календаря](images/commanding/thumbnail-calendar.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Calendar, date and time pickers</b>
+<b>Календарь, а также средства выбора даты и времени</b>
 
-        <a href="../controls-and-patterns/date-and-time.md">Calendar, date and time pickers</a> enable users to view and modify date and time info, such as when creating an event or setting an alarm. Examples include calendar date picker, calendar view, date picker, time picker.
+<a href="../controls-and-patterns/date-and-time.md">Календарь и средства выбора даты и времени</a> представляют возможности для просмотра и изменения сведений о дате и времени (например, при создании события или установке будильника), включая средство выбора даты календаря, представление календаря, средства выбора даты и времени.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Predictive text entry image](images/commanding/thumbnail-autosuggest.svg)
+![Изображение средства прогнозируемого ввода текста](images/commanding/thumbnail-autosuggest.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Predictive text entry</b>
+<b>Средство прогнозируемого ввода текста</b>
 
-        Provides suggestions as users type, such as when entering data or performing queries. Examples include <a href="../controls-and-patterns/auto-suggest-box.md">auto-suggest box</a>.<br>
+Отображает предложения по мере ввода пользователем данных или при выполнении запросов, в том числе с использованием <a href="../controls-and-patterns/auto-suggest-box.md">поля автозаполнения</a>.<br>
 :::row-end:::
 
 Полный список см. в разделе [Элементы управления и пользовательского интерфейса](../controls-and-patterns/index.md)
@@ -110,36 +110,36 @@ When designing a command interface, the most important decision is choosing what
 
 :::row:::
     :::column:::
-        ![app canvas image](images/commanding/thumbnail-canvas.svg)
+![Изображение холста приложения](images/commanding/thumbnail-canvas.svg)
     :::column-end:::
     :::column span="2":::
-        <b>App canvas (content area)</b>
+<b>Холст приложения (область содержимого)</b>
 
-        If a command is constantly needed for users to complete core scenarios, put it on the canvas. Because you can put commands near (or on) the objects they affect, putting commands on the canvas makes them easy and obvious to use. However, choose the commands you put on the canvas carefully. Too many commands on the app canvas take up valuable screen space and can overwhelm the user. If the command won't be frequently used, consider putting it in another command surface.
+Если команда постоянно требуется пользователю для выполнения основных сценариев, ее можно поместить на холст. Так как вы можете разместить команды возле объектов, на которые они влияют (или на них), если разместить команды на холсте, их будет просто понять и использовать. Но выбирайте команды, которые помещаете на холст, тщательно. Большое количество команд занимает слишком много места на экране и может затруднять восприятие интерфейса пользователем. Если команда будет использоваться нечасто, ее можно поместить на другую поверхность для команд.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![commandbar image](images/commanding/thumbnail-commandbar.svg)
+![Изображение панели команд](images/commanding/thumbnail-commandbar.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Command bars and menu bars</b>
+<b>Панели команд и строки меню</b>
 
-        <a href="../controls-and-patterns/app-bars.md">Command bars</a> help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen (a <a href="../controls-and-patterns/menus.md#create-a-menu-bar">MenuBar</a> can also be used when the functionality in your app is too complex for a command bar).
+<a href="../controls-and-patterns/app-bars.md">Панели команд</a> помогают упорядочить команды и упрощают доступ к ним. Панели команд можно разместить в верхней части экрана, в нижней части экрана, или как в верхней, так и в нижней частях. Если для функций, существующих в приложении, панель команд не подходит, можно использовать <a href="../controls-and-patterns/menus.md#create-a-menu-bar">панель меню</a>.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![context menu image](images/commanding/thumbnail-contextmenu.svg)
+![Изображение контекстного меню](images/commanding/thumbnail-contextmenu.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Menus and context menus</b>
+<b>Меню и контекстные меню</b>
 
-        <p>Menus and context menus save space by organizing commands and hiding them until the user needs them. Users typically access a menu or context menu by clicking a button or right-clicking a control.</p> 
+<p>Меню и контекстные меню экономят место, упорядочивая команды и скрывая их до востребования. Пользователи обычно обращаются к меню или контекстному меню, нажимая кнопку или щелкая элемент управления правой кнопкой мыши.</p> 
 
-        <p>The <a href="../controls-and-patterns/command-bar-flyout.md">command bar flyout </a> is a type of contextual menu that combines the benefits of a command bar and a context menu into a single control. It can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands.</p>
+<p><a href="../controls-and-patterns/command-bar-flyout.md">Всплывающее меню панели команд</a> — это разновидность контекстного меню, которое сочетает в себе преимущества панели команд и контекстного меню с одним элементом управления. Оно может содержать ярлыки на часто используемые действия и предоставлять доступ ко второстепенным командам, которые актуальны только в определенном контексте, например командам буфера обмена или пользовательским командам.</p>
 
-        <p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus.md">menus and context menus overview</a>.</p>
+<p>UWP также предоставляет набор традиционных меню и контекстных меню (см. <a href="../controls-and-patterns/menus.md">общие сведения о меню и контекстных меню</a>).</p>
 :::row-end:::
 
 ## <a name="provide-command-feedback"></a>Предоставление отзывов для команды 
@@ -153,32 +153,32 @@ When designing a command interface, the most important decision is choosing what
 
 :::row:::
     :::column:::
-        ![commandbar content area image](images/commanding/thumbnail-commandbar2.svg)
+![Изображение области содержимого панели команд](images/commanding/thumbnail-commandbar2.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Command bar</b>
+<b>Панель команд</b>
 
-        The content area of the <a href="../controls-and-patterns/app-bars.md">command bar</a> is an intuitive place to communicate status to users if they'd like to see feedback.
+Область содержимого <a href="../controls-and-patterns/app-bars.md">панели команд</a> — это интуитивно понятная область, которая позволяет обмениваться с пользователями данными о состоянии, если им нужна обратная связь.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Flyout image](images/commanding/thumbnail-flyout.svg)
+![Изображение всплывающего элемента](images/commanding/thumbnail-flyout.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Flyouts</b>
+<b>Всплывающие элементы</b>
 
        <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Всплывающие элементы</a> — это облегченные всплывающие контекстно-зависимые окна, которые можно закрыть, если щелкнуть участок экрана за его пределами.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Dialog image](images/commanding/thumbnail-dialog.svg)
+![Изображение диалогового окна](images/commanding/thumbnail-dialog.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Dialog controls</b>
+<b>Диалоговое окно</b>
 
-        <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Dialog controls</a> are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user. Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#when-to-confirm-or-undo-actions) section.
+<a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Диалоговые окна</a> — это модальные наложения пользовательского интерфейса, которые предоставляют контекстную информацию о приложении. В большинстве случаев диалоговые окна блокируют взаимодействие с окном приложения, пока не будут закрыты явным образом, и зачастую требуют от пользователя выполнить некое действие. Диалоговые окна могут отвлекать и должны использоваться только в определенных ситуациях. Подробнее см. в разделе [Когда подтверждать или отменять действия](#when-to-confirm-or-undo-actions).
     :::column-end:::
 :::row-end:::
 
@@ -191,23 +191,23 @@ When designing a command interface, the most important decision is choosing what
 
 :::row:::
     :::column:::
-        ![do image](images/do.svg)
+![Изображение "Рекомендация""](images/do.svg)
 
-        For actions that can't be undone and have major consequences, we recommend using a confirmation dialog. Examples of such actions include:
-        -   Overwriting a file
-        -   Not saving a file before closing
-        -   Confirming permanent deletion of a file or data
-        -   Making a purchase (unless the user opts out of requiring a confirmation)
-        -   Submitting a form, such as signing up for something
+Для имеющих серьезные последствия действий, которые нельзя отменить, рекомендуется использовать диалоговое окно подтверждения. Примеры таких действий:
+-   перезапись файла;
+-   закрытие файла без сохранения;
+-   подтверждение окончательного удаления файла или данных;
+-   покупка (если пользователь не отказался от обязательного подтверждения);
+-   отправка формы, например регистрация.
     :::column-end:::
     :::column:::
-        ![do image](images/do.svg)
+![Изображение "Рекомендация""](images/do.svg)
 
-        For actions that can be undone, offering a simple undo command is usually enough. Examples of such actions include:
-        -   Deleting a file
-        -   Deleting an email (not permanently)
-        -   Modifying content or editing text
-        -   Renaming a file
+Для действий, которые можно отменить, обычно достаточно простой команды "Отменить". Примеры таких действий:
+-   удаление файла;
+-   удаление электронного письма (не окончательное);
+-   изменение содержимого или редактирование текста;
+-   переименование файла.
 :::row-end:::
 
 ##  <a name="optimize-for-specific-input-types"></a>Оптимизация для определенных типов ввода

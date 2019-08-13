@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e5cd8ecafd3557719e70c50890da4c3eade18f52
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 5f040060b1c3931e9ef1634fddd65febb1be7dbc
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714140"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867720"
 ---
 # <a name="color"></a>Цвет
 
@@ -26,23 +26,23 @@ ms.locfileid: "67714140"
 
 :::row:::
     :::column:::
-        **Use color meaningfully.**
-        When color is used sparingly to highlight important elements, it can help create a user interface that is fluid and intuitive.
+**Используйте цвет осмысленно.**
+Использование цвета для выделения важных элементов поможет создать гибкий и интуитивно понятный интерфейс.
     :::column-end:::
     :::column:::
-        **Use color to indicate interactivity.**
-        It's a good idea to choose one color to indicate elements of your application that are interactive. For example, many web pages use blue text to denote a hyperlink.
+**Используйте цвет для обозначения интерактивных возможностей.**
+Рекомендуется выбрать один цвет для обозначения интерактивных элементов приложения. Например, на многих веб-страницах синий текст обозначает гиперссылки.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        **Color is personal.**
-        In Windows, users can choose an accent color and a light or dark theme, which are reflected throughout their experience. You can choose how to incorporate the user's accent color and theme into your application, personalizing their experience.
+**Цвет отражает личные предпочтения.**
+В Windows пользователи могут выбирать цвет элементов, а также светлую или темную тему, чтобы применить эти настройки системно. Вы можете выбрать способ применения выбираемых пользователем цветов и тем в приложении для персонализации взаимодействия.
     :::column-end:::
     :::column:::
-        **Color is cultural.**
-        Consider how the colors you use will be interpreted by people from different cultures. For example, in some cultures the color blue is associated with virtue and protection, while in others it represents mourning.
+**Цвет отражает культурные особенности.**
+Подумайте о том, как применяемые цвета будут интерпретироваться пользователями из разных культур. Например, в некоторых странах синий цвет ассоциируется с достоинством и защитой, а в других странах он символизирует печаль.
     :::column-end:::
 :::row-end:::
 
@@ -105,12 +105,12 @@ ms.locfileid: "67714140"
 
 :::row:::
     :::column:::
-        When creating templates for custom controls, use theme brushes rather than hard code color values. This way, your app can easily adapt to any theme.
+При создании шаблонов для пользовательских элементов управления применяйте кисти темы, а не закодированные значения цветов. Так приложение сможет легко адаптироваться к любой теме.
 
-        For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
+Например, [эти шаблоны элементов для ListView](../controls-and-patterns/item-templates-listview.md) демонстрируют использование кистей темы в пользовательском шаблоне.
     :::column-end:::
     :::column:::
-         ![double line list item with icon example](images/color/list-view.svg)
+ ![Пример двухстрочного элемента списка со значком](images/color/list-view.svg)
     :::column-end:::
 :::row-end:::
 
@@ -144,12 +144,12 @@ ms.locfileid: "67714140"
 
 :::row:::
     :::column:::
-        ![user-selected accent header](images/color/user-accent.svg)
-        ![user-selected accent color](images/color/user-selected-accent.svg)
+![Выбранный пользователем заголовок](images/color/user-accent.svg)
+![Выбранный пользователем цвет элементов](images/color/user-selected-accent.svg)
     :::column-end:::
     :::column:::
-        ![custom accent header](images/color/custom-accent.svg)
-        ![custom brand accent color](images/color/brand-color.svg)
+![Настраиваемый заголовок](images/color/custom-accent.svg)
+![Настраиваемый корпоративный цвет элементов](images/color/brand-color.svg)
     :::column-end:::
 :::row-end:::
 
@@ -408,36 +408,36 @@ ColorPaletteResources — это API, который сообщает сист�
 
 :::row:::
     :::column:::
-        ![contrast illustration](images/color/illo-contrast.svg)
+![Иллюстрация контрастности](images/color/illo-contrast.svg)
     :::column-end:::
     :::column span="2":::
-        **Contrast**
+**Контрастность**
 
-        Make sure that elements and images have sufficient contrast to differentiate between them, regardless of the accent color or theme.
+Убедитесь, что элементы и изображения достаточно контрастные, чтобы их можно было различать независимо от темы или цвета элементов.
 
-        When considering what colors to use in your application, accessibility should be a primary concern. Use the guidance below to make sure your application is accessible to as many users as possible.
+В ходе принятия решения о применении цветов в приложении следует ориентироваться на доступность. Используйте приведенные ниже инструкции, чтобы убедиться, что приложение доступно для использования максимальному числу пользователей.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![contrast illustration](images/color/illo-lighting.svg)
+![Иллюстрация контрастности](images/color/illo-lighting.svg)
     :::column-end:::
     :::column span="2":::
-        **Lighting**
+**Освещение**
 
-        Be aware that variation in ambient lighting can affect the usability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
+Имейте в виду, что особенности освещения могут влиять на удобство использования приложения. Например, страница с черным фоном может быть нечитаемой на улице из-за бликов, а страница с белым фоном может вызывать дискомфорт при просмотре в темной комнате.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![contrast illustration](images/color/illo-colorblindness.svg)
+![Иллюстрация контрастности](images/color/illo-colorblindness.svg)
     :::column-end:::
     :::column span="2":::
-        **Colorblindness**
+**Цветовая слепота**
 
-        Be aware of how colorblindness could affect the usability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
+Учитывайте то, как особенности восприятия цвета у некоторых пользователей могут влиять на удобство использования приложения. Например, некоторые пользователи испытывают трудности при различении красных и зеленых элементов. Около **8 % мужчин** и **0,5 % женщин** не различают красный и зеленый цвета, поэтому не используйте их сочетание в качестве единственного отличия между элементами приложения.
     :::column-end:::
 :::row-end:::
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d485e6e2926f0065e090e7ef9d2bfab0683f396
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 343fa50dbe9a0574914dc96b9fac450475a69b0a
+ms.sourcegitcommit: 87ddc67d31668a6351206bda3546ffbabb7b4551
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318818"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807842"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Создание игры UWP на языке JavaScript
 
@@ -134,7 +134,7 @@ EaselJS предоставляет нам несколько различных 
     ];
 ```
 
-JavaScript нуждается в небольшой помощи при загрузке таких ресурсов, как изображения. Поэтому мы используем [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html) — функцию библиотеки CreateJS, предназначенную для предварительной загрузки изображений. Мы не можем знать точно, сколько времени займет загрузка изображений, поэтому воспользуемся LoadQueue. Эта функция сообщит нам, когда изображения будут доступны. Для этого сначала мы создадим новый объект, который перечисляет все наши изображения, а затем создадим объект LoadQueue. В коде ниже видно, как настроить вызов функции **loadingComplete()** , когда все готово.
+JavaScript нуждается в небольшой помощи при загрузке таких ресурсов, как изображения. Поэтому мы используем [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html) — функцию библиотеки CreateJS, предназначенную для предварительной загрузки изображений. Мы не знаем точно, сколько времени займет загрузка изображений, поэтому будем использовать LoadQueue. Эта функция сообщит нам, когда изображения будут доступны. Для этого сначала мы создадим новый объект, который перечисляет все наши изображения, а затем создадим объект LoadQueue. В коде ниже видно, как настроить вызов функции **loadingComplete()** , когда все готово.
 
 ```
     // Now we create a special queue, and finally a handler that is
