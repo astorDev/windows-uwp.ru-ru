@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, security
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c1a7de0e9e6817fc4b0bf1ada113f49e798641e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f567637f3d38ce80c320bfe92fff392efadeda8d
+ms.sourcegitcommit: 7803f11ba4c9194c350217cc06069a4707f15ed6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320539"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69017433"
 ---
 # <a name="web-account-manager"></a>Диспетчер учетных веб-записей
 
@@ -76,7 +76,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 Панель пуста, поскольку система предоставляет лишь оболочку пользовательского интерфейса, — разработчику необходимо программно добавить в панель поставщиков удостоверений. 
 
 > [!TIP]
-> При необходимости можно использовать **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** вместо  **[Показать](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** , возвращающий  **[ IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** , чтобы запросить состояние операции. 
+> При необходимости можно использовать **[шоваддаккаунтасинк](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** вместо команды " **[отобразить](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** ", которая возвращает **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** , чтобы запросить состояние операции. 
 
 ## <a name="register-for-accountcommandsrequested"></a>Регистрация AccountCommandsRequested
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-Затем получите поставщика с помощью метода WebAuthenticationCoreManager.FindAccountProviderAsync. У каждого поставщика свой URL-адрес, который можно найти в документации поставщика. Для учетных записей Microsoft и Azure Active Directory используется https://login.microsoft.com. 
+Затем получите поставщика с помощью метода WebAuthenticationCoreManager.FindAccountProviderAsync. У каждого поставщика свой URL-адрес, который можно найти в документации поставщика. Для учетных записей Майкрософт и Azure Active Directory это "HTTPS\://Login.Microsoft.com". 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -178,7 +178,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * Сведения об областях OneDrive см. в разделе [Аутентификация OneDrive и вход в систему](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]
-> При необходимости, если ваше приложение использует Указание имени входа (для заполнения поле пользователя с электронным адресом по умолчанию) или другие специальные свойства, связанного с входа в систему, укажите ее в **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** свойство. В результате система игнорирует свойство при кэшировании web учетной записи, что предотвращает несоответствия учетной записи в кэше.
+> Кроме того, если приложение использует указание имени входа (для заполнения поля пользователя адресом электронной почты по умолчанию) или другое специальное свойство, связанное с входом, перечислите его в свойстве **[вебтокенрекуест. AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** . Это приведет к тому, что система будет игнорировать свойство при кэшировании учетной записи веб-сайта, что предотвращает несоответствие учетной записи в кэше.
 
 Если вы разрабатываете корпоративное приложение, то, скорее всего, захотите подключиться к экземпляру Azure Active Directory (AAD) и использовать Microsoft Graph API вместо обычных служб учетной записи Майкрософт. В этом случае используйте следующий код: 
 
@@ -338,7 +338,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="remove-a-stored-account"></a>Удаление сохраненной учетной записи
 
-Если вы сохраняете учетную веб-запись, целесообразно предоставить пользователям возможность отвязать их учетную запись от вашего приложения. Таким образом, они могут эффективно «выход» приложения: свои сведения об учетной записи больше не будут автоматически загружены при запуске. Для этого сначала удалите все сохраненные сведения об учетной записи и поставщике. Затем вызовите метод **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** для очистки кэша и аннулируйте все имеющиеся в приложении маркеры. 
+Если вы сохраняете учетную веб-запись, целесообразно предоставить пользователям возможность отвязать их учетную запись от вашего приложения. Таким образом, они могут эффективно выходить из приложения: сведения об учетной записи больше не будут загружаться автоматически при запуске. Для этого сначала удалите все сохраненные сведения об учетной записи и поставщике. Затем вызовите метод **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** для очистки кэша и аннулируйте все имеющиеся в приложении маркеры. 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)
@@ -422,14 +422,14 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 ## <a name="see-also"></a>См. также
 
-[Пространство имен Windows.Security.Authentication.Web.Core](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
+[Пространство имен Windows. Security. Authentication. Web. Core](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 
-[Пространство имен Windows.Security.Credentials](https://docs.microsoft.com/uwp/api/windows.security.credentials)
+[Пространство имен Windows. Security. Credentials](https://docs.microsoft.com/uwp/api/windows.security.credentials)
 
-[Класс AccountsSettingsPane](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane)
+[Класс Аккаунтссеттингспане](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane)
 
 [Брокер веб-аутентификации](web-authentication-broker.md)
 
-[Пример учетной записи службы управления Web](https://go.microsoft.com/fwlink/p/?LinkId=620621)
+[Пример управления учетными записями веб-сайта](https://go.microsoft.com/fwlink/p/?LinkId=620621)
 
-[Обеденный планировщик](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
+[Приложение планировщика обедов](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
