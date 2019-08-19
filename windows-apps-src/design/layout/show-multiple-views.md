@@ -1,151 +1,112 @@
 ---
-Description: Просмотр нескольких частей приложения в отдельных окнах.
+Description: Просмотр различных частей приложения в отдельных окнах.
 title: Отображение нескольких представлений для приложения
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 275dc6ab7cdb310dff817a3e0017568ad2fed80c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: ee49b5fe5b5956e9069ea196c4d2e029b3a15763
+ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317123"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729518"
 ---
 # <a name="show-multiple-views-for-an-app"></a>Отображение нескольких представлений для приложения
 
 ![Модель, показывающая приложение с несколькими окнами](images/multi-view.gif)
 
-Помогите пользователям работать эффективнее, дав им возможность открывать независимые компоненты приложения в отдельных окнах. Если создать для приложения несколько окон, каждое окно будет работать независимо. На панели задач каждое окно отображается отдельно. Пользователи могут перемещать, отображать, скрывать окна приложения и менять их размеры независимо друг от друга, а также переключаться между окнами, как будто это разные приложения. Каждое окно работает в собственном потоке.
+Помогите пользователям работать эффективнее, дав им возможность открывать независимые компоненты приложения в отдельных окнах. При создании нескольких окон для приложения панель задач отображает каждое окно отдельно. Пользователи могут перемещать, отображать, скрывать окна приложения и менять их размеры независимо друг от друга, а также переключаться между окнами, как будто это разные приложения.
 
-> **Важные API**: [**ApplicationViewSwitcher**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher), [ **CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
+> **Важные API**: Пространство имен [Windows. UI. виевманажемент](/uwp/api/windows.ui.viewmanagement), [пространство имен Windows. UI. виндовманажемент](/uwp/api/windows.ui.windowmanagement)
 
 ## <a name="when-should-an-app-use-multiple-views"></a>Когда приложение должно использовать несколько представлений?
-Существует ряд сценариев, для которых может быть удобным использование нескольких представлений. Вот несколько примеров.
- - Приложение электронной почты, которое позволяет пользователям просматривать список полученных сообщений при составлении нового письма
- - Приложение адресной книги, которое позволяет пользователям сравнить контактные данные для нескольких параллельных пользователей
- - Приложение проигрывателя музыки, которое позволяет пользователям просматривать информацию о воспроизводимой музыке во время просмотра списка другой доступной музыки
- - Приложение заметок, которое позволяет пользователям копировать сведения с одной страницы заметок на другую
- - Приложение чтения, которое дает пользователям возможность просматривать все заголовки высокого уровня и позволяет открывать несколько статей для чтения позже
 
-Для создания отдельных экземпляров приложения см. раздел [Создание нескольких экземпляров приложения UWP](../../launch-resume/multi-instance-uwp.md).
+Существует множество сценариев, которые могут использовать преимущества нескольких представлений. Вот несколько примеров.
 
-## <a name="what-is-a-view"></a>Что такое представление приложения?
+- Приложение электронной почты, которое позволяет пользователям просматривать список полученных сообщений при составлении нового письма
+- Приложение адресной книги, которое позволяет пользователям сравнить контактные данные для нескольких параллельных пользователей
+- Приложение проигрывателя музыки, которое позволяет пользователям просматривать информацию о воспроизводимой музыке во время просмотра списка другой доступной музыки
+- Приложение заметок, которое позволяет пользователям копировать сведения с одной страницы заметок на другую
+- Приложение чтения, которое дает пользователям возможность просматривать все заголовки высокого уровня и позволяет открывать несколько статей для чтения позже
 
-Представление приложения — это совокупность 1:1 потока и окна, которая используется приложением для отображения содержимого. Оно представляется объектом [**Windows.ApplicationModel.Core.CoreApplicationView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView).
+Поскольку каждый макет приложения уникален, мы рекомендуем добавить кнопку «новое окно» в предсказуемые местоположение, например в правый верхний угол содержимого, которое можно открыть в новом окне. Также рекомендуется включить параметр [контекстного меню](../controls-and-patterns/menus.md) , чтобы открыть новое окно.
 
-Представления управляются объектом [**CoreApplication**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplication). Необходимо вызвать [**CoreApplication.CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview), чтобы создать объект [**CoreApplicationView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView). **CoreApplicationView** объединяет [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) и [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) (которые хранятся в свойствах [**CoreWindow**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.corewindow) и [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.dispatcher)). **CoreApplicationView** можно считать объектом, который использует среда выполнения Windows для взаимодействия с основной системой Windows.
+Сведения о создании отдельных экземпляров приложения (а не отдельных окон для одного экземпляра) см. в статье [Создание приложения](../../launch-resume/multi-instance-uwp.md)универсальной платформы Windows с несколькими экземплярами.
 
-Обычно работать непосредственно с [**CoreApplicationView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) не нужно. Вместо этого среда выполнения Windows предоставляет класс [**ApplicationView**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationView) в пространстве имен [**Windows.UI.ViewManagement**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement). Этот класс предоставляет свойства, методы и события, которые используются при взаимодействии приложения с системой работы с окнами. Для работы с **ApplicationView** вызовите статический метод [**ApplicationView.GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview), который получает экземпляр **ApplicationView**, связанный с текущим потоком **CoreApplicationView**.
+## <a name="windowing-hosts"></a>Узлы с окнами
 
-Аналогично, платформа XAML создает программу-оболочку для объекта [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) в объекте [**Windows.UI.XAML.Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window). В приложении XAML обычно происходит взаимодействие с объектом **Window** вместо непосредственной работы с **CoreWindow**.
+Существует несколько способов размещения содержимого UWP внутри приложения.
 
-## <a name="show-a-new-view"></a>Отображение нового представления
+- [CoreWindow](/uwp/api/windows.ui.core.corewindow)/[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)
 
-Поскольку каждый макет приложения уникален, мы рекомендуем добавить кнопку «новое окно» в предсказуемые местоположение, например в правый верхний угол содержимого, которое можно открыть в новом окне. Также следует учесть необходимость добавления параметра контекстного меню «Открыть в новом окне».
+     Представление приложения — это совокупность 1:1 потока и окна, которая используется приложением для отображения содержимого. Первое представление, создаваемое при запуске приложения, называется *главным*. Каждый CoreWindow/Аппликатионвиев работает в своем собственном потоке. Работа с различными потоками пользовательского интерфейса может усложнить Многооконные приложения.
 
-Рассмотрим шаги для создания нового представления. В данном примере новое представление запускается в ответ на нажатие кнопки.
+    Основное представление приложения всегда размещается в Аппликатионвиев. Содержимое во вторичном окне может размещаться в Аппликатионвиев или в Аппвиндов.
 
-```csharp
-private async void Button_Click(object sender, RoutedEventArgs e)
-{
-    CoreApplicationView newView = CoreApplication.CreateNewView();
-    int newViewId = 0;
-    await newView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-    {
-        Frame frame = new Frame();
-        frame.Navigate(typeof(SecondaryPage), null);   
-        Window.Current.Content = frame;
-        // You have to activate the window in order to show it later.
-        Window.Current.Activate();
+    Сведения об использовании Аппликатионвиев для отображения вторичных окон в приложении см. в разделе [Использование аппликатионвиев](application-view.md).
+- [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)
 
-        newViewId = ApplicationView.GetForCurrentView().Id;
-    });
-    bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewId);
-}
-```
+    Аппвиндов упрощает создание многооконных приложений UWP, поскольку оно работает в том же потоке пользовательского интерфейса, из которого он создается.
 
-**Чтобы отобразить новое представление**
+    Класс Аппвиндов и другие интерфейсы API в пространстве имен [виндовманажемент](/uwp/api/windows.ui.windowmanagement) доступны начиная с Windows 10, версии 1903 (пакет SDK 18362). Если приложение предназначено для более ранних версий Windows 10, необходимо использовать Аппликатионвиев для создания вторичных Windows.
 
-1.  Вызовите [**CoreApplication.CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview), чтобы создать новое окно и поток для содержимого представления.
+    Сведения об использовании Аппвиндов для отображения вторичных окон в приложении см. в разделе [Использование аппвиндов](app-window.md).
 
-    ```csharp
-    CoreApplicationView newView = CoreApplication.CreateNewView();
-    ```
+    > [!NOTE]
+    > Аппвиндов сейчас находится на этапе предварительной версии. Это означает, что вы можете отправлять приложения, использующие Аппвиндов, в магазин, но некоторые компоненты платформы и платформы не работают с Аппвиндов (см. раздел [ограничения](/uwp/api/windows.ui.windowmanagement.appwindow#limitations)).
+- [Десктопвиндовксамлсаурце](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) (О-ва XAML)
 
-2.  Отслеживайте [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id) нового представления. Это понадобится для отображения представления позже.
+     Содержимое XAML UWP в приложении Win32 (с помощью HWND), также известное как острова XAML, размещается в Десктопвиндовксамлсаурце.
 
-    Можно создать некоторую инфраструктуру в приложении, чтобы упростить отслеживание представлений, которые вы создаете. Пример: класс `ViewLifetimeControl` в разделе [Пример MultipleViews](https://go.microsoft.com/fwlink/p/?LinkId=620574).
+    Дополнительные сведения о островах XAML см. [в статье Использование API хостинга UWP XAML в классическом приложении](/windows/apps/desktop/modernize/using-the-xaml-hosting-api) .
 
-    ```csharp
-    int newViewId = 0;
-    ```
+### <a name="make-code-portable-across-windowing-hosts"></a>Перенос кода в оконные узлы
 
-3.  В новом потоке заполните окно.
+Когда содержимое XAML отображается в [CoreWindow](/uwp/api/windows.ui.core.corewindow), всегда существует связанное [окно](/uwp/api/windows.ui.xaml.window) [аппликатионвиев](/uwp/api/windows.ui.viewmanagement.applicationview) и XAML. Для получения таких сведений, как границы окна, можно использовать API-интерфейсы для этих классов. Для получения экземпляра этих классов используется статический метод [CoreWindow. жетфоркуррентсреад](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) , метод [аппликатионвиев. Жетфоркуррентвиев](/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) или свойство [Window. Current](/uwp/api/windows.ui.xaml.window.current) . Кроме того `GetForCurrentView` , существует множество классов, использующих шаблон для получения экземпляра класса, например [DisplayInformation. жетфоркуррентвиев](/uwp/api/windows.graphics.display.displayinformation.getforcurrentview).
 
-    При помощи метода [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) запланируйте задачу в потоке пользовательского интерфейса для нового представления. Используйте [лямбда-выражение](https://go.microsoft.com/fwlink/p/?LinkId=389615), чтобы передать функцию методу **RunAsync** как аргумент. Результаты работы лямбда-функции влияют на поток нового представления.
+Эти API работают, поскольку для CoreWindow/Аппликатионвиев существует только одно дерево содержимого XAML, поэтому XAML знает, в каком контексте он размещен, то есть CoreWindow/Аппликатионвиев.
 
-    В XAML [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) обычно добавляется к свойству [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content)[**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window), а затем выполняется переход **Frame** к [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page), где определено содержимое приложения. Подробнее см. в разделе [Одноранговая навигация между двумя страницами](../basics/navigate-between-two-pages.md).
+Когда XAML-содержимое выполняется внутри Аппвиндов или Десктопвиндовксамлсаурце, можно одновременно использовать несколько деревьев содержимого XAML в одном и том же потоке. В этом случае эти API-интерфейсы не предоставляют нужных сведений, так как содержимое больше не выполняется в текущем CoreWindow/Аппликатионвиев (и окне XAML).
 
-    После заполнения нового [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) необходимо вызвать метод [**Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate)&nbsp;**Window** для отображения **Window** позднее. Результаты влияют на поток нового представления, так что активируется новое **Window**.
+Чтобы обеспечить правильную работу кода на всех узлах с окнами, необходимо заменить API-интерфейсы, использующие [CoreWindow](/uwp/api/windows.ui.core.corewindow), [аппликатионвиев](/uwp/api/windows.ui.viewmanagement.applicationview)и [Window](/uwp/api/windows.ui.xaml.window) , новыми API, которые получают свой контекст из класса [ксамлрут](/uwp/api/windows.ui.xaml.xamlroot) .
+Класс Ксамлрут представляет дерево содержимого XAML и сведения о контексте, в котором он размещен, будь это CoreWindow, Аппвиндов или Десктопвиндовксамлсаурце. Этот уровень абстракции позволяет писать тот же код независимо от того, на каком узле выполняется XAML.
 
-    Наконец, скачайте [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id) нового используемого представления для его отображения позже. Результаты также влияют на поток нового представления, поэтому [**ApplicationView.GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) получает **Id** нового представления.
+В этой таблице показан код, который не работает правильно в узлах окон, и новый переносимый код, который можно заменить на, а также некоторые API, которые не нужно изменять.
 
-    ```csharp
-    await newView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-    {
-        Frame frame = new Frame();
-        frame.Navigate(typeof(SecondaryPage), null);   
-        Window.Current.Content = frame;
-        // You have to activate the window in order to show it later.
-        Window.Current.Activate();
-
-        newViewId = ApplicationView.GetForCurrentView().Id;
-    });
-    ```
-
-4.  Отобразите новое представление, вызвав [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.tryshowasstandaloneasync).
-
-    После создания нового представления, вы сможете отобразить его в новом окне с помощью метода [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.tryshowasstandaloneasync). Параметр *viewId* в этом методе представляет собой целое число, уникальным образом идентифицирующее каждое представление в приложении. Вы получите представление [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id), воспользовавшись свойством **ApplicationView.Id** или методом [**ApplicationView.GetApplicationViewIdForWindow**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.getapplicationviewidforwindow).
-
-    ```csharp
-    bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewId);
-    ```
-
-## <a name="the-main-view"></a>Главное представление
-
-
-Первое представление, создаваемое при запуске приложения, называется *главным*. Это представление хранится в свойстве [**CoreApplication.MainView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.mainview), и его свойство [**IsMain**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.ismain) имеет значение true. Вам не нужно создавать это представление, его создает приложение. Поток главного представления служит диспетчером для приложения, и события активации в приложении происходят в этом потоке.
-
-Если открыты вспомогательные представления, окно главного представления может быть скрыто, например, по нажатию кнопки закрытия (x) на панели заголовка окна, но его поток остается активным. Вызов [**Close**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.close) в [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) главного представления приведет к возникновению **InvalidOperationException**. (Используйте [ **Application.Exit** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.exit) чтобы закрыть приложение.) Если основное представление поток завершается, приложение закрывается.
-
-## <a name="secondary-views"></a>Дополнительные представления
-
-
-Другие представления, в том числе все представления, создаваемые по вызову [**CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) в коде приложения, являются дополнительными представлениями. Как главное представление, так и дополнительные представления хранятся в коллекции [**CoreApplication.Views**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.views). Обычно дополнительные представления создаются в ответ на действия пользователя. В некоторых случаях система создает дополнительные представления для приложения.
+| Если вы использовали... | Заменить на... |
+| - | - |
+| CoreWindow. Жетфоркуррентсреад (). [Границы](/uwp/api/windows.ui.core.corewindow.bounds) | _UIElement_. Ксамлрут. [Размер](/uwp/api/windows.ui.xaml.xamlroot.size) |
+| CoreWindow. Жетфоркуррентсреад (). [SizeChanged](/uwp/api/windows.ui.core.corewindow.sizechanged) | _UIElement_. Ксамлрут. [Изменено](/uwp/api/windows.ui.xaml.xamlroot.changed) |
+| CoreWindow. [Видимый](/uwp/api/windows.ui.core.corewindow.visible) | _UIElement_. Ксамлрут. [Ишоствисибле](/uwp/api/windows.ui.xaml.xamlroot.ishostvisible) |
+| CoreWindow. [VisibilityChanged](/uwp/api/windows.ui.core.corewindow.visibilitychanged) | _UIElement_. Ксамлрут. [Изменено](/uwp/api/windows.ui.xaml.xamlroot.changed) |
+| CoreWindow. Жетфоркуррентсреад (). [Жеткэйстате](/uwp/api/windows.ui.core.corewindow.getkeystate) | Без изменений. Это поддерживается в Аппвиндов и Десктопвиндовксамлсаурце. |
+| CoreWindow. Жетфоркуррентсреад (). [Жетасинккэйстате](/uwp/api/windows.ui.core.corewindow.getasynckeystate) | Без изменений. Это поддерживается в Аппвиндов и Десктопвиндовксамлсаурце. |
+| Окно. [Текущий](/uwp/api/windows.ui.xaml.window.current) | Возвращает основной объект окна XAML, который тесно привязан к текущему CoreWindow. См. Примечание После этой таблицы. |
+| Window. Current. [Границы](/uwp/api/windows.ui.xaml.window.bounds) | _UIElement_. Ксамлрут. [Размер](/uwp/api/windows.ui.xaml.xamlroot.size) |
+| Window. Current. [Содержимое](/uwp/api/windows.ui.xaml.window.content) | UIElement root = _UIElement_. Ксамлрут. [Содержимое](/uwp/api/windows.ui.xaml.xamlroot.content) |
+| Window. Current. [Компоновщик](/uwp/api/windows.ui.xaml.window.compositor) | Без изменений. Это поддерживается в Аппвиндов и Десктопвиндовксамлсаурце. |
+| VisualTreeHelper. [Жетопенпопупс](/uwp/api/windows.ui.xaml.media.visualtreehelper.getopenpopups)<br/>В приложениях с островами XAML это вызовет ошибку. В Аппвиндов приложениях это приведет к возврату открытых всплывающих окон в главном окне. | VisualTreeHelper. [Жетопенпопупсфорксамлрут](/uwp/api/windows.ui.xaml.media.visualtreehelper.getopenpopupsforxamlroot) (_UIElement_. Ксамлрут) |
+| FocusManager. [GetFocusedElement](/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement) | FocusManager. [GetFocusedElement](/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement#Windows_UI_Xaml_Input_FocusManager_GetFocusedElement_Windows_UI_Xaml_XamlRoot_) (_UIElement_. Ксамлрут) |
+| Контентдиалог. Шовасинк () | Контентдиалог. [Ксамлрут](/uwp/api/windows.ui.xaml.uielement.xamlroot)  =  _UIElement_. Ксамлрут;<br/>Контентдиалог. Шовасинк (); |
+| Менуфлйоут. Шоват (null, Новая точка (10, 10)); | Менуфлйоут. [Ксамлрут](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.xamlroot)  =  _UIElement_. Ксамлрут;<br/>Менуфлйоут. Шоват (null, Новая точка (10, 10)); |
 
 > [!NOTE]
-> Вы можете использовать функцию *ограниченного доступа* Windows для запуска приложения в [режиме киоска](https://docs.microsoft.com/windows/manage/set-up-a-device-for-anyone-to-use). После этого система создает дополнительное представление для представления пользовательского интерфейса приложения поверх экрана блокировки. Приложению не разрешается создавать дополнительные представления, поэтому при попытке отобразить собственное дополнительное представление в режиме киоска возникает исключение.
+> Для содержимого XAML в Десктопвиндовксамлсаурце существует CoreWindow/окно в потоке, но оно всегда невидимо и имеет размер 1x1. Он по-прежнему доступен для приложения, но не возвращает осмысленные границы или видимость.
+>
+>Для содержимого XAML в Аппвиндов всегда будет существовать ровно один CoreWindow в одном потоке. Если вы вызываете `GetForCurrentView` API `GetForCurrentThread` или, этот API вернет объект, отражающий состояние CoreWindow в потоке, а не аппвиндовс, которые могут выполняться в этом потоке.
 
-## <a name="switch-from-one-view-to-another"></a>Переключение между представлениями
-
-Следует учесть необходимость предоставления пользователю возможности вернуться в главное окно из дополнительного. Для этого используйте метод [**ApplicationViewSwitcher.SwitchAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.switchasync). Вызовите этот метод из потока окна, из которого вы переключаетесь, и передайте идентификатор представления окна, на которое вы переключаетесь.
-
-```csharp
-await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
-```
-
-Используя [**SwitchAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.switchasync), можно определить, следует ли закрыть начальное окно и удалить его из панели задач, указав значение [**ApplicationViewSwitchingOptions**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitchingOptions).
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
 
-* Укажите четкую точку входа в дополнительное представление, используя значок «открыть новое окно».
-* Обсудите цель предоставления дополнительного представления для пользователей.
-* Убедитесь, что работающее приложение является полностью функциональным в отдельном представлении и пользователи будут открывать дополнительное представление только для удобства.
-* Не полагайтесь на дополнительное представление в плане предоставления уведомлений и других промежуточный визуальных элементов.
+- Укажите четкую точку входа в дополнительное представление, используя значок «открыть новое окно».
+- Обсудите цель предоставления дополнительного представления для пользователей.
+- Обеспечьте полную функциональность приложения в одном представлении, и пользователи будут открывать дополнительное представление только для удобства.
+- Не полагайтесь на дополнительное представление в плане предоставления уведомлений и других промежуточный визуальных элементов.
 
 ## <a name="related-topics"></a>См. также
 
-* [ApplicationViewSwitcher](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
-* [CreateNewView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
- 
+- [Использование Аппвиндов](app-window.md)
+- [Использование Аппликатионвиев](application-view.md)
+- [аппликатионвиевсвитчер](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
+- [креатеневвиев](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
