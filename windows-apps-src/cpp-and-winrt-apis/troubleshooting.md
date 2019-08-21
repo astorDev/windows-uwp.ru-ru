@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, troubleshooting, HRESULT, error
 ms.localizationpriority: medium
-ms.openlocfilehash: add3875e15ad747422b2e53e5d8f8438b61b3b20
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 7c34ca6da522726f07e3f4ff5092b011bd15dd93
+ms.sourcegitcommit: 260d1a0b73ef422eb6875a3e3b52495a82630f06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270103"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560157"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>Устранение неполадок с C++/WinRT
 
@@ -41,7 +41,7 @@ ms.locfileid: "68270103"
 | Тесты комплекта сертификации приложений для Windows выдают ошибку о том, что один из классов среды выполнения "*не является производным от базового класса Windows. Все классы, поддерживающие композицию, должны быть производными от типа в пространстве имен Windows*".|Любой класс среды выполнения (объявленный в приложении), который является производным от базового класса, называется *составным*. Исходный базовый класс для составного класса должен быть типом из пространства имен Windows.*, например, [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject). Дополнительные сведения см. в статье [Элементы управления XAML; привязка к свойству C++/WinRT](binding-property.md).|
 | Компилятор C++ создает ошибку "*должна быть типа WinRT*" для специализации делегата EventHandler или TypedEventHandler.|Рассмотрите возможность использования **winrt::delegate&lt;...T&gt;** . См. сведения в статье [Создание событий в C++/WinRT](author-events.md).|
 | Компилятор C++ создает ошибку "*должна быть типа WinRT*" для специализации асинхронной операции среды выполнения Windows.|Рассмотрите возможность возврата класса [**task**](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-class) библиотеки параллельных шаблонов (PPL). См. сведения в статье [Параллельная обработка и асинхронные операции с помощью C++/WinRT](concurrency.md).|
-| Компилятор C++ создает ошибку C2220 "*предупреждение обработано как ошибка — файл "object" не создан*".|Исправьте предупреждение или установите для параметра **C/C++**  > **Общие** > **Обрабатывать предупреждения как ошибки** значение **Нет (/WX-)** .|
+| Компилятор C++ создает ошибку C2220 "*предупреждение обработано как ошибка — файл "object" не создан*".|Исправьте предупреждение или задайте для параметра **C/C++**  > **Общие** > **Обрабатывать предупреждения как ошибки** значение **Нет (/WX-)** .|
 | В приложении возникает сбой, так как обработчик событий в объекте C++/WinRT вызывается после удаления объекта.|См. сведения в разделе [Безопасный доступ к указателю *this* с помощью делегата, обрабатывающего события](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).|
 | Компилятор C++ создает ошибку *C2338 This is only for weak ref support* (Только для поддержки слабых ссылок).|Запрашивается слабая ссылка для типа, который передал структуру маркера **winrt::no_weak_ref** как аргумент шаблона базовому классу. См. сведения в разделе [Отказ от поддержки слабых ссылок](weak-references.md#opting-out-of-weak-reference-support).|
 | Компоновщик C++ создает ошибку "*LNK2019: неразрешенный внешний символ*".|См. в разделе [Почему компоновщик отображает сообщение об ошибке "LNK2019: неразрешенный внешний символ?](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).|
@@ -57,7 +57,7 @@ ms.locfileid: "68270103"
 | Компилятор C++ выдает сообщение *winrt::impl::produce&lt;D,I&gt; cannot instantiate abstract class, due to missing GetBindingConnector* (winrt::impl::produce<D,I> не может создать экземпляр абстрактного класса из-за отсутствия GetBindingConnector). | Необходимо добавить `#include <winrt/Windows.UI.Xaml.Markup.h>`. |
 | Компилятор C++ выдает сообщение *Error C2039: promise_type: is not a member of std::experimental::coroutine_traits<void>* (Ошибка C2039: promise_type не является членом std::experimental::coroutine_traits). | Сопрограмма должна возвращать либо объект асинхронной операции, либо **winrt::fire_and_forget**. См. сведения в статье [Параллельная обработка и асинхронные операции с помощью C++/WinRT](concurrency.md). |
 | При работе с проектом появляется сообщение: *Ambiguous access of PopulatePropertyInfoOverride* (Неоднозначный уровень доступа PopulatePropertyInfoOverride). | Эта ошибка может возникать при объявлении одного базового класса в IDL и другого базового класса в разметке XAML. |
-| При первом запуске решения C++/WinRT отображается сообщение *Designtime build failed for project MyProject.vcxproj configuration Debug\|x86. IntelliSense might be unavailable*. (Сбой сборки Designtime для конфигурации Debugx86 проекта MyProject.vcxproj. Функция IntelliSense может быть недоступной). | Эта проблема с IntelliSense будет устранена после первого выполнения сборки. |
+| При первом запуске решения C++/WinRT отображается сообщение *Designtime build failed for project MyProject.vcxproj configuration Debug\|x86. IntelliSense might be unavailable*. (Сбой сборки Designtime для конфигурации Debug\|x86 проекта MyProject.vcxproj. Функция IntelliSense может быть недоступной). | Эта проблема с IntelliSense будет устранена после первого выполнения сборки. |
 | Попытка задать [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t) при регистрации делегата вызывает исключение [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface). | См. раздел о [сбое регистрации автоматически отзываемого делегата](handle-events.md#if-your-auto-revoke-delegate-fails-to-register). |
 
 > [!NOTE]
