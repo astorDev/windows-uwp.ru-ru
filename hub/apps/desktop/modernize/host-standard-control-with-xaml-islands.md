@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fc1b20561f67907fa973a0e30d0dc3b804c2472c
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
+ms.openlocfilehash: 344896a02738ea3a1a62f5ef046c09c275bdb575
+ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643758"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979290"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Размещение стандартного элемента управления UWP в приложении WPF с помощью XAML-островов
 
@@ -221,8 +221,8 @@ ms.locfileid: "69643758"
             <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
             <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
             <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-                <SourceProject>
-                </SourceProject>
+                <SourceProject></SourceProject>
+                <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
             </_FilteredNonWapProjProjectOutput>
             </ItemGroup>
         </Target>

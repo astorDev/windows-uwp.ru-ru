@@ -8,16 +8,19 @@ ms.topic: article
 keywords: Python, Windows 10, Майкрософт, Системное администрирование Python, Автоматизация файлов Python, скрипты Python в Windows, Настройка Python в Windows, среда разработчика Python в Windows, среда разработки Python в Windows, Python с PowerShell, скрипты Python для задачи файловой системы
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 93fdea3347cc15aa6231ff90fb18eb2f7defb201
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.openlocfilehash: dbb7a60103c27f648ca8bf23f87dee06923f0cd9
+ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959071"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979328"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Приступая к работе с Python в Windows для написания сценариев и автоматизации
 
 Ниже приведено пошаговое руководство по настройке среды разработки и началу работы с Python для создания сценариев и автоматизации операций файловой системы в Windows.
+
+> [!NOTE]
+> В этой статье рассматривается настройка среды для использования некоторых полезных библиотек в Python, которые могут автоматизировать задачи на разных платформах, таких как поиск в файловой системе, доступ к Интернету, анализ типов файлов и т. д. с помощью подхода, ориентированного на Windows. Для операций, относящихся к Windows, извлекайте [CType](https://docs.python.org/3/library/ctypes.html), совместимую с C, библиотеку внешних функций для Python, [winreg](https://docs.python.org/3/library/winreg.html), функции, предоставляя API реестра Windows для Python и [Python/WinRT](https://pypi.org/project/winrt/), обеспечивая доступ к среда выполнения Windows API из Языке.
 
 ## <a name="set-up-your-development-environment"></a>Настройка среды разработки
 
@@ -45,7 +48,7 @@ ms.locfileid: "68959071"
 
 ## <a name="install-the-microsoft-python-extension"></a>Установка расширения Microsoft Python
 
-Чтобы воспользоваться преимуществами функций поддержки VS Code, необходимо установить расширение Microsoft Python. [Подробнее](https://code.visualstudio.com/docs/languages/python).
+Чтобы воспользоваться преимуществами функций поддержки VS Code, необходимо установить расширение Microsoft Python. [Узнайте больше](https://code.visualstudio.com/docs/languages/python).
 
 1. Откройте окно расширения VS Code, нажав **клавиши CTRL + SHIFT + X** (или с помощью меню перейдите к пункту **Просмотр** > **расширений**).
 
