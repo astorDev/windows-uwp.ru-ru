@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e00c9860ca2aa8661581de265fff106c45b30ab5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7431e9e41c008471fccdb955a64d44316855de0d
+ms.sourcegitcommit: 77df36d2a7391cbc588d44c47ac02d0701092264
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319402"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976225"
 ---
 # <a name="navigation-view"></a>Представление навигации
 
@@ -709,6 +709,29 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
     </Application.Resources>
 </Application>
 ```
+
+### <a name="top-whitespace"></a>Пустое пространство вверху
+В некоторых приложениях можно [настроить заголовок окна](https://docs.microsoft.com/windows/uwp/design/shell/title-bar), чтобы расширить содержимое приложения за счет этой области. Если NavigationView является корневым элементом в приложениях, в которых с помощью **API [ExtendViewIntoTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar)** можно выполнить такое расширение, элемент управления автоматически скорректирует расположение интерактивных элементов, чтобы не допустить перекрытия с [перетаскиваемой областью](https://docs.microsoft.com/windows/uwp/design/shell/title-bar#draggable-regions). 
+![Приложение, расширяющееся за счет строки заголовка](images/navigation-view-with-titlebar-padding.png)
+
+Если приложение определяет перетаскиваемую область, вызывая метод [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar), а вы хотите, чтобы кнопка назад и кнопка меню располагались ближе к верхней части окна приложения, установите для `IsTitleBarAutoPaddingEnabled` значение false.
+
+![Приложение, расширяющееся за счет строки заголовка без дополнительного заполнения](images/navigation-view-no-titlebar-padding.png)
+
+```Xaml
+<muxc:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False">
+```
+
+#### <a name="remarks"></a>Замечания
+Чтобы скорректировать расположение области заголовка NavigationView, переопределите ресурс темы XAML *NavigationViewHeaderMargin* (например, в ресурсах страницы).
+
+```Xaml
+<Page.Resources>
+    <Thickness x:Key="NavigationViewHeaderMargin">12,0</Thickness>
+</Page.Resources>
+```
+
+Этот ресурс темы изменяет поля вокруг [NavigationView.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.header).
 
 ## <a name="related-topics"></a>Статьи по теме
 
