@@ -5,94 +5,94 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aa8bec12ca3920b1e273d8f2d98186f62a340016
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6d67dd7bc7d2f6323679dd7c69a98df841b2848c
+ms.sourcegitcommit: 769ec7811aaaa79fe521e3e984a2e1a2a9671caf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321530"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70057818"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Поддерживаемые периферийные устройства точек обслуживания
 
 ## <a name="barcode-scanner"></a>Сканер штрихкодов
 | Подключение | Поддержка |
 | -------------|-------------|
-| USB          | <p>Windows содержит основанное на HID POS сканера таблица использования (8c) спецификациями, определенными корпорацией драйвер в поле класса, для подключенных USB сканерам штрихкодов [странице USB.org](https://www.usb.org/hid). Список известных совместимых устройств см. в таблице ниже.  Смотрите руководство для сканера штрихкодов или обратитесь к производителю, чтобы определить, как настроить сканер в режиме **USB.HID.POS Scanner**. </p><p>Windows также поддерживает внедрение драйверов конкретных поставщиков для поддержки дополнительных сканеров штрихкодов, которые не поддерживают стандарт USB.HID.POS Scanner. Наличие драйверов для определенных поставщиков уточняйте у производителя сканера штрихкодов.</p><p>Производителям сканеров штрихкодов следует ознакомиться с информацией о создании пользовательского драйвера сканера штрихкодов в разделе [Руководство по проектированию драйверов для сканеров штрихкодов](https://aka.ms/pointofservice-drv)</p> |
+| USB          | <p>Windows содержит драйвер встроенного класса для сканеров штрихкодов, подключенных к USB, основанный на спецификации таблицы использования сканера HID (8В), определенной в [USB.org](https://www.usb.org/hid). Список известных совместимых устройств см. в таблице ниже.  Смотрите руководство для сканера штрихкодов или обратитесь к производителю, чтобы определить, как настроить сканер в режиме **USB.HID.POS Scanner**. </p><p>Windows также поддерживает внедрение драйверов конкретных поставщиков для поддержки дополнительных сканеров штрихкодов, которые не поддерживают стандарт USB.HID.POS Scanner. Наличие драйверов для определенных поставщиков уточняйте у производителя сканера штрихкодов.</p><p>Производителям сканеров штрихкодов следует ознакомиться с информацией о создании пользовательского драйвера сканера штрихкодов в разделе [Руководство по проектированию драйверов для сканеров штрихкодов](https://aka.ms/pointofservice-drv)</p> |
 | Bluetooth    | <p>Windows поддерживает Bluetooth-сканеры штрихкодов на основе SPP-SSI (протокол последовательного порта — простой последовательный интерфейс). Список известных совместимых устройств см. в таблице ниже. Смотрите руководство для сканера штрихкодов или обратитесь к производителю, чтобы определить, как настроить сканер в режиме **SPP-SSI**.</p> |
 | Webcam       | <p>Начиная с Windows 10 версии 1803 можно считывать штрихкоды через объектив стандартной камеры из универсального приложения для Windows. Рекомендуется использовать камеру, поддерживающая автоматическую фокусировку и имеющую разрешение не менее 1920 x 1440.  Некоторые камеры с более низким разрешением способны считывать стандартные штрихкоды, если штрихкод напечатан достаточно крупно.  Штрихкоды с более тонкими элементами могут требовать камер с более высоким разрешением.</p>| 
 |
 
 
-| Производитель  | Модель                          | Возможности | Подключение    | Тип         | Режим                      |
+| Производитель  | Модель                          | Возможности | Подключение    | Type         | Режим                      |
 |---------------|--------------------------------|------------|--------------|--------------|---------------------------|
-| Код          | Reader™ 950                    | 2D         | USB          | Handheld     | HID POS сканера           |
-| Код          | Reader™ 1021                   | 2D         | USB          | Handheld     | HID POS сканера           |
-| Код          | Reader™ 1421                   | 2D         | USB          | Handheld     | HID POS сканера           |
-| Код          | Reader™ 5000                   | 2D         | USB          | Презентации | HID POS сканера           |
-| Honeywell     | Происхождения 7580g                  | 2D         | USB          | Презентации | HID POS сканера           |
-| Honeywell     | Granit 198Xi                   | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Granit 191Xi                   | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | N5680                          | 2D         | Внутренний     | Component    | HID POS сканера           |
-| Honeywell     | N3680                          | 2D         | Внутренний     | Component    | HID POS сканера           |
-| Honeywell     | Орбиты 7190g                    | 2D         | USB          | Презентации | HID POS сканера           |
-| Honeywell     | Stratos 2700                   | 2D         | USB          | В счетчике   | HID POS сканера           |
-| Honeywell     | Voyager 1200g                  | 1D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Voyager 1202g                  | 1D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Voyager 1202-bf                | 1D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Voyager 145Xg                  | 1D / 2D ¹   | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Voyager 1602g                  | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Xenon 1900g                    | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Xenon 1902g                    | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Xenon 1902g-bf                 | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Xenon 1900h                    | 2D         | USB          | Handheld     | HID POS сканера           |
-| Honeywell     | Xenon 1902h                    | 2D         | USB          | Handheld     | HID POS сканера           |
-| HP            | Сканер штрихкодов значение (HR2150) | 2D         | USB          | Handheld     | HID POS сканера           |
-| Intermec      | SG20                           | 2D         | USB          | Handheld     | HID POS сканера           |
-| Socket Mobile | CHS 7Ci                        | 1D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Socket Mobile | CHS 7Di                        | 1D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Socket Mobile | CHS 7Mi                        | 1D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Socket Mobile | CHS 7Pi                        | 1D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Socket Mobile | CHS 8Ci                        | 1D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Socket Mobile | DuraScan D700                  | 1D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Socket Mobile | DuraScan D730                  | 1D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Socket Mobile | DuraScan D740                  | 2D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Socket Mobile | SocketScan S700                | 1D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Socket Mobile | SocketScan S730                | 1D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Socket Mobile | SocketScan S740                | 2D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Socket Mobile | SocketScan S800                | 1D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Socket Mobile | SocketScan S850                | 2D         | Bluetooth    | Handheld     | Профиль порта (SPP) |
-| Zebra         | DS2208²                        | 2D         | USB          | Handheld     | HID POS сканера           |
-| Zebra         | DS2278                         | 2D         | USB          | Handheld     | HID POS сканера           |
-| Zebra         | DS8108³                        | 2D         | USB          | Handheld     | HID POS сканера           |
-|
+| Код          | Читатель™ 950                    | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Код          | Читатель™ 1021                   | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Код          | Читатель™ 1421                   | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Код          | Читатель™ 5000                   | ДВУХМЕРНОМ         | USB          | Презентация | Сканер HID POS           |
+| Honeywell     | Женесис 7580g                  | ДВУХМЕРНОМ         | USB          | Презентация | Сканер HID POS           |
+| Honeywell     | Гранит 198Xi                   | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Honeywell     | Гранит 191Xi                   | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Honeywell     | N5680                          | ДВУХМЕРНОМ         | Внутренние     | Component    | Сканер HID POS           |
+| Honeywell     | N3680                          | ДВУХМЕРНОМ         | Внутренние     | Component    | Сканер HID POS           |
+| Honeywell     | Орбита 7190g                    | ДВУХМЕРНОМ         | USB          | Презентация | Сканер HID POS           |
+| Honeywell     | Стратос 2700                   | ДВУХМЕРНОМ         | USB          | В счетчике   | Сканер HID POS           |
+| Honeywell     | Voyager 1200g                  | 1D         | USB          | Перенос     | Сканер HID POS           |
+| Honeywell     | Voyager 1202g                  | 1D         | USB          | Перенос     | Сканер HID POS           |
+| Honeywell     | Voyager 1202 — BF                | 1D         | USB          | Перенос     | Сканер HID POS           |
+| Honeywell     | Voyager 145Xg                  | 1D/2D<sup>1</sup>   | USB          | Перенос     | Сканер HID POS           |
+| Honeywell     | Voyager 1602g                  | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Honeywell     | Xenon 1900g                    | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Honeywell     | Xenon 1902g                    | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Honeywell     | Xenon 1902g — BF                 | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Honeywell     | Xenon 1900h                    | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Honeywell     | Xenon 1902h                    | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| HP            | Сканер штрихкодов значений (HR2150) | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| интермек      | SG20                           | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Socket Mobile | CHS 7Ci                        | 1D         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Socket Mobile | CHS 7Di                        | 1D         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Socket Mobile | CHS 7Mi                        | 1D         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Socket Mobile | CHS 7Pi                        | 1D         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Socket Mobile | CHS 8Ci                        | 1D         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Socket Mobile | Дураскан D700                  | 1D         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Socket Mobile | Дураскан D730                  | 1D         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Socket Mobile | Дураскан D740                  | ДВУХМЕРНОМ         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Socket Mobile | Соккетскан S700                | 1D         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Socket Mobile | Соккетскан S730                | 1D         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Socket Mobile | Соккетскан S740                | ДВУХМЕРНОМ         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Socket Mobile | Соккетскан S800                | 1D         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Socket Mobile | Соккетскан S850                | ДВУХМЕРНОМ         | Bluetooth    | Перенос     | Профиль последовательного порта (SPP) |
+| Черно         | DS2208<sup>2</sup>                        | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Черно         | DS2278                         | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Черно         | DS8108<sup>3</sup>                        | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           |
+| Черно         | DS8178<sup>4</sup>                         | ДВУХМЕРНОМ         | USB          | Перенос     | Сканер HID POS           | 
 
 
-¹ Upgradable для поддержки двухмерные штрих-коды через Honeywell <br/>
-² минимум встроенного по требуется 009 (2018.07.09). С возможностью расширения с помощью Zebra [123Scan](http://www.zebra.com/123scan).<br/>
-³ минимум встроенного по требуется 016 (2018.01.18). С возможностью расширения с помощью Zebra [123Scan](http://www.zebra.com/123scan). 
-
+<sup>1</sup> обновляемый для поддержки двумерных штрихкодов через Honeywell <br/>
+требуется <sup>2</sup> минимального 009а встроенного по (2018.07.09). Обновляемый с помощью черно [123Scan](http://www.zebra.com/123scan).<br/>
+требуется <sup>3</sup> минимального 016а встроенного по (2018.01.18). Обновляемый с помощью черно [123Scan](http://www.zebra.com/123scan).<br/> 
+требуется <sup>4</sup> минимального встроенного по 023 (2019.03.11). Обновляемый с помощью черно [123Scan](http://www.zebra.com/123scan).<br/>
 
 <hr>
 
-### <a name="windows-devices-with-built-in-barcode-scanner"></a>Устройства Windows с помощью сканера штрих-кодов
+### <a name="windows-devices-with-built-in-barcode-scanner"></a>Устройства Windows со встроенным сканером штрихкодов
 | Производитель   | Модель | Операционная система |
 |----------------|-------|------------------|
-| Innowi         | ChecOut-M | Windows 10   |
+| иннови         | Чекаут-M | Windows 10   |
 
-### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Устройств Windows Mobile с помощью сканера штрих-кодов
+### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Устройства Windows Mobile со встроенным сканером штрихкодов
 | Производитель   | Модель | Операционная система |
 |----------------|-------|------------------|
-| Птица       | EF400 | Windows Mobile   |
-| Птица       | EF500 | Windows Mobile   |
-| Птица       | EF500R | Windows Mobile   |
+| блуебирд       | EF400 | Windows Mobile   |
+| блуебирд       | EF500 | Windows Mobile   |
+| блуебирд       | EF500R | Windows Mobile   |
 | Honeywell      | CT50   | Windows Mobile   |
 | Honeywell      | D75e | Windows Mobile   |
-| Janam          | XT2      | Windows Mobile   |
-| Panasonic      | FZ-E1 | Windows Mobile   |
-| Panasonic      | FZ F1 |Windows Mobile   |
-| PointMobile    | PM80 | Windows Mobile   |
-| Zebra          | TC700j | Windows Mobile   |
-| HP             | Такой элиты X3 Пиджаков | Windows Mobile   |
+| жанам          | XT2      | Windows Mobile   |
+| Panasonic      | ФЗ-E1 | Windows Mobile   |
+| Panasonic      | ФЗ — F1 |Windows Mobile   |
+| поинтмобиле    | PM80 | Windows Mobile   |
+| Черно          | TC700j | Windows Mobile   |
+| HP             | Elite X3 Жаккет | Windows Mobile   |
 
 
 
@@ -100,7 +100,7 @@ ms.locfileid: "67321530"
 ## <a name="cash-drawer"></a>Кассовый аппарат
 | Подключение | Поддержка |
 | -------------|-------------|
-| Сеть или Bluetooth | <p> Прямое подключение к кассовому аппарату может быть выполнено по сети или через Bluetooth, в зависимости от возможностей конкретного кассового аппарата. </p><p>APG лотке:  NetPRO, BluePRO</p> |
+| Сеть или Bluetooth | <p> Прямое подключение к кассовому аппарату может быть выполнено по сети или через Bluetooth, в зависимости от возможностей конкретного кассового аппарата. </p><p>АПГ денежный ящик:  NetPRO, BluePRO</p> |
 | Порт DK | <p> Кассовые аппараты без поддержки сети или Bluetooth можно подключить через порт DK на поддерживаемом чековом принтере или периферийном устройстве Star Micronics DK-AirCash. </p>
 | OPOS    | <p> Поддерживает все совместимые с OPOS кассовые аппараты через служебные объекты OPOS, предоставляемые производителем. Установите драйверы OPOS согласно инструкциям производителя устройства. </p> |
 
