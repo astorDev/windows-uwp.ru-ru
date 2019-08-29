@@ -533,13 +533,11 @@
           href: accessibility/practices-to-avoid.md
         - name: Настраиваемые одноранговые элементы автоматизации
           href: accessibility/custom-automation-peers.md
-          items:
-            - name: Шаблоны и интерфейсы элементов управления
-              href: accessibility/control-patterns-and-interfaces.md
+        - name: Шаблоны и интерфейсы элементов управления
+          href: accessibility/control-patterns-and-interfaces.md
     - name: Параметры приложения
-      href: app-settings/app-settings-and-data.md
       items:
-        - name: Руководство
+        - name: Руководство по параметрам приложений
           href: app-settings/guidelines-for-app-settings.md
         - name: Хранение и извлечение параметров и данных приложения
           href: app-settings/store-and-retrieve-app-data.md
@@ -572,9 +570,10 @@
           href: globalizing/use-utf8-code-page.md
         - name: Подготовка приложения к изменению японского летосчисления
           href: globalizing/japanese-era-change.md
-    - name: Руководство по справке для приложений
-      href: in-app-help/guidelines-for-app-help.md
+    - name: Справка в приложении
       items:
+        - name: Руководство по справке для приложений
+          href: in-app-help/guidelines-for-app-help.md
         - name: Инструктивный пользовательский интерфейс
           href: in-app-help/instructional-ui.md
         - name: Справка в приложении
