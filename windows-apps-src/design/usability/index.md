@@ -5,36 +5,36 @@ title: Удобство использования в приложениях UWP
 layout: LandingPage
 template: detail.hbs
 ms.date: 10/18/2017
-ms.topic: landing-page
+ms.topic: article
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: f218df3b4118508049023218b64e6c7321fbbda9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a6912932b7ad71fd3d04c038eab7e0aa4dd6cb11
+ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57583261"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076392"
 ---
 # <a name="usability-for-uwp-apps"></a>Удобство использования приложений UWP
-
-
 
 Чтобы сделать из хорошего приложения превосходный продукт, который оценят пользователи во всем мире, требуются небольшие штрихи и особое внимание к деталям.
 
 Инструкции по оформлению и написанию кода в этом разделе помогут вам расширить целевую аудиторию вашего приложения UWP за счет специальных возможностей, глобализации и локализации, поддержки настройки приложений пользователями и предоставления справки, когда она необходима.
 
-
-## <a name="accessiblity"></a>Специальные возможности
+## <a name="accessibility"></a>Специальные возможности
 
 Специальные возможности делают приложение доступным для тех людей, которые из-за проблем со здоровьем не могут пользоваться стандартным пользовательским интерфейсом. В некоторых ситуациях специальные возможности требуются законодательством. Однако рекомендуется реализовывать специальные возможности даже там, где они не обязательны по закону, так как это расширит аудиторию вашего приложения.
 
+[Портал специальных возможностей](../accessibility/accessibility.md)
+
+<!--
 <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-overview.md">Обзор специальных возможностей</a></b> <br/> В этой статье содержится обзор концепций и технологий, связанных со сценариями использования специальных возможностей для приложений UWP.</p>
+<p><b><a href="../accessibility/accessibility-overview.md">Accessibility overview</a></b> <br/> This article is an overview of the concepts and technologies related to accessibility scenarios for UWP apps.</p>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@ ms.locfileid: "57583261"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/designing-inclusive-software.md">Проектирование инклюзивного программного обеспечения</a></b><br/>Сведения о развитии проектирования приложений универсальной платформы (UWP) для Windows 10.  Проектируйте и создавайте программное обеспечение с учетом специальных возможностей.</p>
+<p><b><a href="../accessibility/designing-inclusive-software.md">Designing inclusive software</a></b><br/>Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind.</p>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@ ms.locfileid: "57583261"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/developing-inclusive-windows-apps.md">Разработка инклюзивных приложений для Windows</a></b><br/> Эта статья содержит схему разработки приложений UWP с поддержкой специальных возможностей.</p>
+<p><b><a href="../accessibility/developing-inclusive-windows-apps.md">Developing inclusive Windows apps</a></b><br/> This article is a roadmap for developing accessible UWP apps.</p>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@ ms.locfileid: "57583261"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-testing.md">Проверка специальных возможностей</a></b><br/>В статье приводятся процедуры проверки, позволяющие гарантировать наличие специальных возможностей в приложении UWP.</p>
+<p><b><a href="../accessibility/accessibility-testing.md">Accessibility testing</a> </b><br/>Testing procedures to follow to ensure that your UWP app is accessible.</p>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@ ms.locfileid: "57583261"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-in-the-store.md">Специальные возможности в Store</a></b><br/>Описание требований, которым должно соответствовать ваше приложение UWP, чтобы о его специальных возможностях можно было объявить в Microsoft Store.</p>
+<p><b><a href="../accessibility/accessibility-in-the-store.md">Accessibility in the Store</a></b><br/>Describes the requirements for declaring your UWP app as accessible in the Microsoft Store.</p>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@ ms.locfileid: "57583261"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-checklist.md">Контрольный список специальных возможностей</a></b><br/>В статье представлен контрольный список, который поможет вам удостовериться, что в приложении UWP реализованы специальные возможности.</p>
+<p><b><a href="../accessibility/accessibility-checklist.md">Accessibility checklist</a></b><br/>Provides a checklist to help you ensure that your UWP app is accessible.</p>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@ ms.locfileid: "57583261"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/basic-accessibility-information.md">Предоставление основных сведений о специальных возможностях</a></b><br/>Основные сведения о специальных возможностях часто классифицируются по названию, роли и значению. В этом разделе описывается код, благодаря которому ваше приложение сможет предоставлять основные сведения, необходимые вспомогательным технологиям.</p>
+<p><b><a href="../accessibility/basic-accessibility-information.md">Expose basic accessibility information</a></b><br/>Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need.</p>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@ ms.locfileid: "57583261"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/keyboard-accessibility.md">Специальные возможности клавиатуры</a></b><br/>Если ваше приложение не поддерживает доступ с клавиатуры с достаточными возможностями, пользователи с нарушениями зрения или опорно-двигательного аппарата будут испытывать трудности при его использовании или же совсем не смогут его использовать.</p>
+<p><b><a href="../accessibility/keyboard-accessibility.md">Keyboard accessibility</a></b><br/>If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all.</p>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@ ms.locfileid: "57583261"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/high-contrast-themes.md">Темы с высокой контрастностью</a></b><br/>Здесь описаны шаги, которые необходимо предпринять, чтобы ваше приложение UWP можно было использовать, когда активна тема с высокой контрастностью. </p>
+<p><b><a href="../accessibility/high-contrast-themes.md">High-contrast themes</a></b><br/>Describes the steps needed to ensure your UWP app is usable when a high-contrast theme is active. </p>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@ ms.locfileid: "57583261"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessible-text-requirements.md">Требования к специальным возможностям отображения текста</a></b><br/>В этой статье приводятся рекомендации относительно специальных возможностей отображения текста в приложении, которые помогают обеспечить необходимый уровень контрастности между цветами текста и фона. Кроме того, в статье описываются роли модели автоматизации пользовательского интерфейса Майкрософт, которые могут быть присущи текстовым элементам в приложениях UWP, а также рекомендации по использованию текста в графике.</p>                    
+<p><b><a href="../accessibility/accessible-text-requirements.md">Accessible text requirements</a></b><br/>This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio. This topic also discusses the Microsoft UI Automation roles that text elements in a UWP app can have, and best practices for text in graphics.</p>                    
                     </div>
                 </div>
             </div>
@@ -144,7 +144,7 @@ ms.locfileid: "57583261"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/practices-to-avoid.md">Рекомендации по специальным возможностям, которых следует избегать</a></b><br/>В этой статье рассказывается о методиках, которых следует избегать при создании приложения UWP с поддержкой специальных возможностей.</p>                    
+<p><b><a href="../accessibility/practices-to-avoid.md">Accessibility practices to avoid</a></b><br/>Lists the practices to avoid if you want to create an accessible UWP app.</p>                    
                     </div>
                 </div>
             </div>
@@ -155,7 +155,7 @@ ms.locfileid: "57583261"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/custom-automation-peers.md">Настраиваемые одноранговые классы автоматизации</a></b><br/>Здесь описана концепция одноранговых элементов для модели автоматизации пользовательского интерфейса, а также способы реализации поддержки автоматизации для вашего собственного настраиваемого класса пользовательского интерфейса.</p>                    
+<p><b><a href="../accessibility/custom-automation-peers.md">Custom automation peers</a></b><br/>Describes the concept of automation peers for UI Automation, and how you can provide automation support for your own custom UI class.</p>                    
                     </div>
                 </div>
             </div>
@@ -166,20 +166,14 @@ ms.locfileid: "57583261"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/control-patterns-and-interfaces.md">Шаблоны и интерфейсы элементов управления</a></b><br/>Здесь перечислены шаблоны элементов управления модели автоматизации пользовательского интерфейса Майкрософт, классы, которыми пользуются клиенты для доступа к ним, и интерфейсы, которыми пользуются поставщики для их реализации.</p>                    
+<p><b><a href="../accessibility/control-patterns-and-interfaces.md">Control patterns and interfaces</a></b><br/>Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them.</p>                    
                     </div>
                 </div>
             </div>
         </div>
     </li>     
 </ul>
-
-
-## <a name="globalization-and-localization"></a>Глобализация и локализация
-
-Windows используется во всем мире пользователями с разной культурой, живущими в разных регионах и говорящими на разных языках. Пользователи говорят на множестве различных языков, в различных странах и регионах. Некоторые пользователи говорят на нескольких языках. Таким образом, ваше приложение используется в конфигурациях, которые включают в себя много вариантов системных параметров для языка и региона. Расширьте потенциальный рынок для вашего приложения, используя *глобализацию* и *локализацию* для быстрой адаптации к любому региону.
-
-<a href="../globalizing/globalizing-portal.md">Портал глобализации и локализации</a>
+-->
 
 ## <a name="app-settings"></a>Параметры приложения
 
@@ -210,6 +204,11 @@ Windows используется во всем мире пользователя
     </li>
 </ul>
 
+## <a name="globalization-and-localization"></a>Глобализация и локализация
+
+Windows используется во всем мире пользователями с разной культурой, живущими в разных регионах и говорящими на разных языках. Пользователи говорят на множестве различных языков, в различных странах и регионах. Некоторые пользователи говорят на нескольких языках. Таким образом, ваше приложение используется в конфигурациях, которые включают в себя много вариантов системных параметров для языка и региона. Расширьте потенциальный рынок для вашего приложения, используя *глобализацию* и *локализацию* для быстрой адаптации к любому региону.
+
+<a href="../globalizing/globalizing-portal.md">Портал глобализации и локализации</a>
 
 ## <a name="in-app-help"></a>Справка в приложении
 Как бы хорошо вы ни спроектировали приложение, некоторым пользователям может понадобиться дополнительная помощь.
