@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, get, getting, started
 ms.localizationpriority: medium
-ms.openlocfilehash: 346877178b4450df5fb0151656d58e203ea0be63
-ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
+ms.openlocfilehash: e900cdddaa86857554c11605d00f59fd45a7e5ee
+ms.sourcegitcommit: b186f70f0b1601b6b6a5db91d87d034f6b155e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68372738"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063780"
 ---
 # <a name="get-started-with-cwinrt"></a>Начало работы с C++/WinRT
 
@@ -22,7 +22,7 @@ ms.locfileid: "68372738"
 ## <a name="a-cwinrt-quick-start"></a>Краткое руководство по C++/WinRT
 
 > [!NOTE]
-> Сведения об установке и использовании расширения C++/WinRT для Visual Studio (VSIX) и пакета NuGet (которые вместе обеспечивают поддержку шаблона проекта и сборки) см. в разделе о [поддержке C++/WinRT в Visual Studio](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Сведения об установке Visual Studio для разработки с использованием C++/WinRT, включая установку и использование расширения C++/WinRT для Visual Studio (VSIX) и пакета NuGet (которые вместе обеспечивают поддержку шаблона проекта и сборки), приведены в разделе [Поддержка Visual Studio для C++/WinRT, XAML, расширения VSIX и пакета NuGet](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Создайте проект **консольного приложения для Windows (C++/WinRT)** .
 
@@ -185,7 +185,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 * [Структура WinRT::hstring](/uwp/cpp-ref-for-winrt/hstring)
 * [Структура winrt::hresult_error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Обработка ошибок в C++/WinRT](error-handling.md)
 * [Взаимодействие между C++/WinRT и C++/CX](interop-winrt-cx.md)

@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
-ms.openlocfilehash: 87ab033ddd9de92922f043a069b793ca101307d0
-ms.sourcegitcommit: 6cc8b231c1b970112d26a7696cc3e907082ef2be
+ms.openlocfilehash: 197f53df200026541a15120dfc97c187e5aa2e5b
+ms.sourcegitcommit: b186f70f0b1601b6b6a5db91d87d034f6b155e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68308445"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063786"
 ---
 # <a name="introduction-to-cwinrt"></a>Введение в C++/WinRT
 &nbsp;
@@ -33,7 +33,7 @@ C++/WinRT — это рекомендуемая корпорацией Майк
 При просмотре [API Windows UWP](https://docs.microsoft.com/uwp/api/) щелкните поле со списком **Язык** в правом верхнем углу и выберите пункт **C++/WinRT**, чтобы просмотреть синтаксические блоки API в том виде, в котором они отражаются в языковой проекции C++/WinRT.
 
 ## <a name="visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package"></a>Поддержка Visual Studio для C++/WinRT, XAML, расширения VSIX и пакета NuGet
-Для поддержки Visual Studio вам потребуется Visual Studio 2019 или Visual Studio 2017 (по крайней мере версия 15.6; рекомендуется версия не ниже 15.7). Внутри установщика Visual Studio вам также необходимо установить (в разделе **Сведения об установке** > **Разработка приложений для универсальной платформы Windows**) параметры **средств универсальной платформы Windows C++ (версии 14x)** , если вы еще этого не сделали. Кроме того, в разделе Windows **Параметры** > **Обновления\&Безопасность** > **Для разработчиков** выберите параметр **Режим разработчика** вместо параметра **Неопубликованные приложения**.
+Для поддержки Visual Studio вам потребуется Visual Studio 2019 или Visual Studio 2017 (по крайней мере версия 15.6; рекомендуется версия не ниже 15.7). С помощью установщика Visual Studio установите рабочую нагрузку **Разработка приложений для универсальной платформы Windows**. В разделе **Сведения об установке** > **Разработка приложений для универсальной платформы Windows** выберите параметры **инструментов универсальной платформы Windows для C++ (версии 14x)** , если вы еще этого не сделали. Кроме того, в разделе Windows **Параметры** > **Обновления\&Безопасность** > **Для разработчиков** выберите параметр **Режим разработчика** вместо параметра **Неопубликованные приложения**.
 
 Хотя мы рекомендуем выполнять разработку с последними версиями Visual Studio и Windows SDK, если вы используете версию C++/WinRT, которая поставляется вместе с версией Windows SDK, предшествующей версии 10.0.17763.0 (Windows 10 версии 1809), для упомянутых выше заголовков пространств имен Windows в проекте вам потребуется минимальная целевая версия Windows SDK 10.0.17134.0 (Windows 10 версии 1803).
 
@@ -145,7 +145,7 @@ Visual Studio предоставляет поддержку компилятор
 * [Структура winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
 * [Пространство имен WinRT](/uwp/cpp-ref-for-winrt/winrt)
 
-## <a name="related-topics"></a>Статьи по теме
+## <a name="related-topics"></a>Связанные темы
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Расширение C++/WinRT для Visual Studio (VSIX)](https://aka.ms/cppwinrt/vsix)
 * [Начало работы с C++/WinRT](get-started.md)
