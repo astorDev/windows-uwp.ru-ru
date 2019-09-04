@@ -5,15 +5,15 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 14cb42e0bd0f1bac307a9dfc1ac188d8b11d8cb8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cc2aaaf4e9779cb2be712119fb1dacdf946952c5
+ms.sourcegitcommit: 0dec04de501a3db6b22dfd4a320fc09b5c4a21b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610329"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243325"
 ---
 # <a name="symbologies"></a>Символики
-Этот раздел содержит пример штрих-коды для каждого из symbologies, поддерживаемых декодер штрих-кода программного обеспечения, который поставляется с Windows 10, включая: UPC/EAN, код 39, а 128, чередуются 2, 5, Всенаправленные Гистограмма, гистограмма с накоплением, QR-код и GS1DWCode.
+В этом разделе приводятся образцы штрихкодов для каждого симбологиес, поддерживаемого декодером штрихкодов программного обеспечения, который поставляется с Windows 10, включая: UPC/EAN, код 39, код 128, чередующиеся 2 из 5, столбчатых всенаправленные, столбчатых с накоплением, QR-код и GS1DWCode.
 
 ## <a name="1d-symbologies"></a>Одномерные символики
 
@@ -56,3 +56,9 @@ ms.locfileid: "57610329"
 
 > [!NOTE]
 > Программный декодер, встроенный в Windows 10, любезно предоставлен [*Digimarc Corporation*](https://www.digimarc.com/).
+
+## <a name="see-also"></a>См. также
+
+### <a name="samples"></a>Примеры
+
+- [Пример сканера штрихкодов](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)

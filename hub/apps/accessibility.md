@@ -7,12 +7,12 @@ ms.localizationpriority: medium
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
 keywords: Специальные возможности в Windows 10, Специальные возможности, создание доступных приложений Win32, создание доступных приложений UWP, создание доступных приложений WPF, создание доступных приложений WinForms
-ms.openlocfilehash: bb82103c030c436655630a37678bbec11e588f61
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 63d9b321f71019c164fe4de238a618f2730b2052
+ms.sourcegitcommit: 81213db9de2c12400d2e4d176346b466ee0794c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867426"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70237786"
 ---
 # <a name="accessibility-in-windows-10"></a>Специальные возможности в Windows 10
 
@@ -25,94 +25,82 @@ ms.locfileid: "68867426"
 ## <a name="platform-specific-documentation"></a>Документация для определенных платформ
 
 :::row:::
-    :::column:::
-        ![Universal Windows Platform (UWP)](images/platform-uwp.png)
+   :::column:::
+      ![Универсальная платформа Windows (UWP)](images/platform-uwp.png)
 
-        **Universal Windows Platform (UWP)**
+      **Универсальная платформа Windows (UWP)**
 
-        Develop accessible apps and tools on the modern platform for Windows 10 applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
+      Разрабатывайте доступные приложения и средства на современных платформах для приложений и игр Windows 10 на любом устройстве Windows (включая ПК, телефоны, Xbox One, HoloLens и др.) и публикуйте их в Microsoft Store.
 
-        [Designing inclusive software](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
+      [Проектирование инклюзивного программного обеспечения](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
 
-        [Developing inclusive Windows apps](https://docs.microsoft.com/windows/uwp/accessibility/developing-inclusive-windows-apps)
+      [Разработка инклюзивных приложений для Windows](https://docs.microsoft.com/windows/uwp/accessibility/developing-inclusive-windows-apps)
 
-        [Accessibility testing](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
+      [Проверка специальных возможностей](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
 
-        [Accessibility in the Store](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
-    :::column-end:::
-    :::column:::
-        ![Win32 platform apps](images/platform-win32.png)
+      [Специальные возможности в Магазине](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+   :::column-end:::
+   :::column:::
+      ![Приложения платформы Win32](images/platform-win32.png)
 
-        **Win32 platform**
+      **Платформа Win32**
 
-        Develop accessible apps and tools on the original platform for C/C++ Windows applications.
+      Разрабатывайте доступные приложения и средства на исходной платформе для приложений CC++ /Windows.
 
-        [What's new in Windows accessibility and automation](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
+      [Новые возможности в области специальных возможностей и автоматизации Windows](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
 
-        [Developing accessible applications for Windows](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
+      [Разработка приложений со специальными возможностями для Windows](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
 
-        [Developing accessible UI frameworks for Windows](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
+      [Разработка доступных платформ пользовательского интерфейса для Windows](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
 
-        [Developing assistive technology for Windows](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
+      [Разработка вспомогательных технологий для Windows](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
 
-        [Testing for accessibility](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
+      [Проверка специальных возможностей](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
 
-        [Legacy accessibility and automation technology - MSAA to UI Automation](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
+      [Устаревшие технологии обеспечения доступности и автоматизации — MSAA для модели автоматизации пользовательского интерфейса](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
 
-        [Windows Accessibility features](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
+      [Специальные возможности Windows](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
 
-        [Guidelines for designing accessible apps](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
-    :::column-end:::
+      [Рекомендации по разработке приложений со специальными возможностями](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
+   :::column-end:::
 :::row-end:::
 :::row:::
-    :::column:::
-        ![WPF platform](images/platform-wpf.png)
+   :::column:::
+      ![Платформа WPF](images/platform-wpf.png)
 
-        **Windows Presentation Foundation (WPF)**
+      **Windows Presentation Foundation (WPF)**
 
-        Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
+      Разрабатывайте доступные приложения и средства на установленной платформе для управляемых приложений Windows с помощью модели пользовательского интерфейса XAML и .NET Framework.
 
-        [Accessibility Best Practices](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
+      [Рекомендации по специальным возможностям](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
 
-        [UI Automation Fundamentals](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
+      [Основы модели автоматизации пользовательского интерфейса](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
 
-        [UI Automation Providers for Managed Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
+      [Поставщики автоматизации пользовательского интерфейса для управляемого кода](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
 
-        [UI Automation Clients for Managed Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
+      [Клиенты автоматизации пользовательского интерфейса для управляемого кода](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
 
-        [UI Automation Control Patterns](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
+      [Шаблоны элементов управления модели автоматизации пользовательского интерфейса](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
 
-        [UI Automation Text Pattern](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
+      [Шаблон текста модели автоматизации пользовательского интерфейса](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
 
-        [UI Automation Control Types](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
+      [Типы элементов управления модели автоматизации пользовательского интерфейса](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
 
-        [UI Automation Specification and Community Promise](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
-        :::column-end:::
-    :::column:::
-        ![Windows Forms platform apps](images/platform-winforms.png)
+      [Спецификация модели автоматизации пользовательского интерфейса и обещание сообщества](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
+      :::column-end:::
+   :::column:::
+      ![Приложения платформы Windows Forms](images/platform-winforms.png)
 
-        **Windows Forms (WinForms)**
+      **Windows Forms (WinForms)**
 
-        Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.
+      Разрабатывайте доступные приложения и средства для управляемых приложений Windows с помощью модели пользовательского интерфейса XAML и .NET Framework.
 
-        [Windows Forms Accessibility](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
+      [Специальные возможности Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
 
-        [Creating an Accessible Windows Application](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
+      [Создание приложения Windows со специальными возможностями](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
 
-        [Properties on Windows Forms Controls That Support Accessibility Guidelines](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
+      [Свойства элементов управления Windows Forms, которые поддерживают рекомендации по обеспечению доступности](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-        [Providing Accessibility Information for Controls on a Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
-    :::column-end:::
-<!--         
-    :::column:::
-![.NET platform](images/platform-dotnet.png)
-
-        ### .NET
-
-        Develop accessible apps and tools for managed Windows applications with the .NET Framework.
-    :::column-end:::
-    :::column:::
-
-    :::column-end:::
- -->    
+      [Предоставление сведений о специальных возможностях для элементов управления в форме Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+   :::column-end:::
 :::row-end:::

@@ -5,25 +5,31 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, точка обслуживания, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 859ae6397c6b7f2dfce08251ea2df0b013bcd77c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 84dc488f1a45f5c4ce6a04a4cda4fa1287a0d2ab
+ms.sourcegitcommit: 0dec04de501a3db6b22dfd4a320fc09b5c4a21b5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599829"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243304"
 ---
 # <a name="camera-barcode-scanner"></a>Сканер штрихкодов на базе камеры
 Сканер штрихкодов на базе камеры создается динамически, когда Windows связывает камеру или камеры, подключенные к компьютеру, с программным декодером.  Каждая пара "камера-декодер" представляет собой полнофункциональный сканер штрихкодов.   
 
-## <a name="in-this-section"></a>В этом разделе
+## <a name="in-this-section"></a>Содержание раздела
 |Раздел |Описание |
 |------|------------|
 | [Требования к системе](pos-camerabarcode-system-requirements.md)  | Список выпусков Windows, которые поддерживают сканеры штрихкодов на базе камеры, а также требования к камере для успешного считывания штрихкодов. |
-| [Приступая к работе](pos-camerabarcode-get-started.md)              | Пошаговое руководство по началу использования камеры в качестве сканера штрихкодов. |
-| [Размещение предварительной версии](pos-camerabarcode-hosting-preview.md)          | Узнайте, как разместить в своем приложении предварительное изображение со сканера штрихкодов на базе камеры. |
-| [Включение или отключение](pos-camerabarcode-enable-disable.md)         | Узнайте, как включить или отключить программный декодер, который входит в состав Windows 10. |
-| [Поддерживаемые Symbologies](pos-camerabarcode-symbologies.md) | Этот раздел содержит пример штрих-коды для каждого из symbologies, поддерживаемых декодер штрих-кода программного обеспечения, который поставляется с Windows 10, включая: UPC/EAN, код 39, а 128, чередуются 2, 5, Всенаправленные Гистограмма, гистограмма с накоплением, QR-код и GS1DWCode. |
+| [Начало работы](pos-camerabarcode-get-started.md)              | Пошаговое руководство по началу использования камеры в качестве сканера штрихкодов. |
+| [Предварительный просмотр](pos-camerabarcode-hosting-preview.md)          | Узнайте, как разместить в своем приложении предварительное изображение со сканера штрихкодов на базе камеры. |
+| [Включить или отключить](pos-camerabarcode-enable-disable.md)         | Узнайте, как включить или отключить программный декодер, который входит в состав Windows 10. |
+| [Поддерживаемые Симбологиес](pos-camerabarcode-symbologies.md) | В этом разделе приводятся образцы штрихкодов для каждого симбологиес, поддерживаемого декодером штрихкодов программного обеспечения, который поставляется с Windows 10, включая: UPC/EAN, код 39, код 128, чередующиеся 2 из 5, столбчатых всенаправленные, столбчатых с накоплением, QR-код и GS1DWCode. |
 | 
 
 > [!NOTE]
 > Программный декодер, встроенный в Windows 10, любезно предоставлен [*Digimarc Corporation*](https://www.digimarc.com/).
+
+## <a name="see-also"></a>См. также
+
+### <a name="samples"></a>Примеры
+
+- [Пример сканера штрихкодов](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
