@@ -1,20 +1,20 @@
 ---
 title: Использование объектов среды выполнения Windows во многопоточной среде | Документы Майкрософт
-description: В статье рассматривается, как .NET Framework обрабатывает вызовы из кода C# и Visual Basic к объектам, предоставляемым средой выполнения Windows или компонентами этой среды.
+description: В этой статье описывается, как .NET Framework обрабатывает вызовы из C# и Visual Basic кода в объекты, предоставляемые среда выполнения Windows или среда выполнения Windows компонентами.
 ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows 10, uwp, таймер, потоки
 ms.localizationpriority: medium
-ms.openlocfilehash: 3afa1720ede9728e9cc25af434a431300faf26d6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4fc4f704d8e9f53282ab09dbc61bc5e625d00da9
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371210"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393527"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Использование объектов среды выполнения Windows в многопоточной среде
-В статье рассматривается, как .NET Framework обрабатывает вызовы из кода C# и Visual Basic к объектам, предоставляемым средой выполнения Windows или компонентами этой среды.
+В этой статье описывается, как .NET Framework обрабатывает вызовы из C# и Visual Basic кода в объекты, предоставляемые среда выполнения Windows или среда выполнения Windows компонентами.
 
 В .NET Framework по умолчанию можно обращаться к любому объекту из нескольких потоков без специальной обработки. Все, что для этого нужно — ссылка на объект. В среде выполнения Windows такие объекты называются *гибкими*. Большинство классов среды выполнения Windows являются гибкими, хотя и не все, и даже для гибких классов может потребоваться специальная обработка.
 
@@ -163,4 +163,4 @@ End Sub
 ## <a name="see-also"></a>См. также
 [Руководство по C#](/dotnet/csharp/)
 
-[Руководство по Visual Basic](/dotnet/visual-basic/)
+[Visual Basic Guide](/dotnet/visual-basic/)

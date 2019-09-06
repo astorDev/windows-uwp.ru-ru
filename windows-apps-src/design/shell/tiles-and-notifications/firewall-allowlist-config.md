@@ -9,12 +9,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, служба уведомлений Windows, уведомление, Windows, брандмауэр, устранение неполадок, IP, трафик, предприятие, сеть, IPv4, VIP, полное доменное имя, общедоступный IP-адрес
 ms.localizationpriority: medium
-ms.openlocfilehash: 817dec616a88f0b374bc019cbbf23f56fad94484
-ms.sourcegitcommit: 820704a73174e81da3dc00cf0603c0c82471cdfe
+ms.openlocfilehash: 0ba6d2e678eee0d851b4f2e3897f9fc067b74580
+ms.sourcegitcommit: 3360db6bc975516e01913d3d73599c964a411052
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69908454"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70296984"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Настройка брандмауэра и прокси-сервера предприятия для поддержки трафика WNS
 
@@ -23,8 +23,8 @@ ms.locfileid: "69908454"
 
 ## <a name="proxy-support"></a>Поддержка прокси-сервера
 
-> [!Note] 
-Клиенты Windows **не** поддерживают все прокси-серверы, подключение к WNS должно быть прямым подключением.
+> [!Note]
+> Клиенты Windows **не** поддерживают все прокси-серверы, подключение к WNS должно быть прямым подключением.
 
 **Скоро!** Мы активно изучаем различные конфигурации сети, прокси-серверы и брандмауэры. В ближайшее время мы будем обновлять эту страницу с более подробными сведениями о распространенных корпоративных сценариях и поддержке WNS.
 

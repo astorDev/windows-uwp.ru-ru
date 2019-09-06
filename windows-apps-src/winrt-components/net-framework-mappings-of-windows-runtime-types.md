@@ -1,86 +1,101 @@
 ---
-title: Сопоставление типов .NET Framework с типами среды выполнения Windows
-description: В следующей таблице перечислены установленные в .NET Framework сопоставления между типами универсальной платформы Windows (UWP) и типами .NET Framework.
+title: Сопоставления типов среда выполнения Windows в .NET
+description: В следующей таблице перечислены сопоставления, которые .NET делает между типами универсальная платформа Windows (UWP) и типами .NET.
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dc9d71f6f02ec62fdf96161c397f7d2d7363b506
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c035db58fc6aa484f9d47a9af61176a2b05d55ee
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372513"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393661"
 ---
-# <a name="net-framework-mappings-of-windows-runtime-types"></a>Сопоставление типов .NET Framework с типами среды выполнения Windows
+# <a name="net-mappings-of-windows-runtime-types"></a>Сопоставления типов среда выполнения Windows в .NET
 
+В следующей таблице перечислены сопоставления, которые .NET делает между типами универсальная платформа Windows (UWP) и типами .NET. В универсальном приложении Windows, написанном с помощью управляемого кода, IntelliSense Visual Studio отображает тип .NET вместо типа UWP. Например, если метод среда выполнения Windows&lt;принимает параметр типа String&gt;IVector, то IntelliSense отображает параметр типа IList&lt;String&gt;. Аналогичным образом в компоненте среда выполнения Windows, написанном с помощью управляемого кода, тип .NET используется в сигнатурах членов. Когда [средство экспорта метаданных Среда выполнения Windows (Winmdexp. exe)](/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) создает компонент Среда выполнения Windows, тип .NET преобразуется в соответствующий тип UWP.
 
+Большинство типов, имеющих одно и то же имя пространства имен и имя типа в UWP и .NET, являются структурами (или типами, связанными со структурами, такими как перечисления). В UWP структуры не имеют членов, кроме полей, и нуждаются в вспомогательных типах, которые .NET скрывает. Версии .NET этих структур имеют свойства и методы, которые предоставляют функциональные возможности скрытых вспомогательных типов.
 
-В следующей таблице перечислены установленные в .NET Framework сопоставления между типами универсальной платформы Windows (UWP) и типами .NET Framework. В универсальном приложении для Windows, написанном с использованием управляемого кода, IntelliSense отображает тип .NET Framework вместо типа UWP. Например, если метод среды выполнения Windows принимает параметр типа IVector&lt;string&gt;, IntelliSense отображает параметр типа IList&lt;string&gt;. Аналогичным образом в компоненте среды выполнения Windows, написанном с использованием управляемого кода, в сигнатурах членов используются типы .NET Framework. Когда [средство экспорта метаданных среды выполнения Windows (Winmdexp.exe)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) создает компонент среды выполнения Windows, тип .NET Framework становится соответствующим типом UWP.
+## <a name="uwp-types-that-map-to-net-types-with-the-same-name-and-namespace"></a>Типы UWP, которые сопоставляются с типами .NET с одинаковыми именами и пространствами имен
 
-## <a name="mapping-tables"></a>Таблицы соответствия
+### <a name="in-net-assembly-systemobjectmodeldll"></a>В сборке .NET System. ObjectModel. dll
 
+| Пространство имен | Type |
+|-|-|
+| Windows.UI.Xaml.Input | ICommand |
 
-Большинство типов, имеющих одинаковые имена пространств имен и типов в UWP и .NET Framework, являются структурами (или типами, связанными со структурами, например перечислениями). В UWP структуры не имеют членов, кроме полей, и для них требуются вспомогательные типы, скрываемые платформой .NET Framework. Соответствующие структуры версии .NET Framework имеют свойства и методы, предоставляющие функциональность скрытых вспомогательных типов.
+### <a name="in-net-assembly-systemruntimewindowsruntimedll"></a>В сборке .NET System. Runtime. WindowsRuntime. dll
 
-Таблица 1. UWP типы, сопоставленные с типами .NET Framework с другим именем или пространством имен.
+| Пространство имен | Type |
+|-|-|
+| Windows.Foundation | Point |
+| Windows.Foundation | Rect |
+| Windows.Foundation | Size |
+| Windows.UI | Color |
 
-| Тип или пространство имен UWP                                            | Тип или пространство имен .NET Framework                                          | Сборка .NET Framework                           |
-|---------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------|
-| AttributeUsageAttribute (Windows.Foundation.Metadata)         | AttributeUsageAttribute (System)                                       | System.Runtime.dll                                |
-| AttributeTargets (Windows.Foundation.Metadata)                | AttributeTargets (System)                                              | System.Runtime.dll                                |
-| DateTime (Windows.Foundation)                                 | DateTimeOffset (System)                                                | System.Runtime.dll                                |
-| EventHandler&lt;T&gt; (Windows.Foundation)                    | EventHandler&lt;T&gt; (System)                                         | System.Runtime.dll                                |
-| EventRegistrationToken (Windows.Foundation)                   | EventRegistrationToken (System.Runtime.InteropServices.WindowsRuntime) | System.Runtime.InteropServices.WindowsRuntime.dll |
-| HResult (Windows.Foundation)                                  | Exception (System)                                                     | System.Runtime.dll                                |
-| IReference&lt;T&gt; (Windows.Foundation)                      | Nullable&lt;T&gt; (System)                                             | System.Runtime.dll                                |
-| TimeSpan (Windows.Foundation)                                 | TimeSpan (System)                                                      | System.Runtime.dll                                |
-| Uri (Windows.Foundation)                                      | Uri (System)                                                           | System.Runtime.dll                                |
-| IClosable (Windows.Foundation)                                | IDisposable (System)                                                   | System.Runtime.dll                                |
-| IIterable&lt;T&gt; (Windows.Foundation.Collections)           | IEnumerable&lt;T&gt; (System.Collections.Generic)                      | System.Runtime.dll                                |
-| IVector&lt;T&gt; (Windows.Foundation.Collections)             | IList&lt;T&gt; (System.Collections.Generic)                            | System.Runtime.dll                                |
-| IVectorView&lt;T&gt; (Windows.Foundation.Collections)         | IReadOnlyList&lt;T&gt; (System.Collections.Generic)                    | System.Runtime.dll                                |
-| IMap&lt;K,V&gt; (Windows.Foundation.Collections)              | IDictionary&lt;TKey,TValue&gt; (System.Collections.Generic)            | System.Runtime.dll                                |
-| IMapView&lt;K,V&gt; (Windows.Foundation.Collections)          | IReadOnlyDictionary&lt;TKey,TValue&gt; (System.Collections.Generic)    | System.Runtime.dll                                |
-| IKeyValuePair&lt;K,V&gt; (Windows.Foundation.Collections)     | KeyValuePair&lt;TKey,TValue&gt; (System.Collections.Generic)           | System.Runtime.dll                                |
-| IBindableIterable (Windows.UI.Xaml.Interop)                   | IEnumerable (System.Collections)                                       | System.Runtime.dll                                |
-| IBindableVector (Windows.UI.Xaml.Interop)                     | IList (System.Collections)                                             | System.Runtime.dll                                |
-| INotifyCollectionChanged (Windows.UI.Xaml.Interop)            | INotifyCollectionChanged (System.Collections.Specialized)              | System.ObjectModel.dll                            |
-| NotifyCollectionChangedEventHandler (Windows.UI.Xaml.Interop) | NotifyCollectionChangedEventHandler (System.Collections.Specialized)   | System.ObjectModel.dll                            |
-| NotifyCollectionChangedEventArgs (Windows.UI.Xaml.Interop)    | NotifyCollectionChangedEventArgs (System.Collections.Specialized)      | System.ObjectModel.dll                            |
-| NotifyCollectionChangedAction (Windows.UI.Xaml.Interop)       | NotifyCollectionChangedAction (System.Collections.Specialized)         | System.ObjectModel.dll                            |
-| INotifyPropertyChanged (Windows.UI.Xaml.Data)                 | INotifyPropertyChanged (System.ComponentModel)                         | System.ObjectModel.dll                            |
-| PropertyChangedEventHandler (Windows.UI.Xaml.Data)            | PropertyChangedEventHandler (System.ComponentModel)                    | System.ObjectModel.dll                            |
-| PropertyChangedEventArgs (Windows.UI.Xaml.Data)               | PropertyChangedEventArgs (System.ComponentModel)                       | System.ObjectModel.dll                            |
-| TypeName (Windows.UI.Xaml.Interop)                            | Type (System)                                                          | System.Runtime.dll                                |
+### <a name="in-net-assembly-systemruntimewindowsruntimeuixamldll"></a>В сборке .NET System. Runtime. WindowsRuntime. UI. XAML. dll
 
- 
+| Пространство имен | Type |
+|-|-|
+| Windows.UI.Xaml | CornerRadius |
+| Windows.UI.Xaml | Продолжительность |
+| Windows.UI.Xaml | DurationType |
+| Windows.UI.Xaml | GridLength |
+| Windows.UI.Xaml | GridUnitType |
+| Windows.UI.Xaml | Thickness |
+| Windows.UI.Xaml.Controls.Primitives | GeneratorPosition |
+| Windows.UI.Xaml.Media | Matrix (Матрица) |
+| Windows.UI.Xaml.Media.Animation | KeyTime |
+| Windows.UI.Xaml.Media.Animation | RepeatBehavior |
+| Windows.UI.Xaml.Media.Animation | RepeatBehaviorType |
+| Windows.UI.Xaml.Media.Media3D | Matrix3D |
 
-Таблица 2. UWP типы, сопоставленные с типами .NET Framework с тем же именем и пространством имен.
+## <a name="uwp-types-that-map-to-net-types-with-a-different-name-andor-namespace"></a>Типы UWP, которые сопоставляются с типами .NET с другим именем и (или) пространством имен
 
-| Пространство имен                           | Тип               | Сборка .NET Framework                   |
-|-------------------------------------|--------------------|-------------------------------------------|
-| Windows.UI                          | Color              | System.Runtime.WindowsRuntime.dll         |
-| Windows.Foundation                  | отчетов              | System.Runtime.WindowsRuntime.dll         |
-| Windows.Foundation                  | Rect               | System.Runtime.WindowsRuntime.dll         |
-| Windows.Foundation                  | Размер               | System.Runtime.WindowsRuntime.dll         |
-| Windows.UI.Xaml.Input               | ICommand           | System.ObjectModel.dll                    |
-| Windows.UI.Xaml                     | CornerRadius       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml                     | Продолжительность           | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml                     | DurationType       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml                     | GridLength         | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml                     | GridUnitType       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml                     | Thickness          | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml.Controls.Primitives | GeneratorPosition  | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml.Media               | Matrix (Матрица)             | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml.Media.Animation     | KeyTime            | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml.Media.Animation     | RepeatBehavior     | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml.Media.Animation     | RepeatBehaviorType | System.Runtime.WindowsRuntime.UI.Xaml.dll |
-| Windows.UI.Xaml.Media.Media3D       | Matrix3D           | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+### <a name="in-net-assembly-systemobjectmodeldll"></a>В сборке .NET System. ObjectModel. dll
 
- 
+| Тип или пространство имен UWP | Тип или пространство имен .NET |
+|-|-|
+| INotifyCollectionChanged (Windows.UI.Xaml.Interop) | INotifyCollectionChanged (System.Collections.Specialized) | 
+| NotifyCollectionChangedEventHandler (Windows.UI.Xaml.Interop) | NotifyCollectionChangedEventHandler (System.Collections.Specialized) | 
+| NotifyCollectionChangedEventArgs (Windows.UI.Xaml.Interop) | NotifyCollectionChangedEventArgs (System.Collections.Specialized) | 
+| NotifyCollectionChangedAction (Windows.UI.Xaml.Interop) | NotifyCollectionChangedAction (System.Collections.Specialized) | 
+| INotifyPropertyChanged (Windows.UI.Xaml.Data) | INotifyPropertyChanged (System.ComponentModel) | 
+| PropertyChangedEventHandler (Windows.UI.Xaml.Data) | PropertyChangedEventHandler (System.ComponentModel) | 
+| PropertyChangedEventArgs (Windows.UI.Xaml.Data) | PropertyChangedEventArgs (System.ComponentModel) | 
+
+### <a name="in-net-assembly-systemruntimedll"></a>В сборке .NET System. Runtime. dll
+
+| Тип или пространство имен UWP | Тип или пространство имен .NET |
+|-|-|
+| AttributeUsageAttribute (Windows.Foundation.Metadata) | AttributeUsageAttribute (System) |
+| AttributeTargets (Windows.Foundation.Metadata) | AttributeTargets (System) |
+| DateTime (Windows.Foundation) | DateTimeOffset (System) |
+| EventHandler&lt;T&gt; (Windows.Foundation) | EventHandler&lt;T&gt; (System) |
+| HResult (Windows.Foundation) | Exception (System) |
+| IReference&lt;T&gt; (Windows.Foundation) | Nullable&lt;T&gt; (System) |
+| TimeSpan (Windows.Foundation) | TimeSpan (System) |
+| Uri (Windows.Foundation) | Uri (System) |
+| IClosable (Windows.Foundation) | IDisposable (System) |
+| IIterable&lt;T&gt; (Windows.Foundation.Collections) | IEnumerable&lt;T&gt; (System.Collections.Generic) |
+| IVector&lt;T&gt; (Windows.Foundation.Collections) | IList&lt;T&gt; (System.Collections.Generic) |
+| IVectorView&lt;T&gt; (Windows.Foundation.Collections) | IReadOnlyList&lt;T&gt; (System.Collections.Generic) |
+| IMap&lt;K,V&gt; (Windows.Foundation.Collections) | IDictionary&lt;TKey,TValue&gt; (System.Collections.Generic) |
+| IMapView&lt;K,V&gt; (Windows.Foundation.Collections) | IReadOnlyDictionary&lt;TKey,TValue&gt; (System.Collections.Generic) |
+| IKeyValuePair&lt;K,V&gt; (Windows.Foundation.Collections) | KeyValuePair&lt;TKey,TValue&gt; (System.Collections.Generic) |
+| IBindableIterable (Windows.UI.Xaml.Interop) | IEnumerable (System.Collections) |
+| IBindableVector (Windows.UI.Xaml.Interop) | IList (System.Collections) |
+| TypeName (Windows.UI.Xaml.Interop) | Type (System) |
+
+### <a name="in-net-assembly-systemruntimeinteropserviceswindowsruntimedll"></a>В сборке .NET System. Runtime. InteropServices. WindowsRuntime. dll
+
+| Тип или пространство имен UWP | Тип или пространство имен .NET |
+|-|-|
+| EventRegistrationToken (Windows.Foundation) | EventRegistrationToken (System.Runtime.InteropServices.WindowsRuntime) |
 
 ## <a name="related-topics"></a>См. также
 
-* [Создание компонентов среды выполнения Windows в C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Среда выполнения Windows компонентов с C# и Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)

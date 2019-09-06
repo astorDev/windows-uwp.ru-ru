@@ -3,14 +3,14 @@ title: Запуск фоновой задачи при обновлении пр
 description: Узнайте, как создать фоновую задачу, которая выполняется при обновлении приложения магазина универсальной платформы Windows (UWP).
 ms.date: 04/21/2017
 ms.topic: article
-keywords: Windows 10, uwp, update, фоновая задача, updatetask, фоновой задачи
+keywords: Windows 10, UWP, обновление, фоновая задача, упдатетаск, фоновая задача
 ms.localizationpriority: medium
-ms.openlocfilehash: fa5420b14d3d73f370031eed917e0e7c367c41c7
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 15406e52eeceb579f2add783c74a1011074c69b7
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820957"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393546"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Запуск фоновой задачи при обновлении приложения UWP
 
@@ -20,11 +20,11 @@ ms.locfileid: "67820957"
 
 Задача обновления отличается от запуска фоновой задачи, используя триггер [ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType), так как в этом случае необходимо однократно запустить ваше приложение по крайней мере до обновления для регистрации фоновой задачи, которая будет активирована триггером **ServicingComplete**.  Задача обновления регистрируется, и таким образом приложение, которое никогда не запускалось, но которое было обновлено, по-прежнему будет иметь триггер задачи обновления.
 
-## <a name="step-1-create-the-background-task-class"></a>Шаг 1. Создайте класс фоновой задачи
+## <a name="step-1-create-the-background-task-class"></a>Шаг 1. Создание класса фоновой задачи
 
 Как и другие типы фоновых задач, фоновая задача обновления реализуется в компоненте среды выполнения Windows. Чтобы создать такой компонент, выполните действия из подраздела **Создание класса фоновой задачи** раздела [Создание и регистрация фоновой задачи](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task). Потребуются следующие действия:
 
-- Добавление проекта компонента среды выполнения Windows в ваше решение.
+- Добавление среда выполнения Windows проекта компонента в решение.
 - Создание ссылки из этого приложения на компонент.
 - Создание открытого, запечатанного класса в компоненте, который реализует [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask).
 - Реализация метода [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run), который является обязательной точкой входа, которая вызывается при запуске задачи обновления. Если вы собираетесь выполнять асинхронные вызовы из фоновой задачи, в статье [Создание и регистрация внепроцессной фоновой задачи](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) объясняется, как использовать задержку в вашем методе **Run**.
@@ -48,7 +48,7 @@ namespace BackgroundTasks
 }
 ```
 
-## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>Шаг 2. Объявите вашей фоновой задачи в манифесте пакета
+## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>Шаг 2. Объявление фоновой задачи в манифесте пакета
 
 В обозревателе решений Visual Studio щелкните правой кнопкой мыши **Package.appxmanifest** и выберите пункт **Перейти к коду**, чтобы просмотреть манифест пакета. Добавьте следующий `<Extensions>`XML для объявления вашей задачи обновления:
 
@@ -70,7 +70,7 @@ namespace BackgroundTasks
 
 Убедитесь, что в приведенном выше XML атрибут `EntryPoint` имеет значение namespace.class имя класса задач обновление. Имя обрабатывается с учетом регистра.
 
-## <a name="step-3-debugtest-your-update-task"></a>Шаг 3. Обновление задачи отладки и тестирования
+## <a name="step-3-debugtest-your-update-task"></a>Шаг 3. Отладка и тестирование задачи обновления
 
 Убедитесь, что вы развернули ваше приложение на компьютере, чтобы было что-то для обновления.
 
@@ -86,12 +86,12 @@ namespace BackgroundTasks
 
 ![обновление версии](images/bump-version.png)
 
-Теперь в Visual Studio 2019 при нажатии клавиши F5, ваше приложение будет обновлено, и система будет активировать компонент UpdateTask в фоновом режиме. Отладчик автоматически назначается фоновый процесс. Ваш останов будет достигнут, и вы можете выполнять свою логику для обновления кода.
+Теперь при нажатии клавиши F5 в Visual Studio 2019 ваше приложение будет обновлено и система активирует компонент Упдатетаск в фоновом режиме. Отладчик автоматически назначается фоновый процесс. Ваш останов будет достигнут, и вы можете выполнять свою логику для обновления кода.
 
 Если фоновая задача завершается, можно запустить приложение переднего плана в главном меню Windows в пределах одного и того же сеанса отладки. Отладчик будет автоматически привязан, в этот раз к вашему процессу переднего плана, и вы сможете выполнить посредством логики приложения.
 
 > [!NOTE]
-> Пользователи Visual Studio 2015: Описанные выше шаги применяются к Visual Studio 2017 или Visual Studio 2019. Если вы используете Visual Studio 2015, можно использовать те же методы для вызова и тестирования UpdateTask, за исключением Visual Studio, к которому это не цепляется. Альтернативная процедура в VS 2015 является настройка [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app), устанавливающего UpdateTask как точку входа, и вызывает триггер выполнения непосредственно из приложения переднего плана.
+> Пользователи Visual Studio 2015: Приведенные выше действия применимы к Visual Studio 2017 или Visual Studio 2019. Если вы используете Visual Studio 2015, можно использовать те же методы для вызова и тестирования UpdateTask, за исключением Visual Studio, к которому это не цепляется. Альтернативная процедура в VS 2015 является настройка [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app), устанавливающего UpdateTask как точку входа, и вызывает триггер выполнения непосредственно из приложения переднего плана.
 
 ## <a name="see-also"></a>См. также
 

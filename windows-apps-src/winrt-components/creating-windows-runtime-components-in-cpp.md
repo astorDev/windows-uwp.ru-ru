@@ -1,31 +1,32 @@
 ---
-title: Создание компонентов среды выполнения Windows на C++
-description: В этой статье описывается использование C++/CX для создания компонента среды выполнения Windows, представляющего собой компонент, который можно вызывать из универсального приложения для Windows, созданного с помощью C#, Visual Basic, C++ или JavaScript.
+title: Среда выполнения Windows компонентов с C++помощью/CX
+description: В этом разделе показано, как C++использовать/CX для создания среда выполнения Windows компонента&mdash;, который можно вызвать из универсального приложения Windows, созданного с помощью любого языка среда выполнения Windows.
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5f02a57d21a5c9fffa2040831667d87c68cd1fd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e6cec29594405bb9a77a9b16805d2ac5a73c13cf
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372063"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393732"
 ---
-# <a name="creating-windows-runtime-components-in-ccx"></a>Создание компонентов среды выполнения Windows на C++/CX
+# <a name="windows-runtime-components-with-ccx"></a>Среда выполнения Windows компонентов с C++помощью/CX
+
 > [!NOTE]
-> В этом разделе представлена вспомогательная информация для поддержки приложений на C++/CX. Однако в новых приложениях мы рекомендуем использовать [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md). C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows. Чтобы узнать, как создать компонент среды выполнения Windows с помощью C++/WinRT, см. в разделе [создавать события в C++/WinRT](../cpp-and-winrt-apis/author-events.md).
+> В этом разделе представлена вспомогательная информация для поддержки приложений на C++/CX. Однако в новых приложениях мы рекомендуем использовать [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md). C++/WinRT — это полностью стандартная проекция языка C++17 для API среды выполнения Windows (WinRT), реализованная как библиотека на основе файлов заголовков и предназначенная для предоставления вам первоклассного доступа к современным API-интерфейсам Windows. Сведения о создании среда выполнения Windows компонента с помощью C++/WinRT см. в разделе Создание [событий в C++/WinRT](../cpp-and-winrt-apis/author-events.md).
 
-В этой статье описывается использование C++/CX для создания компонента среды выполнения Windows, представляющего собой компонент, который можно вызывать из универсального приложения для Windows, созданного с помощью C#, Visual Basic, C++ или JavaScript.
+В этом разделе показано, как C++с помощью кода/CX создать среда выполнения Windows&mdash;компонент, который можно вызвать из универсального приложения Windows, созданного с помощью любогоC#языка среда выполнения Windows ( C++, Visual Basic, или JavaScript).
 
-Существует несколько причин для создания в компонент среды выполнения Windows.
+Существует несколько причин для создания компонента среда выполнения Windows.
 - Использование повышенной производительности C++ при сложных или требующих большого объема вычислений операциях.
 - Повторное использование уже написанного и протестированного кода.
 
 При создании решения, содержащего проект JavaScript или .NET и проект компонента среды выполнения Windows, файлы проекта JavaScript и скомпилированная библиотека DLL объединяются в один пакет, отладку которого вы можете выполнить локально в имитаторе или удаленно на связанном устройстве. Вы также можете распространять проект компонента отдельно в виде пакета SDK расширения. Дополнительную информацию см. в разделе [Создание пакета средств разработки](https://docs.microsoft.com/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015).
 
-Вообще говоря, если код вашей C++/CX компонента, использовать регулярные C++ библиотеки и встроенные типы данных, за исключением на границе абстрактного двоичного интерфейса (ABI), в которую происходит обмен данными с кодом с другим пакетом .winmd. Здесь используются типы среды выполнения Windows и специальный синтаксис, C++/CX поддерживает для создания и обработки этих типов. Кроме того, в вашей C++/CX кода, используйте типы, например делегатов и событий, для реализации событий, может быть создано из компонента и обработано в JavaScript, Visual Basic, C++, или C#. Дополнительные сведения о C++/CX синтаксис, см. в разделе [Visual C++ Справочник по языку (C++/CX)](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx).
+Как правило, при написании компонента C++/CX следует использовать обычную C++ библиотеку и встроенные типы, за исключением границ абстрактного двоичного интерфейса (ABI), в которых данные передаются в код и из другого пакета WinMD. В нем используются типы среда выполнения Windows и Специальный синтаксис, который C++поддерживает/CX для создания этих типов и управления ими. Кроме того, в коде C++кода/CX используйте такие типы, как делегат и Event, для реализации событий, которые могут быть вызваны из компонента и обрабатываться в JavaScript C++, Visual Basic C#, или. Дополнительные сведения о синтаксисе C++/CX см. в [разделе C++ Справочник по языку VisualC++(/CX)](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx).
 
 ## <a name="casing-and-naming-rules"></a>Регистр символов и правила именования
 
@@ -70,10 +71,10 @@ var num = nativeObject.LogCalc(21.5);
 ResultText.Text = num.ToString();
 ```
 
-## <a name="ccx-built-in-types-library-types-and-windows-runtime-types"></a>C++/CX встроенные типы библиотеки типов и типов среды выполнения Windows
+## <a name="ccx-built-in-types-library-types-and-windows-runtime-types"></a>C++Встроенные типы, типы библиотек и типы среда выполнения Windows/CX
 Экземпляр активируемого класса (также называемого классом ссылки) может быть создан из другого языка, например из JavaScript, C# или Visual Basic. Чтобы компонент можно было использовать в другом языке, он должен содержать по крайней мере один активируемый класс.
 
-Компонент среды выполнения Windows может содержать несколько открытых активируемых классов, а также дополнительные классы, которые доступны только для внутреннего использования в компоненте. Применить [WebHostHidden](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.webhosthiddenattribute) атрибут C++/CX типы, которые не должны быть видимым в JavaScript.
+Компонент среды выполнения Windows может содержать несколько открытых активируемых классов, а также дополнительные классы, которые доступны только для внутреннего использования в компоненте. Примените атрибут [WebHostHidden](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.webhosthiddenattribute) к C++типам/CX, которые не должны быть видимыми для JavaScript.
 
 Все открытые классы должны располагаться в одном и том же корневом пространстве имен, имя которого совпадает с именем файла метаданных компонента. Например, экземпляр класса с именем A.B.C.MyClass может быть создан, только если он определен в файле метаданных с именем A.winmd, A.B.winmd или A.B.C.winmd. Имя DLL-файла не обязательно должно соответствовать имени WINMD-файла.
 
@@ -81,7 +82,7 @@ ResultText.Text = num.ToString();
 
 Активируемый класс должен быть объявлен как **открытый запечатанный класс ссылки**. Ключевое слово **ref class** указывает компилятору, что нужно создать класс как тип, совместимый со средой выполнения Windows, а ключевое слово sealed запрещает наследование от этого класса. Среда выполнения Windows в настоящее время не поддерживает обобщенную модель наследования; ограниченная модель наследования поддерживает создание пользовательских элементов управления XAML. Дополнительные сведения см. в разделе [Классы и структуры ссылки (C++/CX)](https://docs.microsoft.com/cpp/cppcx/ref-classes-and-structs-c-cx).
 
-Для C++/CX, все числовые примитивы определяются в пространстве имен по умолчанию. [Платформы](https://docs.microsoft.com/cpp/cppcx/platform-namespace-c-cx) пространство имен содержит C++система типов /CX классы, характерные для среды выполнения Windows. К ним относятся классы [Platform::String](https://docs.microsoft.com/cpp/cppcx/platform-string-class) и [Platform::Object](https://docs.microsoft.com/cpp/cppcx/platform-object-class). Конкретные типы коллекций, такие как [Platform::Collections::Map](https://docs.microsoft.com/cpp/cppcx/platform-collections-map-class) и [Platform::Collections::Vector](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class), определяются в пространстве имен [Platform::Collections](https://docs.microsoft.com/cpp/cppcx/platform-collections-namespace). Открытые интерфейсы, реализуемые этими типами, определяются в пространстве имен [Windows::Foundation::Collections (C++/CX)](https://docs.microsoft.com/cpp/cppcx/windows-foundation-collections-namespace-c-cx). Именно эти типы интерфейсов используются кодом JavaScript, C# и Visual Basic. Дополнительные сведения см. в разделе [Система типов (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
+Для C++/CX все числовые примитивы определены в пространстве имен по умолчанию. Пространство имен [Platform](https://docs.microsoft.com/cpp/cppcx/platform-namespace-c-cx) содержит C++классы/CX, характерные для системы типов Среда выполнения Windows. К ним относятся классы [Platform::String](https://docs.microsoft.com/cpp/cppcx/platform-string-class) и [Platform::Object](https://docs.microsoft.com/cpp/cppcx/platform-object-class). Конкретные типы коллекций, такие как [Platform::Collections::Map](https://docs.microsoft.com/cpp/cppcx/platform-collections-map-class) и [Platform::Collections::Vector](https://docs.microsoft.com/cpp/cppcx/platform-collections-vector-class), определяются в пространстве имен [Platform::Collections](https://docs.microsoft.com/cpp/cppcx/platform-collections-namespace). Открытые интерфейсы, реализуемые этими типами, определяются в пространстве имен [Windows::Foundation::Collections (C++/CX)](https://docs.microsoft.com/cpp/cppcx/windows-foundation-collections-namespace-c-cx). Именно эти типы интерфейсов используются кодом JavaScript, C# и Visual Basic. Дополнительные сведения см. в разделе [Система типов (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
 
 ## <a name="method-that-returns-a-value-of-built-in-type"></a>Метод, возвращающий значение встроенного типа
 ```cpp
@@ -127,7 +128,7 @@ namespace CppComponent
 }
 ```
 
-Чтобы передать структуры значений, определяемых пользователем через интерфейс ABI, определите объект JavaScript, который содержит те же члены, что и структура значения, определенного в C++/CX. Затем можно передать этот объект как аргумент C++/CX метод таким образом, чтобы объект неявно преобразуется в C++/CX типа.
+Чтобы передать структуры определяемых пользователем значений в интерфейсе ABI, определите объект JavaScript, который имеет те же члены, что и структура значения, определенная C++в/CX. Затем этот объект можно передать в качестве аргумента в метод C++/CX, чтобы объект был неявно преобразован в тип C++/CX.
 
 ```javascript
 // Get and set the value struct
@@ -146,7 +147,7 @@ function GetAndSetPlayerData() {
 
 Другой способ состоит в определении класса, который реализует интерфейс IPropertySet (не показан).
 
-В языках .NET, просто создать переменную типа, который определен в C++/CX компонента.
+На языках .NET вы просто создаете переменную типа, которая определена в компоненте C++/CX.
 
 ```csharp
 private void GetAndSetPlayerData()
@@ -172,7 +173,7 @@ private void GetAndSetPlayerData()
 ```
 
 ## <a name="overloaded-methods"></a>Перегруженные методы
-Объект C++/CX открытый класс ссылки может содержать перегруженные методы, но JavaScript имеет ограниченные возможности распознавания перегруженных методов. Например, он может найти разницу между следующими сигнатурами:
+Открытый C++класс ссылки/CX может содержать перегруженные методы, но JavaScript имеет ограниченную возможность отличать перегруженные методы. Например, он может найти разницу между следующими сигнатурами:
 
 ```cpp
 public ref class NumberClass sealed
@@ -202,10 +203,10 @@ document.getElementById('P4').innerHTML = num;
 ```
 
 ## <a name="net"></a>.NET
-Языки .NET распознают перегруженные методы в C++/CX ссылочного класса, как и любого класса .NET Framework.
+Языки .NET распознают перегрузки в C++классе ссылки/CX точно так же, как и в любом классе .NET.
 
 ## <a name="datetime"></a>DateTime
-В среде выполнения в Windows объект [Windows::Foundation::DateTime](https://docs.microsoft.com/uwp/api/windows.foundation.datetime) является лишь 64-разрядным знаковым целым числом, представляющим количество 100-наносекундных интервалов до или после 1 января 1601 г. У объекта Windows:Foundation::DateTime нет методов. Вместо этого в каждом языке создается проекция DateTime, соответствующая этому языку: объект Date в JavaScript и типы System.DateTime и System.DateTimeOffset в .NET Framework.
+В среде выполнения в Windows объект [Windows::Foundation::DateTime](https://docs.microsoft.com/uwp/api/windows.foundation.datetime) является лишь 64-разрядным знаковым целым числом, представляющим количество 100-наносекундных интервалов до или после 1 января 1601 г. У объекта Windows:Foundation::DateTime нет методов. Вместо этого каждый язык проецирует значение DateTime в направлении, присущем этому языку: объект Date в JavaScript, а также типы System. DateTime и System. DateTimeOffset в .NET.
 
 ```cpp
 public  ref class MyDateClass sealed
@@ -221,7 +222,7 @@ public:
 };
 ```
 
-При передаче значения DateTime из C++/CX в код JavaScript, JavaScript принимает его как объект даты и отображает его по умолчанию как строку даты в полном формате.
+При передаче значения DateTime из C++кода/CX в JavaScript, JavaScript принимает его как объект Date и по умолчанию отображает его в виде строки длинной даты.
 
 ```javascript
 function SetAndGetDate() {
@@ -238,7 +239,7 @@ function SetAndGetDate() {
 }
 ```
 
-Если язык .NET передает System.DateTime для C++/CX компонента, метод принимает его как Windows::Foundation:: DateTime. Когда компонент передает Windows::Foundation::DateTime методу .NET Framework, метод .NET Framework принимает его как DateTimeOffset.
+Когда язык .NET передает System. DateTime в компонент C++/CX, метод принимает его как Windows:: Foundation::D атетиме. Когда компонент передает методу .NET Windows:: Foundation::D Атетиме, метод Framework принимает его как DateTimeOffset.
 
 ```csharp
 private void DateTimeExample()
@@ -259,7 +260,7 @@ private void DateTimeExample()
 ```
 
 ## <a name="collections-and-arrays"></a>Коллекции и массивы
-Коллекции всегда передаются через границу ABI в виде дескрипторов типов среды выполнения Windows, таких как Windows::Foundation::Collections::IVector^ и Windows::Foundation::Collections::IMap^. Например, если возвращается дескриптор типа Platform::Collections::Map, он будет неявно преобразован в Windows::Foundation::Collections::IMap^. Интерфейсы коллекций определяются в пространстве имен, отдельном от C++/CX классов, которые предоставляют конкретные реализации. Эти интерфейсы используются в языках JavaScript и .NET. Дополнительные сведения см. в разделах [Коллекции (C++/CX)](https://docs.microsoft.com/cpp/cppcx/collections-c-cx) и [Классы Array и WriteOnlyArray (C++/CX)](https://docs.microsoft.com/cpp/cppcx/array-and-writeonlyarray-c-cx).
+Коллекции всегда передаются через границу ABI в виде дескрипторов типов среды выполнения Windows, таких как Windows::Foundation::Collections::IVector^ и Windows::Foundation::Collections::IMap^. Например, если возвращается дескриптор типа Platform::Collections::Map, он будет неявно преобразован в Windows::Foundation::Collections::IMap^. Интерфейсы коллекции определяются в пространстве имен, отдельном от классов C++/CX, которые предоставляют конкретные реализации. Эти интерфейсы используются в языках JavaScript и .NET. Дополнительные сведения см. в разделах [Коллекции (C++/CX)](https://docs.microsoft.com/cpp/cppcx/collections-c-cx) и [Классы Array и WriteOnlyArray (C++/CX)](https://docs.microsoft.com/cpp/cppcx/array-and-writeonlyarray-c-cx).
 
 ## <a name="passing-ivector"></a>Передача IVector
 ```cpp
@@ -345,7 +346,7 @@ private void GetDictionary()
 ```
 
 ## <a name="properties"></a>Свойства
-Открытый класс ссылки в C++расширения компонентов /CX предоставляет открытые элементы данных как свойства, с помощью ключевого свойства. Это понятие идентично свойствам в .NET Framework. Простое свойство похоже на элемент данных, поскольку его функциональность является неявной. Нетривиальное свойство имеет явные методы доступа get и set и закрытую переменную с именем, которая является «резервным хранилищем» для значения. В этом примере переменной закрытого члена \_propertyAValue является резервным хранилищем для PropertyA. Свойство может инициировать событие при изменении значения свойства, а клиентское приложение может зарегистрироваться для получения этого события.
+Открытый класс ссылки в C++расширениях компонентов/CX предоставляет открытые члены данных в виде свойств с помощью ключевого слова Property. Концепция идентична свойствам .NET. Простое свойство похоже на элемент данных, поскольку его функциональность является неявной. Нетривиальное свойство имеет явные методы доступа get и set и закрытую переменную с именем, которая является «резервным хранилищем» для значения. В этом примере закрытая переменная \_-член пропертявалуе является резервным хранилищем для свойства a. Свойство может инициировать событие при изменении значения свойства, а клиентское приложение может зарегистрироваться для получения этого события.
 
 ```cpp
 //Properties
@@ -392,7 +393,7 @@ nativeObject.propertyB = "What is the meaning of the universe?";
 document.getElementById('P9').innerHTML += nativeObject.propertyB;
 ```
 
-В языках .NET, доступ к свойствам в машинном коде C++/CX объекта точно так же, как если бы в объекте .NET Framework.
+Языки .NET обращаются к свойствам в C++собственном объекте/CX точно так же, как и к объекту .NET.
 
 ```csharp
 private void GetAProperty()
@@ -443,7 +444,7 @@ function Button_Click() {
 }
 ```
 
-В языках .NET подписка на событие в компоненте C++ не отличается от подписки на событие в классе .NET Framework:
+В языках .NET подписка на событие в C++ компоненте аналогична подписке на событие в классе .NET:
 
 ```csharp
 //Subscribe to event and call method that causes it to be fired.
@@ -507,7 +508,7 @@ nativeObject.fireEvent("The answer is ");
 В C# любое количество обработчиков событий может подписаться на событие с помощью оператора +=, как показано в предыдущем примере.
 
 ## <a name="enums"></a>перечислениям;
-Перечисление среды выполнения Windows в C++/CX объявляется с помощью открытый класс перечисления. Оно похоже на перечисление с ограниченной областью в стандартном C++.
+Перечисление среда выполнения Windows C++в/CX объявляется с помощью перечислителя открытого класса. Он напоминает перечисление с областью действия C++в стандарте.
 
 ```cpp
 public enum class Direction {North, South, East, West};
@@ -525,7 +526,7 @@ private:
 };
 ```
 
-Значения перечисления передаются между C++/CX и JavaScript как целые числа. При необходимости можно объявить объект JavaScript, который содержит именованные значения, что C++/CX enum и используйте его как следует.
+Значения перечисления передаются C++между кодом/CX и JavaScript как целые числа. При необходимости можно объявить объект JavaScript, содержащий те же именованные значения, что C++и перечисление/CX, и использовать его следующим образом.
 
 ```javascript
 var Direction = { 0: "North", 1: "South", 2: "East", 3: "West" };
@@ -537,12 +538,12 @@ document.getElementById('P13').innerHTML =
 Direction[curDirection];
 ```
 
-Перечисления поддерживаются как в C#, так и в Visual Basic. Эти языки обрабатывают открытый класс перечисления C++ так же, как и перечисление .NET Framework.
+Перечисления поддерживаются как в C#, так и в Visual Basic. Эти языки видят C++ открытый класс enum так же, как и перечисление .NET.
 
 ## <a name="asynchronous-methods"></a>Асинхронные методы
 Чтобы использовать асинхронные методы, предоставляемые другими объектами среды выполнения Windows, используйте [класс task (среда выполнения с параллелизмом)](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-class). Дополнительные сведения см. в разделе [Параллелизм задач (среда выполнения с параллелизмом)](https://docs.microsoft.com/cpp/parallel/concrt/task-parallelism-concurrency-runtime).
 
-Для реализации асинхронных методов в C++/CX, используйте [создать\_async](https://docs.microsoft.com/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) функции, определенной в файле ppltasks.h. Дополнительные сведения см. в разделе [создание асинхронных операций в C++/CX для приложений UWP](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps). Например, см. в разделе [Пошаговое руководство: Создание базового компонента среды выполнения Windows в C++/CX и вызов его из JavaScript или C# ](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). Языках .NET C++/CX асинхронных методов точно так же, как если бы любой асинхронный метод, который определен в .NET Framework.
+Чтобы реализовать асинхронные методы C++в/CX, используйте [функцию\_Create Async](https://docs.microsoft.com/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) , определенную в из ppltasks. h. Дополнительные сведения см. [в разделе Создание асинхронных C++операций в/CX для приложений UWP](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps). Пример см. в разделе [Пошаговое руководство C++по созданию компонента/CX среда выполнения Windows и его вызов из JavaScript C#или ](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). Языки .NET потребляют C++асинхронные методы/CX так же, как и любой асинхронный метод, определенный в .NET.
 
 ## <a name="exceptions"></a>Исключения
 Можно создавать исключения любого типа, определенного в среде выполнения Windows. От типов исключений среды выполнения Windows нельзя наследовать пользовательские типы. Однако можно создать исключение COMException и предоставить пользовательский объект HRESULT, который может быть доступен для кода, перехватывающего исключение. Способы задания пользовательского сообщения в исключении COMException не предусмотрены.
@@ -552,9 +553,9 @@ Direction[curDirection];
 
 Обязательно выберите соответствующие возможности в конструкторе пакетов. Например, если вы пытаетесь открыть файл образа в библиотеке изображений пользователя с помощью интерфейсов API среды выполнения Windows, необходимо установить флажок Библиотека изображений в области Возможности конструктора манифестов.
 
-Если коду JavaScript не удается распознать открытые свойства или методы в компоненте, убедитесь, что в JavaScript используется "верблюжий" стиль имен. Например, LogCalc C++/CX метод должен использоваться как logCalc в JavaScript.
+Если коду JavaScript не удается распознать открытые свойства или методы в компоненте, убедитесь, что в JavaScript используется "верблюжий" стиль имен. Например, метод Логкалк C++/CX должен ссылаться как на Логкалк в JavaScript.
 
-При удалении C++/CX проект компонента среды выполнения Windows из решения, необходимо также вручную удалить ссылку на проект из проекта JavaScript. Невыполнение этого требования приведет к невозможности последующей отладки и сборки. При необходимости можно добавить ссылку на сборку в библиотеку DLL.
+При удалении проекта компонента C++/CX среда выполнения Windows из решения необходимо также вручную удалить ссылку на проект из проекта JavaScript. Невыполнение этого требования приведет к невозможности последующей отладки и сборки. При необходимости можно добавить ссылку на сборку в библиотеку DLL.
 
 ## <a name="related-topics"></a>См. также
-* [Пошаговое руководство: Создание базового компонента среды выполнения Windows в C++/CX и вызов его из JavaScript илиC#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+* [Пошаговое руководство C++по созданию компонента Среда выполнения Windows/CX и его вызову из JavaScript илиC#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
