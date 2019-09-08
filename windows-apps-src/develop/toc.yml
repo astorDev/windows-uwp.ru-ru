@@ -351,7 +351,7 @@
               href: ../debug-test-perf/optimize-suspend-resume.md
             - name: Оптимизация доступа к файлам
               href: ../debug-test-perf/optimize-file-access.md
-            - name: Компоненты среды выполнения Windows и оптимизация межпрограммного взаимодействия
+            - name: Компоненты среды выполнения Windows и оптимизация взаимодействия
               href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
             - name: Инструменты для профилирования и производительности
               href: ../debug-test-perf/tools-for-profiling-and-performance.md
@@ -933,11 +933,11 @@
     - name: Компоненты среды выполнения Windows
       href: ../winrt-components/index.md
       items:
-        - name: Создание компонентов среды выполнения Windows в C++/CX
+        - name: Создание компонентов среды выполнения Windows с помощью C++/CX
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-        - name: 'Пошаговое руководство: Базовый компонент среды Windows на C++/CX и его вызов из JavaScript и C#'
+        - name: Пошаговое руководство по созданию компонента среды выполнения Windows с помощью C++/CX
           href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
-        - name: 'Создание компонентов среды выполнения Windows на языках C# и Visual Basic'
+        - name: 'Создание компонентов среды выполнения Windows с помощью C# и Visual Basic'
           href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
           items:
             - name: Пользовательские события и методы доступа к событиям в компонентах среды выполнения Windows
@@ -948,9 +948,9 @@
               href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
             - name: Распространение управляемого компонента среды выполнения Windows
               href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
-            - name: Сопоставление типов .NET Framework с типами среды выполнения Windows
+            - name: Сопоставление типов .NET с типами среды выполнения Windows
               href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-        - name: 'Пошаговое руководство: Создание простого компонента среды выполнения Windows и его вызов из JavaScript'
+        - name: 'Пошаговое руководство по созданию компонента среды выполнения Windows с помощью C# или Visual Basic'
           href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
         - name: Создание событий в компонентах среды выполнения Windows
           href: ../winrt-components/raising-events-in-windows-runtime-components.md
