@@ -5,21 +5,21 @@ Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ms.date: 01/11/2018
 ms.topic: article
-keywords: Windows 10, uwp, фоновую задачу
+keywords: Windows 10, UWP, фоновая задача
 ms.localizationpriority: medium
-ms.openlocfilehash: 280f2253fda7de816ee753798dcab754d58ae847
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: df2fad68fd1aab9b3b056e962736f3d37f749e63
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370554"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393536"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Обновление живой плитки из фоновой задачи
 
 **Важные API**
 
 -   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**баккграундтаскбуилдер**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Используйте фоновую задачу для обновления живой плитки вашего приложения свежим содержимым.
 
@@ -29,7 +29,7 @@ ms.locfileid: "66370554"
 
 ## <a name="create-the-background-task-project"></a>Создание проекта фоновых задач  
 
-Чтобы задействовать живую плитку в своем приложении, добавьте новый проект компонента среды выполнения Windows в свое решение. Это отдельная сборка, которую операционная система загружает и запускает в фоновом режиме, когда пользователь устанавливает ваше приложение.
+Чтобы включить динамическую плитку для приложения, добавьте в решение новый проект среда выполнения Windows компонента. Это отдельная сборка, которую операционная система загружает и запускает в фоновом режиме, когда пользователь устанавливает ваше приложение.
 
 1.  В окне обозревателя решений щелкните правой кнопкой мыши решение, выберите команду **Добавить** и нажмите кнопку **Создать проект**.
 2.  В диалоговом окне **Добавление нового проекта** выберите шаблон **Компонент среды выполнения Windows** в разделе **Установленные &gt; Другие языки &gt; Visual C# &gt; Windows Universal**.
@@ -152,7 +152,7 @@ namespace BackgroundTasks
 6.  Щелкните вкладку **Application UI** (Пользовательский интерфейс приложения) или коснитесь ее.
 7.  Установите для параметра **Lock screen notifications** (Уведомления экрана блокировки) значение **Badge and Tile Text** (Индикатор событий и текст плитки).
 8.  Укажите путь к значку размером 24x24 пикселя в поле **Badge logo** (Индикатор событий).
-    **Важные**  этот значок, необходимо использовать монохромный и прозрачно пикселей.
+    **Важно. Этот**значок должен использовать только монохромные и прозрачные пиксели.  
 9.  В поле **Small logo** (Мелкий значок) укажите путь к значку размером 30x30 пикселей.
 10. В поле **Wide logo** (Широкий значок) укажите путь к значку размером 310x150 пикселей.
 
@@ -161,7 +161,7 @@ namespace BackgroundTasks
 
 Создайте [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder), чтобы зарегистрировать свою задачу.
 
-> **Примечание**  начиная с Windows 8.1, параметры регистрации фоновой задачи проверяются во время регистрации. Если какие-либо из параметров регистрации недопустимы, возвращается ошибка. Если фоновая задача не прошла регистрацию, приложение должно выполнить соответствующее действие — например, применить условный оператор для проверки наличия ошибок регистрации и затем повторить попытку регистрации с другими значениями параметров.
+> **Примечание. Начиная**с Windows 8.1 Параметры регистрации фоновой задачи проверяются во время регистрации.   Если какие-либо из параметров регистрации недопустимы, возвращается ошибка. Если фоновая задача не прошла регистрацию, приложение должно выполнить соответствующее действие — например, применить условный оператор для проверки наличия ошибок регистрации и затем повторить попытку регистрации с другими значениями параметров.
  
 
 На главной странице приложения добавьте метод **RegisterBackgroundTask** и вызовите его в обработчике событий **OnNavigatedTo**.
@@ -256,11 +256,11 @@ namespace ContosoApp
 ## <a name="related-topics"></a>См. также
 
 
-* [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
-* [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager)
-* [**TileNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)
+* [**баккграундтаскбуилдер**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+* [**тилеупдатеманажер**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager)
+* [**тиленотификатион**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)
 * [Поддержка приложения с помощью фоновых задач](support-your-app-with-background-tasks.md)
-* [Контрольный список по плиткам и эмблемам](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
+* [Рекомендации и контрольный список для плиток и эмблем](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
 
  
 
