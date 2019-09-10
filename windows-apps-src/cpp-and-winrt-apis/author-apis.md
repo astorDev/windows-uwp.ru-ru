@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, стандартная, c++, cpp, winrt, проецируемый, проекция, реализация, реализовывать, класс среды выполнения, активация
 ms.localizationpriority: medium
-ms.openlocfilehash: 18dc65198d476204cfd54bd241fbd3c9ac401155
-ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
+ms.openlocfilehash: ae8aca92d7eb7bc93ba4be99449d5e813238d744
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485168"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393498"
 ---
 # <a name="author-apis-with-cwinrt"></a>Создание интерфейсов API с помощью C++/WinRT
 
@@ -126,7 +126,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>Если вы создаете класс среды выполнения в компоненте среды выполнения Windows
 
-Если ваш тип упакован в компонент среды выполнения Windows для использования из приложения, он должен представлять собой класс среды выполнения. Вам нужно объявить класс среды выполнения в файле языка Microsoft Interface Definition Language (IDL) (.idl) (см. раздел о [разделении классов среды выполнения на файлы Midl (.idl)](#factoring-runtime-classes-into-midl-files-idl)).
+Если ваш тип упакован в компонент среды выполнения Windows для использования из приложения, то он должен представлять собой класс среды выполнения. Вам нужно объявить класс среды выполнения в файле языка Microsoft Interface Definition Language (IDL) (.idl) (см. раздел о [разделении классов среды выполнения на файлы Midl (.idl)](#factoring-runtime-classes-into-midl-files-idl)).
 
 Каждый файл IDL создает файл `.winmd`, которые Visual Studio объединяет в один файл с именем корневого пространства имен. Этот окончательный файл `.winmd` и будет тем, на который будут ссылаться потребители вашего компонента.
 

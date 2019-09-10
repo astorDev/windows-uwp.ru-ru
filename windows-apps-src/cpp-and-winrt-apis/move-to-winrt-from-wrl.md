@@ -5,17 +5,17 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 9695548c7e12cf5fad905a171f22e6fa1f9c1af7
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 7b313e80b744279f8dc955e8c07d31aba2860c3f
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270051"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393437"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>Переход на C++/WinRT с WRL
 В этом разделе показано, как перенести код [библиотеки шаблонов C++ для среды выполнения Windows (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) в его эквивалент на [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
-Первым шагом при переносе в C++/WinRT является ручное добавление поддержки C++/WinRT в проект (см. раздел [Поддержка для Visual Studio C++/WinRT, XAML, расширения VSIX и пакет NuGet](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Для этого в свой проект следует установить [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/). В Visual Studio откройте проект, щелкните **Проект** \> **Управление пакетами NuGet...** \> **Обзор**, введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выберите элемент в результатах поиска, а затем нажмите кнопку **Установить**, чтобы установить пакет для этого проекта. Одним из последствий этого изменения является отключение поддержки для [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) в проекте. Если вы используете C++/CX в проекте, впоследствии можно оставить поддержку отключенной и обновить код C++/CX до кода C++/WinRT (см. раздел [Переход на C++/WinRT с C++/CX](move-to-winrt-from-cx.md)). Либо можно включить поддержку (в свойствах проекта перейдите в раздел **C/C++** \> **Общие** \> **Использовать расширение среды выполнения Windows** \> **Да (/ZW)** ) и сначала сосредоточиться на переносе кода WRL. Код C++/CX и C++/WinRT могут сосуществовать в одном проекте, за исключением поддержки компилятора XAML и компонентов среды выполнения Windows (см. статью [Переход на C++/WinRT с C++/CX](move-to-winrt-from-cx.md)).
+Первым шагом при переносе в C++/WinRT является ручное добавление поддержки C++/WinRT в проект (см. раздел [Поддержка для Visual Studio C++/WinRT, XAML, расширения VSIX и пакет NuGet](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Для этого в свой проект следует установить [пакет Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/). В Visual Studio откройте проект, щелкните **Проект** \> **Управление пакетами NuGet...** \> **Обзор**, введите или вставьте **Microsoft.Windows.CppWinRT** в поле поиска, выберите элемент в результатах поиска, а затем нажмите кнопку **Установить**, чтобы установить пакет для этого проекта. Одним из последствий этого изменения является отключение поддержки для [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) в проекте. Если вы используете C++/CX в проекте, впоследствии можно оставить поддержку отключенной и обновить код C++/CX до кода C++/WinRT (см. раздел [Переход на C++/WinRT с C++/CX](move-to-winrt-from-cx.md)). Либо можно включить поддержку (в свойствах проекта перейдите в раздел **C/C++** \> **Общие** \> **Использовать расширение среды выполнения Windows** \> **Да (/ZW)** ) и сначала сосредоточиться на переносе кода WRL. Код C++/CX и C++/WinRT может сосуществовать в одном проекте, за исключением поддержки компилятора XAML и компонентов среды выполнения Windows (см. статью [Переход на C++/WinRT с C++/CX](move-to-winrt-from-cx.md)).
 
 Задайте для свойства проекта **Общие**\>**Версия целевой платформы** значение 10.0.17134.0 (Windows 10, версия 1803) или более позднюю версию.
 

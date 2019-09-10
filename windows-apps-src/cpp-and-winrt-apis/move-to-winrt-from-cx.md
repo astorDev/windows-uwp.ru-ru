@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 404a6985c95718363f3dbbc3b8f27a7793b28e86
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 92088906078a3a705e5fae052a50fc914561c77c
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328850"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393459"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Переход на C++/WinRT из C++/CX
 
@@ -18,7 +18,7 @@ ms.locfileid: "68328850"
 
 ## <a name="porting-strategies"></a>Стратегии переноса
 
-Если вам нужно постепенно переносить код C++/CX на C++/WinRT, то вы сможете это сделать. Коды C++/CX и C++/WinRT могут сосуществовать в одном проекте, за исключением поддержки компилятора XAML и компонентов среды выполнения Windows. Для этих двух исключений необходимо выбрать либо C++/CX, либо C++/WinRT в одном и том же проекте.
+Если вам нужно постепенно переносить код C++/CX на C++/WinRT, то вы сможете это сделать. Код C++/CX и C++/WinRT может сосуществовать в одном проекте, за исключением поддержки компилятора XAML и компонентов среды выполнения Windows. Для этих двух исключений необходимо выбрать либо C++/CX, либо C++/WinRT в одном и том же проекте.
 
 > [!IMPORTANT]
 > Если проект создает приложение XAML, рекомендуем сначала создать новый проект в Visual Studio с помощью одного из шаблонов проектов C++/WinRT (см. раздел [Поддержка Visual Studio для C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Затем начните копировать исходный код и разметку из проекта C++/CX. Вы можете добавить новые страницы XAML с помощью команды **Проект** \> **Добавить новый элемент...** \> **Visual C++**   >  **Пустая страница (C++/WinRT)** .
@@ -471,11 +471,11 @@ C++/CX представляет строку среды выполнения Win
 | Операция | C++/CX | C++/WinRT|
 |-|-|-|
 | Категория типа строки | Ссылочный тип | Тип значения |
-| **HSTRING** со значением NULL проецируется как | `(String^)nullptr` | `hstring{ nullptr }` |
+| **HSTRING** со значением NULL проецируется как | `(String^)nullptr` | `hstring{}` |
 | Значение NULL и `""` идентичны? | Да | Да |
 | Допустимость значения NULL | `s = nullptr;`<br>`s->Length == 0` (допустимо) | `s = nullptr;`<br>`s.size() == 0` (допустимо) |
 | Упаковка-преобразование строки | `o = s;` | `o = box_value(s);` |
-| Если `s` имеет значение `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
+| Если `s` имеет значение `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
 | Если `s` имеет значение `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
 | Упаковка-преобразование строки с сохранением значения NULL | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
 | Принудительная упаковка-преобразование строки | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
@@ -514,7 +514,7 @@ C++/CX предоставляет несколько типов данных в 
 | **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
 | **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
-### <a name="port-platformagile-to-winrtagileref"></a>Перенос **Platform::Agile\^** в **winrt::agile_ref**
+### <a name="port-platformagile-to-winrtagile_ref"></a>Перенос **Platform::Agile\^** в **winrt::agile_ref**
 
 Тип **Platform::Agile\^** в C ++ / CX представляет класс среды выполнения Windows, к которому можно получить доступ из любого потока. Для C++/WinRT эквивалентом является [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref).
 
@@ -534,7 +534,7 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 Для вас доступны использование списка инициализатора, **std::array** или **std::vector**. Дополнительные сведения и примеры кода см. в статьях [Стандартные списки инициализаторов](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) и [Стандартные массивы и векторы](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
 
-### <a name="port-platformexception-to-winrthresulterror"></a>Перенесите **Platform::Exception\^\^** в **winrt::hresult_error**
+### <a name="port-platformexception-to-winrthresult_error"></a>Перенесите **Platform::Exception\^\^** в **winrt::hresult_error**
 
 Тип **Platform::Exception\^** создается в C++/CX, когда API среда выполнения Windows возвращается к не S\_OK HRESULT. Для C++/WinRT эквивалентом является [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error).
 

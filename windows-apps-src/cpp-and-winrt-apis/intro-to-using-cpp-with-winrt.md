@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
-ms.openlocfilehash: 197f53df200026541a15120dfc97c187e5aa2e5b
-ms.sourcegitcommit: b186f70f0b1601b6b6a5db91d87d034f6b155e3b
+ms.openlocfilehash: 4b6fd3f3085449c57dafdcedc60f63997e3ec807
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70063786"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393438"
 ---
 # <a name="introduction-to-cwinrt"></a>Введение в C++/WinRT
 &nbsp;
@@ -93,7 +93,7 @@ Visual Studio предоставляет поддержку компилятор
 
 В IDL-файле определите классы среды выполнения в вашем компоненте, их интерфейс по умолчанию и другие интерфейсы, которые они реализуют. Единожды выполните сборку проекта для создания шаблонов реализаций `module.g.cpp` и `module.h.cpp` в `Generated Files` и определений типа заглушек в `Generated Files\sources`. Затем используйте определения типов заглушек для справки при реализации классов среды выполнения в вашем компоненте. Также см. раздел о [разделении классов среды выполнения на файлы Midl (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
-Объедините в пакет собранный двоичный файл компонента среды выполнения Windows и его `.winmd` с приложением UWP, которое их использует.
+Объедините в пакет созданный двоичный файл компонента среды выполнения Windows и его файл с расширением `.winmd` с приложением UWP, которое их использует.
 
 ## <a name="earlier-versions-of-the-vsix-extension"></a>Более ранние версии расширения VSIX
 Мы рекомендуем установить (или обновить до) последнюю версию [расширения VSIX](https://aka.ms/cppwinrt/vsix). По умолчанию для него настроено самостоятельное обновление. Если вы это сделаете при наличии проектов, созданных с версией расширения VSIX ранее 1.0.190128.4, следует ознакомиться с этим разделом, содержащим важную информацию об обновлении этих проектов для работы с новой версией. Если вы не выполните обновление, вам все равно будет полезно ознакомиться со сведениями в этом разделе.
@@ -145,7 +145,7 @@ Visual Studio предоставляет поддержку компилятор
 * [Структура winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
 * [Пространство имен WinRT](/uwp/cpp-ref-for-winrt/winrt)
 
-## <a name="related-topics"></a>Связанные темы
+## <a name="related-topics"></a>Статьи по теме
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Расширение C++/WinRT для Visual Studio (VSIX)](https://aka.ms/cppwinrt/vsix)
 * [Начало работы с C++/WinRT](get-started.md)
