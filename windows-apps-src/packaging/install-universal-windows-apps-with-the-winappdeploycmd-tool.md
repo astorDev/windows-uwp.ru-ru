@@ -6,15 +6,14 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 79e92cd781a83295a8cbbee4fe4b25022295568a
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: d6c8383a5b0041d5edf6e0c2c8d94acf82572d13
+ms.sourcegitcommit: afc25d41229d4e340c9557651b35e016d7595c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682655"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70808448"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Установка приложений с помощью средства WinAppDeployCmd.exe
-
 
 Развертывание приложений Windows (WinAppDeployCmd. exe) — это программа командной строки, которая может использоваться для развертывания приложения универсальная платформа Windows (UWP) с компьютера Windows 10 на любом устройстве Windows 10. Это средство можно использовать для развертывания пакета приложения, когда устройство Windows 10 подключено через USB или доступно в той же подсети без необходимости Microsoft Visual Studio или решения для этого приложения. Вы также можете развернуть приложение без его предварительной упаковки на удаленном компьютере или консоли Xbox One. В этой статье описывается, как устанавливать приложения UWP с помощью этого средства.
 
@@ -22,21 +21,24 @@ ms.locfileid: "68682655"
 
 Для развертывания на мобильных устройствах необходимо сначала создать пакет. Дополнительные сведения см. [здесь](/windows/msix/package/packaging-uwp-apps).
 
-Средство **WinAppDeployCmd. exe** находится здесь на компьютере с Windows 10: **C:\\Program Files (x86\\) Windows\\Kit\\10\\bin&lt;SDK&gt;версииx86WinAppDeployCmd\\. exe (на основе\\** путь установки пакета SDK. 
+Средство **WinAppDeployCmd. exe** находится здесь на компьютере с Windows 10: **C:\\Program Files (x86\\) Windows\\Kit\\10\\bin&lt;SDK&gt;версииx86WinAppDeployCmd\\. exe (на основе\\** путь установки пакета SDK.
+
 > [!NOTE]
-> В версии 15063 и более поздних версиях SDK пакет SDK устанавливается параллельно папкам для соответствующей версии.  Предыдущие пакеты SDK (включая 14393 и более ранние) записываются непосредственно в родительскую папку.
+> В версии 15063 и более поздних версиях SDK пакет SDK устанавливается параллельно папкам для соответствующей версии. Предыдущие пакеты SDK (включая 14393 и более ранние) записываются непосредственно в родительскую папку.
 
 Сначала подключите устройство Windows 10 к той же подсети или подключите его непосредственно к компьютеру Windows 10 с USB-подключением. Затем используйте следующий синтаксис и примеры данной команды, описанные далее в этой статье, чтобы выполнить развертывание приложения UWP.
 
 ## <a name="winappdeploycmd-syntax-and-options"></a>Синтаксис и параметры WinAppDeployCmd
 
 Это общий синтаксис, используемый для **WinAppDeployCmd.exe**:
-```syntax
+
+```CMD
 WinAppDeployCmd command -option <argument>
 ```
 
 Ниже приведено несколько дополнительных примеров синтаксиса для использования различных команд:
-```syntax
+
+```CMD
 WinAppDeployCmd devices
 WinAppDeployCmd devices <x>
 WinAppDeployCmd install -file <path> -ip <address>
@@ -59,7 +61,6 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 
 В следующей таблице описаны команды для **WinAppDeployCmd.exe**.
 
-
 | **Кнопки**  | **Описание**                                                     |
 |--------------|---------------------------------------------------------------------|
 | устройств      | Показать список доступных сетевых устройств.                         |
@@ -73,9 +74,7 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 | getcreds     | Получить сетевые учетные данные для целевого использования при запуске приложения из сетевой папки.|
 | deletecreds  | Удалить сетевые учетные данные для целевого использования при запуске приложения из сетевой папки.|
 
-
 В следующей таблице описаны параметры для **WinAppDeployCmd.exe**.
-
 
 | **Кнопки**  | **Описание**  |
 |--------------|------------------|
@@ -93,7 +92,6 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 | -remotedeploydir | Относительный путь/имя каталога для копирования файлов на удаленном устройстве. Это должна быть хорошо известная, автоматически определяемая папка для удаленного развертывания. |
 | -deleteextrafile | Указывает, следует ли очистить существующие файлы в удаленном каталоге для соответствия исходному каталогу. |
 
-
 В следующей таблице описаны параметры для **WinAppDeployCmd.exe**.
 
 | **Аргумент**           | **Описание**                                                              |
@@ -109,44 +107,43 @@ WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 | &lt;password&gt;       | Пароль в учетных данных с доступом к серверу в файловой сети. |
 | &lt;remotedeploydir&gt;| Каталог на устройстве по отношению к месту развертывания.                      |
 
- 
 ## <a name="winappdeploycmdexe-examples"></a>Примеры WinAppDeployCmd.exe
 
-Вот несколько примеров развертывания из командной строки с помощью синтаксиса для **WinAppDeployCmd.exe**.
+Ниже приведены некоторые примеры развертывания из командной строки с использованием синтаксиса для **WinAppDeployCmd. exe**.
 
 Показывает устройства, которые доступны для развертывания. Время ожидания команды равно 3 секундам.
 
-``` syntax
+``` CMD
 WinAppDeployCmd devices 3
 ```
 
 Устанавливает приложение из пакета MyApp. appx, который находится в каталоге загрузок компьютера, на устройство Windows 10 с IP-адресом 192.168.0.1 и ПИН-кодом A1B2C3 для установления подключения к устройству.
 
-``` syntax
+``` CMD
 WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
 ```
 
 Удаляет указанный пакет (в зависимости от его полного имени) из устройства Windows 10 с IP-адресом 192.168.0.1. Можно использовать команду списка, чтобы увидеть полные имена всех пакетов, установленных на устройстве.
 
-``` syntax
+``` CMD
 WinAppDeployCmd uninstall -package Company.MyApp_1.0.0.1_x64__qwertyuiop -ip 192.168.0.1
 ```
 
 Обновляет приложение, которое уже установлено на устройстве с Windows 10, с IP-адресом 192.168.0.1 с помощью указанного пакета приложения.
 
-``` syntax
+``` CMD
 WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1
 ```
 
 Развертывает файлы приложения на компьютере или Xbox с IP-адресом 192.168.0.1 в той же папке, что и AppxManifest, в каталог app1_F5 по пути развертывания на устройстве.
 
-``` syntax
+``` CMD
 WinAppDeployCmd deployfiles -file "C:\apps\App1\AppxManifest.xml" -remotedeploydir app1_F5 -ip 192.168.0.1
 ```
 
 Регистрирует приложение в каталоге app1_F5 по пути развертывания на компьютере или Xbox по адресу 192.168.0.1.
 
-``` syntax
+``` CMD
 WinAppDeployCmd registerfiles -file app1_F5 -ip 192.168.0.1
 ```
 
@@ -155,7 +152,8 @@ WinAppDeployCmd registerfiles -file app1_F5 -ip 192.168.0.1
 Запуск с компьютера позволяет развертывать приложения UWP для Xbox One без копирования двоичных файлов; вместо этого двоичные файлы размещаются в сетевой папке в той же сети, что и Xbox.  Для этого требуется устройство Xbox One с включенным режимом разработчика и приложение UWP со свободной сборкой на сетевом диске, доступном для Xbox.
 
 Чтобы зарегистрировать приложение, выполните следующую команду:
-``` syntax
+
+``` CMD
 WinAppDeployCmd registerfiles -ip <Xbox One IP> -remotedeploydir <location of app> -username <user for network> -password <password for user>
 
 ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myAppLocation -username admin -password A1B2C3
