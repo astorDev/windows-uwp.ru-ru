@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 81065c214cc2b0583a99ac88cf1c3e4cd784658a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d2c8e05d2b01b110085ed82c19cecd251c9c6971
+ms.sourcegitcommit: c95915f8a13736705eab74951a12b2cf528ea612
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361689"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876241"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>Интеграция с системными элементами управления транспортировкой мультимедиа
 
@@ -34,6 +34,11 @@ ms.locfileid: "66361689"
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
 [!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
+
+
+> [!Note]
+> Приложения должны задавать значение для свойства [**Type**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaitemdisplayproperties.type) , даже если они не предоставляют другие метаданные носителя для отображения в системных элементах управления транспортного носителя. Это значение помогает системе правильно обменять содержимое мультимедиа, включая предотвращение активации экранной заставки во время воспроизведения.
+
 
 ## <a name="use-commandmanager-to-modify-or-override-the-default-smtc-commands"></a>Использование CommandManager для изменения или переопределения команд по умолчанию SMTC
 Ваше приложение может изменять или полностью переопределять поведение элементов управления SMTC с помощью класса [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager). Для каждого экземпляра класса **MediaPlayer** можно получить экземпляр диспетчера команд путем доступа к свойству [**CommandManager**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.commandmanager).
@@ -77,9 +82,9 @@ ms.locfileid: "66361689"
 
 ## <a name="related-topics"></a>См. также
 * [Воспроизведение мультимедиа](media-playback.md)
-* [Воспроизведение аудио и видео с MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Ручное управление мультимедиа транспорта системных элементов управления](system-media-transport-controls.md)
-* [Пример элементов управления мультимедиа указанное системы на github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
+* [Воспроизведение аудио и видео с помощью MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [Ручное управление элементами управления транспортом системных носителей](system-media-transport-controls.md)
+* [Пример элементов управления транпорт системных носителей в GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
  
 
  

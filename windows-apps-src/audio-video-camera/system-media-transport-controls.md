@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e306cfe1ee03e9ef4a0688145c2db7b3addd68e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 0a4163105b934f5c1e2970fab9f51b76d69d1bd8
+ms.sourcegitcommit: c95915f8a13736705eab74951a12b2cf528ea612
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318506"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876224"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>Ручное управление системными элементами управления воспроизведением мультимедиа
 
@@ -66,6 +66,11 @@ ms.locfileid: "67318506"
 
 [!code-cs[SystemMediaTransportControlsUpdaterManual](./code/SMTCWin10/cs/MainPage.xaml.cs#SystemMediaTransportControlsUpdaterManual)]
 
+> [!Note]
+> Приложения должны задавать значение для [свойства системмедиатранспортконтролсдисплайупдатер. Type](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolsdisplayupdater.type#Windows_Media_SystemMediaTransportControlsDisplayUpdater_Type
+) , даже если они не предоставляют другие метаданные носителя, отображаемые элементами управления транспортного носителя системы. Это значение помогает системе правильно обменять содержимое мультимедиа, включая предотвращение активации экранной заставки во время воспроизведения.
+
+
 ## <a name="update-the-system-media-transport-controls-timeline-properties"></a>Обновление свойств временной шкалы системных элементов управления транспортом мультимедиа
 
 Системные элементы управления транспортом отображают информацию о временной шкале для воспроизводимого элемента мультимедиа, включая текущую позицию воспроизведения, время начала и время окончания элемента мультимедиа. Чтобы обновить свойства временной шкалы системных элементов управления транспортом, создайте объект [**SystemMediaTransportControlsTimelineProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControlsTimelineProperties). Настройте свойства объекта, чтобы отразить текущее состояние воспроизводящегося элемента мультимедиа. Вызовите метод [**SystemMediaTransportControls.UpdateTimelineProperties**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.updatetimelineproperties), чтобы заставить элементы управления обновить временную шкалу.
@@ -74,7 +79,7 @@ ms.locfileid: "67318506"
 
 -   Необходимо указать значение для свойств [**StartTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.starttime), [**EndTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.endtime) и [**Position**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackpositionchangerequested), чтобы системные элементы управления отображали временную шкалу для воспроизводящегося элемента.
 
--   [**MinSeekTime** ](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.minseektime) и [ **MaxSeekTime** ](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.maxseektime) позволяют пользователю указать диапазон в установленные сроки, пользователь может выполнять поиск. Для этого можно использовать типичный сценарий, заключающийся в том, чтобы разрешить поставщикам содержимого включать рекламные паузы в их мультимедиа.
+-   [**Минсиктиме**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.minseektime) и [**макссиктиме**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.maxseektime) позволяют указать диапазон в пределах временной шкалы, который пользователь может искать. Для этого можно использовать типичный сценарий, заключающийся в том, чтобы разрешить поставщикам содержимого включать рекламные паузы в их мультимедиа.
 
     Необходимо настроить свойства [**MinSeekTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.minseektime) и [**MaxSeekTime**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrolstimelineproperties.maxseektime), чтобы можно было создать событие [**PositionChangeRequest**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackpositionchangerequested).
 
@@ -84,11 +89,11 @@ ms.locfileid: "67318506"
 
 Существует набор свойств системных элементов управления транспортом, относящихся к текущему состоянию мультимедиапроигрывателя, а не к состоянию воспроизводимого элемента мультимедиа. Каждое из этих свойств сопоставлено событию, которое создается, когда пользователь изменяет связанный элемент управления. Эти свойства и события перечислены ниже.
 
-| Свойство                                                                  | Событие                                                                                                   |
+| Свойство                                                                  | событие                                                                                                   |
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| [**AutoRepeatMode**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.autorepeatmode) | [**AutoRepeatModeChangeRequested**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.autorepeatmodechangerequested) |
-| [**PlaybackRate**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackrate)     | [**PlaybackRateChangeRequested**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackratechangerequested)     |
-| [**ShuffleEnabled**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.shuffleenabled) | [**ShuffleEnabledChangeRequested**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.shuffleenabledchangerequested) |
+| [**ауторепеатмоде**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.autorepeatmode) | [**ауторепеатмодечанжерекуестед**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.autorepeatmodechangerequested) |
+| [**плайбаккрате**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackrate)     | [**плайбаккратечанжерекуестед**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.playbackratechangerequested)     |
+| [**шуффлинаблед**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.shuffleenabled) | [**шуффлинабледчанжерекуестед**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.shuffleenabledchangerequested) |
 
  
 Чтобы можно было обрабатывать взаимодействие с пользователем с помощью одного из этих элементов управления, сначала зарегистрируйте обработчик для связанного события.
@@ -111,8 +116,8 @@ ms.locfileid: "67318506"
 
 ## <a name="related-topics"></a>См. также
 * [Воспроизведение мультимедиа](media-playback.md)
-* [Интеграция с носителя системы элементы управления транспортировкой](integrate-with-systemmediatransportcontrols.md) 
-* [Если указанное мультимедиа пример системой](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
+* [Интеграция с элементами управления транспортом системных носителей](integrate-with-systemmediatransportcontrols.md) 
+* [Пример System Media транпорт](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
  
 
