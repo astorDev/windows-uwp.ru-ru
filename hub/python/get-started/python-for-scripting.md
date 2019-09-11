@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Майкрософт, Системное администрирование Python, Автоматизация файлов Python, скрипты Python в Windows, Настройка Python в Windows, среда разработчика Python в Windows, среда разработки Python в Windows, Python с PowerShell, скрипты Python для задачи файловой системы
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: dbb7a60103c27f648ca8bf23f87dee06923f0cd9
-ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
+ms.openlocfilehash: 7ca9d5023a74610d6daa78f98ce03abf2a38e375
+ms.sourcegitcommit: 06bb87839fec26afd5d3a05c03d77b2cf1fb46e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979328"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887315"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Приступая к работе с Python в Windows для написания сценариев и автоматизации
 
@@ -96,20 +96,20 @@ VS Code содержит [встроенный терминал](https://code.vi
 3. Создайте несколько каталогов для использования с нашим примером сценария:
 
     ```powershell
-    mkdir food, food/fruits, food/fruits/apples, food/fruits/oranges, food/vegetables
+    mkdir food, food\fruits, food\fruits\apples, food\fruits\oranges, food\vegetables
     ```
 
 4. Создайте несколько файлов в этих каталогах для использования с нашим сценарием:
 
     ```powershell
-    new-item food/fruits/banana.txt, food/fruits/strawberry.txt, food/fruits/blueberry.txt, food/fruits/apples/honeycrisp.txt, food/fruits/oranges/mandarin.txt, food/vegetables/carrot.txt
+    new-item food\fruits\banana.txt, food\fruits\strawberry.txt, food\fruits\blueberry.txt, food\fruits\apples\honeycrisp.txt, food\fruits\oranges\mandarin.txt, food\vegetables\carrot.txt
     ```
 
 5. Создайте в каталоге Python-Scripts новый файл Python:
 
     ```powershell
     mkdir src
-    new-item src/list-directory-contents.py
+    new-item src\list-directory-contents.py
     ```
 
 6. Откройте проект в VS Code, введя:`code .`
@@ -126,14 +126,14 @@ VS Code содержит [встроенный терминал](https://code.vi
     ```python
     import os
 
-    root = '%s%s%s' % ('..', os.path.sep, 'food')
+    root = os.path.join('..', 'food')
     for directory, subdir_list, file_list in os.walk(root):
-        print('Directory: ' + directory)
+        print('Directory:', directory)
         for name in subdir_list:
-            print ('Subdirectory: ' + name)
+            print('Subdirectory:', name)
         for name in file_list:
-            print('File: ' + name)
-        print(os.linesep)
+            print('File:', name)
+        print()
     ```
 
 9. Откройте VS Code интегрированный терминал (**CTRL + '** , используя символ обратной кавычки) и введите каталог src, в котором только что сохранен сценарий Python:
@@ -151,24 +151,24 @@ VS Code содержит [встроенный терминал](https://code.vi
     Вы должны увидеть выходные данные следующего вида:
 
     ```powershell
-    Directory: ../food
+    Directory: ..\food
     Subdirectory: fruits
     Subdirectory: vegetables
 
-    Directory: ../food\fruits
+    Directory: ..\food\fruits
     Subdirectory: apples
     Subdirectory: oranges
     File: banana.txt
     File: blueberry.txt
     File: strawberry.txt
 
-    Directory: ../food\fruits\apples
+    Directory: ..\food\fruits\apples
     File: honeycrisp.txt
 
-    Directory: ../food\fruits\oranges
+    Directory: ..\food\fruits\oranges
     File: mandarin.txt
 
-    Directory: ../food\vegetables
+    Directory: ..\food\vegetables
     File: carrot.txt
     ```
 
@@ -195,15 +195,15 @@ VS Code содержит [встроенный терминал](https://code.vi
     import datetime
     import os
 
-    root = '%s%s%s' % ('..', os.path.sep, 'food')
+    root = os.path.join('..', 'food')
     for directory, subdir_list, file_list in os.walk(root):
         for name in file_list:
-            source_name = '%s%s%s' % (directory, os.path.sep, name)
+            source_name = os.path.join(directory, name)
             timestamp = os.path.getmtime(source_name)
             modified_date = str(datetime.datetime.fromtimestamp(timestamp)).replace(':', '.')
-            target_name = '%s%s%s_%s' % (directory, os.path.sep, modified_date, name)
+            target_name = os.path.join(directory, f'{modified_date}_{name}')
 
-            print ('Renaming: %s to: %s' % (source_name, target_name))
+            print(f'Renaming: {source_name} to: {target_name}')
 
             os.rename(source_name, target_name)
     ```
@@ -220,7 +220,7 @@ VS Code содержит [встроенный терминал](https://code.vi
     Renaming: ..\food\fruits\oranges\mandarin.txt to: ..\food\fruits\oranges\2019-07-18 12.24.46.398151_mandarin.txt
     Renaming: ..\food\vegetables\carrot.txt to: ..\food\vegetables\2019-07-18 12.24.46.402496_carrot.txt
 
-    ~/src/python-scripting/src$ python3 .\list-directory-contents.py
+    PS C:\src\python-scripting\src> python3 .\list-directory-contents.py
     ..\food\
     Directory: ..\food
     Subdirectory: fruits
