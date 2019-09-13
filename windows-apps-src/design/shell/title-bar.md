@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, заголовок окна
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 88c613456525648883735850fe831cb3b67f145c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 323b9b80a7d0087a07faf34d598f51d643e1324c
+ms.sourcegitcommit: 5687e5340f8d78da95c3ac28304d1c9b8960c47d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648819"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930335"
 ---
 # <a name="title-bar-customization"></a>Настройка заголовка окна
 
@@ -20,7 +20,7 @@ ms.locfileid: "57648819"
 
 Если приложение выполняется в окне рабочего стола, можно настроить заголовки окон с учетом индивидуальных особенностей приложения. API-интерфейсы для настройки заголовка окна позволяют указать цвета элементов заголовка окна или расширить содержимое приложения до области заголовка окна и получить над ним полный контроль.
 
-> **Важные API**: [Свойство ApplicationView.TitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [класс ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [CoreApplicationViewTitleBar-класс](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **Важные API**: [Свойство аппликатионвиев. заголовок](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [класс аппликатионвиевтитлебар](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [класс кореаппликатионвиевтитлебар](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>Степень настройки заголовка окна
 
@@ -130,10 +130,14 @@ public MainPage()
 
     var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
     coreTitleBar.ExtendViewIntoTitleBar = true;
-
+    coreTitleBar.LayoutMetricsChanged += CoreTitleBar_LayoutMetricsChanged;
     // Set XAML element as a draggable region.
-    AppTitleBar.Height = coreTitleBar.Height;
     Window.Current.SetTitleBar(AppTitleBar);
+}
+
+private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
+{
+    AppTitleBar.Height = sender.Height;
 }
 ```
 
@@ -166,7 +170,7 @@ public MainPage()
 
 Можно обработать событие [LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged), чтобы отреагировать на изменения размера кнопок заголовка. Например, это может произойти, если системная кнопка "Назад" отображается или скрывается. Обработайте это событие для проверки и обновления позиционирования элементов пользовательского интерфейса, который зависят от размера панели заголовка окна.
 
-В этом примере показано, как настроить макет заголовка окна с учетом таких изменений, как отображение или скрытие системной кнопки "Назад". `AppTitleBar`, `LeftPaddingColumn`, и `RightPaddingColumn` объявлены в XAML, было показано ранее.
+В этом примере показано, как настроить макет заголовка окна с учетом таких изменений, как отображение или скрытие системной кнопки "Назад". `AppTitleBar`, `LeftPaddingColumn` и`RightPaddingColumn` объявляются в коде XAML, показанном ранее.
 
 ```csharp
 private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -189,7 +193,7 @@ private void UpdateTitleBarLayout(CoreApplicationViewTitleBar coreTitleBar)
 
 ### <a name="interactive-content"></a>Интерактивное содержимое
 
-Интерактивные элементы управления, такие как кнопки, меню или поле поиска, можно разместить в верхней части приложения, чтобы они отображались в строке заголовка. Однако существует несколько правил, которым необходимо следовать, чтобы интерактивные элементы принимали пользовательский ввод.
+Интерактивные элементы управления, такие как кнопки, меню или поле поиска, можно разместить в верхней части приложения, чтобы они отображались в строке заголовка. Однако существует несколько правил, которые необходимо выполнить для того, чтобы интерактивные элементы получали входные данные пользователя.
 - Чтобы определить какую-либо область как перетаскиваемую область заголовка окна, необходимо вызвать метод SetTitleBar. Если этого не сделать, система устанавливает перетаскиваемую область по умолчанию в верхней части страницы. Затем система будет обрабатывать все входные данные пользователя в этой области и не позволит входным данным достичь элементов управления.
 - Разместите интерактивные элементы управления поверх перетаскиваемой области, определенной вызовом SetTitleBar (с более высоким значением z-порядка). Не делайте интерактивные элементы управления дочерними элементами класса UIElement, переданного методу SetTitleBar. После передачи элемента методу SetTitleBar система считает его частью системного заголовка окна и направляет весь ввод указателя в этот элемент.
 
@@ -275,7 +279,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->_Полноэкранный_ режим можно включить, только если он поддерживается приложением. Дополнительные сведения см. в разделе [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode). [_Режим планшета_ ](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) является параметр на поддерживаемом оборудовании, поэтому пользователь может выбрать для запуска любого приложения в режим планшета.
+>_Полноэкранный_ режим можно включить, только если он поддерживается приложением. Дополнительные сведения см. в разделе [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode). [_Режим планшета_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) — это пользовательская функция на поддерживаемом оборудовании, поэтому пользователь может выбрать Запуск любого приложения в режиме планшета.
 
 ## <a name="full-customization-example"></a>Пример полной настройки
 
@@ -375,11 +379,11 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 
 ## <a name="dos-and-donts"></a>Возможности и ограничения
 
-- Обеспечьте явное указание на то, является ли окно активным или неактивным. Как минимум, следует настроить изменение цвета текста, значков и кнопок в заголовке окна.
+- Сделайте это очевидным, когда окно активно или неактивно. Как минимум, следует настроить изменение цвета текста, значков и кнопок в заголовке окна.
 - Определите перетаскиваемую область вдоль верхнего края холста приложения. Если ее совместить с системными заголовками окон, пользователям будет легче ее найти.
 - Определите перетаскиваемую область, соответствующую визуальному заголовку окна (если он есть) холста приложения.
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [Acrylic](../style/acrylic.md)
+- [Акрил](../style/acrylic.md)
 - [Цвет](../style/color.md)
