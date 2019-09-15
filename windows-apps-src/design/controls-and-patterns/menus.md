@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e3465d108fc725c45999782eff80593832208b5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 31371c2b2a4826939de428fb6d7c082b78d05843
+ms.sourcegitcommit: 6951827b7d0948618e1fbb082c28794c7f23f83c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319515"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923145"
 ---
 # <a name="menus-and-context-menus"></a>Меню и контекстные меню
 
@@ -32,7 +32,7 @@ ms.locfileid: "67319515"
 
 | **API платформы** | **API библиотеки пользовательского интерфейса Windows** |
 | - | - |
-| [Класс MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [класс MenuBar](/uwp/api/windows.ui.xaml.controls.menubar), [свойство ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [свойство FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [Класс MenuBar](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [Класс MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [класс MenuBar](/uwp/api/windows.ui.xaml.controls.menubar), [свойство ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [свойство FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) | [Класс MenuBar](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
@@ -90,7 +90,7 @@ MenuBar также можно использовать в сочетании с 
 - обладают одной точкой входа (например, меню "Файл" в верхней части экрана), которая отображается постоянно;
 - обычно прикреплены к кнопке или родительскому элементу меню;
 - вызываются левым щелчком мыши (или эквивалентным действием, например нажатием пальцем);
-- связаны с элементом посредством его свойств [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) или [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) либо сгруппированы в строку меню в верхней части окна приложения.
+- связаны с элементом посредством его свойств [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) или [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) либо сгруппированы в строку меню в верхней части окна приложения.
 
 ### <a name="context-menus"></a>Контекстные меню
 
