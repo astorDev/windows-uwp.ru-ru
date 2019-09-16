@@ -2,28 +2,30 @@
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: Создание приложения "Hello, world" (JS)
 description: В этом руководстве описано, как с помощью JavaScript и HTML создать простое приложение &\#0034;Hello World&\#0034;, предназначенное для универсальной платформы Windows (UWP) в Windows 10.
-ms.date: 03/06/2017
+ms.date: 09/12/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b5423c9aae607d4f6ffe14b755c8f73e013d8b6
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 3f4ab5b177539bc286ce24d480cd949d43a51e17
+ms.sourcegitcommit: bd41fb6f59dfbd7021b14ff749b8b0f83f883c0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820971"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70963623"
 ---
 # <a name="create-a-hello-world-app-js"></a>Создание приложения "Hello, world" (JS)
 
 В этом руководстве описано, как с помощью JavaScript и HTML создать простое приложение Hello World, предназначенное для универсальной платформы Windows (UWP) в Windows 10. С помощью одного проекта в Microsoft Visual Studio вы можете создать приложение, работающее на любом устройстве с Windows 10.
 
 > [!NOTE]
-> В этом руководстве используется Visual Studio Community 2019. Если вы используете другую версию Visual Studio, она может выглядеть иначе.
+> В этом руководстве используется Visual Studio Community 2017. Если вы используете другую версию Visual Studio, она может выглядеть иначе.
 
+> [!WARNING]
+> Разработка приложений UWP на JavaScript не поддерживается в Visual Studio 2019. Для разработки приложения UWP на JavaScript необходимо использовать Visual Studio 2017.
 
 В этом разделе вы научитесь выполнять следующие действия.
 
--   создание проекта **Visual Studio 2019**, предназначенного для **Windows 10** и платформы **UWP**;
+-   Создание проекта **Visual Studio 2017**, нацеленного на **Windows 10** и платформы **UWP**.
 -   Добавление содержимого HTML и JavaScript.
 -   Запуск проекта на локальном компьютере в Visual Studio.
 
@@ -35,7 +37,7 @@ ms.locfileid: "67820971"
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>Шаг 1. Создание проекта в Visual Studio
 
-1.  Запустите Visual Studio 2019.
+1.  Запустите Visual Studio 2017.
 
 2.  В меню **Файл** выберите **Создать > Проект...** , чтобы открыть диалоговое окно *Создание проекта*.
 
