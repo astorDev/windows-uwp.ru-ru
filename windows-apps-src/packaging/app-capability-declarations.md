@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bc591f66505fa6e7019cb37fed636700d8dec709
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 5905c494babfcbbe8dd93b85e30602ef490fcc81
+ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393599"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71141949"
 ---
 # <a name="app-capability-declarations"></a>Объявления возможностей приложения
 
@@ -31,7 +31,10 @@ ms.locfileid: "70393599"
 
 ## <a name="general-use-capabilities"></a>Возможности общего применения
 
-Возможности общего применения используются в большей части сценариев приложений.
+Общие возможности задаются с помощью элементов **возможностей** в манифесте пакета приложения. Эти возможности применимы к наиболее распространенным сценариям приложений.
+
+> [!NOTE]
+> Все элементы **возможностей** должны находиться перед элементами [кустомкапабилити](#custom-capabilities) и [девицекапабилити](#device-capabilities) в узле **capabilities** манифеста пакета.
 
 | Сценарий возможности | Использование возможности |
 |---------------------|------------------|
@@ -59,10 +62,10 @@ ms.locfileid: "70393599"
 
 ## <a name="device-capabilities"></a>Возможности устройства
 
-Возможности устройств позволяют вашему приложению получить доступ к периферийным и внутренним устройствам. Возможности устройства указываются с помощью элемента **DeviceCapability** в манифесте пакета приложения. Этот элемент может требовать дополнительных дочерних элементов, а некоторые возможности устройства необходимо добавлять в манифест пакета вручную. Дополнительные сведения см. в разделах [Определение возможностей устройств в манифесте пакета](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) и [**Справочник по схеме DeviceCapability**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability).
+Возможности устройств позволяют вашему приложению получить доступ к периферийным и внутренним устройствам. Возможности устройства указываются с помощью элементов **девицекапабилити** в манифесте пакета приложения. Этот элемент может требовать дополнительных дочерних элементов, а некоторые возможности устройства необходимо добавлять в манифест пакета вручную. Дополнительные сведения см. в разделах [Определение возможностей устройств в манифесте пакета](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) и [**Справочник по схеме DeviceCapability**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability).
 
 > [!NOTE]
-> В элементе **capabilities** может быть несколько элементов **девицекапабилити** и **capability** , но все элементы **девицекапабилити** должны поступать после элементов **capability** .
+> В элементе **capabilities** в манифесте пакета может быть несколько элементов **девицекапабилити** . Все элементы **девицекапабилити** должны располагаться после любой **возможности** и элементов [кустомкапабилити](#custom-capabilities) .
 
 | Сценарий возможности | Использование возможности |
 |---------------------|------------------|
@@ -107,6 +110,9 @@ ms.locfileid: "70393599"
 </Capabilities>
 </Package>
 ```
+
+> [!NOTE]
+> Все ограниченные элементы возможностей должны находиться перед элементами [кустомкапабилити](#custom-capabilities) и [Девицекапабилити](#device-capabilities) в узле **capabilities** манифеста пакета.
 
 ### <a name="restricted-capability-approval-process"></a>Процедура утверждения ограниченной возможности
 
@@ -243,6 +249,9 @@ ms.locfileid: "70393599"
 </Capabilities>
 </Package>
 ```
+
+> [!NOTE]
+> Все элементы **кустомкапабилити** должны располагаться после элементов **возможностей** и перед элементами [девицекапабилити](#device-capabilities) в узле **capabilities** в манифесте пакета.
 
 ## <a name="related-topics"></a>См. также
 
