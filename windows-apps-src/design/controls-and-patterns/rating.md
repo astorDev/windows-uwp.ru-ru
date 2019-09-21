@@ -10,20 +10,18 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c5736e917d77415eeb6df53b3fd92f7ab584884
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 348d563322baf03aabc0e30fd9b39ee11673f271
+ms.sourcegitcommit: 61194375c0889b73ee2b978c444c4b90a576b3e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63787460"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039116"
 ---
 # <a name="rating-control"></a>Элемент управления "Оценка"
 
 Элемент управления "Оценка" позволяет пользователям просматривать и ставить оценки, отражающие степень удовлетворенности содержимым и службами. Пользователи могут взаимодействовать с элементом управления "Оценка" с помощью сенсорного ввода, пера, мыши, игрового контроллера или клавиатуры. В следующем руководстве показано, как использовать функции элемента управления "Оценка", чтобы обеспечить гибкость и возможность настройки.
 
 > **Важные API**: [Класс RatingControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
-
-![Пример элемента управления "Оценка"](images/rating_rs2_doc_ratings_intro.png)
 
 ## <a name="examples"></a>Примеры
 
@@ -40,6 +38,8 @@ ms.locfileid: "63787460"
 </td>
 </tr>
 </table>
+
+![Пример элемента управления "Оценка"](images/rating_rs2_doc_ratings_intro.png)
 
 ### <a name="editable-rating-with-placeholder-value"></a>Редактируемая оценка со значением заполнителя
 
