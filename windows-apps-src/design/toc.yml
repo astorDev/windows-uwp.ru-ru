@@ -169,6 +169,8 @@
           href: controls-and-patterns/navigationview.md
         - name: Сводка
           href: controls-and-patterns/pivot.md
+        - name: Вкладки
+          href: controls-and-patterns/tab-view.md
     - name: People
       items:
         - name: Карточка контакта
