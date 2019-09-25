@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a275d5c91e03f9eb5b6348cda673d93e7132d7a
-ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
+ms.openlocfilehash: 1170b8e1291afd166f210feb291b644d1c7ed546
+ms.sourcegitcommit: e5a154c7b6c1b236943738febdb17a4815853de5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485143"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71164823"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Более сложные сценарии с параллельной обработкой и асинхронными операциями в C++/WinRT
 
@@ -219,7 +219,7 @@ co_await static_cast<no_switch>(async);
 
 Затем, вместо поиска трех функций **await_xxx**, соответствующих **IAsyncXxx**, компилятор C++ выполнит поиск функций, которые соответствуют **no_switch**.
 
-## <a name="a-deeper-dive-into-winrtresumeforeground"></a>Подробные сведения о **winrt::resume_foreground**
+## <a name="a-deeper-dive-into-winrtresume_foreground"></a>Подробные сведения о **winrt::resume_foreground**
 
 В [C++/WinRT 2.0](/windows/uwp/cpp-and-winrt-apis/newsnews#news-and-changes-in-cwinrt-20) выполнение функции [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) приостанавливается, даже если она вызывается из потока диспетчера (в предыдущих версиях в некоторых сценариях могли возникать взаимоблокировки, так как выполнение приостанавливалось, только если функция не находилась в потоке диспетчера).
 
@@ -731,7 +731,7 @@ int main()
 
 Функция **get** выполняет блокировку на неограниченное время, — пока асинхронный объект не будет выполнен. Асинхронные объекты, как правило, имеют очень короткий срок существования, так что зачастую это все, что вам нужно.
 
-Но бывают случаи, когда этого недостаточно, и вам нужно завершить ожидания через некоторое время. Хотя это всегда можно было сделать с помощью стандартных блоков, предоставляемых средой выполнения Windows, сейчас благодаря функции **wait_for**, предоставляемой в C++/WinRT, задача значительно упрощается. Она также реализована в **IAsyncAction** и, снова-таки, соответствует **std::function**.
+Но бывают случаи, когда этого недостаточно, и вам нужно завершить ожидания через некоторое время. Хотя это всегда можно было сделать с помощью стандартных блоков, предоставляемых средой выполнения Windows, сейчас, благодаря функции **wait_for**, предоставляемой в C++/WinRT, задача значительно упрощается. Она также реализована в **IAsyncAction** и, снова-таки, соответствует **std::function**.
 
 ```cppwinrt
 using namespace std::chrono_literals;
@@ -745,6 +745,9 @@ int main()
     }
 }
 ```
+
+> [!NOTE]
+> Функция **wait_for** использует **std::chrono::duration** в интерфейсе, но она ограничена диапазоном, меньшим длительности **std::chrono::duration** (около 49,7 дней).
 
 В этом примере функция **wait_for** ожидает примерно пять секунд, а затем проверяет состояние выполнения. Если состояние соответствует ожидаемому, вы можете быть уверены в том, что объект успешно выполнен. При этом, чтобы получить определенный результат, вы можете использовать функцию **get**.
 

@@ -8,15 +8,14 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cad33c0f1b72bbd379be9b8f13ed648231f1a1ca
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 799913688f04421cae6b47f0d4b7db2fb1074ed4
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319363"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061927"
 ---
 # <a name="web-view"></a>Представление веб-страницы
- 
 
 Элемент управления представлением веб-страницы внедряет в приложение представление, которое отображает содержимое веб-страницы с помощью механизма визуализации Microsoft Edge. В элементе управления представлением веб-страницы могут отображаться и работать гиперссылки.
 
@@ -25,6 +24,22 @@ ms.locfileid: "67319363"
 ## <a name="is-this-the-right-control"></a>Выбор правильного элемента управления
 
 Используйте элемент управления представлением веб-страницы для отображения содержимого HTML-страниц расширенного формата с удаленного веб-сервера, динамически генерируемого кода или файлов содержимого в пакете приложения. Содержимое расширенного формата может также содержать код сценария и обеспечивать связь между этим сценарием и кодом вашего приложения.
+
+## <a name="examples"></a>Примеры
+
+<table>
+<th align="left">XAML Controls Gallery<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/WebView">открыть это приложение и увидеть WebView в действии</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="create-a-web-view"></a>Создание представления веб-страницы
 
@@ -319,15 +334,10 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 -   Поля ввода должны иметь правильный размер. Пользователи могут не понять, что у них есть возможность масштабирования для ввода текста.
 -   Если представление веб-страницы не соответствует вашему приложению, введите альтернативные элементы управления или придумайте собственные способы решения соответствующих задач. Если представление веб-страницы соответствует вашему приложению, пользователи будут воспринимать его как должное.
 
+## <a name="get-the-sample-code"></a>Получить пример кода
 
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-topics"></a>Статьи по теме
 
-* [Класс WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)
- 
-
- 
-
-
-
-
+- [Класс WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)

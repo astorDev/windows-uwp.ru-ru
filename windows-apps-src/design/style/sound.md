@@ -12,18 +12,34 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d0955e7a018472141b137935c5bc87a9f75a5c6d
-ms.sourcegitcommit: 0c5f81100986cc4b74b54cd1ca2debd283c5b7f6
+ms.openlocfilehash: ce81088495716e43a32dab94d1d47d399dd6a309
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68375269"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061911"
 ---
 # <a name="sound"></a>Звук
 
 ![Главное изображение](images/header-sound.svg)
 
 Существует множество способов использования звука для улучшения приложения. Звук может дополнять другие элементы интерфейса, чтобы пользователи легко распознавали разные события. Звук может стать эффективным элементом интерфейса для пользователей с нарушениями зрения. Вы можете использовать звук для создания атмосферы, в которую погружается пользователь. Например, можно воспроизводить причудливую мелодию в фоновом режиме в игре-головоломке или использовать зловещие звуковые эффекты для игр в стиле "хоррор" и игр на выживание.
+
+## <a name="examples"></a>Примеры
+
+<table>
+<th align="left">XAML Controls Gallery<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/Sound">открыть это приложение и увидеть Sound в действии</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="sound-global-api"></a>Глобальный API звука
 
@@ -150,6 +166,10 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 Вызов **ElementSound.Focus** предусматривает дополнительную возможность – звуковая система по умолчанию воспроизводит по очереди 4 разных звука для каждого действия навигации. Это означает, что звуки фокуса, воспроизводимые один за другим, не повторяются.
 
 Цель этой циклической функции заключается в обеспечении разнообразия и незаметности звуков фокуса, так как они воспроизводятся наиболее часто и должны быть самыми трудноуловимыми.
+
+## <a name="get-the-sample-code"></a>Получить пример кода
+
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 

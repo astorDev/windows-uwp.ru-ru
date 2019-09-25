@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fdde696a0bc1dc7706f89ede5d525194e5d2830
-ms.sourcegitcommit: f0e539359b9766db0339ddbae3f7ccf0069011e8
+ms.openlocfilehash: 2f276c1a4abb57c5505a39afc538cc6f7319a23d
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67885662"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061949"
 ---
 # <a name="pull-to-refresh"></a>Обновление путем оттягивания
 
@@ -32,6 +32,22 @@ ms.locfileid: "67885662"
 Используйте обновление путем оттягивания при работе со списком или сеткой с данными, которые пользователь может регулярно обновлять, и если ваше приложение предназначено для работы на устройствах, рассчитанных на сенсорное управление.
 
 Также можно использовать [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer) для создания согласованного обновления, вызываемого другими способами, например, с помощью кнопки "Обновить".
+
+## <a name="examples"></a>Примеры
+
+<table>
+<th align="left">XAML Controls Gallery<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>Если у вас установлено приложение <strong style="font-weight: semi-bold">XAML Controls Gallery</strong>, щелкните здесь, чтобы <a href="xamlcontrolsgallery:/item/PullToRefresh">открыть это приложение и увидеть PullToRefresh в действии</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Получить приложение XAML Controls Gallery (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Получить исходный код (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="refresh-controls"></a>Обновить элементы управления
 
@@ -332,6 +348,10 @@ public class ListItemData
     public string Body { get; set; }
 }
 ```
+
+## <a name="get-the-sample-code"></a>Получить пример кода
+
+- [Пример из коллекции элементов управления XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) — ознакомьтесь со всеми элементами управления XAML в интерактивном режиме.
 
 ## <a name="related-articles"></a>Связанные статьи
 
