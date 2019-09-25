@@ -4,14 +4,14 @@ description: Узнайте, как отладить фоновую задачу
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, фоновую задачу
+keywords: Windows 10, UWP, фоновая задача
 ms.localizationpriority: medium
-ms.openlocfilehash: 11ebd180ebc3bc08b418f3b22ebed190bf73c18d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ad133a9b1eb22695e6ce5d8b3edba9ad3a138b68
+ms.sourcegitcommit: f1261aa6f7eeb62bf770a08b58ec4357bdc20c7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366203"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71224760"
 ---
 # <a name="debug-a-background-task"></a>Отладка фоновой задачи
 
@@ -42,10 +42,13 @@ ms.locfileid: "66366203"
 
 2.  Запустите приложение в отладчике, затем активируйте фоновую задачу с помощью панели инструментов **События жизненного цикла**. В этом раскрывающемся меню отображаются имена фоновых задач, которые можно активировать с помощью Visual Studio.
 
-    Для того чтобы это работало, фоновая задача должна быть уже зарегистрирована и ожидать запуска. Например, если фоновая задача была зарегистрирована с одноразовым триггером времени TimeTrigger, который уже был активирован, запуск задачи через Visual Studio не сработает.
+> [!NOTE]
+> Параметры панели инструментов события жизненного цикла по умолчанию не отображаются в Visual Studio. Чтобы отобразить эти параметры, щелкните правой кнопкой мыши текущую панель инструментов в Visual Studio и убедитесь, что параметр **Расположение отладки** включен.
+
+    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
 
 > [!Note]
-> Таким образом, невозможно активировать фоновых задач с помощью следующих триггеров: [**Триггер приложения**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger), [ **триггера MediaProcessing**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger), [ **ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger), [ **PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)и фоновых задач с помощью [ **SystemTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) с [  **SmsReceived** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) триггер типа.  
+> Фоновые задачи, использующие следующие триггеры, не могут быть активированы таким образом: [**Триггеры приложений**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger), [**триггеры медиапроцессинг**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger), [**контролчаннелтригжер**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger), [**Пушнотификатионтригжер**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)и фоновые задачи, использующие [**системтригжер**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) с типом триггера [**смсрецеивед**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) .  
 > **ApplicationTrigger** и **MediaProcessingTrigger** можно установить в коде вручную с помощью `trigger.RequestAsync()`.
 
 ![Отладка фоновых задач](images/debugging-activation.png)
@@ -69,7 +72,7 @@ ms.locfileid: "66366203"
 
 2.  С помощью конструктора манифеста проверьте, правильно ли объявлена фоновая задача в манифесте пакета.
 
-    -   В коде на языке C# или C++ атрибут точки входа должен соответствовать пространству имен фоновой задачи, за которым следует имя класса. Пример: RuntimeComponent1.MyBackgroundTask.
+    -   В коде на языке C# или C++ атрибут точки входа должен соответствовать пространству имен фоновой задачи, за которым следует имя класса. Пример: RuntimeComponent1. Мибаккграундтаск.
     -   Кроме того, необходимо указать все типы триггеров, которые использует задача.
     -   Исполняемый файл НЕ СЛЕДУЕТ указывать, если только вы не используете [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) или [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger).
 
@@ -78,8 +81,8 @@ ms.locfileid: "66366203"
     Если после выполнения этой процедуры в журнале событий отображается неправильная точка входа или триггер фоновой задачи, это означает, что приложение неправильно регистрирует фоновую задачу. Разобраться с такой задачей поможет статья [Регистрация фоновой задачи](register-a-background-task.md).
 
     1.  Перейдите на начальный экран и откройте просмотр событий (для этого найдите и запустите файл eventvwr.exe).
-    2.  Перейдите к **журналы приложений и служб**  - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure** в средстве просмотра событий.
-    3.  В области действий выберите **представление**  - &gt; **Отобразить аналитический и отладочный журналы** включить ведение журнала диагностики.
+    2.  &gt; Перейдите в раздел **журналы**  - приложений и служб **Microsoft**  - &gt; **Windows** баккграундтаскинфраструктуревсредствепросмотрасобытий. - &gt;
+    3.  На панели действия выберите **вид**  - &gt; **Показать журналы аналитики и отладки** , чтобы включить ведение журнала диагностики.
     4.  Выберите **Журнал диагностики** и щелкните **Включить журнал**.
     5.  Теперь попробуйте еще раз использовать ваше приложение для регистрации и активации фоновой задачи.
     6.  Просмотрите в журналах диагностики подробную информацию об ошибке. Эта информация будет содержать точку входа, зарегистрированную для фоновой задачи.
@@ -101,7 +104,7 @@ ms.locfileid: "66366203"
 -   Если фоновой задаче требуется доступ к экрану блокировки, то перед выполнением ее отладки необходимо, чтобы приложение было размещено на экране блокировки. Сведения о том, как указывать параметры манифеста для приложений с возможностью размещения на экране блокировки, см. в статье [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md).
 -   Параметры регистрации фоновых задач проверяются во время регистрации. Если какие-либо из параметров регистрации недопустимы, возвращается ошибка. Убедитесь, что ваше приложение корректно обрабатывает сценарии, в которых регистрация фоновой задачи завершается ошибкой. Если работа вашего приложения зависит от наличия допустимого объекта регистрации после попытки регистрации задачи, то оно может дать сбой.
 
-Дополнительные сведения об использовании VS для отладить фоновую задачу, см. в разделе [активация приостановки, возобновления и фоновых событий в приложениях UWP](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015).
+Дополнительные сведения об использовании VS для отладки фоновой задачи см. в статье [как активировать события приостановки, возобновления и фоновых событий в приложениях UWP](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015).
 
 ## <a name="related-topics"></a>См. также
 
@@ -110,8 +113,8 @@ ms.locfileid: "66366203"
 * [Регистрация фоновой задачи](register-a-background-task.md)
 * [Объявление фоновых задач в манифесте приложения](declare-background-tasks-in-the-application-manifest.md)
 * [Руководство по работе с фоновыми задачами](guidelines-for-background-tasks.md)
-* [Активация приостановки, возобновления и фоновых событий в приложениях универсальной платформы Windows](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
-* [Анализ качества кода приложений для универсальной платформы Windows с помощью функций анализа кода Visual Studio](https://docs.microsoft.com/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
+* [Как активировать события приостановки, возобновления и фоновых событий в приложениях UWP](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [Анализ качества кода приложений UWP с помощью анализа кода Visual Studio](https://docs.microsoft.com/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  
 

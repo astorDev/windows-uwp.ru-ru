@@ -73,7 +73,7 @@
     - name: Разработка с использованием Python
       items:
         - name: Обзор
-          href: python/index.md
+          href: python/index.yml
         - name: 'Как приступить к работе: инструкции для начинающих'
           href: python/get-started/python-for-education.md
         - name: Как приступить к разработке веб-приложений

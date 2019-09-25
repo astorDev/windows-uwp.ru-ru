@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Microsoft, Windows 10, учебники, онлайн-курсы, блоги, мероприятия
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 28a77b9e936acddb6158d865aef933f27444c5c9
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.openlocfilehash: 3320cef0d3aaf48a2f93d65d93bf8876f1f997d6
+ms.sourcegitcommit: 7104ad5d01ad1c69a4ea0b3ba6732c1b2a98ec09
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959064"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249240"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ресурсы для разработки с использованием Python в Windows
 
@@ -45,8 +45,7 @@ ms.locfileid: "68959064"
 
 - [Python и Visual Studio Code](https://code.visualstudio.com/docs/languages/python): Общие сведения об использовании Python с VS Code.
 
-
-### <a name="online-courses"></a>Онлайн-курсы
+## <a name="online-courses"></a>Онлайн-курсы
 
 - [Введение в Python на Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/): Оцените интерактивную Microsoft Learnную платформу и ознакомьтесь с основными сведениями о том, как писать базовый код Python, объявлять переменные и работать с входными и выходными данными консоли. Интерактивная среда "песочницы" делает это отличное место для тех, кто еще не настроил среду разработки Python.
 
