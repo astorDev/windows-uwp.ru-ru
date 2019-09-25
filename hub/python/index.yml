@@ -1,0 +1,87 @@
+### YamlMime:Landing
+title: Документация по использованию Python в Windows
+summary: Приступите к разработке на Python в Windows, в том числе изучите настройку среды разработки, создание сценариев и автоматизацию, создание веб-приложений и часто задаваемые вопросы.
+metadata:
+  author: mattwojo
+  description: Приступите к разработке с помощью Python в Windows.
+  manager: jken
+  ms.author: mattwoj
+  ms.date: 09/15/2019
+  ms.prod: dev-environment
+  ms.technology: windows-python
+  ms.topic: landing-page
+  ms.openlocfilehash: 60c0905a87d5089cccf5a525a6d29f87c327fd62
+  ms.sourcegitcommit: 7104ad5d01ad1c69a4ea0b3ba6732c1b2a98ec09
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/25/2019
+  ms.locfileid: "71251121"
+landingContent:
+- title: 'Как приступить к работе: инструкции для начинающих'
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка среды разработки
+      url: get-started/python-for-education.md#set-up-your-development-environment
+  - linkListType: tutorial
+    links:
+    - text: Выполнение простого кода Python
+      url: get-started/python-for-education.md#hello-world-tutorial-for-some-python-basics
+    - text: Создание приложения HelloWorld с использованием VS Code
+      url: get-started/python-for-education.md#hello-world-tutorial-for-using-python-with-vs-code
+    - text: Создание простой игры с помощью Pygame
+      url: get-started/python-for-education.md#create-a-simple-game-with-pygame
+- title: Приступая к разработке веб-приложений
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка среды разработки
+      url: get-started/python-for-web.md#set-up-your-development-environment
+  - linkListType: tutorial
+    links:
+    - text: Создание приложения HelloWorld с использованием Flask
+      url: get-started/python-for-web.md#hello-world-tutorial-for-flask
+    - text: Создание приложения HelloWorld с использованием Django
+      url: get-started/python-for-web.md#hello-world-tutorial-for-django
+- title: Как приступить к созданию сценариев автоматизации
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка среды разработки
+      url: get-started/python-for-scripting.md#set-up-your-development-environment
+  - linkListType: tutorial
+    links:
+    - text: 'Пример сценария: отображение файловой системы'
+      url: get-started/python-for-scripting.md#example-script-to-display-the-structure-of-your-file-system-directory
+    - text: 'Пример сценария: изменение всех файлов в каталоге'
+      url: get-started/python-for-scripting.md#example-script-to-modify-all-files-in-a-directory
+- title: Дополнительные ресурсы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Вопросы и ответы
+      url: faqs.md
+  - linkListType: learn
+    links:
+    - text: Попробуйте использовать язык Python (без установки каких-либо компонентов) в этом учебном курсе
+      url: https://docs.microsoft.com/learn/modules/intro-to-python/
+    - text: Рекомендуемые ссылки
+      url: resources.md
+    - text: Рекомендуемые онлайн-курсы
+      url: resources.md#online-courses
+    - text: Рекомендуемые ссылки на материалы для веб-разработки
+      url: resources.md#web-development
+- title: Руководство по поддержке Mac в Windows
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Изменение среды разработки
+      url: ../mac-to-windows.md
+    - text: Сочетания клавиш
+      url: ../mac-to-windows.md#keyboard-shortcuts
+    - text: Команды сенсорной панели
+      url: ../mac-to-windows.md#trackpad-shortcuts
+    - text: Терминал и оболочка
+      url: ../mac-to-windows.md#terminal-and-shell
+    - text: Приложения и служебные программы
+      url: ../mac-to-windows.md#apps-and-utilities
