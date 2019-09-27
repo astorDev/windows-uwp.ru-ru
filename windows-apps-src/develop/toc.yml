@@ -816,7 +816,7 @@
           href: ../cpp-and-winrt-apis/agile-objects.md
         - name: Диагностика прямых выделений
           href: ../cpp-and-winrt-apis/diag-direct-alloc.md
-        - name: Сведения о деструкторах
+        - name: Точки расширения для типов реализации
           href: ../cpp-and-winrt-apis/details-about-destructors.md
         - name: Простой пример WinUI для C++/WinRT
           href: ../cpp-and-winrt-apis/simple-winui-example.md

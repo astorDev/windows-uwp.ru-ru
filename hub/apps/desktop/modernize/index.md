@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 47cb292b1f5aeed9473cac0f27074f449dc67032
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: b8ad9726397671bcb2b641d6769f014721a27a72
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414109"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317089"
 ---
 # <a name="modernize-your-desktop-apps"></a>Модернизация классических приложений
 
@@ -32,15 +32,9 @@ MSIX — это современный универсальный формат 
 
 ## <a name="net-core-3"></a>.NET Core 3
 
-.NET Core 3 — это следующий основной выпуск .NET Core. Основным преимуществом этого предстоящего выпуска является поддержка классических приложений для Windows, включая приложения Windows Forms и WPF. Используя .NET Core 3, вы сможете запускать новые и существующие классические приложения для Windows и пользоваться всеми преимуществами этой версии. В приложениях для Windows Forms и WPF, предназначенных для .NET Core 3, вы сможете использовать элементы управления UWP, доступные в [XAML Islands](xaml-islands.md).
+.NET Core 3 — это последний основной выпуск .NET Core. Основным преимуществом этого выпуска является поддержка классических приложений для Windows, включая приложения Windows Forms и WPF. Используя .NET Core 3, вы можете запускать новые и существующие классические приложения для Windows и пользоваться всеми преимуществами этой платформы. В приложениях для Windows Forms и WPF, предназначенных для .NET Core 3, вы сможете использовать элементы управления UWP, доступные в [XAML Islands](xaml-islands.md).
 
-Дополнительные сведения доступны в следующих статьях.
-
-* [Объявление о выпуске .NET Core 3.0 (предварительная версия 1)](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/)
-* [Объявление о выпуске .NET Core 3.0 (предварительная версия 2)](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-2/)
-* [Объявление о выпуске .NET Core 3.0 (предварительная версия 2)](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-3/)
-* [Объявление о выпуске .NET Core 3.0 (предварительная версия 4)](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-4/)
-* [Новые возможности в .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0)
+Дополнительные сведения см. в статье [Новые возможности .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
 
 ## <a name="uwp-apis"></a>API UWP
 

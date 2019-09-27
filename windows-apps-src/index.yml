@@ -1,0 +1,102 @@
+### YamlMime:Landing
+title: Документация по универсальной платформе Windows
+summary: Универсальная платформа Windows (UWP) позволяет создавать приложения для любых устройств с Windows — компьютеров, Xbox One, HoloLens и т. д. — и публиковать их в Store.
+metadata:
+  title: Документация по UWP — разработчики приложений UWP | Документация Майкрософт
+  description: Универсальная платформа Windows (UWP) позволяет создавать приложения для любых устройств с Windows — компьютеров, Xbox One, HoloLens и т. д. — и публиковать их в Store.
+  ms.topic: landing-page
+  ms.collection: collection
+  ms.author: quradic
+  author: QuinnRadich
+  ms.date: 09/24/2019
+  ms.technology: uwp-conceptual-docs
+  keywords: windows uwp, universal windows platform, Windows Runtime APIs, windows api, windows api ref, winrt api, windows api reference, uwp api, uwp api reference, develop uwp, design uwp, publish uwp
+  ms.openlocfilehash: 4d1ca7d03cdbc3dd8eccd2e22ae88c217672179c
+  ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71329610"
+landingContent:
+- title: Не знакомы с UWP?
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Основные сведения о разработке для UWP
+      url: get-started/index.md
+    - text: Начало создания приложения UWP
+      url: get-started/create-uwp-apps.md
+  - linkListType: concept
+    links:
+    - text: Сравнение UWP и других платформ приложений для Windows
+      url: https://docs.microsoft.com/windows/apps/desktop/choose-your-platform
+  - linkListType: learn
+    links:
+    - text: Обзор курсов по Windows на сайте Microsoft Learn
+      url: https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module
+    - text: Что такое приложение UWP?
+      url: /get-started/universal-application-platform-guide.md
+- title: Последние возможности
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Новейшие функции UWP
+      url: https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest
+    - text: Специальные функции Windows 10
+      url: https://developer.microsoft.com/windows/windows-10-for-developers
+  - linkListType: concept
+    links:
+    - text: Последние изменения в языке C#
+      url: https://docs.microsoft.com/dotnet/csharp/index
+    - text: Новые возможности в Visual Studio
+      url: https://docs.microsoft.com/visualstudio/ide/
+- title: Разработка
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Создание приложений UWP для Windows 10
+      url: develop/index.md
+    - text: Создание игр UWP для Xbox и Windows 10
+      url: gaming/getting-started.md
+  - linkListType: reference
+    links:
+    - text: Справочные материалы по API для UWP
+      url: https://docs.microsoft.com/uwp/
+    - text: Примеры кода для Windows
+      url: https://developer.microsoft.com/windows/samples
+  - linkListType: download
+    links:
+    - text: Получение средств разработки для Windows
+      url: https://developer.microsoft.com/windows/downloads
+- title: Оформление
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Проектирование приложений с помощью системы Fluent Design
+      url: design/index.md
+  - linkListType: reference
+    links:
+    - text: Добавление элементов управления с помощью библиотеки пользовательского интерфейса Windows
+      url: https://docs.microsoft.com/uwp/toolkits/winui/
+- title: Публикация
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Публикация приложения в Microsoft Store
+      url: publish/index.md
+    - text: Упаковка и развертывание приложения с помощью MSIX
+      url: /windows/msix
+  - linkListType: concept
+    links:
+    - text: Монетизация приложения
+      url: monetize/index.md
+- title: Сообщество и поддержка
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: '@WindowsDocs в Twitter'
+      url: https://twitter.com/WindowsDocs
+    - text: OneDevMinute на YouTube
+      url: https://aka.ms/OneDevMinute
+    - text: Поддержка разработчиков для Windows
+      url: https://developer.microsoft.com/windows/support
